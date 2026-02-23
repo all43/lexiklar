@@ -16,7 +16,7 @@ const DB_PATH = join(DATA_DIR, "index.db");
 function findJsonFiles() {
   const results = [];
   for (const dir of ["nouns", "verbs", "adjectives"]) {
-    const fullDir = join(DATA_DIR, dir);
+    const fullDir = join(DATA_DIR, "words", dir);
     if (!existsSync(fullDir)) continue;
     for (const file of readdirSync(fullDir)) {
       if (file.endsWith(".json")) {

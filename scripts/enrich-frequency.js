@@ -131,7 +131,7 @@ function enrichFiles(freqMap) {
   let notFound = 0;
 
   for (const dir of ["nouns", "verbs", "adjectives"]) {
-    const fullDir = join(DATA_DIR, dir);
+    const fullDir = join(DATA_DIR, "words", dir);
     if (!existsSync(fullDir)) continue;
 
     for (const file of readdirSync(fullDir)) {
