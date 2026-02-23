@@ -34,21 +34,24 @@ function main() {
 
   db.exec(`
     CREATE TABLE search_index (
-      id          INTEGER PRIMARY KEY,
-      lemma       TEXT NOT NULL,
-      pos         TEXT NOT NULL,
-      gender      TEXT,
-      frequency   INTEGER,
-      file_path   TEXT NOT NULL
+      id              INTEGER PRIMARY KEY,
+      lemma           TEXT NOT NULL,
+      pos             TEXT NOT NULL,
+      gender          TEXT,
+      frequency       INTEGER,
+      gender_rule_id  TEXT,
+      is_exception    INTEGER,
+      file_path       TEXT NOT NULL
     );
-    CREATE INDEX idx_lemma     ON search_index(lemma);
-    CREATE INDEX idx_frequency ON search_index(frequency);
-    CREATE INDEX idx_gender    ON search_index(gender);
+    CREATE INDEX idx_lemma       ON search_index(lemma);
+    CREATE INDEX idx_frequency   ON search_index(frequency);
+    CREATE INDEX idx_gender      ON search_index(gender);
+    CREATE INDEX idx_gender_rule ON search_index(gender_rule_id);
   `);
 
   const insert = db.prepare(`
-    INSERT INTO search_index (lemma, pos, gender, frequency, file_path)
-    VALUES (@lemma, @pos, @gender, @frequency, @file_path)
+    INSERT INTO search_index (lemma, pos, gender, frequency, gender_rule_id, is_exception, file_path)
+    VALUES (@lemma, @pos, @gender, @frequency, @gender_rule_id, @is_exception, @file_path)
   `);
 
   const files = findJsonFiles();
@@ -61,6 +64,8 @@ function main() {
       pos: data.pos.toUpperCase(),
       gender: data.gender || null,
       frequency: data.frequency || null,
+      gender_rule_id: data.gender_rule?.rule_id || null,
+      is_exception: data.gender_rule?.is_exception ? 1 : 0,
       file_path: relative(DATA_DIR, filePath),
     });
   }

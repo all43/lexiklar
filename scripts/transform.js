@@ -27,6 +27,20 @@ const ADJ_ENDINGS = JSON.parse(
   readFileSync(join(RULES_DIR, "adj-endings.json"), "utf-8"),
 );
 
+// Load noun gender rules for rule matching
+const NOUN_GENDER_RULES = JSON.parse(
+  readFileSync(join(RULES_DIR, "noun-gender.json"), "utf-8"),
+);
+
+// Pre-sort suffix rules by pattern length descending for longest-match-first
+const SUFFIX_RULES = NOUN_GENDER_RULES.rules
+  .filter((r) => r.type === "suffix")
+  .sort((a, b) => b.pattern.length - a.pattern.length);
+
+const NOMINALIZED_INF_RULE = NOUN_GENDER_RULES.rules.find(
+  (r) => r.type === "nominalized_infinitive",
+);
+
 // ============================================================
 // Utilities
 // ============================================================
@@ -171,10 +185,49 @@ function parsePluralForm(compact) {
   return null;
 }
 
+/**
+ * Match a noun against gender rules.
+ * Returns { rule_id, is_exception } or null if no rule matches.
+ */
+function matchNounGenderRule(word, gender, pluralForm) {
+  if (!gender) return null;
+
+  // Step 1: Check nominalized infinitive
+  // Heuristic: uppercase first letter, ends in -en/-eln/-ern, neuter, no plural
+  if (
+    NOMINALIZED_INF_RULE &&
+    gender === "N" &&
+    pluralForm === null &&
+    /^[A-ZÄÖÜ]/.test(word) &&
+    /(?:en|eln|ern)$/.test(word)
+  ) {
+    return {
+      rule_id: NOMINALIZED_INF_RULE.id,
+      is_exception: false,
+    };
+  }
+
+  // Step 2: Suffix rules (already sorted longest-first)
+  const wordLower = word.toLowerCase();
+  for (const rule of SUFFIX_RULES) {
+    if (wordLower.endsWith(rule.pattern)) {
+      const isException = gender !== rule.predicted_gender;
+      return {
+        rule_id: rule.id,
+        is_exception: isException,
+      };
+    }
+  }
+
+  // Step 3: No match
+  return null;
+}
+
 function transformNoun(entry) {
   const { compact } = splitForms(entry);
   const gender = parseGender(entry);
   const caseForms = extractNounCaseForms(compact);
+  const pluralForm = parsePluralForm(compact);
 
   if (!caseForms.singular.nom) caseForms.singular.nom = entry.word;
 
@@ -184,7 +237,8 @@ function transformNoun(entry) {
     etymology_number: entry.etymology_number || null,
     gender,
     article: gender ? { M: "der", F: "die", N: "das" }[gender] : null,
-    plural_form: parsePluralForm(compact),
+    plural_form: pluralForm,
+    gender_rule: matchNounGenderRule(entry.word, gender, pluralForm),
     case_forms: caseForms,
     senses: transformSenses(entry),
     sounds: extractSounds(entry),

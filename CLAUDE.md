@@ -1,6 +1,6 @@
-# German Dictionary App — Project Context
+# Lexiklar — Project Context
 
-This file captures all architectural decisions made during initial planning. Drop it in your project root so Claude Code always has full context.
+Architectural decisions and implementation reference for the Lexiklar project.
 
 ---
 
@@ -12,60 +12,97 @@ A **fully offline** German dictionary app targeting learners up to **B2 level** 
 
 ## App Name
 
-**Lexiklar**
-
-A coined blend of *Lexikon* (German/English: lexicon/dictionary) + *klar* (German: clear). Transparent meaning in both languages — a German speaker reads it as "clear dictionary", an English speaker intuits it from *lexi-* (lexicon, lexical) + the clean suffix *-klar*.
-
-- No existing brand, product, app, or website uses this name
-- No negative connotations in English or German
-- Domains (lexiklar.com, lexiklar.de, lexiklar.app) almost certainly available
-- Clean SEO slate — any search result will be yours from day one
-- Fully ownable as a trademark
+**Lexiklar** — a blend of *Lexikon* (lexicon) + *klar* (clear).
 
 ---
 
-## Data Source
+## Tech Stack
 
-**Primary: Kaikki.org / wiktextract (Wiktionary structured dump)**
-- Machine-readable JSONL export of Wiktionary, updated weekly
-- Includes: noun genders, plural forms, all verb conjugations, case declensions
-- License: CC BY-SA (free, no purchase required)
-- Download URL: https://kaikki.org/dictionary/rawdata.html
-- Use the raw wiktextract data (NOT the deprecated postprocessed JSONL files)
-- Filter entries by `"lang_code": "de"` in your import script
+- **Language**: JavaScript (Node.js, ESM modules)
+- **Database**: better-sqlite3 for search index generation
+- **Data format**: JSON files as source of truth, SQLite as query index
 
-**Critical format note — gender is not an explicit field:**
-The `pos` field (e.g. `"noun"`, `"verb"`, `"adj"`) is a top-level field on every entry. However, **gender is not a structured field** — it must be extracted from `head_templates[].expansion`, which contains strings like `"Schreibtisch m (genitive Schreibtisches...)"`. Parse `m`, `f`, or `n` after the word form using a regex. Example entry structure:
+---
+
+## Data Sources
+
+### Primary: Kaikki.org / wiktextract (German Wiktionary dump)
+
+- Machine-readable JSONL export of **German-language Wiktionary** (de.wiktionary.org)
+- Download: `https://kaikki.org/dictionary/downloads/de/de-extract.jsonl.gz` (~2.8 GB uncompressed)
+- License: CC BY-SA
+- Treated as static — download once, re-run pipeline if a newer dump is needed
+
+**Critical: German Wiktionary format differs from English Wiktionary.**
+The `de-extract.jsonl` has its own structure. Key differences:
+- **No `head_templates`** — gender is in the top-level `tags` array (`["masculine"]`, `["feminine"]`, `["neuter"]`)
+- **Two-tier forms** — forms without a `source` field are compact (clean, limited persons); forms with `source: "Flexion:..."` are sourced from conjugation tables (all persons, but pronouns embedded in the string like `"ich laufe"`)
+- **Verb pronouns** — compact forms use a `pronouns` field (`["ich"]`), sourced forms embed pronouns in the `form` string
+- **Glosses are in German** — `senses[].glosses` contains German definitions, not English
+
+Example noun entry:
 ```json
 {
-  "word": "Schreibtisch",
-  "lang": "German",
+  "word": "Tisch",
   "lang_code": "de",
   "pos": "noun",
+  "tags": ["masculine"],
   "forms": [
-    { "form": "Schreibtisches", "tags": ["genitive", "singular"] },
-    { "form": "Schreibtische",  "tags": ["plural"] },
-    { "form": "Schreibtisch",   "source": "declension", "tags": ["nominative", "singular"] }
-  ],
-  "head_templates": [
-    { "name": "de-noun", "expansion": "Schreibtisch m (genitive Schreibtisches, plural Schreibtische)" }
+    { "form": "Tischs", "tags": ["genitive", "singular"] },
+    { "form": "Tische", "tags": ["nominative", "plural"] },
+    { "form": "Tischen", "source": "declension", "tags": ["dative", "plural"] }
   ],
   "senses": [
-    { "glosses": ["desk"] }
+    { "glosses": ["Möbelstück, das aus einer Platte mit vier oder drei Beinen..."] }
   ]
 }
 ```
 
-**Frequency filtering: Leipzig Corpora Collection**
-- Free word frequency data for filtering down to B2 level
-- Lets you rank entries by how common they are
+### Secondary: Leipzig Corpora Collection
 
-**Example sentence enrichment: LLM generation (optional)**
-- For words lacking good Wiktionary examples
-- Cost estimate: under $1 for 5,000 sentences using Claude Haiku or GPT-4o mini
-- Low risk: a slightly imperfect example sentence is not a critical error
+- Corpus: `deu_news_2024_300K` (German news, 300K sentences)
+- Download: `https://downloads.wortschatz-leipzig.de/corpora/deu_news_2024_300K.tar.gz` (~67 MB)
+- Provides word frequency ranks for filtering and sorting
 
-**Do NOT use LLMs for grammar data** (articles, conjugations) — hallucination risk is too high for a reference tool.
+### Future: LLM-generated content
+
+- Example sentences and `gloss_en` translations (English glosses for German definitions)
+- Cost estimate: under $1 for 5,000 items using Claude Haiku or GPT-4o mini
+- **Do NOT use LLMs for grammar data** (articles, conjugations) — hallucination risk is too high
+
+---
+
+## Import Pipeline
+
+Four-stage pipeline, each a standalone Node.js script:
+
+```
+download → transform → enrich → build-index
+```
+
+### Scripts
+
+| Script | Command | Purpose |
+|---|---|---|
+| `scripts/download.js` | `npm run download` | Downloads and decompresses `de-extract.jsonl.gz` from Kaikki |
+| `scripts/transform.js` | `npm run transform` | Parses JSONL, extracts grammar, writes per-word JSON files |
+| `scripts/enrich-frequency.js` | `npm run enrich` | Downloads Leipzig corpus, adds frequency rank to word files |
+| `scripts/build-index.js` | `npm run build-index` | Generates SQLite search index from JSON files |
+
+### Running
+
+```bash
+npm run pipeline          # full: all words in source
+npm run pipeline:seed     # seed mode: only words in config/seed-words.json
+```
+
+### Seed Words
+
+`config/seed-words.json` contains ~20 curated words covering edge cases: homonyms (Bank), separable verbs (ankommen), reflexive verbs (erinnern), umlaut comparisons (groß), suppletive adjectives (gut), auxiliaries (sein/haben), nominalized infinitives (Laufen, Gehen).
+
+### State Tracking
+
+`data/raw/.import-state.json` (gitignored) stores a SHA-256 hash per entry. On re-run, unchanged entries are skipped. Deleting this file forces a full regeneration.
 
 ---
 
@@ -91,170 +128,326 @@ Lemma  →  Lexeme  →  Sense
 | Same form, different POS (*laufen* verb / *das Laufen* noun) | Two lexemes, same lemma |
 | Verb with drastically different meanings per prefix (*aufheben*) | Separate lexemes per full form |
 
-When in doubt, follow Wiktionary's editorial decision — they've already resolved most cases.
+When in doubt, follow Wiktionary's editorial decision.
 
 ### Synonyms and Antonyms
 Link at the **Sense level**, not the Lexeme level. *Schnell* and *rasch* are synonyms in their "speed" sense only.
 
 ---
 
-## Grammar Subtypes
+## Output File Formats
 
-### NounGrammar
+Each word gets a JSON file in `data/words/{pos}/`. All files share these common fields:
+
 ```json
 {
-  "gender": "M | F | N",
-  "article": "der | die | das",
-  "plural_form": "Bänke",
-  "plural_rule_id": "optional FK to ArticleRule",
-  "is_rule_exception": false,
-  "declension_class": "strong | weak | mixed",
-  "case_forms": {
-    "singular": { "nom": "", "acc": "", "dat": "", "gen": "" },
-    "plural":   { "nom": "", "acc": "", "dat": "", "gen": "" }
-  }
+  "word": "...",
+  "pos": "noun | verb | adjective",
+  "etymology_number": null,
+  "senses": [
+    {
+      "gloss": "German definition text",
+      "gloss_en": null,
+      "tags": [],
+      "example_ids": ["ff9c6017fd", "f5244099b2"],
+      "synonyms": ["..."],
+      "antonyms": ["..."]
+    }
+  ],
+  "sounds": [{ "ipa": "[...]", "tags": [] }],
+  "_meta": {
+    "source_hash": "06a26df8c3879f59",
+    "generated_at": "2026-02-23"
+  },
+  "frequency": 1842
 }
 ```
 
-### VerbGrammar
+- `gloss` — German definition from Wiktionary (most specific gloss selected)
+- `gloss_en` — English translation, `null` until LLM-generated
+- `example_ids` — references into shared `data/examples.json`
+- `_meta.source_hash` — SHA-256 of source JSONL line, used for change detection
+- `frequency` — rank from Leipzig corpus (1 = most common), added by enrich step
+
+### Noun
+
 ```json
 {
-  "auxiliary": "haben | sein | both",
+  "word": "Hoffnung",
+  "pos": "noun",
+  "gender": "F",
+  "article": "die",
+  "plural_form": "Hoffnungen",
+  "gender_rule": { "rule_id": "suffix_ung", "is_exception": false },
+  "case_forms": {
+    "singular": { "nom": "Hoffnung", "acc": "Hoffnung", "dat": "Hoffnung", "gen": "Hoffnung" },
+    "plural":   { "nom": "Hoffnungen", "acc": "Hoffnungen", "dat": "Hoffnungen", "gen": "Hoffnungen" }
+  },
+  "senses": ["..."],
+  "_meta": {"..."},
+  "frequency": 1145
+}
+```
+
+`gender_rule` — links to a rule in `data/rules/noun-gender.json`. Three cases:
+- `{ "rule_id": "suffix_ung", "is_exception": false }` — follows rule
+- `{ "rule_id": "suffix_tum", "is_exception": true }` — breaks rule (e.g. der Reichtum)
+- `null` — no matching rule (e.g. Tisch)
+
+### Verb
+
+```json
+{
+  "word": "ankommen",
+  "pos": "verb",
+  "auxiliary": "sein",
   "separable": true,
   "prefix": "an",
-  "reflexive": "none | mandatory | optional",
+  "reflexive": "none",
   "principal_parts": {
     "infinitive": "ankommen",
-    "past_stem": "ankam",
+    "past_stem": "kam an",
     "past_participle": "angekommen"
   },
   "conjugation": {
-    "present":      { "ich": "", "du": "", "er": "", "wir": "", "ihr": "", "sie": "" },
-    "preterite":    { "ich": "", "du": "", "er": "", "wir": "", "ihr": "", "sie": "" },
-    "subjunctive1": { "ich": "", "du": "", "er": "", "wir": "", "ihr": "", "sie": "" },
-    "subjunctive2": { "ich": "", "du": "", "er": "", "wir": "", "ihr": "", "sie": "" },
-    "imperative":   { "du": "", "ihr": "", "Sie": "" },
-    "participle1": "",
-    "participle2": ""
-  }
+    "present":      { "ich": "komme an", "du": "kommst an", "er": "kommt an", "wir": "kommen an", "ihr": "kommt an", "sie": "kommen an" },
+    "preterite":    { "ich": "kam an", "du": "kamst an", "er": "kam an", "wir": "kamen an", "ihr": "kamt an", "sie": "kamen an" },
+    "subjunctive1": { "ich": "...", "du": "...", "er": "...", "wir": "...", "ihr": "...", "sie": "..." },
+    "subjunctive2": { "ich": "...", "du": "...", "er": "...", "wir": "...", "ihr": "...", "sie": "..." },
+    "imperative":   { "du": "komm an!", "ihr": "kommt an!", "Sie": "kommen Sie an!" },
+    "participle1": "ankommend",
+    "participle2": "angekommen"
+  },
+  "senses": ["..."],
+  "_meta": {"..."}
 }
 ```
 
-### AdjGrammar
+Separable verbs are detected from present tense forms where the conjugated form contains a space (e.g. `"komme an"`), and the second part matches the word's prefix.
+
+### Adjective (regular)
+
+Regular adjectives store only stem + flag. Full forms are computed at runtime using `data/rules/adj-endings.json`:
+
 ```json
 {
+  "word": "schnell",
+  "pos": "adjective",
   "is_indeclinable": false,
   "comparative": "schneller",
-  "superlative": "schnellst",
+  "superlative": "am schnellsten",
   "umlaut_in_comparison": false,
+  "declension_stem": "schnell",
+  "declension_regular": true,
+  "senses": ["..."],
+  "_meta": {"..."},
+  "frequency": 328
+}
+```
+
+### Adjective (irregular)
+
+Irregular adjectives store the full 48-cell declension table:
+
+```json
+{
+  "declension_stem": "...",
+  "declension_regular": false,
   "declension": {
     "strong": {
-      "masc":  { "nom": "", "acc": "", "dat": "", "gen": "" },
-      "fem":   { "nom": "", "acc": "", "dat": "", "gen": "" },
-      "neut":  { "nom": "", "acc": "", "dat": "", "gen": "" },
-      "plural":{ "nom": "", "acc": "", "dat": "", "gen": "" }
+      "masc":   { "nom": "...", "acc": "...", "dat": "...", "gen": "..." },
+      "fem":    { "nom": "...", "acc": "...", "dat": "...", "gen": "..." },
+      "neut":   { "nom": "...", "acc": "...", "dat": "...", "gen": "..." },
+      "plural": { "nom": "...", "acc": "...", "dat": "...", "gen": "..." }
     },
-    "weak":  "...",
-    "mixed": "..."
+    "weak":  { "..." },
+    "mixed": { "..." }
   }
 }
 ```
 
-### ArticleRule (lookup table)
+Regularity is checked by verifying all 48 forms match `stem + standard ending` from `data/rules/adj-endings.json`. The stem is inferred from `strong.masc.nom` by removing the trailing `-er` ending.
+
+---
+
+## Shared Examples
+
+`data/examples.json` — a flat object keyed by content hash:
+
 ```json
 {
-  "id": "rule_ung",
-  "pattern": "-ung",
-  "description": "Nouns ending in -ung are always feminine",
-  "examples": ["Bedeutung", "Hoffnung", "Zeitung"]
+  "ff9c6017fd": {
+    "text": "Der Tisch steht in der Ecke.",
+    "translation": null,
+    "source": "wiktionary",
+    "lemmas": ["Tisch"]
+  }
 }
 ```
+
+- **Key**: SHA-256 of `text`, first 10 hex chars — deterministic and self-deduplicating
+- **translation**: `null` until LLM-generated
+- **lemmas**: array of words that reference this example (auto-populated, can be multi-word)
+- Word files reference examples via `senses[].example_ids` arrays
+
+### Why shared examples
+- The same sentence can illustrate multiple words
+- Deduplication by content hash — same text always gets same key
+- Translations only need to be generated once per unique sentence
+
+---
+
+## Adjective Declension Rules
+
+`data/rules/adj-endings.json` — static lookup table of standard endings:
+
+```json
+{
+  "strong": {
+    "masc":   { "nom": "er",  "acc": "en",  "dat": "em",  "gen": "en" },
+    "fem":    { "nom": "e",   "acc": "e",   "dat": "er",  "gen": "er" },
+    "neut":   { "nom": "es",  "acc": "es",  "dat": "em",  "gen": "en" },
+    "plural": { "nom": "e",   "acc": "e",   "dat": "en",  "gen": "er" }
+  },
+  "weak":  { "..." },
+  "mixed": { "..." }
+}
+```
+
+At runtime, for a regular adjective: `form = declension_stem + endings[declType][gender][case]`.
+
+---
+
+## Noun Gender Rules
+
+`data/rules/noun-gender.json` — 17 rules predicting noun gender from morphological patterns.
+
+Each rule has:
+```json
+{
+  "id": "suffix_ung",
+  "type": "suffix",
+  "pattern": "ung",
+  "predicted_gender": "F",
+  "reliability": "always",
+  "description_en": "Nouns ending in -ung are always feminine",
+  "description_de": "Substantive auf -ung sind immer feminin",
+  "examples": ["Hoffnung", "Zeitung", "Bedeutung"],
+  "known_exceptions": []
+}
+```
+
+### Reliability tiers
+
+| Tier | Meaning | Rules |
+|---|---|---|
+| `always` | 100%, no exceptions | -ung, -heit, -keit (F); -chen, -lein (N); nominalized infinitives (N) |
+| `nearly_always` | ~99%, very rare exceptions | -schaft, -tion, -sion, -tät (F); -ismus, -ist, -ling (M) |
+| `high` | 95%+, known exceptions listed | -tum (N, exc: Reichtum, Irrtum); -or (M, exc: Labor); -ei (F, exc: Ei); -anz, -enz (F) |
+
+### Matching algorithm (in transform.js)
+
+1. Check **nominalized infinitive** first — heuristic: uppercase, ends in -en/-eln/-ern, neuter, no plural
+2. Check **suffix rules** longest-first (e.g., -schaft before -schaft) — compare predicted vs actual gender
+3. Return `null` if no rule matches
+
+Only rules at 95%+ reliability are included. Lower-reliability rules (-ment, -um, -ie, -ik, -ur, -e, -er, Ge- prefix) are excluded but the schema supports adding them later.
+
+---
+
+## Regeneration Safety
+
+The transform step preserves manually-added data when re-running:
+
+- **`_meta.source_hash`** — if source data hasn't changed, the entry is skipped entirely
+- **`frequency`** — added by the enrich step, preserved by transform's merge logic
+- **`gloss_en`** — future LLM translations in senses, preserved by position-matching merge
+- **`examples.json`** — existing entries with manual translations or non-wiktionary sources are preserved
+
+The merge function (`mergeWithExisting()` in transform.js) reads the existing file before overwriting, and copies over fields that the transform step doesn't own.
 
 ---
 
 ## Storage Architecture
 
-**JSON files as source of truth + SQLite as the generated query index.**
-
 ### Directory Structure
 ```
 /data
-  /nouns/
-    Bank_bench.json
-    Bank_finance.json
-    Tisch.json
-  /verbs/
-    laufen.json
-    ankommen.json
-  /adjectives/
-    schnell.json
-  /index.db          ← generated, not hand-edited
+  /words/
+    /nouns/
+      Bank_geldinstitut.json
+      Bank_sitz.json
+      Tisch.json
+    /verbs/
+      laufen.json
+      ankommen.json
+    /adjectives/
+      schnell.json
+  /rules/
+    adj-endings.json          ← static, hand-curated
+    noun-gender.json          ← static, hand-curated
+  /examples.json              ← generated by transform, manually enrichable
+  /index.db                   ← generated by build-index, gitignored
+  /raw/                       ← gitignored
+    de-extract.jsonl
+    leipzig-words.txt
+    .import-state.json
 ```
 
-### Why JSON files as source of truth
-- Flexible per-POS structure — no NULL columns, no forced schema
-- Native git version tracking — human-readable diffs per word
-- Easy manual corrections and potential community contributions
-- Mirrors Kaikki/Wiktionary source structure closely, simplifying import
-- Each file is fully self-contained and independently deployable
+### File Naming
 
-### SQLite Index Schema (generated at build time)
+- Single-sense words: `{Word}.json` (e.g. `Tisch.json`)
+- Homonyms (same word+POS, different etymology): `{Word}_{disambiguator}.json`
+  - Disambiguator is the first meaningful word from the primary gloss (e.g. `Bank_geldinstitut.json`, `Bank_sitz.json`)
+- Verbs are lowercase: `laufen.json`, `ankommen.json`
+- Nominalized infinitives are capitalized nouns: `Laufen.json`, `Gehen.json`
+
+### SQLite Index Schema (generated by build-index.js)
 ```sql
 CREATE TABLE search_index (
-  id          INTEGER PRIMARY KEY,
-  lemma       TEXT NOT NULL,
-  pos         TEXT NOT NULL,       -- NOUN | VERB | ADJ | ADV
-  gender      TEXT,                -- M | F | N, nouns only
-  frequency   INTEGER,             -- from Leipzig corpus
-  file_path   TEXT NOT NULL        -- pointer to full JSON file
+  id              INTEGER PRIMARY KEY,
+  lemma           TEXT NOT NULL,
+  pos             TEXT NOT NULL,       -- NOUN | VERB | ADJECTIVE
+  gender          TEXT,                -- M | F | N, nouns only
+  frequency       INTEGER,             -- rank from Leipzig corpus
+  gender_rule_id  TEXT,                -- FK to noun-gender.json rule id
+  is_exception    INTEGER,             -- 1 if noun breaks the matched rule
+  file_path       TEXT NOT NULL        -- relative path from data/ to JSON file
 );
 
-CREATE INDEX idx_lemma     ON search_index(lemma);
-CREATE INDEX idx_frequency ON search_index(frequency);
-CREATE INDEX idx_gender    ON search_index(gender);
+CREATE INDEX idx_lemma       ON search_index(lemma);
+CREATE INDEX idx_frequency   ON search_index(frequency);
+CREATE INDEX idx_gender      ON search_index(gender);
+CREATE INDEX idx_gender_rule ON search_index(gender_rule_id);
 ```
 
 ### Runtime Query Pattern
 ```
 User types "Bank"
   → query search_index WHERE lemma = 'Bank'
-  → returns 2 rows (two lexemes), each with file_path
-  → load Bank_bench.json and Bank_finance.json for display
+  → returns 2 rows, each with file_path
+  → load words/nouns/Bank_geldinstitut.json and words/nouns/Bank_sitz.json
 ```
 
 The SQLite index handles all searching and filtering. The JSON files handle all display rendering. Never query inside the JSON at runtime.
 
-### Build Step
-A script (~100 lines) that:
-1. Walks all JSON files in `/data`
-2. Extracts indexable fields (lemma, pos, gender, frequency)
-3. Populates `index.db`
-4. Ships both the JSON files and `index.db` bundled in the app
-
 ---
 
-## Open Questions to Resolve
-
-**Platform/Language** — not yet decided. This affects the SQLite wrapper, bundling approach, and whether to consider Isar (Flutter) or LokiJS (React Native) as alternatives.
-
-**Adjective declension storage** — 3 declension types × 4 genders × 4 cases = 48 cells per adjective. Consider storing only the stem + declension class and computing forms at runtime to save space, since German adjective endings are largely rule-based.
-
-**Separable verbs** — *aufmachen*, *anrufen* etc. need special handling: the prefix separates in main clauses (*ich mache auf*) but not in subordinate clauses. Decide whether to store separated forms explicitly or derive them from prefix + base verb.
+## Open Questions
 
 **Reflexive pronouns in examples** — *sich erinnern* requires *ich erinnere mich* in examples. Example sentence structure may need a `reflexive_pronoun_shown` flag.
 
-**Verbal nouns / nominalized infinitives** — *das Laufen* is extremely common in German. Decide: derived entry linked to parent verb, or standalone lexeme?
-
 **Update mechanism** — if the JSON files live in the app bundle, updates require a new app release. Alternative: ship the SQLite index only and allow JSON file packs to be downloaded as optional offline content updates.
+
+**Platform** — not yet decided. JavaScript pipeline is language-agnostic for the app itself. This affects the SQLite wrapper, bundling approach, and UI framework choice.
 
 ---
 
-## Cost Reference (LLM generation, if needed)
+## LLM Cost Reference
 
-| Model | ~Cost for 5,000 example sentences |
+| Model | ~Cost for 5,000 items |
 |---|---|
 | Claude Haiku 3.5 | ~$0.50 |
 | GPT-4o mini | ~$0.15 |
-| Claude Sonnet | ~$1.80 |
 
-Estimates based on ~150 tokens input / ~100 tokens output per sentence.
+Estimates based on ~150 tokens input / ~100 tokens output per item. Applicable to both example sentences and `gloss_en` translations.

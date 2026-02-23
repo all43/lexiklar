@@ -1,0 +1,203 @@
+{
+  "description": "German noun gender rules. Each rule predicts grammatical gender from morphological patterns. Sorted by reliability tier.",
+  "rules": [
+    {
+      "id": "suffix_ung",
+      "type": "suffix",
+      "pattern": "ung",
+      "predicted_gender": "F",
+      "reliability": "always",
+      "description_en": "Nouns ending in -ung are always feminine",
+      "description_de": "Substantive auf -ung sind immer feminin",
+      "examples": ["Hoffnung", "Zeitung", "Bedeutung"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_heit",
+      "type": "suffix",
+      "pattern": "heit",
+      "predicted_gender": "F",
+      "reliability": "always",
+      "description_en": "Nouns ending in -heit are always feminine",
+      "description_de": "Substantive auf -heit sind immer feminin",
+      "examples": ["Freiheit", "Krankheit", "Wahrheit"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_keit",
+      "type": "suffix",
+      "pattern": "keit",
+      "predicted_gender": "F",
+      "reliability": "always",
+      "description_en": "Nouns ending in -keit are always feminine",
+      "description_de": "Substantive auf -keit sind immer feminin",
+      "examples": ["Möglichkeit", "Schnelligkeit", "Ähnlichkeit"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_chen",
+      "type": "suffix",
+      "pattern": "chen",
+      "predicted_gender": "N",
+      "reliability": "always",
+      "description_en": "Diminutives ending in -chen are always neuter",
+      "description_de": "Verkleinerungsformen auf -chen sind immer sächlich",
+      "examples": ["Mädchen", "Häuschen", "Brötchen"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_lein",
+      "type": "suffix",
+      "pattern": "lein",
+      "predicted_gender": "N",
+      "reliability": "always",
+      "description_en": "Diminutives ending in -lein are always neuter",
+      "description_de": "Verkleinerungsformen auf -lein sind immer sächlich",
+      "examples": ["Häuslein", "Büchlein", "Vöglein"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_schaft",
+      "type": "suffix",
+      "pattern": "schaft",
+      "predicted_gender": "F",
+      "reliability": "nearly_always",
+      "description_en": "Nouns ending in -schaft are feminine",
+      "description_de": "Substantive auf -schaft sind feminin",
+      "examples": ["Freundschaft", "Mannschaft", "Wirtschaft"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_tion",
+      "type": "suffix",
+      "pattern": "tion",
+      "predicted_gender": "F",
+      "reliability": "nearly_always",
+      "description_en": "Nouns ending in -tion are feminine",
+      "description_de": "Substantive auf -tion sind feminin",
+      "examples": ["Nation", "Tradition", "Situation"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_sion",
+      "type": "suffix",
+      "pattern": "sion",
+      "predicted_gender": "F",
+      "reliability": "nearly_always",
+      "description_en": "Nouns ending in -sion are feminine",
+      "description_de": "Substantive auf -sion sind feminin",
+      "examples": ["Pension", "Dimension", "Diskussion"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_taet",
+      "type": "suffix",
+      "pattern": "tät",
+      "predicted_gender": "F",
+      "reliability": "nearly_always",
+      "description_en": "Nouns ending in -tät are feminine",
+      "description_de": "Substantive auf -tät sind feminin",
+      "examples": ["Universität", "Qualität", "Realität"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_ismus",
+      "type": "suffix",
+      "pattern": "ismus",
+      "predicted_gender": "M",
+      "reliability": "nearly_always",
+      "description_en": "Nouns ending in -ismus are masculine",
+      "description_de": "Substantive auf -ismus sind maskulin",
+      "examples": ["Kapitalismus", "Tourismus", "Organismus"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_ist",
+      "type": "suffix",
+      "pattern": "ist",
+      "predicted_gender": "M",
+      "reliability": "nearly_always",
+      "description_en": "Nouns ending in -ist are masculine",
+      "description_de": "Substantive auf -ist sind maskulin",
+      "examples": ["Tourist", "Polizist", "Journalist"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_ling",
+      "type": "suffix",
+      "pattern": "ling",
+      "predicted_gender": "M",
+      "reliability": "nearly_always",
+      "description_en": "Nouns ending in -ling are masculine",
+      "description_de": "Substantive auf -ling sind maskulin",
+      "examples": ["Lehrling", "Feigling", "Schmetterling"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_tum",
+      "type": "suffix",
+      "pattern": "tum",
+      "predicted_gender": "N",
+      "reliability": "high",
+      "description_en": "Nouns ending in -tum are usually neuter",
+      "description_de": "Substantive auf -tum sind meistens sächlich",
+      "examples": ["Eigentum", "Wachstum", "Christentum"],
+      "known_exceptions": ["Reichtum", "Irrtum"]
+    },
+    {
+      "id": "suffix_or",
+      "type": "suffix",
+      "pattern": "or",
+      "predicted_gender": "M",
+      "reliability": "high",
+      "description_en": "Nouns ending in -or are usually masculine",
+      "description_de": "Substantive auf -or sind meistens maskulin",
+      "examples": ["Autor", "Professor", "Motor"],
+      "known_exceptions": ["Labor"]
+    },
+    {
+      "id": "suffix_ei",
+      "type": "suffix",
+      "pattern": "ei",
+      "predicted_gender": "F",
+      "reliability": "high",
+      "description_en": "Nouns ending in -ei are usually feminine",
+      "description_de": "Substantive auf -ei sind meistens feminin",
+      "examples": ["Bäckerei", "Bücherei", "Polizei"],
+      "known_exceptions": ["Ei"]
+    },
+    {
+      "id": "suffix_anz",
+      "type": "suffix",
+      "pattern": "anz",
+      "predicted_gender": "F",
+      "reliability": "high",
+      "description_en": "Nouns ending in -anz are usually feminine",
+      "description_de": "Substantive auf -anz sind meistens feminin",
+      "examples": ["Eleganz", "Toleranz", "Distanz"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_enz",
+      "type": "suffix",
+      "pattern": "enz",
+      "predicted_gender": "F",
+      "reliability": "high",
+      "description_en": "Nouns ending in -enz are usually feminine",
+      "description_de": "Substantive auf -enz sind meistens feminin",
+      "examples": ["Existenz", "Konsequenz", "Differenz"],
+      "known_exceptions": []
+    },
+    {
+      "id": "nominalized_infinitive",
+      "type": "nominalized_infinitive",
+      "pattern": null,
+      "predicted_gender": "N",
+      "reliability": "always",
+      "description_en": "Nominalized infinitives are always neuter",
+      "description_de": "Substantivierte Infinitive sind immer sächlich",
+      "examples": ["Laufen", "Essen", "Denken"],
+      "known_exceptions": []
+    }
+  ]
+}
