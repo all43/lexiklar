@@ -1,0 +1,16 @@
+{
+  "name": "lexiklar",
+  "version": "0.1.0",
+  "description": "Offline German dictionary with deep grammar support",
+  "type": "module",
+  "scripts": {
+    "download": "node scripts/download.js",
+    "transform": "node scripts/transform.js",
+    "build-index": "node scripts/build-index.js",
+    "pipeline": "npm run download && npm run transform && npm run build-index",
+    "pipeline:seed": "npm run download && npm run transform -- --seed && npm run build-index"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0"
+  }
+}
