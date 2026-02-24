@@ -8,8 +8,9 @@
     "transform": "node scripts/transform.js",
     "enrich": "node scripts/enrich-frequency.js",
     "build-index": "node scripts/build-index.js",
-    "pipeline": "npm run download && npm run transform && npm run enrich && npm run build-index",
-    "pipeline:seed": "npm run download && npm run transform -- --seed && npm run enrich && npm run build-index"
+    "translate": "node scripts/translate-examples.js",
+    "pipeline": "npm run download && npm run transform && npm run enrich && npm run translate && npm run build-index",
+    "pipeline:seed": "npm run download && npm run transform -- --seed && npm run enrich && npm run translate && npm run build-index"
   },
   "dependencies": {
     "better-sqlite3": "^11.0.0"
