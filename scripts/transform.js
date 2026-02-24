@@ -32,9 +32,12 @@ const NOUN_GENDER_RULES = JSON.parse(
   readFileSync(join(RULES_DIR, "noun-gender.json"), "utf-8"),
 );
 
+// Only match rules at 95%+ reliability; moderate rules are stored for future use
+const ACTIVE_RELIABILITY = new Set(["always", "nearly_always", "high"]);
+
 // Pre-sort suffix rules by pattern length descending for longest-match-first
 const SUFFIX_RULES = NOUN_GENDER_RULES.rules
-  .filter((r) => r.type === "suffix")
+  .filter((r) => r.type === "suffix" && ACTIVE_RELIABILITY.has(r.reliability))
   .sort((a, b) => b.pattern.length - a.pattern.length);
 
 const NOMINALIZED_INF_RULE = NOUN_GENDER_RULES.rules.find(

@@ -344,6 +344,7 @@ Each rule has:
 | `always` | 100%, no exceptions | -ung, -heit, -keit (F); -chen, -lein (N); nominalized infinitives (N) |
 | `nearly_always` | ~99%, very rare exceptions | -schaft, -tion, -sion, -tät (F); -ismus, -ist, -ling (M) |
 | `high` | 95%+, known exceptions listed | -tum (N, exc: Reichtum, Irrtum); -or (M, exc: Labor); -ei (F, exc: Ei); -anz, -enz (F) |
+| `moderate` | 80–90%, not used for matching | -ment, -um (N); -ie, -ik, -ur (F); -eur (M) |
 
 ### Matching algorithm (in transform.js)
 

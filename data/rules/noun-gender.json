@@ -198,6 +198,72 @@
       "description_de": "Substantivierte Infinitive sind immer sächlich",
       "examples": ["Laufen", "Essen", "Denken"],
       "known_exceptions": []
+    },
+    {
+      "id": "suffix_ment",
+      "type": "suffix",
+      "pattern": "ment",
+      "predicted_gender": "N",
+      "reliability": "moderate",
+      "description_en": "Nouns ending in -ment are often neuter",
+      "description_de": "Substantive auf -ment sind oft sächlich",
+      "examples": ["Dokument", "Argument", "Instrument"],
+      "known_exceptions": ["Moment", "Zement"]
+    },
+    {
+      "id": "suffix_um",
+      "type": "suffix",
+      "pattern": "um",
+      "predicted_gender": "N",
+      "reliability": "moderate",
+      "description_en": "Nouns ending in -um are often neuter",
+      "description_de": "Substantive auf -um sind oft sächlich",
+      "examples": ["Museum", "Album", "Forum"],
+      "known_exceptions": ["Konsum", "Reichtum"]
+    },
+    {
+      "id": "suffix_ie",
+      "type": "suffix",
+      "pattern": "ie",
+      "predicted_gender": "F",
+      "reliability": "moderate",
+      "description_en": "Nouns ending in -ie are often feminine",
+      "description_de": "Substantive auf -ie sind oft feminin",
+      "examples": ["Energie", "Philosophie", "Kategorie"],
+      "known_exceptions": ["Genie", "Zombie"]
+    },
+    {
+      "id": "suffix_ik",
+      "type": "suffix",
+      "pattern": "ik",
+      "predicted_gender": "F",
+      "reliability": "moderate",
+      "description_en": "Nouns ending in -ik are often feminine",
+      "description_de": "Substantive auf -ik sind oft feminin",
+      "examples": ["Musik", "Grammatik", "Logik"],
+      "known_exceptions": []
+    },
+    {
+      "id": "suffix_ur",
+      "type": "suffix",
+      "pattern": "ur",
+      "predicted_gender": "F",
+      "reliability": "moderate",
+      "description_en": "Nouns ending in -ur are often feminine (but -eur is masculine)",
+      "description_de": "Substantive auf -ur sind oft feminin (aber -eur ist maskulin)",
+      "examples": ["Natur", "Kultur", "Figur"],
+      "known_exceptions": ["Flur"]
+    },
+    {
+      "id": "suffix_eur",
+      "type": "suffix",
+      "pattern": "eur",
+      "predicted_gender": "M",
+      "reliability": "moderate",
+      "description_en": "Nouns ending in -eur are often masculine",
+      "description_de": "Substantive auf -eur sind oft maskulin",
+      "examples": ["Ingenieur", "Regisseur", "Friseur"],
+      "known_exceptions": []
     }
   ]
 }
