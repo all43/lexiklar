@@ -5,3 +5,13 @@ data/raw/*.gz
 data/raw/leipzig-words.txt
 data/index.db
 data/raw/.import-state.json
+
+# Vite build output
+dist/
+
+# Copied data for dev/build (source of truth is data/)
+public/data/
+
+# Capacitor native platforms (added later)
+ios/
+android/

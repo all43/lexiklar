@@ -21,6 +21,11 @@ A **fully offline** German dictionary app targeting learners up to **B2 level** 
 - **Language**: JavaScript (Node.js, ESM modules)
 - **Database**: better-sqlite3 for search index generation
 - **Data format**: JSON files as source of truth, SQLite as query index
+- **App framework**: Vue 3 + Framework7 + Capacitor
+  - **Vue 3** — reactive UI framework
+  - **Framework7** (v9) — mobile UI components with adaptive iOS/Material Design theming, built-in router, Virtual List, Searchbar
+  - **Capacitor** — native runtime wrapping the web app for iOS and Android, plus PWA deployment
+  - Chosen over Ionic because Framework7 uses regular DOM (not Shadow DOM), making custom CSS styling of grammar tables and declension grids easier
 
 ---
 
@@ -486,8 +491,6 @@ The SQLite index handles all searching and filtering. The JSON files handle all 
 **Reflexive pronouns in examples** — *sich erinnern* requires *ich erinnere mich* in examples. Example sentence structure may need a `reflexive_pronoun_shown` flag.
 
 **Update mechanism** — if the JSON files live in the app bundle, updates require a new app release. Alternative: ship the SQLite index only and allow JSON file packs to be downloaded as optional offline content updates.
-
-**Platform** — not yet decided. JavaScript pipeline is language-agnostic for the app itself. This affects the SQLite wrapper, bundling approach, and UI framework choice.
 
 ---
 

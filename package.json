@@ -4,6 +4,10 @@
   "description": "Offline German dictionary with deep grammar support",
   "type": "module",
   "scripts": {
+    "dev": "node scripts/copy-data.js && vite",
+    "build": "node scripts/copy-data.js && vite build",
+    "preview": "vite preview",
+    "copy-data": "node scripts/copy-data.js",
     "download": "node scripts/download.js",
     "transform": "node scripts/transform.js",
     "enrich": "node scripts/enrich-frequency.js",
@@ -13,6 +17,16 @@
     "pipeline:seed": "npm run download && npm run transform -- --seed && npm run enrich && npm run translate && npm run build-index"
   },
   "dependencies": {
-    "better-sqlite3": "^11.0.0"
+    "@capacitor/core": "^8.1.0",
+    "better-sqlite3": "^11.0.0",
+    "framework7": "^9.0.3",
+    "framework7-icons": "^5.0.5",
+    "framework7-vue": "^9.0.3",
+    "vue": "^3.5.29"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.1.0",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "vite": "^7.3.1"
   }
 }
