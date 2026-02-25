@@ -72,7 +72,7 @@ export default {
   async mounted() {
     const { pos, file } = this.f7route.params;
     try {
-      const resp = await fetch(`/data/words/${pos}/${file}.json`);
+      const resp = await fetch(`/data/words/${pos}/${file}.json`, { cache: "no-store" });
       if (resp.ok) {
         this.word = await resp.json();
       }

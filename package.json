@@ -13,6 +13,8 @@
     "enrich": "node scripts/enrich-frequency.js",
     "build-index": "node scripts/build-index.js",
     "translate": "node scripts/translate-examples.js",
+    "translate-glosses": "node scripts/translate-glosses.js",
+    "test:glosses": "node scripts/test-gloss-translation.js",
     "pipeline": "npm run download && npm run transform && npm run enrich && npm run translate && npm run build-index",
     "pipeline:seed": "npm run download && npm run transform -- --seed && npm run enrich && npm run translate && npm run build-index"
   },
