@@ -111,6 +111,9 @@ function buildUserPrompt(item) {
 
 function parseResponse(content) {
   let cleaned = content.trim();
+  // Strip <function=...> wrapper (some local models use tool-call syntax)
+  const funcMatch = cleaned.match(/<function[^>]*>([\s\S]*?)(?:<\/function>|$)/);
+  if (funcMatch) cleaned = funcMatch[1].trim();
   // Strip quotes if model wraps in them
   if ((cleaned.startsWith('"') && cleaned.endsWith('"')) ||
       (cleaned.startsWith("'") && cleaned.endsWith("'"))) {

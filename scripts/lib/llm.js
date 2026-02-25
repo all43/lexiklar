@@ -173,6 +173,66 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
 }
 
 /**
+ * Extract and parse JSON from an LLM response that may be wrapped in noise.
+ *
+ * Handles (in order):
+ *   1. Plain JSON
+ *   2. ```json ... ``` markdown fences
+ *   3. <function=name>CONTENT</function> tool-call wrappers (some local models)
+ *   4. Bracket-extraction: find first { or [ and parse from there
+ *   5. Best-effort Python-style single-quote → JSON double-quote conversion
+ *
+ * If the extracted object has shape { examples: [...] } and you expect an
+ * array, unwrap it yourself after calling this function.
+ *
+ * @param {string} text - raw LLM response string
+ * @returns {any} - parsed value
+ * @throws {Error} - if no valid JSON could be extracted
+ */
+export function extractJSON(text) {
+  const s = text.trim();
+
+  // 1. Direct parse — fastest path for well-behaved models
+  try { return JSON.parse(s); } catch {}
+
+  // 2. Markdown code fence
+  const fence = s.match(/^```(?:json)?\s*([\s\S]*?)\s*```$/);
+  if (fence) {
+    try { return JSON.parse(fence[1]); } catch {}
+  }
+
+  // 3. <function=name> wrapper — local models (LM Studio, some Ollama models)
+  //    that confuse text output with tool-calling syntax
+  const funcMatch = s.match(/<function[^>]*>([\s\S]*?)(?:<\/function>|$)/);
+  const candidate = funcMatch ? funcMatch[1].trim() : s;
+
+  // 4. Bracket extraction — find first structural { or [ and slice to matching closer
+  const obj = candidate.indexOf("{");
+  const arr = candidate.indexOf("[");
+  const start = arr !== -1 && (obj === -1 || arr < obj) ? arr : obj;
+  if (start !== -1) {
+    const closer = start === arr ? candidate.lastIndexOf("]") : candidate.lastIndexOf("}");
+    if (closer > start) {
+      const slice = candidate.slice(start, closer + 1);
+      try { return JSON.parse(slice); } catch {}
+
+      // 5. Best-effort: Python dict → JSON
+      //    Replace 'key' and 'value' delimiters with double quotes.
+      //    Handles escaped \' inside strings; may fail on unescaped apostrophes.
+      const converted = slice.replace(/'((?:[^'\\]|\\.)*)'/g, (_, inner) => {
+        const escaped = inner.replace(/\\'/g, "'").replace(/(?<!\\)"/g, '\\"');
+        return `"${escaped}"`;
+      });
+      try { return JSON.parse(converted); } catch {}
+    }
+  }
+
+  throw new Error(
+    `Could not extract valid JSON from LLM response: ${text.slice(0, 120)}`,
+  );
+}
+
+/**
  * Retry a function with exponential backoff.
  *
  * @param {Function} fn - async function to call

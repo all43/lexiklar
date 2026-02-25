@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { callLLM, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider } from "./lib/llm.js";
+import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider } from "./lib/llm.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -105,7 +105,12 @@ Rules:
 - Skip articles (der/die/das/ein/eine), prepositions, pronouns, conjunctions, particles
 - Skip proper nouns unless they are also common nouns
 - For separable verbs, use the full infinitive as lemma (e.g. "kommt...an" → "ankommen")
-- Output strict JSON array, no markdown fences, no extra text`;
+
+Output format:
+- Your ENTIRE response must be a raw JSON array: [{...}, {...}]
+- Start with [ and end with ] — no wrapper object, no "examples" key
+- Use JSON double quotes " for all strings — not Python-style single quotes '
+- No markdown fences, no function calls, no preamble, no trailing text`;
 
 function buildUserPrompt(batch, disambig) {
   const items = batch.map(({ id, text }) => ({
@@ -129,13 +134,12 @@ function buildUserPrompt(batch, disambig) {
 // ============================================================
 
 function parseResponse(content) {
-  // Strip markdown fences if present
-  let cleaned = content.trim();
-  if (cleaned.startsWith("```")) {
-    cleaned = cleaned.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
-  }
+  let parsed = extractJSON(content);
 
-  const parsed = JSON.parse(cleaned);
+  // Local models sometimes wrap the array in {"examples": [...]}
+  if (parsed && !Array.isArray(parsed) && Array.isArray(parsed.examples)) {
+    parsed = parsed.examples;
+  }
 
   if (!Array.isArray(parsed)) {
     throw new Error("Response is not an array");
