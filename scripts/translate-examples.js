@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { callLLM, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider } from "./lib/llm.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -18,10 +19,7 @@ const BATCH_SIZE = (() => {
   const idx = args.indexOf("--batch-size");
   return idx >= 0 ? parseInt(args[idx + 1], 10) || 10 : 10;
 })();
-const PROVIDER = (() => {
-  const idx = args.indexOf("--provider");
-  return idx >= 0 ? args[idx + 1] : "openai";
-})();
+const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
 
 // ============================================================
 // Build disambiguation dictionary from word files
@@ -88,7 +86,7 @@ function getRelevantDisambiguation(examples, disambigDict) {
 }
 
 // ============================================================
-// LLM API calls
+// System prompt and user prompt
 // ============================================================
 
 const SYSTEM_PROMPT = `You are a German-English translation assistant for a dictionary app targeting B2 learners.
@@ -108,79 +106,6 @@ Rules:
 - Skip proper nouns unless they are also common nouns
 - For separable verbs, use the full infinitive as lemma (e.g. "kommt...an" → "ankommen")
 - Output strict JSON array, no markdown fences, no extra text`;
-
-async function callOpenAI(userMessage) {
-  const apiKey = process.env.OPENAI_API_KEY;
-  const res = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: "gpt-4o-mini",
-      temperature: 0.3,
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        { role: "user", content: userMessage },
-      ],
-    }),
-  });
-
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`OpenAI API error ${res.status}: ${body}`);
-  }
-
-  const data = await res.json();
-  const usage = data.usage || {};
-  return {
-    content: data.choices[0].message.content,
-    input_tokens: usage.prompt_tokens || 0,
-    output_tokens: usage.completion_tokens || 0,
-  };
-}
-
-async function callAnthropic(userMessage) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: "claude-3-5-haiku-20241022",
-      max_tokens: 4096,
-      temperature: 0.3,
-      system: SYSTEM_PROMPT,
-      messages: [{ role: "user", content: userMessage }],
-    }),
-  });
-
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`Anthropic API error ${res.status}: ${body}`);
-  }
-
-  const data = await res.json();
-  const usage = data.usage || {};
-  return {
-    content: data.content[0].text,
-    input_tokens: usage.input_tokens || 0,
-    output_tokens: usage.output_tokens || 0,
-  };
-}
-
-async function callLLM(userMessage) {
-  if (PROVIDER === "anthropic") return callAnthropic(userMessage);
-  return callOpenAI(userMessage);
-}
-
-// ============================================================
-// Build user prompt for a batch
-// ============================================================
 
 function buildUserPrompt(batch, disambig) {
   const items = batch.map(({ id, text }) => ({
@@ -237,18 +162,15 @@ function parseResponse(content) {
 
 async function main() {
   // Check API key
-  const apiKey =
-    PROVIDER === "anthropic"
-      ? process.env.ANTHROPIC_API_KEY
-      : process.env.OPENAI_API_KEY;
-
-  if (!apiKey && !DRY_RUN) {
-    const keyName =
-      PROVIDER === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
-    console.log(
-      `No ${keyName} found. Skipping translation step. Set the env var to enable.`,
-    );
-    process.exit(0);
+  if (!isLocalProvider(PROVIDER) && !DRY_RUN) {
+    const apiKey = getApiKey(PROVIDER);
+    if (!apiKey) {
+      const keyName = PROVIDER === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
+      console.log(
+        `No ${keyName} found. Skipping translation step. Set the env var to enable.`,
+      );
+      process.exit(0);
+    }
   }
 
   // Load examples
@@ -300,62 +222,50 @@ async function main() {
   let totalInputTokens = 0;
   let totalOutputTokens = 0;
   let errors = 0;
+  const llmOptions = { provider: PROVIDER, model: MODEL, maxTokens: 4096, temperature: 0.3 };
 
   for (let i = 0; i < batches.length; i++) {
     const batch = batches[i];
     const disambig = getRelevantDisambiguation(batch, disambigDict);
     const userPrompt = buildUserPrompt(batch, disambig);
 
-    let retries = 0;
-    const maxRetries = 3;
+    try {
+      const startTime = Date.now();
+      const response = await retryWithBackoff(
+        () => callLLM(SYSTEM_PROMPT, userPrompt, llmOptions),
+        3, 4000,
+      );
+      const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
 
-    while (retries < maxRetries) {
-      try {
-        const startTime = Date.now();
-        const response = await callLLM(userPrompt);
-        const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+      totalInputTokens += response.input_tokens;
+      totalOutputTokens += response.output_tokens;
 
-        totalInputTokens += response.input_tokens;
-        totalOutputTokens += response.output_tokens;
+      const results = parseResponse(response.content);
 
-        const results = parseResponse(response.content);
-
-        // Merge results into examples
-        for (const result of results) {
-          if (examples[result.id]) {
-            examples[result.id].translation = result.translation;
-            examples[result.id].annotations = result.annotations;
-          }
+      // Merge results into examples
+      for (const result of results) {
+        if (examples[result.id]) {
+          examples[result.id].translation = result.translation;
+          examples[result.id].annotations = result.annotations;
         }
-
-        translated += results.length;
-        process.stdout.write(
-          `  Batch ${i + 1}/${batches.length}: translated ${results.length} examples [${elapsed}s]\n`,
-        );
-
-        // Write after each batch for crash safety
-        const sorted = {};
-        for (const key of Object.keys(examples).sort()) {
-          sorted[key] = examples[key];
-        }
-        writeFileSync(EXAMPLES_FILE, JSON.stringify(sorted, null, 2));
-
-        break; // Success, exit retry loop
-      } catch (err) {
-        retries++;
-        if (retries >= maxRetries) {
-          console.error(
-            `  Batch ${i + 1}/${batches.length}: FAILED after ${maxRetries} retries: ${err.message}`,
-          );
-          errors += batch.length;
-          break;
-        }
-        const delay = Math.pow(4, retries) * 1000; // 4s, 16s
-        console.log(
-          `  Batch ${i + 1}: retry ${retries}/${maxRetries} in ${delay / 1000}s (${err.message})`,
-        );
-        await new Promise((r) => setTimeout(r, delay));
       }
+
+      translated += results.length;
+      process.stdout.write(
+        `  Batch ${i + 1}/${batches.length}: translated ${results.length} examples [${elapsed}s]\n`,
+      );
+
+      // Write after each batch for crash safety
+      const sorted = {};
+      for (const key of Object.keys(examples).sort()) {
+        sorted[key] = examples[key];
+      }
+      writeFileSync(EXAMPLES_FILE, JSON.stringify(sorted, null, 2));
+    } catch (err) {
+      console.error(
+        `  Batch ${i + 1}/${batches.length}: FAILED after retries: ${err.message}`,
+      );
+      errors += batch.length;
     }
 
     // Rate limit: 200ms between batches
@@ -365,23 +275,29 @@ async function main() {
   }
 
   // Cost estimate
-  let costEstimate;
-  if (PROVIDER === "openai") {
-    costEstimate =
-      (totalInputTokens * 0.15) / 1_000_000 +
-      (totalOutputTokens * 0.6) / 1_000_000;
-  } else {
-    costEstimate =
-      (totalInputTokens * 0.8) / 1_000_000 +
-      (totalOutputTokens * 4.0) / 1_000_000;
-  }
+  if (!isLocalProvider(PROVIDER)) {
+    let costEstimate;
+    if (PROVIDER === "openai") {
+      costEstimate =
+        (totalInputTokens * 0.15) / 1_000_000 +
+        (totalOutputTokens * 0.6) / 1_000_000;
+    } else {
+      costEstimate =
+        (totalInputTokens * 0.8) / 1_000_000 +
+        (totalOutputTokens * 4.0) / 1_000_000;
+    }
 
-  console.log(
-    `\nDone. Translated ${translated} examples.${errors > 0 ? ` ${errors} failed.` : ""}`,
-  );
-  console.log(
-    `Tokens: ${totalInputTokens} input + ${totalOutputTokens} output. Estimated cost: $${costEstimate.toFixed(3)}`,
-  );
+    console.log(
+      `\nDone. Translated ${translated} examples.${errors > 0 ? ` ${errors} failed.` : ""}`,
+    );
+    console.log(
+      `Tokens: ${totalInputTokens} input + ${totalOutputTokens} output. Estimated cost: $${costEstimate.toFixed(3)}`,
+    );
+  } else {
+    console.log(
+      `\nDone. Translated ${translated} examples.${errors > 0 ? ` ${errors} failed.` : ""}`,
+    );
+  }
 }
 
 main().catch((err) => {

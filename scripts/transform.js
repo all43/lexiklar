@@ -106,8 +106,57 @@ function collectExample(text, translation, lemma) {
 // Shared parsers
 // ============================================================
 
+/**
+ * Build a mapping from Wiktionary sense_index → our 1-based output position.
+ * Only counts senses that survive the form_of/alt_of filter.
+ */
+function buildSenseIndexMap(rawSenses) {
+  const map = {};
+  let outputIdx = 1;
+  for (const s of rawSenses) {
+    if (s.form_of?.length || s.alt_of?.length) continue;
+    if (s.sense_index) {
+      map[s.sense_index] = outputIdx;
+    }
+    outputIdx++;
+  }
+  return map;
+}
+
+/**
+ * Resolve Wiktionary cross-reference markup in gloss text to our reference tokens.
+ *
+ * Input patterns (from kaikki/wiktextract):
+ *   ^([1])                  → superscript sense ref (~1,048 in full dataset)
+ *   [N] (bare, in context)  → unter [2], Frucht von [1], in [1], etc. (~1,200 total)
+ *
+ * Output tokens:
+ *   [[^N]]  — superscript reference to sense N (1-based)
+ *   [[#N]]  — inline reference to sense N (1-based)
+ *
+ * Unmappable refs (pointing to filtered-out senses) are stripped.
+ */
+function resolveGlossRefs(gloss, senseIndexMap) {
+  return gloss
+    // ^([N]) → [[^mapped]] (superscript sense refs)
+    .replace(/\s*\^\(\[(\d+)\]\)/g, (_, n) => {
+      const mapped = senseIndexMap[n];
+      return mapped != null ? ` [[^${mapped}]]` : "";
+    })
+    // All remaining [N] → [[#mapped]] (covers unter [N], Frucht von [N], in [N], etc.)
+    .replace(/\[(\d+)\]/g, (_, n) => {
+      const mapped = senseIndexMap[n];
+      return mapped != null ? `[[#${mapped}]]` : "";
+    })
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
 function transformSenses(entry) {
-  return (entry.senses || [])
+  const rawSenses = entry.senses || [];
+  const senseIndexMap = buildSenseIndexMap(rawSenses);
+
+  return rawSenses
     .filter((s) => !s.form_of?.length && !s.alt_of?.length)
     .map((s) => {
       const exampleIds = (s.examples || [])
@@ -122,7 +171,8 @@ function transformSenses(entry) {
 
       // Use the most specific gloss (last in array), or first if only one
       const glosses = s.glosses || [];
-      const gloss = glosses[glosses.length - 1] || glosses[0] || "";
+      const rawGloss = glosses[glosses.length - 1] || glosses[0] || "";
+      const gloss = resolveGlossRefs(rawGloss, senseIndexMap);
 
       return {
         gloss,

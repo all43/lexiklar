@@ -30,10 +30,14 @@
         <f7-list-item
           v-for="(sense, idx) in word.senses"
           :key="idx"
+          :id="`sense-${idx + 1}`"
           :header="`${idx + 1}.`"
-          :title="sense.gloss"
           :footer="sense.gloss_en || ''"
-        />
+        >
+          <template #title>
+            <GlossText :gloss="sense.gloss" @sense-ref="scrollToSense" />
+          </template>
+        </f7-list-item>
       </f7-list>
 
       <!-- Grammar placeholder -->
@@ -50,7 +54,10 @@
 </template>
 
 <script>
+import GlossText from "../components/GlossText.vue";
+
 export default {
+  components: { GlossText },
   props: {
     f7route: Object,
   },
@@ -67,6 +74,15 @@ export default {
       if (this.word.pos === "verb") return "orange";
       if (this.word.pos === "adjective") return "green";
       return "gray";
+    },
+  },
+  methods: {
+    scrollToSense(senseNumber) {
+      const el = document.getElementById(`sense-${senseNumber}`);
+      if (!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.classList.add("sense-highlight");
+      setTimeout(() => el.classList.remove("sense-highlight"), 1500);
     },
   },
   async mounted() {

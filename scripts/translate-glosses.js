@@ -20,6 +20,8 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { callLLM, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider } from "./lib/llm.js";
+import { stripReferences } from "./lib/references.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -32,16 +34,7 @@ const WORDS_DIR = join(ROOT, "data", "words");
 const args = process.argv.slice(2);
 const DRY_RUN = args.includes("--dry-run");
 const RESET = args.includes("--reset");
-const PROVIDER = (() => {
-  const idx = args.indexOf("--provider");
-  return idx >= 0 ? args[idx + 1] : "openai";
-})();
-const MODEL = (() => {
-  const idx = args.indexOf("--model");
-  return idx >= 0 ? args[idx + 1] : null;
-})();
-const OLLAMA_URL = process.env.OLLAMA_URL || "http://127.0.0.1:11434";
-const LM_STUDIO_URL = process.env.LM_STUDIO_URL || "http://127.0.0.1:1234";
+const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
 
 // ============================================================
 // Collect untranslated senses from all word files
@@ -82,10 +75,10 @@ function collectSenses() {
 }
 
 // ============================================================
-// LLM API calls
+// System prompt (exported for test harness)
 // ============================================================
 
-const SYSTEM_PROMPT = `You are a German-English translator for a bilingual dictionary.
+export const SYSTEM_PROMPT = `You are a German-English translator for a bilingual dictionary.
 
 You receive a German word with its German definition (gloss). Reply with ONLY the English equivalent — no explanation, no quotes, no punctuation.
 
@@ -107,116 +100,13 @@ Rules:
 - Do NOT add articles (a/the) unless essential
 - Reply with ONLY the translation, nothing else`;
 
-async function callOpenAI(userMessage) {
-  const apiKey = process.env.OPENAI_API_KEY;
-  const res = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: MODEL || "gpt-4o-mini",
-      temperature: 0.2,
-      max_tokens: 64,
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        { role: "user", content: userMessage },
-      ],
-    }),
-  });
-
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`OpenAI API error ${res.status}: ${body}`);
-  }
-
-  const data = await res.json();
-  const usage = data.usage || {};
-  return {
-    content: data.choices[0].message.content,
-    input_tokens: usage.prompt_tokens || 0,
-    output_tokens: usage.completion_tokens || 0,
-  };
-}
-
-async function callAnthropic(userMessage) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: MODEL || "claude-3-5-haiku-20241022",
-      max_tokens: 64,
-      temperature: 0.2,
-      system: SYSTEM_PROMPT,
-      messages: [{ role: "user", content: userMessage }],
-    }),
-  });
-
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`Anthropic API error ${res.status}: ${body}`);
-  }
-
-  const data = await res.json();
-  const usage = data.usage || {};
-  return {
-    content: data.content[0].text,
-    input_tokens: usage.input_tokens || 0,
-    output_tokens: usage.output_tokens || 0,
-  };
-}
-
-async function callLocal(userMessage, baseUrl, defaultModel) {
-  const model = MODEL || defaultModel;
-  const res = await fetch(`${baseUrl}/v1/chat/completions`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model,
-      temperature: 0.2,
-      max_tokens: 64,
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        { role: "user", content: userMessage },
-      ],
-    }),
-  });
-
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`${PROVIDER} API error ${res.status}: ${body}`);
-  }
-
-  const data = await res.json();
-  const usage = data.usage || {};
-  return {
-    content: data.choices[0].message.content,
-    input_tokens: usage.prompt_tokens || 0,
-    output_tokens: usage.completion_tokens || 0,
-  };
-}
-
-async function callLLM(userMessage) {
-  if (PROVIDER === "anthropic") return callAnthropic(userMessage);
-  if (PROVIDER === "ollama") return callLocal(userMessage, OLLAMA_URL, "gemma3:4b");
-  if (PROVIDER === "lm-studio") return callLocal(userMessage, LM_STUDIO_URL, "default");
-  return callOpenAI(userMessage);
-}
-
 // ============================================================
 // Build prompt and parse response (single item)
 // ============================================================
 
 function buildUserPrompt(item) {
-  return `word="${item.word}", pos="${item.pos}", gloss="${item.gloss}"`;
+  const cleanGloss = stripReferences(item.gloss);
+  return `word="${item.word}", pos="${item.pos}", gloss="${cleanGloss}"`;
 }
 
 function parseResponse(content) {
@@ -257,16 +147,10 @@ function writeTranslation(item, translation) {
 
 async function main() {
   // Check API key (not needed for local providers)
-  const isLocal = PROVIDER === "ollama" || PROVIDER === "lm-studio";
-  if (!isLocal && !DRY_RUN) {
-    const apiKey =
-      PROVIDER === "anthropic"
-        ? process.env.ANTHROPIC_API_KEY
-        : process.env.OPENAI_API_KEY;
-
+  if (!isLocalProvider(PROVIDER) && !DRY_RUN) {
+    const apiKey = getApiKey(PROVIDER);
     if (!apiKey) {
-      const keyName =
-        PROVIDER === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
+      const keyName = PROVIDER === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
       console.log(
         `No ${keyName} found. Skipping gloss translation. Set the env var to enable, or use --provider ollama for local.`,
       );
@@ -319,44 +203,34 @@ async function main() {
   let totalOutputTokens = 0;
   let errors = 0;
   const startAll = Date.now();
+  const llmOptions = { provider: PROVIDER, model: MODEL, maxTokens: 64, temperature: 0.2 };
 
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
     const userPrompt = buildUserPrompt(item);
 
-    let retries = 0;
-    const maxRetries = 3;
-    let success = false;
+    try {
+      const response = await retryWithBackoff(
+        () => callLLM(SYSTEM_PROMPT, userPrompt, llmOptions),
+        3, 1000,
+      );
+      totalInputTokens += response.input_tokens;
+      totalOutputTokens += response.output_tokens;
 
-    while (retries < maxRetries) {
-      try {
-        const response = await callLLM(userPrompt);
-        totalInputTokens += response.input_tokens;
-        totalOutputTokens += response.output_tokens;
+      const translation = parseResponse(response.content);
+      writeTranslation(item, translation);
+      translated++;
 
-        const translation = parseResponse(response.content);
-        writeTranslation(item, translation);
-        translated++;
-        success = true;
-
-        // Progress: print every 10 items or on first/last
-        if (i === 0 || (i + 1) % 10 === 0 || i === items.length - 1) {
-          const elapsed = ((Date.now() - startAll) / 1000).toFixed(0);
-          process.stdout.write(
-            `  [${i + 1}/${items.length}] ${item.word}: "${translation}" (${elapsed}s)\n`,
-          );
-        }
-
-        break;
-      } catch (err) {
-        retries++;
-        if (retries >= maxRetries) {
-          console.error(`  [${i + 1}/${items.length}] FAILED: ${item.word} — ${err.message}`);
-          errors++;
-          break;
-        }
-        await new Promise((r) => setTimeout(r, 1000 * retries));
+      // Progress: print every 10 items or on first/last
+      if (i === 0 || (i + 1) % 10 === 0 || i === items.length - 1) {
+        const elapsed = ((Date.now() - startAll) / 1000).toFixed(0);
+        process.stdout.write(
+          `  [${i + 1}/${items.length}] ${item.word}: "${translation}" (${elapsed}s)\n`,
+        );
       }
+    } catch (err) {
+      console.error(`  [${i + 1}/${items.length}] FAILED: ${item.word} — ${err.message}`);
+      errors++;
     }
 
     // Small delay between calls for local models (avoid hammering)
@@ -374,7 +248,7 @@ async function main() {
   );
 
   // Cost estimate (not applicable for local models)
-  if (!isLocal) {
+  if (!isLocalProvider(PROVIDER)) {
     let costEstimate;
     if (PROVIDER === "openai") {
       costEstimate =
@@ -389,7 +263,10 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error("Gloss translation failed:", err);
-  process.exit(1);
-});
+// Only run when executed directly (not when imported by test harness)
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main().catch((err) => {
+    console.error("Gloss translation failed:", err);
+    process.exit(1);
+  });
+}

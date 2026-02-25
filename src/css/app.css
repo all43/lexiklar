@@ -13,3 +13,24 @@
   font-family: "Lucida Sans Unicode", "DejaVu Sans", sans-serif;
   opacity: 0.7;
 }
+
+/* Sense cross-reference links */
+.sense-ref {
+  color: var(--f7-theme-color);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  cursor: pointer;
+}
+.sense-ref--super sup {
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+/* Brief highlight when scrolling to a referenced sense */
+.sense-highlight {
+  animation: sense-flash 1.5s ease-out;
+}
+@keyframes sense-flash {
+  0% { background-color: var(--f7-theme-color-rgb, rgba(33, 150, 243, 0.2)); }
+  100% { background-color: transparent; }
+}

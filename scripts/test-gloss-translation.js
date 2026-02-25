@@ -9,15 +9,14 @@
  * Usage:
  *   node scripts/test-gloss-translation.js --provider ollama
  *   node scripts/test-gloss-translation.js --provider lm-studio --model gemma3:4b
- *   node scripts/test-gloss-translation.js --url http://localhost:1234/v1 --model my-model
  *   node scripts/test-gloss-translation.js --provider ollama --show-prompt
  *   node scripts/test-gloss-translation.js --provider ollama --show-response
  *
- * Providers (shortcuts for --url):
- *   ollama      → http://127.0.0.1:11434/v1
- *   lm-studio   → http://127.0.0.1:1234/v1
- *   openai      → https://api.openai.com/v1  (requires OPENAI_API_KEY)
- *   anthropic   → Anthropic messages API      (requires ANTHROPIC_API_KEY)
+ * Providers:
+ *   ollama      → http://127.0.0.1:11434  (default)
+ *   lm-studio   → http://127.0.0.1:1234
+ *   openai      → api.openai.com  (requires OPENAI_API_KEY)
+ *   anthropic   → api.anthropic.com (requires ANTHROPIC_API_KEY)
  *
  * Flags:
  *   --model <name>      Model to use (default: provider-dependent)
@@ -25,12 +24,8 @@
  *   --show-response     Print the raw model response alongside results
  */
 
-import { readFileSync } from "fs";
-import { resolve, dirname } from "path";
-import { fileURLToPath } from "url";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = resolve(__dirname, "..");
+import { callLLM, parseProviderArgs, getDefaultModel } from "./lib/llm.js";
+import { SYSTEM_PROMPT } from "./translate-glosses.js";
 
 // ============================================================
 // CLI args
@@ -40,14 +35,10 @@ const args = process.argv.slice(2);
 function flag(name) {
   return args.includes(`--${name}`);
 }
-function opt(name, fallback = null) {
-  const idx = args.indexOf(`--${name}`);
-  return idx !== -1 && idx + 1 < args.length ? args[idx + 1] : fallback;
-}
 
-const PROVIDER = opt("provider", "ollama");
-const MODEL = opt("model");
-const CUSTOM_URL = opt("url");
+const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
+// Default to ollama for test harness (not openai like the translation script)
+const EFFECTIVE_PROVIDER = args.includes("--provider") ? PROVIDER : "ollama";
 const SHOW_PROMPT = flag("show-prompt");
 const SHOW_RESPONSE = flag("show-response");
 
@@ -218,129 +209,11 @@ const TEST_CASES = [
 ];
 
 // ============================================================
-// System prompt — read from translate-glosses.js to stay in sync
-// ============================================================
-
-function readSystemPrompt() {
-  const src = readFileSync(resolve(ROOT, "scripts/translate-glosses.js"), "utf-8");
-  const match = src.match(/const SYSTEM_PROMPT = `([\s\S]*?)`;/);
-  if (match) return match[1];
-  console.warn("Warning: could not extract SYSTEM_PROMPT from translate-glosses.js, using fallback");
-  return "You are a German-English dictionary translator. Reply with ONLY the English word.";
-}
-
-const SYSTEM_PROMPT = readSystemPrompt();
-
-// ============================================================
 // Build user prompt (one item)
 // ============================================================
 
 function buildUserPrompt(testCase) {
   return `word="${testCase.word}", pos="${testCase.pos}", gloss="${testCase.gloss}"`;
-}
-
-// ============================================================
-// API call (OpenAI-compatible for all local providers)
-// ============================================================
-
-function getBaseUrl() {
-  if (CUSTOM_URL) return CUSTOM_URL;
-  switch (PROVIDER) {
-    case "ollama":
-      return process.env.OLLAMA_URL
-        ? process.env.OLLAMA_URL + "/v1"
-        : "http://127.0.0.1:11434/v1";
-    case "lm-studio":
-      return process.env.LM_STUDIO_URL || "http://127.0.0.1:1234/v1";
-    case "openai":
-      return "https://api.openai.com/v1";
-    default:
-      return "http://127.0.0.1:11434/v1";
-  }
-}
-
-function getDefaultModel() {
-  switch (PROVIDER) {
-    case "ollama":
-      return "gemma3:4b";
-    case "lm-studio":
-      return "default";
-    case "openai":
-      return "gpt-4o-mini";
-    case "anthropic":
-      return "claude-3-5-haiku-latest";
-    default:
-      return "default";
-  }
-}
-
-async function callAnthropic(systemPrompt, userMessage) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    console.error("ANTHROPIC_API_KEY not set");
-    process.exit(1);
-  }
-
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: MODEL || "claude-3-5-haiku-latest",
-      max_tokens: 64,
-      temperature: 0.2,
-      system: systemPrompt,
-      messages: [{ role: "user", content: userMessage }],
-    }),
-  });
-
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`Anthropic ${res.status}: ${body}`);
-  }
-
-  const data = await res.json();
-  return data.content[0].text;
-}
-
-async function callOpenAICompatible(systemPrompt, userMessage) {
-  const baseUrl = getBaseUrl();
-  const model = MODEL || getDefaultModel();
-
-  const headers = { "Content-Type": "application/json" };
-  if (PROVIDER === "openai" && process.env.OPENAI_API_KEY) {
-    headers["Authorization"] = `Bearer ${process.env.OPENAI_API_KEY}`;
-  }
-
-  const res = await fetch(`${baseUrl}/chat/completions`, {
-    method: "POST",
-    headers,
-    body: JSON.stringify({
-      model,
-      temperature: 0.2,
-      max_tokens: 64,
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userMessage },
-      ],
-    }),
-  });
-
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`${PROVIDER} ${res.status}: ${body}`);
-  }
-
-  const data = await res.json();
-  return data.choices[0].message.content;
-}
-
-async function callLLM(systemPrompt, userMessage) {
-  if (PROVIDER === "anthropic") return callAnthropic(systemPrompt, userMessage);
-  return callOpenAICompatible(systemPrompt, userMessage);
 }
 
 // ============================================================
@@ -396,12 +269,10 @@ function matches(actual, acceptList) {
 // ============================================================
 
 async function main() {
-  const model = MODEL || getDefaultModel();
-  const baseUrl = getBaseUrl();
+  const model = MODEL || getDefaultModel(EFFECTIVE_PROVIDER);
 
-  console.log(`Provider: ${PROVIDER}`);
+  console.log(`Provider: ${EFFECTIVE_PROVIDER}`);
   console.log(`Model: ${model}`);
-  console.log(`URL: ${PROVIDER === "anthropic" ? "api.anthropic.com" : baseUrl}`);
   console.log(`Test cases: ${TEST_CASES.length}`);
   console.log();
 
@@ -424,6 +295,7 @@ async function main() {
   let passed = 0;
   let failed = 0;
   const failures = [];
+  const llmOptions = { provider: EFFECTIVE_PROVIDER, model: MODEL, maxTokens: 64, temperature: 0.2 };
 
   for (let i = 0; i < TEST_CASES.length; i++) {
     const tc = TEST_CASES[i];
@@ -431,11 +303,11 @@ async function main() {
 
     let actual;
     try {
-      const raw = await callLLM(SYSTEM_PROMPT, userPrompt);
-      actual = parseResponse(raw);
+      const response = await callLLM(SYSTEM_PROMPT, userPrompt, llmOptions);
+      actual = parseResponse(response.content);
 
       if (SHOW_RESPONSE) {
-        process.stdout.write(`  [${i + 1}] raw: "${raw.trim()}"\n`);
+        process.stdout.write(`  [${i + 1}] raw: "${response.content.trim()}"\n`);
       }
     } catch (err) {
       actual = `<<ERROR: ${err.message}>>`;
