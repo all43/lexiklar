@@ -2,18 +2,19 @@
   <f7-page name="search">
     <f7-navbar title="Lexiklar" />
     <f7-searchbar
-      search-container=".search-results"
-      search-in=".item-title"
-      :disable-button="true"
-      placeholder="Wort suchen..."
+      custom-search
+      :disable-button="false"
+      placeholder="Wort oder Bedeutung suchen..."
+      @searchbar:search="onSearch"
+      @searchbar:clear="onClear"
     />
 
-    <f7-list class="search-results searchbar-found" media-list>
+    <f7-list v-if="filteredWords.length > 0" class="search-results" media-list>
       <f7-list-item
-        v-for="word in sampleWords"
-        :key="word.file"
+        v-for="word in filteredWords"
+        :key="word.posDir + '/' + word.file"
         :title="word.lemma"
-        :subtitle="word.glossEn || ''"
+        :subtitle="word.glossEn[0] || ''"
         :after="word.pos"
         :badge="word.gender || ''"
         :badge-color="genderColor(word.gender)"
@@ -21,8 +22,12 @@
       />
     </f7-list>
 
-    <f7-block class="searchbar-not-found">
+    <f7-block v-else-if="searchQuery && !loading">
       <p>No words found.</p>
+    </f7-block>
+
+    <f7-block v-if="loading" class="text-align-center">
+      <f7-preloader />
     </f7-block>
   </f7-page>
 </template>
@@ -31,50 +36,53 @@
 export default {
   data() {
     return {
-      // Hardcoded sample data for scaffold verification.
-      // Will be replaced by SQLite search in a future step.
-      sampleWords: [
-        { lemma: "Arzt", pos: "NOUN", gender: "M", posDir: "nouns", file: "Arzt", glossEn: null },
-        { lemma: "Tisch", pos: "NOUN", gender: "M", posDir: "nouns", file: "Tisch", glossEn: null },
-        { lemma: "Bank", pos: "NOUN", gender: "F", posDir: "nouns", file: "Bank_geldinstitut", glossEn: null },
-        { lemma: "Bank", pos: "NOUN", gender: "F", posDir: "nouns", file: "Bank_sitz", glossEn: null },
-        { lemma: "Hoffnung", pos: "NOUN", gender: "F", posDir: "nouns", file: "Hoffnung", glossEn: null },
-        { lemma: "Kind", pos: "NOUN", gender: "N", posDir: "nouns", file: "Kind", glossEn: null },
-        { lemma: "Mädchen", pos: "NOUN", gender: "N", posDir: "nouns", file: "Mädchen", glossEn: null },
-        { lemma: "laufen", pos: "VERB", gender: null, posDir: "verbs", file: "laufen", glossEn: null },
-        { lemma: "ankommen", pos: "VERB", gender: null, posDir: "verbs", file: "ankommen", glossEn: null },
-        { lemma: "schnell", pos: "ADJ", gender: null, posDir: "adjectives", file: "schnell", glossEn: null },
-        { lemma: "gut", pos: "ADJ", gender: null, posDir: "adjectives", file: "gut", glossEn: null },
-      ],
+      allWords: [],
+      searchQuery: "",
+      loading: true,
     };
   },
-  mounted() {
-    this.loadGlosses();
+  computed: {
+    filteredWords() {
+      if (!this.searchQuery.trim()) return this.allWords;
+      const q = this.searchQuery.toLowerCase().trim();
+      return this.allWords.filter((w) => {
+        // German: substring match on lemma (handles partial German input)
+        if (w.lemma.toLowerCase().includes(q)) return true;
+        // English: word-prefix match so "table" matches "table" but not "acceptable"
+        return w.glossEn.some((g) =>
+          g
+            .toLowerCase()
+            .split(/[\s,();/]+/)
+            .some((word) => word.startsWith(q))
+        );
+      });
+    },
   },
   methods: {
+    onSearch(searchbar, query) {
+      this.searchQuery = query || "";
+    },
+    onClear() {
+      this.searchQuery = "";
+    },
     genderColor(gender) {
       if (gender === "M") return "blue";
       if (gender === "F") return "pink";
       if (gender === "N") return "green";
       return "";
     },
-    async loadGlosses() {
-      const fetches = this.sampleWords.map(async (word) => {
-        try {
-          const res = await fetch(`/data/words/${word.posDir}/${word.file}.json`, { cache: "no-store" });
-          if (!res.ok) return;
-          const data = await res.json();
-          // Use first sense's gloss_en as the primary translation
-          const firstGloss = (data.senses || []).find((s) => s.gloss_en);
-          if (firstGloss) {
-            word.glossEn = firstGloss.gloss_en;
-          }
-        } catch {
-          // Silently skip — gloss just won't appear
-        }
+  },
+  async mounted() {
+    try {
+      const res = await fetch("/data/search-manifest.json", {
+        cache: "default",
       });
-      await Promise.all(fetches);
-    },
+      if (res.ok) this.allWords = await res.json();
+    } catch (err) {
+      console.error("Failed to load search manifest:", err);
+    } finally {
+      this.loading = false;
+    }
   },
 };
 </script>

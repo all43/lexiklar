@@ -25,4 +25,8 @@ if (existsSync(join(SRC, "examples.json"))) {
   cpSync(join(SRC, "examples.json"), join(DEST, "examples.json"));
 }
 
+if (existsSync(join(SRC, "search-manifest.json"))) {
+  cpSync(join(SRC, "search-manifest.json"), join(DEST, "search-manifest.json"));
+}
+
 console.log("Copied data/ → public/data/");
