@@ -11,13 +11,13 @@
       <a
         v-else-if="seg.type === 'inline_ref'"
         href="#"
-        class="sense-ref sense-ref--inline"
+        :class="['sense-ref', seg.hasDisplayText ? 'sense-ref--word' : 'sense-ref--inline']"
         @click.prevent="$emit('sense-ref', seg.senseNumber)"
       >{{ seg.text }}</a>
       <a
         v-else-if="seg.type === 'cross_ref'"
         href="#"
-        class="sense-ref sense-ref--cross"
+        :class="['sense-ref', seg.hasDisplayText ? 'sense-ref--word' : 'sense-ref--cross']"
         @click.prevent="$emit('cross-ref', seg.filePath, seg.senseNumber)"
       >{{ seg.text }}</a>
     </template>

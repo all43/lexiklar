@@ -28,7 +28,6 @@
       <f7-block-title>Meanings</f7-block-title>
       <f7-list>
         <template v-for="(sense, idx) in word.senses" :key="idx">
-          <!-- Sense row -->
           <f7-list-item
             :id="`sense-${idx + 1}`"
             :header="`${idx + 1}.`"
@@ -76,6 +75,39 @@
     <f7-block v-else>
       <p>Word not found.</p>
     </f7-block>
+
+    <!-- Word preview sheet — slides up on cross-entry ref tap -->
+    <f7-sheet
+      class="word-preview-sheet"
+      :opened="preview !== null"
+      backdrop
+      swipe-to-close
+      @sheet:closed="preview = null"
+    >
+      <div class="swipe-handler" />
+      <div v-if="preview" class="word-preview-content">
+        <div class="word-preview-header">
+          <div class="word-preview-title">
+            <span
+              v-if="preview.article"
+              :class="`gender-${preview.gender?.toLowerCase()}`"
+            >{{ preview.article }}</span>
+            <strong>{{ preview.word }}</strong>
+          </div>
+          <f7-badge :color="previewPosColor">{{ preview.pos }}</f7-badge>
+        </div>
+        <div class="word-preview-sense">
+          <span class="word-preview-sense-num">{{ preview.senseNumber }}.</span>
+          <span>{{ preview.senseGloss }}</span>
+        </div>
+        <div v-if="preview.senseGlossEn" class="word-preview-trans">
+          {{ preview.senseGlossEn }}
+        </div>
+        <f7-button fill large class="word-preview-btn" @click="navigateToPreview">
+          Open word card
+        </f7-button>
+      </div>
+    </f7-sheet>
   </f7-page>
 </template>
 
@@ -93,18 +125,25 @@ export default {
       word: null,
       examples: {},
       loading: true,
+      preview: null,
     };
   },
   computed: {
     posColor() {
-      if (!this.word) return "gray";
-      if (this.word.pos === "noun") return "blue";
-      if (this.word.pos === "verb") return "orange";
-      if (this.word.pos === "adjective") return "green";
-      return "gray";
+      return this.getPosColor(this.word?.pos);
+    },
+    previewPosColor() {
+      return this.getPosColor(this.preview?.pos);
     },
   },
   methods: {
+    getPosColor(pos) {
+      if (pos === "noun") return "blue";
+      if (pos === "verb") return "orange";
+      if (pos === "adjective") return "green";
+      return "gray";
+    },
+
     scrollToSense(senseNumber) {
       const el = document.getElementById(`sense-${senseNumber}`);
       if (!el) return;
@@ -113,12 +152,35 @@ export default {
       setTimeout(() => el.classList.remove("sense-highlight"), 1500);
     },
 
-    handleCrossRef(filePath, senseNumber) {
-      // filePath format: "nouns/Tisch" → /word/nouns/Tisch/
+    async handleCrossRef(filePath, senseNumber) {
+      try {
+        const resp = await fetch(`/data/words/${filePath}.json`, { cache: "default" });
+        if (!resp.ok) throw new Error("Not found");
+        const data = await resp.json();
+        const senseIdx = (senseNumber || 1) - 1;
+        const sense = data.senses?.[senseIdx];
+        this.preview = {
+          filePath,
+          senseNumber: senseNumber || 1,
+          word: data.word,
+          article: data.article || null,
+          gender: data.gender || null,
+          pos: data.pos,
+          senseGloss: sense?.gloss || "",
+          senseGlossEn: sense?.gloss_en || null,
+        };
+      } catch {
+        // Fallback: navigate directly if preview data can't be fetched
+        const url = `/word/${filePath}/`;
+        this.f7router.navigate(senseNumber ? `${url}?sense=${senseNumber}` : url);
+      }
+    },
+
+    navigateToPreview() {
+      const { filePath, senseNumber } = this.preview;
+      this.preview = null;
       const url = `/word/${filePath}/`;
-      const fullUrl = senseNumber ? `${url}?sense=${senseNumber}` : url;
-      // $f7router is injected by F7 on route components; fall back to current view router
-      this.f7router.navigate(fullUrl);
+      this.f7router.navigate(senseNumber ? `${url}?sense=${senseNumber}` : url);
     },
 
     getSenseExamples(sense) {

@@ -47,6 +47,58 @@
   margin-top: 2px;
 }
 
+/* Cross-entry ref where the word itself is the link (has display text) */
+.sense-ref--word {
+  color: var(--f7-theme-color);
+  border-bottom: 1px dotted var(--f7-theme-color);
+  text-decoration: none;
+}
+
+/* Word preview sheet */
+.word-preview-sheet {
+  height: auto;
+}
+.word-preview-sheet .sheet-modal-inner {
+  padding: 0 16px env(safe-area-inset-bottom, 16px);
+}
+.swipe-handler {
+  width: 36px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  margin: 10px auto 16px;
+}
+.word-preview-content {
+  padding: 0 0 24px;
+}
+.word-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.word-preview-title {
+  font-size: 1.3em;
+}
+.word-preview-sense {
+  line-height: 1.45;
+  margin-bottom: 4px;
+  font-size: 0.95em;
+}
+.word-preview-sense-num {
+  color: var(--f7-theme-color);
+  font-weight: 600;
+  margin-right: 4px;
+}
+.word-preview-trans {
+  font-size: 0.82em;
+  color: var(--f7-list-item-footer-text-color);
+  margin-bottom: 14px;
+}
+.word-preview-btn {
+  margin-top: 12px;
+}
+
 /* Brief highlight when scrolling to a referenced sense */
 .sense-highlight {
   animation: sense-flash 1.5s ease-out;

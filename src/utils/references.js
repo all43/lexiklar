@@ -15,8 +15,14 @@
  * @property {string} [filePath] - relative path for cross-entry refs
  */
 
-// Matches all reference token forms: [[^N]], [[#N]], [[path#N]]
-const REF_PATTERN = /\[\[(?:(\^)|(?:([^#\]]+))?#)?(\d+)\]\]/g;
+// Matches all reference token forms:
+//   [[^N]]              superscript ref to sense N (same card)
+//   [[#N]]              inline ref to sense N (same card)
+//   [[path#N]]          cross-entry ref without display text
+//   [[display|^N]]      superscript ref with display text
+//   [[display|#N]]      inline ref with display text
+//   [[display|path#N]]  cross-entry ref WITH display text (the clickable word itself)
+const REF_PATTERN = /\[\[(?:([^\]|]+)\|)?(?:(\^)|(?:([^#\]]+))?#)?(\d+)\]\]/g;
 
 /**
  * Parse a gloss string into an array of segments for rendering.
@@ -32,16 +38,33 @@ export function parseReferences(gloss) {
       segments.push({ type: "text", text: gloss.slice(lastIndex, match.index) });
     }
 
-    const isSuperscript = match[1] === "^";
-    const filePath = match[2] || null;
-    const senseNumber = parseInt(match[3], 10);
+    const displayText = match[1] || null;
+    const isSuperscript = match[2] === "^";
+    const filePath = match[3] || null;
+    const senseNumber = parseInt(match[4], 10);
 
     if (filePath) {
-      segments.push({ type: "cross_ref", text: `[${senseNumber}]`, senseNumber, filePath });
+      segments.push({
+        type: "cross_ref",
+        text: displayText || `[${senseNumber}]`,
+        senseNumber,
+        filePath,
+        hasDisplayText: !!displayText,
+      });
     } else if (isSuperscript) {
-      segments.push({ type: "superscript_ref", text: `${senseNumber}`, senseNumber });
+      segments.push({
+        type: "superscript_ref",
+        text: displayText || `${senseNumber}`,
+        senseNumber,
+        hasDisplayText: !!displayText,
+      });
     } else {
-      segments.push({ type: "inline_ref", text: `[${senseNumber}]`, senseNumber });
+      segments.push({
+        type: "inline_ref",
+        text: displayText || `[${senseNumber}]`,
+        senseNumber,
+        hasDisplayText: !!displayText,
+      });
     }
 
     lastIndex = match.index + match[0].length;
