@@ -34,6 +34,7 @@ export default {
       // Hardcoded sample data for scaffold verification.
       // Will be replaced by SQLite search in a future step.
       sampleWords: [
+        { lemma: "Arzt", pos: "NOUN", gender: "M", posDir: "nouns", file: "Arzt", glossEn: null },
         { lemma: "Tisch", pos: "NOUN", gender: "M", posDir: "nouns", file: "Tisch", glossEn: null },
         { lemma: "Bank", pos: "NOUN", gender: "F", posDir: "nouns", file: "Bank_geldinstitut", glossEn: null },
         { lemma: "Bank", pos: "NOUN", gender: "F", posDir: "nouns", file: "Bank_sitz", glossEn: null },

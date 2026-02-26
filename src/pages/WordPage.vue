@@ -27,17 +27,43 @@
       <!-- Senses -->
       <f7-block-title>Meanings</f7-block-title>
       <f7-list>
-        <f7-list-item
-          v-for="(sense, idx) in word.senses"
-          :key="idx"
-          :id="`sense-${idx + 1}`"
-          :header="`${idx + 1}.`"
-          :footer="sense.gloss_en || ''"
-        >
-          <template #title>
-            <GlossText :gloss="sense.gloss" @sense-ref="scrollToSense" />
-          </template>
-        </f7-list-item>
+        <template v-for="(sense, idx) in word.senses" :key="idx">
+          <!-- Sense row -->
+          <f7-list-item
+            :id="`sense-${idx + 1}`"
+            :header="`${idx + 1}.`"
+            :footer="sense.gloss_en || ''"
+          >
+            <template #title>
+              <GlossText
+                :gloss="sense.gloss"
+                @sense-ref="scrollToSense"
+                @cross-ref="handleCrossRef"
+              />
+            </template>
+          </f7-list-item>
+
+          <!-- Examples for this sense -->
+          <li
+            v-for="ex in getSenseExamples(sense)"
+            :key="ex.id"
+            class="example-item"
+          >
+            <div class="item-content">
+              <div class="item-inner example-inner">
+                <GlossText
+                  :gloss="ex.text"
+                  @sense-ref="scrollToSense"
+                  @cross-ref="handleCrossRef"
+                  class="example-text"
+                />
+                <div v-if="ex.translation" class="example-translation">
+                  {{ ex.translation }}
+                </div>
+              </div>
+            </div>
+          </li>
+        </template>
       </f7-list>
 
       <!-- Grammar placeholder -->
@@ -60,10 +86,12 @@ export default {
   components: { GlossText },
   props: {
     f7route: Object,
+    f7router: Object,
   },
   data() {
     return {
       word: null,
+      examples: {},
       loading: true,
     };
   },
@@ -84,18 +112,44 @@ export default {
       el.classList.add("sense-highlight");
       setTimeout(() => el.classList.remove("sense-highlight"), 1500);
     },
+
+    handleCrossRef(filePath, senseNumber) {
+      // filePath format: "nouns/Tisch" → /word/nouns/Tisch/
+      const url = `/word/${filePath}/`;
+      const fullUrl = senseNumber ? `${url}?sense=${senseNumber}` : url;
+      // $f7router is injected by F7 on route components; fall back to current view router
+      this.f7router.navigate(fullUrl);
+    },
+
+    getSenseExamples(sense) {
+      if (!sense.example_ids || !sense.example_ids.length) return [];
+      return sense.example_ids
+        .map((id) => {
+          const ex = this.examples[id];
+          return ex ? { id, ...ex } : null;
+        })
+        .filter(Boolean);
+    },
   },
   async mounted() {
     const { pos, file } = this.f7route.params;
+    const targetSense = parseInt(this.f7route.query?.sense, 10) || null;
+
     try {
-      const resp = await fetch(`/data/words/${pos}/${file}.json`, { cache: "no-store" });
-      if (resp.ok) {
-        this.word = await resp.json();
-      }
+      const [wordResp, exResp] = await Promise.all([
+        fetch(`/data/words/${pos}/${file}.json`, { cache: "no-store" }),
+        fetch(`/data/examples.json`, { cache: "no-store" }),
+      ]);
+      if (wordResp.ok) this.word = await wordResp.json();
+      if (exResp.ok) this.examples = await exResp.json();
     } catch (err) {
       console.error("Failed to load word:", err);
     } finally {
       this.loading = false;
+      if (targetSense) {
+        await this.$nextTick();
+        this.scrollToSense(targetSense);
+      }
     }
   },
 };

@@ -26,6 +26,27 @@
   font-weight: 600;
 }
 
+/* Example sentences */
+.example-item {
+  padding-left: 28px;
+  opacity: 0.85;
+}
+.example-inner {
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 4px;
+  padding-bottom: 6px;
+}
+.example-text {
+  font-style: italic;
+  font-size: 0.88em;
+}
+.example-translation {
+  font-size: 0.8em;
+  color: var(--f7-list-item-footer-text-color);
+  margin-top: 2px;
+}
+
 /* Brief highlight when scrolling to a referenced sense */
 .sense-highlight {
   animation: sense-flash 1.5s ease-out;
