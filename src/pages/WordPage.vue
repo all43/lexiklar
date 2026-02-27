@@ -185,10 +185,27 @@ export default {
 
     getSenseExamples(sense) {
       if (!sense.example_ids || !sense.example_ids.length) return [];
+      const { pos, file } = this.f7route.params;
+      const currentPath = `${pos}/${file}`;
+
       return sense.example_ids
         .map((id) => {
           const ex = this.examples[id];
-          return ex ? { id, ...ex } : null;
+          if (!ex) return null;
+
+          // Prefer text_linked (with cross-refs) over plain text
+          let displayText = ex.text_linked || ex.text;
+
+          // Strip self-references: [[form|currentPath]] or [[form|currentPath#N]] → form
+          if (displayText.includes(`|${currentPath}`)) {
+            const escaped = currentPath.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+            displayText = displayText.replace(
+              new RegExp(`\\[\\[([^\\]|]+)\\|${escaped}(?:#\\d+)?\\]\\]`, "g"),
+              "$1",
+            );
+          }
+
+          return { id, text: displayText, translation: ex.translation };
         })
         .filter(Boolean);
     },

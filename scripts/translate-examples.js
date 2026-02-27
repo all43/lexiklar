@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider } from "./lib/llm.js";
+import { stripReferences } from "./lib/references.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -115,7 +116,7 @@ Output format:
 function buildUserPrompt(batch, disambig) {
   const items = batch.map(({ id, text }) => ({
     id,
-    text,
+    text: stripReferences(text),
   }));
 
   const prompt = {

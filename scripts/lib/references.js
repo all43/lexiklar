@@ -34,8 +34,8 @@ export function stripReferences(text) {
     .replace(/\s*\([^)]*?\[\[#\d+\]\][^)]*?\)/g, "")
     // bare [[#N]] inline refs without display text → strip
     .replace(/\[\[#\d+\]\]/g, "")
-    // [[path#N]] cross-entry refs without display text → strip
-    .replace(/\[\[[^|\]]+#\d+\]\]/g, "")
+    // [[path#N]] or [[path]] cross-entry refs without display text → strip
+    .replace(/\[\[[^|\]]+?(?:#\d+)?\]\]/g, "")
     .replace(/\s{2,}/g, " ")
     .trim();
 }
