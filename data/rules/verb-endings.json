@@ -1,0 +1,22 @@
+{
+  "description": "German verb conjugation endings by class. Person order: [ich, du, er, wir, ihr, sie]. Imperative: [du, ihr, Sie]. Exclamation marks are added by the computation function.",
+  "persons": ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"],
+  "imperative_persons": ["du", "ihr", "Sie"],
+  "present": ["e", "st", "t", "en", "t", "en"],
+  "subjunctive1": ["e", "est", "e", "en", "et", "en"],
+  "weak": {
+    "preterite": ["te", "test", "te", "ten", "tet", "ten"],
+    "subjunctive2": ["te", "test", "te", "ten", "tet", "ten"],
+    "imperative": ["e", "t", "en Sie"]
+  },
+  "strong": {
+    "preterite": ["", "st", "", "en", "t", "en"],
+    "subjunctive2": ["e", "est", "e", "en", "et", "en"],
+    "imperative": ["", "t", "en Sie"]
+  },
+  "mixed": {
+    "preterite": ["te", "test", "te", "ten", "tet", "ten"],
+    "subjunctive2": ["te", "test", "te", "ten", "tet", "ten"],
+    "imperative": ["", "t", "en Sie"]
+  }
+}

@@ -96,11 +96,17 @@
         </f7-list>
       </template>
 
-      <!-- Grammar placeholder -->
-      <f7-block-title>Grammar</f7-block-title>
-      <f7-block>
-        <p><em>Grammar tables coming soon.</em></p>
-      </f7-block>
+      <!-- Grammar -->
+      <template v-if="word.pos === 'verb'">
+        <f7-block-title>Conjugation</f7-block-title>
+        <VerbConjugation :verb="word" />
+      </template>
+      <template v-else>
+        <f7-block-title>Grammar</f7-block-title>
+        <f7-block>
+          <p><em>Grammar tables coming soon.</em></p>
+        </f7-block>
+      </template>
     </template>
 
     <f7-block v-else>
@@ -144,9 +150,10 @@
 
 <script>
 import GlossText from "../components/GlossText.vue";
+import VerbConjugation from "../components/VerbConjugation.vue";
 
 export default {
-  components: { GlossText },
+  components: { GlossText, VerbConjugation },
   props: {
     f7route: Object,
     f7router: Object,

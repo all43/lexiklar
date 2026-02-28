@@ -119,6 +119,69 @@
   margin-top: 2px;
 }
 
+/* Verb conjugation */
+.verb-conjugation {
+  padding: 0 16px;
+}
+.verb-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.verb-principal {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+.verb-principal-item {
+  flex: 1;
+  text-align: center;
+  padding: 6px 4px;
+  background: var(--f7-block-bg-color, #f4f4f4);
+  border-radius: 6px;
+}
+.verb-principal-label {
+  font-size: 0.65em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--f7-list-item-footer-text-color);
+  margin-bottom: 2px;
+}
+.verb-principal-form {
+  font-size: 0.92em;
+  font-weight: 600;
+}
+.verb-tabs {
+  margin-bottom: 12px;
+}
+.conj-tense-title {
+  font-size: 0.78em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--f7-theme-color);
+  margin: 10px 0 4px;
+}
+.conj-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+}
+.conj-table td {
+  padding: 4px 8px;
+  font-size: 0.9em;
+  border-bottom: 1px solid var(--f7-list-item-border-color, #e0e0e0);
+}
+.conj-person {
+  color: var(--f7-list-item-footer-text-color);
+  width: 80px;
+  white-space: nowrap;
+}
+.conj-form {
+  font-weight: 500;
+}
+
 /* Brief highlight when scrolling to a referenced sense */
 .sense-highlight {
   animation: sense-flash 1.5s ease-out;

@@ -21,10 +21,16 @@ const STATE_FILE = join(ROOT, "data", "raw", ".import-state.json");
 const SEED_FILE = join(ROOT, "config", "seed-words.json");
 
 import { POS_CONFIG, SUPPORTED_POS } from "./lib/pos.js";
+import { computeConjugation } from "../src/utils/verb-forms.js";
 
 // Load adjective endings rule for regularity check
 const ADJ_ENDINGS = JSON.parse(
   readFileSync(join(RULES_DIR, "adj-endings.json"), "utf-8"),
+);
+
+// Load verb endings rules for conjugation classification
+const VERB_ENDINGS = JSON.parse(
+  readFileSync(join(RULES_DIR, "verb-endings.json"), "utf-8"),
 );
 
 // Load noun gender rules for rule matching
@@ -542,16 +548,232 @@ function extractVerbConjugation(compact, sourced) {
   return conjugation;
 }
 
+// ============================================================
+// Verb classification and stem extraction
+// ============================================================
+
+/**
+ * Strip separable prefix from a conjugated form.
+ * "kam an" with prefix "an" → "kam"
+ */
+function stripSepPrefix(form, separable, prefix) {
+  if (!separable || !prefix) return form;
+  const suffix = " " + prefix;
+  if (form.endsWith(suffix)) return form.slice(0, -suffix.length);
+  return form;
+}
+
+/**
+ * Extract the present stem from the infinitive.
+ * For separable verbs, strips the prefix first (ankommen → komm).
+ * Handles -ern/-eln verbs: strip -n instead of -en.
+ */
+function extractPresentStem(word, separable, prefix) {
+  let inf = word;
+  if (separable && prefix) inf = inf.slice(prefix.length);
+  if (inf.endsWith("ern") || inf.endsWith("eln")) return inf.slice(0, -1);
+  if (inf.endsWith("en")) return inf.slice(0, -2);
+  if (inf.endsWith("n")) return inf.slice(0, -1);
+  return inf;
+}
+
+/**
+ * Classify a verb as weak, strong, mixed, or irregular.
+ * Based on the relationship between present stem and preterite ich form.
+ */
+function classifyVerb(conjugation, presentStem, separable, prefix) {
+  const pretIch = conjugation.preterite?.ich;
+  if (!pretIch) return "irregular";
+
+  const form = stripSepPrefix(pretIch, separable, prefix);
+
+  // Weak: preterite ich = presentStem + "te" (or "ete" for e-insertion stems)
+  if (form === presentStem + "te" || form === presentStem + "ete") {
+    return "weak";
+  }
+
+  // Mixed: preterite ich ends in "te" but stem differs from present
+  if (form.endsWith("te")) {
+    return "mixed";
+  }
+
+  // Strong: preterite ich is bare past stem (no -te ending)
+  return "strong";
+}
+
+/**
+ * Extract minimal stems from the full conjugation table.
+ * Only stores stems that differ from defaults to minimize storage.
+ */
+function extractStems(conjugation, cls, presentStem, separable, prefix) {
+  const stems = { present: presentStem };
+
+  if (cls === "weak") {
+    // Weak verbs derive everything from the present stem
+    return stems;
+  }
+
+  if (cls === "strong") {
+    // Past stem: preterite ich form as-is (zero ending for strong)
+    const pretIch = stripSepPrefix(conjugation.preterite?.ich || "", separable, prefix);
+    stems.past = pretIch;
+
+    // Present du/er stem: extract from er form (ending "t")
+    const erForm = stripSepPrefix(conjugation.present?.er || "", separable, prefix);
+    if (erForm.endsWith("t")) {
+      const candidate = erForm.slice(0, -1);
+      if (candidate !== presentStem) stems.present_du_er = candidate;
+    }
+
+    // Subj2 stem: subj2 ich minus "e" ending; only if differs from past
+    const subj2Ich = stripSepPrefix(conjugation.subjunctive2?.ich || "", separable, prefix);
+    if (subj2Ich.endsWith("e")) {
+      const candidate = subj2Ich.slice(0, -1);
+      if (candidate !== stems.past) stems.subj2 = candidate;
+    }
+
+    // Imperative du stem: strip "!" and sep prefix; only if differs from present
+    let impDu = (conjugation.imperative?.du || "").replace(/!$/, "");
+    impDu = stripSepPrefix(impDu, separable, prefix);
+    if (impDu && impDu !== presentStem) stems.imperative_du = impDu;
+
+    return stems;
+  }
+
+  if (cls === "mixed") {
+    // Past stem: preterite ich minus "te" (weak ending on changed stem)
+    const pretIch = stripSepPrefix(conjugation.preterite?.ich || "", separable, prefix);
+    if (pretIch.endsWith("te")) {
+      stems.past = pretIch.slice(0, -2);
+    } else {
+      stems.past = pretIch;
+    }
+
+    // Subj2 stem: subj2 ich minus "te"; only if differs from past
+    const subj2Ich = stripSepPrefix(conjugation.subjunctive2?.ich || "", separable, prefix);
+    if (subj2Ich.endsWith("te")) {
+      const candidate = subj2Ich.slice(0, -2);
+      if (candidate !== stems.past) stems.subj2 = candidate;
+    }
+
+    return stems;
+  }
+
+  return stems;
+}
+
+/**
+ * Validate computed conjugation against extracted Wiktionary forms.
+ * Only checks cells that exist in the extracted table.
+ * Returns { valid, mismatch? }.
+ */
+function validateConjugation(computed, extracted) {
+  const tenses = ["present", "preterite", "subjunctive1", "subjunctive2"];
+  for (const tense of tenses) {
+    for (const [person, form] of Object.entries(extracted[tense] || {})) {
+      if (form && computed[tense]?.[person] !== form) {
+        return {
+          valid: false,
+          mismatch: `${tense}.${person}: "${computed[tense]?.[person]}" vs "${form}"`,
+        };
+      }
+    }
+  }
+
+  for (const [person, form] of Object.entries(extracted.imperative || {})) {
+    if (form && computed.imperative?.[person] !== form) {
+      return {
+        valid: false,
+        mismatch: `imperative.${person}: "${computed.imperative?.[person]}" vs "${form}"`,
+      };
+    }
+  }
+
+  if (extracted.participle1 && computed.participle1 !== extracted.participle1) {
+    return {
+      valid: false,
+      mismatch: `participle1: "${computed.participle1}" vs "${extracted.participle1}"`,
+    };
+  }
+  if (extracted.participle2 && computed.participle2 !== extracted.participle2) {
+    return {
+      valid: false,
+      mismatch: `participle2: "${computed.participle2}" vs "${extracted.participle2}"`,
+    };
+  }
+
+  return { valid: true };
+}
+
 function transformVerb(entry) {
   const { compact, sourced } = splitForms(entry);
   const meta = extractVerbMeta(entry, compact);
+  const fullConjugation = extractVerbConjugation(compact, sourced);
 
-  return {
+  const { separable, prefix } = meta;
+  const presentStem = extractPresentStem(entry.word, separable, prefix);
+  const cls = classifyVerb(fullConjugation, presentStem, separable, prefix);
+  const past_participle =
+    fullConjugation.participle2 || meta.principal_parts.past_participle;
+
+  const base = {
     word: entry.word,
     pos: "verb",
     etymology_number: entry.etymology_number || null,
-    ...meta,
-    conjugation: extractVerbConjugation(compact, sourced),
+    auxiliary: meta.auxiliary,
+    separable: meta.separable,
+    prefix: meta.prefix,
+    reflexive: meta.reflexive,
+  };
+
+  // Irregular verbs: store full conjugation table as-is
+  if (cls === "irregular") {
+    return {
+      ...base,
+      conjugation_class: "irregular",
+      conjugation: fullConjugation,
+      past_participle,
+      senses: transformSenses(entry),
+      sounds: extractSounds(entry),
+    };
+  }
+
+  // Extract stems and validate by recomputing
+  const stems = extractStems(
+    fullConjugation, cls, presentStem, separable, prefix,
+  );
+
+  const verbForValidation = {
+    word: entry.word,
+    conjugation_class: cls,
+    stems,
+    past_participle,
+    separable,
+    prefix,
+  };
+
+  const computed = computeConjugation(verbForValidation, VERB_ENDINGS);
+  const validation = validateConjugation(computed, fullConjugation);
+
+  if (!validation.valid) {
+    console.log(
+      `  ${entry.word}: validation failed (${validation.mismatch}), storing as irregular`,
+    );
+    return {
+      ...base,
+      conjugation_class: "irregular",
+      conjugation: fullConjugation,
+      past_participle,
+      senses: transformSenses(entry),
+      sounds: extractSounds(entry),
+    };
+  }
+
+  return {
+    ...base,
+    conjugation_class: cls,
+    stems,
+    past_participle,
     senses: transformSenses(entry),
     sounds: extractSounds(entry),
   };

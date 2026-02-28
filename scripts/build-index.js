@@ -221,14 +221,27 @@ function main() {
       gloss_en: glossEn.join(", ") || null,
     });
 
-    manifest.push({
+    const manifestEntry = {
       lemma: data.word,
       pos: data.pos.toUpperCase(),
       gender: data.gender || null,
       posDir,
       file,
       glossEn,
-    });
+    };
+
+    // Include verb conjugation data for runtime form computation
+    if (data.pos === "verb") {
+      manifestEntry.conjugation_class = data.conjugation_class;
+      if (data.conjugation_class !== "irregular") {
+        manifestEntry.stems = data.stems;
+      }
+      manifestEntry.past_participle = data.past_participle || null;
+      manifestEntry.separable = data.separable || false;
+      manifestEntry.prefix = data.prefix || null;
+    }
+
+    manifest.push(manifestEntry);
   }
 
   // Sort manifest by frequency (lower rank = more common) then alphabetically
