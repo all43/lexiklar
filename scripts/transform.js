@@ -20,7 +20,7 @@ const RULES_DIR = join(DATA_DIR, "rules");
 const STATE_FILE = join(ROOT, "data", "raw", ".import-state.json");
 const SEED_FILE = join(ROOT, "config", "seed-words.json");
 
-const SUPPORTED_POS = { noun: "nouns", verb: "verbs", adj: "adjectives" };
+import { POS_CONFIG, SUPPORTED_POS } from "./lib/pos.js";
 
 // Load adjective endings rule for regularity check
 const ADJ_ENDINGS = JSON.parse(
@@ -100,6 +100,53 @@ function collectExample(text, translation, lemma) {
     allExamples[id].lemmas.push(lemma);
   }
   return id;
+}
+
+/**
+ * Collect an expression or proverb into the shared examples store.
+ * Uses the same allExamples object and contentHash for dedup.
+ */
+function collectExpression(text, type, note, lemma) {
+  if (!text) return null;
+  const trimmed = text.trim();
+  if (!trimmed) return null;
+  const id = contentHash(trimmed);
+  if (!allExamples[id]) {
+    allExamples[id] = {
+      text: trimmed,
+      type,
+      note: note || null,
+      translation: null,
+      source: "wiktionary",
+      lemmas: [lemma],
+    };
+  } else {
+    if (!allExamples[id].lemmas.includes(lemma)) {
+      allExamples[id].lemmas.push(lemma);
+    }
+    // Preserve richer note if not already set
+    if (note && !allExamples[id].note) {
+      allExamples[id].note = note;
+    }
+  }
+  return id;
+}
+
+/**
+ * Extract expressions and proverbs from a Wiktionary entry.
+ * Returns array of content-hash IDs.
+ */
+function extractExpressions(entry) {
+  const ids = [];
+  for (const e of entry.expressions || []) {
+    const id = collectExpression(e.word, "expression", e.note, entry.word);
+    if (id) ids.push(id);
+  }
+  for (const p of entry.proverbs || []) {
+    const id = collectExpression(p.word, "proverb", p.note, entry.word);
+    if (id) ids.push(id);
+  }
+  return ids;
 }
 
 // ============================================================
@@ -642,6 +689,34 @@ function transformAdj(entry) {
 }
 
 // ============================================================
+// Simple POS types (no grammar tables)
+// ============================================================
+
+/**
+ * Generic transformer for POS types that have senses and sounds
+ * but no declension/conjugation tables.
+ * Used for: adverb, preposition, conjunction, particle, interjection,
+ *           pronoun, determiner, numeral.
+ */
+function transformSimple(entry, posLabel) {
+  return {
+    word: entry.word,
+    pos: posLabel,
+    etymology_number: entry.etymology_number || null,
+    senses: transformSenses(entry),
+    sounds: extractSounds(entry),
+  };
+}
+
+/**
+ * Phrase transformer — same as simple but separate for future extensibility
+ * (may later gain fields like components, literal_translation).
+ */
+function transformPhrase(entry) {
+  return transformSimple(entry, "phrase");
+}
+
+// ============================================================
 // File naming
 // ============================================================
 
@@ -782,6 +857,15 @@ async function main() {
     noun: transformNoun,
     verb: transformVerb,
     adj: transformAdj,
+    phrase: transformPhrase,
+    adv: (e) => transformSimple(e, POS_CONFIG.adv.label),
+    prep: (e) => transformSimple(e, POS_CONFIG.prep.label),
+    conj: (e) => transformSimple(e, POS_CONFIG.conj.label),
+    particle: (e) => transformSimple(e, POS_CONFIG.particle.label),
+    intj: (e) => transformSimple(e, POS_CONFIG.intj.label),
+    pron: (e) => transformSimple(e, POS_CONFIG.pron.label),
+    det: (e) => transformSimple(e, POS_CONFIG.det.label),
+    num: (e) => transformSimple(e, POS_CONFIG.num.label),
   };
 
   const today = new Date().toISOString().slice(0, 10);
@@ -801,6 +885,10 @@ async function main() {
       const transform = transformers[parsed.pos];
       if (!transform) continue;
       let data = transform(parsed);
+
+      // Extract expressions and proverbs (word-level, not sense-level)
+      const expressionIds = extractExpressions(parsed);
+      if (expressionIds.length > 0) data.expression_ids = expressionIds;
 
       // Add _meta
       data._meta = {
@@ -839,9 +927,16 @@ async function main() {
   }
   writeFileSync(EXAMPLES_FILE, JSON.stringify(sortedExamples, null, 2));
 
-  const exampleCount = Object.keys(sortedExamples).length;
+  const exampleCount = Object.values(sortedExamples).filter(
+    (e) => !e.type,
+  ).length;
+  const expressionCount = Object.values(sortedExamples).filter(
+    (e) => e.type === "expression" || e.type === "proverb",
+  ).length;
   console.log(`\nDone. Wrote ${written} word files, skipped ${skipped} unchanged.`);
-  console.log(`Wrote ${exampleCount} examples to examples.json.`);
+  console.log(
+    `Wrote ${exampleCount} examples + ${expressionCount} expressions/proverbs to examples.json.`,
+  );
 
   if (seedWords) {
     const found = new Set(

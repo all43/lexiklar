@@ -11,6 +11,7 @@ import { fileURLToPath } from "url";
 import { execSync } from "child_process";
 import { Readable } from "stream";
 import { pipeline } from "stream/promises";
+import { POS_DIRS } from "./lib/pos.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -130,7 +131,7 @@ function enrichFiles(freqMap) {
   let enriched = 0;
   let notFound = 0;
 
-  for (const dir of ["nouns", "verbs", "adjectives"]) {
+  for (const dir of POS_DIRS) {
     const fullDir = join(DATA_DIR, "words", dir);
     if (!existsSync(fullDir)) continue;
 

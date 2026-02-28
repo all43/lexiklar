@@ -99,6 +99,26 @@
   margin-top: 12px;
 }
 
+/* Expressions & Proverbs */
+.expression-item {
+  cursor: default;
+}
+.expression-link {
+  color: var(--f7-theme-color);
+  border-bottom: 1px dotted var(--f7-theme-color);
+  cursor: pointer;
+}
+.expression-badge {
+  font-size: 0.65em;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.expression-sub {
+  font-size: 0.82em;
+  color: var(--f7-list-item-footer-text-color);
+  margin-top: 2px;
+}
+
 /* Brief highlight when scrolling to a referenced sense */
 .sense-highlight {
   animation: sense-flash 1.5s ease-out;

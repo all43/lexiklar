@@ -65,6 +65,37 @@
         </template>
       </f7-list>
 
+      <!-- Expressions & Proverbs -->
+      <template v-if="wordExpressions.length">
+        <f7-block-title>Expressions</f7-block-title>
+        <f7-list>
+          <li
+            v-for="expr in wordExpressions"
+            :key="expr.id"
+            class="expression-item"
+            @click="expr.ref ? handleCrossRef(expr.ref, null) : null"
+          >
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title-row">
+                  <div class="item-title">
+                    <span :class="{'expression-link': expr.ref}">{{ expr.text }}</span>
+                    <f7-badge
+                      v-if="expr.type === 'proverb'"
+                      color="gray"
+                      class="expression-badge"
+                    >proverb</f7-badge>
+                  </div>
+                </div>
+                <div v-if="expr.translation || expr.note" class="item-footer expression-sub">
+                  {{ expr.translation || expr.note }}
+                </div>
+              </div>
+            </div>
+          </li>
+        </f7-list>
+      </template>
+
       <!-- Grammar placeholder -->
       <f7-block-title>Grammar</f7-block-title>
       <f7-block>
@@ -135,13 +166,34 @@ export default {
     previewPosColor() {
       return this.getPosColor(this.preview?.pos);
     },
+    wordExpressions() {
+      if (!this.word?.expression_ids) return [];
+      return this.word.expression_ids
+        .map((id) => {
+          const ex = this.examples[id];
+          if (!ex) return null;
+          return { id, text: ex.text, type: ex.type, note: ex.note, translation: ex.translation, ref: ex.ref || null };
+        })
+        .filter(Boolean);
+    },
   },
   methods: {
     getPosColor(pos) {
-      if (pos === "noun") return "blue";
-      if (pos === "verb") return "orange";
-      if (pos === "adjective") return "green";
-      return "gray";
+      const colors = {
+        noun: "blue",
+        verb: "orange",
+        adjective: "green",
+        phrase: "purple",
+        adverb: "teal",
+        preposition: "deeporange",
+        conjunction: "pink",
+        particle: "lime",
+        interjection: "red",
+        pronoun: "indigo",
+        determiner: "cyan",
+        numeral: "amber",
+      };
+      return colors[pos] || "gray";
     },
 
     scrollToSense(senseNumber) {

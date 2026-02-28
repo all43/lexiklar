@@ -3,6 +3,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider } from "./lib/llm.js";
 import { stripReferences } from "./lib/references.js";
+import { POS_CONFIG } from "./lib/pos.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -29,11 +30,7 @@ const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
 function buildDisambiguationDict() {
   const dict = new Map(); // key: "lemma|pos" → array of gloss strings
 
-  for (const [posDir, posName] of [
-    ["nouns", "noun"],
-    ["verbs", "verb"],
-    ["adjectives", "adjective"],
-  ]) {
+  for (const { dir: posDir, label: posName } of Object.values(POS_CONFIG)) {
     const dir = join(WORDS_DIR, posDir);
     if (!existsSync(dir)) continue;
 
@@ -92,11 +89,14 @@ function getRelevantDisambiguation(examples, disambigDict) {
 
 const SYSTEM_PROMPT = `You are a German-English translation assistant for a dictionary app targeting B2 learners.
 
-For each German sentence, provide:
-1. A natural English translation
-2. Annotations for content words (nouns, verbs, adjectives ONLY)
+Each item has a "type" field:
+- "example" (or absent): a full sentence. Translate naturally. Include annotations for content words.
+- "expression": an idiomatic phrase. Translate the idiomatic meaning (not word-for-word). No annotations needed.
+- "proverb": a saying or proverb. Use the established English equivalent if one exists; otherwise translate the meaning. No annotations needed.
 
-For each content word annotation, return:
+If a "note" field is present, it explains the meaning in German — use it to disambiguate.
+
+For items that need annotations (type "example" only), provide for each content word:
 - "form": the exact word as written in the sentence
 - "lemma": dictionary form (infinitive for verbs, nominative singular for nouns, base form for adjectives)
 - "pos": one of "noun", "verb", "adjective"
@@ -106,6 +106,7 @@ Rules:
 - Skip articles (der/die/das/ein/eine), prepositions, pronouns, conjunctions, particles
 - Skip proper nouns unless they are also common nouns
 - For separable verbs, use the full infinitive as lemma (e.g. "kommt...an" → "ankommen")
+- For expressions and proverbs, return an EMPTY annotations array []
 
 Output format:
 - Your ENTIRE response must be a raw JSON array: [{...}, {...}]
@@ -114,10 +115,12 @@ Output format:
 - No markdown fences, no function calls, no preamble, no trailing text`;
 
 function buildUserPrompt(batch, disambig) {
-  const items = batch.map(({ id, text }) => ({
-    id,
-    text: stripReferences(text),
-  }));
+  const items = batch.map(({ id, text, type, note }) => {
+    const item = { id, text: stripReferences(text) };
+    if (type) item.type = type;
+    if (note) item.note = note;
+    return item;
+  });
 
   const prompt = {
     examples: items,
@@ -190,7 +193,12 @@ async function main() {
   // Filter to untranslated
   const untranslated = Object.entries(examples)
     .filter(([, ex]) => !ex.translation)
-    .map(([id, ex]) => ({ id, text: ex.text }));
+    .map(([id, ex]) => ({
+      id,
+      text: ex.text,
+      type: ex.type || null,
+      note: ex.note || null,
+    }));
 
   if (untranslated.length === 0) {
     console.log(`All ${total} examples already translated. Nothing to do.`);
@@ -251,7 +259,13 @@ async function main() {
       for (const result of results) {
         if (examples[result.id]) {
           examples[result.id].translation = result.translation;
-          examples[result.id].annotations = result.annotations;
+          // Expressions and proverbs don't get annotations
+          const exType = examples[result.id].type;
+          if (exType === "expression" || exType === "proverb") {
+            delete examples[result.id].annotations;
+          } else {
+            examples[result.id].annotations = result.annotations;
+          }
         }
       }
 

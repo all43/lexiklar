@@ -22,6 +22,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { callLLM, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider } from "./lib/llm.js";
 import { stripReferences } from "./lib/references.js";
+import { POS_CONFIG, POS_DIRS } from "./lib/pos.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -43,11 +44,7 @@ const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
 function collectSenses() {
   const items = []; // { filePath, senseIdx, word, pos, gloss }
 
-  for (const [posDir] of [
-    ["nouns"],
-    ["verbs"],
-    ["adjectives"],
-  ]) {
+  for (const posDir of POS_DIRS) {
     const dir = join(WORDS_DIR, posDir);
     if (!existsSync(dir)) continue;
 
@@ -164,7 +161,7 @@ async function main() {
   // Reset all gloss_en if requested
   if (RESET) {
     let resetCount = 0;
-    for (const posDir of ["nouns", "verbs", "adjectives"]) {
+    for (const posDir of POS_DIRS) {
       const dir = join(WORDS_DIR, posDir);
       if (!existsSync(dir)) continue;
       for (const file of readdirSync(dir)) {

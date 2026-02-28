@@ -9,6 +9,7 @@ import { join, dirname, relative } from "path";
 import { fileURLToPath } from "url";
 import Database from "better-sqlite3";
 import { stripReferences } from "./lib/references.js";
+import { POS_DIRS } from "./lib/pos.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -18,7 +19,7 @@ const EXAMPLES_FILE = join(DATA_DIR, "examples.json");
 
 function findJsonFiles() {
   const results = [];
-  for (const dir of ["nouns", "verbs", "adjectives"]) {
+  for (const dir of POS_DIRS) {
     const fullDir = join(DATA_DIR, "words", dir);
     if (!existsSync(fullDir)) continue;
     for (const file of readdirSync(fullDir)) {
@@ -278,6 +279,31 @@ function main() {
       }
     }
 
+    // Phase 4: Resolve expression → phrase card links
+    const phraseDir = join(DATA_DIR, "words", "phrases");
+    const phraseLookup = new Map();
+    if (existsSync(phraseDir)) {
+      for (const file of readdirSync(phraseDir)) {
+        if (!file.endsWith(".json")) continue;
+        const data = JSON.parse(
+          readFileSync(join(phraseDir, file), "utf-8"),
+        );
+        phraseLookup.set(data.word, `phrases/${file.replace(".json", "")}`);
+      }
+    }
+
+    let refCount = 0;
+    for (const [, ex] of Object.entries(examples)) {
+      if (ex.type !== "expression" && ex.type !== "proverb") continue;
+      const phraseRef = phraseLookup.get(ex.text);
+      if (phraseRef) {
+        ex.ref = phraseRef;
+        refCount++;
+      } else {
+        delete ex.ref;
+      }
+    }
+
     // Write back sorted by key
     const sorted = {};
     for (const key of Object.keys(examples).sort()) {
@@ -285,6 +311,9 @@ function main() {
     }
     writeFileSync(EXAMPLES_FILE, JSON.stringify(sorted, null, 2));
     console.log(`Linked ${linkedCount} examples with cross-references.`);
+    if (refCount > 0) {
+      console.log(`Linked ${refCount} expressions to phrase cards.`);
+    }
   }
 }
 
