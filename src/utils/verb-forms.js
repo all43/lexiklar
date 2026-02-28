@@ -6,6 +6,16 @@
 const PERSONS = ["ich", "du", "er", "wir", "ihr", "sie"];
 
 /**
+ * Check if the infinitive is an -ern or -eln verb.
+ * For separable verbs, checks the base infinitive (without prefix).
+ */
+function isErnElnVerb(word, separable, prefix) {
+  let inf = word;
+  if (separable && prefix) inf = inf.slice(prefix.length);
+  return inf.endsWith("ern") || inf.endsWith("eln");
+}
+
+/**
  * Check if a stem requires e-insertion before consonant-starting endings.
  * Applies to stems ending in -d, -t, -chn, -fn, -gn, -dm, -tm.
  */
@@ -19,15 +29,30 @@ function needsEInsertion(stem) {
 }
 
 /**
+ * Check if stem ends with a sibilant (s, ß, z, x).
+ */
+function isSibilantStem(stem) {
+  return /[sßzx]$/.test(stem);
+}
+
+/**
  * Adjust an ending for the given stem, handling:
  * 1. -ern/-eln stems: "en" → "n", "est" → "st", "et" → "t"
  * 2. e-insertion for stems ending in -t/-d/etc: prepend "e" before "s"/"t" starts
+ * 3. Sibilant stems + "st" ending:
+ *    - Present tense (sibilantDedup=true): "st" → "t" (du liest, not du liesst)
+ *    - Other tenses (sibilantDedup=false): "st" → "est" (du lasest, not du last)
+ *
+ * @param {string} ending - The raw ending
+ * @param {string} stem - The stem to attach the ending to
+ * @param {boolean} ernEln - Whether this verb is an -ern/-eln infinitive
+ * @param {boolean} sibilantDedup - True for present tense (dedup), false for others (e-insertion)
  */
-function adjustEnding(ending, stem) {
+function adjustEnding(ending, stem, ernEln, sibilantDedup = false) {
   let e = ending;
 
-  // -ern/-eln stem adjustments (avoids double vowels like "erinneren")
-  if (stem.endsWith("er") || stem.endsWith("el")) {
+  // -ern/-eln stem adjustments — only for actual -ern/-eln verbs
+  if (ernEln && (stem.endsWith("er") || stem.endsWith("el"))) {
     if (e === "en") e = "n";
     else if (e === "en Sie") e = "n Sie";
     else if (e === "est") e = "st";
@@ -39,22 +64,38 @@ function adjustEnding(ending, stem) {
     e = "e" + e;
   }
 
+  // Sibilant handling: stems ending in s/ß/z/x with bare "st" ending
+  if (e === "st" && isSibilantStem(stem)) {
+    e = sibilantDedup ? "t" : "est";
+  }
+
   return e;
+}
+
+/**
+ * Apply -eln contraction: "sammel" + "e" → "sammle" (metathesis of final -el to -le).
+ * Only affects actual -eln verb stems, not stems that happen to end in "el" (e.g., "spiel").
+ */
+function contractStemEnding(stem, adjustedEnding, ernEln) {
+  if (ernEln && stem.endsWith("el") && adjustedEnding === "e") {
+    return stem.slice(0, -2) + "le";
+  }
+  return stem + adjustedEnding;
 }
 
 /**
  * Build a 6-person tense table.
  * @param {string} defaultStem
  * @param {string[]} endingsArr - 6 endings [ich, du, er, wir, ihr, sie]
- * @param {Object} opts - { separable, prefix, stemOverrides: { personIndex: stem } }
+ * @param {Object} opts - { separable, prefix, stemOverrides, contract, ernEln, sibilantDedup }
  */
 function buildTense(defaultStem, endingsArr, opts = {}) {
-  const { separable = false, prefix = "", stemOverrides = {} } = opts;
+  const { separable = false, prefix = "", stemOverrides = {}, contract = false, ernEln = false, sibilantDedup = false } = opts;
   const result = {};
   PERSONS.forEach((person, i) => {
     const stem = stemOverrides[i] || defaultStem;
-    const adjusted = adjustEnding(endingsArr[i], stem);
-    const base = stem + adjusted;
+    const adjusted = adjustEnding(endingsArr[i], stem, ernEln, sibilantDedup);
+    const base = contract ? contractStemEnding(stem, adjusted, ernEln) : stem + adjusted;
     result[person] = separable ? base + " " + prefix : base;
   });
   return result;
@@ -77,7 +118,8 @@ export function computeConjugation(verb, endings) {
   const classEndings = endings[cls];
   const separable = verb.separable || false;
   const prefix = verb.prefix || "";
-  const opts = { separable, prefix };
+  const ernEln = isErnElnVerb(verb.word, separable, prefix);
+  const opts = { separable, prefix, ernEln };
 
   // Present: present stem with optional du/er vowel change
   const presentOverrides = {};
@@ -88,6 +130,8 @@ export function computeConjugation(verb, endings) {
   const present = buildTense(stems.present, endings.present, {
     ...opts,
     stemOverrides: presentOverrides,
+    contract: true,
+    sibilantDedup: true,
   });
 
   // Subjunctive 1: always present stem, shared endings
@@ -105,14 +149,15 @@ export function computeConjugation(verb, endings) {
   // Imperative
   const impEndings = classEndings.imperative;
   const impDuStem = stems.imperative_du || stems.present;
-  const impDuAdj = adjustEnding(impEndings[0], impDuStem);
-  const impIhrAdj = adjustEnding(impEndings[1], stems.present);
-  const impSieAdj = adjustEnding(impEndings[2], stems.present);
+  const impDuAdj = adjustEnding(impEndings[0], impDuStem, ernEln);
+  const impIhrAdj = adjustEnding(impEndings[1], stems.present, ernEln);
+  const impSieAdj = adjustEnding(impEndings[2], stems.present, ernEln);
 
+  const impDuBase = contractStemEnding(impDuStem, impDuAdj, ernEln);
   const imperative = {
     du: separable
-      ? impDuStem + impDuAdj + " " + prefix + "!"
-      : impDuStem + impDuAdj + "!",
+      ? impDuBase + " " + prefix + "!"
+      : impDuBase + "!",
     ihr: separable
       ? stems.present + impIhrAdj + " " + prefix + "!"
       : stems.present + impIhrAdj + "!",
@@ -122,8 +167,7 @@ export function computeConjugation(verb, endings) {
   };
 
   // Participle 1: (prefix?) + stem + en/n + d
-  const infSuffix =
-    stems.present.endsWith("er") || stems.present.endsWith("el") ? "n" : "en";
+  const infSuffix = ernEln ? "n" : "en";
   const participle1 = separable
     ? prefix + stems.present + infSuffix + "d"
     : stems.present + infSuffix + "d";
@@ -166,13 +210,14 @@ export function computeAllForms(verb, endings) {
   }
 
   // Imperative (strip trailing "!")
-  for (const form of Object.values(conj.imperative)) {
-    forms.add(
-      form
-        .replace(/!$/, "")
-        .trim()
-        .toLowerCase(),
-    );
+  // For du-form: also add the short variant without trailing -e (kaufe → kauf)
+  // so both the full and elided forms are searchable.
+  for (const [person, form] of Object.entries(conj.imperative)) {
+    const stripped = form.replace(/!$/, "").trim().toLowerCase();
+    forms.add(stripped);
+    if (person === "du" && stripped.endsWith("e") && !stripped.includes(" ")) {
+      forms.add(stripped.slice(0, -1));
+    }
   }
 
   // Participles

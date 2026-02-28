@@ -16,4 +16,7 @@ export default defineConfig({
       '@': path.resolve(import.meta.dirname, 'src'),
     },
   },
+  test: {
+    include: ['tests/**/*.test.js'],
+  },
 });
