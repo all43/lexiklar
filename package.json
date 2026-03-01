@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "copy-data": "node scripts/copy-data.js",
     "download": "node scripts/download.js",
+    "download-corpus": "node scripts/enrich-frequency.js --download-only",
     "transform": "node scripts/transform.js",
     "enrich": "node scripts/enrich-frequency.js",
     "build-index": "node scripts/build-index.js",
@@ -17,8 +18,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:glosses": "node scripts/test-gloss-translation.js",
-    "pipeline": "npm run download && npm run transform && npm run enrich && npm run translate && npm run build-index",
-    "pipeline:seed": "npm run download && npm run transform -- --seed && npm run enrich && npm run translate && npm run build-index"
+    "pipeline": "npm run download && npm run download-corpus && npm run transform -- --max-frequency 5000 && npm run enrich && npm run translate && npm run build-index",
+    "pipeline:seed": "npm run transform -- --seed && npm run enrich && npm run translate && npm run build-index"
   },
   "dependencies": {
     "@capacitor/core": "^8.1.0",

@@ -162,7 +162,15 @@ function enrichFiles(freqMap) {
 // ============================================================
 
 async function main() {
+  const downloadOnly = process.argv.includes("--download-only");
+
   await downloadLeipzig();
+
+  if (downloadOnly) {
+    console.log("Download-only mode: Leipzig corpus ready, skipping enrichment.");
+    return;
+  }
+
   const freqMap = loadFrequencyMap();
   enrichFiles(freqMap);
 }

@@ -86,6 +86,34 @@ function loadSeedList() {
   return new Set(seed.words.map((w) => w.word.toLowerCase()));
 }
 
+/**
+ * Build a Set of words that appear in the top `maxRank` positions of the
+ * Leipzig frequency list. Used to restrict the full pipeline to B2 vocabulary.
+ * Words are stored exactly as they appear in the corpus (case-sensitive).
+ */
+function loadFrequencyFilter(wordsFile, maxRank) {
+  const content = readFileSync(wordsFile, "utf-8");
+  const entries = content
+    .split("\n")
+    .filter(Boolean)
+    .map((line) => {
+      const parts = line.split("\t");
+      if (parts.length < 3) return null;
+      return { word: parts[1], count: parseInt(parts[2], 10) };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.count - a.count);
+
+  const filter = new Set();
+  for (let i = 0; i < Math.min(maxRank, entries.length); i++) {
+    filter.add(entries[i].word);
+  }
+  console.log(
+    `Frequency filter: keeping words with rank ≤ ${maxRank} (${filter.size} unique forms loaded).`,
+  );
+  return filter;
+}
+
 function splitForms(entry) {
   const forms = entry.forms || [];
   return {
@@ -657,7 +685,24 @@ async function main() {
   const useSeed = process.argv.includes("--seed");
   const seedWords = useSeed ? loadSeedList() : null;
 
+  const maxFreqIdx = process.argv.indexOf("--max-frequency");
+  const maxFrequency =
+    maxFreqIdx !== -1 ? parseInt(process.argv[maxFreqIdx + 1], 10) : null;
+
+  let freqFilter = null;
+  if (maxFrequency && !useSeed) {
+    const wordsFile = join(ROOT, "data", "raw", "leipzig-words.txt");
+    if (!existsSync(wordsFile)) {
+      console.error(
+        `Leipzig corpus not found at ${wordsFile}.\nRun 'npm run download-corpus' first.`,
+      );
+      process.exit(1);
+    }
+    freqFilter = loadFrequencyFilter(wordsFile, maxFrequency);
+  }
+
   if (useSeed) console.log(`Seed mode: processing ${seedWords.size} words`);
+  else if (maxFrequency) console.log(`B2 mode: top ${maxFrequency} words by frequency`);
   else console.log("Full mode: processing all entries");
 
   if (!existsSync(RAW_FILE)) {
@@ -695,6 +740,7 @@ async function main() {
       continue;
 
     if (seedWords && !seedWords.has(entry.word.toLowerCase())) continue;
+    if (freqFilter && !freqFilter.has(entry.word)) continue;
 
     const key = `${entry.word}|${entry.pos}`;
     if (!groups.has(key)) groups.set(key, []);
