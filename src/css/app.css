@@ -182,6 +182,66 @@
   font-weight: 500;
 }
 
+/* Noun declension table */
+.noun-declension {
+  padding: 0 16px;
+}
+.noun-rule-hint {
+  font-size: 0.82em;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: var(--f7-block-bg-color, #f4f4f4);
+}
+.noun-rule-match {
+  color: #4caf50;
+}
+.noun-rule-exception {
+  color: #ff9800;
+}
+.decl-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+.decl-table td,
+.decl-table th {
+  padding: 5px 6px;
+  border-bottom: 1px solid var(--f7-list-item-border-color, #e0e0e0);
+}
+.decl-case-header {
+  width: 36px;
+}
+.decl-num-header {
+  font-size: 0.78em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--f7-theme-color);
+  text-align: left;
+}
+.decl-case {
+  color: var(--f7-list-item-footer-text-color);
+  white-space: nowrap;
+  width: 36px;
+  font-size: 0.85em;
+}
+.decl-form {
+  font-weight: 500;
+}
+.decl-article {
+  margin-right: 3px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+.decl-article--plural {
+  color: var(--f7-list-item-footer-text-color);
+}
+.decl-no-plural {
+  color: var(--f7-list-item-footer-text-color);
+}
+
 /* Brief highlight when scrolling to a referenced sense */
 .sense-highlight {
   animation: sense-flash 1.5s ease-out;

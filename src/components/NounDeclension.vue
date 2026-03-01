@@ -1,0 +1,107 @@
+<template>
+  <div class="noun-declension">
+    <!-- Gender rule hint -->
+    <div v-if="word.gender_rule" class="noun-rule-hint">
+      <span :class="word.gender_rule.is_exception ? 'noun-rule-exception' : 'noun-rule-match'">
+        {{ ruleText }}
+      </span>
+    </div>
+
+    <!-- Declension table -->
+    <table v-if="word.case_forms" class="decl-table">
+      <thead>
+        <tr>
+          <th class="decl-case-header"></th>
+          <th class="decl-num-header">Singular</th>
+          <th class="decl-num-header">Plural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="c in cases" :key="c.key">
+          <td class="decl-case">{{ c.label }}</td>
+          <td class="decl-form">
+            <span :class="`decl-article gender-${genderClass}`">{{ singularArticles[c.key] }}</span>
+            {{ word.case_forms.singular[c.key] || '—' }}
+          </td>
+          <td class="decl-form">
+            <span v-if="hasPlural" class="decl-article decl-article--plural">{{ pluralArticles[c.key] }}</span>
+            <span v-if="hasPlural">{{ word.case_forms.plural[c.key] || '—' }}</span>
+            <span v-else class="decl-no-plural">—</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<script>
+const SINGULAR_ARTICLES = {
+  M: { nom: "der", acc: "den", dat: "dem", gen: "des" },
+  F: { nom: "die", acc: "die", dat: "der", gen: "der" },
+  N: { nom: "das", acc: "das", dat: "dem", gen: "des" },
+};
+
+const PLURAL_ARTICLES = { nom: "die", acc: "die", dat: "den", gen: "der" };
+
+const RULE_DESCRIPTIONS = {
+  suffix_ung:              "-ung → always feminine",
+  suffix_heit:             "-heit → always feminine",
+  suffix_keit:             "-keit → always feminine",
+  suffix_chen:             "-chen → always neuter",
+  suffix_lein:             "-lein → always neuter",
+  suffix_schaft:           "-schaft → nearly always feminine",
+  suffix_tion:             "-tion → nearly always feminine",
+  suffix_sion:             "-sion → nearly always feminine",
+  suffix_taet:             "-tät → nearly always feminine",
+  suffix_ismus:            "-ismus → nearly always masculine",
+  suffix_ist:              "-ist → nearly always masculine",
+  suffix_ling:             "-ling → nearly always masculine",
+  suffix_tum:              "-tum → usually neuter",
+  suffix_or:               "-or → usually masculine",
+  suffix_ei:               "-ei → usually feminine",
+  suffix_anz:              "-anz → usually feminine",
+  suffix_enz:              "-enz → usually feminine",
+  nominalized_infinitive:  "nominalized infinitive → always neuter",
+  suffix_ment:             "-ment → often neuter",
+  suffix_um:               "-um → often neuter",
+  suffix_ie:               "-ie → often feminine",
+  suffix_ik:               "-ik → often feminine",
+  suffix_ur:               "-ur → often feminine",
+  suffix_eur:              "-eur → often masculine",
+};
+
+export default {
+  props: {
+    word: { type: Object, required: true },
+  },
+  computed: {
+    genderClass() {
+      return (this.word.gender || "").toLowerCase();
+    },
+    cases() {
+      return [
+        { key: "nom", label: "Nom." },
+        { key: "acc", label: "Akk." },
+        { key: "dat", label: "Dat." },
+        { key: "gen", label: "Gen." },
+      ];
+    },
+    singularArticles() {
+      return SINGULAR_ARTICLES[this.word.gender] || SINGULAR_ARTICLES["M"];
+    },
+    pluralArticles() {
+      return PLURAL_ARTICLES;
+    },
+    hasPlural() {
+      const p = this.word.case_forms?.plural;
+      return p && Object.values(p).some(Boolean);
+    },
+    ruleText() {
+      const rule = this.word.gender_rule;
+      if (!rule) return "";
+      const desc = RULE_DESCRIPTIONS[rule.rule_id] || rule.rule_id;
+      return rule.is_exception ? `Exception: ${desc}` : desc;
+    },
+  },
+};
+</script>

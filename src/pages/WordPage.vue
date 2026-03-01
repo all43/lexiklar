@@ -119,6 +119,10 @@
         <f7-block-title>Conjugation</f7-block-title>
         <VerbConjugation :verb="word" />
       </template>
+      <template v-else-if="word.pos === 'noun'">
+        <f7-block-title>Declension</f7-block-title>
+        <NounDeclension :word="word" />
+      </template>
       <template v-else>
         <f7-block-title>Grammar</f7-block-title>
         <f7-block>
@@ -169,10 +173,11 @@
 <script>
 import GlossText from "../components/GlossText.vue";
 import VerbConjugation from "../components/VerbConjugation.vue";
+import NounDeclension from "../components/NounDeclension.vue";
 import { getWord, getExamples, getRelatedWords } from "../utils/db.js";
 
 export default {
-  components: { GlossText, VerbConjugation },
+  components: { GlossText, VerbConjugation, NounDeclension },
   props: {
     f7route: Object,
     f7router: Object,
