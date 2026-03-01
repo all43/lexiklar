@@ -9,6 +9,8 @@
       @searchbar:clear="onClear"
     />
 
+    <f7-block-title v-if="!searchQuery && results.length">Recently Visited</f7-block-title>
+
     <f7-list v-if="results.length > 0" class="search-results" media-list>
       <f7-list-item
         v-for="word in results"
@@ -22,8 +24,12 @@
       />
     </f7-list>
 
-    <f7-block v-else-if="searchQuery && !loading">
+    <f7-block v-else-if="!loading && searchQuery">
       <p>No words found.</p>
+    </f7-block>
+
+    <f7-block v-else-if="!loading && !searchQuery">
+      <p style="color: var(--f7-list-item-footer-text-color);">Start typing to search for a German word or English meaning.</p>
     </f7-block>
 
     <f7-block v-if="loading" class="text-align-center">
@@ -34,11 +40,13 @@
 
 <script>
 import {
-  getAllWords,
   searchByLemma,
   searchByGlossEn,
   searchByVerbForm,
+  getRelatedWords,
 } from "../utils/db.js";
+
+const RECENTS_KEY = "lexiklar_recents";
 
 export default {
   data() {
@@ -53,7 +61,7 @@ export default {
     searchQuery(q) {
       clearTimeout(this.debounceTimer);
       if (!q.trim()) {
-        this.loadAllWords();
+        this.loadRecentWords();
         return;
       }
       this.debounceTimer = setTimeout(() => this.search(q.trim()), 150);
@@ -105,14 +113,30 @@ export default {
       this.results = results;
       this.loading = false;
     },
-    async loadAllWords() {
+    async loadRecentWords() {
       this.loading = true;
-      this.results = await getAllWords();
+      try {
+        const stored = localStorage.getItem(RECENTS_KEY);
+        const fileKeys = stored ? JSON.parse(stored) : [];
+        if (fileKeys.length) {
+          const words = await getRelatedWords(fileKeys);
+          // Restore recency order (SQL IN clause doesn't preserve input order)
+          const orderMap = new Map(fileKeys.map((f, i) => [f, i]));
+          words.sort(
+            (a, b) => (orderMap.get(a.file) ?? 999) - (orderMap.get(b.file) ?? 999),
+          );
+          this.results = words;
+        } else {
+          this.results = [];
+        }
+      } catch {
+        this.results = [];
+      }
       this.loading = false;
     },
   },
   async mounted() {
-    await this.loadAllWords();
+    await this.loadRecentWords();
   },
 };
 </script>

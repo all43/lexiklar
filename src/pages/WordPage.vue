@@ -357,6 +357,24 @@ export default {
     try {
       this.word = await getWord(`${pos}/${file}`);
 
+      // Track this visit in recent words (localStorage, max 100, most recent first)
+      if (this.word) {
+        try {
+          const RECENTS_KEY = "lexiklar_recents";
+          const fileKey = `${pos}/${file}`;
+          const stored = localStorage.getItem(RECENTS_KEY);
+          const recents = stored ? JSON.parse(stored) : [];
+          const filtered = recents.filter((f) => f !== fileKey);
+          filtered.unshift(fileKey);
+          localStorage.setItem(
+            RECENTS_KEY,
+            JSON.stringify(filtered.slice(0, 100)),
+          );
+        } catch {
+          // localStorage unavailable — silently skip
+        }
+      }
+
       // Load only the examples this word needs
       const ids = [];
       for (const s of this.word?.senses || []) {
