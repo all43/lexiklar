@@ -151,6 +151,7 @@
 <script>
 import GlossText from "../components/GlossText.vue";
 import VerbConjugation from "../components/VerbConjugation.vue";
+import { getWord, getExamples } from "../utils/db.js";
 
 export default {
   components: { GlossText, VerbConjugation },
@@ -213,9 +214,8 @@ export default {
 
     async handleCrossRef(filePath, senseNumber) {
       try {
-        const resp = await fetch(`/data/words/${filePath}.json`, { cache: "default" });
-        if (!resp.ok) throw new Error("Not found");
-        const data = await resp.json();
+        const data = await getWord(filePath);
+        if (!data) throw new Error("Not found");
         const senseIdx = (senseNumber || 1) - 1;
         const sense = data.senses?.[senseIdx];
         this.preview = {
@@ -229,7 +229,7 @@ export default {
           senseGlossEn: sense?.gloss_en || null,
         };
       } catch {
-        // Fallback: navigate directly if preview data can't be fetched
+        // Fallback: navigate directly if preview data can't be loaded
         const url = `/word/${filePath}/`;
         this.f7router.navigate(senseNumber ? `${url}?sense=${senseNumber}` : url);
       }
@@ -274,12 +274,15 @@ export default {
     const targetSense = parseInt(this.f7route.query?.sense, 10) || null;
 
     try {
-      const [wordResp, exResp] = await Promise.all([
-        fetch(`/data/words/${pos}/${file}.json`, { cache: "no-store" }),
-        fetch(`/data/examples.json`, { cache: "no-store" }),
-      ]);
-      if (wordResp.ok) this.word = await wordResp.json();
-      if (exResp.ok) this.examples = await exResp.json();
+      this.word = await getWord(`${pos}/${file}`);
+
+      // Load only the examples this word needs
+      const ids = [];
+      for (const s of this.word?.senses || []) {
+        if (s.example_ids) ids.push(...s.example_ids);
+      }
+      if (this.word?.expression_ids) ids.push(...this.word.expression_ids);
+      if (ids.length) this.examples = await getExamples(ids);
     } catch (err) {
       console.error("Failed to load word:", err);
     } finally {

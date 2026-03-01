@@ -1,21 +1,40 @@
+/**
+ * Build the production SQLite database (lexiklar.db) from JSON word files.
+ *
+ * Packs ALL data needed by the app into a single database:
+ *   - words table: full word JSON with pre-computed conjugation + search columns
+ *   - examples table: individual examples (not the entire examples.json)
+ *   - verb_forms table: pre-computed conjugated forms for search
+ *   - meta table: version hash for OPFS cache invalidation
+ *
+ * Also resolves cross-references in examples (text_linked) and writes
+ * the updated examples.json back to disk.
+ *
+ * Usage: node scripts/build-index.js
+ */
+
 import {
   readFileSync,
   writeFileSync,
   readdirSync,
+  statSync,
   unlinkSync,
   existsSync,
 } from "fs";
 import { join, dirname, relative } from "path";
 import { fileURLToPath } from "url";
+import { createHash } from "crypto";
 import Database from "better-sqlite3";
 import { stripReferences } from "./lib/references.js";
 import { POS_DIRS } from "./lib/pos.js";
+import { computeConjugation, computeAllForms } from "../src/utils/verb-forms.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const DATA_DIR = join(ROOT, "data");
-const DB_PATH = join(DATA_DIR, "index.db");
+const DB_PATH = join(DATA_DIR, "lexiklar.db");
 const EXAMPLES_FILE = join(DATA_DIR, "examples.json");
+const VERB_ENDINGS_FILE = join(DATA_DIR, "rules", "verb-endings.json");
 
 function findJsonFiles() {
   const results = [];
@@ -29,6 +48,19 @@ function findJsonFiles() {
     }
   }
   return results;
+}
+
+/**
+ * Compute a version hash from all word file paths + their modification times.
+ * Used by the app to detect when the OPFS database is stale.
+ */
+function computeVersionHash(files) {
+  const hash = createHash("sha256");
+  for (const f of files.sort()) {
+    const stat = statSync(f);
+    hash.update(f + ":" + stat.mtimeMs);
+  }
+  return hash.digest("hex").slice(0, 16);
 }
 
 // ============================================================
@@ -166,106 +198,148 @@ function annotateExampleText(text, annotations, lookup) {
 function main() {
   if (existsSync(DB_PATH)) unlinkSync(DB_PATH);
 
+  // Load verb endings for pre-computing conjugation tables
+  const verbEndings = existsSync(VERB_ENDINGS_FILE)
+    ? JSON.parse(readFileSync(VERB_ENDINGS_FILE, "utf-8"))
+    : null;
+
   const db = new Database(DB_PATH);
 
+  // Enable WAL mode for faster writes during build, then switch back before close
+  db.pragma("journal_mode = WAL");
+
   db.exec(`
-    CREATE TABLE search_index (
-      id              INTEGER PRIMARY KEY,
-      lemma           TEXT NOT NULL,
-      pos             TEXT NOT NULL,
-      gender          TEXT,
-      frequency       INTEGER,
-      gender_rule_id  TEXT,
-      is_exception    INTEGER,
-      file_path       TEXT NOT NULL,
-      gloss_en        TEXT
+    CREATE TABLE words (
+      id          INTEGER PRIMARY KEY,
+      lemma       TEXT NOT NULL,
+      pos         TEXT NOT NULL,
+      gender      TEXT,
+      frequency   INTEGER,
+      file        TEXT NOT NULL UNIQUE,
+      gloss_en    TEXT,
+      data        TEXT NOT NULL
     );
-    CREATE INDEX idx_lemma       ON search_index(lemma);
-    CREATE INDEX idx_frequency   ON search_index(frequency);
-    CREATE INDEX idx_gender      ON search_index(gender);
-    CREATE INDEX idx_gender_rule ON search_index(gender_rule_id);
+
+    CREATE TABLE examples (
+      id   TEXT PRIMARY KEY,
+      data TEXT NOT NULL
+    );
+
+    CREATE TABLE verb_forms (
+      form    TEXT NOT NULL,
+      word_id INTEGER NOT NULL REFERENCES words(id),
+      PRIMARY KEY (form, word_id)
+    );
+
+    CREATE TABLE meta (
+      key   TEXT PRIMARY KEY,
+      value TEXT NOT NULL
+    );
   `);
 
-  const insert = db.prepare(`
-    INSERT INTO search_index (lemma, pos, gender, frequency, gender_rule_id, is_exception, file_path, gloss_en)
-    VALUES (@lemma, @pos, @gender, @frequency, @gender_rule_id, @is_exception, @file_path, @gloss_en)
+  const insertWord = db.prepare(`
+    INSERT INTO words (lemma, pos, gender, frequency, file, gloss_en, data)
+    VALUES (@lemma, @pos, @gender, @frequency, @file, @gloss_en, @data)
+  `);
+
+  const insertVerbForm = db.prepare(`
+    INSERT OR IGNORE INTO verb_forms (form, word_id)
+    VALUES (@form, @word_id)
+  `);
+
+  const insertExample = db.prepare(`
+    INSERT OR IGNORE INTO examples (id, data) VALUES (@id, @data)
+  `);
+
+  const insertMeta = db.prepare(`
+    INSERT INTO meta (key, value) VALUES (@key, @value)
   `);
 
   const files = findJsonFiles();
-  const entries = [];
 
-  // Manifest for app-side search (JSON, no sql.js dependency needed)
-  const manifest = [];
+  // --------------------------------------------------------
+  // Phase 1: Process word files → words + verb_forms tables
+  // --------------------------------------------------------
 
-  for (const filePath of files) {
-    const data = JSON.parse(readFileSync(filePath, "utf-8"));
-    const relPath = relative(DATA_DIR, filePath);
-    // relPath is like "words/nouns/Tisch.json"
-    const parts = relPath.split("/"); // ["words", "nouns", "Tisch.json"]
-    const posDir = parts[1];          // "nouns" | "verbs" | "adjectives"
-    const file   = parts[2].replace(".json", "");
+  let wordCount = 0;
+  let verbFormCount = 0;
 
-    // Collect all English translations across senses
-    const glossEn = (data.senses || [])
-      .map((s) => s.gloss_en)
-      .filter(Boolean);
+  const insertWords = db.transaction(() => {
+    for (const filePath of files) {
+      const data = JSON.parse(readFileSync(filePath, "utf-8"));
+      const relPath = relative(DATA_DIR, filePath);
+      const parts = relPath.split("/"); // ["words", "nouns", "Tisch.json"]
+      const posDir = parts[1];
+      const file = parts[2].replace(".json", "");
+      const fileKey = `${posDir}/${file}`;
 
-    entries.push({
-      lemma: data.word,
-      pos: data.pos.toUpperCase(),
-      gender: data.gender || null,
-      frequency: data.frequency || null,
-      gender_rule_id: data.gender_rule?.rule_id || null,
-      is_exception: data.gender_rule?.is_exception ? 1 : 0,
-      file_path: relPath,
-      gloss_en: glossEn.join(", ") || null,
-    });
+      // Collect English glosses as JSON array
+      const glossEn = (data.senses || [])
+        .map((s) => s.gloss_en)
+        .filter(Boolean);
 
-    const manifestEntry = {
-      lemma: data.word,
-      pos: data.pos.toUpperCase(),
-      gender: data.gender || null,
-      posDir,
-      file,
-      glossEn,
-    };
+      // Build the runtime word object — only fields the app needs for display.
+      // Strip computation inputs (stems, past_participle) and internal metadata (_meta).
+      const enriched = { ...data };
+      delete enriched._meta;
 
-    // Include verb conjugation data for runtime form computation
-    if (data.pos === "verb") {
-      manifestEntry.conjugation_class = data.conjugation_class;
-      if (data.conjugation_class !== "irregular") {
-        manifestEntry.stems = data.stems;
+      if (data.pos === "verb" && verbEndings) {
+        if (data.conjugation_class !== "irregular") {
+          // Pre-compute conjugation table from stems + endings
+          enriched.conjugation = computeConjugation(data, verbEndings);
+        }
+        // Strip build-time-only verb fields (now baked into conjugation)
+        delete enriched.stems;
+        delete enriched.past_participle;
       }
-      manifestEntry.past_participle = data.past_participle || null;
-      manifestEntry.separable = data.separable || false;
-      manifestEntry.prefix = data.prefix || null;
+
+      const result = insertWord.run({
+        lemma: data.word,
+        pos: data.pos.toUpperCase(),
+        gender: data.gender || null,
+        frequency: data.frequency || null,
+        file: fileKey,
+        gloss_en: glossEn.length ? JSON.stringify(glossEn) : null,
+        data: JSON.stringify(enriched),
+      });
+      wordCount++;
+
+      // Pre-compute verb forms for search
+      if (data.pos === "verb" && verbEndings) {
+        const wordId = result.lastInsertRowid;
+        const forms = computeAllForms(
+          data.conjugation_class === "irregular"
+            ? data
+            : { ...data, conjugation: enriched.conjugation },
+          verbEndings,
+        );
+        for (const form of forms) {
+          // Skip infinitive — already matched by lemma search
+          if (form === data.word.toLowerCase()) continue;
+          insertVerbForm.run({ form, word_id: wordId });
+          verbFormCount++;
+        }
+      }
     }
-
-    manifest.push(manifestEntry);
-  }
-
-  // Sort manifest by frequency (lower rank = more common) then alphabetically
-  manifest.sort((a, b) => {
-    const fa = entries.find((e) => e.lemma === a.lemma)?.frequency ?? Infinity;
-    const fb = entries.find((e) => e.lemma === b.lemma)?.frequency ?? Infinity;
-    if (fa !== fb) return fa - fb;
-    return a.lemma.localeCompare(b.lemma, "de");
   });
 
-  const insertAll = db.transaction((rows) => {
-    for (const row of rows) insert.run(row);
-  });
-  insertAll(entries);
+  insertWords();
+  console.log(`Inserted ${wordCount} words, ${verbFormCount} verb forms.`);
 
-  db.close();
-  console.log(`Built index.db with ${entries.length} entries.`);
+  // --------------------------------------------------------
+  // Phase 2: Create indexes (after bulk insert for speed)
+  // --------------------------------------------------------
 
-  // Write search manifest
-  const manifestPath = join(DATA_DIR, "search-manifest.json");
-  writeFileSync(manifestPath, JSON.stringify(manifest));
-  console.log(`Wrote search-manifest.json with ${manifest.length} entries.`);
+  db.exec(`
+    CREATE INDEX idx_words_lemma ON words(lemma COLLATE NOCASE);
+    CREATE INDEX idx_words_freq  ON words(frequency);
+    CREATE INDEX idx_verb_forms  ON verb_forms(form);
+  `);
 
-  // Phase 3: Generate text_linked in examples from annotations
+  // --------------------------------------------------------
+  // Phase 3: Process examples → cross-reference linking + examples table
+  // --------------------------------------------------------
+
   if (existsSync(EXAMPLES_FILE)) {
     const examples = JSON.parse(readFileSync(EXAMPLES_FILE, "utf-8"));
     const lookup = buildWordLookup(files);
@@ -317,7 +391,7 @@ function main() {
       }
     }
 
-    // Write back sorted by key
+    // Write back sorted by key (keeps examples.json as source of truth)
     const sorted = {};
     for (const key of Object.keys(examples).sort()) {
       sorted[key] = examples[key];
@@ -327,7 +401,31 @@ function main() {
     if (refCount > 0) {
       console.log(`Linked ${refCount} expressions to phrase cards.`);
     }
+
+    // Insert examples into SQLite
+    const insertExamples = db.transaction(() => {
+      for (const [id, ex] of Object.entries(sorted)) {
+        insertExample.run({ id, data: JSON.stringify(ex) });
+      }
+    });
+    insertExamples();
+    console.log(`Inserted ${Object.keys(sorted).length} examples.`);
   }
+
+  // --------------------------------------------------------
+  // Phase 5: Version hash
+  // --------------------------------------------------------
+
+  const version = computeVersionHash(files);
+  insertMeta.run({ key: "version", value: version });
+  writeFileSync(join(DATA_DIR, "db-version.txt"), version);
+  console.log(`Database version: ${version}`);
+
+  // Switch from WAL to DELETE journal mode for read-only runtime use
+  db.pragma("journal_mode = DELETE");
+  db.close();
+
+  console.log(`Built ${DB_PATH} successfully.`);
 }
 
 main();

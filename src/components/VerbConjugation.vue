@@ -71,9 +71,6 @@
 
 <script>
 import ConjugationTable from "./ConjugationTable.vue";
-import { computeConjugation } from "../utils/verb-forms.js";
-
-let endingsCache = null;
 
 export default {
   components: { ConjugationTable },
@@ -83,7 +80,6 @@ export default {
   data() {
     return {
       tab: "ind",
-      endings: null,
     };
   },
   computed: {
@@ -98,28 +94,9 @@ export default {
       return labels[cls] || cls;
     },
     conjugation() {
-      if (this.verb.conjugation_class === "irregular") {
-        return this.verb.conjugation;
-      }
-      if (!this.endings) return null;
-      return computeConjugation(this.verb, this.endings);
+      // Always pre-computed at build time — for all conjugation classes
+      return this.verb.conjugation;
     },
-  },
-  async mounted() {
-    if (this.verb.conjugation_class === "irregular") return;
-    if (endingsCache) {
-      this.endings = endingsCache;
-      return;
-    }
-    try {
-      const resp = await fetch("/data/rules/verb-endings.json");
-      if (resp.ok) {
-        endingsCache = await resp.json();
-        this.endings = endingsCache;
-      }
-    } catch (err) {
-      console.error("Failed to load verb endings:", err);
-    }
   },
 };
 </script>

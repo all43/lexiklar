@@ -16,10 +16,15 @@ import Framework7Vue, { registerComponents } from "framework7-vue/bundle";
 // Init Framework7 Vue plugin
 Framework7.use(Framework7Vue);
 
+// Database
+import { initDb } from "./utils/db.js";
+
 // Import root App component
 import App from "./App.vue";
 
-// Create and mount Vue app
+// Initialize database, then mount Vue app
+await initDb();
+
 const app = createApp(App);
 registerComponents(app);
 app.mount("#app");

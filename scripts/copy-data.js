@@ -1,6 +1,10 @@
 /**
- * Copy data files into public/data/ for Vite to serve as static assets.
- * Source of truth remains in data/; this creates a serving copy.
+ * Copy production data files into public/ for Vite to serve as static assets.
+ *
+ * Copies:
+ *   - data/lexiklar.db       → public/data/lexiklar.db
+ *   - data/db-version.txt    → public/data/db-version.txt
+ *   - sqlite3.wasm           → public/sqlite3/sqlite3.wasm
  *
  * Usage: node scripts/copy-data.js
  */
@@ -17,16 +21,27 @@ const DEST = join(ROOT, "public", "data");
 // Ensure destination exists
 mkdirSync(DEST, { recursive: true });
 
-// Copy word files, rules, and examples
-cpSync(join(SRC, "words"), join(DEST, "words"), { recursive: true });
-cpSync(join(SRC, "rules"), join(DEST, "rules"), { recursive: true });
-
-if (existsSync(join(SRC, "examples.json"))) {
-  cpSync(join(SRC, "examples.json"), join(DEST, "examples.json"));
+// Copy SQLite database
+if (existsSync(join(SRC, "lexiklar.db"))) {
+  cpSync(join(SRC, "lexiklar.db"), join(DEST, "lexiklar.db"));
 }
 
-if (existsSync(join(SRC, "search-manifest.json"))) {
-  cpSync(join(SRC, "search-manifest.json"), join(DEST, "search-manifest.json"));
+// Copy version hash
+if (existsSync(join(SRC, "db-version.txt"))) {
+  cpSync(join(SRC, "db-version.txt"), join(DEST, "db-version.txt"));
 }
 
-console.log("Copied data/ → public/data/");
+// Copy sqlite3 WASM binary (needed by the worker)
+const wasmSrc = join(
+  ROOT,
+  "node_modules",
+  "@sqlite.org",
+  "sqlite-wasm",
+  "dist",
+  "sqlite3.wasm",
+);
+const wasmDest = join(ROOT, "public", "sqlite3");
+mkdirSync(wasmDest, { recursive: true });
+cpSync(wasmSrc, join(wasmDest, "sqlite3.wasm"));
+
+console.log("Copied lexiklar.db, db-version.txt, sqlite3.wasm → public/");
