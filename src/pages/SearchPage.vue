@@ -11,17 +11,32 @@
 
     <f7-block-title v-if="!searchQuery && results.length">Recently Visited</f7-block-title>
 
-    <f7-list v-if="results.length > 0" class="search-results" media-list>
-      <f7-list-item
-        v-for="word in results"
-        :key="word.file"
-        :title="word.lemma"
-        :subtitle="word.matchedForm ? `← ${word.matchedForm}` : (word.glossEn[0] || '')"
-        :after="word.pos"
-        :badge="word.gender || ''"
-        :badge-color="genderColor(word.gender)"
-        :link="`/word/${word.file}/`"
-      />
+    <!--
+      Virtual list: only renders visible items — safe for large result sets.
+      vlData.items is the visible slice; vl.replaceAllItems() feeds new results
+      into an already-mounted list without tearing it down.
+    -->
+    <f7-list
+      v-if="results.length > 0"
+      class="search-results"
+      media-list
+      virtual-list
+      :virtual-list-params="vlParams"
+    >
+      <ul>
+        <f7-list-item
+          v-for="item in vlData.items"
+          :key="item.file"
+          :title="item.lemma"
+          :subtitle="item.matchedForm ? `← ${item.matchedForm}` : (item.glossEn[0] || '')"
+          :after="item.pos"
+          :badge="item.gender || ''"
+          :badge-color="genderColor(item.gender)"
+          :link="`/word/${item.file}/`"
+          :style="`top: ${vlData.topPosition}px`"
+          :virtual-list-index="item.index"
+        />
+      </ul>
     </f7-list>
 
     <f7-block v-else-if="!loading && searchQuery">
@@ -39,6 +54,7 @@
 </template>
 
 <script>
+import { theme } from "framework7-vue";
 import {
   searchByLemma,
   searchByGlossEn,
@@ -52,21 +68,30 @@ export default {
   data() {
     return {
       results: [],
+      vlData: { items: [], topPosition: 0 },
+      vl: null,          // framework7 virtual list instance
       searchQuery: "",
       loading: true,
       debounceTimer: null,
     };
   },
-  watch: {
-    searchQuery(q) {
-      clearTimeout(this.debounceTimer);
-      if (!q.trim()) {
-        this.loadRecentWords();
-        return;
-      }
-      this.debounceTimer = setTimeout(() => this.search(q.trim()), 150);
+
+  computed: {
+    // Results array with a stable numeric index for VL absolute positioning
+    vlItems() {
+      return this.results.map((item, i) => ({ ...item, index: i }));
+    },
+    // Params passed to F7 on initial VL mount — items reflect current results
+    vlParams() {
+      return {
+        items: this.vlItems,
+        renderExternal: this.renderExternal,
+        // Row height: standard title+subtitle item (no media icon)
+        height: theme.ios ? 63 : 73,
+      };
     },
   },
+
   methods: {
     onSearch(searchbar, query) {
       this.searchQuery = query || "";
@@ -80,6 +105,14 @@ export default {
       if (gender === "N") return "green";
       return "";
     },
+
+    // Called by F7 whenever it needs to (re)render the visible slice.
+    // Stores the VL instance on first call; keeps vlData in sync for v-for.
+    renderExternal(vl, vlData) {
+      this.vl = vl;
+      this.vlData = vlData;
+    },
+
     async search(q) {
       this.loading = true;
       const seen = new Set();
@@ -113,6 +146,7 @@ export default {
       this.results = results;
       this.loading = false;
     },
+
     async loadRecentWords() {
       this.loading = true;
       try {
@@ -135,6 +169,26 @@ export default {
       this.loading = false;
     },
   },
+
+  watch: {
+    searchQuery(q) {
+      clearTimeout(this.debounceTimer);
+      if (!q.trim()) {
+        this.loadRecentWords();
+        return;
+      }
+      this.debounceTimer = setTimeout(() => this.search(q.trim()), 150);
+    },
+    // When results change while the VL is already mounted (non-zero → non-zero),
+    // push the new array into the existing instance without tearing it down.
+    results(newResults) {
+      if (!this.vl || !newResults.length) return;
+      this.vl.replaceAllItems(
+        newResults.map((item, i) => ({ ...item, index: i })),
+      );
+    },
+  },
+
   async mounted() {
     await this.loadRecentWords();
   },
