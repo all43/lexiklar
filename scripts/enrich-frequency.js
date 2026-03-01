@@ -22,6 +22,11 @@ const WORDS_FILE = join(RAW_DIR, "leipzig-words.txt");
 const LEIPZIG_URL =
   "https://downloads.wortschatz-leipzig.de/corpora/deu_news_2024_300K.tar.gz";
 
+// OpenSubtitles frequency list — better everyday/spoken vocabulary coverage
+const SUBTITLE_URL =
+  "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/de/de_50k.txt";
+const SUBTITLE_FILE = join(RAW_DIR, "opensubtitles-words.txt");
+
 // ============================================================
 // Step 1: Download Leipzig corpus if needed
 // ============================================================
@@ -93,10 +98,27 @@ async function downloadLeipzig() {
 }
 
 // ============================================================
-// Step 2: Parse frequency data
+// Step 1b: Download OpenSubtitles frequency list if needed
 // ============================================================
 
-function loadFrequencyMap() {
+async function downloadSubtitles() {
+  if (existsSync(SUBTITLE_FILE)) {
+    console.log("opensubtitles-words.txt already exists. Skipping download.");
+    return;
+  }
+  console.log("Downloading OpenSubtitles frequency list...");
+  const res = await fetch(SUBTITLE_URL);
+  if (!res.ok)
+    throw new Error(`Download failed: ${res.status} ${res.statusText}`);
+  writeFileSync(SUBTITLE_FILE, await res.text());
+  console.log("  Download complete.");
+}
+
+// ============================================================
+// Step 2: Parse frequency data from both corpora
+// ============================================================
+
+function loadLeipzigFrequency() {
   const content = readFileSync(WORDS_FILE, "utf-8");
   const lines = content.split("\n").filter(Boolean);
 
@@ -110,24 +132,43 @@ function loadFrequencyMap() {
     .filter(Boolean)
     .sort((a, b) => b.frequency - a.frequency);
 
-  // Build word → rank map (rank 1 = most frequent)
+  // Build word → rank map (rank 1 = most frequent), case-sensitive (Leipzig preserves case)
   const freqMap = new Map();
   entries.forEach((e, i) => {
-    // Only store first occurrence (highest frequency for that word form)
     if (!freqMap.has(e.word)) {
       freqMap.set(e.word, { rank: i + 1, count: e.frequency });
     }
   });
 
-  console.log(`Loaded ${freqMap.size} words from Leipzig corpus.`);
+  console.log(`Loaded ${freqMap.size} words from Leipzig news corpus.`);
+  return freqMap;
+}
+
+function loadSubtitleFrequency() {
+  if (!existsSync(SUBTITLE_FILE)) return new Map();
+  const lines = readFileSync(SUBTITLE_FILE, "utf-8").split("\n").filter(Boolean);
+
+  // Format: "word count" (space-separated, already sorted by frequency, lowercase)
+  const freqMap = new Map();
+  lines.forEach((line, i) => {
+    const spaceIdx = line.lastIndexOf(" ");
+    if (spaceIdx === -1) return;
+    const word = line.slice(0, spaceIdx);
+    const count = parseInt(line.slice(spaceIdx + 1), 10);
+    if (!freqMap.has(word)) {
+      freqMap.set(word, { rank: i + 1, count });
+    }
+  });
+
+  console.log(`Loaded ${freqMap.size} words from OpenSubtitles corpus.`);
   return freqMap;
 }
 
 // ============================================================
-// Step 3: Enrich JSON files with frequency
+// Step 3: Enrich JSON files with frequency (best rank across both corpora)
 // ============================================================
 
-function enrichFiles(freqMap) {
+function enrichFiles(leipzigMap, subtitleMap) {
   let enriched = 0;
   let notFound = 0;
 
@@ -140,9 +181,19 @@ function enrichFiles(freqMap) {
       const filePath = join(fullDir, file);
       const data = JSON.parse(readFileSync(filePath, "utf-8"));
 
-      const freq = freqMap.get(data.word);
-      if (freq) {
-        data.frequency = freq.rank;
+      // Leipzig is case-sensitive; subtitles are lowercase → look up both ways
+      const leipzigFreq = leipzigMap.get(data.word);
+      const subtitleFreq = subtitleMap.get(data.word.toLowerCase());
+
+      // Use best (lowest = most frequent) rank across both corpora
+      let bestRank = null;
+      if (leipzigFreq) bestRank = leipzigFreq.rank;
+      if (subtitleFreq && (bestRank === null || subtitleFreq.rank < bestRank)) {
+        bestRank = subtitleFreq.rank;
+      }
+
+      if (bestRank !== null) {
+        data.frequency = bestRank;
         writeFileSync(filePath, JSON.stringify(data, null, 2));
         enriched++;
       } else {
@@ -165,14 +216,16 @@ async function main() {
   const downloadOnly = process.argv.includes("--download-only");
 
   await downloadLeipzig();
+  await downloadSubtitles();
 
   if (downloadOnly) {
-    console.log("Download-only mode: Leipzig corpus ready, skipping enrichment.");
+    console.log("Download-only mode: corpora ready, skipping enrichment.");
     return;
   }
 
-  const freqMap = loadFrequencyMap();
-  enrichFiles(freqMap);
+  const leipzigMap = loadLeipzigFrequency();
+  const subtitleMap = loadSubtitleFrequency();
+  enrichFiles(leipzigMap, subtitleMap);
 }
 
 main().catch((err) => {

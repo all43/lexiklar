@@ -91,25 +91,42 @@ function loadSeedList() {
  * Leipzig frequency list. Used to restrict the full pipeline to B2 vocabulary.
  * Words are stored exactly as they appear in the corpus (case-sensitive).
  */
-function loadFrequencyFilter(wordsFile, maxRank) {
-  const content = readFileSync(wordsFile, "utf-8");
-  const entries = content
-    .split("\n")
-    .filter(Boolean)
-    .map((line) => {
-      const parts = line.split("\t");
-      if (parts.length < 3) return null;
-      return { word: parts[1], count: parseInt(parts[2], 10) };
-    })
-    .filter(Boolean)
-    .sort((a, b) => b.count - a.count);
-
+function loadFrequencyFilter(wordsFile, subtitleFile, maxRank) {
   const filter = new Set();
-  for (let i = 0; i < Math.min(maxRank, entries.length); i++) {
-    filter.add(entries[i].word);
+
+  // Leipzig news corpus: tab-separated (id\tword\tcount), mixed case
+  if (existsSync(wordsFile)) {
+    const entries = readFileSync(wordsFile, "utf-8")
+      .split("\n")
+      .filter(Boolean)
+      .map((line) => {
+        const parts = line.split("\t");
+        if (parts.length < 3) return null;
+        return { word: parts[1], count: parseInt(parts[2], 10) };
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.count - a.count);
+    for (let i = 0; i < Math.min(maxRank, entries.length); i++) {
+      filter.add(entries[i].word.toLowerCase());
+    }
+    console.log(`  Leipzig: ${filter.size} unique forms from top ${maxRank}.`);
   }
+
+  // OpenSubtitles: space-separated (word count), pre-sorted, already lowercase
+  if (subtitleFile && existsSync(subtitleFile)) {
+    const sizeBefore = filter.size;
+    const lines = readFileSync(subtitleFile, "utf-8").split("\n").filter(Boolean);
+    for (let i = 0; i < Math.min(maxRank, lines.length); i++) {
+      const spaceIdx = lines[i].lastIndexOf(" ");
+      if (spaceIdx !== -1) filter.add(lines[i].slice(0, spaceIdx));
+    }
+    console.log(
+      `  OpenSubtitles: +${filter.size - sizeBefore} new forms from top ${maxRank}.`,
+    );
+  }
+
   console.log(
-    `Frequency filter: keeping words with rank ≤ ${maxRank} (${filter.size} unique forms loaded).`,
+    `Frequency filter: ${filter.size} unique forms total (union of both corpora).`,
   );
   return filter;
 }
@@ -692,13 +709,14 @@ async function main() {
   let freqFilter = null;
   if (maxFrequency && !useSeed) {
     const wordsFile = join(ROOT, "data", "raw", "leipzig-words.txt");
-    if (!existsSync(wordsFile)) {
+    const subtitleFile = join(ROOT, "data", "raw", "opensubtitles-words.txt");
+    if (!existsSync(wordsFile) && !existsSync(subtitleFile)) {
       console.error(
-        `Leipzig corpus not found at ${wordsFile}.\nRun 'npm run download-corpus' first.`,
+        `No frequency corpus found. Run 'npm run download-corpus' first.`,
       );
       process.exit(1);
     }
-    freqFilter = loadFrequencyFilter(wordsFile, maxFrequency);
+    freqFilter = loadFrequencyFilter(wordsFile, subtitleFile, maxFrequency);
   }
 
   if (useSeed) console.log(`Seed mode: processing ${seedWords.size} words`);
@@ -740,7 +758,7 @@ async function main() {
       continue;
 
     if (seedWords && !seedWords.has(entry.word.toLowerCase())) continue;
-    if (freqFilter && entry.pos !== "phrase" && !freqFilter.has(entry.word)) continue;
+    if (freqFilter && entry.pos !== "phrase" && !freqFilter.has(entry.word.toLowerCase())) continue;
 
     const key = `${entry.word}|${entry.pos}`;
     if (!groups.has(key)) groups.set(key, []);
