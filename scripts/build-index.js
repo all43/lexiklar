@@ -258,20 +258,139 @@ function main() {
   const files = findJsonFiles();
 
   // --------------------------------------------------------
-  // Phase 1: Process word files → words + verb_forms tables
+  // Phase 1a: Load all word data for relationship resolution
+  // --------------------------------------------------------
+
+  const allWordData = [];
+  for (const filePath of files) {
+    const data = JSON.parse(readFileSync(filePath, "utf-8"));
+    const relPath = relative(DATA_DIR, filePath);
+    const parts = relPath.split("/"); // ["words", "nouns", "Tisch.json"]
+    const posDir = parts[1];
+    const file = parts[2].replace(".json", "");
+    const fileKey = `${posDir}/${file}`;
+    allWordData.push({ filePath, data, posDir, file, fileKey });
+  }
+
+  // --------------------------------------------------------
+  // Phase 1b: Resolve cross-POS relationships
+  // --------------------------------------------------------
+
+  // Build stem → files lookup for same_stem detection
+  const stemMap = new Map();
+  // Build lemma → files lookup for derived/hyponyms resolution
+  const lemmaMap = new Map();
+
+  for (const entry of allWordData) {
+    const stem = entry.data.word.toLowerCase();
+    if (!stemMap.has(stem)) stemMap.set(stem, []);
+    stemMap.get(stem).push(entry);
+
+    const lemma = entry.data.word;
+    if (!lemmaMap.has(lemma)) lemmaMap.set(lemma, []);
+    lemmaMap.get(lemma).push(entry);
+  }
+
+  // Resolve relationships per word
+  const relatedMap = new Map(); // fileKey → [{file, type}]
+  let relCount = 0;
+
+  for (const entry of allWordData) {
+    const rels = [];
+    const seenFiles = new Set();
+    seenFiles.add(entry.fileKey); // skip self
+
+    // 1. same_stem: all words with matching word.toLowerCase()
+    const stem = entry.data.word.toLowerCase();
+    const stemSiblings = stemMap.get(stem) || [];
+    for (const sibling of stemSiblings) {
+      if (seenFiles.has(sibling.fileKey)) continue;
+      seenFiles.add(sibling.fileKey);
+      rels.push({ file: sibling.fileKey, type: "same_stem" });
+    }
+
+    // 2. derived: Wiktionary _derived field → derived/derived_from (bidirectional)
+    if (entry.data._derived) {
+      for (const derivedWord of entry.data._derived) {
+        const targets = lemmaMap.get(derivedWord) || [];
+        for (const target of targets) {
+          if (seenFiles.has(target.fileKey)) continue;
+          seenFiles.add(target.fileKey);
+          rels.push({ file: target.fileKey, type: "derived" });
+          // Add reverse link: derived_from
+          if (!relatedMap.has(target.fileKey)) relatedMap.set(target.fileKey, []);
+          const reverseRels = relatedMap.get(target.fileKey);
+          if (!reverseRels.some((r) => r.file === entry.fileKey)) {
+            reverseRels.push({ file: entry.fileKey, type: "derived_from" });
+          }
+        }
+      }
+    }
+
+    // 3. compound: Wiktionary _hyponyms field (verbs) → compound/base_verb (bidirectional)
+    if (entry.data._hyponyms && entry.data.pos === "verb") {
+      for (const hypoWord of entry.data._hyponyms) {
+        // Look for the hyponym as a verb (lowercase)
+        const targets = lemmaMap.get(hypoWord) || lemmaMap.get(hypoWord.toLowerCase()) || [];
+        for (const target of targets) {
+          if (seenFiles.has(target.fileKey)) continue;
+          if (target.data.pos !== "verb") continue; // only verb→verb
+          seenFiles.add(target.fileKey);
+          rels.push({ file: target.fileKey, type: "compound" });
+          // Add reverse link: base_verb
+          if (!relatedMap.has(target.fileKey)) relatedMap.set(target.fileKey, []);
+          const reverseRels = relatedMap.get(target.fileKey);
+          if (!reverseRels.some((r) => r.file === entry.fileKey)) {
+            reverseRels.push({ file: entry.fileKey, type: "base_verb" });
+          }
+        }
+      }
+    }
+
+    if (rels.length) {
+      if (!relatedMap.has(entry.fileKey)) relatedMap.set(entry.fileKey, []);
+      relatedMap.get(entry.fileKey).push(...rels);
+    }
+  }
+
+  // Dedup relatedMap entries (reverse links may duplicate same_stem links)
+  for (const [fileKey, rels] of relatedMap) {
+    const seen = new Set();
+    const deduped = [];
+    for (const rel of rels) {
+      const key = `${rel.file}|${rel.type}`;
+      if (seen.has(key)) continue;
+      // If same file already has same_stem, skip derived_from/base_verb for that file
+      const sameFileStemEntry = deduped.find(
+        (r) => r.file === rel.file && r.type === "same_stem",
+      );
+      if (
+        sameFileStemEntry &&
+        (rel.type === "derived_from" || rel.type === "derived" || rel.type === "base_verb" || rel.type === "compound")
+      ) {
+        continue;
+      }
+      seen.add(key);
+      deduped.push(rel);
+    }
+    relatedMap.set(fileKey, deduped);
+    relCount += deduped.length;
+  }
+
+  console.log(
+    `Resolved ${relCount} relationships across ${relatedMap.size} words.`,
+  );
+
+  // --------------------------------------------------------
+  // Phase 1c: Insert word files → words + verb_forms tables
   // --------------------------------------------------------
 
   let wordCount = 0;
   let verbFormCount = 0;
 
   const insertWords = db.transaction(() => {
-    for (const filePath of files) {
-      const data = JSON.parse(readFileSync(filePath, "utf-8"));
-      const relPath = relative(DATA_DIR, filePath);
-      const parts = relPath.split("/"); // ["words", "nouns", "Tisch.json"]
-      const posDir = parts[1];
-      const file = parts[2].replace(".json", "");
-      const fileKey = `${posDir}/${file}`;
+    for (const entry of allWordData) {
+      const { data, fileKey } = entry;
 
       // Collect English glosses as JSON array
       const glossEn = (data.senses || [])
@@ -282,6 +401,8 @@ function main() {
       // Strip computation inputs (stems, past_participle) and internal metadata (_meta).
       const enriched = { ...data };
       delete enriched._meta;
+      delete enriched._derived;
+      delete enriched._hyponyms;
 
       if (data.pos === "verb" && verbEndings) {
         if (data.conjugation_class !== "irregular") {
@@ -291,6 +412,12 @@ function main() {
         // Strip build-time-only verb fields (now baked into conjugation)
         delete enriched.stems;
         delete enriched.past_participle;
+      }
+
+      // Inject resolved relationships into runtime data blob
+      const rels = relatedMap.get(fileKey);
+      if (rels && rels.length) {
+        enriched.related = rels;
       }
 
       const result = insertWord.run({

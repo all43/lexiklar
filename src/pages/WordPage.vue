@@ -96,6 +96,24 @@
         </f7-list>
       </template>
 
+      <!-- Related Words -->
+      <template v-if="relatedGroups.length">
+        <f7-block-title>Related Words</f7-block-title>
+        <f7-list>
+          <template v-for="group in relatedGroups" :key="group.type">
+            <f7-list-item group-title :title="group.label" />
+            <f7-list-item
+              v-for="rel in group.items"
+              :key="rel.file"
+              :title="rel.displayTitle"
+              :footer="rel.glossText"
+              link
+              @click="navigateToWord(rel.file)"
+            />
+          </template>
+        </f7-list>
+      </template>
+
       <!-- Grammar -->
       <template v-if="word.pos === 'verb'">
         <f7-block-title>Conjugation</f7-block-title>
@@ -151,7 +169,7 @@
 <script>
 import GlossText from "../components/GlossText.vue";
 import VerbConjugation from "../components/VerbConjugation.vue";
-import { getWord, getExamples } from "../utils/db.js";
+import { getWord, getExamples, getRelatedWords } from "../utils/db.js";
 
 export default {
   components: { GlossText, VerbConjugation },
@@ -163,6 +181,7 @@ export default {
     return {
       word: null,
       examples: {},
+      relatedWords: [],
       loading: true,
       preview: null,
     };
@@ -173,6 +192,59 @@ export default {
     },
     previewPosColor() {
       return this.getPosColor(this.preview?.pos);
+    },
+    relatedGroups() {
+      if (!this.word?.related || !this.relatedWords.length) return [];
+
+      const typeLabels = {
+        same_stem: "Same Stem",
+        derived: "Derived Words",
+        derived_from: "Derived From",
+        compound: "Compound Verbs",
+        base_verb: "Base Verb",
+      };
+      const typeOrder = ["same_stem", "derived_from", "derived", "base_verb", "compound"];
+
+      // Build file → display info lookup
+      const infoMap = {};
+      for (const rw of this.relatedWords) {
+        infoMap[rw.file] = rw;
+      }
+
+      // Group by type
+      const groups = {};
+      for (const rel of this.word.related) {
+        const info = infoMap[rel.file];
+        if (!info) continue;
+        if (!groups[rel.type]) groups[rel.type] = [];
+
+        // Build display title: article + word for nouns, just word for others
+        let displayTitle = info.lemma;
+        if (info.pos.toLowerCase() === "noun" && info.gender) {
+          const articles = { M: "der", F: "die", N: "das" };
+          const art = articles[info.gender];
+          if (art) displayTitle = `${art} ${info.lemma}`;
+        }
+
+        // First English gloss as subtitle
+        const glossText = info.glossEn?.length ? info.glossEn[0] : "";
+
+        groups[rel.type].push({
+          file: rel.file,
+          displayTitle,
+          glossText,
+          pos: info.pos,
+        });
+      }
+
+      // Return ordered groups
+      return typeOrder
+        .filter((type) => groups[type])
+        .map((type) => ({
+          type,
+          label: typeLabels[type] || type,
+          items: groups[type],
+        }));
     },
     wordExpressions() {
       if (!this.word?.expression_ids) return [];
@@ -235,6 +307,10 @@ export default {
       }
     },
 
+    navigateToWord(file) {
+      this.f7router.navigate(`/word/${file}/`);
+    },
+
     navigateToPreview() {
       const { filePath, senseNumber } = this.preview;
       this.preview = null;
@@ -283,6 +359,12 @@ export default {
       }
       if (this.word?.expression_ids) ids.push(...this.word.expression_ids);
       if (ids.length) this.examples = await getExamples(ids);
+
+      // Load related word display info
+      if (this.word?.related?.length) {
+        const fileKeys = this.word.related.map((r) => r.file);
+        this.relatedWords = await getRelatedWords(fileKeys);
+      }
     } catch (err) {
       console.error("Failed to load word:", err);
     } finally {

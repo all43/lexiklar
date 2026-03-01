@@ -216,6 +216,20 @@ export async function searchByVerbForm(q) {
 }
 
 /**
+ * Get display info for related words by their file keys.
+ * Returns an array with lemma, pos, gender, file, glossEn for each.
+ */
+export async function getRelatedWords(fileKeys) {
+  if (!fileKeys.length) return [];
+  const placeholders = fileKeys.map(() => "?").join(",");
+  const rows = await query(
+    `SELECT lemma, pos, gender, file, gloss_en FROM words WHERE file IN (${placeholders})`,
+    fileKeys,
+  );
+  return rows.map(processSearchRow);
+}
+
+/**
  * Get all words, ordered by frequency.
  * Used for the initial search page listing.
  */

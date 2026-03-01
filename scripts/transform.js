@@ -766,6 +766,16 @@ async function main() {
       const expressionIds = extractExpressions(parsed);
       if (expressionIds.length > 0) data.expression_ids = expressionIds;
 
+      // Extract relationship hints for build-index resolution (entry-level fields)
+      const rawDerived = (parsed.derived || [])
+        .map((d) => d.word)
+        .filter(Boolean);
+      const rawHyponyms = (parsed.hyponyms || [])
+        .map((h) => h.word)
+        .filter(Boolean);
+      if (rawDerived.length) data._derived = rawDerived;
+      if (rawHyponyms.length) data._hyponyms = rawHyponyms;
+
       // Add _meta
       data._meta = {
         source_hash: sourceHash,

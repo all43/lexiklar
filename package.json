@@ -4,8 +4,8 @@
   "description": "Offline German dictionary with deep grammar support",
   "type": "module",
   "scripts": {
-    "dev": "node scripts/copy-data.js && vite",
-    "build": "node scripts/copy-data.js && vite build",
+    "dev": "npm run build-index && node scripts/copy-data.js && vite",
+    "build": "npm run build-index && node scripts/copy-data.js && vite build",
     "preview": "vite preview",
     "copy-data": "node scripts/copy-data.js",
     "download": "node scripts/download.js",
