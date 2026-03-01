@@ -740,7 +740,7 @@ async function main() {
       continue;
 
     if (seedWords && !seedWords.has(entry.word.toLowerCase())) continue;
-    if (freqFilter && !freqFilter.has(entry.word)) continue;
+    if (freqFilter && entry.pos !== "phrase" && !freqFilter.has(entry.word)) continue;
 
     const key = `${entry.word}|${entry.pos}`;
     if (!groups.has(key)) groups.set(key, []);
@@ -765,11 +765,12 @@ async function main() {
     }
   }
 
-  // Seed allExamples with existing manual data (translation, extra lemmas)
+  // Seed allExamples with all existing examples so that skipped (unchanged)
+  // entries don't lose their examples on incremental re-runs.
+  // Newly processed entries will overwrite with fresh data (same content hash
+  // → same id, so no actual change for identical text).
   for (const [id, ex] of Object.entries(existingExamples)) {
-    if (ex.translation || ex.source !== "wiktionary") {
-      allExamples[id] = ex;
-    }
+    allExamples[id] = ex;
   }
 
   // Phase 2: Transform and write
