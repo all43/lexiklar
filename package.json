@@ -18,7 +18,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:glosses": "node scripts/test-gloss-translation.js",
-    "pipeline": "npm run download && npm run download-corpus && npm run transform -- --max-frequency 5000 && npm run enrich && npm run translate && npm run build-index",
+    "pipeline": "npm run download && npm run download-corpus && npm run transform -- --max-frequency 8000 && npm run enrich && npm run translate && npm run build-index",
     "pipeline:seed": "npm run transform -- --seed && npm run enrich && npm run translate && npm run build-index"
   },
   "dependencies": {
