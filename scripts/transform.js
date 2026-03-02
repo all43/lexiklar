@@ -145,6 +145,32 @@ function splitForms(entry) {
   };
 }
 
+// Tags that identify a declension cell rather than a gender-pair reference.
+const CASE_NUMBER_TAGS = new Set([
+  "nominative", "accusative", "dative", "genitive", "singular", "plural",
+]);
+
+/**
+ * For a noun entry, find the gender-pair form reference (e.g. feminine for
+ * masculine nouns, masculine for feminine nouns) from the forms array.
+ * Returns the counterpart word string, or null if none found.
+ *
+ * Example: Automechaniker.forms contains
+ *   { form: "Automechanikerin", tags: ["feminine"], sense_index: "1" }
+ * which is distinct from declension forms that carry case/number tags.
+ */
+function extractGenderCounterpart(entry) {
+  if (entry.pos !== "noun") return null;
+  const form = (entry.forms || []).find((f) => {
+    const tags = f.tags || [];
+    return (
+      (tags.includes("feminine") || tags.includes("masculine")) &&
+      !tags.some((t) => CASE_NUMBER_TAGS.has(t))
+    );
+  });
+  return form ? form.form : null;
+}
+
 // ============================================================
 // Global examples accumulator
 // ============================================================
@@ -743,6 +769,11 @@ async function main() {
   // Phase 1: Collect matching entries, grouped by word|pos
   console.log("Scanning source data...");
   const groups = new Map();
+  // Buffer for noun entries with gender-pair form references. Populated for ALL
+  // such nouns regardless of the frequency filter so that Phase 1b can force-
+  // include counterparts of filtered-out words (e.g. Automechanikerin when only
+  // Automechaniker passed the cutoff).
+  const genderBuffer = new Map(); // lowerCaseWord → { raw, parsed }
   const rl = createInterface({ input: createReadStream(RAW_FILE) });
   let lineCount = 0;
 
@@ -767,6 +798,13 @@ async function main() {
     )
       continue;
 
+    // Buffer noun entries that carry a gender-pair reference, before filter
+    // checks, so Phase 1b can retrieve them even if they didn't pass the filter.
+    if (entry.pos === "noun" && extractGenderCounterpart(entry)) {
+      if (!genderBuffer.has(entry.word.toLowerCase()))
+        genderBuffer.set(entry.word.toLowerCase(), { raw: line, parsed: entry });
+    }
+
     if (seedWords && !seedWords.has(entry.word.toLowerCase())) continue;
     if (freqFilter && entry.pos !== "phrase" && !freqFilter.has(entry.word.toLowerCase())) continue;
 
@@ -782,6 +820,31 @@ async function main() {
   console.log(
     `\n  Found ${totalEntries} entries across ${groups.size} word groups`,
   );
+
+  // Phase 1b: Force-include gender counterparts of included nouns that were
+  // dropped by the frequency filter (only in frequency mode, not seed mode).
+  // We check ALL entries in each group because the same word can have multiple
+  // noun entries (e.g. Koch has masculine=chef and neuter=abbreviation); only
+  // one of them may carry the feminine form reference.
+  if (freqFilter && !useSeed) {
+    let counterpartsAdded = 0;
+    for (const [, entries] of groups) {
+      for (const { parsed } of entries) {
+        if (parsed.pos !== "noun") continue;
+        const counterpartWord = extractGenderCounterpart(parsed);
+        if (!counterpartWord) continue;
+        const counterpartKey = `${counterpartWord}|noun`;
+        if (groups.has(counterpartKey)) break; // already included — move to next group
+        const buffered = genderBuffer.get(counterpartWord.toLowerCase());
+        if (!buffered) break; // not present in Wiktionary data
+        groups.set(counterpartKey, [{ raw: buffered.raw, parsed: buffered.parsed }]);
+        counterpartsAdded++;
+        break; // counterpart added, no need to check other entries in this group
+      }
+    }
+    if (counterpartsAdded > 0)
+      console.log(`  Added ${counterpartsAdded} gender counterpart(s) missing from frequency filter.`);
+  }
 
   // Load existing examples to preserve manually added data
   let existingExamples = {};
@@ -850,6 +913,10 @@ async function main() {
         .filter(Boolean);
       if (rawDerived.length) data._derived = rawDerived;
       if (rawHyponyms.length) data._hyponyms = rawHyponyms;
+
+      // Gender pair reference: masculine ↔ feminine noun counterpart
+      const genderCounterpart = extractGenderCounterpart(parsed);
+      if (genderCounterpart) data._gender_counterpart = genderCounterpart;
 
       // Add _meta
       data._meta = {

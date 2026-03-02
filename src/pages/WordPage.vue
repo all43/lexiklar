@@ -202,13 +202,15 @@ export default {
       if (!this.word?.related || !this.relatedWords.length) return [];
 
       const typeLabels = {
+        feminine_form: "Feminine Form",
+        masculine_form: "Masculine Form",
         same_stem: "Same Stem",
         derived: "Derived Words",
         derived_from: "Derived From",
         compound: "Compound Verbs",
         base_verb: "Base Verb",
       };
-      const typeOrder = ["same_stem", "derived_from", "derived", "base_verb", "compound"];
+      const typeOrder = ["feminine_form", "masculine_form", "same_stem", "derived_from", "derived", "base_verb", "compound"];
 
       // Build file → display info lookup
       const infoMap = {};

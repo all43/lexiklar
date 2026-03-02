@@ -327,7 +327,22 @@ function main() {
       }
     }
 
-    // 3. compound: Wiktionary _hyponyms field (verbs) → compound/base_verb (bidirectional)
+    // 3a. gender pair: _gender_counterpart → feminine_form / masculine_form
+    if (entry.data._gender_counterpart && entry.data.pos === "noun") {
+      const counterpartWord = entry.data._gender_counterpart;
+      const targets = lemmaMap.get(counterpartWord) || [];
+      for (const target of targets) {
+        if (seenFiles.has(target.fileKey)) continue;
+        if (target.data.pos !== "noun") continue;
+        seenFiles.add(target.fileKey);
+        const type = entry.data.gender === "M" ? "feminine_form" : "masculine_form";
+        rels.push({ file: target.fileKey, type });
+        // Reverse link: the counterpart's own _gender_counterpart will add it
+        // when that entry is processed, so no manual reverse needed here.
+      }
+    }
+
+    // 3b. compound: Wiktionary _hyponyms field (verbs) → compound/base_verb (bidirectional)
     if (entry.data._hyponyms && entry.data.pos === "verb") {
       for (const hypoWord of entry.data._hyponyms) {
         // Look for the hyponym as a verb (lowercase)
@@ -403,6 +418,7 @@ function main() {
       delete enriched._meta;
       delete enriched._derived;
       delete enriched._hyponyms;
+      delete enriched._gender_counterpart;
 
       if (data.pos === "verb" && verbEndings) {
         if (data.conjugation_class !== "irregular") {
