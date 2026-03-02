@@ -179,10 +179,18 @@ export default {
       }
       this.debounceTimer = setTimeout(() => this.search(q.trim()), 150);
     },
-    // When results change while the VL is already mounted (non-zero → non-zero),
-    // push the new array into the existing instance without tearing it down.
+    // When results go empty the f7-list is destroyed by v-if; clear the stale
+    // VL reference so the next non-empty result mounts a fresh VL from vlParams
+    // instead of calling replaceAllItems() on a detached (destroyed) instance.
+    // A stale vl.replaceAllItems() call can fire its own renderExternal callback
+    // asynchronously (RAF), overwriting this.vl/vlData after the fresh VL has
+    // already set them correctly — causing a blank list or stuck spinner.
     results(newResults) {
-      if (!this.vl || !newResults.length) return;
+      if (!newResults.length) {
+        this.vl = null;
+        return;
+      }
+      if (!this.vl) return;
       this.vl.replaceAllItems(
         newResults.map((item, i) => ({ ...item, index: i })),
       );
