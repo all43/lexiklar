@@ -91,7 +91,7 @@ function loadSeedList() {
  * Leipzig frequency list. Used to restrict the full pipeline to B2 vocabulary.
  * Words are stored exactly as they appear in the corpus (case-sensitive).
  */
-function loadFrequencyFilter(wordsFile, subtitleFile, maxRank) {
+function loadFrequencyFilter(wordsFile, subtitleFile, maxRank, whitelist = []) {
   const filter = new Set();
 
   // Leipzig news corpus: tab-separated (id\tword\tcount), mixed case
@@ -125,8 +125,14 @@ function loadFrequencyFilter(wordsFile, subtitleFile, maxRank) {
     );
   }
 
+  // Whitelist: force-include CEFR/curated words regardless of corpus rank
+  if (whitelist.length) {
+    for (const w of whitelist) filter.add(w.toLowerCase());
+    console.log(`  Whitelist: ${whitelist.length} forced word(s) added.`);
+  }
+
   console.log(
-    `Frequency filter: ${filter.size} unique forms total (union of both corpora).`,
+    `Frequency filter: ${filter.size} unique forms total (corpora + whitelist).`,
   );
   return filter;
 }
@@ -716,7 +722,11 @@ async function main() {
       );
       process.exit(1);
     }
-    freqFilter = loadFrequencyFilter(wordsFile, subtitleFile, maxFrequency);
+    const whitelistFile = join(ROOT, "config", "word-whitelist.json");
+    const whitelist = existsSync(whitelistFile)
+      ? JSON.parse(readFileSync(whitelistFile, "utf-8")).words.map((w) => w.word)
+      : [];
+    freqFilter = loadFrequencyFilter(wordsFile, subtitleFile, maxFrequency, whitelist);
   }
 
   if (useSeed) console.log(`Seed mode: processing ${seedWords.size} words`);
