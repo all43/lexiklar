@@ -26,7 +26,7 @@
             v-for="item in vlData.items"
             :key="item.file"
             :title="item.lemma"
-            :subtitle="item.matchedForm ? `← ${item.matchedForm}` : (item.glossEn[0] || '')"
+            :subtitle="itemSubtitle(item)"
             :after="item.pos"
             :badge="item.gender || ''"
             :badge-color="genderColor(item.gender)"
@@ -95,7 +95,8 @@ import { theme } from "framework7-vue";
 import {
   searchByLemma,
   searchByGlossEn,
-  searchByVerbForm,
+  searchByWordForm,
+  getRelatedSearchResults,
   getRelatedWords,
 } from "../utils/db.js";
 
@@ -130,7 +131,7 @@ export default {
         items: this.vlItems,
         renderExternal: this.renderExternal,
         height: (item) => {
-          const hasSub = item.glossEn?.length > 0 || !!item.matchedForm;
+          const hasSub = item.glossEn?.length > 0 || !!item.matchedForm || !!item.relatedTo;
           return theme.ios ? (hasSub ? 63 : 44) : (hasSub ? 69 : 48);
         },
       };
@@ -163,17 +164,34 @@ export default {
       this.vlData = vlData;
     },
 
+    itemSubtitle(item) {
+      if (item.matchedForm) return `← ${item.matchedForm}`;
+      if (item.relatedTo) return `↳ ${item.relatedTo}`;
+      return item.glossEn?.[0] || "";
+    },
+
     async search(q) {
       this.loading = true;
       const seen = new Set();
       const results = [];
 
+      // 1. Lemma prefix match (highest priority)
       const lemmaHits = await searchByLemma(q);
       for (const r of lemmaHits) {
         seen.add(r.file);
         results.push(r);
       }
 
+      // 2. Word form match — nouns + verbs (e.g., "Schuhe" → Schuh, "lief" → laufen)
+      const formHits = await searchByWordForm(q);
+      for (const r of formHits) {
+        if (!seen.has(r.file)) {
+          seen.add(r.file);
+          results.push({ ...r, matchedForm: q });
+        }
+      }
+
+      // 3. English gloss match (lower priority than inflected forms)
       const enHits = await searchByGlossEn(q);
       for (const r of enHits) {
         if (!seen.has(r.file)) {
@@ -182,11 +200,16 @@ export default {
         }
       }
 
-      const verbHits = await searchByVerbForm(q);
-      for (const r of verbHits) {
-        if (!seen.has(r.file)) {
-          seen.add(r.file);
-          results.push({ ...r, matchedForm: q });
+      // 4. Related words of direct results (1 level deep, max 20)
+      //    Skip when too many direct results — broad queries don't need expansion
+      const directFiles = [...seen];
+      if (directFiles.length > 0 && directFiles.length <= 10) {
+        const relatedHits = await getRelatedSearchResults(directFiles, directFiles, 20);
+        for (const r of relatedHits) {
+          if (!seen.has(r.file)) {
+            seen.add(r.file);
+            results.push(r);
+          }
         }
       }
 

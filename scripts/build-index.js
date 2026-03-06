@@ -4,7 +4,8 @@
  * Packs ALL data needed by the app into a single database:
  *   - words table: full word JSON with pre-computed conjugation + search columns
  *   - examples table: individual examples (not the entire examples.json)
- *   - verb_forms table: pre-computed conjugated forms for search
+ *   - word_forms table: pre-computed inflected forms for search (verbs + nouns)
+ *   - word_refs table: cross-references between related words
  *   - meta table: version hash for OPFS cache invalidation
  *
  * Also resolves cross-references in examples (text_linked) and writes
@@ -243,10 +244,16 @@ function main() {
       data TEXT NOT NULL
     );
 
-    CREATE TABLE verb_forms (
+    CREATE TABLE word_forms (
       form    TEXT NOT NULL,
       word_id INTEGER NOT NULL REFERENCES words(id),
       PRIMARY KEY (form, word_id)
+    );
+
+    CREATE TABLE word_refs (
+      word_id      INTEGER NOT NULL REFERENCES words(id),
+      related_file TEXT NOT NULL,
+      type         TEXT NOT NULL
     );
 
     CREATE TABLE meta (
@@ -260,9 +267,14 @@ function main() {
     VALUES (@lemma, @lemma_folded, @pos, @gender, @frequency, @file, @gloss_en, @data)
   `);
 
-  const insertVerbForm = db.prepare(`
-    INSERT OR IGNORE INTO verb_forms (form, word_id)
+  const insertWordForm = db.prepare(`
+    INSERT OR IGNORE INTO word_forms (form, word_id)
     VALUES (@form, @word_id)
+  `);
+
+  const insertWordRef = db.prepare(`
+    INSERT INTO word_refs (word_id, related_file, type)
+    VALUES (@word_id, @related_file, @type)
   `);
 
   const insertExample = db.prepare(`
@@ -450,11 +462,12 @@ function main() {
   );
 
   // --------------------------------------------------------
-  // Phase 1c: Insert word files → words + verb_forms tables
+  // Phase 1c: Insert word files → words + word_forms + word_refs tables
   // --------------------------------------------------------
 
   let wordCount = 0;
-  let verbFormCount = 0;
+  let wordFormCount = 0;
+  let wordRefCount = 0;
 
   const insertWords = db.transaction(() => {
     for (const entry of allWordData) {
@@ -503,9 +516,10 @@ function main() {
       });
       wordCount++;
 
+      const wordId = result.lastInsertRowid;
+
       // Pre-compute verb forms for search
       if (data.pos === "verb" && verbEndings) {
-        const wordId = result.lastInsertRowid;
         const forms = computeAllForms(
           data.conjugation_class === "irregular"
             ? data
@@ -515,15 +529,40 @@ function main() {
         for (const form of forms) {
           // Skip infinitive — already matched by lemma search
           if (form === data.word.toLowerCase()) continue;
-          insertVerbForm.run({ form, word_id: wordId });
-          verbFormCount++;
+          insertWordForm.run({ form, word_id: wordId });
+          wordFormCount++;
+        }
+      }
+
+      // Pre-compute noun case forms for search (plural, genitive, dative, etc.)
+      if (data.pos === "noun" && data.case_forms) {
+        const lemmaLower = data.word.toLowerCase();
+        const seenForms = new Set();
+        for (const number of Object.values(data.case_forms)) {
+          for (const form of Object.values(number)) {
+            if (form == null) continue;
+            const lower = form.toLowerCase();
+            if (lower === lemmaLower) continue; // skip nom sg (matched by lemma search)
+            if (seenForms.has(lower)) continue;
+            seenForms.add(lower);
+            insertWordForm.run({ form: lower, word_id: wordId });
+            wordFormCount++;
+          }
+        }
+      }
+
+      // Insert cross-references for related-word search expansion
+      if (rels && rels.length) {
+        for (const rel of rels) {
+          insertWordRef.run({ word_id: wordId, related_file: rel.file, type: rel.type });
+          wordRefCount++;
         }
       }
     }
   });
 
   insertWords();
-  console.log(`Inserted ${wordCount} words, ${verbFormCount} verb forms.`);
+  console.log(`Inserted ${wordCount} words, ${wordFormCount} word forms, ${wordRefCount} cross-references.`);
 
   // --------------------------------------------------------
   // Phase 2: Create indexes (after bulk insert for speed)
@@ -533,7 +572,8 @@ function main() {
     CREATE INDEX idx_words_lemma        ON words(lemma COLLATE NOCASE);
     CREATE INDEX idx_words_lemma_folded ON words(lemma_folded);
     CREATE INDEX idx_words_freq         ON words(frequency);
-    CREATE INDEX idx_verb_forms         ON verb_forms(form);
+    CREATE INDEX idx_word_forms         ON word_forms(form);
+    CREATE INDEX idx_word_refs_word     ON word_refs(word_id);
   `);
 
   // --------------------------------------------------------

@@ -220,20 +220,49 @@ export async function searchByGlossEn(q) {
 }
 
 /**
- * Search words by conjugated verb form (exact match).
+ * Search words by inflected form — verb conjugations and noun case forms (exact match).
  */
-export async function searchByVerbForm(q) {
+export async function searchByWordForm(q) {
   const rows = await query(
     `SELECT w.lemma, w.pos, w.gender, w.frequency, w.file, w.gloss_en
-     FROM verb_forms vf
-     JOIN words w ON w.id = vf.word_id
-     WHERE vf.form = ? COLLATE NOCASE
+     FROM word_forms wf
+     JOIN words w ON w.id = wf.word_id
+     WHERE wf.form = ? COLLATE NOCASE
      ORDER BY
        CASE WHEN w.frequency IS NULL THEN 999999 ELSE w.frequency END
      LIMIT 50`,
     [q.toLowerCase()],
   );
   return rows.map(processSearchRow);
+}
+
+/**
+ * Get related words for a set of direct search results (1 level deep).
+ * Returns search-result-shaped objects with an added `relatedTo` field.
+ */
+export async function getRelatedSearchResults(files, excludeFiles, limit = 20) {
+  if (!files.length) return [];
+  const filePlaceholders = files.map(() => "?").join(",");
+  const excludePlaceholders = excludeFiles.map(() => "?").join(",");
+
+  const rows = await query(
+    `SELECT DISTINCT wr.related_file AS file, src.lemma AS related_to,
+            tgt.lemma, tgt.pos, tgt.gender, tgt.frequency, tgt.gloss_en
+     FROM word_refs wr
+     JOIN words src ON src.id = wr.word_id
+     JOIN words tgt ON tgt.file = wr.related_file
+     WHERE src.file IN (${filePlaceholders})
+       AND wr.related_file NOT IN (${excludePlaceholders})
+     ORDER BY
+       CASE WHEN tgt.frequency IS NULL THEN 999999 ELSE tgt.frequency END
+     LIMIT ?`,
+    [...files, ...excludeFiles, limit],
+  );
+
+  return rows.map((row) => ({
+    ...processSearchRow(row),
+    relatedTo: row.related_to,
+  }));
 }
 
 /**
