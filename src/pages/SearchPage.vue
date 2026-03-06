@@ -86,8 +86,13 @@ export default {
       return {
         items: this.vlItems,
         renderExternal: this.renderExternal,
-        // Row height: standard title+subtitle item (no media icon)
-        height: theme.ios ? 63 : 73,
+        // Height varies: items with a subtitle (gloss_en or matched verb form)
+        // render taller than items without. Measured in browser; iOS estimates
+        // match F7's standard single/two-line media list item heights.
+        height: (item) => {
+          const hasSub = item.glossEn?.length > 0 || !!item.matchedForm;
+          return theme.ios ? (hasSub ? 63 : 44) : (hasSub ? 69 : 48);
+        },
       };
     },
   },
