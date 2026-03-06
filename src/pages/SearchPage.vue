@@ -168,23 +168,23 @@ export default {
       const seen = new Set();
       const results = [];
 
-      // 1. Lemma prefix match (highest priority)
-      const lemmaHits = await searchByLemma(q);
-      for (const r of lemmaHits) {
-        seen.add(r.file);
-        results.push(r);
-      }
-
-      // 2. Word form match — nouns + verbs (e.g., "Schuhe" → Schuh, "lief" → laufen)
+      // 1. Exact word form match — highest priority (e.g., "Schuhe" → Schuh, "lief" → laufen)
       const formHits = await searchByWordForm(q);
       for (const r of formHits) {
+        seen.add(r.file);
+        results.push({ ...r, matchedForm: q });
+      }
+
+      // 2. Lemma prefix match
+      const lemmaHits = await searchByLemma(q);
+      for (const r of lemmaHits) {
         if (!seen.has(r.file)) {
           seen.add(r.file);
-          results.push({ ...r, matchedForm: q });
+          results.push(r);
         }
       }
 
-      // 3. English gloss match (lower priority than inflected forms)
+      // 3. English gloss match
       const enHits = await searchByGlossEn(q);
       for (const r of enHits) {
         if (!seen.has(r.file)) {
