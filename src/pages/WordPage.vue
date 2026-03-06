@@ -356,11 +356,14 @@ export default {
     try {
       this.word = await getWord(`${pos}/${file}`);
 
-      // Track this visit in recent words (localStorage, max 100, most recent first)
+      // Track this visit in recent words + view counts
       if (this.word) {
         try {
           const RECENTS_KEY = "lexiklar_recents";
+          const COUNTS_KEY = "lexiklar_view_counts";
           const fileKey = `${pos}/${file}`;
+
+          // Update recents list (most recent first, max 100)
           const stored = localStorage.getItem(RECENTS_KEY);
           const recents = stored ? JSON.parse(stored) : [];
           const filtered = recents.filter((f) => f !== fileKey);
@@ -369,6 +372,11 @@ export default {
             RECENTS_KEY,
             JSON.stringify(filtered.slice(0, 100)),
           );
+
+          // Increment view count
+          const counts = JSON.parse(localStorage.getItem(COUNTS_KEY) || "{}");
+          counts[fileKey] = (counts[fileKey] || 0) + 1;
+          localStorage.setItem(COUNTS_KEY, JSON.stringify(counts));
         } catch {
           // localStorage unavailable — silently skip
         }

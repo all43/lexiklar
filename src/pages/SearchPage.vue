@@ -1,5 +1,5 @@
 <template>
-  <f7-page name="search" with-subnavbar>
+  <f7-page name="search" with-subnavbar @page:tabshow="onTabShow">
     <f7-navbar title="Lexiklar">
       <f7-subnavbar :inner="false">
         <f7-searchbar
@@ -12,43 +12,77 @@
       </f7-subnavbar>
     </f7-navbar>
 
-    <f7-block-title v-if="!searchQuery && results.length">Recently Visited</f7-block-title>
+    <!-- ═══ Search results (VL) — shown when a query is active ═══ -->
+    <template v-if="searchQuery">
+      <f7-list
+        v-if="results.length > 0"
+        class="search-results"
+        media-list
+        virtual-list
+        :virtual-list-params="vlParams"
+      >
+        <ul>
+          <f7-list-item
+            v-for="item in vlData.items"
+            :key="item.file"
+            :title="item.lemma"
+            :subtitle="item.matchedForm ? `← ${item.matchedForm}` : (item.glossEn[0] || '')"
+            :after="item.pos"
+            :badge="item.gender || ''"
+            :badge-color="genderColor(item.gender)"
+            :link="`/word/${item.file}/`"
+            :style="`top: ${vlData.topPosition}px`"
+            :virtual-list-index="item.index"
+          />
+        </ul>
+      </f7-list>
 
-    <!--
-      Virtual list: only renders visible items — safe for large result sets.
-      vlData.items is the visible slice; vl.replaceAllItems() feeds new results
-      into an already-mounted list without tearing it down.
-    -->
-    <f7-list
-      v-if="results.length > 0"
-      class="search-results"
-      media-list
-      virtual-list
-      :virtual-list-params="vlParams"
-    >
-      <ul>
-        <f7-list-item
-          v-for="item in vlData.items"
-          :key="item.file"
-          :title="item.lemma"
-          :subtitle="item.matchedForm ? `← ${item.matchedForm}` : (item.glossEn[0] || '')"
-          :after="item.pos"
-          :badge="item.gender || ''"
-          :badge-color="genderColor(item.gender)"
-          :link="`/word/${item.file}/`"
-          :style="`top: ${vlData.topPosition}px`"
-          :virtual-list-index="item.index"
-        />
-      </ul>
-    </f7-list>
+      <f7-block v-else-if="!loading">
+        <p>No words found.</p>
+      </f7-block>
+    </template>
 
-    <f7-block v-else-if="!loading && searchQuery">
-      <p>No words found.</p>
-    </f7-block>
+    <!-- ═══ Home screen — shown when no query ═══ -->
+    <template v-else-if="!loading">
+      <!-- Frequently Viewed -->
+      <template v-if="freqWords.length">
+        <f7-block-title>Frequently Viewed</f7-block-title>
+        <f7-list class="home-list" media-list>
+          <f7-list-item
+            v-for="item in freqWords"
+            :key="item.file"
+            :title="item.lemma"
+            :subtitle="item.glossEn[0] || ''"
+            :after="item.pos"
+            :badge="item.gender || ''"
+            :badge-color="genderColor(item.gender)"
+            :link="`/word/${item.file}/`"
+          />
+        </f7-list>
+      </template>
 
-    <f7-block v-else-if="!loading && !searchQuery">
-      <p style="color: var(--f7-list-item-footer-text-color);">Start typing to search for a German word or English meaning.</p>
-    </f7-block>
+      <!-- Recently Visited (excludes items already in Frequently Viewed) -->
+      <template v-if="recentWords.length">
+        <f7-block-title>Recently Visited</f7-block-title>
+        <f7-list class="home-list" media-list>
+          <f7-list-item
+            v-for="item in recentWords"
+            :key="item.file"
+            :title="item.lemma"
+            :subtitle="item.glossEn[0] || ''"
+            :after="item.pos"
+            :badge="item.gender || ''"
+            :badge-color="genderColor(item.gender)"
+            :link="`/word/${item.file}/`"
+          />
+        </f7-list>
+      </template>
+
+      <!-- Empty state -->
+      <f7-block v-if="!freqWords.length && !recentWords.length">
+        <p style="color: var(--f7-list-item-footer-text-color);">Start typing to search for a German word or English meaning.</p>
+      </f7-block>
+    </template>
 
     <f7-block v-if="loading" class="text-align-center">
       <f7-preloader />
@@ -66,32 +100,35 @@ import {
 } from "../utils/db.js";
 
 const RECENTS_KEY = "lexiklar_recents";
+const COUNTS_KEY = "lexiklar_view_counts";
+const HOME_FREQ_COUNT = 5;
+const HOME_RECENT_COUNT = 5;
 
 export default {
   data() {
     return {
+      // Search mode
       results: [],
       vlData: { items: [], topPosition: 0 },
-      vl: null,          // framework7 virtual list instance
+      vl: null,
       searchQuery: "",
+      // Home screen mode
+      freqWords: [],
+      recentWords: [],
+      // Shared
       loading: true,
       debounceTimer: null,
     };
   },
 
   computed: {
-    // Results array with a stable numeric index for VL absolute positioning
     vlItems() {
       return this.results.map((item, i) => ({ ...item, index: i }));
     },
-    // Params passed to F7 on initial VL mount — items reflect current results
     vlParams() {
       return {
         items: this.vlItems,
         renderExternal: this.renderExternal,
-        // Height varies: items with a subtitle (gloss_en or matched verb form)
-        // render taller than items without. Measured in browser; iOS estimates
-        // match F7's standard single/two-line media list item heights.
         height: (item) => {
           const hasSub = item.glossEn?.length > 0 || !!item.matchedForm;
           return theme.ios ? (hasSub ? 63 : 44) : (hasSub ? 69 : 48);
@@ -101,6 +138,10 @@ export default {
   },
 
   methods: {
+    onTabShow() {
+      // Refresh home screen when tab becomes visible (e.g. after clearing history in Settings)
+      if (!this.searchQuery) this.loadHomeScreen();
+    },
     onSearch(searchbar, query) {
       this.searchQuery = query || "";
     },
@@ -114,8 +155,6 @@ export default {
       return "";
     },
 
-    // Called by F7 whenever it needs to (re)render the visible slice.
-    // Stores the VL instance on first call; keeps vlData in sync for v-for.
     renderExternal(vl, vlData) {
       this.vl = vl;
       this.vlData = vlData;
@@ -126,14 +165,12 @@ export default {
       const seen = new Set();
       const results = [];
 
-      // German lemma search (prefix match)
       const lemmaHits = await searchByLemma(q);
       for (const r of lemmaHits) {
         seen.add(r.file);
         results.push(r);
       }
 
-      // English gloss search
       const enHits = await searchByGlossEn(q);
       for (const r of enHits) {
         if (!seen.has(r.file)) {
@@ -142,7 +179,6 @@ export default {
         }
       }
 
-      // Verb form search (exact match on conjugated form)
       const verbHits = await searchByVerbForm(q);
       for (const r of verbHits) {
         if (!seen.has(r.file)) {
@@ -155,24 +191,47 @@ export default {
       this.loading = false;
     },
 
-    async loadRecentWords() {
+    async loadHomeScreen() {
       this.loading = true;
       try {
+        // 1. Build frequency-sorted list
+        const counts = JSON.parse(localStorage.getItem(COUNTS_KEY) || "{}");
+        const freqKeys = Object.entries(counts)
+          .filter(([, count]) => count >= 2) // need at least 2 views to qualify
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, HOME_FREQ_COUNT)
+          .map(([file]) => file);
+
+        // 2. Build recents list, excluding items already in freq
+        const freqSet = new Set(freqKeys);
         const stored = localStorage.getItem(RECENTS_KEY);
-        const fileKeys = stored ? JSON.parse(stored) : [];
-        if (fileKeys.length) {
-          const words = await getRelatedWords(fileKeys);
-          // Restore recency order (SQL IN clause doesn't preserve input order)
-          const orderMap = new Map(fileKeys.map((f, i) => [f, i]));
-          words.sort(
-            (a, b) => (orderMap.get(a.file) ?? 999) - (orderMap.get(b.file) ?? 999),
-          );
-          this.results = words;
-        } else {
-          this.results = [];
+        const allRecents = stored ? JSON.parse(stored) : [];
+        const recentKeys = allRecents
+          .filter((f) => !freqSet.has(f))
+          .slice(0, HOME_RECENT_COUNT);
+
+        // 3. Batch-load all word metadata in one query
+        const allKeys = [...freqKeys, ...recentKeys];
+        if (!allKeys.length) {
+          this.freqWords = [];
+          this.recentWords = [];
+          this.loading = false;
+          return;
         }
+
+        const words = await getRelatedWords(allKeys);
+        const infoMap = new Map(words.map((w) => [w.file, w]));
+
+        // 4. Build display arrays preserving sort order
+        this.freqWords = freqKeys
+          .map((f) => infoMap.get(f))
+          .filter(Boolean);
+        this.recentWords = recentKeys
+          .map((f) => infoMap.get(f))
+          .filter(Boolean);
       } catch {
-        this.results = [];
+        this.freqWords = [];
+        this.recentWords = [];
       }
       this.loading = false;
     },
@@ -182,17 +241,12 @@ export default {
     searchQuery(q) {
       clearTimeout(this.debounceTimer);
       if (!q.trim()) {
-        this.loadRecentWords();
+        this.loadHomeScreen();
         return;
       }
       this.debounceTimer = setTimeout(() => this.search(q.trim()), 150);
     },
-    // When results go empty the f7-list is destroyed by v-if; clear the stale
-    // VL reference so the next non-empty result mounts a fresh VL from vlParams
-    // instead of calling replaceAllItems() on a detached (destroyed) instance.
-    // A stale vl.replaceAllItems() call can fire its own renderExternal callback
-    // asynchronously (RAF), overwriting this.vl/vlData after the fresh VL has
-    // already set them correctly — causing a blank list or stuck spinner.
+    // VL lifecycle: clear stale reference when results empty (v-if destroys list)
     results(newResults) {
       if (!newResults.length) {
         this.vl = null;
@@ -206,7 +260,7 @@ export default {
   },
 
   async mounted() {
-    await this.loadRecentWords();
+    await this.loadHomeScreen();
   },
 };
 </script>

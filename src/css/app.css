@@ -3,9 +3,10 @@
   Framework7 base styles are imported in main.js.
 */
 
-/* Search results list — remove F7's default 32px vertical margins
-   so the list sits flush against subnavbar and toolbar. */
-.search-results {
+/* Search results & home screen lists — remove F7's default 32px vertical
+   margins so lists sit flush against subnavbar and each other. */
+.search-results,
+.home-list {
   margin-top: 0;
   margin-bottom: 0;
 }
