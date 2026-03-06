@@ -107,8 +107,7 @@
               :key="rel.file"
               :title="rel.displayTitle"
               :footer="rel.glossText"
-              link
-              @click="navigateToWord(rel.file)"
+              :link="`/word/${rel.file}/`"
             />
           </template>
         </f7-list>
@@ -312,10 +311,6 @@ export default {
         const url = `/word/${filePath}/`;
         this.f7router.navigate(senseNumber ? `${url}?sense=${senseNumber}` : url);
       }
-    },
-
-    navigateToWord(file) {
-      this.f7router.navigate(`/word/${file}/`);
     },
 
     navigateToPreview() {

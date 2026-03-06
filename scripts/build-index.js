@@ -56,6 +56,9 @@ function findJsonFiles() {
  */
 function computeVersionHash(files) {
   const hash = createHash("sha256");
+  // Include build script's mtime so logic changes invalidate the cache
+  const scriptStat = statSync(new URL(import.meta.url).pathname);
+  hash.update("build-index.js:" + scriptStat.mtimeMs);
   for (const f of files.sort()) {
     const stat = statSync(f);
     hash.update(f + ":" + stat.mtimeMs);
@@ -327,7 +330,7 @@ function main() {
       }
     }
 
-    // 3a. gender pair: _gender_counterpart → feminine_form / masculine_form
+    // 3a. gender pair: _gender_counterpart → feminine_form / masculine_form (bidirectional)
     if (entry.data._gender_counterpart && entry.data.pos === "noun") {
       const counterpartWord = entry.data._gender_counterpart;
       const targets = lemmaMap.get(counterpartWord) || [];
@@ -337,8 +340,13 @@ function main() {
         seenFiles.add(target.fileKey);
         const type = entry.data.gender === "M" ? "feminine_form" : "masculine_form";
         rels.push({ file: target.fileKey, type });
-        // Reverse link: the counterpart's own _gender_counterpart will add it
-        // when that entry is processed, so no manual reverse needed here.
+        // Add reverse link (counterpart may lack _gender_counterpart if skipped during regeneration)
+        const reverseType = type === "feminine_form" ? "masculine_form" : "feminine_form";
+        if (!relatedMap.has(target.fileKey)) relatedMap.set(target.fileKey, []);
+        const reverseRels = relatedMap.get(target.fileKey);
+        if (!reverseRels.some((r) => r.file === entry.fileKey)) {
+          reverseRels.push({ file: entry.fileKey, type: reverseType });
+        }
       }
     }
 
