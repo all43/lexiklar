@@ -11,6 +11,19 @@
  *   const word = await getWord('nouns/Tisch');
  */
 
+/**
+ * Fold umlauts for accent-insensitive search (mirrors build-index.js).
+ * Allows "mutze" to match "Mütze", "strasse" to match "Straße", etc.
+ */
+function foldUmlauts(str) {
+  return str
+    .toLowerCase()
+    .replace(/ä/g, "a")
+    .replace(/ö/g, "o")
+    .replace(/ü/g, "u")
+    .replace(/ß/g, "ss");
+}
+
 let worker = null;
 let nextId = 0;
 const pending = new Map();
@@ -177,9 +190,10 @@ export async function searchByLemma(q) {
     `SELECT lemma, pos, gender, frequency, file, gloss_en
      FROM words
      WHERE lemma LIKE ? COLLATE NOCASE
+        OR lemma_folded LIKE ?
      ORDER BY frequency ASC
      LIMIT 50`,
-    [q + "%"],
+    [q + "%", foldUmlauts(q) + "%"],
   );
   return rows.map(processSearchRow);
 }

@@ -71,6 +71,20 @@ function computeVersionHash(files) {
 // ============================================================
 
 /**
+ * Fold umlauts for accent-insensitive search.
+ * ä→a, ö→o, ü→u, ß→ss (lowercase).
+ * Stored in lemma_folded column so queries without umlauts still match.
+ */
+function foldUmlauts(str) {
+  return str
+    .toLowerCase()
+    .replace(/ä/g, "a")
+    .replace(/ö/g, "o")
+    .replace(/ü/g, "u")
+    .replace(/ß/g, "ss");
+}
+
+/**
  * Build a lookup from "lemma|pos" → [{posDir, file, senses}].
  * Handles homonyms (multiple entries per key).
  */
@@ -213,14 +227,15 @@ function main() {
 
   db.exec(`
     CREATE TABLE words (
-      id          INTEGER PRIMARY KEY,
-      lemma       TEXT NOT NULL,
-      pos         TEXT NOT NULL,
-      gender      TEXT,
-      frequency   INTEGER,
-      file        TEXT NOT NULL UNIQUE,
-      gloss_en    TEXT,
-      data        TEXT NOT NULL
+      id           INTEGER PRIMARY KEY,
+      lemma        TEXT NOT NULL,
+      lemma_folded TEXT NOT NULL,
+      pos          TEXT NOT NULL,
+      gender       TEXT,
+      frequency    INTEGER,
+      file         TEXT NOT NULL UNIQUE,
+      gloss_en     TEXT,
+      data         TEXT NOT NULL
     );
 
     CREATE TABLE examples (
@@ -241,8 +256,8 @@ function main() {
   `);
 
   const insertWord = db.prepare(`
-    INSERT INTO words (lemma, pos, gender, frequency, file, gloss_en, data)
-    VALUES (@lemma, @pos, @gender, @frequency, @file, @gloss_en, @data)
+    INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, file, gloss_en, data)
+    VALUES (@lemma, @lemma_folded, @pos, @gender, @frequency, @file, @gloss_en, @data)
   `);
 
   const insertVerbForm = db.prepare(`
@@ -446,6 +461,7 @@ function main() {
 
       const result = insertWord.run({
         lemma: data.word,
+        lemma_folded: foldUmlauts(data.word),
         pos: data.pos.toUpperCase(),
         gender: data.gender || null,
         frequency: data.frequency || null,
@@ -482,9 +498,10 @@ function main() {
   // --------------------------------------------------------
 
   db.exec(`
-    CREATE INDEX idx_words_lemma ON words(lemma COLLATE NOCASE);
-    CREATE INDEX idx_words_freq  ON words(frequency);
-    CREATE INDEX idx_verb_forms  ON verb_forms(form);
+    CREATE INDEX idx_words_lemma        ON words(lemma COLLATE NOCASE);
+    CREATE INDEX idx_words_lemma_folded ON words(lemma_folded);
+    CREATE INDEX idx_words_freq         ON words(frequency);
+    CREATE INDEX idx_verb_forms         ON verb_forms(form);
   `);
 
   // --------------------------------------------------------
