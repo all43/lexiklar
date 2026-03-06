@@ -1,13 +1,16 @@
 <template>
-  <f7-page name="search">
-    <f7-navbar title="Lexiklar" />
-    <f7-searchbar
-      custom-search
-      :disable-button="false"
-      placeholder="Wort oder Bedeutung suchen..."
-      @searchbar:search="onSearch"
-      @searchbar:clear="onClear"
-    />
+  <f7-page name="search" with-subnavbar>
+    <f7-navbar title="Lexiklar">
+      <f7-subnavbar :inner="false">
+        <f7-searchbar
+          custom-search
+          :disable-button="false"
+          placeholder="Wort oder Bedeutung suchen..."
+          @searchbar:search="onSearch"
+          @searchbar:clear="onClear"
+        />
+      </f7-subnavbar>
+    </f7-navbar>
 
     <f7-block-title v-if="!searchQuery && results.length">Recently Visited</f7-block-title>
 

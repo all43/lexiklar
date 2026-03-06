@@ -3,6 +3,13 @@
   Framework7 base styles are imported in main.js.
 */
 
+/* Search results list — remove F7's default 32px vertical margins
+   so the list sits flush against subnavbar and toolbar. */
+.search-results {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /* Gender color coding for articles (der/die/das) */
 .gender-m { color: #2196f3; } /* blue — masculine */
 .gender-f { color: #e91e63; } /* pink — feminine */
