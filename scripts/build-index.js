@@ -5,7 +5,6 @@
  *   - words table: full word JSON with pre-computed conjugation + search columns
  *   - examples table: individual examples (not the entire examples.json)
  *   - word_forms table: pre-computed inflected forms for search (verbs + nouns)
- *   - word_refs table: cross-references between related words
  *   - meta table: version hash for OPFS cache invalidation
  *
  * Also resolves cross-references in examples (text_linked) and writes
@@ -250,12 +249,6 @@ function main() {
       PRIMARY KEY (form, word_id)
     );
 
-    CREATE TABLE word_refs (
-      word_id      INTEGER NOT NULL REFERENCES words(id),
-      related_file TEXT NOT NULL,
-      type         TEXT NOT NULL
-    );
-
     CREATE TABLE meta (
       key   TEXT PRIMARY KEY,
       value TEXT NOT NULL
@@ -270,11 +263,6 @@ function main() {
   const insertWordForm = db.prepare(`
     INSERT OR IGNORE INTO word_forms (form, word_id)
     VALUES (@form, @word_id)
-  `);
-
-  const insertWordRef = db.prepare(`
-    INSERT INTO word_refs (word_id, related_file, type)
-    VALUES (@word_id, @related_file, @type)
   `);
 
   const insertExample = db.prepare(`
@@ -462,12 +450,11 @@ function main() {
   );
 
   // --------------------------------------------------------
-  // Phase 1c: Insert word files → words + word_forms + word_refs tables
+  // Phase 1c: Insert word files → words + word_forms tables
   // --------------------------------------------------------
 
   let wordCount = 0;
   let wordFormCount = 0;
-  let wordRefCount = 0;
 
   const insertWords = db.transaction(() => {
     for (const entry of allWordData) {
@@ -551,18 +538,11 @@ function main() {
         }
       }
 
-      // Insert cross-references for related-word search expansion
-      if (rels && rels.length) {
-        for (const rel of rels) {
-          insertWordRef.run({ word_id: wordId, related_file: rel.file, type: rel.type });
-          wordRefCount++;
-        }
-      }
     }
   });
 
   insertWords();
-  console.log(`Inserted ${wordCount} words, ${wordFormCount} word forms, ${wordRefCount} cross-references.`);
+  console.log(`Inserted ${wordCount} words, ${wordFormCount} word forms.`);
 
   // --------------------------------------------------------
   // Phase 2: Create indexes (after bulk insert for speed)
@@ -573,7 +553,6 @@ function main() {
     CREATE INDEX idx_words_lemma_folded ON words(lemma_folded);
     CREATE INDEX idx_words_freq         ON words(frequency);
     CREATE INDEX idx_word_forms         ON word_forms(form);
-    CREATE INDEX idx_word_refs_word     ON word_refs(word_id);
   `);
 
   // --------------------------------------------------------
