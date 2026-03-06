@@ -186,14 +186,18 @@ export async function getExamples(ids) {
  * Search words by lemma prefix (German word).
  */
 export async function searchByLemma(q) {
+  const folded = foldUmlauts(q);
   const rows = await query(
     `SELECT lemma, pos, gender, frequency, file, gloss_en
      FROM words
      WHERE lemma LIKE ? COLLATE NOCASE
         OR lemma_folded LIKE ?
-     ORDER BY frequency ASC
+     ORDER BY
+       CASE WHEN lower(lemma) = lower(?) OR lemma_folded = ? THEN 0 ELSE 1 END,
+       LENGTH(lemma),
+       CASE WHEN frequency IS NULL THEN 999999 ELSE frequency END
      LIMIT 50`,
-    [q + "%", foldUmlauts(q) + "%"],
+    [q + "%", folded + "%", q, folded],
   );
   return rows.map(processSearchRow);
 }
@@ -206,7 +210,9 @@ export async function searchByGlossEn(q) {
     `SELECT lemma, pos, gender, frequency, file, gloss_en
      FROM words
      WHERE gloss_en LIKE ? COLLATE NOCASE
-     ORDER BY frequency ASC
+     ORDER BY
+       LENGTH(lemma),
+       CASE WHEN frequency IS NULL THEN 999999 ELSE frequency END
      LIMIT 50`,
     ["%" + q + "%"],
   );
@@ -222,7 +228,8 @@ export async function searchByVerbForm(q) {
      FROM verb_forms vf
      JOIN words w ON w.id = vf.word_id
      WHERE vf.form = ? COLLATE NOCASE
-     ORDER BY w.frequency ASC
+     ORDER BY
+       CASE WHEN w.frequency IS NULL THEN 999999 ELSE w.frequency END
      LIMIT 50`,
     [q.toLowerCase()],
   );
