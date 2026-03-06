@@ -911,8 +911,17 @@ async function main() {
       const rawHyponyms = (parsed.hyponyms || [])
         .map((h) => h.word)
         .filter(Boolean);
+      // Antonyms and synonyms are entry-level in German Wiktionary (not sense-level)
+      const rawAntonyms = [...new Set(
+        (parsed.antonyms || []).map((a) => a.word).filter(Boolean)
+      )];
+      const rawSynonyms = [...new Set(
+        (parsed.synonyms || []).map((s) => s.word).filter(Boolean)
+      )];
       if (rawDerived.length) data._derived = rawDerived;
       if (rawHyponyms.length) data._hyponyms = rawHyponyms;
+      if (rawAntonyms.length) data._antonyms = rawAntonyms;
+      if (rawSynonyms.length) data._synonyms = rawSynonyms;
 
       // Gender pair reference: masculine ↔ feminine noun counterpart
       const genderCounterpart = extractGenderCounterpart(parsed);

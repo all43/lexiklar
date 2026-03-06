@@ -385,6 +385,36 @@ function main() {
       }
     }
 
+    // 3c. antonyms: _antonyms → antonym (bidirectional, any POS)
+    for (const antWord of entry.data._antonyms || []) {
+      const targets = lemmaMap.get(antWord) || lemmaMap.get(antWord.toLowerCase()) || [];
+      for (const target of targets) {
+        if (seenFiles.has(target.fileKey)) continue;
+        seenFiles.add(target.fileKey);
+        rels.push({ file: target.fileKey, type: "antonym" });
+        if (!relatedMap.has(target.fileKey)) relatedMap.set(target.fileKey, []);
+        const reverseRels = relatedMap.get(target.fileKey);
+        if (!reverseRels.some((r) => r.file === entry.fileKey && r.type === "antonym")) {
+          reverseRels.push({ file: entry.fileKey, type: "antonym" });
+        }
+      }
+    }
+
+    // 3d. synonyms: _synonyms → synonym (bidirectional, any POS)
+    for (const synWord of entry.data._synonyms || []) {
+      const targets = lemmaMap.get(synWord) || lemmaMap.get(synWord.toLowerCase()) || [];
+      for (const target of targets) {
+        if (seenFiles.has(target.fileKey)) continue;
+        seenFiles.add(target.fileKey);
+        rels.push({ file: target.fileKey, type: "synonym" });
+        if (!relatedMap.has(target.fileKey)) relatedMap.set(target.fileKey, []);
+        const reverseRels = relatedMap.get(target.fileKey);
+        if (!reverseRels.some((r) => r.file === entry.fileKey && r.type === "synonym")) {
+          reverseRels.push({ file: entry.fileKey, type: "synonym" });
+        }
+      }
+    }
+
     if (rels.length) {
       if (!relatedMap.has(entry.fileKey)) relatedMap.set(entry.fileKey, []);
       relatedMap.get(entry.fileKey).push(...rels);
@@ -442,6 +472,8 @@ function main() {
       delete enriched._derived;
       delete enriched._hyponyms;
       delete enriched._gender_counterpart;
+      delete enriched._antonyms;
+      delete enriched._synonyms;
 
       if (data.pos === "verb" && verbEndings) {
         if (data.conjugation_class !== "irregular") {
