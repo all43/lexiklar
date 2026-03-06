@@ -1,5 +1,5 @@
 <template>
-  <f7-page name="search" with-subnavbar @page:tabshow="onTabShow">
+  <f7-page name="search" with-subnavbar @page:tabshow="onPageVisible" @page:afterin="onPageVisible">
     <f7-navbar title="Lexiklar">
       <f7-subnavbar :inner="false">
         <f7-searchbar
@@ -138,8 +138,11 @@ export default {
   },
 
   methods: {
-    onTabShow() {
-      // Refresh home screen when tab becomes visible (e.g. after clearing history in Settings)
+    onPageVisible() {
+      // Reload home screen whenever page becomes visible:
+      // - initial load (page:afterin on mount)
+      // - navigating back from a word page (page:afterin)
+      // - switching tabs (page:tabshow)
       if (!this.searchQuery) this.loadHomeScreen();
     },
     onSearch(searchbar, query) {
@@ -259,8 +262,5 @@ export default {
     },
   },
 
-  async mounted() {
-    await this.loadHomeScreen();
-  },
 };
 </script>

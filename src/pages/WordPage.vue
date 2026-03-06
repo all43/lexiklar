@@ -1,6 +1,16 @@
 <template>
   <f7-page name="word">
-    <f7-navbar :title="word ? word.word : 'Loading...'" back-link="Back" />
+    <f7-navbar :title="word ? word.word : 'Loading...'" back-link="Back">
+      <f7-nav-right>
+        <f7-link
+          v-if="word && isInHistory"
+          icon-f7="clock_badge_xmark"
+          icon-size="20"
+          tooltip="Remove from history"
+          @click="removeFromHistory"
+        />
+      </f7-nav-right>
+    </f7-navbar>
 
     <f7-block v-if="loading" class="text-align-center">
       <f7-preloader />
@@ -188,9 +198,13 @@ export default {
       relatedWords: [],
       loading: true,
       preview: null,
+      inHistory: false,  // whether this word is currently in the user's history
     };
   },
   computed: {
+    isInHistory() {
+      return this.inHistory;
+    },
     posColor() {
       return this.getPosColor(this.word?.pos);
     },
@@ -266,6 +280,26 @@ export default {
     },
   },
   methods: {
+    removeFromHistory() {
+      const { pos, file } = this.f7route.params;
+      const fileKey = `${pos}/${file}`;
+      try {
+        // Remove from recents list
+        const recents = JSON.parse(localStorage.getItem("lexiklar_recents") || "[]");
+        localStorage.setItem(
+          "lexiklar_recents",
+          JSON.stringify(recents.filter((f) => f !== fileKey)),
+        );
+        // Remove view count
+        const counts = JSON.parse(localStorage.getItem("lexiklar_view_counts") || "{}");
+        delete counts[fileKey];
+        localStorage.setItem("lexiklar_view_counts", JSON.stringify(counts));
+        this.inHistory = false;
+      } catch {
+        // silently skip
+      }
+    },
+
     getPosColor(pos) {
       const colors = {
         noun: "blue",
@@ -377,6 +411,8 @@ export default {
           const counts = JSON.parse(localStorage.getItem(COUNTS_KEY) || "{}");
           counts[fileKey] = (counts[fileKey] || 0) + 1;
           localStorage.setItem(COUNTS_KEY, JSON.stringify(counts));
+
+          this.inHistory = true;
         } catch {
           // localStorage unavailable — silently skip
         }
