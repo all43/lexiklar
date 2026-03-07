@@ -14,6 +14,7 @@
  *   --lang <code> Language code filter      (default: de)
  *   --all-langs   Show all languages        (overrides --lang)
  *   --limit <n>   Max results to show       (default: 10)
+ *   --full        Show all fields including translations, hyponyms, derived, etc.
  *   --no-color    Disable colored output
  *
  * Examples:
@@ -21,12 +22,15 @@
  *   npm run lookup -- schuh --exact
  *   npm run lookup -- "Elter" --all-langs
  *   npm run lookup -- Bildung --pos noun
+ *   npm run lookup -- Schuh --full
  */
 
 import fs from "fs";
 import { execFileSync } from "child_process";
+import Database from "better-sqlite3";
 
-const RAW_PATH = "data/raw/de-extract.jsonl";
+const RAW_PATH   = "data/raw/de-extract.jsonl";
+const INDEX_PATH = "data/raw/de-extract.offsets.db";
 
 // ---- ANSI colors (disabled when not a TTY or --no-color) ----
 const useColor = process.stdout.isTTY && !process.argv.includes("--no-color");
@@ -72,7 +76,7 @@ function colorJson(obj) {
 const args = process.argv.slice(2).filter((a) => a !== "--no-color");
 if (!args.length || args[0] === "--help" || args[0] === "-h") {
   console.log(
-    `Usage: npm run lookup -- <query> [--exact] [--pos <pos>] [--lang <code>] [--all-langs] [--limit <n>]`,
+    `Usage: npm run lookup -- <query> [--exact] [--pos <pos>] [--lang <code>] [--all-langs] [--limit <n>] [--full]`,
   );
   process.exit(0);
 }
@@ -83,6 +87,7 @@ let posFilter = null;
 let langFilter = "de";
 let allLangs = false;
 let limit = 10;
+let full = false;
 
 for (let i = 1; i < args.length; i++) {
   switch (args[i]) {
@@ -91,69 +96,102 @@ for (let i = 1; i < args.length; i++) {
     case "--pos":       posFilter = args[++i]; break;
     case "--lang":      langFilter = args[++i]; break;
     case "--limit":     limit = parseInt(args[++i], 10); break;
+    case "--full":      full = true; break;
   }
 }
+
+// Fields omitted by default — large and rarely useful for quick inspection.
+// Use --full to include them.
+const OMIT_BY_DEFAULT = new Set([
+  "translations",  // can be 100+ entries
+  "hyponyms",      // can be 80+ entries
+  "hypernyms",
+  "coordinate_terms",
+  "holonyms",
+  "meronyms",
+  "troponyms",
+  "antonyms",
+  "synonyms",
+]);
 
 if (!fs.existsSync(RAW_PATH)) {
   console.error(`${C.red}Raw data not found at ${RAW_PATH}. Run: npm run download${C.reset}`);
   process.exit(1);
 }
 
-// ---- Pre-filter with grep (fast C string search) ----
-// Match against the "word" JSON field to avoid false positives from examples/glosses.
-// Exact:    "word": "Bildung"    (fixed string, case-sensitive)
-// Substr:   "word": "...query   (case-insensitive, grab candidates then filter in JS)
-const grepLimit = limit * 5; // fetch extra candidates to account for lang/pos filtering
-
-let candidateLines = [];
-try {
-  let grepArgs;
-  // Anchor to line start — every JSONL entry begins with {"word": "..."}
-  // Uses BRE (no -E/-F) so { is treated as a literal character, not a quantifier.
-  // This avoids matching "word" keys in nested objects (glosses, synonyms, etc.)
-  if (exact) {
-    grepArgs = ["-m", String(grepLimit), `^{"word": "${query}"`, RAW_PATH];
-  } else {
-    // Case-insensitive (-i) regex anchored to line start
-    grepArgs = ["-i", "-m", String(grepLimit), `^{"word": "[^"]*${query}`, RAW_PATH];
-  }
-
-  const output = execFileSync("grep", grepArgs, { maxBuffer: 100 * 1024 * 1024 });
-  candidateLines = output.toString().split("\n").filter(Boolean);
-} catch (err) {
-  // grep exits with status 1 when no matches found — that's fine
-  if (err.status !== 1) {
-    console.error(`${C.red}grep error: ${err.message}${C.reset}`);
-    process.exit(1);
-  }
-}
-
-// ---- JSON-parse candidates and apply all filters ----
+// ---- Candidate collection ----
 const queryLower = query.toLowerCase();
 const results = [];
 
-for (const line of candidateLines) {
-  if (results.length >= limit) break;
+if (exact && fs.existsSync(INDEX_PATH)) {
+  // Fast path: SQLite B-tree lookup → byte offset → direct fs.read() seek.
+  // Build the index once with: npm run build-lookup-index
+  const db   = new Database(INDEX_PATH, { readonly: true });
+  const rows = db.prepare("SELECT byte_offset FROM offsets WHERE word = ?").all(query);
+  db.close();
 
-  let entry;
-  try {
-    entry = JSON.parse(line);
-  } catch {
-    continue;
+  if (rows.length) {
+    const fd  = fs.openSync(RAW_PATH, "r");
+    const buf = Buffer.alloc(512 * 1024); // 512 KB — larger than any single entry
+
+    for (const { byte_offset } of rows) {
+      if (results.length >= limit) break;
+
+      const bytesRead = fs.readSync(fd, buf, 0, buf.length, byte_offset);
+      const nl        = buf.indexOf(0x0a, 0); // newline byte
+      const line      = buf.slice(0, nl === -1 ? bytesRead : nl).toString("utf8");
+
+      let entry;
+      try { entry = JSON.parse(line); } catch { continue; }
+
+      if (!allLangs && entry.lang_code !== langFilter) continue;
+      if (posFilter && entry.pos !== posFilter) continue;
+
+      results.push(entry);
+    }
+    fs.closeSync(fd);
+  }
+} else {
+  // Substring search (or no index built yet) — scan with grep.
+  // For exact matches with no index, warn the user.
+  if (exact && !fs.existsSync(INDEX_PATH)) {
+    process.stderr.write(
+      `${C.dim}Tip: run "npm run build-lookup-index" for instant exact lookups.${C.reset}\n`,
+    );
   }
 
-  // Language filter
-  if (!allLangs && entry.lang_code !== langFilter) continue;
+  // Anchor to line start — every JSONL entry begins with {"word": "..."}
+  // Uses BRE (no -E/-F) so { is treated as a literal character, not a quantifier.
+  const grepLimit = limit * 5; // extra candidates to account for lang/pos filtering
+  let candidateLines = [];
+  try {
+    const grepArgs = exact
+      ? ["-m", String(grepLimit), `^{"word": "${query}"`, RAW_PATH]
+      : ["-i", "-m", String(grepLimit), `^{"word": "[^"]*${query}`, RAW_PATH];
 
-  // POS filter
-  if (posFilter && entry.pos !== posFilter) continue;
+    const output = execFileSync("grep", grepArgs, { maxBuffer: 100 * 1024 * 1024 });
+    candidateLines = output.toString().split("\n").filter(Boolean);
+  } catch (err) {
+    if (err.status !== 1) { // status 1 = no matches, which is fine
+      console.error(`${C.red}grep error: ${err.message}${C.reset}`);
+      process.exit(1);
+    }
+  }
 
-  // Word match (re-verify — grep may have matched inside examples/glosses)
-  const word = (entry.word || "").toLowerCase();
-  const matches = exact ? word === queryLower : word.includes(queryLower);
-  if (!matches) continue;
+  for (const line of candidateLines) {
+    if (results.length >= limit) break;
 
-  results.push(entry);
+    let entry;
+    try { entry = JSON.parse(line); } catch { continue; }
+
+    if (!allLangs && entry.lang_code !== langFilter) continue;
+    if (posFilter && entry.pos !== posFilter) continue;
+
+    const word = (entry.word || "").toLowerCase();
+    if (exact ? word !== queryLower : !word.includes(queryLower)) continue;
+
+    results.push(entry);
+  }
 }
 
 // ---- Output ----
@@ -179,11 +217,22 @@ for (const entry of results) {
     entry.tags?.length ? `${C.dim}${entry.tags.join(", ")}${C.reset}` : null,
   ].filter(Boolean).join(`  ${C.gray}|${C.reset}  `);
 
+  // Strip noisy bulk fields unless --full requested
+  const display = full
+    ? entry
+    : Object.fromEntries(Object.entries(entry).filter(([k]) => !OMIT_BY_DEFAULT.has(k)));
+
+  // Note which fields were hidden
+  const hidden = full ? [] : Object.keys(entry).filter((k) => OMIT_BY_DEFAULT.has(k) && entry[k]?.length);
+
   const divider = `${C.gray}${"─".repeat(60)}${C.reset}`;
   console.log(divider);
   console.log(`  ${parts}`);
+  if (hidden.length) {
+    console.log(`  ${C.dim}(omitted: ${hidden.map(k => `${k}[${entry[k].length}]`).join(", ")} — use --full to show)${C.reset}`);
+  }
   console.log(divider);
-  console.log(colorJson(entry));
+  console.log(colorJson(display));
   console.log();
 }
 

@@ -20,6 +20,7 @@
     "test:glosses": "node scripts/test-gloss-translation.js",
     "pipeline": "npm run download && npm run download-corpus && npm run transform -- --max-frequency 8000 && npm run enrich && npm run translate && npm run build-index",
     "pipeline:seed": "npm run transform -- --seed && npm run enrich && npm run translate && npm run build-index",
+    "build-lookup-index": "node scripts/build-lookup-index.js",
     "lookup": "node scripts/lookup.js"
   },
   "dependencies": {
