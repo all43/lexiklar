@@ -420,14 +420,30 @@ function transformNoun(entry) {
   const caseForms = extractNounCaseForms(compact);
   const pluralForm = parsePluralForm(compact);
 
-  if (!caseForms.singular.nom) caseForms.singular.nom = entry.word;
+  // Detect plural-only nouns (Pluraletantum) from Wiktionary categories
+  const isPluralOnly = (entry.categories || []).includes(
+    "Pluraletantum (Deutsch)",
+  );
+
+  if (isPluralOnly) {
+    // Clear any accidentally extracted singular forms
+    caseForms.singular = { nom: null, acc: null, dat: null, gen: null };
+  } else if (!caseForms.singular.nom) {
+    // Only apply singular nom fallback for regular nouns
+    caseForms.singular.nom = entry.word;
+  }
 
   return {
     word: entry.word,
     pos: "noun",
     etymology_number: entry.etymology_number || null,
+    is_plural_only: isPluralOnly || undefined,
     gender,
-    article: gender ? { M: "der", F: "die", N: "das" }[gender] : null,
+    article: isPluralOnly
+      ? "die"
+      : gender
+        ? { M: "der", F: "die", N: "das" }[gender]
+        : null,
     plural_form: pluralForm,
     gender_rule: matchNounGenderRule(entry.word, gender, pluralForm),
     case_forms: caseForms,

@@ -1,7 +1,12 @@
 <template>
   <div class="noun-declension">
+    <!-- Pluraletantum hint -->
+    <div v-if="word.is_plural_only" class="noun-rule-hint">
+      <span class="noun-rule-match">Pluraletantum — always used in plural</span>
+    </div>
+
     <!-- Gender rule hint -->
-    <div v-if="word.gender_rule" class="noun-rule-hint">
+    <div v-else-if="word.gender_rule" class="noun-rule-hint">
       <span :class="word.gender_rule.is_exception ? 'noun-rule-exception' : 'noun-rule-match'">
         {{ ruleText }}
       </span>
@@ -12,14 +17,14 @@
       <thead>
         <tr>
           <th class="decl-case-header"></th>
-          <th class="decl-num-header">Singular</th>
+          <th v-if="!word.is_plural_only" class="decl-num-header">Singular</th>
           <th class="decl-num-header">Plural</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="c in cases" :key="c.key">
           <td class="decl-case">{{ c.label }}</td>
-          <td class="decl-form">
+          <td v-if="!word.is_plural_only" class="decl-form">
             <span :class="`decl-article gender-${genderClass}`">{{ singularArticles[c.key] }}</span>
             {{ word.case_forms.singular[c.key] || '—' }}
           </td>
