@@ -3,6 +3,7 @@
     <!-- Pluraletantum hint -->
     <div v-if="word.is_plural_only" class="noun-rule-hint">
       <span class="noun-rule-match">Pluraletantum — always used in plural</span>
+      <div v-if="word.plural_only_note" class="noun-rule-note">{{ word.plural_only_note }}</div>
     </div>
 
     <!-- Gender rule hint -->

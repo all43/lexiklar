@@ -433,11 +433,16 @@ function transformNoun(entry) {
     caseForms.singular.nom = entry.word;
   }
 
+  // Extract singular note for Pluraletantum words (free-text from Wiktionary)
+  const pluralOnlyNote =
+    isPluralOnly && entry.notes?.length ? entry.notes[0] : undefined;
+
   return {
     word: entry.word,
     pos: "noun",
     etymology_number: entry.etymology_number || null,
     is_plural_only: isPluralOnly || undefined,
+    plural_only_note: pluralOnlyNote,
     gender,
     article: isPluralOnly
       ? "die"
