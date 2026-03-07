@@ -75,6 +75,11 @@
         </template>
       </f7-list>
 
+      <!-- Usage Note -->
+      <f7-block v-if="word.plural_only_note" class="usage-note-block">
+        <p class="usage-note-text">{{ word.plural_only_note }}</p>
+      </f7-block>
+
       <!-- Expressions & Proverbs -->
       <template v-if="wordExpressions.length">
         <f7-block-title>Expressions</f7-block-title>
