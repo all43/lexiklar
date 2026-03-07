@@ -425,6 +425,11 @@ function transformNoun(entry) {
     "Pluraletantum (Deutsch)",
   );
 
+  // Detect singular-only nouns (Singularetantum) from Wiktionary categories
+  const isSingularOnly = (entry.categories || []).includes(
+    "Singularetantum (Deutsch)",
+  );
+
   if (isPluralOnly) {
     // Clear any accidentally extracted singular forms
     caseForms.singular = { nom: null, acc: null, dat: null, gen: null };
@@ -443,6 +448,7 @@ function transformNoun(entry) {
     etymology_number: entry.etymology_number || null,
     is_plural_only: isPluralOnly || undefined,
     plural_only_note: pluralOnlyNote,
+    is_singular_only: isSingularOnly || undefined,
     gender,
     article: isPluralOnly
       ? "die"

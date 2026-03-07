@@ -266,6 +266,13 @@
 .decl-no-plural {
   color: var(--f7-list-item-footer-text-color);
 }
+.decl-num-header--dim,
+.decl-form--dim {
+  opacity: 0.35;
+}
+.noun-rule-sep {
+  color: var(--f7-list-item-footer-text-color);
+}
 
 /* Brief highlight when scrolling to a referenced sense */
 .sense-highlight {

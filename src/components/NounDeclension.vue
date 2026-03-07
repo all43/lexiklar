@@ -5,12 +5,16 @@
       <span class="noun-rule-match">Pluraletantum — always used in plural</span>
     </div>
 
-    <!-- Gender rule hint -->
-    <div v-else-if="word.gender_rule" class="noun-rule-hint">
-      <span :class="word.gender_rule.is_exception ? 'noun-rule-exception' : 'noun-rule-match'">
-        {{ ruleText }}
-      </span>
-    </div>
+    <!-- Hints row: gender rule + singularetantum can coexist -->
+    <template v-else>
+      <div v-if="word.gender_rule || word.is_singular_only" class="noun-rule-hint">
+        <span v-if="word.gender_rule" :class="word.gender_rule.is_exception ? 'noun-rule-exception' : 'noun-rule-match'">
+          {{ ruleText }}
+        </span>
+        <span v-if="word.gender_rule && word.is_singular_only" class="noun-rule-sep"> · </span>
+        <span v-if="word.is_singular_only" class="noun-rule-match">kein Plural</span>
+      </div>
+    </template>
 
     <!-- Declension table -->
     <table v-if="word.case_forms" class="decl-table">
@@ -18,7 +22,7 @@
         <tr>
           <th class="decl-case-header"></th>
           <th v-if="!word.is_plural_only" class="decl-num-header">Singular</th>
-          <th class="decl-num-header">Plural</th>
+          <th class="decl-num-header" :class="{ 'decl-num-header--dim': word.is_singular_only }">Plural</th>
         </tr>
       </thead>
       <tbody>
@@ -28,7 +32,7 @@
             <span :class="`decl-article gender-${genderClass}`">{{ singularArticles[c.key] }}</span>
             {{ word.case_forms.singular[c.key] || '—' }}
           </td>
-          <td class="decl-form">
+          <td class="decl-form" :class="{ 'decl-form--dim': word.is_singular_only }">
             <span v-if="hasPlural" class="decl-article decl-article--plural">{{ pluralArticles[c.key] }}</span>
             <span v-if="hasPlural">{{ word.case_forms.plural[c.key] || '—' }}</span>
             <span v-else class="decl-no-plural">—</span>
