@@ -14,8 +14,9 @@
  *   --lang <code> Language code filter      (default: de)
  *   --all-langs   Show all languages        (overrides --lang)
  *   --limit <n>   Max results to show       (default: 10)
- *   --full        Output raw JSON array (no headers/colors) — pipe to jq or save to file
- *   --no-color    Disable colored output in human-readable mode
+ *   --full        Show all fields (incl. translations, hyponyms, etc.)
+ *   --raw         Output raw JSON array — no headers/colors, pipe-friendly
+ *   --no-color    Disable colored output
  *
  * Examples:
  *   npm run lookup -- Schuh
@@ -23,7 +24,7 @@
  *   npm run lookup -- "Elter" --all-langs
  *   npm run lookup -- Bildung --pos noun
  *   npm run lookup -- Schuh --exact --full
- *   npm run lookup -- Schuh --exact --full | jq '.[] | .senses[].glosses[]'
+ *   npm run lookup -- Schuh --exact --raw | jq '.[0].senses[].glosses[]'
  */
 
 import fs from "fs";
@@ -78,7 +79,7 @@ function colorJson(obj) {
 const args = process.argv.slice(2).filter((a) => a !== "--no-color");
 if (!args.length || args[0] === "--help" || args[0] === "-h") {
   console.log(
-    `Usage: npm run lookup -- <query> [--exact] [--pos <pos>] [--lang <code>] [--all-langs] [--limit <n>] [--full] [--no-color]`,
+    `Usage: npm run lookup -- <query> [--exact] [--pos <pos>] [--lang <code>] [--all-langs] [--limit <n>] [--full] [--raw] [--no-color]`,
   );
   process.exit(0);
 }
@@ -90,6 +91,7 @@ let langFilter = "de";
 let allLangs = false;
 let limit = 10;
 let full = false;
+let raw  = false;
 
 for (let i = 1; i < args.length; i++) {
   switch (args[i]) {
@@ -99,11 +101,12 @@ for (let i = 1; i < args.length; i++) {
     case "--lang":      langFilter = args[++i]; break;
     case "--limit":     limit = parseInt(args[++i], 10); break;
     case "--full":      full = true; break;
+    case "--raw":       raw  = true; break;
   }
 }
 
 // Fields omitted by default — large and rarely useful for quick inspection.
-// Use --full to include them.
+// Use --full to include them in the human-readable view.
 const OMIT_BY_DEFAULT = new Set([
   "translations",  // can be 100+ entries
   "hyponyms",      // can be 80+ entries
@@ -198,7 +201,7 @@ if (exact && fs.existsSync(INDEX_PATH)) {
 
 // ---- Output ----
 if (!results.length) {
-  if (full) {
+  if (raw) {
     process.stdout.write("[]\n");
   } else {
     console.log(
@@ -208,13 +211,13 @@ if (!results.length) {
   process.exit(0);
 }
 
-// --full: output as a raw JSON array — no headers, no colors, pipe-friendly
-if (full) {
+// --raw: plain JSON array, no headers or colors — use with jq or redirect to file
+if (raw) {
   process.stdout.write(JSON.stringify(results, null, 2) + "\n");
   process.exit(0);
 }
 
-// ---- Human-readable browsing mode (default) ----
+// ---- Human-readable browsing mode ----
 const label = exact ? "exact" : "substring";
 const langLabel = allLangs ? "all" : langFilter;
 const posLabel = posFilter ? `, pos=${posFilter}` : "";
@@ -230,15 +233,19 @@ for (const entry of results) {
     entry.tags?.length ? `${C.dim}${entry.tags.join(", ")}${C.reset}` : null,
   ].filter(Boolean).join(`  ${C.gray}|${C.reset}  `);
 
-  // Strip noisy bulk fields in browsing mode
-  const display = Object.fromEntries(Object.entries(entry).filter(([k]) => !OMIT_BY_DEFAULT.has(k)));
-  const hidden  = Object.keys(entry).filter((k) => OMIT_BY_DEFAULT.has(k) && entry[k]?.length);
+  // Default: strip noisy bulk fields; --full shows all fields
+  const display = full
+    ? entry
+    : Object.fromEntries(Object.entries(entry).filter(([k]) => !OMIT_BY_DEFAULT.has(k)));
+  const hidden = full
+    ? []
+    : Object.keys(entry).filter((k) => OMIT_BY_DEFAULT.has(k) && entry[k]?.length);
 
   const divider = `${C.gray}${"─".repeat(60)}${C.reset}`;
   console.log(divider);
   console.log(`  ${parts}`);
   if (hidden.length) {
-    console.log(`  ${C.dim}(omitted: ${hidden.map(k => `${k}[${entry[k].length}]`).join(", ")} — use --full for raw JSON)${C.reset}`);
+    console.log(`  ${C.dim}(omitted: ${hidden.map(k => `${k}[${entry[k].length}]`).join(", ")} — use --full to show, --raw for JSON)${C.reset}`);
   }
   console.log(divider);
   console.log(colorJson(display));
