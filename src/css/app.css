@@ -194,12 +194,21 @@
 .noun-declension {
   padding: 0 16px;
 }
+.noun-rule-hints {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 .noun-rule-hint {
   font-size: 0.82em;
   margin-bottom: 10px;
   padding: 5px 10px;
   border-radius: 6px;
   background: var(--f7-block-bg-color, #f4f4f4);
+}
+.noun-rule-hints .noun-rule-hint {
+  margin-bottom: 0;
 }
 .noun-rule-match {
   color: #4caf50;

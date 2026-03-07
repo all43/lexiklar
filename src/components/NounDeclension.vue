@@ -5,16 +5,17 @@
       <span class="noun-rule-match">Pluraletantum — always used in plural</span>
     </div>
 
-    <!-- Hints row: gender rule + singularetantum can coexist -->
-    <template v-else>
-      <div v-if="word.gender_rule || word.is_singular_only" class="noun-rule-hint">
-        <span v-if="word.gender_rule" :class="word.gender_rule.is_exception ? 'noun-rule-exception' : 'noun-rule-match'">
+    <!-- Gender rule hint -->
+    <div v-else-if="word.gender_rule || word.is_singular_only" class="noun-rule-hints">
+      <div v-if="word.gender_rule" class="noun-rule-hint">
+        <span :class="word.gender_rule.is_exception ? 'noun-rule-exception' : 'noun-rule-match'">
           {{ ruleText }}
         </span>
-        <span v-if="word.gender_rule && word.is_singular_only" class="noun-rule-sep"> · </span>
-        <span v-if="word.is_singular_only" class="noun-rule-match">kein Plural</span>
       </div>
-    </template>
+      <div v-if="word.is_singular_only" class="noun-rule-hint">
+        <span class="noun-rule-match">Singularetantum — usually no plural</span>
+      </div>
+    </div>
 
     <!-- Declension table -->
     <table v-if="word.case_forms" class="decl-table">
