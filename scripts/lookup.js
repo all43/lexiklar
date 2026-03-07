@@ -14,15 +14,16 @@
  *   --lang <code> Language code filter      (default: de)
  *   --all-langs   Show all languages        (overrides --lang)
  *   --limit <n>   Max results to show       (default: 10)
- *   --full        Show all fields including translations, hyponyms, derived, etc.
- *   --no-color    Disable colored output
+ *   --full        Output raw JSON array (no headers/colors) — pipe to jq or save to file
+ *   --no-color    Disable colored output in human-readable mode
  *
  * Examples:
  *   npm run lookup -- Schuh
  *   npm run lookup -- schuh --exact
  *   npm run lookup -- "Elter" --all-langs
  *   npm run lookup -- Bildung --pos noun
- *   npm run lookup -- Schuh --full
+ *   npm run lookup -- Schuh --exact --full
+ *   npm run lookup -- Schuh --exact --full | jq '.[] | .senses[].glosses[]'
  */
 
 import fs from "fs";
@@ -54,9 +55,10 @@ const C = useColor
         .map((k) => [k, ""])
     );
 
-/** Syntax-highlight a JSON string with ANSI colors. */
+/** Syntax-highlight a JSON value with ANSI colors. No-op when colors disabled. */
 function colorJson(obj) {
   const raw = JSON.stringify(obj, null, 2);
+  if (!useColor) return raw; // skip regex entirely when colors are off
   return raw.replace(
     /("(\\u[a-fA-F0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
     (match) => {
@@ -76,7 +78,7 @@ function colorJson(obj) {
 const args = process.argv.slice(2).filter((a) => a !== "--no-color");
 if (!args.length || args[0] === "--help" || args[0] === "-h") {
   console.log(
-    `Usage: npm run lookup -- <query> [--exact] [--pos <pos>] [--lang <code>] [--all-langs] [--limit <n>] [--full]`,
+    `Usage: npm run lookup -- <query> [--exact] [--pos <pos>] [--lang <code>] [--all-langs] [--limit <n>] [--full] [--no-color]`,
   );
   process.exit(0);
 }
@@ -196,12 +198,23 @@ if (exact && fs.existsSync(INDEX_PATH)) {
 
 // ---- Output ----
 if (!results.length) {
-  console.log(
-    `${C.yellow}No results for ${C.bold}"${query}"${C.reset}${C.yellow} (${exact ? "exact" : "substring"}, lang=${allLangs ? "all" : langFilter}).${C.reset}`,
-  );
+  if (full) {
+    process.stdout.write("[]\n");
+  } else {
+    console.log(
+      `${C.yellow}No results for ${C.bold}"${query}"${C.reset}${C.yellow} (${exact ? "exact" : "substring"}, lang=${allLangs ? "all" : langFilter}).${C.reset}`,
+    );
+  }
   process.exit(0);
 }
 
+// --full: output as a raw JSON array — no headers, no colors, pipe-friendly
+if (full) {
+  process.stdout.write(JSON.stringify(results, null, 2) + "\n");
+  process.exit(0);
+}
+
+// ---- Human-readable browsing mode (default) ----
 const label = exact ? "exact" : "substring";
 const langLabel = allLangs ? "all" : langFilter;
 const posLabel = posFilter ? `, pos=${posFilter}` : "";
@@ -217,19 +230,15 @@ for (const entry of results) {
     entry.tags?.length ? `${C.dim}${entry.tags.join(", ")}${C.reset}` : null,
   ].filter(Boolean).join(`  ${C.gray}|${C.reset}  `);
 
-  // Strip noisy bulk fields unless --full requested
-  const display = full
-    ? entry
-    : Object.fromEntries(Object.entries(entry).filter(([k]) => !OMIT_BY_DEFAULT.has(k)));
-
-  // Note which fields were hidden
-  const hidden = full ? [] : Object.keys(entry).filter((k) => OMIT_BY_DEFAULT.has(k) && entry[k]?.length);
+  // Strip noisy bulk fields in browsing mode
+  const display = Object.fromEntries(Object.entries(entry).filter(([k]) => !OMIT_BY_DEFAULT.has(k)));
+  const hidden  = Object.keys(entry).filter((k) => OMIT_BY_DEFAULT.has(k) && entry[k]?.length);
 
   const divider = `${C.gray}${"─".repeat(60)}${C.reset}`;
   console.log(divider);
   console.log(`  ${parts}`);
   if (hidden.length) {
-    console.log(`  ${C.dim}(omitted: ${hidden.map(k => `${k}[${entry[k].length}]`).join(", ")} — use --full to show)${C.reset}`);
+    console.log(`  ${C.dim}(omitted: ${hidden.map(k => `${k}[${entry[k].length}]`).join(", ")} — use --full for raw JSON)${C.reset}`);
   }
   console.log(divider);
   console.log(colorJson(display));
