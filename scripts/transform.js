@@ -430,10 +430,7 @@ function transformNoun(entry) {
     "Singularetantum (Deutsch)",
   );
 
-  if (isPluralOnly) {
-    // Clear any accidentally extracted singular forms
-    caseForms.singular = { nom: null, acc: null, dat: null, gen: null };
-  } else if (!caseForms.singular.nom) {
+  if (!isPluralOnly && !caseForms.singular.nom) {
     // Only apply singular nom fallback for regular nouns
     caseForms.singular.nom = entry.word;
   }

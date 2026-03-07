@@ -22,14 +22,14 @@
       <thead>
         <tr>
           <th class="decl-case-header"></th>
-          <th v-if="!word.is_plural_only" class="decl-num-header">Singular</th>
+          <th v-if="hasSingular" class="decl-num-header" :class="{ 'decl-num-header--dim': word.is_plural_only }">Singular</th>
           <th class="decl-num-header" :class="{ 'decl-num-header--dim': word.is_singular_only }">Plural</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="c in cases" :key="c.key">
           <td class="decl-case">{{ c.label }}</td>
-          <td v-if="!word.is_plural_only" class="decl-form">
+          <td v-if="hasSingular" class="decl-form" :class="{ 'decl-form--dim': word.is_plural_only }">
             <span :class="`decl-article gender-${genderClass}`">{{ singularArticles[c.key] }}</span>
             {{ word.case_forms.singular[c.key] || '—' }}
           </td>
@@ -101,6 +101,10 @@ export default {
     },
     pluralArticles() {
       return PLURAL_ARTICLES;
+    },
+    hasSingular() {
+      const s = this.word.case_forms?.singular;
+      return s && Object.values(s).some(Boolean);
     },
     hasPlural() {
       const p = this.word.case_forms?.plural;
