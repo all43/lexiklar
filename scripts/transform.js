@@ -72,7 +72,9 @@ function contentHash(text) {
 
 function loadState() {
   if (existsSync(STATE_FILE)) {
-    return JSON.parse(readFileSync(STATE_FILE, "utf-8"));
+    const data = JSON.parse(readFileSync(STATE_FILE, "utf-8"));
+    if (!data.entries) data.entries = {};
+    return data;
   }
   return { entries: {} };
 }
@@ -414,7 +416,7 @@ function matchNounGenderRule(word, gender, pluralForm) {
   return null;
 }
 
-function transformNoun(entry) {
+function transformNoun(entry, posLabel = "noun") {
   const { compact } = splitForms(entry);
   const gender = parseGender(entry);
   const caseForms = extractNounCaseForms(compact);
@@ -441,7 +443,7 @@ function transformNoun(entry) {
 
   return {
     word: entry.word,
-    pos: "noun",
+    pos: posLabel,
     etymology_number: entry.etymology_number || null,
     is_plural_only: isPluralOnly || undefined,
     plural_only_note: pluralOnlyNote,
@@ -732,9 +734,12 @@ function mergeWithExisting(newData, existingPath) {
     return newData;
   }
 
-  // Preserve frequency (added by enrich step, not owned by transform)
+  // Preserve fields added by enrich step (not owned by transform)
   if (existing.frequency != null) {
     newData.frequency = existing.frequency;
+  }
+  if (existing.plural_dominant != null) {
+    newData.plural_dominant = existing.plural_dominant;
   }
 
   // Preserve gloss_en in senses (match by position)
@@ -815,6 +820,14 @@ async function main() {
 
     if (entry.lang_code !== "de") continue;
     if (!SUPPORTED_POS[entry.pos]) continue;
+
+    // Skip surnames and first names — only keep toponyms for proper nouns.
+    // pos_title: "Toponym" (places), "Nachname" (surnames), "Vorname" (first names)
+    if (
+      entry.pos === "name" &&
+      entry.pos_title !== "Toponym"
+    )
+      continue;
 
     if (
       entry.senses?.length > 0 &&
@@ -904,6 +917,7 @@ async function main() {
     pron: (e) => transformSimple(e, POS_CONFIG.pron.label),
     det: (e) => transformSimple(e, POS_CONFIG.det.label),
     num: (e) => transformSimple(e, POS_CONFIG.num.label),
+    name: (e) => transformNoun(e, POS_CONFIG.name.label),
   };
 
   const today = new Date().toISOString().slice(0, 10);

@@ -168,9 +168,24 @@ function loadSubtitleFrequency() {
 // Step 3: Enrich JSON files with frequency (best rank across both corpora)
 // ============================================================
 
+// ============================================================
+// Plural-preferred list: manually curated nouns where the plural
+// form is more natural/common than the singular.
+// ============================================================
+
+const PLURAL_PREFERRED_FILE = join(ROOT, "config", "plural-preferred.json");
+
+function loadPluralPreferred() {
+  if (!existsSync(PLURAL_PREFERRED_FILE)) return new Set();
+  const data = JSON.parse(readFileSync(PLURAL_PREFERRED_FILE, "utf-8"));
+  return new Set(data.words);
+}
+
 function enrichFiles(leipzigMap, subtitleMap) {
   let enriched = 0;
   let notFound = 0;
+  const pluralPreferred = loadPluralPreferred();
+  let pluralDominantCount = 0;
 
   for (const dir of POS_DIRS) {
     const fullDir = join(DATA_DIR, "words", dir);
@@ -194,18 +209,30 @@ function enrichFiles(leipzigMap, subtitleMap) {
 
       if (bestRank !== null) {
         data.frequency = bestRank;
-        writeFileSync(filePath, JSON.stringify(data, null, 2));
         enriched++;
       } else {
         notFound++;
         console.log(`  No frequency data for: ${data.word} (${data.pos})`);
       }
+
+      // Apply plural-preferred flag from curated config
+      if (pluralPreferred.has(data.word)) {
+        data.plural_dominant = true;
+        pluralDominantCount++;
+      } else {
+        delete data.plural_dominant;
+      }
+
+      writeFileSync(filePath, JSON.stringify(data, null, 2));
     }
   }
 
   console.log(
     `\nEnriched ${enriched} files with frequency rank. ${notFound} words not found in corpus.`,
   );
+  if (pluralDominantCount > 0) {
+    console.log(`Applied plural_dominant to ${pluralDominantCount} nouns.`);
+  }
 }
 
 // ============================================================

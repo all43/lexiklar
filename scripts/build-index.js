@@ -227,15 +227,17 @@ function main() {
 
   db.exec(`
     CREATE TABLE words (
-      id           INTEGER PRIMARY KEY,
-      lemma        TEXT NOT NULL,
-      lemma_folded TEXT NOT NULL,
-      pos          TEXT NOT NULL,
-      gender       TEXT,
-      frequency    INTEGER,
-      file         TEXT NOT NULL UNIQUE,
-      gloss_en     TEXT,
-      data         TEXT NOT NULL
+      id              INTEGER PRIMARY KEY,
+      lemma           TEXT NOT NULL,
+      lemma_folded    TEXT NOT NULL,
+      pos             TEXT NOT NULL,
+      gender          TEXT,
+      frequency       INTEGER,
+      plural_dominant INTEGER,
+      plural_form     TEXT,
+      file            TEXT NOT NULL UNIQUE,
+      gloss_en        TEXT,
+      data            TEXT NOT NULL
     );
 
     CREATE TABLE examples (
@@ -256,8 +258,8 @@ function main() {
   `);
 
   const insertWord = db.prepare(`
-    INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, file, gloss_en, data)
-    VALUES (@lemma, @lemma_folded, @pos, @gender, @frequency, @file, @gloss_en, @data)
+    INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en, data)
+    VALUES (@lemma, @lemma_folded, @pos, @gender, @frequency, @plural_dominant, @plural_form, @file, @gloss_en, @data)
   `);
 
   const insertWordForm = db.prepare(`
@@ -497,6 +499,8 @@ function main() {
         pos: data.pos.toUpperCase(),
         gender: data.gender || null,
         frequency: data.frequency || null,
+        plural_dominant: data.plural_dominant ? 1 : null,
+        plural_form: data.plural_dominant ? (data.plural_form || null) : null,
         file: fileKey,
         gloss_en: glossEn.length ? JSON.stringify(glossEn) : null,
         data: JSON.stringify(enriched),
@@ -522,7 +526,7 @@ function main() {
       }
 
       // Pre-compute noun case forms for search (plural, genitive, dative, etc.)
-      if (data.pos === "noun" && data.case_forms) {
+      if ((data.pos === "noun" || data.pos === "proper noun") && data.case_forms) {
         const lemmaLower = data.word.toLowerCase();
         const seenForms = new Set();
         for (const number of Object.values(data.case_forms)) {

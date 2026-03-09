@@ -21,6 +21,7 @@ export const POS_CONFIG = {
   pron: { dir: "pronouns", label: "pronoun" },
   det: { dir: "determiners", label: "determiner" },
   num: { dir: "numerals", label: "numeral" },
+  name: { dir: "names", label: "proper noun" },
 };
 
 /** Array of directory names: ["nouns", "verbs", "adjectives", ...] */
