@@ -25,15 +25,18 @@
           <f7-list-item
             v-for="item in vlData.items"
             :key="item.file"
-            :title="item.lemma"
-            :subtitle="item.matchedForm ? `← ${item.matchedForm}` : (item.glossEn[0] || '')"
-            :after="item.pos"
-            :badge="item.gender || ''"
-            :badge-color="genderColor(item.gender)"
+            :title="item.pluralDominant ? item.pluralForm : item.lemma"
+            :subtitle="itemSubtitle(item)"
             :link="`/word/${item.file}/`"
             :style="`top: ${vlData.topPosition}px`"
             :virtual-list-index="item.index"
-          />
+          >
+            <template #after>
+              <span class="list-item-pos">{{ item.pos }}</span>
+              <f7-badge v-if="item.pluralDominant" color="orange" class="list-item-badge">Pl.</f7-badge>
+              <f7-badge v-else-if="item.gender" :color="genderColor(item.gender)" class="list-item-badge">{{ item.gender }}</f7-badge>
+            </template>
+          </f7-list-item>
         </ul>
       </f7-list>
 
@@ -51,13 +54,16 @@
           <f7-list-item
             v-for="item in freqWords"
             :key="item.file"
-            :title="item.lemma"
+            :title="item.pluralDominant ? item.pluralForm : item.lemma"
             :subtitle="item.glossEn[0] || ''"
-            :after="item.pos"
-            :badge="item.gender || ''"
-            :badge-color="genderColor(item.gender)"
             :link="`/word/${item.file}/`"
-          />
+          >
+            <template #after>
+              <span class="list-item-pos">{{ item.pos }}</span>
+              <f7-badge v-if="item.pluralDominant" color="orange" class="list-item-badge">Pl.</f7-badge>
+              <f7-badge v-else-if="item.gender" :color="genderColor(item.gender)" class="list-item-badge">{{ item.gender }}</f7-badge>
+            </template>
+          </f7-list-item>
         </f7-list>
       </template>
 
@@ -68,13 +74,16 @@
           <f7-list-item
             v-for="item in recentWords"
             :key="item.file"
-            :title="item.lemma"
+            :title="item.pluralDominant ? item.pluralForm : item.lemma"
             :subtitle="item.glossEn[0] || ''"
-            :after="item.pos"
-            :badge="item.gender || ''"
-            :badge-color="genderColor(item.gender)"
             :link="`/word/${item.file}/`"
-          />
+          >
+            <template #after>
+              <span class="list-item-pos">{{ item.pos }}</span>
+              <f7-badge v-if="item.pluralDominant" color="orange" class="list-item-badge">Pl.</f7-badge>
+              <f7-badge v-else-if="item.gender" :color="genderColor(item.gender)" class="list-item-badge">{{ item.gender }}</f7-badge>
+            </template>
+          </f7-list-item>
         </f7-list>
       </template>
 
@@ -151,6 +160,15 @@ export default {
     onClear() {
       this.searchQuery = "";
     },
+    itemSubtitle(item) {
+      const displayTitle = item.pluralDominant ? item.pluralForm : item.lemma;
+      // Show "← matchedForm" only when it differs from the displayed title
+      if (item.matchedForm && item.matchedForm.toLowerCase() !== displayTitle.toLowerCase()) {
+        return `← ${item.matchedForm}`;
+      }
+      return item.glossEn[0] || "";
+    },
+
     genderColor(gender) {
       if (gender === "M") return "blue";
       if (gender === "F") return "pink";
@@ -267,3 +285,16 @@ export default {
 
 };
 </script>
+
+<style scoped>
+/* POS label in the after slot */
+.list-item-pos {
+  color: var(--f7-list-item-footer-text-color);
+  font-size: var(--f7-list-item-footer-font-size, 12px);
+}
+
+/* Gender / Pl. badge sits right after the POS label */
+.list-item-badge {
+  margin-left: 5px;
+}
+</style>
