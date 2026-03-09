@@ -17,11 +17,19 @@ const EXAMPLES_FILE = join(DATA_DIR, "examples.json");
 
 const args = process.argv.slice(2);
 const DRY_RUN = args.includes("--dry-run");
+const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
+
+// Local models have small context windows — default to a much smaller batch.
+// Cloud providers can handle 10+ easily.
+const DEFAULT_BATCH_SIZE = isLocalProvider(PROVIDER) ? 3 : 10;
 const BATCH_SIZE = (() => {
   const idx = args.indexOf("--batch-size");
-  return idx >= 0 ? parseInt(args[idx + 1], 10) || 10 : 10;
+  return idx >= 0 ? parseInt(args[idx + 1], 10) || DEFAULT_BATCH_SIZE : DEFAULT_BATCH_SIZE;
 })();
-const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
+
+// Disambiguation dict adds many tokens and risks blowing local context.
+// Skip it for local providers unless the user opts in explicitly.
+const USE_DISAMBIG = !isLocalProvider(PROVIDER) || args.includes("--disambig");
 
 // ============================================================
 // Build disambiguation dictionary from word files
@@ -38,7 +46,9 @@ function buildDisambiguationDict() {
       if (!file.endsWith(".json")) continue;
       const data = JSON.parse(readFileSync(join(dir, file), "utf-8"));
       const key = `${data.word}|${posName}`;
-      const glosses = (data.senses || []).map((s) => s.gloss).filter(Boolean);
+      // Prefer gloss_en if translate-glosses has already run — shorter, works
+      // better for local models, and is what the disambiguation hint will reference.
+      const glosses = (data.senses || []).map((s) => s.gloss_en || s.gloss).filter(Boolean);
 
       if (dict.has(key)) {
         // Homonym: merge glosses from both files
@@ -208,10 +218,10 @@ async function main() {
   console.log(
     `Translating examples... (${total} total, ${total - untranslated.length} already done, ${untranslated.length} remaining)`,
   );
-  console.log(`Provider: ${PROVIDER}, batch size: ${BATCH_SIZE}`);
+  console.log(`Provider: ${PROVIDER}, batch size: ${BATCH_SIZE}${!USE_DISAMBIG ? " (disambiguation disabled for local model — use --disambig to enable)" : ""}`);
 
-  // Build disambiguation dict
-  const disambigDict = buildDisambiguationDict();
+  // Build disambiguation dict (skipped for local providers to save context)
+  const disambigDict = USE_DISAMBIG ? buildDisambiguationDict() : new Map();
 
   // Create batches
   const batches = [];
@@ -223,11 +233,12 @@ async function main() {
     console.log(`\nDry run: would send ${batches.length} batches.`);
     // Show first batch as sample
     const sampleDisambig = getRelevantDisambiguation(batches[0], disambigDict);
+    const samplePrompt = buildUserPrompt(batches[0], sampleDisambig);
     console.log("\nSample batch 1 prompt:");
-    console.log(buildUserPrompt(batches[0], sampleDisambig));
-    console.log(
-      `\nDisambiguation entries for batch 1: ${Object.keys(sampleDisambig).length}`,
-    );
+    console.log(samplePrompt);
+    const approxTokens = Math.ceil((SYSTEM_PROMPT.length + samplePrompt.length) / 4);
+    console.log(`\nDisambiguation entries for batch 1: ${Object.keys(sampleDisambig).length}`);
+    console.log(`Approx prompt size: ~${approxTokens} tokens (system + user, rough estimate)`);
     return;
   }
 
