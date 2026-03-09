@@ -10,7 +10,7 @@
     "copy-data": "node scripts/copy-data.js",
     "download": "node scripts/download.js",
     "download-corpus": "node scripts/enrich-frequency.js --download-only",
-    "transform": "node scripts/transform.js",
+    "transform": "node --max-old-space-size=4096 scripts/transform.js",
     "enrich": "node scripts/enrich-frequency.js",
     "build-index": "node scripts/build-index.js",
     "translate": "node scripts/translate-examples.js",

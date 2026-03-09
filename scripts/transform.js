@@ -818,7 +818,7 @@ async function main() {
   // such nouns regardless of the frequency filter so that Phase 1b can force-
   // include counterparts of filtered-out words (e.g. Automechanikerin when only
   // Automechaniker passed the cutoff).
-  const genderBuffer = new Map(); // lowerCaseWord → { raw, parsed }
+  const genderBuffer = new Map(); // lowerCaseWord → raw JSON string
   const rl = createInterface({ input: createReadStream(RAW_FILE) });
   let lineCount = 0;
 
@@ -853,9 +853,10 @@ async function main() {
 
     // Buffer noun entries that carry a gender-pair reference, before filter
     // checks, so Phase 1b can retrieve them even if they didn't pass the filter.
+    // Store only the raw string — parsed object is re-created on demand.
     if (entry.pos === "noun" && extractGenderCounterpart(entry)) {
       if (!genderBuffer.has(entry.word.toLowerCase()))
-        genderBuffer.set(entry.word.toLowerCase(), { raw: line, parsed: entry });
+        genderBuffer.set(entry.word.toLowerCase(), line);
     }
 
     if (seedWords && !seedWords.has(entry.word.toLowerCase())) continue;
@@ -863,7 +864,9 @@ async function main() {
 
     const key = `${entry.word}|${entry.pos}`;
     if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push({ raw: line, parsed: entry });
+    // Store raw string + pre-computed hash only. Parsed object is recreated in
+    // Phase 2 to avoid holding two copies (raw + JS object) per entry in RAM.
+    groups.get(key).push({ raw: line, hash: sha256(line) });
   }
 
   const totalEntries = [...groups.values()].reduce(
@@ -882,15 +885,16 @@ async function main() {
   if (freqFilter && !useSeed) {
     let counterpartsAdded = 0;
     for (const [, entries] of groups) {
-      for (const { parsed } of entries) {
+      for (const { raw } of entries) {
+        const parsed = JSON.parse(raw);
         if (parsed.pos !== "noun") continue;
         const counterpartWord = extractGenderCounterpart(parsed);
         if (!counterpartWord) continue;
         const counterpartKey = `${counterpartWord}|noun`;
         if (groups.has(counterpartKey)) break; // already included — move to next group
-        const buffered = genderBuffer.get(counterpartWord.toLowerCase());
-        if (!buffered) break; // not present in Wiktionary data
-        groups.set(counterpartKey, [{ raw: buffered.raw, parsed: buffered.parsed }]);
+        const bufferedRaw = genderBuffer.get(counterpartWord.toLowerCase());
+        if (!bufferedRaw) break; // not present in Wiktionary data
+        groups.set(counterpartKey, [{ raw: bufferedRaw, hash: sha256(bufferedRaw) }]);
         counterpartsAdded++;
         break; // counterpart added, no need to check other entries in this group
       }
@@ -898,6 +902,7 @@ async function main() {
     if (counterpartsAdded > 0)
       console.log(`  Added ${counterpartsAdded} gender counterpart(s) missing from frequency filter.`);
   }
+  genderBuffer.clear(); // free memory — no longer needed after Phase 1b
 
   // Load existing examples to preserve manually added data
   let existingExamples = {};
@@ -941,11 +946,14 @@ async function main() {
   for (const [, entries] of groups) {
     const needsDisambig = entries.length > 1;
 
-    for (const { raw, parsed } of entries) {
-      const sourceHash = sha256(raw);
+    for (const { raw, hash } of entries) {
+      // Parse lazily here — we deliberately did NOT store the parsed object in
+      // Phase 1 so that genderBuffer and groups don't hold two copies (raw string
+      // + JS object) of every entry simultaneously.
+      const parsed = JSON.parse(raw);
       const stateKey = `${parsed.word}|${parsed.pos}|${parsed.etymology_number || 1}`;
 
-      if (state.entries[stateKey]?.hash === sourceHash) {
+      if (state.entries[stateKey]?.hash === hash) {
         skipped++;
         continue;
       }
@@ -983,7 +991,7 @@ async function main() {
 
       // Add _meta
       data._meta = {
-        source_hash: sourceHash,
+        source_hash: hash,
         generated_at: today,
       };
 
@@ -1003,7 +1011,7 @@ async function main() {
       mkdirSync(dirname(fullPath), { recursive: true });
       writeFileSync(fullPath, JSON.stringify(data, null, 2));
 
-      state.entries[stateKey] = { hash: sourceHash, file: relPath };
+      state.entries[stateKey] = { hash, file: relPath };
       written++;
     }
   }
