@@ -63,6 +63,7 @@ function collectSenses() {
             senseIdx: i,
             word: data.word,
             pos: data.pos,
+            phraseType: data.phrase_type || null,
             gloss: sense.gloss,
           });
         }
@@ -96,16 +97,20 @@ For pos="noun", pos="verb", pos="adjective", pos="adverb", and similar single wo
     word="laufen", pos="verb", gloss="dargeboten oder ausgestrahlt werden" → be showing
 
 For pos="phrase":
-- Give the natural English EQUIVALENT EXPRESSION (idiom, phrase, or saying)
-- For established proverbs, use the standard English equivalent if one exists
-- Length matches the phrase — can be a full sentence for proverbs
+- Use the phrase TEXT (word field) as the primary signal — you know what this German phrase means
+- phrase_type gives a hint when present:
+    phrase_type="idiom"       → find the matching English idiom; if none exists, paraphrase naturally
+    phrase_type="proverb"     → use the standard English proverb equivalent
+    phrase_type="collocation" → give a direct natural translation (no idiom-hunting needed)
+    phrase_type="greeting"    → give the standard English greeting equivalent
+    phrase_type="toponym"     → transliterate or use the established English place name
 - Examples:
-    word="jemandem den Rücken stärken", pos="phrase", gloss="jemanden in seinem Standpunkt unterstützen" → to back someone up
-    word="im Übrigen", pos="phrase", gloss="darüber hinaus; ansonsten" → moreover
-    word="nach links", pos="phrase", gloss="in Richtung links" → to the left
-    word="wer Wind sät, wird Sturm ernten", pos="phrase", gloss="wer anderen schadet, muss mit Konsequenzen rechnen" → you reap what you sow
-    word="wie im Bilderbuch", pos="phrase", gloss="perfekt, großartig" → picture-perfect
-    word="kleine Rochade", pos="phrase", gloss="Rochade am Königsflügel" → kingside castling
+    word="bis an die Zähne bewaffnet sein", pos="phrase", phrase_type="idiom", gloss="vollständig bewaffnet sein" → armed to the teeth
+    word="aus einer Mücke einen Elefanten machen", pos="phrase", phrase_type="idiom", gloss="etwas übertrieben darstellen" → to make a mountain out of a molehill
+    word="wer Wind sät, wird Sturm ernten", pos="phrase", phrase_type="proverb", gloss="wer anderen schadet, muss mit Konsequenzen rechnen" → you reap what you sow
+    word="schwarzer Kaffee", pos="phrase", phrase_type="collocation", gloss="Kaffee ohne Milch" → black coffee
+    word="Grüne Minna", pos="phrase", phrase_type="collocation", gloss="Fahrzeug der Polizei zum Gefangenentransport" → paddy wagon
+    word="wie im Bilderbuch", pos="phrase", phrase_type="idiom", gloss="perfekt, großartig" → picture-perfect
 
 Reply with ONLY the translation, nothing else`;
 
@@ -133,7 +138,9 @@ Examples:
 
 function buildUserPrompt(item) {
   const cleanGloss = stripReferences(item.gloss);
-  return `word="${item.word}", pos="${item.pos}", gloss="${cleanGloss}"`;
+  const base = `word="${item.word}", pos="${item.pos}"`;
+  const typeClause = item.phraseType ? `, phrase_type="${item.phraseType}"` : "";
+  return `${base}${typeClause}, gloss="${cleanGloss}"`;
 }
 
 function parseResponse(content) {

@@ -688,11 +688,27 @@ function transformSimple(entry, posLabel) {
 }
 
 /**
- * Phrase transformer — same as simple but separate for future extensibility
- * (may later gain fields like components, literal_translation).
+ * Detect phrase subtype from Wiktionary categories.
+ * Returns one of: "idiom" | "collocation" | "proverb" | "greeting" | "toponym" | null
+ */
+function detectPhraseType(entry) {
+  const cats = entry.categories || [];
+  if (cats.includes("Sprichwort (Deutsch)"))   return "proverb";
+  if (cats.includes("Grußformel (Deutsch)"))   return "greeting";
+  if (cats.includes("Toponym (Deutsch)"))       return "toponym";
+  if (cats.includes("Redewendung (Deutsch)"))   return "idiom";
+  if (cats.includes("Wortverbindung (Deutsch)")) return "collocation";
+  return null;
+}
+
+/**
+ * Phrase transformer — extracts phrase_type from Wiktionary categories.
  */
 function transformPhrase(entry) {
-  return transformSimple(entry, "phrase");
+  const base = transformSimple(entry, "phrase");
+  const phraseType = detectPhraseType(entry);
+  if (phraseType) base.phrase_type = phraseType;
+  return base;
 }
 
 // ============================================================
@@ -742,13 +758,13 @@ function mergeWithExisting(newData, existingPath) {
     newData.plural_dominant = existing.plural_dominant;
   }
 
-  // Preserve gloss_en in senses (match by position)
+  // Preserve LLM-generated sense fields (match by position)
   if (existing.senses && newData.senses) {
     for (let i = 0; i < newData.senses.length; i++) {
       const oldSense = existing.senses[i];
-      if (oldSense?.gloss_en != null) {
-        newData.senses[i].gloss_en = oldSense.gloss_en;
-      }
+      if (!oldSense) continue;
+      if (oldSense.gloss_en != null)      newData.senses[i].gloss_en      = oldSense.gloss_en;
+      if (oldSense.gloss_en_full != null) newData.senses[i].gloss_en_full = oldSense.gloss_en_full;
     }
   }
 
