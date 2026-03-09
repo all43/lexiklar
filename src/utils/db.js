@@ -49,6 +49,8 @@ function processSearchRow(row) {
     pos: row.pos,
     gender: row.gender,
     frequency: row.frequency,
+    pluralDominant: !!row.plural_dominant,
+    pluralForm: row.plural_form || null,
     file: row.file,
     glossEn: row.gloss_en ? JSON.parse(row.gloss_en) : [],
   };
@@ -188,7 +190,7 @@ export async function getExamples(ids) {
 export async function searchByLemma(q) {
   const folded = foldUmlauts(q);
   const rows = await query(
-    `SELECT lemma, pos, gender, frequency, file, gloss_en
+    `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en
      FROM words
      WHERE lemma LIKE ? COLLATE NOCASE
         OR lemma_folded LIKE ?
@@ -207,7 +209,7 @@ export async function searchByLemma(q) {
  */
 export async function searchByGlossEn(q) {
   const rows = await query(
-    `SELECT lemma, pos, gender, frequency, file, gloss_en
+    `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en
      FROM words
      WHERE gloss_en LIKE ? COLLATE NOCASE
      ORDER BY
@@ -244,7 +246,7 @@ export async function getRelatedWords(fileKeys) {
   if (!fileKeys.length) return [];
   const placeholders = fileKeys.map(() => "?").join(",");
   const rows = await query(
-    `SELECT lemma, pos, gender, file, gloss_en FROM words WHERE file IN (${placeholders})`,
+    `SELECT lemma, pos, gender, plural_dominant, plural_form, file, gloss_en FROM words WHERE file IN (${placeholders})`,
     fileKeys,
   );
   return rows.map(processSearchRow);
@@ -256,7 +258,7 @@ export async function getRelatedWords(fileKeys) {
  */
 export async function getAllWords() {
   const rows = await query(
-    `SELECT lemma, pos, gender, frequency, file, gloss_en
+    `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en
      FROM words
      ORDER BY frequency ASC`,
   );

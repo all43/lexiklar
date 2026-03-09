@@ -6,7 +6,13 @@
     </div>
 
     <!-- Gender rule hint -->
-    <div v-else-if="word.gender_rule || word.is_singular_only" class="noun-rule-hints">
+    <div v-else-if="word.gender_rule || word.is_singular_only || word.plural_dominant || isNDeclension" class="noun-rule-hints">
+      <div v-if="isNDeclension" class="noun-rule-hint">
+        <span class="noun-rule-match">N-Deklination — adds -(e)n to all cases except nominative</span>
+      </div>
+      <div v-if="word.plural_dominant" class="noun-rule-hint">
+        <span class="noun-rule-match">Usually used in plural</span>
+      </div>
       <div v-if="word.gender_rule" class="noun-rule-hint">
         <span :class="word.gender_rule.is_exception ? 'noun-rule-exception' : 'noun-rule-match'">
           {{ ruleText }}
@@ -87,6 +93,12 @@ export default {
   computed: {
     genderClass() {
       return (this.word.gender || "").toLowerCase();
+    },
+    isNDeclension() {
+      if (this.word.gender !== "M") return false;
+      const s = this.word.case_forms?.singular;
+      if (!s?.nom || !s?.acc) return false;
+      return s.acc !== s.nom && s.acc === s.dat && s.acc === s.gen;
     },
     cases() {
       return [
