@@ -101,14 +101,38 @@ For pos="noun", pos="verb", pos="adjective", pos="adverb", and similar single wo
 For pos="phrase":
 - Use the phrase TEXT (word field) as the primary signal — you know what this German phrase means
 - phrase_type gives a hint when present:
-    phrase_type="idiom"       → find the matching English idiom; if none exists, paraphrase naturally
+    phrase_type="idiom"       → find the matching English idiom or set phrase
+                                 ⚠ NEVER translate word-for-word — the German words are almost never the English idiom words
+                                 ⚠ NEVER pick an idiom just because it shares a surface word with the German
+                                 ⚠ NEVER output a bare adjective or adverb — always give an idiomatic phrase
+                                 ⚠ If no perfect match exists, use the closest English idiom; as a last resort a concise natural phrase (≤ 6 words)
     phrase_type="proverb"     → use the standard English proverb equivalent
     phrase_type="collocation" → give a direct natural translation (no idiom-hunting needed)
     phrase_type="greeting"    → give the standard English greeting equivalent
     phrase_type="toponym"     → transliterate or use the established English place name
-- Examples:
+
+Idiom translation — avoid these mistakes:
+    word="Bohnen in den Ohren haben" (meaning: to ignore / not listen)
+      ✗ "have beans in one's ears"  ← literal — German idiom words ≠ English idiom words
+      ✓ "turn a deaf ear"
+    word="Blut und Wasser schwitzen" (meaning: to be extremely anxious)
+      ✗ "sweat blood and water"  ← literal
+      ✓ "sweat blood"
+    word="Nägel mit Köpfen machen" (meaning: to do something thoroughly and decisively)
+      ✗ "hit the nail on the head"  ← shares "nail" but wrong meaning
+      ✓ "go the whole hog"
+    word="auf die Nerven gehen" (meaning: to irritate someone)
+      ✗ "annoying"  ← bare adjective, not an idiom
+      ✓ "get on one's nerves"
+    word="aus voller Kehle" (meaning: singing or shouting as loudly as possible)
+      ✗ "loudly"  ← bare adverb, not an idiom
+      ✓ "at the top of one's lungs"
+
+Good idiom translations:
     word="bis an die Zähne bewaffnet sein", pos="phrase", phrase_type="idiom", gloss="vollständig bewaffnet sein" → armed to the teeth
-    word="aus einer Mücke einen Elefanten machen", pos="phrase", phrase_type="idiom", gloss="etwas übertrieben darstellen" → to make a mountain out of a molehill
+    word="aus einer Mücke einen Elefanten machen", pos="phrase", phrase_type="idiom", gloss="etwas übertrieben darstellen" → make a mountain out of a molehill
+    word="Rosinen im Kopf haben", pos="phrase", phrase_type="idiom", gloss="übertriebene Vorstellungen von sich selbst haben" → have ideas above one's station
+    word="aus allen Himmeln fallen", pos="phrase", phrase_type="idiom", gloss="plötzlich enttäuscht werden" → come down to earth with a bump
     word="wer Wind sät, wird Sturm ernten", pos="phrase", phrase_type="proverb", gloss="wer anderen schadet, muss mit Konsequenzen rechnen" → you reap what you sow
     word="schwarzer Kaffee", pos="phrase", phrase_type="collocation", gloss="Kaffee ohne Milch" → black coffee
     word="Grüne Minna", pos="phrase", phrase_type="collocation", gloss="Fahrzeug der Polizei zum Gefangenentransport" → paddy wagon
@@ -312,6 +336,7 @@ async function main() {
     }
     console.log(`Estimated cost: $${costEstimate.toFixed(4)}`);
   }
+
 }
 
 // Only run when executed directly (not when imported by test harness)

@@ -145,6 +145,9 @@ A translation is BAD if it is:
 A translation is GOOD if it is a recognised English idiom/saying that matches the meaning,
 even if it shares a word with the German (e.g. "an eye for an eye", "storm in a teacup",
 "money makes the world go round").
+A translation is also GOOD if the phrase is a question, greeting, or exclamation where no
+English idiom equivalent exists — a direct natural translation ("what time is it",
+"how are you") is correct and must NOT be flagged.
 
 Reply with ONLY a JSON array of the bad ones:
 [
