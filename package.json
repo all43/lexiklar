@@ -16,6 +16,7 @@
     "translate": "node scripts/translate-examples.js",
     "translate-glosses": "node scripts/translate-glosses.js",
     "translate-glosses:full": "node scripts/translate-glosses.js --full",
+    "translate-glosses:reset-idioms": "node scripts/translate-glosses.js --reset-idioms",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:glosses": "node scripts/test-gloss-translation.js",

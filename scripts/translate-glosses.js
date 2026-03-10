@@ -11,7 +11,8 @@
  *   node scripts/translate-glosses.js --provider lm-studio   # local LM Studio
  *   node scripts/translate-glosses.js --model gemma3:4b       # custom model (with any provider)
  *   node scripts/translate-glosses.js --dry-run               # preview without API calls
- *   node scripts/translate-glosses.js --reset --provider ...  # clear all gloss_en, then re-translate
+ *   node scripts/translate-glosses.js --reset --provider ...        # clear all gloss_en, then re-translate
+ *   node scripts/translate-glosses.js --reset-idioms --provider ... # clear gloss_en only for idiom phrases, then re-translate
  *
  * Requires OPENAI_API_KEY or ANTHROPIC_API_KEY env var (not needed for ollama/lm-studio).
  * Exits 0 if no key found (pipeline-safe).
@@ -33,9 +34,10 @@ const WORDS_DIR = join(ROOT, "data", "words");
 // ============================================================
 
 const args = process.argv.slice(2);
-const DRY_RUN = args.includes("--dry-run");
-const RESET = args.includes("--reset");
-const FULL_MODE = args.includes("--full");
+const DRY_RUN      = args.includes("--dry-run");
+const RESET        = args.includes("--reset");
+const RESET_IDIOMS = args.includes("--reset-idioms");
+const FULL_MODE    = args.includes("--full");
 const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
 
 // ============================================================
@@ -203,8 +205,8 @@ async function main() {
   const targetField = FULL_MODE ? "gloss_en_full" : "gloss_en";
   const activePrompt = FULL_MODE ? SYSTEM_PROMPT_FULL : SYSTEM_PROMPT;
 
-  // Reset the target field if requested
-  if (RESET) {
+  // Reset the target field if requested (skipped in dry-run mode)
+  if ((RESET || RESET_IDIOMS) && !DRY_RUN) {
     let resetCount = 0;
     for (const posDir of POS_DIRS) {
       const dir = join(WORDS_DIR, posDir);
@@ -213,6 +215,8 @@ async function main() {
         if (!file.endsWith(".json")) continue;
         const filePath = join(dir, file);
         const data = JSON.parse(readFileSync(filePath, "utf-8"));
+        // --reset-idioms: only touch phrase files with phrase_type === "idiom"
+        if (RESET_IDIOMS && !(data.pos === "phrase" && data.phrase_type === "idiom")) continue;
         let changed = false;
         for (const sense of data.senses || []) {
           if (sense[targetField]) { sense[targetField] = null; resetCount++; changed = true; }
@@ -220,7 +224,8 @@ async function main() {
         if (changed) writeFileSync(filePath, JSON.stringify(data, null, 2) + "\n");
       }
     }
-    console.log(`Reset ${resetCount} ${targetField} fields to null.`);
+    const scope = RESET_IDIOMS ? "idiom phrase" : "";
+    console.log(`Reset ${resetCount} ${scope} ${targetField} fields to null.`);
   }
 
   // Collect untranslated senses
