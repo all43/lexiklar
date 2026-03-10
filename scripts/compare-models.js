@@ -17,6 +17,8 @@
  *   node scripts/compare-models.js --count 10            # sample size (default: 10)
  *   node scripts/compare-models.js --seed 42             # reproducible selection
  *   node scripts/compare-models.js --type expression     # only idioms/proverbs/etc.
+ *   node scripts/compare-models.js --models lm-studio/sauerkraut  # local model only
+ *   node scripts/compare-models.js --local-batch 3      # chunk size for slow local models
  */
 
 import { readFileSync, existsSync } from "fs";
@@ -45,8 +47,13 @@ const MODEL_REGISTRY = {
   "openai/gpt-5-mini":   { provider: "openai",    model: "gpt-5-mini",   temperature: 1, maxTokens: 8192 },
   "anthropic/haiku-4.5": { provider: "anthropic", model: "claude-haiku-4-5-20251001" },
   "anthropic/sonnet-4.5":{ provider: "anthropic", model: "claude-sonnet-4-5-20250929" },
-  "lm-studio":           { provider: "lm-studio", model: null },  // auto-detect
-  "ollama":              { provider: "ollama",     model: null },  // auto-detect
+  "lm-studio":           { provider: "lm-studio", model: null },              // auto-detect first loaded
+  "lm-studio/tower":     { provider: "lm-studio", model: "tower-plus-9b-mlx" },      // translation-specific
+  "lm-studio/sauerkraut":{ provider: "lm-studio", model: "sauerkrautlm-v2-14b-sft-mlx", batchSize: 5 }, // 14B — chunks to avoid timeout
+  "lm-studio/gemma3":    { provider: "lm-studio", model: "google/gemma-3-12b", batchSize: 10 },
+  "ollama":              { provider: "ollama",     model: null },              // auto-detect
+  "ollama/gemma3":       { provider: "ollama",     model: "gemma3:4b",         batchSize: 5 },
+  "ollama/deepseek":     { provider: "ollama",     model: "deepseek-r1:latest", batchSize: 5 },
 };
 
 const DEFAULT_MODELS = [
@@ -69,11 +76,14 @@ function getArg(flag, defaultVal) {
   return idx >= 0 ? args[idx + 1] : defaultVal;
 }
 
-const COUNT       = parseInt(getArg("--count", "10"), 10);
-const SEED        = parseInt(getArg("--seed", String(Date.now())), 10);
-const TYPE_FILTER = getArg("--type", null);   // e.g. "expression", "example", "proverb"
-const PROBE       = getArg("--probe", null);  // provider key to probe for raw output
-const DEBUG       = args.includes("--debug"); // print raw model response + parsed map
+const COUNT        = parseInt(getArg("--count", "10"), 10);
+const SEED         = parseInt(getArg("--seed", String(Date.now())), 10);
+const TYPE_FILTER  = getArg("--type", null);   // e.g. "expression", "example", "proverb"
+const FIXTURES     = args.includes("--fixtures"); // use scripts/test-idioms.json instead of examples.json
+const PROBE        = getArg("--probe", null);  // provider key to probe for raw output
+const DEBUG        = args.includes("--debug"); // print raw model response + parsed map
+// Override per-model batchSize for local models (e.g. --local-batch 3 for very slow machines)
+const LOCAL_BATCH  = parseInt(getArg("--local-batch", "0"), 10) || null;
 
 const modelsArg   = getArg("--models", null);
 const ACTIVE_KEYS = modelsArg ? modelsArg.split(",").map(s => s.trim()) : DEFAULT_MODELS;
@@ -132,16 +142,15 @@ function pickRandom(array, n, seed) {
 // ── Translation via one model ─────────────────────────────────────────────────
 
 /**
- * @returns {{ id: string → translation: string }} map  plus stats
+ * Send a single chunk (subset of examples) to one model. Returns a partial map.
  */
-async function translateWith(batch, key) {
+async function translateChunk(chunk, key) {
   const cfg = MODEL_REGISTRY[key];
-  if (!cfg) throw new Error(`Unknown model key: "${key}". Available: ${Object.keys(MODEL_REGISTRY).join(", ")}`);
 
-  const prompt = buildPrompt(batch);
-  // Budget ~50 tokens per example (translation + JSON punctuation).
-  // Minimum 1024, scaled with batch size so large runs don't get truncated.
-  const autoTokens = Math.max(1024, batch.length * 50);
+  const prompt = buildPrompt(chunk);
+  // Budget ~100 tokens per example (translation text + JSON punctuation + headroom).
+  // Minimum 512 for a small chunk, scaled with chunk size.
+  const autoTokens = Math.max(512, chunk.length * 100);
 
   const result = await retryWithBackoff(() =>
     callLLM(SYSTEM_PROMPT, prompt, {
@@ -164,7 +173,7 @@ async function translateWith(batch, key) {
   }
 
   if (DEBUG) {
-    console.log(`\n[DEBUG raw] ${key}:\n${result.content.slice(0, 600)}`);
+    console.log(`\n[DEBUG raw] ${key} (chunk ${chunk[0]?.id}…):\n${result.content.slice(0, 600)}`);
   }
 
   // Normalise: may be wrapped object or bare array
@@ -182,11 +191,68 @@ async function translateWith(batch, key) {
     if (item.id) map[item.id] = item.translation ?? "(no translation)";
   }
 
+  // Positional fallback: some local models (e.g. sauerkrautlm) output one
+  // <function=translate>{'text': '...'}</function> block per input item instead of
+  // a JSON array with id fields. When that happens, parsed has no ids — fall back to
+  // matching by position (N function blocks → N chunk items).
+  if (Object.keys(map).length === 0) {
+    const funcBlocks = [...result.content.matchAll(/<function[^>]*>([\s\S]*?)(?:<\/function>|$)/g)];
+    if (funcBlocks.length > 0 && funcBlocks.length <= chunk.length) {
+      for (let i = 0; i < funcBlocks.length; i++) {
+        const inner = funcBlocks[i][1].trim();
+        // Try to extract the 'text' value from {'text': '...'} or {"text": "..."}
+        // Also handle bare text (just the translation without a wrapper)
+        let text = null;
+        try {
+          // Convert Python-style single-quote dict to JSON
+          const asJson = inner.replace(/'((?:[^'\\]|\\.)*)'/g, (_, v) =>
+            `"${v.replace(/\\'/g, "'").replace(/(?<!\\)"/g, '\\"')}"`
+          );
+          const obj = JSON.parse(asJson.startsWith('{') ? asJson : `{${asJson}}`);
+          text = obj.text ?? obj.translation ?? obj.output ?? null;
+        } catch {
+          // If parsing fails, use the raw inner content
+          text = inner.replace(/^['"]|['"]$/g, '').trim() || null;
+        }
+        if (text && chunk[i]) map[chunk[i].id] = text;
+      }
+    }
+  }
+
   if (DEBUG) {
     console.log(`[DEBUG map] ${key}: ${JSON.stringify(map).slice(0, 400)}`);
   }
 
   return { map, tokens: result };
+}
+
+/**
+ * Translate a full batch with one model.
+ * If `cfg.batchSize` (or `--local-batch`) is set and smaller than the batch,
+ * splits into sequential chunks so slow local models don't time out.
+ *
+ * @returns {{ map: Record<string,string> }} id → translation
+ */
+async function translateWith(batch, key) {
+  const cfg = MODEL_REGISTRY[key];
+  if (!cfg) throw new Error(`Unknown model key: "${key}". Available: ${Object.keys(MODEL_REGISTRY).join(", ")}`);
+
+  // Determine chunk size: CLI override > per-model config > full batch at once
+  const chunkSize = LOCAL_BATCH ?? cfg.batchSize ?? batch.length;
+
+  if (chunkSize < batch.length) {
+    // Split into sequential sub-batches and merge results
+    const fullMap = {};
+    for (let i = 0; i < batch.length; i += chunkSize) {
+      const chunk = batch.slice(i, i + chunkSize);
+      if (DEBUG) console.log(`  [DEBUG] ${key}: chunk ${i / chunkSize + 1}/${Math.ceil(batch.length / chunkSize)} (${chunk.length} items)`);
+      const { map } = await translateChunk(chunk, key);
+      Object.assign(fullMap, map);
+    }
+    return { map: fullMap };
+  }
+
+  return translateChunk(batch, key);
 }
 
 // ── Probe mode: single request, raw output ────────────────────────────────────
@@ -392,6 +458,50 @@ async function main() {
   if (missingKeys.length) {
     console.warn(`Warning: missing API keys for:\n  ${missingKeys.join("\n  ")}`);
     console.warn("These models will be skipped.\n");
+  }
+
+  // ── Fixtures mode: use curated hard idioms from test-idioms.json ──────────────
+  if (FIXTURES) {
+    const fixturesFile = join(ROOT, "scripts", "test-idioms.json");
+    if (!existsSync(fixturesFile)) {
+      console.error("scripts/test-idioms.json not found.");
+      process.exit(1);
+    }
+    const fixtures = JSON.parse(readFileSync(fixturesFile, "utf-8"));
+    const selected  = fixtures;
+    const batch     = selected.map(({ id, text, type }) => ({ id, text, type }));
+    const refMap    = Object.fromEntries(selected.map(({ id, ref }) => [id, ref]));
+
+    console.log(`\nModel comparison — ${selected.length} hard idioms (fixtures mode)`);
+    console.log(`Models: ${ACTIVE_KEYS.join("  ·  ")}\n`);
+
+    const resultsByKey = {};
+    const timings      = {};
+    const skipped      = new Set();
+
+    for (const key of ACTIVE_KEYS) {
+      const { provider } = MODEL_REGISTRY[key];
+      if (!isLocalProvider(provider) && !getApiKey(provider)) {
+        console.log(`  Skipping ${key} (no API key)`);
+        skipped.add(key);
+        continue;
+      }
+      process.stdout.write(`  Running ${key.padEnd(LABEL_WIDTH)}... `);
+      const t0 = Date.now();
+      try {
+        const { map } = await translateWith(batch, key);
+        timings[key] = Date.now() - t0;
+        resultsByKey[key] = map;
+        console.log(`${Object.keys(map).length}/${selected.length} translations  (${(timings[key] / 1000).toFixed(1)}s)`);
+      } catch (err) {
+        timings[key] = Date.now() - t0;
+        console.log(`FAILED: ${err.message.slice(0, 120)}`);
+      }
+    }
+
+    printResult(selected, refMap, resultsByKey);
+    printSummary(selected, refMap, resultsByKey, timings, skipped);
+    return;
   }
 
   if (!existsSync(EXAMPLES_FILE)) {

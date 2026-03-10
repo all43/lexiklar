@@ -21,9 +21,9 @@ const CACHE_ENABLED = process.env.LLM_CACHE !== "0";
 const CACHE_DIR = process.env.LLM_CACHE_DIR
   || join(process.cwd(), "data", "raw", "llm-cache");
 
-function cacheKey(provider, model, systemPrompt, userMessage) {
+function cacheKey(provider, model, systemPrompt, userMessage, maxTokens) {
   return createHash("sha256")
-    .update(JSON.stringify({ provider, model, systemPrompt, userMessage }))
+    .update(JSON.stringify({ provider, model, systemPrompt, userMessage, maxTokens }))
     .digest("hex")
     .slice(0, 20);
 }
@@ -118,7 +118,7 @@ export function parseProviderArgs(argv) {
 // ============================================================
 
 async function callOpenAICompatible(systemPrompt, userMessage, baseUrl, model, options) {
-  const { maxTokens = 64, temperature = 0.2, apiKey = null, jsonMode = false } = options;
+  const { maxTokens = 64, temperature = 0.2, apiKey = null, jsonMode = false, timeoutMs = 0 } = options;
 
   const headers = { "Content-Type": "application/json" };
   if (apiKey) headers["Authorization"] = `Bearer ${apiKey}`;
@@ -127,9 +127,10 @@ async function callOpenAICompatible(systemPrompt, userMessage, baseUrl, model, o
     model,
     temperature,
     // max_completion_tokens is required by newer OpenAI models (o-series, gpt-5-*).
-    // Older models (gpt-4o-mini, gpt-4.1-*) accept both — max_tokens still works there,
-    // but we use max_completion_tokens exclusively to keep a single code path.
+    // Local models (LM Studio, Ollama) only understand max_tokens.
+    // Pass both: cloud models use max_completion_tokens, local models fall back to max_tokens.
     max_completion_tokens: maxTokens,
+    max_tokens: maxTokens,
     messages: [
       { role: "system", content: systemPrompt },
       { role: "user", content: userMessage },
@@ -140,11 +141,23 @@ async function callOpenAICompatible(systemPrompt, userMessage, baseUrl, model, o
   // Only supported by OpenAI and compatible cloud APIs (not most local models).
   if (jsonMode) body.response_format = { type: "json_object" };
 
-  const res = await fetch(`${baseUrl}/v1/chat/completions`, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-  });
+  const fetchOptions = { method: "POST", headers, body: JSON.stringify(body) };
+  if (timeoutMs > 0) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    fetchOptions.signal = controller.signal;
+    var clearTimer = () => clearTimeout(timer);
+  }
+
+  let res;
+  try {
+    res = await fetch(`${baseUrl}/v1/chat/completions`, fetchOptions);
+  } catch (err) {
+    clearTimer?.();
+    if (err.name === "AbortError") throw new Error(`Local model timed out after ${timeoutMs / 1000}s — model may be too slow or not loaded`);
+    throw err;
+  }
+  clearTimer?.();
 
   if (!res.ok) {
     const body = await res.text();
@@ -255,7 +268,7 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
 
   if (provider === "anthropic") {
     const model = modelOverride || defaults.model;
-    const key = cacheKey(provider, model, systemPrompt, userMessage);
+    const key = cacheKey(provider, model, systemPrompt, userMessage, maxTokens);
     const cached = readCache(key);
     if (cached) return { ...cached, _cached: true };
     const result = await callAnthropic(systemPrompt, userMessage, model, { maxTokens, temperature, apiKey });
@@ -270,7 +283,7 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
     model = await resolveLocalModel(defaults.url, defaults.model);
   }
 
-  const key = cacheKey(provider, model, systemPrompt, userMessage);
+  const key = cacheKey(provider, model, systemPrompt, userMessage, maxTokens);
   const cached = readCache(key);
   if (cached) return { ...cached, _cached: true };
 
@@ -282,6 +295,9 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
     // LM Studio newer versions dropped it (require json_schema or text instead).
     // Ollama support varies. Local providers can still produce valid JSON via extractJSON.
     jsonMode: jsonMode && !isLocalProvider(provider),
+    // Hard timeout for local models — prevents hanging the whole process if the model
+    // is loading, unresponsive, or generating at 1 token/s.
+    timeoutMs: isLocalProvider(provider) ? (parseInt(process.env.LOCAL_TIMEOUT_MS) || 300_000) : 0,
   });
   writeCache(key, result);
   return result;
