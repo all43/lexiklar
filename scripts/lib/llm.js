@@ -6,7 +6,48 @@
  *   - anthropic    (requires ANTHROPIC_API_KEY)
  *   - ollama       (local, no key needed)
  *   - lm-studio    (local, no key needed)
+ *
+ * Response caching:
+ *   Successful responses are cached in data/raw/llm-cache/ keyed by a hash of
+ *   (provider, model, systemPrompt, userMessage). Disable with LLM_CACHE=0.
  */
+
+import { createHash } from "crypto";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
+import { join } from "path";
+
+// Cache is enabled by default; set LLM_CACHE=0 to disable.
+const CACHE_ENABLED = process.env.LLM_CACHE !== "0";
+const CACHE_DIR = process.env.LLM_CACHE_DIR
+  || join(process.cwd(), "data", "raw", "llm-cache");
+
+function cacheKey(provider, model, systemPrompt, userMessage) {
+  return createHash("sha256")
+    .update(JSON.stringify({ provider, model, systemPrompt, userMessage }))
+    .digest("hex")
+    .slice(0, 20);
+}
+
+function readCache(key) {
+  if (!CACHE_ENABLED) return null;
+  const file = join(CACHE_DIR, `${key}.json`);
+  if (!existsSync(file)) return null;
+  try {
+    return JSON.parse(readFileSync(file, "utf-8"));
+  } catch {
+    return null;
+  }
+}
+
+function writeCache(key, result) {
+  if (!CACHE_ENABLED) return;
+  try {
+    if (!existsSync(CACHE_DIR)) mkdirSync(CACHE_DIR, { recursive: true });
+    writeFileSync(join(CACHE_DIR, `${key}.json`), JSON.stringify(result));
+  } catch {
+    // Cache write failure is non-fatal
+  }
+}
 
 const PROVIDER_DEFAULTS = {
   openai: {
@@ -16,7 +57,7 @@ const PROVIDER_DEFAULTS = {
   },
   anthropic: {
     url: "https://api.anthropic.com/v1/messages",
-    model: "claude-3-5-haiku-20241022",
+    model: "claude-haiku-4-5-20251001",
     keyEnv: "ANTHROPIC_API_KEY",
   },
   ollama: {
@@ -85,7 +126,10 @@ async function callOpenAICompatible(systemPrompt, userMessage, baseUrl, model, o
   const body = {
     model,
     temperature,
-    max_tokens: maxTokens,
+    // max_completion_tokens is required by newer OpenAI models (o-series, gpt-5-*).
+    // Older models (gpt-4o-mini, gpt-4.1-*) accept both — max_tokens still works there,
+    // but we use max_completion_tokens exclusively to keep a single code path.
+    max_completion_tokens: maxTokens,
     messages: [
       { role: "system", content: systemPrompt },
       { role: "user", content: userMessage },
@@ -115,11 +159,16 @@ async function callOpenAICompatible(systemPrompt, userMessage, baseUrl, model, o
 
   // Strip chat-template tokens that some models leak into output (e.g. <|im_start|>)
   // If only special tokens remain, the model is not generating real content
-  const rawContent = data.choices[0].message.content ?? "";
+  const choice = data.choices[0];
+  const rawContent = choice.message.content ?? "";
   const content = rawContent.replace(/<\|[^|>]*\|>/g, "").trim();
 
   if (!content) {
-    throw new Error("Model returned empty content (only special tokens) — try reloading the model");
+    const reason = choice.finish_reason ?? "unknown";
+    if (reason === "content_filter") {
+      throw new Error("Model refused to respond (content_filter) — batch may contain sensitive content");
+    }
+    throw new Error(`Model returned empty content (finish_reason: ${reason}) — try reloading the model or reduce batch size`);
   }
 
   const usage = data.usage || {};
@@ -196,7 +245,7 @@ async function resolveLocalModel(baseUrl, fallback) {
  * @param {string} [options.model] - model override (uses provider default if null)
  * @param {number} [options.maxTokens=64]
  * @param {number} [options.temperature=0.2]
- * @param {boolean} [options.jsonMode=false] - Request JSON output (OpenAI only; ignored for local/Anthropic providers)
+ * @param {boolean} [options.jsonMode=false] - Request JSON output via response_format (cloud OpenAI only; ignored for local providers and Anthropic)
  * @returns {Promise<{content: string, input_tokens: number, output_tokens: number}>}
  */
 export async function callLLM(systemPrompt, userMessage, options = {}) {
@@ -206,7 +255,12 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
 
   if (provider === "anthropic") {
     const model = modelOverride || defaults.model;
-    return callAnthropic(systemPrompt, userMessage, model, { maxTokens, temperature, apiKey });
+    const key = cacheKey(provider, model, systemPrompt, userMessage);
+    const cached = readCache(key);
+    if (cached) return { ...cached, _cached: true };
+    const result = await callAnthropic(systemPrompt, userMessage, model, { maxTokens, temperature, apiKey });
+    writeCache(key, result);
+    return result;
   }
 
   // For local providers: auto-detect the loaded model unless --model was passed explicitly.
@@ -216,14 +270,21 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
     model = await resolveLocalModel(defaults.url, defaults.model);
   }
 
-  return callOpenAICompatible(systemPrompt, userMessage, defaults.url, model, {
+  const key = cacheKey(provider, model, systemPrompt, userMessage);
+  const cached = readCache(key);
+  if (cached) return { ...cached, _cached: true };
+
+  const result = await callOpenAICompatible(systemPrompt, userMessage, defaults.url, model, {
     maxTokens,
     temperature,
     apiKey,
-    // jsonMode is supported by OpenAI and LM Studio (grammar-constrained JSON output).
-    // Ollama supports it too in recent versions, so we pass it for all OpenAI-compatible providers.
-    jsonMode,
+    // response_format: json_object is only reliably supported by cloud OpenAI.
+    // LM Studio newer versions dropped it (require json_schema or text instead).
+    // Ollama support varies. Local providers can still produce valid JSON via extractJSON.
+    jsonMode: jsonMode && !isLocalProvider(provider),
   });
+  writeCache(key, result);
+  return result;
 }
 
 /**

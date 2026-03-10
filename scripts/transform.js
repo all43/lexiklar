@@ -1009,7 +1009,7 @@ async function main() {
       data = mergeWithExisting(data, fullPath);
 
       mkdirSync(dirname(fullPath), { recursive: true });
-      writeFileSync(fullPath, JSON.stringify(data, null, 2));
+      writeFileSync(fullPath, JSON.stringify(data, null, 2) + "\n");
 
       state.entries[stateKey] = { hash, file: relPath };
       written++;
@@ -1024,7 +1024,7 @@ async function main() {
   for (const key of Object.keys(allExamples).sort()) {
     sortedExamples[key] = allExamples[key];
   }
-  writeFileSync(EXAMPLES_FILE, JSON.stringify(sortedExamples, null, 2));
+  writeFileSync(EXAMPLES_FILE, JSON.stringify(sortedExamples, null, 2) + "\n");
 
   const exampleCount = Object.values(sortedExamples).filter(
     (e) => !e.type,

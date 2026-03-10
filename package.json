@@ -26,7 +26,8 @@
     "build-lookup-index": "node scripts/build-lookup-index.js",
     "lookup": "node scripts/lookup.js",
     "check-idioms": "node scripts/check-idiom-translations.js",
-    "check-idioms:llm": "node scripts/check-idiom-translations.js --llm"
+    "check-idioms:llm": "node scripts/check-idiom-translations.js --llm",
+    "compare-models": "node scripts/compare-models.js"
   },
   "dependencies": {
     "@capacitor/core": "^8.1.0",
