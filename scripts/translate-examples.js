@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, appendFileSync, readdirSync, existsSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider } from "./lib/llm.js";
@@ -25,6 +25,11 @@ const DEFAULT_BATCH_SIZE = isLocalProvider(PROVIDER) ? 3 : 10;
 const BATCH_SIZE = (() => {
   const idx = args.indexOf("--batch-size");
   return idx >= 0 ? parseInt(args[idx + 1], 10) || DEFAULT_BATCH_SIZE : DEFAULT_BATCH_SIZE;
+})();
+
+const MAX_CONSECUTIVE_ERRORS = (() => {
+  const idx = args.indexOf("--max-consecutive-errors");
+  return idx >= 0 ? parseInt(args[idx + 1], 10) || 5 : 5;
 })();
 
 // Disambiguation dict adds many tokens and risks blowing local context.
@@ -125,22 +130,28 @@ Output format:
 - No markdown fences, no function calls, no preamble, no trailing text`;
 
 function buildUserPrompt(batch, disambig) {
-  const items = batch.map(({ id, text, type, note }) => {
-    const item = { id, text: stripReferences(text) };
-    if (type) item.type = type;
-    if (note) item.note = note;
-    return item;
-  });
+  const lines = [];
 
-  const prompt = {
-    examples: items,
-    disambiguation: disambig,
-  };
+  lines.push(`Translate ${batch.length} German sentence(s) to English:\n`);
 
-  return (
-    JSON.stringify(prompt, null, 2) +
-    "\n\nRespond with a JSON array of objects, one per example: [{\"id\": \"...\", \"translation\": \"...\", \"annotations\": [...]}]"
-  );
+  for (const { id, text, type, note } of batch) {
+    let line = `[${id}] ${stripReferences(text)}`;
+    if (type) line += `  (type: ${type})`;
+    if (note) line += `  (note: ${note})`;
+    lines.push(line);
+  }
+
+  const disambigEntries = Object.entries(disambig);
+  if (disambigEntries.length > 0) {
+    lines.push("\nDisambiguation hints (use for gloss_hint field):");
+    for (const [key, glosses] of disambigEntries) {
+      lines.push(`  ${key}: ${glosses.join(" | ")}`);
+    }
+  }
+
+  lines.push('\nReply with a JSON array, one object per sentence: [{"id":"...","translation":"...","annotations":[...]}]');
+
+  return lines.join("\n");
 }
 
 // ============================================================
@@ -172,6 +183,29 @@ function parseResponse(content) {
   }
 
   return parsed;
+}
+
+// ============================================================
+// Error logging
+// ============================================================
+
+const ERROR_LOG = join(ROOT, "data", "raw", "translation-errors.log");
+
+function logError(batchNum, totalBatches, err, rawResponse, userPrompt) {
+  const rawDir = join(ROOT, "data", "raw");
+  if (!existsSync(rawDir)) mkdirSync(rawDir, { recursive: true });
+  const sep = "=".repeat(80);
+  const entry = [
+    `\n${sep}`,
+    `[${new Date().toISOString()}] Batch ${batchNum}/${totalBatches}`,
+    `ERROR: ${err.message}`,
+    `--- USER PROMPT ---`,
+    userPrompt,
+    `--- RAW RESPONSE ---`,
+    rawResponse ?? "(no response captured)",
+    sep,
+  ].join("\n");
+  appendFileSync(ERROR_LOG, entry + "\n");
 }
 
 // ============================================================
@@ -246,12 +280,14 @@ async function main() {
   let totalInputTokens = 0;
   let totalOutputTokens = 0;
   let errors = 0;
-  const llmOptions = { provider: PROVIDER, model: MODEL, maxTokens: 4096, temperature: 0.3 };
+  let consecutiveErrors = 0;
+  const llmOptions = { provider: PROVIDER, model: MODEL, maxTokens: 4096, temperature: 0.3, jsonMode: true };
 
   for (let i = 0; i < batches.length; i++) {
     const batch = batches[i];
     const disambig = getRelevantDisambiguation(batch, disambigDict);
     const userPrompt = buildUserPrompt(batch, disambig);
+    let rawResponse = null;
 
     try {
       const startTime = Date.now();
@@ -261,6 +297,7 @@ async function main() {
       );
       const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
 
+      rawResponse = response.content;
       totalInputTokens += response.input_tokens;
       totalOutputTokens += response.output_tokens;
 
@@ -281,6 +318,7 @@ async function main() {
       }
 
       translated += results.length;
+      consecutiveErrors = 0;
       process.stdout.write(
         `  Batch ${i + 1}/${batches.length}: translated ${results.length} examples [${elapsed}s]\n`,
       );
@@ -292,10 +330,21 @@ async function main() {
       }
       writeFileSync(EXAMPLES_FILE, JSON.stringify(sorted, null, 2));
     } catch (err) {
+      consecutiveErrors++;
+      errors += batch.length;
       console.error(
         `  Batch ${i + 1}/${batches.length}: FAILED after retries: ${err.message}`,
       );
-      errors += batch.length;
+      logError(i + 1, batches.length, err, rawResponse, userPrompt);
+      console.error(`  Full response logged to: ${ERROR_LOG}`);
+
+      if (consecutiveErrors >= MAX_CONSECUTIVE_ERRORS) {
+        console.error(
+          `\n${consecutiveErrors} consecutive failures — model appears broken. Stopping early.`,
+        );
+        console.error(`Check ${ERROR_LOG} for raw responses.`);
+        break;
+      }
     }
 
     // Rate limit: 200ms between batches
@@ -328,6 +377,7 @@ async function main() {
       `\nDone. Translated ${translated} examples.${errors > 0 ? ` ${errors} failed.` : ""}`,
     );
   }
+
 }
 
 main().catch((err) => {

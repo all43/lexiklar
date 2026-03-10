@@ -10,7 +10,7 @@
 
 const PROVIDER_DEFAULTS = {
   openai: {
-    url: "https://api.openai.com/v1",
+    url: "https://api.openai.com",
     model: "gpt-4o-mini",
     keyEnv: "OPENAI_API_KEY",
   },
@@ -77,23 +77,29 @@ export function parseProviderArgs(argv) {
 // ============================================================
 
 async function callOpenAICompatible(systemPrompt, userMessage, baseUrl, model, options) {
-  const { maxTokens = 64, temperature = 0.2, apiKey = null } = options;
+  const { maxTokens = 64, temperature = 0.2, apiKey = null, jsonMode = false } = options;
 
   const headers = { "Content-Type": "application/json" };
   if (apiKey) headers["Authorization"] = `Bearer ${apiKey}`;
 
+  const body = {
+    model,
+    temperature,
+    max_tokens: maxTokens,
+    messages: [
+      { role: "system", content: systemPrompt },
+      { role: "user", content: userMessage },
+    ],
+  };
+
+  // OpenAI JSON mode: guarantees valid JSON output and avoids prose wrapping.
+  // Only supported by OpenAI and compatible cloud APIs (not most local models).
+  if (jsonMode) body.response_format = { type: "json_object" };
+
   const res = await fetch(`${baseUrl}/v1/chat/completions`, {
     method: "POST",
     headers,
-    body: JSON.stringify({
-      model,
-      temperature,
-      max_tokens: maxTokens,
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userMessage },
-      ],
-    }),
+    body: JSON.stringify(body),
   });
 
   if (!res.ok) {
@@ -102,9 +108,23 @@ async function callOpenAICompatible(systemPrompt, userMessage, baseUrl, model, o
   }
 
   const data = await res.json();
+
+  if (!data.choices?.length) {
+    throw new Error(`Model returned no choices — is a model loaded and ready? Response: ${JSON.stringify(data).slice(0, 200)}`);
+  }
+
+  // Strip chat-template tokens that some models leak into output (e.g. <|im_start|>)
+  // If only special tokens remain, the model is not generating real content
+  const rawContent = data.choices[0].message.content ?? "";
+  const content = rawContent.replace(/<\|[^|>]*\|>/g, "").trim();
+
+  if (!content) {
+    throw new Error("Model returned empty content (only special tokens) — try reloading the model");
+  }
+
   const usage = data.usage || {};
   return {
-    content: data.choices[0].message.content,
+    content,
     input_tokens: usage.prompt_tokens || 0,
     output_tokens: usage.completion_tokens || 0,
   };
@@ -144,6 +164,29 @@ async function callAnthropic(systemPrompt, userMessage, model, options) {
 }
 
 /**
+ * Resolve the active model for a local provider (ollama, lm-studio) via /v1/models.
+ * - LM Studio 0.3.6+ no longer accepts "default" — requires the real loaded model ID.
+ * - Ollama benefits from the same: uses whatever model is currently loaded rather than
+ *   a hardcoded default that may not be installed.
+ * Falls back to the provider's default model name if the endpoint is unreachable.
+ *
+ * @param {string} baseUrl - e.g. "http://127.0.0.1:1234" or "http://127.0.0.1:11434"
+ * @param {string} fallback - default model name to use if auto-detection fails
+ * @returns {Promise<string>}
+ */
+async function resolveLocalModel(baseUrl, fallback) {
+  try {
+    const res = await fetch(`${baseUrl}/v1/models`);
+    if (!res.ok) return fallback;
+    const data = await res.json();
+    const modelId = data.data?.[0]?.id;
+    return modelId || fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+/**
  * Call an LLM with a system prompt and user message.
  *
  * @param {string} systemPrompt
@@ -153,22 +196,33 @@ async function callAnthropic(systemPrompt, userMessage, model, options) {
  * @param {string} [options.model] - model override (uses provider default if null)
  * @param {number} [options.maxTokens=64]
  * @param {number} [options.temperature=0.2]
+ * @param {boolean} [options.jsonMode=false] - Request JSON output (OpenAI only; ignored for local/Anthropic providers)
  * @returns {Promise<{content: string, input_tokens: number, output_tokens: number}>}
  */
 export async function callLLM(systemPrompt, userMessage, options = {}) {
-  const { provider = "openai", model: modelOverride, maxTokens = 64, temperature = 0.2 } = options;
+  const { provider = "openai", model: modelOverride, maxTokens = 64, temperature = 0.2, jsonMode = false } = options;
   const defaults = PROVIDER_DEFAULTS[provider] || PROVIDER_DEFAULTS.openai;
-  const model = modelOverride || defaults.model;
   const apiKey = getApiKey(provider);
 
   if (provider === "anthropic") {
+    const model = modelOverride || defaults.model;
     return callAnthropic(systemPrompt, userMessage, model, { maxTokens, temperature, apiKey });
+  }
+
+  // For local providers: auto-detect the loaded model unless --model was passed explicitly.
+  // Avoids hardcoded defaults that may not be installed (lm-studio no longer accepts "default").
+  let model = modelOverride || defaults.model;
+  if (isLocalProvider(provider) && !modelOverride) {
+    model = await resolveLocalModel(defaults.url, defaults.model);
   }
 
   return callOpenAICompatible(systemPrompt, userMessage, defaults.url, model, {
     maxTokens,
     temperature,
     apiKey,
+    // jsonMode is supported by OpenAI and LM Studio (grammar-constrained JSON output).
+    // Ollama supports it too in recent versions, so we pass it for all OpenAI-compatible providers.
+    jsonMode,
   });
 }
 
@@ -190,7 +244,11 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
  * @throws {Error} - if no valid JSON could be extracted
  */
 export function extractJSON(text) {
-  const s = text.trim();
+  // Strip chat-template special tokens that some local models leak into output
+  // e.g. <|im_start|>, <|im_end|>, <|user_id_abc123|>
+  const s = text.replace(/<\|[^|>]*\|>/g, "").trim();
+
+  if (!s) throw new Error("Empty response from model (only special tokens received)");
 
   // 1. Direct parse — fastest path for well-behaved models
   try { return JSON.parse(s); } catch {}

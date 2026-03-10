@@ -27,7 +27,7 @@
  *   node scripts/check-idiom-translations.js --json          # JSON output (both phases)
  */
 
-import { readdirSync, readFileSync } from "fs";
+import { readdirSync, readFileSync, writeFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import {
@@ -48,12 +48,16 @@ const PHRASES_DIR = join(ROOT, "data", "words", "phrases");
 const args = process.argv.slice(2);
 const USE_LLM    = args.includes("--llm");
 const JSON_OUT   = args.includes("--json");
+const APPLY      = args.includes("--apply");
 
 const maxWordsIdx  = args.indexOf("--max-words");
 const MAX_WORDS    = maxWordsIdx !== -1 ? parseInt(args[maxWordsIdx + 1], 10) : 5;
 
 const batchSizeIdx = args.indexOf("--batch-size");
 const BATCH_SIZE   = batchSizeIdx !== -1 ? parseInt(args[batchSizeIdx + 1], 10) : 25;
+
+const limitIdx = args.indexOf("--limit");
+const LIMIT    = limitIdx !== -1 ? parseInt(args[limitIdx + 1], 10) : Infinity;
 
 const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
 
@@ -189,6 +193,7 @@ async function llmReview(idioms) {
           model: MODEL,
           maxTokens: 1024,
           temperature: 0.1,
+          jsonMode: true,
         })
       );
     } catch (err) {
@@ -202,7 +207,18 @@ async function llmReview(idioms) {
     let parsed;
     try {
       parsed = extractJSON(result.content);
-      if (!Array.isArray(parsed)) parsed = [];
+      // Normalize: json_object mode may return a single item or a {key: [...]} wrapper
+      // instead of a bare array — handle all three shapes.
+      if (!Array.isArray(parsed)) {
+        if (parsed.word || parsed.idx) {
+          // Single flagged item returned as a plain object → wrap it
+          parsed = [parsed];
+        } else {
+          // Object wrapping an array e.g. { "flagged": [...] } → unwrap first array found
+          const inner = Object.values(parsed).find(v => Array.isArray(v));
+          parsed = inner ?? [];
+        }
+      }
     } catch {
       console.log(`parse error — skipping batch`);
       continue;
@@ -214,6 +230,47 @@ async function llmReview(idioms) {
 
   console.log(`\nTokens used: ${totalIn} in / ${totalOut} out`);
   return flagged;
+}
+
+// ── Apply fixes ───────────────────────────────────────────────────────────────
+
+/**
+ * Write LLM suggestions back to phrase JSON files.
+ * Matches flagged items to files by word name (case-insensitive fallback).
+ * Only updates senses[0].gloss_en — all other fields are preserved.
+ */
+function applyFixes(flagged, wordToFile) {
+  let applied = 0;
+  let skipped = 0;
+
+  for (const { word, suggestion } of flagged) {
+    if (!suggestion?.trim()) { skipped++; continue; }
+
+    // Try exact match first, then case-insensitive
+    const filePath = wordToFile.get(word)
+      ?? wordToFile.get(word.toLowerCase())
+      ?? [...wordToFile.entries()].find(([k]) => k.toLowerCase() === word.toLowerCase())?.[1];
+
+    if (!filePath) {
+      console.warn(`  [apply] No file found for "${word}" — skipping`);
+      skipped++;
+      continue;
+    }
+
+    let data;
+    try { data = JSON.parse(readFileSync(filePath, "utf-8")); }
+    catch { console.warn(`  [apply] Could not read ${filePath} — skipping`); skipped++; continue; }
+
+    if (!data.senses?.[0]) { skipped++; continue; }
+
+    const old = data.senses[0].gloss_en;
+    data.senses[0].gloss_en = suggestion.trim();
+    writeFileSync(filePath, JSON.stringify(data, null, 2) + "\n", "utf-8");
+    console.log(`  [apply] "${word}": "${old}" → "${suggestion.trim()}"`);
+    applied++;
+  }
+
+  console.log(`\n  Applied ${applied} fix(es), skipped ${skipped}.`);
 }
 
 // ── Output ────────────────────────────────────────────────────────────────────
@@ -245,8 +302,12 @@ function printLLM(flagged) {
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
-const idioms = loadTranslatedIdioms();
-console.log(`Loaded ${idioms.length} translated idioms`);
+const allIdioms = loadTranslatedIdioms();
+const idioms = allIdioms.slice(0, LIMIT);
+console.log(`Loaded ${idioms.length}${LIMIT < Infinity ? ` (of ${allIdioms.length})` : ""} translated idioms`);
+
+// word → absolute file path (used by --apply)
+const wordToFile = new Map(allIdioms.map(({ word, file }) => [word, join(PHRASES_DIR, file)]));
 
 // Phase 1: heuristics
 const heuristicFlagged = idioms
@@ -264,6 +325,11 @@ let llmFlagged = [];
 if (USE_LLM) {
   llmFlagged = await llmReview(idioms);
   printLLM(llmFlagged);
+
+  if (APPLY && llmFlagged.length > 0) {
+    console.log(`\n── Applying fixes ──────────────────────────────────────────────────────────`);
+    applyFixes(llmFlagged, wordToFile);
+  }
 }
 
 // JSON output (both phases together)
