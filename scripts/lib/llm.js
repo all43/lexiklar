@@ -118,7 +118,7 @@ export function parseProviderArgs(argv) {
 // ============================================================
 
 async function callOpenAICompatible(systemPrompt, userMessage, baseUrl, model, options) {
-  const { maxTokens = 64, temperature = 0.2, apiKey = null, jsonMode = false, timeoutMs = 0 } = options;
+  const { maxTokens = 64, temperature = 0.2, apiKey = null, jsonMode = false, jsonSchema = null, timeoutMs = 0 } = options;
 
   const headers = { "Content-Type": "application/json" };
   if (apiKey) headers["Authorization"] = `Bearer ${apiKey}`;
@@ -137,9 +137,18 @@ async function callOpenAICompatible(systemPrompt, userMessage, baseUrl, model, o
     ],
   };
 
-  // OpenAI JSON mode: guarantees valid JSON output and avoids prose wrapping.
-  // Only supported by OpenAI and compatible cloud APIs (not most local models).
-  if (jsonMode) body.response_format = { type: "json_object" };
+  // Structured output: json_schema (strict, supports arrays-in-objects) takes precedence
+  // over the older json_object mode. LM Studio 0.3.6+ and OpenAI both support json_schema.
+  if (jsonSchema) {
+    body.response_format = {
+      type: "json_schema",
+      json_schema: { name: "response", strict: true, schema: jsonSchema },
+    };
+  } else if (jsonMode) {
+    // json_object: guarantees valid JSON but forces an object (not array) root.
+    // Only used for cloud OpenAI when no schema is provided.
+    body.response_format = { type: "json_object" };
+  }
 
   const fetchOptions = { method: "POST", headers, body: JSON.stringify(body) };
   if (timeoutMs > 0) {
@@ -262,7 +271,7 @@ async function resolveLocalModel(baseUrl, fallback) {
  * @returns {Promise<{content: string, input_tokens: number, output_tokens: number}>}
  */
 export async function callLLM(systemPrompt, userMessage, options = {}) {
-  const { provider = "openai", model: modelOverride, maxTokens = 64, temperature = 0.2, jsonMode = false } = options;
+  const { provider = "openai", model: modelOverride, maxTokens = 64, temperature = 0.2, jsonMode = false, jsonSchema = null } = options;
   const defaults = PROVIDER_DEFAULTS[provider] || PROVIDER_DEFAULTS.openai;
   const apiKey = getApiKey(provider);
 
@@ -291,6 +300,9 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
     maxTokens,
     temperature,
     apiKey,
+    // json_schema: explicit schema for structured output (LM Studio 0.3.6+, OpenAI).
+    // Preferred over json_object when a schema is provided.
+    jsonSchema,
     // response_format: json_object is only reliably supported by cloud OpenAI.
     // LM Studio newer versions dropped it (require json_schema or text instead).
     // Ollama support varies. Local providers can still produce valid JSON via extractJSON.

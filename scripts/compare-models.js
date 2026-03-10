@@ -139,6 +139,37 @@ function pickRandom(array, n, seed) {
   return shuffled.slice(0, n);
 }
 
+// ── JSON schema for structured output (local providers) ───────────────────────
+
+/**
+ * JSON schema for LM Studio / Ollama structured output.
+ * Forces the model to emit { "translations": [{ "id": "...", "translation": "..." }, ...] }
+ * eliminating the need for extractJSON fallbacks (function-call wrappers, Python dicts, etc.)
+ *
+ * Note: JSON Schema does not allow an array at the root — the array is wrapped in an object.
+ * The existing normalization code already handles { translations: [...] } via
+ * Object.values(parsed).find(v => Array.isArray(v)).
+ */
+const TRANSLATION_SCHEMA = {
+  type: "object",
+  properties: {
+    translations: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          id:          { type: "string" },
+          translation: { type: "string" },
+        },
+        required: ["id", "translation"],
+        additionalProperties: false,
+      },
+    },
+  },
+  required: ["translations"],
+  additionalProperties: false,
+};
+
 // ── Translation via one model ─────────────────────────────────────────────────
 
 /**
@@ -152,16 +183,21 @@ async function translateChunk(chunk, key) {
   // Minimum 512 for a small chunk, scaled with chunk size.
   const autoTokens = Math.max(512, chunk.length * 100);
 
+  // Use JSON schema for local providers: forces structured output and eliminates
+  // function-call wrappers, Python-dict format, and other noise from local models.
+  const useSchema = isLocalProvider(cfg.provider);
+
   const result = await retryWithBackoff(() =>
     callLLM(SYSTEM_PROMPT, prompt, {
       provider:    cfg.provider,
       model:       cfg.model,
       maxTokens:   cfg.maxTokens ?? autoTokens,
       temperature: cfg.temperature ?? 0.3,
-      // Do NOT use jsonMode here: json_object mode forces a JSON object (not array),
-      // causing the model to return only the first batch item instead of all of them.
-      // extractJSON handles markdown fences and other noise from free-form responses.
-      jsonMode: false,
+      // json_schema: local providers get structured output via schema.
+      // Do NOT use jsonMode (json_object) for array responses — it forces an object root
+      // which causes models to return only the first item instead of all of them.
+      jsonSchema:  useSchema ? TRANSLATION_SCHEMA : null,
+      jsonMode:    false,
     })
   , 2, 1500);
 
