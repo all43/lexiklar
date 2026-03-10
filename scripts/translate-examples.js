@@ -124,8 +124,7 @@ Rules:
 - For expressions and proverbs, return an EMPTY annotations array []
 
 Output format:
-- Your ENTIRE response must be a raw JSON array: [{...}, {...}]
-- Start with [ and end with ] — no wrapper object, no "examples" key
+- Your ENTIRE response must be a JSON object: {"examples": [{...}, {...}]}
 - Use JSON double quotes " for all strings — not Python-style single quotes '
 - No markdown fences, no function calls, no preamble, no trailing text`;
 
@@ -149,10 +148,50 @@ function buildUserPrompt(batch, disambig) {
     }
   }
 
-  lines.push('\nReply with a JSON array, one object per sentence: [{"id":"...","translation":"...","annotations":[...]}]');
+  lines.push('\nReply with: {"examples": [{"id":"...","translation":"...","annotations":[...]}, ...]}');
 
   return lines.join("\n");
 }
+
+// ============================================================
+// JSON schema for structured output
+// ============================================================
+
+// Wraps the array in { "examples": [...] } because JSON Schema requires an object root.
+// parseResponse already handles both bare arrays and { examples: [...] } wrappers.
+const EXAMPLE_SCHEMA = {
+  type: "object",
+  properties: {
+    examples: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          id:          { type: "string" },
+          translation: { type: "string" },
+          annotations: {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                form:       { type: "string" },
+                lemma:      { type: "string" },
+                pos:        { type: "string" },
+                gloss_hint: { type: ["string", "null"] },
+              },
+              required: ["form", "lemma", "pos", "gloss_hint"],
+              additionalProperties: false,
+            },
+          },
+        },
+        required: ["id", "translation", "annotations"],
+        additionalProperties: false,
+      },
+    },
+  },
+  required: ["examples"],
+  additionalProperties: false,
+};
 
 // ============================================================
 // Parse and validate LLM response
@@ -281,7 +320,7 @@ async function main() {
   let totalOutputTokens = 0;
   let errors = 0;
   let consecutiveErrors = 0;
-  const llmOptions = { provider: PROVIDER, model: MODEL, maxTokens: 4096, temperature: 0.3, jsonMode: true };
+  const llmOptions = { provider: PROVIDER, model: MODEL, maxTokens: 4096, temperature: 0.3, jsonSchema: EXAMPLE_SCHEMA };
 
   for (let i = 0; i < batches.length; i++) {
     const batch = batches[i];
