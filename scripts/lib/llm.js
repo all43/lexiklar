@@ -14,36 +14,40 @@
 
 import { createHash } from "crypto";
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
-import { join } from "path";
+import { join, dirname } from "path";
 
 // Cache is enabled by default; set LLM_CACHE=0 to disable.
 const CACHE_ENABLED = process.env.LLM_CACHE !== "0";
 const CACHE_DIR = process.env.LLM_CACHE_DIR
   || join(process.cwd(), "data", "raw", "llm-cache");
 
-function cacheKey(provider, model, systemPrompt, userMessage, maxTokens) {
-  return createHash("sha256")
-    .update(JSON.stringify({ provider, model, systemPrompt, userMessage, maxTokens }))
+// Cache path: {CACHE_DIR}/{provider}/{model_slug}/{hash}.json
+// Prefix by provider/model so entire model caches can be wiped with rm -rf.
+function getCachePath(provider, model, systemPrompt, userMessage, maxTokens) {
+  const slug = (model || "default").replace(/[^a-zA-Z0-9._-]/g, "_");
+  const hash = createHash("sha256")
+    .update(JSON.stringify({ systemPrompt, userMessage, maxTokens }))
     .digest("hex")
     .slice(0, 20);
+  return join(CACHE_DIR, provider, slug, `${hash}.json`);
 }
 
-function readCache(key) {
+function readCache(filePath) {
   if (!CACHE_ENABLED) return null;
-  const file = join(CACHE_DIR, `${key}.json`);
-  if (!existsSync(file)) return null;
+  if (!existsSync(filePath)) return null;
   try {
-    return JSON.parse(readFileSync(file, "utf-8"));
+    return JSON.parse(readFileSync(filePath, "utf-8"));
   } catch {
     return null;
   }
 }
 
-function writeCache(key, result) {
+function writeCache(filePath, result) {
   if (!CACHE_ENABLED) return;
   try {
-    if (!existsSync(CACHE_DIR)) mkdirSync(CACHE_DIR, { recursive: true });
-    writeFileSync(join(CACHE_DIR, `${key}.json`), JSON.stringify(result));
+    const dir = dirname(filePath);
+    if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
+    writeFileSync(filePath, JSON.stringify(result));
   } catch {
     // Cache write failure is non-fatal
   }
@@ -181,15 +185,24 @@ async function callOpenAICompatible(systemPrompt, userMessage, baseUrl, model, o
   // Strip chat-template tokens that some models leak into output (e.g. <|im_start|>)
   // If only special tokens remain, the model is not generating real content
   const choice = data.choices[0];
+  const finishReason = choice.finish_reason ?? "unknown";
+
+  // Truncation means the JSON will be incomplete — fail fast so retry logic kicks in
+  if (finishReason === "length") {
+    throw new Error(
+      `Response truncated (finish_reason: length) — maxTokens (${maxTokens}) too low for this batch. ` +
+      `Reduce batch size or increase maxTokens.`
+    );
+  }
+
   const rawContent = choice.message.content ?? "";
   const content = rawContent.replace(/<\|[^|>]*\|>/g, "").trim();
 
   if (!content) {
-    const reason = choice.finish_reason ?? "unknown";
-    if (reason === "content_filter") {
+    if (finishReason === "content_filter") {
       throw new Error("Model refused to respond (content_filter) — batch may contain sensitive content");
     }
-    throw new Error(`Model returned empty content (finish_reason: ${reason}) — try reloading the model or reduce batch size`);
+    throw new Error(`Model returned empty content (finish_reason: ${finishReason}) — try reloading the model or reduce batch size`);
   }
 
   const usage = data.usage || {};
@@ -225,6 +238,14 @@ async function callAnthropic(systemPrompt, userMessage, model, options) {
   }
 
   const data = await res.json();
+
+  if (data.stop_reason === "max_tokens") {
+    const { maxTokens = 64 } = options;
+    throw new Error(
+      `Response truncated (stop_reason: max_tokens) — maxTokens (${maxTokens}) too low for this request.`
+    );
+  }
+
   const usage = data.usage || {};
   return {
     content: data.content[0].text,
@@ -276,11 +297,11 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
 
   if (provider === "anthropic") {
     const model = modelOverride || defaults.model;
-    const key = cacheKey(provider, model, systemPrompt, userMessage, maxTokens);
-    const cached = readCache(key);
+    const cachePath = getCachePath(provider, model, systemPrompt, userMessage, maxTokens);
+    const cached = readCache(cachePath);
     if (cached) return { ...cached, _cached: true };
     const result = await callAnthropic(systemPrompt, userMessage, model, { maxTokens, temperature, apiKey });
-    writeCache(key, result);
+    writeCache(cachePath, result);
     return result;
   }
 
@@ -291,8 +312,8 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
     model = await resolveLocalModel(defaults.url, defaults.model);
   }
 
-  const key = cacheKey(provider, model, systemPrompt, userMessage, maxTokens);
-  const cached = readCache(key);
+  const cachePath = getCachePath(provider, model, systemPrompt, userMessage, maxTokens);
+  const cached = readCache(cachePath);
   if (cached) return { ...cached, _cached: true };
 
   const result = await callOpenAICompatible(systemPrompt, userMessage, defaults.url, model, {
@@ -304,7 +325,7 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
     timeoutMs: isLocalProvider(provider) ? (parseInt(process.env.LOCAL_TIMEOUT_MS) || 300_000) : 0,
     isLocal: isLocalProvider(provider),
   });
-  writeCache(key, result);
+  writeCache(cachePath, result);
   return result;
 }
 

@@ -20,6 +20,17 @@ const DRY_RUN = args.includes("--dry-run");
 const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
 const MODEL_LABEL = `${PROVIDER}/${MODEL ?? getDefaultModel(PROVIDER)}`;
 
+// Idiom/expression model — gpt-4.1 by default (better at idiomatic translation).
+// If --model is explicitly passed, use it for everything (testing override).
+const MODEL_EXPLICIT = args.includes("--model");
+const IDIOM_MODEL_NAME = (() => {
+  const idx = args.indexOf("--idiom-model");
+  return idx >= 0 ? args[idx + 1] : "gpt-4.1";
+})();
+const IDIOM_PROVIDER = MODEL_EXPLICIT ? PROVIDER : "openai";
+const IDIOM_MODEL    = MODEL_EXPLICIT ? MODEL    : IDIOM_MODEL_NAME;
+const IDIOM_MODEL_LABEL = `${IDIOM_PROVIDER}/${IDIOM_MODEL}`;
+
 // Local models have small context windows — default to a much smaller batch.
 // Cloud providers can handle 10+ easily.
 const DEFAULT_BATCH_SIZE = isLocalProvider(PROVIDER) ? 3 : 10;
@@ -33,9 +44,29 @@ const MAX_CONSECUTIVE_ERRORS = (() => {
   return idx >= 0 ? parseInt(args[idx + 1], 10) || 5 : 5;
 })();
 
+const LIMIT = (() => {
+  const idx = args.indexOf("--limit");
+  return idx >= 0 ? parseInt(args[idx + 1], 10) || null : null;
+})();
+
 // Disambiguation dict adds many tokens and risks blowing local context.
 // Skip it for local providers unless the user opts in explicitly.
 const USE_DISAMBIG = !isLocalProvider(PROVIDER) || args.includes("--disambig");
+
+// ============================================================
+// Load gloss_en from a phrase/word file via its ref path
+// ============================================================
+
+function loadGlossEn(ref) {
+  if (!ref) return null;
+  try {
+    const filePath = join(WORDS_DIR, ref + ".json");
+    const data = JSON.parse(readFileSync(filePath, "utf-8"));
+    return data.senses?.[0]?.gloss_en ?? null;
+  } catch {
+    return null;
+  }
+}
 
 // ============================================================
 // Build disambiguation dictionary from word files
@@ -111,6 +142,7 @@ Each item has a "type" field:
 - "proverb": a saying or proverb. Use the established English equivalent if one exists; otherwise translate the meaning. No annotations needed.
 
 If a "note" field is present, it explains the meaning in German — use it to disambiguate.
+If a "gloss_en" field is present, it is an existing English gloss for the expression — use it as the basis for a natural, idiomatic translation.
 
 For items that need annotations (type "example" only), provide for each content word:
 - "form": the exact word as written in the sentence
@@ -134,10 +166,11 @@ function buildUserPrompt(batch, disambig) {
 
   lines.push(`Translate ${batch.length} German sentence(s) to English:\n`);
 
-  for (const { id, text, type, note } of batch) {
+  for (const { id, text, type, note, gloss_en } of batch) {
     let line = `[${id}] ${stripReferences(text)}`;
-    if (type) line += `  (type: ${type})`;
-    if (note) line += `  (note: ${note})`;
+    if (type)     line += `  (type: ${type})`;
+    if (note)     line += `  (note: ${note})`;
+    if (gloss_en) line += `  (gloss_en: ${gloss_en})`;
     lines.push(line);
   }
 
@@ -275,44 +308,54 @@ async function main() {
   const total = Object.keys(examples).length;
 
   // Filter to untranslated
-  const untranslated = Object.entries(examples)
+  let untranslated = Object.entries(examples)
     .filter(([, ex]) => !ex.translation)
-    .map(([id, ex]) => ({
-      id,
-      text: ex.text,
-      type: ex.type || null,
-      note: ex.note || null,
-    }));
+    .map(([id, ex]) => {
+      const isIdiom = ex.type === "expression" || ex.type === "proverb";
+      return {
+        id,
+        text: ex.text,
+        type: ex.type || null,
+        note: ex.note || null,
+        gloss_en: isIdiom ? loadGlossEn(ex.ref) : null,
+      };
+    });
 
   if (untranslated.length === 0) {
     console.log(`All ${total} examples already translated. Nothing to do.`);
     return;
   }
 
+  if (LIMIT) {
+    untranslated = untranslated.slice(0, LIMIT);
+    console.log(`Limit: processing first ${LIMIT} untranslated examples.`);
+  }
+
   console.log(
-    `Translating examples... (${total} total, ${total - untranslated.length} already done, ${untranslated.length} remaining)`,
+    `Translating examples... (${total} total, ${total - untranslated.length - (LIMIT ? 0 : 0)} already done, ${untranslated.length} remaining${LIMIT ? ` (capped at ${LIMIT})` : ""})`,
   );
   console.log(`Provider: ${PROVIDER}, batch size: ${BATCH_SIZE}${!USE_DISAMBIG ? " (disambiguation disabled for local model — use --disambig to enable)" : ""}`);
 
   // Build disambiguation dict (skipped for local providers to save context)
   const disambigDict = USE_DISAMBIG ? buildDisambiguationDict() : new Map();
 
-  // Create batches
-  const batches = [];
-  for (let i = 0; i < untranslated.length; i += BATCH_SIZE) {
-    batches.push(untranslated.slice(i, i + BATCH_SIZE));
-  }
+  // Split by type: expressions/proverbs → gpt-4.1; everything else → default model
+  const idiomItems   = untranslated.filter(i => i.type === "expression" || i.type === "proverb");
+  const regularItems = untranslated.filter(i => i.type !== "expression" && i.type !== "proverb");
 
   if (DRY_RUN) {
-    console.log(`\nDry run: would send ${batches.length} batches.`);
-    // Show first batch as sample
-    const sampleDisambig = getRelevantDisambiguation(batches[0], disambigDict);
-    const samplePrompt = buildUserPrompt(batches[0], sampleDisambig);
-    console.log("\nSample batch 1 prompt:");
-    console.log(samplePrompt);
-    const approxTokens = Math.ceil((SYSTEM_PROMPT.length + samplePrompt.length) / 4);
-    console.log(`\nDisambiguation entries for batch 1: ${Object.keys(sampleDisambig).length}`);
-    console.log(`Approx prompt size: ~${approxTokens} tokens (system + user, rough estimate)`);
+    const allBatches = [];
+    for (let i = 0; i < untranslated.length; i += BATCH_SIZE) allBatches.push(untranslated.slice(i, i + BATCH_SIZE));
+    console.log(`\nDry run: would send ${allBatches.length} batches (${idiomItems.length} idioms via ${IDIOM_MODEL_LABEL}, ${regularItems.length} regular via ${MODEL_LABEL}).`);
+    if (allBatches.length > 0) {
+      const sampleDisambig = getRelevantDisambiguation(allBatches[0], disambigDict);
+      const samplePrompt = buildUserPrompt(allBatches[0], sampleDisambig);
+      console.log("\nSample batch 1 prompt:");
+      console.log(samplePrompt);
+      const approxTokens = Math.ceil((SYSTEM_PROMPT.length + samplePrompt.length) / 4);
+      console.log(`\nDisambiguation entries for batch 1: ${Object.keys(sampleDisambig).length}`);
+      console.log(`Approx prompt size: ~${approxTokens} tokens (system + user, rough estimate)`);
+    }
     return;
   }
 
@@ -320,103 +363,88 @@ async function main() {
   let totalInputTokens = 0;
   let totalOutputTokens = 0;
   let errors = 0;
-  let consecutiveErrors = 0;
-  const llmOptions = { provider: PROVIDER, model: MODEL, maxTokens: 4096, temperature: 0.3, jsonSchema: EXAMPLE_SCHEMA };
 
-  for (let i = 0; i < batches.length; i++) {
-    const batch = batches[i];
-    const disambig = getRelevantDisambiguation(batch, disambigDict);
-    const userPrompt = buildUserPrompt(batch, disambig);
-    let rawResponse = null;
+  async function processBatches(items, llmOptions, modelLabel, label) {
+    if (items.length === 0) return;
+    const batches = [];
+    for (let i = 0; i < items.length; i += BATCH_SIZE) batches.push(items.slice(i, i + BATCH_SIZE));
+    console.log(`\n${label}: ${items.length} items, ${batches.length} batches (${modelLabel})`);
 
-    try {
-      const startTime = Date.now();
-      const response = await retryWithBackoff(
-        () => callLLM(SYSTEM_PROMPT, userPrompt, llmOptions),
-        3, 4000,
-      );
-      const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+    let consecutiveErrors = 0;
 
-      rawResponse = response.content;
-      totalInputTokens += response.input_tokens;
-      totalOutputTokens += response.output_tokens;
+    for (let i = 0; i < batches.length; i++) {
+      const batch = batches[i];
+      const disambig = getRelevantDisambiguation(batch, disambigDict);
+      const userPrompt = buildUserPrompt(batch, disambig);
+      let rawResponse = null;
 
-      const results = parseResponse(response.content);
+      try {
+        const startTime = Date.now();
+        const response = await retryWithBackoff(
+          () => callLLM(SYSTEM_PROMPT, userPrompt, llmOptions),
+          3, 4000,
+        );
+        const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
 
-      // Merge results into examples
-      for (const result of results) {
-        if (examples[result.id]) {
-          examples[result.id].translation = result.translation;
-          examples[result.id].translation_model = MODEL_LABEL;
-          // Expressions and proverbs don't get annotations
-          const exType = examples[result.id].type;
-          if (exType === "expression" || exType === "proverb") {
-            delete examples[result.id].annotations;
-          } else {
-            examples[result.id].annotations = result.annotations;
+        rawResponse = response.content;
+        totalInputTokens += response.input_tokens;
+        totalOutputTokens += response.output_tokens;
+
+        const results = parseResponse(response.content);
+
+        for (const result of results) {
+          if (examples[result.id]) {
+            examples[result.id].translation = result.translation;
+            examples[result.id].translation_model = modelLabel;
+            const exType = examples[result.id].type;
+            if (exType === "expression" || exType === "proverb") {
+              delete examples[result.id].annotations;
+            } else {
+              examples[result.id].annotations = result.annotations;
+            }
           }
+        }
+
+        translated += results.length;
+        consecutiveErrors = 0;
+        process.stdout.write(`  Batch ${i + 1}/${batches.length}: translated ${results.length} [${elapsed}s]\n`);
+
+        // Write after each batch for crash safety
+        const sorted = {};
+        for (const key of Object.keys(examples).sort()) sorted[key] = examples[key];
+        writeFileSync(EXAMPLES_FILE, JSON.stringify(sorted, null, 2));
+      } catch (err) {
+        consecutiveErrors++;
+        errors += batch.length;
+        console.error(`  Batch ${i + 1}/${batches.length}: FAILED after retries: ${err.message}`);
+        logError(i + 1, batches.length, err, rawResponse, userPrompt);
+        console.error(`  Full response logged to: ${ERROR_LOG}`);
+
+        if (consecutiveErrors >= MAX_CONSECUTIVE_ERRORS) {
+          console.error(`\n${consecutiveErrors} consecutive failures — stopping early.`);
+          console.error(`Check ${ERROR_LOG} for raw responses.`);
+          break;
         }
       }
 
-      translated += results.length;
-      consecutiveErrors = 0;
-      process.stdout.write(
-        `  Batch ${i + 1}/${batches.length}: translated ${results.length} examples [${elapsed}s]\n`,
-      );
-
-      // Write after each batch for crash safety
-      const sorted = {};
-      for (const key of Object.keys(examples).sort()) {
-        sorted[key] = examples[key];
-      }
-      writeFileSync(EXAMPLES_FILE, JSON.stringify(sorted, null, 2));
-    } catch (err) {
-      consecutiveErrors++;
-      errors += batch.length;
-      console.error(
-        `  Batch ${i + 1}/${batches.length}: FAILED after retries: ${err.message}`,
-      );
-      logError(i + 1, batches.length, err, rawResponse, userPrompt);
-      console.error(`  Full response logged to: ${ERROR_LOG}`);
-
-      if (consecutiveErrors >= MAX_CONSECUTIVE_ERRORS) {
-        console.error(
-          `\n${consecutiveErrors} consecutive failures — model appears broken. Stopping early.`,
-        );
-        console.error(`Check ${ERROR_LOG} for raw responses.`);
-        break;
-      }
-    }
-
-    // Rate limit: 200ms between batches
-    if (i < batches.length - 1) {
-      await new Promise((r) => setTimeout(r, 200));
+      if (i < batches.length - 1) await new Promise((r) => setTimeout(r, 200));
     }
   }
 
+  const idiomLlmOptions   = { provider: IDIOM_PROVIDER, model: IDIOM_MODEL,   maxTokens: 4096, temperature: 0.3, jsonSchema: EXAMPLE_SCHEMA };
+  const regularLlmOptions = { provider: PROVIDER,        model: MODEL,          maxTokens: 8192, temperature: 0.3, jsonSchema: EXAMPLE_SCHEMA };
+
+  await processBatches(idiomItems,   idiomLlmOptions,   IDIOM_MODEL_LABEL, "Idioms/expressions");
+  await processBatches(regularItems, regularLlmOptions, MODEL_LABEL,       "Regular examples");
+
   // Cost estimate
   if (!isLocalProvider(PROVIDER)) {
-    let costEstimate;
-    if (PROVIDER === "openai") {
-      costEstimate =
-        (totalInputTokens * 0.15) / 1_000_000 +
-        (totalOutputTokens * 0.6) / 1_000_000;
-    } else {
-      costEstimate =
-        (totalInputTokens * 0.8) / 1_000_000 +
-        (totalOutputTokens * 4.0) / 1_000_000;
-    }
-
-    console.log(
-      `\nDone. Translated ${translated} examples.${errors > 0 ? ` ${errors} failed.` : ""}`,
-    );
-    console.log(
-      `Tokens: ${totalInputTokens} input + ${totalOutputTokens} output. Estimated cost: $${costEstimate.toFixed(3)}`,
-    );
+    // Both models are OpenAI — use gpt-4o-mini pricing as approximation
+    const costEstimate = (totalInputTokens * 0.15) / 1_000_000 + (totalOutputTokens * 0.6) / 1_000_000;
+    console.log(`\nDone. Translated ${translated} examples.${errors > 0 ? ` ${errors} failed.` : ""}`);
+    console.log(`Tokens: ${totalInputTokens} input + ${totalOutputTokens} output. Estimated cost: $${costEstimate.toFixed(3)}`);
   } else {
-    console.log(
-      `\nDone. Translated ${translated} examples.${errors > 0 ? ` ${errors} failed.` : ""}`,
-    );
+    console.log(`\nDone. Translated ${translated} examples.${errors > 0 ? ` ${errors} failed.` : ""}`);
   }
 
 }

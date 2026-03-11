@@ -19,6 +19,7 @@
  *   node scripts/compare-models.js --models openai/gpt-4o-mini,anthropic/haiku-4.5
  *   node scripts/compare-models.js --probe lm-studio     # debug raw response
  *   node scripts/compare-models.js --local-batch 3      # chunk size for slow local models
+ *   node scripts/compare-models.js --fresh              # ignore per-item cache, re-translate everything
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
@@ -48,7 +49,7 @@ const MODEL_REGISTRY = {
   "anthropic/haiku-4.5": { provider: "anthropic", model: "claude-haiku-4-5-20251001" },
   "anthropic/sonnet-4.5":{ provider: "anthropic", model: "claude-sonnet-4-5-20250929" },
   "lm-studio":           { provider: "lm-studio", model: null },              // auto-detect first loaded
-  "lm-studio/tower":     { provider: "lm-studio", model: "tower-plus-9b-mlx" },      // translation-specific
+  "lm-studio/tower":     { provider: "lm-studio", model: "tower-plus-9b-mlx", batchSize: 5 }, // translation-specific
   "lm-studio/sauerkraut":{ provider: "lm-studio", model: "sauerkrautlm-v2-14b-sft-mlx", batchSize: 5 }, // 14B — chunks to avoid timeout
   "lm-studio/gemma3":    { provider: "lm-studio", model: "google/gemma-3-12b", batchSize: 10 },
   "ollama":              { provider: "ollama",     model: null },              // auto-detect
@@ -85,6 +86,10 @@ const PROBE        = getArg("--probe", null);  // provider key to probe for raw 
 const DEBUG        = args.includes("--debug"); // print raw model response + parsed map
 // Override per-model batchSize for local models (e.g. --local-batch 3 for very slow machines)
 const LOCAL_BATCH  = parseInt(getArg("--local-batch", "0"), 10) || null;
+// Bypass per-item cache and re-translate everything from scratch
+const FRESH        = args.includes("--fresh");
+// Disable JSON schema structured output (for A/B testing hallucination rates)
+const NO_SCHEMA    = args.includes("--no-schema");
 
 const modelsArg   = getArg("--models", null);
 const ACTIVE_KEYS = modelsArg ? modelsArg.split(",").map(s => s.trim()) : DEFAULT_MODELS;
@@ -105,18 +110,19 @@ Rules:
 Output format:
 - Your ENTIRE response must be a raw JSON array: [{...}, {...}]
 - Start with [ and end with ] — no wrapper object, no key
-- Each item: {"id":"...","translation":"..."}
+- Each item: {"id":"...","translation":"..."} — copy the id exactly as shown
+- Preserve the exact order of items; output one entry per input, no skipping
 - Use JSON double quotes " for all strings
 - No markdown fences, no function calls, no preamble, no trailing text`;
 
 function buildIdiomPrompt(batch) {
-  const lines = [`Translate ${batch.length} German sentence(s) to English:\n`];
+  const lines = [`Translate ${batch.length} German phrase(s) to English:\n`];
   for (const { id, text, type } of batch) {
     let line = `[${id}] ${text}`;
     if (type) line += `  (type: ${type})`;
     lines.push(line);
   }
-  lines.push('\nReply with ONLY a JSON array: [{"id":"...","translation":"..."}, ...]');
+  lines.push(`\nReply with ONLY a JSON array of exactly ${batch.length} items. Each item must use the exact id from the input above: [{"id":"the-id-from-above","translation":"..."}, ...]`);
   return lines.join("\n");
 }
 
@@ -140,7 +146,8 @@ Rules:
 
 Output format:
 - Your ENTIRE response must be a JSON object: {"examples": [{...}, {...}]}
-- Each item: {"id":"...","translation":"...","annotations":[{"form":"...","lemma":"...","pos":"...","gloss_hint":null}, ...]}
+- Each item: {"id":"...","translation":"...","annotations":[...]} — copy the id exactly as shown
+- Preserve the exact order of items; output one entry per input, no skipping
 - Use JSON double quotes " for all strings
 - No markdown fences, no function calls, no preamble, no trailing text`;
 
@@ -286,8 +293,9 @@ async function translateChunk(chunk, key, { mode = "idioms" } = {}) {
   const perItem = isExamples ? 250 : 100;
   const autoTokens = Math.max(512, chunk.length * perItem);
 
-  // Use JSON schema for local providers (always) and for examples mode (all providers)
-  const useSchema = isLocalProvider(cfg.provider) || isExamples;
+  // Use JSON schema for all providers — enforces well-formed output and reduces hallucinated fields
+  // Can be disabled with --no-schema for A/B testing
+  const useSchema = !NO_SCHEMA;
   const schema = isExamples ? EXAMPLE_SCHEMA : TRANSLATION_SCHEMA;
 
   const result = await retryWithBackoff(() =>
@@ -324,6 +332,7 @@ async function translateChunk(chunk, key, { mode = "idioms" } = {}) {
 
   const map = {};
   const annotations = {};
+
   for (const item of parsed) {
     if (item.id) {
       map[item.id] = item.translation ?? "(no translation)";
@@ -333,7 +342,19 @@ async function translateChunk(chunk, key, { mode = "idioms" } = {}) {
     }
   }
 
-  // Positional fallback for local models
+  // Detect likely mix-ups: if two items in the same batch share the exact same translation,
+  // the model may have copy-pasted one into the other's slot. Log a warning so it shows up.
+  const seenTranslations = {};
+  for (const [id, trans] of Object.entries(map)) {
+    const norm = trans.trim().toLowerCase();
+    if (seenTranslations[norm]) {
+      console.warn(`  ⚠️  [${key}] Possible mix-up: items "${seenTranslations[norm]}" and "${id}" have identical translation: "${trans}"`);
+    } else {
+      seenTranslations[norm] = id;
+    }
+  }
+
+  // Positional fallback for local models that return <function> blocks instead of JSON
   if (Object.keys(map).length === 0) {
     const funcBlocks = [...result.content.matchAll(/<function[^>]*>([\s\S]*?)(?:<\/function>|$)/g)];
     if (funcBlocks.length > 0 && funcBlocks.length <= chunk.length) {
@@ -391,6 +412,95 @@ async function translateWith(batch, key, { mode = "idioms" } = {}) {
   }
 
   return translateChunk(batch, key, { mode });
+}
+
+// ── Per-item result cache ─────────────────────────────────────────────────────
+//
+// Caches each (modelKey, itemId) pair individually so that adding new fixtures
+// or changing batch size doesn't invalidate existing results.
+//
+// Layout: data/raw/llm-compare-cache/{model_slug}/{item_id}.json
+// Content: { text, translation, annotations? }
+//
+// Text is stored alongside the translation so stale cache entries are detected
+// when a fixture's source text is edited.
+
+const COMPARE_CACHE_DIR = join(ROOT, "data", "raw", "llm-compare-cache");
+
+function modelCacheSlug(key) {
+  return key.replace(/[^a-zA-Z0-9._-]/g, "_");
+}
+
+function itemCachePath(modelKey, itemId) {
+  return join(COMPARE_CACHE_DIR, modelCacheSlug(modelKey), `${itemId}.json`);
+}
+
+function readItemCache(modelKey, itemId, expectedText) {
+  if (FRESH) return null;
+  const p = itemCachePath(modelKey, itemId);
+  if (!existsSync(p)) return null;
+  try {
+    const entry = JSON.parse(readFileSync(p, "utf-8"));
+    // Invalidate if the source text has changed
+    if (entry.text !== expectedText) return null;
+    return entry;
+  } catch { return null; }
+}
+
+function writeItemCache(modelKey, itemId, data) {
+  const p = itemCachePath(modelKey, itemId);
+  const dir = dirname(p);
+  try {
+    if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
+    writeFileSync(p, JSON.stringify(data));
+  } catch { /* non-fatal */ }
+}
+
+/**
+ * Translate a batch with one model, using per-item caching.
+ *
+ * Items whose (modelKey, itemId, text) are already cached are returned
+ * immediately. Only uncached items are sent to the API (still batched).
+ * New results are written to cache after each API call.
+ *
+ * @returns {{ map, annotations, fromCache: number, fromApi: number }}
+ */
+async function translateWithCache(batch, key, { mode = "idioms" } = {}) {
+  const cachedMap = {};
+  const cachedAnnotations = {};
+  const uncached = [];
+
+  for (const item of batch) {
+    const entry = readItemCache(key, item.id, item.text);
+    if (entry?.translation) {
+      cachedMap[item.id] = entry.translation;
+      if (entry.annotations) cachedAnnotations[item.id] = entry.annotations;
+    } else {
+      uncached.push(item);
+    }
+  }
+
+  if (uncached.length === 0) {
+    return { map: cachedMap, annotations: cachedAnnotations, fromCache: batch.length, fromApi: 0 };
+  }
+
+  const { map: newMap, annotations: newAnnotations } = await translateWith(uncached, key, { mode });
+
+  // Persist each new result individually
+  for (const item of uncached) {
+    if (newMap[item.id]) {
+      const entry = { text: item.text, translation: newMap[item.id] };
+      if (newAnnotations[item.id]) entry.annotations = newAnnotations[item.id];
+      writeItemCache(key, item.id, entry);
+    }
+  }
+
+  return {
+    map: { ...cachedMap, ...newMap },
+    annotations: { ...cachedAnnotations, ...newAnnotations },
+    fromCache: Object.keys(cachedMap).length,
+    fromApi: Object.keys(newMap).length,
+  };
 }
 
 // ── Probe mode: single request, raw output ────────────────────────────────────
@@ -486,6 +596,16 @@ function bleu1(reference, candidate) {
   return bp * precision;
 }
 
+/**
+ * Multi-reference BLEU-1: score a candidate against one or more reference strings.
+ * Returns the maximum bleu1 score across all references.
+ * Accepts a single string or string[].
+ */
+function bleuScore(refs, candidate) {
+  const refList = Array.isArray(refs) ? refs : [refs];
+  return Math.max(...refList.map(r => bleu1(r, candidate)));
+}
+
 // ── Display ───────────────────────────────────────────────────────────────────
 
 const LABEL_WIDTH = 22;
@@ -513,20 +633,29 @@ function printResult(examples, refMap, resultsByKey) {
     console.log(`\n${i + 1}. ${text}${typeTag}`);
     console.log(divider);
 
-    // Reference
-    const refLines = wrapAt(refMap[id], TRANS_WIDTH);
-    console.log(`  ${"Reference".padEnd(LABEL_WIDTH)} ${refLines[0]}`);
+    // Reference (show primary; hint if multiple exist)
+    const refs = refMap[id];
+    const refLines = wrapAt(refs[0], TRANS_WIDTH);
+    const refLabel = refs.length > 1 ? `Reference (+${refs.length - 1})` : "Reference";
+    console.log(`  ${refLabel.padEnd(LABEL_WIDTH)} ${refLines[0]}`);
     for (let j = 1; j < refLines.length; j++) {
       console.log(`  ${"".padEnd(LABEL_WIDTH)} ${refLines[j]}`);
     }
+
+    // Compute best score so we can mark the winner
+    const itemScores = ACTIVE_KEYS
+      .filter(k => resultsByKey[k]?.[id] !== undefined)
+      .map(k => bleuScore(refs, resultsByKey[k][id]));
+    const bestScore = itemScores.length ? Math.max(...itemScores) : -1;
 
     // Each model
     for (const key of ACTIVE_KEYS) {
       const trans = resultsByKey[key]?.[id];
       if (trans === undefined) { console.log(`  ${key.padEnd(LABEL_WIDTH)} (skipped)`); continue; }
 
-      const score = bleu1(refMap[id], trans);
-      const scoreTag = ` [${score.toFixed(2)}]`;
+      const score = bleuScore(refs, trans);
+      const winner = itemScores.length > 1 && score >= bestScore - 0.001 ? " ★" : "";
+      const scoreTag = ` [${score.toFixed(2)}]${winner}`;
       const tLines = wrapAt(trans, TRANS_WIDTH);
       console.log(`  ${key.padEnd(LABEL_WIDTH)} ${tLines[0]}${scoreTag}`);
       for (let j = 1; j < tLines.length; j++) {
@@ -538,10 +667,35 @@ function printResult(examples, refMap, resultsByKey) {
 }
 
 function printSummary(examples, refMap, resultsByKey, timings, skipped) {
+  // Compute per-model win counts
+  const activeKeys = ACTIVE_KEYS.filter(k => !skipped.has(k) && resultsByKey[k]);
+  const wins = Object.fromEntries(activeKeys.map(k => [k, 0]));
+  for (const { id } of examples) {
+    const scored = activeKeys
+      .filter(k => resultsByKey[k]?.[id])
+      .map(k => ({ key: k, score: bleuScore(refMap[id], resultsByKey[k][id]) }));
+    if (!scored.length) continue;
+    const best = Math.max(...scored.map(s => s.score));
+    for (const { key, score } of scored) {
+      if (score >= best - 0.001) wins[key]++;
+    }
+  }
+
+  // Sort active keys by avg BLEU descending for display
+  const sorted = [...ACTIVE_KEYS].sort((a, b) => {
+    const mapA = resultsByKey[a], mapB = resultsByKey[b];
+    if (!mapA && !mapB) return 0;
+    if (!mapA) return 1;
+    if (!mapB) return -1;
+    const avgA = examples.filter(({ id }) => mapA[id]).reduce((s, { id }) => s + bleuScore(refMap[id], mapA[id]), 0) / examples.length;
+    const avgB = examples.filter(({ id }) => mapB[id]).reduce((s, { id }) => s + bleuScore(refMap[id], mapB[id]), 0) / examples.length;
+    return avgB - avgA;
+  });
+
   console.log("── Summary ──────────────────────────────────────────────────────────────");
-  console.log(`  ${"Model".padEnd(LABEL_WIDTH)} ${"Parsed".padEnd(9)} ${"Avg BLEU-1".padEnd(12)} ${"Min".padEnd(6)} ${"Max".padEnd(6)} Time`);
-  console.log(`  ${"─".repeat(LABEL_WIDTH)} ${"─".repeat(8)} ${"─".repeat(11)} ${"─".repeat(5)} ${"─".repeat(5)} ${"─".repeat(6)}`);
-  for (const key of ACTIVE_KEYS) {
+  console.log(`  ${"Model".padEnd(LABEL_WIDTH)} ${"Parsed".padEnd(9)} ${"Avg BLEU-1".padEnd(12)} ${"Min".padEnd(6)} ${"Max".padEnd(6)} ${"Wins".padEnd(6)} Time`);
+  console.log(`  ${"─".repeat(LABEL_WIDTH)} ${"─".repeat(8)} ${"─".repeat(11)} ${"─".repeat(5)} ${"─".repeat(5)} ${"─".repeat(5)} ${"─".repeat(6)}`);
+  for (const key of sorted) {
     if (skipped.has(key)) {
       console.log(`  ${key.padEnd(LABEL_WIDTH)} skipped (no API key)`);
       continue;
@@ -552,16 +706,17 @@ function printSummary(examples, refMap, resultsByKey, timings, skipped) {
     const ok = examples.filter(({ id }) => map[id]).length;
     const scores = examples
       .filter(({ id }) => map[id])
-      .map(({ id }) => bleu1(refMap[id], map[id]));
+      .map(({ id }) => bleuScore(refMap[id], map[id]));
 
     const avg = scores.length ? scores.reduce((a, b) => a + b, 0) / scores.length : 0;
     const min = scores.length ? Math.min(...scores) : 0;
     const max = scores.length ? Math.max(...scores) : 0;
     const ms  = timings[key] != null ? `${(timings[key] / 1000).toFixed(1)}s` : "?";
+    const w   = wins[key] ?? 0;
 
     console.log(
       `  ${key.padEnd(LABEL_WIDTH)} ${String(ok + "/" + examples.length).padEnd(9)}` +
-      ` ${avg.toFixed(3).padEnd(12)} ${min.toFixed(2).padEnd(6)} ${max.toFixed(2).padEnd(6)} ${ms}`
+      ` ${avg.toFixed(3).padEnd(12)} ${min.toFixed(2).padEnd(6)} ${max.toFixed(2).padEnd(6)} ${String(w).padEnd(6)} ${ms}`
     );
   }
 }
@@ -590,30 +745,55 @@ function generateMarkdownReport(examples, refMap, resultsByKey, timings, skipped
   // ── Summary table
   lines.push(`## Summary`);
   lines.push(``);
-  if (isExamples) {
-    lines.push(`| Model | Parsed | Avg BLEU-1 | Avg Lemma F1 | Avg Precision | Avg Recall | Time |`);
-    lines.push(`|:---|---:|---:|---:|---:|---:|---:|`);
-  } else {
-    lines.push(`| Model | Parsed | Avg BLEU-1 | Min | Max | Time |`);
-    lines.push(`|:---|---:|---:|---:|---:|---:|`);
+  // Compute wins per model for summary table
+  const mdWins = Object.fromEntries(activeKeys.map(k => [k, 0]));
+  for (const { id } of examples) {
+    const scored = activeKeys
+      .filter(k => resultsByKey[k]?.[id])
+      .map(k => ({ key: k, score: bleuScore(refMap[id], resultsByKey[k][id]) }));
+    if (!scored.length) continue;
+    const best = Math.max(...scored.map(s => s.score));
+    for (const { key, score } of scored) {
+      if (score >= best - 0.001) mdWins[key]++;
+    }
   }
 
-  for (const key of ACTIVE_KEYS) {
+  // Sort models by avg BLEU descending for the summary table
+  const sortedKeys = [...ACTIVE_KEYS].sort((a, b) => {
+    const mapA = resultsByKey[a], mapB = resultsByKey[b];
+    if (!mapA && !mapB) return 0;
+    if (!mapA) return 1;
+    if (!mapB) return -1;
+    const avgA = examples.filter(({ id }) => mapA[id]).reduce((s, { id }) => s + bleuScore(refMap[id], mapA[id]), 0) / examples.length;
+    const avgB = examples.filter(({ id }) => mapB[id]).reduce((s, { id }) => s + bleuScore(refMap[id], mapB[id]), 0) / examples.length;
+    return avgB - avgA;
+  });
+
+  if (isExamples) {
+    lines.push(`| Model | Parsed | Avg BLEU-1 | Wins | Avg Lemma F1 | Avg Precision | Avg Recall | Time |`);
+    lines.push(`|:---|---:|---:|---:|---:|---:|---:|---:|`);
+  } else {
+    lines.push(`| Model | Parsed | Avg BLEU-1 | Wins | Min | Max | Time |`);
+    lines.push(`|:---|---:|---:|---:|---:|---:|---:|`);
+  }
+
+  for (const key of sortedKeys) {
     if (skipped.has(key)) {
-      lines.push(`| ${key} | skipped | — | — | — | — |${isExamples ? " — |" : ""}`);
+      lines.push(`| ${key} | skipped | — | — | — | — | — |${isExamples ? " — |" : ""}`);
       continue;
     }
     const map = resultsByKey[key];
     if (!map) {
-      lines.push(`| **${key}** | **FAILED** | — | — | — | — |${isExamples ? " — |" : ""}`);
+      lines.push(`| **${key}** | **FAILED** | — | — | — | — | — |${isExamples ? " — |" : ""}`);
       continue;
     }
-    const scores = examples.filter(({ id }) => map[id]).map(({ id }) => bleu1(refMap[id], map[id]));
+    const scores = examples.filter(({ id }) => map[id]).map(({ id }) => bleuScore(refMap[id], map[id]));
     const ok  = scores.length;
     const avg = ok ? scores.reduce((a, b) => a + b, 0) / ok : 0;
     const min = ok ? Math.min(...scores) : 0;
     const max = ok ? Math.max(...scores) : 0;
     const ms  = timings[key] != null ? `${(timings[key] / 1000).toFixed(1)}s` : "?";
+    const w   = mdWins[key] ?? 0;
 
     if (isExamples) {
       const annMap = annotationsByKey?.[key] || {};
@@ -623,9 +803,9 @@ function generateMarkdownReport(examples, refMap, resultsByKey, timings, skipped
       const avgF1  = lemmaScores.length ? lemmaScores.reduce((a, s) => a + s.f1, 0) / lemmaScores.length : 0;
       const avgP   = lemmaScores.length ? lemmaScores.reduce((a, s) => a + s.precision, 0) / lemmaScores.length : 0;
       const avgR   = lemmaScores.length ? lemmaScores.reduce((a, s) => a + s.recall, 0) / lemmaScores.length : 0;
-      lines.push(`| ${key} | ${ok}/${examples.length} | **${avg.toFixed(3)}** | **${avgF1.toFixed(3)}** | ${avgP.toFixed(3)} | ${avgR.toFixed(3)} | ${ms} |`);
+      lines.push(`| ${key} | ${ok}/${examples.length} | **${avg.toFixed(3)}** | ${w} | **${avgF1.toFixed(3)}** | ${avgP.toFixed(3)} | ${avgR.toFixed(3)} | ${ms} |`);
     } else {
-      lines.push(`| ${key} | ${ok}/${examples.length} | **${avg.toFixed(3)}** | ${min.toFixed(2)} | ${max.toFixed(2)} | ${ms} |`);
+      lines.push(`| ${key} | ${ok}/${examples.length} | **${avg.toFixed(3)}** | ${w} | ${min.toFixed(2)} | ${max.toFixed(2)} | ${ms} |`);
     }
   }
   lines.push(``);
@@ -634,7 +814,7 @@ function generateMarkdownReport(examples, refMap, resultsByKey, timings, skipped
   const exStats = examples.map(({ id, text, type }) => {
     const scores = activeKeys.map(k => {
       const t = resultsByKey[k]?.[id];
-      return t ? bleu1(refMap[id], t) : null;
+      return t ? bleuScore(refMap[id], t) : null;
     }).filter(s => s !== null);
     const avg = scores.length ? scores.reduce((a, b) => a + b, 0) / scores.length : 0;
     const min = scores.length ? Math.min(...scores) : 0;
@@ -642,6 +822,14 @@ function generateMarkdownReport(examples, refMap, resultsByKey, timings, skipped
     const variance = scores.length > 1
       ? scores.reduce((acc, s) => acc + (s - avg) ** 2, 0) / scores.length
       : 0;
+
+    // Which model(s) won this item
+    const winners = scores.length
+      ? activeKeys.filter(k => {
+          const t = resultsByKey[k]?.[id];
+          return t && bleuScore(refMap[id], t) >= max - 0.001;
+        })
+      : [];
 
     // Lemma stats per example (examples mode only)
     let avgLemmaF1 = null;
@@ -653,14 +841,30 @@ function generateMarkdownReport(examples, refMap, resultsByKey, timings, skipped
       avgLemmaF1 = f1s.length ? f1s.reduce((a, b) => a + b, 0) / f1s.length : 0;
     }
 
-    return { id, text, type, avg, min, max, stddev: Math.sqrt(variance), avgLemmaF1 };
+    return { id, text, type, avg, min, max, stddev: Math.sqrt(variance), avgLemmaF1, winners };
   });
 
   function renderExampleTable(stat) {
     const { id, text, type } = stat;
     const typeTag = type ? ` \`[${type}]\`` : "";
+    const refs = refMap[id];
+    // Show primary ref in heading; list alternatives inline if multiple
+    const refDisplay = refs.length > 1
+      ? `${mdCell(refs[0])}  _(also: ${refs.slice(1).map(r => `"${mdCell(r)}"`).join(" · ")})_`
+      : mdCell(refs[0]);
     lines.push(`> **"${mdCell(text)}"**${typeTag}`);
+    lines.push(`> _Ref: ${refDisplay}_`);
     lines.push(``);
+
+    // Compute per-model scores for this item to bold the winner(s)
+    const itemScoreMap = Object.fromEntries(
+      activeKeys.map(k => {
+        const t = resultsByKey[k]?.[id];
+        return [k, t != null ? bleuScore(refs, t) : null];
+      })
+    );
+    const validScores = Object.values(itemScoreMap).filter(s => s !== null);
+    const itemBest = validScores.length ? Math.max(...validScores) : -1;
 
     if (isExamples) {
       lines.push(`| Model | Translation | BLEU-1 | Lemma F1 | Missing | Extra |`);
@@ -668,10 +872,12 @@ function generateMarkdownReport(examples, refMap, resultsByKey, timings, skipped
       // Show reference lemmas
       const refAnns = (refAnnotationsMap?.[id] || []).filter(a => CONTENT_POS.has(a.pos));
       const refLemmas = refAnns.map(a => `${a.lemma}(${a.pos[0]})`).join(", ");
-      lines.push(`| _Reference_ | _${mdCell(refMap[id])}_ | — | — | _${refLemmas}_ | — |`);
+      lines.push(`| _Reference_ | _${mdCell(refs[0])}_ | — | — | _${refLemmas}_ | — |`);
       for (const key of activeKeys) {
         const t = resultsByKey[key]?.[id];
-        const bScore = t != null ? bleu1(refMap[id], t).toFixed(2) : "—";
+        const rawScore = itemScoreMap[key];
+        const isBest = rawScore !== null && rawScore >= itemBest - 0.001 && validScores.length > 1;
+        const bScore = rawScore != null ? (isBest ? `**${rawScore.toFixed(2)}**` : rawScore.toFixed(2)) : "—";
         const annMap = annotationsByKey?.[key] || {};
         const ls = lemmaScore(refAnnotationsMap?.[id] || [], annMap[id] || []);
         const missingStr = ls.missing.length ? ls.missing.map(m => m.split("|").join("(") + ")").join(", ") : "—";
@@ -681,17 +887,20 @@ function generateMarkdownReport(examples, refMap, resultsByKey, timings, skipped
     } else {
       lines.push(`| Model | Translation | BLEU-1 |`);
       lines.push(`|:---|:---|---:|`);
-      lines.push(`| _Reference_ | _${mdCell(refMap[id])}_ | — |`);
+      lines.push(`| _Reference_ | _${mdCell(refs[0])}_ | — |`);
       for (const key of activeKeys) {
         const t = resultsByKey[key]?.[id];
-        const score = t != null ? bleu1(refMap[id], t).toFixed(2) : "—";
-        lines.push(`| ${key} | ${mdCell(t ?? "(missing)")} | ${score} |`);
+        const rawScore = itemScoreMap[key];
+        const isBest = rawScore !== null && rawScore >= itemBest - 0.001 && validScores.length > 1;
+        const scoreStr = rawScore != null ? (isBest ? `**${rawScore.toFixed(2)}**` : rawScore.toFixed(2)) : "—";
+        lines.push(`| ${key} | ${mdCell(t ?? "(missing)")} | ${scoreStr} |`);
       }
     }
 
     lines.push(``);
     let statsLine = `*avg ${stat.avg.toFixed(2)} · min ${stat.min.toFixed(2)} · max ${stat.max.toFixed(2)} · σ ${stat.stddev.toFixed(2)}`;
     if (stat.avgLemmaF1 != null) statsLine += ` · lemma F1 ${stat.avgLemmaF1.toFixed(2)}`;
+    if (stat.winners.length) statsLine += ` · 🏆 ${stat.winners.join(", ")}`;
     statsLine += `*`;
     lines.push(statsLine);
     lines.push(``);
@@ -791,7 +1000,8 @@ async function main() {
     const fixtures = JSON.parse(readFileSync(fixturesFile, "utf-8"));
     const selected  = fixtures;
     const batch     = selected.map(({ id, text, type }) => ({ id, text, type }));
-    const refMap    = Object.fromEntries(selected.map(({ id, ref }) => [id, ref]));
+    // refMap stores an array of accepted translations per item (multi-ref BLEU)
+    const refMap    = Object.fromEntries(selected.map(({ id, ref, refs }) => [id, refs ?? [ref]]));
 
     console.log(`\nModel comparison — ${selected.length} curated idioms`);
     console.log(`Models: ${ACTIVE_KEYS.join("  ·  ")}\n`);
@@ -810,10 +1020,11 @@ async function main() {
       process.stdout.write(`  Running ${key.padEnd(LABEL_WIDTH)}... `);
       const t0 = Date.now();
       try {
-        const { map } = await translateWith(batch, key);
+        const { map, fromCache, fromApi } = await translateWithCache(batch, key);
         timings[key] = Date.now() - t0;
         resultsByKey[key] = map;
-        console.log(`${Object.keys(map).length}/${selected.length} translations  (${(timings[key] / 1000).toFixed(1)}s)`);
+        const cacheNote = fromCache > 0 ? ` (${fromCache} cached, ${fromApi} new)` : "";
+        console.log(`${Object.keys(map).length}/${selected.length} translations${cacheNote}  (${(timings[key] / 1000).toFixed(1)}s)`);
       } catch (err) {
         timings[key] = Date.now() - t0;
         console.log(`FAILED: ${err.message.slice(0, 120)}`);
@@ -874,7 +1085,8 @@ async function main() {
 
   const selected = pickRandom(pool, Math.min(COUNT, pool.length), SEED);
   const batch    = selected.map(({ id, text }) => ({ id, text }));
-  const refMap   = Object.fromEntries(selected.map(({ id, ref }) => [id, ref]));
+  // refMap stores arrays for consistent multi-ref scoring (random mode has one ref per item)
+  const refMap   = Object.fromEntries(selected.map(({ id, ref }) => [id, [ref]]));
   const refAnnotationsMap = Object.fromEntries(selected.map(({ id, refAnnotations }) => [id, refAnnotations]));
 
   console.log(`\nModel comparison — ${selected.length} random examples with lemma matching  (seed: ${SEED}${TYPE_FILTER ? `, type: ${TYPE_FILTER}` : ""})`);
@@ -895,13 +1107,14 @@ async function main() {
     process.stdout.write(`  Running ${key.padEnd(LABEL_WIDTH)}... `);
     const t0 = Date.now();
     try {
-      const { map, annotations } = await translateWith(batch, key, { mode: "examples" });
+      const { map, annotations, fromCache, fromApi } = await translateWithCache(batch, key, { mode: "examples" });
       timings[key] = Date.now() - t0;
       resultsByKey[key] = map;
       annotationsByKey[key] = annotations;
       const got = Object.keys(map).length;
       const annCount = Object.keys(annotations).length;
-      console.log(`${got}/${selected.length} translations, ${annCount} annotated  (${(timings[key] / 1000).toFixed(1)}s)`);
+      const cacheNote = fromCache > 0 ? ` (${fromCache} cached, ${fromApi} new)` : "";
+      console.log(`${got}/${selected.length} translations, ${annCount} annotated${cacheNote}  (${(timings[key] / 1000).toFixed(1)}s)`);
     } catch (err) {
       timings[key] = Date.now() - t0;
       console.log(`FAILED: ${err.message.slice(0, 120)}`);
