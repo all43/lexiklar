@@ -118,19 +118,18 @@ export function parseProviderArgs(argv) {
 // ============================================================
 
 async function callOpenAICompatible(systemPrompt, userMessage, baseUrl, model, options) {
-  const { maxTokens = 64, temperature = 0.2, apiKey = null, jsonMode = false, jsonSchema = null, timeoutMs = 0 } = options;
+  const { maxTokens = 64, temperature = 0.2, apiKey = null, jsonMode = false, jsonSchema = null, timeoutMs = 0, isLocal = false } = options;
 
   const headers = { "Content-Type": "application/json" };
   if (apiKey) headers["Authorization"] = `Bearer ${apiKey}`;
 
+  // Local models (LM Studio, Ollama) only understand max_tokens.
+  // Cloud OpenAI rejects having both fields simultaneously (as of 2025).
+  const tokenField = isLocal ? "max_tokens" : "max_completion_tokens";
   const body = {
     model,
     temperature,
-    // max_completion_tokens is required by newer OpenAI models (o-series, gpt-5-*).
-    // Local models (LM Studio, Ollama) only understand max_tokens.
-    // Pass both: cloud models use max_completion_tokens, local models fall back to max_tokens.
-    max_completion_tokens: maxTokens,
-    max_tokens: maxTokens,
+    [tokenField]: maxTokens,
     messages: [
       { role: "system", content: systemPrompt },
       { role: "user", content: userMessage },
@@ -300,16 +299,10 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
     maxTokens,
     temperature,
     apiKey,
-    // json_schema: explicit schema for structured output (LM Studio 0.3.6+, OpenAI).
-    // Preferred over json_object when a schema is provided.
     jsonSchema,
-    // response_format: json_object is only reliably supported by cloud OpenAI.
-    // LM Studio newer versions dropped it (require json_schema or text instead).
-    // Ollama support varies. Local providers can still produce valid JSON via extractJSON.
     jsonMode: jsonMode && !isLocalProvider(provider),
-    // Hard timeout for local models — prevents hanging the whole process if the model
-    // is loading, unresponsive, or generating at 1 token/s.
     timeoutMs: isLocalProvider(provider) ? (parseInt(process.env.LOCAL_TIMEOUT_MS) || 300_000) : 0,
+    isLocal: isLocalProvider(provider),
   });
   writeCache(key, result);
   return result;

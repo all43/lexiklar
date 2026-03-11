@@ -21,7 +21,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { callLLM, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider } from "./lib/llm.js";
+import { callLLM, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel } from "./lib/llm.js";
 import { stripReferences } from "./lib/references.js";
 import { POS_CONFIG, POS_DIRS } from "./lib/pos.js";
 
@@ -39,6 +39,7 @@ const RESET        = args.includes("--reset");
 const RESET_IDIOMS = args.includes("--reset-idioms");
 const FULL_MODE    = args.includes("--full");
 const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
+const MODEL_LABEL = `${PROVIDER}/${MODEL ?? getDefaultModel(PROVIDER)}`;
 
 // ============================================================
 // Collect untranslated senses from all word files
@@ -205,6 +206,7 @@ function writeTranslation(item, translation) {
   if (data.senses[item.senseIdx]) {
     const targetField = FULL_MODE ? "gloss_en_full" : "gloss_en";
     data.senses[item.senseIdx][targetField] = translation;
+    data.senses[item.senseIdx][targetField + "_model"] = MODEL_LABEL;
   }
   writeFileSync(item.filePath, JSON.stringify(data, null, 2) + "\n");
 }

@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, appendFileSync, readdirSync, existsSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider } from "./lib/llm.js";
+import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel } from "./lib/llm.js";
 import { stripReferences } from "./lib/references.js";
 import { POS_CONFIG } from "./lib/pos.js";
 
@@ -18,6 +18,7 @@ const EXAMPLES_FILE = join(DATA_DIR, "examples.json");
 const args = process.argv.slice(2);
 const DRY_RUN = args.includes("--dry-run");
 const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
+const MODEL_LABEL = `${PROVIDER}/${MODEL ?? getDefaultModel(PROVIDER)}`;
 
 // Local models have small context windows — default to a much smaller batch.
 // Cloud providers can handle 10+ easily.
@@ -346,6 +347,7 @@ async function main() {
       for (const result of results) {
         if (examples[result.id]) {
           examples[result.id].translation = result.translation;
+          examples[result.id].translation_model = MODEL_LABEL;
           // Expressions and proverbs don't get annotations
           const exType = examples[result.id].type;
           if (exType === "expression" || exType === "proverb") {

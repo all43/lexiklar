@@ -92,8 +92,10 @@ function loadSeedList() {
  * Build a Set of words that appear in the top `maxRank` positions of the
  * Leipzig frequency list. Used to restrict the full pipeline to B2 vocabulary.
  * Words are stored exactly as they appear in the corpus (case-sensitive).
+ * `maxSubtitleRank` can be set higher than `maxRank` to capture everyday
+ * spoken vocabulary that is underrepresented in news corpora.
  */
-function loadFrequencyFilter(wordsFile, subtitleFile, maxRank, whitelist = []) {
+function loadFrequencyFilter(wordsFile, subtitleFile, maxRank, maxSubtitleRank, whitelist = []) {
   const filter = new Set();
 
   // Leipzig news corpus: tab-separated (id\tword\tcount), mixed case
@@ -118,12 +120,13 @@ function loadFrequencyFilter(wordsFile, subtitleFile, maxRank, whitelist = []) {
   if (subtitleFile && existsSync(subtitleFile)) {
     const sizeBefore = filter.size;
     const lines = readFileSync(subtitleFile, "utf-8").split("\n").filter(Boolean);
-    for (let i = 0; i < Math.min(maxRank, lines.length); i++) {
+    const subtitleLimit = maxSubtitleRank ?? maxRank;
+    for (let i = 0; i < Math.min(subtitleLimit, lines.length); i++) {
       const spaceIdx = lines[i].lastIndexOf(" ");
       if (spaceIdx !== -1) filter.add(lines[i].slice(0, spaceIdx));
     }
     console.log(
-      `  OpenSubtitles: +${filter.size - sizeBefore} new forms from top ${maxRank}.`,
+      `  OpenSubtitles: +${filter.size - sizeBefore} new forms from top ${subtitleLimit}.`,
     );
   }
 
@@ -763,8 +766,10 @@ function mergeWithExisting(newData, existingPath) {
     for (let i = 0; i < newData.senses.length; i++) {
       const oldSense = existing.senses[i];
       if (!oldSense) continue;
-      if (oldSense.gloss_en != null)      newData.senses[i].gloss_en      = oldSense.gloss_en;
-      if (oldSense.gloss_en_full != null) newData.senses[i].gloss_en_full = oldSense.gloss_en_full;
+      if (oldSense.gloss_en != null)           newData.senses[i].gloss_en           = oldSense.gloss_en;
+      if (oldSense.gloss_en_model != null)     newData.senses[i].gloss_en_model     = oldSense.gloss_en_model;
+      if (oldSense.gloss_en_full != null)      newData.senses[i].gloss_en_full      = oldSense.gloss_en_full;
+      if (oldSense.gloss_en_full_model != null) newData.senses[i].gloss_en_full_model = oldSense.gloss_en_full_model;
     }
   }
 
@@ -783,6 +788,10 @@ async function main() {
   const maxFrequency =
     maxFreqIdx !== -1 ? parseInt(process.argv[maxFreqIdx + 1], 10) : null;
 
+  const maxSubtitleIdx = process.argv.indexOf("--max-subtitle-rank");
+  const maxSubtitleRank =
+    maxSubtitleIdx !== -1 ? parseInt(process.argv[maxSubtitleIdx + 1], 10) : null;
+
   let freqFilter = null;
   if (maxFrequency && !useSeed) {
     const wordsFile = join(ROOT, "data", "raw", "leipzig-words.txt");
@@ -797,11 +806,11 @@ async function main() {
     const whitelist = existsSync(whitelistFile)
       ? JSON.parse(readFileSync(whitelistFile, "utf-8")).words.map((w) => w.word)
       : [];
-    freqFilter = loadFrequencyFilter(wordsFile, subtitleFile, maxFrequency, whitelist);
+    freqFilter = loadFrequencyFilter(wordsFile, subtitleFile, maxFrequency, maxSubtitleRank, whitelist);
   }
 
   if (useSeed) console.log(`Seed mode: processing ${seedWords.size} words`);
-  else if (maxFrequency) console.log(`B2 mode: top ${maxFrequency} words by frequency`);
+  else if (maxFrequency) console.log(`B2 mode: top ${maxFrequency} words by frequency (subtitle rank: ${maxSubtitleRank ?? maxFrequency})`);
   else console.log("Full mode: processing all entries");
 
   if (!existsSync(RAW_FILE)) {

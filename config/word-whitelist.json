@@ -1,6 +1,94 @@
 {
   "description": "Words that pass the frequency filter unconditionally. For CEFR/educationally important vocabulary that is underrepresented in news and subtitle corpora (occupation nouns, domain-specific everyday words, etc.).",
   "words": [
-    { "word": "Automechaniker", "source": "TELC B2", "reason": "occupation noun — rare in corpora despite being essential everyday vocabulary" }
+    { "word": "Automechaniker", "domain": "work", "reason": "occupation noun — rare in corpora despite being essential everyday vocabulary" },
+
+    { "word": "Hausarzt", "domain": "health", "reason": "subtitle rank 26286" },
+    { "word": "Attest", "domain": "health", "reason": "subtitle rank 30209" },
+    { "word": "Krankenschein", "domain": "health", "reason": "not in top 50k subtitles" },
+    { "word": "Krankmeldung", "domain": "health", "reason": "not in top 50k subtitles" },
+    { "word": "Krankschreibung", "domain": "health", "reason": "Leipzig 28484" },
+    { "word": "Physiotherapie", "domain": "health", "reason": "subtitle rank 28462" },
+    { "word": "Erkältungsmittel", "domain": "health", "reason": "not in top 50k subtitles" },
+    { "word": "Erste-Hilfe-Kasten", "domain": "health", "reason": "subtitle rank 34603" },
+    { "word": "Notfallnummer", "domain": "health", "reason": "not found in corpora" },
+
+    { "word": "Nebenkosten", "domain": "housing", "reason": "subtitle rank 40979" },
+    { "word": "Betriebskosten", "domain": "housing", "reason": "Leipzig 13549, above subtitle cutoff" },
+    { "word": "Kündigungsfrist", "domain": "housing", "reason": "not in top 50k subtitles" },
+    { "word": "Wohngemeinschaft", "domain": "housing", "reason": "not in top 50k subtitles, Leipzig 25203" },
+    { "word": "Abstellraum", "domain": "housing", "reason": "subtitle rank 47992" },
+    { "word": "Hausverwaltung", "domain": "housing", "reason": "not in top 50k subtitles" },
+    { "word": "Kellerraum", "domain": "housing", "reason": "not found in corpora" },
+    { "word": "Zentralheizung", "domain": "housing", "reason": "not in top 50k subtitles" },
+    { "word": "Warmwasser", "domain": "housing", "reason": "Leipzig 79785" },
+    { "word": "Stromzähler", "domain": "housing", "reason": "not in top 50k subtitles" },
+    { "word": "Gasverbrauch", "domain": "housing", "reason": "not in top 50k subtitles" },
+    { "word": "Internetanschluss", "domain": "housing", "reason": "not in top 50k subtitles" },
+    { "word": "Vertragslaufzeit", "domain": "housing", "reason": "Leipzig 29197" },
+
+    { "word": "Bewerbungsunterlagen", "domain": "work", "reason": "not in top 50k subtitles" },
+    { "word": "Probezeit", "domain": "work", "reason": "subtitle rank 27386" },
+    { "word": "Gehaltsnachweis", "domain": "work", "reason": "not found in corpora" },
+    { "word": "Rentenversicherung", "domain": "work", "reason": "Leipzig 8772" },
+    { "word": "Sozialversicherung", "domain": "work", "reason": "subtitle rank 34961" },
+    { "word": "Betriebsrat", "domain": "work", "reason": "subtitle rank 47363" },
+    { "word": "Urlaubsantrag", "domain": "work", "reason": "not in top 50k subtitles" },
+
+    { "word": "Rasierapparat", "domain": "household", "reason": "not found in corpora" },
+    { "word": "Wäscheklammer", "domain": "household", "reason": "not found in corpora" },
+    { "word": "Bügeleisen", "domain": "household", "reason": "subtitle rank 28729" },
+    { "word": "Spülmittel", "domain": "household", "reason": "not in top 50k subtitles" },
+    { "word": "Waschmittel", "domain": "household", "reason": "subtitle rank 33748" },
+    { "word": "Putzmittel", "domain": "household", "reason": "subtitle rank 47442" },
+    { "word": "Küchenrolle", "domain": "household", "reason": "not in top 50k subtitles" },
+    { "word": "Alufolie", "domain": "household", "reason": "subtitle rank 36380" },
+    { "word": "Frischhaltefolie", "domain": "household", "reason": "not in top 50k subtitles" },
+    { "word": "Spülbecken", "domain": "household", "reason": "subtitle rank 41397" },
+    { "word": "Steckdose", "domain": "household", "reason": "subtitle rank 28129" },
+
+    { "word": "Reifenwechsel", "domain": "transport", "reason": "not found in corpora" },
+    { "word": "Abschleppdienst", "domain": "transport", "reason": "subtitle rank 44570" },
+    { "word": "Pannenhilfe", "domain": "transport", "reason": "not found in corpora" },
+    { "word": "Monatskarte", "domain": "transport", "reason": "not in top 50k subtitles" },
+    { "word": "Jahreskarte", "domain": "transport", "reason": "Leipzig 48390" },
+    { "word": "Fahrtkosten", "domain": "transport", "reason": "Leipzig 47499" },
+    { "word": "Parkverbot", "domain": "transport", "reason": "subtitle rank 39511" },
+
+    { "word": "Mülltrennung", "domain": "environment", "reason": "not in top 50k subtitles" },
+    { "word": "Wertstoffhof", "domain": "environment", "reason": "subtitle rank 44192" },
+    { "word": "Biomüll", "domain": "environment", "reason": "not in top 50k subtitles" },
+    { "word": "Papiermüll", "domain": "environment", "reason": "not found in corpora" },
+    { "word": "Sperrmüll", "domain": "environment", "reason": "Leipzig 31529" },
+    { "word": "Recycling", "domain": "environment", "reason": "subtitle rank 38621" },
+
+    { "word": "Kontoauszug", "domain": "finance", "reason": "not found in corpora" },
+    { "word": "Girokonto", "domain": "finance", "reason": "not in top 50k subtitles" },
+    { "word": "Dauerauftrag", "domain": "finance", "reason": "not found in corpora" },
+    { "word": "Steuerklasse", "domain": "finance", "reason": "Leipzig 38509" },
+    { "word": "Bankleitzahl", "domain": "finance", "reason": "not found in corpora" },
+
+    { "word": "Kassenzettel", "domain": "shopping", "reason": "not found in corpora" },
+    { "word": "Kassenbon", "domain": "shopping", "reason": "not in top 50k subtitles" },
+    { "word": "Garantieschein", "domain": "shopping", "reason": "not found in corpora" },
+    { "word": "Reklamation", "domain": "shopping", "reason": "not found in corpora" },
+    { "word": "Rückgabe", "domain": "shopping", "reason": "subtitle rank 28156" },
+    { "word": "Umtausch", "domain": "shopping", "reason": "Leipzig 51015" },
+
+    { "word": "Vollkornbrot", "domain": "food", "reason": "not in top 50k subtitles" },
+    { "word": "Aufschnitt", "domain": "food", "reason": "subtitle rank 43805" },
+    { "word": "Tiefkühlkost", "domain": "food", "reason": "not in top 50k subtitles" },
+    { "word": "Haltbarkeitsdatum", "domain": "food", "reason": "not in top 50k subtitles" },
+    { "word": "Mindesthaltbarkeitsdatum", "domain": "food", "reason": "Leipzig 42734" },
+
+    { "word": "Schulpflicht", "domain": "education", "reason": "Leipzig 60376" },
+    { "word": "Elternsprechtag", "domain": "education", "reason": "not found in corpora" },
+    { "word": "Lehrplan", "domain": "education", "reason": "subtitle rank 27445" },
+
+    { "word": "Aufenthaltserlaubnis", "domain": "admin", "reason": "Leipzig 46439" },
+
+    { "word": "einzahlen", "domain": "finance", "reason": "subtitle rank 34551 — infinitive underrepresented vs inflected forms" },
+    { "word": "abmelden", "domain": "admin", "reason": "subtitle rank 47180 — infinitive underrepresented vs inflected forms" },
+    { "word": "recyceln", "domain": "environment", "reason": "subtitle rank 41211" }
   ]
 }
