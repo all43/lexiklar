@@ -17,7 +17,7 @@ const EXAMPLES_FILE = join(DATA_DIR, "examples.json");
 
 const args = process.argv.slice(2);
 const DRY_RUN = args.includes("--dry-run");
-const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
+const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args, "anthropic");
 const MODEL_LABEL = `${PROVIDER}/${MODEL ?? getDefaultModel(PROVIDER)}`;
 
 // Idiom/expression model — gpt-4.1 by default (better at idiomatic translation).

@@ -56,7 +56,7 @@ function writeCache(filePath, result) {
 const PROVIDER_DEFAULTS = {
   openai: {
     url: "https://api.openai.com",
-    model: "gpt-4o-mini",
+    model: "gpt-4.1-mini",
     keyEnv: "OPENAI_API_KEY",
   },
   anthropic: {
@@ -109,9 +109,9 @@ export function getDefaultModel(provider) {
  * @param {string[]} argv - process.argv.slice(2)
  * @returns {{ provider: string, model: string|null }}
  */
-export function parseProviderArgs(argv) {
+export function parseProviderArgs(argv, defaultProvider = "openai") {
   const providerIdx = argv.indexOf("--provider");
-  const provider = providerIdx >= 0 ? argv[providerIdx + 1] : "openai";
+  const provider = providerIdx >= 0 ? argv[providerIdx + 1] : defaultProvider;
   const modelIdx = argv.indexOf("--model");
   const model = modelIdx >= 0 ? argv[modelIdx + 1] : null;
   return { provider, model };

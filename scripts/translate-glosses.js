@@ -5,8 +5,8 @@
  * sends each one individually to an LLM, and writes translations back.
  *
  * Usage:
- *   node scripts/translate-glosses.js                         # default: OpenAI GPT-4o-mini
- *   node scripts/translate-glosses.js --provider anthropic    # Claude Haiku 3.5
+ *   node scripts/translate-glosses.js                         # default: OpenAI GPT-4.1-mini
+ *   node scripts/translate-glosses.js --provider anthropic    # Claude Haiku 4.5
  *   node scripts/translate-glosses.js --provider ollama       # local Ollama (free, offline)
  *   node scripts/translate-glosses.js --provider lm-studio   # local LM Studio
  *   node scripts/translate-glosses.js --model gemma3:4b       # custom model (with any provider)
@@ -78,15 +78,15 @@ function collectSenses() {
 }
 
 // ============================================================
-// System prompt (exported for test harness)
+// System prompts (exported for test harness and compare-models)
 // ============================================================
 
-export const SYSTEM_PROMPT = `You are a German-English translator for a bilingual dictionary.
+// For nouns, verbs, adjectives, adverbs — no phrase machinery
+export const WORD_SYSTEM_PROMPT = `You are a German-English translator for a bilingual dictionary.
 
 You receive a German entry with its pos (part of speech) and German definition (gloss).
 Reply with ONLY the English equivalent — no explanation, no quotes, no punctuation.
 
-For pos="noun", pos="verb", pos="adjective", pos="adverb", and similar single words:
 - Give the English EQUIVALENT WORD for this specific sense
 - Use 1-3 words. Single word preferred. Add a parenthetical only to disambiguate
 - Do NOT add articles (a/the) unless essential
@@ -99,11 +99,18 @@ For pos="noun", pos="verb", pos="adjective", pos="adverb", and similar single wo
     word="laufen", pos="verb", gloss="sich auf den Beinen fortbewegen" → run
     word="laufen", pos="verb", gloss="dargeboten oder ausgestrahlt werden" → be showing
 
-For pos="phrase":
+Reply with ONLY the translation, nothing else`;
+
+// For phrases (idioms, proverbs, collocations, greetings, toponyms)
+export const PHRASE_SYSTEM_PROMPT = `You are a German-English translator for a bilingual dictionary.
+
+You receive a German phrase with its phrase_type and German definition (gloss).
+Reply with ONLY the English equivalent — no explanation, no quotes, no punctuation.
+
 - Use the phrase TEXT (word field) as the primary signal — you know what this German phrase means
 - phrase_type gives a hint when present:
     phrase_type="idiom"       → find the matching English idiom or set phrase
-                                 ⚠ NEVER translate word-for-word — the German words are almost never the English idiom words
+                                 ⚠ NEVER translate word-for-word — the German idiom words ≠ English idiom words
                                  ⚠ NEVER pick an idiom just because it shares a surface word with the German
                                  ⚠ NEVER output a bare adjective or adverb — always give an idiomatic phrase
                                  ⚠ If no perfect match exists, use the closest English idiom; as a last resort a concise natural phrase (≤ 6 words)
@@ -140,6 +147,9 @@ Good idiom translations:
     word="wie im Bilderbuch", pos="phrase", phrase_type="idiom", gloss="perfekt, großartig" → picture-perfect
 
 Reply with ONLY the translation, nothing else`;
+
+// Backward-compat alias (used by test-gloss-translation.js and compare-models.js)
+export const SYSTEM_PROMPT = WORD_SYSTEM_PROMPT;
 
 export const SYSTEM_PROMPT_FULL = `You are a German-English translator for a bilingual dictionary.
 
@@ -229,7 +239,10 @@ async function main() {
   }
 
   const targetField = FULL_MODE ? "gloss_en_full" : "gloss_en";
-  const activePrompt = FULL_MODE ? SYSTEM_PROMPT_FULL : SYSTEM_PROMPT;
+  function pickPrompt(pos) {
+    if (FULL_MODE) return SYSTEM_PROMPT_FULL;
+    return pos === "phrase" ? PHRASE_SYSTEM_PROMPT : WORD_SYSTEM_PROMPT;
+  }
 
   // Reset the target field if requested (skipped in dry-run mode)
   if ((RESET || RESET_IDIOMS) && !DRY_RUN) {
@@ -269,7 +282,7 @@ async function main() {
   if (DRY_RUN) {
     console.log("\nDry run: would send %d API calls.", items.length);
     console.log("\nSample prompt:");
-    console.log("  System: " + SYSTEM_PROMPT.split("\n")[0] + "...");
+    console.log("  System: " + pickPrompt(items[0].pos).split("\n")[0] + "...");
     console.log("  User:   " + buildUserPrompt(items[0]));
     return;
   }
@@ -288,7 +301,7 @@ async function main() {
 
     try {
       const response = await retryWithBackoff(
-        () => callLLM(activePrompt, userPrompt, llmOptions),
+        () => callLLM(pickPrompt(item.pos), userPrompt, llmOptions),
         3, 1000,
       );
       totalInputTokens += response.input_tokens;
