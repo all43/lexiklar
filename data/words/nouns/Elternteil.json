@@ -11,7 +11,7 @@
       "nom": "Elternteil",
       "acc": "Elternteil",
       "dat": "Elternteil",
-      "gen": "Elternteils"
+      "gen": "Elternteiles"
     },
     "plural": {
       "nom": "Elternteile",
@@ -25,16 +25,39 @@
       "gloss": "Vorfahr ersten Grades (Vater oder Mutter)",
       "gloss_en": "parent",
       "tags": [],
-      "example_ids": [],
+      "example_ids": [
+        "980661e680",
+        "72418560d5",
+        "67741b91a7",
+        "77139a3251",
+        "5238cf25c0",
+        "39196aa652",
+        "18dfe7c988",
+        "cf1f274d4e",
+        "8f33699814"
+      ],
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut"
     }
   ],
-  "sounds": [],
+  "sounds": [
+    {
+      "ipa": "[ˈɛltɐnˌtaɪ̯l]",
+      "tags": []
+    }
+  ],
+  "_hyponyms": [
+    "Mutter",
+    "Vater",
+    "Großelternteil"
+  ],
+  "_synonyms": [
+    "Elter"
+  ],
   "_meta": {
-    "source_hash": "manual_elternteil",
-    "generated_at": "2026-03-07"
+    "source_hash": "acf48dd2b5fc6faa",
+    "generated_at": "2026-03-12"
   },
   "frequency": 7170
 }
