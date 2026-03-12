@@ -23,10 +23,10 @@ const CACHE_DIR = process.env.LLM_CACHE_DIR
 
 // Cache path: {CACHE_DIR}/{provider}/{model_slug}/{hash}.json
 // Prefix by provider/model so entire model caches can be wiped with rm -rf.
-function getCachePath(provider, model, systemPrompt, userMessage, maxTokens) {
+function getCachePath(provider, model, systemPrompt, userMessage, maxTokens, jsonSchema) {
   const slug = (model || "default").replace(/[^a-zA-Z0-9._-]/g, "_");
   const hash = createHash("sha256")
-    .update(JSON.stringify({ systemPrompt, userMessage, maxTokens }))
+    .update(JSON.stringify({ systemPrompt, userMessage, maxTokens, jsonSchema: jsonSchema ? true : false }))
     .digest("hex")
     .slice(0, 20);
   return join(CACHE_DIR, provider, slug, `${hash}.json`);
@@ -214,7 +214,26 @@ async function callOpenAICompatible(systemPrompt, userMessage, baseUrl, model, o
 }
 
 async function callAnthropic(systemPrompt, userMessage, model, options) {
-  const { maxTokens = 64, temperature = 0.2, apiKey } = options;
+  const { maxTokens = 64, temperature = 0.2, apiKey, jsonSchema = null } = options;
+
+  const body = {
+    model,
+    max_tokens: maxTokens,
+    temperature,
+    system: systemPrompt,
+    messages: [{ role: "user", content: userMessage }],
+  };
+
+  // Tool use enforces structured output — equivalent to OpenAI's json_schema.
+  // The model is forced to call the tool, so the response is always valid JSON.
+  if (jsonSchema) {
+    body.tools = [{
+      name: "submit_translations",
+      description: "Submit the list of English translations, one per sense.",
+      input_schema: jsonSchema,
+    }];
+    body.tool_choice = { type: "tool", name: "submit_translations" };
+  }
 
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
@@ -223,13 +242,7 @@ async function callAnthropic(systemPrompt, userMessage, model, options) {
       "x-api-key": apiKey,
       "anthropic-version": "2023-06-01",
     },
-    body: JSON.stringify({
-      model,
-      max_tokens: maxTokens,
-      temperature,
-      system: systemPrompt,
-      messages: [{ role: "user", content: userMessage }],
-    }),
+    body: JSON.stringify(body),
   });
 
   if (!res.ok) {
@@ -240,15 +253,21 @@ async function callAnthropic(systemPrompt, userMessage, model, options) {
   const data = await res.json();
 
   if (data.stop_reason === "max_tokens") {
-    const { maxTokens = 64 } = options;
     throw new Error(
       `Response truncated (stop_reason: max_tokens) — maxTokens (${maxTokens}) too low for this request.`
     );
   }
 
+  const block = data.content[0];
+  // Tool use response: extract the input object and serialize to JSON string
+  // so parseBatchResponse → extractJSON can handle it uniformly.
+  const content = block.type === "tool_use"
+    ? JSON.stringify(block.input)
+    : block.text;
+
   const usage = data.usage || {};
   return {
-    content: data.content[0].text,
+    content,
     input_tokens: usage.input_tokens || 0,
     output_tokens: usage.output_tokens || 0,
   };
@@ -297,10 +316,10 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
 
   if (provider === "anthropic") {
     const model = modelOverride || defaults.model;
-    const cachePath = getCachePath(provider, model, systemPrompt, userMessage, maxTokens);
+    const cachePath = getCachePath(provider, model, systemPrompt, userMessage, maxTokens, jsonSchema);
     const cached = readCache(cachePath);
     if (cached) return { ...cached, _cached: true };
-    const result = await callAnthropic(systemPrompt, userMessage, model, { maxTokens, temperature, apiKey });
+    const result = await callAnthropic(systemPrompt, userMessage, model, { maxTokens, temperature, apiKey, jsonSchema });
     writeCache(cachePath, result);
     return result;
   }
@@ -312,7 +331,7 @@ export async function callLLM(systemPrompt, userMessage, options = {}) {
     model = await resolveLocalModel(defaults.url, defaults.model);
   }
 
-  const cachePath = getCachePath(provider, model, systemPrompt, userMessage, maxTokens);
+  const cachePath = getCachePath(provider, model, systemPrompt, userMessage, maxTokens, jsonSchema);
   const cached = readCache(cachePath);
   if (cached) return { ...cached, _cached: true };
 
@@ -409,7 +428,9 @@ export async function retryWithBackoff(fn, maxRetries = 3, baseDelay = 1000) {
     } catch (err) {
       lastError = err;
       if (attempt < maxRetries - 1) {
-        const delay = baseDelay * (attempt + 1);
+        const isRateLimit = err?.status === 429 || String(err?.message).includes("429") || String(err?.message).includes("rate_limit");
+        // Rate limit: exponential backoff starting at 15s; other errors: linear 1s/2s/3s
+        const delay = isRateLimit ? 15000 * Math.pow(2, attempt) : baseDelay * (attempt + 1);
         await new Promise((r) => setTimeout(r, delay));
       }
     }
