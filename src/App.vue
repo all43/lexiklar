@@ -20,6 +20,7 @@
 
 <script>
 import routes from "./js/routes.js";
+import { initTheme } from "./js/theme.js";
 
 export default {
   data() {
@@ -30,6 +31,9 @@ export default {
         routes,
       },
     };
+  },
+  mounted() {
+    initTheme();
   },
 };
 </script>

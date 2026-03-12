@@ -291,3 +291,21 @@
   0% { background-color: var(--f7-theme-color-rgb, rgba(33, 150, 243, 0.2)); }
   100% { background-color: transparent; }
 }
+
+/* ── Dark mode overrides ──────────────────────────────────────────────────── */
+/* Uses F7's .dark class (set by setDarkMode) so it responds to user toggle,  */
+/* not just the OS media query.                                                */
+
+.dark .noun-rule-hint,
+.dark .verb-principal-item {
+  background: rgba(255, 255, 255, 0.08);
+}
+.dark .noun-rule-match {
+  color: #66bb6a;
+}
+.dark .noun-rule-exception {
+  color: #ffa726;
+}
+.dark .swipe-handler {
+  background: rgba(255, 255, 255, 0.2);
+}
