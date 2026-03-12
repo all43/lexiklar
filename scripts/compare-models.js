@@ -16,14 +16,20 @@
  *   node scripts/compare-models.js --random --count 20    # 20 random examples (default: 10)
  *   node scripts/compare-models.js --random --seed 42     # reproducible selection
  *   node scripts/compare-models.js --random --type expression
+ *   node scripts/compare-models.js --glosses              # gloss translation comparison (default: gpt-4.1-mini + haiku + sauerkraut)
+ *   node scripts/compare-models.js --glosses --count 30   # 30 glosses (default: 30)
+ *   node scripts/compare-models.js --glosses --multi-sense  # only words with 2+ senses
+ *   node scripts/compare-models.js --glosses --word bank,tisch  # specific word(s)
+ *   node scripts/compare-models.js --glosses --models openai/gpt-4.1-mini,anthropic/haiku-4.5
  *   node scripts/compare-models.js --models openai/gpt-4o-mini,anthropic/haiku-4.5
  *   node scripts/compare-models.js --probe lm-studio     # debug raw response
  *   node scripts/compare-models.js --local-batch 3      # chunk size for slow local models
  *   node scripts/compare-models.js --fresh              # ignore per-item cache, re-translate everything
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from "fs";
 import { join, dirname } from "path";
+import { createHash } from "crypto";
 import { fileURLToPath } from "url";
 import {
   callLLM,
@@ -32,6 +38,9 @@ import {
   getApiKey,
   isLocalProvider,
 } from "./lib/llm.js";
+import { WORD_SYSTEM_PROMPT as GLOSS_SYSTEM_PROMPT, WORD_SYSTEM_PROMPT_BATCH_IDS as GLOSS_BATCH_SYSTEM_PROMPT_FROM_LIB } from "./lib/prompts.js";
+import { stripReferences } from "./lib/references.js";
+import { POS_DIRS } from "./lib/pos.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -81,7 +90,10 @@ const COUNT        = parseInt(getArg("--count", "10"), 10);
 const SEED         = parseInt(getArg("--seed", String(Date.now())), 10);
 const TYPE_FILTER  = getArg("--type", null);   // e.g. "expression", "example", "proverb"
 const RANDOM_MODE  = args.includes("--random"); // random sample from examples.json
-const FIXTURES     = !RANDOM_MODE;              // default: curated idiom fixtures
+const GLOSSES_MODE = args.includes("--glosses"); // gloss translation comparison
+const MULTI_SENSE  = args.includes("--multi-sense"); // only words with 2+ senses
+const WORD_FILTER  = getArg("--word", null);    // filter to specific word(s), comma-separated
+const FIXTURES     = !RANDOM_MODE && !GLOSSES_MODE; // default: curated idiom fixtures
 const PROBE        = getArg("--probe", null);  // provider key to probe for raw output
 const DEBUG        = args.includes("--debug"); // print raw model response + parsed map
 // Override per-model batchSize for local models (e.g. --local-batch 3 for very slow machines)
@@ -91,8 +103,16 @@ const FRESH        = args.includes("--fresh");
 // Disable JSON schema structured output (for A/B testing hallucination rates)
 const NO_SCHEMA    = args.includes("--no-schema");
 
+const GLOSS_DEFAULT_MODELS = [
+  "openai/gpt-4.1-mini",
+  "anthropic/haiku-4.5",
+  "lm-studio/sauerkraut",
+];
+
 const modelsArg   = getArg("--models", null);
-const ACTIVE_KEYS = modelsArg ? modelsArg.split(",").map(s => s.trim()) : DEFAULT_MODELS;
+const ACTIVE_KEYS = modelsArg
+  ? modelsArg.split(",").map(s => s.trim())
+  : GLOSSES_MODE ? GLOSS_DEFAULT_MODELS : DEFAULT_MODELS;
 
 // ── Prompt: idioms mode (translation only) ────────────────────────────────────
 
@@ -157,6 +177,71 @@ function buildExamplesPrompt(batch) {
     lines.push(`[${id}] ${text}`);
   }
   lines.push('\nReply with: {"examples": [{"id":"...","translation":"...","annotations":[...]}, ...]}');
+  return lines.join("\n");
+}
+
+// ── Gloss comparison mode ─────────────────────────────────────────────────────
+
+// Imported from lib/prompts.js — ID-keyed batch format, no string-replace needed.
+const GLOSS_BATCH_SYSTEM_PROMPT = GLOSS_BATCH_SYSTEM_PROMPT_FROM_LIB;
+
+const WORDS_DIR_GLOSSES = join(ROOT, "data", "words");
+
+function collectGlossItems() {
+  const items = [];
+  for (const posDir of POS_DIRS) {
+    const dir = join(WORDS_DIR_GLOSSES, posDir);
+    if (!existsSync(dir)) continue;
+    for (const file of readdirSync(dir)) {
+      if (!file.endsWith(".json")) continue;
+      const data = JSON.parse(readFileSync(join(dir, file), "utf-8"));
+      const fileSlug = file.replace(/\.json$/, "").replace(/[^a-z0-9]/gi, "_").toLowerCase();
+      for (let i = 0; i < (data.senses || []).length; i++) {
+        const sense = data.senses[i];
+        if (!sense.gloss) continue;
+        const cleanGloss = stripReferences(sense.gloss);
+        if (cleanGloss.length < 5) continue;
+        const base = `word="${data.word}", pos="${data.pos}"`;
+        const typeClause = data.phrase_type ? `, phrase_type="${data.phrase_type}"` : "";
+        const text = `${base}${typeClause}, gloss="${cleanGloss}"`;
+        items.push({
+          id: `${fileSlug}_${i}`,
+          text,       // formatted prompt string — used as cache key + LLM input
+          word: data.word,
+          pos: data.pos,
+          phraseType: data.phrase_type || null,
+          gloss: sense.gloss,
+          cleanGloss,
+          senseIdx: i,
+        });
+      }
+    }
+  }
+  return items;
+}
+
+/**
+ * Short stable hash derived from item text — used as the prompt-facing ID.
+ * Opaque to the model (no semantic leak) and stable regardless of batch position.
+ */
+function glossPromptId(text) {
+  return createHash("sha256").update(text).digest("hex").slice(0, 8);
+}
+
+function buildGlossPrompt(batch) {
+  // Use content-hash IDs — opaque so no semantic leakage, stable so unaffected
+  // by batch position changes when the cache filters out already-translated items.
+  const lines = [
+    `Translate ${batch.length} German gloss(es) to English.`,
+    `Treat each entry as completely independent — do not let one entry influence another.\n`,
+  ];
+  for (const item of batch) {
+    lines.push(`[${glossPromptId(item.text)}] ${item.text}`);
+  }
+  lines.push(
+    `\nReply with ONLY a JSON array of exactly ${batch.length} items: ` +
+    `[{"id":"the-hash-from-above","translation":"..."}, ...]`
+  );
   return lines.join("\n");
 }
 
@@ -285,12 +370,17 @@ function lemmaScore(refAnnotations, candAnnotations) {
 async function translateChunk(chunk, key, { mode = "idioms" } = {}) {
   const cfg = MODEL_REGISTRY[key];
   const isExamples = mode === "examples";
+  const isGlosses  = mode === "glosses";
 
-  const systemPrompt = isExamples ? EXAMPLES_SYSTEM_PROMPT : IDIOM_SYSTEM_PROMPT;
-  const prompt = isExamples ? buildExamplesPrompt(chunk) : buildIdiomPrompt(chunk);
+  const systemPrompt = isExamples ? EXAMPLES_SYSTEM_PROMPT
+    : isGlosses        ? GLOSS_BATCH_SYSTEM_PROMPT
+    :                    IDIOM_SYSTEM_PROMPT;
+  const prompt = isExamples ? buildExamplesPrompt(chunk)
+    : isGlosses        ? buildGlossPrompt(chunk)
+    :                    buildIdiomPrompt(chunk);
 
-  // Budget: ~100 tokens/item for idioms, ~250 for examples (annotations are verbose)
-  const perItem = isExamples ? 250 : 100;
+  // Budget: ~250 tokens/item for examples (annotations), ~50 for glosses, ~100 for idioms
+  const perItem = isExamples ? 250 : isGlosses ? 50 : 100;
   const autoTokens = Math.max(512, chunk.length * perItem);
 
   // Use JSON schema for all providers — enforces well-formed output and reduces hallucinated fields
@@ -333,12 +423,24 @@ async function translateChunk(chunk, key, { mode = "idioms" } = {}) {
   const map = {};
   const annotations = {};
 
+  // Pre-build hash→realId map for glosses mode remapping
+  const glossHashToId = isGlosses
+    ? Object.fromEntries(chunk.map(it => [glossPromptId(it.text), it.id]))
+    : {};
+
   for (const item of parsed) {
-    if (item.id) {
-      map[item.id] = item.translation ?? "(no translation)";
-      if (isExamples && Array.isArray(item.annotations)) {
-        annotations[item.id] = item.annotations.filter(a => a.form && a.lemma && a.pos);
-      }
+    if (item.id === undefined || item.id === null) continue;
+    // In glosses mode the prompt uses content-hash IDs to avoid leaking semantic
+    // context via file slugs. Remap them back to real cache IDs using the hash map.
+    let realId;
+    if (isGlosses) {
+      realId = glossHashToId[String(item.id)] ?? String(item.id);
+    } else {
+      realId = item.id;
+    }
+    map[realId] = item.translation ?? "(no translation)";
+    if (isExamples && Array.isArray(item.annotations)) {
+      annotations[realId] = item.annotations.filter(a => a.form && a.lemma && a.pos);
     }
   }
 
@@ -394,8 +496,12 @@ async function translateWith(batch, key, { mode = "idioms" } = {}) {
   const cfg = MODEL_REGISTRY[key];
   if (!cfg) throw new Error(`Unknown model key: "${key}". Available: ${Object.keys(MODEL_REGISTRY).join(", ")}`);
 
+  // For glosses mode, local models must process one item at a time — batching causes
+  // context bleed where a long gloss infects the next item's response in the same chunk.
+  const isGlosses = mode === "glosses";
+  const defaultBatch = (isGlosses && isLocalProvider(cfg.provider)) ? 1 : cfg.batchSize;
   // Determine chunk size: CLI override > per-model config > full batch at once
-  const chunkSize = LOCAL_BATCH ?? cfg.batchSize ?? batch.length;
+  const chunkSize = LOCAL_BATCH ?? defaultBatch ?? batch.length;
 
   if (chunkSize < batch.length) {
     // Split into sequential sub-batches and merge results
@@ -958,12 +1064,215 @@ function writeReport(examples, refMap, resultsByKey, timings, skipped, meta) {
   return outPath;
 }
 
+// ── Gloss mode: report + main runner ──────────────────────────────────────────
+
+function generateGlossReport(selected, activeKeys, resultsByKey, timings, skipped) {
+  const now = new Date().toISOString().slice(0, 19).replace("T", " ");
+  const lines = [];
+
+  lines.push(`# Gloss Translation Comparison`);
+  lines.push(``);
+  lines.push(`**Date**: ${now}  |  **Count**: ${selected.length}`);
+  lines.push(``);
+  lines.push(`**Models**: ${ACTIVE_KEYS.join(" · ")}`);
+  lines.push(``);
+
+  // Agreement stats per model pair
+  const itemsWithAll = selected.filter(item => activeKeys.every(k => resultsByKey[k]?.[item.id]));
+  const agreed = itemsWithAll.filter(item => {
+    const ts = activeKeys.map(k => resultsByKey[k][item.id].toLowerCase());
+    return ts.every(t => t === ts[0]);
+  });
+
+  lines.push(`## Summary`);
+  lines.push(``);
+  lines.push(`Overall agreement: **${agreed.length}/${itemsWithAll.length}** (${Math.round(agreed.length / Math.max(itemsWithAll.length, 1) * 100)}%)`);
+  lines.push(``);
+  lines.push(`| Model | Parsed | Time |`);
+  lines.push(`|:---|---:|---:|`);
+  for (const key of ACTIVE_KEYS) {
+    if (skipped.has(key)) { lines.push(`| ${key} | skipped | — |`); continue; }
+    const map = resultsByKey[key];
+    if (!map) { lines.push(`| **${key}** | **FAILED** | — |`); continue; }
+    const ok = selected.filter(item => map[item.id]).length;
+    const ms = timings[key] != null ? `${(timings[key] / 1000).toFixed(1)}s` : "?";
+    lines.push(`| ${key} | ${ok}/${selected.length} | ${ms} |`);
+  }
+  lines.push(``);
+
+  // Disagreements
+  const disagreements = itemsWithAll.filter(item => {
+    const ts = activeKeys.map(k => resultsByKey[k][item.id].toLowerCase());
+    return !ts.every(t => t === ts[0]);
+  });
+
+  if (disagreements.length) {
+    lines.push(`## Disagreements (${disagreements.length})`);
+    lines.push(``);
+    for (const item of disagreements) {
+      lines.push(`> **"${mdCell(item.word)}"** \`${item.pos}\`  `);
+      lines.push(`> _${mdCell(item.cleanGloss)}_`);
+      lines.push(``);
+      lines.push(`| Model | Translation |`);
+      lines.push(`|:---|:---|`);
+      for (const key of activeKeys) {
+        lines.push(`| ${key} | ${mdCell(resultsByKey[key]?.[item.id] ?? "(missing)")} |`);
+      }
+      lines.push(``);
+    }
+  }
+
+  // All items
+  lines.push(`## All Glosses`);
+  lines.push(``);
+  lines.push(`| Word | POS | Gloss | ${activeKeys.map(k => k.split("/").pop()).join(" | ")} | ✓ |`);
+  lines.push(`|:---|:---|:---|${activeKeys.map(() => ":---|").join("")}:---|`);
+  for (const item of selected) {
+    const ts = activeKeys.map(k => mdCell(resultsByKey[k]?.[item.id] ?? "—"));
+    const allSame = activeKeys.every(k => resultsByKey[k]?.[item.id]?.toLowerCase() === resultsByKey[activeKeys[0]]?.[item.id]?.toLowerCase());
+    lines.push(`| ${mdCell(item.word)} | ${item.pos} | ${mdCell(item.cleanGloss)} | ${ts.join(" | ")} | ${allSame ? "✓" : "≠"} |`);
+  }
+  lines.push(``);
+
+  return lines.join("\n");
+}
+
+function writeGlossReport(selected, activeKeys, resultsByKey, timings, skipped) {
+  const md = generateGlossReport(selected, activeKeys, resultsByKey, timings, skipped);
+  const reportsDir = join(ROOT, "reports");
+  if (!existsSync(reportsDir)) mkdirSync(reportsDir, { recursive: true });
+  const ts = new Date().toISOString().slice(0, 19).replace(/[T:]/g, "-");
+  const filename = `glosses-${ts}.md`;
+  const outPath = join(reportsDir, filename);
+  writeFileSync(outPath, md);
+  console.log(`\nReport written to: reports/${filename}`);
+}
+
+async function runGlossMode() {
+  let pool = collectGlossItems();
+  console.log(`Collected ${pool.length} glosses total.`);
+
+  // Filter by specific word(s)
+  if (WORD_FILTER) {
+    const words = WORD_FILTER.toLowerCase().split(",").map(w => w.trim());
+    pool = pool.filter(item => words.includes(item.word.toLowerCase()));
+    console.log(`Filtered to ${pool.length} glosses for word(s): ${WORD_FILTER}`);
+  }
+
+  // Filter to multi-sense words (same word+pos with 2+ senses)
+  if (MULTI_SENSE) {
+    const counts = {};
+    for (const item of pool) {
+      const k = `${item.word.toLowerCase()}_${item.pos}`;
+      counts[k] = (counts[k] || 0) + 1;
+    }
+    pool = pool.filter(item => counts[`${item.word.toLowerCase()}_${item.pos}`] > 1);
+    console.log(`Filtered to ${pool.length} glosses from multi-sense words.`);
+  }
+
+  if (pool.length === 0) {
+    console.error("No matching glosses found.");
+    process.exit(1);
+  }
+
+  const count = parseInt(getArg("--count", "30"), 10);
+  const selected = (WORD_FILTER && !MULTI_SENSE)
+    ? pool  // show all senses for the requested word(s)
+    : pickRandom(pool, Math.min(count, pool.length), SEED);
+
+  console.log(`\nGloss comparison — ${selected.length} items  (seed: ${SEED})`);
+  console.log(`Models: ${ACTIVE_KEYS.join("  ·  ")}\n`);
+
+  const resultsByKey = {};
+  const timings      = {};
+  const skipped      = new Set();
+
+  for (const key of ACTIVE_KEYS) {
+    if (!MODEL_REGISTRY[key]) {
+      console.error(`Unknown model key: "${key}". Available: ${Object.keys(MODEL_REGISTRY).join(", ")}`);
+      process.exit(1);
+    }
+    const { provider } = MODEL_REGISTRY[key];
+    if (!isLocalProvider(provider) && !getApiKey(provider)) {
+      console.log(`  Skipping ${key} (no API key)`);
+      skipped.add(key);
+      continue;
+    }
+    process.stdout.write(`  Running ${key.padEnd(LABEL_WIDTH)}... `);
+    const t0 = Date.now();
+    try {
+      const { map, fromCache, fromApi } = await translateWithCache(selected, key, { mode: "glosses" });
+      timings[key] = Date.now() - t0;
+      resultsByKey[key] = map;
+      const cacheNote = fromCache > 0 ? ` (${fromCache} cached, ${fromApi} new)` : "";
+      console.log(`${Object.keys(map).length}/${selected.length}${cacheNote}  (${(timings[key] / 1000).toFixed(1)}s)`);
+    } catch (err) {
+      timings[key] = Date.now() - t0;
+      console.log(`FAILED: ${err.message.slice(0, 120)}`);
+    }
+  }
+
+  const activeKeys = ACTIVE_KEYS.filter(k => !skipped.has(k) && resultsByKey[k]);
+
+  // Print side-by-side results
+  console.log();
+  for (let i = 0; i < selected.length; i++) {
+    const item = selected[i];
+    const ts = activeKeys.map(k => resultsByKey[k]?.[item.id] ?? "(missing)");
+    const allSame = ts.length > 1 && ts.every(t => t.toLowerCase() === ts[0].toLowerCase());
+    const marker = allSame ? "✓" : "≠";
+    console.log(`[${i + 1}/${selected.length}] "${item.word}" (${item.pos})  ${marker}  ${ts.join("  |  ")}`);
+  }
+
+  // Agreement summary
+  const itemsWithAll = selected.filter(item => activeKeys.every(k => resultsByKey[k]?.[item.id]));
+  const agreed = itemsWithAll.filter(item => {
+    const ts = activeKeys.map(k => resultsByKey[k][item.id].toLowerCase());
+    return ts.every(t => t === ts[0]);
+  });
+
+  console.log(`\n${"─".repeat(80)}`);
+  console.log(`Agreement: ${agreed.length}/${itemsWithAll.length} (${Math.round(agreed.length / Math.max(itemsWithAll.length, 1) * 100)}%)\n`);
+
+  // Disagreements
+  const disagreements = itemsWithAll.filter(item => {
+    const ts = activeKeys.map(k => resultsByKey[k][item.id].toLowerCase());
+    return !ts.every(t => t === ts[0]);
+  });
+  if (disagreements.length) {
+    console.log(`DISAGREEMENTS (${disagreements.length}):\n`);
+    for (const item of disagreements) {
+      console.log(`  word="${item.word}"  pos=${item.pos}`);
+      console.log(`  gloss: ${item.cleanGloss}`);
+      for (const key of activeKeys) {
+        console.log(`    ${key.padEnd(38)} → ${resultsByKey[key][item.id] ?? "ERROR"}`);
+      }
+      console.log();
+    }
+  }
+
+  // Timing
+  console.log("Avg response time:");
+  for (const key of activeKeys) {
+    const ms = timings[key];
+    console.log(`  ${key}: ${ms != null ? (ms / 1000).toFixed(1) + "s" : "?"}`);
+  }
+
+  writeGlossReport(selected, activeKeys, resultsByKey, timings, skipped);
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
   // Probe mode
   if (PROBE) {
     await runProbe(PROBE);
+    return;
+  }
+
+  // Glosses mode
+  if (GLOSSES_MODE) {
+    await runGlossMode();
     return;
   }
 

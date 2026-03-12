@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel } from "./lib/llm.js";
 import { stripReferences } from "./lib/references.js";
 import { POS_CONFIG } from "./lib/pos.js";
+import { EXAMPLES_SYSTEM_PROMPT } from "./lib/prompts.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -134,32 +135,8 @@ function getRelevantDisambiguation(examples, disambigDict) {
 // System prompt and user prompt
 // ============================================================
 
-const SYSTEM_PROMPT = `You are a German-English translation assistant for a dictionary app targeting B2 learners.
-
-Each item has a "type" field:
-- "example" (or absent): a full sentence. Translate naturally. Include annotations for content words.
-- "expression": an idiomatic phrase. Translate the idiomatic meaning (not word-for-word). No annotations needed.
-- "proverb": a saying or proverb. Use the established English equivalent if one exists; otherwise translate the meaning. No annotations needed.
-
-If a "note" field is present, it explains the meaning in German — use it to disambiguate.
-If a "gloss_en" field is present, it is an existing English gloss for the expression — use it as the basis for a natural, idiomatic translation.
-
-For items that need annotations (type "example" only), provide for each content word:
-- "form": the exact word as written in the sentence
-- "lemma": dictionary form (infinitive for verbs, nominative singular for nouns, base form for adjectives)
-- "pos": one of "noun", "verb", "adjective"
-- "gloss_hint": if the DISAMBIGUATION object contains the key "lemma|pos" with multiple glosses, pick a 1-3 word substring from the matching gloss that best identifies the intended meaning. If not in disambiguation or has only one meaning, use null.
-
-Rules:
-- Skip articles (der/die/das/ein/eine), prepositions, pronouns, conjunctions, particles
-- Skip proper nouns unless they are also common nouns
-- For separable verbs, use the full infinitive as lemma (e.g. "kommt...an" → "ankommen")
-- For expressions and proverbs, return an EMPTY annotations array []
-
-Output format:
-- Your ENTIRE response must be a JSON object: {"examples": [{...}, {...}]}
-- Use JSON double quotes " for all strings — not Python-style single quotes '
-- No markdown fences, no function calls, no preamble, no trailing text`;
+// Imported from lib/prompts.js
+const SYSTEM_PROMPT = EXAMPLES_SYSTEM_PROMPT;
 
 function buildUserPrompt(batch, disambig) {
   const lines = [];
