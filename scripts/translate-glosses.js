@@ -11,6 +11,7 @@
  *   node scripts/translate-glosses.js --provider lm-studio   # local LM Studio
  *   node scripts/translate-glosses.js --model gemma3:4b       # custom model (with any provider)
  *   node scripts/translate-glosses.js --dry-run               # preview without API calls
+ *   node scripts/translate-glosses.js --concurrency 5        # run 5 API calls in parallel
  *   node scripts/translate-glosses.js --reset --provider ...        # clear all gloss_en, then re-translate
  *   node scripts/translate-glosses.js --reset-idioms --provider ... # clear gloss_en only for idiom phrases, then re-translate
  *
@@ -21,9 +22,16 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { callLLM, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel } from "./lib/llm.js";
+import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel } from "./lib/llm.js";
 import { stripReferences } from "./lib/references.js";
 import { POS_CONFIG, POS_DIRS } from "./lib/pos.js";
+import {
+  WORD_SYSTEM_PROMPT,
+  WORD_SYSTEM_PROMPT_BATCH,
+  PHRASE_SYSTEM_PROMPT,
+  SYSTEM_PROMPT_FULL,
+  TRANSLATIONS_SCHEMA,
+} from "./lib/prompts.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -34,19 +42,54 @@ const WORDS_DIR = join(ROOT, "data", "words");
 // ============================================================
 
 const args = process.argv.slice(2);
-const DRY_RUN      = args.includes("--dry-run");
-const RESET        = args.includes("--reset");
-const RESET_IDIOMS = args.includes("--reset-idioms");
-const FULL_MODE    = args.includes("--full");
+const DRY_RUN         = args.includes("--dry-run");
+const RESET           = args.includes("--reset");
+const RESET_IDIOMS    = args.includes("--reset-idioms");
+const RESET_GPT_MULTI = args.includes("--reset-gpt-multi");
+const FULL_MODE       = args.includes("--full");
 const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args);
 const MODEL_LABEL = `${PROVIDER}/${MODEL ?? getDefaultModel(PROVIDER)}`;
+
+// How many single-sense words to pack into one API call.
+// Multi-sense words always get their own call.
+const batchSizeIdx = args.indexOf("--batch-size");
+const SINGLE_SENSE_BATCH_SIZE = batchSizeIdx >= 0 ? parseInt(args[batchSizeIdx + 1]) : 20;
+
+// Limit total word-jobs processed (for test runs). 0 = no limit.
+const limitIdx = args.indexOf("--limit");
+const JOB_LIMIT = limitIdx >= 0 ? parseInt(args[limitIdx + 1]) : 0;
+
+// Number of concurrent API calls. Default: 1 (sequential). Use 5–10 for cloud providers.
+const concurrencyIdx = args.indexOf("--concurrency");
+const CONCURRENCY = concurrencyIdx >= 0 ? parseInt(args[concurrencyIdx + 1]) : 1;
+
+/** Run items through fn with at most `concurrency` calls in-flight at once. */
+async function runPool(items, concurrency, fn) {
+  let i = 0;
+  const workers = Array(Math.min(concurrency, items.length)).fill(null).map(async () => {
+    while (i < items.length) {
+      const idx = i++;
+      await fn(items[idx], idx);
+    }
+  });
+  await Promise.all(workers);
+}
 
 // ============================================================
 // Collect untranslated senses from all word files
 // ============================================================
 
-function collectSenses() {
-  const items = []; // { filePath, senseIdx, word, pos, gloss }
+/**
+ * Collect untranslated senses grouped by word file.
+ *
+ * Returns an array of "jobs", one per file that has untranslated senses:
+ *   { filePath, word, pos, phraseType,
+ *     toTranslate: [{ senseIdx, gloss }],   // senses needing translation
+ *     alreadyDone: [{ senseIdx, gloss_en }] // translated senses (context for multi-sense)
+ *   }
+ */
+function collectWordBatches(targetField) {
+  const jobs = [];
 
   for (const posDir of POS_DIRS) {
     const dir = join(WORDS_DIR, posDir);
@@ -57,127 +100,148 @@ function collectSenses() {
       const filePath = join(dir, file);
       const data = JSON.parse(readFileSync(filePath, "utf-8"));
 
+      const toTranslate = [];
+      const alreadyDone = [];
       for (let i = 0; i < (data.senses || []).length; i++) {
-        const sense = data.senses[i];
-        const targetField = FULL_MODE ? "gloss_en_full" : "gloss_en";
-        if (!sense[targetField] && sense.gloss) {
-          items.push({
-            filePath,
-            senseIdx: i,
-            word: data.word,
-            pos: data.pos,
-            phraseType: data.phrase_type || null,
-            gloss: sense.gloss,
-          });
+        const s = data.senses[i];
+        // Skip Wiktionary formatting artifacts: headers like "transitiv, Hilfsverb „haben":"
+        // or section markers like "mit Plural:" / "ohne Plural:" — these end with ":" and
+        // contain no translatable definition content.
+        const isArtifact = s.gloss && s.gloss.trim().endsWith(":");
+        if (!s[targetField] && s.gloss && !isArtifact) {
+          toTranslate.push({ senseIdx: i, gloss: s.gloss });
+        } else if (s[targetField]) {
+          alreadyDone.push({ senseIdx: i, gloss_en: s[targetField] });
         }
+      }
+      if (toTranslate.length > 0) {
+        jobs.push({
+          filePath,
+          word: data.word,
+          pos: data.pos,
+          phraseType: data.phrase_type || null,
+          toTranslate,
+          alreadyDone,
+        });
       }
     }
   }
 
+  return jobs;
+}
+
+// Kept for FULL_MODE (individual calls, no batching needed there).
+function collectSenses(targetField) {
+  const items = [];
+  for (const posDir of POS_DIRS) {
+    const dir = join(WORDS_DIR, posDir);
+    if (!existsSync(dir)) continue;
+    for (const file of readdirSync(dir)) {
+      if (!file.endsWith(".json")) continue;
+      const filePath = join(dir, file);
+      const data = JSON.parse(readFileSync(filePath, "utf-8"));
+      for (let i = 0; i < (data.senses || []).length; i++) {
+        const sense = data.senses[i];
+        if (!sense[targetField] && sense.gloss) {
+          items.push({ filePath, senseIdx: i, word: data.word, pos: data.pos,
+            phraseType: data.phrase_type || null, gloss: sense.gloss, allSenses: data.senses });
+        }
+      }
+    }
+  }
   return items;
 }
 
 // ============================================================
-// System prompts (exported for test harness and compare-models)
+// System prompts — re-exported from lib/prompts.js
+// (All prompt definitions live in lib/prompts.js; import from there directly
+//  for new scripts. These re-exports maintain backward compatibility.)
 // ============================================================
 
-// For nouns, verbs, adjectives, adverbs — no phrase machinery
-export const WORD_SYSTEM_PROMPT = `You are a German-English translator for a bilingual dictionary.
-
-You receive a German entry with its pos (part of speech) and German definition (gloss).
-Reply with ONLY the English equivalent — no explanation, no quotes, no punctuation.
-
-- Give the English EQUIVALENT WORD for this specific sense
-- Use 1-3 words. Single word preferred. Add a parenthetical only to disambiguate
-- Do NOT add articles (a/the) unless essential
-- Examples:
-    word="Tisch", pos="noun", gloss="Möbelstück mit Platte und Beinen" → table
-    word="Tisch", pos="noun", gloss="Mahlzeit" → meal
-    word="Bank", pos="noun", gloss="Sitzgelegenheit für mehrere Personen" → bench
-    word="Bank", pos="noun", gloss="Geldinstitut" → bank
-    word="Bank", pos="noun", gloss="Auswechselbank" → bench (sports)
-    word="laufen", pos="verb", gloss="sich auf den Beinen fortbewegen" → run
-    word="laufen", pos="verb", gloss="dargeboten oder ausgestrahlt werden" → be showing
-
-Reply with ONLY the translation, nothing else`;
-
-// For phrases (idioms, proverbs, collocations, greetings, toponyms)
-export const PHRASE_SYSTEM_PROMPT = `You are a German-English translator for a bilingual dictionary.
-
-You receive a German phrase with its phrase_type and German definition (gloss).
-Reply with ONLY the English equivalent — no explanation, no quotes, no punctuation.
-
-- Use the phrase TEXT (word field) as the primary signal — you know what this German phrase means
-- phrase_type gives a hint when present:
-    phrase_type="idiom"       → find the matching English idiom or set phrase
-                                 ⚠ NEVER translate word-for-word — the German idiom words ≠ English idiom words
-                                 ⚠ NEVER pick an idiom just because it shares a surface word with the German
-                                 ⚠ NEVER output a bare adjective or adverb — always give an idiomatic phrase
-                                 ⚠ If no perfect match exists, use the closest English idiom; as a last resort a concise natural phrase (≤ 6 words)
-    phrase_type="proverb"     → use the standard English proverb equivalent
-    phrase_type="collocation" → give a direct natural translation (no idiom-hunting needed)
-    phrase_type="greeting"    → give the standard English greeting equivalent
-    phrase_type="toponym"     → transliterate or use the established English place name
-
-Idiom translation — avoid these mistakes:
-    word="Bohnen in den Ohren haben" (meaning: to ignore / not listen)
-      ✗ "have beans in one's ears"  ← literal — German idiom words ≠ English idiom words
-      ✓ "turn a deaf ear"
-    word="Blut und Wasser schwitzen" (meaning: to be extremely anxious)
-      ✗ "sweat blood and water"  ← literal
-      ✓ "sweat blood"
-    word="Nägel mit Köpfen machen" (meaning: to do something thoroughly and decisively)
-      ✗ "hit the nail on the head"  ← shares "nail" but wrong meaning
-      ✓ "go the whole hog"
-    word="auf die Nerven gehen" (meaning: to irritate someone)
-      ✗ "annoying"  ← bare adjective, not an idiom
-      ✓ "get on one's nerves"
-    word="aus voller Kehle" (meaning: singing or shouting as loudly as possible)
-      ✗ "loudly"  ← bare adverb, not an idiom
-      ✓ "at the top of one's lungs"
-
-Good idiom translations:
-    word="bis an die Zähne bewaffnet sein", pos="phrase", phrase_type="idiom", gloss="vollständig bewaffnet sein" → armed to the teeth
-    word="aus einer Mücke einen Elefanten machen", pos="phrase", phrase_type="idiom", gloss="etwas übertrieben darstellen" → make a mountain out of a molehill
-    word="Rosinen im Kopf haben", pos="phrase", phrase_type="idiom", gloss="übertriebene Vorstellungen von sich selbst haben" → have ideas above one's station
-    word="aus allen Himmeln fallen", pos="phrase", phrase_type="idiom", gloss="plötzlich enttäuscht werden" → come down to earth with a bump
-    word="wer Wind sät, wird Sturm ernten", pos="phrase", phrase_type="proverb", gloss="wer anderen schadet, muss mit Konsequenzen rechnen" → you reap what you sow
-    word="schwarzer Kaffee", pos="phrase", phrase_type="collocation", gloss="Kaffee ohne Milch" → black coffee
-    word="Grüne Minna", pos="phrase", phrase_type="collocation", gloss="Fahrzeug der Polizei zum Gefangenentransport" → paddy wagon
-    word="wie im Bilderbuch", pos="phrase", phrase_type="idiom", gloss="perfekt, großartig" → picture-perfect
-
-Reply with ONLY the translation, nothing else`;
+export { WORD_SYSTEM_PROMPT, WORD_SYSTEM_PROMPT_BATCH, PHRASE_SYSTEM_PROMPT, SYSTEM_PROMPT_FULL, TRANSLATIONS_SCHEMA } from "./lib/prompts.js";
 
 // Backward-compat alias (used by test-gloss-translation.js and compare-models.js)
-export const SYSTEM_PROMPT = WORD_SYSTEM_PROMPT;
-
-export const SYSTEM_PROMPT_FULL = `You are a German-English translator for a bilingual dictionary.
-
-Translate the German definition (gloss) into natural, fluent English.
-Translate faithfully — only what is written in the source, no added context or assumptions.
-Phrase it as a native English speaker would write a dictionary definition.
-Keep it to 1-2 sentences. Do NOT start with "A word meaning...", "This refers to...", or similar meta-phrases.
-Reply with ONLY the English definition, nothing else.
-
-Examples:
-  word="Tisch", pos="noun", gloss="Möbelstück, das aus einer flachen Platte auf Beinen besteht"
-    → A piece of furniture consisting of a flat surface on legs
-  word="laufen", pos="verb", gloss="sich auf den Beinen fortbewegen"
-    → To move forward on foot
-  word="Hoffnung", pos="noun", gloss="Zuversicht, dass etwas Erwünschtes eintreten wird"
-    → Confidence that something desired will happen
-  word="jemandem den Rücken stärken", pos="phrase", gloss="jemanden in seinem Standpunkt oder Vorhaben unterstützen"
-    → To support someone in their position or plans`;
+export { WORD_SYSTEM_PROMPT as SYSTEM_PROMPT } from "./lib/prompts.js";
 
 // ============================================================
 // Build prompt and parse response (single item)
 // ============================================================
 
-function buildUserPrompt(item) {
+export function buildUserPrompt(item) {
   const cleanGloss = stripReferences(item.gloss);
   const base = `word="${item.word}", pos="${item.pos}"`;
   const typeClause = item.phraseType ? `, phrase_type="${item.phraseType}"` : "";
-  return `${base}${typeClause}, gloss="${cleanGloss}"`;
+  let prompt = `${base}${typeClause}, gloss="${cleanGloss}"`;
+
+  // When a word has multiple senses, show siblings so the model produces distinct labels.
+  // Skip in full-mode (definitions can be longer and context adds less value there).
+  if (!FULL_MODE && item.allSenses && item.allSenses.length > 1) {
+    const siblings = item.allSenses
+      .map((s, idx) => {
+        if (idx === item.senseIdx) return null; // skip current sense
+        const g = stripReferences(s.gloss || "");
+        if (!g) return null;
+        const en = s.gloss_en ? ` → ${s.gloss_en}` : "";
+        return `  ${idx + 1}. ${g}${en}`;
+      })
+      .filter(Boolean)
+      .join("\n");
+    if (siblings) {
+      prompt += `\nOther senses of "${item.word}" (your label MUST be distinct from any → already shown):\n${siblings}`;
+    }
+  }
+
+  return prompt;
+}
+
+/**
+ * Build prompt for a batch of single-sense jobs (different words, 1 sense each).
+ * Returns a numbered list; the model returns { translations: [N strings] }.
+ */
+export function buildSingleSenseBatchPrompt(jobs) {
+  return jobs
+    .map((job, i) => {
+      const g = stripReferences(job.toTranslate[0].gloss);
+      const typeClause = job.phraseType ? `, phrase_type="${job.phraseType}"` : "";
+      return `${i + 1}. word="${job.word}", pos="${job.pos}"${typeClause}, gloss="${g}"`;
+    })
+    .join("\n");
+}
+
+/**
+ * Build prompt for a multi-sense word (one word, all untranslated senses).
+ * Returns a header + numbered glosses + already-translated context.
+ */
+export function buildMultiSensePrompt(job) {
+  const typeClause = job.phraseType ? `, phrase_type="${job.phraseType}"` : "";
+  const header = `word="${job.word}", pos="${job.pos}"${typeClause} — translate all ${job.toTranslate.length} senses, all DISTINCT:`;
+  const lines = job.toTranslate
+    .map((s, i) => `${i + 1}. ${stripReferences(s.gloss)}`)
+    .join("\n");
+  let prompt = `${header}\n${lines}`;
+  if (job.alreadyDone.length > 0) {
+    const ctx = job.alreadyDone.map((s) => `  - "${s.gloss_en}"`).join("\n");
+    prompt += `\n\nAlready translated for this word (your labels MUST be distinct from these):\n${ctx}`;
+  }
+  return prompt;
+}
+
+/**
+ * Parse a batch JSON response and validate the count matches.
+ * Uses extractJSON from llm.js to handle markdown fences / wrapper noise.
+ */
+function parseBatchResponse(content, expectedCount) {
+  const obj = extractJSON(content);
+  const arr = Array.isArray(obj) ? obj : obj.translations;
+  if (!Array.isArray(arr)) throw new Error(`Expected array in response, got: ${JSON.stringify(obj)}`);
+  if (arr.length !== expectedCount) {
+    throw new Error(`Count mismatch: expected ${expectedCount} translations, got ${arr.length}`);
+  }
+  return arr.map((t) => {
+    let s = String(t).trim();
+    if (s.endsWith(".")) s = s.slice(0, -1).trim();
+    return s;
+  });
 }
 
 function parseResponse(content) {
@@ -222,26 +286,69 @@ function writeTranslation(item, translation) {
 }
 
 // ============================================================
+// Write helpers
+// ============================================================
+
+/** Write all translations from a word-batch job back to disk (single file read+write). */
+function writeWordTranslations(job, targetField, translations) {
+  const data = JSON.parse(readFileSync(job.filePath, "utf-8"));
+  for (let i = 0; i < job.toTranslate.length; i++) {
+    const { senseIdx } = job.toTranslate[i];
+    if (data.senses[senseIdx]) {
+      data.senses[senseIdx][targetField] = translations[i];
+      data.senses[senseIdx][targetField + "_model"] = MODEL_LABEL;
+    }
+  }
+  writeFileSync(job.filePath, JSON.stringify(data, null, 2) + "\n");
+}
+
+function printSummary(translated, errors, startAll, totalInputTokens, totalOutputTokens) {
+  const totalTime = ((Date.now() - startAll) / 1000).toFixed(1);
+  console.log(
+    `\nDone. Translated ${translated} senses in ${totalTime}s.${errors > 0 ? ` ${errors} failed.` : ""}`,
+  );
+  console.log(`Tokens: ${totalInputTokens} input + ${totalOutputTokens} output.`);
+  if (!isLocalProvider(PROVIDER)) {
+    const costEstimate =
+      PROVIDER === "anthropic"
+        ? (totalInputTokens * 0.8 + totalOutputTokens * 4.0) / 1_000_000
+        : (totalInputTokens * 0.15 + totalOutputTokens * 0.6) / 1_000_000;
+    console.log(`Estimated cost: $${costEstimate.toFixed(4)}`);
+  }
+}
+
+// ============================================================
 // Main
 // ============================================================
 
 async function main() {
-  // Check API key (not needed for local providers)
-  if (!isLocalProvider(PROVIDER) && !DRY_RUN) {
-    const apiKey = getApiKey(PROVIDER);
-    if (!apiKey) {
-      const keyName = PROVIDER === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
-      console.log(
-        `No ${keyName} found. Skipping gloss translation. Set the env var to enable, or use --provider ollama for local.`,
-      );
-      process.exit(0);
-    }
-  }
-
   const targetField = FULL_MODE ? "gloss_en_full" : "gloss_en";
-  function pickPrompt(pos) {
-    if (FULL_MODE) return SYSTEM_PROMPT_FULL;
-    return pos === "phrase" ? PHRASE_SYSTEM_PROMPT : WORD_SYSTEM_PROMPT;
+
+  // Reset gpt-4.1-mini translations on multi-sense words so they get re-translated
+  // with sibling context (--reset-gpt-multi)
+  if (RESET_GPT_MULTI && !DRY_RUN) {
+    let resetCount = 0;
+    for (const posDir of POS_DIRS) {
+      const dir = join(WORDS_DIR, posDir);
+      if (!existsSync(dir)) continue;
+      for (const file of readdirSync(dir)) {
+        if (!file.endsWith(".json")) continue;
+        const filePath = join(dir, file);
+        const data = JSON.parse(readFileSync(filePath, "utf-8"));
+        if ((data.senses || []).length <= 1) continue; // single-sense words: leave as-is
+        let changed = false;
+        for (const sense of data.senses) {
+          if (sense.gloss_en_model === "openai/gpt-4.1-mini") {
+            sense.gloss_en = null;
+            sense.gloss_en_model = null;
+            resetCount++;
+            changed = true;
+          }
+        }
+        if (changed) writeFileSync(filePath, JSON.stringify(data, null, 2) + "\n");
+      }
+    }
+    console.log(`Reset ${resetCount} gpt-4.1-mini gloss_en fields on multi-sense words.`);
   }
 
   // Reset the target field if requested (skipped in dry-run mode)
@@ -267,91 +374,210 @@ async function main() {
     console.log(`Reset ${resetCount} ${scope} ${targetField} fields to null.`);
   }
 
-  // Collect untranslated senses
-  const items = collectSenses();
+  // Check API key now (after resets, so reset-only runs don't need a key)
+  if (!isLocalProvider(PROVIDER) && !DRY_RUN) {
+    const apiKey = getApiKey(PROVIDER);
+    if (!apiKey) {
+      const keyName = PROVIDER === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
+      console.log(
+        `No ${keyName} found. Skipping gloss translation. Set the env var to enable, or use --provider ollama for local.`,
+      );
+      process.exit(0);
+    }
+  }
 
-  if (items.length === 0) {
+  // ── FULL_MODE: one call per sense (longer definitions, no batching needed) ──
+  if (FULL_MODE) {
+    const items = collectSenses(targetField);
+    if (items.length === 0) {
+      console.log(`All ${targetField} fields already translated. Nothing to do.`);
+      return;
+    }
+    const fileCount = new Set(items.map((i) => i.filePath)).size;
+    console.log(`Translating ${items.length} ${targetField} fields across ${fileCount} word files.`);
+    console.log(`Provider: ${PROVIDER}, mode: full definition`);
+
+    if (DRY_RUN) {
+      console.log("\nDry run: would send %d API calls.", items.length);
+      console.log("\nSample prompt:");
+      console.log("  System: " + SYSTEM_PROMPT_FULL.split("\n")[0] + "...");
+      console.log("  User:   " + buildUserPrompt(items[0]));
+      return;
+    }
+
+    let translated = 0, totalInputTokens = 0, totalOutputTokens = 0, errors = 0;
+    const startAll = Date.now();
+    const llmOptions = { provider: PROVIDER, model: MODEL, maxTokens: 256, temperature: 0.2 };
+
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      const sysPrompt = item.pos === "phrase" ? PHRASE_SYSTEM_PROMPT : SYSTEM_PROMPT_FULL;
+      const userPrompt = buildUserPrompt(item);
+      try {
+        const response = await retryWithBackoff(
+          () => callLLM(sysPrompt, userPrompt, llmOptions), 3, 1000,
+        );
+        totalInputTokens += response.input_tokens;
+        totalOutputTokens += response.output_tokens;
+        const translation = parseResponse(response.content);
+        writeTranslation(item, translation);
+        translated++;
+        if (i === 0 || (i + 1) % 10 === 0 || i === items.length - 1) {
+          const elapsed = ((Date.now() - startAll) / 1000).toFixed(0);
+          process.stdout.write(`  [${i + 1}/${items.length}] ${item.word}: "${translation}" (${elapsed}s)\n`);
+        }
+      } catch (err) {
+        console.error(`  [${i + 1}/${items.length}] FAILED: ${item.word} — ${err.message}`);
+        errors++;
+      }
+      if (i < items.length - 1) await new Promise((r) => setTimeout(r, 50));
+    }
+    printSummary(translated, errors, startAll, totalInputTokens, totalOutputTokens);
+    return;
+  }
+
+  // ── SHORT LABEL MODE: batch single-sense words; one call per multi-sense word ──
+  const allJobs = collectWordBatches(targetField);
+  if (allJobs.length === 0) {
     console.log(`All ${targetField} fields already translated. Nothing to do.`);
     return;
   }
 
-  const fileCount = new Set(items.map((i) => i.filePath)).size;
-  console.log(`Translating ${items.length} ${targetField} fields across ${fileCount} word files.`);
-  console.log(`Provider: ${PROVIDER}, mode: ${FULL_MODE ? "full definition" : "short label"}`);
+  // Apply job limit if set (--limit N limits total word-files processed).
+  const limitedJobs = JOB_LIMIT > 0 ? allJobs.slice(0, JOB_LIMIT) : allJobs;
+
+  // Phrases get individual calls with PHRASE_SYSTEM_PROMPT (idiom-aware prompt).
+  // Single-sense words are packed N-per-call (safe: N inputs → N outputs, independent).
+  // Multi-sense words get one call each so all senses are translated distinctly together.
+  const phraseJobs = limitedJobs.filter((j) => j.pos === "phrase");
+  const singleJobs = limitedJobs.filter((j) => j.pos !== "phrase" && j.toTranslate.length === 1);
+  const multiJobs  = limitedJobs.filter((j) => j.pos !== "phrase" && j.toTranslate.length > 1);
+
+  const singleBatches = [];
+  for (let i = 0; i < singleJobs.length; i += SINGLE_SENSE_BATCH_SIZE) {
+    singleBatches.push(singleJobs.slice(i, i + SINGLE_SENSE_BATCH_SIZE));
+  }
+
+  const totalSenses = allJobs.reduce((s, j) => s + j.toTranslate.length, 0);
+  const totalCalls  = phraseJobs.length + singleBatches.length + multiJobs.length;
+
+  console.log(`Translating ${totalSenses} ${targetField} senses across ${allJobs.length} word files.`);
+  console.log(`  Phrases:      ${phraseJobs.length} individual calls`);
+  console.log(`  Single-sense: ${singleJobs.length} words → ${singleBatches.length} batches (size ${SINGLE_SENSE_BATCH_SIZE})`);
+  console.log(`  Multi-sense:  ${multiJobs.length} words → ${multiJobs.length} calls`);
+  console.log(`  Total API calls: ${totalCalls}`);
+  console.log(`Provider: ${PROVIDER}, mode: short label, concurrency: ${CONCURRENCY}`);
 
   if (DRY_RUN) {
-    console.log("\nDry run: would send %d API calls.", items.length);
-    console.log("\nSample prompt:");
-    console.log("  System: " + pickPrompt(items[0].pos).split("\n")[0] + "...");
-    console.log("  User:   " + buildUserPrompt(items[0]));
+    console.log("\nDry run: would send %d API calls.", totalCalls);
+    if (singleBatches.length > 0) {
+      console.log("\nSample single-sense batch prompt (first batch):");
+      console.log("  System: " + WORD_SYSTEM_PROMPT_BATCH.split("\n")[0] + "...");
+      console.log("  User:\n" + buildSingleSenseBatchPrompt(singleBatches[0]));
+    }
+    if (multiJobs.length > 0) {
+      console.log("\nSample multi-sense prompt (first multi-sense word):");
+      console.log("  System: " + WORD_SYSTEM_PROMPT_BATCH.split("\n")[0] + "...");
+      console.log("  User:\n" + buildMultiSensePrompt(multiJobs[0]));
+    }
     return;
   }
 
-  let translated = 0;
-  let totalInputTokens = 0;
-  let totalOutputTokens = 0;
-  let errors = 0;
+  let translated = 0, totalInputTokens = 0, totalOutputTokens = 0, errors = 0;
+  let callsDone = 0;
   const startAll = Date.now();
-  // Full definitions can be 1-2 sentences; short labels are 1-3 words
-  const llmOptions = { provider: PROVIDER, model: MODEL, maxTokens: FULL_MODE ? 256 : 128, temperature: 0.2 };
 
-  for (let i = 0; i < items.length; i++) {
-    const item = items[i];
-    const userPrompt = buildUserPrompt(item);
+  // Individual-call options (phrases)
+  const llmOptions = { provider: PROVIDER, model: MODEL, maxTokens: 128, temperature: 0.2 };
+  // Batch call options: enforce structured output via JSON schema (OpenAI) or tool use (Anthropic).
+  const batchOptions = {
+    provider: PROVIDER, model: MODEL, temperature: 0.2,
+    jsonSchema: TRANSLATIONS_SCHEMA,
+  };
 
+  // ── 1. Phrases (individual, PHRASE_SYSTEM_PROMPT) ────────────────────────
+  await runPool(phraseJobs, CONCURRENCY, async (job) => {
+    const sense = job.toTranslate[0];
+    const item = {
+      filePath: job.filePath, senseIdx: sense.senseIdx,
+      word: job.word, pos: job.pos, phraseType: job.phraseType,
+      gloss: sense.gloss, allSenses: [],
+    };
     try {
       const response = await retryWithBackoff(
-        () => callLLM(pickPrompt(item.pos), userPrompt, llmOptions),
-        3, 1000,
+        () => callLLM(PHRASE_SYSTEM_PROMPT, buildUserPrompt(item), llmOptions), 3, 1000,
       );
       totalInputTokens += response.input_tokens;
       totalOutputTokens += response.output_tokens;
-
       const translation = parseResponse(response.content);
       writeTranslation(item, translation);
       translated++;
+      callsDone++;
+      if (callsDone % 50 === 0 || callsDone === totalCalls) {
+        const elapsed = ((Date.now() - startAll) / 1000).toFixed(0);
+        process.stdout.write(`  [${callsDone}/${totalCalls}] phrase "${job.word}": "${translation}" (${elapsed}s)\n`);
+      }
+    } catch (err) {
+      console.error(`  FAILED phrase "${job.word}": ${err.message}`);
+      errors++; callsDone++;
+    }
+  });
 
-      // Progress: print every 10 items or on first/last
-      if (i === 0 || (i + 1) % 10 === 0 || i === items.length - 1) {
+  // ── 2. Single-sense batches (WORD_SYSTEM_PROMPT_BATCH + JSON schema) ─────
+  await runPool(singleBatches, CONCURRENCY, async (batch, bi) => {
+    const userPrompt = buildSingleSenseBatchPrompt(batch);
+    try {
+      const response = await retryWithBackoff(
+        () => callLLM(WORD_SYSTEM_PROMPT_BATCH, userPrompt, {
+          ...batchOptions, maxTokens: batch.length * 20 + 30,
+        }), 3, 1000,
+      );
+      totalInputTokens += response.input_tokens;
+      totalOutputTokens += response.output_tokens;
+      const translations = parseBatchResponse(response.content, batch.length);
+      for (let j = 0; j < batch.length; j++) {
+        writeWordTranslations(batch[j], targetField, [translations[j]]);
+        translated++;
+      }
+      callsDone++;
+      if (callsDone % 10 === 0 || bi === singleBatches.length - 1) {
+        const elapsed = ((Date.now() - startAll) / 1000).toFixed(0);
+        process.stdout.write(`  [${callsDone}/${totalCalls}] batch ${bi + 1}/${singleBatches.length}: ${batch.length} words (${elapsed}s)\n`);
+      }
+    } catch (err) {
+      console.error(`  FAILED batch ${bi + 1}: ${err.message}`);
+      errors += batch.length; callsDone++;
+    }
+  });
+
+  // ── 3. Multi-sense words (one call per word, all senses distinct) ─────────
+  await runPool(multiJobs, CONCURRENCY, async (job, i) => {
+    const userPrompt = buildMultiSensePrompt(job);
+    try {
+      const response = await retryWithBackoff(
+        () => callLLM(WORD_SYSTEM_PROMPT_BATCH, userPrompt, {
+          ...batchOptions, maxTokens: job.toTranslate.length * 30 + 50,
+        }), 3, 1000,
+      );
+      totalInputTokens += response.input_tokens;
+      totalOutputTokens += response.output_tokens;
+      const translations = parseBatchResponse(response.content, job.toTranslate.length);
+      writeWordTranslations(job, targetField, translations);
+      translated += job.toTranslate.length;
+      callsDone++;
+      if (callsDone % 10 === 0 || i === multiJobs.length - 1) {
         const elapsed = ((Date.now() - startAll) / 1000).toFixed(0);
         process.stdout.write(
-          `  [${i + 1}/${items.length}] ${item.word}: "${translation}" (${elapsed}s)\n`,
+          `  [${callsDone}/${totalCalls}] "${job.word}" (${job.toTranslate.length}): [${translations.join(" | ")}] (${elapsed}s)\n`,
         );
       }
     } catch (err) {
-      console.error(`  [${i + 1}/${items.length}] FAILED: ${item.word} — ${err.message}`);
-      errors++;
+      console.error(`  FAILED "${job.word}": ${err.message}`);
+      errors += job.toTranslate.length; callsDone++;
     }
+  });
 
-    // Small delay between calls for local models (avoid hammering)
-    if (i < items.length - 1) {
-      await new Promise((r) => setTimeout(r, 50));
-    }
-  }
-
-  const totalTime = ((Date.now() - startAll) / 1000).toFixed(1);
-  console.log(
-    `\nDone. Translated ${translated} glosses in ${totalTime}s.${errors > 0 ? ` ${errors} failed.` : ""}`,
-  );
-  console.log(
-    `Tokens: ${totalInputTokens} input + ${totalOutputTokens} output.`,
-  );
-
-  // Cost estimate (not applicable for local models)
-  if (!isLocalProvider(PROVIDER)) {
-    let costEstimate;
-    if (PROVIDER === "openai") {
-      costEstimate =
-        (totalInputTokens * 0.15) / 1_000_000 +
-        (totalOutputTokens * 0.6) / 1_000_000;
-    } else {
-      costEstimate =
-        (totalInputTokens * 0.8) / 1_000_000 +
-        (totalOutputTokens * 4.0) / 1_000_000;
-    }
-    console.log(`Estimated cost: $${costEstimate.toFixed(4)}`);
-  }
-
+  printSummary(translated, errors, startAll, totalInputTokens, totalOutputTokens);
 }
 
 // Only run when executed directly (not when imported by test harness)
