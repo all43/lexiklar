@@ -1,12 +1,18 @@
 <template>
   <f7-page name="favorites">
-    <f7-navbar title="Favorites" />
+    <f7-navbar :title="t('favorites.title')" />
     <f7-block>
-      <p>Saved words will appear here.</p>
+      <p>{{ t('favorites.empty') }}</p>
     </f7-block>
   </f7-page>
 </template>
 
 <script>
-export default {};
+import { t } from "../js/i18n.js";
+
+export default {
+  computed: {
+    t() { return t; },
+  },
+};
 </script>

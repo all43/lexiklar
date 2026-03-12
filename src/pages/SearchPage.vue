@@ -5,7 +5,7 @@
         <f7-searchbar
           custom-search
           :disable-button="false"
-          placeholder="Wort oder Bedeutung suchen..."
+          :placeholder="t('search.placeholder')"
           @searchbar:search="onSearch"
           @searchbar:clear="onClear"
         />
@@ -41,7 +41,7 @@
       </f7-list>
 
       <f7-block v-else-if="!loading">
-        <p>No words found.</p>
+        <p>{{ t('search.noResults') }}</p>
       </f7-block>
     </template>
 
@@ -49,7 +49,7 @@
     <template v-else-if="!loading">
       <!-- Frequently Viewed -->
       <template v-if="freqWords.length">
-        <f7-block-title>Frequently Viewed</f7-block-title>
+        <f7-block-title>{{ t('search.frequentlyViewed') }}</f7-block-title>
         <f7-list class="home-list" media-list>
           <f7-list-item
             v-for="item in freqWords"
@@ -69,7 +69,7 @@
 
       <!-- Recently Visited (excludes items already in Frequently Viewed) -->
       <template v-if="recentWords.length">
-        <f7-block-title>Recently Visited</f7-block-title>
+        <f7-block-title>{{ t('search.recentlyVisited') }}</f7-block-title>
         <f7-list class="home-list" media-list>
           <f7-list-item
             v-for="item in recentWords"
@@ -89,7 +89,7 @@
 
       <!-- Empty state -->
       <f7-block v-if="!freqWords.length && !recentWords.length">
-        <p style="color: var(--f7-list-item-footer-text-color);">Start typing to search for a German word or English meaning.</p>
+        <p style="color: var(--f7-list-item-footer-text-color);">{{ t('search.emptyHint') }}</p>
       </f7-block>
     </template>
 
@@ -101,6 +101,7 @@
 
 <script>
 import { theme } from "framework7-vue";
+import { t } from "../js/i18n.js";
 import {
   searchByLemma,
   searchByGlossEn,
@@ -131,6 +132,7 @@ export default {
   },
 
   computed: {
+    t() { return t; },
     vlItems() {
       return this.results.map((item, i) => ({ ...item, index: i }));
     },

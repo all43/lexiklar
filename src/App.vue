@@ -4,9 +4,9 @@
     <f7-views tabs>
       <!-- Tabbar at the bottom -->
       <f7-toolbar tabbar icons bottom>
-        <f7-link tab-link="#tab-search" tab-link-active icon-f7="search" text="Search" />
-        <f7-link tab-link="#tab-favorites" icon-f7="star" text="Favorites" />
-        <f7-link tab-link="#tab-settings" icon-f7="gear" text="Settings" />
+        <f7-link tab-link="#tab-search" tab-link-active icon-f7="search" :text="t('tab.search')" />
+        <f7-link tab-link="#tab-favorites" icon-f7="star" :text="t('tab.favorites')" />
+        <f7-link tab-link="#tab-settings" icon-f7="gear" :text="t('tab.settings')" />
       </f7-toolbar>
 
       <!-- Tab views — each has its own navigation stack -->
@@ -21,6 +21,7 @@
 <script>
 import routes from "./js/routes.js";
 import { initTheme } from "./js/theme.js";
+import { t } from "./js/i18n.js";
 
 export default {
   data() {
@@ -31,6 +32,9 @@ export default {
         routes,
       },
     };
+  },
+  computed: {
+    t() { return t; },
   },
   mounted() {
     initTheme();

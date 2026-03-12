@@ -1,12 +1,12 @@
 <template>
   <f7-page name="word">
-    <f7-navbar :title="word ? (word.plural_dominant ? word.plural_form : word.word) : 'Loading...'" back-link="Back">
+    <f7-navbar :title="word ? (word.plural_dominant ? word.plural_form : word.word) : t('word.loading')" back-link>
       <f7-nav-right>
         <f7-link
           v-if="word && isInHistory"
           icon-f7="clock_badge_xmark"
           icon-size="20"
-          tooltip="Remove from history"
+          :tooltip="t('word.removeHistory')"
           @click="removeFromHistory"
         />
       </f7-nav-right>
@@ -25,7 +25,7 @@
           {{ word.plural_dominant ? word.plural_form : word.word }}
         </h1>
         <p v-if="word.plural_dominant" style="margin: 2px 0 0; font-size: 0.85em; color: var(--f7-list-item-footer-text-color);">
-          singular:
+          {{ t('word.singular') }}
           <span :class="`gender-${word.gender?.toLowerCase()}`">{{ word.article }}</span>
           {{ word.word }}
         </p>
@@ -39,7 +39,7 @@
       </f7-block>
 
       <!-- Senses -->
-      <f7-block-title>Meanings</f7-block-title>
+      <f7-block-title>{{ t('word.meanings') }}</f7-block-title>
       <f7-list>
         <template v-for="(sense, idx) in word.senses" :key="idx">
           <li :id="`sense-${idx + 1}`" class="sense-item">
@@ -98,7 +98,7 @@
 
       <!-- Synonyms & Antonyms -->
       <template v-if="word._synonyms?.length || word._antonyms?.length">
-        <f7-block-title>Synonyms &amp; Antonyms</f7-block-title>
+        <f7-block-title>{{ t('word.synonymsAntonyms') }}</f7-block-title>
         <f7-block class="syn-ant-block">
           <div v-if="word._synonyms?.length" class="syn-ant-row">
             <span class="syn-ant-label">≈</span>
@@ -130,7 +130,7 @@
 
       <!-- Expressions & Proverbs -->
       <template v-if="wordExpressions.length">
-        <f7-block-title>Expressions</f7-block-title>
+        <f7-block-title>{{ t('word.expressions') }}</f7-block-title>
         <f7-list>
           <li
             v-for="expr in wordExpressions"
@@ -147,7 +147,7 @@
                       v-if="expr.type === 'proverb'"
                       color="gray"
                       class="expression-badge"
-                    >proverb</f7-badge>
+                    >{{ t('word.proverb') }}</f7-badge>
                   </div>
                 </div>
                 <div v-if="expr.translation || expr.note" class="item-footer expression-sub">
@@ -161,7 +161,7 @@
 
       <!-- Related Words -->
       <template v-if="relatedGroups.length">
-        <f7-block-title>Related Words</f7-block-title>
+        <f7-block-title>{{ t('word.relatedWords') }}</f7-block-title>
         <f7-list>
           <template v-for="group in relatedGroups" :key="group.type">
             <f7-list-item group-title :title="group.label" />
@@ -178,23 +178,23 @@
 
       <!-- Grammar -->
       <template v-if="word.pos === 'verb'">
-        <f7-block-title>Conjugation</f7-block-title>
+        <f7-block-title>{{ t('word.conjugation') }}</f7-block-title>
         <VerbConjugation :verb="word" />
       </template>
       <template v-else-if="word.pos === 'noun' || word.pos === 'proper noun'">
-        <f7-block-title>Declension</f7-block-title>
+        <f7-block-title>{{ t('word.declension') }}</f7-block-title>
         <NounDeclension :word="word" />
       </template>
       <template v-else>
-        <f7-block-title>Grammar</f7-block-title>
+        <f7-block-title>{{ t('word.grammar') }}</f7-block-title>
         <f7-block>
-          <p><em>Grammar tables coming soon.</em></p>
+          <p><em>{{ t('word.grammarSoon') }}</em></p>
         </f7-block>
       </template>
     </template>
 
     <f7-block v-else>
-      <p>Word not found.</p>
+      <p>{{ t('word.notFound') }}</p>
     </f7-block>
 
     <!-- Word preview sheet — slides up on cross-entry ref tap -->
@@ -225,7 +225,7 @@
           {{ preview.senseGlossEn }}
         </div>
         <f7-button fill large class="word-preview-btn" @click="navigateToPreview">
-          Open word card
+          {{ t('word.openCard') }}
         </f7-button>
       </div>
     </f7-sheet>
@@ -238,6 +238,7 @@ import VerbConjugation from "../components/VerbConjugation.vue";
 import NounDeclension from "../components/NounDeclension.vue";
 import { getWord, getExamples, getRelatedWords, searchByLemma } from "../utils/db.js";
 import { f7 } from "framework7-vue/bundle";
+import { t } from "../js/i18n.js";
 
 export default {
   components: { GlossText, VerbConjugation, NounDeclension },
@@ -256,6 +257,7 @@ export default {
     };
   },
   computed: {
+    t() { return t; },
     isInHistory() {
       return this.inHistory;
     },
@@ -269,15 +271,15 @@ export default {
       if (!this.word?.related || !this.relatedWords.length) return [];
 
       const typeLabels = {
-        feminine_form: "Feminine Form",
-        masculine_form: "Masculine Form",
-        antonym: "Antonyms",
-        synonym: "Synonyms",
-        same_stem: "Same Stem",
-        derived: "Derived Words",
-        derived_from: "Derived From",
-        compound: "Compound Verbs",
-        base_verb: "Base Verb",
+        feminine_form: t("related.feminineForm"),
+        masculine_form: t("related.masculineForm"),
+        antonym: t("related.antonyms"),
+        synonym: t("related.synonyms"),
+        same_stem: t("related.sameStem"),
+        derived: t("related.derived"),
+        derived_from: t("related.derivedFrom"),
+        compound: t("related.compoundVerbs"),
+        base_verb: t("related.baseVerb"),
       };
       const typeOrder = ["feminine_form", "masculine_form", "antonym", "synonym", "same_stem", "derived_from", "derived", "base_verb", "compound"];
 

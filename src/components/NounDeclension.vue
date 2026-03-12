@@ -2,16 +2,16 @@
   <div class="noun-declension">
     <!-- Pluraletantum hint -->
     <div v-if="word.is_plural_only" class="noun-rule-hint">
-      <span class="noun-rule-match">Pluraletantum — always used in plural</span>
+      <span class="noun-rule-match">{{ t('noun.pluraletantum') }}</span>
     </div>
 
     <!-- Gender rule hint -->
     <div v-else-if="word.gender_rule || word.is_singular_only || word.plural_dominant || isNDeclension" class="noun-rule-hints">
       <div v-if="isNDeclension" class="noun-rule-hint">
-        <span class="noun-rule-match">N-Deklination — adds -(e)n to all cases except nominative</span>
+        <span class="noun-rule-match">{{ t('noun.nDeklination') }}</span>
       </div>
       <div v-if="word.plural_dominant" class="noun-rule-hint">
-        <span class="noun-rule-match">Usually used in plural</span>
+        <span class="noun-rule-match">{{ t('noun.usuallyPlural') }}</span>
       </div>
       <div v-if="word.gender_rule" class="noun-rule-hint">
         <span :class="word.gender_rule.is_exception ? 'noun-rule-exception' : 'noun-rule-match'">
@@ -19,7 +19,7 @@
         </span>
       </div>
       <div v-if="word.is_singular_only" class="noun-rule-hint">
-        <span class="noun-rule-match">Singularetantum — usually no plural</span>
+        <span class="noun-rule-match">{{ t('noun.singularetantum') }}</span>
       </div>
     </div>
 
@@ -28,8 +28,8 @@
       <thead>
         <tr>
           <th class="decl-case-header"></th>
-          <th v-if="hasSingular" class="decl-num-header" :class="{ 'decl-num-header--dim': word.is_plural_only }">Singular</th>
-          <th class="decl-num-header" :class="{ 'decl-num-header--dim': word.is_singular_only }">Plural</th>
+          <th v-if="hasSingular" class="decl-num-header" :class="{ 'decl-num-header--dim': word.is_plural_only }">{{ t('noun.singular') }}</th>
+          <th class="decl-num-header" :class="{ 'decl-num-header--dim': word.is_singular_only }">{{ t('noun.plural') }}</th>
         </tr>
       </thead>
       <tbody>
@@ -51,6 +51,8 @@
 </template>
 
 <script>
+import { t } from "../js/i18n.js";
+
 const SINGULAR_ARTICLES = {
   M: { nom: "der", acc: "den", dat: "dem", gen: "des" },
   F: { nom: "die", acc: "die", dat: "der", gen: "der" },
@@ -91,6 +93,7 @@ export default {
     word: { type: Object, required: true },
   },
   computed: {
+    t() { return t; },
     genderClass() {
       return (this.word.gender || "").toLowerCase();
     },
@@ -126,7 +129,7 @@ export default {
       const rule = this.word.gender_rule;
       if (!rule) return "";
       const desc = RULE_DESCRIPTIONS[rule.rule_id] || rule.rule_id;
-      return rule.is_exception ? `Exception: ${desc}` : desc;
+      return rule.is_exception ? `${t("noun.exception")}${desc}` : desc;
     },
   },
 };
