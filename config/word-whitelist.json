@@ -12,6 +12,9 @@
     { "word": "Erkältungsmittel", "domain": "health", "reason": "not in top 50k subtitles" },
     { "word": "Erste-Hilfe-Kasten", "domain": "health", "reason": "subtitle rank 34603" },
     { "word": "Notfallnummer", "domain": "health", "reason": "not found in corpora" },
+    { "word": "Versichertenkarte", "domain": "health", "reason": "not found in corpora — health insurance card essential for Germany/Austria" },
+    { "word": "Tablette", "domain": "health", "reason": "Zipf 2.91 — medicine noun, appears singular less than plural Tabletten" },
+    { "word": "Salbe", "domain": "health", "reason": "Zipf 2.83 — ointment/cream, B1 pharmacy vocabulary" },
 
     { "word": "Nebenkosten", "domain": "housing", "reason": "subtitle rank 40979" },
     { "word": "Betriebskosten", "domain": "housing", "reason": "Leipzig 13549, above subtitle cutoff" },
@@ -34,6 +37,14 @@
     { "word": "Sozialversicherung", "domain": "work", "reason": "subtitle rank 34961" },
     { "word": "Betriebsrat", "domain": "work", "reason": "subtitle rank 47363" },
     { "word": "Urlaubsantrag", "domain": "work", "reason": "not in top 50k subtitles" },
+    { "word": "Azubi", "domain": "work", "reason": "Zipf 2.51 — abbreviation for Auszubildende(r), ubiquitous in German working life" },
+    { "word": "Überstunde", "domain": "work", "reason": "Zipf 2.41 — usually appears as plural Überstunden; singular underrepresented" },
+    { "word": "Teilzeit", "domain": "work", "reason": "Zipf 3.06 — essential work contract vocabulary" },
+    { "word": "Vollzeit", "domain": "work", "reason": "Zipf 3.06 — essential work contract vocabulary" },
+    { "word": "Aushilfe", "domain": "work", "reason": "Zipf 2.87 — temporary/casual worker, very common in job ads" },
+    { "word": "Stellengesuch", "domain": "work", "reason": "not found in corpora — job-wanted ad, standard B1 vocabulary" },
+    { "word": "Tagungsraum", "domain": "work", "reason": "not found in corpora — meeting/conference room" },
+    { "word": "Verlaufsprotokoll", "domain": "work", "reason": "not found in corpora — meeting minutes, B2 work vocabulary" },
 
     { "word": "Rasierapparat", "domain": "household", "reason": "not found in corpora" },
     { "word": "Wäscheklammer", "domain": "household", "reason": "not found in corpora" },
@@ -46,6 +57,8 @@
     { "word": "Frischhaltefolie", "domain": "household", "reason": "not in top 50k subtitles" },
     { "word": "Spülbecken", "domain": "household", "reason": "subtitle rank 41397" },
     { "word": "Steckdose", "domain": "household", "reason": "subtitle rank 28129" },
+    { "word": "Abfalleimer", "domain": "household", "reason": "Zipf 2.63 — trash bin, essential household word" },
+    { "word": "Streichholz", "domain": "household", "reason": "Zipf 2.98 — match (fire), B1 household vocabulary" },
 
     { "word": "Reifenwechsel", "domain": "transport", "reason": "not found in corpora" },
     { "word": "Abschleppdienst", "domain": "transport", "reason": "subtitle rank 44570" },
@@ -54,6 +67,9 @@
     { "word": "Jahreskarte", "domain": "transport", "reason": "Leipzig 48390" },
     { "word": "Fahrtkosten", "domain": "transport", "reason": "Leipzig 47499" },
     { "word": "Parkverbot", "domain": "transport", "reason": "subtitle rank 39511" },
+    { "word": "Fahrkarte", "domain": "transport", "reason": "Zipf 3.17 — ticket (train/bus), essential B1 transport word" },
+    { "word": "Umleitung", "domain": "transport", "reason": "Zipf 3.12 — detour/diversion, standard road sign vocabulary" },
+    { "word": "Einbahnstraße", "domain": "transport", "reason": "Zipf 3.15 — one-way street, standard road sign vocabulary" },
 
     { "word": "Mülltrennung", "domain": "environment", "reason": "not in top 50k subtitles" },
     { "word": "Wertstoffhof", "domain": "environment", "reason": "subtitle rank 44192" },
@@ -67,6 +83,8 @@
     { "word": "Dauerauftrag", "domain": "finance", "reason": "not found in corpora" },
     { "word": "Steuerklasse", "domain": "finance", "reason": "Leipzig 38509" },
     { "word": "Bankleitzahl", "domain": "finance", "reason": "not found in corpora" },
+    { "word": "Überweisung", "domain": "finance", "reason": "Zipf 3.19 — bank transfer, essential B1 banking word" },
+    { "word": "Geldautomat", "domain": "finance", "reason": "Zipf 2.65 — ATM, essential everyday vocabulary" },
 
     { "word": "Kassenzettel", "domain": "shopping", "reason": "not found in corpora" },
     { "word": "Kassenbon", "domain": "shopping", "reason": "not in top 50k subtitles" },
@@ -74,21 +92,123 @@
     { "word": "Reklamation", "domain": "shopping", "reason": "not found in corpora" },
     { "word": "Rückgabe", "domain": "shopping", "reason": "subtitle rank 28156" },
     { "word": "Umtausch", "domain": "shopping", "reason": "Leipzig 51015" },
+    { "word": "Mehrwertsteuer", "domain": "shopping", "reason": "Zipf 3.00 — VAT, appears on every German receipt" },
+    { "word": "Ermäßigung", "domain": "shopping", "reason": "Zipf 2.72 — discount/reduction, essential shopping vocabulary" },
 
     { "word": "Vollkornbrot", "domain": "food", "reason": "not in top 50k subtitles" },
     { "word": "Aufschnitt", "domain": "food", "reason": "subtitle rank 43805" },
     { "word": "Tiefkühlkost", "domain": "food", "reason": "not in top 50k subtitles" },
     { "word": "Haltbarkeitsdatum", "domain": "food", "reason": "not in top 50k subtitles" },
     { "word": "Mindesthaltbarkeitsdatum", "domain": "food", "reason": "Leipzig 42734" },
+    { "word": "Möhre", "domain": "food", "reason": "Zipf 2.75 — carrot (standard German), basic vegetable" },
+    { "word": "Nudel", "domain": "food", "reason": "Zipf 2.81 — pasta/noodle, usually plural Nudeln — singular underrepresented" },
+    { "word": "Bohne", "domain": "food", "reason": "Zipf 2.86 — bean, basic vegetable vocabulary" },
+    { "word": "Zwiebel", "domain": "food", "reason": "Zipf 3.06 — onion, core cooking vocabulary" },
+    { "word": "Schnitzel", "domain": "food", "reason": "Zipf 3.04 — schnitzel, iconic German/Austrian dish" },
+    { "word": "Hähnchen", "domain": "food", "reason": "Zipf 3.14 — chicken (meat), standard menu vocabulary" },
+    { "word": "Marmelade", "domain": "food", "reason": "Zipf 3.20 — jam, standard breakfast vocabulary" },
 
     { "word": "Schulpflicht", "domain": "education", "reason": "Leipzig 60376" },
     { "word": "Elternsprechtag", "domain": "education", "reason": "not found in corpora" },
     { "word": "Lehrplan", "domain": "education", "reason": "subtitle rank 27445" },
+    { "word": "Antwortbogen", "domain": "education", "reason": "not found in corpora — answer sheet, appears in Goethe B1 exam instructions" },
+    { "word": "Textaufbau", "domain": "education", "reason": "not found in corpora — text structure, appears in Goethe B1 writing instructions" },
+    { "word": "Berufspraktikum", "domain": "education", "reason": "not found in corpora — work placement, TELC B2 vocabulary" },
 
     { "word": "Aufenthaltserlaubnis", "domain": "admin", "reason": "Leipzig 46439" },
+    { "word": "Postleitzahl", "domain": "admin", "reason": "Zipf 2.88 — postal code, essential for any form-filling" },
+    { "word": "Familienstand", "domain": "admin", "reason": "Zipf 2.68 — marital status, appears on every official form" },
+    { "word": "Einschreiben", "domain": "admin", "reason": "Zipf 2.91 — registered letter (post), standard postal vocabulary" },
+    { "word": "Anredeform", "domain": "admin", "reason": "not found in corpora — form of address (Sie/du), social norms vocabulary" },
+
+    { "word": "Notausgang", "domain": "safety", "reason": "Zipf 2.84 — emergency exit, essential safety sign" },
+    { "word": "Rutschgefahr", "domain": "safety", "reason": "not found in corpora — slipping hazard, standard safety sign in Germany" },
+
+    { "word": "Wettervorhersage", "domain": "weather", "reason": "Zipf 2.91 — weather forecast, B1 everyday vocabulary" },
+    { "word": "schneien", "domain": "weather", "reason": "Zipf 3.03 — to snow; verb underrepresented vs noun Schnee" },
+
+    { "word": "herunterladen", "domain": "digital", "reason": "Zipf 2.92 — to download; infinitive underrepresented vs inflected forms" },
+    { "word": "hochladen", "domain": "digital", "reason": "Zipf 2.83 — to upload; infinitive underrepresented vs inflected forms" },
+    { "word": "anklicken", "domain": "digital", "reason": "Zipf 2.57 — to click (on); infinitive underrepresented vs inflected forms" },
+
+    { "word": "Bleistift", "domain": "stationery", "reason": "Zipf 2.91 — pencil, essential school/office vocabulary" },
+    { "word": "Kugelschreiber", "domain": "stationery", "reason": "Zipf 3.06 — ballpoint pen, essential school/office vocabulary" },
+    { "word": "Briefumschlag", "domain": "stationery", "reason": "Zipf 2.84 — envelope, essential postal vocabulary" },
+
+    { "word": "Jugendherberge", "domain": "travel", "reason": "Zipf 2.68 — youth hostel, B1 travel vocabulary" },
+    { "word": "Doppelzimmer", "domain": "travel", "reason": "Zipf 2.78 — double room, standard hotel vocabulary" },
+    { "word": "Einzelzimmer", "domain": "travel", "reason": "Zipf 2.94 — single room, standard hotel vocabulary" },
+    { "word": "Übernachtung", "domain": "travel", "reason": "Zipf 3.02 — overnight stay, essential travel vocabulary" },
+    { "word": "Reservierung", "domain": "travel", "reason": "Zipf 3.12 — reservation/booking, essential travel vocabulary" },
+    { "word": "Halbpension", "domain": "travel", "reason": "not found in corpora — half board, standard hotel/travel term" },
 
     { "word": "einzahlen", "domain": "finance", "reason": "subtitle rank 34551 — infinitive underrepresented vs inflected forms" },
     { "word": "abmelden", "domain": "admin", "reason": "subtitle rank 47180 — infinitive underrepresented vs inflected forms" },
-    { "word": "recyceln", "domain": "environment", "reason": "subtitle rank 41211" }
+    { "word": "recyceln", "domain": "environment", "reason": "subtitle rank 41211" },
+
+    { "word": "Mütze", "domain": "clothing", "reason": "Zipf 3.70 — winter hat, B1 clothing vocabulary; underrepresented vs other clothing items in news" },
+    { "word": "Socken", "domain": "clothing", "reason": "Zipf 3.73 — socks, essential clothing; plural form dominates" },
+    { "word": "Schal", "domain": "clothing", "reason": "Zipf 3.39 — scarf, essential winter clothing" },
+    { "word": "Handschuh", "domain": "clothing", "reason": "Zipf 3.31 — glove, essential winter clothing" },
+    { "word": "Geldbeutel", "domain": "clothing", "reason": "Zipf 3.36 — wallet/purse, everyday carried item" },
+    { "word": "Portemonnaie", "domain": "clothing", "reason": "Zipf 3.35 — wallet (French loanword variant), common in German speech" },
+    { "word": "Badeanzug", "domain": "clothing", "reason": "Zipf 3.00 — swimsuit (women's), B1 clothing vocabulary" },
+    { "word": "Badehose", "domain": "clothing", "reason": "Zipf 3.16 — swimming trunks, B1 clothing vocabulary" },
+    { "word": "Turnschuh", "domain": "clothing", "reason": "Zipf 2.73 — trainer/sneaker, essential everyday footwear" },
+    { "word": "Strumpfhose", "domain": "clothing", "reason": "Zipf 2.79 — tights/pantyhose, B1 clothing item" },
+    { "word": "Hausschuh", "domain": "clothing", "reason": "Zipf 1.90 — house slipper; absent from corpora but essential B1 household vocabulary" },
+
+    { "word": "Tomate", "domain": "food", "reason": "Zipf 3.00 — tomato, core vegetable; singular underrepresented vs plural Tomaten" },
+    { "word": "Gurke", "domain": "food", "reason": "Zipf 3.04 — cucumber/gherkin, common German food item" },
+    { "word": "Hackfleisch", "domain": "food", "reason": "Zipf 3.04 — minced meat, standard German cooking vocabulary" },
+    { "word": "Gewürz", "domain": "food", "reason": "Zipf 2.83 — spice/seasoning, essential cooking vocabulary" },
+    { "word": "Erbse", "domain": "food", "reason": "Zipf 2.69 — pea, basic vegetable; singular underrepresented vs plural Erbsen" },
+
+    { "word": "Wartezimmer", "domain": "health", "reason": "Zipf 2.98 — waiting room (doctor's), essential health vocabulary" },
+    { "word": "Facharzt", "domain": "health", "reason": "Zipf 3.04 — specialist doctor, standard German healthcare term" },
+    { "word": "Impfpass", "domain": "health", "reason": "Zipf 2.09 — vaccination record, essential for travel/admin" },
+
+    { "word": "Bettdecke", "domain": "household", "reason": "Zipf 3.04 — duvet/comforter, basic bedroom vocabulary" },
+    { "word": "Wasserhahn", "domain": "household", "reason": "Zipf 2.83 — tap/faucet, essential household vocabulary" },
+    { "word": "Glühbirne", "domain": "household", "reason": "Zipf 3.00 — light bulb, basic household item" },
+    { "word": "staubsaugen", "domain": "household", "reason": "Zipf 2.40 — to vacuum, essential household chore verb" },
+
+    { "word": "Zebrastreifen", "domain": "transport", "reason": "Zipf 2.69 — zebra crossing, standard road vocabulary" },
+    { "word": "Fahrradweg", "domain": "transport", "reason": "Zipf 2.55 — cycle path, B1 urban transport vocabulary" },
+    { "word": "Fußgängerzone", "domain": "transport", "reason": "Zipf 2.94 — pedestrian zone, standard German urban vocabulary" },
+    { "word": "Vorfahrt", "domain": "transport", "reason": "Zipf 2.88 — right of way, essential driving vocabulary" },
+
+    { "word": "WLAN", "domain": "digital", "reason": "Zipf 3.14 — WiFi (German term), essential modern vocabulary" },
+    { "word": "surfen", "domain": "digital", "reason": "Zipf 3.14 — to surf (internet), B1 digital vocabulary" },
+    { "word": "aufladen", "domain": "digital", "reason": "Zipf 3.19 — to charge (device), essential modern verb" },
+    { "word": "ausdrucken", "domain": "digital", "reason": "Zipf 2.85 — to print out, common office/digital vocabulary" },
+    { "word": "mailen", "domain": "digital", "reason": "Zipf 2.59 — to email (verb), B1 digital communication" },
+    { "word": "chatten", "domain": "digital", "reason": "Zipf 2.42 — to chat (online), B1 digital vocabulary" },
+
+    { "word": "Hausaufgabe", "domain": "education", "reason": "Zipf 2.85 — homework; singular underrepresented vs plural Hausaufgaben" },
+    { "word": "Stundenplan", "domain": "education", "reason": "Zipf 2.79 — timetable/schedule (school), essential school vocabulary" },
+    { "word": "Nachhilfe", "domain": "education", "reason": "Zipf 3.21 — private tuition/tutoring, common German educational term" },
+    { "word": "Klassenarbeit", "domain": "education", "reason": "Zipf 2.28 — class test/exam, essential school vocabulary" },
+
+    { "word": "Passfoto", "domain": "admin", "reason": "Zipf 2.09 — passport photo, required for all official documents" },
+    { "word": "Geburtsurkunde", "domain": "admin", "reason": "Zipf 3.11 — birth certificate, essential civil registration document" },
+
+    { "word": "Sehenswürdigkeit", "domain": "travel", "reason": "Zipf 2.97 — tourist attraction/sight, B1 travel vocabulary" },
+    { "word": "Handgepäck", "domain": "travel", "reason": "Zipf 2.79 — hand luggage, essential air travel vocabulary" },
+    { "word": "Pauschalreise", "domain": "travel", "reason": "Zipf 3.11 — package holiday, standard travel agency vocabulary" },
+    { "word": "Souvenir", "domain": "travel", "reason": "Zipf 3.07 — souvenir, B1 travel vocabulary" },
+
+    { "word": "Wetterbericht", "domain": "weather", "reason": "Zipf 3.05 — weather report, B1 everyday vocabulary" },
+    { "word": "frieren", "domain": "weather", "reason": "Zipf 3.06 — to freeze/be cold, essential weather/sensation verb" },
+    { "word": "donnern", "domain": "weather", "reason": "Zipf 2.77 — to thunder; verb underrepresented vs noun Donner" },
+    { "word": "neblig", "domain": "weather", "reason": "Zipf 2.58 — foggy, B1 weather adjective" },
+
+    { "word": "siezen", "domain": "social", "reason": "Zipf 2.45 — to address formally (Sie), essential German social convention" },
+    { "word": "duzen", "domain": "social", "reason": "Zipf 2.80 — to address informally (du), essential German social convention" },
+
+    { "word": "Sportverein", "domain": "sport", "reason": "Zipf 2.95 — sports club, common German leisure institution" },
+    { "word": "Mitgliedsbeitrag", "domain": "sport", "reason": "Zipf 2.47 — membership fee, needed for Sportverein/club vocabulary" },
+    { "word": "zelten", "domain": "sport", "reason": "Zipf 2.94 — to camp, B1 leisure/outdoor vocabulary" },
+    { "word": "campen", "domain": "sport", "reason": "Zipf 3.02 — to camp (anglicism), commonly used alongside zelten" }
   ]
 }
