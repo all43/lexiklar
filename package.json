@@ -21,6 +21,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:glosses": "node scripts/test-gloss-translation.js",
+    "test:gloss-batching": "node scripts/test-gloss-batching.js",
     "pipeline": "npm run download && npm run download-corpus && npm run transform -- --max-frequency 8000 --max-subtitle-rank 25000 && npm run enrich && npm run translate-glosses && npm run translate-glosses:full && npm run translate-examples && npm run build-index",
     "pipeline:seed": "npm run transform -- --seed && npm run enrich && npm run translate-glosses && npm run translate-glosses:full && npm run translate-examples && npm run build-index",
     "build-lookup-index": "node scripts/build-lookup-index.js",
