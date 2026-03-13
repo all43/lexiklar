@@ -87,6 +87,9 @@ const locales = {
     "noun.exception": "Exception: ",
     "noun.singular": "Singular",
     "noun.plural": "Plural",
+
+    // AdjectiveDeclension
+    "adj.indeclinable": "Indeclinable — no case endings",
   },
   de: {
     // Tab bar
@@ -165,6 +168,9 @@ const locales = {
     "noun.exception": "Ausnahme: ",
     "noun.singular": "Singular",
     "noun.plural": "Plural",
+
+    // AdjectiveDeclension
+    "adj.indeclinable": "Indeklinabel — keine Kasusendungen",
   },
 };
 

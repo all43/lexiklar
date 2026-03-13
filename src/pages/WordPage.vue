@@ -192,6 +192,10 @@
         <f7-block-title>{{ t('word.declension') }}</f7-block-title>
         <NounDeclension :word="word" />
       </template>
+      <template v-else-if="word.pos === 'adjective'">
+        <f7-block-title>{{ t('word.grammar') }}</f7-block-title>
+        <AdjectiveDeclension :word="word" />
+      </template>
       <template v-else>
         <f7-block-title>{{ t('word.grammar') }}</f7-block-title>
         <f7-block>
@@ -243,12 +247,13 @@
 import GlossText from "../components/GlossText.vue";
 import VerbConjugation from "../components/VerbConjugation.vue";
 import NounDeclension from "../components/NounDeclension.vue";
+import AdjectiveDeclension from "../components/AdjectiveDeclension.vue";
 import { getWord, getExamples, getRelatedWords, searchByLemma } from "../utils/db.js";
 import { f7 } from "framework7-vue/bundle";
 import { t } from "../js/i18n.js";
 
 export default {
-  components: { GlossText, VerbConjugation, NounDeclension },
+  components: { GlossText, VerbConjugation, NounDeclension, AdjectiveDeclension },
   props: {
     f7route: Object,
     f7router: Object,
