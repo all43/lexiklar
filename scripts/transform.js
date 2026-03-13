@@ -202,6 +202,13 @@ function collectExample(text, translation, lemma) {
  * Collect an expression or proverb into the shared examples store.
  * Uses the same allExamples object and contentHash for dedup.
  */
+// Articles and short stop-words that should not be recorded as expression synonyms
+// even when they appear positionally after a real expression.
+const EXPRESSION_SYNONYM_STOPWORDS = new Set([
+  "der", "die", "das", "den", "dem", "des", "ein", "eine", "einen", "einem", "einer", "eines",
+  "und", "oder", "aber", "auch", "nicht", "so", "noch", "schon",
+]);
+
 function collectExpression(text, type, note, lemma) {
   if (!text) return null;
   const trimmed = text.trim();
@@ -212,6 +219,7 @@ function collectExpression(text, type, note, lemma) {
       text: trimmed,
       type,
       note: note || null,
+      synonyms: [],
       translation: null,
       source: "wiktionary",
       lemmas: [lemma],
@@ -228,20 +236,45 @@ function collectExpression(text, type, note, lemma) {
   return id;
 }
 
+/** Add a synonym word to an existing expression entry. */
+function addExpressionSynonym(expressionId, word) {
+  if (!expressionId || !allExamples[expressionId]) return;
+  const trimmed = word.trim();
+  if (!trimmed || EXPRESSION_SYNONYM_STOPWORDS.has(trimmed.toLowerCase())) return;
+  if (!allExamples[expressionId].synonyms) allExamples[expressionId].synonyms = [];
+  if (!allExamples[expressionId].synonyms.includes(trimmed)) {
+    allExamples[expressionId].synonyms.push(trimmed);
+  }
+}
+
 /**
  * Extract expressions and proverbs from a Wiktionary entry.
  * Returns array of content-hash IDs.
+ *
+ * Single-word entries in the expressions array are leaked Wiktionary synonyms/glosses
+ * that appear positionally right after the expression they describe. We capture them
+ * as synonyms on the preceding expression rather than as standalone entries.
  */
 function extractExpressions(entry) {
   const ids = [];
+  let lastExprId = null;
+
   for (const e of entry.expressions || []) {
-    const id = collectExpression(e.word, "expression", e.note, entry.word);
-    if (id) ids.push(id);
+    if (e.word.includes(" ")) {
+      // Multi-word → real expression
+      const id = collectExpression(e.word, "expression", e.note, entry.word);
+      if (id) { ids.push(id); lastExprId = id; }
+    } else {
+      // Single word → synonym of the preceding expression
+      addExpressionSynonym(lastExprId, e.word);
+    }
   }
+
   for (const p of entry.proverbs || []) {
     const id = collectExpression(p.word, "proverb", p.note, entry.word);
     if (id) ids.push(id);
   }
+
   return ids;
 }
 
