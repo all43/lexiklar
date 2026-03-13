@@ -36,6 +36,8 @@ const locales = {
     "word.loading": "Loading...",
     "word.openCard": "Open word card",
     "word.removeHistory": "Remove from history",
+    "word.addFavorite": "Add to favorites",
+    "word.removeFavorite": "Remove from favorites",
     "word.singular": "singular:",
     "word.proverb": "proverb",
 
@@ -53,6 +55,7 @@ const locales = {
     // FavoritesPage
     "favorites.title": "Favorites",
     "favorites.empty": "Saved words will appear here.",
+    "favorites.remove": "Remove",
 
     // SettingsPage
     "settings.title": "Settings",
@@ -64,6 +67,11 @@ const locales = {
     "settings.clearConfirmMsg": "Clear all viewing history? This cannot be undone.",
     "settings.clearDone": "History cleared",
     "settings.clearFooter": "Removes all recently visited and frequently viewed words from the home screen.",
+    "settings.clearFavorites": "Clear Favorites",
+    "settings.clearFavoritesTitle": "Clear Favorites",
+    "settings.clearFavoritesMsg": "Remove all saved words from favorites? This cannot be undone.",
+    "settings.clearFavoritesDone": "Favorites cleared",
+    "settings.clearFavoritesFooter": "Removes all saved words from your favorites list.",
     "settings.themeAuto": "Auto (System)",
     "settings.themeLight": "Light",
     "settings.themeDark": "Dark",
@@ -106,6 +114,8 @@ const locales = {
     "word.loading": "Laden...",
     "word.openCard": "Wortkarte öffnen",
     "word.removeHistory": "Aus Verlauf entfernen",
+    "word.addFavorite": "Zu Favoriten hinzufügen",
+    "word.removeFavorite": "Aus Favoriten entfernen",
     "word.singular": "Singular:",
     "word.proverb": "Sprichwort",
 
@@ -123,6 +133,7 @@ const locales = {
     // FavoritesPage
     "favorites.title": "Favoriten",
     "favorites.empty": "Gespeicherte Wörter erscheinen hier.",
+    "favorites.remove": "Entfernen",
 
     // SettingsPage
     "settings.title": "Einstellungen",
@@ -134,6 +145,11 @@ const locales = {
     "settings.clearConfirmMsg": "Gesamten Verlauf löschen? Dies kann nicht rückgängig gemacht werden.",
     "settings.clearDone": "Verlauf gelöscht",
     "settings.clearFooter": "Entfernt alle zuletzt besuchten und häufig angesehenen Wörter vom Startbildschirm.",
+    "settings.clearFavorites": "Favoriten löschen",
+    "settings.clearFavoritesTitle": "Favoriten löschen",
+    "settings.clearFavoritesMsg": "Alle gespeicherten Wörter löschen? Dies kann nicht rückgängig gemacht werden.",
+    "settings.clearFavoritesDone": "Favoriten gelöscht",
+    "settings.clearFavoritesFooter": "Entfernt alle gespeicherten Wörter aus deiner Favoritenliste.",
     "settings.themeAuto": "Automatisch (System)",
     "settings.themeLight": "Hell",
     "settings.themeDark": "Dunkel",

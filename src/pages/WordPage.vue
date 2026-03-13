@@ -3,8 +3,15 @@
     <f7-navbar :title="word ? (word.plural_dominant ? word.plural_form : word.word) : t('word.loading')" back-link>
       <f7-nav-right>
         <f7-link
+          v-if="word"
+          :icon-f7="isFavorite ? 'star_fill' : 'star'"
+          icon-size="20"
+          :tooltip="isFavorite ? t('word.removeFavorite') : t('word.addFavorite')"
+          @click="toggleFavorite"
+        />
+        <f7-link
           v-if="word && isInHistory"
-          icon-f7="clock_badge_xmark"
+          icon-f7="xmark_circle"
           icon-size="20"
           :tooltip="t('word.removeHistory')"
           @click="removeFromHistory"
@@ -254,6 +261,7 @@ export default {
       loading: true,
       preview: null,
       inHistory: false,       // whether this word is currently in the user's history
+      isFavorite: false,      // whether this word is currently in favorites
     };
   },
   computed: {
@@ -336,6 +344,24 @@ export default {
     },
   },
   methods: {
+    toggleFavorite() {
+      const { pos, file } = this.f7route.params;
+      const fileKey = `${pos}/${file}`;
+      try {
+        const favs = JSON.parse(localStorage.getItem("lexiklar_favorites") || "[]");
+        if (this.isFavorite) {
+          localStorage.setItem("lexiklar_favorites", JSON.stringify(favs.filter((f) => f !== fileKey)));
+          this.isFavorite = false;
+        } else {
+          favs.unshift(fileKey);
+          localStorage.setItem("lexiklar_favorites", JSON.stringify(favs));
+          this.isFavorite = true;
+        }
+      } catch {
+        // silently skip
+      }
+    },
+
     removeFromHistory() {
       const { pos, file } = this.f7route.params;
       const fileKey = `${pos}/${file}`;
@@ -494,6 +520,10 @@ export default {
           localStorage.setItem(COUNTS_KEY, JSON.stringify(counts));
 
           this.inHistory = true;
+
+          // Check favorites
+          const favs = JSON.parse(localStorage.getItem("lexiklar_favorites") || "[]");
+          this.isFavorite = favs.includes(fileKey);
         } catch {
           // localStorage unavailable — silently skip
         }

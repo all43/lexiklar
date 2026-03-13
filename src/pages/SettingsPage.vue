@@ -33,6 +33,7 @@
     <f7-block-title>{{ t('settings.data') }}</f7-block-title>
     <f7-list inset strong-ios outline-ios>
       <f7-list-button :title="t('settings.clearHistory')" color="red" @click="confirmClear" />
+      <f7-list-button :title="t('settings.clearFavorites')" color="red" @click="confirmClearFavorites" />
     </f7-list>
     <f7-block-footer class="padding-horizontal">
       {{ t('settings.clearFooter') }}
@@ -88,6 +89,18 @@ export default {
           localStorage.removeItem("lexiklar_view_counts");
           f7.toast
             .create({ text: t("settings.clearDone"), closeTimeout: 2000, position: "center" })
+            .open();
+        },
+      );
+    },
+    confirmClearFavorites() {
+      f7.dialog.confirm(
+        t("settings.clearFavoritesMsg"),
+        t("settings.clearFavoritesTitle"),
+        () => {
+          localStorage.removeItem("lexiklar_favorites");
+          f7.toast
+            .create({ text: t("settings.clearFavoritesDone"), closeTimeout: 2000, position: "center" })
             .open();
         },
       );
