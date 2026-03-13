@@ -56,53 +56,48 @@ function processSearchRow(row) {
   };
 }
 
-// ---- OPFS byte cache ----
+// ---- Cache API byte cache ----
+// Works in Safari, WKWebView, and all modern browsers (unlike OPFS createWritable).
 
-async function opfsCacheRead() {
+const CACHE_NAME = "lexiklar-db-v1";
+const DB_CACHE_KEY = "/cache/lexiklar.db";
+const VERSION_CACHE_KEY = "/cache/lexiklar-version.txt";
+
+async function cacheRead() {
   try {
-    const root = await navigator.storage.getDirectory();
-    const handle = await root.getFileHandle("lexiklar.db");
-    const file = await handle.getFile();
-    return await file.arrayBuffer();
+    const cache = await caches.open(CACHE_NAME);
+    const resp = await cache.match(DB_CACHE_KEY);
+    return resp ? await resp.arrayBuffer() : null;
   } catch {
     return null;
   }
 }
 
-async function opfsCacheWrite(bytes) {
+async function cacheWrite(bytes) {
   try {
-    const root = await navigator.storage.getDirectory();
-    const handle = await root.getFileHandle("lexiklar.db", { create: true });
-    const writable = await handle.createWritable();
-    await writable.write(bytes);
-    await writable.close();
+    const cache = await caches.open(CACHE_NAME);
+    await cache.put(DB_CACHE_KEY, new Response(bytes));
   } catch {
-    // OPFS not available — no caching, but app still works
+    // Cache API not available — no caching, but app still works
   }
 }
 
-async function opfsVersionRead() {
+async function cacheVersionRead() {
   try {
-    const root = await navigator.storage.getDirectory();
-    const handle = await root.getFileHandle("lexiklar-version.txt");
-    const file = await handle.getFile();
-    return (await file.text()).trim();
+    const cache = await caches.open(CACHE_NAME);
+    const resp = await cache.match(VERSION_CACHE_KEY);
+    return resp ? (await resp.text()).trim() : null;
   } catch {
     return null;
   }
 }
 
-async function opfsVersionWrite(version) {
+async function cacheVersionWrite(version) {
   try {
-    const root = await navigator.storage.getDirectory();
-    const handle = await root.getFileHandle("lexiklar-version.txt", {
-      create: true,
-    });
-    const writable = await handle.createWritable();
-    await writable.write(version);
-    await writable.close();
+    const cache = await caches.open(CACHE_NAME);
+    await cache.put(VERSION_CACHE_KEY, new Response(version));
   } catch {
-    // OPFS not available
+    // Cache API not available
   }
 }
 
@@ -133,13 +128,13 @@ export async function initDb() {
   // Step 1: Determine if we need to fetch the DB
   const resp = await fetch("/data/db-version.txt");
   const bundledVersion = (await resp.text()).trim();
-  const cachedVersion = await opfsVersionRead();
+  const cachedVersion = await cacheVersionRead();
 
   let bytes;
 
   if (cachedVersion === bundledVersion) {
-    // Step 2a: Read from OPFS cache (no network for .db)
-    bytes = await opfsCacheRead();
+    // Step 2a: Read from Cache API (no network for .db)
+    bytes = await cacheRead();
   }
 
   if (!bytes) {
@@ -148,8 +143,8 @@ export async function initDb() {
     bytes = await dbResp.arrayBuffer();
 
     // Cache for next time (fire-and-forget)
-    opfsCacheWrite(bytes.slice(0)).then(() =>
-      opfsVersionWrite(bundledVersion),
+    cacheWrite(bytes.slice(0)).then(() =>
+      cacheVersionWrite(bundledVersion),
     );
   }
 

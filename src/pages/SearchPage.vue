@@ -103,6 +103,7 @@
 import { theme } from "framework7-vue";
 import { t } from "../js/i18n.js";
 import { SHOW_ARTICLES_KEY } from "./SettingsPage.vue";
+import { getCached } from "../utils/storage.js";
 import {
   searchByLemma,
   searchByGlossEn,
@@ -129,7 +130,7 @@ export default {
       // Shared
       loading: true,
       debounceTimer: null,
-      showArticles: localStorage.getItem(SHOW_ARTICLES_KEY) === "1",
+      showArticles: getCached(SHOW_ARTICLES_KEY) === "1",
     };
   },
 
@@ -156,7 +157,7 @@ export default {
       // - initial load (page:afterin on mount)
       // - navigating back from a word page (page:afterin)
       // - switching tabs (page:tabshow)
-      this.showArticles = localStorage.getItem(SHOW_ARTICLES_KEY) === "1";
+      this.showArticles = getCached(SHOW_ARTICLES_KEY) === "1";
       if (!this.searchQuery) this.loadHomeScreen();
     },
     onSearch(searchbar, query) {
@@ -232,7 +233,7 @@ export default {
       this.loading = true;
       try {
         // 1. Build frequency-sorted list
-        const counts = JSON.parse(localStorage.getItem(COUNTS_KEY) || "{}");
+        const counts = JSON.parse(getCached(COUNTS_KEY) || "{}");
         const freqKeys = Object.entries(counts)
           .filter(([, count]) => count >= 2) // need at least 2 views to qualify
           .sort((a, b) => b[1] - a[1])
@@ -241,7 +242,7 @@ export default {
 
         // 2. Build recents list, excluding items already in freq
         const freqSet = new Set(freqKeys);
-        const stored = localStorage.getItem(RECENTS_KEY);
+        const stored = getCached(RECENTS_KEY);
         const allRecents = stored ? JSON.parse(stored) : [];
         const recentKeys = allRecents
           .filter((f) => !freqSet.has(f))

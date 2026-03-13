@@ -5,6 +5,7 @@
  * and applies it via Framework7's setDarkMode() API.
  */
 import { f7 } from "framework7-vue";
+import { getCached, setItem } from "../utils/storage.js";
 
 export const THEME_KEY = "lexiklar_theme";
 
@@ -31,12 +32,12 @@ function updateThemeColorMeta() {
  * Read stored preference and apply. Call once on app mount.
  */
 export function initTheme() {
-  const stored = localStorage.getItem(THEME_KEY) || "auto";
+  const stored = getCached(THEME_KEY) || "auto";
   applyTheme(stored);
 
   // When "auto" is active, listen for system changes to update meta tag
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-    const current = localStorage.getItem(THEME_KEY) || "auto";
+    const current = getCached(THEME_KEY) || "auto";
     if (current === "auto") updateThemeColorMeta();
   });
 }

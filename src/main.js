@@ -16,13 +16,17 @@ import Framework7Vue, { registerComponents } from "framework7-vue/bundle";
 // Init Framework7 Vue plugin
 Framework7.use(Framework7Vue);
 
+// Persistent storage (Capacitor Preferences with sync cache)
+import { initStorage } from "./utils/storage.js";
+
 // Database
 import { initDb } from "./utils/db.js";
 
 // Import root App component
 import App from "./App.vue";
 
-// Initialize database, then mount Vue app
+// Initialize storage cache, then database, then mount Vue app
+await initStorage();
 await initDb();
 
 const app = createApp(App);

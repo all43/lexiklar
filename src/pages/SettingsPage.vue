@@ -55,6 +55,7 @@
 import { f7 } from "framework7-vue";
 import { applyTheme, THEME_KEY } from "../js/theme.js";
 import { t, setLocale, getLocale, LANGUAGE_KEY } from "../js/i18n.js";
+import { getCached, setItem, removeItem } from "../utils/storage.js";
 
 const THEME_OPTIONS = [
   { value: "auto", labelKey: "settings.themeAuto" },
@@ -73,11 +74,11 @@ export const SHOW_ARTICLES_KEY = "lexiklar_show_articles";
 export default {
   data() {
     return {
-      theme: localStorage.getItem(THEME_KEY) || "auto",
+      theme: getCached(THEME_KEY) || "auto",
       language: getLocale(),
       themeOptions: THEME_OPTIONS,
       langOptions: LANG_OPTIONS,
-      showArticles: localStorage.getItem(SHOW_ARTICLES_KEY) === "1",
+      showArticles: getCached(SHOW_ARTICLES_KEY) === "1",
     };
   },
   computed: {
@@ -86,7 +87,7 @@ export default {
   methods: {
     setTheme(value) {
       this.theme = value;
-      localStorage.setItem(THEME_KEY, value);
+      setItem(THEME_KEY, value);
       applyTheme(value);
     },
     setLanguage(value) {
@@ -95,15 +96,15 @@ export default {
     },
     setShowArticles(value) {
       this.showArticles = value;
-      localStorage.setItem(SHOW_ARTICLES_KEY, value ? "1" : "0");
+      setItem(SHOW_ARTICLES_KEY, value ? "1" : "0");
     },
     confirmClear() {
       f7.dialog.confirm(
         t("settings.clearConfirmMsg"),
         t("settings.clearConfirmTitle"),
         () => {
-          localStorage.removeItem("lexiklar_recents");
-          localStorage.removeItem("lexiklar_view_counts");
+          removeItem("lexiklar_recents");
+          removeItem("lexiklar_view_counts");
           f7.toast
             .create({ text: t("settings.clearDone"), closeTimeout: 2000, position: "center" })
             .open();
@@ -115,7 +116,7 @@ export default {
         t("settings.clearFavoritesMsg"),
         t("settings.clearFavoritesTitle"),
         () => {
-          localStorage.removeItem("lexiklar_favorites");
+          removeItem("lexiklar_favorites");
           f7.toast
             .create({ text: t("settings.clearFavoritesDone"), closeTimeout: 2000, position: "center" })
             .open();

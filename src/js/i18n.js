@@ -6,6 +6,7 @@
  * in both modes — only UI chrome is translated.
  */
 import { reactive } from "vue";
+import { getCached, setItem } from "../utils/storage.js";
 
 export const LANGUAGE_KEY = "lexiklar_language";
 
@@ -189,7 +190,7 @@ function detectSystemLocale() {
 
 const state = reactive({
   /** Stored preference: "auto" | "en" | "de" */
-  preference: localStorage.getItem(LANGUAGE_KEY) || "auto",
+  preference: getCached(LANGUAGE_KEY) || "auto",
 });
 
 /**
@@ -214,7 +215,7 @@ export function t(key) {
  */
 export function setLocale(lang) {
   state.preference = lang;
-  localStorage.setItem(LANGUAGE_KEY, lang);
+  setItem(LANGUAGE_KEY, lang);
 }
 
 /**

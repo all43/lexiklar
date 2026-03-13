@@ -38,6 +38,7 @@
 <script>
 import { getRelatedWords } from "../utils/db.js";
 import { t } from "../js/i18n.js";
+import { getCached, setItem } from "../utils/storage.js";
 
 const FAVORITES_KEY = "lexiklar_favorites";
 
@@ -58,7 +59,7 @@ export default {
     async loadFavorites() {
       this.loading = true;
       try {
-        const fileKeys = JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]");
+        const fileKeys = JSON.parse(getCached(FAVORITES_KEY) || "[]");
         if (!fileKeys.length) {
           this.words = [];
           this.loading = false;
@@ -76,8 +77,8 @@ export default {
 
     removeFavorite(file) {
       try {
-        const favs = JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]");
-        localStorage.setItem(FAVORITES_KEY, JSON.stringify(favs.filter((f) => f !== file)));
+        const favs = JSON.parse(getCached(FAVORITES_KEY) || "[]");
+        setItem(FAVORITES_KEY, JSON.stringify(favs.filter((f) => f !== file)));
         this.words = this.words.filter((w) => w.file !== file);
       } catch {
         // silently skip

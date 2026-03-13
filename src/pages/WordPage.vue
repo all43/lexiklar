@@ -252,6 +252,7 @@ import AdjectiveDeclension from "../components/AdjectiveDeclension.vue";
 import { getWord, getExamples, getRelatedWords, searchByLemma } from "../utils/db.js";
 import { f7 } from "framework7-vue/bundle";
 import { t } from "../js/i18n.js";
+import { getCached, setItem } from "../utils/storage.js";
 
 export default {
   components: { GlossText, VerbConjugation, NounDeclension, AdjectiveDeclension },
@@ -354,13 +355,13 @@ export default {
       const { pos, file } = this.f7route.params;
       const fileKey = `${pos}/${file}`;
       try {
-        const favs = JSON.parse(localStorage.getItem("lexiklar_favorites") || "[]");
+        const favs = JSON.parse(getCached("lexiklar_favorites") || "[]");
         if (this.isFavorite) {
-          localStorage.setItem("lexiklar_favorites", JSON.stringify(favs.filter((f) => f !== fileKey)));
+          setItem("lexiklar_favorites", JSON.stringify(favs.filter((f) => f !== fileKey)));
           this.isFavorite = false;
         } else {
           favs.unshift(fileKey);
-          localStorage.setItem("lexiklar_favorites", JSON.stringify(favs));
+          setItem("lexiklar_favorites", JSON.stringify(favs));
           this.isFavorite = true;
         }
       } catch {
@@ -373,15 +374,15 @@ export default {
       const fileKey = `${pos}/${file}`;
       try {
         // Remove from recents list
-        const recents = JSON.parse(localStorage.getItem("lexiklar_recents") || "[]");
-        localStorage.setItem(
+        const recents = JSON.parse(getCached("lexiklar_recents") || "[]");
+        setItem(
           "lexiklar_recents",
           JSON.stringify(recents.filter((f) => f !== fileKey)),
         );
         // Remove view count
-        const counts = JSON.parse(localStorage.getItem("lexiklar_view_counts") || "{}");
+        const counts = JSON.parse(getCached("lexiklar_view_counts") || "{}");
         delete counts[fileKey];
-        localStorage.setItem("lexiklar_view_counts", JSON.stringify(counts));
+        setItem("lexiklar_view_counts", JSON.stringify(counts));
         this.inHistory = false;
       } catch {
         // silently skip
@@ -499,27 +500,27 @@ export default {
           const fileKey = `${pos}/${file}`;
 
           // Update recents list (most recent first, max 100)
-          const stored = localStorage.getItem(RECENTS_KEY);
+          const stored = getCached(RECENTS_KEY);
           const recents = stored ? JSON.parse(stored) : [];
           const filtered = recents.filter((f) => f !== fileKey);
           filtered.unshift(fileKey);
-          localStorage.setItem(
+          setItem(
             RECENTS_KEY,
             JSON.stringify(filtered.slice(0, 100)),
           );
 
           // Increment view count
-          const counts = JSON.parse(localStorage.getItem(COUNTS_KEY) || "{}");
+          const counts = JSON.parse(getCached(COUNTS_KEY) || "{}");
           counts[fileKey] = (counts[fileKey] || 0) + 1;
-          localStorage.setItem(COUNTS_KEY, JSON.stringify(counts));
+          setItem(COUNTS_KEY, JSON.stringify(counts));
 
           this.inHistory = true;
 
           // Check favorites
-          const favs = JSON.parse(localStorage.getItem("lexiklar_favorites") || "[]");
+          const favs = JSON.parse(getCached("lexiklar_favorites") || "[]");
           this.isFavorite = favs.includes(fileKey);
         } catch {
-          // localStorage unavailable — silently skip
+          // storage unavailable — silently skip
         }
       }
 
