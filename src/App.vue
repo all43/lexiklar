@@ -10,7 +10,9 @@
       </f7-toolbar>
 
       <!-- Tab views — each has its own navigation stack -->
-      <f7-view id="tab-search" tab tab-active url="/" main :animate="true" />
+      <!-- browser-history-initial-match only on the main view; applying it globally breaks tab switching -->
+      <f7-view id="tab-search" tab tab-active url="/" main :animate="true"
+        browser-history browser-history-initial-match browser-history-separator="" />
       <f7-view id="tab-favorites" tab url="/favorites/" :animate="true" />
       <f7-view id="tab-settings" tab url="/settings/" :animate="true" />
     </f7-views>
