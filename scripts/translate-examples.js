@@ -50,6 +50,63 @@ const LIMIT = (() => {
   return idx >= 0 ? parseInt(args[idx + 1], 10) || null : null;
 })();
 
+const CONCURRENCY = (() => {
+  const idx = args.indexOf("--concurrency");
+  return idx >= 0 ? parseInt(args[idx + 1], 10) || 1 : 1;
+})();
+
+const MAX_PER_WORD = (() => {
+  const idx = args.indexOf("--max-per-word");
+  return idx >= 0 ? parseInt(args[idx + 1], 10) || null : null;
+})();
+
+const FREQ_LIMIT = (() => {
+  const idx = args.indexOf("--freq-limit");
+  return idx >= 0 ? parseInt(args[idx + 1], 10) || null : null;
+})();
+
+/**
+ * Build a map of word → { frequency, whitelisted } from word files + whitelist.
+ * Used by the --freq-limit filter.
+ */
+function buildWordFreqMap() {
+  const whitelistPath = join(ROOT, "config", "word-whitelist.json");
+  const whitelistSet = new Set(
+    existsSync(whitelistPath)
+      ? JSON.parse(readFileSync(whitelistPath, "utf-8")).words.map(w => w.word)
+      : []
+  );
+
+  const map = new Map(); // word → { frequency: number|null, whitelisted: bool }
+  for (const { dir: posDir } of Object.values(POS_CONFIG)) {
+    const dir = join(WORDS_DIR, posDir);
+    if (!existsSync(dir)) continue;
+    for (const file of readdirSync(dir)) {
+      if (!file.endsWith(".json")) continue;
+      try {
+        const d = JSON.parse(readFileSync(join(dir, file), "utf-8"));
+        map.set(d.word, {
+          frequency: d.frequency ?? null,
+          whitelisted: whitelistSet.has(d.word),
+        });
+      } catch {}
+    }
+  }
+  return map;
+}
+
+/** Run items through fn with at most `concurrency` calls in-flight at once. */
+async function runPool(items, concurrency, fn) {
+  let i = 0;
+  const workers = Array(Math.min(concurrency, items.length)).fill(null).map(async () => {
+    while (i < items.length) {
+      const idx = i++;
+      await fn(items[idx], idx);
+    }
+  });
+  await Promise.all(workers);
+}
+
 // Disambiguation dict adds many tokens and risks blowing local context.
 // Skip it for local providers unless the user opts in explicitly.
 const USE_DISAMBIG = !isLocalProvider(PROVIDER) || args.includes("--disambig");
@@ -285,6 +342,7 @@ async function main() {
   const total = Object.keys(examples).length;
 
   // Filter to untranslated
+  const alreadyDone = Object.values(examples).filter(ex => ex.translation).length;
   let untranslated = Object.entries(examples)
     .filter(([, ex]) => !ex.translation)
     .map(([id, ex]) => {
@@ -295,8 +353,52 @@ async function main() {
         type: ex.type || null,
         note: ex.note || null,
         gloss_en: isIdiom ? loadGlossEn(ex.ref) : null,
+        lemmas: ex.lemmas || [],
       };
     });
+
+  // Frequency filter: keep examples where at least one lemma has freq ≤ FREQ_LIMIT
+  // or is in the whitelist. Lemmas not found in word files are kept (safe default).
+  if (FREQ_LIMIT) {
+    const wordFreqMap = buildWordFreqMap();
+    const before = untranslated.length;
+    untranslated = untranslated.filter(item => {
+      if (!item.lemmas.length) return true;
+      return item.lemmas.some(l => {
+        const info = wordFreqMap.get(l);
+        if (!info) return true; // unknown word — keep
+        if (info.whitelisted) return true;
+        if (info.frequency !== null && info.frequency <= FREQ_LIMIT) return true;
+        return false;
+      });
+    });
+    console.log(`Freq filter (≤${FREQ_LIMIT} + whitelist): ${before} → ${untranslated.length} examples selected.`);
+  }
+
+  // Cap examples per word: count already-translated examples per lemma, then
+  // greedily include untranslated examples that still have budget for any lemma.
+  if (MAX_PER_WORD) {
+    const budget = new Map(); // lemma → remaining slots
+    for (const [, ex] of Object.entries(examples)) {
+      if (!ex.translation) continue;
+      for (const lemma of ex.lemmas || []) {
+        budget.set(lemma, (budget.get(lemma) ?? MAX_PER_WORD) - 1);
+      }
+    }
+    const filtered = [];
+    for (const item of untranslated) {
+      const hasSlot = item.lemmas.length === 0 ||
+        item.lemmas.some(l => (budget.get(l) ?? MAX_PER_WORD) > 0);
+      if (hasSlot) {
+        filtered.push(item);
+        for (const l of item.lemmas) {
+          budget.set(l, (budget.get(l) ?? MAX_PER_WORD) - 1);
+        }
+      }
+    }
+    console.log(`Per-word cap (${MAX_PER_WORD}): ${untranslated.length} → ${filtered.length} examples selected.`);
+    untranslated = filtered;
+  }
 
   if (untranslated.length === 0) {
     console.log(`All ${total} examples already translated. Nothing to do.`);
@@ -309,9 +411,9 @@ async function main() {
   }
 
   console.log(
-    `Translating examples... (${total} total, ${total - untranslated.length - (LIMIT ? 0 : 0)} already done, ${untranslated.length} remaining${LIMIT ? ` (capped at ${LIMIT})` : ""})`,
+    `Translating examples... (${total} total, ${alreadyDone} already done, ${untranslated.length} remaining${LIMIT ? ` (capped at ${LIMIT})` : ""})`,
   );
-  console.log(`Provider: ${PROVIDER}, batch size: ${BATCH_SIZE}${!USE_DISAMBIG ? " (disambiguation disabled for local model — use --disambig to enable)" : ""}`);
+  console.log(`Provider: ${PROVIDER}, batch size: ${BATCH_SIZE}, concurrency: ${CONCURRENCY}${!USE_DISAMBIG ? " (disambiguation disabled for local model — use --disambig to enable)" : ""}`);
 
   // Build disambiguation dict (skipped for local providers to save context)
   const disambigDict = USE_DISAMBIG ? buildDisambiguationDict() : new Map();
@@ -347,10 +449,18 @@ async function main() {
     for (let i = 0; i < items.length; i += BATCH_SIZE) batches.push(items.slice(i, i + BATCH_SIZE));
     console.log(`\n${label}: ${items.length} items, ${batches.length} batches (${modelLabel})`);
 
+    let batchesDone = 0;
     let consecutiveErrors = 0;
+    let stopped = false;
 
-    for (let i = 0; i < batches.length; i++) {
-      const batch = batches[i];
+    function saveExamples() {
+      const sorted = {};
+      for (const key of Object.keys(examples).sort()) sorted[key] = examples[key];
+      writeFileSync(EXAMPLES_FILE, JSON.stringify(sorted, null, 2));
+    }
+
+    await runPool(batches, CONCURRENCY, async (batch, i) => {
+      if (stopped) return;
       const disambig = getRelevantDisambiguation(batch, disambigDict);
       const userPrompt = buildUserPrompt(batch, disambig);
       let rawResponse = null;
@@ -384,12 +494,12 @@ async function main() {
 
         translated += results.length;
         consecutiveErrors = 0;
+        batchesDone++;
         process.stdout.write(`  Batch ${i + 1}/${batches.length}: translated ${results.length} [${elapsed}s]\n`);
 
-        // Write after each batch for crash safety
-        const sorted = {};
-        for (const key of Object.keys(examples).sort()) sorted[key] = examples[key];
-        writeFileSync(EXAMPLES_FILE, JSON.stringify(sorted, null, 2));
+        // Write every 5 completed batches for crash safety (reduced from every batch
+        // to avoid excessive I/O overhead under concurrency).
+        if (batchesDone % 5 === 0) saveExamples();
       } catch (err) {
         consecutiveErrors++;
         errors += batch.length;
@@ -400,12 +510,13 @@ async function main() {
         if (consecutiveErrors >= MAX_CONSECUTIVE_ERRORS) {
           console.error(`\n${consecutiveErrors} consecutive failures — stopping early.`);
           console.error(`Check ${ERROR_LOG} for raw responses.`);
-          break;
+          stopped = true;
         }
       }
+    });
 
-      if (i < batches.length - 1) await new Promise((r) => setTimeout(r, 200));
-    }
+    // Final write to capture any remaining batches
+    saveExamples();
   }
 
   const idiomLlmOptions   = { provider: IDIOM_PROVIDER, model: IDIOM_MODEL,   maxTokens: 4096, temperature: 0.3, jsonSchema: EXAMPLE_SCHEMA };
