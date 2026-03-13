@@ -10,9 +10,9 @@
       </f7-toolbar>
 
       <!-- Tab views — each has its own navigation stack -->
-      <!-- browser-history-initial-match only on the main view; applying it globally breaks tab switching -->
+      <!-- browserHistory only on web: capacitor://localhost scheme breaks F7's history detection -->
       <f7-view id="tab-search" tab tab-active url="/" main :animate="true"
-        browser-history browser-history-initial-match browser-history-separator="" />
+        v-bind="isWeb ? { browserHistory: true, browserHistoryInitialMatch: true, browserHistorySeparator: '' } : {}" />
       <f7-view id="tab-favorites" tab url="/favorites/" :animate="true" />
       <f7-view id="tab-settings" tab url="/settings/" :animate="true" />
     </f7-views>
@@ -24,10 +24,12 @@
 import routes from "./js/routes.js";
 import { initTheme } from "./js/theme.js";
 import { t } from "./js/i18n.js";
+import { Capacitor } from "@capacitor/core";
 
 export default {
   data() {
     return {
+      isWeb: !Capacitor.isNativePlatform(),
       f7params: {
         name: "Lexiklar",
         theme: "auto",

@@ -226,15 +226,15 @@
               :class="`gender-${preview.gender?.toLowerCase()}`"
             >{{ preview.article }}</span>
             <strong>{{ preview.word }}</strong>
+            <f7-badge :color="previewPosColor" class="word-preview-badge">{{ preview.pos }}</f7-badge>
           </div>
-          <f7-badge :color="previewPosColor">{{ preview.pos }}</f7-badge>
         </div>
         <div class="word-preview-sense">
           <span class="word-preview-sense-num">{{ preview.senseNumber }}.</span>
-          <span>{{ preview.senseGloss }}</span>
-        </div>
-        <div v-if="preview.senseGlossEn" class="word-preview-trans">
-          {{ preview.senseGlossEn }}
+          <div class="word-preview-sense-gloss">
+            <span class="word-preview-primary">{{ preview.senseGlossEn || preview.senseGloss }}</span>
+            <span v-if="preview.senseGlossEn" class="word-preview-secondary">{{ preview.senseGloss }}</span>
+          </div>
         </div>
         <f7-button fill large class="word-preview-btn" @click="navigateToPreview">
           {{ t('word.openCard') }}
