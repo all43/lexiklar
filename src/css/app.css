@@ -55,6 +55,13 @@
   margin-top: 2px;
 }
 
+/* Highlighted form of the current word within its own examples */
+mark.example-highlight {
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+}
+
 /* Cross-entry ref where the word itself is the link (has display text) */
 .sense-ref--word {
   color: var(--f7-theme-color);

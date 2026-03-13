@@ -2,6 +2,10 @@
   <span class="gloss-text">
     <template v-for="(seg, i) in segments" :key="i">
       <span v-if="seg.type === 'text'">{{ seg.text }}</span>
+      <mark
+        v-else-if="seg.type === 'self_ref'"
+        class="example-highlight"
+      >{{ seg.text }}</mark>
       <a
         v-else-if="seg.type === 'superscript_ref'"
         href="#"
@@ -30,6 +34,7 @@ import { parseReferences, hasReferences } from "../utils/references.js";
 export default {
   props: {
     gloss: { type: String, required: true },
+    selfPath: { type: String, default: null },
   },
   emits: ["sense-ref", "cross-ref"],
   computed: {
@@ -37,7 +42,13 @@ export default {
       if (!hasReferences(this.gloss)) {
         return [{ type: "text", text: this.gloss }];
       }
-      return parseReferences(this.gloss);
+      const segs = parseReferences(this.gloss);
+      if (!this.selfPath) return segs;
+      return segs.map(seg =>
+        seg.type === "cross_ref" && seg.filePath === this.selfPath
+          ? { type: "self_ref", text: seg.text }
+          : seg
+      );
     },
   },
 };

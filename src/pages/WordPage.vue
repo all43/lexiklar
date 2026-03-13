@@ -90,6 +90,7 @@
               <div class="item-inner example-inner">
                 <GlossText
                   :gloss="ex.text"
+                  :self-path="ex.selfPath"
                   @sense-ref="scrollToSense"
                   @cross-ref="handleCrossRef"
                   class="example-text"
@@ -472,20 +473,8 @@ export default {
         .map((id) => {
           const ex = this.examples[id];
           if (!ex) return null;
-
-          // Prefer text_linked (with cross-refs) over plain text
-          let displayText = ex.text_linked || ex.text;
-
-          // Strip self-references: [[form|currentPath]] or [[form|currentPath#N]] → form
-          if (displayText.includes(`|${currentPath}`)) {
-            const escaped = currentPath.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-            displayText = displayText.replace(
-              new RegExp(`\\[\\[([^\\]|]+)\\|${escaped}(?:#\\d+)?\\]\\]`, "g"),
-              "$1",
-            );
-          }
-
-          return { id, text: displayText, translation: ex.translation };
+          const text = ex.text_linked || ex.text;
+          return { id, text, selfPath: currentPath, translation: ex.translation };
         })
         .filter(Boolean);
     },
