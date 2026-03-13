@@ -65,6 +65,8 @@ const FREQ_LIMIT = (() => {
   return idx >= 0 ? parseInt(args[idx + 1], 10) || null : null;
 })();
 
+const NO_ANNOTATIONS = args.includes("--no-annotations");
+
 /**
  * Build a map of word → { frequency, whitelisted } from word files + whitelist.
  * Used by the --freq-limit filter.
@@ -109,7 +111,7 @@ async function runPool(items, concurrency, fn) {
 
 // Disambiguation dict adds many tokens and risks blowing local context.
 // Skip it for local providers unless the user opts in explicitly.
-const USE_DISAMBIG = !isLocalProvider(PROVIDER) || args.includes("--disambig");
+const USE_DISAMBIG = (!isLocalProvider(PROVIDER) && !args.includes("--no-disambig")) || args.includes("--disambig");
 
 // ============================================================
 // Load gloss_en from a phrase/word file via its ref path
@@ -216,7 +218,11 @@ function buildUserPrompt(batch, disambig) {
     }
   }
 
-  lines.push('\nReply with: {"examples": [{"id":"...","translation":"...","annotations":[...]}, ...]}');
+  if (NO_ANNOTATIONS) {
+    lines.push('\nReply with: {"examples": [{"id":"...","translation":"..."}, ...]}');
+  } else {
+    lines.push('\nReply with: {"examples": [{"id":"...","translation":"...","annotations":[...]}, ...]}');
+  }
 
   return lines.join("\n");
 }
@@ -227,6 +233,26 @@ function buildUserPrompt(batch, disambig) {
 
 // Wraps the array in { "examples": [...] } because JSON Schema requires an object root.
 // parseResponse already handles both bare arrays and { examples: [...] } wrappers.
+const EXAMPLE_SCHEMA_NO_ANNOTATIONS = {
+  type: "object",
+  properties: {
+    examples: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          id:          { type: "string" },
+          translation: { type: "string" },
+        },
+        required: ["id", "translation"],
+        additionalProperties: false,
+      },
+    },
+  },
+  required: ["examples"],
+  additionalProperties: false,
+};
+
 const EXAMPLE_SCHEMA = {
   type: "object",
   properties: {
@@ -484,7 +510,7 @@ async function main() {
             examples[result.id].translation = result.translation;
             examples[result.id].translation_model = modelLabel;
             const exType = examples[result.id].type;
-            if (exType === "expression" || exType === "proverb") {
+            if (NO_ANNOTATIONS || exType === "expression" || exType === "proverb") {
               delete examples[result.id].annotations;
             } else {
               examples[result.id].annotations = result.annotations;
@@ -519,8 +545,9 @@ async function main() {
     saveExamples();
   }
 
-  const idiomLlmOptions   = { provider: IDIOM_PROVIDER, model: IDIOM_MODEL,   maxTokens: 4096, temperature: 0.3, jsonSchema: EXAMPLE_SCHEMA };
-  const regularLlmOptions = { provider: PROVIDER,        model: MODEL,          maxTokens: 8192, temperature: 0.3, jsonSchema: EXAMPLE_SCHEMA };
+  const schema = NO_ANNOTATIONS ? EXAMPLE_SCHEMA_NO_ANNOTATIONS : EXAMPLE_SCHEMA;
+  const idiomLlmOptions   = { provider: IDIOM_PROVIDER, model: IDIOM_MODEL,   maxTokens: 4096, temperature: 0.3, jsonSchema: schema };
+  const regularLlmOptions = { provider: PROVIDER,        model: MODEL,          maxTokens: 8192, temperature: 0.3, jsonSchema: schema };
 
   await processBatches(idiomItems,   idiomLlmOptions,   IDIOM_MODEL_LABEL, "Idioms/expressions");
   await processBatches(regularItems, regularLlmOptions, MODEL_LABEL,       "Regular examples");
