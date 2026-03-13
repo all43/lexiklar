@@ -15,6 +15,16 @@
         @change="setTheme(opt.value)"
       />
     </f7-list>
+    <f7-list inset strong-ios outline-ios>
+      <f7-list-item :title="t('settings.showArticles')">
+        <template #after>
+          <f7-toggle :checked="showArticles" @toggle:change="setShowArticles" />
+        </template>
+      </f7-list-item>
+    </f7-list>
+    <f7-block-footer class="padding-horizontal">
+      {{ t('settings.showArticlesFooter') }}
+    </f7-block-footer>
 
     <f7-block-title>{{ t('settings.language') }}</f7-block-title>
     <f7-list inset strong-ios outline-ios>
@@ -58,6 +68,8 @@ const LANG_OPTIONS = [
   { value: "de", labelKey: "settings.langGerman" },
 ];
 
+export const SHOW_ARTICLES_KEY = "lexiklar_show_articles";
+
 export default {
   data() {
     return {
@@ -65,6 +77,7 @@ export default {
       language: getLocale(),
       themeOptions: THEME_OPTIONS,
       langOptions: LANG_OPTIONS,
+      showArticles: localStorage.getItem(SHOW_ARTICLES_KEY) === "1",
     };
   },
   computed: {
@@ -79,6 +92,10 @@ export default {
     setLanguage(value) {
       this.language = value;
       setLocale(value);
+    },
+    setShowArticles(value) {
+      this.showArticles = value;
+      localStorage.setItem(SHOW_ARTICLES_KEY, value ? "1" : "0");
     },
     confirmClear() {
       f7.dialog.confirm(

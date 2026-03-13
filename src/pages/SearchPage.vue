@@ -25,7 +25,7 @@
           <f7-list-item
             v-for="item in vlData.items"
             :key="item.file"
-            :title="item.pluralDominant ? item.pluralForm : item.lemma"
+            :title="itemTitle(item)"
             :subtitle="itemSubtitle(item)"
             :link="`/word/${item.file}/`"
             :style="`top: ${vlData.topPosition}px`"
@@ -54,7 +54,7 @@
           <f7-list-item
             v-for="item in freqWords"
             :key="item.file"
-            :title="item.pluralDominant ? item.pluralForm : item.lemma"
+            :title="itemTitle(item)"
             :subtitle="item.glossEn[0] || ''"
             :link="`/word/${item.file}/`"
           >
@@ -74,7 +74,7 @@
           <f7-list-item
             v-for="item in recentWords"
             :key="item.file"
-            :title="item.pluralDominant ? item.pluralForm : item.lemma"
+            :title="itemTitle(item)"
             :subtitle="item.glossEn[0] || ''"
             :link="`/word/${item.file}/`"
           >
@@ -102,6 +102,7 @@
 <script>
 import { theme } from "framework7-vue";
 import { t } from "../js/i18n.js";
+import { SHOW_ARTICLES_KEY } from "./SettingsPage.vue";
 import {
   searchByLemma,
   searchByGlossEn,
@@ -128,6 +129,7 @@ export default {
       // Shared
       loading: true,
       debounceTimer: null,
+      showArticles: localStorage.getItem(SHOW_ARTICLES_KEY) === "1",
     };
   },
 
@@ -154,6 +156,7 @@ export default {
       // - initial load (page:afterin on mount)
       // - navigating back from a word page (page:afterin)
       // - switching tabs (page:tabshow)
+      this.showArticles = localStorage.getItem(SHOW_ARTICLES_KEY) === "1";
       if (!this.searchQuery) this.loadHomeScreen();
     },
     onSearch(searchbar, query) {
@@ -176,6 +179,14 @@ export default {
       if (gender === "F") return "pink";
       if (gender === "N") return "green";
       return "";
+    },
+    itemTitle(item) {
+      const base = item.pluralDominant ? item.pluralForm : item.lemma;
+      if (this.showArticles && item.gender && !item.pluralDominant) {
+        const article = item.gender === "M" ? "der" : item.gender === "F" ? "die" : "das";
+        return `${article} ${base}`;
+      }
+      return base;
     },
 
     renderExternal(vl, vlData) {

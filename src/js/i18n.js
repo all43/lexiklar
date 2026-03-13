@@ -78,6 +78,8 @@ const locales = {
     "settings.langAuto": "Auto (System)",
     "settings.langEnglish": "English",
     "settings.langGerman": "Deutsch",
+    "settings.showArticles": "Show articles in search",
+    "settings.showArticlesFooter": "Displays der/die/das before nouns in search results and history.",
 
     // NounDeclension
     "noun.pluraletantum": "Pluraletantum — always used in plural",
@@ -159,6 +161,8 @@ const locales = {
     "settings.langAuto": "Automatisch (System)",
     "settings.langEnglish": "English",
     "settings.langGerman": "Deutsch",
+    "settings.showArticles": "Artikel in der Suche anzeigen",
+    "settings.showArticlesFooter": "Zeigt der/die/das vor Nomen in Suchergebnissen und Verlauf.",
 
     // NounDeclension
     "noun.pluraletantum": "Pluraletantum — immer im Plural verwendet",
