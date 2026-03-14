@@ -260,42 +260,56 @@ function enrichFiles(newsMap, wikiMap, subtlexMap, opensubMap) {
     }
   }
 
-  // Sort by combined Zipf descending (null = not found → goes to end)
-  allEntries.sort((a, b) => {
-    if (a.combined === null && b.combined === null) return 0;
-    if (a.combined === null) return 1;
-    if (b.combined === null) return -1;
-    return b.combined - a.combined;
-  });
-
-  // Assign global rank and write back
+  // Write absolute Zipf scores (stable across re-runs)
   let enriched = 0;
   let notFound = 0;
+  let unchanged = 0;
 
-  for (let i = 0; i < allEntries.length; i++) {
-    const { filePath, data, combined } = allEntries[i];
+  for (const { filePath, data, combined } of allEntries) {
+    let changed = false;
 
     if (combined !== null) {
-      data.frequency = i + 1; // rank 1 = most common within our word set
+      const rounded = Math.round(combined * 100) / 100; // 2 decimal places
+      if (data.zipf !== rounded) {
+        data.zipf = rounded;
+        changed = true;
+      }
       enriched++;
     } else {
-      delete data.frequency;
+      if (data.zipf != null) {
+        delete data.zipf;
+        changed = true;
+      }
       notFound++;
       console.log(`  No frequency data for: ${data.word} (${data.pos})`);
     }
 
-    if (pluralPreferred.has(data.word)) {
-      data.plural_dominant = true;
-      pluralDominantCount++;
-    } else {
-      delete data.plural_dominant;
+    // Migrate: remove legacy rank field
+    if (data.frequency != null) {
+      delete data.frequency;
+      changed = true;
     }
 
-    writeFileSync(filePath, JSON.stringify(data, null, 2));
+    if (pluralPreferred.has(data.word)) {
+      if (!data.plural_dominant) {
+        data.plural_dominant = true;
+        changed = true;
+      }
+      pluralDominantCount++;
+    } else if (data.plural_dominant != null) {
+      delete data.plural_dominant;
+      changed = true;
+    }
+
+    if (changed) {
+      writeFileSync(filePath, JSON.stringify(data, null, 2));
+    } else {
+      unchanged++;
+    }
   }
 
   console.log(
-    `\nEnriched ${enriched} files with frequency rank. ${notFound} words not found in any corpus.`,
+    `\nEnriched ${enriched} files with Zipf scores (${unchanged} unchanged). ${notFound} words not found in any corpus.`,
   );
   if (pluralDominantCount > 0) {
     console.log(`Applied plural_dominant to ${pluralDominantCount} nouns.`);

@@ -4,6 +4,9 @@ import {
   readFileSync,
   existsSync,
   mkdirSync,
+  openSync,
+  readSync,
+  closeSync,
 } from "fs";
 import { createInterface } from "readline";
 import { createHash } from "crypto";
@@ -787,8 +790,8 @@ function mergeWithExisting(newData, existingPath) {
   }
 
   // Preserve fields added by enrich step (not owned by transform)
-  if (existing.frequency != null) {
-    newData.frequency = existing.frequency;
+  if (existing.zipf != null) {
+    newData.zipf = existing.zipf;
   }
   if (existing.plural_dominant != null) {
     newData.plural_dominant = existing.plural_dominant;
@@ -856,15 +859,17 @@ async function main() {
   // Phase 1: Collect matching entries, grouped by word|pos
   console.log("Scanning source data...");
   const groups = new Map();
-  // Buffer for noun entries with gender-pair form references. Populated for ALL
-  // such nouns regardless of the frequency filter so that Phase 1b can force-
-  // include counterparts of filtered-out words (e.g. Automechanikerin when only
-  // Automechaniker passed the cutoff).
-  const genderBuffer = new Map(); // lowerCaseWord → raw JSON string
+  // Buffer for noun entries with gender-pair form references. Stores byte offset
+  // instead of raw line to avoid holding hundreds of thousands of multi-KB strings
+  // in memory. Phase 1b reads back only the lines it needs.
+  const genderBuffer = new Map(); // lowerCaseWord → byte offset into RAW_FILE
   const rl = createInterface({ input: createReadStream(RAW_FILE) });
   let lineCount = 0;
+  let byteOffset = 0;
 
   for await (const line of rl) {
+    const lineStart = byteOffset;
+    byteOffset += Buffer.byteLength(line, "utf-8") + 1; // +1 for newline
     lineCount++;
     if (lineCount % 50000 === 0)
       process.stdout.write(`\r  ${lineCount} lines scanned`);
@@ -895,10 +900,10 @@ async function main() {
 
     // Buffer noun entries that carry a gender-pair reference, before filter
     // checks, so Phase 1b can retrieve them even if they didn't pass the filter.
-    // Store only the raw string — parsed object is re-created on demand.
+    // Store byte offset only — raw line is read back on demand in Phase 1b.
     if (entry.pos === "noun" && extractGenderCounterpart(entry)) {
       if (!genderBuffer.has(entry.word.toLowerCase()))
-        genderBuffer.set(entry.word.toLowerCase(), line);
+        genderBuffer.set(entry.word.toLowerCase(), lineStart);
     }
 
     if (seedWords && !seedWords.has(entry.word.toLowerCase())) continue;
@@ -906,9 +911,10 @@ async function main() {
 
     const key = `${entry.word}|${entry.pos}`;
     if (!groups.has(key)) groups.set(key, []);
-    // Store raw string + pre-computed hash only. Parsed object is recreated in
-    // Phase 2 to avoid holding two copies (raw + JS object) per entry in RAM.
-    groups.get(key).push({ raw: line, hash: sha256(line) });
+    // Store byte offset + length + hash only. Raw line is read back on demand in
+    // Phase 2 to keep memory usage proportional to entry count, not entry size.
+    const lineBytes = Buffer.byteLength(line, "utf-8");
+    groups.get(key).push({ offset: lineStart, length: lineBytes, hash: sha256(line) });
   }
 
   const totalEntries = [...groups.values()].reduce(
@@ -924,19 +930,34 @@ async function main() {
   // We check ALL entries in each group because the same word can have multiple
   // noun entries (e.g. Koch has masculine=chef and neuter=abbreviation); only
   // one of them may carry the feminine form reference.
+  // Helper: read a single line from RAW_FILE at a given byte offset + length
+  const rawFd = openSync(RAW_FILE, "r");
+  function readLineAt(offset, len) {
+    const size = len || 65536; // fallback for genderBuffer entries (no length stored)
+    const buf = Buffer.alloc(size);
+    const bytesRead = readSync(rawFd, buf, 0, size, offset);
+    const chunk = buf.toString("utf-8", 0, bytesRead);
+    if (len) return chunk; // exact length known
+    const newlineIdx = chunk.indexOf("\n");
+    return newlineIdx >= 0 ? chunk.slice(0, newlineIdx) : chunk;
+  }
+
   if (freqFilter && !useSeed) {
     let counterpartsAdded = 0;
     for (const [, entries] of groups) {
-      for (const { raw } of entries) {
+      for (const entry of entries) {
+        const raw = readLineAt(entry.offset, entry.length);
         const parsed = JSON.parse(raw);
         if (parsed.pos !== "noun") continue;
         const counterpartWord = extractGenderCounterpart(parsed);
         if (!counterpartWord) continue;
         const counterpartKey = `${counterpartWord}|noun`;
         if (groups.has(counterpartKey)) break; // already included — move to next group
-        const bufferedRaw = genderBuffer.get(counterpartWord.toLowerCase());
-        if (!bufferedRaw) break; // not present in Wiktionary data
-        groups.set(counterpartKey, [{ raw: bufferedRaw, hash: sha256(bufferedRaw) }]);
+        const bufferedOffset = genderBuffer.get(counterpartWord.toLowerCase());
+        if (bufferedOffset == null) break; // not present in Wiktionary data
+        const bufferedRaw = readLineAt(bufferedOffset);
+        const bufferedLen = Buffer.byteLength(bufferedRaw, "utf-8");
+        groups.set(counterpartKey, [{ offset: bufferedOffset, length: bufferedLen, hash: sha256(bufferedRaw) }]);
         counterpartsAdded++;
         break; // counterpart added, no need to check other entries in this group
       }
@@ -988,10 +1009,10 @@ async function main() {
   for (const [, entries] of groups) {
     const needsDisambig = entries.length > 1;
 
-    for (const { raw, hash } of entries) {
-      // Parse lazily here — we deliberately did NOT store the parsed object in
-      // Phase 1 so that genderBuffer and groups don't hold two copies (raw string
-      // + JS object) of every entry simultaneously.
+    for (const { offset, length, hash } of entries) {
+      // Read raw line from disk on demand — groups stores only byte offsets to
+      // keep Phase 1 memory proportional to entry count, not entry size.
+      const raw = readLineAt(offset, length);
       const parsed = JSON.parse(raw);
       const stateKey = `${parsed.word}|${parsed.pos}|${parsed.etymology_number || 1}`;
 
@@ -1074,6 +1095,7 @@ async function main() {
   const expressionCount = Object.values(sortedExamples).filter(
     (e) => e.type === "expression" || e.type === "proverb",
   ).length;
+  closeSync(rawFd);
   console.log(`\nDone. Wrote ${written} word files, skipped ${skipped} unchanged.`);
   console.log(
     `Wrote ${exampleCount} examples + ${expressionCount} expressions/proverbs to examples.json.`,

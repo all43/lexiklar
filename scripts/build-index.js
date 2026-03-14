@@ -452,7 +452,20 @@ function main() {
   );
 
   // --------------------------------------------------------
-  // Phase 1c: Insert word files → words + word_forms tables
+  // Phase 1c: Compute frequency rank from Zipf scores
+  // --------------------------------------------------------
+
+  // Sort by zipf descending, assign rank 1..N (null zipf → no rank)
+  const ranked = allWordData
+    .filter((e) => e.data.zipf != null)
+    .sort((a, b) => b.data.zipf - a.data.zipf);
+  const frequencyRank = new Map();
+  for (let i = 0; i < ranked.length; i++) {
+    frequencyRank.set(ranked[i].fileKey, i + 1);
+  }
+
+  // --------------------------------------------------------
+  // Phase 1d: Insert word files → words + word_forms tables
   // --------------------------------------------------------
 
   let wordCount = 0;
@@ -498,7 +511,7 @@ function main() {
         lemma_folded: foldUmlauts(data.word),
         pos: data.pos.toUpperCase(),
         gender: data.gender || null,
-        frequency: data.frequency || null,
+        frequency: frequencyRank.get(fileKey) || null,
         plural_dominant: data.plural_dominant ? 1 : null,
         plural_form: data.plural_dominant ? (data.plural_form || null) : null,
         file: fileKey,
