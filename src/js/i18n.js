@@ -110,6 +110,7 @@ const locales = {
     "adj.indeclinable": "Indeclinable — no case endings",
 
     // Data reports
+    "search.didYouMean": "Did you mean?",
     "report.missingWord": "Report \"{word}\" as missing",
     "report.notFound": "Can't find what you're looking for?",
     "report.incorrectData": "Report an issue with this entry",
@@ -218,6 +219,7 @@ const locales = {
     "adj.indeclinable": "Indeklinabel — keine Kasusendungen",
 
     // Data reports
+    "search.didYouMean": "Meinten Sie?",
     "report.missingWord": "\u201E{word}\u201C als fehlendes Wort melden",
     "report.notFound": "Nicht das Richtige gefunden?",
     "report.incorrectData": "Problem mit diesem Eintrag melden",

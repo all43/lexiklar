@@ -45,10 +45,27 @@
 
       <f7-block v-else-if="!loading">
         <p>{{ t('search.noResults') }}</p>
-        <f7-list v-if="searchQuery.length >= 3" inset>
-          <f7-list-button :title="t('report.missingWord').replace('{word}', searchQuery)" @click="reportMissing" />
-        </f7-list>
       </f7-block>
+      <template v-if="!loading && results.length === 0 && suggestions.length > 0">
+        <f7-block-title>{{ t('search.didYouMean') }}</f7-block-title>
+        <f7-list inset media-list>
+          <f7-list-item
+            v-for="item in suggestions"
+            :key="item.file"
+            :title="itemTitle(item)"
+            :subtitle="item.glossEn[0] || ''"
+            :link="`/word/${item.file}/`"
+          >
+            <template #after>
+              <span class="list-item-pos">{{ item.pos }}</span>
+              <f7-badge v-if="item.gender" :color="genderColor(item.gender)" class="list-item-badge">{{ item.gender }}</f7-badge>
+            </template>
+          </f7-list-item>
+        </f7-list>
+      </template>
+      <f7-list v-if="!loading && results.length === 0 && searchQuery.length >= 3" inset>
+        <f7-list-button :title="t('report.missingWord').replace('{word}', searchQuery)" @click="reportMissing" />
+      </f7-list>
     </template>
 
     <!-- ═══ Home screen — shown when no query ═══ -->
@@ -116,6 +133,7 @@ import {
   searchByGlossEn,
   searchByWordForm,
   getRelatedWords,
+  getSuggestions,
 } from "../utils/db.js";
 
 const RECENTS_KEY = "lexiklar_recents";
@@ -128,6 +146,7 @@ export default {
     return {
       // Search mode
       results: [],
+      suggestions: [],
       vlData: { items: [], topPosition: 0 },
       vl: null,
       searchQuery: "",
@@ -233,6 +252,14 @@ export default {
       }
 
       this.results = results;
+
+      // Fetch spelling suggestions when no results and query is 3+ chars
+      if (results.length === 0 && q.length >= 3) {
+        this.suggestions = await getSuggestions(q);
+      } else {
+        this.suggestions = [];
+      }
+
       this.loading = false;
     },
 

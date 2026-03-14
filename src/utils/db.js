@@ -24,9 +24,10 @@ function foldUmlauts(str) {
     .replace(/ß/g, "ss");
 }
 
-let worker = null;
-let nextId = 0;
-const pending = new Map();
+// Preserve worker state across Vite HMR reloads
+let worker = import.meta.hot?.data?.worker ?? null;
+let nextId = import.meta.hot?.data?.nextId ?? 0;
+const pending = import.meta.hot?.data?.pending ?? new Map();
 
 function send(method, args = {}, transfer = []) {
   return new Promise((resolve, reject) => {
@@ -264,6 +265,66 @@ export async function getAllWords() {
   return rows.map(processSearchRow);
 }
 
+// ---- Fuzzy suggestions (Levenshtein) ----
+
+/**
+ * Compute Levenshtein distance between two strings.
+ */
+function levenshtein(a, b) {
+  const m = a.length, n = b.length;
+  if (m === 0) return n;
+  if (n === 0) return m;
+  let prev = Array.from({ length: n + 1 }, (_, i) => i);
+  let curr = new Array(n + 1);
+  for (let i = 1; i <= m; i++) {
+    curr[0] = i;
+    for (let j = 1; j <= n; j++) {
+      curr[j] = a[i - 1] === b[j - 1]
+        ? prev[j - 1]
+        : 1 + Math.min(prev[j - 1], prev[j], curr[j - 1]);
+    }
+    [prev, curr] = [curr, prev];
+  }
+  return prev[n];
+}
+
+let _allLemmas = null;
+
+/**
+ * Get spelling suggestions for a query with no results.
+ * Uses Levenshtein distance against all lemmas (cached after first call).
+ * Returns up to 3 matches as processSearchRow objects.
+ */
+export async function getSuggestions(q) {
+  if (!_allLemmas) {
+    _allLemmas = await query(
+      `SELECT lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en FROM words`,
+    );
+  }
+
+  const qLower = q.toLowerCase();
+  const qFolded = foldUmlauts(q);
+  const maxDist = q.length <= 3 ? 1 : 2;
+  const scored = [];
+
+  for (const row of _allLemmas) {
+    const d = Math.min(
+      levenshtein(qLower, row.lemma.toLowerCase()),
+      levenshtein(qFolded, row.lemma_folded),
+    );
+    if (d > 0 && d <= maxDist) {
+      scored.push({ row, dist: d });
+    }
+  }
+
+  scored.sort((a, b) =>
+    a.dist - b.dist
+    || (a.row.frequency ?? 999999) - (b.row.frequency ?? 999999),
+  );
+
+  return scored.slice(0, 3).map((s) => processSearchRow(s.row));
+}
+
 // ---- OTA Update API ----
 
 /**
@@ -361,4 +422,14 @@ export async function applyUpdate(update) {
   } catch (err) {
     return { ok: false, error: err.message };
   }
+}
+
+// ---- Vite HMR: preserve DB worker across hot reloads ----
+if (import.meta.hot) {
+  import.meta.hot.accept();
+  import.meta.hot.dispose(() => {
+    import.meta.hot.data.worker = worker;
+    import.meta.hot.data.nextId = nextId;
+    import.meta.hot.data.pending = pending;
+  });
 }
