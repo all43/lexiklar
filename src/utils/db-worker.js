@@ -2,11 +2,13 @@
  * Web Worker for SQLite database access.
  *
  * Loads the database into WASM memory via sqlite3_deserialize.
- * OPFS is used only as a byte cache (not as the VFS) for persistence.
+ * Cache API is used as a byte cache for persistence.
  *
  * Message protocol:
- *   init(bytes)    → load sqlite3 module, deserialize DB from bytes
- *   exec(sql,bind) → run SQL query, return result rows
+ *   init(bytes)       → load sqlite3 module, deserialize DB from bytes
+ *   exec(sql,bind)    → run SQL query, return result rows
+ *   exec_batch(sql)   → run multi-statement SQL in a transaction (for OTA patches)
+ *   serialize()       → export DB bytes via sqlite3_serialize (for re-caching after patch)
  */
 
 import sqlite3InitModule from "@sqlite.org/sqlite-wasm";
@@ -58,6 +60,27 @@ async function handleMessage(method, args) {
     case "exec": {
       if (!db) throw new Error("Database not initialized");
       return exec(args.sql, args.bind || []);
+    }
+
+    case "exec_batch": {
+      if (!db) throw new Error("Database not initialized");
+      // Run multi-statement SQL (OTA patch) inside a transaction
+      db.exec("BEGIN TRANSACTION");
+      try {
+        db.exec(args.sql);
+        db.exec("COMMIT");
+      } catch (err) {
+        db.exec("ROLLBACK");
+        throw err;
+      }
+      return { ok: true };
+    }
+
+    case "serialize": {
+      if (!db) throw new Error("Database not initialized");
+      // Export the in-memory DB as bytes for re-caching after patch
+      const bytes = sqlite3.capi.sqlite3_js_db_export(db.pointer);
+      return bytes.buffer;
     }
 
     default:

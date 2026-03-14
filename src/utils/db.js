@@ -101,6 +101,10 @@ async function cacheVersionWrite(version) {
   }
 }
 
+// ---- Update manifest URL ----
+// GitHub Pages base URL for OTA updates (patches + manifest)
+const UPDATE_BASE_URL = "https://evgeniimalikov.github.io/lexiklar-data";
+
 // ---- Public API ----
 
 /**
@@ -258,4 +262,103 @@ export async function getAllWords() {
      ORDER BY frequency ASC`,
   );
   return rows.map(processSearchRow);
+}
+
+// ---- OTA Update API ----
+
+/**
+ * Get the current database version and build date.
+ * Returns { version, builtAt } or null if DB not initialized.
+ */
+export async function getDbVersion() {
+  const rows = await query("SELECT key, value FROM meta");
+  const meta = {};
+  for (const row of rows) meta[row.key] = row.value;
+  return {
+    version: meta.version || null,
+    builtAt: meta.built_at || null,
+  };
+}
+
+/**
+ * Check for available OTA updates.
+ * Returns:
+ *   { available: false } — already up to date
+ *   { available: true, type: 'patch', url, size } — incremental patch
+ *   { available: true, type: 'full', url, size } — full DB download
+ *   null — check failed (network error, etc.)
+ */
+export async function checkForUpdates() {
+  try {
+    const { version: localVersion } = await getDbVersion();
+    const resp = await fetch(`${UPDATE_BASE_URL}/manifest.json`, {
+      cache: "no-cache",
+    });
+    if (!resp.ok) return null;
+    const manifest = await resp.json();
+
+    if (manifest.current_version === localVersion) {
+      return { available: false };
+    }
+
+    // Check if a patch exists for our version
+    const patch = manifest.patches?.[localVersion];
+    if (patch) {
+      return {
+        available: true,
+        type: "patch",
+        url: `${UPDATE_BASE_URL}/${patch.url}`,
+        size: patch.size,
+        targetVersion: manifest.current_version,
+        builtAt: manifest.built_at,
+      };
+    }
+
+    // Fall back to full download
+    return {
+      available: true,
+      type: "full",
+      url: `${UPDATE_BASE_URL}/${manifest.full_db.url}`,
+      size: manifest.full_db.size,
+      targetVersion: manifest.current_version,
+      builtAt: manifest.built_at,
+    };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Apply an OTA update (patch or full DB replacement).
+ * After applying, re-caches the updated DB bytes.
+ *
+ * @param {Object} update - Result from checkForUpdates() with available: true
+ * @returns {{ ok: boolean, error?: string }}
+ */
+export async function applyUpdate(update) {
+  try {
+    const resp = await fetch(update.url);
+    if (!resp.ok) {
+      return { ok: false, error: `Download failed: ${resp.status}` };
+    }
+
+    if (update.type === "patch") {
+      // Apply SQL patch to in-memory DB
+      const patchSql = await resp.text();
+      await send("exec_batch", { sql: patchSql });
+    } else {
+      // Full DB replacement — deserialize new bytes
+      const bytes = await resp.arrayBuffer();
+      await send("init", { bytes }, [bytes]);
+    }
+
+    // Re-cache the updated DB
+    const updatedBytes = await send("serialize");
+    await cacheWrite(updatedBytes);
+    await cacheVersionWrite(update.targetVersion);
+
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
 }

@@ -39,9 +39,15 @@
           </f7-list-item>
         </ul>
       </f7-list>
+      <f7-list v-if="results.length > 0 && searchQuery.length >= 3" inset>
+        <f7-list-button :title="t('report.notFound')" @click="reportMissing" />
+      </f7-list>
 
       <f7-block v-else-if="!loading">
         <p>{{ t('search.noResults') }}</p>
+        <f7-list v-if="searchQuery.length >= 3" inset>
+          <f7-list-button :title="t('report.missingWord').replace('{word}', searchQuery)" @click="reportMissing" />
+        </f7-list>
       </f7-block>
     </template>
 
@@ -100,8 +106,9 @@
 </template>
 
 <script>
-import { theme } from "framework7-vue";
+import { f7, theme } from "framework7-vue";
 import { t } from "../js/i18n.js";
+import { submitReport } from "../utils/report.js";
 import { SHOW_ARTICLES_KEY } from "./SettingsPage.vue";
 import { getCached } from "../utils/storage.js";
 import {
@@ -227,6 +234,31 @@ export default {
 
       this.results = results;
       this.loading = false;
+    },
+
+    reportMissing() {
+      const word = this.searchQuery;
+      f7.dialog.create({
+        title: t("report.missingWord").replace("{word}", word),
+        text: t("report.details"),
+        content: '<div class="dialog-input-field input"><input type="text" class="dialog-input"></div>',
+        buttons: [
+          { text: t("report.cancel"), keyCodes: [27] },
+          { text: t("report.send"), bold: true, close: false },
+        ],
+        onClick(dialog, index) {
+          if (index === 0) return;
+          const details = dialog.$el.find(".dialog-input").val();
+          dialog.close();
+          submitReport({ type: "missing_word", word, details }).then((result) => {
+            f7.toast.create({
+              text: result.ok ? t("report.success") : t("report.error"),
+              closeTimeout: 2000,
+              position: "center",
+            }).open();
+          });
+        },
+      }).open();
     },
 
     async loadHomeScreen() {

@@ -82,6 +82,21 @@ const locales = {
     "settings.showArticles": "Show articles in search",
     "settings.showArticlesFooter": "Displays der/die/das before nouns in search results and history.",
 
+    // About & Updates
+    "settings.about": "About",
+    "settings.dictionaryVersion": "Dictionary version",
+    "settings.appVersion": "App version",
+    "settings.checkUpdates": "Check for updates",
+    "settings.checking": "Checking...",
+    "settings.upToDate": "Up to date",
+    "settings.updateAvailable": "Update available",
+    "settings.updateSize": "({size})",
+    "settings.downloading": "Downloading...",
+    "settings.applying": "Applying update...",
+    "settings.updateDone": "Dictionary updated",
+    "settings.updateFailed": "Update failed",
+    "settings.updateReload": "Update applied. Reload to use new data.",
+
     // NounDeclension
     "noun.pluraletantum": "Pluraletantum — always used in plural",
     "noun.nDeklination": "N-Deklination — adds -(e)n to all cases except nominative",
@@ -93,6 +108,16 @@ const locales = {
 
     // AdjectiveDeclension
     "adj.indeclinable": "Indeclinable — no case endings",
+
+    // Data reports
+    "report.missingWord": "Report \"{word}\" as missing",
+    "report.notFound": "Can't find what you're looking for?",
+    "report.incorrectData": "Report an issue with this entry",
+    "report.details": "Details (optional)",
+    "report.send": "Send",
+    "report.cancel": "Cancel",
+    "report.success": "Report sent. Thank you!",
+    "report.error": "Could not send report.",
   },
   de: {
     // Tab bar
@@ -165,6 +190,21 @@ const locales = {
     "settings.showArticles": "Artikel in der Suche anzeigen",
     "settings.showArticlesFooter": "Zeigt der/die/das vor Nomen in Suchergebnissen und Verlauf.",
 
+    // About & Updates
+    "settings.about": "Info",
+    "settings.dictionaryVersion": "Wörterbuch-Version",
+    "settings.appVersion": "App-Version",
+    "settings.checkUpdates": "Nach Updates suchen",
+    "settings.checking": "Wird geprüft...",
+    "settings.upToDate": "Aktuell",
+    "settings.updateAvailable": "Update verfügbar",
+    "settings.updateSize": "({size})",
+    "settings.downloading": "Wird heruntergeladen...",
+    "settings.applying": "Update wird angewendet...",
+    "settings.updateDone": "Wörterbuch aktualisiert",
+    "settings.updateFailed": "Update fehlgeschlagen",
+    "settings.updateReload": "Update angewendet. Neu laden für neue Daten.",
+
     // NounDeclension
     "noun.pluraletantum": "Pluraletantum — immer im Plural verwendet",
     "noun.nDeklination": "N-Deklination — fügt -(e)n in allen Fällen außer Nominativ hinzu",
@@ -176,6 +216,16 @@ const locales = {
 
     // AdjectiveDeclension
     "adj.indeclinable": "Indeklinabel — keine Kasusendungen",
+
+    // Data reports
+    "report.missingWord": "\u201E{word}\u201C als fehlendes Wort melden",
+    "report.notFound": "Nicht das Richtige gefunden?",
+    "report.incorrectData": "Problem mit diesem Eintrag melden",
+    "report.details": "Beschreibung (optional)",
+    "report.send": "Senden",
+    "report.cancel": "Abbrechen",
+    "report.success": "Meldung gesendet. Vielen Dank!",
+    "report.error": "Meldung konnte nicht gesendet werden.",
   },
 };
 

@@ -203,6 +203,11 @@
           <p><em>{{ t('word.grammarSoon') }}</em></p>
         </f7-block>
       </template>
+
+      <!-- Report issue -->
+      <f7-block-footer class="padding-horizontal" style="text-align: center; margin-top: 24px; margin-bottom: 16px;">
+        <f7-link @click="reportIssue" class="text-color-gray">{{ t('report.incorrectData') }}</f7-link>
+      </f7-block-footer>
     </template>
 
     <f7-block v-else>
@@ -250,6 +255,7 @@ import VerbConjugation from "../components/VerbConjugation.vue";
 import NounDeclension from "../components/NounDeclension.vue";
 import AdjectiveDeclension from "../components/AdjectiveDeclension.vue";
 import { getWord, getExamples, getRelatedWords, searchByLemma } from "../utils/db.js";
+import { submitReport } from "../utils/report.js";
 import { f7 } from "framework7-vue/bundle";
 import { t } from "../js/i18n.js";
 import { getCached, setItem } from "../utils/storage.js";
@@ -463,6 +469,33 @@ export default {
       this.preview = null;
       const url = `/word/${filePath}/`;
       this.f7router.navigate(senseNumber ? `${url}?sense=${senseNumber}` : url);
+    },
+
+    reportIssue() {
+      const { pos, file } = this.f7route.params;
+      const fileKey = `${pos}/${file}`;
+      const word = this.word?.word || file;
+      f7.dialog.create({
+        title: t("report.incorrectData"),
+        text: t("report.details"),
+        content: '<div class="dialog-input-field input"><input type="text" class="dialog-input"></div>',
+        buttons: [
+          { text: t("report.cancel"), keyCodes: [27] },
+          { text: t("report.send"), bold: true, close: false },
+        ],
+        onClick(dialog, index) {
+          if (index === 0) return;
+          const details = dialog.$el.find(".dialog-input").val();
+          dialog.close();
+          submitReport({ type: "incorrect_data", word, details, file: fileKey }).then((result) => {
+            f7.toast.create({
+              text: result.ok ? t("report.success") : t("report.error"),
+              closeTimeout: 2000,
+              position: "center",
+            }).open();
+          });
+        },
+      }).open();
     },
 
     getSenseExamples(sense) {

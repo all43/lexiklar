@@ -36,6 +36,14 @@ const DB_PATH = join(DATA_DIR, "lexiklar.db");
 const EXAMPLES_FILE = join(DATA_DIR, "examples.json");
 const VERB_ENDINGS_FILE = join(DATA_DIR, "rules", "verb-endings.json");
 
+/**
+ * Compute a short content hash (first 16 hex chars of SHA-256).
+ * Used for row-level diffing in the OTA patch system.
+ */
+function contentHash(str) {
+  return createHash("sha256").update(str).digest("hex").slice(0, 16);
+}
+
 function findJsonFiles() {
   const results = [];
   for (const dir of POS_DIRS) {
@@ -237,12 +245,14 @@ function main() {
       plural_form     TEXT,
       file            TEXT NOT NULL UNIQUE,
       gloss_en        TEXT,
-      data            TEXT NOT NULL
+      data            TEXT NOT NULL,
+      hash            TEXT NOT NULL
     );
 
     CREATE TABLE examples (
       id   TEXT PRIMARY KEY,
-      data TEXT NOT NULL
+      data TEXT NOT NULL,
+      hash TEXT NOT NULL
     );
 
     CREATE TABLE word_forms (
@@ -258,8 +268,8 @@ function main() {
   `);
 
   const insertWord = db.prepare(`
-    INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en, data)
-    VALUES (@lemma, @lemma_folded, @pos, @gender, @frequency, @plural_dominant, @plural_form, @file, @gloss_en, @data)
+    INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en, data, hash)
+    VALUES (@lemma, @lemma_folded, @pos, @gender, @frequency, @plural_dominant, @plural_form, @file, @gloss_en, @data, @hash)
   `);
 
   const insertWordForm = db.prepare(`
@@ -268,7 +278,7 @@ function main() {
   `);
 
   const insertExample = db.prepare(`
-    INSERT OR IGNORE INTO examples (id, data) VALUES (@id, @data)
+    INSERT OR IGNORE INTO examples (id, data, hash) VALUES (@id, @data, @hash)
   `);
 
   const insertMeta = db.prepare(`
@@ -506,6 +516,7 @@ function main() {
         enriched.related = rels;
       }
 
+      const dataJson = JSON.stringify(enriched);
       const result = insertWord.run({
         lemma: data.word,
         lemma_folded: foldUmlauts(data.word),
@@ -516,7 +527,8 @@ function main() {
         plural_form: data.plural_dominant ? (data.plural_form || null) : null,
         file: fileKey,
         gloss_en: glossEn.length ? JSON.stringify(glossEn) : null,
-        data: JSON.stringify(enriched),
+        data: dataJson,
+        hash: contentHash(dataJson),
       });
       wordCount++;
 
@@ -641,7 +653,8 @@ function main() {
     // Insert examples into SQLite
     const insertExamples = db.transaction(() => {
       for (const [id, ex] of Object.entries(sorted)) {
-        insertExample.run({ id, data: JSON.stringify(ex) });
+        const exData = JSON.stringify(ex);
+        insertExample.run({ id, data: exData, hash: contentHash(exData) });
       }
     });
     insertExamples();
@@ -653,9 +666,11 @@ function main() {
   // --------------------------------------------------------
 
   const version = computeVersionHash(files);
+  const builtAt = new Date().toISOString().slice(0, 10);
   insertMeta.run({ key: "version", value: version });
+  insertMeta.run({ key: "built_at", value: builtAt });
   writeFileSync(join(DATA_DIR, "db-version.txt"), version);
-  console.log(`Database version: ${version}`);
+  console.log(`Database version: ${version} (built ${builtAt})`);
 
   // Switch from WAL to DELETE journal mode for read-only runtime use
   db.pragma("journal_mode = DELETE");
