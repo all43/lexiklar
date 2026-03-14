@@ -10,7 +10,7 @@
     "copy-data": "node scripts/copy-data.js",
     "download": "node scripts/download.js",
     "download-corpus": "node scripts/enrich-frequency.js --download-only",
-    "transform": "node --max-old-space-size=4096 scripts/transform.js",
+    "transform": "node scripts/transform.js --max-frequency 8000 --max-subtitle-rank 25000",
     "enrich": "node scripts/enrich-frequency.js",
     "build-index": "node scripts/build-index.js",
     "data:checkpoint": "git add data/words/ data/examples.json && (git diff --staged --quiet && echo 'Checkpoint: nothing changed.' || git commit -m 'data: checkpoint LLM-generated translations')",
