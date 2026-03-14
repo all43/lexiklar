@@ -54,6 +54,10 @@ const TRULY_IRREGULAR = new Set([
  * Weak imperative -e elision — Wiktionary prefers the short form
  * (kauf!, hör!) while our engine produces the full form (kaufe!, höre!).
  * Both are grammatically correct in modern German.
+ *
+ * NOTE: The runtime validator (validateConjugation) now accepts both forms,
+ * so these verbs pass validation. But the strict comparison here still
+ * detects the difference for documentation purposes.
  */
 const IMPERATIVE_E_ELISION = new Set([
   "kaufen",   // kaufe! vs kauf!
@@ -71,7 +75,6 @@ const IMPERATIVE_E_ELISION = new Set([
 const OTHER_KNOWN_ISSUES = new Set([
   "wechseln", // imperative: wechsle! vs wechsele! (Wiktionary uses long form)
   "kennen",   // imperative: kenn! vs kenne! (Wiktionary uses long form)
-  "einladen", // present.du: lädest ein vs lädst ein (e-insertion + vowel change interaction)
 ]);
 
 const ALL_EXPECTED_FAILURES = new Set([
@@ -211,16 +214,6 @@ describe("Wiktionary comparison — expected failures (documented)", () => {
       expect(mismatches.length).toBe(1);
       expect(mismatches[0]).toContain("imperative.du");
     });
-
-    it("einladen — vowel change + e-insertion interaction", () => {
-      const f = fixtures["einladen"];
-      if (!f?.stems) return;
-      const verb = buildVerbInput("einladen", f);
-      const computed = computeConjugation(verb, endings);
-      const mismatches = compareTenses(computed, f.wiktionary);
-      expect(mismatches.length).toBeGreaterThan(0);
-      expect(mismatches[0]).toContain("present.du");
-    });
   });
 });
 
@@ -230,20 +223,20 @@ describe("Wiktionary comparison — expected failures (documented)", () => {
 
 describe("Wiktionary comparison — coverage stats", () => {
   it("total fixture count", () => {
-    expect(Object.keys(fixtures).length).toBe(77);
+    expect(Object.keys(fixtures).length).toBe(86);
   });
 
   it("passing verbs count", () => {
     const passing = Object.entries(fixtures).filter(
       ([word]) => !ALL_EXPECTED_FAILURES.has(word),
     );
-    expect(passing.length).toBe(67);
+    expect(passing.length).toBe(77);
   });
 
   it("expected failure count", () => {
     const failing = Object.entries(fixtures).filter(
       ([word]) => ALL_EXPECTED_FAILURES.has(word),
     );
-    expect(failing.length).toBe(10);
+    expect(failing.length).toBe(9);
   });
 });

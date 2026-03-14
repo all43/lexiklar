@@ -36,6 +36,8 @@ const TEST_VERBS = new Set([
   "lernen", "hören", "zeigen", "brauchen", "glauben", "suchen",
   // Weak — e-insertion (-t/-d stems)
   "arbeiten", "reden", "warten", "antworten", "öffnen", "rechnen",
+  // Weak — e-insertion (-dn/-kn clusters)
+  "ordnen", "trocknen",
   // Weak — -ern/-eln stems
   "erinnern", "ändern", "wandern", "sammeln", "handeln", "wechseln",
   // Strong — various ablaut patterns
@@ -44,6 +46,10 @@ const TEST_VERBS = new Set([
   "schlafen", "fallen", "helfen", "sterben", "werfen", "essen",
   "trinken", "singen", "schwimmen", "fliegen", "ziehen", "stehen",
   "liegen", "sitzen", "bitten", "brechen", "treffen",
+  // Strong — t-stem Ablaut (t-absorption, no e-insertion for du/er)
+  "halten", "treten", "raten", "braten", "gelten", "fechten",
+  // Strong — d-stem Ablaut (no e-insertion for du/er)
+  "laden",
   // Strong — separable
   "ankommen", "aufheben", "ausgeben", "einladen", "aufstehen",
   "anfangen", "aufnehmen", "mitnehmen", "vorlesen",

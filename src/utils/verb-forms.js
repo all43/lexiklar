@@ -23,7 +23,7 @@ function needsEInsertion(stem) {
   const last = stem[stem.length - 1];
   if (last === "t" || last === "d") return true;
   const last2 = stem.slice(-2);
-  if (["fn", "gn", "dm", "tm"].includes(last2)) return true;
+  if (["fn", "gn", "dn", "kn", "dm", "tm"].includes(last2)) return true;
   if (stem.slice(-3) === "chn") return true;
   return false;
 }
@@ -42,13 +42,15 @@ function isSibilantStem(stem) {
  * 3. Sibilant stems + "st" ending:
  *    - Present tense (sibilantDedup=true): "st" → "t" (du liest, not du liesst)
  *    - Other tenses (sibilantDedup=false): "st" → "est" (du lasest, not du last)
+ * 4. Strong verb Ablaut stems: no e-insertion, t-absorption when stem ends in "t"
  *
  * @param {string} ending - The raw ending
  * @param {string} stem - The stem to attach the ending to
  * @param {boolean} ernEln - Whether this verb is an -ern/-eln infinitive
  * @param {boolean} sibilantDedup - True for present tense (dedup), false for others (e-insertion)
+ * @param {boolean} isAblautStem - True for strong verb vowel-change du/er stems (skip e-insertion, use t-absorption)
  */
-function adjustEnding(ending, stem, ernEln, sibilantDedup = false) {
+function adjustEnding(ending, stem, ernEln, sibilantDedup = false, isAblautStem = false) {
   let e = ending;
 
   // -ern/-eln stem adjustments — only for actual -ern/-eln verbs
@@ -57,6 +59,19 @@ function adjustEnding(ending, stem, ernEln, sibilantDedup = false) {
     else if (e === "en Sie") e = "n Sie";
     else if (e === "est") e = "st";
     else if (e === "et") e = "t";
+  }
+
+  // Strong verb Ablaut stems: no e-insertion, handle t-absorption
+  if (isAblautStem) {
+    // Stem-final "t" absorbs the "t" ending (er hält, er tritt — not hältt/trittt)
+    if (e === "t" && stem.endsWith("t")) {
+      e = "";
+    }
+    // Sibilant handling still applies (du liest)
+    if (e === "st" && isSibilantStem(stem)) {
+      e = sibilantDedup ? "t" : "est";
+    }
+    return e;
   }
 
   // e-insertion: prepend "e" before consonant-starting endings on -t/-d stems
@@ -94,7 +109,8 @@ function buildTense(defaultStem, endingsArr, opts = {}) {
   const result = {};
   PERSONS.forEach((person, i) => {
     const stem = stemOverrides[i] || defaultStem;
-    const adjusted = adjustEnding(endingsArr[i], stem, ernEln, sibilantDedup);
+    const isAblaut = !!stemOverrides[i];
+    const adjusted = adjustEnding(endingsArr[i], stem, ernEln, sibilantDedup, isAblaut);
     const base = contract ? contractStemEnding(stem, adjusted, ernEln) : stem + adjusted;
     result[person] = separable ? base + " " + prefix : base;
   });

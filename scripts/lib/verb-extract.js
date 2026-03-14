@@ -218,17 +218,42 @@ export function extractPresentStem(word, separable, prefix) {
 
 export function classifyVerb(conjugation, presentStem, separable, prefix) {
   const pretIch = conjugation.preterite?.ich;
-  if (!pretIch) return "irregular";
+  if (pretIch) {
+    const form = stripSepPrefix(pretIch, separable, prefix);
 
-  const form = stripSepPrefix(pretIch, separable, prefix);
+    if (form === presentStem + "te" || form === presentStem + "ete") {
+      return "weak";
+    }
+    if (form.endsWith("te")) {
+      return "mixed";
+    }
+    return "strong";
+  }
 
-  if (form === presentStem + "te" || form === presentStem + "ete") {
-    return "weak";
+  // Fallback: infer from past participle when preterite.ich is missing.
+  // Weak verbs have pp2 ending in -t (gekauft, besucht, geregnet).
+  // Strong verbs end in -en (gelaufen, geschehen). Mixed end in -t with
+  // vowel change (gebracht) — can't safely distinguish from weak, so only
+  // classify as weak when it's unambiguous.
+  const pp2 = conjugation.participle2;
+  if (pp2) {
+    const ppBase = separable && prefix
+      ? pp2.replace(new RegExp("^" + prefix), "")
+      : pp2;
+    // Weak pp2: ge-...-t or ...-t (but NOT -en ending)
+    if (ppBase.endsWith("t") && !ppBase.endsWith("en")) {
+      // Verify the stem matches: strip ge- prefix and -t/-et suffix
+      const stripped = ppBase.replace(/^ge/, "");
+      const stem = stripped.endsWith("et")
+        ? stripped.slice(0, -2)
+        : stripped.slice(0, -1);
+      if (stem === presentStem || stem + "e" === presentStem || presentStem.endsWith(stem)) {
+        return "weak";
+      }
+    }
   }
-  if (form.endsWith("te")) {
-    return "mixed";
-  }
-  return "strong";
+
+  return "irregular";
 }
 
 export function extractStems(conjugation, cls, presentStem, separable, prefix) {
@@ -244,8 +269,25 @@ export function extractStems(conjugation, cls, presentStem, separable, prefix) {
 
     const erForm = stripSepPrefix(conjugation.present?.er || "", separable, prefix);
     if (erForm.endsWith("t")) {
-      const candidate = erForm.slice(0, -1);
-      if (candidate !== presentStem) stems.present_du_er = candidate;
+      let candidate;
+
+      if (presentStem.endsWith("t")) {
+        // For t-ending stems, the er-form "t" ending may be absorbed.
+        // But first check: is this just e-insertion (no vowel change)?
+        // e.g., bitten: bitt + et = bittet (regular, no Ablaut) → no override needed
+        const isEInsertion = erForm === presentStem + "et";
+        if (isEInsertion) {
+          candidate = null; // no override — regular stem with e-insertion
+        } else {
+          // Actual Ablaut: halten→hält, treten→tritt. Keep full form as stem.
+          candidate = erForm;
+        }
+      } else {
+        // Non-t stems: strip the "t" ending normally (er gibt → gib)
+        candidate = erForm.slice(0, -1);
+      }
+
+      if (candidate && candidate !== presentStem) stems.present_du_er = candidate;
     }
 
     const { stem: subj2Stem } = majoritySubj2Stem(conjugation, separable, prefix, STRONG_SUBJ2_ENDINGS);
@@ -339,24 +381,110 @@ export function extractVerbMeta(entry, compact) {
   };
 }
 
+/**
+ * Check if two imperative forms are equivalent, allowing optional -e before "!".
+ * In German, both "kaufe!" and "kauf!" are valid for weak verb du-imperatives.
+ * Also handles separable forms: "kaufe ein!" ≈ "kauf ein!".
+ */
+function imperativeEquivalent(computed, extracted) {
+  if (computed === extracted) return true;
+  if (!computed || !extracted) return false;
+
+  // Strip trailing "!" from both
+  const a = computed.replace(/!$/, "");
+  const b = extracted.replace(/!$/, "");
+  if (a === b) return true;
+
+  // Check if one is the other with a trailing "e" (before any space for separable)
+  // "kaufe" vs "kauf", "kaufe ein" vs "kauf ein"
+  const partsA = a.split(" ");
+  const partsB = b.split(" ");
+  // Only the verb part (first word) can differ by trailing -e
+  if (partsA.length !== partsB.length) return false;
+  for (let i = 1; i < partsA.length; i++) {
+    if (partsA[i] !== partsB[i]) return false;
+  }
+  const verbA = partsA[0];
+  const verbB = partsB[0];
+  return verbA + "e" === verbB || verbB + "e" === verbA;
+}
+
+/**
+ * Check if two forms are equivalent, allowing -eln/-ern contraction variants.
+ * Three valid forms for -eln verbs (all equivalent):
+ *   "sammele" (uncontracted) ≈ "sammle" (contracted) ≈ "sammel" (bare stem)
+ * Two valid forms for -ern verbs:
+ *   "wandere" (uncontracted) ≈ "wandre" (contracted)
+ */
+function elnErnEquivalent(computed, extracted) {
+  if (computed === extracted) return true;
+  if (!computed || !extracted) return false;
+
+  // For separable verbs, compare only the verb part
+  const partsC = computed.split(" ");
+  const partsE = extracted.split(" ");
+  if (partsC.length !== partsE.length) return false;
+  for (let i = 1; i < partsC.length; i++) {
+    if (partsC[i] !== partsE[i]) return false;
+  }
+  const vc = partsC[0];
+  const ve = partsE[0];
+
+  // Normalize both to the "uncontracted" form for comparison:
+  // "sammle" → "sammele", "sammel" → "sammele", "wandre" → "wandere"
+  function normalize(s) {
+    // contracted: "sammle" (ends in consonant + "le") → "sammele"
+    // contracted: "wandre" (ends in consonant + "re") → "wandere"
+    const contractedMatch = s.match(/^(.+[^e])([lr])e$/);
+    if (contractedMatch) return contractedMatch[1] + "e" + contractedMatch[2] + "e";
+    // bare stem: "sammel" / "dunkel" (ends in "el") → "sammele" / "dunkele"
+    if (s.endsWith("el") || s.endsWith("er")) return s + "e";
+    return s;
+  }
+
+  return normalize(vc) === normalize(ve);
+}
+
 export function validateConjugation(computed, extracted) {
   const tenses = ["present", "preterite", "subjunctive1", "subjunctive2"];
   for (const tense of tenses) {
     for (const [person, form] of Object.entries(extracted[tense] || {})) {
-      if (form && computed[tense]?.[person] !== form) {
-        return {
-          valid: false,
-          mismatch: `${tense}.${person}: "${computed[tense]?.[person]}" vs "${form}"`,
-        };
+      if (!form) continue;
+      const comp = computed[tense]?.[person];
+      if (comp === form) continue;
+
+      // Allow -eln/-ern contraction variants for ich-form (present/subjunctive1)
+      if (person === "ich" && (tense === "present" || tense === "subjunctive1")) {
+        if (elnErnEquivalent(comp, form)) continue;
       }
+
+      return {
+        valid: false,
+        mismatch: `${tense}.${person}: "${comp}" vs "${form}"`,
+      };
     }
   }
 
   for (const [person, form] of Object.entries(extracted.imperative || {})) {
-    if (form && computed.imperative?.[person] !== form) {
+    if (!form) continue;
+    const comp = computed.imperative?.[person];
+    if (person === "du") {
+      // Allow optional -e (both "kaufe!" and "kauf!" are valid)
+      // Also allow -eln/-ern contraction variants ("sammle!" ≈ "sammele!", "wandre!" ≈ "wandere!")
+      const compStrip = comp?.replace(/!$/, "");
+      const formStrip = form.replace(/!$/, "");
+      if (comp !== form
+        && !imperativeEquivalent(comp, form)
+        && !elnErnEquivalent(compStrip, formStrip)) {
+        return {
+          valid: false,
+          mismatch: `imperative.${person}: "${comp}" vs "${form}"`,
+        };
+      }
+    } else if (comp !== form) {
       return {
         valid: false,
-        mismatch: `imperative.${person}: "${computed.imperative?.[person]}" vs "${form}"`,
+        mismatch: `imperative.${person}: "${comp}" vs "${form}"`,
       };
     }
   }

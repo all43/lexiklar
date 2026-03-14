@@ -6,54 +6,15 @@
   "separable": true,
   "prefix": "ab",
   "reflexive": "optional",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "melde ab",
-      "du": "meldest ab",
-      "er": "meldet ab",
-      "wir": "melden ab",
-      "ihr": "meldet ab",
-      "sie": "melden ab"
-    },
-    "preterite": {
-      "ich": "meldete ab",
-      "du": "meldetest ab",
-      "er": "meldete ab",
-      "wir": "meldeten ab",
-      "ihr": "meldetet ab",
-      "sie": "meldeten ab"
-    },
-    "subjunctive1": {
-      "ich": "melde ab",
-      "du": "meldest ab",
-      "er": "melde ab",
-      "wir": "melden ab",
-      "ihr": "meldet ab",
-      "sie": "melden ab"
-    },
-    "subjunctive2": {
-      "ich": "meldete ab",
-      "du": "meldetest ab",
-      "er": "meldete ab",
-      "wir": "meldeten ab",
-      "ihr": "meldetet ab",
-      "sie": "meldeten ab"
-    },
-    "imperative": {
-      "du": "meld ab!",
-      "ihr": "meldet ab!",
-      "Sie": "melden Sie ab!"
-    },
-    "participle1": "abmeldend",
-    "participle2": "abgemeldet"
+  "conjugation_class": "weak",
+  "stems": {
+    "present": "meld"
   },
   "past_participle": "abgemeldet",
   "senses": [
     {
       "gloss": "seinen Weggang bekanntgeben",
       "gloss_en": "sign off",
-      "gloss_en_full": "to announce one's departure or sign out from a place or service",
       "tags": [
         "reflexive"
       ],
@@ -62,12 +23,12 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "to announce one's departure or sign out from a place or service"
     },
     {
       "gloss": "die Außerbetriebnahme bekanntgeben",
       "gloss_en": "log off",
-      "gloss_en_full": "to report that something is being taken out of service or deregistered",
       "tags": [
         "transitive"
       ],
@@ -76,12 +37,12 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "to report that something is being taken out of service or deregistered"
     },
     {
       "gloss": "die Nichtmehrteilnahme bekanntgeben",
       "gloss_en": "unsubscribe",
-      "gloss_en_full": "to announce that one will no longer participate in something",
       "tags": [],
       "example_ids": [
         "c90f1bcce0",
@@ -89,7 +50,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "to announce that one will no longer participate in something"
     }
   ],
   "sounds": [
@@ -106,7 +68,7 @@
   ],
   "_meta": {
     "source_hash": "f4739708133736d8",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.47
 }

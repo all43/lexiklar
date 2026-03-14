@@ -6,66 +6,31 @@
   "separable": true,
   "prefix": "auf",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "lade auf",
-      "du": "lädst auf",
-      "er": "lädt auf",
-      "wir": "laden auf",
-      "ihr": "ladet auf",
-      "sie": "laden auf"
-    },
-    "preterite": {
-      "ich": "lud auf",
-      "du": "ludest auf",
-      "er": "lud auf",
-      "wir": "luden auf",
-      "ihr": "ludet auf",
-      "sie": "luden auf"
-    },
-    "subjunctive1": {
-      "ich": "lade auf",
-      "du": "ladest auf",
-      "er": "lade auf",
-      "wir": "laden auf",
-      "ihr": "ladet auf",
-      "sie": "laden auf"
-    },
-    "subjunctive2": {
-      "ich": "lüde auf",
-      "du": "lüdest auf",
-      "er": "lüde auf",
-      "wir": "lüden auf",
-      "ihr": "lüdet auf",
-      "sie": "lüden auf"
-    },
-    "imperative": {
-      "du": "lade auf!",
-      "ihr": "ladet auf!",
-      "Sie": "laden Sie auf!"
-    },
-    "participle1": "aufladend",
-    "participle2": "aufgeladen"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "lad",
+    "past": "lud",
+    "present_du_er": "läd",
+    "subj2": "lüd",
+    "imperative_du": "lade"
   },
   "past_participle": "aufgeladen",
   "senses": [
     {
       "gloss": "etwas auf etwas – meist ein Fahrzeug – bringen, heben oder laden",
       "gloss_en": "load onto",
-      "gloss_en_full": "to lift or load something onto something, usually a vehicle",
       "tags": [],
       "example_ids": [
         "a280a0c94a"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "to lift or load something onto something, usually a vehicle"
     },
     {
       "gloss": "jemandem als Pflicht/Last zuteilen",
       "gloss_en": "charge (with)",
-      "gloss_en_full": "to assign something to someone as a duty or burden",
       "tags": [
         "figurative"
       ],
@@ -74,24 +39,24 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "to assign something to someone as a duty or burden"
     },
     {
       "gloss": "etwas mit elektrischer Energie versehen",
       "gloss_en": "charge",
-      "gloss_en_full": "to supply something with electrical energy, such as a battery or device",
       "tags": [],
       "example_ids": [
         "21b2e77127"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "to supply something with electrical energy, such as a battery or device"
     },
     {
       "gloss": "etwas mit zusätzlicher Bedeutung/mit Emotionen versehen",
       "gloss_en": "charge (figurative)",
-      "gloss_en_full": "to imbue something with additional meaning or emotional significance",
       "tags": [
         "figurative"
       ],
@@ -100,7 +65,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "to imbue something with additional meaning or emotional significance"
     }
   ],
   "sounds": [
@@ -122,7 +88,7 @@
   ],
   "_meta": {
     "source_hash": "1fda1644000fc467",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.19
 }

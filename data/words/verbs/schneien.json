@@ -6,54 +6,15 @@
   "separable": false,
   "prefix": null,
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "schneie",
-      "du": "schneist",
-      "er": "schneit",
-      "wir": "schneien",
-      "ihr": "schneit",
-      "sie": "schneien"
-    },
-    "preterite": {
-      "ich": "schneite",
-      "du": "schneitest",
-      "er": "schneite",
-      "wir": "schneiten",
-      "ihr": "schneitet",
-      "sie": "schneiten"
-    },
-    "subjunctive1": {
-      "ich": "schneie",
-      "du": "schneiest",
-      "er": "schneie",
-      "wir": "schneien",
-      "ihr": "schneiet",
-      "sie": "schneien"
-    },
-    "subjunctive2": {
-      "ich": "schneite",
-      "du": "schneitest",
-      "er": "schneite",
-      "wir": "schneiten",
-      "ihr": "schneitet",
-      "sie": "schneiten"
-    },
-    "imperative": {
-      "du": "schnei!",
-      "ihr": "schneit!",
-      "Sie": "schneien Sie!"
-    },
-    "participle1": "schneiend",
-    "participle2": "geschneit"
+  "conjugation_class": "weak",
+  "stems": {
+    "present": "schnei"
   },
   "past_participle": "geschneit",
   "senses": [
     {
       "gloss": "in Form von Schneeflocken vom Himmel fallen",
       "gloss_en": "snow",
-      "gloss_en_full": "to fall from the sky in the form of snowflakes",
       "tags": [
         "auxiliary",
         "impersonal"
@@ -64,12 +25,12 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "to fall from the sky in the form of snowflakes"
     },
     {
       "gloss": "irgendwo plötzlich unangekündigt auftauchen",
       "gloss_en": "snow in",
-      "gloss_en_full": "to show up somewhere suddenly and without prior announcement",
       "tags": [
         "auxiliary verb",
         "colloquial",
@@ -82,7 +43,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "to show up somewhere suddenly and without prior announcement"
     }
   ],
   "sounds": [
@@ -114,7 +76,7 @@
   ],
   "_meta": {
     "source_hash": "0f81ee2f00f53352",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.03
 }

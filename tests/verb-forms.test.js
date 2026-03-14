@@ -64,6 +64,22 @@ describe("computeConjugation", () => {
       expect(conj.imperative.du).toBe("arbeite!");
     });
 
+    it("ordnen — -dn stem with e-insertion", () => {
+      const conj = computeConjugation(loadVerb("ordnen"), endings);
+
+      expect(conj.present.du).toBe("ordnest");    // e-insertion for dn cluster
+      expect(conj.present.er).toBe("ordnet");
+      expect(conj.present.ihr).toBe("ordnet");
+    });
+
+    it("trocknen — -kn stem with e-insertion", () => {
+      const conj = computeConjugation(loadVerb("trocknen"), endings);
+
+      expect(conj.present.du).toBe("trocknest");  // e-insertion for kn cluster
+      expect(conj.present.er).toBe("trocknet");
+      expect(conj.present.ihr).toBe("trocknet");
+    });
+
     it("sammeln — -eln stem with ich contraction", () => {
       const conj = computeConjugation(loadVerb("sammeln"), endings);
 
@@ -135,6 +151,52 @@ describe("computeConjugation", () => {
       expect(conj.preterite.du).toBe("gingst");
       expect(conj.participle2).toBe("gegangen");
     });
+
+    it("halten — t-stem: Ablaut du/er with t-absorption", () => {
+      const conj = computeConjugation(loadVerb("halten"), endings);
+
+      // Stem halt → vowel change hält. The er-ending "t" is absorbed.
+      expect(conj.present.ich).toBe("halte");
+      expect(conj.present.du).toBe("hältst");   // NOT hälst
+      expect(conj.present.er).toBe("hält");      // t absorbed, NOT hältt
+      expect(conj.present.wir).toBe("halten");
+      expect(conj.present.ihr).toBe("haltet");   // e-insertion for non-Ablaut stem
+    });
+
+    it("treten — t-stem: e→i vowel change with consonant doubling", () => {
+      const conj = computeConjugation(loadVerb("treten"), endings);
+
+      // tret → trit + t → tritt (er), trit + st → trittst (du)
+      expect(conj.present.du).toBe("trittst");  // NOT tritest
+      expect(conj.present.er).toBe("tritt");     // NOT trittt
+      expect(conj.present.ich).toBe("trete");
+      expect(conj.present.ihr).toBe("tretet");
+    });
+
+    it("laden — d-stem: vowel change without e-insertion for Ablaut", () => {
+      const conj = computeConjugation(loadVerb("laden_jemanden"), endings);
+
+      // lad → läd (vowel change). No e-insertion for Ablaut stems.
+      expect(conj.present.du).toBe("lädst");     // NOT lädest
+      expect(conj.present.er).toBe("lädt");
+      expect(conj.present.ich).toBe("lade");
+      expect(conj.present.ihr).toBe("ladet");    // e-insertion for base stem
+    });
+
+    it("raten — t-stem: a→ä with t-absorption in er", () => {
+      const conj = computeConjugation(loadVerb("raten_einen"), endings);
+
+      expect(conj.present.du).toBe("rätst");     // NOT räst
+      expect(conj.present.er).toBe("rät");        // NOT rätt
+      expect(conj.present.ihr).toBe("ratet");
+    });
+
+    it("gelten — t-stem: e→i with t-absorption", () => {
+      const conj = computeConjugation(loadVerb("gelten"), endings);
+
+      expect(conj.present.du).toBe("giltst");    // NOT gilst
+      expect(conj.present.er).toBe("gilt");       // NOT giltt
+    });
   });
 
   // --- Separable verbs ---
@@ -162,6 +224,14 @@ describe("computeConjugation", () => {
       expect(conj.imperative.du).toBe("heb auf!");
       expect(conj.participle1).toBe("aufhebend");
       expect(conj.participle2).toBe("aufgehoben");
+    });
+
+    it("einladen — separable + d-stem Ablaut", () => {
+      const conj = computeConjugation(loadVerb("einladen"), endings);
+
+      expect(conj.present.du).toBe("lädst ein");    // NOT lädest ein
+      expect(conj.present.er).toBe("lädt ein");
+      expect(conj.present.ich).toBe("lade ein");
     });
   });
 

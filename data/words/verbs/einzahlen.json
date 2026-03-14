@@ -6,54 +6,15 @@
   "separable": true,
   "prefix": "ein",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "zahle ein",
-      "du": "zahlst ein",
-      "er": "zahlt ein",
-      "wir": "zahlen ein",
-      "ihr": "zahlt ein",
-      "sie": "zahlen ein"
-    },
-    "preterite": {
-      "ich": "zahlte ein",
-      "du": "zahltest ein",
-      "er": "zahlte ein",
-      "wir": "zahlten ein",
-      "ihr": "zahltet ein",
-      "sie": "zahlten ein"
-    },
-    "subjunctive1": {
-      "ich": "zahle ein",
-      "du": "zahlest ein",
-      "er": "zahle ein",
-      "wir": "zahlen ein",
-      "ihr": "zahlet ein",
-      "sie": "zahlen ein"
-    },
-    "subjunctive2": {
-      "ich": "zahlte ein",
-      "du": "zahltest ein",
-      "er": "zahlte ein",
-      "wir": "zahlten ein",
-      "ihr": "zahltet ein",
-      "sie": "zahlten ein"
-    },
-    "imperative": {
-      "du": "zahl ein!",
-      "ihr": "zahlt ein!",
-      "Sie": "zahlen Sie ein!"
-    },
-    "participle1": "einzahlend",
-    "participle2": "eingezahlt"
+  "conjugation_class": "weak",
+  "stems": {
+    "present": "zahl"
   },
   "past_participle": "eingezahlt",
   "senses": [
     {
       "gloss": "Bargeld bei einem Geldinstitut (Bank, Sparkasse oder Ähnliches) abgeben, um es auf einem Konto verbuchen zu lassen",
       "gloss_en": "deposit",
-      "gloss_en_full": "to hand over cash at a bank or similar institution to have it credited to an account",
       "tags": [],
       "example_ids": [
         "525aed7a85",
@@ -61,7 +22,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "to hand over cash at a bank or similar institution to have it credited to an account"
     }
   ],
   "sounds": [
@@ -72,7 +34,7 @@
   ],
   "_meta": {
     "source_hash": "a7cf7f881b586a54",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.91
 }

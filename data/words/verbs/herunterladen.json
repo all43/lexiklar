@@ -6,54 +6,19 @@
   "separable": true,
   "prefix": "herunter",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "lade herunter",
-      "du": "lädst herunter",
-      "er": "lädt herunter",
-      "wir": "laden herunter",
-      "ihr": "ladet herunter",
-      "sie": "laden herunter"
-    },
-    "preterite": {
-      "ich": "lud herunter",
-      "du": "ludest herunter",
-      "er": "lud herunter",
-      "wir": "luden herunter",
-      "ihr": "ludet herunter",
-      "sie": "luden herunter"
-    },
-    "subjunctive1": {
-      "ich": "lade herunter",
-      "du": "ladest herunter",
-      "er": "lade herunter",
-      "wir": "laden herunter",
-      "ihr": "ladet herunter",
-      "sie": "laden herunter"
-    },
-    "subjunctive2": {
-      "ich": "lüde herunter",
-      "du": "lüdest herunter",
-      "er": "lüde herunter",
-      "wir": "lüden herunter",
-      "ihr": "lüdet herunter",
-      "sie": "lüden herunter"
-    },
-    "imperative": {
-      "du": "lade herunter!",
-      "ihr": "ladet herunter!",
-      "Sie": "laden Sie herunter!"
-    },
-    "participle1": "herunterladend",
-    "participle2": "heruntergeladen"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "lad",
+    "past": "lud",
+    "present_du_er": "läd",
+    "subj2": "lüd",
+    "imperative_du": "lade"
   },
   "past_participle": "heruntergeladen",
   "senses": [
     {
       "gloss": "Inhalte von einem Server im Netzwerk (zum Beispiel Internet) auf den lokalen Computer übertragen",
       "gloss_en": "download",
-      "gloss_en_full": "to transfer data from a remote server over a network to a local computer",
       "tags": [],
       "example_ids": [
         "0ad381e6d3",
@@ -61,7 +26,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "to transfer data from a remote server over a network to a local computer"
     }
   ],
   "sounds": [
@@ -86,7 +52,7 @@
   ],
   "_meta": {
     "source_hash": "65980f80fde797ad",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.92
 }

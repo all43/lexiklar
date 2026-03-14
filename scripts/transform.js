@@ -828,6 +828,9 @@ async function main() {
   const maxSubtitleRank =
     maxSubtitleIdx !== -1 ? parseInt(process.argv[maxSubtitleIdx + 1], 10) : null;
 
+  const forcePosIdx = process.argv.indexOf("--force-pos");
+  const forcePos = forcePosIdx !== -1 ? process.argv[forcePosIdx + 1] : null;
+
   let freqFilter = null;
   if (maxFrequency && !useSeed) {
     const wordsFile = join(ROOT, "data", "raw", "leipzig-words.txt");
@@ -1016,7 +1019,7 @@ async function main() {
       const parsed = JSON.parse(raw);
       const stateKey = `${parsed.word}|${parsed.pos}|${parsed.etymology_number || 1}`;
 
-      if (state.entries[stateKey]?.hash === hash) {
+      if (state.entries[stateKey]?.hash === hash && parsed.pos !== forcePos) {
         skipped++;
         continue;
       }
@@ -1070,6 +1073,22 @@ async function main() {
 
       // Merge with existing file to preserve manual fields
       data = mergeWithExisting(data, fullPath);
+
+      // When --force-pos re-processes an unchanged entry, skip if data is identical
+      if (state.entries[stateKey]?.hash === hash && existsSync(fullPath)) {
+        try {
+          const existing = JSON.parse(readFileSync(fullPath, "utf-8"));
+          // Compare everything except _meta.generated_at
+          const cmpNew = { ...data, _meta: { ...data._meta, generated_at: "" } };
+          const cmpOld = { ...existing, _meta: { ...existing._meta, generated_at: "" } };
+          if (JSON.stringify(cmpNew) === JSON.stringify(cmpOld)) {
+            skipped++;
+            continue;
+          }
+        } catch {
+          // file unreadable — proceed with write
+        }
+      }
 
       mkdirSync(dirname(fullPath), { recursive: true });
       writeFileSync(fullPath, JSON.stringify(data, null, 2) + "\n");
