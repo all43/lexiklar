@@ -174,12 +174,20 @@ function buildDisambiguationDict() {
 function getRelevantDisambiguation(examples, disambigDict) {
   const result = {};
   const textBlock = examples.map((e) => e.text).join(" ");
-  const textLower = textBlock.toLowerCase();
+
+  // Build a set of words present in the batch (split on non-letter boundaries).
+  // Using a Set of lowercased tokens gives O(1) lookup instead of substring scan,
+  // and avoids false matches like "Ei" matching inside "bei", "sein", "Arbeit".
+  const wordSet = new Set(
+    textBlock.toLowerCase().split(/[^a-zäöüß]+/i).filter(Boolean),
+  );
 
   for (const [key, glosses] of disambigDict) {
     const lemma = key.split("|")[0];
-    // Check case-insensitive presence of lemma in the combined text
-    if (textLower.includes(lemma.toLowerCase())) {
+    // Skip very short lemmas (≤2 chars) — too many false positives
+    if (lemma.length <= 2) continue;
+    // Whole-word match only
+    if (wordSet.has(lemma.toLowerCase())) {
       // Truncate long glosses to save tokens
       result[key] = glosses.map((g) =>
         g.length > 80 ? g.slice(0, 80) + "..." : g,

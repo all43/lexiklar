@@ -227,6 +227,52 @@ export function buildMultiSensePrompt(job) {
 }
 
 /**
+ * Build prompt for full-mode batching: all untranslated senses of one word in a single call.
+ * Returns a numbered list of German glosses; the model returns { definitions: [N strings] }.
+ */
+export function buildFullBatchPrompt(job) {
+  const typeClause = job.phraseType ? `, phrase_type="${job.phraseType}"` : "";
+  const header = `word="${job.word}", pos="${job.pos}"${typeClause}`;
+  const lines = job.toTranslate
+    .map((s, i) => `${i + 1}. ${stripReferences(s.gloss)}`)
+    .join("\n");
+  let prompt = `${header}\nTranslate each German definition to a natural English definition (1-2 sentences each):\n${lines}`;
+  if (job.alreadyDone.length > 0) {
+    const ctx = job.alreadyDone.map((s) => `  - "${s.gloss_en}"`).join("\n");
+    prompt += `\n\nAlready translated for this word (for context):\n${ctx}`;
+  }
+  prompt += `\n\nReturn JSON: { "definitions": ["...", "..."] } — one definition per numbered gloss, in order.`;
+  return prompt;
+}
+
+const FULL_BATCH_SCHEMA = {
+  type: "object",
+  properties: {
+    definitions: {
+      type: "array",
+      items: { type: "string" },
+    },
+  },
+  required: ["definitions"],
+  additionalProperties: false,
+};
+
+function parseFullBatchResponse(content, expectedCount) {
+  const obj = extractJSON(content);
+  const arr = Array.isArray(obj) ? obj : obj.definitions;
+  if (!Array.isArray(arr)) throw new Error(`Expected array in response, got: ${JSON.stringify(obj)}`);
+  if (arr.length !== expectedCount) {
+    throw new Error(`Count mismatch: expected ${expectedCount} definitions, got ${arr.length}`);
+  }
+  return arr.map((t) => {
+    let s = String(t).trim();
+    // Collapse excess whitespace
+    s = s.replace(/\n+/g, " ").trim();
+    return s;
+  });
+}
+
+/**
  * Parse a batch JSON response and validate the count matches.
  * Uses extractJSON from llm.js to handle markdown fences / wrapper noise.
  */
@@ -386,52 +432,63 @@ async function main() {
     }
   }
 
-  // ── FULL_MODE: one call per sense (longer definitions, no batching needed) ──
+  // ── FULL_MODE: batch senses per word file ──────────────────────────────────
   if (FULL_MODE) {
-    const items = collectSenses(targetField);
-    if (items.length === 0) {
+    const allJobs = collectWordBatches(targetField);
+    if (allJobs.length === 0) {
       console.log(`All ${targetField} fields already translated. Nothing to do.`);
       return;
     }
-    const fileCount = new Set(items.map((i) => i.filePath)).size;
-    console.log(`Translating ${items.length} ${targetField} fields across ${fileCount} word files.`);
-    console.log(`Provider: ${PROVIDER}, mode: full definition`);
+
+    const limitedJobs = JOB_LIMIT > 0 ? allJobs.slice(0, JOB_LIMIT) : allJobs;
+    const totalSenses = limitedJobs.reduce((s, j) => s + j.toTranslate.length, 0);
+    console.log(`Translating ${totalSenses} ${targetField} senses across ${limitedJobs.length} word files.`);
+    console.log(`Provider: ${PROVIDER}, mode: full definition (batched per word), concurrency: ${CONCURRENCY}`);
 
     if (DRY_RUN) {
-      console.log("\nDry run: would send %d API calls.", items.length);
-      console.log("\nSample prompt:");
-      console.log("  System: " + SYSTEM_PROMPT_FULL.split("\n")[0] + "...");
-      console.log("  User:   " + buildUserPrompt(items[0]));
+      console.log("\nDry run: would send %d API calls.", limitedJobs.length);
+      if (limitedJobs.length > 0) {
+        console.log("\nSample prompt (first word):");
+        console.log("  System: " + SYSTEM_PROMPT_FULL.split("\n")[0] + "...");
+        console.log("  User:\n" + buildFullBatchPrompt(limitedJobs[0]));
+      }
       return;
     }
 
     let translated = 0, totalInputTokens = 0, totalOutputTokens = 0, errors = 0;
+    let callsDone = 0;
     const startAll = Date.now();
-    const llmOptions = { provider: PROVIDER, model: MODEL, maxTokens: 256, temperature: 0.2 };
 
-    for (let i = 0; i < items.length; i++) {
-      const item = items[i];
-      const sysPrompt = item.pos === "phrase" ? PHRASE_SYSTEM_PROMPT : SYSTEM_PROMPT_FULL;
-      const userPrompt = buildUserPrompt(item);
+    await runPool(limitedJobs, CONCURRENCY, async (job, i) => {
+      const sysPrompt = job.pos === "phrase" ? PHRASE_SYSTEM_PROMPT : SYSTEM_PROMPT_FULL;
+      const userPrompt = buildFullBatchPrompt(job);
+      const maxTokens = job.toTranslate.length * 100 + 50;
       try {
         const response = await retryWithBackoff(
-          () => callLLM(sysPrompt, userPrompt, llmOptions), 3, 1000,
+          () => callLLM(sysPrompt, userPrompt, {
+            provider: PROVIDER, model: MODEL, maxTokens, temperature: 0.2,
+            jsonSchema: FULL_BATCH_SCHEMA,
+          }), 3, 1000,
         );
         totalInputTokens += response.input_tokens;
         totalOutputTokens += response.output_tokens;
-        const translation = parseResponse(response.content);
-        writeTranslation(item, translation);
-        translated++;
-        if (i === 0 || (i + 1) % 10 === 0 || i === items.length - 1) {
+        const translations = parseFullBatchResponse(response.content, job.toTranslate.length);
+        writeWordTranslations(job, targetField, translations);
+        translated += translations.length;
+        callsDone++;
+        if (callsDone % 50 === 0 || callsDone === limitedJobs.length) {
           const elapsed = ((Date.now() - startAll) / 1000).toFixed(0);
-          process.stdout.write(`  [${i + 1}/${items.length}] ${item.word}: "${translation}" (${elapsed}s)\n`);
+          process.stdout.write(
+            `  [${callsDone}/${limitedJobs.length}] "${job.word}" (${translations.length} senses) (${elapsed}s)\n`,
+          );
         }
       } catch (err) {
-        console.error(`  [${i + 1}/${items.length}] FAILED: ${item.word} — ${err.message}`);
-        errors++;
+        console.error(`  FAILED "${job.word}": ${err.message}`);
+        errors += job.toTranslate.length;
+        callsDone++;
       }
-      if (i < items.length - 1) await new Promise((r) => setTimeout(r, 50));
-    }
+    });
+
     printSummary(translated, errors, startAll, totalInputTokens, totalOutputTokens);
     return;
   }
