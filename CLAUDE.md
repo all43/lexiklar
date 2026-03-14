@@ -98,8 +98,8 @@ download → transform → enrich → translate → build-index
 | Script | Command | Purpose |
 |---|---|---|
 | `scripts/download.js` | `npm run download` | Downloads and decompresses `de-extract.jsonl.gz` from Kaikki |
-| `scripts/transform.js` | `npm run transform` | Parses JSONL, extracts grammar, writes per-word JSON files |
-| `scripts/enrich-frequency.js` | `npm run enrich` | Downloads 4 frequency corpora, computes Zipf scores, writes `frequency` rank |
+| `scripts/transform.js` | `npm run transform` | Parses JSONL, extracts grammar, writes per-word JSON files (default: B2 filter) |
+| `scripts/enrich-frequency.js` | `npm run enrich` | Downloads 4 frequency corpora, computes Zipf scores, writes absolute `zipf` to word files |
 | `scripts/translate-glosses.js` | `npm run translate-glosses` | LLM-translates German glosses → `gloss_en` (short) and `gloss_en_full` |
 | `scripts/translate-examples.js` | `npm run translate-examples` | LLM-translates examples and adds word annotations |
 | `scripts/build-index.js` | `npm run build-index` | Generates SQLite search index from JSON files |
@@ -176,7 +176,7 @@ Each word gets a JSON file in `data/words/{pos}/`. All files share these common 
     "source_hash": "06a26df8c3879f59",
     "generated_at": "2026-02-23"
   },
-  "frequency": 1842
+  "zipf": 4.52
 }
 ```
 
@@ -185,7 +185,7 @@ Each word gets a JSON file in `data/words/{pos}/`. All files share these common 
 - `gloss_en_full` — longer natural-language English gloss, `null` until translate-glosses --full step
 - `example_ids` — references into shared `data/examples.json`
 - `_meta.source_hash` — SHA-256 of source JSONL line, used for change detection
-- `frequency` — global rank across word set (1 = most common), computed from combined Zipf score by enrich step
+- `zipf` — absolute combined Zipf score (2 decimal places), written by enrich step. Rank is computed at build-index time
 
 ### Noun
 
@@ -203,7 +203,7 @@ Each word gets a JSON file in `data/words/{pos}/`. All files share these common 
   },
   "senses": ["..."],
   "_meta": {"..."},
-  "frequency": 1145
+  "zipf": 3.87
 }
 ```
 
@@ -259,7 +259,7 @@ Regular adjectives store only stem + flag. Full forms are computed at runtime us
   "declension_regular": true,
   "senses": ["..."],
   "_meta": {"..."},
-  "frequency": 328
+  "zipf": 5.21
 }
 ```
 
@@ -438,17 +438,19 @@ Only rules at 95%+ reliability are included. Lower-reliability rules (-ment, -um
 
 ## Frequency Scoring
 
-`enrich-frequency.js` computes a **combined Zipf score** from 4 corpora and assigns a global rank.
+Two-phase system: **enrich** writes absolute Zipf scores to word files, **build-index** computes relative ranks at index time.
 
 **Zipf scale**: `log10(FPM) + 3` — normalizes across corpora of different sizes. ~1 = very rare, ~7 = extremely common. FPM (freq per million tokens) is the common denominator.
 
 **Combined Zipf**: arithmetic mean of Zipf values across corpora where the word appears. Missing corpora are excluded from the mean (not penalized as zero).
 
-**Global rank**: all word files are sorted by combined Zipf descending, then assigned rank 1…N. Written as `frequency` to each word file.
+**Storage**: `enrich-frequency.js` writes the absolute `zipf` score (2 decimal places) to each word JSON file. This is stable — adding/removing words doesn't change existing scores.
+
+**Rank computation**: `build-index.js` sorts all words by `zipf` descending and assigns rank 1…N into the SQLite `frequency` column at index build time. Ranks are ephemeral and recomputed on every build.
 
 Approximate corpus sizes: Leipzig news ~5.4M tokens, Leipzig Wikipedia ~5.3M, SUBTLEX-DE ~20.9M, OpenSubtitles ~151.7M.
 
-**Word whitelist**: `config/word-whitelist.json` — words force-included by the frequency filter regardless of corpus rank. ~180 entries covering pedagogically important B1/B2 vocabulary underrepresented in written corpora (everyday objects, travel, health, digital, etc.).
+**Word whitelist**: `config/word-whitelist.json` — ~416 entries force-included by the frequency filter regardless of corpus rank. Covers transport, civic/Einbürgerungstest, education, device UI, directions, and general A1–B2 gap vocabulary.
 
 **Diagnostic**: `node scripts/enrich-frequency.js --check` prints a comparison table of Zipf per corpus for a set of test words.
 
@@ -459,7 +461,7 @@ Approximate corpus sizes: Leipzig news ~5.4M tokens, Leipzig Wikipedia ~5.3M, SU
 The transform step preserves manually-added data when re-running:
 
 - **`_meta.source_hash`** — if source data hasn't changed, the entry is skipped entirely
-- **`frequency`** — added by the enrich step, preserved by transform's merge logic
+- **`zipf`** — added by the enrich step, preserved by transform's merge logic
 - **`plural_dominant`** — added by the enrich step, preserved by transform's merge logic
 - **`gloss_en` / `gloss_en_full`** — LLM translations in senses, preserved by position-matching merge
 - **`examples.json`** — existing entries with translations and annotations are preserved. Transform keeps the full example object when `translation` is truthy, so both `translation` and `annotations` survive re-generation.
@@ -509,33 +511,73 @@ The merge function (`mergeWithExisting()` in transform.js) reads the existing fi
 - Nominalized infinitives are capitalized nouns: `Laufen.json`, `Gehen.json`
 
 ### SQLite Index Schema (generated by build-index.js)
+
+The SQLite DB is a self-contained bundle: word data is stored as JSON blobs in the `data` column, so the app needs only the `.db` file at runtime (no JSON file loading).
+
 ```sql
-CREATE TABLE search_index (
+CREATE TABLE words (
   id              INTEGER PRIMARY KEY,
   lemma           TEXT NOT NULL,
-  pos             TEXT NOT NULL,       -- NOUN | VERB | ADJECTIVE
+  lemma_folded    TEXT NOT NULL,       -- umlaut-folded for accent-insensitive search
+  pos             TEXT NOT NULL,       -- NOUN | VERB | ADJECTIVE | ...
   gender          TEXT,                -- M | F | N, nouns only
-  frequency       INTEGER,             -- rank from Leipzig corpus
-  gender_rule_id  TEXT,                -- FK to noun-gender.json rule id
-  is_exception    INTEGER,             -- 1 if noun breaks the matched rule
-  file_path       TEXT NOT NULL        -- relative path from data/ to JSON file
+  frequency       INTEGER,            -- rank computed from zipf at build time
+  plural_dominant INTEGER,             -- 1 if plural form is more common
+  plural_form     TEXT,                -- nominative plural string
+  file            TEXT NOT NULL UNIQUE, -- e.g. "nouns/Tisch"
+  gloss_en        TEXT,                -- JSON array of short English glosses
+  data            TEXT NOT NULL        -- full word JSON blob
 );
 
-CREATE INDEX idx_lemma       ON search_index(lemma);
-CREATE INDEX idx_frequency   ON search_index(frequency);
-CREATE INDEX idx_gender      ON search_index(gender);
-CREATE INDEX idx_gender_rule ON search_index(gender_rule_id);
+CREATE TABLE examples (
+  id   TEXT PRIMARY KEY,
+  data TEXT NOT NULL                   -- full example JSON blob
+);
+
+CREATE TABLE word_forms (
+  form    TEXT NOT NULL,               -- inflected form (lowercase)
+  word_id INTEGER NOT NULL REFERENCES words(id),
+  PRIMARY KEY (form, word_id)
+);
+
+CREATE TABLE meta (
+  key   TEXT PRIMARY KEY,
+  value TEXT NOT NULL                  -- e.g. "version" → content hash
+);
 ```
 
 ### Runtime Query Pattern
 ```
 User types "Bank"
-  → query search_index WHERE lemma = 'Bank'
-  → returns 2 rows, each with file_path
-  → load words/nouns/Bank_geldinstitut.json and words/nouns/Bank_sitz.json
+  → query words WHERE lemma LIKE 'Bank%' OR lemma_folded LIKE 'bank%'
+  → returns rows with full data JSON
+  → also searches word_forms for inflected form matches
 ```
 
-The SQLite index handles all searching and filtering. The JSON files handle all display rendering. Never query inside the JSON at runtime.
+The SQLite index handles all searching, filtering, and data serving. Word JSON files on disk are only used during the build pipeline.
+
+---
+
+## App Runtime Architecture
+
+### Startup sequence (`src/main.js`)
+```
+await initStorage()   →  preload Preferences keys into sync cache
+await initDb()        →  load SQLite DB (from Cache API or fetch)
+createApp(App).mount()
+```
+
+### Persistent storage (`src/utils/storage.js`)
+Uses `@capacitor/preferences` (iOS UserDefaults / Android SharedPreferences on native, localStorage on web). All known keys are preloaded into an in-memory `Map` at startup so that Vue `data()` initializers and module-level code can read synchronously via `getCached(key)`. Writes via `setItem(key, value)` update the cache immediately and persist asynchronously.
+
+### DB caching (`src/utils/db.js`)
+SQLite DB bytes are cached using the **Cache API** (`caches.open()`), which works in Safari, WKWebView, and all modern browsers. A version check (`db-version.txt`) determines if the cache is stale. Falls back to re-fetching from static assets if cache miss or API unavailable. Replaced the original OPFS `createWritable()` approach which doesn't work in Safari/WKWebView.
+
+### Capacitor iOS
+- `capacitor.config.json`: `appId: "dev.malikov.lexiklar"`, `webDir: "dist"`
+- `ios/` directory contains the generated Xcode project
+- `npx cap sync` copies built web assets into the native project
+- `npx cap open ios` opens in Xcode for device/simulator testing
 
 ---
 
