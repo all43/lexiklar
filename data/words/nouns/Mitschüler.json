@@ -35,7 +35,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A person who attends or attended the same school as oneself",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -48,9 +50,15 @@
     "Schulkamerad"
   ],
   "_gender_counterpart": "Mitschülerin",
+  "compound_parts": [
+    "mit",
+    "Schüler"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "4f1708975c085b1d",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.39
 }

@@ -1,5 +1,5 @@
 {
-  "word": "lokale Gruppe",
+  "word": "Lokale Gruppe",
   "pos": "phrase",
   "etymology_number": null,
   "senses": [
@@ -7,10 +7,15 @@
       "gloss": "Ansammlung von Galaxien, in der sich auch die Milchstraße befindet",
       "gloss_en": "local group of galaxies",
       "tags": [],
-      "example_ids": [],
+      "example_ids": [
+        "c0f6930b3f",
+        "30d0667c09"
+      ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "a cluster of galaxies that includes the Milky Way",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -20,8 +25,12 @@
     }
   ],
   "phrase_type": "collocation",
+  "_hyponyms": [
+    "Galaxien",
+    "Lokale-Gruppen-Wolke"
+  ],
   "_meta": {
-    "source_hash": "99cdf93957ae29ca",
-    "generated_at": "2026-03-09"
+    "source_hash": "3f8e8a1681b83ad7",
+    "generated_at": "2026-03-14"
   }
 }

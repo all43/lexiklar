@@ -33,7 +33,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A woman who has achieved first place in a world championship",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -52,9 +54,15 @@
     "Vizeweltmeisterin"
   ],
   "_gender_counterpart": "Weltmeister",
+  "compound_parts": [
+    "Welt",
+    "Meisterin"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "93650398040de949",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.07
 }

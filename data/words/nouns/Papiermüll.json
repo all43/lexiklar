@@ -25,14 +25,14 @@
     {
       "gloss": "Müll, der sich aus Abfallpapier und Altpapier zusammensetzt",
       "gloss_en": "paper waste",
-      "gloss_en_full": "waste consisting of discarded paper and cardboard materials",
       "tags": [],
       "example_ids": [
         "a3f1dd40f2"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "waste consisting of discarded paper and cardboard materials"
     }
   ],
   "sounds": [
@@ -44,9 +44,15 @@
   "_derived": [
     "Papiermülltonne"
   ],
+  "compound_parts": [
+    "Papier",
+    "Müll"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "27b2b19932c3c237",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 1.6
 }

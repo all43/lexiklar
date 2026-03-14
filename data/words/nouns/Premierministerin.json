@@ -32,7 +32,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "Head of government in parliamentary states",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -49,9 +51,15 @@
     "Ministerpräsidentin"
   ],
   "_gender_counterpart": "Premierminister",
+  "compound_parts": [
+    "Premier",
+    "Ministerin"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "c9bebd60f4e951ba",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.21
 }

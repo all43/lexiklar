@@ -52,6 +52,8 @@ const locales = {
     "related.derivedFrom": "Derived From",
     "related.compoundVerbs": "Compound Verbs",
     "related.baseVerb": "Base Verb",
+    "related.compoundOf": "Appears in",
+    "word.compound": "Word Composition",
 
     // FavoritesPage
     "favorites.title": "Favorites",
@@ -161,6 +163,8 @@ const locales = {
     "related.derivedFrom": "Abgeleitet von",
     "related.compoundVerbs": "Zusammengesetzte Verben",
     "related.baseVerb": "Grundverb",
+    "related.compoundOf": "Kommt vor in",
+    "word.compound": "Wortzerlegung",
 
     // FavoritesPage
     "favorites.title": "Favoriten",

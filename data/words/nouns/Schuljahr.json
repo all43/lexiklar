@@ -34,7 +34,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A period of one year during which instruction takes place at school (in Austria including summer holidays).",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
       "gloss": "Klassenstufe, in der Schüler mit ähnlichem Lernniveau und Lernpensum zusammengefasst sind",
@@ -46,7 +48,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A grade level in which students of similar learning ability and pace are grouped together.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -58,9 +62,15 @@
   "_antonyms": [
     "Schulferien"
   ],
+  "compound_parts": [
+    "Schule",
+    "Jahr"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "19eeccb07c8e26cd",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.7
 }

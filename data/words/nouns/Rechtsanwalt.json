@@ -35,7 +35,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A state-certified lawyer licensed to provide legal advice who works independently and represents clients in court and out-of-court matters.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -65,9 +67,15 @@
     "Rechtsbeistand"
   ],
   "_gender_counterpart": "Rechtsanwältin",
+  "compound_parts": [
+    "Rechts",
+    "Anwalt"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "44e03395a346315c",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.91
 }

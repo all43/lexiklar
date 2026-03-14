@@ -34,7 +34,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A politician who heads the government of a state",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -58,9 +60,15 @@
     "Übergangsregierungschef"
   ],
   "_gender_counterpart": "Regierungschefin",
+  "compound_parts": [
+    "Regierung",
+    "Chef"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "ffd16d708f2cd78d",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.35
 }

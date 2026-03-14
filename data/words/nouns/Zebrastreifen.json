@@ -24,7 +24,6 @@
     {
       "gloss": "durch weiße (und rote) oder gelbe, quer über eine Straße verlaufende Streifen gekennzeichnete Stelle, die anzeigt, dass Fußgängern beim Queren der Straße ein Vorrang gegenüber Kraftfahrern und Fahrradfahrern gewährt werden muss",
       "gloss_en": "crosswalk",
-      "gloss_en_full": "a marked pedestrian crossing on a road where pedestrians have priority over vehicles",
       "tags": [
         "colloquial"
       ],
@@ -38,7 +37,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a marked pedestrian crossing on a road where pedestrians have priority over vehicles"
     }
   ],
   "sounds": [
@@ -69,9 +69,15 @@
     "Zebra",
     "Zebraübergang"
   ],
+  "compound_parts": [
+    "Zebra",
+    "Streifen"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "de0b8aee8ec24315",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.69
 }

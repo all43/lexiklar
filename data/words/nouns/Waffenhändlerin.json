@@ -28,7 +28,9 @@
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A woman who professionally buys and sells weapons",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -38,8 +40,14 @@
     }
   ],
   "_gender_counterpart": "Waffenhändler",
+  "compound_parts": [
+    "Waffe",
+    "Händlerin"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "66e16e758b89870c",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   }
 }

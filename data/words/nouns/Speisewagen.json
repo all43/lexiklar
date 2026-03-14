@@ -24,7 +24,6 @@
     {
       "gloss": "Wagen in einem Personenzug, in dem man speisen kann",
       "gloss_en": "dining car",
-      "gloss_en_full": "a railway carriage in a passenger train where meals are served",
       "tags": [],
       "example_ids": [
         "bf3ea4e065",
@@ -35,7 +34,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "a railway carriage in a passenger train where meals are served"
     }
   ],
   "sounds": [
@@ -47,9 +47,15 @@
   "_synonyms": [
     "Bordrestaurant"
   ],
+  "compound_parts": [
+    "speisen",
+    "Wagen"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "8570191d2689d9a7",
-    "generated_at": "2026-03-13"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.9
 }

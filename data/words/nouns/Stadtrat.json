@@ -31,7 +31,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "The parliament of a city; a governing body elected to represent the municipality in cities",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
       "gloss": "Mitglied des Stadtrats",
@@ -43,7 +45,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A member of the city council",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -62,9 +66,15 @@
     "Sozialstadtrat"
   ],
   "_gender_counterpart": "Stadträtin",
+  "compound_parts": [
+    "Stadt",
+    "Rat"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "15a6d1f33cbdb8b6",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 4.18
 }

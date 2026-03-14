@@ -30,7 +30,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "Head of the ministry of economics who is responsible for the economic development of a country",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -64,9 +66,15 @@
     "Bundeswirtschaftsminister"
   ],
   "_gender_counterpart": "Wirtschaftsministerin",
+  "compound_parts": [
+    "Wirtschaft",
+    "Minister"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "112327a846218d73",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.12
 }

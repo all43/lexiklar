@@ -31,7 +31,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "Parliament in Namibia, Austria, and Switzerland",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
       "gloss": "Bezeichnung für in das Parlament gewählte Abgeordnete",
@@ -40,7 +42,9 @@
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A term for representatives elected to parliament",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -57,9 +61,15 @@
     "Nationalratswahl"
   ],
   "_gender_counterpart": "Nationalrätin",
+  "compound_parts": [
+    "national",
+    "Rat"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "b9c8ce2aec6de793",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.37
 }

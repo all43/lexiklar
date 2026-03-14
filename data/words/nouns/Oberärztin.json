@@ -32,7 +32,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A female physician in a senior leadership position",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -46,9 +48,15 @@
     }
   ],
   "_gender_counterpart": "Oberarzt",
+  "compound_parts": [
+    "Ober",
+    "Ärztin"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "bd7bb52f974a1526",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.86
 }

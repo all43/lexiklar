@@ -30,7 +30,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A woman who defends a title she has won in a competition; one who fights to retain her title",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -47,9 +49,15 @@
     "Herausforderin"
   ],
   "_gender_counterpart": "Titelverteidiger",
+  "compound_parts": [
+    "Titel",
+    "Verteidigerin"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "68e196a4e2687f9c",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.86
 }

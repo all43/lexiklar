@@ -24,14 +24,14 @@
     {
       "gloss": "Foto, das für einen Pass bestimmt/geeignet ist",
       "gloss_en": "passport photo",
-      "gloss_en_full": "a photograph intended or suitable for use in a passport or official ID",
       "tags": [],
       "example_ids": [
         "31bebd2bbf"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a photograph intended or suitable for use in a passport or official ID"
     }
   ],
   "sounds": [
@@ -43,9 +43,15 @@
   "_synonyms": [
     "Passbild"
   ],
+  "compound_parts": [
+    "Pass",
+    "Foto"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "f98dd541810133ef",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.09
 }

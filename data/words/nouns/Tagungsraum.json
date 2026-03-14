@@ -24,14 +24,14 @@
     {
       "gloss": "Raum eines Hauses, der für Tagungen zur Verfügung steht",
       "gloss_en": "conference room",
-      "gloss_en_full": "a room in a building that is available for conferences and meetings",
       "tags": [],
       "example_ids": [
         "3da8d4f567"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a room in a building that is available for conferences and meetings"
     }
   ],
   "sounds": [
@@ -40,8 +40,14 @@
       "tags": []
     }
   ],
+  "compound_parts": [
+    "Tagung",
+    "Raum"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "6f67a76097e0599e",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   }
 }

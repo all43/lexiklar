@@ -34,7 +34,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A person who rides a bicycle",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
       "gloss": "jemand, der nach oben buckelt und nach unten „tritt“, das heißt autoritär auftritt",
@@ -45,7 +47,9 @@
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A person who acts obsequiously toward superiors while being authoritarian toward subordinates",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -79,9 +83,15 @@
     "Speichellecker"
   ],
   "_gender_counterpart": "Radfahrerin",
+  "compound_parts": [
+    "Rad",
+    "Fahrer"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "785612652a2f5630",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.18
 }

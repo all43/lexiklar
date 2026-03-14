@@ -30,7 +30,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A female player who scores a goal",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -51,9 +53,15 @@
     "Goalgetterin"
   ],
   "_gender_counterpart": "Torschütze",
+  "compound_parts": [
+    "Tor",
+    "Schützin"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "ca77d74bc0572d34",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.72
 }

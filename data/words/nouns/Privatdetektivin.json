@@ -31,7 +31,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A woman who works as a private investigator on a freelance basis",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -44,9 +46,15 @@
     "Privatermittlerin"
   ],
   "_gender_counterpart": "Privatdetektiv",
+  "compound_parts": [
+    "Privat",
+    "Detektivin"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "2db40db8c9c04401",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.3
 }

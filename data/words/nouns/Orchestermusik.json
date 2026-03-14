@@ -28,7 +28,9 @@
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "Music composed for an orchestra",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
       "gloss": "Musik, die von einem Orchester gespielt wird",
@@ -39,7 +41,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "Music performed by an orchestra",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -51,9 +55,15 @@
   "_derived": [
     "Orchestermusiker"
   ],
+  "compound_parts": [
+    "Orchester",
+    "Musik"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "af2c527e0a92619f",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.02
 }

@@ -24,7 +24,6 @@
     {
       "gloss": "Arbeitszeit, die über die im Arbeitsvertrag festgelegte Zeit hinausgeht",
       "gloss_en": "overtime",
-      "gloss_en_full": "working time that exceeds the hours specified in an employment contract",
       "tags": [],
       "example_ids": [
         "f0ecc50e85",
@@ -36,7 +35,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "working time that exceeds the hours specified in an employment contract"
     }
   ],
   "sounds": [
@@ -52,9 +52,15 @@
     "Überstundenvergütung",
     "Überstundenzulage"
   ],
+  "compound_parts": [
+    "über",
+    "Stunde"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "eb4a7f41177f3833",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.41
 }

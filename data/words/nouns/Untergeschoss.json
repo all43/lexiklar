@@ -1,50 +1,70 @@
 {
-  "word": "Untergeschoß",
+  "word": "Untergeschoss",
   "pos": "noun",
   "etymology_number": null,
   "gender": "N",
   "article": "das",
-  "plural_form": "Untergeschoße",
+  "plural_form": "Untergeschosse",
   "gender_rule": null,
   "case_forms": {
     "singular": {
-      "nom": "Untergeschoß",
-      "acc": "Untergeschoß",
-      "dat": "Untergeschoß",
-      "gen": "Untergeschoßes"
+      "nom": "Untergeschoss",
+      "acc": "Untergeschoss",
+      "dat": "Untergeschoss",
+      "gen": "Untergeschosses"
     },
     "plural": {
-      "nom": "Untergeschoße",
-      "acc": "Untergeschoße",
-      "dat": "Untergeschoßen",
-      "gen": "Untergeschoße"
+      "nom": "Untergeschosse",
+      "acc": "Untergeschosse",
+      "dat": "Untergeschossen",
+      "gen": "Untergeschosse"
     }
   },
   "senses": [
     {
       "gloss": "unter der Erde befindlicher Teil eines Gebäudes",
       "gloss_en": "basement",
-      "tags": [
-        "Austrian German"
-      ],
+      "tags": [],
       "example_ids": [
-        "5dc059ec35",
-        "e31e42bc80",
-        "ae476df3c7"
+        "ac3c657743",
+        "81b9ba0323"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "The part of a building located below ground level",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
+    {
+      "ipa": "[ˈʊntɐɡəˌʃɔs]",
+      "tags": []
+    },
     {
       "ipa": "[ˈʊntɐɡəˌʃoːs]",
       "tags": []
     }
   ],
+  "_antonyms": [
+    "Erdgeschoss",
+    "Obergeschoss",
+    "Zwischengeschoss"
+  ],
+  "_synonyms": [
+    "Keller",
+    "Kellergeschoss",
+    "Souterrain",
+    "Tiefgeschoss"
+  ],
+  "compound_parts": [
+    "Unter",
+    "Geschoss"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
-    "source_hash": "81ef859987782201",
+    "source_hash": "dc828aea811a0297",
     "generated_at": "2026-03-14"
   },
   "zipf": 2.27

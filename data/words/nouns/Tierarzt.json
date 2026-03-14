@@ -34,7 +34,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A physician licensed by the state who provides medical treatment and care for animals",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -62,9 +64,15 @@
     "Viehdoktor"
   ],
   "_gender_counterpart": "Tierärztin",
+  "compound_parts": [
+    "Tier",
+    "Arzt"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "62b18e8f3e212e6c",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.57
 }

@@ -24,7 +24,6 @@
     {
       "gloss": "Unterleibsbekleidung, aus zwei Strumpfschläuchen gefertigt, den Körper hauteng von der Taille abwärts komplett bedeckend",
       "gloss_en": "tights",
-      "gloss_en_full": "a close-fitting garment covering the body from the waist down to the feet",
       "tags": [],
       "example_ids": [
         "5fe65a1cff",
@@ -35,7 +34,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a close-fitting garment covering the body from the waist down to the feet"
     }
   ],
   "sounds": [
@@ -63,9 +63,15 @@
     "Stützstrumpfhose",
     "Thermostrumpfhose"
   ],
+  "compound_parts": [
+    "Strumpf",
+    "Hose"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "7326a240d35705d0",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.79
 }

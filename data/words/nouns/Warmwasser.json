@@ -25,14 +25,14 @@
     {
       "gloss": "Wasser mit verhältnismäßig hoher Temperatur",
       "gloss_en": "hot water",
-      "gloss_en_full": "water with a relatively high temperature, typically heated for domestic use",
       "tags": [],
       "example_ids": [
         "11b5595ad4"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "water with a relatively high temperature, typically heated for domestic use"
     }
   ],
   "sounds": [
@@ -64,9 +64,15 @@
   "_antonyms": [
     "Kaltwasser"
   ],
+  "compound_parts": [
+    "warm",
+    "Wasser"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "973c901ef901d03d",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.47
 }

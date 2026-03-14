@@ -24,7 +24,6 @@
     {
       "gloss": "sehr einfacher Schuh, dessen Sohle von einer einfachen Riemenkonstruktion gehalten wird",
       "gloss_en": "sandal",
-      "gloss_en_full": "a simple open shoe with a sole held to the foot by straps",
       "tags": [],
       "example_ids": [
         "ebe6c0a2a6",
@@ -35,7 +34,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "a simple open shoe with a sole held to the foot by straps"
     }
   ],
   "sounds": [
@@ -60,9 +60,15 @@
     "Riemensandale",
     "Römersandale"
   ],
+  "compound_parts": [
+    "Sand",
+    "Ale"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "0a54042984686e42",
-    "generated_at": "2026-03-13"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.61
 }

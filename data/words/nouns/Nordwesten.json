@@ -33,7 +33,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "The secondary cardinal direction opposite to the southeast, lying between north and west.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
       "gloss": "der von der Mitte aus in dieser Richtung liegende Teil eines Gebiets",
@@ -44,7 +46,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "The part of a region lying in this direction from the center.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -66,9 +70,15 @@
     "Nordwest",
     "Nordwestteil"
   ],
+  "compound_parts": [
+    "Nord",
+    "Westen"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "ff049dc0a7e11799",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.61
 }

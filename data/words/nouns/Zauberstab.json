@@ -28,7 +28,9 @@
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A long, typically wooden object believed to possess magical powers for performing magic",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
       "gloss": "elektrisches Küchengerät zum Pürieren von Lebensmitteln und Aufschlagen von Flüssigkeiten",
@@ -39,7 +41,9 @@
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "An electric kitchen appliance used for puréeing food and whipping liquids",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -54,9 +58,15 @@
     "Pürierstab",
     "Stabmixer"
   ],
+  "compound_parts": [
+    "zaubern",
+    "Stab"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "f46bc70dc893d031",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.12
 }

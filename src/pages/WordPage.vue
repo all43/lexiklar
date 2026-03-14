@@ -45,6 +45,26 @@
         </p>
       </f7-block>
 
+      <!-- Compound breakdown -->
+      <template v-if="compoundParts.length">
+        <f7-block-title>{{ t('word.compound') }}</f7-block-title>
+        <f7-block class="compound-block">
+          <div class="compound-parts">
+            <template v-for="(part, idx) in compoundParts" :key="idx">
+              <span v-if="idx > 0" class="compound-plus">+</span>
+              <span
+                class="compound-part"
+                :class="{ 'compound-part-linked': part.file }"
+                @click="part.file && $f7router.navigate(`/word/${part.file}/`)"
+              >
+                <strong>{{ part.lemma }}</strong>
+                <span v-if="part.glossEn" class="compound-gloss">({{ part.glossEn }})</span>
+              </span>
+            </template>
+          </div>
+        </f7-block>
+      </template>
+
       <!-- Senses -->
       <f7-block-title>{{ t('word.meanings') }}</f7-block-title>
       <f7-list>
@@ -288,6 +308,25 @@ export default {
     previewPosColor() {
       return this.getPosColor(this.preview?.pos);
     },
+    compoundParts() {
+      if (!this.word?.compound_parts) return [];
+
+      // Build lookup from related words (compound_part type)
+      const infoMap = {};
+      for (const rw of this.relatedWords) {
+        infoMap[rw.lemma] = rw;
+        infoMap[rw.lemma.toLowerCase()] = rw;
+      }
+
+      return this.word.compound_parts.map((lemma) => {
+        const info = infoMap[lemma] || infoMap[lemma.toLowerCase()];
+        return {
+          lemma,
+          file: info?.file || null,
+          glossEn: info?.glossEn?.[0] || null,
+        };
+      });
+    },
     relatedGroups() {
       if (!this.word?.related || !this.relatedWords.length) return [];
 
@@ -301,8 +340,9 @@ export default {
         derived_from: t("related.derivedFrom"),
         compound: t("related.compoundVerbs"),
         base_verb: t("related.baseVerb"),
+        compound_of: t("related.compoundOf"),
       };
-      const typeOrder = ["feminine_form", "masculine_form", "antonym", "synonym", "same_stem", "derived_from", "derived", "base_verb", "compound"];
+      const typeOrder = ["feminine_form", "masculine_form", "antonym", "synonym", "same_stem", "derived_from", "derived", "base_verb", "compound", "compound_of"];
 
       // Build file → display info lookup
       const infoMap = {};
@@ -587,6 +627,31 @@ export default {
 </script>
 
 <style scoped>
+/* Compound breakdown */
+.compound-block {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.compound-parts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px;
+}
+.compound-plus {
+  color: var(--f7-list-item-footer-text-color);
+  font-size: 1.1em;
+}
+.compound-part-linked {
+  color: var(--f7-theme-color);
+  cursor: pointer;
+}
+.compound-gloss {
+  font-size: 0.85em;
+  color: var(--f7-list-item-footer-text-color);
+  margin-left: 2px;
+}
+
 .sense-inner {
   flex-direction: column;
   align-items: flex-start;

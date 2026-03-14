@@ -34,7 +34,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "The reason for the onset of death and the permanent loss of vital functions",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -46,9 +48,15 @@
   "_hyponyms": [
     "Haupttodesursache"
   ],
+  "compound_parts": [
+    "Tod",
+    "Ursache"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "1cfdffa9c6e839ae",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.74
 }

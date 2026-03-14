@@ -24,7 +24,6 @@
     {
       "gloss": "Ausgang eines Gebäudes, der im Notfall benutzt werden soll",
       "gloss_en": "emergency exit",
-      "gloss_en_full": "an exit in a building designated for use in case of emergency",
       "tags": [],
       "example_ids": [
         "a64bd6ccde",
@@ -33,7 +32,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "an exit in a building designated for use in case of emergency"
     }
   ],
   "sounds": [
@@ -45,9 +45,15 @@
   "_synonyms": [
     "Fluchttür"
   ],
+  "compound_parts": [
+    "Not",
+    "Ausgang"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "53ebb98fe729272d",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.84
 }

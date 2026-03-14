@@ -30,7 +30,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A report of an incident or crime (such as a burglary, car accident, etc.) that has been properly documented by the police.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -39,9 +41,15 @@
       "tags": []
     }
   ],
+  "compound_parts": [
+    "Polizei",
+    "Bericht"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "bf7ee9f8e38e812d",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.18
 }

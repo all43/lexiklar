@@ -29,7 +29,9 @@
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "The totality of all measures to protect the constitutional order established by the constitution.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
       "gloss": "Landes- beziehungsweise Bundesamt für Verfassungsschutz, einer Behörde, die sich um den Schutz der Verfassung [[#1]] bemüht",
@@ -44,7 +46,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A state or federal office for constitutional protection, an agency responsible for safeguarding the constitution.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -65,9 +69,15 @@
     "Bundesamt für Verfassungsschutz",
     "Landesamt für Verfassungsschutz"
   ],
+  "compound_parts": [
+    "Verfassung",
+    "Schutz"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "4e97feb75078f013",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.37
 }

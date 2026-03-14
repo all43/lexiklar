@@ -35,7 +35,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A person who undertakes a journey.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
       "gloss": "Person, die Kunden besucht, um für Unternehmen/ihren Betrieb Geschäfte zu vermitteln/abzuschließen oder Waren/sonstige Gegenstände zu kaufen/verkaufen",
@@ -48,7 +50,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A person who visits customers to conduct business, conclude transactions, or buy and sell goods or other items on behalf of a company or business.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -84,9 +88,15 @@
     "Handelsvertreter"
   ],
   "_gender_counterpart": "Reisende",
+  "compound_parts": [
+    "Reisen",
+    "Der"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "afa28056f87d5f96",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.15
 }

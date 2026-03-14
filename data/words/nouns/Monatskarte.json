@@ -24,14 +24,14 @@
     {
       "gloss": "Eintrittskarte oder Fahrkarte, die einen Monat lang gilt",
       "gloss_en": "monthly pass",
-      "gloss_en_full": "an admission or travel ticket that is valid for one month",
       "tags": [],
       "example_ids": [
         "31b3808b8b"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "an admission or travel ticket that is valid for one month"
     }
   ],
   "sounds": [
@@ -48,9 +48,15 @@
     "Tageskarte",
     "Wochenkarte"
   ],
+  "compound_parts": [
+    "Monat",
+    "Karte"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "00da365f0cda5cfa",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.41
 }

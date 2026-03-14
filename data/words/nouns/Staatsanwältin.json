@@ -32,7 +32,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A female official of the public prosecutor's office and as such an organ of the administration of justice",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -53,9 +55,15 @@
     "Anklägerin"
   ],
   "_gender_counterpart": "Staatsanwalt",
+  "compound_parts": [
+    "Staat",
+    "Anwältin"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "d724183b374ec8bc",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.39
 }

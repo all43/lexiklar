@@ -38,7 +38,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A teaching session or class at a university in which a lecturer speaks on a particular subject",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -100,9 +102,15 @@
     "Seminar",
     "Übung"
   ],
+  "compound_parts": [
+    "Vor",
+    "Lesung"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "2931ba0ba16643a3",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.46
 }

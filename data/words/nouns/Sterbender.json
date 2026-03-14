@@ -39,7 +39,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A person who is so ill or injured that they will die within a few hours or days.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -62,9 +64,15 @@
     "Moribunde"
   ],
   "_gender_counterpart": "Sterbende",
+  "compound_parts": [
+    "Sterben",
+    "Der"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "191144c104910950",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.45
 }

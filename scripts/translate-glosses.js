@@ -261,9 +261,10 @@ function parseFullBatchResponse(content, expectedCount) {
   const obj = extractJSON(content);
   const arr = Array.isArray(obj) ? obj : obj.definitions;
   if (!Array.isArray(arr)) throw new Error(`Expected array in response, got: ${JSON.stringify(obj)}`);
-  if (arr.length !== expectedCount) {
+  if (arr.length < expectedCount) {
     throw new Error(`Count mismatch: expected ${expectedCount} definitions, got ${arr.length}`);
   }
+  if (arr.length > expectedCount) arr.length = expectedCount;
   return arr.map((t) => {
     let s = String(t).trim();
     // Collapse excess whitespace
@@ -280,9 +281,10 @@ function parseBatchResponse(content, expectedCount) {
   const obj = extractJSON(content);
   const arr = Array.isArray(obj) ? obj : obj.translations;
   if (!Array.isArray(arr)) throw new Error(`Expected array in response, got: ${JSON.stringify(obj)}`);
-  if (arr.length !== expectedCount) {
+  if (arr.length < expectedCount) {
     throw new Error(`Count mismatch: expected ${expectedCount} translations, got ${arr.length}`);
   }
+  if (arr.length > expectedCount) arr.length = expectedCount;
   return arr.map((t) => {
     let s = String(t).trim();
     if (s.endsWith(".")) s = s.slice(0, -1).trim();

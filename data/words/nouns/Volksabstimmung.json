@@ -27,7 +27,6 @@
     {
       "gloss": "Abstimmung aller wahlberechtigten Bürger über ein wichtiges politisches Thema",
       "gloss_en": "referendum",
-      "gloss_en_full": "a vote by all eligible citizens on an important political issue",
       "tags": [],
       "example_ids": [
         "996352ee11",
@@ -38,7 +37,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "a vote by all eligible citizens on an important political issue"
     }
   ],
   "sounds": [
@@ -51,9 +51,15 @@
     "Plebiszit",
     "Volksentscheid"
   ],
+  "compound_parts": [
+    "Volk",
+    "Abstimmung"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "75281b4d4375070e",
-    "generated_at": "2026-03-13"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.4
 }

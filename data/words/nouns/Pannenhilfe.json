@@ -24,14 +24,14 @@
     {
       "gloss": "Hilfemaßnahme bei einem technischen Zwischenfall mit einem Kraftfahrzeug",
       "gloss_en": "roadside assistance",
-      "gloss_en_full": "help provided when a motor vehicle has a technical breakdown",
       "tags": [],
       "example_ids": [
         "e14c548a4e"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "help provided when a motor vehicle has a technical breakdown"
     }
   ],
   "sounds": [
@@ -40,9 +40,15 @@
       "tags": []
     }
   ],
+  "compound_parts": [
+    "Panne",
+    "Hilfe"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "bb88ea498bec15ba",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.08
 }

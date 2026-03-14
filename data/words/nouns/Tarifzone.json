@@ -24,7 +24,6 @@
     {
       "gloss": "Gebiet, innerhalb dessen eine bestimmte Preisstufe für die Nutzung eines Dienstes gilt",
       "gloss_en": "fare zone",
-      "gloss_en_full": "a geographic area within which a specific price level applies for using a service",
       "tags": [],
       "example_ids": [
         "826c1b22c3",
@@ -32,7 +31,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "a geographic area within which a specific price level applies for using a service"
     }
   ],
   "sounds": [
@@ -45,9 +45,15 @@
     "Tarifzonengrenze",
     "Tarifzonenplan"
   ],
+  "compound_parts": [
+    "Tarif",
+    "Zone"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "762943cd058a68d3",
-    "generated_at": "2026-03-13"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.27
 }

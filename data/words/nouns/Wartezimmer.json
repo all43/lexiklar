@@ -24,7 +24,6 @@
     {
       "gloss": "Raum, in dem man sich während einer Wartezeit aufhalten kann",
       "gloss_en": "waiting room",
-      "gloss_en_full": "a room where one can stay while waiting, especially at a doctor's office",
       "tags": [],
       "example_ids": [
         "374eaed2fb",
@@ -36,7 +35,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a room where one can stay while waiting, especially at a doctor's office"
     }
   ],
   "sounds": [
@@ -49,9 +49,15 @@
     "Warteraum",
     "Wartesaal"
   ],
+  "compound_parts": [
+    "warten",
+    "Zimmer"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "464f5afc2235da80",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.98
 }

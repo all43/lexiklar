@@ -24,7 +24,6 @@
     {
       "gloss": "öffentlicher Bericht über die Wetterlage und die voraussichtliche Entwicklung des Wetters in einem angegebenen Zeitraum (Wetterprognose)",
       "gloss_en": "weather report",
-      "gloss_en_full": "a public report on current weather conditions and the expected weather forecast for a given period",
       "tags": [],
       "example_ids": [
         "104d5c4766",
@@ -35,7 +34,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a public report on current weather conditions and the expected weather forecast for a given period"
     }
   ],
   "sounds": [
@@ -49,9 +49,15 @@
     "Seewetterbericht",
     "Straßenwetterbericht"
   ],
+  "compound_parts": [
+    "Wetter",
+    "Bericht"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "85c3761982d2e52b",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.05
 }

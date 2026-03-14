@@ -24,7 +24,6 @@
     {
       "gloss": "„vereinbarter oder gesetzlich angeordneter Zeitraum, während dessen ein Rechtsverhältnis oder eine erteilte Erlaubnis unter erleichterten Bedingungen gelöst bzw. entzogen werden kann.“",
       "gloss_en": "probation (employment)",
-      "gloss_en_full": "a trial period during which an employment relationship can be terminated more easily",
       "tags": [],
       "example_ids": [
         "6f21adc15d",
@@ -34,12 +33,12 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "a trial period during which an employment relationship can be terminated more easily"
     },
     {
       "gloss": "Zeitraum, in dem der vollständige oder teilweise Aufschub einer Strafe widerrufen werden kann",
       "gloss_en": "probation (criminal)",
-      "gloss_en_full": "a period during which a suspended sentence can be revoked",
       "tags": [
         "Austrian German",
         "Swiss Standard German"
@@ -49,7 +48,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "a period during which a suspended sentence can be revoked"
     }
   ],
   "sounds": [
@@ -61,9 +61,15 @@
   "_synonyms": [
     "Bewährungsfrist"
   ],
+  "compound_parts": [
+    "Probe",
+    "Zeit"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "9c49dad591331b4c",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.94
 }

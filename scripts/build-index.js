@@ -427,6 +427,28 @@ function main() {
       }
     }
 
+    // 3e. compound_parts: verified compound noun parts → compound_part / compound_of (bidirectional)
+    if (entry.data.compound_parts && entry.data.compound_verified) {
+      for (const partLemma of entry.data.compound_parts) {
+        const targets =
+          lemmaMap.get(partLemma) ||
+          lemmaMap.get(partLemma.toLowerCase()) ||
+          [];
+        for (const target of targets) {
+          if (seenFiles.has(target.fileKey)) continue;
+          seenFiles.add(target.fileKey);
+          rels.push({ file: target.fileKey, type: "compound_part" });
+          // Reverse: component word → compound_of → this compound word
+          if (!relatedMap.has(target.fileKey))
+            relatedMap.set(target.fileKey, []);
+          const reverseRels = relatedMap.get(target.fileKey);
+          if (!reverseRels.some((r) => r.file === entry.fileKey)) {
+            reverseRels.push({ file: entry.fileKey, type: "compound_of" });
+          }
+        }
+      }
+    }
+
     if (rels.length) {
       if (!relatedMap.has(entry.fileKey)) relatedMap.set(entry.fileKey, []);
       relatedMap.get(entry.fileKey).push(...rels);
@@ -446,7 +468,7 @@ function main() {
       );
       if (
         sameFileStemEntry &&
-        (rel.type === "derived_from" || rel.type === "derived" || rel.type === "base_verb" || rel.type === "compound")
+        (rel.type === "derived_from" || rel.type === "derived" || rel.type === "base_verb" || rel.type === "compound" || rel.type === "compound_part" || rel.type === "compound_of")
       ) {
         continue;
       }
@@ -499,6 +521,8 @@ function main() {
       delete enriched._gender_counterpart;
       delete enriched._antonyms;
       delete enriched._synonyms;
+      delete enriched.compound_source;
+      delete enriched.compound_verified;
 
       if (data.pos === "verb" && verbEndings) {
         if (data.conjugation_class !== "irregular") {

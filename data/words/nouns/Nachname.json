@@ -35,7 +35,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "The family name, as opposed to the given name, which is typically not differentiated by gender in German.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -51,9 +53,15 @@
     "Familienname",
     "Zuname"
   ],
+  "compound_parts": [
+    "nach",
+    "Name"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "9a9714e7a0ec9cab",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.27
 }

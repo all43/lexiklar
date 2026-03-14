@@ -24,7 +24,6 @@
     {
       "gloss": "das Verbot mit Kraftfahrzeugen auf bestimmten Flächen zu parken",
       "gloss_en": "no parking",
-      "gloss_en_full": "a prohibition against parking motor vehicles in a designated area",
       "tags": [
         "colloquial"
       ],
@@ -33,7 +32,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a prohibition against parking motor vehicles in a designated area"
     }
   ],
   "sounds": [
@@ -45,9 +45,15 @@
   "_synonyms": [
     "Parkierungsverbot"
   ],
+  "compound_parts": [
+    "Park",
+    "Verbot"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "f9c51d553bd4f718",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.8
 }

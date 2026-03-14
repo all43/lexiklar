@@ -31,7 +31,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "The alphanumeric size of a shoe in relation to the size of a person's foot.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -43,9 +45,15 @@
   "_synonyms": [
     "Schuhnummer"
   ],
+  "compound_parts": [
+    "Schuh",
+    "Größe"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "1f71c3151650b2c4",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.79
 }

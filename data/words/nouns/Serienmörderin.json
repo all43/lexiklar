@@ -30,7 +30,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A woman who commits or has committed multiple similar murders in a series",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -43,8 +45,14 @@
     "Serienkillerin"
   ],
   "_gender_counterpart": "Serienmörder",
+  "compound_parts": [
+    "Serie",
+    "Mörderin"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "8ea19195773630ac",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   }
 }

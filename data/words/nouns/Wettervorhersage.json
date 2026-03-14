@@ -24,7 +24,6 @@
     {
       "gloss": "eine Aussage über den angenommenen Verlauf des Wetters in der nächsten Zeit",
       "gloss_en": "weather forecast",
-      "gloss_en_full": "a prediction about the expected course of the weather in the near future",
       "tags": [],
       "example_ids": [
         "269dbe0174",
@@ -36,7 +35,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a prediction about the expected course of the weather in the near future"
     }
   ],
   "sounds": [
@@ -61,9 +61,15 @@
     "Wetterprognose",
     "Wettervoraussage"
   ],
+  "compound_parts": [
+    "Wetter",
+    "Vorhersage"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "948e1b5f3e40abc8",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.91
 }

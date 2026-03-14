@@ -24,7 +24,6 @@
     {
       "gloss": "Recht, bei sich kreuzenden Verkehrswegen seine Fahrt als Erster fortzusetzen",
       "gloss_en": "right of way",
-      "gloss_en_full": "the right to proceed first at intersecting traffic routes",
       "tags": [],
       "example_ids": [
         "e078075911",
@@ -34,31 +33,32 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "the right to proceed first at intersecting traffic routes"
     },
     {
       "gloss": "Handlung, mit einem Fahrzeug zu einem bestimmten Punkt zu fahren und dort zu halten",
       "gloss_en": "approach",
-      "gloss_en_full": "the act of driving a vehicle to a specific point and stopping there",
       "tags": [],
       "example_ids": [
         "47634388bc"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "the act of driving a vehicle to a specific point and stopping there"
     },
     {
       "gloss": "Wegeabschnitt vor einem Gebäude, wo Fahrzeuge kurz anhalten können (zum Beispiel vor einem Hotel)",
       "gloss_en": "driveway",
-      "gloss_en_full": "a section of road in front of a building where vehicles can briefly stop, such as at a hotel",
       "tags": [],
       "example_ids": [
         "d3e69e104a"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a section of road in front of a building where vehicles can briefly stop, such as at a hotel"
     }
   ],
   "sounds": [
@@ -79,9 +79,15 @@
     "Vorrang",
     "Vortritt"
   ],
+  "compound_parts": [
+    "Vor",
+    "Fahrt"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "00cb3e5ee09eb3e4",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.88
 }

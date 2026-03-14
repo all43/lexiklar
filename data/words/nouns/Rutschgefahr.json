@@ -24,7 +24,6 @@
     {
       "gloss": "Gefahr zu rutschen",
       "gloss_en": "slipperiness risk",
-      "gloss_en_full": "the danger of slipping, especially on wet or icy surfaces",
       "tags": [],
       "example_ids": [
         "1dd904d7ca",
@@ -33,7 +32,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "the danger of slipping, especially on wet or icy surfaces"
     }
   ],
   "sounds": [
@@ -42,8 +42,14 @@
       "tags": []
     }
   ],
+  "compound_parts": [
+    "rutschen",
+    "Gefahr"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "0fad60b30a6c41f9",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   }
 }

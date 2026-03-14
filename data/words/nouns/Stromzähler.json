@@ -24,14 +24,14 @@
     {
       "gloss": "Gerät zur Messung der gelieferten elektrischen Energie",
       "gloss_en": "electricity meter",
-      "gloss_en_full": "a device that measures the amount of electrical energy consumed",
       "tags": [],
       "example_ids": [
         "426174e7e8"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a device that measures the amount of electrical energy consumed"
     }
   ],
   "sounds": [
@@ -49,9 +49,15 @@
   "_synonyms": [
     "Elektrozähler"
   ],
+  "compound_parts": [
+    "Strom",
+    "Zähler"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "2709c8f42a745b21",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.09
 }

@@ -24,7 +24,6 @@
     {
       "gloss": "meist flüssige, seltener feste Substanzen, die in der Regel dem Abwaschwasser beim Spülen von Geschirr hinzugefügt werden",
       "gloss_en": "dishwashing detergent",
-      "gloss_en_full": "a usually liquid cleaning substance added to water when washing dishes",
       "tags": [],
       "example_ids": [
         "51082c87ba",
@@ -32,7 +31,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a usually liquid cleaning substance added to water when washing dishes"
     }
   ],
   "sounds": [
@@ -48,9 +48,15 @@
     "Geschirrreiniger",
     "Spüli"
   ],
+  "compound_parts": [
+    "spülen",
+    "Mittel"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "71d38f14cb1dc614",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.56
 }

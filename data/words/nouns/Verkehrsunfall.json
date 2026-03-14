@@ -36,7 +36,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "An incident in traffic that results in property damage and/or personal injury.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
       "gloss": "ungewollte Schwangerschaft, Verhütungspanne",
@@ -50,7 +52,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "An unintended pregnancy resulting from contraceptive failure.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -71,9 +75,15 @@
     "Straßenverkehrsunfall",
     "Tramunfall"
   ],
+  "compound_parts": [
+    "Verkehr",
+    "Unfall"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "d759bfa9c7ed9af0",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.53
 }

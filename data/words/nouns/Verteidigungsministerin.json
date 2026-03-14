@@ -33,7 +33,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A female government official responsible for the armed forces",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -43,9 +45,15 @@
     }
   ],
   "_gender_counterpart": "Verteidigungsminister",
+  "compound_parts": [
+    "Verteidigung",
+    "Ministerin"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "bf113a9cc6e8b0fa",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.98
 }

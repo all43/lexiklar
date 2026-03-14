@@ -24,7 +24,6 @@
     {
       "gloss": "Mittel (Zeichenkette) zur Authentifizierung eines Benutzers",
       "gloss_en": "password",
-      "gloss_en_full": "a string of characters used to authenticate a user",
       "tags": [],
       "example_ids": [
         "cb1d520a1c",
@@ -35,7 +34,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "a string of characters used to authenticate a user"
     }
   ],
   "sounds": [
@@ -60,9 +60,15 @@
     "Schlüsselwort",
     "Zugangscode"
   ],
+  "compound_parts": [
+    "Pass",
+    "Wort"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "06fd94ef3da37802",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.54
 }

@@ -24,7 +24,6 @@
     {
       "gloss": "Abschlussstück, verschließbares Endstück einer Wasserleitung",
       "gloss_en": "faucet",
-      "gloss_en_full": "a valve or tap at the end of a water pipe used to control the flow of water",
       "tags": [],
       "example_ids": [
         "5c8e012bdb",
@@ -35,7 +34,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a valve or tap at the end of a water pipe used to control the flow of water"
     }
   ],
   "sounds": [
@@ -55,9 +55,15 @@
     "Pipe",
     "Pipen"
   ],
+  "compound_parts": [
+    "Wasser",
+    "Hahn"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "330abba791da8884",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.83
 }

@@ -7,6 +7,7 @@ import {
   openSync,
   readSync,
   closeSync,
+  readdirSync,
 } from "fs";
 import { createInterface } from "readline";
 import { createHash } from "crypto";
@@ -776,6 +777,153 @@ function getDisambiguator(entry) {
 }
 
 // ============================================================
+// Compound noun splitting
+// ============================================================
+
+/** Set of known lemmas (lowercase) for algorithmic compound splitting. Built lazily. */
+let knownLemmas = null;
+
+function buildKnownLemmas() {
+  knownLemmas = new Set();
+  for (const posDir of Object.values(SUPPORTED_POS)) {
+    const dir = join(WORDS_DIR, posDir);
+    if (!existsSync(dir)) continue;
+    for (const f of readdirSync(dir)) {
+      if (!f.endsWith(".json")) continue;
+      // Strip .json and homonym disambiguator
+      const name = f.slice(0, -5).split("_")[0];
+      knownLemmas.add(name.toLowerCase());
+    }
+  }
+}
+
+/**
+ * Parse a component description from Wiktionary etymology text.
+ * e.g. "dem Substantiv Schrank" → "Schrank"
+ *      "dem Stamm des Verbs kühlen" → "kühlen"
+ *      "Fund" → "Fund"
+ */
+function parseEtymologyComponent(text) {
+  text = text.trim();
+
+  // "dem Stamm/Wortstamm des Verbs kühlen"
+  let m = text.match(
+    /(?:dem\s+)?(?:Wort)?[Ss]tamm\s+des\s+Verbs?\s+(\S+)/,
+  );
+  if (m) return m[1];
+
+  // "dem Substantiv Schrank" / "den Substantiven Wort" / "Substantiv Schrank"
+  m = text.match(/(?:(?:dem|den|des)\s+)?Substantiv(?:s|en)?\s+(\S+)/);
+  if (m) return m[1];
+
+  // "dem Adjektiv schnell"
+  m = text.match(/(?:dem|des)\s+Adjektiv(?:s)?\s+(\S+)/);
+  if (m) return m[1];
+
+  // "dem Verb kühlen"
+  m = text.match(/(?:dem|des)\s+Verb(?:s|um)?\s+(\S+)/);
+  if (m) return m[1];
+
+  // "der Präposition unter" / "dem Adverb sehr" / "der Interjektion buh"
+  m = text.match(
+    /(?:der|dem|des)\s+(?:Präposition|Adverb|Interjektion|Partikel|Konjunktion)\s+(\S+)/,
+  );
+  if (m) return m[1];
+
+  // "dem Nomen Schlamm"
+  m = text.match(/(?:dem|des)\s+Nomen(?:s)?\s+(\S+)/);
+  if (m) return m[1];
+
+  // "dem Zahlwort drei"
+  m = text.match(/(?:dem|des)\s+Zahlwort(?:s)?\s+(\S+)/);
+  if (m) return m[1];
+
+  // Bare word (possibly with trailing punctuation or articles)
+  const bare = text.replace(/[.,;:!?()^→„""«»]+$/, "").trim();
+  // Must be a single word, at least 2 chars
+  if (bare && !bare.includes(" ") && bare.length >= 2) return bare;
+
+  return null;
+}
+
+// "aus X und Y" or "aus X sowie Y"
+const COMPOUND_AUS_RE =
+  /(?:Determinativ)?[Kk]ompositum[^,]*?aus\s+(.+?)\s+(?:und|sowie)\s+(.+?)(?:\s*[,;.]|$)/;
+// "von X und Y" (e.g. "von Substantiv Straße, Fugenelement -n und Substantiv Bahn")
+const COMPOUND_VON_RE =
+  /(?:Determinativ)?[Kk]ompositum[^)]*?von\s+(.+?)\s+und\s+(.+?)(?:\s*[,;.]|$)/;
+const ZUSAMMEN_RE =
+  /zusammengesetzt\s+aus\s+(.+?)\s+(?:und|sowie)\s+(.+?)(?:\s*[,;.]|$)/;
+const ZUSAMMENSETZUNG_RE =
+  /Zusammensetzung[^,]*?(?:aus|von)\s+(.+?)\s+(?:und|sowie)\s+(.+?)(?:\s*[,;.]|$)/;
+// Detect Fugenelement
+const FUGEN_RE = /Fugenelement\s+[„"«-]*([a-zäöüß-]+)/i;
+
+/**
+ * Extract compound parts from a Wiktionary entry.
+ * Returns { parts: string[], source: "wiktionary"|"algorithmic", verified: bool } or null.
+ */
+function extractCompoundParts(entry) {
+  // Phase A: Wiktionary etymology parsing
+  for (const etym of entry.etymology_texts || []) {
+    const match =
+      etym.match(COMPOUND_AUS_RE) ||
+      etym.match(COMPOUND_VON_RE) ||
+      etym.match(ZUSAMMEN_RE) ||
+      etym.match(ZUSAMMENSETZUNG_RE);
+    if (!match) continue;
+
+    // Clean up captures: strip Fugenelement mentions and trailing "sowie ..."
+    let raw1 = match[1];
+    let raw2 = match[2];
+    raw1 = raw1.replace(/,?\s*(?:dem\s+)?Fugenelement\s+\S+\s*$/i, "").trim();
+    raw2 = raw2.replace(/\s+sowie\s+.*$/i, "").trim();
+    raw2 = raw2.replace(/,?\s*(?:dem\s+)?Fugenelement\s+\S+\s*$/i, "").trim();
+
+    const part1 = parseEtymologyComponent(raw1);
+    const part2 = parseEtymologyComponent(raw2);
+    if (part1 && part2) {
+      return { parts: [part1, part2], source: "wiktionary", verified: true };
+    }
+  }
+
+  // Phase B: Algorithmic fallback (nouns only, min 6 chars)
+  if (entry.pos !== "noun" || !entry.word || entry.word.length < 6) return null;
+
+  if (!knownLemmas) buildKnownLemmas();
+
+  const word = entry.word;
+  const FUGEN = ["", "s", "n", "en", "e", "er", "es"];
+
+  // Try split points, prefer longest left component
+  for (let i = word.length - 3; i >= 3; i--) {
+    const left = word.slice(0, i);
+    const rest = word.slice(i);
+
+    for (const fuge of FUGEN) {
+      if (fuge && !rest.toLowerCase().startsWith(fuge)) continue;
+      const right = fuge ? rest.slice(fuge.length) : rest;
+      if (right.length < 3) continue;
+
+      if (
+        knownLemmas.has(left.toLowerCase()) &&
+        knownLemmas.has(right.toLowerCase())
+      ) {
+        // Capitalize right part for noun lemma form
+        const rightLemma = right.charAt(0).toUpperCase() + right.slice(1);
+        return {
+          parts: [left, rightLemma],
+          source: "algorithmic",
+          verified: false,
+        };
+      }
+    }
+  }
+
+  return null;
+}
+
+// ============================================================
 // Merge: preserve manual fields from existing file
 // ============================================================
 
@@ -795,6 +943,13 @@ function mergeWithExisting(newData, existingPath) {
   }
   if (existing.plural_dominant != null) {
     newData.plural_dominant = existing.plural_dominant;
+  }
+
+  // Preserve compound data if already set (may have been LLM-verified or manually corrected)
+  if (existing.compound_parts && !newData.compound_parts) {
+    newData.compound_parts = existing.compound_parts;
+    if (existing.compound_source) newData.compound_source = existing.compound_source;
+    if (existing.compound_verified != null) newData.compound_verified = existing.compound_verified;
   }
 
   // Preserve LLM-generated sense fields (match by position)
@@ -866,6 +1021,7 @@ async function main() {
   // instead of raw line to avoid holding hundreds of thousands of multi-KB strings
   // in memory. Phase 1b reads back only the lines it needs.
   const genderBuffer = new Map(); // lowerCaseWord → byte offset into RAW_FILE
+  const compoundBuffer = new Map(); // lowerCaseWord → { offset, pos } for compound part inclusion
   const rl = createInterface({ input: createReadStream(RAW_FILE) });
   let lineCount = 0;
   let byteOffset = 0;
@@ -907,6 +1063,12 @@ async function main() {
     if (entry.pos === "noun" && extractGenderCounterpart(entry)) {
       if (!genderBuffer.has(entry.word.toLowerCase()))
         genderBuffer.set(entry.word.toLowerCase(), lineStart);
+    }
+
+    // Buffer all valid entries by lemma for compound part inclusion (Phase 1c)
+    if (freqFilter && !compoundBuffer.has(entry.word.toLowerCase())) {
+      const entryLen = Buffer.byteLength(line, "utf-8");
+      compoundBuffer.set(entry.word.toLowerCase(), { offset: lineStart, length: entryLen, pos: entry.pos });
     }
 
     if (seedWords && !seedWords.has(entry.word.toLowerCase())) continue;
@@ -970,6 +1132,45 @@ async function main() {
   }
   genderBuffer.clear(); // free memory — no longer needed after Phase 1b
 
+  // Phase 1c: Force-include compound part lemmas that were dropped by the
+  // frequency filter. For each included word with Wiktionary compound data,
+  // ensure its component parts also get their own word files generated.
+  if (freqFilter && !useSeed) {
+    let compoundPartsAdded = 0;
+    // Collect compound part lemmas from entries that passed the filter
+    const neededParts = new Set();
+    for (const [, entries] of groups) {
+      for (const entry of entries) {
+        const raw = readLineAt(entry.offset, entry.length);
+        const parsed = JSON.parse(raw);
+        const compound = extractCompoundParts(parsed);
+        if (!compound || compound.source !== "wiktionary") continue;
+        for (const partLemma of compound.parts) {
+          const partKey = `${partLemma}|noun`;
+          // Also check verb form for verb stems (e.g. "kühlen")
+          const partKeyVerb = `${partLemma}|verb`;
+          if (!groups.has(partKey) && !groups.has(partKeyVerb)) {
+            neededParts.add(partLemma.toLowerCase());
+          }
+        }
+      }
+    }
+    // Add buffered entries for needed parts
+    for (const lemmaLower of neededParts) {
+      const buffered = compoundBuffer.get(lemmaLower);
+      if (!buffered) continue;
+      const bufferedRaw = readLineAt(buffered.offset, buffered.length);
+      const bufferedParsed = JSON.parse(bufferedRaw);
+      const key = `${bufferedParsed.word}|${bufferedParsed.pos}`;
+      if (groups.has(key)) continue;
+      groups.set(key, [{ offset: buffered.offset, length: buffered.length, hash: sha256(bufferedRaw) }]);
+      compoundPartsAdded++;
+    }
+    if (compoundPartsAdded > 0)
+      console.log(`  Added ${compoundPartsAdded} compound part(s) missing from frequency filter.`);
+  }
+  compoundBuffer.clear(); // free memory
+
   // Load existing examples to preserve manually added data
   let existingExamples = {};
   if (existsSync(EXAMPLES_FILE)) {
@@ -1019,9 +1220,14 @@ async function main() {
       const parsed = JSON.parse(raw);
       const stateKey = `${parsed.word}|${parsed.pos}|${parsed.etymology_number || 1}`;
 
-      if (state.entries[stateKey]?.hash === hash && parsed.pos !== forcePos) {
-        skipped++;
-        continue;
+      const stateEntry = state.entries[stateKey];
+      if (stateEntry?.hash === hash && parsed.pos !== forcePos) {
+        // Only skip if the output file still exists on disk
+        const expectedPath = join(DATA_DIR, stateEntry.file + ".json");
+        if (existsSync(expectedPath)) {
+          skipped++;
+          continue;
+        }
       }
 
       const transform = transformers[parsed.pos];
@@ -1054,6 +1260,14 @@ async function main() {
       // Gender pair reference: masculine ↔ feminine noun counterpart
       const genderCounterpart = extractGenderCounterpart(parsed);
       if (genderCounterpart) data._gender_counterpart = genderCounterpart;
+
+      // Compound noun decomposition
+      const compound = extractCompoundParts(parsed);
+      if (compound) {
+        data.compound_parts = compound.parts;
+        data.compound_source = compound.source;
+        data.compound_verified = compound.verified;
+      }
 
       // Add _meta
       data._meta = {

@@ -24,7 +24,6 @@
     {
       "gloss": "Vereinbarung zu den Bedingungen einer vorübergehenden Nutzung einer Wohnung, Liegenschaft und Ähnlichem gegen Zahlung eines Entgelts",
       "gloss_en": "lease agreement",
-      "gloss_en_full": "a contract specifying the terms for temporarily using an apartment or property in exchange for rent",
       "tags": [],
       "example_ids": [
         "9609f18d46",
@@ -35,7 +34,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a contract specifying the terms for temporarily using an apartment or property in exchange for rent"
     }
   ],
   "sounds": [
@@ -69,9 +69,15 @@
     "Mietervertrag",
     "Mietvereinbarung"
   ],
+  "compound_parts": [
+    "Miete",
+    "Vertrag"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "92fa2128eb79da93",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.34
 }

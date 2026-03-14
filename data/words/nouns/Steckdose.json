@@ -24,7 +24,6 @@
     {
       "gloss": "Vorrichtung zum Anschluss elektrischer Geräte an das Stromnetz mit zwei oder mehr Kontakthülsen zur Aufnahme der Steckerstifte",
       "gloss_en": "power outlet",
-      "gloss_en_full": "a wall-mounted device for connecting electrical appliances to the power grid",
       "tags": [],
       "example_ids": [
         "bfdca96ba4",
@@ -35,7 +34,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a wall-mounted device for connecting electrical appliances to the power grid"
     }
   ],
   "sounds": [
@@ -72,9 +72,15 @@
     "Buchse",
     "Steckkontakt"
   ],
+  "compound_parts": [
+    "stecken",
+    "Dose"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "df1d46271f7cbf23",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.03
 }

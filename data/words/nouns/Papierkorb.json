@@ -24,7 +24,6 @@
     {
       "gloss": "kleinerer Sammelbehälter für Papiermüll",
       "gloss_en": "wastebasket",
-      "gloss_en_full": "a small container for collecting waste paper",
       "tags": [],
       "example_ids": [
         "94dec26942",
@@ -36,12 +35,12 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a small container for collecting waste paper"
     },
     {
       "gloss": "Verzeichnis, in dem noch nicht endgültig gelöschte Dateien zeitweilig gespeichert werden",
       "gloss_en": "recycle bin",
-      "gloss_en_full": "a directory where deleted files are temporarily stored before permanent removal",
       "tags": [],
       "example_ids": [
         "751e4e2717",
@@ -49,7 +48,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a directory where deleted files are temporarily stored before permanent removal"
     }
   ],
   "sounds": [
@@ -65,9 +65,15 @@
     "Mülleimer",
     "Backup"
   ],
+  "compound_parts": [
+    "Papier",
+    "Korb"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "4d5bc9f6bfb32847",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.78
 }

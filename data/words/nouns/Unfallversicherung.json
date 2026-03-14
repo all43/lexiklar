@@ -27,7 +27,6 @@
     {
       "gloss": "gesetzliche oder private Versicherung, die durch einen Unfall entstandene Schäden ausgleicht; im deutschen Sprachraum bei Arbeitnehmern als Pflichtversicherung ausgestaltet, die bei Arbeitsunfällen und Berufskrankheiten Krankenbehandlung und Lohnersatzleistungen erbringt",
       "gloss_en": "accident insurance",
-      "gloss_en_full": "a statutory or private insurance covering damages from accidents, including workplace injuries",
       "tags": [],
       "example_ids": [
         "bcf06a11ed",
@@ -35,19 +34,20 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "a statutory or private insurance covering damages from accidents, including workplace injuries"
     },
     {
       "gloss": "Träger der Unfallversicherung: Einrichtung der gesetzlichen Sozialversicherung oder privates Versicherungsunternehmen",
       "gloss_en": "accident insurer",
-      "gloss_en_full": "the institution or company that provides accident insurance coverage",
       "tags": [],
       "example_ids": [
         "ae255efe91"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "the institution or company that provides accident insurance coverage"
     }
   ],
   "sounds": [
@@ -59,9 +59,15 @@
   "_derived": [
     "Insassenunfallversicherung"
   ],
+  "compound_parts": [
+    "Unfall",
+    "Versicherung"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "a4b9086a5854a7ec",
-    "generated_at": "2026-03-13"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.9
 }

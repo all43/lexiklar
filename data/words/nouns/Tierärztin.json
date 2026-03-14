@@ -32,7 +32,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A female veterinarian who, after obtaining state licensure, provides medical treatment and care for animals",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -49,9 +51,15 @@
     "Veterinärmedizinerin"
   ],
   "_gender_counterpart": "Tierarzt",
+  "compound_parts": [
+    "Tier",
+    "Ärztin"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "cd99dd0f15fa9cff",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.92
 }

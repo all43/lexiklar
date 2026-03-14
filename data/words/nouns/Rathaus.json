@@ -35,7 +35,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A (historic) administrative building, often serving as a prestigious seat of administration and/or the main building of a municipal or city administration.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
       "gloss": "Stadtverwaltung, eine Gemeindeverwaltung als Organisation",
@@ -52,7 +54,9 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A city administration or municipal administration as an organization.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -81,9 +85,15 @@
   "_synonyms": [
     "Stadtverwaltung"
   ],
+  "compound_parts": [
+    "Rat",
+    "Haus"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "61869e6555ed4281",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-14"
   },
   "zipf": 4.19
 }

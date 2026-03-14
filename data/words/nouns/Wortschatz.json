@@ -24,7 +24,6 @@
     {
       "gloss": "Menge der Wörter einer Sprache",
       "gloss_en": "vocabulary (language)",
-      "gloss_en_full": "the total set of words belonging to a language",
       "tags": [],
       "example_ids": [
         "1fb1b1c5d4",
@@ -35,12 +34,12 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "the total set of words belonging to a language"
     },
     {
       "gloss": "Gesamtheit der Wörter, die eine Person kennt",
       "gloss_en": "vocabulary (personal)",
-      "gloss_en_full": "the totality of words that a person knows and can use",
       "tags": [],
       "example_ids": [
         "9a3615374a",
@@ -52,7 +51,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "the totality of words that a person knows and can use"
     }
   ],
   "sounds": [
@@ -106,9 +106,15 @@
     "Wortwissen",
     "Wortvorrat"
   ],
+  "compound_parts": [
+    "Wort",
+    "Schatz"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "b175240dc87ad222",
-    "generated_at": "2026-03-13"
+    "generated_at": "2026-03-14"
   },
   "zipf": 3.01
 }

@@ -24,7 +24,6 @@
     {
       "gloss": "Becken zum Geschirrspülen",
       "gloss_en": "sink",
-      "gloss_en_full": "a basin used for washing dishes in the kitchen",
       "tags": [],
       "example_ids": [
         "5a3db16060",
@@ -34,7 +33,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a basin used for washing dishes in the kitchen"
     }
   ],
   "sounds": [
@@ -43,9 +43,15 @@
       "tags": []
     }
   ],
+  "compound_parts": [
+    "spülen",
+    "Becken"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "7cb776c03f776c2c",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.61
 }

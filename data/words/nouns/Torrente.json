@@ -28,7 +28,9 @@
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A watercourse in the Mediterranean region that forms temporarily after heavy rainfall",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -41,9 +43,15 @@
     "Gießbach",
     "Regenbach"
   ],
+  "compound_parts": [
+    "Tor",
+    "Rente"
+  ],
+  "compound_source": "algorithmic",
+  "compound_verified": false,
   "_meta": {
     "source_hash": "f6b7a5ff7b534352",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.64
 }

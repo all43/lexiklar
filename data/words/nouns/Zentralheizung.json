@@ -27,7 +27,6 @@
     {
       "gloss": "Anlage zur gemeinsamen Erwärmung von Innenräumen",
       "gloss_en": "central heating",
-      "gloss_en_full": "a system for heating multiple rooms in a building from a single source",
       "tags": [],
       "example_ids": [
         "572b4b0ef3",
@@ -39,7 +38,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a system for heating multiple rooms in a building from a single source"
     }
   ],
   "sounds": [
@@ -58,9 +58,15 @@
   "_synonyms": [
     "Sammelheizung"
   ],
+  "compound_parts": [
+    "zentral",
+    "Heizung"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "46da41f0920b7d0e",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.25
 }

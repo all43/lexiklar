@@ -24,7 +24,6 @@
     {
       "gloss": "bei Vereinen oder anderen Organisationen meist jährlich (Jahresbeitrag) erhobener finanzieller Anteil der Mitglieder",
       "gloss_en": "membership fee",
-      "gloss_en_full": "a financial contribution paid by members of a club or organization, usually annually",
       "tags": [],
       "example_ids": [
         "abbfe1ac82",
@@ -32,7 +31,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "a financial contribution paid by members of a club or organization, usually annually"
     }
   ],
   "sounds": [
@@ -44,9 +44,15 @@
   "_synonyms": [
     "Mitgliedsgebühr"
   ],
+  "compound_parts": [
+    "Mitglied",
+    "Beitrag"
+  ],
+  "compound_source": "wiktionary",
+  "compound_verified": true,
   "_meta": {
     "source_hash": "c0709e0bc8bd696a",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-14"
   },
   "zipf": 2.47
 }
