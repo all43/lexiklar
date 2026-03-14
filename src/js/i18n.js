@@ -210,7 +210,7 @@ export function t(key) {
 }
 
 /**
- * Change the active locale and persist to localStorage.
+ * Change the active locale and persist to storage.
  * @param {"auto"|"en"|"de"} lang
  */
 export function setLocale(lang) {

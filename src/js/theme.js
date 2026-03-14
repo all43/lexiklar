@@ -1,7 +1,7 @@
 /**
  * Theme preference utilities.
  *
- * Stores the user's choice ("light" | "dark" | "auto") in localStorage
+ * Stores the user's choice ("light" | "dark" | "auto") in persistent storage
  * and applies it via Framework7's setDarkMode() API.
  */
 import { f7 } from "framework7-vue";
