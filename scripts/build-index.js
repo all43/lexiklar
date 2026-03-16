@@ -701,13 +701,13 @@ function main() {
 
     // Insert examples into SQLite
     const insertExamples = db.transaction(() => {
-      for (const [id, ex] of Object.entries(sorted)) {
+      for (const [id, ex] of Object.entries(examples)) {
         const exData = JSON.stringify(ex);
         insertExample.run({ id, data: exData, hash: contentHash(exData) });
       }
     });
     insertExamples();
-    console.log(`Inserted ${Object.keys(sorted).length} examples.`);
+    console.log(`Inserted ${Object.keys(examples).length} examples.`);
   }
 
   // --------------------------------------------------------
