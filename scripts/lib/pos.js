@@ -22,6 +22,7 @@ export const POS_CONFIG = {
   det: { dir: "determiners", label: "determiner" },
   num: { dir: "numerals", label: "numeral" },
   name: { dir: "names", label: "proper noun" },
+  abbrev: { dir: "abbreviations", label: "abbreviation" },
 };
 
 /** Array of directory names: ["nouns", "verbs", "adjectives", ...] */

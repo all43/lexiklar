@@ -1206,6 +1206,7 @@ async function main() {
     det: (e) => transformSimple(e, POS_CONFIG.det.label),
     num: (e) => transformSimple(e, POS_CONFIG.num.label),
     name: (e) => transformNoun(e, POS_CONFIG.name.label),
+    abbrev: (e) => transformSimple(e, POS_CONFIG.abbrev.label),
   };
 
   const today = new Date().toISOString().slice(0, 10);
