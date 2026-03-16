@@ -728,6 +728,18 @@ Word-level aspects (`gloss_en`, `gloss_en_full`, `examples_owned`) are stored in
 
 Example-level aspects (`ex_translation`, `ex_annotations`) are stored in example shard files via `patchExamples()`. They don't skip words — instead, annotation health issues are silently suppressed for examples whose `_proofread.annotations` hash still matches.
 
+### Subagent proofreading
+
+High-frequency words are verified using Claude Code's built-in model as a subagent (no API credits). The workflow:
+
+1. Launch subagent with prompt from `prompts/proofread-subagent.md`, replacing the word list at the bottom
+2. Subagent writes `data/proofread-results.json`
+3. Apply: `node scripts/apply-proofread-results.js`
+
+The subagent skips examples already marked in `_proofread` — shared examples are verified only once even if referenced by multiple words.
+
+`grammar_override` issues in the results are automatically written as `_overrides` by the apply script, so corrections survive re-transform.
+
 ---
 
 ## Open Questions
