@@ -63,6 +63,10 @@
             <td class="conj-person">Partizip II</td>
             <td class="conj-form">{{ conjugation.participle2 || '—' }}</td>
           </tr>
+          <tr v-if="verb.separable && verb.prefix">
+            <td class="conj-person">{{ t('verb.zuInfinitive') }}</td>
+            <td class="conj-form">{{ verb.prefix + 'zu' + verb.word.slice(verb.prefix.length) }}</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -71,6 +75,7 @@
 
 <script>
 import ConjugationTable from "./ConjugationTable.vue";
+import { t } from "../js/i18n.js";
 
 export default {
   components: { ConjugationTable },
@@ -97,6 +102,7 @@ export default {
       // Always pre-computed at build time — for all conjugation classes
       return this.verb.conjugation;
     },
+    t() { return t; },
   },
 };
 </script>

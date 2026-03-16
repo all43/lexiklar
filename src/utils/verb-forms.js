@@ -243,6 +243,14 @@ export function computeAllForms(verb, endings) {
   // Infinitive
   forms.add(verb.word.toLowerCase());
 
+  // Zu-infinitive: separable verbs insert "zu" between prefix and stem
+  // e.g. aufstehen → aufzustehen, ankommen → anzukommen
+  if (verb.separable && verb.prefix) {
+    const pfx = verb.prefix;
+    const stem = verb.word.slice(pfx.length); // e.g. "stehen" from "aufstehen"
+    forms.add((pfx + "zu" + stem).toLowerCase());
+  }
+
   // For separable verbs, also add rejoined forms (komme an → ankomme)
   if (verb.separable && verb.prefix) {
     const pfx = verb.prefix;

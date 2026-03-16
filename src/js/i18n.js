@@ -111,6 +111,9 @@ const locales = {
     "noun.singular": "Singular",
     "noun.plural": "Plural",
 
+    // VerbConjugation
+    "verb.zuInfinitive": "Infinitive with zu",
+
     // AdjectiveDeclension
     "adj.indeclinable": "Indeclinable — no case endings",
 
@@ -224,6 +227,9 @@ const locales = {
     "noun.exception": "Ausnahme: ",
     "noun.singular": "Singular",
     "noun.plural": "Plural",
+
+    // VerbConjugation
+    "verb.zuInfinitive": "Infinitiv mit zu",
 
     // AdjectiveDeclension
     "adj.indeclinable": "Indeklinabel — keine Kasusendungen",
