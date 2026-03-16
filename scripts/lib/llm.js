@@ -53,7 +53,7 @@ function writeCache(filePath, result) {
   }
 }
 
-const PROVIDER_DEFAULTS = {
+export const PROVIDER_DEFAULTS = {
   openai: {
     url: "https://api.openai.com",
     model: "gpt-4.1-mini",
@@ -284,7 +284,7 @@ async function callAnthropic(systemPrompt, userMessage, model, options) {
  * @param {string} fallback - default model name to use if auto-detection fails
  * @returns {Promise<string>}
  */
-async function resolveLocalModel(baseUrl, fallback) {
+export async function resolveLocalModel(baseUrl, fallback) {
   try {
     const res = await fetch(`${baseUrl}/v1/models`);
     if (!res.ok) return fallback;
@@ -427,11 +427,15 @@ export async function retryWithBackoff(fn, maxRetries = 3, baseDelay = 1000) {
       return await fn();
     } catch (err) {
       lastError = err;
-      if (attempt < maxRetries - 1) {
-        const isRateLimit = err?.status === 429 || String(err?.message).includes("429") || String(err?.message).includes("rate_limit");
-        // Rate limit: exponential backoff starting at 15s; other errors: linear 1s/2s/3s
-        const delay = isRateLimit ? 15000 * Math.pow(2, attempt) : baseDelay * (attempt + 1);
+      const isRateLimit = err?.status === 429 || String(err?.message).includes("429") || String(err?.message).includes("rate_limit");
+      // Rate limits get extra retries: up to 8 attempts total
+      const effectiveMax = isRateLimit ? Math.max(maxRetries, 8) : maxRetries;
+      if (attempt < effectiveMax - 1) {
+        // Rate limit: exponential backoff starting at 15s (cap at 120s); other errors: linear 1s/2s/3s
+        const delay = isRateLimit ? Math.min(15000 * Math.pow(2, attempt), 120000) : baseDelay * (attempt + 1);
         await new Promise((r) => setTimeout(r, delay));
+      } else {
+        break;
       }
     }
   }

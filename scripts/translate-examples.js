@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, appendFileSync, readdirSync, existsSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel } from "./lib/llm.js";
+import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel, resolveLocalModel, PROVIDER_DEFAULTS } from "./lib/llm.js";
 import { stripReferences } from "./lib/references.js";
 import { POS_CONFIG } from "./lib/pos.js";
 import { EXAMPLES_SYSTEM_PROMPT } from "./lib/prompts.js";
@@ -19,7 +19,12 @@ const EXAMPLES_FILE = join(DATA_DIR, "examples.json");
 const args = process.argv.slice(2);
 const DRY_RUN = args.includes("--dry-run");
 const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args, "anthropic");
-const MODEL_LABEL = `${PROVIDER}/${MODEL ?? getDefaultModel(PROVIDER)}`;
+// Resolve the real model name up-front (local providers auto-detect via /v1/models)
+const RESOLVED_MODEL = MODEL
+  || (isLocalProvider(PROVIDER)
+      ? await resolveLocalModel(PROVIDER_DEFAULTS[PROVIDER]?.url, getDefaultModel(PROVIDER))
+      : getDefaultModel(PROVIDER));
+const MODEL_LABEL = `${PROVIDER}/${RESOLVED_MODEL}`;
 
 // Idiom/expression model — gpt-4.1 by default (better at idiomatic translation).
 // If --model is explicitly passed, use it for everything (testing override).
@@ -42,7 +47,7 @@ const BATCH_SIZE = (() => {
 
 const MAX_CONSECUTIVE_ERRORS = (() => {
   const idx = args.indexOf("--max-consecutive-errors");
-  return idx >= 0 ? parseInt(args[idx + 1], 10) || 5 : 5;
+  return idx >= 0 ? parseInt(args[idx + 1], 10) || 5 : 20;
 })();
 
 const LIMIT = (() => {
@@ -109,9 +114,9 @@ async function runPool(items, concurrency, fn) {
   await Promise.all(workers);
 }
 
-// Disambiguation dict adds many tokens and risks blowing local context.
-// Skip it for local providers unless the user opts in explicitly.
-const USE_DISAMBIG = (!isLocalProvider(PROVIDER) && !args.includes("--no-disambig")) || args.includes("--disambig");
+// Disambiguation dict is needed for correct gloss_hint — enabled for all providers.
+// Use --no-disambig to skip it (e.g. for very small context windows).
+const USE_DISAMBIG = !args.includes("--no-disambig");
 
 // ============================================================
 // Load gloss_en from a phrase/word file via its ref path
@@ -202,7 +207,6 @@ function getRelevantDisambiguation(examples, disambigDict) {
 // System prompt and user prompt
 // ============================================================
 
-// Imported from lib/prompts.js
 const SYSTEM_PROMPT = EXAMPLES_SYSTEM_PROMPT;
 
 function buildUserPrompt(batch, disambig) {
@@ -295,6 +299,42 @@ const EXAMPLE_SCHEMA = {
   additionalProperties: false,
 };
 
+// Local-safe variant: no union types (LM Studio rejects type arrays).
+// gloss_hint uses type "string"; empty string is normalised to null in parseResponse.
+const EXAMPLE_SCHEMA_LOCAL = {
+  type: "object",
+  properties: {
+    examples: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          id:          { type: "string" },
+          translation: { type: "string" },
+          annotations: {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                form:       { type: "string" },
+                lemma:      { type: "string" },
+                pos:        { type: "string" },
+                gloss_hint: { type: "string" },
+              },
+              required: ["form", "lemma", "pos", "gloss_hint"],
+              additionalProperties: false,
+            },
+          },
+        },
+        required: ["id", "translation", "annotations"],
+        additionalProperties: false,
+      },
+    },
+  },
+  required: ["examples"],
+  additionalProperties: false,
+};
+
 // ============================================================
 // Parse and validate LLM response
 // ============================================================
@@ -317,10 +357,10 @@ function parseResponse(content) {
     }
     // Annotations are best-effort — allow missing
     if (!item.annotations) item.annotations = [];
-    // Validate annotation shape
-    item.annotations = item.annotations.filter(
-      (a) => a.form && a.lemma && a.pos,
-    );
+    // Validate annotation shape; normalise empty gloss_hint → null
+    item.annotations = item.annotations
+      .filter((a) => a.form && a.lemma && a.pos)
+      .map((a) => ({ ...a, gloss_hint: a.gloss_hint || null }));
   }
 
   return parsed;
@@ -447,7 +487,7 @@ async function main() {
   console.log(
     `Translating examples... (${total} total, ${alreadyDone} already done, ${untranslated.length} remaining${LIMIT ? ` (capped at ${LIMIT})` : ""})`,
   );
-  console.log(`Provider: ${PROVIDER}, batch size: ${BATCH_SIZE}, concurrency: ${CONCURRENCY}${!USE_DISAMBIG ? " (disambiguation disabled for local model — use --disambig to enable)" : ""}`);
+  console.log(`Provider: ${PROVIDER}, batch size: ${BATCH_SIZE}, concurrency: ${CONCURRENCY}${!USE_DISAMBIG ? " (disambiguation disabled — use without --no-disambig to enable)" : ""}`);
 
   // Build disambiguation dict (skipped for local providers to save context)
   const disambigDict = USE_DISAMBIG ? buildDisambiguationDict() : new Map();
@@ -553,7 +593,9 @@ async function main() {
     saveExamples();
   }
 
-  const schema = NO_ANNOTATIONS ? EXAMPLE_SCHEMA_NO_ANNOTATIONS : EXAMPLE_SCHEMA;
+  const schema = NO_ANNOTATIONS
+    ? EXAMPLE_SCHEMA_NO_ANNOTATIONS
+    : isLocalProvider(PROVIDER) ? EXAMPLE_SCHEMA_LOCAL : EXAMPLE_SCHEMA;
   const idiomLlmOptions   = { provider: IDIOM_PROVIDER, model: IDIOM_MODEL,   maxTokens: 4096, temperature: 0.3, jsonSchema: schema };
   const regularLlmOptions = { provider: PROVIDER,        model: MODEL,          maxTokens: 8192, temperature: 0.3, jsonSchema: schema };
 
