@@ -1557,7 +1557,10 @@
         "gloss_hint": "sky"
       }
     ],
-    "text_linked": "Er [[wurde|verbs/werden#1]] [[dabei|adverbs/dabei#1]] [[von|prepositions/von#1]] [[einem|determiners/ein]] [[Himmel|nouns/Himmel#1]] beschirmt."
+    "text_linked": "Er [[wurde|verbs/werden#1]] [[dabei|adverbs/dabei#1]] [[von|prepositions/von#1]] [[einem|determiners/ein]] [[Himmel|nouns/Himmel#1]] beschirmt.",
+    "_proofread": {
+      "translation": true
+    }
   },
   "cf10bf3b62": {
     "text": "„Doch auch dem Schachspiel war Jean Paul von früh auf zugetan […].“",
@@ -8211,9 +8214,9 @@
       },
       {
         "form": "bester",
-        "lemma": "beste",
+        "lemma": "gut",
         "pos": "adjective",
-        "gloss_hint": "superlative"
+        "gloss_hint": null
       },
       {
         "form": "Freund",
@@ -15794,7 +15797,10 @@
       "Suche",
       "Creme"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "cf94d73774": {
     "text": "„Die Leopardin jedenfalls hatte auf einer Anhöhe gelegen und uns mit freundlicher Gelassenheit erlaubt, sie anzustarren.“",
@@ -16023,7 +16029,10 @@
       "gehören",
       "Verbrennung"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "cf96135372": {
     "text": "„Das Lenkrad entriß sich Burres Händen; ich vermied mit knapper Not, mir den Schädel am Wagendach einzustoßen.“",
@@ -21613,7 +21622,10 @@
         "gloss_hint": "unwell"
       }
     ],
-    "text_linked": "[[Nach|prepositions/nach]] [[dem|determiners/der]] vielen [[Wein|nouns/Wein#3]] [[war|verbs/sein#2]] [[mir|pronouns/ich]] [[gestern|adverbs/gestern#1]] [[ganz|adjectives/ganz]] [[schlecht|adjectives/schlecht#5]]."
+    "text_linked": "[[Nach|prepositions/nach]] [[dem|determiners/der]] vielen [[Wein|nouns/Wein#3]] [[war|verbs/sein#2]] [[mir|pronouns/ich]] [[gestern|adverbs/gestern#1]] [[ganz|adjectives/ganz]] [[schlecht|adjectives/schlecht#5]].",
+    "_proofread": {
+      "translation": true
+    }
   },
   "cfc8facc10": {
     "text": "Die Wagen können mit einer einfachen Kupplung aneinandergehängt werden.",
@@ -21665,19 +21677,13 @@
   },
   "cfc922e3a8": {
     "text": "Die alte Uhr, die ich von meinem Großvater geerbt habe, steht.",
-    "translation": "The old clock, which I inherited from my grandfather, is standing.",
+    "translation": "The old clock I inherited from my grandfather has stopped.",
     "source": "wiktionary",
     "lemmas": [
       "stehen"
     ],
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
-      {
-        "form": "Die",
-        "lemma": "die",
-        "pos": "noun",
-        "gloss_hint": "old woman"
-      },
       {
         "form": "alte",
         "lemma": "alt",
@@ -21688,55 +21694,31 @@
         "form": "Uhr",
         "lemma": "Uhr",
         "pos": "noun",
-        "gloss_hint": "clock"
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "pronoun",
-        "gloss_hint": "which"
-      },
-      {
-        "form": "ich",
-        "lemma": "ich",
-        "pos": "noun",
-        "gloss_hint": "I"
-      },
-      {
-        "form": "von",
-        "lemma": "von",
-        "pos": "preposition",
-        "gloss_hint": "from"
-      },
-      {
-        "form": "meinem",
-        "lemma": "mein",
-        "pos": "adjective",
         "gloss_hint": null
       },
       {
         "form": "Großvater",
         "lemma": "Großvater",
         "pos": "noun",
-        "gloss_hint": "grandfather"
+        "gloss_hint": null
       },
       {
         "form": "geerbt",
         "lemma": "erben",
         "pos": "verb",
-        "gloss_hint": "inherit"
+        "gloss_hint": null
       },
       {
         "form": "habe",
         "lemma": "haben",
         "pos": "verb",
-        "gloss_hint": "have"
+        "gloss_hint": null
       },
       {
         "form": "steht",
         "lemma": "stehen",
         "pos": "verb",
-        "gloss_hint": "stand"
+        "gloss_hint": "not working"
       }
     ],
     "text_linked": "Die [[alte|adjectives/alt]] [[Uhr|nouns/Uhr#2]], [[die|pronouns/die#1]] ich [[von|prepositions/von#1]] meinem [[Großvater|nouns/Großvater#1]] [[geerbt|verbs/erben#1]] [[habe|verbs/haben#1]], [[steht|verbs/stehen#1]]."

@@ -17,7 +17,7 @@
  *   --annotation-lemma <lemma>  Match examples with annotation.lemma == <lemma>
  *   --owned-by <lemma>          Match examples whose lemmas[] contains <lemma>
  *   --text <substring>          Match examples whose text contains <substring> (case-insensitive)
- *   --id <exampleId>            Print a single example by ID
+ *   --id <exampleId>            Print a single example by ID (comma-separated list for multiple)
  *   --no-proofread              Only show examples not yet proofread
  *   --limit <n>                 Stop after <n> results (default: 50)
  *   --full                      Print full example JSON instead of summary
@@ -42,13 +42,14 @@ const annotationForm = arg("--annotation-form");
 const annotationLemma = arg("--annotation-lemma");
 const ownedBy = arg("--owned-by");
 const textSearch = arg("--text");
-const singleId = arg("--id");
+const singleIdArg = arg("--id");
+const idList = singleIdArg ? singleIdArg.split(",").map((s) => s.trim()).filter(Boolean) : [];
 const limitArg = arg("--limit");
 const LIMIT = limitArg ? parseInt(limitArg, 10) : 50;
 const NO_PROOFREAD = args.includes("--no-proofread");
 const FULL = args.includes("--full");
 
-if (!annotationForm && !annotationLemma && !ownedBy && !textSearch && !singleId) {
+if (!annotationForm && !annotationLemma && !ownedBy && !textSearch && !idList.length) {
   console.error("No search criteria specified. Use --help to see options.");
   process.exit(1);
 }
@@ -58,15 +59,20 @@ if (!existsSync(EXAMPLES_DIR)) {
   process.exit(1);
 }
 
-// If searching by single ID, load just that shard
-if (singleId) {
-  const prefix = singleId.slice(0, 2);
-  const file = join(EXAMPLES_DIR, prefix + ".json");
-  if (!existsSync(file)) { console.error("Shard not found:", file); process.exit(1); }
-  const shard = JSON.parse(readFileSync(file, "utf-8"));
-  const ex = shard[singleId];
-  if (!ex) { console.error("Example not found:", singleId); process.exit(1); }
-  console.log(JSON.stringify({ [singleId]: ex }, null, 2));
+// If searching by ID(s), load only the relevant shards
+if (idList.length) {
+  const shardMap = {};
+  for (const id of idList) {
+    const prefix = id.slice(0, 2);
+    if (!shardMap[prefix]) {
+      const file = join(EXAMPLES_DIR, prefix + ".json");
+      if (!existsSync(file)) { console.error("Shard not found:", file); continue; }
+      shardMap[prefix] = JSON.parse(readFileSync(file, "utf-8"));
+    }
+    const ex = shardMap[prefix][id];
+    if (!ex) { console.error("Example not found:", id); continue; }
+    console.log(JSON.stringify({ [id]: ex }, null, 2));
+  }
   process.exit(0);
 }
 

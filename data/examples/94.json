@@ -7,7 +7,10 @@
       "Zeitung",
       "Zeitschrift"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "9401a5daff": {
     "text": "In der Kriegsmarine war der Rang des Admirals der dritthöchste.",
@@ -3871,7 +3874,11 @@
         "gloss_hint": "deity"
       }
     ],
-    "text_linked": "Er [[glaubt|verbs/glauben]] [[an|prepositions/an]] [[Gott|nouns/Gott#1]]."
+    "text_linked": "Er [[glaubt|verbs/glauben]] [[an|prepositions/an]] [[Gott|nouns/Gott#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "fea93f2b"
+    }
   },
   "94218f924e": {
     "text": "„Das Wort Ventilator (lat. \"Windt(über)träger\") bezeichnet ein Gerät welches dazu verwendet wird die es umgebende Luft in Bewegung zu versetzen ohne jedoch dabei zum Antrieb eines Gegenstandes (z. B. einem Flugzeug ) zu dienen.“",
@@ -7673,16 +7680,34 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "feed",
-        "lemma": "feed",
-        "pos": "verb",
-        "gloss_hint": "feed"
+        "form": "Wale",
+        "lemma": "Wal",
+        "pos": "noun",
+        "gloss_hint": null
       },
       {
-        "form": "fish",
-        "lemma": "fish",
+        "form": "ernähren",
+        "lemma": "ernähren",
         "pos": "verb",
-        "gloss_hint": "fish"
+        "gloss_hint": null
+      },
+      {
+        "form": "Plankton",
+        "lemma": "Plankton",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kleinen",
+        "lemma": "klein",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fischen",
+        "lemma": "Fisch",
+        "pos": "noun",
+        "gloss_hint": null
       }
     ]
   },
@@ -22320,7 +22345,10 @@
     "lemmas": [
       "Suche"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "94d1dba237": {
     "text": "Das fortschreitende Alter wird die Bohlen noch weiter dunkeln.",
