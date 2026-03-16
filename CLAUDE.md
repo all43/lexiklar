@@ -188,6 +188,34 @@ Each word gets a JSON file in `data/words/{pos}/`. All files share these common 
 - `example_ids` — references into shared `data/examples/` shards
 - `_meta.source_hash` — SHA-256 of source JSONL line, used for change detection
 - `zipf` — absolute combined Zipf score (2 decimal places), written by enrich step. Rank is computed at build-index time
+- `_proofread` — optional; tracks which aspects of the entry have been manually verified (see below)
+
+### Proofreading flags (`_proofread`)
+
+```json
+"_proofread": {
+  "gloss_en": true,
+  "gloss_en_full": true,
+  "examples_owned": "a1b2c3d4"
+}
+```
+
+Written by `quality-check.js --mark-proofread`. Aspects:
+
+| Field | Type | Meaning | Invalidated when |
+|---|---|---|---|
+| `gloss_en` | `true` \| absent | Short glosses reviewed | `_meta.source_hash` changes (new senses) |
+| `gloss_en_full` | `true` \| absent | Full glosses reviewed | `_meta.source_hash` changes |
+| `examples_owned` | hex string | Owned examples reviewed | Owned `example_ids` set changes |
+
+`transform.js` carries `_proofread` forward in `mergeWithExisting()` and clears stale flags automatically. `_proofread` is never written by transform — only by `quality-check.js --mark-proofread`.
+
+Workflow:
+```bash
+node scripts/quality-check.js --word-list my-nouns.txt         # review
+node scripts/quality-check.js --word-list my-nouns.txt --mark-proofread gloss_en,gloss_en_full
+node scripts/quality-check.js --skip-proofread gloss_en,gloss_en_full  # those words skipped
+```
 
 ### Noun
 
@@ -337,7 +365,31 @@ Each example object:
 - **annotations**: all content words that **appear** in the sentence (set by translate step)
 - **type**: `"expression"` or `"proverb"` for phrase/idiom entries (absent for normal examples)
 - **ref**: file key of the phrase card this expression links to (e.g. `"phrases/Tisch_aufdecken"`) — set by `build-index.js`
+- **_proofread**: optional; tracks human verification status (see below)
 - Word files reference examples via `senses[].example_ids` arrays
+
+### Example proofread flags (`_proofread`)
+
+```json
+"ff9c6017fd": {
+  "text": "...",
+  "translation": "...",
+  "annotations": [...],
+  "_proofread": {
+    "translation": true,
+    "annotations": "a1b2c3d4"
+  }
+}
+```
+
+| Field | Type | Meaning | Invalidated when |
+|---|---|---|---|
+| `translation` | `true` \| absent | Translation reviewed as correct | `translate-examples.js` writes a new translation |
+| `annotations` | hex string | Annotations reviewed as correct | `translate-examples.js` writes new annotations |
+
+`translate-examples.js` clears the relevant flag whenever it overwrites `translation` or `annotations`. Flags are never set by the pipeline — only by `quality-check.js --mark-proofread ex_translation,ex_annotations`.
+
+Flags are stored in the same shard file as the example. `patchExamples(patches)` in `scripts/lib/examples.js` handles targeted shard updates (loads only the affected shards).
 
 ### Annotation fields
 
@@ -491,6 +543,7 @@ The transform step preserves manually-added data when re-running:
 - **`gloss_en` / `gloss_en_full`** — LLM translations in senses, preserved by position-matching merge
 - **`data/examples/`** — existing entries with translations and annotations are preserved. Transform keeps the full example object when `translation` is truthy, so both `translation` and `annotations` survive re-generation.
 - **Transform write skip** — word files are not rewritten if content is identical (ignoring `generated_at`). Prevents spurious git churn on incremental re-runs.
+- **`_overrides`** — manual corrections to Wiktionary source data. Applied last in `mergeWithExisting()`, after all other merges. Values in `_overrides` win over anything the pipeline produces. For nested objects (e.g. `principal_parts`), merges one level deep; for scalars and arrays, replaces entirely. Never cleared by transform. Example: `"_overrides": { "past_participle": "gesehen" }` to fix a missing form.
 
 The merge function (`mergeWithExisting()` in transform.js) reads the existing file before overwriting, and copies over fields that the transform step doesn't own.
 
@@ -623,6 +676,57 @@ import { t } from "../js/i18n.js";
 - `ios/` directory contains the generated Xcode project
 - `npx cap sync` copies built web assets into the native project
 - `npx cap open ios` opens in Xcode for device/simulator testing
+
+---
+
+## Developer Inspection Tools
+
+### Raw Wiktionary lookup
+
+`scripts/lookup.js` — look up entries in `de-extract.jsonl` by word name. Uses a SQLite byte-offset index for ~instant exact lookups (~2ms), falls back to `grep` if the index isn't built yet.
+
+```bash
+npm run lookup -- Tisch              # substring search
+npm run lookup -- Tisch --exact      # exact match (fast path via index)
+npm run lookup -- Tisch --exact --full  # all fields including translations/hyponyms
+npm run lookup -- Tisch --exact --raw   # raw JSON array, pipe-friendly
+npm run lookup -- Tisch --pos noun   # filter by POS
+```
+
+`scripts/build-lookup-index.js` — scans `de-extract.jsonl` with `grep -ob` to record word → byte offset in `data/raw/de-extract.offsets.db`. Run once after download; `npm run download` runs it automatically as a post-step.
+
+```bash
+npm run build-lookup-index   # builds data/raw/de-extract.offsets.db (~50 MB)
+```
+
+### Quality check
+
+`scripts/quality-check.js` — audits word data quality for the whitelist + top-N words by Zipf score.
+
+```bash
+node scripts/quality-check.js                    # whitelist + top 500
+node scripts/quality-check.js --top 1000         # whitelist + top 1000
+node scripts/quality-check.js --whitelist-only
+node scripts/quality-check.js --word Tisch       # single word
+node scripts/quality-check.js --word-list words.txt  # plain-text or JSON array of words
+node scripts/quality-check.js --pos verb
+node scripts/quality-check.js --no-examples      # faster, skip example checks
+node scripts/quality-check.js --show-raw         # show raw Wiktionary entry per word
+node scripts/quality-check.js --skip-proofread [aspects]  # skip already-verified words
+node scripts/quality-check.js --mark-proofread [aspects]  # write _proofread flags
+```
+
+Score breakdown (0–100): gloss_en coverage (40 pts), gloss_en_full (20 pts), example translation (20 pts), IPA (10 pts), annotation health (10 pts).
+
+`--word-list` accepts either a plain-text file (one word per line) or a JSON array of strings/`{word}` objects.
+
+`--show-raw` uses the offset index (or falls back to grep) to fetch and print the raw Wiktionary entry alongside each word's quality issues.
+
+`--skip-proofread` / `--mark-proofread` take an optional comma-separated aspect list or `all`. Omit the list to mean all aspects.
+
+Word-level aspects (`gloss_en`, `gloss_en_full`, `examples_owned`) are stored in word files. `--skip-proofread` filters whole words based on these.
+
+Example-level aspects (`ex_translation`, `ex_annotations`) are stored in example shard files via `patchExamples()`. They don't skip words — instead, annotation health issues are silently suppressed for examples whose `_proofread.annotations` hash still matches.
 
 ---
 
