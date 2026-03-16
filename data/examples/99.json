@@ -953,7 +953,7 @@
         "gloss_hint": "overlooked"
       }
     ],
-    "text_linked": "„[[Blauer|adjectives/blau]] Trenchcoat [[ist|verbs/sein#2]] [[eigentlich|adjectives/eigentlich#1]] [[ganz|adjectives/ganz]] [[abgekommen|verbs/abkommen_etwas]]. [[Die|pronouns/die]] [[Leute|nouns/Leute#1]] [[haben|verbs/haben#1]] ihn [[sich|pronouns/sich#2]] [[übergesehen|verbs/übersehen_etwas]].“"
+    "text_linked": "„[[Blauer|adjectives/blau]] Trenchcoat [[ist|verbs/sein#2]] [[eigentlich|adjectives/eigentlich]] [[ganz|adjectives/ganz]] [[abgekommen|verbs/abkommen_etwas]]. [[Die|pronouns/die]] [[Leute|nouns/Leute#1]] [[haben|verbs/haben#1]] ihn [[sich|pronouns/sich#2]] [[übergesehen|verbs/übersehen_etwas]].“"
   },
   "9908dc6b29": {
     "text": "Die Arbeiterin repariert Autos.",
@@ -6859,7 +6859,10 @@
     "lemmas": [
       "gleichzeitig"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "9944e62e7b": {
     "text": "Diese Schreibweise ist veraltet.",
@@ -8173,7 +8176,7 @@
         "gloss_hint": "politics"
       }
     ],
-    "text_linked": "„Er [[hatte|verbs/haben]] [[im|prepositions/in]] [[Alleingang|nouns/Alleingang#1]] [[gehandelt|verbs/handeln_auf]] [[und|conjunctions/und]] [[zeigte|verbs/zeigen]] wenig [[Interesse|nouns/Interesse#1]] [[an|prepositions/an]] [[Politik|nouns/Politik]].“"
+    "text_linked": "„Er [[hatte|verbs/haben]] [[im|prepositions/in]] [[Alleingang|nouns/Alleingang#1]] [[gehandelt|verbs/handeln_auf]] [[und|conjunctions/und]] [[zeigte|verbs/zeigen]] wenig [[Interesse|nouns/Interesse#1]] [[an|prepositions/an]] [[Politik|nouns/Politik#1]].“"
   },
   "9952d95705": {
     "text": "„Auch die anderen erhoben sich und gingen in den Hausflur, um dort ihre Mäntel vom Haken zu nehmen.“",
@@ -14888,7 +14891,7 @@
         "gloss_hint": "to compare | to juxtapose | to contrast"
       }
     ],
-    "text_linked": "„[[Durch|adverbs/durch]] [[den|determiners/der]] [[Witz|nouns/Witz]] [[und|conjunctions/und]] [[in|prepositions/in]] [[dem|determiners/der]] Witz [[wird|verbs/werden]] [[eine|determiners/ein]] [[Korrektur|nouns/Korrektur]] [[der|determiners/der]] [[Sichtweise|nouns/Sichtweise]] [[vorgenommen|verbs/vornehmen]], [[die|determiners/die]] in der [[offiziellen|adjectives/offiziell]] [[Sprache|nouns/Sprache]] [[vorgegeben|verbs/vorgeben]] [[ist|verbs/sein]], [[es|pronouns/es]] wird [[ihr|pronouns/ihr_person]] eine andere Sichtweise gegenübergestellt.“"
+    "text_linked": "„[[Durch|adverbs/durch]] [[den|determiners/der]] [[Witz|nouns/Witz]] [[und|conjunctions/und]] [[in|prepositions/in]] [[dem|determiners/der]] Witz [[wird|verbs/werden]] [[eine|determiners/ein]] [[Korrektur|nouns/Korrektur]] [[der|determiners/der]] [[Sichtweise|nouns/Sichtweise]] [[vorgenommen|verbs/vornehmen]], [[die|determiners/die]] in der [[offiziellen|adjectives/offiziell#1]] [[Sprache|nouns/Sprache]] [[vorgegeben|verbs/vorgeben]] [[ist|verbs/sein]], [[es|pronouns/es]] wird [[ihr|pronouns/ihr_person]] eine andere Sichtweise gegenübergestellt.“"
   },
   "999bf4bb3e": {
     "text": "Wo Weiden sind, da ist auch Wasser",
@@ -17666,7 +17669,7 @@
         "gloss_hint": "get"
       }
     ],
-    "text_linked": "[[Ich|pronouns/ich]] [[gönne|verbs/gönnen#2]] [[es|pronouns/es]] [[dir|pronouns/du#1]] [[sehr|particles/sehr#1]], [[dass|conjunctions/dass]] [[du|pronouns/du#1]] diese [[gute|adjectives/gut#1]] [[Stelle|nouns/Stelle#1]] [[bekommen|verbs/bekommen#4]] hast.",
+    "text_linked": "[[Ich|pronouns/ich]] [[gönne|verbs/gönnen]] [[es|pronouns/es]] [[dir|pronouns/du#1]] [[sehr|particles/sehr#1]], [[dass|conjunctions/dass]] [[du|pronouns/du#1]] diese [[gute|adjectives/gut#1]] [[Stelle|nouns/Stelle#1]] [[bekommen|verbs/bekommen#4]] hast.",
     "_proofread": {
       "annotations": true
     }
@@ -18083,58 +18086,22 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "knives",
-        "lemma": "knife",
+        "form": "Messer",
+        "lemma": "Messer",
         "pos": "noun",
-        "gloss_hint": "tool"
+        "gloss_hint": null
       },
       {
-        "form": "are",
-        "lemma": "be",
+        "form": "schneiden",
+        "lemma": "schneiden",
         "pos": "verb",
         "gloss_hint": null
       },
       {
-        "form": "of",
-        "lemma": "of",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "poor",
-        "lemma": "poor",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "quality",
-        "lemma": "quality",
+        "form": "Qualität",
+        "lemma": "Qualität",
         "pos": "noun",
-        "gloss_hint": "attribute"
-      },
-      {
-        "form": "they",
-        "lemma": "they",
-        "pos": "pronoun",
         "gloss_hint": null
-      },
-      {
-        "form": "do",
-        "lemma": "do",
-        "pos": "verb",
-        "gloss_hint": null
-      },
-      {
-        "form": "not",
-        "lemma": "not",
-        "pos": "particle",
-        "gloss_hint": null
-      },
-      {
-        "form": "cut",
-        "lemma": "cut",
-        "pos": "verb",
-        "gloss_hint": "cut"
       }
     ],
     "_proofread": {
@@ -20648,7 +20615,7 @@
         "gloss_hint": "nation"
       }
     ],
-    "text_linked": "„[…] [[der|determiners/der]] [[Vorrang|nouns/Vorrang#1]] der [[Politik|nouns/Politik#1]] gegenüber der [[Wirtschaft|nouns/Wirtschaft#2]] bleibt in einer ökonomisch entgrenzten [[Welt|nouns/Welt#3]] [[am|prepositions/an]] [[ehesten|adverbs/ehe]] [[im|prepositions/in]] [[Rahmen|nouns/Rahmen#6]] der [[Nation|nouns/Nation#3]] gewahrt.“"
+    "text_linked": "„[…] [[der|determiners/der]] [[Vorrang|nouns/Vorrang#1]] der [[Politik|nouns/Politik]] gegenüber der [[Wirtschaft|nouns/Wirtschaft#2]] bleibt in einer ökonomisch entgrenzten [[Welt|nouns/Welt#3]] [[am|prepositions/an]] [[ehesten|adverbs/ehe]] [[im|prepositions/in]] [[Rahmen|nouns/Rahmen#6]] der [[Nation|nouns/Nation#3]] gewahrt.“"
   },
   "99dbd6809d": {
     "text": "„Für unser Gesicht benutzen wir Foundation, Make-up, Highlighter, schminken, betonen, tuschen, decken ab.“",
@@ -21470,7 +21437,7 @@
         "gloss_hint": "not"
       }
     ],
-    "text_linked": "„[[Wir|pronouns/wir]] [[haben|verbs/haben#1]] [[versucht|verbs/versuchen#3]], unsere Brillenbärin [[künstlich|adjectives/künstlich#2]] [[zu|particles/zu_drückt]] befruchten – [[vergeblich|adjectives/vergeblich]]. Wir haben [[wohl|particles/wohl#1]] [[den|determiners/der]] richtigen [[Zeitpunkt|nouns/Zeitpunkt#1]] [[verpasst|verbs/verpassen#1]]. [[Unser|pronouns/unser_personalpronomen]] Brillenbär [[könnte|verbs/können_etwas]] [[das|pronouns/das_[1]#1]] [[besser|adjectives/besser#1]], [[nur|particles/nur#1]] [[mag|verbs/mögen_etwas#3]] [[die|pronouns/die#2]] [[Bärin|nouns/Bärin]] ihn [[nicht|particles/nicht#1]].“"
+    "text_linked": "„[[Wir|pronouns/wir]] [[haben|verbs/haben#1]] [[versucht|verbs/versuchen#3]], unsere Brillenbärin [[künstlich|adjectives/künstlich#2]] [[zu|particles/zu_drückt]] befruchten – [[vergeblich|adjectives/vergeblich]]. Wir haben [[wohl|particles/wohl#1]] [[den|determiners/der]] richtigen [[Zeitpunkt|nouns/Zeitpunkt#1]] [[verpasst|verbs/verpassen#1]]. [[Unser|pronouns/unser_personalpronomen]] Brillenbär [[könnte|verbs/können_etwas]] [[das|pronouns/das_[1]#1]] [[besser|adjectives/besser#1]], [[nur|particles/nur#1]] [[mag|verbs/mögen_jemanden#1]] [[die|pronouns/die#2]] [[Bärin|nouns/Bärin]] ihn [[nicht|particles/nicht#1]].“"
   },
   "99df78a70d": {
     "text": "„Es gibt eine Reihe von Einfällen, die nur in englische Köpfe passen.“",
@@ -22264,7 +22231,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[In|prepositions/in]] [[einem|determiners/ein]] [[längeren|adjectives/lang#2]] [[wüsten|adjectives/wüst#4]] [[Traume|nouns/Traum#1]] [[von|prepositions/von]] [[mir|pronouns/ich]], [[der|pronouns/der_nominativ]] [[eine|determiners/ein]] Schiffsreise [[zum|prepositions/zu]] [[scheinbaren|adjectives/scheinbar#1]] [[Mittelpunkte|nouns/Mittelpunkt#1]] [[hat|verbs/haben]], kommt [[es|pronouns/es]] [[vor|prepositions/vor#1]], [[daß|conjunctions/dass]] [[die|pronouns/die]] nächste [[Station|nouns/Station#6]] Hearsing [[heißt|verbs/heißen_fahne]], die nächst [[weitere|adjectives/weit]] [[aber|conjunctions/aber#1]] Fließ.“"
+    "text_linked": "„[[In|prepositions/in]] [[einem|determiners/ein]] [[längeren|adjectives/lang#1]] [[wüsten|adjectives/wüst#4]] [[Traume|nouns/Traum#1]] [[von|prepositions/von]] [[mir|pronouns/ich]], [[der|pronouns/der_nominativ]] [[eine|determiners/ein]] Schiffsreise [[zum|prepositions/zu]] [[scheinbaren|adjectives/scheinbar#1]] [[Mittelpunkte|nouns/Mittelpunkt#1]] [[hat|verbs/haben]], kommt [[es|pronouns/es]] [[vor|prepositions/vor#1]], [[daß|conjunctions/dass]] [[die|pronouns/die]] nächste [[Station|nouns/Station#6]] Hearsing [[heißt|verbs/heißen_fahne]], die nächst [[weitere|adjectives/weit]] [[aber|conjunctions/aber#1]] Fließ.“"
   },
   "99e97a0307": {
     "text": "Bad Salzungen liegt im Wartburgkreis.",
@@ -24200,7 +24167,10 @@
     "lemmas": [
       "Rat"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "99fbea5e90": {
     "text": "Er gilt als anerkannte Kapazität auf seinem Gebiet.",
