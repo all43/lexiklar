@@ -573,6 +573,21 @@ Uses `@capacitor/preferences` (iOS UserDefaults / Android SharedPreferences on n
 ### DB caching (`src/utils/db.js`)
 SQLite DB bytes are cached using the **Cache API** (`caches.open()`), which works in Safari, WKWebView, and all modern browsers. A version check (`db-version.txt`) determines if the cache is stale. Falls back to re-fetching from static assets if cache miss or API unavailable. Replaced the original OPFS `createWritable()` approach which doesn't work in Safari/WKWebView.
 
+### i18n (`src/js/i18n.js`)
+Two locales: **English** (default) and **German**. UI chrome is translated; grammar terminology (Indikativ, Konjunktiv, Nom., etc.) stays in German in both modes.
+
+```js
+import { t } from "../js/i18n.js";
+// In template: {{ t('verb.zuInfinitive') }}
+// In script:   computed: { t() { return t; } }
+```
+
+- Keys are namespaced by component/domain: `tab.*`, `word.*`, `noun.*`, `adj.*`, `verb.*`, `related.*`, `settings.*`, `report.*`
+- `t(key)` falls back to English, then to the raw key — so missing translations degrade gracefully
+- Locale preference stored via `@capacitor/preferences` under `lexiklar_language` (`"auto" | "en" | "de"`)
+- `"auto"` resolves to `"de"` if `navigator.language` starts with `"de"`, otherwise `"en"`
+- **When adding UI text**: add the key to both `en` and `de` blocks. Grammar term labels (Partizip I, Infinitiv mit zu) stay in German in both locales.
+
 ### Capacitor iOS
 - `capacitor.config.json`: `appId: "dev.malikov.lexiklar"`, `webDir: "dist"`
 - `ios/` directory contains the generated Xcode project
