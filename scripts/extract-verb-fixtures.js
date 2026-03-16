@@ -88,7 +88,7 @@ async function main() {
     if (found[entry.word]) continue; // take first etymology only
 
     const { compact, sourced } = splitForms(entry);
-    const conjugation = extractVerbConjugation(compact, sourced);
+    const conjugation = extractVerbConjugation(compact, sourced, meta.separable);
     const meta = extractVerbMeta(entry, compact);
     const { separable, prefix } = meta;
     const presentStem = extractPresentStem(entry.word, separable, prefix);

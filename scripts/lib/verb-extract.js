@@ -106,7 +106,12 @@ export function majoritySubj2Stem(conjugation, separable, prefix, endingsMap) {
 // Conjugation extraction
 // ============================================================
 
-export function extractVerbConjugation(compact, sourced) {
+// Reflexive pronouns that may appear anywhere in a stripped sourced form.
+// In conjugation tables the only reason these words appear inside a form is
+// when the table is for a reflexive verb (sich übergeben, sich erinnern, …).
+const REFLEXIVE_RE = /\b(mich|dich|sich|uns|euch|mir|dir)\b/;
+
+export function extractVerbConjugation(compact, sourced, entrySeparable = null, entryReflexive = null) {
   const conjugation = {
     present: {},
     preterite: {},
@@ -116,6 +121,31 @@ export function extractVerbConjugation(compact, sourced) {
     participle1: null,
     participle2: null,
   };
+
+  // Filter sourced forms to match the entry's separability when the raw data
+  // tags forms with "separable"/"inseparable" (dual-form verb Flexion pages
+  // include both conjugation tables — we only want the matching half).
+  if (entrySeparable !== null) {
+    sourced = sourced.filter((f) => {
+      const tags = f.tags || [];
+      const isSep = tags.includes("separable");
+      const isInsep = tags.includes("inseparable");
+      if (!isSep && !isInsep) return true;
+      return entrySeparable ? isSep : isInsep;
+    });
+  }
+
+  // For non-reflexive verb entries, skip sourced forms that carry a reflexive
+  // pronoun (mich/dich/sich/uns/euch/mir/dir) in the form string.
+  // Dual-form verbs like "übergeben etwas" (non-reflexive) share their Flexion
+  // page with "sich übergeben" (reflexive); without this filter the reflexive
+  // forms would fill cells the non-reflexive entry left empty.
+  if (entryReflexive === "none") {
+    sourced = sourced.filter((f) => {
+      const stripped = stripPronoun(f.form || "");
+      return !REFLEXIVE_RE.test(stripped);
+    });
+  }
 
   for (const f of compact) {
     const tags = f.tags || [];

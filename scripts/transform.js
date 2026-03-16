@@ -591,7 +591,7 @@ function transformNoun(entry, posLabel = "noun") {
 function transformVerb(entry) {
   const { compact, sourced } = splitForms(entry);
   const meta = extractVerbMeta(entry, compact);
-  const fullConjugation = extractVerbConjugation(compact, sourced);
+  const fullConjugation = extractVerbConjugation(compact, sourced, meta.separable, meta.reflexive);
 
   const { separable, prefix } = meta;
   const presentStem = extractPresentStem(entry.word, separable, prefix);
@@ -1039,6 +1039,15 @@ function mergeWithExisting(newData, existingPath) {
   }
 
   // Preserve LLM-generated sense fields (match by position)
+  if (existing.senses && !newData.senses) {
+    const lostAll = existing.senses.filter(s => s.gloss_en != null);
+    if (lostAll.length > 0) {
+      console.warn(
+        `[merge] TRANSLATION LOSS: ${newData.word} (${existingPath}) — ` +
+        `new entry has no senses, existing had ${lostAll.length} translated sense(s)`
+      );
+    }
+  }
   if (existing.senses && newData.senses) {
     for (let i = 0; i < newData.senses.length; i++) {
       const oldSense = existing.senses[i];
@@ -1047,6 +1056,16 @@ function mergeWithExisting(newData, existingPath) {
       if (oldSense.gloss_en_model != null)     newData.senses[i].gloss_en_model     = oldSense.gloss_en_model;
       if (oldSense.gloss_en_full != null)      newData.senses[i].gloss_en_full      = oldSense.gloss_en_full;
       if (oldSense.gloss_en_full_model != null) newData.senses[i].gloss_en_full_model = oldSense.gloss_en_full_model;
+    }
+
+    // Warn if existing senses had translations that will be lost (new sense count < old)
+    const lostSenses = existing.senses.slice(newData.senses.length)
+      .filter(s => s.gloss_en != null);
+    if (lostSenses.length > 0) {
+      console.warn(
+        `[merge] TRANSLATION LOSS: ${newData.word} (${existingPath}) — ` +
+        `${lostSenses.length} sense(s) dropped (existing had ${existing.senses.length}, new has ${newData.senses.length})`
+      );
     }
   }
 

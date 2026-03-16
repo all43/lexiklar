@@ -47,6 +47,8 @@ const resultsIdx = args.indexOf("--results");
 const RESULTS_FILE = resultsIdx !== -1
   ? args[resultsIdx + 1]
   : join(ROOT, "data", "proofread-results.json");
+const modelIdx = args.indexOf("--model");
+const MODEL = modelIdx !== -1 ? args[modelIdx + 1] : "claude-sonnet-4-6";
 
 if (!existsSync(RESULTS_FILE)) {
   console.error(`Results file not found: ${RESULTS_FILE}`);
@@ -108,8 +110,9 @@ for (const relPath of wordGlossesOk) {
   let data;
   try { data = JSON.parse(readFileSync(filePath, "utf-8")); } catch { continue; }
 
-  const allSensesHaveGlossEn = (data.senses || []).every((s) => s.gloss_en);
-  const allSensesHaveGlossEnFull = (data.senses || []).every((s) => s.gloss_en_full);
+  const translatableSenses = (data.senses || []).filter((s) => s.gloss);
+  const allSensesHaveGlossEn = translatableSenses.every((s) => s.gloss_en);
+  const allSensesHaveGlossEnFull = translatableSenses.every((s) => s.gloss_en_full);
 
   const proofread = { ...(data._proofread || {}) };
   if (allSensesHaveGlossEn) proofread.gloss_en = true;
@@ -139,6 +142,7 @@ for (const fix of glossFixes) {
   if (!data.senses || data.senses.length <= fix.sense) { console.warn(`  Warning: no sense ${fix.sense} in ${fix.word}`); continue; }
   const old = data.senses[fix.sense][field];
   data.senses[fix.sense][field] = fix.value;
+  data.senses[fix.sense][field + "_model"] = fix.model || MODEL;
   if (!DRY_RUN) writeFileSync(filePath, JSON.stringify(data, null, 2) + "\n");
   console.log(`  ${DRY_RUN ? "[dry] " : ""}Gloss fix ${fix.word} sense ${fix.sense} ${field}: ${JSON.stringify(old)} → ${JSON.stringify(fix.value)}`);
   glossFixMark++;
@@ -156,7 +160,7 @@ if (translationFixes.length > 0) {
   for (const fix of translationFixes) {
     if (!fix.id || fix.value === undefined) continue;
     if (!tFixExamples[fix.id]) { console.warn(`  Warning: example not found: ${fix.id}`); continue; }
-    tPatches[fix.id] = { translation: fix.value };
+    tPatches[fix.id] = { translation: fix.value, translation_model: fix.model || MODEL };
     console.log(`  ${DRY_RUN ? "[dry] " : ""}Translation fix ${fix.id}: ${JSON.stringify(fix.value).slice(0, 60)}`);
   }
   if (!DRY_RUN && Object.keys(tPatches).length > 0) patchExamples(tPatches);
