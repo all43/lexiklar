@@ -75,6 +75,20 @@ function contentHash(text) {
   return createHash("sha256").update(text).digest("hex").slice(0, 10);
 }
 
+/**
+ * Compute a short fingerprint of a word's owned example IDs (across all senses
+ * + expression_ids). Used to detect when _proofread.examples_owned is stale.
+ */
+function exampleIdsHash(data) {
+  const ids = [];
+  for (const sense of data.senses || []) {
+    for (const id of sense.example_ids || []) ids.push(id);
+  }
+  for (const id of data.expression_ids || []) ids.push(id);
+  ids.sort();
+  return createHash("sha256").update(ids.join(",")).digest("hex").slice(0, 8);
+}
+
 function loadState() {
   if (existsSync(STATE_FILE)) {
     const data = JSON.parse(readFileSync(STATE_FILE, "utf-8"));
@@ -1033,6 +1047,48 @@ function mergeWithExisting(newData, existingPath) {
       if (oldSense.gloss_en_model != null)     newData.senses[i].gloss_en_model     = oldSense.gloss_en_model;
       if (oldSense.gloss_en_full != null)      newData.senses[i].gloss_en_full      = oldSense.gloss_en_full;
       if (oldSense.gloss_en_full_model != null) newData.senses[i].gloss_en_full_model = oldSense.gloss_en_full_model;
+    }
+  }
+
+  // Carry forward _proofread, invalidating aspects whose underlying data changed.
+  if (existing._proofread) {
+    const proofread = { ...existing._proofread };
+
+    // Gloss flags are tied to the source content — clear them when the entry changes.
+    const sourceHashChanged =
+      existing._meta?.source_hash !== newData._meta?.source_hash;
+    if (sourceHashChanged) {
+      delete proofread.gloss_en;
+      delete proofread.gloss_en_full;
+    }
+
+    // examples_owned is tied to the set of owned example IDs.
+    if (proofread.examples_owned != null) {
+      if (proofread.examples_owned !== exampleIdsHash(newData)) {
+        delete proofread.examples_owned;
+      }
+    }
+
+    // examples_ref cannot be verified by transform (it requires scanning all examples
+    // to find cross-word annotations). It is managed by quality-check --mark-proofread.
+    // We carry it forward unchanged; quality-check validates and clears it when stale.
+
+    if (Object.keys(proofread).length > 0) {
+      newData._proofread = proofread;
+    }
+  }
+
+  // Apply manual overrides last — these win over anything Wiktionary produces.
+  // _overrides is never cleared by transform; edit it manually to correct source data bugs.
+  if (existing._overrides) {
+    newData._overrides = existing._overrides;
+    for (const [key, val] of Object.entries(existing._overrides)) {
+      if (val && typeof val === "object" && !Array.isArray(val) &&
+          newData[key] && typeof newData[key] === "object" && !Array.isArray(newData[key])) {
+        newData[key] = { ...newData[key], ...val };
+      } else {
+        newData[key] = val;
+      }
     }
   }
 

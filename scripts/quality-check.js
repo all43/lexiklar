@@ -14,14 +14,34 @@
  *   node scripts/quality-check.js --top 1000         # whitelist + top 1000
  *   node scripts/quality-check.js --whitelist-only
  *   node scripts/quality-check.js --word Tisch
+ *   node scripts/quality-check.js --word-list words.txt   # one word per line (or JSON array)
  *   node scripts/quality-check.js --pos verb
  *   node scripts/quality-check.js --no-examples      # skip example checks (faster)
+ *   node scripts/quality-check.js --show-raw         # show raw Wiktionary entry per word
+ *   node scripts/quality-check.js --skip-proofread [aspects]  # skip already-verified words
+ *   node scripts/quality-check.js --mark-proofread [aspects]  # write _proofread flags after review
+ *
+ * Proofread aspects:
+ *   Word-level:    gloss_en, gloss_en_full, examples_owned
+ *   Example-level: ex_translation, ex_annotations  (written to shard files)
+ *   Shorthand:     "all" = all five aspects
+ *
+ * --skip-proofread applies to word-level aspects only (filters out whole words).
+ * Example-level aspects suppress annotation health issues inline (words still appear).
+ *
+ * Workflow:
+ *   node scripts/quality-check.js --word-list nouns.txt                    # review
+ *   node scripts/quality-check.js --word-list nouns.txt --mark-proofread gloss_en,ex_annotations
+ *   node scripts/quality-check.js --skip-proofread gloss_en                # those words skipped
  */
 
-import { readdirSync, readFileSync, existsSync, statSync } from "fs";
+import { readdirSync, readFileSync, writeFileSync, existsSync, statSync, openSync, readSync, closeSync } from "fs";
+import { execFileSync } from "child_process";
+import { createHash } from "crypto";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { loadExamplesByIds } from "./lib/examples.js";
+import { loadExamplesByIds, annotationsHash, patchExamples } from "./lib/examples.js";
+import Database from "better-sqlite3";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -36,9 +56,57 @@ const TOP_N = topIdx !== -1 ? parseInt(args[topIdx + 1]) : 500;
 const WHITELIST_ONLY = args.includes("--whitelist-only");
 const wordIdx = args.indexOf("--word");
 const WORD_FILTER = wordIdx !== -1 ? args[wordIdx + 1] : null;
+const wordListIdx = args.indexOf("--word-list");
+const WORD_LIST_FILE = wordListIdx !== -1 ? args[wordListIdx + 1] : null;
 const posIdx = args.indexOf("--pos");
 const POS_FILTER = posIdx !== -1 ? args[posIdx + 1] : null;
 const SKIP_EXAMPLES = args.includes("--no-examples");
+const SHOW_RAW = args.includes("--show-raw");
+
+// --skip-proofread [aspects]  — skip words where listed aspects are marked+valid
+// --mark-proofread [aspects]  — after check, write _proofread flags to word files
+// aspects: comma-separated subset of: gloss_en,gloss_en_full,examples_owned (or "all")
+// Word-level aspects (stored in word file _proofread)
+// Example-level aspects (stored in example entry _proofread, written to shards)
+const ALL_ASPECTS = ["gloss_en", "gloss_en_full", "examples_owned", "ex_translation", "ex_annotations"];
+function parseAspects(flagName) {
+  const idx = args.indexOf(flagName);
+  if (idx === -1) return null;
+  const next = args[idx + 1];
+  if (!next || next.startsWith("--")) return ALL_ASPECTS; // flag present, no value → all
+  return next === "all" ? ALL_ASPECTS : next.split(",").map((s) => s.trim());
+}
+const SKIP_PROOFREAD = parseAspects("--skip-proofread");
+const MARK_PROOFREAD = parseAspects("--mark-proofread");
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+/** Fingerprint of a word's owned example IDs (matches transform.js logic). */
+function exampleIdsHash(data) {
+  const ids = [];
+  for (const sense of data.senses || []) {
+    for (const id of sense.example_ids || []) ids.push(id);
+  }
+  for (const id of data.expression_ids || []) ids.push(id);
+  ids.sort();
+  return createHash("sha256").update(ids.join(",")).digest("hex").slice(0, 8);
+}
+
+/**
+ * Check whether a word's _proofread flags are still valid for the given aspects.
+ * Returns the subset of aspects that are currently valid (marked + data unchanged).
+ */
+function validProofreadAspects(data) {
+  const pr = data._proofread;
+  if (!pr) return new Set();
+  const valid = new Set();
+  if (pr.gloss_en === true) valid.add("gloss_en");
+  if (pr.gloss_en_full === true) valid.add("gloss_en_full");
+  if (pr.examples_owned != null && pr.examples_owned === exampleIdsHash(data)) {
+    valid.add("examples_owned");
+  }
+  return valid;
+}
 
 // ── Load all word files ───────────────────────────────────────────────────────
 
@@ -72,6 +140,29 @@ if (WORD_FILTER) {
     console.error(`Word "${WORD_FILTER}" not found.`);
     process.exit(1);
   }
+} else if (WORD_LIST_FILE) {
+  if (!existsSync(WORD_LIST_FILE)) {
+    console.error(`Word list file not found: ${WORD_LIST_FILE}`);
+    process.exit(1);
+  }
+  const raw = readFileSync(WORD_LIST_FILE, "utf-8").trim();
+  let wordList;
+  if (raw.startsWith("[")) {
+    wordList = JSON.parse(raw).map((w) => (typeof w === "string" ? w : w.word));
+  } else {
+    wordList = raw.split("\n").map((l) => l.trim()).filter(Boolean);
+  }
+  const wordSet = new Set(wordList.map((w) => w.toLowerCase()));
+  targets = allWords.filter((w) => wordSet.has(w.data.word.toLowerCase()));
+  const found = new Set(targets.map((w) => w.data.word.toLowerCase()));
+  const missing = wordList.filter((w) => !found.has(w.toLowerCase()));
+  if (missing.length) {
+    console.warn(`Warning: ${missing.length} word(s) not found in index: ${missing.slice(0, 10).join(", ")}${missing.length > 10 ? "…" : ""}`);
+  }
+  if (!targets.length) {
+    console.error("No matching words found.");
+    process.exit(1);
+  }
 } else {
   const whitelistWords = new Set(
     JSON.parse(readFileSync(WHITELIST_FILE, "utf-8"))
@@ -101,6 +192,17 @@ if (WORD_FILTER) {
   }
 }
 
+// Filter out fully-proofread words when --skip-proofread is active
+if (SKIP_PROOFREAD) {
+  const before = targets.length;
+  targets = targets.filter((w) => {
+    const valid = validProofreadAspects(w.data);
+    return !SKIP_PROOFREAD.every((aspect) => valid.has(aspect));
+  });
+  const skipped = before - targets.length;
+  if (skipped > 0) console.log(`Skipping ${skipped} fully-proofread words.`);
+}
+
 console.log(`Checking ${targets.length} words...\n`);
 
 // ── Load examples for target words ───────────────────────────────────────────
@@ -117,6 +219,47 @@ if (!SKIP_EXAMPLES) {
   if (allExampleIds.size > 0) {
     examplesById = loadExamplesByIds([...allExampleIds]);
   }
+}
+
+// ── Raw Wiktionary lookup (--show-raw) ───────────────────────────────────────
+
+const RAW_PATH = join(ROOT, "data", "raw", "de-extract.jsonl");
+const INDEX_PATH = join(ROOT, "data", "raw", "de-extract.offsets.db");
+
+function lookupRaw(word) {
+  if (!existsSync(RAW_PATH)) return null;
+
+  const results = [];
+  if (existsSync(INDEX_PATH)) {
+    const db = new Database(INDEX_PATH, { readonly: true });
+    const rows = db.prepare("SELECT byte_offset FROM offsets WHERE word = ?").all(word);
+    db.close();
+    if (rows.length) {
+      const fd = openSync(RAW_PATH, "r");
+      const buf = Buffer.alloc(512 * 1024);
+      for (const { byte_offset } of rows) {
+        const bytesRead = readSync(fd, buf, 0, buf.length, byte_offset);
+        const nl = buf.indexOf(0x0a, 0);
+        const line = buf.slice(0, nl === -1 ? bytesRead : nl).toString("utf8");
+        try { results.push(JSON.parse(line)); } catch { /* skip */ }
+      }
+      closeSync(fd);
+    }
+  } else {
+    // Fall back to grep if no index
+    try {
+      const output = execFileSync("grep", ["-m", "20", `^{"word": "${word}"`, RAW_PATH], {
+        maxBuffer: 10 * 1024 * 1024,
+      });
+      for (const line of output.toString().split("\n").filter(Boolean)) {
+        try {
+          const entry = JSON.parse(line);
+          if (entry.word === word && entry.lang_code === "de") results.push(entry);
+        } catch { /* skip */ }
+      }
+    } catch { /* grep exit 1 = no matches */ }
+  }
+  return results.filter((e) => e.lang_code === "de");
 }
 
 // ── Score + check each word ───────────────────────────────────────────────────
@@ -185,6 +328,12 @@ function checkWord({ data }) {
     for (const id of exampleIds) {
       const ex = examplesById[id];
       if (!ex?.annotations) continue;
+      // Skip annotation issues for examples whose annotations were human-verified
+      // and haven't changed since (hash still matches).
+      if (
+        ex._proofread?.annotations != null &&
+        ex._proofread.annotations === annotationsHash(ex.annotations)
+      ) continue;
       for (const ann of ex.annotations) {
         if (ann.lemma && !knownLemmas.has(ann.lemma.toLowerCase()))
           unknownLemmas.add(ann.lemma);
@@ -231,7 +380,7 @@ function checkWord({ data }) {
 
 const results = targets.map((w) => {
   const { score, issues } = checkWord(w);
-  return { word: w.data.word, pos: w.data.pos, zipf: w.data.zipf, score, issues };
+  return { word: w.data.word, pos: w.data.pos, zipf: w.data.zipf, score, issues, _w: w };
 });
 
 results.sort((a, b) => a.score - b.score);
@@ -254,13 +403,25 @@ function renderGroup(label, items, showAll = false) {
     for (const issue of r.issues) {
       console.log(`        • ${issue}`);
     }
+    if (SHOW_RAW) {
+      const rawEntries = lookupRaw(r.word);
+      if (rawEntries && rawEntries.length) {
+        for (const entry of rawEntries) {
+          const omit = new Set(["translations", "hyponyms", "hypernyms", "coordinate_terms", "holonyms", "meronyms", "troponyms"]);
+          const compact = Object.fromEntries(Object.entries(entry).filter(([k]) => !omit.has(k)));
+          console.log(`        ↳ raw [${entry.pos}]: ${JSON.stringify(compact, null, 2).replace(/\n/g, "\n        ")}`);
+        }
+      } else {
+        console.log(`        ↳ raw: not found in de-extract.jsonl`);
+      }
+    }
   }
   if (!showAll && items.length > 30) {
     console.log(`  … and ${items.length - 30} more`);
   }
 }
 
-const SHOW_ALL = WORD_FILTER || targets.length <= 100;
+const SHOW_ALL = WORD_FILTER || WORD_LIST_FILE || targets.length <= 100;
 
 renderGroup("POOR  (score < 50)", POOR, SHOW_ALL);
 renderGroup("FAIR  (score 50–79)", FAIR, SHOW_ALL);
@@ -268,21 +429,17 @@ renderGroup("GOOD  (score ≥ 80)", GOOD, SHOW_ALL);
 
 // ── Summary ───────────────────────────────────────────────────────────────────
 
-const avg = results.reduce((s, r) => s + r.score, 0) / results.length;
+const total = results.length;
+const avg = total ? results.reduce((s, r) => s + r.score, 0) / total : 0;
 const withIssues = results.filter((r) => r.issues.length > 0);
+const pct = (n) => total ? `${((n / total) * 100).toFixed(0)}%` : "—";
 
 console.log(`\n${"═".repeat(60)}`);
-console.log(`Summary — ${results.length} words checked`);
+console.log(`Summary — ${total} words checked`);
 console.log("═".repeat(60));
-console.log(
-  `  Good  (≥80): ${GOOD.length.toString().padStart(4)}  (${((GOOD.length / results.length) * 100).toFixed(0)}%)`,
-);
-console.log(
-  `  Fair (50–79): ${FAIR.length.toString().padStart(4)}  (${((FAIR.length / results.length) * 100).toFixed(0)}%)`,
-);
-console.log(
-  `  Poor  (<50): ${POOR.length.toString().padStart(4)}  (${((POOR.length / results.length) * 100).toFixed(0)}%)`,
-);
+console.log(`  Good  (≥80): ${GOOD.length.toString().padStart(4)}  (${pct(GOOD.length)})`);
+console.log(`  Fair (50–79): ${FAIR.length.toString().padStart(4)}  (${pct(FAIR.length)})`);
+console.log(`  Poor  (<50): ${POOR.length.toString().padStart(4)}  (${pct(POOR.length)})`);
 console.log(`  Average score: ${avg.toFixed(1)}/100`);
 console.log(`  Words with issues: ${withIssues.length}`);
 
@@ -304,3 +461,65 @@ if (topIssues.length) {
   }
 }
 console.log();
+
+// ── Mark proofread (--mark-proofread) ─────────────────────────────────────────
+
+if (MARK_PROOFREAD) {
+  const wordAspects = MARK_PROOFREAD.filter((a) => !a.startsWith("ex_"));
+  const exampleAspects = MARK_PROOFREAD.filter((a) => a.startsWith("ex_"));
+
+  // ── Word-level flags ──
+  if (wordAspects.length) {
+    let marked = 0;
+    for (const r of results) {
+      const { _w } = r;
+      const actualPath = join(WORDS_DIR, `${_w.relPath}.json`);
+      if (!existsSync(actualPath)) continue;
+      let fileData;
+      try { fileData = JSON.parse(readFileSync(actualPath, "utf-8")); } catch { continue; }
+
+      const proofread = { ...(fileData._proofread || {}) };
+      for (const aspect of wordAspects) {
+        if (aspect === "gloss_en") proofread.gloss_en = true;
+        else if (aspect === "gloss_en_full") proofread.gloss_en_full = true;
+        else if (aspect === "examples_owned") proofread.examples_owned = exampleIdsHash(fileData);
+      }
+
+      fileData._proofread = proofread;
+      writeFileSync(actualPath, JSON.stringify(fileData, null, 2) + "\n");
+      marked++;
+    }
+    console.log(`Marked ${marked} word(s) as proofread (${wordAspects.join(", ")}).`);
+  }
+
+  // ── Example-level flags ──
+  if (exampleAspects.length && Object.keys(examplesById).length) {
+    // Collect only the example IDs that are directly owned by the target words.
+    const ownedIds = new Set();
+    for (const r of results) {
+      const { data } = r._w;
+      for (const sense of data.senses || []) {
+        for (const id of sense.example_ids || []) ownedIds.add(id);
+      }
+      for (const id of data.expression_ids || []) ownedIds.add(id);
+    }
+
+    const patches = {};
+    for (const id of ownedIds) {
+      const ex = examplesById[id];
+      if (!ex) continue;
+      const pr = {};
+      if (exampleAspects.includes("ex_translation") && ex.translation) {
+        pr.translation = true;
+      }
+      if (exampleAspects.includes("ex_annotations") && ex.annotations) {
+        pr.annotations = annotationsHash(ex.annotations);
+      }
+      if (Object.keys(pr).length) patches[id] = { _proofread: pr };
+    }
+    if (Object.keys(patches).length) {
+      patchExamples(patches);
+      console.log(`Marked ${Object.keys(patches).length} example(s) as proofread (${exampleAspects.join(", ")}).`);
+    }
+  }
+}

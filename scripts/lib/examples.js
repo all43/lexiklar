@@ -16,6 +16,7 @@ import {
   readFileSync,
   writeFileSync,
 } from "fs";
+import { createHash } from "crypto";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -63,6 +64,58 @@ export function loadExamplesByIds(ids) {
       Object.assign(examples, JSON.parse(readFileSync(file, "utf-8")));
   }
   return examples;
+}
+
+/**
+ * Short fingerprint of an example's annotations array.
+ * Used by _proofread.annotations to detect when annotations have changed.
+ */
+export function annotationsHash(annotations) {
+  return createHash("sha256")
+    .update(JSON.stringify(annotations || []))
+    .digest("hex")
+    .slice(0, 8);
+}
+
+/**
+ * Apply targeted patches to shard files without loading all examples.
+ * patches: { [id]: partialFields } — only the provided fields are merged.
+ * Special case: patches[id]._proofread is deep-merged with the existing _proofread.
+ */
+export function patchExamples(patches) {
+  const ids = Object.keys(patches);
+  if (!ids.length) return;
+
+  const prefixes = new Set(ids.map((id) => id.slice(0, 2)));
+  for (const prefix of prefixes) {
+    const file = join(EXAMPLES_DIR, prefix + ".json");
+    if (!existsSync(file)) continue;
+
+    const shard = JSON.parse(readFileSync(file, "utf-8"));
+    let changed = false;
+
+    for (const id of ids) {
+      if (id.slice(0, 2) !== prefix || !shard[id]) continue;
+      const { _proofread, ...rest } = patches[id];
+      Object.assign(shard[id], rest);
+      if (_proofread) {
+        shard[id]._proofread = { ...(shard[id]._proofread || {}), ..._proofread };
+        // Remove aspects explicitly set to undefined/null
+        for (const [k, v] of Object.entries(shard[id]._proofread)) {
+          if (v == null) delete shard[id]._proofread[k];
+        }
+        if (Object.keys(shard[id]._proofread).length === 0) {
+          delete shard[id]._proofread;
+        }
+      }
+      changed = true;
+    }
+
+    if (!changed) continue;
+    const sorted = {};
+    for (const key of Object.keys(shard).sort()) sorted[key] = shard[key];
+    writeFileSync(file, JSON.stringify(sorted, null, 2) + "\n");
+  }
 }
 
 /**

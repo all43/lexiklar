@@ -553,13 +553,24 @@ async function main() {
 
         for (const result of results) {
           if (examples[result.id]) {
-            examples[result.id].translation = result.translation;
-            examples[result.id].translation_model = modelLabel;
-            const exType = examples[result.id].type;
+            const ex = examples[result.id];
+            ex.translation = result.translation;
+            ex.translation_model = modelLabel;
+            // New translation invalidates the human-verified flag
+            if (ex._proofread) {
+              delete ex._proofread.translation;
+              if (Object.keys(ex._proofread).length === 0) delete ex._proofread;
+            }
+            const exType = ex.type;
             if (NO_ANNOTATIONS || exType === "expression" || exType === "proverb") {
-              delete examples[result.id].annotations;
+              delete ex.annotations;
             } else {
-              examples[result.id].annotations = result.annotations;
+              ex.annotations = result.annotations;
+              // New annotations invalidate the annotation-verified flag
+              if (ex._proofread) {
+                delete ex._proofread.annotations;
+                if (Object.keys(ex._proofread).length === 0) delete ex._proofread;
+              }
             }
           }
         }
