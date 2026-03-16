@@ -24,14 +24,14 @@
   "senses": [
     {
       "gloss": "Gewalt über die mit dem Hausoberhaupt in einer Gemeinschaft lebenden und von ihm zu schützenden Personen",
-      "gloss_en": "power (over)",
+      "gloss_en": "guardianship (archaic)",
       "tags": [],
       "example_ids": [
         "b0c7bb18cf"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "Authority over persons living in a household under the head of the household and requiring his protection.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
@@ -52,5 +52,9 @@
     "source_hash": "d8175b331cc96b10",
     "generated_at": "2026-03-14"
   },
-  "zipf": 4.55
+  "zipf": 4.55,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

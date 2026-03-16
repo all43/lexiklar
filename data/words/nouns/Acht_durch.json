@@ -43,7 +43,7 @@
     },
     {
       "gloss": "Ausschluss aus einer Gemeinschaft; Verurteilung (als gemeinschaftsfeindlich)",
-      "gloss_en": "outcast",
+      "gloss_en": "outlawry (historical)",
       "tags": [
         "figurative"
       ],
@@ -53,7 +53,7 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "Exclusion from a community; condemnation (as hostile to society)",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
@@ -91,5 +91,9 @@
     "source_hash": "f9612303990c0e94",
     "generated_at": "2026-03-14"
   },
-  "zipf": 4.54
+  "zipf": 4.54,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }
