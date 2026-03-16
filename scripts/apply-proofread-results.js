@@ -112,6 +112,47 @@ for (const relPath of wordGlossesOk) {
 }
 console.log(`  ${DRY_RUN ? "[dry] " : ""}Marked glosses on ${wordsMark} word files`);
 
+// ── Grammar overrides ─────────────────────────────────────────────────────────
+// Issues with type "grammar_override" carry { word, field, value } and are
+// applied as _overrides so they survive re-transform.
+// Nested fields use dot notation: "principal_parts.past_participle"
+
+const grammarOverrides = (results.issues || []).filter((i) => i.type === "grammar_override");
+let overridesMark = 0;
+for (const issue of grammarOverrides) {
+  if (!issue.word || !issue.field || issue.value === undefined) continue;
+  const filePath = join(WORDS_DIR, `${issue.word}.json`);
+  if (!existsSync(filePath)) { console.warn(`  Warning: word file not found: ${issue.word}`); continue; }
+  let data;
+  try { data = JSON.parse(readFileSync(filePath, "utf-8")); } catch { continue; }
+
+  // Apply override to the live field
+  const parts = issue.field.split(".");
+  if (parts.length === 1) {
+    data[parts[0]] = issue.value;
+  } else if (parts.length === 2) {
+    if (data[parts[0]] && typeof data[parts[0]] === "object") {
+      data[parts[0]][parts[1]] = issue.value;
+    }
+  }
+
+  // Persist in _overrides so re-transform re-applies it
+  const overrides = { ...(data._overrides || {}) };
+  if (parts.length === 1) {
+    overrides[parts[0]] = issue.value;
+  } else if (parts.length === 2) {
+    overrides[parts[0]] = { ...(overrides[parts[0]] || {}), [parts[1]]: issue.value };
+  }
+  data._overrides = overrides;
+
+  if (!DRY_RUN) {
+    writeFileSync(filePath, JSON.stringify(data, null, 2) + "\n");
+  }
+  console.log(`  ${DRY_RUN ? "[dry] " : ""}Override ${issue.word} ${issue.field} = ${JSON.stringify(issue.value)}`);
+  overridesMark++;
+}
+if (overridesMark > 0) console.log(`  ${DRY_RUN ? "[dry] " : ""}Applied ${overridesMark} grammar overrides`);
+
 // ── Print issues summary ──────────────────────────────────────────────────────
 
 if (issues.length > 0) {
