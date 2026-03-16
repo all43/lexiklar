@@ -41,10 +41,10 @@ import {
 import { WORD_SYSTEM_PROMPT as GLOSS_SYSTEM_PROMPT, WORD_SYSTEM_PROMPT_BATCH_IDS as GLOSS_BATCH_SYSTEM_PROMPT_FROM_LIB } from "./lib/prompts.js";
 import { stripReferences } from "./lib/references.js";
 import { POS_DIRS } from "./lib/pos.js";
+import { loadExamples } from "./lib/examples.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-const EXAMPLES_FILE = join(ROOT, "data", "examples.json");
 
 // ── Model registry ────────────────────────────────────────────────────────────
 
@@ -619,12 +619,11 @@ async function runProbe(providerKey) {
     process.exit(1);
   }
 
-  if (!existsSync(EXAMPLES_FILE)) {
-    console.error("No examples.json found.");
+  const examples = loadExamples();
+  if (Object.keys(examples).length === 0) {
+    console.error("No examples found.");
     process.exit(1);
   }
-
-  const examples = JSON.parse(readFileSync(EXAMPLES_FILE, "utf-8"));
   const withTrans = Object.entries(examples)
     .filter(([, ex]) => ex.translation)
     .slice(0, 3)
@@ -1346,12 +1345,11 @@ async function main() {
     return;
   }
 
-  if (!existsSync(EXAMPLES_FILE)) {
-    console.error("No examples.json found. Run transform first.");
+  const allExamples = loadExamples();
+  if (Object.keys(allExamples).length === 0) {
+    console.error("No examples found. Run transform first.");
     process.exit(1);
   }
-
-  const allExamples = JSON.parse(readFileSync(EXAMPLES_FILE, "utf-8"));
 
   // Filter to translated examples with plausibly English translations.
   // Reject translations that are actually German text (multi-part examples where the

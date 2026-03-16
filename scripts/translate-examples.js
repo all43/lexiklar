@@ -1,16 +1,16 @@
-import { readFileSync, writeFileSync, appendFileSync, readdirSync, existsSync, mkdirSync } from "fs";
+import { readFileSync, appendFileSync, readdirSync, existsSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel, resolveLocalModel, PROVIDER_DEFAULTS } from "./lib/llm.js";
 import { stripReferences } from "./lib/references.js";
 import { POS_CONFIG } from "./lib/pos.js";
 import { EXAMPLES_SYSTEM_PROMPT } from "./lib/prompts.js";
+import { loadExamples, saveExamples, EXAMPLES_DIR } from "./lib/examples.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const DATA_DIR = join(ROOT, "data");
 const WORDS_DIR = join(DATA_DIR, "words");
-const EXAMPLES_FILE = join(DATA_DIR, "examples.json");
 
 // ============================================================
 // CLI args
@@ -407,12 +407,12 @@ async function main() {
   }
 
   // Load examples
-  if (!existsSync(EXAMPLES_FILE)) {
-    console.error("No examples.json found. Run transform first.");
+  if (!existsSync(EXAMPLES_DIR)) {
+    console.error("No examples found. Run transform first.");
     process.exit(1);
   }
 
-  const examples = JSON.parse(readFileSync(EXAMPLES_FILE, "utf-8"));
+  const examples = loadExamples();
   const total = Object.keys(examples).length;
 
   // Filter to untranslated
@@ -527,10 +527,8 @@ async function main() {
     let consecutiveErrors = 0;
     let stopped = false;
 
-    function saveExamples() {
-      const sorted = {};
-      for (const key of Object.keys(examples).sort()) sorted[key] = examples[key];
-      writeFileSync(EXAMPLES_FILE, JSON.stringify(sorted, null, 2));
+    function flushExamples() {
+      saveExamples(examples);
     }
 
     await runPool(batches, CONCURRENCY, async (batch, i) => {
@@ -573,7 +571,7 @@ async function main() {
 
         // Write every 5 completed batches for crash safety (reduced from every batch
         // to avoid excessive I/O overhead under concurrency).
-        if (batchesDone % 5 === 0) saveExamples();
+        if (batchesDone % 5 === 0) flushExamples();
       } catch (err) {
         consecutiveErrors++;
         errors += batch.length;
@@ -590,7 +588,7 @@ async function main() {
     });
 
     // Final write to capture any remaining batches
-    saveExamples();
+    flushExamples();
   }
 
   const schema = NO_ANNOTATIONS

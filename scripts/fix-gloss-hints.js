@@ -18,9 +18,10 @@
  * Recommended local model: gemma-3-12b in LM Studio (87% accuracy on hint picking)
  */
 
-import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
+import { readFileSync, readdirSync, existsSync } from "fs";
 import { join } from "path";
 import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, isLocalProvider, getApiKey, getDefaultModel } from "./lib/llm.js";
+import { loadExamples, saveExamples } from "./lib/examples.js";
 
 const args = process.argv.slice(2);
 const DRY_RUN = !args.includes("--apply");
@@ -28,7 +29,7 @@ const STATS_ONLY = args.includes("--stats");
 const BATCH_SIZE = parseInt(args[args.indexOf("--batch-size") + 1]) || 20;
 const { provider: PROVIDER, model: MODEL_OVERRIDE } = parseProviderArgs(args, "lm-studio");
 
-const EXAMPLES_FILE = "data/examples.json";
+
 const WORDS_DIR = "data/words";
 const POS_DIRS = { noun: "nouns", verb: "verbs", adjective: "adjectives" };
 
@@ -99,7 +100,7 @@ function hintMatches(hint, glosses) {
 // ============================================================
 
 console.log("Loading examples...");
-const examples = JSON.parse(readFileSync(EXAMPLES_FILE, "utf-8"));
+const examples = loadExamples();
 
 const autoFixes = []; // { exId, annoIdx, reason }
 const llmNeeded = []; // { exId, annoIdx, text, lemma, pos, hint, glosses }
@@ -175,7 +176,7 @@ if (!DRY_RUN) {
 if (llmNeeded.length === 0) {
   console.log("\nNo LLM fixes needed.");
   if (!DRY_RUN) {
-    writeFileSync(EXAMPLES_FILE, JSON.stringify(examples, null, 2));
+    saveExamples(examples);
     console.log("Saved examples.json.");
   }
   process.exit(0);
@@ -323,7 +324,7 @@ for (let b = 0; b < batches.length; b++) {
   }
 
   // Save after each batch (crash-safe)
-  writeFileSync(EXAMPLES_FILE, JSON.stringify(examples, null, 2));
+  saveExamples(examples);
 
   const pct = (((b + 1) / batches.length) * 100).toFixed(0);
   process.stdout.write(

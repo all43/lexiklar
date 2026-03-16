@@ -12,10 +12,11 @@
  * Dry run: node scripts/clean-annotations.js --dry-run
  */
 
-import { readFileSync, writeFileSync } from "fs";
+import { readFileSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import Database from "better-sqlite3";
+import { loadExamples, saveExamples } from "./lib/examples.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -68,8 +69,8 @@ function isPunctuation(form) {
 }
 
 // ── Process ──────────────────────────────────────────────────────────────────
-console.log("Loading examples.json...");
-const examples = JSON.parse(readFileSync(join(ROOT, "data", "examples.json"), "utf8"));
+console.log("Loading examples...");
+const examples = loadExamples();
 
 let stats = {
   total: 0,
@@ -143,11 +144,7 @@ console.log(`Examples modified:            ${stats.examplesModified.toLocaleStri
 if (DRY_RUN) {
   console.log("\nDry run — no changes written.");
 } else {
-  console.log("\nWriting examples.json...");
-  writeFileSync(
-    join(ROOT, "data", "examples.json"),
-    JSON.stringify(examples, null, 2),
-    "utf8"
-  );
+  console.log("\nWriting examples...");
+  saveExamples(examples);
   console.log("Done.");
 }

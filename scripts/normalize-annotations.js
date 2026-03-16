@@ -12,12 +12,13 @@
  */
 
 import { readFileSync, writeFileSync } from "fs";
+import { loadExamples, saveExamples } from "./lib/examples.js";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-const EXAMPLES_PATH = join(ROOT, "data", "examples.json");
+
 const DRY_RUN = process.argv.includes("--dry-run");
 
 // Known contractions: any lemma variant → canonical form
@@ -125,7 +126,7 @@ const CANONICAL = new Set([
   "proper noun", "phrase", "name", "abbreviation",
 ]);
 
-const examples = JSON.parse(readFileSync(EXAMPLES_PATH, "utf8"));
+const examples = loadExamples();
 
 let exModified = 0, annRemoved = 0, annNormalized = 0, annContraction = 0, total = 0;
 
@@ -174,6 +175,6 @@ console.log(`Examples modified:            ${exModified.toLocaleString()}`);
 if (DRY_RUN) {
   console.log("\nDry run — no changes written.");
 } else {
-  writeFileSync(EXAMPLES_PATH, JSON.stringify(examples));
-  console.log("\nWritten to data/examples.json");
+  saveExamples(examples);
+  console.log("\nWritten to data/examples/");
 }

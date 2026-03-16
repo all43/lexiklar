@@ -19,12 +19,13 @@ const ROOT = join(__dirname, "..");
 const RAW_FILE = join(ROOT, "data", "raw", "de-extract.jsonl");
 const DATA_DIR = join(ROOT, "data");
 const WORDS_DIR = join(DATA_DIR, "words");
-const EXAMPLES_FILE = join(DATA_DIR, "examples.json");
+
 const RULES_DIR = join(DATA_DIR, "rules");
 const STATE_FILE = join(ROOT, "data", "raw", ".import-state.json");
 const SEED_FILE = join(ROOT, "config", "seed-words.json");
 
 import { POS_CONFIG, SUPPORTED_POS } from "./lib/pos.js";
+import { loadExamples, saveExamples } from "./lib/examples.js";
 import { computeConjugation } from "../src/utils/verb-forms.js";
 import {
   extractVerbConjugation,
@@ -1244,12 +1245,10 @@ async function main() {
 
   // Load existing examples to preserve manually added data
   let existingExamples = {};
-  if (existsSync(EXAMPLES_FILE)) {
-    try {
-      existingExamples = JSON.parse(readFileSync(EXAMPLES_FILE, "utf-8"));
-    } catch {
-      /* ignore */
-    }
+  try {
+    existingExamples = loadExamples();
+  } catch {
+    /* ignore */
   }
 
   // Seed allExamples with all existing examples so that skipped (unchanged)
@@ -1386,13 +1385,9 @@ async function main() {
 
   saveState(state);
 
-  // Write shared examples file
-  // Sort keys for stable output
-  const sortedExamples = {};
-  for (const key of Object.keys(allExamples).sort()) {
-    sortedExamples[key] = allExamples[key];
-  }
-  writeFileSync(EXAMPLES_FILE, JSON.stringify(sortedExamples, null, 2) + "\n");
+  // Write shared examples file (sharded)
+  saveExamples(allExamples);
+  const sortedExamples = allExamples;
 
   const exampleCount = Object.values(sortedExamples).filter(
     (e) => !e.type,

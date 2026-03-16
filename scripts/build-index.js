@@ -28,13 +28,13 @@ import { createHash } from "crypto";
 import Database from "better-sqlite3";
 import { stripReferences } from "./lib/references.js";
 import { POS_DIRS } from "./lib/pos.js";
+import { loadExamples, saveExamples } from "./lib/examples.js";
 import { computeConjugation, computeAllForms } from "../src/utils/verb-forms.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const DATA_DIR = join(ROOT, "data");
 const DB_PATH = join(DATA_DIR, "lexiklar.db");
-const EXAMPLES_FILE = join(DATA_DIR, "examples.json");
 const VERB_ENDINGS_FILE = join(DATA_DIR, "rules", "verb-endings.json");
 
 /**
@@ -641,8 +641,8 @@ function main() {
   // Phase 3: Process examples → cross-reference linking + examples table
   // --------------------------------------------------------
 
-  if (existsSync(EXAMPLES_FILE)) {
-    const examples = JSON.parse(readFileSync(EXAMPLES_FILE, "utf-8"));
+  const examples = loadExamples();
+  if (Object.keys(examples).length > 0) {
     const lookup = buildWordLookup(files);
     let linkedCount = 0;
 
@@ -692,12 +692,8 @@ function main() {
       }
     }
 
-    // Write back sorted by key (keeps examples.json as source of truth)
-    const sorted = {};
-    for (const key of Object.keys(examples).sort()) {
-      sorted[key] = examples[key];
-    }
-    writeFileSync(EXAMPLES_FILE, JSON.stringify(sorted, null, 2));
+    // Write back (keeps shards as source of truth)
+    saveExamples(examples);
     console.log(`Linked ${linkedCount} examples with cross-references.`);
     if (refCount > 0) {
       console.log(`Linked ${refCount} expressions to phrase cards.`);
