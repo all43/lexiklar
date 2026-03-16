@@ -10037,12 +10037,6 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "was",
-        "lemma": "sein",
-        "pos": "verb",
-        "gloss_hint": null
-      },
-      {
         "form": "das",
         "lemma": "das",
         "pos": "pronoun",
@@ -10050,7 +10044,7 @@
       },
       {
         "form": "betrifft",
-        "lemma": "betrifft",
+        "lemma": "betreffen",
         "pos": "verb",
         "gloss_hint": null
       },
@@ -10061,7 +10055,10 @@
         "gloss_hint": "very"
       }
     ],
-    "text_linked": "Er war, [[was|verbs/sein]] [[das|pronouns/das_[1]#1]] betrifft, [[sehr|particles/sehr#1]] förmlich."
+    "text_linked": "Er war, [[was|verbs/sein]] [[das|pronouns/das_[1]#1]] betrifft, [[sehr|particles/sehr#1]] förmlich.",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c98a0ae1a5": {
     "text": "\"Er braucht jetzt Ruhe.\"",
@@ -10097,7 +10094,10 @@
         "gloss_hint": "peace"
       }
     ],
-    "text_linked": "\"Er [[braucht|verbs/brauchen#1]] [[jetzt|adverbs/jetzt#1]] [[Ruhe|nouns/Ruhe#1]].\""
+    "text_linked": "\"Er [[braucht|verbs/brauchen#1]] [[jetzt|adverbs/jetzt#1]] [[Ruhe|nouns/Ruhe#1]].\"",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c98a9e4bdd": {
     "text": "„Sie trägt ein schwarzes Trikot und um das Haar ein festgeknotetes rotes Tuch.“",
@@ -14053,7 +14053,7 @@
   },
   "c9b953ffbf": {
     "text": "Anne möchte gern mit ihrem Bruder Abnehmen spielen, aber er will sein Smartphone nicht für ein Mädchen-Spiel verlassen.",
-    "translation": "Anne would like to play catch with her brother, but he doesn't want to leave his smartphone for a girl’s game.",
+    "translation": "Come on, let's play cat's cradle!",
     "source": "wiktionary",
     "lemmas": [
       "abnehmen"
@@ -16175,7 +16175,10 @@
     "lemmas": [
       "Problem"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c9d2eeeb77": {
     "text": "„Zwei, die sich täglich damit beschäftigen, sind Martin Graf, Redaktor, und Christoph Landolt, Redaktionsleiter am Schweizerischen Idiotikon, dem schweizerdeutschen Wörterbuch, mit Sitz in Zürich.“",

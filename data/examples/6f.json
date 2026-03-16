@@ -5810,7 +5810,10 @@
       "befehlen"
     ],
     "translation_model": "openai/gpt-4.1-nano",
-    "annotations": []
+    "annotations": [],
+    "_proofread": {
+      "translation": true
+    }
   },
   "6f449cc7fa": {
     "text": "keine Chance haben",
@@ -11055,7 +11058,10 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Die [[einzelnen|adjectives/einzeln#1]] [[Lektionen|nouns/Lektion#1]] [[bauen|verbs/bauen#3]] [[aufeinander|adverbs/aufeinander]] auf."
+    "text_linked": "Die [[einzelnen|adjectives/einzeln#1]] [[Lektionen|nouns/Lektion#1]] [[bauen|verbs/bauen#3]] [[aufeinander|adverbs/aufeinander]] auf.",
+    "_proofread": {
+      "translation": true
+    }
   },
   "6f72084d9a": {
     "text": "„Der ›Veitstanz‹, wie die Anfälle bei Epilepsie und Tollwut unterschiedslos genannt wurden, hat seinen Namen von ihm.“",
@@ -20448,7 +20454,10 @@
       "Jugend",
       "Kunsthändler"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "6fd1ef3c49": {
     "text": "„Weil sich aber iPads wie geschnitten Brot verkaufen, sind viele Wettbewerber in die Lücke vorgestoßen.“",
@@ -21688,8 +21697,8 @@
       {
         "form": "viel",
         "lemma": "viel",
-        "pos": "noun",
-        "gloss_hint": "plenty"
+        "pos": "adjective",
+        "gloss_hint": null
       },
       {
         "form": "Pech",
@@ -21719,7 +21728,7 @@
         "form": "gönne",
         "lemma": "gönnen",
         "pos": "verb",
-        "gloss_hint": "wish"
+        "gloss_hint": "not begrudge"
       },
       {
         "form": "ihnen",
@@ -21740,7 +21749,11 @@
         "gloss_hint": "lottery win"
       }
     ],
-    "text_linked": "Sie [[hatten|verbs/haben#1]] [[so|adverbs/so]] viel [[Pech|nouns/Pech#3]] [[im|prepositions/in]] [[Leben|nouns/Leben#1]]; [[ich|pronouns/ich]] [[gönne|verbs/gönnen]] ihnen [[den|determiners/der]] Lottogewinn."
+    "text_linked": "Sie [[hatten|verbs/haben#1]] [[so|adverbs/so]] [[viel|adjectives/viel]] [[Pech|nouns/Pech#3]] [[im|prepositions/in]] [[Leben|nouns/Leben#1]]; [[ich|pronouns/ich]] [[gönne|verbs/gönnen#2]] ihnen [[den|determiners/der]] Lottogewinn.",
+    "_proofread": {
+      "translation": true,
+      "annotations": true
+    }
   },
   "6fdfab9870": {
     "text": "In der Musik lag sehr viel Süße und Gefühl.",
@@ -23120,7 +23133,7 @@
   },
   "6ffa5007d1": {
     "text": "„Ich habe eine kleine Überraschung für dich“, flüsterte sie geheimnisvoll in ihr Ohr.",
-    "translation": "I have a little surprise for you,",
+    "translation": "\"I have a little surprise for you,\" she whispered mysteriously in her ear.",
     "source": "wiktionary",
     "lemmas": [
       "flüstern"

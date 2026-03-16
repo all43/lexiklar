@@ -12,6 +12,14 @@
  *   "issues": [
  *     {"id": "id4", "type": "translation"|"annotation", "detail": "..."},
  *     {"word": "nouns/Tisch", "type": "gloss", "sense": 0, "detail": "..."}
+ *   ],
+ *   "fixes": [
+ *     {"type": "gloss_fix", "word": "nouns/Tisch", "sense": 0, "field": "gloss_en", "value": "..."},
+ *     {"type": "translation_fix", "id": "exId", "value": "new translation"},
+ *     {"type": "annotation_replace", "id": "exId", "annotations": [...]},
+ *     {"type": "annotation_update", "id": "exId", "form": "word", "updates": {"lemma": "..."}},
+ *     {"type": "annotation_remove", "id": "exId", "form": "word"},
+ *     {"type": "word_field_fix", "word": "nouns/Foo", "field": "plural_form", "value": "..."}
  *   ]
  * }
  *
@@ -19,9 +27,10 @@
  *   node scripts/apply-proofread-results.js
  *   node scripts/apply-proofread-results.js --results data/proofread-results.json
  *   node scripts/apply-proofread-results.js --dry-run
+ *   node scripts/apply-proofread-results.js --cleanup   # delete results file after apply if no issues
  */
 
-import { readFileSync, writeFileSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, existsSync, unlinkSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { createHash } from "crypto";
@@ -33,6 +42,7 @@ const WORDS_DIR = join(ROOT, "data", "words");
 
 const args = process.argv.slice(2);
 const DRY_RUN = args.includes("--dry-run");
+const CLEANUP = args.includes("--cleanup");
 const resultsIdx = args.indexOf("--results");
 const RESULTS_FILE = resultsIdx !== -1
   ? args[resultsIdx + 1]
@@ -44,10 +54,10 @@ if (!existsSync(RESULTS_FILE)) {
 }
 
 const results = JSON.parse(readFileSync(RESULTS_FILE, "utf-8"));
-const verified = results.verified || [];
-const translationOk = results.translation_ok || [];
-const wordGlossesOk = results.word_glosses_ok || [];
-const issues = results.issues || [];
+const verified = Array.isArray(results.verified) ? results.verified : [];
+const translationOk = Array.isArray(results.translation_ok) ? results.translation_ok : [];
+const wordGlossesOk = Array.isArray(results.word_glosses_ok) ? results.word_glosses_ok : [];
+const issues = Array.isArray(results.issues) ? results.issues : [];
 
 console.log(`Results: ${verified.length} fully verified, ${translationOk.length} translation-only, ${wordGlossesOk.length} word glosses, ${issues.length} issues`);
 
@@ -112,6 +122,103 @@ for (const relPath of wordGlossesOk) {
 }
 console.log(`  ${DRY_RUN ? "[dry] " : ""}Marked glosses on ${wordsMark} word files`);
 
+// ── Gloss fixes ───────────────────────────────────────────────────────────────
+// Issues with type "gloss_fix" carry { word, sense, field, value } and are
+// applied directly to the word file's senses array.
+// field defaults to "gloss_en". sense is 0-based index.
+
+const glossFixes = (results.fixes || []).filter((f) => f.type === "gloss_fix");
+let glossFixMark = 0;
+for (const fix of glossFixes) {
+  if (!fix.word || fix.sense == null || !fix.value) continue;
+  const filePath = join(WORDS_DIR, `${fix.word}.json`);
+  if (!existsSync(filePath)) { console.warn(`  Warning: word file not found: ${fix.word}`); continue; }
+  let data;
+  try { data = JSON.parse(readFileSync(filePath, "utf-8")); } catch { continue; }
+  const field = fix.field || "gloss_en";
+  if (!data.senses || data.senses.length <= fix.sense) { console.warn(`  Warning: no sense ${fix.sense} in ${fix.word}`); continue; }
+  const old = data.senses[fix.sense][field];
+  data.senses[fix.sense][field] = fix.value;
+  if (!DRY_RUN) writeFileSync(filePath, JSON.stringify(data, null, 2) + "\n");
+  console.log(`  ${DRY_RUN ? "[dry] " : ""}Gloss fix ${fix.word} sense ${fix.sense} ${field}: ${JSON.stringify(old)} → ${JSON.stringify(fix.value)}`);
+  glossFixMark++;
+}
+if (glossFixMark > 0) console.log(`  Applied ${glossFixMark} gloss fixes`);
+
+// ── Translation fixes ─────────────────────────────────────────────────────────
+// issues with type "translation_fix" carry { id, value } and patch the example's translation field.
+
+const translationFixes = (results.fixes || []).filter((f) => f.type === "translation_fix");
+if (translationFixes.length > 0) {
+  const tFixIds = translationFixes.map((f) => f.id);
+  const tFixExamples = loadExamplesByIds(tFixIds);
+  const tPatches = {};
+  for (const fix of translationFixes) {
+    if (!fix.id || fix.value === undefined) continue;
+    if (!tFixExamples[fix.id]) { console.warn(`  Warning: example not found: ${fix.id}`); continue; }
+    tPatches[fix.id] = { translation: fix.value };
+    console.log(`  ${DRY_RUN ? "[dry] " : ""}Translation fix ${fix.id}: ${JSON.stringify(fix.value).slice(0, 60)}`);
+  }
+  if (!DRY_RUN && Object.keys(tPatches).length > 0) patchExamples(tPatches);
+  console.log(`  Applied ${Object.keys(tPatches).length} translation fixes`);
+}
+
+// ── Annotation fixes ──────────────────────────────────────────────────────────
+// fixes with type "annotation_replace" carry { id, annotations } and replace the full annotations array.
+// fixes with type "annotation_update" carry { id, form, updates } and patch a specific annotation.
+// fixes with type "annotation_remove" carry { id, form } and remove a matching annotation.
+// fixes with type "word_field_fix" carry { word, field, value } and patch a top-level word field.
+
+const annotationFixes = (results.fixes || []).filter((f) =>
+  ["annotation_replace", "annotation_update", "annotation_remove", "word_field_fix"].includes(f.type)
+);
+if (annotationFixes.length > 0) {
+  const annIds = [...new Set(annotationFixes.filter((f) => f.id).map((f) => f.id))];
+  const annExamples = annIds.length > 0 ? loadExamplesByIds(annIds) : {};
+  const annPatches = {};
+
+  for (const fix of annotationFixes) {
+    if (fix.type === "word_field_fix") {
+      if (!fix.word || !fix.field) continue;
+      const filePath = join(WORDS_DIR, `${fix.word}.json`);
+      if (!existsSync(filePath)) { console.warn(`  Warning: word file not found: ${fix.word}`); continue; }
+      let data;
+      try { data = JSON.parse(readFileSync(filePath, "utf-8")); } catch { continue; }
+      const old = data[fix.field];
+      data[fix.field] = fix.value;
+      if (!DRY_RUN) writeFileSync(filePath, JSON.stringify(data, null, 2) + "\n");
+      console.log(`  ${DRY_RUN ? "[dry] " : ""}Word field fix ${fix.word} ${fix.field}: ${JSON.stringify(old)} → ${JSON.stringify(fix.value)}`);
+      continue;
+    }
+
+    if (!fix.id) continue;
+    const ex = annExamples[fix.id];
+    if (!ex) { console.warn(`  Warning: example not found: ${fix.id}`); continue; }
+
+    if (!annPatches[fix.id]) annPatches[fix.id] = {};
+
+    if (fix.type === "annotation_replace") {
+      annPatches[fix.id].annotations = fix.annotations;
+    } else if (fix.type === "annotation_update") {
+      const existing = ex.annotations || [];
+      const updated = existing.map((a) =>
+        a.form === fix.form ? { ...a, ...fix.updates } : a
+      );
+      annPatches[fix.id].annotations = updated;
+      // merge with any prior replace in same patch
+      if (annPatches[fix.id].annotations) {
+        // already set above
+      }
+    } else if (fix.type === "annotation_remove") {
+      const existing = (annPatches[fix.id].annotations || ex.annotations || []);
+      annPatches[fix.id].annotations = existing.filter((a) => a.form !== fix.form);
+    }
+    console.log(`  ${DRY_RUN ? "[dry] " : ""}Annotation fix ${fix.type} ${fix.id} form=${fix.form || "(replace)"}`);
+  }
+
+  if (!DRY_RUN && Object.keys(annPatches).length > 0) patchExamples(annPatches);
+}
+
 // ── Grammar overrides ─────────────────────────────────────────────────────────
 // Issues with type "grammar_override" carry { word, field, value } and are
 // applied as _overrides so they survive re-transform.
@@ -170,3 +277,15 @@ if (issues.length > 0) {
 }
 
 console.log(`\nDone.${DRY_RUN ? " (dry run)" : ""}`);
+
+// ── Cleanup ───────────────────────────────────────────────────────────────────
+// Delete the results file if --cleanup is set and there are no unresolved issues.
+
+if (CLEANUP && !DRY_RUN) {
+  if (issues.length === 0) {
+    unlinkSync(RESULTS_FILE);
+    console.log(`  Deleted ${RESULTS_FILE}`);
+  } else {
+    console.log(`  Skipped cleanup — ${issues.length} issue(s) still need attention.`);
+  }
+}

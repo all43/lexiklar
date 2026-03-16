@@ -280,7 +280,7 @@
   },
   "d5029e08ce": {
     "text": "„Die Industrie ist für knapp 200 Millionen Tonnen CO₂-Ausstoß im Jahr verantwortlich.“",
-    "translation": "\"Industry is responsible for nearly 200 million tons of CO₂ emissions per year.\" | industry (noun), emissions (noun)",
+    "translation": "Industry is responsible for nearly 200 million tons of CO₂ emissions per year.",
     "source": "wiktionary",
     "lemmas": [
       "verantwortlich"
@@ -1692,7 +1692,7 @@
   },
   "d50b906539": {
     "text": "Die Qualität der Tomaten ist schlecht, sie sind matschig.",
-    "translation": "The quality of the tomatoes is poor; they are mushy. | quality (noun), tomatoes (noun), poor (adjective), mushy (adjective)",
+    "translation": "The quality of the tomatoes is poor; they are mushy.",
     "source": "wiktionary",
     "lemmas": [
       "Qualität"
@@ -3621,7 +3621,10 @@
       "hölzern",
       "rott"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "d51c600326": {
     "text": "Wer hat denn dich erzogen?",
@@ -3657,7 +3660,10 @@
         "gloss_hint": "you"
       }
     ],
-    "text_linked": "[[Wer|pronouns/wer_derjenige#1]] [[hat|verbs/haben]] [[denn|adverbs/denn#1]] [[dich|pronouns/du#1]] erzogen?"
+    "text_linked": "[[Wer|pronouns/wer_derjenige#1]] [[hat|verbs/haben]] [[denn|adverbs/denn#1]] [[dich|pronouns/du#1]] erzogen?",
+    "_proofread": {
+      "translation": true
+    }
   },
   "d51d6dbf73": {
     "text": "„Er wohnte an der Ecke neben einer Buchhandlung, die seit Langem geschlossen war, und verteilte Prospekte für einen Nachtclub, in dem hinter der Theke Ecstasy verkauft wurde.“",
@@ -7887,12 +7893,6 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Sie",
-        "lemma": "sie",
-        "pos": "noun",
-        "gloss_hint": "trumpet solo"
-      },
-      {
         "form": "haben",
         "lemma": "haben",
         "pos": "verb",
@@ -7903,9 +7903,24 @@
         "lemma": "endlich",
         "pos": "adjective",
         "gloss_hint": "finally"
+      },
+      {
+        "form": "finanziellen",
+        "lemma": "finanziell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "geordnet",
+        "lemma": "ordnen",
+        "pos": "verb",
+        "gloss_hint": null
       }
     ],
-    "text_linked": "Sie [[haben|verbs/haben#1]] [[endlich|adjectives/endlich]] ihre finanziellen Verhältnisse geordnet."
+    "text_linked": "Sie [[haben|verbs/haben#1]] [[endlich|adjectives/endlich]] ihre finanziellen Verhältnisse [[geordnet|verbs/ordnen#1]].",
+    "_proofread": {
+      "annotations": true
+    }
   },
   "d545711771": {
     "text": "„Ich habe einmal ein Kaninchen gesehen, mitten in Reykjavík.“",
@@ -11912,7 +11927,10 @@
       "Idol",
       "Büchner-Preisträger"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "d56a499576": {
     "text": "jemandem auf den Keks gehen",
@@ -25299,7 +25317,10 @@
         "gloss_hint": "disaster"
       }
     ],
-    "text_linked": "Alle getroffenen [[Maßnahmen|nouns/Maßnahme#1]] [[haben|verbs/haben#1]] [[nicht|particles/nicht#1]] [[ausgereicht|verbs/ausreichen]], um [[das|pronouns/das_[1]#1]] [[Unglück|nouns/Unglück#2]] zu verhindern."
+    "text_linked": "Alle getroffenen [[Maßnahmen|nouns/Maßnahme#1]] [[haben|verbs/haben#1]] [[nicht|particles/nicht#1]] [[ausgereicht|verbs/ausreichen]], um [[das|pronouns/das_[1]#1]] [[Unglück|nouns/Unglück#2]] zu verhindern.",
+    "_proofread": {
+      "translation": true
+    }
   },
   "d5fee5dc2c": {
     "text": "„An Helenas Schlüsselbund hing manchmal der verrostete Schlüssel und erinnerte daran, daß es noch ein anderes und besonderes Schloß gab.“",

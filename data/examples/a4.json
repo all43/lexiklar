@@ -3965,7 +3965,11 @@
         "gloss_hint": "become"
       }
     ],
-    "text_linked": "[2022 – Russischer Angriffskrieg auf [[die|determiners/die]] Ukraine:] „In der [[Ferne|nouns/Ferne#1]] [[ist|verbs/sein#2]] Geschützdonner [[zu hören|verbs/hören#1]], [[während|conjunctions/während]] Dutzende [[über|prepositions/über#2]] Holzplanken [[klettern|verbs/klettern#1]], die über [[einen|determiners/ein]] [[kleinen|adjectives/klein#1]] [[Fluss|nouns/Fluss#1]] [[gelegt|verbs/legen]] [[wurden|verbs/werden#1]], [[weil|conjunctions/weil_konjunktion]] die [[Brücke|nouns/Brücke#1]] [[darüber|adverbs/darüber#2]] [[längst|adverbs/längst#1]] [[zerstört|verbs/zerstören]] [[worden|verbs/werden#1]] ist.“"
+    "text_linked": "[2022 – Russischer Angriffskrieg auf [[die|determiners/die]] Ukraine:] „In der [[Ferne|nouns/Ferne#1]] [[ist|verbs/sein#2]] Geschützdonner [[zu hören|verbs/hören#1]], [[während|conjunctions/während]] Dutzende [[über|prepositions/über#2]] Holzplanken [[klettern|verbs/klettern#1]], die über [[einen|determiners/ein]] [[kleinen|adjectives/klein#1]] [[Fluss|nouns/Fluss#1]] [[gelegt|verbs/legen]] [[wurden|verbs/werden#1]], [[weil|conjunctions/weil_konjunktion]] die [[Brücke|nouns/Brücke#1]] [[darüber|adverbs/darüber#2]] [[längst|adverbs/längst#1]] [[zerstört|verbs/zerstören]] [[worden|verbs/werden#1]] ist.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "0a9057be"
+    }
   },
   "a421fac9b4": {
     "text": "Er gab ihr einen Wink und sie begann zu singen.",
@@ -4773,12 +4777,6 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Die",
-        "lemma": "die",
-        "pos": "pronoun",
-        "gloss_hint": "which"
-      },
-      {
         "form": "Freunde",
         "lemma": "Freund",
         "pos": "noun",
@@ -4788,13 +4786,7 @@
         "form": "redeten",
         "lemma": "reden",
         "pos": "verb",
-        "gloss_hint": "talked"
-      },
-      {
-        "form": "bis",
-        "lemma": "bis",
-        "pos": "particle",
-        "gloss_hint": "until"
+        "gloss_hint": null
       },
       {
         "form": "spät",
@@ -4803,25 +4795,17 @@
         "gloss_hint": "late"
       },
       {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "determiner",
-        "gloss_hint": "the"
-      },
-      {
         "form": "Nacht",
         "lemma": "Nacht",
         "pos": "noun",
         "gloss_hint": "night"
       }
     ],
-    "text_linked": "[[Die|pronouns/die#1]] [[Freunde|nouns/Freund]] [[redeten|verbs/reden]] [[bis|particles/bis#1]] [[spät|adjectives/spät#1]] [[in|prepositions/in]] [[die|determiners/die#1]] [[Nacht|nouns/Nacht#1]]."
+    "text_linked": "Die [[Freunde|nouns/Freund]] [[redeten|verbs/reden]] bis [[spät|adjectives/spät#1]] in die [[Nacht|nouns/Nacht#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": true
+    }
   },
   "a42e99ff66": {
     "text": "Man muss nicht alle Aufgaben lösen, sondern lediglich die zum Bestehen notwendigen.",
@@ -13695,7 +13679,10 @@
       "vierhundert",
       "Fluggerät"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "a49c4541b5": {
     "text": "Klicke den Link an, um auf die Seite zu gelangen.",
@@ -13839,7 +13826,10 @@
     "lemmas": [
       "Risiko"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "a49ffb047a": {
     "text": "„Die Kupferbasis ist der Preisanteil des Kupfers, der schon im Grundpreis der Kabels enthalten ist.“",
@@ -15351,19 +15341,17 @@
         "gloss_hint": "grasp"
       },
       {
-        "form": "Sie",
-        "lemma": "Sie",
-        "pos": "noun",
-        "gloss_hint": "woman"
-      },
-      {
         "form": "sich",
         "lemma": "sich",
         "pos": "pronoun",
         "gloss_hint": "himself"
       }
     ],
-    "text_linked": "[[Fassen|verbs/fassen#1]] [[Sie|nouns/Sie_besondere]] [[sich|pronouns/sich#1]], gnädige Frau!"
+    "text_linked": "[[Fassen|verbs/fassen#1]] Sie [[sich|pronouns/sich#1]], gnädige Frau!",
+    "_proofread": {
+      "translation": true,
+      "annotations": true
+    }
   },
   "a4b915f71f": {
     "text": "jeder hat sein Bündel zu tragen",

@@ -1294,7 +1294,10 @@
         "gloss_hint": "protect"
       }
     ],
-    "text_linked": "Die eigentliche [[Bedeutung|nouns/Bedeutung#1]] [[des|determiners/der]] [[Gesetzes|nouns/Gesetz#1]] [[war|verbs/sein]] [[es|pronouns/es]], [[die|determiners/die]] [[Opfer|nouns/Opfer#3]] [[zu|particles/zu_drückt]] [[schützen|verbs/schützen#1]]."
+    "text_linked": "Die eigentliche [[Bedeutung|nouns/Bedeutung#1]] [[des|determiners/der]] [[Gesetzes|nouns/Gesetz#1]] [[war|verbs/sein]] [[es|pronouns/es]], [[die|determiners/die]] [[Opfer|nouns/Opfer#3]] [[zu|particles/zu_drückt]] [[schützen|verbs/schützen#1]].",
+    "_proofread": {
+      "translation": true
+    }
   },
   "f50898cf0d": {
     "text": "„Dass das Wochenende nicht genutzt wurde, um den Vorsprung auf den Tabellenzweiten auszubauen, wurde im Verein mit Groll registriert.“",
@@ -2650,7 +2653,11 @@
       "ankündigen"
     ],
     "translation_model": "openai/gpt-4.1-nano",
-    "annotations": []
+    "annotations": [],
+    "_proofread": {
+      "translation": true,
+      "annotations": "4f53cda1"
+    }
   },
   "f51596c3b3": {
     "text": "Die Stute grast mit ihrem Fohlen.",
@@ -4639,7 +4646,7 @@
   },
   "f52c6f1853": {
     "text": "Er stellte sich an den Baum, um sein Wasser abzuschlagen.",
-    "translation": "He positioned himself by the tree to cut off his water.",
+    "translation": "He positioned himself by the tree to relieve himself.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
@@ -4707,7 +4714,10 @@
         "gloss_hint": "cut off"
       }
     ],
-    "text_linked": "Er [[stellte|verbs/stellen]] [[sich|pronouns/sich]] [[an|prepositions/an]] [[den|determiners/der]] Baum, [[um|prepositions/um]] [[sein|verbs/sein#1]] Wasser [[abzuschlagen|verbs/abschlagen]]."
+    "text_linked": "Er [[stellte|verbs/stellen]] [[sich|pronouns/sich]] [[an|prepositions/an]] [[den|determiners/der]] Baum, [[um|prepositions/um]] [[sein|verbs/sein#1]] Wasser [[abzuschlagen|verbs/abschlagen]].",
+    "_proofread": {
+      "translation": true
+    }
   },
   "f52de802bb": {
     "text": "Anläßlich der ersten Frauenfußball-WM kam eine „Soccer-Barbie\" heraus, anläßlich des ersten Jahrestages von Hongkong als chinesischer Sonderverwaltungszone wurde Barbie als Chinesin präsentiert: die Golden Qi-Pao Barbie.",
@@ -5166,7 +5176,10 @@
     "lemmas": [
       "fördern"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "f52fe603ab": {
     "text": "„Alle freien Männer - Bauern, Handwerker, Kaufleute - dürfen an den Volksversammlungen teilnehmen, den Thingen, auf denen etwa über Verbrecher geurteilt wird.“",
@@ -12508,7 +12521,10 @@
         "gloss_hint": "league (alliance)"
       }
     ],
-    "text_linked": "„[[Und|conjunctions/und]] [[gerade|adverbs/gerade]] [[wegen|prepositions/wegen#1]] [[seiner|pronouns/sein]] [[politischen|adjectives/politisch]] [[Erfahrung|nouns/Erfahrung#1]] [[wurde|verbs/werden]] er [[zum|prepositions/zu]] [[Chef|nouns/Chef]] [[der|determiners/der]] [[Liga|nouns/Liga#1]] gewählt.“"
+    "text_linked": "„[[Und|conjunctions/und]] [[gerade|adverbs/gerade]] [[wegen|prepositions/wegen#1]] [[seiner|pronouns/sein]] [[politischen|adjectives/politisch]] [[Erfahrung|nouns/Erfahrung#1]] [[wurde|verbs/werden]] er [[zum|prepositions/zu]] [[Chef|nouns/Chef]] [[der|determiners/der]] [[Liga|nouns/Liga#1]] gewählt.“",
+    "_proofread": {
+      "translation": true
+    }
   },
   "f55eefdac7": {
     "text": "Spalt liegt in Deutschlands Südosten.",
@@ -14237,68 +14253,38 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "deployed",
-        "lemma": "deploy",
+        "form": "Regierung",
+        "lemma": "Regierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stellte",
+        "lemma": "abstellen",
         "pos": "verb",
-        "gloss_hint": null
+        "gloss_hint": "assign"
       },
       {
-        "form": "police",
-        "lemma": "police",
-        "pos": "noun",
-        "gloss_hint": "law enforcement"
-      },
-      {
-        "form": "officers",
-        "lemma": "officer",
-        "pos": "noun",
-        "gloss_hint": "law enforcement"
-      },
-      {
-        "form": "and",
-        "lemma": "and",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "soldiers",
-        "lemma": "soldier",
+        "form": "Überschwemmung",
+        "lemma": "Überschwemmung",
         "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "for",
-        "lemma": "for",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "rescue",
-        "lemma": "rescue",
-        "pos": "noun",
-        "gloss_hint": "rescue"
-      },
-      {
-        "form": "efforts",
-        "lemma": "effort",
+        "form": "Polizisten",
+        "lemma": "Polizist",
         "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "after",
-        "lemma": "after",
-        "pos": "preposition",
+        "form": "Soldaten",
+        "lemma": "Soldat",
+        "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "flood",
-        "lemma": "flood",
+        "form": "Rettung",
+        "lemma": "Rettung",
         "pos": "noun",
         "gloss_hint": null
       }
@@ -28692,28 +28678,16 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "The",
-        "lemma": "the",
-        "pos": "determiner",
+        "form": "Flasche",
+        "lemma": "Flasche",
+        "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "bottle",
-        "lemma": "bottle",
-        "pos": "noun",
-        "gloss_hint": "bottle"
-      },
-      {
-        "form": "is",
-        "lemma": "be",
-        "pos": "verb",
-        "gloss_hint": "be"
-      },
-      {
-        "form": "empty",
-        "lemma": "empty",
+        "form": "leer",
+        "lemma": "leer",
         "pos": "adjective",
-        "gloss_hint": "empty"
+        "gloss_hint": null
       }
     ]
   },

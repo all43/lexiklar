@@ -103,6 +103,8 @@ download → transform → enrich → translate → build-index
 | `scripts/translate-glosses.js` | `npm run translate-glosses` | LLM-translates German glosses → `gloss_en` (short) and `gloss_en_full` |
 | `scripts/translate-examples.js` | `npm run translate-examples` | LLM-translates examples and adds word annotations |
 | `scripts/build-index.js` | `npm run build-index` | Generates SQLite search index from JSON files |
+| `scripts/search-examples.js` | — | Search example shards by form, lemma, owner, or text |
+| `scripts/apply-proofread-results.js` | — | Apply proofreading results (flags, fixes) from a results JSON file |
 
 ### Running
 
@@ -734,11 +736,42 @@ High-frequency words are verified using Claude Code's built-in model as a subage
 
 1. Launch subagent with prompt from `prompts/proofread-subagent.md`, replacing the word list at the bottom
 2. Subagent writes `data/proofread-results.json`
-3. Apply: `node scripts/apply-proofread-results.js`
+3. Apply: `node scripts/apply-proofread-results.js --results data/proofread-results-bNN.json --cleanup`
+   (`--cleanup` deletes the results file automatically if there are no unresolved issues)
 
 The subagent skips examples already marked in `_proofread` — shared examples are verified only once even if referenced by multiple words.
 
 `grammar_override` issues in the results are automatically written as `_overrides` by the apply script, so corrections survive re-transform.
+
+### Searching examples
+
+Use `scripts/search-examples.js` to locate specific examples before writing fixes:
+
+```bash
+node scripts/search-examples.js --annotation-form nehme --annotation-lemma nehmen
+node scripts/search-examples.js --owned-by annehmen
+node scripts/search-examples.js --text "Bahnhof"
+node scripts/search-examples.js --id 0d8a4f98f3        # print single example by ID
+node scripts/search-examples.js --annotation-form lehnte --annotation-lemma lehnen  # find separable lemma bug
+```
+
+Options: `--annotation-form`, `--annotation-lemma`, `--owned-by`, `--text`, `--id`, `--no-proofread`, `--limit <n>`, `--full`.
+
+### Applying manual fixes
+
+`data/manual-fixes.json` is the canonical file for manual content corrections. Add fixes there and run:
+
+```bash
+node scripts/apply-proofread-results.js --results data/manual-fixes.json
+```
+
+Supported fix types in the `fixes` array:
+- `gloss_fix` — patch a word sense field: `{ type, word, sense, field, value }` (field defaults to `gloss_en`)
+- `translation_fix` — patch example translation: `{ type, id, value }`
+- `word_field_fix` — patch top-level word field: `{ type, word, field, value }`
+- `annotation_replace` — replace full annotations array: `{ type, id, annotations }`
+- `annotation_update` — update fields of one annotation by form: `{ type, id, form, updates }`
+- `annotation_remove` — remove annotation by form: `{ type, id, form }`
 
 ---
 
