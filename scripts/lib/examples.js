@@ -51,6 +51,21 @@ export function loadExamples() {
 }
 
 /**
+ * Load only the shards needed for the given example IDs.
+ * Much faster than loadExamples() when you only need a subset.
+ */
+export function loadExamplesByIds(ids) {
+  const prefixes = new Set(ids.map((id) => id.slice(0, 2)));
+  const examples = {};
+  for (const prefix of prefixes) {
+    const file = join(EXAMPLES_DIR, prefix + ".json");
+    if (existsSync(file))
+      Object.assign(examples, JSON.parse(readFileSync(file, "utf-8")));
+  }
+  return examples;
+}
+
+/**
  * Save examples to the shard directory.
  * Groups entries by the first 2 hex chars of the key (256 shards).
  * Existing shard files not represented in `examples` are left untouched
