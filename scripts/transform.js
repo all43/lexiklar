@@ -282,6 +282,77 @@ function extractExpressions(entry) {
   return ids;
 }
 
+/**
+ * Remove near-duplicate proverbs/expressions from a list of expression IDs.
+ *
+ * Two expressions are considered duplicates when their word-level Jaccard similarity
+ * (after stripping leading conjunctions) is ≥ JACCARD_THRESHOLD.
+ *
+ * This avoids false positives from comma-stripping: expressions that share only a
+ * consequence clause ("da ist auch Wasser") but differ in their subject clause are
+ * kept separate, while genuine variants ("wenn ... ist" vs "ist ..., dann ...") that
+ * share nearly all words are merged.
+ *
+ * Threshold 0.82 validated against known cases:
+ *   ✓ dedup  "ist die Katze aus dem Haus, ..." ↔ "wenn die Katze aus dem Haus ist, ..." (j=1.0)
+ *   ✓ dedup  "... Esel zu wohl ist, ..." ↔ "... Esel zu wohl wird, ..." (j=0.83)
+ *   ✓ keep   "Tor zur Welt" ↔ "Tor zum Himmel" (j=0.73)
+ *   ✓ keep   "wissen, wo der Frosch" ↔ "zeigen, wo der Frosch" (j=0.75)
+ *   ✓ keep   "Wo Frösche sind" ↔ "Wo Weiden sind" (j=0.67)
+ *
+ * When duplicates are found, keep the one with a note (more informative), otherwise
+ * keep the first.
+ */
+function deduplicateExpressions(ids) {
+  if (ids.length <= 1) return ids;
+
+  const JACCARD_THRESHOLD = 0.82;
+  const LEADING_CONJ = /^(wenn|falls|als|sobald|weil|da|ob)\s+/i;
+
+  function wordSet(text) {
+    return new Set(
+      text.toLowerCase().replace(LEADING_CONJ, "").split(/\W+/).filter(Boolean)
+    );
+  }
+
+  function jaccard(a, b) {
+    let inter = 0;
+    for (const w of a) if (b.has(w)) inter++;
+    return inter / (a.size + b.size - inter);
+  }
+
+  // Cache word sets to avoid recomputing
+  const cache = new Map();
+  function getWords(id) {
+    if (!cache.has(id)) {
+      const ex = allExamples[id];
+      cache.set(id, ex ? wordSet(ex.text) : new Set());
+    }
+    return cache.get(id);
+  }
+
+  const result = [];
+
+  outer: for (const id of ids) {
+    const ex = allExamples[id];
+    if (!ex) { result.push(id); continue; }
+
+    const ws = getWords(id);
+    for (let i = 0; i < result.length; i++) {
+      const existingId = result[i];
+      if (jaccard(ws, getWords(existingId)) >= JACCARD_THRESHOLD) {
+        // Duplicate — keep the one with a note
+        const existing = allExamples[existingId];
+        if (!existing?.note && ex.note) result[i] = id;
+        continue outer;
+      }
+    }
+    result.push(id);
+  }
+
+  return result;
+}
+
 // ============================================================
 // Shared parsers
 // ============================================================
@@ -1236,7 +1307,7 @@ async function main() {
       let data = transform(parsed);
 
       // Extract expressions and proverbs (word-level, not sense-level)
-      const expressionIds = extractExpressions(parsed);
+      const expressionIds = deduplicateExpressions(extractExpressions(parsed));
       if (expressionIds.length > 0) data.expression_ids = expressionIds;
 
       // Extract relationship hints for build-index resolution (entry-level fields)
@@ -1289,14 +1360,14 @@ async function main() {
       // Merge with existing file to preserve manual fields
       data = mergeWithExisting(data, fullPath);
 
-      // When --force-pos re-processes an unchanged entry, skip if data is identical
-      if (state.entries[stateKey]?.hash === hash && existsSync(fullPath)) {
+      // Skip write if file content is identical (ignoring generated_at)
+      if (existsSync(fullPath)) {
         try {
           const existing = JSON.parse(readFileSync(fullPath, "utf-8"));
-          // Compare everything except _meta.generated_at
           const cmpNew = { ...data, _meta: { ...data._meta, generated_at: "" } };
           const cmpOld = { ...existing, _meta: { ...existing._meta, generated_at: "" } };
           if (JSON.stringify(cmpNew) === JSON.stringify(cmpOld)) {
+            state.entries[stateKey] = { hash, file: relPath };
             skipped++;
             continue;
           }

@@ -16,6 +16,7 @@
 import {
   readFileSync,
   writeFileSync,
+  copyFileSync,
   readdirSync,
   statSync,
   unlinkSync,
@@ -67,6 +68,19 @@ function computeVersionHash(files) {
   // Include build script's mtime so logic changes invalidate the cache
   const scriptStat = statSync(new URL(import.meta.url).pathname);
   hash.update("build-index.js:" + scriptStat.mtimeMs);
+  // Include source files and rule files that affect indexed forms.
+  // Any change to these should invalidate the cached DB.
+  const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+  const trackedSources = [
+    "src/utils/verb-forms.js",          // verb conjugation + word_forms generation
+    "data/rules/verb-endings.json",      // verb ending tables used by computeAllForms
+    "data/rules/noun-gender.json",       // noun gender rules (affects noun data)
+    "data/rules/adj-endings.json",       // adjective ending tables
+  ];
+  for (const src of trackedSources) {
+    const p = join(root, src);
+    if (existsSync(p)) hash.update(src + ":" + statSync(p).mtimeMs);
+  }
   for (const f of files.sort()) {
     const stat = statSync(f);
     hash.update(f + ":" + stat.mtimeMs);
@@ -134,15 +148,18 @@ function resolveWordFile(lemma, pos, glossHint, lookup) {
   if (glossHint) {
     const hintLower = glossHint.toLowerCase();
 
-    // Try to find the right entry (for homonyms) and the right sense
-    for (const candidate of entries) {
-      for (let i = 0; i < candidate.senses.length; i++) {
-        const gloss = candidate.senses[i].gloss;
-        if (gloss && gloss.toLowerCase().includes(hintLower)) {
-          entry = candidate;
-          senseNumber = i + 1; // 1-based
-          break;
+    // Try German gloss first, then gloss_en fallback (LLMs often produce English hints)
+    for (const pass of ["gloss", "gloss_en"]) {
+      for (const candidate of entries) {
+        for (let i = 0; i < candidate.senses.length; i++) {
+          const gloss = candidate.senses[i][pass];
+          if (gloss && gloss.toLowerCase().includes(hintLower)) {
+            entry = candidate;
+            senseNumber = i + 1; // 1-based
+            break;
+          }
         }
+        if (senseNumber) break;
       }
       if (senseNumber) break;
     }
@@ -705,12 +722,27 @@ function main() {
   const builtAt = new Date().toISOString().slice(0, 10);
   insertMeta.run({ key: "version", value: version });
   insertMeta.run({ key: "built_at", value: builtAt });
-  writeFileSync(join(DATA_DIR, "db-version.txt"), version);
-  console.log(`Database version: ${version} (built ${builtAt})`);
 
   // Switch from WAL to DELETE journal mode for read-only runtime use
   db.pragma("journal_mode = DELETE");
   db.close();
+
+  // Read version back from the DB (single source of truth) and write version files
+  const dbReadOnly = new Database(DB_PATH, { readonly: true });
+  const dbVersion = dbReadOnly.prepare("SELECT value FROM meta WHERE key = 'version'").get().value;
+  dbReadOnly.close();
+
+  writeFileSync(join(DATA_DIR, "db-version.txt"), dbVersion);
+
+  // Copy DB + version to public/data/ for dev server
+  const PUBLIC_DATA = join(ROOT, "public", "data");
+  if (existsSync(PUBLIC_DATA)) {
+    copyFileSync(DB_PATH, join(PUBLIC_DATA, "lexiklar.db"));
+    writeFileSync(join(PUBLIC_DATA, "db-version.txt"), dbVersion);
+    console.log(`Copied DB + version to public/data/`);
+  }
+
+  console.log(`Database version: ${dbVersion} (built ${builtAt})`);
 
   console.log(`Built ${DB_PATH} successfully.`);
 }
