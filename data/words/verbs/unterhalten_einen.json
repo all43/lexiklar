@@ -6,47 +6,11 @@
   "separable": true,
   "prefix": "unter",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "halte unter",
-      "du": "hältst unter",
-      "er": "hält unter",
-      "wir": "unterhalten",
-      "ihr": "unterhaltet",
-      "sie": "unterhalten"
-    },
-    "preterite": {
-      "ich": "hielt unter",
-      "du": "hieltest unter",
-      "er": "hielt unter",
-      "wir": "hielten unter",
-      "ihr": "hieltet unter",
-      "sie": "hielten unter"
-    },
-    "subjunctive1": {
-      "ich": "unterhalte",
-      "du": "unterhaltest",
-      "er": "unterhalte",
-      "wir": "unterhalten",
-      "ihr": "unterhaltet",
-      "sie": "unterhalten"
-    },
-    "subjunctive2": {
-      "ich": "hielte unter",
-      "du": "hieltest unter",
-      "er": "hielte unter",
-      "wir": "hielten unter",
-      "ihr": "hieltet unter",
-      "sie": "hielten unter"
-    },
-    "imperative": {
-      "du": "halt unter!",
-      "ihr": "haltet unter!",
-      "Sie": "unterhalten Sie!"
-    },
-    "participle1": "unterhaltend",
-    "participle2": "untergehalten"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "halt",
+    "past": "hielt",
+    "present_du_er": "hält"
   },
   "past_participle": "untergehalten",
   "senses": [
@@ -66,8 +30,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To hold a body part or object under something",
+      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -88,25 +52,6 @@
   ],
   "_meta": {
     "source_hash": "9b7571e55799a024",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 4.37,
-  "_overrides": {
-    "conjugation.preterite": {
-      "ich": "hielt unter",
-      "du": "hieltest unter",
-      "er": "hielt unter",
-      "wir": "hielten unter",
-      "ihr": "hieltet unter",
-      "sie": "hielten unter"
-    },
-    "conjugation.subjunctive2": {
-      "ich": "hielte unter",
-      "du": "hieltest unter",
-      "er": "hielte unter",
-      "wir": "hielten unter",
-      "ihr": "hieltet unter",
-      "sie": "hielten unter"
-    }
+    "generated_at": "2026-03-16"
   }
 }

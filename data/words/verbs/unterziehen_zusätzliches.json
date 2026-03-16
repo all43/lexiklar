@@ -6,47 +6,11 @@
   "separable": true,
   "prefix": "unter",
   "reflexive": "optional",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "ziehe unter",
-      "du": "ziehst unter",
-      "er": "zieht unter",
-      "wir": "unterziehen",
-      "ihr": "unterzieht",
-      "sie": "unterziehen"
-    },
-    "preterite": {
-      "ich": "zog unter",
-      "du": "unterzogst",
-      "er": "unterzog",
-      "wir": "unterzogen",
-      "ihr": "unterzogt",
-      "sie": "unterzogen"
-    },
-    "subjunctive1": {
-      "ich": "unterziehe",
-      "du": "unterziehest",
-      "er": "unterziehe",
-      "wir": "unterziehen",
-      "ihr": "unterziehet",
-      "sie": "unterziehen"
-    },
-    "subjunctive2": {
-      "ich": "zöge unter",
-      "du": "unterzögest",
-      "er": "unterzöge",
-      "wir": "unterzögen",
-      "ihr": "unterzöget",
-      "sie": "unterzögen"
-    },
-    "imperative": {
-      "du": "zieh unter!",
-      "ihr": "zieht unter!",
-      "Sie": "unterziehen Sie!"
-    },
-    "participle1": "unterziehend",
-    "participle2": "untergezogen"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "zieh",
+    "past": "zog",
+    "subj2": "zög"
   },
   "past_participle": "untergezogen",
   "senses": [
@@ -61,8 +25,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To put on an additional piece of clothing worn underneath one's existing clothes",
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
@@ -74,8 +38,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To carefully fold an additional ingredient into a mixture using a spatula or whisk",
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -98,7 +62,6 @@
   ],
   "_meta": {
     "source_hash": "e89b5896b3d32904",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 3.46
+    "generated_at": "2026-03-16"
+  }
 }

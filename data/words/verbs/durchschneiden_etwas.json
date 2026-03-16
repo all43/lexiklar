@@ -6,47 +6,11 @@
   "separable": true,
   "prefix": "durch",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "schneide durch",
-      "du": "schneidest durch",
-      "er": "schneidet durch",
-      "wir": "durchschneiden",
-      "ihr": "durchschneidet",
-      "sie": "durchschneiden"
-    },
-    "preterite": {
-      "ich": "schnitt durch",
-      "du": "durchschnittest",
-      "er": "durchschnitt",
-      "wir": "durchschnitten",
-      "ihr": "durchschnittet",
-      "sie": "durchschnitten"
-    },
-    "subjunctive1": {
-      "ich": "durchschneide",
-      "du": "durchschneidest",
-      "er": "durchschneide",
-      "wir": "durchschneiden",
-      "ihr": "durchschneidet",
-      "sie": "durchschneiden"
-    },
-    "subjunctive2": {
-      "ich": "schnitte durch",
-      "du": "durchschnittest",
-      "er": "durchschnitte",
-      "wir": "durchschnitten",
-      "ihr": "durchschnittet",
-      "sie": "durchschnitten"
-    },
-    "imperative": {
-      "du": "schneid durch!",
-      "ihr": "schneidet durch!",
-      "Sie": "durchschneiden Sie!"
-    },
-    "participle1": "durchschneidend",
-    "participle2": "durchgeschnitten"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "schneid",
+    "past": "schnitt",
+    "present_du_er": "schneide"
   },
   "past_participle": "durchgeschnitten",
   "senses": [
@@ -62,8 +26,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To cut through something, dividing it into two parts",
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -85,7 +49,6 @@
   ],
   "_meta": {
     "source_hash": "78cc291f44b86a72",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 3.15
+    "generated_at": "2026-03-16"
+  }
 }

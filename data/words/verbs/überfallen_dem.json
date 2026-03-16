@@ -6,47 +6,11 @@
   "separable": true,
   "prefix": "über",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "falle über",
-      "du": "fällst über",
-      "er": "fällt über",
-      "wir": "überfallen",
-      "ihr": "überfallt",
-      "sie": "überfallen"
-    },
-    "preterite": {
-      "ich": "fiel über",
-      "du": "überfielst",
-      "er": "überfiel",
-      "wir": "überfielen",
-      "ihr": "überfielt",
-      "sie": "überfielen"
-    },
-    "subjunctive1": {
-      "ich": "überfalle",
-      "du": "überfallest",
-      "er": "überfalle",
-      "wir": "überfallen",
-      "ihr": "überfallet",
-      "sie": "überfallen"
-    },
-    "subjunctive2": {
-      "ich": "fiele über",
-      "du": "überfielest",
-      "er": "überfiele",
-      "wir": "überfielen",
-      "ihr": "überfielet",
-      "sie": "überfielen"
-    },
-    "imperative": {
-      "du": "fall über!",
-      "ihr": "fallt über!",
-      "Sie": "überfallen Sie!"
-    },
-    "participle1": "überfallend",
-    "participle2": "übergefallen"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "fall",
+    "past": "fiel",
+    "present_du_er": "fäll"
   },
   "past_participle": "übergefallen",
   "senses": [
@@ -62,8 +26,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To fall in the direction of the center of gravity",
+      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
@@ -78,8 +42,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To jump over an obstacle",
+      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -99,7 +63,6 @@
   ],
   "_meta": {
     "source_hash": "e4d27fa876c1cade",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 4.06
+    "generated_at": "2026-03-16"
+  }
 }

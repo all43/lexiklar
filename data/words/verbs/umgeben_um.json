@@ -6,47 +6,13 @@
   "separable": true,
   "prefix": "um",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "gebe um",
-      "du": "gibst um",
-      "er": "gibt um",
-      "wir": "umgeben",
-      "ihr": "umgebt",
-      "sie": "umgeben"
-    },
-    "preterite": {
-      "ich": "gab um",
-      "du": "umgabst",
-      "er": "umgab",
-      "wir": "umgaben",
-      "ihr": "umgabt",
-      "sie": "umgaben"
-    },
-    "subjunctive1": {
-      "ich": "umgebe",
-      "du": "umgebest",
-      "er": "umgebe",
-      "wir": "umgeben",
-      "ihr": "umgebet",
-      "sie": "umgeben"
-    },
-    "subjunctive2": {
-      "ich": "gäbe um",
-      "du": "umgäbest",
-      "er": "umgäbe",
-      "wir": "umgäben",
-      "ihr": "umgäbet",
-      "sie": "umgäben"
-    },
-    "imperative": {
-      "du": "gib um!",
-      "ihr": "gebt um!",
-      "Sie": "umgeben Sie!"
-    },
-    "participle1": "umgebend",
-    "participle2": "umgegeben"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "geb",
+    "past": "gab",
+    "present_du_er": "gib",
+    "subj2": "gäb",
+    "imperative_du": "gib"
   },
   "past_participle": "umgegeben",
   "senses": [
@@ -62,8 +28,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To put something around someone, to drape something around someone",
+      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -80,7 +46,6 @@
   ],
   "_meta": {
     "source_hash": "07c449fd4d0ed999",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 4.14
+    "generated_at": "2026-03-16"
+  }
 }

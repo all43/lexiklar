@@ -6,47 +6,13 @@
   "separable": true,
   "prefix": "über",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "sehe über",
-      "du": "siehst über",
-      "er": "sieht über",
-      "wir": "übersehen",
-      "ihr": "überseht",
-      "sie": "übersehen"
-    },
-    "preterite": {
-      "ich": "sah über",
-      "du": "übersahst",
-      "er": "übersah",
-      "wir": "übersahen",
-      "ihr": "übersaht",
-      "sie": "übersahen"
-    },
-    "subjunctive1": {
-      "ich": "übersehe",
-      "du": "übersehest",
-      "er": "übersehe",
-      "wir": "übersehen",
-      "ihr": "übersehet",
-      "sie": "übersehen"
-    },
-    "subjunctive2": {
-      "ich": "sähe über",
-      "du": "übersähest",
-      "er": "übersähe",
-      "wir": "übersähen",
-      "ihr": "übersähet",
-      "sie": "übersähen"
-    },
-    "imperative": {
-      "du": "sieh über!",
-      "ihr": "seht über!",
-      "Sie": "übersehen Sie!"
-    },
-    "participle1": "übersehend",
-    "participle2": "übergesehen"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "seh",
+    "past": "sah",
+    "present_du_er": "sieh",
+    "subj2": "säh",
+    "imperative_du": "sieh"
   },
   "past_participle": "übergesehen",
   "senses": [
@@ -62,8 +28,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To have looked at something so long and so often that it becomes tedious or even unpleasant to continue looking at it",
+      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -80,7 +46,6 @@
   ],
   "_meta": {
     "source_hash": "124aad32047a868f",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 4.02
+    "generated_at": "2026-03-16"
+  }
 }

@@ -6,47 +6,10 @@
   "separable": true,
   "prefix": "um",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "schreibe um",
-      "du": "schreibst um",
-      "er": "schreibt um",
-      "wir": "umschreiben",
-      "ihr": "umschreibt",
-      "sie": "umschreiben"
-    },
-    "preterite": {
-      "ich": "schrieb um",
-      "du": "umschriebst",
-      "er": "umschrieb",
-      "wir": "umschrieben",
-      "ihr": "umschriebt",
-      "sie": "umschrieben"
-    },
-    "subjunctive1": {
-      "ich": "umschreibe",
-      "du": "umschreibest",
-      "er": "umschreibe",
-      "wir": "umschreiben",
-      "ihr": "umschreibet",
-      "sie": "umschreiben"
-    },
-    "subjunctive2": {
-      "ich": "schriebe um",
-      "du": "umschriebest",
-      "er": "umschriebe",
-      "wir": "umschrieben",
-      "ihr": "umschriebet",
-      "sie": "umschrieben"
-    },
-    "imperative": {
-      "du": "schreib um!",
-      "ihr": "schreibt um!",
-      "Sie": "umschreiben Sie!"
-    },
-    "participle1": "umschreibend",
-    "participle2": "umgeschrieben"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "schreib",
+    "past": "schrieb"
   },
   "past_participle": "umgeschrieben",
   "senses": [
@@ -61,8 +24,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To revise or rework something written",
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
@@ -76,8 +39,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To transfer or assign something to someone else",
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -95,7 +58,6 @@
   ],
   "_meta": {
     "source_hash": "1db690e37a7cc411",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 2.98
+    "generated_at": "2026-03-16"
+  }
 }

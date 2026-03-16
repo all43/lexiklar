@@ -6,47 +6,13 @@
   "separable": true,
   "prefix": "unter",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "nehme unter",
-      "du": "nimmst unter",
-      "er": "nimmt unter",
-      "wir": "unternehmen",
-      "ihr": "unternehmt",
-      "sie": "unternehmen"
-    },
-    "preterite": {
-      "ich": "nahm unter",
-      "du": "unternahmst",
-      "er": "unternahm",
-      "wir": "unternahmen",
-      "ihr": "unternahmt",
-      "sie": "unternahmen"
-    },
-    "subjunctive1": {
-      "ich": "unternehme",
-      "du": "unternehmest",
-      "er": "unternehme",
-      "wir": "unternehmen",
-      "ihr": "unternehmet",
-      "sie": "unternehmen"
-    },
-    "subjunctive2": {
-      "ich": "nähme unter",
-      "du": "unternähmest",
-      "er": "unternähme",
-      "wir": "unternähmen",
-      "ihr": "unternähmet",
-      "sie": "unternähmen"
-    },
-    "imperative": {
-      "du": "nimm unter!",
-      "ihr": "nehmt unter!",
-      "Sie": "unternehmen Sie!"
-    },
-    "participle1": "unternehmend",
-    "participle2": "untergenommen"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "nehm",
+    "past": "nahm",
+    "present_du_er": "nimm",
+    "subj2": "nähm",
+    "imperative_du": "nimm"
   },
   "past_participle": "untergenommen",
   "senses": [
@@ -61,8 +27,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To take under one's arm",
+      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
@@ -75,8 +41,8 @@
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To take into care or operation",
+      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -88,7 +54,6 @@
   ],
   "_meta": {
     "source_hash": "74bdbcb28d9506f3",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 4.29
+    "generated_at": "2026-03-16"
+  }
 }

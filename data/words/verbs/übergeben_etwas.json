@@ -6,47 +6,13 @@
   "separable": true,
   "prefix": "über",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "gebe über",
-      "du": "gibst über",
-      "er": "gibt über",
-      "wir": "übergeben",
-      "ihr": "übergebt",
-      "sie": "übergeben"
-    },
-    "preterite": {
-      "ich": "gab über",
-      "du": "übergabst",
-      "er": "übergab",
-      "wir": "übergaben",
-      "ihr": "übergabt",
-      "sie": "übergaben"
-    },
-    "subjunctive1": {
-      "ich": "übergebe",
-      "du": "übergebest",
-      "er": "übergebe",
-      "wir": "übergeben",
-      "ihr": "übergebet",
-      "sie": "übergeben"
-    },
-    "subjunctive2": {
-      "ich": "gäbe über",
-      "du": "übergäbest",
-      "er": "übergäbe",
-      "wir": "übergäben",
-      "ihr": "übergäbet",
-      "sie": "übergäben"
-    },
-    "imperative": {
-      "du": "gib über!",
-      "ihr": "gebt über!",
-      "Sie": "übergeben Sie!"
-    },
-    "participle1": "übergebend",
-    "participle2": "übergegeben"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "geb",
+    "past": "gab",
+    "present_du_er": "gib",
+    "subj2": "gäb",
+    "imperative_du": "gib"
   },
   "past_participle": "übergegeben",
   "senses": [
@@ -62,8 +28,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To spread, stretch, cover, or lay something over someone or something",
+      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
@@ -78,8 +44,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To strike or hit someone",
+      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -113,7 +79,6 @@
   ],
   "_meta": {
     "source_hash": "0b804c042165506a",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 4.44
+    "generated_at": "2026-03-16"
+  }
 }

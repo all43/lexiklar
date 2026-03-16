@@ -6,47 +6,10 @@
   "separable": true,
   "prefix": "hinter",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "gehe hinter",
-      "du": "gehst hinter",
-      "er": "geht hinter",
-      "wir": "hintergehen",
-      "ihr": "hintergeht",
-      "sie": "hintergehen"
-    },
-    "preterite": {
-      "ich": "ging hinter",
-      "du": "hintergingst",
-      "er": "hinterging",
-      "wir": "hintergingen",
-      "ihr": "hintergingt",
-      "sie": "hintergingen"
-    },
-    "subjunctive1": {
-      "ich": "hintergehe",
-      "du": "hintergehest",
-      "er": "hintergehe",
-      "wir": "hintergehen",
-      "ihr": "hintergehet",
-      "sie": "hintergehen"
-    },
-    "subjunctive2": {
-      "ich": "ginge hinter",
-      "du": "hintergingest",
-      "er": "hinterginge",
-      "wir": "hintergingen",
-      "ihr": "hinterginget",
-      "sie": "hintergingen"
-    },
-    "imperative": {
-      "du": "geh hinter!",
-      "ihr": "geht hinter!",
-      "Sie": "hintergehen Sie!"
-    },
-    "participle1": "hintergehend",
-    "participle2": "hintergegangen"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "geh",
+    "past": "ging"
   },
   "past_participle": "hintergegangen",
   "senses": [
@@ -62,8 +25,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To go backward",
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -75,7 +38,6 @@
   ],
   "_meta": {
     "source_hash": "f030e0ebd36a99f8",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 2.98
+    "generated_at": "2026-03-16"
+  }
 }

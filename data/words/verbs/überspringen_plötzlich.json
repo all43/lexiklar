@@ -6,47 +6,11 @@
   "separable": true,
   "prefix": "über",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "springe über",
-      "du": "springst über",
-      "er": "springt über",
-      "wir": "überspringen",
-      "ihr": "überspringt",
-      "sie": "überspringen"
-    },
-    "preterite": {
-      "ich": "sprang über",
-      "du": "übersprangst",
-      "er": "übersprang",
-      "wir": "übersprangen",
-      "ihr": "übersprangt",
-      "sie": "übersprangen"
-    },
-    "subjunctive1": {
-      "ich": "überspringe",
-      "du": "überspringest",
-      "er": "überspringe",
-      "wir": "überspringen",
-      "ihr": "überspringet",
-      "sie": "überspringen"
-    },
-    "subjunctive2": {
-      "ich": "spränge über",
-      "du": "übersprängest",
-      "er": "überspränge",
-      "wir": "übersprängen",
-      "ihr": "überspränget",
-      "sie": "übersprängen"
-    },
-    "imperative": {
-      "du": "spring über!",
-      "ihr": "springt über!",
-      "Sie": "überspringen Sie!"
-    },
-    "participle1": "überspringend",
-    "participle2": "übergesprungen"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "spring",
+    "past": "sprang",
+    "subj2": "spräng"
   },
   "past_participle": "übergesprungen",
   "senses": [
@@ -61,8 +25,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To suddenly move from one place to another, or to switch from one topic or similar matter to another without transition",
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -74,7 +38,6 @@
   ],
   "_meta": {
     "source_hash": "98dddcada3dedf73",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 3.26
+    "generated_at": "2026-03-16"
+  }
 }

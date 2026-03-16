@@ -6,47 +6,11 @@
   "separable": true,
   "prefix": "über",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "lasse über",
-      "du": "lässt über",
-      "er": "lässt über",
-      "wir": "überlassen",
-      "ihr": "überlasst",
-      "sie": "überlassen"
-    },
-    "preterite": {
-      "ich": "ließ über",
-      "du": "überließest",
-      "er": "überließ",
-      "wir": "überließen",
-      "ihr": "überließt",
-      "sie": "überließen"
-    },
-    "subjunctive1": {
-      "ich": "überlasse",
-      "du": "überlassest",
-      "er": "überlasse",
-      "wir": "überlassen",
-      "ihr": "überlasset",
-      "sie": "überlassen"
-    },
-    "subjunctive2": {
-      "ich": "ließe über",
-      "du": "überließest",
-      "er": "überließe",
-      "wir": "überließen",
-      "ihr": "überließet",
-      "sie": "überließen"
-    },
-    "imperative": {
-      "du": "lass über!",
-      "ihr": "lasst über!",
-      "Sie": "überlassen Sie!"
-    },
-    "participle1": "überlassend",
-    "participle2": "übergelassen"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "lass",
+    "past": "ließ",
+    "present_du_er": "läss"
   },
   "past_participle": "übergelassen",
   "senses": [
@@ -62,8 +26,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To leave something unused or unconsumed; not to use up everything",
+      "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -88,7 +52,6 @@
   ],
   "_meta": {
     "source_hash": "7b0a880e7d52d7c0",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 4.3
+    "generated_at": "2026-03-16"
+  }
 }

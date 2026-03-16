@@ -6,47 +6,12 @@
   "separable": true,
   "prefix": "unter",
   "reflexive": "none",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "grabe unter",
-      "du": "gräbst unter",
-      "er": "gräbt unter",
-      "wir": "untergraben",
-      "ihr": "untergrabt",
-      "sie": "untergraben"
-    },
-    "preterite": {
-      "ich": "grub unter",
-      "du": "untergrubst",
-      "er": "untergrub",
-      "wir": "untergruben",
-      "ihr": "untergrubt",
-      "sie": "untergruben"
-    },
-    "subjunctive1": {
-      "ich": "untergrabe",
-      "du": "untergrabest",
-      "er": "untergrabe",
-      "wir": "untergraben",
-      "ihr": "untergrabet",
-      "sie": "untergraben"
-    },
-    "subjunctive2": {
-      "ich": "grübe unter",
-      "du": "untergrübest",
-      "er": "untergrübe",
-      "wir": "untergrüben",
-      "ihr": "untergrübet",
-      "sie": "untergrüben"
-    },
-    "imperative": {
-      "du": "grab unter!",
-      "ihr": "grabt unter!",
-      "Sie": "untergraben Sie!"
-    },
-    "participle1": "untergrabend",
-    "participle2": "untergegraben"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "grab",
+    "past": "grub",
+    "present_du_er": "gräb",
+    "subj2": "grüb"
   },
   "past_participle": "untergegraben",
   "senses": [
@@ -59,8 +24,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To dig into and place in the earth",
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -78,7 +43,6 @@
   ],
   "_meta": {
     "source_hash": "0dd0457942ecf4f2",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 3.28
+    "generated_at": "2026-03-16"
+  }
 }

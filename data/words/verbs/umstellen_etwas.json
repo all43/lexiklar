@@ -6,47 +6,9 @@
   "separable": true,
   "prefix": "um",
   "reflexive": "optional",
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "stelle um",
-      "du": "stellst um",
-      "er": "stellt um",
-      "wir": "umstellen",
-      "ihr": "umstellt",
-      "sie": "umstellen"
-    },
-    "preterite": {
-      "ich": "stellte um",
-      "du": "umstelltest",
-      "er": "umstellte",
-      "wir": "umstellten",
-      "ihr": "umstelltet",
-      "sie": "umstellten"
-    },
-    "subjunctive1": {
-      "ich": "umstelle",
-      "du": "umstellest",
-      "er": "umstelle",
-      "wir": "umstellen",
-      "ihr": "umstellet",
-      "sie": "umstellen"
-    },
-    "subjunctive2": {
-      "ich": "stellte um",
-      "du": "umstelltest",
-      "er": "umstellte",
-      "wir": "umstellten",
-      "ihr": "umstelltet",
-      "sie": "umstellten"
-    },
-    "imperative": {
-      "du": "stell um!",
-      "ihr": "stellt um!",
-      "Sie": "umstellen Sie!"
-    },
-    "participle1": "umstellend",
-    "participle2": "umgestellt"
+  "conjugation_class": "weak",
+  "stems": {
+    "present": "stell"
   },
   "past_participle": "umgestellt",
   "senses": [
@@ -60,8 +22,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To move or relocate something from one place to another",
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
@@ -74,8 +36,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To change a setting or settings in one or more devices",
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
@@ -91,8 +53,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To change one's own attitude or adjust to a change",
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -109,7 +71,6 @@
   ],
   "_meta": {
     "source_hash": "3d7c0b032a77ea4b",
-    "generated_at": "2026-03-14"
-  },
-  "zipf": 3.04
+    "generated_at": "2026-03-16"
+  }
 }
