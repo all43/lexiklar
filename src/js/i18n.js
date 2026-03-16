@@ -54,6 +54,9 @@ const locales = {
     "related.baseVerb": "Base Verb",
     "related.compoundOf": "Appears in",
     "word.compound": "Word Composition",
+    "word.oscillatingVerb": "Two-way verb (separable/inseparable)",
+    "word.oscillatingNoteSep": "⇄ Also inseparable with different meaning",
+    "word.oscillatingNoteInsep": "⇄ Also separable with different meaning",
 
     // FavoritesPage
     "favorites.title": "Favorites",
@@ -165,6 +168,9 @@ const locales = {
     "related.baseVerb": "Grundverb",
     "related.compoundOf": "Kommt vor in",
     "word.compound": "Wortzerlegung",
+    "word.oscillatingVerb": "Trennbar/untrennbares Verb",
+    "word.oscillatingNoteSep": "⇄ Auch untrennbar mit anderer Bedeutung",
+    "word.oscillatingNoteInsep": "⇄ Auch trennbar mit anderer Bedeutung",
 
     // FavoritesPage
     "favorites.title": "Favoriten",

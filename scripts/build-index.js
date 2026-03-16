@@ -339,6 +339,14 @@ function main() {
       rels.push({ file: sibling.fileKey, type: "same_stem" });
     }
 
+    // oscillating_verb: verb has same_stem sibling with opposite separable value
+    if (entry.data.pos === "verb" && entry.data.separable != null) {
+      const hasOpposite = stemSiblings.some(
+        (s) => s.data.pos === "verb" && s.data.separable != null && s.data.separable !== entry.data.separable
+      );
+      if (hasOpposite) entry.data._oscillating = true;
+    }
+
     // 2. derived: Wiktionary _derived field → derived/derived_from (bidirectional)
     if (entry.data._derived) {
       for (const derivedWord of entry.data._derived) {
@@ -523,6 +531,10 @@ function main() {
       delete enriched._synonyms;
       delete enriched.compound_source;
       delete enriched.compound_verified;
+
+      // Inject oscillating flag computed in Phase 1b
+      if (data._oscillating) enriched.oscillating_verb = true;
+      delete enriched._oscillating;
 
       if (data.pos === "verb" && verbEndings) {
         if (data.conjugation_class !== "irregular") {

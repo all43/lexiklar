@@ -27,9 +27,15 @@
       <!-- Header: word + pronunciation -->
       <f7-block strong>
         <h1 style="margin: 0;">
-          <span v-if="word.plural_dominant" class="gender-f">die</span>
-          <span v-else-if="word.article" :class="`gender-${word.gender?.toLowerCase()}`">{{ word.article }}</span>
-          {{ word.plural_dominant ? word.plural_form : word.word }}
+          <span v-if="word.plural_dominant" class="gender-f">{{ 'die ' }}</span>
+          <span v-else-if="word.article" :class="`gender-${word.gender?.toLowerCase()}`">{{ word.article + ' ' }}</span>
+          <!-- Separable verb: show prefix|stem -->
+          <template v-if="word.separable && word.prefix">
+            <span class="verb-prefix">{{ word.prefix }}</span><verb-sep-pipe />{{ word.word.slice(word.prefix.length) }}
+          </template>
+          <template v-else>{{ word.plural_dominant ? word.plural_form : word.word }}</template>
+          <!-- Oscillating verb badge -->
+          <sup v-if="word.oscillating_verb" class="oscillating-badge" :title="t('word.oscillatingVerb')">⇄</sup>
         </h1>
         <p v-if="word.plural_dominant" style="margin: 2px 0 0; font-size: 0.85em; color: var(--f7-list-item-footer-text-color);">
           {{ t('word.singular') }}
@@ -38,6 +44,10 @@
         </p>
         <p v-if="word.sounds && word.sounds.length" class="ipa">
           {{ word.sounds[0].ipa }}
+        </p>
+        <!-- Oscillating verb note -->
+        <p v-if="word.oscillating_verb" class="oscillating-note">
+          {{ word.separable ? t('word.oscillatingNoteSep') : t('word.oscillatingNoteInsep') }}
         </p>
         <p>
           <f7-badge :color="posColor">{{ word.pos }}</f7-badge>
@@ -249,8 +259,7 @@
             <span
               v-if="preview.article"
               :class="`gender-${preview.gender?.toLowerCase()}`"
-            >{{ preview.article }}</span>
-            <strong>{{ preview.word }}</strong>
+            >{{ preview.article + ' ' }}</span><strong>{{ preview.word }}</strong>
             <f7-badge :color="previewPosColor" class="word-preview-badge">{{ preview.pos }}</f7-badge>
           </div>
         </div>
@@ -274,6 +283,7 @@ import GlossText from "../components/GlossText.vue";
 import VerbConjugation from "../components/VerbConjugation.vue";
 import NounDeclension from "../components/NounDeclension.vue";
 import AdjectiveDeclension from "../components/AdjectiveDeclension.vue";
+import VerbSepPipe from "../components/VerbSepPipe.vue";
 import { getWord, getExamples, getRelatedWords, searchByLemma } from "../utils/db.js";
 import { submitReport } from "../utils/report.js";
 import { f7 } from "framework7-vue/bundle";
@@ -281,7 +291,7 @@ import { t } from "../js/i18n.js";
 import { getCached, setItem } from "../utils/storage.js";
 
 export default {
-  components: { GlossText, VerbConjugation, NounDeclension, AdjectiveDeclension },
+  components: { GlossText, VerbConjugation, NounDeclension, AdjectiveDeclension, VerbSepPipe },
   props: {
     f7route: Object,
     f7router: Object,
@@ -627,6 +637,26 @@ export default {
 </script>
 
 <style scoped>
+/* Separable verb prefix split */
+.verb-prefix {
+  color: var(--f7-theme-color);
+  font-weight: 700;
+}
+.oscillating-badge {
+  font-size: 0.55em;
+  font-weight: 400;
+  color: var(--f7-theme-color);
+  vertical-align: super;
+  margin-left: 4px;
+  cursor: default;
+}
+.oscillating-note {
+  margin: 2px 0 0;
+  font-size: 0.8em;
+  font-style: italic;
+  color: var(--f7-list-item-footer-text-color);
+}
+
 /* Compound breakdown */
 .compound-block {
   padding-top: 4px;
