@@ -50,54 +50,58 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, type PropType } from "vue";
 import { t } from "../js/i18n.js";
+import type { NounWord, CaseRow } from "../../types/word.js";
 
-const SINGULAR_ARTICLES = {
+type Gender = "M" | "F" | "N";
+
+const SINGULAR_ARTICLES: Record<Gender, CaseRow> = {
   M: { nom: "der", acc: "den", dat: "dem", gen: "des" },
   F: { nom: "die", acc: "die", dat: "der", gen: "der" },
   N: { nom: "das", acc: "das", dat: "dem", gen: "des" },
 };
 
-const PLURAL_ARTICLES = { nom: "die", acc: "die", dat: "den", gen: "der" };
+const PLURAL_ARTICLES: CaseRow = { nom: "die", acc: "die", dat: "den", gen: "der" };
 
-const RULE_DESCRIPTIONS = {
-  suffix_ung:              "-ung → always feminine",
-  suffix_heit:             "-heit → always feminine",
-  suffix_keit:             "-keit → always feminine",
-  suffix_chen:             "-chen → always neuter",
-  suffix_lein:             "-lein → always neuter",
-  suffix_schaft:           "-schaft → nearly always feminine",
-  suffix_tion:             "-tion → nearly always feminine",
-  suffix_sion:             "-sion → nearly always feminine",
-  suffix_taet:             "-tät → nearly always feminine",
-  suffix_ismus:            "-ismus → nearly always masculine",
-  suffix_ist:              "-ist → nearly always masculine",
-  suffix_ling:             "-ling → nearly always masculine",
-  suffix_tum:              "-tum → usually neuter",
-  suffix_or:               "-or → usually masculine",
-  suffix_ei:               "-ei → usually feminine",
-  suffix_anz:              "-anz → usually feminine",
-  suffix_enz:              "-enz → usually feminine",
-  nominalized_infinitive:  "nominalized infinitive → always neuter",
-  suffix_ment:             "-ment → often neuter",
-  suffix_um:               "-um → often neuter",
-  suffix_ie:               "-ie → often feminine",
-  suffix_ik:               "-ik → often feminine",
-  suffix_ur:               "-ur → often feminine",
-  suffix_eur:              "-eur → often masculine",
+const RULE_DESCRIPTIONS: Record<string, string> = {
+  suffix_ung:              "-ung \u2192 always feminine",
+  suffix_heit:             "-heit \u2192 always feminine",
+  suffix_keit:             "-keit \u2192 always feminine",
+  suffix_chen:             "-chen \u2192 always neuter",
+  suffix_lein:             "-lein \u2192 always neuter",
+  suffix_schaft:           "-schaft \u2192 nearly always feminine",
+  suffix_tion:             "-tion \u2192 nearly always feminine",
+  suffix_sion:             "-sion \u2192 nearly always feminine",
+  suffix_taet:             "-t\u00E4t \u2192 nearly always feminine",
+  suffix_ismus:            "-ismus \u2192 nearly always masculine",
+  suffix_ist:              "-ist \u2192 nearly always masculine",
+  suffix_ling:             "-ling \u2192 nearly always masculine",
+  suffix_tum:              "-tum \u2192 usually neuter",
+  suffix_or:               "-or \u2192 usually masculine",
+  suffix_ei:               "-ei \u2192 usually feminine",
+  suffix_anz:              "-anz \u2192 usually feminine",
+  suffix_enz:              "-enz \u2192 usually feminine",
+  nominalized_infinitive:  "nominalized infinitive \u2192 always neuter",
+  suffix_ment:             "-ment \u2192 often neuter",
+  suffix_um:               "-um \u2192 often neuter",
+  suffix_ie:               "-ie \u2192 often feminine",
+  suffix_ik:               "-ik \u2192 often feminine",
+  suffix_ur:               "-ur \u2192 often feminine",
+  suffix_eur:              "-eur \u2192 often masculine",
 };
 
-export default {
+export default defineComponent({
   props: {
-    word: { type: Object, required: true },
+    word: { type: Object as PropType<NounWord>, required: true },
   },
   computed: {
     t() { return t; },
-    genderClass() {
+    genderClass(): string {
       return (this.word.gender || "").toLowerCase();
     },
-    isNDeclension() {
+    isNDeclension(): boolean {
       if (this.word.gender !== "M") return false;
       const s = this.word.case_forms?.singular;
       if (!s?.nom || !s?.acc) return false;
@@ -105,32 +109,32 @@ export default {
     },
     cases() {
       return [
-        { key: "nom", label: "Nom." },
-        { key: "acc", label: "Akk." },
-        { key: "dat", label: "Dat." },
-        { key: "gen", label: "Gen." },
+        { key: "nom" as const, label: "Nom." },
+        { key: "acc" as const, label: "Akk." },
+        { key: "dat" as const, label: "Dat." },
+        { key: "gen" as const, label: "Gen." },
       ];
     },
-    singularArticles() {
+    singularArticles(): CaseRow {
       return SINGULAR_ARTICLES[this.word.gender] || SINGULAR_ARTICLES["M"];
     },
-    pluralArticles() {
+    pluralArticles(): CaseRow {
       return PLURAL_ARTICLES;
     },
-    hasSingular() {
+    hasSingular(): boolean {
       const s = this.word.case_forms?.singular;
-      return s && Object.values(s).some(Boolean);
+      return !!s && Object.values(s).some(Boolean);
     },
-    hasPlural() {
+    hasPlural(): boolean {
       const p = this.word.case_forms?.plural;
-      return p && Object.values(p).some(Boolean);
+      return !!p && Object.values(p).some(Boolean);
     },
-    ruleText() {
+    ruleText(): string {
       const rule = this.word.gender_rule;
       if (!rule) return "";
       const desc = RULE_DESCRIPTIONS[rule.rule_id] || rule.rule_id;
       return rule.is_exception ? `${t("noun.exception")}${desc}` : desc;
     },
   },
-};
+});
 </script>

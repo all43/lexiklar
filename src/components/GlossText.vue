@@ -28,17 +28,24 @@
   </span>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import { parseReferences, hasReferences } from "../utils/references.js";
+import type { GlossSegment } from "../../types/references.js";
 
-export default {
+interface SelfRefSegment {
+  type: "self_ref";
+  text: string;
+}
+
+export default defineComponent({
   props: {
     gloss: { type: String, required: true },
     selfPath: { type: String, default: null },
   },
   emits: ["sense-ref", "cross-ref"],
   computed: {
-    segments() {
+    segments(): (GlossSegment | SelfRefSegment)[] {
       if (!hasReferences(this.gloss)) {
         return [{ type: "text", text: this.gloss }];
       }
@@ -46,10 +53,10 @@ export default {
       if (!this.selfPath) return segs;
       return segs.map(seg =>
         seg.type === "cross_ref" && seg.filePath === this.selfPath
-          ? { type: "self_ref", text: seg.text }
+          ? { type: "self_ref" as const, text: seg.text }
           : seg
       );
     },
   },
-};
+});
 </script>

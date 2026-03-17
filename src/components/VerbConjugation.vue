@@ -73,36 +73,42 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, type PropType } from "vue";
 import ConjugationTable from "./ConjugationTable.vue";
 import { t } from "../js/i18n.js";
+import type { VerbWord, ConjugationTable as ConjType } from "../../types/word.js";
 
-export default {
+const CLASS_LABELS: Record<string, string> = {
+  weak: "schwach",
+  strong: "stark",
+  mixed: "gemischt",
+  irregular: "unregelm\u00E4\u00DFig",
+};
+
+export default defineComponent({
   components: { ConjugationTable },
   props: {
-    verb: { type: Object, required: true },
+    verb: { type: Object as PropType<VerbWord>, required: true },
   },
   data() {
     return {
-      tab: "ind",
+      tab: "ind" as "ind" | "konj" | "other",
     };
   },
   computed: {
-    auxLabel() {
+    auxLabel(): string {
       const a = this.verb.auxiliary;
       if (a === "both") return "sein/haben";
-      return a;
+      return a || "";
     },
-    classLabel() {
-      const cls = this.verb.conjugation_class;
-      const labels = { weak: "schwach", strong: "stark", mixed: "gemischt", irregular: "unregelmäßig" };
-      return labels[cls] || cls;
+    classLabel(): string {
+      return CLASS_LABELS[this.verb.conjugation_class || ""] || this.verb.conjugation_class || "";
     },
-    conjugation() {
-      // Always pre-computed at build time — for all conjugation classes
+    conjugation(): ConjType | undefined {
       return this.verb.conjugation;
     },
     t() { return t; },
   },
-};
+});
 </script>

@@ -65,7 +65,7 @@
               <span
                 class="compound-part"
                 :class="{ 'compound-part-linked': part.file }"
-                @click="part.file && $f7router.navigate(`/word/${part.file}/`)"
+                @click="part.file && f7router.navigate(`/word/${part.file}/`)"
               >
                 <strong>{{ part.lemma }}</strong>
                 <span v-if="part.glossEn" class="compound-gloss">({{ part.glossEn }})</span>
@@ -221,7 +221,7 @@
       </template>
       <template v-else-if="word.pos === 'noun' || word.pos === 'proper noun'">
         <f7-block-title>{{ t('word.declension') }}</f7-block-title>
-        <NounDeclension :word="word" />
+        <NounDeclension :word="(word as NounWord)" />
       </template>
       <template v-else-if="word.pos === 'adjective'">
         <f7-block-title>{{ t('word.grammar') }}</f7-block-title>
@@ -278,7 +278,8 @@
   </f7-page>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import GlossText from "../components/GlossText.vue";
 import VerbConjugation from "../components/VerbConjugation.vue";
 import NounDeclension from "../components/NounDeclension.vue";
@@ -289,46 +290,109 @@ import { submitReport } from "../utils/report.js";
 import { f7 } from "framework7-vue/bundle";
 import { t } from "../js/i18n.js";
 import { getCached, setItem } from "../utils/storage.js";
+import type { Word, Sense, VerbWord, NounWord, AdjectiveWord } from "../../types/word.js";
+import type { Example } from "../../types/example.js";
+import type { SearchResult } from "../../types/search.js";
 
-export default {
+interface PreviewData {
+  filePath: string;
+  senseNumber: number;
+  word: string;
+  article: string | null;
+  gender: string | null;
+  pos: string;
+  senseGloss: string;
+  senseGlossEn: string | null;
+}
+
+interface RelatedRef {
+  file: string;
+  type: string;
+}
+
+interface CompoundPart {
+  lemma: string;
+  file: string | null;
+  glossEn: string | null;
+}
+
+interface RelatedGroupItem {
+  file: string;
+  displayTitle: string;
+  glossText: string;
+  pos: string;
+}
+
+interface RelatedGroup {
+  type: string;
+  label: string;
+  items: RelatedGroupItem[];
+}
+
+interface ExpressionItem {
+  id: string;
+  text: string;
+  type?: string;
+  note?: string;
+  translation: string | null;
+  ref: string | null;
+}
+
+const POS_COLORS: Record<string, string> = {
+  noun: "blue",
+  verb: "orange",
+  adjective: "green",
+  phrase: "purple",
+  adverb: "teal",
+  preposition: "deeporange",
+  conjunction: "pink",
+  particle: "lime",
+  interjection: "red",
+  pronoun: "indigo",
+  determiner: "cyan",
+  numeral: "amber",
+  "proper noun": "blue",
+};
+
+export default defineComponent({
   components: { GlossText, VerbConjugation, NounDeclension, AdjectiveDeclension, VerbSepPipe },
   props: {
-    f7route: Object,
-    f7router: Object,
+    f7route: { type: Object, default: null },
+    f7router: { type: Object, default: null },
   },
   data() {
     return {
-      word: null,
-      examples: {},
-      relatedWords: [],
+      word: null as Word | null,
+      examples: {} as Record<string, Example>,
+      relatedWords: [] as SearchResult[],
       loading: true,
-      preview: null,
-      inHistory: false,       // whether this word is currently in the user's history
-      isFavorite: false,      // whether this word is currently in favorites
+      preview: null as PreviewData | null,
+      inHistory: false,
+      isFavorite: false,
     };
   },
   computed: {
     t() { return t; },
-    isInHistory() {
+    isInHistory(): boolean {
       return this.inHistory;
     },
-    posColor() {
+    posColor(): string {
       return this.getPosColor(this.word?.pos);
     },
-    previewPosColor() {
+    previewPosColor(): string {
       return this.getPosColor(this.preview?.pos);
     },
-    compoundParts() {
-      if (!this.word?.compound_parts) return [];
+    compoundParts(): CompoundPart[] {
+      const w = this.word as Record<string, unknown> | null;
+      if (!w?.compound_parts) return [];
 
-      // Build lookup from related words (compound_part type)
-      const infoMap = {};
+      const infoMap: Record<string, SearchResult> = {};
       for (const rw of this.relatedWords) {
         infoMap[rw.lemma] = rw;
         infoMap[rw.lemma.toLowerCase()] = rw;
       }
 
-      return this.word.compound_parts.map((lemma) => {
+      return (w.compound_parts as string[]).map((lemma: string) => {
         const info = infoMap[lemma] || infoMap[lemma.toLowerCase()];
         return {
           lemma,
@@ -337,10 +401,11 @@ export default {
         };
       });
     },
-    relatedGroups() {
-      if (!this.word?.related || !this.relatedWords.length) return [];
+    relatedGroups(): RelatedGroup[] {
+      const w = this.word as Record<string, unknown> | null;
+      if (!w?.related || !this.relatedWords.length) return [];
 
-      const typeLabels = {
+      const typeLabels: Record<string, string> = {
         feminine_form: t("related.feminineForm"),
         masculine_form: t("related.masculineForm"),
         antonym: t("related.antonyms"),
@@ -354,28 +419,24 @@ export default {
       };
       const typeOrder = ["feminine_form", "masculine_form", "antonym", "synonym", "same_stem", "derived_from", "derived", "base_verb", "compound", "compound_of"];
 
-      // Build file → display info lookup
-      const infoMap = {};
+      const infoMap: Record<string, SearchResult> = {};
       for (const rw of this.relatedWords) {
         infoMap[rw.file] = rw;
       }
 
-      // Group by type
-      const groups = {};
-      for (const rel of this.word.related) {
+      const groups: Record<string, RelatedGroupItem[]> = {};
+      for (const rel of w.related as RelatedRef[]) {
         const info = infoMap[rel.file];
         if (!info) continue;
         if (!groups[rel.type]) groups[rel.type] = [];
 
-        // Build display title: article + word for nouns, just word for others
         let displayTitle = info.lemma;
         if ((info.pos === "noun" || info.pos === "proper noun") && info.gender) {
-          const articles = { M: "der", F: "die", N: "das" };
+          const articles: Record<string, string> = { M: "der", F: "die", N: "das" };
           const art = articles[info.gender];
           if (art) displayTitle = `${art} ${info.lemma}`;
         }
 
-        // First English gloss as subtitle
         const glossText = info.glossEn?.length ? info.glossEn[0] : "";
 
         groups[rel.type].push({
@@ -386,7 +447,6 @@ export default {
         });
       }
 
-      // Return ordered groups
       return typeOrder
         .filter((type) => groups[type])
         .map((type) => ({
@@ -395,23 +455,26 @@ export default {
           items: groups[type],
         }));
     },
-    wordExpressions() {
+    wordExpressions(): ExpressionItem[] {
       if (!this.word?.expression_ids) return [];
       return this.word.expression_ids
-        .map((id) => {
-          const ex = this.examples[id];
+        .map((id: string): ExpressionItem | null => {
+          const ex = this.examples[id] as Example & Record<string, unknown> | undefined;
           if (!ex) return null;
-          return { id, text: ex.text, type: ex.type, note: ex.note, translation: ex.translation, ref: ex.ref || null };
+          const item: ExpressionItem = { id, text: ex.text, translation: ex.translation, ref: (ex.ref as string) || null };
+          if (ex.type) item.type = ex.type as string;
+          if (ex.note) item.note = ex.note as string;
+          return item;
         })
-        .filter(Boolean);
+        .filter((item): item is ExpressionItem => item !== null);
     },
   },
   methods: {
     toggleFavorite() {
-      const { pos, file } = this.f7route.params;
+      const { pos, file } = this.f7route.params as { pos: string; file: string };
       const fileKey = `${pos}/${file}`;
       try {
-        const favs = JSON.parse(getCached("lexiklar_favorites") || "[]");
+        const favs: string[] = JSON.parse(getCached("lexiklar_favorites") || "[]");
         if (this.isFavorite) {
           setItem("lexiklar_favorites", JSON.stringify(favs.filter((f) => f !== fileKey)));
           this.isFavorite = false;
@@ -426,17 +489,15 @@ export default {
     },
 
     removeFromHistory() {
-      const { pos, file } = this.f7route.params;
+      const { pos, file } = this.f7route.params as { pos: string; file: string };
       const fileKey = `${pos}/${file}`;
       try {
-        // Remove from recents list
-        const recents = JSON.parse(getCached("lexiklar_recents") || "[]");
+        const recents: string[] = JSON.parse(getCached("lexiklar_recents") || "[]");
         setItem(
           "lexiklar_recents",
           JSON.stringify(recents.filter((f) => f !== fileKey)),
         );
-        // Remove view count
-        const counts = JSON.parse(getCached("lexiklar_view_counts") || "{}");
+        const counts: Record<string, number> = JSON.parse(getCached("lexiklar_view_counts") || "{}");
         delete counts[fileKey];
         setItem("lexiklar_view_counts", JSON.stringify(counts));
         this.inHistory = false;
@@ -445,29 +506,11 @@ export default {
       }
     },
 
-    getPosColor(pos) {
-      const colors = {
-        noun: "blue",
-        verb: "orange",
-        adjective: "green",
-        phrase: "purple",
-        adverb: "teal",
-        preposition: "deeporange",
-        conjunction: "pink",
-        particle: "lime",
-        interjection: "red",
-        pronoun: "indigo",
-        determiner: "cyan",
-        numeral: "amber",
-        "proper noun": "blue",
-      };
-      return colors[pos] || "gray";
+    getPosColor(pos: string | undefined): string {
+      return POS_COLORS[pos || ""] || "gray";
     },
 
-    async searchWord(lemma) {
-      // Look up the tapped synonym/antonym. If it resolves to exactly one word
-      // in the DB, navigate directly to its card. Otherwise fall back to going
-      // back so the user can type it manually in the searchbar.
+    async searchWord(lemma: string) {
       try {
         const hits = await searchByLemma(lemma);
         const exact = hits.filter(
@@ -483,7 +526,7 @@ export default {
       this.f7router.back();
     },
 
-    scrollToSense(senseNumber) {
+    scrollToSense(senseNumber: number) {
       const el = document.getElementById(`sense-${senseNumber}`);
       if (!el) return;
       el.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -491,7 +534,7 @@ export default {
       setTimeout(() => el.classList.remove("sense-highlight"), 1500);
     },
 
-    async handleCrossRef(filePath, senseNumber) {
+    async handleCrossRef(filePath: string, senseNumber: number | null) {
       try {
         const data = await getWord(filePath);
         if (!data) throw new Error("Not found");
@@ -501,20 +544,20 @@ export default {
           filePath,
           senseNumber: senseNumber || 1,
           word: data.word,
-          article: data.article || null,
-          gender: data.gender || null,
+          article: (data as unknown as Record<string, unknown>).article as string | null || null,
+          gender: (data as unknown as Record<string, unknown>).gender as string | null || null,
           pos: data.pos,
           senseGloss: sense?.gloss || "",
           senseGlossEn: sense?.gloss_en || null,
         };
       } catch {
-        // Fallback: navigate directly if preview data can't be loaded
         const url = `/word/${filePath}/`;
         this.f7router.navigate(senseNumber ? `${url}?sense=${senseNumber}` : url);
       }
     },
 
     navigateToPreview() {
+      if (!this.preview) return;
       const { filePath, senseNumber } = this.preview;
       this.preview = null;
       const url = `/word/${filePath}/`;
@@ -522,7 +565,7 @@ export default {
     },
 
     reportIssue() {
-      const { pos, file } = this.f7route.params;
+      const { pos, file } = this.f7route.params as { pos: string; file: string };
       const fileKey = `${pos}/${file}`;
       const word = this.word?.word || file;
       f7.dialog.create({
@@ -531,9 +574,10 @@ export default {
         content: '<div class="dialog-input-field input"><input type="text" class="dialog-input"></div>',
         buttons: [
           { text: t("report.cancel"), keyCodes: [27] },
+          // @ts-expect-error — F7 DialogButton type is incomplete
           { text: t("report.send"), bold: true, close: false },
         ],
-        onClick(dialog, index) {
+        onClick(dialog: { $el: { find(sel: string): { val(): string } }; close(): void }, index: number) {
           if (index === 0) return;
           const details = dialog.$el.find(".dialog-input").val();
           dialog.close();
@@ -548,43 +592,42 @@ export default {
       }).open();
     },
 
-    getSenseExamples(sense) {
+    getSenseExamples(sense: Sense) {
       if (!sense.example_ids || !sense.example_ids.length) return [];
-      const { pos, file } = this.f7route.params;
+      const { pos, file } = this.f7route.params as { pos: string; file: string };
       const currentPath = `${pos}/${file}`;
 
       return sense.example_ids
         .map((id) => {
-          const ex = this.examples[id];
+          const ex = this.examples[id] as Example & Record<string, unknown> | undefined;
           if (!ex) return null;
-          const text = ex.text_linked || ex.text;
+          const text = (ex.text_linked as string) || ex.text;
           return { id, text, selfPath: currentPath, translation: ex.translation };
         })
-        .filter(Boolean);
+        .filter((item): item is NonNullable<typeof item> => item !== null);
     },
   },
   beforeUnmount() {
-    this.$el.querySelectorAll(".tooltip-init").forEach((el) => {
-      if (el.f7Tooltip) el.f7Tooltip.destroy();
+    (this.$el as HTMLElement).querySelectorAll(".tooltip-init").forEach((el) => {
+      const htmlEl = el as HTMLElement & { f7Tooltip?: { destroy(): void } };
+      if (htmlEl.f7Tooltip) htmlEl.f7Tooltip.destroy();
     });
   },
   async mounted() {
-    const { pos, file } = this.f7route.params;
-    const targetSense = parseInt(this.f7route.query?.sense, 10) || null;
+    const { pos, file } = this.f7route.params as { pos: string; file: string };
+    const targetSense = parseInt(this.f7route.query?.sense as string, 10) || null;
 
     try {
-      this.word = await getWord(`${pos}/${file}`);
+      this.word = await getWord(`${pos}/${file}`) as (Word & Record<string, unknown>) | null;
 
-      // Track this visit in recent words + view counts
       if (this.word) {
         try {
           const RECENTS_KEY = "lexiklar_recents";
           const COUNTS_KEY = "lexiklar_view_counts";
           const fileKey = `${pos}/${file}`;
 
-          // Update recents list (most recent first, max 100)
           const stored = getCached(RECENTS_KEY);
-          const recents = stored ? JSON.parse(stored) : [];
+          const recents: string[] = stored ? JSON.parse(stored) : [];
           const filtered = recents.filter((f) => f !== fileKey);
           filtered.unshift(fileKey);
           setItem(
@@ -592,32 +635,29 @@ export default {
             JSON.stringify(filtered.slice(0, 100)),
           );
 
-          // Increment view count
-          const counts = JSON.parse(getCached(COUNTS_KEY) || "{}");
+          const counts: Record<string, number> = JSON.parse(getCached(COUNTS_KEY) || "{}");
           counts[fileKey] = (counts[fileKey] || 0) + 1;
           setItem(COUNTS_KEY, JSON.stringify(counts));
 
           this.inHistory = true;
 
-          // Check favorites
-          const favs = JSON.parse(getCached("lexiklar_favorites") || "[]");
+          const favs: string[] = JSON.parse(getCached("lexiklar_favorites") || "[]");
           this.isFavorite = favs.includes(fileKey);
         } catch {
           // storage unavailable — silently skip
         }
       }
 
-      // Load only the examples this word needs
-      const ids = [];
+      const ids: string[] = [];
       for (const s of this.word?.senses || []) {
         if (s.example_ids) ids.push(...s.example_ids);
       }
       if (this.word?.expression_ids) ids.push(...this.word.expression_ids);
       if (ids.length) this.examples = await getExamples(ids);
 
-      // Load related word display info
-      if (this.word?.related?.length) {
-        const fileKeys = this.word.related.map((r) => r.file);
+      const w = this.word as Record<string, unknown> | null;
+      if (w?.related && (w.related as RelatedRef[]).length) {
+        const fileKeys = (w.related as RelatedRef[]).map((r) => r.file);
         this.relatedWords = await getRelatedWords(fileKeys);
       }
     } catch (err) {
@@ -626,14 +666,14 @@ export default {
       this.loading = false;
       await this.$nextTick();
       if (targetSense) this.scrollToSense(targetSense);
-      // Mirror what F7's pageInit does for tooltip-init elements
-      this.$el.querySelectorAll(".tooltip-init").forEach((el) => {
-        const text = el.dataset.tooltip;
-        if (text && !el.f7Tooltip) f7.tooltip.create({ targetEl: el, text });
+      (this.$el as HTMLElement).querySelectorAll(".tooltip-init").forEach((el) => {
+        const htmlEl = el as HTMLElement & { f7Tooltip?: unknown };
+        const text = htmlEl.dataset.tooltip;
+        if (text && !htmlEl.f7Tooltip) f7.tooltip.create({ targetEl: htmlEl, text });
       });
     }
   },
-};
+});
 </script>
 
 <style scoped>

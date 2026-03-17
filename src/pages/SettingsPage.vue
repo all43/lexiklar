@@ -85,28 +85,31 @@
   </f7-page>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import { f7 } from "framework7-vue";
-import { applyTheme, THEME_KEY } from "../js/theme.js";
-import { t, setLocale, getLocale, LANGUAGE_KEY } from "../js/i18n.js";
+import { applyTheme, THEME_KEY, type ThemeValue } from "../js/theme.js";
+import { t, setLocale, getLocale, LANGUAGE_KEY, type LanguagePreference } from "../js/i18n.js";
 import { getCached, setItem, removeItem } from "../utils/storage.js";
-import { getDbVersion, checkForUpdates, applyUpdate as applyDbUpdate } from "../utils/db.js";
+import { getDbVersion, checkForUpdates, applyUpdate as applyDbUpdate, type UpdateInfo } from "../utils/db.js";
 
 const THEME_OPTIONS = [
-  { value: "auto", labelKey: "settings.themeAuto" },
-  { value: "light", labelKey: "settings.themeLight" },
-  { value: "dark", labelKey: "settings.themeDark" },
+  { value: "auto" as const, labelKey: "settings.themeAuto" },
+  { value: "light" as const, labelKey: "settings.themeLight" },
+  { value: "dark" as const, labelKey: "settings.themeDark" },
 ];
 
 const LANG_OPTIONS = [
-  { value: "auto", labelKey: "settings.langAuto" },
-  { value: "en", labelKey: "settings.langEnglish" },
-  { value: "de", labelKey: "settings.langGerman" },
+  { value: "auto" as const, labelKey: "settings.langAuto" },
+  { value: "en" as const, labelKey: "settings.langEnglish" },
+  { value: "de" as const, labelKey: "settings.langGerman" },
 ];
 
 export const SHOW_ARTICLES_KEY = "lexiklar_show_articles";
 
-export default {
+type UpdateState = "idle" | "checking" | "up-to-date" | "available" | "downloading" | "applying" | "done" | "error";
+
+export default defineComponent({
   data() {
     return {
       theme: getCached(THEME_KEY) || "auto",
@@ -114,20 +117,20 @@ export default {
       themeOptions: THEME_OPTIONS,
       langOptions: LANG_OPTIONS,
       showArticles: getCached(SHOW_ARTICLES_KEY) === "1",
-      dbVersion: null,
-      dbBuiltAt: null,
-      updateState: "idle", // idle | checking | up-to-date | available | downloading | applying | done | error
-      updateInfo: null,
+      dbVersion: null as string | null,
+      dbBuiltAt: null as string | null,
+      updateState: "idle" as UpdateState,
+      updateInfo: null as UpdateInfo | null,
       appVersion: __APP_VERSION__,
     };
   },
   computed: {
     t() { return t; },
-    dbVersionDisplay() {
+    dbVersionDisplay(): string {
       if (!this.dbVersion) return "...";
       const hash = this.dbVersion.slice(0, 8);
       const date = this.dbBuiltAt || "";
-      return date ? `${hash} \u00b7 ${date}` : hash;
+      return date ? `${hash} \u00B7 ${date}` : hash;
     },
   },
   async mounted() {
@@ -140,7 +143,7 @@ export default {
     }
   },
   methods: {
-    formatSize(bytes) {
+    formatSize(bytes: number | undefined): string {
       if (!bytes) return "";
       if (bytes < 1024) return `${bytes} B`;
       if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
@@ -167,8 +170,8 @@ export default {
       this.updateState = this.updateInfo.type === "patch" ? "applying" : "downloading";
       const result = await applyDbUpdate(this.updateInfo);
       if (result.ok) {
-        this.dbVersion = this.updateInfo.targetVersion;
-        this.dbBuiltAt = this.updateInfo.builtAt;
+        this.dbVersion = this.updateInfo.targetVersion || null;
+        this.dbBuiltAt = this.updateInfo.builtAt || null;
         this.updateState = "done";
         f7.toast.create({ text: t("settings.updateDone"), closeTimeout: 2000, position: "center" }).open();
       } else {
@@ -180,16 +183,16 @@ export default {
     reloadApp() {
       window.location.reload();
     },
-    setTheme(value) {
+    setTheme(value: ThemeValue) {
       this.theme = value;
       setItem(THEME_KEY, value);
       applyTheme(value);
     },
-    setLanguage(value) {
+    setLanguage(value: LanguagePreference) {
       this.language = value;
       setLocale(value);
     },
-    setShowArticles(value) {
+    setShowArticles(value: boolean) {
       this.showArticles = value;
       setItem(SHOW_ARTICLES_KEY, value ? "1" : "0");
     },
@@ -219,5 +222,5 @@ export default {
       );
     },
   },
-};
+});
 </script>

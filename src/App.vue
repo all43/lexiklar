@@ -20,19 +20,20 @@
   </f7-app>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import routes from "./js/routes.js";
 import { initTheme } from "./js/theme.js";
 import { t } from "./js/i18n.js";
 import { Capacitor } from "@capacitor/core";
 
-export default {
+export default defineComponent({
   data() {
     return {
       isWeb: !Capacitor.isNativePlatform(),
       f7params: {
         name: "Lexiklar",
-        theme: "auto",
+        theme: "auto" as const,
         routes,
       },
     };
@@ -43,5 +44,5 @@ export default {
   mounted() {
     initTheme();
   },
-};
+});
 </script>

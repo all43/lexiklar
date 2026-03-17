@@ -1,0 +1,676 @@
+import { readFileSync, appendFileSync, readdirSync, existsSync, mkdirSync } from "fs";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
+import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel, resolveLocalModel, PROVIDER_DEFAULTS } from "./lib/llm.js";
+import { stripReferences } from "./lib/references.js";
+import { POS_CONFIG } from "./lib/pos.js";
+import { EXAMPLES_SYSTEM_PROMPT } from "./lib/prompts.js";
+import { loadExamples, saveExamples, EXAMPLES_DIR } from "./lib/examples.js";
+import type { Word, Sense, Annotation, ExampleMap, Example } from "../types/index.js";
+import type { LLMProvider, LLMResponse, ProviderConfig } from "../types/llm.js";
+import type { PosConfig } from "../types/pos.js";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = join(__dirname, "..");
+const DATA_DIR = join(ROOT, "data");
+const WORDS_DIR = join(DATA_DIR, "words");
+
+// ============================================================
+// CLI args
+// ============================================================
+
+const args = process.argv.slice(2);
+const DRY_RUN = args.includes("--dry-run");
+const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args, "anthropic") as { provider: LLMProvider; model: string | null };
+// Resolve the real model name up-front (local providers auto-detect via /v1/models)
+const RESOLVED_MODEL: string = MODEL
+  || (isLocalProvider(PROVIDER)
+      ? await resolveLocalModel((PROVIDER_DEFAULTS as Record<string, ProviderConfig>)[PROVIDER]?.url, getDefaultModel(PROVIDER))
+      : getDefaultModel(PROVIDER));
+const MODEL_LABEL = `${PROVIDER}/${RESOLVED_MODEL}`;
+
+// Idiom/expression model — gpt-4.1 by default (better at idiomatic translation).
+// If --model is explicitly passed, use it for everything (testing override).
+const MODEL_EXPLICIT = args.includes("--model");
+const IDIOM_MODEL_NAME: string = (() => {
+  const idx = args.indexOf("--idiom-model");
+  return idx >= 0 ? args[idx + 1] : "gpt-4.1";
+})();
+const IDIOM_PROVIDER: LLMProvider = MODEL_EXPLICIT ? PROVIDER : "openai";
+const IDIOM_MODEL: string | undefined = MODEL_EXPLICIT ? (MODEL ?? undefined) : IDIOM_MODEL_NAME;
+const IDIOM_MODEL_LABEL = `${IDIOM_PROVIDER}/${IDIOM_MODEL}`;
+
+// Local models have small context windows — default to a much smaller batch.
+// Cloud providers can handle 10+ easily.
+const DEFAULT_BATCH_SIZE = isLocalProvider(PROVIDER) ? 3 : 10;
+const BATCH_SIZE: number = (() => {
+  const idx = args.indexOf("--batch-size");
+  return idx >= 0 ? parseInt(args[idx + 1], 10) || DEFAULT_BATCH_SIZE : DEFAULT_BATCH_SIZE;
+})();
+
+const MAX_CONSECUTIVE_ERRORS: number = (() => {
+  const idx = args.indexOf("--max-consecutive-errors");
+  return idx >= 0 ? parseInt(args[idx + 1], 10) || 5 : 20;
+})();
+
+const LIMIT: number | null = (() => {
+  const idx = args.indexOf("--limit");
+  return idx >= 0 ? parseInt(args[idx + 1], 10) || null : null;
+})();
+
+const CONCURRENCY: number = (() => {
+  const idx = args.indexOf("--concurrency");
+  return idx >= 0 ? parseInt(args[idx + 1], 10) || 1 : 1;
+})();
+
+const MAX_PER_WORD: number | null = (() => {
+  const idx = args.indexOf("--max-per-word");
+  return idx >= 0 ? parseInt(args[idx + 1], 10) || null : null;
+})();
+
+const FREQ_LIMIT: number | null = (() => {
+  const idx = args.indexOf("--freq-limit");
+  return idx >= 0 ? parseInt(args[idx + 1], 10) || null : null;
+})();
+
+const NO_ANNOTATIONS = args.includes("--no-annotations");
+
+// ============================================================
+// Types
+// ============================================================
+
+interface WordFreqInfo {
+  frequency: number | null;
+  whitelisted: boolean;
+}
+
+interface WhitelistEntry {
+  word: string;
+}
+
+interface WhitelistFile {
+  words: WhitelistEntry[];
+}
+
+interface UntranslatedItem {
+  id: string;
+  text: string;
+  type: string | null;
+  note: string | null;
+  gloss_en: string | null;
+  lemmas: string[];
+}
+
+interface ParsedExampleResult {
+  id: string;
+  translation: string;
+  annotations: Annotation[];
+}
+
+interface DisambiguationDict extends Map<string, string[]> {}
+
+/**
+ * Build a map of word → { frequency, whitelisted } from word files + whitelist.
+ * Used by the --freq-limit filter.
+ */
+function buildWordFreqMap(): Map<string, WordFreqInfo> {
+  const whitelistPath = join(ROOT, "config", "word-whitelist.json");
+  const whitelistSet = new Set<string>(
+    existsSync(whitelistPath)
+      ? (JSON.parse(readFileSync(whitelistPath, "utf-8")) as WhitelistFile).words.map((w) => w.word)
+      : []
+  );
+
+  const map = new Map<string, WordFreqInfo>();
+  for (const { dir: posDir } of Object.values(POS_CONFIG) as PosConfig[]) {
+    const dir = join(WORDS_DIR, posDir);
+    if (!existsSync(dir)) continue;
+    for (const file of readdirSync(dir)) {
+      if (!file.endsWith(".json")) continue;
+      try {
+        const d = JSON.parse(readFileSync(join(dir, file), "utf-8")) as Record<string, unknown>;
+        map.set(d.word as string, {
+          frequency: (d.frequency as number) ?? null,
+          whitelisted: whitelistSet.has(d.word as string),
+        });
+      } catch {
+        // skip malformed files
+      }
+    }
+  }
+  return map;
+}
+
+/** Run items through fn with at most `concurrency` calls in-flight at once. */
+async function runPool<T>(items: T[], concurrency: number, fn: (item: T, index: number) => Promise<void>): Promise<void> {
+  let i = 0;
+  const workers = Array(Math.min(concurrency, items.length)).fill(null).map(async () => {
+    while (i < items.length) {
+      const idx = i++;
+      await fn(items[idx], idx);
+    }
+  });
+  await Promise.all(workers);
+}
+
+// Disambiguation dict is needed for correct gloss_hint — enabled for all providers.
+// Use --no-disambig to skip it (e.g. for very small context windows).
+const USE_DISAMBIG = !args.includes("--no-disambig");
+
+// ============================================================
+// Load gloss_en from a phrase/word file via its ref path
+// ============================================================
+
+function loadGlossEn(ref: string | undefined | null): string | null {
+  if (!ref) return null;
+  try {
+    const filePath = join(WORDS_DIR, ref + ".json");
+    const data = JSON.parse(readFileSync(filePath, "utf-8")) as Word;
+    return data.senses?.[0]?.gloss_en ?? null;
+  } catch {
+    return null;
+  }
+}
+
+// ============================================================
+// Build disambiguation dictionary from word files
+// ============================================================
+
+function buildDisambiguationDict(): Map<string, string[]> {
+  const dict = new Map<string, string[]>(); // key: "lemma|pos" → array of gloss strings
+
+  for (const { dir: posDir, label: posName } of Object.values(POS_CONFIG) as PosConfig[]) {
+    const dir = join(WORDS_DIR, posDir);
+    if (!existsSync(dir)) continue;
+
+    for (const file of readdirSync(dir)) {
+      if (!file.endsWith(".json")) continue;
+      const data = JSON.parse(readFileSync(join(dir, file), "utf-8")) as Word;
+      const key = `${data.word}|${posName}`;
+      // Prefer gloss_en if translate-glosses has already run — shorter, works
+      // better for local models, and is what the disambiguation hint will reference.
+      const glosses: string[] = (data.senses || []).map((s: Sense) => s.gloss_en || s.gloss).filter(Boolean) as string[];
+
+      if (dict.has(key)) {
+        // Homonym: merge glosses from both files
+        dict.get(key)!.push(...glosses);
+      } else {
+        dict.set(key, glosses);
+      }
+    }
+  }
+
+  // Only keep entries with 2+ senses (need disambiguation)
+  for (const [key, glosses] of dict) {
+    if (glosses.length < 2) dict.delete(key);
+  }
+
+  console.log(
+    `Built disambiguation dict: ${dict.size} multi-sense lemmas.`,
+  );
+  return dict;
+}
+
+// ============================================================
+// Find relevant disambiguation entries for a set of examples
+// ============================================================
+
+function getRelevantDisambiguation(examples: UntranslatedItem[], disambigDict: Map<string, string[]>): Record<string, string[]> {
+  const result: Record<string, string[]> = {};
+  const textBlock = examples.map((e) => e.text).join(" ");
+
+  // Build a set of words present in the batch (split on non-letter boundaries).
+  // Using a Set of lowercased tokens gives O(1) lookup instead of substring scan,
+  // and avoids false matches like "Ei" matching inside "bei", "sein", "Arbeit".
+  const wordSet = new Set<string>(
+    textBlock.toLowerCase().split(/[^a-zäöüß]+/i).filter(Boolean),
+  );
+
+  for (const [key, glosses] of disambigDict) {
+    const lemma = key.split("|")[0];
+    // Skip very short lemmas (≤2 chars) — too many false positives
+    if (lemma.length <= 2) continue;
+    // Whole-word match only
+    if (wordSet.has(lemma.toLowerCase())) {
+      // Truncate long glosses to save tokens
+      result[key] = glosses.map((g) =>
+        g.length > 80 ? g.slice(0, 80) + "..." : g,
+      );
+    }
+  }
+
+  return result;
+}
+
+// ============================================================
+// System prompt and user prompt
+// ============================================================
+
+const SYSTEM_PROMPT: string = EXAMPLES_SYSTEM_PROMPT;
+
+function buildUserPrompt(batch: UntranslatedItem[], disambig: Record<string, string[]>): string {
+  const lines: string[] = [];
+
+  lines.push(`Translate ${batch.length} German sentence(s) to English:\n`);
+
+  for (const { id, text, type, note, gloss_en } of batch) {
+    let line = `[${id}] ${stripReferences(text)}`;
+    if (type)     line += `  (type: ${type})`;
+    if (note)     line += `  (note: ${note})`;
+    if (gloss_en) line += `  (gloss_en: ${gloss_en})`;
+    lines.push(line);
+  }
+
+  const disambigEntries = Object.entries(disambig);
+  if (disambigEntries.length > 0) {
+    lines.push("\nDisambiguation hints (use for gloss_hint field):");
+    for (const [key, glosses] of disambigEntries) {
+      lines.push(`  ${key}: ${glosses.join(" | ")}`);
+    }
+  }
+
+  if (NO_ANNOTATIONS) {
+    lines.push('\nReply with: {"examples": [{"id":"...","translation":"..."}, ...]}');
+  } else {
+    lines.push('\nReply with: {"examples": [{"id":"...","translation":"...","annotations":[...]}, ...]}');
+  }
+
+  return lines.join("\n");
+}
+
+// ============================================================
+// JSON schema for structured output
+// ============================================================
+
+// Wraps the array in { "examples": [...] } because JSON Schema requires an object root.
+// parseResponse already handles both bare arrays and { examples: [...] } wrappers.
+const EXAMPLE_SCHEMA_NO_ANNOTATIONS: Record<string, unknown> = {
+  type: "object",
+  properties: {
+    examples: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          id:          { type: "string" },
+          translation: { type: "string" },
+        },
+        required: ["id", "translation"],
+        additionalProperties: false,
+      },
+    },
+  },
+  required: ["examples"],
+  additionalProperties: false,
+};
+
+const EXAMPLE_SCHEMA: Record<string, unknown> = {
+  type: "object",
+  properties: {
+    examples: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          id:          { type: "string" },
+          translation: { type: "string" },
+          annotations: {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                form:       { type: "string" },
+                lemma:      { type: "string" },
+                pos:        { type: "string" },
+                gloss_hint: { type: ["string", "null"] },
+              },
+              required: ["form", "lemma", "pos", "gloss_hint"],
+              additionalProperties: false,
+            },
+          },
+        },
+        required: ["id", "translation", "annotations"],
+        additionalProperties: false,
+      },
+    },
+  },
+  required: ["examples"],
+  additionalProperties: false,
+};
+
+// Local-safe variant: no union types (LM Studio rejects type arrays).
+// gloss_hint uses type "string"; empty string is normalised to null in parseResponse.
+const EXAMPLE_SCHEMA_LOCAL: Record<string, unknown> = {
+  type: "object",
+  properties: {
+    examples: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          id:          { type: "string" },
+          translation: { type: "string" },
+          annotations: {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                form:       { type: "string" },
+                lemma:      { type: "string" },
+                pos:        { type: "string" },
+                gloss_hint: { type: "string" },
+              },
+              required: ["form", "lemma", "pos", "gloss_hint"],
+              additionalProperties: false,
+            },
+          },
+        },
+        required: ["id", "translation", "annotations"],
+        additionalProperties: false,
+      },
+    },
+  },
+  required: ["examples"],
+  additionalProperties: false,
+};
+
+// ============================================================
+// Parse and validate LLM response
+// ============================================================
+
+function parseResponse(content: string): ParsedExampleResult[] {
+  let parsed: unknown = extractJSON(content);
+
+  // Local models sometimes wrap the array in {"examples": [...]}
+  if (parsed && !Array.isArray(parsed) && Array.isArray((parsed as Record<string, unknown>).examples)) {
+    parsed = (parsed as Record<string, unknown>).examples;
+  }
+
+  if (!Array.isArray(parsed)) {
+    throw new Error("Response is not an array");
+  }
+
+  for (const item of parsed as Record<string, unknown>[]) {
+    if (!item.id || typeof item.translation !== "string") {
+      throw new Error(`Invalid item: missing id or translation`);
+    }
+    // Annotations are best-effort — allow missing
+    if (!item.annotations) item.annotations = [];
+    // Validate annotation shape; normalise empty gloss_hint → null
+    item.annotations = (item.annotations as Record<string, unknown>[])
+      .filter((a) => a.form && a.lemma && a.pos)
+      .map((a) => ({ ...a, gloss_hint: a.gloss_hint || null }));
+  }
+
+  return parsed as ParsedExampleResult[];
+}
+
+// ============================================================
+// Error logging
+// ============================================================
+
+const ERROR_LOG = join(ROOT, "data", "raw", "translation-errors.log");
+
+function logError(batchNum: number, totalBatches: number, err: Error, rawResponse: string | null, userPrompt: string): void {
+  const rawDir = join(ROOT, "data", "raw");
+  if (!existsSync(rawDir)) mkdirSync(rawDir, { recursive: true });
+  const sep = "=".repeat(80);
+  const entry = [
+    `\n${sep}`,
+    `[${new Date().toISOString()}] Batch ${batchNum}/${totalBatches}`,
+    `ERROR: ${err.message}`,
+    `--- USER PROMPT ---`,
+    userPrompt,
+    `--- RAW RESPONSE ---`,
+    rawResponse ?? "(no response captured)",
+    sep,
+  ].join("\n");
+  appendFileSync(ERROR_LOG, entry + "\n");
+}
+
+// ============================================================
+// Main
+// ============================================================
+
+async function main(): Promise<void> {
+  // Check API key
+  if (!isLocalProvider(PROVIDER) && !DRY_RUN) {
+    const apiKey = getApiKey(PROVIDER);
+    if (!apiKey) {
+      const keyName = PROVIDER === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
+      console.log(
+        `No ${keyName} found. Skipping translation step. Set the env var to enable.`,
+      );
+      process.exit(0);
+    }
+  }
+
+  // Load examples
+  if (!existsSync(EXAMPLES_DIR)) {
+    console.error("No examples found. Run transform first.");
+    process.exit(1);
+  }
+
+  const examples: ExampleMap = loadExamples();
+  const total = Object.keys(examples).length;
+
+  // Filter to untranslated
+  const alreadyDone = Object.values(examples).filter((ex: Example) => ex.translation).length;
+  let untranslated: UntranslatedItem[] = Object.entries(examples)
+    .filter(([, ex]) => !ex.translation)
+    .map(([id, ex]) => {
+      const isIdiom = ex.type === "expression" || ex.type === "proverb";
+      return {
+        id,
+        text: ex.text,
+        type: ex.type || null,
+        note: (ex as unknown as Record<string, unknown>).note as string | null || null,
+        gloss_en: isIdiom ? loadGlossEn(ex.ref) : null,
+        lemmas: ex.lemmas || [],
+      };
+    });
+
+  // Frequency filter: keep examples where at least one lemma has freq ≤ FREQ_LIMIT
+  // or is in the whitelist. Lemmas not found in word files are kept (safe default).
+  if (FREQ_LIMIT) {
+    const wordFreqMap = buildWordFreqMap();
+    const before = untranslated.length;
+    untranslated = untranslated.filter((item) => {
+      if (!item.lemmas.length) return true;
+      return item.lemmas.some((l) => {
+        const info = wordFreqMap.get(l);
+        if (!info) return true; // unknown word — keep
+        if (info.whitelisted) return true;
+        if (info.frequency !== null && info.frequency <= FREQ_LIMIT!) return true;
+        return false;
+      });
+    });
+    console.log(`Freq filter (≤${FREQ_LIMIT} + whitelist): ${before} → ${untranslated.length} examples selected.`);
+  }
+
+  // Cap examples per word: count already-translated examples per lemma, then
+  // greedily include untranslated examples that still have budget for any lemma.
+  if (MAX_PER_WORD) {
+    const budget = new Map<string, number>(); // lemma → remaining slots
+    for (const [, ex] of Object.entries(examples)) {
+      if (!ex.translation) continue;
+      for (const lemma of ex.lemmas || []) {
+        budget.set(lemma, (budget.get(lemma) ?? MAX_PER_WORD) - 1);
+      }
+    }
+    const filtered: UntranslatedItem[] = [];
+    for (const item of untranslated) {
+      const hasSlot = item.lemmas.length === 0 ||
+        item.lemmas.some((l) => (budget.get(l) ?? MAX_PER_WORD) > 0);
+      if (hasSlot) {
+        filtered.push(item);
+        for (const l of item.lemmas) {
+          budget.set(l, (budget.get(l) ?? MAX_PER_WORD) - 1);
+        }
+      }
+    }
+    console.log(`Per-word cap (${MAX_PER_WORD}): ${untranslated.length} → ${filtered.length} examples selected.`);
+    untranslated = filtered;
+  }
+
+  if (untranslated.length === 0) {
+    console.log(`All ${total} examples already translated. Nothing to do.`);
+    return;
+  }
+
+  if (LIMIT) {
+    untranslated = untranslated.slice(0, LIMIT);
+    console.log(`Limit: processing first ${LIMIT} untranslated examples.`);
+  }
+
+  console.log(
+    `Translating examples... (${total} total, ${alreadyDone} already done, ${untranslated.length} remaining${LIMIT ? ` (capped at ${LIMIT})` : ""})`,
+  );
+  console.log(`Provider: ${PROVIDER}, batch size: ${BATCH_SIZE}, concurrency: ${CONCURRENCY}${!USE_DISAMBIG ? " (disambiguation disabled — use without --no-disambig to enable)" : ""}`);
+
+  // Build disambiguation dict (skipped for local providers to save context)
+  const disambigDict = USE_DISAMBIG ? buildDisambiguationDict() : new Map<string, string[]>();
+
+  // Split by type: expressions/proverbs → gpt-4.1; everything else → default model
+  const idiomItems   = untranslated.filter((i) => i.type === "expression" || i.type === "proverb");
+  const regularItems = untranslated.filter((i) => i.type !== "expression" && i.type !== "proverb");
+
+  if (DRY_RUN) {
+    const allBatches: UntranslatedItem[][] = [];
+    for (let i = 0; i < untranslated.length; i += BATCH_SIZE) allBatches.push(untranslated.slice(i, i + BATCH_SIZE));
+    console.log(`\nDry run: would send ${allBatches.length} batches (${idiomItems.length} idioms via ${IDIOM_MODEL_LABEL}, ${regularItems.length} regular via ${MODEL_LABEL}).`);
+    if (allBatches.length > 0) {
+      const sampleDisambig = getRelevantDisambiguation(allBatches[0], disambigDict);
+      const samplePrompt = buildUserPrompt(allBatches[0], sampleDisambig);
+      console.log("\nSample batch 1 prompt:");
+      console.log(samplePrompt);
+      const approxTokens = Math.ceil((SYSTEM_PROMPT.length + samplePrompt.length) / 4);
+      console.log(`\nDisambiguation entries for batch 1: ${Object.keys(sampleDisambig).length}`);
+      console.log(`Approx prompt size: ~${approxTokens} tokens (system + user, rough estimate)`);
+    }
+    return;
+  }
+
+  let translated = 0;
+  let totalInputTokens = 0;
+  let totalOutputTokens = 0;
+  let errors = 0;
+
+  interface BatchLLMOptions {
+    provider: LLMProvider;
+    model: string | undefined;
+    maxTokens: number;
+    temperature: number;
+    jsonSchema: Record<string, unknown>;
+  }
+
+  async function processBatches(items: UntranslatedItem[], llmOptions: BatchLLMOptions, modelLabel: string, label: string): Promise<void> {
+    if (items.length === 0) return;
+    const batches: UntranslatedItem[][] = [];
+    for (let i = 0; i < items.length; i += BATCH_SIZE) batches.push(items.slice(i, i + BATCH_SIZE));
+    console.log(`\n${label}: ${items.length} items, ${batches.length} batches (${modelLabel})`);
+
+    let batchesDone = 0;
+    let consecutiveErrors = 0;
+    let stopped = false;
+
+    function flushExamples(): void {
+      saveExamples(examples);
+    }
+
+    await runPool(batches, CONCURRENCY, async (batch, i) => {
+      if (stopped) return;
+      const disambig = getRelevantDisambiguation(batch, disambigDict);
+      const userPrompt = buildUserPrompt(batch, disambig);
+      let rawResponse: string | null = null;
+
+      try {
+        const startTime = Date.now();
+        const response: LLMResponse = await retryWithBackoff(
+          () => callLLM(SYSTEM_PROMPT, userPrompt, llmOptions),
+          3, 4000,
+        );
+        const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+
+        rawResponse = response.content;
+        totalInputTokens += response.input_tokens;
+        totalOutputTokens += response.output_tokens;
+
+        const results = parseResponse(response.content);
+
+        for (const result of results) {
+          if (examples[result.id]) {
+            const ex = examples[result.id];
+            ex.translation = result.translation;
+            ex.translation_model = modelLabel;
+            // New translation invalidates the human-verified flag
+            if (ex._proofread) {
+              delete ex._proofread.translation;
+              if (Object.keys(ex._proofread).length === 0) delete ex._proofread;
+            }
+            const exType = ex.type;
+            if (NO_ANNOTATIONS || exType === "expression" || exType === "proverb") {
+              delete ex.annotations;
+            } else {
+              ex.annotations = result.annotations;
+              // New annotations invalidate the annotation-verified flag
+              if (ex._proofread) {
+                delete ex._proofread.annotations;
+                if (Object.keys(ex._proofread).length === 0) delete ex._proofread;
+              }
+            }
+          }
+        }
+
+        translated += results.length;
+        consecutiveErrors = 0;
+        batchesDone++;
+        process.stdout.write(`  Batch ${i + 1}/${batches.length}: translated ${results.length} [${elapsed}s]\n`);
+
+        // Write every 5 completed batches for crash safety (reduced from every batch
+        // to avoid excessive I/O overhead under concurrency).
+        if (batchesDone % 5 === 0) flushExamples();
+      } catch (err) {
+        consecutiveErrors++;
+        errors += batch.length;
+        console.error(`  Batch ${i + 1}/${batches.length}: FAILED after retries: ${(err as Error).message}`);
+        logError(i + 1, batches.length, err as Error, rawResponse, userPrompt);
+        console.error(`  Full response logged to: ${ERROR_LOG}`);
+
+        if (consecutiveErrors >= MAX_CONSECUTIVE_ERRORS) {
+          console.error(`\n${consecutiveErrors} consecutive failures — stopping early.`);
+          console.error(`Check ${ERROR_LOG} for raw responses.`);
+          stopped = true;
+        }
+      }
+    });
+
+    // Final write to capture any remaining batches
+    flushExamples();
+  }
+
+  const schema = NO_ANNOTATIONS
+    ? EXAMPLE_SCHEMA_NO_ANNOTATIONS
+    : isLocalProvider(PROVIDER) ? EXAMPLE_SCHEMA_LOCAL : EXAMPLE_SCHEMA;
+  const idiomLlmOptions: BatchLLMOptions   = { provider: IDIOM_PROVIDER, model: IDIOM_MODEL,                 maxTokens: 4096, temperature: 0.3, jsonSchema: schema };
+  const regularLlmOptions: BatchLLMOptions = { provider: PROVIDER,       model: MODEL ?? undefined, maxTokens: 8192, temperature: 0.3, jsonSchema: schema };
+
+  await processBatches(idiomItems,   idiomLlmOptions,   IDIOM_MODEL_LABEL, "Idioms/expressions");
+  await processBatches(regularItems, regularLlmOptions, MODEL_LABEL,       "Regular examples");
+
+  // Cost estimate
+  if (!isLocalProvider(PROVIDER)) {
+    // Both models are OpenAI — use gpt-4o-mini pricing as approximation
+    const costEstimate = (totalInputTokens * 0.15) / 1_000_000 + (totalOutputTokens * 0.6) / 1_000_000;
+    console.log(`\nDone. Translated ${translated} examples.${errors > 0 ? ` ${errors} failed.` : ""}`);
+    console.log(`Tokens: ${totalInputTokens} input + ${totalOutputTokens} output. Estimated cost: $${costEstimate.toFixed(3)}`);
+  } else {
+    console.log(`\nDone. Translated ${translated} examples.${errors > 0 ? ` ${errors} failed.` : ""}`);
+  }
+
+}
+
+main().catch((err: unknown) => {
+  console.error("Translation failed:", err);
+  process.exit(1);
+});

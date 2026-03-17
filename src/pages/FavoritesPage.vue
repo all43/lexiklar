@@ -13,7 +13,7 @@
           :key="item.file"
           swipeout
           :title="item.pluralDominant ? item.pluralForm : item.lemma"
-          :subtitle="item.glossEn[0] || ''"
+          :subtitle="item.glossEn?.[0] ?? ''"
           :link="`/word/${item.file}/`"
           @swipeout:deleted="removeFavorite(item.file)"
         >
@@ -35,17 +35,19 @@
   </f7-page>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import { getRelatedWords } from "../utils/db.js";
 import { t } from "../js/i18n.js";
 import { getCached, setItem } from "../utils/storage.js";
+import type { SearchResult } from "../../types/search.js";
 
 const FAVORITES_KEY = "lexiklar_favorites";
 
-export default {
+export default defineComponent({
   data() {
     return {
-      words: [],
+      words: [] as SearchResult[],
       loading: true,
     };
   },
@@ -59,25 +61,24 @@ export default {
     async loadFavorites() {
       this.loading = true;
       try {
-        const fileKeys = JSON.parse(getCached(FAVORITES_KEY) || "[]");
+        const fileKeys: string[] = JSON.parse(getCached(FAVORITES_KEY) || "[]");
         if (!fileKeys.length) {
           this.words = [];
           this.loading = false;
           return;
         }
         const results = await getRelatedWords(fileKeys);
-        // Preserve the user's saved order
         const infoMap = new Map(results.map((w) => [w.file, w]));
-        this.words = fileKeys.map((f) => infoMap.get(f)).filter(Boolean);
+        this.words = fileKeys.map((f) => infoMap.get(f)).filter((w): w is SearchResult => !!w);
       } catch {
         this.words = [];
       }
       this.loading = false;
     },
 
-    removeFavorite(file) {
+    removeFavorite(file: string) {
       try {
-        const favs = JSON.parse(getCached(FAVORITES_KEY) || "[]");
+        const favs: string[] = JSON.parse(getCached(FAVORITES_KEY) || "[]");
         setItem(FAVORITES_KEY, JSON.stringify(favs.filter((f) => f !== file)));
         this.words = this.words.filter((w) => w.file !== file);
       } catch {
@@ -85,12 +86,12 @@ export default {
       }
     },
 
-    genderColor(gender) {
+    genderColor(gender: string): string {
       if (gender === "M") return "blue";
       if (gender === "F") return "pink";
       if (gender === "N") return "green";
       return "";
     },
   },
-};
+});
 </script>

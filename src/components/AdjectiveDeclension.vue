@@ -48,26 +48,32 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, type PropType } from "vue";
 import { t } from "../js/i18n.js";
 import adjEndings from "../../data/rules/adj-endings.json";
+import type { AdjectiveWord, AdjEndingsTable } from "../../types/word.js";
 
-const GENDERS = ["masc", "fem", "neut", "plural"];
+type DeclType = "strong" | "weak" | "mixed";
+
+const typedEndings = adjEndings as AdjEndingsTable;
+
+const GENDERS = ["masc", "fem", "neut", "plural"] as const;
 
 const CASES = [
-  { key: "nom", label: "Nom." },
-  { key: "acc", label: "Akk." },
-  { key: "dat", label: "Dat." },
-  { key: "gen", label: "Gen." },
+  { key: "nom" as const, label: "Nom." },
+  { key: "acc" as const, label: "Akk." },
+  { key: "dat" as const, label: "Dat." },
+  { key: "gen" as const, label: "Gen." },
 ];
 
-export default {
+export default defineComponent({
   props: {
-    word: { type: Object, required: true },
+    word: { type: Object as PropType<AdjectiveWord>, required: true },
   },
   data() {
     return {
-      activeTab: "strong",
+      activeTab: "strong" as DeclType,
     };
   },
   computed: {
@@ -76,18 +82,17 @@ export default {
     genders() { return GENDERS; },
   },
   methods: {
-    getForm(type, gender, caseKey) {
+    getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" | "acc" | "dat" | "gen"): string {
       if (this.word.declension_regular) {
         const stem = this.word.declension_stem || this.word.word;
-        const ending = adjEndings[type]?.[gender]?.[caseKey] ?? "";
+        const ending = typedEndings[type]?.[gender]?.[caseKey] ?? "";
         return stem + ending;
       } else {
-        // Irregular — read from stored declension table
-        return this.word.declension?.[type]?.[gender]?.[caseKey] || "—";
+        return this.word.declension?.[type]?.[gender]?.[caseKey] || "\u2014";
       }
     },
   },
-};
+});
 </script>
 
 <style scoped>
