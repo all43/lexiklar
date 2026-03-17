@@ -49,8 +49,24 @@
       {{ t('settings.clearFooter') }}
     </f7-block-footer>
 
+    <f7-block-title>{{ t('settings.dataSources') }}</f7-block-title>
+    <f7-list inset strong-ios outline-ios>
+      <f7-list-item title="German Wiktionary" after="CC BY-SA 4.0" />
+      <f7-list-item title="Leipzig Corpora" after="CC BY 4.0" />
+      <f7-list-item title="SUBTLEX-DE" after="CC BY 4.0" />
+      <f7-list-item title="OpenSubtitles" after="CC BY 4.0" />
+    </f7-list>
+    <f7-block-footer class="padding-horizontal">
+      {{ t('settings.dataSourcesFooter') }}
+    </f7-block-footer>
+
     <f7-block-title>{{ t('settings.about') }}</f7-block-title>
     <f7-list inset strong-ios outline-ios>
+      <f7-list-item>
+        <template #title>
+          <f7-link external href="privacy.html" target="_blank">{{ t('settings.privacyPolicy') }}</f7-link>
+        </template>
+      </f7-list-item>
       <f7-list-item
         :title="t('settings.dictionaryVersion')"
         :after="dbVersionDisplay"

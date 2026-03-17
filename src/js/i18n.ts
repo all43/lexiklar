@@ -92,6 +92,12 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "settings.showArticles": "Show articles in search",
     "settings.showArticlesFooter": "Displays der/die/das before nouns in search results and history.",
 
+    // Data Sources / Attribution
+    "settings.dataSources": "Data Sources",
+    "settings.dataSourcesFooter": "Dictionary content \u00A9 Wiktionary contributors, CC\u00A0BY-SA\u00A04.0. Frequency data: Leipzig Corpora, SUBTLEX-DE (Brysbaert et al. 2011), OpenSubtitles.",
+
+    "settings.privacyPolicy": "Privacy Policy",
+
     // About & Updates
     "settings.about": "About",
     "settings.dictionaryVersion": "Dictionary version",
@@ -208,6 +214,12 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "settings.langGerman": "Deutsch",
     "settings.showArticles": "Artikel in der Suche anzeigen",
     "settings.showArticlesFooter": "Zeigt der/die/das vor Nomen in Suchergebnissen und Verlauf.",
+
+    // Data Sources / Attribution
+    "settings.dataSources": "Datenquellen",
+    "settings.dataSourcesFooter": "W\u00F6rterbuchinhalt \u00A9 Wiktionary-Autoren, CC\u00A0BY-SA\u00A04.0. Frequenzdaten: Leipzig-Korpora, SUBTLEX-DE (Brysbaert et al. 2011), OpenSubtitles.",
+
+    "settings.privacyPolicy": "Datenschutzerkl\u00E4rung",
 
     // About & Updates
     "settings.about": "Info",

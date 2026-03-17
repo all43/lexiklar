@@ -72,14 +72,14 @@ Lexiklar = *Lexikon* (lexicon) + *klar* (clear). The differentiator from existin
 
 ```
 Kaikki JSONL dump (2.8 GB)
-        ↓  transform.js        parse grammar, filter B2 vocab → per-word JSON files
-        ↓  enrich-frequency.js  compute Zipf scores from 4 corpora
-        ↓  translate-glosses.js LLM: German gloss → short + full English gloss
-        ↓  translate-examples.js LLM: example translations + word annotations
-        ↓  build-index.js       SQLite index (lemmas, forms, frequency ranks, JSON blobs)
+        ↓  transform.ts         parse grammar, filter B2 vocab → per-word JSON files
+        ↓  enrich-frequency.ts  compute Zipf scores from 4 corpora
+        ↓  translate-glosses.ts LLM: German gloss → short + full English gloss
+        ↓  translate-examples.ts LLM: example translations + word annotations
+        ↓  build-index.ts       SQLite index (lemmas, forms, frequency ranks, JSON blobs)
 ```
 
-All scripts are standalone Node.js ESM modules. The pipeline is crash-safe and incremental — unchanged entries are skipped via SHA-256 content hashing.
+All scripts are standalone TypeScript modules run via `npx tsx`. The pipeline is crash-safe and incremental — unchanged entries are skipped via SHA-256 content hashing.
 
 ### Linguistic data model
 
@@ -189,27 +189,29 @@ npx cap open ios     # opens Xcode
 /
 ├── src/                    Vue app
 │   ├── utils/
-│   │   ├── db.js           SQLite WASM loader + Cache API caching
-│   │   └── storage.js      @capacitor/preferences wrapper with sync cache
+│   │   ├── db.ts           SQLite WASM loader + Cache API caching
+│   │   └── storage.ts      @capacitor/preferences wrapper with sync cache
 │   └── js/
-│       ├── i18n.js         UI localisation
-│       └── theme.js        Theme utilities
+│       ├── i18n.ts         UI localisation (EN + DE)
+│       └── theme.ts        Theme utilities
 ├── scripts/
 │   ├── lib/
-│   │   ├── llm.js          LLM abstraction (OpenAI / Anthropic / local)
-│   │   └── pos.js          POS config (dirs, labels)
-│   ├── transform.js
-│   ├── enrich-frequency.js
-│   ├── translate-glosses.js
-│   ├── translate-examples.js
-│   └── build-index.js
+│   │   ├── llm.ts          LLM abstraction (OpenAI / Anthropic / local)
+│   │   └── pos.ts          POS config (dirs, labels)
+│   ├── transform.ts
+│   ├── enrich-frequency.ts
+│   ├── translate-glosses.ts
+│   ├── translate-examples.ts
+│   └── build-index.ts
 ├── data/
 │   ├── words/              Per-word JSON files (nouns / verbs / adjectives / …)
-│   ├── examples.json       Shared example sentences
+│   ├── examples/           Shared example sentences (256 shards: 00.json … ff.json)
 │   └── rules/              adj-endings.json · noun-gender.json · verb-endings.json
 ├── config/
 │   ├── seed-words.json     ~20 curated words for fast dev iteration
-│   └── word-whitelist.json ~416 force-included words (civic, transport, A1–B2 gaps)
+│   └── word-whitelist.json ~430+ force-included words (civic, transport, A1–B2 gaps)
+├── public/
+│   └── privacy.html        Privacy policy (served with app build)
 └── capacitor.config.json
 ```
 
@@ -217,5 +219,11 @@ npx cap open ios     # opens Xcode
 
 ## License
 
-Data: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/) (German Wiktionary via Kaikki.org)
-Code: MIT
+**Code**: MIT — see [LICENSE](LICENSE)
+
+**Dictionary data**: derived from German Wiktionary (via Kaikki.org), licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+**Frequency data**:
+- Leipzig Corpora (Uni Leipzig Wortschatz) — CC BY 4.0
+- SUBTLEX-DE (Brysbaert et al. 2011) — CC BY 4.0
+- OpenSubtitles frequency list (hermitdave) — CC BY 4.0
