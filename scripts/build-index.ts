@@ -236,15 +236,18 @@ function resolveWordFile(
 
   if (glossHint) {
     const hintLower = glossHint.toLowerCase();
-    // Crude English stem: strip common inflectional suffixes for fuzzy matching
+    // Crude English stem: strip common inflectional suffixes for fuzzy matching.
+    // Only strip suffixes that leave a stem of at least 4 chars to avoid
+    // false positives ("time"→"tim" matching "moment", "free"→"fre" matching "freelance").
     const hintStem = hintLower
       .replace(/ies$/, "y")       // "families" → "family"
       .replace(/ied$/, "y")       // "carried" → "carry"
       .replace(/ying$/, "y")      // not common but safe
       .replace(/ing$/, "")        // "running" → "runn" (close enough for substring)
       .replace(/ed$/, "")         // "voted" → "vot"
-      .replace(/(?:es|en|s|e)$/, ""); // plurals: "consequences" → "consequenc"
-    const useStem = hintStem.length >= 3 && hintStem !== hintLower;
+      .replace(/(?:es|en|s)$/, ""); // plurals: "consequences" → "consequenc"
+    // Note: single -e is NOT stripped — too aggressive for short words (time→tim, base→bas)
+    const useStem = hintStem.length >= 4 && hintStem !== hintLower;
 
     // Try German gloss first, then gloss_en fallback (LLMs often produce English hints).
     // Each pass: exact substring → stem fallback.
