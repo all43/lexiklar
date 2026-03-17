@@ -236,9 +236,20 @@ function resolveWordFile(
 
   if (glossHint) {
     const hintLower = glossHint.toLowerCase();
+    // Crude English stem: strip common inflectional suffixes for fuzzy matching
+    const hintStem = hintLower
+      .replace(/ies$/, "y")       // "families" → "family"
+      .replace(/ied$/, "y")       // "carried" → "carry"
+      .replace(/ying$/, "y")      // not common but safe
+      .replace(/ing$/, "")        // "running" → "runn" (close enough for substring)
+      .replace(/ed$/, "")         // "voted" → "vot"
+      .replace(/(?:es|en|s|e)$/, ""); // plurals: "consequences" → "consequenc"
+    const useStem = hintStem.length >= 3 && hintStem !== hintLower;
 
-    // Try German gloss first, then gloss_en fallback (LLMs often produce English hints)
+    // Try German gloss first, then gloss_en fallback (LLMs often produce English hints).
+    // Each pass: exact substring → stem fallback.
     for (const pass of ["gloss", "gloss_en"] as const) {
+      // Exact substring match
       for (const candidate of entries) {
         for (let i = 0; i < candidate.senses.length; i++) {
           const gloss = candidate.senses[i][pass];
@@ -251,6 +262,48 @@ function resolveWordFile(
         if (senseNumber) break;
       }
       if (senseNumber) break;
+
+      // Stem fallback: "consequences" matches "consequence", "voted" matches "vote"
+      if (useStem) {
+        for (const candidate of entries) {
+          for (let i = 0; i < candidate.senses.length; i++) {
+            const gloss = candidate.senses[i][pass];
+            if (gloss && gloss.toLowerCase().includes(hintStem)) {
+              entry = candidate;
+              senseNumber = i + 1;
+              break;
+            }
+          }
+          if (senseNumber) break;
+        }
+        if (senseNumber) break;
+      }
+    }
+
+    // Word-level fallback: check if any word in the hint appears in any gloss.
+    // Only used for homonym file resolution — no sense number assigned (too imprecise).
+    if (!senseNumber && entries.length > 1) {
+      const hintWords = hintLower.split(/\s+/).filter(w => w.length >= 3);
+      if (hintWords.length > 0) {
+        let wordMatch: WordLookupEntry | null = null;
+        for (const pass of ["gloss", "gloss_en"] as const) {
+          for (const candidate of entries) {
+            for (const sense of candidate.senses) {
+              const gloss = sense[pass];
+              if (!gloss) continue;
+              const glossLower = gloss.toLowerCase();
+              if (hintWords.some(w => glossLower.includes(w))) {
+                wordMatch = candidate;
+                break;
+              }
+            }
+            if (wordMatch) break;
+          }
+          if (wordMatch) break;
+        }
+        if (wordMatch) entry = wordMatch;
+        // No senseNumber — word-level match is too imprecise for sense disambiguation
+      }
     }
   }
 
@@ -767,6 +820,12 @@ function main(): void {
 
       if (!ex.annotations || ex.annotations.length === 0) {
         delete ex.text_linked;
+        continue;
+      }
+
+      // Skip recomputation for proofread examples — their text_linked was verified
+      if (ex._proofread?.annotations && ex.text_linked) {
+        linkedCount++;
         continue;
       }
 
