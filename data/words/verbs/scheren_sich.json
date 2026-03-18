@@ -6,6 +6,55 @@
   "separable": false,
   "prefix": null,
   "reflexive": "optional",
+  "senses": [
+    {
+      "gloss": "sich (schnellstens) an einen bestimmten Ort begeben",
+      "gloss_en": "rush",
+      "tags": [
+        "auxiliary",
+        "reflexive"
+      ],
+      "example_ids": [
+        "940c80f9bb",
+        "8c05f657f4",
+        "14ed0e11ca"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To go (quickly) to a particular place",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "die Fahrspur seitlich verlassen, wenn Wasser schräg anströmt",
+      "gloss_en": "yaw",
+      "tags": [
+        "auxiliary verb"
+      ],
+      "example_ids": [],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To leave one's lane laterally when water flows at an angle against the vessel",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "ein- oder ausscheren",
+      "gloss_en": null,
+      "tags": [
+        "auxiliary"
+      ],
+      "example_ids": [],
+      "synonyms": [],
+      "antonyms": []
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[ˈʃeːʁən]",
+      "tags": []
+    }
+  ],
   "conjugation_class": "irregular",
   "conjugation": {
     "present": {
@@ -49,56 +98,6 @@
     "participle2": "geschert"
   },
   "past_participle": "geschert",
-  "senses": [
-    {
-      "gloss": "sich (schnellstens) an einen bestimmten Ort begeben",
-      "gloss_en": "rush",
-      "tags": [
-        "auxiliary",
-        "reflexive"
-      ],
-      "example_ids": [
-        "940c80f9bb",
-        "8c05f657f4",
-        "14ed0e11ca"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To go (quickly) to a particular place",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "die Fahrspur seitlich verlassen, wenn Wasser schräg anströmt",
-      "gloss_en": "yaw",
-      "tags": [
-        "auxiliary verb"
-      ],
-      "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To leave one's lane laterally when water flows at an angle against the vessel",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "ein- oder ausscheren",
-      "gloss_en": "swerve",
-      "tags": [
-        "auxiliary"
-      ],
-      "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ˈʃeːʁən]",
-      "tags": []
-    }
-  ],
   "_hyponyms": [
     "ausscheren",
     "einscheren",
@@ -112,7 +111,7 @@
   ],
   "_meta": {
     "source_hash": "2e22ae3db9366869",
-    "generated_at": "2026-03-16"
+    "generated_at": "2026-03-18"
   },
   "zipf": 3.2
 }

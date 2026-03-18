@@ -6,6 +6,43 @@
   "separable": true,
   "prefix": "dabei",
   "reflexive": "none",
+  "senses": [
+    {
+      "gloss": "an etwas teilnehmen oder mitmachen",
+      "gloss_en": "be there",
+      "tags": [],
+      "example_ids": [
+        "190d24adae",
+        "c3afe49423"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To participate in or take part in something",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "gerade mit etwas Bestimmtem beschäftigt sein",
+      "gloss_en": "be busy",
+      "tags": [],
+      "example_ids": [
+        "9b0c38bf92",
+        "b58d0c7be7",
+        "6d0b14887e"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To be occupied with or engaged in something specific at the moment",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[daˈbaɪ̯ˈzaɪ̯n]",
+      "tags": []
+    }
+  ],
   "conjugation_class": "irregular",
   "conjugation": {
     "present": {
@@ -49,43 +86,6 @@
     "participle2": "dabei gewesen"
   },
   "past_participle": "dabei gewesen",
-  "senses": [
-    {
-      "gloss": "an etwas teilnehmen oder mitmachen",
-      "gloss_en": "be there",
-      "tags": [],
-      "example_ids": [
-        "190d24adae",
-        "c3afe49423"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To participate in or take part in something",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "gerade mit etwas Bestimmtem beschäftigt sein",
-      "gloss_en": "be busy",
-      "tags": [],
-      "example_ids": [
-        "9b0c38bf92",
-        "b58d0c7be7",
-        "6d0b14887e"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To be occupied with or engaged in something specific at the moment",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[daˈbaɪ̯ˈzaɪ̯n]",
-      "tags": []
-    }
-  ],
   "expression_ids": [
     "3594db277b"
   ],
@@ -114,7 +114,7 @@
   ],
   "_meta": {
     "source_hash": "dff3d6ced033ea19",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-18"
   },
   "zipf": 2.94
 }

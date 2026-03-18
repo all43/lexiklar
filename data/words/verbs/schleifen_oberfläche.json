@@ -6,6 +6,48 @@
   "separable": false,
   "prefix": null,
   "reflexive": "none",
+  "senses": [
+    {
+      "gloss": "die Oberfläche eines Gegenstandes bearbeiten, zum Beispiel um einen Diamanten in seine Form zu bringen",
+      "gloss_en": "grind",
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "20d25dab53",
+        "205bd6db19",
+        "b8d197b5b5",
+        "43c1b1be6a",
+        "cb95c3cafd"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To work the surface of an object, for example to shape a diamond into its form",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "(eine Klinge) schärfen",
+      "gloss_en": "sharpen",
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "d75aa6dd80"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To sharpen a blade",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[ˈʃlaɪ̯fn̩]",
+      "tags": []
+    }
+  ],
   "conjugation_class": "irregular",
   "conjugation": {
     "present": {
@@ -49,48 +91,6 @@
     "participle2": "geschliffen"
   },
   "past_participle": "geschliffen",
-  "senses": [
-    {
-      "gloss": "die Oberfläche eines Gegenstandes bearbeiten, zum Beispiel um einen Diamanten in seine Form zu bringen",
-      "gloss_en": "grind",
-      "tags": [
-        "transitive"
-      ],
-      "example_ids": [
-        "20d25dab53",
-        "205bd6db19",
-        "b8d197b5b5",
-        "43c1b1be6a",
-        "cb95c3cafd"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To work the surface of an object, for example to shape a diamond into its form",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "(eine Klinge) schärfen",
-      "gloss_en": "sharpen",
-      "tags": [
-        "transitive"
-      ],
-      "example_ids": [
-        "d75aa6dd80"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To sharpen a blade",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ˈʃlaɪ̯fn̩]",
-      "tags": []
-    }
-  ],
   "_derived": [
     "geschliffen",
     "schleifbar",
@@ -135,7 +135,7 @@
   ],
   "_meta": {
     "source_hash": "7164dc547b4f9fe5",
-    "generated_at": "2026-03-14"
+    "generated_at": "2026-03-18"
   },
   "zipf": 3.24
 }

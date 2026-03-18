@@ -6,6 +6,40 @@
   "separable": true,
   "prefix": "weh",
   "reflexive": "none",
+  "senses": [
+    {
+      "gloss": "Schmerzen zufügen",
+      "gloss_en": "hurt",
+      "tags": [],
+      "example_ids": [
+        "957fc1a438"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "To cause pain",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "Schmerzen bereiten, die Ursache von Schmerzen sein",
+      "gloss_en": "cause pain",
+      "tags": [],
+      "example_ids": [
+        "b0de2eb9da"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "To cause pain; to be the source of pain",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[ˈveːˌtuːn]",
+      "tags": []
+    }
+  ],
   "conjugation_class": "irregular",
   "conjugation": {
     "present": {
@@ -49,40 +83,6 @@
     "participle2": "wehgetan"
   },
   "past_participle": "wehgetan",
-  "senses": [
-    {
-      "gloss": "Schmerzen zufügen",
-      "gloss_en": "hurt",
-      "tags": [],
-      "example_ids": [
-        "957fc1a438"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
-      "gloss_en_full": "To cause pain",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "Schmerzen bereiten, die Ursache von Schmerzen sein",
-      "gloss_en": "cause pain",
-      "tags": [],
-      "example_ids": [
-        "b0de2eb9da"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
-      "gloss_en_full": "To cause pain; to be the source of pain",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ˈveːˌtuːn]",
-      "tags": []
-    }
-  ],
   "_antonyms": [
     "guttun"
   ],
@@ -92,7 +92,7 @@
   ],
   "_meta": {
     "source_hash": "2dd79241f10dfb87",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-18"
   },
   "zipf": 3.7
 }

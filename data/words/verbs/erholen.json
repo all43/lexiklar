@@ -6,6 +6,48 @@
   "separable": false,
   "prefix": null,
   "reflexive": "mandatory",
+  "senses": [
+    {
+      "gloss": "sich entspannen",
+      "gloss_en": "relax",
+      "tags": [
+        "reflexive"
+      ],
+      "example_ids": [
+        "2ecbfc20bf",
+        "db83cfed64"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To relax and rest",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "von einem schlechten Zustand zu einem besseren übergehen; wieder gesund werden",
+      "gloss_en": "recover",
+      "tags": [
+        "reflexive"
+      ],
+      "example_ids": [
+        "b471479314",
+        "e693f54321",
+        "8e22d3a315",
+        "0c872fe941"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To recover from a bad condition and return to a better state; to regain one's health",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[ɛɐ̯ˈhoːlən]",
+      "tags": []
+    }
+  ],
   "conjugation_class": "irregular",
   "conjugation": {
     "present": {
@@ -49,48 +91,6 @@
     "participle2": "erholt"
   },
   "past_participle": "erholt",
-  "senses": [
-    {
-      "gloss": "sich entspannen",
-      "gloss_en": "relax",
-      "tags": [
-        "reflexive"
-      ],
-      "example_ids": [
-        "2ecbfc20bf",
-        "db83cfed64"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To relax and rest",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "von einem schlechten Zustand zu einem besseren übergehen; wieder gesund werden",
-      "gloss_en": "recover",
-      "tags": [
-        "reflexive"
-      ],
-      "example_ids": [
-        "b471479314",
-        "e693f54321",
-        "8e22d3a315",
-        "0c872fe941"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To recover from a bad condition and return to a better state; to regain one's health",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ɛɐ̯ˈhoːlən]",
-      "tags": []
-    }
-  ],
   "_derived": [
     "erholt",
     "erholsam",
@@ -106,7 +106,7 @@
   ],
   "_meta": {
     "source_hash": "89ca0557e026759b",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-18"
   },
   "zipf": 3.87
 }

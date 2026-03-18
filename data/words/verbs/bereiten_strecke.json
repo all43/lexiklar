@@ -6,6 +6,44 @@
   "separable": false,
   "prefix": null,
   "reflexive": "none",
+  "senses": [
+    {
+      "gloss": "eine Strecke auf dem Pferd sitzend zurücklegen, um etwas zu besichtigen oder zu kontrollieren",
+      "gloss_en": "ride (horseback)",
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "428004b0fb"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To cover a distance on horseback in order to inspect or check something",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "ein Pferd zureiten",
+      "gloss_en": "ride (horse)",
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "a3ebaea36c"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To break in a horse",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[bəˈʁaɪ̯tn̩]",
+      "tags": []
+    }
+  ],
   "conjugation_class": "irregular",
   "conjugation": {
     "present": {
@@ -49,44 +87,6 @@
     "participle2": "beritten"
   },
   "past_participle": "beritten",
-  "senses": [
-    {
-      "gloss": "eine Strecke auf dem Pferd sitzend zurücklegen, um etwas zu besichtigen oder zu kontrollieren",
-      "gloss_en": "ride (horseback)",
-      "tags": [
-        "transitive"
-      ],
-      "example_ids": [
-        "428004b0fb"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To cover a distance on horseback in order to inspect or check something",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "ein Pferd zureiten",
-      "gloss_en": "ride (horse)",
-      "tags": [
-        "transitive"
-      ],
-      "example_ids": [
-        "a3ebaea36c"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To break in a horse",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[bəˈʁaɪ̯tn̩]",
-      "tags": []
-    }
-  ],
   "_derived": [
     "Bereiten",
     "bereitend",
@@ -109,7 +109,7 @@
   ],
   "_meta": {
     "source_hash": "20021b03ee21418a",
-    "generated_at": "2026-03-14"
+    "generated_at": "2026-03-18"
   },
   "zipf": 4.17
 }

@@ -6,6 +6,36 @@
   "separable": true,
   "prefix": "wieder",
   "reflexive": "none",
+  "senses": [
+    {
+      "gloss": "wieder sein Eigen nennen, zurück bei sich haben; zurückbekommen haben",
+      "gloss_en": "regain",
+      "tags": [
+        "figurative",
+        "transitive"
+      ],
+      "example_ids": [
+        "cf7c5b5522",
+        "a7d9487b04",
+        "2b7070aaf1"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To call something one's own again, to have it back with oneself; to have gotten something back",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[ˈviːdɐˌhaːbn̩]",
+      "tags": []
+    },
+    {
+      "ipa": "[ˈviːdɐˌhaːbm̩]",
+      "tags": []
+    }
+  ],
   "conjugation_class": "irregular",
   "conjugation": {
     "present": {
@@ -49,36 +79,6 @@
     "participle2": "wiedergehabt"
   },
   "past_participle": "wiedergehabt",
-  "senses": [
-    {
-      "gloss": "wieder sein Eigen nennen, zurück bei sich haben; zurückbekommen haben",
-      "gloss_en": "regain",
-      "tags": [
-        "figurative",
-        "transitive"
-      ],
-      "example_ids": [
-        "cf7c5b5522",
-        "a7d9487b04",
-        "2b7070aaf1"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To call something one's own again, to have it back with oneself; to have gotten something back",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ˈviːdɐˌhaːbn̩]",
-      "tags": []
-    },
-    {
-      "ipa": "[ˈviːdɐˌhaːbm̩]",
-      "tags": []
-    }
-  ],
   "_antonyms": [
     "borgen",
     "fortgeben",
@@ -100,7 +100,7 @@
   ],
   "_meta": {
     "source_hash": "fa769ffed062c4ba",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-18"
   },
   "zipf": 3.06
 }

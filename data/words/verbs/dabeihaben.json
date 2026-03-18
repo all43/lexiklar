@@ -6,6 +6,46 @@
   "separable": true,
   "prefix": "dabei",
   "reflexive": "none",
+  "senses": [
+    {
+      "gloss": "mit sich führen, bei sich haben",
+      "gloss_en": "carry",
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "15ea89c908",
+        "a284f92eb7"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To carry with one; to have on one's person",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "an seiner Seite haben, mitmachen/teilnehmen lassen",
+      "gloss_en": "have with (someone)",
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "b2761d8ab6",
+        "227a1ad5ce"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To have at one's side; to include or allow to participate",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[daˈbaɪ̯ˌhaːbn̩]",
+      "tags": []
+    }
+  ],
   "conjugation_class": "irregular",
   "conjugation": {
     "present": {
@@ -49,46 +89,6 @@
     "participle2": "dabeigehabt"
   },
   "past_participle": "dabeigehabt",
-  "senses": [
-    {
-      "gloss": "mit sich führen, bei sich haben",
-      "gloss_en": "carry",
-      "tags": [
-        "transitive"
-      ],
-      "example_ids": [
-        "15ea89c908",
-        "a284f92eb7"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To carry with one; to have on one's person",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "an seiner Seite haben, mitmachen/teilnehmen lassen",
-      "gloss_en": "have with (someone)",
-      "tags": [
-        "transitive"
-      ],
-      "example_ids": [
-        "b2761d8ab6",
-        "227a1ad5ce"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To have at one's side; to include or allow to participate",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[daˈbaɪ̯ˌhaːbn̩]",
-      "tags": []
-    }
-  ],
   "_synonyms": [
     "mithaben",
     "teilnehmen",
@@ -96,7 +96,7 @@
   ],
   "_meta": {
     "source_hash": "ea46ae051f3a41ac",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-18"
   },
   "zipf": 2.84
 }

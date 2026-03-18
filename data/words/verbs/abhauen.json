@@ -6,6 +6,47 @@
   "separable": true,
   "prefix": "ab",
   "reflexive": "none",
+  "senses": [
+    {
+      "gloss": "etwas abschlagen, abtrennen (starke und schwache Konjugation: hieb/haute ab und abgehauen/abgehaut)",
+      "gloss_en": "cut off (strong verb)",
+      "tags": [
+        "auxiliary",
+        "transitive"
+      ],
+      "example_ids": [
+        "cd0d1c42cf"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To chop off or sever something",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "sich entfernen, davonmachen (Präteritum nur schwache Konjugation: haute; Partizip II abgehaut oder abgehauen)",
+      "gloss_en": "run away",
+      "tags": [
+        "auxiliary verb",
+        "intransitive"
+      ],
+      "example_ids": [
+        "691743d1a4",
+        "6d6e3060a7"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To leave or make off",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[ˈapˌhaʊ̯ən]",
+      "tags": []
+    }
+  ],
   "conjugation_class": "irregular",
   "conjugation": {
     "present": {
@@ -49,50 +90,9 @@
     "participle2": "abgehaut"
   },
   "past_participle": "abgehaut",
-  "senses": [
-    {
-      "gloss": "etwas abschlagen, abtrennen (starke und schwache Konjugation: hieb/haute ab und abgehauen/abgehaut)",
-      "gloss_en": "cut off (strong verb)",
-      "tags": [
-        "auxiliary",
-        "transitive"
-      ],
-      "example_ids": [
-        "cd0d1c42cf"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To chop off or sever something",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "sich entfernen, davonmachen (Präteritum nur schwache Konjugation: haute; Partizip II abgehaut oder abgehauen)",
-      "gloss_en": "run away",
-      "tags": [
-        "auxiliary verb",
-        "intransitive"
-      ],
-      "example_ids": [
-        "691743d1a4",
-        "6d6e3060a7"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To leave or make off",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ˈapˌhaʊ̯ən]",
-      "tags": []
-    }
-  ],
   "_meta": {
     "source_hash": "e27363cb1d0d1951",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-18"
   },
   "zipf": 3.4
 }

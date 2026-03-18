@@ -6,6 +6,33 @@
   "separable": true,
   "prefix": "aus",
   "reflexive": "mandatory",
+  "senses": [
+    {
+      "gloss": "sich etwas Neues überlegen",
+      "gloss_en": "invent",
+      "tags": [
+        "reflexive"
+      ],
+      "example_ids": [
+        "1f146f4f33"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To think up or devise something new",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[ˈaʊ̯sˌdɛŋkn̩]",
+      "tags": []
+    },
+    {
+      "ipa": "[ˈaʊ̯sˌdɛŋkŋ̩]",
+      "tags": []
+    }
+  ],
   "conjugation_class": "irregular",
   "conjugation": {
     "present": {
@@ -49,33 +76,6 @@
     "participle2": "ausgedacht"
   },
   "past_participle": "ausgedacht",
-  "senses": [
-    {
-      "gloss": "sich etwas Neues überlegen",
-      "gloss_en": "invent",
-      "tags": [
-        "reflexive"
-      ],
-      "example_ids": [
-        "1f146f4f33"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To think up or devise something new",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ˈaʊ̯sˌdɛŋkn̩]",
-      "tags": []
-    },
-    {
-      "ipa": "[ˈaʊ̯sˌdɛŋkŋ̩]",
-      "tags": []
-    }
-  ],
   "_derived": [
     "ausdenkbar",
     "Ausdenken"
@@ -86,7 +86,7 @@
   ],
   "_meta": {
     "source_hash": "b03a01651aa03340",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-18"
   },
   "zipf": 3.26
 }

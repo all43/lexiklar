@@ -6,6 +6,44 @@
   "separable": true,
   "prefix": "an",
   "reflexive": "none",
+  "senses": [
+    {
+      "gloss": "jemandem in einer bestimmten Weise Harm, Schaden zufügen",
+      "gloss_en": "harm (verb)",
+      "tags": [],
+      "example_ids": [
+        "71eed24009",
+        "d112276612",
+        "6c60b9508d"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To cause harm or damage to someone in a particular way",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "Kleidung anziehen",
+      "gloss_en": "wear",
+      "tags": [
+        "literary"
+      ],
+      "example_ids": [
+        "4be699bab6"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To put on clothing",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[ˈanˌtuːn]",
+      "tags": []
+    }
+  ],
   "conjugation_class": "irregular",
   "conjugation": {
     "present": {
@@ -49,44 +87,6 @@
     "participle2": "angetan"
   },
   "past_participle": "angetan",
-  "senses": [
-    {
-      "gloss": "jemandem in einer bestimmten Weise Harm, Schaden zufügen",
-      "gloss_en": "harm (verb)",
-      "tags": [],
-      "example_ids": [
-        "71eed24009",
-        "d112276612",
-        "6c60b9508d"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To cause harm or damage to someone in a particular way",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "Kleidung anziehen",
-      "gloss_en": "wear",
-      "tags": [
-        "literary"
-      ],
-      "example_ids": [
-        "4be699bab6"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To put on clothing",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ˈanˌtuːn]",
-      "tags": []
-    }
-  ],
   "expression_ids": [
     "cf4671795c",
     "e96c01e0fd"
@@ -105,7 +105,7 @@
   ],
   "_meta": {
     "source_hash": "15d126821e6fb2f4",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-18"
   },
   "zipf": 3.81
 }

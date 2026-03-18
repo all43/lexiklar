@@ -6,6 +6,46 @@
   "separable": true,
   "prefix": "aus",
   "reflexive": "none",
+  "senses": [
+    {
+      "gloss": "erwartet werden, aber noch fehlen",
+      "gloss_en": "awaiting",
+      "tags": [
+        "intransitive"
+      ],
+      "example_ids": [
+        "7de18dd1b2",
+        "4fc7b17bb6"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To be expected but still be missing or lacking",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "etwas ertragen, durchhalten",
+      "gloss_en": "endure",
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "0228f50f85",
+        "0f87b383f1"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To endure or persevere through something",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[ˈaʊ̯sˌʃteːən]",
+      "tags": []
+    }
+  ],
   "conjugation_class": "irregular",
   "conjugation": {
     "present": {
@@ -49,46 +89,6 @@
     "participle2": "ausgestanden"
   },
   "past_participle": "ausgestanden",
-  "senses": [
-    {
-      "gloss": "erwartet werden, aber noch fehlen",
-      "gloss_en": "awaiting",
-      "tags": [
-        "intransitive"
-      ],
-      "example_ids": [
-        "7de18dd1b2",
-        "4fc7b17bb6"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To be expected but still be missing or lacking",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "etwas ertragen, durchhalten",
-      "gloss_en": "endure",
-      "tags": [
-        "transitive"
-      ],
-      "example_ids": [
-        "0228f50f85",
-        "0f87b383f1"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To endure or persevere through something",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ˈaʊ̯sˌʃteːən]",
-      "tags": []
-    }
-  ],
   "_synonyms": [
     "ertragen",
     "aushalten",
@@ -96,7 +96,7 @@
   ],
   "_meta": {
     "source_hash": "283c041a0fd1235e",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-18"
   },
   "zipf": 3.4
 }

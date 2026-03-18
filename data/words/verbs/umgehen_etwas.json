@@ -6,13 +6,6 @@
   "separable": true,
   "prefix": "um",
   "reflexive": "none",
-  "conjugation_class": "strong",
-  "stems": {
-    "present": "geh",
-    "past": "ging",
-    "imperative_du": "gehe"
-  },
-  "past_participle": "umgegangen",
   "senses": [
     {
       "gloss": "etwas handhaben können",
@@ -25,8 +18,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_full": "To be able to handle or manage something",
       "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To be able to handle or manage something",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
@@ -40,8 +33,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_full": "To treat someone in a particular way; to communicate with someone",
       "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To treat someone in a particular way; to communicate with someone",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
@@ -55,8 +48,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_full": "To be in circulation",
       "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To be in circulation",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
@@ -68,8 +61,8 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_full": "To haunt",
       "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To haunt",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
@@ -83,6 +76,13 @@
       "tags": []
     }
   ],
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "geh",
+    "past": "ging",
+    "imperative_du": "gehe"
+  },
+  "past_participle": "umgegangen",
   "_derived": [
     "Umgang",
     "umgänglich",
@@ -99,11 +99,11 @@
   ],
   "_meta": {
     "source_hash": "b5699970e387b966",
-    "generated_at": "2026-03-16"
+    "generated_at": "2026-03-18"
   },
+  "zipf": 4.38,
   "_proofread": {
     "gloss_en": true,
     "gloss_en_full": true
-  },
-  "zipf": 4.38
+  }
 }

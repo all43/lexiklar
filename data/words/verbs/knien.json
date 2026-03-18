@@ -6,6 +6,46 @@
   "separable": false,
   "prefix": null,
   "reflexive": "optional",
+  "senses": [
+    {
+      "gloss": "so sitzen, dass das Körpergewicht auf den Knien ruht",
+      "gloss_en": "kneel (be)",
+      "tags": [],
+      "example_ids": [
+        "1bbc4fb0b4"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "To sit with one's body weight resting on the knees",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "sich so setzen, dass das Körpergewicht auf den Knien ruht",
+      "gloss_en": "kneel (go down)",
+      "tags": [
+        "reflexive"
+      ],
+      "example_ids": [
+        "5c60fab75d"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "To sit down so that one's body weight rests on the knees",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[kniːn]",
+      "tags": []
+    },
+    {
+      "ipa": "[ˈkniːən]",
+      "tags": []
+    }
+  ],
   "conjugation_class": "irregular",
   "conjugation": {
     "present": {
@@ -49,46 +89,6 @@
     "participle2": "gekniet"
   },
   "past_participle": "gekniet",
-  "senses": [
-    {
-      "gloss": "so sitzen, dass das Körpergewicht auf den Knien ruht",
-      "gloss_en": "kneel (be)",
-      "tags": [],
-      "example_ids": [
-        "1bbc4fb0b4"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
-      "gloss_en_full": "To sit with one's body weight resting on the knees",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "sich so setzen, dass das Körpergewicht auf den Knien ruht",
-      "gloss_en": "kneel (go down)",
-      "tags": [
-        "reflexive"
-      ],
-      "example_ids": [
-        "5c60fab75d"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
-      "gloss_en_full": "To sit down so that one's body weight rests on the knees",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[kniːn]",
-      "tags": []
-    },
-    {
-      "ipa": "[ˈkniːən]",
-      "tags": []
-    }
-  ],
   "_derived": [
     "Kniebank"
   ],
@@ -103,7 +103,7 @@
   ],
   "_meta": {
     "source_hash": "8a2c7363dc130c3e",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-18"
   },
   "zipf": 3.18
 }
