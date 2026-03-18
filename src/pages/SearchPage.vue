@@ -136,6 +136,7 @@ import {
   searchByWordForm,
   getRelatedWords,
   getSuggestions,
+  foldUmlauts,
 } from "../utils/db.js";
 
 interface SearchResultWithForm extends SearchResult {
@@ -228,6 +229,7 @@ export default defineComponent({
     async search(q: string) {
       this.loading = true;
       const qLower = q.toLowerCase();
+      const qFolded = foldUmlauts(q);
 
       const [formHits, lemmaHits, enHits] = await Promise.all([
         searchByWordForm(q),
@@ -249,7 +251,8 @@ export default defineComponent({
       const lemmaRest: SearchResult[] = [];
       for (const r of lemmaHits) {
         if (seen.has(r.file)) continue;
-        if (r.lemma.toLowerCase() === qLower) lemmaExact.push(r);
+        const lemmaLower = r.lemma.toLowerCase();
+        if (lemmaLower === qLower || foldUmlauts(r.lemma) === qFolded) lemmaExact.push(r);
         else lemmaRest.push(r);
       }
 

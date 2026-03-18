@@ -19,7 +19,7 @@ import type { Example } from "../../types/example.js";
  * Fold umlauts for accent-insensitive search (mirrors build-index.js).
  * Allows "mutze" to match "Mütze", "strasse" to match "Straße", etc.
  */
-function foldUmlauts(str: string): string {
+export function foldUmlauts(str: string): string {
   return str
     .toLowerCase()
     .replace(/ä/g, "a")
