@@ -195,6 +195,7 @@ Each word gets a JSON file in `data/words/{pos}/`. All files share these common 
 - `example_ids` — references into shared `data/examples/` shards
 - `_meta.source_hash` — SHA-256 of source JSONL line, used for change detection
 - `synonyms_en` — optional `string[]` of curated English search synonyms for a sense. Used by `en_terms` index for reverse English→German search. `null` until populated by `generate-synonyms-en.ts`
+- `synonyms_en_model` — model ID that produced `synonyms_en` (e.g. `"anthropic/claude-haiku-4-5-20251001"`)
 - `zipf` — absolute combined Zipf score (2 decimal places), written by enrich step. Rank is computed at build-index time
 - `_proofread` — optional; tracks which aspects of the entry have been manually verified (see below)
 
@@ -562,7 +563,7 @@ The transform step preserves manually-added data when re-running:
 - **`_meta.source_hash`** — if source data hasn't changed, the entry is skipped entirely
 - **`zipf`** — added by the enrich step, preserved by transform's merge logic
 - **`plural_dominant`** — added by the enrich step, preserved by transform's merge logic
-- **`gloss_en` / `gloss_en_full` / `synonyms_en`** — LLM translations and curated English synonyms in senses, preserved by position-matching merge
+- **`gloss_en` / `gloss_en_full` / `synonyms_en`** — LLM translations and curated English synonyms in senses, preserved by position-matching merge. Corresponding `*_model` fields (`gloss_en_model`, `gloss_en_full_model`, `synonyms_en_model`) are also preserved
 - **`data/examples/`** — existing entries with translations and annotations are preserved. Transform keeps the full example object when `translation` is truthy, so both `translation` and `annotations` survive re-generation.
 - **Transform write skip** — word files are not rewritten if content is identical (ignoring `generated_at`). Prevents spurious git churn on incremental re-runs.
 - **`_overrides`** — manual corrections to Wiktionary source data. Applied last in `mergeWithExisting()`, after all other merges. Values in `_overrides` win over anything the pipeline produces. For nested objects (e.g. `principal_parts`), merges one level deep; for scalars and arrays, replaces entirely. Never cleared by transform. Example: `"_overrides": { "past_participle": "gesehen" }` to fix a missing form.
