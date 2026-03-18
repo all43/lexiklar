@@ -232,6 +232,7 @@ function applyResults(job: WordJob, synonyms: string[][] | null): number {
 
     if (clean.length > 0) {
       data.senses[senseIdx].synonyms_en = clean;
+      data.senses[senseIdx].synonyms_en_model = MODEL_LABEL;
       changed++;
     }
   }
