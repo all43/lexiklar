@@ -85,7 +85,7 @@
       <!-- Senses -->
       <div class="block-title meanings-header">
         <span>{{ t('word.meanings') }}</span>
-        <a v-if="word.pos === 'verb' || word.pos === 'noun' || word.pos === 'proper noun' || word.pos === 'adjective'" class="grammar-jump" @click.prevent="scrollToGrammar">{{ word.pos === 'verb' ? t('word.conjugation') : t('word.declension') }} ↓</a>
+        <a v-if="word.pos === 'verb' || word.pos === 'noun' || word.pos === 'proper noun' || word.pos === 'adjective'" class="grammar-jump" @click.prevent="scrollToGrammar">{{ word.pos === 'verb' ? t('word.conjugation') : (word.pos === 'noun' || word.pos === 'proper noun') ? t('word.declension') : t('word.grammar') }} ↓</a>
       </div>
       <f7-list>
         <template v-for="(sense, idx) in word.senses" :key="idx">
@@ -246,7 +246,7 @@
         <NounDeclension :word="(word as NounWord)" />
       </template>
       <template v-else-if="word.pos === 'adjective'">
-        <f7-block-title id="word-grammar">{{ t('word.declension') }}</f7-block-title>
+        <f7-block-title id="word-grammar">{{ t('word.grammar') }}</f7-block-title>
         <AdjectiveDeclension :word="word" />
       </template>
       <template v-else>
