@@ -83,7 +83,10 @@
       </template>
 
       <!-- Senses -->
-      <f7-block-title>{{ t('word.meanings') }}</f7-block-title>
+      <div class="block-title meanings-header">
+        <span>{{ t('word.meanings') }}</span>
+        <a v-if="word.pos === 'verb' || word.pos === 'noun' || word.pos === 'proper noun' || word.pos === 'adjective'" class="grammar-jump" @click.prevent="scrollToGrammar">{{ t('word.grammar') }} ↓</a>
+      </div>
       <f7-list>
         <template v-for="(sense, idx) in word.senses" :key="idx">
           <li :id="`sense-${idx + 1}`" class="sense-item">
@@ -119,7 +122,7 @@
 
           <!-- Examples for this sense -->
           <li
-            v-for="ex in getSenseExamples(sense)"
+            v-for="ex in getSenseExamples(sense, idx)"
             :key="ex.id"
             class="example-item"
           >
@@ -135,6 +138,18 @@
                 <div v-if="ex.translation" class="example-translation">
                   {{ ex.translation }}
                 </div>
+              </div>
+            </div>
+          </li>
+          <!-- Show more examples -->
+          <li
+            v-if="getSenseExampleTotal(sense) > 2 && !expandedSenses.includes(idx)"
+            class="example-show-more"
+            @click="expandSense(idx)"
+          >
+            <div class="item-content">
+              <div class="item-inner">
+                + {{ getSenseExampleTotal(sense) - 2 }} {{ t('word.more') }}
               </div>
             </div>
           </li>
@@ -223,15 +238,15 @@
 
       <!-- Grammar -->
       <template v-if="word.pos === 'verb'">
-        <f7-block-title>{{ t('word.conjugation') }}</f7-block-title>
+        <f7-block-title id="word-grammar">{{ t('word.conjugation') }}</f7-block-title>
         <VerbConjugation :verb="word" />
       </template>
       <template v-else-if="word.pos === 'noun' || word.pos === 'proper noun'">
-        <f7-block-title>{{ t('word.declension') }}</f7-block-title>
+        <f7-block-title id="word-grammar">{{ t('word.declension') }}</f7-block-title>
         <NounDeclension :word="(word as NounWord)" />
       </template>
       <template v-else-if="word.pos === 'adjective'">
-        <f7-block-title>{{ t('word.grammar') }}</f7-block-title>
+        <f7-block-title id="word-grammar">{{ t('word.grammar') }}</f7-block-title>
         <AdjectiveDeclension :word="word" />
       </template>
       <template v-else>
@@ -397,6 +412,7 @@ export default defineComponent({
       relatedWords: [] as SearchResult[],
       loading: true,
       preview: null as PreviewData | null,
+      expandedSenses: [] as number[],
       inHistory: false,
       isFavorite: false,
     };
@@ -625,19 +641,36 @@ export default defineComponent({
       }).open();
     },
 
-    getSenseExamples(sense: Sense) {
+    getSenseExamples(sense: Sense, senseIdx: number) {
       if (!sense.example_ids || !sense.example_ids.length) return [];
       const { pos, file } = this.f7route.params as { pos: string; file: string };
       const currentPath = `${pos}/${file}`;
 
-      return sense.example_ids
+      const all = sense.example_ids
         .map((id) => {
           const ex = this.examples[id] as Example & Record<string, unknown> | undefined;
           if (!ex) return null;
           const text = (ex.text_linked as string) || ex.text;
-          return { id, text, selfPath: currentPath, translation: ex.translation };
+          return { id, text, selfPath: currentPath, translation: ex.translation, sortLen: ex.text.length };
         })
-        .filter((item): item is NonNullable<typeof item> => item !== null);
+        .filter((item): item is NonNullable<typeof item> => item !== null)
+        .sort((a, b) => a.sortLen - b.sortLen);
+
+      if (this.expandedSenses.includes(senseIdx)) return all;
+      return all.slice(0, 2);
+    },
+
+    getSenseExampleTotal(sense: Sense): number {
+      return sense.example_ids?.filter((id) => !!this.examples[id]).length ?? 0;
+    },
+
+    expandSense(idx: number) {
+      if (!this.expandedSenses.includes(idx)) this.expandedSenses.push(idx);
+    },
+
+    scrollToGrammar() {
+      const el = document.getElementById("word-grammar");
+      el?.scrollIntoView({ behavior: "smooth", block: "start" });
     },
   },
   beforeUnmount() {

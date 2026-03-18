@@ -153,6 +153,30 @@ mark.example-highlight {
   margin-top: 12px;
 }
 
+/* Meanings header with grammar jump */
+.meanings-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-right: var(--f7-block-padding-horizontal, 16px);
+}
+.grammar-jump {
+  font-size: 0.82em;
+  font-weight: normal;
+  color: var(--f7-theme-color);
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* Show-more examples row */
+.example-show-more {
+  cursor: pointer;
+}
+.example-show-more .item-inner {
+  color: var(--f7-theme-color);
+  font-size: var(--f7-list-item-footer-font-size, 13px);
+}
+
 /* Expressions & Proverbs */
 .expression-item {
   cursor: default;
