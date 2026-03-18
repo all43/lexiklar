@@ -153,6 +153,17 @@ mark.example-highlight {
   margin-top: 12px;
 }
 
+/* Synonyms & Antonyms collapsible title */
+.syn-ant-title--collapsible {
+  cursor: pointer;
+  user-select: none;
+}
+.syn-ant-toggle {
+  font-size: 0.7em;
+  margin-left: 6px;
+  opacity: 0.5;
+}
+
 /* Meanings header with grammar jump */
 .meanings-header {
   display: flex;

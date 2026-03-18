@@ -156,7 +156,7 @@
         </template>
       </f7-list>
 
-      <!-- Synonyms & Antonyms -->
+      <!-- Synonyms & Antonyms (dead: _synonyms/_antonyms stripped from DB; handled via related_words) -->
       <template v-if="word._synonyms?.length || word._antonyms?.length">
         <f7-block-title>{{ t('word.synonymsAntonyms') }}</f7-block-title>
         <f7-block class="syn-ant-block">
@@ -221,8 +221,14 @@
 
       <!-- Related Words -->
       <template v-if="relatedGroups.length">
-        <f7-block-title>{{ t('word.relatedWords') }}</f7-block-title>
-        <f7-list>
+        <f7-block-title
+          :class="{ 'syn-ant-title--collapsible': relatedTotal > 3 }"
+          @click="relatedTotal > 3 && (relatedExpanded = !relatedExpanded)"
+        >
+          {{ t('word.relatedWords') }}
+          <span v-if="relatedTotal > 3" class="syn-ant-toggle">{{ relatedExpanded ? '▲' : '▼' }}</span>
+        </f7-block-title>
+        <f7-list v-if="relatedExpanded || relatedTotal <= 3">
           <template v-for="group in relatedGroups" :key="group.type">
             <f7-list-item group-title :title="group.label" />
             <f7-list-item
@@ -413,6 +419,7 @@ export default defineComponent({
       loading: true,
       preview: null as PreviewData | null,
       expandedSenses: [] as number[],
+      relatedExpanded: false,
       inHistory: false,
       isFavorite: false,
     };
@@ -500,6 +507,9 @@ export default defineComponent({
           label: typeLabels[type] || type,
           items: groups[type],
         }));
+    },
+    relatedTotal(): number {
+      return this.relatedGroups.reduce((sum, g) => sum + g.items.length, 0);
     },
     wordExpressions(): ExpressionItem[] {
       if (!this.word?.expression_ids) return [];
