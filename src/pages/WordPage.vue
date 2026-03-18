@@ -673,12 +673,9 @@ export default defineComponent({
       if (!el) return;
       const pageContent = el.closest(".page-content") as HTMLElement | null;
       if (!pageContent) { el.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
-      const navbarHeight = (document.querySelector(".navbar") as HTMLElement | null)?.offsetHeight || 0;
+      const navbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--f7-navbar-height")) || 0;
       const marginTop = parseInt(getComputedStyle(el).marginTop) || 0;
-      const target = pageContent.scrollTop
-        + el.getBoundingClientRect().top
-        - pageContent.getBoundingClientRect().top
-        - navbarHeight - marginTop - 8;
+      const target = pageContent.scrollTop + el.getBoundingClientRect().top - navbarHeight - marginTop - 8;
       pageContent.scrollTo({ top: target, behavior: "smooth" });
     },
   },
