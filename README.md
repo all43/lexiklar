@@ -229,6 +229,108 @@ npm run release:major   # 0.9.0 → 1.0.0 (public release)
 
 ---
 
+## Developer Scripts
+
+> **Always use existing scripts for data tasks — never write ad-hoc Python scripts or one-time custom code.** The project is TypeScript-first; all tooling is in `scripts/`.
+
+### Translation scripts
+
+```bash
+# translate-glosses.ts — translate German glosses to English
+npx tsx scripts/translate-glosses.ts                          # GPT-4o-mini → gloss_en
+npx tsx scripts/translate-glosses.ts --full                   # → gloss_en_full
+npx tsx scripts/translate-glosses.ts --provider anthropic     # Claude Haiku 4.5
+npx tsx scripts/translate-glosses.ts --provider ollama        # local Ollama (free, offline)
+npx tsx scripts/translate-glosses.ts --dry-run                # preview without API calls
+npx tsx scripts/translate-glosses.ts --reset --provider ...   # clear all gloss_en, re-translate
+
+# translate-examples.ts — translate examples + annotate words
+npx tsx scripts/translate-examples.ts                         # GPT-4o-mini
+npx tsx scripts/translate-examples.ts --provider anthropic    # Claude Haiku 4.5
+npx tsx scripts/translate-examples.ts --dry-run
+npx tsx scripts/translate-examples.ts --batch-size 5
+```
+
+### Raw Wiktionary lookup
+
+```bash
+npm run lookup -- Tisch              # substring search
+npm run lookup -- Tisch --exact      # fast exact match via byte-offset index
+npm run lookup -- Tisch --exact --full  # include translations/hyponyms
+npm run lookup -- Tisch --pos noun   # filter by POS
+```
+
+### Quality check
+
+```bash
+npx tsx scripts/quality-check.ts                      # whitelist + top 500 words
+npx tsx scripts/quality-check.ts --top 1000
+npx tsx scripts/quality-check.ts --word Tisch
+npx tsx scripts/quality-check.ts --word-list words.txt
+npx tsx scripts/quality-check.ts --pos verb
+npx tsx scripts/quality-check.ts --no-examples        # faster, skip example checks
+npx tsx scripts/quality-check.ts --show-raw           # print raw Wiktionary entry
+npx tsx scripts/quality-check.ts --skip-proofread [aspects]
+npx tsx scripts/quality-check.ts --mark-proofread [aspects]
+```
+
+Score breakdown (0–100): gloss_en 40 pts · gloss_en_full 20 pts · example translation 20 pts · IPA 10 pts · annotation health 10 pts.
+
+### Search examples
+
+```bash
+npx tsx scripts/search-examples.ts --annotation-form nehme --annotation-lemma nehmen
+npx tsx scripts/search-examples.ts --owned-by annehmen
+npx tsx scripts/search-examples.ts --text "Bahnhof"
+npx tsx scripts/search-examples.ts --id 0d8a4f98f3
+```
+
+Options: `--annotation-form`, `--annotation-lemma`, `--owned-by`, `--text`, `--id`, `--no-proofread`, `--limit <n>`, `--full`.
+
+### Manual content fixes
+
+`data/manual-fixes.json` is the canonical file for manual corrections:
+
+```bash
+npx tsx scripts/apply-proofread-results.ts --results data/manual-fixes.json
+```
+
+Supported fix types in the `fixes` array:
+- `gloss_fix` — patch a word sense field: `{ type, word, sense, field, value }` (field defaults to `gloss_en`)
+- `translation_fix` — patch example translation: `{ type, id, value }`
+- `word_field_fix` — patch top-level word field: `{ type, word, field, value }`
+- `annotation_replace` — replace full annotations array: `{ type, id, annotations }`
+- `annotation_update` — update fields of one annotation by form: `{ type, id, form, updates }`
+- `annotation_remove` — remove annotation by form: `{ type, id, form }`
+
+---
+
+## LLM Model Reference
+
+Benchmarked on 37 German idioms using BLEU-1 against human reference translations (`npm run compare-models`).
+
+### Cloud models
+
+| Model | BLEU-1 | ~Cost / 5k items | Notes |
+|---|---|---|---|
+| anthropic/claude-sonnet-4-5 | 0.823 | ~$5–10 | Best quality |
+| openai/gpt-4.1 | 0.810 | ~$5–10 | |
+| openai/gpt-4.1-mini | 0.809 | ~$0.50 | Best quality/cost |
+| **anthropic/claude-haiku-4-5** | **0.800** | **~$0.50** | **Recommended default** |
+| openai/gpt-4.1-nano | 0.740 | ~$0.10 | Budget option |
+| openai/gpt-4o-mini | 0.715 | ~$0.15 | Script default (legacy) |
+
+### Local models (free, offline)
+
+| Model | BLEU-1 | Notes |
+|---|---|---|
+| lm-studio/tower | 0.742 | Translation-specialized |
+| lm-studio/sauerkraut | 0.726 | German-tuned |
+
+**Recommendation**: `--provider anthropic` (haiku-4.5) for best quality/cost ratio. Default `gpt-4o-mini` is kept for backwards compatibility.
+
+---
+
 ## License
 
 **Code**: MIT — see [LICENSE](LICENSE)

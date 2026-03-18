@@ -10,12 +10,6 @@ A **fully offline** German dictionary app targeting learners up to **B2 level** 
 
 ---
 
-## App Name
-
-**Lexiklar** — a blend of *Lexikon* (lexicon) + *klar* (clear).
-
----
-
 ## Tech Stack
 
 - **Language**: TypeScript (Node.js, ESM modules, run via `npx tsx`)
@@ -110,22 +104,7 @@ download → transform → enrich → translate → build-index
 | `scripts/generate-synonyms-en.ts` | — | LLM-generates English search synonyms (`synonyms_en`) for reverse lookup |
 | `scripts/benchmark-frequency.ts` | — | Benchmark corpus weights against LLM reference scores (Spearman correlation, grid search) |
 
-### Running
-
-```bash
-npm run pipeline          # full pipeline (download → transform → enrich → translate → build-index)
-npm run pipeline:seed     # seed mode: only words in config/seed-words.json
-```
-
-Full pipeline uses `--max-frequency 8000 --max-subtitle-rank 25000` for transform (B2 vocabulary scope).
-
-### Seed Words
-
-`config/seed-words.json` contains ~20 curated words covering edge cases: homonyms (Bank), separable verbs (ankommen), reflexive verbs (erinnern), umlaut comparisons (groß), suppletive adjectives (gut), auxiliaries (sein/haben), nominalized infinitives (Laufen, Gehen).
-
-### State Tracking
-
-`data/raw/.import-state.json` (gitignored) stores a SHA-256 hash per entry. On re-run, unchanged entries are skipped. Deleting this file forces a full regeneration.
+See README → Running Locally for pipeline commands, seed words, and state tracking.
 
 ---
 
@@ -430,46 +409,9 @@ Why `gloss_hint` over alternatives:
 - `sense_id` — requires adding stable IDs to all senses, cascading changes
 - **`gloss_hint`** — robust to minor wording changes, null when unambiguous
 
-### Why shared examples
-- The same sentence can illustrate multiple words
-- Deduplication by content hash — same text always gets same key
-- Translations only need to be generated once per unique sentence
+See README → Developer Scripts for `translate-glosses.ts` and `translate-examples.ts` CLI flags.
 
-### Gloss translate step
-
-`scripts/translate-glosses.ts` translates each sense's German gloss to English. Two modes:
-
-- **Default** (`gloss_en`): very short translation, 1–4 words — used as the primary display label
-- **Full** (`--full`, `gloss_en_full`): natural-language gloss — used for detail view
-
-```bash
-npx tsx scripts/translate-glosses.ts                         # default: OpenAI GPT-4o-mini → gloss_en
-npx tsx scripts/translate-glosses.ts --full                  # → gloss_en_full
-npx tsx scripts/translate-glosses.ts --provider anthropic    # Claude Haiku 4.5
-npx tsx scripts/translate-glosses.ts --provider ollama       # local Ollama (free, offline)
-npx tsx scripts/translate-glosses.ts --provider lm-studio   # local LM Studio
-npx tsx scripts/translate-glosses.ts --dry-run               # preview without API calls
-npx tsx scripts/translate-glosses.ts --reset --provider ...  # clear all gloss_en, re-translate
-```
-
-### Example translate step
-
-`scripts/translate-examples.ts` sends untranslated examples to an LLM in batches, receiving translations and word annotations. Features:
-
-- **Disambiguation dict**: built from word files, contains glosses for multi-sense lemmas only. Sent alongside each batch so the LLM picks the correct `gloss_hint`.
-- **Batch processing**: 10 examples per API call (configurable with `--batch-size`)
-- **Crash-safe**: writes shards after each batch
-- **Incremental**: skips already-translated examples on re-run
-- **Pipeline-safe**: exits 0 if no API key found (doesn't break `npm run pipeline`)
-
-```bash
-npx tsx scripts/translate-examples.ts                    # default: OpenAI GPT-4o-mini
-npx tsx scripts/translate-examples.ts --provider anthropic  # Claude Haiku 4.5
-npx tsx scripts/translate-examples.ts --dry-run           # show batching without API calls
-npx tsx scripts/translate-examples.ts --batch-size 5      # smaller batches
-```
-
-Requires `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` env var.
+`translate-examples.ts` builds a **disambiguation dict** from word files (glosses for multi-sense lemmas only) and sends it alongside each batch so the LLM picks the correct `gloss_hint`. This is why stale gloss_hints arise when `gloss_en` translations are later updated by proofreading — the hints were correct at generation time but no longer substring-match the revised gloss.
 
 ---
 
@@ -576,35 +518,7 @@ The merge function (`mergeWithExisting()` in transform.ts) reads the existing fi
 
 ## Storage Architecture
 
-### Directory Structure
-```
-/data
-  /words/
-    /nouns/        Bank_geldinstitut.json  Bank_sitz.json  Tisch.json
-    /verbs/        laufen.json  ankommen.json
-    /adjectives/   schnell.json
-    /adverbs/
-    /phrases/      (idioms, proverbs, collocations, greetings)
-    /names/        (toponyms only — surnames and first names are excluded)
-    /prepositions/ /conjunctions/ /particles/ /interjections/
-    /pronouns/ /determiners/ /numerals/
-  /rules/
-    adj-endings.json          ← static, hand-curated
-    noun-gender.json          ← static, hand-curated
-    verb-endings.json         ← static, hand-curated
-  /examples/
-    00.json … ff.json         ← 256 shards keyed by first 2 hex chars of example ID
-  /examples.json              ← gitignored (legacy monolith, replaced by shards)
-  /index.db                   ← generated by build-index, gitignored
-  /raw/                       ← gitignored (entire directory)
-    de-extract.jsonl
-    leipzig-words.txt
-    leipzig-wiki-words.txt
-    subtlex-de.xlsx
-    opensubtitles-words.txt
-    .import-state.json
-    llm-cache/
-```
+See README → Project Structure for directory layout.
 
 ### File Naming
 
@@ -679,15 +593,6 @@ The SQLite index handles all searching, filtering, and data serving. Word JSON f
 
 ## App Runtime Architecture
 
-### Startup sequence (`src/main.ts`)
-```
-await initStorage()   →  preload Preferences keys into sync cache
-await initDb()        →  load SQLite DB (from Cache API or fetch)
-createApp(App).mount()
-```
-
-The PWA service worker is registered automatically by `vite-plugin-pwa` via `virtual:pwa-register/vue` — no manual registration in `main.ts` needed.
-
 ### Persistent storage (`src/utils/storage.ts`)
 Uses `@capacitor/preferences` (iOS UserDefaults / Android SharedPreferences on native, localStorage on web/PWA). All known keys are preloaded into an in-memory `Map` at startup so that Vue `data()` initializers and module-level code can read synchronously via `getCached(key)`. Writes via `setItem(key, value)` update the cache immediately and persist asynchronously.
 
@@ -710,12 +615,6 @@ import { t } from "../js/i18n.js";
 - Locale preference stored via `@capacitor/preferences` under `lexiklar_language` (`"auto" | "en" | "de"`)
 - `"auto"` resolves to `"de"` if `navigator.language` starts with `"de"`, otherwise `"en"`
 - **When adding UI text**: add the key to both `en` and `de` blocks. Grammar term labels (Partizip I, Infinitiv mit zu) stay in German in both locales.
-
-### Capacitor iOS
-- `capacitor.config.json`: `appId: "dev.malikov.lexiklar"`, `webDir: "dist"`
-- `ios/` directory contains the generated Xcode project
-- `npx cap sync` copies built web assets into the native project
-- `npx cap open ios` opens in Xcode for device/simulator testing
 
 ### PWA (Progressive Web App)
 
@@ -745,72 +644,15 @@ Configured via `vite-plugin-pwa` in `vite.config.ts`. Capacitor provides no PWA 
 
 **Interaction with OTA DB updates**: the SW does not interfere with `checkForUpdates()` — those are cross-origin fetches to `evgeniimalikov.github.io/lexiklar-data` which bypass the SW's scope.
 
-### Versioning
-
-App version is stored in `package.json` (`"version": "0.9.0"`) and exposed at build time via `__APP_VERSION__` (defined in `vite.config.ts`). Displayed in Settings and included in bug reports.
-
-**Release scripts** (each bumps `package.json`, creates a git commit + tag, and pushes):
-
-```bash
-npm run release:patch   # 0.9.0 → 0.9.1 (bug fixes)
-npm run release:minor   # 0.9.0 → 0.10.0 (new features)
-npm run release:major   # 0.9.0 → 1.0.0 (public release)
-```
-
-These use `npm version` under the hood — it updates `package.json`, commits, and creates a `v0.9.1`-style git tag.
-
-**App version vs DB version**: these are independent. The app version tracks the UI/code; the DB version (content hash in `db-version.txt`) tracks dictionary data. The PWA SW version is implicit — it's based on content hashes of precached files, managed by Workbox.
+**App version vs DB version**: these are independent. App version (`package.json`) tracks UI/code; DB version (content hash in `db-version.txt`) tracks dictionary data; SW version is implicit from Workbox content hashes. See README → Running Locally for release commands.
 
 ---
 
-## Developer Inspection Tools
+## Developer Scripts
 
-### Raw Wiktionary lookup
+> **Always use existing scripts for data tasks — never write ad-hoc Python scripts or one-time custom code.** The project is TypeScript-first. See README → Developer Scripts for usage of `lookup.ts`, `quality-check.ts`, `translate-glosses.ts`, `translate-examples.ts`, `search-examples.ts`, and `apply-proofread-results.ts` / `data/manual-fixes.json`.
 
-`scripts/lookup.ts` — look up entries in `de-extract.jsonl` by word name. Uses a SQLite byte-offset index for ~instant exact lookups (~2ms), falls back to `grep` if the index isn't built yet.
-
-```bash
-npm run lookup -- Tisch              # substring search
-npm run lookup -- Tisch --exact      # exact match (fast path via index)
-npm run lookup -- Tisch --exact --full  # all fields including translations/hyponyms
-npm run lookup -- Tisch --exact --raw   # raw JSON array, pipe-friendly
-npm run lookup -- Tisch --pos noun   # filter by POS
-```
-
-`scripts/build-lookup-index.ts` — scans `de-extract.jsonl` with `grep -ob` to record word → byte offset in `data/raw/de-extract.offsets.db`. Run once after download; `npm run download` runs it automatically as a post-step.
-
-```bash
-npm run build-lookup-index   # builds data/raw/de-extract.offsets.db (~50 MB)
-```
-
-### Quality check
-
-`scripts/quality-check.ts` — audits word data quality for the whitelist + top-N words by Zipf score.
-
-```bash
-npx tsx scripts/quality-check.ts                    # whitelist + top 500
-npx tsx scripts/quality-check.ts --top 1000         # whitelist + top 1000
-npx tsx scripts/quality-check.ts --whitelist-only
-npx tsx scripts/quality-check.ts --word Tisch       # single word
-npx tsx scripts/quality-check.ts --word-list words.txt  # plain-text or JSON array of words
-npx tsx scripts/quality-check.ts --pos verb
-npx tsx scripts/quality-check.ts --no-examples      # faster, skip example checks
-npx tsx scripts/quality-check.ts --show-raw         # show raw Wiktionary entry per word
-npx tsx scripts/quality-check.ts --skip-proofread [aspects]  # skip already-verified words
-npx tsx scripts/quality-check.ts --mark-proofread [aspects]  # write _proofread flags
-```
-
-Score breakdown (0–100): gloss_en coverage (40 pts), gloss_en_full (20 pts), example translation (20 pts), IPA (10 pts), annotation health (10 pts).
-
-`--word-list` accepts either a plain-text file (one word per line) or a JSON array of strings/`{word}` objects.
-
-`--show-raw` uses the offset index (or falls back to grep) to fetch and print the raw Wiktionary entry alongside each word's quality issues.
-
-`--skip-proofread` / `--mark-proofread` take an optional comma-separated aspect list or `all`. Omit the list to mean all aspects.
-
-Word-level aspects (`gloss_en`, `gloss_en_full`, `examples_owned`) are stored in word files. `--skip-proofread` filters whole words based on these.
-
-Example-level aspects (`ex_translation`, `ex_annotations`) are stored in example shard files via `patchExamples()`. They don't skip words — instead, annotation health issues are silently suppressed for examples whose `_proofread.annotations` hash still matches.
+`quality-check.ts` proofread filtering: `--skip-proofread` with word-level aspects (`gloss_en`, `gloss_en_full`, `examples_owned`) filters whole words. Example-level aspects (`ex_translation`, `ex_annotations`) don't skip words — they suppress annotation health issues for examples whose `_proofread.annotations` hash still matches.
 
 ### Subagent proofreading
 
@@ -829,35 +671,7 @@ The subagent skips examples already marked in `_proofread` — shared examples a
 
 Separate from general proofreading, `text_linked` cross-references can be verified using focused subagents with `prompts/verify-text-linked.md`. Batch files are generated in `data/text-linked-batches/` (gitignored). Each batch contains ~50 examples with flagged links (homonym ambiguity, stale gloss_hints, multi-sense words). Subagent results are applied via `/tmp/apply-text-linked-fixes.ts`.
 
-### Searching examples
-
-Use `scripts/search-examples.ts` to locate specific examples before writing fixes:
-
-```bash
-npx tsx scripts/search-examples.ts --annotation-form nehme --annotation-lemma nehmen
-npx tsx scripts/search-examples.ts --owned-by annehmen
-npx tsx scripts/search-examples.ts --text "Bahnhof"
-npx tsx scripts/search-examples.ts --id 0d8a4f98f3        # print single example by ID
-npx tsx scripts/search-examples.ts --annotation-form lehnte --annotation-lemma lehnen  # find separable lemma bug
-```
-
-Options: `--annotation-form`, `--annotation-lemma`, `--owned-by`, `--text`, `--id`, `--no-proofread`, `--limit <n>`, `--full`.
-
-### Applying manual fixes
-
-`data/manual-fixes.json` is the canonical file for manual content corrections. Add fixes there and run:
-
-```bash
-npx tsx scripts/apply-proofread-results.ts --results data/manual-fixes.json
-```
-
-Supported fix types in the `fixes` array:
-- `gloss_fix` — patch a word sense field: `{ type, word, sense, field, value }` (field defaults to `gloss_en`)
-- `translation_fix` — patch example translation: `{ type, id, value }`
-- `word_field_fix` — patch top-level word field: `{ type, word, field, value }`
-- `annotation_replace` — replace full annotations array: `{ type, id, annotations }`
-- `annotation_update` — update fields of one annotation by form: `{ type, id, form, updates }`
-- `annotation_remove` — remove annotation by form: `{ type, id, form }`
+See README → Developer Scripts for `search-examples.ts` and `apply-proofread-results.ts` / `data/manual-fixes.json` usage.
 
 ---
 
@@ -867,34 +681,4 @@ Supported fix types in the `fixes` array:
 
 **Empty glosses** — 124 senses across abbreviations, determiners, adverbs, names, phrases have `gloss: ""` in Wiktionary — `gloss_en` stays null. Decide what to show in UI (hide sense? show dash? show word form only?).
 
-## Resolved
-
-**Update mechanism** — implemented as OTA updates via GitHub Pages (`evgeniimalikov.github.io/lexiklar-data`). `checkForUpdates()` fetches a `manifest.json`, applies SQL patches or full DB replacement, then re-caches. Available in Settings → Check for updates.
-
----
-
-## LLM Model Reference
-
-Benchmarked on 37 German idioms/examples using BLEU-1 against human reference translations (`npm run compare-models`).
-
-### Cloud models
-
-| Model | BLEU-1 | ~Cost / 5k items | Notes |
-|---|---|---|---|
-| anthropic/claude-sonnet-4-5 | 0.823 | ~$5–10 | Best quality |
-| openai/gpt-4.1 | 0.810 | ~$5–10 | |
-| openai/gpt-4.1-mini | 0.809 | ~$0.50 | Best quality/cost |
-| **anthropic/claude-haiku-4-5** | **0.800** | **~$0.50** | **Recommended default** |
-| openai/gpt-4.1-nano | 0.740 | ~$0.10 | Budget option |
-| openai/gpt-4o-mini | 0.715 | ~$0.15 | Script default (legacy) |
-
-### Local models (free, offline)
-
-| Model | BLEU-1 | Notes |
-|---|---|---|
-| lm-studio/tower | 0.742 | Translation-specialized |
-| lm-studio/sauerkraut | 0.726 | German-tuned |
-
-**Recommendation**: use `--provider anthropic` (haiku-4.5) for quality at low cost. Default `gpt-4o-mini` is kept for backwards compatibility but scores lowest among cloud models.
-
-Estimates based on ~150 tokens input / ~100 tokens output per item.
+See README → LLM Model Reference for the benchmark table. Use `--provider anthropic` (haiku-4.5) for best quality/cost ratio.
