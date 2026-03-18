@@ -181,7 +181,7 @@ async function callForSynonyms(prompt: string): Promise<Record<string, Record<st
     callLLM(SYSTEM_PROMPT, prompt, {
       provider: PROVIDER,
       model: MODEL_OVERRIDE ?? undefined,
-      maxTokens: 2048,
+      maxTokens: 4096,
       temperature: 0.2,
       jsonMode: true,
     }),
@@ -191,7 +191,12 @@ async function callForSynonyms(prompt: string): Promise<Record<string, Record<st
   try {
     parsed = JSON.parse(result.content);
   } catch {
-    parsed = extractJSON(result.content);
+    try {
+      parsed = extractJSON(result.content);
+    } catch {
+      // Truncated or malformed JSON — skip this word silently
+      return {};
+    }
   }
 
   if (!parsed || typeof parsed !== "object") return {};
