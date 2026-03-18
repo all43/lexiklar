@@ -3,25 +3,42 @@
   "pos": "adjective",
   "etymology_number": null,
   "is_indeclinable": false,
-  "comparative": null,
-  "superlative": null,
+  "comparative": "verschiedner",
+  "superlative": "am verschiedensten",
   "umlaut_in_comparison": false,
   "senses": [
     {
-      "gloss": "nicht mehr am Leben",
-      "gloss_en": "dead",
-      "tags": [
-        "literary"
-      ],
+      "gloss": "nicht gleich, andere Eigenschaften habend",
+      "gloss_en": "different",
+      "tags": [],
       "example_ids": [
-        "441816d5a7",
-        "853ceea8dd"
+        "e1bf1e19c4",
+        "e60670a7fc",
+        "b06181c769",
+        "c5601f6c2a"
       ],
       "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "No longer alive; dead",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "antonyms": []
+    },
+    {
+      "gloss": "nicht der-/die-/dasselbe, nicht identisch",
+      "gloss_en": "distinct",
+      "tags": [],
+      "example_ids": [
+        "168533d616"
+      ],
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "mehrere (gleichgültig, ob gleich oder unterscheidbar)",
+      "gloss_en": "various",
+      "tags": [],
+      "example_ids": [
+        "c8a20b0914"
+      ],
+      "synonyms": [],
+      "antonyms": []
     }
   ],
   "sounds": [
@@ -32,13 +49,46 @@
   ],
   "declension_stem": "verschieden",
   "declension_regular": true,
+  "_derived": [
+    "verschiedenartig",
+    "verschiedenerlei",
+    "Verschiedenes",
+    "verschiedenfarbig",
+    "verschiedengeschlechtlich",
+    "verschiedengestaltig",
+    "Verschiedenheit",
+    "verschiedentlich"
+  ],
+  "_hyponyms": [
+    "artverschieden",
+    "glaubensverschieden",
+    "grundverschieden",
+    "konfessionsverschieden",
+    "niveauverschieden",
+    "wesensverschieden",
+    "disjunkt"
+  ],
+  "_antonyms": [
+    "gleich",
+    "identisch"
+  ],
   "_synonyms": [
-    "abgeschieden",
-    "dahingeschieden",
-    "verstorben"
+    "andersartig",
+    "divers",
+    "ungleich",
+    "unterschiedlich",
+    "verschiedenartig",
+    "andere",
+    "anders",
+    "unterscheidbar",
+    "allerlei",
+    "einige",
+    "manche",
+    "mehrere",
+    "wenige"
   ],
   "_meta": {
-    "source_hash": "d35a08d26bbbef3c",
+    "source_hash": "777469b40305033b",
     "generated_at": "2026-03-18"
   },
   "zipf": 3.82

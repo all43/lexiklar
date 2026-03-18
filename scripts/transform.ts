@@ -1085,7 +1085,7 @@ function sanitizeFilename(name: string): string {
   return name.replace(/[\/\\:*?"<>|]/g, "_");
 }
 
-function getDisambiguator(entry: WiktionaryEntry): string {
+function getDisambiguator(entry: WiktionaryEntry, usedDisambigs?: Set<string>): string {
   const firstSense = (entry.senses || [])[0];
   if (!firstSense?.glosses?.length)
     return String(entry.etymology_number || 1);
@@ -1095,11 +1095,19 @@ function getDisambiguator(entry: WiktionaryEntry): string {
     "the", "a", "an", "to", "of", "in", "on", "for", "und", "oder",
     "ein", "eine", "der", "die", "das", "mit", "für", "von", "aus",
   ]);
-  const word = gloss
+  const candidates = gloss
     .split(/[\s,;()/]+/)
     .map((w) => w.replace(/[-.:!?]+$/, ""))
-    .find((w) => w.length > 1 && !skip.has(w.toLowerCase()));
-  return (word || String(entry.etymology_number || 1)).toLowerCase();
+    .filter((w) => w.length > 1 && !skip.has(w.toLowerCase()))
+    .map((w) => w.toLowerCase());
+
+  // Pick the first candidate that hasn't been used yet in this group
+  if (usedDisambigs) {
+    const unique = candidates.find((c) => !usedDisambigs.has(c));
+    if (unique) return unique;
+  }
+
+  return candidates[0] || String(entry.etymology_number || 1);
 }
 
 // ============================================================
@@ -1606,6 +1614,7 @@ async function main(): Promise<void> {
 
   for (const [, entries] of groups) {
     const needsDisambig = entries.length > 1;
+    const usedDisambigs = new Set<string>();
 
     for (const { offset, length, hash } of entries) {
       // Read raw line from disk on demand — groups stores only byte offsets to
@@ -1670,7 +1679,8 @@ async function main(): Promise<void> {
       };
 
       // Determine file path
-      const disambig = needsDisambig ? getDisambiguator(parsed) : null;
+      const disambig = needsDisambig ? getDisambiguator(parsed, usedDisambigs) : null;
+      if (disambig) usedDisambigs.add(disambig);
       const filename =
         sanitizeFilename(
           disambig ? `${parsed.word}_${disambig}` : parsed.word,
