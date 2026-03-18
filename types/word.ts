@@ -12,6 +12,7 @@ export interface Sense {
   example_ids: string[];
   synonyms: string[];
   antonyms: string[];
+  synonyms_en?: string[];
 }
 
 export interface Sound {

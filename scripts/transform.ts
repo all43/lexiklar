@@ -1299,6 +1299,7 @@ function mergeWithExisting(newData: TransformOutput, existingPath: string): Tran
       if (oldSense.gloss_en_model != null)      newData.senses[i].gloss_en_model      = oldSense.gloss_en_model;
       if (oldSense.gloss_en_full != null)       newData.senses[i].gloss_en_full       = oldSense.gloss_en_full;
       if (oldSense.gloss_en_full_model != null) newData.senses[i].gloss_en_full_model = oldSense.gloss_en_full_model;
+      if (oldSense.synonyms_en?.length)         newData.senses[i].synonyms_en         = oldSense.synonyms_en;
     }
 
     // Warn if existing senses had translations that will be lost (new sense count < old)

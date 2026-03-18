@@ -118,6 +118,69 @@ interface MetaRow {
 }
 
 // ============================================================
+// English reverse-lookup term extraction
+// ============================================================
+
+const EN_STOPWORDS = new Set([
+  "a", "an", "the", "to", "of", "in", "on", "at", "for", "with",
+  "by", "from", "or", "and", "is", "are", "be", "was", "were",
+  "has", "have", "had", "do", "does", "did", "not", "no", "but",
+  "if", "that", "this", "it", "its", "into", "as", "up", "out",
+  "so", "than", "very", "own", "can", "will", "each", "which",
+  "one", "something", "someone", "oneself",
+]);
+
+/**
+ * Extract English search terms from all senses of a word.
+ *
+ * Sources (in priority order):
+ *   1. gloss_en — phrase + individual tokens (short, 1-4 words, all relevant)
+ *   2. synonyms_en — phrase + individual tokens (curated, all relevant)
+ *
+ * gloss_en_full is NOT tokenized — its individual words are too noisy
+ * (e.g. "furniture", "drawers" for Schrank). The full descriptions are
+ * already useful via the gloss_en tokens they share with the short form.
+ */
+function extractEnTerms(senses: Sense[]): Set<string> {
+  const terms = new Set<string>();
+
+  for (const sense of senses) {
+    // 1. gloss_en — store as full phrase + tokenize into words
+    if (sense.gloss_en) {
+      const phrase = sense.gloss_en.toLowerCase().trim();
+      if (phrase.length >= 2) terms.add(phrase);
+      tokenizeInto(phrase, terms);
+    }
+
+    // 2. synonyms_en — store each as phrase + tokenize
+    if (sense.synonyms_en) {
+      for (const syn of sense.synonyms_en) {
+        const phrase = syn.toLowerCase().trim();
+        if (phrase.length >= 2) terms.add(phrase);
+        tokenizeInto(phrase, terms);
+      }
+    }
+  }
+
+  return terms;
+}
+
+/**
+ * Tokenize text into individual words and add to the set.
+ * Strips parentheticals, filters stopwords and short tokens.
+ */
+function tokenizeInto(text: string, terms: Set<string>): void {
+  // Strip parenthetical qualifiers like "(into state)", "(verb)"
+  const stripped = text.replace(/\([^)]*\)/g, "");
+  const words = stripped.split(/[^a-z]+/).filter(Boolean);
+  for (const w of words) {
+    if (w.length >= 2 && !EN_STOPWORDS.has(w)) {
+      terms.add(w);
+    }
+  }
+}
+
+// ============================================================
 // Utility functions
 // ============================================================
 
@@ -439,6 +502,12 @@ function main(): void {
       PRIMARY KEY (form, word_id)
     );
 
+    CREATE TABLE en_terms (
+      term    TEXT NOT NULL,
+      word_id INTEGER NOT NULL REFERENCES words(id),
+      PRIMARY KEY (term, word_id)
+    );
+
     CREATE TABLE meta (
       key   TEXT PRIMARY KEY,
       value TEXT NOT NULL
@@ -452,6 +521,11 @@ function main(): void {
 
   const insertWordForm = db.prepare<WordFormInsertParams>(`
     INSERT OR IGNORE INTO word_forms (form, word_id)
+    VALUES (@form, @word_id)
+  `);
+
+  const insertEnTerm = db.prepare<WordFormInsertParams>(`
+    INSERT OR IGNORE INTO en_terms (term, word_id)
     VALUES (@form, @word_id)
   `);
 
@@ -694,6 +768,7 @@ function main(): void {
 
   let wordCount = 0;
   let wordFormCount = 0;
+  let enTermCount = 0;
 
   const insertWords = db.transaction(() => {
     for (const entry of allWordData) {
@@ -788,11 +863,18 @@ function main(): void {
         }
       }
 
+      // Extract English reverse-lookup terms from glosses + synonyms_en
+      const enTerms = extractEnTerms(data.senses || []);
+      for (const term of enTerms) {
+        insertEnTerm.run({ form: term, word_id: wordId });
+        enTermCount++;
+      }
+
     }
   });
 
   insertWords();
-  console.log(`Inserted ${wordCount} words, ${wordFormCount} word forms.`);
+  console.log(`Inserted ${wordCount} words, ${wordFormCount} word forms, ${enTermCount} English terms.`);
 
   // --------------------------------------------------------
   // Phase 2: Create indexes (after bulk insert for speed)
@@ -803,6 +885,7 @@ function main(): void {
     CREATE INDEX idx_words_lemma_folded ON words(lemma_folded);
     CREATE INDEX idx_words_freq         ON words(frequency);
     CREATE INDEX idx_word_forms         ON word_forms(form);
+    CREATE INDEX idx_en_terms           ON en_terms(term);
   `);
 
   // --------------------------------------------------------

@@ -217,18 +217,34 @@ export async function searchByLemma(q: string): Promise<SearchResult[]> {
 }
 
 /**
- * Search words by English gloss (word-boundary aware).
+ * Search words by English term (via pre-built en_terms table).
+ * Matches by prefix so typing "manufact" finds "manufacture".
+ *
+ * Ranking tiers:
+ *   0 — exact gloss_en match (the English term IS a primary translation)
+ *   1 — exact en_terms match (synonym or token match)
+ *   2 — prefix match only
+ * Within each tier, results are ordered by word frequency.
  */
 export async function searchByGlossEn(q: string): Promise<SearchResult[]> {
+  const term = q.toLowerCase().trim();
+  if (!term) return [];
+  // JSON-escaped pattern to match exact gloss_en entry: ,"term"] or ["term"
+  const glossPattern = `%"${term}"%`;
   const rows = await query(
-    `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en
-     FROM words
-     WHERE gloss_en LIKE ? COLLATE NOCASE
+    `SELECT w.lemma, w.pos, w.gender, w.frequency,
+            w.plural_dominant, w.plural_form, w.file, w.gloss_en
+     FROM words w
+     WHERE w.id IN (SELECT word_id FROM en_terms WHERE term LIKE ? ESCAPE '\\')
      ORDER BY
-       LENGTH(lemma),
-       CASE WHEN frequency IS NULL THEN 999999 ELSE frequency END
+       CASE
+         WHEN w.gloss_en LIKE ? THEN 0
+         WHEN w.id IN (SELECT word_id FROM en_terms WHERE term = ?) THEN 1
+         ELSE 2
+       END,
+       CASE WHEN w.frequency IS NULL THEN 999999 ELSE w.frequency END
      LIMIT 50`,
-    ["%" + q + "%"],
+    [term + "%", glossPattern, term],
   );
   return rows.map(processSearchRow);
 }
