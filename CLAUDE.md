@@ -24,8 +24,9 @@ A **fully offline** German dictionary app targeting learners up to **B2 level** 
 - **App framework**: Vue 3 + Framework7 + Capacitor
   - **Vue 3** — reactive UI framework
   - **Framework7** (v9) — mobile UI components with adaptive iOS/Material Design theming, built-in router, Virtual List, Searchbar
-  - **Capacitor** — native runtime wrapping the web app for iOS and Android, plus PWA deployment
+  - **Capacitor** — native runtime wrapping the web app for iOS and Android
   - Chosen over Ionic because Framework7 uses regular DOM (not Shadow DOM), making custom CSS styling of grammar tables and declension grids easier
+- **PWA**: `vite-plugin-pwa` (Workbox) for service worker generation, manifest, and offline app shell caching
 
 ---
 
@@ -105,6 +106,9 @@ download → transform → enrich → translate → build-index
 | `scripts/build-index.ts` | `npm run build-index` | Generates SQLite search index from JSON files |
 | `scripts/search-examples.ts` | — | Search example shards by form, lemma, owner, or text |
 | `scripts/apply-proofread-results.ts` | — | Apply proofreading results (flags, fixes) from a results JSON file |
+| `scripts/lib/corpus.ts` | — | Shared corpus loaders (`loadLeipzigFPM`, `loadSubtlexFPM`, `loadOpensubtitlesFPM`, `toZipf`, `combineZipf`, `loadAllCorpora`) |
+| `scripts/generate-synonyms-en.ts` | — | LLM-generates English search synonyms (`synonyms_en`) for reverse lookup |
+| `scripts/benchmark-frequency.ts` | — | Benchmark corpus weights against LLM reference scores (Spearman correlation, grid search) |
 
 ### Running
 
@@ -170,6 +174,7 @@ Each word gets a JSON file in `data/words/{pos}/`. All files share these common 
       "tags": [],
       "example_ids": ["ff9c6017fd", "f5244099b2"],
       "synonyms": ["..."],
+      "synonyms_en": ["..."],
       "antonyms": ["..."]
     }
   ],
@@ -189,6 +194,7 @@ Each word gets a JSON file in `data/words/{pos}/`. All files share these common 
 - `gloss_en_full_model` — model ID that produced `gloss_en_full`
 - `example_ids` — references into shared `data/examples/` shards
 - `_meta.source_hash` — SHA-256 of source JSONL line, used for change detection
+- `synonyms_en` — optional `string[]` of curated English search synonyms for a sense. Used by `en_terms` index for reverse English→German search. `null` until populated by `generate-synonyms-en.ts`
 - `zipf` — absolute combined Zipf score (2 decimal places), written by enrich step. Rank is computed at build-index time
 - `_proofread` — optional; tracks which aspects of the entry have been manually verified (see below)
 
@@ -531,7 +537,9 @@ Two-phase system: **enrich** writes absolute Zipf scores to word files, **build-
 
 **Zipf scale**: `log10(FPM) + 3` — normalizes across corpora of different sizes. ~1 = very rare, ~7 = extremely common. FPM (freq per million tokens) is the common denominator.
 
-**Combined Zipf**: arithmetic mean of Zipf values across corpora where the word appears. Missing corpora are excluded from the mean (not penalized as zero).
+**Corpus weights**: not all corpora are equally informative. Weights (in `scripts/lib/corpus.ts`): news=1.0, wiki=0.5, subtlex=0.8, osub=0.8. Benchmarked against a 448-word LLM reference set (Spearman rho=0.88).
+
+**Combined Zipf**: weighted mean of Zipf values across corpora. **Missing-corpus penalty**: absent corpora contribute a floor value (1.0 Zipf) at 50% weight — prevents words appearing only in news/wiki from outranking everyday spoken words.
 
 **Storage**: `enrich-frequency.ts` writes the absolute `zipf` score (2 decimal places) to each word JSON file. This is stable — adding/removing words doesn't change existing scores.
 
@@ -543,6 +551,8 @@ Approximate corpus sizes: Leipzig news ~5.4M tokens, Leipzig Wikipedia ~5.3M, SU
 
 **Diagnostic**: `npx tsx scripts/enrich-frequency.ts --check` prints a comparison table of Zipf per corpus for a set of test words.
 
+**Benchmark**: `npx tsx scripts/benchmark-frequency.ts` — stratified word selection (by POS and Zipf band, skips feminine -in derivatives), loads reference scores from `data/raw/llm-reference-scores.json`, computes per-corpus Spearman correlation, and grid-searches optimal corpus weights (6,561 combinations). Writes markdown reports to `reports/`.
+
 ---
 
 ## Regeneration Safety
@@ -552,7 +562,7 @@ The transform step preserves manually-added data when re-running:
 - **`_meta.source_hash`** — if source data hasn't changed, the entry is skipped entirely
 - **`zipf`** — added by the enrich step, preserved by transform's merge logic
 - **`plural_dominant`** — added by the enrich step, preserved by transform's merge logic
-- **`gloss_en` / `gloss_en_full`** — LLM translations in senses, preserved by position-matching merge
+- **`gloss_en` / `gloss_en_full` / `synonyms_en`** — LLM translations and curated English synonyms in senses, preserved by position-matching merge
 - **`data/examples/`** — existing entries with translations and annotations are preserved. Transform keeps the full example object when `translation` is truthy, so both `translation` and `annotations` survive re-generation.
 - **Transform write skip** — word files are not rewritten if content is identical (ignoring `generated_at`). Prevents spurious git churn on incremental re-runs.
 - **`_overrides`** — manual corrections to Wiktionary source data. Applied last in `mergeWithExisting()`, after all other merges. Values in `_overrides` win over anything the pipeline produces. For nested objects (e.g. `principal_parts`), merges one level deep; for scalars and arrays, replaces entirely. Never cleared by transform. Example: `"_overrides": { "past_participle": "gesehen" }` to fix a missing form.
@@ -633,11 +643,19 @@ CREATE TABLE word_forms (
   PRIMARY KEY (form, word_id)
 );
 
+CREATE TABLE en_terms (
+  term    TEXT NOT NULL,               -- English search term (lowercase)
+  word_id INTEGER NOT NULL REFERENCES words(id),
+  PRIMARY KEY (term, word_id)
+);
+
 CREATE TABLE meta (
   key   TEXT PRIMARY KEY,
   value TEXT NOT NULL                  -- e.g. "version" → content hash
 );
 ```
+
+The `en_terms` table enables English→German reverse search (~75K terms). Terms are extracted from `gloss_en` (phrase + individual tokens) and `synonyms_en` (phrase + individual tokens). `gloss_en_full` is intentionally NOT tokenized (too noisy — compound words like "cupboard" would split into "cup"). Stopwords and parenthetical content are stripped.
 
 ### Runtime Query Pattern
 ```
@@ -645,6 +663,13 @@ User types "Bank"
   → query words WHERE lemma LIKE 'Bank%' OR lemma_folded LIKE 'bank%'
   → returns rows with full data JSON
   → also searches word_forms for inflected form matches
+
+User types "cup" (English reverse search)
+  → searchByGlossEn() uses 3-tier ranking:
+    Tier 0: exact gloss_en match (e.g. Tasse's "cup" beats Weltcup's "World Cup")
+    Tier 1: exact en_terms match
+    Tier 2: prefix match on en_terms
+  → within each tier: frequency order
 ```
 
 The SQLite index handles all searching, filtering, and data serving. Word JSON files on disk are only used during the build pipeline.
@@ -653,22 +678,24 @@ The SQLite index handles all searching, filtering, and data serving. Word JSON f
 
 ## App Runtime Architecture
 
-### Startup sequence (`src/main.js`)
+### Startup sequence (`src/main.ts`)
 ```
 await initStorage()   →  preload Preferences keys into sync cache
 await initDb()        →  load SQLite DB (from Cache API or fetch)
 createApp(App).mount()
 ```
 
-### Persistent storage (`src/utils/storage.js`)
-Uses `@capacitor/preferences` (iOS UserDefaults / Android SharedPreferences on native, localStorage on web). All known keys are preloaded into an in-memory `Map` at startup so that Vue `data()` initializers and module-level code can read synchronously via `getCached(key)`. Writes via `setItem(key, value)` update the cache immediately and persist asynchronously.
+The PWA service worker is registered automatically by `vite-plugin-pwa` via `virtual:pwa-register/vue` — no manual registration in `main.ts` needed.
 
-### DB caching (`src/utils/db.js`)
+### Persistent storage (`src/utils/storage.ts`)
+Uses `@capacitor/preferences` (iOS UserDefaults / Android SharedPreferences on native, localStorage on web/PWA). All known keys are preloaded into an in-memory `Map` at startup so that Vue `data()` initializers and module-level code can read synchronously via `getCached(key)`. Writes via `setItem(key, value)` update the cache immediately and persist asynchronously.
+
+### DB caching (`src/utils/db.ts`)
 SQLite DB bytes are cached using the **Cache API** (`caches.open()`), which works in Safari, WKWebView, and all modern browsers. A version check (`db-version.txt`) determines if the cache is stale. Falls back to re-fetching from static assets if cache miss or API unavailable. Replaced the original OPFS `createWritable()` approach which doesn't work in Safari/WKWebView.
 
 **DB version hash** — computed in `build-index.ts` from: all word file `mtimeMs` values + `mtimeMs` of `src/utils/verb-forms.js`, `data/rules/verb-endings.json`, `data/rules/noun-gender.json`, `data/rules/adj-endings.json`. Any change to indexed-form logic invalidates the browser cache automatically.
 
-### i18n (`src/js/i18n.js`)
+### i18n (`src/js/i18n.ts`)
 Two locales: **English** (default) and **German**. UI chrome is translated; grammar terminology (Indikativ, Konjunktiv, Nom., etc.) stays in German in both modes.
 
 ```js
@@ -677,7 +704,7 @@ import { t } from "../js/i18n.js";
 // In script:   computed: { t() { return t; } }
 ```
 
-- Keys are namespaced by component/domain: `tab.*`, `word.*`, `noun.*`, `adj.*`, `verb.*`, `related.*`, `settings.*`, `report.*`
+- Keys are namespaced by component/domain: `tab.*`, `word.*`, `noun.*`, `adj.*`, `verb.*`, `related.*`, `settings.*`, `report.*`, `pwa.*`
 - `t(key)` falls back to English, then to the raw key — so missing translations degrade gracefully
 - Locale preference stored via `@capacitor/preferences` under `lexiklar_language` (`"auto" | "en" | "de"`)
 - `"auto"` resolves to `"de"` if `navigator.language` starts with `"de"`, otherwise `"en"`
@@ -688,6 +715,50 @@ import { t } from "../js/i18n.js";
 - `ios/` directory contains the generated Xcode project
 - `npx cap sync` copies built web assets into the native project
 - `npx cap open ios` opens in Xcode for device/simulator testing
+
+### PWA (Progressive Web App)
+
+Configured via `vite-plugin-pwa` in `vite.config.ts`. Capacitor provides no PWA infrastructure — it only provides cross-platform plugin APIs with web fallbacks.
+
+**Service worker** (Workbox, `generateSW` mode):
+- **Precaches app shell**: JS, CSS, HTML, fonts, icons (~2.3 MB, 13 entries)
+- **Excludes from precache**: `data/lexiklar.db`, `sqlite3/*.wasm`, sqlite3 helper workers — these are large and handled separately
+- **Runtime caching**:
+  - `db-version.txt` → `NetworkFirst` (always check for fresh version)
+  - `lexiklar.db` → `CacheFirst` (large file, versioned by db.ts Cache API logic)
+  - `sqlite3.wasm` → `CacheFirst` (stable binary, rarely changes)
+- **NavigateFallback**: `index.html` for SPA routing
+
+**Update flow** (`registerType: 'prompt'`):
+- When a new SW is detected, `PwaUpdatePrompt.vue` shows a toast at the bottom of the screen
+- User taps "Update" → `updateServiceWorker()` activates the new SW and reloads
+- User taps "Later" → dismisses until next visit
+- Only shown on web (`v-if="isWeb"` in App.vue) — native builds don't use the SW
+
+**Web app manifest** (generated by plugin):
+- `name: "Lexiklar"`, `display: "standalone"`, `theme_color: "#1a73e8"`
+- Icons: `pwa-192x192.png`, `pwa-512x512.png` (+ maskable), `apple-touch-icon.png`
+- Generated from SVG source at `public/icon.svg`
+
+**COOP/COEP headers**: set in `vite.config.ts` `server.headers` for dev only. Not needed in production — the app uses `sqlite3_deserialize` with plain `ArrayBuffer`, not `SharedArrayBuffer`. GitHub Pages cannot set custom headers, but this is fine.
+
+**Interaction with OTA DB updates**: the SW does not interfere with `checkForUpdates()` — those are cross-origin fetches to `evgeniimalikov.github.io/lexiklar-data` which bypass the SW's scope.
+
+### Versioning
+
+App version is stored in `package.json` (`"version": "0.9.0"`) and exposed at build time via `__APP_VERSION__` (defined in `vite.config.ts`). Displayed in Settings and included in bug reports.
+
+**Release scripts** (each bumps `package.json`, creates a git commit + tag, and pushes):
+
+```bash
+npm run release:patch   # 0.9.0 → 0.9.1 (bug fixes)
+npm run release:minor   # 0.9.0 → 0.10.0 (new features)
+npm run release:major   # 0.9.0 → 1.0.0 (public release)
+```
+
+These use `npm version` under the hood — it updates `package.json`, commits, and creates a `v0.9.1`-style git tag.
+
+**App version vs DB version**: these are independent. The app version tracks the UI/code; the DB version (content hash in `db-version.txt`) tracks dictionary data. The PWA SW version is implicit — it's based on content hashes of precached files, managed by Workbox.
 
 ---
 

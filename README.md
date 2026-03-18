@@ -45,6 +45,7 @@ Lexiklar = *Lexikon* (lexicon) + *klar* (clear). The differentiator from existin
 - Entire dictionary shipped as a single SQLite file (~10 MB)
 - No network requests at runtime
 - DB cached via Cache API — survives app restarts without re-fetching
+- PWA-installable — works offline after first visit, with automatic update prompts
 
 ---
 
@@ -53,7 +54,8 @@ Lexiklar = *Lexikon* (lexicon) + *klar* (clear). The differentiator from existin
 | Layer | Technology |
 |---|---|
 | UI framework | Vue 3 + Framework7 v9 |
-| Native runtime | Capacitor (iOS, Android, PWA) |
+| Native runtime | Capacitor (iOS, Android) |
+| PWA | vite-plugin-pwa (Workbox service worker + manifest) |
 | In-app database | SQLite WASM (`@sqlite.org/sqlite-wasm`) |
 | Build-time index | better-sqlite3 (Node.js) |
 | Data source | Kaikki.org / German Wiktionary dump |
@@ -181,6 +183,14 @@ npx cap sync
 npx cap open ios     # opens Xcode
 ```
 
+### Release
+
+```bash
+npm run release:patch   # 0.9.0 → 0.9.1 (bug fixes)
+npm run release:minor   # 0.9.0 → 0.10.0 (new features)
+npm run release:major   # 0.9.0 → 1.0.0 (public release)
+```
+
 ---
 
 ## Project Structure
@@ -211,7 +221,9 @@ npx cap open ios     # opens Xcode
 │   ├── seed-words.json     ~20 curated words for fast dev iteration
 │   └── word-whitelist.json ~430+ force-included words (civic, transport, A1–B2 gaps)
 ├── public/
-│   └── privacy.html        Privacy policy (served with app build)
+│   ├── privacy.html        Privacy policy (served with app build)
+│   ├── icon.svg            App icon source (generates PWA PNGs)
+│   └── pwa-*.png           Generated PWA icons (192, 512, apple-touch)
 └── capacitor.config.json
 ```
 
