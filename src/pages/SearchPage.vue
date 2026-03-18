@@ -227,25 +227,60 @@ export default defineComponent({
 
     async search(q: string) {
       this.loading = true;
+      const qLower = q.toLowerCase();
+
+      const [formHits, lemmaHits, enHits] = await Promise.all([
+        searchByWordForm(q),
+        searchByLemma(q),
+        searchByGlossEn(q),
+      ]);
+
       const seen = new Set<string>();
       const results: SearchResultWithForm[] = [];
 
-      const formHits = await searchByWordForm(q);
+      // 1. Form matches (inflected forms — always first)
       for (const r of formHits) {
         seen.add(r.file);
         results.push({ ...r, matchedForm: q });
       }
 
-      const lemmaHits = await searchByLemma(q);
+      // 2. Split lemma & English hits into exact vs rest
+      const lemmaExact: SearchResult[] = [];
+      const lemmaRest: SearchResult[] = [];
       for (const r of lemmaHits) {
+        if (seen.has(r.file)) continue;
+        if (r.lemma.toLowerCase() === qLower) lemmaExact.push(r);
+        else lemmaRest.push(r);
+      }
+
+      const enExact: SearchResult[] = [];
+      const enRest: SearchResult[] = [];
+      for (const r of enHits) {
+        if (seen.has(r.file)) continue;
+        if (r.glossEn?.some(g => g.toLowerCase() === qLower)) enExact.push(r);
+        else enRest.push(r);
+      }
+
+      // 3. Merge exact matches (German lemma + English gloss) by frequency
+      const exactMerged = [...lemmaExact, ...enExact]
+        .sort((a, b) => (a.frequency ?? 999999) - (b.frequency ?? 999999));
+      for (const r of exactMerged) {
         if (!seen.has(r.file)) {
           seen.add(r.file);
           results.push(r);
         }
       }
 
-      const enHits = await searchByGlossEn(q);
-      for (const r of enHits) {
+      // 4. German lemma prefix matches
+      for (const r of lemmaRest) {
+        if (!seen.has(r.file)) {
+          seen.add(r.file);
+          results.push(r);
+        }
+      }
+
+      // 5. Remaining English matches (en_terms exact + prefix)
+      for (const r of enRest) {
         if (!seen.has(r.file)) {
           seen.add(r.file);
           results.push(r);
