@@ -4,6 +4,13 @@
       <f7-nav-right>
         <f7-link
           v-if="word"
+          icon-f7="flag"
+          icon-size="18"
+          :tooltip="t('report.incorrectData')"
+          @click="reportIssue('top')"
+        />
+        <f7-link
+          v-if="word"
           :icon-f7="isFavorite ? 'star_fill' : 'star'"
           icon-size="20"
           :tooltip="isFavorite ? t('word.removeFavorite') : t('word.addFavorite')"
@@ -236,7 +243,7 @@
 
       <!-- Report issue -->
       <f7-block-footer class="padding-horizontal" style="text-align: center; margin-top: 24px; margin-bottom: 16px;">
-        <f7-link @click="reportIssue" class="text-color-gray">{{ t('report.incorrectData') }}</f7-link>
+        <f7-link @click="reportIssue('bottom')" class="text-color-gray">{{ t('report.incorrectData') }}</f7-link>
       </f7-block-footer>
     </template>
 
@@ -263,7 +270,22 @@
             <f7-badge :color="previewPosColor" class="word-preview-badge">{{ preview.pos }}</f7-badge>
           </div>
         </div>
-        <div class="word-preview-sense">
+        <!-- Multiple senses listed when no specific sense was pinned -->
+        <template v-if="!preview.senseExplicit && preview.senseCount > 1">
+          <div
+            v-for="(s, i) in preview.senses.slice(0, 3)"
+            :key="i"
+            class="word-preview-sense"
+          >
+            <span class="word-preview-sense-num">{{ i + 1 }}.</span>
+            <span class="word-preview-primary">{{ s.glossEn || s.gloss }}</span>
+          </div>
+          <div v-if="preview.senseCount > 3" class="word-preview-more">
+            + {{ preview.senseCount - 3 }} {{ t('word.more') }}
+          </div>
+        </template>
+        <!-- Single sense shown when a specific sense was explicitly linked -->
+        <div v-else class="word-preview-sense">
           <span class="word-preview-sense-num">{{ preview.senseNumber }}.</span>
           <div class="word-preview-sense-gloss">
             <span class="word-preview-primary">{{ preview.senseGlossEn || preview.senseGloss }}</span>
@@ -294,9 +316,17 @@ import type { Word, Sense, VerbWord, NounWord, AdjectiveWord } from "../../types
 import type { Example } from "../../types/example.js";
 import type { SearchResult } from "../../types/search.js";
 
+interface PreviewSense {
+  gloss: string;
+  glossEn: string | null;
+}
+
 interface PreviewData {
   filePath: string;
   senseNumber: number;
+  senseCount: number;
+  senseExplicit: boolean;
+  senses: PreviewSense[];
   word: string;
   article: string | null;
   gender: string | null;
@@ -543,6 +573,9 @@ export default defineComponent({
         this.preview = {
           filePath,
           senseNumber: senseNumber || 1,
+          senseCount: data.senses?.length || 1,
+          senseExplicit: senseNumber != null,
+          senses: (data.senses || []).map((s) => ({ gloss: s.gloss, glossEn: s.gloss_en || null })),
           word: data.word,
           article: (data as unknown as Record<string, unknown>).article as string | null || null,
           gender: (data as unknown as Record<string, unknown>).gender as string | null || null,
@@ -564,7 +597,7 @@ export default defineComponent({
       this.f7router.navigate(senseNumber ? `${url}?sense=${senseNumber}` : url);
     },
 
-    reportIssue() {
+    reportIssue(source: "top" | "bottom" = "bottom") {
       const { pos, file } = this.f7route.params as { pos: string; file: string };
       const fileKey = `${pos}/${file}`;
       const word = this.word?.word || file;
@@ -581,7 +614,7 @@ export default defineComponent({
           if (index === 0) return;
           const details = dialog.$el.find(".dialog-input").val();
           dialog.close();
-          submitReport({ type: "incorrect_data", word, details, file: fileKey }).then((result) => {
+          submitReport({ type: "incorrect_data", word, details, file: fileKey, source }).then((result) => {
             f7.toast.create({
               text: result.ok ? t("report.success") : t("report.error"),
               closeTimeout: 2000,

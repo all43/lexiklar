@@ -46,6 +46,8 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "word.removeFavorite": "Remove from favorites",
     "word.singular": "singular:",
     "word.proverb": "proverb",
+    "word.meaningsCount": "meanings",
+    "word.more": "more",
 
     // Related type labels
     "related.feminineForm": "Feminine Form",
@@ -174,6 +176,8 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "word.removeFavorite": "Aus Favoriten entfernen",
     "word.singular": "Singular:",
     "word.proverb": "Sprichwort",
+    "word.meaningsCount": "Bedeutungen",
+    "word.more": "weitere",
 
     // Related type labels
     "related.feminineForm": "Feminine Form",

@@ -14,6 +14,7 @@ interface ReportOptions {
   word: string;
   details?: string;
   file?: string;
+  source?: string;
 }
 
 interface ReportResult {
@@ -31,7 +32,7 @@ interface ReportResult {
  * @param {string} [opts.file] - File key (e.g. "nouns/Tisch"), for incorrect_data reports
  * @returns {Promise<{ ok: boolean, error?: string }>}
  */
-export async function submitReport({ type, word, details, file }: ReportOptions): Promise<ReportResult> {
+export async function submitReport({ type, word, details, file, source }: ReportOptions): Promise<ReportResult> {
   try {
     let dbVersion: string | null = null;
     try {
@@ -46,6 +47,7 @@ export async function submitReport({ type, word, details, file }: ReportOptions)
       word,
       details: details || null,
       file: file || null,
+      source: source || null,
       appVersion: typeof __APP_VERSION__ !== "undefined" ? __APP_VERSION__ : null,
       dbVersion,
     };
