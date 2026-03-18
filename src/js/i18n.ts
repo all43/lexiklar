@@ -138,6 +138,11 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "report.cancel": "Cancel",
     "report.success": "Report sent. Thank you!",
     "report.error": "Could not send report.",
+
+    // PWA update
+    "pwa.updateAvailable": "A new version is available.",
+    "pwa.reload": "Update",
+    "pwa.dismiss": "Later",
   },
   de: {
     // Tab bar
@@ -261,6 +266,11 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "report.cancel": "Abbrechen",
     "report.success": "Meldung gesendet. Vielen Dank!",
     "report.error": "Meldung konnte nicht gesendet werden.",
+
+    // PWA update
+    "pwa.updateAvailable": "Eine neue Version ist verf\u00FCgbar.",
+    "pwa.reload": "Aktualisieren",
+    "pwa.dismiss": "Sp\u00E4ter",
   },
 };
 

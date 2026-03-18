@@ -1,6 +1,6 @@
 {
   "name": "lexiklar",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "description": "Offline German dictionary with deep grammar support",
   "license": "MIT",
   "type": "module",
@@ -31,7 +31,10 @@
     "lookup": "tsx scripts/lookup.ts",
     "check-idioms": "tsx scripts/check-idiom-translations.ts",
     "check-idioms:llm": "tsx scripts/check-idiom-translations.ts --llm",
-    "compare-models": "tsx scripts/compare-models.ts"
+    "compare-models": "tsx scripts/compare-models.ts",
+    "release:patch": "npm version patch && git push && git push --tags",
+    "release:minor": "npm version minor && git push && git push --tags",
+    "release:major": "npm version major && git push && git push --tags"
   },
   "dependencies": {
     "@capacitor/core": "^8.1.0",
@@ -52,6 +55,7 @@
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
+    "vite-plugin-pwa": "^1.2.0",
     "vitest": "^4.0.18",
     "vue-tsc": "^3.2.5",
     "xlsx": "^0.18.5"

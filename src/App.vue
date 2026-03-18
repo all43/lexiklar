@@ -1,5 +1,6 @@
 <template>
   <f7-app v-bind="f7params">
+    <PwaUpdatePrompt v-if="isWeb" />
 
     <f7-views tabs>
       <!-- Tabbar at the bottom -->
@@ -26,8 +27,10 @@ import routes from "./js/routes.js";
 import { initTheme } from "./js/theme.js";
 import { t } from "./js/i18n.js";
 import { Capacitor } from "@capacitor/core";
+import PwaUpdatePrompt from "./components/PwaUpdatePrompt.vue";
 
 export default defineComponent({
+  components: { PwaUpdatePrompt },
   data() {
     return {
       isWeb: !Capacitor.isNativePlatform(),

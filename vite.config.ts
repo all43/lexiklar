@@ -1,13 +1,62 @@
 /// <reference types="vitest/config" />
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 import { readFileSync } from 'fs';
 
 const pkg = JSON.parse(readFileSync('package.json', 'utf-8'));
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    VitePWA({
+      registerType: 'prompt',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,woff2,woff,ttf,ico}'],
+        globIgnores: ['data/**', 'sqlite3/**', '**/sqlite3-worker1-*', '**/sqlite3-opfs-*'],
+        navigateFallback: 'index.html',
+        runtimeCaching: [
+          {
+            urlPattern: /\/data\/db-version\.txt$/,
+            handler: 'NetworkFirst',
+            options: { cacheName: 'lexiklar-db-version' },
+          },
+          {
+            urlPattern: /\/data\/lexiklar\.db$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'lexiklar-db',
+              expiration: { maxEntries: 1 },
+            },
+          },
+          {
+            urlPattern: /\/sqlite3\/sqlite3\.wasm$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'lexiklar-wasm',
+              expiration: { maxEntries: 1 },
+            },
+          },
+        ],
+      },
+      manifest: {
+        name: 'Lexiklar',
+        short_name: 'Lexiklar',
+        description: 'Offline German dictionary with deep grammar support',
+        theme_color: '#1a73e8',
+        background_color: '#ffffff',
+        display: 'standalone',
+        scope: '/',
+        start_url: '/',
+        icons: [
+          { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
+          { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
+          { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+        ],
+      },
+    }),
+  ],
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
   },
