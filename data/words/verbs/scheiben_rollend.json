@@ -72,11 +72,11 @@
     },
     "preterite": {
       "ich": "schob",
-      "du": "scheibtest",
-      "er": "scheibte",
-      "wir": "scheibten",
-      "ihr": "scheibtet",
-      "sie": "scheibten"
+      "du": "schobst",
+      "er": "schob",
+      "wir": "schoben",
+      "ihr": "schobt",
+      "sie": "schoben"
     },
     "subjunctive1": {
       "ich": "scheibe",
@@ -88,11 +88,11 @@
     },
     "subjunctive2": {
       "ich": "schöbe",
-      "du": "scheibtest",
-      "er": "scheibte",
-      "wir": "scheibten",
-      "ihr": "scheibtet",
-      "sie": "scheibten"
+      "du": "schöbest",
+      "er": "schöbe",
+      "wir": "schöben",
+      "ihr": "schöbet",
+      "sie": "schöben"
     },
     "imperative": {
       "du": "scheib!",
@@ -121,5 +121,25 @@
     "source_hash": "10829a064733a845",
     "generated_at": "2026-03-18"
   },
-  "zipf": 3.22
+  "zipf": 3.22,
+  "_overrides": {
+    "conjugation": {
+      "preterite": {
+        "ich": "schob",
+        "du": "schobst",
+        "er": "schob",
+        "wir": "schoben",
+        "ihr": "schobt",
+        "sie": "schoben"
+      },
+      "subjunctive2": {
+        "ich": "schöbe",
+        "du": "schöbest",
+        "er": "schöbe",
+        "wir": "schöben",
+        "ihr": "schöbet",
+        "sie": "schöben"
+      }
+    }
+  }
 }

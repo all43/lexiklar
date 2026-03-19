@@ -82,7 +82,7 @@
       "sie": "scheren"
     },
     "preterite": {
-      "ich": "scherte",
+      "ich": "schor",
       "du": "schorst",
       "er": "schor",
       "wir": "schoren",
@@ -98,7 +98,7 @@
       "sie": "scheren"
     },
     "subjunctive2": {
-      "ich": "scherte",
+      "ich": "schöre",
       "du": "schörest",
       "er": "schöre",
       "wir": "schören",
@@ -119,7 +119,27 @@
   ],
   "_meta": {
     "source_hash": "22e93226a897bf59",
-    "generated_at": "2026-03-18"
+    "generated_at": "2026-03-19"
   },
-  "zipf": 3.2
+  "zipf": 3.2,
+  "_overrides": {
+    "conjugation": {
+      "preterite": {
+        "ich": "schor",
+        "du": "schorst",
+        "er": "schor",
+        "wir": "schoren",
+        "ihr": "schort",
+        "sie": "schoren"
+      },
+      "subjunctive2": {
+        "ich": "schöre",
+        "du": "schörest",
+        "er": "schöre",
+        "wir": "schören",
+        "ihr": "schöret",
+        "sie": "schören"
+      }
+    }
+  }
 }

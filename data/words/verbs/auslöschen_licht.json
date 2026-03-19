@@ -2,25 +2,35 @@
   "word": "auslöschen",
   "pos": "verb",
   "etymology_number": null,
-  "auxiliary": "sein",
+  "auxiliary": "haben",
   "separable": true,
   "prefix": "aus",
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "Licht oder Feuer geht aus: erlöschen",
+      "gloss": "Licht oder Feuer zum Erlöschen bringen",
       "gloss_en": "extinguish",
       "tags": [],
       "example_ids": [
-        "934540a279",
-        "ad012c6836",
-        "1a68234447"
+        "2768b76e1f"
       ],
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To go out; to be extinguished (of light or fire)",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "entfernen oder auch ermorden",
+      "gloss_en": null,
+      "tags": [
+        "figurative"
+      ],
+      "example_ids": [
+        "3efb3bf043"
+      ],
+      "synonyms": [],
+      "antonyms": []
     }
   ],
   "sounds": [
@@ -29,56 +39,27 @@
       "tags": []
     }
   ],
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "lösche aus",
-      "du": "lischst aus",
-      "er": "lischt aus",
-      "wir": "löschen aus",
-      "ihr": "löscht aus",
-      "sie": "löschen aus"
-    },
-    "preterite": {
-      "ich": "losch aus",
-      "du": "löschtest aus",
-      "er": "löschte aus",
-      "wir": "löschten aus",
-      "ihr": "löschtet aus",
-      "sie": "löschten aus"
-    },
-    "subjunctive1": {
-      "ich": "lösche aus",
-      "du": "löschest aus",
-      "er": "lösche aus",
-      "wir": "löschen aus",
-      "ihr": "löschet aus",
-      "sie": "löschen aus"
-    },
-    "subjunctive2": {
-      "ich": "lösche aus",
-      "du": "löschtest aus",
-      "er": "löschte aus",
-      "wir": "löschten aus",
-      "ihr": "löschtet aus",
-      "sie": "löschten aus"
-    },
-    "imperative": {
-      "du": "lisch aus!",
-      "ihr": "löscht aus!",
-      "Sie": "löschen Sie aus!"
-    },
-    "participle1": "auslöschend",
-    "participle2": "ausgeloschen"
+  "conjugation_class": "weak",
+  "stems": {
+    "present": "lösch",
+    "past": ""
   },
-  "past_participle": "ausgeloschen",
+  "past_participle": "ausgelöscht",
+  "_derived": [
+    "Auslöschung",
+    "unauslöschlich"
+  ],
   "_antonyms": [
-    "aufflackern",
-    "entzünden"
+    "anmachen",
+    "entfachen",
+    "anbeten",
+    "heilighalten",
+    "inthronisieren",
+    "vergöttern"
   ],
   "_meta": {
-    "source_hash": "cc746206e692131d",
-    "generated_at": "2026-03-18"
+    "source_hash": "69ca09877890d10e",
+    "generated_at": "2026-03-19"
   },
   "zipf": 3.27
 }

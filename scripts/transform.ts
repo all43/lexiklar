@@ -826,7 +826,7 @@ function transformVerb(entry: WiktionaryEntry): TransformOutput {
   const { compact, sourced } = splitForms(entry);
   const meta = extractVerbMeta(entry, compact);
   const fullConjugation = extractVerbConjugation(
-    compact, sourced, meta.separable, meta.reflexive,
+    compact, sourced, meta.separable, meta.reflexive, meta.prefix,
   );
 
   const { separable, prefix } = meta;

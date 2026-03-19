@@ -215,6 +215,7 @@ export function extractVerbConjugation(
   sourced: WiktForm[],
   entrySeparable: boolean | null = null,
   entryReflexive: string | null = null,
+  entryPrefix: string | null = null,
 ): PartialConjugationTable {
   const conjugation: PartialConjugationTable = {
     present: {},
@@ -248,6 +249,10 @@ export function extractVerbConjugation(
       return !REFLEXIVE_RE.test(stripped);
     });
   }
+
+  // Note: separability/reflexive filtering happens before the compact loop so
+  // filteredSourced is ready, but the paradigm-preference reorder (below) must
+  // happen AFTER the compact loop because it depends on preterite.ich.
 
   for (const f of compact) {
     const tags = f.tags || [];
@@ -288,6 +293,24 @@ export function extractVerbConjugation(
         conjugation.subjunctive2[pk] = f.form;
       continue;
     }
+  }
+
+  // When the compact preterite.ich indicates a strong/irregular paradigm (no -te
+  // ending), reorder filteredSourced so non-regular forms come first.  Wiktionary
+  // Flexion pages for dual-paradigm verbs list the regular (weak) table before the
+  // irregular (strong) one, so without reordering the first-wins slot-fill picks up
+  // weak du/er/… forms even though the verb is being treated as strong.
+  const ichPretRaw = conjugation.preterite?.ich ?? "";
+  const ichPretBare = stripSepPrefix(ichPretRaw, entrySeparable ?? false, entryPrefix);
+  const preferNonRegular =
+    ichPretBare.length > 0 &&
+    !ichPretBare.endsWith("te") &&
+    !ichPretBare.endsWith("ete");
+  if (preferNonRegular) {
+    filteredSourced = [
+      ...filteredSourced.filter((f) => !(f.tags ?? []).includes("regular")),
+      ...filteredSourced.filter((f) => (f.tags ?? []).includes("regular")),
+    ];
   }
 
   for (const f of filteredSourced) {

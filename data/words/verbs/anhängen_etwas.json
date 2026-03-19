@@ -8,11 +8,11 @@
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "etwas an etwas (hängend) befestigen",
+      "gloss": "etwas haftet an jemandem, lastet auf jemandem (für einen langen Zeitraum)",
       "gloss_en": "attach",
       "tags": [],
       "example_ids": [
-        "a96669c325"
+        "38b7471266"
       ],
       "synonyms": [],
       "antonyms": [],
@@ -21,10 +21,13 @@
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
-      "gloss": "sich festhalten",
+      "gloss": "Anhänger einer Person, Ideals, Gruppe sein",
       "gloss_en": "hold on",
       "tags": [],
-      "example_ids": [],
+      "example_ids": [
+        "aad1dfca59",
+        "9c0577c0b8"
+      ],
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
@@ -32,65 +35,20 @@
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
-      "gloss": "jemandem unmittelbar folgen",
+      "gloss": "beim Erhitzen am Boden des Kochgeschirrs haften bleiben",
       "gloss_en": "follow closely",
-      "tags": [],
+      "tags": [
+        "impersonal",
+        "outdated"
+      ],
       "example_ids": [
-        "d3591d2d5a"
+        "e0e4f54d9e"
       ],
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
       "gloss_en_full": "To follow someone immediately",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "etwas hinzufügen",
-      "gloss_en": null,
-      "tags": [],
-      "example_ids": [
-        "e85c708cba"
-      ],
-      "synonyms": [],
-      "antonyms": []
-    },
-    {
-      "gloss": "(meist zum eigenen Vorteil) fälschlich behaupten, dass jemand etwas Negatives getan hat, für etwas Negatives verantwortlich ist, so dass es wahr erscheint",
-      "gloss_en": null,
-      "tags": [],
-      "example_ids": [
-        "c1bd1a9e3c"
-      ],
-      "synonyms": [],
-      "antonyms": []
-    },
-    {
-      "gloss": "jemanden mit etwas (Anstrengendem) belasten, jemandem etwas aufbürden",
-      "gloss_en": null,
-      "tags": [],
-      "example_ids": [
-        "22932ad043"
-      ],
-      "synonyms": [],
-      "antonyms": []
-    },
-    {
-      "gloss": "jemandem etwas über Wert verkaufen; jemandem etwas verkaufen, dass dieser eigentlich nicht haben wollte",
-      "gloss_en": null,
-      "tags": [],
-      "example_ids": [
-        "11674cfc55"
-      ],
-      "synonyms": [],
-      "antonyms": []
-    },
-    {
-      "gloss": "jemanden mit etwas Unangenehmen versehen",
-      "gloss_en": null,
-      "tags": [],
-      "example_ids": [],
-      "synonyms": [],
-      "antonyms": []
     }
   ],
   "sounds": [
@@ -99,52 +57,22 @@
       "tags": []
     }
   ],
-  "conjugation_class": "irregular",
-  "conjugation": {
-    "present": {
-      "ich": "hänge an",
-      "du": "hängst an",
-      "er": "hängt an",
-      "wir": "hängen an",
-      "ihr": "hängt an",
-      "sie": "hängen an"
-    },
-    "preterite": {
-      "ich": "hängte an",
-      "du": "hingst an",
-      "er": "hing an",
-      "wir": "hingen an",
-      "ihr": "hingt an",
-      "sie": "hingen an"
-    },
-    "subjunctive1": {
-      "ich": "hänge an",
-      "du": "hängest an",
-      "er": "hänge an",
-      "wir": "hängen an",
-      "ihr": "hänget an",
-      "sie": "hängen an"
-    },
-    "subjunctive2": {
-      "ich": "hängte an",
-      "du": "hingest an",
-      "er": "hinge an",
-      "wir": "hingen an",
-      "ihr": "hinget an",
-      "sie": "hingen an"
-    },
-    "imperative": {
-      "du": "hänge an!",
-      "ihr": "hängt an!",
-      "Sie": "hängen Sie an!"
-    },
-    "participle1": "anhängend",
-    "participle2": "angehängt"
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "häng",
+    "past": "hing",
+    "imperative_du": "hänge"
   },
-  "past_participle": "angehängt",
+  "past_participle": "angehangen",
+  "_derived": [
+    "Anhang",
+    "Anhänger",
+    "Anhängsel",
+    "anhänglich"
+  ],
   "_meta": {
-    "source_hash": "f40318cc3fcb3005",
-    "generated_at": "2026-03-18"
+    "source_hash": "3e353d957e810ecd",
+    "generated_at": "2026-03-19"
   },
   "zipf": 3.23
 }
