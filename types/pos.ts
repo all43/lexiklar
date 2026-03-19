@@ -19,6 +19,7 @@ export type PosKey =
   | "det"
   | "num"
   | "name"
-  | "abbrev";
+  | "abbrev"
+  | "postp";
 
 export type PosConfigMap = Record<PosKey, PosConfig>;

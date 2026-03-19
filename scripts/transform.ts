@@ -42,6 +42,8 @@ import type {
 import type { PosKey } from "./lib/pos.js";
 import { POS_CONFIG, SUPPORTED_POS } from "./lib/pos.js";
 import { loadExamples, saveExamples } from "./lib/examples.js";
+import { mergeSenses } from "./lib/merge.js";
+import type { OrphanEntry } from "./lib/merge.js";
 import { computeConjugation } from "../src/utils/verb-forms.js";
 import {
   extractVerbConjugation,
@@ -225,6 +227,17 @@ interface TransformOutput {
   _meta?: WordMeta;
   _proofread?: ProofreadFlags;
   _overrides?: Record<string, unknown>;
+  /** LLM translations that could not be matched to any new sense by gloss text. Saved so they
+   *  can be remapped manually or by a future tool. Survives re-transform. */
+  _orphaned_translations?: Array<{
+    gloss: string;
+    gloss_en?: string | null;
+    gloss_en_model?: string | null;
+    gloss_en_full?: string | null;
+    gloss_en_full_model?: string | null;
+    synonyms_en?: string[] | null;
+    synonyms_en_model?: string | null;
+  }>;
   [key: string]: unknown;
 }
 
@@ -1288,7 +1301,7 @@ function mergeWithExisting(newData: TransformOutput, existingPath: string): Tran
       newData.compound_verified = (existing as { compound_verified: boolean }).compound_verified;
   }
 
-  // Preserve LLM-generated sense fields (match by position)
+  // Preserve LLM-generated sense fields via gloss-text matching (see scripts/lib/merge.ts).
   const existingSenses = existing.senses as Sense[] | undefined;
   if (existingSenses && !newData.senses) {
     const lostAll = existingSenses.filter((s) => s.gloss_en != null);
@@ -1300,24 +1313,23 @@ function mergeWithExisting(newData: TransformOutput, existingPath: string): Tran
     }
   }
   if (existingSenses && newData.senses) {
-    for (let i = 0; i < newData.senses.length; i++) {
-      const oldSense = existingSenses[i];
-      if (!oldSense) continue;
-      if (oldSense.gloss_en != null)            newData.senses[i].gloss_en            = oldSense.gloss_en;
-      if (oldSense.gloss_en_model != null)      newData.senses[i].gloss_en_model      = oldSense.gloss_en_model;
-      if (oldSense.gloss_en_full != null)       newData.senses[i].gloss_en_full       = oldSense.gloss_en_full;
-      if (oldSense.gloss_en_full_model != null) newData.senses[i].gloss_en_full_model = oldSense.gloss_en_full_model;
-      if (oldSense.synonyms_en?.length)         newData.senses[i].synonyms_en         = oldSense.synonyms_en;
-      if (oldSense.synonyms_en_model != null)  newData.senses[i].synonyms_en_model   = oldSense.synonyms_en_model;
-    }
-
-    // Warn if existing senses had translations that will be lost (new sense count < old)
-    const lostSenses = existingSenses.slice(newData.senses.length)
-      .filter((s) => s.gloss_en != null);
-    if (lostSenses.length > 0) {
+    const existingOrphans: OrphanEntry[] =
+      (existing as { _orphaned_translations?: OrphanEntry[] })._orphaned_translations ?? [];
+    const { senses: mergedSenses, orphans } = mergeSenses(
+      newData.senses,
+      existingSenses,
+      existingOrphans,
+    );
+    newData.senses = mergedSenses;
+    if (orphans.length > 0) {
+      const addedCount = orphans.length - existingOrphans.filter(
+        (o) => orphans.some((n) => n.gloss === o.gloss),
+      ).length;
+      newData._orphaned_translations = orphans;
       console.warn(
-        `[merge] TRANSLATION LOSS: ${newData.word} (${existingPath}) — ` +
-        `${lostSenses.length} sense(s) dropped (existing had ${existingSenses.length}, new has ${newData.senses.length})`,
+        `[merge] ORPHANED TRANSLATIONS: ${newData.word} (${existingPath}) — ` +
+        `${addedCount} newly lost, ${orphans.length - addedCount} carried forward. ` +
+        `Glosses: ${orphans.map((o) => JSON.stringify(o.gloss)).join(", ")}`,
       );
     }
   }
@@ -1586,6 +1598,53 @@ async function main(): Promise<void> {
     if (compoundPartsAdded > 0)
       console.log(`  Added ${compoundPartsAdded} compound part(s) missing from frequency filter.`);
   }
+
+  // Phase 1d: Force-include the parent verb for any form-of-only verb entry that
+  // passed the frequency/whitelist filter. German Wiktionary has separate entries
+  // for conjugated forms (e.g. "vermisst" → "vermissen"). If an inflected form
+  // made it into the dataset, its parent should too — otherwise the user gets a
+  // useless empty grammar card with no conjugation table.
+  if (freqFilter && !useSeed) {
+    let parentVerbsAdded = 0;
+    for (const [key, entries] of groups) {
+      if (!key.endsWith("|verb")) continue;
+      // Scan this group's entries for a purely form-of verb
+      let parentWord: string | null = null;
+      for (const entry of entries) {
+        const raw = readLineAt(entry.offset, entry.length);
+        const parsed = JSON.parse(raw) as WiktionaryEntry;
+        if (parsed.pos !== "verb") continue;
+        // Only care about entries where EVERY sense is form-of
+        const allFormOf = parsed.senses.every(
+          (s) => (s.form_of?.length ?? 0) > 0 || s.tags?.includes("form-of"),
+        );
+        if (!allFormOf) continue;
+        // Extract parent word from structured form_of field
+        for (const sense of parsed.senses) {
+          if (sense.form_of?.[0]?.word) {
+            parentWord = sense.form_of[0].word;
+            break;
+          }
+        }
+        if (parentWord) break;
+      }
+      if (!parentWord) continue;
+      const parentKey = `${parentWord}|verb`;
+      if (groups.has(parentKey)) continue; // parent already included
+      const buffered = compoundBuffer.get(parentWord.toLowerCase());
+      if (!buffered) continue; // parent not in Wiktionary data
+      const bufferedRaw = readLineAt(buffered.offset, buffered.length);
+      groups.set(parentKey, [{
+        offset: buffered.offset,
+        length: buffered.length,
+        hash: sha256(bufferedRaw),
+      }]);
+      parentVerbsAdded++;
+    }
+    if (parentVerbsAdded > 0)
+      console.log(`  Added ${parentVerbsAdded} parent verb(s) for form-of entries.`);
+  }
+
   compoundBuffer.clear(); // free memory
 
   // Load existing examples to preserve manually added data
@@ -1653,8 +1712,14 @@ async function main(): Promise<void> {
         continue;
       }
 
-      // Skip if source unchanged, file exists on disk, and not explicitly targeted
+      // Skip if source unchanged and not explicitly targeted.
+      // Two valid states: file exists on disk, or entry was intentionally skipped
+      // (sentinel "__form-of-skip__" written by the form-of skip below).
       if (stateEntry?.hash === hash && !forcePos && !wordsFilter) {
+        if (stateEntry.file === "__form-of-skip__") {
+          skipped++;
+          continue;
+        }
         const expectedPath = join(DATA_DIR, stateEntry.file + ".json");
         if (existsSync(expectedPath)) {
           skipped++;
@@ -1665,6 +1730,18 @@ async function main(): Promise<void> {
       const transform = transformers[parsed.pos];
       if (!transform) continue;
       let data = transform(parsed);
+
+      // Skip verb entries that are purely inflected forms (all senses tagged form-of).
+      // The parent verb's conjugation table already covers these forms in the word_forms
+      // search index, so a separate file adds nothing and produces an empty grammar card.
+      // Write a sentinel state entry so the hash check short-circuits on future runs
+      // without requiring the file to exist on disk.
+      if (parsed.pos === "verb" && data.senses?.length > 0 &&
+          data.senses.every((s) => s.tags?.includes("form-of"))) {
+        state.entries[stateKey] = { hash, file: "__form-of-skip__" };
+        skipped++;
+        continue;
+      }
 
       // Extract expressions and proverbs (word-level, not sense-level)
       const expressionIds = deduplicateExpressions(extractExpressions(parsed));
