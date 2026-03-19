@@ -1388,8 +1388,20 @@ async function main(): Promise<void> {
   const forcePosIdx = process.argv.indexOf("--force-pos");
   const forcePos = forcePosIdx !== -1 ? process.argv[forcePosIdx + 1] : null;
 
+  // --words schaffen,scheren  OR  --words words.txt
+  const wordsIdx = process.argv.indexOf("--words");
+  let wordsFilter: Set<string> | null = null;
+  if (wordsIdx !== -1) {
+    const arg = process.argv[wordsIdx + 1];
+    if (existsSync(arg)) {
+      wordsFilter = new Set(readFileSync(arg, "utf-8").split("\n").map(l => l.trim()).filter(Boolean).map(w => w.toLowerCase()));
+    } else {
+      wordsFilter = new Set(arg.split(",").map(w => w.trim().toLowerCase()));
+    }
+  }
+
   let freqFilter: Set<string> | null = null;
-  if (maxFrequency && !useSeed) {
+  if (maxFrequency && !useSeed && !wordsFilter) {
     const wordsFile = join(ROOT, "data", "raw", "leipzig-words.txt");
     const subtitleFile = join(ROOT, "data", "raw", "opensubtitles-words.txt");
     if (!existsSync(wordsFile) && !existsSync(subtitleFile)) {
@@ -1405,7 +1417,8 @@ async function main(): Promise<void> {
     freqFilter = loadFrequencyFilter(wordsFile, subtitleFile, maxFrequency, maxSubtitleRank, whitelist);
   }
 
-  if (useSeed) console.log(`Seed mode: processing ${seedWords!.size} words`);
+  if (wordsFilter) console.log(`Words mode: processing ${wordsFilter.size} specific words`);
+  else if (useSeed) console.log(`Seed mode: processing ${seedWords!.size} words`);
   else if (maxFrequency) console.log(`B2 mode: top ${maxFrequency} words by frequency (subtitle rank: ${maxSubtitleRank ?? maxFrequency})`);
   else console.log("Full mode: processing all entries");
 
@@ -1474,6 +1487,7 @@ async function main(): Promise<void> {
       compoundBuffer.set(entry.word.toLowerCase(), { offset: lineStart, length: entryLen, pos: entry.pos });
     }
 
+    if (wordsFilter && !wordsFilter.has(entry.word.toLowerCase())) continue;
     if (seedWords && !seedWords.has(entry.word.toLowerCase())) continue;
     if (freqFilter && entry.pos !== "phrase" && !freqFilter.has(entry.word.toLowerCase())) continue;
 
@@ -1623,8 +1637,14 @@ async function main(): Promise<void> {
       const parsed = JSON.parse(raw) as WiktionaryEntry;
       const stateKey = `${parsed.word}|${parsed.pos}|${parsed.etymology_number || 1}`;
 
+      // --force-pos: only re-process entries of the specified POS
+      if (forcePos && parsed.pos !== forcePos) {
+        skipped++;
+        continue;
+      }
+
       const stateEntry = state.entries[stateKey];
-      if (stateEntry?.hash === hash && parsed.pos !== forcePos) {
+      if (stateEntry?.hash === hash && !forcePos) {
         // Only skip if the output file still exists on disk
         const expectedPath = join(DATA_DIR, stateEntry.file + ".json");
         if (existsSync(expectedPath)) {

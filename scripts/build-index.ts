@@ -283,6 +283,119 @@ function buildWordLookup(files: string[]): Map<string, WordLookupEntry[]> {
  * Resolve an annotation to a word file path + optional sense number.
  * Returns {posDir, file, senseNumber} or null.
  */
+// Irregular English forms → base form. Covers the most common mismatches in gloss_hints.
+const IRREGULAR_EN: Record<string, string> = {
+  // be
+  was: "be", were: "be", been: "be", am: "be", is: "be", are: "be",
+  // have
+  had: "have", has: "have",
+  // do
+  did: "do", done: "do", does: "do",
+  // go
+  went: "go", gone: "go", goes: "go",
+  // come
+  came: "come", comes: "come",
+  // take
+  took: "take", taken: "take",
+  // make
+  made: "make",
+  // give
+  gave: "give", given: "give",
+  // say
+  said: "say",
+  // get
+  got: "get", gotten: "get",
+  // know
+  knew: "know", known: "know",
+  // think
+  thought: "think",
+  // see
+  saw: "see", seen: "see",
+  // find
+  found: "find",
+  // put
+  puts: "put",
+  // bring
+  brought: "bring",
+  // keep
+  kept: "keep",
+  // let
+  lets: "let",
+  // begin
+  began: "begin", begun: "begin",
+  // leave
+  left: "leave",
+  // stand
+  stood: "stand",
+  // run
+  ran: "run",
+  // hold
+  held: "hold",
+  // write
+  wrote: "write", written: "write",
+  // speak
+  spoke: "speak", spoken: "speak",
+  // read (past)
+  // can't include "read" — same spelling
+  // lose
+  lost: "lose",
+  // win
+  won: "win",
+  // break
+  broke: "break", broken: "break",
+  // drive
+  drove: "drive", driven: "drive",
+  // eat
+  ate: "eat", eaten: "eat",
+  // fall
+  fell: "fall", fallen: "fall",
+  // grow
+  grew: "grow", grown: "grow",
+  // fly
+  flew: "fly", flown: "fly",
+  // throw
+  threw: "throw", thrown: "throw",
+  // sing
+  sang: "sing", sung: "sing",
+  // sit
+  sat: "sit",
+  // lie
+  lay: "lie", lain: "lie",
+  // lead
+  led: "lead",
+  // feel
+  felt: "feel",
+  // catch
+  caught: "catch",
+  // teach
+  taught: "teach",
+  // buy
+  bought: "buy",
+  // send
+  sent: "send",
+  // build
+  built: "build",
+  // sell
+  sold: "sell",
+  // spend
+  spent: "spend",
+  // Irregular nouns (plural → singular)
+  children: "child", women: "woman", men: "man", people: "person",
+  feet: "foot", teeth: "tooth", mice: "mouse", geese: "goose",
+  lives: "life", wives: "wife", knives: "knife", halves: "half",
+  leaves: "leaf", selves: "self", loaves: "loaf",
+};
+
+/**
+ * Normalize a gloss_hint: split pipe-separated values (take first),
+ * then apply irregular English mapping.
+ */
+function normalizeHint(raw: string): string {
+  // Split pipe-separated hints: "from | of" → "from"
+  const first = raw.includes("|") ? raw.split("|")[0].trim() : raw;
+  return first.toLowerCase();
+}
+
 function resolveWordFile(
   lemma: string,
   pos: string,
@@ -298,7 +411,7 @@ function resolveWordFile(
   let senseNumber: number | null = null;
 
   if (glossHint) {
-    const hintLower = glossHint.toLowerCase();
+    const hintLower = normalizeHint(glossHint);
     // Crude English stem: strip common inflectional suffixes for fuzzy matching.
     // Only strip suffixes that leave a stem of at least 4 chars to avoid
     // false positives ("time"→"tim" matching "moment", "free"→"fre" matching "freelance").
@@ -312,14 +425,24 @@ function resolveWordFile(
     // Note: single -e is NOT stripped — too aggressive for short words (time→tim, base→bas)
     const useStem = hintStem.length >= 4 && hintStem !== hintLower;
 
+    // Irregular English base form: "was" → "be", "children" → "child"
+    const irregBase = IRREGULAR_EN[hintLower] ?? null;
+
+    // Helper: check if hint (or variants) matches a gloss string
+    function hintMatchesGloss(gloss: string): boolean {
+      const g = gloss.toLowerCase();
+      if (g.includes(hintLower)) return true;
+      if (useStem && g.includes(hintStem)) return true;
+      if (irregBase && g.includes(irregBase)) return true;
+      return false;
+    }
+
     // Try German gloss first, then gloss_en fallback (LLMs often produce English hints).
-    // Each pass: exact substring → stem fallback.
     for (const pass of ["gloss", "gloss_en"] as const) {
-      // Exact substring match
       for (const candidate of entries) {
         for (let i = 0; i < candidate.senses.length; i++) {
           const gloss = candidate.senses[i][pass];
-          if (gloss && gloss.toLowerCase().includes(hintLower)) {
+          if (gloss && hintMatchesGloss(gloss)) {
             entry = candidate;
             senseNumber = i + 1; // 1-based
             break;
@@ -328,13 +451,16 @@ function resolveWordFile(
         if (senseNumber) break;
       }
       if (senseNumber) break;
+    }
 
-      // Stem fallback: "consequences" matches "consequence", "voted" matches "vote"
-      if (useStem) {
-        for (const candidate of entries) {
-          for (let i = 0; i < candidate.senses.length; i++) {
-            const gloss = candidate.senses[i][pass];
-            if (gloss && gloss.toLowerCase().includes(hintStem)) {
+    // synonyms_en fallback: check if hint appears in any sense's synonyms_en
+    if (!senseNumber) {
+      for (const candidate of entries) {
+        for (let i = 0; i < candidate.senses.length; i++) {
+          const syns = candidate.senses[i].synonyms_en;
+          if (!syns) continue;
+          for (const syn of syns) {
+            if (hintMatchesGloss(syn)) {
               entry = candidate;
               senseNumber = i + 1;
               break;

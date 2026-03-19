@@ -65,6 +65,12 @@ const JOB_LIMIT = limitIdx >= 0 ? parseInt(args[limitIdx + 1], 10) : 0;
 const concurrencyIdx = args.indexOf("--concurrency");
 const CONCURRENCY = concurrencyIdx >= 0 ? parseInt(args[concurrencyIdx + 1], 10) : 1;
 
+// Optional word list filter: only process files whose key (e.g. "verbs/sagen") is in the list.
+const wordListIdx = args.indexOf("--word-list");
+const WORD_LIST_FILTER: Set<string> | null = wordListIdx >= 0
+  ? new Set(readFileSync(args[wordListIdx + 1], "utf-8").split("\n").map(l => l.trim()).filter(Boolean))
+  : null;
+
 // ============================================================
 // Types
 // ============================================================
@@ -137,6 +143,8 @@ function collectWordBatches(targetField: "gloss_en" | "gloss_en_full"): WordJob[
 
     for (const file of readdirSync(dir)) {
       if (!file.endsWith(".json")) continue;
+      const fileKey = `${posDir}/${file.replace(/\.json$/, "")}`;
+      if (WORD_LIST_FILTER && !WORD_LIST_FILTER.has(fileKey)) continue;
       const filePath = join(dir, file);
       const data = JSON.parse(readFileSync(filePath, "utf-8")) as Word;
 
@@ -180,6 +188,8 @@ function collectSenses(targetField: "gloss_en" | "gloss_en_full"): SingleSenseIt
     if (!existsSync(dir)) continue;
     for (const file of readdirSync(dir)) {
       if (!file.endsWith(".json")) continue;
+      const fileKey = `${posDir}/${file.replace(/\.json$/, "")}`;
+      if (WORD_LIST_FILTER && !WORD_LIST_FILTER.has(fileKey)) continue;
       const filePath = join(dir, file);
       const data = JSON.parse(readFileSync(filePath, "utf-8")) as Word;
       for (let i = 0; i < (data.senses || []).length; i++) {

@@ -93,7 +93,7 @@ download → transform → enrich → translate → build-index
 | Script | Command | Purpose |
 |---|---|---|
 | `scripts/download.ts` | `npm run download` | Downloads and decompresses `de-extract.jsonl.gz` from Kaikki |
-| `scripts/transform.ts` | `npm run transform` | Parses JSONL, extracts grammar, writes per-word JSON files (default: B2 filter) |
+| `scripts/transform.ts` | `npm run transform` | Parses JSONL, extracts grammar, writes per-word JSON files (default: B2 filter). Use `--words` to limit scope (see below) |
 | `scripts/enrich-frequency.ts` | `npm run enrich` | Downloads 4 frequency corpora, computes Zipf scores, writes absolute `zipf` to word files |
 | `scripts/translate-glosses.ts` | `npm run translate-glosses` | LLM-translates German glosses → `gloss_en` (short) and `gloss_en_full` |
 | `scripts/translate-examples.ts` | `npm run translate-examples` | LLM-translates examples and adds word annotations |
@@ -103,6 +103,26 @@ download → transform → enrich → translate → build-index
 | `scripts/lib/corpus.ts` | — | Shared corpus loaders (`loadLeipzigFPM`, `loadSubtlexFPM`, `loadOpensubtitlesFPM`, `toZipf`, `combineZipf`, `loadAllCorpora`) |
 | `scripts/generate-synonyms-en.ts` | — | LLM-generates English search synonyms (`synonyms_en`) for reverse lookup |
 | `scripts/benchmark-frequency.ts` | — | Benchmark corpus weights against LLM reference scores (Spearman correlation, grid search) |
+
+**IMPORTANT: Do not run a full transform (`npm run transform`) just to re-process a few words.** Use `--words` to scope to specific entries — a full transform touches thousands of files and causes massive git churn:
+
+```bash
+# Single word
+npx tsx scripts/transform.ts --words schaffen
+
+# Multiple words (comma-separated)
+npx tsx scripts/transform.ts --words schaffen,scheren,starten
+
+# From a file (one word per line)
+npx tsx scripts/transform.ts --words words.txt
+
+# Combined with --force-pos
+npx tsx scripts/transform.ts --words schaffen --force-pos verb
+```
+
+**Use `scripts/lookup.ts` to inspect word data** — never read JSON files directly with `cat`/`Read` when you need to understand a word's full picture (senses, examples, conjugation). The lookup script cross-references word files, examples, and the index.
+
+**IMPORTANT: Never delete word files, example shards, or run `git checkout` on data files without first verifying that no non-derived data will be lost.** Word files contain manually-added data (`_overrides`, `_proofread`, `gloss_en`, `synonyms_en`, `stems`) and example shards contain proofread translations, annotation fixes, and gloss_hint corrections — none of which can be regenerated from the pipeline. Always check `git diff` before discarding changes.
 
 See README → Running Locally for pipeline commands, seed words, and state tracking.
 

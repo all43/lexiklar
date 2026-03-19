@@ -62,6 +62,12 @@ const CONCURRENCY = concIdx >= 0 ? parseInt(args[concIdx + 1], 10) : 1;
 const limitIdx = args.indexOf("--limit");
 const JOB_LIMIT = limitIdx >= 0 ? parseInt(args[limitIdx + 1], 10) : 0;
 
+// Optional word list filter: only process files whose key (e.g. "verbs/sagen") is in the list.
+const wordListIdx = args.indexOf("--word-list");
+const WORD_LIST_FILTER: Set<string> | null = wordListIdx >= 0
+  ? new Set(readFileSync(args[wordListIdx + 1], "utf-8").split("\n").map((l: string) => l.trim()).filter(Boolean))
+  : null;
+
 // ============================================================
 // Types
 // ============================================================
@@ -92,6 +98,8 @@ function collectJobs(): WordJob[] {
 
     for (const file of readdirSync(dir)) {
       if (!file.endsWith(".json")) continue;
+      const fileKey = `${posDir}/${file.replace(/\.json$/, "")}`;
+      if (WORD_LIST_FILTER && !WORD_LIST_FILTER.has(fileKey)) continue;
       const filePath = join(dir, file);
       const data = JSON.parse(readFileSync(filePath, "utf-8")) as Word & Record<string, unknown>;
 
