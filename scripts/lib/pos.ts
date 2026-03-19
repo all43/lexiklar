@@ -17,6 +17,7 @@ export const POS_CONFIG: PosConfigMap = {
   phrase: { dir: "phrases", label: "phrase" },
   adv: { dir: "adverbs", label: "adverb" },
   prep: { dir: "prepositions", label: "preposition" },
+  postp: { dir: "prepositions", label: "preposition" },
   conj: { dir: "conjunctions", label: "conjunction" },
   particle: { dir: "particles", label: "particle" },
   intj: { dir: "interjections", label: "interjection" },

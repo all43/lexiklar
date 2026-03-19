@@ -1614,6 +1614,7 @@ async function main(): Promise<void> {
     phrase: transformPhrase,
     adv: (e) => transformSimple(e, POS_CONFIG.adv.label),
     prep: (e) => transformSimple(e, POS_CONFIG.prep.label),
+    postp: (e) => transformSimple(e, POS_CONFIG.prep.label),
     conj: (e) => transformSimple(e, POS_CONFIG.conj.label),
     particle: (e) => transformSimple(e, POS_CONFIG.particle.label),
     intj: (e) => transformSimple(e, POS_CONFIG.intj.label),
