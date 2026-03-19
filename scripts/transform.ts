@@ -1644,8 +1644,16 @@ async function main(): Promise<void> {
       }
 
       const stateEntry = state.entries[stateKey];
-      if (stateEntry?.hash === hash && !forcePos) {
-        // Only skip if the output file still exists on disk
+
+      // --force-pos re-processes existing files only — skip entries not yet in
+      // the dataset so that rule-change runs don't pull in new words
+      if (forcePos && !stateEntry) {
+        skipped++;
+        continue;
+      }
+
+      // Skip if source unchanged, file exists on disk, and not explicitly targeted
+      if (stateEntry?.hash === hash && !forcePos && !wordsFilter) {
         const expectedPath = join(DATA_DIR, stateEntry.file + ".json");
         if (existsSync(expectedPath)) {
           skipped++;

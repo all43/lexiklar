@@ -107,7 +107,7 @@ download → transform → enrich → translate → build-index
 **IMPORTANT: Do not run a full transform (`npm run transform`) just to re-process a few words.** Use `--words` to scope to specific entries — a full transform touches thousands of files and causes massive git churn:
 
 ```bash
-# Single word
+# Single word (always re-processes, bypasses hash check)
 npx tsx scripts/transform.ts --words schaffen
 
 # Multiple words (comma-separated)
@@ -118,7 +118,13 @@ npx tsx scripts/transform.ts --words words.txt
 
 # Combined with --force-pos
 npx tsx scripts/transform.ts --words schaffen --force-pos verb
+
+# After changing extraction rules — re-process all existing verbs without pulling in new words
+npx tsx scripts/transform.ts --force-pos verb
 ```
+
+`--words` always bypasses the hash check (explicitly targeted words are always re-processed).
+`--force-pos` only re-processes entries already in the dataset (skips words not yet tracked in `.import-state.json`), so it will not introduce new files.
 
 **Use `scripts/lookup.ts` to inspect word data** — never read JSON files directly with `cat`/`Read` when you need to understand a word's full picture (senses, examples, conjugation). The lookup script cross-references word files, examples, and the index.
 
