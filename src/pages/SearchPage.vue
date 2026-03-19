@@ -166,7 +166,7 @@ export default defineComponent({
       recentWords: [] as SearchResult[],
       loading: true,
       debounceTimer: null as ReturnType<typeof setTimeout> | null,
-      showArticles: getCached(SHOW_ARTICLES_KEY) === "1",
+      showArticles: getCached(SHOW_ARTICLES_KEY) !== "0",
     };
   },
 
@@ -189,7 +189,7 @@ export default defineComponent({
 
   methods: {
     onPageVisible() {
-      this.showArticles = getCached(SHOW_ARTICLES_KEY) === "1";
+      this.showArticles = getCached(SHOW_ARTICLES_KEY) !== "0";
       if (!this.searchQuery) this.loadHomeScreen();
     },
     onSearch(_searchbar: unknown, query: string) {

@@ -51,7 +51,7 @@
 
     <f7-block-title>{{ t('settings.dataSources') }}</f7-block-title>
     <f7-list inset strong-ios outline-ios>
-      <f7-list-item title="German Wiktionary" after="CC BY-SA 4.0" />
+      <f7-list-item title="German Wiktionary (via Kaikki.org)" after="CC BY-SA 4.0" />
       <f7-list-item title="Leipzig Corpora" after="CC BY 4.0" />
       <f7-list-item title="SUBTLEX-DE" after="CC BY 4.0" />
       <f7-list-item title="OpenSubtitles" after="CC BY 4.0" />
@@ -132,7 +132,7 @@ export default defineComponent({
       language: getLocale(),
       themeOptions: THEME_OPTIONS,
       langOptions: LANG_OPTIONS,
-      showArticles: getCached(SHOW_ARTICLES_KEY) === "1",
+      showArticles: getCached(SHOW_ARTICLES_KEY) !== "0",
       dbVersion: null as string | null,
       dbBuiltAt: null as string | null,
       updateState: "idle" as UpdateState,

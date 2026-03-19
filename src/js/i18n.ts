@@ -96,7 +96,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
 
     // Data Sources / Attribution
     "settings.dataSources": "Data Sources",
-    "settings.dataSourcesFooter": "Dictionary content \u00A9 Wiktionary contributors, CC\u00A0BY-SA\u00A04.0. Frequency data: Leipzig Corpora, SUBTLEX-DE (Brysbaert et al. 2011), OpenSubtitles.",
+    "settings.dataSourcesFooter": "Dictionary content \u00A9 Wiktionary contributors, CC\u00A0BY-SA\u00A04.0, extracted via Kaikki.org. Frequency data: Leipzig Corpora, SUBTLEX-DE (Brysbaert et al. 2011), OpenSubtitles.",
 
     "settings.privacyPolicy": "Privacy Policy",
 
@@ -226,7 +226,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
 
     // Data Sources / Attribution
     "settings.dataSources": "Datenquellen",
-    "settings.dataSourcesFooter": "W\u00F6rterbuchinhalt \u00A9 Wiktionary-Autoren, CC\u00A0BY-SA\u00A04.0. Frequenzdaten: Leipzig-Korpora, SUBTLEX-DE (Brysbaert et al. 2011), OpenSubtitles.",
+    "settings.dataSourcesFooter": "W\u00F6rterbuchinhalt \u00A9 Wiktionary-Autoren, CC\u00A0BY-SA\u00A04.0, extrahiert \u00FCber Kaikki.org. Frequenzdaten: Leipzig-Korpora, SUBTLEX-DE (Brysbaert et al. 2011), OpenSubtitles.",
 
     "settings.privacyPolicy": "Datenschutzerkl\u00E4rung",
 
