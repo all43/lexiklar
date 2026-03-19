@@ -45,13 +45,22 @@ export default defineComponent({
   },
   emits: ["sense-ref", "cross-ref"],
   computed: {
+    displayGloss(): string {
+      // "2. Person Singular …" → "zweite Person Singular …"
+      // The number denotes grammatical person, not a list index.
+      return this.gloss.replace(
+        /^([123])\. (Person )/,
+        (_, n: string, rest: string) =>
+          (["", "erste", "zweite", "dritte"] as const)[+n] + " " + rest
+      );
+    },
     segments(): (GlossSegment | SelfRefSegment)[] {
-      if (!hasReferences(this.gloss)) {
-        return [{ type: "text", text: this.gloss }];
+      if (!hasReferences(this.displayGloss)) {
+        return [{ type: "text", text: this.displayGloss }];
       }
-      const segs = parseReferences(this.gloss);
+      const segs = parseReferences(this.displayGloss);
       if (!this.selfPath) return segs;
-      return segs.map(seg =>
+      return segs.map((seg) =>
         seg.type === "cross_ref" && seg.filePath === this.selfPath
           ? { type: "self_ref" as const, text: seg.text }
           : seg
