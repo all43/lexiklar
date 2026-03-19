@@ -333,6 +333,7 @@ import { submitReport } from "../utils/report.js";
 import { f7 } from "framework7-vue/bundle";
 import { t } from "../js/i18n.js";
 import { getCached, setItem } from "../utils/storage.js";
+import { stripOuterQuotes } from "../utils/text.js";
 import type { Word, Sense, VerbWord, NounWord, AdjectiveWord } from "../../types/word.js";
 import type { Example } from "../../types/example.js";
 import type { SearchResult } from "../../types/search.js";
@@ -660,7 +661,7 @@ export default defineComponent({
         .map((id) => {
           const ex = this.examples[id] as Example & Record<string, unknown> | undefined;
           if (!ex) return null;
-          const text = (ex.text_linked as string) || ex.text;
+          const text = stripOuterQuotes((ex.text_linked as string) || ex.text);
           return { id, text, selfPath: currentPath, translation: ex.translation, sortLen: ex.text.length };
         })
         .filter((item): item is NonNullable<typeof item> => item !== null)
