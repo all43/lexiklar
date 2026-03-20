@@ -579,7 +579,7 @@ export default defineComponent({
         buttons: [
           { text: t("report.cancel") },
           {
-            text: t("word.removeHistory"),
+            text: t("favorites.remove"),
             bold: true,
             onClick: () => {
               const { pos, file } = this.f7route.params as { pos: string; file: string };
