@@ -31,7 +31,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
 
     // WordPage
     "word.meanings": "Meanings",
-    "word.synonymsAntonyms": "Synonyms & Antonyms",
+    "word.synonymsAntonyms": "Similar & contrasting words",
     "word.expressions": "Expressions",
     "word.relatedWords": "Related Words",
     "word.conjugation": "Conjugation",
@@ -52,8 +52,8 @@ const locales: Record<LocaleKey, TranslationMap> = {
     // Related type labels
     "related.feminineForm": "Feminine Form",
     "related.masculineForm": "Masculine Form",
-    "related.antonyms": "Antonyms",
-    "related.synonyms": "Synonyms",
+    "related.antonyms": "Contrasting words",
+    "related.synonyms": "Similar words",
     "related.sameStem": "Same Stem",
     "related.derived": "Derived Words",
     "related.derivedFrom": "Derived From",
@@ -186,7 +186,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
 
     // WordPage
     "word.meanings": "Bedeutungen",
-    "word.synonymsAntonyms": "Synonyme & Antonyme",
+    "word.synonymsAntonyms": "Ähnliche & Gegenwörter",
     "word.expressions": "Redewendungen",
     "word.relatedWords": "Verwandte W\u00F6rter",
     "word.conjugation": "Konjugation",
@@ -207,8 +207,8 @@ const locales: Record<LocaleKey, TranslationMap> = {
     // Related type labels
     "related.feminineForm": "Feminine Form",
     "related.masculineForm": "Maskuline Form",
-    "related.antonyms": "Antonyme",
-    "related.synonyms": "Synonyme",
+    "related.antonyms": "Gegenwörter",
+    "related.synonyms": "Ähnliche Wörter",
     "related.sameStem": "Gleicher Stamm",
     "related.derived": "Abgeleitete W\u00F6rter",
     "related.derivedFrom": "Abgeleitet von",
