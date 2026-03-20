@@ -822,10 +822,11 @@ function main(): void {
     const compoundVerified = entry.data.compound_verified as boolean | undefined;
     if (compoundParts && compoundVerified) {
       for (const partLemma of compoundParts) {
-        const targets =
+        const targets = (
           lemmaMap.get(partLemma) ||
           lemmaMap.get(partLemma.toLowerCase()) ||
-          [];
+          []
+        ).slice().sort((a, b) => (b.data.zipf ?? 0) - (a.data.zipf ?? 0));
         for (const target of targets) {
           if (seenFiles.has(target.fileKey)) continue;
           seenFiles.add(target.fileKey);

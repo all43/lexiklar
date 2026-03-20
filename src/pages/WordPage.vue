@@ -449,10 +449,28 @@ export default defineComponent({
       const w = this.word as Record<string, unknown> | null;
       if (!w?.compound_parts) return [];
 
+      // Build file→result map, then resolve compound_part entries in order (first homonym wins).
+      const fileMap: Record<string, SearchResult> = {};
+      for (const rw of this.relatedWords) fileMap[rw.file] = rw;
+
+      const compPartFiles = ((w.related as RelatedRef[] | undefined) || [])
+        .filter((r) => r.type === "compound_part")
+        .map((r) => r.file);
+
       const infoMap: Record<string, SearchResult> = {};
+      for (const fileKey of compPartFiles) {
+        const rw = fileMap[fileKey];
+        if (rw && !(rw.lemma.toLowerCase() in infoMap)) {
+          infoMap[rw.lemma] = rw;
+          infoMap[rw.lemma.toLowerCase()] = rw;
+        }
+      }
+      // Fallback: any relatedWord not already covered (e.g. verbs with no homonyms)
       for (const rw of this.relatedWords) {
-        infoMap[rw.lemma] = rw;
-        infoMap[rw.lemma.toLowerCase()] = rw;
+        if (!(rw.lemma.toLowerCase() in infoMap)) {
+          infoMap[rw.lemma] = rw;
+          infoMap[rw.lemma.toLowerCase()] = rw;
+        }
       }
 
       return (w.compound_parts as string[]).map((lemma: string) => {
