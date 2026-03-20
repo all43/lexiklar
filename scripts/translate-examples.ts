@@ -1,7 +1,7 @@
 import { readFileSync, appendFileSync, readdirSync, existsSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel, resolveLocalModel, PROVIDER_DEFAULTS } from "./lib/llm.js";
+import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel, resolveLocalModel, PROVIDER_DEFAULTS, estimateCost } from "./lib/llm.js";
 import { stripReferences } from "./lib/references.js";
 import { POS_CONFIG } from "./lib/pos.js";
 import { EXAMPLES_SYSTEM_PROMPT } from "./lib/prompts.js";
@@ -592,8 +592,7 @@ async function main(): Promise<void> {
   }
 
   let translated = 0;
-  let totalInputTokens = 0;
-  let totalOutputTokens = 0;
+  const tokensByModel: Record<string, { input: number; output: number }> = {};
   let errors = 0;
 
   interface BatchLLMOptions {
@@ -633,8 +632,10 @@ async function main(): Promise<void> {
         const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
 
         rawResponse = response.content;
-        totalInputTokens += response.input_tokens;
-        totalOutputTokens += response.output_tokens;
+        const resolvedModel = llmOptions.model || getDefaultModel(llmOptions.provider);
+        if (!tokensByModel[resolvedModel]) tokensByModel[resolvedModel] = { input: 0, output: 0 };
+        tokensByModel[resolvedModel].input += response.input_tokens;
+        tokensByModel[resolvedModel].output += response.output_tokens;
 
         const results = parseResponse(response.content);
 
@@ -698,14 +699,17 @@ async function main(): Promise<void> {
   await processBatches(idiomItems,   idiomLlmOptions,   IDIOM_MODEL_LABEL, "Idioms/expressions");
   await processBatches(regularItems, regularLlmOptions, MODEL_LABEL,       "Regular examples");
 
-  // Cost estimate
-  if (!isLocalProvider(PROVIDER)) {
-    // Both models are OpenAI — use gpt-4o-mini pricing as approximation
-    const costEstimate = (totalInputTokens * 0.15) / 1_000_000 + (totalOutputTokens * 0.6) / 1_000_000;
-    console.log(`\nDone. Translated ${translated} examples.${errors > 0 ? ` ${errors} failed.` : ""}`);
-    console.log(`Tokens: ${totalInputTokens} input + ${totalOutputTokens} output. Estimated cost: $${costEstimate.toFixed(3)}`);
-  } else {
-    console.log(`\nDone. Translated ${translated} examples.${errors > 0 ? ` ${errors} failed.` : ""}`);
+  // Cost report
+  console.log(`\nDone. Translated ${translated} examples.${errors > 0 ? ` ${errors} failed.` : ""}`);
+  const models = Object.entries(tokensByModel);
+  if (models.length > 0) {
+    let totalCost = 0;
+    for (const [model, tokens] of models) {
+      const cost = estimateCost(model, tokens.input, tokens.output);
+      totalCost += cost;
+      console.log(`  ${model}: ${tokens.input} input + ${tokens.output} output tokens${cost > 0 ? ` ($${cost.toFixed(3)})` : ""}`);
+    }
+    if (totalCost > 0) console.log(`  Total cost: $${totalCost.toFixed(3)}`);
   }
 
 }

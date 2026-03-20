@@ -22,7 +22,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel } from "./lib/llm.js";
+import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel, estimateCost } from "./lib/llm.js";
 import { stripReferences } from "./lib/references.js";
 import { POS_DIRS } from "./lib/pos.js";
 import {
@@ -410,14 +410,10 @@ function printSummary(translated: number, errors: number, startAll: number, tota
   console.log(
     `\nDone. Translated ${translated} senses in ${totalTime}s.${errors > 0 ? ` ${errors} failed.` : ""}`,
   );
-  console.log(`Tokens: ${totalInputTokens} input + ${totalOutputTokens} output.`);
-  if (!isLocalProvider(PROVIDER)) {
-    const costEstimate =
-      PROVIDER === "anthropic"
-        ? (totalInputTokens * 0.8 + totalOutputTokens * 4.0) / 1_000_000
-        : (totalInputTokens * 0.15 + totalOutputTokens * 0.6) / 1_000_000;
-    console.log(`Estimated cost: $${costEstimate.toFixed(4)}`);
-  }
+  const resolvedModel = MODEL ?? getDefaultModel(PROVIDER);
+  console.log(`  ${resolvedModel}: ${totalInputTokens} input + ${totalOutputTokens} output tokens`);
+  const cost = estimateCost(resolvedModel, totalInputTokens, totalOutputTokens);
+  if (cost > 0) console.log(`  Cost: $${cost.toFixed(4)}`);
 }
 
 // ============================================================
