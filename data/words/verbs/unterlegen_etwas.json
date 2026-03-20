@@ -3,51 +3,52 @@
   "pos": "verb",
   "etymology_number": null,
   "auxiliary": "haben",
-  "separable": true,
-  "prefix": "unter",
+  "separable": false,
+  "prefix": null,
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "etwas real und praktisch unter jemanden oder etwas legen",
-      "gloss_en": "place under",
+      "gloss": "etwas durch etwas ergänzen",
+      "gloss_en": null,
       "tags": [
-        "transitive",
-        "with-dative"
+        "transitive"
       ],
       "example_ids": [
-        "2b7009610d",
-        "e4d1d27bfd"
+        "b4abe263ad",
+        "27961cf2d3"
       ],
       "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To place something physically and practically beneath someone or something",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "antonyms": []
     }
   ],
   "sounds": [
     {
-      "ipa": "[ˈʊntɐˌleːɡn̩]",
+      "ipa": "[ˌʊntɐˈleːɡn̩]",
       "tags": []
     }
   ],
   "conjugation_class": "weak",
   "stems": {
-    "present": "leg",
+    "present": "unterleg",
     "past": ""
   },
-  "past_participle": "untergelegt",
+  "past_participle": "unterlegt",
   "_derived": [
-    "Unterlegung",
-    "Unterlegscheibe"
+    "Unterlage",
+    "Unterlegung"
   ],
   "_meta": {
-    "source_hash": "efd911c3a68d433c",
-    "generated_at": "2026-03-18"
+    "source_hash": "e106b628fc977b33",
+    "generated_at": "2026-03-20"
   },
   "zipf": 3.39,
-  "_proofread": {
-    "gloss_en": true,
-    "gloss_en_full": true
-  }
+  "_orphaned_translations": [
+    {
+      "gloss": "etwas real und praktisch unter jemanden oder etwas legen",
+      "gloss_en": "place under",
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To place something physically and practically beneath someone or something",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ]
 }

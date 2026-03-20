@@ -9,10 +9,10 @@
   "gender_rule": null,
   "case_forms": {
     "singular": {
-      "nom": "Libanon",
-      "acc": "Libanon",
-      "dat": "Libanon",
-      "gen": "Libanon"
+      "nom": "der Libanon",
+      "acc": "den Libanon",
+      "dat": "dem Libanon",
+      "gen": "des Libanon"
     },
     "plural": {
       "nom": null,
@@ -23,17 +23,18 @@
   },
   "senses": [
     {
-      "gloss": "im Nahen Osten gelegenes Gebirge",
-      "gloss_en": "Lebanon Mountains",
+      "gloss": "im Nahen Osten gelegener Staat, der an Syrien und Israel grenzt",
+      "gloss_en": null,
       "tags": [],
       "example_ids": [
-        "ef8ec52c3d"
+        "141afe1bc2",
+        "47401ccb06",
+        "2673454a63",
+        "1319185aa3",
+        "fabfe9a47c"
       ],
       "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "A mountain range located in the Near East",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "antonyms": []
     }
   ],
   "sounds": [
@@ -42,20 +43,29 @@
       "tags": []
     }
   ],
-  "_antonyms": [
-    "Anti-Libanon"
+  "_derived": [
+    "Libanese",
+    "Libanesin",
+    "libanesisch",
+    "Libanonzeder"
   ],
   "_synonyms": [
-    "Libanongebirge",
-    "Libanon-Gebirge"
+    "Libanesische Republik",
+    "Zedernrepublik",
+    "Zedernstaat"
   ],
   "_meta": {
-    "source_hash": "f4d6884d799f93fa",
-    "generated_at": "2026-03-18"
+    "source_hash": "599e3408eded07c6",
+    "generated_at": "2026-03-20"
   },
   "zipf": 3.65,
-  "_proofread": {
-    "gloss_en": true,
-    "gloss_en_full": true
-  }
+  "_orphaned_translations": [
+    {
+      "gloss": "im Nahen Osten gelegenes Gebirge",
+      "gloss_en": "Lebanon Mountains",
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A mountain range located in the Near East",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ]
 }

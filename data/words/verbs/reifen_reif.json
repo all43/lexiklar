@@ -2,23 +2,20 @@
   "word": "reifen",
   "pos": "verb",
   "etymology_number": null,
-  "auxiliary": "haben",
+  "auxiliary": "sein",
   "separable": false,
   "prefix": null,
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "mit Reif überziehen",
-      "gloss_en": "rubberize",
+      "gloss": "reif werden",
+      "gloss_en": null,
       "tags": [],
       "example_ids": [
-        "1179591223"
+        "feb8b22473"
       ],
       "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To cover with frost",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "antonyms": []
     }
   ],
   "sounds": [
@@ -33,13 +30,29 @@
     "past": ""
   },
   "past_participle": "gereift",
+  "_derived": [
+    "Reiferei",
+    "Reifung"
+  ],
+  "_hyponyms": [
+    "abreifen",
+    "ausreifen",
+    "entgegenreifen",
+    "heranreifen",
+    "nachreifen"
+  ],
   "_meta": {
-    "source_hash": "bc9eeb4994dc5f2d",
-    "generated_at": "2026-03-18"
+    "source_hash": "bc8ca3f65dfa767b",
+    "generated_at": "2026-03-20"
   },
   "zipf": 3.89,
-  "_proofread": {
-    "gloss_en": true,
-    "gloss_en_full": true
-  }
+  "_orphaned_translations": [
+    {
+      "gloss": "mit Reif überziehen",
+      "gloss_en": "rubberize",
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To cover with frost",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ]
 }

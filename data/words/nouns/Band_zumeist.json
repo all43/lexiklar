@@ -2,10 +2,9 @@
   "word": "Band",
   "pos": "noun",
   "etymology_number": null,
-  "is_singular_only": true,
-  "gender": "N",
-  "article": "das",
-  "plural_form": null,
+  "gender": "M",
+  "article": "der",
+  "plural_form": "Bände",
   "gender_rule": null,
   "case_forms": {
     "singular": {
@@ -15,23 +14,87 @@
       "gen": "Bandes"
     },
     "plural": {
-      "nom": null,
-      "acc": null,
-      "dat": null,
-      "gen": null
+      "nom": "Bände",
+      "acc": "Bände",
+      "dat": "Bänden",
+      "gen": "Bände"
     }
   },
   "senses": [
     {
-      "gloss": "(zumeist luftgefüllter) Gummischlauch samt Mantel, der als Teil eines Fahrzeugrades die Felge umgibt",
-      "gloss_en": "tire (vehicle)",
+      "gloss": "(zumeist größeres) gebundenes Buch",
+      "gloss_en": null,
       "tags": [],
       "example_ids": [
-        "e1df69c814",
-        "e917cc2e20"
+        "8a81fec8e3",
+        "a6308d647a",
+        "7d64f125d1",
+        "15b318fd7b",
+        "647f20164e"
       ],
       "synonyms": [],
-      "antonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "einzelnes Buch, das Teil einer Buchreihe oder eines größeren Werks (Gesamtausgabe) oder gar einer Bibliothekssammlung ist",
+      "gloss_en": null,
+      "tags": [],
+      "example_ids": [
+        "295e62ebc5",
+        "632de51265",
+        "6a857dc5b5",
+        "009fc0bf53"
+      ],
+      "synonyms": [],
+      "antonyms": []
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[bant]",
+      "tags": []
+    }
+  ],
+  "expression_ids": [
+    "af1553325f",
+    "70d693baeb",
+    "a6766a85a2",
+    "6ecc5106e0",
+    "e9025a229e"
+  ],
+  "_hyponyms": [
+    "Begleitband",
+    "Bildband",
+    "Blindband",
+    "Erzählungsband",
+    "Essayband",
+    "Folioband",
+    "Fotoband",
+    "Gedichtband",
+    "Kunstband",
+    "Kurzgeschichtenband",
+    "Lyrikband",
+    "Novellenband",
+    "Bildband",
+    "Blindband",
+    "Einzelband",
+    "Ergänzungsband",
+    "Fortsetzungsband",
+    "Indexband",
+    "Registerband",
+    "Sammelband",
+    "Supplementband",
+    "Textband"
+  ],
+  "_meta": {
+    "source_hash": "4b5e59ac8541de18",
+    "generated_at": "2026-03-20"
+  },
+  "zipf": 4.9,
+  "_orphaned_translations": [
+    {
+      "gloss": "(zumeist luftgefüllter) Gummischlauch samt Mantel, der als Teil eines Fahrzeugrades die Felge umgibt",
+      "gloss_en": "tire (vehicle)",
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A rubber tube, usually air-filled, with a tread covering that surrounds the rim as part of a vehicle wheel.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -41,24 +104,5 @@
       ],
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     }
-  ],
-  "sounds": [
-    {
-      "ipa": "[bant]",
-      "tags": []
-    }
-  ],
-  "_synonyms": [
-    "Autoreifen",
-    "Reifen"
-  ],
-  "_meta": {
-    "source_hash": "31435b450797ac63",
-    "generated_at": "2026-03-18"
-  },
-  "zipf": 4.9,
-  "_proofread": {
-    "gloss_en": true,
-    "gloss_en_full": true
-  }
+  ]
 }

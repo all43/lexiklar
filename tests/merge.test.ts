@@ -11,7 +11,7 @@
  */
 
 import { describe, it, expect } from "vitest";
-import { mergeSenses } from "../scripts/lib/merge.js";
+import { mergeSenses, mergeHomonymGroup } from "../scripts/lib/merge.js";
 import type { OrphanEntry } from "../scripts/lib/merge.js";
 import type { Sense } from "../types/index.js";
 
@@ -265,16 +265,86 @@ describe("edge cases", () => {
     expect(hausOrphans).toHaveLength(1); // not duplicated
   });
 
-  it("ignores senses with empty/null gloss for matching purposes", () => {
-    const existing = [sense("", "should be ignored"), sense("Real", "real translation")];
-    const newSenses = [sense("Real"), sense("")];
+  it("preserves translation on empty-gloss senses via positional matching", () => {
+    // E.g. Halle_S., Halle_Saale: gloss="" but had a translation set
+    const existing = [sense("", "Halle (Saale), city in Germany")];
+    const newSenses = [sense("")];
 
     const { senses, orphans } = mergeSenses(newSenses, existing, []);
 
-    expect(senses[0].gloss_en).toBe("real translation");
-    // The empty-gloss sense with a translation is lost — but it had no key to match on,
-    // so it cannot become an orphan either (no gloss to index it by)
+    expect(senses[0].gloss_en).toBe("Halle (Saale), city in Germany");
     expect(orphans).toHaveLength(0);
+  });
+
+  it("preserves translations on multiple empty-gloss senses by position", () => {
+    const existing = [sense("", "first"), sense("", "second")];
+    const newSenses = [sense(""), sense("")];
+
+    const { senses } = mergeSenses(newSenses, existing, []);
+
+    expect(senses[0].gloss_en).toBe("first");
+    expect(senses[1].gloss_en).toBe("second");
+  });
+
+  it("does not transfer empty-gloss translation when pool is exhausted", () => {
+    // More new empty-gloss senses than old — extras stay null
+    const existing = [sense("", "only one")];
+    const newSenses = [sense(""), sense("")];
+
+    const { senses } = mergeSenses(newSenses, existing, []);
+
+    expect(senses[0].gloss_en).toBe("only one");
+    expect(senses[1].gloss_en).toBeNull();
+  });
+
+  it("fuzzy: minor rewording (bracket/paren swap) still transfers translation", () => {
+    // Simulates: "[wegen des Eigengewichts]" → "(durch das Eigengewicht"
+    const existing = [
+      sense("an einem festen Punkt [wegen des Eigengewichts] nach unten baumelnd", "to hang"),
+      sense("sehr gern haben, nicht verzichten wollen", "to be attached"),
+    ];
+    const newSenses = [
+      sense("an einem festen Punkt (durch das Eigengewicht nach unten baumelnd"),
+      sense("sehr gern haben, nicht auf die Sache verzichten wollen"),
+    ];
+
+    const { senses, orphans } = mergeSenses(newSenses, existing, []);
+
+    expect(senses[0].gloss_en).toBe("to hang");
+    expect(senses[1].gloss_en).toBe("to be attached");
+    expect(orphans).toHaveLength(0);
+  });
+
+  it("fuzzy: does NOT match when glosses are unrelated (prevents wrong-meaning transfer)", () => {
+    const existing = [
+      sense("etwas beherrschen, wissen; fähig sein", "to master"),
+      sense("etwas zu einem bestimmten Zeitpunkt vollenden", "to finish"),
+    ];
+    const newSenses = [
+      sense("die Erlaubnis haben, etwas zu dürfen"),
+      sense("unter Umständen vielleicht der Fall sein"),
+    ];
+
+    const { senses, orphans } = mergeSenses(newSenses, existing, []);
+
+    expect(senses[0].gloss_en).toBeNull();
+    expect(senses[1].gloss_en).toBeNull();
+    expect(orphans).toHaveLength(2);
+  });
+
+  it("fuzzy: each old sense matched at most once (no double-consuming)", () => {
+    // Two new senses similar to the same old sense — only one should match
+    const existing = [sense("etwas kaufen und besitzen wollen", "to want")];
+    const newSenses = [
+      sense("etwas kaufen und haben wollen"),   // very similar
+      sense("etwas kaufen und erwerben wollen"), // also similar
+    ];
+
+    const { senses } = mergeSenses(newSenses, existing, []);
+
+    // Only the first (higher-scoring) sense should get the translation
+    const translated = senses.filter((s) => s.gloss_en === "to want");
+    expect(translated).toHaveLength(1);
   });
 
   it("first occurrence wins when multiple existing senses share the same German gloss", () => {
@@ -287,5 +357,255 @@ describe("edge cases", () => {
     const { senses } = mergeSenses(newSenses, existing, []);
 
     expect(senses[0].gloss_en).toBe("first translation");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// 6. example_ids carry-forward (prevent orphaned translated examples)
+// ---------------------------------------------------------------------------
+
+describe("example_ids carry-forward", () => {
+  it("carries old example_ids into new sense when Wiktionary drops an example", () => {
+    // Old sense had examples [a, b]; new Wiktionary source only lists [c].
+    // Both a and b should survive (they may be translated).
+    const existing = [sense("Möbelstück", "piece of furniture", { example_ids: ["aaa", "bbb"] })];
+    const newSenses = [sense("Möbelstück", null, { example_ids: ["ccc"] })];
+
+    const { senses } = mergeSenses(newSenses, existing, []);
+
+    expect(senses[0].example_ids).toContain("aaa");
+    expect(senses[0].example_ids).toContain("bbb");
+    expect(senses[0].example_ids).toContain("ccc");
+  });
+
+  it("does not duplicate example_ids already present in new sense", () => {
+    const existing = [sense("Möbelstück", "table", { example_ids: ["aaa", "bbb"] })];
+    const newSenses = [sense("Möbelstück", null, { example_ids: ["aaa", "ccc"] })];
+
+    const { senses } = mergeSenses(newSenses, existing, []);
+
+    const ids = senses[0].example_ids ?? [];
+    expect(ids.filter((id) => id === "aaa")).toHaveLength(1); // no duplicate
+    expect(ids).toContain("bbb");
+    expect(ids).toContain("ccc");
+  });
+
+  it("carries example_ids via fuzzy match when gloss wording changes slightly", () => {
+    // Old gloss "auf gewisse Art und Weise schlafen" fuzzy-matches new "auf bestimmte Art schlafen"
+    const existing = [
+      sense("auf gewisse Art und Weise schlafen", "to sleep in a certain way", {
+        example_ids: ["old1", "old2"],
+      }),
+    ];
+    const newSenses = [sense("auf bestimmte Art schlafen", null, { example_ids: ["new1"] })];
+
+    const { senses } = mergeSenses(newSenses, existing, []);
+
+    // gloss_en should be transferred (fuzzy match)
+    expect(senses[0].gloss_en).toBe("to sleep in a certain way");
+    // old example_ids should also survive
+    expect(senses[0].example_ids).toContain("old1");
+    expect(senses[0].example_ids).toContain("old2");
+    expect(senses[0].example_ids).toContain("new1");
+  });
+
+  it("does not carry example_ids from orphan entries (OrphanEntry has no example_ids)", () => {
+    // Orphans carry gloss_en but not example_ids — this should not throw
+    const orphan: OrphanEntry = { gloss: "Möbelstück", gloss_en: "table" };
+    const newSenses = [sense("Möbelstück", null, { example_ids: ["new1"] })];
+
+    const { senses } = mergeSenses(newSenses, [], [orphan]);
+
+    expect(senses[0].gloss_en).toBe("table");
+    expect(senses[0].example_ids).toEqual(["new1"]); // unchanged — no orphan ids
+  });
+});
+
+// ---------------------------------------------------------------------------
+// 7. Cross-file homonym merge
+// ---------------------------------------------------------------------------
+
+/**
+ * Builds the `newFiles` map that mergeHomonymGroup() expects:
+ * the senses AFTER per-file mergeSenses() (some may already carry gloss_en).
+ */
+function newFilesMap(entries: Record<string, Sense[]>): Map<string, Sense[]> {
+  return new Map(Object.entries(entries));
+}
+
+/**
+ * Builds the `oldFiles` map that mergeHomonymGroup() expects:
+ * old sibling files loaded from disk before the transform run.
+ */
+function oldFilesMap(
+  entries: Record<string, { senses: Sense[]; orphans?: OrphanEntry[] }>,
+): Map<string, { senses: Sense[]; orphans: OrphanEntry[] }> {
+  return new Map(
+    Object.entries(entries).map(([k, v]) => [k, { senses: v.senses, orphans: v.orphans ?? [] }]),
+  );
+}
+
+describe("mergeHomonymGroup — cross-file translation transfer", () => {
+  it("transfers translation from old file to new sibling file (split scenario)", () => {
+    // Old file A had both senses; new transform split them into A and B.
+    // Per-file merge already gave Tür to A; Pforte still null in new B.
+    const nf = newFilesMap({
+      A: [sense("Tür", "door")],
+      B: [sense("Pforte")],       // new file — per-file found nothing
+    });
+    const of = oldFilesMap({
+      A: { senses: [sense("Tür", "door"), sense("Pforte", "gate")] },
+      // no old B
+    });
+
+    const { files, crossFileMatches } = mergeHomonymGroup(nf, of);
+
+    expect(files.get("B")![0].gloss_en).toBe("gate");
+    expect(crossFileMatches).toHaveLength(1);
+    expect(crossFileMatches[0].oldFile).toBe("A");
+    expect(crossFileMatches[0].oldGloss).toBe("Pforte");
+    expect(crossFileMatches[0].newFile).toBe("B");
+    expect(crossFileMatches[0].newGloss).toBe("Pforte");
+  });
+
+  it("transfers all translations when old file is fully renamed", () => {
+    // Old file A is gone; new file B has the same senses. Only cross-file can recover.
+    const nf = newFilesMap({
+      B: [sense("Haus"), sense("Gebäude")],
+    });
+    const of = oldFilesMap({
+      A: { senses: [sense("Haus", "house"), sense("Gebäude", "building")] },
+    });
+
+    const { files, crossFileMatches } = mergeHomonymGroup(nf, of);
+
+    expect(files.get("B")![0].gloss_en).toBe("house");
+    expect(files.get("B")![1].gloss_en).toBe("building");
+    expect(crossFileMatches).toHaveLength(2);
+  });
+
+  it("does not touch senses that already have translations from per-file merge", () => {
+    // Simulate what happens AFTER per-file mergeSenses() already ran:
+    // both senses already carry gloss_en → mergeHomonymGroup should leave them alone.
+    const nf = newFilesMap({
+      A: [sense("Essen", "food")],    // already translated by per-file merge
+      B: [sense("Tisch", "table")],   // already translated by per-file merge
+    });
+    const of = oldFilesMap({
+      A: { senses: [sense("Essen", "food")] },
+      B: { senses: [sense("Tisch", "table")] },
+    });
+
+    const { files, crossFileMatches } = mergeHomonymGroup(nf, of);
+
+    // Nothing changed — all translations already present
+    expect(files.get("A")![0].gloss_en).toBe("food");
+    expect(files.get("B")![0].gloss_en).toBe("table");
+    // No cross-file transfer needed
+    expect(crossFileMatches).toHaveLength(0);
+  });
+
+  it("excludes own-file old senses from cross-file pool", () => {
+    // Old A had [S], new A has [T] — completely different. Per-file left T null.
+    // Old A's [S] should NOT be tried again for new A (same-file already ran).
+    const nf = newFilesMap({
+      A: [sense("Türschloss")],       // null after per-file (no match in old A)
+    });
+    const of = oldFilesMap({
+      A: { senses: [sense("Gefängnis", "prison")] }, // different sense
+    });
+
+    const { files, crossFileMatches } = mergeHomonymGroup(nf, of);
+
+    // Cross-file pool excludes old A when processing new A → stays null
+    expect(files.get("A")![0].gloss_en).toBeNull();
+    expect(crossFileMatches).toHaveLength(0);
+  });
+
+  it("each old sense consumed at most once across all new files", () => {
+    // Two new files both want the same old sense — only the first gets it.
+    const nf = newFilesMap({
+      B: [sense("Gleiche Bedeutung")],
+      C: [sense("Gleiche Bedeutung")],
+    });
+    const of = oldFilesMap({
+      A: { senses: [sense("Gleiche Bedeutung", "same meaning")] },
+    });
+
+    const { files, crossFileMatches } = mergeHomonymGroup(nf, of);
+
+    const bTrans = files.get("B")![0].gloss_en;
+    const cTrans = files.get("C")![0].gloss_en;
+    // Exactly one should be "same meaning", the other null
+    expect([bTrans, cTrans].filter((x) => x === "same meaning")).toHaveLength(1);
+    expect([bTrans, cTrans].filter((x) => x === null)).toHaveLength(1);
+    expect(crossFileMatches).toHaveLength(1);
+  });
+
+  it("fuzzy cross-file: minor rewording transfers translation to sibling file", () => {
+    const nf = newFilesMap({
+      B: [sense("etwas kaufen und haben wollen")],  // slightly reworded
+    });
+    const of = oldFilesMap({
+      A: { senses: [sense("etwas kaufen und besitzen wollen", "to want")] },
+    });
+
+    const { files, crossFileMatches } = mergeHomonymGroup(nf, of);
+
+    expect(files.get("B")![0].gloss_en).toBe("to want");
+    expect(crossFileMatches).toHaveLength(1);
+    expect(crossFileMatches[0].oldFile).toBe("A");
+    expect(crossFileMatches[0].newFile).toBe("B");
+  });
+
+  it("recovers from old orphans in sibling files", () => {
+    // Old A has an orphan entry whose gloss now appears in new file B.
+    const nf = newFilesMap({
+      B: [sense("Wiedergekommene Bedeutung")],
+    });
+    const of = oldFilesMap({
+      A: {
+        senses: [],
+        orphans: [{ gloss: "Wiedergekommene Bedeutung", gloss_en: "recovered" }],
+      },
+    });
+
+    const { files, crossFileMatches } = mergeHomonymGroup(nf, of);
+
+    expect(files.get("B")![0].gloss_en).toBe("recovered");
+    expect(crossFileMatches).toHaveLength(1);
+  });
+
+  it("empty inputs return empty results without throwing", () => {
+    const { files, crossFileMatches } = mergeHomonymGroup(new Map(), new Map());
+    expect(files.size).toBe(0);
+    expect(crossFileMatches).toHaveLength(0);
+  });
+
+  it("copies all LLM fields (gloss_en_full, synonyms_en) in cross-file transfer", () => {
+    const nf = newFilesMap({
+      B: [sense("Fenster")],
+    });
+    const of = oldFilesMap({
+      A: {
+        senses: [
+          sense("Fenster", "window", {
+            gloss_en_full: "An opening in a wall that lets in light",
+            gloss_en_full_model: "gpt-4o",
+            synonyms_en: ["pane", "glass"],
+            synonyms_en_model: "haiku",
+          }),
+        ],
+      },
+    });
+
+    const { files } = mergeHomonymGroup(nf, of);
+    const s = files.get("B")![0];
+
+    expect(s.gloss_en).toBe("window");
+    expect(s.gloss_en_full).toBe("An opening in a wall that lets in light");
+    expect(s.gloss_en_full_model).toBe("gpt-4o");
+    expect(s.synonyms_en).toEqual(["pane", "glass"]);
+    expect(s.synonyms_en_model).toBe("haiku");
   });
 });

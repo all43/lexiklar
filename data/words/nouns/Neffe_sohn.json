@@ -9,9 +9,9 @@
   "case_forms": {
     "singular": {
       "nom": "Neffe",
-      "acc": "Neffe",
-      "dat": "Neffe",
-      "gen": "Neffe"
+      "acc": "Neffen",
+      "dat": "Neffen",
+      "gen": "Neffen"
     },
     "plural": {
       "nom": "Neffen",
@@ -22,13 +22,33 @@
   },
   "senses": [
     {
-      "gloss": "Sohn des Bruders eines Elternteils oder der Schwester eines Elternteils",
+      "gloss": "Sohn der Schwester oder des Bruders , im weiteren Sinne auch des Schwagers oder der Schwägerin",
       "gloss_en": "nephew",
       "tags": [],
-      "example_ids": [],
+      "example_ids": [
+        "4949166833",
+        "fcb83041ca",
+        "cb2c72f8bb",
+        "f280d2459c",
+        "8635c7f342",
+        "e49f69406d"
+      ],
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "The son of one's parent's brother or sister",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "Sohn der Cousine oder des Cousins",
+      "gloss_en": "nephew",
+      "tags": [],
+      "example_ids": [
+        "9318e24388"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
       "gloss_en_full": "The son of one's parent's brother or sister",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
@@ -39,18 +59,31 @@
       "tags": []
     }
   ],
-  "_synonyms": [
-    "Cousin",
-    "Vetter",
-    "Brime"
+  "_derived": [
+    "Großneffe",
+    "Urgroßneffe",
+    "Neffin"
   ],
+  "_hyponyms": [
+    "Großneffe"
+  ],
+  "_antonyms": [
+    "Nichte",
+    "Nift",
+    "Niftel",
+    "Sobrinje",
+    "Neffe",
+    "Neffin"
+  ],
+  "_synonyms": [
+    "Sobrinjo",
+    "Nepote",
+    "Neveu"
+  ],
+  "_gender_counterpart": "Neffin",
   "_meta": {
-    "source_hash": "40817bc21bb7c431",
-    "generated_at": "2026-03-18"
+    "source_hash": "120665e750cf6b40",
+    "generated_at": "2026-03-20"
   },
-  "zipf": 3.7,
-  "_proofread": {
-    "gloss_en": true,
-    "gloss_en_full": true
-  }
+  "zipf": 3.7
 }

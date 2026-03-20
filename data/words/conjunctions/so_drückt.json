@@ -8,7 +8,7 @@
       "gloss_en": "like",
       "tags": [],
       "example_ids": [
-        "6dca5cc0b7"
+        "c5a00cbe78"
       ],
       "synonyms": [],
       "antonyms": [],
@@ -23,51 +23,14 @@
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
-      "gloss": "Festlegung einer Bedingung",
-      "gloss_en": "if",
+      "gloss": "Einleitung einer wörtlichen Rede",
+      "gloss_en": null,
       "tags": [
-        "literary"
+        "colloquial"
       ],
       "example_ids": [
-        "d3bbb99ee2",
-        "e22e914536"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
-      "gloss_en_full": "Establishes a condition",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
-      "synonyms_en": [
-        "provided that",
-        "in case",
-        "as long as"
-      ],
-      "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "Festlegung einer Art und Weise",
-      "gloss_en": null,
-      "tags": [],
-      "example_ids": [],
-      "synonyms": [],
-      "antonyms": []
-    },
-    {
-      "gloss": "(als einteilige Subjunktion) → siehe auch sodass",
-      "gloss_en": null,
-      "tags": [],
-      "example_ids": [
-        "909b155ec2"
-      ],
-      "synonyms": [],
-      "antonyms": []
-    },
-    {
-      "gloss": "(als mehrteilige Subjunktion)",
-      "gloss_en": null,
-      "tags": [],
-      "example_ids": [
-        "964d7f1163"
+        "be55468e2e",
+        "3f4167f486"
       ],
       "synonyms": [],
       "antonyms": []
@@ -79,19 +42,34 @@
       "tags": []
     }
   ],
-  "expression_ids": [
-    "bf05a4d03c"
-  ],
   "_derived": [
-    "sobald",
-    "soweit"
+    "sodass",
+    "sofern",
+    "soviel",
+    "sowie",
+    "sowohl"
   ],
   "_synonyms": [
-    "falls"
+    "derart"
   ],
   "_meta": {
-    "source_hash": "6fdc2a3dcae0bbad",
-    "generated_at": "2026-03-18"
+    "source_hash": "802b1847c22c2c1d",
+    "generated_at": "2026-03-20"
   },
-  "zipf": 6.45
+  "zipf": 6.45,
+  "_orphaned_translations": [
+    {
+      "gloss": "Festlegung einer Bedingung",
+      "gloss_en": "if",
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "Establishes a condition",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "provided that",
+        "in case",
+        "as long as"
+      ],
+      "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ]
 }

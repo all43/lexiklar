@@ -113,6 +113,33 @@ interface DisambiguationDict extends Map<string, string[]> {}
  * Build a map of word → { frequency, whitelisted } from word files + whitelist.
  * Used by the --freq-limit filter.
  */
+/**
+ * Build the set of all example IDs currently referenced by word files
+ * (via senses[].example_ids and expression_ids).
+ * Used to skip untranslated examples whose owning word was removed from the dataset,
+ * preventing translation credits from being spent on orphaned examples.
+ */
+function buildReferencedExampleIds(): Set<string> {
+  const ids = new Set<string>();
+  for (const { dir: posDir } of Object.values(POS_CONFIG) as PosConfig[]) {
+    const dir = join(WORDS_DIR, posDir);
+    if (!existsSync(dir)) continue;
+    for (const file of readdirSync(dir)) {
+      if (!file.endsWith(".json")) continue;
+      try {
+        const d = JSON.parse(readFileSync(join(dir, file), "utf-8")) as Record<string, unknown>;
+        for (const s of (d.senses as Array<{ example_ids?: string[] }> | undefined) ?? []) {
+          for (const id of s.example_ids ?? []) ids.add(id);
+        }
+        for (const id of (d.expression_ids as string[] | undefined) ?? []) ids.add(id);
+      } catch {
+        // skip malformed files
+      }
+    }
+  }
+  return ids;
+}
+
 function buildWordFreqMap(): Map<string, WordFreqInfo> {
   const whitelistPath = join(ROOT, "config", "word-whitelist.json");
   const whitelistSet = new Set<string>(
@@ -470,8 +497,21 @@ async function main(): Promise<void> {
       };
     });
 
+  // Ownership filter: skip examples not referenced by any current word file.
+  // Prevents spending translation credits on examples whose owning word was removed
+  // from the dataset (e.g. after a frequency filter change or accidental transform).
+  {
+    const referencedIds = buildReferencedExampleIds();
+    const before = untranslated.length;
+    untranslated = untranslated.filter((item) => referencedIds.has(item.id));
+    const skipped = before - untranslated.length;
+    if (skipped > 0) {
+      console.log(`Ownership filter: skipped ${skipped} orphaned examples (no word file claims them).`);
+    }
+  }
+
   // Frequency filter: keep examples where at least one lemma has freq ≤ FREQ_LIMIT
-  // or is in the whitelist. Lemmas not found in word files are kept (safe default).
+  // or is in the whitelist. Lemmas not found in word files are skipped (not kept).
   if (FREQ_LIMIT) {
     const wordFreqMap = buildWordFreqMap();
     const before = untranslated.length;
@@ -479,7 +519,7 @@ async function main(): Promise<void> {
       if (!item.lemmas.length) return true;
       return item.lemmas.some((l) => {
         const info = wordFreqMap.get(l);
-        if (!info) return true; // unknown word — keep
+        if (!info) return false; // not in current dataset — skip
         if (info.whitelisted) return true;
         if (info.frequency !== null && info.frequency <= FREQ_LIMIT!) return true;
         return false;

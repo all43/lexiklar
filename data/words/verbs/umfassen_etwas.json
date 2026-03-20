@@ -3,46 +3,65 @@
   "pos": "verb",
   "etymology_number": null,
   "auxiliary": "haben",
-  "separable": true,
-  "prefix": "um",
+  "separable": false,
+  "prefix": null,
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "etwas anders fassen, anders anfassen, nachfassen",
-      "gloss_en": "grasp",
+      "gloss": "etwas umgreifen, umfangen, umgeben",
+      "gloss_en": null,
       "tags": [],
       "example_ids": [
-        "5ddaa1cd34"
+        "ac25c59025",
+        "d9fd6f0160"
       ],
       "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To grasp something differently or anew",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "antonyms": []
+    },
+    {
+      "gloss": "etwas einschliessen, beinhalten, enthalten",
+      "gloss_en": null,
+      "tags": [
+        "figurative"
+      ],
+      "example_ids": [
+        "2653c29cd8"
+      ],
+      "synonyms": [],
+      "antonyms": []
     }
   ],
   "sounds": [
     {
-      "ipa": "[ˈʊmˌfasn̩]",
+      "ipa": "[ʊmˈfasn̩]",
       "tags": []
     }
   ],
   "conjugation_class": "weak",
   "stems": {
-    "present": "fass",
+    "present": "umfass",
     "past": ""
   },
-  "past_participle": "umgefasst",
+  "past_participle": "umfasst",
+  "_derived": [
+    "umfassend"
+  ],
   "_synonyms": [
-    "umgreifen"
+    "umarmen",
+    "umschlingen"
   ],
   "_meta": {
-    "source_hash": "e00d069d502360d1",
-    "generated_at": "2026-03-18"
+    "source_hash": "e82b3f551fa3b078",
+    "generated_at": "2026-03-20"
   },
   "zipf": 3.4,
-  "_proofread": {
-    "gloss_en": true,
-    "gloss_en_full": true
-  }
+  "_orphaned_translations": [
+    {
+      "gloss": "etwas anders fassen, anders anfassen, nachfassen",
+      "gloss_en": "grasp",
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To grasp something differently or anew",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ]
 }

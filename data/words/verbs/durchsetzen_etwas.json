@@ -3,24 +3,141 @@
   "pos": "verb",
   "etymology_number": null,
   "auxiliary": "haben",
-  "separable": false,
-  "prefix": null,
-  "reflexive": "none",
+  "separable": true,
+  "prefix": "durch",
+  "reflexive": "optional",
   "senses": [
     {
-      "gloss": "etwas mit einer größeren Menge von etwas anderem versehen",
-      "gloss_en": "infuse",
+      "gloss": "etwas, das man anstrebt, trotz eventueller Hindernisse verwirklichen",
+      "gloss_en": null,
       "tags": [
         "transitive"
       ],
       "example_ids": [
-        "a10832c533",
-        "163dabbe50",
-        "bfeefda697",
-        "0b45e10d7f"
+        "756c54dc85",
+        "3e66edb3b5",
+        "4a348a3cc1"
       ],
       "synonyms": [],
-      "antonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "trotz Widerstands seine Ziele erreichen",
+      "gloss_en": null,
+      "tags": [
+        "reflexive"
+      ],
+      "example_ids": [
+        "518cfd78f5",
+        "2b33ab6a03"
+      ],
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "mit der Zeit von der Mehrheit akzeptiert werden und dadurch Gültigkeit erlangen",
+      "gloss_en": null,
+      "tags": [
+        "reflexive"
+      ],
+      "example_ids": [
+        "a4dc704d07",
+        "e22cacefb2",
+        "5b705dc2ee"
+      ],
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "einen gewissen Durchsatz aufweisen",
+      "gloss_en": null,
+      "tags": [
+        "jargon"
+      ],
+      "example_ids": [],
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "durch etwas hindurchgehen oder hindurchreiten",
+      "gloss_en": null,
+      "tags": [
+        "intransitive"
+      ],
+      "example_ids": [
+        "c4f08b7b2c",
+        "b3551cbe89"
+      ],
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "deutlich durch einen anderen Gang oder durch einen gewissen Teil des Gebirges hindurchgehen",
+      "gloss_en": null,
+      "tags": [],
+      "example_ids": [],
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "gepochtes Erz durchsieben, durchlaufen lassen",
+      "gloss_en": null,
+      "tags": [],
+      "example_ids": [],
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "gepochtes Erz durch den Ofen gehen lassen",
+      "gloss_en": null,
+      "tags": [],
+      "example_ids": [],
+      "synonyms": [],
+      "antonyms": []
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[ˈdʊʁçˌzɛt͡sn̩]",
+      "tags": []
+    }
+  ],
+  "conjugation_class": "weak",
+  "stems": {
+    "present": "setz",
+    "past": ""
+  },
+  "past_participle": "durchgesetzt",
+  "_derived": [
+    "durchsetzbar",
+    "durchgesetzt",
+    "Durchsetzen",
+    "durchsetzend",
+    "Durchsatz",
+    "Durchsetzung"
+  ],
+  "_antonyms": [
+    "aufgeben",
+    "misslingen",
+    "scheitern"
+  ],
+  "_synonyms": [
+    "erzwingen",
+    "durchbekommen",
+    "durchbringen",
+    "durchkriegen",
+    "durchschlagen",
+    "ausschmelzen"
+  ],
+  "_meta": {
+    "source_hash": "218eba7d86caaf48",
+    "generated_at": "2026-03-20"
+  },
+  "zipf": 3.8,
+  "_orphaned_translations": [
+    {
+      "gloss": "etwas mit einer größeren Menge von etwas anderem versehen",
+      "gloss_en": "infuse",
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To provide something with a larger quantity of something else",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
@@ -28,12 +145,6 @@
     {
       "gloss": "eine andere Steinart oder ein Erz quer durchziehen",
       "gloss_en": "cut through",
-      "tags": [],
-      "example_ids": [
-        "77b9b71afb"
-      ],
-      "synonyms": [],
-      "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To run through another type of stone or ore crosswise",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
@@ -41,44 +152,9 @@
     {
       "gloss": "sich zum Teil in demselben Raum befinden, sich in Bezug auf die Ausdehnung aber nicht auf diesen Überschneidungsbereich beschränken",
       "gloss_en": "intersect (mathematics)",
-      "tags": [],
-      "example_ids": [
-        "d338f04c25"
-      ],
-      "synonyms": [],
-      "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To occupy the same space in part while not being limited to that area of overlap in terms of extent",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
-  ],
-  "sounds": [
-    {
-      "ipa": "[dʊʁçˈzɛt͡sn̩]",
-      "tags": []
-    }
-  ],
-  "conjugation_class": "weak",
-  "stems": {
-    "present": "durchsetz",
-    "past": ""
-  },
-  "past_participle": "durchsetzt",
-  "_derived": [
-    "Durchsetzen",
-    "durchsetzend",
-    "durchsetzt"
-  ],
-  "_antonyms": [
-    "entziehen"
-  ],
-  "_meta": {
-    "source_hash": "76c9f29a7fada4ff",
-    "generated_at": "2026-03-18"
-  },
-  "zipf": 3.8,
-  "_proofread": {
-    "gloss_en": true,
-    "gloss_en_full": true
-  }
+  ]
 }

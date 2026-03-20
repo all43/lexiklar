@@ -3,50 +3,105 @@
   "pos": "verb",
   "etymology_number": null,
   "auxiliary": "haben",
-  "separable": true,
-  "prefix": "über",
+  "separable": false,
+  "prefix": null,
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "etwas so lange und so oft angesehen haben, dass es langweilig oder sogar unangenehm ist, weiter hinzuschauen",
-      "gloss_en": "watched (bored)",
+      "gloss": "etwas oder jemanden nicht wahrnehmen; versehentlich nicht beachten",
+      "gloss_en": null,
       "tags": [
         "transitive"
       ],
       "example_ids": [
-        "2e7888c267",
-        "d028025092"
+        "44fe4b61a1"
       ],
       "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To have looked at something so long and so often that it becomes tedious or even unpleasant to continue looking at it",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "antonyms": []
+    },
+    {
+      "gloss": "etwas absichtlich nicht beachten ( ein erkanntes Fehlverhalten ungetadelt lassen)",
+      "gloss_en": null,
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "5b58b3d32e"
+      ],
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "mit seinem Blick weitläufig erfassen; überblicken",
+      "gloss_en": null,
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "63f53f9392"
+      ],
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "vollständig verstehen",
+      "gloss_en": null,
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "2baac3b6b1"
+      ],
+      "synonyms": [],
+      "antonyms": []
     }
   ],
   "sounds": [
     {
-      "ipa": "[ˈyːbɐˌzeːən]",
+      "ipa": "[yːbɐˈzeːən]",
       "tags": []
     }
   ],
   "conjugation_class": "strong",
   "stems": {
-    "present": "seh",
-    "past": "sah",
-    "present_du_er": "sieh",
-    "subj2": "säh",
-    "imperative_du": "sieh"
+    "present": "überseh",
+    "past": "übersah",
+    "present_du_er": "übersieh",
+    "subj2": "übersäh",
+    "imperative_du": "übersieh"
   },
-  "past_participle": "übergesehen",
+  "past_participle": "übersehen",
   "_derived": [
-    "übergesehen",
+    "übersehbar",
+    "unübersehbar",
     "Übersehen",
-    "übersehend"
+    "übersehen",
+    "übersehend",
+    "Übersicht"
+  ],
+  "_synonyms": [
+    "hinwegsehen",
+    "ignorieren",
+    "hinwegblicken",
+    "begreifen",
+    "erfassen",
+    "erkennen",
+    "nachvollziehen",
+    "realisieren",
+    "überschauen"
   ],
   "_meta": {
-    "source_hash": "124aad32047a868f",
-    "generated_at": "2026-03-18"
+    "source_hash": "814924fec014aa8a",
+    "generated_at": "2026-03-20"
   },
-  "zipf": 4.07
+  "zipf": 4.07,
+  "_orphaned_translations": [
+    {
+      "gloss": "etwas so lange und so oft angesehen haben, dass es langweilig oder sogar unangenehm ist, weiter hinzuschauen",
+      "gloss_en": "watched (bored)",
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To have looked at something so long and so often that it becomes tedious or even unpleasant to continue looking at it",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ]
 }

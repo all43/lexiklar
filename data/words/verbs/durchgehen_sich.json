@@ -2,45 +2,124 @@
   "word": "durchgehen",
   "pos": "verb",
   "etymology_number": null,
-  "auxiliary": "haben",
-  "separable": false,
-  "prefix": null,
+  "auxiliary": "sein",
+  "separable": true,
+  "prefix": "durch",
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "sich durch etwas hindurch bewegen, etwas durchqueren",
+      "gloss": "sich durch etwas hindurch bewegen",
       "gloss_en": "go through",
       "tags": [],
       "example_ids": [
-        "1bd70334c6"
+        "6d5a8dda7f"
       ],
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To move through something, to traverse it",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "durch etwas hindurch verlaufen",
+      "gloss_en": "pass through",
+      "tags": [],
+      "example_ids": [
+        "65347b2a8f"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "To move through something, to traverse it",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "durch etwas hindurch passen",
+      "gloss_en": "pass through",
+      "tags": [],
+      "example_ids": [
+        "930ad03213"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "To move through something, to traverse it",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "räumlich oder zeitlich ununterbrochen von Anfang bis Ende verlaufen",
+      "gloss_en": null,
+      "tags": [],
+      "example_ids": [
+        "6373cb453e",
+        "6a0adb73c5"
+      ],
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "panisch fliehen",
+      "gloss_en": null,
+      "tags": [],
+      "example_ids": [
+        "4bf8965cc7"
+      ],
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "als etwas akzeptiert / angesehen werden",
+      "gloss_en": null,
+      "tags": [],
+      "example_ids": [
+        "3e1e11a789"
+      ],
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "akzeptieren, erlauben",
+      "gloss_en": null,
+      "tags": [],
+      "example_ids": [
+        "108522fef1"
+      ],
+      "synonyms": [],
+      "antonyms": []
+    },
+    {
+      "gloss": "etwas Punkt für Punkt überprüfen",
+      "gloss_en": null,
+      "tags": [],
+      "example_ids": [
+        "9421cc090a"
+      ],
+      "synonyms": [],
+      "antonyms": []
     }
   ],
   "sounds": [
     {
-      "ipa": "[dʊʁçˈɡeːən]",
+      "ipa": "[ˈdʊʁçˌɡeːən]",
       "tags": []
     }
   ],
   "conjugation_class": "strong",
   "stems": {
-    "present": "durchgeh",
-    "past": "durchging",
-    "imperative_du": "durchgehe"
+    "present": "geh",
+    "past": "ging"
   },
-  "past_participle": "durchgangen",
+  "past_participle": "durchgegangen",
+  "expression_ids": [
+    "286be65c2c"
+  ],
+  "_derived": [
+    "Durchgang",
+    "Durchgänger"
+  ],
   "_meta": {
-    "source_hash": "1f2d007a024eebad",
-    "generated_at": "2026-03-18"
+    "source_hash": "2c75336fc9a64800",
+    "generated_at": "2026-03-20"
   },
-  "zipf": 3.6,
-  "_proofread": {
-    "gloss_en": true,
-    "gloss_en_full": true
-  }
+  "zipf": 3.6
 }

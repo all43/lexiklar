@@ -2,54 +2,68 @@
   "word": "überfahren",
   "pos": "verb",
   "etymology_number": null,
-  "auxiliary": "both",
-  "separable": true,
-  "prefix": "über",
+  "auxiliary": "haben",
+  "separable": false,
+  "prefix": null,
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "mit einem Wasserfahrzeug von einem Ufer zum anderen fahren",
-      "gloss_en": "cross (river)",
+      "gloss": "mit einem Fahrzeug über jemanden rollen",
+      "gloss_en": null,
       "tags": [],
       "example_ids": [
-        "332af2eb37",
-        "2012705574"
+        "26c59048b3"
       ],
       "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To travel by water vessel from one shore to the other",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "antonyms": []
+    },
+    {
+      "gloss": "etwas fahrend passieren",
+      "gloss_en": null,
+      "tags": [],
+      "example_ids": [
+        "b8fbae3bbb"
+      ],
+      "synonyms": [],
+      "antonyms": []
     }
   ],
   "sounds": [
     {
-      "ipa": "[ˈyːbɐˌfaːʁən]",
+      "ipa": "[yːbɐˈfaːʁən]",
       "tags": []
     }
   ],
   "conjugation_class": "strong",
   "stems": {
-    "present": "fahr",
-    "past": "fuhr",
-    "present_du_er": "fähr",
-    "subj2": "führ",
-    "imperative_du": "fahre"
+    "present": "überfahr",
+    "past": "überfuhr",
+    "present_du_er": "überfähr",
+    "subj2": "überführ",
+    "imperative_du": "überfahre"
   },
-  "past_participle": "übergefahren",
+  "past_participle": "überfahren",
   "_derived": [
+    "überfahren",
     "Überfahren",
-    "überfahrend",
-    "übergefahren",
-    "Überfuhr",
-    "Überfahrt"
+    "überfahrend"
   ],
   "_synonyms": [
-    "übersetzen"
+    "überrollen",
+    "passieren"
   ],
   "_meta": {
-    "source_hash": "329d85c1606f8895",
-    "generated_at": "2026-03-18"
+    "source_hash": "fccb103cc4c387af",
+    "generated_at": "2026-03-20"
   },
-  "zipf": 3.72
+  "zipf": 3.72,
+  "_orphaned_translations": [
+    {
+      "gloss": "mit einem Wasserfahrzeug von einem Ufer zum anderen fahren",
+      "gloss_en": "cross (river)",
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To travel by water vessel from one shore to the other",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ]
 }
