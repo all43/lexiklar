@@ -573,21 +573,34 @@ export default defineComponent({
     },
 
     removeFromHistory() {
-      const { pos, file } = this.f7route.params as { pos: string; file: string };
-      const fileKey = `${pos}/${file}`;
-      try {
-        const recents: string[] = JSON.parse(getCached("lexiklar_recents") || "[]");
-        setItem(
-          "lexiklar_recents",
-          JSON.stringify(recents.filter((f) => f !== fileKey)),
-        );
-        const counts: Record<string, number> = JSON.parse(getCached("lexiklar_view_counts") || "{}");
-        delete counts[fileKey];
-        setItem("lexiklar_view_counts", JSON.stringify(counts));
-        this.inHistory = false;
-      } catch {
-        // silently skip
-      }
+      f7.dialog.create({
+        title: t("word.removeHistory"),
+        text: t("word.removeHistoryConfirm"),
+        buttons: [
+          { text: t("report.cancel") },
+          {
+            text: t("word.removeHistory"),
+            bold: true,
+            onClick: () => {
+              const { pos, file } = this.f7route.params as { pos: string; file: string };
+              const fileKey = `${pos}/${file}`;
+              try {
+                const recents: string[] = JSON.parse(getCached("lexiklar_recents") || "[]");
+                setItem(
+                  "lexiklar_recents",
+                  JSON.stringify(recents.filter((f) => f !== fileKey)),
+                );
+                const counts: Record<string, number> = JSON.parse(getCached("lexiklar_view_counts") || "{}");
+                delete counts[fileKey];
+                setItem("lexiklar_view_counts", JSON.stringify(counts));
+                this.inHistory = false;
+              } catch {
+                // silently skip
+              }
+            },
+          },
+        ],
+      }).open();
     },
 
     getPosColor(pos: string | undefined): string {
