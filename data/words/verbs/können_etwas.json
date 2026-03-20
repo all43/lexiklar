@@ -9,14 +9,17 @@
   "senses": [
     {
       "gloss": "etwas zu tun vermögen",
-      "gloss_en": null,
+      "gloss_en": "be able to",
       "tags": [],
       "example_ids": [
         "a454082091",
         "afbb42c34f"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To be able to do something",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "durch bestimmte Umstände die Möglichkeit haben, etwas zu tun",
@@ -41,14 +44,17 @@
     },
     {
       "gloss": "aufgrund bestimmter Gegebenheiten zu einem Verhalten berechtigt sein",
-      "gloss_en": null,
+      "gloss_en": "be entitled to",
       "tags": [],
       "example_ids": [
         "b888816222",
         "eae4d1243a"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To be entitled to behave in a certain way due to specific circumstances",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "sofern es erlaubt ist, die Möglichkeit haben, etwas zu tun",
@@ -66,36 +72,45 @@
     },
     {
       "gloss": "unter Umständen in Betracht kommen, vielleicht der Fall sein",
-      "gloss_en": null,
+      "gloss_en": "might",
       "tags": [],
       "example_ids": [
         "5e1b4a8171",
         "3b8d20dbef"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To be possible under certain conditions, perhaps the case",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "von Zeit zu Zeit etwas zu tun vermögen",
-      "gloss_en": null,
+      "gloss_en": "occasionally be able to",
       "tags": [],
       "example_ids": [
         "06ae526c3d",
         "a196e962a4"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To be able to do something from time to time",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "etwas auf Wunsch einer anderen Person tun sollen",
-      "gloss_en": null,
+      "gloss_en": "be supposed to",
       "tags": [],
       "example_ids": [
         "ab1dce828c",
         "cba9b8015a"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To be expected to do something at another person's request",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
   ],
   "sounds": [
@@ -203,5 +218,9 @@
       ],
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     }
-  ]
+  ],
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

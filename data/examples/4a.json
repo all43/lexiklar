@@ -3168,7 +3168,7 @@
         "gloss_hint": "seem | appear"
       }
     ],
-    "text_linked": "„Sooft ich [[wieder|adverbs/wieder#1]] [[nach|prepositions/nach#1]] Padua [[kam|verbs/kommen#5]], [[um|prepositions/um#1]] mein Rechtsstudium [[zu|prepositions/zu#1]] [[beenden|verbs/beenden#1]], [[wohnte|verbs/wohnen#1]] ich [[bei|prepositions/bei#1]] ihm; [[aber|conjunctions/aber#1]] jedesmal [[kränkte|verbs/kränken#1]] [[es|pronouns/es#1]] [[mich|pronouns/ich]], [[wenn|conjunctions/wenn#1]] ich Bettina [[mit|prepositions/mit#1]] [[dem|pronouns/der_nominativ#1]] [[Strolch|nouns/Strolch#1]] sah, [[der|pronouns/der_nominativ#1]] sie [[heiraten|verbs/heiraten#1]] [[sollte|verbs/sollen#4]] [[und|conjunctions/und#1]] [[für|prepositions/für#1]] [[den|pronouns/der_nominativ#1]] sie [[mir|pronouns/ich]] [[nicht|particles/nicht#1]] [[geschaffen|verbs/schaffen_etwas]] zu [[sein|verbs/sein#1]] [[schien|verbs/scheinen#2]].“"
+    "text_linked": "„Sooft ich [[wieder|adverbs/wieder#1]] [[nach|prepositions/nach#1]] Padua [[kam|verbs/kommen#5]], [[um|prepositions/um#1]] mein Rechtsstudium [[zu|prepositions/zu#1]] [[beenden|verbs/beenden#1]], [[wohnte|verbs/wohnen#1]] ich [[bei|prepositions/bei#1]] ihm; [[aber|conjunctions/aber#1]] jedesmal [[kränkte|verbs/kränken#1]] [[es|pronouns/es#1]] [[mich|pronouns/ich]], [[wenn|conjunctions/wenn#1]] ich Bettina [[mit|prepositions/mit#1]] [[dem|pronouns/der_nominativ#1]] [[Strolch|nouns/Strolch#1]] sah, [[der|pronouns/der_nominativ#1]] sie [[heiraten|verbs/heiraten#1]] [[sollte|verbs/sollen#4]] [[und|conjunctions/und#1]] [[für|prepositions/für#1]] [[den|pronouns/der_nominativ#1]] sie [[mir|pronouns/ich]] [[nicht|particles/nicht#1]] [[geschaffen|verbs/schaffen_etwas#1]] zu [[sein|verbs/sein#1]] [[schien|verbs/scheinen#2]].“"
   },
   "4a1bb62b1d": {
     "text": "Ich habe mein Kapital bei einer Bank angelegt.",
@@ -3355,7 +3355,7 @@
         "gloss_hint": "recruited"
       }
     ],
-    "text_linked": "„Bei [[dem|determiners/der]] [[Grafen|nouns/Graf#1]] [[machte|verbs/machen#2]] ich auch [[die|determiners/die]] [[Bekanntschaft|nouns/Bekanntschaft#1]] [[des|determiners/der]] [[Baron|nouns/Baron#1]] [[von|prepositions/von#2]] Sellentin, [[eines|determiners/ein#1]] Rittmeisters [[in|prepositions/in#1]] preußischen [[Diensten|nouns/Dienst#1]], [[der|determiners/der#1]] [[in Augsburg|names/Augsburg]] [[für|prepositions/für#1]] [[seinen|pronouns/sein#1]] [[Herrn|nouns/Herr#4]] [[Rekruten|nouns/Rekrut#1]] [[anwarb|verbs/anwerben]].“"
+    "text_linked": "„Bei [[dem|determiners/der]] [[Grafen|nouns/Graf#1]] [[machte|verbs/machen#2]] ich auch [[die|determiners/die]] [[Bekanntschaft|nouns/Bekanntschaft#1]] [[des|determiners/der]] [[Baron|nouns/Baron#1]] [[von|prepositions/von#2]] Sellentin, [[eines|determiners/ein#1]] Rittmeisters [[in|prepositions/in#1]] preußischen [[Diensten|nouns/Dienst#1]], [[der|determiners/der#1]] [[in Augsburg|names/Augsburg]] [[für|prepositions/für#1]] [[seinen|pronouns/sein#1]] [[Herrn|nouns/Herr#4]] [[Rekruten|nouns/Rekrut#1]] [[anwarb|verbs/anwerben#1]].“"
   },
   "4a1c29585c": {
     "text": "„Fritzchen weint schon den ganzen Tag, weil sein kleiner Hamster gestorben ist.“",
@@ -5928,11 +5928,51 @@
   },
   "4a36a5d5a9": {
     "text": "„Im Falle einer Zugverspätung gibt es seit dem 29.07.2009 für die gesamte Reisekette, von S- Bahn bis ICE Entschädigungsregelungen.“",
-    "translation": null,
+    "translation": "\"In the event of a train delay, there have been compensation regulations since 29.07.2009 for the entire journey chain, from S-Bahn to ICE.\"",
     "source": "wiktionary",
     "lemmas": [
       "Zugverspätung"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Falle",
+        "lemma": "Falle",
+        "pos": "noun",
+        "gloss_hint": "case"
+      },
+      {
+        "form": "Zugverspätung",
+        "lemma": "Zugverspätung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reisekette",
+        "lemma": "Reisekette",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bahn",
+        "lemma": "Bahn",
+        "pos": "noun",
+        "gloss_hint": "railway"
+      },
+      {
+        "form": "ICE",
+        "lemma": "ICE",
+        "pos": "noun",
+        "gloss_hint": "Intercity Express"
+      },
+      {
+        "form": "Entschädigungsregelungen",
+        "lemma": "Entschädigungsregelung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Im [[Falle|nouns/Falle]] einer [[Zugverspätung|nouns/Zugverspätung]] gibt es seit dem 29.07.2009 für die gesamte Reisekette, von S- [[Bahn|nouns/Bahn#4]] bis [[ICE|nouns/ICE#1]] Entschädigungsregelungen.“"
   },
   "4a36bca408": {
     "text": "Der Hund schleifte mich im Park hinter sich her, um zu den anderen Hunden zu kommen.",
@@ -7336,7 +7376,7 @@
         "gloss_hint": "has"
       }
     ],
-    "text_linked": "[[Sieh|verbs/sehen#1]] [[dir|pronouns/du]] mal [[an|prepositions/an]], [[was|pronouns/was#1]] [[für|prepositions/für]] [[ein|determiners/ein]] [[Kram|nouns/Kram#1]] [[sich|pronouns/sich#1]] [[im|prepositions/in]] [[Lauf|nouns/Lauf#6]] [[der|determiners/der]] [[Zeit|nouns/Zeit#1]] [[hier|adverbs/hier#1]] [[angesammelt|verbs/ansammeln]] [[hat|verbs/haben#1]]."
+    "text_linked": "[[Sieh|verbs/sehen#1]] [[dir|pronouns/du]] mal [[an|prepositions/an]], [[was|pronouns/was#1]] [[für|prepositions/für]] [[ein|determiners/ein]] [[Kram|nouns/Kram#1]] [[sich|pronouns/sich#1]] [[im|prepositions/in]] [[Lauf|nouns/Lauf#6]] [[der|determiners/der]] [[Zeit|nouns/Zeit#1]] [[hier|adverbs/hier#1]] angesammelt [[hat|verbs/haben#1]]."
   },
   "4a40e066a6": {
     "text": "„Der Prager Fenstersturz blieb umso mehr in der kollektiven Erinnerung, weil die beiden Männer kaum verletzt im Burggraben landeten.“",
@@ -8493,7 +8533,7 @@
         "gloss_hint": "surrounded"
       }
     ],
-    "text_linked": "„[[Als|conjunctions/als]] [[ich|pronouns/ich]] [[meine|pronouns/mein]] [[schöne|adjectives/schön]] [[Spielerin|nouns/Spielerin]] [[einholte|verbs/einholen#2]], [[war|verbs/sein#2]] sie [[umringt|verbs/umringen]].“"
+    "text_linked": "„[[Als|conjunctions/als]] [[ich|pronouns/ich]] [[meine|pronouns/mein]] [[schöne|adjectives/schön]] [[Spielerin|nouns/Spielerin]] [[einholte|verbs/einholen#2]], [[war|verbs/sein#2]] sie [[umringt|verbs/umringen#1]].“"
   },
   "4a475f70ce": {
     "text": "Die Mannschaft mit dem besserem Aufschlag hat meist leichte Vorteile.",
@@ -9516,7 +9556,7 @@
         "gloss_hint": "loot"
       }
     ],
-    "text_linked": "„Kriminelle [[können|verbs/können_etwas#1]] Gespräche [[mithören|verbs/mithören#1]] und Bankkonten [[plündern|verbs/plündern#1]].“"
+    "text_linked": "„Kriminelle [[können|verbs/können_beherrschen]] Gespräche [[mithören|verbs/mithören#1]] und Bankkonten [[plündern|verbs/plündern#1]].“"
   },
   "4a56b844a4": {
     "text": "Diese kalkhaltige Bank wurde von Steinsuchern in den letzten Jahrzehnten weitgehend abgebaut.",
@@ -11539,7 +11579,7 @@
         "gloss_hint": "boulevards"
       }
     ],
-    "text_linked": "„Nachdem der Großstädter im Norden [[Ostern|nouns/Ostern#1]] die warmen Sachen von Weihnachten [[trug|verbs/tragen#3]] und [[Pfingsten|nouns/Pfingsten#1]] die [[Garderobe|nouns/Garderobe#4]] von Ostern, [[kann|verbs/können_beherrschen]] nun [[endlich|adverbs/endlich#1]] per [[Taille|nouns/Taille#1]] [[über|adverbs/über#1]] die Berliner Boulevards geschlendert werden.“"
+    "text_linked": "„Nachdem der Großstädter im Norden [[Ostern|nouns/Ostern#1]] die warmen Sachen von Weihnachten [[trug|verbs/tragen#3]] und [[Pfingsten|nouns/Pfingsten#1]] die [[Garderobe|nouns/Garderobe#4]] von Ostern, [[kann|verbs/können_etwas#1]] nun [[endlich|adverbs/endlich#1]] per [[Taille|nouns/Taille#1]] [[über|adverbs/über#1]] die Berliner Boulevards geschlendert werden.“"
   },
   "4a723d8eb4": {
     "text": "„Also hattest du Manschetten deine Patientinnen anzusprechen, dass sie auch ohne Rezept mit ihr arbeiten können?“",
@@ -14704,7 +14744,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[Anmerkung: Bei Notebooks [[kann|verbs/können_beherrschen]] [[als|conjunctions/als]]] „Betriebssystem [[zwischen|prepositions/zwischen#1]] Pop!_OS 18.04 LTS, Pop!_OS 19.04, oder Ubuntu 18.04 LTS gewählt werden.“"
+    "text_linked": "[Anmerkung: Bei Notebooks [[kann|verbs/können_etwas#1]] [[als|conjunctions/als]]] „Betriebssystem [[zwischen|prepositions/zwischen#1]] Pop!_OS 18.04 LTS, Pop!_OS 19.04, oder Ubuntu 18.04 LTS gewählt werden.“"
   },
   "4a94656296": {
     "text": "„Der Anschlag des Kaisers sei eine Verzichtserklärung, aber noch keine Abdankung, ein großer Unterschied.“",
@@ -15829,7 +15869,7 @@
         "gloss_hint": "completeness"
       }
     ],
-    "text_linked": "„Vieles [[bleibt|verbs/bleiben]] Pars pro [[Toto|nouns/Toto#2]], [[denn|adverbs/denn]] [[bei|prepositions/bei#2]] [[einem|pronouns/ein#2]] [[Thema|nouns/Thema#4]], [[das|pronouns/das_nominativ]] [[ein|determiners/ein#1]] [[halbes|adjectives/halb#1]] Jahrtausend [[der|pronouns/der_nominativ#1]] Menschheitsgeschichte [[umfasst|verbs/umfassen_anders]], [[kann|verbs/können_beherrschen]] [[es|pronouns/es#1]] [[nicht|particles/nicht#1]] [[um|prepositions/um#7]] Vollständigkeit gehen.“"
+    "text_linked": "„Vieles [[bleibt|verbs/bleiben]] Pars pro [[Toto|nouns/Toto#2]], [[denn|adverbs/denn]] [[bei|prepositions/bei#2]] [[einem|pronouns/ein#2]] [[Thema|nouns/Thema#4]], [[das|pronouns/das_nominativ]] [[ein|determiners/ein#1]] [[halbes|adjectives/halb#1]] Jahrtausend [[der|pronouns/der_nominativ#1]] Menschheitsgeschichte [[umfasst|verbs/umfassen_anders]], [[kann|verbs/können_etwas#1]] [[es|pronouns/es#1]] [[nicht|particles/nicht#1]] [[um|prepositions/um#7]] Vollständigkeit gehen.“"
   },
   "4a9cca0762": {
     "text": "Ella ist auf dem besten Weg, eine richtige Tonne zu werden.",
@@ -18917,7 +18957,7 @@
         "gloss_hint": "answer"
       }
     ],
-    "text_linked": "„Die heutigen Nachrichten [[lauten|verbs/lauten#1]] insofern für [[die|determiners/die]] Sache des Friedens günstiger, als [[man|pronouns/man]] [[aus|prepositions/aus#1]] ihnen [[entnehmen|verbs/entnehmen#2]] [[kann|verbs/können_beherrschen]], daß die Türken [[nicht|particles/nicht#1]] gesonnen [[sind|verbs/sein#2]], die bulgarische Unabhängigkeitserklärung [[ab|adverbs/ab#1]] irato [[mit|prepositions/mit#1]] [[einer|determiners/ein]] Kriegserklärung [[zu|prepositions/zu#1]] [[beantworten|verbs/beantworten#1]].“"
+    "text_linked": "„Die heutigen Nachrichten [[lauten|verbs/lauten#1]] insofern für [[die|determiners/die]] Sache des Friedens günstiger, als [[man|pronouns/man]] [[aus|prepositions/aus#1]] ihnen [[entnehmen|verbs/entnehmen#2]] [[kann|verbs/können_etwas#1]], daß die Türken [[nicht|particles/nicht#1]] gesonnen [[sind|verbs/sein#2]], die bulgarische Unabhängigkeitserklärung [[ab|adverbs/ab#1]] irato [[mit|prepositions/mit#1]] [[einer|determiners/ein]] Kriegserklärung [[zu|prepositions/zu#1]] [[beantworten|verbs/beantworten#1]].“"
   },
   "4ab6eba3bb": {
     "text": "„Sämtliche Beziehungen wurden eingefroren, alle Abkommen aufgekündigt, zahlreiche vermeintliche Titoisten innerhalb der kommunistischen Partei fielen einer Säuberungswelle zum Opfer – nun war die Sowjetunion Albaniens großer Bruder.“",
@@ -19992,7 +20032,7 @@
         "gloss_hint": "be accommodating"
       }
     ],
-    "text_linked": "„Tilak musste [[besonders|adverbs/besonders#3]] [[auf|prepositions/auf#1]] [[die|pronouns/die]] Hindus [[in|prepositions/in]] Bengalen [[achten|verbs/achten#1]], er [[konnte|verbs/können_beherrschen]] [[darüber|adverbs/darüber#5]] [[froh|adjectives/froh#1]] [[sein|verbs/sein#2]], [[das|pronouns/das_[1]]] Jinnah ihm [[dort|adverbs/dort]] [[entgegenkam|verbs/entgegenkommen]].“"
+    "text_linked": "„Tilak musste [[besonders|adverbs/besonders#3]] [[auf|prepositions/auf#1]] [[die|pronouns/die]] Hindus [[in|prepositions/in]] Bengalen [[achten|verbs/achten#1]], er [[konnte|verbs/können_etwas#1]] [[darüber|adverbs/darüber#5]] [[froh|adjectives/froh#1]] [[sein|verbs/sein#2]], [[das|pronouns/das_[1]]] Jinnah ihm [[dort|adverbs/dort]] [[entgegenkam|verbs/entgegenkommen]].“"
   },
   "4ac22b0e2b": {
     "text": "Ich brauch Dope! Hast du noch was Dope für mich?",
@@ -20380,7 +20420,7 @@
         "gloss_hint": "exit"
       }
     ],
-    "text_linked": "„An der [[Tür|nouns/Tür]] hatte sich ein [[Stück|nouns/Stück#1]] vom Teppichboden [[gelöst|verbs/lösen]], aber ich konnte nicht [[herausfinden|verbs/herausfinden#1]], ob der [[Schaden|nouns/Schaden#2]] von der Türbewegung [[herrührte|verbs/herrühren]] oder vom Ein- und [[Aussteigen|verbs/aussteigen#1]].“",
+    "text_linked": "„An der [[Tür|nouns/Tür]] hatte sich ein [[Stück|nouns/Stück#1]] vom Teppichboden [[gelöst|verbs/lösen]], aber ich konnte nicht [[herausfinden|verbs/herausfinden#1]], ob der [[Schaden|nouns/Schaden#2]] von der Türbewegung herrührte oder vom Ein- und [[Aussteigen|verbs/aussteigen#1]].“",
     "_proofread": {
       "translation": true
     }

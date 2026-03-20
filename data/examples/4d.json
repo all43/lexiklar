@@ -129,7 +129,7 @@
         "gloss_hint": "transfer"
       }
     ],
-    "text_linked": "„Der [[Zylinder|nouns/Zylinder#1]] [[wird|verbs/werden]] [[mit|prepositions/mit#1]] [[Öl|nouns/Öl]] [[gefüllt|verbs/füllen#1]], [[das|pronouns/das_[1]]] [[beim|prepositions/bei]] [[Erhitzen|verbs/erhitzen]] [[unter|prepositions/unter#1]] [[Druck|nouns/Druck_kraft#1]] [[steht|verbs/stehen#1]], [[und|conjunctions/und]] [[der|pronouns/der_nominativ]] Öldruck wird [[auf|prepositions/auf#1]] [[die|pronouns/die]] zentrale [[Zelle|nouns/Zelle#1]] [[übertragen|verbs/übertragen#6]].“"
+    "text_linked": "„Der [[Zylinder|nouns/Zylinder#1]] [[wird|verbs/werden]] [[mit|prepositions/mit#1]] [[Öl|nouns/Öl]] [[gefüllt|verbs/füllen#1]], [[das|pronouns/das_[1]]] [[beim|prepositions/bei]] [[Erhitzen|verbs/erhitzen#1]] [[unter|prepositions/unter#1]] [[Druck|nouns/Druck_kraft#1]] [[steht|verbs/stehen#1]], [[und|conjunctions/und]] [[der|pronouns/der_nominativ]] Öldruck wird [[auf|prepositions/auf#1]] [[die|pronouns/die]] zentrale [[Zelle|nouns/Zelle#1]] [[übertragen|verbs/übertragen#6]].“"
   },
   "4d003aa9af": {
     "text": "Diabetiker müssen sich Insulin mit einer Spritze geben.",
@@ -1001,7 +1001,7 @@
         "gloss_hint": "be (copula)"
       }
     ],
-    "text_linked": "Das [[Rauschen|verbs/rauschen#1]] [[des|determiners/der]] [[Meeres|nouns/Meer#1]] [[kann|verbs/können_beherrschen]] [[sehr|particles/sehr#1]] [[beruhigend|adjectives/beruhigend#1]] [[sein|verbs/sein#1]]."
+    "text_linked": "Das [[Rauschen|verbs/rauschen#1]] [[des|determiners/der]] [[Meeres|nouns/Meer#1]] [[kann|verbs/können_etwas#1]] [[sehr|particles/sehr#1]] [[beruhigend|adjectives/beruhigend#1]] [[sein|verbs/sein#1]]."
   },
   "4d075e201e": {
     "text": "Sie hat den Nachmittag damit verbracht saure Gurken einzulegen.",
@@ -3460,7 +3460,7 @@
         "gloss_hint": "cause or produce"
       }
     ],
-    "text_linked": "Der Firmenchef sprach [[sich|pronouns/sich]] [[für|prepositions/für]] [[die|pronouns/die]] frischgebackene Uniabsolventin [[aus|prepositions/aus]], \"sie [[könnte|verbs/können_beherrschen]] [[frischen|adjectives/frisch]] [[Wind|nouns/Wind#5]] [[in|prepositions/in]] die [[Abteilung|nouns/Abteilung_abteilen#1]] [[bringen|verbs/bringen]]\"."
+    "text_linked": "Der Firmenchef sprach [[sich|pronouns/sich]] [[für|prepositions/für]] [[die|pronouns/die]] frischgebackene Uniabsolventin [[aus|prepositions/aus]], \"sie [[könnte|verbs/können_etwas#1]] [[frischen|adjectives/frisch]] [[Wind|nouns/Wind#5]] [[in|prepositions/in]] die [[Abteilung|nouns/Abteilung_abteilen#1]] [[bringen|verbs/bringen]]\"."
   },
   "4d1a2f4830": {
     "text": "in die Suppe schauen mehr Augen rein als raus",
@@ -4478,11 +4478,33 @@
   },
   "4d2a8a3bde": {
     "text": "Haben Sie den Satz: „Dieser Satz auch ohne Verb.“ schon gehört?.",
-    "translation": null,
+    "translation": "Have you already heard the sentence: \"This sentence also without a verb.\"?",
     "source": "wiktionary",
     "lemmas": [
       "Verb"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Satz",
+        "lemma": "Satz",
+        "pos": "noun",
+        "gloss_hint": "sentence"
+      },
+      {
+        "form": "Verb",
+        "lemma": "Verb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gehört",
+        "lemma": "hören",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Haben Sie den [[Satz|nouns/Satz#1]]: „Dieser Satz auch ohne [[Verb|nouns/Verb]].“ schon [[gehört|verbs/hören]]?."
   },
   "4d2abe551a": {
     "text": "„Die Midterm Wahlen vor wenigen Wochen waren vor allem ein Sieg der Frauen. Von 435 Sitzen im Repräsentantenhaus gehen erstmals über 90 an weibliche Abgeordnete.“",
@@ -5653,7 +5675,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Die [[kleine|adjectives/klein]] Solaranlage, die er sich selbst [[zusammengebastelt|verbs/zusammenbasteln]] hatte, [[funktionierte|verbs/funktionieren]] [[einwandfrei|adjectives/einwandfrei]]."
+    "text_linked": "Die [[kleine|adjectives/klein]] Solaranlage, die er sich selbst zusammengebastelt hatte, [[funktionierte|verbs/funktionieren]] [[einwandfrei|adjectives/einwandfrei]]."
   },
   "4d3ba78a4f": {
     "text": "„Er gibt mir das Wechselgeld.“",
@@ -6646,7 +6668,7 @@
         "gloss_hint": "used to reside"
       }
     ],
-    "text_linked": "„[[Denn|adverbs/denn]] [[die|pronouns/die]] Rechtsanwaltskanzlei [[von|prepositions/von]] Leo Specht, [[Freund|nouns/Freund#1]] [[und|conjunctions/und]] [[neuerdings|adverbs/neuerdings]] [[auch|adverbs/auch]] [[Geschäftspartner|nouns/Geschäftspartner#1]] [[des|determiners/des]] ehemaligen [[Kanzlers|nouns/Kanzler]], [[befindet|verbs/befinden#1]] [[sich|pronouns/sich]] [[direkt|adjectives/direkt]] vis-à-vis des altehrwürdigen Genossen-Hauptquartiers [[in|prepositions/in]] [[der|determiners/der]] Löwelstraße, [[wo|adverbs/wo]] Gusenbauer in [[seinen|pronouns/sein]] [[acht|numerals/acht#1]] [[Jahren|nouns/Jahr]] [[als|conjunctions/als]] [[Parteichef|nouns/Parteichef]] im herzeigbaren Eckbüro im zweiten [[Stock|nouns/Stock#5]] [[zu|particles/zu_drückt]] [[residieren|verbs/residieren]] [[pflegte|verbs/pflegen]].“"
+    "text_linked": "„[[Denn|adverbs/denn]] [[die|pronouns/die]] Rechtsanwaltskanzlei [[von|prepositions/von]] Leo Specht, [[Freund|nouns/Freund#1]] [[und|conjunctions/und]] [[neuerdings|adverbs/neuerdings]] [[auch|adverbs/auch]] [[Geschäftspartner|nouns/Geschäftspartner#1]] [[des|determiners/des]] ehemaligen [[Kanzlers|nouns/Kanzler]], [[befindet|verbs/befinden#1]] [[sich|pronouns/sich]] [[direkt|adjectives/direkt]] vis-à-vis des altehrwürdigen Genossen-Hauptquartiers [[in|prepositions/in]] [[der|determiners/der]] Löwelstraße, [[wo|adverbs/wo]] Gusenbauer in [[seinen|pronouns/sein]] [[acht|numerals/acht#1]] [[Jahren|nouns/Jahr]] [[als|conjunctions/als]] [[Parteichef|nouns/Parteichef]] im herzeigbaren Eckbüro im zweiten [[Stock|nouns/Stock#5]] [[zu|particles/zu_drückt]] residieren [[pflegte|verbs/pflegen]].“"
   },
   "4d4457a307": {
     "text": "„Auf der anderen Seite wurde 1940 unter der Führung von Sayyed Abu Ala Maududi die Jamaat-e-Islami ins Leben gerufen.“",
@@ -10850,7 +10872,7 @@
         "gloss_hint": "enter"
       }
     ],
-    "text_linked": "„Ich habe dir von dem [[Wechsel|nouns/Wechsel#1]] gesprochen, der in seinem [[Wesen|nouns/Wesen#2]], in seiner Stimmung [[bemerkbar|adjectives/bemerkbar]] [[geworden|verbs/werden#1]] und zuweilen allerdings [[mit|adverbs/mit#1]] [[einer|determiners/einer]] [[Schnelle|nouns/Schnelle#1]] [[eintrat|verbs/eintreten#1]], welche überraschen und erschrecken konnte […].“"
+    "text_linked": "„Ich habe dir von dem [[Wechsel|nouns/Wechsel#1]] gesprochen, der in seinem [[Wesen|nouns/Wesen#2]], in seiner Stimmung [[bemerkbar|adjectives/bemerkbar]] [[geworden|verbs/werden#1]] und [[zuweilen|adverbs/zuweilen]] allerdings [[mit|adverbs/mit#1]] [[einer|determiners/einer]] [[Schnelle|nouns/Schnelle#1]] [[eintrat|verbs/eintreten#1]], welche überraschen und erschrecken konnte […].“"
   },
   "4d729cf11d": {
     "text": "Die Lehrerin erklärt mir die Grundrechenarten.",
@@ -13065,7 +13087,7 @@
         "gloss_hint": "dependency"
       }
     ],
-    "text_linked": "[[Offiziell|adjectives/offiziell]] [[ist|verbs/sein#2]] [[die|determiners/die]] [[Sklaverei|nouns/Sklaverei#1]] [[heute|adverbs/heute#1]] [[in|prepositions/in]] allen [[Staaten|nouns/Staat#1]] [[der|determiners/der]] [[Welt|nouns/Welt#3]] [[abgeschafft|verbs/abschaffen]]. [[Dennoch|adverbs/dennoch]] [[befinden|verbs/befinden#1]] [[sich|pronouns/sich#2]] in vielen [[Ländern|nouns/Land#2]] [[immer|adverbs/immer]] [[noch|adverbs/noch#3]] [[zu|particles/zu_drückt]] viele [[Menschen|nouns/Mensch_lebewesen#2]] in einer derartigen [[Abhängigkeit|nouns/Abhängigkeit#1]]."
+    "text_linked": "[[Offiziell|adjectives/offiziell]] [[ist|verbs/sein#2]] [[die|determiners/die]] [[Sklaverei|nouns/Sklaverei#1]] [[heute|adverbs/heute#1]] [[in|prepositions/in]] allen [[Staaten|nouns/Staat#1]] [[der|determiners/der]] [[Welt|nouns/Welt#3]] [[abgeschafft|verbs/abschaffen#1]]. [[Dennoch|adverbs/dennoch]] [[befinden|verbs/befinden#1]] [[sich|pronouns/sich#2]] in vielen [[Ländern|nouns/Land#2]] [[immer|adverbs/immer]] [[noch|adverbs/noch#3]] [[zu|particles/zu_drückt]] viele [[Menschen|nouns/Mensch_lebewesen#2]] in einer derartigen [[Abhängigkeit|nouns/Abhängigkeit#1]]."
   },
   "4d94c06526": {
     "text": "„Pécuchet entsann sich eines seiner Bürochefs, eines wahren Ekels, und er faßte den Plan, sich durch ein Buch an ihm zu rächen.“",
@@ -14202,7 +14224,7 @@
         "gloss_hint": "subgroup"
       }
     ],
-    "text_linked": "„Der Bedarf für tarifliche Zu- und Abschläge (z. B. in Kraftfahrt: Malus und Bonus; in Feuer: Lösch- oder Sprinklerrabatte) [[kann|verbs/können_beherrschen]] [[nur|particles/nur]] [[dort|adverbs/dort]] [[genau|adjectives/genau]] [[kalkuliert|verbs/kalkulieren]] [[werden|verbs/werden#1]], [[wo|adverbs/wo]] [[man|pronouns/man#2]] [[pro|prepositions/pro]] [[Gruppe|nouns/Gruppe#1]] [[den|determiners/der]] jeweiligen [[Anteil|nouns/Anteil#1]] [[der|determiners/der]] [[Risiken|nouns/Risiko#1]] der Untergruppen kennt.“"
+    "text_linked": "„Der Bedarf für tarifliche Zu- und Abschläge (z. B. in Kraftfahrt: Malus und Bonus; in Feuer: Lösch- oder Sprinklerrabatte) [[kann|verbs/können_etwas#1]] [[nur|particles/nur]] [[dort|adverbs/dort]] [[genau|adjectives/genau]] [[kalkuliert|verbs/kalkulieren]] [[werden|verbs/werden#1]], [[wo|adverbs/wo]] [[man|pronouns/man#2]] [[pro|prepositions/pro]] [[Gruppe|nouns/Gruppe#1]] [[den|determiners/der]] jeweiligen [[Anteil|nouns/Anteil#1]] [[der|determiners/der]] [[Risiken|nouns/Risiko#1]] der Untergruppen kennt.“"
   },
   "4da58f0ed2": {
     "text": "„Ich steckte das kleine Notizbuch wieder in sein Versteck.“",
@@ -18703,7 +18725,7 @@
         "gloss_hint": "limited"
       }
     ],
-    "text_linked": "„Deshalb tun [[sich|pronouns/sich]] [[die|pronouns/die]] Deutschen so [[schwer|adjectives/schwer#2]], [[über|prepositions/über]] die [[eigenen|adjectives/eigen]] [[Erfahrungen|nouns/Erfahrung#1]] [[und|conjunctions/und]] Wertesysteme [[hinauszudenken|verbs/hinausdenken]] oder sich [[gar|adjectives/gar]] [[für|prepositions/für]] [[neue|adjectives/neu#1]] [[Ideen|nouns/Idee#2]] [[zu|particles/zu_drückt]] [[erwärmen|verbs/erwärmen]]: [[In|prepositions/in]] [[jungen|adjectives/jung#1]] [[Jahren|nouns/Jahr#1]] [[wird|verbs/werden#1]] [[ihr|pronouns/ihr_person]] [[Horizont|nouns/Horizont#1]] [[stark|adjectives/stark#15]] [[eingeschränkt|verbs/einschränken]].“"
+    "text_linked": "„Deshalb tun [[sich|pronouns/sich]] [[die|pronouns/die]] Deutschen so [[schwer|adjectives/schwer#2]], [[über|prepositions/über]] die [[eigenen|adjectives/eigen]] [[Erfahrungen|nouns/Erfahrung#1]] [[und|conjunctions/und]] Wertesysteme hinauszudenken oder sich [[gar|adjectives/gar]] [[für|prepositions/für]] [[neue|adjectives/neu#1]] [[Ideen|nouns/Idee#2]] [[zu|particles/zu_drückt]] [[erwärmen|verbs/erwärmen]]: [[In|prepositions/in]] [[jungen|adjectives/jung#1]] [[Jahren|nouns/Jahr#1]] [[wird|verbs/werden#1]] [[ihr|pronouns/ihr_person]] [[Horizont|nouns/Horizont#1]] [[stark|adjectives/stark#15]] [[eingeschränkt|verbs/einschränken]].“"
   },
   "4dc4e07baf": {
     "text": "Sie hat großes Interesse an diesem Thema.",
@@ -19788,7 +19810,7 @@
         "gloss_hint": "covered"
       }
     ],
-    "text_linked": "„[[Ihre|pronouns/ihr_person]] beiden [[Schlafzimmer|nouns/Schlafzimmer#1]] [[waren|verbs/sein#2]] [[durch|prepositions/durch#1]] [[eine|determiners/ein]] [[kleine|adjectives/klein#1]] Zwischentür verbunden, [[die|pronouns/die]] [[mit|prepositions/mit#1]] [[Tapete|nouns/Tapete#1]] [[überklebt|verbs/überkleben_etwas]] war.“"
+    "text_linked": "„[[Ihre|pronouns/ihr_person]] beiden [[Schlafzimmer|nouns/Schlafzimmer#1]] [[waren|verbs/sein#2]] [[durch|prepositions/durch#1]] [[eine|determiners/ein]] [[kleine|adjectives/klein#1]] Zwischentür verbunden, [[die|pronouns/die]] [[mit|prepositions/mit#1]] [[Tapete|nouns/Tapete#1]] überklebt war.“"
   },
   "4dcd2aa886": {
     "text": "„Wer über die “Fairy Bridge” nahe der Hauptstadt Douglas geht, grüßt nach altem keltischen Brauch die Feen, um kein Unglück auf sich zu ziehen.“",
@@ -20388,11 +20410,75 @@
   },
   "4dd28a3b2d": {
     "text": "Die Sonnenwenden sind die Zeitpunkte, zu denen die Sonne im Laufe eines Sonnenjahres die größte nördliche bzw. südliche Deklination erreicht.",
-    "translation": null,
+    "translation": "The solstices are the points in time at which the sun reaches its greatest northern or southern declination in the course of a solar year.",
     "source": "wiktionary",
     "lemmas": [
       "Deklination"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sonnenwenden",
+        "lemma": "Sonnenwende",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeitpunkte",
+        "lemma": "Zeitpunkt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sonne",
+        "lemma": "Sonne",
+        "pos": "noun",
+        "gloss_hint": "sun"
+      },
+      {
+        "form": "Laufe",
+        "lemma": "Lauf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sonnenjahres",
+        "lemma": "Sonnenjahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "größte",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "nördliche",
+        "lemma": "nördlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "südliche",
+        "lemma": "südlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deklination",
+        "lemma": "Deklination",
+        "pos": "noun",
+        "gloss_hint": "declination (celestial)"
+      },
+      {
+        "form": "erreicht",
+        "lemma": "erreichen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Die Sonnenwenden sind die [[Zeitpunkte|nouns/Zeitpunkt]], zu denen die [[Sonne|nouns/Sonne#1]] im [[Laufe|nouns/Lauf]] eines Sonnenjahres die [[größte|adjectives/groß]] [[nördliche|adjectives/nördlich]] bzw. [[südliche|adjectives/südlich]] [[Deklination|nouns/Deklination#3]] [[erreicht|verbs/erreichen]]."
   },
   "4dd2a4a50e": {
     "text": "von Haus aus",
@@ -20995,7 +21081,7 @@
         "gloss_hint": "behave"
       }
     ],
-    "text_linked": "„Man [[kann|verbs/können_beherrschen]] [[einem|determiners/ein]] [[Menschen|nouns/Mensch_lebewesen#2]] [[nicht|particles/nicht]] [[den|determiners/der]] [[Boden|nouns/Boden#1]] [[unter|prepositions/unter]] den [[Füßen|nouns/Fuß#1]] [[wegziehen|verbs/wegziehen#1]] [[und|conjunctions/und]] erwarten, er [[werde|verbs/werden#1]] [[sich|pronouns/sich]] [[normal|adjectives/normal#2]] [[benehmen|verbs/benehmen#1]].“"
+    "text_linked": "„Man [[kann|verbs/können_etwas#1]] [[einem|determiners/ein]] [[Menschen|nouns/Mensch_lebewesen#2]] [[nicht|particles/nicht]] [[den|determiners/der]] [[Boden|nouns/Boden#1]] [[unter|prepositions/unter]] den [[Füßen|nouns/Fuß#1]] [[wegziehen|verbs/wegziehen#1]] [[und|conjunctions/und]] erwarten, er [[werde|verbs/werden#1]] [[sich|pronouns/sich]] [[normal|adjectives/normal#2]] [[benehmen|verbs/benehmen#1]].“"
   },
   "4dd680e352": {
     "text": "„Dank kräftigem Wuchs und blauer Augen besteht der Siebzehnjährige mit Auszeichnung und schleicht sich, das strikte Verbot seines Vaters missachtend, im Morgengrauen aus dem Elternhaus.“",
@@ -21863,7 +21949,7 @@
         "gloss_hint": "pour"
       }
     ],
-    "text_linked": "[[Es|pronouns/es]] [[ist|verbs/sein#2]] sehr [[gefährlich|adjectives/gefährlich]], Holzkohle [[auf|prepositions/auf#1]] [[dem|determiners/der]] [[Grill|nouns/Grill#1]] [[zur|prepositions/zu#1]] Brandbeschleunigung [[mit|prepositions/mit#1]] [[Spiritus|nouns/Spiritus#2]] [[zu|prepositions/zu#1]] [[übergießen|verbs/übergießen_etwas]]."
+    "text_linked": "[[Es|pronouns/es]] [[ist|verbs/sein#2]] sehr [[gefährlich|adjectives/gefährlich]], Holzkohle [[auf|prepositions/auf#1]] [[dem|determiners/der]] [[Grill|nouns/Grill#1]] [[zur|prepositions/zu#1]] Brandbeschleunigung [[mit|prepositions/mit#1]] [[Spiritus|nouns/Spiritus#2]] [[zu|prepositions/zu#1]] übergießen."
   },
   "4de0060a31": {
     "text": "Er sagte zur Begrüßung nur salopp „ahoi“ und setzte sich ans Kopfende des Tisches.",
@@ -24350,7 +24436,7 @@
         "gloss_hint": "consume"
       }
     ],
-    "text_linked": "„Ledwina [[wird|verbs/werden#1]] [[von|prepositions/von]] [[ihrer|pronouns/ihr_person]] [[eigenen|adjectives/eigen]] [[Nervosität|nouns/Nervosität]] [[nahezu|adverbs/nahezu]] [[aufgezehrt|verbs/aufzehren]].“"
+    "text_linked": "„Ledwina [[wird|verbs/werden#1]] [[von|prepositions/von]] [[ihrer|pronouns/ihr_person]] [[eigenen|adjectives/eigen]] [[Nervosität|nouns/Nervosität]] [[nahezu|adverbs/nahezu]] aufgezehrt.“"
   },
   "4dfe84357a": {
     "text": "„Der Welfe wurde vor den Reichstag zitiert, unter Reichsacht gestellt und verlor die Herzogtümer Sachsen und Bayern.“",

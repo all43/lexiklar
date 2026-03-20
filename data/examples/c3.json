@@ -871,7 +871,7 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "„[[Wir|pronouns/wir]] [[als|conjunctions/als]] [[Nerdinnen|nouns/Nerdin#1]] [[und|conjunctions/und]] [[Nerds|nouns/Nerd]] [[haben|verbs/haben#1]] [[uns|pronouns/uns]] [[gefragt|verbs/fragen#1]]: [[Ist|verbs/sein#2]] [[das|pronouns/das_[1]]] [[nicht|particles/nicht#1]] [[etwas|pronouns/etwas#1]], [[was|pronouns/was#1]] [[wir|pronouns/wir]] [[automatisieren|verbs/automatisieren#1]] [[können|verbs/können_etwas#1]]?“"
+    "text_linked": "„[[Wir|pronouns/wir]] [[als|conjunctions/als]] [[Nerdinnen|nouns/Nerdin#1]] [[und|conjunctions/und]] [[Nerds|nouns/Nerd]] [[haben|verbs/haben#1]] [[uns|pronouns/uns]] [[gefragt|verbs/fragen#1]]: [[Ist|verbs/sein#2]] [[das|pronouns/das_[1]]] [[nicht|particles/nicht#1]] [[etwas|pronouns/etwas#1]], [[was|pronouns/was#1]] [[wir|pronouns/wir]] [[automatisieren|verbs/automatisieren#1]] [[können|verbs/können_beherrschen]]?“"
   },
   "c30dc2bba4": {
     "text": "Die Bürger Berlins gingen auf die Straßen und protestierten.",
@@ -3430,7 +3430,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[Klaus Brill:] „[[Nachdem|conjunctions/nachdem]] [[Juden|nouns/Jude#1]] [[in|prepositions/in]] [[Deutschland|names/Deutschland#1]] [[nicht|particles/nicht]] [[mehr|adverbs/mehr#1]] [[auftreten|verbs/auftreten#4]] [[durften|verbs/dürfen#1]], ging er [[nach|prepositions/nach]] Straßburg [[und|conjunctions/und]] [[emigrierte|verbs/emigrieren]] 1938 in [[die|determiners/die]] [[USA|names/USA]].“"
+    "text_linked": "[Klaus Brill:] „[[Nachdem|conjunctions/nachdem]] [[Juden|nouns/Jude#1]] [[in|prepositions/in]] [[Deutschland|names/Deutschland#1]] [[nicht|particles/nicht]] [[mehr|adverbs/mehr#1]] [[auftreten|verbs/auftreten#4]] [[durften|verbs/dürfen#1]], ging er [[nach|prepositions/nach]] Straßburg [[und|conjunctions/und]] [[emigrierte|verbs/emigrieren#1]] 1938 in [[die|determiners/die]] [[USA|names/USA]].“"
   },
   "c3275cfd54": {
     "text": "So eine Chance kannst du dir doch nicht durch die Lappen gehen lassen!",
@@ -4793,11 +4793,39 @@
   },
   "c337ec6151": {
     "text": "Am Wochenende werde ich wieder aufs Fahrrad steigen.",
-    "translation": null,
+    "translation": "At the weekend I will get on my bicycle again.",
     "source": "wiktionary",
     "lemmas": [
       "aufs"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wochenende",
+        "lemma": "Wochenende",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "steigen",
+        "lemma": "steigen",
+        "pos": "verb",
+        "gloss_hint": "board"
+      },
+      {
+        "form": "Fahrrad",
+        "lemma": "Fahrrad",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wieder",
+        "lemma": "wieder",
+        "pos": "adverb",
+        "gloss_hint": "again"
+      }
+    ],
+    "text_linked": "Am [[Wochenende|nouns/Wochenende]] werde ich [[wieder|adverbs/wieder#1]] aufs [[Fahrrad|nouns/Fahrrad]] [[steigen|verbs/steigen#3]]."
   },
   "c338a1fda3": {
     "text": "jemandem fällt die Butter vom Brot",
@@ -5668,11 +5696,57 @@
   },
   "c340fb4a07": {
     "text": "„Gemeinsamer Umweltschutz und gemeinsames Wassermanagement bilden in Zentralasien wohl den herausragenden Imperativ für zwischenstaatliche Zusammenarbeit.“",
-    "translation": null,
+    "translation": "\"Joint environmental protection and joint water management probably represent the paramount imperative for interstate cooperation in Central Asia.\"",
     "source": "wiktionary",
     "lemmas": [
       "Imperativ"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Umweltschutz",
+        "lemma": "Umweltschutz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wassermanagement",
+        "lemma": "Wassermanagement",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bilden",
+        "lemma": "bilden",
+        "pos": "verb",
+        "gloss_hint": "form"
+      },
+      {
+        "form": "herausragenden",
+        "lemma": "herausragend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Imperativ",
+        "lemma": "Imperativ",
+        "pos": "noun",
+        "gloss_hint": "imperative"
+      },
+      {
+        "form": "zwischenstaatliche",
+        "lemma": "zwischenstaatlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zusammenarbeit",
+        "lemma": "Zusammenarbeit",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Gemeinsamer [[Umweltschutz|nouns/Umweltschutz]] und gemeinsames Wassermanagement [[bilden|verbs/bilden#1]] in Zentralasien wohl den herausragenden [[Imperativ|nouns/Imperativ#1]] für zwischenstaatliche [[Zusammenarbeit|nouns/Zusammenarbeit]].“"
   },
   "c341194dab": {
     "text": "Enklitika wie „-s“ im vorigen Satz bilden mit dem Wort, an das sie angehängt sind, zusammen ein phonetisches Wort.",
@@ -6162,7 +6236,7 @@
         "gloss_hint": "adjust"
       }
     ],
-    "text_linked": "„[[Das|pronouns/das_[1]]] [[aber|conjunctions/aber]] [[muss|verbs/müssen]] keine vertanene [sic!] [[Zeit|nouns/Zeit#1]], [[sondern|conjunctions/sondern]] [[Stunden|nouns/Stunde#1]] [[und|conjunctions/und]] [[Tage|nouns/Tag_angehängter]], [[in|prepositions/in]] [[denen|pronouns/der_nominativ]] [[wir|pronouns/wir]] nachsinnen [[können|verbs/können_etwas#2]] – [[vielleicht|adverbs/vielleicht]] [[auch|adverbs/auch]] [[über|prepositions/über]] manches, [[was|pronouns/was]] in [[unserem|pronouns/unser_personalpronomen]] [[Leben|nouns/Leben#1]] [[bisher|adverbs/bisher]] [[zu|prepositions/zu]] [[kurz|adjectives/kurz#1]] [[gekommen|verbs/kommen#5]] [[ist|verbs/sein#2]], wir [[also|adverbs/also]] in [[Zukunft|nouns/Zukunft#1]] [[umstellen|verbs/umstellen_etwas#2]] könnten.“"
+    "text_linked": "„[[Das|pronouns/das_[1]]] [[aber|conjunctions/aber]] [[muss|verbs/müssen]] keine vertanene [sic!] [[Zeit|nouns/Zeit#1]], [[sondern|conjunctions/sondern]] [[Stunden|nouns/Stunde#1]] [[und|conjunctions/und]] [[Tage|nouns/Tag_angehängter]], [[in|prepositions/in]] [[denen|pronouns/der_nominativ]] [[wir|pronouns/wir]] nachsinnen [[können|verbs/können_beherrschen]] – [[vielleicht|adverbs/vielleicht]] [[auch|adverbs/auch]] [[über|prepositions/über]] manches, [[was|pronouns/was]] in [[unserem|pronouns/unser_personalpronomen]] [[Leben|nouns/Leben#1]] [[bisher|adverbs/bisher]] [[zu|prepositions/zu]] [[kurz|adjectives/kurz#1]] [[gekommen|verbs/kommen#5]] [[ist|verbs/sein#2]], wir [[also|adverbs/also]] in [[Zukunft|nouns/Zukunft#1]] [[umstellen|verbs/umstellen_etwas#2]] könnten.“"
   },
   "c343d5b08d": {
     "text": "Der Bergsteiger war hocherfreut, als er den Gipfel des Berges erklomm.",
@@ -6450,7 +6524,7 @@
         "gloss_hint": "waited"
       }
     ],
-    "text_linked": "Die Glocke [[des|determiners/der]] [[Regisseurs|nouns/Regisseur#1]] [[ertönte|verbs/ertönen#1]]. Allmählich [[nahm|verbs/nehmen#2]] [[das|pronouns/das_[1]]] [[Publikum|nouns/Publikum#1]] [[seine|pronouns/sein]] [[Plätze|nouns/Platz#5]] [[ein|determiners/ein]], [[wobei|adverbs/wobei]] das Getrampel [[auf|prepositions/auf]] [[der|determiners/der]] [[Galerie|nouns/Galerie#2]], das Geplauder [[im|prepositions/in]] [[Parkett|nouns/Parkett#3]], das [[Rufen|verbs/rufen#3]] der Apfelsinenjungen [[die|determiners/die]] [[Musik|nouns/Musik#1]] [[übertönte|verbs/übertönen]] - [[und|conjunctions/und]] [[endlich|adverbs/endlich]] [[kamen|verbs/kommen#5]] [[auch|adverbs/auch]] die blasierten [[Leute|nouns/Leute#1]] [[in|prepositions/in]] [[den|determiners/der]] [[Logen|nouns/Loge]] [[zur|prepositions/zu]] [[Ruhe|nouns/Ruhe#4]] und [[warteten|verbs/warten#1]]."
+    "text_linked": "Die Glocke [[des|determiners/der]] [[Regisseurs|nouns/Regisseur#1]] [[ertönte|verbs/ertönen#1]]. Allmählich [[nahm|verbs/nehmen#2]] [[das|pronouns/das_[1]]] [[Publikum|nouns/Publikum#1]] [[seine|pronouns/sein]] [[Plätze|nouns/Platz#5]] [[ein|determiners/ein]], [[wobei|adverbs/wobei]] das Getrampel [[auf|prepositions/auf]] [[der|determiners/der]] [[Galerie|nouns/Galerie#2]], das Geplauder [[im|prepositions/in]] [[Parkett|nouns/Parkett#3]], das [[Rufen|verbs/rufen#3]] der Apfelsinenjungen [[die|determiners/die]] [[Musik|nouns/Musik#1]] übertönte - [[und|conjunctions/und]] [[endlich|adverbs/endlich]] [[kamen|verbs/kommen#5]] [[auch|adverbs/auch]] die blasierten [[Leute|nouns/Leute#1]] [[in|prepositions/in]] [[den|determiners/der]] [[Logen|nouns/Loge]] [[zur|prepositions/zu]] [[Ruhe|nouns/Ruhe#4]] und [[warteten|verbs/warten#1]]."
   },
   "c34593df60": {
     "text": "Die Gymnastik ist ein fixer Punkt im Tagesablauf.",
@@ -7750,7 +7824,7 @@
         "gloss_hint": "open"
       }
     ],
-    "text_linked": "[[Muss|verbs/müssen]] [[man|pronouns/man]] [[erst|adverbs/erst#2]] [[Gewalt|nouns/Gewalt#3]] [[anwenden|verbs/anwenden#1]], um diese [[Tür|nouns/Tür#1]] [[aufzubekommen|verbs/aufbekommen]]?"
+    "text_linked": "[[Muss|verbs/müssen]] [[man|pronouns/man]] [[erst|adverbs/erst#2]] [[Gewalt|nouns/Gewalt#3]] [[anwenden|verbs/anwenden#1]], um diese [[Tür|nouns/Tür#1]] aufzubekommen?"
   },
   "c34ee9535e": {
     "text": "„Die Folge war, dass sich immer mehr Menschen vom Hof abwandten, sogar ranghohe Mandarine, oberste Staatsbeamte.“",
@@ -8521,11 +8595,39 @@
   },
   "c35286c26f": {
     "text": "Verben werden im Deutschen für gewöhnlich kleingeschrieben.",
-    "translation": null,
+    "translation": "Verbs are usually written in lowercase in German.",
     "source": "wiktionary",
     "lemmas": [
       "Verb"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verben",
+        "lemma": "Verb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschen",
+        "lemma": "Deutsch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gewöhnlich",
+        "lemma": "gewöhnlich",
+        "pos": "adjective",
+        "gloss_hint": "common"
+      },
+      {
+        "form": "kleingeschrieben",
+        "lemma": "kleinschreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "[[Verben|nouns/Verb]] werden im [[Deutschen|nouns/Deutsch]] für [[gewöhnlich|adjectives/gewöhnlich#1]] kleingeschrieben."
   },
   "c352a52139": {
     "text": "„Denn die perfide Logik dieser Politik besteht ja darin, nicht etwa eine gerechtere Verteilung des gesellschaftlichen Reichtums oder höhere Löhne zu fordern, sondern Staaten und einzelne gesellschaftliche Gruppen gegeneinander auszuspielen.“",
@@ -12177,7 +12279,7 @@
         "gloss_hint": "aware"
       }
     ],
-    "text_linked": "„[[Später|adjectives/später#1]], [[als|conjunctions/als#1]] ich [[etwas|pronouns/etwas#1]] [[älter|adjectives/alt]] [[war|verbs/sein#2]] [[und|conjunctions/und#1]] [[mich|pronouns/ich]] [[ernsthafter|adjectives/ernsthaft]] [[mit|prepositions/mit#1]] [[der|pronouns/der_nominativ#1]] [[deutschen|adjectives/deutsch#1]] [[Rechtsprechung|nouns/Rechtsprechung#1]] [[beschäftigte|verbs/beschäftigen]], [[wurde|verbs/werden]] [[mir|pronouns/mir_dativ#1]] [[die|determiners/die#1]] [[Bedeutung|nouns/Bedeutung#1]] [[von|prepositions/von#2]] [[Gesetzen|nouns/Gesetz]] und [[Rechten|nouns/Recht#2]] [[viel|adverbs/viel#1]] [[stärker|adjectives/stark]] [[bewusst|adjectives/bewusst#1]].“"
+    "text_linked": "„[[Später|adjectives/später#1]], [[als|conjunctions/als#1]] ich [[etwas|pronouns/etwas#1]] [[älter|adjectives/alt]] [[war|verbs/sein#2]] [[und|conjunctions/und#1]] [[mich|pronouns/ich]] [[ernsthafter|adjectives/ernsthaft]] [[mit|prepositions/mit#1]] [[der|pronouns/der_nominativ#1]] [[deutschen|adjectives/deutsch#1]] [[Rechtsprechung|nouns/Rechtsprechung#1]] [[beschäftigte|verbs/beschäftigen]], [[wurde|verbs/werden]] [[mir|pronouns/mir_des#1]] [[die|determiners/die#1]] [[Bedeutung|nouns/Bedeutung#1]] [[von|prepositions/von#2]] [[Gesetzen|nouns/Gesetz]] und [[Rechten|nouns/Recht#2]] [[viel|adverbs/viel#1]] [[stärker|adjectives/stark]] [[bewusst|adjectives/bewusst#1]].“"
   },
   "c38796642d": {
     "text": "Na, da bin ich aber gespannt, was noch passiert.",
@@ -12474,7 +12576,7 @@
         "gloss_hint": "Tongs"
       }
     ],
-    "text_linked": "„[[Denn|adverbs/denn]] Yun Shatu [[galt|verbs/gallen]] [[als|conjunctions/als]] [[Macht|nouns/Macht#1]] [[in|prepositions/in]] [[der|determiners/der]] [[Chinatown|nouns/Chinatown]] Londons; ich [[hatte|verbs/haben]] [[gehört|verbs/hören#1]], [[dass|conjunctions/dass]] [[sich|pronouns/sich#1]] [[sein|verbs/sein#1]] [[Einfluss|nouns/Einfluss#1]] [[über|prepositions/über]] [[die|determiners/die]] [[Meere|nouns/Meer#1]] [[bis|particles/bis#1]] hin [[zu|prepositions/zu]] [[den|determiners/der]] [[mächtigen|adjectives/mächtig#1]] [[und|conjunctions/und]] [[geheimnisvollen|adjectives/geheimnisvoll#1]] [[Tongs|nouns/Tong#1]] erstreckte.“"
+    "text_linked": "„[[Denn|adverbs/denn]] Yun Shatu galt [[als|conjunctions/als]] [[Macht|nouns/Macht#1]] [[in|prepositions/in]] [[der|determiners/der]] [[Chinatown|nouns/Chinatown]] Londons; ich [[hatte|verbs/haben]] [[gehört|verbs/hören#1]], [[dass|conjunctions/dass]] [[sich|pronouns/sich#1]] [[sein|verbs/sein#1]] [[Einfluss|nouns/Einfluss#1]] [[über|prepositions/über]] [[die|determiners/die]] [[Meere|nouns/Meer#1]] [[bis|particles/bis#1]] hin [[zu|prepositions/zu]] [[den|determiners/der]] [[mächtigen|adjectives/mächtig#1]] [[und|conjunctions/und]] [[geheimnisvollen|adjectives/geheimnisvoll#1]] [[Tongs|nouns/Tong#1]] erstreckte.“"
   },
   "c38897cd4b": {
     "text": "nun schlägts dreizehn",
@@ -12786,7 +12888,7 @@
         "gloss_hint": "pursue, chase"
       }
     ],
-    "text_linked": "[[Die|determiners/die]] [[Wachen|nouns/Wache]] [[wurden|verbs/werden]] [[angewiesen|verbs/anweisen]], [[der|pronouns/der_nominativ]] [[Flüchtlingin|nouns/Flüchtlingin#1]] [[nachzujagen|verbs/nachjagen]]."
+    "text_linked": "[[Die|determiners/die]] [[Wachen|nouns/Wache]] [[wurden|verbs/werden]] [[angewiesen|verbs/anweisen]], [[der|pronouns/der_nominativ]] [[Flüchtlingin|nouns/Flüchtlingin#1]] nachzujagen."
   },
   "c389f7516f": {
     "text": "„Wenn man ihr beim Orgasmus zusah, hatte man beinahe selbst einen.“",
@@ -12969,7 +13071,7 @@
     "lemmas": [
       "Rat"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "man",
@@ -16199,7 +16301,7 @@
         "gloss_hint": "suffer for"
       }
     ],
-    "text_linked": "[[Die|determiners/die]] [[hohen|adjectives/hoch]] [[Tiere|nouns/Tier#1]] [[haben|verbs/haben#1]] [[sich|pronouns/sich#2]] [[wieder|adverbs/wieder#1]] [[was|pronouns/was#1]] [[ausgedacht|verbs/ausdenken]] [[und|conjunctions/und]] [[die|determiners/die]] [[kleinen|adjectives/klein#1]] [[Leute|nouns/Leute#1]] [[müssen|verbs/müssen#1]] [[es|pronouns/es]] [[ausbaden|verbs/ausbaden]]."
+    "text_linked": "[[Die|determiners/die]] [[hohen|adjectives/hoch]] [[Tiere|nouns/Tier#1]] [[haben|verbs/haben#1]] [[sich|pronouns/sich#2]] [[wieder|adverbs/wieder#1]] [[was|pronouns/was#1]] [[ausgedacht|verbs/ausdenken]] [[und|conjunctions/und]] [[die|determiners/die]] [[kleinen|adjectives/klein#1]] [[Leute|nouns/Leute#1]] [[müssen|verbs/müssen#1]] [[es|pronouns/es]] ausbaden."
   },
   "c3bb682934": {
     "text": "nur mit halbem Herzen bei der Sache sein",
@@ -17890,7 +17992,7 @@
         "gloss_hint": "ground"
       }
     ],
-    "text_linked": "„[[Wir|pronouns/wir]] [[waren|verbs/sein#2]] [[froh|adjectives/froh#1]], [[wenn|conjunctions/wenn]] [[wir|pronouns/wir]] [[auf|prepositions/auf]] [[dem|determiners/der]] [[Flugplatz|nouns/Flugplatz#1]] [[irgendwo|adverbs/irgendwo]] [[sitzen|verbs/sitzen#5]] [[konnten|verbs/können_beherrschen]], [[die|determiners/die]] [[Leute|nouns/Leute#1]] [[saßen|verbs/sitzen#5]] [[oder|particles/oder#5]] [[lagen|verbs/liegen#1]] [[in|prepositions/in]] [[Scharen|nouns/Schar_gruppe]] auf dem [[Boden|nouns/Boden#1]].“"
+    "text_linked": "„[[Wir|pronouns/wir]] [[waren|verbs/sein#2]] [[froh|adjectives/froh#1]], [[wenn|conjunctions/wenn]] [[wir|pronouns/wir]] [[auf|prepositions/auf]] [[dem|determiners/der]] [[Flugplatz|nouns/Flugplatz#1]] [[irgendwo|adverbs/irgendwo]] [[sitzen|verbs/sitzen#5]] [[konnten|verbs/können_etwas#1]], [[die|determiners/die]] [[Leute|nouns/Leute#1]] [[saßen|verbs/sitzen#5]] [[oder|particles/oder#5]] [[lagen|verbs/liegen#1]] [[in|prepositions/in]] [[Scharen|nouns/Schar_gruppe]] auf dem [[Boden|nouns/Boden#1]].“"
   },
   "c3c7a21553": {
     "text": "stets fidel, lustig, froh, wie der Mops im Paletot",
@@ -18819,7 +18921,7 @@
         "gloss_hint": "admired"
       }
     ],
-    "text_linked": "„[[Zum|prepositions/zu]] gottgefälligen Büßerleben zogen [[sich|pronouns/sich]] Eremiten, Klausner [[und|conjunctions/und]] Inklusen [[in|prepositions/in]] [[die|determiners/die]] Waldeinsamkeit [[zurück|adverbs/zurück#1]] und [[lebten|verbs/leben#1]] [[dort|adverbs/dort]] in [[Höhlen|nouns/Höhle]] oder [[Hütten|nouns/Hütte]], [[vom|prepositions/von]] [[Volk|nouns/Volk#3]] [[mit|prepositions/mit]] schaudernder [[Ehrfurcht|nouns/Ehrfurcht]] [[bestaunt|verbs/bestaunen]].“"
+    "text_linked": "„[[Zum|prepositions/zu]] gottgefälligen Büßerleben zogen [[sich|pronouns/sich]] Eremiten, Klausner [[und|conjunctions/und]] Inklusen [[in|prepositions/in]] [[die|determiners/die]] Waldeinsamkeit [[zurück|adverbs/zurück#1]] und [[lebten|verbs/leben#1]] [[dort|adverbs/dort]] in [[Höhlen|nouns/Höhle]] oder [[Hütten|nouns/Hütte]], [[vom|prepositions/von]] [[Volk|nouns/Volk#3]] [[mit|prepositions/mit]] schaudernder [[Ehrfurcht|nouns/Ehrfurcht]] [[bestaunt|verbs/bestaunen#1]].“"
   },
   "c3d0ab3b0a": {
     "text": "ich kanns nicht fassen",

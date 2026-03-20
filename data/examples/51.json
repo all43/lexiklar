@@ -2411,7 +2411,7 @@
         "gloss_hint": "court"
       }
     ],
-    "text_linked": "„Die [[kleinen|adjectives/klein]] [[und|conjunctions/und]] [[mittleren|adjectives/mittel]] ‚Stasis‘ [[wurden|verbs/werden]] [[zurückgedrängt|verbs/zurückdrängen]]. [[Große|adjectives/groß]] ‚Stasis‘ wurden [[hingegen|adverbs/hingegen]] [[als|conjunctions/als#2]] Geheimdienstler [[respektiert|verbs/respektieren#1]] und [[umworben|verbs/umwerben]].“"
+    "text_linked": "„Die [[kleinen|adjectives/klein]] [[und|conjunctions/und]] [[mittleren|adjectives/mittel]] ‚Stasis‘ [[wurden|verbs/werden]] [[zurückgedrängt|verbs/zurückdrängen]]. [[Große|adjectives/groß]] ‚Stasis‘ wurden [[hingegen|adverbs/hingegen]] [[als|conjunctions/als#2]] Geheimdienstler [[respektiert|verbs/respektieren#1]] und [[umworben|verbs/umwerben#1]].“"
   },
   "5114c8f292": {
     "text": "„Einer der Offiziere und zwei der Unteroffiziere sprachen ein wenig Englisch.“",
@@ -4365,7 +4365,7 @@
         "gloss_hint": "done"
       }
     ],
-    "text_linked": "Milliarden Hühnerküken werden jedes [[Jahr|nouns/Jahr#1]] [[gleich|adjectives/gleich#2]] [[nach|prepositions/nach#1]] [[dem|determiners/der]] [[Schlüpfen|verbs/schlüpfen#3]] [[getötet|verbs/töten#1]]. Der [[Grund|nouns/Grund#1]]: Sie [[sind|verbs/sein#2]] [[männlich|adjectives/männlich#1]]. Sie [[könnten|verbs/können_beherrschen]] [[also|adverbs/also#1]] [[später|adjectives/später#1]] keine [[Eier|nouns/Ei#2]] [[legen|verbs/legen#1]] - [[und|conjunctions/und#1]] sie [[zu|particles/zu_drückt]] [[mästen|verbs/mästen]], [[lohnt|verbs/lohnen#2]] [[sich|pronouns/sich#1]] [[schon|particles/schon_antwort#1]] [[gar|adjectives/gar#2]] nicht."
+    "text_linked": "Milliarden Hühnerküken werden jedes [[Jahr|nouns/Jahr#1]] [[gleich|adjectives/gleich#2]] [[nach|prepositions/nach#1]] [[dem|determiners/der]] [[Schlüpfen|verbs/schlüpfen#3]] [[getötet|verbs/töten#1]]. Der [[Grund|nouns/Grund#1]]: Sie [[sind|verbs/sein#2]] [[männlich|adjectives/männlich#1]]. Sie [[könnten|verbs/können_beherrschen]] [[also|adverbs/also#1]] [[später|adjectives/später#1]] keine [[Eier|nouns/Ei#2]] [[legen|verbs/legen#1]] - [[und|conjunctions/und#1]] sie [[zu|particles/zu_drückt]] mästen, [[lohnt|verbs/lohnen#2]] [[sich|pronouns/sich#1]] [[schon|particles/schon_antwort#1]] [[gar|adjectives/gar#2]] nicht."
   },
   "512c8dc0dd": {
     "text": "Der Level in Crysis, in dem man sich durch das Raumschiff fortbewegen muss, ist langweilig.",
@@ -6351,7 +6351,7 @@
         "gloss_hint": "mess up"
       }
     ],
-    "text_linked": "„[[Hinter|prepositions/hinter]] allen [[Ratschlägen|nouns/Ratschlag#1]] [[stand|verbs/stehen#1]] [[die|pronouns/die#1]] [[Furcht|nouns/Furcht#1]], sie [[könne|verbs/können_beherrschen]] [[den|determiners/der]] [[Test|nouns/Test#1]] [[der|determiners/der]] Israel-Tauglichkeit [[vermasseln|verbs/vermasseln]].“"
+    "text_linked": "„[[Hinter|prepositions/hinter]] allen [[Ratschlägen|nouns/Ratschlag#1]] [[stand|verbs/stehen#1]] [[die|pronouns/die#1]] [[Furcht|nouns/Furcht#1]], sie [[könne|verbs/können_etwas#5]] [[den|determiners/der]] [[Test|nouns/Test#1]] [[der|determiners/der]] Israel-Tauglichkeit [[vermasseln|verbs/vermasseln]].“"
   },
   "513af690f1": {
     "text": "„Jeder Finne darf die Flagge hissen, wann er will, an Flaggentagen oder zu privaten Anlässen.“",
@@ -6767,11 +6767,45 @@
   },
   "513e59ffb2": {
     "text": "Im Dativ stehen im Satz oft Personen, denen geholfen wird: \"Dem Manne kann geholfen werden.\"",
-    "translation": null,
+    "translation": "In the dative, persons who are being helped often appear in the sentence: \"The man can be helped.\"",
     "source": "wiktionary",
     "lemmas": [
       "Dativ"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Dativ",
+        "lemma": "Dativ",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Satz",
+        "lemma": "Satz",
+        "pos": "noun",
+        "gloss_hint": "sentence"
+      },
+      {
+        "form": "Personen",
+        "lemma": "Person",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geholfen",
+        "lemma": "helfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Manne",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Im [[Dativ|nouns/Dativ]] stehen im [[Satz|nouns/Satz#1]] oft [[Personen|nouns/Person]], denen [[geholfen|verbs/helfen]] wird: \"Dem [[Manne|nouns/Mann]] kann geholfen werden.\""
   },
   "513fe82df3": {
     "text": "„Sie lieferten sich eine wilde Schlacht um die Hühnerschnitzel, die zum Auftauen auf der Abtropftasse der Abwasch lagen.“",
@@ -10914,11 +10948,81 @@
   },
   "5166341088": {
     "text": "Ausländer, die längere Zeit im Land bleiben wollen, benötigen dazu eine Aufenthaltsgenehmigung, wenn sie nicht Bürger eines Landes der Europäischen Union (EU) sind.",
-    "translation": null,
+    "translation": "Foreigners who want to stay in the country for a longer period need a residence permit if they are not citizens of a country of the European Union (EU).",
     "source": "wiktionary",
     "lemmas": [
       "Aufenthaltsgenehmigung"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ausländer",
+        "lemma": "Ausländer",
+        "pos": "noun",
+        "gloss_hint": "foreigner"
+      },
+      {
+        "form": "längere",
+        "lemma": "lang",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      },
+      {
+        "form": "Land",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": "country"
+      },
+      {
+        "form": "bleiben",
+        "lemma": "bleiben",
+        "pos": "verb",
+        "gloss_hint": "stay"
+      },
+      {
+        "form": "benötigen",
+        "lemma": "benötigen",
+        "pos": "verb",
+        "gloss_hint": "need"
+      },
+      {
+        "form": "Aufenthaltsagenehmigung",
+        "lemma": "Aufenthaltsagenehmigung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bürger",
+        "lemma": "Bürger",
+        "pos": "noun",
+        "gloss_hint": "citizen"
+      },
+      {
+        "form": "Landes",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": "country"
+      },
+      {
+        "form": "Europäischen",
+        "lemma": "europäisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Union",
+        "lemma": "Union",
+        "pos": "noun",
+        "gloss_hint": "union"
+      }
+    ],
+    "text_linked": "[[Ausländer|nouns/Ausländer#1]], die [[längere|adjectives/lang]] [[Zeit|nouns/Zeit#1]] im [[Land|nouns/Land#2]] [[bleiben|verbs/bleiben#1]] wollen, [[benötigen|verbs/benötigen#1]] dazu eine Aufenthaltsgenehmigung, wenn sie nicht [[Bürger|nouns/Bürger#2]] eines [[Landes|nouns/Land#2]] der [[Europäischen|adjectives/europäisch]] [[Union|nouns/Union#2]] (EU) sind."
   },
   "5166ed5603": {
     "text": "In dem Satz \"Der Junge spielt gut\" gibt es drei Satzglieder, die jeweils eine andere syntaktische Kategorie erfüllen: \"der Junge\" (syntaktische Kategorie: nominales Satzglied/ syntaktische Funktion: Subjekt); \"spielt\" (syntaktische Kategorie: verbales Satzglied/ syntaktische Funktion: Prädikat), \"gut\" (syntaktische Kategorie: adjektivisches Satzglied/ syntaktische Funktion: adverbiale Bestimmung).",
@@ -11850,7 +11954,7 @@
         "gloss_hint": "person"
       }
     ],
-    "text_linked": "„Inzwischen [[tröpfeln|verbs/tröpfeln]] aus den verschiedenen [[Straßen|nouns/Straße#2]] die Reisegenossen an, keine Menagerie, wie Delius sich das etwas übertrieben [[vorgestellt|verbs/vorstellen]] hatte, sondern eine brave [[Mischung|nouns/Mischung#1]] von durchaus üblichen [[Menschen|nouns/Mensch_lebewesen#2]]:…“"
+    "text_linked": "„Inzwischen tröpfeln aus den verschiedenen [[Straßen|nouns/Straße#2]] die Reisegenossen an, keine Menagerie, wie Delius sich das etwas übertrieben [[vorgestellt|verbs/vorstellen]] hatte, sondern eine brave [[Mischung|nouns/Mischung#1]] von durchaus üblichen [[Menschen|nouns/Mensch_lebewesen#2]]:…“"
   },
   "516da1cb47": {
     "text": "Die Wäsche wurde geschleudert und gebügelt.",
@@ -19367,7 +19471,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Aber|conjunctions/aber]] [[wenn|conjunctions/wenn]] er [[an|prepositions/an]] Belangloses [[dachte|verbs/denken#1]], [[schwoll|verbs/schwellen]] [[die|determiners/die]] [[Erektion|nouns/Erektion]] [[gewöhnlich|adjectives/gewöhnlich#1]] [[schnell|adjectives/schnell#1]] [[ab|adverbs/ab]].“"
+    "text_linked": "„[[Aber|conjunctions/aber]] [[wenn|conjunctions/wenn]] er [[an|prepositions/an]] Belangloses [[dachte|verbs/denken#1]], [[schwoll|verbs/schwellen#1]] [[die|determiners/die]] [[Erektion|nouns/Erektion]] [[gewöhnlich|adjectives/gewöhnlich#1]] [[schnell|adjectives/schnell#1]] [[ab|adverbs/ab]].“"
   },
   "51bb8fa06e": {
     "text": "„Während dieser sogenannten Inflation dehnte sich das Universum innerhalb von 10⁻³⁵ s bis 10⁻³² s um einen Faktor zwischen 10³⁰ und 10⁵⁰ aus.“",
@@ -20367,7 +20471,7 @@
         "gloss_hint": "cut through"
       }
     ],
-    "text_linked": "Welcher [[Art|nouns/Art#1]] die Ladetechnologie für die [[künftigen|adjectives/künftig]] 15 Elektrobusse genau sein wird, hängt vom Gesamtkonzept ab, das sich am Ende der Ausschreibung [[durchsetzen|verbs/durchsetzen_etwas#2]] wird."
+    "text_linked": "Welcher [[Art|nouns/Art#1]] die Ladetechnologie für die [[künftigen|adjectives/künftig]] 15 Elektrobusse genau sein wird, hängt vom Gesamtkonzept ab, das sich am Ende der Ausschreibung [[durchsetzen|verbs/durchsetzen_einer]] wird."
   },
   "51c91791de": {
     "text": "„Der Zwischenfall tat dem Ehrgeiz und Forscherdrang des Deutschen keinen Abbruch.“",
@@ -25973,11 +26077,31 @@
   },
   "51f6170212": {
     "text": "Es ist am besten, wenn du gleich zu ihr gehst.",
-    "translation": null,
+    "translation": "It is best if you go to her right away.",
     "source": "wiktionary",
     "lemmas": [
       "am"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "best",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "gleich",
+        "lemma": "gleich",
+        "pos": "adverb",
+        "gloss_hint": "soon"
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "fac991da"
+    },
+    "text_linked": "Es ist am besten, wenn du [[gleich|adverbs/gleich#1]] zu ihr gehst."
   },
   "51f624a77f": {
     "text": "„In Wertach lebte einst ein kleines Männle, das seines Zeichens ein Maler war, und das allzeit Geld im Überflusse hatte.“",
@@ -26221,11 +26345,111 @@
   },
   "51f831b799": {
     "text": "„Mit den Namen bekannter Paketdienste wie DHL und UPS versuchen derzeit Internet-Kriminelle, per E-Mail schädliche Software auf Computern zu verbreiten. In den E-Mails sei ein Link zur angeblichen Sendungsverfolgung angegeben, erklärte die deutsche Verbraucherzentrale Brandenburg am Freitag.“",
-    "translation": null,
+    "translation": "Internet criminals are currently attempting to use the names of well-known parcel services such as DHL and UPS to spread malicious software on computers via email. According to the German consumer protection center Brandenburg, the emails contain a link to the alleged shipment tracking, as explained on Friday.",
     "source": "wiktionary",
     "lemmas": [
       "Sendungsverfolgung"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Namen",
+        "lemma": "Name",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bekannter",
+        "lemma": "bekannt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Paketdienste",
+        "lemma": "Paketdienst",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Internet-Kriminelle",
+        "lemma": "Internet-Kriminelle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "versuchen",
+        "lemma": "versuchen",
+        "pos": "verb",
+        "gloss_hint": "attempt"
+      },
+      {
+        "form": "schädliche",
+        "lemma": "schädlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Software",
+        "lemma": "Software",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Computern",
+        "lemma": "Computer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verbreiten",
+        "lemma": "verbreiten",
+        "pos": "verb",
+        "gloss_hint": "spread"
+      },
+      {
+        "form": "E-Mails",
+        "lemma": "E-Mail",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Link",
+        "lemma": "Link",
+        "pos": "noun",
+        "gloss_hint": "link (clickable text)"
+      },
+      {
+        "form": "Sendungsverfolgung",
+        "lemma": "Sendungsverfolgung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "deutsche",
+        "lemma": "deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verbraucherzentrale",
+        "lemma": "Verbraucherzentrale",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Brandenburg",
+        "lemma": "Brandenburg",
+        "pos": "noun",
+        "gloss_hint": "Brandenburg (German state)"
+      },
+      {
+        "form": "Freitag",
+        "lemma": "Freitag",
+        "pos": "noun",
+        "gloss_hint": "Friday"
+      }
+    ],
+    "text_linked": "„Mit den [[Namen|nouns/Name]] [[bekannter|adjectives/bekannt]] Paketdienste wie DHL und UPS [[versuchen|verbs/versuchen#1]] derzeit Internet-Kriminelle, per E-Mail [[schädliche|adjectives/schädlich]] [[Software|nouns/Software]] auf [[Computern|nouns/Computer]] zu [[verbreiten|verbs/verbreiten#1]]. In den [[E-Mails|nouns/E-Mail]] sei ein [[Link|nouns/Link#1]] zur angeblichen [[Sendungsverfolgung|nouns/Sendungsverfolgung]] angegeben, erklärte die [[deutsche|adjectives/deutsch]] [[Verbraucherzentrale|nouns/Verbraucherzentrale]] Brandenburg am [[Freitag|nouns/Freitag_fünfter#1]].“"
   },
   "51f8848e9b": {
     "text": "auf einer Welle von etwas schwimmen",

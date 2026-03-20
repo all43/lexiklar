@@ -2855,7 +2855,7 @@
         "gloss_hint": "nice"
       }
     ],
-    "text_linked": "Kinder [[können|verbs/können_etwas#2]] [[ihre|pronouns/ihr_person]] [[Eltern|nouns/Eltern#1]] [[manchmal|adverbs/manchmal]] [[ganz|adjectives/ganz]] [[schön|adjectives/schön#6]] nerven."
+    "text_linked": "Kinder [[können|verbs/können_beherrschen]] [[ihre|pronouns/ihr_person]] [[Eltern|nouns/Eltern#1]] [[manchmal|adverbs/manchmal]] [[ganz|adjectives/ganz]] [[schön|adjectives/schön#6]] nerven."
   },
   "3a200fc6aa": {
     "text": "zu zwölf",
@@ -5483,7 +5483,7 @@
         "gloss_hint": "self (emphatically)"
       }
     ],
-    "text_linked": "„[[Anlegerinnen|nouns/Anlegerin#1]] [[schreckt|verbs/schrecken_abschrecken]] [[eher|adverbs/eher#4]] [[die|pronouns/die#1]] Intransparenz [[des|pronouns/der_nominativ#1]] Finanzmarktes ab [[als|conjunctions/als#1]] die [[Risiken|nouns/Risiko#1]] [[der|pronouns/der_nominativ]] Geldanlage [[selbst|pronouns/selbst#1]].“"
+    "text_linked": "„[[Anlegerinnen|nouns/Anlegerin#1]] [[schreckt|verbs/schrecken_abschrecken]] [[eher|adverbs/eher#4]] [[die|pronouns/die#1]] Intransparenz [[des|pronouns/der_nominativ#1]] Finanzmarktes ab [[als|conjunctions/als#1]] die [[Risiken|nouns/Risiko#1]] [[der|pronouns/der_singular#2]] Geldanlage [[selbst|pronouns/selbst#1]].“"
   },
   "3a37e21e62": {
     "text": "„Bei dem beschriebenen Abbauvorgang entstehen in der Leber auch toxische Abbauprodukte bzw. Intermediärmoleküle, die Metabolite (7), die in ihrer Toxizität noch toxischer wirken als die Ursprungssubstanz.“",
@@ -6087,7 +6087,7 @@
         "gloss_hint": "saucers"
       }
     ],
-    "text_linked": "„Der [[Kaffee|nouns/Kaffee_anregendes#1]] [[schwappte|verbs/schwappen]] [[in|prepositions/in]] [[die|determiners/die]] [[Untertassen|nouns/Untertasse#1]].“"
+    "text_linked": "„Der [[Kaffee|nouns/Kaffee_anregendes#1]] schwappte [[in|prepositions/in]] [[die|determiners/die]] [[Untertassen|nouns/Untertasse#1]].“"
   },
   "3a3bc78ddc": {
     "text": "„Vor der Unterkunft hatten damals Demonstranten ebenfalls gegen die unwürdige Behandlung der Flüchtlinge protestiert.“",
@@ -8532,7 +8532,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Sie ist [[eine|determiners/eine]] [[Hexe|nouns/Hexe#1]] [[und|conjunctions/und]] [[ein|determiners/ein]] [[Tyrannin|nouns/Tyrannin#2]], [[böse|adjectives/böse#1]] und [[nur|particles/nur#1]] [[bestrebt|verbs/bestreben]], rücksichtslos [[ihren|pronouns/ihr_person]] [[eigenen|adjectives/eigen]] [[Willen|nouns/Wille#1]] [[durchzusetzen|verbs/durchsetzen_einer]]."
+    "text_linked": "Sie ist [[eine|determiners/eine]] [[Hexe|nouns/Hexe#1]] [[und|conjunctions/und]] [[ein|determiners/ein]] [[Tyrannin|nouns/Tyrannin#2]], [[böse|adjectives/böse#1]] und [[nur|particles/nur#1]] bestrebt, rücksichtslos [[ihren|pronouns/ihr_person]] [[eigenen|adjectives/eigen]] [[Willen|nouns/Wille#1]] [[durchzusetzen|verbs/durchsetzen_einer]]."
   },
   "3a688bc6d1": {
     "text": "das ist mir egal",
@@ -10170,11 +10170,51 @@
   },
   "3a7a9b0061": {
     "text": "„Es war ein Tag mit Sonne, Regenschauern, Wind und plötzlicher Stille.“",
-    "translation": null,
+    "translation": "\"It was a day with sunshine, rain showers, wind, and sudden silence.\"",
     "source": "wiktionary",
     "lemmas": [
       "Regenschauer"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "Sonne",
+        "lemma": "Sonne",
+        "pos": "noun",
+        "gloss_hint": "sun"
+      },
+      {
+        "form": "Regenschauern",
+        "lemma": "Regenschauer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wind",
+        "lemma": "Wind",
+        "pos": "noun",
+        "gloss_hint": "wind"
+      },
+      {
+        "form": "plötzlicher",
+        "lemma": "plötzlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stille",
+        "lemma": "Stille",
+        "pos": "noun",
+        "gloss_hint": "silence"
+      }
+    ],
+    "text_linked": "„Es war ein [[Tag|nouns/Tag_zeitraum#1]] mit [[Sonne|nouns/Sonne#1]], [[Regenschauern|nouns/Regenschauer]], [[Wind|nouns/Wind#5]] und [[plötzlicher|adjectives/plötzlich]] [[Stille|nouns/Stille#1]].“"
   },
   "3a7ab70795": {
     "text": "Die Mutter legt dem Kind ein Lätzchen an.",
@@ -16573,7 +16613,7 @@
         "gloss_hint": "pay for sins"
       }
     ],
-    "text_linked": "„Einen seiner [[besten|adjectives/gut]] [[Informanten|nouns/Informant#1]] [[rühmt|verbs/rühmen]] de Sade namentlich [[im|prepositions/in]] [[Roman|nouns/Roman#2]], [[es|pronouns/es]] [[ist|verbs/sein]] [[jener|pronouns/jener]] Giuseppe Iberti, [[der|pronouns/der_nominativ]] ihn [[besonders|adverbs/besonders]] [[mit|prepositions/mit]] römischem [[Material|nouns/Material#1]] [[versorgte|verbs/versorgen]] [[und|conjunctions/und]] [[das|pronouns/das_[1]]] mit [[vier|numerals/vier#1]] [[Monaten|nouns/Monat#1]] [[Untersuchungshaft|nouns/Untersuchungshaft#1]] [[bei|prepositions/bei]] der päpstlichen [[Inquisition|nouns/Inquisition]] [[zu|prepositions/zu]] [[büßen|verbs/büßen#1]] hatte.“"
+    "text_linked": "„Einen seiner [[besten|adjectives/gut]] [[Informanten|nouns/Informant#1]] [[rühmt|verbs/rühmen]] de Sade [[namentlich|adverbs/namentlich]] [[im|prepositions/in]] [[Roman|nouns/Roman#2]], [[es|pronouns/es]] [[ist|verbs/sein]] [[jener|pronouns/jener]] Giuseppe Iberti, [[der|pronouns/der_nominativ]] ihn [[besonders|adverbs/besonders]] [[mit|prepositions/mit]] römischem [[Material|nouns/Material#1]] [[versorgte|verbs/versorgen]] [[und|conjunctions/und]] [[das|pronouns/das_[1]]] mit [[vier|numerals/vier#1]] [[Monaten|nouns/Monat#1]] [[Untersuchungshaft|nouns/Untersuchungshaft#1]] [[bei|prepositions/bei]] der päpstlichen [[Inquisition|nouns/Inquisition]] [[zu|prepositions/zu]] [[büßen|verbs/büßen#1]] hatte.“"
   },
   "3aae54de66": {
     "text": "Ich werde das Fußballspiel auf Video aufnehmen.",
@@ -16717,7 +16757,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Der|determiners/der]] [[zerstreute|adjectives/zerstreut]] [[Münchner|adjectives/Münchner]] [[Professor|nouns/Professor#1]] [[mit|prepositions/mit#1]] [[dem|determiners/der]] durchlöcherten [[Schirm|nouns/Schirm#3]] [[könnte|verbs/können_beherrschen]] [[ohne|prepositions/ohne#1]] [[weiteres|adjectives/weiter]] [[der|determiners/der]] [[Zwillingsbruder|nouns/Zwillingsbruder#1]] [[des|determiners/der]] [[Österreichers|nouns/Österreicher#1]] [[Graf|nouns/Graf#1]] [[Bobby|nouns/Bobby]] sein.“"
+    "text_linked": "„[[Der|determiners/der]] [[zerstreute|adjectives/zerstreut]] [[Münchner|adjectives/Münchner]] [[Professor|nouns/Professor#1]] [[mit|prepositions/mit#1]] [[dem|determiners/der]] durchlöcherten [[Schirm|nouns/Schirm#3]] [[könnte|verbs/können_etwas#1]] [[ohne|prepositions/ohne#1]] [[weiteres|adjectives/weiter]] [[der|determiners/der]] [[Zwillingsbruder|nouns/Zwillingsbruder#1]] [[des|determiners/der]] [[Österreichers|nouns/Österreicher#1]] [[Graf|nouns/Graf#1]] [[Bobby|nouns/Bobby]] sein.“"
   },
   "3ab04418ae": {
     "text": "„Sabina und Djuna gingen in das Studio, wo sie noch immer Trommeln hörten.“",
@@ -16960,7 +17000,7 @@
         "gloss_hint": "ghost trains"
       }
     ],
-    "text_linked": "„‚Schlecht‘ sind [[die|pronouns/die#2]] [[Orte|nouns/Ort_1]], die es prinzipiell nicht [[gestatten|verbs/gestatten#1]], [[große|adjectives/groß#1]] Fahrgeschäfte [[wie|adverbs/wie#1]] [[Achterbahnen|nouns/Achterbahn#1]] [[und|conjunctions/und]] [[Scooter|nouns/Scooter#1]] aufzustellen, oder deren Straßengefüge [[zwischen|prepositions/zwischen#2]] [[Markt|nouns/Markt#1]] und [[Kirche|nouns/Kirche#1]] [[zu|prepositions/zu#1]] [[eng|adjectives/eng#1]] und winkelig [[für|prepositions/für#1]] die ausladenden Mondraketen und Geisterbahnen ist.“"
+    "text_linked": "„‚Schlecht‘ sind [[die|pronouns/die#2]] [[Orte|nouns/Ort_1]], die es [[prinzipiell|adjectives/prinzipiell]] nicht [[gestatten|verbs/gestatten#1]], [[große|adjectives/groß#1]] Fahrgeschäfte [[wie|adverbs/wie#1]] [[Achterbahnen|nouns/Achterbahn#1]] [[und|conjunctions/und]] [[Scooter|nouns/Scooter#1]] aufzustellen, oder deren Straßengefüge [[zwischen|prepositions/zwischen#2]] [[Markt|nouns/Markt#1]] und [[Kirche|nouns/Kirche#1]] [[zu|prepositions/zu#1]] [[eng|adjectives/eng#1]] und winkelig [[für|prepositions/für#1]] die ausladenden Mondraketen und Geisterbahnen ist.“"
   },
   "3ab354e511": {
     "text": "„Der Profisport ist wegen der Coronavirus-Pandemie so gut wie zum Stillstand gekommen.“",
@@ -17091,7 +17131,7 @@
         "gloss_hint": "fetch"
       }
     ],
-    "text_linked": "„Als dann der [[Hammer|nouns/Hammer_werkzeug#1]] [[herabfiel|verbs/herabfallen]], [[kam|verbs/kommen#1]] der von [[oben|adverbs/oben]] herunter, um ihn zu [[holen|verbs/holen#1]].“"
+    "text_linked": "„Als dann der [[Hammer|nouns/Hammer_werkzeug#1]] herabfiel, [[kam|verbs/kommen#1]] der von [[oben|adverbs/oben]] herunter, um ihn zu [[holen|verbs/holen#1]].“"
   },
   "3ab55a259e": {
     "text": "das Weite suchen",
@@ -20676,11 +20716,63 @@
   },
   "3adc63ab3f": {
     "text": "„Die Tafel zeigt an, dass das Boarding für den Flug nach Köln-Bonn in dreißig Minuten beginnt.“",
-    "translation": null,
+    "translation": "\"The board indicates that boarding for the flight to Cologne-Bonn will begin in thirty minutes.\"",
     "source": "wiktionary",
     "lemmas": [
       "Boarding"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tafel",
+        "lemma": "Tafel",
+        "pos": "noun",
+        "gloss_hint": "board"
+      },
+      {
+        "form": "zeigt",
+        "lemma": "zeigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Boarding",
+        "lemma": "Boarding",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Flug",
+        "lemma": "Flug",
+        "pos": "noun",
+        "gloss_hint": "flight"
+      },
+      {
+        "form": "Köln-Bonn",
+        "lemma": "Köln-Bonn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dreißig",
+        "lemma": "dreißig",
+        "pos": "noun",
+        "gloss_hint": "thirty"
+      },
+      {
+        "form": "Minuten",
+        "lemma": "Minute",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beginnt",
+        "lemma": "beginnen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Die [[Tafel|nouns/Tafel#2]] [[zeigt|verbs/zeigen]] an, dass das [[Boarding|nouns/Boarding]] für den [[Flug|nouns/Flug#1]] nach Köln-Bonn in dreißig [[Minuten|nouns/Minute]] [[beginnt|verbs/beginnen]].“"
   },
   "3adf1d04ba": {
     "text": "Der linke Flügel der SPD kann sich eine Zusammenarbeit mit der PDS vorstellen.",
@@ -21470,7 +21562,7 @@
         "gloss_hint": "will be"
       }
     ],
-    "text_linked": "[…] Hoffmann [[[kann|verbs/können_beherrschen#1]]] [[erst|adverbs/erst#3]] [[draußen|adverbs/draußen#1]], [[auf|prepositions/auf]] [[dem|determiners/der]] [[Flur|nouns/Flur_raum#2]] auf [[die|determiners/die]] [[Frage|nouns/Frage#1]] [[antworten|verbs/antworten#1]] […], die allen [[Cannabis|nouns/Cannabis#2]]-Freunden [[unter|prepositions/unter]] [[den|determiners/der]] [[Nägeln|nouns/Nagel#1]] brennt: [[Glaubt|verbs/glauben#1]] er [[eigentlich|adverbs/eigentlich#2]], [[dass|conjunctions/dass]] Cannabis [[in|prepositions/in]] Deutschland [[irgendwann|adverbs/irgendwann]] [[ganz|adjectives/ganz]] [[legalisiert|verbs/legalisieren]] [[wird|verbs/werden]]?"
+    "text_linked": "[…] Hoffmann [[[kann|verbs/können_beherrschen#1]]] [[erst|adverbs/erst#3]] [[draußen|adverbs/draußen#1]], [[auf|prepositions/auf]] [[dem|determiners/der]] [[Flur|nouns/Flur_raum#2]] auf [[die|determiners/die]] [[Frage|nouns/Frage#1]] [[antworten|verbs/antworten#1]] […], die allen [[Cannabis|nouns/Cannabis#2]]-Freunden [[unter|prepositions/unter]] [[den|determiners/der]] [[Nägeln|nouns/Nagel#1]] brennt: [[Glaubt|verbs/glauben#1]] er [[eigentlich|adverbs/eigentlich#2]], [[dass|conjunctions/dass]] Cannabis [[in|prepositions/in]] Deutschland [[irgendwann|adverbs/irgendwann]] [[ganz|adjectives/ganz]] [[legalisiert|verbs/legalisieren#1]] [[wird|verbs/werden]]?"
   },
   "3aec7a82c3": {
     "text": "„Der Würfel des Universums hat eine Sechs. Evolution ist möglich. … Das Nicht-mehr-Begreifliche steht am Anfang - steht hinter allem Geschehen – ALPHA ist der Grund, der Grund aller Entwicklung. Mehr Worte machen es nicht klarer. …“",

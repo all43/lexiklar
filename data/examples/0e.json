@@ -186,11 +186,27 @@
   },
   "0e020ecdef": {
     "text": "Evtl. kann uns dieser Mann dort drüben helfen.",
-    "translation": null,
+    "translation": "Perhaps this man over there can help us.",
     "source": "wiktionary",
     "lemmas": [
       "evtl."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "helfen",
+        "lemma": "helfen",
+        "pos": "verb",
+        "gloss_hint": "help"
+      }
+    ],
+    "text_linked": "Evtl. kann uns dieser [[Mann|nouns/Mann#5]] dort drüben [[helfen|verbs/helfen#1]]."
   },
   "0e022bd24d": {
     "text": "„Jakob weiß nicht sehr viel über dieses Haus, er weiß, daß dort irgendeine deutsche Verwaltung sitzt, so erzählt man sich jedenfalls. […] Und vor allem weiß er, daß die Aussichten als Jude lebend aus diesem Haus herauszukommen, sehr gering sind. Bis heute kennt man keinen solchen Fall.“",
@@ -892,7 +908,7 @@
         "gloss_hint": "hardly"
       }
     ],
-    "text_linked": "„[[Als|conjunctions/als]] ich neulich [[in|prepositions/in]] Moskau [[war|verbs/sein#2]], [[konnte|verbs/können_beherrschen]] ich mich [[vor|prepositions/vor#2]] grüßenden [[Russen|nouns/Russe#1]] [[kaum|adverbs/kaum#1]] retten.“"
+    "text_linked": "„[[Als|conjunctions/als]] ich neulich [[in|prepositions/in]] Moskau [[war|verbs/sein#2]], [[konnte|verbs/können_etwas#1]] ich mich [[vor|prepositions/vor#2]] grüßenden [[Russen|nouns/Russe#1]] [[kaum|adverbs/kaum#1]] retten.“"
   },
   "0e0b65313a": {
     "text": "„Er hatte wirklich die ganze Schuld des gräßlichen Ereignisses auf sich geladen; seine Blindheit hatte ihm und seinen Alliierten eine tödliche Wunde geschlagen, seine Halsstarrigkeit ihn taub gegen alle Zurufe El Sols gemacht.“",
@@ -3367,7 +3383,7 @@
         "gloss_hint": "become"
       }
     ],
-    "text_linked": "„[[Nicht|particles/nicht]] [[dass|conjunctions/dass]] [[es|pronouns/es]] [[schwierig|adjectives/schwierig]] [[gewesen|verbs/sein]] [[wäre|verbs/sein]], ein wenig [[Kies|nouns/Kies#1]] aufzutreiben, [[aber|conjunctions/aber]] [[die|pronouns/die]] [[Sache|nouns/Sache]] [[war|verbs/sein]] die, den Kies [[zu|particles/zu_drückt]] [[bekommen|verbs/bekommen#3]] [[und|conjunctions/und]] [[abhauen|verbs/abhauen#2]] zu [[können|verbs/können_etwas#1]], [[ohne|prepositions/ohne]] [[erst|adverbs/erst]] zu [[Tode|nouns/Tod#1]] [[gelangweilt|adjectives/gelangweilt]] zu [[werden|verbs/werden#1]].“"
+    "text_linked": "„[[Nicht|particles/nicht]] [[dass|conjunctions/dass]] [[es|pronouns/es]] [[schwierig|adjectives/schwierig]] [[gewesen|verbs/sein]] [[wäre|verbs/sein]], ein wenig [[Kies|nouns/Kies#1]] aufzutreiben, [[aber|conjunctions/aber]] [[die|pronouns/die]] [[Sache|nouns/Sache]] [[war|verbs/sein]] die, den Kies [[zu|particles/zu_drückt]] [[bekommen|verbs/bekommen#3]] [[und|conjunctions/und]] [[abhauen|verbs/abhauen#2]] zu [[können|verbs/können_beherrschen]], [[ohne|prepositions/ohne]] [[erst|adverbs/erst]] zu [[Tode|nouns/Tod#1]] [[gelangweilt|adjectives/gelangweilt]] zu [[werden|verbs/werden#1]].“"
   },
   "0e2336882b": {
     "text": "„Die Bezeichnung dieser Vokale durch Zeichen eines phonetischen Alphabets impliziert allerdings schon, daß man diesen Einheiten distinktive Merkmale zugesprochen und damit bereits die Beziehungen der Einheiten zueinander konstituiert hat.“",
@@ -4524,7 +4540,7 @@
         "gloss_hint": "teach"
       }
     ],
-    "text_linked": "„[[Der|pronouns/der_nominativ]] [[Jubel|nouns/Jubel]] [[war|verbs/sein#2]] [[endlos|adjectives/endlos#1]], [[und|conjunctions/und]] [[der|pronouns/der_nominativ]] [[Graf|nouns/Graf#1]] [[hatte|verbs/haben#1]] alle [[Mühe|nouns/Mühe]], [[sich|pronouns/sich#1]] der [[ausgelassenen|adjectives/ausgelassen#2]] [[Mädchen|nouns/Mädchen#1]] [[zu|particles/zu_drückt]] [[erwehren|verbs/erwehren]], »[[Wartet|verbs/warten#1]] [[nur|particles/nur#1]], [[ihr|pronouns/ihr_person#1]] [[albernen|adjectives/albern#1]] [[Dinger|nouns/Ding_gegenstand]],« [[sagte|verbs/sagen#1]] er, »[[Fräulein|nouns/Fräulein#1]] Heinersdorf [[wird|verbs/werden#3]] [[euch|pronouns/ihr_person#1]] [[schon|particles/schon_antwort#1]] Mores [[lehren|verbs/lehren#1]]!«"
+    "text_linked": "„[[Der|pronouns/der_nominativ]] [[Jubel|nouns/Jubel]] [[war|verbs/sein#2]] [[endlos|adjectives/endlos#1]], [[und|conjunctions/und]] [[der|pronouns/der_nominativ]] [[Graf|nouns/Graf#1]] [[hatte|verbs/haben#1]] alle [[Mühe|nouns/Mühe]], [[sich|pronouns/sich#1]] der [[ausgelassenen|adjectives/ausgelassen#2]] [[Mädchen|nouns/Mädchen#1]] [[zu|particles/zu_drückt]] erwehren, »[[Wartet|verbs/warten#1]] [[nur|particles/nur#1]], [[ihr|pronouns/ihr_person#1]] [[albernen|adjectives/albern#1]] [[Dinger|nouns/Ding_gegenstand]],« [[sagte|verbs/sagen#1]] er, »[[Fräulein|nouns/Fräulein#1]] Heinersdorf [[wird|verbs/werden#3]] [[euch|pronouns/ihr_person#1]] [[schon|particles/schon_antwort#1]] Mores [[lehren|verbs/lehren#1]]!«"
   },
   "0e302f8f4e": {
     "text": "Die Tochter des neuen Nachbars ist ein nettes Mädchen.",
@@ -5910,7 +5926,7 @@
         "gloss_hint": "appear"
       }
     ],
-    "text_linked": "„Alsdann [[begab|verbs/begaben]] er [[sich|pronouns/sich]] [[in|prepositions/in]] [[die|determiners/die]] [[Herrentoilette|nouns/Herrentoilette#1]] [[der|determiners/der]] ‹Breez-Thru›-Tankstelle, [[wo|adverbs/wo]] er das [[Kleid|nouns/Kleid#1]] [[anzog|verbs/anziehen#1]] [[und|conjunctions/und]] [[den|determiners/der]] [[Haaren|nouns/Haar#1]] [[auf|prepositions/auf]] [[dem|determiners/der]] [[Kopf|nouns/Kopf#1]] und [[im|prepositions/in]] [[Gesicht|nouns/Gesicht#1]] [[mit|prepositions/mit]] [[einer|determiners/ein]] [[kleinen|adjectives/klein]] [[Bürste|nouns/Bürste#1]] [[einen|determiners/ein]] [[Dreh|nouns/Dreh_spontaner#5]] [[zu|particles/zu_drückt]] [[geben|verbs/geben#1]] [[versuchte|verbs/versuchen#3]], [[von|prepositions/von]] dem er [[hoffte|verbs/hoffen#1]], [[dass|conjunctions/dass]] er den [[Leuten|nouns/Leute#1]], die [[für|prepositions/für]] die [[Beurteilung|nouns/Beurteilung#1]] [[geistiger|adjectives/geistig]] [[Gesundheit|nouns/Gesundheit#1]] [[zuständig|adjectives/zuständig]] [[waren|verbs/sein#2]], [[ungesund|adjectives/ungesund#1]] genug [[erscheinen|verbs/erscheinen#1]] würde.“"
+    "text_linked": "„Alsdann begab er [[sich|pronouns/sich]] [[in|prepositions/in]] [[die|determiners/die]] [[Herrentoilette|nouns/Herrentoilette#1]] [[der|determiners/der]] ‹Breez-Thru›-Tankstelle, [[wo|adverbs/wo]] er das [[Kleid|nouns/Kleid#1]] [[anzog|verbs/anziehen#1]] [[und|conjunctions/und]] [[den|determiners/der]] [[Haaren|nouns/Haar#1]] [[auf|prepositions/auf]] [[dem|determiners/der]] [[Kopf|nouns/Kopf#1]] und [[im|prepositions/in]] [[Gesicht|nouns/Gesicht#1]] [[mit|prepositions/mit]] [[einer|determiners/ein]] [[kleinen|adjectives/klein]] [[Bürste|nouns/Bürste#1]] [[einen|determiners/ein]] [[Dreh|nouns/Dreh_spontaner#5]] [[zu|particles/zu_drückt]] [[geben|verbs/geben#1]] [[versuchte|verbs/versuchen#3]], [[von|prepositions/von]] dem er [[hoffte|verbs/hoffen#1]], [[dass|conjunctions/dass]] er den [[Leuten|nouns/Leute#1]], die [[für|prepositions/für]] die [[Beurteilung|nouns/Beurteilung#1]] [[geistiger|adjectives/geistig]] [[Gesundheit|nouns/Gesundheit#1]] [[zuständig|adjectives/zuständig]] [[waren|verbs/sein#2]], [[ungesund|adjectives/ungesund#1]] genug [[erscheinen|verbs/erscheinen#1]] würde.“"
   },
   "0e41c7b4ee": {
     "text": "„Interessant war auch zu erfahren, wie viele Codenamen ihr von uns kennt, darunter meinen eigenen, Raouf.“",
@@ -6621,7 +6637,7 @@
         "gloss_hint": "heat"
       }
     ],
-    "text_linked": "Über [[der|pronouns/der_nominativ]] [[Flamme|nouns/Flamme#1]] [[des|determiners/der]] [[Brenners|nouns/Brenner#1]] [[wird|verbs/werden#1]] der [[Stoff|nouns/Stoff#1]] [[vorsichtig|adjectives/vorsichtig]] [[erhitzt|verbs/erhitzen]]."
+    "text_linked": "Über [[der|pronouns/der_nominativ]] [[Flamme|nouns/Flamme#1]] [[des|determiners/der]] [[Brenners|nouns/Brenner#1]] [[wird|verbs/werden#1]] der [[Stoff|nouns/Stoff#1]] [[vorsichtig|adjectives/vorsichtig]] [[erhitzt|verbs/erhitzen#1]]."
   },
   "0e4af16e3c": {
     "text": "Wenn ich von mir ausgehen sollte, so ist bei diesem miesem Regenwetter der Besuch einer Klamm äußerst riskant und laut meinem Empfinden vollkommen abzuraten. (Und er irrt!)",
@@ -10087,7 +10103,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Die|pronouns/die]] Ärmsten [[der|pronouns/der_nominativ]] Armen [[wollen|verbs/wollen#1]] [[aus|adverbs/aus#1]] [[ihrem|pronouns/ihr_person]] [[Elend|nouns/Elend#2]] [[fliehen|verbs/fliehen#1]] [[doch|particles/doch_betont]] [[die|pronouns/die]] [[Reise|nouns/Reise]] [[als|conjunctions/als]] blinder [[Passagier|nouns/Passagier]] [[ist|verbs/sein#2]] [[gefährlich|adjectives/gefährlich]] [[und|conjunctions/und]] [[oft|adverbs/oft]] vergebens. [[‚Trotz|prepositions/trotz]] aller [[Vorsicht|nouns/Vorsicht]] und [[gründlicher|adjectives/gründlich]] [[Suche|nouns/Suche]] [[haben|verbs/haben#1]] [[es|pronouns/es]] [[wieder|adverbs/wieder]] [[sieben|numerals/sieben]] blinde [[Passagiere|nouns/Passagier]] [[geschafft|verbs/schaffen_etwas#1]]‘, [[berichtete|verbs/berichten#1]] der [[Hamburger|nouns/Hamburger_einwohner]] [[Kapitän|nouns/Kapitän#1]] Wolfgang Goede [[von|prepositions/von]] [[seiner|pronouns/sein]] [[letzten|adjectives/letzte]] Reise [[nach|prepositions/nach]] Westafrika.“"
+    "text_linked": "„[[Die|pronouns/die]] Ärmsten [[der|pronouns/der_nominativ]] Armen [[wollen|verbs/wollen#1]] [[aus|adverbs/aus#1]] [[ihrem|pronouns/ihr_person]] [[Elend|nouns/Elend#2]] [[fliehen|verbs/fliehen#1]] [[doch|particles/doch_betont]] [[die|pronouns/die]] [[Reise|nouns/Reise]] [[als|conjunctions/als]] blinder [[Passagier|nouns/Passagier]] [[ist|verbs/sein#2]] [[gefährlich|adjectives/gefährlich]] [[und|conjunctions/und]] [[oft|adverbs/oft]] vergebens. [[‚Trotz|prepositions/trotz]] aller [[Vorsicht|nouns/Vorsicht]] und [[gründlicher|adjectives/gründlich]] [[Suche|nouns/Suche]] [[haben|verbs/haben#1]] [[es|pronouns/es]] [[wieder|adverbs/wieder]] [[sieben|numerals/sieben]] blinde [[Passagiere|nouns/Passagier]] [[geschafft|verbs/schaffen_etwas]]‘, [[berichtete|verbs/berichten#1]] der [[Hamburger|nouns/Hamburger_einwohner]] [[Kapitän|nouns/Kapitän#1]] Wolfgang Goede [[von|prepositions/von]] [[seiner|pronouns/sein]] [[letzten|adjectives/letzte]] Reise [[nach|prepositions/nach]] Westafrika.“"
   },
   "0e6d07445a": {
     "text": "„Fast Mann an Mann standen sie an den Hauswänden und auf dem Rande des Gehsteigs: Händler, Bettler, Dirnen.“",
@@ -10952,7 +10968,7 @@
         "gloss_hint": "manage"
       }
     ],
-    "text_linked": "Thomas [[legte|verbs/legen#2]] mehr [[Gewicht|nouns/Gewicht#1]] auf, als er dann letztendlich [[stemmen|verbs/stemmen#1]] [[konnte|verbs/können_etwas#2]]."
+    "text_linked": "Thomas [[legte|verbs/legen#2]] mehr [[Gewicht|nouns/Gewicht#1]] auf, als er dann letztendlich [[stemmen|verbs/stemmen#1]] [[konnte|verbs/können_beherrschen]]."
   },
   "0e72a488ac": {
     "text": "Versuche, nicht zu verurteilen, sondern zu verstehen!",
@@ -12043,7 +12059,7 @@
         "gloss_hint": "rush"
       }
     ],
-    "text_linked": "„[[Ungeheure|adjectives/ungeheuer]] [[Gletscher|nouns/Gletscher#1]] [[schieben|verbs/schieben#1]] [[ihre|pronouns/ihr_person]] [[mächtigen|adjectives/mächtig]] Eismassen [[bis|particles/bis#1]] [[in|prepositions/in#2]] [[die|determiners/die]] Brandung. [[Und|conjunctions/und]] [[dann|adverbs/dann]] [[plötzlicher|adjectives/plötzlich#1]] Szenenwechsel: [[Anstatt|conjunctions/anstatt#1]] [[der|determiners/der]] [[von|prepositions/von#1]] immergrünen [[Buchen|nouns/Buche#1]] [[umrahmten|verbs/umrahmen_etwas]] Gletscherströme [[ein|determiners/ein]] [[wildes|adjectives/wild]], [[fast|adverbs/fast#1]] [[völlig|adjectives/völlig#1]] vegetationsloses Felsenpanorama oder ein weiter [[Einblick|nouns/Einblick]] in [[eine|determiners/eine]] [[Gegend|nouns/Gegend#1]] [[mit|prepositions/mit#1]] grünen [[Wäldern|nouns/Wald#1]], deren Baumkronen, [[oft|adverbs/oft#1]] mit Schneekissen [[beladen|adjectives/beladen#1]], [[sich|pronouns/sich#1]] [[wie|conjunctions/wie_sowie#2]] [[riesige|adjectives/riesig]] Dolden emporrecken, mit graubraunem, [[niederem|adjectives/niedrig#1]] Buschwerk, das [[noch|adverbs/noch#3]] Kolibris [[und|conjunctions/und]] [[Papageien|nouns/Papagei#1]] [[beleben|verbs/beleben]], mit [[blauen|adjectives/blau#1]] [[Felsen|nouns/Felsen#1]] und [[glänzenden|adjectives/glänzend#1]] Schneefeldern, [[über|prepositions/über#2]] die eine Guanakoherde wie eine [[braune|adjectives/braun#1]] Woge dahinstiebt.“"
+    "text_linked": "„[[Ungeheure|adjectives/ungeheuer]] [[Gletscher|nouns/Gletscher#1]] [[schieben|verbs/schieben#1]] [[ihre|pronouns/ihr_person]] [[mächtigen|adjectives/mächtig]] Eismassen [[bis|particles/bis#1]] [[in|prepositions/in#2]] [[die|determiners/die]] Brandung. [[Und|conjunctions/und]] [[dann|adverbs/dann]] [[plötzlicher|adjectives/plötzlich#1]] Szenenwechsel: [[Anstatt|conjunctions/anstatt#1]] [[der|determiners/der]] [[von|prepositions/von#1]] immergrünen [[Buchen|nouns/Buche#1]] [[umrahmten|verbs/umrahmen_neue#1]] Gletscherströme [[ein|determiners/ein]] [[wildes|adjectives/wild]], [[fast|adverbs/fast#1]] [[völlig|adjectives/völlig#1]] vegetationsloses Felsenpanorama oder ein weiter [[Einblick|nouns/Einblick]] in [[eine|determiners/eine]] [[Gegend|nouns/Gegend#1]] [[mit|prepositions/mit#1]] grünen [[Wäldern|nouns/Wald#1]], deren Baumkronen, [[oft|adverbs/oft#1]] mit Schneekissen [[beladen|adjectives/beladen#1]], [[sich|pronouns/sich#1]] [[wie|conjunctions/wie_sowie#2]] [[riesige|adjectives/riesig]] Dolden emporrecken, mit graubraunem, [[niederem|adjectives/niedrig#1]] Buschwerk, das [[noch|adverbs/noch#3]] Kolibris [[und|conjunctions/und]] [[Papageien|nouns/Papagei#1]] [[beleben|verbs/beleben]], mit [[blauen|adjectives/blau#1]] [[Felsen|nouns/Felsen#1]] und [[glänzenden|adjectives/glänzend#1]] Schneefeldern, [[über|prepositions/über#2]] die eine Guanakoherde wie eine [[braune|adjectives/braun#1]] Woge dahinstiebt.“"
   },
   "0e768e24c9": {
     "text": "„Dann lief die Braut vorne beim Altar um eine Art Zelt herum, siebenmal, am Ende zertrat der Bräutigam Glasscherben, und die ganze Synagoge rief «Masel tov!» - viel Glück!“",
@@ -12761,11 +12777,13 @@
   },
   "0e7986cb83": {
     "text": "„Mit Leichenbittermiene steht ein Ein-Meter-Neunzig-Mann am Gepäckband – es hat ihm absolut gar nicht gefallen: ‚Nie wieder Ibiza!‘ sagt er entschlossen.“",
-    "translation": null,
+    "translation": "With a gloomy expression, a six-foot-three man stands at the baggage claim – he absolutely hated it: 'Never again Ibiza!' he says resolutely.",
     "source": "wiktionary",
     "lemmas": [
       "Gepäckband"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "0e7ac139ce": {
     "text": "Man brauchte nur eine Zigarette zu rauchen, um die Warnanlage einzuschalten.",
@@ -15601,7 +15619,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Witz|nouns/Witz#4]], [[Charme|nouns/Charme#1]], [[Schönheit|nouns/Schönheit#1]] und [[Frische|nouns/Frische#1]] [[lauten|verbs/lauten#1]] einige der freundlichen Attribute, [[mit|prepositions/mit]] denen [[die|determiners/die]] 1816 [[uraufgeführte|verbs/uraufführen]] Opera buffa »[[Der|determiners/der]] [[Barbier|nouns/Barbier#1]] [[von|prepositions/von]] Sevilla« von Gioachino Rossini bedacht wird.“"
+    "text_linked": "„[[Witz|nouns/Witz#4]], [[Charme|nouns/Charme#1]], [[Schönheit|nouns/Schönheit#1]] und [[Frische|nouns/Frische#1]] [[lauten|verbs/lauten#1]] einige der freundlichen Attribute, [[mit|prepositions/mit]] denen [[die|determiners/die]] 1816 [[uraufgeführte|verbs/uraufführen#1]] Opera buffa »[[Der|determiners/der]] [[Barbier|nouns/Barbier#1]] [[von|prepositions/von]] Sevilla« von Gioachino Rossini bedacht wird.“"
   },
   "0e98b4510d": {
     "text": "Ziehst Du bald wieder nach Amerika zurück?",
@@ -17810,7 +17828,7 @@
         "gloss_hint": "revolution"
       }
     ],
-    "text_linked": "„Damian [[war|verbs/sein#2]] keiner [[von|prepositions/von#2]] [[denen|pronouns/der_nominativ]], [[die|pronouns/die#1]] [[sich|pronouns/sich#2]] [[als|conjunctions/als#2]] [[Führer|nouns/Führer#1]] [[der|pronouns/der_nominativ#1]] [[Arbeiterklasse|nouns/Arbeiterklasse#1]] [[aufspielen|verbs/aufspielen]], die [[zu|prepositions/zu#1]] [[wissen|verbs/wissen#1]] [[glauben|verbs/glauben#1]], [[wo's|adverbs/wo#1]] langgeht zu [[den|determiners/der#1]] Beseligungen der [[Revolution|nouns/Revolution#2]].“"
+    "text_linked": "„Damian [[war|verbs/sein#2]] keiner [[von|prepositions/von#2]] [[denen|pronouns/der_nominativ]], [[die|pronouns/die#1]] [[sich|pronouns/sich#2]] [[als|conjunctions/als#2]] [[Führer|nouns/Führer#1]] [[der|pronouns/der_nominativ#1]] [[Arbeiterklasse|nouns/Arbeiterklasse#1]] aufspielen, die [[zu|prepositions/zu#1]] [[wissen|verbs/wissen#1]] [[glauben|verbs/glauben#1]], [[wo's|adverbs/wo#1]] langgeht zu [[den|determiners/der#1]] Beseligungen der [[Revolution|nouns/Revolution#2]].“"
   },
   "0eb449ccd2": {
     "text": "der Akt der Abstinenz",
@@ -19449,11 +19467,49 @@
   },
   "0ec5e1c07f": {
     "text": "Obschon im Krieg der Adel dem gemeinen Mann vorgezogen wird, so kommen doch viel aus verächtlichem Stand zu hohen Ehren.",
-    "translation": null,
+    "translation": "Although in war the nobility is preferred to the common man, yet many from despicable rank come to high honors.",
     "source": "wiktionary",
     "lemmas": [
       "obschon"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Krieg",
+        "lemma": "Krieg",
+        "pos": "noun",
+        "gloss_hint": "war"
+      },
+      {
+        "form": "Adel",
+        "lemma": "Adel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "person"
+      },
+      {
+        "form": "kommen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": "arrive"
+      },
+      {
+        "form": "ehren",
+        "lemma": "ehren",
+        "pos": "verb",
+        "gloss_hint": "honor"
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "93af276c"
+    },
+    "text_linked": "Obschon im [[Krieg|nouns/Krieg#1]] der [[Adel|nouns/Adel]] dem gemeinen [[Mann|nouns/Mann#2]] vorgezogen wird, so [[kommen|verbs/kommen#1]] doch viel aus verächtlichem Stand zu hohen Ehren."
   },
   "0ec6a2399f": {
     "text": "„›Asche zu Asche, Staub zu Staub‹, deklamierte Alex.“",
@@ -22667,7 +22723,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Das [[Pferd|nouns/Pferd#1]] ist an seinen [[gewohnten|adjectives/gewohnt]] [[Platz|nouns/Platz#2]] im [[Stall|nouns/Stall#1]] [[getrottet|verbs/trotten]]."
+    "text_linked": "Das [[Pferd|nouns/Pferd#1]] ist an seinen [[gewohnten|adjectives/gewohnt]] [[Platz|nouns/Platz#2]] im [[Stall|nouns/Stall#1]] getrottet."
   },
   "0ee2a1d3c6": {
     "text": "Die Teilnehmerinnen an der Tagung müssen einen Tagungsbeitrag leisten.",
@@ -23456,7 +23512,7 @@
         "gloss_hint": "boulevard"
       }
     ],
-    "text_linked": "„[[Und|conjunctions/und]] [[den|determiners/der]] Embarcadero, [[die|determiners/die]] [[breite|adjectives/breit]] [[Straße|nouns/Straße#2]], die [[vom|prepositions/von]] [[Hafen|nouns/Hafen#1]] die [[Bucht|nouns/Bucht#1]] entlang [[führt|verbs/führen]], [[haben|verbs/haben#1]] sie [[inzwischen|adverbs/inzwischen]] [[auch|adverbs/auch]] [[schon|particles/schon_antwort#1]] [[zu|prepositions/zu]] [[einem|determiners/ein]] [[von|prepositions/von]] [[Palmen|nouns/Palme#1]] gesäumten [[Boulevard|nouns/Boulevard#2]] gemacht.“"
+    "text_linked": "„[[Und|conjunctions/und]] [[den|determiners/der]] Embarcadero, [[die|determiners/die]] [[breite|adjectives/breit]] [[Straße|nouns/Straße#2]], die [[vom|prepositions/von]] [[Hafen|nouns/Hafen#1]] die [[Bucht|nouns/Bucht#1]] [[entlang|postpositions/entlang]] [[führt|verbs/führen]], [[haben|verbs/haben#1]] sie [[inzwischen|adverbs/inzwischen]] [[auch|adverbs/auch]] [[schon|particles/schon_antwort#1]] [[zu|prepositions/zu]] [[einem|determiners/ein]] [[von|prepositions/von]] [[Palmen|nouns/Palme#1]] gesäumten [[Boulevard|nouns/Boulevard#2]] gemacht.“"
   },
   "0eeaa90b22": {
     "text": "Einen Spieler von diesem Format haben wir lange nicht gehabt.",
@@ -25102,11 +25158,33 @@
   },
   "0ef89bbb64": {
     "text": "„Die Deklination des Mondes schwankt zwischen 28°30´N und 28°30´S.“",
-    "translation": null,
+    "translation": "The declination of the Moon varies between 28°30′N and 28°30′S.",
     "source": "wiktionary",
     "lemmas": [
       "Deklination"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Deklination",
+        "lemma": "Deklination",
+        "pos": "noun",
+        "gloss_hint": "declination (celestial)"
+      },
+      {
+        "form": "Mondes",
+        "lemma": "Mond",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwankt",
+        "lemma": "schwanken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Die [[Deklination|nouns/Deklination#3]] des [[Mondes|nouns/Mond]] [[schwankt|verbs/schwanken]] zwischen 28°30´N und 28°30´S.“"
   },
   "0ef8b35c56": {
     "text": "nass bis auf die Haut",

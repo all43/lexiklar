@@ -820,7 +820,7 @@
         "gloss_hint": "be able to"
       }
     ],
-    "text_linked": "[[Geben|verbs/geben#2]] Sie [[bitte|particles/bitte#1]] [[die|determiners/die]] Maße [[nach|prepositions/nach#1]] [[der|pronouns/der_nominativ]] [[Anleitung|nouns/Anleitung#1]] [[auf|prepositions/auf#1]] [[Seite|nouns/Seite#15]] 1 [[an|prepositions/an#2]], [[damit|adverbs/damit#1]] [[wir|pronouns/wir#1]] die Einbausauna [[in|prepositions/in#1]] der [[richtigen|adjectives/richtig#1]] [[Größe|nouns/Größe#1]] [[liefern|verbs/liefern#1]] [[können|verbs/können_beherrschen]]."
+    "text_linked": "[[Geben|verbs/geben#2]] Sie [[bitte|particles/bitte#1]] [[die|determiners/die]] Maße [[nach|prepositions/nach#1]] [[der|pronouns/der_nominativ]] [[Anleitung|nouns/Anleitung#1]] [[auf|prepositions/auf#1]] [[Seite|nouns/Seite#15]] 1 [[an|prepositions/an#2]], [[damit|adverbs/damit#1]] [[wir|pronouns/wir#1]] die Einbausauna [[in|prepositions/in#1]] der [[richtigen|adjectives/richtig#1]] [[Größe|nouns/Größe#1]] [[liefern|verbs/liefern#1]] [[können|verbs/können_etwas#1]]."
   },
   "d612aa1258": {
     "text": "Die Kurgäste ergingen sich in den Anlagen.",
@@ -6497,7 +6497,7 @@
     "lemmas": [
       "heißen"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Leinen",
@@ -8357,7 +8357,7 @@
         "gloss_hint": "animal | cow"
       }
     ],
-    "text_linked": "[[Reifer|adjectives/reif]] [[Mais|nouns/Mais#1]] [[wird|verbs/werden]] [[an|prepositions/an]] [[Hühner|nouns/Huhn]] [[verfüttert|verbs/verfüttern]], [[unreifer|adjectives/unreif]] an [[Kühe|nouns/Kuh#3]]."
+    "text_linked": "[[Reifer|adjectives/reif]] [[Mais|nouns/Mais#1]] [[wird|verbs/werden]] [[an|prepositions/an]] [[Hühner|nouns/Huhn]] verfüttert, [[unreifer|adjectives/unreif]] an [[Kühe|nouns/Kuh#3]]."
   },
   "d65e6c4f18": {
     "text": "„Gerade ehemalige Leprosorien und Pesthäuser, die im 16. und 17. Jahrhundert zumeist leer standen, boten sich für die Unterbringung Geistesgestörter an.“",
@@ -8647,7 +8647,7 @@
         "gloss_hint": "become"
       }
     ],
-    "text_linked": "Die Patientin ist noch [[zu|particles/zu_drückt]] [[labil|adjectives/labil#1]], [[um|prepositions/um]] [[aus|prepositions/aus#1]] [[der|pronouns/der_nominativ]] [[Klinik|nouns/Klinik#1]] [[entlassen|verbs/entlassen#1]] [[werden|verbs/werden#1]] zu können."
+    "text_linked": "Die Patientin ist noch [[zu|particles/zu_drückt]] [[labil|adjectives/labil#1]], [[um|prepositions/um]] [[aus|prepositions/aus#1]] [[der|pronouns/der_singular#2]] [[Klinik|nouns/Klinik#1]] [[entlassen|verbs/entlassen#1]] [[werden|verbs/werden#1]] zu können."
   },
   "d661ce564a": {
     "text": "der Mensch ist, was er isst",
@@ -12086,7 +12086,7 @@
         "gloss_hint": "were"
       }
     ],
-    "text_linked": "„[[Im|prepositions/in]] [[Herbst|nouns/Herbst#1]] 1954 [[vernichtete|verbs/vernichten#1]] Jasper Jones alle [[seine|pronouns/sein#1]] [[bis|particles/bis#1]] [[dahin|adverbs/dahin#1]] [[von|prepositions/von]] ihm [[geschaffenen|verbs/schaffen_etwas]] [[Kunstwerke|nouns/Kunstwerk#1]], [[die|pronouns/die#1]] [[noch|adverbs/noch#3]] [[in|prepositions/in]] [[seinem|pronouns/sein#1]] [[Besitz|nouns/Besitz#1]] [[waren|verbs/sein#2]].“"
+    "text_linked": "„[[Im|prepositions/in]] [[Herbst|nouns/Herbst#1]] 1954 [[vernichtete|verbs/vernichten#1]] Jasper Jones alle [[seine|pronouns/sein#1]] [[bis|particles/bis#1]] [[dahin|adverbs/dahin#1]] [[von|prepositions/von]] ihm [[geschaffenen|verbs/schaffen_etwas#1]] [[Kunstwerke|nouns/Kunstwerk#1]], [[die|pronouns/die#1]] [[noch|adverbs/noch#3]] [[in|prepositions/in]] [[seinem|pronouns/sein#1]] [[Besitz|nouns/Besitz#1]] [[waren|verbs/sein#2]].“"
   },
   "d68644d3d1": {
     "text": "„Rund um die Insel [Guernsey] stehen Beobachtungstürme aus der Zeit, als die Engländer Angst vor den Franzosen hatten.“",
@@ -15333,12 +15333,100 @@
   },
   "d6a932b608": {
     "text": "„In meinem Tagebuch war ich, wenn mir meine Geschichte zu intim wurde, in Präteritum und Konjunktiv geflüchtet, hatte direkte und indirekte Rede gekehrt, Gegenwart in Vergangenheit entrückt, hatte Distanz geschaffen, das Geschehen entschärft.“",
-    "translation": null,
+    "translation": "\"In my diary, when my story became too intimate, I retreated into the preterite and subjunctive, reversed direct and indirect speech, displaced the present into the past, created distance, and defused the events.\"",
     "source": "wiktionary",
     "lemmas": [
       "Präteritum",
       "Konjunktiv"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tagebuch",
+        "lemma": "Tagebuch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geschichte",
+        "lemma": "Geschichte",
+        "pos": "noun",
+        "gloss_hint": "story"
+      },
+      {
+        "form": "intim",
+        "lemma": "intim",
+        "pos": "adjective",
+        "gloss_hint": "intimate"
+      },
+      {
+        "form": "geflüchtet",
+        "lemma": "flüchten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Präteritum",
+        "lemma": "Präteritum",
+        "pos": "noun",
+        "gloss_hint": "preterite"
+      },
+      {
+        "form": "Konjunktiv",
+        "lemma": "Konjunktiv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rede",
+        "lemma": "Rede",
+        "pos": "noun",
+        "gloss_hint": "speech"
+      },
+      {
+        "form": "gekehrt",
+        "lemma": "kehren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gegenwart",
+        "lemma": "Gegenwart",
+        "pos": "noun",
+        "gloss_hint": "present"
+      },
+      {
+        "form": "Vergangenheit",
+        "lemma": "Vergangenheit",
+        "pos": "noun",
+        "gloss_hint": "past"
+      },
+      {
+        "form": "entrückt",
+        "lemma": "entrücken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Distanz",
+        "lemma": "Distanz",
+        "pos": "noun",
+        "gloss_hint": "emotional distance"
+      },
+      {
+        "form": "Geschehen",
+        "lemma": "Geschehen",
+        "pos": "noun",
+        "gloss_hint": "event"
+      },
+      {
+        "form": "entschärft",
+        "lemma": "entschärfen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„In meinem [[Tagebuch|nouns/Tagebuch]] war ich, wenn mir meine [[Geschichte|nouns/Geschichte#1]] zu [[intim|adjectives/intim#1]] wurde, in [[Präteritum|nouns/Präteritum#1]] und [[Konjunktiv|nouns/Konjunktiv]] [[geflüchtet|verbs/flüchten]], hatte direkte und indirekte [[Rede|nouns/Rede#1]] [[gekehrt|verbs/kehren]], [[Gegenwart|nouns/Gegenwart#1]] in [[Vergangenheit|nouns/Vergangenheit#1]] entrückt, hatte [[Distanz|nouns/Distanz#3]] geschaffen, das [[Geschehen|nouns/Geschehen#1]] [[entschärft|verbs/entschärfen]].“"
   },
   "d6aaf25460": {
     "text": "Die Kerze ist gleich abgebrannt.",
@@ -15666,7 +15754,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Der|determiners/der]] [[Hengst|nouns/Hengst#1]] [[galoppiert|verbs/galoppieren]] [[den|determiners/der]] [[Zaun|nouns/Zaun#1]] entlang."
+    "text_linked": "[[Der|determiners/der]] [[Hengst|nouns/Hengst#1]] [[galoppiert|verbs/galoppieren]] [[den|determiners/der]] [[Zaun|nouns/Zaun#1]] [[entlang|postpositions/entlang]]."
   },
   "d6afb49e9a": {
     "text": "jemandem nicht das Schwarze unter den Nägeln",
@@ -17319,11 +17407,39 @@
   },
   "d6bce53587": {
     "text": "„Wir erleben seit kurzem eine rasante Entwertung des Europa-Begriffs.“",
-    "translation": null,
+    "translation": "\"We have been experiencing a rapid devaluation of the concept of Europe for some time now.\"",
     "source": "wiktionary",
     "lemmas": [
       "Entwertung"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "erleben",
+        "lemma": "erleben",
+        "pos": "verb",
+        "gloss_hint": "experience"
+      },
+      {
+        "form": "rasante",
+        "lemma": "rasant",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Entwertung",
+        "lemma": "Entwertung",
+        "pos": "noun",
+        "gloss_hint": "devaluation"
+      },
+      {
+        "form": "Europa-Begriffs",
+        "lemma": "Europa-Begriff",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Wir [[erleben|verbs/erleben#1]] seit kurzem eine rasante [[Entwertung|nouns/Entwertung#2]] des Europa-Begriffs.“"
   },
   "d6be712329": {
     "text": "„Die unerwartete Vernichtung des Koͤnigthums, das fuͤnfzehn Jahrhunderte aufrecht geſtanden hatte, das ſo feſt zu ſtehen ſchien, beweiſt einmal mehr, wie wenig auf die ſcheinbare Dauer der Dinge zu bauen ſey, und ſtatt deſſen, ſtatt des getraͤumten Reichs von Freiheit, von Gleichheit von Menſchenrechten ſtand nur das der Gewalt, der Bubenobenheit, der Rechtsverachtung da, und die Kriegsheere, die dieſes umzuſtoßen nur den dafür vereinigten Willen bedurften; Kriegsheere, wo altfranzoͤſiſche Biedernheit noch mehr als außer ihnen zu finden war, erkannten es an!!!“",
@@ -17599,11 +17715,39 @@
   },
   "d6bf05cf71": {
     "text": "„die Sache“ ist feminin, „das Weib“ ist ein Neutrum.",
-    "translation": null,
+    "translation": "\"The word 'Sache' is feminine, 'das Weib' is a neuter noun.\"",
     "source": "wiktionary",
     "lemmas": [
       "feminin"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sache",
+        "lemma": "Sache",
+        "pos": "noun",
+        "gloss_hint": "thing"
+      },
+      {
+        "form": "feminin",
+        "lemma": "feminin",
+        "pos": "adjective",
+        "gloss_hint": "feminine (grammatical)"
+      },
+      {
+        "form": "Weib",
+        "lemma": "Weib",
+        "pos": "noun",
+        "gloss_hint": "woman"
+      },
+      {
+        "form": "Neutrum",
+        "lemma": "Neutrum",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„die [[Sache|nouns/Sache#1]]“ ist [[feminin|adjectives/feminin#1]], „das [[Weib|nouns/Weib#1]]“ ist ein Neutrum."
   },
   "d6bfe8e9b6": {
     "text": "„Die Soldaten der französischen Armee stürzten sich bei Borodino nicht auf Befehl Napoleons, sondern ihrem eigenen Triebe folgend in das Gemetzel.“",
@@ -18737,7 +18881,7 @@
         "gloss_hint": "sneeze"
       }
     ],
-    "text_linked": "„[[Jetzt|adverbs/jetzt]] [[nun|adverbs/nun]], [[nachdem|conjunctions/nachdem]] [[es|pronouns/es]] [[soweit|conjunctions/soweit]] [[ist|verbs/sein]], [[jetzt|adverbs/jetzt]], [[da|adverbs/da]] [[von|prepositions/von]] [[russischer|adjectives/russisch]] [[Seite|nouns/Seite#11]] [[mehrfach|adjectives/mehrfach]] [[und|conjunctions/und]] [[in|prepositions/in]] aller Deutlichkeit [[gesagt|verbs/sagen]] [[wurde|verbs/werden]], daß sie alles [[tun|verbs/tun_meist#1]] [[werden|verbs/werden]], [[um|prepositions/um]] [[die|determiners/die]] [[Wiedervereinigung|nouns/Wiedervereinigung]] [[unter|prepositions/unter]] [[westlichen|adjectives/westlich]] Vorzeichen [[zu|prepositions/zu]] [[verhindern|verbs/verhindern#1]], jetzt, [[wo|adverbs/wo]] [[feststeht|verbs/feststehen]], daß die Wiedervereinigung, [[wenn|conjunctions/wenn]] [[überhaupt|adverbs/überhaupt]], [[nur|particles/nur#1]] [[mit|prepositions/mit]] [[Hilfe|nouns/Hilfe#2]] [[der|pronouns/der_nominativ]] Westmächte zu [[erreichen|verbs/erreichen#1]] ist, werden in Moskau freundschaftliche Beteuerungen [[ausgetauscht|verbs/austauschen]], die [[uns|pronouns/wir]] [[im|prepositions/in]] [[Osten|nouns/Osten#1]] nichts [[nützen|verbs/nützen]] und die [[den|determiners/der]] [[Westen|nouns/Westen#2]] verschnupfen.“"
+    "text_linked": "„[[Jetzt|adverbs/jetzt]] [[nun|adverbs/nun]], [[nachdem|conjunctions/nachdem]] [[es|pronouns/es]] [[soweit|conjunctions/soweit]] [[ist|verbs/sein]], [[jetzt|adverbs/jetzt]], [[da|adverbs/da]] [[von|prepositions/von]] [[russischer|adjectives/russisch]] [[Seite|nouns/Seite#11]] [[mehrfach|adjectives/mehrfach]] [[und|conjunctions/und]] [[in|prepositions/in]] aller Deutlichkeit [[gesagt|verbs/sagen]] [[wurde|verbs/werden]], daß sie alles [[tun|verbs/tun_meist#1]] [[werden|verbs/werden]], [[um|prepositions/um]] [[die|determiners/die]] [[Wiedervereinigung|nouns/Wiedervereinigung]] [[unter|prepositions/unter]] [[westlichen|adjectives/westlich]] Vorzeichen [[zu|prepositions/zu]] [[verhindern|verbs/verhindern#1]], jetzt, [[wo|adverbs/wo]] [[feststeht|verbs/feststehen#1]], daß die Wiedervereinigung, [[wenn|conjunctions/wenn]] [[überhaupt|adverbs/überhaupt]], [[nur|particles/nur#1]] [[mit|prepositions/mit]] [[Hilfe|nouns/Hilfe#2]] [[der|pronouns/der_nominativ]] Westmächte zu [[erreichen|verbs/erreichen#1]] ist, werden in Moskau freundschaftliche Beteuerungen [[ausgetauscht|verbs/austauschen]], die [[uns|pronouns/wir]] [[im|prepositions/in]] [[Osten|nouns/Osten#1]] nichts [[nützen|verbs/nützen]] und die [[den|determiners/der]] [[Westen|nouns/Westen#2]] verschnupfen.“"
   },
   "d6c567a750": {
     "text": "Das Medikament ist nur in kleinen Mengen einzunehmen.",
@@ -19305,7 +19449,7 @@
         "gloss_hint": "reclaim"
       }
     ],
-    "text_linked": "„[[Darum|adverbs/darum]] [[ist|verbs/sein#2]] [[es|pronouns/es]] [[nur|particles/nur]] [[bei|prepositions/bei]] [[einem|determiners/ein]] [[Volke|nouns/Volk#3]] [[möglich|adjectives/möglich#4]], [[wo|adverbs/wo]] [[die|determiners/die]] Verstandeskraft die [[höchste|adjectives/hoch]] [[Stufe|nouns/Stufe#2]] [[erreicht|verbs/erreichen#1]], wo [[selbst|pronouns/selbst#1]] [[positiver|adjectives/positiv]] [[Widerstand|nouns/Widerstand#1]] [[gegen|particles/gegen#1]] [[den|determiners/der]] [[Machthaber|nouns/Machthaber#1]] [[noch|adverbs/noch#3]] die Grenzlinie [[seiner|pronouns/sein#1]] [[Pflicht|nouns/Pflicht#1]] [[erkennt|verbs/erkennen#1]] [[und|conjunctions/und#1]] [[so|adverbs/so]], [[ohne|prepositions/ohne]] [[in|prepositions/in]] [[Verwirrung|nouns/Verwirrung#2]] und [[Anarchie|nouns/Anarchie]] [[auszuarten|verbs/ausarten]], [[seine|pronouns/sein#1]] [[Rechte|nouns/Rechte#1]] [[behauptet|verbs/behaupten#2]] [[oder|particles/oder#5]] die verlorenen [[wieder|adverbs/wieder#1]] [[erobert|verbs/erobern]].“"
+    "text_linked": "„[[Darum|adverbs/darum]] [[ist|verbs/sein#2]] [[es|pronouns/es]] [[nur|particles/nur]] [[bei|prepositions/bei]] [[einem|determiners/ein]] [[Volke|nouns/Volk#3]] [[möglich|adjectives/möglich#4]], [[wo|adverbs/wo]] [[die|determiners/die]] Verstandeskraft die [[höchste|adjectives/hoch]] [[Stufe|nouns/Stufe#2]] [[erreicht|verbs/erreichen#1]], wo [[selbst|pronouns/selbst#1]] [[positiver|adjectives/positiv]] [[Widerstand|nouns/Widerstand#1]] [[gegen|particles/gegen#1]] [[den|determiners/der]] [[Machthaber|nouns/Machthaber#1]] [[noch|adverbs/noch#3]] die Grenzlinie [[seiner|pronouns/sein#1]] [[Pflicht|nouns/Pflicht#1]] [[erkennt|verbs/erkennen#1]] [[und|conjunctions/und#1]] [[so|adverbs/so]], [[ohne|prepositions/ohne]] [[in|prepositions/in]] [[Verwirrung|nouns/Verwirrung#2]] und [[Anarchie|nouns/Anarchie]] auszuarten, [[seine|pronouns/sein#1]] [[Rechte|nouns/Rechte#1]] [[behauptet|verbs/behaupten#2]] [[oder|particles/oder#5]] die verlorenen [[wieder|adverbs/wieder#1]] [[erobert|verbs/erobern]].“"
   },
   "d6cb84f230": {
     "text": "„Es gab da eine nette junge Griechin namens Myrsine Moschos, die vor ein paar Tagen hier gewesen war und Sylvia gesagt hatte, dass sie einen Job suche und gern etwas mit Büchern und Schriftstellern machen würde.“",
@@ -19879,7 +20023,7 @@
         "gloss_hint": "facing down"
       }
     ],
-    "text_linked": "Am [[Mittwoch|nouns/Mittwoch]] gegen 18 [[Uhr|nouns/Uhr#2]] [[fielen|verbs/fallen#1]] [[vor|prepositions/vor#1]] [[einem|determiners/ein]] Einkaufsmarkt [[in|prepositions/in#1]] [[der|determiners/der]] Rodinger [[Straße|nouns/Straße#2]] in Cham [[zwei|numerals/zwei#1]] [[Bettlerinnen|nouns/Bettlerin#1]] [[auf|prepositions/auf#4]]. Die zwei rumänischen Staatsangehörigen, 22 und 40 Jahre alt, […]"
+    "text_linked": "Am [[Mittwoch|nouns/Mittwoch]] gegen 18 [[Uhr|nouns/Uhr#2]] [[fielen|verbs/fallen#1]] [[vor|prepositions/vor#1]] [[einem|determiners/ein]] Einkaufsmarkt [[in|prepositions/in#1]] [[der|determiners/der]] Rodinger [[Straße|nouns/Straße#2]] in Cham [[zwei|numerals/zwei#1]] [[Bettlerinnen|nouns/Bettlerin#1]] [[auf|prepositions/auf]]. Die zwei rumänischen Staatsangehörigen, 22 und 40 Jahre alt, […]"
   },
   "d6d1bce166": {
     "text": "Sie ist meine beste Freundin.",
@@ -21282,7 +21426,7 @@
         "gloss_hint": "draw"
       }
     ],
-    "text_linked": "„[[Das|pronouns/das_[1]]] [[Essen|nouns/Essen#4]] [[ist|verbs/sein#4]] [[rein|adjectives/rein#2]] geschmacklich [[gar|adjectives/gar#2]] [[nicht|particles/nicht#1]] [[schlecht|adjectives/schlecht#2]]. [[Wobei|adverbs/wobei]] [[man|pronouns/man]] [[jetzt|adverbs/jetzt#1]] [[schon|particles/schon_antwort#1]] [[sagen|verbs/sagen#1]] [[muss|verbs/müssen#1]], [[dass|conjunctions/dass]] [[das|pronouns/das_[1]]] [[Auge|nouns/Auge#1]] [[eindeutig|adjectives/eindeutig]] [[mitisst|verbs/mitessen]]. [[Und|conjunctions/und]] [[weil|conjunctions/weil_konjunktion]] [[wir|pronouns/wir]] [[hier|adverbs/hier]] [[nur|particles/nur#1]] [[aus|prepositions/aus#1]] [[Tüten|nouns/Tüte]] [[und|conjunctions/und]] [[Gläsern|nouns/Glas_durchsichtiger]] [[essen|verbs/essen#1]], [[haben|verbs/haben#1]] unsere [[Augen|nouns/Auge#1]] [[heut|adverbs/heute#1]] eindeutig [[die|pronouns/die]] Arschkarte [[gezogen|verbs/ziehen#4]].“"
+    "text_linked": "„[[Das|pronouns/das_[1]]] [[Essen|nouns/Essen#4]] [[ist|verbs/sein#4]] [[rein|adjectives/rein#2]] geschmacklich [[gar|adjectives/gar#2]] [[nicht|particles/nicht#1]] [[schlecht|adjectives/schlecht#2]]. [[Wobei|adverbs/wobei]] [[man|pronouns/man]] [[jetzt|adverbs/jetzt#1]] [[schon|particles/schon_antwort#1]] [[sagen|verbs/sagen#1]] [[muss|verbs/müssen#1]], [[dass|conjunctions/dass]] [[das|pronouns/das_[1]]] [[Auge|nouns/Auge#1]] [[eindeutig|adjectives/eindeutig]] mitisst. [[Und|conjunctions/und]] [[weil|conjunctions/weil_konjunktion]] [[wir|pronouns/wir]] [[hier|adverbs/hier]] [[nur|particles/nur#1]] [[aus|prepositions/aus#1]] [[Tüten|nouns/Tüte]] [[und|conjunctions/und]] [[Gläsern|nouns/Glas_durchsichtiger]] [[essen|verbs/essen#1]], [[haben|verbs/haben#1]] unsere [[Augen|nouns/Auge#1]] [[heut|adverbs/heute#1]] eindeutig [[die|pronouns/die]] Arschkarte [[gezogen|verbs/ziehen#4]].“"
   },
   "d6dee0e776": {
     "text": "Das ist so nach Adam Riese.",
@@ -21904,7 +22048,7 @@
         "gloss_hint": "thread"
       }
     ],
-    "text_linked": "„[[Offenbar|adjectives/offenbar]] [[hängt|verbs/hängen_einem]] [[die|pronouns/die]] WM-Teilnahme [Anmerkung: [[des|pronouns/der_nominativ]] [[Torwarts|nouns/Torwart#1]] Manuel] Neuers, [[der|pronouns/der_nominativ]] [[nach|prepositions/nach#1]] [[langer|adjectives/lang#1]] Verletzungspause [[wegen|prepositions/wegen#1]] [[eines|determiners/ein#1]] Mittelfußbruchs [[auf|prepositions/auf#1]] [[sein|verbs/sein#1]] [[Comeback|nouns/Comeback#1]] [[hinarbeitet|verbs/hinarbeiten]], [[am|prepositions/an#2]] seidenen [[Faden|nouns/Faden#1]].“"
+    "text_linked": "„[[Offenbar|adjectives/offenbar]] [[hängt|verbs/hängen_einem]] [[die|pronouns/die]] WM-Teilnahme [Anmerkung: [[des|pronouns/der_nominativ]] [[Torwarts|nouns/Torwart#1]] Manuel] Neuers, [[der|pronouns/der_nominativ]] [[nach|prepositions/nach#1]] [[langer|adjectives/lang#1]] Verletzungspause [[wegen|prepositions/wegen#1]] [[eines|determiners/ein#1]] Mittelfußbruchs [[auf|prepositions/auf#1]] [[sein|verbs/sein#1]] [[Comeback|nouns/Comeback#1]] hinarbeitet, [[am|prepositions/an#2]] seidenen [[Faden|nouns/Faden#1]].“"
   },
   "d6e17ee8ff": {
     "text": "Im Referat für Naturschutz kann man alle gefährdeten Tierarten erfragen.",
@@ -23024,7 +23168,7 @@
         "gloss_hint": "remain silent"
       }
     ],
-    "text_linked": "„Und da sie, befangen [[durch|prepositions/durch]] [[seine|pronouns/sein]] [[Gegenwart|nouns/Gegenwart#1]], [[den|determiners/der]] [[Grund|nouns/Grund#1]] [[nicht|particles/nicht]] [[nennen|verbs/nennen#1]] [[konnte|verbs/können_beherrschen]], [[warum|adverbs/warum]] sie [[mit|prepositions/mit]] [[einem|determiners/ein]] [[Mal|nouns/Mal_bestimmter#1]] [[lässig|adjectives/lässig#1]] [[geworden|verbs/werden#1]] [[war|verbs/sein#2]], [[schwieg|verbs/schweigen]] sie.“"
+    "text_linked": "„Und da sie, befangen [[durch|prepositions/durch]] [[seine|pronouns/sein]] [[Gegenwart|nouns/Gegenwart#1]], [[den|determiners/der]] [[Grund|nouns/Grund#1]] [[nicht|particles/nicht]] [[nennen|verbs/nennen#1]] [[konnte|verbs/können_etwas#1]], [[warum|adverbs/warum]] sie [[mit|prepositions/mit]] [[einem|determiners/ein]] [[Mal|nouns/Mal_bestimmter#1]] [[lässig|adjectives/lässig#1]] [[geworden|verbs/werden#1]] [[war|verbs/sein#2]], [[schwieg|verbs/schweigen]] sie.“"
   },
   "d6eaecc9c4": {
     "text": "Wir sind gegenwärtig auf der Suche nach einem Nachfolger.",

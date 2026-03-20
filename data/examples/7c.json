@@ -515,11 +515,33 @@
   },
   "7c060ac61e": {
     "text": "„Ein Adjektiv kann wie ein Adverb gebraucht werden.“",
-    "translation": null,
+    "translation": "\"An adjective can be used like an adverb.\"",
     "source": "wiktionary",
     "lemmas": [
       "Adjektiv"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Adjektiv",
+        "lemma": "Adjektiv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gebraucht",
+        "lemma": "gebrauchen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Adverb",
+        "lemma": "Adverb",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Ein [[Adjektiv|nouns/Adjektiv]] kann wie ein Adverb [[gebraucht|verbs/gebrauchen]] werden.“"
   },
   "7c061870e1": {
     "text": "Viele Kinder schauen gerne Zügen zu.",
@@ -10569,7 +10591,7 @@
         "gloss_hint": "again"
       }
     ],
-    "text_linked": "Wieder [[sehen|verbs/sehen#1]] [[zu können|verbs/können_etwas#1]] ist [[nicht|particles/nicht#1]] [[unbezahlbar|adjectives/unbezahlbar#2]], schreibt die Christoffel-Blindenmission."
+    "text_linked": "Wieder [[sehen|verbs/sehen#1]] [[zu können|verbs/können_beherrschen]] ist [[nicht|particles/nicht#1]] [[unbezahlbar|adjectives/unbezahlbar#2]], schreibt die Christoffel-Blindenmission."
   },
   "7c71049b07": {
     "text": "„Ich wollte unbedingt noch mal vom Dreier springen, aber der Bademeister hat den Turm erst so spät aufgemacht.“",
@@ -11514,7 +11536,7 @@
         "gloss_hint": "hide"
       }
     ],
-    "text_linked": "Die [[Leiste|nouns/Leiste#1]] [[am|prepositions/an]] linken [[Rand|nouns/Rand_äußere#1]] [[kann|verbs/können_beherrschen]] [[man|pronouns/man#2]] [[ausblenden|verbs/ausblenden]]."
+    "text_linked": "Die [[Leiste|nouns/Leiste#1]] [[am|prepositions/an]] linken [[Rand|nouns/Rand_äußere#1]] [[kann|verbs/können_etwas#1]] [[man|pronouns/man#2]] [[ausblenden|verbs/ausblenden]]."
   },
   "7c7ec36f1d": {
     "text": "„Männliche Prostituierte sind keine homogene Gruppe: Herkunft, Hintergründe, Probleme und die Formen der Prostitution unterscheiden sich in hohem Maße.“",
@@ -12046,7 +12068,7 @@
         "gloss_hint": "work"
       }
     ],
-    "text_linked": "„Unterdeß [[hat|verbs/haben#1]] [[der|pronouns/der_nominativ]] Leibjäger [[die|pronouns/die]] [[dicke|adjectives/dick#1]] Ledermappe [[in|prepositions/in#2]] [[das|pronouns/das_[1]]] [[Zimmer|nouns/Zimmer#1]] [[gebracht|verbs/bringen#3]], der [[Kaiser|nouns/Kaiser#1]] [[zieht|verbs/ziehen]] [[einen|determiners/ein]] [[Schlüssel|nouns/Schlüssel#1]], [[öffnet|verbs/öffnen#1]] dieselbe, [[knöpft|verbs/knöpfen]] [[sich|pronouns/sich#1]] [[den|determiners/der]] [[Rock|nouns/Rock_unten#2]] [[auf|prepositions/auf#1]], [[setzt|verbs/setzen]] sich in den [[geschnitzten|verbs/schnitzen]] Schreibstuhl [[an|prepositions/an#2]] den [[Schreibtisch|nouns/Schreibtisch#1]] [[und|conjunctions/und]] [[macht|verbs/machen]] sich an die [[Arbeit|nouns/Arbeit#1]].“"
+    "text_linked": "„Unterdeß [[hat|verbs/haben#1]] [[der|pronouns/der_nominativ]] Leibjäger [[die|pronouns/die]] [[dicke|adjectives/dick#1]] Ledermappe [[in|prepositions/in#2]] [[das|pronouns/das_[1]]] [[Zimmer|nouns/Zimmer#1]] [[gebracht|verbs/bringen#3]], der [[Kaiser|nouns/Kaiser#1]] [[zieht|verbs/ziehen]] [[einen|determiners/ein]] [[Schlüssel|nouns/Schlüssel#1]], [[öffnet|verbs/öffnen#1]] dieselbe, [[knöpft|verbs/knöpfen]] [[sich|pronouns/sich#1]] [[den|determiners/der]] [[Rock|nouns/Rock_unten#2]] [[auf|prepositions/auf#1]], [[setzt|verbs/setzen]] sich in den [[geschnitzten|verbs/schnitzen#1]] Schreibstuhl [[an|prepositions/an#2]] den [[Schreibtisch|nouns/Schreibtisch#1]] [[und|conjunctions/und]] [[macht|verbs/machen]] sich an die [[Arbeit|nouns/Arbeit#1]].“"
   },
   "7c896fbc4c": {
     "text": "„Mit einer Verkehrsblockade demonstrierten am Dienstagmorgen mehrere Aktivistinnen und Aktivisten bei der Autobahn-Ausfahrt Bern-Wankdorf für mehr Klimaschutz.“",
@@ -18165,11 +18187,75 @@
   },
   "7cd7cb9168": {
     "text": "„Eine schwedische Studie an fast zweitausend Probanden zeigt, dass Frauen sehr viel besser darin sind, Gesichter wiederzuerkennen, als Männer.“",
-    "translation": null,
+    "translation": "\"A Swedish study of almost two thousand subjects shows that women are much better at recognizing faces than men.\"",
     "source": "wiktionary",
     "lemmas": [
       "zweitausend"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "schwedische",
+        "lemma": "schwedisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Studie",
+        "lemma": "Studie",
+        "pos": "noun",
+        "gloss_hint": "study"
+      },
+      {
+        "form": "zweitausend",
+        "lemma": "zweitausend",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Probanden",
+        "lemma": "Proband",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zeigt",
+        "lemma": "zeigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besser",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesichter",
+        "lemma": "Gesicht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wiederzuerkennen",
+        "lemma": "wiedererkennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Männer",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Eine [[schwedische|adjectives/schwedisch]] [[Studie|nouns/Studie#1]] an fast [[zweitausend|numerals/zweitausend]] Probanden [[zeigt|verbs/zeigen]], dass [[Frauen|nouns/Frau]] sehr viel [[besser|adjectives/gut]] darin sind, [[Gesichter|nouns/Gesicht]] [[wiederzuerkennen|verbs/wiedererkennen]], als [[Männer|nouns/Mann]].“"
   },
   "7cd811c19f": {
     "text": "„Ich erklärte dem Mädchen noch, wieso der Mond, vom Erdschatten gänzlich überdeckt, trotzdem so viel Licht hat, daß wir ihn deutlich sehen konnten, im Gegensatz zum Neumond, deutlicher sogar als sonst: nicht als leuchtende Scheibe wie sonst, sondern deutlich als Kugel, als Ball, als Körper, als Gestirn, als eine ungeheure Masse im leeren All, orange.“",
@@ -20451,7 +20537,7 @@
         "gloss_hint": "out"
       }
     ],
-    "text_linked": "„[[Mein|pronouns/mein]] [[Onkel|nouns/Onkel#1]] [[schlitzt|verbs/schlitzen]] [[das|pronouns/das_[1]]] [[Schwein|nouns/Schwein#1]] [[auf|prepositions/auf#1]], [[und|conjunctions/und]] [[die|pronouns/die]] [[dunklen|adjectives/dunkel]] [[Eingeweide|nouns/Eingeweide#1]] [[stürzen|verbs/stürzen#2]] [[heraus|adverbs/heraus#1]].“"
+    "text_linked": "„[[Mein|pronouns/mein]] [[Onkel|nouns/Onkel#1]] schlitzt [[das|pronouns/das_[1]]] [[Schwein|nouns/Schwein#1]] [[auf|prepositions/auf#1]], [[und|conjunctions/und]] [[die|pronouns/die]] [[dunklen|adjectives/dunkel]] [[Eingeweide|nouns/Eingeweide#1]] [[stürzen|verbs/stürzen#2]] [[heraus|adverbs/heraus#1]].“"
   },
   "7ce83ba357": {
     "text": "„Der Kamin ist einen guten Meter breit und ich stemme mich hoch.“",
@@ -20937,7 +21023,7 @@
         "gloss_hint": "car"
       }
     ],
-    "text_linked": "Zum Glück [[können|verbs/können_etwas#1]] [[Windschutzscheiben|nouns/Windschutzscheibe]] [[nicht|particles/nicht#1]] [[zerbrechen|verbs/zerbrechen#1]], [[sonst|adverbs/sonst]] [[hätten|verbs/haben#1]] [[wir|pronouns/wir]] [[jetzt|adverbs/jetzt]] [[ganz|adjectives/ganz#2]] viele Scherben [[im|prepositions/in]] [[Auto|nouns/Auto_automobil#1]]."
+    "text_linked": "Zum Glück [[können|verbs/können_beherrschen]] [[Windschutzscheiben|nouns/Windschutzscheibe]] [[nicht|particles/nicht#1]] [[zerbrechen|verbs/zerbrechen#1]], [[sonst|adverbs/sonst]] [[hätten|verbs/haben#1]] [[wir|pronouns/wir]] [[jetzt|adverbs/jetzt]] [[ganz|adjectives/ganz#2]] viele Scherben [[im|prepositions/in]] [[Auto|nouns/Auto_automobil#1]]."
   },
   "7ceb9dd5fb": {
     "text": "über den Tisch ziehen",

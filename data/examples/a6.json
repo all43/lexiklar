@@ -473,7 +473,7 @@
         "gloss_hint": "reach"
       }
     ],
-    "text_linked": "„[[Der|determiners/der]] »Seehund« [[konnte|verbs/können_beherrschen]] [[unter|prepositions/unter]] [[Wasser|nouns/Wasser#1]] [[eine|determiners/ein]] [[Geschwindigkeit|nouns/Geschwindigkeit#1]] [[von|prepositions/von]] [[sechs|numerals/sechs#1]] [[Knoten|nouns/Knoten#2]] [[erreichen|verbs/erreichen#1]].“"
+    "text_linked": "„[[Der|determiners/der]] »Seehund« [[konnte|verbs/können_etwas#1]] [[unter|prepositions/unter]] [[Wasser|nouns/Wasser#1]] [[eine|determiners/ein]] [[Geschwindigkeit|nouns/Geschwindigkeit#1]] [[von|prepositions/von]] [[sechs|numerals/sechs#1]] [[Knoten|nouns/Knoten#2]] [[erreichen|verbs/erreichen#1]].“"
   },
   "a6058ba173": {
     "text": "„Da der Kutscher mich mit dem Arm in der Schlinge erblickte, glaubte er, wie alle Leute in Radicófani, ich hätte mich duelliert.“",
@@ -4723,7 +4723,7 @@
         "gloss_hint": "unicorn"
       }
     ],
-    "text_linked": "Im Fantasy-Roman »Das letzte [[Einhorn|nouns/Einhorn#1]]« steht: „[[Nur|particles/nur]] [[diejenigen|determiners/diejenige]] [[können|verbs/können_etwas#2]] [[das|pronouns/das_[1]]] Einhorn [[als|conjunctions/als#2]] Einhorn [[erkennen|verbs/erkennen#1]], [[die|pronouns/die#1]] auch an Einhörner glauben.“"
+    "text_linked": "Im Fantasy-Roman »Das letzte [[Einhorn|nouns/Einhorn#1]]« steht: „[[Nur|particles/nur]] [[diejenigen|determiners/diejenige]] [[können|verbs/können_beherrschen]] [[das|pronouns/das_[1]]] Einhorn [[als|conjunctions/als#2]] Einhorn [[erkennen|verbs/erkennen#1]], [[die|pronouns/die#1]] auch an Einhörner glauben.“"
   },
   "a63ee33d17": {
     "text": "„Schlechter schnitt noch kein Präsident zu Beginn seiner Amtszeit ab.“",
@@ -5259,7 +5259,7 @@
     "lemmas": [
       "holen"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Mach",
@@ -9020,7 +9020,7 @@
         "gloss_hint": "technical knowledge"
       }
     ],
-    "text_linked": "„[[Nun|adverbs/nun]] [[können|verbs/können_etwas#2]] [[durchsichtige|adjectives/durchsichtig#1]] [[Wörter|nouns/Wort_kleinste]] [[zwar|conjunctions/zwar#1]] [[die|pronouns/die]] Merkfähigkeit im [[Zusammenhang|nouns/Zusammenhang#3]] [[Ausdruck|nouns/Ausdruck_wort#1]]/[[Inhalt|nouns/Inhalt#1]]/[[Außenwelt|nouns/Außenwelt#2]] [[vergrößern|verbs/vergrößern#1]], sie [[vermitteln|verbs/vermitteln#1]] [[aber|conjunctions/aber#1]] [[nicht|particles/nicht#1]] [[gleichzeitig|adjectives/gleichzeitig#1]] Sach- [[und|conjunctions/und#1]] Fachkenntnisse.“"
+    "text_linked": "„[[Nun|adverbs/nun]] [[können|verbs/können_beherrschen]] [[durchsichtige|adjectives/durchsichtig#1]] [[Wörter|nouns/Wort_kleinste]] [[zwar|conjunctions/zwar#1]] [[die|pronouns/die]] Merkfähigkeit im [[Zusammenhang|nouns/Zusammenhang#3]] [[Ausdruck|nouns/Ausdruck_wort#1]]/[[Inhalt|nouns/Inhalt#1]]/[[Außenwelt|nouns/Außenwelt#2]] [[vergrößern|verbs/vergrößern#1]], sie [[vermitteln|verbs/vermitteln#1]] [[aber|conjunctions/aber#1]] [[nicht|particles/nicht#1]] [[gleichzeitig|adjectives/gleichzeitig#1]] Sach- [[und|conjunctions/und#1]] Fachkenntnisse.“"
   },
   "a67ea7e5af": {
     "text": "Der Kirschrote Speitäubling ist eine giftige Pilzsorte.",
@@ -9933,11 +9933,33 @@
   },
   "a68974763e": {
     "text": "„Dieses Wort ist eine maßlose Übertreibung, ebenso wie sein Synonym Astronautik.“",
-    "translation": null,
+    "translation": "\"This word is an outrageous exaggeration, as is its synonym astronautics.\"",
     "source": "wiktionary",
     "lemmas": [
       "Synonym"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wort",
+        "lemma": "Wort",
+        "pos": "noun",
+        "gloss_hint": "word"
+      },
+      {
+        "form": "Übertreibung",
+        "lemma": "Übertreibung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Synonym",
+        "lemma": "Synonym",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Dieses [[Wort|nouns/Wort_kleinste#1]] ist eine maßlose Übertreibung, ebenso wie sein [[Synonym|nouns/Synonym]] Astronautik.“"
   },
   "a68992a327": {
     "text": "Welcher der Damen soll ich die Blumen geben?",
@@ -11105,7 +11127,7 @@
         "gloss_hint": "manage"
       }
     ],
-    "text_linked": "„[[Über|adverbs/über]] [[ein|determiners/ein]] [[neues|adjectives/neu]] Internetportal [[können|verbs/können_etwas#2]] [[Bürger|nouns/Bürger#1]] [[die|determiners/die]] [[wissenschaftlichen|adjectives/wissenschaftlich]] [[Analysen|nouns/Analyse]] [[des|determiners/des]] [[Bundestags|nouns/Bundestag]] [[anfordern|verbs/anfordern]].“"
+    "text_linked": "„[[Über|adverbs/über]] [[ein|determiners/ein]] [[neues|adjectives/neu]] Internetportal [[können|verbs/können_beherrschen]] [[Bürger|nouns/Bürger#1]] [[die|determiners/die]] [[wissenschaftlichen|adjectives/wissenschaftlich]] [[Analysen|nouns/Analyse]] [[des|determiners/des]] [[Bundestags|nouns/Bundestag]] [[anfordern|verbs/anfordern]].“"
   },
   "a699bafd8b": {
     "text": "„Zachäus ist von der Anziehungskraft Jesu begeistert.“",
@@ -15286,7 +15308,7 @@
         "gloss_hint": "document"
       }
     ],
-    "text_linked": "„[[Doch|particles/doch_betont]] [[die|determiners/die]] Catholic Commission for Justice and Peace [[sammelte|verbs/sammeln#1]] [[Informationen|nouns/Information#3]], sie [[interviewte|verbs/interviewen#1]] [[Opfer|nouns/Opfer#3]], [[sprach|verbs/sprechen#1]] [[mit|prepositions/mit#1]] [[Angehörigen|nouns/Angehöriger#2]] [[und|conjunctions/und]] [[konnte|verbs/können_beherrschen]] [[so|adverbs/so]] [[das|pronouns/das_[1]]] [[Ausmaß|nouns/Ausmaß#1]] [[der|pronouns/der_nominativ]] [[Gewalt|nouns/Gewalt#1]] [[dokumentieren|verbs/dokumentieren#1]].“"
+    "text_linked": "„[[Doch|particles/doch_betont]] [[die|determiners/die]] Catholic Commission for Justice and Peace [[sammelte|verbs/sammeln#1]] [[Informationen|nouns/Information#3]], sie [[interviewte|verbs/interviewen#1]] [[Opfer|nouns/Opfer#3]], [[sprach|verbs/sprechen#1]] [[mit|prepositions/mit#1]] [[Angehörigen|nouns/Angehöriger#2]] [[und|conjunctions/und]] [[konnte|verbs/können_etwas#1]] [[so|adverbs/so]] [[das|pronouns/das_[1]]] [[Ausmaß|nouns/Ausmaß#1]] [[der|pronouns/der_nominativ]] [[Gewalt|nouns/Gewalt#1]] [[dokumentieren|verbs/dokumentieren#1]].“"
   },
   "a6c2f1f86e": {
     "text": "„Lange spielte CCS in der Klimadebatte hierzulande kaum eine Rolle.“",
@@ -15923,7 +15945,7 @@
         "gloss_hint": "lay (pipes)"
       }
     ],
-    "text_linked": "„Die [[Gemeinde|nouns/Gemeinde#1]] [[hat|verbs/haben#1]] [[begonnen|verbs/beginnen#1]], [[die|determiners/die]] [[Straßen|nouns/Straße#2]] [[zu|particles/zu_drückt]] [[verbreitern|verbs/verbreitern]] [[und|conjunctions/und]] leistungsstärkere Abwasserrohre zu [[verlegen|verbs/verlegen]].“"
+    "text_linked": "„Die [[Gemeinde|nouns/Gemeinde#1]] [[hat|verbs/haben#1]] [[begonnen|verbs/beginnen#1]], [[die|determiners/die]] [[Straßen|nouns/Straße#2]] [[zu|particles/zu_drückt]] verbreitern [[und|conjunctions/und]] leistungsstärkere Abwasserrohre zu [[verlegen|verbs/verlegen]].“"
   },
   "a6cac93987": {
     "text": "„Der Kaiser kennt keine Parteien mehr, hier steht es schwarz auf weiß, das Land keine Rassen mehr, alle sprechen eine Sprache, alle verteidigen eine Mutter, Deutschland.“",
@@ -16197,11 +16219,33 @@
   },
   "a6cd4028fa": {
     "text": "Viele mussten lange warten, bis ihnen die Ausreise aus der DDR genehmigt wurde.",
-    "translation": null,
+    "translation": "Many had to wait a long time before they were granted permission to leave the GDR.",
     "source": "wiktionary",
     "lemmas": [
       "Ausreise"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "warten",
+        "lemma": "warten",
+        "pos": "verb",
+        "gloss_hint": "wait"
+      },
+      {
+        "form": "Ausreise",
+        "lemma": "Ausreise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "genehmigt",
+        "lemma": "genehmigen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Viele mussten lange [[warten|verbs/warten#1]], bis ihnen die [[Ausreise|nouns/Ausreise]] aus der DDR [[genehmigt|verbs/genehmigen]] wurde."
   },
   "a6cd80a4a7": {
     "text": "Der Sturz der Kurse an den Börsen war nicht vorhersehbar.",

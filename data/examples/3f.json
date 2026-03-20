@@ -1044,7 +1044,7 @@
         "gloss_hint": "head"
       }
     ],
-    "text_linked": "Der Freisinn [[schwächelt|verbs/schwächeln]] und [[die|pronouns/die]] [[Kommune|nouns/Kommune#1]] [[erhebt|verbs/erheben#1]] [[ihr|pronouns/ihr_zu#2]] [[Haupt|nouns/Haupt#1]]."
+    "text_linked": "Der Freisinn schwächelt und [[die|pronouns/die]] [[Kommune|nouns/Kommune#1]] [[erhebt|verbs/erheben#1]] [[ihr|pronouns/ihr_zu#2]] [[Haupt|nouns/Haupt#1]]."
   },
   "3f0924fa74": {
     "text": "„Anderer Not geringachten ist Grausamkeit und findet sich bei denen, welche dergleichen nicht selbst fürchten zu müssen glauben; daß sich aber jemand über die Not anderer ohne alle Ursache freuen sollte, scheint mir fast unmöglich.“",
@@ -2541,11 +2541,51 @@
   },
   "3f1151ee52": {
     "text": "Der besitzanzeigende Genitiv (Genitivus possessivus) drückt aus, wessen Eigentum eine Sache ist.",
-    "translation": null,
+    "translation": "The possessive genitive (genitivus possessivus) expresses whose property something is.",
     "source": "wiktionary",
     "lemmas": [
       "Genitiv"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "besitzanzeigende",
+        "lemma": "besitzanzeigend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Genitiv",
+        "lemma": "Genitiv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Genitivus",
+        "lemma": "Genitivus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "possessivus",
+        "lemma": "possessivus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eigentum",
+        "lemma": "Eigentum",
+        "pos": "noun",
+        "gloss_hint": "property"
+      },
+      {
+        "form": "Sache",
+        "lemma": "Sache",
+        "pos": "noun",
+        "gloss_hint": "thing"
+      }
+    ],
+    "text_linked": "Der besitzanzeigende [[Genitiv|nouns/Genitiv]] (Genitivus possessivus) drückt aus, wessen [[Eigentum|nouns/Eigentum#1]] eine [[Sache|nouns/Sache#1]] ist."
   },
   "3f11fe34d7": {
     "text": "Das durchgescheuerte Kabel versuchten sie mit Tape abzuisolieren.",
@@ -3016,7 +3056,7 @@
         "gloss_hint": "exist"
       }
     ],
-    "text_linked": "Japan [[erklärt|verbs/erklären#2]] [[Bitcoins|nouns/Bitcoin]] [[zum|prepositions/zu]] Zahlungsmittel, [[bald|adverbs/bald#1]] [[könnte|verbs/können_beherrschen]] [[es|pronouns/es]] [[einen|determiners/ein]] Bitcoin-Fonds [[geben|verbs/geben#2]]."
+    "text_linked": "Japan [[erklärt|verbs/erklären#2]] [[Bitcoins|nouns/Bitcoin]] [[zum|prepositions/zu]] Zahlungsmittel, [[bald|adverbs/bald#1]] [[könnte|verbs/können_etwas#5]] [[es|pronouns/es]] [[einen|determiners/ein]] Bitcoin-Fonds [[geben|verbs/geben#2]]."
   },
   "3f1363c3c0": {
     "text": "Ökonomen müssen sich die Finger schmutzig machen, indem sie direkt mit rohem Datenmaterial arbeiten.",
@@ -6640,15 +6680,79 @@
         "gloss_hint": "lot (batch)"
       }
     ],
-    "text_linked": "„[[Nun|adverbs/nun#1]] gut, [[vierzehn|numerals/vierzehn#1]] [[Tage|nouns/Tag_zeitraum#1]] [[nach|prepositions/nach#1]] [[dem|determiners/der]] [[Desaster|nouns/Desaster]] [[kann|verbs/können_beherrschen]] [[noch|adverbs/noch#2]] [[nicht|particles/nicht#1]] alles [[wieder|adverbs/wieder#1]] [[im|prepositions/in]] [[Lot|nouns/Lot_zulaufendes]] sein.“"
+    "text_linked": "„[[Nun|adverbs/nun#1]] gut, [[vierzehn|numerals/vierzehn#1]] [[Tage|nouns/Tag_zeitraum#1]] [[nach|prepositions/nach#1]] [[dem|determiners/der]] [[Desaster|nouns/Desaster]] [[kann|verbs/können_etwas#1]] [[noch|adverbs/noch#2]] [[nicht|particles/nicht#1]] alles [[wieder|adverbs/wieder#1]] [[im|prepositions/in]] [[Lot|nouns/Lot_zulaufendes]] sein.“"
   },
   "3f38a7b974": {
     "text": "„Während ich auf dem Riesenball hüpfte und mal wieder meine Nasenspitze antippen durfte, erzählte sie mir von einer Fehlgeburt, einem Computerbrand und davon, wie sehr sie die Wiener Nachspeisen liebte.“",
-    "translation": null,
+    "translation": "While I bounced on the exercise ball and was allowed to tap my nose tip again, she told me about a miscarriage, a computer fire, and how much she loved Viennese desserts.",
     "source": "wiktionary",
     "lemmas": [
       "Nachspeise"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hüpfte",
+        "lemma": "hüpfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Riesenball",
+        "lemma": "Riesenball",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nasenspitze",
+        "lemma": "Nasenspitze",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "antippen",
+        "lemma": "antippen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "erzählte",
+        "lemma": "erzählen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fehlgeburt",
+        "lemma": "Fehlgeburt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Computerbrand",
+        "lemma": "Computerbrand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wiener",
+        "lemma": "Wiener",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nachspeisen",
+        "lemma": "Nachspeise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "liebte",
+        "lemma": "lieben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Während ich auf dem Riesenball [[hüpfte|verbs/hüpfen]] und mal wieder meine Nasenspitze antippen durfte, [[erzählte|verbs/erzählen]] sie mir von einer [[Fehlgeburt|nouns/Fehlgeburt]], einem Computerbrand und davon, wie sehr sie die [[Wiener|adjectives/Wiener]] [[Nachspeisen|nouns/Nachspeise]] [[liebte|verbs/lieben]].“"
   },
   "3f39dd70ab": {
     "text": "Sie brüllen und pöbeln, sie beschimpfen nicht nur andere Spieler, Trainer und Schiedsrichter, sondern sogar ihre eigenen Kinder. Aggressive Eltern am Spielfeldrand werden für den Berliner Fußballverband zu einem immer größeren Problem.",
@@ -7754,7 +7858,11 @@
         "gloss_hint": "arrive"
       }
     ],
-    "text_linked": "„Die [[Kanzlerin|nouns/Kanzlerin#1]] [[kommt|verbs/kommen#1]], und alle so: ‚Yeeaah‘“"
+    "text_linked": "„Die [[Kanzlerin|nouns/Kanzlerin#1]] [[kommt|verbs/kommen#1]], und alle so: ‚Yeeaah‘“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "9fa5f681"
+    }
   },
   "3f41a1e6e3": {
     "text": "„Der Antragsteller kann Zinsen selbst für einen bestimmten Zeitraum berechnen und als ausgerechnete Zinsen in der linken Halbspalte […] des Formulars eintragen, […]“",
@@ -10107,7 +10215,7 @@
         "gloss_hint": "allow"
       }
     ],
-    "text_linked": "„Bei der [[Umleitung|nouns/Umleitung#2]] [[können|verbs/können_etwas#2]] [[Sie|nouns/Sie_besondere]] [[die|pronouns/die]] [[Ordner|nouns/Ordner#2]] [[in|prepositions/in]] vordefinierte Verzeichnisse [[auf|prepositions/auf]] [[den|determiners/der]] [[Servern|nouns/Server#1]] [[umleiten|verbs/umleiten#1]] [[oder|particles/oder#5]] [[für|prepositions/für]] jeden Anwender in [[einem|determiners/ein]] spezifischen Ordner [[automatisch|adjectives/automatisch#1]] [[ein|determiners/ein]] Verzeichnis für die Ordnerumleitung [[anlegen|verbs/anlegen#1]] [[lassen|verbs/lassen#3]].“"
+    "text_linked": "„Bei der [[Umleitung|nouns/Umleitung#2]] [[können|verbs/können_beherrschen]] [[Sie|nouns/Sie_besondere]] [[die|pronouns/die]] [[Ordner|nouns/Ordner#2]] [[in|prepositions/in]] vordefinierte Verzeichnisse [[auf|prepositions/auf]] [[den|determiners/der]] [[Servern|nouns/Server#1]] [[umleiten|verbs/umleiten#1]] [[oder|particles/oder#5]] [[für|prepositions/für]] jeden Anwender in [[einem|determiners/ein]] spezifischen Ordner [[automatisch|adjectives/automatisch#1]] [[ein|determiners/ein]] Verzeichnis für die Ordnerumleitung [[anlegen|verbs/anlegen#1]] [[lassen|verbs/lassen#3]].“"
   },
   "3f57d1a270": {
     "text": "schräger Otto",
@@ -13126,7 +13234,7 @@
         "gloss_hint": "open"
       }
     ],
-    "text_linked": "„Man [[müsse|verbs/müssen#1]] [[den|determiners/der]] [[Juden|nouns/Jude#1]] Österreichs [[beistehen|verbs/beistehen#1]], [[schrieb|verbs/schreiben#1]] er, er [[appelliere|verbs/appellieren]] [[an|prepositions/an]] [[das|pronouns/das_nominativ]] Weltgewissen, ihnen [[die|determiners/die#1]] [[Tore|nouns/Tor_großer]] [[in|prepositions/in]] andere [[Länder|nouns/Land#2]] [[sofort|adverbs/sofort]] [[zu|particles/zu_drückt]] [[öffnen|verbs/öffnen#1]].“"
+    "text_linked": "„Man [[müsse|verbs/müssen#1]] [[den|determiners/der]] [[Juden|nouns/Jude#1]] Österreichs [[beistehen|verbs/beistehen#1]], [[schrieb|verbs/schreiben#1]] er, er [[appelliere|verbs/appellieren#1]] [[an|prepositions/an]] [[das|pronouns/das_nominativ]] Weltgewissen, ihnen [[die|determiners/die#1]] [[Tore|nouns/Tor_großer]] [[in|prepositions/in]] andere [[Länder|nouns/Land#2]] [[sofort|adverbs/sofort]] [[zu|particles/zu_drückt]] [[öffnen|verbs/öffnen#1]].“"
   },
   "3f76cb709c": {
     "text": "„Die Polizei fand sie lebendig und unverletzt, und der Entführer hatte nie zuvor Vergleichbares getan.“",
@@ -13384,7 +13492,7 @@
         "gloss_hint": "colonies"
       }
     ],
-    "text_linked": "„[[Seit|prepositions/seit]] [[Jahrzehnten|nouns/Jahrzehnt#1]] [[schon|particles/schon_antwort#1]] [[schaffte|verbs/schaffen_etwas#1]] [[man|pronouns/man#2]] [[ständig|adjectives/ständig#1]] [[Nachschub|nouns/Nachschub#1]] [[über|prepositions/über#2]] [[den|determiners/der]] Atlantik [[und|conjunctions/und#1]] den Indischen [[Ozean|nouns/Ozean#1]] [[in|prepositions/in]] [[die|determiners/die]] älteren [[Kolonien|nouns/Kolonie#1]].“"
+    "text_linked": "„[[Seit|prepositions/seit]] [[Jahrzehnten|nouns/Jahrzehnt#1]] [[schon|particles/schon_antwort#1]] [[schaffte|verbs/schaffen_etwas]] [[man|pronouns/man#2]] [[ständig|adjectives/ständig#1]] [[Nachschub|nouns/Nachschub#1]] [[über|prepositions/über#2]] [[den|determiners/der]] Atlantik [[und|conjunctions/und#1]] den Indischen [[Ozean|nouns/Ozean#1]] [[in|prepositions/in]] [[die|determiners/die]] älteren [[Kolonien|nouns/Kolonie#1]].“"
   },
   "3f7dd7202c": {
     "text": "keine Miene verziehen",
@@ -13888,7 +13996,7 @@
         "gloss_hint": "bond"
       }
     ],
-    "text_linked": "„Sie [[[die|determiners/die]] [[an|prepositions/an]] einer … Solidargemeinschaft Beteiligten] [[schulden|verbs/schulden#2]] [[einander|pronouns/einander]] [[mehr|adverbs/mehr#1]] solidarischen [[Beistand|nouns/Beistand#1]] [[und|conjunctions/und]] brüderliche [[Liebe|nouns/Liebe#1]] [[als|conjunctions/als]] [[gegenüber|prepositions/gegenüber#2]] außenstehenden [[Dritten|nouns/Dritter]], und [[zwar|conjunctions/zwar#1]] [[um|prepositions/um]] [[so|adverbs/so]] mehr, [[je|adverbs/je]] [[enger|adjectives/eng]] [[das|pronouns/das_[1]]] sie verbindende [[Band|nouns/Band_plural#2]] ist.“"
+    "text_linked": "„Sie [[[die|determiners/die]] [[an|prepositions/an]] einer … Solidargemeinschaft Beteiligten] [[schulden|verbs/schulden#2]] [[einander|pronouns/einander]] [[mehr|adverbs/mehr#1]] solidarischen [[Beistand|nouns/Beistand#1]] [[und|conjunctions/und]] brüderliche [[Liebe|nouns/Liebe#1]] [[als|conjunctions/als]] [[gegenüber|prepositions/gegenüber#1]] außenstehenden [[Dritten|nouns/Dritter]], und [[zwar|conjunctions/zwar#1]] [[um|prepositions/um]] [[so|adverbs/so]] mehr, [[je|adverbs/je]] [[enger|adjectives/eng]] [[das|pronouns/das_[1]]] sie verbindende [[Band|nouns/Band_plural#2]] ist.“"
   },
   "3f808ec29a": {
     "text": "„Ein Mikrogramm ist tausendmal weniger als ein Milligramm.“",
@@ -13944,11 +14052,21 @@
   },
   "3f82ef952c": {
     "text": "Haben Sie evtl. ein Problem?",
-    "translation": null,
+    "translation": "Do you perhaps have a problem?",
     "source": "wiktionary",
     "lemmas": [
       "evtl."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Problem",
+        "lemma": "Problem",
+        "pos": "noun",
+        "gloss_hint": "problem"
+      }
+    ],
+    "text_linked": "Haben Sie evtl. ein [[Problem|nouns/Problem#1]]?"
   },
   "3f82fd3b7b": {
     "text": "„Er ließ immer noch den Blick über das Gelände schweifen.“",
@@ -13978,7 +14096,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Er ließ immer noch den [[Blick|nouns/Blick#1]] über das [[Gelände|nouns/Gelände#1]] [[schweifen|verbs/schweifen]].“"
+    "text_linked": "„Er ließ immer noch den [[Blick|nouns/Blick#1]] über das [[Gelände|nouns/Gelände#1]] schweifen.“"
   },
   "3f835f40b3": {
     "text": "Gib mir fünf Minuten Zeit, damit ich mich anziehen kann.",
@@ -15928,7 +16046,7 @@
         "gloss_hint": "state exam"
       }
     ],
-    "text_linked": "„Jura [[ist|verbs/sein#2]] [[schwer|adjectives/schwer#2]]? Jura ist [[leicht|adjectives/leicht#2]]! Selbst [[mein|pronouns/mein]] [[Professor|nouns/Professor#1]] [[hat|verbs/haben#1]] [[uns|pronouns/wir]] direkt [[gesagt|verbs/sagen#1]]: ‚Jura ist [[nicht|particles/nicht#1]] [[für|prepositions/für#1]] jedermann, viele [[schaffen|verbs/schaffen_etwas#1]] [[es|pronouns/es]] [[gar|adjectives/gar#2]] nicht [[zum|prepositions/zu#1]] Staatsexamen. […]‘“"
+    "text_linked": "„Jura [[ist|verbs/sein#2]] [[schwer|adjectives/schwer#2]]? Jura ist [[leicht|adjectives/leicht#2]]! Selbst [[mein|pronouns/mein]] [[Professor|nouns/Professor#1]] [[hat|verbs/haben#1]] [[uns|pronouns/wir]] direkt [[gesagt|verbs/sagen#1]]: ‚Jura ist [[nicht|particles/nicht#1]] [[für|prepositions/für#1]] jedermann, viele [[schaffen|verbs/schaffen_etwas]] [[es|pronouns/es]] [[gar|adjectives/gar#2]] nicht [[zum|prepositions/zu#1]] Staatsexamen. […]‘“"
   },
   "3f99afa1c8": {
     "text": "„Damit der Spieler deshalb nicht mit Absicht einen Pudel (d.h. in die Rinne neben der Bahn) wirft, muss er solange werfen, bis er mindestens ein Holz getroffen hat.“",
@@ -16715,11 +16833,73 @@
   },
   "3fa4864338": {
     "text": "„Entstanden in wundersamer Co-Evolution, hilft Musik dabei, uns in einer vornehmlich von Sprache und Verstand geprägten Welt mit uralten emotionalen Bedürfnissen zu versöhnen.“",
-    "translation": null,
+    "translation": "Arising from wondrous co-evolution, music helps us reconcile ourselves with ancient emotional needs in a world shaped primarily by language and reason.",
     "source": "wiktionary",
     "lemmas": [
       "vornehmlich"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Entstanden",
+        "lemma": "entstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Co-Evolution",
+        "lemma": "Co-Evolution",
+        "pos": "noun",
+        "gloss_hint": "biological evolution"
+      },
+      {
+        "form": "Musik",
+        "lemma": "Musik",
+        "pos": "noun",
+        "gloss_hint": "music"
+      },
+      {
+        "form": "Sprache",
+        "lemma": "Sprache",
+        "pos": "noun",
+        "gloss_hint": "language"
+      },
+      {
+        "form": "Verstand",
+        "lemma": "Verstand",
+        "pos": "noun",
+        "gloss_hint": "mind"
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      },
+      {
+        "form": "emotionalen",
+        "lemma": "emotional",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bedürfnissen",
+        "lemma": "Bedürfnis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "versöhnen",
+        "lemma": "versöhnen",
+        "pos": "verb",
+        "gloss_hint": "reconcile"
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "9ced8547"
+    },
+    "text_linked": "„[[Entstanden|verbs/entstehen]] in wundersamer Co-Evolution, hilft [[Musik|nouns/Musik#1]] dabei, uns in einer vornehmlich von [[Sprache|nouns/Sprache#1]] und [[Verstand|nouns/Verstand#1]] geprägten [[Welt|nouns/Welt#3]] mit uralten [[emotionalen|adjectives/emotional]] [[Bedürfnissen|nouns/Bedürfnis]] zu [[versöhnen|verbs/versöhnen#1]].“"
   },
   "3fa4e7c33a": {
     "text": "7 mal 7 macht 49. 5 und 8 macht 13.",
@@ -17328,7 +17508,7 @@
         "gloss_hint": "reward"
       }
     ],
-    "text_linked": "„Man [[pflegt|verbs/pflegen]] ([[wie|adverbs/wie#2]] [[man|pronouns/man#2]] [[sagt|verbs/sagen#1]]) dermal [[schon|particles/schon_antwort#1]] [[an|prepositions/an]] vielen [[Orten|nouns/Ort_lokalisierbarer#1]], [[die|pronouns/die#2]] [[Gelehrten|nouns/Gelehrter#1]] [[und|conjunctions/und#1]] [[Künstler|nouns/Künstler#1]], [[mit|prepositions/mit#1]] [[lauter|adjectives/lauter]] [[Bravo|nouns/Bravo_ausdruck#1]] [[fast|adverbs/fast#1]] [[zu|prepositions/zu#1]] [[vergöttern|verbs/vergöttern]], [[ohne|prepositions/ohne#1]] sie mit einer anderen gebührenden und nachdrücklichen [[Belohnung|nouns/Belohnung#1]] zu [[beehren|verbs/beehren]].“"
+    "text_linked": "„Man [[pflegt|verbs/pflegen]] ([[wie|adverbs/wie#2]] [[man|pronouns/man#2]] [[sagt|verbs/sagen#1]]) dermal [[schon|particles/schon_antwort#1]] [[an|prepositions/an]] vielen [[Orten|nouns/Ort_lokalisierbarer#1]], [[die|pronouns/die#2]] [[Gelehrten|nouns/Gelehrter#1]] [[und|conjunctions/und#1]] [[Künstler|nouns/Künstler#1]], [[mit|prepositions/mit#1]] [[lauter|adjectives/lauter]] [[Bravo|nouns/Bravo_ausdruck#1]] [[fast|adverbs/fast#1]] [[zu|prepositions/zu#1]] vergöttern, [[ohne|prepositions/ohne#1]] sie mit einer anderen gebührenden und nachdrücklichen [[Belohnung|nouns/Belohnung#1]] zu [[beehren|verbs/beehren]].“"
   },
   "3faaad2c7b": {
     "text": "Bei einer passiven Impfung werden nicht Erreger gespritzt, sondern ein Serum mit spezifischen Antikörpern.",
@@ -17668,7 +17848,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Sie [[liest|verbs/lesen]] nur bei Kerzenlicht und [[untermalt|verbs/untermalen]] ihren [[Vortrag|nouns/Vortrag#2]] mit Glockengeklingel oder spielt auf der Blockflöte.“"
+    "text_linked": "„Sie [[liest|verbs/lesen]] nur bei Kerzenlicht und untermalt ihren [[Vortrag|nouns/Vortrag#2]] mit Glockengeklingel oder spielt auf der Blockflöte.“"
   },
   "3fac671437": {
     "text": "„Niemand wußte, daß der Hotelbesitzer selbst keine gültigen Dokumente für sein Grundstück besaß, daß er ohne Genehmigung gebaut hatte. Die Polizei wollte das Hotel schließen, der Besitzer erreichte eine einstweilige Verfügung, der Fall kam vors Gericht, während das Hotel weiter Geld einnahm und später zum Studentenheim umgewandelt wurde.“",
@@ -18048,7 +18228,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Die [[Festung|nouns/Festung]], in der die [[Republik|nouns/Republik]] für gewöhnlich nur eine [[Garnison|nouns/Garnison#2]] von [[hundert|numerals/hundert]] invaliden Slawoniern hielt, hatte damals eine [[Besatzung|nouns/Besatzung#2]] von zweitausend Albanesen.“"
+    "text_linked": "„Die [[Festung|nouns/Festung]], in der die [[Republik|nouns/Republik]] für gewöhnlich nur eine [[Garnison|nouns/Garnison#2]] von [[hundert|numerals/hundert]] invaliden Slawoniern hielt, hatte damals eine [[Besatzung|nouns/Besatzung#2]] von [[zweitausend|numerals/zweitausend]] Albanesen.“"
   },
   "3fae999b85": {
     "text": "„Der Hornklee ernährt eine Vielzahl von Schmetterlingsraupen.“",
@@ -20158,11 +20338,45 @@
   },
   "3fce314991": {
     "text": "„Bei den Zusammensetzungen aus Adverb und Verb ist das Adverb meist deutlich stärker betont als das Verb.“",
-    "translation": null,
+    "translation": "In compounds of adverb and verb, the adverb is usually much more strongly stressed than the verb.",
     "source": "wiktionary",
     "lemmas": [
       "Verb"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zusammensetzungen",
+        "lemma": "Zusammensetzung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Adverb",
+        "lemma": "Adverb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verb",
+        "lemma": "Verb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "deutlich",
+        "lemma": "deutlich",
+        "pos": "adjective",
+        "gloss_hint": "distinct"
+      },
+      {
+        "form": "betont",
+        "lemma": "betont",
+        "pos": "adjective",
+        "gloss_hint": "stressed"
+      }
+    ],
+    "text_linked": "„Bei den [[Zusammensetzungen|nouns/Zusammensetzung]] aus Adverb und [[Verb|nouns/Verb]] ist das Adverb meist [[deutlich|adjectives/deutlich#1]] stärker [[betont|adjectives/betont#2]] als das Verb.“"
   },
   "3fce849eb6": {
     "text": "„Ich blieb neben dem Brunnen in der Mitte des Platzes stehen.“",
@@ -23599,7 +23813,7 @@
         "gloss_hint": "tanks"
       }
     ],
-    "text_linked": "[[Die|pronouns/die#1]] [[Erde|nouns/Erde#3]] [[bebte|verbs/beben]] [[von|prepositions/von#1]] [[den|determiners/der]] [[heranrückenden|verbs/heranrücken]] [[Panzern|nouns/Panzer#4]]."
+    "text_linked": "[[Die|pronouns/die#1]] [[Erde|nouns/Erde#3]] [[bebte|verbs/beben]] [[von|prepositions/von#1]] [[den|determiners/der]] heranrückenden [[Panzern|nouns/Panzer#4]]."
   },
   "3fef4feabd": {
     "text": "„Tipp: Eine moderne Heizungspumpe verbraucht etwa 80 Prozent weniger Strom.“",

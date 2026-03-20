@@ -4113,7 +4113,7 @@
         "gloss_hint": "snapped"
       }
     ],
-    "text_linked": "„[[Das|pronouns/das_[1]]] [[war|verbs/sein#2]] [[ein|determiners/ein]] [[feiner|adjectives/fein#1]] [[Pinkel|nouns/Pinkel_jemand#1]], [[der|pronouns/der_nominativ]] [[beim|prepositions/bei]] [[Aufzeigen|verbs/aufzeigen]] [[immer|adverbs/immer#1]] [[mit|prepositions/mit#1]] [[den|determiners/der]] [[Fingern|nouns/Finger#1]] [[schnippte|verbs/schnippeln]].“"
+    "text_linked": "„[[Das|pronouns/das_[1]]] [[war|verbs/sein#2]] [[ein|determiners/ein]] [[feiner|adjectives/fein#1]] [[Pinkel|nouns/Pinkel_jemand#1]], [[der|pronouns/der_nominativ]] [[beim|prepositions/bei]] [[Aufzeigen|verbs/aufzeigen]] [[immer|adverbs/immer#1]] [[mit|prepositions/mit#1]] [[den|determiners/der]] [[Fingern|nouns/Finger#1]] schnippte.“"
   },
   "ba34ad8abf": {
     "text": "Die Ortung erfolgt mittels Radar.",
@@ -4821,11 +4821,75 @@
   },
   "ba3b7c7627": {
     "text": "„Der Zug raste in Richtung München und weiter nach Rom, wo ich um 22.00 Uhr in den Anschlusszug nach Messina umsteigen wollte.“",
-    "translation": null,
+    "translation": "The train raced toward Munich and on to Rome, where I wanted to change trains at 22:00 to the connecting train to Messina.",
     "source": "wiktionary",
     "lemmas": [
       "Anschlusszug"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zug",
+        "lemma": "Zug",
+        "pos": "noun",
+        "gloss_hint": "train"
+      },
+      {
+        "form": "raste",
+        "lemma": "rasen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Richtung",
+        "lemma": "Richtung",
+        "pos": "noun",
+        "gloss_hint": "direction"
+      },
+      {
+        "form": "München",
+        "lemma": "München",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "weiter",
+        "lemma": "weiter",
+        "pos": "adverb",
+        "gloss_hint": "further"
+      },
+      {
+        "form": "Rom",
+        "lemma": "Rom",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Uhr",
+        "lemma": "Uhr",
+        "pos": "noun",
+        "gloss_hint": "clock/watch"
+      },
+      {
+        "form": "Anschlusszug",
+        "lemma": "Anschlusszug",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Messina",
+        "lemma": "Messina",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "umsteigen",
+        "lemma": "umsteigen",
+        "pos": "verb",
+        "gloss_hint": "change (transport)"
+      }
+    ],
+    "text_linked": "„Der [[Zug|nouns/Zug#1]] [[raste|verbs/rasen]] in [[Richtung|nouns/Richtung#1]] München und [[weiter|adverbs/weiter#1]] nach Rom, wo ich um 22.00 [[Uhr|nouns/Uhr#2]] in den [[Anschlusszug|nouns/Anschlusszug]] nach Messina [[umsteigen|verbs/umsteigen#1]] wollte.“"
   },
   "ba3dc3230c": {
     "text": "Der Läufer, weil am Ende seiner Kräfte, schaffte es nicht bis ins Ziel.",
@@ -4897,7 +4961,7 @@
         "gloss_hint": "goal"
       }
     ],
-    "text_linked": "Der [[Läufer|nouns/Läufer#1]], weil am [[Ende|nouns/Ende#1]] [[seiner|pronouns/sein]] [[Kräfte|nouns/Kraft#2]], [[schaffte|verbs/schaffen_etwas#1]] [[es|pronouns/es]] [[nicht|particles/nicht#1]] [[bis|particles/bis#1]] [[ins|prepositions/in]] [[Ziel|nouns/Ziel#1]]."
+    "text_linked": "Der [[Läufer|nouns/Läufer#1]], weil am [[Ende|nouns/Ende#1]] [[seiner|pronouns/sein]] [[Kräfte|nouns/Kraft#2]], [[schaffte|verbs/schaffen_etwas]] [[es|pronouns/es]] [[nicht|particles/nicht#1]] [[bis|particles/bis#1]] [[ins|prepositions/in]] [[Ziel|nouns/Ziel#1]]."
   },
   "ba3df1b3b6": {
     "text": "„De Urs hot sich nu doch Schloftabletten verschreibn losen. Ihr Ma maahnet: Namm nett geden Obnd aahne, dos ward zr Gewuhnet.“",
@@ -6482,7 +6546,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Außerdem|adverbs/außerdem]] [[gab|verbs/geben]] [[es|pronouns/es]] römische Straßenverzeichnisse [[für|prepositions/für#1]] [[den|pronouns/der_nominativ#1]] abenteuerlichen [[Reisenden|nouns/Reisender#1]] [[oder|particles/oder#5]] [[Eroberer|nouns/Eroberer#1]], [[die|pronouns/die#1]] [[sicher|adjectives/sicher#4]] [[in|prepositions/in#1]] die [[Gestaltung|nouns/Gestaltung#1]] [[der|pronouns/der_nominativ]] Tabula Peutingeriana einflossen.“"
+    "text_linked": "„[[Außerdem|adverbs/außerdem]] [[gab|verbs/geben]] [[es|pronouns/es]] römische Straßenverzeichnisse [[für|prepositions/für#1]] [[den|pronouns/der_nominativ#1]] abenteuerlichen [[Reisenden|nouns/Reisender#1]] [[oder|particles/oder#5]] [[Eroberer|nouns/Eroberer#1]], [[die|pronouns/die#1]] [[sicher|adjectives/sicher#4]] [[in|prepositions/in#1]] die [[Gestaltung|nouns/Gestaltung#1]] [[der|pronouns/der_singular#2]] Tabula Peutingeriana einflossen.“"
   },
   "ba53841e17": {
     "text": "Ich lasse mich gern auch vom Apotheker beraten.",
@@ -10690,7 +10754,7 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "„Dr. [[Hugo|nouns/Hugo]] [[Mann|nouns/Mann#5]] [[vom|prepositions/von]] TSV Penzberg [[hatte|verbs/haben#1]] [[wegen|prepositions/wegen]] [[einer|determiners/ein]] [[Verletzung|nouns/Verletzung#1]] [[den|determiners/der]] 17-Kilometer-Lauf [[nicht|particles/nicht]] [[absolvieren|verbs/absolvieren#1]] [[können|verbs/können_etwas#1]].“"
+    "text_linked": "„Dr. [[Hugo|nouns/Hugo]] [[Mann|nouns/Mann#5]] [[vom|prepositions/von]] TSV Penzberg [[hatte|verbs/haben#1]] [[wegen|prepositions/wegen]] [[einer|determiners/ein]] [[Verletzung|nouns/Verletzung#1]] [[den|determiners/der]] 17-Kilometer-Lauf [[nicht|particles/nicht]] [[absolvieren|verbs/absolvieren#1]] [[können|verbs/können_beherrschen]].“"
   },
   "ba8ace35d6": {
     "text": "Eine Runde Walking in der Mittagspause ist ein guter Ausgleich für langes Sitzen im Büro.",
@@ -12524,7 +12588,7 @@
         "gloss_hint": "allow"
       }
     ],
-    "text_linked": "„Jedermann [[ist|verbs/sein#2]] verpflichtet, [[seine|pronouns/sein]] [[Matratzen|nouns/Matratze#1]], [[Decken|nouns/Decke#2]], [[Kissen|nouns/Kissen#1]], Polster, [[loses|adjectives/los]] [[Zeug|nouns/Zeug#1]] [[usw.|abbreviations/usw.]] [[sofort|adverbs/sofort#1]] [[nach|prepositions/nach#3]] [[der|determiners/der]] [[vorläufigen|adjectives/vorläufig]] [[Freigabe|nouns/Freigabe#1]] [[im|prepositions/in#1]] Freien gründlichst aufzuklopfen [[bzw.|abbreviations/bzw.]] [[ausklopfen|verbs/ausklopfen]] [[zu lassen|verbs/lassen#3]].“"
+    "text_linked": "„Jedermann [[ist|verbs/sein#2]] verpflichtet, [[seine|pronouns/sein]] [[Matratzen|nouns/Matratze#1]], [[Decken|nouns/Decke#2]], [[Kissen|nouns/Kissen#1]], Polster, [[loses|adjectives/los]] [[Zeug|nouns/Zeug#1]] [[usw.|abbreviations/usw.]] [[sofort|adverbs/sofort#1]] [[nach|prepositions/nach#3]] [[der|determiners/der]] [[vorläufigen|adjectives/vorläufig]] [[Freigabe|nouns/Freigabe#1]] [[im|prepositions/in#1]] Freien gründlichst aufzuklopfen [[bzw.|abbreviations/bzw.]] ausklopfen [[zu lassen|verbs/lassen#3]].“"
   },
   "ba9682503a": {
     "text": "Sie arbeitet bei uns im Verkauf.",
@@ -13218,7 +13282,7 @@
         "gloss_hint": "ash"
       }
     ],
-    "text_linked": "„Bei einer Eruption [[wird|verbs/werden#1]] [[ein|determiners/ein]] [[Großteil|nouns/Großteil#2]] [[des|determiners/des]] Magmas schlagartig [[ausgeworfen|verbs/auswerfen]] [[und|conjunctions/und]] [[dabei|adverbs/dabei]] [[in|prepositions/in]] vulkanische Bomben, Lapilli und [[Asche|nouns/Asche#1]] zerfetzt.“"
+    "text_linked": "„Bei einer Eruption [[wird|verbs/werden#1]] [[ein|determiners/ein]] [[Großteil|nouns/Großteil#2]] [[des|determiners/des]] Magmas schlagartig ausgeworfen [[und|conjunctions/und]] [[dabei|adverbs/dabei]] [[in|prepositions/in]] vulkanische Bomben, Lapilli und [[Asche|nouns/Asche#1]] zerfetzt.“"
   },
   "ba9c7de820": {
     "text": "„Die von Gesundheitsminister Wolfgang Mückstein (Grüne) angekündigte Einführung der 2,5G-Regel auch am Arbeitsplatz ab 15. November stößt auf Kritik, aber auch auf Verständnis.“",
@@ -14479,7 +14543,7 @@
         "gloss_hint": "be"
       }
     ],
-    "text_linked": "„Ich [[zog|verbs/ziehen]] [[meinen|verbs/meinen#2]] [[Pullover|nouns/Pullover#1]] [[aus|adverbs/aus#1]] und [[krempelte|verbs/krempeln]] [[die|determiners/die]] Hemdsärmel [[hoch|adjectives/hoch#5]], [[dann|adverbs/dann#1]] [[schlug|verbs/schlagen]] ich [[ein|determiners/ein]] [[paar|nouns/Paar#2]] [[Tasten|nouns/Taste]] [[an|prepositions/an#3]] und [[hörte|verbs/hören]], [[dass|conjunctions/dass]] [[der|pronouns/der_nominativ]] [[Flügel|nouns/Flügel#3]] [[ordentlich|adjectives/ordentlich#3]] [[gestimmt|verbs/stimmen]] [[war|verbs/sein#2]].“"
+    "text_linked": "„Ich [[zog|verbs/ziehen]] [[meinen|verbs/meinen#2]] [[Pullover|nouns/Pullover#1]] [[aus|adverbs/aus#1]] und krempelte [[die|determiners/die]] Hemdsärmel [[hoch|adjectives/hoch#5]], [[dann|adverbs/dann#1]] [[schlug|verbs/schlagen]] ich [[ein|determiners/ein]] [[paar|nouns/Paar#2]] [[Tasten|nouns/Taste]] [[an|prepositions/an#3]] und [[hörte|verbs/hören]], [[dass|conjunctions/dass]] [[der|pronouns/der_nominativ]] [[Flügel|nouns/Flügel#3]] [[ordentlich|adjectives/ordentlich#3]] [[gestimmt|verbs/stimmen]] [[war|verbs/sein#2]].“"
   },
   "baa3a1e592": {
     "text": "„1976 wurde 200 km südlich von Paris ein als Hexer verschrieener alter Mann von einem jungen Bauern auf Beschluß von dessen Familie erschossen.“",
@@ -15648,7 +15712,7 @@
         "gloss_hint": "beauty"
       }
     ],
-    "text_linked": "„Wie benebelt [[saßen|verbs/sitzen#5]] [[wir|pronouns/wir]] [[da|adverbs/da]], [[wie|adverbs/wie]] [[lahmgelegt|verbs/lahmlegen]] [[von|prepositions/von#1]] [[einer|determiners/ein]] [[Überdosis|nouns/Überdosis#1]] [[Schönheit|nouns/Schönheit#1]].“"
+    "text_linked": "„Wie benebelt [[saßen|verbs/sitzen#5]] [[wir|pronouns/wir]] [[da|adverbs/da]], [[wie|adverbs/wie]] [[lahmgelegt|verbs/lahmlegen#1]] [[von|prepositions/von#1]] [[einer|determiners/ein]] [[Überdosis|nouns/Überdosis#1]] [[Schönheit|nouns/Schönheit#1]].“"
   },
   "bab7780463": {
     "text": "Die zusätzliche Arbeit stellt eine große Belastung für sie dar.",
@@ -18646,7 +18710,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Als ich von einer ‚Salome‘-Aufführung wie [[berauscht|verbs/berauschen]] berichtete, unterbrach er die [[Stunde|nouns/Stunde#1]] und spielte aus dem [[Kopf|nouns/Kopf#1]] ganze [[Partien|nouns/Partie]] der Strauss-Komposition auf dem [[Klavier|nouns/Klavier]].“"
+    "text_linked": "„Als ich von einer ‚Salome‘-Aufführung wie berauscht berichtete, unterbrach er die [[Stunde|nouns/Stunde#1]] und spielte aus dem [[Kopf|nouns/Kopf#1]] ganze [[Partien|nouns/Partie]] der Strauss-Komposition auf dem [[Klavier|nouns/Klavier]].“"
   },
   "bacdfd6c42": {
     "text": "„Die Belehrung im Darlehensvertrag genügt, wenn der finanzierte Vertrag eine entsprechende Bezugnahme enthält (vorst. Rn. 141).“",

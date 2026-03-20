@@ -616,7 +616,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Die Wilden [[sangen|verbs/singen]] eine Weile - wenn man ihren zittrigen, von Zungenschnalzen und Zähneklappern unterbrochenen Singsang als [[Gesang|nouns/Gesang#1]] bezeichnen konnte, in dem die gellenden [[Frauenstimmen|nouns/Frauenstimme]] das Gebrummel der [[Männer|nouns/Mann]] [[übertönten|verbs/übertönen]].“"
+    "text_linked": "„Die Wilden [[sangen|verbs/singen]] eine Weile - wenn man ihren zittrigen, von Zungenschnalzen und Zähneklappern unterbrochenen Singsang als [[Gesang|nouns/Gesang#1]] bezeichnen konnte, in dem die gellenden [[Frauenstimmen|nouns/Frauenstimme]] das Gebrummel der [[Männer|nouns/Mann]] übertönten.“"
   },
   "03097792cb": {
     "text": "Als er mich nicht in den Club gelassen hatte, sagte ich ihm, dass er sich ins Knie ficken solle.",
@@ -907,7 +907,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Ganz [[besonders|adverbs/besonders]] ist es verboten, hier [[nachts|nouns/Nacht]] [[herumzuspazieren|verbs/herumspazieren]]."
+    "text_linked": "Ganz [[besonders|adverbs/besonders]] ist es verboten, hier [[nachts|nouns/Nacht]] herumzuspazieren."
   },
   "030ecc7c5a": {
     "text": "Nerven zeigen",
@@ -1814,11 +1814,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go to one's grave",
     "source": "wiktionary",
     "lemmas": [
       "Grube"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "031e8a3659": {
     "text": "jede Mode mitmachen",
@@ -3594,7 +3595,7 @@
         "gloss_hint": "process"
       }
     ],
-    "text_linked": "Der Fensterkitt wird [[geknetet|verbs/kneten]], bis er [[weich|adjectives/weich#1]] ist und sich gut [[verarbeiten|verbs/verarbeiten#1]] lässt."
+    "text_linked": "Der Fensterkitt wird geknetet, bis er [[weich|adjectives/weich#1]] ist und sich gut [[verarbeiten|verbs/verarbeiten#1]] lässt."
   },
   "032fa18218": {
     "text": "„[..] Heute sind sie, wie hier vier \"1-Euro-Jobber\" aus Halle, am Boden angekommen.“",
@@ -4995,15 +4996,85 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Die Woiwodschaftsvertretung kann auch, [[auf|prepositions/auf#1]] [[Antrag|nouns/Antrag#1]] [[des|pronouns/der_nominativ]] [[Marschalls|nouns/Marschall#1]] [[der|pronouns/der_nominativ]] Woiwodschaft, [[mit|prepositions/mit#1]] [[absoluter|adjectives/absolut]] [[Mehrheit|nouns/Mehrheit#1]] einzelne [[Mitglieder|nouns/Mitglied#1]] des [[Vorstandes|nouns/Vorstand#2]] [[in|prepositions/in#1]] [[geheimer|adjectives/geheim]] [[Abstimmung|nouns/Abstimmung#1]] [[abberufen|verbs/abberufen]].“"
+    "text_linked": "„Die Woiwodschaftsvertretung kann auch, [[auf|prepositions/auf#1]] [[Antrag|nouns/Antrag#1]] [[des|pronouns/der_nominativ]] [[Marschalls|nouns/Marschall#1]] [[der|pronouns/der_nominativ]] Woiwodschaft, [[mit|prepositions/mit#1]] [[absoluter|adjectives/absolut]] [[Mehrheit|nouns/Mehrheit#1]] einzelne [[Mitglieder|nouns/Mitglied#1]] des [[Vorstandes|nouns/Vorstand#2]] [[in|prepositions/in#1]] [[geheimer|adjectives/geheim]] [[Abstimmung|nouns/Abstimmung#1]] abberufen.“"
   },
   "0349b303d5": {
     "text": "„Dabei lassen wir uns von der Annahme leiten, daß der Konjunktiv in der Sprache der Politik neue Aufgaben übernimmt, dies vor allem in Staaten, in denen verschiedene Parteien das politische System repräsentieren.“",
-    "translation": null,
+    "translation": "In doing so, we are guided by the assumption that the subjunctive mood is taking on new tasks in the language of politics, particularly in states where different parties represent the political system.",
     "source": "wiktionary",
     "lemmas": [
       "Konjunktiv"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Annahme",
+        "lemma": "Annahme",
+        "pos": "noun",
+        "gloss_hint": "assumption"
+      },
+      {
+        "form": "leiten",
+        "lemma": "leiten",
+        "pos": "verb",
+        "gloss_hint": "lead"
+      },
+      {
+        "form": "Konjunktiv",
+        "lemma": "Konjunktiv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sprache",
+        "lemma": "Sprache",
+        "pos": "noun",
+        "gloss_hint": "language system"
+      },
+      {
+        "form": "Politik",
+        "lemma": "Politik",
+        "pos": "noun",
+        "gloss_hint": "politics"
+      },
+      {
+        "form": "Aufgaben",
+        "lemma": "Aufgabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staaten",
+        "lemma": "Staat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Parteien",
+        "lemma": "Partei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "politische",
+        "lemma": "politisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "System",
+        "lemma": "System",
+        "pos": "noun",
+        "gloss_hint": "structure"
+      },
+      {
+        "form": "repräsentieren",
+        "lemma": "repräsentieren",
+        "pos": "verb",
+        "gloss_hint": "represent"
+      }
+    ],
+    "text_linked": "„Dabei lassen wir uns von der [[Annahme|nouns/Annahme#1]] [[leiten|verbs/leiten#1]], daß der [[Konjunktiv|nouns/Konjunktiv]] in der [[Sprache|nouns/Sprache#2]] der [[Politik|nouns/Politik#1]] neue [[Aufgaben|nouns/Aufgabe]] übernimmt, dies vor allem in [[Staaten|nouns/Staat]], in denen verschiedene [[Parteien|nouns/Partei]] das [[politische|adjectives/politisch]] [[System|nouns/System#1]] [[repräsentieren|verbs/repräsentieren#1]].“"
   },
   "034d7dba61": {
     "text": "„Angela Dorothea Merkel […] ist eine ehemalige deutsche Politikerin (CDU). Sie war vom 22. November 2005 bis zum 8. Dezember 2021 achter Bundeskanzler und als Frau die erste Bundeskanzlerin der Bundesrepublik Deutschland.“",
@@ -5654,11 +5725,51 @@
   },
   "03530a9c33": {
     "text": "„Auf der Speisekarte waren nur wenig Gerichte aufgeführt, zwei Suppen, drei Hauptgerichte und zwei Desserts.“",
-    "translation": null,
+    "translation": "On the menu there were only a few dishes listed: two soups, three main courses, and two desserts.",
     "source": "wiktionary",
     "lemmas": [
       "Hauptgericht"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Speisekarte",
+        "lemma": "Speisekarte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gerichte",
+        "lemma": "Gericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgeführt",
+        "lemma": "aufführen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Suppen",
+        "lemma": "Suppe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hauptgerichte",
+        "lemma": "Hauptgericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Desserts",
+        "lemma": "Dessert",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Auf der [[Speisekarte|nouns/Speisekarte]] waren nur wenig [[Gerichte|nouns/Gericht_ort]] [[aufgeführt|verbs/aufführen]], zwei [[Suppen|nouns/Suppe]], drei [[Hauptgerichte|nouns/Hauptgericht]] und zwei [[Desserts|nouns/Dessert]].“"
   },
   "03540af2f8": {
     "text": "„»Soziale Gerechtigkeit ist für mich reine Wahlpropaganda, da sich sowieso nicht viel ändert. Reiche bleiben reich, Arme bleiben arm«, sagt die 77-jährige Pensionärin Irmtrud S.“",
@@ -5860,11 +5971,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "mass-produced Christmas tree",
     "source": "wiktionary",
     "lemmas": [
       "Weihnachtsbaum"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "035633f91b": {
     "text": "Die erste von Schweden nominierte Kommissarin war die Sozialdemokratin Anita Gradin.",
@@ -5924,7 +6036,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Die erste [[von|prepositions/von#1]] Schweden [[nominierte|verbs/nominieren]] [[Kommissarin|nouns/Kommissarin#1]] war [[die|pronouns/die#2]] Sozialdemokratin Anita Gradin."
+    "text_linked": "Die erste [[von|prepositions/von#1]] Schweden [[nominierte|verbs/nominieren#1]] [[Kommissarin|nouns/Kommissarin#1]] war [[die|pronouns/die#2]] Sozialdemokratin Anita Gradin."
   },
   "0356cd57f3": {
     "text": "„In Norwegen fand sich Lassehn in eine feindselige Umgebung versetzt, es fielen zwar keine Schüsse, und es gab keinen Kampf, denn der unterirdische Widerstand der Norweger war Sache der Gestapo und ihrer Quislinge, aber Lassehn war, obwohl dem Heere des Siegers zugehörig, in Wahrheit der Gedemütigte.“",
@@ -8391,13 +8503,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to smell a rat",
     "source": "wiktionary",
     "lemmas": [
       "riechen",
       "Lunte"
     ],
-    "ref": "phrases/Lunte riechen"
+    "ref": "phrases/Lunte riechen",
+    "translation_model": "openai/gpt-4.1"
   },
   "0371b39b7b": {
     "text": "Der Dieb erbrach die Tür zum Schlafzimmer.",
@@ -8684,11 +8797,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not give a damn about something",
     "source": "wiktionary",
     "lemmas": [
       "scheißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0377db657c": {
     "text": "den Blick heben",
@@ -10141,7 +10255,7 @@
         "gloss_hint": "privacy"
       }
     ],
-    "text_linked": "„[[Gegner|nouns/Gegner#1]] [[der|determiners/der]] [[Technologie|nouns/Technologie#2]] [[monieren|verbs/monieren]] den [[starken|adjectives/stark#15]] [[Eingriff|nouns/Eingriff#2]] [[von|prepositions/von]] [[Systemen|nouns/System#4]] [[zur|prepositions/zu]] [[Gesichtserkennung|nouns/Gesichtserkennung#1]] [[in|prepositions/in]] [[die|determiners/die]] [[Privatsphäre|nouns/Privatsphäre#1]].“"
+    "text_linked": "„[[Gegner|nouns/Gegner#1]] [[der|determiners/der]] [[Technologie|nouns/Technologie#2]] monieren den [[starken|adjectives/stark#15]] [[Eingriff|nouns/Eingriff#2]] [[von|prepositions/von]] [[Systemen|nouns/System#4]] [[zur|prepositions/zu]] [[Gesichtserkennung|nouns/Gesichtserkennung#1]] [[in|prepositions/in]] [[die|determiners/die]] [[Privatsphäre|nouns/Privatsphäre#1]].“"
   },
   "038b21517e": {
     "text": "„Ich klappte den Monitor zu, verstaute ihn wieder in der wasserdichten Hülle und schob das modernde Handtuch als Kissen unter meinen Kopf.“",
@@ -11411,7 +11525,7 @@
         "gloss_hint": "obey"
       }
     ],
-    "text_linked": "[[Mein|pronouns/mein#1]] [[Junge|nouns/Junge#1]] [[ist|verbs/sein#1]] [[so|adverbs/so]] [[gut|adjectives/gut#1]] erzogen, [[dass|conjunctions/dass]] er [[mir|pronouns/mir_dativ#1]] [[immer|adverbs/immer#1]] [[gehorcht|verbs/gehorchen#1]]."
+    "text_linked": "[[Mein|pronouns/mein#1]] [[Junge|nouns/Junge#1]] [[ist|verbs/sein#1]] [[so|adverbs/so]] [[gut|adjectives/gut#1]] erzogen, [[dass|conjunctions/dass]] er [[mir|pronouns/mir_des#1]] [[immer|adverbs/immer#1]] [[gehorcht|verbs/gehorchen#1]]."
   },
   "039649271f": {
     "text": "Die Vorstellung ist fern jeglicher Realität.",
@@ -12872,22 +12986,63 @@
   },
   "03abe338ec": {
     "text": "„Der Mann behauptete, er hätte mich gesehen.“ Das Wort „hätte“ steht im Konjunktiv.",
-    "translation": null,
+    "translation": "\"The man claimed he had seen me.\" The word \"hätte\" is in the subjunctive mood.",
     "source": "wiktionary",
     "lemmas": [
       "Konjunktiv"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "behauptete",
+        "lemma": "behaupten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesehen",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wort",
+        "lemma": "Wort",
+        "pos": "noun",
+        "gloss_hint": "word"
+      },
+      {
+        "form": "hätte",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Konjunktiv",
+        "lemma": "Konjunktiv",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Der [[Mann|nouns/Mann#5]] [[behauptete|verbs/behaupten]], er [[hätte|verbs/haben]] mich [[gesehen|verbs/sehen]].“ Das [[Wort|nouns/Wort_kleinste#1]] „hätte“ steht im [[Konjunktiv|nouns/Konjunktiv]]."
   },
   "03ac3d0f89": {
     "text": "sein Bündel schnüren",
     "type": "expression",
     "note": "sich fertig machen, um wegzugehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "pack one's bags",
     "source": "wiktionary",
     "lemmas": [
       "schnüren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "03ac48c18f": {
     "text": "Die Symptome des Noceboeffekts sind nicht eingebildet, sondern gehen auf reale biochemische Prozesse zurück. Der Noceboeffekt macht gesunde Menschen physisch krank.",
@@ -13811,11 +13966,27 @@
   },
   "03b8fd6de4": {
     "text": "„(Ich) spiele“ ist ein Präsens.",
-    "translation": null,
+    "translation": "\"(I) play\" is a present tense.",
     "source": "wiktionary",
     "lemmas": [
       "Präsens"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "spiele",
+        "lemma": "spielen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Präsens",
+        "lemma": "Präsens",
+        "pos": "noun",
+        "gloss_hint": "present tense"
+      }
+    ],
+    "text_linked": "„(Ich) [[spiele|verbs/spielen]]“ ist ein [[Präsens|nouns/Präsens#1]]."
   },
   "03ba34fbbe": {
     "text": "Sowohl der alteingesessene Einzelhandel als auch die Online-Konkurrenz machen in den Tagen vor Heiligabend ihr größtes Geschäft. Und sie ziehen andere Branchen mit.",
@@ -14131,11 +14302,12 @@
     "type": "expression",
     "note": "es wird viel Geld verdient, es wird viel Geld ausgegeben, es ist viel Geld in Bewegung",
     "synonyms": [],
-    "translation": null,
+    "translation": "money is flowing",
     "source": "wiktionary",
     "lemmas": [
       "Rubel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "03c03b3e37": {
     "text": "Bei Kurzarbeit kann die Arbeitszeit deutlich zurückgehen - theoretisch auf Null. […] Die Arbeitsagentur [gewährt] dann nach Prüfung bestimmter Voraussetzungen Kurzarbeitergeld, das einen Teil des wegfallenden Einkommens ausgleicht.",
@@ -14945,7 +15117,7 @@
         "gloss_hint": "anymore"
       }
     ],
-    "text_linked": "\"Damit würde eintreten, was das Hanf Journal bereits [[bei|prepositions/bei]] Henkels [[Ankündigung|nouns/Ankündigung#1]] [[vermutet|verbs/vermuten#1]] [[hat|verbs/haben#1]]: [[Mit|prepositions/mit]] [[einer|determiners/ein]] verfassungsrechtlich fragwürdigen [[Regelung|nouns/Regelung#1]] [[kriminalisiert|verbs/kriminalisieren]] Henkel [[jetzt|adverbs/jetzt]] [[auch|adverbs/auch]] alle [[Berliner/innen|nouns/Berliner_einwohner#1]], [[die|pronouns/die]] [[im|prepositions/in]] [[Park|nouns/Park#2]] [[mal|adverbs/mal]] [[gemütlich|adjectives/gemütlich]] [[einen|determiners/ein]] [[rauchen|verbs/rauchen#1]] [[und|conjunctions/und]] deshalb im [[Besitz|nouns/Besitz#1]] einer [[Geringen|adjectives/gering#1]] [[Menge|nouns/Menge#3]] [[sind|verbs/sein#2]]. [[Die|pronouns/die]] [[gibt|verbs/geben#2]] [[es|pronouns/es]] [[ab|adverbs/ab]] 1.April [[in|prepositions/in]] Berliner [[Parks|nouns/Park#2]] [[anscheinend|adverbs/anscheinend#1]] [[nicht|particles/nicht#1]] [[mehr|adverbs/mehr#2]].\""
+    "text_linked": "\"Damit würde eintreten, was das Hanf Journal bereits [[bei|prepositions/bei]] Henkels [[Ankündigung|nouns/Ankündigung#1]] [[vermutet|verbs/vermuten#1]] [[hat|verbs/haben#1]]: [[Mit|prepositions/mit]] [[einer|determiners/ein]] verfassungsrechtlich fragwürdigen [[Regelung|nouns/Regelung#1]] kriminalisiert Henkel [[jetzt|adverbs/jetzt]] [[auch|adverbs/auch]] alle [[Berliner/innen|nouns/Berliner_einwohner#1]], [[die|pronouns/die]] [[im|prepositions/in]] [[Park|nouns/Park#2]] [[mal|adverbs/mal]] [[gemütlich|adjectives/gemütlich]] [[einen|determiners/ein]] [[rauchen|verbs/rauchen#1]] [[und|conjunctions/und]] deshalb im [[Besitz|nouns/Besitz#1]] einer [[Geringen|adjectives/gering#1]] [[Menge|nouns/Menge#3]] [[sind|verbs/sein#2]]. [[Die|pronouns/die]] [[gibt|verbs/geben#2]] [[es|pronouns/es]] [[ab|adverbs/ab]] 1.April [[in|prepositions/in]] Berliner [[Parks|nouns/Park#2]] [[anscheinend|adverbs/anscheinend#1]] [[nicht|particles/nicht#1]] [[mehr|adverbs/mehr#2]].\""
   },
   "03c4ba5ea4": {
     "text": "„Auf seiner Himmelsreise bekommt Henoch auch ein Gefängnis gefallener Engel zu sehen, und er berichtet über die Geschichte ihres Falls, […]“",
@@ -15842,11 +16014,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bring out the big guns",
     "source": "wiktionary",
     "lemmas": [
       "Besteck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "03ccf5a4fd": {
     "text": "„Als Retter hatten die Deutschen Hitler begrüßt, der sie aus den politischen Nöten und persönlichen Ängsten erlösen sollte, die der Versailler Friedensvertrag nach dem Ersten Weltkrieg, die Inflation der frühen zwanziger Jahre und die Weltwirtschaftskrise zu Beginn der Dreißiger heraufbeschworen hatte.“",
@@ -16142,11 +16315,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A little child, a short hour. (Good things come in small packages.)",
     "source": "wiktionary",
     "lemmas": [
       "Kindchen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "03d8ff5eb5": {
     "text": "Die Lok zieht 40 Güterwaggons.",
@@ -16344,7 +16518,7 @@
         "gloss_hint": "seemed"
       }
     ],
-    "text_linked": "Sie [[befreite|verbs/befreien]] [[sich|pronouns/sich]] [[aus|adverbs/aus#2]] [[seiner|pronouns/sein#1]] Umklammerung [[und|conjunctions/und]] [[wies|verbs/weisen]] [[mit|prepositions/mit#1]] ausgestreckter [[Hand|nouns/Hand#2]] [[auf|prepositions/auf#6]] [[einen|determiners/ein]] offenstehenden Verschlag, [[der|determiners/der]] [[noch|adverbs/noch#3]] [[fast|adverbs/fast]] bis [[an|prepositions/an]] das [[niedere|adjectives/niedrig#1]] [[Dach|nouns/Dach#1]] mit [[Heu|nouns/Heu#1]] [[vollgestopft|verbs/vollstopfen]] [[schien|verbs/scheinen#2]]."
+    "text_linked": "Sie [[befreite|verbs/befreien]] [[sich|pronouns/sich]] [[aus|adverbs/aus#2]] [[seiner|pronouns/sein#1]] Umklammerung [[und|conjunctions/und]] [[wies|verbs/weisen]] [[mit|prepositions/mit#1]] ausgestreckter [[Hand|nouns/Hand#2]] [[auf|prepositions/auf#6]] [[einen|determiners/ein]] offenstehenden Verschlag, [[der|determiners/der]] [[noch|adverbs/noch#3]] [[fast|adverbs/fast]] bis [[an|prepositions/an]] das [[niedere|adjectives/niedrig#1]] [[Dach|nouns/Dach#1]] mit [[Heu|nouns/Heu#1]] vollgestopft [[schien|verbs/scheinen#2]]."
   },
   "03d9fb03aa": {
     "text": "„Die Maschine war am Vormittag gestartet.“",
@@ -17188,11 +17362,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "challenge an entitlement",
     "source": "wiktionary",
     "lemmas": [
       "Anrecht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "03e724c4c3": {
     "text": "Deutschland liegt auf der Nordhalbkugel.",
@@ -19625,7 +19800,10 @@
     "source": "wiktionary",
     "lemmas": [
       "D"
-    ]
+    ],
+    "_proofread": {
+      "translation": true
+    }
   },
   "03f8e64106": {
     "text": "Mit vereinten Anstrengungen sollten wir das schaffen.",
@@ -19853,7 +20031,7 @@
         "gloss_hint": "line/haul"
       }
     ],
-    "text_linked": "Madrid, Barca, Bayern, Liverpool, ManCity, die [[großen|adjectives/groß#1]] [[Vereine|nouns/Verein#1]] [[scheffeln|verbs/scheffeln]] [[in|prepositions/in]] der Champions [[League|nouns/League]] [[immer|adverbs/immer#3]] [[mehr|adverbs/mehr#1]] [[Geld|nouns/Geld#1]], [[leisten|verbs/leisten#4]] [[sich|pronouns/sich#2]] [[davon|adverbs/davon#6]] die [[besten|adjectives/gut]] [[Spieler|nouns/Spieler#1]] [[und|conjunctions/und]] die anderen Vereine [[bleiben|verbs/bleiben]] [[auf|prepositions/auf]] der [[Strecke|nouns/Strecke]]."
+    "text_linked": "Madrid, Barca, Bayern, Liverpool, ManCity, die [[großen|adjectives/groß#1]] [[Vereine|nouns/Verein#1]] scheffeln [[in|prepositions/in]] der Champions [[League|nouns/League]] [[immer|adverbs/immer#3]] [[mehr|adverbs/mehr#1]] [[Geld|nouns/Geld#1]], [[leisten|verbs/leisten#4]] [[sich|pronouns/sich#2]] [[davon|adverbs/davon#6]] die [[besten|adjectives/gut]] [[Spieler|nouns/Spieler#1]] [[und|conjunctions/und]] die anderen Vereine [[bleiben|verbs/bleiben]] [[auf|prepositions/auf]] der [[Strecke|nouns/Strecke]]."
   },
   "03f92ae9c1": {
     "text": "Auch die Stiefmütterchen gehören zur Gattung Viola.",

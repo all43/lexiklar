@@ -4314,7 +4314,7 @@
         "gloss_hint": "come"
       }
     ],
-    "text_linked": "[[Können|verbs/können_etwas#1]] sie [[mir|pronouns/mir_dativ#1]] [[sagen|verbs/sagen#1]], [[wann|adverbs/wann#1]] [[die|determiners/die]] nächste [[Straßenbahn|nouns/Straßenbahn#1]] [[kommt|verbs/kommen#5]]?"
+    "text_linked": "[[Können|verbs/können_beherrschen]] sie [[mir|pronouns/mir_dativ#1]] [[sagen|verbs/sagen#1]], [[wann|adverbs/wann#1]] [[die|determiners/die]] nächste [[Straßenbahn|nouns/Straßenbahn#1]] [[kommt|verbs/kommen#5]]?"
   },
   "9e2ea87c85": {
     "text": "Sein Wohl und Weh hing am seidenen Faden.",
@@ -5207,7 +5207,7 @@
         "gloss_hint": "become"
       }
     ],
-    "text_linked": "„Der kulturgeschichtlich [[interessante|adjectives/interessant]] Hundertjährige [[Kalender|nouns/Kalender#1]] […] [[enthält|verbs/enthalten#1]] [[beliebte|adjectives/beliebt]], [[aber|conjunctions/aber#1]] [[größtenteils|adverbs/größtenteils]] [[wertlose|adjectives/wertlos]] [[Wettervorhersagen|nouns/Wettervorhersage#1]], [[die|pronouns/die]], astrologisch [[begründet|adjectives/begründet]], [[durch|prepositions/durch#1]] die Gregorianische Kalenderreform überdies [[zeitlich|adjectives/zeitlich]] verschoben [[und|conjunctions/und#1]] durch [[spätere|adjectives/später]] [[Herausgeber|nouns/Herausgeber#1]] [[erst|adverbs/erst#3]] [[recht|adjectives/recht#4]] [[verwirrt|adjectives/verwirrt]] [[wurden|verbs/werden#1]].“"
+    "text_linked": "„Der kulturgeschichtlich [[interessante|adjectives/interessant]] Hundertjährige [[Kalender|nouns/Kalender#1]] […] [[enthält|verbs/enthalten#1]] [[beliebte|adjectives/beliebt]], [[aber|conjunctions/aber#1]] [[größtenteils|adverbs/größtenteils]] [[wertlose|adjectives/wertlos]] [[Wettervorhersagen|nouns/Wettervorhersage#1]], [[die|pronouns/die]], astrologisch [[begründet|adjectives/begründet]], [[durch|prepositions/durch#1]] die Gregorianische Kalenderreform [[überdies|adverbs/überdies]] [[zeitlich|adjectives/zeitlich]] verschoben [[und|conjunctions/und#1]] durch [[spätere|adjectives/später]] [[Herausgeber|nouns/Herausgeber#1]] [[erst|adverbs/erst#3]] [[recht|adjectives/recht#4]] [[verwirrt|adjectives/verwirrt]] [[wurden|verbs/werden#1]].“"
   },
   "9e35caa2b5": {
     "text": "„Sisi bedankte sich beim Taxifahrer und krabbelte müde aus dem Mercedes.“",
@@ -5554,7 +5554,7 @@
         "gloss_hint": "level"
       }
     ],
-    "text_linked": "[[Abweichungen|nouns/Abweichung#1]] [[können|verbs/können_etwas#1]] [[auf|prepositions/auf#1]] [[jeder|pronouns/jeder#1]] grammatischen [[oder|particles/oder#5]] stilistischen [[Ebene|nouns/Ebene#3]] erfolgen."
+    "text_linked": "[[Abweichungen|nouns/Abweichung#1]] [[können|verbs/können_beherrschen]] [[auf|prepositions/auf#1]] [[jeder|pronouns/jeder#1]] grammatischen [[oder|particles/oder#5]] stilistischen [[Ebene|nouns/Ebene#3]] erfolgen."
   },
   "9e3a7f209b": {
     "text": "„Sie zeigten sich den Anderen gegenseitig, wiesen mit ihren Fingern auf ihn und schlugen sich dann wieder auf die Schenkel vor Lachen.“",
@@ -5937,7 +5937,7 @@
         "gloss_hint": "feel"
       }
     ],
-    "text_linked": "„[[Das|pronouns/das_[1]]] [[Ungeziefer|nouns/Ungeziefer#1]], [[das|pronouns/das_[1]]] [[mich|pronouns/ich]] peinigte, milderte [[jedoch|adverbs/jedoch]] [[die|pronouns/die]] [[Todesangst|nouns/Todesangst]], die [[mir|pronouns/ich]] die [[Ratten|nouns/Ratte]] [[einflößten|verbs/einflößen]], [[und|conjunctions/und]] [[gerade|adverbs/gerade]] [[diese|pronouns/dies#1]] Todesangst [[wiederum|adverbs/wiederum]] [[ließ|verbs/lassen#3]] mich die Insektenstiche weniger [[spüren|verbs/spüren#1]].“"
+    "text_linked": "„[[Das|pronouns/das_[1]]] [[Ungeziefer|nouns/Ungeziefer#1]], [[das|pronouns/das_[1]]] [[mich|pronouns/ich]] peinigte, milderte [[jedoch|adverbs/jedoch]] [[die|pronouns/die]] [[Todesangst|nouns/Todesangst]], die [[mir|pronouns/ich]] die [[Ratten|nouns/Ratte]] einflößten, [[und|conjunctions/und]] [[gerade|adverbs/gerade]] [[diese|pronouns/dies#1]] Todesangst [[wiederum|adverbs/wiederum]] [[ließ|verbs/lassen#3]] mich die Insektenstiche weniger [[spüren|verbs/spüren#1]].“"
   },
   "9e3d9e0e34": {
     "text": "Dazu reicht ihr Intellekt einfach nicht.",
@@ -6959,11 +6959,37 @@
   },
   "9e45b8b079": {
     "text": "Dabei ist Handball der Wintersport schlechthin, klagt Müller.",
-    "translation": null,
+    "translation": "Handball is the winter sport par excellence, complains Müller.",
     "source": "wiktionary",
     "lemmas": [
       "schlechthin"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Handball",
+        "lemma": "Handball",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wintersport",
+        "lemma": "Wintersport",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Müller",
+        "lemma": "Müller",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "2270dbae"
+    },
+    "text_linked": "Dabei ist Handball der Wintersport schlechthin, klagt [[Müller|nouns/Müller]]."
   },
   "9e45d9f47d": {
     "text": "Nach der Vorstellung des Referenten durch den Kursleiter wurden an der Tafel Fragen gesammelt.",
@@ -7104,7 +7130,7 @@
         "gloss_hint": "interested in"
       }
     ],
-    "text_linked": "„Eine [[gescheiterte|adjectives/gescheitert]] Weltklimakonferenz, [[ein|pronouns/ein]] [[den|determiners/der]] eigenen Klimazielen [[hinterherhinkendes|verbs/hinterherhinken]] [[Deutschland|names/Deutschland]], ein [[gerissenes|adjectives/gerissen_auf]] 1,5-Grad-Ziel: [[Die|pronouns/die]] [[Menschheit|nouns/Menschheit#1]] [[verfeuert|verbs/verfeuern]] [[ihre|pronouns/ihr_person]] [[Zukunft|nouns/Zukunft#1]] [[und|conjunctions/und]] [[kaum|adverbs/kaum#1]] [[einen|pronouns/ein]] interessiert es.“"
+    "text_linked": "„Eine [[gescheiterte|adjectives/gescheitert]] Weltklimakonferenz, [[ein|pronouns/ein]] [[den|determiners/der]] eigenen Klimazielen hinterherhinkendes [[Deutschland|names/Deutschland]], ein [[gerissenes|adjectives/gerissen_auf]] 1,5-Grad-Ziel: [[Die|pronouns/die]] [[Menschheit|nouns/Menschheit#1]] verfeuert [[ihre|pronouns/ihr_person]] [[Zukunft|nouns/Zukunft#1]] [[und|conjunctions/und]] [[kaum|adverbs/kaum#1]] [[einen|pronouns/ein]] interessiert es.“"
   },
   "9e46cb6116": {
     "text": "Ich gehe nirgendwohin, ich bleibe hier.",
@@ -13049,7 +13075,7 @@
         "gloss_hint": "calculate"
       }
     ],
-    "text_linked": "„[[Die|determiners/die]] deutsch-tschechische Historikerkommission [[hat|verbs/haben#1]] [[jetzt|adverbs/jetzt#1]] [[eine|determiners/ein]] [[Zahl|nouns/Zahl#1]] [[von|prepositions/von]] 15000 – 30000 [[Todesfällen|nouns/Todesfall#1]] [[errechnet|verbs/errechnen]].“"
+    "text_linked": "„[[Die|determiners/die]] deutsch-tschechische Historikerkommission [[hat|verbs/haben#1]] [[jetzt|adverbs/jetzt#1]] [[eine|determiners/ein]] [[Zahl|nouns/Zahl#1]] [[von|prepositions/von]] 15000 – 30000 [[Todesfällen|nouns/Todesfall#1]] [[errechnet|verbs/errechnen#1]].“"
   },
   "9e86cdde16": {
     "text": "„Wie Sie wünschen“, antwortete er reserviert.",
@@ -13441,7 +13467,7 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "„Jetzt [[erweiterten|verbs/erweitern]] [[die Entwickler|nouns/Entwickler#1]] OpenEyes [[um|prepositions/um]] [[[ein Modul|nouns/Modul_technische#1]]], [[mit|prepositions/mit]] [[dem|determiners/der]] [[Chirurgen|nouns/Chirurg#1]] [[ihre|pronouns/ihr_person]] [[Befunde|nouns/Befund#1]] [[und|conjunctions/und]] [[Behandlungen|nouns/Behandlung#1]] [[inklusive|prepositions/inklusive]] Diagrammen und [[Bildern|nouns/Bild#2]] elektronisch [[erfassen|verbs/erfassen#3]] [[können|verbs/können_etwas#1]].“"
+    "text_linked": "„Jetzt [[erweiterten|verbs/erweitern]] [[die Entwickler|nouns/Entwickler#1]] OpenEyes [[um|prepositions/um]] [[[ein Modul|nouns/Modul_technische#1]]], [[mit|prepositions/mit]] [[dem|determiners/der]] [[Chirurgen|nouns/Chirurg#1]] [[ihre|pronouns/ihr_person]] [[Befunde|nouns/Befund#1]] [[und|conjunctions/und]] [[Behandlungen|nouns/Behandlung#1]] [[inklusive|prepositions/inklusive]] Diagrammen und [[Bildern|nouns/Bild#2]] elektronisch [[erfassen|verbs/erfassen#3]] [[können|verbs/können_beherrschen]].“"
   },
   "9e88e40cb8": {
     "text": "Sein Vater wurde damals vom KGB verhört.",
@@ -13718,7 +13744,7 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "„Sie [[können|verbs/können_etwas#1]] Kindle für PC auf der Amazon-Webseite herunterladen. Nach der Installation und der [[Anmeldung|nouns/Anmeldung#1]] können Sie mit der [[Anwendung|nouns/Anwendung#1]] auf Ihre gesamte Kindle-[[Bibliothek|nouns/Bibliothek#1]] zugreifen. Nachdem die Installation abgeschlossen ist, [[klicken|verbs/klicken#2]] Sie doppelt auf das [[Symbol|nouns/Symbol#2]] Kindle für PC, um das Programm zu starten“"
+    "text_linked": "„Sie [[können|verbs/können_beherrschen]] Kindle für PC auf der Amazon-Webseite herunterladen. Nach der Installation und der [[Anmeldung|nouns/Anmeldung#1]] können Sie mit der [[Anwendung|nouns/Anwendung#1]] auf Ihre gesamte Kindle-[[Bibliothek|nouns/Bibliothek#1]] zugreifen. Nachdem die Installation abgeschlossen ist, [[klicken|verbs/klicken#2]] Sie doppelt auf das [[Symbol|nouns/Symbol#2]] Kindle für PC, um das Programm zu starten“"
   },
   "9e8d26a42f": {
     "text": "Die klinische Chemie ist eine angewandte Form der Biochemie.",
@@ -14126,7 +14152,7 @@
         "gloss_hint": "happen"
       }
     ],
-    "text_linked": "Weil wir [[gerade|adjectives/gerade]] [[davon|adverbs/davon#6]] [[sprechen|verbs/sprechen#1]], [[möchte|verbs/möchten#1]] ich [[noch|adverbs/noch#1]] [[anmerken|verbs/anmerken#1]], [[dass|conjunctions/dass]] ich [[es|pronouns/es]] [[für|prepositions/für]] [[unsinnig|adjectives/unsinnig#1]] [[erachte|verbs/erachten]], dass [[hier|adverbs/hier#1]] jedes [[Jahr|nouns/Jahr#1]] im [[ganzen|adjectives/ganz#2]] [[Gebäude|nouns/Gebäude#1]] [[neue|adjectives/neu#1]] [[Türen|nouns/Tür#1]] [[eingebaut|verbs/einbauen#1]] [[werden|verbs/werden#2]]."
+    "text_linked": "Weil wir [[gerade|adjectives/gerade]] [[davon|adverbs/davon#6]] [[sprechen|verbs/sprechen#1]], [[möchte|verbs/möchten#1]] ich [[noch|adverbs/noch#1]] [[anmerken|verbs/anmerken#1]], [[dass|conjunctions/dass]] ich [[es|pronouns/es]] [[für|prepositions/für]] [[unsinnig|adjectives/unsinnig#1]] [[erachte|verbs/erachten#1]], dass [[hier|adverbs/hier#1]] jedes [[Jahr|nouns/Jahr#1]] im [[ganzen|adjectives/ganz#2]] [[Gebäude|nouns/Gebäude#1]] [[neue|adjectives/neu#1]] [[Türen|nouns/Tür#1]] [[eingebaut|verbs/einbauen#1]] [[werden|verbs/werden#2]]."
   },
   "9e8f14fce2": {
     "text": "\"Armut ist das Los der großen Menschheitshelfer.\"",
@@ -18954,7 +18980,7 @@
         "gloss_hint": "follow up"
       }
     ],
-    "text_linked": "„Und wenn es ihr [[wieder|adverbs/wieder#1]] besser [[geht|verbs/gehen]], [[können|verbs/können_etwas#1]] [[wir|pronouns/wir]] sie [[nachkommen|verbs/nachkommen#1]] lassen.“"
+    "text_linked": "„Und wenn es ihr [[wieder|adverbs/wieder#1]] besser [[geht|verbs/gehen]], [[können|verbs/können_beherrschen]] [[wir|pronouns/wir]] sie [[nachkommen|verbs/nachkommen#1]] lassen.“"
   },
   "9ec05b8c71": {
     "text": "1765 wurde das Schreiben von Autos durch königlichen Befehl verboten.",
@@ -18963,7 +18989,7 @@
     "lemmas": [
       "Auto"
     ],
-    "translation_model": "openai/gpt-4.1-mini",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Schreiben",

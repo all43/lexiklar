@@ -829,7 +829,7 @@
         "gloss_hint": "safe (container)"
       }
     ],
-    "text_linked": "„[[Der|pronouns/der_nominativ]] Gastwirt, [[der|pronouns/der_nominativ]] [[die|pronouns/die]] [[von|prepositions/von#1]] [[einem|adjectives/ein]] [[Gast|nouns/Gast_person#1]] eingebrachten [[Sachen|nouns/Sache#1]] [[in|prepositions/in#1]] einem [[Safe|nouns/Safe#1]] [[verwahrt|verbs/verwahren]], [[haftet|verbs/haften_etwas]] [[bei|prepositions/bei#3]] [[nicht|particles/nicht#1]] ordnungsgemäßer Verwahrung [[des|determiners/der#1]] Safeschlüssels [[gemäß|prepositions/gemäß#1]] § 964 ABGB [[für|prepositions/für#1]] [[Diebstähle|nouns/Diebstahl#1]] [[aus|prepositions/aus#1]] diesem Safe“"
+    "text_linked": "„[[Der|pronouns/der_nominativ]] Gastwirt, [[der|pronouns/der_nominativ]] [[die|pronouns/die]] [[von|prepositions/von#1]] [[einem|adjectives/ein]] [[Gast|nouns/Gast_person#1]] eingebrachten [[Sachen|nouns/Sache#1]] [[in|prepositions/in#1]] einem [[Safe|nouns/Safe#1]] [[verwahrt|verbs/verwahren]], [[haftet|verbs/haften_jemanden#1]] [[bei|prepositions/bei#3]] [[nicht|particles/nicht#1]] ordnungsgemäßer Verwahrung [[des|determiners/der#1]] Safeschlüssels [[gemäß|prepositions/gemäß#1]] § 964 ABGB [[für|prepositions/für#1]] [[Diebstähle|nouns/Diebstahl#1]] [[aus|prepositions/aus#1]] diesem Safe“"
   },
   "b102878d00": {
     "text": "jemanden hat der Esel beim Scheißen verloren",
@@ -5623,11 +5623,57 @@
   },
   "b12c68c8aa": {
     "text": "„Die Deklination der Sonne ändert sich im Verlauf des Jahres alle vier Tage durchschnittlich um ein Grad.“",
-    "translation": null,
+    "translation": "The declination of the sun changes on average by one degree every four days over the course of the year.",
     "source": "wiktionary",
     "lemmas": [
       "Deklination"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Deklination",
+        "lemma": "Deklination",
+        "pos": "noun",
+        "gloss_hint": "declination"
+      },
+      {
+        "form": "Sonne",
+        "lemma": "Sonne",
+        "pos": "noun",
+        "gloss_hint": "sun"
+      },
+      {
+        "form": "ändert",
+        "lemma": "ändern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verlauf",
+        "lemma": "Verlauf",
+        "pos": "noun",
+        "gloss_hint": "sequence"
+      },
+      {
+        "form": "Jahres",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "durchschnittlich",
+        "lemma": "durchschnittlich",
+        "pos": "adjective",
+        "gloss_hint": "average"
+      },
+      {
+        "form": "Grad",
+        "lemma": "Grad",
+        "pos": "noun",
+        "gloss_hint": "degree"
+      }
+    ],
+    "text_linked": "„Die [[Deklination|nouns/Deklination#2]] der [[Sonne|nouns/Sonne#1]] [[ändert|verbs/ändern]] sich im [[Verlauf|nouns/Verlauf#1]] des [[Jahres|nouns/Jahr]] alle vier Tage [[durchschnittlich|adjectives/durchschnittlich#1]] um ein [[Grad|nouns/Grad_allgemeine#1]].“"
   },
   "b12d33c74b": {
     "text": "„In den alten Zeiten war der Nil voller Fische, und getrockneter Fisch gehörte zu den Grundnahrungsmitteln der Ägypter.“",
@@ -9290,7 +9336,7 @@
         "gloss_hint": "hope"
       }
     ],
-    "text_linked": "„Er [[hatte|verbs/haben#1]] [[eine|determiners/ein]] [[bewaffnete|adjectives/bewaffnet]] [[Rebellion|nouns/Rebellion]] [[von|prepositions/von]] [[Teilen|nouns/Teil_element#2]] [[der|determiners/der]] Afrikaaner-Bevölkerung [[im|prepositions/in]] [[Norden|nouns/Norden#1]] [[des|determiners/der]] [[Freistaats|nouns/Freistaat]] [[und|conjunctions/und]] im [[Südwesten|nouns/Südwesten#1]] des Transvaal [[zur|prepositions/zu]] [[Folge|nouns/Folge#1]], [[die|pronouns/die]] [[sich|pronouns/sich#2]] [[gegen|particles/gegen#1]] Südafrikas Kriegsbeteiligung [[als|conjunctions/als]] [[Teil|nouns/Teil_stück#1]] des [[Empire|nouns/Empire_britisches#1]] [[wandten|verbs/wenden#1]] und [[ihre|pronouns/ihr_person]] [[alten|adjectives/alt]] [[Republiken|nouns/Republik#1]] [[wiederherzustellen|verbs/wiederherstellen#1]] [[hofften|verbs/hoffen#1]].“"
+    "text_linked": "„Er [[hatte|verbs/haben#1]] [[eine|determiners/ein]] [[bewaffnete|adjectives/bewaffnet]] [[Rebellion|nouns/Rebellion]] [[von|prepositions/von]] [[Teilen|nouns/Teil_stück#2]] [[der|determiners/der]] Afrikaaner-Bevölkerung [[im|prepositions/in]] [[Norden|nouns/Norden#1]] [[des|determiners/der]] [[Freistaats|nouns/Freistaat]] [[und|conjunctions/und]] im [[Südwesten|nouns/Südwesten#1]] des Transvaal [[zur|prepositions/zu]] [[Folge|nouns/Folge#1]], [[die|pronouns/die]] [[sich|pronouns/sich#2]] [[gegen|particles/gegen#1]] Südafrikas Kriegsbeteiligung [[als|conjunctions/als]] [[Teil|nouns/Teil_stück#1]] des [[Empire|nouns/Empire_britisches#1]] [[wandten|verbs/wenden#1]] und [[ihre|pronouns/ihr_person]] [[alten|adjectives/alt]] [[Republiken|nouns/Republik#1]] [[wiederherzustellen|verbs/wiederherstellen#1]] [[hofften|verbs/hoffen#1]].“"
   },
   "b1594b6019": {
     "text": "Völlig die Realität verkennend hatte der Präsident noch in den letzten Kriegstagen auf einen Sieg gebaut.",
@@ -10864,7 +10910,7 @@
         "gloss_hint": "be able to"
       }
     ],
-    "text_linked": "„[[Trotzdem|adverbs/trotzdem]] [[gab|verbs/geben]] [[es|pronouns/es]] [[noch|adverbs/noch#1]] jede [[Menge|nouns/Menge#1]] [[Stempel|nouns/Stempel#1]] [[und|conjunctions/und]] [[Papierkram|nouns/Papierkram#1]] [[zu|particles/zu_drückt]] [[erledigen|verbs/erledigen#1]], [[bis|particles/bis#1]] [[ich|pronouns/ich]] [[endlich|adverbs/endlich#1]] [[einreisen|verbs/einreisen]] [[konnte|verbs/können_beherrschen]].“"
+    "text_linked": "„[[Trotzdem|adverbs/trotzdem]] [[gab|verbs/geben]] [[es|pronouns/es]] [[noch|adverbs/noch#1]] jede [[Menge|nouns/Menge#1]] [[Stempel|nouns/Stempel#1]] [[und|conjunctions/und]] [[Papierkram|nouns/Papierkram#1]] [[zu|particles/zu_drückt]] [[erledigen|verbs/erledigen#1]], [[bis|particles/bis#1]] [[ich|pronouns/ich]] [[endlich|adverbs/endlich#1]] [[einreisen|verbs/einreisen#1]] [[konnte|verbs/können_etwas#1]].“"
   },
   "b16a0f210d": {
     "text": "Wir könnten uns zu einem schnellen Mittag in der Stadt treffen.",
@@ -13879,7 +13925,7 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "„[[Hier|adverbs/hier]] [[wollen|verbs/wollen#1]] [[wir|pronouns/wir]] [[Ihnen|nouns/Sie_besondere]] [[zeigen|verbs/zeigen#1]], [[wie|adverbs/wie#1]] [[Sie|pronouns/sie]] [[selbst|pronouns/selbst#1]] [[daheim|adverbs/daheim]] im [[Garten|nouns/Garten#1]] [[Tabak|nouns/Tabak#1]] [[anbauen|verbs/anbauen#2]] [[und|conjunctions/und]] [[auch|adverbs/auch]] [[ernten|verbs/ernten#1]] [[können|verbs/können_etwas#1]].“"
+    "text_linked": "„[[Hier|adverbs/hier]] [[wollen|verbs/wollen#1]] [[wir|pronouns/wir]] [[Ihnen|nouns/Sie_besondere]] [[zeigen|verbs/zeigen#1]], [[wie|adverbs/wie#1]] [[Sie|pronouns/sie]] [[selbst|pronouns/selbst#1]] [[daheim|adverbs/daheim]] im [[Garten|nouns/Garten#1]] [[Tabak|nouns/Tabak#1]] [[anbauen|verbs/anbauen#2]] [[und|conjunctions/und]] [[auch|adverbs/auch]] [[ernten|verbs/ernten#1]] [[können|verbs/können_beherrschen]].“"
   },
   "b18e5d1273": {
     "text": "Die Einheit wird ausgebaut.",
@@ -14922,7 +14968,7 @@
         "gloss_hint": "repeats"
       }
     ],
-    "text_linked": "„Wenn, um nur ein [[Beispiel|nouns/Beispiel#1]] zu nennen, der Protagonist im [[Rahmen|nouns/Rahmen#5]] eines Rollenspiels mit [[Scham|nouns/Scham#1]] provozierenden Bezugspersonen [[konfrontiert|verbs/konfrontieren#1]] wird, regt der therapeutische Clown ihn [[konsequent|adjectives/konsequent#2]] zu einem gegenprovokativen bzw. ‚un-verschämten‘ Verhalten an, sodass die lebensgeschichtlich gewachsenen Hemmungen nicht mehr zum Tragen [[kommen|verbs/kommen]] [[können|verbs/können_etwas#1]]. Die entsprechende selbstkritische Reflexion, die solche Hemmungen erst verursacht, verunmöglicht der therapeutische Clown, indem er dem Protagonisten z.B. unaufhörlich respektlose [[Bemerkungen|nouns/Bemerkung#1]] über die Gegenspieler im Humordrama ins Ohr [[flüstert|verbs/flüstern#1]], [[unverschämte|adjectives/unverschämt#2]] Faxen [[macht|verbs/machen]] oder stereotyp einen bestimmten Kraftausdruck [[wiederholt|verbs/wiederholen_etwas#1]] […].“"
+    "text_linked": "„Wenn, um nur ein [[Beispiel|nouns/Beispiel#1]] zu nennen, der Protagonist im [[Rahmen|nouns/Rahmen#5]] eines Rollenspiels mit [[Scham|nouns/Scham#1]] provozierenden Bezugspersonen [[konfrontiert|verbs/konfrontieren#1]] wird, regt der therapeutische Clown ihn [[konsequent|adjectives/konsequent#2]] zu einem gegenprovokativen bzw. ‚un-verschämten‘ Verhalten an, sodass die lebensgeschichtlich gewachsenen Hemmungen nicht mehr zum Tragen [[kommen|verbs/kommen]] [[können|verbs/können_beherrschen]]. Die entsprechende selbstkritische Reflexion, die solche Hemmungen erst verursacht, verunmöglicht der therapeutische Clown, indem er dem Protagonisten z.B. unaufhörlich respektlose [[Bemerkungen|nouns/Bemerkung#1]] über die Gegenspieler im Humordrama ins Ohr [[flüstert|verbs/flüstern#1]], [[unverschämte|adjectives/unverschämt#2]] Faxen [[macht|verbs/machen]] oder stereotyp einen bestimmten Kraftausdruck [[wiederholt|verbs/wiederholen_etwas#1]] […].“"
   },
   "b19c502190": {
     "text": "„Durch das fehlgeschlagene Attentat auf Hitler am 20. Juli 1944 wurden sie zu Märtyrern, deren Vermächtnis für das Nachkriegsdeutschland der Bundesrepublik symbolhafte Bedeutung hat.“",
@@ -17057,11 +17103,81 @@
   },
   "b1b22a52f0": {
     "text": "„Genetische Rekombinationen beruhen auf einer Übertragung von Erbmaterial in Rezeptorzellen; Mechanismen sind die Transformation, die Konjugation, die Transduktion und die Transpose.“",
-    "translation": null,
+    "translation": "Genetic recombinations are based on a transfer of genetic material into receptor cells; mechanisms are transformation, conjugation, transduction, and transposition.",
     "source": "wiktionary",
     "lemmas": [
       "Konjugation"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Genetische",
+        "lemma": "genetisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rekombinationen",
+        "lemma": "Rekombination",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beruhen",
+        "lemma": "beruhen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Übertragung",
+        "lemma": "Übertragung",
+        "pos": "noun",
+        "gloss_hint": "transfer"
+      },
+      {
+        "form": "Erbmaterial",
+        "lemma": "Erbmaterial",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rezeptorzellen",
+        "lemma": "Rezeptorzelle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mechanismen",
+        "lemma": "Mechanismus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Transformation",
+        "lemma": "Transformation",
+        "pos": "noun",
+        "gloss_hint": "transformation"
+      },
+      {
+        "form": "Konjugation",
+        "lemma": "Konjugation",
+        "pos": "noun",
+        "gloss_hint": "bacterial conjugation"
+      },
+      {
+        "form": "Transduktion",
+        "lemma": "Transduktion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Transpose",
+        "lemma": "Transpose",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„[[Genetische|adjectives/genetisch]] Rekombinationen [[beruhen|verbs/beruhen]] auf einer [[Übertragung|nouns/Übertragung#3]] von Erbmaterial in Rezeptorzellen; [[Mechanismen|nouns/Mechanismus]] sind die [[Transformation|nouns/Transformation#1]], die [[Konjugation|nouns/Konjugation#2]], die Transduktion und die Transpose.“"
   },
   "b1b29d8673": {
     "text": "„In dem Konflikt geht es um mehr als eine Reihe größtenteils unbewohnter Inseln und Riffe.“",
@@ -20971,7 +21087,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Einige|numerals/einige#1]] Pilze [[können|verbs/können_etwas#1]] [[sich|pronouns/sich#1]] [[auch|adverbs/auch]] ungeschlechtlich [[fortpflanzen|verbs/fortpflanzen]].“"
+    "text_linked": "„[[Einige|numerals/einige#1]] Pilze [[können|verbs/können_beherrschen]] [[sich|pronouns/sich#1]] [[auch|adverbs/auch]] ungeschlechtlich [[fortpflanzen|verbs/fortpflanzen]].“"
   },
   "b1dbc40940": {
     "text": "„Emser ließ sich seine Verärgerung nicht anmerken, er folgte scheinbar willig den Mehrheitsbeschlüssen und deutete lediglich Rita gegenüber seine Bedenken an.“",

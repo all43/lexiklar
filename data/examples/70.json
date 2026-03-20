@@ -814,7 +814,7 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "[[Westlich|adjectives/westlich]] [[von|prepositions/von]] [[hier|adverbs/hier]] [[finden|verbs/finden#1]] [[Sie|nouns/Sie_besondere]] [[ein|determiners/ein]] Plateau, von [[dem|determiners/dem]] [[aus|adverbs/aus]] Sie [[die|pronouns/die]] [[ganze|adjectives/ganz]] [[Gegend|nouns/Gegend#1]] [[überblicken|verbs/überblicken]] [[können|verbs/können_etwas#1]]."
+    "text_linked": "[[Westlich|adjectives/westlich]] [[von|prepositions/von]] [[hier|adverbs/hier]] [[finden|verbs/finden#1]] [[Sie|nouns/Sie_besondere]] [[ein|determiners/ein]] Plateau, von [[dem|determiners/dem]] [[aus|adverbs/aus]] Sie [[die|pronouns/die]] [[ganze|adjectives/ganz]] [[Gegend|nouns/Gegend#1]] [[überblicken|verbs/überblicken]] [[können|verbs/können_beherrschen]]."
   },
   "70108e59f1": {
     "text": "„Der Maschinenraum enthält in übersichtlicher Anordnung die beiden Turbinen, von denen jede mit dem dazugehörigen Kondensator durch zwei flußeiserne Abdampfrohre von kreisrundem Querschnitt verbunden ist.“",
@@ -2264,7 +2264,7 @@
         "gloss_hint": "unite"
       }
     ],
-    "text_linked": "Er [[schaffte|verbs/schaffen_etwas#1]] [[es|pronouns/es]], [[die|determiners/die]] [[drei|numerals/drei#1]] [[Reiche|nouns/Reich#4]] [[zu|particles/zu_drückt]] [[vereinigen|verbs/vereinigen#1]]."
+    "text_linked": "Er [[schaffte|verbs/schaffen_etwas]] [[es|pronouns/es]], [[die|determiners/die]] [[drei|numerals/drei#1]] [[Reiche|nouns/Reich#4]] [[zu|particles/zu_drückt]] [[vereinigen|verbs/vereinigen#1]]."
   },
   "702160e9eb": {
     "text": "Es fand sich dann eine ganz harmlose Erklärung: Eine alte Dame hatte sich in der Tür geirrt.",
@@ -3856,7 +3856,7 @@
         "gloss_hint": "suppress"
       }
     ],
-    "text_linked": "[[Mit|prepositions/mit]] [[Mühe|nouns/Mühe#1]] [[nur|particles/nur#1]] [[konnten|verbs/können_beherrschen]] [[die|pronouns/die]] [[Schülerinnen|nouns/Schülerin]] [[ein|pronouns/ein#1]] [[Lachen|nouns/Lachen#1]] [[unterdrücken|verbs/unterdrücken#2]]."
+    "text_linked": "[[Mit|prepositions/mit]] [[Mühe|nouns/Mühe#1]] [[nur|particles/nur#1]] [[konnten|verbs/können_etwas#1]] [[die|pronouns/die]] [[Schülerinnen|nouns/Schülerin]] [[ein|pronouns/ein#1]] [[Lachen|nouns/Lachen#1]] [[unterdrücken|verbs/unterdrücken#2]]."
   },
   "702c04ff30": {
     "text": "„So kann z.B. die Sorge um die eigene Vertrauenswürdigkeit ein wirksames Motiv sein, ein Versprechen zu halten.“",
@@ -4751,7 +4751,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Der|pronouns/der_nominativ]] [[Schöpfer|nouns/Schöpfer_mensch#1]] [[und|conjunctions/und]] [[ich|pronouns/ich]] [[kannten|verbs/kennen#1]] [[uns|pronouns/uns#2]] [[schon|particles/schon_antwort#1]], [[als|conjunctions/als#2]] [[du|pronouns/du]] [[noch|adverbs/noch#1]] [[in|prepositions/in]] Abrahams Wurstkessel [[geplanscht|verbs/planschen]] [[hast|verbs/haben#1]]. Er hat [[mich|pronouns/ich]] [[geschaffen|verbs/schaffen_etwas]], Jim.“"
+    "text_linked": "„[[Der|pronouns/der_nominativ]] [[Schöpfer|nouns/Schöpfer_mensch#1]] [[und|conjunctions/und]] [[ich|pronouns/ich]] [[kannten|verbs/kennen#1]] [[uns|pronouns/uns#2]] [[schon|particles/schon_antwort#1]], [[als|conjunctions/als#2]] [[du|pronouns/du]] [[noch|adverbs/noch#1]] [[in|prepositions/in]] Abrahams Wurstkessel [[geplanscht|verbs/planschen]] [[hast|verbs/haben#1]]. Er hat [[mich|pronouns/ich]] [[geschaffen|verbs/schaffen_etwas#1]], Jim.“"
   },
   "7035e6623c": {
     "text": "Wer ist denn in unserem Unternehmen für die PR verantwortlich?",
@@ -5660,11 +5660,49 @@
   },
   "703e17b07a": {
     "text": "Die Kinder liefen die Spanische Treppe in Rom treppab.",
-    "translation": null,
+    "translation": "The children ran down the Spanish Steps in Rome.",
     "source": "wiktionary",
     "lemmas": [
       "treppab"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "liefen",
+        "lemma": "laufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spanische",
+        "lemma": "spanisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Treppe",
+        "lemma": "Treppe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rom",
+        "lemma": "Rom",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "7827fe17"
+    },
+    "text_linked": "Die [[Kinder|nouns/Kind]] [[liefen|verbs/laufen]] die [[Spanische|adjectives/spanisch]] [[Treppe|nouns/Treppe]] in Rom treppab."
   },
   "703ed1fd1e": {
     "text": "„Listen und Rankings sind nur Momentaufnahmen.“",
@@ -6345,7 +6383,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Romulus [[und|conjunctions/und]] Remus [[wurden|verbs/werden#3]] [[von|prepositions/von#2]] einer [[Wölfin|nouns/Wölfin]] [[gesäugt|verbs/säugen]]."
+    "text_linked": "Romulus [[und|conjunctions/und]] Remus [[wurden|verbs/werden#3]] [[von|prepositions/von#2]] einer [[Wölfin|nouns/Wölfin]] gesäugt."
   },
   "70455846f0": {
     "text": "„Als eine Platte klemmte, nahm er diese wieder heraus, um sie an der noch nicht bearbeiteten Ecke geradezubiegen.“",
@@ -6725,7 +6763,7 @@
         "gloss_hint": "storage"
       }
     ],
-    "text_linked": "[[Wir|pronouns/wir]] [[schaffen|verbs/schaffen_etwas#1]] [[die|determiners/die]] [[Kisten|nouns/Kiste_angehöriger]] [[in|prepositions/in]] [[unser|pronouns/unser_personalpronomen#1]] [[Depot|nouns/Depot#1]]."
+    "text_linked": "[[Wir|pronouns/wir]] [[schaffen|verbs/schaffen_etwas]] [[die|determiners/die]] [[Kisten|nouns/Kiste_angehöriger]] [[in|prepositions/in]] [[unser|pronouns/unser_personalpronomen#1]] [[Depot|nouns/Depot#1]]."
   },
   "704850d109": {
     "text": "einen Schlag mit der Wichsbüchse weghaben",
@@ -7192,7 +7230,7 @@
         "gloss_hint": "dignity"
       }
     ],
-    "text_linked": "[[Niemand|pronouns/niemand]] [[hätte|verbs/haben]] [[gedacht|verbs/denken#1]], [[dass|conjunctions/dass]] [[es|pronouns/es]] dieser [[Roller|nouns/Roller#1]] [[bis|particles/bis#1]] [[ins|prepositions/in]] [[Tor|nouns/Tor_großer#1]] [[schaffen|verbs/schaffen_etwas#1]] würde."
+    "text_linked": "[[Niemand|pronouns/niemand]] [[hätte|verbs/haben]] [[gedacht|verbs/denken#1]], [[dass|conjunctions/dass]] [[es|pronouns/es]] dieser [[Roller|nouns/Roller#1]] [[bis|particles/bis#1]] [[ins|prepositions/in]] [[Tor|nouns/Tor_großer#1]] [[schaffen|verbs/schaffen_etwas]] würde."
   },
   "704e45e191": {
     "text": "„An der Gepäckausgabe standen Hafenarbeiter, bellten Kommandos, händigten Koffer und Säcke aus.“",
@@ -8350,7 +8388,7 @@
         "gloss_hint": "madness"
       }
     ],
-    "text_linked": "„Die [[Komödie|nouns/Komödie#1]] [[lässt|verbs/lassen]] [[den|determiners/der]] [[armen|adjectives/arm]] [[Tropf|nouns/Tropf#2]] [[neben|prepositions/neben]] all den [[glücklichen|adjectives/glücklich]] [[Paaren|nouns/Paar#2]] [[nicht|particles/nicht]] [[nur|particles/nur]] [[im|prepositions/in]] [[Regen|nouns/Regen#1]] [[stehen|verbs/stehen#1]], [[sondern|conjunctions/sondern]] [[tunkt|verbs/tunken]] ihn [[in|prepositions/in]] [[die|determiners/die]] Traufe [[des|determiners/des]] [[Wahnsinns|nouns/Wahnsinn#3]].“"
+    "text_linked": "„Die [[Komödie|nouns/Komödie#1]] [[lässt|verbs/lassen]] [[den|determiners/der]] [[armen|adjectives/arm]] [[Tropf|nouns/Tropf#2]] [[neben|prepositions/neben]] all den [[glücklichen|adjectives/glücklich]] [[Paaren|nouns/Paar#2]] [[nicht|particles/nicht]] [[nur|particles/nur]] [[im|prepositions/in]] [[Regen|nouns/Regen#1]] [[stehen|verbs/stehen#1]], [[sondern|conjunctions/sondern]] tunkt ihn [[in|prepositions/in]] [[die|determiners/die]] Traufe [[des|determiners/des]] [[Wahnsinns|nouns/Wahnsinn#3]].“"
   },
   "705fdd19be": {
     "text": "„Da er sich der Behauptung von Raspail entsann, daß man durch Unterbrechung der Diät das Fieber herabdrücke, verordnete er Fleischbrühe und sogar ein wenig Fleisch.“",
@@ -9767,7 +9805,7 @@
         "gloss_hint": "be able to"
       }
     ],
-    "text_linked": "„In [[der|determiners/die]] [[Debatte|nouns/Debatte#1]] [[über|prepositions/über]] [[den|determiners/der]] [[Umgang|nouns/Umgang#2]] [[mit|prepositions/mit]] [[Minderheiten|nouns/Minderheit#1]] [[und|conjunctions/und]] [[um|prepositions/um]] gendersensible [[Sprache|nouns/Sprache#1]] [[hat|verbs/haben#1]] Wolfgang Thierse [[seine|pronouns/sein]] weitere [[Mitgliedschaft|nouns/Mitgliedschaft]] [[in|prepositions/in]] der SPD [[angekündigt|verbs/ankündigen#1]]. [[Der|determiners/der]] ehemalige Bundestagspräsident [[mahnte|verbs/mahnen]] seine [[Partei|nouns/Partei#2]] [[zugleich|adverbs/zugleich]], keine Parteimitglieder [[zu|prepositions/zu]] [[verprellen|verbs/verprellen]], [[‚die|determiners/die]] [[das|pronouns/das_[1]]] Gendersternchen [[nicht|particles/nicht#1]] [[mitsprechen|verbs/mitsprechen]] [[wollen|verbs/wollen#2]] und [[können|verbs/können_beherrschen]]‘, wie er dem ‚Zeitmagazin‘ (Donnerstag) sagte.“"
+    "text_linked": "„In [[der|determiners/die]] [[Debatte|nouns/Debatte#1]] [[über|prepositions/über]] [[den|determiners/der]] [[Umgang|nouns/Umgang#2]] [[mit|prepositions/mit]] [[Minderheiten|nouns/Minderheit#1]] [[und|conjunctions/und]] [[um|prepositions/um]] gendersensible [[Sprache|nouns/Sprache#1]] [[hat|verbs/haben#1]] Wolfgang Thierse [[seine|pronouns/sein]] weitere [[Mitgliedschaft|nouns/Mitgliedschaft]] [[in|prepositions/in]] der SPD [[angekündigt|verbs/ankündigen#1]]. [[Der|determiners/der]] ehemalige Bundestagspräsident [[mahnte|verbs/mahnen]] seine [[Partei|nouns/Partei#2]] [[zugleich|adverbs/zugleich]], keine Parteimitglieder [[zu|prepositions/zu]] [[verprellen|verbs/verprellen]], [[‚die|determiners/die]] [[das|pronouns/das_[1]]] Gendersternchen [[nicht|particles/nicht#1]] [[mitsprechen|verbs/mitsprechen]] [[wollen|verbs/wollen#2]] und [[können|verbs/können_etwas#1]]‘, wie er dem ‚Zeitmagazin‘ (Donnerstag) sagte.“"
   },
   "706b25da1f": {
     "text": "„Lebewesen in Bächen und Flüssen werden Opfer von Giftstoffen aus der Landwirtschaft und das Grundwasser ist oft weit über die Grenzwerte belastet. Muss das sein?“",
@@ -11245,7 +11283,7 @@
         "gloss_hint": "set"
       }
     ],
-    "text_linked": "„[[was|pronouns/was#1]] [[wunders|nouns/Wunder#1]] [[schafft|verbs/schaffen_etwas]] [[gott|nouns/Gott#2]] [[in|prepositions/in]] [[die|determiners/die]] [[welt|nouns/Welt#3]],/ solch [[ungeziefer|nouns/Ungeziefer#1]] [[drin|adverbs/drin_ortsangabe#1]] [[erhelt|verbs/erhalten#2]]!/ [[mit|prepositions/mit]] [[hunden|nouns/Hund#1]] [[solt|verbs/sollen#4]] [[man|pronouns/man#2]] sie auszhetzen,/ [[zum|prepositions/zu]] scheutzel in die [[bohnen|nouns/Bohne#1]] [[setzen|verbs/setzen#3]].“ (Waldis: Esop 4, 7, 100, 1548)"
+    "text_linked": "„[[was|pronouns/was#1]] [[wunders|nouns/Wunder#1]] [[schafft|verbs/schaffen_etwas#1]] [[gott|nouns/Gott#2]] [[in|prepositions/in]] [[die|determiners/die]] [[welt|nouns/Welt#3]],/ solch [[ungeziefer|nouns/Ungeziefer#1]] [[drin|adverbs/drin_ortsangabe#1]] [[erhelt|verbs/erhalten#2]]!/ [[mit|prepositions/mit]] [[hunden|nouns/Hund#1]] [[solt|verbs/sollen#4]] [[man|pronouns/man#2]] sie auszhetzen,/ [[zum|prepositions/zu]] scheutzel in die [[bohnen|nouns/Bohne#1]] [[setzen|verbs/setzen#3]].“ (Waldis: Esop 4, 7, 100, 1548)"
   },
   "707c6ad615": {
     "text": "„Seine Wäsche gibt Papa Mostmann in die Wäscherei.“",
@@ -11333,7 +11371,7 @@
         "gloss_hint": "swells with vanity"
       }
     ],
-    "text_linked": "„Heinrich Cuno [[ist|verbs/sein#2]] [[ein|determiners/ein]] [[unwissender|adjectives/unwissend#1]] [[Dummkopf|nouns/Dummkopf]], [[der|pronouns/der_nominativ#1]] [[sich|pronouns/sich#1]] [[vor|prepositions/vor#4]] [[Eitelkeit|nouns/Eitelkeit#1]] [[aufbläht|verbs/aufblähen]].“"
+    "text_linked": "„Heinrich Cuno [[ist|verbs/sein#2]] [[ein|determiners/ein]] [[unwissender|adjectives/unwissend#1]] [[Dummkopf|nouns/Dummkopf]], [[der|pronouns/der_nominativ#1]] [[sich|pronouns/sich#1]] [[vor|prepositions/vor#4]] [[Eitelkeit|nouns/Eitelkeit#1]] aufbläht.“"
   },
   "707c95df82": {
     "text": "an den Weihnachtsmann glauben",
@@ -12328,7 +12366,7 @@
         "gloss_hint": "darken"
       }
     ],
-    "text_linked": "„Schon [[den ganzen Tag|nouns/Tag_zeitraum#1]] war der Himmel [[über|prepositions/über]] [[Berlin|names/Berlin]] [[mit|prepositions/mit]] [[einem|determiners/ein]] [[gleichmäßigen|adjectives/gleichmäßig]] [[Grau|nouns/Grau#1]] [[überzogen|verbs/überziehen_bespannen#1]], [[das|pronouns/das_[1]]] [[sich|pronouns/sich]] [[zum|prepositions/zu]] [[Mittag|nouns/Mittag_tageszeit#1]] [[hin|adverbs/hin]] [[verdüsterte|verbs/verdüstern]].“"
+    "text_linked": "„Schon [[den ganzen Tag|nouns/Tag_zeitraum#1]] war der Himmel [[über|prepositions/über]] [[Berlin|names/Berlin]] [[mit|prepositions/mit]] [[einem|determiners/ein]] [[gleichmäßigen|adjectives/gleichmäßig]] [[Grau|nouns/Grau#1]] [[überzogen|verbs/überziehen_bespannen#1]], [[das|pronouns/das_[1]]] [[sich|pronouns/sich]] [[zum|prepositions/zu]] [[Mittag|nouns/Mittag_tageszeit#1]] [[hin|adverbs/hin]] verdüsterte.“"
   },
   "708ca2c74d": {
     "text": "Er ist in die FDP eingetreten.",
@@ -13225,7 +13263,7 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "Bevor Sie einen Bodenbelag verlegen können, sollten Sie [[in|prepositions/in]] der Regel zuvor den Boden ausgleichen. [[Dafür|adverbs/dafür]] [[stehen|verbs/stehen#2]] [[verschiedene|adjectives/verschieden_mehr]] Ausgleichsmassen [[zur|prepositions/zu]] [[Verfügung|nouns/Verfügung#2]], [[womit|adverbs/womit#2]] [[man|pronouns/man#2]] selbst unebene [[Untergründe|nouns/Untergrund]] in [[plane|adjectives/plan#1]] [[Flächen|nouns/Fläche#1]] [[verwandeln|verbs/verwandeln#1]] [[kann|verbs/können_etwas#1]]."
+    "text_linked": "Bevor Sie einen Bodenbelag verlegen können, sollten Sie [[in|prepositions/in]] der Regel zuvor den Boden ausgleichen. [[Dafür|adverbs/dafür]] [[stehen|verbs/stehen#2]] [[verschiedene|adjectives/verschieden_mehr]] Ausgleichsmassen [[zur|prepositions/zu]] [[Verfügung|nouns/Verfügung#2]], [[womit|adverbs/womit#2]] [[man|pronouns/man#2]] selbst unebene [[Untergründe|nouns/Untergrund]] in [[plane|adjectives/plan#1]] [[Flächen|nouns/Fläche#1]] [[verwandeln|verbs/verwandeln#1]] [[kann|verbs/können_beherrschen]]."
   },
   "7095d25961": {
     "text": "Die Europäische Gemeinschaft versucht, sich in der globalisierten Welt zu behaupten.",
@@ -15463,11 +15501,63 @@
   },
   "70b877dc86": {
     "text": "„Eine passende Antwort würde wohl die Auflistung zahlreicher Synonyme oder assoziierter Eigenschaften beinhalten.“",
-    "translation": null,
+    "translation": "An appropriate answer would probably include a listing of numerous synonyms or associated properties.",
     "source": "wiktionary",
     "lemmas": [
       "Synonym"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "passende",
+        "lemma": "passend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Antwort",
+        "lemma": "Antwort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auflistung",
+        "lemma": "Auflistung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zahlreicher",
+        "lemma": "zahlreich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Synonyme",
+        "lemma": "Synonym",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "assoziierter",
+        "lemma": "assoziiert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eigenschaften",
+        "lemma": "Eigenschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beinhalten",
+        "lemma": "beinhalten",
+        "pos": "verb",
+        "gloss_hint": "include"
+      }
+    ],
+    "text_linked": "„Eine [[passende|adjectives/passend]] [[Antwort|nouns/Antwort]] würde wohl die Auflistung zahlreicher [[Synonyme|nouns/Synonym]] oder assoziierter [[Eigenschaften|nouns/Eigenschaft]] [[beinhalten|verbs/beinhalten#1]].“"
   },
   "70b8963d32": {
     "text": "Das G36 hat eine effektive Reichweite von 800 Metern.",
@@ -16368,7 +16458,10 @@
       "schlechthin",
       "Bungeespringer"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "70bf94fe26": {
     "text": "[Christa Binswanger:] „Ich hoffe, dass die strukturellen Voraussetzungen besser werden, damit sich auch Mütter in der Politik engagieren können. Schweden und Island gehen aus meiner Sicht mit gutem Beispiel voran.“",
@@ -18243,7 +18336,7 @@
         "gloss_hint": "received"
       }
     ],
-    "text_linked": "„Wellesley, [[der|pronouns/der_nominativ]], [[seiner|pronouns/sein]] [[Behauptung|nouns/Behauptung#1]] [[nach|prepositions/nach#1]], [[wegen|prepositions/wegen#1]] [[des|determiners/der]] [[geringen|adjectives/gering#2]] Nachdrucks, [[mit|prepositions/mit#1]] [[dem|determiners/der]] der Krieg [[auf|prepositions/auf#1]] der pyrenäischen Halbinsel [[geführt|verbs/führen]] [[werde|verbs/werden]], mit [[seinen|pronouns/sein#1]] [[Kollegen|nouns/Kollege#1]], namentlich mit Perceval [[unzufrieden|adjectives/unzufrieden#1]] [[war|verbs/sein#1]], [[hatte|verbs/haben]] [[bereits|adverbs/bereits#1]] [[einige|numerals/einige#1]] [[Wochen|nouns/Woche#1]] [[früher|adjectives/früh]] [[um|prepositions/um#1]] [[seine|pronouns/sein#1]] [[Entlassung|nouns/Entlassung]] nachgesucht [[und|conjunctions/und#1]], wiewohl der [[Prinz|nouns/Prinz#1]] [[Regent|nouns/Regent#2]] ihm [[dringend|adjectives/dringend#1]] angelegen, seinen [[Posten|nouns/Posten#3]] [[zu|prepositions/zu#1]] [[behalten|verbs/behalten#1]], dieselbe auf sein wiederholtes Verlangen, indem er zugleich erklärte, auf keine Weise ferner unter Perceval dienen zu wollen, [[endlich|adverbs/endlich#1]] [[erhalten|verbs/erhalten#1]].“"
+    "text_linked": "„Wellesley, [[der|pronouns/der_nominativ]], [[seiner|pronouns/sein]] [[Behauptung|nouns/Behauptung#1]] [[nach|prepositions/nach#1]], [[wegen|prepositions/wegen#1]] [[des|determiners/der]] [[geringen|adjectives/gering#2]] Nachdrucks, [[mit|prepositions/mit#1]] [[dem|determiners/der]] der Krieg [[auf|prepositions/auf#1]] der pyrenäischen Halbinsel [[geführt|verbs/führen]] [[werde|verbs/werden]], mit [[seinen|pronouns/sein#1]] [[Kollegen|nouns/Kollege#1]], [[namentlich|adjectives/namentlich]] mit Perceval [[unzufrieden|adjectives/unzufrieden#1]] [[war|verbs/sein#1]], [[hatte|verbs/haben]] [[bereits|adverbs/bereits#1]] [[einige|numerals/einige#1]] [[Wochen|nouns/Woche#1]] [[früher|adjectives/früh]] [[um|prepositions/um#1]] [[seine|pronouns/sein#1]] [[Entlassung|nouns/Entlassung]] nachgesucht [[und|conjunctions/und#1]], [[wiewohl|conjunctions/wiewohl#1]] der [[Prinz|nouns/Prinz#1]] [[Regent|nouns/Regent#2]] ihm [[dringend|adjectives/dringend#1]] angelegen, seinen [[Posten|nouns/Posten#3]] [[zu|prepositions/zu#1]] [[behalten|verbs/behalten#1]], dieselbe auf sein wiederholtes Verlangen, indem er zugleich erklärte, auf keine Weise ferner unter Perceval dienen zu wollen, [[endlich|adverbs/endlich#1]] [[erhalten|verbs/erhalten#1]].“"
   },
   "70dad50007": {
     "text": "Der Schauspieler Jim Carrey ist gebürtiger Kanadier.",
@@ -18904,11 +18997,37 @@
   },
   "70e41a1a28": {
     "text": "am Donnerstag, am 1.11.2005, am Anfang des Theaterstücks",
-    "translation": null,
+    "translation": "on Thursday, on November 1st, 2005, at the beginning of the play",
     "source": "wiktionary",
     "lemmas": [
       "am"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Donnerstag",
+        "lemma": "Donnerstag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anfang",
+        "lemma": "Anfang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Theaterstücks",
+        "lemma": "Theaterstück",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "e3fdfffb"
+    },
+    "text_linked": "am [[Donnerstag|nouns/Donnerstag]], am 1.11.2005, am [[Anfang|nouns/Anfang]] des [[Theaterstücks|nouns/Theaterstück]]"
   },
   "70e4fdbe91": {
     "text": "schräge Tour",
@@ -19538,7 +19657,7 @@
         "gloss_hint": "rotation"
       }
     ],
-    "text_linked": "„Er [[griff|verbs/greifen#3]] [[zur|prepositions/zu]] linken Steuerleine, [[zog|verbs/ziehen#1]] sie [[auf|prepositions/auf]] Kopfhöhe [[hinunter|adverbs/hinunter]] [[und|conjunctions/und]] [[vollführte|verbs/vollführen]] [[eine|determiners/eine]] [[180-Grad-Drehung|nouns/180-Grad-Drehung]].“"
+    "text_linked": "„Er [[griff|verbs/greifen#3]] [[zur|prepositions/zu]] linken Steuerleine, [[zog|verbs/ziehen#1]] sie [[auf|prepositions/auf]] Kopfhöhe [[hinunter|adverbs/hinunter]] [[und|conjunctions/und]] vollführte [[eine|determiners/eine]] [[180-Grad-Drehung|nouns/180-Grad-Drehung]].“"
   },
   "70ef32d39f": {
     "text": "„Da die Erde wärmer wird, schmelzen zudem die Gletscher in den Hochgebirgen sowie die Eiskappen auf Grönland und zum Teil in der Antarktis.“",
@@ -19600,7 +19719,7 @@
         "gloss_hint": "burst"
       }
     ],
-    "text_linked": "[[Können|verbs/können_etwas#1]] [[sich|pronouns/sich#2]] [[bitte|particles/bitte#1]] alle [[platzen|verbs/platzen_durch#1]]?"
+    "text_linked": "[[Können|verbs/können_beherrschen]] [[sich|pronouns/sich#2]] [[bitte|particles/bitte#1]] alle [[platzen|verbs/platzen_durch#1]]?"
   },
   "70f02ac765": {
     "text": "Zu der Entscheidung gehörte eine gesunde Portion Menschenverstand.",

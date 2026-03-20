@@ -1029,7 +1029,7 @@
     "lemmas": [
       "Rennen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "claude-sonnet-4-6"
   },
   "8f129e712a": {
     "text": "„Wir respektieren die Persönlichkeit jeder Frau, hören uns ihre Probleme ohne Vorurteile, ohne Zeitdruck und unter dem Siegel absoluter Verschwiegenheit an und beurteilen ihre Entscheidung nicht.“",
@@ -2575,7 +2575,7 @@
         "gloss_hint": "organize"
       }
     ],
-    "text_linked": "Ein [[Stromausfall|nouns/Stromausfall#1]] [[im|prepositions/in]] Rechenzentrum [[lähmt|verbs/lähmen]] [[die|determiners/die]] Zoll-Abfertigung. [[Unter|prepositions/unter]] [[Pannen|nouns/Panne_plötzlich]] [[wie|conjunctions/wie_als]] [[dieser|pronouns/dieser]] [[leiden|verbs/leiden#1]] [[besonders|adverbs/besonders]] solche [[Unternehmen|nouns/Unternehmen#1]], die ihre Lieferkette [[nach|prepositions/nach]] [[dem|determiners/der]] [[Prinzip|nouns/Prinzip#1]] \"just in time\" [[organisieren|verbs/organisieren#4]]."
+    "text_linked": "Ein [[Stromausfall|nouns/Stromausfall#1]] [[im|prepositions/in]] Rechenzentrum [[lähmt|verbs/lähmen#1]] [[die|determiners/die]] Zoll-Abfertigung. [[Unter|prepositions/unter]] [[Pannen|nouns/Panne_plötzlich]] [[wie|conjunctions/wie_als]] [[dieser|pronouns/dieser]] [[leiden|verbs/leiden#1]] [[besonders|adverbs/besonders]] solche [[Unternehmen|nouns/Unternehmen#1]], die ihre Lieferkette [[nach|prepositions/nach]] [[dem|determiners/der]] [[Prinzip|nouns/Prinzip#1]] \"just in time\" [[organisieren|verbs/organisieren#4]]."
   },
   "8f1cfaa53d": {
     "text": "Für Rosenpflückerinnen und Rosenbauern ist die Ernte ein Wettlauf mit der Zeit, denn die Blüten müssen im Morgengrauen gepflückt und schnell verarbeitet werden, sonst „verduften“ die wertvollen ätherischen Öle.",
@@ -3974,11 +3974,51 @@
   },
   "8f29c721ae": {
     "text": "„In letzter Zeit konnte man viele Klagen über den Verlust des Genitivs vernehmen […].“",
-    "translation": null,
+    "translation": "\"In recent times one could hear many complaints about the loss of the genitive [...]\"",
     "source": "wiktionary",
     "lemmas": [
       "Genitiv"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "letzter",
+        "lemma": "letzt",
+        "pos": "adjective",
+        "gloss_hint": "last"
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      },
+      {
+        "form": "Klagen",
+        "lemma": "Klage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verlust",
+        "lemma": "Verlust",
+        "pos": "noun",
+        "gloss_hint": "losing"
+      },
+      {
+        "form": "Genitivs",
+        "lemma": "Genitiv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vernehmen",
+        "lemma": "vernehmen",
+        "pos": "verb",
+        "gloss_hint": "hear"
+      }
+    ],
+    "text_linked": "„In letzter [[Zeit|nouns/Zeit#1]] konnte man viele [[Klagen|nouns/Klage]] über den [[Verlust|nouns/Verlust#1]] des [[Genitivs|nouns/Genitiv]] [[vernehmen|verbs/vernehmen#1]] […].“"
   },
   "8f2bd6d50d": {
     "text": "„Während das Wochenende mit der Zeit und der schnellsten Verbindung vornehmlich rechnen muß, hat der Sommerfrischler mehr Zeit und Muße zur Auswahl und Fahrt zur Sommerfrische.“",
@@ -5153,11 +5193,51 @@
   },
   "8f38a77ab2": {
     "text": "„Einen ausgepowerten Fruchtzweig leiten Sie entweder ab auf ein zweijähriges, mit Knospen besetztes Exemplar oder kürzen ihn bis auf 10 cm ein.“",
-    "translation": null,
+    "translation": "\"For an exhausted fruit branch, you should either redirect it to a two-year-old specimen with buds or shorten it to 10 cm.\"",
     "source": "wiktionary",
     "lemmas": [
       "ableiten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ausgepowerten",
+        "lemma": "ausgepowert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fruchtzweig",
+        "lemma": "Fruchtzweig",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "leiten",
+        "lemma": "leiten",
+        "pos": "verb",
+        "gloss_hint": "direct"
+      },
+      {
+        "form": "zweijähriges",
+        "lemma": "zweijährig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Exemplar",
+        "lemma": "Exemplar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kürzen",
+        "lemma": "kürzen",
+        "pos": "verb",
+        "gloss_hint": "shorten"
+      }
+    ],
+    "text_linked": "„Einen ausgepowerten Fruchtzweig [[leiten|verbs/leiten#2]] Sie entweder ab auf ein zweijähriges, mit Knospen besetztes [[Exemplar|nouns/Exemplar]] oder [[kürzen|verbs/kürzen#1]] ihn bis auf 10 cm ein.“"
   },
   "8f39b5b4e8": {
     "text": "„Im Jahre 1937 starb unser Hausmeister.“",
@@ -6380,7 +6460,7 @@
         "gloss_hint": "be able to"
       }
     ],
-    "text_linked": "„Sie war [[größer|adjectives/groß#1]] [[als|conjunctions/als#1]] die [[Entfernung|nouns/Entfernung#1]] [[von|prepositions/von]] [[Terra|nouns/Terra#1]] [[zum|prepositions/zu]] [[Mond|nouns/Mond#1]], [[und|conjunctions/und]] es [[hatte|verbs/haben#1]] [[ein|determiners/ein]] Jahrtausend [[gedauert|verbs/dauern]], bis die Menschen diesen [[Spalt|nouns/Spalt]] [[überbrücken|verbs/überbrücken#1]] [[konnten|verbs/können_beherrschen]].“"
+    "text_linked": "„Sie war [[größer|adjectives/groß#1]] [[als|conjunctions/als#1]] die [[Entfernung|nouns/Entfernung#1]] [[von|prepositions/von]] [[Terra|nouns/Terra#1]] [[zum|prepositions/zu]] [[Mond|nouns/Mond#1]], [[und|conjunctions/und]] es [[hatte|verbs/haben#1]] [[ein|determiners/ein]] Jahrtausend [[gedauert|verbs/dauern]], bis die Menschen diesen [[Spalt|nouns/Spalt]] [[überbrücken|verbs/überbrücken#1]] [[konnten|verbs/können_etwas#1]].“"
   },
   "8f47636a6b": {
     "text": "Der Mensch lerne immer dann gut, wenn er von etwas begeistert, er also emotional beteiligt sei. Noten und Zeugnisse hingegen machten das Kind zum Objekt.",
@@ -6497,7 +6577,7 @@
         "gloss_hint": "busy"
       }
     ],
-    "text_linked": "[[Wenn|conjunctions/wenn]] [[du|pronouns/du]] [[weiterhin|adverbs/weiterhin#1]] [[in|prepositions/in]] diesem Schneckentempo [[den|determiners/der]] [[Garten|nouns/Garten#1]] [[umgräbst|verbs/umgraben]], [[bis|particles/bis#1]] du nächste [[Woche|nouns/Woche#1]] [[noch|adverbs/noch#3]] [[damit|adverbs/damit#1]] [[beschäftigt|adjectives/beschäftigt#1]]. Brich dir bloß keinen ab!"
+    "text_linked": "[[Wenn|conjunctions/wenn]] [[du|pronouns/du]] [[weiterhin|adverbs/weiterhin#1]] [[in|prepositions/in]] diesem Schneckentempo [[den|determiners/der]] [[Garten|nouns/Garten#1]] umgräbst, [[bis|particles/bis#1]] du nächste [[Woche|nouns/Woche#1]] [[noch|adverbs/noch#3]] [[damit|adverbs/damit#1]] [[beschäftigt|adjectives/beschäftigt#1]]. Brich dir bloß keinen ab!"
   },
   "8f48c5bc11": {
     "text": "„Erich Snider riß die Tür zur Speisekammer auf, wies auf die gefüllten, übervollen Regale.“",
@@ -10762,7 +10842,7 @@
         "gloss_hint": "shed light"
       }
     ],
-    "text_linked": "„[[Zuvor|adverbs/zuvor]] [[aber|conjunctions/aber]] [[musste|verbs/müssen#5]] [[auch|adverbs/auch]] Siegfrieds [[Tod|nouns/Tod#1]] [[noch|adverbs/noch#3]] [[einmal|adverbs/einmal#1]] [[herhalten|verbs/herhalten]], [[um|prepositions/um]] [[den|determiners/der]] [[Waffenstillstand|nouns/Waffenstillstand#1]] [[vom|prepositions/von]] [[November|nouns/November#1]] 1918 [[ins|prepositions/in]] – [[im|prepositions/in]] [[doppelten|adjectives/doppelt#1]] Wortsinn – rechte [[Licht|nouns/Licht#1]] [[zu|prepositions/zu]] [[rücken|verbs/rücken]].“"
+    "text_linked": "„[[Zuvor|adverbs/zuvor]] [[aber|conjunctions/aber]] [[musste|verbs/müssen#5]] [[auch|adverbs/auch]] Siegfrieds [[Tod|nouns/Tod#1]] [[noch|adverbs/noch#3]] [[einmal|adverbs/einmal#1]] herhalten, [[um|prepositions/um]] [[den|determiners/der]] [[Waffenstillstand|nouns/Waffenstillstand#1]] [[vom|prepositions/von]] [[November|nouns/November#1]] 1918 [[ins|prepositions/in]] – [[im|prepositions/in]] [[doppelten|adjectives/doppelt#1]] Wortsinn – rechte [[Licht|nouns/Licht#1]] [[zu|prepositions/zu]] [[rücken|verbs/rücken]].“"
   },
   "8f83a897d9": {
     "text": "Deine neue Schwägerin ist schon eine Frau mit Sex.",
@@ -12333,7 +12413,7 @@
         "gloss_hint": "scene (theater)"
       }
     ],
-    "text_linked": "„[[Dabei|adverbs/dabei]] [[ließ|verbs/lassen]] [[es|pronouns/es]] [[Vogel|nouns/Vogel#3]] [[nicht|particles/nicht]] [[an|prepositions/an]] Hohn [[und|conjunctions/und]] [[Spott|nouns/Spott]] [[gegenüber|prepositions/gegenüber#2]] [[den|determiners/der]] [[alten|adjectives/alt]] [[Kameraden|nouns/Kamerad#1]] fehlen, um [[sich|pronouns/sich]] selbst [[in|prepositions/in]] [[Szene|nouns/Szene#2]] [[zu|prepositions/zu]] setzen.“"
+    "text_linked": "„[[Dabei|adverbs/dabei]] [[ließ|verbs/lassen]] [[es|pronouns/es]] [[Vogel|nouns/Vogel#3]] [[nicht|particles/nicht]] [[an|prepositions/an]] Hohn [[und|conjunctions/und]] [[Spott|nouns/Spott]] [[gegenüber|prepositions/gegenüber#1]] [[den|determiners/der]] [[alten|adjectives/alt]] [[Kameraden|nouns/Kamerad#1]] fehlen, um [[sich|pronouns/sich]] selbst [[in|prepositions/in]] [[Szene|nouns/Szene#2]] [[zu|prepositions/zu]] setzen.“"
   },
   "8f96d35f62": {
     "text": "Im Süden des Frankfurter Airports entsteht das modernste Terminal Europas.",
@@ -17535,7 +17615,7 @@
         "gloss_hint": "would have gotten stuck"
       }
     ],
-    "text_linked": "„Für etliche Wochen [[konnte|verbs/können_beherrschen]] [[der|pronouns/der_nominativ]] [[Eigentümer|nouns/Eigentümer#1]] der Wabi-Lodge [[nicht|particles/nicht#1]] [[in|prepositions/in]] viele [[Gebiete|nouns/Gebiet#1]] [[seiner|pronouns/sein#1]] [[Farm|nouns/Farm#1]] [[fahren|verbs/fahren#1]], [[da|conjunctions/da]] [[das|pronouns/das_[1]]] [[Gelände|nouns/Gelände#1]] [[durch|prepositions/durch#1]] [[die|pronouns/die]] anormal [[hohen|adjectives/hoch#1]] Regenfälle [[aufgeweicht|verbs/aufweichen]] [[war|verbs/sein#2]] [[und|conjunctions/und]] [[Fahrzeuge|nouns/Fahrzeug#1]] [[sofort|adverbs/sofort]] [[stecken|verbs/stecken#2]] [[geblieben|verbs/bleiben]] wären.“"
+    "text_linked": "„Für etliche Wochen [[konnte|verbs/können_etwas#1]] [[der|pronouns/der_nominativ]] [[Eigentümer|nouns/Eigentümer#1]] der Wabi-Lodge [[nicht|particles/nicht#1]] [[in|prepositions/in]] viele [[Gebiete|nouns/Gebiet#1]] [[seiner|pronouns/sein#1]] [[Farm|nouns/Farm#1]] [[fahren|verbs/fahren#1]], [[da|conjunctions/da]] [[das|pronouns/das_[1]]] [[Gelände|nouns/Gelände#1]] [[durch|prepositions/durch#1]] [[die|pronouns/die]] anormal [[hohen|adjectives/hoch#1]] Regenfälle [[aufgeweicht|verbs/aufweichen]] [[war|verbs/sein#2]] [[und|conjunctions/und]] [[Fahrzeuge|nouns/Fahrzeug#1]] [[sofort|adverbs/sofort]] [[stecken|verbs/stecken#2]] [[geblieben|verbs/bleiben]] wären.“"
   },
   "8fcd4a46bc": {
     "text": "„Betrachtet man den Stellenwert der Kohle in Deutschland, kann von einem Lückenfüller […] nicht die Rede sein. Denn bei der Stromerzeugung ist der fossile Brennstoff immer noch der wichtigste Energielieferant. Über 42 % der in Deutschland gewonnenen Elektrizität stammt aus Kohlekraftwerken.“",
@@ -21175,7 +21255,7 @@
         "gloss_hint": "be able to"
       }
     ],
-    "text_linked": "[[Nach|prepositions/nach]] [[dem|determiners/der]] [[frühzeitigen|adjectives/frühzeitig]] Tausch [[der|determiners/der]] [[Damen|nouns/Dame_brettspiel]] ergab [[sich|pronouns/sich]] [[ein|determiners/ein]] [[interessantes|adjectives/interessant]] [[Endspiel|nouns/Endspiel]], [[in|prepositions/in]] dem [[aber|conjunctions/aber]] keine [[Seite|nouns/Seite]] [[zum|prepositions/zu]] [[Erfolg|nouns/Erfolg]] [[kommen|verbs/kommen#4]] [[konnte|verbs/können_beherrschen]]. (Der Tagesspiegel online, Deep Fritz ist nicht zu knacken, 04.12.2006)"
+    "text_linked": "[[Nach|prepositions/nach]] [[dem|determiners/der]] [[frühzeitigen|adjectives/frühzeitig]] Tausch [[der|determiners/der]] [[Damen|nouns/Dame_brettspiel]] ergab [[sich|pronouns/sich]] [[ein|determiners/ein]] [[interessantes|adjectives/interessant]] [[Endspiel|nouns/Endspiel]], [[in|prepositions/in]] dem [[aber|conjunctions/aber]] keine [[Seite|nouns/Seite]] [[zum|prepositions/zu]] [[Erfolg|nouns/Erfolg]] [[kommen|verbs/kommen#4]] [[konnte|verbs/können_etwas#1]]. (Der Tagesspiegel online, Deep Fritz ist nicht zu knacken, 04.12.2006)"
   },
   "8ff2b78264": {
     "text": "Die Tatwaffe liegt in einem See. Wir brauchen einen Taucher, um sie zu bergen.",

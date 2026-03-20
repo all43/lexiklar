@@ -1155,7 +1155,7 @@
         "gloss_hint": "allow"
       }
     ],
-    "text_linked": "[[Eine|determiners/eine]] so [[kräftige|adjectives/kräftig]] [[Dosis|nouns/Dosis#1]] [[zynischen|adjectives/zynisch#1]] [[Humors|nouns/Humor_humor#1]] [[kann|verbs/können_beherrschen]] [[sich|pronouns/sich]] [[der|pronouns/der_nominativ]] [[Autor|nouns/Autor#1]] [[Edo|nouns/Edo]] Popovic [[allemal|adverbs/allemal#2]] [[leisten|verbs/leisten#4]]. Schließlich [[geht|verbs/gehen#4]] [[es|pronouns/es]] Popovic [[in|prepositions/in#1]] seinem dritten [[auf|prepositions/auf#1]] [[Deutsch|nouns/Deutsch#1]] […] [[erschienenen|verbs/erscheinen#1]] [[Roman|nouns/Roman#1]] \"Die [[Spieler\"|nouns/Spieler#2]] [[kaum|adverbs/kaum#1]] [[darum|adverbs/darum#1]], [[von|prepositions/von#1]] seinen [[Lesern|nouns/Leser#1]] [[anspruchsvolle|adjectives/anspruchsvoll#2]] kriminalistische [[Rätsel|nouns/Rätsel#2]] [[lösen|verbs/lösen#1]] [[zu|particles/zu_drückt]] [[lassen|verbs/lassen#3]]."
+    "text_linked": "[[Eine|determiners/eine]] so [[kräftige|adjectives/kräftig]] [[Dosis|nouns/Dosis#1]] [[zynischen|adjectives/zynisch#1]] [[Humors|nouns/Humor_humor#1]] [[kann|verbs/können_etwas#1]] [[sich|pronouns/sich]] [[der|pronouns/der_nominativ]] [[Autor|nouns/Autor#1]] [[Edo|nouns/Edo]] Popovic [[allemal|adverbs/allemal#2]] [[leisten|verbs/leisten#4]]. Schließlich [[geht|verbs/gehen#4]] [[es|pronouns/es]] Popovic [[in|prepositions/in#1]] seinem dritten [[auf|prepositions/auf#1]] [[Deutsch|nouns/Deutsch#1]] […] [[erschienenen|verbs/erscheinen#1]] [[Roman|nouns/Roman#1]] \"Die [[Spieler\"|nouns/Spieler#2]] [[kaum|adverbs/kaum#1]] [[darum|adverbs/darum#1]], [[von|prepositions/von#1]] seinen [[Lesern|nouns/Leser#1]] [[anspruchsvolle|adjectives/anspruchsvoll#2]] kriminalistische [[Rätsel|nouns/Rätsel#2]] [[lösen|verbs/lösen#1]] [[zu|particles/zu_drückt]] [[lassen|verbs/lassen#3]]."
   },
   "3d07a95e5b": {
     "text": "tickende Zeitbombe",
@@ -2063,7 +2063,7 @@
         "gloss_hint": "replace"
       }
     ],
-    "text_linked": "Der [[Beifahrer|nouns/Beifahrer#1]] [[war|verbs/sein#2]] erkrankt [[und|conjunctions/und]] [[konnte|verbs/können_beherrschen]] [[den|pronouns/der_nominativ#1]] [[Fahrer|nouns/Fahrer#1]] [[nicht|particles/nicht#1]] turnusgemäß [[ablösen|verbs/ablösen#1]]."
+    "text_linked": "Der [[Beifahrer|nouns/Beifahrer#1]] [[war|verbs/sein#2]] erkrankt [[und|conjunctions/und]] [[konnte|verbs/können_etwas#1]] [[den|pronouns/der_nominativ#1]] [[Fahrer|nouns/Fahrer#1]] [[nicht|particles/nicht#1]] turnusgemäß [[ablösen|verbs/ablösen#1]]."
   },
   "3d11218b4f": {
     "text": "Er ist 30 Jahre alt.",
@@ -3969,11 +3969,109 @@
   },
   "3d1be8db30": {
     "text": "„Auf frischer Tat betreten wird ein Dieb, wenn er alsbald nach Vollendung der Tat am Tatort oder in dessen Nähe von einer anderen Person wahrgenommen oder bemerkt wird, aber auch dann, wenn er durch schnelles Zuschlagen dem Bemerktwerden zuvorkommt.“",
-    "translation": null,
+    "translation": "\"A thief is caught in the act when, immediately after completing the crime, he is perceived or noticed at the scene or in its vicinity by another person, but also when he forestalls being noticed by acting quickly.\"",
     "source": "wiktionary",
     "lemmas": [
       "alsbald"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "frischer",
+        "lemma": "frisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tat",
+        "lemma": "Tat",
+        "pos": "noun",
+        "gloss_hint": "crime"
+      },
+      {
+        "form": "betreten",
+        "lemma": "betreten",
+        "pos": "verb",
+        "gloss_hint": "catch"
+      },
+      {
+        "form": "Dieb",
+        "lemma": "Dieb",
+        "pos": "noun",
+        "gloss_hint": "thief"
+      },
+      {
+        "form": "alsbald",
+        "lemma": "alsbald",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vollendung",
+        "lemma": "Vollendung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tatort",
+        "lemma": "Tatort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nähe",
+        "lemma": "Nähe",
+        "pos": "noun",
+        "gloss_hint": "vicinity"
+      },
+      {
+        "form": "Person",
+        "lemma": "Person",
+        "pos": "noun",
+        "gloss_hint": "person"
+      },
+      {
+        "form": "wahrgenommen",
+        "lemma": "wahrnehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "bemerkt",
+        "lemma": "bemerken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schnelles",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zuschlagen",
+        "lemma": "zuschlagen",
+        "pos": "verb",
+        "gloss_hint": "strike suddenly"
+      },
+      {
+        "form": "Bemerktwerden",
+        "lemma": "Bemerktwerden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zuvorkommt",
+        "lemma": "zuvorkommen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "27980268"
+    },
+    "text_linked": "„Auf [[frischer|adjectives/frisch]] [[Tat|nouns/Tat#2]] [[betreten|verbs/betreten#3]] wird ein [[Dieb|nouns/Dieb#1]], wenn er [[alsbald|adverbs/alsbald]] nach Vollendung der Tat am [[Tatort|nouns/Tatort]] oder in dessen [[Nähe|nouns/Nähe#1]] von einer anderen [[Person|nouns/Person#1]] [[wahrgenommen|verbs/wahrnehmen]] oder [[bemerkt|verbs/bemerken]] wird, aber auch dann, wenn er durch [[schnelles|adjectives/schnell]] [[Zuschlagen|verbs/zuschlagen#4]] dem Bemerktwerden [[zuvorkommt|verbs/zuvorkommen]].“"
   },
   "3d1c860de1": {
     "text": "„Angehende Supervisoren haben ein Studium hinter sich, langjährige Praxis und methodische Fortbildung.“",
@@ -4452,11 +4550,45 @@
   },
   "3d22227a24": {
     "text": "„In der Müllabfuhr, am Ende der Gasse, klapperten sie mit den Eimern.“",
-    "translation": null,
+    "translation": "In the garbage collection, at the end of the alley, they clattered with the buckets.",
     "source": "wiktionary",
     "lemmas": [
       "Müllabfuhr"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Müllabfuhr",
+        "lemma": "Müllabfuhr",
+        "pos": "noun",
+        "gloss_hint": "garbage collection"
+      },
+      {
+        "form": "Ende",
+        "lemma": "Ende",
+        "pos": "noun",
+        "gloss_hint": "end"
+      },
+      {
+        "form": "Gasse",
+        "lemma": "Gasse",
+        "pos": "noun",
+        "gloss_hint": "alley"
+      },
+      {
+        "form": "klapperten",
+        "lemma": "klappern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eimern",
+        "lemma": "Eimer",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„In der [[Müllabfuhr|nouns/Müllabfuhr#1]], am [[Ende|nouns/Ende#1]] der [[Gasse|nouns/Gasse#1]], [[klapperten|verbs/klappern]] sie mit den [[Eimern|nouns/Eimer_feine]].“"
   },
   "3d2287d064": {
     "text": "„Dagegen reitet ein Mann auf einem Pferd mit Hufeisen auf ihn zu.“",
@@ -6685,7 +6817,7 @@
         "gloss_hint": "ruin"
       }
     ],
-    "text_linked": "[[Es|pronouns/es]] [[jammert|verbs/jammern]] [[mich|pronouns/ich]] [[zu|particles/zu_drückt]] [[sehen|verbs/sehen#1]], [[wie|adverbs/wie#1]] [[die|pronouns/die]] [[zwei|numerals/zwei#1]] Eheleute [[einander|pronouns/einander]] [[das|pronouns/das_[1]]] [[Leben|nouns/Leben#1]] [[versauern|verbs/versauern]]."
+    "text_linked": "[[Es|pronouns/es]] [[jammert|verbs/jammern]] [[mich|pronouns/ich]] [[zu|particles/zu_drückt]] [[sehen|verbs/sehen#1]], [[wie|adverbs/wie#1]] [[die|pronouns/die]] [[zwei|numerals/zwei#1]] Eheleute [[einander|pronouns/einander]] [[das|pronouns/das_[1]]] [[Leben|nouns/Leben#1]] versauern."
   },
   "3d312e3f2d": {
     "text": "„In Sachsen gibt es immer noch Betragen, Fleiß, Ordnung und Mitarbeit als Kopfnoten, die von 1 bis 5 als Noten vergeben werden.“",
@@ -7880,7 +8012,7 @@
         "gloss_hint": "want to"
       }
     ],
-    "text_linked": "„[[Das|pronouns/das_[1]]] [[ist|verbs/sein#2]] [[längst|adverbs/längst#1]] [[vergessen|verbs/vergessen_partizip#1]], [[denn|adverbs/denn]] [[die|pronouns/die]] Nanas [[sind|verbs/sein#2]] [[mittlerweile|adverbs/mittlerweile]] [[so|adverbs/so]] [[etwas|pronouns/etwas]] [[wie|adverbs/wie]] [[ein|determiners/ein]] Wahrzeichen [[der|pronouns/der_nominativ]] [[Stadt|nouns/Stadt#1]] [[geworden|verbs/werden#1]], [[das|pronouns/das_[1]]] [[keiner|pronouns/keiner]] [[mehr|adverbs/mehr#2]] [[missen|verbs/missen#2]] [[möchte|verbs/möchten]].“"
+    "text_linked": "„[[Das|pronouns/das_[1]]] [[ist|verbs/sein#2]] [[längst|adverbs/längst#1]] [[vergessen|verbs/vergessen_partizip#1]], [[denn|adverbs/denn]] [[die|pronouns/die]] Nanas [[sind|verbs/sein#2]] [[mittlerweile|adverbs/mittlerweile]] [[so|adverbs/so]] [[etwas|pronouns/etwas]] [[wie|adverbs/wie]] [[ein|determiners/ein]] Wahrzeichen [[der|pronouns/der_nominativ]] [[Stadt|nouns/Stadt#1]] [[geworden|verbs/werden#1]], [[das|pronouns/das_[1]]] [[keiner|pronouns/keiner]] [[mehr|adverbs/mehr#2]] missen [[möchte|verbs/möchten]].“"
   },
   "3d37f879e7": {
     "text": "„Dann entschuldigte er sich und ließ mich allein, damit ich mit der Prüfung der Geschäftsbücher beginnen könne.“",
@@ -17641,11 +17773,57 @@
   },
   "3d97ad02dd": {
     "text": "Das Partizip dient zur Bildung komplexer verbaler Satzglieder oder es wird als Adjektiv verwendet.",
-    "translation": null,
+    "translation": "The participle serves to form complex verbal sentence constituents or it is used as an adjective.",
     "source": "wiktionary",
     "lemmas": [
       "Partizip"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Partizip",
+        "lemma": "Partizip",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bildung",
+        "lemma": "Bildung",
+        "pos": "noun",
+        "gloss_hint": "formation"
+      },
+      {
+        "form": "komplexer",
+        "lemma": "komplex",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "verbalen",
+        "lemma": "verbal",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Satzglieder",
+        "lemma": "Satzglied",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Adjektiv",
+        "lemma": "Adjektiv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verwendet",
+        "lemma": "verwenden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Das [[Partizip|nouns/Partizip]] dient zur [[Bildung|nouns/Bildung_entstehen#1]] [[komplexer|adjectives/komplex]] verbaler Satzglieder oder es wird als [[Adjektiv|nouns/Adjektiv]] [[verwendet|verbs/verwenden]]."
   },
   "3d98125bef": {
     "text": "„Es war gut zu wissen, dass sie über das Ende ihrer Beziehung lachen konnte – wenn sich ihr kurzes Techtelmechtel überhaupt als Beziehung bezeichnen ließ.“",
@@ -18804,7 +18982,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Liegt es an der [[Fähigkeit|nouns/Fähigkeit]], mit einem einzigen [[Satz|nouns/Satz#1]] zu [[irritieren|verbs/irritieren]], daß die [[neun|numerals/neun]] [[Erzählungen|nouns/Erzählung#2]] den [[Leser|nouns/Leser]] so [[leise|adjectives/leise#1]] in ihren [[Bann|nouns/Bann#3]] [[ziehen|verbs/ziehen#4]], daß sie so lange [[nachhallen|verbs/nachhallen]]?“"
+    "text_linked": "„Liegt es an der [[Fähigkeit|nouns/Fähigkeit]], mit einem einzigen [[Satz|nouns/Satz#1]] zu [[irritieren|verbs/irritieren]], daß die [[neun|numerals/neun]] [[Erzählungen|nouns/Erzählung#2]] den [[Leser|nouns/Leser]] so [[leise|adjectives/leise#1]] in ihren [[Bann|nouns/Bann#3]] [[ziehen|verbs/ziehen#4]], daß sie so lange nachhallen?“"
   },
   "3d9e06d9ee": {
     "text": "„Die Kirche wurde in mehreren Abschnitten gebaut und erweitert, in einer Zeit, da man Kirchen noch ostete.“",
@@ -20727,7 +20905,7 @@
         "gloss_hint": "become"
       }
     ],
-    "text_linked": "[[Schreien|verbs/schreien]], [[mit|prepositions/mit]] [[Sand|nouns/Sand#2]] [[werfen|verbs/werfen#1]], [[schlagen|verbs/schlagen#1]]: [[Schon|particles/schon_antwort]] [[auf|prepositions/auf]] [[dem|determiners/der]] [[Spielplatz|nouns/Spielplatz#1]] oder [[im|prepositions/in]] [[Kindergarten|nouns/Kindergarten]] [[kann|verbs/können_beherrschen#1]] [[es|pronouns/es]] [[hoch|adjectives/hoch#1]] [[hergehen|verbs/hergehen]], [[wenn|conjunctions/wenn]] [[Kinder|nouns/Kind#1]] [[aggressiv|adjectives/aggressiv]] [[werden|verbs/werden#1]]. Temperament und Veranlagung spielen eine wichtige Rolle bei aggressivem Verhalten."
+    "text_linked": "[[Schreien|verbs/schreien]], [[mit|prepositions/mit]] [[Sand|nouns/Sand#2]] [[werfen|verbs/werfen#1]], [[schlagen|verbs/schlagen#1]]: [[Schon|particles/schon_antwort]] [[auf|prepositions/auf]] [[dem|determiners/der]] [[Spielplatz|nouns/Spielplatz#1]] oder [[im|prepositions/in]] [[Kindergarten|nouns/Kindergarten]] [[kann|verbs/können_beherrschen#1]] [[es|pronouns/es]] [[hoch|adjectives/hoch#1]] hergehen, [[wenn|conjunctions/wenn]] [[Kinder|nouns/Kind#1]] [[aggressiv|adjectives/aggressiv]] [[werden|verbs/werden#1]]. Temperament und Veranlagung spielen eine wichtige Rolle bei aggressivem Verhalten."
   },
   "3db03fa7ad": {
     "text": "sturmfreie Bude",
@@ -22782,7 +22960,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Zudem|adverbs/zudem]] [[entspricht|verbs/entsprechen]] [[die|pronouns/die#1]] [[Bulle|nouns/Bulle_besonders#2]], [[mit|prepositions/mit#1]] [[der|pronouns/der_nominativ]] Friedrich I. [[als|conjunctions/als#1]] [[König|nouns/König#1]] (I, Taf. 21, 3. 4) [[siegelte|verbs/siegeln]], im [[allgemeinen|adjectives/allgemein]] der Lothars III.“"
+    "text_linked": "„[[Zudem|adverbs/zudem]] [[entspricht|verbs/entsprechen]] [[die|pronouns/die#1]] [[Bulle|nouns/Bulle_besonders#2]], [[mit|prepositions/mit#1]] [[der|pronouns/der_nominativ]] Friedrich I. [[als|conjunctions/als#1]] [[König|nouns/König#1]] (I, Taf. 21, 3. 4) siegelte, im [[allgemeinen|adjectives/allgemein]] der Lothars III.“"
   },
   "3dbe1efb0e": {
     "text": "Der Käufer bezahlte die Ware mit Gold.",
@@ -23400,7 +23578,7 @@
         "gloss_hint": "tongue"
       }
     ],
-    "text_linked": "„Sein [[Schwanz|nouns/Schwanz#1]] [[schwoll|verbs/schwellen]] [[an|adverbs/an]], [[dann|adverbs/dann]] [[pulsierte|verbs/pulsieren]] er, [[und|conjunctions/und]] [[der|pronouns/der_nominativ]] [[heiße|adjectives/heiß]] [[Samen|nouns/Samen#1]] [[spritzte|verbs/spritzen#2]] [[mir|pronouns/ich]] [[auf|prepositions/auf]] [[die|pronouns/die]] [[Zunge|nouns/Zunge#1]].“"
+    "text_linked": "„Sein [[Schwanz|nouns/Schwanz#1]] [[schwoll|verbs/schwellen#1]] [[an|adverbs/an]], [[dann|adverbs/dann]] [[pulsierte|verbs/pulsieren]] er, [[und|conjunctions/und]] [[der|pronouns/der_nominativ]] [[heiße|adjectives/heiß]] [[Samen|nouns/Samen#1]] [[spritzte|verbs/spritzen#2]] [[mir|pronouns/ich]] [[auf|prepositions/auf]] [[die|pronouns/die]] [[Zunge|nouns/Zunge#1]].“"
   },
   "3dc4cd0c35": {
     "text": "Du willst mich mit deiner Behauptung doch nur ficken.",
@@ -23779,7 +23957,7 @@
         "gloss_hint": "ask"
       }
     ],
-    "text_linked": "„»[…] Wir [[haben|verbs/haben#1]] ihnen [Anmerkung: [[den|determiners/der]] Kindern des Girls Day] mit Sicherheit Berufsbilder [[zeigen|verbs/zeigen#1]] [[können|verbs/können_etwas#2]], an die sie [[vorher|adverbs/vorher]] [[nicht|particles/nicht]] [[gedacht|verbs/denken#1]] haben. Zum Beispiel den [[Beruf|nouns/Beruf#1]] [[der|determiners/der]] Mediengestalterin. [[Dem|determiners/der]] [[Kollegen|nouns/Kollege#1]] haben sie [[Löcher|nouns/Loch_see]] [[in|prepositions/in]] den [[Bauch|nouns/Bauch#1]] [[gefragt|verbs/fragen#1]],«“"
+    "text_linked": "„»[…] Wir [[haben|verbs/haben#1]] ihnen [Anmerkung: [[den|determiners/der]] Kindern des Girls Day] mit Sicherheit Berufsbilder [[zeigen|verbs/zeigen#1]] [[können|verbs/können_beherrschen]], an die sie [[vorher|adverbs/vorher]] [[nicht|particles/nicht]] [[gedacht|verbs/denken#1]] haben. Zum Beispiel den [[Beruf|nouns/Beruf#1]] [[der|determiners/der]] Mediengestalterin. [[Dem|determiners/der]] [[Kollegen|nouns/Kollege#1]] haben sie [[Löcher|nouns/Loch_see]] [[in|prepositions/in]] den [[Bauch|nouns/Bauch#1]] [[gefragt|verbs/fragen#1]],«“"
   },
   "3dc978c7ce": {
     "text": "„Deshalb startete er diesen Feldzug, der dann mit dem fehlgeschlagenen Opfer der beiden Löwen unter denkbar unglücklichen Vorzeichen begann.“",
@@ -25026,7 +25204,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Es ist alles genau [[getaktet|verbs/takten]], und wenn nicht jeder [[Handwerker|nouns/Handwerker]] zum verabredeten [[Zeitpunkt|nouns/Zeitpunkt#1]] kommt, bedeutet das [[Verzögerungen|nouns/Verzögerung]] für alle, die nach ihm kommen.“",
+    "text_linked": "„Es ist alles genau getaktet, und wenn nicht jeder [[Handwerker|nouns/Handwerker]] zum verabredeten [[Zeitpunkt|nouns/Zeitpunkt#1]] kommt, bedeutet das [[Verzögerungen|nouns/Verzögerung]] für alle, die nach ihm kommen.“",
     "_proofread": {
       "translation": true
     }
@@ -25731,7 +25909,7 @@
         "gloss_hint": "preach"
       }
     ],
-    "text_linked": "[[[Heute|adverbs/heute#1]]] [[können|verbs/können_etwas#2]] [[wir|pronouns/wir]] [[nachlesen|verbs/nachlesen]], [[wie|adverbs/wie#1]] Mao [[einen|determiners/ein]] [[wahrhaft|adjectives/wahrhaft]] kaiserlichen Lebenstil [[pflegte|verbs/pflegen#2]], [[während|conjunctions/während#1]] [[der|pronouns/der_nominativ#2]] [[seinem|pronouns/sein#1]] [[Volk|nouns/Volk#4]] Askese [[predigte|verbs/predigen#1]]."
+    "text_linked": "[[[Heute|adverbs/heute#1]]] [[können|verbs/können_beherrschen]] [[wir|pronouns/wir]] [[nachlesen|verbs/nachlesen]], [[wie|adverbs/wie#1]] Mao [[einen|determiners/ein]] [[wahrhaft|adjectives/wahrhaft]] kaiserlichen Lebenstil [[pflegte|verbs/pflegen#2]], [[während|conjunctions/während#1]] [[der|pronouns/der_nominativ#2]] [[seinem|pronouns/sein#1]] [[Volk|nouns/Volk#4]] Askese [[predigte|verbs/predigen#1]]."
   },
   "3dda30e862": {
     "text": "Nur mit einem HD-Fernseher kann man die Grafik in ihrer vollen Pracht erleben.",
@@ -28561,7 +28739,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Darauf nahm später ein [[Ritual|nouns/Ritual#2]] Bezug, in dem [[junge|adjectives/jung]] [[Männer|nouns/Mann]] auf dem [[Berg|nouns/Berg#1]] [[gemeinsam|adjectives/gemeinsam#1]] einen [[Eintopf|nouns/Eintopf]] [[löffelten|verbs/löffeln]], in dem ein [[Stück|nouns/Stück#1]] [[Menschenfleisch|nouns/Menschenfleisch]] war. Wer das in den [[Mund|nouns/Mund_öffnung#1]] bekam, wurde für einige [[Jahre|nouns/Jahr]] zum [[Werwolf|nouns/Werwolf#1]]."
+    "text_linked": "Darauf nahm später ein [[Ritual|nouns/Ritual#2]] Bezug, in dem [[junge|adjectives/jung]] [[Männer|nouns/Mann]] auf dem [[Berg|nouns/Berg#1]] [[gemeinsam|adjectives/gemeinsam#1]] einen [[Eintopf|nouns/Eintopf]] löffelten, in dem ein [[Stück|nouns/Stück#1]] [[Menschenfleisch|nouns/Menschenfleisch]] war. Wer das in den [[Mund|nouns/Mund_öffnung#1]] bekam, wurde für einige [[Jahre|nouns/Jahr]] zum [[Werwolf|nouns/Werwolf#1]]."
   },
   "3dede1ef56": {
     "text": "Meine Tochter ist bereits vergeben, sie heiratet nächste Woche.",
@@ -29475,7 +29653,7 @@
         "gloss_hint": "try"
       }
     ],
-    "text_linked": "„Er [[war|verbs/sein#2]] [[gestern|adverbs/gestern#1]] [[hier|adverbs/hier#1]] [[bei|prepositions/bei#3]] Ladenschluß, er selbst [[höchstpersönlich|adjectives/höchstpersönlich]], [[der|determiners/der]] [[Herr|nouns/Herr#1]] [[Neffe|nouns/Neffe_sohn#2]], [[und|conjunctions/und#1]] [[hat|verbs/haben#1]] [[eine|determiners/eine]] [[neue|adjectives/neu#1]] Herauslockung [[versucht|verbs/versuchen#3]] …“"
+    "text_linked": "„Er [[war|verbs/sein#2]] [[gestern|adverbs/gestern#1]] [[hier|adverbs/hier#1]] [[bei|prepositions/bei#3]] Ladenschluß, er selbst [[höchstpersönlich|adjectives/höchstpersönlich]], [[der|determiners/der]] [[Herr|nouns/Herr#1]] [[Neffe|nouns/Neffe_des#1]], [[und|conjunctions/und#1]] [[hat|verbs/haben#1]] [[eine|determiners/eine]] [[neue|adjectives/neu#1]] Herauslockung [[versucht|verbs/versuchen#3]] …“"
   },
   "3df50b6b90": {
     "text": "„Dann wandte ich mich wieder an Claudine, die ihren Fisch in ein Tuch schlug.“",

@@ -114,7 +114,7 @@
     "lemmas": [
       "Fall"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Großfall",
@@ -1279,11 +1279,39 @@
   },
   "580cd51b42": {
     "text": "Der Systemadministrator hat Pakete eines Debian-Computers aktualisiert.",
-    "translation": null,
+    "translation": "The system administrator updated packages on a Debian computer.",
     "source": "wiktionary",
     "lemmas": [
       "Systemadministrator"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Systemadministrator",
+        "lemma": "Systemadministrator",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pakete",
+        "lemma": "Paket",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Debian-Computer",
+        "lemma": "Debian-Computer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aktualisiert",
+        "lemma": "aktualisieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Der [[Systemadministrator|nouns/Systemadministrator]] hat [[Pakete|nouns/Paket]] eines Debian-Computers [[aktualisiert|verbs/aktualisieren]]."
   },
   "580e8fcf5b": {
     "text": "Sie drängte ihm einen weiteren Nachschlag auf.",
@@ -1849,7 +1877,7 @@
         "gloss_hint": "blush"
       }
     ],
-    "text_linked": "„Jetzt [[schminkt|verbs/schminken]] Louise sie mit [[rotem|adjectives/rot#1]] [[Lippenstift|nouns/Lippenstift]] und [[blauem|adjectives/blau#1]] Lidschatten, auf ihre [[Wangen|nouns/Wange]] [[tupft|verbs/tupfen]] sie ein ins [[Orange|nouns/Orange_name#1]] gehendes [[Rouge|nouns/Rouge#1]].“"
+    "text_linked": "„Jetzt [[schminkt|verbs/schminken]] Louise sie mit [[rotem|adjectives/rot#1]] [[Lippenstift|nouns/Lippenstift]] und [[blauem|adjectives/blau#1]] Lidschatten, auf ihre [[Wangen|nouns/Wange]] tupft sie ein ins [[Orange|nouns/Orange_name#1]] gehendes [[Rouge|nouns/Rouge#1]].“"
   },
   "5813349a20": {
     "text": "„Die Republikaner wiederum haben, das dämmert nun vielen im Kongress, mit dem haltlosen Narziss eine destruktive Kraft ins Oval Office gelassen, die sich gegen die Grundfesten des Systems richtet.“",
@@ -4277,7 +4305,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Der iranische [[Präsident|nouns/Präsident#1]] [[geißelte|verbs/geißeln]] die [[US-Wahlen|nouns/US-Wahl]] als [[gewaltige|adjectives/gewaltig#1]] Geldverschwendung.“"
+    "text_linked": "„Der iranische [[Präsident|nouns/Präsident#1]] geißelte die [[US-Wahlen|nouns/US-Wahl]] als [[gewaltige|adjectives/gewaltig#1]] Geldverschwendung.“"
   },
   "5829f62fa9": {
     "text": "Behinderungen führen in vielen Fällen dazu, dass jemand seinen Alltag nicht allein bewältigen kann.",
@@ -4343,7 +4371,7 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "[[Aus|adverbs/aus]] [[dem|determiners/der]] [[Kontext|nouns/Kontext#1]] [[können|verbs/können_etwas#1]] zusätzliche Informationen erschlossen werden."
+    "text_linked": "[[Aus|adverbs/aus]] [[dem|determiners/der]] [[Kontext|nouns/Kontext#1]] [[können|verbs/können_beherrschen]] zusätzliche Informationen erschlossen werden."
   },
   "582a99695a": {
     "text": "„Solch ein Verhalten kann und werde ich nicht tolerieren!“",
@@ -9178,7 +9206,7 @@
         "gloss_hint": "school"
       }
     ],
-    "text_linked": "„Die hier so knapp und unzureichend [[skizzierte|verbs/skizzieren]] [[Haltung|nouns/Haltung#2]] zum [[Leben|nouns/Leben#1]] [[entspricht|verbs/entsprechen]] der [[Erfahrung|nouns/Erfahrung#1]] [[von|prepositions/von]] [[Generationen|nouns/Generation]] von [[Schwarzen|nouns/Schwarz_den]]; sie hilft [[erklären|verbs/erklären#1]], [[wie|adverbs/wie#1]] sie [[durchgehalten|verbs/durchhalten]] [[haben|verbs/haben#1]] und wie sie [[Kinder|nouns/Kind#1]] [[großziehen|verbs/großziehen#1]] [[konnten|verbs/können_beherrschen]], [[die|determiners/die#1]] mitten [[durch|prepositions/durch#1]] [[Mobs|nouns/Mob]] [[zur|prepositions/zu]] [[Schule|nouns/Schule#1]] gehen.“"
+    "text_linked": "„Die hier so knapp und unzureichend [[skizzierte|verbs/skizzieren]] [[Haltung|nouns/Haltung#2]] zum [[Leben|nouns/Leben#1]] [[entspricht|verbs/entsprechen]] der [[Erfahrung|nouns/Erfahrung#1]] [[von|prepositions/von]] [[Generationen|nouns/Generation]] von [[Schwarzen|nouns/Schwarz_den]]; sie hilft [[erklären|verbs/erklären#1]], [[wie|adverbs/wie#1]] sie [[durchgehalten|verbs/durchhalten]] [[haben|verbs/haben#1]] und wie sie [[Kinder|nouns/Kind#1]] [[großziehen|verbs/großziehen#1]] [[konnten|verbs/können_etwas#1]], [[die|determiners/die#1]] mitten [[durch|prepositions/durch#1]] [[Mobs|nouns/Mob]] [[zur|prepositions/zu]] [[Schule|nouns/Schule#1]] gehen.“"
   },
   "5852629722": {
     "text": "„Jetzt bin ich hellwach. Der Schlaf hat praktisch nie richtig Lust auf mich, er verlässt mich sehr schnell um Mitternacht, nachdem er mich den ganzen Abend bedrängt hat.“",
@@ -12256,7 +12284,7 @@
         "gloss_hint": "behaved"
       }
     ],
-    "text_linked": "Weil [[Liebe|nouns/Liebe#1]] [[blind|adjectives/blind#1]] [[macht|verbs/machen]], [[sah|verbs/sehen#1]] sie [[kein|pronouns/kein#1]] [[Problem|nouns/Problem#1]] [[dabei|adverbs/dabei#3]], [[dass|conjunctions/dass]] [[ihr|pronouns/ihr_zu#1]] [[Mann|nouns/Mann#5]] [[sich|pronouns/sich#1]] ihr [[gegenüber|prepositions/gegenüber#2]] asozial [[verhielt|verbs/verhalten_partizip#1]]."
+    "text_linked": "Weil [[Liebe|nouns/Liebe#1]] [[blind|adjectives/blind#1]] [[macht|verbs/machen]], [[sah|verbs/sehen#1]] sie [[kein|pronouns/kein#1]] [[Problem|nouns/Problem#1]] [[dabei|adverbs/dabei#3]], [[dass|conjunctions/dass]] [[ihr|pronouns/ihr_zu#1]] [[Mann|nouns/Mann#5]] [[sich|pronouns/sich#1]] ihr [[gegenüber|prepositions/gegenüber#1]] asozial [[verhielt|verbs/verhalten_partizip#1]]."
   },
   "586d1e7c42": {
     "text": "Der Begriff Notleidende Banken stellt das Verhältnis von Ursachen und Folgen der Weltwirtschaftskrise auf den Kopf. Während die Volkswirtschaften in ärgste Bedrängnis geraten sind und die Steuerzahler Milliardenkredite mittragen müssen, werden die Banken, durch deren Finanzpolitik die Krise verursacht worden ist, zu Opfern stilisiert.",
@@ -16615,7 +16643,7 @@
         "gloss_hint": "pants"
       }
     ],
-    "text_linked": "„[[Dessen|pronouns/dessen]] Bierernst [[konkurriert|verbs/konkurrieren#1]] [[mit|adverbs/mit#1]] [[der|pronouns/der_nominativ]] [[Müdigkeit|nouns/Müdigkeit#2]], mit der [[Philosoph|nouns/Philosoph#1]] Carl Hegemann Hölderlin [[rezitiert|verbs/rezitieren]] oder mit der [[eines|determiners/eines#1]] [[Strippers|nouns/Stripper#1]], der [[angewidert|adjectives/angewidert#1]] [[die|pronouns/die]] Hosen [[rutschen|verbs/rutschen#1]] [[lässt|verbs/lassen#3]].“"
+    "text_linked": "„[[Dessen|pronouns/dessen]] Bierernst [[konkurriert|verbs/konkurrieren#1]] [[mit|adverbs/mit#1]] [[der|pronouns/der_nominativ]] [[Müdigkeit|nouns/Müdigkeit#2]], mit der [[Philosoph|nouns/Philosoph#1]] Carl Hegemann Hölderlin [[rezitiert|verbs/rezitieren#1]] oder mit der [[eines|determiners/eines#1]] [[Strippers|nouns/Stripper#1]], der [[angewidert|adjectives/angewidert#1]] [[die|pronouns/die]] Hosen [[rutschen|verbs/rutschen#1]] [[lässt|verbs/lassen#3]].“"
   },
   "5894bce9a9": {
     "text": "Der Tod hat kein Erbarmen.",
@@ -17708,7 +17736,7 @@
         "gloss_hint": "hears"
       }
     ],
-    "text_linked": "„Da plötzlich [[gibt|verbs/geben]] [[es|pronouns/es]] [[ein|determiners/ein]] [[hastiges|adjectives/hastig]] [[Hin|adverbs/hin]] [[und|conjunctions/und]] Wiederrennen [[auf|prepositions/auf]] [[der|determiners/der]] [[Straße|nouns/Straße#2]], [[die|determiners/die]] [[Luft|nouns/Luft_überwiegend#1]] [[verdunkelt|verbs/verdunkeln]] [[sich|pronouns/sich#1]] auf [[einen|determiners/ein]] [[Augenblick|nouns/Augenblick#1]], [[wie|adverbs/wie#1]] [[durch|prepositions/durch#1]] ein [[schnell|adjectives/schnell#1]] heraufziehendes Gewölk und [[scheint|verbs/scheinen#2]] [[dann|adverbs/dann]] [[in|prepositions/in]] einen fahlen [[Schimmer|nouns/Schimmer#1]] [[getaucht|verbs/tauchen]]; [[fern|adjectives/fern#1]] [[erhebt|verbs/erheben]] sich ein dumpfes Getümmel, ein verworrenes [[Geschrei|nouns/Geschrei#1]], daö [[wachsend|verbs/wachsen_allmählich#1]] [[immer|adverbs/immer]] [[näher|adjectives/nah]] und näher sich [[heran|adverbs/heran]] [[wälzt|verbs/wälzen]], [[bis|particles/bis#1]] [[man|pronouns/man#3]] [[zuletzt|adverbs/zuletzt#1]] [[deutlich|adjectives/deutlich]] [[den|determiners/der]] Schreckensruf: ‚[[Feuer|nouns/Feuer#1]]! Feuer!‘ [[vernimmt|verbs/vernehmen#1]].“"
+    "text_linked": "„Da plötzlich [[gibt|verbs/geben]] [[es|pronouns/es]] [[ein|determiners/ein]] [[hastiges|adjectives/hastig]] [[Hin|adverbs/hin]] [[und|conjunctions/und]] Wiederrennen [[auf|prepositions/auf]] [[der|determiners/der]] [[Straße|nouns/Straße#2]], [[die|determiners/die]] [[Luft|nouns/Luft_überwiegend#1]] [[verdunkelt|verbs/verdunkeln]] [[sich|pronouns/sich#1]] auf [[einen|determiners/ein]] [[Augenblick|nouns/Augenblick#1]], [[wie|adverbs/wie#1]] [[durch|prepositions/durch#1]] ein [[schnell|adjectives/schnell#1]] heraufziehendes Gewölk und [[scheint|verbs/scheinen#2]] [[dann|adverbs/dann]] [[in|prepositions/in]] einen fahlen [[Schimmer|nouns/Schimmer#1]] [[getaucht|verbs/tauchen]]; [[fern|adjectives/fern#1]] [[erhebt|verbs/erheben]] sich ein dumpfes Getümmel, ein verworrenes [[Geschrei|nouns/Geschrei#1]], daö [[wachsend|verbs/wachsen_allmählich#1]] [[immer|adverbs/immer]] [[näher|adjectives/nah]] und näher sich [[heran|adverbs/heran]] wälzt, [[bis|particles/bis#1]] [[man|pronouns/man#3]] [[zuletzt|adverbs/zuletzt#1]] [[deutlich|adjectives/deutlich]] [[den|determiners/der]] Schreckensruf: ‚[[Feuer|nouns/Feuer#1]]! Feuer!‘ [[vernimmt|verbs/vernehmen#1]].“"
   },
   "589ef526c8": {
     "text": "Wir musizieren heute a prima vista.",
@@ -19952,7 +19980,7 @@
         "gloss_hint": "enrich"
       }
     ],
-    "text_linked": "„Jm [[Wohnzimmer|nouns/Wohnzimmer#1]] [[war|verbs/sein#2]] [[die|determiners/der]] obere [[Hälfte|nouns/Hälfte#1]] [[der|determiners/der]] [[den|determiners/der]] [[Sekretär|nouns/Sekretär#1]] [[ſchließenden|verbs/schließen#1]] [[Klappe|nouns/Klappe#1]] herabgelaſſen, [[folglich|adverbs/folglich]] [[waren|verbs/sein#2]] die [[ſonſt|adverbs/sonst]] verſchloſſenen [[Schubladen|nouns/Schublade#1]], [[worin|adverbs/wo#3]] er die Werthſachen der [[Gräfin|nouns/Gräfin#1]] [[wußte|verbs/wissen#1]], [[leicht|adjectives/leicht#2]] [[aufzuziehen|verbs/aufziehen#1]]. [[Gelegenheit|nouns/Gelegenheit#1]] [[macht|verbs/machen#2]] [[Diebe|nouns/Dieb]]; ihn [[lockten|verbs/locken]] die Koſtbarkeiten [[und|conjunctions/und]] er [[konnte|verbs/können_beherrschen]] [[dem|determiners/der]] [[Gedanken|nouns/Gedanke#1]], [[ſich|pronouns/sich]] [[hier|adverbs/hier#1]] [[zu|particles/zu_drückt]] [[bereichern|verbs/bereichern#1]], nicht widerſtehen.“"
+    "text_linked": "„Jm [[Wohnzimmer|nouns/Wohnzimmer#1]] [[war|verbs/sein#2]] [[die|determiners/der]] obere [[Hälfte|nouns/Hälfte#1]] [[der|determiners/der]] [[den|determiners/der]] [[Sekretär|nouns/Sekretär#1]] [[ſchließenden|verbs/schließen#1]] [[Klappe|nouns/Klappe#1]] herabgelaſſen, [[folglich|adverbs/folglich]] [[waren|verbs/sein#2]] die [[ſonſt|adverbs/sonst]] verſchloſſenen [[Schubladen|nouns/Schublade#1]], [[worin|adverbs/wo]] er die Werthſachen der [[Gräfin|nouns/Gräfin#1]] [[wußte|verbs/wissen#1]], [[leicht|adjectives/leicht#2]] [[aufzuziehen|verbs/aufziehen#1]]. [[Gelegenheit|nouns/Gelegenheit#1]] [[macht|verbs/machen#2]] [[Diebe|nouns/Dieb]]; ihn [[lockten|verbs/locken]] die Koſtbarkeiten [[und|conjunctions/und]] er [[konnte|verbs/können_beherrschen]] [[dem|determiners/der]] [[Gedanken|nouns/Gedanke#1]], [[ſich|pronouns/sich]] [[hier|adverbs/hier#1]] [[zu|particles/zu_drückt]] [[bereichern|verbs/bereichern#1]], nicht widerſtehen.“"
   },
   "58ae3127c7": {
     "text": "Mozart hatte eine besondere Gabe für Musik.",
@@ -20782,7 +20810,7 @@
         "gloss_hint": "level"
       }
     ],
-    "text_linked": "„[[Wer|pronouns/wer_derjenige]] [[im|prepositions/in]] [[Betrieb|nouns/Betrieb#2]] [[auch|adverbs/auch]] [[nur|particles/nur]] geringwertige Büroartikel [[mitnimmt|verbs/mitnehmen]], [[begibt|verbs/begaben]] [[sich|pronouns/sich]] [[auf|prepositions/auf]] [[eine|determiners/eine]] [[ganz|adjectives/ganz]] [[schiefe|adjectives/schief]] [[Ebene|nouns/Ebene#3]]“, sagte der Chef, ehe er mit einer gewaltigen Abfindung ausschied."
+    "text_linked": "„[[Wer|pronouns/wer_derjenige]] [[im|prepositions/in]] [[Betrieb|nouns/Betrieb#2]] [[auch|adverbs/auch]] [[nur|particles/nur]] geringwertige Büroartikel [[mitnimmt|verbs/mitnehmen]], begibt [[sich|pronouns/sich]] [[auf|prepositions/auf]] [[eine|determiners/eine]] [[ganz|adjectives/ganz]] [[schiefe|adjectives/schief]] [[Ebene|nouns/Ebene#3]]“, sagte der Chef, ehe er mit einer gewaltigen Abfindung ausschied."
   },
   "58b7aeba0f": {
     "text": "Schau dir an, in welchem Schlüssel das Lied notiert ist.",
@@ -25378,7 +25406,7 @@
         "gloss_hint": "line segment"
       }
     ],
-    "text_linked": "Großbauern [[beackern|verbs/beackern]] [[in|prepositions/in]] [[Deutschland|names/Deutschland]] [[immer|adverbs/immer#3]] [[mehr|adverbs/mehr#1]] [[Land|nouns/Land#1]], Kleinbauern [[bleiben|verbs/bleiben#1]] [[auf|prepositions/auf]] [[der|pronouns/der_nominativ]] [[Strecke|nouns/Strecke#2]]."
+    "text_linked": "Großbauern beackern [[in|prepositions/in]] [[Deutschland|names/Deutschland]] [[immer|adverbs/immer#3]] [[mehr|adverbs/mehr#1]] [[Land|nouns/Land#1]], Kleinbauern [[bleiben|verbs/bleiben#1]] [[auf|prepositions/auf]] [[der|pronouns/der_nominativ]] [[Strecke|nouns/Strecke#2]]."
   },
   "58e8bb2b75": {
     "text": "„Im Februar 1920 erheben sich Zehntausende Arbeiter in den Goldminen am Witwatersrand zum Streik.“",
@@ -27835,7 +27863,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Der|pronouns/der_nominativ]] [[Professor|nouns/Professor#1]] [[betrat|verbs/betreten#1]] [[den|determiners/der]] Hörsaal [[und|conjunctions/und]] [[hinter|prepositions/hinter#1]] ihm [[trotteten|verbs/trotten]] [[seine|pronouns/sein#1]] [[Jünger|nouns/Jünger#1]] einher."
+    "text_linked": "[[Der|pronouns/der_nominativ]] [[Professor|nouns/Professor#1]] [[betrat|verbs/betreten#1]] [[den|determiners/der]] Hörsaal [[und|conjunctions/und]] [[hinter|prepositions/hinter#1]] ihm trotteten [[seine|pronouns/sein#1]] [[Jünger|nouns/Jünger#1]] einher."
   },
   "58fa23ce78": {
     "text": "„Mehrere Hundert Male finden das Land, die Leute oder Zitate spanischer Werke Erwähnung in seinen Texten.“",

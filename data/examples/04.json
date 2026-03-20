@@ -1617,12 +1617,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "show off one's muscles",
     "source": "wiktionary",
     "lemmas": [
       "Muskel"
     ],
-    "ref": "phrases/die Muskeln spielen lassen"
+    "ref": "phrases/die Muskeln spielen lassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "040e7a13d5": {
     "text": "jemanden etwas an den Hals wünschen",
@@ -2686,11 +2687,39 @@
   },
   "041ca8a1b6": {
     "text": "Eine hübsche Person femininen Geschlechts - (Heinz Erhardt)",
-    "translation": null,
+    "translation": "A pretty person of the female sex - (Heinz Erhardt)",
     "source": "wiktionary",
     "lemmas": [
       "feminin"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hübsche",
+        "lemma": "hübsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Person",
+        "lemma": "Person",
+        "pos": "noun",
+        "gloss_hint": "person"
+      },
+      {
+        "form": "femininen",
+        "lemma": "feminin",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geschlechts",
+        "lemma": "Geschlecht",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Eine [[hübsche|adjectives/hübsch]] [[Person|nouns/Person#1]] [[femininen|adjectives/feminin]] [[Geschlechts|nouns/Geschlecht]] - (Heinz Erhardt)"
   },
   "041ced2bab": {
     "text": "„Tiere gewöhnen sich schnell an regelmäßige Geräusche und Bewegungen in der Umgebung“. (Quelle: Der Spiegel ONLINE)",
@@ -4370,7 +4399,7 @@
         "gloss_hint": "not"
       }
     ],
-    "text_linked": "„Doch nach [[der|determiners/der]] absehbaren [[Erregung|nouns/Erregung#1]] [[kommt|verbs/kommen#4]] [[ebenso|adverbs/ebenso]] [[sicher|adjectives/sicher#2]] der [[Punkt|nouns/Punkt#10]], [[an|prepositions/an]] [[dem|determiners/der]] der [[Redner|nouns/Redner#1]] [[innehält|verbs/innehalten]] [[und|conjunctions/und]] [[sagt|verbs/sagen#1]]: »[[Zitiert|verbs/zitieren]] [[werden|verbs/werden#1]] [[möchte|verbs/möchten]] ich [[damit|adverbs/damit#1]] [[nicht|particles/nicht#1]].«“"
+    "text_linked": "„Doch nach [[der|determiners/der]] absehbaren [[Erregung|nouns/Erregung#1]] [[kommt|verbs/kommen#4]] [[ebenso|adverbs/ebenso]] [[sicher|adjectives/sicher#2]] der [[Punkt|nouns/Punkt#10]], [[an|prepositions/an]] [[dem|determiners/der]] der [[Redner|nouns/Redner#1]] [[innehält|verbs/innehalten#2]] [[und|conjunctions/und]] [[sagt|verbs/sagen#1]]: »[[Zitiert|verbs/zitieren]] [[werden|verbs/werden#1]] [[möchte|verbs/möchten]] ich [[damit|adverbs/damit#1]] [[nicht|particles/nicht#1]].«“"
   },
   "04272d7d0a": {
     "text": "Manche Staaten entstehen neu, indem sie ihre Unabhängigkeit erklären.",
@@ -4508,7 +4537,7 @@
         "gloss_hint": "form (appearance)"
       }
     ],
-    "text_linked": "[[Die|determiners/die]] [[neutrale|adjectives/neutral]] [[Form|nouns/Form#1]] [[eines|determiners/ein]] [[Adjektivs|nouns/Adjektiv#1]] [[kann|verbs/können_beherrschen]] [[regelmäßig|adjectives/regelmäßig#1]] [[aus|prepositions/aus#1]] [[der|determiners/der]] prädikativen [[gebildet|verbs/bilden]] werden."
+    "text_linked": "[[Die|determiners/die]] [[neutrale|adjectives/neutral]] [[Form|nouns/Form#1]] [[eines|determiners/ein]] [[Adjektivs|nouns/Adjektiv#1]] [[kann|verbs/können_etwas#1]] [[regelmäßig|adjectives/regelmäßig#1]] [[aus|prepositions/aus#1]] [[der|determiners/der]] prädikativen [[gebildet|verbs/bilden]] werden."
   },
   "042a4625de": {
     "text": "„Die nächsten Parolen wollte er von dort ausgeben.“",
@@ -6683,7 +6712,7 @@
         "gloss_hint": "earth"
       }
     ],
-    "text_linked": "„[[Ich|pronouns/ich]] [[begegnete|verbs/begegnen]] anderen [[Fiaskos|nouns/Fiasko]], [[und|conjunctions/und]] [[die|determiners/die]] jeweilige [[Frau|nouns/Frau#1]], die [[mir|pronouns/mir_dativ#1]] [[nahe|adjectives/nah#1]] [[stand|verbs/stehen#1]], [[war|verbs/sein]] [[nicht|particles/nicht]] [[immer|adverbs/immer]] [[das|pronouns/das_[1]]] [[Glück|nouns/Glück#3]] [[auf|prepositions/auf]] [[Erden|nouns/Erde#3]].“"
+    "text_linked": "„[[Ich|pronouns/ich]] [[begegnete|verbs/begegnen]] anderen [[Fiaskos|nouns/Fiasko]], [[und|conjunctions/und]] [[die|determiners/die]] jeweilige [[Frau|nouns/Frau#1]], die [[mir|pronouns/mir_des#1]] [[nahe|adjectives/nah#1]] [[stand|verbs/stehen#1]], [[war|verbs/sein]] [[nicht|particles/nicht]] [[immer|adverbs/immer]] [[das|pronouns/das_[1]]] [[Glück|nouns/Glück#3]] [[auf|prepositions/auf]] [[Erden|nouns/Erde#3]].“"
   },
   "043c66adb0": {
     "text": "Vor lauter Langeweile drehte er sämtliche Schrauben ab.",
@@ -7752,7 +7781,7 @@
         "gloss_hint": "lot (batch)"
       }
     ],
-    "text_linked": "„[[Was|pronouns/was#1]] [[die|determiners/die]] Eliten [[verbockt|verbs/verbocken]] [[haben|verbs/haben#1]], [[soll|verbs/sollen#4]] [[das|pronouns/das_[1]]] [[Volk|nouns/Volk#3]] [[ins|prepositions/in]] [[Lot|nouns/Lot_zulaufendes]] bringen.“"
+    "text_linked": "„[[Was|pronouns/was#1]] [[die|determiners/die]] Eliten verbockt [[haben|verbs/haben#1]], [[soll|verbs/sollen#4]] [[das|pronouns/das_[1]]] [[Volk|nouns/Volk#3]] [[ins|prepositions/in]] [[Lot|nouns/Lot_zulaufendes]] bringen.“"
   },
   "0445626045": {
     "text": "„Inzwischen war ihr Leben aber deutlich komplizierter, und sie hatte nicht mehr die Zeit, für alle die große Schwester zu spielen.“",
@@ -8672,11 +8701,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "turn from an ugly duckling into a swan",
     "source": "wiktionary",
     "lemmas": [
       "Schwan"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "045218c8f4": {
     "text": "„Luises Klassenkameraden benutzen für die gleiche Aufgabe den Taschenrechner und tragen die Ergebnisse mit dem Kugelschreiber auf dem Arbeitsblatt ein.“",
@@ -10600,7 +10630,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Sie hatte [[gehofft|verbs/hoffen#1]], [[dass|conjunctions/dass]] sie [[das|pronouns/das_[1]]] [[Heim|nouns/Heim#1]] [[am|prepositions/an]] [[Wochenende|nouns/Wochenende]] [[vor|prepositions/vor]] [[ihrem|pronouns/ihr_person]] Arbeitsantritt [[verlassen|verbs/verlassen_partizip]] [[könnte|verbs/können_etwas#2]], [[um|prepositions/um]] [[nach|prepositions/nach]] Velda [[zu|prepositions/zu]] [[fahren|verbs/fahren#1]], [[aber|conjunctions/aber]] [[der|pronouns/der_nominativ]] Heimleiter [[legte|verbs/legen]] [[ihre|pronouns/ihr_person]] [[Entlassung|nouns/Entlassung]] [[auf|prepositions/auf]] [[den|determiners/der]] [[Sonntagabend|nouns/Sonntagabend]].“"
+    "text_linked": "„Sie hatte [[gehofft|verbs/hoffen#1]], [[dass|conjunctions/dass]] sie [[das|pronouns/das_[1]]] [[Heim|nouns/Heim#1]] [[am|prepositions/an]] [[Wochenende|nouns/Wochenende]] [[vor|prepositions/vor]] [[ihrem|pronouns/ihr_person]] Arbeitsantritt [[verlassen|verbs/verlassen_partizip]] [[könnte|verbs/können_beherrschen]], [[um|prepositions/um]] [[nach|prepositions/nach]] Velda [[zu|prepositions/zu]] [[fahren|verbs/fahren#1]], [[aber|conjunctions/aber]] [[der|pronouns/der_nominativ]] Heimleiter [[legte|verbs/legen]] [[ihre|pronouns/ihr_person]] [[Entlassung|nouns/Entlassung]] [[auf|prepositions/auf]] [[den|determiners/der]] [[Sonntagabend|nouns/Sonntagabend]].“"
   },
   "0467c21d89": {
     "text": "„Besonders hilfreich wäre es für den Ministerpräsidenten, hinterher in den Medien als Sieger dargestellt zu werden.“",
@@ -12446,11 +12476,45 @@
   },
   "047ffa6907": {
     "text": "„Das Wetter war weiterhin bedeckt und Regenschauer zwangen uns zu häufigem Anhalten.“",
-    "translation": null,
+    "translation": "The weather remained cloudy and rain showers forced us to stop frequently.",
     "source": "wiktionary",
     "lemmas": [
       "Regenschauer"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wetter",
+        "lemma": "Wetter",
+        "pos": "noun",
+        "gloss_hint": "weather"
+      },
+      {
+        "form": "bedeckt",
+        "lemma": "bedeckt",
+        "pos": "adjective",
+        "gloss_hint": "cloudy"
+      },
+      {
+        "form": "Regenschauer",
+        "lemma": "Regenschauer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zwangen",
+        "lemma": "zwingen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anhalten",
+        "lemma": "anhalten",
+        "pos": "noun",
+        "gloss_hint": "stop"
+      }
+    ],
+    "text_linked": "„Das [[Wetter|nouns/Wetter_aktueller#1]] war weiterhin [[bedeckt|adjectives/bedeckt#1]] und [[Regenschauer|nouns/Regenschauer]] [[zwangen|verbs/zwingen]] uns zu häufigem Anhalten.“"
   },
   "0480bbd22d": {
     "text": "Wisst Ihr schon, in welcher Pension wir heute absteigen können?",
@@ -13560,11 +13624,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make or break",
     "source": "wiktionary",
     "lemmas": [
       "top"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "048f904108": {
     "text": "„Bereits unter den Zaren hatte die orthodoxe Kirche es nicht leicht, den heidnischen, kirchenfeindlichen Aberglauben zu bekämpfen.“",
@@ -14583,7 +14648,7 @@
         "gloss_hint": "divided"
       }
     ],
-    "text_linked": "[[Eine|determiners/eine]] [[Sure|nouns/Sure]] [[wird|verbs/werden]] [[in|prepositions/in]] [[Verse|nouns/Vers#1]] (Aya) [[unterteilt|verbs/unterteilen]]."
+    "text_linked": "[[Eine|determiners/eine]] [[Sure|nouns/Sure]] [[wird|verbs/werden]] [[in|prepositions/in]] [[Verse|nouns/Vers#1]] (Aya) [[unterteilt|verbs/unterteilen#1]]."
   },
   "049d55ff17": {
     "text": "„Schwojen – also das Kreisen des Schiffes um den Anker, wobei der Bug mehr oder weniger in den (sich drehenden) Wind zeigt – ist gut und richtig, denn ein Schiff, das mit dem Bug in den Wind zeigt, belastet seinen Anker am wenigsten.“",
@@ -17739,11 +17804,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Hope deferred makes fools of many.",
     "source": "wiktionary",
     "lemmas": [
       "Narr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "04be8ced8c": {
     "text": "Miami liegt am Miami River.",
@@ -18614,7 +18680,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Die [[Seeleute|nouns/Seeleute]] stehen auf dem [[Schiff|nouns/Schiff#1]] in Front [[Angesicht|nouns/Angesicht#1]] zu Angesicht mit der [[Mannschaft|nouns/Mannschaft#1]] des zu grüßenden Schiffes und [[salutieren|verbs/salutieren]]."
+    "text_linked": "Die [[Seeleute|nouns/Seeleute]] stehen auf dem [[Schiff|nouns/Schiff#1]] in Front [[Angesicht|nouns/Angesicht#1]] zu Angesicht mit der [[Mannschaft|nouns/Mannschaft#1]] des zu grüßenden Schiffes und salutieren."
   },
   "04ca6b694d": {
     "text": "Dieses Muster haben wir jetzt ganz klar durchbrochen.",
@@ -18812,7 +18878,7 @@
         "gloss_hint": "fur"
       }
     ],
-    "text_linked": "Sie [[kraulte|verbs/kraulen_leicht]] ihm [[das|pronouns/das_[1]]] [[Fell|nouns/Fell#1]]."
+    "text_linked": "Sie [[kraulte|verbs/kraulen_leicht#1]] ihm [[das|pronouns/das_[1]]] [[Fell|nouns/Fell#1]]."
   },
   "04cc8142d7": {
     "text": "„Dann legte sie den BH ab.“",
@@ -19190,12 +19256,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "food gets stuck in someone's throat",
     "source": "wiktionary",
     "lemmas": [
       "Bissen"
     ],
-    "ref": "phrases/jemandem bleibt der Bissen im Hals stecken"
+    "ref": "phrases/jemandem bleibt der Bissen im Hals stecken",
+    "translation_model": "openai/gpt-4.1"
   },
   "04d47f9da9": {
     "text": "Darf ich mal Ihre Toilette benutzen?",
@@ -19388,12 +19455,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "cut off someone's funds",
     "source": "wiktionary",
     "lemmas": [
       "abdrehen"
     ],
-    "ref": "phrases/jemandem den Geldhahn abdrehen"
+    "ref": "phrases/jemandem den Geldhahn abdrehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "04d7d4af8b": {
     "text": "„Am 21. August 1942 hissten deutsche Gebirgsjäger auf dem sturmumbrausten und schneebedeckten Gipfel des 5633 Meter hohen Elbrus sogar die Reichskriegsflagge.“",
@@ -21957,7 +22025,7 @@
         "gloss_hint": "exercise"
       }
     ],
-    "text_linked": "„Gegenüber [[ihren|pronouns/ihr_person]] [[Freiern|nouns/Freier_mann#2]] [[können|verbs/können_etwas#1]] [[die|pronouns/die]] [[männlichen|adjectives/männlich#1]] [[Prostituierten|nouns/Prostituierte#1]] [[eine|determiners/ein]] gewisse [[Macht|nouns/Macht#1]] [[ausüben|verbs/ausüben#1]].“"
+    "text_linked": "„Gegenüber [[ihren|pronouns/ihr_person]] [[Freiern|nouns/Freier_mann#2]] [[können|verbs/können_beherrschen]] [[die|pronouns/die]] [[männlichen|adjectives/männlich#1]] [[Prostituierten|nouns/Prostituierte#1]] [[eine|determiners/ein]] gewisse [[Macht|nouns/Macht#1]] [[ausüben|verbs/ausüben#1]].“"
   },
   "04e8b7fcc5": {
     "text": "„Wer in Gottes Namen kann sich vorstellen, dass irgendein Rentner dieser Welt auf einmal anfängt, seine Pläte mit einem Birkenwässerchen zu massieren, nur weil ihn von der Verpackung desselbigen Ballaks gebräunter Teint im Frühtau angrinst.“",
@@ -22724,12 +22792,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "handle someone with kid gloves",
     "source": "wiktionary",
     "lemmas": [
       "anfassen"
     ],
-    "ref": "phrases/jemanden mit Samthandschuhen anfassen"
+    "ref": "phrases/jemanden mit Samthandschuhen anfassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "04ef7e9908": {
     "text": "Da die meisten [Affen-]Arten Baumbewohner sind, sind ihre Gliedmaßen an die Lebensweise angepasst. Die Hinterbeine sind fast immer länger und stärker als die Vorderbeine […]",
@@ -23191,15 +23260,37 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Das [[Holz|nouns/Holz_bezeichnung#1]] ist [[gut|adjectives/gut#1]] zu [[bearbeiten|verbs/bearbeiten#2]] und die [[Oberfläche|nouns/Oberfläche#1]] lässt sich gut [[behandeln|verbs/behandeln#2]] und [[beizen|verbs/beizen]].“"
+    "text_linked": "„Das [[Holz|nouns/Holz_bezeichnung#1]] ist [[gut|adjectives/gut#1]] zu [[bearbeiten|verbs/bearbeiten#2]] und die [[Oberfläche|nouns/Oberfläche#1]] lässt sich gut [[behandeln|verbs/behandeln#2]] und beizen.“"
   },
   "04f1f9cbc0": {
     "text": "Das Antonym zu schwarz ist weiß.",
-    "translation": null,
+    "translation": "The antonym of black is white.",
     "source": "wiktionary",
     "lemmas": [
       "Antonym"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Antonym",
+        "lemma": "Antonym",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwarz",
+        "lemma": "schwarz",
+        "pos": "adjective",
+        "gloss_hint": "black"
+      },
+      {
+        "form": "weiß",
+        "lemma": "weiß",
+        "pos": "adjective",
+        "gloss_hint": "white"
+      }
+    ],
+    "text_linked": "Das [[Antonym|nouns/Antonym]] zu [[schwarz|adjectives/schwarz#1]] ist [[weiß|adjectives/weiß#1]]."
   },
   "04f220e3be": {
     "text": "Säuren und Basen bilden Spezies, die als konjugiert bezeichnet werden, wenn sie der gleichen Gruppe zugehörig sind, wie zum Beispiel Schwefelsäure und Sulfate.",
@@ -23514,11 +23605,49 @@
   },
   "04f406df6a": {
     "text": "„Bisweilen sind die, die die lautesten Töne anzuschlagen wissen, leicht ins Bockshorn zu jagen.“",
-    "translation": null,
+    "translation": "Sometimes those who know how to make the loudest noise are easily intimidated.",
     "source": "wiktionary",
     "lemmas": [
       "bisweilen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Töne",
+        "lemma": "Ton",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "anzuschlagen",
+        "lemma": "anschlagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wissen",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": "know"
+      },
+      {
+        "form": "leicht",
+        "lemma": "leicht",
+        "pos": "adjective",
+        "gloss_hint": "easy"
+      },
+      {
+        "form": "jagen",
+        "lemma": "jagen",
+        "pos": "verb",
+        "gloss_hint": "chase"
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "77f01c09"
+    },
+    "text_linked": "„Bisweilen sind die, die die lautesten [[Töne|nouns/Ton_etwas]] [[anzuschlagen|verbs/anschlagen]] [[wissen|verbs/wissen#1]], [[leicht|adjectives/leicht#2]] ins Bockshorn zu [[jagen|verbs/jagen#2]].“"
   },
   "04f4f06631": {
     "text": "da schau her",

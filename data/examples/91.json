@@ -532,7 +532,7 @@
         "gloss_hint": "get rid of"
       }
     ],
-    "text_linked": "Diese Viren [Anmerkung: Herpesviren] [[können|verbs/können_etwas#2]] [[wir|pronouns/wir]] [[uns|pronouns/uns]] [[irgendwann|adverbs/irgendwann]] [[mal|adverbs/mal]] [[während|conjunctions/während]] einer [[Grippe|nouns/Grippe#1]] [[zugezogen|verbs/zuziehen]] [[haben|verbs/haben#2]], und wir sind sie seither [[nicht|particles/nicht#1]] [[mehr|adverbs/mehr#1]] [[losgeworden|verbs/loswerden#1]]."
+    "text_linked": "Diese Viren [Anmerkung: Herpesviren] [[können|verbs/können_beherrschen]] [[wir|pronouns/wir]] [[uns|pronouns/uns]] [[irgendwann|adverbs/irgendwann]] [[mal|adverbs/mal]] [[während|conjunctions/während]] einer [[Grippe|nouns/Grippe#1]] [[zugezogen|verbs/zuziehen]] [[haben|verbs/haben#2]], und wir sind sie seither [[nicht|particles/nicht#1]] [[mehr|adverbs/mehr#1]] [[losgeworden|verbs/loswerden#1]]."
   },
   "9104e762a7": {
     "text": "Ein Knicks, welcher von einem Mädchen in Gegenwart der Eltern (besonders vor ihrer Mutter) ausgeführt wurde, galt lange Zeit als Zeichen der Anerkennung der elterlichen Autorität gegenüber dem Kind.",
@@ -4176,7 +4176,7 @@
         "gloss_hint": "continues"
       }
     ],
-    "text_linked": "„[[Man|pronouns/man]] [[sieht|verbs/sehen#1]], [[dass|conjunctions/dass]] Wieland zuweilen [[mit|prepositions/mit#1]] einer oder zwei unbetonten Silben [[einsetzt|verbs/einsetzen#4]], [[was|pronouns/was#3]] [[nicht|particles/nicht#1]] [[lege|verbs/legen]] artis [[ist|verbs/sein#1]], [[dann|adverbs/dann#1]] [[aber|conjunctions/aber#1]] regelrecht [[fortfährt|verbs/fortfahren]].“"
+    "text_linked": "„[[Man|pronouns/man]] [[sieht|verbs/sehen#1]], [[dass|conjunctions/dass]] Wieland [[zuweilen|adverbs/zuweilen]] [[mit|prepositions/mit#1]] einer oder zwei unbetonten Silben [[einsetzt|verbs/einsetzen#4]], [[was|pronouns/was#3]] [[nicht|particles/nicht#1]] [[lege|verbs/legen]] artis [[ist|verbs/sein#1]], [[dann|adverbs/dann#1]] [[aber|conjunctions/aber#1]] regelrecht [[fortfährt|verbs/fortfahren]].“"
   },
   "9127adeaac": {
     "text": "Zwei Steine aufeinander ergeben eine Dame.",
@@ -5793,11 +5793,69 @@
   },
   "9139b2bc63": {
     "text": "„Die multinationalen Verbände gingen in der Vergangenheit zunehmend erfolgreich gegen die Piraten vor, sagte der Atalanta-Sprecher. Diese sehen sich dadurch genötigt, aufs offene Meer auszuweichen.“",
-    "translation": null,
+    "translation": "\"The multinational associations increasingly successfully took action against the pirates in the past, said the Atalanta spokesperson. As a result, they find themselves forced to retreat to the open sea.\"",
     "source": "wiktionary",
     "lemmas": [
       "aufs"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "multinationalen",
+        "lemma": "multinational",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verbände",
+        "lemma": "Verband",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vergangenheit",
+        "lemma": "Vergangenheit",
+        "pos": "noun",
+        "gloss_hint": "past"
+      },
+      {
+        "form": "erfolgreich",
+        "lemma": "erfolgreich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Piraten",
+        "lemma": "Pirat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sprecher",
+        "lemma": "Sprecher",
+        "pos": "noun",
+        "gloss_hint": "spokesperson"
+      },
+      {
+        "form": "genötigt",
+        "lemma": "genötigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Meer",
+        "lemma": "Meer",
+        "pos": "noun",
+        "gloss_hint": "sea"
+      },
+      {
+        "form": "auszuweichen",
+        "lemma": "ausweichen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Die multinationalen [[Verbände|nouns/Verband]] gingen in der [[Vergangenheit|nouns/Vergangenheit#1]] zunehmend [[erfolgreich|adjectives/erfolgreich]] gegen die [[Piraten|nouns/Pirat]] vor, sagte der Atalanta-[[Sprecher|nouns/Sprecher#2]]. Diese sehen sich dadurch genötigt, aufs offene [[Meer|nouns/Meer#1]] [[auszuweichen|verbs/ausweichen]].“"
   },
   "9139dcad20": {
     "text": "An einem All-Hands-Manöver müssen sich alle Besatzungsmitglieder wegen der Schwierigkeit oder der notwendigen Eile in einer Gefahrensituation beteiligen.",
@@ -7863,11 +7921,24 @@
   },
   "9151a884d2": {
     "text": "Es waren aber ihrer siebzig.",
-    "translation": null,
+    "translation": "But there were seventy of them.",
     "source": "wiktionary",
     "lemmas": [
       "siebzig"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "siebzig",
+        "lemma": "siebzig",
+        "pos": "numeral",
+        "gloss_hint": "70"
+      }
+    ],
+    "_proofread": {
+      "translation": true
+    },
+    "text_linked": "Es waren aber ihrer [[siebzig|numerals/siebzig]]."
   },
   "91560aaedb": {
     "text": "„Das Abendessen war kurz und lief ab wie gewohnt.“",
@@ -12858,7 +12929,7 @@
     "lemmas": [
       "Zeitung"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "claude-sonnet-4-6"
   },
   "91924fd697": {
     "text": "Ich träume vom Leben in einem fernen Land.",
@@ -21608,7 +21679,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Ein|determiners/ein]] [[ganzer|adjectives/ganz]] [[Strauß|nouns/Strauß_kunstvoll#1]] Anekdoten [[rankt|verbs/ranken]] [[sich|pronouns/sich]] [[um|prepositions/um]] ihn.“"
+    "text_linked": "„[[Ein|determiners/ein]] [[ganzer|adjectives/ganz]] [[Strauß|nouns/Strauß_kunstvoll#1]] Anekdoten rankt [[sich|pronouns/sich]] [[um|prepositions/um]] ihn.“"
   },
   "91e92e71ba": {
     "text": "Das stimmt so, dazu gibt es nichts hinzuzufügen.",
@@ -21943,7 +22014,7 @@
         "gloss_hint": "become"
       }
     ],
-    "text_linked": "[[Aus|prepositions/aus]] [[den|determiners/der]] [[Samen|nouns/Samen#1]] [[des|determiners/des]] [[Schwarzen|adjectives/schwarz#1]] [[Senfs|nouns/Senf#1]] [[kann|verbs/können_beherrschen]] [[eine|determiners/ein]] [[leckere|adjectives/lecker#5]] Würzpaste [[hergestellt|verbs/herstellen#1]] [[werden|verbs/werden#1]]."
+    "text_linked": "[[Aus|prepositions/aus]] [[den|determiners/der]] [[Samen|nouns/Samen#1]] [[des|determiners/des]] [[Schwarzen|adjectives/schwarz#1]] [[Senfs|nouns/Senf#1]] [[kann|verbs/können_etwas#1]] [[eine|determiners/ein]] [[leckere|adjectives/lecker#5]] Würzpaste [[hergestellt|verbs/herstellen#1]] [[werden|verbs/werden#1]]."
   },
   "91f267d0e8": {
     "text": "„Indem sie Anteile an der Firma kauften - statt direkt die Immobilie - vermieden Blair und seine Frau Cherie Grundsteuern in Höhe von rund 400.000 US-Dollar.“",
@@ -21999,7 +22070,7 @@
         "gloss_hint": "leave"
       }
     ],
-    "text_linked": "[[Danke|particles/danke]] [[Genossin|nouns/Genossin]], Sie [[können|verbs/können_etwas#1]] [[jetzt|adverbs/jetzt#1]] [[gehen|verbs/gehen#3]]."
+    "text_linked": "[[Danke|particles/danke]] [[Genossin|nouns/Genossin]], Sie [[können|verbs/können_beherrschen]] [[jetzt|adverbs/jetzt#1]] [[gehen|verbs/gehen#3]]."
   },
   "91f428fd25": {
     "text": "Die Kugelfläche wird auch Kugeloberfläche oder Sphäre genannt.",

@@ -3177,11 +3177,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to grab someone by the collar",
     "source": "wiktionary",
     "lemmas": [
       "beim"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "161ec61eb4": {
     "text": "Den Zusatz im Anhang kannst du getrost ignorieren.",
@@ -3904,7 +3905,7 @@
         "gloss_hint": "flee"
       }
     ],
-    "text_linked": "[[Der|pronouns/der_nominativ#1]] Polizei zufolge beobachtete [[ein|pronouns/ein]] [[Zeuge|nouns/Zeuge#1]], [[wie|conjunctions/wie_als]] ein Tatverdächtiger [[einen|pronouns/ein]] [[Gegenstand|nouns/Gegenstand#1]] [[durch|adverbs/durch#2]] ein [[Fenster|nouns/Fenster#1]] [[der|pronouns/der_nominativ#1]] [[Moschee|nouns/Moschee#2]] [[warf|verbs/werfen#1]]. Daraufhin [[habe|verbs/haben#1]] [[sich|pronouns/sich#1]] [[das|pronouns/das_[1]]] [[Feuer|nouns/Feuer#1]] [[entzündet|verbs/entzünden#1]]. Der [[mutmaßliche|adjectives/mutmaßlich]] [[Täter|nouns/Täter#1]] [[konnte|verbs/können_beherrschen]] [[flüchten|verbs/flüchten#1]]."
+    "text_linked": "[[Der|pronouns/der_nominativ#1]] Polizei zufolge beobachtete [[ein|pronouns/ein]] [[Zeuge|nouns/Zeuge#1]], [[wie|conjunctions/wie_als]] ein Tatverdächtiger [[einen|pronouns/ein]] [[Gegenstand|nouns/Gegenstand#1]] [[durch|adverbs/durch#2]] ein [[Fenster|nouns/Fenster#1]] [[der|pronouns/der_nominativ#1]] [[Moschee|nouns/Moschee#2]] [[warf|verbs/werfen#1]]. Daraufhin [[habe|verbs/haben#1]] [[sich|pronouns/sich#1]] [[das|pronouns/das_[1]]] [[Feuer|nouns/Feuer#1]] [[entzündet|verbs/entzünden#1]]. Der [[mutmaßliche|adjectives/mutmaßlich]] [[Täter|nouns/Täter#1]] [[konnte|verbs/können_etwas#1]] [[flüchten|verbs/flüchten#1]]."
   },
   "162314acbf": {
     "text": "„‚Angehörige der Kampfgruppen der Berliner Betriebe und Einheiten unserer Nationalen Volksarmee übernahmen den Schutz an diesem Teil unserer Staatsgrenze‘, so kommentierte Grote, deshalb ‚wird [es] nichts mit den erwünschten Provokationen an unseren Grenzen. Nicht etwa, weil die Möchte-gern-Krieger nicht energisch genug gemöchtet hätten‘.“",
@@ -4020,11 +4021,33 @@
   },
   "16234bf932": {
     "text": "Das Arbeitszimmer ist sehr komfortabel eingerichtet.",
-    "translation": null,
+    "translation": "The office is very comfortably furnished.",
     "source": "wiktionary",
     "lemmas": [
       "komfortabel"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Arbeitszimmer",
+        "lemma": "Arbeitszimmer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "komfortabel",
+        "lemma": "komfortabel",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "eingerichtet",
+        "lemma": "einrichten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Das [[Arbeitszimmer|nouns/Arbeitszimmer]] ist sehr [[komfortabel|adjectives/komfortabel]] [[eingerichtet|verbs/einrichten]]."
   },
   "16241627b5": {
     "text": "„Sylvia musste an die lustvolleren Passagen in Joyce' Werk denken und fragte sich, wie viel davon wohl von Mrs Joyce inspiriert war.“",
@@ -5840,7 +5863,7 @@
     "lemmas": [
       "Partner"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [],
     "_proofread": {
       "translation": true
@@ -6254,7 +6277,7 @@
         "gloss_hint": "quarantine"
       }
     ],
-    "text_linked": "„[[Haben|verbs/haben#2]] [[Sie|nouns/Sie_besondere]] [[einmal|adverbs/einmal#1]] irrtümlich [[ein|determiners/ein]] [[notwendiges|adjectives/notwendig]] [[Programm|nouns/Programm#1]] [[gelöscht|verbs/löschen_feuer#4]], [[können|verbs/können_beherrschen#1]] Sie [[es|pronouns/es]] [[schnell|adjectives/schnell#1]] [[wieder|adverbs/wieder#1]] [[restaurieren|verbs/restaurieren]], [[da|adverbs/da]] alle gelöschten [[Programme|nouns/Programm#1]] [[in|prepositions/in]] [[Quarantäne|nouns/Quarantäne#1]] genommen werden“"
+    "text_linked": "„[[Haben|verbs/haben#2]] [[Sie|nouns/Sie_besondere]] [[einmal|adverbs/einmal#1]] irrtümlich [[ein|determiners/ein]] [[notwendiges|adjectives/notwendig]] [[Programm|nouns/Programm#1]] [[gelöscht|verbs/löschen_feuer#4]], [[können|verbs/können_beherrschen#1]] Sie [[es|pronouns/es]] [[schnell|adjectives/schnell#1]] [[wieder|adverbs/wieder#1]] [[restaurieren|verbs/restaurieren#1]], [[da|adverbs/da]] alle gelöschten [[Programme|nouns/Programm#1]] [[in|prepositions/in]] [[Quarantäne|nouns/Quarantäne#1]] genommen werden“"
   },
   "163551d678": {
     "text": "„Ich war so taktvoll, nicht mit meinem eigenen Alibi zu prahlen, fand es aber angebracht, es ihm gegenüber zu erwähnen.“",
@@ -6506,7 +6529,7 @@
         "gloss_hint": "result"
       }
     ],
-    "text_linked": "„Als Nächstes kreuzte eine getigerte [[Katze|nouns/Katze#1]] [[auf|prepositions/auf#1]]. […] [[Die|determiners/die]] Katze [[betrat|verbs/betreten#1]] [[behutsam|adjectives/behutsam]] das welke Blumenbeet, [[urinierte|verbs/urinieren]] [[hinein|adverbs/hinein]] [[und|conjunctions/und]] [[schnupperte|verbs/schnuppern]] [[an|prepositions/an#2]] [[dem|determiners/der]] [[Ergebnis|nouns/Ergebnis#1]].“"
+    "text_linked": "„Als Nächstes kreuzte eine getigerte [[Katze|nouns/Katze#1]] [[auf|prepositions/auf#1]]. […] [[Die|determiners/die]] Katze [[betrat|verbs/betreten#1]] [[behutsam|adjectives/behutsam]] das welke Blumenbeet, [[urinierte|verbs/urinieren#1]] [[hinein|adverbs/hinein]] [[und|conjunctions/und]] [[schnupperte|verbs/schnuppern]] [[an|prepositions/an#2]] [[dem|determiners/der]] [[Ergebnis|nouns/Ergebnis#1]].“"
   },
   "163653e709": {
     "text": "„Der Gardian verzog das Gesicht und machte eine Bewegung, als sei er der verblüffteste Mensch auf der ganzen Erde.“",
@@ -6959,7 +6982,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Viele [[Objekte|nouns/Objekt#4]] besitzen [[Methoden|nouns/Methode#2]] zum [[Duplizieren|verbs/duplizieren]], diese werden als „Copy-Constructor“ bezeichnet."
+    "text_linked": "Viele [[Objekte|nouns/Objekt#4]] besitzen [[Methoden|nouns/Methode#2]] zum Duplizieren, diese werden als „Copy-Constructor“ bezeichnet."
   },
   "163dabbe50": {
     "text": "Du solltest Prosatexte nicht allzu sehr mit lyrischen Anteilen durchsetzen.",
@@ -6989,7 +7012,7 @@
         "gloss_hint": "infuse"
       }
     ],
-    "text_linked": "Du solltest Prosatexte nicht allzu sehr mit lyrischen Anteilen [[durchsetzen|verbs/durchsetzen_etwas#1]]."
+    "text_linked": "Du solltest Prosatexte nicht allzu sehr mit lyrischen Anteilen [[durchsetzen|verbs/durchsetzen_einer]]."
   },
   "163dd45b96": {
     "text": "Das Haus, worin Goethe damals gewohnt haben soll, ist mittlerweile abgerissen worden.",
@@ -17127,7 +17150,7 @@
         "gloss_hint": "avoid"
       }
     ],
-    "text_linked": "Holzfäller [[tragen|verbs/tragen#3]] zumeist [[eine|determiners/eine]] spezielle Schutzkleidung, [[um|prepositions/um]] Verletzungen [[durch|prepositions/durch#2]] [[Kettensägen|nouns/Kettensäge#1]] [[zu|particles/zu_drückt]] [[vermeiden|verbs/vermeiden#1]]."
+    "text_linked": "Holzfäller [[tragen|verbs/tragen#3]] [[zumeist|adverbs/zumeist]] [[eine|determiners/eine]] spezielle Schutzkleidung, [[um|prepositions/um]] Verletzungen [[durch|prepositions/durch#2]] [[Kettensägen|nouns/Kettensäge#1]] [[zu|particles/zu_drückt]] [[vermeiden|verbs/vermeiden#1]]."
   },
   "169ae6f082": {
     "text": "„Das Motorfliegen erfordert ein beträchtliches navigatorisches Wissen und Können bzw. […] vestibuläre Belastbarkeit, Raumorientierungsvermögen und ein feinmotorisches Gespür für den Umgang mit der Maschine.“",
@@ -17363,7 +17386,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Nachdem die [[Wäsche|nouns/Wäsche#1]] [[gewaschen|verbs/waschen]] wurde, wurde diese in der [[Mangel|nouns/Mangel_gerät#1]] [[ausgewrungen|verbs/auswringen]] und zum [[Trocknen|verbs/trocknen#1]] [[aufgehängt|verbs/aufhängen]]."
+    "text_linked": "Nachdem die [[Wäsche|nouns/Wäsche#1]] [[gewaschen|verbs/waschen]] wurde, wurde diese in der [[Mangel|nouns/Mangel_gerät#1]] ausgewrungen und zum [[Trocknen|verbs/trocknen#1]] [[aufgehängt|verbs/aufhängen]]."
   },
   "169dff6c54": {
     "text": "In »Peter kommt heute nach Hause.« ist „Peter“ das Thema des Satzes, „nach Hause“ das Rhema, wenn „nach Háuse“ den Satzakzent trägt.",
@@ -18717,7 +18740,7 @@
         "gloss_hint": "exert oneself | strain"
       }
     ],
-    "text_linked": "[[Die|pronouns/die]] [[Arbeit|nouns/Arbeit#1]] [[am|prepositions/an]] [[Bildschirm|nouns/Bildschirm#1]] [[kann|verbs/können_beherrschen]] [[sehr|particles/sehr#1]] [[anstrengen|verbs/anstrengen#1]]."
+    "text_linked": "[[Die|pronouns/die]] [[Arbeit|nouns/Arbeit#1]] [[am|prepositions/an]] [[Bildschirm|nouns/Bildschirm#1]] [[kann|verbs/können_etwas#1]] [[sehr|particles/sehr#1]] [[anstrengen|verbs/anstrengen#1]]."
   },
   "16a522c1ba": {
     "text": "„In der Diskussion über die Ruine wurden nach dem Krieg die gleichen Argumente vorgebracht wie viele Jahre später beim Hohenzollernschloss in Berlin.“",
@@ -19596,7 +19619,7 @@
         "gloss_hint": "manage"
       }
     ],
-    "text_linked": "[[Das|pronouns/das_[1]]] [[System|nouns/System#1]] [[funktioniert|verbs/funktionieren]] derart [[robust|adjectives/robust#1]] – keine [[Störungen|nouns/Störung#1]] [[können|verbs/können_etwas#1]] [[es|pronouns/es]] [[beeinflussen|verbs/beeinflussen]]."
+    "text_linked": "[[Das|pronouns/das_[1]]] [[System|nouns/System#1]] [[funktioniert|verbs/funktionieren]] derart [[robust|adjectives/robust#1]] – keine [[Störungen|nouns/Störung#1]] [[können|verbs/können_beherrschen]] [[es|pronouns/es]] [[beeinflussen|verbs/beeinflussen]]."
   },
   "16ac3fbb8c": {
     "text": "„Flavius hingegen starrte ins Leere, während seine Gedanken bei Eugenia und seiner Familie auf Terra waren.“",
@@ -23419,7 +23442,7 @@
         "gloss_hint": "Federal Chancellor"
       }
     ],
-    "text_linked": "[Projekt \"Floskelwolke\" im Deutschlandfunk/Köln:] „Also allenfalls [[könnte|verbs/können_beherrschen]] [[man|pronouns/man]] [[das|pronouns/das_[1]]] [[noch|adverbs/noch#1]] [[mit|prepositions/mit#1]] [[der|pronouns/der_nominativ#1]] [[Wahl|nouns/Wahl#1]] [[in|prepositions/in]] [[Verbindung|nouns/Verbindung#2]] [[bringen|verbs/bringen#2]], [[wenn|conjunctions/wenn#1]] [[dann|adverbs/dann#1]] weißer [[Rauch|nouns/Rauch#1]] [[über|prepositions/über#1]] [[dem|determiners/dem#1]] [[Bundestag|nouns/Bundestag#1]] [[aufsteigen|verbs/aufsteigen#3]] würde. [[Und|conjunctions/und#1]] dann [[ist|verbs/sein#2]] [[aber|conjunctions/aber#1]] [[immer|adverbs/immer#1]] noch keine [[Päpstin|nouns/Päpstin#1]] [[gewählt|verbs/wählen#1]], [[sondern|conjunctions/sondern#1]] [[eine|determiners/eine]] [[Bundeskanzlerin|nouns/Bundeskanzlerin#1]].“"
+    "text_linked": "[Projekt \"Floskelwolke\" im Deutschlandfunk/Köln:] „Also [[allenfalls|adverbs/allenfalls]] [[könnte|verbs/können_beherrschen]] [[man|pronouns/man]] [[das|pronouns/das_[1]]] [[noch|adverbs/noch#1]] [[mit|prepositions/mit#1]] [[der|pronouns/der_nominativ#1]] [[Wahl|nouns/Wahl#1]] [[in|prepositions/in]] [[Verbindung|nouns/Verbindung#2]] [[bringen|verbs/bringen#2]], [[wenn|conjunctions/wenn#1]] [[dann|adverbs/dann#1]] weißer [[Rauch|nouns/Rauch#1]] [[über|prepositions/über#1]] [[dem|determiners/dem#1]] [[Bundestag|nouns/Bundestag#1]] [[aufsteigen|verbs/aufsteigen#3]] würde. [[Und|conjunctions/und#1]] dann [[ist|verbs/sein#2]] [[aber|conjunctions/aber#1]] [[immer|adverbs/immer#1]] noch keine [[Päpstin|nouns/Päpstin#1]] [[gewählt|verbs/wählen#1]], [[sondern|conjunctions/sondern#1]] [[eine|determiners/eine]] [[Bundeskanzlerin|nouns/Bundeskanzlerin#1]].“"
   },
   "16c68d9cf3": {
     "text": "„Neu ist, dass nicht mehr nur Alte oder Kranke von Einsamkeit betroffen sind, sondern auch die Jungen – und das in großer Zahl.“",
@@ -23986,7 +24009,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[…] bearbeitete Justus [[pünktlich|adjectives/pünktlich]] [[und|conjunctions/und]] [[zuverlässig|adjectives/zuverlässig]], ganz [[zur|prepositions/zu]] [[Freude|nouns/Freude#1]] [[seiner|pronouns/sein]] [[Eltern|nouns/Eltern#1]] und [[zum|prepositions/zu]] [[Nutzen|nouns/Nutzen#1]] [[von|prepositions/von]] [[Jasmin|nouns/Jasmin#1]], [[die|pronouns/die]] [[in|prepositions/in]] diesem [[Punkt|nouns/Punkt#10]] [[eher|adverbs/eher]] [[schlampig|adjectives/schlampig]] [[war|verbs/sein#2]] und [[unzuverlässig|adjectives/unzuverlässig]] und [[so|adverbs/so]] [[häufig|adjectives/häufig]] [[auf|prepositions/auf]] Justus [[zurückgriff|verbs/zurückgreifen]] und [[hastig|adjectives/hastig]] [[Anfang|nouns/Anfang#1]] und [[Ende|nouns/Ende#1]] [[der|pronouns/der_nominativ]] [[Texte|nouns/Text#1]] in [[ihr|pronouns/ihr_person]] Aufgabenheft [[kritzelte|verbs/kritzeln]], [[den|determiners/der]] Mittelteil [[ließ|verbs/lassen]] sie [[aus|prepositions/aus]] Zeitnot [[meist|adverbs/meist]] [[weg|adverbs/weg]], den [[Lehrern|nouns/Lehrer#1]] [[fiel|verbs/fallen]] [[dies|pronouns/dies]] [[sowieso|adverbs/sowieso]] [[nur|particles/nur]] in den [[seltensten|adjectives/selten]] [[Fällen|nouns/Fall_schnelle]] auf.“"
+    "text_linked": "„[…] bearbeitete Justus [[pünktlich|adjectives/pünktlich]] [[und|conjunctions/und]] [[zuverlässig|adjectives/zuverlässig]], ganz [[zur|prepositions/zu]] [[Freude|nouns/Freude#1]] [[seiner|pronouns/sein]] [[Eltern|nouns/Eltern#1]] und [[zum|prepositions/zu]] [[Nutzen|nouns/Nutzen#1]] [[von|prepositions/von]] [[Jasmin|nouns/Jasmin#1]], [[die|pronouns/die]] [[in|prepositions/in]] diesem [[Punkt|nouns/Punkt#10]] [[eher|adverbs/eher]] [[schlampig|adjectives/schlampig]] [[war|verbs/sein#2]] und [[unzuverlässig|adjectives/unzuverlässig]] und [[so|adverbs/so]] [[häufig|adjectives/häufig]] [[auf|prepositions/auf]] Justus [[zurückgriff|verbs/zurückgreifen]] und [[hastig|adjectives/hastig]] [[Anfang|nouns/Anfang#1]] und [[Ende|nouns/Ende#1]] [[der|pronouns/der_nominativ]] [[Texte|nouns/Text#1]] in [[ihr|pronouns/ihr_person]] Aufgabenheft [[kritzelte|verbs/kritzeln#1]], [[den|determiners/der]] Mittelteil [[ließ|verbs/lassen]] sie [[aus|prepositions/aus]] Zeitnot [[meist|adverbs/meist]] [[weg|adverbs/weg]], den [[Lehrern|nouns/Lehrer#1]] [[fiel|verbs/fallen]] [[dies|pronouns/dies]] [[sowieso|adverbs/sowieso]] [[nur|particles/nur]] in den [[seltensten|adjectives/selten]] [[Fällen|nouns/Fall_schnelle]] auf.“"
   },
   "16caeb550d": {
     "text": "„Asbest gilt als sehr gefährlich, weil die Fasern beim Einatmen große Lungenschädigungen verursachen können.“",
@@ -24082,7 +24105,7 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "„Asbest [[gilt|verbs/gelten]] [[als|conjunctions/als#6]] [[sehr|particles/sehr#1]] [[gefährlich|adjectives/gefährlich]], [[weil|conjunctions/weil_konjunktion#1]] [[die|pronouns/die]] Fasern [[beim|prepositions/bei]] [[Einatmen|verbs/einatmen#1]] [[große|adjectives/groß#1]] Lungenschädigungen [[verursachen|verbs/verursachen#1]] [[können|verbs/können_etwas#1]].“"
+    "text_linked": "„Asbest [[gilt|verbs/gelten]] [[als|conjunctions/als#6]] [[sehr|particles/sehr#1]] [[gefährlich|adjectives/gefährlich]], [[weil|conjunctions/weil_konjunktion#1]] [[die|pronouns/die]] Fasern [[beim|prepositions/bei]] [[Einatmen|verbs/einatmen#1]] [[große|adjectives/groß#1]] Lungenschädigungen [[verursachen|verbs/verursachen#1]] [[können|verbs/können_beherrschen]].“"
   },
   "16cb1dd268": {
     "text": "Das semantische Differenzial für das Wort \"Hund\" als Testeinheit könnte zeigen, dass verschiedene Personen unterschiedliche Einstellungen zu diesen Tieren haben.",
@@ -26082,7 +26105,7 @@
         "gloss_hint": "sneak in"
       }
     ],
-    "text_linked": "„Alle [[guten|adjectives/gut]] [[Dinge|nouns/Ding_gegenstand#1]] [[sind|verbs/sein#2]] [[drei|numerals/drei#1]]. [[Der|pronouns/der_nominativ]] erste [[Grund|nouns/Grund#1]] [[für|prepositions/für]] unsere [[gute|adjectives/gut]] [[Laune|nouns/Laune#1]] [[ist|verbs/sein#2]], [[dass|conjunctions/dass]] [[es|pronouns/es]] Emre [[geschafft|verbs/schaffen_etwas#1]] [[hat|verbs/haben#1]], [[sich|pronouns/sich#1]] [[einzuschleusen|verbs/einschleusen]].“"
+    "text_linked": "„Alle [[guten|adjectives/gut]] [[Dinge|nouns/Ding_gegenstand#1]] [[sind|verbs/sein#2]] [[drei|numerals/drei#1]]. [[Der|pronouns/der_nominativ]] erste [[Grund|nouns/Grund#1]] [[für|prepositions/für]] unsere [[gute|adjectives/gut]] [[Laune|nouns/Laune#1]] [[ist|verbs/sein#2]], [[dass|conjunctions/dass]] [[es|pronouns/es]] Emre [[geschafft|verbs/schaffen_etwas]] [[hat|verbs/haben#1]], [[sich|pronouns/sich#1]] [[einzuschleusen|verbs/einschleusen]].“"
   },
   "16df62f3ae": {
     "text": "Sie trägt echt gerne Schmuck, an jedem Finger einen Ring, an jedem Arm ein Bündel von Armreifen, mehrere auffällige Ohrringe, Broschen und die Halskette kann gar nicht lang genug sein.",

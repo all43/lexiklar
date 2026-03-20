@@ -732,7 +732,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Ein hohler Ton lässt [[mich|pronouns/ich]] [[erschauern|verbs/erschauern]]."
+    "text_linked": "Ein hohler Ton lässt [[mich|pronouns/ich]] erschauern."
   },
   "ee0be2486d": {
     "text": "Bei diesem stürmischen Wetter schickt man doch keinen Hund vor die Türe.",
@@ -3168,15 +3168,37 @@
         "gloss_hint": "head"
       }
     ],
-    "text_linked": "„[[Die|determiners/die]] [[Zügel|nouns/Zügel#1]] [[werden|verbs/werden#1]], [[je|adverbs/je]] [[älter|adjectives/alt]] [[die|determiners/die]] Gams [[ist|verbs/sein#2]], [[umso|conjunctions/umso#1]] verwaschener [[gegenüber|prepositions/gegenüber#2]] [[dem|determiners/der]] [[hellen|adjectives/hell#1]] [[Haupt|nouns/Haupt#1]].“"
+    "text_linked": "„[[Die|determiners/die]] [[Zügel|nouns/Zügel#1]] [[werden|verbs/werden#1]], [[je|adverbs/je]] [[älter|adjectives/alt]] [[die|determiners/die]] Gams [[ist|verbs/sein#2]], [[umso|conjunctions/umso#1]] verwaschener [[gegenüber|prepositions/gegenüber#1]] [[dem|determiners/der]] [[hellen|adjectives/hell#1]] [[Haupt|nouns/Haupt#1]].“"
   },
   "ee1ebe2072": {
     "text": "Der Elektroniker kommt morgen wegen der Reparatur.",
-    "translation": null,
+    "translation": "The electronics technician is coming tomorrow for the repair.",
     "source": "wiktionary",
     "lemmas": [
       "Elektroniker"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Elektroniker",
+        "lemma": "Elektroniker",
+        "pos": "noun",
+        "gloss_hint": "electronics technician"
+      },
+      {
+        "form": "morgen",
+        "lemma": "morgen",
+        "pos": "noun",
+        "gloss_hint": "tomorrow"
+      },
+      {
+        "form": "Reparatur",
+        "lemma": "Reparatur",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Der [[Elektroniker|nouns/Elektroniker#1]] kommt morgen wegen der [[Reparatur|nouns/Reparatur]]."
   },
   "ee20388480": {
     "text": "Speicher ist eine kleine Gemeinde in der Schweiz.",
@@ -4167,11 +4189,45 @@
   },
   "ee2a19f872": {
     "text": "„Die Geschäfte des amerikanischen Spielzeugherstellers Mattel laufen recht mittelmäßig.“",
-    "translation": null,
+    "translation": "The business of the American toy manufacturer Mattel is running quite mediocrely.",
     "source": "wiktionary",
     "lemmas": [
       "mittelmäßig"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geschäfte",
+        "lemma": "Geschäft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "amerikanischen",
+        "lemma": "amerikanisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spielzeugherstellers",
+        "lemma": "Spielzeughersteller",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mattel",
+        "lemma": "Mattel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "mittelmäßig",
+        "lemma": "mittelmäßig",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Die [[Geschäfte|nouns/Geschäft]] des [[amerikanischen|adjectives/amerikanisch]] Spielzeugherstellers Mattel laufen recht [[mittelmäßig|adjectives/mittelmäßig]].“"
   },
   "ee2a3c1a53": {
     "text": "„Er hat einen Pickel rechts neben der Nase.“",
@@ -5599,7 +5655,7 @@
         "gloss_hint": "pardon"
       }
     ],
-    "text_linked": "Sie [[erhielten|verbs/erhalten#1]] [[ein|determiners/ein]] [[Pardon|nouns/Pardon#1]] [[vom|prepositions/von]] [[König|nouns/König#1]] [[und|conjunctions/und]] [[wurden|verbs/werden#1]] [[umgehend|adjectives/umgehend]] [[begnadigt|verbs/begnadigen]]."
+    "text_linked": "Sie [[erhielten|verbs/erhalten#1]] [[ein|determiners/ein]] [[Pardon|nouns/Pardon#1]] [[vom|prepositions/von]] [[König|nouns/König#1]] [[und|conjunctions/und]] [[wurden|verbs/werden#1]] [[umgehend|adjectives/umgehend]] [[begnadigt|verbs/begnadigen#1]]."
   },
   "ee381e2f15": {
     "text": "Eine Vorhersage darüber, wie sich die Verhältnisse langfristig entwickeln werden, erscheint sehr gewagt.",
@@ -6389,7 +6445,7 @@
         "gloss_hint": "exclaims happily"
       }
     ],
-    "text_linked": "„[[Der|determiners/der]] [[Schütze|nouns/Schütze_jemand#2]] [[im|prepositions/in]] Kampfhubschrauber [[eröffnet|verbs/eröffnen]] das [[Feuer|nouns/Feuer#1]]. ‚Hahaha, [[ich|pronouns/ich#1]] [[hab|verbs/haben#1]] sie getroffen‘, [[frohlockt|verbs/frohlocken]] er.“"
+    "text_linked": "„[[Der|determiners/der]] [[Schütze|nouns/Schütze_jemand#2]] [[im|prepositions/in]] Kampfhubschrauber [[eröffnet|verbs/eröffnen]] das [[Feuer|nouns/Feuer#1]]. ‚Hahaha, [[ich|pronouns/ich#1]] [[hab|verbs/haben#1]] sie getroffen‘, frohlockt er.“"
   },
   "ee414447c4": {
     "text": "„Es stimmte, sie war eine begabte Erfinderin, die gerade dabei war, eine Möglichkeit zu suchen, wie sich aus Magie und Sonnenlicht eine unerschöpfliche Energiequelle entwickeln ließ, umweltfreundlich und gesund.“",
@@ -14430,7 +14486,7 @@
         "gloss_hint": "have"
       }
     ],
-    "text_linked": "„Ihre [[Unruhe|nouns/Unruhe#1]] erheiterte mich, und es [[machte|verbs/machen]] mir [[Vergnügen|nouns/Vergnügen#1]], ihr [[zu|particles/zu_drückt]] [[versichern|verbs/versichern#3]], ich hielte [[die|determiners/die]] [[Jungfräulichkeit|nouns/Jungfräulichkeit#1]] [[der|determiners/der]] [[Mädchen|nouns/Mädchen#1]] [[nur|particles/nur]] [[für|prepositions/für]] [[eine|determiners/eine]] [[kindische|adjectives/kindisch]] [[Einbildung|nouns/Einbildung#1]], [[da|conjunctions/da]] die [[Natur|nouns/Natur#1]] [[den|determiners/der]] meisten [[von|prepositions/von]] ihnen [[nicht|particles/nicht]] [[einmal|adverbs/einmal#1]] deren [[Kennzeichen|nouns/Kennzeichen#1]] [[mitgegeben|verbs/mitgeben]] [[hätte|verbs/haben#1]].“"
+    "text_linked": "„Ihre [[Unruhe|nouns/Unruhe#1]] erheiterte mich, und es [[machte|verbs/machen]] mir [[Vergnügen|nouns/Vergnügen#1]], ihr [[zu|particles/zu_drückt]] [[versichern|verbs/versichern#3]], ich hielte [[die|determiners/die]] [[Jungfräulichkeit|nouns/Jungfräulichkeit#1]] [[der|determiners/der]] [[Mädchen|nouns/Mädchen#1]] [[nur|particles/nur]] [[für|prepositions/für]] [[eine|determiners/eine]] [[kindische|adjectives/kindisch]] [[Einbildung|nouns/Einbildung#1]], [[da|conjunctions/da]] die [[Natur|nouns/Natur#1]] [[den|determiners/der]] meisten [[von|prepositions/von]] ihnen [[nicht|particles/nicht]] [[einmal|adverbs/einmal#1]] deren [[Kennzeichen|nouns/Kennzeichen#1]] [[mitgegeben|verbs/mitgeben#1]] [[hätte|verbs/haben#1]].“"
   },
   "ee836f43a1": {
     "text": "„Ähnlich geht’s uns mit den 89 ›wunderbaren Meilen‹, die vom Cascade-Nationalpark als ›Amerikanische Alpen‹ gepriesen werden. Ob sie den Alpen-Namen verdienen, läßt sich nicht nachprüfen.“",
@@ -17070,7 +17126,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„In den Vereinigten Staaten hatte es nahezu zwei [[Jahrhunderte|nouns/Jahrhundert#1]] gedauert, bis der Oberste Gerichtshof im [[Sommer|nouns/Sommer#1]] vergangenen [[Jahres|nouns/Jahr#1]] die amerikanische [[Praxis|nouns/Praxis#1]] ‚death penalty‘ als [[Widerspruch|nouns/Widerspruch#1]] zu dem Verfassungszusatz von 1791 erkannte, der es verbietet, ‚grausame und ungewöhnliche Strafen‘ zu [[verhängen|verbs/verhängen]]. Das knappe Votum von fünf zu vier Richterstimmen [[schaffte|verbs/schaffen_etwas#1]] freilich die Gaskammern und elektrischen Stühle nicht ab.“"
+    "text_linked": "„In den Vereinigten Staaten hatte es nahezu zwei [[Jahrhunderte|nouns/Jahrhundert#1]] gedauert, bis der Oberste Gerichtshof im [[Sommer|nouns/Sommer#1]] vergangenen [[Jahres|nouns/Jahr#1]] die amerikanische [[Praxis|nouns/Praxis#1]] ‚death penalty‘ als [[Widerspruch|nouns/Widerspruch#1]] zu dem Verfassungszusatz von 1791 erkannte, der es verbietet, ‚grausame und ungewöhnliche Strafen‘ zu [[verhängen|verbs/verhängen]]. Das knappe Votum von fünf zu vier Richterstimmen [[schaffte|verbs/schaffen_etwas]] freilich die Gaskammern und elektrischen Stühle nicht ab.“"
   },
   "ee9705a42e": {
     "text": "Herrjeh! Kannst du einmal den Mund aufmachen, wenn deine Mutter was über die Kindererziehung sagt? Nein! Du ziehst den Schwanz ein! Du Weichei!",
@@ -17727,7 +17783,7 @@
         "gloss_hint": "staff"
       }
     ],
-    "text_linked": "„Zu den Vorspeisen [[und|conjunctions/und]] [[Gängen|nouns/Gang_art#9]] [[des|determiners/der]] [[Menüs|nouns/Menü#1]] [[werden|verbs/werden#2]] [[ausgezeichnete|adjectives/ausgezeichnet#2]] [[Weine|nouns/Wein]] [[gereicht|verbs/gereichen]] – [[das|pronouns/der_nominativ]] [[erfordert|verbs/erfordern#1]] [[viel|adverbs/viel#1]] [[Aufwand|nouns/Aufwand#1]] und [[Personal|nouns/Personal#1]].“"
+    "text_linked": "„Zu den Vorspeisen [[und|conjunctions/und]] [[Gängen|nouns/Gang_art#9]] [[des|determiners/der]] [[Menüs|nouns/Menü#1]] [[werden|verbs/werden#2]] [[ausgezeichnete|adjectives/ausgezeichnet#2]] [[Weine|nouns/Wein]] gereicht – [[das|pronouns/der_nominativ]] [[erfordert|verbs/erfordern#1]] [[viel|adverbs/viel#1]] [[Aufwand|nouns/Aufwand#1]] und [[Personal|nouns/Personal#1]].“"
   },
   "ee9b96e304": {
     "text": "Er spürte sofort, dass die Stimmung am Boden war.",
@@ -18414,7 +18470,7 @@
         "gloss_hint": "perfect"
       }
     ],
-    "text_linked": "„Der Text [[ist|verbs/sein#2]] [[dazu|adverbs/dazu#1]] [[da|adverbs/da]], diese [[schon|particles/schon_antwort#1]] [[in|prepositions/in#1]] [[Tönen|nouns/Ton_etwas#1]] [[ausgedrückten|verbs/ausdrücken#3]] [[Emotionen|nouns/Emotion#1]] [[mit|prepositions/mit#1]] [[Worten|nouns/Wort_kleinste#1]] [[zu|particles/zu_drückt]] [[versehen|verbs/versehen#1]], [[die|determiners/die]] [[durch|prepositions/durch#1]] [[ihre|pronouns/ihr_person]] Semantik [[und|conjunctions/und#1]] ihre [[poetische|adjectives/poetisch#1]] [[Anpassung|nouns/Anpassung#1]] [[an|prepositions/an#1]] die [[Musik|nouns/Musik#1]] diesen Gefühlsausdruck [[vervollkommnen|verbs/vervollkommnen]].“"
+    "text_linked": "„Der Text [[ist|verbs/sein#2]] [[dazu|adverbs/dazu#1]] [[da|adverbs/da]], diese [[schon|particles/schon_antwort#1]] [[in|prepositions/in#1]] [[Tönen|nouns/Ton_etwas#1]] [[ausgedrückten|verbs/ausdrücken#3]] [[Emotionen|nouns/Emotion#1]] [[mit|prepositions/mit#1]] [[Worten|nouns/Wort_kleinste#1]] [[zu|particles/zu_drückt]] [[versehen|verbs/versehen#1]], [[die|determiners/die]] [[durch|prepositions/durch#1]] [[ihre|pronouns/ihr_person]] Semantik [[und|conjunctions/und#1]] ihre [[poetische|adjectives/poetisch#1]] [[Anpassung|nouns/Anpassung#1]] [[an|prepositions/an#1]] die [[Musik|nouns/Musik#1]] diesen Gefühlsausdruck vervollkommnen.“"
   },
   "eea61e1007": {
     "text": "Revanche für Maduros \"Yankees go home!\" … Kelly Keiderling und weitere US-Diplomaten sollten Venezuela binnen 48 Stunden verlassen.",
@@ -20247,7 +20303,7 @@
         "gloss_hint": "have"
       }
     ],
-    "text_linked": "„‚[[Man|pronouns/man#2]] [[kann|verbs/können_beherrschen]] [[es|pronouns/es]] [[halten|verbs/halten#5]] [[wie|adverbs/wie#1]] [[ein|determiners/ein]] Dachdecker‘, [[wurde|verbs/werden#2]] [[seit|prepositions/seit]] [[dem|determiners/der]] [[Mittelalter|nouns/Mittelalter#1]] ein geflügeltes Wort. [[Damit|adverbs/damit]] [[sollte|verbs/sollen]] [[damals|adverbs/damals]] [[ausgesagt|verbs/aussprechen]] [[werden|verbs/werden#2]], [[dass|conjunctions/dass]] es [[zunächst|adverbs/zunächst]] keine speziellen Dachdecker-Zusammenschlüsse [[gab|verbs/geben]].“"
+    "text_linked": "„‚[[Man|pronouns/man#2]] [[kann|verbs/können_etwas#1]] [[es|pronouns/es]] [[halten|verbs/halten#5]] [[wie|adverbs/wie#1]] [[ein|determiners/ein]] Dachdecker‘, [[wurde|verbs/werden#2]] [[seit|prepositions/seit]] [[dem|determiners/der]] [[Mittelalter|nouns/Mittelalter#1]] ein geflügeltes Wort. [[Damit|adverbs/damit]] [[sollte|verbs/sollen]] [[damals|adverbs/damals]] [[ausgesagt|verbs/aussprechen]] [[werden|verbs/werden#2]], [[dass|conjunctions/dass]] es [[zunächst|adverbs/zunächst]] keine speziellen Dachdecker-Zusammenschlüsse [[gab|verbs/geben]].“"
   },
   "eeb457c9ad": {
     "text": "„War sich der Leidende keiner Sünde bewußt, mußte versucht werden, a posteriori durch das Leiden auf das Vergehen zu schließen.“",
@@ -20577,7 +20633,7 @@
         "gloss_hint": "have"
       }
     ],
-    "text_linked": "Pöttering [[warnt|verbs/warnen]] [[Warschau|names/Warschau]]: [[Wenn|conjunctions/wenn]] Polen [[seine|pronouns/sein]] [[Position|nouns/Position#2]] [[weiter|adverbs/weiter#1]] allen anderen EU-Mitgliedern [[aufzwingen|verbs/aufzwingen]] [[wolle|verbs/wollen]], [[dann|adverbs/dann]] [[müsse|verbs/müssen]] [[das|pronouns/das_[1]]] [[Konsequenzen|nouns/Konsequenz#1]] [[haben|verbs/haben#1]]."
+    "text_linked": "Pöttering [[warnt|verbs/warnen]] [[Warschau|names/Warschau]]: [[Wenn|conjunctions/wenn]] Polen [[seine|pronouns/sein]] [[Position|nouns/Position#2]] [[weiter|adverbs/weiter#1]] allen anderen EU-Mitgliedern aufzwingen [[wolle|verbs/wollen]], [[dann|adverbs/dann]] [[müsse|verbs/müssen]] [[das|pronouns/das_[1]]] [[Konsequenzen|nouns/Konsequenz#1]] [[haben|verbs/haben#1]]."
   },
   "eeb73606af": {
     "text": "Ich habe vom Markt eine Tüte Pflaumen mitgebracht.",
@@ -22051,7 +22107,7 @@
     "lemmas": [
       "Laut"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "translation_model": "claude-sonnet-4-6",
     "_proofread": {
       "translation": true
     }
@@ -23478,7 +23534,7 @@
         "gloss_hint": "massacred"
       }
     ],
-    "text_linked": "„[[An|prepositions/an]] [[einer|determiners/eine]] Abendschule [[haben|verbs/haben#1]] [[Jugendliche|nouns/Jugendliche#1]], [[die|pronouns/die#1]] [[fast|adverbs/fast]] alle [[schon|particles/schon_antwort#1]] mal [[im|prepositions/in]] [[Knast|nouns/Knast_gefängnis#1]] [[saßen|verbs/sitzen#5]], [[ihre|pronouns/ihr_zu#2]] [[Lehrerin|nouns/Lehrerin#1]] [[massakriert|verbs/massakrieren]].“"
+    "text_linked": "„[[An|prepositions/an]] [[einer|determiners/eine]] Abendschule [[haben|verbs/haben#1]] [[Jugendliche|nouns/Jugendliche#1]], [[die|pronouns/die#1]] [[fast|adverbs/fast]] alle [[schon|particles/schon_antwort#1]] mal [[im|prepositions/in]] [[Knast|nouns/Knast_gefängnis#1]] [[saßen|verbs/sitzen#5]], [[ihre|pronouns/ihr_zu#2]] [[Lehrerin|nouns/Lehrerin#1]] [[massakriert|verbs/massakrieren#1]].“"
   },
   "eedd24e1d2": {
     "text": "„Besteht die Hypothese diese Prüfung, dann hat man eine erste Theorie.“",
@@ -26371,7 +26427,7 @@
         "gloss_hint": "hour"
       }
     ],
-    "text_linked": "[[Sicher|adjectives/sicher]], [[das|pronouns/das_[1]]] [[können|verbs/können_etwas#2]] [[wir|pronouns/wir]] [[so|adverbs/so]] [[machen|verbs/machen#4]]. [[Dann|adverbs/dann]] [[treffen|verbs/treffen#1]] wir [[uns|pronouns/uns]] [[in|prepositions/in]] [[einer|determiners/ein]] [[halben|adjectives/halb]] [[Stunde|nouns/Stunde#1]]."
+    "text_linked": "[[Sicher|adjectives/sicher]], [[das|pronouns/das_[1]]] [[können|verbs/können_beherrschen]] [[wir|pronouns/wir]] [[so|adverbs/so]] [[machen|verbs/machen#4]]. [[Dann|adverbs/dann]] [[treffen|verbs/treffen#1]] wir [[uns|pronouns/uns]] [[in|prepositions/in]] [[einer|determiners/ein]] [[halben|adjectives/halb]] [[Stunde|nouns/Stunde#1]]."
   },
   "eefde0ea53": {
     "text": "„Im Unterschied zu den Stichen der tschechoslowakischen Briefmarken, bei denen jede Briefmarke mit dem Stecherzeichen versehen worden war, wird Karl Seizinger jetzt in der Regel nur noch eine Marke im Bogen mit einem Stecherzeichen versehen.“",

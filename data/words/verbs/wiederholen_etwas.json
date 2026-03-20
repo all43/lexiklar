@@ -9,26 +9,32 @@
   "senses": [
     {
       "gloss": "etwas zum zweiten oder mehrfachen Male, erneut tun, durchführen, stattfinden lassen",
-      "gloss_en": null,
+      "gloss_en": "repeat",
       "tags": [],
       "example_ids": [
         "13f0311df4",
         "575e7c0ca2"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To do, carry out, or cause something to happen again one or more times.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "etwas Gelerntes zum Zwecke der Übung",
-      "gloss_en": null,
+      "gloss_en": "review",
       "tags": [],
       "example_ids": [],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To review something learned for the purpose of practice.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "etwas zum zweiten oder mehrfachen Male, erneut aussprechen, sagen",
-      "gloss_en": null,
+      "gloss_en": "restate",
       "tags": [
         "reflexive"
       ],
@@ -36,11 +42,14 @@
         "800d035a0e"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To say or pronounce something again one or more times.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "erneut geschehen",
-      "gloss_en": null,
+      "gloss_en": "recur",
       "tags": [
         "reflexive"
       ],
@@ -48,7 +57,10 @@
         "efc9ae7a16"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To happen again.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
   ],
   "sounds": [
@@ -89,5 +101,9 @@
       ],
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     }
-  ]
+  ],
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

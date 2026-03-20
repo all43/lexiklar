@@ -42,7 +42,7 @@ import type {
 import type { PosKey } from "./lib/pos.js";
 import { POS_CONFIG, SUPPORTED_POS } from "./lib/pos.js";
 import { loadExamples, saveExamples } from "./lib/examples.js";
-import { mergeSenses } from "./lib/merge.js";
+import { mergeSenses, mergeHomonymGroup } from "./lib/merge.js";
 import type { OrphanEntry } from "./lib/merge.js";
 import { computeConjugation } from "../src/utils/verb-forms.js";
 import {
@@ -1274,6 +1274,36 @@ function extractCompoundParts(entry: WiktionaryEntry): CompoundResult | null {
 // Merge: preserve manual fields from existing file
 // ============================================================
 
+/**
+ * Load all existing homonym files for a word+POS from disk.
+ * Used as the "old sibling" pool for cross-file translation transfer.
+ * Matches files named exactly `{word}.json` or `{word}_{disambig}.json`.
+ */
+function loadOldSiblings(
+  word: string,
+  posDir: string,
+): Map<string, { senses: Sense[]; orphans: OrphanEntry[] }> {
+  const dir = join(DATA_DIR, "words", posDir);
+  if (!existsSync(dir)) return new Map();
+  const result = new Map<string, { senses: Sense[]; orphans: OrphanEntry[] }>();
+  const stem = sanitizeFilename(word).toLowerCase();
+  for (const f of readdirSync(dir)) {
+    if (!f.endsWith(".json")) continue;
+    const fileKey = f.slice(0, -5);
+    const fileKeyLower = fileKey.toLowerCase();
+    if (fileKeyLower !== stem && !fileKeyLower.startsWith(stem + "_")) continue;
+    try {
+      const raw = JSON.parse(readFileSync(join(dir, f), "utf-8")) as Record<string, unknown>;
+      const senses = (raw.senses as Sense[]) ?? [];
+      const orphans = ((raw as { _orphaned_translations?: OrphanEntry[] })._orphaned_translations) ?? [];
+      result.set(fileKey, { senses, orphans });
+    } catch {
+      // skip unreadable files
+    }
+  }
+  return result;
+}
+
 function mergeWithExisting(newData: TransformOutput, existingPath: string): TransformOutput {
   if (!existsSync(existingPath)) return newData;
 
@@ -1686,9 +1716,30 @@ async function main(): Promise<void> {
 
   const today = new Date().toISOString().slice(0, 10);
 
+  // Accumulate text_linked reference remaps from all cross-file matches.
+  // Applied to examples in-memory before saveExamples() — critical for examples
+  // with _proofread.annotations whose text_linked is otherwise frozen by build-index.
+  const allTextLinkedRemaps: Array<{ oldRef: string; newRef: string }> = [];
+
   for (const [, entries] of groups) {
     const needsDisambig = entries.length > 1;
     const usedDisambigs = new Set<string>();
+
+    // Collect processed entries so we can run cross-file sense merging before
+    // writing.  The cross-file pass requires all new senses to be visible at
+    // once so translations can be transferred across homonym file boundaries.
+    type PendingWrite = {
+      data: TransformOutput;
+      fullPath: string;
+      relPath: string;
+      stateKey: string;
+      hash: string;
+      /** Filename stem without .json — used as Map key in mergeHomonymGroup. */
+      fileKey: string;
+    };
+    const pendingWrites: PendingWrite[] = [];
+    let groupWord = "";
+    let groupPosDir = "";
 
     for (const { offset, length, hash } of entries) {
       // Read raw line from disk on demand — groups stores only byte offsets to
@@ -1795,9 +1846,68 @@ async function main(): Promise<void> {
       const relPath = join("words", posDir, filename);
       const fullPath = join(DATA_DIR, relPath);
 
-      // Merge with existing file to preserve manual fields
+      groupWord = parsed.word;
+      groupPosDir = posDir;
+
+      // Per-file merge: preserve manual fields + run mergeSenses for this file
       data = mergeWithExisting(data, fullPath);
 
+      pendingWrites.push({
+        data,
+        fullPath,
+        relPath,
+        stateKey,
+        hash,
+        fileKey: filename.slice(0, -5),
+      });
+    }
+
+    // Cross-file sense merge: fill null gloss_en slots from sibling old files.
+    // Runs only when there are active entries — loads old siblings from disk
+    // BEFORE any writes occur (pendingWrites are not yet on disk at this point).
+    if (pendingWrites.length > 0 && groupWord) {
+      const oldSiblings = loadOldSiblings(groupWord, groupPosDir);
+      if (oldSiblings.size > 0) {
+        const newSensesMap = new Map(
+          pendingWrites.map((pw) => [pw.fileKey, pw.data.senses ?? []]),
+        );
+        const { files: mergedSensesMap, crossFileMatches } = mergeHomonymGroup(
+          newSensesMap,
+          oldSiblings,
+        );
+        if (crossFileMatches.length > 0) {
+          for (const pw of pendingWrites) {
+            const merged = mergedSensesMap.get(pw.fileKey);
+            if (merged) pw.data.senses = merged;
+          }
+
+          // Build text_linked remaps: posDir/oldFile#oldIdx → posDir/newFile#newIdx
+          // (1-based sense indices matching the [[word|posDir/file#N]] format)
+          for (const match of crossFileMatches) {
+            const oldSenses = oldSiblings.get(match.oldFile)?.senses ?? [];
+            const oldIdx = oldSenses.findIndex((s) => s.gloss === match.oldGloss);
+            const newPw = pendingWrites.find((pw) => pw.fileKey === match.newFile);
+            const newIdx = newPw?.data.senses?.findIndex((s) => s.gloss === match.newGloss) ?? -1;
+            if (oldIdx >= 0 && newIdx >= 0) {
+              allTextLinkedRemaps.push({
+                oldRef: `|${groupPosDir}/${match.oldFile}#${oldIdx + 1}`,
+                newRef: `|${groupPosDir}/${match.newFile}#${newIdx + 1}`,
+              });
+            }
+          }
+
+          console.warn(
+            `[cross-file] ${groupWord}: ${crossFileMatches.length} translation(s) transferred:`,
+            crossFileMatches
+              .map((m) => `${m.oldFile}→${m.newFile} "${m.newGloss.slice(0, 50)}"`)
+              .join(" | "),
+          );
+        }
+      }
+    }
+
+    // Write pass
+    for (const { data, fullPath, relPath, stateKey, hash } of pendingWrites) {
       // Skip write if file content is identical (ignoring generated_at)
       if (existsSync(fullPath)) {
         try {
@@ -1823,6 +1933,26 @@ async function main(): Promise<void> {
   }
 
   saveState(state);
+
+  // Patch text_linked references that moved across homonym files.
+  // Non-proofread examples will be recomputed by build-index anyway, but
+  // proofread examples (_proofread.annotations set) have frozen text_linked
+  // that build-index skips — those MUST be patched here.
+  if (allTextLinkedRemaps.length > 0) {
+    let patchedCount = 0;
+    for (const ex of Object.values(allExamples)) {
+      if (!ex.text_linked) continue;
+      for (const { oldRef, newRef } of allTextLinkedRemaps) {
+        if (ex.text_linked.includes(oldRef)) {
+          ex.text_linked = ex.text_linked.replaceAll(oldRef, newRef);
+          patchedCount++;
+        }
+      }
+    }
+    if (patchedCount > 0) {
+      console.warn(`[cross-file] Patched text_linked in ${patchedCount} example(s).`);
+    }
+  }
 
   // Write shared examples file (sharded)
   saveExamples(allExamples as unknown as ExampleMap);

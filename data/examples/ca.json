@@ -560,11 +560,33 @@
   },
   "ca04cd46bb": {
     "text": "„Zuerst kam die Passkontrolle.“",
-    "translation": null,
+    "translation": "First came the passport control.",
     "source": "wiktionary",
     "lemmas": [
       "Passkontrolle"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zuerst",
+        "lemma": "zuerst",
+        "pos": "adverb",
+        "gloss_hint": "first"
+      },
+      {
+        "form": "kam",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Passkontrolle",
+        "lemma": "Passkontrolle",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„[[Zuerst|adverbs/zuerst#1]] [[kam|verbs/kommen]] die [[Passkontrolle|nouns/Passkontrolle]].“"
   },
   "ca079797b0": {
     "text": "In den deutschsprachigen Ländern, und nicht nur dort, gibt es seit Jahrhunderten das hochrangige Amt des Kanzlers, das je nach Funktion, Region und Zeitalter unterschiedlich ausgeprägt war.",
@@ -3849,14 +3871,15 @@
     "type": "expression",
     "note": "viel für jemanden tun",
     "synonyms": [],
-    "translation": null,
+    "translation": "to go through fire and water for someone",
     "source": "wiktionary",
     "lemmas": [
       "gehen",
       "Feuer",
       "durchs"
     ],
-    "ref": "phrases/für jemanden durchs Feuer gehen"
+    "ref": "phrases/für jemanden durchs Feuer gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "ca2cc27960": {
     "text": "„Mitte Februar schickte er ihr eine Ansichtenkarte.“",
@@ -5161,12 +5184,100 @@
   },
   "ca3a612f7b": {
     "text": "„Die kritischen Aussagen verweisen meistens auf die Flexion des Nomens und des Adjektivs und monieren implizit die Mißverhältnisse zwischen Formenvielfalt und Leistungen in den Bereichen Genus, Numerus und Kasus.“",
-    "translation": null,
+    "translation": "The critical statements mostly point to the inflection of nouns and adjectives and implicitly criticize the discrepancies between the variety of forms and performance in the areas of gender, number, and case.",
     "source": "wiktionary",
     "lemmas": [
       "Adjektiv",
       "Nomen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kritischen",
+        "lemma": "kritisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aussagen",
+        "lemma": "Aussage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verweisen",
+        "lemma": "verweisen",
+        "pos": "verb",
+        "gloss_hint": "refer to"
+      },
+      {
+        "form": "Flexion",
+        "lemma": "Flexion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nomens",
+        "lemma": "Nomen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Adjektivs",
+        "lemma": "Adjektiv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "monieren",
+        "lemma": "monieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mißverhältnisse",
+        "lemma": "Missverhältnis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Formenvielfalt",
+        "lemma": "Formenvielfalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leistungen",
+        "lemma": "Leistung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bereichen",
+        "lemma": "Bereich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Genus",
+        "lemma": "Genus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Numerus",
+        "lemma": "Numerus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kasus",
+        "lemma": "Kasus",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Die [[kritischen|adjectives/kritisch]] [[Aussagen|nouns/Aussage]] [[verweisen|verbs/verweisen#1]] meistens auf die Flexion des [[Nomens|nouns/Nomen]] und des [[Adjektivs|nouns/Adjektiv]] und monieren implizit die Mißverhältnisse zwischen Formenvielfalt und [[Leistungen|nouns/Leistung]] in den [[Bereichen|nouns/Bereich]] Genus, Numerus und Kasus.“"
   },
   "ca3ab274b4": {
     "text": "„In Zivil war er Fotograf.“",
@@ -7757,11 +7868,36 @@
   },
   "ca4de6aed0": {
     "text": "Der Ausflug fällt mangels des nötigen Geldes aus.",
-    "translation": null,
+    "translation": "The excursion is cancelled due to lack of necessary funds.",
     "source": "wiktionary",
     "lemmas": [
       "mangels"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ausflug",
+        "lemma": "Ausflug",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fällt",
+        "lemma": "ausfallen",
+        "pos": "verb",
+        "gloss_hint": "out of commission"
+      },
+      {
+        "form": "Geldes",
+        "lemma": "Geld",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true
+    },
+    "text_linked": "Der [[Ausflug|nouns/Ausflug]] [[fällt|verbs/ausfallen]] mangels des nötigen [[Geldes|nouns/Geld]] aus."
   },
   "ca4e81f26c": {
     "text": "jemandem die Daumen drücken",

@@ -42,7 +42,7 @@
     },
     {
       "gloss": "ein Kleidungsstück",
-      "gloss_en": null,
+      "gloss_en": "garment",
       "tags": [
         "colloquial"
       ],
@@ -50,11 +50,14 @@
         "cd4a423391"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "An article of clothing",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "ein beliebiger Gegenstand",
-      "gloss_en": null,
+      "gloss_en": "item",
       "tags": [
         "colloquial"
       ],
@@ -63,7 +66,10 @@
         "21b609dd19"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "Any object",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
   ],
   "sounds": [
@@ -169,5 +175,9 @@
       ],
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     }
-  ]
+  ],
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

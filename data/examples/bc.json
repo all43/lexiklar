@@ -279,7 +279,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Eigentlich|adverbs/eigentlich]] [[müsste|verbs/müssen]] er [[dank|nouns/Dank#1]] [[der|determiners/der]] Lizenzgebühr [[mehr|adverbs/mehr#1]] [[als|conjunctions/als#1]] [[komfortabel|adjectives/komfortabel]] [[leben|verbs/leben#1]] [[können|verbs/können_etwas#1]], [[stattdessen|adverbs/stattdessen]] [[sitzt|verbs/sitzen#5]] er [[in|prepositions/in]] [[Gerichtssälen|nouns/Gerichtssaal]].“"
+    "text_linked": "„[[Eigentlich|adverbs/eigentlich]] [[müsste|verbs/müssen]] er [[dank|nouns/Dank#1]] [[der|determiners/der]] Lizenzgebühr [[mehr|adverbs/mehr#1]] [[als|conjunctions/als#1]] [[komfortabel|adjectives/komfortabel]] [[leben|verbs/leben#1]] [[können|verbs/können_beherrschen]], [[stattdessen|adverbs/stattdessen]] [[sitzt|verbs/sitzen#5]] er [[in|prepositions/in]] [[Gerichtssälen|nouns/Gerichtssaal]].“"
   },
   "bc01d0da24": {
     "text": "Er ist homo.",
@@ -1167,7 +1167,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Die|determiners/die]] [[Deutschen|nouns/Deutsche_deutsche]] [[haben|verbs/haben#1]] [[Angst|nouns/Angst]] [[vor|prepositions/vor]] Toten, sie haben Angst, sie [[könnten|verbs/können_beherrschen]] [[sich|pronouns/sich]] [[an|prepositions/an]] einer [[Krankheit|nouns/Krankheit]] [[anstecken|verbs/anstecken#6]], [[deswegen|adverbs/deswegen]] [[machen|verbs/machen#4]] sie [[den|determiners/der]] [[Deckel|nouns/Deckel#1]] [[immer|adverbs/immer]] [[schnell|adjectives/schnell#1]] [[wieder|adverbs/wieder]] [[zu|particles/zu_drückt]].“"
+    "text_linked": "„[[Die|determiners/die]] [[Deutschen|nouns/Deutsche_deutsche]] [[haben|verbs/haben#1]] [[Angst|nouns/Angst]] [[vor|prepositions/vor]] Toten, sie haben Angst, sie [[könnten|verbs/können_etwas#1]] [[sich|pronouns/sich]] [[an|prepositions/an]] einer [[Krankheit|nouns/Krankheit]] [[anstecken|verbs/anstecken#6]], [[deswegen|adverbs/deswegen]] [[machen|verbs/machen#4]] sie [[den|determiners/der]] [[Deckel|nouns/Deckel#1]] [[immer|adverbs/immer]] [[schnell|adjectives/schnell#1]] [[wieder|adverbs/wieder]] [[zu|particles/zu_drückt]].“"
   },
   "bc0a3e26e5": {
     "text": "„Als er eines Tages auf einen Maskenball gehen wollte, fragte er einen seiner Freunde, welche Maske er wählen solle, um nicht erkannt zu werden.“",
@@ -1512,7 +1512,7 @@
         "gloss_hint": "might"
       }
     ],
-    "text_linked": "„[[Die|pronouns/die]] Zinsen [[für|prepositions/für]] Immobilienkredite [[sind|verbs/sein#2]] [[schon|adverbs/schon#1]] [[sehr|particles/sehr#1]] [[günstig|adjectives/günstig]] – [[und|conjunctions/und#1]] [[könnten|verbs/können_beherrschen]] [[bald|adverbs/bald#1]] [[noch|adverbs/noch#3]] [[billiger|adjectives/billig]] [[werden|verbs/werden#1]]: Vieles [[deutet|verbs/deuten#1]] [[daraufhin|adverbs/daraufhin#1]], [[dass|conjunctions/dass#1]] [[die|pronouns/die]] Europäische [[Zentralbank|nouns/Zentralbank#1]] [[im|prepositions/in#1]] [[Juni|nouns/Juni#1]] [[ihre|pronouns/ihr_zu#2]] Geldpolitik noch [[einmal|adverbs/einmal]] [[lockern|verbs/lockern#1]] [[könnte|verbs/können_beherrschen]].“"
+    "text_linked": "„[[Die|pronouns/die]] Zinsen [[für|prepositions/für]] Immobilienkredite [[sind|verbs/sein#2]] [[schon|adverbs/schon#1]] [[sehr|particles/sehr#1]] [[günstig|adjectives/günstig]] – [[und|conjunctions/und#1]] [[könnten|verbs/können_beherrschen]] [[bald|adverbs/bald#1]] [[noch|adverbs/noch#3]] [[billiger|adjectives/billig]] [[werden|verbs/werden#1]]: Vieles [[deutet|verbs/deuten#1]] [[daraufhin|adverbs/daraufhin#1]], [[dass|conjunctions/dass#1]] [[die|pronouns/die]] Europäische [[Zentralbank|nouns/Zentralbank#1]] [[im|prepositions/in#1]] [[Juni|nouns/Juni#1]] [[ihre|pronouns/ihr_zu#2]] Geldpolitik noch [[einmal|adverbs/einmal]] [[lockern|verbs/lockern#1]] [[könnte|verbs/können_etwas#5]].“"
   },
   "bc0b59986e": {
     "text": "[Coronapandemie 2021, Maskenpflicht im Einzelhandel:] „»Die Angst, dass die Kunden ausrasten, ist unser täglicher Begleiter«, sagt Maurike Maaßen, Kassiererin in einem Supermarkt in Essen“ […].",
@@ -6830,11 +6830,51 @@
   },
   "bc3a2b0e06": {
     "text": "„Sie servierten eben das Hauptgericht: Leber auf portugiesische Art.“",
-    "translation": null,
+    "translation": "They were just serving the main course: liver Portuguese style.",
     "source": "wiktionary",
     "lemmas": [
       "Hauptgericht"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "servierten",
+        "lemma": "servieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "eben",
+        "lemma": "eben",
+        "pos": "adverb",
+        "gloss_hint": "just now"
+      },
+      {
+        "form": "Hauptgericht",
+        "lemma": "Hauptgericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leber",
+        "lemma": "Leber",
+        "pos": "noun",
+        "gloss_hint": "liver (food)"
+      },
+      {
+        "form": "portugiesische",
+        "lemma": "portugiesisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Art",
+        "lemma": "Art",
+        "pos": "noun",
+        "gloss_hint": "kind"
+      }
+    ],
+    "text_linked": "„Sie [[servierten|verbs/servieren]] [[eben|adverbs/eben#1]] das [[Hauptgericht|nouns/Hauptgericht]]: [[Leber|nouns/Leber#2]] auf [[portugiesische|adjectives/portugiesisch]] [[Art|nouns/Art#1]].“"
   },
   "bc3b2902c7": {
     "text": "„Einige Tage später schickte Marie ihrem Ehemann einen Abschiedsbrief und verließ Paris, ohne ihren Angehörigen und Freunden ihre Absichten verraten zu haben.“",
@@ -9601,7 +9641,7 @@
     "lemmas": [
       "sitzen"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Er",
@@ -11055,7 +11095,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Dasselbe Gesetz [[fordert|verbs/fordern#1]], [[dass|conjunctions/dass]] er [[sich|pronouns/sich]] \"[[in|prepositions/in]] [[einem|determiners/ein]] [[vom|prepositions/von]] [[Menschen|nouns/Mensch_lebewesen#1]] [[nicht|particles/nicht]] oder wenig [[beeinflussten|verbs/beeinflussen#1]] [[Zustand|nouns/Zustand#1]]\" [[zu|particles/zu_drückt]] [[befinden|verbs/befinden#1]] hat. Deshalb [[wurde|verbs/werden#1]] [[an|prepositions/an]] [[der|determiners/der]] tschechischen [[Grenze|nouns/Grenze#1]] [[seit|prepositions/seit]] 1970 nichts [[mehr|adverbs/mehr]] [[von|prepositions/von]] [[dem|determiners/der]] [[unternommen|verbs/unternehmen_etwas#1]], [[was|pronouns/was]] der Forstmann [[üblicherweise|adverbs/üblicherweise]] unter Waldhege [[versteht|verbs/verstehen_gesprochenes#2]]. [[Die|determiners/die]] [[Bäume|nouns/Baum]], [[die|determiners/die]] 1983 [[bei|prepositions/bei]] einem Gewittersturm [[knickten|verbs/knicken]], [[blieben|verbs/bleiben#2]] [[liegen|verbs/liegen#1]], [[wurden|verbs/werden#1]] [[weder|adverbs/weder]] [[abtransportiert|verbs/abtransportieren]] [[noch|adverbs/noch]] [[verbrannt|verbs/verbrennen#1]], [[sondern|conjunctions/sondern]] moderten [[vor|prepositions/vor]] sich [[hin|adverbs/hin]].“"
+    "text_linked": "„Dasselbe Gesetz [[fordert|verbs/fordern#1]], [[dass|conjunctions/dass]] er [[sich|pronouns/sich]] \"[[in|prepositions/in]] [[einem|determiners/ein]] [[vom|prepositions/von]] [[Menschen|nouns/Mensch_lebewesen#1]] [[nicht|particles/nicht]] oder wenig [[beeinflussten|verbs/beeinflussen#1]] [[Zustand|nouns/Zustand#1]]\" [[zu|particles/zu_drückt]] [[befinden|verbs/befinden#1]] hat. Deshalb [[wurde|verbs/werden#1]] [[an|prepositions/an]] [[der|determiners/der]] tschechischen [[Grenze|nouns/Grenze#1]] [[seit|prepositions/seit]] 1970 nichts [[mehr|adverbs/mehr]] [[von|prepositions/von]] [[dem|determiners/der]] [[unternommen|verbs/unternehmen_etwas#1]], [[was|pronouns/was]] der Forstmann [[üblicherweise|adverbs/üblicherweise]] unter Waldhege [[versteht|verbs/verstehen_gesprochenes#2]]. [[Die|determiners/die]] [[Bäume|nouns/Baum]], [[die|determiners/die]] 1983 [[bei|prepositions/bei]] einem Gewittersturm knickten, [[blieben|verbs/bleiben#2]] [[liegen|verbs/liegen#1]], [[wurden|verbs/werden#1]] [[weder|adverbs/weder]] [[abtransportiert|verbs/abtransportieren]] [[noch|adverbs/noch]] [[verbrannt|verbs/verbrennen#1]], [[sondern|conjunctions/sondern]] moderten [[vor|prepositions/vor]] sich [[hin|adverbs/hin]].“"
   },
   "bc62cb17fc": {
     "text": "Eine Laufmasche im Strumpf ist kein Grund, sich dermaßen aufzuregen.",
@@ -12526,7 +12566,7 @@
         "gloss_hint": "paralyzed"
       }
     ],
-    "text_linked": "„Sturm \"Eowyn\" [[hat|verbs/haben#1]] [[in|prepositions/in]] Irland [[für|prepositions/für#1]] die [[stärksten|adjectives/stark#15]] Orkanböen [[seit|prepositions/seit#1]] [[Beginn|nouns/Beginn#1]] der Wetteraufzeichnungen [[gesorgt|verbs/sorgen]] [[und|conjunctions/und]] das [[öffentliche|adjectives/öffentlich#1]] [[Leben|nouns/Leben#1]] [[weitgehend|adjectives/weitgehend#2]] [[lahmgelegt|verbs/lahmlegen]].“"
+    "text_linked": "„Sturm \"Eowyn\" [[hat|verbs/haben#1]] [[in|prepositions/in]] Irland [[für|prepositions/für#1]] die [[stärksten|adjectives/stark#15]] Orkanböen [[seit|prepositions/seit#1]] [[Beginn|nouns/Beginn#1]] der Wetteraufzeichnungen [[gesorgt|verbs/sorgen]] [[und|conjunctions/und]] das [[öffentliche|adjectives/öffentlich#1]] [[Leben|nouns/Leben#1]] [[weitgehend|adjectives/weitgehend#2]] [[lahmgelegt|verbs/lahmlegen#1]].“"
   },
   "bc73743c13": {
     "text": "„Kurz stutzte sie, verstand nicht recht, was er ihr mit der Geste bedeuten wollte.“",
@@ -13482,7 +13522,7 @@
         "gloss_hint": "phantom"
       }
     ],
-    "text_linked": "„Sicherungsverwahrung [[neben|prepositions/neben]] [[Strafe|nouns/Strafe#1]] [[darf|verbs/dürfen#1]] [[sein|verbs/sein#1]]. Sie [[muss|verbs/müssen#1]] [[aber|conjunctions/aber]] [[im|prepositions/in]] [[Urteil|nouns/Urteil#1]] [[des|determiners/der]] erkennenden [[Gerichts|nouns/Gericht_ort#1]] [[angeordnet|verbs/anordnen#2]] oder [[wenigstens|adverbs/wenigstens]] [[vorbehalten|verbs/vorbehalten]] [[werden|verbs/werden#2]]. […] [[Die|determiners/die]] [[Suche|nouns/Suche#1]] [[nach|prepositions/nach]] [[in|prepositions/in]] [[der|determiners/der]] Haftzeit [[auftretenden|verbs/auftreten#4]] [[neuen|adjectives/neu#1]] [[Erkenntnissen|nouns/Erkenntnis_feststellung#1]] [[über|prepositions/über]] [[eine|determiners/eine]] Gefährlichkeit, deretwegen [[erst|adverbs/erst]] nachträglich über eine Verwahrung [[entschieden|verbs/entscheiden#3]] werden [[könne|verbs/können_beherrschen]], [[entpuppt|verbs/entpuppen]] [[sich|pronouns/sich]] [[als|conjunctions/als]] [[Jagd|nouns/Jagd#1]] nach [[einem|determiners/ein]] [[Phantom|nouns/Phantom#1]].“"
+    "text_linked": "„Sicherungsverwahrung [[neben|prepositions/neben]] [[Strafe|nouns/Strafe#1]] [[darf|verbs/dürfen#1]] [[sein|verbs/sein#1]]. Sie [[muss|verbs/müssen#1]] [[aber|conjunctions/aber]] [[im|prepositions/in]] [[Urteil|nouns/Urteil#1]] [[des|determiners/der]] erkennenden [[Gerichts|nouns/Gericht_ort#1]] [[angeordnet|verbs/anordnen#2]] oder [[wenigstens|adverbs/wenigstens]] [[vorbehalten|verbs/vorbehalten]] [[werden|verbs/werden#2]]. […] [[Die|determiners/die]] [[Suche|nouns/Suche#1]] [[nach|prepositions/nach]] [[in|prepositions/in]] [[der|determiners/der]] Haftzeit [[auftretenden|verbs/auftreten#4]] [[neuen|adjectives/neu#1]] [[Erkenntnissen|nouns/Erkenntnis_feststellung#1]] [[über|prepositions/über]] [[eine|determiners/eine]] Gefährlichkeit, deretwegen [[erst|adverbs/erst]] nachträglich über eine Verwahrung [[entschieden|verbs/entscheiden#3]] werden [[könne|verbs/können_etwas#1]], [[entpuppt|verbs/entpuppen]] [[sich|pronouns/sich]] [[als|conjunctions/als]] [[Jagd|nouns/Jagd#1]] nach [[einem|determiners/ein]] [[Phantom|nouns/Phantom#1]].“"
   },
   "bc7cae44f5": {
     "text": "Ich nahm die Landsleute nicht für voll.",
@@ -17369,7 +17409,7 @@
         "gloss_hint": "paid"
       }
     ],
-    "text_linked": "„[[Die|pronouns/die]] [[Telekom|nouns/Telekom]] Austria [[hat|verbs/haben#1]] laut Medienbericht [[im|prepositions/in]] [[Jahr|nouns/Jahr#1]] 2004 [[dem|determiners/der]] damaligen [[Finanzminister|nouns/Finanzminister]] Karl [[Heinz|nouns/Heinz]] Grasser [[sowie|conjunctions/sowie]] Walter Meischberger [[einen|determiners/ein]] [[Privatjet|nouns/Privatjet]] [[für|prepositions/für]] [[den|determiners/der]] [[Rückflug|nouns/Rückflug]] [[vom|prepositions/von]] [[Golfen|verbs/golfen#1]] [[in|prepositions/in]] Spanien [[bezahlt|verbs/bezahlen]].“"
+    "text_linked": "„[[Die|pronouns/die]] [[Telekom|nouns/Telekom]] Austria [[hat|verbs/haben#1]] laut Medienbericht [[im|prepositions/in]] [[Jahr|nouns/Jahr#1]] 2004 [[dem|determiners/der]] damaligen [[Finanzminister|nouns/Finanzminister]] Karl [[Heinz|nouns/Heinz]] Grasser [[sowie|conjunctions/sowie]] Walter Meischberger [[einen|determiners/ein]] [[Privatjet|nouns/Privatjet]] [[für|prepositions/für]] [[den|determiners/der]] [[Rückflug|nouns/Rückflug]] [[vom|prepositions/von]] Golfen [[in|prepositions/in]] Spanien [[bezahlt|verbs/bezahlen]].“"
   },
   "bca247c93b": {
     "text": "Das Fürstentum Liechtenstein hat gerade einmal 35.800 Einwohner.",
@@ -18208,7 +18248,7 @@
         "gloss_hint": "promoted"
       }
     ],
-    "text_linked": "„[[Einst|adverbs/einst#1]] wurde [[das|pronouns/das_[1]]] [[Liebespaar|nouns/Liebespaar]] [[als|conjunctions/als#2]] [[höchste|adjectives/hoch]] [[Form|nouns/Form#1]] [[des|determiners/der]] [[Zusammenseins|nouns/Zusammensein]] [[propagiert|verbs/propagieren]].“"
+    "text_linked": "„[[Einst|adverbs/einst#1]] wurde [[das|pronouns/das_[1]]] [[Liebespaar|nouns/Liebespaar]] [[als|conjunctions/als#2]] [[höchste|adjectives/hoch]] [[Form|nouns/Form#1]] [[des|determiners/der]] [[Zusammenseins|nouns/Zusammensein]] propagiert.“"
   },
   "bcaa0e6261": {
     "text": "„Ich, der ich nur der Humanität dienen wollte, wurde dafür auch noch von dem frühreifen Mundwerk eines ganz gewöhnlichen Studenten beleidigt!“",
@@ -19623,7 +19663,7 @@
         "gloss_hint": "give"
       }
     ],
-    "text_linked": "„Er [[konnte|verbs/können_beherrschen]] [[nur|particles/nur#1]] [[einen|determiners/ein]] [[kurzen|adjectives/kurz#1]] [[Blick|nouns/Blick#1]] [[auf|prepositions/auf#1]] [[ihre|pronouns/ihr_person]] haarige [[Möse|nouns/Möse#1]] [[werfen|verbs/werfen#1]], [[ehe|conjunctions/ehe]] [[sein|verbs/sein#1]] [[Gesicht|nouns/Gesicht#1]] [[in|prepositions/in#1]] diesem Dickicht [[versank|verbs/versinken#1]], [[aus|prepositions/aus#1]] [[dem|determiners/der]] [[es|pronouns/es]] [[kein|pronouns/kein#1]] Entrinnen [[gab|verbs/geben#1]].“"
+    "text_linked": "„Er [[konnte|verbs/können_etwas#1]] [[nur|particles/nur#1]] [[einen|determiners/ein]] [[kurzen|adjectives/kurz#1]] [[Blick|nouns/Blick#1]] [[auf|prepositions/auf#1]] [[ihre|pronouns/ihr_person]] haarige [[Möse|nouns/Möse#1]] [[werfen|verbs/werfen#1]], [[ehe|conjunctions/ehe]] [[sein|verbs/sein#1]] [[Gesicht|nouns/Gesicht#1]] [[in|prepositions/in#1]] diesem Dickicht [[versank|verbs/versinken#1]], [[aus|prepositions/aus#1]] [[dem|determiners/der]] [[es|pronouns/es]] [[kein|pronouns/kein#1]] Entrinnen [[gab|verbs/geben#1]].“"
   },
   "bcb76e7f0d": {
     "text": "Das Rennen war so spannend, dass die Zuschauer vor Begeisterung glühten.",
@@ -23264,7 +23304,7 @@
         "gloss_hint": "two"
       }
     ],
-    "text_linked": "„[[Nun|adverbs/nun]] [[sind|verbs/sein]] touristische [[Attraktionen|nouns/Attraktion_anpassung]] [[auf|prepositions/auf]] Lanzarote [[nicht|particles/nicht]] [[eben|adjectives/eben#3]] zahlreich: [[ihre|pronouns/ihr_person]] [[Zahl|nouns/Zahl#1]] [[beläuft|verbs/belaufen]] [[sich|pronouns/sich]] auf [[zwei|numerals/zwei#1]].“"
+    "text_linked": "„[[Nun|adverbs/nun]] [[sind|verbs/sein]] touristische [[Attraktionen|nouns/Attraktion_anpassung]] [[auf|prepositions/auf]] Lanzarote [[nicht|particles/nicht]] [[eben|adjectives/eben#3]] zahlreich: [[ihre|pronouns/ihr_person]] [[Zahl|nouns/Zahl#1]] beläuft [[sich|pronouns/sich]] auf [[zwei|numerals/zwei#1]].“"
   },
   "bcd951892f": {
     "text": "„Der Bankangestellte ist kühl und leise, ohne rote Striemen, ohne Schnappen, amerikanische Bank, hat alles schriftlich, kommt selbst auch gerade aus Amerika, mußte sich nach seiner Rückkehr erst mal wieder vertraut machen mit dem Kiki.“",
@@ -24501,7 +24541,7 @@
         "gloss_hint": "lover"
       }
     ],
-    "text_linked": "„Mustafa, [[der|pronouns/der_nominativ]] [[eine|determiners/ein]] längere [[Affäre|nouns/Affäre#1]] [[mit|prepositions/mit#1]] der libanesischen [[Sängerin|nouns/Sängerin#1]] [[gehabt|verbs/haben#1]] [[hatte|verbs/haben#1]], [[soll|verbs/sollen]] [[seinen|pronouns/sein]] [[Leibwächter|nouns/Leibwächter#1]] [[zu|prepositions/zu]] [[dem|determiners/der]] [[Mord|nouns/Mord#1]] [[angestachelt|verbs/anstacheln]] [[haben|verbs/haben#1]]. Angeblich [[gab|verbs/geben#1]] der [[eifersüchtige|adjectives/eifersüchtig]] [[Ägypter|nouns/Ägypter]] dem ehemaligen [[Polizisten|nouns/Polizist#1]] [[Geld|nouns/Geld#1]], [[damit|adverbs/damit#1]] [[dieser|pronouns/dieser]] [[seine|pronouns/sein]] ehemalige [[Geliebte|nouns/Geliebte#1]] tötet.“"
+    "text_linked": "„Mustafa, [[der|pronouns/der_nominativ]] [[eine|determiners/ein]] längere [[Affäre|nouns/Affäre#1]] [[mit|prepositions/mit#1]] der libanesischen [[Sängerin|nouns/Sängerin#1]] [[gehabt|verbs/haben#1]] [[hatte|verbs/haben#1]], [[soll|verbs/sollen]] [[seinen|pronouns/sein]] [[Leibwächter|nouns/Leibwächter#1]] [[zu|prepositions/zu]] [[dem|determiners/der]] [[Mord|nouns/Mord#1]] angestachelt [[haben|verbs/haben#1]]. Angeblich [[gab|verbs/geben#1]] der [[eifersüchtige|adjectives/eifersüchtig]] [[Ägypter|nouns/Ägypter]] dem ehemaligen [[Polizisten|nouns/Polizist#1]] [[Geld|nouns/Geld#1]], [[damit|adverbs/damit#1]] [[dieser|pronouns/dieser]] [[seine|pronouns/sein]] ehemalige [[Geliebte|nouns/Geliebte#1]] tötet.“"
   },
   "bcdeacf4af": {
     "text": "Nach einer langen Reise kehrte er endlich zurück.",
@@ -25294,11 +25334,45 @@
   },
   "bcee38a9e8": {
     "text": "Das Lateinische kennt wie das Deutsche zwei Numeri: den Singular und den Plural.",
-    "translation": null,
+    "translation": "Latin, like German, has two numbers: the singular and the plural.",
     "source": "wiktionary",
     "lemmas": [
       "Plural"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Lateinische",
+        "lemma": "lateinisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutsche",
+        "lemma": "Deutsch",
+        "pos": "noun",
+        "gloss_hint": "German language"
+      },
+      {
+        "form": "Numeri",
+        "lemma": "Numerus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Singular",
+        "lemma": "Singular",
+        "pos": "noun",
+        "gloss_hint": "singular (form)"
+      },
+      {
+        "form": "Plural",
+        "lemma": "Plural",
+        "pos": "noun",
+        "gloss_hint": "plural (category)"
+      }
+    ],
+    "text_linked": "Das [[Lateinische|adjectives/lateinisch]] kennt wie das [[Deutsche|nouns/Deutsch#1]] zwei Numeri: den [[Singular|nouns/Singular#1]] und den [[Plural|nouns/Plural#1]]."
   },
   "bcef24b979": {
     "text": "„Bundeskanzlerin Angela Merkel hat die Eröffnungsrede beim Weltwirtschaftsforum in Davos für ein Plädoyer gegen Bürokratie und für mehr Freiheit genutzt.“ (www.spiegel.de)",

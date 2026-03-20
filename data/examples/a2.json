@@ -479,7 +479,7 @@
         "gloss_hint": "see"
       }
     ],
-    "text_linked": "„[[Durch|adverbs/durch]] [[das|pronouns/das_[1]]] [[offene|adjectives/offen#1]] [[Fenster|nouns/Fenster#1]] [[konnte|verbs/können_beherrschen]] er [[im|prepositions/in]] [[Mondlicht|nouns/Mondlicht#1]] [[die|pronouns/die]] ausgeprägte [[Kurve|nouns/Kurve#1]] [[ihres|pronouns/ihr_zu#1]] [[nach|prepositions/nach#1]] [[vorn|adverbs/vorne#1]] [[geneigten|adjectives/geneigt]] [[Rückens|nouns/Rücken#1]] [[sehen|verbs/sehen#1]].“"
+    "text_linked": "„[[Durch|adverbs/durch]] [[das|pronouns/das_[1]]] [[offene|adjectives/offen#1]] [[Fenster|nouns/Fenster#1]] [[konnte|verbs/können_etwas#1]] er [[im|prepositions/in]] [[Mondlicht|nouns/Mondlicht#1]] [[die|pronouns/die]] ausgeprägte [[Kurve|nouns/Kurve#1]] [[ihres|pronouns/ihr_zu#1]] [[nach|prepositions/nach#1]] [[vorn|adverbs/vorne#1]] [[geneigten|adjectives/geneigt]] [[Rückens|nouns/Rücken#1]] [[sehen|verbs/sehen#1]].“"
   },
   "a20605471e": {
     "text": "Der Gaumen schließt als obere Begrenzung des Mundraums an Lippen, Zähne und Zahndamm an.",
@@ -2224,7 +2224,7 @@
         "gloss_hint": "now"
       }
     ],
-    "text_linked": "„Bei der Judo-WM in Katar, die an diesem Sonntag startet, [[können|verbs/können_etwas#1]] [[Russen|nouns/Russ]] [[und|conjunctions/und]] Belarussen [[nun|adverbs/nun#1]] wichtige Punkte für die Olympiaqualifikation sammeln.“"
+    "text_linked": "„Bei der Judo-WM in Katar, die an diesem Sonntag startet, [[können|verbs/können_beherrschen]] [[Russen|nouns/Russ]] [[und|conjunctions/und]] Belarussen [[nun|adverbs/nun#1]] wichtige Punkte für die Olympiaqualifikation sammeln.“"
   },
   "a22867e28f": {
     "text": "„Mal müssen die Gefangenen auf den kursi almani, wie es im Arabischen heißt, auf den deutschen Stuhl.“",
@@ -4231,7 +4231,7 @@
         "gloss_hint": "spruce up"
       }
     ],
-    "text_linked": "„[[Die|pronouns/die]] [[einzige|adjectives/einzig]] [[seinerzeit|adverbs/seinerzeit#1]] [[mutige|adjectives/mutig]] [[Renovierung|nouns/Renovierung]] [[erscheint|verbs/erscheinen#1]] [[uns|pronouns/wir]] [[heute|adverbs/heute#2]] [[als|conjunctions/als#2]] Vintage: [[In|prepositions/in]] [[den|determiners/der]] siebziger [[Jahren|nouns/Jahr]] [[versuchten|verbs/versuchen#3]] [[die|pronouns/die]] Pompidous [[das|pronouns/das_[1]]] Palais [[aufzupeppen|verbs/aufpeppen]].“"
+    "text_linked": "„[[Die|pronouns/die]] [[einzige|adjectives/einzig]] [[seinerzeit|adverbs/seinerzeit#1]] [[mutige|adjectives/mutig]] [[Renovierung|nouns/Renovierung]] [[erscheint|verbs/erscheinen#1]] [[uns|pronouns/wir]] [[heute|adverbs/heute#2]] [[als|conjunctions/als#2]] Vintage: [[In|prepositions/in]] [[den|determiners/der]] siebziger [[Jahren|nouns/Jahr]] [[versuchten|verbs/versuchen#3]] [[die|pronouns/die]] Pompidous [[das|pronouns/das_[1]]] Palais aufzupeppen.“"
   },
   "a24564958b": {
     "text": "„Der Datenbankmarktführer Oracle hat sich bereits früher zu Microsofts neuem Betriebssystem bekannt, doch seit die Gates-Company durchblicken ließ, das Betriebssystem zusammen mit ihrer eigenen SQL-Server-Datenbank anzubieten, also zu ‚bundeln‘, liegt man miteinander im Clinch.“",
@@ -4903,11 +4903,51 @@
   },
   "a2491c2912": {
     "text": "„In diesem Zimmer finden nun auch wir Aufnahme, gerade noch rechtzeitig vor einem heftigen Gewitter mit Sturmböen, Hagel und Wolkenbruch.“",
-    "translation": null,
+    "translation": "\"In this room we too now find shelter, arriving just in time before a violent thunderstorm with gusts of wind, hail, and cloudbursts.\"",
     "source": "wiktionary",
     "lemmas": [
       "Hagel"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zimmer",
+        "lemma": "Zimmer",
+        "pos": "noun",
+        "gloss_hint": "room"
+      },
+      {
+        "form": "finden",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": "find"
+      },
+      {
+        "form": "Aufnahme",
+        "lemma": "Aufnahme",
+        "pos": "noun",
+        "gloss_hint": "accommodation"
+      },
+      {
+        "form": "Gewitter",
+        "lemma": "Gewitter",
+        "pos": "noun",
+        "gloss_hint": "thunderstorm"
+      },
+      {
+        "form": "Hagel",
+        "lemma": "Hagel",
+        "pos": "noun",
+        "gloss_hint": "hail"
+      },
+      {
+        "form": "Wolkenbruch",
+        "lemma": "Wolkenbruch",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„In diesem [[Zimmer|nouns/Zimmer#1]] [[finden|verbs/finden#5]] nun auch wir [[Aufnahme|nouns/Aufnahme#2]], gerade noch rechtzeitig vor einem heftigen [[Gewitter|nouns/Gewitter#1]] mit Sturmböen, [[Hagel|nouns/Hagel#1]] und Wolkenbruch.“"
   },
   "a249504fe9": {
     "text": "Angeblich trifft er einen prominenten Gast.",
@@ -5477,7 +5517,7 @@
     "lemmas": [
       "Kunst"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "claude-sonnet-4-6"
   },
   "a24ed17d0d": {
     "text": "Gesetz der Straße",
@@ -5706,7 +5746,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Bedenkt|verbs/bedenken]] [[man|pronouns/man]], [[dass|conjunctions/dass]] Österreich [[im|prepositions/in]] Landhockey [[erst|adverbs/erst#2]] [[heuer|adverbs/heuer#1]] [[bei|prepositions/bei]] [[der|pronouns/der_nominativ]] WM [[in|prepositions/in]] Lissabon den [[Aufstieg|nouns/Aufstieg#6]] in [[die|determiners/die]] [[Division|nouns/Division#1]] A [[schaffte|verbs/schaffen_etwas#1]], [[wäre|verbs/sein]] [[es|pronouns/es]] [[durchaus|adverbs/durchaus#2]] vermessen, die [[Qualifikation|nouns/Qualifikation#1]] [[zu|particles/zu_drückt]] [[verlangen|verbs/verlangen#1]], [[sagte|verbs/sagen#1]] [[Teamchef|nouns/Teamchef#2]] Ruoss.“"
+    "text_linked": "„[[Bedenkt|verbs/bedenken]] [[man|pronouns/man]], [[dass|conjunctions/dass]] Österreich [[im|prepositions/in]] Landhockey [[erst|adverbs/erst#2]] [[heuer|adverbs/heuer#1]] [[bei|prepositions/bei]] [[der|pronouns/der_nominativ]] WM [[in|prepositions/in]] Lissabon den [[Aufstieg|nouns/Aufstieg#6]] in [[die|determiners/die]] [[Division|nouns/Division#1]] A [[schaffte|verbs/schaffen_etwas]], [[wäre|verbs/sein]] [[es|pronouns/es]] [[durchaus|adverbs/durchaus#2]] vermessen, die [[Qualifikation|nouns/Qualifikation#1]] [[zu|particles/zu_drückt]] [[verlangen|verbs/verlangen#1]], [[sagte|verbs/sagen#1]] [[Teamchef|nouns/Teamchef#2]] Ruoss.“"
   },
   "a24f3d4cd9": {
     "text": "Schau mal, das Holz im Ofen kohlt nur noch.",
@@ -6911,7 +6951,7 @@
         "gloss_hint": "hand over"
       }
     ],
-    "text_linked": "»[[Ich|pronouns/ich]] habe [[bei|prepositions/bei]] diesem [[Kindergarten|nouns/Kindergarten]] [[ein|determiners/ein]] [[gutes|adjectives/gut#1]] [[Bauchgefühl|nouns/Bauchgefühl]], [[da|adverbs/da]] [[können|verbs/können_etwas#2]] [[wir|pronouns/wir#1]] [[unser|pronouns/unser_personalpronomen#1]] [[Kind|nouns/Kind#1]] [[hingeben|verbs/hingeben#1]].«"
+    "text_linked": "»[[Ich|pronouns/ich]] habe [[bei|prepositions/bei]] diesem [[Kindergarten|nouns/Kindergarten]] [[ein|determiners/ein]] [[gutes|adjectives/gut#1]] [[Bauchgefühl|nouns/Bauchgefühl]], [[da|adverbs/da]] [[können|verbs/können_beherrschen]] [[wir|pronouns/wir#1]] [[unser|pronouns/unser_personalpronomen#1]] [[Kind|nouns/Kind#1]] [[hingeben|verbs/hingeben#1]].«"
   },
   "a264b8cb3d": {
     "text": "„An diesem Tag wurde vor fünfzehn Jahren die Steppenstraße im Dorf Borodinowka gegründet, offiziell als Postadresse anerkannt und in was weiß ich welches Adressbuch eingetragen.“",
@@ -9750,7 +9790,7 @@
         "gloss_hint": "harness"
       }
     ],
-    "text_linked": "Wir [[können|verbs/können_etwas#2]] [[das|pronouns/das_[1]]] [[Pferd|nouns/Pferd#1]] [[vor|prepositions/vor#1]] [[den|determiners/der]] [[Schlitten|nouns/Schlitten#1]] [[spannen|verbs/spannen#5]]."
+    "text_linked": "Wir [[können|verbs/können_beherrschen]] [[das|pronouns/das_[1]]] [[Pferd|nouns/Pferd#1]] [[vor|prepositions/vor#1]] [[den|determiners/der]] [[Schlitten|nouns/Schlitten#1]] [[spannen|verbs/spannen#5]]."
   },
   "a280fcd998": {
     "text": "„»Da müssen Sie mal zu meiner Mutter kommen, Herr Panter, die kocht Ihnen ein Leipziger Allerlei …« – »Liebe gnädige Frau, es ist so nett von Ihnen … Aber alle Leute können doch nicht bei Ihrer Mama essen!«“",
@@ -11734,7 +11774,7 @@
         "gloss_hint": "be able to"
       }
     ],
-    "text_linked": "„Die meiste [[Zeit|nouns/Zeit#1]], [[so|adverbs/so]] [[schlussfolgern|verbs/schlussfolgern]] [[die|determiners/die]] Forscher, [[sehen|verbs/sehen#1]] [[Zebras|nouns/Zebra_afrika#1]] für [[Löwen|nouns/Löwe#1]] und Hyänen [[demnach|adverbs/demnach]] [[eher|adverbs/eher#4]] [[wie|adverbs/wie#2]] [[graue|adjectives/grau#1]] Wasserbüffel aus. [[Das|pronouns/das_[1]]] [[trifft|verbs/treffen]] interessanterweise [[zum|prepositions/zu]] [[Teil|nouns/Teil_stück#1]] [[auch|adverbs/auch]] [[auf|prepositions/auf]] die Zebras [[selbst|pronouns/selbst]] zu, die die [[Streifen|nouns/Streifen#1]] [[ihrer|pronouns/ihrer#2]] Artgenossen [[offenbar|adjectives/offenbar]] [[ebenfalls|adverbs/ebenfalls]] [[nicht|particles/nicht#1]] so [[gut|adjectives/gut#2]] [[erkennen|verbs/erkennen#1]] [[können|verbs/können_beherrschen]] wie der Mensch.“"
+    "text_linked": "„Die meiste [[Zeit|nouns/Zeit#1]], [[so|adverbs/so]] [[schlussfolgern|verbs/schlussfolgern]] [[die|determiners/die]] Forscher, [[sehen|verbs/sehen#1]] [[Zebras|nouns/Zebra_afrika#1]] für [[Löwen|nouns/Löwe#1]] und Hyänen [[demnach|adverbs/demnach]] [[eher|adverbs/eher#4]] [[wie|adverbs/wie#2]] [[graue|adjectives/grau#1]] Wasserbüffel aus. [[Das|pronouns/das_[1]]] [[trifft|verbs/treffen]] interessanterweise [[zum|prepositions/zu]] [[Teil|nouns/Teil_stück#1]] [[auch|adverbs/auch]] [[auf|prepositions/auf]] die Zebras [[selbst|pronouns/selbst]] zu, die die [[Streifen|nouns/Streifen#1]] [[ihrer|pronouns/ihrer#2]] Artgenossen [[offenbar|adjectives/offenbar]] [[ebenfalls|adverbs/ebenfalls]] [[nicht|particles/nicht#1]] so [[gut|adjectives/gut#2]] [[erkennen|verbs/erkennen#1]] [[können|verbs/können_etwas#1]] wie der Mensch.“"
   },
   "a28fdcb914": {
     "text": "Der Minister erteilte dem Staatssekretär einen strengen Verweis, nachdem dieser der Übersetzerin unter den Rock gegriffen hatte.",
@@ -14571,11 +14611,69 @@
   },
   "a2a792bfee": {
     "text": "„Die intellektuelle und geistige Entwicklung der steinzeitlichen Kleinkulturen kann lediglich an den im häuslichen Umwelt üblichen Tonfigurinen und aus den eher seltenen Gräberfunden abgeleitet werden.“",
-    "translation": null,
+    "translation": "\"The intellectual and spiritual development of Stone Age small cultures can only be inferred from the clay figurines commonly found in the domestic environment and from the rather rare grave finds.\"",
     "source": "wiktionary",
     "lemmas": [
       "ableiten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "intellektuelle",
+        "lemma": "intellektuell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "geistige",
+        "lemma": "geistig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Entwicklung",
+        "lemma": "Entwicklung",
+        "pos": "noun",
+        "gloss_hint": "development"
+      },
+      {
+        "form": "steinzeitlichen",
+        "lemma": "steinzeitlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kleinkulturen",
+        "lemma": "Kleinkultur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umwelt",
+        "lemma": "Umwelt",
+        "pos": "noun",
+        "gloss_hint": "environment"
+      },
+      {
+        "form": "Tonfigurinen",
+        "lemma": "Tonfigurine",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gräberfunden",
+        "lemma": "Gräberfund",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abgeleitet",
+        "lemma": "ableiten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Die intellektuelle und [[geistige|adjectives/geistig]] [[Entwicklung|nouns/Entwicklung#1]] der steinzeitlichen Kleinkulturen kann lediglich an den im häuslichen [[Umwelt|nouns/Umwelt#1]] üblichen Tonfigurinen und aus den eher seltenen Gräberfunden [[abgeleitet|verbs/ableiten]] werden.“"
   },
   "a2a8c8bade": {
     "text": "zu sagen haben",
@@ -14997,7 +15095,7 @@
         "gloss_hint": "city"
       }
     ],
-    "text_linked": "„[[Wollen|verbs/wollen#2]] [[die|pronouns/die]] [[gurrenden|verbs/gurren]] Kuscheltiere, die Krankheiten [[übertragenden|verbs/übertragen#2]] Ratten [[der|pronouns/der_nominativ]] Lüfte, [[erst|adverbs/erst#2]] die [[Herrschaft|nouns/Herrschaft#4]] [[über|prepositions/über#2]] die Radwege – [[und|conjunctions/und#1]] [[dann|adverbs/dann#1]] über die [[ganze|adjectives/ganz#2]] [[City|nouns/City#1]]?“"
+    "text_linked": "„[[Wollen|verbs/wollen#2]] [[die|pronouns/die]] gurrenden Kuscheltiere, die Krankheiten [[übertragenden|verbs/übertragen#2]] Ratten [[der|pronouns/der_nominativ]] Lüfte, [[erst|adverbs/erst#2]] die [[Herrschaft|nouns/Herrschaft#4]] [[über|prepositions/über#2]] die Radwege – [[und|conjunctions/und#1]] [[dann|adverbs/dann#1]] über die [[ganze|adjectives/ganz#2]] [[City|nouns/City#1]]?“"
   },
   "a2b239f159": {
     "text": "etwas mit dem Mantel der Nächstenliebe zudecken",
@@ -18002,7 +18100,7 @@
         "gloss_hint": "around"
       }
     ],
-    "text_linked": "„Denn [[Herr|nouns/Herr#1]] Jürgens, [[der|pronouns/der_nominativ]] Standesbeamte [[von|prepositions/von#1]] Glowitz, [[Kreis|nouns/Kreis#4]] Stolp [[in|prepositions/in#1]] Pommern, [[ist|verbs/sein#2]] [[eigentlich|adverbs/eigentlich#2]] der [[Fotograf|nouns/Fotograf#1]] [[unseres|pronouns/unser_personalpronomen#1]] Kirchspiels, allgegenwärtig [[bei|prepositions/bei#3]] [[Taufen|nouns/Taufe#1]], Konfirmationen [[und|conjunctions/und#1]] [[Hochzeiten|nouns/Hochzeit_zeremonie#1]] in [[den|determiners/der]] [[Dörfern|nouns/Dorf#1]] ringsum.“"
+    "text_linked": "„Denn [[Herr|nouns/Herr#1]] Jürgens, [[der|pronouns/der_nominativ]] Standesbeamte [[von|prepositions/von#1]] Glowitz, [[Kreis|nouns/Kreis#4]] Stolp [[in|prepositions/in#1]] Pommern, [[ist|verbs/sein#2]] [[eigentlich|adverbs/eigentlich#2]] der [[Fotograf|nouns/Fotograf#1]] [[unseres|pronouns/unser_personalpronomen#1]] Kirchspiels, allgegenwärtig [[bei|prepositions/bei#3]] [[Taufen|nouns/Taufe#1]], Konfirmationen [[und|conjunctions/und#1]] [[Hochzeiten|nouns/Hochzeit_zeremonie#1]] in [[den|determiners/der]] [[Dörfern|nouns/Dorf#1]] [[ringsum|adverbs/ringsum#1]].“"
   },
   "a2cddc61f3": {
     "text": "„Die Dämmerung schlich in die Grabenwinkel.“",
@@ -19029,11 +19127,85 @@
   },
   "a2dc9e17f4": {
     "text": "Pastor Remé wusste, dass er Loki nicht überzeugt hatte, aber er taufte sie gleichwohl, weil er ihr Motiv für die kirchliche Trauung verstand und anerkannte.",
-    "translation": null,
+    "translation": "Pastor Remé knew that he had not convinced Loki, but he baptized her nonetheless because he understood and respected her motive for the church wedding.",
     "source": "wiktionary",
     "lemmas": [
       "gleichwohl"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Pastor",
+        "lemma": "Pastor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Remé",
+        "lemma": "Remé",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wusste",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Loki",
+        "lemma": "Loki",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "überzeugt",
+        "lemma": "überzeugen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "taufte",
+        "lemma": "taufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Motiv",
+        "lemma": "Motiv",
+        "pos": "noun",
+        "gloss_hint": "motive"
+      },
+      {
+        "form": "kirchliche",
+        "lemma": "kirchlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Trauung",
+        "lemma": "Trauung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verstand",
+        "lemma": "verstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "anerkannte",
+        "lemma": "anerkennen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "d0a72035"
+    },
+    "text_linked": "[[Pastor|nouns/Pastor]] Remé [[wusste|verbs/wissen]], dass er [[Loki|nouns/Loki]] nicht [[überzeugt|verbs/überzeugen]] hatte, aber er [[taufte|verbs/taufen]] sie gleichwohl, weil er ihr [[Motiv|nouns/Motiv#1]] für die kirchliche [[Trauung|nouns/Trauung]] [[verstand|verbs/verstehen_gesprochenes]] und [[anerkannte|verbs/anerkennen]]."
   },
   "a2dd9ae6bd": {
     "text": "„Darum rede ich zu ihnen in Gleichnissen. Denn mit sehenden Augen sehen sie nicht und mit hörenden Ohren hören sie nicht; und sie verstehen es nicht.“",
@@ -19407,11 +19579,57 @@
   },
   "a2df0ebe13": {
     "text": "Ein Hagel von Pfeilen und Schleudersteinen schwirrte aus dem Waldversteck den Unsrigen entgegen.",
-    "translation": null,
+    "translation": "A hail of arrows and sling stones whistled from the forest hideout towards our men.",
     "source": "wiktionary",
     "lemmas": [
       "Hagel"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hagel",
+        "lemma": "Hagel",
+        "pos": "noun",
+        "gloss_hint": "barrage"
+      },
+      {
+        "form": "Pfeilen",
+        "lemma": "Pfeil",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schleudersteinen",
+        "lemma": "Schleuderstein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwirrte",
+        "lemma": "schwirren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Waldversteck",
+        "lemma": "Waldversteck",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unsrigen",
+        "lemma": "Unsrige",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entgegen",
+        "lemma": "entgegen",
+        "pos": "adverb",
+        "gloss_hint": "towards"
+      }
+    ],
+    "text_linked": "Ein [[Hagel|nouns/Hagel#2]] von [[Pfeilen|nouns/Pfeil]] und Schleudersteinen schwirrte aus dem Waldversteck den Unsrigen [[entgegen|adverbs/entgegen#1]]."
   },
   "a2df178d15": {
     "text": "„Durch den Aufschluss der Zellen gelangen die Proteine in eine unphysiologische Umgebung und müssen vor Inaktivierung, Denaturierung und Proteolyse geschützt werden.“",
@@ -19497,7 +19715,7 @@
         "gloss_hint": "technical forum"
       }
     ],
-    "text_linked": "Da er [[sein|verbs/sein#1]] [[Problem|nouns/Problem#1]] [[nicht|particles/nicht#1]] [[lösen|verbs/lösen#1]] [[kann|verbs/können_beherrschen]], [[wird|verbs/werden#3]] er [[seine|pronouns/sein#2]] [[Anfrage|nouns/Anfrage#1]] [[in|prepositions/in]] [[einem|determiners/ein]] Technikforum posten."
+    "text_linked": "Da er [[sein|verbs/sein#1]] [[Problem|nouns/Problem#1]] [[nicht|particles/nicht#1]] [[lösen|verbs/lösen#1]] [[kann|verbs/können_etwas#1]], [[wird|verbs/werden#3]] er [[seine|pronouns/sein#2]] [[Anfrage|nouns/Anfrage#1]] [[in|prepositions/in]] [[einem|determiners/ein]] Technikforum posten."
   },
   "a2e0b163ff": {
     "text": "etwas ist mit Händen zu greifen",
@@ -19939,7 +20157,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Kreischen|verbs/kreischen#1]], [[Grunzen|verbs/grunzen#1]], [[Hecheln|verbs/hecheln]], Aufschreien, [[Bellen|verbs/bellen#1]] - Wissenschaftler [[haben|verbs/haben#1]] [[insgesamt|adverbs/insgesamt]] zwölf [[verschiedene|adjectives/verschieden_mehr]] Lautäußerungen [[bei|prepositions/bei#2]] Schimpansen identifiziert.“"
+    "text_linked": "„[[Kreischen|verbs/kreischen#1]], [[Grunzen|verbs/grunzen#1]], Hecheln, Aufschreien, [[Bellen|verbs/bellen#1]] - Wissenschaftler [[haben|verbs/haben#1]] [[insgesamt|adverbs/insgesamt]] zwölf [[verschiedene|adjectives/verschieden_mehr]] Lautäußerungen [[bei|prepositions/bei#2]] Schimpansen identifiziert.“"
   },
   "a2edc3f46b": {
     "text": "Ich suche seit zwei Stunden meine Brille, aber ich kann sie nirgends finden.",
@@ -20176,7 +20394,7 @@
         "gloss_hint": "make"
       }
     ],
-    "text_linked": "„[[Das|pronouns/das_[1]]] [[verwirrt|verbs/verwirren#1]] [[zum|prepositions/zu]] [[Jahreswechsel|nouns/Jahreswechsel]] nochall [[wüst|adjectives/wüst#2]], [[weil|conjunctions/weil_konjunktion]] [[wir|pronouns/wir]] [[ständig|adjectives/ständig#1]] [[aufgefordert|verbs/auffordern]] [[werden|verbs/werden#1]], keine bleddy [[Zeit|nouns/Zeit#1]] [[zu|prepositions/zu]] [[morschen|verbs/morschen]], [[so|adverbs/so]] [[dass|conjunctions/dass]] wir angeblich [[und|conjunctions/und]] [[endlich|adverbs/endlich]] [[auch|adverbs/auch]] zum [[Erfolg|nouns/Erfolg#1]] [[gelangen|verbs/gelangen#1]] [[sollen|verbs/sollen#4]]. [[Aber|conjunctions/aber]] zu [[gleicher|adjectives/gleich#1]] Zeit sollen wir alles [[langsamer|adjectives/langsam#1]] [[machen|verbs/machen#2]].“"
+    "text_linked": "„[[Das|pronouns/das_[1]]] [[verwirrt|verbs/verwirren#1]] [[zum|prepositions/zu]] [[Jahreswechsel|nouns/Jahreswechsel]] nochall [[wüst|adjectives/wüst#2]], [[weil|conjunctions/weil_konjunktion]] [[wir|pronouns/wir]] [[ständig|adjectives/ständig#1]] [[aufgefordert|verbs/auffordern]] [[werden|verbs/werden#1]], keine bleddy [[Zeit|nouns/Zeit#1]] [[zu|prepositions/zu]] morschen, [[so|adverbs/so]] [[dass|conjunctions/dass]] wir angeblich [[und|conjunctions/und]] [[endlich|adverbs/endlich]] [[auch|adverbs/auch]] zum [[Erfolg|nouns/Erfolg#1]] [[gelangen|verbs/gelangen#1]] [[sollen|verbs/sollen#4]]. [[Aber|conjunctions/aber]] zu [[gleicher|adjectives/gleich#1]] Zeit sollen wir alles [[langsamer|adjectives/langsam#1]] [[machen|verbs/machen#2]].“"
   },
   "a2ee6081ab": {
     "text": "„Ihre jungen Lehrerinnen mit ihren Kopftüchern und fußlangen Mänteln versuchten kichernd, die Lage zu beruhigen, halb gerührt, halb verschämt, halb stolz auf ihre Schüler, halb entschuldigend.“",
@@ -20892,7 +21110,7 @@
         "gloss_hint": "understand"
       }
     ],
-    "text_linked": "„[[Ehe|conjunctions/bevor]] sie mich noch [[ins|prepositions/in]] Gebet [[nehmen|verbs/nehmen#2]] [[konnte|verbs/können_beherrschen]], war ich schon auf der Straße, und erst nachdem ich mich müde [[gelaufen|verbs/laufen#1]] [[hatte|verbs/haben#1]], konnte ich es über mich [[gewinnen|verbs/gewinnen#4]], die Lage vernünftiger ins Auge zu [[fassen|verbs/fassen#8]].“"
+    "text_linked": "„[[Ehe|conjunctions/bevor]] sie mich noch [[ins|prepositions/in]] Gebet [[nehmen|verbs/nehmen#2]] [[konnte|verbs/können_etwas#1]], war ich schon auf der Straße, und erst nachdem ich mich müde [[gelaufen|verbs/laufen#1]] [[hatte|verbs/haben#1]], konnte ich es über mich [[gewinnen|verbs/gewinnen#4]], die Lage vernünftiger ins Auge zu [[fassen|verbs/fassen#8]].“"
   },
   "a2f8889efc": {
     "text": "Das Dach leckt, es ist undicht.",
@@ -21382,7 +21600,7 @@
         "gloss_hint": "waiting"
       }
     ],
-    "text_linked": "„Und [[kaum|adverbs/kaum#1]] [[hatte|verbs/haben#1]] er [[die|determiners/die]] [[Läden|nouns/Laden_geschäft#1]] [[geöffnet|verbs/öffnen]], [[als|conjunctions/als#2]] [[der|determiners/der]] [[Mondschein|nouns/Mondschein#1]] [[auch|adverbs/auch#1]] [[schon|particles/schon_antwort#1]] [[ins|prepositions/in#2]] [[Zimmer|nouns/Zimmer#1]] [[schoss|verbs/schießen]], als [[hätte|verbs/haben#1]] er [[bereits|adverbs/bereits#1]] [[lange|adverbs/lange#1]] [[vor|prepositions/vor#1]] [[dem|determiners/der]] [[Fenster|nouns/Fenster#1]] [[Wache|nouns/Wache#4]] [[gestanden|verbs/stehen#1]] [[und|conjunctions/und#1]] [[nur|particles/nur#1]] [[auf|prepositions/auf#4]] [[das|pronouns/das_[1]]] [[Oeffnen|verbs/öffnen#2]] [[gewartet|verbs/warten#1]].“"
+    "text_linked": "„Und [[kaum|adverbs/kaum#1]] [[hatte|verbs/haben#1]] er [[die|determiners/die]] [[Läden|nouns/Laden_geschäft#1]] [[geöffnet|verbs/öffnen]], [[als|conjunctions/als#2]] [[der|determiners/der]] [[Mondschein|nouns/Mondschein#1]] [[auch|adverbs/auch#1]] [[schon|particles/schon_antwort#1]] [[ins|prepositions/in#2]] [[Zimmer|nouns/Zimmer#1]] [[schoss|verbs/schießen]], als [[hätte|verbs/haben#1]] er [[bereits|adverbs/bereits#1]] [[lange|adverbs/lange#1]] [[vor|prepositions/vor#1]] [[dem|determiners/der]] [[Fenster|nouns/Fenster#1]] [[Wache|nouns/Wache#4]] [[gestanden|verbs/stehen#1]] [[und|conjunctions/und#1]] [[nur|particles/nur#1]] [[auf|prepositions/auf]] [[das|pronouns/das_[1]]] [[Oeffnen|verbs/öffnen#2]] [[gewartet|verbs/warten#1]].“"
   },
   "a2fe6cd5bd": {
     "text": "„Es war vor dem Abendessen, ich saß zu einem Aperitif an der Bar, meine Frau war noch mit der kosmetischen Vorbereitung oben auf dem Zimmer beschäftigt, die beiden Kinder tranken Coca-Cola und ich ein Glas Sekt.“",

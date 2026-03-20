@@ -1258,7 +1258,7 @@
         "gloss_hint": "still to come"
       }
     ],
-    "text_linked": "„[[Es|pronouns/es]] [[loderten|verbs/lodern]] [[die|determiners/die]] [[Scheiterhaufen|nouns/Scheiterhaufen#1]], [[und|conjunctions/und]] die [[größte|adjectives/groß]] [[Hexenjagd|nouns/Hexenjagd_grausame#1]] [[der|determiners/der]] abendländischen [[Geschichte|nouns/Geschichte#1]] [[stand|verbs/stehen]] [[erst|adverbs/erst]] [[noch|adverbs/noch]] bevor.“"
+    "text_linked": "„[[Es|pronouns/es]] [[loderten|verbs/lodern#1]] [[die|determiners/die]] [[Scheiterhaufen|nouns/Scheiterhaufen#1]], [[und|conjunctions/und]] die [[größte|adjectives/groß]] [[Hexenjagd|nouns/Hexenjagd_grausame#1]] [[der|determiners/der]] abendländischen [[Geschichte|nouns/Geschichte#1]] [[stand|verbs/stehen]] [[erst|adverbs/erst]] [[noch|adverbs/noch]] bevor.“"
   },
   "e1163797ff": {
     "text": "Er sucht sich seine Opfer gezielt aus.",
@@ -1534,8 +1534,7 @@
         "pos": "verb",
         "gloss_hint": null
       }
-    ],
-    "text_linked": "In Schottland sind die meisten Bahnstrecken noch nicht einmal [[elektrifiziert|verbs/elektrifizieren]]."
+    ]
   },
   "e11a21d292": {
     "text": "„Schließlich erheben sich mehrere Gruppen zur offenen Rebellion.“",
@@ -6542,7 +6541,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "«Die Wandersleute, nicht alles junge [[Semester|nouns/Semester]], mussten bei der [[Ankunft|nouns/Ankunft]] in Bialowies ihre [[Koffer|nouns/Koffer#1]] [[mühsam|adjectives/mühsam]] über Waldwege und Brücken, dann treppauf, treppab vom Car zur [[Unterkunft|nouns/Unterkunft]] schleppen: [[Nichts|nouns/Nichts#1]] für schmerzende Bandscheiben (bei der [[Abfahrt|nouns/Abfahrt#1]] stand dann der Car direkt am [[Eingang|nouns/Eingang#1]] der [[Herberge|nouns/Herberge]]!).»"
+    "text_linked": "«Die Wandersleute, nicht alles junge [[Semester|nouns/Semester]], mussten bei der [[Ankunft|nouns/Ankunft]] in Bialowies ihre [[Koffer|nouns/Koffer#1]] [[mühsam|adjectives/mühsam]] über Waldwege und Brücken, dann [[treppauf|adverbs/treppauf]], [[treppab|adverbs/treppab]] vom Car zur [[Unterkunft|nouns/Unterkunft]] schleppen: [[Nichts|nouns/Nichts#1]] für schmerzende Bandscheiben (bei der [[Abfahrt|nouns/Abfahrt#1]] stand dann der Car direkt am [[Eingang|nouns/Eingang#1]] der [[Herberge|nouns/Herberge]]!).»"
   },
   "e1713ce4b9": {
     "text": "Die Jäger schossen viel Wild.",
@@ -8035,7 +8034,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Das [[Blasen|verbs/blasen#3]] und [[Heulen|nouns/Heulen#1]] des [[Sturmes|nouns/Sturm]] [[währte|verbs/währen]] die [[ganze|adjectives/ganz]] [[Nacht|nouns/Nacht]]."
+    "text_linked": "Das [[Blasen|verbs/blasen#3]] und [[Heulen|nouns/Heulen#1]] des [[Sturmes|nouns/Sturm]] währte die [[ganze|adjectives/ganz]] [[Nacht|nouns/Nacht]]."
   },
   "e180c72ec3": {
     "text": "jemandem recht geben",
@@ -8186,7 +8185,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Keine [[Bange|nouns/Bange]], die ganze [[Suppe|nouns/Suppe#1]] [[läuft|verbs/laufen#2]] in die Bilge der Maschinenanlage. [[Gebt|verbs/geben]] dem [[Meister|nouns/Meister#1]] [[Bescheid|nouns/Bescheid#2]], damit er den ganzen Rotz zwischendurch mal [[abpumpen|verbs/abpumpen]] kann.“"
+    "text_linked": "„Keine [[Bange|nouns/Bange]], die ganze [[Suppe|nouns/Suppe#1]] [[läuft|verbs/laufen#2]] in die Bilge der Maschinenanlage. [[Gebt|verbs/geben]] dem [[Meister|nouns/Meister#1]] [[Bescheid|nouns/Bescheid#2]], damit er den ganzen Rotz zwischendurch mal abpumpen kann.“"
   },
   "e1867f2590": {
     "text": "„Der Geschmack brennt unter und auf der Zunge, der Rausch ist schwer übelkeitserzeugend.“",
@@ -11059,11 +11058,93 @@
   },
   "e1c9dea8d3": {
     "text": "„Auf den Bänken saßen bereits acht oder neun Leute, er nickte ihnen freundlich zu, setzte sich und sah sich die mehrere Seiten umfassende Hausordnung an.“",
-    "translation": null,
+    "translation": "On the benches sat eight or nine people; he nodded to them in a friendly manner, sat down, and looked at the house rules that spanned several pages.",
     "source": "wiktionary",
     "lemmas": [
       "Hausordnung"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bänken",
+        "lemma": "Bank",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "saßen",
+        "lemma": "sitzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "acht",
+        "lemma": "acht",
+        "pos": "numeral",
+        "gloss_hint": "eight"
+      },
+      {
+        "form": "neun",
+        "lemma": "neun",
+        "pos": "numeral",
+        "gloss_hint": "nine"
+      },
+      {
+        "form": "Leute",
+        "lemma": "Leute",
+        "pos": "noun",
+        "gloss_hint": "people"
+      },
+      {
+        "form": "nickte",
+        "lemma": "nicken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "freundlich",
+        "lemma": "freundlich",
+        "pos": "adjective",
+        "gloss_hint": "friendly"
+      },
+      {
+        "form": "setzte",
+        "lemma": "setzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sah",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": "see"
+      },
+      {
+        "form": "mehrere",
+        "lemma": "mehrere",
+        "pos": "pronoun",
+        "gloss_hint": "several"
+      },
+      {
+        "form": "Seiten",
+        "lemma": "Seite",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "umfassende",
+        "lemma": "umfassend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hausordnung",
+        "lemma": "Hausordnung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Auf den [[Bänken|nouns/Bank_geldinstitut]] [[saßen|verbs/sitzen]] bereits [[acht|numerals/acht#1]] oder [[neun|numerals/neun#1]] [[Leute|nouns/Leute#1]], er [[nickte|verbs/nicken_bereits]] ihnen [[freundlich|adjectives/freundlich#1]] zu, [[setzte|verbs/setzen]] sich und [[sah|verbs/sehen#1]] sich die [[mehrere|pronouns/mehrere#1]] [[Seiten|nouns/Seite]] umfassende [[Hausordnung|nouns/Hausordnung]] an.“"
   },
   "e1cb57d7f0": {
     "text": "Sie schöpfte einen Eimer Wasser aus dem Brunnen.",
@@ -11786,7 +11867,7 @@
         "gloss_hint": "beautiful"
       }
     ],
-    "text_linked": "„Holdhaus und Pulferer [[wollen|verbs/wollen#1]] mit zwanzig [[Kilogramm|nouns/Kilogramm]] Blattgold die 1600 [[Quadratmeter|nouns/Quadratmeter]] große [[Spitze|nouns/Spitze#2]] des fast 4000 Meter hohen Großglockners [[vergolden|verbs/vergolden]]. Die würde dann [[schön|adjectives/schön#1]] in der Abendsonne [[glühen|verbs/glühen#1]].“"
+    "text_linked": "„Holdhaus und Pulferer [[wollen|verbs/wollen#1]] mit zwanzig [[Kilogramm|nouns/Kilogramm]] Blattgold die 1600 [[Quadratmeter|nouns/Quadratmeter]] große [[Spitze|nouns/Spitze#2]] des fast 4000 Meter hohen Großglockners vergolden. Die würde dann [[schön|adjectives/schön#1]] in der Abendsonne [[glühen|verbs/glühen#1]].“"
   },
   "e1d783447b": {
     "text": "Nach der großen Wahl kam er zur Bildung der neuen Regierung.",

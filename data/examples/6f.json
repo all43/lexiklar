@@ -220,7 +220,7 @@
         "gloss_hint": "stage curtain"
       }
     ],
-    "text_linked": "„[[Spott|nouns/Spott]] [[und|conjunctions/und]] superiore Witzelei [[waren|verbs/sein#2]] [[allein|adjectives/allein#1]] [[der|pronouns/der_nominativ#1]] [[richtige|adjectives/richtig#1]] [[Ton|nouns/Ton_etwas#3]], und [[als|conjunctions/als#2]] ihm [[dies|pronouns/dies]] [[feststand|verbs/feststehen]], [[fiel|verbs/fallen#1]] [[zum|prepositions/zu]] erstenmal der [[Vorhang|nouns/Vorhang#2]].“"
+    "text_linked": "„[[Spott|nouns/Spott]] [[und|conjunctions/und]] superiore Witzelei [[waren|verbs/sein#2]] [[allein|adjectives/allein#1]] [[der|pronouns/der_nominativ#1]] [[richtige|adjectives/richtig#1]] [[Ton|nouns/Ton_etwas#3]], und [[als|conjunctions/als#2]] ihm [[dies|pronouns/dies]] [[feststand|verbs/feststehen#1]], [[fiel|verbs/fallen#1]] [[zum|prepositions/zu]] erstenmal der [[Vorhang|nouns/Vorhang#2]].“"
   },
   "6f01ec741a": {
     "text": "„Unwirsch winkte sie ab. ›Ach, was weiß ich! Wenn Leute verschwinden, dann bekommt das doch keiner mit. […]‹“",
@@ -774,7 +774,7 @@
         "gloss_hint": "more"
       }
     ],
-    "text_linked": "„Sie [[verharrten|verbs/verharren]] [[nicht|particles/nicht#1]] [[in|prepositions/in]] [[der|pronouns/der_nominativ]] Mutterrolle oder in [[ihren|pronouns/ihr_person]] [[gelernten|adjectives/gelernt#2]] [[Berufen|nouns/Beruf#1]], [[sondern|conjunctions/sondern]] [[krempelten|verbs/krempeln]] [[richtig|adjectives/richtig#2]] [[die|pronouns/die]] [[Ärmel|nouns/Ärmel#1]] [[hoch|adjectives/hoch#1]]. [[Der|pronouns/der_nominativ]] [[Anblick|nouns/Anblick#2]] [[von|prepositions/von]] [[Busfahrerinnen|nouns/Busfahrerin]] [[und|conjunctions/und#1]] [[Automechanikerinnen|nouns/Automechanikerin]] [[war|verbs/sein#2]] [[bald|adverbs/bald#1]] [[kein|pronouns/kein#1]] [[seltener|adjectives/selten#3]] Anblick mehr.“"
+    "text_linked": "„Sie [[verharrten|verbs/verharren]] [[nicht|particles/nicht#1]] [[in|prepositions/in]] [[der|pronouns/der_nominativ]] Mutterrolle oder in [[ihren|pronouns/ihr_person]] [[gelernten|adjectives/gelernt#2]] [[Berufen|nouns/Beruf#1]], [[sondern|conjunctions/sondern]] krempelten [[richtig|adjectives/richtig#2]] [[die|pronouns/die]] [[Ärmel|nouns/Ärmel#1]] [[hoch|adjectives/hoch#1]]. [[Der|pronouns/der_nominativ]] [[Anblick|nouns/Anblick#2]] [[von|prepositions/von]] [[Busfahrerinnen|nouns/Busfahrerin]] [[und|conjunctions/und#1]] [[Automechanikerinnen|nouns/Automechanikerin]] [[war|verbs/sein#2]] [[bald|adverbs/bald#1]] [[kein|pronouns/kein#1]] [[seltener|adjectives/selten#3]] Anblick mehr.“"
   },
   "6f06f347cf": {
     "text": "Mach halt endlich!",
@@ -1060,11 +1060,129 @@
   },
   "6f0b46e82f": {
     "text": "„Bei einem Abendessen auf dem Balkon kann ein Mann ja wer weiß was erzählen, seine Beziehungstauglichkeit beweist er erst, wenn er bei vierzig Grad Hitze Mofabenzin durch einen Gartenschlauch aus dem Kanister ansaugt und gleichzeitig zuhört, wie die Frau griechische Sagen aus dem Reiseführer vorliest.“",
-    "translation": null,
+    "translation": "At a dinner on the balcony a man can certainly tell all sorts of things, but he only proves his relationship suitability when he sucks petrol for a moped through a garden hose from the canister in forty-degree heat while simultaneously listening to how the woman reads Greek myths from the travel guide.",
     "source": "wiktionary",
     "lemmas": [
       "Reiseführer"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Abendessen",
+        "lemma": "Abendessen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Balkon",
+        "lemma": "Balkon",
+        "pos": "noun",
+        "gloss_hint": "balcony"
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "erzählen",
+        "lemma": "erzählen",
+        "pos": "verb",
+        "gloss_hint": "tell"
+      },
+      {
+        "form": "Beziehungstauglichkeit",
+        "lemma": "Beziehungstauglichkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beweist",
+        "lemma": "beweisen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "vierzig",
+        "lemma": "vierzig",
+        "pos": "numeral",
+        "gloss_hint": "forty"
+      },
+      {
+        "form": "Grad",
+        "lemma": "Grad",
+        "pos": "noun",
+        "gloss_hint": "degree (temperature)"
+      },
+      {
+        "form": "Hitze",
+        "lemma": "Hitze",
+        "pos": "noun",
+        "gloss_hint": "heat"
+      },
+      {
+        "form": "Mofabenzin",
+        "lemma": "Mofabenzin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gartenschlauch",
+        "lemma": "Gartenschlauch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kanister",
+        "lemma": "Kanister",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ansaugt",
+        "lemma": "ansaugen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zuhört",
+        "lemma": "zuhören",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "woman"
+      },
+      {
+        "form": "griechische",
+        "lemma": "griechisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sagen",
+        "lemma": "Sage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reiseführer",
+        "lemma": "Reiseführer",
+        "pos": "noun",
+        "gloss_hint": "travel guide"
+      },
+      {
+        "form": "vorliest",
+        "lemma": "vorlesen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Bei einem [[Abendessen|nouns/Abendessen]] auf dem [[Balkon|nouns/Balkon#1]] kann ein [[Mann|nouns/Mann#5]] ja wer weiß was [[erzählen|verbs/erzählen#1]], seine Beziehungstauglichkeit [[beweist|verbs/beweisen]] er erst, wenn er bei [[vierzig|numerals/vierzig#1]] [[Grad|nouns/Grad_allgemeine#2]] [[Hitze|nouns/Hitze#1]] Mofabenzin durch einen Gartenschlauch aus dem [[Kanister|nouns/Kanister]] ansaugt und gleichzeitig [[zuhört|verbs/zuhören]], wie die [[Frau|nouns/Frau#1]] [[griechische|adjectives/griechisch]] [[Sagen|nouns/Sage]] aus dem [[Reiseführer|nouns/Reiseführer#2]] [[vorliest|verbs/vorlesen]].“"
   },
   "6f0b819623": {
     "text": "jemanden ausziehen",
@@ -3941,7 +4059,7 @@
         "gloss_hint": "lie | be located | depend on"
       }
     ],
-    "text_linked": "„Pathogenetisch [[können|verbs/können_etwas#1]] einer [[Schwellung|nouns/Schwellung]] [[sehr|particles/sehr#1]] [[unterschiedliche|adjectives/unterschiedlich]] [[Erkrankungen|nouns/Erkrankung]] [[zugrunde|adverbs/zugrunde#2]] [[liegen|verbs/liegen#1]], beispielsweise Allergien, Infektionen oder Traumen.“"
+    "text_linked": "„Pathogenetisch [[können|verbs/können_beherrschen]] einer [[Schwellung|nouns/Schwellung]] [[sehr|particles/sehr#1]] [[unterschiedliche|adjectives/unterschiedlich]] [[Erkrankungen|nouns/Erkrankung]] [[zugrunde|adverbs/zugrunde#2]] [[liegen|verbs/liegen#1]], beispielsweise Allergien, Infektionen oder Traumen.“"
   },
   "6f2c76753b": {
     "text": "Räum doch endlich mal den ganzen Krempel weg!",
@@ -4946,7 +5064,7 @@
         "gloss_hint": "repeat"
       }
     ],
-    "text_linked": "„Da [[lehrte|verbs/lehren#1]] [[gleichzeitig|adjectives/gleichzeitig#1]] eine [[Witwe|nouns/Witwe#1]] in Lima ihren [[Papagei|nouns/Papagei#1]] [[das|pronouns/das_nominativ]] [[Wörtchen|nouns/Wörtchen#2]] ‚Caramba‘ [[nachsprechen|verbs/nachsprechen]].“"
+    "text_linked": "„Da [[lehrte|verbs/lehren#1]] [[gleichzeitig|adjectives/gleichzeitig#1]] eine [[Witwe|nouns/Witwe#1]] in Lima ihren [[Papagei|nouns/Papagei#1]] [[das|pronouns/das_nominativ]] [[Wörtchen|nouns/Wörtchen#2]] ‚Caramba‘ nachsprechen.“"
   },
   "6f37c3d0cb": {
     "text": "„›Stellen Sie sich nicht dumm. Junk, H, Horse, verdammt, heroinsüchtig.‹“",
@@ -6435,7 +6553,7 @@
         "gloss_hint": "win"
       }
     ],
-    "text_linked": "„Es [[öffnet|verbs/öffnen]] [[sein|verbs/sein#1]] [[Tor|nouns/Tor_großer#1]] [[zu|prepositions/zu]] [[Ihnen|nouns/Sie_besondere]] [[nur|particles/nur]] [[dann|adverbs/dann]], [[wenn|conjunctions/wenn]] [[Sie|nouns/Sie_besondere]] [[sich|pronouns/sich#2]] zu 100 [[Prozent|nouns/Prozent#1]] [[auf|prepositions/auf]] [[das|pronouns/das_[1]]] [[Hier|adverbs/hier]] [[und|conjunctions/und]] [[Jetzt|adverbs/jetzt]] [[einlassen|verbs/einlassen#5]], und nur dann [[können|verbs/können_etwas#2]] Sie [[es|pronouns/es]] [[für|prepositions/für]] [[die|determiners/die]] [[Kooperation|nouns/Kooperation#1]] [[gewinnen|verbs/gewinnen#4]].“"
+    "text_linked": "„Es [[öffnet|verbs/öffnen]] [[sein|verbs/sein#1]] [[Tor|nouns/Tor_großer#1]] [[zu|prepositions/zu]] [[Ihnen|nouns/Sie_besondere]] [[nur|particles/nur]] [[dann|adverbs/dann]], [[wenn|conjunctions/wenn]] [[Sie|nouns/Sie_besondere]] [[sich|pronouns/sich#2]] zu 100 [[Prozent|nouns/Prozent#1]] [[auf|prepositions/auf]] [[das|pronouns/das_[1]]] [[Hier|adverbs/hier]] [[und|conjunctions/und]] [[Jetzt|adverbs/jetzt]] [[einlassen|verbs/einlassen#5]], und nur dann [[können|verbs/können_beherrschen]] Sie [[es|pronouns/es]] [[für|prepositions/für]] [[die|determiners/die]] [[Kooperation|nouns/Kooperation#1]] [[gewinnen|verbs/gewinnen#4]].“"
   },
   "6f4ab59be7": {
     "text": "den Schnabel halten",
@@ -9367,7 +9485,7 @@
         "gloss_hint": "go"
       }
     ],
-    "text_linked": "Als [[das|pronouns/das_[1]]] [[Kind|nouns/Kind#1]] [[ertrunken|verbs/ertrinken#1]] [[war|verbs/sein]], bemerkte [[der|pronouns/der_nominativ]] [[Mann|nouns/Mann#5]] [[zynisch|adjectives/zynisch]]: „[[Wer|pronouns/wer_derjenige#1]] [[nicht|particles/nicht]] [[schwimmen|verbs/schwimmen#1]] [[kann|verbs/können_beherrschen]], [[sollte|verbs/sollen#4]] nicht [[ins|prepositions/in]] [[tiefe|nouns/Tiefe#1]] [[Wasser|nouns/Wasser#1]] [[gehen|verbs/gehen#4]]“."
+    "text_linked": "Als [[das|pronouns/das_[1]]] [[Kind|nouns/Kind#1]] [[ertrunken|verbs/ertrinken#1]] [[war|verbs/sein]], bemerkte [[der|pronouns/der_nominativ]] [[Mann|nouns/Mann#5]] [[zynisch|adjectives/zynisch]]: „[[Wer|pronouns/wer_derjenige#1]] [[nicht|particles/nicht]] [[schwimmen|verbs/schwimmen#1]] [[kann|verbs/können_etwas#1]], [[sollte|verbs/sollen#4]] nicht [[ins|prepositions/in]] [[tiefe|nouns/Tiefe#1]] [[Wasser|nouns/Wasser#1]] [[gehen|verbs/gehen#4]]“."
   },
   "6f677d130f": {
     "text": "„Er trat ganz nah an das Foto von Carl Peters heran, einem hässlichen Zwerg mit Raubvogelblick, dessen Augen etwas Unerbittliches ausstrahlten.“",
@@ -9699,7 +9817,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Überdies [[wuchs|verbs/wachsen_allmählich]] [[sich|pronouns/sich]] seine [[Berliner|nouns/Berliner_einwohner#1]] Kurzvisite bedrückend [[aus|adverbs/aus#1]], [[sobald|conjunctions/sobald]] er [[in|prepositions/in]] in- [[und|conjunctions/und]] ausländischen [[Zeitungen|nouns/Zeitung#1]] [[Berichte|nouns/Bericht#1]] [[über|prepositions/über#2]] [[Konzentrationslager|nouns/Konzentrationslager#1]] in Oranienburg, Dachau und anderenorts las.“"
+    "text_linked": "„Überdies [[wuchs|verbs/wachsen_allmählich]] [[sich|pronouns/sich]] seine [[Berliner|nouns/Berliner_einwohner#1]] Kurzvisite bedrückend [[aus|adverbs/aus#1]], [[sobald|conjunctions/sobald]] er [[in|prepositions/in]] in- [[und|conjunctions/und]] ausländischen [[Zeitungen|nouns/Zeitung#1]] [[Berichte|nouns/Bericht#1]] [[über|prepositions/über#2]] [[Konzentrationslager|nouns/Konzentrationslager#1]] in Oranienburg, Dachau und anderenorts las.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "f8c1c147"
+    }
   },
   "6f698cf164": {
     "text": "„Demselben ist […] beizustimmen, daß einem überholenden Schiffe nur zur Pflicht gemacht werden kann, das überholte Schiff in einer Entfernung zu passieren, welche die Gefahr einer Collision […] ausschließt.“",
@@ -10563,7 +10685,7 @@
         "gloss_hint": "sculpture"
       }
     ],
-    "text_linked": "Mit Hilfe [[von|prepositions/von]] [[Spots|nouns/Spot]] [[können|verbs/können_etwas#2]] sie [[etwas|pronouns/etwas#1]] [[besonders|adverbs/besonders#3]] [[in|prepositions/in]] [[Szene|nouns/Szene#2]] [[setzen|verbs/setzen#6]], [[z.B.|abbreviations/z.B.]] [[ein|determiners/ein]] [[Gemälde|nouns/Gemälde#1]] oder [[eine|determiners/eine]] [[Skulptur|nouns/Skulptur#1]] anstrahlen."
+    "text_linked": "Mit Hilfe [[von|prepositions/von]] [[Spots|nouns/Spot]] [[können|verbs/können_beherrschen]] sie [[etwas|pronouns/etwas#1]] [[besonders|adverbs/besonders#3]] [[in|prepositions/in]] [[Szene|nouns/Szene#2]] [[setzen|verbs/setzen#6]], [[z.B.|abbreviations/z.B.]] [[ein|determiners/ein]] [[Gemälde|nouns/Gemälde#1]] oder [[eine|determiners/eine]] [[Skulptur|nouns/Skulptur#1]] anstrahlen."
   },
   "6f6e505db3": {
     "text": "„Wieso kommen noch immer jährlich dutzende Menschen zum Sommerhaus von Heidegger?“",
@@ -10645,11 +10767,87 @@
   },
   "6f709182d5": {
     "text": "„Wie auch anhand der deutschen Bezeichnung ‚Hauptwort‘ und ‚Dingwort‘ ersichtlich, gelten solche Wörter als Substantive, die Vorstellungen oder Begriffe von Dingen bzw. Gegenständen benennen.“",
-    "translation": null,
+    "translation": "As can also be seen from the German terms 'Hauptwort' and 'Dingwort', words that name ideas or concepts of things or objects are considered substantives.",
     "source": "wiktionary",
     "lemmas": [
       "Substantiv"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bezeichnung",
+        "lemma": "Bezeichnung",
+        "pos": "noun",
+        "gloss_hint": "term"
+      },
+      {
+        "form": "Hauptwort",
+        "lemma": "Hauptwort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dingwort",
+        "lemma": "Dingwort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ersichtlich",
+        "lemma": "ersichtlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wörter",
+        "lemma": "Wort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Substantive",
+        "lemma": "Substantiv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorstellungen",
+        "lemma": "Vorstellung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Begriffe",
+        "lemma": "Begriff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dingen",
+        "lemma": "Ding",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gegenständen",
+        "lemma": "Gegenstand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "benennen",
+        "lemma": "benennen",
+        "pos": "verb",
+        "gloss_hint": "name"
+      },
+      {
+        "form": "gelten",
+        "lemma": "gelten",
+        "pos": "verb",
+        "gloss_hint": "be regarded as"
+      }
+    ],
+    "text_linked": "„Wie auch anhand der deutschen [[Bezeichnung|nouns/Bezeichnung#2]] ‚Hauptwort‘ und ‚Dingwort‘ ersichtlich, [[gelten|verbs/gelten#3]] solche [[Wörter|nouns/Wort_kleinste]] als [[Substantive|nouns/Substantiv]], die [[Vorstellungen|nouns/Vorstellung]] oder [[Begriffe|nouns/Begriff]] von [[Dingen|nouns/Ding_gegenstand]] bzw. [[Gegenständen|nouns/Gegenstand]] [[benennen|verbs/benennen#1]].“"
   },
   "6f70b93130": {
     "text": "„Außerehelicher Geschlechtsverkehr zwischen »Juden und Staatsangehörigen deutschen oder artverwandten Blutes« ist ebenfalls verboten und kann mit Gefängnis oder Zuchthaus bestraft werden.“",
@@ -11702,7 +11900,7 @@
         "gloss_hint": "mature"
       }
     ],
-    "text_linked": "„Während Brötchen meist [[spätestens|adverbs/spätestens]] eineinhalb [[Stunden|nouns/Stunde#1]] [[nach|prepositions/nach]] [[dem|determiners/der]] [[Anrühren|verbs/anrühren#3]] [[des|determiners/der]] [[Teiges|nouns/Teig#1]] [[in|prepositions/in]] [[den|determiners/der]] [[Ofen|nouns/Ofen#1]] [[gelangen|verbs/gelangen#1]], bleibt [[der|determiners/der]] [[Bagel|nouns/Bagel]] [[bis|particles/bis]] [[zu|prepositions/zu]] 24 Stunden [[im|prepositions/in]] [[sieben|numerals/sieben#1]] [[Grad|nouns/Grad_allgemeine#1]] [[kühlen|verbs/kühlen#1]] Reiferaum. […] Weitere Besonderheit: [[Unmittelbar|adjectives/unmittelbar#2]] [[vor|prepositions/vor]] dem [[Backen|verbs/backen_im#1]] [[wird|verbs/werden#1]] der Bagel [[kurz|adjectives/kurz#1]] [[gekocht|verbs/kochen#3]], [[um|prepositions/um]] [[die|determiners/die]] Hefe zu [[aktivieren|verbs/aktivieren#1]]. […] [[Um|prepositions/um]] die [[Ursprünge|nouns/Ursprung#1]] des [[Bagels|nouns/Bagel#1]] [[ranken|verbs/ranken]] [[sich|pronouns/sich#1]] [[Legenden|nouns/Legende#2]]. […] [[Fest|adjectives/fest]] [[steht|verbs/stehen]], [[dass|conjunctions/dass]] der Bagel der [[jüdischen|adjectives/jüdisch#1]] [[Küche|nouns/Küche#2]] [[entstammt|verbs/entstammen]], der er [[große|adjectives/groß]] [[Vorteile|nouns/Vorteil#1]] [[bot|verbs/bieten#1]]. Am Schabbat [[konnte|verbs/können_beherrschen]] der Bagel in [[Ruhe|nouns/Ruhe#1]] reifen.“"
+    "text_linked": "„Während Brötchen meist [[spätestens|adverbs/spätestens]] eineinhalb [[Stunden|nouns/Stunde#1]] [[nach|prepositions/nach]] [[dem|determiners/der]] [[Anrühren|verbs/anrühren#3]] [[des|determiners/der]] [[Teiges|nouns/Teig#1]] [[in|prepositions/in]] [[den|determiners/der]] [[Ofen|nouns/Ofen#1]] [[gelangen|verbs/gelangen#1]], bleibt [[der|determiners/der]] [[Bagel|nouns/Bagel]] [[bis|particles/bis]] [[zu|prepositions/zu]] 24 Stunden [[im|prepositions/in]] [[sieben|numerals/sieben#1]] [[Grad|nouns/Grad_allgemeine#1]] [[kühlen|verbs/kühlen#1]] Reiferaum. […] Weitere Besonderheit: [[Unmittelbar|adjectives/unmittelbar#2]] [[vor|prepositions/vor]] dem [[Backen|verbs/backen_im#1]] [[wird|verbs/werden#1]] der Bagel [[kurz|adjectives/kurz#1]] [[gekocht|verbs/kochen#3]], [[um|prepositions/um]] [[die|determiners/die]] Hefe zu [[aktivieren|verbs/aktivieren#1]]. […] [[Um|prepositions/um]] die [[Ursprünge|nouns/Ursprung#1]] des [[Bagels|nouns/Bagel#1]] ranken [[sich|pronouns/sich#1]] [[Legenden|nouns/Legende#2]]. […] [[Fest|adjectives/fest]] [[steht|verbs/stehen]], [[dass|conjunctions/dass]] der Bagel der [[jüdischen|adjectives/jüdisch#1]] [[Küche|nouns/Küche#2]] [[entstammt|verbs/entstammen#1]], der er [[große|adjectives/groß]] [[Vorteile|nouns/Vorteil#1]] [[bot|verbs/bieten#1]]. Am Schabbat [[konnte|verbs/können_beherrschen]] der Bagel in [[Ruhe|nouns/Ruhe#1]] reifen.“"
   },
   "6f74ed30f5": {
     "text": "„Lockhart redete den Kommandanten freilich nicht nur im Dienst, sondern auch unter vier Augen stets mit »Sir« an, weil das seiner Achtung vor Ericson entsprach.“",
@@ -17250,7 +17448,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Die [[Reihe|nouns/Reihe#3]] ist ein [[Teil|nouns/Teil_element#2]] der [[klassischen|adjectives/klassisch#1]] Systematik."
+    "text_linked": "Die [[Reihe|nouns/Reihe#3]] ist ein [[Teil|nouns/Teil_stück#2]] der [[klassischen|adjectives/klassisch#1]] Systematik."
   },
   "6fb60e9a88": {
     "text": "Auch das Wurzelziehen ist mit Hilfe eines Abakus möglich.",
@@ -17371,7 +17569,7 @@
         "gloss_hint": "aroused"
       }
     ],
-    "text_linked": "„Ein [[Teil|nouns/Teil_element#2]] seiner [[Überlegungen|nouns/Überlegung#1]] betrifft das [[Thema|nouns/Thema#1]], das Goethe mit der Titelmetapher bezeichnet, das Überkreuzlieben des handelnden Quartetts, das [[allgemein|adjectives/allgemein#1]] [[Anstoß|nouns/Anstoß#3]] [[erregt|adjectives/erregt#3]].“"
+    "text_linked": "„Ein [[Teil|nouns/Teil_stück#2]] seiner [[Überlegungen|nouns/Überlegung#1]] betrifft das [[Thema|nouns/Thema#1]], das Goethe mit der Titelmetapher bezeichnet, das Überkreuzlieben des handelnden Quartetts, das [[allgemein|adjectives/allgemein#1]] [[Anstoß|nouns/Anstoß#3]] [[erregt|adjectives/erregt#3]].“"
   },
   "6fb68754b1": {
     "text": "„Als Verkehrsteilnehmer muß das Kind einen Teil seiner Kindlichkeit ablegen.“",
@@ -22174,7 +22372,7 @@
         "gloss_hint": "missed"
       }
     ],
-    "text_linked": "„[[Eigentlich|adverbs/eigentlich#2]] [[ist|verbs/sein#2]] [[es|pronouns/es]] keine [[Schwierigkeit|nouns/Schwierigkeit#1]], [[einen|determiners/ein]] [[Elfmeter|nouns/Elfmeter#1]] [[zu|particles/zu_drückt]] [[verwandeln|verbs/verwandeln#1]]. [[Aber|conjunctions/aber#1]] [[selbst|pronouns/selbst#1]] [[die|determiners/die]] [[besten|adjectives/gut]] [[Fußballer|nouns/Fußballer#1]] [[der|determiners/der]] [[Welt|nouns/Welt#3]] [[haben|verbs/haben#1]] [[schon|adverbs/schon#1]] Elfer [[verschossen|verbs/verschießen]].“"
+    "text_linked": "„[[Eigentlich|adverbs/eigentlich#2]] [[ist|verbs/sein#2]] [[es|pronouns/es]] keine [[Schwierigkeit|nouns/Schwierigkeit#1]], [[einen|determiners/ein]] [[Elfmeter|nouns/Elfmeter#1]] [[zu|particles/zu_drückt]] [[verwandeln|verbs/verwandeln#1]]. [[Aber|conjunctions/aber#1]] [[selbst|pronouns/selbst#1]] [[die|determiners/die]] [[besten|adjectives/gut]] [[Fußballer|nouns/Fußballer#1]] [[der|determiners/der]] [[Welt|nouns/Welt#3]] [[haben|verbs/haben#1]] [[schon|adverbs/schon#1]] Elfer verschossen.“"
   },
   "6fe8810d3a": {
     "text": "„Ein Forscher ist im Dschungel von Wilden entführt und an einen Baum gefesselt worden.“",

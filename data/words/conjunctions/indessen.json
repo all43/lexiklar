@@ -5,25 +5,31 @@
   "senses": [
     {
       "gloss": "leitet einen temporalen Gliedsatz ein, der die Gleichzeitigkeit angibt",
-      "gloss_en": null,
+      "gloss_en": "while",
       "tags": [],
       "example_ids": [
         "09a4159c27",
         "55cc95465f"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "Introduces a temporal subordinate clause indicating simultaneity.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "leitet einen modalen Gliedsatz ein, der den Gegensatz angibt",
-      "gloss_en": null,
+      "gloss_en": "whereas",
       "tags": [],
       "example_ids": [
         "845c986fc9",
         "3b9fa49a64"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "Introduces a modal subordinate clause indicating contrast.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
   ],
   "sounds": [
@@ -35,5 +41,9 @@
   "_meta": {
     "source_hash": "23b2ac8fc22cb9ad",
     "generated_at": "2026-03-19"
+  },
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
   }
 }

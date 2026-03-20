@@ -1855,7 +1855,7 @@
         "gloss_hint": "look up"
       }
     ],
-    "text_linked": "Manche Leute [[haben|verbs/haben#2]] [[ein|determiners/ein]] gutes [[Gedächtnis|nouns/Gedächtnis#1]]. Die [[können|verbs/können_etwas#2]] [[aus|prepositions/aus#1]] [[dem|determiners/der]] [[Kopf|nouns/Kopf#1]] [[zitieren|verbs/zitieren#1]]. Andere haben ein [[schlechtes|adjectives/schlecht]] Gedächtnis. Die [[müssen|verbs/müssen#1]] [[nachschlagen|verbs/nachschlagen]]."
+    "text_linked": "Manche Leute [[haben|verbs/haben#2]] [[ein|determiners/ein]] gutes [[Gedächtnis|nouns/Gedächtnis#1]]. Die [[können|verbs/können_beherrschen]] [[aus|prepositions/aus#1]] [[dem|determiners/der]] [[Kopf|nouns/Kopf#1]] [[zitieren|verbs/zitieren#1]]. Andere haben ein [[schlechtes|adjectives/schlecht]] Gedächtnis. Die [[müssen|verbs/müssen#1]] [[nachschlagen|verbs/nachschlagen]]."
   },
   "230c4b75ea": {
     "text": "Der Optiker konnte den gebrochenen Steg an meiner Brille sofort reparieren.",
@@ -3952,12 +3952,52 @@
   },
   "231dbc803e": {
     "text": "„Der Genitiv ist auf vielen Feldern auf dem Rückzug und wird durch den Dativ ersetzt.“",
-    "translation": null,
+    "translation": "The genitive is in retreat in many fields and is being replaced by the dative.",
     "source": "wiktionary",
     "lemmas": [
       "Dativ",
       "Genitiv"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Genitiv",
+        "lemma": "Genitiv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vielen",
+        "lemma": "viel",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Feldern",
+        "lemma": "Feld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rückzug",
+        "lemma": "Rückzug",
+        "pos": "noun",
+        "gloss_hint": "retreat"
+      },
+      {
+        "form": "Dativ",
+        "lemma": "Dativ",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ersetzt",
+        "lemma": "ersetzen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Der [[Genitiv|nouns/Genitiv]] ist auf vielen [[Feldern|nouns/Feld_acker]] auf dem [[Rückzug|nouns/Rückzug#2]] und wird durch den [[Dativ|nouns/Dativ]] [[ersetzt|verbs/ersetzen]].“"
   },
   "231e167849": {
     "text": "„Als die Tür sich hinter dir schloß und ich allein blieb, wußte ich plötzlich, daß ich dich liebte und daß diese trennende Wand zwischen uns geschwunden war.“",
@@ -7430,7 +7470,7 @@
         "gloss_hint": "decipher"
       }
     ],
-    "text_linked": "„[[Menschen|nouns/Mensch_lebewesen#1]], die [[geistig|adjectives/geistig#1]], seelisch und [[körperlich|adjectives/körperlich#1]] verbunden [[waren|verbs/sein#2]], [[mußten|verbs/müssen]] die [[Zeichen|nouns/Zeichen#7]] [[dieser|pronouns/dieser#1]] [[alten|adjectives/alt#1]] [[Gemeinschaft|nouns/Gemeinschaft#1]] [[in|prepositions/in]] den Druckbuchstaben [[einer|pronouns/ein#1]] Depesche [[von|prepositions/von]] [[zehn|numerals/zehn#1]] [[Worten|nouns/Wort_kleinste#1]] [[zusammensuchen|verbs/zusammensuchen]].“"
+    "text_linked": "„[[Menschen|nouns/Mensch_lebewesen#1]], die [[geistig|adjectives/geistig#1]], seelisch und [[körperlich|adjectives/körperlich#1]] verbunden [[waren|verbs/sein#2]], [[mußten|verbs/müssen]] die [[Zeichen|nouns/Zeichen#7]] [[dieser|pronouns/dieser#1]] [[alten|adjectives/alt#1]] [[Gemeinschaft|nouns/Gemeinschaft#1]] [[in|prepositions/in]] den Druckbuchstaben [[einer|pronouns/ein#1]] Depesche [[von|prepositions/von]] [[zehn|numerals/zehn#1]] [[Worten|nouns/Wort_kleinste#1]] zusammensuchen.“"
   },
   "233d6e84f4": {
     "text": "„Feinzart, unmerklich ist ihr Zauber, den dennoch jeder Empfindende an sich erfährt.“",
@@ -8975,7 +9015,7 @@
         "gloss_hint": "patriot"
       }
     ],
-    "text_linked": "„[[Aber|conjunctions/aber]] ungeachtet [[seiner|pronouns/sein#1]] misslungenen [[Beziehungen|nouns/Beziehung#1]] [[mit|prepositions/mit#1]] Langley [[ist|verbs/sein#1]] [[Gray|nouns/Gray]] Man [[immer|adverbs/immer]] [[noch|adverbs/noch#2]] [[ein|determiners/ein#1]] [[echter|adjectives/echt#1]] [[Patriot|nouns/Patriot#1]].“"
+    "text_linked": "„[[Aber|conjunctions/aber]] [[ungeachtet|postpositions/ungeachtet]] [[seiner|pronouns/sein#1]] misslungenen [[Beziehungen|nouns/Beziehung#1]] [[mit|prepositions/mit#1]] Langley [[ist|verbs/sein#1]] [[Gray|nouns/Gray]] Man [[immer|adverbs/immer]] [[noch|adverbs/noch#2]] [[ein|determiners/ein#1]] [[echter|adjectives/echt#1]] [[Patriot|nouns/Patriot#1]].“"
   },
   "23529dc799": {
     "text": "Sein Lebensweg war voll(er) Dornen.",
@@ -10954,7 +10994,7 @@
         "gloss_hint": "become"
       }
     ],
-    "text_linked": "In SQL-Statements [[können|verbs/können_etwas#1]] Aliasse für Tabellen- und Feldnamen [[vergeben|verbs/vergeben_etwas#1]] [[werden|verbs/werden#1]]."
+    "text_linked": "In SQL-Statements [[können|verbs/können_beherrschen]] Aliasse für Tabellen- und Feldnamen [[vergeben|verbs/vergeben_etwas#1]] [[werden|verbs/werden#1]]."
   },
   "235f374a46": {
     "text": "Obwohl man viele Schmerzmittel rezeptfrei bekommt, sind diese keineswegs harmlos.",
@@ -11807,7 +11847,7 @@
         "gloss_hint": "Testament"
       }
     ],
-    "text_linked": "„[[Hier|adverbs/hier]] [[schuf|verbs/schaffen_etwas]] [[der|pronouns/der_nominativ]] Reformator [[sein|verbs/sein#2]] sprachliches [[Meisterwerk|nouns/Meisterwerk#1]], [[das|pronouns/das_[1]]] [[neben|prepositions/neben#1]] der [[großen|adjectives/groß]] theologischen [[Bedeutung|nouns/Bedeutung#1]], [[die|pronouns/die]] ihm [[zukommt|verbs/zukommen#3]], [[auch|adverbs/auch#1]] die [[deutsche|adjectives/deutsch#1]] [[Sprache|nouns/Sprache#1]] [[und|conjunctions/und#1]] ihre [[Entwicklung|nouns/Entwicklung#1]] [[stark|adjectives/stark#1]] [[beeinflusst|verbs/beeinflussen#1]] [[hat|verbs/haben#1]]: die [[Übersetzung|nouns/Übersetzung#1]] [[des|determiners/des]] [[Neunen|nouns/Neun]] [[Testaments|nouns/Testament#2]].“"
+    "text_linked": "„[[Hier|adverbs/hier]] [[schuf|verbs/schaffen_etwas#1]] [[der|pronouns/der_nominativ]] Reformator [[sein|verbs/sein#2]] sprachliches [[Meisterwerk|nouns/Meisterwerk#1]], [[das|pronouns/das_[1]]] [[neben|prepositions/neben#1]] der [[großen|adjectives/groß]] theologischen [[Bedeutung|nouns/Bedeutung#1]], [[die|pronouns/die]] ihm [[zukommt|verbs/zukommen#3]], [[auch|adverbs/auch#1]] die [[deutsche|adjectives/deutsch#1]] [[Sprache|nouns/Sprache#1]] [[und|conjunctions/und#1]] ihre [[Entwicklung|nouns/Entwicklung#1]] [[stark|adjectives/stark#1]] [[beeinflusst|verbs/beeinflussen#1]] [[hat|verbs/haben#1]]: die [[Übersetzung|nouns/Übersetzung#1]] [[des|determiners/des]] [[Neunen|nouns/Neun]] [[Testaments|nouns/Testament#2]].“"
   },
   "23651cccdc": {
     "text": "„Die anderen Häftlinge starrten ihn mit eisiger Miene an.“",
@@ -14389,11 +14429,51 @@
   },
   "237e01614d": {
     "text": "„Deshalb verringert Konjugation oder Hinzufügen einer Hydroxylgruppe die passive Resorption.“",
-    "translation": null,
+    "translation": "Therefore, conjugation or addition of a hydroxyl group reduces passive resorption.",
     "source": "wiktionary",
     "lemmas": [
       "Konjugation"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Konjugation",
+        "lemma": "Konjugation",
+        "pos": "noun",
+        "gloss_hint": "conjugation"
+      },
+      {
+        "form": "Hinzufügen",
+        "lemma": "hinzufügen",
+        "pos": "verb",
+        "gloss_hint": "add"
+      },
+      {
+        "form": "Hydroxylgruppe",
+        "lemma": "Hydroxylgruppe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verringert",
+        "lemma": "verringern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "passive",
+        "lemma": "passiv",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Resorption",
+        "lemma": "Resorption",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Deshalb [[verringert|verbs/verringern]] [[Konjugation|nouns/Konjugation#1]] oder [[Hinzufügen|verbs/hinzufügen#1]] einer Hydroxylgruppe die passive Resorption.“"
   },
   "237e5d755a": {
     "text": "„Sie überlassen den Wettbewerb den Amateuren.“",
@@ -15211,7 +15291,7 @@
         "gloss_hint": "become / happen (future) / auxiliary (future/passive) / arise"
       }
     ],
-    "text_linked": "[[Die|pronouns/die]] Flüchtlingskrise [[kann|verbs/können_beherrschen]] [[als|conjunctions/als]] heißes Eisen [[bezeichnet|verbs/bezeichnen]] [[werden|verbs/werden]]."
+    "text_linked": "[[Die|pronouns/die]] Flüchtlingskrise [[kann|verbs/können_etwas#1]] [[als|conjunctions/als]] heißes Eisen [[bezeichnet|verbs/bezeichnen]] [[werden|verbs/werden]]."
   },
   "23849b3202": {
     "text": "„Der Herrenmensch von heute besitzt Waschmaschine und Elektronengehirn.“",
@@ -15804,7 +15884,7 @@
         "gloss_hint": "forbidden"
       }
     ],
-    "text_linked": "Die Disziplinarvorschriften [[für|prepositions/für]] [[Schüler|nouns/Schüler#1]] [[der|pronouns/der_nominativ]] [[Gymnasien|nouns/Gymnasium#1]] [[im|prepositions/in]] Großherzogtum Hessen [[besagten|verbs/besagen]] unmissverständlich: \"Trinkgelage, namentlich [[auch|adverbs/auch]] [[in|prepositions/in]] Privatwohnungen, [[und|conjunctions/und]] lärmende [[Zusammenkünfte|nouns/Zusammenkunft]] [[sind|verbs/sein#2]] allen Gymnasiasten [[verboten|adjectives/verboten#1]]."
+    "text_linked": "Die Disziplinarvorschriften [[für|prepositions/für]] [[Schüler|nouns/Schüler#1]] [[der|pronouns/der_nominativ]] [[Gymnasien|nouns/Gymnasium#1]] [[im|prepositions/in]] Großherzogtum Hessen [[besagten|verbs/besagen]] unmissverständlich: \"Trinkgelage, [[namentlich|adverbs/namentlich#1]] [[auch|adverbs/auch]] [[in|prepositions/in]] Privatwohnungen, [[und|conjunctions/und]] lärmende [[Zusammenkünfte|nouns/Zusammenkunft]] [[sind|verbs/sein#2]] allen Gymnasiasten [[verboten|adjectives/verboten#1]]."
   },
   "2389ec79b5": {
     "text": "Von Norddeutschland aus ist der Wolf nicht zu sehen.",
@@ -24222,7 +24302,7 @@
     "lemmas": [
       "ängstlich"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "nicht",
@@ -25448,7 +25528,7 @@
         "gloss_hint": "law"
       }
     ],
-    "text_linked": "„Die Stadtwerke-M GmbH [[könnte|verbs/können_beherrschen]] [[öffentliche|adjectives/öffentlich#1]] [[Auftraggeberin|nouns/Auftraggeberin#1]] [[nach|prepositions/nach#4]] § 98 Nr 4 GWB sein. Als GmbH [[ist|verbs/sein#1]] sie juristische [[Person|nouns/Person#1]] [[des|determiners/der]] [[privaten|adjectives/privat#1]] [[Rechts|nouns/Recht#1]].“"
+    "text_linked": "„Die Stadtwerke-M GmbH [[könnte|verbs/können_etwas#1]] [[öffentliche|adjectives/öffentlich#1]] [[Auftraggeberin|nouns/Auftraggeberin#1]] [[nach|prepositions/nach#4]] § 98 Nr 4 GWB sein. Als GmbH [[ist|verbs/sein#1]] sie juristische [[Person|nouns/Person#1]] [[des|determiners/der]] [[privaten|adjectives/privat#1]] [[Rechts|nouns/Recht#1]].“"
   },
   "23f12aaea0": {
     "text": "Schon wieder eine dieser grünen Wanzen, die so stinken!",

@@ -1212,7 +1212,7 @@
         "gloss_hint": "be regarded as"
       }
     ],
-    "text_linked": "„[[Weißt|verbs/wissen#1]] [[du|pronouns/du]], Christiane, [[Zeit|nouns/Zeit#1]] [[haben|verbs/haben#1]] [[wir|pronouns/wir]] ja, wir [[könnten|verbs/können_beherrschen]] [[uns|pronouns/uns#2]] [[hier|adverbs/hier#1]] [[acht|numerals/acht#1]] oder [[zehn|numerals/zehn#1]] [[Tage|nouns/Tag_zeitraum#1]] [[in|prepositions/in]] [[die|determiners/die]] [[Wüste|nouns/Wüste#1]] [[setzen|verbs/setzen#2]] [[und|conjunctions/und]] [[als|conjunctions/als#6]] [[verschollen|adjectives/verschollen]] [[gelten|verbs/gelten#3]].“"
+    "text_linked": "„[[Weißt|verbs/wissen#1]] [[du|pronouns/du]], Christiane, [[Zeit|nouns/Zeit#1]] [[haben|verbs/haben#1]] [[wir|pronouns/wir]] ja, wir [[könnten|verbs/können_etwas#1]] [[uns|pronouns/uns#2]] [[hier|adverbs/hier#1]] [[acht|numerals/acht#1]] oder [[zehn|numerals/zehn#1]] [[Tage|nouns/Tag_zeitraum#1]] [[in|prepositions/in]] [[die|determiners/die]] [[Wüste|nouns/Wüste#1]] [[setzen|verbs/setzen#2]] [[und|conjunctions/und]] [[als|conjunctions/als#6]] [[verschollen|adjectives/verschollen]] [[gelten|verbs/gelten#3]].“"
   },
   "8206772c01": {
     "text": "„Selig sind, die da hungert und dürstet nach der Gerechtigkeit; denn sie sollen satt werden.“[aus den Seligpreisungen der Bergpredigt]",
@@ -2935,11 +2935,39 @@
   },
   "821adea6ad": {
     "text": "Der Pfad führt zur Quelle des Flusses.",
-    "translation": null,
+    "translation": "The path leads to the source of the river.",
     "source": "wiktionary",
     "lemmas": [
       "zur"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Pfad",
+        "lemma": "Pfad",
+        "pos": "noun",
+        "gloss_hint": "path"
+      },
+      {
+        "form": "führt",
+        "lemma": "führen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Quelle",
+        "lemma": "Quelle",
+        "pos": "noun",
+        "gloss_hint": "source"
+      },
+      {
+        "form": "Flusses",
+        "lemma": "Fluss",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Der [[Pfad|nouns/Pfad#2]] [[führt|verbs/führen]] zur [[Quelle|nouns/Quelle#3]] des [[Flusses|nouns/Fluss]]."
   },
   "821b498e78": {
     "text": "Ich habe in Sachsen-Anhalt meinen Urlaub verbracht.",
@@ -7515,7 +7543,7 @@
         "gloss_hint": "buy"
       }
     ],
-    "text_linked": "„Die [[Frau|nouns/Frau#1]] [[erlaubte|verbs/erlauben#1]] [[uns|pronouns/uns#2]], [[einen|pronouns/ein#1]] [[Schuppen|nouns/Schuppen_dativ#1]] [[zu|particles/zu_drückt]] [[nutzen|verbs/nutzen#1]], [[und|conjunctions/und]] [[willigte|verbs/willigen]] [[ein|pronouns/ein#1]], [[den|determiners/der]] [[Proviant|nouns/Proviant]] zu [[kaufen|verbs/kaufen#1]].“"
+    "text_linked": "„Die [[Frau|nouns/Frau#1]] [[erlaubte|verbs/erlauben#1]] [[uns|pronouns/uns#2]], [[einen|pronouns/ein#1]] [[Schuppen|nouns/Schuppen_dativ#1]] [[zu|particles/zu_drückt]] [[nutzen|verbs/nutzen#1]], [[und|conjunctions/und]] willigte [[ein|pronouns/ein#1]], [[den|determiners/der]] [[Proviant|nouns/Proviant]] zu [[kaufen|verbs/kaufen#1]].“"
   },
   "824a0f0ce5": {
     "text": "„Und weil dr Herr Dokter wagn meiner Lung auf täglich frische Luft bestieht und es mei Schwaster a net in ihrer Plattenbaubud hält, sei mir ahm spaziern gange.““",
@@ -7695,7 +7723,7 @@
         "gloss_hint": "go"
       }
     ],
-    "text_linked": "„[[Und|conjunctions/und]] [[weil|conjunctions/weil_konjunktion]] [[dr|determiners/der]] [[Herr|nouns/Herr#1]] [[Dokter|nouns/Doktor#1]] [[wagn|verbs/wägen]] [[meiner|pronouns/mein]] [[Lung|nouns/Lunge_organ#1]] [[auf|prepositions/auf#1]] [[täglich|adjectives/täglich]] [[frische|adjectives/frisch]] [[Luft|nouns/Luft_überwiegend#1]] [[bestieht|verbs/bestehen#3]] [[und|conjunctions/und]] [[es|pronouns/es]] [[mei|pronouns/mein]] [[Schwaster|nouns/Schwester#1]] a net [[in|prepositions/in]] [[ihrer|pronouns/ihr_person]] Plattenbaubud [[hält|verbs/halten]], [[sei|verbs/sein#2]] [[mir|pronouns/mir_dativ#1]] [[ahm|pronouns/ich]] [[spaziern|verbs/spazieren#1]] [[gange|verbs/gehen#4]].““"
+    "text_linked": "„[[Und|conjunctions/und]] [[weil|conjunctions/weil_konjunktion]] [[dr|determiners/der]] [[Herr|nouns/Herr#1]] [[Dokter|nouns/Doktor#1]] wagn [[meiner|pronouns/mein]] [[Lung|nouns/Lunge_organ#1]] [[auf|prepositions/auf#1]] [[täglich|adjectives/täglich]] [[frische|adjectives/frisch]] [[Luft|nouns/Luft_überwiegend#1]] [[bestieht|verbs/bestehen#3]] [[und|conjunctions/und]] [[es|pronouns/es]] [[mei|pronouns/mein]] [[Schwaster|nouns/Schwester#1]] a net [[in|prepositions/in]] [[ihrer|pronouns/ihr_person]] Plattenbaubud [[hält|verbs/halten]], [[sei|verbs/sein#2]] [[mir|pronouns/mir_dativ#1]] [[ahm|pronouns/ich]] [[spaziern|verbs/spazieren#1]] [[gange|verbs/gehen#4]].““"
   },
   "824a5096e9": {
     "text": "„Beim Bordeaux bedenkt, beim Burgunder bespricht, bei Champagner begeht man Torheiten!“",
@@ -8018,7 +8046,7 @@
         "gloss_hint": "arranged"
       }
     ],
-    "text_linked": "„[[Trotzdem|adverbs/trotzdem]] [[mauserte|verbs/mausern]] er [[sich|pronouns/sich]] [[zum|prepositions/zu]] [[wohl|adverbs/wohl]] [[fähigsten|adjectives/fähig]] [[und|conjunctions/und]] [[erfolgreichsten|adjectives/erfolgreich#1]] [[Attentäter|nouns/Attentäter#1]] [[der|determiners/der]] [[Welt|nouns/Welt#3]], ganz [[gleich|adjectives/gleich#1]] [[ob|conjunctions/ob]] [[man|pronouns/man]] Morde [[im|prepositions/in]] [[Auftrag|nouns/Auftrag#1]] [[von|prepositions/von]] Regierungen [[betrachtete|verbs/betrachten#3]] oder [[auf|prepositions/auf]] [[dem|determiners/der]] [[freien|adjectives/frei#1]] [[Markt|nouns/Markt#1]] [[vermittelte|verbs/vermitteln]].“"
+    "text_linked": "„[[Trotzdem|adverbs/trotzdem]] mauserte er [[sich|pronouns/sich]] [[zum|prepositions/zu]] [[wohl|adverbs/wohl]] [[fähigsten|adjectives/fähig]] [[und|conjunctions/und]] [[erfolgreichsten|adjectives/erfolgreich#1]] [[Attentäter|nouns/Attentäter#1]] [[der|determiners/der]] [[Welt|nouns/Welt#3]], ganz [[gleich|adjectives/gleich#1]] [[ob|conjunctions/ob]] [[man|pronouns/man]] Morde [[im|prepositions/in]] [[Auftrag|nouns/Auftrag#1]] [[von|prepositions/von]] Regierungen [[betrachtete|verbs/betrachten#3]] oder [[auf|prepositions/auf]] [[dem|determiners/der]] [[freien|adjectives/frei#1]] [[Markt|nouns/Markt#1]] [[vermittelte|verbs/vermitteln]].“"
   },
   "824ca40450": {
     "text": "„Ravic drückte die Arterie ab.“",
@@ -8335,7 +8363,7 @@
         "gloss_hint": "laugh"
       }
     ],
-    "text_linked": "„Das war [[Quatsch|nouns/Quatsch#1]], denn [[überall|adverbs/überall]] im [[Kino|nouns/Kino#1]] [[wurde|verbs/werden#1]] [[getuschelt|verbs/tuscheln]], [[gejohlt|verbs/johlen]] [[und|conjunctions/und]] [[geraschelt|verbs/rascheln#1]], [[außerdem|adverbs/außerdem]] [[stank|verbs/stinken#3]] [[es|pronouns/es]] [[nach|prepositions/nach#1]] [[Hasch|nouns/Hasch_dem#1]] und es wurde [[viel|adverbs/viel#1]] und [[an|prepositions/an#2]] [[den|determiners/der]] [[falschen|adjectives/falsch#1]] [[Stellen|nouns/Stelle]] [[gelacht|verbs/lachen#1]].“"
+    "text_linked": "„Das war [[Quatsch|nouns/Quatsch#1]], denn [[überall|adverbs/überall]] im [[Kino|nouns/Kino#1]] [[wurde|verbs/werden#1]] [[getuschelt|verbs/tuscheln#1]], gejohlt [[und|conjunctions/und]] [[geraschelt|verbs/rascheln#1]], [[außerdem|adverbs/außerdem]] [[stank|verbs/stinken#3]] [[es|pronouns/es]] [[nach|prepositions/nach#1]] [[Hasch|nouns/Hasch_dem#1]] und es wurde [[viel|adverbs/viel#1]] und [[an|prepositions/an#2]] [[den|determiners/der]] [[falschen|adjectives/falsch#1]] [[Stellen|nouns/Stelle]] [[gelacht|verbs/lachen#1]].“"
   },
   "824f967744": {
     "text": "Morgen beginne ich mit der Therapie.",
@@ -8845,7 +8873,7 @@
     "lemmas": [
       "umziehen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "claude-sonnet-4-6"
   },
   "8253d884d3": {
     "text": "„Abu Hassan liegt auf einer Bank im Innenhof eines zerstörten Wohnhauses. Seine Wangen sind eingefallen, sein Gesicht ist blass, der Blick leer.“",
@@ -9929,7 +9957,7 @@
         "gloss_hint": "result from"
       }
     ],
-    "text_linked": "«Zwar [[wird|verbs/werden]] [[in|prepositions/in]] Bagdad tagaus, tagein [[über|prepositions/über#2]] nichts anderes [[gesprochen|verbs/sprechen#1]] [[als|conjunctions/als]] [[den|determiners/der]] [[Krieg|nouns/Krieg#1]], [[aber|conjunctions/aber]] viele [[können|verbs/können_etwas#2]] [[sich|pronouns/sich#1]] [[einfach|adjectives/einfach#5]] [[nicht|particles/nicht#1]] [[vorstellen|verbs/vorstellen#6]], [[dass|conjunctions/dass]] [[es|pronouns/es]] [[tatsächlich|adjectives/tatsächlich#1]] [[soweit|conjunctions/soweit#1]] [[kommen|verbs/kommen#7]] wird.»"
+    "text_linked": "«Zwar [[wird|verbs/werden]] [[in|prepositions/in]] Bagdad tagaus, tagein [[über|prepositions/über#2]] nichts anderes [[gesprochen|verbs/sprechen#1]] [[als|conjunctions/als]] [[den|determiners/der]] [[Krieg|nouns/Krieg#1]], [[aber|conjunctions/aber]] viele [[können|verbs/können_beherrschen]] [[sich|pronouns/sich#1]] [[einfach|adjectives/einfach#5]] [[nicht|particles/nicht#1]] [[vorstellen|verbs/vorstellen#6]], [[dass|conjunctions/dass]] [[es|pronouns/es]] [[tatsächlich|adjectives/tatsächlich#1]] [[soweit|conjunctions/soweit#1]] [[kommen|verbs/kommen#7]] wird.»"
   },
   "825cea13a4": {
     "text": "„Er ging voraus, durch einen Raum mit Regalen voller Schuhkartons, und hielt ihr dann eine Tür auf zu einem Raum mit einem Esstisch und einem Schreibtisch.“",
@@ -14263,7 +14291,7 @@
         "gloss_hint": "order"
       }
     ],
-    "text_linked": "„Bei [[gut|adjectives/gut#1]] [[publizierten|verbs/publizieren]] Papyri [[war|verbs/sein#2]] [[es|pronouns/es]] [[möglich|adjectives/möglich#4]], direkt [[von|prepositions/von]] [[den|determiners/der]] [[Tafeln|nouns/Tafel]] [[zu|particles/zu_drückt]] [[pausen|verbs/pausen]]. [[Von|prepositions/von]] unveröffentlichten oder zu [[klein|adjectives/klein#1]] [[abgebildeten|verbs/abbilden]] [[Quellen|nouns/Quelle#3]] [[wurden|verbs/werden#1]] [[Negative|nouns/Negativ#1]] [[und|conjunctions/und]] maßstabsgerechte Vergrößerungen [[bei|prepositions/bei]] den [[Museen|nouns/Museum#1]] [[in|prepositions/in]] [[Auftrag|nouns/Auftrag#1]] gegeben.“"
+    "text_linked": "„Bei [[gut|adjectives/gut#1]] [[publizierten|verbs/publizieren#1]] Papyri [[war|verbs/sein#2]] [[es|pronouns/es]] [[möglich|adjectives/möglich#4]], direkt [[von|prepositions/von]] [[den|determiners/der]] [[Tafeln|nouns/Tafel]] [[zu|particles/zu_drückt]] [[pausen|verbs/pausen]]. [[Von|prepositions/von]] unveröffentlichten oder zu [[klein|adjectives/klein#1]] [[abgebildeten|verbs/abbilden]] [[Quellen|nouns/Quelle#3]] [[wurden|verbs/werden#1]] [[Negative|nouns/Negativ#1]] [[und|conjunctions/und]] maßstabsgerechte Vergrößerungen [[bei|prepositions/bei]] den [[Museen|nouns/Museum#1]] [[in|prepositions/in]] [[Auftrag|nouns/Auftrag#1]] gegeben.“"
   },
   "829492801a": {
     "text": "In diese kleine Kirche sollen 200 bis 300 Menschen passen?",
@@ -16935,7 +16963,7 @@
         "gloss_hint": "bring out (through analysis)"
       }
     ],
-    "text_linked": "„[[Die|determiners/die]] [[junge|adjectives/jung]] [[Frau|nouns/Frau#1]] [[könnte|verbs/können_beherrschen]] [[gewiss|adverbs/gewiss#4]] [[eine|determiners/ein]] [[gute|adjectives/gut]] Gesprächspartnerin [[für|prepositions/für]] Magnus [[sein|verbs/sein#1]] [[und|conjunctions/und]] ihn [[von|prepositions/von]] [[seinem|pronouns/sein]] [[Selbstmitleid|nouns/Selbstmitleid#1]] [[befreien|verbs/befreien#2]], ihn [[aus|adverbs/aus#1]] [[seiner|pronouns/sein]] Schwermütigkeit und [[Depression|nouns/Depression#1]] [[herausholen|verbs/herausholen#3]].“"
+    "text_linked": "„[[Die|determiners/die]] [[junge|adjectives/jung]] [[Frau|nouns/Frau#1]] [[könnte|verbs/können_etwas#1]] [[gewiss|adverbs/gewiss#4]] [[eine|determiners/ein]] [[gute|adjectives/gut]] Gesprächspartnerin [[für|prepositions/für]] Magnus [[sein|verbs/sein#1]] [[und|conjunctions/und]] ihn [[von|prepositions/von]] [[seinem|pronouns/sein]] [[Selbstmitleid|nouns/Selbstmitleid#1]] [[befreien|verbs/befreien#2]], ihn [[aus|adverbs/aus#1]] [[seiner|pronouns/sein]] Schwermütigkeit und [[Depression|nouns/Depression#1]] [[herausholen|verbs/herausholen#3]].“"
   },
   "82a9c8a329": {
     "text": "„Der geübte Deltaflieger verwächst funktionstechnisch und erlebnismäßg so eng mit seinem Fluggerät, dass ihm der angelegte Flügel zu einer Art neuem Körperteil wird, dessen er sich wie eines verlängerten Arms oder einer gut sitzenden Prothese bedient.“",
@@ -19896,7 +19924,7 @@
         "gloss_hint": "portray oneself"
       }
     ],
-    "text_linked": "„[[Jener|pronouns/jener]] [[zu|prepositions/zu]] sechs [[Jahren|nouns/Jahr]] [[Haft|nouns/Haft_zustand#2]] [[verurteilte|verbs/verurteilen]] [[deutsche|adjectives/deutsch]] Kunstfälscher [[namens|nouns/Name]] Wolfgang Beltracchi, [[der|pronouns/der_nominativ]] [[in|prepositions/in]] [[diesen|pronouns/dieser]] [[Wochen|nouns/Woche]] [[ein|pronouns/ein]] Selbstvermarktungs-Feuerwerk [[nach|prepositions/nach]] [[dem|determiners/der]] anderen [[zündet|verbs/zünden]] [[und|conjunctions/und]] [[seine|pronouns/sein]] [[grauen|adjectives/grau#1]] [[Locken|nouns/Locke]] [[auf|prepositions/auf]] einigen [[Titelseiten|nouns/Titelseite]] [[zeigen|verbs/zeigen#1]] [[durfte|verbs/dürfen#1]], [[ist|verbs/sein#2]] [[nicht|particles/nicht#1]] der Parvenü, [[als|conjunctions/als]] der er [[sich|pronouns/sich]] in der [[Öffentlichkeit|nouns/Öffentlichkeit]] [[geriert|verbs/gerieren]].“"
+    "text_linked": "„[[Jener|pronouns/jener]] [[zu|prepositions/zu]] sechs [[Jahren|nouns/Jahr]] [[Haft|nouns/Haft_zustand#2]] [[verurteilte|verbs/verurteilen]] [[deutsche|adjectives/deutsch]] Kunstfälscher [[namens|nouns/Name]] Wolfgang Beltracchi, [[der|pronouns/der_nominativ]] [[in|prepositions/in]] [[diesen|pronouns/dieser]] [[Wochen|nouns/Woche]] [[ein|pronouns/ein]] Selbstvermarktungs-Feuerwerk [[nach|prepositions/nach]] [[dem|determiners/der]] anderen [[zündet|verbs/zünden]] [[und|conjunctions/und]] [[seine|pronouns/sein]] [[grauen|adjectives/grau#1]] [[Locken|nouns/Locke]] [[auf|prepositions/auf]] einigen [[Titelseiten|nouns/Titelseite]] [[zeigen|verbs/zeigen#1]] [[durfte|verbs/dürfen#1]], [[ist|verbs/sein#2]] [[nicht|particles/nicht#1]] der Parvenü, [[als|conjunctions/als]] der er [[sich|pronouns/sich]] in der [[Öffentlichkeit|nouns/Öffentlichkeit]] geriert.“"
   },
   "82cecf4d18": {
     "text": "„Über das Gelände schleppten sich Tausende Schattenwesen, deren blau gestreifte Hemden und Hosen wie Pyjamas aussahen.“",
@@ -21735,7 +21763,7 @@
         "gloss_hint": "was"
       }
     ],
-    "text_linked": "„[[Dann|adverbs/dann]] [[beobachtete|verbs/beobachten#1]] er sorgsam, [[wie|adverbs/wie]] [[die|determiners/die]] [[Teller|nouns/Teller#1]] [[gewechselt|verbs/wechseln#2]] [[wurden|verbs/werden#1]], [[schnalzte|verbs/schnalzen]] [[ärgerlich|adjectives/ärgerlich#1]] [[mit|prepositions/mit#1]] [[der|determiners/der]] [[Zunge|nouns/Zunge#1]], [[als|conjunctions/als]] [[eine|determiners/eine]] der [[Schüsseln|nouns/Schüssel#1]] [[anscheinend|adverbs/anscheinend#1]] [[in|prepositions/in#1]] [[falscher|adjectives/falsch#1]] [[Reihenfolge|nouns/Reihenfolge]] [[vom|prepositions/von#1]] [[Tablett|nouns/Tablett#1]] [[auf|prepositions/auf#1]] [[den|determiners/der]] [[Tisch|nouns/Tisch#1]] [[gesetzt|verbs/setzen#6]] [[wurde|verbs/werden#1]].“"
+    "text_linked": "„[[Dann|adverbs/dann]] [[beobachtete|verbs/beobachten#1]] er sorgsam, [[wie|adverbs/wie]] [[die|determiners/die]] [[Teller|nouns/Teller#1]] [[gewechselt|verbs/wechseln#2]] [[wurden|verbs/werden#1]], schnalzte [[ärgerlich|adjectives/ärgerlich#1]] [[mit|prepositions/mit#1]] [[der|determiners/der]] [[Zunge|nouns/Zunge#1]], [[als|conjunctions/als]] [[eine|determiners/eine]] der [[Schüsseln|nouns/Schüssel#1]] [[anscheinend|adverbs/anscheinend#1]] [[in|prepositions/in#1]] [[falscher|adjectives/falsch#1]] [[Reihenfolge|nouns/Reihenfolge]] [[vom|prepositions/von#1]] [[Tablett|nouns/Tablett#1]] [[auf|prepositions/auf#1]] [[den|determiners/der]] [[Tisch|nouns/Tisch#1]] [[gesetzt|verbs/setzen#6]] [[wurde|verbs/werden#1]].“"
   },
   "82e0ac88b8": {
     "text": "Die Verhandlungen sind bereits weit gediehen.",
@@ -22191,7 +22219,7 @@
         "gloss_hint": "lake"
       }
     ],
-    "text_linked": "[[Eines|determiners/eines]] [[Tages|nouns/Tag_zeitraum#1]] [[wird|verbs/werden#2]] [[man|pronouns/man#2]] sie [[freilassen|verbs/freilassen#1]], [[und|conjunctions/und]] [[dann|adverbs/dann#1]] [[werden|verbs/werden#2]] sie fortfliegen [[über|adverbs/über#1]] [[den|determiners/der]] blauschimmernden [[Wald|nouns/Wald#1]], den man [[da|adverbs/da#1]] [[hinten|adverbs/hinten#2]] [[sehen|verbs/sehen#1]] [[kann|verbs/können_beherrschen]], [[weit|adjectives/weit#2]] [[fort|adverbs/fort#1]], über [[die|determiners/die]] [[Seen|nouns/See_stehendes#1]] …"
+    "text_linked": "[[Eines|determiners/eines]] [[Tages|nouns/Tag_zeitraum#1]] [[wird|verbs/werden#2]] [[man|pronouns/man#2]] sie [[freilassen|verbs/freilassen#1]], [[und|conjunctions/und]] [[dann|adverbs/dann#1]] [[werden|verbs/werden#2]] sie fortfliegen [[über|adverbs/über#1]] [[den|determiners/der]] blauschimmernden [[Wald|nouns/Wald#1]], den man [[da|adverbs/da#1]] [[hinten|adverbs/hinten#2]] [[sehen|verbs/sehen#1]] [[kann|verbs/können_etwas#1]], [[weit|adjectives/weit#2]] [[fort|adverbs/fort#1]], über [[die|determiners/die]] [[Seen|nouns/See_stehendes#1]] …"
   },
   "82e528fd4f": {
     "text": "Die Kinder versuchten, in der Lausitzer Neiße zu baden.",
@@ -23663,7 +23691,7 @@
         "gloss_hint": "be housed"
       }
     ],
-    "text_linked": "[[Sein|pronouns/sein#1]] [[Vater|nouns/Vater#1]], [[der|pronouns/der_nominativ#2]] [[wegen|prepositions/wegen#1]] [[seniler|adjectives/senil]] [[Demenz|nouns/Demenz#1]] [[entmündig|verbs/entmündigen]] [[wurde|verbs/werden#1]], [[ist|verbs/sein#1]] [[im|prepositions/in]] [[Heim|nouns/Heim#3]] [[untergebracht|verbs/unterbringen]]."
+    "text_linked": "[[Sein|pronouns/sein#1]] [[Vater|nouns/Vater#1]], [[der|pronouns/der_nominativ#2]] [[wegen|prepositions/wegen#1]] [[seniler|adjectives/senil]] [[Demenz|nouns/Demenz#1]] entmündig [[wurde|verbs/werden#1]], [[ist|verbs/sein#1]] [[im|prepositions/in]] [[Heim|nouns/Heim#3]] [[untergebracht|verbs/unterbringen]]."
   },
   "82f7b8766c": {
     "text": "„Eine 93-jährige Belgierin, die in der vergangenen Woche mit einem Hungerstreik aktive Sterbehilfe erzwingen wollte, ist am Mittwoch gestorben.“",

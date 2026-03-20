@@ -113,7 +113,7 @@
         "gloss_hint": "overwhelming"
       }
     ],
-    "text_linked": "„Obwohl die [[Zahl|nouns/Zahl#1]] [[neuer|adjectives/neu]] Bauprojekte in den vergangenen [[vier|numerals/vier#1]] [[Monaten|nouns/Monat#1]] [[um|prepositions/um]] [[fast|adverbs/fast]] [[ein|determiners/ein]] [[Viertel|nouns/Viertel_teil#1]] [[gegenüber|prepositions/gegenüber#2]] [[dem|determiners/der]] [[Vorjahreszeitraum|nouns/Vorjahreszeitraum]] [[sank|verbs/sinken#4]], [[ist|verbs/sein#1]] [[das|pronouns/das_[1]]] Überangebot erdrückend.“"
+    "text_linked": "„Obwohl die [[Zahl|nouns/Zahl#1]] [[neuer|adjectives/neu]] Bauprojekte in den vergangenen [[vier|numerals/vier#1]] [[Monaten|nouns/Monat#1]] [[um|prepositions/um]] [[fast|adverbs/fast]] [[ein|determiners/ein]] [[Viertel|nouns/Viertel_teil#1]] [[gegenüber|prepositions/gegenüber#1]] [[dem|determiners/der]] [[Vorjahreszeitraum|nouns/Vorjahreszeitraum]] [[sank|verbs/sinken#4]], [[ist|verbs/sein#1]] [[das|pronouns/das_[1]]] Überangebot erdrückend.“"
   },
   "5200e2a693": {
     "text": "einen strengen Massstab anlegen",
@@ -445,7 +445,7 @@
         "gloss_hint": "suit"
       }
     ],
-    "text_linked": "„Unter den [[Briefen|nouns/Brief]] waren Geschäftsbriefe, darunter einer, ob ich für 8000 [[Mark|nouns/Mark_historische#2]] im Monat am Kabarett »Fledermaus« in Königsberg [[gastieren|verbs/gastieren]] wolle. Das [[Engagement|nouns/Engagement#1]] ging nun auch zum [[Teufel|nouns/Teufel#1]], und ich hätte die 8000 Mark so gut brauchen können, Herrgott, nicht mal einen anständigen [[Anzug|nouns/Anzug#4]] hat man mehr.“"
+    "text_linked": "„Unter den [[Briefen|nouns/Brief]] waren Geschäftsbriefe, darunter einer, ob ich für 8000 [[Mark|nouns/Mark_historische#2]] im Monat am Kabarett »Fledermaus« in Königsberg gastieren wolle. Das [[Engagement|nouns/Engagement#1]] ging nun auch zum [[Teufel|nouns/Teufel#1]], und ich hätte die 8000 Mark so gut brauchen können, Herrgott, nicht mal einen anständigen [[Anzug|nouns/Anzug#4]] hat man mehr.“"
   },
   "5203655b8a": {
     "text": "Meine Schwester bekam vor ein paar Wochen ein süßes Töchterchen.",
@@ -1140,11 +1140,39 @@
   },
   "520c0b0dd2": {
     "text": "Was ist die schnellste Zugverbindung zwischen Moskau und Paris?",
-    "translation": null,
+    "translation": "What is the fastest train connection between Moscow and Paris?",
     "source": "wiktionary",
     "lemmas": [
       "Zugverbindung"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "schnellste",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zugverbindung",
+        "lemma": "Zugverbindung",
+        "pos": "noun",
+        "gloss_hint": "train connection"
+      },
+      {
+        "form": "Moskau",
+        "lemma": "Moskau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Paris",
+        "lemma": "Paris",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Was ist die [[schnellste|adjectives/schnell]] [[Zugverbindung|nouns/Zugverbindung#2]] zwischen Moskau und [[Paris|nouns/Paris]]?"
   },
   "520c403b1f": {
     "text": "Morgen werden wir beim Test der Rakete Mach 9 erreichen.",
@@ -2599,11 +2627,51 @@
   },
   "521d2ea11a": {
     "text": "„Wer bis jetzt keine Möglichkeit zur Ausreise gefunden hat, rechnet damit, als Pole zu sterben.“",
-    "translation": null,
+    "translation": "Whoever has not found a way to leave by now counts on dying as a Pole.",
     "source": "wiktionary",
     "lemmas": [
       "Ausreise"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Möglichkeit",
+        "lemma": "Möglichkeit",
+        "pos": "noun",
+        "gloss_hint": "option"
+      },
+      {
+        "form": "Ausreise",
+        "lemma": "Ausreise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gefunden",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "rechnet",
+        "lemma": "rechnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pole",
+        "lemma": "Pole",
+        "pos": "noun",
+        "gloss_hint": "Polish person"
+      },
+      {
+        "form": "sterben",
+        "lemma": "sterben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Wer bis jetzt keine [[Möglichkeit|nouns/Möglichkeit#1]] zur [[Ausreise|nouns/Ausreise]] [[gefunden|verbs/finden]] hat, [[rechnet|verbs/rechnen]] damit, als [[Pole|nouns/Pole_staatsbürger#2]] zu [[sterben|verbs/sterben]].“"
   },
   "521d942bcb": {
     "text": "„Sie wollen dabei im Prozessabwasser gelöste Wertstoffe durch Fällungsprozesse wieder als elementare Metalle zurückgewinnen.“",
@@ -2697,11 +2765,81 @@
   },
   "521e1ef95e": {
     "text": "„Fünfhundert Häuser hätten hier dicht beieinandergestanden, es sei fast ein Städtchen gewesen mit einer eigenen Schule, mit Geschäften, einer Verwaltung und einem Gemeindesaal.“",
-    "translation": null,
+    "translation": "Five hundred houses would have stood closely together here; it was almost a small town with its own school, with shops, an administration, and a community hall.",
     "source": "wiktionary",
     "lemmas": [
       "fünfhundert"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fünfhundert",
+        "lemma": "fünfhundert",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Häuser",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hätten",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gestanden",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": "stand"
+      },
+      {
+        "form": "dicht",
+        "lemma": "dicht",
+        "pos": "adjective",
+        "gloss_hint": "dense"
+      },
+      {
+        "form": "beieinander",
+        "lemma": "beieinander",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Städtchen",
+        "lemma": "Städtchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schule",
+        "lemma": "Schule",
+        "pos": "noun",
+        "gloss_hint": "school"
+      },
+      {
+        "form": "Geschäften",
+        "lemma": "Geschäft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verwaltung",
+        "lemma": "Verwaltung",
+        "pos": "noun",
+        "gloss_hint": "public administration"
+      },
+      {
+        "form": "Gemeindesaal",
+        "lemma": "Gemeindesaal",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„[[Fünfhundert|numerals/fünfhundert]] [[Häuser|nouns/Haus]] [[hätten|verbs/haben]] hier [[dicht|adjectives/dicht#1]] beieinandergestanden, es sei fast ein Städtchen gewesen mit einer eigenen [[Schule|nouns/Schule#1]], mit [[Geschäften|nouns/Geschäft]], einer [[Verwaltung|nouns/Verwaltung#2]] und einem Gemeindesaal.“"
   },
   "521fb4e9a4": {
     "text": "„Als die Eltern zuvor laut geworden waren, hatte der Vater im Hausmantel an seinem Sekretär gesessen und in ein Notenheft geschrieben.“",
@@ -7362,7 +7500,7 @@
         "gloss_hint": "paralyze"
       }
     ],
-    "text_linked": "„[[Weil|conjunctions/weil_konjunktion]] [[der|pronouns/der_nominativ]] Lotsenversetzdienst [[im|prepositions/in]] [[Hafen|nouns/Hafen#1]] [[streikt|verbs/streiken#1]], [[wurde|verbs/werden#1]] der Containerschiffsverkehr [[auf|prepositions/auf]] der [[Hamburger|nouns/Hamburger_einwohner#1]] [[Elbe|nouns/Elbe]] [[lahmgelegt|verbs/lahmlegen]].“"
+    "text_linked": "„[[Weil|conjunctions/weil_konjunktion]] [[der|pronouns/der_nominativ]] Lotsenversetzdienst [[im|prepositions/in]] [[Hafen|nouns/Hafen#1]] [[streikt|verbs/streiken#1]], [[wurde|verbs/werden#1]] der Containerschiffsverkehr [[auf|prepositions/auf]] der [[Hamburger|nouns/Hamburger_einwohner#1]] [[Elbe|nouns/Elbe]] [[lahmgelegt|verbs/lahmlegen#1]].“"
   },
   "523d6bfcdf": {
     "text": "„An der russischen Ölpipeline Druschba ist auf polnischer Seite ein Leck aufgetreten.'“",
@@ -8640,7 +8778,7 @@
         "gloss_hint": "accounting"
       }
     ],
-    "text_linked": "„[[Obgleich|conjunctions/obgleich]] [[die|pronouns/die]] [[Katholischen|adjectives/katholisch]] [[Könige|nouns/König]] [[behaupteten|verbs/behaupten#1]], [[daß|conjunctions/dass]] Kolumbus [[in|prepositions/in]] [[ihrem|pronouns/ihr_person]] [[Namen|nouns/Name#1]] die [[von|prepositions/von]] ihm [[entdeckten|verbs/entdecken#1]] [[Inseln|nouns/Insel#1]] [[rechtskräftig|adjectives/rechtskräftig]] in [[Besitz|nouns/Besitz#1]] [[genommen|verbs/nehmen#2]] [[habe|verbs/haben#1]], [[und|conjunctions/und]] [[obgleich|conjunctions/obgleich]] Juristen [[des|determiners/der]] [[Hofes|nouns/Hof#4]] keine weitere [[Begründung|nouns/Begründung#1]] [[der|determiners/der]] [[königlichen|adjectives/königlich]] Rechtstitel [[für|prepositions/für]] [[notwendig|adjectives/notwendig]] [[hielten|verbs/halten#5]], [[haben|verbs/haben#1]] [[doch|particles/doch_betont]] die [[spanischen|adjectives/spanisch]] Monarchen für die westindischen [[Entdeckungen|nouns/Entdeckung#1]] alsbald [[ähnliche|adjectives/ähnlich]] Papstbullen [[erbeten|verbs/erbitten]], [[wie|conjunctions/wie_als]] sie die [[portugiesische|adjectives/portugiesisch]] [[Krone|nouns/Krone#1]] für [[ihren|pronouns/ihr_person]] westafrikanischen Entdeckungsraum [[erreicht|verbs/erreichen#1]] [[hatte|verbs/haben#1]]. [[In|prepositions/in]] [[fünf|numerals/fünf#1]] [[Bullen|nouns/Bulle_besonders#3]] des [[Jahres|nouns/Jahr#1]] 1493 [[trug|verbs/tragen#1]] [[Papst|nouns/Papst#1]] Alexander VI. [[diesen|pronouns/dies]] [[Wünschen|nouns/Wunsch]] [[Rechnung|nouns/Rechnung#4]].“"
+    "text_linked": "„[[Obgleich|conjunctions/obgleich]] [[die|pronouns/die]] [[Katholischen|adjectives/katholisch]] [[Könige|nouns/König]] [[behaupteten|verbs/behaupten#1]], [[daß|conjunctions/dass]] Kolumbus [[in|prepositions/in]] [[ihrem|pronouns/ihr_person]] [[Namen|nouns/Name#1]] die [[von|prepositions/von]] ihm [[entdeckten|verbs/entdecken#1]] [[Inseln|nouns/Insel#1]] [[rechtskräftig|adjectives/rechtskräftig]] in [[Besitz|nouns/Besitz#1]] [[genommen|verbs/nehmen#2]] [[habe|verbs/haben#1]], [[und|conjunctions/und]] [[obgleich|conjunctions/obgleich]] Juristen [[des|determiners/der]] [[Hofes|nouns/Hof#4]] keine weitere [[Begründung|nouns/Begründung#1]] [[der|determiners/der]] [[königlichen|adjectives/königlich]] Rechtstitel [[für|prepositions/für]] [[notwendig|adjectives/notwendig]] [[hielten|verbs/halten#5]], [[haben|verbs/haben#1]] [[doch|particles/doch_betont]] die [[spanischen|adjectives/spanisch]] Monarchen für die westindischen [[Entdeckungen|nouns/Entdeckung#1]] [[alsbald|adverbs/alsbald]] [[ähnliche|adjectives/ähnlich]] Papstbullen [[erbeten|verbs/erbitten]], [[wie|conjunctions/wie_als]] sie die [[portugiesische|adjectives/portugiesisch]] [[Krone|nouns/Krone#1]] für [[ihren|pronouns/ihr_person]] westafrikanischen Entdeckungsraum [[erreicht|verbs/erreichen#1]] [[hatte|verbs/haben#1]]. [[In|prepositions/in]] [[fünf|numerals/fünf#1]] [[Bullen|nouns/Bulle_besonders#3]] des [[Jahres|nouns/Jahr#1]] 1493 [[trug|verbs/tragen#1]] [[Papst|nouns/Papst#1]] Alexander VI. [[diesen|pronouns/dies]] [[Wünschen|nouns/Wunsch]] [[Rechnung|nouns/Rechnung#4]].“"
   },
   "5247d5b225": {
     "text": "das halte ich für ein Gerücht",
@@ -9314,7 +9452,7 @@
         "gloss_hint": "furthermore | yet (future) | still (present) | not even | even so"
       }
     ],
-    "text_linked": "[[Offizielle|adjectives/offiziell]] [[Stellungnahmen|nouns/Stellungnahme#1]] betreffend [[ihres|pronouns/ihr_zu#2]] Joint Ventures [[werden|verbs/werden#1]] [[von|prepositions/von#1]] [[den|determiners/der]] [[Firmen|nouns/Firma#2]] [[noch|adverbs/noch#1]] erwartet."
+    "text_linked": "[[Offizielle|adjectives/offiziell]] [[Stellungnahmen|nouns/Stellungnahme#1]] [[betreffend|postpositions/betreffend]] [[ihres|pronouns/ihr_zu#2]] Joint Ventures [[werden|verbs/werden#1]] [[von|prepositions/von#1]] [[den|determiners/der]] [[Firmen|nouns/Firma#2]] [[noch|adverbs/noch#1]] erwartet."
   },
   "524f5cf247": {
     "text": "„Die Unsicherheit über die wirtschaftliche Entwicklung in Europa ist der zentrale Grund für die nachlassende Akzeptanz des Euro als Handelswährung.“ (Volker Treier, Außenwirtschaftschef des Deutschen Industrie- und Handelskammertages (DIHK))",
@@ -11105,11 +11243,69 @@
   },
   "5260c02663": {
     "text": "„In Reiseführern wird die Bretagne an der Atlantikküste Frankreichs mit traumhaften Dünenlandschaften und kristallklarem Wasser angepriesen.“",
-    "translation": null,
+    "translation": "In travel guides, Brittany on the Atlantic coast of France is praised for its dreamlike dune landscapes and crystal-clear water.",
     "source": "wiktionary",
     "lemmas": [
       "Reiseführer"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Reiseführern",
+        "lemma": "Reiseführer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bretagne",
+        "lemma": "Bretagne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Atlantikküste",
+        "lemma": "Atlantikküste",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frankreichs",
+        "lemma": "Frankreich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "traumhaften",
+        "lemma": "traumhaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dünenlandschaften",
+        "lemma": "Dünenlandschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kristallklarem",
+        "lemma": "kristallklar",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wasser",
+        "lemma": "Wasser",
+        "pos": "noun",
+        "gloss_hint": "water"
+      },
+      {
+        "form": "angepriesen",
+        "lemma": "anpreisen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„In [[Reiseführern|nouns/Reiseführer]] wird die Bretagne an der Atlantikküste Frankreichs mit [[traumhaften|adjectives/traumhaft]] Dünenlandschaften und kristallklarem [[Wasser|nouns/Wasser#1]] angepriesen.“"
   },
   "52616b2643": {
     "text": "„Daß es ihm schon vor zwanzig Jahren gelungen war, aus animalischen Zellen unter dem Einfluß des magnetischen Feldes und durch mechanische Rotation vollständig ausgebildete Gehirne auf Glasplatten wachsen zu lassen, -- Gehirne, die, nach allem zu schließen, sogar selbständig zu denken vermochten, -- hatte zwar hie und da in Zeitungen gestanden, -- wissenschaftliches, tieferes Interesse aber hatte es nicht geweckt.“",
@@ -11528,7 +11724,7 @@
         "gloss_hint": "made"
       }
     ],
-    "text_linked": "„Diese Wikinger [[übernahmen|verbs/übernehmen#1]] [[sehr|particles/sehr#1]] [[rasch|adjectives/rasch#1]] [[das|pronouns/das_[1]]] [[Französische|adjectives/französisch#1]], sie [[sprachen|verbs/sprechen#1]] [[es|pronouns/es#1]] [[längst|adverbs/längst#1]], [[als|conjunctions/als#1]] sie 1066 als Normannen [[nach|prepositions/nach#1]] England [[übersetzten|verbs/übersetzen_etwas#1]] [[und|conjunctions/und#1]] [[dort|adverbs/dort#1]] [[eine|determiners/eine]] [[Jahrhunderte|nouns/Jahrhundert#1]] [[dauernde|adjectives/dauernd#2]] Zweisprachigkeit [[schufen|verbs/schaffen_etwas]], [[die|determiners/die#1]] [[aus|prepositions/aus#1]] [[dem|determiners/dem#1]] Englischen [[auch|adverbs/auch#1]] [[etwas|pronouns/etwas#1]] [[wie|adverbs/wie]] eine romanische [[Sprache|nouns/Sprache#1]] [[machte|verbs/machen#2]].“"
+    "text_linked": "„Diese Wikinger [[übernahmen|verbs/übernehmen#1]] [[sehr|particles/sehr#1]] [[rasch|adjectives/rasch#1]] [[das|pronouns/das_[1]]] [[Französische|adjectives/französisch#1]], sie [[sprachen|verbs/sprechen#1]] [[es|pronouns/es#1]] [[längst|adverbs/längst#1]], [[als|conjunctions/als#1]] sie 1066 als Normannen [[nach|prepositions/nach#1]] England [[übersetzten|verbs/übersetzen_etwas#1]] [[und|conjunctions/und#1]] [[dort|adverbs/dort#1]] [[eine|determiners/eine]] [[Jahrhunderte|nouns/Jahrhundert#1]] [[dauernde|adjectives/dauernd#2]] Zweisprachigkeit [[schufen|verbs/schaffen_etwas#1]], [[die|determiners/die#1]] [[aus|prepositions/aus#1]] [[dem|determiners/dem#1]] Englischen [[auch|adverbs/auch#1]] [[etwas|pronouns/etwas#1]] [[wie|adverbs/wie]] eine romanische [[Sprache|nouns/Sprache#1]] [[machte|verbs/machen#2]].“"
   },
   "5262ac9c7a": {
     "text": "„Während sie dies alles in ihrer lebhaften Art erzählte, waren die beiden von der Verkehrsstraße in das Gartengelände der Erbsiedlung eingebogen, das im Vorfeld der Stadt lag.“",
@@ -15529,7 +15725,7 @@
         "gloss_hint": "week"
       }
     ],
-    "text_linked": "Du [[sollst|verbs/sollen]] unsere [[Katze|nouns/Katze#1]] nur für [[drei|numerals/drei]] [[Wochen|nouns/Woche#1]] [[beaufsichtigen|verbs/beaufsichtigen]] und [[füttern|verbs/füttern_einem#2]]."
+    "text_linked": "Du [[sollst|verbs/sollen]] unsere [[Katze|nouns/Katze#1]] nur für [[drei|numerals/drei]] [[Wochen|nouns/Woche#1]] [[beaufsichtigen|verbs/beaufsichtigen]] und [[füttern|verbs/füttern_einem]]."
   },
   "5294493ea4": {
     "text": "„Wilhelm Neddenriep, gestorben in Elferdingen am 27. Februar 1919, war mit der Gabe des zweiten Gesichts besonders behaftet. Sein Sohn erzählt von den Vörlaats seines Vaters noch Folgendes: […]“",
@@ -20046,7 +20242,7 @@
         "gloss_hint": "text"
       }
     ],
-    "text_linked": "„[[Zu|particles/zu_drückt]] [[den|determiners/der]] Funktionswörtern [[können|verbs/können_etwas#1]] [[auch|adverbs/auch]] [[die|determiners/die]] [[Partikeln|nouns/Partikel_im#1]] gerechnet werden, [[deren|pronouns/der_nominativ]] [[Bedeutung|nouns/Bedeutung#1]] [[durch|prepositions/durch#2]] [[ihren|pronouns/ihr_zu#2]] [[Anteil|nouns/Anteil#1]] [[am|prepositions/an#2]] Zustandekommen [[des|determiners/der]] kommunikativen [[Sinns|nouns/Sinn#1]] [[eines|determiners/ein#1]] [[Textes|nouns/Text#1]] zu bestimmen ist.“"
+    "text_linked": "„[[Zu|particles/zu_drückt]] [[den|determiners/der]] Funktionswörtern [[können|verbs/können_beherrschen]] [[auch|adverbs/auch]] [[die|determiners/die]] [[Partikeln|nouns/Partikel_im#1]] gerechnet werden, [[deren|pronouns/der_nominativ]] [[Bedeutung|nouns/Bedeutung#1]] [[durch|prepositions/durch#2]] [[ihren|pronouns/ihr_zu#2]] [[Anteil|nouns/Anteil#1]] [[am|prepositions/an#2]] Zustandekommen [[des|determiners/der]] kommunikativen [[Sinns|nouns/Sinn#1]] [[eines|determiners/ein#1]] [[Textes|nouns/Text#1]] zu bestimmen ist.“"
   },
   "52b9b56b75": {
     "text": "„Der ADAC Berlin-Brandenburg hat erstmals eine hauptamtliche Geschäftsführerin.“",
@@ -21671,7 +21867,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Clemente Gonzales, der Oberhirte der Palmarianer, der in Palma de Troya in der Nähe der [[spanischen|adjectives/spanisch#1]] [[Stadt|nouns/Stadt#1]] Sevilla [[residiert|verbs/residieren]] und behauptet, in einer [[Vision|nouns/Vision#3]] von Gottvater zum [[Papst|nouns/Papst#1]] Gregor XVII. [[geweiht|verbs/weihen]] worden zu sein –, dieser ‚Gegenpapst‘ [[droht|verbs/drohen]] seinen [[weiblichen|adjectives/weiblich#1]] [[Anhängern|nouns/Anhänger#5]] mit Exkommunikation, wenn sie das Hosenverbot nicht [[befolgen|verbs/befolgen]].“"
+    "text_linked": "„Clemente Gonzales, der Oberhirte der Palmarianer, der in Palma de Troya in der Nähe der [[spanischen|adjectives/spanisch#1]] [[Stadt|nouns/Stadt#1]] Sevilla residiert und behauptet, in einer [[Vision|nouns/Vision#3]] von Gottvater zum [[Papst|nouns/Papst#1]] Gregor XVII. [[geweiht|verbs/weihen]] worden zu sein –, dieser ‚Gegenpapst‘ [[droht|verbs/drohen]] seinen [[weiblichen|adjectives/weiblich#1]] [[Anhängern|nouns/Anhänger#5]] mit Exkommunikation, wenn sie das Hosenverbot nicht [[befolgen|verbs/befolgen]].“"
   },
   "52c25cd69e": {
     "text": "Das englische Verb „to know“ bedeutet auf Deutsch soviel wie „wissen“.",
@@ -21935,7 +22131,7 @@
         "gloss_hint": "feet"
       }
     ],
-    "text_linked": "übertragen: „[[Schon|adverbs/schon]] [[lief|verbs/laufen#1]] Arlecq [[zurück|adverbs/zurück#1]], noch [[ehe|conjunctions/ehe]] [[der|pronouns/der_nominativ]] Packwagen [[in|prepositions/in]] [[Sicht|nouns/Sicht#1]] [[kam|verbs/kommen#5]], [[entlief|verbs/entlaufen]] [[den|pronouns/der_nominativ]] Schranken, lief Paasch in [[die|pronouns/die]] [[Arme|nouns/Arm]], [[als|conjunctions/als]] sie [[beide|numerals/beide]] [[um|prepositions/um]] die [[Ecke|nouns/Ecke#1]] bogen, im [[leichten|adjectives/leicht#1]] Herbstwelken, [[das|pronouns/das_[1]]] ihnen der [[Wind|nouns/Wind#5]] [[vor|prepositions/vor]] die [[Füße|nouns/Fuß#1]] blätterte.“"
+    "text_linked": "übertragen: „[[Schon|adverbs/schon]] [[lief|verbs/laufen#1]] Arlecq [[zurück|adverbs/zurück#1]], noch [[ehe|conjunctions/ehe]] [[der|pronouns/der_nominativ]] Packwagen [[in|prepositions/in]] [[Sicht|nouns/Sicht#1]] [[kam|verbs/kommen#5]], [[entlief|verbs/entlaufen#1]] [[den|pronouns/der_nominativ]] Schranken, lief Paasch in [[die|pronouns/die]] [[Arme|nouns/Arm]], [[als|conjunctions/als]] sie [[beide|numerals/beide]] [[um|prepositions/um]] die [[Ecke|nouns/Ecke#1]] bogen, im [[leichten|adjectives/leicht#1]] Herbstwelken, [[das|pronouns/das_[1]]] ihnen der [[Wind|nouns/Wind#5]] [[vor|prepositions/vor]] die [[Füße|nouns/Fuß#1]] blätterte.“"
   },
   "52c2e1bc12": {
     "text": "„Sie sind gewohnt, daß sie das Herz auf den Lippen tragen können, und das kann man in der Politik nicht.“",
@@ -22842,7 +23038,7 @@
         "gloss_hint": "together"
       }
     ],
-    "text_linked": "„[[In|prepositions/in]] einer Schattenjagd [[kam|verbs/kommen]] [[eine|determiners/ein]] [[Herde|nouns/Herde]] Mustangs [[heran|adverbs/heran]], [[wendete|verbs/wenden]], [[zerschlug|verbs/zerschlagen]] [[sich|pronouns/sich#2]] [[und|conjunctions/und]] [[rottete|verbs/rotten]] sich führerlos unentschlossen [[wieder|adverbs/wieder#1]] [[zusammen|adverbs/zusammen#1]].“"
+    "text_linked": "„[[In|prepositions/in]] einer Schattenjagd [[kam|verbs/kommen]] [[eine|determiners/ein]] [[Herde|nouns/Herde]] Mustangs [[heran|adverbs/heran]], [[wendete|verbs/wenden]], [[zerschlug|verbs/zerschlagen]] [[sich|pronouns/sich#2]] [[und|conjunctions/und]] rottete sich führerlos unentschlossen [[wieder|adverbs/wieder#1]] [[zusammen|adverbs/zusammen#1]].“"
   },
   "52cbdef3b1": {
     "text": "Ihr Deutsch kann sie noch weiter verbessern.",
@@ -23020,7 +23216,7 @@
         "gloss_hint": "embarrass"
       }
     ],
-    "text_linked": "Dieter [[konnte|verbs/können_beherrschen]] [[nicht|particles/nicht]] [[widerstehen|verbs/widerstehen#1]], [[den|determiners/der]] [[Pegasus|nouns/Pegasus#1]] [[zu|particles/zu_drückt]] [[reiten|verbs/reiten#1]] [[und|conjunctions/und]] [[sich|pronouns/sich]] [[damit|adverbs/damit#1]] gehörig zu [[blamieren|verbs/blamieren#1]]."
+    "text_linked": "Dieter [[konnte|verbs/können_etwas#1]] [[nicht|particles/nicht]] [[widerstehen|verbs/widerstehen#1]], [[den|determiners/der]] [[Pegasus|nouns/Pegasus#1]] [[zu|particles/zu_drückt]] [[reiten|verbs/reiten#1]] [[und|conjunctions/und]] [[sich|pronouns/sich]] [[damit|adverbs/damit#1]] gehörig zu [[blamieren|verbs/blamieren#1]]."
   },
   "52cd16f1a3": {
     "text": "„Aber als Doll im Laufe des Tages erfuhr, wie umfangreich das Hamsterlager dieses schlichten Auch-Parteimitgliedes der Nationalsozialistischen Deutschen Arbeiterpartei gewesen war, erfasste ihn doch von neuem Zorn, und er ließ sich den Zaches aus der Molkerei holen, so wie er ging und stand.“",
@@ -23984,7 +24180,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "»Sonnenlichtexposition oder das [[Rauchen|nouns/Rauchen]] [[beschleunigen|verbs/beschleunigen#1]] die Hautalterung und [[führen|verbs/führen#4]] zu [[typischen|adjectives/typisch#1]] Alterungssymptomen wie Faltenbildung, Pigmentflecken, [[gegerbter|verbs/gerben]] [[Haut|nouns/Haut#1]] oder dem [[Auftreten|nouns/Auftreten#2]] von [[roten|adjectives/rot#1]] Äderchen«, [[erklärt|verbs/erklären]] Vierkötter."
+    "text_linked": "»Sonnenlichtexposition oder das [[Rauchen|nouns/Rauchen]] [[beschleunigen|verbs/beschleunigen#1]] die Hautalterung und [[führen|verbs/führen#4]] zu [[typischen|adjectives/typisch#1]] Alterungssymptomen wie Faltenbildung, Pigmentflecken, gegerbter [[Haut|nouns/Haut#1]] oder dem [[Auftreten|nouns/Auftreten#2]] von [[roten|adjectives/rot#1]] Äderchen«, [[erklärt|verbs/erklären]] Vierkötter."
   },
   "52d4857d18": {
     "text": "das Grauen hat einen Namen",
@@ -27007,7 +27203,7 @@
         "gloss_hint": "come from"
       }
     ],
-    "text_linked": "„Weiberlist [[oder|particles/oder]] [[Heuchelei|nouns/Heuchelei]] [[können|verbs/können_etwas#1]] [[eine|determiners/ein]] solche [[Antwort|nouns/Antwort]] [[geben|verbs/geben#2]]; [[in|prepositions/in]] diesem [[Augenblick|nouns/Augenblick]] [[jedoch|adverbs/jedoch]] [[konnte|verbs/können_etwas#2]] sie [[nur|particles/nur#1]] [[der|pronouns/der_nominativ#2]] [[Aufrichtigkeit|nouns/Aufrichtigkeit]] [[entspringen|verbs/entspringen]].“"
+    "text_linked": "„Weiberlist [[oder|particles/oder]] [[Heuchelei|nouns/Heuchelei]] [[können|verbs/können_beherrschen]] [[eine|determiners/ein]] solche [[Antwort|nouns/Antwort]] [[geben|verbs/geben#2]]; [[in|prepositions/in]] diesem [[Augenblick|nouns/Augenblick]] [[jedoch|adverbs/jedoch]] [[konnte|verbs/können_beherrschen]] sie [[nur|particles/nur#1]] [[der|pronouns/der_nominativ#2]] [[Aufrichtigkeit|nouns/Aufrichtigkeit]] [[entspringen|verbs/entspringen]].“"
   },
   "52f417187d": {
     "text": "Manche Menschen müssen im Alter ins Altersheim.",
@@ -27740,7 +27936,7 @@
         "gloss_hint": "hearth"
       }
     ],
-    "text_linked": "„Johnson [[wog|verbs/wiegen_gewicht]] den [[Bogen|nouns/Bogen#3]] einen [[Augenblick|nouns/Augenblick]] [[lächelnd|verbs/lächeln]] in der [[Hand|nouns/Hand]], legte dann den [[Pfeil|nouns/Pfeil#1]] auf, [[zielte|verbs/zielen]] wenige [[Sekunden|nouns/Sekunde]], und gleich darauf [[zitterte|verbs/zittern]] der hölzerne Schaft, der das [[Ziel|nouns/Ziel#2]] [[vollkommen|adjectives/vollkommen#2]] [[durchbohrt|verbs/durchbohren_durch]] hatte, in der [[weichen|adjectives/weich#1]] [[Erde|nouns/Erde#1]] des [[Herdes|nouns/Herd#1]].“"
+    "text_linked": "„Johnson [[wog|verbs/wiegen_gewicht]] den [[Bogen|nouns/Bogen#3]] einen [[Augenblick|nouns/Augenblick]] [[lächelnd|verbs/lächeln]] in der [[Hand|nouns/Hand]], legte dann den [[Pfeil|nouns/Pfeil#1]] auf, [[zielte|verbs/zielen]] wenige [[Sekunden|nouns/Sekunde]], und gleich darauf [[zitterte|verbs/zittern]] der hölzerne Schaft, der das [[Ziel|nouns/Ziel#2]] [[vollkommen|adjectives/vollkommen#2]] durchbohrt hatte, in der [[weichen|adjectives/weich#1]] [[Erde|nouns/Erde#1]] des [[Herdes|nouns/Herd#1]].“"
   },
   "52fa9af70a": {
     "text": "„\"Ich hatte das Team darum gebeten, weil ich mich dann mehr fokussieren kann\", begründete Rosberg die kurzfristige Planänderung bei den Silberpfeilen. “",
@@ -28792,7 +28988,7 @@
         "gloss_hint": "wasps"
       }
     ],
-    "text_linked": "„Zur [[Betonung|nouns/Betonung#1]] [[ihres|pronouns/ihr_person]] [[Anspruchs|nouns/Anspruch#1]] [[hat|verbs/haben#1]] [[die|determiners/die]] [[Stadt|nouns/Stadt#1]] [[an|prepositions/an]] [[der|determiners/der]] Amstel [[beim|prepositions/bei]] [[Umbau|nouns/Umbau#1]] [[des|determiners/des]] Rijksmuseums der [[Nachtwache|nouns/Nachtwache#1]] [[eine|determiners/ein]] [[spektakuläre|adjectives/spektakulär]] [[Bühne|nouns/Bühne#1]] [[geschaffen|verbs/schaffen_etwas]]. [[Damit|adverbs/damit]] [[beabsichtigt|verbs/beabsichtigen#1]] sie nichts anderes [[als|conjunctions/als]] der Pariser [[Louvre|nouns/Louvre]] [[mit|prepositions/mit]] [[seiner|pronouns/sein]] Mona Lisa, [[nämlich|conjunctions/nämlich]] [[Besucher|nouns/Besucher#1]] anzulocken [[wie|conjunctions/wie_als]] [[ein|determiners/ein]] Zwetschgendatschi die Wespen.“"
+    "text_linked": "„Zur [[Betonung|nouns/Betonung#1]] [[ihres|pronouns/ihr_person]] [[Anspruchs|nouns/Anspruch#1]] [[hat|verbs/haben#1]] [[die|determiners/die]] [[Stadt|nouns/Stadt#1]] [[an|prepositions/an]] [[der|determiners/der]] Amstel [[beim|prepositions/bei]] [[Umbau|nouns/Umbau#1]] [[des|determiners/des]] Rijksmuseums der [[Nachtwache|nouns/Nachtwache#1]] [[eine|determiners/ein]] [[spektakuläre|adjectives/spektakulär]] [[Bühne|nouns/Bühne#1]] [[geschaffen|verbs/schaffen_etwas#1]]. [[Damit|adverbs/damit]] [[beabsichtigt|verbs/beabsichtigen#1]] sie nichts anderes [[als|conjunctions/als]] der Pariser [[Louvre|nouns/Louvre]] [[mit|prepositions/mit]] [[seiner|pronouns/sein]] Mona Lisa, [[nämlich|conjunctions/nämlich]] [[Besucher|nouns/Besucher#1]] anzulocken [[wie|conjunctions/wie_als]] [[ein|determiners/ein]] Zwetschgendatschi die Wespen.“"
   },
   "52ffe81bb8": {
     "text": "Man sollte ihm keinen Vorwurf machen, denn er handelte nur seiner Weisung entsprechend.",

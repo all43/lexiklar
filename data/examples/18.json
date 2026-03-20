@@ -463,7 +463,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Dramatische|adjectives/dramatisch]] Chormusik [[wabert|verbs/wabern]] [[aus|adverbs/aus]] [[den|determiners/der]] [[Lautsprechern|nouns/Lautsprecher]], [[die|determiners/der]] [[an|prepositions/an]] [[kahlen|adjectives/kahl]] Betonwänden [[hängen|verbs/hängen_einem]], Neonröhren [[spenden|verbs/spenden]] [[kaltes|adjectives/kalt]] [[Licht|nouns/Licht]].“"
+    "text_linked": "„[[Dramatische|adjectives/dramatisch]] Chormusik wabert [[aus|adverbs/aus]] [[den|determiners/der]] [[Lautsprechern|nouns/Lautsprecher]], [[die|determiners/der]] [[an|prepositions/an]] [[kahlen|adjectives/kahl]] Betonwänden [[hängen|verbs/hängen_einem]], Neonröhren [[spenden|verbs/spenden]] [[kaltes|adjectives/kalt]] [[Licht|nouns/Licht]].“"
   },
   "1836703114": {
     "text": "„In jedem kraftvollen Pinselstrich war seine Dankbarkeit für ihre Unterstützung zu erkennen.“",
@@ -1363,7 +1363,7 @@
         "gloss_hint": "strangle"
       }
     ],
-    "text_linked": "[[Sein|verbs/sein]] [[Abitur|nouns/Abitur#1]] [[schaffte|verbs/schaffen_etwas#1]] er [[nur|particles/nur#1]] [[mit|prepositions/mit#1]] [[Hängen|verbs/hängen_einem#1]] [[und|conjunctions/und#1]] [[Würgen|verbs/würgen#1]]."
+    "text_linked": "[[Sein|verbs/sein]] [[Abitur|nouns/Abitur#1]] [[schaffte|verbs/schaffen_etwas]] er [[nur|particles/nur#1]] [[mit|prepositions/mit#1]] [[Hängen|verbs/hängen_einem#1]] [[und|conjunctions/und#1]] [[Würgen|verbs/würgen#1]]."
   },
   "1807ee274b": {
     "text": "Ich bin ihre größte Fanin.",
@@ -3593,7 +3593,7 @@
         "gloss_hint": "one"
       }
     ],
-    "text_linked": "[[Der|pronouns/der_nominativ]] [[Richter|nouns/Richter#1]] [[ist|verbs/sein#2]] [[nicht|particles/nicht#1]] [[gut|adjectives/gut#2]] [[auf|prepositions/auf#4]] [[dich|pronouns/du]] [[zu|particles/zu_drückt]] [[sprechen|verbs/sprechen#1]] [[und|conjunctions/und]] [[steckt|verbs/stecken#1]] dich bestimmt [[ein|pronouns/ein#1]]."
+    "text_linked": "[[Der|pronouns/der_nominativ]] [[Richter|nouns/Richter#1]] [[ist|verbs/sein#2]] [[nicht|particles/nicht#1]] [[gut|adjectives/gut#2]] [[auf|prepositions/auf]] [[dich|pronouns/du]] [[zu|particles/zu_drückt]] [[sprechen|verbs/sprechen#1]] [[und|conjunctions/und]] [[steckt|verbs/stecken#1]] dich bestimmt [[ein|pronouns/ein#1]]."
   },
   "1821c49e67": {
     "text": "Am besten wischt man die Fenster mit einem trockenen Tuch nach.",
@@ -5085,11 +5085,27 @@
   },
   "182abe410b": {
     "text": "Er geht jetzt stempeln.",
-    "translation": null,
+    "translation": "He's going to sign on for unemployment now.",
     "source": "wiktionary",
     "lemmas": [
       "stempeln"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "geht",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "stempeln",
+        "lemma": "stempeln",
+        "pos": "verb",
+        "gloss_hint": "be unemployed"
+      }
+    ],
+    "text_linked": "Er [[geht|verbs/gehen]] jetzt [[stempeln|verbs/stempeln#3]]."
   },
   "182af725b1": {
     "text": "Eine Erklärung liegt - grob gesprochen - dann vor, wenn man weiß, warum etwas so ist, wie es ist.",
@@ -8471,11 +8487,51 @@
   },
   "1857d3c043": {
     "text": "„Eine Umfrage unter Zugbegleitern zeigt: Anfeindungen und Gewalt stehen auf der Tagesordnung.“",
-    "translation": null,
+    "translation": "\"A survey among train conductors shows: hostilities and violence are on the agenda.\"",
     "source": "wiktionary",
     "lemmas": [
       "Zugbegleiter"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Umfrage",
+        "lemma": "Umfrage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zugbegleitern",
+        "lemma": "Zugbegleiter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zeigt",
+        "lemma": "zeigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anfeindungen",
+        "lemma": "Anfeindung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gewalt",
+        "lemma": "Gewalt",
+        "pos": "noun",
+        "gloss_hint": "violence"
+      },
+      {
+        "form": "Tagesordnung",
+        "lemma": "Tagesordnung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Eine [[Umfrage|nouns/Umfrage]] unter [[Zugbegleitern|nouns/Zugbegleiter]] [[zeigt|verbs/zeigen]]: Anfeindungen und [[Gewalt|nouns/Gewalt#1]] stehen auf der [[Tagesordnung|nouns/Tagesordnung]].“"
   },
   "1857d8d9fa": {
     "text": "Am 5.7.2004 hat die Stadtwerke Düsseldorf Aktiengesellschaft eine Anleihe in Höhe von 181,9 Mio. Euro ausgegeben.",
@@ -12347,7 +12403,7 @@
         "gloss_hint": "be (copula)"
       }
     ],
-    "text_linked": "„[[So|adverbs/so]] erzählte [[man|pronouns/man#2]] [[von|prepositions/von]] [[einem|determiners/ein]] Buckligen, [[dem|determiners/der]] [[der|determiners/der]] [[Buckel|nouns/Buckel_rücken#2]] abgefallen [[sein|verbs/sein#1]] [[sollte|verbs/sollen#4]], welcher [[aber|conjunctions/aber]] [[nur|particles/nur#1]] [[ausgestopft|verbs/ausstopfen]] [[gewesen|verbs/sein#4]] [[sei|verbs/sein#1]] […].“"
+    "text_linked": "„[[So|adverbs/so]] erzählte [[man|pronouns/man#2]] [[von|prepositions/von]] [[einem|determiners/ein]] Buckligen, [[dem|determiners/der]] [[der|determiners/der]] [[Buckel|nouns/Buckel_rücken#2]] abgefallen [[sein|verbs/sein#1]] [[sollte|verbs/sollen#4]], welcher [[aber|conjunctions/aber]] [[nur|particles/nur#1]] ausgestopft [[gewesen|verbs/sein#4]] [[sei|verbs/sein#1]] […].“"
   },
   "187eeb60fa": {
     "text": "„Ein altes Mütterchen wünscht Aalbeeren oder Aalbesinge; sie braut daraus ein Wunderträutlein gegen Gicht, Gliederreißen und dergleichen.“",
@@ -12707,7 +12763,7 @@
         "gloss_hint": "baptism"
       }
     ],
-    "text_linked": "„[[Eltern|nouns/Eltern#1]], [[beide|numerals/beide#1]] [[aus|prepositions/aus]] [[der|pronouns/der_nominativ]] [[Kirche|nouns/Kirche#1]] [[ausgetreten|verbs/ausgetreten]], [[laden|verbs/laden_jemanden#1]] [[angesichts|prepositions/angesichts]] der [[Geburt|nouns/Geburt#1]] [[ihres|pronouns/ihr_person]] [[Kindes|nouns/Kind#1]] [[zu|prepositions/zu]] [[einem|determiners/ein]] [[rein|adjectives/rein#2]] [[privaten|adjectives/privat#1]] Kind-Willkommensfest ein oder zu einem Namensfest, [[engagieren|verbs/engagieren#1]] [[dafür|adverbs/dafür#1]] [[einen|determiners/ein]] sog. [[›freien|adjectives/frei#1]] [[Redner‹|nouns/Redner#1]], [[bestellen|verbs/bestellen#1]] ›Paten‹, [[pflanzen|verbs/pflanzen#1]] [[gemeinsam|adjectives/gemeinsam#1]] einen Apfelbaum [[im|prepositions/in]] [[Garten|nouns/Garten#1]] – [[als|conjunctions/als]] [[eine|determiners/ein]] [[Alternative|nouns/Alternative_weibliche#1]] [[zur|prepositions/zu]] christlichen [[Taufe|nouns/Taufe#1]].“"
+    "text_linked": "„[[Eltern|nouns/Eltern#1]], [[beide|numerals/beide#1]] [[aus|prepositions/aus]] [[der|pronouns/der_nominativ]] [[Kirche|nouns/Kirche#1]] ausgetreten, [[laden|verbs/laden_jemanden#1]] [[angesichts|prepositions/angesichts]] der [[Geburt|nouns/Geburt#1]] [[ihres|pronouns/ihr_person]] [[Kindes|nouns/Kind#1]] [[zu|prepositions/zu]] [[einem|determiners/ein]] [[rein|adjectives/rein#2]] [[privaten|adjectives/privat#1]] Kind-Willkommensfest ein oder zu einem Namensfest, [[engagieren|verbs/engagieren#1]] [[dafür|adverbs/dafür#1]] [[einen|determiners/ein]] sog. [[›freien|adjectives/frei#1]] [[Redner‹|nouns/Redner#1]], [[bestellen|verbs/bestellen#1]] ›Paten‹, [[pflanzen|verbs/pflanzen#1]] [[gemeinsam|adjectives/gemeinsam#1]] einen Apfelbaum [[im|prepositions/in]] [[Garten|nouns/Garten#1]] – [[als|conjunctions/als]] [[eine|determiners/ein]] [[Alternative|nouns/Alternative_weibliche#1]] [[zur|prepositions/zu]] christlichen [[Taufe|nouns/Taufe#1]].“"
   },
   "187f9b0b91": {
     "text": "„An der Stelle, wo früher der Tisch gestanden hat, ist jetzt kein Tisch mehr, aber dort, wo seine Beine waren, sieht man immer noch die vier Abdrücke im Fußboden.“",
@@ -14113,7 +14169,7 @@
         "gloss_hint": "compartment"
       }
     ],
-    "text_linked": "„Die [[Gärten|nouns/Garten]] [[blühten|verbs/blühen]], die [[Felder|nouns/Feld_acker#1]] waren [[gepflügt|verbs/pflügen]] und [[sproßten|verbs/sprossen]], der [[Geruch|nouns/Geruch#1]] der frischen [[Erde|nouns/Erde#3]] drang bis in die [[Abteile|nouns/Abteil#1]].“"
+    "text_linked": "„Die [[Gärten|nouns/Garten]] [[blühten|verbs/blühen]], die [[Felder|nouns/Feld_acker#1]] waren [[gepflügt|verbs/pflügen]] und sproßten, der [[Geruch|nouns/Geruch#1]] der frischen [[Erde|nouns/Erde#3]] drang bis in die [[Abteile|nouns/Abteil#1]].“"
   },
   "188ddde08b": {
     "text": "„Ich hatte es sozusagen gelernt, wie man Ignoranz mit Anmaßung aufzäumt.“",
@@ -16505,11 +16561,37 @@
   },
   "18a0a57901": {
     "text": "Sie schreibt am schnellsten an der alten Maschine.",
-    "translation": null,
+    "translation": "She types fastest on the old machine.",
     "source": "wiktionary",
     "lemmas": [
       "am"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "schreibt",
+        "lemma": "schreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schnellsten",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Maschine",
+        "lemma": "Maschine",
+        "pos": "noun",
+        "gloss_hint": "machine"
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "e16d22ca"
+    },
+    "text_linked": "Sie [[schreibt|verbs/schreiben]] am [[schnellsten|adjectives/schnell]] an der alten [[Maschine|nouns/Maschine#1]]."
   },
   "18a110125f": {
     "text": "Bilanzierende Unternehmen müssen durchlaufende Posten aktivieren beziehungsweise passivieren.",
@@ -18470,7 +18552,7 @@
         "gloss_hint": "surrounded"
       }
     ],
-    "text_linked": "[[Das|pronouns/das_nominativ]] [[Gehege|nouns/Gehege#1]] [[des|determiners/des]] [[schwarzen|adjectives/schwarz]] [[Panthers|nouns/Panther]] [[war|verbs/sein#2]] [[stets|adverbs/stets#1]] [[umlagert|verbs/umlagern_anders]]."
+    "text_linked": "[[Das|pronouns/das_nominativ]] [[Gehege|nouns/Gehege#1]] [[des|determiners/des]] [[schwarzen|adjectives/schwarz]] [[Panthers|nouns/Panther]] [[war|verbs/sein#2]] [[stets|adverbs/stets#1]] umlagert."
   },
   "18b121ac05": {
     "text": "lahme Ente",
@@ -20006,7 +20088,7 @@
         "gloss_hint": "ground"
       }
     ],
-    "text_linked": "„[[Auch|adverbs/auch]] [[wenn|conjunctions/wenn]] [[die|pronouns/die]] [[frühen|adjectives/früh]] [[Kommunisten|nouns/Kommunist]] [[nahezu|adverbs/nahezu]] alle ihre Intourist-Reise [[in|prepositions/in]] die Sowjetunion [[machten|verbs/machen]] [[und|conjunctions/und]] [[sich|pronouns/sich]] [[dort|adverbs/dort]] Potemkinsche [[Dörfer|nouns/Dorf#1]] [[vorführen|verbs/vorführen]] [[liessen|verbs/lassen]], [[war|verbs/sein#2]] [[der|pronouns/der_nominativ]] [[reale|adjectives/real]] [[Sozialismus|nouns/Sozialismus#2]] [[doch|particles/doch_betont]] [[(noch)|adverbs/noch]] [[nicht|particles/nicht]] [[das|pronouns/das_[1]]] gelobte [[Land|nouns/Land#1]], [[sondern|conjunctions/sondern]] allenfalls [[ein|determiners/ein]] erster [[Schritt|nouns/Schritt#1]] [[auf|prepositions/auf]] [[dem|determiners/dem]] [[Weg|nouns/Weg#1]] [[zum|prepositions/zu]] [[Paradies|nouns/Paradies#2]] auf [[Erden|nouns/Erde#1]].“"
+    "text_linked": "„[[Auch|adverbs/auch]] [[wenn|conjunctions/wenn]] [[die|pronouns/die]] [[frühen|adjectives/früh]] [[Kommunisten|nouns/Kommunist]] [[nahezu|adverbs/nahezu]] alle ihre Intourist-Reise [[in|prepositions/in]] die Sowjetunion [[machten|verbs/machen]] [[und|conjunctions/und]] [[sich|pronouns/sich]] [[dort|adverbs/dort]] Potemkinsche [[Dörfer|nouns/Dorf#1]] [[vorführen|verbs/vorführen]] [[liessen|verbs/lassen]], [[war|verbs/sein#2]] [[der|pronouns/der_nominativ]] [[reale|adjectives/real]] [[Sozialismus|nouns/Sozialismus#2]] [[doch|particles/doch_betont]] [[(noch)|adverbs/noch]] [[nicht|particles/nicht]] [[das|pronouns/das_[1]]] gelobte [[Land|nouns/Land#1]], [[sondern|conjunctions/sondern]] [[allenfalls|adverbs/allenfalls]] [[ein|determiners/ein]] erster [[Schritt|nouns/Schritt#1]] [[auf|prepositions/auf]] [[dem|determiners/dem]] [[Weg|nouns/Weg#1]] [[zum|prepositions/zu]] [[Paradies|nouns/Paradies#2]] auf [[Erden|nouns/Erde#1]].“"
   },
   "18bbd3ce7b": {
     "text": "Die Existenz der spektroskopischen Doppelsterne und der Umstand, daß in weitaus den meisten Fällen die beobachtete Radialgeschwindigkeit vollständig durch die Keplersche Bewegung repräsentiert wird, ist also ein kräftiger Beweis für die Konstanz der Lichtgeschwindigkeit.",
@@ -21874,7 +21956,7 @@
         "gloss_hint": "used"
       }
     ],
-    "text_linked": "[[Nach|prepositions/nach]] [[dem|determiners/der]] ersten [[Aufkochen|verbs/aufkochen]] [[auf|prepositions/auf#1]] [[kleiner|adjectives/klein#1]] [[Flamme|nouns/Flamme#1]] [[köcheln|verbs/köcheln]] [[lassen|verbs/lassen#3]]. ([[Hier|adverbs/hier]] [[nicht|particles/nicht#1]] [[im|prepositions/in#1]] [[Sinne|nouns/Sinn#4]] [[von|prepositions/von#2]] \"Kochstelle\" [[sondern|conjunctions/sondern]] von \"[[Einstellung|nouns/Einstellung#2]] [[der|determiners/der]] [[Leistung|nouns/Leistung#1]] der Kochstelle\" [[gebraucht|verbs/gebrauchen]].)"
+    "text_linked": "[[Nach|prepositions/nach]] [[dem|determiners/der]] ersten [[Aufkochen|verbs/aufkochen]] [[auf|prepositions/auf#1]] [[kleiner|adjectives/klein#1]] [[Flamme|nouns/Flamme#1]] [[köcheln|verbs/köcheln#1]] [[lassen|verbs/lassen#3]]. ([[Hier|adverbs/hier]] [[nicht|particles/nicht#1]] [[im|prepositions/in#1]] [[Sinne|nouns/Sinn#4]] [[von|prepositions/von#2]] \"Kochstelle\" [[sondern|conjunctions/sondern]] von \"[[Einstellung|nouns/Einstellung#2]] [[der|determiners/der]] [[Leistung|nouns/Leistung#1]] der Kochstelle\" [[gebraucht|verbs/gebrauchen]].)"
   },
   "18c638ebf7": {
     "text": "„Die sogenannten Aalhamen finden auch für andere Fischarten Verwendung.“",
@@ -26208,7 +26290,7 @@
         "gloss_hint": "decisions"
       }
     ],
-    "text_linked": "„[[Die|pronouns/die]] beiden [[lateinischen|adjectives/lateinisch#1]] [[Worte|nouns/Wort_kleinste#1]] [[umspannten|verbs/umspannen_anders]] [[ihr|pronouns/ihr_zu#1]] [[Leben|nouns/Leben#1]] [[wie|adverbs/wie]] [[ein|determiners/ein]] [[Kokon|nouns/Kokon#1]], [[denn|particles/denn_als#1]] [[es|pronouns/es]] [[war|verbs/sein#2]] tatsächlich nichts anderes [[als|conjunctions/als#1]] [[eine|determiners/ein]] [[Folge|nouns/Folge#4]] [[falscher|adjectives/falsch#1]] [[Entscheidungen|nouns/Entscheidung#1]].“"
+    "text_linked": "„[[Die|pronouns/die]] beiden [[lateinischen|adjectives/lateinisch#1]] [[Worte|nouns/Wort_kleinste#1]] umspannten [[ihr|pronouns/ihr_zu#1]] [[Leben|nouns/Leben#1]] [[wie|adverbs/wie]] [[ein|determiners/ein]] [[Kokon|nouns/Kokon#1]], [[denn|particles/denn_als#1]] [[es|pronouns/es]] [[war|verbs/sein#2]] tatsächlich nichts anderes [[als|conjunctions/als#1]] [[eine|determiners/ein]] [[Folge|nouns/Folge#4]] [[falscher|adjectives/falsch#1]] [[Entscheidungen|nouns/Entscheidung#1]].“"
   },
   "18ef81d698": {
     "text": "Ich schlafe, du aber bist laut.",
@@ -26646,7 +26728,7 @@
         "gloss_hint": "abandon"
       }
     ],
-    "text_linked": "„Das sind [[schöne|adjectives/schön#1]] [[und|conjunctions/und]] [[schön|adjectives/schön#2]] verlogene [[Patrioten|nouns/Patriot#1]], [[die|determiners/die]] ihre Geldinteressen [[mit|prepositions/mit#1]] [[dem|determiners/der]] [[nationalen|adjectives/national#1]] [[Interesse|nouns/Interesse#1]] [[gleichsetzen|verbs/gleichsetzen]] und [[beteuern|verbs/beteuern]], die Schweiz [[könne|verbs/können_beherrschen#1]] [[sich|pronouns/sich#1]] [[einfach|adjectives/einfach#6]] [[stur|adjectives/stur]] [[stellen|verbs/stellen#1]], [[am|prepositions/an#2]] Sankt-Nimmerleins-Tag mit [[der|determiners/der]] [[EU|nouns/EU#1]] [[reden|verbs/reden#1]], [[gegen|particles/gegen#1]] [[den|determiners/der]] bislang [[verlässlichsten|adjectives/verlässlich#1]] [[Partner|nouns/Partner#1]] prozessieren, [[nebenbei|adverbs/nebenbei]] die Alpenländer [[im|prepositions/in#1]] Stich lassen.“"
+    "text_linked": "„Das sind [[schöne|adjectives/schön#1]] [[und|conjunctions/und]] [[schön|adjectives/schön#2]] verlogene [[Patrioten|nouns/Patriot#1]], [[die|determiners/die]] ihre Geldinteressen [[mit|prepositions/mit#1]] [[dem|determiners/der]] [[nationalen|adjectives/national#1]] [[Interesse|nouns/Interesse#1]] [[gleichsetzen|verbs/gleichsetzen#1]] und [[beteuern|verbs/beteuern]], die Schweiz [[könne|verbs/können_beherrschen#1]] [[sich|pronouns/sich#1]] [[einfach|adjectives/einfach#6]] [[stur|adjectives/stur]] [[stellen|verbs/stellen#1]], [[am|prepositions/an#2]] Sankt-Nimmerleins-Tag mit [[der|determiners/der]] [[EU|nouns/EU#1]] [[reden|verbs/reden#1]], [[gegen|particles/gegen#1]] [[den|determiners/der]] bislang [[verlässlichsten|adjectives/verlässlich#1]] [[Partner|nouns/Partner#1]] prozessieren, [[nebenbei|adverbs/nebenbei]] die Alpenländer [[im|prepositions/in#1]] Stich lassen.“"
   },
   "18f27aa6e6": {
     "text": "nicht doch",

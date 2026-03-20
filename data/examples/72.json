@@ -3050,11 +3050,33 @@
   },
   "721e03c2c0": {
     "text": "„‚Kultur‘ wird aber auch als Antonym zu ‚Zivilisation‘ gesehen.“",
-    "translation": null,
+    "translation": "'Culture' is also seen as an antonym to 'civilization'.",
     "source": "wiktionary",
     "lemmas": [
       "Antonym"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kultur",
+        "lemma": "Kultur",
+        "pos": "noun",
+        "gloss_hint": "culture"
+      },
+      {
+        "form": "Antonym",
+        "lemma": "Antonym",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zivilisation",
+        "lemma": "Zivilisation",
+        "pos": "noun",
+        "gloss_hint": "civilization"
+      }
+    ],
+    "text_linked": "„‚[[Kultur|nouns/Kultur#1]]‘ wird aber auch als [[Antonym|nouns/Antonym]] zu ‚[[Zivilisation|nouns/Zivilisation#1]]‘ gesehen.“"
   },
   "721e0b0534": {
     "text": "Er ist in der Verbindung „Teutonia“.",
@@ -3284,7 +3306,7 @@
         "gloss_hint": "be allowed to | be allowed | may (suggest)"
       }
     ],
-    "text_linked": "„[[Mit|adverbs/mit]] [[einer|pronouns/ein]] Füllfeder [[sei|verbs/sein]] [[nun|adverbs/nun]] [[einmal|adverbs/einmal#1]] [[ein|pronouns/ein#1]] [[besonders|adverbs/besonders]] [[schönes|adjectives/schön]] Schriftbild [[zu|prepositions/zu]] [[erzielen|verbs/erzielen#1]]. Manche Kinder würden [[allerdings|adverbs/allerdings]] [[von|prepositions/von]] [[sich|pronouns/sich#1]] [[aus|adverbs/aus]] viel zu [[früh|adjectives/früh#1]] [[einfordern|verbs/einfordern]], [[mit|prepositions/mit]] [[der|pronouns/der_nominativ]] [[Feder|nouns/Feder#1]] [[schreiben|verbs/schreiben#1]] zu [[dürfen|verbs/dürfen#1]].“"
+    "text_linked": "„[[Mit|adverbs/mit]] [[einer|pronouns/ein]] Füllfeder [[sei|verbs/sein]] [[nun|adverbs/nun]] [[einmal|adverbs/einmal#1]] [[ein|pronouns/ein#1]] [[besonders|adverbs/besonders]] [[schönes|adjectives/schön]] Schriftbild [[zu|prepositions/zu]] [[erzielen|verbs/erzielen#1]]. Manche Kinder würden [[allerdings|adverbs/allerdings]] [[von|prepositions/von]] [[sich|pronouns/sich#1]] [[aus|adverbs/aus]] viel zu [[früh|adjectives/früh#1]] [[einfordern|verbs/einfordern#1]], [[mit|prepositions/mit]] [[der|pronouns/der_nominativ]] [[Feder|nouns/Feder#1]] [[schreiben|verbs/schreiben#1]] zu [[dürfen|verbs/dürfen#1]].“"
   },
   "7220e78526": {
     "text": "„Er benötigt Selbstvertrauen, ihm muss der Knopf aufgehen.“",
@@ -4852,7 +4874,7 @@
         "gloss_hint": "hand"
       }
     ],
-    "text_linked": "„Danach kam [[eine|determiners/ein]] Gudrun Scheßel [[ins|prepositions/in]] [[Spiel|nouns/Spiel#1]], [[die|pronouns/die]] Photographien [[berichteten|verbs/berichten#1]] [[von|prepositions/von]] [[ihrer|pronouns/ihr_person]] [[Vorliebe|nouns/Vorliebe#1]] [[für|prepositions/für]] [[weiße|adjectives/weiß#1]] [[Kleider|nouns/Kleid#1]] [[und|conjunctions/und]] weiße [[Stümpfe|nouns/Stumpf]], sie [[bewiesen|verbs/beweisen#2]] die [[schreckliche|adjectives/schrecklich#1]] [[Länge|nouns/Länge#1]] ihrer rotblonden Zöpfe, die [[bis|particles/bis#6]] [[auf|prepositions/auf#6]] [[den|determiners/der]] [[Hintern|nouns/Hintern]] [[fielen|verbs/fallen#1]], [[auch|adverbs/auch]] daß Gudrun Scheßel lesen konnte, wurde [[da|adverbs/da]] [[bekanntgegeben|verbs/bekanntgeben]], [[denn|particles/denn_als]] jede Photographie [[zeigte|verbs/zeigen#1]] sie [[mit|prepositions/mit]] [[einem|determiners/ein]] [[Buch|nouns/Buch#1]] [[in|prepositions/in]] [[der|determiners/der]] [[Hand|nouns/Hand#2]].“"
+    "text_linked": "„Danach kam [[eine|determiners/ein]] Gudrun Scheßel [[ins|prepositions/in]] [[Spiel|nouns/Spiel#1]], [[die|pronouns/die]] Photographien [[berichteten|verbs/berichten#1]] [[von|prepositions/von]] [[ihrer|pronouns/ihr_person]] [[Vorliebe|nouns/Vorliebe#1]] [[für|prepositions/für]] [[weiße|adjectives/weiß#1]] [[Kleider|nouns/Kleid#1]] [[und|conjunctions/und]] weiße [[Stümpfe|nouns/Stumpf]], sie [[bewiesen|verbs/beweisen#2]] die [[schreckliche|adjectives/schrecklich#1]] [[Länge|nouns/Länge#1]] ihrer rotblonden Zöpfe, die [[bis|particles/bis#6]] [[auf|prepositions/auf#6]] [[den|determiners/der]] [[Hintern|nouns/Hintern]] [[fielen|verbs/fallen#1]], [[auch|adverbs/auch]] daß Gudrun Scheßel lesen konnte, wurde [[da|adverbs/da]] [[bekanntgegeben|verbs/bekanntgeben#1]], [[denn|particles/denn_als]] jede Photographie [[zeigte|verbs/zeigen#1]] sie [[mit|prepositions/mit]] [[einem|determiners/ein]] [[Buch|nouns/Buch#1]] [[in|prepositions/in]] [[der|determiners/der]] [[Hand|nouns/Hand#2]].“"
   },
   "722e401b22": {
     "text": "Der Krankenwagen fährt dich sofort ins Krankenhaus.",
@@ -8932,11 +8954,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take someone at their word",
     "source": "wiktionary",
     "lemmas": [
       "beim"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "725396e372": {
     "text": "„Er wußte, daß sie als Tochter eines spanischen Kaufmanns und einer Negerin in der amerikanischen Stadt St. Louis geboren worden war.“",
@@ -10069,7 +10092,7 @@
         "gloss_hint": "vary"
       }
     ],
-    "text_linked": "Das phänomenale [[Erleben|verbs/erleben#1]] [[von|prepositions/von]] Selbstheit [[und|conjunctions/und]] kognitiver Selbstbezugnahme [[kann|verbs/können_beherrschen#1]] entlang einer [[großen|adjectives/groß#1]] [[Anzahl|nouns/Anzahl#2]] von [[Dimensionen|nouns/Dimension#2]] [[variieren|verbs/variieren]]."
+    "text_linked": "Das phänomenale [[Erleben|verbs/erleben#1]] [[von|prepositions/von]] Selbstheit [[und|conjunctions/und]] kognitiver Selbstbezugnahme [[kann|verbs/können_beherrschen#1]] [[entlang|postpositions/entlang]] einer [[großen|adjectives/groß#1]] [[Anzahl|nouns/Anzahl#2]] von [[Dimensionen|nouns/Dimension#2]] [[variieren|verbs/variieren#1]]."
   },
   "725e3fc866": {
     "text": "„Die Tiefen der Ozeane sind die rätselhaftesten Regionen unserer Erde. […] Dort gibt es Tiere, die noch nie ein Mensch lebend gesehen hat.“",
@@ -10391,7 +10414,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Hinter|prepositions/hinter]] [[Mundgeruch|nouns/Mundgeruch#1]] [[können|verbs/können_etwas#1]] [[ernsthafte|adjectives/ernsthaft]] [[Erkrankungen|nouns/Erkrankung]], [[wie|conjunctions/wie_als#1]] [[ein|pronouns/ein#2]] akutes Nierenversagen [[oder|particles/oder#5]] [[Diabetes|nouns/Diabetes#1]] mellitus, stecken."
+    "text_linked": "[[Hinter|prepositions/hinter]] [[Mundgeruch|nouns/Mundgeruch#1]] [[können|verbs/können_beherrschen]] [[ernsthafte|adjectives/ernsthaft]] [[Erkrankungen|nouns/Erkrankung]], [[wie|conjunctions/wie_als#1]] [[ein|pronouns/ein#2]] akutes Nierenversagen [[oder|particles/oder#5]] [[Diabetes|nouns/Diabetes#1]] mellitus, stecken."
   },
   "726304d16a": {
     "text": "Die Suche nach einem Nachfolger gestaltete sich schwieriger als gedacht.",
@@ -13578,7 +13601,7 @@
         "gloss_hint": "orchestra"
       }
     ],
-    "text_linked": "„In [[den|determiners/der]] Jahren 1922 [[bis|particles/bis#1]] 1933 [[leitete|verbs/leiten#1]] er den Kasseler [[A-Cappella-Chor|nouns/A-cappella-Chor#1]], bis 1941 [[dirigierte|verbs/dirigieren]] er [[das|determiners/der]] Kasseler Staatstheaterorchester.“"
+    "text_linked": "„In [[den|determiners/der]] Jahren 1922 [[bis|particles/bis#1]] 1933 [[leitete|verbs/leiten#1]] er den Kasseler [[A-Cappella-Chor|nouns/A-cappella-Chor#1]], bis 1941 [[dirigierte|verbs/dirigieren#1]] er [[das|determiners/der]] Kasseler Staatstheaterorchester.“"
   },
   "7286f859f9": {
     "text": "„Bestell auch dem Nigerianer Grüße von mir. Tschau!“",
@@ -14958,11 +14981,45 @@
   },
   "72901d9278": {
     "text": "Bei den Champignons sind Hut und Stiel leicht voneinander trennbar.",
-    "translation": null,
+    "translation": "In button mushrooms, the cap and stem are easily separable from each other.",
     "source": "wiktionary",
     "lemmas": [
       "trennbar"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Champignons",
+        "lemma": "Champignon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hut",
+        "lemma": "Hut",
+        "pos": "noun",
+        "gloss_hint": "cap (fungi)"
+      },
+      {
+        "form": "Stiel",
+        "lemma": "Stiel",
+        "pos": "noun",
+        "gloss_hint": "stem"
+      },
+      {
+        "form": "leicht",
+        "lemma": "leicht",
+        "pos": "adjective",
+        "gloss_hint": "easy"
+      },
+      {
+        "form": "trennbar",
+        "lemma": "trennbar",
+        "pos": "adjective",
+        "gloss_hint": "separable"
+      }
+    ],
+    "text_linked": "Bei den Champignons sind [[Hut|nouns/Hut_kopfform#2]] und [[Stiel|nouns/Stiel#2]] [[leicht|adjectives/leicht#2]] voneinander [[trennbar|adjectives/trennbar#1]]."
   },
   "72901eb5f1": {
     "text": "„«Insha'Allah» werden wir in einem der nächsten Ramadane wieder dabei sein und musikalische «Nights in Tunisia» oder anderswo verbringen können.“",
@@ -17308,7 +17365,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Den [[Kunden|nouns/Kunde_jemand#1]] [[seines|pronouns/sein]] Nobelrestaurants Vertigo [[werde|verbs/werden#3]] er überdies [[auch|adverbs/auch]] [[weiterhin|adverbs/weiterhin#1]] [[ein|determiners/ein]] [[gutes|adjectives/gut#1]] [[Glas|nouns/Glas_durchsichtiger]] [[als|conjunctions/als#6]] [[Aperitif|nouns/Aperitif]] anbieten“"
+    "text_linked": "„Den [[Kunden|nouns/Kunde_jemand#1]] [[seines|pronouns/sein]] Nobelrestaurants Vertigo [[werde|verbs/werden#3]] er [[überdies|adverbs/überdies]] [[auch|adverbs/auch]] [[weiterhin|adverbs/weiterhin#1]] [[ein|determiners/ein]] [[gutes|adjectives/gut#1]] [[Glas|nouns/Glas_durchsichtiger]] [[als|conjunctions/als#6]] [[Aperitif|nouns/Aperitif]] anbieten“"
   },
   "72a2ef3ba9": {
     "text": "Palästina besteht heute aus zwei separaten Regionen, dem Gazastreifen am Mittelmeer und dem Westjordanland, das ist der zweite Teil des palästinensischen Autonomiegebiets, im Osten Israels.",
@@ -18358,11 +18415,51 @@
   },
   "72b10464bb": {
     "text": "Er stand an, um ein Stück Brot aus dem Laden zu erlangen.",
-    "translation": null,
+    "translation": "He went to get a piece of bread from the shop.",
     "source": "wiktionary",
     "lemmas": [
       "anstehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "stand",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": "set standard"
+      },
+      {
+        "form": "an",
+        "lemma": "an",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stück",
+        "lemma": "Stück",
+        "pos": "noun",
+        "gloss_hint": "piece"
+      },
+      {
+        "form": "Brot",
+        "lemma": "Brot",
+        "pos": "noun",
+        "gloss_hint": "bread"
+      },
+      {
+        "form": "Laden",
+        "lemma": "Laden",
+        "pos": "noun",
+        "gloss_hint": "store"
+      },
+      {
+        "form": "erlangen",
+        "lemma": "erlangen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Er [[stand|verbs/stehen#6]] an, um ein [[Stück|nouns/Stück#1]] [[Brot|nouns/Brot#1]] aus dem [[Laden|nouns/Laden_geschäft#1]] zu [[erlangen|verbs/erlangen]]."
   },
   "72b10be077": {
     "text": "Die Briefmarke klebt auf dem Briefumschlag.",
@@ -18769,7 +18866,10 @@
     "lemmas": [
       "Technik"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "72bb3edbec": {
     "text": "Er hungerte nach Aufmerksamkeit.",
@@ -18955,7 +19055,7 @@
         "gloss_hint": "human flesh"
       }
     ],
-    "text_linked": "„Da kommen [[üble|adjectives/übel]] Trollweiber [[vor|prepositions/vor#1]], [[die|pronouns/die]] [[rülpsen|verbs/rülpsen]] [[und|conjunctions/und]] [[furzen|verbs/furzen#1]] und [[ewig|adjectives/ewig#1]] unbändigen [[Hunger|nouns/Hunger#2]] [[haben|verbs/haben#1]] [[auf|prepositions/auf#1]] [[Menschenfleisch|nouns/Menschenfleisch#1]].“"
+    "text_linked": "„Da kommen [[üble|adjectives/übel]] Trollweiber [[vor|prepositions/vor#1]], [[die|pronouns/die]] [[rülpsen|verbs/rülpsen#1]] [[und|conjunctions/und]] [[furzen|verbs/furzen#1]] und [[ewig|adjectives/ewig#1]] unbändigen [[Hunger|nouns/Hunger#2]] [[haben|verbs/haben#1]] [[auf|prepositions/auf#1]] [[Menschenfleisch|nouns/Menschenfleisch#1]].“"
   },
   "72bf971af0": {
     "text": "„Unter den übrigen Frauen, die wegen eines ähnlichen Verbrechens wie Elizabeth Gosling hinter Gittern saßen, befanden sich zwei, die von derselben Hauswirtin angezeigt worden waren.“",

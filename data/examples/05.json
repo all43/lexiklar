@@ -1815,7 +1815,7 @@
         "gloss_hint": "minister"
       }
     ],
-    "text_linked": "„[[Aber|conjunctions/aber#1]] [[gegen|particles/gegen#1]] Sexualstraftäter [[will|verbs/wollen#1]] er unnachsichtig [[vorgehen|verbs/vorgehen]]: [[die|determiners/die]] [[sollen|verbs/sollen#4]] [[kastriert|verbs/kastrieren]] [[werden|verbs/werden#1]], [[meint|verbs/meinen#2]] [[der|determiners/der]] [[Präsident|nouns/Präsident#1]], der [[dem|determiners/der]] [[Volk|nouns/Volk#3]] [[aufs|prepositions/auf#1]] [[Maul|nouns/Maul#1]] [[schaut|verbs/schauen#1]] [[und|conjunctions/und#1]] [[seinen|pronouns/sein]] [[Bruder|nouns/Bruder#1]] [[als|conjunctions/als#6]] [[Minister|nouns/Minister#1]] beschäftigt.“"
+    "text_linked": "„[[Aber|conjunctions/aber#1]] [[gegen|particles/gegen#1]] Sexualstraftäter [[will|verbs/wollen#1]] er unnachsichtig [[vorgehen|verbs/vorgehen]]: [[die|determiners/die]] [[sollen|verbs/sollen#4]] kastriert [[werden|verbs/werden#1]], [[meint|verbs/meinen#2]] [[der|determiners/der]] [[Präsident|nouns/Präsident#1]], der [[dem|determiners/der]] [[Volk|nouns/Volk#3]] [[aufs|prepositions/auf#1]] [[Maul|nouns/Maul#1]] [[schaut|verbs/schauen#1]] [[und|conjunctions/und#1]] [[seinen|pronouns/sein]] [[Bruder|nouns/Bruder#1]] [[als|conjunctions/als#6]] [[Minister|nouns/Minister#1]] beschäftigt.“"
   },
   "05125c0dc4": {
     "text": "Bei dem Unfall im Atomkraftwerk ist mit Radioaktivität zu rechnen.",
@@ -2771,12 +2771,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "my goodness",
     "source": "wiktionary",
     "lemmas": [
       "Schwan"
     ],
-    "ref": "phrases/mein lieber Schwan"
+    "ref": "phrases/mein lieber Schwan",
+    "translation_model": "openai/gpt-4.1"
   },
   "0523ba5ecb": {
     "text": "„In Topologie und reeller Analysis ist die Tatsache, dass abgeschlossene reelle Intervalle die Eigenschaften der Kompaktheit und des Zusammenhangs haben, von weitreichender Konsequenz.“",
@@ -2945,11 +2946,12 @@
     "type": "expression",
     "note": "an eine unangenehme Situation erinnern",
     "synonyms": [],
-    "translation": null,
+    "translation": "rub salt in someone's wound",
     "source": "wiktionary",
     "lemmas": [
       "streuen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0525c2dcdb": {
     "text": "Wer ist die Kapitänin dieses Schiffes?",
@@ -3638,11 +3640,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be completely spaced out",
     "source": "wiktionary",
     "lemmas": [
       "wegtreten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "052fdaf252": {
     "text": "„Die SPD stellt Bedingungen für ihre Zustimmung zu einer Verlängerung des Afghanistan-Einsatzes.“",
@@ -3705,11 +3708,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take credit for someone else's achievements",
     "source": "wiktionary",
     "lemmas": [
       "Feder"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0531412ede": {
     "text": "„Solowjew blieb stehen, um einen Klumpen schmutzigen Schnee aufzuheben, der den Sonnenstrahlen in einer kleinen Mulde entgangen war.“",
@@ -3949,7 +3953,7 @@
         "gloss_hint": "bag"
       }
     ],
-    "text_linked": "„‚86 [[Meter|nouns/Meter]] muss ich [[unterm|adverbs/unter]] [[Eis|nouns/Eis_wasser#1]] [[schaffen|verbs/schaffen_etwas#1]], [[dann|adverbs/dann]] [[habe|verbs/haben#1]] ich [[den|pronouns/der_nominativ]] [[Weltrekord|nouns/Weltrekord]] im Apnoe-Streckentauchen [[in|prepositions/in]] [[der|pronouns/der_nominativ]] [[Tasche|nouns/Tasche#2]]‘, erklärt Redl, der bereits bei zwei Fernsehproduktionen von ‚Medicopter 117‘ als Unterwasser-Stuntman gearbeitet hat. Ein ehrgeiziges Ziel, denn der aktuelle Weltrekord liegt bei 85 Metern mit Flossen und bei 100 Metern, allerdings mit Hilfe eines Scooters.“"
+    "text_linked": "„‚86 [[Meter|nouns/Meter]] muss ich [[unterm|adverbs/unter]] [[Eis|nouns/Eis_wasser#1]] [[schaffen|verbs/schaffen_etwas]], [[dann|adverbs/dann]] [[habe|verbs/haben#1]] ich [[den|pronouns/der_nominativ]] [[Weltrekord|nouns/Weltrekord]] im Apnoe-Streckentauchen [[in|prepositions/in]] [[der|pronouns/der_nominativ]] [[Tasche|nouns/Tasche#2]]‘, erklärt Redl, der bereits bei zwei Fernsehproduktionen von ‚Medicopter 117‘ als Unterwasser-Stuntman gearbeitet hat. Ein ehrgeiziges Ziel, denn der aktuelle Weltrekord liegt bei 85 Metern mit Flossen und bei 100 Metern, allerdings mit Hilfe eines Scooters.“"
   },
   "05321f8e76": {
     "text": "Er war bei unseren Skiausflügen immer das Schlusslicht.",
@@ -4860,11 +4864,33 @@
   },
   "053a29fef5": {
     "text": "„Die Pirahã dachten nur im Präsens.“",
-    "translation": null,
+    "translation": "The Pirahã thought only in the present tense.",
     "source": "wiktionary",
     "lemmas": [
       "Präsens"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Pirahã",
+        "lemma": "Pirahã",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dachten",
+        "lemma": "denken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Präsens",
+        "lemma": "Präsens",
+        "pos": "noun",
+        "gloss_hint": "present tense"
+      }
+    ],
+    "text_linked": "„Die Pirahã [[dachten|verbs/denken]] nur im [[Präsens|nouns/Präsens#1]].“"
   },
   "053ab2666c": {
     "text": "„Die Lösung war ein Briefkasten, den ich an einem schmiedeeisernen Gartenzaun befestigte, der sich in der Nähe meines früheren Beobachtungspostens befand.“",
@@ -5334,22 +5360,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a sixth sense for something",
     "source": "wiktionary",
     "lemmas": [
       "sechste"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "05409c43e4": {
     "text": "sich ein Bein ausreißen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go to great lengths",
     "source": "wiktionary",
     "lemmas": [
       "ausreißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0541070b4d": {
     "text": "„Taduhepa hätte dann, als Amenophis IV. sie noch ganz »frisch« übernahm, eine völlig feminin geartete Mitgift mitbekommen, nämlich […].“",
@@ -6409,7 +6437,7 @@
         "gloss_hint": "solar eclipse"
       }
     ],
-    "text_linked": "„[[In|prepositions/in]] früheren [[Zeiten|nouns/Zeit#1]] [[gab|verbs/geben]] es keine [[wissenschaftlichen|adjectives/wissenschaftlich]] [[Erklärungen|nouns/Erklärung#1]] [[für|prepositions/für]] [[eine|determiners/ein]] [[Sonnenfinsternis|nouns/Sonnenfinsternis#1]]. In allen [[Teilen|nouns/Teil_stück#1]] [[der|determiners/der]] [[Welt|nouns/Welt#3]] [[rankten|verbs/ranken]] [[sich|pronouns/sich]] [[daher|adverbs/daher]] [[Mythen|nouns/Mythos#1]] [[und|conjunctions/und]] [[Aberglaube|nouns/Aberglaube#1]] [[um|prepositions/um]] [[die|determiners/die]] Sonnenfinsternis.“"
+    "text_linked": "„[[In|prepositions/in]] früheren [[Zeiten|nouns/Zeit#1]] [[gab|verbs/geben]] es keine [[wissenschaftlichen|adjectives/wissenschaftlich]] [[Erklärungen|nouns/Erklärung#1]] [[für|prepositions/für]] [[eine|determiners/ein]] [[Sonnenfinsternis|nouns/Sonnenfinsternis#1]]. In allen [[Teilen|nouns/Teil_stück#1]] [[der|determiners/der]] [[Welt|nouns/Welt#3]] rankten [[sich|pronouns/sich]] [[daher|adverbs/daher]] [[Mythen|nouns/Mythos#1]] [[und|conjunctions/und]] [[Aberglaube|nouns/Aberglaube#1]] [[um|prepositions/um]] [[die|determiners/die]] Sonnenfinsternis.“"
   },
   "054eb0b46b": {
     "text": "„Marie trug ihren einteiligen schwarzen Badeanzug.“",
@@ -7966,11 +7994,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "dressed up to the nines",
     "source": "wiktionary",
     "lemmas": [
       "schmücken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0560a09422": {
     "text": "sich bei jemandem sehen lassen",
@@ -9697,11 +9726,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A rolling stone gathers no moss.",
     "source": "wiktionary",
     "lemmas": [
       "rasten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "05724af0d5": {
     "text": "ein (einsamer) Rufer in der Wüste",
@@ -11856,12 +11886,13 @@
     "type": "expression",
     "note": "jemand wird sehr zornig, ungehalten",
     "synonyms": [],
-    "translation": null,
+    "translation": "Someone is getting really angry.",
     "source": "wiktionary",
     "lemmas": [
       "Kamm",
       "schwellen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0587b70f87": {
     "text": "Danach hat er eine Rede losgelassen, die sich gewaschen hat.",
@@ -14170,7 +14201,7 @@
         "gloss_hint": "taste"
       }
     ],
-    "text_linked": "„Wenn sich die Giraffen [[recken|verbs/recken]], / Hochlaub [[sucht|verbs/suchen#1]] die spitze Zunge, / Das ihnen so [[schmeckt|verbs/schmecken#1]], wie junge / Frühkartoffeln mit Butter mir schmecken.“"
+    "text_linked": "„Wenn sich die Giraffen recken, / Hochlaub [[sucht|verbs/suchen#1]] die spitze Zunge, / Das ihnen so [[schmeckt|verbs/schmecken#1]], wie junge / Frühkartoffeln mit Butter mir schmecken.“"
   },
   "05a0409ce3": {
     "text": "„In der Abteilung ›Neuzeit‹ ist von der Ansbacher Polizei ein Zimmer dem Andenken des armen Findlings Kaspar Hauser geweiht; man sieht seine Uhr, seine Kleider und Wäsche mit den Stichmarken des Mordinstrumentes und die ganze Literatur über diesen geheimnisvollen Unbekannten.“",
@@ -14578,22 +14609,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to release on bail",
     "source": "wiktionary",
     "lemmas": [
       "freilassen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "05a8eca96f": {
     "text": "etwas unter den Tisch wischen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to sweep something under the rug",
     "source": "wiktionary",
     "lemmas": [
       "wischen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "05aa08ce9c": {
     "text": "Um den zweiten Platz zu halten, mussten sich die Jungs auf den letzten Metern ordentlich in die Ruder legen.",
@@ -14719,7 +14752,7 @@
         "gloss_hint": "die"
       }
     ],
-    "text_linked": "Eines Tages [[könnten|verbs/können_beherrschen]] Elektroden im [[Gehirn|nouns/Gehirn#1]] neuronale [[Ausfälle|nouns/Ausfall#1]] bei [[Menschen|nouns/Mensch_lebewesen#2]] ausgleichen, zum Beispiel nach einem [[Schlaganfall|nouns/Schlaganfall#1]] oder wenn durch Parkinson oder Alzheimer Nervenzellen [[abgestorben|verbs/absterben]] sind."
+    "text_linked": "Eines Tages [[könnten|verbs/können_beherrschen]] Elektroden im [[Gehirn|nouns/Gehirn#1]] neuronale [[Ausfälle|nouns/Ausfall#1]] bei [[Menschen|nouns/Mensch_lebewesen#2]] ausgleichen, zum Beispiel nach einem [[Schlaganfall|nouns/Schlaganfall#1]] oder wenn durch Parkinson oder Alzheimer Nervenzellen [[abgestorben|verbs/absterben#1]] sind."
   },
   "05ac5737bd": {
     "text": "Wegen der Hitze war er ganz schlapp.",
@@ -15099,11 +15132,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to kick the bucket",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "05b6e51a6c": {
     "text": "Die Banane hat widerlich geschmeckt, die war bestimmt nicht mehr gut.",
@@ -16187,7 +16221,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Das [[Tau|nouns/Tau_starkes#1]] ist im [[Block|nouns/Block#9]] [[festgeklemmt|verbs/festklemmen]]."
+    "text_linked": "Das [[Tau|nouns/Tau_starkes#1]] ist im [[Block|nouns/Block#9]] festgeklemmt."
   },
   "05c3f9971e": {
     "text": "»Männer haben Angst, dass ihre Frauen ihnen untreu werden könnten, wenn sie sexuell nicht befriedigt werden«, sagt Hebba Kotb.",
@@ -18566,11 +18600,33 @@
   },
   "05d855c1fc": {
     "text": "Ich brauche die Brille zum Lesen.",
-    "translation": null,
+    "translation": "I need glasses for reading.",
     "source": "wiktionary",
     "lemmas": [
       "zum"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "brauche",
+        "lemma": "brauchen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Brille",
+        "lemma": "Brille",
+        "pos": "noun",
+        "gloss_hint": "glasses"
+      },
+      {
+        "form": "Lesen",
+        "lemma": "lesen",
+        "pos": "noun",
+        "gloss_hint": "read"
+      }
+    ],
+    "text_linked": "Ich [[brauche|verbs/brauchen]] die [[Brille|nouns/Brille#1]] zum Lesen."
   },
   "05d93151ad": {
     "text": "Der eine Ring verlieh Sauron die Macht über alle Anderen zu herrschen.",

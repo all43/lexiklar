@@ -1040,7 +1040,7 @@
         "gloss_hint": "set aside"
       }
     ],
-    "text_linked": "„[[Die|determiners/die]] [[Hälfte|nouns/Hälfte#1]] [[des|determiners/der]] [[Öls|nouns/Öl#1]] [[in|prepositions/in]] [[einer|determiners/ein]] [[großen|adjectives/groß]], beschichteten [[Pfanne|nouns/Pfanne#1]] [[erhitzen|verbs/erhitzen]] [[und|conjunctions/und]] [[aus|prepositions/aus]] [[der|determiners/der]] Hälfte des [[Teigs|nouns/Teig]] [[einen|determiners/ein]] [[Pfannkuchen|nouns/Pfannkuchen#1]] [[backen|verbs/backen_im#1]], Pfannkuchen [[herausnehmen|verbs/herausnehmen]] und [[zur|prepositions/zu]] [[Seite|nouns/Seite#1]] [[stellen|verbs/stellen]].“"
+    "text_linked": "„[[Die|determiners/die]] [[Hälfte|nouns/Hälfte#1]] [[des|determiners/der]] [[Öls|nouns/Öl#1]] [[in|prepositions/in]] [[einer|determiners/ein]] [[großen|adjectives/groß]], beschichteten [[Pfanne|nouns/Pfanne#1]] [[erhitzen|verbs/erhitzen#1]] [[und|conjunctions/und]] [[aus|prepositions/aus]] [[der|determiners/der]] Hälfte des [[Teigs|nouns/Teig]] [[einen|determiners/ein]] [[Pfannkuchen|nouns/Pfannkuchen#1]] [[backen|verbs/backen_im#1]], Pfannkuchen [[herausnehmen|verbs/herausnehmen]] und [[zur|prepositions/zu]] [[Seite|nouns/Seite#1]] [[stellen|verbs/stellen]].“"
   },
   "0d0a22f8d0": {
     "text": "„Nicht gehfähige Kranke waren von Pflegern und Schwestern in Rollstühlen an die Tische geschoben worden.“",
@@ -1264,11 +1264,39 @@
   },
   "0d0ca702d3": {
     "text": "„Dann sind die Gepäckbänder überfrachtet und stellen sich schon mal aufgrund des zu hohen Gewichtes ab.“",
-    "translation": null,
+    "translation": "\"Then the baggage belts are overloaded and sometimes shut down due to excessive weight.\"",
     "source": "wiktionary",
     "lemmas": [
       "Gepäckband"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gepäckbänder",
+        "lemma": "Gepäckband",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "überfrachtet",
+        "lemma": "überfrachtung",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "stellen",
+        "lemma": "stellen",
+        "pos": "verb",
+        "gloss_hint": "adjust"
+      },
+      {
+        "form": "Gewichtes",
+        "lemma": "Gewicht",
+        "pos": "noun",
+        "gloss_hint": "weight (mass)"
+      }
+    ],
+    "text_linked": "„Dann sind die [[Gepäckbänder|nouns/Gepäckband]] überfrachtet und [[stellen|verbs/stellen#2]] sich schon mal aufgrund des zu hohen [[Gewichtes|nouns/Gewicht#1]] ab.“"
   },
   "0d0d334693": {
     "text": "„Mehr als 16 Millionen Menschen in Deutschland haben einen Migrationshintergrund.“",
@@ -3805,7 +3833,7 @@
         "gloss_hint": "weaker"
       }
     ],
-    "text_linked": "„Einen Ausfall [[von|prepositions/von]] Schweinsteiger? [[Das|pronouns/das_[1]]] [[können|verbs/können_etwas#1]] [[wir|pronouns/wir]] [[unmöglich|adjectives/unmöglich#1]] [[kompensieren|verbs/kompensieren#1]], [[dann|adverbs/dann#1]] [[wird|verbs/werden]] [[die|pronouns/die]] [[Mannschaft|nouns/Mannschaft#3]] [[schwächer|adjectives/schwach]].“"
+    "text_linked": "„Einen Ausfall [[von|prepositions/von]] Schweinsteiger? [[Das|pronouns/das_[1]]] [[können|verbs/können_beherrschen]] [[wir|pronouns/wir]] [[unmöglich|adjectives/unmöglich#1]] [[kompensieren|verbs/kompensieren#1]], [[dann|adverbs/dann#1]] [[wird|verbs/werden]] [[die|pronouns/die]] [[Mannschaft|nouns/Mannschaft#3]] [[schwächer|adjectives/schwach]].“"
   },
   "0d2162da44": {
     "text": "„Privilegien werden meist von denen beklagt, die keine haben.“",
@@ -4195,7 +4223,7 @@
         "gloss_hint": "monitored"
       }
     ],
-    "text_linked": "Viele Konzerne [[klagen|verbs/klagen#2]] [[gegen|particles/gegen]] Wallraff. Doch [[die|pronouns/die]] Klagen [[gehen|verbs/gehen#5]] [[nach|prepositions/nach]] [[hinten|adverbs/hinten]] [[los|adverbs/los]]: Wallraff [[gewinnt|verbs/gewinnen#4]] fast alle [[Prozesse|nouns/Prozess#2]] – [[und|conjunctions/und]] die [[Politik|nouns/Politik]] [[reagiert|verbs/reagieren#2]] [[endlich|adverbs/endlich#1]]. [[Nicht|particles/nicht]] [[nur|particles/nur]] die [[unmenschlichen|adjectives/unmenschlich#1]] [[Bedingungen|nouns/Bedingung#1]] [[bei|prepositions/bei]] Thyssen [[werden|verbs/werden#1]] [[abgeschafft|verbs/abschaffen]], [[auch|adverbs/auch]] [[das|pronouns/das_[1]]] Arbeitsrecht [[wird|verbs/werden#1]] [[seitdem|adverbs/seitdem]] [[regelmäßiger|adjectives/regelmäßig]] [[kontrolliert|verbs/kontrollieren]]."
+    "text_linked": "Viele Konzerne [[klagen|verbs/klagen#2]] [[gegen|particles/gegen]] Wallraff. Doch [[die|pronouns/die]] Klagen [[gehen|verbs/gehen#5]] [[nach|prepositions/nach]] [[hinten|adverbs/hinten]] [[los|adverbs/los]]: Wallraff [[gewinnt|verbs/gewinnen#4]] fast alle [[Prozesse|nouns/Prozess#2]] – [[und|conjunctions/und]] die [[Politik|nouns/Politik]] [[reagiert|verbs/reagieren#2]] [[endlich|adverbs/endlich#1]]. [[Nicht|particles/nicht]] [[nur|particles/nur]] die [[unmenschlichen|adjectives/unmenschlich#1]] [[Bedingungen|nouns/Bedingung#1]] [[bei|prepositions/bei]] Thyssen [[werden|verbs/werden#1]] [[abgeschafft|verbs/abschaffen#1]], [[auch|adverbs/auch]] [[das|pronouns/das_[1]]] Arbeitsrecht [[wird|verbs/werden#1]] [[seitdem|adverbs/seitdem]] [[regelmäßiger|adjectives/regelmäßig]] [[kontrolliert|verbs/kontrollieren]]."
   },
   "0d25bec4c8": {
     "text": "„Ein Ausbau der Straße im engen Tal mit ihren zahlreichen Ortsdurchfahrten und der parallel verlaufenden Bahnlinie erschien als unverhältnismäßig aufwändig und daher nicht sinnvoll,“ […].",
@@ -7429,7 +7457,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Grimmelshausen wurde, wie sein [[Held|nouns/Held#1]], [[früh|adjectives/früh#1]] von [[Vater|nouns/Vater#1]] und [[Mutter|nouns/Mutter_weiblicher#1]] [[getrennt|verbs/trennen]], [[wuchs|verbs/wachsen_allmählich]] auf beim [[Großvater|nouns/Großvater#1]], einem [[Bäcker|nouns/Bäcker]] und Weinhändler, und hat im [[Alter|nouns/Alter_alter]] von wahrscheinlich [[zwölf|numerals/zwölf]] [[Jahren|nouns/Jahr#1]] [[erlebt|verbs/erleben]], wie – im [[Jahr|nouns/Jahr#1]] 1634 – seine [[Heimatstadt|nouns/Heimatstadt]], das hessische Gelnhausen, von den [[katholischen|adjectives/katholisch#1]] [[Truppen|nouns/Truppe#1]] des [[Kaisers|nouns/Kaiser#1]] [[geplündert|verbs/plündern]] und [[gebrandschatzt|verbs/brandschatzen]] wurde.“"
+    "text_linked": "„Grimmelshausen wurde, wie sein [[Held|nouns/Held#1]], [[früh|adjectives/früh#1]] von [[Vater|nouns/Vater#1]] und [[Mutter|nouns/Mutter_weiblicher#1]] [[getrennt|verbs/trennen]], [[wuchs|verbs/wachsen_allmählich]] auf beim [[Großvater|nouns/Großvater#1]], einem [[Bäcker|nouns/Bäcker]] und Weinhändler, und hat im [[Alter|nouns/Alter_alter]] von wahrscheinlich [[zwölf|numerals/zwölf]] [[Jahren|nouns/Jahr#1]] [[erlebt|verbs/erleben]], wie – im [[Jahr|nouns/Jahr#1]] 1634 – seine [[Heimatstadt|nouns/Heimatstadt]], das hessische Gelnhausen, von den [[katholischen|adjectives/katholisch#1]] [[Truppen|nouns/Truppe#1]] des [[Kaisers|nouns/Kaiser#1]] [[geplündert|verbs/plündern]] und gebrandschatzt wurde.“"
   },
   "0d40e992fa": {
     "text": "die Zügel schleifen lassen",
@@ -7959,7 +7987,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Der [[Einsatz|nouns/Einsatz#6]] der [[Musik|nouns/Musik#1]] [[hinkte|verbs/hinken]] dem [[Beginn|nouns/Beginn]] des [[Feuerwerks|nouns/Feuerwerk]] etwas [[hinterher|adverbs/hinterher]], obwohl dieses [[eigentlich|adverbs/eigentlich]] von Beginn an klangvoll [[untermalt|verbs/untermalen]] werden sollte."
+    "text_linked": "Der [[Einsatz|nouns/Einsatz#6]] der [[Musik|nouns/Musik#1]] [[hinkte|verbs/hinken]] dem [[Beginn|nouns/Beginn]] des [[Feuerwerks|nouns/Feuerwerk]] etwas [[hinterher|adverbs/hinterher]], obwohl dieses [[eigentlich|adverbs/eigentlich]] von Beginn an klangvoll untermalt werden sollte."
   },
   "0d4764e123": {
     "text": "„Stellen wir uns, um weniger abstrakt zu sein, eine Partie auf dem Damebrett vor, deren Steine auf vier Damen herabgeschmolzen sind und wo ein Versehen natürlich nicht zu erwarten ist.“",
@@ -8239,7 +8267,7 @@
         "gloss_hint": "solve"
       }
     ],
-    "text_linked": "[[Glückwunsch|nouns/Glückwunsch]], [[cleverer|adjectives/clever]] [[kann|verbs/können_beherrschen]] [[man|pronouns/man#2]] [[das|pronouns/das_[1]]] [[wohl|particles/wohl#1]] [[kaum|adverbs/kaum#1]] [[lösen|verbs/lösen#1]]."
+    "text_linked": "[[Glückwunsch|nouns/Glückwunsch]], [[cleverer|adjectives/clever]] [[kann|verbs/können_etwas#1]] [[man|pronouns/man#2]] [[das|pronouns/das_[1]]] [[wohl|particles/wohl#1]] [[kaum|adverbs/kaum#1]] [[lösen|verbs/lösen#1]]."
   },
   "0d4a8dd465": {
     "text": "„Die beiden SEALs hielten ihre Maschinenpistolen unter den Falten ihrer Umhänge schussbereit im Anschlag.“",
@@ -8455,7 +8483,7 @@
         "gloss_hint": "cause"
       }
     ],
-    "text_linked": "„Für die Pflege des Moosballs [[nutzt|verbs/nutzen#1]] [[du|pronouns/du]] eine Sprühflasche. Mit dieser [[kannst|verbs/können_beherrschen#1]] du deine Kokedama-Pflanze [[wässern|verbs/wässern]], ohne eine Sauerei [[anzurichten|verbs/anrichten#1]].“"
+    "text_linked": "„Für die Pflege des Moosballs [[nutzt|verbs/nutzen#1]] [[du|pronouns/du]] eine Sprühflasche. Mit dieser [[kannst|verbs/können_beherrschen#1]] du deine Kokedama-Pflanze wässern, ohne eine Sauerei [[anzurichten|verbs/anrichten#1]].“"
   },
   "0d4c04bc5f": {
     "text": "„Der Aussage, dass zu einem guten Leben eine intakte natürliche Umwelt gehört, wurde am häufigsten zugestimmt: fast die Hälfte stimmte diesem Statement voll und ganz, weitere 37 % stimmten eher zu.“",
@@ -9199,11 +9227,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "things stay the same",
     "source": "wiktionary",
     "lemmas": [
       "beim"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0d50a52cb9": {
     "text": "Die Natur ist die Schöpferin aller Dinge.",
@@ -10310,7 +10339,7 @@
         "gloss_hint": "guess"
       }
     ],
-    "text_linked": "[[Jemand|nouns/Jemand]] [[der|pronouns/der_nominativ]] [[nuschelt|verbs/nuscheln]] [[spricht|verbs/sprechen#1]] [[undeutlich|adjectives/undeutlich#1]] [[und|conjunctions/und]] [[leise|adjectives/leise#1]], er artikuliert [[Worte|nouns/Wort_kleinste#1]] [[nicht|particles/nicht#1]] [[so|adverbs/so]], [[dass|conjunctions/dass#1]] der [[Zuhörer|nouns/Zuhörer#1]] sie [[verstehen|verbs/verstehen_gesprochenes#2]], [[sondern|conjunctions/sondern]] [[bestenfalls|adverbs/bestenfalls]] [[erraten|verbs/erraten#1]] kann."
+    "text_linked": "[[Jemand|nouns/Jemand]] [[der|pronouns/der_nominativ]] [[nuschelt|verbs/nuscheln#1]] [[spricht|verbs/sprechen#1]] [[undeutlich|adjectives/undeutlich#1]] [[und|conjunctions/und]] [[leise|adjectives/leise#1]], er artikuliert [[Worte|nouns/Wort_kleinste#1]] [[nicht|particles/nicht#1]] [[so|adverbs/so]], [[dass|conjunctions/dass#1]] der [[Zuhörer|nouns/Zuhörer#1]] sie [[verstehen|verbs/verstehen_gesprochenes#2]], [[sondern|conjunctions/sondern]] [[bestenfalls|adverbs/bestenfalls]] [[erraten|verbs/erraten#1]] kann."
   },
   "0d5be3768f": {
     "text": "die Hosen anhaben",
@@ -12196,7 +12225,7 @@
     "lemmas": [
       "entschieden"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "letzten",
@@ -13052,7 +13081,7 @@
         "gloss_hint": "itch"
       }
     ],
-    "text_linked": "Mückenstiche [[können|verbs/können_etwas#1]] [[sehr|particles/sehr#1]] unangenehm [[jucken|verbs/jucken_einen#1]]."
+    "text_linked": "Mückenstiche [[können|verbs/können_beherrschen]] [[sehr|particles/sehr#1]] unangenehm [[jucken|verbs/jucken_einen#1]]."
   },
   "0d812bcd7d": {
     "text": "„Weiter sollte Alpatytsch noch Riegel für die Türen des neuen Leutehauses besorgen, aber genau von der Façon, die der Fürst sich ausgedacht hatte.“",
@@ -15856,7 +15885,7 @@
         "gloss_hint": "stood erect"
       }
     ],
-    "text_linked": "„[[Ich|pronouns/ich]] [[strich|verbs/streichen#2]] [[mit|prepositions/mit]] [[den|determiners/der]] [[Fingern|nouns/Finger#1]] [[durch|prepositions/durch]] [[ihr|pronouns/ihr_zu#1]] [[Haar|nouns/Haar#1]], [[liebkoste|verbs/liebkosen]] [[ihre|pronouns/ihr_zu#1]] Ohrmuscheln, [[ihren|pronouns/ihr_zu#1]] [[Nacken|nouns/Nacken#1]], [[ergriff|verbs/ergreifen#1]] ihre [[Titten|nouns/Titte#1]] [[und|conjunctions/und]] [[massierte|verbs/massieren#1]] sie [[sanft|adjectives/sanft#1]], [[wobei|adverbs/wobei#3]] [[ich|pronouns/ich#1]] [[bei|prepositions/bei]] den Brustwarzen [[verweilte|verbs/verweilen#1]], [[bis|conjunctions/bis]] sie straff herausstanden.“"
+    "text_linked": "„[[Ich|pronouns/ich]] [[strich|verbs/streichen#2]] [[mit|prepositions/mit]] [[den|determiners/der]] [[Fingern|nouns/Finger#1]] [[durch|prepositions/durch]] [[ihr|pronouns/ihr_zu#1]] [[Haar|nouns/Haar#1]], liebkoste [[ihre|pronouns/ihr_zu#1]] Ohrmuscheln, [[ihren|pronouns/ihr_zu#1]] [[Nacken|nouns/Nacken#1]], [[ergriff|verbs/ergreifen#1]] ihre [[Titten|nouns/Titte#1]] [[und|conjunctions/und]] [[massierte|verbs/massieren#1]] sie [[sanft|adjectives/sanft#1]], [[wobei|adverbs/wobei#3]] [[ich|pronouns/ich#1]] [[bei|prepositions/bei]] den Brustwarzen [[verweilte|verbs/verweilen#1]], [[bis|conjunctions/bis]] sie straff herausstanden.“"
   },
   "0d9527aefe": {
     "text": "Der Satz \"Meinst Du das ernst?\" ist eine direkte Frage.",
@@ -15896,14 +15925,14 @@
   },
   "0d955e3098": {
     "text": "„Sowohl die Einführung der Wehrpflicht 1813/14 als auch ihre Beibehaltung und Erweiterung im Verlauf des 19. Jahrhunderts riefen unentwegt Widerspruch hervor.“",
-    "translation": "Both the introduction of conscription in 1813/14 and its continuation and expansion during the 19th century repeatedly provoked opposition.",
+    "translation": "Both the introduction of conscription in 1813/14 and its",
     "source": "wiktionary",
     "lemmas": [
       "hervorrufen",
       "unentwegt",
       "Beibehaltung"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Einführung",
@@ -16026,7 +16055,10 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Sowohl die [[Einführung|nouns/Einführung#1]] [[der|pronouns/der_nominativ]] Wehrpflicht 1813/14 [[als|conjunctions/als#2]] [[auch|adverbs/auch]] ihre Beibehaltung [[und|conjunctions/und#1]] [[Erweiterung|nouns/Erweiterung#2]] im [[Verlauf|nouns/Verlauf#1]] des 19. [[Jahrhunderts|nouns/Jahrhundert#1]] [[riefen|verbs/rufen]] unentwegt [[Widerspruch|nouns/Widerspruch]] [[hervor|adverbs/hervor]].“"
+    "text_linked": "„Sowohl die [[Einführung|nouns/Einführung#1]] [[der|pronouns/der_nominativ]] Wehrpflicht 1813/14 [[als|conjunctions/als#2]] [[auch|adverbs/auch]] ihre Beibehaltung [[und|conjunctions/und#1]] [[Erweiterung|nouns/Erweiterung#2]] im [[Verlauf|nouns/Verlauf#1]] des 19. [[Jahrhunderts|nouns/Jahrhundert#1]] [[riefen|verbs/rufen]] unentwegt [[Widerspruch|nouns/Widerspruch]] [[hervor|adverbs/hervor]].“",
+    "_proofread": {
+      "translation": true
+    }
   },
   "0d95c855b1": {
     "text": "„Dabei wird der A-Cappella-Chor Neustadt-Glewe unter Leitung von Christa Maier singen.“",
@@ -24317,7 +24349,7 @@
         "gloss_hint": "fresh"
       }
     ],
-    "text_linked": "„[[Das|pronouns/das_[1]]] [[war|verbs/sein#2]] [[eine|determiners/ein]] weitere [[Fähigkeit|nouns/Fähigkeit#1]] [[der|determiners/der]] Briten: Sie [[konnten|verbs/können_beherrschen]] abends [[saufen|verbs/saufen#2]] [[wie|adverbs/wie]] [[die|determiners/die]] [[Löcher|nouns/Loch_see]] [[und|conjunctions/und]] [[waren|verbs/sein#2]] [[am|prepositions/an#2]] nächsten [[Morgen|nouns/Morgen_tageszeit#1]] [[wieder|adverbs/wieder#1]] wie [[aus|prepositions/aus#1]] [[dem|determiners/der]] [[Ei|nouns/Ei]] gepellt.“"
+    "text_linked": "„[[Das|pronouns/das_[1]]] [[war|verbs/sein#2]] [[eine|determiners/ein]] weitere [[Fähigkeit|nouns/Fähigkeit#1]] [[der|determiners/der]] Briten: Sie [[konnten|verbs/können_etwas#1]] abends [[saufen|verbs/saufen#2]] [[wie|adverbs/wie]] [[die|determiners/die]] [[Löcher|nouns/Loch_see]] [[und|conjunctions/und]] [[waren|verbs/sein#2]] [[am|prepositions/an#2]] nächsten [[Morgen|nouns/Morgen_tageszeit#1]] [[wieder|adverbs/wieder#1]] wie [[aus|prepositions/aus#1]] [[dem|determiners/der]] [[Ei|nouns/Ei]] gepellt.“"
   },
   "0df0d2e448": {
     "text": "„Stell dir vor, gestern morgen wäre ich beinahe mit ihm in dieselbe Elektrische gestiegen, ich habe es noch rechtzeitig gemerkt.“",

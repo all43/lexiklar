@@ -388,7 +388,7 @@
         "gloss_hint": "left"
       }
     ],
-    "text_linked": "[[Der|pronouns/der_nominativ]] [[Anschlag|nouns/Anschlag#3]] [[ereignete|verbs/ereignen]] [[sich|pronouns/sich]] laut [[Polizei|nouns/Polizei#1]], [[als|conjunctions/als#2]] [[die|pronouns/die]] [[Belegschaft|nouns/Belegschaft]] [[das|pronouns/das_[1]]] [[für|prepositions/für#1]] [[den|determiners/der]] ländlichen [[Wiederaufbau|nouns/Wiederaufbau#1]] [[zuständige|adjectives/zuständig#1]] [[Ministerium|nouns/Ministerium#1]] [[nach|prepositions/nach#3]] [[Feierabend|nouns/Feierabend]] [[verließ|verbs/verlassen_partizip#1]]."
+    "text_linked": "[[Der|pronouns/der_nominativ]] [[Anschlag|nouns/Anschlag#3]] [[ereignete|verbs/ereignen#1]] [[sich|pronouns/sich]] laut [[Polizei|nouns/Polizei#1]], [[als|conjunctions/als#2]] [[die|pronouns/die]] [[Belegschaft|nouns/Belegschaft]] [[das|pronouns/das_[1]]] [[für|prepositions/für#1]] [[den|determiners/der]] ländlichen [[Wiederaufbau|nouns/Wiederaufbau#1]] [[zuständige|adjectives/zuständig#1]] [[Ministerium|nouns/Ministerium#1]] [[nach|prepositions/nach#3]] [[Feierabend|nouns/Feierabend]] [[verließ|verbs/verlassen_partizip#1]]."
   },
   "cc045f04df": {
     "text": "Der Europäische Gerichtshof prüft in einem aktuellen Verfahren, ob der Verfall von Urlaubstagen nach Ablauf der gesetzlich festgelegten Fristen zulässig ist.",
@@ -538,7 +538,7 @@
         "gloss_hint": "little bell"
       }
     ],
-    "text_linked": "„[[Als|conjunctions/als#2]] Sylvia [[die|pronouns/die#2]] [[Tür|nouns/Tür#1]] [[öffnete|verbs/öffnen#1]], [[bimmelte|verbs/bimmeln]] [[fröhlich|adjectives/fröhlich#1]] [[ein|pronouns/ein#1]] [[Glöckchen|nouns/Glöckchen]].“"
+    "text_linked": "„[[Als|conjunctions/als#2]] Sylvia [[die|pronouns/die#2]] [[Tür|nouns/Tür#1]] [[öffnete|verbs/öffnen#1]], bimmelte [[fröhlich|adjectives/fröhlich#1]] [[ein|pronouns/ein#1]] [[Glöckchen|nouns/Glöckchen]].“"
   },
   "cc06faf80f": {
     "text": "Wir suchen eine Wohnung in Hamburg.",
@@ -1956,7 +1956,7 @@
         "gloss_hint": "Moon"
       }
     ],
-    "text_linked": "„Als [[der|pronouns/der_nominativ#1]] Marquise dabei [[eröffnet|verbs/eröffnen#3]] [[wird|verbs/werden#1]], alle [[Planeten|nouns/Planet#1]] [[kreisten|verbs/kreisen]] [[nicht|particles/nicht#1]] länger [[um|prepositions/um#1]] [[die|pronouns/die#2]] [[Erde|nouns/Erde#3]], [[sondern|conjunctions/sondern#1]] [[hätten|verbs/haben#1]] [[sich|pronouns/sich#2]] gleichsam der [[Sonne|nouns/Sonne#1]] [[zugewandt|verbs/zuwenden]], [[fragt|verbs/fragen#1]] sie [[nach|prepositions/nach]] [[dem|determiners/der#1]] [[Mond|nouns/Mond#1]].“"
+    "text_linked": "„Als [[der|pronouns/der_nominativ#1]] Marquise dabei [[eröffnet|verbs/eröffnen#3]] [[wird|verbs/werden#1]], alle [[Planeten|nouns/Planet#1]] [[kreisten|verbs/kreisen]] [[nicht|particles/nicht#1]] länger [[um|prepositions/um#1]] [[die|pronouns/die#2]] [[Erde|nouns/Erde#3]], [[sondern|conjunctions/sondern#1]] [[hätten|verbs/haben#1]] [[sich|pronouns/sich#2]] [[gleichsam|adverbs/gleichsam]] der [[Sonne|nouns/Sonne#1]] [[zugewandt|verbs/zuwenden]], [[fragt|verbs/fragen#1]] sie [[nach|prepositions/nach]] [[dem|determiners/der#1]] [[Mond|nouns/Mond#1]].“"
   },
   "cc1cbb2edb": {
     "text": "Er war das zweitgeborene Kind in der Familie.",
@@ -3133,7 +3133,7 @@
         "gloss_hint": "present | advance (funds) | submit | announce | set up (pass) | serve | lead with | close off"
       }
     ],
-    "text_linked": "[[Nach|prepositions/nach]] [[langen|adjectives/lang]] [[Beratungen|nouns/Beratung#2]] [[können|verbs/können_etwas#1]] [[wir|pronouns/wir]] [[endlich|adverbs/endlich#1]] unsere [[Ergebnisse|nouns/Ergebnis#1]] [[vorlegen|verbs/vorlegen#1]]."
+    "text_linked": "[[Nach|prepositions/nach]] [[langen|adjectives/lang]] [[Beratungen|nouns/Beratung#2]] [[können|verbs/können_beherrschen]] [[wir|pronouns/wir]] [[endlich|adverbs/endlich#1]] unsere [[Ergebnisse|nouns/Ergebnis#1]] [[vorlegen|verbs/vorlegen#1]]."
   },
   "cc24bb37be": {
     "text": "Den Ärzten ist es gelungen, die Schwerkranke wiederherzustellen.",
@@ -4026,11 +4026,27 @@
   },
   "cc2df0ab5b": {
     "text": "„Die Hausordnung ist drakonisch.“",
-    "translation": null,
+    "translation": "The house rules are draconian.",
     "source": "wiktionary",
     "lemmas": [
       "Hausordnung"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hausordnung",
+        "lemma": "Hausordnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "drakonisch",
+        "lemma": "drakonisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Die [[Hausordnung|nouns/Hausordnung]] ist drakonisch.“"
   },
   "cc2eaab55d": {
     "text": "„Nur zu meiner Schule in Vallendar kam das Hochwasser nicht hin.“",
@@ -6132,7 +6148,7 @@
         "gloss_hint": "facing down"
       }
     ],
-    "text_linked": "[[Als|conjunctions/als#2]] [[der|pronouns/der_nominativ#1]] Waldbrand [[das|pronouns/das_[1]]] [[Dorf|nouns/Dorf#1]] [[erreichte|verbs/erreichen#1]], [[ging|verbs/gehen#4]] [[ein|pronouns/ein#1]] [[Drittel|nouns/Drittel#1]] der [[Häuser|nouns/Haus#4]] [[in|prepositions/in#1]] [[Flammen|nouns/Flamme#1]] [[auf|prepositions/auf#4]]."
+    "text_linked": "[[Als|conjunctions/als#2]] [[der|pronouns/der_nominativ#1]] Waldbrand [[das|pronouns/das_[1]]] [[Dorf|nouns/Dorf#1]] [[erreichte|verbs/erreichen#1]], [[ging|verbs/gehen#4]] [[ein|pronouns/ein#1]] [[Drittel|nouns/Drittel#1]] der [[Häuser|nouns/Haus#4]] [[in|prepositions/in#1]] [[Flammen|nouns/Flamme#1]] [[auf|prepositions/auf]]."
   },
   "cc405d1d06": {
     "text": "„Wenn einem die Wilde Jagd begegnet, kann es vorkommen, daß man einen Schmerz im Kreuz verspürt, »wie wenn jemand ein Hackl einighaut hät«.“",
@@ -7209,7 +7225,7 @@
         "gloss_hint": "energy"
       }
     ],
-    "text_linked": "„[[Doch|particles/doch_betont]] [[auch|adverbs/auch]] [[wenn|conjunctions/wenn]] [[die|pronouns/die]] [[Politiker|nouns/Politiker]] [[von|prepositions/von]] [[heute|adverbs/heute]] [[eine|determiners/ein]] [[eher|adverbs/eher]] biedere [[Wortwahl|nouns/Wortwahl]] [[treffen|verbs/treffen#9]], [[so|particles/so]] [[schaffen|verbs/schaffen_etwas#1]] sie [[es|pronouns/es]] [[dennoch|adverbs/dennoch]], [[der|determiners/der]] [[deutschen|adjectives/deutsch]] [[Sprache|nouns/Sprache#1]] [[immer|adverbs/immer]] [[wieder|adverbs/wieder]] [[frische|adjectives/frisch#1]], [[neue|adjectives/neu#1]] [[Energie|nouns/Energie#2]] [[zu|particles/zu_drückt]] [[verleihen|verbs/verleihen#3]].“"
+    "text_linked": "„[[Doch|particles/doch_betont]] [[auch|adverbs/auch]] [[wenn|conjunctions/wenn]] [[die|pronouns/die]] [[Politiker|nouns/Politiker]] [[von|prepositions/von]] [[heute|adverbs/heute]] [[eine|determiners/ein]] [[eher|adverbs/eher]] biedere [[Wortwahl|nouns/Wortwahl]] [[treffen|verbs/treffen#9]], [[so|particles/so]] [[schaffen|verbs/schaffen_etwas]] sie [[es|pronouns/es]] [[dennoch|adverbs/dennoch]], [[der|determiners/der]] [[deutschen|adjectives/deutsch]] [[Sprache|nouns/Sprache#1]] [[immer|adverbs/immer]] [[wieder|adverbs/wieder]] [[frische|adjectives/frisch#1]], [[neue|adjectives/neu#1]] [[Energie|nouns/Energie#2]] [[zu|particles/zu_drückt]] [[verleihen|verbs/verleihen#3]].“"
   },
   "cc4ab4892a": {
     "text": "„Eine finstere Lichtgestalt demokratischer Macht, die so viel Kreide gefressen hat, dass sie nicht anders kann, als Schleim zu scheißen.“",
@@ -9770,7 +9786,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Die|determiners/die]] [[Harmonien|nouns/Harmonie]] [[missfielen|verbs/missfallen]] [[dem|determiners/der]] [[Publikum|nouns/Publikum]]."
+    "text_linked": "[[Die|determiners/die]] [[Harmonien|nouns/Harmonie]] [[missfielen|verbs/missfallen#1]] [[dem|determiners/der]] [[Publikum|nouns/Publikum]]."
   },
   "cc6808c56c": {
     "text": "r heißt Betrag der komplexen Zahl, φ heißt ihr Argument oder ihre Phase.",
@@ -9899,7 +9915,7 @@
         "gloss_hint": "miners"
       }
     ],
-    "text_linked": "„Diese verdammten Züge [[transportierten|verbs/transportieren#1]] [[des|pronouns/der_nominativ]] [[Nachts|nouns/Nacht#1]] [[den|determiners/der]] [[ganzen|adjectives/ganz#2]] [[Abschaum|nouns/Abschaum#1]], [[der|pronouns/der_nominativ]] [[es|pronouns/es]] [[anders|adverbs/anders#1]] [[nicht|particles/nicht]] [[mehr|adverbs/mehr#1]] [[nach|prepositions/nach#1]] [[Hause|nouns/Haus#2]] [[schaffte|verbs/schaffen_etwas#1]], [[also|adverbs/also#1]] [[Studenten|nouns/Student#1]] [[und|conjunctions/und]] Grubenarbeiter.“"
+    "text_linked": "„Diese verdammten Züge [[transportierten|verbs/transportieren#1]] [[des|pronouns/der_nominativ]] [[Nachts|nouns/Nacht#1]] [[den|determiners/der]] [[ganzen|adjectives/ganz#2]] [[Abschaum|nouns/Abschaum#1]], [[der|pronouns/der_nominativ]] [[es|pronouns/es]] [[anders|adverbs/anders#1]] [[nicht|particles/nicht]] [[mehr|adverbs/mehr#1]] [[nach|prepositions/nach#1]] [[Hause|nouns/Haus#2]] [[schaffte|verbs/schaffen_etwas]], [[also|adverbs/also#1]] [[Studenten|nouns/Student#1]] [[und|conjunctions/und]] Grubenarbeiter.“"
   },
   "cc68fd99d8": {
     "text": "Korruption wird weltweit immer stärker als Problem wahrgenommen. Als besonders anfällig für Bestechung gelten politische Parteien und öffentliche Verwaltung.",
@@ -12235,7 +12251,7 @@
         "gloss_hint": "delicacy"
       }
     ],
-    "text_linked": "[[Kleine|adjectives/klein#1]] [[Barsche|nouns/Barsch]] [[in|prepositions/in]] [[Mehl|nouns/Mehl#1]] [[gewälzt|verbs/wälzen]] [[und|conjunctions/und]] [[kurz|adjectives/kurz#3]] ausgebacken [[sind|verbs/sein#2]] [[eine|determiners/ein]] [[wahre|adjectives/wahr#1]] Delikatesse."
+    "text_linked": "[[Kleine|adjectives/klein#1]] [[Barsche|nouns/Barsch]] [[in|prepositions/in]] [[Mehl|nouns/Mehl#1]] gewälzt [[und|conjunctions/und]] [[kurz|adjectives/kurz#3]] ausgebacken [[sind|verbs/sein#2]] [[eine|determiners/ein]] [[wahre|adjectives/wahr#1]] Delikatesse."
   },
   "cc87cce13c": {
     "text": "Bei diesem Look hat man blonde Wellen im Stil der 1940er.",
@@ -14015,7 +14031,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Mit|prepositions/mit]] einem eindringlichen [[Appell|nouns/Appell#1]] [[an|prepositions/an]] [[den|determiners/der]] [[Kampfgeist|nouns/Kampfgeist#1]] [[seiner|pronouns/sein]] [[Partei|nouns/Partei]] [[hat|verbs/haben]] Gerhard Schröder [[die|determiners/die]] SPD [[auf|prepositions/auf]] die [[heiße|adjectives/heiß]] [[Phase|nouns/Phase#1]] [[des|determiners/der]] [[Wahlkampfs|nouns/Wahlkampf]] [[eingeschworen|verbs/einschwören]].“"
+    "text_linked": "„[[Mit|prepositions/mit]] einem eindringlichen [[Appell|nouns/Appell#1]] [[an|prepositions/an]] [[den|determiners/der]] [[Kampfgeist|nouns/Kampfgeist#1]] [[seiner|pronouns/sein]] [[Partei|nouns/Partei]] [[hat|verbs/haben]] Gerhard Schröder [[die|determiners/die]] SPD [[auf|prepositions/auf]] die [[heiße|adjectives/heiß]] [[Phase|nouns/Phase#1]] [[des|determiners/der]] [[Wahlkampfs|nouns/Wahlkampf]] eingeschworen.“"
   },
   "cc9ed21f4a": {
     "text": "Im Falle von Feuer, bitte Ruhe bewahren.",
@@ -14394,7 +14410,7 @@
         "gloss_hint": "resist"
       }
     ],
-    "text_linked": "„Tausende [[von|prepositions/von]] [[Omas|nouns/Oma#1]] [[und|conjunctions/und]] [[Blinden|nouns/Blinder#1]] [[werden|verbs/werden#1]] [[gegen|particles/gegen#1]] [[ihren|pronouns/ihr_person]] [[Willen|nouns/Wille#1]] [[über|prepositions/über#2]] [[viel|adverbs/viel#1]] befahrene [[Straßen|nouns/Straße#2]] [[geführt|verbs/führen#2]]. Unzählige [[Kinderwagen|nouns/Kinderwagen#1]] werden stundenlang treppauf, treppab [[getragen|verbs/tragen#1]], [[ohne|prepositions/ohne]] [[dass|conjunctions/dass]] [[sich|pronouns/sich#2]] [[die|determiners/die]] bemitleidenswerten [[Mütter|nouns/Mutter_weiblicher#1]] [[dagegen|adverbs/dagegen#1]] [[wehren|verbs/wehren#1]] können.“"
+    "text_linked": "„Tausende [[von|prepositions/von]] [[Omas|nouns/Oma#1]] [[und|conjunctions/und]] [[Blinden|nouns/Blinder#1]] [[werden|verbs/werden#1]] [[gegen|particles/gegen#1]] [[ihren|pronouns/ihr_person]] [[Willen|nouns/Wille#1]] [[über|prepositions/über#2]] [[viel|adverbs/viel#1]] befahrene [[Straßen|nouns/Straße#2]] [[geführt|verbs/führen#2]]. Unzählige [[Kinderwagen|nouns/Kinderwagen#1]] werden stundenlang [[treppauf|adverbs/treppauf]], [[treppab|adverbs/treppab]] [[getragen|verbs/tragen#1]], [[ohne|prepositions/ohne]] [[dass|conjunctions/dass]] [[sich|pronouns/sich#2]] [[die|determiners/die]] bemitleidenswerten [[Mütter|nouns/Mutter_weiblicher#1]] [[dagegen|adverbs/dagegen#1]] [[wehren|verbs/wehren#1]] können.“"
   },
   "cca2cd8c3d": {
     "text": "„Merkel wurde ausgepfiffen, niedergebuht, so dass sie nicht mehr zu verstehen war. Regelrechter Hass lag in der Luft.“",
@@ -15799,7 +15815,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Irgendwann [[werden|verbs/werden#2]] [[die|pronouns/die]] ausgegrenzt, die nichts [[mehr|adverbs/mehr#1]] zur [[Abarbeitung|nouns/Abarbeitung_abtragung#2]] [[der|pronouns/der_nominativ]] Zinsberge [[beitragen|verbs/beitragen#1]] [[können|verbs/können_etwas#2]], der ganze [[Vorgang|nouns/Vorgang#1]] geht [[jetzt|adverbs/jetzt#1]] [[immer|adverbs/immer#1]] schneller, liegt am [[System|nouns/System#1]]."
+    "text_linked": "Irgendwann [[werden|verbs/werden#2]] [[die|pronouns/die]] ausgegrenzt, die nichts [[mehr|adverbs/mehr#1]] zur [[Abarbeitung|nouns/Abarbeitung_abtragung#2]] [[der|pronouns/der_nominativ]] Zinsberge [[beitragen|verbs/beitragen#1]] [[können|verbs/können_beherrschen]], der ganze [[Vorgang|nouns/Vorgang#1]] geht [[jetzt|adverbs/jetzt#1]] [[immer|adverbs/immer#1]] schneller, liegt am [[System|nouns/System#1]]."
   },
   "ccabfd838d": {
     "text": "Die Fassade muss noch detailliert aufgerissen werden.",
@@ -16683,11 +16699,51 @@
   },
   "ccb575801f": {
     "text": "„Von den hundert Leuten im Dorf waren fast alle über fünfzig und sahen aus wie über siebzig.“",
-    "translation": null,
+    "translation": "Of the hundred people in the village, almost all were over fifty and looked as if they were over seventy.",
     "source": "wiktionary",
     "lemmas": [
       "siebzig"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hundert",
+        "lemma": "hundert",
+        "pos": "numeral",
+        "gloss_hint": "hundred"
+      },
+      {
+        "form": "Leuten",
+        "lemma": "Leute",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dorf",
+        "lemma": "Dorf",
+        "pos": "noun",
+        "gloss_hint": "village"
+      },
+      {
+        "form": "fünfzig",
+        "lemma": "fünfzig",
+        "pos": "numeral",
+        "gloss_hint": "fifty"
+      },
+      {
+        "form": "sahen",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "siebzig",
+        "lemma": "siebzig",
+        "pos": "numeral",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Von den [[hundert|numerals/hundert#1]] [[Leuten|nouns/Leute]] im [[Dorf|nouns/Dorf#1]] waren fast alle über [[fünfzig|numerals/fünfzig#1]] und [[sahen|verbs/sehen]] aus wie über [[siebzig|numerals/siebzig]].“"
   },
   "ccb596c88b": {
     "text": "„Der Japaner ist an hohe Kältegrade viel weniger gewöhnt als der Russe“ (Quelle: Berliner Tageblatt (Morgen-Ausgabe) 03.03.1904, S. 2)",
@@ -18741,7 +18797,7 @@
         "gloss_hint": "strengthened"
       }
     ],
-    "text_linked": "„[[Trotz|prepositions/trotz]] [[der|determiners/der]] [[Dunkelheit|nouns/Dunkelheit#1]] [[befahl|verbs/befehlen#3]] [[Napoleon|nouns/Napoleon]] [[einen|pronouns/ein]] [[erneuten|adjectives/erneut]] [[Angriff|nouns/Angriff#1]] [[auf|prepositions/auf]] [[die|determiners/die]] Schanze, [[weil|conjunctions/weil_konjunktion]] er [[schlecht|adjectives/schlecht#2]] [[einschlafen|verbs/einschlafen#1]] [[konnte|verbs/können_beherrschen]] [[bei|prepositions/bei]] [[dem|determiners/der]] [[Gedanken|nouns/Gedanken#1]], [[sein|verbs/sein#1]] [[genialer|adjectives/genial]] [[Entschluss|nouns/Entschluss]] [[sei|verbs/sein]] [[ein|determiners/ein]] [[Fehlschlag|nouns/Fehlschlag#2]] [[gewesen|verbs/sein#2]], der die [[Moral|nouns/Moral]] [[seiner|pronouns/sein]] [[Soldaten|nouns/Soldat#1]] [[geschwächt|verbs/schwächen#1]] [[und|conjunctions/und]] die [[des|determiners/der]] [[Feindes|nouns/Feind#1]] [[gestärkt|verbs/stärken#1]] hatte.“"
+    "text_linked": "„[[Trotz|prepositions/trotz]] [[der|determiners/der]] [[Dunkelheit|nouns/Dunkelheit#1]] [[befahl|verbs/befehlen#3]] [[Napoleon|nouns/Napoleon]] [[einen|pronouns/ein]] [[erneuten|adjectives/erneut]] [[Angriff|nouns/Angriff#1]] [[auf|prepositions/auf]] [[die|determiners/die]] Schanze, [[weil|conjunctions/weil_konjunktion]] er [[schlecht|adjectives/schlecht#2]] [[einschlafen|verbs/einschlafen#1]] [[konnte|verbs/können_etwas#1]] [[bei|prepositions/bei]] [[dem|determiners/der]] [[Gedanken|nouns/Gedanken#1]], [[sein|verbs/sein#1]] [[genialer|adjectives/genial]] [[Entschluss|nouns/Entschluss]] [[sei|verbs/sein]] [[ein|determiners/ein]] [[Fehlschlag|nouns/Fehlschlag#2]] [[gewesen|verbs/sein#2]], der die [[Moral|nouns/Moral]] [[seiner|pronouns/sein]] [[Soldaten|nouns/Soldat#1]] [[geschwächt|verbs/schwächen#1]] [[und|conjunctions/und]] die [[des|determiners/der]] [[Feindes|nouns/Feind#1]] [[gestärkt|verbs/stärken#1]] hatte.“"
   },
   "ccc7caa6c3": {
     "text": "Eine Armee von Arbeitern errichtete den neuen Deich.",
@@ -19687,7 +19743,7 @@
         "gloss_hint": "equate"
       }
     ],
-    "text_linked": "„Wie [[bereits|adverbs/bereits]] [[erwähnt|verbs/erwähnen#1]] [[wird|verbs/werden#1]] [[die|determiners/die]] [[Theorie|nouns/Theorie#1]] [[von|prepositions/von]] Ludendorff [[über|prepositions/über]] [[den|determiners/der]] ‚Totalen [[Krieg‘|nouns/Krieg#1]] [[sehr|particles/sehr#1]] [[häufig|adjectives/häufig#1]] [[mit|prepositions/mit]] [[dem|determiners/der]] ‚Absoluten Krieg‘ von Clausewitz [[gleichgesetzt|verbs/gleichsetzen]].“"
+    "text_linked": "„Wie [[bereits|adverbs/bereits]] [[erwähnt|verbs/erwähnen#1]] [[wird|verbs/werden#1]] [[die|determiners/die]] [[Theorie|nouns/Theorie#1]] [[von|prepositions/von]] Ludendorff [[über|prepositions/über]] [[den|determiners/der]] ‚Totalen [[Krieg‘|nouns/Krieg#1]] [[sehr|particles/sehr#1]] [[häufig|adjectives/häufig#1]] [[mit|prepositions/mit]] [[dem|determiners/der]] ‚Absoluten Krieg‘ von Clausewitz [[gleichgesetzt|verbs/gleichsetzen#1]].“"
   },
   "ccd2155212": {
     "text": "„Er hat schwere Rückenprobleme, doch auch Diabetes und eine Reihe kleinerer Diagnosen lassen ihn kaum noch aufstehen.“",
@@ -22109,7 +22165,7 @@
         "gloss_hint": "hands over"
       }
     ],
-    "text_linked": "„[[Es|pronouns/es]] [[ist|verbs/sein#2]] [[die|determiners/der]] [[gerechte|adjectives/gerecht]] [[Strafe|nouns/Strafe#1]] [[des|determiners/der]] [[Himmels|nouns/Himmel#2]], die [[uns|pronouns/wir]] [[trifft|verbs/treffen#5]], [[und|conjunctions/und]] [[ich|pronouns/ich]] [[sage|verbs/sagen#1]] [[euch|pronouns/du#1]], [[es|pronouns/es]] [[wird|verbs/werden#3]] [[kein|pronouns/kein#1]] [[Heil|nouns/Heil#2]] [[kommen|verbs/kommen#5]], [[bis|particles/bis#1]] [[das|pronouns/das_[1]]] gloriose [[Volk|nouns/Volk#2]] [[der|determiners/der]] Vereinigten [[Staaten|nouns/Staat#1]] [[gleich|adjectives/gleich#1]] [[einem|determiners/ein]] gestärkten [[Riesen|nouns/Riese_großes#1]] [[sich|pronouns/sich#1]] [[von|prepositions/von#1]] [[seinem|pronouns/sein#1]] [[Schlafe|nouns/Schlaf#1]] [[erhebt|verbs/erheben]], [[über|prepositions/über#2]] die [[ganze|adjectives/ganz#2]] Teufelsbrut [[herfällt|verbs/herfallen]] und die ganze Rotte Korah [[dem|determiners/der]] [[Untergange|nouns/Untergang#3]] [[preisgibt|verbs/preisgeben]].“"
+    "text_linked": "„[[Es|pronouns/es]] [[ist|verbs/sein#2]] [[die|determiners/der]] [[gerechte|adjectives/gerecht]] [[Strafe|nouns/Strafe#1]] [[des|determiners/der]] [[Himmels|nouns/Himmel#2]], die [[uns|pronouns/wir]] [[trifft|verbs/treffen#5]], [[und|conjunctions/und]] [[ich|pronouns/ich]] [[sage|verbs/sagen#1]] [[euch|pronouns/du#1]], [[es|pronouns/es]] [[wird|verbs/werden#3]] [[kein|pronouns/kein#1]] [[Heil|nouns/Heil#2]] [[kommen|verbs/kommen#5]], [[bis|particles/bis#1]] [[das|pronouns/das_[1]]] gloriose [[Volk|nouns/Volk#2]] [[der|determiners/der]] Vereinigten [[Staaten|nouns/Staat#1]] [[gleich|adjectives/gleich#1]] [[einem|determiners/ein]] gestärkten [[Riesen|nouns/Riese_großes#1]] [[sich|pronouns/sich#1]] [[von|prepositions/von#1]] [[seinem|pronouns/sein#1]] [[Schlafe|nouns/Schlaf#1]] [[erhebt|verbs/erheben]], [[über|prepositions/über#2]] die [[ganze|adjectives/ganz#2]] Teufelsbrut herfällt und die ganze Rotte Korah [[dem|determiners/der]] [[Untergange|nouns/Untergang#3]] [[preisgibt|verbs/preisgeben]].“"
   },
   "ccecf41c9f": {
     "text": "[O.J. Simpson: Im Prozess] „wird der berühmte Sportler trotz überwältigender Indizien freigesprochen.“",
@@ -22675,7 +22731,7 @@
         "gloss_hint": "has"
       }
     ],
-    "text_linked": "„[[Ich|pronouns/ich#1]] [[muß|verbs/müssen#1]] [[an|prepositions/an]] [[jener|pronouns/jener#1]] [[Frau|nouns/Frau#1]] [[wohl|adverbs/wohl]] [[doch|particles/doch_betont]] [[leidenschaftlicher|adjectives/leidenschaftlich]] [[gehangen|verbs/hängen_festen#2]] [[haben|verbs/haben#1]], [[als|conjunctions/als#1]] [[ich|pronouns/ich#1]] selber [[wußte|verbs/wissen#1]]; [[sonst|adverbs/sonst#3]] würde [[es|pronouns/es]] [[mir|pronouns/ich]] [[nicht|particles/nicht#1]] [[so|adverbs/so]] [[schwerfallen|verbs/schwerfallen]], zuzugeben, [[daß|conjunctions/dass]] jener [[Dummkopf|nouns/Dummkopf#1]] sie [[geliebt|verbs/lieben]] [[hat|verbs/haben#1]].“"
+    "text_linked": "„[[Ich|pronouns/ich#1]] [[muß|verbs/müssen#1]] [[an|prepositions/an]] [[jener|pronouns/jener#1]] [[Frau|nouns/Frau#1]] [[wohl|adverbs/wohl]] [[doch|particles/doch_betont]] [[leidenschaftlicher|adjectives/leidenschaftlich]] [[gehangen|verbs/hängen_festen#2]] [[haben|verbs/haben#1]], [[als|conjunctions/als#1]] [[ich|pronouns/ich#1]] selber [[wußte|verbs/wissen#1]]; [[sonst|adverbs/sonst#3]] würde [[es|pronouns/es]] [[mir|pronouns/ich]] [[nicht|particles/nicht#1]] [[so|adverbs/so]] [[schwerfallen|verbs/schwerfallen#1]], zuzugeben, [[daß|conjunctions/dass]] jener [[Dummkopf|nouns/Dummkopf#1]] sie [[geliebt|verbs/lieben]] [[hat|verbs/haben#1]].“"
   },
   "ccf0aeeaa2": {
     "text": "Sie stellen hier völlig überzogene Forderungen, ist Ihnen das klar?",

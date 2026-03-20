@@ -3469,7 +3469,7 @@
         "gloss_hint": "admitted"
       }
     ],
-    "text_linked": "„[[Während|conjunctions/während]] [[der|pronouns/der_nominativ]] [[Verhandlungen|nouns/Verhandlung#2]] [[wuchs|verbs/wachsen_allmählich#1]] Mugabes [[Misstrauen|nouns/Misstrauen]] [[gegenüber|prepositions/gegenüber#2]] [[den|determiners/der]] Südafrikanern, deren [[neuer|adjectives/neu#1]] [[Premierminister|nouns/Premierminister]] Pieter Willem Botha [[die|pronouns/die]] [[Anwesenheit|nouns/Anwesenheit]] zweier südafrikanischer [[Bataillone|nouns/Bataillon]] [[in|prepositions/in]] Rhodesien [[zugegeben|verbs/zugeben]] hatte.“"
+    "text_linked": "„[[Während|conjunctions/während]] [[der|pronouns/der_nominativ]] [[Verhandlungen|nouns/Verhandlung#2]] [[wuchs|verbs/wachsen_allmählich#1]] Mugabes [[Misstrauen|nouns/Misstrauen]] [[gegenüber|prepositions/gegenüber#1]] [[den|determiners/der]] Südafrikanern, deren [[neuer|adjectives/neu#1]] [[Premierminister|nouns/Premierminister]] Pieter Willem Botha [[die|pronouns/die]] [[Anwesenheit|nouns/Anwesenheit]] zweier südafrikanischer [[Bataillone|nouns/Bataillon]] [[in|prepositions/in]] Rhodesien [[zugegeben|verbs/zugeben]] hatte.“"
   },
   "43155905fc": {
     "text": "„Er reichte mir die Plastiktüte.“",
@@ -4954,7 +4954,7 @@
         "gloss_hint": "dream"
       }
     ],
-    "text_linked": "„Als René Maria Petersen [[erwachte|verbs/erwachen]], [[entledigte|verbs/entledigen]] er sich noch im Liegen von seinem [[Traum|nouns/Traum#1]].“"
+    "text_linked": "„Als René Maria Petersen [[erwachte|verbs/erwachen]], entledigte er sich noch im Liegen von seinem [[Traum|nouns/Traum#1]].“"
   },
   "43228307a2": {
     "text": "In der Bundesregierung wirken viele Minister mit.",
@@ -7886,7 +7886,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[…] Calceolaria und Mimulus, wie sie bei uns im [[bunten|adjectives/bunt]] Gemisch in den Glashäusern und vor den [[Fenstern|nouns/Fenster]] prangen, [[erblühen|verbs/erblühen]] dort auf den Alpenhöhen; vor allem aber [[fallen|verbs/fallen]] die [[Cactus-Arten|nouns/Art#4]] der mexikanischen und chilenischen Alpen auf.“"
+    "text_linked": "„[…] Calceolaria und Mimulus, wie sie bei uns im [[bunten|adjectives/bunt]] Gemisch in den Glashäusern und vor den [[Fenstern|nouns/Fenster]] prangen, erblühen dort auf den Alpenhöhen; vor allem aber [[fallen|verbs/fallen]] die [[Cactus-Arten|nouns/Art#4]] der mexikanischen und chilenischen Alpen auf.“"
   },
   "433e7b36a7": {
     "text": "Dann warst du es also, der die Tasche genommen hat!",
@@ -8225,7 +8225,7 @@
         "gloss_hint": "delighted | enthusiastic | keen (on)"
       }
     ],
-    "text_linked": "„[[Besonders|adverbs/besonders]] [[von|prepositions/von]] [[der|pronouns/der_nominativ]] [[Eleganz|nouns/Eleganz#1]] [[des|determiners/des]] [[Foyers|nouns/Foyer]] [[und|conjunctions/und]] der geschwungenen [[Treppenhäuser|nouns/Treppenhaus]] [[waren|verbs/sein]] [[die|pronouns/die#1]] [[jungen|adjectives/jung]] [[Fotografinnen|nouns/Fotografin]] [[begeistert|adjectives/begeistert#1]].“"
+    "text_linked": "„[[Besonders|adverbs/besonders]] [[von|prepositions/von]] [[der|pronouns/der_singular#2]] [[Eleganz|nouns/Eleganz#1]] [[des|determiners/des]] [[Foyers|nouns/Foyer]] [[und|conjunctions/und]] der geschwungenen [[Treppenhäuser|nouns/Treppenhaus]] [[waren|verbs/sein]] [[die|pronouns/die#1]] [[jungen|adjectives/jung]] [[Fotografinnen|nouns/Fotografin]] [[begeistert|adjectives/begeistert#1]].“"
   },
   "43408f31b9": {
     "text": "Wenn ich mehr erfahren habe, gebe ich Ihnen Bescheid.",
@@ -8932,11 +8932,37 @@
   },
   "43467e2321": {
     "text": "Alle Löwen sind Katzen und alle Katzen sind Tiere. Demzufolge sind auch alle Löwen Tiere.",
-    "translation": null,
+    "translation": "All lions are cats and all cats are animals. Consequently, all lions are also animals.",
     "source": "wiktionary",
     "lemmas": [
       "demzufolge"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Löwen",
+        "lemma": "Löwe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Katzen",
+        "lemma": "Katze",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tiere",
+        "lemma": "Tier",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "676391fc"
+    },
+    "text_linked": "Alle [[Löwen|nouns/Löwe]] sind [[Katzen|nouns/Katze]] und alle Katzen sind [[Tiere|nouns/Tier]]. Demzufolge sind auch alle Löwen Tiere."
   },
   "43473535b3": {
     "text": "Russ besteht fast nur aus reinem Kohlenstoff (C) und entsteht bei unvollständiger Verbrennung.",
@@ -10422,7 +10448,11 @@
         "gloss_hint": "solve"
       }
     ],
-    "text_linked": "„Die [[Intelligenz|nouns/Intelligenz#1]], das [[geistige|adjectives/geistig#1]] Leistungsvermögen, [[zeigt|verbs/zeigen]] sich darin, inwieweit ein [[Lebewesen|nouns/Lebewesen]] in der Lage ist, [[Probleme|nouns/Problem#1]] in einer gegebenen [[Umwelt|nouns/Umwelt#1]] situationsgerecht und [[rasch|adjectives/rasch]] zu [[lösen|verbs/lösen#1]].“"
+    "text_linked": "„Die [[Intelligenz|nouns/Intelligenz#1]], das [[geistige|adjectives/geistig#1]] Leistungsvermögen, [[zeigt|verbs/zeigen]] sich darin, inwieweit ein [[Lebewesen|nouns/Lebewesen]] in der Lage ist, [[Probleme|nouns/Problem#1]] in einer gegebenen [[Umwelt|nouns/Umwelt#1]] situationsgerecht und [[rasch|adjectives/rasch]] zu [[lösen|verbs/lösen#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "67b6aff4"
+    }
   },
   "435d678b9b": {
     "text": "„Die Priesterweihe ist von ihnen im ersten Jahre der Präsentation nachzusuchen, sie haben eine geziemende Tonsur zu tragen und die vorgeschriebenen kanonischen Stunden gewissenhaft einzuhalten.“",
@@ -10729,7 +10759,7 @@
         "gloss_hint": "let"
       }
     ],
-    "text_linked": "Bei der Baumschere [[ist|verbs/sein#2]] [[darauf|adverbs/darauf#2]] [[zu|particles/zu_drückt]] [[achten|verbs/achten#1]], [[dass|conjunctions/dass]] [[die|determiners/die]] [[Klinge|nouns/Klinge#1]] [[aus|prepositions/aus#3]] gehärtetem [[Stahl|nouns/Stahl#1]] ist und sich auch [[auswechseln|verbs/auswechseln]] [[lässt|verbs/lassen#3]]."
+    "text_linked": "Bei der Baumschere [[ist|verbs/sein#2]] [[darauf|adverbs/darauf#2]] [[zu|particles/zu_drückt]] [[achten|verbs/achten#1]], [[dass|conjunctions/dass]] [[die|determiners/die]] [[Klinge|nouns/Klinge#1]] [[aus|prepositions/aus#3]] gehärtetem [[Stahl|nouns/Stahl#1]] ist und sich auch [[auswechseln|verbs/auswechseln#1]] [[lässt|verbs/lassen#3]]."
   },
   "435eb510b5": {
     "text": "„Es hat eine Zeit gedauert, bis der Wirt ihnen das Gas anſteckte.“",
@@ -12640,7 +12670,7 @@
         "gloss_hint": "saint (female)"
       }
     ],
-    "text_linked": "„Auch in den sogenannten Dikasterien, den päpstlichen Ministerien, sind [[Frauen|nouns/Frau#1]] nicht mehr tabu: Es gibt bereits etwa [[eine|determiners/ein]] [[Handvoll|nouns/Handvoll#1]] Untersekretärinnen, immerhin [[die|determiners/die]] dritte [[Stufe|nouns/Stufe#2]] [[der|pronouns/der_nominativ]] Behördenhierarchie, und in der jüngsten Kurienreform [[schaffte|verbs/schaffen_etwas]] Papst Franziskus die [[Möglichkeit|nouns/Möglichkeit#1]], [[dass|conjunctions/dass]] [[es|pronouns/es]] [[eines|determiners/ein]] [[Tages|nouns/Tag_zeitraum#1]] [[auch|adverbs/auch]] [[Präfektinnen|nouns/Präfektin]] [[geben|verbs/geben#2]] [[könnte|verbs/können_beherrschen]] – [[also|adverbs/also]] eine [[Frau|nouns/Frau#1]] [[an|prepositions/an]] der [[Spitze|nouns/Spitze#2]] des Staatssekretariats oder [[gar|adjectives/gar]] der ehrwürdigen Glaubenskongregation, [[vormals|adverbs/vormals]] [[Heilige|nouns/Heilige#1]] Inquisition.“"
+    "text_linked": "„Auch in den sogenannten Dikasterien, den päpstlichen Ministerien, sind [[Frauen|nouns/Frau#1]] nicht mehr tabu: Es gibt bereits etwa [[eine|determiners/ein]] [[Handvoll|nouns/Handvoll#1]] Untersekretärinnen, immerhin [[die|determiners/die]] dritte [[Stufe|nouns/Stufe#2]] [[der|pronouns/der_nominativ]] Behördenhierarchie, und in der jüngsten Kurienreform [[schaffte|verbs/schaffen_etwas#1]] Papst Franziskus die [[Möglichkeit|nouns/Möglichkeit#1]], [[dass|conjunctions/dass]] [[es|pronouns/es]] [[eines|determiners/ein]] [[Tages|nouns/Tag_zeitraum#1]] [[auch|adverbs/auch]] [[Präfektinnen|nouns/Präfektin]] [[geben|verbs/geben#2]] [[könnte|verbs/können_beherrschen]] – [[also|adverbs/also]] eine [[Frau|nouns/Frau#1]] [[an|prepositions/an]] der [[Spitze|nouns/Spitze#2]] des Staatssekretariats oder [[gar|adjectives/gar]] der ehrwürdigen Glaubenskongregation, [[vormals|adverbs/vormals]] [[Heilige|nouns/Heilige#1]] Inquisition.“"
   },
   "4378457d32": {
     "text": "Sein dänischer Verleger sagt, Hultberg habe sich an das alte Manuskript erinnert, als er einen neuen Roman über den Verfall nicht der Menschheit allgemein oder einer ganzen Stadt, sondern einer Familie schreiben wollte.",
@@ -17031,7 +17061,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Wenn du glaubst, ich [[räume|verbs/räumen]] immer die [[Wohnung|nouns/Wohnung]] auf, wenn du nur lange genug [[untätig|adjectives/untätig]] [[zuwartest|verbs/zuwarten]], dann hast du dich aber [[geschnitten|verbs/schneiden]]!"
+    "text_linked": "Wenn du glaubst, ich [[räume|verbs/räumen]] immer die [[Wohnung|nouns/Wohnung]] auf, wenn du nur lange genug [[untätig|adjectives/untätig]] zuwartest, dann hast du dich aber [[geschnitten|verbs/schneiden]]!"
   },
   "43ab3295cc": {
     "text": "Die Detonation war noch kilometerweit zu hören.",
@@ -21283,11 +21313,13 @@
   },
   "43da3fb3cb": {
     "text": "„Die Initiative tritt u.a. dafür ein, internationalen Austausch als festen Bestandteil schulischer Bildung in Deutschland zu verankern und ihn in der Öffentlichkeit sichtbarer zu machen.“",
-    "translation": null,
+    "translation": "\"The initiative advocates, among other things, for anchoring international exchange as a permanent component of school education in Germany and making it more visible to the public.\"",
     "source": "wiktionary",
     "lemmas": [
       "u.a."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "43dadfc662": {
     "text": "„Weiters stellte er einen Eventualantrag auf Erteilung der Bewilligung gemäß § 133 Abs. 2 LFG zum Ablassen des Pflanzenschutzmittels Dimilin, das aber eine geringere Wirkung erziele.“",
@@ -23133,7 +23165,7 @@
         "gloss_hint": "later"
       }
     ],
-    "text_linked": "„Jede [[Wimper|nouns/Wimper#1]] einer Zilienreihe [[schlägt|verbs/schlagen]] [[gegenüber|prepositions/gegenüber#2]] [[der|pronouns/der_nominativ#2]] vorhergehenden um einen [[Bruchteil|nouns/Bruchteil]] [[später|adverbs/später#1]].“"
+    "text_linked": "„Jede [[Wimper|nouns/Wimper#1]] einer Zilienreihe [[schlägt|verbs/schlagen]] [[gegenüber|prepositions/gegenüber#1]] [[der|pronouns/der_nominativ#2]] vorhergehenden um einen [[Bruchteil|nouns/Bruchteil]] [[später|adverbs/später#1]].“"
   },
   "43f1340f18": {
     "text": "Die Beiden waren sich schon immer feind.",
@@ -24080,11 +24112,39 @@
   },
   "43fba4158b": {
     "text": "Aufwendige Repräsentation steht einer Organisation schlecht an, die von Spenden und öffentlichen Mitteln lebt.",
-    "translation": null,
+    "translation": "Lavish representation is unbecoming for an organization that lives on donations and public funds.",
     "source": "wiktionary",
     "lemmas": [
       "anstehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Repräsentation",
+        "lemma": "Repräsentation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Organisation",
+        "lemma": "Organisation",
+        "pos": "noun",
+        "gloss_hint": "organization (institution)"
+      },
+      {
+        "form": "Spenden",
+        "lemma": "Spende",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mitteln",
+        "lemma": "Mittel",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Aufwendige Repräsentation steht einer [[Organisation|nouns/Organisation#2]] schlecht an, die von [[Spenden|nouns/Spende]] und öffentlichen [[Mitteln|nouns/Mittel_etwas]] lebt."
   },
   "43fc25d2a7": {
     "text": "„Nach dieser Explosion erwähnte der Fürst die Angelegenheit mit keinem Worte wieder.“",
@@ -24611,7 +24671,7 @@
         "gloss_hint": "lead to"
       }
     ],
-    "text_linked": "Das [[Verhalten|nouns/Verhalten#2]] [[des|determiners/des]] [[Stalkers|nouns/Stalker]] [[schlägt|verbs/schlagen]] [[dann|adverbs/dann#1]] [[in|prepositions/in]] [[Verleumdungen|nouns/Verleumdung]] [[und|conjunctions/und]] [[Beleidigungen|nouns/Beleidigung#1]] [[um|prepositions/um]], [[wenn|conjunctions/wenn#3]] [[das|pronouns/das_[1]]] [[Opfer|nouns/Opfer#3]] [[nicht|particles/nicht#1]] [[auf|prepositions/auf]] das [[Handeln|nouns/Handeln#1]] des [[Täters|nouns/Täter#1]] [[reagiert|verbs/reagieren]], und [[kann|verbs/können_beherrschen]] in [[jahrelangem|adjectives/jahrelang]] Psychoterror [[münden|verbs/münden]]."
+    "text_linked": "Das [[Verhalten|nouns/Verhalten#2]] [[des|determiners/des]] [[Stalkers|nouns/Stalker]] [[schlägt|verbs/schlagen]] [[dann|adverbs/dann#1]] [[in|prepositions/in]] [[Verleumdungen|nouns/Verleumdung]] [[und|conjunctions/und]] [[Beleidigungen|nouns/Beleidigung#1]] [[um|prepositions/um]], [[wenn|conjunctions/wenn#3]] [[das|pronouns/das_[1]]] [[Opfer|nouns/Opfer#3]] [[nicht|particles/nicht#1]] [[auf|prepositions/auf]] das [[Handeln|nouns/Handeln#1]] des [[Täters|nouns/Täter#1]] [[reagiert|verbs/reagieren]], und [[kann|verbs/können_etwas#1]] in [[jahrelangem|adjectives/jahrelang]] Psychoterror [[münden|verbs/münden]]."
   },
   "43ff516a10": {
     "text": "Die Regierung sollte zu diesem heiklen Thema endlich Farbe bekennen.",

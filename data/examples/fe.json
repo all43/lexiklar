@@ -1183,7 +1183,7 @@
         "gloss_hint": "purchase"
       }
     ],
-    "text_linked": "„Die Mail endet mit dem [[Angebot|nouns/Angebot#1]], eine merkwürdige [[Geschichte|nouns/Geschichte#1]] [[über|prepositions/über#2]] [[die|pronouns/die]] Liaison [[von|prepositions/von#1]] [[Informant|nouns/Informant]] [[und|conjunctions/und]] [[Redaktion|nouns/Redaktion]] [[könne|verbs/können_beherrschen]] [[exklusiv|adjectives/exklusiv#2]] [[erworben|verbs/erwerben]] werden.“"
+    "text_linked": "„Die Mail endet mit dem [[Angebot|nouns/Angebot#1]], eine merkwürdige [[Geschichte|nouns/Geschichte#1]] [[über|prepositions/über#2]] [[die|pronouns/die]] Liaison [[von|prepositions/von#1]] [[Informant|nouns/Informant]] [[und|conjunctions/und]] [[Redaktion|nouns/Redaktion]] [[könne|verbs/können_etwas#1]] [[exklusiv|adjectives/exklusiv#2]] [[erworben|verbs/erwerben]] werden.“"
   },
   "fe07143cdf": {
     "text": "Weniger ist mehr",
@@ -1655,7 +1655,7 @@
         "gloss_hint": "exceptional parliamentarians"
       }
     ],
-    "text_linked": "„Fast meint man, [[den|determiners/der]] Gesetzesentwürfen das [[schlechte|adjectives/schlecht]] [[Gewissen|nouns/Gewissen]] [[der|determiners/der]] [[großen|adjectives/groß]] [[Koalition|nouns/Koalition]] [[bei|prepositions/bei]] den kosmetischen [[Änderungen|nouns/Änderung]] [[anzumerken|verbs/anmerken]]: [[Da|conjunctions/da]] [[wird|verbs/werden#1]] der Höchstsatz [[von|prepositions/von]] 67,5 [[Prozent|nouns/Prozent#1]] der [[Diät|nouns/Diät#1]] [[auf|prepositions/auf]] 65 Prozent [[gesenkt|verbs/senken#2]] [[(immer|adverbs/immer]] [[noch|adverbs/noch#3]] 6130 [[Euro)|nouns/Euro_europameisterschaft#1]] [[und|conjunctions/und]] [[die|determiners/die]] [[Möglichkeit|nouns/Möglichkeit#1]] [[für|prepositions/für]] [[Abgeordnete|nouns/Abgeordneter]] [[schon|adverbs/schon]] [[mit|prepositions/mit]] 57 [[Jahren|nouns/Jahr]] [[in|prepositions/in]] [[Pension|nouns/Pension#3]] [[zu|prepositions/zu]] [[gehen|verbs/gehen#3]], [[abgeschafft|verbs/abschaffen]]. Beides betrifft [[aber|conjunctions/aber]] [[nur|particles/nur#1]] Ausnahmeparlamentarier.“"
+    "text_linked": "„Fast meint man, [[den|determiners/der]] Gesetzesentwürfen das [[schlechte|adjectives/schlecht]] [[Gewissen|nouns/Gewissen]] [[der|determiners/der]] [[großen|adjectives/groß]] [[Koalition|nouns/Koalition]] [[bei|prepositions/bei]] den kosmetischen [[Änderungen|nouns/Änderung]] [[anzumerken|verbs/anmerken]]: [[Da|conjunctions/da]] [[wird|verbs/werden#1]] der Höchstsatz [[von|prepositions/von]] 67,5 [[Prozent|nouns/Prozent#1]] der [[Diät|nouns/Diät#1]] [[auf|prepositions/auf]] 65 Prozent [[gesenkt|verbs/senken#2]] [[(immer|adverbs/immer]] [[noch|adverbs/noch#3]] 6130 [[Euro)|nouns/Euro_europameisterschaft#1]] [[und|conjunctions/und]] [[die|determiners/die]] [[Möglichkeit|nouns/Möglichkeit#1]] [[für|prepositions/für]] [[Abgeordnete|nouns/Abgeordneter]] [[schon|adverbs/schon]] [[mit|prepositions/mit]] 57 [[Jahren|nouns/Jahr]] [[in|prepositions/in]] [[Pension|nouns/Pension#3]] [[zu|prepositions/zu]] [[gehen|verbs/gehen#3]], [[abgeschafft|verbs/abschaffen#1]]. Beides betrifft [[aber|conjunctions/aber]] [[nur|particles/nur#1]] Ausnahmeparlamentarier.“"
   },
   "fe0a5315a4": {
     "text": "„Vom Wodka wurde Humboldt so schlecht, daß er zwei Tage im Bett bleiben mußte.“",
@@ -2452,11 +2452,42 @@
   },
   "fe0eaefada": {
     "text": "Die Kinder liefen die treppauf bis zur Kirchturmspitze.",
-    "translation": null,
+    "translation": "The children ran up the stairs to the top of the church tower.",
     "source": "wiktionary",
     "lemmas": [
       "treppauf"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "liefen",
+        "lemma": "laufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "treppauf",
+        "lemma": "treppauf",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kirchturmspitze",
+        "lemma": "Kirchturmspitze",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true
+    },
+    "text_linked": "Die [[Kinder|nouns/Kind]] [[liefen|verbs/laufen]] die [[treppauf|adverbs/treppauf]] bis zur Kirchturmspitze."
   },
   "fe0eebe864": {
     "text": "Lehrjahre sind keine Herrenjahre",
@@ -3892,7 +3923,7 @@
         "gloss_hint": "abolish"
       }
     ],
-    "text_linked": "„Der Staat [[muss|verbs/müssen#1]] [[mit|prepositions/mit#1]] [[dem|determiners/der]] [[Aufstocken|verbs/aufstocken]] [[aufhören|verbs/aufhören#2]], Arbeitsagenturen dürfen [[nur|particles/nur#1]] [[Arbeit|nouns/Arbeit#3]] mit [[normalen|adjectives/normal#2]] [[Gehältern|nouns/Gehalt_geldbetrag#1]] [[vermittelt|verbs/vermitteln]], 450-Euro-Jobs [[müssen|verbs/müssen#1]] [[abgeschafft|verbs/abschaffen]] werden.“"
+    "text_linked": "„Der Staat [[muss|verbs/müssen#1]] [[mit|prepositions/mit#1]] [[dem|determiners/der]] [[Aufstocken|verbs/aufstocken]] [[aufhören|verbs/aufhören#2]], Arbeitsagenturen dürfen [[nur|particles/nur#1]] [[Arbeit|nouns/Arbeit#3]] mit [[normalen|adjectives/normal#2]] [[Gehältern|nouns/Gehalt_geldbetrag#1]] [[vermittelt|verbs/vermitteln]], 450-Euro-Jobs [[müssen|verbs/müssen#1]] [[abgeschafft|verbs/abschaffen#1]] werden.“"
   },
   "fe260ff3ad": {
     "text": "Das Ergebnis seiner Bemühungen war gleich null.",
@@ -5359,11 +5390,75 @@
   },
   "fe338f3bf7": {
     "text": "„In der Botschaft in London wurde mir bestätigt, dass ich ohne Begleitung eines offiziellen algerischen Reiseführers keinen Fuß in das Land setzen würde.“",
-    "translation": null,
+    "translation": "At the embassy in London, I was assured that I would not be able to set foot in the country without the accompaniment of an official Algerian tour guide.",
     "source": "wiktionary",
     "lemmas": [
       "Reiseführer"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Botschaft",
+        "lemma": "Botschaft",
+        "pos": "noun",
+        "gloss_hint": "embassy"
+      },
+      {
+        "form": "London",
+        "lemma": "London",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bestätigt",
+        "lemma": "bestätigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Begleitung",
+        "lemma": "Begleitung",
+        "pos": "noun",
+        "gloss_hint": "accompaniment"
+      },
+      {
+        "form": "offiziellen",
+        "lemma": "offiziell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "algerischen",
+        "lemma": "algerisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reiseführers",
+        "lemma": "Reiseführer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fuß",
+        "lemma": "Fuß",
+        "pos": "noun",
+        "gloss_hint": "foot (body part)"
+      },
+      {
+        "form": "Land",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": "country"
+      },
+      {
+        "form": "setzen",
+        "lemma": "setzen",
+        "pos": "verb",
+        "gloss_hint": "place (verb)"
+      }
+    ],
+    "text_linked": "„In der [[Botschaft|nouns/Botschaft#2]] in London wurde mir [[bestätigt|verbs/bestätigen]], dass ich ohne [[Begleitung|nouns/Begleitung#1]] eines [[offiziellen|adjectives/offiziell]] algerischen [[Reiseführers|nouns/Reiseführer]] keinen [[Fuß|nouns/Fuß#1]] in das [[Land|nouns/Land#2]] [[setzen|verbs/setzen#10]] würde.“"
   },
   "fe34fe9aaf": {
     "text": "„Der neue polnische Rechtsradikalismus kommt lässig daher, ohne Nationalhymne, rot-weiße Flaggen und Uniformen.“",
@@ -15351,7 +15446,7 @@
         "gloss_hint": "effort"
       }
     ],
-    "text_linked": "„[[Krane|nouns/Kran_manuell]] [[mit|prepositions/mit]] [[großer|adjectives/groß#1]] Hubkraft [[und|conjunctions/und]] Feineinstellung [[beim|prepositions/bei]] Lastablassen, [[die|pronouns/die]] [[über|prepositions/über]] [[den|determiners/der]] Grundriß [[der|determiners/der]] Bauten hinausfahren [[können|verbs/können_etwas#2]], erleichtern die [[Arbeit|nouns/Arbeit#8]].“"
+    "text_linked": "„[[Krane|nouns/Kran_manuell]] [[mit|prepositions/mit]] [[großer|adjectives/groß#1]] Hubkraft [[und|conjunctions/und]] Feineinstellung [[beim|prepositions/bei]] Lastablassen, [[die|pronouns/die]] [[über|prepositions/über]] [[den|determiners/der]] Grundriß [[der|determiners/der]] Bauten hinausfahren [[können|verbs/können_beherrschen]], erleichtern die [[Arbeit|nouns/Arbeit#8]].“"
   },
   "fe7b192b21": {
     "text": "Die BU war zu lang und zu kompliziert.",
@@ -18043,7 +18138,7 @@
         "gloss_hint": "crumbling"
       }
     ],
-    "text_linked": "„[[Die|determiners/die]] [[Fassade|nouns/Fassade#1]] [[der|pronouns/der_nominativ#1]] [[Revolutionärin|nouns/Revolutionärin#1]] [[bröckelte|verbs/bröckeln_bröckchen]].“"
+    "text_linked": "„[[Die|determiners/die]] [[Fassade|nouns/Fassade#1]] [[der|pronouns/der_nominativ#1]] [[Revolutionärin|nouns/Revolutionärin#1]] [[bröckelte|verbs/bröckeln_bröckchen#1]].“"
   },
   "fe93761a44": {
     "text": "Der Gauner musste für zwei Jahre in den Bau.",
@@ -18583,7 +18678,7 @@
         "gloss_hint": "decorate with slivers"
       }
     ],
-    "text_linked": "„[[Die|pronouns/die]] Creme igelförmig [[auf|prepositions/auf#1]] [[die|pronouns/die]] Mürbeteigplätzchen [[streichen|verbs/streichen]] [[und|conjunctions/und]] die [[Igel|nouns/Igel#1]] [[mit|prepositions/mit#1]] [[den|determiners/der]] Mandelstiften [[spicken|verbs/spicken]].“"
+    "text_linked": "„[[Die|pronouns/die]] Creme igelförmig [[auf|prepositions/auf#1]] [[die|pronouns/die]] Mürbeteigplätzchen [[streichen|verbs/streichen]] [[und|conjunctions/und]] die [[Igel|nouns/Igel#1]] [[mit|prepositions/mit#1]] [[den|determiners/der]] Mandelstiften spicken.“"
   },
   "fe947057ad": {
     "text": "Viele Statistiken zu sprachlichen Phänomenen sind inzwischen veraltet.",
@@ -24005,7 +24100,7 @@
         "gloss_hint": "stress | burden"
       }
     ],
-    "text_linked": "Einer [[der|pronouns/der_nominativ#1]] [[Piloten|nouns/Pilot]] [[knickte|verbs/knicken]] [[unter|prepositions/unter#1]] der [[Belastung|nouns/Belastung#1]] ein."
+    "text_linked": "Einer [[der|pronouns/der_nominativ#1]] [[Piloten|nouns/Pilot]] knickte [[unter|prepositions/unter#1]] der [[Belastung|nouns/Belastung#1]] ein."
   },
   "fed98d0486": {
     "text": "Die Sonne bringt durch ihre Wärme Eis zum Schmelzen.",
@@ -25763,7 +25858,7 @@
         "gloss_hint": "hand"
       }
     ],
-    "text_linked": "[[Ich|pronouns/ich]] [[wollte|verbs/wollen#2]] [[das|pronouns/das_nominativ]] [[Pferd|nouns/Pferd#1]] [[füttern|verbs/füttern_einem#2]] [[und|conjunctions/und#1]] [[da|adverbs/da]] [[hat|verbs/haben#1]] [[mich|pronouns/ich]] das [[Aas|nouns/Aas#1]] [[in|prepositions/in]] [[die|pronouns/die#1]] [[Hand|nouns/Hand#2]] gebissen."
+    "text_linked": "[[Ich|pronouns/ich]] [[wollte|verbs/wollen#2]] [[das|pronouns/das_nominativ]] [[Pferd|nouns/Pferd#1]] [[füttern|verbs/füttern_einem]] [[und|conjunctions/und#1]] [[da|adverbs/da]] [[hat|verbs/haben#1]] [[mich|pronouns/ich]] das [[Aas|nouns/Aas#1]] [[in|prepositions/in]] [[die|pronouns/die#1]] [[Hand|nouns/Hand#2]] gebissen."
   },
   "feea308129": {
     "text": "„Die Staatsanwaltschaft legte am Dienstagabend bei einer Anhörung in New York die Anklage vor. […] Die Liste umfasst unter anderem Wertpapierbetrug, Fälschung von Briefen, Computerbetrug, drei Fälle von Geldwäsche und Meineid.“",

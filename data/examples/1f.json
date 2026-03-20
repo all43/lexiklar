@@ -3771,7 +3771,7 @@
         "gloss_hint": "speak"
       }
     ],
-    "text_linked": "[[Als|conjunctions/als]] sie dreizehn [[war|verbs/sein#2]], [[konnte|verbs/können_beherrschen]] [[man|pronouns/man#2]] [[von|prepositions/von]] [[Äpfeln|nouns/Apfel#1]] [[sprechen|verbs/sprechen#1]]."
+    "text_linked": "[[Als|conjunctions/als]] sie dreizehn [[war|verbs/sein#2]], [[konnte|verbs/können_etwas#1]] [[man|pronouns/man#2]] [[von|prepositions/von]] [[Äpfeln|nouns/Apfel#1]] [[sprechen|verbs/sprechen#1]]."
   },
   "1f22b88037": {
     "text": "[Fußball:] „Die drittbeste Abwehr der Liga bei zugleich den wenigsten Gelben Karten sind nur zwei bemerkenswerte Statistiken von St. Paulis Saison.“",
@@ -12333,7 +12333,7 @@
         "gloss_hint": "directed"
       }
     ],
-    "text_linked": "„[[Die|pronouns/die]] [[Moderatoren|nouns/Moderator]], [[das|pronouns/das_[1]]] [[waren|verbs/sein#2]] Dietmar Schönherr [[und|conjunctions/und]] Vivi Bach: Sie [[mit|prepositions/mit#1]] [[Angst|nouns/Angst#1]] [[vor|prepositions/vor#1]] [[dem|determiners/der]] Millionenpublikum, er mit [[einem|determiners/ein#1]] [[ordentlichen|adjectives/ordentlich]] [[Schuss|nouns/Schuss]] [[Provokation|nouns/Provokation#1]] und beide mit [[überraschenden|adjectives/überraschend#1]] Ratespielen und Mutproben, zumeist [[von|prepositions/von]] Kreativmeister André Heller ersonnen und von Michael Pfleghar (Klimbim) [[inszeniert|verbs/inszenieren]].“"
+    "text_linked": "„[[Die|pronouns/die]] [[Moderatoren|nouns/Moderator]], [[das|pronouns/das_[1]]] [[waren|verbs/sein#2]] Dietmar Schönherr [[und|conjunctions/und]] Vivi Bach: Sie [[mit|prepositions/mit#1]] [[Angst|nouns/Angst#1]] [[vor|prepositions/vor#1]] [[dem|determiners/der]] Millionenpublikum, er mit [[einem|determiners/ein#1]] [[ordentlichen|adjectives/ordentlich]] [[Schuss|nouns/Schuss]] [[Provokation|nouns/Provokation#1]] und beide mit [[überraschenden|adjectives/überraschend#1]] Ratespielen und Mutproben, [[zumeist|adverbs/zumeist]] [[von|prepositions/von]] Kreativmeister André Heller ersonnen und von Michael Pfleghar (Klimbim) [[inszeniert|verbs/inszenieren]].“"
   },
   "1f6fe665d4": {
     "text": "Auf dem Green benutzt man in der Regel den Putter.",
@@ -14472,11 +14472,31 @@
   },
   "1f7f050aa4": {
     "text": "Ich bin gleich am Verhungern.",
-    "translation": null,
+    "translation": "I'm practically starving.",
     "source": "wiktionary",
     "lemmas": [
       "am"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gleich",
+        "lemma": "gleich",
+        "pos": "adverb",
+        "gloss_hint": "soon"
+      },
+      {
+        "form": "Verhungern",
+        "lemma": "verhungern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "d802705e"
+    },
+    "text_linked": "Ich bin [[gleich|adverbs/gleich#1]] am [[Verhungern|verbs/verhungern]]."
   },
   "1f7f5b5ba2": {
     "text": "„Ich werde morgen einen Haftbefehl gegen ihn erwirken.“",
@@ -16043,7 +16063,7 @@
         "gloss_hint": "large"
       }
     ],
-    "text_linked": "„Ein [[wesentlicher|adjectives/wesentlich#1]] [[Teil|nouns/Teil_element#2]] der gesetzgeberischen [[Tätigkeit|nouns/Tätigkeit#1]] [[betraf|verbs/betreffen]] die Religionspolitik, weil angesichts der vielen Abweichler der [[Bedarf|nouns/Bedarf]] an Einheitlichkeit besonders [[groß|adjectives/groß#1]] war.“"
+    "text_linked": "„Ein [[wesentlicher|adjectives/wesentlich#1]] [[Teil|nouns/Teil_stück#2]] der gesetzgeberischen [[Tätigkeit|nouns/Tätigkeit#1]] [[betraf|verbs/betreffen]] die Religionspolitik, weil angesichts der vielen Abweichler der [[Bedarf|nouns/Bedarf]] an Einheitlichkeit besonders [[groß|adjectives/groß#1]] war.“"
   },
   "1f8bffd526": {
     "text": "Dabei spiele beispielsweise eine Rolle, ob es sich um ein Abteil im Haus oder einen Zubau außerhalb des Wohnraums gehandelt habe,…",
@@ -16238,7 +16258,7 @@
         "gloss_hint": "use"
       }
     ],
-    "text_linked": "[[Wegen|prepositions/wegen]] Latex-Allergien [[können|verbs/können_etwas#1]] manche [[Männer|nouns/Mann#1]] keine [[Kondome|nouns/Kondom#1]] [[benutzen|verbs/benutzen#1]]."
+    "text_linked": "[[Wegen|prepositions/wegen]] Latex-Allergien [[können|verbs/können_beherrschen]] manche [[Männer|nouns/Mann#1]] keine [[Kondome|nouns/Kondom#1]] [[benutzen|verbs/benutzen#1]]."
   },
   "1f8f4bc53c": {
     "text": "„Die Zarin Katharina II. wollte in diesen Tagen die nun ihrer Herrschaft unterstehenden Länder besichtigen und sich deren Bewohnern zeigen; auf ihrem Weg nach Warschau kam sie durch Riga.“",
@@ -16967,7 +16987,7 @@
         "gloss_hint": "came"
       }
     ],
-    "text_linked": "Er [[ist|verbs/sein#2]] arm [[wie|adverbs/wie]] [[eine|determiners/eine]] Kirchenmaus, [[aber|conjunctions/aber]] [[so|adverbs/so]] [[stolz|adjectives/stolz#1]] [[als|conjunctions/als]] er zerlumpt ist, [[denn|particles/denn_als]] er [[rühmt|verbs/rühmen]] [[sich|pronouns/sich]] [[von|prepositions/von]] [[dem|determiners/der]] [[edeln|adjectives/edel]] [[Hause|nouns/Haus]] [[der|determiners/der]] Aguilar [[abzustammen|verbs/abstammen]], [[aus|prepositions/aus]] welchem Gonsalvo de Cordova, der [[große|adjectives/groß]] Feldherr, [[hervorging|verbs/hervorgehen]]. (Washington Irving, Die Alhambra, Bewohner der Alhambra, z.n. Projekt Gutenberg)"
+    "text_linked": "Er [[ist|verbs/sein#2]] arm [[wie|adverbs/wie]] [[eine|determiners/eine]] Kirchenmaus, [[aber|conjunctions/aber]] [[so|adverbs/so]] [[stolz|adjectives/stolz#1]] [[als|conjunctions/als]] er zerlumpt ist, [[denn|particles/denn_als]] er [[rühmt|verbs/rühmen]] [[sich|pronouns/sich]] [[von|prepositions/von]] [[dem|determiners/der]] [[edeln|adjectives/edel]] [[Hause|nouns/Haus]] [[der|determiners/der]] Aguilar [[abzustammen|verbs/abstammen#1]], [[aus|prepositions/aus]] welchem Gonsalvo de Cordova, der [[große|adjectives/groß]] Feldherr, [[hervorging|verbs/hervorgehen]]. (Washington Irving, Die Alhambra, Bewohner der Alhambra, z.n. Projekt Gutenberg)"
   },
   "1f95b7e01e": {
     "text": "Die Wildschweine richten große Flurschäden an.",
@@ -19331,7 +19351,7 @@
         "gloss_hint": "daughter-in-law"
       }
     ],
-    "text_linked": "[[Wenn|conjunctions/wenn]] [[es|pronouns/es]] [[denn|adverbs/denn]] [[eine|determiners/eine]] [[Schurkin|nouns/Schurkin#1]] [[in|prepositions/in]] [[der|pronouns/der_nominativ]] [[ganzen|adjectives/ganz#2]] [[Geschichte|nouns/Geschichte#1]] [[gab|verbs/geben#1]], [[dann|adverbs/dann#1]] [[war|verbs/sein#2]] es [[die|pronouns/die#2]] [[Schwiegertochter|nouns/Schwiegertochter#1]]."
+    "text_linked": "[[Wenn|conjunctions/wenn]] [[es|pronouns/es]] [[denn|adverbs/denn]] [[eine|determiners/eine]] [[Schurkin|nouns/Schurkin#1]] [[in|prepositions/in]] [[der|pronouns/der_singular#2]] [[ganzen|adjectives/ganz#2]] [[Geschichte|nouns/Geschichte#1]] [[gab|verbs/geben#1]], [[dann|adverbs/dann#1]] [[war|verbs/sein#2]] es [[die|pronouns/die#2]] [[Schwiegertochter|nouns/Schwiegertochter#1]]."
   },
   "1fb55167d6": {
     "text": "„Als wir Feuerholz suchten, entdeckten wir eine Wegkreuzung und menschliche Spuren, die vielleicht acht Tage alt waren.“",
@@ -20854,7 +20874,7 @@
         "gloss_hint": "watched"
       }
     ],
-    "text_linked": "„[[Nachdem|conjunctions/nachdem]] Tink ihm [[einen|determiners/ein]] [[besonders|adverbs/besonders#4]] [[misstrauischen|adjectives/misstrauisch]] [[Blick|nouns/Blick#2]] [[zugeworfen|verbs/zuwerfen]] [[hat|verbs/haben]], [[als|conjunctions/als]] er [[Stiefel|nouns/Stiefel#1]] [[und|conjunctions/und]] [[Socken|nouns/Socke]] [[ausgezogen|verbs/ausziehen]] hat, [[um|prepositions/um]] [[durch|adverbs/durch#2]] einen [[kleinen|adjectives/klein]] [[Bach|nouns/Bach#1]] [[zu|prepositions/zu]] waten, [[wünscht|verbs/wünschen]] [[Mal|nouns/Mal_bestimmter#1]], er [[hätte|verbs/haben#1]] [[lieber|adverbs/lieber#1]] [[mehr|adverbs/mehr#1]] Militärfilme als [[romantische|adjectives/romantisch]] [[Komödien|nouns/Komödie#1]] [[gekuckt|verbs/gucken#3]].“"
+    "text_linked": "„[[Nachdem|conjunctions/nachdem]] Tink ihm [[einen|determiners/ein]] [[besonders|adverbs/besonders#4]] [[misstrauischen|adjectives/misstrauisch]] [[Blick|nouns/Blick#2]] zugeworfen [[hat|verbs/haben]], [[als|conjunctions/als]] er [[Stiefel|nouns/Stiefel#1]] [[und|conjunctions/und]] [[Socken|nouns/Socke]] [[ausgezogen|verbs/ausziehen]] hat, [[um|prepositions/um]] [[durch|adverbs/durch#2]] einen [[kleinen|adjectives/klein]] [[Bach|nouns/Bach#1]] [[zu|prepositions/zu]] waten, [[wünscht|verbs/wünschen]] [[Mal|nouns/Mal_bestimmter#1]], er [[hätte|verbs/haben#1]] [[lieber|adverbs/lieber#1]] [[mehr|adverbs/mehr#1]] Militärfilme als [[romantische|adjectives/romantisch]] [[Komödien|nouns/Komödie#1]] [[gekuckt|verbs/gucken#3]].“"
   },
   "1fc79c9dc3": {
     "text": "Gib mal die Funke rüber.",
@@ -22852,7 +22872,7 @@
     "lemmas": [
       "Kind"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "atment",
@@ -24132,11 +24152,79 @@
   },
   "1feb361c85": {
     "text": "„Auch Nachhaltigkeitsminister Claude Wiseler ließ in der rezenten Vergangenheit durchblicken, der Staat werde auch nach der Kapitalaufstockung stärkster Aktionär bleiben. In welchem Verhältnis zu den katarischen Miteigentümern ist jedoch bisweilen nicht gewusst.“",
-    "translation": null,
+    "translation": "\"Sustainability Minister Claude Wiseler also hinted in recent times that the state would remain the strongest shareholder even after the capital increase. However, the ratio to the Qatari co-owners has sometimes not been clear.\"",
     "source": "wiktionary",
     "lemmas": [
       "bisweilen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Nachhaltigkeitsminister",
+        "lemma": "Nachhaltigkeitsminister",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "durchblicken",
+        "lemma": "durchblicken",
+        "pos": "verb",
+        "gloss_hint": "hint"
+      },
+      {
+        "form": "Vergangenheit",
+        "lemma": "Vergangenheit",
+        "pos": "noun",
+        "gloss_hint": "past"
+      },
+      {
+        "form": "Staat",
+        "lemma": "Staat",
+        "pos": "noun",
+        "gloss_hint": "state"
+      },
+      {
+        "form": "Aktionär",
+        "lemma": "Aktionär",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kapitalaufstockung",
+        "lemma": "Kapitalaufstockung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verhältnis",
+        "lemma": "Verhältnis",
+        "pos": "noun",
+        "gloss_hint": "relationship"
+      },
+      {
+        "form": "Miteigentümern",
+        "lemma": "Miteigentümer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bisweilen",
+        "lemma": "bisweilen",
+        "pos": "adverb",
+        "gloss_hint": "occasionally"
+      },
+      {
+        "form": "gewusst",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "1c34744b"
+    },
+    "text_linked": "„Auch Nachhaltigkeitsminister Claude Wiseler ließ in der rezenten [[Vergangenheit|nouns/Vergangenheit#1]] [[durchblicken|verbs/durchblicken_den#2]], der [[Staat|nouns/Staat#1]] werde auch nach der Kapitalaufstockung stärkster Aktionär bleiben. In welchem [[Verhältnis|nouns/Verhältnis#2]] zu den katarischen Miteigentümern ist jedoch [[bisweilen|adverbs/bisweilen#1]] nicht [[gewusst|verbs/wissen]].“"
   },
   "1fec88d6dd": {
     "text": "Lichtschächte im Kellergeschoss werden meist mittels eiserner Roste abgedeckt.",
@@ -25470,7 +25558,7 @@
         "gloss_hint": "missed"
       }
     ],
-    "text_linked": "[SC Freiburg:] „[[In|prepositions/in]] [[der|determiners/der]] gesamten [[Saison|nouns/Saison#1]] [[hatte|verbs/haben#1]] der Sportclub [[in|prepositions/in]] [[sechs|numerals/sechs#1]] [[Spielen|verbs/spielen#1]] [[einen|determiners/ein]] [[Sieg|nouns/Sieg#1]] in [[den|determiners/der]] Schlussminuten [[verschenkt|verbs/verschenken]] [[und|conjunctions/und]] in [[weiteren|adjectives/weiter]] [[drei|numerals/drei#1]] 0:0-Partien einen [[Elfmeter|nouns/Elfmeter#1]] [[verschossen|verbs/verschießen]].“"
+    "text_linked": "[SC Freiburg:] „[[In|prepositions/in]] [[der|determiners/der]] gesamten [[Saison|nouns/Saison#1]] [[hatte|verbs/haben#1]] der Sportclub [[in|prepositions/in]] [[sechs|numerals/sechs#1]] [[Spielen|verbs/spielen#1]] [[einen|determiners/ein]] [[Sieg|nouns/Sieg#1]] in [[den|determiners/der]] Schlussminuten [[verschenkt|verbs/verschenken]] [[und|conjunctions/und]] in [[weiteren|adjectives/weiter]] [[drei|numerals/drei#1]] 0:0-Partien einen [[Elfmeter|nouns/Elfmeter#1]] verschossen.“"
   },
   "1ffd24e08d": {
     "text": "auf und ab",

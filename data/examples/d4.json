@@ -1938,7 +1938,7 @@
         "gloss_hint": "say"
       }
     ],
-    "text_linked": "Zum [[gegenwärtigen|adjectives/gegenwärtig#1]] [[Zeitpunkt|nouns/Zeitpunkt#1]] [[können|verbs/können_etwas#1]] [[wir|pronouns/wir]] [[noch|adverbs/noch#2]] nichts [[sagen|verbs/sagen#1]]."
+    "text_linked": "Zum [[gegenwärtigen|adjectives/gegenwärtig#1]] [[Zeitpunkt|nouns/Zeitpunkt#1]] [[können|verbs/können_beherrschen]] [[wir|pronouns/wir]] [[noch|adverbs/noch#2]] nichts [[sagen|verbs/sagen#1]]."
   },
   "d417788987": {
     "text": "„Am Ende einer weitestgehend sachlichen Mitgliederversammlung des FC Bayern München sorgte Ex-Präsident Uli Hoeneß doch noch für einen Aufreger.“",
@@ -2861,7 +2861,7 @@
         "gloss_hint": "book work"
       }
     ],
-    "text_linked": "„Ab [[da|adverbs/da]] [[ging|verbs/gehen#4]] [[es|pronouns/es]], [[was|pronouns/was#1]] [[den|determiners/der]] [[Lebensunterhalt|nouns/Lebensunterhalt]] [[anging|verbs/angehen]], [[bergauf|adverbs/bergauf]], [[ab|adverbs/ab]] da [[konnte|verbs/können_beherrschen]] [[ich|pronouns/ich#1]] [[von|prepositions/von#1]] den [[Büchern|nouns/Buch#1]] [[leben|verbs/leben#1]], [[ohne|prepositions/ohne#1]] Nebenarbeiten [[annehmen|verbs/annehmen#3]] [[zu|particles/zu_drückt]] [[müssen|verbs/müssen#1]], [[dies|pronouns/dies#1]] [[war|verbs/sein#2]] [[etwa|adverbs/etwa#1]] mein siebzigstes Buchwerk.“"
+    "text_linked": "„Ab [[da|adverbs/da]] [[ging|verbs/gehen#4]] [[es|pronouns/es]], [[was|pronouns/was#1]] [[den|determiners/der]] [[Lebensunterhalt|nouns/Lebensunterhalt]] [[anging|verbs/angehen]], [[bergauf|adverbs/bergauf]], [[ab|adverbs/ab]] da [[konnte|verbs/können_etwas#1]] [[ich|pronouns/ich#1]] [[von|prepositions/von#1]] den [[Büchern|nouns/Buch#1]] [[leben|verbs/leben#1]], [[ohne|prepositions/ohne#1]] Nebenarbeiten [[annehmen|verbs/annehmen#3]] [[zu|particles/zu_drückt]] [[müssen|verbs/müssen#1]], [[dies|pronouns/dies#1]] [[war|verbs/sein#2]] [[etwa|adverbs/etwa#1]] mein siebzigstes Buchwerk.“"
   },
   "d41d94b539": {
     "text": "Der Kommissar nahm die Aussage unter die Lupe.",
@@ -3680,11 +3680,69 @@
   },
   "d420bfd4eb": {
     "text": "Das Einzige, was nach meiner Beobachtung die Menschen in Deutschland zuverlässig vom Draußensitzen abhält, sind starke, anhaltende Regengüsse und Hagel.",
-    "translation": null,
+    "translation": "The only thing that reliably keeps people in Germany from sitting outside, based on my observation, is heavy, persistent rainfall and hail.",
     "source": "wiktionary",
     "lemmas": [
       "Hagel"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Einzige",
+        "lemma": "Einzige",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beobachtung",
+        "lemma": "Beobachtung",
+        "pos": "noun",
+        "gloss_hint": "observation"
+      },
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abhält",
+        "lemma": "abhalten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "starke",
+        "lemma": "stark",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "anhaltende",
+        "lemma": "anhaltend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regengüsse",
+        "lemma": "Regenguss",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hagel",
+        "lemma": "Hagel",
+        "pos": "noun",
+        "gloss_hint": "hail"
+      }
+    ],
+    "text_linked": "Das Einzige, was nach meiner [[Beobachtung|nouns/Beobachtung#1]] die [[Menschen|nouns/Mensch_junge]] in Deutschland zuverlässig vom Draußensitzen [[abhält|verbs/abhalten]], sind [[starke|adjectives/stark]], anhaltende Regengüsse und [[Hagel|nouns/Hagel#1]]."
   },
   "d4217d0d72": {
     "text": "das Wort abschneiden",
@@ -3867,11 +3925,81 @@
   },
   "d4255a6476": {
     "text": "„Bei noch nicht vollständiger Verknöcherung der Schädelnähte bei Kindern kommt es zunächst zu einem extremen Schädelwachstum, später zu neurologischen Ausfällen, z.B. Intelligenzdefiziten oder spastischen Lähmungen.“",
-    "translation": null,
+    "translation": "\"In children with not yet complete ossification of the skull sutures, there is initially extreme skull growth, later neurological deficits such as intellectual disabilities or spastic paralysis.\"",
     "source": "wiktionary",
     "lemmas": [
       "z.B."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verknöcherung",
+        "lemma": "Verknöcherung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schädelnähte",
+        "lemma": "Schädelnaht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kindern",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommt",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "extremen",
+        "lemma": "extrem",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schädelwachstum",
+        "lemma": "Schädelwachstum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "neurologischen",
+        "lemma": "neurologisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausfällen",
+        "lemma": "Ausfall",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Intelligenzdefiziten",
+        "lemma": "Intelligenzdefizit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "spastischen",
+        "lemma": "spastisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lähmungen",
+        "lemma": "Lähmung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Bei noch nicht vollständiger Verknöcherung der Schädelnähte bei [[Kindern|nouns/Kind]] [[kommt|verbs/kommen]] es zunächst zu einem [[extremen|adjectives/extrem]] Schädelwachstum, später zu neurologischen [[Ausfällen|nouns/Ausfall]], z.B. Intelligenzdefiziten oder spastischen [[Lähmungen|nouns/Lähmung]].“"
   },
   "d425ae7e4a": {
     "text": "Der Spargel ist eine mehrjährige, krautige Pflanze.",
@@ -5707,7 +5835,7 @@
         "gloss_hint": "wardrobe"
       }
     ],
-    "text_linked": "Sie [[verwahrte|verbs/verwahren]] [[die|determiners/die]] [[mit|prepositions/mit]] [[einem|determiners/ein]] [[roten|adjectives/rot]] [[Band|nouns/Band_plural#3]] [[umschlungenen|verbs/umschlingen_den]] [[Liebesbriefe|nouns/Liebesbrief#1]] [[in|prepositions/in]] [[der|determiners/der]] [[hintersten|adjectives/hinter]] [[Ecke|nouns/Ecke#1]] [[des|determiners/des]] [[Schrankes|nouns/Schrank]]."
+    "text_linked": "Sie [[verwahrte|verbs/verwahren]] [[die|determiners/die]] [[mit|prepositions/mit]] [[einem|determiners/ein]] [[roten|adjectives/rot]] [[Band|nouns/Band_plural#3]] umschlungenen [[Liebesbriefe|nouns/Liebesbrief#1]] [[in|prepositions/in]] [[der|determiners/der]] [[hintersten|adjectives/hinter]] [[Ecke|nouns/Ecke#1]] [[des|determiners/des]] [[Schrankes|nouns/Schrank]]."
   },
   "d43554419d": {
     "text": "Ich lausche, aber ich höre nichts.",
@@ -6665,7 +6793,7 @@
         "gloss_hint": "walk"
       }
     ],
-    "text_linked": "[[Man|pronouns/man]] [[sagt|verbs/sagen#1]] [[in|prepositions/in]] [[Wien|names/Wien_fluss]] [[»den|determiners/der]] [[Hund|nouns/Hund#1]] [[äußerln|verbs/äußerln]] [[führen«|verbs/führen#1]] [[zu|prepositions/zu]] [[»mit|prepositions/mit#1]] [[dem|determiners/der]] Hund [[Gassi|nouns/Gassi#1]] [[gehen«|verbs/gehen#1]]."
+    "text_linked": "[[Man|pronouns/man]] [[sagt|verbs/sagen#1]] [[in|prepositions/in]] [[Wien|names/Wien_fluss]] [[»den|determiners/der]] [[Hund|nouns/Hund#1]] äußerln [[führen«|verbs/führen#1]] [[zu|prepositions/zu]] [[»mit|prepositions/mit#1]] [[dem|determiners/der]] Hund [[Gassi|nouns/Gassi#1]] [[gehen«|verbs/gehen#1]]."
   },
   "d4462273e6": {
     "text": "„An heißen Wochenenden, vor den Sommerferien, sonnte sich Irmhild auf der Schulwiese hinterm Haus, im Bikini, mit einem Kettchen um die Wespentaille, korrigierte auch Hefte im Liegestuhl sitzend, las Bücher und Zeitschriften und trank Orangensaft und rauchte Zigaretten dabei.“",
@@ -10298,7 +10426,7 @@
     "lemmas": [
       "Ort"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Der",
@@ -10569,7 +10697,7 @@
         "gloss_hint": "was"
       }
     ],
-    "text_linked": "„[[Über|adverbs/über#1]] [[dem|determiners/der]] Nordportal [[ist|verbs/sein#2]] [[die|pronouns/die]] älteste [[nach|prepositions/nach#4]] dionysischer Zeitrechnung [[datierte|verbs/datieren]] Kircheninschrift Deutschlands [[eingemauert|verbs/einmauern]], nach [[der|pronouns/der_nominativ#1]] die [[Kirche|nouns/Kirche#1]] [[unter|prepositions/unter#1]] [[Abt|nouns/Abt#1]] Saleman [[von|prepositions/von#2]] Lorsch [[erbaut|verbs/erbauen]] [[und|conjunctions/und#1]] 984 [[durch|prepositions/durch#2]] [[Bischof|nouns/Bischof#1]] Gebhard von [[Konstanz|nouns/Konstanz]] [[geweiht|verbs/weihen#2]] [[wurde|verbs/werden#1]].“"
+    "text_linked": "„[[Über|adverbs/über#1]] [[dem|determiners/der]] Nordportal [[ist|verbs/sein#2]] [[die|pronouns/die]] älteste [[nach|prepositions/nach#4]] dionysischer Zeitrechnung [[datierte|verbs/datieren]] Kircheninschrift Deutschlands eingemauert, nach [[der|pronouns/der_nominativ#1]] die [[Kirche|nouns/Kirche#1]] [[unter|prepositions/unter#1]] [[Abt|nouns/Abt#1]] Saleman [[von|prepositions/von#2]] Lorsch [[erbaut|verbs/erbauen]] [[und|conjunctions/und#1]] 984 [[durch|prepositions/durch#2]] [[Bischof|nouns/Bischof#1]] Gebhard von [[Konstanz|nouns/Konstanz]] [[geweiht|verbs/weihen#2]] [[wurde|verbs/werden#1]].“"
   },
   "d467f879ef": {
     "text": "Du kannst dich ruhig auf den Schemel hocken.",
@@ -10626,11 +10754,33 @@
   },
   "d4681ccd31": {
     "text": "Sie bilden eine untrennbare Einheit.",
-    "translation": null,
+    "translation": "They form an inseparable unit.",
     "source": "wiktionary",
     "lemmas": [
       "untrennbar"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "bilden",
+        "lemma": "bilden",
+        "pos": "verb",
+        "gloss_hint": "form"
+      },
+      {
+        "form": "untrennbare",
+        "lemma": "untrennbar",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einheit",
+        "lemma": "Einheit",
+        "pos": "noun",
+        "gloss_hint": "unity"
+      }
+    ],
+    "text_linked": "Sie [[bilden|verbs/bilden#1]] eine [[untrennbare|adjectives/untrennbar]] [[Einheit|nouns/Einheit#1]]."
   },
   "d4686fafe8": {
     "text": "das gibt's doch nicht",
@@ -14820,7 +14970,7 @@
         "gloss_hint": "downgraded"
       }
     ],
-    "text_linked": "„[[Bedeutende|adjectives/bedeutend]] [[Materien|nouns/Materie#3]] [[aus|prepositions/aus]] [[diesen|pronouns/dieser]] Rechtsbereichen [[wurden|verbs/werden#1]] [[allerdings|adverbs/allerdings#1]] [[im|prepositions/in]] [[Zuge|nouns/Zug]] [[der|determiners/der]] jüngsten Ausbildungsreformen ungeachtet [[ihrer|pronouns/ihr_zu#2]] Praxisrelevanz [[schrittweise|adverbs/schrittweise]] aus [[dem|determiners/der]] Kanon der Pflichtfächer [[ausgeschlossen|adjectives/ausgeschlossen#2]] oder [[zu|prepositions/zu]] [[bloßen|adjectives/bloß]] ‚Grundzügenfächern‘ herabgestuft.“"
+    "text_linked": "„[[Bedeutende|adjectives/bedeutend]] [[Materien|nouns/Materie#3]] [[aus|prepositions/aus]] [[diesen|pronouns/dieser]] Rechtsbereichen [[wurden|verbs/werden#1]] [[allerdings|adverbs/allerdings#1]] [[im|prepositions/in]] [[Zuge|nouns/Zug]] [[der|determiners/der]] jüngsten Ausbildungsreformen [[ungeachtet|postpositions/ungeachtet]] [[ihrer|pronouns/ihr_zu#2]] Praxisrelevanz [[schrittweise|adverbs/schrittweise]] aus [[dem|determiners/der]] Kanon der Pflichtfächer [[ausgeschlossen|adjectives/ausgeschlossen#2]] oder [[zu|prepositions/zu]] [[bloßen|adjectives/bloß]] ‚Grundzügenfächern‘ herabgestuft.“"
   },
   "d49ad1cef5": {
     "text": "Diese Hochsteckfrisur ist ja ein wahres Kunstwerk geworden.",
@@ -15421,7 +15571,7 @@
         "gloss_hint": "divide"
       }
     ],
-    "text_linked": "[[Traditionell|adjectives/traditionell]] [[werden|verbs/werden#1]] [[die|pronouns/die]] afrikanischen [[Sprachen|nouns/Sprache#1]] [[in|prepositions/in]] [[vier|numerals/vier#1]] Sprachphylen [[unterteilt|verbs/unterteilen]]."
+    "text_linked": "[[Traditionell|adjectives/traditionell]] [[werden|verbs/werden#1]] [[die|pronouns/die]] afrikanischen [[Sprachen|nouns/Sprache#1]] [[in|prepositions/in]] [[vier|numerals/vier#1]] Sprachphylen [[unterteilt|verbs/unterteilen#1]]."
   },
   "d4a057ed46": {
     "text": "„Die Haustür fällt ins Schloß.“",
@@ -18036,7 +18186,7 @@
         "gloss_hint": "be"
       }
     ],
-    "text_linked": "„[[Daran|adverbs/daran]] [[angelehnt|verbs/anlehnen]] [[kann|verbs/können_beherrschen]] [[ein|pronouns/ein#1]] [[Hack|nouns/Hack_hackfleisch#1]] [[Zugang|nouns/Zugang#1]] [[zu|particles/zu_drückt]] [[einem|determiners/ein]] [[Gerät|nouns/Gerät#1]] oder [[einer|determiners/ein]] [[neuen|adjectives/neu#1]] Funktionalität [[verschaffen|verbs/verschaffen]], [[die|determiners/die]] [[vom|prepositions/von]] [[Hersteller|nouns/Hersteller#1]] [[nicht|particles/nicht#1]] vorgesehen [[ist|verbs/sein#2]].“"
+    "text_linked": "„[[Daran|adverbs/daran]] [[angelehnt|verbs/anlehnen]] [[kann|verbs/können_etwas#1]] [[ein|pronouns/ein#1]] [[Hack|nouns/Hack_hackfleisch#1]] [[Zugang|nouns/Zugang#1]] [[zu|particles/zu_drückt]] [[einem|determiners/ein]] [[Gerät|nouns/Gerät#1]] oder [[einer|determiners/ein]] [[neuen|adjectives/neu#1]] Funktionalität [[verschaffen|verbs/verschaffen]], [[die|determiners/die]] [[vom|prepositions/von]] [[Hersteller|nouns/Hersteller#1]] [[nicht|particles/nicht#1]] vorgesehen [[ist|verbs/sein#2]].“"
   },
   "d4b8ea9265": {
     "text": "„Gegner und Befürworter der Kernkraftwerke liegen härter denn je im Clinch.“",
@@ -20971,7 +21121,7 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "Er [[stemmt|verbs/stemmen#1]] [[das|pronouns/das_[1]]] [[Klavier|nouns/Klavier#1]], [[um|prepositions/um]] [[es|pronouns/es]] [[in|prepositions/in]] [[den|determiners/der]] Umzugswagen [[laden|verbs/laden_schusswaffe#1]] [[zu|particles/zu_drückt]] [[können|verbs/können_etwas#1]]."
+    "text_linked": "Er [[stemmt|verbs/stemmen#1]] [[das|pronouns/das_[1]]] [[Klavier|nouns/Klavier#1]], [[um|prepositions/um]] [[es|pronouns/es]] [[in|prepositions/in]] [[den|determiners/der]] Umzugswagen [[laden|verbs/laden_schusswaffe#1]] [[zu|particles/zu_drückt]] [[können|verbs/können_beherrschen]]."
   },
   "d4dbb6920c": {
     "text": "„In beiden Fällen zahlen Sie eine Gebühr an einen Anbieter, beispielweise Ihrer Telefongesellschaft oder Ihrem Kabelfernsehanbieter.“",
@@ -21961,7 +22111,7 @@
         "gloss_hint": "more"
       }
     ],
-    "text_linked": "„[[Das|pronouns/das_[1]]] [[Schlimme|adjectives/schlimm#1]] [[dabei|adverbs/dabei]] [[ist|verbs/sein#2]], [[dass|conjunctions/dass]] [[der|pronouns/der_nominativ]] [[Aufsichtsrat|nouns/Aufsichtsrat#1]] der [[Bank|nouns/Bank_geldinstitut#2]] [[zuerst|adverbs/zuerst]] [[das|pronouns/das_[1]]] Ausplündern der Bank [[durch|prepositions/durch#1]] [[den|determiners/der]] Hegerclan [[duldete|verbs/dulden#1]] [[und|conjunctions/und]] [[mittrug|verbs/mittragen]], unter Umständen selbst [[die|determiners/die]] [[Hand|nouns/Hand#2]] [[aufgehalten|verbs/aufhalten]] [[hat|verbs/haben#1]]. Damit [[wurde|verbs/werden#1]] er erpressbar durch Johannes Herzog. [[Ein|determiners/ein]] desolater [[Haufen|nouns/Haufen#2]], der [[seine|pronouns/sein]] Pflichten [[als|conjunctions/als]] [[Aufsicht|nouns/Aufsicht#1]] [[über|prepositions/über#2]] die [[Vorstände|nouns/Vorstand#2]] [[in|prepositions/in#1]] [[unvorstellbarer|adjectives/unvorstellbar]] [[Weise|nouns/Weise_besondere#1]] [[nicht|particles/nicht#1]] [[wahrgenommen|verbs/wahrnehmen#1]] hat. Im Normalfall [[hätten|verbs/haben]] die [[Aufsichtsräte|nouns/Aufsichtsrat#1]] [[lange|adverbs/lange]] [[vorher|adverbs/vorher]] [[einschreiten|verbs/einschreiten]] [[müssen|verbs/müssen#1]], [[damit|adverbs/damit]] die Hegers nicht [[mal|adverbs/mal]] in die [[Nähe|nouns/Nähe#3]] [[des|determiners/des]] [[Vermögens|nouns/Vermögen]] der [[Mitglieder|nouns/Mitglied#1]] [[gekommen|verbs/kommen#5]] [[wären|verbs/sein]]. [[Aber|conjunctions/aber]] [[mitgegangen|verbs/mitgehen]], mitgehangen. [[Dieser|pronouns/dieser]] [[bittere|adjectives/bitter#1]] [[Weg|nouns/Weg#1]], [[wird|verbs/werden#1]] der Mehrzahl der Aufsichtsräte nicht [[erspart|verbs/ersparen#1]] bleiben. [[Dass|conjunctions/dass]] diese [[bereits|adverbs/bereits]] die [[schwarzen|adjectives/schwarz#1]] [[Wolken|nouns/Wolke#1]] am [[Horizont|nouns/Horizont#1]] [[heraufziehen|verbs/heraufziehen]] [[sehen|verbs/sehen#1]], ist [[auch|adverbs/auch]] [[davon|adverbs/davon#3]] [[abzuleiten|verbs/ableiten#5]], dass [[man|pronouns/man#2]] [[von|prepositions/von#1]] ihnen nichts [[mehr|adverbs/mehr#1]] [[hört|verbs/hören#1]] und [[sieht|verbs/sehen#1]]. [[Jetzt|adverbs/jetzt]] [[wäre|verbs/sein]] [[ein|determiners/ein]] [[starker|adjectives/stark#15]] Aufsichtsratsvorsitzender wünschenswert, der die Interessen der Mitglieder vertritt und nicht damit [[zu|particles/zu_drückt]] [[tun|verbs/tun_handlung#1]] hat, nicht mehr [[ins|prepositions/in#2]] Kreuzfeuer der [[Kritik|nouns/Kritik#2]] und des [[Staatsanwalts|nouns/Staatsanwalt]] zu [[geraten|verbs/geraten#1]]. Aber [[leider|adverbs/leider]] ist das mal so, [[wenn|conjunctions/wenn]] man zu [[tief|adjectives/tief#1]] im [[Sumpf|nouns/Sumpf#1]] [[mit|prepositions/mit#1]] [[drinnen|adverbs/drinnen]] steckt, hat man keinen Bewegungsradius mehr.“"
+    "text_linked": "„[[Das|pronouns/das_[1]]] [[Schlimme|adjectives/schlimm#1]] [[dabei|adverbs/dabei]] [[ist|verbs/sein#2]], [[dass|conjunctions/dass]] [[der|pronouns/der_nominativ]] [[Aufsichtsrat|nouns/Aufsichtsrat#1]] der [[Bank|nouns/Bank_geldinstitut#2]] [[zuerst|adverbs/zuerst]] [[das|pronouns/das_[1]]] Ausplündern der Bank [[durch|prepositions/durch#1]] [[den|determiners/der]] Hegerclan [[duldete|verbs/dulden#1]] [[und|conjunctions/und]] [[mittrug|verbs/mittragen]], unter Umständen selbst [[die|determiners/die]] [[Hand|nouns/Hand#2]] [[aufgehalten|verbs/aufhalten]] [[hat|verbs/haben#1]]. Damit [[wurde|verbs/werden#1]] er erpressbar durch Johannes Herzog. [[Ein|determiners/ein]] desolater [[Haufen|nouns/Haufen#2]], der [[seine|pronouns/sein]] Pflichten [[als|conjunctions/als]] [[Aufsicht|nouns/Aufsicht#1]] [[über|prepositions/über#2]] die [[Vorstände|nouns/Vorstand#2]] [[in|prepositions/in#1]] [[unvorstellbarer|adjectives/unvorstellbar]] [[Weise|nouns/Weise_besondere#1]] [[nicht|particles/nicht#1]] [[wahrgenommen|verbs/wahrnehmen#1]] hat. Im Normalfall [[hätten|verbs/haben]] die [[Aufsichtsräte|nouns/Aufsichtsrat#1]] [[lange|adverbs/lange]] [[vorher|adverbs/vorher]] [[einschreiten|verbs/einschreiten#1]] [[müssen|verbs/müssen#1]], [[damit|adverbs/damit]] die Hegers nicht [[mal|adverbs/mal]] in die [[Nähe|nouns/Nähe#3]] [[des|determiners/des]] [[Vermögens|nouns/Vermögen]] der [[Mitglieder|nouns/Mitglied#1]] [[gekommen|verbs/kommen#5]] [[wären|verbs/sein]]. [[Aber|conjunctions/aber]] [[mitgegangen|verbs/mitgehen]], mitgehangen. [[Dieser|pronouns/dieser]] [[bittere|adjectives/bitter#1]] [[Weg|nouns/Weg#1]], [[wird|verbs/werden#1]] der Mehrzahl der Aufsichtsräte nicht [[erspart|verbs/ersparen#1]] bleiben. [[Dass|conjunctions/dass]] diese [[bereits|adverbs/bereits]] die [[schwarzen|adjectives/schwarz#1]] [[Wolken|nouns/Wolke#1]] am [[Horizont|nouns/Horizont#1]] heraufziehen [[sehen|verbs/sehen#1]], ist [[auch|adverbs/auch]] [[davon|adverbs/davon#3]] [[abzuleiten|verbs/ableiten#5]], dass [[man|pronouns/man#2]] [[von|prepositions/von#1]] ihnen nichts [[mehr|adverbs/mehr#1]] [[hört|verbs/hören#1]] und [[sieht|verbs/sehen#1]]. [[Jetzt|adverbs/jetzt]] [[wäre|verbs/sein]] [[ein|determiners/ein]] [[starker|adjectives/stark#15]] Aufsichtsratsvorsitzender wünschenswert, der die Interessen der Mitglieder vertritt und nicht damit [[zu|particles/zu_drückt]] [[tun|verbs/tun_handlung#1]] hat, nicht mehr [[ins|prepositions/in#2]] Kreuzfeuer der [[Kritik|nouns/Kritik#2]] und des [[Staatsanwalts|nouns/Staatsanwalt]] zu [[geraten|verbs/geraten#1]]. Aber [[leider|adverbs/leider]] ist das mal so, [[wenn|conjunctions/wenn]] man zu [[tief|adjectives/tief#1]] im [[Sumpf|nouns/Sumpf#1]] [[mit|prepositions/mit#1]] [[drinnen|adverbs/drinnen]] steckt, hat man keinen Bewegungsradius mehr.“"
   },
   "d4dd0d7080": {
     "text": "„Obwohl sich bei kabel eins streng genommen gar nicht so viel am Vorabend getan hat, kann sich der Sender zu den Gewinnern der letzten Monate zählen.“",

@@ -2349,7 +2349,7 @@
         "gloss_hint": "cut out"
       }
     ],
-    "text_linked": "„Die Mutter [[rammte|verbs/rammen]] [[das|pronouns/das_[1]]] [[Messer|nouns/Messer_schneidewerkzeug#1]] [[in|prepositions/in]] [[ein|pronouns/ein#1]] Kartoffelauge, das sie [[längst|adverbs/längst#1]] [[ausgestochen|verbs/ausstechen]] hatte.“"
+    "text_linked": "„Die Mutter [[rammte|verbs/rammen]] [[das|pronouns/das_[1]]] [[Messer|nouns/Messer_schneidewerkzeug#1]] [[in|prepositions/in]] [[ein|pronouns/ein#1]] Kartoffelauge, das sie [[längst|adverbs/längst#1]] ausgestochen hatte.“"
   },
   "f819e52cb0": {
     "text": "Die Ausmaße der Zerstörungen im Kaukasuskonflikt sind aufgrund der Nachrichtenlage bisher nur andeutungsweise erkennbar.",
@@ -2542,11 +2542,33 @@
   },
   "f81c0f2470": {
     "text": "In der Wendung \"ich spielte\" ist \"spielte\" ein Präteritum.",
-    "translation": null,
+    "translation": "In the phrase \"I played,\" \"played\" is a preterite.",
     "source": "wiktionary",
     "lemmas": [
       "Präteritum"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wendung",
+        "lemma": "Wendung",
+        "pos": "noun",
+        "gloss_hint": "idiom"
+      },
+      {
+        "form": "spielte",
+        "lemma": "spielen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Präteritum",
+        "lemma": "Präteritum",
+        "pos": "noun",
+        "gloss_hint": "preterite"
+      }
+    ],
+    "text_linked": "In der [[Wendung|nouns/Wendung#1]] \"ich [[spielte|verbs/spielen]]\" ist \"spielte\" ein [[Präteritum|nouns/Präteritum#1]]."
   },
   "f81c100668": {
     "text": "„Einmal band er sich eine Woche lang den Arm auf den Rücken, um sich mit Unbill und Schmerz vertraut zu machen.“",
@@ -5601,11 +5623,57 @@
   },
   "f831101639": {
     "text": "„Auf den Airport-Monitoren finden sie nicht nur die Nummer des Gepäckbandes, sondern auch genaue Zeitangaben darüber, wann der Koffer dort auftaucht.“",
-    "translation": null,
+    "translation": "\"On the airport monitors they find not only the number of the baggage carousel, but also precise time information about when the suitcase appears there.\"",
     "source": "wiktionary",
     "lemmas": [
       "Gepäckband"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Airport-Monitoren",
+        "lemma": "Monitor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "finden",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": "discover"
+      },
+      {
+        "form": "Nummer",
+        "lemma": "Nummer",
+        "pos": "noun",
+        "gloss_hint": "number"
+      },
+      {
+        "form": "Gepäckbandes",
+        "lemma": "Gepäckband",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeitangaben",
+        "lemma": "Zeitangabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Koffer",
+        "lemma": "Koffer",
+        "pos": "noun",
+        "gloss_hint": "suitcase"
+      },
+      {
+        "form": "auftaucht",
+        "lemma": "auftauchen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Auf den [[Airport-Monitoren|nouns/Monitor]] [[finden|verbs/finden#1]] sie nicht nur die [[Nummer|nouns/Nummer#1]] des [[Gepäckbandes|nouns/Gepäckband]], sondern auch genaue Zeitangaben darüber, wann der [[Koffer|nouns/Koffer#1]] dort [[auftaucht|verbs/auftauchen]].“"
   },
   "f831599857": {
     "text": "„Über dem unablässigen Bellen der eingesperrten Pitbulls waren die murmelnden Stimmen der Hundebesitzer zu hören.“",
@@ -6256,7 +6324,7 @@
     "lemmas": [
       "sitzen"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Vier",
@@ -8270,7 +8338,7 @@
         "gloss_hint": "himself (reflexive)"
       }
     ],
-    "text_linked": "Sie [[konnten|verbs/können_etwas#2]] [[vor|prepositions/vor#1]] [[Gericht|nouns/Gericht_ort#1]] [[einen|determiners/ein]] [[Sieg|nouns/Sieg#1]] [[für|prepositions/für#1]] [[sich|pronouns/sich#1]] buchen."
+    "text_linked": "Sie [[konnten|verbs/können_beherrschen]] [[vor|prepositions/vor#1]] [[Gericht|nouns/Gericht_ort#1]] [[einen|determiners/ein]] [[Sieg|nouns/Sieg#1]] [[für|prepositions/für#1]] [[sich|pronouns/sich#1]] buchen."
   },
   "f84ade02a4": {
     "text": "„Auf ihren Klimaschutz und ihre Mülltrennung sind die Deutschen stolz wie Oskar.“",
@@ -10027,7 +10095,7 @@
         "gloss_hint": "happen (future)"
       }
     ],
-    "text_linked": "„Mit dem ALG II [[sollte|verbs/sollen#4]] [[eine|determiners/ein]] Sozialleistung [[für|prepositions/für]] alle erwerbsfähigen Arbeitslosen [[geschaffen|verbs/schaffen_etwas]] [[werden|verbs/werden#1]], [[die|determiners/die]] alleine [[vom|prepositions/von]] [[Bund|nouns/Bund_gruppe#1]] [[über|prepositions/über]] die Bundesagentur für [[Arbeit|nouns/Arbeit#4]] [[getragen|verbs/tragen]] [[wird|verbs/werden#2]].“"
+    "text_linked": "„Mit dem ALG II [[sollte|verbs/sollen#4]] [[eine|determiners/ein]] Sozialleistung [[für|prepositions/für]] alle erwerbsfähigen Arbeitslosen [[geschaffen|verbs/schaffen_etwas#1]] [[werden|verbs/werden#1]], [[die|determiners/die]] alleine [[vom|prepositions/von]] [[Bund|nouns/Bund_gruppe#1]] [[über|prepositions/über]] die Bundesagentur für [[Arbeit|nouns/Arbeit#4]] [[getragen|verbs/tragen]] [[wird|verbs/werden#2]].“"
   },
   "f85c155387": {
     "text": "„Er rettet ihr, klein, buckelig, Metallhut aufm Kopp, das Leben, er kehrt sie mit dem Rollstuhl gerade noch rechtzeitig vor einem Laster von der Straße.“",
@@ -10080,11 +10148,39 @@
   },
   "f861090f20": {
     "text": "„Sie bat mich, ich möge mich für sie verwenden, und übergab mir alle Bescheinigungen, die ich allenfalls nötig haben würde.“",
-    "translation": null,
+    "translation": "\"She asked me to advocate for her, and handed me all the certificates that I might possibly need.\"",
     "source": "wiktionary",
     "lemmas": [
       "Bescheinigung"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "bat",
+        "lemma": "bitten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "verwenden",
+        "lemma": "verwenden",
+        "pos": "verb",
+        "gloss_hint": "use"
+      },
+      {
+        "form": "übergab",
+        "lemma": "übergeben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bescheinigungen",
+        "lemma": "Bescheinigung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Sie [[bat|verbs/bitten]] mich, ich möge mich für sie [[verwenden|verbs/verwenden#1]], und [[übergab|verbs/übergeben_etwas]] mir alle [[Bescheinigungen|nouns/Bescheinigung]], die ich allenfalls nötig haben würde.“"
   },
   "f861644d58": {
     "text": "„Ein einzelner Scheinwerfer beleuchtete die Bühne, als Jan Anderson mit einer akustischen Gitarre in der Hand vor das Publikum trat.“",
@@ -13117,7 +13213,7 @@
         "gloss_hint": "estate house"
       }
     ],
-    "text_linked": "„Die Türme von Smolensk [[vor|prepositions/vor#2]] [[Augen|nouns/Auge#8]], [[biwakierte|verbs/biwakieren]] [[das|pronouns/der_nominativ]] [[Bataillon|nouns/Bataillon#1]] [[im|prepositions/in#1]] Apfelgarten [[eines|determiners/ein#1]] [[verlassenen|adjectives/verlassen#1]] Gutshauses.“"
+    "text_linked": "„Die Türme von Smolensk [[vor|prepositions/vor#2]] [[Augen|nouns/Auge#8]], biwakierte [[das|pronouns/der_nominativ]] [[Bataillon|nouns/Bataillon#1]] [[im|prepositions/in#1]] Apfelgarten [[eines|determiners/ein#1]] [[verlassenen|adjectives/verlassen#1]] Gutshauses.“"
   },
   "f882eb5267": {
     "text": "Gemeine Wiesenwanzen werden bis zu 7,3 mm lang.",
@@ -14749,11 +14845,51 @@
   },
   "f88c650cc7": {
     "text": "Das Produkt ist für die geplante Anwendung validiert worden: Der vom Kunden erwartete Nutzen wird erreicht.",
-    "translation": null,
+    "translation": "The product has been validated for the intended application: the benefit expected by the customer is achieved.",
     "source": "wiktionary",
     "lemmas": [
       "validieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Produkt",
+        "lemma": "Produkt",
+        "pos": "noun",
+        "gloss_hint": "product"
+      },
+      {
+        "form": "Anwendung",
+        "lemma": "Anwendung",
+        "pos": "noun",
+        "gloss_hint": "application (software)"
+      },
+      {
+        "form": "validiert",
+        "lemma": "validieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nutzen",
+        "lemma": "Nutzen",
+        "pos": "noun",
+        "gloss_hint": "benefit"
+      },
+      {
+        "form": "Kunden",
+        "lemma": "Kunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erreicht",
+        "lemma": "erreichen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Das [[Produkt|nouns/Produkt#1]] ist für die geplante [[Anwendung|nouns/Anwendung#3]] [[validiert|verbs/validieren]] worden: Der vom [[Kunden|nouns/Kunde_jemand]] erwartete [[Nutzen|nouns/Nutzen#1]] wird [[erreicht|verbs/erreichen]]."
   },
   "f88cd35fef": {
     "text": "„Die Punktabstände auf dieser von Erhard Etzlaub entworfenen Karte geben die Entfernungen an: eine deutsche Meile, 7400 Meter für jeden Abstand.“",
@@ -15072,7 +15208,7 @@
         "gloss_hint": "refuse"
       }
     ],
-    "text_linked": "„»[[Anfüttern|verbs/füttern_einem#2]]« [[wird|verbs/werden#1]] [[das|pronouns/das_[1]]] [[genannt|verbs/nennen#2]], [[man|pronouns/man]] [[gewöhnt|verbs/gewöhnen#2]] [[die|pronouns/die]] [[extrem|adjectives/extrem#1]] [[vorsichtigen|adjectives/vorsichtig#1]] Karpfen [[auf|prepositions/auf#1]] [[diese|pronouns/dies]] [[Weise|nouns/Weise_besondere#1]] [[an|prepositions/an#2]] bestimmte Futterplätze, [[damit|adverbs/damit#1]] sie [[später|adjectives/später#1]] [[den|determiners/der]] [[Köder|nouns/Köder#1]] [[samt|prepositions/samt]] Angelhaken [[nicht|particles/nicht#1]] [[verschmähen|verbs/verschmähen]].“"
+    "text_linked": "„»[[Anfüttern|verbs/füttern_einem]]« [[wird|verbs/werden#1]] [[das|pronouns/das_[1]]] [[genannt|verbs/nennen#2]], [[man|pronouns/man]] [[gewöhnt|verbs/gewöhnen#2]] [[die|pronouns/die]] [[extrem|adjectives/extrem#1]] [[vorsichtigen|adjectives/vorsichtig#1]] Karpfen [[auf|prepositions/auf#1]] [[diese|pronouns/dies]] [[Weise|nouns/Weise_besondere#1]] [[an|prepositions/an#2]] bestimmte Futterplätze, [[damit|adverbs/damit#1]] sie [[später|adjectives/später#1]] [[den|determiners/der]] [[Köder|nouns/Köder#1]] [[samt|prepositions/samt]] Angelhaken [[nicht|particles/nicht#1]] [[verschmähen|verbs/verschmähen]].“"
   },
   "f88fed1f69": {
     "text": "Sie mussten viel Zeit und Kraft aufbringen, um die Arbeit vollenden zu können.",
@@ -15150,7 +15286,7 @@
         "gloss_hint": "manage"
       }
     ],
-    "text_linked": "Sie mussten [[viel|adverbs/viel]] [[Zeit|nouns/Zeit#1]] [[und|conjunctions/und]] [[Kraft|nouns/Kraft#1]] [[aufbringen|verbs/aufbringen#4]], um [[die|determiners/die]] [[Arbeit|nouns/Arbeit#6]] [[vollenden|verbs/vollenden#1]] [[zu|particles/zu_drückt]] [[können|verbs/können_etwas#2]]."
+    "text_linked": "Sie mussten [[viel|adverbs/viel]] [[Zeit|nouns/Zeit#1]] [[und|conjunctions/und]] [[Kraft|nouns/Kraft#1]] [[aufbringen|verbs/aufbringen#4]], um [[die|determiners/die]] [[Arbeit|nouns/Arbeit#6]] [[vollenden|verbs/vollenden#1]] [[zu|particles/zu_drückt]] [[können|verbs/können_beherrschen]]."
   },
   "f8900e756a": {
     "text": "in Stellung gehen",
@@ -16204,7 +16340,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Sie [[sind|verbs/sein]] [[mit|prepositions/mit]] [[einer|determiners/ein]] [[ganzen|adjectives/ganz]] [[Reihe|nouns/Reihe#3]] [[von|prepositions/von]] [[Sensoren|nouns/Sensor#1]] [[ausgestattet|verbs/ausstatten]], [[die|determiners/die]] [[nicht|particles/nicht]] [[nur|particles/nur]] [[das|pronouns/das_[1]]] [[Herumwälzen|verbs/herumwälzen]] [[sondern|conjunctions/sondern]] [[auch|adverbs/auch]] die Atemfrequenz [[des|determiners/des]] Dahinschlummernden [[aufzeichnen|verbs/aufzeichnen]].“"
+    "text_linked": "„Sie [[sind|verbs/sein]] [[mit|prepositions/mit]] [[einer|determiners/ein]] [[ganzen|adjectives/ganz]] [[Reihe|nouns/Reihe#3]] [[von|prepositions/von]] [[Sensoren|nouns/Sensor#1]] [[ausgestattet|verbs/ausstatten]], [[die|determiners/die]] [[nicht|particles/nicht]] [[nur|particles/nur]] [[das|pronouns/das_[1]]] Herumwälzen [[sondern|conjunctions/sondern]] [[auch|adverbs/auch]] die Atemfrequenz [[des|determiners/des]] Dahinschlummernden [[aufzeichnen|verbs/aufzeichnen]].“"
   },
   "f89aa21483": {
     "text": "„Ja wo de Hosen Husen haaßen un de Hasen Hosen sei",
@@ -16350,7 +16486,7 @@
         "gloss_hint": "harmony of the world"
       }
     ],
-    "text_linked": "[[Die|determiners/die]] [[Schwierigkeiten|nouns/Schwierigkeit#1]] [[werden|verbs/werden#1]] gleichsam [[durch|prepositions/durch#1]] das [[Gesetz|nouns/Gesetz#1]] [[der|determiners/der]] [[großen|adjectives/groß#1]] [[Zahl|nouns/Zahl#1]] [[gelöst|verbs/lösen#1]], [[mehr|adverbs/mehr#1]]: durch [[die|determiners/die]] Ausdehnung, [[welche|pronouns/welche_indefinitpronomen#2]] kosmomorph [[macht|verbs/machen]], durch die Weltharmonie."
+    "text_linked": "[[Die|determiners/die]] [[Schwierigkeiten|nouns/Schwierigkeit#1]] [[werden|verbs/werden#1]] [[gleichsam|adverbs/gleichsam]] [[durch|prepositions/durch#1]] das [[Gesetz|nouns/Gesetz#1]] [[der|determiners/der]] [[großen|adjectives/groß#1]] [[Zahl|nouns/Zahl#1]] [[gelöst|verbs/lösen#1]], [[mehr|adverbs/mehr#1]]: durch [[die|determiners/die]] Ausdehnung, [[welche|pronouns/welche_indefinitpronomen#2]] kosmomorph [[macht|verbs/machen]], durch die Weltharmonie."
   },
   "f89ca94859": {
     "text": "Die Karosserie von Autos besteht weitgehend aus geformten Blechen.",
@@ -16569,7 +16705,7 @@
         "gloss_hint": "finger"
       }
     ],
-    "text_linked": "„Sie [[müssen|verbs/müssen#1]], wenn niemand mehr aus eigenem Erleben vom Naziterror berichten kann, [[die|pronouns/die]] Besucher [[erreichen|verbs/erreichen#1]], [[bewegen|verbs/bewegen_handlung#1]], [[überzeugen|verbs/überzeugen#1]], [[ohne|prepositions/ohne]] sie [[mit|prepositions/mit]] verstiegenen Konzepten [[zu|particles/zu_drückt]] [[bevormunden|verbs/bevormunden]], [[und|conjunctions/und]] ohne [[moralische|adjectives/moralisch]] [[Lehren|nouns/Lehre_sprachliche#3]] mit erhobenem [[Zeigefinger|nouns/Zeigefinger#1]] zu vermitteln.“"
+    "text_linked": "„Sie [[müssen|verbs/müssen#1]], wenn niemand mehr aus eigenem Erleben vom Naziterror berichten kann, [[die|pronouns/die]] Besucher [[erreichen|verbs/erreichen#1]], [[bewegen|verbs/bewegen_handlung#1]], [[überzeugen|verbs/überzeugen#1]], [[ohne|prepositions/ohne]] sie [[mit|prepositions/mit]] verstiegenen Konzepten [[zu|particles/zu_drückt]] [[bevormunden|verbs/bevormunden#1]], [[und|conjunctions/und]] ohne [[moralische|adjectives/moralisch]] [[Lehren|nouns/Lehre_sprachliche#3]] mit erhobenem [[Zeigefinger|nouns/Zeigefinger#1]] zu vermitteln.“"
   },
   "f8a14eba8d": {
     "text": "Er ist ein weiser Mann.",
@@ -17575,11 +17711,51 @@
   },
   "f8b3c8f121": {
     "text": "„Diese Imperative seien sehr schnell zur Selbstforderung geworden; der frühe Erfolg habe sie wiederum zu dauernd neuer Leistung motiviert.“",
-    "translation": null,
+    "translation": "\"These imperatives had very quickly become self-imposed demands; the early success in turn motivated them to constantly new performance.\"",
     "source": "wiktionary",
     "lemmas": [
       "Imperativ"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Imperative",
+        "lemma": "Imperativ",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schnell",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": "fast"
+      },
+      {
+        "form": "Selbstforderung",
+        "lemma": "Selbstforderung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erfolg",
+        "lemma": "Erfolg",
+        "pos": "noun",
+        "gloss_hint": "success"
+      },
+      {
+        "form": "motiviert",
+        "lemma": "motivieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leistung",
+        "lemma": "Leistung",
+        "pos": "noun",
+        "gloss_hint": "performance"
+      }
+    ],
+    "text_linked": "„Diese [[Imperative|nouns/Imperativ]] seien sehr [[schnell|adjectives/schnell#1]] zur Selbstforderung geworden; der frühe [[Erfolg|nouns/Erfolg#1]] habe sie wiederum zu dauernd neuer [[Leistung|nouns/Leistung#1]] [[motiviert|verbs/motivieren]].“"
   },
   "f8b3cfa9a1": {
     "text": "Den Vorläufer der erhabenen Schnitzerei finden wir in der Wachstechnik, bei der die Zwischenräume zwischen den Motiven aus dem Holz herausgeschnitten wurden.",
@@ -18729,7 +18905,7 @@
         "gloss_hint": "down"
       }
     ],
-    "text_linked": "„Reiter [[preschten|verbs/preschen]] [[mit|prepositions/mit]] erhobenem [[Säbel|nouns/Säbel#1]] [[die|determiners/die]] [[Hügel|nouns/Hügel#1]] [[rauf|adverbs/rauf#1]] [[und|conjunctions/und]] [[runter|adverbs/runter#1]].“"
+    "text_linked": "„Reiter preschten [[mit|prepositions/mit]] erhobenem [[Säbel|nouns/Säbel#1]] [[die|determiners/die]] [[Hügel|nouns/Hügel#1]] [[rauf|adverbs/rauf#1]] [[und|conjunctions/und]] [[runter|adverbs/runter#1]].“"
   },
   "f8ba50e2e6": {
     "text": "„Anthony Hopkins, 87, Schauspieler, ist seit einem halben Jahrhundert trocken.“",
@@ -19856,7 +20032,7 @@
         "gloss_hint": "away"
       }
     ],
-    "text_linked": "[[Auf|prepositions/auf]] [[der|pronouns/der_nominativ]] [[Wiese|nouns/Wiese#1]] [[mümmelte|verbs/mümmeln]] [[ein|pronouns/ein#1]] [[Häschen|nouns/Häschen#1]] [[vor|prepositions/vor#2]] [[sich|pronouns/sich#2]] [[hin|adverbs/hin]]."
+    "text_linked": "[[Auf|prepositions/auf]] [[der|pronouns/der_nominativ]] [[Wiese|nouns/Wiese#1]] mümmelte [[ein|pronouns/ein#1]] [[Häschen|nouns/Häschen#1]] [[vor|prepositions/vor#2]] [[sich|pronouns/sich#2]] [[hin|adverbs/hin]]."
   },
   "f8c71b33b7": {
     "text": "„Mein Anrufbeantworter war eingeschaltet – auch an anderen Tagen nehme ich, wenn das Telefon läutet, nicht den Hörer ab, sondern höre mir an, wer es ist.“",
@@ -20195,15 +20371,35 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "Am Haltepunkt Walddorf [[Süd|nouns/Süd#1]] [[können|verbs/können_etwas#1]] Sie umsteigen."
+    "text_linked": "Am Haltepunkt Walddorf [[Süd|nouns/Süd#1]] [[können|verbs/können_beherrschen]] Sie umsteigen."
   },
   "f8d274507f": {
     "text": "Ich fühlte mich gleichsam wie neugeboren.",
-    "translation": null,
+    "translation": "I felt as if I had been born anew.",
     "source": "wiktionary",
     "lemmas": [
       "gleichsam"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "fühlte",
+        "lemma": "fühlen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "neugeboren",
+        "lemma": "neugeboren",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "2f11e6c7"
+    },
+    "text_linked": "Ich [[fühlte|verbs/fühlen]] mich gleichsam wie neugeboren."
   },
   "f8d2aec7ef": {
     "text": "„Ich bin nahe dran, ihnen das hoch anzurechnen.“",
@@ -20971,7 +21167,7 @@
         "gloss_hint": "initiated"
       }
     ],
-    "text_linked": "Die [[Verbrennung|nouns/Verbrennung#3]] [[des|determiners/der]] Kraftstoff-Luft-Gemischs [[im|prepositions/in]] Verbrennungsmotor [[wird|verbs/werden#1]] [[durch|prepositions/durch#2]] [[die|determiners/die]] [[Zündung|nouns/Zündung#1]] [[initiiert|verbs/initiiert_partizip]]."
+    "text_linked": "Die [[Verbrennung|nouns/Verbrennung#3]] [[des|determiners/der]] Kraftstoff-Luft-Gemischs [[im|prepositions/in]] Verbrennungsmotor [[wird|verbs/werden#1]] [[durch|prepositions/durch#2]] [[die|determiners/die]] [[Zündung|nouns/Zündung#1]] initiiert."
   },
   "f8dd5cfb3a": {
     "text": "Ein Farmer meinte, fliegende Untertassen gesehen zu haben.",
@@ -21114,7 +21310,7 @@
         "gloss_hint": "be scheduled"
       }
     ],
-    "text_linked": "Oh, [[sieht|verbs/sehen#1]] [[das|pronouns/das_[1]]] [[hier|adverbs/hier#1]] [[wüst|adjectives/wüst#2]] [[aus|adverbs/aus#1]]! [[Jetzt|adverbs/jetzt#1]] [[ist|verbs/sein#1]] [[aber|conjunctions/aber#1]] mal [[Aufräumen|verbs/aufräumen#1]] [[angesagt|verbs/ansagen]]!"
+    "text_linked": "Oh, [[sieht|verbs/sehen#1]] [[das|pronouns/das_[1]]] [[hier|adverbs/hier#1]] [[wüst|adjectives/wüst#2]] [[aus|adverbs/aus#1]]! [[Jetzt|adverbs/jetzt#1]] [[ist|verbs/sein#1]] [[aber|conjunctions/aber#1]] mal [[Aufräumen|verbs/aufräumen#1]] angesagt!"
   },
   "f8df7cac7b": {
     "text": "jemandem den Weg weisen",

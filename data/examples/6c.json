@@ -963,11 +963,93 @@
   },
   "6c0b862ce6": {
     "text": "„Konjugation ist die Formenbildung von Verben. Mit konjugierten Verben werden in der deutschen Sprache die Eigenschaften Person, Numerus, Tempus, Genus verbi und Modus ausgedrückt.“",
-    "translation": null,
+    "translation": "Conjugation is the formation of verb forms. With conjugated verbs, the properties of person, number, tense, voice, and mood are expressed in the German language.",
     "source": "wiktionary",
     "lemmas": [
       "Konjugation"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Konjugation",
+        "lemma": "Konjugation",
+        "pos": "noun",
+        "gloss_hint": "conjugation"
+      },
+      {
+        "form": "Formenbildung",
+        "lemma": "Formenbildung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verben",
+        "lemma": "Verb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "konjugierten",
+        "lemma": "konjugieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "deutschen",
+        "lemma": "deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sprache",
+        "lemma": "Sprache",
+        "pos": "noun",
+        "gloss_hint": "language"
+      },
+      {
+        "form": "Eigenschaften",
+        "lemma": "Eigenschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Person",
+        "lemma": "Person",
+        "pos": "noun",
+        "gloss_hint": "person"
+      },
+      {
+        "form": "Numerus",
+        "lemma": "Numerus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tempus",
+        "lemma": "Tempus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Genus",
+        "lemma": "Genus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Modus",
+        "lemma": "Modus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgedrückt",
+        "lemma": "ausdrücken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„[[Konjugation|nouns/Konjugation#1]] ist die Formenbildung von [[Verben|nouns/Verb]]. Mit konjugierten Verben werden in der [[deutschen|adjectives/deutsch]] [[Sprache|nouns/Sprache#1]] die [[Eigenschaften|nouns/Eigenschaft]] [[Person|nouns/Person#1]], Numerus, [[Tempus|nouns/Tempus]], Genus verbi und Modus [[ausgedrückt|verbs/ausdrücken]].“"
   },
   "6c0ba46c9d": {
     "text": "„Die Notärztin war in der Rettung mitgefahren und hatte sich um ihren Patienten gekümmert.“",
@@ -1057,7 +1139,7 @@
         "gloss_hint": "become"
       }
     ],
-    "text_linked": "Der Attentäter [[konnte|verbs/können_beherrschen]] [[von|prepositions/von#1]] [[der|pronouns/der_nominativ#1]] [[Polizei|nouns/Polizei#1]] [[gefasst|verbs/fassen#2]] [[werden|verbs/werden#1]]."
+    "text_linked": "Der Attentäter [[konnte|verbs/können_etwas#1]] [[von|prepositions/von#1]] [[der|pronouns/der_nominativ#1]] [[Polizei|nouns/Polizei#1]] [[gefasst|verbs/fassen#2]] [[werden|verbs/werden#1]]."
   },
   "6c0f1d19bc": {
     "text": "Dieser Herd hat Keramikkochfelder und einen Backofen.",
@@ -1351,7 +1433,7 @@
         "gloss_hint": "proceed"
       }
     ],
-    "text_linked": "Bisher haben [[Experimente|nouns/Experiment#1]] [[mit|prepositions/mit]] [[Bullen-|nouns/Bulle_besonders#3]] [[und|conjunctions/und]] Seeigelsperma [[gezeigt|verbs/zeigen#1]], [[dass|conjunctions/dass]] [[die|pronouns/die]] [[Aktivierung|nouns/Aktivierung#3]] [[der|pronouns/der_nominativ]] Spermien [[in|prepositions/in]] der Schwerelosigkeit [[schneller|adjectives/schnell]] [[zu|particles/zu_drückt]] [[gehen|verbs/gehen#24]] [[scheint|verbs/scheinen#2]], [[aber|conjunctions/aber]] dass die [[Schritte|nouns/Schritt#1]] [[danach|adverbs/danach]] [[nur|particles/nur#1]] [[langsamer|adjectives/langsam]] oder [[sogar|particles/sogar#1]] [[gar|adjectives/gar]] [[nicht|particles/nicht#1]] vonstatten gehen."
+    "text_linked": "Bisher haben [[Experimente|nouns/Experiment#1]] [[mit|prepositions/mit]] [[Bullen-|nouns/Bulle_besonders#3]] [[und|conjunctions/und]] Seeigelsperma [[gezeigt|verbs/zeigen#1]], [[dass|conjunctions/dass]] [[die|pronouns/die]] [[Aktivierung|nouns/Aktivierung#3]] [[der|pronouns/der_nominativ]] Spermien [[in|prepositions/in]] der Schwerelosigkeit [[schneller|adjectives/schnell]] [[zu|particles/zu_drückt]] [[gehen|verbs/gehen#24]] [[scheint|verbs/scheinen#2]], [[aber|conjunctions/aber]] dass die [[Schritte|nouns/Schritt#1]] [[danach|adverbs/danach]] [[nur|particles/nur#1]] [[langsamer|adjectives/langsam]] oder [[sogar|particles/sogar#1]] [[gar|adjectives/gar]] [[nicht|particles/nicht#1]] [[vonstatten|adverbs/vonstatten]] gehen."
   },
   "6c112228cc": {
     "text": "Ich werde mir für den Urlaub ein Auto mieten.",
@@ -1573,7 +1655,7 @@
         "gloss_hint": "discover"
       }
     ],
-    "text_linked": "„[[Da|adverbs/da]] dieses [[Gebäude|nouns/Gebäude#1]] [[von|prepositions/von]] [[einer|determiners/ein]] [[Pyramide|nouns/Pyramide#2]] [[überbaut|verbs/überbauen_bauwerk]] [[wurde|verbs/werden#1]], ist [[es|pronouns/es]] sehr [[gut|adjectives/gut#1]] [[erhalten|verbs/erhalten#2]]. [[Hier|adverbs/hier#1]] [[konnte|verbs/können_beherrschen]] [[man|pronouns/man#3]] [[einen|determiners/ein]] [[vollständigen|adjectives/vollständig#1]] [[mit|prepositions/mit#1]] Stuck [[besetzten|verbs/besetzen]] Dachkamm [[entdecken|verbs/entdecken#1]].“"
+    "text_linked": "„[[Da|adverbs/da]] dieses [[Gebäude|nouns/Gebäude#1]] [[von|prepositions/von]] [[einer|determiners/ein]] [[Pyramide|nouns/Pyramide#2]] überbaut [[wurde|verbs/werden#1]], ist [[es|pronouns/es]] sehr [[gut|adjectives/gut#1]] [[erhalten|verbs/erhalten#2]]. [[Hier|adverbs/hier#1]] [[konnte|verbs/können_beherrschen]] [[man|pronouns/man#3]] [[einen|determiners/ein]] [[vollständigen|adjectives/vollständig#1]] [[mit|prepositions/mit#1]] Stuck [[besetzten|verbs/besetzen]] Dachkamm [[entdecken|verbs/entdecken#1]].“"
   },
   "6c12f4a3bc": {
     "text": "„Beim traditionellen Abbund werden die Bauteile von den Zimmerleuten auf dem Reißboden am Abbundplatz bearbeitet, zurechtgesägt, und probeweise zusammengesetzt.“",
@@ -3678,7 +3760,7 @@
         "gloss_hint": "have"
       }
     ],
-    "text_linked": "Es war [[zwar|conjunctions/zwar]] [[hart|adjectives/hart#5]], [[aber|conjunctions/aber#1]] [[ich|pronouns/ich#1]] [[bin|verbs/sein#2]] [[letztendlich|adverbs/letztendlich#1]] [[doch|particles/doch_drückt#1]] [[froh|adjectives/froh#1]], [[dass|conjunctions/dass#1]] er [[mir|pronouns/mir_dativ#1]] gegenüber [[eine|determiners/eine]] [[deutliche|adjectives/deutlich#2]] [[Sprache|nouns/Sprache#4]] [[gesprochen|verbs/sprechen#1]] [[hat|verbs/haben#1]]."
+    "text_linked": "Es war [[zwar|conjunctions/zwar]] [[hart|adjectives/hart#5]], [[aber|conjunctions/aber#1]] [[ich|pronouns/ich#1]] [[bin|verbs/sein#2]] [[letztendlich|adverbs/letztendlich#1]] [[doch|particles/doch_drückt#1]] [[froh|adjectives/froh#1]], [[dass|conjunctions/dass#1]] er [[mir|pronouns/mir_des#1]] gegenüber [[eine|determiners/eine]] [[deutliche|adjectives/deutlich#2]] [[Sprache|nouns/Sprache#4]] [[gesprochen|verbs/sprechen#1]] [[hat|verbs/haben#1]]."
   },
   "6c26d39e3c": {
     "text": "„Scott nahm Football sehr ernst und war fast während des gesamten Spiels nüchtern geblieben.“",
@@ -4777,7 +4859,7 @@
         "gloss_hint": "wake up | realize"
       }
     ],
-    "text_linked": "„Der [[Grund|nouns/Grund#1]], [[warum|adverbs/warum#1]] das Schlafen [[im|prepositions/in]] [[gleichen|adjectives/gleich#1]] [[Raum|nouns/Raum#1]] [[vor|prepositions/vor#1]] [[plötzlichem|adjectives/plötzlich#1]] Kindstod [[schützt|verbs/schützen#1]], [[ist|verbs/sein#2]] [[nicht|particles/nicht#1]] [[bekannt|adjectives/bekannt#1]], [[es|pronouns/es]] [[könnte|verbs/können_etwas#4]] [[jedoch|adverbs/jedoch#1]] [[damit|adverbs/damit#1]] [[zusammenhängen|verbs/zusammenhängen_am#1]], [[dass|conjunctions/dass]] [[Säuglinge|nouns/Säugling#1]] im Raum [[der|determiners/der]] [[Eltern|nouns/Eltern#1]] [[häufiger|adjectives/häufig]] [[kurzzeitig|adjectives/kurzzeitig#1]] [[aufwachen|verbs/aufwachen#1]].“"
+    "text_linked": "„Der [[Grund|nouns/Grund#1]], [[warum|adverbs/warum#1]] das Schlafen [[im|prepositions/in]] [[gleichen|adjectives/gleich#1]] [[Raum|nouns/Raum#1]] [[vor|prepositions/vor#1]] [[plötzlichem|adjectives/plötzlich#1]] Kindstod [[schützt|verbs/schützen#1]], [[ist|verbs/sein#2]] [[nicht|particles/nicht#1]] [[bekannt|adjectives/bekannt#1]], [[es|pronouns/es]] [[könnte|verbs/können_beherrschen#3]] [[jedoch|adverbs/jedoch#1]] [[damit|adverbs/damit#1]] [[zusammenhängen|verbs/zusammenhängen_am#1]], [[dass|conjunctions/dass]] [[Säuglinge|nouns/Säugling#1]] im Raum [[der|determiners/der]] [[Eltern|nouns/Eltern#1]] [[häufiger|adjectives/häufig]] [[kurzzeitig|adjectives/kurzzeitig#1]] [[aufwachen|verbs/aufwachen#1]].“"
   },
   "6c34630e11": {
     "text": "Er ist jedoch durch einen dünnen Gang (Ductus reuniens) mit dem Sacculus […] verbunden",
@@ -5598,7 +5680,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Die [[Unterhaltung|nouns/Unterhaltung#4]] [[verstummte|verbs/verstummen]] den ganzen [[Abend|nouns/Abend#1]] über nicht für einen [[Augenblick|nouns/Augenblick]] und [[bewegte|verbs/bewegen_handlung]] sich vornehmlich um [[politische|adjectives/politisch]] [[Neuigkeiten|nouns/Neuigkeit]].“"
+    "text_linked": "„Die [[Unterhaltung|nouns/Unterhaltung#4]] [[verstummte|verbs/verstummen]] den ganzen [[Abend|nouns/Abend#1]] über nicht für einen [[Augenblick|nouns/Augenblick]] und [[bewegte|verbs/bewegen_handlung]] sich [[vornehmlich|adverbs/vornehmlich]] um [[politische|adjectives/politisch]] [[Neuigkeiten|nouns/Neuigkeit]].“"
   },
   "6c3b7bdcac": {
     "text": "„Sie machte richtig Rabatz in der Karre.“",
@@ -6373,7 +6455,7 @@
         "gloss_hint": "refrain from"
       }
     ],
-    "text_linked": "Man [[kann|verbs/können_beherrschen]] [[teures|adjectives/teuer#1]] [[Mineralwasser|nouns/Mineralwasser#1]] [[trinken|verbs/trinken#1]], [[man|pronouns/man#2]] kann [[es|pronouns/es]] [[aber|conjunctions/aber#1]] [[auch|adverbs/auch]] [[lassen|verbs/lassen#2]]."
+    "text_linked": "Man [[kann|verbs/können_etwas#1]] [[teures|adjectives/teuer#1]] [[Mineralwasser|nouns/Mineralwasser#1]] [[trinken|verbs/trinken#1]], [[man|pronouns/man#2]] kann [[es|pronouns/es]] [[aber|conjunctions/aber#1]] [[auch|adverbs/auch]] [[lassen|verbs/lassen#2]]."
   },
   "6c41e9749c": {
     "text": "Jeder versucht, in Prüfungen optimale Ergebnisse zu erzielen.",
@@ -6915,7 +6997,7 @@
         "gloss_hint": "darling"
       }
     ],
-    "text_linked": "„Er [[hatte|verbs/haben#1]] [[kürzlich|adjectives/kürzlich]] [[eine|determiners/eine]] Espressomaschine [[erstanden|verbs/erstehen]], [[die|determiners/die]] [[inzwischen|adverbs/inzwischen]] mehr [[genutzt|verbs/nutzen]] [[wurde|verbs/werden#1]] [[als|conjunctions/als#1]] die [[Kaffeemaschine|nouns/Kaffeemaschine#1]], [[doch|particles/doch_drückt#1]] er [[brachte|verbs/bringen#3]] [[es|pronouns/es]] [[nicht|particles/nicht#1]] [[über|adverbs/über#1]] [[sich|pronouns/sich#1]], [[das|pronouns/das_[1]]] [[alte|adjectives/alt#1]] [[Schätzchen|nouns/Schätzchen#2]] zu entsorgen.“"
+    "text_linked": "„Er [[hatte|verbs/haben#1]] [[kürzlich|adjectives/kürzlich]] [[eine|determiners/eine]] Espressomaschine erstanden, [[die|determiners/die]] [[inzwischen|adverbs/inzwischen]] mehr [[genutzt|verbs/nutzen]] [[wurde|verbs/werden#1]] [[als|conjunctions/als#1]] die [[Kaffeemaschine|nouns/Kaffeemaschine#1]], [[doch|particles/doch_drückt#1]] er [[brachte|verbs/bringen#3]] [[es|pronouns/es]] [[nicht|particles/nicht#1]] [[über|adverbs/über#1]] [[sich|pronouns/sich#1]], [[das|pronouns/das_[1]]] [[alte|adjectives/alt#1]] [[Schätzchen|nouns/Schätzchen#2]] zu entsorgen.“"
   },
   "6c496c8986": {
     "text": "„Der junge Lord starb drei oder vier Jahre später in London infolge von Ausschweifungen.“",
@@ -13425,7 +13507,7 @@
         "gloss_hint": "amplification"
       }
     ],
-    "text_linked": "Da die Schwingungen den Passanten einen Gleichschritt [[aufzwangen|verbs/aufzwingen]] kam es zu einer [[bedrohlichen|adjectives/bedrohlich]] [[Verstärkung|nouns/Verstärkung#3]]."
+    "text_linked": "Da die Schwingungen den Passanten einen Gleichschritt aufzwangen kam es zu einer [[bedrohlichen|adjectives/bedrohlich]] [[Verstärkung|nouns/Verstärkung#3]]."
   },
   "6c83c5b64c": {
     "text": "Reißerische Berichte, unlautere Recherche, Befriedigung allerniedrigster Instinkte - was für \"Bild\"-Kenner ein alter Hut ist, kann manche Leserin noch schocken.",
@@ -13551,7 +13633,7 @@
         "gloss_hint": "shock"
       }
     ],
-    "text_linked": "Reißerische [[Berichte|nouns/Bericht#1]], unlautere [[Recherche|nouns/Recherche#1]], [[Befriedigung|nouns/Befriedigung#1]] [[allerniedrigster|adjectives/niedrig]] [[Instinkte|nouns/Instinkt#1]] - [[was|pronouns/was#1]] [[für|prepositions/für]] [[\"Bild\"-Kenner|nouns/Kenner]] [[ein|determiners/ein]] [[alter|adjectives/alt#1]] [[Hut|nouns/Hut_kopfform#1]] [[ist|verbs/sein#1]], [[kann|verbs/können_beherrschen#1]] manche [[Leserin|nouns/Leserin]] [[noch|adverbs/noch#3]] [[schocken|verbs/schocken]]."
+    "text_linked": "Reißerische [[Berichte|nouns/Bericht#1]], unlautere [[Recherche|nouns/Recherche#1]], [[Befriedigung|nouns/Befriedigung#1]] [[allerniedrigster|adjectives/niedrig]] [[Instinkte|nouns/Instinkt#1]] - [[was|pronouns/was#1]] [[für|prepositions/für]] [[\"Bild\"-Kenner|nouns/Kenner]] [[ein|determiners/ein]] [[alter|adjectives/alt#1]] [[Hut|nouns/Hut_kopfform#1]] [[ist|verbs/sein#1]], [[kann|verbs/können_beherrschen#1]] manche [[Leserin|nouns/Leserin]] [[noch|adverbs/noch#3]] [[schocken|verbs/schocken#1]]."
   },
   "6c84bdc49e": {
     "text": "Sie biss ein kleines Stück vom Kuchen ab.",
@@ -16849,7 +16931,7 @@
         "gloss_hint": "ignore"
       }
     ],
-    "text_linked": "„Der 17-Jährige [[räumte|verbs/räumen]] [[vor|prepositions/vor#1]] [[Gericht|nouns/Gericht_ort#1]] [[ein|determiners/ein]], [[im|prepositions/in]] [[Umgang|nouns/Umgang#2]] [[mit|prepositions/mit#1]] [[den|determiners/der]] [[Hunden|nouns/Hund]] [[leichtsinnig|adjectives/leichtsinnig]] [[und|conjunctions/und]] [[unerfahren|adjectives/unerfahren#1]] [[gewesen|verbs/sein#4]] [[zu|particles/zu_drückt]] [[sein|verbs/sein#1]]. Von einer Maulkorbpflicht [[habe|verbs/haben#1]] er [[nicht|particles/nicht#1]] [[gewusst|verbs/wissen#1]], [[die|determiners/die]] [[Aufforderung|nouns/Aufforderung#1]] [[seines|pronouns/sein#1]] [[älteren|adjectives/alt]] [[Bruders|nouns/Bruder#1]] - [[dem|determiners/der]] Hundehalter - die [[Tiere|nouns/Tier#1]] [[anzuleinen|verbs/anleinen]], habe er [[ignoriert|verbs/ignorieren#1]].“"
+    "text_linked": "„Der 17-Jährige [[räumte|verbs/räumen]] [[vor|prepositions/vor#1]] [[Gericht|nouns/Gericht_ort#1]] [[ein|determiners/ein]], [[im|prepositions/in]] [[Umgang|nouns/Umgang#2]] [[mit|prepositions/mit#1]] [[den|determiners/der]] [[Hunden|nouns/Hund]] [[leichtsinnig|adjectives/leichtsinnig]] [[und|conjunctions/und]] [[unerfahren|adjectives/unerfahren#1]] [[gewesen|verbs/sein#4]] [[zu|particles/zu_drückt]] [[sein|verbs/sein#1]]. Von einer Maulkorbpflicht [[habe|verbs/haben#1]] er [[nicht|particles/nicht#1]] [[gewusst|verbs/wissen#1]], [[die|determiners/die]] [[Aufforderung|nouns/Aufforderung#1]] [[seines|pronouns/sein#1]] [[älteren|adjectives/alt]] [[Bruders|nouns/Bruder#1]] - [[dem|determiners/der]] Hundehalter - die [[Tiere|nouns/Tier#1]] anzuleinen, habe er [[ignoriert|verbs/ignorieren#1]].“"
   },
   "6ca69e822c": {
     "text": "„Dein Onkel allerdings war nicht zu bremsen, trotz des Wetters und der Kälte ist er Ski gelaufen, denn schließlich haben wir den Skipaß doch bezahlt, daher muß man auch fahren, auf Teufel komm raus.“",
@@ -19228,7 +19310,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Auf|prepositions/auf]] einem eigens [[zu|prepositions/zu]] [[dem|determiners/der]] [[Zweck|nouns/Zweck#1]] [[nach|prepositions/nach]] Konstantinopel beorderten [[Schiff|nouns/Schiff#1]] [[überbrachte|verbs/überbringen#1]] [[ein|determiners/ein]] Abgesandter [[Lala|nouns/Lala]] Mustaphas dem Padischah [[die|determiners/die]] [[drei|numerals/drei#1]] [[Köpfe|nouns/Kopf#1]] [[der|determiners/der]] [[Offiziere|nouns/Offizier]] [[und|conjunctions/und]] die [[mit|prepositions/mit]] [[Heu|nouns/Heu#1]] [[ausgestopfte|verbs/ausstopfen]] Menschenhaut.“"
+    "text_linked": "„[[Auf|prepositions/auf]] einem eigens [[zu|prepositions/zu]] [[dem|determiners/der]] [[Zweck|nouns/Zweck#1]] [[nach|prepositions/nach]] Konstantinopel beorderten [[Schiff|nouns/Schiff#1]] [[überbrachte|verbs/überbringen#1]] [[ein|determiners/ein]] Abgesandter [[Lala|nouns/Lala]] Mustaphas dem Padischah [[die|determiners/die]] [[drei|numerals/drei#1]] [[Köpfe|nouns/Kopf#1]] [[der|determiners/der]] [[Offiziere|nouns/Offizier]] [[und|conjunctions/und]] die [[mit|prepositions/mit]] [[Heu|nouns/Heu#1]] ausgestopfte Menschenhaut.“"
   },
   "6cc04e6fa4": {
     "text": "Diese Schiene wird an die Wand gedübelt und bildet später die Potentialausgleichsschiene.",
@@ -19858,7 +19940,7 @@
         "gloss_hint": "want"
       }
     ],
-    "text_linked": "[[Nach|prepositions/nach]] [[ihrem|pronouns/ihr_person]] Lottogewinn [[veranstalteten|verbs/veranstalten#1]] [[die|pronouns/die]] Krawuttkes [[ein|determiners/ein]] rauschendes [[Fest|nouns/Fest#1]], [[weil|conjunctions/weil_konjunktion]] sie [[endlich|adverbs/endlich#1]] mal [[so|adverbs/so]] [[richtig|adjectives/richtig#2]] [[auf|prepositions/auf]] die [[Kacke|nouns/Kacke#2]] [[hauen|verbs/hauen]] [[und|conjunctions/und]] [[mit|prepositions/mit]] ihrem [[neuen|adjectives/neu]] [[Reichtum|nouns/Reichtum#1]] [[protzen|verbs/protzen]] [[wollten|verbs/wollen#2]]."
+    "text_linked": "[[Nach|prepositions/nach]] [[ihrem|pronouns/ihr_person]] Lottogewinn [[veranstalteten|verbs/veranstalten#1]] [[die|pronouns/die]] Krawuttkes [[ein|determiners/ein]] rauschendes [[Fest|nouns/Fest#1]], [[weil|conjunctions/weil_konjunktion]] sie [[endlich|adverbs/endlich#1]] mal [[so|adverbs/so]] [[richtig|adjectives/richtig#2]] [[auf|prepositions/auf]] die [[Kacke|nouns/Kacke#2]] [[hauen|verbs/hauen]] [[und|conjunctions/und]] [[mit|prepositions/mit]] ihrem [[neuen|adjectives/neu]] [[Reichtum|nouns/Reichtum#1]] [[protzen|verbs/protzen#1]] [[wollten|verbs/wollen#2]]."
   },
   "6cc53b2ca4": {
     "text": "Was ist denn das für ein Individuum? Dieses Individuum will ich hier nicht mehr sehen! Dieses Individuum kommt mir nicht mehr ins Haus!",
@@ -23209,7 +23291,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Der [[Hügel|nouns/Hügel#2]] auf dem [[Grab|nouns/Grab#1]] war schon [[eingesunken|verbs/einsinken]]."
+    "text_linked": "Der [[Hügel|nouns/Hügel#2]] auf dem [[Grab|nouns/Grab#1]] war schon eingesunken."
   },
   "6cde54df9f": {
     "text": "Taipeh ist die Hauptstadt der Republik China.",
@@ -24231,7 +24313,7 @@
         "gloss_hint": "finally"
       }
     ],
-    "text_linked": "„Macht [[sich|pronouns/sich#1]] [[vom|prepositions/von]] [[Acker|nouns/Acker#1]], [[geht|verbs/gehen]] bäule, [[entfleucht|verbs/entfleuchen]], verschwindet, balisisert [[endlich|adverbs/endlich#1]].“"
+    "text_linked": "„Macht [[sich|pronouns/sich#1]] [[vom|prepositions/von]] [[Acker|nouns/Acker#1]], [[geht|verbs/gehen]] bäule, entfleucht, verschwindet, balisisert [[endlich|adverbs/endlich#1]].“"
   },
   "6ce1ab177b": {
     "text": "„Groll antwortete, daß die meisten Kriegstoten Opfer von Verwechslungen seien und daß die meisten Kriege dadurch entstünden, daß irgend jemand alte Geschichten aufwärmt.“",
@@ -26458,7 +26540,7 @@
         "gloss_hint": "have to"
       }
     ],
-    "text_linked": "„[[Dann|adverbs/dann#1]] [[kommt|verbs/kommen#2]] [[der|pronouns/der_nominativ#1]] Ölwechsel [[im|prepositions/in]] [[Motor|nouns/Motor#1]] [[und|conjunctions/und]] [[den|pronouns/der_nominativ]] [[beiden|numerals/beide#1]] [[Getrieben|nouns/Getriebe]]. [[Das|pronouns/das_[1]]] [[bedeutet|verbs/bedeuten#1]], [[daß|conjunctions/dass]] ich [[nicht|particles/nicht#1]] [[mehr|adverbs/mehr#1]] [[durch|prepositions/durch#1]] [[das|pronouns/das_[1]]] [[Cockpit|nouns/Cockpit#1]] [[gehen|verbs/gehen#1]] [[kann|verbs/können_beherrschen]], da beide Bodenklappen offenstehen, sondern durch das Vorderluk ein- und ausschlüpfen [[muß|verbs/müssen#5]].“"
+    "text_linked": "„[[Dann|adverbs/dann#1]] [[kommt|verbs/kommen#2]] [[der|pronouns/der_nominativ#1]] Ölwechsel [[im|prepositions/in]] [[Motor|nouns/Motor#1]] [[und|conjunctions/und]] [[den|pronouns/der_nominativ]] [[beiden|numerals/beide#1]] [[Getrieben|nouns/Getriebe]]. [[Das|pronouns/das_[1]]] [[bedeutet|verbs/bedeuten#1]], [[daß|conjunctions/dass]] ich [[nicht|particles/nicht#1]] [[mehr|adverbs/mehr#1]] [[durch|prepositions/durch#1]] [[das|pronouns/das_[1]]] [[Cockpit|nouns/Cockpit#1]] [[gehen|verbs/gehen#1]] [[kann|verbs/können_etwas#1]], da beide Bodenklappen offenstehen, sondern durch das Vorderluk ein- und ausschlüpfen [[muß|verbs/müssen#5]].“"
   },
   "6cfaeed21b": {
     "text": "Deutschlands Hauptstadt ist Berlin.",

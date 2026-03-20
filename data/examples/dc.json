@@ -1337,7 +1337,7 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "Meine innere [[Stimme|nouns/Stimme#1]] ließ mir keine [[Ruhe|nouns/Ruhe#1]], bis ich schließlich den [[Fehler|nouns/Fehler#3]] [[wiedergutmachen|verbs/wiedergutmachen]] [[konnte|verbs/können_etwas#1]]."
+    "text_linked": "Meine innere [[Stimme|nouns/Stimme#1]] ließ mir keine [[Ruhe|nouns/Ruhe#1]], bis ich schließlich den [[Fehler|nouns/Fehler#3]] [[wiedergutmachen|verbs/wiedergutmachen]] [[konnte|verbs/können_beherrschen]]."
   },
   "dc20131d01": {
     "text": "„Fluchtwege sind Verkehrswege, an die besondere Anforderungen zu stellen sind und die der Flucht aus einem möglichen Gefährdungsbereich und in der Regel zugleich der Rettung von Personen dienen. Fluchtwege führen ins Freie oder in einen gesicherten Bereich. Fluchtwege im Sinne dieser Regel sind auch die im Bauordnungsrecht definierten Rettungswege, sofern sie selbstständig begangen werden können.“",
@@ -2205,11 +2205,51 @@
   },
   "dc2ed1ae39": {
     "text": "Aufgrund seiner Leidenschaft für Elektrotechnik und Mechanik, absolvierte er eine Ausbildung zum Mechatroniker.",
-    "translation": null,
+    "translation": "Because of his passion for electrical engineering and mechanics, he completed an apprenticeship as a mechatronics technician.",
     "source": "wiktionary",
     "lemmas": [
       "Mechatroniker"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Leidenschaft",
+        "lemma": "Leidenschaft",
+        "pos": "noun",
+        "gloss_hint": "passion"
+      },
+      {
+        "form": "Elektrotechnik",
+        "lemma": "Elektrotechnik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mechanik",
+        "lemma": "Mechanik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "absolvierte",
+        "lemma": "absolvieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausbildung",
+        "lemma": "Ausbildung",
+        "pos": "noun",
+        "gloss_hint": "training"
+      },
+      {
+        "form": "Mechatroniker",
+        "lemma": "Mechatroniker",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Aufgrund seiner [[Leidenschaft|nouns/Leidenschaft#1]] für Elektrotechnik und Mechanik, [[absolvierte|verbs/absolvieren]] er eine [[Ausbildung|nouns/Ausbildung#1]] zum [[Mechatroniker|nouns/Mechatroniker]]."
   },
   "dc3093cbd7": {
     "text": "„Staubpartikel verhalten sich nämlich ganz anders, als die gewohnten Dinge, die uns umgeben, anders als Tische, T-Shirts, Teller, Tassen und Telefone.“",
@@ -4553,7 +4593,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Die [[Gangster|nouns/Gangster]] [[verschiedener|adjectives/verschieden_mehr]] [[Gangs|nouns/Gang_art]] [[bekriegen|verbs/bekriegen]] sich untereinander."
+    "text_linked": "Die [[Gangster|nouns/Gangster]] [[verschiedener|adjectives/verschieden_mehr]] [[Gangs|nouns/Gang_art]] bekriegen sich untereinander."
   },
   "dc56932ad7": {
     "text": "„Offiziell hieß es aber, in unserem Dorf gäbe es weder Huren noch Schwule noch Diebe.“",
@@ -5409,7 +5449,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "figurativ: „Sein [[Schädel|nouns/Schädel#1]] war wie ein [[Kürbis|nouns/Kürbis#1]] in die [[Länge|nouns/Länge#1]] gezogen, und der [[Hinterkopf|nouns/Hinterkopf]] [[wölbte|verbs/wölben]] sich grotesk heraus.“"
+    "text_linked": "figurativ: „Sein [[Schädel|nouns/Schädel#1]] war wie ein [[Kürbis|nouns/Kürbis#1]] in die [[Länge|nouns/Länge#1]] gezogen, und der [[Hinterkopf|nouns/Hinterkopf]] wölbte sich grotesk heraus.“"
   },
   "dc6a5eea6a": {
     "text": "„Alles still hier. Und doch, von Zeit zu Zeit wird es an eben dieser Stelle lebendig.“",
@@ -7748,7 +7788,7 @@
         "gloss_hint": "exercise"
       }
     ],
-    "text_linked": "„Dort, in den [[Räumen|nouns/Raum#2]] des Obersten [[Gerichtshofs|nouns/Gerichtshof#1]], [[sah|verbs/sehen]] er mit eigenen [[Augen|nouns/Auge#1]], wie die [[Macht|nouns/Macht#1]] in der [[Welt|nouns/Welt#3]], die die [[Europäer|nouns/Europäer#1]] [[schufen|verbs/schaffen_etwas]], [[ausgeübt|verbs/ausüben#1]] wurde.“"
+    "text_linked": "„Dort, in den [[Räumen|nouns/Raum#2]] des Obersten [[Gerichtshofs|nouns/Gerichtshof#1]], [[sah|verbs/sehen]] er mit eigenen [[Augen|nouns/Auge#1]], wie die [[Macht|nouns/Macht#1]] in der [[Welt|nouns/Welt#3]], die die [[Europäer|nouns/Europäer#1]] [[schufen|verbs/schaffen_etwas#1]], [[ausgeübt|verbs/ausüben#1]] wurde.“"
   },
   "dc900d1e06": {
     "text": "„Und damit die Besitzer nicht vergessen, wie schön es im Park ist, bekommen sie jeden Monat Hinweise auf besondere Ereignisse frei Haus im Kalender ausgedruckt.“",
@@ -8305,11 +8345,39 @@
   },
   "dc99c2d9c6": {
     "text": "„Das Partizip gehört nicht so eng zum Denkschema der Verbbeugung.“",
-    "translation": null,
+    "translation": "\"The participle does not belong so closely to the conceptual framework of verb conjugation.\"",
     "source": "wiktionary",
     "lemmas": [
       "Partizip"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Partizip",
+        "lemma": "Partizip",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eng",
+        "lemma": "eng",
+        "pos": "adjective",
+        "gloss_hint": "close"
+      },
+      {
+        "form": "Denkschema",
+        "lemma": "Denkschema",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verbbeugung",
+        "lemma": "Verbbeugung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Das [[Partizip|nouns/Partizip]] gehört nicht so [[eng|adjectives/eng#2]] zum Denkschema der Verbbeugung.“"
   },
   "dc9a183e52": {
     "text": "Ich brauche einen starken Kaffee.",
@@ -9919,7 +9987,7 @@
         "gloss_hint": "bartender"
       }
     ],
-    "text_linked": "„[[Lautstark|adjectives/lautstark]] gaben die [[Männer|nouns/Mann#5]] ihr [[Einverständnis|nouns/Einverständnis#1]], und sie [[hinterlegten|verbs/hinterlegen_jemandem]] die Wettsumme beim [[Barkeeper|nouns/Barkeeper#1]].“"
+    "text_linked": "„[[Lautstark|adjectives/lautstark]] gaben die [[Männer|nouns/Mann#5]] ihr [[Einverständnis|nouns/Einverständnis#1]], und sie [[hinterlegten|verbs/hinterlegen_jemandem#1]] die Wettsumme beim [[Barkeeper|nouns/Barkeeper#1]].“"
   },
   "dcb44bcffa": {
     "text": "Er erhebt schwere Anschuldigungen gegen sie.",
@@ -11495,7 +11563,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Kakerlaken|nouns/Kakerlake]] [[krabbelten|verbs/krabbeln]] ins [[Loch|nouns/Loch_stelle#1]] und gingen dicht unter dem [[Rand|nouns/Rand_äußere#1]] in Lauerstellung.“"
+    "text_linked": "„[[Kakerlaken|nouns/Kakerlake]] krabbelten ins [[Loch|nouns/Loch_stelle#1]] und gingen dicht unter dem [[Rand|nouns/Rand_äußere#1]] in Lauerstellung.“"
   },
   "dcd1ab2223": {
     "text": "„Bis Anfang April 2022 sollen die ersten 1400 Korporale ernannt sein.“",
@@ -13127,11 +13195,69 @@
   },
   "dcf69b9b5d": {
     "text": "Aber um Gottes willen lasse man sich nicht weiter mit ihnen ein; denn eine derbere Beleidigung mit Worten würde einen Hagel von Schimpfreden und einen Steinregen nach sich ziehen, da die beleidigten Knaben in der Regel sogleich Gehülfen finden.",
-    "translation": null,
+    "translation": "But for heaven's sake, do not get further involved with them; for a coarser insult in words would bring down a hail of abuse and a shower of stones, since the offended boys would as a rule quickly find helpers.",
     "source": "wiktionary",
     "lemmas": [
       "Hagel"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Beleidigung",
+        "lemma": "Beleidigung",
+        "pos": "noun",
+        "gloss_hint": "insult"
+      },
+      {
+        "form": "Hagel",
+        "lemma": "Hagel",
+        "pos": "noun",
+        "gloss_hint": "barrage"
+      },
+      {
+        "form": "Schimpfreden",
+        "lemma": "Schimpfrede",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Steinregen",
+        "lemma": "Steinregen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beleidigten",
+        "lemma": "beleidigt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Knaben",
+        "lemma": "Knabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regel",
+        "lemma": "Regel",
+        "pos": "noun",
+        "gloss_hint": "rule"
+      },
+      {
+        "form": "Gehülfen",
+        "lemma": "Gehülfe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "finden",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": "find"
+      }
+    ],
+    "text_linked": "Aber um Gottes willen lasse man sich nicht weiter mit ihnen ein; denn eine derbere [[Beleidigung|nouns/Beleidigung#1]] mit Worten würde einen [[Hagel|nouns/Hagel#2]] von Schimpfreden und einen Steinregen nach sich ziehen, da die [[beleidigten|adjectives/beleidigt]] [[Knaben|nouns/Knabe]] in der [[Regel|nouns/Regel#1]] sogleich Gehülfen [[finden|verbs/finden#5]]."
   },
   "dcf6a7fbb2": {
     "text": "Sprichwörter und Volksmund",

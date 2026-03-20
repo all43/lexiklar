@@ -8775,7 +8775,7 @@
         "gloss_hint": "manage"
       }
     ],
-    "text_linked": "„[[Wer|pronouns/wer_derjenige#1]] [[lesen|verbs/lesen#1]] [[kann|verbs/können_etwas#1]] [[ist|verbs/sein]] [[klar|adjectives/klar#1]] [[im|prepositions/in]] [[Vorteil|nouns/Vorteil#1]]. Michael Thurk (33) [[kennt|verbs/kennen#1]] [[den|determiners/der]] [[Spruch|nouns/Spruch#1]]. \"[[Sag|verbs/sagen#1]] [[ich|pronouns/ich#1]] [[doch|particles/doch_betont#1]].\" [[Nur|particles/nur#1]]: [[Lesen|verbs/lesen#1]] ist [[nicht|particles/nicht#1]] [[gleich|adjectives/gleich#1]] lesen. Thurk [[hat|verbs/haben#1]] [[die|determiners/die]] [[seltene|adjectives/selten#3]] [[Gabe|nouns/Gabe#2]], [[Bälle|nouns/Ball_kugelförmiges#1]] lesen [[zu|particles/zu_drückt]] [[können|verbs/können_etwas#2]].“"
+    "text_linked": "„[[Wer|pronouns/wer_derjenige#1]] [[lesen|verbs/lesen#1]] [[kann|verbs/können_beherrschen]] [[ist|verbs/sein]] [[klar|adjectives/klar#1]] [[im|prepositions/in]] [[Vorteil|nouns/Vorteil#1]]. Michael Thurk (33) [[kennt|verbs/kennen#1]] [[den|determiners/der]] [[Spruch|nouns/Spruch#1]]. \"[[Sag|verbs/sagen#1]] [[ich|pronouns/ich#1]] [[doch|particles/doch_betont#1]].\" [[Nur|particles/nur#1]]: [[Lesen|verbs/lesen#1]] ist [[nicht|particles/nicht#1]] [[gleich|adjectives/gleich#1]] lesen. Thurk [[hat|verbs/haben#1]] [[die|determiners/die]] [[seltene|adjectives/selten#3]] [[Gabe|nouns/Gabe#2]], [[Bälle|nouns/Ball_kugelförmiges#1]] lesen [[zu|particles/zu_drückt]] [[können|verbs/können_beherrschen]].“"
   },
   "8742fdc8fd": {
     "text": "„Der Spot führte ein Jahr lang die Charts an.“",
@@ -11535,7 +11535,7 @@
         "gloss_hint": "feed"
       }
     ],
-    "text_linked": "„[[Und|conjunctions/und]] [[weil|conjunctions/weil_konjunktion]] er [[es|pronouns/es]] [[gewohnt|adjectives/gewohnt]] [[war|verbs/sein#1]], [[sein|verbs/sein#1]] [[Wissen|nouns/Wissen#1]] [[mit|prepositions/mit#1]] anderen [[zu|particles/zu_drückt]] [[teilen|verbs/teilen#2]], bemerkte er: »[[Möwen|nouns/Möwe#1]] [[sind|verbs/sein#1]] [[die|determiners/die]] [[Ratten|nouns/Ratte]] [[der|determiners/der]] [[Lüfte|nouns/Luft_überwiegend#2]]. [[Man|pronouns/man#2]] [[sollte|verbs/sollen#4]] sie [[nicht|particles/nicht#1]] [[füttern|verbs/füttern_einem#2]].«“"
+    "text_linked": "„[[Und|conjunctions/und]] [[weil|conjunctions/weil_konjunktion]] er [[es|pronouns/es]] [[gewohnt|adjectives/gewohnt]] [[war|verbs/sein#1]], [[sein|verbs/sein#1]] [[Wissen|nouns/Wissen#1]] [[mit|prepositions/mit#1]] anderen [[zu|particles/zu_drückt]] [[teilen|verbs/teilen#2]], bemerkte er: »[[Möwen|nouns/Möwe#1]] [[sind|verbs/sein#1]] [[die|determiners/die]] [[Ratten|nouns/Ratte]] [[der|determiners/der]] [[Lüfte|nouns/Luft_überwiegend#2]]. [[Man|pronouns/man#2]] [[sollte|verbs/sollen#4]] sie [[nicht|particles/nicht#1]] [[füttern|verbs/füttern_einem]].«“"
   },
   "8761017425": {
     "text": "Jeder Mensch hat entweder einen bekannten oder einen unbekannten Vater.",
@@ -11685,11 +11685,51 @@
   },
   "87670bcc3a": {
     "text": "„Das würden sie so leicht nicht vergessen, doch als endlich die Nachspeise aufgetischt wurde, sahen sie schon nicht mehr ganz so geknickt aus.“",
-    "translation": null,
+    "translation": "\"They would not have forgotten that so easily, but when the dessert was finally served, they no longer looked quite so dejected.\"",
     "source": "wiktionary",
     "lemmas": [
       "Nachspeise"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "vergessen",
+        "lemma": "vergessen",
+        "pos": "verb",
+        "gloss_hint": "forget"
+      },
+      {
+        "form": "leicht",
+        "lemma": "leicht",
+        "pos": "adjective",
+        "gloss_hint": "easy"
+      },
+      {
+        "form": "endlich",
+        "lemma": "endlich",
+        "pos": "adverb",
+        "gloss_hint": "finally"
+      },
+      {
+        "form": "Nachspeise",
+        "lemma": "Nachspeise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgetischt",
+        "lemma": "auftischen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "geknickt",
+        "lemma": "geknickt",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Das würden sie so [[leicht|adjectives/leicht#2]] nicht [[vergessen|verbs/vergessen_sich#1]], doch als [[endlich|adverbs/endlich#1]] die [[Nachspeise|nouns/Nachspeise]] [[aufgetischt|verbs/auftischen]] wurde, sahen sie schon nicht mehr ganz so geknickt aus.“"
   },
   "876792d99e": {
     "text": "sich einen Keks freuen",
@@ -13970,11 +14010,57 @@
   },
   "8787e9098f": {
     "text": "Die Armbanduhr wirkt wegen ihrer robusten Konstruktion und ihres großen Durchmessers maskulin.",
-    "translation": null,
+    "translation": "The wristwatch appears masculine because of its robust construction and its large diameter.",
     "source": "wiktionary",
     "lemmas": [
       "maskulin"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Armbanduhr",
+        "lemma": "Armbanduhr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wirkt",
+        "lemma": "wirken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "robusten",
+        "lemma": "robust",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Konstruktion",
+        "lemma": "Konstruktion",
+        "pos": "noun",
+        "gloss_hint": "design"
+      },
+      {
+        "form": "großen",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Durchmessers",
+        "lemma": "Durchmesser",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "maskulin",
+        "lemma": "maskulin",
+        "pos": "adjective",
+        "gloss_hint": "masculine"
+      }
+    ],
+    "text_linked": "Die [[Armbanduhr|nouns/Armbanduhr]] [[wirkt|verbs/wirken]] wegen ihrer [[robusten|adjectives/robust]] [[Konstruktion|nouns/Konstruktion#1]] und ihres [[großen|adjectives/groß]] [[Durchmessers|nouns/Durchmesser]] [[maskulin|adjectives/maskulin#1]]."
   },
   "8787f58ba0": {
     "text": "„Selbst wenn man mit einiger Sicherheit davon ausgehen kann, dass eine gewisse Zahl von Männern die Vorstellung attraktiv findet, sich drei Tage nicht zu waschen – sind das nicht haargenau dieselben Männer, die ein Deo ohnehin für überflüssig halten?“",
@@ -14202,7 +14288,7 @@
         "gloss_hint": "consider"
       }
     ],
-    "text_linked": "„Selbst wenn [[man|pronouns/man]] [[mit|adverbs/mit]] einiger [[Sicherheit|nouns/Sicherheit#3]] [[davon|adverbs/davon#6]] [[ausgehen|verbs/ausgehen#6]] [[kann|verbs/können_beherrschen]], [[dass|conjunctions/dass]] [[eine|determiners/ein]] gewisse [[Zahl|nouns/Zahl#1]] [[von|prepositions/von#1]] Männern [[die|pronouns/die#1]] [[Vorstellung|nouns/Vorstellung#2]] [[attraktiv|adjectives/attraktiv#1]] [[findet|verbs/finden#6]], [[sich|pronouns/sich#1]] [[drei|numerals/drei#1]] [[Tage|nouns/Tag_angehängter]] [[nicht|particles/nicht#1]] [[zu|particles/zu_drückt]] [[waschen|verbs/waschen#1]] – [[sind|verbs/sein#2]] [[das|pronouns/das_[1]]] nicht [[haargenau|adjectives/haargenau]] [[dieselben|pronouns/derselbe]] Männer, die [[ein|determiners/ein]] [[Deo|nouns/Deo#1]] [[ohnehin|adverbs/ohnehin#1]] [[für|prepositions/für#1]] [[überflüssig|adjectives/überflüssig]] [[halten|verbs/halten#5]]?“"
+    "text_linked": "„Selbst wenn [[man|pronouns/man]] [[mit|adverbs/mit]] einiger [[Sicherheit|nouns/Sicherheit#3]] [[davon|adverbs/davon#6]] [[ausgehen|verbs/ausgehen#6]] [[kann|verbs/können_etwas#1]], [[dass|conjunctions/dass]] [[eine|determiners/ein]] gewisse [[Zahl|nouns/Zahl#1]] [[von|prepositions/von#1]] Männern [[die|pronouns/die#1]] [[Vorstellung|nouns/Vorstellung#2]] [[attraktiv|adjectives/attraktiv#1]] [[findet|verbs/finden#6]], [[sich|pronouns/sich#1]] [[drei|numerals/drei#1]] [[Tage|nouns/Tag_angehängter]] [[nicht|particles/nicht#1]] [[zu|particles/zu_drückt]] [[waschen|verbs/waschen#1]] – [[sind|verbs/sein#2]] [[das|pronouns/das_[1]]] nicht [[haargenau|adjectives/haargenau]] [[dieselben|pronouns/derselbe]] Männer, die [[ein|determiners/ein]] [[Deo|nouns/Deo#1]] [[ohnehin|adverbs/ohnehin#1]] [[für|prepositions/für#1]] [[überflüssig|adjectives/überflüssig]] [[halten|verbs/halten#5]]?“"
   },
   "8789198b23": {
     "text": "Dingdorf liegt in Deutschlands Südwesten.",
@@ -17515,7 +17601,7 @@
         "gloss_hint": "facing down"
       }
     ],
-    "text_linked": "[[Der|pronouns/der_nominativ]] [[Unbekannte|nouns/Unbekannte#1]] [[gibt|verbs/geben]] [[der|pronouns/der_nominativ]] [[Polizei|nouns/Polizei]] [[Rätsel|nouns/Rätsel#1]] [[auf|prepositions/auf#4]]."
+    "text_linked": "[[Der|pronouns/der_nominativ]] [[Unbekannte|nouns/Unbekannte#1]] [[gibt|verbs/geben]] [[der|pronouns/der_nominativ]] [[Polizei|nouns/Polizei]] [[Rätsel|nouns/Rätsel#1]] [[auf|prepositions/auf]]."
   },
   "87bd6e7b5e": {
     "text": "„Alterssichtigkeit trifft früher oder später jeden. Meist beginnt sie ab einem Alter von 50 Jahren, bei Kurzsichtigen etwas später.“",
@@ -20667,7 +20753,7 @@
         "gloss_hint": "be"
       }
     ],
-    "text_linked": "„Rauch hing über den Hauseingängen und Gärten, [[verdüsterte|verbs/verdüstern]] den Himmel [[so|adverbs/so]] sehr, dass [[sich|pronouns/sich]] nicht erkennen [[ließ|verbs/lassen#3]], ob es noch Nacht oder schon Tag war.“"
+    "text_linked": "„Rauch hing über den Hauseingängen und Gärten, verdüsterte den Himmel [[so|adverbs/so]] sehr, dass [[sich|pronouns/sich]] nicht erkennen [[ließ|verbs/lassen#3]], ob es noch Nacht oder schon Tag war.“"
   },
   "87da569eb8": {
     "text": "„Auf Grund der Proteste gegen das Ausfuhrverbot kam es im Februar 1916 zu einer Übereinkunft, das Ausfuhrverbot durch eine verschärfte Zensur zu ersetzen […].“",
@@ -22665,7 +22751,7 @@
         "gloss_hint": "animal feed | food | mental nourishment | lining (textile) | filler (construction) | fixture (machinery)"
       }
     ],
-    "text_linked": "[[Misstrauisch|adjectives/misstrauisch]] [[beäugte|verbs/beäugen]] [[der|pronouns/der_nominativ]] [[Vogel|nouns/Vogel#1]] [[das|pronouns/das_nominativ]] angebotene [[Futter|nouns/Futter_nahrung#1]]."
+    "text_linked": "[[Misstrauisch|adjectives/misstrauisch]] beäugte [[der|pronouns/der_nominativ]] [[Vogel|nouns/Vogel#1]] [[das|pronouns/das_nominativ]] angebotene [[Futter|nouns/Futter_nahrung#1]]."
   },
   "87f5e9d64f": {
     "text": "Die Menschen schweigen, um den Redner besser zu verstehen.",

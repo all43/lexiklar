@@ -24,7 +24,7 @@
     },
     {
       "gloss": "Einleitung einer wörtlichen Rede",
-      "gloss_en": null,
+      "gloss_en": "quote",
       "tags": [
         "colloquial"
       ],
@@ -33,7 +33,10 @@
         "3f4167f486"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "Introduction to a direct quotation",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
   ],
   "sounds": [
@@ -71,5 +74,9 @@
       ],
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     }
-  ]
+  ],
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

@@ -128,7 +128,10 @@
     "lemmas": [
       "Technik"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "830205d539": {
     "text": "„Ich denke, es ist bald so weit, und sie hetzen ihm die Staatspolizei auf den Hals.“",
@@ -1929,7 +1932,7 @@
         "gloss_hint": "reject"
       }
     ],
-    "text_linked": "„1995 [[wurde|verbs/werden#1]] [[eine|determiners/ein]] regenbogenbunte Grabstätte [[für|prepositions/für]] Aids-Tote [[geschaffen|verbs/schaffen_etwas]], [[als|conjunctions/als]] [[noch|adverbs/noch#3]] [[kein|pronouns/kein]] [[Mittel|nouns/Mittel_etwas#1]] [[gegen|particles/gegen]] [[die|pronouns/die]] [[Krankheit|nouns/Krankheit#1]] [[gefunden|verbs/finden#5]] [[war|verbs/sein#2]] [[und|conjunctions/und]] [[vor|prepositions/vor]] allem [[Homosexuelle|nouns/Homosexuelle]] [[an|prepositions/an]] [[ihr|pronouns/ihr_person]] [[starben|verbs/sterben#1]], [[oft|adverbs/oft#1]] [[von|prepositions/von]] [[ihren|pronouns/ihr_person]] [[Partnern|nouns/Partner#1]] [[verlassen|verbs/verlassen_weggehen#2]] und von ihren [[Familien|nouns/Familie#2]] [[verstoßen|verbs/verstoßen]].“"
+    "text_linked": "„1995 [[wurde|verbs/werden#1]] [[eine|determiners/ein]] regenbogenbunte Grabstätte [[für|prepositions/für]] Aids-Tote [[geschaffen|verbs/schaffen_etwas#1]], [[als|conjunctions/als]] [[noch|adverbs/noch#3]] [[kein|pronouns/kein]] [[Mittel|nouns/Mittel_etwas#1]] [[gegen|particles/gegen]] [[die|pronouns/die]] [[Krankheit|nouns/Krankheit#1]] [[gefunden|verbs/finden#5]] [[war|verbs/sein#2]] [[und|conjunctions/und]] [[vor|prepositions/vor]] allem [[Homosexuelle|nouns/Homosexuelle]] [[an|prepositions/an]] [[ihr|pronouns/ihr_person]] [[starben|verbs/sterben#1]], [[oft|adverbs/oft#1]] [[von|prepositions/von]] [[ihren|pronouns/ihr_person]] [[Partnern|nouns/Partner#1]] [[verlassen|verbs/verlassen_weggehen#2]] und von ihren [[Familien|nouns/Familie#2]] [[verstoßen|verbs/verstoßen]].“"
   },
   "83253348c0": {
     "text": "Als Außenstehender fragt man sich manchmal, welche Politik die Firma xy wirklich verfolgt.",
@@ -5621,7 +5624,7 @@
         "gloss_hint": "become"
       }
     ],
-    "text_linked": "[[Sein|verbs/sein#1]] [[Aufenthaltsort|nouns/Aufenthaltsort#1]] [[konnte|verbs/können_beherrschen]] [[noch|adverbs/noch#2]] [[nicht|particles/nicht#1]] [[festgestellt|verbs/feststellen#1]] [[werden|verbs/werden#1]]."
+    "text_linked": "[[Sein|verbs/sein#1]] [[Aufenthaltsort|nouns/Aufenthaltsort#1]] [[konnte|verbs/können_etwas#1]] [[noch|adverbs/noch#2]] [[nicht|particles/nicht#1]] [[festgestellt|verbs/feststellen#1]] [[werden|verbs/werden#1]]."
   },
   "834862b2cb": {
     "text": "Station machen",
@@ -11709,7 +11712,7 @@
         "gloss_hint": "intend | wish"
       }
     ],
-    "text_linked": "Sie [[können|verbs/können_etwas#1]] [[nach|prepositions/nach]] [[eigenem|adjectives/eigen]] [[Befinden|nouns/Befinden#1]] [[entscheiden|verbs/entscheiden#4]], [[ob|conjunctions/ob]] Sie [[das|pronouns/das_[1]]] [[tun|verbs/tun_handlung#1]] [[wollen|verbs/wollen#1]] oder nicht."
+    "text_linked": "Sie [[können|verbs/können_beherrschen]] [[nach|prepositions/nach]] [[eigenem|adjectives/eigen]] [[Befinden|nouns/Befinden#1]] [[entscheiden|verbs/entscheiden#4]], [[ob|conjunctions/ob]] Sie [[das|pronouns/das_[1]]] [[tun|verbs/tun_handlung#1]] [[wollen|verbs/wollen#1]] oder nicht."
   },
   "8386d6d9a7": {
     "text": "Zebrafinken: Laute Sänger haben bei Weibchen Vorteile.",
@@ -12404,11 +12407,39 @@
   },
   "8393ffce0e": {
     "text": "„Die meisten Adjektive der deutschen Sprache können gesteigert werden.“",
-    "translation": null,
+    "translation": "\"Most adjectives in the German language can be compared.\"",
     "source": "wiktionary",
     "lemmas": [
       "Adjektiv"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Adjektive",
+        "lemma": "Adjektiv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "deutschen",
+        "lemma": "deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sprache",
+        "lemma": "Sprache",
+        "pos": "noun",
+        "gloss_hint": "language"
+      },
+      {
+        "form": "gesteigert",
+        "lemma": "steigern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Die meisten [[Adjektive|nouns/Adjektiv]] der [[deutschen|adjectives/deutsch]] [[Sprache|nouns/Sprache#1]] können [[gesteigert|verbs/steigern]] werden.“"
   },
   "83945be781": {
     "text": "[Niger:] „Der westafrikanische Staat liegt im Sahel, also in der kargen Übergangszone zwischen der Wüste Sahara und der feuchten Savanne weiter südlich.“",
@@ -14930,11 +14961,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have something under control",
     "source": "wiktionary",
     "lemmas": [
       "beim"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "83ae67cfbf": {
     "text": "Die Gräben werden ausgehoben, um unterirdische Leitungen zu verlegen.",
@@ -19770,7 +19802,7 @@
         "gloss_hint": "happen (future)"
       }
     ],
-    "text_linked": "„[[Die|determiners/die]] [[wichtigen|adjectives/wichtig]] Entscheide [[des|determiners/der]] [[Schiedsrichters|nouns/Schiedsrichter#1]] [[können|verbs/können_etwas#1]] [[von|prepositions/von]] blossem [[Auge|nouns/Auge#1]] [[kaum|adverbs/kaum#1]] [[nachvollzogen|verbs/nachvollziehen]] [[werden|verbs/werden#2]].“"
+    "text_linked": "„[[Die|determiners/die]] [[wichtigen|adjectives/wichtig]] Entscheide [[des|determiners/der]] [[Schiedsrichters|nouns/Schiedsrichter#1]] [[können|verbs/können_beherrschen]] [[von|prepositions/von]] blossem [[Auge|nouns/Auge#1]] [[kaum|adverbs/kaum#1]] [[nachvollzogen|verbs/nachvollziehen]] [[werden|verbs/werden#2]].“"
   },
   "83deaa0f66": {
     "text": "„Schon jetzt liegen trockenheitstolerante Kulturen wie Hafer, Hirse und Linsen bei den Landwirten voll im Trend.“",

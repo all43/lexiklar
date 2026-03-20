@@ -668,11 +668,12 @@
     "type": "expression",
     "note": "aufmerksam zuhören",
     "synonyms": [],
-    "translation": null,
+    "translation": "to listen attentively",
     "source": "wiktionary",
     "lemmas": [
       "Löffel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0007c10fd1": {
     "text": "Finanzinvestoren haben nicht den Status von Filmstars oder Rockmusikern. Dennoch zahlen manche Menschen in kuriosen Auktionen gutes Geld: für einen Lunch mit Warren Buffett oder die Boxershorts von Bernard Madoff.",
@@ -1978,7 +1979,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Ein ganz [[typisches|adjectives/typisch#1]] [[Beispiel|nouns/Beispiel#1]] für die Unterschiedlichkeit der Politikbegriffe, die hier zuweilen [[aufeinanderprallten|verbs/aufeinanderprallen]], erlebt ich noch vor Beginn meiner [[Amtszeit|nouns/Amtszeit]] als [[Minister|nouns/Minister]].“"
+    "text_linked": "„Ein ganz [[typisches|adjectives/typisch#1]] [[Beispiel|nouns/Beispiel#1]] für die Unterschiedlichkeit der Politikbegriffe, die hier zuweilen aufeinanderprallten, erlebt ich noch vor Beginn meiner [[Amtszeit|nouns/Amtszeit]] als [[Minister|nouns/Minister]].“"
   },
   "001a814020": {
     "text": "aus den Fugen geraten",
@@ -2544,11 +2545,12 @@
     "type": "expression",
     "note": "verrückt sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be crazy",
     "source": "wiktionary",
     "lemmas": [
       "Hacke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0024fa2e49": {
     "text": "„Dabei war die Fahrtschnelligkeit natürlich nicht immer die gleiche. Wenn auf einzelnen Plätzen infolge allzu großen Andrangs von den Seiten große Umstellungen vorgenommen werden mußten, stockten die ganzen Reihen und fuhren nur Schritt für Schritt, dann aber kam es auch wieder vor, daß für ein Weilchen alles blitzschnell vorbeijagte, bis es, wie von einer einzigen Bremse regiert, sich wieder besänftigte.“",
@@ -4663,7 +4665,7 @@
         "gloss_hint": "nail polish thinners"
       }
     ],
-    "text_linked": "Ältere Nagellacke [[mit zäherer Flüssigkeit|nouns/Flüssigkeit]] [[können|verbs/können_etwas#1]] mit sogenannten „Nagellackverdünnern“ wieder verwendbar gemacht werden."
+    "text_linked": "Ältere Nagellacke [[mit zäherer Flüssigkeit|nouns/Flüssigkeit]] [[können|verbs/können_beherrschen]] mit sogenannten „Nagellackverdünnern“ wieder verwendbar gemacht werden."
   },
   "004d4de1d6": {
     "text": "Der Kameramann begleitet den Reporter auf Schritt und Tritt.",
@@ -4811,7 +4813,7 @@
         "gloss_hint": "inherit"
       }
     ],
-    "text_linked": "„Er hatte einen [[Neffen|nouns/Neffe_sohn#2]], der alle seine [[Reichtümer|nouns/Reichtum]] [[erben|verbs/erben#1]] sollte.“"
+    "text_linked": "„Er hatte einen [[Neffen|nouns/Neffe_des#1]], der alle seine [[Reichtümer|nouns/Reichtum]] [[erben|verbs/erben#1]] sollte.“"
   },
   "004f7ccf13": {
     "text": "Der Pädagoge des SPD empfiehlt den Besuch einer Tagesstätte.",
@@ -7244,11 +7246,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like the Tower of Babel",
     "source": "wiktionary",
     "lemmas": [
       "beim"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "006f5792fe": {
     "text": "„Carlos wusste, dass das Inferno gleich losbrechen musste.“",
@@ -11034,11 +11037,93 @@
   },
   "00a618a8bb": {
     "text": "„Das Geschäftsmodell der Regionalbahnen entstand Ende des 19./Anfang des 20. Jahrhunderts als regionale Ergänzung der „großen“ Staatsbahnen, die einzelne regionale Verkehrsbedürfnisse nicht umsetzen wollten.“",
-    "translation": null,
+    "translation": "The business model of regional railways emerged at the end of the 19th/beginning of the 20th century as a regional supplement to the \"major\" state railways, which did not want to meet individual regional transport needs.",
     "source": "wiktionary",
     "lemmas": [
       "Regionalbahn"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geschäftsmodell",
+        "lemma": "Geschäftsmodell",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regionalbahnen",
+        "lemma": "Regionalbahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entstand",
+        "lemma": "entstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ende",
+        "lemma": "Ende",
+        "pos": "noun",
+        "gloss_hint": "end (time)"
+      },
+      {
+        "form": "Jahrhunderts",
+        "lemma": "Jahrhundert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anfang",
+        "lemma": "Anfang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "regionale",
+        "lemma": "regional",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ergänzung",
+        "lemma": "Ergänzung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staatsbahnen",
+        "lemma": "Staatsbahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "einzelne",
+        "lemma": "einzeln",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "regionale",
+        "lemma": "regional",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verkehrsbedürfnisse",
+        "lemma": "Verkehrsbedürfnis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "umsetzen",
+        "lemma": "umsetzen",
+        "pos": "verb",
+        "gloss_hint": "implement"
+      }
+    ],
+    "text_linked": "„Das Geschäftsmodell der [[Regionalbahnen|nouns/Regionalbahn]] [[entstand|verbs/entstehen]] [[Ende|nouns/Ende#1]] des 19./[[Anfang|nouns/Anfang]] des 20. [[Jahrhunderts|nouns/Jahrhundert]] als [[regionale|adjectives/regional]] Ergänzung der „großen“ Staatsbahnen, die [[einzelne|adjectives/einzeln]] regionale Verkehrsbedürfnisse nicht [[umsetzen|verbs/umsetzen#4]] wollten.“"
   },
   "00a76c2ea7": {
     "text": "Dieser Kandidat hat einen überzeugenden Auftritt.",
@@ -11730,7 +11815,7 @@
         "gloss_hint": "be"
       }
     ],
-    "text_linked": "„So [[können|verbs/können_etwas#2]] sie [[mit|adverbs/mit#1]] [[den|determiners/der]] anderen [[telefonieren|verbs/telefonieren#1]] [[und|conjunctions/und]] [[verhindern|verbs/verhindern]], [[dass|conjunctions/dass]] [[über|adverbs/über#1]] [[das|pronouns/das_[1]]] [[Festnetz|nouns/Festnetz]] [[die|pronouns/die]] [[Polizei|nouns/Polizei]] [[gerufen|verbs/rufen#1]] [[wird|verbs/werden#1]].“"
+    "text_linked": "„So [[können|verbs/können_beherrschen]] sie [[mit|adverbs/mit#1]] [[den|determiners/der]] anderen [[telefonieren|verbs/telefonieren#1]] [[und|conjunctions/und]] [[verhindern|verbs/verhindern]], [[dass|conjunctions/dass]] [[über|adverbs/über#1]] [[das|pronouns/das_[1]]] [[Festnetz|nouns/Festnetz]] [[die|pronouns/die]] [[Polizei|nouns/Polizei]] [[gerufen|verbs/rufen#1]] [[wird|verbs/werden#1]].“"
   },
   "00ac595cf5": {
     "text": "„Man sprach von Sondereinsätzen der russischen Flotte, und sah oft verschiedene Schiffe in einer Bucht.“",
@@ -12357,11 +12442,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a bit crazy",
     "source": "wiktionary",
     "lemmas": [
       "Hau"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "00b655d335": {
     "text": "„Werktags empfing sie, nachdem sie sich angekleidet hatte, bei sich zu Hause Bittsteller aus allen Ständen, die sich täglich in Mengen bei ihr einfanden, und ass dann zu Mittag; an ihrem mit kräftigen und schmackhaften Speisen besetzten Tisch hatte sie meistens drei oder vier Gäste.“",
@@ -13021,7 +13107,7 @@
         "gloss_hint": "were"
       }
     ],
-    "text_linked": "„Barack Obama [[konnte|verbs/können_beherrschen]] [[die|pronouns/die]] [[Tränen|nouns/Träne#1]] [[nicht|particles/nicht]] [[zurückhalten|verbs/zurückhalten#1]]. [[So|adverbs/so]] [[wie|conjunctions/wie_als]] [[jeder|pronouns/jeder]], [[der|pronouns/der_nominativ]] [[sich|pronouns/sich]] [[vorstellt|verbs/vorstellen#6]], [[an|prepositions/an]] der Bahre sechsjähriger [[Kinder|nouns/Kind#1]] [[zu|particles/zu_drückt]] [[stehen|verbs/stehen#1]], die [[von|prepositions/von]] [[einem|determiners/ein]] Geistesgestörten [[mit|prepositions/mit]] Kriegswaffen [[niedergemetzelt|verbs/niedermetzeln]] [[wurden|verbs/werden#1]].“"
+    "text_linked": "„Barack Obama [[konnte|verbs/können_beherrschen]] [[die|pronouns/die]] [[Tränen|nouns/Träne#1]] [[nicht|particles/nicht]] [[zurückhalten|verbs/zurückhalten#1]]. [[So|adverbs/so]] [[wie|conjunctions/wie_als]] [[jeder|pronouns/jeder]], [[der|pronouns/der_nominativ]] [[sich|pronouns/sich]] [[vorstellt|verbs/vorstellen#6]], [[an|prepositions/an]] der Bahre sechsjähriger [[Kinder|nouns/Kind#1]] [[zu|particles/zu_drückt]] [[stehen|verbs/stehen#1]], die [[von|prepositions/von]] [[einem|determiners/ein]] Geistesgestörten [[mit|prepositions/mit]] Kriegswaffen niedergemetzelt [[wurden|verbs/werden#1]].“"
   },
   "00bc488c0d": {
     "text": "„Föten im Mutterleib lutschen lieber am rechten als am linken Daumen.“",
@@ -16235,11 +16321,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be able to tell what someone is about to do",
     "source": "wiktionary",
     "lemmas": [
       "Wiege"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "00dca4ffee": {
     "text": "Seit fast 30 Jahren wird der britisch-indische Schriftsteller [Salman Rushdie] von einer tödlichen Fatwa bedroht - ausgesprochen von Ayatollah Khomeini.",
@@ -19210,11 +19297,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get going",
     "source": "wiktionary",
     "lemmas": [
       "Strumpf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "00f7320df2": {
     "text": "„Das Motel war leer und verlassen. Als das Zimmermädchen an die Tür klopfte, sagte er, bei ihm sei alles bestens, er brauche heute keinen Zimmerservice.“",

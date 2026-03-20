@@ -23,7 +23,7 @@
   "senses": [
     {
       "gloss": "(zumeist größeres) gebundenes Buch",
-      "gloss_en": null,
+      "gloss_en": "volume (bound book)",
       "tags": [],
       "example_ids": [
         "8a81fec8e3",
@@ -33,11 +33,14 @@
         "647f20164e"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A (usually larger) bound book.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "einzelnes Buch, das Teil einer Buchreihe oder eines größeren Werks (Gesamtausgabe) oder gar einer Bibliothekssammlung ist",
-      "gloss_en": null,
+      "gloss_en": "volume (series)",
       "tags": [],
       "example_ids": [
         "295e62ebc5",
@@ -46,7 +49,10 @@
         "009fc0bf53"
       ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "An individual book that is part of a book series, a larger work (complete edition), or even a library collection.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
   ],
   "sounds": [
@@ -104,5 +110,9 @@
       ],
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     }
-  ]
+  ],
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

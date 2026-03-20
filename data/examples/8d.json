@@ -470,7 +470,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Eine [[Fliege|nouns/Fliege#1]] [[krabbelte|verbs/krabbeln]] [[über|prepositions/über#2]] [[die|determiners/die]] Schreibtischplatte.“"
+    "text_linked": "„Eine [[Fliege|nouns/Fliege#1]] krabbelte [[über|prepositions/über#2]] [[die|determiners/die]] Schreibtischplatte.“"
   },
   "8d090f7a76": {
     "text": "die Musen anrufen",
@@ -870,7 +870,7 @@
       "Laut",
       "phonetisch"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "translation_model": "claude-sonnet-4-6",
     "_proofread": {
       "translation": true
     }
@@ -1855,7 +1855,7 @@
       "Juli",
       "Helligkeit"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "claude-sonnet-4-6"
   },
   "8d1b0dfb4f": {
     "text": "Alarmstufe Rot",
@@ -5708,7 +5708,7 @@
         "gloss_hint": "lucky person"
       }
     ],
-    "text_linked": "Zur Duck-Familie gehören auch Donalds [[geiziger|adjectives/geizig]] [[Onkel|nouns/Onkel#1]], der Multi-Milliardär Dagobert Duck, seine [[Neffen|nouns/Neffe_sohn#2]] [[Tick|nouns/Tick#2]], [[Trick|nouns/Trick#1]] und Track und [[Cousin|nouns/Cousin]] Gustav, der [[ewige|adjectives/ewig]] [[Glückspilz|nouns/Glückspilz#1]]."
+    "text_linked": "Zur Duck-Familie gehören auch Donalds [[geiziger|adjectives/geizig]] [[Onkel|nouns/Onkel#1]], der Multi-Milliardär Dagobert Duck, seine [[Neffen|nouns/Neffe_des#1]] [[Tick|nouns/Tick#2]], [[Trick|nouns/Trick#1]] und Track und [[Cousin|nouns/Cousin]] Gustav, der [[ewige|adjectives/ewig]] [[Glückspilz|nouns/Glückspilz#1]]."
   },
   "8d4da48bfc": {
     "text": "dein Wunsch ist",
@@ -7455,7 +7455,7 @@
         "gloss_hint": "old man"
       }
     ],
-    "text_linked": "In der [[Art|nouns/Art#1]], [[wie|adverbs/wie#1]] er [[geht|verbs/gehen#1]], [[könnte|verbs/können_beherrschen]] [[man|pronouns/man#2]] [[denken|verbs/denken#1]], er [[sei|verbs/sein#2]] [[ein|determiners/ein]] alter Mann."
+    "text_linked": "In der [[Art|nouns/Art#1]], [[wie|adverbs/wie#1]] er [[geht|verbs/gehen#1]], [[könnte|verbs/können_etwas#5]] [[man|pronouns/man#2]] [[denken|verbs/denken#1]], er [[sei|verbs/sein#2]] [[ein|determiners/ein]] alter Mann."
   },
   "8d646a9933": {
     "text": "Er führte unter dem Korb einen Dribbeltanz vor, ehe er den Ball versenkte.",
@@ -9315,11 +9315,30 @@
   },
   "8d77df7422": {
     "text": "Das sind siebzig Stück.",
-    "translation": null,
+    "translation": "That's seventy pieces.",
     "source": "wiktionary",
     "lemmas": [
       "siebzig"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "siebzig",
+        "lemma": "siebzig",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stück",
+        "lemma": "Stück",
+        "pos": "noun",
+        "gloss_hint": "piece"
+      }
+    ],
+    "_proofread": {
+      "translation": true
+    },
+    "text_linked": "Das sind [[siebzig|numerals/siebzig]] [[Stück|nouns/Stück#1]]."
   },
   "8d79fe6622": {
     "text": "Ein Spürhund konnte den Fluchtweg der Diebe nachverfolgen.",
@@ -10505,7 +10524,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„‚In the beginning was the rhythm. And the rhythm was the action. And the action was a sound…‘ – Auf diesem [[Fundament|nouns/Fundament#1]] [[fußt|verbs/fußen]] auch Namibias Jazzlandschaft, die allerdings noch in den Kinderschuhen steckt.“"
+    "text_linked": "„‚In the beginning was the rhythm. And the rhythm was the action. And the action was a sound…‘ – Auf diesem [[Fundament|nouns/Fundament#1]] [[fußt|verbs/fußen#1]] auch Namibias Jazzlandschaft, die allerdings noch in den Kinderschuhen steckt.“"
   },
   "8d87bdf795": {
     "text": "„Das Verbreitungsgebiet der Dornenkrone erstreckt sich über weite Bereiche sowohl des Indischen als auch des Pazifischen Ozeans - von der Küste Ostafrikas und vom Roten Meer im Westen quer durch die tropischen Bereiche des Indopazifiks bis zur Westküste Amerikas im Osten.“",
@@ -11090,7 +11109,7 @@
         "gloss_hint": "energy (physics)"
       }
     ],
-    "text_linked": "„[[Abbauverfahren|nouns/Abbauverfahren#2]]: [[Wir|pronouns/wir]] [[unterscheiden|verbs/unterscheiden#1]] [[zwischen|prepositions/zwischen#1]] [[biologischen|adjectives/biologisch]] [[(Mithilfe|nouns/Mithilfe]] [[von|prepositions/von#1]] Organismen) [[und|conjunctions/und]] chemisch/thermischen [[Abbauverfahren.|nouns/Abbauverfahren#2]] Abbauverfahren [[können|verbs/können_etwas#1]] [[auf|prepositions/auf#1]] [[der|pronouns/der_nominativ#1]] Produktseite [[zu|prepositions/zu]] petrochemischen Zwischenprodukten, zu Rohstoffen oder zu [[Energie|nouns/Energie#3]] […]“"
+    "text_linked": "„[[Abbauverfahren|nouns/Abbauverfahren#2]]: [[Wir|pronouns/wir]] [[unterscheiden|verbs/unterscheiden#1]] [[zwischen|prepositions/zwischen#1]] [[biologischen|adjectives/biologisch]] [[(Mithilfe|nouns/Mithilfe]] [[von|prepositions/von#1]] Organismen) [[und|conjunctions/und]] chemisch/thermischen [[Abbauverfahren.|nouns/Abbauverfahren#2]] Abbauverfahren [[können|verbs/können_beherrschen]] [[auf|prepositions/auf#1]] [[der|pronouns/der_nominativ#1]] Produktseite [[zu|prepositions/zu]] petrochemischen Zwischenprodukten, zu Rohstoffen oder zu [[Energie|nouns/Energie#3]] […]“"
   },
   "8d8bfb548a": {
     "text": "„Normalerweise schützt die Plazenta den Fötus vor dem Stresshormon Cortisol.“",
@@ -12142,11 +12161,45 @@
   },
   "8d9755921d": {
     "text": "„Damals schickte eine Systemadministratorin versehentlich eine E-Mail an einen Verteiler mit 65.000 Empfängern.“",
-    "translation": null,
+    "translation": "Back then, a system administrator accidentally sent an email to a distribution list with 65,000 recipients.",
     "source": "wiktionary",
     "lemmas": [
       "Systemadministratorin"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Systemadministratorin",
+        "lemma": "Systemadministratorin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schickte",
+        "lemma": "schicken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "E-Mail",
+        "lemma": "E-Mail",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verteiler",
+        "lemma": "Verteiler",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Empfängern",
+        "lemma": "Empfänger",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Damals [[schickte|verbs/schicken]] eine [[Systemadministratorin|nouns/Systemadministratorin]] versehentlich eine [[E-Mail|nouns/E-Mail]] an einen Verteiler mit 65.000 [[Empfängern|nouns/Empfänger]].“"
   },
   "8d987b7c79": {
     "text": "Mit den passenden Gewürzen wird dieser Auflauf sehr gut schmecken.",
@@ -13530,7 +13583,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "1,2-Butandiol [[kann|verbs/können_beherrschen]] [[durch|prepositions/durch#2]] Hydroxylierung [[von|prepositions/von#1]] But-1-en gewonnen werden."
+    "text_linked": "1,2-Butandiol [[kann|verbs/können_etwas#1]] [[durch|prepositions/durch#2]] Hydroxylierung [[von|prepositions/von#1]] But-1-en gewonnen werden."
   },
   "8da42e3541": {
     "text": "Sie plauderten über dies und das.",
@@ -15015,7 +15068,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Die ganze Klasse [[dachte|verbs/denken]] [[so|adverbs/so]], [[auch|adverbs/auch]] [[die|pronouns/die]] [[drei|numerals/drei#1]] Klassenmitglieder, die ich [[nicht|particles/nicht]] [[zu|particles/zu_drückt]] [[Sekretären|nouns/Sekretär#1]] [[hatte|verbs/haben]] [[schlagen|verbs/schlagen#1]] [[können|verbs/können_etwas#1]], [[weil|conjunctions/weil_konjunktion]] sie nicht in [[der|pronouns/der_nominativ]] FDJ [[waren|verbs/sein]], solche gesellschaftlichen [[Blindgänger|nouns/Blindgänger#2]] [[gab|verbs/geben]] [[es|nouns/es]] ja [[durchaus|adverbs/durchaus#1]], [[was|pronouns/was#1]] [[ebenfalls|adverbs/ebenfalls]] [[mittlerweile|adverbs/mittlerweile]] [[vergessen|verbs/vergessen_partizip#1]] zu [[werden|verbs/werden]] [[droht|verbs/drohen]].“"
+    "text_linked": "„Die ganze Klasse [[dachte|verbs/denken]] [[so|adverbs/so]], [[auch|adverbs/auch]] [[die|pronouns/die]] [[drei|numerals/drei#1]] Klassenmitglieder, die ich [[nicht|particles/nicht]] [[zu|particles/zu_drückt]] [[Sekretären|nouns/Sekretär#1]] [[hatte|verbs/haben]] [[schlagen|verbs/schlagen#1]] [[können|verbs/können_beherrschen]], [[weil|conjunctions/weil_konjunktion]] sie nicht in [[der|pronouns/der_nominativ]] FDJ [[waren|verbs/sein]], solche gesellschaftlichen [[Blindgänger|nouns/Blindgänger#2]] [[gab|verbs/geben]] [[es|nouns/es]] ja [[durchaus|adverbs/durchaus#1]], [[was|pronouns/was#1]] [[ebenfalls|adverbs/ebenfalls]] [[mittlerweile|adverbs/mittlerweile]] [[vergessen|verbs/vergessen_partizip#1]] zu [[werden|verbs/werden]] [[droht|verbs/drohen]].“"
   },
   "8db63aa79e": {
     "text": "„Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheuren Ungeziefer verwandelt.“",
@@ -15603,11 +15656,63 @@
   },
   "8dba0d3a0b": {
     "text": "„Frau Castrup legte einen vorgefertigten Arbeitsvertrag auf den Tisch, trug Hennis Namen und einige Daten ein.“",
-    "translation": null,
+    "translation": "Ms. Castrup laid a pre-made employment contract on the table, entered Henni's name and some data.",
     "source": "wiktionary",
     "lemmas": [
       "Arbeitsvertrag"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "woman"
+      },
+      {
+        "form": "legte",
+        "lemma": "legen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "vorgefertigten",
+        "lemma": "vorgefertigt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arbeitsvertrag",
+        "lemma": "Arbeitsvertrag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tisch",
+        "lemma": "Tisch",
+        "pos": "noun",
+        "gloss_hint": "table"
+      },
+      {
+        "form": "trug",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Namen",
+        "lemma": "Name",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Daten",
+        "lemma": "Daten",
+        "pos": "noun",
+        "gloss_hint": "data"
+      }
+    ],
+    "text_linked": "„[[Frau|nouns/Frau#1]] Castrup [[legte|verbs/legen]] einen vorgefertigten [[Arbeitsvertrag|nouns/Arbeitsvertrag]] auf den [[Tisch|nouns/Tisch#1]], [[trug|verbs/tragen]] Hennis [[Namen|nouns/Name]] und einige [[Daten|nouns/Daten#1]] ein.“"
   },
   "8dbc3bda9f": {
     "text": "Er lernt aus der „Schule für Gitarre“.",
@@ -18338,11 +18443,33 @@
   },
   "8dda608f4c": {
     "text": "Doch selbst dieser Versuch einer Schadensbegrenzung musste letztlich fehlschlagen.",
-    "translation": null,
+    "translation": "Yet even this attempt at damage control was ultimately bound to fail.",
     "source": "wiktionary",
     "lemmas": [
       "fehlschlagen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Versuch",
+        "lemma": "Versuch",
+        "pos": "noun",
+        "gloss_hint": "attempt"
+      },
+      {
+        "form": "Schadensbegrenzung",
+        "lemma": "Schadensbegrenzung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fehlschlagen",
+        "lemma": "fehlschlagen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Doch selbst dieser [[Versuch|nouns/Versuch#1]] einer Schadensbegrenzung musste letztlich [[fehlschlagen|verbs/fehlschlagen]]."
   },
   "8dda6f5938": {
     "text": "Dieser Transport ist für den Schlachthof bestimmt.",
@@ -20230,7 +20357,7 @@
         "gloss_hint": "stop"
       }
     ],
-    "text_linked": "„[[Nach|prepositions/nach]] [[der|determiners/der]] [[Kurve|nouns/Kurve#1]] [[konnte|verbs/können_beherrschen]] [[ich|pronouns/ich#1]] [[das|pronouns/das_[1]]] [[Fahrrad|nouns/Fahrrad#1]] [[wieder|adverbs/wieder#1]] [[auf|prepositions/auf#1]] [[die|determiners/die]] rechte [[Straßenseite|nouns/Straßenseite#1]] [[lenken|verbs/lenken#2]] [[und|conjunctions/und]] bremsen und [[anhalten|verbs/anhalten#2]].“"
+    "text_linked": "„[[Nach|prepositions/nach]] [[der|determiners/der]] [[Kurve|nouns/Kurve#1]] [[konnte|verbs/können_etwas#1]] [[ich|pronouns/ich#1]] [[das|pronouns/das_[1]]] [[Fahrrad|nouns/Fahrrad#1]] [[wieder|adverbs/wieder#1]] [[auf|prepositions/auf#1]] [[die|determiners/die]] rechte [[Straßenseite|nouns/Straßenseite#1]] [[lenken|verbs/lenken#2]] [[und|conjunctions/und]] bremsen und [[anhalten|verbs/anhalten#2]].“"
   },
   "8defeb3084": {
     "text": "„Während meiner Schulzeit gab es mehrere selbstgedichtete Fortsetzungen dieser Fabel, bei denen die Libelle im Winter nicht starb.“",
@@ -20703,7 +20830,7 @@
         "gloss_hint": "to identify"
       }
     ],
-    "text_linked": "[[Anhand|prepositions/anhand#1]] [[seiner|pronouns/sein#1]] [[Fingerabdrücke|nouns/Fingerabdruck#1]] [[konnte|verbs/können_beherrschen]] [[der|pronouns/der_nominativ#1]] [[Täter|nouns/Täter#1]] [[schnell|adjectives/schnell#1]] [[überführt|verbs/überführen_einem]] werden."
+    "text_linked": "[[Anhand|prepositions/anhand#1]] [[seiner|pronouns/sein#1]] [[Fingerabdrücke|nouns/Fingerabdruck#1]] [[konnte|verbs/können_etwas#1]] [[der|pronouns/der_nominativ#1]] [[Täter|nouns/Täter#1]] [[schnell|adjectives/schnell#1]] [[überführt|verbs/überführen_einem]] werden."
   },
   "8df2a48906": {
     "text": "Der Kuchen ist uns wieder sehr gut geraten.",
@@ -22850,7 +22977,7 @@
         "gloss_hint": "of that"
       }
     ],
-    "text_linked": "„Bei alledem [[kann|verbs/können_beherrschen]] [[sich|pronouns/sich]] [[das|pronouns/das_[1]]] [[Bauchgefühl|nouns/Bauchgefühl]] [[ziemlich|adjectives/ziemlich#1]] [[sicher|adjectives/sicher#2]] [[sein|verbs/sein#1]], straflos [[davon|adverbs/davon#6]] zu kommen. »Niemand wird je zugeben, dass er eine wichtige Entscheidung aufgrund unbewusster Faktoren oder gar Vorteile getroffen hat«, sagt [Daniel] Kahneman.“"
+    "text_linked": "„Bei alledem [[kann|verbs/können_etwas#1]] [[sich|pronouns/sich]] [[das|pronouns/das_[1]]] [[Bauchgefühl|nouns/Bauchgefühl]] [[ziemlich|adjectives/ziemlich#1]] [[sicher|adjectives/sicher#2]] [[sein|verbs/sein#1]], straflos [[davon|adverbs/davon#6]] zu kommen. »Niemand wird je zugeben, dass er eine wichtige Entscheidung aufgrund unbewusster Faktoren oder gar Vorteile getroffen hat«, sagt [Daniel] Kahneman.“"
   },
   "8dfff481df": {
     "text": "„Ich konnte mich an dem Löffel festhalten, konnte die Bohnen erkennen, Spuren von Eiweiß und Eidotter darin, die Scheibe Brot, die immer kleiner wurde.“",

@@ -1518,7 +1518,7 @@
     "lemmas": [
       "Himmel"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Er",
@@ -1748,7 +1748,7 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "„Für sie ist [[die|determiners/die]] [[Transplantation|nouns/Transplantation#1]] die einzige [[Möglichkeit|nouns/Möglichkeit#1]], [[um|prepositions/um]] [[überleben|verbs/überleben#1]] oder die [[Lebensqualität|nouns/Lebensqualität#1]] [[erheblich|adjectives/erheblich]] [[verbessern|verbs/verbessern#2]] [[zu|particles/zu_drückt]] [[können|verbs/können_etwas#1]].“"
+    "text_linked": "„Für sie ist [[die|determiners/die]] [[Transplantation|nouns/Transplantation#1]] die einzige [[Möglichkeit|nouns/Möglichkeit#1]], [[um|prepositions/um]] [[überleben|verbs/überleben#1]] oder die [[Lebensqualität|nouns/Lebensqualität#1]] [[erheblich|adjectives/erheblich]] [[verbessern|verbs/verbessern#2]] [[zu|particles/zu_drückt]] [[können|verbs/können_beherrschen]].“"
   },
   "cf122b3bbc": {
     "text": "Du solltest deiner armen Mutter nicht so viel Kummer bereiten.",
@@ -4062,7 +4062,7 @@
         "gloss_hint": "exert"
       }
     ],
-    "text_linked": "„[[Offiziell|adjectives/offiziell]] [[hat|verbs/haben#1]] [[man|pronouns/man#2]] [[zwar|conjunctions/zwar]] [[in|prepositions/in]] Peking [[das|pronouns/das_[1]]] [[Eingreifen|verbs/eingreifen#1]] Moskaus in [[der|pronouns/der_nominativ]] Ukraine [[nicht|particles/nicht#1]] [[gebilligt|verbs/billigen#1]], [[aber|conjunctions/aber]] [[ein|determiners/ein]] hoher Regierungsvertreter [[betont|verbs/betonen#3]], [[die|pronouns/die]] [[chinesischen|adjectives/chinesisch]] [[Diplomaten|nouns/Diplomat]] [[und|conjunctions/und]] [[Politiker|nouns/Politiker]] [[seien|verbs/sein#2]] [[sich|pronouns/sich#2]] [[darüber|adverbs/darüber]] [[im|prepositions/in]] [[Klaren|adjectives/klar]], [[was|pronouns/was#1]] die [[Krise|nouns/Krise]] in der Ukraine [[herbeigeführt|verbs/herbeiführen]] hat, [[nämlich|conjunctions/nämlich]] [[‚die|determiners/die]] Farbrevolutionen, die der [[Westen|nouns/Westen#2]] in [[den|determiners/der]] postsowjetischen [[Staaten|nouns/Staat]] [[unterstützt|verbs/unterstützen_haltend#1]], und der [[Druck|nouns/Druck_kraft#1]], den die [[Ausweitung|nouns/Ausweitung]] der [[Nato|nouns/Nato]] [[auf|prepositions/auf]] Russland [[ausübte|verbs/ausüben]]‘.“"
+    "text_linked": "„[[Offiziell|adjectives/offiziell]] [[hat|verbs/haben#1]] [[man|pronouns/man#2]] [[zwar|conjunctions/zwar]] [[in|prepositions/in]] Peking [[das|pronouns/das_[1]]] [[Eingreifen|verbs/eingreifen#1]] Moskaus in [[der|pronouns/der_nominativ]] Ukraine [[nicht|particles/nicht#1]] [[gebilligt|verbs/billigen#1]], [[aber|conjunctions/aber]] [[ein|determiners/ein]] hoher Regierungsvertreter [[betont|verbs/betonen#3]], [[die|pronouns/die]] [[chinesischen|adjectives/chinesisch]] [[Diplomaten|nouns/Diplomat]] [[und|conjunctions/und]] [[Politiker|nouns/Politiker]] [[seien|verbs/sein#2]] [[sich|pronouns/sich#2]] [[darüber|adverbs/darüber]] [[im|prepositions/in]] [[Klaren|adjectives/klar]], [[was|pronouns/was#1]] die [[Krise|nouns/Krise]] in der Ukraine [[herbeigeführt|verbs/herbeiführen#1]] hat, [[nämlich|conjunctions/nämlich]] [[‚die|determiners/die]] Farbrevolutionen, die der [[Westen|nouns/Westen#2]] in [[den|determiners/der]] postsowjetischen [[Staaten|nouns/Staat]] [[unterstützt|verbs/unterstützen_haltend#1]], und der [[Druck|nouns/Druck_kraft#1]], den die [[Ausweitung|nouns/Ausweitung]] der [[Nato|nouns/Nato]] [[auf|prepositions/auf]] Russland [[ausübte|verbs/ausüben]]‘.“"
   },
   "cf1fb5f259": {
     "text": "„Nach dem Sieg über den kommunistischen Ostblock erschien es möglich, durch gemeinsame Anstrengung auch Kolumbien in die Gemeinschaft der freien Welt zurückzuführen.“",
@@ -5302,11 +5302,57 @@
   },
   "cf2d026543": {
     "text": "„Und weil die Zeit nicht langte, kam er auf die Idee, einfach noch die wichtigsten Substantive jeder Strophe aufzureihen.“",
-    "translation": null,
+    "translation": "And because time was running short, he came up with the idea of simply listing the most important nouns from each stanza.",
     "source": "wiktionary",
     "lemmas": [
       "Substantiv"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      },
+      {
+        "form": "langte",
+        "lemma": "langen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "kam",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Idee",
+        "lemma": "Idee",
+        "pos": "noun",
+        "gloss_hint": "idea"
+      },
+      {
+        "form": "einfach",
+        "lemma": "einfach",
+        "pos": "adverb",
+        "gloss_hint": "simply"
+      },
+      {
+        "form": "Substantive",
+        "lemma": "Substantiv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strophe",
+        "lemma": "Strophe",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Und weil die [[Zeit|nouns/Zeit#1]] nicht [[langte|verbs/langen]], [[kam|verbs/kommen]] er auf die [[Idee|nouns/Idee#2]], einfach noch die wichtigsten [[Substantive|nouns/Substantiv]] jeder Strophe aufzureihen.“"
   },
   "cf2d554176": {
     "text": "»Ich werde diesen Kerl an die Luft setzen, darauf kannst Du Gift nehmen.«",
@@ -7234,7 +7280,7 @@
         "gloss_hint": "manage"
       }
     ],
-    "text_linked": "[[Die|pronouns/die]] [[Schneiderin|nouns/Schneiderin]] [[verlängert|verbs/verlängern]] [[die|pronouns/die]] Hosenbeine [[mit|prepositions/mit#1]] [[viel|adverbs/viel#1]] [[Aufwand|nouns/Aufwand#1]] [[und|conjunctions/und]] [[Können|verbs/können_etwas#2]]."
+    "text_linked": "[[Die|pronouns/die]] [[Schneiderin|nouns/Schneiderin]] [[verlängert|verbs/verlängern]] [[die|pronouns/die]] Hosenbeine [[mit|prepositions/mit#1]] [[viel|adverbs/viel#1]] [[Aufwand|nouns/Aufwand#1]] [[und|conjunctions/und]] [[Können|verbs/können_beherrschen]]."
   },
   "cf3de9c7eb": {
     "text": "„Auf der hinteren Plattform blieb ich stehen.“",
@@ -10267,7 +10313,7 @@
         "gloss_hint": "had"
       }
     ],
-    "text_linked": "„Eine [[Art|nouns/Art#1]] [[Folter|nouns/Folter#1]], [[die|determiners/die]] wenige Leser [[sich|pronouns/sich]] vorstellen können, verursachte mir [[unerträgliche|adjectives/unerträglich]] [[Qualen|nouns/Qual]]; eine [[Million|nouns/Million#1]] [[Flöhe|nouns/Floh#1]] [[stürzten|verbs/stürzen]] sich [[hocherfreut|adjectives/hocherfreut]] [[auf|prepositions/auf]] [[meinen|pronouns/mein]] [[Körper|nouns/Körper#1]], [[voll|adjectives/voll]] [[Gier|nouns/Gier#1]] [[nach|prepositions/nach]] [[meinem|pronouns/mein]] [[Blut|nouns/Blut#1]] [[und|conjunctions/und]] [[meiner|pronouns/mein]] [[Haut|nouns/Haut#1]], die sie [[mit|prepositions/mit]] [[einem|determiners/ein]] Fanatismus [[durchlöcherten|verbs/durchlöchern]], [[von|prepositions/von]] [[dem|determiners/der]] ich keine [[Ahnung|nouns/Ahnung#2]] [[gehabt|verbs/haben#1]] hatte.“"
+    "text_linked": "„Eine [[Art|nouns/Art#1]] [[Folter|nouns/Folter#1]], [[die|determiners/die]] wenige Leser [[sich|pronouns/sich]] vorstellen können, verursachte mir [[unerträgliche|adjectives/unerträglich]] [[Qualen|nouns/Qual]]; eine [[Million|nouns/Million#1]] [[Flöhe|nouns/Floh#1]] [[stürzten|verbs/stürzen]] sich [[hocherfreut|adjectives/hocherfreut]] [[auf|prepositions/auf]] [[meinen|pronouns/mein]] [[Körper|nouns/Körper#1]], [[voll|adjectives/voll]] [[Gier|nouns/Gier#1]] [[nach|prepositions/nach]] [[meinem|pronouns/mein]] [[Blut|nouns/Blut#1]] [[und|conjunctions/und]] [[meiner|pronouns/mein]] [[Haut|nouns/Haut#1]], die sie [[mit|prepositions/mit]] [[einem|determiners/ein]] Fanatismus durchlöcherten, [[von|prepositions/von]] [[dem|determiners/der]] ich keine [[Ahnung|nouns/Ahnung#2]] [[gehabt|verbs/haben#1]] hatte.“"
   },
   "cf62b71056": {
     "text": "„‚Hörst du mich?‘ […] ‚Ja.‘ - ‚Gut. Dann wollen wir mal.‘ Leon startete den Motor und die Maschine heulte einmal kräftig auf.“",
@@ -10986,7 +11032,7 @@
         "gloss_hint": "pull down"
       }
     ],
-    "text_linked": "„Oskar [[erspäht|verbs/erspähen]] [[eine|determiners/eine]] [[neue|adjectives/neu#1]] Blechtrommel, [[die|determiners/die]] [[auf|prepositions/auf#1]] [[dem|determiners/der]] obersten [[Brett|nouns/Brett]] [[eines|determiners/eines#1]] [[Regales|nouns/Regal]] [[liegt|verbs/liegen]], [[möchte|verbs/möchten#1]] sie herunterziehen.“"
+    "text_linked": "„Oskar erspäht [[eine|determiners/eine]] [[neue|adjectives/neu#1]] Blechtrommel, [[die|determiners/die]] [[auf|prepositions/auf#1]] [[dem|determiners/der]] obersten [[Brett|nouns/Brett]] [[eines|determiners/eines#1]] [[Regales|nouns/Regal]] [[liegt|verbs/liegen]], [[möchte|verbs/möchten#1]] sie herunterziehen.“"
   },
   "cf687754d6": {
     "text": "Ich geh später noch auf einen „Gig“.",
@@ -12579,7 +12625,7 @@
         "gloss_hint": "resuscitate | revive"
       }
     ],
-    "text_linked": "[[Die|pronouns/die#1]] [[Ärzte|nouns/Arzt]] [[konnten|verbs/können_beherrschen]] [[den|determiners/der]] [[Patienten|nouns/Patient#1]] [[wiederbeleben|verbs/wiederbeleben#1]]."
+    "text_linked": "[[Die|pronouns/die#1]] [[Ärzte|nouns/Arzt]] [[konnten|verbs/können_etwas#1]] [[den|determiners/der]] [[Patienten|nouns/Patient#1]] [[wiederbeleben|verbs/wiederbeleben#1]]."
   },
   "cf7c5b5522": {
     "text": "„Dann werde ich mal einen Zettel abgeben bei den Nachbarn, ich muß meine Ware wiederhaben.“",
@@ -13285,7 +13331,7 @@
         "gloss_hint": "believe"
       }
     ],
-    "text_linked": "„Zum [[Schlusse|nouns/Schluss#3]] [[seiner|pronouns/sein]] Argumentation [[beruft|verbs/berufen]] [[sich|pronouns/sich#1]] [[der|pronouns/der_nominativ#1]] [[Herr|nouns/Herr#1]] Verfasser [[auf|prepositions/auf#1]] [[die|pronouns/die#1]] [[Abartung|nouns/Abartung#3]] der [[Drohnen|nouns/Drohne#3]], die er [[nur|particles/nur#1]] auf [[wirkliche|adjectives/wirklich#1]] Befruchtung [[zurückführen|verbs/zurückführen]] [[zu|prepositions/zu#1]] [[können|verbs/können_etwas#1]] [[glaubt|verbs/glauben#1]].“"
+    "text_linked": "„Zum [[Schlusse|nouns/Schluss#3]] [[seiner|pronouns/sein]] Argumentation [[beruft|verbs/berufen]] [[sich|pronouns/sich#1]] [[der|pronouns/der_nominativ#1]] [[Herr|nouns/Herr#1]] Verfasser [[auf|prepositions/auf#1]] [[die|pronouns/die#1]] [[Abartung|nouns/Abartung#3]] der [[Drohnen|nouns/Drohne#3]], die er [[nur|particles/nur#1]] auf [[wirkliche|adjectives/wirklich#1]] Befruchtung [[zurückführen|verbs/zurückführen]] [[zu|prepositions/zu#1]] [[können|verbs/können_beherrschen]] [[glaubt|verbs/glauben#1]].“"
   },
   "cf7e9b88ec": {
     "text": "Durch ihre ewige Nachsicht hat sie die Kinder ganz und gar verdorben.",
@@ -14341,7 +14387,7 @@
         "gloss_hint": "school"
       }
     ],
-    "text_linked": "[[Ich|pronouns/ich]] [[kann|verbs/können_etwas#1]] [[leider|adverbs/leider]] [[nicht|particles/nicht#1]]: [[Wir|pronouns/wir#1]] [[haben|verbs/haben#1]] [[heute|adverbs/heute#1]] [[Schule|nouns/Schule#1]].",
+    "text_linked": "[[Ich|pronouns/ich]] [[kann|verbs/können_beherrschen]] [[leider|adverbs/leider]] [[nicht|particles/nicht#1]]: [[Wir|pronouns/wir#1]] [[haben|verbs/haben#1]] [[heute|adverbs/heute#1]] [[Schule|nouns/Schule#1]].",
     "_proofread": {
       "translation": true
     }
@@ -15365,7 +15411,7 @@
         "gloss_hint": "do"
       }
     ],
-    "text_linked": "„Also [[bist|verbs/sein#2]] [[du|pronouns/du]] [[gekniffen|verbs/kniffen]], [[wenn|conjunctions/wenn]] du [[mit|prepositions/mit#1]] [[mir|pronouns/ich]] [[kommst|verbs/kommen#5]], [[und|conjunctions/und]] genauso, wenn du [[es|pronouns/es]] [[nicht|particles/nicht#1]] [[tust|verbs/tun_handlung#1]].“"
+    "text_linked": "„Also [[bist|verbs/sein#2]] [[du|pronouns/du]] gekniffen, [[wenn|conjunctions/wenn]] du [[mit|prepositions/mit#1]] [[mir|pronouns/ich]] [[kommst|verbs/kommen#5]], [[und|conjunctions/und]] genauso, wenn du [[es|pronouns/es]] [[nicht|particles/nicht#1]] [[tust|verbs/tun_handlung#1]].“"
   },
   "cf90363977": {
     "text": "„Sie schnarcht. Ein schweres, alkoholisiertes Schnarchen.“",
@@ -15596,7 +15642,7 @@
         "gloss_hint": "Sahara"
       }
     ],
-    "text_linked": "Entlang [[der|determiners/der]] [[Westküste|nouns/Westküste#1]] des afrikanischen [[Kontinents|nouns/Kontinent#1]] [[stoßen|verbs/stoßen#4]] [[die|determiners/die]] [[Expeditionen|nouns/Expedition#4]] [[immer|adverbs/immer#1]] [[weiter|adverbs/weiter#1]] [[nach|prepositions/nach#1]] [[Süden|nouns/Süden#1]] [[vor|prepositions/vor#1]]: Gil Eanes [[umrundet|verbs/umrunden]] 1434 das Kap Bojador [[an|prepositions/an#2]] der Westküste der Sahara."
+    "text_linked": "[[Entlang|postpositions/entlang]] [[der|determiners/der]] [[Westküste|nouns/Westküste#1]] des afrikanischen [[Kontinents|nouns/Kontinent#1]] [[stoßen|verbs/stoßen#4]] [[die|determiners/die]] [[Expeditionen|nouns/Expedition#4]] [[immer|adverbs/immer#1]] [[weiter|adverbs/weiter#1]] [[nach|prepositions/nach#1]] [[Süden|nouns/Süden#1]] [[vor|prepositions/vor#1]]: Gil Eanes [[umrundet|verbs/umrunden]] 1434 das Kap Bojador [[an|prepositions/an#2]] der Westküste der Sahara."
   },
   "cf92195544": {
     "text": "„Spricht man von ‚Lippe‘ ist im allgemeinen das größere Lippe (-Detmold) gemeint (ca. 1200 qkm – heute in NRW). Schaumburg-Lippe, nördlich davon (340 qkm), gehört heute zu Niedersachsen.“",
@@ -16814,11 +16860,39 @@
   },
   "cf9af8d4db": {
     "text": "Der Reiseführer war sehr kompetent und stets hilfsbereit.",
-    "translation": null,
+    "translation": "The tour guide was very competent and always helpful.",
     "source": "wiktionary",
     "lemmas": [
       "Reiseführer"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Reiseführer",
+        "lemma": "Reiseführer",
+        "pos": "noun",
+        "gloss_hint": "tour guide"
+      },
+      {
+        "form": "kompetent",
+        "lemma": "kompetent",
+        "pos": "adjective",
+        "gloss_hint": "capable"
+      },
+      {
+        "form": "hilfsbereit",
+        "lemma": "hilfsbereit",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "stets",
+        "lemma": "stets",
+        "pos": "adverb",
+        "gloss_hint": "always"
+      }
+    ],
+    "text_linked": "Der [[Reiseführer|nouns/Reiseführer#1]] war sehr [[kompetent|adjectives/kompetent#1]] und [[stets|adverbs/stets#1]] [[hilfsbereit|adjectives/hilfsbereit]]."
   },
   "cf9bd0dab5": {
     "text": "„Jawoll, det is och man wieder ſo’n Jeſchaͤft zum Vahungern.“",
@@ -17213,7 +17287,7 @@
         "gloss_hint": "manage"
       }
     ],
-    "text_linked": "Stalker [[ertragen|verbs/ertragen]] keine Zurückweisung, deshalb [[handelt|verbs/handeln_auf]] [[es|pronouns/es]] [[sich|pronouns/sich]] [[bei|prepositions/bei]] [[den|determiners/der]] meisten [[auch|adverbs/auch]] [[um|prepositions/um]] [[verlassene|adjectives/verlassen#1]] Lebenspartner oder zurückgewiesene [[Liebhaber|nouns/Liebhaber#1]], [[die|determiners/die]] [[eine|determiners/ein]] [[Trennung|nouns/Trennung#2]] oder [[ein|determiners/ein]] Nein [[nicht|particles/nicht]] [[akzeptieren|verbs/akzeptieren#1]] [[können|verbs/können_etwas#2]]."
+    "text_linked": "Stalker [[ertragen|verbs/ertragen]] keine Zurückweisung, deshalb [[handelt|verbs/handeln_auf]] [[es|pronouns/es]] [[sich|pronouns/sich]] [[bei|prepositions/bei]] [[den|determiners/der]] meisten [[auch|adverbs/auch]] [[um|prepositions/um]] [[verlassene|adjectives/verlassen#1]] Lebenspartner oder zurückgewiesene [[Liebhaber|nouns/Liebhaber#1]], [[die|determiners/die]] [[eine|determiners/ein]] [[Trennung|nouns/Trennung#2]] oder [[ein|determiners/ein]] Nein [[nicht|particles/nicht]] [[akzeptieren|verbs/akzeptieren#1]] [[können|verbs/können_beherrschen]]."
   },
   "cf9f608846": {
     "text": "Ich brauche nichts zu Mittag zu essen, bin noch voll vom Frühstück.",
@@ -17779,7 +17853,7 @@
         "gloss_hint": "belly buttons"
       }
     ],
-    "text_linked": "„Ich [[flaniere|verbs/flanieren]] [[zwischen|prepositions/zwischen#1]] [[schlaffen|adjectives/schlaff#1]] [[Penissen|nouns/Penis#1]] [[auf|prepositions/auf#1]] behaarten [[Schenkeln|nouns/Schenkel]], [[Brüsten|nouns/Brust#2]], [[die|pronouns/die]] [[sich|pronouns/sich]] [[der|pronouns/der_nominativ]] [[Sonne|nouns/Sonne#1]] [[präsentieren|verbs/präsentieren#1]], [[von|prepositions/von#1]] [[Tätowierungen|nouns/Tätowierung#1]] umkränzten Pobacken [[und|conjunctions/und]] strassgepiercten [[Bauchnabeln|nouns/Bauchnabel]].“"
+    "text_linked": "„Ich [[flaniere|verbs/flanieren#1]] [[zwischen|prepositions/zwischen#1]] [[schlaffen|adjectives/schlaff#1]] [[Penissen|nouns/Penis#1]] [[auf|prepositions/auf#1]] behaarten [[Schenkeln|nouns/Schenkel]], [[Brüsten|nouns/Brust#2]], [[die|pronouns/die]] [[sich|pronouns/sich]] [[der|pronouns/der_nominativ]] [[Sonne|nouns/Sonne#1]] [[präsentieren|verbs/präsentieren#1]], [[von|prepositions/von#1]] [[Tätowierungen|nouns/Tätowierung#1]] umkränzten Pobacken [[und|conjunctions/und]] strassgepiercten [[Bauchnabeln|nouns/Bauchnabel]].“"
   },
   "cfa6bb93cb": {
     "text": "sich in den Arsch treten",
@@ -20350,11 +20424,39 @@
   },
   "cfbfbddc51": {
     "text": "Die Form „spielend“ ist Partizip Präsens.",
-    "translation": null,
+    "translation": "The form \"spielend\" is a present participle.",
     "source": "wiktionary",
     "lemmas": [
       "Partizip"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Form",
+        "lemma": "Form",
+        "pos": "noun",
+        "gloss_hint": "linguistic form"
+      },
+      {
+        "form": "spielend",
+        "lemma": "spielend",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Partizip",
+        "lemma": "Partizip",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Präsens",
+        "lemma": "Präsens",
+        "pos": "noun",
+        "gloss_hint": "present tense"
+      }
+    ],
+    "text_linked": "Die [[Form|nouns/Form#7]] „spielend“ ist [[Partizip|nouns/Partizip]] [[Präsens|nouns/Präsens#1]]."
   },
   "cfc10ff053": {
     "text": "„Später wird ihn seine unglückliche Leidenschaft für Julia dazu treiben, die Stimme derer, die er liebt, auch allen seinen Jung-Mädchen-Gestalten zu verleihen.“",
@@ -21722,7 +21824,7 @@
         "gloss_hint": "coupled"
       }
     ],
-    "text_linked": "Die Wagen [[können|verbs/können_etwas#2]] [[mit|prepositions/mit]] [[einer|determiners/ein]] [[einfachen|adjectives/einfach]] [[Kupplung|nouns/Kupplung#1]] aneinandergehängt werden."
+    "text_linked": "Die Wagen [[können|verbs/können_beherrschen]] [[mit|prepositions/mit]] [[einer|determiners/ein]] [[einfachen|adjectives/einfach]] [[Kupplung|nouns/Kupplung#1]] aneinandergehängt werden."
   },
   "cfc922e3a8": {
     "text": "Die alte Uhr, die ich von meinem Großvater geerbt habe, steht.",
@@ -21731,7 +21833,7 @@
     "lemmas": [
       "stehen"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "alte",
@@ -23672,7 +23774,7 @@
         "gloss_hint": "excitement"
       }
     ],
-    "text_linked": "„Dann [[setzt|verbs/setzen]] sie [[sich|pronouns/sich]] [[auf|prepositions/auf]] ihn, [[spießt|verbs/spießen]] sich [[mit|prepositions/mit]] [[einem|determiners/ein]] [[kurzen|adjectives/kurz]] [[Ruck|nouns/Ruck#1]] [[ihres|pronouns/ihr_person]] [[Beckens|nouns/Becken]] selbst auf, das [[Gesicht|nouns/Gesicht#1]] ihm zugewandt [[und|conjunctions/und]] [[reitet|verbs/reiten]] ihn. Reitet ihn mit [[harten|adjectives/hart]], [[schnellen|adjectives/schnell#1]] [[Bewegungen|nouns/Bewegung#2]] ihres Unterkörpers mit aufreizend wippenden [[Brüsten|nouns/Brust#2]], [[zeigt|verbs/zeigen]] ihm [[ihre|pronouns/ihr_person]] [[ganze|adjectives/ganz]] [[Erfahrung|nouns/Erfahrung#1]] und [[treibt|verbs/treiben]] ihn [[fast|adverbs/fast]] [[zum|prepositions/zu]] [[Wahnsinn|nouns/Wahnsinn#3]] [[vor|prepositions/vor]] [[Erregung|nouns/Erregung#1]].“"
+    "text_linked": "„Dann [[setzt|verbs/setzen]] sie [[sich|pronouns/sich]] [[auf|prepositions/auf]] ihn, spießt sich [[mit|prepositions/mit]] [[einem|determiners/ein]] [[kurzen|adjectives/kurz]] [[Ruck|nouns/Ruck#1]] [[ihres|pronouns/ihr_person]] [[Beckens|nouns/Becken]] selbst auf, das [[Gesicht|nouns/Gesicht#1]] ihm zugewandt [[und|conjunctions/und]] [[reitet|verbs/reiten]] ihn. Reitet ihn mit [[harten|adjectives/hart]], [[schnellen|adjectives/schnell#1]] [[Bewegungen|nouns/Bewegung#2]] ihres Unterkörpers mit aufreizend wippenden [[Brüsten|nouns/Brust#2]], [[zeigt|verbs/zeigen]] ihm [[ihre|pronouns/ihr_person]] [[ganze|adjectives/ganz]] [[Erfahrung|nouns/Erfahrung#1]] und [[treibt|verbs/treiben]] ihn [[fast|adverbs/fast]] [[zum|prepositions/zu]] [[Wahnsinn|nouns/Wahnsinn#3]] [[vor|prepositions/vor]] [[Erregung|nouns/Erregung#1]].“"
   },
   "cfdcd2161a": {
     "text": "„Auf diese Weise gelang auch die Mehrzahl der Bundesglieder nach Deutschland, und durch sie bewährte sich der Bund als eine treffliche Vorschule der Revolution.“",
@@ -24689,11 +24791,42 @@
   },
   "cfe21eebcd": {
     "text": "Mona setzte sich neben Ulf, wenngleich sie ihn eigentlich nicht mochte.",
-    "translation": null,
+    "translation": "Mona sat down next to Ulf, even though she didn't actually like him.",
     "source": "wiktionary",
     "lemmas": [
       "wenngleich"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mona",
+        "lemma": "Mona",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "setzte",
+        "lemma": "setzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ulf",
+        "lemma": "Ulf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "mochte",
+        "lemma": "mögen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true
+    },
+    "text_linked": "Mona [[setzte|verbs/setzen]] sich neben Ulf, wenngleich sie ihn eigentlich nicht [[mochte|verbs/mögen_etwas]]."
   },
   "cfe24fdd22": {
     "text": "„Zur Hochzeit des Jazz war New York seine Hauptstadt.“",

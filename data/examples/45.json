@@ -1573,7 +1573,7 @@
         "gloss_hint": "contaminated"
       }
     ],
-    "text_linked": "„[[Golfplätze|nouns/Golfplatz]] [[gelten|verbs/gelten#3]] [[als|conjunctions/als]] [[besonders|adverbs/besonders]] pestizidbelastet, [[um|prepositions/um]] [[ihr|pronouns/ihr_person]] [[Grün|adjectives/grün#1]] [[in|prepositions/in]] [[Schuss|nouns/Schuss#2]] [[zu|prepositions/zu]] [[halten|verbs/halten#2]]. Kritiker [[monieren|verbs/monieren]], [[dass|conjunctions/dass]] [[dadurch|adverbs/dadurch]] [[das|pronouns/das_[1]]] [[Trinkwasser|nouns/Trinkwasser#1]] [[belastet|adjectives/belastet#1]] würde.“"
+    "text_linked": "„[[Golfplätze|nouns/Golfplatz]] [[gelten|verbs/gelten#3]] [[als|conjunctions/als]] [[besonders|adverbs/besonders]] pestizidbelastet, [[um|prepositions/um]] [[ihr|pronouns/ihr_person]] [[Grün|adjectives/grün#1]] [[in|prepositions/in]] [[Schuss|nouns/Schuss#2]] [[zu|prepositions/zu]] [[halten|verbs/halten#2]]. Kritiker monieren, [[dass|conjunctions/dass]] [[dadurch|adverbs/dadurch]] [[das|pronouns/das_[1]]] [[Trinkwasser|nouns/Trinkwasser#1]] [[belastet|adjectives/belastet#1]] würde.“"
   },
   "450a01be46": {
     "text": "Der Vertreter hatte seinen Aktenkoffer dabei.",
@@ -2586,11 +2586,37 @@
   },
   "451275bae3": {
     "text": "Mal sehen, inwieweit man diese Arbeiten schon abschließen kann.",
-    "translation": null,
+    "translation": "Let's see to what extent we can already complete this work.",
     "source": "wiktionary",
     "lemmas": [
       "inwieweit"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sehen",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": "see"
+      },
+      {
+        "form": "Arbeiten",
+        "lemma": "Arbeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abschließen",
+        "lemma": "abschließen",
+        "pos": "verb",
+        "gloss_hint": "finish"
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "dcb79fb9"
+    },
+    "text_linked": "Mal [[sehen|verbs/sehen#1]], inwieweit man diese [[Arbeiten|nouns/Arbeit]] schon [[abschließen|verbs/abschließen#1]] kann."
   },
   "4512de7299": {
     "text": "„Ein Kriseninterventionsteam betreute die Angehörigen.“",
@@ -5673,11 +5699,43 @@
   },
   "452eed3b59": {
     "text": "Dass Waldemar das Abitur geschafft hat, ist schlechthin unmöglich.",
-    "translation": null,
+    "translation": "That Waldemar passed his final exam is simply impossible.",
     "source": "wiktionary",
     "lemmas": [
       "schlechthin"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Waldemar",
+        "lemma": "Waldemar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abitur",
+        "lemma": "Abitur",
+        "pos": "noun",
+        "gloss_hint": "final exam"
+      },
+      {
+        "form": "geschafft",
+        "lemma": "schaffen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "unmöglich",
+        "lemma": "unmöglich",
+        "pos": "adjective",
+        "gloss_hint": "impossible"
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "286c5101"
+    },
+    "text_linked": "Dass Waldemar das [[Abitur|nouns/Abitur#1]] [[geschafft|verbs/schaffen_etwas]] hat, ist schlechthin [[unmöglich|adjectives/unmöglich#1]]."
   },
   "452f236b7f": {
     "text": "„John Reynolds richtete sich vorsichtig auf und sah um sich, so wie ein gejagter Wolf um sich blickt, und eilte dann den Abhang hinunter.“",
@@ -8619,7 +8677,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Bereits|adverbs/bereits]] 1863 [[konnte|verbs/können_beherrschen]] [[man|pronouns/man#2]] [[auf|prepositions/auf]] [[einem|determiners/ein]] [[öffentlichen|adjectives/öffentlich]] Pissoir [[sein|verbs/sein#1]] [[Bedürfnis|nouns/Bedürfnis#1]] [[verrichten|verbs/verrichten]]."
+    "text_linked": "[[Bereits|adverbs/bereits]] 1863 [[konnte|verbs/können_etwas#1]] [[man|pronouns/man#2]] [[auf|prepositions/auf]] [[einem|determiners/ein]] [[öffentlichen|adjectives/öffentlich]] Pissoir [[sein|verbs/sein#1]] [[Bedürfnis|nouns/Bedürfnis#1]] [[verrichten|verbs/verrichten]]."
   },
   "45486d8785": {
     "text": "„Weitflächige Terrassen mit Swimmingpool und kunstvoll hängenden Gärten erhöhen den Eindruck des Erfolgs.“",
@@ -8991,7 +9049,7 @@
         "gloss_hint": "can (be able)"
       }
     ],
-    "text_linked": "„[[Mit|adverbs/mit]] einer Stopfbuchse [[werden|verbs/werden#2]] typischerweise drehende [[Wellen|nouns/Welle#1]] [[oder|particles/oder#5]] bewegliche [[Stangen|nouns/Stange#1]] [[gegenüber|prepositions/gegenüber#2]] [[einem|determiners/ein]] [[Gehäuse|nouns/Gehäuse]] gegenüber [[Flüssigkeiten|nouns/Flüssigkeit]] oder [[Gasen|nouns/Gas#1]] [[abgedichtet|verbs/abdichten]], [[die|determiners/die]] [[auch|adverbs/auch]] [[unter|prepositions/unter#1]] [[Druck|nouns/Druck_kraft#1]] [[stehen|verbs/stehen#2]] [[können|verbs/können_etwas#1]].“"
+    "text_linked": "„[[Mit|adverbs/mit]] einer Stopfbuchse [[werden|verbs/werden#2]] typischerweise drehende [[Wellen|nouns/Welle#1]] [[oder|particles/oder#5]] bewegliche [[Stangen|nouns/Stange#1]] [[gegenüber|prepositions/gegenüber#1]] [[einem|determiners/ein]] [[Gehäuse|nouns/Gehäuse]] gegenüber [[Flüssigkeiten|nouns/Flüssigkeit]] oder [[Gasen|nouns/Gas#1]] [[abgedichtet|verbs/abdichten#1]], [[die|determiners/die]] [[auch|adverbs/auch]] [[unter|prepositions/unter#1]] [[Druck|nouns/Druck_kraft#1]] [[stehen|verbs/stehen#2]] [[können|verbs/können_beherrschen]].“"
   },
   "45499592af": {
     "text": "Wir sind von heute an geschiedene Leute; da beißt keene Maus keenen Faden nich! (Karl May, Der Ölprinz, z.n. Projekt Gutenberg)",
@@ -9163,11 +9221,39 @@
   },
   "454bc84cd6": {
     "text": "Eine Bescheinigung dient als schriftlicher Nachweis für die Richtigkeit einer behaupteten Tatsache.",
-    "translation": null,
+    "translation": "A certificate serves as written proof of the correctness of an asserted fact.",
     "source": "wiktionary",
     "lemmas": [
       "Bescheinigung"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bescheinigung",
+        "lemma": "Bescheinigung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nachweis",
+        "lemma": "Nachweis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Richtigkeit",
+        "lemma": "Richtigkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tatsache",
+        "lemma": "Tatsache",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Eine [[Bescheinigung|nouns/Bescheinigung]] dient als schriftlicher Nachweis für die Richtigkeit einer behaupteten [[Tatsache|nouns/Tatsache]]."
   },
   "454bd59249": {
     "text": "„Ich gehe davon aus, dass das Streben nach Wahrheit – das Bedürfnis, sich ein realistisches Bild von der Welt und dem Guten zu machen – nahezu universal ist.“",
@@ -10640,7 +10726,7 @@
         "gloss_hint": "delay"
       }
     ],
-    "text_linked": "„Besser [[aber|conjunctions/aber]] [[wäre|verbs/sein]] [[es|pronouns/es]], [[nicht|particles/nicht]] [[zu|particles/zu_drückt]] [[sterben|verbs/sterben]] [[und|conjunctions/und]] [[den|determiners/der]] [[Duft|nouns/Duft#1]] [[trotzdem|adverbs/trotzdem]] zu [[besitzen|verbs/besitzen#1]], oder [[zumindest|adverbs/zumindest]] [[seinen|pronouns/sein#1]] [[Verlust|nouns/Verlust#1]] [[so|adverbs/so]] lange [[als|conjunctions/als]] [[irgend|adverbs/irgend#1]] [[möglich|adjectives/möglich#4]] [[hinauszuzögern|verbs/hinauszögern]].“"
+    "text_linked": "„Besser [[aber|conjunctions/aber]] [[wäre|verbs/sein]] [[es|pronouns/es]], [[nicht|particles/nicht]] [[zu|particles/zu_drückt]] [[sterben|verbs/sterben]] [[und|conjunctions/und]] [[den|determiners/der]] [[Duft|nouns/Duft#1]] [[trotzdem|adverbs/trotzdem]] zu [[besitzen|verbs/besitzen#1]], oder [[zumindest|adverbs/zumindest]] [[seinen|pronouns/sein#1]] [[Verlust|nouns/Verlust#1]] [[so|adverbs/so]] lange [[als|conjunctions/als]] [[irgend|adverbs/irgend#1]] [[möglich|adjectives/möglich#4]] hinauszuzögern.“"
   },
   "4559894e8e": {
     "text": "die Luft ist rein",
@@ -11999,7 +12085,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Ist der Krahn an [[Bord|nouns/Bord_[schiffs-]rand]] [[geschwungen|verbs/schwingen]], [[so|adverbs/so]] [[werden|verbs/werden#2]] [[die|determiners/die]] [[Körbe|nouns/Korb#9]] [[auf|prepositions/auf#1]] [[das|pronouns/das_[1]]] [[Kommando|nouns/Kommando#3]] [[‚Hier‘|adverbs/hier#1]] niedergelassen, [[ausgeschüttet|verbs/ausschütten]] [[und|conjunctions/und]] [[durch|prepositions/durch#1]] [[große|adjectives/groß#1]] eiserne Trichter [[in|prepositions/in#1]] die Kohlenbunker [[geschaufelt|verbs/schaufeln]], [[wo|adverbs/wo]] die Heizer [[über|prepositions/über#2]] sie [[herfallen|verbs/herfallen]].“ [Anmerkung: ‚Krahn‘ ist veraltete deutsche Rechtschreibung]"
+    "text_linked": "„Ist der Krahn an [[Bord|nouns/Bord_[schiffs-]rand]] [[geschwungen|verbs/schwingen]], [[so|adverbs/so]] [[werden|verbs/werden#2]] [[die|determiners/die]] [[Körbe|nouns/Korb#9]] [[auf|prepositions/auf#1]] [[das|pronouns/das_[1]]] [[Kommando|nouns/Kommando#3]] [[‚Hier‘|adverbs/hier#1]] niedergelassen, [[ausgeschüttet|verbs/ausschütten]] [[und|conjunctions/und]] [[durch|prepositions/durch#1]] [[große|adjectives/groß#1]] eiserne Trichter [[in|prepositions/in#1]] die Kohlenbunker [[geschaufelt|verbs/schaufeln]], [[wo|adverbs/wo]] die Heizer [[über|prepositions/über#2]] sie herfallen.“ [Anmerkung: ‚Krahn‘ ist veraltete deutsche Rechtschreibung]"
   },
   "4563fdac82": {
     "text": "Die Stühle sind für Gäste gedacht.",
@@ -13526,7 +13612,7 @@
         "gloss_hint": "do"
       }
     ],
-    "text_linked": "[[Die|pronouns/die]] [[Wunde|nouns/Wunde#1]] [[auf|prepositions/auf]] [[der|determiners/der]] [[Brust|nouns/Brust#1]] wurde [[ausgewaschen|verbs/auswaschen]] [[und|conjunctions/und]] [[mit|prepositions/mit]] [[einem|determiners/ein]] [[Pflaster|nouns/Pflaster#1]] [[verdeckt|adjectives/verdeckt]]. Die [[Enden|nouns/Ende]] der Wunde, [[wo|adverbs/wo]] [[die|pronouns/die]] [[Haut|nouns/Haut#1]] [[nur|particles/nur]] [[geschlitzt|verbs/schlitzen]] [[war|verbs/sein#2]], [[nähte|verbs/nähen#1]] Davids [[zusammen|adverbs/zusammen]], und erschrocken [[blickten|verbs/blicken#1]] die [[Indianer|nouns/Indianer]] auf [[den|determiners/der]] Medizinmann, der [[dies|pronouns/dies]] [[so|adverbs/so]] [[kaltblütig|adjectives/kaltblütig]] [[tun|verbs/tun_handlung#1]] [[konnte|verbs/können_beherrschen#1]], [[als|conjunctions/als]] [[hätte|verbs/haben#1]] er [[es|pronouns/es]] mit einem zerrissenen [[Hemd|nouns/Hemd#1]] [[zu|particles/zu_drückt]] tun."
+    "text_linked": "[[Die|pronouns/die]] [[Wunde|nouns/Wunde#1]] [[auf|prepositions/auf]] [[der|determiners/der]] [[Brust|nouns/Brust#1]] wurde [[ausgewaschen|verbs/auswaschen]] [[und|conjunctions/und]] [[mit|prepositions/mit]] [[einem|determiners/ein]] [[Pflaster|nouns/Pflaster#1]] [[verdeckt|adjectives/verdeckt]]. Die [[Enden|nouns/Ende]] der Wunde, [[wo|adverbs/wo]] [[die|pronouns/die]] [[Haut|nouns/Haut#1]] [[nur|particles/nur]] geschlitzt [[war|verbs/sein#2]], [[nähte|verbs/nähen#1]] Davids [[zusammen|adverbs/zusammen]], und erschrocken [[blickten|verbs/blicken#1]] die [[Indianer|nouns/Indianer]] auf [[den|determiners/der]] Medizinmann, der [[dies|pronouns/dies]] [[so|adverbs/so]] [[kaltblütig|adjectives/kaltblütig]] [[tun|verbs/tun_handlung#1]] [[konnte|verbs/können_beherrschen#1]], [[als|conjunctions/als]] [[hätte|verbs/haben#1]] er [[es|pronouns/es]] mit einem zerrissenen [[Hemd|nouns/Hemd#1]] [[zu|particles/zu_drückt]] tun."
   },
   "456d18fd35": {
     "text": "Ich möchte Sie zu unserer Feier einladen.",
@@ -15449,7 +15535,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[Fußball:] „»[[Bis|particles/bis]] [[jetzt|adverbs/jetzt]] [[haben|verbs/haben#2]] [[wir|pronouns/wir]] [[noch|adverbs/noch]] [[gar|adjectives/gar#2]] nichts. [[Deswegen|adverbs/deswegen]] [[wissen|verbs/wissen#1]] wir, [[dass|conjunctions/dass]] wir [[Gas|nouns/Gas#1]] [[geben|verbs/geben#2]] [[müssen|verbs/müssen#1]] [[bis|particles/bis]] [[zum|particles/zu_drückt]] [[Ende|nouns/Ende#1]], bis [[es|pronouns/es]] [[feststeht|verbs/feststehen]]. [[Um|prepositions/um]] [[dann|adverbs/dann]] [[auch|adverbs/auch]] [[den|pronouns/der_nominativ]] [[Aufstieg|nouns/Aufstieg#6]] [[feiern|verbs/feiern#1]] [[zu|particles/zu_drückt]] [[können|verbs/können_etwas#2]]«, [[ordnet|verbs/ordnen]] [[der|pronouns/der_nominativ]] Ulmer [[Kapitän|nouns/Kapitän#6]] [[ein|determiners/ein]].“"
+    "text_linked": "[Fußball:] „»[[Bis|particles/bis]] [[jetzt|adverbs/jetzt]] [[haben|verbs/haben#2]] [[wir|pronouns/wir]] [[noch|adverbs/noch]] [[gar|adjectives/gar#2]] nichts. [[Deswegen|adverbs/deswegen]] [[wissen|verbs/wissen#1]] wir, [[dass|conjunctions/dass]] wir [[Gas|nouns/Gas#1]] [[geben|verbs/geben#2]] [[müssen|verbs/müssen#1]] [[bis|particles/bis]] [[zum|particles/zu_drückt]] [[Ende|nouns/Ende#1]], bis [[es|pronouns/es]] [[feststeht|verbs/feststehen]]. [[Um|prepositions/um]] [[dann|adverbs/dann]] [[auch|adverbs/auch]] [[den|pronouns/der_nominativ]] [[Aufstieg|nouns/Aufstieg#6]] [[feiern|verbs/feiern#1]] [[zu|particles/zu_drückt]] [[können|verbs/können_beherrschen]]«, [[ordnet|verbs/ordnen]] [[der|pronouns/der_nominativ]] Ulmer [[Kapitän|nouns/Kapitän#6]] [[ein|determiners/ein]].“"
   },
   "4582d7313a": {
     "text": "zum Sündenbock machen",
@@ -17285,13 +17371,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to target someone",
     "source": "wiktionary",
     "lemmas": [
       "Korn",
       "aufs"
     ],
-    "ref": "phrases/jemanden aufs Korn nehmen"
+    "ref": "phrases/jemanden aufs Korn nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "4593f83dfc": {
     "text": "Alle Freunde zu der Feier einzuladen, ist eine großartige Idee.",
@@ -18406,7 +18493,7 @@
         "gloss_hint": "increased"
       }
     ],
-    "text_linked": "„Madam Melina [[rezitirte|verbs/rezitieren]] [[einige|numerals/einige#1]] [[erhabene|adjectives/erhaben#1]] [[Gedichte|nouns/Gedicht#1]], [[und|conjunctions/und]] [[ihr|pronouns/ihr_zu#1]] [[Mann|nouns/Mann#2]], [[der|pronouns/der_nominativ#2]] im Rauſche [[nicht|particles/nicht#1]] ſehr [[liebenswürdig|adjectives/liebenswürdig]] [[war|verbs/sein#2]], fing [[an|prepositions/an]] [[auf|prepositions/auf]] [[die|pronouns/die#2]] ſchlechte Bereitung [[des|determiners/des]] [[Punſches|nouns/Punsch#1]] [[zu|particles/zu_drückt]] ſchelten, [[verſicherte|verbs/versichern#3]] daß er [[ein|determiners/ein#1]] [[Feſt|nouns/Fest]] [[ganz|adjectives/ganz]] anders [[einzurichten|verbs/einrichten#2]] [[verſtehe|verbs/verstehen_gesprochenes#13]], und [[ward|verbs/werden]] [[zuletzt|adverbs/zuletzt#1]], als Laertes Stillſchweigen [[gebot|nouns/Gebot#1]], immer gröber und lauter, ſo daß [[dieſer|pronouns/dieser#1]], [[ohne|prepositions/ohne]] ſich [[lange|adverbs/lange#1]] zu [[bedenken|verbs/bedenken]], [[ihm|pronouns/ihm#1]] die Scherben des Napfs an den [[Kopf|nouns/Kopf#1]] [[warf|verbs/werfen#1]], und [[dadurch|adverbs/dadurch#2]] den [[Lärm|nouns/Lärm#1]] nicht [[wenig|pronouns/wenig#1]] [[vermehrte|verbs/vermehren#1]].“"
+    "text_linked": "„Madam Melina [[rezitirte|verbs/rezitieren#1]] [[einige|numerals/einige#1]] [[erhabene|adjectives/erhaben#1]] [[Gedichte|nouns/Gedicht#1]], [[und|conjunctions/und]] [[ihr|pronouns/ihr_zu#1]] [[Mann|nouns/Mann#2]], [[der|pronouns/der_nominativ#2]] im Rauſche [[nicht|particles/nicht#1]] ſehr [[liebenswürdig|adjectives/liebenswürdig]] [[war|verbs/sein#2]], fing [[an|prepositions/an]] [[auf|prepositions/auf]] [[die|pronouns/die#2]] ſchlechte Bereitung [[des|determiners/des]] [[Punſches|nouns/Punsch#1]] [[zu|particles/zu_drückt]] ſchelten, [[verſicherte|verbs/versichern#3]] daß er [[ein|determiners/ein#1]] [[Feſt|nouns/Fest]] [[ganz|adjectives/ganz]] anders [[einzurichten|verbs/einrichten#2]] [[verſtehe|verbs/verstehen_gesprochenes#13]], und [[ward|verbs/werden]] [[zuletzt|adverbs/zuletzt#1]], als Laertes Stillſchweigen [[gebot|nouns/Gebot#1]], immer gröber und lauter, ſo daß [[dieſer|pronouns/dieser#1]], [[ohne|prepositions/ohne]] ſich [[lange|adverbs/lange#1]] zu [[bedenken|verbs/bedenken]], [[ihm|pronouns/ihm#1]] die Scherben des Napfs an den [[Kopf|nouns/Kopf#1]] [[warf|verbs/werfen#1]], und [[dadurch|adverbs/dadurch#2]] den [[Lärm|nouns/Lärm#1]] nicht [[wenig|pronouns/wenig#1]] [[vermehrte|verbs/vermehren#1]].“"
   },
   "459be4b4df": {
     "text": "Ja, es waren wirklich erschreckende Nachrichten, die uns da aus Australien an diesem Weihnachtstag erreichten.",
@@ -18948,7 +19035,7 @@
         "gloss_hint": "first"
       }
     ],
-    "text_linked": "[[Von|prepositions/von]] [[wegen|prepositions/wegen]] „keine [[Zeit“|nouns/Zeit#1]]: [[Wer|pronouns/wer_derjenige#1]] [[zuerst|adverbs/zuerst#1]] [[kommt|verbs/kommen]], [[mahlt|verbs/mahlen]] zuerst!"
+    "text_linked": "[[Von|prepositions/von]] [[wegen|prepositions/wegen]] „keine [[Zeit“|nouns/Zeit#1]]: [[Wer|pronouns/wer_derjenige#1]] [[zuerst|adverbs/zuerst#1]] [[kommt|verbs/kommen]], mahlt zuerst!"
   },
   "45a19ce50f": {
     "text": "„Als er selbst durch den langen Krankenhausaufenthalt seines Vaters mit der harten und geradezu unmenschlichen Realität in brasilianischen Krankenhäusern konfrontiert wurde, stieg der Wunsch, die Arbeit der therapeutischen Clowns aus New York aufzugreifen und für sein Heimatland nutzbar zu machen. […] Heute sind die therapeutischen Clowns von Wellington Nogueira in mehreren Bundesstaaten in Brasilien vertreten und fest in den Krankenhausalltag eingebunden.“",
@@ -23543,7 +23630,7 @@
         "gloss_hint": "waterweed"
       }
     ],
-    "text_linked": "„Die Massivität, [[mit|adverbs/mit#1]] der [[es|pronouns/es]] [[nun|adverbs/nun#1]] [[aus|prepositions/aus#1]] [[seinen|pronouns/sein#1]] Refugien [[hinaus|adverbs/hinaus#1]] [[in|prepositions/in#1]] [[die|determiners/die]] [[Straßen|nouns/Straße#2]] [[und|conjunctions/und#1]] [[Bürgersteige|nouns/Bürgersteig#1]] [[drängte|verbs/drängen#1]], [[machte|verbs/machen#2]] jede [[Hoffnung|nouns/Hoffnung#1]] [[zunichte|verbs/zunichtemachen]], es [[könnte|verbs/können_beherrschen]] [[im|prepositions/in#3]] [[Laufe|nouns/Lauf#3]] [[des|determiners/der]] [[Winters|nouns/Winter#1]] [[auf|prepositions/auf#1]] [[mysteriöse|adjectives/mysteriös#1]] [[Weise|nouns/Weise_besondere#1]] [[zu|prepositions/zu#1]] [[einem|determiners/ein]] [[harmlosen|adjectives/harmlos#1]] Stadtgras [[mutiert|verbs/mutieren]] [[sein|verbs/sein#4]] [[wie|adverbs/wie]] [[seinerzeit|adverbs/seinerzeit#1]] die Wasserpest.“"
+    "text_linked": "„Die Massivität, [[mit|adverbs/mit#1]] der [[es|pronouns/es]] [[nun|adverbs/nun#1]] [[aus|prepositions/aus#1]] [[seinen|pronouns/sein#1]] Refugien [[hinaus|adverbs/hinaus#1]] [[in|prepositions/in#1]] [[die|determiners/die]] [[Straßen|nouns/Straße#2]] [[und|conjunctions/und#1]] [[Bürgersteige|nouns/Bürgersteig#1]] [[drängte|verbs/drängen#1]], [[machte|verbs/machen#2]] jede [[Hoffnung|nouns/Hoffnung#1]] [[zunichte|verbs/zunichtemachen]], es [[könnte|verbs/können_beherrschen]] [[im|prepositions/in#3]] [[Laufe|nouns/Lauf#3]] [[des|determiners/der]] [[Winters|nouns/Winter#1]] [[auf|prepositions/auf#1]] [[mysteriöse|adjectives/mysteriös#1]] [[Weise|nouns/Weise_besondere#1]] [[zu|prepositions/zu#1]] [[einem|determiners/ein]] [[harmlosen|adjectives/harmlos#1]] Stadtgras mutiert [[sein|verbs/sein#4]] [[wie|adverbs/wie]] [[seinerzeit|adverbs/seinerzeit#1]] die Wasserpest.“"
   },
   "45d55dd58d": {
     "text": "Die Beziehung meiner Eltern ist echt kompliziert, da mische ich mich lieber nicht ein.",
@@ -23808,7 +23895,7 @@
         "gloss_hint": "was captured"
       }
     ],
-    "text_linked": "„Im [[Rettungsboot|nouns/Rettungsboot#1]] [[gondelte|verbs/gondeln]] Luckner [[daraufhin|adverbs/daraufhin#1]] 2300 Seemeilen [[durch|prepositions/durch#1]] [[die|pronouns/die#1]] Südsee, [[bis|particles/bis#1]] er [[in|prepositions/in]] neuseeländische Kriegsgefangenschaft [[geriet|verbs/geraten]].“"
+    "text_linked": "„Im [[Rettungsboot|nouns/Rettungsboot#1]] gondelte Luckner [[daraufhin|adverbs/daraufhin#1]] 2300 Seemeilen [[durch|prepositions/durch#1]] [[die|pronouns/die#1]] Südsee, [[bis|particles/bis#1]] er [[in|prepositions/in]] neuseeländische Kriegsgefangenschaft [[geriet|verbs/geraten]].“"
   },
   "45d9d3ba11": {
     "text": "Wir haben wilde Beeren im Wald gepflückt.",
@@ -26016,7 +26103,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "«Das Spektrum, [[mit|prepositions/mit]] dem man [[konfrontiert|verbs/konfrontieren]] werde, [[sei|verbs/sein#2]] nirgends [[ähnlich|adjectives/ähnlich#1]] [[gross|adjectives/groß#1]]. Die [[Geschichten|nouns/Geschichte#1]], von denen Parente [[zu berichten|verbs/berichten#1]] weiss, [[sind|verbs/sein#2]] [[denn|adverbs/denn]] [[auch|adverbs/auch]] farbig. Sie [[reichen|verbs/reichen#1]] [[vom|prepositions/von]] zahlungsunwilligen [[Kunden|nouns/Kunde_jemand#1]], [[der|pronouns/der_nominativ]] [[sich|pronouns/sich]] [[als|conjunctions/als]] Heiliger Geist mit der [[Mission|nouns/Mission#1]] [[betraut|verbs/betrauen]] [[wähnte|verbs/wähnen]], in Hannover [[seinen|pronouns/sein]] [[eigenen|adjectives/eigen]] [[Vater|nouns/Vater#1]] [[umzubringen|verbs/umbringen]], bis hin zur blinden Passagierin, [[die|determiners/die]] sich [[erst|adverbs/erst]] [[in einem Kasten|nouns/Kasten#1]] [[verbarg|verbs/verbergen]] [[und|conjunctions/und]] [[dann|adverbs/dann]] in der Nische [[eines Abgangs|nouns/Abgang]] in einem doppelstöckigen Schlafwagen.»"
+    "text_linked": "«Das Spektrum, [[mit|prepositions/mit]] dem man [[konfrontiert|verbs/konfrontieren]] werde, [[sei|verbs/sein#2]] nirgends [[ähnlich|adjectives/ähnlich#1]] [[gross|adjectives/groß#1]]. Die [[Geschichten|nouns/Geschichte#1]], von denen Parente [[zu berichten|verbs/berichten#1]] weiss, [[sind|verbs/sein#2]] [[denn|adverbs/denn]] [[auch|adverbs/auch]] farbig. Sie [[reichen|verbs/reichen#1]] [[vom|prepositions/von]] zahlungsunwilligen [[Kunden|nouns/Kunde_jemand#1]], [[der|pronouns/der_nominativ]] [[sich|pronouns/sich]] [[als|conjunctions/als]] Heiliger Geist mit der [[Mission|nouns/Mission#1]] [[betraut|verbs/betrauen]] wähnte, in Hannover [[seinen|pronouns/sein]] [[eigenen|adjectives/eigen]] [[Vater|nouns/Vater#1]] [[umzubringen|verbs/umbringen]], bis hin zur blinden Passagierin, [[die|determiners/die]] sich [[erst|adverbs/erst]] [[in einem Kasten|nouns/Kasten#1]] [[verbarg|verbs/verbergen]] [[und|conjunctions/und]] [[dann|adverbs/dann]] in der Nische [[eines Abgangs|nouns/Abgang]] in einem doppelstöckigen Schlafwagen.»"
   },
   "45f06a165a": {
     "text": "„Bei den oben genannten Soziopathen herrschte dort allerdings Funkstille.“",
@@ -26207,8 +26294,7 @@
         "pos": "noun",
         "gloss_hint": null
       }
-    ],
-    "text_linked": "Sie [[entledigte|verbs/entledigen]] sich der Mitwisser."
+    ]
   },
   "45f2de2bdf": {
     "text": "die schwarze Kunst",
@@ -27362,7 +27448,7 @@
         "gloss_hint": "lost"
       }
     ],
-    "text_linked": "[[Anders|adverbs/anders#1]] [[als|conjunctions/als#1]] [[bei|prepositions/bei#1]] [[der|pronouns/der_nominativ#1]] Destillation [[geht|verbs/gehen#4]] [[beim|prepositions/bei#1]] [[Abdampfen|verbs/abdampfen]] [[an|prepositions/an]] der [[Luft|nouns/Luft_überwiegend#1]] [[das|pronouns/das_[1]]] Lösungsmittel, [[beispielsweise|adverbs/beispielsweise]] als Wasserdampf, [[verloren|verbs/verlieren#4]]."
+    "text_linked": "[[Anders|adverbs/anders#1]] [[als|conjunctions/als#1]] [[bei|prepositions/bei#1]] [[der|pronouns/der_nominativ#1]] Destillation [[geht|verbs/gehen#4]] [[beim|prepositions/bei#1]] Abdampfen [[an|prepositions/an]] der [[Luft|nouns/Luft_überwiegend#1]] [[das|pronouns/das_[1]]] Lösungsmittel, [[beispielsweise|adverbs/beispielsweise]] als Wasserdampf, [[verloren|verbs/verlieren#4]]."
   },
   "45fca9a1f2": {
     "text": "Doch der jüngste Grand-Prix-Sieger aller Zeiten ist mit 21 Jahren ein alter Hase im Motorsport.",

@@ -929,7 +929,7 @@
         "gloss_hint": "insult"
       }
     ],
-    "text_linked": "„[[Innerhalb|prepositions/innerhalb]] einer [[Woche|nouns/Woche#1]] [[hatte|verbs/haben#1]] [[ich|pronouns/ich#1]] [[mich|pronouns/sich]] [[genügend|adjectives/genügend#1]] [[erholt|verbs/erholen#2]], [[um|prepositions/um]] [[aus|prepositions/aus#1]] Albany [[einen|determiners/ein]] Hilfstrupp [[zu|prepositions/zu]] [[holen|verbs/holen#1]], [[damit|adverbs/damit]] [[das|pronouns/das_[1]]] [[Anwesen|nouns/Anwesen]] [[der|pronouns/der_nominativ]] Martenses [[und|conjunctions/und]] der gesamte [[Gipfel|nouns/Gipfel#4]] [[des|determiners/des]] Tempest Mountain [[mit|prepositions/mit]] [[Dynamit|nouns/Dynamit]] [[gesprengt|verbs/sprengen#1]], alle [[entdeckten|verbs/entdecken#1]] Hügelgräben [[zugeschüttet|verbs/zuschütten]] und einige [[besonders|adverbs/besonders#4]] überdüngte Bäume [[gefällt|verbs/fällen#1]] [[wurden|verbs/werden#1]], deren [[bloße|adjectives/bloß#2]] [[Existenz|nouns/Existenz#1]] [[die|determiners/die]] [[Vernunft|nouns/Vernunft#1]] [[beleidigte|verbs/beleidigen#1]].“"
+    "text_linked": "„[[Innerhalb|prepositions/innerhalb]] einer [[Woche|nouns/Woche#1]] [[hatte|verbs/haben#1]] [[ich|pronouns/ich#1]] [[mich|pronouns/sich]] [[genügend|adjectives/genügend#1]] [[erholt|verbs/erholen#2]], [[um|prepositions/um]] [[aus|prepositions/aus#1]] Albany [[einen|determiners/ein]] Hilfstrupp [[zu|prepositions/zu]] [[holen|verbs/holen#1]], [[damit|adverbs/damit]] [[das|pronouns/das_[1]]] [[Anwesen|nouns/Anwesen]] [[der|pronouns/der_nominativ]] Martenses [[und|conjunctions/und]] der gesamte [[Gipfel|nouns/Gipfel#4]] [[des|determiners/des]] Tempest Mountain [[mit|prepositions/mit]] [[Dynamit|nouns/Dynamit]] [[gesprengt|verbs/sprengen#1]], alle [[entdeckten|verbs/entdecken#1]] Hügelgräben zugeschüttet und einige [[besonders|adverbs/besonders#4]] überdüngte Bäume [[gefällt|verbs/fällen#1]] [[wurden|verbs/werden#1]], deren [[bloße|adjectives/bloß#2]] [[Existenz|nouns/Existenz#1]] [[die|determiners/die]] [[Vernunft|nouns/Vernunft#1]] [[beleidigte|verbs/beleidigen#1]].“"
   },
   "b908c5cf4c": {
     "text": "„Kaufleute sind aber auch noch auf einem anderen Wege kapitalistische Unternehmer geworden: durch Übergriffe in das Bereich der Güterproduktion.“",
@@ -1805,12 +1805,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put the cart before the horse",
     "source": "wiktionary",
     "lemmas": [
       "beim"
     ],
-    "ref": "phrases/das Pferd beim Schwanz aufzäumen"
+    "ref": "phrases/das Pferd beim Schwanz aufzäumen",
+    "translation_model": "openai/gpt-4.1"
   },
   "b90e7ffefc": {
     "text": "„Auf dem Schwarzmarkt für Lebensmittel wollten die Straßenverkäufer verständlicherweise nicht vor der Kamera posieren.“",
@@ -4501,11 +4502,73 @@
   },
   "b921f5b6d7": {
     "text": "Die Galeeren waren bis zu vierzig Meter lang und wurden je nach Größe von achtzig bis zu dreihundert Ruderern angetrieben.",
-    "translation": null,
+    "translation": "The galleys were up to forty meters long and were propelled, depending on their size, by eighty to three hundred rowers.",
     "source": "wiktionary",
     "lemmas": [
       "dreihundert"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Galeeren",
+        "lemma": "Galeere",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vierzig",
+        "lemma": "vierzig",
+        "pos": "numeral",
+        "gloss_hint": "forty"
+      },
+      {
+        "form": "Meter",
+        "lemma": "Meter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lang",
+        "lemma": "lang",
+        "pos": "adjective",
+        "gloss_hint": "long"
+      },
+      {
+        "form": "Größe",
+        "lemma": "Größe",
+        "pos": "noun",
+        "gloss_hint": "size"
+      },
+      {
+        "form": "achtzig",
+        "lemma": "achtzig",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "dreihundert",
+        "lemma": "dreihundert",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ruderern",
+        "lemma": "Ruderer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "angetrieben",
+        "lemma": "antreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "62d72e34"
+    },
+    "text_linked": "Die Galeeren waren bis zu [[vierzig|numerals/vierzig#1]] [[Meter|nouns/Meter]] [[lang|adjectives/lang#1]] und wurden je nach [[Größe|nouns/Größe#1]] von achtzig bis zu [[dreihundert|numerals/dreihundert]] Ruderern [[angetrieben|verbs/antreiben]]."
   },
   "b9234712da": {
     "text": "„Die Aufnahme war auf etwa anderthalb Quadratmeter Fläche vergrössert und erinnerte so an Industriefotos oder Reklame oder an Sichtwerbetafeln auf den Strassen der Deutschen Demokratischen Republik bei wichtigen Anlässen der Innenpolitik; an der etwas verwischten verschwimmenden Beschaffenheit der Umrisse war zu erkennen[,] dass das Stück Film nicht grösser gewesen war als der Nagel ihres kleinen Fingers.“",
@@ -9211,7 +9274,7 @@
         "gloss_hint": "instilling"
       }
     ],
-    "text_linked": "„[[Und|conjunctions/und]] [[wirklich|adjectives/wirklich#2]] [[war|verbs/sein#2]] [[in|prepositions/in]] [[der|pronouns/der_nominativ]] [[Prozedur|nouns/Prozedur#1]] [[des|determiners/des]] Friedensrichters, ungeachtet des [[starken|adjectives/stark#15]] Beigeschmacks hinterwäldischer Manieren, [[eine|determiners/eine]] [[Offenheit|nouns/Offenheit#1]] [[und|conjunctions/und]] Biederkeit, [[die|pronouns/die]] [[nicht|particles/nicht#1]] [[fehlen|verbs/fehlen#1]] [[konnten|verbs/können_beherrschen]], ihm [[Vertrauen|nouns/Vertrauen#1]] [[zu|particles/zu_drückt]] [[seinen|pronouns/sein#1]] [[neuen|adjectives/neu#1]] [[Bekannten|nouns/Bekannter#1]] [[einzuflößen|verbs/einflößen]].“"
+    "text_linked": "„[[Und|conjunctions/und]] [[wirklich|adjectives/wirklich#2]] [[war|verbs/sein#2]] [[in|prepositions/in]] [[der|pronouns/der_nominativ]] [[Prozedur|nouns/Prozedur#1]] [[des|determiners/des]] Friedensrichters, [[ungeachtet|postpositions/ungeachtet]] des [[starken|adjectives/stark#15]] Beigeschmacks hinterwäldischer Manieren, [[eine|determiners/eine]] [[Offenheit|nouns/Offenheit#1]] [[und|conjunctions/und]] Biederkeit, [[die|pronouns/die]] [[nicht|particles/nicht#1]] [[fehlen|verbs/fehlen#1]] [[konnten|verbs/können_beherrschen]], ihm [[Vertrauen|nouns/Vertrauen#1]] [[zu|particles/zu_drückt]] [[seinen|pronouns/sein#1]] [[neuen|adjectives/neu#1]] [[Bekannten|nouns/Bekannter#1]] einzuflößen.“"
   },
   "b95dcf2d40": {
     "text": "Warum hast Du das gemacht? Gib mir doch bitte eine Begründung!",
@@ -12042,7 +12105,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„[[Man|pronouns/man#2]] [[kann|verbs/können_beherrschen]] [[im|prepositions/in]] [[Allgemeinen|adjectives/allgemein]] [[sagen|verbs/sagen#1]], [[Wissenschaft|nouns/Wissenschaft#1]] [[sollte|verbs/sollen#4]] [[ein|determiners/ein]] [[rationales|adjectives/rational]] [[Verfahren|nouns/Verfahren#1]] [[sein|verbs/sein#2]], [[das|pronouns/das_[1]]] [[in|prepositions/in]] [[der|determiners/der]] [[Gesellschaft|nouns/Gesellschaft#1]] [[anerkannt|adjectives/anerkannt#2]] [[wird|verbs/werden#1]] [[als|conjunctions/als]] argumentationsfähig.“"
+    "text_linked": "„[[Man|pronouns/man#2]] [[kann|verbs/können_etwas#1]] [[im|prepositions/in]] [[Allgemeinen|adjectives/allgemein]] [[sagen|verbs/sagen#1]], [[Wissenschaft|nouns/Wissenschaft#1]] [[sollte|verbs/sollen#4]] [[ein|determiners/ein]] [[rationales|adjectives/rational]] [[Verfahren|nouns/Verfahren#1]] [[sein|verbs/sein#2]], [[das|pronouns/das_[1]]] [[in|prepositions/in]] [[der|determiners/der]] [[Gesellschaft|nouns/Gesellschaft#1]] [[anerkannt|adjectives/anerkannt#2]] [[wird|verbs/werden#1]] [[als|conjunctions/als]] argumentationsfähig.“"
   },
   "b97937d315": {
     "text": "„Ein Rudel von zehn Raubkatzen beschlich einige abseits der Herde äsende Zebras.“",
@@ -12127,7 +12190,7 @@
         "gloss_hint": "zebras"
       }
     ],
-    "text_linked": "„[[Ein|pronouns/ein]] [[Rudel|nouns/Rudel#1]] [[von|prepositions/von]] [[zehn|numerals/zehn#1]] Raubkatzen [[beschlich|verbs/beschleichen]] [[einige|numerals/einige#2]] [[abseits|adverbs/abseits#1]] [[der|pronouns/der_nominativ]] [[Herde|nouns/Herde#1]] äsende [[Zebras|nouns/Zebra_afrika#1]].“"
+    "text_linked": "„[[Ein|pronouns/ein]] [[Rudel|nouns/Rudel#1]] [[von|prepositions/von]] [[zehn|numerals/zehn#1]] Raubkatzen beschlich [[einige|numerals/einige#2]] [[abseits|adverbs/abseits#1]] [[der|pronouns/der_nominativ]] [[Herde|nouns/Herde#1]] äsende [[Zebras|nouns/Zebra_afrika#1]].“"
   },
   "b97955a902": {
     "text": "„Aber wer wie ich eine 50-prozentige Frauenquote in Wirtschaft, Politik, Wissenschaft und Kultur fordert, gilt als fundamentalisitische Fanatikerin, als verblasen und weltfremd.“",
@@ -14400,7 +14463,7 @@
         "gloss_hint": "could"
       }
     ],
-    "text_linked": "„Andererseits [[mangelte|verbs/mangeln_durch]] [[es|pronouns/es]] sowohl [[an|prepositions/an]] [[genügend|adjectives/genügend#1]] [[Metall|nouns/Metall]] [[für|prepositions/für#1]] [[den|determiners/der]] Guss [[neuer|adjectives/neu]] [[Geschosse|nouns/Geschoss#1]] [[als|conjunctions/als#1]] [[auch|adverbs/auch]] an den [[Chemikalien|nouns/Chemikalie#1]], [[aus|prepositions/aus#3]] [[denen|pronouns/der_nominativ]] [[man|pronouns/man#2]] Treib- [[und|conjunctions/und]] Sprengladungen zusammenmischen [[konnte|verbs/können_beherrschen]].“"
+    "text_linked": "„Andererseits [[mangelte|verbs/mangeln_fehlen#1]] [[es|pronouns/es]] sowohl [[an|prepositions/an]] [[genügend|adjectives/genügend#1]] [[Metall|nouns/Metall]] [[für|prepositions/für#1]] [[den|determiners/der]] Guss [[neuer|adjectives/neu]] [[Geschosse|nouns/Geschoss#1]] [[als|conjunctions/als#1]] [[auch|adverbs/auch]] an den [[Chemikalien|nouns/Chemikalie#1]], [[aus|prepositions/aus#3]] [[denen|pronouns/der_nominativ]] [[man|pronouns/man#2]] Treib- [[und|conjunctions/und]] Sprengladungen zusammenmischen [[konnte|verbs/können_beherrschen]].“"
   },
   "b986207481": {
     "text": "„Entlang des Highways fallen zwei riesige Werbetafeln auf. Eines stellt die Evolutionstheorie nach Charles Darwin infrage.“",
@@ -14502,7 +14565,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Entlang [[des|determiners/der]] [[Highways|nouns/Highway#1]] [[fallen|verbs/fallen#1]] [[zwei|numerals/zwei#1]] [[riesige|adjectives/riesig]] Werbetafeln [[auf|prepositions/auf]]. [[Eines|determiners/eines]] [[stellt|verbs/stellen]] [[die|determiners/die]] Evolutionstheorie [[nach|prepositions/nach#4]] Charles Darwin infrage.“"
+    "text_linked": "„[[Entlang|postpositions/entlang]] [[des|determiners/der]] [[Highways|nouns/Highway#1]] [[fallen|verbs/fallen#1]] [[zwei|numerals/zwei#1]] [[riesige|adjectives/riesig]] Werbetafeln [[auf|prepositions/auf]]. [[Eines|determiners/eines]] [[stellt|verbs/stellen]] [[die|determiners/die]] Evolutionstheorie [[nach|prepositions/nach#4]] Charles Darwin infrage.“"
   },
   "b98669f96a": {
     "text": "Durch lokale Gewitter mit heftigen Regenfällen kann es vereinzelt zu schweren Überschwemmungen kommen.",
@@ -15479,7 +15542,7 @@
         "gloss_hint": "bandits"
       }
     ],
-    "text_linked": "„›Man [[konnte|verbs/können_beherrschen]] [[förmlich|adjectives/förmlich#1]] [[das|pronouns/das_[1]]] Dollar-Zeichen [[in|prepositions/in]] [[ihren|pronouns/ihr_person]] [[Augen|nouns/Auge]] [[aufblitzen|verbs/aufblitzen]] [[sehen|verbs/sehen#1]]. [[Mir|pronouns/ich#1]] [[kam|verbs/kommen#5]] [[es|pronouns/es]] [[vor|prepositions/vor]], [[als|conjunctions/als]] [[wäre|verbs/sein#2]] [[ich|pronouns/ich#1]] in Las Vegas [[gewesen|verbs/sein#2]] - [[und|conjunctions/und]] sie [[waren|verbs/sein#2]] [[die|determiners/die]] einarmigen [[Banditen|nouns/Bandit#1]].‹“"
+    "text_linked": "„›Man [[konnte|verbs/können_beherrschen]] [[förmlich|adjectives/förmlich#1]] [[das|pronouns/das_[1]]] Dollar-Zeichen [[in|prepositions/in]] [[ihren|pronouns/ihr_person]] [[Augen|nouns/Auge]] aufblitzen [[sehen|verbs/sehen#1]]. [[Mir|pronouns/ich#1]] [[kam|verbs/kommen#5]] [[es|pronouns/es]] [[vor|prepositions/vor]], [[als|conjunctions/als]] [[wäre|verbs/sein#2]] [[ich|pronouns/ich#1]] in Las Vegas [[gewesen|verbs/sein#2]] - [[und|conjunctions/und]] sie [[waren|verbs/sein#2]] [[die|determiners/die]] einarmigen [[Banditen|nouns/Bandit#1]].‹“"
   },
   "b98fe64d10": {
     "text": "Der Cop hielt uns an und befahl uns im Auto sitzen zu bleiben.",
@@ -15768,7 +15831,7 @@
         "gloss_hint": "reservoir dam"
       }
     ],
-    "text_linked": "„[[Die|determiners/die]] Talsperre [[drohte|verbs/drohen#1]] [[aufgrund|prepositions/aufgrund]] [[des|determiners/der]] [[stundenlangen|adjectives/stundenlang]] [[Starkregens|nouns/Starkregen#1]] [[zeitweise|adverbs/zeitweise#1]] [[überzulaufen|verbs/überlaufen_auf#2]], [[das|pronouns/das_[1]]] [[Wasser|nouns/Wasser#1]] [[schwappte|verbs/schwappen]] [[bereits|adverbs/bereits#1]] [[über|adverbs/über#1]] [[die|determiners/die]] Dammkrone [[der|determiners/der]] Staumauer.“"
+    "text_linked": "„[[Die|determiners/die]] Talsperre [[drohte|verbs/drohen#1]] [[aufgrund|prepositions/aufgrund]] [[des|determiners/der]] [[stundenlangen|adjectives/stundenlang]] [[Starkregens|nouns/Starkregen#1]] [[zeitweise|adverbs/zeitweise#1]] [[überzulaufen|verbs/überlaufen_auf#2]], [[das|pronouns/das_[1]]] [[Wasser|nouns/Wasser#1]] schwappte [[bereits|adverbs/bereits#1]] [[über|adverbs/über#1]] [[die|determiners/die]] Dammkrone [[der|determiners/der]] Staumauer.“"
   },
   "b990958c20": {
     "text": "Das Verfassungsgericht ist der Hüter der Verfassung.",
@@ -22168,7 +22231,7 @@
         "gloss_hint": "achieve"
       }
     ],
-    "text_linked": "Diesen [[Meilenstein|nouns/Meilenstein#1]] [[haben|verbs/haben#1]] [[wir|pronouns/wir]] [[locker|adjectives/locker#5]] [[geschafft|verbs/schaffen_etwas#1]]."
+    "text_linked": "Diesen [[Meilenstein|nouns/Meilenstein#1]] [[haben|verbs/haben#1]] [[wir|pronouns/wir]] [[locker|adjectives/locker#5]] [[geschafft|verbs/schaffen_etwas]]."
   },
   "b9d22e86df": {
     "text": "„Die Zurich-Versicherung ist ein Grossarbeitgeber, der Hedge-Fund Laxey hat seine Übernahmeattacken auf Implenia von Man aus lanciert. […] «Dabei haben wir auf Man noch nie etwas gemacht, nur weil es alle anderen gemacht haben», sagt Dobson. […] Das Talent zur Anpassung zeigt sich im Manx-Museum in Douglas: Hier erinnern steinerne Keltenkreuze an die Christianisierung der Insel durch irische Missionare, künden Wikingerschwerter von den nordischen Eroberern, die Man 979 ein erstes Parlament bescherten. […] Für das Gelingen des Rauchverbots scheut Mans Regierung keine Mühen.“",
@@ -24061,7 +24124,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Abhilfe [[bei|prepositions/bei]] [[Sodbrennen|nouns/Sodbrennen#1]] [[schaffen|verbs/schaffen_etwas#1]] neutralisierende [[Mittel|nouns/Mittel_etwas]] [[wie|conjunctions/wie_als]] doppelkohlensaures Natron [[und|conjunctions/und]] Magnesia."
+    "text_linked": "Abhilfe [[bei|prepositions/bei]] [[Sodbrennen|nouns/Sodbrennen#1]] [[schaffen|verbs/schaffen_etwas]] neutralisierende [[Mittel|nouns/Mittel_etwas]] [[wie|conjunctions/wie_als]] doppelkohlensaures Natron [[und|conjunctions/und]] Magnesia."
   },
   "b9e2e9c951": {
     "text": "„Ein Dutzend Atemzüge lang betrachtete der größte Jäger Deutschlands das größte Säugetier der Erde.“",
@@ -24311,7 +24374,7 @@
         "gloss_hint": "tractor"
       }
     ],
-    "text_linked": "„[[Über|adverbs/über#1]] [[die|determiners/die]] [[Äcker|nouns/Acker#1]] [[knattern|verbs/knattern]] die [[Traktoren|nouns/Traktor#1]].“"
+    "text_linked": "„[[Über|adverbs/über#1]] [[die|determiners/die]] [[Äcker|nouns/Acker#1]] knattern die [[Traktoren|nouns/Traktor#1]].“"
   },
   "b9e59fa77f": {
     "text": "„Seine Eltern lebten in Scheidung, ‚es gab viel Zoff zu Hause, ich hatte Kopfschmerzen und dachte: »Vielleicht hilft dir ’n anständiger Fix[«]‘.“",
@@ -26764,7 +26827,7 @@
         "gloss_hint": "considered"
       }
     ],
-    "text_linked": "„[[In|prepositions/in]] [[Minuten|nouns/Minute#1]] [[verdüsterte|verbs/verdüstern]] er [[sich|pronouns/sich]] [[oft|adverbs/oft#1]] [[und|conjunctions/und]] [[schleuderte|verbs/schleudern]] [[seine|pronouns/sein]] [[Blitze|nouns/Blitz]], [[als|conjunctions/als#6]] [[rase|verbs/rasen#1]] er [[in|prepositions/in]] jähem [[Haß|nouns/Hass#1]] [[wider|prepositions/wider#1]] [[die|determiners/die]] [[Welt|nouns/Welt#3]], die er wochenlang leuchtend [[mild|adjectives/mild#1]] [[überdacht|verbs/überdenken]] hatte.“ (Alfred Schirokauer: Mirabeau)"
+    "text_linked": "„[[In|prepositions/in]] [[Minuten|nouns/Minute#1]] verdüsterte er [[sich|pronouns/sich]] [[oft|adverbs/oft#1]] [[und|conjunctions/und]] [[schleuderte|verbs/schleudern]] [[seine|pronouns/sein]] [[Blitze|nouns/Blitz]], [[als|conjunctions/als#6]] [[rase|verbs/rasen#1]] er [[in|prepositions/in]] jähem [[Haß|nouns/Hass#1]] [[wider|prepositions/wider#1]] [[die|determiners/die]] [[Welt|nouns/Welt#3]], die er wochenlang leuchtend [[mild|adjectives/mild#1]] [[überdacht|verbs/überdenken]] hatte.“ (Alfred Schirokauer: Mirabeau)"
   },
   "b9ff6ae694": {
     "text": "Sie hat das absolute Gehör.",

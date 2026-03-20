@@ -2086,7 +2086,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Elma hatte nicht wirklich [[Lust|nouns/Lust#1]] auf einen Einkaufstrip, [[willigte|verbs/willigen]] aber zögerlich ein.“"
+    "text_linked": "„Elma hatte nicht wirklich [[Lust|nouns/Lust#1]] auf einen Einkaufstrip, willigte aber zögerlich ein.“"
   },
   "59205a4b02": {
     "text": "Tante Frieda lässt einen schönen Gruß ausrichten.",
@@ -2622,7 +2622,7 @@
         "gloss_hint": "bill"
       }
     ],
-    "text_linked": "„[[Können|verbs/können_etwas#1]] [[wir|pronouns/wir]] [[gleich|adverbs/gleich#1]] [[die|determiners/die]] [[Rechnung|nouns/Rechnung#1]] haben?“"
+    "text_linked": "„[[Können|verbs/können_beherrschen]] [[wir|pronouns/wir]] [[gleich|adverbs/gleich#1]] [[die|determiners/die]] [[Rechnung|nouns/Rechnung#1]] haben?“"
   },
   "5926707d3a": {
     "text": "„War für Lenin noch der Klassenkampf zwischen ‚Arbeiterklasse‘ und ‚Bourgeoisie‘ die entscheidende Frontlinie, hat Sjuganow im heutigen Russland einen neuen ‚Hauptkonflikt‘ ausgemacht: zwischen ‚parasitärem Kapital‘ der Rohstoff-Exporteure und ‚schaffendem Kapital‘. […]“",
@@ -5716,7 +5716,7 @@
         "gloss_hint": "momentum"
       }
     ],
-    "text_linked": "„Die fliegenden Röcke [[und|conjunctions/und]] Tücher der jungen Frauen [[skandieren|verbs/skandieren]] [[den|determiners/der]] [[musikalischen|adjectives/musikalisch]] [[Rhythmus|nouns/Rhythmus#1]] und [[zeigen|verbs/zeigen#1]] den tänzerischen [[Schwung|nouns/Schwung#1]] an.“"
+    "text_linked": "„Die fliegenden Röcke [[und|conjunctions/und]] Tücher der jungen Frauen skandieren [[den|determiners/der]] [[musikalischen|adjectives/musikalisch]] [[Rhythmus|nouns/Rhythmus#1]] und [[zeigen|verbs/zeigen#1]] den tänzerischen [[Schwung|nouns/Schwung#1]] an.“"
   },
   "59414e8b74": {
     "text": "„Dann aber trat er an das zweite, bis dahin geschlossene Fenster und riß auch hier beide Flügel auf, denn es war ihm, als ob er ersticken solle.“",
@@ -7257,7 +7257,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Vollkommen|adjectives/vollkommen#1]] [[entblößt|verbs/entblößen]] [[gerieten|verbs/geraten]] Ruth [[und|conjunctions/und]] Bernhard [[in|prepositions/in]] [[Ekstase|nouns/Ekstase]]."
+    "text_linked": "[[Vollkommen|adjectives/vollkommen#1]] entblößt [[gerieten|verbs/geraten]] Ruth [[und|conjunctions/und]] Bernhard [[in|prepositions/in]] [[Ekstase|nouns/Ekstase]]."
   },
   "5951f7b0f1": {
     "text": "Mit welcher Beschäftigung verdient er seinen Lebensunterhalt?",
@@ -8715,7 +8715,7 @@
         "gloss_hint": "manage"
       }
     ],
-    "text_linked": "[[Mit|adverbs/mit]] [[einem|determiners/ein]] [[Pickel|nouns/Pickel_eitrig#1]] [[kann|verbs/können_etwas#2]] [[man|pronouns/man]] [[Erde|nouns/Erde#1]] [[lockern|verbs/lockern#1]], [[um|prepositions/um]] sie [[besser|adjectives/besser]] [[ausheben|verbs/ausheben]] [[zu|particles/zu_drückt]] [[können|verbs/können_etwas#2]]."
+    "text_linked": "[[Mit|adverbs/mit]] [[einem|determiners/ein]] [[Pickel|nouns/Pickel_eitrig#1]] [[kann|verbs/können_beherrschen]] [[man|pronouns/man]] [[Erde|nouns/Erde#1]] [[lockern|verbs/lockern#1]], [[um|prepositions/um]] sie [[besser|adjectives/besser]] [[ausheben|verbs/ausheben]] [[zu|particles/zu_drückt]] [[können|verbs/können_beherrschen]]."
   },
   "59638e4940": {
     "text": "„Die meisten Häuser sind hölzerne Gerüste, die man mit Schilf durchflocht, mit Lehm bewarf und mit Schilf bedachte.“",
@@ -18936,11 +18936,33 @@
   },
   "59c821cc49": {
     "text": "Das Wort „Auto“ ist ein Nomen.",
-    "translation": null,
+    "translation": "The word \"auto\" is a noun.",
     "source": "wiktionary",
     "lemmas": [
       "Nomen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wort",
+        "lemma": "Wort",
+        "pos": "noun",
+        "gloss_hint": "word"
+      },
+      {
+        "form": "Auto",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "Nomen",
+        "lemma": "Nomen",
+        "pos": "noun",
+        "gloss_hint": "noun"
+      }
+    ],
+    "text_linked": "Das [[Wort|nouns/Wort_kleinste#1]] „[[Auto|nouns/Auto_automobil#1]]“ ist ein [[Nomen|nouns/Nomen#1]]."
   },
   "59c86b22c4": {
     "text": "Horst hat sich lange an dieser Aufgabe aufgehalten.",
@@ -20923,7 +20945,7 @@
         "gloss_hint": "diseases"
       }
     ],
-    "text_linked": "[[Immer|adverbs/immer]] [[wieder|adverbs/wieder]] [[infizieren|verbs/infizieren]] [[sich|pronouns/sich#2]] [[Menschen|nouns/Mensch_lebewesen#2]] [[durch|prepositions/durch#1]] [[ungeschützten|adjectives/ungeschützt#1]] [[Geschlechtsverkehr|nouns/Geschlechtsverkehr#1]] [[mit|prepositions/mit#1]] [[zum|prepositions/zu#1]] [[Teil|nouns/Teil_element#3]] [[gefährlichen|adjectives/gefährlich#1]] [[Krankheiten|nouns/Krankheit#1]]."
+    "text_linked": "[[Immer|adverbs/immer]] [[wieder|adverbs/wieder]] [[infizieren|verbs/infizieren]] [[sich|pronouns/sich#2]] [[Menschen|nouns/Mensch_lebewesen#2]] [[durch|prepositions/durch#1]] [[ungeschützten|adjectives/ungeschützt#1]] [[Geschlechtsverkehr|nouns/Geschlechtsverkehr#1]] [[mit|prepositions/mit#1]] [[zum|prepositions/zu#1]] [[Teil|nouns/Teil_stück#3]] [[gefährlichen|adjectives/gefährlich#1]] [[Krankheiten|nouns/Krankheit#1]]."
   },
   "59db3166d8": {
     "text": "„In Überlingen wurde ein Konzentrationslager bei Aufkirch errichtet, etwa 1,5 Kilometer vom Stollen entfernt.“",
@@ -22252,7 +22274,7 @@
         "gloss_hint": "suggests"
       }
     ],
-    "text_linked": "„ Ausgegliedert [[werden|verbs/werden#4]] [[zusätzlich|adjectives/zusätzlich]] geschlechterneutrale singularische Gruppenbezeichnungen, Defektiva […], [[emotional|adjectives/emotional#2]] [[konnotierte|verbs/konnotieren]], zumeist pejorative Personenbezeichnungen […] [[und|conjunctions/und]] – [[als|conjunctions/als#6]] Untergruppe [[der|pronouns/der_nominativ#2]] letzteren – [[einige|numerals/einige#1]] [[Substantive|nouns/Substantiv#1]], [[deren|pronouns/der_nominativ]] Ableitungsverhältnis [[eine|determiners/ein]] [[Interpretation|nouns/Interpretation#1]] als generische Feminina nahelegt.“"
+    "text_linked": "„ Ausgegliedert [[werden|verbs/werden#4]] [[zusätzlich|adjectives/zusätzlich]] geschlechterneutrale singularische Gruppenbezeichnungen, Defektiva […], [[emotional|adjectives/emotional#2]] konnotierte, [[zumeist|adverbs/zumeist]] pejorative Personenbezeichnungen […] [[und|conjunctions/und]] – [[als|conjunctions/als#6]] Untergruppe [[der|pronouns/der_nominativ#2]] letzteren – [[einige|numerals/einige#1]] [[Substantive|nouns/Substantiv#1]], [[deren|pronouns/der_nominativ]] Ableitungsverhältnis [[eine|determiners/ein]] [[Interpretation|nouns/Interpretation#1]] als generische Feminina nahelegt.“"
   },
   "59ee239060": {
     "text": "„Yoga wurde verzweckt, um die psychische Verfassung zu verbessern und die Leistungsfähigkeit durch Konzentrationssteigerung zu erhöhen. Yoga wurde so zu einer Form der angewandten Psychologie.“",

@@ -989,7 +989,7 @@
         "gloss_hint": "send back"
       }
     ],
-    "text_linked": "„Als Henk Zanoli von dem Angriff [[erfuhr|verbs/erfahren#1]], [[habe|verbs/haben#1]] er [[sich|pronouns/sich]] [[dazu|adverbs/dazu#1]] [[entschlossen|verbs/entschließen]], [[die|determiners/die]] [[Medaille|nouns/Medaille#1]] [[und|conjunctions/und]] die [[Urkunde|nouns/Urkunde#1]], die er [[als|conjunctions/als#2]] [[‚Gerechter|nouns/Gerechter]] [[unter|prepositions/unter#3]] [[den|determiners/der]] [[Völkern|nouns/Volk#2]]‘ [[erhielt|verbs/erhalten#1]], [[an|prepositions/an#1]] die israelische [[Botschaft|nouns/Botschaft#2]] [[zurückzuschicken|verbs/zurückschicken#1]]. “"
+    "text_linked": "„Als Henk Zanoli von dem Angriff [[erfuhr|verbs/erfahren#1]], [[habe|verbs/haben#1]] er [[sich|pronouns/sich]] [[dazu|adverbs/dazu#1]] [[entschlossen|verbs/entschließen#1]], [[die|determiners/die]] [[Medaille|nouns/Medaille#1]] [[und|conjunctions/und]] die [[Urkunde|nouns/Urkunde#1]], die er [[als|conjunctions/als#2]] [[‚Gerechter|nouns/Gerechter]] [[unter|prepositions/unter#3]] [[den|determiners/der]] [[Völkern|nouns/Volk#2]]‘ [[erhielt|verbs/erhalten#1]], [[an|prepositions/an#1]] die israelische [[Botschaft|nouns/Botschaft#2]] [[zurückzuschicken|verbs/zurückschicken#1]]. “"
   },
   "a50ccde555": {
     "text": "„In Hongkong ist eine Hepatitis-E-Infektion von einer Ratte auf einen Menschen übergesprungen.“",
@@ -1771,11 +1771,103 @@
   },
   "a5124ac9f4": {
     "text": "Eine Ananas quer teilen, eine Hälfte im Kühlschrank in Folie verpackt aufheben. Restliche Teile längs vierteln, Kernbereich längs abschneiden, klein schneiden und entsaften […].",
-    "translation": null,
+    "translation": "Cut a pineapple in half crosswise; keep one half wrapped in plastic in the refrigerator. Cut the remaining pieces lengthwise into quarters, remove the core lengthwise, cut into small pieces, and juice them […].",
     "source": "wiktionary",
     "lemmas": [
       "längs"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ananas",
+        "lemma": "Ananas",
+        "pos": "noun",
+        "gloss_hint": "pineapple"
+      },
+      {
+        "form": "quer",
+        "lemma": "quer",
+        "pos": "adverb",
+        "gloss_hint": "diagonally"
+      },
+      {
+        "form": "teilen",
+        "lemma": "teilen",
+        "pos": "verb",
+        "gloss_hint": "divide"
+      },
+      {
+        "form": "Hälfte",
+        "lemma": "Hälfte",
+        "pos": "noun",
+        "gloss_hint": "half"
+      },
+      {
+        "form": "Kühlschrank",
+        "lemma": "Kühlschrank",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Folie",
+        "lemma": "Folie",
+        "pos": "noun",
+        "gloss_hint": "film"
+      },
+      {
+        "form": "verpackt",
+        "lemma": "verpacken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufheben",
+        "lemma": "aufheben",
+        "pos": "verb",
+        "gloss_hint": "keep"
+      },
+      {
+        "form": "Teile",
+        "lemma": "Teil",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vierteln",
+        "lemma": "vierteln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kernbereich",
+        "lemma": "Kernbereich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abschneiden",
+        "lemma": "abschneiden",
+        "pos": "verb",
+        "gloss_hint": "cut off"
+      },
+      {
+        "form": "schneiden",
+        "lemma": "schneiden",
+        "pos": "verb",
+        "gloss_hint": "cut up"
+      },
+      {
+        "form": "entsaften",
+        "lemma": "entsaften",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "e7ea3d96"
+    },
+    "text_linked": "Eine [[Ananas|nouns/Ananas#1]] [[quer|adverbs/quer#1]] [[teilen|verbs/teilen#1]], eine [[Hälfte|nouns/Hälfte#1]] im [[Kühlschrank|nouns/Kühlschrank]] in [[Folie|nouns/Folie#2]] [[verpackt|verbs/verpacken]] [[aufheben|verbs/aufheben#3]]. Restliche [[Teile|nouns/Teil_element]] längs vierteln, Kernbereich längs [[abschneiden|verbs/abschneiden#1]], klein [[schneiden|verbs/schneiden#3]] und entsaften […]."
   },
   "a512cae0cc": {
     "text": "„Das Reich, längst in Anarchie versunken, und aus dieser Anarchie in seine hyderartige Gestalt von 1500 Köpfen, halb und ganz souverän – diese gewaltige Weltmonarchie versank nun in Nacht und Graus, und während wahre Kindereien die Leere füllten, behaupteten die Publicisten, nichts sey gleichgültig in einer so complicirten Verfassung!“",
@@ -2237,7 +2329,7 @@
         "gloss_hint": "far"
       }
     ],
-    "text_linked": "„Zwei Wege [[führten|verbs/führen#3]] [[an|prepositions/an]] [[Kanälen|nouns/Kanal#1]] entlang, [[waren|verbs/sein#2]] [[aber|conjunctions/aber#1]] [[weit|adjectives/weit#2]].“"
+    "text_linked": "„Zwei Wege [[führten|verbs/führen#3]] [[an|prepositions/an]] [[Kanälen|nouns/Kanal#1]] [[entlang|postpositions/entlang]], [[waren|verbs/sein#2]] [[aber|conjunctions/aber#1]] [[weit|adjectives/weit#2]].“"
   },
   "a51379bcd1": {
     "text": "aus dem Blechnapf fressen",
@@ -3676,7 +3768,7 @@
         "gloss_hint": "be (passive)"
       }
     ],
-    "text_linked": "„[[Als|conjunctions/als]] [[die|pronouns/die]] Römer [[das|pronouns/das_[1]]] [[lateinische|adjectives/lateinisch]] [[Alphabet|nouns/Alphabet_geordnete#1]] [[schufen|verbs/schaffen_etwas]], das [[ebenfalls|adverbs/ebenfalls]] [[von|prepositions/von#1]] [[links|adverbs/links#1]] [[nach|prepositions/nach#1]] [[rechts|adverbs/rechts#1]] [[geschrieben|verbs/schreiben#1]] [[wird|verbs/werden]], orientierten sie sich am griechischen Beta und übernahmen es ohne weitere Modifikationen.“"
+    "text_linked": "„[[Als|conjunctions/als]] [[die|pronouns/die]] Römer [[das|pronouns/das_[1]]] [[lateinische|adjectives/lateinisch]] [[Alphabet|nouns/Alphabet_geordnete#1]] [[schufen|verbs/schaffen_etwas#1]], das [[ebenfalls|adverbs/ebenfalls]] [[von|prepositions/von#1]] [[links|adverbs/links#1]] [[nach|prepositions/nach#1]] [[rechts|adverbs/rechts#1]] [[geschrieben|verbs/schreiben#1]] [[wird|verbs/werden]], orientierten sie sich am griechischen Beta und übernahmen es ohne weitere Modifikationen.“"
   },
   "a5249aff60": {
     "text": "Der Beschuldigte gibt an, zur Tatzeit im Rotlichtmilieu unterwegs gewesen zu sein.",
@@ -7996,11 +8088,33 @@
   },
   "a548eb3ce6": {
     "text": "Er arbeitet seit vielen Jahren als Softwareentwickler.",
-    "translation": null,
+    "translation": "He has been working as a software developer for many years.",
     "source": "wiktionary",
     "lemmas": [
       "Softwareentwickler"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "arbeitet",
+        "lemma": "arbeiten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Softwareentwickler",
+        "lemma": "Softwareentwickler",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Er [[arbeitet|verbs/arbeiten]] seit vielen [[Jahren|nouns/Jahr]] als [[Softwareentwickler|nouns/Softwareentwickler]]."
   },
   "a54ab829c9": {
     "text": "„Obwohl ich damit gerechnet hatte, dass er weiter zögern würde, gab er augenblicklich nach und erklärte sich ohne Wenn und Aber mit dem Plan einverstanden.“",
@@ -8507,11 +8621,135 @@
   },
   "a550b14781": {
     "text": "Antonyme sind zum Beispiel: riesig/winzig, groß/klein, hell/dunkel, Mann/Frau, verlieren/gewinnen, Liebe/Hass, Ideenreichtum/Einfallsreichtum/Gedankenarmut, berufstätig/arbeitslos, Betriebsgesellschaft/Besitzgesellschaft usw. usf.",
-    "translation": null,
+    "translation": "Antonyms are, for example: huge/tiny, large/small, bright/dark, man/woman, lose/win, love/hate, abundance of ideas/lack of ideas, employed/unemployed, operating company/ownership company, etc.",
     "source": "wiktionary",
     "lemmas": [
       "Antonym"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Antonyme",
+        "lemma": "Antonym",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beispiel",
+        "lemma": "Beispiel",
+        "pos": "noun",
+        "gloss_hint": "example"
+      },
+      {
+        "form": "riesig",
+        "lemma": "riesig",
+        "pos": "adjective",
+        "gloss_hint": "enormous"
+      },
+      {
+        "form": "winzig",
+        "lemma": "winzig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "groß",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": "large"
+      },
+      {
+        "form": "klein",
+        "lemma": "klein",
+        "pos": "adjective",
+        "gloss_hint": "small"
+      },
+      {
+        "form": "hell",
+        "lemma": "hell",
+        "pos": "adjective",
+        "gloss_hint": "bright"
+      },
+      {
+        "form": "dunkel",
+        "lemma": "dunkel",
+        "pos": "adjective",
+        "gloss_hint": "dark"
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "woman"
+      },
+      {
+        "form": "verlieren",
+        "lemma": "verlieren",
+        "pos": "verb",
+        "gloss_hint": "lose"
+      },
+      {
+        "form": "gewinnen",
+        "lemma": "gewinnen",
+        "pos": "verb",
+        "gloss_hint": "win"
+      },
+      {
+        "form": "Liebe",
+        "lemma": "Liebe",
+        "pos": "noun",
+        "gloss_hint": "affection"
+      },
+      {
+        "form": "Hass",
+        "lemma": "Hass",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ideenreichtum",
+        "lemma": "Ideenreichtum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gedankenarmut",
+        "lemma": "Gedankenarmut",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "berufstätig",
+        "lemma": "berufstätig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "arbeitslos",
+        "lemma": "arbeitslos",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Betriebsgesellschaft",
+        "lemma": "Betriebsgesellschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Besitzgesellschaft",
+        "lemma": "Besitzgesellschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "[[Antonyme|nouns/Antonym]] sind zum [[Beispiel|nouns/Beispiel#1]]: [[riesig|adjectives/riesig#1]]/[[winzig|adjectives/winzig]], [[groß|adjectives/groß#1]]/[[klein|adjectives/klein#1]], [[hell|adjectives/hell#1]]/[[dunkel|adjectives/dunkel#1]], [[Mann|nouns/Mann#5]]/[[Frau|nouns/Frau#1]], [[verlieren|verbs/verlieren#4]]/[[gewinnen|verbs/gewinnen#4]], [[Liebe|nouns/Liebe#1]]/[[Hass|nouns/Hass]], Ideenreichtum/Einfallsreichtum/Gedankenarmut, berufstätig/[[arbeitslos|adjectives/arbeitslos]], Betriebsgesellschaft/Besitzgesellschaft usw. usf."
   },
   "a5518c49aa": {
     "text": "Er blickte uns finster an.",
@@ -10812,7 +11050,7 @@
         "gloss_hint": "outcome"
       }
     ],
-    "text_linked": "[[Dort|adverbs/dort]] [[[an der Pariser Börse|nouns/Börse#1]]] [[schaffte|verbs/schaffen_etwas#1]] er [Stephan Sarter] [[als|conjunctions/als]] [[Börsenmakler|nouns/Börse#1]] [[einen|pronouns/ein]] kometenhaften [[Aufstieg|nouns/Aufstieg#1]]. Er [[spekulierte|verbs/spekulieren]] [[um|prepositions/um]] [[immer|adverbs/immer]] [[höhere|adjectives/hoch]] [[Summen|nouns/Summe]] – [[und|conjunctions/und]] [[setzte|verbs/setzen]] [[schließlich|adverbs/schließlich]] [[mit|prepositions/mit]] [[einer|pronouns/ein]] [[Beteiligung|nouns/Beteiligung#1]] [[am|prepositions/an]] Suez-Kanal, der [[Verbindung|nouns/Verbindung#9]] [[zwischen|prepositions/zwischen]] [[Mittelmeer|nouns/Mittelmeer]] und Rotem Meer, [[auf|prepositions/auf]] [[ein|pronouns/ein]] Mammutprojekt mit [[unsicherem|adjectives/unsicher]] [[Ausgang|nouns/Ausgang#4]]."
+    "text_linked": "[[Dort|adverbs/dort]] [[[an der Pariser Börse|nouns/Börse#1]]] [[schaffte|verbs/schaffen_etwas]] er [Stephan Sarter] [[als|conjunctions/als]] [[Börsenmakler|nouns/Börse#1]] [[einen|pronouns/ein]] kometenhaften [[Aufstieg|nouns/Aufstieg#1]]. Er [[spekulierte|verbs/spekulieren]] [[um|prepositions/um]] [[immer|adverbs/immer]] [[höhere|adjectives/hoch]] [[Summen|nouns/Summe]] – [[und|conjunctions/und]] [[setzte|verbs/setzen]] [[schließlich|adverbs/schließlich]] [[mit|prepositions/mit]] [[einer|pronouns/ein]] [[Beteiligung|nouns/Beteiligung#1]] [[am|prepositions/an]] Suez-Kanal, der [[Verbindung|nouns/Verbindung#9]] [[zwischen|prepositions/zwischen]] [[Mittelmeer|nouns/Mittelmeer]] und Rotem Meer, [[auf|prepositions/auf]] [[ein|pronouns/ein]] Mammutprojekt mit [[unsicherem|adjectives/unsicher]] [[Ausgang|nouns/Ausgang#4]]."
   },
   "a5677b921e": {
     "text": "Dieser Weg ist mir zu holprig.",
@@ -11045,7 +11283,7 @@
         "gloss_hint": "biodynamic"
       }
     ],
-    "text_linked": "Immer mehr [[entsagen|verbs/entsagen]] [[der|pronouns/der_nominativ]] chemischen [[Keule|nouns/Keule#1]], [[widmen|verbs/widmen#1]] [[sich|pronouns/sich]] [[dem|determiners/der]] [[biologischen|adjectives/biologisch#1]] Weinbau, [[produzieren|verbs/produzieren#1]] [[im|prepositions/in]] [[extremsten|adjectives/extrem#1]] [[Fall|nouns/Fall_schnelle#3]] biodynamisch."
+    "text_linked": "Immer mehr entsagen [[der|pronouns/der_nominativ]] chemischen [[Keule|nouns/Keule#1]], [[widmen|verbs/widmen#1]] [[sich|pronouns/sich]] [[dem|determiners/der]] [[biologischen|adjectives/biologisch#1]] Weinbau, [[produzieren|verbs/produzieren#1]] [[im|prepositions/in]] [[extremsten|adjectives/extrem#1]] [[Fall|nouns/Fall_schnelle#3]] biodynamisch."
   },
   "a5687b214e": {
     "text": "„In Rumänien hat sich gezeigt, wie positiv ein Ostblockland auf Angebote der deutschen Industrie reagiert. Und in Rumänien haben wir auch einen aufgeregten Herrn Ulbricht erlebt, der seine Felle wegschwimmen sah.“",
@@ -13280,7 +13518,7 @@
         "gloss_hint": "printed"
       }
     ],
-    "text_linked": "„Es wurde nichts [[verheimlicht|verbs/verheimlichen]]; [[selbst|pronouns/selbst#1]] [[die|pronouns/die#1]] Randbemerkungen [[des|determiners/der]] [[Kaisers|nouns/Kaiser#1]] [[zu|prepositions/zu]] [[den|determiners/die]] einzelnen Botschafterberichten [[wurden|verbs/werden#1]] [[wörtlich|adjectives/wörtlich#1]] [[abgedruckt|verbs/abdrucken]].“"
+    "text_linked": "„Es wurde nichts [[verheimlicht|verbs/verheimlichen]]; [[selbst|pronouns/selbst#1]] [[die|pronouns/die#1]] Randbemerkungen [[des|determiners/der]] [[Kaisers|nouns/Kaiser#1]] [[zu|prepositions/zu]] [[den|determiners/die]] einzelnen Botschafterberichten [[wurden|verbs/werden#1]] [[wörtlich|adjectives/wörtlich#1]] [[abgedruckt|verbs/abdrucken#1]].“"
   },
   "a57d485139": {
     "text": "„Im Flachland und auf der Alpensüdseite ist die Luft seit ein paar Tagen sehr feucht und warm. Es ist schwül.“",
@@ -14132,7 +14370,7 @@
         "gloss_hint": "issue"
       }
     ],
-    "text_linked": "Wandelanleihen sind Kombinationen aus Anleihen und [[dem|determiners/der]] [[Anrecht|nouns/Anrecht#1]], [[junge|adjectives/jung#1]] [[Aktien|nouns/Aktie#1]] [[des|determiners/der]] [[Unternehmens|nouns/Unternehmen#1]] [[zu|particles/zu_drückt]] [[erstehen|verbs/erstehen]], [[die|determiners/die]] die Anleihe [[begeben|verbs/begeben]] hat."
+    "text_linked": "Wandelanleihen sind Kombinationen aus Anleihen und [[dem|determiners/der]] [[Anrecht|nouns/Anrecht#1]], [[junge|adjectives/jung#1]] [[Aktien|nouns/Aktie#1]] [[des|determiners/der]] [[Unternehmens|nouns/Unternehmen#1]] [[zu|particles/zu_drückt]] erstehen, [[die|determiners/die]] die Anleihe [[begeben|verbs/begeben]] hat."
   },
   "a58baf4800": {
     "text": "man sägt nicht den Ast ab, auf dem man sitzt",
@@ -14607,11 +14845,31 @@
   },
   "a58e2eb7d8": {
     "text": "„Nein“, sagte er, woraufhin sie entgegnete: „Doch!“",
-    "translation": null,
+    "translation": "\"No,\" he said, whereupon she replied: \"Yes, you're wrong!\"",
     "source": "wiktionary",
     "lemmas": [
       "woraufhin"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sagte",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "entgegnete",
+        "lemma": "entgegnen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "a2df49e3"
+    },
+    "text_linked": "„Nein“, [[sagte|verbs/sagen]] er, woraufhin sie [[entgegnete|verbs/entgegnen]]: „Doch!“"
   },
   "a58e389ab1": {
     "text": "„Irgendwann sah ich hinüber zu Ben, der mich breit angrinste, und ich spürte, wie sich ein warmes Kribbeln in meinem Nacken ausbreitete.“",
@@ -14821,7 +15079,7 @@
         "gloss_hint": "children"
       }
     ],
-    "text_linked": "Jedes [[Jahr|nouns/Jahr#1]] [[veranstaltet|verbs/veranstalten]] sie [[eine|determiners/ein]] [[große|adjectives/groß#1]] [[Gala|nouns/Gala#2]] zugunsten krebskranker [[Kinder|nouns/Kind#1]]."
+    "text_linked": "Jedes [[Jahr|nouns/Jahr#1]] [[veranstaltet|verbs/veranstalten]] sie [[eine|determiners/ein]] [[große|adjectives/groß#1]] [[Gala|nouns/Gala#2]] [[zugunsten|prepositions/zugunsten]] krebskranker [[Kinder|nouns/Kind#1]]."
   },
   "a5909025c8": {
     "text": "Im Plädoyer beweist der Staatsanwalt die Schuld des Angeklagten und weist darauf hin, daß eine Bestrafung für die begangene Straftat unabwendbar ist.",
@@ -15850,12 +16108,12 @@
   },
   "a595bbb6af": {
     "text": "Der Bär bäumte sich vor dem Jäger. / Der Bär bäumte vor dem Jäger.",
-    "translation": "The bear reared up in front of the hunter. | Bär: Bär (noun), bäumte: bäumen (verb), Jäger: Jäger (noun)",
+    "translation": "The bear reared up in front of the hunter.",
     "source": "wiktionary",
     "lemmas": [
       "bäumen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "claude-sonnet-4-6"
   },
   "a5970b1769": {
     "text": "„Zu diesem Zeitpunkt haben die Mitglieder der Bande fast 300 Sprengsätze aus Tschechien gebunkert, dazu vier Stahlrohre, Schwarzpulver, 70 Meter Zündschnur und einen USB-Stick mit der Bauanleitung für Rohrbomben.“",
@@ -16024,7 +16282,7 @@
         "gloss_hint": "pipe bombs"
       }
     ],
-    "text_linked": "„Zu diesem Zeitpunkt [[haben|verbs/haben#1]] [[die|pronouns/die]] [[Mitglieder|nouns/Mitglied]] [[der|pronouns/der_nominativ]] [[Bande|nouns/Bande#1]] fast 300 Sprengsätze [[aus|prepositions/aus#1]] Tschechien [[gebunkert|verbs/bunkern]], [[dazu|adverbs/dazu#1]] [[vier|numerals/vier#1]] Stahlrohre, Schwarzpulver, 70 [[Meter|nouns/Meter#1]] Zündschnur [[und|conjunctions/und#1]] [[einen|determiners/ein]] [[USB-Stick|nouns/USB-Stick]] [[mit|prepositions/mit#1]] der Bauanleitung [[für|prepositions/für#1]] Rohrbomben.“"
+    "text_linked": "„Zu diesem Zeitpunkt [[haben|verbs/haben#1]] [[die|pronouns/die]] [[Mitglieder|nouns/Mitglied]] [[der|pronouns/der_nominativ]] [[Bande|nouns/Bande#1]] fast 300 Sprengsätze [[aus|prepositions/aus#1]] Tschechien gebunkert, [[dazu|adverbs/dazu#1]] [[vier|numerals/vier#1]] Stahlrohre, Schwarzpulver, 70 [[Meter|nouns/Meter#1]] Zündschnur [[und|conjunctions/und#1]] [[einen|determiners/ein]] [[USB-Stick|nouns/USB-Stick]] [[mit|prepositions/mit#1]] der Bauanleitung [[für|prepositions/für#1]] Rohrbomben.“"
   },
   "a5971b2db0": {
     "text": "„Becht zeigte sich besonders beeindruckt von der Qualität und Vielfalt der heimischen Betriebe.“",
@@ -16368,12 +16626,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "for now",
     "source": "wiktionary",
     "lemmas": [
       "fürs"
     ],
-    "ref": "phrases/fürs Erste"
+    "ref": "phrases/fürs Erste",
+    "translation_model": "openai/gpt-4.1"
   },
   "a59d90bcf5": {
     "text": "Wenn es Frühling wird, machen wir ein Picknick am Fluss.",
@@ -17344,7 +17603,7 @@
         "gloss_hint": "should"
       }
     ],
-    "text_linked": "„[[Hier|adverbs/hier]], [[wo|adverbs/wo]] [[die|pronouns/die]] Beiträger [[des|determiners/des]] Schultzschen Anzeigers [[sich|pronouns/sich#1]] [[einfinden|verbs/einfinden]] [[zu|prepositions/zu]] wissendem [[Gespräch|nouns/Gespräch#1]] [[über|prepositions/über]] Verträglichkeit [[von|prepositions/von#2]] [[Korrespondenzen|nouns/Korrespondenz#1]], über Vorabzahlung [[und|conjunctions/und]] [[Lohn|nouns/Lohn#1]], [[widerfuhr|verbs/widerfahren]] [[es|pronouns/es]] [[Herrn|nouns/Herr#1]] H., [[dem|determiners/der]] es [[an|prepositions/an]] [[Notizen|nouns/Notiz]] [[nicht|particles/nicht#1]] [[mangelte|verbs/mangeln_durch]], [[daß|conjunctions/dass]] er [[Antwort|nouns/Antwort#1]] [[erhielt|verbs/erhalten#1]] [[auf|prepositions/auf]] [[eine|determiners/eine]] [[Frage|nouns/Frage#1]], die er [[keinesfalles|adverbs/keinesfalls]] [[gestellt|verbs/stellen]] hatte, [[nämlich|conjunctions/nämlich]], [[was|pronouns/was#1]] er nicht [[schreiben|verbs/schreiben#1]] [[sollte|verbs/sollen#4]].“"
+    "text_linked": "„[[Hier|adverbs/hier]], [[wo|adverbs/wo]] [[die|pronouns/die]] Beiträger [[des|determiners/des]] Schultzschen Anzeigers [[sich|pronouns/sich#1]] [[einfinden|verbs/einfinden]] [[zu|prepositions/zu]] wissendem [[Gespräch|nouns/Gespräch#1]] [[über|prepositions/über]] Verträglichkeit [[von|prepositions/von#2]] [[Korrespondenzen|nouns/Korrespondenz#1]], über Vorabzahlung [[und|conjunctions/und]] [[Lohn|nouns/Lohn#1]], [[widerfuhr|verbs/widerfahren]] [[es|pronouns/es]] [[Herrn|nouns/Herr#1]] H., [[dem|determiners/der]] es [[an|prepositions/an]] [[Notizen|nouns/Notiz]] [[nicht|particles/nicht#1]] [[mangelte|verbs/mangeln_fehlen#1]], [[daß|conjunctions/dass]] er [[Antwort|nouns/Antwort#1]] [[erhielt|verbs/erhalten#1]] [[auf|prepositions/auf]] [[eine|determiners/eine]] [[Frage|nouns/Frage#1]], die er [[keinesfalles|adverbs/keinesfalls]] [[gestellt|verbs/stellen]] hatte, [[nämlich|conjunctions/nämlich]], [[was|pronouns/was#1]] er nicht [[schreiben|verbs/schreiben#1]] [[sollte|verbs/sollen#4]].“"
   },
   "a5a26fac90": {
     "text": "Nach kurzer Suche habe ich die Schlüssel wiedergefunden.",
@@ -18928,7 +19187,7 @@
         "gloss_hint": "nation | state | nationals"
       }
     ],
-    "text_linked": "Die [[Nachricht|nouns/Nachricht#1]] [[von|prepositions/von]] [[seinem|pronouns/sein]] [[plötzlichen|adjectives/plötzlich#1]] [[Tod|nouns/Tod#1]] [[schockierte|verbs/schocken]] [[die|pronouns/die]] [[ganze|adjectives/ganz#2]] [[Nation|nouns/Nation#3]]."
+    "text_linked": "Die [[Nachricht|nouns/Nachricht#1]] [[von|prepositions/von]] [[seinem|pronouns/sein]] [[plötzlichen|adjectives/plötzlich#1]] [[Tod|nouns/Tod#1]] [[schockierte|verbs/schocken#1]] [[die|pronouns/die]] [[ganze|adjectives/ganz#2]] [[Nation|nouns/Nation#3]]."
   },
   "a5b7671afa": {
     "text": "„Dr. Ma hätte ihm dann die technische Seite erklärt und seine geheimen Kontakte zur Akademie der Wissenschaften genutzt, um die Finanzierung eines parallelen, chinesischen Vorstoßes in die Wege zu leiten.“",
@@ -22121,7 +22380,7 @@
         "gloss_hint": "marbles"
       }
     ],
-    "text_linked": "„[[Je|adverbs/je]] [[nach|prepositions/nach#1]] [[Region|nouns/Region#1]] [[variieren|verbs/variieren]] [[die|pronouns/die#1]] Materialien [[von|prepositions/von#1]] gebrannten [[Tonen|nouns/Ton_feinkörniges#1]], Kalken [[und|conjunctions/und#1]] [[Marmoren|nouns/Marmor#1]].“"
+    "text_linked": "„[[Je|adverbs/je]] [[nach|prepositions/nach#1]] [[Region|nouns/Region#1]] [[variieren|verbs/variieren#1]] [[die|pronouns/die#1]] Materialien [[von|prepositions/von#1]] gebrannten [[Tonen|nouns/Ton_feinkörniges#1]], Kalken [[und|conjunctions/und#1]] [[Marmoren|nouns/Marmor#1]].“"
   },
   "a5e33efd57": {
     "text": "Die Auszubildenden freuten sich über die humane Chefin.",
