@@ -65,32 +65,6 @@ const SINGULAR_ARTICLES: Record<Gender, CaseRow> = {
 
 const PLURAL_ARTICLES: CaseRow = { nom: "die", acc: "die", dat: "den", gen: "der" };
 
-const RULE_DESCRIPTIONS: Record<string, string> = {
-  suffix_ung:              "-ung \u2192 always feminine",
-  suffix_heit:             "-heit \u2192 always feminine",
-  suffix_keit:             "-keit \u2192 always feminine",
-  suffix_chen:             "-chen \u2192 always neuter",
-  suffix_lein:             "-lein \u2192 always neuter",
-  suffix_schaft:           "-schaft \u2192 nearly always feminine",
-  suffix_tion:             "-tion \u2192 nearly always feminine",
-  suffix_sion:             "-sion \u2192 nearly always feminine",
-  suffix_taet:             "-t\u00E4t \u2192 nearly always feminine",
-  suffix_ismus:            "-ismus \u2192 nearly always masculine",
-  suffix_ist:              "-ist \u2192 nearly always masculine",
-  suffix_ling:             "-ling \u2192 nearly always masculine",
-  suffix_tum:              "-tum \u2192 usually neuter",
-  suffix_or:               "-or \u2192 usually masculine",
-  suffix_ei:               "-ei \u2192 usually feminine",
-  suffix_anz:              "-anz \u2192 usually feminine",
-  suffix_enz:              "-enz \u2192 usually feminine",
-  nominalized_infinitive:  "nominalized infinitive \u2192 always neuter",
-  suffix_ment:             "-ment \u2192 often neuter",
-  suffix_um:               "-um \u2192 often neuter",
-  suffix_ie:               "-ie \u2192 often feminine",
-  suffix_ik:               "-ik \u2192 often feminine",
-  suffix_ur:               "-ur \u2192 often feminine",
-  suffix_eur:              "-eur \u2192 often masculine",
-};
 
 export default defineComponent({
   props: {
@@ -132,7 +106,7 @@ export default defineComponent({
     ruleText(): string {
       const rule = this.word.gender_rule;
       if (!rule) return "";
-      const desc = RULE_DESCRIPTIONS[rule.rule_id] || rule.rule_id;
+      const desc = t(`noun.rule.${rule.rule_id}`);
       return rule.is_exception ? `${t("noun.exception")}${desc}` : desc;
     },
   },
