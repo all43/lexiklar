@@ -598,10 +598,61 @@
   },
   "2005c6325e": {
     "text": "Wer viel Süßes isst und kaum Kalorien verbrennt, wird aufgehen wie ein Hefekloß.",
-    "translation": null,
+    "translation": "Whoever eats a lot of sweets and hardly burns any calories will balloon up like a dumpling.",
     "source": "wiktionary",
     "lemmas": [
       "aufgehen wie ein Hefekloß"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "viel",
+        "lemma": "viel",
+        "pos": "adjective",
+        "gloss_hint": "much"
+      },
+      {
+        "form": "Süßes",
+        "lemma": "Süßes",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "isst",
+        "lemma": "essen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "kaum",
+        "lemma": "kaum",
+        "pos": "adverb",
+        "gloss_hint": "hardly"
+      },
+      {
+        "form": "Kalorien",
+        "lemma": "Kalorie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verbrennt",
+        "lemma": "verbrennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgehen",
+        "lemma": "aufgehen",
+        "pos": "verb",
+        "gloss_hint": "rise"
+      },
+      {
+        "form": "Hefekloß",
+        "lemma": "Hefekloß",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "200613fd08": {
@@ -2912,11 +2963,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "It's easy to swim when someone keeps you afloat",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2021d2c891": {
     "text": "Die Chromfelgen spiegeln das Licht.",
@@ -4874,11 +4926,12 @@
     "type": "expression",
     "note": "durch Niedergeschlagenheit / Depression zu viel essen und dick werden",
     "synonyms": [],
-    "translation": null,
+    "translation": "to gain comfort weight",
     "source": "wiktionary",
     "lemmas": [
       "ansetzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "20384f542a": {
     "text": "Pass auf! Sonst fällst du noch da rein!",
@@ -5280,10 +5333,31 @@
   },
   "203bbf15c4": {
     "text": "Der Detektor brachte uns zur Fundstelle.",
-    "translation": null,
+    "translation": "The detector led us to the find site.",
     "source": "wiktionary",
     "lemmas": [
       "Detektor"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Detektor",
+        "lemma": "Detektor",
+        "pos": "noun",
+        "gloss_hint": "detector"
+      },
+      {
+        "form": "brachte",
+        "lemma": "bringen",
+        "pos": "verb",
+        "gloss_hint": "carry"
+      },
+      {
+        "form": "Fundstelle",
+        "lemma": "Fundstelle",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "203bc0c460": {
@@ -6261,11 +6335,12 @@
     "type": "expression",
     "note": "unerfahren sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be wet behind the ears",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "204541b0eb": {
     "text": "„Denn Einstein, dem wir jene wunderverheißende Formel verdanken, leugnet nicht nur deren praktische Verwendbarkeit, sondern er führt noch ein anderes Argument ins Treffen, um uns aus allen Himmeln zu stürzen. Gesetzt nämlich, so erklärte er mir, es wäre möglich, jene immense Energieentwickelung zu bewirken, so würden wir damit nur an ein Zeitalter gelangen, gegen welches die kohlenschwarze Gegenwart als golden gepriesen werden müßte.“",
@@ -6932,11 +7007,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to draw conclusions",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2047d1e9f9": {
     "text": "Nach der soundsovielten sogenannten „Frontbegradigung“ hatte die Moral etwas gelitten",
@@ -8563,11 +8639,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "never-ending spiral",
     "source": "wiktionary",
     "lemmas": [
       "Schraube"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "205397611d": {
     "text": "Ich bitte einen Polizisten um Auskunft.",
@@ -8844,11 +8921,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Fight fire with fire",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2056ddf6c1": {
     "text": "„Nun, eines guten Tages bringt die Hündin sechs oder acht Welpen auf die Welt.“",
@@ -9576,10 +9654,19 @@
   },
   "206056d6aa": {
     "text": "Sowas hätte ich nicht für möglich gehalten.",
-    "translation": null,
+    "translation": "I wouldn't have thought something like that was possible.",
     "source": "wiktionary",
     "lemmas": [
       "sowas"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "möglich",
+        "lemma": "möglich",
+        "pos": "adjective",
+        "gloss_hint": "possible"
+      }
     ]
   },
   "20621a989b": {
@@ -12962,10 +13049,37 @@
   },
   "207a23813a": {
     "text": "Die Vereinsmitglieder diskutierten, wie sie ihren Unmut zur Sprache bringen sollten.",
-    "translation": null,
+    "translation": "The club members discussed how they should voice their discontent.",
     "source": "wiktionary",
     "lemmas": [
       "etwas zur Sprache bringen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vereinsmitglieder",
+        "lemma": "Vereinsmitglied",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "diskutierten",
+        "lemma": "diskutieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unmut",
+        "lemma": "Unmut",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sprache",
+        "lemma": "Sprache",
+        "pos": "noun",
+        "gloss_hint": "speech"
+      }
     ]
   },
   "207ab08b24": {
@@ -13256,12 +13370,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "out of bed",
     "source": "wiktionary",
     "lemmas": [
       "Feder"
     ],
-    "ref": "phrases/aus den Federn"
+    "ref": "phrases/aus den Federn",
+    "translation_model": "openai/gpt-4.1"
   },
   "207ba0c099": {
     "text": "Die unendlichen Weiten des Universums faszinierten ihn.",
@@ -13469,11 +13584,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to look someone in the eye",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "207cfd889b": {
     "text": "Beim Fußballspielen hab ich gestern mächtig Schwein gehabt.",
@@ -13792,10 +13908,25 @@
   },
   "208076f735": {
     "text": "\"Da heißt es für sie einfach abwarten und eine rauchen.\"",
-    "translation": null,
+    "translation": "\"For them it's simply a matter of waiting and having a smoke.\"",
     "source": "wiktionary",
     "lemmas": [
       "eine rauchen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "abwarten",
+        "lemma": "abwarten",
+        "pos": "verb",
+        "gloss_hint": "wait"
+      },
+      {
+        "form": "rauchen",
+        "lemma": "rauchen",
+        "pos": "verb",
+        "gloss_hint": "smoke"
+      }
     ]
   },
   "2080cf55d7": {
@@ -14004,10 +14135,37 @@
   },
   "2081e40b49": {
     "text": "Den roten Schopf meiner Schwester kann man auch zwischen vielen Menschen kaum übersehen.",
-    "translation": null,
+    "translation": "My sister's red hair is hard to miss even among many people.",
     "source": "wiktionary",
     "lemmas": [
       "Schopf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "roten",
+        "lemma": "rot",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schopf",
+        "lemma": "Schopf",
+        "pos": "noun",
+        "gloss_hint": "head of hair"
+      },
+      {
+        "form": "Schwester",
+        "lemma": "Schwester",
+        "pos": "noun",
+        "gloss_hint": "sister"
+      },
+      {
+        "form": "übersehen",
+        "lemma": "übersehen",
+        "pos": "verb",
+        "gloss_hint": "overlook"
+      }
     ]
   },
   "2081e483ab": {
@@ -14026,11 +14184,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Do unto others as you would have them do unto you.",
     "source": "wiktionary",
     "lemmas": [
       "kein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2083273f14": {
     "text": "Der Regisseur besetzte die Hauptrolle mit Boris Bleibein.",
@@ -14496,11 +14655,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "He's clever, but unfortunately, he can't hold onto it.",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2087be41db": {
     "text": "„Eines der ersten jiddischen Werke der osteuropäischen Haskala war denn auch ein Gesundheitsratgeber.“",
@@ -15823,11 +15983,12 @@
     "type": "expression",
     "note": "sich nutzlos mühen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to try to catch an eel by the tail",
     "source": "wiktionary",
     "lemmas": [
       "Aal"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "208f55ca04": {
     "text": "„Ein weiterer Forschungsschwerpunkt ist der Einsatz verschiedener salztoleranter Pflanzen (Halophyten) als Biofilter, als Nahrungsmittel, als Quelle wertvoller Pflanzeninhaltsstoffe, als biologisches Abbausystem von Xenobiotika etc.“",
@@ -17503,10 +17664,79 @@
   },
   "209b214265": {
     "text": "„Im Vordergrund sind das Gehäuse des Aktuators, die Klemmvorrichtung und der Stempel zu sehen, im Hintergrund ist die Faser mit einem Magneten an dem Halter befestigt.“",
-    "translation": null,
+    "translation": "\"In the foreground you can see the actuator housing, the clamping device and the stamp; in the background the fiber is attached to the holder with a magnet.\"",
     "source": "wiktionary",
     "lemmas": [
       "Halter"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vordergrund",
+        "lemma": "Vordergrund",
+        "pos": "noun",
+        "gloss_hint": "foreground"
+      },
+      {
+        "form": "Gehäuse",
+        "lemma": "Gehäuse",
+        "pos": "noun",
+        "gloss_hint": "case"
+      },
+      {
+        "form": "Aktuators",
+        "lemma": "Aktuator",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klemmvorrichtung",
+        "lemma": "Klemmvorrichtung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stempel",
+        "lemma": "Stempel",
+        "pos": "noun",
+        "gloss_hint": "stamp"
+      },
+      {
+        "form": "sehen",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": "see"
+      },
+      {
+        "form": "Hintergrund",
+        "lemma": "Hintergrund",
+        "pos": "noun",
+        "gloss_hint": "background"
+      },
+      {
+        "form": "Faser",
+        "lemma": "Faser",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Magneten",
+        "lemma": "Magnet",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Halter",
+        "lemma": "Halter",
+        "pos": "noun",
+        "gloss_hint": "holder"
+      },
+      {
+        "form": "befestigt",
+        "lemma": "befestigen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "209ba53e70": {
@@ -18842,10 +19072,31 @@
   },
   "20a3ed0f02": {
     "text": "Wenn du ihn weiter provozierst, geht er bestimmt an die Decke.",
-    "translation": null,
+    "translation": "If you keep provoking him, he'll definitely hit the roof.",
     "source": "wiktionary",
     "lemmas": [
       "an die Decke gehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "provozierst",
+        "lemma": "provozieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "bestimmt",
+        "lemma": "bestimmt",
+        "pos": "adjective",
+        "gloss_hint": "definite"
+      },
+      {
+        "form": "Decke",
+        "lemma": "Decke",
+        "pos": "noun",
+        "gloss_hint": "ceiling"
+      }
     ]
   },
   "20a4b6b167": {
@@ -19903,11 +20154,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep things in check",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "20a9b3b41b": {
     "text": "„Jetzt wurde die Matratze untersucht und gefunden, daß auf den Federn nur eine dünne, lockere Schicht Haare liege, die ganze dicke Matratze, wie man ganz offen sehen konnte und wie es bei allen derartigen Polstern der Fall ist, ein hohler Raum sei.“",
@@ -20268,12 +20520,13 @@
     "type": "expression",
     "note": "reaktionsschnell sein, einen guten Draht zu jemandem haben, einen direkten Draht zu jemandem haben - sich gut mit jemandem verstehen, die Drähte ziehen - lenken",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on top of one's game",
     "source": "wiktionary",
     "lemmas": [
       "Draht"
     ],
-    "ref": "phrases/auf Draht sein"
+    "ref": "phrases/auf Draht sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "20ac49f26d": {
     "text": "„Eine Bundespräsidentin Schavan hätte die politische Erzählung in Deutschland bereichert und dramatisiert, neben der CDU-Chefin und möglichen Kanzlerkandidatin Angela Merkel.“",
@@ -21125,11 +21378,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be at home in a certain field",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "20af0c9bdf": {
     "text": "„Der Swakop könnte zum Omuramba werden, wenn er längere Zeit nicht oder nicht stark genug abkommt und sich die Vegetation ansiedelt; dann kommt gelegentlich aber doch eine starke Flut und entfernt wieder die angesiedelten Pflanzen.“",
@@ -22156,12 +22410,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pull the wool over someone's eyes",
     "source": "wiktionary",
     "lemmas": [
       "Türke"
     ],
-    "ref": "phrases/einen Türken bauen"
+    "ref": "phrases/einen Türken bauen",
+    "translation_model": "openai/gpt-4.1"
   },
   "20bb42d237": {
     "text": "Das ist die Arbeit eines Amateurs.",
@@ -22428,12 +22683,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "according to the rules",
     "source": "wiktionary",
     "lemmas": [
       "Riese"
     ],
-    "ref": "phrases/nach Adam Riese"
+    "ref": "phrases/nach Adam Riese",
+    "translation_model": "openai/gpt-4.1"
   },
   "20bf33b05f": {
     "text": "Unsere Lehrerin glaubte, dass es an unserem morgigen Wandertag regnen würde und sagte ihn daher ab.",
@@ -22706,10 +22962,31 @@
   },
   "20c08b379a": {
     "text": "An dieser Küste brüten vorwiegend Lunde.",
-    "translation": null,
+    "translation": "Puffins breed predominantly on this coast.",
     "source": "wiktionary",
     "lemmas": [
       "vorwiegend"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Küste",
+        "lemma": "Küste",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "brüten",
+        "lemma": "brüten",
+        "pos": "verb",
+        "gloss_hint": "Eiern Wärme zuführen, um die Entwicklung des Nachwuchses zu gewährleisten"
+      },
+      {
+        "form": "Lunde",
+        "lemma": "Lund",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "20c0f29147": {
@@ -24050,10 +24327,43 @@
   },
   "20cd415ae2": {
     "text": "[Juden in Bayern im 15. Jahrhundert:] „Wo auf gewaltsame Christianisierung verzichtet wurde, begannen Vertreibungen aus den Städten im großen Stil.“",
-    "translation": null,
+    "translation": "\"Where violent Christianization was not pursued, expulsions from the cities began on a large scale.\"",
     "source": "wiktionary",
     "lemmas": [
       "im großen Stil"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gewaltsame",
+        "lemma": "gewaltsam",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Christianisierung",
+        "lemma": "Christianisierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vertreibungen",
+        "lemma": "Vertreibung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Städten",
+        "lemma": "Stadt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stil",
+        "lemma": "Stil",
+        "pos": "noun",
+        "gloss_hint": "style"
+      }
     ]
   },
   "20cd7679cd": {
@@ -24634,10 +24944,73 @@
   },
   "20d1c39e20": {
     "text": "„Dombert, der für den Dienstgruppenleiter H. vor dem Urteil zehn Monate auf Bewährung gefordert hatte, ließ offen, ob er gegen das Urteil Revision einlegen wolle.“",
-    "translation": null,
+    "translation": "\"Dombert, who had demanded ten months on probation for the service group leader H. before the verdict, left open whether he would appeal against the verdict.\"",
     "source": "wiktionary",
     "lemmas": [
       "H."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Dombert",
+        "lemma": "Dombert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dienstgruppenleiter",
+        "lemma": "Dienstgruppenleiter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Urteil",
+        "lemma": "Urteil",
+        "pos": "noun",
+        "gloss_hint": "verdict"
+      },
+      {
+        "form": "zehn",
+        "lemma": "zehn",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Monate",
+        "lemma": "Monat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bewährung",
+        "lemma": "Bewährung",
+        "pos": "noun",
+        "gloss_hint": "probation"
+      },
+      {
+        "form": "gefordert",
+        "lemma": "fordern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "offen",
+        "lemma": "offen",
+        "pos": "adjective",
+        "gloss_hint": "undecided"
+      },
+      {
+        "form": "Revision",
+        "lemma": "Revision",
+        "pos": "noun",
+        "gloss_hint": "legal review"
+      },
+      {
+        "form": "einlegen",
+        "lemma": "einlegen",
+        "pos": "verb",
+        "gloss_hint": "lodge"
+      }
     ]
   },
   "20d1fa45ca": {
@@ -26055,11 +26428,12 @@
     "type": "expression",
     "note": "die Wohnung sauber machen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to do the cleaning",
     "source": "wiktionary",
     "lemmas": [
       "schwingen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "20da0df00f": {
     "text": "„Ich verlasse dich. Ich weiß nicht genau, wann ich den Satz zum ersten Mal gedacht habe. Und wieviele Male seither.“",
@@ -28044,10 +28418,43 @@
   },
   "20eee861fc": {
     "text": "Der Gemeindesprecher gibt sich kurz angebunden: Es gebe keine Probleme mit den Fremden [Asylbewerbern], heißt es lapidar.",
-    "translation": null,
+    "translation": "The municipal spokesman is terse: there are no problems with the foreigners [asylum seekers], it is stated laconically.",
     "source": "wiktionary",
     "lemmas": [
       "kurz angebunden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gemeindesprecher",
+        "lemma": "Gemeindesprecher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kurz",
+        "lemma": "kurz",
+        "pos": "adjective",
+        "gloss_hint": "brief"
+      },
+      {
+        "form": "angebunden",
+        "lemma": "anbinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Probleme",
+        "lemma": "Problem",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fremden",
+        "lemma": "Fremder",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "20ef32c47a": {
@@ -28424,10 +28831,73 @@
   },
   "20f12ee436": {
     "text": "„Entwicklungshilfe-Kommissar Louis Michel zufolge wäre es möglich, auf Reservefonds im Haushalt zurückzugreifen, wenn die EU-Staaten und das Parlament zustimmen.“",
-    "translation": null,
+    "translation": "\"According to Development Aid Commissioner Louis Michel, it would be possible to draw on reserve funds in the budget if the EU states and parliament agree.\"",
     "source": "wiktionary",
     "lemmas": [
       "zufolge"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Entwicklungshilfe-Kommissar",
+        "lemma": "Entwicklungshilfe-Kommissar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Louis",
+        "lemma": "Louis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Michel",
+        "lemma": "Michel",
+        "pos": "noun",
+        "gloss_hint": "Michael"
+      },
+      {
+        "form": "möglich",
+        "lemma": "möglich",
+        "pos": "adjective",
+        "gloss_hint": "possible"
+      },
+      {
+        "form": "Reservefonds",
+        "lemma": "Reservefonds",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haushalt",
+        "lemma": "Haushalt",
+        "pos": "noun",
+        "gloss_hint": "budget"
+      },
+      {
+        "form": "zurückzugreifen",
+        "lemma": "zurückgreifen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "EU-Staaten",
+        "lemma": "EU-Staat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Parlament",
+        "lemma": "Parlament",
+        "pos": "noun",
+        "gloss_hint": "parliament"
+      },
+      {
+        "form": "zustimmen",
+        "lemma": "zustimmen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "20f248d676": {

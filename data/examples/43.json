@@ -499,11 +499,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have sex (vulgar)",
     "source": "wiktionary",
     "lemmas": [
       "Matratze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "43047adb62": {
     "text": "„Unter diesen Kriegern fand unser Creek einige seiner rothen Brüder – Schawnees- und Delawares-Indianer, die von den fernen Gränzen von Missouri hergewandert waren.“",
@@ -2805,11 +2806,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "you can kiss my ass (vulgar)",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "431202f4bd": {
     "text": "Du brauchst mal wieder was Anständiges in den Magen!",
@@ -4015,13 +4017,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "there won't be a dry eye in the house",
     "source": "wiktionary",
     "lemmas": [
       "Auge",
       "bleiben",
       "trocken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "431acd1492": {
     "text": "Ich vertraue auf deine guten Fahrkünste.",
@@ -5504,11 +5507,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "then I'll pretend I never said anything",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "43260d9d40": {
     "text": "„Im 'Tag- und Anzeigblatt für Stadt und Land' vom 11. August 1873 wurde eine vorläufige Bilanz gezogen, nach der es acht Tote und zwei Vermisste gegeben hatte und etwa 100 Wohnhäuser sowie 60 Nebengebäude beschädigt oder ganz zerstört worden waren.“",
@@ -5623,12 +5627,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on shaky ground",
     "source": "wiktionary",
     "lemmas": [
       "Fuß"
     ],
-    "ref": "phrases/auf tönernen Füßen stehen"
+    "ref": "phrases/auf tönernen Füßen stehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "4326c5b5a3": {
     "text": "„Newton, der das vortreffliche Gesetz der Anziehung entdeckt hat, welches vor den glücklichsten Versuch angesehen werden muß, den der menschliche Verstand in der Erkenntnis der Natur noch getan hat, lehret die Anziehungskräfte der Planeten, die Monde um sich haben, finden und bestimmt des Jupiters, des größten unter allen Planeten, seine etwas gringer als den tausendsten Teil der Anziehungskraft der Sonne.“",
@@ -6019,10 +6024,175 @@
   },
   "4327ce1e2d": {
     "text": "„Zwischen 1805 und 1812 zogen in Baden und Württemberg über siebzigtausend junge Männer in den Krieg. Von den 15.800 württembergischen Soldaten im Rußlandfeldzug kamen gerade einmal fünfhundert zurück – krank, verwundet und vielfach für ihr Leben vom Krieg gezeichnet. Es gab Dörfer, in denen fast alle jungen Männer zwischen zwanzig und dreißig Jahren im Krieg geblieben waren.“",
-    "translation": null,
+    "translation": "Between 1805 and 1812, over seventy thousand young men from Baden and Württemberg went to war. Of the 15,800 Württemberg soldiers in the Russian campaign, barely five hundred returned—sick, wounded, and in many cases scarred by war for the rest of their lives. There were villages where almost all the young men between twenty and thirty years old had fallen in the war.",
     "source": "wiktionary",
     "lemmas": [
       "im Krieg bleiben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zwischen",
+        "lemma": "zwischen",
+        "pos": "preposition",
+        "gloss_hint": "between"
+      },
+      {
+        "form": "1805",
+        "lemma": "1805",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "1812",
+        "lemma": "1812",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zogen",
+        "lemma": "ziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Baden",
+        "lemma": "Baden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Württemberg",
+        "lemma": "Württemberg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "siebzigtausend",
+        "lemma": "siebzigtausend",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "junge",
+        "lemma": "jung",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Männer",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Krieg",
+        "lemma": "Krieg",
+        "pos": "noun",
+        "gloss_hint": "war"
+      },
+      {
+        "form": "württembergischen",
+        "lemma": "württembergisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Soldaten",
+        "lemma": "Soldat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rußlandfeldzug",
+        "lemma": "Rußlandfeldzug",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kamen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "fünfhundert",
+        "lemma": "fünfhundert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zurück",
+        "lemma": "zurück",
+        "pos": "adverb",
+        "gloss_hint": "back"
+      },
+      {
+        "form": "krank",
+        "lemma": "krank",
+        "pos": "adjective",
+        "gloss_hint": "sick"
+      },
+      {
+        "form": "verwundet",
+        "lemma": "verwunden",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "vielfach",
+        "lemma": "vielfach",
+        "pos": "adjective",
+        "gloss_hint": "frequent"
+      },
+      {
+        "form": "Leben",
+        "lemma": "Leben",
+        "pos": "noun",
+        "gloss_hint": "lifetime"
+      },
+      {
+        "form": "gezeichnet",
+        "lemma": "zeichnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dörfer",
+        "lemma": "Dorf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fast",
+        "lemma": "fast",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zwanzig",
+        "lemma": "zwanzig",
+        "pos": "numeral",
+        "gloss_hint": "twenty"
+      },
+      {
+        "form": "dreißig",
+        "lemma": "dreißig",
+        "pos": "numeral",
+        "gloss_hint": "thirty"
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "geblieben",
+        "lemma": "bleiben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "432820c112": {
@@ -6450,11 +6620,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the root of all evil",
     "source": "wiktionary",
     "lemmas": [
       "Wurzel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "432e991e4b": {
     "text": "„Das Mädchen dagegen wirkt stets wie aus dem Ei gepellt, sieht immer so aus, als hätte es sein einziges Kleid und seine Schuluniform gerade aus der Reinigung geholt.“",
@@ -7150,11 +7321,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to worry",
     "source": "wiktionary",
     "lemmas": [
       "machen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "43344606c1": {
     "text": "Der Bezug von Sozialleistungen ist an bestimmte Bedingungen geknüpft.",
@@ -7233,11 +7405,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Beware of oaks, seek out beeches",
     "source": "wiktionary",
     "lemmas": [
       "Eiche"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "43359ff6f1": {
     "text": "„Das Adrenalin schoss durch seinen Körper.“",
@@ -7534,11 +7707,13 @@
   },
   "4338b80604": {
     "text": "s. verwandte Gattung Brassica",
-    "translation": null,
+    "translation": "See related genus Brassica.",
     "source": "wiktionary",
     "lemmas": [
       "s."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "4338f712d9": {
     "text": "„Es war, als ob mein Spiegelbild schon auf mich wartete und mich freudig begrüßte, wenn ich es ansah.“",
@@ -7978,10 +8153,55 @@
   },
   "433fe37168": {
     "text": "„Ich saß da und trippte auf LSD, als ein großer Schatten auf mich fiel: Lemmy.“",
-    "translation": null,
+    "translation": "I was sitting there tripping on LSD when a large shadow fell over me: Lemmy.",
     "source": "wiktionary",
     "lemmas": [
       "LSD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "saß",
+        "lemma": "sitzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "trippte",
+        "lemma": "trippen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "LSD",
+        "lemma": "LSD",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "großer",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schatten",
+        "lemma": "Schatten",
+        "pos": "noun",
+        "gloss_hint": "shadow"
+      },
+      {
+        "form": "fiel",
+        "lemma": "fallen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lemmy",
+        "lemma": "Lemmy",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "434002e522": {
@@ -8664,12 +8884,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a Damascus moment",
     "source": "wiktionary",
     "lemmas": [
       "Damaskus"
     ],
-    "ref": "phrases/seinen Tag von Damaskus erleben"
+    "ref": "phrases/seinen Tag von Damaskus erleben",
+    "translation_model": "openai/gpt-4.1"
   },
   "434593f90e": {
     "text": "„Was für ein widersprüchliches Wesen ist doch der Mensch, der nicht so sehr schätzt wie das, was er zurückweist oder aufgibt! Der Soldat, der den Krieg zu seinem Beruf machte, sich aber mitten in der Schlacht nach Frieden sehnt und den es in der Sicherheit des Friedens nach dem Klirren der Schwerter und dem Chaos auf blutgetränktem Feld verlangt; der Sklave, der sich gegen auferlegte Knechtschaft wehrt und durch Fleiß die Freiheit erkauft, um sich dann an einen grausameren und gestrengeren Mann zu binden, als es sein früherer Herr gewesen war; der Liebhaber, der seine Geliebte verlässt und danach nicht aufhört, von ihrer vermeintlichen Vollkommenheit zu träumen.“",
@@ -8966,10 +9187,55 @@
   },
   "43473535b3": {
     "text": "Russ besteht fast nur aus reinem Kohlenstoff (C) und entsteht bei unvollständiger Verbrennung.",
-    "translation": null,
+    "translation": "Soot consists almost entirely of pure carbon (C) and is produced by incomplete combustion.",
     "source": "wiktionary",
     "lemmas": [
       "Russ"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Russ",
+        "lemma": "Russ",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besteht",
+        "lemma": "bestehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "reinem",
+        "lemma": "rein",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kohlenstoff",
+        "lemma": "Kohlenstoff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entsteht",
+        "lemma": "entstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "unvollständiger",
+        "lemma": "unvollständig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verbrennung",
+        "lemma": "Verbrennung",
+        "pos": "noun",
+        "gloss_hint": "combustion"
+      }
     ]
   },
   "43483f00ee": {
@@ -9067,11 +9333,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "short-sighted",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "434bbc192a": {
     "text": "„In Margarine oder Butter geschwenkte Mohrrüben zum Mittagessen sind also besonders für ein Kind gesünder als die roh gekauten Mohrrüben. Zu ihrer Ehrenrettung: Sie sind natürlich auf jeden Fall besser als Keks und Süßigkeiten, sie kräftigen das Gebiß und verhelfen zu einer guten Verdauung.“",
@@ -9920,11 +10187,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I am a Berliner.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4357450616": {
     "text": "„Ich bekam dann die wahnsinnige Idee, es ein wenig mit Kokain zu versuchen.“",
@@ -10164,12 +10432,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bare-chested",
     "source": "wiktionary",
     "lemmas": [
       "Taille"
     ],
-    "ref": "phrases/per Taille"
+    "ref": "phrases/per Taille",
+    "translation_model": "openai/gpt-4.1"
   },
   "435b79efde": {
     "text": "„Ich habe ihr natürlich Abzüge geschenkt.“",
@@ -13303,11 +13572,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to wash one's hands of responsibility",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4383114dc0": {
     "text": "„Eine Yankee, unerschrocken und dickköpfig und dumm, dachte er mit einer Verachtung, in der ein Anflug von Bewunderung mitschwang.“",
@@ -14612,11 +14882,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I beg your pardon",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4391480d0a": {
     "text": "„Das Tempo der Energiewende reicht nicht aus, um den CO₂-Ausstoß schnell genug runterzubringen.“",
@@ -15623,12 +15894,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get a turn",
     "source": "wiktionary",
     "lemmas": [
       "Zug"
     ],
-    "ref": "phrases/zum Zuge kommen"
+    "ref": "phrases/zum Zuge kommen",
+    "translation_model": "openai/gpt-4.1"
   },
   "439bb0733e": {
     "text": "Neben Hans machst du aber eine sehr schlechte Figur.",
@@ -16063,11 +16335,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to swear like a trooper",
     "source": "wiktionary",
     "lemmas": [
       "schimpfen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "43a3b5988e": {
     "text": "„Papa hatte sich in der Kirche einen kleinen Führer gekauft, und mit dem Führer in der Hand ging er dann die ganze Kirche ab.“",
@@ -17116,11 +17389,12 @@
     "type": "expression",
     "note": "Ausdruck für Kritik",
     "synonyms": [],
-    "translation": null,
+    "translation": "that's enough to make a dead dog cry",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "43ac252205": {
     "text": "„Eine schwierige Zeit kommt auf mich zu.“",
@@ -17238,11 +17512,12 @@
     "type": "expression",
     "note": "übertrieben demütig sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to grovel before someone",
     "source": "wiktionary",
     "lemmas": [
       "rutschen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "43aff3dffa": {
     "text": "„Es ist die erste Limousine von Lamborghini, wobei der Begriff natürlich für die Marke mit dem Stier im Wappen viel zu profan ist.“",
@@ -17481,11 +17756,13 @@
   },
   "43b246e383": {
     "text": "s. Tabelle (2) oben",
-    "translation": null,
+    "translation": "See Table (2) above.",
     "source": "wiktionary",
     "lemmas": [
       "s."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "43b27815b7": {
     "text": "„Einer Augenzeugin, die den Sturz beobachtet hat, ist der Schreck noch anzusehen.“",
@@ -17627,18 +17904,84 @@
   },
   "43b47108cc": {
     "text": "Dieses Gewächs ist harmlos sagt immerhin der Arzt.",
-    "translation": null,
+    "translation": "This plant is harmless, at least according to the doctor.",
     "source": "wiktionary",
     "lemmas": [
       "Gewächs"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gewächs",
+        "lemma": "Gewächs",
+        "pos": "noun",
+        "gloss_hint": "plant"
+      },
+      {
+        "form": "harmlos",
+        "lemma": "harmlos",
+        "pos": "adjective",
+        "gloss_hint": "harmless"
+      },
+      {
+        "form": "Arzt",
+        "lemma": "Arzt",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "43b4eccb3b": {
     "text": "„Gesetzlich sind die Spielbanken bisher nur beim Großen Spiel – etwa Roulette und Black Jack – zur Zugangskontrolle verpflichtet.“",
-    "translation": null,
+    "translation": "Legally, the casinos have so far only been required to carry out access control for major games – such as roulette and blackjack.",
     "source": "wiktionary",
     "lemmas": [
       "Black Jack"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Spielbanken",
+        "lemma": "Spielbank",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Großen",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spiel",
+        "lemma": "Spiel",
+        "pos": "noun",
+        "gloss_hint": "game"
+      },
+      {
+        "form": "Roulette",
+        "lemma": "Roulette",
+        "pos": "noun",
+        "gloss_hint": "roulette"
+      },
+      {
+        "form": "Black Jack",
+        "lemma": "Black Jack",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zugangskontrolle",
+        "lemma": "Zugangskontrolle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verpflichtet",
+        "lemma": "verpflichten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "43b60f3cf3": {
@@ -18213,10 +18556,19 @@
   },
   "43bab5b01a": {
     "text": "„Mit so einer Cancel Culture will ich nichts zu tun haben.“",
-    "translation": null,
+    "translation": "I don't want anything to do with this kind of cancel culture.",
     "source": "wiktionary",
     "lemmas": [
       "mit etwas nichts zu tun haben wollen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Cancel Culture",
+        "lemma": "Cancel Culture",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "43bbce3156": {
@@ -18224,12 +18576,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get the short end of the stick",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
     ],
-    "ref": "phrases/zu kurz kommen"
+    "ref": "phrases/zu kurz kommen",
+    "translation_model": "openai/gpt-4.1"
   },
   "43bc8d7c30": {
     "text": "„Die Kleine rennt, von der Rutsche zur Schaukel und wieder zurück.“",
@@ -19267,10 +19620,31 @@
   },
   "43c628075e": {
     "text": "Den Fluss entlang wurden die Dämme ausgebaut.",
-    "translation": null,
+    "translation": "Along the river, the dams were expanded.",
     "source": "wiktionary",
     "lemmas": [
       "entlang"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fluss",
+        "lemma": "Fluss",
+        "pos": "noun",
+        "gloss_hint": "river"
+      },
+      {
+        "form": "Dämme",
+        "lemma": "Damm",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgebaut",
+        "lemma": "ausbauen",
+        "pos": "verb",
+        "gloss_hint": "expanded"
+      }
     ]
   },
   "43c69b4e76": {
@@ -19879,10 +20253,55 @@
   },
   "43ca76b2fb": {
     "text": "„Bei der ersten Analyse der Eckwerte des Doppelhaushalts 2006/2007 könnte man meinen, Berlins Sparkommissar Thilo Sarrazin (SPD) hat Kreide gefressen.“",
-    "translation": null,
+    "translation": "Looking at the initial analysis of the key figures in the double budget for 2006/2007, one might think that Berlin's budget commissioner Thilo Sarrazin (SPD) has had a change of heart.",
     "source": "wiktionary",
     "lemmas": [
       "Kreide fressen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Analyse",
+        "lemma": "Analyse",
+        "pos": "noun",
+        "gloss_hint": "analysis"
+      },
+      {
+        "form": "Eckwerte",
+        "lemma": "Eckwert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Doppelhaushalts",
+        "lemma": "Doppelhaushalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "meinen",
+        "lemma": "meinen",
+        "pos": "verb",
+        "gloss_hint": "hold (opinion)"
+      },
+      {
+        "form": "Sparkommissar",
+        "lemma": "Sparkommissar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kreide",
+        "lemma": "Kreide",
+        "pos": "noun",
+        "gloss_hint": "chalk (alternative)"
+      },
+      {
+        "form": "gefressen",
+        "lemma": "fressen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "43cd0f9ae6": {
@@ -21485,10 +21904,31 @@
   },
   "43db648982": {
     "text": "„Und genau hier scheint doch der Hund begraben zu sein.“",
-    "translation": null,
+    "translation": "And that's precisely where the real problem lies.",
     "source": "wiktionary",
     "lemmas": [
       "da liegt der Hund begraben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "genau",
+        "lemma": "genau",
+        "pos": "particle",
+        "gloss_hint": "exactly"
+      },
+      {
+        "form": "Hund",
+        "lemma": "Hund",
+        "pos": "noun",
+        "gloss_hint": "scoundrel"
+      },
+      {
+        "form": "begraben",
+        "lemma": "begraben",
+        "pos": "verb",
+        "gloss_hint": "discard (thoughts)"
+      }
     ]
   },
   "43db67bcda": {
@@ -22119,11 +22559,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take something out of someone's hands",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "43e5129516": {
     "text": "„Im vergangenen Herbst haben die Bischöfe dann die Vorschläge einer Arbeitsgruppe beraten. Dort wurde zwei Modelle diskutiert.“",
@@ -24014,11 +24455,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have to bear one's own burden",
     "source": "wiktionary",
     "lemmas": [
       "Päckchen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "43fb9a835f": {
     "text": "Das tägliche Üben war für sie eine gute Vorschule für ihren späteren Beruf.",
@@ -24499,11 +24941,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not make ends meet",
     "source": "wiktionary",
     "lemmas": [
       "Runde"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "43feed84c9": {
     "text": "Das Verhalten des Stalkers schlägt dann in Verleumdungen und Beleidigungen um, wenn das Opfer nicht auf das Handeln des Täters reagiert, und kann in jahrelangem Psychoterror münden.",
@@ -24675,10 +25118,49 @@
   },
   "43ff516a10": {
     "text": "Die Regierung sollte zu diesem heiklen Thema endlich Farbe bekennen.",
-    "translation": null,
+    "translation": "The government should finally take a clear position on this sensitive issue.",
     "source": "wiktionary",
     "lemmas": [
       "Farbe bekennen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Regierung",
+        "lemma": "Regierung",
+        "pos": "noun",
+        "gloss_hint": "government"
+      },
+      {
+        "form": "heiklen",
+        "lemma": "heikel",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Thema",
+        "lemma": "Thema",
+        "pos": "noun",
+        "gloss_hint": "topic of discussion"
+      },
+      {
+        "form": "endlich",
+        "lemma": "endlich",
+        "pos": "adverb",
+        "gloss_hint": "finally"
+      },
+      {
+        "form": "Farbe",
+        "lemma": "Farbe",
+        "pos": "noun",
+        "gloss_hint": "emblem"
+      },
+      {
+        "form": "bekennen",
+        "lemma": "bekennen",
+        "pos": "verb",
+        "gloss_hint": "declare allegiance to"
+      }
     ]
   },
   "43fffddf0c": {

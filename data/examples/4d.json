@@ -274,11 +274,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to stir up emotions",
     "source": "wiktionary",
     "lemmas": [
       "Gemüt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d00a4f6e5": {
     "text": "Kam da doch dann eine Polizeistreife und wollte, dass ich puste!",
@@ -696,11 +697,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "White Christmas, green Easter.",
     "source": "wiktionary",
     "lemmas": [
       "weiße Weihnachten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d045afabc": {
     "text": "Gemäß der binären Nomenklatur heißt einer der größten Dinosaurier Tyrannosaurus rex, unsere Kartoffel trägt den Namen Solanum tuberosum und der Mensch heißt Homo sapiens.",
@@ -1074,11 +1076,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a bit crazy",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d07e524ec": {
     "text": "Fettbrände in der Küche muss man mit einem Tuch oder einer Decke ersticken. Man darf auf keinen Fall versuchen, sie mit Wasser zu löschen.",
@@ -1368,11 +1371,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "short-windedness",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d0b43e3be": {
     "text": "seiner fünf Sinne nicht mehr mächtig sein",
@@ -1954,11 +1958,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm just here to do my job, not to give my opinion.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d0e7fdcdd": {
     "text": "„In Deutschland, dem mächtigsten Land in der EU, wäre es manchem recht, wenn die Griechen den Euroklub verließen.“",
@@ -3349,10 +3354,127 @@
   },
   "4d16a283f5": {
     "text": "„Ich war etwa neun Jahre tot, als mir der Prospekt des Sanatoriums ‚Bizepsheil‘ in die Hände fiel; heute, nach sechswöchentlicher Kur, laufe ich wieder gesund, fidel und frisch in der Welt herum und trage mich, da sich mein Gatte in meiner Abwesenheit eine zweite Frau genommen hat, ernstlich mit Heiratsgedanken.“",
-    "translation": null,
+    "translation": "\"I had been dead for about nine years when the brochure for the sanatorium 'Biceps Cure' fell into my hands; today, after a six-week cure, I walk around the world again healthy, cheerful and fresh, and since my husband took a second wife in my absence, I am seriously entertaining thoughts of remarriage.\"",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "neun",
+        "lemma": "neun",
+        "pos": "noun",
+        "gloss_hint": "nine"
+      },
+      {
+        "form": "Jahre",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tot",
+        "lemma": "tot",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prospekt",
+        "lemma": "Prospekt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sanatoriums",
+        "lemma": "Sanatorium",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hände",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "sechswöchentlicher",
+        "lemma": "sechswöchentlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kur",
+        "lemma": "Kur",
+        "pos": "noun",
+        "gloss_hint": "therapy"
+      },
+      {
+        "form": "laufe",
+        "lemma": "laufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesund",
+        "lemma": "gesund",
+        "pos": "adjective",
+        "gloss_hint": "healthy"
+      },
+      {
+        "form": "fidel",
+        "lemma": "fidel",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "frisch",
+        "lemma": "frisch",
+        "pos": "adjective",
+        "gloss_hint": "fresh"
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world (society)"
+      },
+      {
+        "form": "Gatte",
+        "lemma": "Gatte",
+        "pos": "noun",
+        "gloss_hint": "husband"
+      },
+      {
+        "form": "Abwesenheit",
+        "lemma": "Abwesenheit",
+        "pos": "noun",
+        "gloss_hint": "absence (physical)"
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "wife"
+      },
+      {
+        "form": "genommen",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Heiratsgedanken",
+        "lemma": "Heiratsgedanke",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "4d1758a99a": {
@@ -3467,19 +3589,89 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Many eyes are watching closely.",
     "source": "wiktionary",
     "lemmas": [
       "Auge",
       "Suppe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d1a415238": {
     "text": "„Vergangene Woche hatte er auch im Parlament im letzten Moment seinen Kopf aus der Schlinge ziehen können: Bei seiner 51. Vertrauensfrage erhielt er die notwendige Zustimmung des Parlaments – und konnte so seinen Rücktritt in letzter Sekunde abwenden.“",
-    "translation": null,
+    "translation": "\"Last week he had also managed to pull his head out of the noose at the last moment in Parliament: at his 51st confidence vote, he received the necessary approval of Parliament – and was thus able to avert his resignation at the last second.\"",
     "source": "wiktionary",
     "lemmas": [
       "den Kopf aus der Schlinge ziehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Woche",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": "week"
+      },
+      {
+        "form": "Moment",
+        "lemma": "Moment",
+        "pos": "noun",
+        "gloss_hint": "instant"
+      },
+      {
+        "form": "Kopf",
+        "lemma": "Kopf",
+        "pos": "noun",
+        "gloss_hint": "head"
+      },
+      {
+        "form": "Schlinge",
+        "lemma": "Schlinge",
+        "pos": "noun",
+        "gloss_hint": "snare"
+      },
+      {
+        "form": "ziehen",
+        "lemma": "ziehen",
+        "pos": "verb",
+        "gloss_hint": "pull"
+      },
+      {
+        "form": "Parlament",
+        "lemma": "Parlament",
+        "pos": "noun",
+        "gloss_hint": "parliament"
+      },
+      {
+        "form": "Vertrauensfrage",
+        "lemma": "Vertrauensfrage",
+        "pos": "noun",
+        "gloss_hint": "confidence vote"
+      },
+      {
+        "form": "Zustimmung",
+        "lemma": "Zustimmung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rücktritt",
+        "lemma": "Rücktritt",
+        "pos": "noun",
+        "gloss_hint": "resignation"
+      },
+      {
+        "form": "abwenden",
+        "lemma": "abwenden",
+        "pos": "verb",
+        "gloss_hint": "avert"
+      },
+      {
+        "form": "Sekunde",
+        "lemma": "Sekunde",
+        "pos": "noun",
+        "gloss_hint": "second (time unit)"
+      }
     ]
   },
   "4d1a584880": {
@@ -3727,10 +3919,61 @@
   },
   "4d2044d165": {
     "text": "Der Fußballverein TuS Koblenz hieß ursprünglich FC Deutschland Neuendorf.",
-    "translation": null,
+    "translation": "The football club TuS Koblenz was originally called FC Deutschland Neuendorf.",
     "source": "wiktionary",
     "lemmas": [
       "TuS"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fußballverein",
+        "lemma": "Fußballverein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "TuS",
+        "lemma": "TuS",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Koblenz",
+        "lemma": "Koblenz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hieß",
+        "lemma": "heißen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ursprünglich",
+        "lemma": "ursprünglich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "FC",
+        "lemma": "FC",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Neuendorf",
+        "lemma": "Neuendorf",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "4d21856957": {
@@ -5219,11 +5462,13 @@
   },
   "4d33bfe4fd": {
     "text": "»Halt die Schnauze!« [Anmerkung: durch den Imperativ sehr derb]",
-    "translation": null,
+    "translation": "Shut your mouth!",
     "source": "wiktionary",
     "lemmas": [
       "die Schnauze halten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "4d33c44a74": {
     "text": "Schritt für Schritt",
@@ -5525,11 +5770,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to tear one's hair out",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d392bf21c": {
     "text": "„Die Tafeln sammeln überschüssige Lebensmittel, die nach den gesetzlichen Bestimmungen noch verwertbar sind, und geben diese an Bedürftige ab.“",
@@ -5629,10 +5875,25 @@
   },
   "4d3ab04a0e": {
     "text": "Die BAT xy hat 24 Stunden geöffnet.",
-    "translation": null,
+    "translation": "The BAT xy is open 24 hours.",
     "source": "wiktionary",
     "lemmas": [
       "BAT"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "BAT",
+        "lemma": "BAT",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geöffnet",
+        "lemma": "öffnen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "4d3b990c25": {
@@ -5885,11 +6146,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "soft cookie",
     "source": "wiktionary",
     "lemmas": [
       "Keks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d3fa3f243": {
     "text": "„Viele Wähler spotten über ihren Premier und wünschen sich mehr Taten statt Worte.“",
@@ -6403,11 +6665,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You shouldn't look for clear water in a swamp.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d43bdc411": {
     "text": "„Denn die Rechtsanwaltskanzlei von Leo Specht, Freund und neuerdings auch Geschäftspartner des ehemaligen Kanzlers, befindet sich direkt vis-à-vis des altehrwürdigen Genossen-Hauptquartiers in der Löwelstraße, wo Gusenbauer in seinen acht Jahren als Parteichef im herzeigbaren Eckbüro im zweiten Stock zu residieren pflegte.“",
@@ -6672,10 +6935,67 @@
   },
   "4d4457a307": {
     "text": "„Auf der anderen Seite wurde 1940 unter der Führung von Sayyed Abu Ala Maududi die Jamaat-e-Islami ins Leben gerufen.“",
-    "translation": null,
+    "translation": "\"On the other hand, in 1940 under the leadership of Sayyed Abu Ala Maududi, the Jamaat-e-Islami was founded.\"",
     "source": "wiktionary",
     "lemmas": [
       "etwas ins Leben rufen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Seite",
+        "lemma": "Seite",
+        "pos": "noun",
+        "gloss_hint": "side"
+      },
+      {
+        "form": "Führung",
+        "lemma": "Führung",
+        "pos": "noun",
+        "gloss_hint": "leadership"
+      },
+      {
+        "form": "Sayyed",
+        "lemma": "Sayyed",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abu",
+        "lemma": "Abu",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ala",
+        "lemma": "Ala",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Maududi",
+        "lemma": "Maududi",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jamaat-e-Islami",
+        "lemma": "Jamaat-e-Islami",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leben",
+        "lemma": "Leben",
+        "pos": "noun",
+        "gloss_hint": "life"
+      },
+      {
+        "form": "gerufen",
+        "lemma": "rufen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "4d4539d05b": {
@@ -7262,10 +7582,25 @@
   },
   "4d4a124db6": {
     "text": "4. Die Aufgabe der Politik",
-    "translation": null,
+    "translation": "The Task of Politics",
     "source": "wiktionary",
     "lemmas": [
       "4."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Aufgabe",
+        "lemma": "Aufgabe",
+        "pos": "noun",
+        "gloss_hint": "task"
+      },
+      {
+        "form": "Politik",
+        "lemma": "Politik",
+        "pos": "noun",
+        "gloss_hint": "politics"
+      }
     ]
   },
   "4d4b03d1ce": {
@@ -7315,12 +7650,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put the cart before the horse",
     "source": "wiktionary",
     "lemmas": [
       "Ochse",
       "spannen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d4b2e783a": {
     "text": "„Die Internet-Plattform Wikileaks hatte im Jahr 2010 ein politisches Erdbeben ausgelöst, als sie mehr als 250 000 vertrauliche Dokumente von US-Botschaften in aller Welt veröffentlichte.“",
@@ -7777,11 +8113,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the needle in a haystack",
     "source": "wiktionary",
     "lemmas": [
       "Heuhaufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d503f663f": {
     "text": "Chruschtschow löste mit seinem Ultimatum vom 27. November 1958 die Berlin-Krise aus.",
@@ -8240,11 +8577,12 @@
     "synonyms": [
       "derb"
     ],
-    "translation": null,
+    "translation": "to become a slowpoke",
     "source": "wiktionary",
     "lemmas": [
       "Schnecke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d56bda1d4": {
     "text": "Der Empfänger ist defekt.",
@@ -8653,11 +8991,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the European house",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d5b9fb31f": {
     "text": "„Das Festessen war Vals Idee gewesen, als Dankeschön für Barons Gastfreundschaft.“",
@@ -9088,10 +9427,49 @@
   },
   "4d5f94c864": {
     "text": "„Der Zehnt bestand in Deutschland bis zu den Ablösegesetzen der Bauernbefreiung des 19. Jahrhunderts.“",
-    "translation": null,
+    "translation": "The tithe existed in Germany until the redemption laws of peasant emancipation in the 19th century.",
     "source": "wiktionary",
     "lemmas": [
       "Zehnt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zehnt",
+        "lemma": "Zehnt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bestand",
+        "lemma": "bestehen",
+        "pos": "verb",
+        "gloss_hint": "existed"
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ablösegesetzen",
+        "lemma": "Ablösegesetz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bauernbefreiung",
+        "lemma": "Bauernbefreiung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahrhunderts",
+        "lemma": "Jahrhundert",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "4d6134388d": {
@@ -9153,11 +9531,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it makes someone's hair stand on end",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d648cd7b2": {
     "text": "„Haste vielleicht’n Vierteldollar für mich?“",
@@ -10158,11 +10537,12 @@
     "type": "expression",
     "note": "siehst du, siehste",
     "synonyms": [],
-    "translation": null,
+    "translation": "see?",
     "source": "wiktionary",
     "lemmas": [
       "gucken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d6c04f2f0": {
     "text": "„Wir kehren zurück nach Deutschland und merken, dass hier unsere Leben sind.“",
@@ -11886,11 +12266,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep up with the times",
     "source": "wiktionary",
     "lemmas": [
       "Höhe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d827dfbe1": {
     "text": "„In der überdachten Ecke des Schuppens lagert Unterrichtsmaterial: zerfledderte Schulbücher, neue Tafeln, eine kleine Sammlung von Tongefäßen, in einem Töpferkurs entstanden, ein paar Tische und Stühle, ein Hefter, ein Taschenrechner, eine Uhr, ein großes Poster, das den Blutkreislauf des Menschen zeigt, und ein paar Matten.“",
@@ -12257,22 +12638,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something's happening",
     "source": "wiktionary",
     "lemmas": [
       "Hammer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d895acdde": {
     "text": "Liebe kann man nicht erzwingen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You can't force love.",
     "source": "wiktionary",
     "lemmas": [
       "erzwingen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d8a509d17": {
     "text": "Der Krieg schien unendlich lang.",
@@ -12446,11 +12829,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to act like a macho man",
     "source": "wiktionary",
     "lemmas": [
       "Macker"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4d8f976837": {
     "text": "Er trat hinaus ins Freie und schlug den Kragen seines Mantels auf.",
@@ -12712,10 +13096,43 @@
   },
   "4d911829b7": {
     "text": "In der untersten Lohngruppe gilt der gesetzliche Mindestlohn.",
-    "translation": null,
+    "translation": "In the lowest wage bracket, the statutory minimum wage applies.",
     "source": "wiktionary",
     "lemmas": [
       "unter-"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "untersten",
+        "lemma": "unterst",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lohngruppe",
+        "lemma": "Lohngruppe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesetzliche",
+        "lemma": "gesetzlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mindestlohn",
+        "lemma": "Mindestlohn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gilt",
+        "lemma": "gelten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "4d912dd3d7": {
@@ -16280,11 +16697,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to meet one's maker",
     "source": "wiktionary",
     "lemmas": [
       "Schöpfer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4db626cf59": {
     "text": "Du Sau!",
@@ -18891,11 +19309,12 @@
     "type": "expression",
     "note": "übertragen: einen Skandal aufdecken#",
     "synonyms": [],
-    "translation": null,
+    "translation": "to dig up dirt (on someone)",
     "source": "wiktionary",
     "lemmas": [
       "Dreck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4dc78bdf5b": {
     "text": "„Man steht am Zellenfenster und sieht durchs Gitter auf den Hof.“",
@@ -19970,10 +20389,31 @@
   },
   "4dcd46003e": {
     "text": "Die Überlegungen ergeben summa summarum, dass wir uns für x entscheiden sollten.",
-    "translation": null,
+    "translation": "All things considered, the deliberations show that we should decide in favor of x.",
     "source": "wiktionary",
     "lemmas": [
       "summa summarum"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Überlegungen",
+        "lemma": "Überlegung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ergeben",
+        "lemma": "ergeben",
+        "pos": "verb",
+        "gloss_hint": "result in"
+      },
+      {
+        "form": "entscheiden",
+        "lemma": "entscheiden",
+        "pos": "verb",
+        "gloss_hint": "choose"
+      }
     ]
   },
   "4dcf753362": {
@@ -20485,12 +20925,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "by nature",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
     ],
-    "ref": "phrases/von Haus aus"
+    "ref": "phrases/von Haus aus",
+    "translation_model": "openai/gpt-4.1"
   },
   "4dd36255ca": {
     "text": "Diese [zweite Zelle] wird dann mit den Spermien des Vaters befruchtet und in die Gebärmutter der ersten, [genetisch] kranken, Frau eingesetzt – wie bei künstlicher Befruchtung üblich.",
@@ -20569,11 +21010,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to slip through the net",
     "source": "wiktionary",
     "lemmas": [
       "Raster"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4dd3b31fa8": {
     "text": "Das Dorf hat 528 Seelen.",
@@ -22087,12 +22529,13 @@
     "type": "expression",
     "note": "Wettbewerb, Sportwettkampf um nichts",
     "synonyms": [],
-    "translation": null,
+    "translation": "for nothing (for no real prize)",
     "source": "wiktionary",
     "lemmas": [
       "Ananas"
     ],
-    "ref": "phrases/um die goldene Ananas"
+    "ref": "phrases/um die goldene Ananas",
+    "translation_model": "openai/gpt-4.1"
   },
   "4de3fcb67b": {
     "text": "nach Wunsch",
@@ -22367,11 +22810,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "equal rights, equal responsibilities",
     "source": "wiktionary",
     "lemmas": [
       "Recht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4de895ea68": {
     "text": "Es stellte sich heraus, dass der Nachbar ein eiskalter Killer ist.",
@@ -24078,10 +24522,43 @@
   },
   "4dfa3b9f48": {
     "text": "„Hr. W. wirft es uns vor, dass wir den ganzen bisherigen Bestand über den Haufen geworfen haben.“",
-    "translation": null,
+    "translation": "Mr. W. reproaches us for having thrown out the entire existing order.",
     "source": "wiktionary",
     "lemmas": [
       "etwas über den Haufen werfen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wirft",
+        "lemma": "werfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "vor",
+        "lemma": "vor",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bestand",
+        "lemma": "Bestand",
+        "pos": "noun",
+        "gloss_hint": "stock"
+      },
+      {
+        "form": "Haufen",
+        "lemma": "Haufen",
+        "pos": "noun",
+        "gloss_hint": "pile"
+      },
+      {
+        "form": "geworfen",
+        "lemma": "werfen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "4dfac39dc2": {

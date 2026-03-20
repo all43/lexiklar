@@ -221,11 +221,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put on shackles",
     "source": "wiktionary",
     "lemmas": [
       "anlegen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c502a5dcf1": {
     "text": "„Ich stehe auf, gehe zu den beiden Bücherschränken, um zu sehen, welche Bücher sie enthalten, doch mein Blick bleibt an der Titelseite der zuoberst auf dem Stapel liegenden Zeitschrift hängen.“",
@@ -452,10 +453,43 @@
   },
   "c5044de09a": {
     "text": "Dem Politiker sollte man wirklich nicht trauen, denn er redet mit gespaltener Zunge.",
-    "translation": null,
+    "translation": "One really shouldn't trust that politician, because he speaks with a forked tongue.",
     "source": "wiktionary",
     "lemmas": [
       "mit gespaltener Zunge reden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Politiker",
+        "lemma": "Politiker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "trauen",
+        "lemma": "trauen",
+        "pos": "verb",
+        "gloss_hint": "trust"
+      },
+      {
+        "form": "redet",
+        "lemma": "reden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gespaltener",
+        "lemma": "gespalten",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zunge",
+        "lemma": "Zunge",
+        "pos": "noun",
+        "gloss_hint": "tongue"
+      }
     ]
   },
   "c50468922c": {
@@ -1550,11 +1584,12 @@
     "type": "expression",
     "note": "Angst haben, sich fürchten",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be afraid",
     "source": "wiktionary",
     "lemmas": [
       "bang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c515d24993": {
     "text": "Die Abdankung fand an einem Samstag statt.",
@@ -1684,10 +1719,31 @@
   },
   "c51765942c": {
     "text": "Ich hoffe, du bist morgen auch on.",
-    "translation": null,
+    "translation": "I hope you're online tomorrow too.",
     "source": "wiktionary",
     "lemmas": [
       "on"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hoffe",
+        "lemma": "hoffen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "morgen",
+        "lemma": "morgen",
+        "pos": "adverb",
+        "gloss_hint": "tomorrow"
+      },
+      {
+        "form": "on",
+        "lemma": "on",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "c51847f402": {
@@ -2238,19 +2294,60 @@
   },
   "c51d40935a": {
     "text": "„Bei den Wettkämpfen fahren einheimische Kiter nicht mit, sie machen das ‚just for fun‘.“",
-    "translation": null,
+    "translation": "\"At the competitions, local kite flyers don't participate; they do it just for fun.\"",
     "source": "wiktionary",
     "lemmas": [
       "just for fun"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wettkämpfen",
+        "lemma": "Wettkampf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fahren",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": "drive"
+      },
+      {
+        "form": "einheimische",
+        "lemma": "einheimisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kiter",
+        "lemma": "Kiter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "machen",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "do"
+      },
+      {
+        "form": "fun",
+        "lemma": "fun",
+        "pos": "noun",
+        "gloss_hint": "fun"
+      }
     ]
   },
   "c51d85aed3": {
     "text": "www.mysite.mm",
-    "translation": null,
+    "translation": "www.mysite.mm",
     "source": "wiktionary",
     "lemmas": [
       "MM"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "c51f842800": {
     "text": "„Er hatte die Angewohnheit, sich wiederholt mit dem Handrücken die Nase zu reiben.“",
@@ -2868,14 +2965,15 @@
     "type": "expression",
     "note": "seine Gefühle und Meinungen offen sagen/äußern",
     "synonyms": [],
-    "translation": null,
+    "translation": "to wear one's heart on one's sleeve",
     "source": "wiktionary",
     "lemmas": [
       "Zunge",
       "Herz",
       "tragen"
     ],
-    "ref": "phrases/sein Herz auf der Zunge tragen"
+    "ref": "phrases/sein Herz auf der Zunge tragen",
+    "translation_model": "openai/gpt-4.1"
   },
   "c52780a487": {
     "text": "„So hab’ ich schon manchen",
@@ -2911,10 +3009,55 @@
   },
   "c527b45fdb": {
     "text": "„In die Grundrechte eingefügt wurde – wie in vielen anderen europäischen Verfassungen auch das aus Art. 11 und 2 I GG entwickelte Recht auf informationelle Selbstbestimmung (§ 10 PeL) oder die Rechtsschutzgarantie des Art. 19 IV GG (§ 21 PeL).“",
-    "translation": null,
+    "translation": "\"Incorporated into the fundamental rights—as in many other European constitutions—was the right to informational self-determination developed from Articles 11 and 2(1) of the Basic Law (§ 10 PeL) or the legal protection guarantee of Article 19(4) of the Basic Law (§ 21 PeL).\"",
     "source": "wiktionary",
     "lemmas": [
       "einfügen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Grundrechte",
+        "lemma": "Grundrecht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eingefügt",
+        "lemma": "einfügen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "europäischen",
+        "lemma": "europäisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verfassungen",
+        "lemma": "Verfassung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Recht",
+        "lemma": "Recht",
+        "pos": "noun",
+        "gloss_hint": "right"
+      },
+      {
+        "form": "Selbstbestimmung",
+        "lemma": "Selbstbestimmung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rechtsschutzgarantie",
+        "lemma": "Rechtsschutzgarantie",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c527bc3c24": {
@@ -3367,11 +3510,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "above all",
     "source": "wiktionary",
     "lemmas": [
       "Ding"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c52cc03c94": {
     "text": "Butter schmilzt in der Sonne.",
@@ -3417,10 +3561,43 @@
   },
   "c52dbb2552": {
     "text": "Was die Leute zu ihrem Lebenswandel sagen, schert Ilka nicht.",
-    "translation": null,
+    "translation": "Ilka doesn't care what people say about her lifestyle.",
     "source": "wiktionary",
     "lemmas": [
       "scheren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Leute",
+        "lemma": "Leute",
+        "pos": "noun",
+        "gloss_hint": "people"
+      },
+      {
+        "form": "Lebenswandel",
+        "lemma": "Lebenswandel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sagen",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": "say"
+      },
+      {
+        "form": "schert",
+        "lemma": "scheren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ilka",
+        "lemma": "Ilka",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c52f67f1ca": {
@@ -3428,14 +3605,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to know something like the back of one's hand",
     "source": "wiktionary",
     "lemmas": [
       "kennen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "c5329170f2": {
     "text": "„Häufig gibt es in einer Reihe einen zentralen Schritt, zum Beispiel ein Gerichtsurteil, das vorangegangene Reihenschritte beziehungsweise Reihenschrittfolgen zum Abschluss bringt durch die Setzung einer neuen Wirklichkeit.“",
@@ -4712,11 +4887,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be up to one's ears in debt",
     "source": "wiktionary",
     "lemmas": [
       "Buckel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c53b2a14bc": {
     "text": "Das Wasser ist im Stau.",
@@ -4774,11 +4950,12 @@
     "type": "expression",
     "note": "ein Abend, an dem viel Alkohol getrunken wird",
     "synonyms": [],
-    "translation": null,
+    "translation": "a boozy evening",
     "source": "wiktionary",
     "lemmas": [
       "feucht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c53cab3555": {
     "text": "[Coronapandemie 2020:] „Eine Million Masken verschenkt Taiwan. Dort ist COVID-19 unter Kontrolle.“",
@@ -4869,23 +5046,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to sic the mob on someone",
     "source": "wiktionary",
     "lemmas": [
       "Meute"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c53f504b7d": {
     "text": "die Klappe aufreißen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to blow one's own trumpet",
     "source": "wiktionary",
     "lemmas": [
       "aufreißen"
     ],
-    "ref": "phrases/die Klappe aufreißen"
+    "ref": "phrases/die Klappe aufreißen",
+    "translation_model": "openai/gpt-4.1"
   },
   "c53fb5758b": {
     "text": "Laura trägt immer hippe Klamotten.",
@@ -5319,12 +5498,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to taste great",
     "source": "wiktionary",
     "lemmas": [
       "Titte"
     ],
-    "ref": "phrases/wie Titte mit Ei schmecken"
+    "ref": "phrases/wie Titte mit Ei schmecken",
+    "translation_model": "openai/gpt-4.1"
   },
   "c54679319b": {
     "text": "In letzter Zeit kommen wir miteinander gar nicht mehr gut aus.",
@@ -5713,11 +5893,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to step on the gas",
     "source": "wiktionary",
     "lemmas": [
       "Dampf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c54acfef19": {
     "text": "Die Newtonschen Axiome sind die Grundgesetze der Dynamik.",
@@ -6856,22 +7037,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be drunk as a skunk",
     "source": "wiktionary",
     "lemmas": [
       "Veilchen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c55647f501": {
     "text": "jemandem Bescheid sagen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to let someone know",
     "source": "wiktionary",
     "lemmas": [
       "Bescheid"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c556da9b9f": {
     "text": "Die Folgen einer nuklearen Katastrophe können auch für zukünftige Generationen schwerwiegend sein und machen vor nationalen Grenzen keinen Halt.",
@@ -6998,18 +7181,46 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to paint a vivid picture of something",
     "source": "wiktionary",
     "lemmas": [
       "Farbe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c557645730": {
     "text": "In Drogenkreisen ist Heiner kein unbeschriebenes Blatt.",
-    "translation": null,
+    "translation": "In drug circles, Heiner is not a babe in the woods.",
     "source": "wiktionary",
     "lemmas": [
       "kein unbeschriebenes Blatt sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Drogenkreisen",
+        "lemma": "Drogenkreis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Heiner",
+        "lemma": "Heiner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "unbeschriebenes",
+        "lemma": "unbeschrieben",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blatt",
+        "lemma": "Blatt",
+        "pos": "noun",
+        "gloss_hint": "sheet"
+      }
     ]
   },
   "c55805745a": {
@@ -7440,11 +7651,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not care about something",
     "source": "wiktionary",
     "lemmas": [
       "geben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c5601f6c2a": {
     "text": "„Vorrichtungen zum Abgeben von Warnzeichen mit aufeinanderfolgenden, verschieden hohen Tönen dürfen, außer in den in den Abs. 5 und 6 angeführten Fällen, nur mit Bewilligung des Landeshauptmannes angebracht werden.“",
@@ -7807,11 +8019,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the saving straw",
     "source": "wiktionary",
     "lemmas": [
       "Strohhalm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c565983002": {
     "text": "„Sie kann durch die Ich- oder Wir-Form das Band zwischen Erzähler und Leser noch enger knüpfen.“",
@@ -8082,11 +8295,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to play into someone's hands",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c56a7c6625": {
     "text": "„Nach der Bundeswaldinventur 2024 ist Deutschland etwa zu 30 Prozent (11,5 Millionen Hektar) mit Wald bedeckt.“",
@@ -8548,14 +8762,12 @@
     "type": "expression",
     "note": "Zustimmung zu einem Argument, gefolgt von „Aber …“",
     "synonyms": [],
-    "translation": null,
+    "translation": "that's all well and good",
     "source": "wiktionary",
     "lemmas": [
       "schön"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "c56d1fdfda": {
     "text": "„Die Vorstellung, dass ein Schuster nicht bei seinen Leisten blieb, sondern ins Rathaus lief, um politische Entscheidungen zu treffen, ist völlig abwegig.“",
@@ -9329,10 +9541,31 @@
   },
   "c57247d896": {
     "text": "„Noch während des Vormittags wurde ich zum MRT abgeholt.“",
-    "translation": null,
+    "translation": "\"I was picked up for an MRI still during the morning.\"",
     "source": "wiktionary",
     "lemmas": [
       "MRT"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vormittags",
+        "lemma": "Vormittag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abgeholt",
+        "lemma": "abholen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "MRT",
+        "lemma": "MRT",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c572cceb0a": {
@@ -9410,11 +9643,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to bear someone's handwriting",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c573d7eda9": {
     "text": "Er zeichnet sich durch einen eleganten Laufstil aus.",
@@ -10024,23 +10258,25 @@
     "type": "expression",
     "note": "nichts von sich preisgeben; für alles eine Ausrede haben; (siehe auch: aalglatt sein)",
     "synonyms": [],
-    "translation": null,
+    "translation": "slippery as an eel",
     "source": "wiktionary",
     "lemmas": [
       "Aal"
     ],
-    "ref": "phrases/glatt wie ein Aal sein"
+    "ref": "phrases/glatt wie ein Aal sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "c5781dab1c": {
     "text": "etwas unter den Teppich wischen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "sweep something under the rug",
     "source": "wiktionary",
     "lemmas": [
       "wischen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c5782db76a": {
     "text": "Der Eintritt des Essens wird wohl unvergesslich bleiben, da die Serviererin stolperte und die Torte mitten auf dem Tisch ohne Teller landete.",
@@ -11275,11 +11511,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "dig up the past",
     "source": "wiktionary",
     "lemmas": [
       "wühlen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c586afdc02": {
     "text": "Unter blauem Himmel am Elbestrand / trieb einst ein kleiner Fisch an Land - (Anti-AKW-Lied)",
@@ -11860,11 +12097,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "do your own thing",
     "source": "wiktionary",
     "lemmas": [
       "Suppe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c58997164a": {
     "text": "„Was das Motorradfahren betrifft, war das hier ein Kick, wie ich ihn nie zuvor verspürt hatte.“",
@@ -12377,10 +12615,31 @@
   },
   "c5901debbf": {
     "text": "Nach Brehna führen viele Wege.",
-    "translation": null,
+    "translation": "Many roads lead to Brehna.",
     "source": "wiktionary",
     "lemmas": [
       "Brehna"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wege",
+        "lemma": "Weg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "führen",
+        "lemma": "führen",
+        "pos": "verb",
+        "gloss_hint": "lead"
+      },
+      {
+        "form": "Brehna",
+        "lemma": "Brehna",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c59025c7a7": {
@@ -13915,11 +14174,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "win someone over to your side",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c599943c42": {
     "text": "„Noch am Bahnhof hatte er mich gefragt, ob es nicht gefährlich sei, nachts durch Berlin spazieren zu gehen, und wie es um die Kriminalität in der deutschen Hauptstadt bestellt sei.“",
@@ -14349,10 +14609,97 @@
   },
   "c59c08c146": {
     "text": "„Nur wenige Historiker haben nach diesen Regeln gearbeitet, alle dagegen in Hinblick auf einen besonderen Fall, eine Religion, eine Nation, eine Partei, ein System, oder um die Könige schlechtzumachen, das Volk zu beraten, sittliche Beispiele zu geben.“",
-    "translation": null,
+    "translation": "\"Only a few historians have worked according to these rules; rather, all have done so with regard to a particular case, a religion, a nation, a party, a system, or in order to discredit kings, advise the people, or provide moral examples.\"",
     "source": "wiktionary",
     "lemmas": [
       "in Hinblick auf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Historiker",
+        "lemma": "Historiker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regeln",
+        "lemma": "Regel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gearbeitet",
+        "lemma": "arbeiten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fall",
+        "lemma": "Fall",
+        "pos": "noun",
+        "gloss_hint": "case"
+      },
+      {
+        "form": "Religion",
+        "lemma": "Religion",
+        "pos": "noun",
+        "gloss_hint": "belief system"
+      },
+      {
+        "form": "Nation",
+        "lemma": "Nation",
+        "pos": "noun",
+        "gloss_hint": "nation"
+      },
+      {
+        "form": "Partei",
+        "lemma": "Partei",
+        "pos": "noun",
+        "gloss_hint": "political party"
+      },
+      {
+        "form": "System",
+        "lemma": "System",
+        "pos": "noun",
+        "gloss_hint": "structure"
+      },
+      {
+        "form": "Könige",
+        "lemma": "König",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schlechtzumachen",
+        "lemma": "schlechtmachen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Volk",
+        "lemma": "Volk",
+        "pos": "noun",
+        "gloss_hint": "nation"
+      },
+      {
+        "form": "beraten",
+        "lemma": "beraten",
+        "pos": "verb",
+        "gloss_hint": "advise"
+      },
+      {
+        "form": "Beispiele",
+        "lemma": "Beispiel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geben",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": "provide"
+      }
     ]
   },
   "c59ce28d09": {
@@ -14360,11 +14707,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "try your hand at something",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c59d4f6bac": {
     "text": "„Sie zechten an diesem Tage bis zur ersten Nachtwache.“",
@@ -14900,10 +15248,25 @@
   },
   "c5a00cbe78": {
     "text": "Es war so kalt wie schon lange nicht mehr.",
-    "translation": null,
+    "translation": "It was as cold as it had been in a long time.",
     "source": "wiktionary",
     "lemmas": [
       "so"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kalt",
+        "lemma": "kalt",
+        "pos": "adjective",
+        "gloss_hint": "cold"
+      },
+      {
+        "form": "lange",
+        "lemma": "lange",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "c5a0b47d0e": {
@@ -16405,11 +16768,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "look as miserable as sin",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c5adbe7282": {
     "text": "„Bernhard Kempen: Deshalb sollten alle Doktoranden eine eidesstattliche Erklärung abgeben müssen, dass sie die Arbeit selbst geschrieben und alle Quellen genannt haben.“",
@@ -17572,11 +17936,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "off duty",
     "source": "wiktionary",
     "lemmas": [
       "Dienst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c5b63f35db": {
     "text": "„Tom lächelte, weil er diesen Standpunkt des Mathematikers eigentlich sehr sympathisch fand, nickte Noby aber zu.“",
@@ -17727,11 +18092,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "you can tell me whatever you want (but I won't believe you)",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c5b95c9980": {
     "text": "„Ihr fahles, gedunsenes Gesicht, in dem grellen Licht der Fackeln, erscheint noch bleicher über dem scharlachroten Gewand.“",
@@ -18843,11 +19209,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "play a double game",
     "source": "wiktionary",
     "lemmas": [
       "falsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c5c37d5224": {
     "text": "Unser Sohn möchte Architektur studieren und später Geschäftshäuser in Fernost bauen.",
@@ -20041,12 +20408,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not have a snowball's chance in hell",
     "source": "wiktionary",
     "lemmas": [
       "kein"
     ],
-    "ref": "phrases/keine Schnitte haben"
+    "ref": "phrases/keine Schnitte haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "c5cbe590fb": {
     "text": "„Es kam ihm vor, als ginge der amerikanische Hauptmann hastig über diesen Hinweis hinweg.“",
@@ -20527,10 +20895,31 @@
   },
   "c5ce0e54b2": {
     "text": "Der Schlitten mit BE XX-999 bleibt heute beim Blitzmarathon in der Garage.",
-    "translation": null,
+    "translation": "The sledge with registration BE XX-999 will stay in the garage today during the lightning marathon.",
     "source": "wiktionary",
     "lemmas": [
       "BE"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schlitten",
+        "lemma": "Schlitten",
+        "pos": "noun",
+        "gloss_hint": "sled"
+      },
+      {
+        "form": "Blitzmarathon",
+        "lemma": "Blitzmarathon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Garage",
+        "lemma": "Garage",
+        "pos": "noun",
+        "gloss_hint": "garage"
+      }
     ]
   },
   "c5ce9f97dc": {
@@ -20949,11 +21338,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "tear someone to shreds",
     "source": "wiktionary",
     "lemmas": [
       "zerreißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c5d11ef36a": {
     "text": "Ich habe Lisa geknackt.",
@@ -21068,12 +21458,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have someone under one's thumb",
     "source": "wiktionary",
     "lemmas": [
       "haben"
     ],
-    "ref": "phrases/jemanden unter der Fuchtel haben"
+    "ref": "phrases/jemanden unter der Fuchtel haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "c5d2c8b10f": {
     "text": "„Ein Wachmann des Außenlagers wurde im Frühjahr 1947 in den Rastatter Prozessen zum Tode verurteilt und hingerichtet.“",
@@ -21497,11 +21888,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in the name of all that's holy",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c5da44e8dc": {
     "text": "„Ich konnte ihr nie dafür danken, dass sie mir mit ihrem Donnerwetter zu dem einen Gedankenblitz verholfen hat, der das Rätsel um den verlorenen Teil der Tabula Peutingeriana schließlich lösen sollte.“",
@@ -21689,11 +22081,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fatso",
     "source": "wiktionary",
     "lemmas": [
       "dick"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c5de6b55be": {
     "text": "„Auf der Strecke geblieben sind bei den politischen Auseinandersetzungen der letzten Jahre in Tunesien vor allem die, die 2010 den Anstoß zum Umbruch gegeben haben: die meist jungen Leute im verarmten Landesinneren, die vom bescheidenen Wirtschaftswachstum des reichen Küstenstreifens abgeschnitten sind.“",
@@ -21859,10 +22252,25 @@
   },
   "c5df654ca9": {
     "text": "„Man nahm uns die Fesseln ab und stieß uns hinein.“",
-    "translation": null,
+    "translation": "\"They removed our shackles and shoved us inside.\"",
     "source": "wiktionary",
     "lemmas": [
       "Fessel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fesseln",
+        "lemma": "Fessel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stieß",
+        "lemma": "stoßen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "c5df9552f3": {
@@ -22982,11 +23390,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "celebrate a joyful resurrection",
     "source": "wiktionary",
     "lemmas": [
       "feiern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c5e79f6753": {
     "text": "„Expeditionen werden ausgeschickt, um den Erdteil zu erforschen und für Großbritannien zu erschließen.“",
@@ -23153,10 +23562,43 @@
   },
   "c5e8be56c5": {
     "text": "„Die beiden hatten sich schnell angefreundet, was vielleicht daran lag, dass Nobys Großvater mütterlicherseits deutsche Wurzeln hatte.“",
-    "translation": null,
+    "translation": "\"The two had quickly become friends, which perhaps was because Noby's maternal grandfather had German roots.\"",
     "source": "wiktionary",
     "lemmas": [
       "Wurzel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "angefreundet",
+        "lemma": "anfreunden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schnell",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": "quick"
+      },
+      {
+        "form": "Großvater",
+        "lemma": "Großvater",
+        "pos": "noun",
+        "gloss_hint": "grandfather"
+      },
+      {
+        "form": "deutsche",
+        "lemma": "deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wurzeln",
+        "lemma": "Wurzel",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c5e8ea58ef": {
@@ -24208,11 +24650,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "slip and slide like butter on a hot potato",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c5f0841c6b": {
     "text": "aufpassen wie ein Heftelmacher",
@@ -24232,11 +24675,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "trade something in",
     "source": "wiktionary",
     "lemmas": [
       "Zahlung"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c5f2a200a1": {
     "text": "Es gibt verschiedene Entwicklungsphasen des Marketing.",

@@ -558,11 +558,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to spring up like mushrooms",
     "source": "wiktionary",
     "lemmas": [
       "schießen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6e03f3f96b": {
     "text": "„Ich sah zwei Fliegen beim Ficken zu.“",
@@ -596,10 +597,67 @@
   },
   "6e0403f48c": {
     "text": "Obwohl man mit der Lederhosen-Laptop-Szene der Landeshauptstadt [Anmerkung: München] nichts zu tun haben will […], fühlt man sich im Verbund der Altbayern doch verkannt und unterschätzt oder gar vernachlässigt […].",
-    "translation": null,
+    "translation": "Although one wants nothing to do with the leather-pants-laptop scene of the state capital, one nonetheless feels misunderstood and underestimated or even neglected in the association of Old Bavaria.",
     "source": "wiktionary",
     "lemmas": [
       "mit etwas nichts zu tun haben wollen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Lederhosen",
+        "lemma": "Lederhose",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Laptop",
+        "lemma": "Laptop",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Szene",
+        "lemma": "Szene",
+        "pos": "noun",
+        "gloss_hint": "scene"
+      },
+      {
+        "form": "Landeshauptstadt",
+        "lemma": "Landeshauptstadt",
+        "pos": "noun",
+        "gloss_hint": "state capital"
+      },
+      {
+        "form": "Verbund",
+        "lemma": "Verbund",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Altbayern",
+        "lemma": "Altbayern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verkannt",
+        "lemma": "verkennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "unterschätzt",
+        "lemma": "unterschätzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "vernachlässigt",
+        "lemma": "vernachlässigen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "6e04d9ccda": {
@@ -847,12 +905,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in the context of",
     "source": "wiktionary",
     "lemmas": [
       "im Rahmen von"
     ],
-    "ref": "phrases/im Rahmen von"
+    "ref": "phrases/im Rahmen von",
+    "translation_model": "openai/gpt-4.1"
   },
   "6e065f3f19": {
     "text": "Die Schaufel des Baggers ist defekt.",
@@ -901,12 +960,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have nerves of steel",
     "source": "wiktionary",
     "lemmas": [
       "Nerv"
     ],
-    "ref": "phrases/Nerven wie Drahtseile haben"
+    "ref": "phrases/Nerven wie Drahtseile haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "6e0803ac61": {
     "text": "„Von den Atlantikhäfen aus konnten sie die bewährte Rudeltaktik gegen alliierte Konvois anwenden.“",
@@ -1117,11 +1177,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put ideas into someone's head",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6e0979f8d9": {
     "text": "„Ein Blitz hat Dienstagabend in ein Bauernhaus in St. Johann (Pongau) eingeschlagen“ [… Der Blitz] „zerstörte die Haus- und Badtüre, eine Wand im Erdgeschoß, ein Kellerabteil und mehrere Kellerfenster. Der Schaden wird sich auf etwa 5.000 bis 6.000 Euro belaufen“, schätzt Höllwart.“",
@@ -2031,10 +2092,103 @@
   },
   "6e148e89a3": {
     "text": "„Und selbst im Hause Gauck müßte man doch erkannt haben, wes Geistes Kind die Lauscher und Gucker waren, die uns da auf den Hals geschickt wurden von der Stasi – und die werden nun nachträglich zu Gewährsleuten für die Tugend, oder Untugend, bisher nicht bescholtener Bürger.“",
-    "translation": null,
+    "translation": "And even in the Gauck household one should have recognized what kind of spirit those listeners and watchers were, whom the Stasi sent after us—and now they are being made into guarantors of the virtue, or lack thereof, of previously unblemished citizens.",
     "source": "wiktionary",
     "lemmas": [
       "Stasi"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hause",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gauck",
+        "lemma": "Gauck",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erkannt",
+        "lemma": "erkennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geistes",
+        "lemma": "Geist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kind",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": "offspring"
+      },
+      {
+        "form": "Lauscher",
+        "lemma": "Lauscher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gucker",
+        "lemma": "Gucker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hals",
+        "lemma": "Hals",
+        "pos": "noun",
+        "gloss_hint": "neck"
+      },
+      {
+        "form": "geschickt",
+        "lemma": "geschickt",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stasi",
+        "lemma": "Stasi",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gewährsleuten",
+        "lemma": "Gewährsleute",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tugend",
+        "lemma": "Tugend",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Untugend",
+        "lemma": "Untugend",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bescholtener",
+        "lemma": "bescholten",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bürger",
+        "lemma": "Bürger",
+        "pos": "noun",
+        "gloss_hint": "citizen"
+      }
     ]
   },
   "6e15ee27a9": {
@@ -2335,14 +2489,12 @@
     "type": "expression",
     "note": "Regel beim Schachspiel",
     "synonyms": [],
-    "translation": null,
+    "translation": "touch-move rule",
     "source": "wiktionary",
     "lemmas": [
       "führen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "6e1a4d5646": {
     "text": "Den Abschluss der Rasenfläche bilden langgezogene Blumenbeete.",
@@ -3225,10 +3377,37 @@
   },
   "6e207719c3": {
     "text": "Wenn ich einmal die Frage nach der Kostenübernahme in den Raum stellen darf?",
-    "translation": null,
+    "translation": "If I may raise the question of cost coverage?",
     "source": "wiktionary",
     "lemmas": [
       "etwas in den Raum stellen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Frage",
+        "lemma": "Frage",
+        "pos": "noun",
+        "gloss_hint": "question"
+      },
+      {
+        "form": "Kostenübernahme",
+        "lemma": "Kostenübernahme",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Raum",
+        "lemma": "Raum",
+        "pos": "noun",
+        "gloss_hint": "room"
+      },
+      {
+        "form": "stellen",
+        "lemma": "stellen",
+        "pos": "verb",
+        "gloss_hint": "ask"
+      }
     ]
   },
   "6e20c2d719": {
@@ -6324,18 +6503,78 @@
   },
   "6e36484fac": {
     "text": "Falls es an meinem Geburtstag regnen sollte, habe ich Vorsorge getroffen.",
-    "translation": null,
+    "translation": "If it should rain on my birthday, I have made provisions.",
     "source": "wiktionary",
     "lemmas": [
       "Vorsorge"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geburtstag",
+        "lemma": "Geburtstag",
+        "pos": "noun",
+        "gloss_hint": "birthday"
+      },
+      {
+        "form": "regnen",
+        "lemma": "regnen",
+        "pos": "verb",
+        "gloss_hint": "rain"
+      },
+      {
+        "form": "Vorsorge",
+        "lemma": "Vorsorge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "getroffen",
+        "lemma": "treffen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "6e3799e1bd": {
     "text": "In Deutschland leben rund 43 000 Menschen mit HIV.",
-    "translation": null,
+    "translation": "Around 43,000 people with HIV live in Germany.",
     "source": "wiktionary",
     "lemmas": [
       "HIV"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "leben",
+        "lemma": "leben",
+        "pos": "verb",
+        "gloss_hint": "live"
+      },
+      {
+        "form": "rund",
+        "lemma": "rund",
+        "pos": "adjective",
+        "gloss_hint": "approximately"
+      },
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "HIV",
+        "lemma": "HIV",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6e37ea358c": {
@@ -6702,11 +6941,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the cat looks at the king",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6e3aa08265": {
     "text": "in die Ewigkeit abberufen werden",
@@ -10443,12 +10683,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "your money or your life",
     "source": "wiktionary",
     "lemmas": [
       "Leben",
       "Geld"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6e58bc9398": {
     "text": "„Seine ehrliche Verwirrung ließ ihn beinahe liebenswert erscheinen, aber sie wußten ja alle, daß er unverbesserlich war und bei nächstbester Gelegenheit wieder genauso loslegen würde.“.",
@@ -13656,12 +13897,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Land of the Rising Sun",
     "source": "wiktionary",
     "lemmas": [
       "Land"
     ],
-    "ref": "phrases/Land der aufgehenden Sonne"
+    "ref": "phrases/Land der aufgehenden Sonne",
+    "translation_model": "openai/gpt-4.1"
   },
   "6e735af9a3": {
     "text": "Peter versandte den Brief per Post.",
@@ -13893,10 +14135,31 @@
   },
   "6e785ddd43": {
     "text": "Der VfB Stuttgart wurde in der Bundesligasaison 2011/12 nicht Deutscher Meister.",
-    "translation": null,
+    "translation": "VfB Stuttgart did not become German champions in the 2011/12 Bundesliga season.",
     "source": "wiktionary",
     "lemmas": [
       "VfB"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "VfB Stuttgart",
+        "lemma": "VfB Stuttgart",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundesligasaison",
+        "lemma": "Bundesligasaison",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutscher Meister",
+        "lemma": "Meister",
+        "pos": "noun",
+        "gloss_hint": "champion"
+      }
     ]
   },
   "6e7901e1e8": {
@@ -14952,15 +15215,13 @@
     "type": "expression",
     "note": "einhellig",
     "synonyms": [],
-    "translation": null,
+    "translation": "with one voice",
     "source": "wiktionary",
     "lemmas": [
       "Mund",
       "wie"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "6e804430ca": {
     "text": "„Der Kampf zwischen der Cottage-Fabrik und der Fabrik per se währte über 12 Jahre.“",
@@ -15449,10 +15710,25 @@
   },
   "6e893cc71e": {
     "text": "Man kann nie wissen, was noch alles passieren wird.",
-    "translation": null,
+    "translation": "One can never know what will happen next.",
     "source": "wiktionary",
     "lemmas": [
       "können"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wissen",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": "know"
+      },
+      {
+        "form": "passieren",
+        "lemma": "passieren",
+        "pos": "verb",
+        "gloss_hint": "happen"
+      }
     ]
   },
   "6e895c7c71": {
@@ -15923,11 +16199,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Celebrate festivals as they come.",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6e91085804": {
     "text": "„In der Entwicklung der humanistischen Handschrift finden wir auch eine schräglaufende Schrift, die Kursive des 15. Jahrhunderts.“",
@@ -16376,11 +16653,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something reeks a mile off",
     "source": "wiktionary",
     "lemmas": [
       "Meile"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6e93c73b64": {
     "text": "Der Pianist endet das Stück mit einem aufgelösten Akkord.",
@@ -17451,13 +17729,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "there's tension in the air",
     "source": "wiktionary",
     "lemmas": [
       "Luft",
       "dick"
     ],
-    "ref": "phrases/dicke Luft"
+    "ref": "phrases/dicke Luft",
+    "translation_model": "openai/gpt-4.1"
   },
   "6e9b8e495a": {
     "text": "„Wir hielten an, stiegen aus; die Ausflügler verteilten sich auf den wenigen Quadratmetern Asphalt und zückten die Apparate.“",
@@ -18176,10 +18455,25 @@
   },
   "6ea4a7e033": {
     "text": "Bis der eine (fleckig wie ein Selcher) sagte: Hauptmann, dieser hat geschrien.",
-    "translation": null,
+    "translation": "Until one (spotted like a butcher) said: Captain, this one screamed.",
     "source": "wiktionary",
     "lemmas": [
       "geschrien"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "eine",
+        "lemma": "einer",
+        "pos": "noun",
+        "gloss_hint": "one"
+      },
+      {
+        "form": "Hauptmann",
+        "lemma": "Hauptmann",
+        "pos": "noun",
+        "gloss_hint": "captain"
+      }
     ]
   },
   "6ea4c96886": {
@@ -18451,22 +18745,24 @@
     "type": "expression",
     "note": "jemandem die Meinung sagen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a piece of your mind",
     "source": "wiktionary",
     "lemmas": [
       "Kopf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6ea9e0245c": {
     "text": "kenne",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Familiarity breeds contempt.",
     "source": "wiktionary",
     "lemmas": [
       "heiß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6eaa627fba": {
     "text": "„Er tat es zwar, wollte aber dann den Fuchs töten und ihm den Balg abziehen.“",
@@ -18614,10 +18910,49 @@
   },
   "6eac22c1a5": {
     "text": "„Frei werden wir dann, wenn wir es schaffen alles, was uns an Erfahrungen begegnet, als helfende Hand Gottes zu betrachten.“",
-    "translation": null,
+    "translation": "\"We will become free when we manage to regard everything we encounter in our experiences as God's helping hand.\"",
     "source": "wiktionary",
     "lemmas": [
       "helfende Hand"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "frei",
+        "lemma": "frei",
+        "pos": "adjective",
+        "gloss_hint": "free"
+      },
+      {
+        "form": "schaffen",
+        "lemma": "schaffen",
+        "pos": "verb",
+        "gloss_hint": "accomplish"
+      },
+      {
+        "form": "Erfahrungen",
+        "lemma": "Erfahrung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hand",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": "hand"
+      },
+      {
+        "form": "Gottes",
+        "lemma": "Gott",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "betrachten",
+        "lemma": "betrachten",
+        "pos": "verb",
+        "gloss_hint": "consider"
+      }
     ]
   },
   "6ead7f9f97": {
@@ -19910,7 +20245,7 @@
     "type": "expression",
     "note": "\"bedeutungslos sein\"",
     "synonyms": [],
-    "translation": null,
+    "translation": "not matter",
     "source": "wiktionary",
     "lemmas": [
       "spielen",
@@ -19918,20 +20253,19 @@
       "Rolle"
     ],
     "ref": "phrases/keine Rolle spielen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "6ebb33409c": {
     "text": "eine Tracht Prügel verabreichen",
     "type": "expression",
     "note": "Prügel verabreichen",
     "synonyms": [],
-    "translation": null,
+    "translation": "give someone a beating",
     "source": "wiktionary",
     "lemmas": [
       "Tracht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6ebc016681": {
     "text": "In Amerika hat mein Onkel es dann damals zu etwas gebracht.",
@@ -22123,11 +22457,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be able to say a lot about something",
     "source": "wiktionary",
     "lemmas": [
       "Band"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6ecdb25afd": {
     "text": "Welche Stellung hast du genau?",
@@ -22708,10 +23043,61 @@
   },
   "6ecf9a6416": {
     "text": "„General-Administrateur Laffon hob auf einer Wirtschaftstagung in Baden-Baden einmal mehr das Interesse hervor, das die französische Militär-Regierung diesem Problem entgegenbringt.“",
-    "translation": null,
+    "translation": "\"General Administrator Laffon once again emphasized at an economic conference in Baden-Baden the interest that the French military government brings to this problem.\"",
     "source": "wiktionary",
     "lemmas": [
       "einmal mehr"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "General-Administrateur",
+        "lemma": "General-Administrateur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Laffon",
+        "lemma": "Laffon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wirtschaftstagung",
+        "lemma": "Wirtschaftstagung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Baden-Baden",
+        "lemma": "Baden-Baden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Interesse",
+        "lemma": "Interesse",
+        "pos": "noun",
+        "gloss_hint": "interest"
+      },
+      {
+        "form": "französische",
+        "lemma": "französisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Militär-Regierung",
+        "lemma": "Militär-Regierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Problem",
+        "lemma": "Problem",
+        "pos": "noun",
+        "gloss_hint": "problem"
+      }
     ]
   },
   "6ed0ec4ded": {
@@ -23492,11 +23878,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "One crow does not peck out another crow's eye.",
     "source": "wiktionary",
     "lemmas": [
       "kein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6ed75d48b5": {
     "text": "Sie mussten einen Schwur auf die Verfassung ablegen.",
@@ -24144,12 +24531,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not be an unknown quantity",
     "source": "wiktionary",
     "lemmas": [
       "kein"
     ],
-    "ref": "phrases/kein unbeschriebenes Blatt sein"
+    "ref": "phrases/kein unbeschriebenes Blatt sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "6ede8b5c6c": {
     "text": "Es gibt sicher Vorschriften, wie man jemandes Nachlass übernimmt.",
@@ -26303,18 +26691,28 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be in trouble",
     "source": "wiktionary",
     "lemmas": [
       "Rohr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6ef74cf38c": {
     "text": "Du bist jetzt der Geber.",
-    "translation": null,
+    "translation": "You are now the dealer.",
     "source": "wiktionary",
     "lemmas": [
       "Geber"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geber",
+        "lemma": "Geber",
+        "pos": "noun",
+        "gloss_hint": "dealer"
+      }
     ]
   },
   "6ef758f8fa": {
@@ -26436,11 +26834,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "gain an advantage",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6ef861aa67": {
     "text": "„Die Großzehe [der Adapidae] […] ist weit abspreizbar und oppositionsfähig; es war der typische Kletterfuß der Lemuriformes bereits ausgebildet.“ (Adapidae: ausgestorbene Primatenfamilie)",
@@ -26990,13 +27389,11 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the final word",
     "source": "wiktionary",
     "lemmas": [
       "Wort"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   }
 }

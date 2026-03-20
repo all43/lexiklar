@@ -1256,11 +1256,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is losing everything",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0d0ca702d3": {
     "text": "„Dann sind die Gepäckbänder überfrachtet und stellen sich schon mal aufgrund des zu hohen Gewichtes ab.“",
@@ -4374,11 +4375,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "end up in jail",
     "source": "wiktionary",
     "lemmas": [
       "Knast"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0d2745dbbf": {
     "text": "Obwohl Sie von der Sache nicht so viel verstehen, müssen wir Ihre Leistung anerkennen.",
@@ -7464,11 +7466,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "let things slide",
     "source": "wiktionary",
     "lemmas": [
       "Zügel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0d4269a9ce": {
     "text": "„Das Fahrzeug war ein jämmerlicher Schrotthaufen - eine hässliche Warze am Gesicht einer noch hässlicheren Straße.“",
@@ -9631,10 +9634,31 @@
   },
   "0d518213fe": {
     "text": "Die vordersten Plätze wurden bereits evakuiert.",
-    "translation": null,
+    "translation": "The front seats had already been evacuated.",
     "source": "wiktionary",
     "lemmas": [
       "vorder"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "vordersten",
+        "lemma": "vorderst",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Plätze",
+        "lemma": "Platz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "evakuiert",
+        "lemma": "evakuieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "0d520845ff": {
@@ -10346,12 +10370,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "wear the pants",
     "source": "wiktionary",
     "lemmas": [
       "anhaben"
     ],
-    "ref": "phrases/die Hosen anhaben"
+    "ref": "phrases/die Hosen anhaben",
+    "translation_model": "openai/gpt-4.1"
   },
   "0d5c9ef53d": {
     "text": "hinten keine Augen haben",
@@ -12290,11 +12315,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to an increasing extent",
     "source": "wiktionary",
     "lemmas": [
       "zunehmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0d7b9bf0cd": {
     "text": "„Ist die Erscheinungsform (hier auch als Styling oder Design bezeichnet) eines Produktes technisch bedingt oder ergibt sie sich daraus, daß eine wirtschaftlich zweckmäßige Herstellung (worunter durchaus auch die Berücksichtigung von Kundenerwartungen zu verstehen sein kann) zu einer bestimmten Form des Produktes führt, dann wäre das Nachahmen selbst dann noch zulässig, wenn das nachgeahmte Erzeugnis (eine im konkreten Fall nicht gegebene) Verkehrsgeltung hätte, weil Monopolstellungen für technisch/wirtschaftlich zweckmäßige Verfahren oder Produkte, welche die Voraussetzungen sondergesetzlichen Schutzes nicht erfüllen, verhindert werden sollen.“",
@@ -14624,11 +14650,12 @@
     "type": "expression",
     "note": "jemandem Schwierigkeiten bereiten",
     "synonyms": [],
-    "translation": null,
+    "translation": "throw a wrench in someone's plans",
     "source": "wiktionary",
     "lemmas": [
       "Prügel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0d89d855f4": {
     "text": "Er hat die unangenehme Eigenschaft, ständig den Finger auf die Wunde zu legen.",
@@ -17464,10 +17491,25 @@
   },
   "0da8ce07f9": {
     "text": "Die Handlungen sollten besser miteinander synchronisiert werden.",
-    "translation": null,
+    "translation": "The actions should be better synchronized with each other.",
     "source": "wiktionary",
     "lemmas": [
       "synchronisieren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Handlungen",
+        "lemma": "Handlung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "synchronisiert",
+        "lemma": "synchronisieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "0da8de6bf4": {
@@ -17944,10 +17986,43 @@
   },
   "0dab7309ea": {
     "text": "„›Das wird dich verderben, Andreas; kehre sogleich um und leiste den Herren Abbitte.‹“",
-    "translation": null,
+    "translation": "\"That will ruin you, Andreas; turn back at once and apologize to the gentlemen.\"",
     "source": "wiktionary",
     "lemmas": [
       "Abbitte leisten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "verderben",
+        "lemma": "verderben",
+        "pos": "verb",
+        "gloss_hint": "ruin"
+      },
+      {
+        "form": "kehre",
+        "lemma": "kehren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "leiste",
+        "lemma": "leisten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abbitte",
+        "lemma": "Abbitte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herren",
+        "lemma": "Herr",
+        "pos": "noun",
+        "gloss_hint": "gentlemen"
+      }
     ]
   },
   "0dab997383": {
@@ -19610,11 +19685,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "lift the mask",
     "source": "wiktionary",
     "lemmas": [
       "lüften"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0dbdc55019": {
     "text": "freier Wille",
@@ -21251,10 +21327,37 @@
   },
   "0dcb3bab97": {
     "text": "Der schlecht geschossene Freistoß ging übers Tor.",
-    "translation": null,
+    "translation": "The poorly struck free kick went over the goal.",
     "source": "wiktionary",
     "lemmas": [
       "übers"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "schlecht",
+        "lemma": "schlecht",
+        "pos": "adjective",
+        "gloss_hint": "poor"
+      },
+      {
+        "form": "geschossene",
+        "lemma": "schießen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Freistoß",
+        "lemma": "Freistoß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tor",
+        "lemma": "Tor",
+        "pos": "noun",
+        "gloss_hint": "goal"
+      }
     ]
   },
   "0dcb55b3b6": {
@@ -21658,11 +21761,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "draw someone out",
     "source": "wiktionary",
     "lemmas": [
       "Reserve"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0dcece77c1": {
     "text": "„Die Aussichten für unsere Wirtschaft sind düster.“",
@@ -22370,10 +22474,43 @@
   },
   "0dd82eddac": {
     "text": "Der Job als Telefonverkäuferin liegt ihr, denn sie ist nicht auf den Mund gefallen.",
-    "translation": null,
+    "translation": "The job as a telephone sales representative suits her, because she is not shy.",
     "source": "wiktionary",
     "lemmas": [
       "nicht auf den Mund gefallen sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Job",
+        "lemma": "Job",
+        "pos": "noun",
+        "gloss_hint": "job"
+      },
+      {
+        "form": "Telefonverkäuferin",
+        "lemma": "Telefonverkäuferin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "liegt",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gefallen",
+        "lemma": "gefallen",
+        "pos": "verb",
+        "gloss_hint": "please"
+      },
+      {
+        "form": "Mund",
+        "lemma": "Mund",
+        "pos": "noun",
+        "gloss_hint": "mouth"
+      }
     ]
   },
   "0dd8ab52c8": {
@@ -22723,11 +22860,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "There's no cure for that yet",
     "source": "wiktionary",
     "lemmas": [
       "Kur"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0ddd10d7ba": {
     "text": "jemandem Kopfschmerzen bereiten",
@@ -23123,11 +23261,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Superstition brings bad luck",
     "source": "wiktionary",
     "lemmas": [
       "Aberglaube"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0ddef4c5e9": {
     "text": "Der Fall hat sehr viel Aufsehen erregt.",

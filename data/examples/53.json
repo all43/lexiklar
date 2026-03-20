@@ -39,10 +39,43 @@
   },
   "5301b76bc3": {
     "text": "Auf der Suche nach dem Täter stochert die Polizei mangels Spuren seit Jahren im Nebel.",
-    "translation": null,
+    "translation": "In search of the perpetrator, the police have been groping in the dark for years due to lack of evidence.",
     "source": "wiktionary",
     "lemmas": [
       "im Nebel stochern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Suche",
+        "lemma": "Suche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Täter",
+        "lemma": "Täter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Polizei",
+        "lemma": "Polizei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spuren",
+        "lemma": "Spur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nebel",
+        "lemma": "Nebel",
+        "pos": "noun",
+        "gloss_hint": "fog"
+      }
     ]
   },
   "5302bacf23": {
@@ -362,18 +395,88 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to spark an explosion",
     "source": "wiktionary",
     "lemmas": [
       "Funke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5305d3c787": {
     "text": "Nazivergleiche in der Politik: Wer andere Personen und Gruppierungen ins Umfeld des Nationalsozialismus rückt, torkelt auf dünnem Eis voran. Die damaligen Greueltaten sind von einer Dimension, die man nicht einmal seinen ärgsten Feinden zumuten sollte.",
-    "translation": null,
+    "translation": "Nazi comparisons in politics: whoever places other persons and groups in the vicinity of Nazism is treading on thin ice. The atrocities of that time are of a dimension that one should not even inflict on one's worst enemies.",
     "source": "wiktionary",
     "lemmas": [
       "auf dünnem Eis"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Nazivergleiche",
+        "lemma": "Nazivergleich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Politik",
+        "lemma": "Politik",
+        "pos": "noun",
+        "gloss_hint": "politics"
+      },
+      {
+        "form": "Personen",
+        "lemma": "Person",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gruppierungen",
+        "lemma": "Gruppierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umfeld",
+        "lemma": "Umfeld",
+        "pos": "noun",
+        "gloss_hint": "environment"
+      },
+      {
+        "form": "Nationalsozialismus",
+        "lemma": "Nationalsozialismus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "torkelt",
+        "lemma": "torkeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eis",
+        "lemma": "Eis",
+        "pos": "noun",
+        "gloss_hint": "ice"
+      },
+      {
+        "form": "Greueltaten",
+        "lemma": "Greueltaten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dimension",
+        "lemma": "Dimension",
+        "pos": "noun",
+        "gloss_hint": "extent"
+      },
+      {
+        "form": "zumuten",
+        "lemma": "zumuten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5306949cb1": {
@@ -1753,11 +1856,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be shunned by everyone",
     "source": "wiktionary",
     "lemmas": [
       "Brot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "530f374c60": {
     "text": "Der Zufall hat mich hierhin verschlagen.",
@@ -3065,11 +3169,12 @@
     "type": "expression",
     "note": "sehr genau aufpassen, was und wie man etwas sagt",
     "synonyms": [],
-    "translation": null,
+    "translation": "to choose one's words carefully",
     "source": "wiktionary",
     "lemmas": [
       "wählen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "53168c7ee3": {
     "text": "„Der Wulfshof hatte das beste Weideland von allen Höfen, aber der Bauer hatte auch am meisten mit den Wölfen und Bären zu tun und mit den schwarzbunten Leuten, die hinten im Bruche wohnten.“",
@@ -7210,11 +7315,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to talk someone out of something",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "53393bdd58": {
     "text": "„Da hat uns der Krieg am Schlafittchen, und so ein lausiger Blindgänger macht sich Sorgen, daß ich ihm ein Kotelett wegfressen könnte. Eigenartige Sitten herrschten beim Divisionsstab.“",
@@ -7482,10 +7588,25 @@
   },
   "533cb3c009": {
     "text": "Steve Jobs weilt jetzt in der Cloud.",
-    "translation": null,
+    "translation": "Steve Jobs is now in the cloud.",
     "source": "wiktionary",
     "lemmas": [
       "weilen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Steve Jobs",
+        "lemma": "Steve Jobs",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Cloud",
+        "lemma": "Cloud",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "533f441582": {
@@ -7752,14 +7873,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on the books",
     "source": "wiktionary",
     "lemmas": [
       "Buch"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "5340650a82": {
     "text": "Nach drei Bieren beginn ich zu jubilieren, doch nach fünf Bier spricht die Weisheit aus mir.",
@@ -8204,11 +8323,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Give someone an inch and they'll take a mile.",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5343c553c2": {
     "text": "Jede periodische Dezimalzahl kann als Bruch zweier ganzer Zahlen dargestellt werden, z. B. 0,75=3/4.",
@@ -9949,11 +10069,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "lined up like pearls on a string",
     "source": "wiktionary",
     "lemmas": [
       "reihen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "53590ec978": {
     "text": "Die Haltestelle wird von zwei Busunternehmen bedient.",
@@ -10475,12 +10596,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take one's own life",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
     ],
-    "ref": "phrases/Hand an sich legen"
+    "ref": "phrases/Hand an sich legen",
+    "translation_model": "openai/gpt-4.1"
   },
   "535f7c82ce": {
     "text": "„Dabei hat er ja recht, der Lieblings-Ulli aller deutschen Sportfans, ohne Schweiß kein Preis, und wenn man sich anschaut, wie sich Arthur für seine makellos austrainierte Wettkampfform plagt, dann wirkt das sogar ein bisschen motivierend.“",
@@ -11303,10 +11425,43 @@
   },
   "53652bf0e3": {
     "text": "Die Feier findet am Arsch der Welt statt.",
-    "translation": null,
+    "translation": "The celebration is taking place in the middle of nowhere.",
     "source": "wiktionary",
     "lemmas": [
       "am Arsch der Welt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Feier",
+        "lemma": "Feier",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "findet",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "statt",
+        "lemma": "stattfinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arsch",
+        "lemma": "Arsch",
+        "pos": "noun",
+        "gloss_hint": "asshole"
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      }
     ]
   },
   "536537d980": {
@@ -11677,11 +11832,12 @@
     "type": "expression",
     "note": "den Überblick verlieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "to lose one's rhythm",
     "source": "wiktionary",
     "lemmas": [
       "Takt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "53687ab50d": {
     "text": "„Als Junge war es ihm nie eingefallen, seinen Onkel danach zu fragen, was aus der Comtesse geworden sei - und woher hatte er überhaupt ihren Adelstitel gewusst?“",
@@ -12297,11 +12453,12 @@
     "type": "expression",
     "note": "plötzlich verschwunden sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have vanished into thin air",
     "source": "wiktionary",
     "lemmas": [
       "Erdboden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "536bd7c04a": {
     "text": "„»Und wenn wir klapprig werden«, sagte Titte Klammergass, »dann ziehen wir eben zu unseren Kinderchen.[…]«“",
@@ -12627,10 +12784,43 @@
   },
   "536dbe123b": {
     "text": "Mit dieser Kampagne setzt die Firma ihren guten Ruf aufs Spiel.",
-    "translation": null,
+    "translation": "With this campaign, the company is jeopardizing its good reputation.",
     "source": "wiktionary",
     "lemmas": [
       "etwas aufs Spiel setzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kampagne",
+        "lemma": "Kampagne",
+        "pos": "noun",
+        "gloss_hint": "campaign"
+      },
+      {
+        "form": "Firma",
+        "lemma": "Firma",
+        "pos": "noun",
+        "gloss_hint": "company"
+      },
+      {
+        "form": "guten",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ruf",
+        "lemma": "Ruf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spiel",
+        "lemma": "Spiel",
+        "pos": "noun",
+        "gloss_hint": "scheming"
+      }
     ]
   },
   "536eb7518a": {
@@ -12855,11 +13045,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take something into consideration",
     "source": "wiktionary",
     "lemmas": [
       "Erwägung"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "53730ee3cd": {
     "text": "„Haste Kohldampf, schüttelste’n Baum. Brauchst die Vitamine bloß aufsammeln.“",
@@ -16529,11 +16720,12 @@
     "type": "expression",
     "note": "nach jdm sein – sich nach jdm sehnen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to miss someone more and more",
     "source": "wiktionary",
     "lemmas": [
       "bang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "539511d9b7": {
     "text": "Bei diesem alten Klavier sind die weißen Tasten wirklich aus Elfenbein.",
@@ -17663,11 +17855,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone moral support",
     "source": "wiktionary",
     "lemmas": [
       "Rückgrat"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "539fdc3ad3": {
     "text": "Man sollte sich bemühen, einen gesunden Lebensstil mit viel Bewegung, gesunder Ernährung und Entspannungsübungen in seinen Alltag zu etablieren.",
@@ -18727,11 +18920,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's disgusting",
     "source": "wiktionary",
     "lemmas": [
       "kotzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "53acd622f0": {
     "text": "„Gehn Sie weg vom Damm, junger Mann, ſonſt überfährt Sie ein Auto.“",
@@ -20244,12 +20438,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fish should be accompanied by plenty of drink",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
     ],
-    "ref": "phrases/der Fisch will schwimmen"
+    "ref": "phrases/der Fisch will schwimmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "53b8934712": {
     "text": "Er steht unter dem Verdacht, die Leute betrogen zu haben.",
@@ -21029,11 +21224,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "intellectual dud",
     "source": "wiktionary",
     "lemmas": [
       "Blindgänger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "53c181b871": {
     "text": "„Die Bezahlung war lausig, aber mit (heimlich) Taxifahren kam ich über die Runden.“",
@@ -21076,11 +21272,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to hit the brakes",
     "source": "wiktionary",
     "lemmas": [
       "Bremse"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "53c3112118": {
     "text": "Die Republik Cabo Verde ist eine parlamentarische Demokratie.",
@@ -23594,11 +23791,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give him an inch and he'll take a mile",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "53d12ad949": {
     "text": "„Zwar gehören zur Alliierten Militärpost auch französische und sowjetische Markenausgaben, diese werden allerdings philatelistisch vielfach anders zugeordnet.“",
@@ -24494,18 +24692,46 @@
     "type": "expression",
     "note": "jemanden kontrollieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have someone on a leash",
     "source": "wiktionary",
     "lemmas": [
       "Leine"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "53dabe71c6": {
     "text": "„Ich möchte nichts gesagt haben und halte meine Schnauze.“",
-    "translation": null,
+    "translation": "\"I want to have said nothing and I'm keeping my mouth shut.\"",
     "source": "wiktionary",
     "lemmas": [
       "die Schnauze halten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "möchte",
+        "lemma": "mögen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesagt",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "halte",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schnauze",
+        "lemma": "Schnauze",
+        "pos": "noun",
+        "gloss_hint": "mouth"
+      }
     ]
   },
   "53dac175da": {
@@ -26819,11 +27045,12 @@
       "Lamperlschwanz",
       "Lamperlschweif"
     ],
-    "translation": null,
+    "translation": "to wag like a lamb's tail",
     "source": "wiktionary",
     "lemmas": [
       "wackeln"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "53f38e007f": {
     "text": "„Ich habe meinen Pullover aus dem Fenster geworfen, es sind Läuse drin.“",
@@ -26911,10 +27138,43 @@
   },
   "53f448f1d1": {
     "text": "Bitte geh doch ein bisschen schneller, sonst brauchen wir ewig und drei Tage bis wir da sind!",
-    "translation": null,
+    "translation": "Please go a bit faster, otherwise it will take us forever to get there!",
     "source": "wiktionary",
     "lemmas": [
       "ewig und drei Tage"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "geh",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schneller",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "brauchen",
+        "lemma": "brauchen",
+        "pos": "verb",
+        "gloss_hint": "need"
+      },
+      {
+        "form": "ewig",
+        "lemma": "ewig",
+        "pos": "adjective",
+        "gloss_hint": "eternal"
+      },
+      {
+        "form": "Tage",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "53f45e3e05": {
@@ -27126,14 +27386,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hold in high esteem",
     "source": "wiktionary",
     "lemmas": [
       "Ehre"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "53f52a639e": {
     "text": "„Widerruft der Verbraucher aber trotzdem gegenüber dem Darlehensgeber, greift die Fiktion von § 358 Abs. 3 Satz 3 HGB ein (oben Rn. 1), so dass sowohl finanzierter Vertrag wie Darlehensvertrag unwirksam werden.“",
@@ -27200,11 +27458,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "leave others behind",
     "source": "wiktionary",
     "lemmas": [
       "Platz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "53f5a02368": {
     "text": "„Bei Mondfinsternissen kann man die Ozonschicht als schmalen Farbsaum des Erdschattens auf der Mondoberfläche sogar mit bloßem Auge beobachten.“",
@@ -27922,11 +28181,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "grow a thick skin",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "53fd088574": {
     "text": "Nicht jedes Vieleck hat einen Umkreis.",

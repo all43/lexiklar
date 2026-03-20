@@ -453,11 +453,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a skinny towel",
     "source": "wiktionary",
     "lemmas": [
       "Handtuch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4a06607c6e": {
     "text": "„Es ist jedoch nicht nur diese Verknüpfung von Denkrichtungen, die «Sein und Zeit» wie eine Bombe einschlagen ließ; die Stimmung des Buches stimmte.“",
@@ -1759,11 +1760,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "stylish house",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4a0be37772": {
     "text": "„Und jeden Tag hab ich ein bisschen ein schlechtes Gewissen, weil das, was die Kolleginnen wissen und können und tun, durch die Bezahlung in keiner Weise abgegolten ist.“",
@@ -2511,11 +2513,13 @@
   },
   "4a17cfc96a": {
     "text": "u. a. (und andere)",
-    "translation": null,
+    "translation": "and others",
     "source": "wiktionary",
     "lemmas": [
       "a."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "4a17e3d0e3": {
     "text": "[Weimarer Reichsverfassung von 1918, Artikel 109:] „Alle Deutschen sind vor dem Gesetz gleich.“",
@@ -2683,11 +2687,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "yuck!",
     "source": "wiktionary",
     "lemmas": [
       "pfui"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4a19bb3718": {
     "text": "Zum Geburtstag wird gern ein großer Strauß Blumen verschenkt.",
@@ -3885,11 +3890,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "well, then I'll just do whatever I want!",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4a21266e3c": {
     "text": "Das Kleid ist schon arg abgeschleppt, es muss gekürzt und neu umgenäht werden.",
@@ -5459,11 +5465,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I can't believe it!",
     "source": "wiktionary",
     "lemmas": [
       "Elch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4a2e2cb003": {
     "text": "Das halbe Dorf war gekommen.",
@@ -5495,10 +5502,37 @@
   },
   "4a2e51869e": {
     "text": "Die Reiseführerin war sehr kompetent und stets hilfsbereit.",
-    "translation": null,
+    "translation": "The tour guide was very competent and always helpful.",
     "source": "wiktionary",
     "lemmas": [
       "Reiseführerin"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Reiseführerin",
+        "lemma": "Reiseführerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kompetent",
+        "lemma": "kompetent",
+        "pos": "adjective",
+        "gloss_hint": "capable"
+      },
+      {
+        "form": "hilfsbereit",
+        "lemma": "hilfsbereit",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "stets",
+        "lemma": "stets",
+        "pos": "adverb",
+        "gloss_hint": "always"
+      }
     ]
   },
   "4a30323413": {
@@ -5517,22 +5551,24 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Old soldiers never die.",
     "source": "wiktionary",
     "lemmas": [
       "lang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4a31e854a9": {
     "text": "jemandem etwas auf dem silbernen Tablett servieren",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to serve something to someone on a silver platter",
     "source": "wiktionary",
     "lemmas": [
       "servieren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4a32bc8ab8": {
     "text": "„Wichtige Köpfe dieser Bewegung waren Maqbool Butt (1984 in Delhi hingerichtet) sowie Amanullah Khan und Yasin Malik.“",
@@ -6652,10 +6688,37 @@
   },
   "4a3a2409c5": {
     "text": "Wir benötigen einen beglaubigten Auszug aus dem Grundbuch.",
-    "translation": null,
+    "translation": "We need a certified extract from the land register.",
     "source": "wiktionary",
     "lemmas": [
       "Auszug"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "benötigen",
+        "lemma": "benötigen",
+        "pos": "verb",
+        "gloss_hint": "need"
+      },
+      {
+        "form": "beglaubigten",
+        "lemma": "beglaubigt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auszug",
+        "lemma": "Auszug",
+        "pos": "noun",
+        "gloss_hint": "extract"
+      },
+      {
+        "form": "Grundbuch",
+        "lemma": "Grundbuch",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "4a3af259a4": {
@@ -8909,10 +8972,37 @@
   },
   "4a48fa4032": {
     "text": "Der Apfelbaum trägt dieses Jahr wieder sehr gut.",
-    "translation": null,
+    "translation": "The apple tree is bearing fruit very well again this year.",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Apfelbaum",
+        "lemma": "Apfelbaum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "trägt",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "gut",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": "good"
+      }
     ]
   },
   "4a4998efea": {
@@ -9376,24 +9466,26 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to wear one's heart on one's sleeve",
     "source": "wiktionary",
     "lemmas": [
       "Herz",
       "kein"
     ],
-    "ref": "phrases/aus seinem Herzen keine Mördergrube machen"
+    "ref": "phrases/aus seinem Herzen keine Mördergrube machen",
+    "translation_model": "openai/gpt-4.1"
   },
   "4a53d434c8": {
     "text": "sich frischen Wind um die Nase wehen lassen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get a breath of fresh air",
     "source": "wiktionary",
     "lemmas": [
       "wehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4a544987ca": {
     "text": "Die Polizei stoppte den Raser.",
@@ -9724,12 +9816,13 @@
       "hinnehmen",
       "müssen"
     ],
-    "translation": null,
+    "translation": "to have to swallow a bitter pill",
     "source": "wiktionary",
     "lemmas": [
       "Kröte",
       "schlucken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4a57cfe9b5": {
     "text": "„Ursprünglich hatte die Schulbehörde die Schließung von 23 Schulen vorgesehen.“",
@@ -12223,10 +12316,49 @@
   },
   "4a7be76b9a": {
     "text": "In Deutschland ist das Referendumsrecht insgesamt nur sehr schwach ausgebildet und allenfalls auf der kommunalen Ebene für den politischen Alltag von größerer Bedeutung.",
-    "translation": null,
+    "translation": "In Germany, the right to referendum is overall only very weakly developed and at most of greater significance for political everyday life at the municipal level.",
     "source": "wiktionary",
     "lemmas": [
       "kommunal"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Referendumsrecht",
+        "lemma": "Referendumsrecht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwach",
+        "lemma": "schwach",
+        "pos": "adjective",
+        "gloss_hint": "weak"
+      },
+      {
+        "form": "ausgebildet",
+        "lemma": "ausbilden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ebene",
+        "lemma": "Ebene",
+        "pos": "noun",
+        "gloss_hint": "level"
+      },
+      {
+        "form": "Bedeutung",
+        "lemma": "Bedeutung",
+        "pos": "noun",
+        "gloss_hint": "importance"
+      }
     ]
   },
   "4a7c26f316": {
@@ -13160,11 +13292,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If you want to reach the sea, follow the rivers.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4a838be66a": {
     "text": "Der hatte seine Karriere als Sheriff im Städtchen Youngstown begonnen, sich mit Gangstern eingelassen, Bestechungsgelder kassiert - die Liste der Vergehen setzt sich fort.",
@@ -13303,11 +13436,12 @@
     "type": "expression",
     "note": ") – eine Sache, deren Erwähnung schmerzt",
     "synonyms": [],
-    "translation": null,
+    "translation": "sore spot",
     "source": "wiktionary",
     "lemmas": [
       "Punkt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4a86cf6ba2": {
     "text": "„Dass sein Stiefvater Ingvald sich noch mehr über seine Besuche freute und sie als Ritterschlag wertete, ahnte der Junge nicht.“",
@@ -13527,10 +13661,67 @@
   },
   "4a89a4a1c2": {
     "text": "Unter den Namen „IN1“, „IN2“ etc. kann man die Telefonnummern von Angehörigen und nahestehenden Personen auf dem eigenen Mobiltelefon in derjenigen Reihenfolge speichern, in der man diese Personen in einer persönlichen Notlagensituation informiert wissen möchte.",
-    "translation": null,
+    "translation": "Under the names \"IN1\", \"IN2\", etc., you can store the phone numbers of relatives and close persons on your own mobile phone in the order in which you would want to inform these people in a personal emergency situation.",
     "source": "wiktionary",
     "lemmas": [
       "IN"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Namen",
+        "lemma": "Name",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Telefonnummern",
+        "lemma": "Telefonnummer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Angehörigen",
+        "lemma": "Angehöriger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Personen",
+        "lemma": "Person",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mobiltelefon",
+        "lemma": "Mobiltelefon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reihenfolge",
+        "lemma": "Reihenfolge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "speichern",
+        "lemma": "speichern",
+        "pos": "verb",
+        "gloss_hint": "store"
+      },
+      {
+        "form": "informiert",
+        "lemma": "informieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Notlagensituation",
+        "lemma": "Notlagensituation",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "4a8a4701fa": {
@@ -14153,14 +14344,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to someone's advantage",
     "source": "wiktionary",
     "lemmas": [
       "stellen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "4a9135d930": {
     "text": "„Sein Vater, Prinz Alexander von Battenberg, hatte diesen Posten zu Beginn des Ersten Weltkriegs inne und musste ihn wegen seiner deutschen Abstammung aufgeben, obwohl er ein Schwiegersohn Königin Victorias war.“",
@@ -15604,11 +15793,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I too have been in Arcadia.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4a9b179bd9": {
     "text": "Eine mögliche Erklärung für einen schweren Krankheitsverlauf bei Covid-19 ist ein geschwächtes Immunsystem.",
@@ -16971,11 +17161,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "God forbid",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4aa60f6098": {
     "text": "Ein Logo muss einen hohen Grad an Wiedererkennbarkeit aufweisen, denn es soll als Wiedererkennungsmerkmal dienen.",
@@ -17779,11 +17970,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have someone on your side",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4aae214900": {
     "text": "„Er hörte den Lkw-Fahrern im Funk zu.“",
@@ -18444,11 +18636,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be full of energy",
     "source": "wiktionary",
     "lemmas": [
       "Dampf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4ab3dd6ac7": {
     "text": "Gruppenbild mit Dame",
@@ -19366,12 +19559,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "much of a muchness in green",
     "source": "wiktionary",
     "lemmas": [
       "derselbe"
     ],
-    "ref": "phrases/dieselbe Couleur in Grün"
+    "ref": "phrases/dieselbe Couleur in Grün",
+    "translation_model": "openai/gpt-4.1"
   },
   "4abba7c2ee": {
     "text": "Der Schuppige Porling ist eine Pilzsorte.",
@@ -19745,12 +19939,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with diligence",
     "source": "wiktionary",
     "lemmas": [
       "Fleiß"
     ],
-    "ref": "phrases/mit Fleiß"
+    "ref": "phrases/mit Fleiß",
+    "translation_model": "openai/gpt-4.1"
   },
   "4ac06432ac": {
     "text": "„Seitdem arbeitet H. im Schweiße ihres Angesichts.“",
@@ -22197,10 +22392,91 @@
   },
   "4ad2e2ad83": {
     "text": "„In Deutschland war die Formulierung der Kriegsziele im 1. Weltkrieg beispielsweise auf die territoriale Annexion bzw. Kontrolle solcher Regionen ausgerichtet, die wichtige Rohstoffe und Grundnahrungsmittel für das Deutsche Reich liefern sollten.“",
-    "translation": null,
+    "translation": "In Germany, the formulation of war aims in World War I was oriented, for example, toward the territorial annexation or control of regions that were supposed to supply important raw materials and staple foods for the German Reich.",
     "source": "wiktionary",
     "lemmas": [
       "1. Weltkrieg"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Formulierung",
+        "lemma": "Formulierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kriegsziele",
+        "lemma": "Kriegsziel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weltkrieg",
+        "lemma": "Weltkrieg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "territoriale",
+        "lemma": "territorial",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Annexion",
+        "lemma": "Annexion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kontrolle",
+        "lemma": "Kontrolle",
+        "pos": "noun",
+        "gloss_hint": "control"
+      },
+      {
+        "form": "Regionen",
+        "lemma": "Region",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rohstoffe",
+        "lemma": "Rohstoff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grundnahrungsmittel",
+        "lemma": "Grundnahrungsmittel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutsche",
+        "lemma": "Deutsche",
+        "pos": "noun",
+        "gloss_hint": "German language"
+      },
+      {
+        "form": "Reich",
+        "lemma": "Reich",
+        "pos": "noun",
+        "gloss_hint": "empire"
+      },
+      {
+        "form": "liefern",
+        "lemma": "liefern",
+        "pos": "verb",
+        "gloss_hint": "deliver"
+      }
     ]
   },
   "4ad4018342": {
@@ -22618,12 +22894,13 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Better a terrible end than terror without end.",
     "source": "wiktionary",
     "lemmas": [
       "Schrecken"
     ],
-    "ref": "phrases/lieber ein Ende mit Schrecken als ein Schrecken ohne Ende"
+    "ref": "phrases/lieber ein Ende mit Schrecken als ein Schrecken ohne Ende",
+    "translation_model": "openai/gpt-4.1"
   },
   "4ad8d9a533": {
     "text": "Sie tauschte mit ihm und gab ihm den ganzen Block für die einzigartige Briefmarke um.",
@@ -23875,11 +24152,12 @@
     "synonyms": [
       "sitzen"
     ],
-    "translation": null,
+    "translation": "to be well-heeled",
     "source": "wiktionary",
     "lemmas": [
       "Strumpf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4ae2b908ee": {
     "text": "„Seit dem Entzug des Doktortitels sei Schavan in ihrem Amt beschädigt gewesen.“",
@@ -24708,10 +24986,61 @@
   },
   "4aeab9803f": {
     "text": "„In den österreichischen Skigebieten weicht der Jammer über grüne Weihnachten dem Jubel über die eingebrochene Kälte:[…].“",
-    "translation": null,
+    "translation": "In Austrian ski resorts, the lament over a green Christmas gives way to rejoicing over the onset of cold weather: [...]",
     "source": "wiktionary",
     "lemmas": [
       "grüne Weihnachten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "österreichischen",
+        "lemma": "österreichisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Skigebieten",
+        "lemma": "Skigebiet",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jammer",
+        "lemma": "Jammer",
+        "pos": "noun",
+        "gloss_hint": "lament"
+      },
+      {
+        "form": "grüne",
+        "lemma": "grün",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weihnachten",
+        "lemma": "Weihnachten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jubel",
+        "lemma": "Jubel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eingebrochene",
+        "lemma": "einbrechen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kälte",
+        "lemma": "Kälte",
+        "pos": "noun",
+        "gloss_hint": "cold"
+      }
     ]
   },
   "4aeb24865f": {

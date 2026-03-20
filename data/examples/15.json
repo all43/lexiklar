@@ -3063,10 +3063,31 @@
   },
   "15126a5458": {
     "text": "Kaliumchlorid hat die chemische Formel KCl.",
-    "translation": null,
+    "translation": "Potassium chloride has the chemical formula KCl.",
     "source": "wiktionary",
     "lemmas": [
       "K"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kaliumchlorid",
+        "lemma": "Kaliumchlorid",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "chemische",
+        "lemma": "chemisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Formel",
+        "lemma": "Formel",
+        "pos": "noun",
+        "gloss_hint": "chemical formula"
+      }
     ]
   },
   "15133f57b9": {
@@ -3158,11 +3179,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to throw something down someone's throat",
     "source": "wiktionary",
     "lemmas": [
       "Rachen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "15148e3b48": {
     "text": "„Einige Einwohner fühlen sich auch dadurch belästigt, dass es den Wehrborn-Mitarbeitern anscheinend nicht gelingt, vor allem abends verbindliche Ausgangs- und Anwesenheitszeiten in der Einrichtung durchzusetzen.“",
@@ -4115,11 +4137,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fall flat on your face",
     "source": "wiktionary",
     "lemmas": [
       "Bürgersteig"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "151bc84134": {
     "text": "„Er musste für einen Hungerlohn arbeiten, denn noch war er ein Illegaler mit südafrikanischem Pass.“",
@@ -7539,10 +7562,31 @@
   },
   "153f658c93": {
     "text": "Es juckt mir in den Fingern, das Wiktionary zu vervollständigen.",
-    "translation": null,
+    "translation": "I'm itching to complete the Wiktionary.",
     "source": "wiktionary",
     "lemmas": [
       "es juckt jemandem in den Fingern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "juckt",
+        "lemma": "jucken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wiktionary",
+        "lemma": "Wiktionary",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vervollständigen",
+        "lemma": "vervollständigen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "153fa1634b": {
@@ -7550,11 +7594,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to meet your maker",
     "source": "wiktionary",
     "lemmas": [
       "Schöpfer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "153ff2bd5b": {
     "text": "Ich bitte Sie, hohes Gericht, auch den Zeugen Mustermann zu hören.",
@@ -8557,11 +8602,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "kiss my ass",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "154c5244e4": {
     "text": "„Beauty ist heute nur glaubwürdig, wenn sie ein außergewöhnliches Behandlungsprogramm bietet, das sich individuell zusammenstellen lässt.“",
@@ -8718,11 +8764,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to know the ropes",
     "source": "wiktionary",
     "lemmas": [
       "Zaum"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "154d3a81f0": {
     "text": "„Seit einigen Monaten steht das Uhrwerk der Kamenzer Turmuhr still, nun soll sie wieder laufen. Olaf Böttcher kümmert sich ehrenamtlich um das alte Uhrwerk […].“",
@@ -11205,10 +11252,109 @@
   },
   "1566752e1d": {
     "text": "„Dann schlugen die Trommler den Zapfenstreich, die Leute traten zum Appell an, verzehrten ihr Abendbrot und legten sich für die Nacht an die Feuer; einige brachten ihr Schuhwerk in Ordnung, andere rauchten eine Pfeife, wieder andere zogen sich ganz nackt aus, um ihre Läuse auszuräuchern.“",
-    "translation": null,
+    "translation": "\"Then the drummers sounded the lights out, the people fell in for roll call, consumed their supper and lay down by the fires for the night; some put their footwear in order, others smoked a pipe, still others stripped completely naked to smoke out their lice.\"",
     "source": "wiktionary",
     "lemmas": [
       "Zapfenstreich"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Trommler",
+        "lemma": "Trommler",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zapfenstreich",
+        "lemma": "Zapfenstreich",
+        "pos": "noun",
+        "gloss_hint": "lights out"
+      },
+      {
+        "form": "Leute",
+        "lemma": "Leute",
+        "pos": "noun",
+        "gloss_hint": "people"
+      },
+      {
+        "form": "Appell",
+        "lemma": "Appell",
+        "pos": "noun",
+        "gloss_hint": "formation"
+      },
+      {
+        "form": "verzehrten",
+        "lemma": "verzehren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abendbrot",
+        "lemma": "Abendbrot",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "legten",
+        "lemma": "legen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Feuer",
+        "lemma": "Feuer",
+        "pos": "noun",
+        "gloss_hint": "fire"
+      },
+      {
+        "form": "Schuhwerk",
+        "lemma": "Schuhwerk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ordnung",
+        "lemma": "Ordnung",
+        "pos": "noun",
+        "gloss_hint": "order"
+      },
+      {
+        "form": "rauchten",
+        "lemma": "rauchen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pfeife",
+        "lemma": "Pfeife",
+        "pos": "noun",
+        "gloss_hint": "pipe"
+      },
+      {
+        "form": "zogen",
+        "lemma": "ziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "nackt",
+        "lemma": "nackt",
+        "pos": "adjective",
+        "gloss_hint": "nude"
+      },
+      {
+        "form": "Läuse",
+        "lemma": "Laus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "auszuräuchern",
+        "lemma": "ausräuchern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "15669cde0e": {
@@ -12050,10 +12196,49 @@
   },
   "156f6f6074": {
     "text": "[Er bereute, was er gesagt hatte und in welchem Tonfall er das getan hatte.] „Hätte er doch lieber einmal seine Schnauze gehalten.“",
-    "translation": null,
+    "translation": "\"He regretted what he had said and the tone of voice in which he had done it. If only he had kept his mouth shut instead.\"",
     "source": "wiktionary",
     "lemmas": [
       "die Schnauze halten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "bereute",
+        "lemma": "bereuen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesagt",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tonfall",
+        "lemma": "Tonfall",
+        "pos": "noun",
+        "gloss_hint": "tone of voice"
+      },
+      {
+        "form": "getan",
+        "lemma": "tun",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schnauze",
+        "lemma": "Schnauze",
+        "pos": "noun",
+        "gloss_hint": "mouth"
+      },
+      {
+        "form": "gehalten",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "15706e247d": {
@@ -12293,11 +12478,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as busy as a bee",
     "source": "wiktionary",
     "lemmas": [
       "Biene"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "157304dd16": {
     "text": "„Die Baronin preßt die Lippen zusammen und bramst. Sie ist gekommen, um Zimt zu kaufen. Die Mutter gibt ihr ein Beutelchen Zimt. Nein, die Baronin will Röllchen-Zimt. Meine Mutter langt eine Rolle Stangen-Zimt aus dem Glas. Nein, die Baronin will keinen Zimt, den meine Mutter mit den Fingern angefaßt hat!“",
@@ -14091,10 +14277,73 @@
   },
   "158e3e8ec7": {
     "text": "Auch die Psychologin Elsbeth Stern von der ETH Zürich hält nichts davon, Kinder mit Drill unter Druck zu setzen, […]",
-    "translation": null,
+    "translation": "Even psychologist Elsbeth Stern from ETH Zurich is against putting children under pressure with drilling, [...]",
     "source": "wiktionary",
     "lemmas": [
       "jemanden unter Druck setzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Psychologin",
+        "lemma": "Psychologin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Elsbeth",
+        "lemma": "Elsbeth",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stern",
+        "lemma": "Stern",
+        "pos": "noun",
+        "gloss_hint": "star"
+      },
+      {
+        "form": "ETH",
+        "lemma": "ETH",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zürich",
+        "lemma": "Zürich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hält",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Drill",
+        "lemma": "Drill",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Druck",
+        "lemma": "Druck",
+        "pos": "noun",
+        "gloss_hint": "pressure"
+      },
+      {
+        "form": "setzen",
+        "lemma": "setzen",
+        "pos": "verb",
+        "gloss_hint": "place"
+      }
     ]
   },
   "158e423063": {
@@ -15292,10 +15541,37 @@
   },
   "159f4232fa": {
     "text": "„Der Chef schien einen Clown gefrühstückt zu haben.“",
-    "translation": null,
+    "translation": "\"The boss seemed to have eaten a clown for breakfast.\"",
     "source": "wiktionary",
     "lemmas": [
       "einen Clown gefrühstückt haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Chef",
+        "lemma": "Chef",
+        "pos": "noun",
+        "gloss_hint": "boss"
+      },
+      {
+        "form": "schien",
+        "lemma": "scheinen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Clown",
+        "lemma": "Clown",
+        "pos": "noun",
+        "gloss_hint": "clown"
+      },
+      {
+        "form": "gefrühstückt",
+        "lemma": "frühstücken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "159f999c20": {
@@ -16002,11 +16278,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to stay home with something",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "15a6c0748f": {
     "text": "„Timo fährt zu den Auswärtsspielen von Dynamo.“",
@@ -16115,11 +16392,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to do something exactly as instructed",
     "source": "wiktionary",
     "lemmas": [
       "Nippel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "15a9498a46": {
     "text": "Süßwasser weist einen Gehalt an Salz von 0,1 % auf.",
@@ -16156,11 +16434,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something is a flop",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "15a9bce9a8": {
     "text": "„Ins Zentrum der Religionswelt treffen auch die Witze um die Heiligung des Sabbats, an dem nach biblischer Vorschrift keinerlei Arbeit verrichtet werden darf.“",
@@ -16455,11 +16734,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to drag on like chewing gum",
     "source": "wiktionary",
     "lemmas": [
       "Kaugummi"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "15aca9876f": {
     "text": "„Der Amerikaner, der den Kolumbus zuerst entdeckte, machte eine böse Entdeckung.“",
@@ -17045,18 +17325,132 @@
   },
   "15af9be6e7": {
     "text": "„Sein Notenschnitt reichte für ein Begabtenstipendium hinten und vorne nicht, und so musste ihm sein späterer Schwiegervater schon während des Medizinstudiums mit regelmäßigen Geldspritzen unter die Arme greifen.“",
-    "translation": null,
+    "translation": "His grade point average was nowhere near good enough for a gifted scholarship, and so his future father-in-law had to help him out with regular cash injections even during his medical studies.",
     "source": "wiktionary",
     "lemmas": [
       "vorne und hinten nicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Notenschnitt",
+        "lemma": "Notenschnitt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Begabtenstipendium",
+        "lemma": "Begabtenstipendium",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "reichte",
+        "lemma": "reichen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schwiegervater",
+        "lemma": "Schwiegervater",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Medizinstudiums",
+        "lemma": "Medizinstudium",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geldspritzen",
+        "lemma": "Geldspritze",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "greifen",
+        "lemma": "greifen",
+        "pos": "verb",
+        "gloss_hint": "help"
+      }
     ]
   },
   "15affbe5bc": {
     "text": "„Er ging in die Küche und kehrte mit zwei Blechtassen und einer Flasche Whisky zurück, und mit einer Zange holte er vorsichtig einen Kessel mit schwarzem Tee aus dem Kamin.“",
-    "translation": null,
+    "translation": "He went into the kitchen and returned with two tin cups and a bottle of whisky, and with tongs he carefully pulled a kettle of black tea out of the fireplace.",
     "source": "wiktionary",
     "lemmas": [
       "schwarzer Tee"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ging",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Küche",
+        "lemma": "Küche",
+        "pos": "noun",
+        "gloss_hint": "kitchen"
+      },
+      {
+        "form": "kehrte",
+        "lemma": "kehren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blechtassen",
+        "lemma": "Blechtasse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Flasche",
+        "lemma": "Flasche",
+        "pos": "noun",
+        "gloss_hint": "bottle"
+      },
+      {
+        "form": "Whisky",
+        "lemma": "Whisky",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zange",
+        "lemma": "Zange",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "holte",
+        "lemma": "holen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kessel",
+        "lemma": "Kessel",
+        "pos": "noun",
+        "gloss_hint": "cauldron"
+      },
+      {
+        "form": "Tee",
+        "lemma": "Tee",
+        "pos": "noun",
+        "gloss_hint": "tea"
+      },
+      {
+        "form": "Kamin",
+        "lemma": "Kamin",
+        "pos": "noun",
+        "gloss_hint": "fireplace"
+      }
     ]
   },
   "15b076ddb8": {
@@ -20542,11 +20936,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "open house",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "15d0e3b166": {
     "text": "Das eigene Selbst sollte man nicht vernachlässigen.",
@@ -20632,10 +21027,61 @@
   },
   "15d19e2e68": {
     "text": "„Bayerische Gerichte verurteilen im Zusammenhang mit der Rätezeit 65 Angeklagte zu Zuchthaus, 1.737 zu Gefängnis und 407 zu Festungshaft.“",
-    "translation": null,
+    "translation": "Bavarian courts convicted 65 defendants in connection with the council period to hard labour, 1,737 to imprisonment, and 407 to fortress detention.",
     "source": "wiktionary",
     "lemmas": [
       "im Zusammenhang mit"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gerichte",
+        "lemma": "Gericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verurteilen",
+        "lemma": "verurteilen",
+        "pos": "verb",
+        "gloss_hint": "convict"
+      },
+      {
+        "form": "Zusammenhang",
+        "lemma": "Zusammenhang",
+        "pos": "noun",
+        "gloss_hint": "connection"
+      },
+      {
+        "form": "Rätezeit",
+        "lemma": "Rätezeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Angeklagte",
+        "lemma": "Angeklagter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zuchthaus",
+        "lemma": "Zuchthaus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gefängnis",
+        "lemma": "Gefängnis",
+        "pos": "noun",
+        "gloss_hint": "imprisonment"
+      },
+      {
+        "form": "Festungshaft",
+        "lemma": "Festungshaft",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "15d23b1485": {
@@ -24683,10 +25129,37 @@
   },
   "15ecaf6e21": {
     "text": "„Es liegt mir sehr am Herzen, ich muss dich das fragen: Willst du meine Frau werden?“",
-    "translation": null,
+    "translation": "It means a great deal to me, I must ask you this: Will you be my wife?",
     "source": "wiktionary",
     "lemmas": [
       "jemandem am Herzen liegen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "liegt",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herzen",
+        "lemma": "Herz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fragen",
+        "lemma": "fragen",
+        "pos": "verb",
+        "gloss_hint": "ask"
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "wife"
+      }
     ]
   },
   "15efd1fc76": {
@@ -25150,11 +25623,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to wear yourself out running around",
     "source": "wiktionary",
     "lemmas": [
       "Hacke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "15f2a432a6": {
     "text": "Und dann sahen wir nur noch seine Stange.",
@@ -25458,10 +25932,73 @@
   },
   "15f53474e5": {
     "text": "Martin Luther riet allen Selbstmordgefährdeten, diesen \"Teufel\" beherzt zum Teufel zu schicken: „Wohlan Teufel, leck mich! Ich kann Dir jetzt nicht dienen, ich muss reiten, fahren, trinken, dies oder das tun. Denn ich muss jetzt fröhlich sein. Komm morgen wieder!“",
-    "translation": null,
+    "translation": "Martin Luther advised all those at risk of suicide to boldly send this \"devil\" to the devil: \"Well devil, lick me! I cannot serve you now, I must ride, drive, drink, do this or that. For I must be cheerful now. Come back tomorrow!\"",
     "source": "wiktionary",
     "lemmas": [
       "jemanden zum Teufel schicken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "riet",
+        "lemma": "raten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Selbstmordgefährdeten",
+        "lemma": "Selbstmordgefährdeter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Teufel",
+        "lemma": "Teufel",
+        "pos": "noun",
+        "gloss_hint": "demon"
+      },
+      {
+        "form": "schicken",
+        "lemma": "schicken",
+        "pos": "verb",
+        "gloss_hint": "send"
+      },
+      {
+        "form": "reiten",
+        "lemma": "reiten",
+        "pos": "verb",
+        "gloss_hint": "ride"
+      },
+      {
+        "form": "fahren",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": "drive"
+      },
+      {
+        "form": "trinken",
+        "lemma": "trinken",
+        "pos": "verb",
+        "gloss_hint": "drink"
+      },
+      {
+        "form": "tun",
+        "lemma": "tun",
+        "pos": "verb",
+        "gloss_hint": "do"
+      },
+      {
+        "form": "fröhlich",
+        "lemma": "fröhlich",
+        "pos": "adjective",
+        "gloss_hint": "cheerful"
+      },
+      {
+        "form": "morgen",
+        "lemma": "morgen",
+        "pos": "adverb",
+        "gloss_hint": "tomorrow"
+      }
     ]
   },
   "15f5bcc83b": {

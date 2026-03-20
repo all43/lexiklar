@@ -205,10 +205,37 @@
   },
   "8903cfecdd": {
     "text": "Gerda! Mach das Ding heil! Ich spiele gerade mit der Eisenbahn.",
-    "translation": null,
+    "translation": "Gerda! Fix that thing! I'm playing with the train right now.",
     "source": "wiktionary",
     "lemmas": [
       "heil machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ding",
+        "lemma": "Ding",
+        "pos": "noun",
+        "gloss_hint": "thing"
+      },
+      {
+        "form": "heil",
+        "lemma": "heil",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "spiele",
+        "lemma": "spielen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eisenbahn",
+        "lemma": "Eisenbahn",
+        "pos": "noun",
+        "gloss_hint": "railway"
+      }
     ]
   },
   "8904152abc": {
@@ -1075,10 +1102,49 @@
   },
   "890e2fed50": {
     "text": "Da hast du deine Eltern aber schön zum Narren gehalten. Die glaubten wirklich, du seist in China!",
-    "translation": null,
+    "translation": "Well, you certainly fooled your parents nicely. They really believed you were in China!",
     "source": "wiktionary",
     "lemmas": [
       "jemanden zum Narren halten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Eltern",
+        "lemma": "Eltern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schön",
+        "lemma": "schön",
+        "pos": "adjective",
+        "gloss_hint": "fine"
+      },
+      {
+        "form": "Narren",
+        "lemma": "Narr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "glaubten",
+        "lemma": "glauben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wirklich",
+        "lemma": "wirklich",
+        "pos": "adjective",
+        "gloss_hint": "genuine"
+      },
+      {
+        "form": "China",
+        "lemma": "China",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "890e5069f3": {
@@ -2835,11 +2901,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A hard and rough January is good for the grain harvest.",
     "source": "wiktionary",
     "lemmas": [
       "Januar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "891b56c893": {
     "text": "Im Haus und direkt drumherum ist schon aufgeräumt.",
@@ -3571,11 +3638,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to the point of exhaustion",
     "source": "wiktionary",
     "lemmas": [
       "bis"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "891e4ebb8f": {
     "text": "Dieses Holz wurde bei Vollmond geschlagen.",
@@ -3780,11 +3848,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Fight fire with fire.",
     "source": "wiktionary",
     "lemmas": [
       "Klotz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8922776322": {
     "text": "„Jetzt, da der Frühling Einzug hält, flimmern sie wieder über die Mattscheibe, die sattsam bekannten Schönwetterimpressionen. Etliche Reporter scharen aus, quer durchs Land, die Kameras surren und zeigen: […] D - ein glückliches Kind mit einem grossen, bunten Glace in der Hand und dem O-Ton des Sprechers: ‚Na dann, wohl bekomms.‘ […]“",
@@ -6831,12 +6900,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be deeply rooted in one's home",
     "source": "wiktionary",
     "lemmas": [
       "kleben"
     ],
-    "ref": "phrases/an der Scholle kleben"
+    "ref": "phrases/an der Scholle kleben",
+    "translation_model": "openai/gpt-4.1"
   },
   "893a29c59f": {
     "text": "„Das Sportinstitut der TU Clausthal besitzt ein idyllisch gelegenes Bootshaus an der Okertalsperre (ca.12 km von Clausthal entfernt) mit zahlreichen Land- und Wasserliegeplätzen für Segelboote und Surfbretter.“",
@@ -7083,11 +7153,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to sit as if petrified",
     "source": "wiktionary",
     "lemmas": [
       "dasitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "89412c9539": {
     "text": "Ich muss dir noch die Vokabeln abhören.",
@@ -9599,10 +9670,37 @@
   },
   "895a589289": {
     "text": "„In Bälde erscheint eine Gegenschrift gegen das philologische Pamphlet; […]“",
-    "translation": null,
+    "translation": "\"Soon a counter-treatise against the philological pamphlet will appear; [...]\"",
     "source": "wiktionary",
     "lemmas": [
       "in Bälde"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bälde",
+        "lemma": "Bälde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erscheint",
+        "lemma": "erscheinen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gegenschrift",
+        "lemma": "Gegenschrift",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pamphlet",
+        "lemma": "Pamphlet",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "895ad2ff51": {
@@ -9724,11 +9822,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to walk right into a trap",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "895b64f341": {
     "text": "Frau Schubert ist durch ihren gewerbsmäßigen Erfolg eine Millionärin geworden.",
@@ -10338,11 +10437,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to make something clear to someone",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "896508cb2e": {
     "text": "„Vorläufig dachte er nicht daran, die Heimat zu verlassen, die ihn jeden Tag aufs neue mit dem Hochgefühl sättigte, ein Held, ein Löwe zu sein.“",
@@ -10511,11 +10611,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to see someone in a new light",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8967542452": {
     "text": "Vielleicht ist es Habecks größte Schwäche, dass er manchmal mit dem Kopf durch die Wand will.",
@@ -10630,22 +10731,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to stare into space",
     "source": "wiktionary",
     "lemmas": [
       "starren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8969ce549a": {
     "text": "oben hui, unten pfui",
     "type": "expression",
     "note": "der äußere, oberflächliche Eindruck täuscht",
     "synonyms": [],
-    "translation": null,
+    "translation": "all show and no substance",
     "source": "wiktionary",
     "lemmas": [
       "pfui"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "896a02b034": {
     "text": "»Ick wa ma jestern nen leichtn Mantel koofn un ick jefroren — ick könnt ma peitschen jeehn.«",
@@ -11121,11 +11224,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in good company",
     "source": "wiktionary",
     "lemmas": [
       "Gesellschaft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "896dbd7ec4": {
     "text": "Afghanistan ist das Grab der Imperien.",
@@ -11141,11 +11245,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to come to a bad end",
     "source": "wiktionary",
     "lemmas": [
       "Ende"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "896ecf9f06": {
     "text": "„Pauly suchte sich ein ruhiges Plätzchen und nach einer Weile ging es ihm schon viel besser!“",
@@ -12253,12 +12358,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pull something out of the hat",
     "source": "wiktionary",
     "lemmas": [
       "Ärmel"
     ],
-    "ref": "phrases/etwas aus dem Ärmel schütteln"
+    "ref": "phrases/etwas aus dem Ärmel schütteln",
+    "translation_model": "openai/gpt-4.1"
   },
   "897e2dee4b": {
     "text": "Seine Eltern leben in Adelaide.",
@@ -13404,11 +13510,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "for something (a letter) to arrive unexpectedly",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "898dc48ee2": {
     "text": "Nachdem ich meine Alpenveilchen gegossen hatte, fingen sie wieder an zu grünen.",
@@ -13424,11 +13531,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to follow the thread (of an argument)",
     "source": "wiktionary",
     "lemmas": [
       "Faden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "898f21d219": {
     "text": "Die Geschwindigkeit v im freien Fall wird mit der Gleichung v = g * t bestimmt, wobei g die Erdbeschleunigung und t die Zeit symbolisieren.",
@@ -13924,10 +14032,67 @@
   },
   "8994767a4d": {
     "text": "„Gestern noch auf stolzen Rossen, heute durch die Brust geschossen, morgen in das kühle Grab“",
-    "translation": null,
+    "translation": "\"Yesterday still on proud steeds, today shot through the breast, tomorrow in the cool grave\"",
     "source": "wiktionary",
     "lemmas": [
       "Ross"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gestern",
+        "lemma": "gestern",
+        "pos": "adverb",
+        "gloss_hint": "yesterday"
+      },
+      {
+        "form": "stolzen",
+        "lemma": "stolz",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rossen",
+        "lemma": "Ross",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "Brust",
+        "lemma": "Brust",
+        "pos": "noun",
+        "gloss_hint": "chest"
+      },
+      {
+        "form": "geschossen",
+        "lemma": "schießen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "morgen",
+        "lemma": "morgen",
+        "pos": "adverb",
+        "gloss_hint": "tomorrow"
+      },
+      {
+        "form": "kühle",
+        "lemma": "kühl",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grab",
+        "lemma": "Grab",
+        "pos": "noun",
+        "gloss_hint": "grave"
+      }
     ]
   },
   "8994a5fb7b": {
@@ -14569,23 +14734,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lay one's cards on the table",
     "source": "wiktionary",
     "lemmas": [
       "Tisch",
       "Karte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "89984b1174": {
     "text": "jemand ist von einem anderen Schlag",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is cut from a different cloth",
     "source": "wiktionary",
     "lemmas": [
       "Schlag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "89986f19a0": {
     "text": "Der Kleine hat heute ein dolles Aua gemacht.",
@@ -16237,10 +16404,31 @@
   },
   "89aae84e38": {
     "text": "„Ja, Geſchichten wiſſen Sie ohne Zahl.“",
-    "translation": null,
+    "translation": "\"Yes, you know stories without number.\"",
     "source": "wiktionary",
     "lemmas": [
       "ohne Zahl"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geſchichten",
+        "lemma": "Geschichte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wiſſen",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zahl",
+        "lemma": "Zahl",
+        "pos": "noun",
+        "gloss_hint": "number"
+      }
     ]
   },
   "89ab1e9db9": {
@@ -16560,11 +16748,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "things don't just happen by themselves",
     "source": "wiktionary",
     "lemmas": [
       "Himmel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "89b08726ca": {
     "text": "„Der Kapitän scheint seine treulose Gattin, die demnächst ihren Liebhaber heiraten wird, nicht allzu hoch bewertet zu haben.“",
@@ -16685,25 +16874,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "who cares",
     "source": "wiktionary",
     "lemmas": [
       "kacken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "89b2985491": {
     "text": "jemanden in die Acht erklären",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to declare someone an outlaw",
     "source": "wiktionary",
     "lemmas": [
       "Acht"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "89b2de5c2b": {
     "text": "„Außerdem wurde das Vermögen der Familie in Ägypten eingefroren.“",
@@ -16854,11 +17042,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "this can't be true",
     "source": "wiktionary",
     "lemmas": [
       "doch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "89bafdee06": {
     "text": "Der Lenker ist mit Leder umwickelt.",
@@ -16979,11 +17168,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to harvest one's wheat",
     "source": "wiktionary",
     "lemmas": [
       "scheren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "89bcc57c5c": {
     "text": "Ich kann ein Haus in einem durchgehenden Strich zeichnen!",
@@ -17561,11 +17751,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "beanpole",
     "source": "wiktionary",
     "lemmas": [
       "lang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "89c268c93d": {
     "text": "„Er rief Jochmann nach: ‚Hiergeblieben! Wohin willst du?‘“",
@@ -17893,10 +18084,61 @@
   },
   "89c5a2d37f": {
     "text": "[Syrien, 2016:] „»Das Alawiten-Regime vertreibt und tötet mit den Luftschlägen sunnitische Zivilisten, um die eigene Machtbasis zu stärken.«“",
-    "translation": null,
+    "translation": "\"The Alawite regime drives out and kills Sunni civilians with airstrikes in order to strengthen its own power base.\"",
     "source": "wiktionary",
     "lemmas": [
       "Zivilist"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Alawiten-Regime",
+        "lemma": "Alawiten-Regime",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vertreibt",
+        "lemma": "vertreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "tötet",
+        "lemma": "töten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Luftschlägen",
+        "lemma": "Luftschlag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sunnitische",
+        "lemma": "sunnitisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zivilisten",
+        "lemma": "Zivilist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Machtbasis",
+        "lemma": "Machtbasis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stärken",
+        "lemma": "stärken",
+        "pos": "verb",
+        "gloss_hint": "strengthen"
+      }
     ]
   },
   "89c5f38fd2": {
@@ -18814,11 +19056,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "stupidity hurts",
     "source": "wiktionary",
     "lemmas": [
       "Dummheit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "89d15ceffa": {
     "text": "„Die zuständige Kontrollbehörde, die Federal Communications Commission (FCC), hat diese Vorgabe seitdem recht liberal gehandhabt, jedenfalls dann, wenn ein schmutziges Wort einem Sprecher eher singulär herausgerutscht ist.“",
@@ -19041,10 +19284,85 @@
   },
   "89d2adfc34": {
     "text": "Ein reifer Maurermeister hat die Faxen dicke von der Arroganz Marke West: Die sollten hier mal ohne ihre schicken Maschinen ranklotzen müssen, einbrechen würden sie alle miteinander.",
-    "translation": null,
+    "translation": "A seasoned master mason is fed up with Western-style arrogance: they should have to work here without their fancy machines, and they would all go under.",
     "source": "wiktionary",
     "lemmas": [
       "die Faxen dicke haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "reifer",
+        "lemma": "reif",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Maurermeister",
+        "lemma": "Maurermeister",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Faxen",
+        "lemma": "Faxe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dicke",
+        "lemma": "dicke",
+        "pos": "particle",
+        "gloss_hint": "plenty"
+      },
+      {
+        "form": "Arroganz",
+        "lemma": "Arroganz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Marke",
+        "lemma": "Marke",
+        "pos": "noun",
+        "gloss_hint": "brand"
+      },
+      {
+        "form": "West",
+        "lemma": "West",
+        "pos": "noun",
+        "gloss_hint": "Western world"
+      },
+      {
+        "form": "schicken",
+        "lemma": "schicken",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Maschinen",
+        "lemma": "Maschine",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ranklotzen",
+        "lemma": "ranklotzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "einbrechen",
+        "lemma": "einbrechen",
+        "pos": "verb",
+        "gloss_hint": "collapse"
+      },
+      {
+        "form": "miteinander",
+        "lemma": "miteinander",
+        "pos": "adverb",
+        "gloss_hint": "together"
+      }
     ]
   },
   "89d2cabb05": {
@@ -19097,10 +19415,31 @@
   },
   "89d4dc34e6": {
     "text": "Das Auto hat einen Verbrauch von 6 Litern.",
-    "translation": null,
+    "translation": "The car has a consumption of 6 liters.",
     "source": "wiktionary",
     "lemmas": [
       "Verbrauch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Auto",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "Verbrauch",
+        "lemma": "Verbrauch",
+        "pos": "noun",
+        "gloss_hint": "consumption"
+      },
+      {
+        "form": "Litern",
+        "lemma": "Liter",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "89d51443ef": {
@@ -19108,11 +19447,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not be able to eat another bite",
     "source": "wiktionary",
     "lemmas": [
       "Bissen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "89d548ca8c": {
     "text": "Wir wurden ganz schlecht platziert und konnten kaum etwas sehen.",
@@ -19355,12 +19695,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "piss someone off",
     "source": "wiktionary",
     "lemmas": [
       "Palme"
     ],
-    "ref": "phrases/jemanden auf die Palme bringen"
+    "ref": "phrases/jemanden auf die Palme bringen",
+    "translation_model": "openai/gpt-4.1"
   },
   "89d9def075": {
     "text": "Während meines Studiums wohnte ich bei meiner Tante, bei freier Kost und Logis.",
@@ -20725,11 +21066,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "old nonsense",
     "source": "wiktionary",
     "lemmas": [
       "Zimt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "89e56ff502": {
     "text": "„Inzwischen behauptete jemand aus der Verwandtschaft, Miss Geraldine habe zwei Dutzend zerstoßene Valium unter den Tunfischsalat des Reverend gemischt und dann zugesehen, wie der alte Mann langsam und unter Krämpfen starb.“",
@@ -22458,11 +22800,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get off my back",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "89f228931c": {
     "text": "„Bei der Ausdruckserweiterung unterscheidet man folgende Wortbildungstypen: Zusammensetzung, explizite Ableitung, Präfixbildung, wobei sich die Zusammensetzungen wiederum in Determinativkomposita, Possessivkomposita, präpositionale Rektionskomposita und Kopulativkomposita gliedern.“",
@@ -22854,10 +23197,127 @@
   },
   "89f6069b62": {
     "text": "„Artikel ohne Zahl, die in Stockholmer und auch in Provinzblättern erschienen, dienten ebenso wie diverse kleinere Schriften der Aufklärung über das besetzte Land, dessen Bürger ich war; 1942 eröffnete ich, gemeinsam mit einem schwedischen Freund, ein Pressebüro und gestaltete die Arbeit dadurch noch effektiver.“",
-    "translation": null,
+    "translation": "\"Articles without number that appeared in Stockholm and provincial newspapers served, like various smaller writings, to provide information about the occupied country of which I was a citizen; in 1942 I opened, together with a Swedish friend, a press office and made the work thereby even more effective.\"",
     "source": "wiktionary",
     "lemmas": [
       "ohne Zahl"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Artikel",
+        "lemma": "Artikel",
+        "pos": "noun",
+        "gloss_hint": "article (journalism)"
+      },
+      {
+        "form": "Zahl",
+        "lemma": "Zahl",
+        "pos": "noun",
+        "gloss_hint": "number"
+      },
+      {
+        "form": "Stockholmer",
+        "lemma": "Stockholmer",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Provinzblättern",
+        "lemma": "Provinzblatt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erschienen",
+        "lemma": "erscheinen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schriften",
+        "lemma": "Schrift",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufklärung",
+        "lemma": "Aufklärung",
+        "pos": "noun",
+        "gloss_hint": "information"
+      },
+      {
+        "form": "besetzte",
+        "lemma": "besetzt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Land",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": "country"
+      },
+      {
+        "form": "Bürger",
+        "lemma": "Bürger",
+        "pos": "noun",
+        "gloss_hint": "citizen"
+      },
+      {
+        "form": "eröffnete",
+        "lemma": "eröffnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gemeinsam",
+        "lemma": "gemeinsam",
+        "pos": "adjective",
+        "gloss_hint": "shared"
+      },
+      {
+        "form": "schwedischen",
+        "lemma": "schwedisch",
+        "pos": "adjective",
+        "gloss_hint": "Swedish"
+      },
+      {
+        "form": "Freund",
+        "lemma": "Freund",
+        "pos": "noun",
+        "gloss_hint": "friend"
+      },
+      {
+        "form": "Pressebüro",
+        "lemma": "Pressebüro",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gestaltete",
+        "lemma": "gestalten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arbeit",
+        "lemma": "Arbeit",
+        "pos": "noun",
+        "gloss_hint": "task"
+      },
+      {
+        "form": "dadurch",
+        "lemma": "dadurch",
+        "pos": "adverb",
+        "gloss_hint": "thereby"
+      },
+      {
+        "form": "effektiver",
+        "lemma": "effektiv",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "89f70a494f": {
@@ -22919,11 +23379,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hands off the butter",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "89f758c424": {
     "text": "„Und manche verklärten sogar die Nachteile der Deutschen in Vorteile.“",

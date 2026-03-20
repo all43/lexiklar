@@ -535,10 +535,37 @@
   },
   "2805df1fec": {
     "text": "Papi, Auto putt, du heil machen.",
-    "translation": null,
+    "translation": "Daddy, car broken, you fix it.",
     "source": "wiktionary",
     "lemmas": [
       "heil machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Auto",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "putt",
+        "lemma": "putt",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "heil",
+        "lemma": "Heil",
+        "pos": "noun",
+        "gloss_hint": "health"
+      },
+      {
+        "form": "machen",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "make"
+      }
     ]
   },
   "2807c29d8d": {
@@ -1677,11 +1704,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "stand around like a wet rag",
     "source": "wiktionary",
     "lemmas": [
       "Regenschirm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "281071bf34": {
     "text": "„Ich ließ mein Gepäck heraufbringen; mein Lakai kam und machte mir einen anständigen Eindruck.“",
@@ -2745,11 +2773,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I love the one who desires the impossible.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "281b86b5b8": {
     "text": "„Personell kann der Trainer aus dem Vollen schöpfen.“",
@@ -3251,10 +3280,31 @@
   },
   "28208579b6": {
     "text": "Er ist als Geschäftsmann bekannt, der über Leichen geht.",
-    "translation": null,
+    "translation": "He is known as a businessman who will stop at nothing.",
     "source": "wiktionary",
     "lemmas": [
       "über Leichen gehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geschäftsmann",
+        "lemma": "Geschäftsmann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bekannt",
+        "lemma": "bekannt",
+        "pos": "adjective",
+        "gloss_hint": "well-known"
+      },
+      {
+        "form": "Leichen",
+        "lemma": "Leiche",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2821baf43a": {
@@ -4048,11 +4098,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "downer",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2829fac959": {
     "text": "bis zum Abwinken",
@@ -7192,11 +7243,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "stuff yourself",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "28498f858d": {
     "text": "„Straff sind dessen Arme gespannt, jeder seiner kraftvollen Sprünge kommt aus tief gebeugten Knien, ruckartig reisst er den Kopf herum - mit [Anmerkung: dem römischen Feldherrn] Crassus, grimmig und aggressiv verkörpert von Sergei Polunin, ist nicht gut Kirschen essen.“",
@@ -7625,11 +7677,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have at hand",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "284d99334b": {
     "text": "„Diese Partie war Julie Karagina, die Tochter angesehener und ordentlicher Eltern, mit der Familie Rostow von Kindesbeinen an bekannt und jetzt, nachdem der letzte ihrer Brüder gefallen war, eine sehr reiche Erbin.“",
@@ -8334,10 +8387,97 @@
   },
   "28548d3160": {
     "text": "Sowohl Innen- als auch Justizministerium prüfen den Angaben zufolge derzeit, was \"moderat\" konkret bedeutet - unter welchen Bedingungen die Bundesregierung den Ausstieg aus der Atomenergie also ohne Mitsprache des Bundesrats rückgängig machen kann.",
-    "translation": null,
+    "translation": "According to reports, both the Interior Ministry and the Justice Ministry are currently examining what \"moderate\" specifically means—under what conditions the federal government can reverse its exit from nuclear energy without the participation of the Bundesrat.",
     "source": "wiktionary",
     "lemmas": [
       "etwas rückgängig machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Innen-",
+        "lemma": "Innen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Justizministerium",
+        "lemma": "Justizministerium",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "prüfen",
+        "lemma": "prüfen",
+        "pos": "verb",
+        "gloss_hint": "check"
+      },
+      {
+        "form": "Angaben",
+        "lemma": "Angabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "derzeit",
+        "lemma": "derzeit",
+        "pos": "adverb",
+        "gloss_hint": "currently"
+      },
+      {
+        "form": "konkret",
+        "lemma": "konkret",
+        "pos": "adjective",
+        "gloss_hint": "specific"
+      },
+      {
+        "form": "bedeutet",
+        "lemma": "bedeuten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bedingungen",
+        "lemma": "Bedingung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundesregierung",
+        "lemma": "Bundesregierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausstieg",
+        "lemma": "Ausstieg",
+        "pos": "noun",
+        "gloss_hint": "exit"
+      },
+      {
+        "form": "Atomenergie",
+        "lemma": "Atomenergie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "rückgängig",
+        "lemma": "rückgängig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mitsprache",
+        "lemma": "Mitsprache",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundesrats",
+        "lemma": "Bundesrat",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2854c4ec81": {
@@ -8401,11 +8541,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "throw money out the window left and right",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "28572f3710": {
     "text": "„Die Fotos von Weihnachten sind nichts geworden, sie sind leider alle unscharf.“",
@@ -8574,11 +8715,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fall back into obscurity",
     "source": "wiktionary",
     "lemmas": [
       "zurückfallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "285bff418d": {
     "text": "Ich bin kein Profifußballspieler, ich spiele nur ab und an Fußball.",
@@ -11041,10 +11183,49 @@
   },
   "286d38e6aa": {
     "text": "„26 Minuten später dasselbe in Grün: Freistoß, Linksflanke Tarnat, Kopfball Helmer – 2:0.“",
-    "translation": null,
+    "translation": "26 minutes later, the same in green: free kick, left-wing cross from Tarnat, header from Helmer—2:0.",
     "source": "wiktionary",
     "lemmas": [
       "dasselbe in Grün"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Minuten",
+        "lemma": "Minute",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "später",
+        "lemma": "später",
+        "pos": "adverb",
+        "gloss_hint": "later"
+      },
+      {
+        "form": "Grün",
+        "lemma": "Grün",
+        "pos": "noun",
+        "gloss_hint": "green"
+      },
+      {
+        "form": "Freistoß",
+        "lemma": "Freistoß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Linksflanke",
+        "lemma": "Linksflanke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kopfball",
+        "lemma": "Kopfball",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "286ddf8e66": {
@@ -11216,11 +11397,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as drunk as a lord",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "287220a29f": {
     "text": "Wenn frau sich kennt, braucht sie nicht vor sich wegzulaufen.",
@@ -12299,10 +12481,31 @@
   },
   "287ccbd2ab": {
     "text": "Ich hab ja mit viel gerechnet, aber nicht mit sowas!",
-    "translation": null,
+    "translation": "I expected a lot, but not something like this!",
     "source": "wiktionary",
     "lemmas": [
       "sowas"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gerechnet",
+        "lemma": "rechnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "viel",
+        "lemma": "viel",
+        "pos": "adverb",
+        "gloss_hint": "much"
+      },
+      {
+        "form": "sowas",
+        "lemma": "sowas",
+        "pos": "pronoun",
+        "gloss_hint": null
+      }
     ]
   },
   "287cd86a14": {
@@ -12442,11 +12645,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that seems suspicious to me",
     "source": "wiktionary",
     "lemmas": [
       "verdächtig"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "287e62d5ba": {
     "text": "Die schärfsten Kritiker der Elche / waren früher selber welche. – (F. W. Bernstein)",
@@ -14068,10 +14272,73 @@
   },
   "288b8d33c1": {
     "text": "„Nachdem Unbekannte offenbar im großen Stil Holz aus dem Borsteler Naturwald bei Ellerhoop im Kreis Pinneberg gestohlen haben, sucht die Polizei nun Zeugen.“",
-    "translation": null,
+    "translation": "After unknown persons apparently stole wood on a large scale from the Borsteler natural forest near Ellerhoop in Pinneberg district, police are now seeking witnesses.",
     "source": "wiktionary",
     "lemmas": [
       "im großen Stil"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Unbekannte",
+        "lemma": "Unbekannte",
+        "pos": "noun",
+        "gloss_hint": "unknown"
+      },
+      {
+        "form": "offenbar",
+        "lemma": "offenbar",
+        "pos": "adjective",
+        "gloss_hint": "apparently"
+      },
+      {
+        "form": "Holz",
+        "lemma": "Holz",
+        "pos": "noun",
+        "gloss_hint": "wood"
+      },
+      {
+        "form": "Borsteler",
+        "lemma": "Borsteler",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Naturwald",
+        "lemma": "Naturwald",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ellerhoop",
+        "lemma": "Ellerhoop",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kreis",
+        "lemma": "Kreis",
+        "pos": "noun",
+        "gloss_hint": "district"
+      },
+      {
+        "form": "Pinneberg",
+        "lemma": "Pinneberg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Polizei",
+        "lemma": "Polizei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeugen",
+        "lemma": "Zeuge",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "288c4ffbdf": {
@@ -14522,12 +14789,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a fool pretending to be important",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
     ],
-    "ref": "phrases/ein Esel in der Löwenhaut"
+    "ref": "phrases/ein Esel in der Löwenhaut",
+    "translation_model": "openai/gpt-4.1"
   },
   "289124bc53": {
     "text": "„Die Kollegen in der Firma bemerkten seinen Krampfanfall, sahen die Zuckungen seiner Arme und Beine und den seltsam starren Blick.“",
@@ -16220,11 +16488,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a tough neighborhood",
     "source": "wiktionary",
     "lemmas": [
       "Pflaster"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "289de47a7d": {
     "text": "„Der Haarriss ist von Auge nicht zu sehen.“",
@@ -16579,11 +16848,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "His belly is his god.",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "28a128155e": {
     "text": "„Noch viele Männer verbluten, und viele Babys sterben im Gras, bis der Trupp nach zehn Tagesmärschen den großen Fluss Kongo erreicht.“",
@@ -17252,11 +17522,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a black eye",
     "source": "wiktionary",
     "lemmas": [
       "blaues Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "28a5990642": {
     "text": "„Beim Aufspüren von Exoplaneten, fernen Galaxien oder einem Spiralnebel liefern Sternwarten immer wieder bombastische Farbbilder - obwohl das Weltall das Leuchten der Sterne verschluckt und die Astronomen bei ihren Entdeckungen nur trockenes Datenmaterial produzieren.“",
@@ -17699,11 +17970,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "rekindled romance",
     "source": "wiktionary",
     "lemmas": [
       "aufwärmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "28a98e5475": {
     "text": "um eine milde Gabe bitten",
@@ -26349,11 +26621,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fall back into the same old rut",
     "source": "wiktionary",
     "lemmas": [
       "zurückfallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "28f8cf2212": {
     "text": "„Und weil die Montage eines zusätzlichen Steckers und ein paar weiterer Bauteile aus dem Regal jetzt den großen Aufwand nicht mehr bedeutet hat, machte Mercedes-Benz sein Brennstoffzellenauto gleich zum Plug-in-Hybrid, dessen Akku man an der Steckdose laden kann.“",
@@ -26856,11 +27129,12 @@
     "type": "expression",
     "note": "soldatensprachlich: Bomben abwerfen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to drop bombs",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "28ffb9da3a": {
     "text": "Sich mit dem Chef zu streiten, ist ein Spiel mit dem Feuer.",

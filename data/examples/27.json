@@ -2628,11 +2628,12 @@
     "type": "expression",
     "note": "das Ergebnis einer Arbeit ist typisch oder charakteristisch für jemanden",
     "synonyms": [],
-    "translation": null,
+    "translation": "to bear someone's signature style",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "270ce4f983": {
     "text": "Seit mehr als fünfzig Jahren gibt es bemannte Raumfahrt.",
@@ -3930,11 +3931,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fight tooth and nail",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2716feff89": {
     "text": "„Nach seiner letzten Festnahme wurde er in die USA ausgeliefert und dort zu lebenslanger Haft verurteilt.“",
@@ -5694,11 +5696,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "It'll be fine.",
     "source": "wiktionary",
     "lemmas": [
       "schiefgehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "271fd62970": {
     "text": "In dem Satz „Peter sieht Inge“ sind „Peter“ (= Agens) und „Inge“ (= Patiens) die Argumente.",
@@ -7965,11 +7968,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "colorful feathers",
     "source": "wiktionary",
     "lemmas": [
       "Feder"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "273df92984": {
     "text": "„Je näher die Bahre, desto höher das Bare.“",
@@ -8036,12 +8040,13 @@
     "type": "expression",
     "note": "untersuchen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to get to the bottom of something",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
     ],
-    "ref": "phrases/einer Sache auf den Grund gehen"
+    "ref": "phrases/einer Sache auf den Grund gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "273fe800a0": {
     "text": "Ehrenamtliche waren immer schon eine starke Stütze im Sozialwesen.",
@@ -9061,10 +9066,25 @@
   },
   "274bee185c": {
     "text": "Sie bestellte 3 St. Kuchen.",
-    "translation": null,
+    "translation": "She ordered 3 pieces of cake.",
     "source": "wiktionary",
     "lemmas": [
       "St."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "bestellte",
+        "lemma": "bestellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kuchen",
+        "lemma": "Kuchen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "274c30a66c": {
@@ -9390,10 +9410,67 @@
   },
   "2752ece614": {
     "text": "„Da eine ikonische Frisur nicht von selbst kam, ging sie dazu über, sich morgens noch vor Verlassen des Hauses die Haare professionell machen zu lassen.“",
-    "translation": null,
+    "translation": "Since an iconic hairstyle didn't come naturally, she began having her hair professionally styled every morning before leaving the house.",
     "source": "wiktionary",
     "lemmas": [
       "ikonisch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ikonische",
+        "lemma": "ikonisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frisur",
+        "lemma": "Frisur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kam",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ging",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haare",
+        "lemma": "Haar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "professionell",
+        "lemma": "professionell",
+        "pos": "adjective",
+        "gloss_hint": "professional"
+      },
+      {
+        "form": "machen",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "have done"
+      },
+      {
+        "form": "Verlassen",
+        "lemma": "verlassen",
+        "pos": "verb",
+        "gloss_hint": "leave"
+      },
+      {
+        "form": "Hauses",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2753a1ed9e": {
@@ -12035,11 +12112,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be rolling in money",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "27620e8187": {
     "text": "„Vera, ich bin's, Nele. Was liegt heute an?“",
@@ -12685,10 +12763,31 @@
   },
   "2768b76e1f": {
     "text": "Sie löschte die Kerze aus und legte sich hin.",
-    "translation": null,
+    "translation": "She blew out the candle and lay down.",
     "source": "wiktionary",
     "lemmas": [
       "auslöschen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "löschte",
+        "lemma": "löschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kerze",
+        "lemma": "Kerze",
+        "pos": "noun",
+        "gloss_hint": "candle"
+      },
+      {
+        "form": "legte",
+        "lemma": "legen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "2769047beb": {
@@ -13262,10 +13361,37 @@
   },
   "276a3f4132": {
     "text": "Kommt man besser schick oder leger in die Firma? (www.spiegel.de)",
-    "translation": null,
+    "translation": "Is it better to come to the office dressed smartly or casually?",
     "source": "wiktionary",
     "lemmas": [
       "leger"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kommt",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schick",
+        "lemma": "schick",
+        "pos": "adjective",
+        "gloss_hint": "stylish"
+      },
+      {
+        "form": "leger",
+        "lemma": "leger",
+        "pos": "adjective",
+        "gloss_hint": "effortless"
+      },
+      {
+        "form": "Firma",
+        "lemma": "Firma",
+        "pos": "noun",
+        "gloss_hint": "company"
+      }
     ]
   },
   "276acccd98": {
@@ -14731,11 +14857,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to strongly recommend something to someone",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2778f00bbe": {
     "text": "„Kostenpflichtige Lounges bieten allen Komfort, dazu gibt es nicht ganz so luxuriöse, kostenfreie Lounges mit gepolsterten Bänken, Duschen und sogar Kinderspielplätzen.“",
@@ -15380,10 +15507,37 @@
   },
   "27800f5327": {
     "text": "Solch einer aber war, ein Halbjahrhundert später, der Doktor Samuel Johnson; eben deswegen wird er bis heute als britischster Brite bewundert.",
-    "translation": null,
+    "translation": "But such a man was, half a century later, Doctor Samuel Johnson; for this very reason he is admired to this day as the most British of Britons.",
     "source": "wiktionary",
     "lemmas": [
       "britisch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Halbjahrhundert",
+        "lemma": "Halbjahrhundert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "später",
+        "lemma": "später",
+        "pos": "adjective",
+        "gloss_hint": "later"
+      },
+      {
+        "form": "Doktor",
+        "lemma": "Doktor",
+        "pos": "noun",
+        "gloss_hint": "doctor"
+      },
+      {
+        "form": "bewundert",
+        "lemma": "bewundern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "278051cd01": {
@@ -15427,11 +15581,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a bit crazy",
     "source": "wiktionary",
     "lemmas": [
       "Keks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "27816b9c17": {
     "text": "Eine Begegnung im nächtlichen Berlin: Ein junges Mädchen, das sich für eine Prinzessin hält, und ein Imbissbudenbesitzer treffen an einer Bushaltestelle aufeinander.",
@@ -16152,10 +16307,49 @@
   },
   "278b4d9643": {
     "text": "Eine Zahl a ist kleiner als eine andere Zahl b, wenn a auf der Zahlengeraden links von b liegt.",
-    "translation": null,
+    "translation": "A number a is smaller than another number b if a lies to the left of b on the number line.",
     "source": "wiktionary",
     "lemmas": [
       "a"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zahl",
+        "lemma": "Zahl",
+        "pos": "noun",
+        "gloss_hint": "number"
+      },
+      {
+        "form": "kleiner",
+        "lemma": "klein",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zahl",
+        "lemma": "Zahl",
+        "pos": "noun",
+        "gloss_hint": "number"
+      },
+      {
+        "form": "liegt",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zahlengeraden",
+        "lemma": "Zahlengerade",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "links",
+        "lemma": "links",
+        "pos": "adverb",
+        "gloss_hint": "left-handedly"
+      }
     ]
   },
   "278bf5dce5": {
@@ -16260,10 +16454,31 @@
   },
   "278ce2e0ee": {
     "text": "Dieses Gewächs hat sowohl Geruch als auch Geschmack.",
-    "translation": null,
+    "translation": "This plant has both smell and taste.",
     "source": "wiktionary",
     "lemmas": [
       "Gewächs"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gewächs",
+        "lemma": "Gewächs",
+        "pos": "noun",
+        "gloss_hint": "plant"
+      },
+      {
+        "form": "Geruch",
+        "lemma": "Geruch",
+        "pos": "noun",
+        "gloss_hint": "smell"
+      },
+      {
+        "form": "Geschmack",
+        "lemma": "Geschmack",
+        "pos": "noun",
+        "gloss_hint": "flavor"
+      }
     ]
   },
   "278d8f4a7c": {
@@ -17162,10 +17377,37 @@
   },
   "27961cf2d3": {
     "text": "Ich unterlege meine Prognosen mit fundierten Berechnungen.",
-    "translation": null,
+    "translation": "I support my forecasts with well-founded calculations.",
     "source": "wiktionary",
     "lemmas": [
       "unterlegen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "unterlege",
+        "lemma": "unterlegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prognosen",
+        "lemma": "Prognose",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fundierten",
+        "lemma": "fundiert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Berechnungen",
+        "lemma": "Berechnung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "279650cd05": {
@@ -17879,12 +18121,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a broad hint",
     "source": "wiktionary",
     "lemmas": [
       "Wink"
     ],
-    "ref": "phrases/Wink mit dem Zaunpfahl"
+    "ref": "phrases/Wink mit dem Zaunpfahl",
+    "translation_model": "openai/gpt-4.1"
   },
   "279e8abbd0": {
     "text": "„Auf die Frage, ob er Holzschuhers Wahl für sicher halte, gibt sich Borns siegesgewiss: ‚Aber dicke! Da wette ich drauf!‘“",
@@ -18186,10 +18429,43 @@
   },
   "27a24d3cca": {
     "text": "Mutter sagte: hüte Dich vor ihm, er ist so falsch wie Galgenholz.",
-    "translation": null,
+    "translation": "Mother said: beware of him, he is as false as gallows wood.",
     "source": "wiktionary",
     "lemmas": [
       "falsch wie Galgenholz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mutter",
+        "lemma": "Mutter",
+        "pos": "noun",
+        "gloss_hint": "mother"
+      },
+      {
+        "form": "sagte",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "hüte",
+        "lemma": "hüten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "falsch",
+        "lemma": "falsch",
+        "pos": "adjective",
+        "gloss_hint": "false"
+      },
+      {
+        "form": "Galgenholz",
+        "lemma": "Galgenholz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "27a2740b05": {
@@ -18643,11 +18919,12 @@
     "synonyms": [
       "soldatensprachlich"
     ],
-    "translation": null,
+    "translation": "to teach someone how to swim",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "27a5e7452f": {
     "text": "„Außerdem lag das Haus in einem schönen Garten mit Bäumen, rosaroten Rosen und einer Schaukel, wo sie im Sommer oft spielte.“",
@@ -18779,11 +19056,13 @@
   },
   "27a770a274": {
     "text": "„Das Festhalten an Lösungen nach Schema F verstellt den Blick für Erfolg versprechende Alternativen.“",
-    "translation": null,
+    "translation": "Clinging to one-size-fits-all solutions obscures the view of promising alternatives.",
     "source": "wiktionary",
     "lemmas": [
       "nach Schema F"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "27a777a831": {
     "text": "Es ist nur noch eine Rolle Klopapier übrig.",
@@ -18824,18 +19103,94 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Water on!",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "27aa16ae85": {
     "text": "„Beide Ehegatten wechselten einen Blick lächelnder Selbstzufriedenheit, denn jeder von ihnen glaubte, die Ehre dieses Besuches auf seine Rechnung setzen zu dürfen.“",
-    "translation": null,
+    "translation": "Both spouses exchanged a glance of smiling self-satisfaction, for each of them believed they could take credit for the honor of this visit.",
     "source": "wiktionary",
     "lemmas": [
       "Ehegatte"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Beide",
+        "lemma": "beide",
+        "pos": "numeral",
+        "gloss_hint": "both"
+      },
+      {
+        "form": "Ehegatten",
+        "lemma": "Ehegatte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wechselten",
+        "lemma": "wechseln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blick",
+        "lemma": "Blick",
+        "pos": "noun",
+        "gloss_hint": "glance"
+      },
+      {
+        "form": "lächelnder",
+        "lemma": "lächelnd",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Selbstzufriedenheit",
+        "lemma": "Selbstzufriedenheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "jeder",
+        "lemma": "jeder",
+        "pos": "pronoun",
+        "gloss_hint": "every individual"
+      },
+      {
+        "form": "glaubte",
+        "lemma": "glauben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ehre",
+        "lemma": "Ehre",
+        "pos": "noun",
+        "gloss_hint": "honor"
+      },
+      {
+        "form": "Besuches",
+        "lemma": "Besuch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rechnung",
+        "lemma": "Rechnung",
+        "pos": "noun",
+        "gloss_hint": "credit"
+      },
+      {
+        "form": "setzen",
+        "lemma": "setzen",
+        "pos": "verb",
+        "gloss_hint": "place"
+      }
     ]
   },
   "27aa4ea47e": {
@@ -21073,11 +21428,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like a weasel",
     "source": "wiktionary",
     "lemmas": [
       "Wiesel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "27b68f8f62": {
     "text": "„Es geht mir jedoch darum, dass die spezifischen Sachverhalte in leichtverständlicher Form dargestellt werden und so für den Leser einfacher nachvollziehbar sind.“",
@@ -22513,10 +22869,61 @@
   },
   "27c1ca1273": {
     "text": "„Und dann war oben unten und unten oben, der Kutter kenterte, indessen sich der Bug der Jacht knirschend in seine Seite grub.“",
-    "translation": null,
+    "translation": "And then up was down and down was up, the cutter capsized, while the bow of the yacht ground into its side.",
     "source": "wiktionary",
     "lemmas": [
       "Jacht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "oben",
+        "lemma": "oben",
+        "pos": "adverb",
+        "gloss_hint": "above"
+      },
+      {
+        "form": "unten",
+        "lemma": "unten",
+        "pos": "adverb",
+        "gloss_hint": "down"
+      },
+      {
+        "form": "Kutter",
+        "lemma": "Kutter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kenterte",
+        "lemma": "kentern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bug",
+        "lemma": "Bug",
+        "pos": "noun",
+        "gloss_hint": "bow"
+      },
+      {
+        "form": "Jacht",
+        "lemma": "Jacht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "knirschend",
+        "lemma": "knirschend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Seite",
+        "lemma": "Seite",
+        "pos": "noun",
+        "gloss_hint": "side"
+      }
     ]
   },
   "27c1fbeabb": {
@@ -27218,11 +27625,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "so much the walls shake",
     "source": "wiktionary",
     "lemmas": [
       "wackeln"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "27e81824b4": {
     "text": "jedem riechen seine eigenen Winde wohl",
@@ -27319,11 +27727,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When the wolf is caught, he acts like a sheep.",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "27ee5f505e": {
     "text": "Auf Regen folgt Sonnenschein",

@@ -650,12 +650,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in a family way",
     "source": "wiktionary",
     "lemmas": [
       "Umstand"
     ],
-    "ref": "phrases/in anderen Umständen sein"
+    "ref": "phrases/in anderen Umständen sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "7405e3b8ba": {
     "text": "[30.01.1930, Zündwarenmonopol in Deutschland:] „Aufgrund dieses Gesetzes durften von da an Streichhölzer im Deutschen Reich nur von der DZMG vertrieben werden […].“",
@@ -1271,11 +1272,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone has lost their senses",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "740d22967a": {
     "text": "Wir treffen uns einmal im Monat zum Kochen.",
@@ -1816,11 +1818,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it won't do them any harm",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7415168129": {
     "text": "„Ich fühle die größte Befriedigung, daß diese Begegnung so gut abgelaufen ist, und werde wieder ruhig.“",
@@ -3306,11 +3309,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "buddy swimmer (used ironically for someone who can't swim)",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7420d56837": {
     "text": "Wegen der Abbauarbeiten ist das Rathaus für den regulären Besucherverkehr geschlossen.",
@@ -3652,11 +3656,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to use double standards",
     "source": "wiktionary",
     "lemmas": [
       "Elle"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "74256f8d72": {
     "text": "Es steht nicht in Abrede, meine Herren, daß das Kleid des Soldaten ein Kleid der Ehre sey.",
@@ -4166,10 +4171,43 @@
   },
   "7429f7f7fc": {
     "text": "„Meggie strich mit der Hand über die dicht an dicht stehenden Buchrücken.“",
-    "translation": null,
+    "translation": "\"Meggie ran her hand over the book spines standing close together.\"",
     "source": "wiktionary",
     "lemmas": [
       "dicht an dicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "strich",
+        "lemma": "streichen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hand",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": "hand"
+      },
+      {
+        "form": "dicht",
+        "lemma": "dicht",
+        "pos": "adjective",
+        "gloss_hint": "dense"
+      },
+      {
+        "form": "stehenden",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Buchrücken",
+        "lemma": "Buchrücken",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7429faa7af": {
@@ -5018,11 +5056,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have something on one's mind",
     "source": "wiktionary",
     "lemmas": [
       "Ohr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7431d425a4": {
     "text": "Die Alte Nationalgalerie in Berlin zeigt eine hinreißende Retrospektive des Tierbildhauers Rembrandt Bugatti, der zu Unrecht kaum bekannt ist.",
@@ -5344,11 +5383,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I've put all my eggs in one basket",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7438fdd477": {
     "text": "«Und ich war nicht allein in dem Heck‑Laderaum eines italienischen Frachters als blinder Passagier, ein Auswanderer ohne Papiere für Amerika; nur ein bestochener Heizer wußte damals, daß es mich gab dort unten zwischen den Fässern, und es war dunkel, stank, war heiß, […]; also war ich nicht allein.»",
@@ -8648,13 +8688,14 @@
     "type": "expression",
     "note": "nerven",
     "synonyms": [],
-    "translation": null,
+    "translation": "get on someone's nerves",
     "source": "wiktionary",
     "lemmas": [
       "gehen",
       "Senkel"
     ],
-    "ref": "phrases/jemandem auf den Senkel gehen"
+    "ref": "phrases/jemandem auf den Senkel gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "744cf8dea7": {
     "text": "Er scheint ernsthaft bemüht zu sein.",
@@ -9004,10 +9045,31 @@
   },
   "744fb34cb2": {
     "text": "Zu zweit verbrachten wir den Abend.",
-    "translation": null,
+    "translation": "The two of us spent the evening together.",
     "source": "wiktionary",
     "lemmas": [
       "zu zweit"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "zweit",
+        "lemma": "zwei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verbrachten",
+        "lemma": "verbringen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abend",
+        "lemma": "Abend",
+        "pos": "noun",
+        "gloss_hint": "evening"
+      }
     ]
   },
   "744ffada7a": {
@@ -9261,11 +9323,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "beg for bread",
     "source": "wiktionary",
     "lemmas": [
       "Brot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7456971bed": {
     "text": "Das Hochhaus gehört zum Ernst von Bergmann Klinikum, in dem Patienten liegen und operiert werden. In dem kleinen Gebäude nebenan wird geröntgt.",
@@ -9634,33 +9697,36 @@
     "type": "expression",
     "note": "jemanden mit seinen Problemen im Stich lassen, in einer Lage belassen, mit Sorgen allein lassen, bildlich: seine Eier nicht kaufen, verschmähen",
     "synonyms": [],
-    "translation": null,
+    "translation": "leave someone to deal with their own problems",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "745e3a02d3": {
     "text": "über den Durst trinken",
     "type": "expression",
     "note": "trinken – zu viel Alkohol trinken",
     "synonyms": [],
-    "translation": null,
+    "translation": "drink too much alcohol",
     "source": "wiktionary",
     "lemmas": [
       "Durst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "745e6bdd42": {
     "text": "sein Schäfchen scheren",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take advantage of one's own interests",
     "source": "wiktionary",
     "lemmas": [
       "scheren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7460752cfa": {
     "text": "„Berengar trat näher heran, und die Bäckersfrau reichte ihm eine Wecke.“",
@@ -9926,14 +9992,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "master of the house",
     "source": "wiktionary",
     "lemmas": [
       "Herr"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "746798e038": {
     "text": "„Der Feige bebte zitternd dem Ruf eines Erschlagnen und floh.“",
@@ -10810,11 +10874,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is capable of more than just the basics",
     "source": "wiktionary",
     "lemmas": [
       "essen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "74739c86de": {
     "text": "Der Gefangene hat gesungen. Nun wurde auch sein Komplize festgenommen.",
@@ -11515,11 +11580,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Every house has its problems.",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "747f0d67ed": {
     "text": "„Beim Telefonieren war er sehr förmlich und sagte sehr oft ‚Jawoll, mache ich!‘“",
@@ -12903,10 +12969,49 @@
   },
   "748bcfc486": {
     "text": "Ich möchte unbedingt noch eine Weltreise unternehmen, bevor ich dafür zu viel Moos angesetzt habe.",
-    "translation": null,
+    "translation": "I absolutely want to undertake a world trip before I've accumulated too much money for it.",
     "source": "wiktionary",
     "lemmas": [
       "Moos ansetzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "möchte",
+        "lemma": "mögen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "unbedingt",
+        "lemma": "unbedingt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weltreise",
+        "lemma": "Weltreise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "unternehmen",
+        "lemma": "unternehmen",
+        "pos": "verb",
+        "gloss_hint": "undertake"
+      },
+      {
+        "form": "Moos",
+        "lemma": "Moos",
+        "pos": "noun",
+        "gloss_hint": "money"
+      },
+      {
+        "form": "angesetzt",
+        "lemma": "ansetzen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "748c3d4b81": {
@@ -13067,11 +13172,13 @@
   },
   "748c452ffd": {
     "text": "Ach, rutsch mir doch den Buckel runter!",
-    "translation": null,
+    "translation": "Oh, get off my back!",
     "source": "wiktionary",
     "lemmas": [
       "jemandem den Buckel runterrutschen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "748c4c1f69": {
     "text": "„Und Taschengeld gab es ohnehin keins.“",
@@ -14646,14 +14753,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with all due respect",
     "source": "wiktionary",
     "lemmas": [
       "Ehre"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "74a661ed21": {
     "text": "Er trug ein rotes T-Shirt und blaue Shorts.",
@@ -15934,14 +16039,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make a fuss",
     "source": "wiktionary",
     "lemmas": [
       "Wind"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "74b84ffc42": {
     "text": "„Unsere Stadt wurde durch den Größenwahn des sogenannten Führers ruiniert, im wahrsten Sinne des Wortes.“",
@@ -16961,11 +17064,12 @@
     "synonyms": [
       "zeigen"
     ],
-    "translation": null,
+    "translation": "to have backbone",
     "source": "wiktionary",
     "lemmas": [
       "Rückgrat"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "74c2e889c2": {
     "text": "„Die anschließende Aussöhnung zwischen Briten und Buren legte den Grundstein für das spätere Apartheidregime, von dessen Brutalität De Beers Jahrzehnte lang profitierte.“",
@@ -17902,10 +18006,61 @@
   },
   "74cecab257": {
     "text": "„Immerhin lehnt sich der Geldmehrer mit seinen Prognosen weit aus dem Fenster: Er traut dem Dax im ersten Quartal 4600 Zähler zu.“",
-    "translation": null,
+    "translation": "\"After all, the money manager is sticking his neck out with his forecasts: he expects the DAX to reach 4600 points in the first quarter.\"",
     "source": "wiktionary",
     "lemmas": [
       "Dax"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "lehnt",
+        "lemma": "lehnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geldmehrer",
+        "lemma": "Geldmehrer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prognosen",
+        "lemma": "Prognose",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fenster",
+        "lemma": "Fenster",
+        "pos": "noun",
+        "gloss_hint": "window"
+      },
+      {
+        "form": "traut",
+        "lemma": "trauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dax",
+        "lemma": "DAX",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Quartal",
+        "lemma": "Quartal",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zähler",
+        "lemma": "Zähler",
+        "pos": "noun",
+        "gloss_hint": "point"
+      }
     ]
   },
   "74cf026555": {
@@ -18286,26 +18441,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a hand in something",
     "source": "wiktionary",
     "lemmas": [
       "Finger"
     ],
     "ref": "phrases/die Finger im Spiel haben",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "74d569da35": {
     "text": "mit Verlaub, ich bin so frei",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "With all due respect, I take the liberty.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "74d5d9d0dc": {
     "text": "„Horst Eckert, ein Teenager ohne Abitur und mit nicht abgeschlossener Lehre als Schlosser, wird in Oldenburg Arbeit in der Baumwollspinnerei von Ripken finden, als Maschinenreiniger.“",
@@ -18537,11 +18691,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "red-light district",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "74dad31e12": {
     "text": "Räume doch bitte den Keller auf, dort ist fast kein Platz mehr.",
@@ -18864,10 +19019,61 @@
   },
   "74ddb7e3f3": {
     "text": "„Ab und zu trank er mit einer Französin, die von Schleppern unter falschen Arbeitsversprechungen bis nach Pjöngjang gebracht worden war, einen schwarzen Tee aus Sri Lanka.“",
-    "translation": null,
+    "translation": "\"From time to time he drank black tea from Sri Lanka with a Frenchwoman who had been brought to Pyongyang by traffickers under false employment promises.\"",
     "source": "wiktionary",
     "lemmas": [
       "schwarzer Tee"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "trank",
+        "lemma": "trinken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Französin",
+        "lemma": "Französin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schleppern",
+        "lemma": "Schlepper",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arbeitsversprechungen",
+        "lemma": "Arbeitsversprechen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pjöngjang",
+        "lemma": "Pjöngjang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwarzen",
+        "lemma": "schwarz",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tee",
+        "lemma": "Tee",
+        "pos": "noun",
+        "gloss_hint": "tea"
+      },
+      {
+        "form": "Sri Lanka",
+        "lemma": "Sri Lanka",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "74ddec1be1": {
@@ -20910,11 +21116,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to hop into bed",
     "source": "wiktionary",
     "lemmas": [
       "hüpfen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "74ed77b0dd": {
     "text": "Zieh bloß dieses hässliche Kleid nicht mehr an!",
@@ -22294,11 +22501,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When the current swells, the water is murky.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "74fc54f3ab": {
     "text": "„Das Bundesverfassungsgericht kassierte im Jahr 1975 den kurz zuvor von der sozialliberalen Koalition reformierten § 218 StGB, der eine sogenannte Fristenlösung beinhaltete.“",

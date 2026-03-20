@@ -242,10 +242,37 @@
   },
   "9402525697": {
     "text": "„Da sich türkische Mädchen nur schwer oder gar nicht gegen familiäre Traditionen stellen können, hat Yasmin blutenden Herzens den Traumjob aufgegeben.“",
-    "translation": null,
+    "translation": "Since Turkish girls can hardly or not at all stand up to family traditions, Yasmin gave up her dream job with a heavy heart.",
     "source": "wiktionary",
     "lemmas": [
       "blutenden Herzens"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mädchen",
+        "lemma": "Mädchen",
+        "pos": "noun",
+        "gloss_hint": "girl"
+      },
+      {
+        "form": "stellen",
+        "lemma": "stellen",
+        "pos": "verb",
+        "gloss_hint": "stand"
+      },
+      {
+        "form": "Traditionen",
+        "lemma": "Tradition",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgegeben",
+        "lemma": "aufgeben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "94030cddec": {
@@ -967,10 +994,37 @@
   },
   "940b1a8cf6": {
     "text": "Meinen Vater erinnerte das Kürzel ARD immer an den RAD.",
-    "translation": null,
+    "translation": "The abbreviation ARD always reminded my father of the RAD.",
     "source": "wiktionary",
     "lemmas": [
       "RAD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kürzel",
+        "lemma": "Kürzel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ARD",
+        "lemma": "ARD",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vater",
+        "lemma": "Vater",
+        "pos": "noun",
+        "gloss_hint": "father"
+      },
+      {
+        "form": "RAD",
+        "lemma": "RAD",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "940bc85b9e": {
@@ -978,12 +1032,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be old hat",
     "source": "wiktionary",
     "lemmas": [
       "Hut"
     ],
-    "ref": "phrases/ein alter Hut sein"
+    "ref": "phrases/ein alter Hut sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "940c6f27a0": {
     "text": "Eichendorff schuf vollendete Poesie.",
@@ -1800,10 +1855,37 @@
   },
   "9414342aac": {
     "text": "„Obgleich in beiden Fällen die heutigen Dialekte als Ausgangspunkt dienen, ergeben sich dennoch leicht divergierende Betonungsverhältnisse für Klassisches und Modernes Hocharabisch.“",
-    "translation": null,
+    "translation": "Although in both cases the present-day dialects serve as the starting point, slightly diverging stress patterns nonetheless result for Classical and Modern Standard Arabic.",
     "source": "wiktionary",
     "lemmas": [
       "Modernes Hocharabisch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Dialekte",
+        "lemma": "Dialekt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausgangspunkt",
+        "lemma": "Ausgangspunkt",
+        "pos": "noun",
+        "gloss_hint": "starting point"
+      },
+      {
+        "form": "ergeben",
+        "lemma": "ergeben",
+        "pos": "verb",
+        "gloss_hint": "result in"
+      },
+      {
+        "form": "Betonungsverhältnisse",
+        "lemma": "Betonungsverhältnis",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "94150c4c5f": {
@@ -4111,10 +4193,31 @@
   },
   "9421cc090a": {
     "text": "Der Dozent ging die Anwesenheitsliste durch, bevor er mit dem Vortrag begann.",
-    "translation": null,
+    "translation": "The lecturer went through the attendance list before he began his lecture.",
     "source": "wiktionary",
     "lemmas": [
       "durchgehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Dozent",
+        "lemma": "Dozent",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anwesenheitsliste",
+        "lemma": "Anwesenheitsliste",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vortrag",
+        "lemma": "Vortrag",
+        "pos": "noun",
+        "gloss_hint": "speech"
+      }
     ]
   },
   "942318fa01": {
@@ -4194,22 +4297,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be right",
     "source": "wiktionary",
     "lemmas": [
       "Recht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9425021ac4": {
     "text": "Freund des Hauses",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "friend of the house",
     "source": "wiktionary",
     "lemmas": [
       "Freund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "94252a28b8": {
     "text": "Er ist in seinen 1.000 Seiten Wälzer versunken.",
@@ -5789,33 +5894,36 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "selling like hotcakes",
     "source": "wiktionary",
     "lemmas": [
       "Brot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "942fe03210": {
     "text": "wie aus einer geölten Pistole",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as smooth as clockwork",
     "source": "wiktionary",
     "lemmas": [
       "Pistole"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9431517823": {
     "text": "der liebe Gott",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the good Lord",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9431a39bd6": {
     "text": "Die Kinder liefen über die Wiese und pflückten Blumen.",
@@ -5888,11 +5996,12 @@
     "type": "expression",
     "note": "jemanden ärgern, foppen, narren, einen Streich spielen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to play a prank on someone",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9432b8d4c6": {
     "text": "„Grenfeld fischte eine verstaubte Tablette Bullrich Salz aus seiner Manteltasche, pustete die Fusseln weg und schluckte sie herunter.“",
@@ -8703,10 +8812,37 @@
   },
   "944b601ff5": {
     "text": "„Der Leiter des Büros hatte die zeichnerischen Entwürfe sorgfältig geprüft, seinen Kopf wie ein Pendel bewegt und in einem fort gemurmelt: ‚Ist ja toll. Total einleuchtend. Ist ja toll.‘“",
-    "translation": null,
+    "translation": "The head of the office had carefully examined the sketches, moved his head like a pendulum, and muttered continuously: 'That's great. Totally clear. That's great.'",
     "source": "wiktionary",
     "lemmas": [
       "in einem fort"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Leiter",
+        "lemma": "Leiter",
+        "pos": "noun",
+        "gloss_hint": "leader"
+      },
+      {
+        "form": "Büros",
+        "lemma": "Büro",
+        "pos": "noun",
+        "gloss_hint": "offices"
+      },
+      {
+        "form": "Entwürfe",
+        "lemma": "Entwurf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kopf",
+        "lemma": "Kopf",
+        "pos": "noun",
+        "gloss_hint": "head"
+      }
     ]
   },
   "944be43338": {
@@ -9903,10 +10039,37 @@
   },
   "9457e5ab71": {
     "text": "Die bereitstehenden Generatoren konnten ihre Phase nicht automatisch synchronisieren.",
-    "translation": null,
+    "translation": "The standby generators could not automatically synchronize their phase.",
     "source": "wiktionary",
     "lemmas": [
       "synchronisieren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Generatoren",
+        "lemma": "Generator",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Phase",
+        "lemma": "Phase",
+        "pos": "noun",
+        "gloss_hint": "phase (electrical conductor)"
+      },
+      {
+        "form": "synchronisieren",
+        "lemma": "synchronisieren",
+        "pos": "verb",
+        "gloss_hint": "synchronize"
+      },
+      {
+        "form": "automatisch",
+        "lemma": "automatisch",
+        "pos": "adjective",
+        "gloss_hint": "automatic (transmission)"
+      }
     ]
   },
   "9458cabf4e": {
@@ -11041,10 +11204,25 @@
   },
   "946023d3ce": {
     "text": "Er flachte den Grat mit einer Feile.",
-    "translation": null,
+    "translation": "He flattened the ridge with a file.",
     "source": "wiktionary",
     "lemmas": [
       "flachen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Grat",
+        "lemma": "Grat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Feile",
+        "lemma": "Feile",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "94602fa98b": {
@@ -11696,11 +11874,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Heavens above!",
     "source": "wiktionary",
     "lemmas": [
       "Himmel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9469e33772": {
     "text": "„Ich könnte ausflippen! Jetzt hat er schon wieder die falschen Schrauben besorgt.“",
@@ -12031,11 +12210,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to eavesdrop",
     "source": "wiktionary",
     "lemmas": [
       "Mäuschen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "946c340cfa": {
     "text": "Gestern Abend kam es zum ersten Mal zu Zärtlichkeiten zwischen den beiden.",
@@ -12194,10 +12374,37 @@
   },
   "946ce2a7ec": {
     "text": "„Viele Männer wären happyer auf dem Spielplatz und ihre Frauen talentierter für die Karriere.“",
-    "translation": null,
+    "translation": "Many men would be happier on the playground and their wives more talented for careers.",
     "source": "wiktionary",
     "lemmas": [
       "happy"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Männer",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spielplatz",
+        "lemma": "Spielplatz",
+        "pos": "noun",
+        "gloss_hint": "playground"
+      },
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Karriere",
+        "lemma": "Karriere",
+        "pos": "noun",
+        "gloss_hint": "career"
+      }
     ]
   },
   "946d20faf6": {
@@ -13804,11 +14011,12 @@
     "type": "expression",
     "note": "als Vergleich zu dem um der Askese willen vorgetäuschten Verlust des Verstandes, der vom Klerus akzeptiert wurde",
     "synonyms": [],
-    "translation": null,
+    "translation": "holy fool",
     "source": "wiktionary",
     "lemmas": [
       "Narr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "947d7ae86b": {
     "text": "Bei dem schlechten Wetter bleiben wir heute lieber zu Hause, zumal auch ein guter Film im Fernsehen kommt.",
@@ -14643,11 +14851,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Misfortune never comes alone.",
     "source": "wiktionary",
     "lemmas": [
       "Spott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "94899f3fcd": {
     "text": "Ich befinde mich bei den Zusehern, sozusagen mittendrin.",
@@ -16049,12 +16258,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "God knows",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
     ],
-    "ref": "phrases/weiß Gott"
+    "ref": "phrases/weiß Gott",
+    "translation_model": "openai/gpt-4.1"
   },
   "949cd95cd7": {
     "text": "„Nach der tödlichen Messerattacke auf einen Familienvater aus Herda (Wartburgkreis) hat der verdächtige 18-Jährige die Tat gestanden.“",
@@ -16247,11 +16457,12 @@
     "type": "expression",
     "note": "unerwünschte Vertraulichkeit",
     "synonyms": [],
-    "translation": null,
+    "translation": "Do we know each other that well?",
     "source": "wiktionary",
     "lemmas": [
       "Schwein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "949f58f5f1": {
     "text": "Nach seiner Trennung stieg er um auf härtere Drogen.",
@@ -17671,11 +17882,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I want to sit on this stone bench.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "94af9c5a4f": {
     "text": "„Die Gefahr lauert unter uns, nur wenige Meter tief im Boden, überall in Deutschland: Fliegerbomben aus dem Zweiten Weltkrieg. Zehntausende Blindgänger liegen immer noch, über 65 Jahre nach ihrem Abwurf, unentdeckt im Erdreich.“",
@@ -19817,11 +20029,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with a woman's wiles",
     "source": "wiktionary",
     "lemmas": [
       "Waffe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "94ba62d6ff": {
     "text": "„Zwei Frachter kommen uns entgegen, in weitem Abstand voneinander.“",
@@ -20583,10 +20796,43 @@
   },
   "94c2f5e674": {
     "text": "„Es war ein rätselhafter Einbruch: In der Nacht auf Weihnachten wurde aus einem Tierheim in Schöftland ein Kampfhund gestohlen.“",
-    "translation": null,
+    "translation": "It was a mysterious burglary: on the night of Christmas, a fighting dog was stolen from an animal shelter in Schöftland.",
     "source": "wiktionary",
     "lemmas": [
       "rätselhaft"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Einbruch",
+        "lemma": "Einbruch",
+        "pos": "noun",
+        "gloss_hint": "burglary"
+      },
+      {
+        "form": "Nacht",
+        "lemma": "Nacht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weihnachten",
+        "lemma": "Weihnachten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tierheim",
+        "lemma": "Tierheim",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kampfhund",
+        "lemma": "Kampfhund",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "94c3183b43": {
@@ -20850,11 +21096,12 @@
     "type": "expression",
     "note": "für Aufregung sorgen",
     "synonyms": [],
-    "translation": null,
+    "translation": "make a fuss",
     "source": "wiktionary",
     "lemmas": [
       "Wirbel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "94c480c8da": {
     "text": "„Ihre Tugend nötigte sie, alles so darzustellen, als wolle sie ihr beteuern, daß sie sich trotz ihrer Betörtheit niemals von ihr gelöst habe.“",
@@ -23352,10 +23599,37 @@
   },
   "94e26ad27f": {
     "text": "Ich kenne jemanden, der ist durch und durch böse, und ich übertreibe nicht.",
-    "translation": null,
+    "translation": "I know someone who is thoroughly evil, and I'm not exaggerating.",
     "source": "wiktionary",
     "lemmas": [
       "durch und durch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kenne",
+        "lemma": "kennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "jemanden",
+        "lemma": "jemand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "böse",
+        "lemma": "böse",
+        "pos": "adjective",
+        "gloss_hint": "evil"
+      },
+      {
+        "form": "übertreibe",
+        "lemma": "übertreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "94e27cf545": {
@@ -24626,11 +24900,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make a big hole in someone's wallet",
     "source": "wiktionary",
     "lemmas": [
       "Loch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "94f05c6163": {
     "text": "Minsk ist die Hauptstadt der Republik Weißrussland.",
@@ -24997,10 +25272,43 @@
   },
   "94f746315b": {
     "text": "Weibliche Elefanten tragen ihr Kalb 20 — 22 Monate.",
-    "translation": null,
+    "translation": "Female elephants carry their calf for 20–22 months.",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Weibliche",
+        "lemma": "weiblich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Elefanten",
+        "lemma": "Elefant",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tragen",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": "carry"
+      },
+      {
+        "form": "Kalb",
+        "lemma": "Kalb",
+        "pos": "noun",
+        "gloss_hint": "calf (animal)"
+      },
+      {
+        "form": "Monate",
+        "lemma": "Monat",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "94f7e2c01c": {
@@ -25129,12 +25437,13 @@
     "type": "expression",
     "note": "aktuell, modern sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "be up to date",
     "source": "wiktionary",
     "lemmas": [
       "Zeit",
       "Höhe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "94fa39444a": {
     "text": "„Doch er schien guter Dinge, summte eine Melodie vor sich hin.“",
@@ -25597,11 +25906,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "cyclist",
     "source": "wiktionary",
     "lemmas": [
       "Ritter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "94fd3e81fa": {
     "text": "Wir müssen dringend etwas Geld abheben.",

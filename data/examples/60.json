@@ -1416,14 +1416,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "well, I'll be!",
     "source": "wiktionary",
     "lemmas": [
       "Herr"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "600b65c41f": {
     "text": "„Als Protest gegen die Pensionsreform organisierte der ÖGB am 13. Mai 2003 eine Kundgebung in Wien, an der über 100.000 Österreicher teilnahmen.“",
@@ -1760,11 +1758,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'll tell him something different",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "600e21c488": {
     "text": "Die Gespräche der so genannten Experten waren ganz schön banal.",
@@ -3359,12 +3358,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "gain the upper hand",
     "source": "wiktionary",
     "lemmas": [
       "gewinnen"
     ],
-    "ref": "phrases/die Oberhand gewinnen"
+    "ref": "phrases/die Oberhand gewinnen",
+    "translation_model": "openai/gpt-4.1"
   },
   "601ddb7bcc": {
     "text": "Wir beehren uns, die Verlobung unserer Tochter Claudia mit Herrn Matthias Darius bekanntzugeben.",
@@ -3389,13 +3389,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pay close attention",
     "source": "wiktionary",
     "lemmas": [
       "Auge",
       "Ohr"
     ],
-    "ref": "phrases/ganz Auge und Ohr sein"
+    "ref": "phrases/ganz Auge und Ohr sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "601e354a33": {
     "text": "Er hat sie um ihr ganzes Vermögen erleichtert.",
@@ -4752,12 +4753,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "talk about anything and everything",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
     ],
-    "ref": "phrases/über Gott und die Welt reden"
+    "ref": "phrases/über Gott und die Welt reden",
+    "translation_model": "openai/gpt-4.1"
   },
   "602cad3e61": {
     "text": "„Sie rutschten verlegen auf ihren Plätzen umher, und ein Raunen lief durch die Gemeinde.“",
@@ -5918,11 +5920,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not stand in someone's way",
     "source": "wiktionary",
     "lemmas": [
       "Weg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "603b3e8aa9": {
     "text": "„Sie breitete die Arme aus, um ihr elegantes, graues, mit Spitzen besetztes Kleid deutlicher zu zeigen.“",
@@ -6828,11 +6831,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put yourself in someone else's shoes",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6045346369": {
     "text": "Mit Licht zu hupen ist auf Autobahnen bei Rasern sehr beliebt.",
@@ -6924,10 +6928,55 @@
   },
   "60467323db": {
     "text": "Der Altmeister bricht sich doch keine Verzierung ab, wenn er den interessierten Jugendlichen ein paar normale Fragen beantwortet.",
-    "translation": null,
+    "translation": "The master craftsman certainly won't strain himself by answering a few straightforward questions from interested young people.",
     "source": "wiktionary",
     "lemmas": [
       "sich keine Verzierung abbrechen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Altmeister",
+        "lemma": "Altmeister",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bricht",
+        "lemma": "brechen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verzierung",
+        "lemma": "Verzierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "interessierten",
+        "lemma": "interessiert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jugendlichen",
+        "lemma": "Jugendlicher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fragen",
+        "lemma": "Frage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beantwortet",
+        "lemma": "beantworten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "6047091a98": {
@@ -6935,11 +6984,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "treat someone with extreme care",
     "source": "wiktionary",
     "lemmas": [
       "roh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6047400e7f": {
     "text": "Das ist das einzig Richtige! Glaube mir!",
@@ -7853,11 +7903,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not for love or money",
     "source": "wiktionary",
     "lemmas": [
       "Geld"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "604e5c2c50": {
     "text": "„Dort sammelt sich der große Hauf,",
@@ -9679,10 +9730,55 @@
   },
   "60582e9d5b": {
     "text": "Im Kita-Tarifstreit sieht der Verhandlungsführer der kommunalen Arbeitgeber, Thomas Böhle, keinen Spielraum für ein höheres Angebot an die Beschäftigten.",
-    "translation": null,
+    "translation": "In the daycare wage dispute, the chief negotiator for municipal employers, Thomas Böhle, sees no room for a higher offer to employees.",
     "source": "wiktionary",
     "lemmas": [
       "kommunal"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kita-Tarifstreit",
+        "lemma": "Kita-Tarifstreit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verhandlungsführer",
+        "lemma": "Verhandlungsführer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommunalen",
+        "lemma": "kommunal",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arbeitgeber",
+        "lemma": "Arbeitgeber",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spielraum",
+        "lemma": "Spielraum",
+        "pos": "noun",
+        "gloss_hint": "space"
+      },
+      {
+        "form": "Angebot",
+        "lemma": "Angebot",
+        "pos": "noun",
+        "gloss_hint": "proposal"
+      },
+      {
+        "form": "Beschäftigten",
+        "lemma": "Beschäftigter",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "60586f27fc": {
@@ -9828,11 +9924,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bring something up for discussion",
     "source": "wiktionary",
     "lemmas": [
       "Runde"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "605a1b46c9": {
     "text": "vor versammelter Mannschaft",
@@ -10576,11 +10673,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "smash everything to pieces",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6060bb4aaf": {
     "text": "Der Grundsatz „Jedem das Seine“ geht auf die griechische Philosophie und das römische Rechtswesen zurück.",
@@ -13700,11 +13798,12 @@
     "type": "expression",
     "note": "immer fröhlich und vergnügt sein, optimistisch sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "have a sunny disposition",
     "source": "wiktionary",
     "lemmas": [
       "Sonne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6078e97d80": {
     "text": "„Die respektlose Art des Doktors kränkte Johnny.“",
@@ -14932,18 +15031,94 @@
     "type": "expression",
     "note": "darüber brauchen wir nicht mehr reden",
     "synonyms": [],
-    "translation": null,
+    "translation": "that's a given",
     "source": "wiktionary",
     "lemmas": [
       "schenken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "60817b1306": {
     "text": "Das Evangelische Kirchengesangbuch (EKG) war das erste gemeinsame Gesangbuch der deutschsprachigen Kirchengemeinden in den evangelischen Landeskirchen Deutschlands und den beiden evangelischen Kirchen Österreichs.",
-    "translation": null,
+    "translation": "The Protestant Church Hymnal (EKG) was the first shared hymnal of German-speaking congregations in the Protestant regional churches of Germany and the two Protestant churches of Austria.",
     "source": "wiktionary",
     "lemmas": [
       "EKG"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Evangelische",
+        "lemma": "evangelisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kirchengesangbuch",
+        "lemma": "Kirchengesangbuch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "EKG",
+        "lemma": "EKG",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gemeinsame",
+        "lemma": "gemeinsam",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesangbuch",
+        "lemma": "Gesangbuch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "deutschsprachigen",
+        "lemma": "deutschsprachig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kirchengemeinden",
+        "lemma": "Kirchengemeinde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "evangelischen",
+        "lemma": "evangelisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Landeskirchen",
+        "lemma": "Landeskirche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschlands",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kirchen",
+        "lemma": "Kirche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Österreichs",
+        "lemma": "Österreich",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "608266c758": {
@@ -15844,10 +16019,49 @@
   },
   "608cd7214e": {
     "text": "Dass ihr Mann sie mit ihrer besten Freundin betrogen hatte, zog ihr den Boden unter den Füßen weg.",
-    "translation": null,
+    "translation": "The fact that her husband had betrayed her with her best friend pulled the ground from under her feet.",
     "source": "wiktionary",
     "lemmas": [
       "den Boden unter den Füßen wegziehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "husband"
+      },
+      {
+        "form": "betrogen",
+        "lemma": "betrügen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "besten",
+        "lemma": "best",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Freundin",
+        "lemma": "Freundin",
+        "pos": "noun",
+        "gloss_hint": "friend"
+      },
+      {
+        "form": "Boden",
+        "lemma": "Boden",
+        "pos": "noun",
+        "gloss_hint": "ground"
+      },
+      {
+        "form": "Füßen",
+        "lemma": "Fuß",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "608cdc1814": {
@@ -16924,11 +17138,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Someone gets hot and cold shivers.",
     "source": "wiktionary",
     "lemmas": [
       "heiß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6096fad89c": {
     "text": "In „Peter kam gestern“ ist „gestern“ ein adverbiales Satzglied in der Funktion einer adverbialen Bestimmung.",
@@ -18680,11 +18895,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Abracadabra, three times a black cat!",
     "source": "wiktionary",
     "lemmas": [
       "schwarz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "60a76ba34e": {
     "text": "„Er sah Elisabeth zum erstenmal völlig losgelöst von der Zeit, bei sich selbst, hingegeben einer unbefangenen und tiefen Spielerei, überschüttet von Licht und Zärtlichkeit und Liebe, ernst und gesammelt wie eine Jägerin, die ihre Waffen zum Kampfe prüft.“",
@@ -19580,11 +19796,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You must have won your driver's license in the lottery.",
     "source": "wiktionary",
     "lemmas": [
       "gewinnen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "60b2ada30d": {
     "text": "Das geschätzte Vermögen vermehrt sich täglich um eine runde Million.",
@@ -20162,11 +20379,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Too much of a good thing can be harmful.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "60b7b644e7": {
     "text": "„Das war Grund genug für ihn, den Sprung zu riskieren.“",
@@ -20245,11 +20463,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "All clear now?",
     "source": "wiktionary",
     "lemmas": [
       "Klarheit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "60b8836d5b": {
     "text": "Krishna ist ein Avatar des Vishnu.",
@@ -21613,11 +21832,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "thick as thieves",
     "source": "wiktionary",
     "lemmas": [
       "Schwefel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "60bf8062ef": {
     "text": "Sie wird wahrscheinlich erst morgen reisen.",
@@ -23050,11 +23270,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be only human",
     "source": "wiktionary",
     "lemmas": [
       "Mensch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "60ce09f2fb": {
     "text": "Die Zugspitze beherrscht als hoher Berg ihre Umgebung.",
@@ -24672,10 +24893,61 @@
   },
   "60dd37e97a": {
     "text": "Doch auf postdramatisches Trash-Theater, auf szenische Dekonstruktion hat die Aufführung sichtlich keine Lust. Barbara Frey rekonstruiert, statt zu deinstallieren.",
-    "translation": null,
+    "translation": "But the production clearly has no appetite for post-dramatic trash theater, for scenic deconstruction. Barbara Frey reconstructs rather than dismantles.",
     "source": "wiktionary",
     "lemmas": [
       "deinstallieren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "postdramatisches",
+        "lemma": "postdramatisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Trash-Theater",
+        "lemma": "Trash-Theater",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "szenische",
+        "lemma": "szenisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dekonstruktion",
+        "lemma": "Dekonstruktion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufführung",
+        "lemma": "Aufführung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lust",
+        "lemma": "Lust",
+        "pos": "noun",
+        "gloss_hint": "desire"
+      },
+      {
+        "form": "rekonstruiert",
+        "lemma": "rekonstruieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "deinstallieren",
+        "lemma": "deinstallieren",
+        "pos": "verb",
+        "gloss_hint": "remove"
+      }
     ]
   },
   "60dd39ded1": {
@@ -25390,11 +25662,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to sacrifice one's life",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "60e1a9bf86": {
     "text": "„Die Übertragung war zu Ende.“",
@@ -26464,12 +26737,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Jealousy is a passion that seeks with zeal what causes suffering.",
     "source": "wiktionary",
     "lemmas": [
       "Eifer",
       "Eifersucht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "60e90d8cb3": {
     "text": "Ich ziehe heute das orange Kleid an.",
@@ -27520,11 +27794,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to sweep off the scene",
     "source": "wiktionary",
     "lemmas": [
       "Bildfläche"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "60f41d5794": {
     "text": "„Sie liegt still und sonntäglich da, Vögel zwitschern in den Bäumen, und ich gehe hin, um in der kleinen Kirche der Anstalt für die Sonntagsmesse die Orgel zu spielen.“",
@@ -29067,11 +29342,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the way of the world",
     "source": "wiktionary",
     "lemmas": [
       "Lauf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "60fefc7bb3": {
     "text": "„Der Abstand beispielsweise zwischen PR 5 und 15 ist numerisch identisch mit demjenigen zwischen 50 und 60.“",

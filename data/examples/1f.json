@@ -446,11 +446,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "room for improvement",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1f04b58500": {
     "text": "mit falschen Karten spielen",
@@ -4652,12 +4653,13 @@
     "synonyms": [
       "Ohrfeige"
     ],
-    "translation": null,
+    "translation": "give someone a slap",
     "source": "wiktionary",
     "lemmas": [
       "auflegen"
     ],
-    "ref": "phrases/jemandem eine auflegen"
+    "ref": "phrases/jemandem eine auflegen",
+    "translation_model": "openai/gpt-4.1"
   },
   "1f2ca07ab2": {
     "text": "„Weniger günstig sind Jahreszeit und Wetter, als die SS Hungarian an einem Abend im Februar 1860 in einem Sturm die amerikanische Küste erreicht.“",
@@ -5289,11 +5291,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I can't be in two places at once",
     "source": "wiktionary",
     "lemmas": [
       "zerreißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1f34014ec4": {
     "text": "Indem er mir bei der Archivierung der Fotos geholfen hat, hat Tamme mir einen großen Gefallen erwiesen.",
@@ -6204,11 +6207,12 @@
     "type": "expression",
     "note": "Benennung als Unglückszahl",
     "synonyms": [],
-    "translation": null,
+    "translation": "Friday the Thirteenth",
     "source": "wiktionary",
     "lemmas": [
       "Dreizehn"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1f3c388651": {
     "text": "Viktor Giacobbo ist ein Schweizer.",
@@ -8414,11 +8418,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not lift a finger",
     "source": "wiktionary",
     "lemmas": [
       "Handschlag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1f4d8bccd3": {
     "text": "Irgendwann werden wir uns treffen.",
@@ -8443,11 +8448,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "now we're in a mess",
     "source": "wiktionary",
     "lemmas": [
       "Salat"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1f4f977cf5": {
     "text": "Hier waltet der gute Geist der Chefin.",
@@ -9167,10 +9173,67 @@
   },
   "1f54fc9e68": {
     "text": "„Das Licht ist hellwach, die Konturen der Dinge sind wie gestochen, und auf der Bucht liegen funkelnde Bänder.“",
-    "translation": null,
+    "translation": "The light is fully awake, the contours of things are sharp as a tack, and on the bay lie shimmering ribbons.",
     "source": "wiktionary",
     "lemmas": [
       "wie gestochen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Licht",
+        "lemma": "Licht",
+        "pos": "noun",
+        "gloss_hint": "light"
+      },
+      {
+        "form": "hellwach",
+        "lemma": "hellwach",
+        "pos": "adjective",
+        "gloss_hint": "sharp-minded"
+      },
+      {
+        "form": "Konturen",
+        "lemma": "Kontur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dinge",
+        "lemma": "Ding",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gestochen",
+        "lemma": "stechen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bucht",
+        "lemma": "Bucht",
+        "pos": "noun",
+        "gloss_hint": "bay"
+      },
+      {
+        "form": "liegen",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": "lie"
+      },
+      {
+        "form": "funkelnde",
+        "lemma": "funkelnd",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bänder",
+        "lemma": "Band",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "1f5542dabf": {
@@ -10075,13 +10138,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fish for worms",
     "source": "wiktionary",
     "lemmas": [
       "baden",
       "Wurm"
     ],
-    "ref": "phrases/den Wurm baden"
+    "ref": "phrases/den Wurm baden",
+    "translation_model": "openai/gpt-4.1"
   },
   "1f5bc9690b": {
     "text": "Die Stangen am Barren werden als Holme bezeichnet.",
@@ -11523,10 +11587,85 @@
   },
   "1f6a60d967": {
     "text": "„Das Licht erlöscht, der Klang verstummt, die Bewegung erstarrt: das Gedicht mündet in eine lastende Statik, in eine Stille vor dem Sturm.“",
-    "translation": null,
+    "translation": "The light goes out, the sound falls silent, motion freezes: the poem culminates in a heavy stasis, in a silence before the storm.",
     "source": "wiktionary",
     "lemmas": [
       "die Stille vor dem Sturm"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Licht",
+        "lemma": "Licht",
+        "pos": "noun",
+        "gloss_hint": "light"
+      },
+      {
+        "form": "erlöscht",
+        "lemma": "erlöschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klang",
+        "lemma": "Klang",
+        "pos": "noun",
+        "gloss_hint": "sound"
+      },
+      {
+        "form": "verstummt",
+        "lemma": "verstummen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bewegung",
+        "lemma": "Bewegung",
+        "pos": "noun",
+        "gloss_hint": "motion"
+      },
+      {
+        "form": "erstarrt",
+        "lemma": "erstarren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gedicht",
+        "lemma": "Gedicht",
+        "pos": "noun",
+        "gloss_hint": "poem"
+      },
+      {
+        "form": "mündet",
+        "lemma": "münden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "lastende",
+        "lemma": "lastend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Statik",
+        "lemma": "Statik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stille",
+        "lemma": "Stille",
+        "pos": "noun",
+        "gloss_hint": "silence"
+      },
+      {
+        "form": "Sturm",
+        "lemma": "Sturm",
+        "pos": "noun",
+        "gloss_hint": "storm"
+      }
     ]
   },
   "1f6b2d102d": {
@@ -13433,13 +13572,14 @@
     "type": "expression",
     "note": "allein lassen, sich überlassen, in Ruhe lassen, im Ungewissen lassen",
     "synonyms": [],
-    "translation": null,
+    "translation": "leave someone to stew in their own juice",
     "source": "wiktionary",
     "lemmas": [
       "Saft",
       "schmoren"
     ],
-    "ref": "phrases/jemanden im eigenen Saft schmoren lassen"
+    "ref": "phrases/jemanden im eigenen Saft schmoren lassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "1f7871a89e": {
     "text": "Ihr beiden habt recht.",
@@ -13908,12 +14048,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "for better or worse",
     "source": "wiktionary",
     "lemmas": [
       "Verderben"
     ],
-    "ref": "phrases/auf Gedeih und Verderb"
+    "ref": "phrases/auf Gedeih und Verderb",
+    "translation_model": "openai/gpt-4.1"
   },
   "1f7a45efaa": {
     "text": "Ich muss mal ganz dringend einen fahren lassen.",
@@ -14070,11 +14211,12 @@
     "type": "expression",
     "note": "unterschreiben",
     "synonyms": [],
-    "translation": null,
+    "translation": "sign your name",
     "source": "wiktionary",
     "lemmas": [
       "servus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1f7c9430e9": {
     "text": "„Elsa verlässt den Gerichtssaal und entdeckt Jürgen Loose, der am Ausgang wartet.“",
@@ -15454,11 +15596,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "House of the Sisters of Mercy",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1f85c7fdae": {
     "text": "Hast du die Projektplanung angesehen? Das ist ein Steinbruch!",
@@ -15947,10 +16090,37 @@
   },
   "1f8ab1e8c4": {
     "text": "Der Anbruch wurde vom Vorarbeiter farblich markiert.",
-    "translation": null,
+    "translation": "The opening was marked with color by the foreman.",
     "source": "wiktionary",
     "lemmas": [
       "Anbruch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Anbruch",
+        "lemma": "Anbruch",
+        "pos": "noun",
+        "gloss_hint": "onset"
+      },
+      {
+        "form": "Vorarbeiter",
+        "lemma": "Vorarbeiter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "farblich",
+        "lemma": "farblich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "markiert",
+        "lemma": "markieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "1f8b7d0c1c": {
@@ -16157,10 +16327,31 @@
   },
   "1f8d730b09": {
     "text": "Dem Fluss entlang wurden die Dämme ausgebaut.",
-    "translation": null,
+    "translation": "The dams were expanded along the river.",
     "source": "wiktionary",
     "lemmas": [
       "entlang"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fluss",
+        "lemma": "Fluss",
+        "pos": "noun",
+        "gloss_hint": "river"
+      },
+      {
+        "form": "Dämme",
+        "lemma": "Damm",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgebaut",
+        "lemma": "ausbauen",
+        "pos": "verb",
+        "gloss_hint": "expanded"
+      }
     ]
   },
   "1f8ee49112": {
@@ -16454,10 +16645,37 @@
   },
   "1f92c2beaa": {
     "text": "Das untere Bild hängt schief.",
-    "translation": null,
+    "translation": "The lower picture is hanging crooked.",
     "source": "wiktionary",
     "lemmas": [
       "unter-"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "untere",
+        "lemma": "untere",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bild",
+        "lemma": "Bild",
+        "pos": "noun",
+        "gloss_hint": "image"
+      },
+      {
+        "form": "hängt",
+        "lemma": "hängen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schief",
+        "lemma": "schief",
+        "pos": "adjective",
+        "gloss_hint": "slanted"
+      }
     ]
   },
   "1f939abd0f": {
@@ -18167,10 +18385,49 @@
   },
   "1fa47f1911": {
     "text": "Sie wollen mit aller Gewalt und Brutalität unser Rückgrat brechen, um uns zu willenlosen Kreaturen zu machen.",
-    "translation": null,
+    "translation": "They want to break our backbone with all their violence and brutality to turn us into willing creatures.",
     "source": "wiktionary",
     "lemmas": [
       "das Rückgrat brechen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wollen",
+        "lemma": "wollen",
+        "pos": "verb",
+        "gloss_hint": "intend"
+      },
+      {
+        "form": "Gewalt",
+        "lemma": "Gewalt",
+        "pos": "noun",
+        "gloss_hint": "violence"
+      },
+      {
+        "form": "Brutalität",
+        "lemma": "Brutalität",
+        "pos": "noun",
+        "gloss_hint": "brutality"
+      },
+      {
+        "form": "Rückgrat",
+        "lemma": "Rückgrat",
+        "pos": "noun",
+        "gloss_hint": "backbone"
+      },
+      {
+        "form": "brechen",
+        "lemma": "brechen",
+        "pos": "verb",
+        "gloss_hint": "break"
+      },
+      {
+        "form": "machen",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "make"
+      }
     ]
   },
   "1fa4ca0cd1": {
@@ -18386,11 +18643,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to know what's what",
     "source": "wiktionary",
     "lemmas": [
       "Trumpf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1faa2bd1bd": {
     "text": "Die funktionale Belastung von Spracherscheinungen spielt eine Rolle im Sprachwandel.",
@@ -18529,12 +18787,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with regard to",
     "source": "wiktionary",
     "lemmas": [
       "im Hinblick auf"
     ],
-    "ref": "phrases/im Hinblick auf"
+    "ref": "phrases/im Hinblick auf",
+    "translation_model": "openai/gpt-4.1"
   },
   "1fad7ae5f5": {
     "text": "Außerdem empfiehlt [der Präsident des Verbandes „Die Familienunternehmer“, Lutz Goebel, Familienunternehmern], früh die Nachfolge zu regeln.",
@@ -19809,10 +20068,61 @@
   },
   "1fbbfa1d37": {
     "text": "„Es ist wahrlich unglaublich, dass Rudi es geschafft hat, Karten für das Endspiel der Fußball-WM zu bekommen.“ „Tja, er weiß halt, wo Barthel den Most holt.“",
-    "translation": null,
+    "translation": "\"It's truly incredible that Rudi managed to get tickets for the final match of the soccer World Cup.\" \"Well, he just knows where to get what he needs.\"",
     "source": "wiktionary",
     "lemmas": [
       "wissen, wo Barthel den Most holt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wahrlich",
+        "lemma": "wahrlich",
+        "pos": "adjective",
+        "gloss_hint": "truly"
+      },
+      {
+        "form": "unglaublich",
+        "lemma": "unglaublich",
+        "pos": "adjective",
+        "gloss_hint": "implausible"
+      },
+      {
+        "form": "geschafft",
+        "lemma": "schaffen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Karten",
+        "lemma": "Karte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Endspiel",
+        "lemma": "Endspiel",
+        "pos": "noun",
+        "gloss_hint": "final match"
+      },
+      {
+        "form": "Fußball",
+        "lemma": "Fußball",
+        "pos": "noun",
+        "gloss_hint": "soccer"
+      },
+      {
+        "form": "bekommen",
+        "lemma": "bekommen",
+        "pos": "verb",
+        "gloss_hint": "get"
+      },
+      {
+        "form": "weiß",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "1fbca0157d": {
@@ -20545,12 +20855,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep an eye on something",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
     ],
-    "ref": "phrases/ein Auge auf etwas werfen"
+    "ref": "phrases/ein Auge auf etwas werfen",
+    "translation_model": "openai/gpt-4.1"
   },
   "1fc483f803": {
     "text": "Die Abfahrt findet statt am Samstag nun erst am Sonntag um 13:00 Uhr statt, weil für diesen Tag die Prognosen deutlich besser sind als für Samstag.",
@@ -24312,10 +24623,61 @@
   },
   "1fee7e9287": {
     "text": "„Während sich die Jäger an dem Mandelgeschmack der Pinienfrucht erfrischten, verschwand Top mit Gebell in einem Buschwerk, in dem irgend etwas eigenartig grunzte.“",
-    "translation": null,
+    "translation": "While the hunters refreshed themselves with the almond flavor of the pine fruit, Top disappeared with barking into a thicket where something grunted oddly.",
     "source": "wiktionary",
     "lemmas": [
       "Gebell"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Jäger",
+        "lemma": "Jäger",
+        "pos": "noun",
+        "gloss_hint": "hunter"
+      },
+      {
+        "form": "Mandelgeschmack",
+        "lemma": "Mandelgeschmack",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pinienfrucht",
+        "lemma": "Pinienfrucht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erfrischten",
+        "lemma": "erfrischen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "verschwand",
+        "lemma": "verschwinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gebell",
+        "lemma": "Gebell",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Buschwerk",
+        "lemma": "Buschwerk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "grunzte",
+        "lemma": "grunzen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "1fef1532cf": {

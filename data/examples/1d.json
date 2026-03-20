@@ -1051,10 +1051,103 @@
   },
   "1d07f7fb93": {
     "text": "„Die Tide ist anfangs gnädig mit uns. Der Hub beträgt zuerst keine drei Meter. Die Tide geht bekanntlich nach dem Mond. Im Laufe unseres Aufenthaltes wächst der Hub auf über 6 Meter, so dass halbtäglich schon eine Menge Wasser hin und her fließt.“",
-    "translation": null,
+    "translation": "The tide is initially favorable to us. The tidal range is at first less than three meters. The tide, as is well known, follows the moon. Over the course of our stay, the tidal range grows to over 6 meters, so that twice daily already a considerable amount of water flows back and forth.",
     "source": "wiktionary",
     "lemmas": [
       "hin und her"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tide",
+        "lemma": "Tide",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "anfangs",
+        "lemma": "anfangs",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gnädig",
+        "lemma": "gnädig",
+        "pos": "adjective",
+        "gloss_hint": "favorable"
+      },
+      {
+        "form": "Hub",
+        "lemma": "Hub",
+        "pos": "noun",
+        "gloss_hint": "tidal range"
+      },
+      {
+        "form": "beträgt",
+        "lemma": "betragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zuerst",
+        "lemma": "zuerst",
+        "pos": "adverb",
+        "gloss_hint": "initially"
+      },
+      {
+        "form": "drei",
+        "lemma": "drei",
+        "pos": "numeral",
+        "gloss_hint": "three"
+      },
+      {
+        "form": "Meter",
+        "lemma": "Meter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mond",
+        "lemma": "Mond",
+        "pos": "noun",
+        "gloss_hint": "moon"
+      },
+      {
+        "form": "Aufenthaltes",
+        "lemma": "Aufenthalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wächst",
+        "lemma": "wachsen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "halbtäglich",
+        "lemma": "halbtäglich",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menge",
+        "lemma": "Menge",
+        "pos": "noun",
+        "gloss_hint": "amount"
+      },
+      {
+        "form": "Wasser",
+        "lemma": "Wasser",
+        "pos": "noun",
+        "gloss_hint": "water"
+      },
+      {
+        "form": "fließt",
+        "lemma": "fließen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "1d08542a34": {
@@ -1186,12 +1279,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put an end to something",
     "source": "wiktionary",
     "lemmas": [
       "Axt"
     ],
-    "ref": "phrases/die Axt an etwas legen"
+    "ref": "phrases/die Axt an etwas legen",
+    "translation_model": "openai/gpt-4.1"
   },
   "1d0a64414b": {
     "text": "„Wer zu wenig oder falsch lüftet, riskiert Kondenswasser an den Fensterscheiben.“",
@@ -1815,11 +1909,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to hold out one's hand (for money)",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1d0f6c4b89": {
     "text": "„Es gab in Holstein die seltsamsten Ortsnamen, sogar ein Dorf namens Berlin.“",
@@ -1869,11 +1964,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to light the fuse on a powder keg",
     "source": "wiktionary",
     "lemmas": [
       "Lunte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1d1160acb8": {
     "text": "„Noch steht der in der Garage, aber bald soll der Elektrobus in Wien seine Runden drehen – und zwar ganz ohne Lenker oder Lenkerin.“",
@@ -3782,12 +3878,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "off the cuff",
     "source": "wiktionary",
     "lemmas": [
       "Handgelenk"
     ],
-    "ref": "phrases/aus dem Handgelenk"
+    "ref": "phrases/aus dem Handgelenk",
+    "translation_model": "openai/gpt-4.1"
   },
   "1d247c32d0": {
     "text": "„Er fuhr mit dem Motorrad nach Alice, um einen Mann zu besuchen, der Waffen noch von Hand fertigte.“",
@@ -3842,11 +3939,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a native of Halle",
     "source": "wiktionary",
     "lemmas": [
       "Halle"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1d28821b10": {
     "text": "„Gute Ernten, bedingt durch ein Klimaoptimum, hatten in dieser Zeit eine Überproduktion von Nahrungsmitteln möglich gemacht.“",
@@ -6776,22 +6874,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to discover a passion for someone",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1d3fc1d10d": {
     "text": "ich glaub, mich knutscht ein Elch",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I can't believe it!",
     "source": "wiktionary",
     "lemmas": [
       "Elch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1d3fc41f6e": {
     "text": "„Ein voller künstlerischer Treffer ist A. auch in der langen Reihe der folgenden Werke nicht mehr in den Schoß gefallen.“",
@@ -7794,11 +7894,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to grovel before someone",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1d47639cc8": {
     "text": "So war denn auch bald Gerede über Ansas und Grita, die einen meinten, das Paar passe gut zusammen, und die andern, es sei für beide eine schlechte Partie, da sie nicht bemittelt genug seien, um von Geld und Gut absehen zu können.",
@@ -7928,10 +8029,43 @@
   },
   "1d47d08465": {
     "text": "„Ich bin wirklich froh, daß die Tini eine Anſprach’ hat und nicht in einem fort zu Hauſe ſitzt.“",
-    "translation": null,
+    "translation": "I'm really glad that Tini has a voice and doesn't sit at home all the time.",
     "source": "wiktionary",
     "lemmas": [
       "in einem fort"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wirklich",
+        "lemma": "wirklich",
+        "pos": "adjective",
+        "gloss_hint": "really"
+      },
+      {
+        "form": "froh",
+        "lemma": "froh",
+        "pos": "adjective",
+        "gloss_hint": "glad"
+      },
+      {
+        "form": "Tini",
+        "lemma": "Tini",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ansprach",
+        "lemma": "Ansprache",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sitzt",
+        "lemma": "sitzen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "1d482ccbe9": {
@@ -8362,10 +8496,73 @@
   },
   "1d4c7c58f5": {
     "text": "„Aus Daffke hat Gott den Menschen geschaffen, aus Daffke haben Adam und Eva Äpfel gegessen, aus Daffke zünden wir heute Explosionskörper an.“",
-    "translation": null,
+    "translation": "\"Out of sheer stubbornness God created mankind, out of sheer stubbornness Adam and Eve ate apples, out of sheer stubbornness we light firecrackers today.\"",
     "source": "wiktionary",
     "lemmas": [
       "aus Daffke"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Daffke",
+        "lemma": "Daffke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gott",
+        "lemma": "Gott",
+        "pos": "noun",
+        "gloss_hint": "God"
+      },
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geschaffen",
+        "lemma": "schaffen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Adam",
+        "lemma": "Adam",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eva",
+        "lemma": "Eva",
+        "pos": "noun",
+        "gloss_hint": "Eve"
+      },
+      {
+        "form": "Äpfel",
+        "lemma": "Apfel",
+        "pos": "noun",
+        "gloss_hint": "apples"
+      },
+      {
+        "form": "gegessen",
+        "lemma": "essen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zünden",
+        "lemma": "zünden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Explosionskörper",
+        "lemma": "Explosionskörper",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "1d4cad326a": {
@@ -10675,22 +10872,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "all of a sudden",
     "source": "wiktionary",
     "lemmas": [
       "Knall"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1d59cad213": {
     "text": "da geht die Lutzi ab",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "now the party really gets going",
     "source": "wiktionary",
     "lemmas": [
       "abgehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1d5a073e4d": {
     "text": "„Kathinka wurde wach und freute sich, als ihr Stiefvater sich mit dem kleinen Heinrich auf ihr Bett setzte und von Moskau erzählte, den schönen Häusern, der prächtigen Metro und dem wundervollen Kremlpalast.“",
@@ -10951,22 +11150,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "keep someone in check",
     "source": "wiktionary",
     "lemmas": [
       "Schach"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1d5dbe6078": {
     "text": "turteln wie die Tauben",
     "type": "expression",
     "note": "flirten",
     "synonyms": [],
-    "translation": null,
+    "translation": "flirt like lovebirds",
     "source": "wiktionary",
     "lemmas": [
       "Taube"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1d5dce8381": {
     "text": "Sie hat sicher gehört, dass ich sie zu einer Partie Schach herausfordern möchte, und hat es mit der Angst zu tun bekommen.",
@@ -12531,12 +12732,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "shrug your shoulders",
     "source": "wiktionary",
     "lemmas": [
       "zucken"
     ],
-    "ref": "phrases/mit den Schultern zucken"
+    "ref": "phrases/mit den Schultern zucken",
+    "translation_model": "openai/gpt-4.1"
   },
   "1d6e8104bf": {
     "text": "Das Fühlen von Gegenständen erfolgt zumeist mit unseren Händen.",
@@ -13100,10 +13302,43 @@
   },
   "1d71d724a1": {
     "text": "Wir peilten die Bucht, um Veränderungen der Wassertiefe festzuhalten.",
-    "translation": null,
+    "translation": "We surveyed the bay to record changes in water depth.",
     "source": "wiktionary",
     "lemmas": [
       "peilen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "peilten",
+        "lemma": "peilen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bucht",
+        "lemma": "Bucht",
+        "pos": "noun",
+        "gloss_hint": "bay"
+      },
+      {
+        "form": "Veränderungen",
+        "lemma": "Veränderung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wassertiefe",
+        "lemma": "Wassertiefe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "festzuhalten",
+        "lemma": "festhalten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "1d72ac0514": {
@@ -13547,11 +13782,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be skin and bones",
     "source": "wiktionary",
     "lemmas": [
       "Rippe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1d772c5533": {
     "text": "Sie gab dem Bettler ein Almosen.",
@@ -13646,10 +13882,73 @@
   },
   "1d7b9fb988": {
     "text": "„Die Frau mit den blauen Leuchtaugen lächelt in einem fort, hat ihren freundlichen Blick fest auf die Besucherin gerichtet.“",
-    "translation": null,
+    "translation": "\"The woman with the bright blue eyes smiles continuously, her friendly gaze fixed firmly on the visitor.\"",
     "source": "wiktionary",
     "lemmas": [
       "in einem fort"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "woman"
+      },
+      {
+        "form": "blauen",
+        "lemma": "blau",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leuchtaugen",
+        "lemma": "Leuchtauge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lächelt",
+        "lemma": "lächeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "fort",
+        "lemma": "fort",
+        "pos": "adverb",
+        "gloss_hint": "onwards"
+      },
+      {
+        "form": "freundlichen",
+        "lemma": "freundlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blick",
+        "lemma": "Blick",
+        "pos": "noun",
+        "gloss_hint": "look"
+      },
+      {
+        "form": "fest",
+        "lemma": "fest",
+        "pos": "adjective",
+        "gloss_hint": "fixed"
+      },
+      {
+        "form": "Besucherin",
+        "lemma": "Besucherin",
+        "pos": "noun",
+        "gloss_hint": "female visitor"
+      },
+      {
+        "form": "gerichtet",
+        "lemma": "richten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "1d7bc11a48": {
@@ -16844,10 +17143,43 @@
   },
   "1d9af79f1c": {
     "text": "Die USA denken laut über Eingreifen in Syrien nach.",
-    "translation": null,
+    "translation": "The USA is openly considering intervention in Syria.",
     "source": "wiktionary",
     "lemmas": [
       "laut denken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "USA",
+        "lemma": "USA",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "denken",
+        "lemma": "denken",
+        "pos": "verb",
+        "gloss_hint": "think"
+      },
+      {
+        "form": "laut",
+        "lemma": "laut",
+        "pos": "adjective",
+        "gloss_hint": "loud"
+      },
+      {
+        "form": "Eingreifen",
+        "lemma": "Eingreifen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Syrien",
+        "lemma": "Syrien",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "1d9b5c759b": {
@@ -16931,12 +17263,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "red herring",
     "source": "wiktionary",
     "lemmas": [
       "Hering"
     ],
-    "ref": "phrases/roter Hering"
+    "ref": "phrases/roter Hering",
+    "translation_model": "openai/gpt-4.1"
   },
   "1d9d7a0c52": {
     "text": "„Wenn der Racker oder die Rackerin den Kindle innerhalb dieses Zeitraums crasht, ersetzt ihn Amazon kostenlos und ohne Nachfrage.“",
@@ -17218,14 +17551,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "know the ropes",
     "source": "wiktionary",
     "lemmas": [
       "kennen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "1da400c883": {
     "text": "auf Ziel",
@@ -17684,11 +18015,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go down the drain",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1daad2fc10": {
     "text": "blaue Stunde",
@@ -17708,11 +18040,12 @@
     "type": "expression",
     "note": "unehrlich, hintertrieben sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "be a shady character",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1dab7aa0cc": {
     "text": "Ihr Vater ist soeben im Hotel eingetroffen.",
@@ -17822,11 +18155,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get moving",
     "source": "wiktionary",
     "lemmas": [
       "Huf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1dad396209": {
     "text": "„Über den Leuchter stolpernd, an den er nicht mehr gedacht, fand er aber doch zuletzt die Klinke, öffnete sie und warf den jungen winselnden Köter mit einem zwar leise gemurmelten, aber desto herzlicher gemeinten Fluch ins Freie.“",
@@ -18286,10 +18620,25 @@
   },
   "1daf3801d3": {
     "text": "Seite 54, Nr. 1",
-    "translation": null,
+    "translation": "Page 54, No. 1",
     "source": "wiktionary",
     "lemmas": [
       "Nr."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Seite",
+        "lemma": "Seite",
+        "pos": "noun",
+        "gloss_hint": "page"
+      },
+      {
+        "form": "Nr.",
+        "lemma": "Nummer",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "1daf8c6473": {
@@ -18711,12 +19060,13 @@
     "type": "expression",
     "note": "ohne nachzulesen",
     "synonyms": [],
-    "translation": null,
+    "translation": "by heart",
     "source": "wiktionary",
     "lemmas": [
       "Kopf"
     ],
-    "ref": "phrases/aus dem Kopf"
+    "ref": "phrases/aus dem Kopf",
+    "translation_model": "openai/gpt-4.1"
   },
   "1db4732048": {
     "text": "Das braucht dir doch nicht leidzutun!",
@@ -19303,10 +19653,37 @@
   },
   "1dbb6a57dc": {
     "text": "„Erschütterung und Schock sind die Reaktionen auf die Gewaltwelle.“",
-    "translation": null,
+    "translation": "\"Shock and trauma are the reactions to the wave of violence.\"",
     "source": "wiktionary",
     "lemmas": [
       "Erschütterung"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erschütterung",
+        "lemma": "Erschütterung",
+        "pos": "noun",
+        "gloss_hint": "shock"
+      },
+      {
+        "form": "Schock",
+        "lemma": "Schock",
+        "pos": "noun",
+        "gloss_hint": "shock"
+      },
+      {
+        "form": "Reaktionen",
+        "lemma": "Reaktion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gewaltwelle",
+        "lemma": "Gewaltwelle",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "1dbcdfa79c": {
@@ -19392,11 +19769,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I bore it for seven years.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1dbf670ff3": {
     "text": "„Nicht enthalten sind in dieser Berechnung die ebenso systematische wie skrupellose Aneignung deutscher Patente, die den siegreichen Konkurrenten einen gewaltigen Wettbewerbsvorsprung einräumten.“",
@@ -20423,11 +20801,12 @@
     "type": "expression",
     "note": "etwas ist unerklärlich",
     "synonyms": [],
-    "translation": null,
+    "translation": "there must be something fishy going on",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1dc780b9a5": {
     "text": "„Frauen lügen im Übrigen weniger, aber wenn sie lügen, dann meist besser. Das liegt insbesondere daran, dass Frauen im Allgemeinen ein bisschen intelligenter sind als wir Männer.“",
@@ -20714,11 +21093,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give away a trump card",
     "source": "wiktionary",
     "lemmas": [
       "Trumpf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1dc970a81c": {
     "text": "„Wenn Blicke töten könnten …“",
@@ -21092,10 +21472,31 @@
   },
   "1dcc6815f3": {
     "text": "Er ist in den letzten Jahren merklich gealtert.",
-    "translation": null,
+    "translation": "He has aged noticeably in recent years.",
     "source": "wiktionary",
     "lemmas": [
       "altern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gealtert",
+        "lemma": "altern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "merklich",
+        "lemma": "merklich",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "1dcd1bfaa2": {
@@ -21311,10 +21712,31 @@
   },
   "1dcf91875f": {
     "text": "Der Zapfenstreich war für die Wulffs ein Kraftakt.",
-    "translation": null,
+    "translation": "The state ceremony was a major undertaking for the Wulffs.",
     "source": "wiktionary",
     "lemmas": [
       "Zapfenstreich"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zapfenstreich",
+        "lemma": "Zapfenstreich",
+        "pos": "noun",
+        "gloss_hint": "state ceremony"
+      },
+      {
+        "form": "Wulffs",
+        "lemma": "Wulff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kraftakt",
+        "lemma": "Kraftakt",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "1dd065ead0": {
@@ -24721,11 +25143,12 @@
     "type": "expression",
     "note": "ärgerlich, zornig sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be up in arms",
     "source": "wiktionary",
     "lemmas": [
       "Palme"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1decf2284f": {
     "text": "„Wie in jeder anderen Programmiersprache kann man auch in C++ Speicherplätze im Hauptspeicher zur Speicherung von Daten verwenden.“",
@@ -25070,11 +25493,12 @@
     "synonyms": [
       "derb"
     ],
-    "translation": null,
+    "translation": "to be fed up",
     "source": "wiktionary",
     "lemmas": [
       "Schnecke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1df013b0a3": {
     "text": "Paul wurde durch den Sturm vollkommen vom Kurs abgetrieben.",

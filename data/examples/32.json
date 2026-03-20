@@ -3188,11 +3188,12 @@
     "type": "expression",
     "note": "eine schwierige Aufsicht ablehnen",
     "synonyms": [],
-    "translation": null,
+    "translation": "rather herd a sack of fleas",
     "source": "wiktionary",
     "lemmas": [
       "Floh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3218c71bc3": {
     "text": "Andorra la Vella ist die Hauptstadt des Fürstentums Andorra.",
@@ -4505,11 +4506,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "just a belly (no brains)",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "322b595dd6": {
     "text": "„An dieser Stelle müssen wir sofort einschieben, dass das Wort ‚Lobbyarbeit‘ in Amerika kein schmutziges Wort ist.“",
@@ -6001,11 +6003,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the equation doesn't add up",
     "source": "wiktionary",
     "lemmas": [
       "Gleichung"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "32396337d4": {
     "text": "„Am Abend fand ich den Durchgang zu meinem Zimmer verstopft durch eine Menge Gepäck, bewacht von den beiden Hunden, die neue Halsbänder trugen.“",
@@ -6203,22 +6206,24 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When I think of Germany at night, I lose sleep over it.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "323ba84d9b": {
     "text": "in des Wirtes Kreide sein",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in the landlord's debt",
     "source": "wiktionary",
     "lemmas": [
       "Wirt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "323c60737c": {
     "text": "„Unnötig zu betonen, daß sich im Färöischen dieselbe Mischung von regelmäßigen und unregelmäßigen Verben sowie Hilfs- und Modalverben wiederfindet, wie man sie von den anderen skandinavischen Sprachen her kennt.“",
@@ -9520,11 +9525,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hang by a thread",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "325861b050": {
     "text": "Die Messungen müssen ganz exakt durchgeführt werden.",
@@ -9932,11 +9938,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "He builds castles in the air but doesn't have a house on earth.",
     "source": "wiktionary",
     "lemmas": [
       "Schlösser in die Luft bauen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "325ebd7ef3": {
     "text": "Mit einem Kuchen hat der Eierkuchen nicht direkt was zu tun. Aber lecker wie seine entfernten süßen Verwandten ist er allemal.",
@@ -11569,12 +11576,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not do any harm",
     "source": "wiktionary",
     "lemmas": [
       "Abbruch"
     ],
-    "ref": "phrases/etwas keinen Abbruch tun"
+    "ref": "phrases/etwas keinen Abbruch tun",
+    "translation_model": "openai/gpt-4.1"
   },
   "326eec4784": {
     "text": "Ich werde das niemals akzeptieren.",
@@ -11616,11 +11624,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "How glorious nature shines for me.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "32728b3504": {
     "text": "„Doch Cushioning ist nichts anderes als der direkte Weg in eine beziehungstechnische Sackgasse.“",
@@ -14209,10 +14218,37 @@
   },
   "3286adb4d3": {
     "text": "Am Reck turnte er diesmal besonders gut.",
-    "translation": null,
+    "translation": "On the horizontal bar, he performed particularly well this time.",
     "source": "wiktionary",
     "lemmas": [
       "turnen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Reck",
+        "lemma": "Reck",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "turnte",
+        "lemma": "turnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "besonders",
+        "lemma": "besonders",
+        "pos": "adjective",
+        "gloss_hint": "notably"
+      },
+      {
+        "form": "gut",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": "good"
+      }
     ]
   },
   "32876db99e": {
@@ -14985,10 +15021,91 @@
   },
   "32964db748": {
     "text": "Wenn Irene das Licht nicht ausschaltet oder Marmeladen vergammeln, weil sie vergessen hat, sie in den Kühlschrank zu stellen, weist er sie darauf hin. \"Dein Geiz nervt!\", schimpft Irene. Max lässt den Kopf hängen.",
-    "translation": null,
+    "translation": "When Irene doesn't turn off the light or jams are spoiling because she forgot to put them in the refrigerator, he points it out to her. \"Your stinginess is annoying!\", Irene scolds. Max hangs his head.",
     "source": "wiktionary",
     "lemmas": [
       "den Kopf hängen lassen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Licht",
+        "lemma": "Licht",
+        "pos": "noun",
+        "gloss_hint": "light"
+      },
+      {
+        "form": "ausschaltet",
+        "lemma": "ausschalten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Marmeladen",
+        "lemma": "Marmelade",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vergammeln",
+        "lemma": "vergammeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "vergessen",
+        "lemma": "vergessen",
+        "pos": "verb",
+        "gloss_hint": "forget"
+      },
+      {
+        "form": "Kühlschrank",
+        "lemma": "Kühlschrank",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "weist",
+        "lemma": "weisen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geiz",
+        "lemma": "Geiz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "nervt",
+        "lemma": "nerven",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schimpft",
+        "lemma": "schimpfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "lässt",
+        "lemma": "lassen",
+        "pos": "verb",
+        "gloss_hint": "leave"
+      },
+      {
+        "form": "Kopf",
+        "lemma": "Kopf",
+        "pos": "noun",
+        "gloss_hint": "head"
+      },
+      {
+        "form": "hängen",
+        "lemma": "hängen",
+        "pos": "verb",
+        "gloss_hint": "hang"
+      }
     ]
   },
   "3296f9b7a7": {
@@ -17219,10 +17336,49 @@
   },
   "32acd721d3": {
     "text": "Mit dem EKG lassen sich vielfältige Aussagen zu Eigenschaften und Gesundheit des Herzens treffen.",
-    "translation": null,
+    "translation": "With the ECG, various statements can be made about the properties and health of the heart.",
     "source": "wiktionary",
     "lemmas": [
       "EKG"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "EKG",
+        "lemma": "EKG",
+        "pos": "noun",
+        "gloss_hint": "electrocardiogram"
+      },
+      {
+        "form": "lassen",
+        "lemma": "lassen",
+        "pos": "verb",
+        "gloss_hint": "allow"
+      },
+      {
+        "form": "Aussagen",
+        "lemma": "Aussage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eigenschaften",
+        "lemma": "Eigenschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesundheit",
+        "lemma": "Gesundheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herzens",
+        "lemma": "Herz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "32ad0bdb59": {
@@ -17742,10 +17898,37 @@
   },
   "32b2181bcf": {
     "text": "Ihr Gemahl schenkte ihr zum Hochzeitstag einen neuen Brilliantring.",
-    "translation": null,
+    "translation": "Her husband gave her a new diamond ring for their wedding anniversary.",
     "source": "wiktionary",
     "lemmas": [
       "Gemahl"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gemahl",
+        "lemma": "Gemahl",
+        "pos": "noun",
+        "gloss_hint": "husband"
+      },
+      {
+        "form": "schenkte",
+        "lemma": "schenken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hochzeitstag",
+        "lemma": "Hochzeitstag",
+        "pos": "noun",
+        "gloss_hint": "wedding anniversary"
+      },
+      {
+        "form": "Brilliantring",
+        "lemma": "Brilliantring",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "32b271341d": {
@@ -19393,10 +19576,61 @@
   },
   "32c44b75ff": {
     "text": "„Er trug ein luftiges Schuhwerk, einfarbige Strümpfe und eine Dauisten-Kutte mit blauen Troddeln.“",
-    "translation": null,
+    "translation": "\"He wore light, airy footwear, solid-colored stockings, and a Daoist robe with blue tassels.\"",
     "source": "wiktionary",
     "lemmas": [
       "Strumpf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "trug",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "luftiges",
+        "lemma": "luftig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schuhwerk",
+        "lemma": "Schuhwerk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "einfarbige",
+        "lemma": "einfarbig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strümpfe",
+        "lemma": "Strumpf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dauisten-Kutte",
+        "lemma": "Dauisten-Kutte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "blauen",
+        "lemma": "blau",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Troddeln",
+        "lemma": "Troddel",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "32c5f07107": {
@@ -19404,11 +19638,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Give them an inch and they'll take a mile.",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "32c6cef18d": {
     "text": "Du darfst doch nicht über die Linie treten! Du Spielverderberin!",
@@ -19556,11 +19791,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Champagne or sparkling water?",
     "source": "wiktionary",
     "lemmas": [
       "Sekt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "32c94dfc84": {
     "text": "Wir sind doch hier unter vier Augen, du kannst ruhig zugeben, dass du dich in deine Kollegin verliebt hast!",
@@ -20078,10 +20314,37 @@
   },
   "32ce22f6d3": {
     "text": "Die Vorhersage der WHO wurde letztes Jahr übertroffen.",
-    "translation": null,
+    "translation": "The WHO's forecast was exceeded last year.",
     "source": "wiktionary",
     "lemmas": [
       "WHO"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vorhersage",
+        "lemma": "Vorhersage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "WHO",
+        "lemma": "WHO",
+        "pos": "noun",
+        "gloss_hint": "World Health Organization"
+      },
+      {
+        "form": "übertroffen",
+        "lemma": "übertreffen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      }
     ]
   },
   "32ce59129c": {
@@ -22260,11 +22523,12 @@
     "type": "expression",
     "note": "sehr neidisch sein; „Gelb“ bzw. „Grün“ als Symbolfarben für den Neid",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be green with envy",
     "source": "wiktionary",
     "lemmas": [
       "Neid"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "32d9eb8cfb": {
     "text": "Diese Funktion lässt sich nicht exakt, sondern nur numerisch integrieren.",
@@ -22319,11 +22583,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The more fish there are, the murkier the water.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "32da6a5592": {
     "text": "„Am 18. Juni fand die Siegesparade in Berlin statt und tags darauf fuhr das Regiment zurück in seine Garnison Koblenz, wo es feierlich empfangen wurde.“",
@@ -23775,10 +24040,43 @@
   },
   "32e65dda62": {
     "text": "„Doch die Frage nach einem ‚Putsch‘ bezeichnet Beck als ‚Quatsch mit Soße‘.“",
-    "translation": null,
+    "translation": "\"But Beck dismisses the question of a 'coup' as 'utter nonsense'.\"",
     "source": "wiktionary",
     "lemmas": [
       "Quatsch mit Soße"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Frage",
+        "lemma": "Frage",
+        "pos": "noun",
+        "gloss_hint": "question"
+      },
+      {
+        "form": "Putsch",
+        "lemma": "Putsch",
+        "pos": "noun",
+        "gloss_hint": "coup"
+      },
+      {
+        "form": "bezeichnet",
+        "lemma": "bezeichnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Quatsch",
+        "lemma": "Quatsch",
+        "pos": "noun",
+        "gloss_hint": "nonsense"
+      },
+      {
+        "form": "Soße",
+        "lemma": "Soße",
+        "pos": "noun",
+        "gloss_hint": "sauce"
+      }
     ]
   },
   "32e7550c57": {
@@ -24099,11 +24397,12 @@
     "type": "expression",
     "note": "nach J. W. Goethe „Den Originalen“, ein Narr auf eigene Faust",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a fool in one's own right",
     "source": "wiktionary",
     "lemmas": [
       "Narr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "32eb1881b6": {
     "text": "Der Koch richtet die Speisen liebevoll an.",
@@ -24635,11 +24934,12 @@
     "type": "expression",
     "note": "ein unerzogenes, böses Kind",
     "synonyms": [],
-    "translation": null,
+    "translation": "a bad egg from a bad nest",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "32f008b2c6": {
     "text": "Ich danke Ihnen sehr.",

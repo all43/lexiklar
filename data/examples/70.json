@@ -13,11 +13,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the stork is already on its way (someone is pregnant)",
     "source": "wiktionary",
     "lemmas": [
       "Storch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7002b79e9b": {
     "text": "An der Grenze gibt es eine Zollstation.",
@@ -69,10 +70,31 @@
   },
   "700548347e": {
     "text": "Erdmute trat nun endgültig von der Bühne ab.",
-    "translation": null,
+    "translation": "Erdmute finally stepped down from the stage.",
     "source": "wiktionary",
     "lemmas": [
       "von der Bühne abtreten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "trat",
+        "lemma": "treten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "endgültig",
+        "lemma": "endgültig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bühne",
+        "lemma": "Bühne",
+        "pos": "noun",
+        "gloss_hint": "stage"
+      }
     ]
   },
   "70062cd30c": {
@@ -306,11 +328,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the wild days (Carnival)",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "700b4eaaae": {
     "text": "„Nach Hause fuhren sie auf Schusters Rappen, außer diejenigen, denen der Reichthum eine Kutsche erlaubte.“",
@@ -1916,10 +1939,37 @@
   },
   "701bd16cf5": {
     "text": "Die europäischen Aktienmärkte spielten heute wieder verrückt.",
-    "translation": null,
+    "translation": "European stock markets went crazy again today.",
     "source": "wiktionary",
     "lemmas": [
       "europäisch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "europäischen",
+        "lemma": "europäisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aktienmärkte",
+        "lemma": "Aktienmarkt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "spielten",
+        "lemma": "spielen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "verrückt",
+        "lemma": "verrückt",
+        "pos": "adjective",
+        "gloss_hint": "crazy"
+      }
     ]
   },
   "701d378075": {
@@ -4331,12 +4381,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get out of a sticky situation",
     "source": "wiktionary",
     "lemmas": [
       "Eis"
     ],
-    "ref": "phrases/die Kuh vom Eis schieben"
+    "ref": "phrases/die Kuh vom Eis schieben",
+    "translation_model": "openai/gpt-4.1"
   },
   "7033be6fb5": {
     "text": "\"α Pavonis\" ist der Hauptstern des Pfaus.",
@@ -6705,10 +6756,19 @@
   },
   "7047d8fb62": {
     "text": "8. Platz - Müller-Lüdenscheid",
-    "translation": null,
+    "translation": "8th place - Müller-Lüdenscheid",
     "source": "wiktionary",
     "lemmas": [
       "8."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Platz",
+        "lemma": "Platz",
+        "pos": "noun",
+        "gloss_hint": "rank"
+      }
     ]
   },
   "70482bc69c": {
@@ -6770,11 +6830,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a bit crazy",
     "source": "wiktionary",
     "lemmas": [
       "Schlag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7048813025": {
     "text": "„Mit dem für 2017 geplanten Start des ersten MTG-Satelliten wird es erstmals zusätzlich einen Blitzdetektor geben, der vom Weltraum aus die ersten Blitze eines Gewitters erkennt und die Bewohner der betroffenen Regionen vorwarnt.“",
@@ -7084,10 +7145,31 @@
   },
   "704b593a61": {
     "text": "Der 43-jährige Rick D. wurde wegen Steuerhinterziehung verurteilt.",
-    "translation": null,
+    "translation": "The 43-year-old Rick D. was convicted of tax evasion.",
     "source": "wiktionary",
     "lemmas": [
       "D."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "43-jährige",
+        "lemma": "jährig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "verurteilt",
+        "lemma": "verurteilen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Steuerhinterziehung",
+        "lemma": "Steuerhinterziehung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "704b5a51a6": {
@@ -7291,14 +7373,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to gain no honor with someone",
     "source": "wiktionary",
     "lemmas": [
       "Ehre"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "704f542ba6": {
     "text": "Durch Deutschland muss ein Ruck gehen. Hier sollte ein Ruck durch die Schullandschaft gehen. Beim Anblick der vielen Fans ging ein Ruck durch die Mannschaft.",
@@ -9317,11 +9397,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "let the cat out of the bag (give birth)",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7068286a6f": {
     "text": "pünktlich wie die Maurer",
@@ -10870,10 +10951,193 @@
   },
   "707acdaceb": {
     "text": "„Antike Spekulationen über eine große Gegenerde im Süden kamen dem entgegen; Aristoteles hatte sie gelehrt (Metereolog. II, 5), der römische Geograph Pomponius Mela sprach von einem alter orbis hinter dem Ozean, der Norden und Süden trennt, Cicero (Somnium Scipionis, cap. 6) zählt ebenfalls zwei bewohnbare Erdgürtel (cinguli), von denen der noch unbekannte südliche Wunder ohne Zahl bergen mochte.“",
-    "translation": null,
+    "translation": "Ancient speculations about a great counter-earth in the south supported this; Aristotle had taught it (Meteorology II, 5), the Roman geographer Pomponius Mela spoke of an alter orbis behind the ocean that separates north and south, and Cicero (Dream of Scipio, ch. 6) likewise counts two habitable earth-belts (cinguli), of which the still-unknown southern one might harbor wonders without number.",
     "source": "wiktionary",
     "lemmas": [
       "ohne Zahl"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Antike",
+        "lemma": "Antike",
+        "pos": "noun",
+        "gloss_hint": "antiquity"
+      },
+      {
+        "form": "Spekulationen",
+        "lemma": "Spekulation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "große",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gegenerde",
+        "lemma": "Gegenerde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Süden",
+        "lemma": "Süden",
+        "pos": "noun",
+        "gloss_hint": "south"
+      },
+      {
+        "form": "kamen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "entgegen",
+        "lemma": "entgegen",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aristoteles",
+        "lemma": "Aristoteles",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gelehrt",
+        "lemma": "lehren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "römische",
+        "lemma": "römisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geograph",
+        "lemma": "Geograph",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pomponius",
+        "lemma": "Pomponius",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mela",
+        "lemma": "Mela",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sprach",
+        "lemma": "sprechen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "alter",
+        "lemma": "alter",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "orbis",
+        "lemma": "orbis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ozean",
+        "lemma": "Ozean",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "trennt",
+        "lemma": "trennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Norden",
+        "lemma": "Norden",
+        "pos": "noun",
+        "gloss_hint": "north"
+      },
+      {
+        "form": "Cicero",
+        "lemma": "Cicero",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zählt",
+        "lemma": "zählen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zwei",
+        "lemma": "zwei",
+        "pos": "numeral",
+        "gloss_hint": "two"
+      },
+      {
+        "form": "bewohnbare",
+        "lemma": "bewohnbar",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erdgürtel",
+        "lemma": "Erdgürtel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "cinguli",
+        "lemma": "cinguli",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "unbekannte",
+        "lemma": "unbekannt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "südliche",
+        "lemma": "südlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wunder",
+        "lemma": "Wunder",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zahl",
+        "lemma": "Zahl",
+        "pos": "noun",
+        "gloss_hint": "number"
+      },
+      {
+        "form": "bergen",
+        "lemma": "bergen",
+        "pos": "verb",
+        "gloss_hint": "contain"
+      }
     ]
   },
   "707aef7857": {
@@ -11378,11 +11642,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to believe in Santa Claus",
     "source": "wiktionary",
     "lemmas": [
       "Weihnachtsmann"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "707d20eea8": {
     "text": "So viele neue Gesichter!",
@@ -11578,12 +11843,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to ignore someone",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
     ],
-    "ref": "phrases/jemanden nicht mit dem Arsch angucken"
+    "ref": "phrases/jemanden nicht mit dem Arsch angucken",
+    "translation_model": "openai/gpt-4.1"
   },
   "7082e589a8": {
     "text": "Petra übt seit Monaten das Rad auf dem Schwebebalken.",
@@ -11779,12 +12045,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not give someone the shirt off one's back",
     "source": "wiktionary",
     "lemmas": [
       "schwarz"
     ],
-    "ref": "phrases/jemandem nicht das Schwarze unter den Fingernägeln gönnen"
+    "ref": "phrases/jemandem nicht das Schwarze unter den Fingernägeln gönnen",
+    "translation_model": "openai/gpt-4.1"
   },
   "708482b018": {
     "text": "Bei Triebtätern ist ein Rückfall sehr wahrscheinlich.",
@@ -13850,10 +14117,37 @@
   },
   "709c563490": {
     "text": "„Ich entdeckte nämlich ein Mittel gegen Leichtfertigkeit, und zwar die Vorsorge.“",
-    "translation": null,
+    "translation": "I discovered, namely, a remedy against recklessness, and that is foresight.",
     "source": "wiktionary",
     "lemmas": [
       "Vorsorge"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "entdeckte",
+        "lemma": "entdecken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mittel",
+        "lemma": "Mittel",
+        "pos": "noun",
+        "gloss_hint": "tool"
+      },
+      {
+        "form": "Leichtfertigkeit",
+        "lemma": "Leichtfertigkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorsorge",
+        "lemma": "Vorsorge",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "709cc6f629": {
@@ -13861,11 +14155,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "set a fox to guard the henhouse",
     "source": "wiktionary",
     "lemmas": [
       "Hühnerstall"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "709d55dfe4": {
     "text": "Das sanft vom Wind bewegte, welke Laub raschelte.",
@@ -14578,11 +14873,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "do something hastily and carelessly",
     "source": "wiktionary",
     "lemmas": [
       "nähen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "70a8c8e267": {
     "text": "Der Griff des Schwertes war kunstvoll verziert.",
@@ -15690,10 +15986,61 @@
   },
   "70ba7681ad": {
     "text": "„Wenn es wieder so donnert, wie vorher, weiß ich nicht, wohin ich meinen Kopf stecken soll; die Wolke da kann nicht anders als mit Eimern gießen.“",
-    "translation": null,
+    "translation": "If it thunders again like before, I don't know where to put my head; that cloud can do nothing but pour down buckets.",
     "source": "wiktionary",
     "lemmas": [
       "wie mit Eimern gießen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "donnert",
+        "lemma": "donnern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "weiß",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kopf",
+        "lemma": "Kopf",
+        "pos": "noun",
+        "gloss_hint": "head"
+      },
+      {
+        "form": "stecken",
+        "lemma": "stecken",
+        "pos": "verb",
+        "gloss_hint": "insert"
+      },
+      {
+        "form": "Wolke",
+        "lemma": "Wolke",
+        "pos": "noun",
+        "gloss_hint": "cloud"
+      },
+      {
+        "form": "anders",
+        "lemma": "anders",
+        "pos": "adverb",
+        "gloss_hint": "differently"
+      },
+      {
+        "form": "Eimern",
+        "lemma": "Eimer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gießen",
+        "lemma": "gießen",
+        "pos": "verb",
+        "gloss_hint": "pour"
+      }
     ]
   },
   "70bdf91157": {
@@ -16465,10 +16812,85 @@
   },
   "70bf94fe26": {
     "text": "[Christa Binswanger:] „Ich hoffe, dass die strukturellen Voraussetzungen besser werden, damit sich auch Mütter in der Politik engagieren können. Schweden und Island gehen aus meiner Sicht mit gutem Beispiel voran.“",
-    "translation": null,
+    "translation": "[Christa Binswanger:] \"I hope that the structural conditions improve so that mothers can also engage in politics. Sweden and Iceland are, in my view, setting a good example.\"",
     "source": "wiktionary",
     "lemmas": [
       "aus meiner Sicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hoffe",
+        "lemma": "hoffen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "strukturellen",
+        "lemma": "strukturell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Voraussetzungen",
+        "lemma": "Voraussetzung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besser",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mütter",
+        "lemma": "Mutter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Politik",
+        "lemma": "Politik",
+        "pos": "noun",
+        "gloss_hint": "politics"
+      },
+      {
+        "form": "engagieren",
+        "lemma": "engagieren",
+        "pos": "verb",
+        "gloss_hint": "advocate"
+      },
+      {
+        "form": "Schweden",
+        "lemma": "Schweden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Island",
+        "lemma": "Island",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sicht",
+        "lemma": "Sicht",
+        "pos": "noun",
+        "gloss_hint": "view"
+      },
+      {
+        "form": "Beispiel",
+        "lemma": "Beispiel",
+        "pos": "noun",
+        "gloss_hint": "example"
+      },
+      {
+        "form": "voran",
+        "lemma": "voran",
+        "pos": "adverb",
+        "gloss_hint": "ahead"
+      }
     ]
   },
   "70c1f88101": {
@@ -16578,11 +17000,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "on the assembly line",
     "source": "wiktionary",
     "lemmas": [
       "Band"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "70c32afde4": {
     "text": "Wie heißt das auf Polnisch?",
@@ -16868,11 +17291,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "feel like you could move mountains",
     "source": "wiktionary",
     "lemmas": [
       "fühlen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "70c8246fc3": {
     "text": "„Im Proponentenkomitee war damals auch die ehemalige Höchstrichterin Irmgard Griss, die nun Abgeordnete der NEOS ist.“",
@@ -16985,10 +17409,109 @@
   },
   "70c8d71010": {
     "text": "Jahrelang war es ungeschoren davongekommen: Das Merino-Schaf „Chris“ trug 42,3 Kilogramm Wolle mit sich herum, als Wanderer es im australischen Buschland entdeckten. Inzwischen ist es von seiner Last befreit. (= geschoren worden)",
-    "translation": null,
+    "translation": "For years it had gotten away unscathed: the Merino sheep \"Chris\" carried 42.3 kilograms of wool around with it when hikers discovered it in the Australian bush. In the meantime, it has been relieved of its burden.",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Jahrelang",
+        "lemma": "jahrelang",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "ungeschoren",
+        "lemma": "ungeschoren",
+        "pos": "adjective",
+        "gloss_hint": "unscathed"
+      },
+      {
+        "form": "davongekommen",
+        "lemma": "davonkommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Merino-Schaf",
+        "lemma": "Merino-Schaf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Chris",
+        "lemma": "Chris",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "trug",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kilogramm",
+        "lemma": "Kilogramm",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wolle",
+        "lemma": "Wolle",
+        "pos": "noun",
+        "gloss_hint": "wool"
+      },
+      {
+        "form": "Wanderer",
+        "lemma": "Wanderer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entdeckten",
+        "lemma": "entdecken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "australischen",
+        "lemma": "australisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Buschland",
+        "lemma": "Buschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Inzwischen",
+        "lemma": "inzwischen",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "befreit",
+        "lemma": "befreien",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Last",
+        "lemma": "Last",
+        "pos": "noun",
+        "gloss_hint": "load"
+      },
+      {
+        "form": "geschoren",
+        "lemma": "scheren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "70c90245bc": {
@@ -17097,11 +17620,12 @@
     "type": "expression",
     "note": "es geht hoch her",
     "synonyms": [],
-    "translation": null,
+    "translation": "things are really heating up",
     "source": "wiktionary",
     "lemmas": [
       "fliegen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "70cac60017": {
     "text": "Diese Marke ist ein Garant für Qualität.",
@@ -17916,22 +18440,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "still be at home",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "70d693baeb": {
     "text": "über etwas Bände erzählen können",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "could say a lot about something",
     "source": "wiktionary",
     "lemmas": [
       "Band"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "70d81b8ba6": {
     "text": "Die Nationalparks der USA sind eindrucksvoll, dein Urlaub wird dir im Gedächtnis bleiben.",
@@ -18546,11 +19072,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "there's trouble at home",
     "source": "wiktionary",
     "lemmas": [
       "hängen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "70e03937e2": {
     "text": "Der Torwart ahnte die Ecke und hielt den Elfmeter.",
@@ -19034,11 +19561,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "shady business",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "70e5956bbf": {
     "text": "„Mehrmals hielt man sie wegen ihres Aufzuges für Hausierer, und wenn sie geantwortet hatten, sie seien »Ingenieure«, überkam sie die Angst, die Anmaßung eines solchen Titels könnte ihnen Unannehmlichkeiten zuziehen.“",
@@ -19673,11 +20201,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "breed like rabbits",
     "source": "wiktionary",
     "lemmas": [
       "vermehren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "70efe1451b": {
     "text": "Können sich bitte alle platzen?",
@@ -19851,12 +20380,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fleece someone",
     "source": "wiktionary",
     "lemmas": [
       "ausnehmen"
     ],
-    "ref": "phrases/jemanden ausnehmen wie eine Weihnachtsgans"
+    "ref": "phrases/jemanden ausnehmen wie eine Weihnachtsgans",
+    "translation_model": "openai/gpt-4.1"
   },
   "70f07c035b": {
     "text": "„Frauen können wirklich wütend werden, wenn ihnen eine Strumpfhose kapeistert.“",

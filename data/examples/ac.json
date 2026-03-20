@@ -452,11 +452,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I can't help it (but...)",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac08048281": {
     "text": "„Mit Touristen hätten sie sicher nicht so offen und freundlich gesprochen, dachte ich.“",
@@ -509,12 +510,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "squeeze someone out of business",
     "source": "wiktionary",
     "lemmas": [
       "abdrücken"
     ],
-    "ref": "phrases/jemandem die Luft abdrücken"
+    "ref": "phrases/jemandem die Luft abdrücken",
+    "translation_model": "openai/gpt-4.1"
   },
   "ac0d9a485a": {
     "text": "Außerdem ist er einer der zwölf Edelsteine, die in das Fundament der Stadtmauern von Jerusalem eingelassen wurden.",
@@ -806,22 +808,24 @@
     "type": "expression",
     "note": "ein offenes, kontroverses Thema haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "have a bone to pick with someone",
     "source": "wiktionary",
     "lemmas": [
       "rupfen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac104d184d": {
     "text": "aufziehen und laufen lassen",
     "type": "expression",
     "note": "(von rollendem Spielzeug mit Aufzieh-Feder und – in übertragenen Sinne – von Menschen, über die man sich zuerst lustig macht und die man dann ignoriert)",
     "synonyms": [],
-    "translation": null,
+    "translation": "wind up and let go",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac122b070c": {
     "text": "„Wenn ich um kurz nach achtzehn Uhr nach Hause komme, sind alle Kinder vom Kindergarten abgeholt und einer der beiden Ärztefreunde hat etwas zu essen vorbereitet.“",
@@ -1625,11 +1629,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "carry coals to Newcastle",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac17c30b9a": {
     "text": "„Diese poetische Stelle aus Colons Reisebericht, oder vielmehr aus einem Briefe an Ferdinand und Isabella (5) aus Haiti (Oktober 1498), hat ein eigentümliches psychisches Interesse.“",
@@ -4123,22 +4128,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give someone a clip round the ear",
     "source": "wiktionary",
     "lemmas": [
       "Satz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac22941ad5": {
     "text": "eins auf die Nuss kriegen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get a smack on the head",
     "source": "wiktionary",
     "lemmas": [
       "Nuss"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac236c9f08": {
     "text": "„Die Sahara im Norden von Mali ist denkbar schlecht für den Einsatz von Elektronik. Extreme Temperaturen, viel Staub und wenig Elektrizität setzen herkömmlichen Computern deutliche Grenzen.“",
@@ -4766,22 +4773,47 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a nose for something",
     "source": "wiktionary",
     "lemmas": [
       "Nase"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac25c59025": {
     "text": "Zahlreiche Gärten umfassen das Schloss.",
-    "translation": null,
+    "translation": "Numerous gardens surround the castle.",
     "source": "wiktionary",
     "lemmas": [
       "umfassen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zahlreiche",
+        "lemma": "zahlreich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gärten",
+        "lemma": "Garten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "umfassen",
+        "lemma": "umfassen",
+        "pos": "verb",
+        "gloss_hint": "etwas umgreifen, umfangen, umgeben"
+      },
+      {
+        "form": "Schloss",
+        "lemma": "Schloss",
+        "pos": "noun",
+        "gloss_hint": "castle"
+      }
+    ]
   },
   "ac2774d0c2": {
     "text": "„Die Doku zeigt, wie stark das Konzept Jungfräulichkeit auch heute das Leben junger Frauen beeinflussen und sogar dominieren kann – und zwar gerade dort, wo das patriarchale Machtsystem längst überwunden zu sein schien: in dem aufgeklärten, westlichen Land USA, das den Ruf hat, ein Land der Freiheit und der Selbstbestimmung junger Frauen zu sein. “",
@@ -6661,25 +6693,24 @@
     "type": "expression",
     "note": "faul, falsch, unzuverlässig, nachlässig sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be lazy or unreliable",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac3b79971d": {
     "text": "sich etwas auf den Hals laden",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take something upon oneself",
     "source": "wiktionary",
     "lemmas": [
       "laden"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ac3b90b174": {
     "text": "[Schlagzeile:] „Afghanische Bürgermeisterin: «Die Taliban werden mich früher oder später töten»“",
@@ -7314,11 +7345,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to let things get out of control",
     "source": "wiktionary",
     "lemmas": [
       "Zügel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac3f4595c7": {
     "text": "Ich bin Schwede, heiße Gustafsson und wohne in Kiruna.",
@@ -9517,11 +9549,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be irrelevant",
     "source": "wiktionary",
     "lemmas": [
       "tun"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac55cf2152": {
     "text": "Das Prinzip der Gewaltenteilung ist eine der größten Errungenschaften der Zivilisation.",
@@ -9672,13 +9705,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "no one is born a master",
     "source": "wiktionary",
     "lemmas": [
       "Himmel",
       "fallen",
       "kein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac588c1715": {
     "text": "„Der spitzohrige Wissenschaftsoffizier Commander Spock zückt auf Erkundungstour auf einem fernen Planeten einfach seinen Tricorder, wenn er Flora und Fauna bestimmen will.“",
@@ -10263,10 +10297,61 @@
   },
   "ac5a9aba12": {
     "text": "Der Text soll all das bündeln, was den Dreien [Karl und Jenny Marx und Friedrich Engels] auf den Nägeln brennt in einer Zeit tiefgreifender gesellschaftlicher Veränderungen.",
-    "translation": null,
+    "translation": "The text is meant to bundle together everything that weighs on the minds of the three [Karl and Jenny Marx and Friedrich Engels] in a time of profound social change.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem auf den Nägeln brennen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Text",
+        "lemma": "Text",
+        "pos": "noun",
+        "gloss_hint": "discourse"
+      },
+      {
+        "form": "bündeln",
+        "lemma": "bündeln",
+        "pos": "verb",
+        "gloss_hint": "Fähigkeiten/Möglichkeiten vereinen"
+      },
+      {
+        "form": "Nägeln",
+        "lemma": "Nagel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "brennt",
+        "lemma": "brennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "period"
+      },
+      {
+        "form": "tiefgreifender",
+        "lemma": "tiefgreifend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesellschaftlicher",
+        "lemma": "gesellschaftlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Veränderungen",
+        "lemma": "Veränderung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "ac5b48f55f": {
@@ -12369,10 +12454,37 @@
   },
   "ac7837e726": {
     "text": "Wenn du hier nicht gleich verschwindest, poliere ich dir die Fresse!",
-    "translation": null,
+    "translation": "If you don't disappear right now, I'll beat your face in!",
     "source": "wiktionary",
     "lemmas": [
       "jemandem die Fresse polieren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "verschwindest",
+        "lemma": "verschwinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gleich",
+        "lemma": "gleich",
+        "pos": "adverb",
+        "gloss_hint": "soon"
+      },
+      {
+        "form": "poliere",
+        "lemma": "polieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fresse",
+        "lemma": "Fresse",
+        "pos": "noun",
+        "gloss_hint": "face"
+      }
     ]
   },
   "ac7998374b": {
@@ -12454,23 +12566,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "comprehensive reform",
     "source": "wiktionary",
     "lemmas": [
       "Reform"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac7cb35dc1": {
     "text": "das Auge isst mit",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "you eat with your eyes first",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
     ],
-    "ref": "phrases/das Auge isst mit"
+    "ref": "phrases/das Auge isst mit",
+    "translation_model": "openai/gpt-4.1"
   },
   "ac7d11d996": {
     "text": "„Beim Nachtmahl sagte er mir, nur über eines sei er glücklich, daß er den Klauen der Mönche entronnen sei, deren Quälereien fünfzehn Jahre hindurch für ihn ein Fegefeuer gewesen waren.“",
@@ -12704,11 +12818,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have the first claim to something",
     "source": "wiktionary",
     "lemmas": [
       "Anrecht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac853b6565": {
     "text": "Das Opfer lenkte seine Augen auf den Baumwipfel.",
@@ -12913,11 +13028,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "big bucket",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac892946bb": {
     "text": "„Er versuchte, sich Platz zu verschaffen, fuhr seine Ellenbogen aus.“",
@@ -13672,10 +13788,49 @@
   },
   "ac8e1571b1": {
     "text": "Der Künstler erstellt detailgetreue Nachbauten von furchterregenden Dinosauriern.",
-    "translation": null,
+    "translation": "The artist creates detailed replicas of terrifying dinosaurs.",
     "source": "wiktionary",
     "lemmas": [
       "furchterregend"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Künstler",
+        "lemma": "Künstler",
+        "pos": "noun",
+        "gloss_hint": "artist"
+      },
+      {
+        "form": "erstellt",
+        "lemma": "erstellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "detailgetreue",
+        "lemma": "detailgetreu",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nachbauten",
+        "lemma": "Nachbau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "furchterregenden",
+        "lemma": "furchterregend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dinosauriern",
+        "lemma": "Dinosaurier",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "ac8eaa5657": {
@@ -14557,10 +14712,91 @@
   },
   "ac93d11405": {
     "text": "„Verschiedene Vektoren können gemäß den gegebenen Rahmenbedingungen eine unterschiedliche Eignung als Transportvehikel aufweisen. Der Vektor sollte sich möglichst einfach in die Empfängerzelle einschleusen lassen (hierbei spielt unter anderem die spezifische Immunabwehr eine Rolle) und er sollte sich unabhängig von deren Hauptgenom replizieren können, um eine starke Vermehrung zu gewährleisten.“",
-    "translation": null,
+    "translation": "Different vectors may have varying suitability as transport vehicles according to the given framework conditions. The vector should be able to enter the recipient cell as easily as possible (the specific immune response plays a role in this, among other things) and it should be able to replicate independently of its main genome in order to ensure strong proliferation.",
     "source": "wiktionary",
     "lemmas": [
       "Vektor"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vektoren",
+        "lemma": "Vektor",
+        "pos": "noun",
+        "gloss_hint": "vector (biology)"
+      },
+      {
+        "form": "Rahmenbedingungen",
+        "lemma": "Rahmenbedingung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eignung",
+        "lemma": "Eignung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Transportvehikel",
+        "lemma": "Transportvehikel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufweisen",
+        "lemma": "aufweisen",
+        "pos": "verb",
+        "gloss_hint": "have as feature"
+      },
+      {
+        "form": "Vektor",
+        "lemma": "Vektor",
+        "pos": "noun",
+        "gloss_hint": "vector (biology)"
+      },
+      {
+        "form": "einschleusen",
+        "lemma": "einschleusen",
+        "pos": "verb",
+        "gloss_hint": "introduce undetected"
+      },
+      {
+        "form": "Empfängerzelle",
+        "lemma": "Empfängerzelle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Immunabwehr",
+        "lemma": "Immunabwehr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rolle",
+        "lemma": "Rolle",
+        "pos": "noun",
+        "gloss_hint": "part"
+      },
+      {
+        "form": "replizieren",
+        "lemma": "replizieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hauptgenom",
+        "lemma": "Hauptgenom",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vermehrung",
+        "lemma": "Vermehrung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "ac96fb85de": {
@@ -15024,11 +15260,12 @@
     "type": "expression",
     "note": "nicht ausdrücklich erwähnenswert sein; selbstverständlich sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to go without saying",
     "source": "wiktionary",
     "lemmas": [
       "verstehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ac9885d4ba": {
     "text": "Gut erhaltene Fassaden, Türen, Fenster und Treppenhäuser, peinlichst saubere Sanitärräume, gepflegte Schlafzimmer und funktionstüchtige Küchenmaschinen verstehen sich von selbst.",
@@ -15225,12 +15462,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have butterflies in one's stomach",
     "source": "wiktionary",
     "lemmas": [
       "Schmetterling"
     ],
-    "ref": "phrases/Schmetterlinge im Bauch haben"
+    "ref": "phrases/Schmetterlinge im Bauch haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "ac9bb07970": {
     "text": "„Nett“ - Was auf gut Deutsch besagen soll: hübsch, aber unbrauchbar.",
@@ -16124,12 +16362,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be on the brink",
     "source": "wiktionary",
     "lemmas": [
       "Kippe"
     ],
-    "ref": "phrases/auf der Kippe stehen"
+    "ref": "phrases/auf der Kippe stehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "aca81dd33a": {
     "text": "„Die Metaphern, Symbole, Analogien, Begriffe dieses Romans erstehen aus einer Landschaft, die durch Schützengräben zerschnitten, von Bunkern unterminiert ist, in der Granaten krepieren, Menschen zerrissen werden, Panzer sich als ‚Riesenkröten der Maschinenzeit‘ voranwälzen, ‚von einer frostigen Zukunft überstrahlt‘.“",
@@ -16496,12 +16735,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make a fool of oneself",
     "source": "wiktionary",
     "lemmas": [
       "Narr"
     ],
-    "ref": "phrases/sich zum Narren machen"
+    "ref": "phrases/sich zum Narren machen",
+    "translation_model": "openai/gpt-4.1"
   },
   "acac0d2cf9": {
     "text": "Für den Betrug muss Kalle 3 Jahre brummen.",
@@ -16709,11 +16949,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "draw a conclusion",
     "source": "wiktionary",
     "lemmas": [
       "Schluss"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "acae49374b": {
     "text": "„Unter den neu registrierten fanden allein wir 1000 angebliche Wahlberechtigte, die den gleichen Namen, den gleichen Geburtstag und die gleiche Adresse wie bereits registrierte Wähler aufwiesen.“",
@@ -17293,12 +17534,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "dig up old grudges",
     "source": "wiktionary",
     "lemmas": [
       "ausgraben"
     ],
-    "ref": "phrases/das Kriegsbeil ausgraben"
+    "ref": "phrases/das Kriegsbeil ausgraben",
+    "translation_model": "openai/gpt-4.1"
   },
   "acb4c8b630": {
     "text": "„Licht! Leben! durch die Faſern gießt",
@@ -17883,11 +18125,12 @@
     "type": "expression",
     "note": "! — dem solltest du nachstreben",
     "synonyms": [],
-    "translation": null,
+    "translation": "you could take a leaf out of their book",
     "source": "wiktionary",
     "lemmas": [
       "abbeißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "acbde49bf1": {
     "text": "Angekündigte Steuersenkungen haben sich noch immer als wirksames Beruhigungsmittel erwiesen.",
@@ -17966,11 +18209,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give someone a punch in the face that really knocks them for a loop",
     "source": "wiktionary",
     "lemmas": [
       "Balkon"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "acc0712be7": {
     "text": "„Was aus den wenigen Berichten über die Mittelpassage hervorgeht, von denen etliche von Kommandanten von Sklavenschiffen, die den Handel mit den Schwarzen zu rechtfertigen versuchten, oder von Abolitionisten, welche die Öffentlichkeit gegen diese Art von Geschäften aufbringen wollten, verfasst wurden, ist, dass allgemeines Einvernehmen dahingehend herrschte, wie Sklaven idealerweise behandelt werden müssten, damit man sie lebend in der Neuen Welt abliefern könnte“",
@@ -18958,11 +19202,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Disagreement",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "acd2865582": {
     "text": "„Er erwachte vor Morgengrauen.",
@@ -20671,11 +20916,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have an eye on someone",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ace0dc03a4": {
     "text": "„Mit Blick auf den CO₂-Ausstoß erzielt pflanzliche Milch eine [um den Faktor 4,5] bessere Ökobilanz als Kuhmilch.“",
@@ -21721,12 +21967,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "my goodness",
     "source": "wiktionary",
     "lemmas": [
       "Fresse"
     ],
-    "ref": "phrases/meine Fresse"
+    "ref": "phrases/meine Fresse",
+    "translation_model": "openai/gpt-4.1"
   },
   "ace81ad836": {
     "text": "Nachdem sie so viel Arbeit in das Projekt investiert hatte, wirkte die Absage des ersten Kunden wie eine kalte Dusche.",
@@ -22038,12 +22285,13 @@
     "type": "expression",
     "note": "sprachlos sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be speechless",
     "source": "wiktionary",
     "lemmas": [
       "Sprache"
     ],
-    "ref": "phrases/jemandem bleibt die Sprache weg"
+    "ref": "phrases/jemandem bleibt die Sprache weg",
+    "translation_model": "openai/gpt-4.1"
   },
   "acec3ecf1f": {
     "text": "„Ausgerechnet er, der einst noch spätnachts zum Pressegespräch bat, gibt zum Wahltag keine Interviews.“",
@@ -22443,10 +22691,67 @@
   },
   "acf207a022": {
     "text": "In der Sache hatte sich Stolypin hinter seinen Beamten gestellt, dem Prinzip der Rechtsstaatlichkeit einmal mehr eine Abfuhr erteilt und die außerordentlichen Rechte und Eingriffsmöglichkeiten im Rahmen des Ausnahmezustands unangetastet gelassen.",
-    "translation": null,
+    "translation": "In the matter, Stolypin had backed his officials, once again rebuffed the principle of the rule of law, and left the extraordinary rights and intervention possibilities within the framework of the state of exception untouched.",
     "source": "wiktionary",
     "lemmas": [
       "etwas eine Abfuhr erteilen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sache",
+        "lemma": "Sache",
+        "pos": "noun",
+        "gloss_hint": "matter"
+      },
+      {
+        "form": "Stolypin",
+        "lemma": "Stolypin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beamten",
+        "lemma": "Beamter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prinzip",
+        "lemma": "Prinzip",
+        "pos": "noun",
+        "gloss_hint": "moral principle"
+      },
+      {
+        "form": "Rechtsstaatlichkeit",
+        "lemma": "Rechtsstaatlichkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abfuhr",
+        "lemma": "Abfuhr",
+        "pos": "noun",
+        "gloss_hint": "rebuff"
+      },
+      {
+        "form": "Rechte",
+        "lemma": "Recht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eingriffsmöglichkeiten",
+        "lemma": "Eingriffsmöglichkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausnahmezustand",
+        "lemma": "Ausnahmezustand",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "acf3c5f9ce": {
@@ -22454,22 +22759,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the time is ripe",
     "source": "wiktionary",
     "lemmas": [
       "reif"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "acf42e1efe": {
     "text": "auf Borg kaufen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to buy on credit",
     "source": "wiktionary",
     "lemmas": [
       "Borg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "acf6880f8c": {
     "text": "„Die Wahrscheinlichkeit, dass ein solches Schwarzes Loch auf der Erde bleibt, ist zwar nur ein Millionstel pro Ereignis.“",
@@ -23361,11 +23668,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to do something shady",
     "source": "wiktionary",
     "lemmas": [
       "Tour"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "acffa7d3b5": {
     "text": "„Manche staunen, wenn Frau Jähnichen die kleingärtnerischen Pflichten herunterbetet.“",

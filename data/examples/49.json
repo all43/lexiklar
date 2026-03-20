@@ -4,11 +4,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "don't do anything crazy!",
     "source": "wiktionary",
     "lemmas": [
       "Ding"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "490214ab06": {
     "text": "„Da ist mir dann SS-Siggi an der Ampel entgegen gerumpelt - ein Kopf der Dortmunder Naziszene. Er hatte zwei Lidl-Tüten in der Hand. Da hab ich gesagt: Früher wolltest du diesem Affen eine reinhauen und jetzt siehst du diesen alten Opa über die Straße schlurfen und denkst dir nur, wie lächerlich der ist in Interviews, wenn er sagt: Deutsche Arbeitsplätze für deutsche Arbeiter. Der Idiot lebt selbst seit 14 Jahren von Hartz IV.“",
@@ -1045,11 +1046,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make a run for it",
     "source": "wiktionary",
     "lemmas": [
       "machen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "490b1b3982": {
     "text": "„Als Vortragende haben sich unter anderem Wikipedia-Mitgründer Larry Sanger, die NASA-Weltraumforscherin Kerry McGuire und der österreichische Genetiker Markus Hengstschläger sowie die ehemalige nigerianische Bildungsministerin und Gründerin von Transparency International, Obiageli Ezekwesili, angekündigt.“",
@@ -3000,11 +3002,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "kiss my ass",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4921c3da40": {
     "text": "Er erbarmt sich ihrer.",
@@ -4297,11 +4300,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go from pillar to post",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "492feb007b": {
     "text": "Solidarität ist ein Schlüsselbegriff der Gewerkschaften.",
@@ -4456,11 +4460,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "connections (through personal contacts)",
     "source": "wiktionary",
     "lemmas": [
       "Vitamin"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "493272f8bb": {
     "text": "Du hast aber einen fahlen Teint, geh mal hinaus in die Sonne!",
@@ -4578,11 +4583,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take a leak",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4939228ef0": {
     "text": "„Vor dem Eingang des Restaurants gab es eine Pergola, unter der man im Freien essen konnte; Lärm, Staub und Gestank des Straßenverkehrs ließen sie aber das Innere aufsuchen.“",
@@ -5333,11 +5339,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to send something home",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "49413af93a": {
     "text": "Es war nur ein Blick, eine Wenigkeit und sie war ihm verfallen.",
@@ -6179,10 +6186,73 @@
   },
   "4949166833": {
     "text": "„Dieser Neffe ist sein einziger Erbe, der aber mit seinem Oheim nicht immer im besten Vernehmen stehen soll. So wenig der Alte ein Feind des Vergnügens ist, so soll doch die Aufführung des Neffen auch die höchste Toleranz erschöpfen.“",
-    "translation": null,
+    "translation": "\"This nephew is his only heir, but he is said not always to be on the best of terms with his uncle. Just as little as the old man is an enemy of pleasure, his nephew's conduct is said to exhaust even the highest tolerance.\"",
     "source": "wiktionary",
     "lemmas": [
       "Neffe"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Neffe",
+        "lemma": "Neffe",
+        "pos": "noun",
+        "gloss_hint": "nephew"
+      },
+      {
+        "form": "Erbe",
+        "lemma": "Erbe",
+        "pos": "noun",
+        "gloss_hint": "heir"
+      },
+      {
+        "form": "Oheim",
+        "lemma": "Oheim",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vernehmen",
+        "lemma": "Vernehmen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Alte",
+        "lemma": "Alte",
+        "pos": "noun",
+        "gloss_hint": "old woman"
+      },
+      {
+        "form": "Feind",
+        "lemma": "Feind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vergnügens",
+        "lemma": "Vergnügen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufführung",
+        "lemma": "Aufführung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Toleranz",
+        "lemma": "Toleranz",
+        "pos": "noun",
+        "gloss_hint": "tolerance"
+      },
+      {
+        "form": "erschöpfen",
+        "lemma": "erschöpfen",
+        "pos": "verb",
+        "gloss_hint": "exhaust"
+      }
     ]
   },
   "4949d36531": {
@@ -6517,10 +6587,73 @@
   },
   "494c97c715": {
     "text": "„Wie geprügelt zuckte er nur zusammen, wenn er einmal hörte, daß irgendwo der Hund begraben liegen sollte, daß zwei Leute wie er und Katze lebten, und wenn er von Hundesöhnen und Schweinehunden hörte.“",
-    "translation": null,
+    "translation": "\"Like someone beaten, he would only flinch whenever he heard that somewhere the dog was buried, that two people like him and cat lived together, and when he heard of sons of bitches and scoundrels.\"",
     "source": "wiktionary",
     "lemmas": [
       "da liegt der Hund begraben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "geprügelt",
+        "lemma": "prügeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zuckte",
+        "lemma": "zucken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zusammen",
+        "lemma": "zusammen",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "hörte",
+        "lemma": "hören",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hund",
+        "lemma": "Hund",
+        "pos": "noun",
+        "gloss_hint": "dog"
+      },
+      {
+        "form": "begraben",
+        "lemma": "begraben",
+        "pos": "verb",
+        "gloss_hint": "bury"
+      },
+      {
+        "form": "Leute",
+        "lemma": "Leute",
+        "pos": "noun",
+        "gloss_hint": "people"
+      },
+      {
+        "form": "Katze",
+        "lemma": "Katze",
+        "pos": "noun",
+        "gloss_hint": "domestic cat"
+      },
+      {
+        "form": "Hundesöhnen",
+        "lemma": "Hundesohn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schweinehunden",
+        "lemma": "Schweinehund",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "494d085e85": {
@@ -7469,10 +7602,61 @@
   },
   "4957354158": {
     "text": "„Pakistans Präsident Pervez Musharraf hat ein Händchen für den richtigen Ton und das richtige Timing. Seit Tagen konzentrieren sich alle Hoffnungen auf Entspannung zwischen Indien und Pakistan auf den Südasien-Gipfel in Nepal.“",
-    "translation": null,
+    "translation": "\"Pakistan's President Pervez Musharraf has a knack for the right tone and the right timing. For days, all hopes for detente between India and Pakistan have been focused on the South Asia summit in Nepal.\"",
     "source": "wiktionary",
     "lemmas": [
       "ein Händchen für etwas haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Präsident",
+        "lemma": "Präsident",
+        "pos": "noun",
+        "gloss_hint": "president"
+      },
+      {
+        "form": "Händchen",
+        "lemma": "Händchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ton",
+        "lemma": "Ton",
+        "pos": "noun",
+        "gloss_hint": "sound"
+      },
+      {
+        "form": "Timing",
+        "lemma": "Timing",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hoffnungen",
+        "lemma": "Hoffnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Entspannung",
+        "lemma": "Entspannung",
+        "pos": "noun",
+        "gloss_hint": "detente"
+      },
+      {
+        "form": "konzentrieren",
+        "lemma": "konzentrieren",
+        "pos": "verb",
+        "gloss_hint": "focus"
+      },
+      {
+        "form": "Gipfel",
+        "lemma": "Gipfel",
+        "pos": "noun",
+        "gloss_hint": "summit"
+      }
     ]
   },
   "495736b999": {
@@ -7522,11 +7706,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Water spoils even the best wine.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4957aaa9a6": {
     "text": "„Jung ging es darum, die ‚Maschine‘ vorzuführen, leidenschaftslos und ‚fern aller Begeisterung‘ - schicksalhafter war es wohl bisher keinem gelungen, es traf den Zahn der Zeit: Der Mensch ist ausgeliefert.“",
@@ -10194,11 +10379,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Give him an inch and he'll take a mile.",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "496af50898": {
     "text": "„Einer meiner Lieblingsmomente in Filmen war seit jeher gewesen, wenn zum ersten Mal das Zuhause eines schizophrenen Professors oder eines irren Serienmörders gezeigt wurde.“",
@@ -11760,11 +11946,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to throw someone off track",
     "source": "wiktionary",
     "lemmas": [
       "schleudern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4978b47a52": {
     "text": "„Während Athen mit den von Platon und Aristoteles hinterlassenen philosophischen Schulen die Hauptstadt der Philosophie blieb, wurde Alexandria zur Metropole der Wissenschaft.“",
@@ -11914,12 +12101,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "if worst comes to worst",
     "source": "wiktionary",
     "lemmas": [
       "Strick"
     ],
-    "ref": "phrases/wenn alle Stricke reißen"
+    "ref": "phrases/wenn alle Stricke reißen",
+    "translation_model": "openai/gpt-4.1"
   },
   "49796760a1": {
     "text": "„Sowohl Items also auch ganze Tests können Decken- oder Bodeneffekte aufweisen.“",
@@ -12615,11 +12803,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with a heavy heart",
     "source": "wiktionary",
     "lemmas": [
       "Träne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "497f95abca": {
     "text": "„Die Stiftung Warentest hat beim Bierschinkentest […] festgestellt, dass rund ein Drittel der Proben am Mindesthaltbarkeitsdatum bereits vergammelt war. Angegangene Ware können Sie übrigens zurückgeben.“",
@@ -12954,10 +13143,31 @@
   },
   "4980d92443": {
     "text": "Peile den Standpunkt des Leuchtturms!",
-    "translation": null,
+    "translation": "Take a bearing on the lighthouse position!",
     "source": "wiktionary",
     "lemmas": [
       "peilen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Peile",
+        "lemma": "peilen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Standpunkt",
+        "lemma": "Standpunkt",
+        "pos": "noun",
+        "gloss_hint": "position"
+      },
+      {
+        "form": "Leuchtturms",
+        "lemma": "Leuchtturm",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "49815206ed": {
@@ -13025,11 +13235,12 @@
     "type": "expression",
     "note": "keine Sorgen machen über",
     "synonyms": [],
-    "translation": null,
+    "translation": "not to worry about something",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4984007e6c": {
     "text": "Wir mussten das überflüssige Wasser ableiten.",
@@ -13490,11 +13701,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as a group of eight",
     "source": "wiktionary",
     "lemmas": [
       "zu"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4988a0ffa9": {
     "text": "Warte es ab, die Veränderungen haben gerade erst begonnen.",
@@ -13567,11 +13779,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to experience an acceleration",
     "source": "wiktionary",
     "lemmas": [
       "Beschleunigung"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "498a702526": {
     "text": "Die Animationen sorgen für gute Laune bei allen Hotelgästen.",
@@ -14000,12 +14213,13 @@
     "type": "expression",
     "note": "Zustand kurz vor Ende eines noch nicht entschiedenen Wettbewerbs",
     "synonyms": [],
-    "translation": null,
+    "translation": "it's crunch time",
     "source": "wiktionary",
     "lemmas": [
       "Wurst"
     ],
-    "ref": "phrases/es geht um die Wurst"
+    "ref": "phrases/es geht um die Wurst",
+    "translation_model": "openai/gpt-4.1"
   },
   "498d3cae53": {
     "text": "Albern ist bekannt für seinen Hafen.",
@@ -14354,11 +14568,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A wet poodle isn't afraid of water.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "498ea4ba61": {
     "text": "Wo drückt dich denn der Schuh? Ich sehe doch, dass du etwas auf dem Herzen hast.",
@@ -15124,10 +15339,25 @@
   },
   "499654f1c8": {
     "text": "Ich bin ganz außer mir!",
-    "translation": null,
+    "translation": "I'm completely beside myself!",
     "source": "wiktionary",
     "lemmas": [
       "außer sich sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ganz",
+        "lemma": "ganz",
+        "pos": "adjective",
+        "gloss_hint": "intact"
+      },
+      {
+        "form": "außer",
+        "lemma": "außer",
+        "pos": "preposition",
+        "gloss_hint": null
+      }
     ]
   },
   "4999921ba1": {
@@ -17678,11 +17908,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be clueless",
     "source": "wiktionary",
     "lemmas": [
       "Knall"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "49aec95888": {
     "text": "Ich habe nur einen Vetter dritten Grades.",
@@ -18690,11 +18921,12 @@
     "type": "expression",
     "note": "etwas zu wortwörtlich auffassen; etwas im eigentlichen bewerten; intolerant sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to take something all too literally",
     "source": "wiktionary",
     "lemmas": [
       "genau"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "49bb561bdc": {
     "text": "„Triefend sackt der Spinnaker durch die Vorschiffsluke nach unten. Geschafft! Hab das Tuch zu spät geborgen, mich weichspülen lassen vom Wiegen des Vorwindes! Bis „Raukar“ aus dem Ruder lief. Nun, nur noch unter Groß und Fock, ist sie wieder auf Kurs, läuft unter Windfahnensteuerung ostwärts.“",
@@ -19927,10 +20159,61 @@
   },
   "49c40a4e8d": {
     "text": "„Der Bund war dem seit Jahren klammen Konzern schon während der Coronapandemie mit rund 600 Millionen Euro zur Seite gesprungen.“",
-    "translation": null,
+    "translation": "The federal government had already come to the aid of the financially struggling corporation with around 600 million euros during the coronavirus pandemic.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem zur Seite springen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bund",
+        "lemma": "Bund",
+        "pos": "noun",
+        "gloss_hint": "federal government"
+      },
+      {
+        "form": "klammen",
+        "lemma": "klamm",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Konzern",
+        "lemma": "Konzern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Coronapandemie",
+        "lemma": "Coronapandemie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Millionen",
+        "lemma": "Million",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "Seite",
+        "lemma": "Seite",
+        "pos": "noun",
+        "gloss_hint": "side"
+      },
+      {
+        "form": "gesprungen",
+        "lemma": "springen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "49c415ed11": {
@@ -19938,11 +20221,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have something up one's sleeve",
     "source": "wiktionary",
     "lemmas": [
       "Hinterhalt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "49c48d0c38": {
     "text": "„In dem sandigen Staube der viele Zoll tief aufgefurchten Strasse versickerte der Tau ohne jede Wirkung.“",
@@ -19961,11 +20245,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to announce someone's death",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "49c55e6f9c": {
     "text": "Das Fahrzeug geriet auf das Bankett der linken Straßenseite und kam ins Schleudern.",
@@ -20848,11 +21133,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's when things get really crazy",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "49d1d8ca7f": {
     "text": "Er hörte es plätschern.",
@@ -20886,10 +21172,55 @@
   },
   "49d35566b6": {
     "text": "A: „Wie war Dein Tag heute?“ B: „Gut.“ A: „Und was hast Du gemacht?“ B: „Nichts Besonderes.“ A: „Also, wenn Du weiter so kurz angebunden bist, dann können wir das Telefonat auch beenden.“",
-    "translation": null,
+    "translation": "A: \"How was your day today?\" B: \"Good.\" A: \"And what did you do?\" B: \"Nothing special.\" A: \"Well, if you keep being so curt, we might as well end this phone call.\"",
     "source": "wiktionary",
     "lemmas": [
       "kurz angebunden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "gemacht",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Besonderes",
+        "lemma": "besonder",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "angebunden",
+        "lemma": "anbinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Telefonat",
+        "lemma": "Telefonat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beenden",
+        "lemma": "beenden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "49d7642533": {
@@ -22843,11 +23174,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Little children, lazy hours.",
     "source": "wiktionary",
     "lemmas": [
       "Kindchen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "49efa58b3e": {
     "text": "„Syntaktische Kategorien sind (zum Beispiel in der Konstituentengrammatik) Klassen von Ausdrücken, die in Sätzen gegeneinander austauschbar sind, ohne daß die syntaktische Wohlgeformtheit verloren geht…“",
@@ -23639,11 +23971,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Broken glass brings good luck.",
     "source": "wiktionary",
     "lemmas": [
       "bringen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "49f4d1b586": {
     "text": "Die Anzahl hochrangiger Banker auf dem Weltwirtschaftsforum in Davos ist enorm. Das ist eine gute Gelegenheit, mit ihnen darüber zu diskutieren, ob die Finanzmärkte seit der Krise [in 2008] sicherer geworden sind.",

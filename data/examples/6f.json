@@ -88,11 +88,12 @@
     "type": "expression",
     "note": "das geht dich nichts an",
     "synonyms": [],
-    "translation": null,
+    "translation": "that's none of your business",
     "source": "wiktionary",
     "lemmas": [
       "Dreck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f0177fe3a": {
     "text": "„Spott und superiore Witzelei waren allein der richtige Ton, und als ihm dies feststand, fiel zum erstenmal der Vorhang.“",
@@ -374,10 +375,37 @@
   },
   "6f027052ff": {
     "text": "Stonehenge ist eine heilige Stätte in Großbritannien.",
-    "translation": null,
+    "translation": "Stonehenge is a sacred site in Great Britain.",
     "source": "wiktionary",
     "lemmas": [
       "Stätte"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Stonehenge",
+        "lemma": "Stonehenge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "heilige",
+        "lemma": "heilig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stätte",
+        "lemma": "Stätte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Großbritannien",
+        "lemma": "Großbritannien",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6f031fe7da": {
@@ -802,18 +830,96 @@
   },
   "6f07b1e157": {
     "text": "„Wie kommst du nur über die Runden mit dem kümmerlichen Gehalt?“",
-    "translation": null,
+    "translation": "\"How do you manage to get by on such a meager salary?\"",
     "source": "wiktionary",
     "lemmas": [
       "über die Runden kommen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kommst",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Runden",
+        "lemma": "Runde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kümmerlichen",
+        "lemma": "kümmerlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gehalt",
+        "lemma": "Gehalt",
+        "pos": "noun",
+        "gloss_hint": "salary"
+      }
     ]
   },
   "6f07bcec38": {
     "text": "„Als er von dem Skandal Wind bekommen habe, sei ihm körperlich übel geworden, er schwanke zwischen Zorn, Bedauern und Enttäuschung.“",
-    "translation": null,
+    "translation": "\"When he got wind of the scandal, he became physically ill, oscillating between anger, regret, and disappointment.\"",
     "source": "wiktionary",
     "lemmas": [
       "von etwas Wind bekommen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Skandal",
+        "lemma": "Skandal",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wind",
+        "lemma": "Wind",
+        "pos": "noun",
+        "gloss_hint": "air"
+      },
+      {
+        "form": "körperlich",
+        "lemma": "körperlich",
+        "pos": "adjective",
+        "gloss_hint": "physical"
+      },
+      {
+        "form": "übel",
+        "lemma": "übel",
+        "pos": "adjective",
+        "gloss_hint": "nauseous"
+      },
+      {
+        "form": "schwanke",
+        "lemma": "schwanken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zorn",
+        "lemma": "Zorn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bedauern",
+        "lemma": "Bedauern",
+        "pos": "noun",
+        "gloss_hint": "regret"
+      },
+      {
+        "form": "Enttäuschung",
+        "lemma": "Enttäuschung",
+        "pos": "noun",
+        "gloss_hint": "disappointment"
+      }
     ]
   },
   "6f07c10966": {
@@ -1189,11 +1295,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "undress someone",
     "source": "wiktionary",
     "lemmas": [
       "ausziehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f0d588a19": {
     "text": "„Sehr willkommen war es der ſonderbar geſtimmten Frau, als jezt auch ihr Bruder erſchien. ‚Guten Tag, mein Schweſterchen! So früh wie der Vogel ſchon auf? Die Sorge um das Gewächshaus trieb mich aus den Federn; das war eine grimmkalte Nacht, mein Thermometer zeigt faſt fünf und zwanzig; ich muß nur nachſehen, ob unten nichts gelitten hat.‘“",
@@ -1548,11 +1655,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Old habits die hard.",
     "source": "wiktionary",
     "lemmas": [
       "fressen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f0f8cd035": {
     "text": "„Jene Dumpfbacken, die von den Tribünen in Gelsenkirchen aus den dunkelhäutigen Hertha-Verteidiger Jordan Torunarigha mit Affenlauten bedachten, sollten einen Blick ins Grundgesetz werfen. Sie brauchen nicht mal weiter als Artikel 3 zu lesen.“",
@@ -1754,10 +1862,121 @@
   },
   "6f0ffdb366": {
     "text": "„Onomasiologische Wörterbücher mit dem Anspruch, den Wortschatz einer (National-)Sprache insgesamt abzudecken, sind viel seltener und im Umfang geringer als semasiologische…Die beiden Wörterbuchtypen, der meist alphabetisch geordnete semasiologische und der meist sachlich geordnete onomasiologische, haben sich in zwei großen, aber komplementär aufeinander bezogenen Traditionen entwickelt.“",
-    "translation": null,
+    "translation": "Onomasiological dictionaries that aim to cover the entire vocabulary of a (national) language are much rarer and smaller in scope than semasiological ones…The two dictionary types, the mostly alphabetically ordered semasiological and the mostly thematically ordered onomasiological, have developed in two major but complementary traditions that relate to each other.",
     "source": "wiktionary",
     "lemmas": [
       "onomasiologisches Wörterbuch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Onomasiologische",
+        "lemma": "onomasiologisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wörterbücher",
+        "lemma": "Wörterbuch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anspruch",
+        "lemma": "Anspruch",
+        "pos": "noun",
+        "gloss_hint": "claim"
+      },
+      {
+        "form": "Wortschatz",
+        "lemma": "Wortschatz",
+        "pos": "noun",
+        "gloss_hint": "vocabulary"
+      },
+      {
+        "form": "Sprache",
+        "lemma": "Sprache",
+        "pos": "noun",
+        "gloss_hint": "language system"
+      },
+      {
+        "form": "abzudecken",
+        "lemma": "abdecken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "seltener",
+        "lemma": "selten",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umfang",
+        "lemma": "Umfang",
+        "pos": "noun",
+        "gloss_hint": "scope"
+      },
+      {
+        "form": "semasiologische",
+        "lemma": "semasiologisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wörterbuchtypen",
+        "lemma": "Wörterbuchtyp",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "alphabetisch",
+        "lemma": "alphabetisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "geordnete",
+        "lemma": "ordnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sachlich",
+        "lemma": "sachlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "onomasiologische",
+        "lemma": "onomasiologisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "entwickelt",
+        "lemma": "entwickeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "großen",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "komplementär",
+        "lemma": "komplementär",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Traditionen",
+        "lemma": "Tradition",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6f103a9352": {
@@ -3619,11 +3838,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If you spell 'nämlich' with an 'h', you're foolish.",
     "source": "wiktionary",
     "lemmas": [
       "dämlich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f213f91cf": {
     "text": "„Für Präsident und Vizepräsidentin gelten strengere Voraussetzungen als für Verfassungsrichter.“",
@@ -3853,22 +4073,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to wait for what is to come",
     "source": "wiktionary",
     "lemmas": [
       "Ding"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f297051ab": {
     "text": "aufs falsche Pferd gesetzt haben",
     "type": "expression",
     "note": "einen Verlierer unterstützt haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to back the wrong horse",
     "source": "wiktionary",
     "lemmas": [
       "setzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f29dabc7b": {
     "text": "„Die Existenz geht der Essenz voraus.“",
@@ -4575,15 +4797,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "seasoned veteran",
     "source": "wiktionary",
     "lemmas": [
       "alt"
     ],
     "ref": "phrases/alter Fahrensmann",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "6f34cda08e": {
     "text": "„Doch Exilbewegungen können nur einen Funken schlagen. Die Gründe des Protests liegen im Inneren.“",
@@ -5331,11 +5551,12 @@
     "type": "expression",
     "note": "unnötig viele Worte machen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to go on and on about something",
     "source": "wiktionary",
     "lemmas": [
       "Senf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f3e4ff14a": {
     "text": "„Blonde Haare, freundlicher Blick, Mitte 30. Clara Brillembourg empfängt Besucher in einem Konferenzraum im 12. Stock der Anwaltskanzlei Foley Hoag.“",
@@ -5474,11 +5695,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to grow a thick skin",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f3ee1e30e": {
     "text": "„Mélie richtete sie mit Hilfe von Schnüren zu einer Art Kutte her.“",
@@ -6560,12 +6782,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep one's mouth shut",
     "source": "wiktionary",
     "lemmas": [
       "Schnabel"
     ],
-    "ref": "phrases/den Schnabel halten"
+    "ref": "phrases/den Schnabel halten",
+    "translation_model": "openai/gpt-4.1"
   },
   "6f4bb782cf": {
     "text": "drauf und dran sein",
@@ -6650,11 +6873,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be under a bad sign",
     "source": "wiktionary",
     "lemmas": [
       "Zeichen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f4da195a8": {
     "text": "Sie trickste ihre Gegnerin geschickt aus und gewann den Tie-Break mit 7:6.",
@@ -7767,11 +7991,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to wish someone the plague",
     "source": "wiktionary",
     "lemmas": [
       "Pest"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f56dd2a38": {
     "text": "Unser Lieferant versicherte mir, dass er die Fristen einhalten werde.",
@@ -8421,12 +8646,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lose the thread",
     "source": "wiktionary",
     "lemmas": [
       "Faden",
       "abreißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f5d183792": {
     "text": "Die Injektion des Kunstharzes wurde nicht meisterhaft bewerkstelligt.",
@@ -9228,11 +9454,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to promise someone the moon",
     "source": "wiktionary",
     "lemmas": [
       "Himmel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f64787bd8": {
     "text": "Der König unterdrückte sein Volk.",
@@ -9361,11 +9588,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "house for sale",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f6741da08": {
     "text": "Als das Kind ertrunken war, bemerkte der Mann zynisch: „Wer nicht schwimmen kann, sollte nicht ins tiefe Wasser gehen“.",
@@ -9630,11 +9858,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a good thrashing",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f68f51938": {
     "text": "Zur Belohnung haben die beiden sich ein Städtewochenende geleistet.",
@@ -12189,11 +12418,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I am so wild about your strawberry mouth",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f7c5b6d08": {
     "text": "[Coronapandemie 2020:] „Die Regierungen von Bund und Ländern haben von den Leuten die Verantwortung übertragen bekommen – und nun müssen sie den Mumm haben, zu handeln, selbst wenn das gegen die Befindlichkeit des Augenblicks ist.“",
@@ -12628,12 +12858,13 @@
     "type": "expression",
     "note": "noch unreif sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be wet behind the ears",
     "source": "wiktionary",
     "lemmas": [
       "grün"
     ],
-    "ref": "phrases/noch grün hinter den Ohren sein"
+    "ref": "phrases/noch grün hinter den Ohren sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "6f8065d17b": {
     "text": "Sie bereitet ihm Proviant für unterwegs zu.",
@@ -12817,10 +13048,25 @@
   },
   "6f82f2509a": {
     "text": "Ich habe mir eine neue DVD gekauft.",
-    "translation": null,
+    "translation": "I bought myself a new DVD.",
     "source": "wiktionary",
     "lemmas": [
       "DVD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gekauft",
+        "lemma": "kaufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "DVD",
+        "lemma": "DVD",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6f853f23a7": {
@@ -12828,11 +13074,12 @@
     "type": "expression",
     "note": "etwas gut beherrschen; auf einem Gebiet (besonders, sehr) erfahren sein; viel von etwas haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to know something inside out",
     "source": "wiktionary",
     "lemmas": [
       "fressen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f85809df9": {
     "text": "„Alle Menschen sind vor dem Gesetz gleich.“",
@@ -13256,11 +13503,12 @@
     "type": "expression",
     "note": "alt werden",
     "synonyms": [],
-    "translation": null,
+    "translation": "to show signs of age",
     "source": "wiktionary",
     "lemmas": [
       "ansetzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f8a656ccd": {
     "text": "Die Wissenschaft der slawischen Sprachen und den damit verbundenen Literaturen und Kulturen heißt Slawistik.",
@@ -13719,22 +13967,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to work oneself to the bone",
     "source": "wiktionary",
     "lemmas": [
       "Buckel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f8db83c14": {
     "text": "schräge Fürstin",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "eccentric princess",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6f8e095c75": {
     "text": "Im Dezember findet in Hamburg die Internationale Börse für Mineralien, Fossilien, Edelsteine und Schmuck statt.",
@@ -14296,20 +14546,21 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to all appearances",
     "source": "wiktionary",
     "lemmas": [
       "menschlich",
       "Ermessen"
     ],
-    "ref": "phrases/nach menschlichem Ermessen"
+    "ref": "phrases/nach menschlichem Ermessen",
+    "translation_model": "openai/gpt-4.1"
   },
   "6f963049b0": {
     "text": "keine Augen im Kopf haben",
     "type": "expression",
     "note": "unaufmerksam sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "not have eyes in one's head",
     "source": "wiktionary",
     "lemmas": [
       "Auge",
@@ -14317,7 +14568,8 @@
       "im",
       "kein"
     ],
-    "ref": "phrases/keine Augen im Kopf haben"
+    "ref": "phrases/keine Augen im Kopf haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "6f9656d42f": {
     "text": "„Und dabei erzählte er Geschichten von der Zauberkraft der Katzen und daß eine dreifarbige Katze den Hof vor Feuer schützt.“",
@@ -15447,11 +15699,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it rained snails (meaning: it rained very little)",
     "source": "wiktionary",
     "lemmas": [
       "Schnecke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6fa050e071": {
     "text": "„Die Ursache für das vermehrte Auftreten von Keuchhusten sieht Prof. Bigl hauptsächlich in der mangelhaften Impfquote.“",
@@ -16070,11 +16323,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The cleverest are usually the first to go astray.",
     "source": "wiktionary",
     "lemmas": [
       "verführen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6fa7e47411": {
     "text": "Mein Papa hat immer recht.",
@@ -16416,13 +16670,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "flip the switch",
     "source": "wiktionary",
     "lemmas": [
       "Schalter",
       "umlegen"
     ],
-    "ref": "phrases/den Schalter umlegen"
+    "ref": "phrases/den Schalter umlegen",
+    "translation_model": "openai/gpt-4.1"
   },
   "6faa27a0ec": {
     "text": "„Es wäre tatsächlich falsch, Kinder in Zuckerwatte zu packen.“",
@@ -16690,10 +16945,37 @@
   },
   "6fac211aee": {
     "text": "„Was für eine verwirrende Erklärung, ich verstehe kein Wort.“",
-    "translation": null,
+    "translation": "What a confusing explanation, I don't understand a word.",
     "source": "wiktionary",
     "lemmas": [
       "verwirrend"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "verwirrende",
+        "lemma": "verwirrend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erklärung",
+        "lemma": "Erklärung",
+        "pos": "noun",
+        "gloss_hint": "explanation"
+      },
+      {
+        "form": "verstehe",
+        "lemma": "verstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wort",
+        "lemma": "Wort",
+        "pos": "noun",
+        "gloss_hint": "word"
+      }
     ]
   },
   "6fac411631": {
@@ -20197,11 +20479,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I would give you a tile from my oven without hesitation (meaning: I would gladly share even what little I have with you)",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6fcb2ce04e": {
     "text": "Neulich wurde eine Ader von Eisenerz entdeckt.",
@@ -20418,11 +20701,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone gets chills down their spine",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6fcdcf167f": {
     "text": "Trotz vieler Niederlagen ergab er sich nicht.",
@@ -20635,11 +20919,13 @@
   },
   "6fce587e5c": {
     "text": "3 Mio. t",
-    "translation": null,
+    "translation": "3 million tonnes",
     "source": "wiktionary",
     "lemmas": [
       "Mio."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "6fce6622ad": {
     "text": "Die beiden versuchten, alle Einbruchsspuren zu verwischen.",
@@ -20694,10 +20980,25 @@
   },
   "6fcfe9c4d3": {
     "text": "Irgendwann kam ich ihr auf die Schliche.",
-    "translation": null,
+    "translation": "Eventually I caught on to her.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem auf die Schliche kommen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kam",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schliche",
+        "lemma": "Schliche",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6fd0a7107f": {
@@ -21039,11 +21340,12 @@
     "type": "expression",
     "note": "jemand kann nicht still sitzen, ist unruhig, aufgeregt, nervös",
     "synonyms": [],
-    "translation": null,
+    "translation": "not be able to sit still (be restless, fidgety, or nervous)",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6fd5365dea": {
     "text": "Er gab seinen Beruf vage als Geschäftsmann an.",
@@ -21227,10 +21529,61 @@
   },
   "6fd6c332d1": {
     "text": "„Also schalten wir einen Anrufbeantworter zwischen uns und diejenigen, die uns während unserer Abwesenheit anrufen wollen, um zurückzurufen, wenn es uns wieder möglich ist. Doch welchen Ansagetext sprechen wir auf den AB?“",
-    "translation": null,
+    "translation": "So we put an answering machine between us and those who want to call us during our absence to call back when it's possible for us again. But what greeting message do we record on the answering machine?",
     "source": "wiktionary",
     "lemmas": [
       "AB"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "schalten",
+        "lemma": "schalten",
+        "pos": "verb",
+        "gloss_hint": "switch"
+      },
+      {
+        "form": "Anrufbeantworter",
+        "lemma": "Anrufbeantworter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "anrufen",
+        "lemma": "anrufen",
+        "pos": "verb",
+        "gloss_hint": "call (phone)"
+      },
+      {
+        "form": "Abwesenheit",
+        "lemma": "Abwesenheit",
+        "pos": "noun",
+        "gloss_hint": "absence (physical)"
+      },
+      {
+        "form": "zurückzurufen",
+        "lemma": "zurückrufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "möglich",
+        "lemma": "möglich",
+        "pos": "adjective",
+        "gloss_hint": "possible (logic)"
+      },
+      {
+        "form": "Ansagetext",
+        "lemma": "Ansagetext",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sprechen",
+        "lemma": "sprechen",
+        "pos": "verb",
+        "gloss_hint": "speak"
+      }
     ]
   },
   "6fd74b3714": {
@@ -21856,11 +22209,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "leave someone in the lurch",
     "source": "wiktionary",
     "lemmas": [
       "lassen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6fddf66376": {
     "text": "Er spazierte am Hafen entlang.",
@@ -22032,11 +22386,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to swim around something",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6fe17f8a29": {
     "text": "Meine Mutter teilt die Torte gewöhnlich in zwölf gleich große Stücke.",
@@ -23631,11 +23986,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to laugh one's head off",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6ffcdec6bf": {
     "text": "Ich versuchte eher vergeblich, die Fliegen vom Kuchen zu verscheuchen.",
@@ -23723,11 +24079,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "long story short",
     "source": "wiktionary",
     "lemmas": [
       "lang",
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   }
 }

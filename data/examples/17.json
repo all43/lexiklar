@@ -4415,12 +4415,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "shake awake",
     "source": "wiktionary",
     "lemmas": [
       "rütteln"
     ],
-    "ref": "phrases/wach rütteln"
+    "ref": "phrases/wach rütteln",
+    "translation_model": "openai/gpt-4.1"
   },
   "1725ee5d2f": {
     "text": "Truthähne kollern, aber Hähne krähen.",
@@ -7276,10 +7277,55 @@
   },
   "17408c0458": {
     "text": "Die Autofahrerinnen und Autofahrer mit dem Kennzeichen AG backen sicher einen feinen <>, was einem Karottenkuchen entspricht.",
-    "translation": null,
+    "translation": "The drivers with the AG license plate are certainly baking a fine cake, which corresponds to a carrot cake.",
     "source": "wiktionary",
     "lemmas": [
       "AG"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Autofahrerinnen",
+        "lemma": "Autofahrerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Autofahrer",
+        "lemma": "Autofahrer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kennzeichen",
+        "lemma": "Kennzeichen",
+        "pos": "noun",
+        "gloss_hint": "license plate"
+      },
+      {
+        "form": "backen",
+        "lemma": "backen",
+        "pos": "verb",
+        "gloss_hint": "bake"
+      },
+      {
+        "form": "feinen",
+        "lemma": "fein",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Karottenkuchen",
+        "lemma": "Karottenkuchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entspricht",
+        "lemma": "entsprechen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "1740e204b0": {
@@ -7509,11 +7555,13 @@
   },
   "1741db96a6": {
     "text": "Reiß dich doch mal am Riemen!",
-    "translation": null,
+    "translation": "Pull yourself together!",
     "source": "wiktionary",
     "lemmas": [
       "sich am Riemen reißen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "174257b824": {
     "text": "Essen ist ein Dorf in Transkarpatien.",
@@ -9236,10 +9284,49 @@
   },
   "17508b4037": {
     "text": "„Wären Sie auch bereit, in Kauf zu nehmen, wie Schröder als Regierungschef um der Reformen willen abgewählt zu werden?“",
-    "translation": null,
+    "translation": "Would you also be willing to accept, like Schröder as head of government, being voted out for the sake of reforms?",
     "source": "wiktionary",
     "lemmas": [
       "willen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "bereit",
+        "lemma": "bereit",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kauf",
+        "lemma": "Kauf",
+        "pos": "noun",
+        "gloss_hint": "purchase"
+      },
+      {
+        "form": "nehmen",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": "take"
+      },
+      {
+        "form": "Regierungschef",
+        "lemma": "Regierungschef",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reformen",
+        "lemma": "Reform",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abgewählt",
+        "lemma": "abwählen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "175167b076": {
@@ -13523,10 +13610,49 @@
   },
   "177f57b832": {
     "text": "„Hund“ ist die Wurzel für Wörter wie „Hunde“, „Hundes“, „hündisch“.",
-    "translation": null,
+    "translation": "\"Dog\" is the root for words like \"dogs\", \"dog's\", \"canine\".",
     "source": "wiktionary",
     "lemmas": [
       "Wurzel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hund",
+        "lemma": "Hund",
+        "pos": "noun",
+        "gloss_hint": "dog"
+      },
+      {
+        "form": "Wurzel",
+        "lemma": "Wurzel",
+        "pos": "noun",
+        "gloss_hint": "root"
+      },
+      {
+        "form": "Wörter",
+        "lemma": "Wort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hunde",
+        "lemma": "Hund",
+        "pos": "noun",
+        "gloss_hint": "dog"
+      },
+      {
+        "form": "Hundes",
+        "lemma": "Hund",
+        "pos": "noun",
+        "gloss_hint": "dog"
+      },
+      {
+        "form": "hündisch",
+        "lemma": "hündisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "17814e5fd2": {
@@ -13802,12 +13928,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "balloon out",
     "source": "wiktionary",
     "lemmas": [
       "Pfannkuchen"
     ],
-    "ref": "phrases/aufgehen wie ein Pfannkuchen"
+    "ref": "phrases/aufgehen wie ein Pfannkuchen",
+    "translation_model": "openai/gpt-4.1"
   },
   "1782b4d1e8": {
     "text": "Für einen Doktortitel musste man anscheinend an einigen deutschen Universitäten nur ein paar tausend Euro hinlegen.",
@@ -14524,10 +14651,61 @@
   },
   "1787ab79f0": {
     "text": "„Ich starrte betreten zu Boden und hielt meine Schnauze. Manchmal kann man nichts anderes tun, als nur betreten zu Boden zu starren und seine Schnauze zu halten.“",
-    "translation": null,
+    "translation": "I stared down at the ground in embarrassment and kept my mouth shut. Sometimes you can do nothing else but stare down at the ground in embarrassment and keep your mouth shut.",
     "source": "wiktionary",
     "lemmas": [
       "die Schnauze halten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "starrte",
+        "lemma": "starren",
+        "pos": "verb",
+        "gloss_hint": "stare"
+      },
+      {
+        "form": "betreten",
+        "lemma": "betreten",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Boden",
+        "lemma": "Boden",
+        "pos": "noun",
+        "gloss_hint": "ground"
+      },
+      {
+        "form": "hielt",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": "hold"
+      },
+      {
+        "form": "Schnauze",
+        "lemma": "Schnauze",
+        "pos": "noun",
+        "gloss_hint": "mouth"
+      },
+      {
+        "form": "tun",
+        "lemma": "tun",
+        "pos": "verb",
+        "gloss_hint": "do"
+      },
+      {
+        "form": "starren",
+        "lemma": "starren",
+        "pos": "verb",
+        "gloss_hint": "stare"
+      },
+      {
+        "form": "halten",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": "hold"
+      }
     ]
   },
   "1787bc8180": {
@@ -15171,11 +15349,12 @@
     "synonyms": [
       "umgangssprachlich"
     ],
-    "translation": null,
+    "translation": "thickly spread",
     "source": "wiktionary",
     "lemmas": [
       "säen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "178e5580b4": {
     "text": "„Die europakritische AfD konnte in Ludwigshafen aus dem Stand 8,0 Prozent erreichen, die FDP fiel zurück auf 3,7 Prozent (-2,8), noch hinter FWG und Linke.“",
@@ -15704,19 +15883,47 @@
     "type": "expression",
     "note": "wach und unterwegs sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "be knocked for six",
     "source": "wiktionary",
     "lemmas": [
       "Socke"
     ],
-    "ref": "phrases/von den Socken sein"
+    "ref": "phrases/von den Socken sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "1791f5f319": {
     "text": "Die neue Freundin meines Cousins hat allerhand auf dem Kerbholz.",
-    "translation": null,
+    "translation": "My cousin's new girlfriend has quite a lot on her conscience.",
     "source": "wiktionary",
     "lemmas": [
       "etwas auf dem Kerbholz haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Freundin",
+        "lemma": "Freundin",
+        "pos": "noun",
+        "gloss_hint": "girlfriend"
+      },
+      {
+        "form": "Cousins",
+        "lemma": "Cousin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "allerhand",
+        "lemma": "allerhand",
+        "pos": "adjective",
+        "gloss_hint": "considerable"
+      },
+      {
+        "form": "Kerbholz",
+        "lemma": "Kerbholz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "17925ee63c": {
@@ -16959,11 +17166,12 @@
     "type": "expression",
     "note": "sich von Narrheit, Narreteien anstecken lassen",
     "synonyms": [],
-    "translation": null,
+    "translation": "be bitten by the fool's bug",
     "source": "wiktionary",
     "lemmas": [
       "Narr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "17a7e0005c": {
     "text": "Der Kunde hat sein Bankkonto überzogen.",
@@ -17048,12 +17256,13 @@
     "type": "expression",
     "note": "oder geschält – sehr sauber, frisch sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "as clean as a whistle",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
     ],
-    "ref": "phrases/wie aus dem Ei gepellt sein"
+    "ref": "phrases/wie aus dem Ei gepellt sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "17aa7b284f": {
     "text": "jemandem Recht geben",
@@ -17107,11 +17316,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bears a stamp",
     "source": "wiktionary",
     "lemmas": [
       "Stempel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "17ab674bae": {
     "text": "Im März [2016] verhandeln die Verfassungsrichter die Beschwerde der Energieunternehmen [E.ON, RWE und Vattenfall] gegen die 13. Novelle des Atomgesetzes [der Bundesregierung] - den Atomausstieg. Das Argument: Die Novelle sei ein massiver Eingriff in das Eigentum der Konzerne.",
@@ -17193,10 +17403,73 @@
   },
   "17ac213751": {
     "text": "„Drebber wiederum sprang dem Tod von der Schippe, indem er sich flach auf den Boden warf, als ein Felsbrocken von einer Klippe stürzte.“",
-    "translation": null,
+    "translation": "Drebber, in turn, escaped death by throwing himself flat on the ground as a boulder fell from a cliff.",
     "source": "wiktionary",
     "lemmas": [
       "dem Tod von der Schippe springen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Drebber",
+        "lemma": "Drebber",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sprang",
+        "lemma": "springen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tod",
+        "lemma": "Tod",
+        "pos": "noun",
+        "gloss_hint": "death"
+      },
+      {
+        "form": "Schippe",
+        "lemma": "Schippe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "flach",
+        "lemma": "flach",
+        "pos": "adjective",
+        "gloss_hint": "level"
+      },
+      {
+        "form": "Boden",
+        "lemma": "Boden",
+        "pos": "noun",
+        "gloss_hint": "ground"
+      },
+      {
+        "form": "warf",
+        "lemma": "werfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Felsbrocken",
+        "lemma": "Felsbrocken",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klippe",
+        "lemma": "Klippe",
+        "pos": "noun",
+        "gloss_hint": "cliff"
+      },
+      {
+        "form": "stürzte",
+        "lemma": "stürzen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "17ac6810a3": {
@@ -19020,10 +19293,37 @@
   },
   "17b4854899": {
     "text": "Für die Party hat sich Claudia in Schale geworfen.",
-    "translation": null,
+    "translation": "For the party, Claudia dressed up in her finest outfit.",
     "source": "wiktionary",
     "lemmas": [
       "sich in Schale werfen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Party",
+        "lemma": "Party",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Claudia",
+        "lemma": "Claudia",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schale",
+        "lemma": "Schale",
+        "pos": "noun",
+        "gloss_hint": "fine outfit"
+      },
+      {
+        "form": "geworfen",
+        "lemma": "werfen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "17b52a52db": {
@@ -19367,12 +19667,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "thorn in the flesh",
     "source": "wiktionary",
     "lemmas": [
       "Stachel"
     ],
-    "ref": "phrases/Stachel im Fleisch"
+    "ref": "phrases/Stachel im Fleisch",
+    "translation_model": "openai/gpt-4.1"
   },
   "17b6c21ad7": {
     "text": "auf keinen grünen Zweig kommen",
@@ -20246,11 +20547,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lie on one's stomach",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "17c10e52e5": {
     "text": "Eine Meldung sollte kurz und präzise sein.",
@@ -20944,11 +21246,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's enough to make a dog feel sorry for you",
     "source": "wiktionary",
     "lemmas": [
       "erbarmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "17cae7333a": {
     "text": "Es tut der Frau im Herzen weh, dass der Ring gestohlen wurde.",
@@ -21690,18 +21993,90 @@
   },
   "17d23a15fd": {
     "text": "Auf der Autobahn sah er mehrere Autos mit dem Kfz-Kennzeichen ANA.",
-    "translation": null,
+    "translation": "On the motorway he saw several cars with the license plate ANA.",
     "source": "wiktionary",
     "lemmas": [
       "ANA"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Autobahn",
+        "lemma": "Autobahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sah",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "mehrere",
+        "lemma": "mehrere",
+        "pos": "pronoun",
+        "gloss_hint": "several"
+      },
+      {
+        "form": "Autos",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kfz-Kennzeichen",
+        "lemma": "Kfz-Kennzeichen",
+        "pos": "noun",
+        "gloss_hint": "license plate"
+      }
     ]
   },
   "17d252b27f": {
     "text": "„Die Leiterin bat sie zu sich und vertraute ihr an, daß man sich soeben über sie erkundigt habe, was sie denke und wie sie sich verhalte.“",
-    "translation": null,
+    "translation": "The director asked her to come to her office and confided in her that inquiries had just been made about her, what she thought and how she would behave.",
     "source": "wiktionary",
     "lemmas": [
       "erkundigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Leiterin",
+        "lemma": "Leiterin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bat",
+        "lemma": "bitten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "vertraute",
+        "lemma": "vertrauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "erkundigt",
+        "lemma": "erkundigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "denke",
+        "lemma": "denken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "verhalte",
+        "lemma": "verhalten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "17d266fc0a": {
@@ -23366,10 +23741,37 @@
   },
   "17e2ef681f": {
     "text": "Nach der 0:2-Niederlage war die Stimmung der Fans im Eimer.",
-    "translation": null,
+    "translation": "After the 0:2 defeat, the fans' mood was in the dumps.",
     "source": "wiktionary",
     "lemmas": [
       "im Eimer sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Niederlage",
+        "lemma": "Niederlage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stimmung",
+        "lemma": "Stimmung",
+        "pos": "noun",
+        "gloss_hint": "mood"
+      },
+      {
+        "form": "Fans",
+        "lemma": "Fan",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eimer",
+        "lemma": "Eimer",
+        "pos": "noun",
+        "gloss_hint": "flop"
+      }
     ]
   },
   "17e34ff31c": {

@@ -13,11 +13,12 @@
     "type": "expression",
     "note": "blitzartig",
     "synonyms": [],
-    "translation": null,
+    "translation": "like greased lightning",
     "source": "wiktionary",
     "lemmas": [
       "Blitz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb024be181": {
     "text": "„Aus diesen Zusatzartikeln sollte schließlich die Bill of Rights hervorgehen, die die Grundrechte der Bürgerinnen und Bürger gegenüber der Regierung ins Zentrum der politischen Identität Amerikas rückte.“",
@@ -818,11 +819,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "always be on the go",
     "source": "wiktionary",
     "lemmas": [
       "Trab"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb0dd909a4": {
     "text": "Viele Kulturen der Steinzeit sind sang- und klanglos untergegangen.",
@@ -1783,12 +1785,13 @@
     "synonyms": [
       "spricht"
     ],
-    "translation": null,
+    "translation": "peace be upon you",
     "source": "wiktionary",
     "lemmas": [
       "Salam"
     ],
-    "ref": "phrases/Salam alaikum"
+    "ref": "phrases/Salam alaikum",
+    "translation_model": "openai/gpt-4.1"
   },
   "bb1598d13b": {
     "text": "„Hinzu kommt, dass sich die EU-Mitgliedsländer bisher nicht wie vom leave -Lager prognostiziert gegeneinander ausspielen lassen.“",
@@ -2017,11 +2020,12 @@
     "type": "expression",
     "note": "k. o. geschlagen",
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is seeing stars",
     "source": "wiktionary",
     "lemmas": [
       "tanzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb175a3d33": {
     "text": "Zerstör du meine Ehe, und du wirst deines Lebens nicht mehr glücklich!",
@@ -4160,10 +4164,79 @@
   },
   "bb2baa1fac": {
     "text": "„Ich weiß, was du jetzt sagen willst, alter Kumpel, sagte Horst, aber wir haben in diesen ländlichen Breiten so gut wie keine Wohnungsnot, hier am Arsch der Welt regelt das die Landflucht[.]“",
-    "translation": null,
+    "translation": "\"I know what you're about to say, old mate,\" said Horst, \"but we have virtually no housing shortage in these rural parts; here at the back of beyond, rural exodus takes care of that.\"",
     "source": "wiktionary",
     "lemmas": [
       "am Arsch der Welt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "weiß",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sagen",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": "say"
+      },
+      {
+        "form": "alter",
+        "lemma": "Alter",
+        "pos": "noun",
+        "gloss_hint": "mate"
+      },
+      {
+        "form": "Kumpel",
+        "lemma": "Kumpel",
+        "pos": "noun",
+        "gloss_hint": "friend"
+      },
+      {
+        "form": "sagte",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": "say"
+      },
+      {
+        "form": "Horst",
+        "lemma": "Horst",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "haben",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": "have"
+      },
+      {
+        "form": "ländlichen",
+        "lemma": "ländlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Breiten",
+        "lemma": "Breite",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wohnungsnot",
+        "lemma": "Wohnungsnot",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Landflucht",
+        "lemma": "Landflucht",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "bb2d11e3ec": {
@@ -4507,10 +4580,85 @@
   },
   "bb2ed86411": {
     "text": "\"In der großen Welt gibt es natürlich andere Namen: Beethoven, Goethe, Bismarck. Aber in der ganz kleinen, unserer höchsteigenen Welt, gibt es andere Namen, besonders die aus der Kindheit, also aus unserem Historischen her, aus der sogenannten »Alten Geschichte« unseres bedeutungslosen Daseins her! Hietzing bei Wien, Unter-St. Veit, Ober-St. Veit, der Himmelhof, die Penzinger Au, das Penzinger Schwimmbad. ..\" (Romantik der Namen, Prosa, z.n. Projekt Gutenberg)",
-    "translation": null,
+    "translation": "In the great world, of course, there are other names: Beethoven, Goethe, Bismarck. But in the very small one, our own very personal world, there are other names, especially those from childhood, that is, from our history, from the so-called \"Ancient History\" of our insignificant existence! Hietzing near Vienna, Unter-St. Veit, Ober-St. Veit, the Himmelhof, the Penzinger Au, the Penzinger swimming pool...",
     "source": "wiktionary",
     "lemmas": [
       "Schwimmbad"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "große",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      },
+      {
+        "form": "Namen",
+        "lemma": "Name",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ganz",
+        "lemma": "ganz",
+        "pos": "adjective",
+        "gloss_hint": "whole"
+      },
+      {
+        "form": "kleinen",
+        "lemma": "klein",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "höchsteigenen",
+        "lemma": "höchsteigen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      },
+      {
+        "form": "besonders",
+        "lemma": "besonders",
+        "pos": "adverb",
+        "gloss_hint": "notably"
+      },
+      {
+        "form": "Kindheit",
+        "lemma": "Kindheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geschichte",
+        "lemma": "Geschichte",
+        "pos": "noun",
+        "gloss_hint": "history"
+      },
+      {
+        "form": "Daseins",
+        "lemma": "Dasein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wien",
+        "lemma": "Wien",
+        "pos": "proper noun",
+        "gloss_hint": "Vienna"
+      }
     ]
   },
   "bb2f2d229d": {
@@ -5398,15 +5546,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "know something inside out",
     "source": "wiktionary",
     "lemmas": [
       "kennen"
     ],
     "ref": "phrases/etwas in- und auswendig kennen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "bb3595f556": {
     "text": "Er ist nur rasch einen Happen Essen gegangen.",
@@ -6517,11 +6663,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "catch me if you can, I'm peace itself",
     "source": "wiktionary",
     "lemmas": [
       "kriegen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb439d1a59": {
     "text": "„Leute wurden auf offener Straße verhaftet oder in der Morgendämmerung aus den Federn gejagt und mitgenommen.“",
@@ -6633,10 +6780,55 @@
   },
   "bb43f5e4b1": {
     "text": "„Bei diesen Spekulationen wurde nicht beachtet, welche aktuellen Probleme Cornwallis auf den Nägeln brannten.“",
-    "translation": null,
+    "translation": "In these speculations, it was not considered what pressing problems Cornwallis had on his plate.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem auf den Nägeln brennen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Spekulationen",
+        "lemma": "Spekulation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beachtet",
+        "lemma": "beachten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "aktuellen",
+        "lemma": "aktuell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Probleme",
+        "lemma": "Problem",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Cornwallis",
+        "lemma": "Cornwallis",
+        "pos": "proper noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nägeln",
+        "lemma": "Nagel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "brannten",
+        "lemma": "brennen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "bb44248ff4": {
@@ -6962,11 +7154,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hold one's liquor",
     "source": "wiktionary",
     "lemmas": [
       "Stiefel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb46facd14": {
     "text": "Meine Schwester bekommt Unterhalt für ihr Kind.",
@@ -7225,12 +7418,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make a mountain out of a molehill",
     "source": "wiktionary",
     "lemmas": [
       "Furz"
     ],
-    "ref": "phrases/aus einem Furz einen Donnerschlag machen"
+    "ref": "phrases/aus einem Furz einen Donnerschlag machen",
+    "translation_model": "openai/gpt-4.1"
   },
   "bb490f76aa": {
     "text": "Als ich ihm eine in die Fresse haute, ist er weggerannt.",
@@ -8577,11 +8771,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Cold head, warm feet – that's the best way to keep the doctor away.",
     "source": "wiktionary",
     "lemmas": [
       "Fuß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb5741c067": {
     "text": "„Als Nettie ihn ansah, glaubte sie, er habe vielleicht gerade einen Furz gelassen.“",
@@ -9796,11 +9991,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put a fire under someone",
     "source": "wiktionary",
     "lemmas": [
       "Hintern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb64e25328": {
     "text": "„Für die Sufis war der Gedanke einer Versöhnung des Islam mit dem Hinduismus nichts Neues.“",
@@ -10449,22 +10645,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that doesn't mean anything",
     "source": "wiktionary",
     "lemmas": [
       "wollen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb69cabc5f": {
     "text": "gesund wie ein Fisch im Wasser sein",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be as fit as a fiddle",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb6a382e6d": {
     "text": "Die Früchte trocknen auf großen Gestellen in der Sonne und werden anschließend verpackt und verkauft.",
@@ -10705,14 +10903,12 @@
     "type": "expression",
     "note": ") – aufschreiben und nachhalten",
     "synonyms": [],
-    "translation": null,
+    "translation": "keep a record",
     "source": "wiktionary",
     "lemmas": [
       "führen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "bb6ecfafd5": {
     "text": "„Er sagte mir, ich solle nicht so traurig dreinblicken, denn das passe nicht zu mir, und wenn ich Lust hätte, solle ich zu seinem Treff am Sonntagnachmittag kommen.“",
@@ -12029,11 +12225,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Give them an inch and they'll take a mile.",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb77b96d64": {
     "text": "Eine Orgel ist kein Akkordeon, sie sieht ihm nur ähnlich.",
@@ -13379,10 +13576,25 @@
   },
   "bb8718bdd8": {
     "text": "Er wollte auf keinen Fall mit ihr sprechen.",
-    "translation": null,
+    "translation": "He absolutely did not want to speak with her.",
     "source": "wiktionary",
     "lemmas": [
       "auf keinen Fall"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wollte",
+        "lemma": "wollen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sprechen",
+        "lemma": "sprechen",
+        "pos": "verb",
+        "gloss_hint": "speak"
+      }
     ]
   },
   "bb878f9acd": {
@@ -13616,18 +13828,46 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The dream is over.",
     "source": "wiktionary",
     "lemmas": [
       "Traum"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb8899f23c": {
     "text": "„Baerbock setzte sich sogar selbst für M. ein.“",
-    "translation": null,
+    "translation": "Baerbock even advocated for M. herself.",
     "source": "wiktionary",
     "lemmas": [
       "M."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Baerbock",
+        "lemma": "Baerbock",
+        "pos": "proper noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "setzte",
+        "lemma": "setzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "selbst",
+        "lemma": "selbst",
+        "pos": "pronoun",
+        "gloss_hint": "self"
+      },
+      {
+        "form": "ein",
+        "lemma": "einsetzen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "bb88b09479": {
@@ -14003,11 +14243,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have something on one's side",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb8f285563": {
     "text": "Das Frachtschiff ist am Kai vertäut.",
@@ -14389,10 +14630,31 @@
   },
   "bb934c08df": {
     "text": "Ich mache eine Diät und darf mittags nur 3 BE zu mir nehmen.",
-    "translation": null,
+    "translation": "I'm on a diet and at lunch I'm only allowed to consume 3 carbohydrate units.",
     "source": "wiktionary",
     "lemmas": [
       "BE"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Diät",
+        "lemma": "Diät",
+        "pos": "noun",
+        "gloss_hint": "diet"
+      },
+      {
+        "form": "mittags",
+        "lemma": "mittags",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "nehmen",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": "take"
+      }
     ]
   },
   "bb93825204": {
@@ -14735,23 +14997,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "threesome",
     "source": "wiktionary",
     "lemmas": [
       "flott",
       "Dreier"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb99df82fa": {
     "text": "im Rennen bleiben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to stay in the race",
     "source": "wiktionary",
     "lemmas": [
       "bleiben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bb9a152ee5": {
     "text": "In der Rushhour fluten die Menschen aus der U-Bahn.",
@@ -14818,10 +15082,55 @@
   },
   "bb9a4690b8": {
     "text": "„Um die Ergebnisse unseres Tuns wäre es besser bestellt, wenn die Denker öfter aus sich heraus und die Macher gelegentlich in sich gehen würden.“",
-    "translation": null,
+    "translation": "The results of our actions would be better if thinkers more often stepped outside themselves and doers occasionally looked within.",
     "source": "wiktionary",
     "lemmas": [
       "Macher"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ergebnisse",
+        "lemma": "Ergebnis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tuns",
+        "lemma": "Tun",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bestellt",
+        "lemma": "bestellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Denker",
+        "lemma": "Denker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "heraus",
+        "lemma": "heraus",
+        "pos": "adverb",
+        "gloss_hint": "out"
+      },
+      {
+        "form": "Macher",
+        "lemma": "Macher",
+        "pos": "noun",
+        "gloss_hint": "doer"
+      },
+      {
+        "form": "gehen",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "go"
+      }
     ]
   },
   "bb9a72eb98": {
@@ -15437,13 +15746,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to let someone off with a warning",
     "source": "wiktionary",
     "lemmas": [
       "Recht",
       "Gnade"
     ],
-    "ref": "phrases/Gnade vor Recht ergehen lassen"
+    "ref": "phrases/Gnade vor Recht ergehen lassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "bba0e32e5d": {
     "text": "Mehrere Direktorinnen können ein Direktorium bilden.",
@@ -15529,11 +15839,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to claim one's rights",
     "source": "wiktionary",
     "lemmas": [
       "Recht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bba2a06668": {
     "text": "jemandem geht das Messer in der Hose auf",
@@ -16489,11 +16800,12 @@
     "type": "expression",
     "note": "jemand ist durch etwas schmerzlich berührt",
     "synonyms": [],
-    "translation": null,
+    "translation": "someone's heart bleeds",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bbaabc2216": {
     "text": "Du bist schuld, dass wir zu spät kommen.",
@@ -16776,11 +17088,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to remain a mystery to someone",
     "source": "wiktionary",
     "lemmas": [
       "bleiben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bbae3e93f5": {
     "text": "„‚Ich möchte so gerne auf Außenarbeit, auf Erntekommando‘, bettelt Liebschner. ‚Wenn Sie mich dafür eingeben würden, Herr Hauptwachtmeister?‘“",
@@ -17472,11 +17785,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When the heart burns, the head must fetch water.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bbb4f6dbe5": {
     "text": "„Und so mag auch das Haus Möttelin (Mötteli) zunächst für sich allein das Geschäft begonnen haben; je weiter es aber seine Kreise zog, desto mehr schien sich ihm die Vereinigung mit andern Ravensburger Kaufmannshäusern zu empfehlen.“",
@@ -19373,14 +19687,12 @@
     "type": "expression",
     "note": "…",
     "synonyms": [],
-    "translation": null,
+    "translation": "as the saying goes",
     "source": "wiktionary",
     "lemmas": [
       "schön"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "bbbf9a6466": {
     "text": "„Am Ende einigten sich die Staatschefs auf eine windelweiche Resolution.“",
@@ -21176,10 +21488,79 @@
   },
   "bbcbe449f8": {
     "text": "Naturidentisch, künstlich, natürlich - für Verbraucher waren die Bezeichnungen für Aromen in Lebensmitteln bislang ein beständiges Ärgernis: Verwirrende, unbestimmte Begriffe, bei denen keiner verstand, um welche Inhaltsstoffe es sich tatsächlich handelte.",
-    "translation": null,
+    "translation": "Nature-identical, artificial, natural—for consumers, the designations for flavourings in food have so far been a constant source of irritation: confusing, vague terms that no one understood, concerning which ingredients were actually involved.",
     "source": "wiktionary",
     "lemmas": [
       "verwirrend"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Naturidentisch",
+        "lemma": "naturidentisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "künstlich",
+        "lemma": "künstlich",
+        "pos": "adjective",
+        "gloss_hint": "artificial"
+      },
+      {
+        "form": "natürlich",
+        "lemma": "natürlich",
+        "pos": "adjective",
+        "gloss_hint": "natural"
+      },
+      {
+        "form": "Verbraucher",
+        "lemma": "Verbraucher",
+        "pos": "noun",
+        "gloss_hint": "consumer"
+      },
+      {
+        "form": "Bezeichnungen",
+        "lemma": "Bezeichnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aromen",
+        "lemma": "Aroma",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lebensmitteln",
+        "lemma": "Lebensmittel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ärgernis",
+        "lemma": "Ärgernis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Begriffe",
+        "lemma": "Begriff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verstand",
+        "lemma": "verstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Inhaltsstoffe",
+        "lemma": "Inhaltsstoff",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "bbcc597d6f": {
@@ -21340,12 +21721,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put pressure on someone",
     "source": "wiktionary",
     "lemmas": [
       "Druck"
     ],
-    "ref": "phrases/Druck ausüben"
+    "ref": "phrases/Druck ausüben",
+    "translation_model": "openai/gpt-4.1"
   },
   "bbcf506ce9": {
     "text": "Hast du ein(en) Gummi dabei?",
@@ -21496,11 +21878,12 @@
     "type": "expression",
     "note": "von zwei schlechten Dingen das etwas bessere bevorzugen",
     "synonyms": [],
-    "translation": null,
+    "translation": "choose the lesser of two evils",
     "source": "wiktionary",
     "lemmas": [
       "wählen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bbd0cc521f": {
     "text": "Bei dem Geschnarche ihres Mannes konnte sie nicht richtig schlafen und war jeden Morgen wie gerädert.",
@@ -22095,10 +22478,19 @@
   },
   "bbd402f28a": {
     "text": "„Lassen Sie ein Röntgen anfertigen“.",
-    "translation": null,
+    "translation": "Have an X-ray taken.",
     "source": "wiktionary",
     "lemmas": [
       "Röntgen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Röntgen",
+        "lemma": "Röntgen",
+        "pos": "noun",
+        "gloss_hint": "X-ray"
+      }
     ]
   },
   "bbd57ff9fc": {
@@ -22244,10 +22636,37 @@
   },
   "bbd6be42b4": {
     "text": "Wann esst ihr gewöhnlich zu Abend?",
-    "translation": null,
+    "translation": "When do you usually have dinner?",
     "source": "wiktionary",
     "lemmas": [
       "zu Abend essen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wann",
+        "lemma": "wann",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "esst",
+        "lemma": "essen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gewöhnlich",
+        "lemma": "gewöhnlich",
+        "pos": "adjective",
+        "gloss_hint": "ordinary"
+      },
+      {
+        "form": "Abend",
+        "lemma": "Abend",
+        "pos": "noun",
+        "gloss_hint": "evening"
+      }
     ]
   },
   "bbd7d4ce04": {
@@ -22330,10 +22749,43 @@
   },
   "bbd80220c2": {
     "text": "„Geh mal ins Kleine Lager und erkundige dich, was dort losgewesen ist.“",
-    "translation": null,
+    "translation": "Go to the small storage area and find out what happened there.",
     "source": "wiktionary",
     "lemmas": [
       "erkundigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geh",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kleine",
+        "lemma": "Kleine",
+        "pos": "noun",
+        "gloss_hint": "small"
+      },
+      {
+        "form": "Lager",
+        "lemma": "Lager",
+        "pos": "noun",
+        "gloss_hint": "storage"
+      },
+      {
+        "form": "erkundige",
+        "lemma": "erkunden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "losgewesen",
+        "lemma": "losgehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "bbd8c8c233": {
@@ -22872,10 +23324,49 @@
   },
   "bbdd5dfb64": {
     "text": "„Die Erzählung der Bundesregierung der ersten Tage nach dem Anschlag, dass es sich bei Anis Amri um einen Kleinkriminellen handelte, den man nicht auf dem Zettel hatte, diese Geschichte stimmt vorne und hinten nicht.“",
-    "translation": null,
+    "translation": "The federal government's account in the first days after the attack, that Anis Amri was a petty criminal who wasn't on their radar, this story doesn't hold up at all.",
     "source": "wiktionary",
     "lemmas": [
       "vorne und hinten nicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erzählung",
+        "lemma": "Erzählung",
+        "pos": "noun",
+        "gloss_hint": "narration"
+      },
+      {
+        "form": "Bundesregierung",
+        "lemma": "Bundesregierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anschlag",
+        "lemma": "Anschlag",
+        "pos": "noun",
+        "gloss_hint": "attack"
+      },
+      {
+        "form": "Kleinkriminellen",
+        "lemma": "Kleinkrimineller",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zettel",
+        "lemma": "Zettel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geschichte",
+        "lemma": "Geschichte",
+        "pos": "noun",
+        "gloss_hint": "story"
+      }
     ]
   },
   "bbddd4f51b": {
@@ -23006,15 +23497,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "free fall",
     "source": "wiktionary",
     "lemmas": [
       "frei"
     ],
     "ref": "phrases/freier Fall",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "bbdff6903e": {
     "text": "„Die Psychopathin untergräbt oft das Selbstwertgefühl anderer. Sie tut dies, indem sie Gerüchte verbreitet, das Umfeld des Opfers einschüchtert und gegen es aufbringt.“",
@@ -23333,12 +23822,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "work to someone's advantage",
     "source": "wiktionary",
     "lemmas": [
       "Mühle"
     ],
-    "ref": "phrases/Wasser auf jemandes Mühle leiten"
+    "ref": "phrases/Wasser auf jemandes Mühle leiten",
+    "translation_model": "openai/gpt-4.1"
   },
   "bbe43d0081": {
     "text": "„Eine schlanke Zugbegleiterin legte mir lächelnd eine dunkle Schokopraline auf den blaugrauen Ausklapptisch.“",
@@ -23465,11 +23955,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not believe your own eyes",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bbe756ca3f": {
     "text": "Er nahm all die Korallen in seine linke Hand und begann, sie sorgfältig zu lesen.",
@@ -25380,10 +25871,31 @@
   },
   "bbfaf847fd": {
     "text": "Ich habe sie dieser Tage noch gesehen.",
-    "translation": null,
+    "translation": "I saw her just recently.",
     "source": "wiktionary",
     "lemmas": [
       "dieser Tage"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ich",
+        "lemma": "ich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesehen",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tage",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "bbfb590cc3": {

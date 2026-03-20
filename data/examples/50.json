@@ -1209,11 +1209,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to end one's life",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5012c9cf68": {
     "text": "Klagenfurt hat eine schöne Altstadt.",
@@ -2929,11 +2930,12 @@
     "type": "expression",
     "note": "sämtliche Folgen einer Sache tragen, einen Fehler machen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to get oneself into trouble",
     "source": "wiktionary",
     "lemmas": [
       "Suppe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5029198a97": {
     "text": "Der Redner brachte seine Argumente verständlich vor.",
@@ -3450,12 +3452,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pull a fast one on someone",
     "source": "wiktionary",
     "lemmas": [
       "Ohr"
     ],
-    "ref": "phrases/übers Ohr hauen"
+    "ref": "phrases/übers Ohr hauen",
+    "translation_model": "openai/gpt-4.1"
   },
   "502b9ca7a0": {
     "text": "„Eigentlich hast du Recht!“ Na also. Aber wieso nicht „Du hast Recht!“? Weil wir uns eigentlich immer so ein Hintertürchen offen halten wollen.",
@@ -4084,10 +4087,37 @@
   },
   "502d0a32f7": {
     "text": "Hafer wird ab Anfang März ausgesät.",
-    "translation": null,
+    "translation": "Oats are sown from early March onwards.",
     "source": "wiktionary",
     "lemmas": [
       "Hafer"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hafer",
+        "lemma": "Hafer",
+        "pos": "noun",
+        "gloss_hint": "oat"
+      },
+      {
+        "form": "Anfang",
+        "lemma": "Anfang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "März",
+        "lemma": "März",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgesät",
+        "lemma": "aussäen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "502d2ed154": {
@@ -4893,12 +4923,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to send someone to the gallows",
     "source": "wiktionary",
     "lemmas": [
       "Galgen"
     ],
-    "ref": "phrases/jemanden an den Galgen bringen"
+    "ref": "phrases/jemanden an den Galgen bringen",
+    "translation_model": "openai/gpt-4.1"
   },
   "50382a2ee4": {
     "text": "Das Pferd übersprang die Hürden.",
@@ -5181,11 +5212,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is a different kind of person",
     "source": "wiktionary",
     "lemmas": [
       "Schlag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "503a2a385e": {
     "text": "Der indische Elefant „Osama“ aus dem indischen Bundesstaat Assam ist am Donnerstag von den Behörden zum Abschuss freigegeben worden.",
@@ -5575,11 +5607,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "simpleton",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "503eb505ac": {
     "text": "Im Message-Fenster gibt es eine Auswahl an bunten Smileys.",
@@ -5697,10 +5730,61 @@
   },
   "504038955b": {
     "text": "„Wie sich herausstellte, hatten Fahrer und Offizielle des Teams Telekom und später der T-Mobile-Mannschaft mir, ohne mit der Wimper zu zucken, ins Gesicht und Mikrofon gelogen.“",
-    "translation": null,
+    "translation": "As it turned out, drivers and officials from Team Telekom and later the T-Mobile team lied to me straight in the face and into the microphone without batting an eyelid.",
     "source": "wiktionary",
     "lemmas": [
       "ohne mit der Wimper zu zucken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fahrer",
+        "lemma": "Fahrer",
+        "pos": "noun",
+        "gloss_hint": "driver"
+      },
+      {
+        "form": "Offizielle",
+        "lemma": "Offizieller",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Teams",
+        "lemma": "Team",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mannschaft",
+        "lemma": "Mannschaft",
+        "pos": "noun",
+        "gloss_hint": "team"
+      },
+      {
+        "form": "Wimper",
+        "lemma": "Wimper",
+        "pos": "noun",
+        "gloss_hint": "eyelash"
+      },
+      {
+        "form": "Gesicht",
+        "lemma": "Gesicht",
+        "pos": "noun",
+        "gloss_hint": "face"
+      },
+      {
+        "form": "Mikrofon",
+        "lemma": "Mikrofon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gelogen",
+        "lemma": "lügen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "50414d7fe5": {
@@ -6928,10 +7012,31 @@
   },
   "5048e087a7": {
     "text": "„Die ersten Besuche in der Glückauf-Kampfbahn – ich war aufgeregt wie Bolle.“",
-    "translation": null,
+    "translation": "My first visits to the Glückauf stadium – I was excited as anything.",
     "source": "wiktionary",
     "lemmas": [
       "wie Bolle"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Besuche",
+        "lemma": "Besuch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Glückauf-Kampfbahn",
+        "lemma": "Glückauf-Kampfbahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgeregt",
+        "lemma": "aufgeregt",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "5049d25dd9": {
@@ -7820,11 +7925,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "barely manage to get by",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "50535de3d2": {
     "text": "Das Baby ist seit einer Woche überfällig.",
@@ -8990,10 +9096,43 @@
   },
   "505d997757": {
     "text": "So ein Handy der ersten Generation kann man heutzutage an jeder Ecke für einen Apfel und ein Ei kaufen.",
-    "translation": null,
+    "translation": "Nowadays you can buy a first-generation mobile phone at any street corner for a song.",
     "source": "wiktionary",
     "lemmas": [
       "etwas für einen Apfel und ein Ei kaufen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Handy",
+        "lemma": "Handy",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Generation",
+        "lemma": "Generation",
+        "pos": "noun",
+        "gloss_hint": "generation (technology)"
+      },
+      {
+        "form": "kaufen",
+        "lemma": "kaufen",
+        "pos": "verb",
+        "gloss_hint": "buy"
+      },
+      {
+        "form": "Ecke",
+        "lemma": "Ecke",
+        "pos": "noun",
+        "gloss_hint": "street corner"
+      },
+      {
+        "form": "Apfel",
+        "lemma": "Apfel",
+        "pos": "noun",
+        "gloss_hint": "apple"
+      }
     ]
   },
   "505de18d0e": {
@@ -9097,11 +9236,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "act like a macho man",
     "source": "wiktionary",
     "lemmas": [
       "Macho"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "505f7fc0ab": {
     "text": "„Der Roman endet damit, dass mit dem Ende des Maquis auch das Leben des Helden zu Ende gehen musste, bzw. dass sein Leben an diesem Schauplatz hing […]“",
@@ -10232,11 +10372,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the best house in town",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "50751594a5": {
     "text": "Die Linie wird zwischendurch von Markierungen unterbrochen.",
@@ -12237,12 +12378,13 @@
     "synonyms": [
       "Pulverpfanne"
     ],
-    "translation": null,
+    "translation": "have something up one's sleeve",
     "source": "wiktionary",
     "lemmas": [
       "Pfanne"
     ],
-    "ref": "phrases/etwas auf der Pfanne haben"
+    "ref": "phrases/etwas auf der Pfanne haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "5088d23bea": {
     "text": "„‚Mein Sohn ist Stier‘, verkündet etwa eine Mutter stolz, ‚er wird später mal beständig und treu sein und außerdem gut mit Geld umgehen können.‘“",
@@ -12544,10 +12686,25 @@
   },
   "5089d1c00a": {
     "text": "Das mit Rinna ist echt am Arsch, wenn du mich fragst. Die hat auch schon nen andren.",
-    "translation": null,
+    "translation": "The thing with Rinna is really messed up, if you ask me. She's already got someone else.",
     "source": "wiktionary",
     "lemmas": [
       "am Arsch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Arsch",
+        "lemma": "Arsch",
+        "pos": "noun",
+        "gloss_hint": "asshole"
+      },
+      {
+        "form": "echt",
+        "lemma": "echt",
+        "pos": "adjective",
+        "gloss_hint": "genuine"
+      }
     ]
   },
   "508a1cd8ac": {
@@ -13368,10 +13525,55 @@
   },
   "50921e1598": {
     "text": "„Unter Papst Gregor dem Großen (590-604) waren Benediktinermönche aus Rom nach England gekommen und hatten die Christianisierung in die Wege geleitet.“",
-    "translation": null,
+    "translation": "Under Pope Gregory the Great (590-604), Benedictine monks from Rome had come to England and initiated the Christianization.",
     "source": "wiktionary",
     "lemmas": [
       "etwas in die Wege leiten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Papst",
+        "lemma": "Papst",
+        "pos": "noun",
+        "gloss_hint": "pope"
+      },
+      {
+        "form": "Benediktinermönche",
+        "lemma": "Benediktinermönch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rom",
+        "lemma": "Rom",
+        "pos": "noun",
+        "gloss_hint": "Rome"
+      },
+      {
+        "form": "England",
+        "lemma": "England",
+        "pos": "noun",
+        "gloss_hint": "England"
+      },
+      {
+        "form": "Christianisierung",
+        "lemma": "Christianisierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gekommen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "geleitet",
+        "lemma": "leiten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "50930d26e7": {
@@ -14693,13 +14895,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "vent one's spleen",
     "source": "wiktionary",
     "lemmas": [
       "Luft",
       "Herz"
     ],
-    "ref": "phrases/seinem Herzen Luft machen"
+    "ref": "phrases/seinem Herzen Luft machen",
+    "translation_model": "openai/gpt-4.1"
   },
   "509f9bc881": {
     "text": "„Jeder Haushalt besitzt zwei oder drei Fahrzeuge.“",
@@ -15399,10 +15602,37 @@
   },
   "50a77d665f": {
     "text": "Wenns brennt, ruft man die Feuerwehr und rennt am besten weg.",
-    "translation": null,
+    "translation": "When there's a fire, you call the fire department and it's best to run away.",
     "source": "wiktionary",
     "lemmas": [
       "wenns"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "brennt",
+        "lemma": "brennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Feuerwehr",
+        "lemma": "Feuerwehr",
+        "pos": "noun",
+        "gloss_hint": "fire department"
+      },
+      {
+        "form": "ruft",
+        "lemma": "rufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "rennt",
+        "lemma": "rennen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "50a78b8f3f": {
@@ -15992,10 +16222,49 @@
   },
   "50ac84daf1": {
     "text": "„Die nötigen Aufschlüsse würden ihnen schon die Bücher geben, auch könne ihnen zweifellos Monsieur de Faverges von sich aus oder durch Vermittlung befreundeter alter Edelleute behilflich sein.“",
-    "translation": null,
+    "translation": "The necessary information would be provided to them by the books, and Monsieur de Faverges could undoubtedly assist them either on his own initiative or through the mediation of befriended old nobles.",
     "source": "wiktionary",
     "lemmas": [
       "Aufschluss"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Aufschlüsse",
+        "lemma": "Aufschluss",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bücher",
+        "lemma": "Buch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geben",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": "give"
+      },
+      {
+        "form": "Vermittlung",
+        "lemma": "Vermittlung",
+        "pos": "noun",
+        "gloss_hint": "mediation"
+      },
+      {
+        "form": "Edelleute",
+        "lemma": "Edelmann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "behilflich",
+        "lemma": "behilflich",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "50ad113c65": {
@@ -16003,11 +16272,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get caught up in the system",
     "source": "wiktionary",
     "lemmas": [
       "Mühle"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "50aee03ea8": {
     "text": "Du fragst sie nach der Uhrzeit.",
@@ -16509,10 +16779,19 @@
   },
   "50b09ff7b6": {
     "text": "10. Platz - Müller-Lüdenscheid",
-    "translation": null,
+    "translation": "10th place – Müller-Lüdenscheid",
     "source": "wiktionary",
     "lemmas": [
       "10."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Platz",
+        "lemma": "Platz",
+        "pos": "noun",
+        "gloss_hint": "rank"
+      }
     ]
   },
   "50b0a7cb12": {
@@ -18217,11 +18496,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at the table",
     "source": "wiktionary",
     "lemmas": [
       "Tisch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "50c2682bf7": {
     "text": "„Meine Mutter war da bei einem Patentanwalt und spielte Haushälterin, Köchin, Kindermädchen und Waschfrau zugleich, und alles für Unterkunft, Essen, abgelegte Kleider und Dankeschön.“",
@@ -18659,12 +18939,13 @@
     "type": "expression",
     "note": "sich maßlos ärgern",
     "synonyms": [],
-    "translation": null,
+    "translation": "get really angry",
     "source": "wiktionary",
     "lemmas": [
       "grün"
     ],
-    "ref": "phrases/sich grün und blau ärgern"
+    "ref": "phrases/sich grün und blau ärgern",
+    "translation_model": "openai/gpt-4.1"
   },
   "50c4ff2227": {
     "text": "durch Mark und Knochen",
@@ -19109,12 +19390,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pass away",
     "source": "wiktionary",
     "lemmas": [
       "für immer"
     ],
-    "ref": "phrases/die Augen für immer schließen"
+    "ref": "phrases/die Augen für immer schließen",
+    "translation_model": "openai/gpt-4.1"
   },
   "50ca0b1043": {
     "text": "Auf zahlreiche Beschwerden der Nachbarn hin wurde der Studentenwohngemeinschaft schließlich die Wohnung gekündigt.",
@@ -20113,10 +20395,25 @@
   },
   "50d4b59c0f": {
     "text": "So, du meinst also, das sei spaßig?",
-    "translation": null,
+    "translation": "So, you're saying that's funny?",
     "source": "wiktionary",
     "lemmas": [
       "spaßig"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "meinst",
+        "lemma": "meinen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "spaßig",
+        "lemma": "spaßig",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "50d51b31ac": {
@@ -20173,11 +20470,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have something going on",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "50d7a76a73": {
     "text": "„Rhodesien mit seinen etwa 3 Millionen Einwohnern (1960) hatte eine größere Fläche als die Bundesrepublik Deutschland, aber die Zahl der weißen Einwohner war nie größer als die von Bonn.“",
@@ -20627,11 +20925,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to ignore something",
     "source": "wiktionary",
     "lemmas": [
       "schlagen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "50dc4d727f": {
     "text": "Open Source fördert \"U-Boot Projekte\" in Konzernen",
@@ -21439,11 +21738,13 @@
   },
   "50e729fea7": {
     "text": "Ubr(2) r. (zweimal unterbrochen rot)",
-    "translation": null,
+    "translation": "Ubr(2) r. (interrupted twice red)",
     "source": "wiktionary",
     "lemmas": [
       "r."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "50e796a0d0": {
     "text": "„Gerade ein Apostel, der uns in basses Erstaunen setzt, wie viele Gemeindegründungen ihm später gelangen, blieb bei seinem ersten Versuch erfolglos, obwohl er drei Jahre — also über eine, mit dem Maßstab seiner später rastlosen Mobilität gemessen, ungewöhnlich lange Zeitspanne – in ein und derselben Vorlandregion wirkte.“",
@@ -23331,18 +23632,106 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have lost one's mind",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "50fca92853": {
     "text": "„[1991, kurz vor dem Zusammenbruch der Sowjetunion:] »Das war eine ganz spezielle Zeit, weil es dort drunter und drüber ging und ich mit Armut und Elend konfrontiert war in diesen Wochen, in denen ich da als Journalistin herumgereist bin.«“",
-    "translation": null,
+    "translation": "[1991, shortly before the collapse of the Soviet Union:] \"It was a very special time because everything was in chaos and I was confronted with poverty and misery during those weeks when I was traveling around as a journalist.\"",
     "source": "wiktionary",
     "lemmas": [
       "drunter und drüber"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kurz",
+        "lemma": "kurz",
+        "pos": "adjective",
+        "gloss_hint": "brief"
+      },
+      {
+        "form": "Zusammenbruch",
+        "lemma": "Zusammenbruch",
+        "pos": "noun",
+        "gloss_hint": "collapse"
+      },
+      {
+        "form": "Sowjetunion",
+        "lemma": "Sowjetunion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ganz",
+        "lemma": "ganz",
+        "pos": "adjective",
+        "gloss_hint": "whole"
+      },
+      {
+        "form": "spezielle",
+        "lemma": "speziell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      },
+      {
+        "form": "drunter",
+        "lemma": "drunter",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "drüber",
+        "lemma": "drüber",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Armut",
+        "lemma": "Armut",
+        "pos": "noun",
+        "gloss_hint": "poverty"
+      },
+      {
+        "form": "Elend",
+        "lemma": "Elend",
+        "pos": "noun",
+        "gloss_hint": "misery"
+      },
+      {
+        "form": "konfrontiert",
+        "lemma": "konfrontieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wochen",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Journalistin",
+        "lemma": "Journalistin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "herumgereist",
+        "lemma": "herumreisen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "50fd2eee20": {

@@ -1713,11 +1713,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lose ground",
     "source": "wiktionary",
     "lemmas": [
       "Boden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "820d12a0a7": {
     "text": "„Das von A.J. Hucket verbreitete moderne Bungee-Jumping wird, wie auch das Kine-Swinging, bei dem der Fall in ein Bergsteigerseil in seitwärtigen Pendelbewegungen ausgeschwungen wird, als abenteuerliches Vergnügen, als artistische Herausforderung, als kühne Präzisionskunst, als Mutprobe, als extremes Training der Seele […], als Psychotest verstanden und praktiziert.“",
@@ -2490,10 +2491,55 @@
   },
   "8214ce957d": {
     "text": "„Oder Zöllner erschießt, in Tarantino-Manier ohne mit der Wimper zu zucken, den unfreundlichen Zugschaffner.“",
-    "translation": null,
+    "translation": "Or Zöllner shoots, in Tarantino fashion without batting an eyelid, the unfriendly train conductor.",
     "source": "wiktionary",
     "lemmas": [
       "ohne mit der Wimper zu zucken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zöllner",
+        "lemma": "Zöllner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erschießt",
+        "lemma": "erschießen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tarantino-Manier",
+        "lemma": "Tarantino-Manier",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wimper",
+        "lemma": "Wimper",
+        "pos": "noun",
+        "gloss_hint": "eyelash"
+      },
+      {
+        "form": "zucken",
+        "lemma": "zucken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "unfreundlichen",
+        "lemma": "unfreundlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zugschaffner",
+        "lemma": "Zugschaffner",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "82150c24f6": {
@@ -2659,10 +2705,43 @@
   },
   "8219994b24": {
     "text": "„Es geht die Rede, vor allem ahnungslose Ausländer würden von den Fahrern »übers Ohr gehauen«.“",
-    "translation": null,
+    "translation": "There is talk that especially unsuspecting foreigners would be cheated by the drivers.",
     "source": "wiktionary",
     "lemmas": [
       "es geht die Rede"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rede",
+        "lemma": "Rede",
+        "pos": "noun",
+        "gloss_hint": "speech"
+      },
+      {
+        "form": "ahnungslose",
+        "lemma": "ahnungslos",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausländer",
+        "lemma": "Ausländer",
+        "pos": "noun",
+        "gloss_hint": "foreigner"
+      },
+      {
+        "form": "Fahrern",
+        "lemma": "Fahrer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "übers Ohr gehauen",
+        "lemma": "übers Ohr hauen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "821a04f73a": {
@@ -3249,10 +3328,79 @@
   },
   "821dee0b04": {
     "text": "„Arme Deutsche! Während sie zum Lachen in den Keller gehen, sind in Paris selbst derbste Witze salonfähig: Gag-Garant der Saison ist Dominique Strauss-Kahn.“",
-    "translation": null,
+    "translation": "Poor Germans! While they have to go to the cellar for a laugh, in Paris even the coarsest jokes are socially acceptable: the gag guarantee of the season is Dominique Strauss-Kahn.",
     "source": "wiktionary",
     "lemmas": [
       "zum Lachen in den Keller gehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Arme",
+        "lemma": "arm",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutsche",
+        "lemma": "Deutsche",
+        "pos": "noun",
+        "gloss_hint": "German citizen"
+      },
+      {
+        "form": "Lachen",
+        "lemma": "Lachen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Keller",
+        "lemma": "Keller",
+        "pos": "noun",
+        "gloss_hint": "cellar"
+      },
+      {
+        "form": "Paris",
+        "lemma": "Paris",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "derbste",
+        "lemma": "derb",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Witze",
+        "lemma": "Witz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "salonfähig",
+        "lemma": "salonfähig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gag-Garant",
+        "lemma": "Gag-Garant",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Saison",
+        "lemma": "Saison",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dominique Strauss-Kahn",
+        "lemma": "Dominique Strauss-Kahn",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "821ebc762c": {
@@ -3313,12 +3461,13 @@
     "type": "expression",
     "note": "jemandem durch Kritik absichtlich schaden; jemanden erledigen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to throw someone under the bus",
     "source": "wiktionary",
     "lemmas": [
       "Pfanne",
       "hauen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8222c35871": {
     "text": "„An diesem Tag flog der Kalifornier Mike Harker, der als Soldat in Deutschland stationiert war, mit einem Hängegleiter von der Zugspitze.“",
@@ -3518,11 +3667,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a screw loose",
     "source": "wiktionary",
     "lemmas": [
       "Waffel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8224f739ef": {
     "text": "„Bei einem altgedienten SPD-Politiker würde ich jetzt nach dem werten Gatten fragen.“",
@@ -3617,14 +3767,12 @@
     "type": "expression",
     "note": "nur noch sehr dünn aussehend",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be skin and bones",
     "source": "wiktionary",
     "lemmas": [
       "Fleisch"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "82272f4c60": {
     "text": "„»Ich glaube, wir waren ohnehin fertig, Madam«, knurrte er über die Schulter, geleitete seinen Gast aus dem Haus, über den Innenhof und in sein Gemach im Bergfried“",
@@ -9473,11 +9621,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on the same wavelength",
     "source": "wiktionary",
     "lemmas": [
       "Wellenlänge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8257313cd9": {
     "text": "„Vor uns klaffte ein mächtiger Riss, mehrere Dutzend Meter breit, der sich im Zickzack über die Erdkruste schlängelte, soweit das Auge reichte.“",
@@ -10445,11 +10594,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "rent including heating costs",
     "source": "wiktionary",
     "lemmas": [
       "Miete"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "825f64a761": {
     "text": "wie ein Auto gucken",
@@ -10698,10 +10848,37 @@
   },
   "8262abcbc0": {
     "text": "Heute schert ihr endlich die Wiese.",
-    "translation": null,
+    "translation": "Today you finally mow the meadow.",
     "source": "wiktionary",
     "lemmas": [
       "scheren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "schert",
+        "lemma": "scheren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "endlich",
+        "lemma": "endlich",
+        "pos": "adverb",
+        "gloss_hint": "finally"
+      },
+      {
+        "form": "Wiese",
+        "lemma": "Wiese",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "8262eefa13": {
@@ -11065,10 +11242,121 @@
   },
   "826a22659b": {
     "text": "„Die Bilanz des Krieges stellte an Grauen alles bisherige in den Schatten: Rund 60 Millionen Tote weltweit, sechs Millionen von den Nationalsozialisten ermordete Juden, weite Teile Europas zerstört, Millionen Menschen verschollen oder vertrieben.“",
-    "translation": null,
+    "translation": "The balance sheet of the war overshadowed all previous horrors: around 60 million dead worldwide, six million Jews murdered by the Nazis, large parts of Europe destroyed, millions of people missing or displaced.",
     "source": "wiktionary",
     "lemmas": [
       "in den Schatten stellen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bilanz",
+        "lemma": "Bilanz",
+        "pos": "noun",
+        "gloss_hint": "balance sheet"
+      },
+      {
+        "form": "Krieges",
+        "lemma": "Krieg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grauen",
+        "lemma": "Grauen",
+        "pos": "noun",
+        "gloss_hint": "horror"
+      },
+      {
+        "form": "bisherige",
+        "lemma": "bisherig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schatten",
+        "lemma": "Schatten",
+        "pos": "noun",
+        "gloss_hint": "shadow"
+      },
+      {
+        "form": "Millionen",
+        "lemma": "Million",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tote",
+        "lemma": "Toter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "weltweit",
+        "lemma": "weltweit",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "sechs",
+        "lemma": "sechs",
+        "pos": "numeral",
+        "gloss_hint": "six"
+      },
+      {
+        "form": "Juden",
+        "lemma": "Jude",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nationalsozialisten",
+        "lemma": "Nationalsozialist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ermordete",
+        "lemma": "ermorden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Teile",
+        "lemma": "Teil",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Europas",
+        "lemma": "Europa",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zerstört",
+        "lemma": "zerstören",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verschollen",
+        "lemma": "verschollen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "vertrieben",
+        "lemma": "vertreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "826aa3e3cb": {
@@ -11931,10 +12219,109 @@
   },
   "827726bc7b": {
     "text": "[…] statt gleich das Maul aufzureißen und große Töne zu spucken, ist es [für Berufseinsteiger] gerade am Anfang wichtig, die Augen und Ohren aufzumachen. Das heißt: Beobachten, wie die Kollegen ihre Arbeit angehen, und genau zuhören, wenn etwas erklärt wird.",
-    "translation": null,
+    "translation": "Instead of immediately opening your mouth and making big claims, it is especially important for career starters at the beginning to keep their eyes and ears open. That means: observe how colleagues approach their work, and listen carefully when something is explained.",
     "source": "wiktionary",
     "lemmas": [
       "große Töne spucken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Maul",
+        "lemma": "Maul",
+        "pos": "noun",
+        "gloss_hint": "mouth"
+      },
+      {
+        "form": "aufzureißen",
+        "lemma": "aufreißen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Töne",
+        "lemma": "Ton",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "spucken",
+        "lemma": "spucken",
+        "pos": "verb",
+        "gloss_hint": "spit"
+      },
+      {
+        "form": "Berufseinsteiger",
+        "lemma": "Berufseinsteiger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anfang",
+        "lemma": "Anfang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Augen",
+        "lemma": "Auge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ohren",
+        "lemma": "Ohr",
+        "pos": "noun",
+        "gloss_hint": "ear"
+      },
+      {
+        "form": "aufzumachen",
+        "lemma": "aufmachen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beobachten",
+        "lemma": "beobachten",
+        "pos": "verb",
+        "gloss_hint": "observe"
+      },
+      {
+        "form": "Kollegen",
+        "lemma": "Kollege",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arbeit",
+        "lemma": "Arbeit",
+        "pos": "noun",
+        "gloss_hint": "task"
+      },
+      {
+        "form": "angehen",
+        "lemma": "angehen",
+        "pos": "verb",
+        "gloss_hint": "deal with"
+      },
+      {
+        "form": "genau",
+        "lemma": "genau",
+        "pos": "adjective",
+        "gloss_hint": "precise"
+      },
+      {
+        "form": "zuhören",
+        "lemma": "zuhören",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "erklärt",
+        "lemma": "erklären",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "827733a27b": {
@@ -13171,11 +13558,12 @@
     "type": "expression",
     "note": "jemand mit Erfahrung und Routine macht ebenfalls Fehler",
     "synonyms": [],
-    "translation": null,
+    "translation": "Even the best make mistakes.",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8285ec2e8f": {
     "text": "„So sehr verlang’ ich nach dem schönen Lichte der Augen, die mich trügerisch entseelen, daß ich, droht mir auch Tod und hämisch Quälen, erneut den Blick voll Sehnsucht darauf richte.“",
@@ -13470,11 +13858,12 @@
     "type": "expression",
     "note": "ein Getriebe herunterschalten, bremsen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to shift down a gear",
     "source": "wiktionary",
     "lemmas": [
       "Gang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "828a357761": {
     "text": "Hinter dem Busch fanden wir ein stark verwestes Aas.",
@@ -13934,11 +14323,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone loses their appetite suddenly",
     "source": "wiktionary",
     "lemmas": [
       "Hals"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8290fbf5f3": {
     "text": "Man muss wieder einmal den Boden wischen, der starrt ja vor Dreck.",
@@ -14614,10 +15004,49 @@
   },
   "8295ed351a": {
     "text": "Du willst um diese Zeit noch mit der U-Bahn fahren? Du bist wohl mit dem Klammerbeutel gepudert!",
-    "translation": null,
+    "translation": "You want to take the subway at this hour? You must be out of your mind!",
     "source": "wiktionary",
     "lemmas": [
       "mit dem Klammerbeutel gepudert sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "willst",
+        "lemma": "wollen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      },
+      {
+        "form": "U-Bahn",
+        "lemma": "U-Bahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fahren",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": "drive"
+      },
+      {
+        "form": "Klammerbeutel",
+        "lemma": "Klammerbeutel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gepudert",
+        "lemma": "pudern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "829684830d": {
@@ -17413,11 +17842,12 @@
     "type": "expression",
     "note": "ein leichtlebiges Mädchen",
     "synonyms": [],
-    "translation": null,
+    "translation": "a party girl",
     "source": "wiktionary",
     "lemmas": [
       "Motte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "82ada0ca30": {
     "text": "„Sie gerät dann in den Unterricht Hainstocks.“",
@@ -18171,23 +18601,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on top",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "82b9823d0c": {
     "text": "jemandem hängt der Magen in den Kniekehlen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be hungry as a wolf",
     "source": "wiktionary",
     "lemmas": [
       "Magen"
     ],
-    "ref": "phrases/jemandem hängt der Magen in den Kniekehlen"
+    "ref": "phrases/jemandem hängt der Magen in den Kniekehlen",
+    "translation_model": "openai/gpt-4.1"
   },
   "82ba1d1a44": {
     "text": "Morgen fliege ich nach Singapur.",
@@ -18920,10 +19352,49 @@
   },
   "82c0cd7e46": {
     "text": "Zurzeit wird überprüft, ob er früher als IM für die DDR gearbeitet hat.",
-    "translation": null,
+    "translation": "Currently it is being checked whether he previously worked as an informant for the GDR.",
     "source": "wiktionary",
     "lemmas": [
       "IM"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zurzeit",
+        "lemma": "Zurzeit",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "überprüft",
+        "lemma": "überprüfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "früher",
+        "lemma": "früher",
+        "pos": "adverb",
+        "gloss_hint": "formerly"
+      },
+      {
+        "form": "IM",
+        "lemma": "IM",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "DDR",
+        "lemma": "DDR",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gearbeitet",
+        "lemma": "arbeiten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "82c133cec4": {
@@ -19043,11 +19514,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be at a loss",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "82c20afbdc": {
     "text": "Eisenbahn und Straße verlaufen parallel.",
@@ -19083,10 +19555,61 @@
   },
   "82c36fde02": {
     "text": "Der Weiße Anischampignon ist eine jung gewachsene Pilzsorte, der sich mit zunehmende Reife verfärbt.",
-    "translation": null,
+    "translation": "The white button mushroom is a young-grown mushroom variety that changes color as it matures.",
     "source": "wiktionary",
     "lemmas": [
       "Weißer Anischampignon"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Weiße",
+        "lemma": "weiß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anischampignon",
+        "lemma": "Anischampignon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "jung",
+        "lemma": "jung",
+        "pos": "adjective",
+        "gloss_hint": "young"
+      },
+      {
+        "form": "gewachsene",
+        "lemma": "wachsen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pilzsorte",
+        "lemma": "Pilzsorte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zunehmende",
+        "lemma": "zunehmend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reife",
+        "lemma": "Reife",
+        "pos": "noun",
+        "gloss_hint": "maturity"
+      },
+      {
+        "form": "verfärbt",
+        "lemma": "verfärben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "82c3e419a9": {
@@ -19270,18 +19793,58 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The work praises the master.",
     "source": "wiktionary",
     "lemmas": [
       "loben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "82c911d773": {
     "text": "„Bei den Männern, die Männer lieben, ohne Bezahlung, just for fun, kommt der eine rasch zum anderen.“",
-    "translation": null,
+    "translation": "Among men who love men, without payment, just for fun, one quickly comes to another.",
     "source": "wiktionary",
     "lemmas": [
       "just for fun"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Männern",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lieben",
+        "lemma": "lieben",
+        "pos": "verb",
+        "gloss_hint": "love"
+      },
+      {
+        "form": "Bezahlung",
+        "lemma": "Bezahlung",
+        "pos": "noun",
+        "gloss_hint": "payment"
+      },
+      {
+        "form": "fun",
+        "lemma": "fun",
+        "pos": "noun",
+        "gloss_hint": "fun (mood)"
+      },
+      {
+        "form": "rasch",
+        "lemma": "rasch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "anderen",
+        "lemma": "ander",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "82c9439159": {
@@ -19520,14 +20083,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be as free as a bird",
     "source": "wiktionary",
     "lemmas": [
       "frei"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "82cbf53358": {
     "text": "jemandem aus der Hand lesen",
@@ -20150,11 +20711,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be able to do whatever one wants",
     "source": "wiktionary",
     "lemmas": [
       "lassen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "82cff549cb": {
     "text": "„Es war die Starre des Visionärs.“",
@@ -20207,10 +20769,115 @@
   },
   "82d0675e01": {
     "text": "„Für das Erzbistum Magdeburg hatte das Restitutionsedikt zur nächsten Folge, daß der Erzherzog Leopold Wilhelm, des Kaisers Sohn, zu seinem Administrator ernannt wurde. Der protestantische Administrator, Christian Wilhelm, hatte bereits im Jahre 1625, als Wallenstein sich Magdeburg näherte, die Stadt verlassen ….“",
-    "translation": null,
+    "translation": "For the Archdiocese of Magdeburg, the Restitution Edict had the consequence that the Archduke Leopold Wilhelm, the Emperor's son, was appointed as its administrator. The Protestant administrator, Christian Wilhelm, had already left the city in 1625, when Wallenstein approached Magdeburg.",
     "source": "wiktionary",
     "lemmas": [
       "Administrator"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erzbistum",
+        "lemma": "Erzbistum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Magdeburg",
+        "lemma": "Magdeburg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Restitutionsedikt",
+        "lemma": "Restitutionsedikt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Folge",
+        "lemma": "Folge",
+        "pos": "noun",
+        "gloss_hint": "consequence"
+      },
+      {
+        "form": "Erzherzog",
+        "lemma": "Erzherzog",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leopold Wilhelm",
+        "lemma": "Leopold Wilhelm",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kaisers",
+        "lemma": "Kaiser",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Administrator",
+        "lemma": "Administrator",
+        "pos": "noun",
+        "gloss_hint": "church administrator"
+      },
+      {
+        "form": "ernannt",
+        "lemma": "ernennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "protestantische",
+        "lemma": "protestantisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Christian Wilhelm",
+        "lemma": "Christian Wilhelm",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bereits",
+        "lemma": "bereits",
+        "pos": "adverb",
+        "gloss_hint": "already"
+      },
+      {
+        "form": "Jahre",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wallenstein",
+        "lemma": "Wallenstein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "näherte",
+        "lemma": "nähern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stadt",
+        "lemma": "Stadt",
+        "pos": "noun",
+        "gloss_hint": "city"
+      },
+      {
+        "form": "verlassen",
+        "lemma": "verlassen",
+        "pos": "verb",
+        "gloss_hint": "left"
+      }
     ]
   },
   "82d09f852f": {
@@ -20983,22 +21650,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not have the slightest idea",
     "source": "wiktionary",
     "lemmas": [
       "Schimmer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "82d679c4fc": {
     "text": "die Butter auf dem Brot behalten",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "keep the butter on the bread",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "82d6807116": {
     "text": "„Bin ich wirklich um die halbe Welt gefahren, um am sinnlosen Geschwafel eines Feerichs zu scheitern?“",
@@ -22310,12 +22979,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take a shit",
     "source": "wiktionary",
     "lemmas": [
       "Neger"
     ],
-    "ref": "phrases/einen Neger abseilen"
+    "ref": "phrases/einen Neger abseilen",
+    "translation_model": "openai/gpt-4.1"
   },
   "82e8d2c629": {
     "text": "„Die Moden unterscheiden sich in der räumlichen Verteilung der Intensität. Die Form der Moden wird durch die Randbedingungen bestimmt, unter denen sich die Welle ausbreitet.“",
@@ -23532,11 +24202,12 @@
     "type": "expression",
     "note": "sehr gescheit sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "be very clever",
     "source": "wiktionary",
     "lemmas": [
       "Tau"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "82f5d311a9": {
     "text": "„Immer schon haben die Maya ihre Pyramiden und den Fassadenschmuck ihrer Tempel bemalt.“",

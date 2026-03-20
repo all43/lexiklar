@@ -880,10 +880,43 @@
   },
   "9007d539a9": {
     "text": "Eine virale Infektion kann man mit Antibiotika behandeln, aber es hilft nichts.",
-    "translation": null,
+    "translation": "You can treat a viral infection with antibiotics, but it doesn't help.",
     "source": "wiktionary",
     "lemmas": [
       "viral"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "virale",
+        "lemma": "viral",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Infektion",
+        "lemma": "Infektion",
+        "pos": "noun",
+        "gloss_hint": "infection"
+      },
+      {
+        "form": "Antibiotika",
+        "lemma": "Antibiotika",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "behandeln",
+        "lemma": "behandeln",
+        "pos": "verb",
+        "gloss_hint": "treat (medically)"
+      },
+      {
+        "form": "hilft",
+        "lemma": "helfen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "90081fc50a": {
@@ -910,11 +943,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to do a line (of cocaine)",
     "source": "wiktionary",
     "lemmas": [
       "Linie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "900aa4bc89": {
     "text": "„Fürst Andrej ging wieder zu seiner Frau, setzte sich ins Nebenzimmer und wartete.“",
@@ -2952,33 +2986,36 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be up to no good",
     "source": "wiktionary",
     "lemmas": [
       "reiten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "901e27155f": {
     "text": "jemandem nicht an der Wiege gesungen worden sein",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not to have had an easy start in life",
     "source": "wiktionary",
     "lemmas": [
       "Wiege"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "901e6dd9d4": {
     "text": "eine Gänsehaut kriegen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get goosebumps",
     "source": "wiktionary",
     "lemmas": [
       "Gänsehaut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "901ee35541": {
     "text": "Die optimale Zeit für Erziehung ist dann, wenn der Hund aktiv, aufmerksam und hungrig ist.",
@@ -3950,12 +3987,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I wouldn't want to be buried there",
     "source": "wiktionary",
     "lemmas": [
       "ich",
       "da"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "902d90f51d": {
     "text": "Im Frühsommer 71 setzte er sich an die Spitze der Bewegung.",
@@ -4040,12 +4078,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be amazed at",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
     ],
-    "ref": "phrases/große Augen machen"
+    "ref": "phrases/große Augen machen",
+    "translation_model": "openai/gpt-4.1"
   },
   "9030ad1fff": {
     "text": "„Das gängigste Symbolsystem ist das Internationale Phonetische Alphabet (IPA).“",
@@ -6848,11 +6887,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "don't tear down the fence",
     "source": "wiktionary",
     "lemmas": [
       "Zaun"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "904c39efa2": {
     "text": "„Wie sich rausgestellt hat, war sie eine Ausreißerin.“",
@@ -7013,11 +7053,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "slip through the cracks of the law",
     "source": "wiktionary",
     "lemmas": [
       "Masche"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "904df0391b": {
     "text": "Wann kommt der Papa endlich heim?",
@@ -7141,12 +7182,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "turn a blind eye",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
     ],
-    "ref": "phrases/ein Auge zudrücken"
+    "ref": "phrases/ein Auge zudrücken",
+    "translation_model": "openai/gpt-4.1"
   },
   "9051932f70": {
     "text": "„Freiwillige Operationen sind also nicht meine Sache.“",
@@ -7597,14 +7639,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as the name suggests",
     "source": "wiktionary",
     "lemmas": [
       "Name"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "905a46dbe6": {
     "text": "Das dunkle Rot gefällt mir besser.",
@@ -8118,11 +8158,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get expensive",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "905ebe0c38": {
     "text": "Berlin ist arm, aber sexy.",
@@ -8555,10 +8596,67 @@
   },
   "906452bf57": {
     "text": "„Blutige Familientragödie am Niederrhein: Ein Rentner hat offenbar bei einem Gutachter-Termin im Haus seiner Tochter in Schwalmtal die Nerven verloren und blind um sich geschossen.“",
-    "translation": null,
+    "translation": "Bloody family tragedy on the Lower Rhine: A pensioner apparently lost his nerve at an expert appointment at his daughter's house in Schwalmtal and fired blindly in all directions.",
     "source": "wiktionary",
     "lemmas": [
       "die Nerven verlieren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Familientragödie",
+        "lemma": "Familientragödie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rentner",
+        "lemma": "Rentner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gutachter-Termin",
+        "lemma": "Gutachter-Termin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haus",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": "residence"
+      },
+      {
+        "form": "Tochter",
+        "lemma": "Tochter",
+        "pos": "noun",
+        "gloss_hint": "daughter"
+      },
+      {
+        "form": "Nerven",
+        "lemma": "Nerv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verloren",
+        "lemma": "verlieren",
+        "pos": "verb",
+        "gloss_hint": "lost"
+      },
+      {
+        "form": "blind",
+        "lemma": "blind",
+        "pos": "adjective",
+        "gloss_hint": "frenzied"
+      },
+      {
+        "form": "geschossen",
+        "lemma": "schießen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "9065216f53": {
@@ -8662,12 +8760,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in bed",
     "source": "wiktionary",
     "lemmas": [
       "Feder"
     ],
-    "ref": "phrases/in den Federn"
+    "ref": "phrases/in den Federn",
+    "translation_model": "openai/gpt-4.1"
   },
   "9068abf284": {
     "text": "„Der Brand verleiht Ihrer Arbeit eine wesentlich höhere Überlebenschance, denn der ungebrannte, nur getrocknete Ton ist extrem empfindlich.“",
@@ -9004,11 +9103,12 @@
     "synonyms": [
       "ganz"
     ],
-    "translation": null,
+    "translation": "be over the moon",
     "source": "wiktionary",
     "lemmas": [
       "Häuschen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "906b911596": {
     "text": "Jetzt sind vom Geweih nur noch die Rosen übrig.",
@@ -9445,10 +9545,31 @@
   },
   "907443d304": {
     "text": "„Lortzing […] hatte ein Händchen für eingängige Melodien.“",
-    "translation": null,
+    "translation": "Lortzing had a knack for catchy melodies.",
     "source": "wiktionary",
     "lemmas": [
       "ein Händchen für etwas haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Händchen",
+        "lemma": "Händchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eingängige",
+        "lemma": "eingängig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Melodien",
+        "lemma": "Melodie",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "90768b4d45": {
@@ -10205,10 +10326,61 @@
   },
   "907a4ac13e": {
     "text": "„Trumps Entscheidung [Anmerkung: ,den Stabschef zu entlassen,] folgt auf massive Kritik an der amerikanischen Regierung für ihr Krisenmanagement im Zusammenhang mit dem neuartigen Coronavirus.“",
-    "translation": null,
+    "translation": "Trump's decision to dismiss the chief of staff follows massive criticism of the American government for its crisis management in connection with the novel coronavirus.",
     "source": "wiktionary",
     "lemmas": [
       "im Zusammenhang mit"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Entscheidung",
+        "lemma": "Entscheidung",
+        "pos": "noun",
+        "gloss_hint": "decision"
+      },
+      {
+        "form": "Stabschef",
+        "lemma": "Stabschef",
+        "pos": "noun",
+        "gloss_hint": "chief of staff"
+      },
+      {
+        "form": "entlassen",
+        "lemma": "entlassen",
+        "pos": "verb",
+        "gloss_hint": "dismiss"
+      },
+      {
+        "form": "Kritik",
+        "lemma": "Kritik",
+        "pos": "noun",
+        "gloss_hint": "criticism"
+      },
+      {
+        "form": "Regierung",
+        "lemma": "Regierung",
+        "pos": "noun",
+        "gloss_hint": "government"
+      },
+      {
+        "form": "Krisenmanagement",
+        "lemma": "Krisenmanagement",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zusammenhang",
+        "lemma": "Zusammenhang",
+        "pos": "noun",
+        "gloss_hint": "connection"
+      },
+      {
+        "form": "Coronavirus",
+        "lemma": "Coronavirus",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "907adeee58": {
@@ -10703,11 +10875,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "He who wants to command must first learn to obey",
     "source": "wiktionary",
     "lemmas": [
       "befehlen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "908144574b": {
     "text": "„Der Bezirksleiter betonte immer, es gebe keinen Anlass zur Sorge, und verstarb bald an Leukämie.“",
@@ -11039,21 +11212,46 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone doesn't hold back",
     "source": "wiktionary",
     "lemmas": [
       "kennen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "9082158e1d": {
     "text": "„Das Illerup Ådal ist nicht nur ein Naturschutzgebiet, sondern auch die größte bekannte Stätte für Menschenopfer in Nordeuropa.“",
-    "translation": null,
+    "translation": "The Illerup Ådal is not only a nature reserve, but also the largest known site of human sacrifice in Northern Europe.",
     "source": "wiktionary",
     "lemmas": [
       "Stätte"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Naturschutzgebiet",
+        "lemma": "Naturschutzgebiet",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stätte",
+        "lemma": "Stätte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menschenopfer",
+        "lemma": "Menschenopfer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nordeuropa",
+        "lemma": "Nordeuropa",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "908238abc2": {
@@ -11564,11 +11762,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is left hanging",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "908698dcf4": {
     "text": "Gunhild versteht es, Kokosnüsse blitzschnell aufzuschlagen.",
@@ -11952,11 +12151,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in the prime of one's youth",
     "source": "wiktionary",
     "lemmas": [
       "Blüte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "908b94276b": {
     "text": "Dem Gebäude sieht man aber an, dass es ein paar Jahre auf dem Buckel hat.",
@@ -12604,10 +12804,43 @@
   },
   "90921d4ace": {
     "text": "Unsere Sommerreifen sind auf den Feldwegen schneller verschlissen, als wir uns das gedacht hatten.",
-    "translation": null,
+    "translation": "Our summer tires wore out on the field paths faster than we had expected.",
     "source": "wiktionary",
     "lemmas": [
       "verschleißen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sommerreifen",
+        "lemma": "Sommerreifen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Feldwegen",
+        "lemma": "Feldweg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schneller",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "verschlissen",
+        "lemma": "verschleißen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gedacht",
+        "lemma": "denken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "90936981af": {
@@ -12762,11 +12995,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have heaven on earth",
     "source": "wiktionary",
     "lemmas": [
       "Himmel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "90946665ee": {
     "text": "der frühe Vogel fängt den Wurm",
@@ -13312,11 +13546,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "time will tell",
     "source": "wiktionary",
     "lemmas": [
       "Zeit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "909979a113": {
     "text": "„Heute schaffen es die sozialistische Partei und die traditionelle Rechte nicht mal in die Stichwahl.“",
@@ -13670,18 +13905,88 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to turn on the tap",
     "source": "wiktionary",
     "lemmas": [
       "Kran"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "90a0238d59": {
     "text": "„Doch seit 1218, als Erzbischof Theoderich II. nun auch als weltlicher Herr und oft als heimlicher Kurfürst bezeichnet, den Zehnt und die Pfarrgrenzen neu bestimmte, zeigt sich im Inventar des Archivs ein enormer Zuwachs an Besitz und Zehnten.“",
-    "translation": null,
+    "translation": "But since 1218, when Archbishop Theoderich II, now also referred to as a secular lord and often as a secret elector, newly determined the tithe and parish boundaries, the archive inventory shows an enormous increase in possessions and tithes.",
     "source": "wiktionary",
     "lemmas": [
       "Zehnt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erzbischof",
+        "lemma": "Erzbischof",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "weltlicher",
+        "lemma": "weltlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herr",
+        "lemma": "Herr",
+        "pos": "noun",
+        "gloss_hint": "Lord"
+      },
+      {
+        "form": "Kurfürst",
+        "lemma": "Kurfürst",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zehnt",
+        "lemma": "Zehnt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pfarrgrenzen",
+        "lemma": "Pfarrgrenze",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bestimmte",
+        "lemma": "bestimmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Inventar",
+        "lemma": "Inventar",
+        "pos": "noun",
+        "gloss_hint": "inventory list"
+      },
+      {
+        "form": "Archivs",
+        "lemma": "Archiv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zuwachs",
+        "lemma": "Zuwachs",
+        "pos": "noun",
+        "gloss_hint": "increase"
+      },
+      {
+        "form": "Besitz",
+        "lemma": "Besitz",
+        "pos": "noun",
+        "gloss_hint": "possession"
+      }
     ]
   },
   "90a0c566e1": {
@@ -15461,11 +15766,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be too good for someone",
     "source": "wiktionary",
     "lemmas": [
       "schade"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "90b515cadd": {
     "text": "Als ehrenamtliche Wartin der Anlage war sie stets nicht weit.",
@@ -15544,11 +15850,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a legend",
     "source": "wiktionary",
     "lemmas": [
       "Legende"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "90b59385c9": {
     "text": "„Er nickte entspannt und freundlich und ging zu seiner ersten – nach verdammt langer Zeit – seiner ersten ruhigen Sitzung auf den Abort.“",
@@ -17234,11 +17541,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be soaked to the skin",
     "source": "wiktionary",
     "lemmas": [
       "Faden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "90bfffa1e6": {
     "text": "Radikale greifen „radikal“ andere Teilchen an.",
@@ -19298,13 +19606,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fish for compliments",
     "source": "wiktionary",
     "lemmas": [
       "baden",
       "Wurm"
     ],
-    "ref": "phrases/Würmer baden"
+    "ref": "phrases/Würmer baden",
+    "translation_model": "openai/gpt-4.1"
   },
   "90ccb41932": {
     "text": "„Briefkastenfirmen auf den Bahamas, Familienmitglieder in Top-Positionen der Unternehmensgruppe und gefälschte Bilanzen sollen die Realität verschleiert, Schulden vertuscht und so den Aktienkurs um bis zu 85 Prozent nach oben gepumpt haben.“",
@@ -20824,11 +21133,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not think much of someone",
     "source": "wiktionary",
     "lemmas": [
       "Pfeife"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "90d621f39b": {
     "text": "Die entlaufenen Häftlinge plünderten leerstehende Häuser.",
@@ -21981,10 +22291,31 @@
   },
   "90df33c6f1": {
     "text": "„Wir marschierten in einer flachen Mulde.“",
-    "translation": null,
+    "translation": "We marched in a shallow depression.",
     "source": "wiktionary",
     "lemmas": [
       "Mulde"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "marschierten",
+        "lemma": "marschieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "flachen",
+        "lemma": "flach",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mulde",
+        "lemma": "Mulde",
+        "pos": "noun",
+        "gloss_hint": "depression"
+      }
     ]
   },
   "90df7362da": {
@@ -22998,11 +23329,12 @@
     "synonyms": [
       "Spielkarten"
     ],
-    "translation": null,
+    "translation": "blank spot on the map",
     "source": "wiktionary",
     "lemmas": [
       "Karte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "90e8d8cf2f": {
     "text": "„Berechnete Uhr des Wasserverbrauchs zur Bestimmung der Leistung der Wasseraufbereitung und der entsprechenden Ausrüstung zum Füttern des Wärmeversorgungssystems sollte genommen werden …“",
@@ -23452,22 +23784,24 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Roast pigeons don't fly into your mouth.",
     "source": "wiktionary",
     "lemmas": [
       "Taube"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "90ef851bff": {
     "text": "es mit etwas gut sein lassen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to stop while you're ahead",
     "source": "wiktionary",
     "lemmas": [
       "gut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "90efb0d4c1": {
     "text": "„Mr. Lane besah sich die Schachtel Aftershave auf der Theke.“",

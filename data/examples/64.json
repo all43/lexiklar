@@ -705,26 +705,131 @@
   },
   "640c70b7ec": {
     "text": "„Sie erkundigt sich beiläufig nach seinen Essgewohnheiten.“",
-    "translation": null,
+    "translation": "\"She casually inquires about his eating habits.\"",
     "source": "wiktionary",
     "lemmas": [
       "erkundigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "erkundigt",
+        "lemma": "erkundigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Essgewohnheiten",
+        "lemma": "Essgewohnheit",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "640cebb920": {
     "text": "„Ansonsten zu dem Rest, den Sie gesagt haben: Da glaube ich, haben Sie einen Clown gefrühstückt.“",
-    "translation": null,
+    "translation": "\"Otherwise, regarding the rest of what you said: I think you had a clown for breakfast.\"",
     "source": "wiktionary",
     "lemmas": [
       "einen Clown gefrühstückt haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rest",
+        "lemma": "Rest",
+        "pos": "noun",
+        "gloss_hint": "remainder"
+      },
+      {
+        "form": "gesagt",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "glaube",
+        "lemma": "glauben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Clown",
+        "lemma": "Clown",
+        "pos": "noun",
+        "gloss_hint": "clown"
+      },
+      {
+        "form": "gefrühstückt",
+        "lemma": "frühstücken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "640e4f4126": {
     "text": "„Bei diesen Festen wurde Harmonika gespielt, es wurde Polka getanzt und Graupen- und Semmelwurst gegessen sowie ordentlich gepichelt.“",
-    "translation": null,
+    "translation": "\"At these celebrations, the accordion was played, polka was danced, barley and semolina sausage were eaten, and there was considerable drinking.\"",
     "source": "wiktionary",
     "lemmas": [
       "Harmonika"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Festen",
+        "lemma": "Fest",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Harmonika",
+        "lemma": "Harmonika",
+        "pos": "noun",
+        "gloss_hint": "accordion"
+      },
+      {
+        "form": "gespielt",
+        "lemma": "spielen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Polka",
+        "lemma": "Polka",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "getanzt",
+        "lemma": "tanzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Graupen",
+        "lemma": "Graupen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Semmelwurst",
+        "lemma": "Semmelwurst",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gegessen",
+        "lemma": "essen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gepichelt",
+        "lemma": "picheln",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "640f2b4532": {
@@ -1339,11 +1444,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a kick in the pants",
     "source": "wiktionary",
     "lemmas": [
       "blasen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6413202ab2": {
     "text": "Alles, was blieb, war eine Idee von einer besseren Zukunft.",
@@ -2111,11 +2217,12 @@
     "type": "expression",
     "note": "in Anlehnung an „das Gelbe vom Ei“ verkürzt zu Gelbe und meist negierend: nicht der bessere Teil sein, etwas Schlechtes, Negatives sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to not be the best option",
     "source": "wiktionary",
     "lemmas": [
       "Gelbes"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6419647a11": {
     "text": "Die Teilhaber wurden ausgezahlt.",
@@ -2158,11 +2265,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to send someone off (in sports)",
     "source": "wiktionary",
     "lemmas": [
       "Platz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "641b0797d7": {
     "text": "„Leider vereiteln das mühevolle Anziehen von Helm und Handschuhen eine schnelle Flucht auf dem Motorrad, und als der Wagen schon außer Sichtweite war, hatte ich bereits eine Menge Schaulustiger angezogen.“",
@@ -2948,10 +3056,61 @@
   },
   "641d90b7df": {
     "text": "Frau Meier lässt anfragen, ob Sie sie morgen dazwischenschieben können. Sie hat vergessen, einen Termin zu machen.",
-    "translation": null,
+    "translation": "Mrs. Meier is asking whether you can fit her in tomorrow. She forgot to make an appointment.",
     "source": "wiktionary",
     "lemmas": [
       "anfragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "woman"
+      },
+      {
+        "form": "Meier",
+        "lemma": "Meier",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lässt",
+        "lemma": "lassen",
+        "pos": "verb",
+        "gloss_hint": "have done"
+      },
+      {
+        "form": "anfragen",
+        "lemma": "anfragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "morgen",
+        "lemma": "morgen",
+        "pos": "adverb",
+        "gloss_hint": "tomorrow"
+      },
+      {
+        "form": "dazwischenschieben",
+        "lemma": "dazwischenschieben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "vergessen",
+        "lemma": "vergessen",
+        "pos": "verb",
+        "gloss_hint": "forget"
+      },
+      {
+        "form": "Termin",
+        "lemma": "Termin",
+        "pos": "noun",
+        "gloss_hint": "appointment"
+      }
     ]
   },
   "641dd23096": {
@@ -3175,11 +3334,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in the red",
     "source": "wiktionary",
     "lemmas": [
       "Miese"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "641f4a349f": {
     "text": "Ich habe das Demo an den Verlag geschickt, nun müssen wir abwarten, was dabei herauskommt.",
@@ -3796,18 +3956,84 @@
   },
   "6423922113": {
     "text": "„Zu einem Preis, den man sich in diesem Nest am Arsch der Welt nicht hatte träumen lassen.“",
-    "translation": null,
+    "translation": "\"At a price that one couldn't have dreamed of in this godforsaken place.\"",
     "source": "wiktionary",
     "lemmas": [
       "am Arsch der Welt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Preis",
+        "lemma": "Preis",
+        "pos": "noun",
+        "gloss_hint": "price"
+      },
+      {
+        "form": "Nest",
+        "lemma": "Nest",
+        "pos": "noun",
+        "gloss_hint": "hamlet"
+      },
+      {
+        "form": "Arsch",
+        "lemma": "Arsch",
+        "pos": "noun",
+        "gloss_hint": "butt"
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      },
+      {
+        "form": "träumen",
+        "lemma": "träumen",
+        "pos": "verb",
+        "gloss_hint": "dream"
+      }
     ]
   },
   "6424229ff9": {
     "text": "Der SV Beispiel konnte dieses Jahr in die DEL aufsteigen.",
-    "translation": null,
+    "translation": "SV Beispiel was able to be promoted to the DEL this year.",
     "source": "wiktionary",
     "lemmas": [
       "DEL"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "SV Beispiel",
+        "lemma": "SV Beispiel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "konnte",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "DEL",
+        "lemma": "DEL",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufsteigen",
+        "lemma": "aufsteigen",
+        "pos": "verb",
+        "gloss_hint": "be promoted"
+      }
     ]
   },
   "642441cfeb": {
@@ -3877,10 +4103,61 @@
   },
   "6424c4a4e9": {
     "text": "Nach dem zurzeit von den meisten Kosmologen befürworteten Model ist die dunkle Energie gleichmäßig im Universum verteilt, aber es gibt auch Modelle, nach denen sie aus einem \"Quintessenz-Feld\" hervorgeht, das je nach Ort und Zeit verschienen sein kann.",
-    "translation": null,
+    "translation": "According to the model currently favored by most cosmologists, dark energy is distributed uniformly throughout the universe, but there are also models in which it originates from a \"quintessence field\" that can vary depending on location and time.",
     "source": "wiktionary",
     "lemmas": [
       "dunkle Energie"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Model",
+        "lemma": "Model",
+        "pos": "noun",
+        "gloss_hint": "model"
+      },
+      {
+        "form": "Kosmologen",
+        "lemma": "Kosmolog",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dunkle Energie",
+        "lemma": "Energie",
+        "pos": "noun",
+        "gloss_hint": "energy"
+      },
+      {
+        "form": "Universum",
+        "lemma": "Universum",
+        "pos": "noun",
+        "gloss_hint": "universe"
+      },
+      {
+        "form": "Modelle",
+        "lemma": "Modell",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Quintessenz-Feld",
+        "lemma": "Feld",
+        "pos": "noun",
+        "gloss_hint": "field"
+      },
+      {
+        "form": "Ort",
+        "lemma": "Ort",
+        "pos": "noun",
+        "gloss_hint": "location"
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      }
     ]
   },
   "6426d03ef7": {
@@ -3933,10 +4210,55 @@
   },
   "642715c3fc": {
     "text": "'Warum ist Gundula nicht da?' - Oh je, das war wohl die falsche Frage, sofort war eisiges Schweigen eingetreten. Zum Glück half Robert mir aus der Patsche und erklärte kurzerhand das Buffet für eröffnet.",
-    "translation": null,
+    "translation": "\"Why isn't Gundula here?\" - Oh dear, that was apparently the wrong question; immediately an icy silence fell. Fortunately, Robert got me out of the predicament and promptly declared the buffet open.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem aus der Patsche helfen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gundula",
+        "lemma": "Gundula",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frage",
+        "lemma": "Frage",
+        "pos": "noun",
+        "gloss_hint": "question"
+      },
+      {
+        "form": "Schweigen",
+        "lemma": "Schweigen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Glück",
+        "lemma": "Glück",
+        "pos": "noun",
+        "gloss_hint": "luck"
+      },
+      {
+        "form": "Robert",
+        "lemma": "Robert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Patsche",
+        "lemma": "Patsche",
+        "pos": "noun",
+        "gloss_hint": "predicament"
+      },
+      {
+        "form": "Buffet",
+        "lemma": "Buffet",
+        "pos": "noun",
+        "gloss_hint": "buffet"
+      }
     ]
   },
   "6428d53212": {
@@ -8449,10 +8771,31 @@
   },
   "6453722dd6": {
     "text": "„Man entdeckt oft erst beym zweyten- oder drittenmal, wo der Hund begraben liegt.“",
-    "translation": null,
+    "translation": "\"One often only discovers where the problem lies on the second or third attempt.\"",
     "source": "wiktionary",
     "lemmas": [
       "da liegt der Hund begraben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "entdeckt",
+        "lemma": "entdecken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hund",
+        "lemma": "Hund",
+        "pos": "noun",
+        "gloss_hint": "scoundrel"
+      },
+      {
+        "form": "begraben",
+        "lemma": "begraben",
+        "pos": "verb",
+        "gloss_hint": "discard"
+      }
     ]
   },
   "64537ad47f": {
@@ -10062,11 +10405,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take the reins",
     "source": "wiktionary",
     "lemmas": [
       "Heft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "646378fde0": {
     "text": "„Ich check das mit der Irene!“",
@@ -10125,11 +10469,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to kick the bucket",
     "source": "wiktionary",
     "lemmas": [
       "Löffel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "64657d759c": {
     "text": "Bis 2022 sollen 50 Milliarden Euro zusätzlich investiert werden, um langfristig 300 000 neue Wohnungen pro Jahr bauen zu können.",
@@ -10893,12 +11238,13 @@
     "type": "expression",
     "note": "stark verprügeln",
     "synonyms": [],
-    "translation": null,
+    "translation": "to beat someone to a pulp",
     "source": "wiktionary",
     "lemmas": [
       "prügeln"
     ],
-    "ref": "phrases/jemanden windelweich prügeln"
+    "ref": "phrases/jemanden windelweich prügeln",
+    "translation_model": "openai/gpt-4.1"
   },
   "646ccd942c": {
     "text": "„Da müssen die lieben Eltern sie auf die Bälle führen, daß die Mannspersonen sie zu sehen kriegen; denn die Katze im Sack will keiner mehr kaufen.“",
@@ -11064,10 +11410,25 @@
   },
   "646da3e46f": {
     "text": "„Na, denn zieh dir die Stiebeln an, Willem, und jeh los, jetz bist du am dransten!“",
-    "translation": null,
+    "translation": "\"Well then, put on your boots, Willem, and get going; now it's your turn!\"",
     "source": "wiktionary",
     "lemmas": [
       "am dransten sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Stiebeln",
+        "lemma": "Stiefel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Willem",
+        "lemma": "Willem",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "646dfbae73": {
@@ -11469,22 +11830,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Even the kids on the street know that.",
     "source": "wiktionary",
     "lemmas": [
       "Gasse"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6476d0d883": {
     "text": "der Fuchs badet sich",
     "type": "expression",
     "note": "BodennebelWürmer baden",
     "synonyms": [],
-    "translation": null,
+    "translation": "There is ground fog.",
     "source": "wiktionary",
     "lemmas": [
       "baden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6476d58d6f": {
     "text": "„Ich sah ziemlich viele Gänse umherlaufen, und mir gefiel der Gedanke, eine zum Essen zu braten.“",
@@ -11707,11 +12070,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a sunny disposition",
     "source": "wiktionary",
     "lemmas": [
       "Gemüt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "64782d34d6": {
     "text": "Die Mietdauer haben wir noch nicht bestimmt.",
@@ -12786,11 +13150,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "absolutely!",
     "source": "wiktionary",
     "lemmas": [
       "sowas"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "64896e0659": {
     "text": "„Sobald wir mit dem Begriff Zeit zu experimentieren beginnen, und sei es auch nur als Gedankenexperiment oder zum rein intellektuellen Zeitvertreib, müssen wir feststellen, daß unsere Sprache und mit ihr unsere Denkprozesse uns sehr bald im Stich lassen.“",
@@ -15684,11 +16049,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to bring up old news",
     "source": "wiktionary",
     "lemmas": [
       "aufwärmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "649ae8f941": {
     "text": "Der Steg eines Doppel-T-Trägers verbindet die beiden Flansche.",
@@ -15983,11 +16349,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When the wolf preaches, he longs for the sheep.",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "649cbc8c79": {
     "text": "Ständig muss ich für dich die Kastanien aus dem Feuer holen.",
@@ -16135,10 +16502,37 @@
   },
   "649d5634b7": {
     "text": "„‚Also Sachen gibts, die gibts gar nicht‘, wunderte sich Axel Dreetz, Förster und Mitglied der Umweltpaten Schmitten.“",
-    "translation": null,
+    "translation": "\"Well, there are things that simply don't exist,\" marveled Axel Dreetz, forester and member of the environmental guardians of Schmitten.",
     "source": "wiktionary",
     "lemmas": [
       "Sachen gibts, die gibts gar nicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sachen",
+        "lemma": "Sache",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gibts",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Axel Dreetz",
+        "lemma": "Axel Dreetz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Förster",
+        "lemma": "Förster",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "649f1348b1": {
@@ -16287,10 +16681,37 @@
   },
   "64a1ed3247": {
     "text": "Wer gerne laut denkt und anderen Sachen erklärt, sucht sich am besten einen Lernpartner.",
-    "translation": null,
+    "translation": "If you like to think out loud and explain things to others, you should best find a study partner.",
     "source": "wiktionary",
     "lemmas": [
       "laut denken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "denkt",
+        "lemma": "denken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sachen",
+        "lemma": "Sache",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erklärt",
+        "lemma": "erklären",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lernpartner",
+        "lemma": "Lernpartner",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "64a2a6f04f": {
@@ -18537,12 +18958,13 @@
     "type": "expression",
     "note": "keinen gemeinsamen Haushalt mehr haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be separated (no longer living together)",
     "source": "wiktionary",
     "lemmas": [
       "Tisch",
       "Bett"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "64ba52e498": {
     "text": "„Die Kamera zog auf, und die Moderatorin machte eine kurze Pause.“",
@@ -18995,11 +19417,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Have a nice day!",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "64c20c59da": {
     "text": "„So entziehen sich ausgereifte Sports wie das Bungeespringen, Reiten, Tauchen oder Drachenfliegen dieser Subsumierung als Risikosport, sobald objektivierende Beweisforderungen und wissenschaftliche Maßstäbe an die Zuordnung gelegt werden.“",
@@ -19422,12 +19845,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to insult someone in a very crude way",
     "source": "wiktionary",
     "lemmas": [
       "nackt",
       "Hintern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "64c344cb3c": {
     "text": "„Die Philippinen ziehen sich aus dem Internationalen Strafgerichtshof (ICC) zurück.“",
@@ -19639,10 +20063,37 @@
   },
   "64c4adab87": {
     "text": "„Die ersten Schatten der Dämmerung fielen über die Mulde des Platzes.“",
-    "translation": null,
+    "translation": "\"The first shadows of twilight fell over the depression of the square.\"",
     "source": "wiktionary",
     "lemmas": [
       "Mulde"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schatten",
+        "lemma": "Schatten",
+        "pos": "noun",
+        "gloss_hint": "shadow"
+      },
+      {
+        "form": "Dämmerung",
+        "lemma": "Dämmerung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mulde",
+        "lemma": "Mulde",
+        "pos": "noun",
+        "gloss_hint": "depression"
+      },
+      {
+        "form": "Platzes",
+        "lemma": "Platz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "64c4b6a37c": {
@@ -22521,12 +22972,13 @@
       "jemanden",
       "etwas"
     ],
-    "translation": null,
+    "translation": "to leave someone in the lurch",
     "source": "wiktionary",
     "lemmas": [
       "lassen",
       "hängen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "64de7e3739": {
     "text": "Seit Wochen überlege ich, welches Geschenk meiner Mutter Freude machen würde, aber ich bin völlig ratlos.",
@@ -23843,12 +24295,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at the top of one's lungs",
     "source": "wiktionary",
     "lemmas": [
       "Hals"
     ],
-    "ref": "phrases/aus vollem Hals"
+    "ref": "phrases/aus vollem Hals",
+    "translation_model": "openai/gpt-4.1"
   },
   "64e76095ff": {
     "text": "„Wer den Schaden hat, braucht für den Spott nicht zu sorgen: Welchen Stellenwert dieses alte Sprichwort auch heute noch haben kann, darf Simone Peter, eine von zwei Parteichefs der Grünen, gerade in aller Deutlichkeit erfahren. „Dumm, Dümmer, Grüfri“, titelte die „Bild“-Zeitung am Dienstag neben einem Bild der Politikerin.“",
@@ -24640,11 +25093,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with the little finger of one's left hand",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "64f109e193": {
     "text": "„Für «Rio 2016» neu gebaute Sportstätten liegen brach. Was bleibt, sind leere Versprechen und enttäuschte Hoffnungen.“",
@@ -24834,10 +25288,31 @@
   },
   "64f40998ae": {
     "text": "Hertha BSC wurde in der Bundesligasaison 2011/12 nicht Deutscher Meister.",
-    "translation": null,
+    "translation": "Hertha BSC did not become German champion in the 2011/12 Bundesliga season.",
     "source": "wiktionary",
     "lemmas": [
       "BSC"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hertha BSC",
+        "lemma": "Hertha BSC",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundesligasaison",
+        "lemma": "Bundesligasaison",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutscher Meister",
+        "lemma": "Meister",
+        "pos": "noun",
+        "gloss_hint": "champion"
+      }
     ]
   },
   "64f509807b": {
@@ -25397,12 +25872,13 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "you can't break the habit of a lifetime",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
     ],
-    "ref": "phrases/die Katze lässt das Mausen nicht"
+    "ref": "phrases/die Katze lässt das Mausen nicht",
+    "translation_model": "openai/gpt-4.1"
   },
   "64fefa7081": {
     "text": "Erzähl nicht immer solche versauten Witze!",

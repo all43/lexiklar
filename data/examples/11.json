@@ -1226,11 +1226,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to sell something for a pittance",
     "source": "wiktionary",
     "lemmas": [
       "hergeben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "11066c36fb": {
     "text": "jemanden ins Leere laufen lassen",
@@ -2091,11 +2092,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be irresistible",
     "source": "wiktionary",
     "lemmas": [
       "Fressen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "110c9a887d": {
     "text": "Diese billige Uhr ist nicht wasserdicht.",
@@ -3206,10 +3208,43 @@
   },
   "111652223d": {
     "text": "Die Vorstrafen einer Person werden in deren polizeilichem Führungszeugnis aufgeführt.",
-    "translation": null,
+    "translation": "A person's prior convictions are listed in their police certificate of good conduct.",
     "source": "wiktionary",
     "lemmas": [
       "Vorstrafe"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vorstrafen",
+        "lemma": "Vorstrafe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Person",
+        "lemma": "Person",
+        "pos": "noun",
+        "gloss_hint": "person"
+      },
+      {
+        "form": "polizeilichem",
+        "lemma": "polizeilich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Führungszeugnis",
+        "lemma": "Führungszeugnis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgeführt",
+        "lemma": "aufführen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "11166c5539": {
@@ -3347,11 +3382,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to plan something well in advance",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "11189f245b": {
     "text": "„Das Kreisen der Nachtfalter, Schnaken und Motten um die Lampe macht mich nicht nur beim Lesen und Schreiben nervös, sondern ich finde es auch merkwürdig, unverständlich und widersinnig.“",
@@ -3961,10 +3997,103 @@
   },
   "1122c4779f": {
     "text": "„Ganz vorne, gerade in der Mitte des Parterres stand, mit dem Rücken gegen die Rampe gelehnt, Dolochow in persischer Tracht, die krausen Haare zu einem mächtigen Schopf nach oben hinaufgekämmt.“",
-    "translation": null,
+    "translation": "Right at the front, precisely in the center of the stalls, stood Dolochow in Persian dress, his curly hair combed up into a mighty shock of hair, leaning with his back against the stage apron.",
     "source": "wiktionary",
     "lemmas": [
       "Schopf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vorne",
+        "lemma": "vorne",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mitte",
+        "lemma": "Mitte",
+        "pos": "noun",
+        "gloss_hint": "center"
+      },
+      {
+        "form": "Parterres",
+        "lemma": "Parterre",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stand",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rücken",
+        "lemma": "Rücken",
+        "pos": "noun",
+        "gloss_hint": "back"
+      },
+      {
+        "form": "Rampe",
+        "lemma": "Rampe",
+        "pos": "noun",
+        "gloss_hint": "stage apron"
+      },
+      {
+        "form": "gelehnt",
+        "lemma": "lehnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dolochow",
+        "lemma": "Dolochow",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "persischer",
+        "lemma": "persisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tracht",
+        "lemma": "Tracht",
+        "pos": "noun",
+        "gloss_hint": "costume"
+      },
+      {
+        "form": "krausen",
+        "lemma": "kraus",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haare",
+        "lemma": "Haar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "mächtigen",
+        "lemma": "mächtig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schopf",
+        "lemma": "Schopf",
+        "pos": "noun",
+        "gloss_hint": "head of hair"
+      },
+      {
+        "form": "hinaufgekämmt",
+        "lemma": "hinaufkämmen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "112302efff": {
@@ -7698,10 +7827,73 @@
   },
   "1152dd4bde": {
     "text": "„Chinas Wettbewerbshüter haben eine Strafe in Höhe von 18 Milliarden Yuan, umgerechnet 2,3 Mrd. Euro, gegen den chinesischen Alibaba-Konzern verhängt.“",
-    "translation": null,
+    "translation": "China's competition authorities have imposed a fine of 18 billion yuan, equivalent to 2.3 billion euros, against the Chinese Alibaba Group.",
     "source": "wiktionary",
     "lemmas": [
       "in Höhe von"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wettbewerbshüter",
+        "lemma": "Wettbewerbshüter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strafe",
+        "lemma": "Strafe",
+        "pos": "noun",
+        "gloss_hint": "fine"
+      },
+      {
+        "form": "Höhe",
+        "lemma": "Höhe",
+        "pos": "noun",
+        "gloss_hint": "level"
+      },
+      {
+        "form": "Milliarden",
+        "lemma": "Milliarde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Yuan",
+        "lemma": "Yuan",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "umgerechnet",
+        "lemma": "umrechnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "chinesischen",
+        "lemma": "chinesisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Alibaba-Konzern",
+        "lemma": "Alibaba-Konzern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verhängt",
+        "lemma": "verhängen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "115338d90e": {
@@ -12045,10 +12237,139 @@
   },
   "11750673c7": {
     "text": "„Begann einer nach der zweiten oder dritten Mahnung unangenehm zu werden, entzog ihm Heinrich mit ein paar knappen Sätzen kurzerhand alle weiteren Aufträge und bestellte die neue Ware bei einem anderen, bezahlte die Rechnungen des alten Lieferanten mit dem Erlös der Ware des neuen, rechnete nun auch mit dessen Geduld, ersetzte auch ihn durch einen anderen und spielte das Spiel immer weiter bis zum bitteren Ende, […], es durfte eben nur niemand vorzeitig Geduld verlieren, und er und Lehmann (der Betrüger) durften den Bogen nicht überspannen, und wenn das alles so blieb oder sich so erfüllte, würde am Ende alles gut gehen, also, daran glaubte er. “",
-    "translation": null,
+    "translation": "If one of them began to become unpleasant after the second or third reminder, Heinrich would summarily cut off all further orders with a few terse sentences and order the new goods from another supplier, paid the old supplier's invoices with the proceeds from the new supplier's goods, now also gambled with his patience, replaced him too with another, and kept playing the game all the way to the bitter end, [...], nobody was allowed to lose patience prematurely, and he and Lehmann (the swindler) were not allowed to overreach, and if all this remained so or came to pass that way, everything would turn out well in the end, that's what he believed.",
     "source": "wiktionary",
     "lemmas": [
       "den Bogen überspannen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Einer",
+        "lemma": "Einer",
+        "pos": "noun",
+        "gloss_hint": "one"
+      },
+      {
+        "form": "Mahnung",
+        "lemma": "Mahnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "unangenehm",
+        "lemma": "unangenehm",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "entzog",
+        "lemma": "entziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sätzen",
+        "lemma": "Satz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufträge",
+        "lemma": "Auftrag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bestellte",
+        "lemma": "bestellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ware",
+        "lemma": "Ware",
+        "pos": "noun",
+        "gloss_hint": "goods"
+      },
+      {
+        "form": "Lieferanten",
+        "lemma": "Lieferant",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erlös",
+        "lemma": "Erlös",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rechnungen",
+        "lemma": "Rechnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geduld",
+        "lemma": "Geduld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ersetzte",
+        "lemma": "ersetzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spiel",
+        "lemma": "Spiel",
+        "pos": "noun",
+        "gloss_hint": "game"
+      },
+      {
+        "form": "bitteren",
+        "lemma": "bitter",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ende",
+        "lemma": "Ende",
+        "pos": "noun",
+        "gloss_hint": "end"
+      },
+      {
+        "form": "Bogen",
+        "lemma": "Bogen",
+        "pos": "noun",
+        "gloss_hint": "bow"
+      },
+      {
+        "form": "überspannen",
+        "lemma": "überspannen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "erfüllte",
+        "lemma": "erfüllen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gehen",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "go"
+      },
+      {
+        "form": "glaubte",
+        "lemma": "glauben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "1175b77fc6": {
@@ -14539,11 +14860,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lull someone into a false sense of security",
     "source": "wiktionary",
     "lemmas": [
       "wiegen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "118f773741": {
     "text": "„Auf dem Wege zur Stadt erklärte er ihm, daß er in eine der alten Sackgassen geraten sei, die man vor Zeiten als Fallen angelegt habe, um Ausbrecher und Deserteure irrezuführen.“",
@@ -16559,12 +16881,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in safe hands",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
     ],
-    "ref": "phrases/in besten Händen sein"
+    "ref": "phrases/in besten Händen sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "11a3f61600": {
     "text": "„Beim Training lernt sie [Anmerkung: die Kindereporterin Annina] was bei der Rhythmischen Sportgymnastik wichtig ist: Geschicklichkeit, Beweglichkeit, Präzision.“",
@@ -17509,11 +17832,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be as hungry as a lion",
     "source": "wiktionary",
     "lemmas": [
       "hungrig"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "11b3742640": {
     "text": "Es gab noch einen wortreichen Abschied mit viel Ermahnungen an Brita und Neckereien und Dankbarkeiten an Hendrik",
@@ -17862,11 +18186,12 @@
     "type": "expression",
     "note": "unfreundlich, herablassend behandeln",
     "synonyms": [],
-    "translation": null,
+    "translation": "to treat someone like an animal",
     "source": "wiktionary",
     "lemmas": [
       "Vieh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "11b665dd49": {
     "text": "jemandem den Tag stehlen",
@@ -17974,10 +18299,37 @@
   },
   "11ba8106f3": {
     "text": "„Da schimpfte der Fanfarenzugführer auf Krethi und Plethi.“",
-    "translation": null,
+    "translation": "Then the fanfare master railed against the riffraff.",
     "source": "wiktionary",
     "lemmas": [
       "Krethi und Plethi"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "schimpfte",
+        "lemma": "schimpfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fanfarenzugführer",
+        "lemma": "Fanfarenzugführer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Krethi",
+        "lemma": "Krethi",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Plethi",
+        "lemma": "Plethi",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "11ba84b91e": {
@@ -19888,11 +20240,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "soft cookie",
     "source": "wiktionary",
     "lemmas": [
       "Keks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "11c89f8707": {
     "text": "„Ob weitere Knollensorten, ob Mais oder Tomaten - künftig dürfte mehr genetisch manipuliertes Gemüse und Getreide auf den Tellern der Verbraucher landen.“",
@@ -21434,11 +21787,12 @@
     "type": "expression",
     "note": "provozieren/blamieren oder zurechtweisen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a piece of your mind",
     "source": "wiktionary",
     "lemmas": [
       "einschenken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "11d7a22bcd": {
     "text": "Nachmittags ist das Fernsehprogramm echt mies.",
@@ -22379,10 +22733,25 @@
   },
   "11e0e49f70": {
     "text": "me ist heute Sonntag.",
-    "translation": null,
+    "translation": "Today is Sunday.",
     "source": "wiktionary",
     "lemmas": [
       "me"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "Sonntag",
+        "lemma": "Sonntag",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "11e25cfa02": {
@@ -23549,10 +23918,31 @@
   },
   "11f1315ee9": {
     "text": "Nun sag schon! Du bist doch sonst nicht auf den Mund gefallen!",
-    "translation": null,
+    "translation": "Come on, tell me! You're usually not at a loss for words!",
     "source": "wiktionary",
     "lemmas": [
       "nicht auf den Mund gefallen sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sag",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mund",
+        "lemma": "Mund",
+        "pos": "noun",
+        "gloss_hint": "mouth"
+      },
+      {
+        "form": "gefallen",
+        "lemma": "gefallen",
+        "pos": "verb",
+        "gloss_hint": "fallen"
+      }
     ]
   },
   "11f26eaaed": {
@@ -23950,10 +24340,49 @@
   },
   "11fa56150e": {
     "text": "„Sie heißen wirklich «Brausekopf»? Das ist ja witzig, wir tragen denselben Namen.“",
-    "translation": null,
+    "translation": "You're really called \"Brausekopf\"? That's funny, we have the same name.",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "heißen",
+        "lemma": "heißen",
+        "pos": "verb",
+        "gloss_hint": "be called"
+      },
+      {
+        "form": "wirklich",
+        "lemma": "wirklich",
+        "pos": "adjective",
+        "gloss_hint": "genuine"
+      },
+      {
+        "form": "Brausekopf",
+        "lemma": "Brausekopf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "witzig",
+        "lemma": "witzig",
+        "pos": "adjective",
+        "gloss_hint": "funny"
+      },
+      {
+        "form": "Namen",
+        "lemma": "Name",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tragen",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": "wear"
+      }
     ]
   },
   "11fa6c8d67": {

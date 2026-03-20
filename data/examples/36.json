@@ -155,10 +155,43 @@
   },
   "3655103490": {
     "text": "Das AG Stuttgart wird heute das Urteil bekanntgeben.",
-    "translation": null,
+    "translation": "The Stuttgart District Court will announce the verdict today.",
     "source": "wiktionary",
     "lemmas": [
       "AG"
+    ],
+    "translation_model": "manual",
+    "annotations": [
+      {
+        "form": "AG",
+        "lemma": "AG",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stuttgart",
+        "lemma": "Stuttgart",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Urteil",
+        "lemma": "Urteil",
+        "pos": "noun",
+        "gloss_hint": "verdict"
+      },
+      {
+        "form": "bekanntgeben",
+        "lemma": "bekanntgeben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3661806183": {
@@ -2861,12 +2894,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's drafty as a birdhouse",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
     ],
-    "ref": "phrases/es zieht wie in einem Vogelhaus"
+    "ref": "phrases/es zieht wie in einem Vogelhaus",
+    "translation_model": "openai/gpt-4.1"
   },
   "3610b4822e": {
     "text": "„Schräg vor ihm schauten Ankes und Armins Hinterköpfe über die Rückenlehne.“",
@@ -4040,13 +4074,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take credit for others' work",
     "source": "wiktionary",
     "lemmas": [
       "Feder",
       "schmücken"
     ],
-    "ref": "phrases/sich mit fremden Federn schmücken"
+    "ref": "phrases/sich mit fremden Federn schmücken",
+    "translation_model": "openai/gpt-4.1"
   },
   "361d9e5fdf": {
     "text": "„Das Wandern ist des Müllers Lust / Das Wandern / Das muss ein schlechter Müller sein / Dem niemals fiel das Wandern ein / Das Wandern / Das Wandern…“",
@@ -4176,10 +4211,61 @@
   },
   "361f8195cf": {
     "text": "[DDR:] […] „Waren, die ursprünglich zur Deckung des Inlandbedarfs vorgesehen waren, wurden im großen Stil exportiert.“",
-    "translation": null,
+    "translation": "Goods that were originally intended to cover domestic demand were exported on a large scale.",
     "source": "wiktionary",
     "lemmas": [
       "im großen Stil"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Waren",
+        "lemma": "Ware",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ursprünglich",
+        "lemma": "ursprünglich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deckung",
+        "lemma": "Deckung",
+        "pos": "noun",
+        "gloss_hint": "funding"
+      },
+      {
+        "form": "Inlandbedarfs",
+        "lemma": "Inlandbedarf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vorgesehen",
+        "lemma": "vorsehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "großen",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stil",
+        "lemma": "Stil",
+        "pos": "noun",
+        "gloss_hint": "style"
+      },
+      {
+        "form": "exportiert",
+        "lemma": "exportieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "362037121e": {
@@ -7866,10 +7952,37 @@
   },
   "36426ba988": {
     "text": "„Seine Finanzen waren einigermaßen geregelt, sein Polster gefüllt.“",
-    "translation": null,
+    "translation": "His finances were fairly well regulated, his cushion well-filled.",
     "source": "wiktionary",
     "lemmas": [
       "Finanz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Finanzen",
+        "lemma": "Finanzen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geregelt",
+        "lemma": "regeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Polster",
+        "lemma": "Polster",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gefüllt",
+        "lemma": "füllen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "3642ff3d4f": {
@@ -7877,11 +7990,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I still have a suitcase in Berlin",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "36440bc9a0": {
     "text": "„Bei den Wahlen 2013 ist sie allerdings eingebrochen und hat nur einen Sitz im Parlament errungen.“",
@@ -8006,18 +8120,46 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone's heart is attached to something",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3646e5bd71": {
     "text": "„Die Tarife hatte Sisi schnell im Kopf.“",
-    "translation": null,
+    "translation": "Sisi quickly had the rates down pat.",
     "source": "wiktionary",
     "lemmas": [
       "Tarif"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tarife",
+        "lemma": "Tarif",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sisi",
+        "lemma": "Sisi",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schnell",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": "fast"
+      },
+      {
+        "form": "Kopf",
+        "lemma": "Kopf",
+        "pos": "noun",
+        "gloss_hint": "head"
+      }
     ]
   },
   "36472605e7": {
@@ -9824,10 +9966,43 @@
   },
   "3655b7eb9f": {
     "text": "„Da waren Herren, die in einem fort von ihren Sitzen aufspritzten und sich wieder niederließen und wieder aufsprangen, […].“",
-    "translation": null,
+    "translation": "There were gentlemen who kept jumping up from their seats and sitting back down and jumping up again.",
     "source": "wiktionary",
     "lemmas": [
       "in einem fort"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Herren",
+        "lemma": "Herr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sitzen",
+        "lemma": "Sitz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufspritzten",
+        "lemma": "aufspritzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "niederließen",
+        "lemma": "niederlassen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufsprangen",
+        "lemma": "aufspringen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "3655e0d400": {
@@ -10410,11 +10585,12 @@
     "type": "expression",
     "note": "Nachfolger (beispielsweise in einer Firma) von jemandem werden",
     "synonyms": [],
-    "translation": null,
+    "translation": "follow in someone's footsteps",
     "source": "wiktionary",
     "lemmas": [
       "treten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "365c12b121": {
     "text": "„Die Dienststunden, die Hoffmann im Justizministerium verbringt, lassen ihm noch viel freie Zeit.“",
@@ -10853,11 +11029,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "form blisters",
     "source": "wiktionary",
     "lemmas": [
       "Blase"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "365e62d664": {
     "text": "Die Studien der kanadischen Sozialwissenschaftlerin Ela Przybylo zeigen, dass die meisten Menschen mit viel weniger Sex klarkommen, als immer kolportiert wird. Es ist nämlich so: Werden Menschen zu ihrem Sex-Life befragt, schummeln sie fast immer – weil in unserer Kultur alle glauben, offiziell die Latte höher legen zu müssen.",
@@ -12257,11 +12434,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the scales fall from someone's eyes",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "36675dcf04": {
     "text": "Die Ägypter schnitten Kameen aus dem Plasma, dem grünen Halbedelstein der Japsis-Art.",
@@ -13098,10 +13276,37 @@
   },
   "366b2745b9": {
     "text": "„Wenn einer zwinkert mit den Augen und so zusammenfährt, dann weiß ich, was die Glocke geschlagen hat.“",
-    "translation": null,
+    "translation": "If someone winks with their eyes and flinches like that, then I know what's going on.",
     "source": "wiktionary",
     "lemmas": [
       "was die Glocke geschlagen hat"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "zwinkert",
+        "lemma": "zwinkern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Augen",
+        "lemma": "Auge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zusammenfährt",
+        "lemma": "zusammenfahren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Glocke",
+        "lemma": "Glocke",
+        "pos": "noun",
+        "gloss_hint": "bell"
+      }
     ]
   },
   "366b6f29e5": {
@@ -16076,11 +16281,12 @@
     "type": "expression",
     "note": "etwas ist nicht Ordnung, stimmt nicht",
     "synonyms": [],
-    "translation": null,
+    "translation": "something's fishy",
     "source": "wiktionary",
     "lemmas": [
       "faul"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "368274ec2c": {
     "text": "Die Politiker in Deutschland werden vielfach beschuldigt, dass ihre Aussagen eine einzige Lüge seien.",
@@ -16250,10 +16456,103 @@
   },
   "3685d05d96": {
     "text": "„Es war einmal ein kleiner Junge, der hieß Hannes Strohkopp. Er war ehrlich gesagt der schlechteste in der ganzen Klasse, hatte alles Fünf: Turnen, Schönschrift, Rechnen, Malen, außer Gesang. Gesang hatte er Vier.“",
-    "translation": null,
+    "translation": "Once upon a time there was a little boy named Hannes Strohkopp. To be honest, he was the worst in the whole class, had all fives: gymnastics, penmanship, arithmetic, drawing, except singing. In singing he had a four.",
     "source": "wiktionary",
     "lemmas": [
       "ehrlich gesagt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "einmal",
+        "lemma": "einmal",
+        "pos": "adverb",
+        "gloss_hint": "once"
+      },
+      {
+        "form": "Junge",
+        "lemma": "Junge",
+        "pos": "noun",
+        "gloss_hint": "boy"
+      },
+      {
+        "form": "hieß",
+        "lemma": "heißen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hannes",
+        "lemma": "Hannes",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strohkopp",
+        "lemma": "Strohkopp",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ehrlich",
+        "lemma": "ehrlich",
+        "pos": "adjective",
+        "gloss_hint": "honest"
+      },
+      {
+        "form": "schlechteste",
+        "lemma": "schlecht",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klasse",
+        "lemma": "Klasse",
+        "pos": "noun",
+        "gloss_hint": "class (group of students)"
+      },
+      {
+        "form": "Fünf",
+        "lemma": "Fünf",
+        "pos": "noun",
+        "gloss_hint": "grade five"
+      },
+      {
+        "form": "Turnen",
+        "lemma": "turnen",
+        "pos": "verb",
+        "gloss_hint": "do gymnastics"
+      },
+      {
+        "form": "Schönschrift",
+        "lemma": "Schönschrift",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rechnen",
+        "lemma": "rechnen",
+        "pos": "verb",
+        "gloss_hint": "calculate"
+      },
+      {
+        "form": "Malen",
+        "lemma": "malen",
+        "pos": "verb",
+        "gloss_hint": "draw"
+      },
+      {
+        "form": "Gesang",
+        "lemma": "Gesang",
+        "pos": "noun",
+        "gloss_hint": "singing"
+      },
+      {
+        "form": "Vier",
+        "lemma": "Vier",
+        "pos": "noun",
+        "gloss_hint": "satisfactory (grade)"
+      }
     ]
   },
   "3685e3d09a": {
@@ -16580,11 +16879,12 @@
     "type": "expression",
     "note": "vertrauen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to go through fire for someone",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3688d923e9": {
     "text": "„Mit dem Recht auf neue Produktversionen erhalten Sie unmittelbaren Zugriff auf neue Software, sobald diese auf den Markt kommt.“",
@@ -16850,10 +17150,49 @@
   },
   "368cbc4d24": {
     "text": "Ein achtel Liter Wein am Tag sind unbedenklich für Frauen.",
-    "translation": null,
+    "translation": "An eighth of a liter of wine per day is harmless for women.",
     "source": "wiktionary",
     "lemmas": [
       "achtel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "achtel",
+        "lemma": "Achtel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Liter",
+        "lemma": "Liter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wein",
+        "lemma": "Wein",
+        "pos": "noun",
+        "gloss_hint": "wine (grape)"
+      },
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "unbedenklich",
+        "lemma": "unbedenklich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "368dbbe590": {
@@ -16861,11 +17200,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "all of a piece",
     "source": "wiktionary",
     "lemmas": [
       "Stück"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "368ea6152d": {
     "text": "[Schlagzeile:] „Mehrere Raketen schlagen in Kabul ein“",
@@ -17028,11 +17368,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Vengeance is mine.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "369633bbfc": {
     "text": "„Ein »richtiges Alter«, um Boomer zu sein, gibt es nicht – das scheint die einzige Gewissheit in dieser Debatte zu sein.“",
@@ -17211,22 +17552,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "from one extreme to the other",
     "source": "wiktionary",
     "lemmas": [
       "Extrem"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3698bcf1ea": {
     "text": "jemandem schlägt das Wasser über dem Kopf zusammen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in over one's head",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "369965e129": {
     "text": "„[…] Ende Januar wurde zudem ein deutscher Staatsbürger entführt und wird seitdem von einem Stamm gefangen gehalten, der damit Druck auf die Regierung ausüben will, um zwei in Sanaa inhaftierte Stammesangehörige freizupressen.“",
@@ -17982,12 +18325,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have more staying power",
     "source": "wiktionary",
     "lemmas": [
       "lang"
     ],
-    "ref": "phrases/den längeren Atem haben"
+    "ref": "phrases/den längeren Atem haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "369cc11fca": {
     "text": "„Der (meist adelige) Fähnrich darf die Fahne um keinen Preis in die Hand des Feindes fallen lassen, lieber soll er sie zerreißen.“",
@@ -18520,18 +18864,102 @@
   },
   "369ff88b8a": {
     "text": "Wegen jeder Kleinigkeit fährt er aus der Haut.",
-    "translation": null,
+    "translation": "He loses his temper over every little thing.",
     "source": "wiktionary",
     "lemmas": [
       "aus der Haut fahren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kleinigkeit",
+        "lemma": "Kleinigkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fährt",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haut",
+        "lemma": "Haut",
+        "pos": "noun",
+        "gloss_hint": "skin"
+      }
     ]
   },
   "36a04d9e34": {
     "text": "„Wenn Du diese Begründung in den Report schreibst, dann begibst Du Dich auf dünnes Eis. Du weißt doch gar nicht genau, was die Ursache für den Verlust ist!“",
-    "translation": null,
+    "translation": "If you write this reasoning in the report, you're treading on thin ice. You don't even know exactly what the cause of the loss is!",
     "source": "wiktionary",
     "lemmas": [
       "auf dünnem Eis"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Begründung",
+        "lemma": "Begründung",
+        "pos": "noun",
+        "gloss_hint": "reasoning"
+      },
+      {
+        "form": "Report",
+        "lemma": "Report",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schreibst",
+        "lemma": "schreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "begibst",
+        "lemma": "begeben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "dünnes",
+        "lemma": "dünn",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eis",
+        "lemma": "Eis",
+        "pos": "noun",
+        "gloss_hint": "ice"
+      },
+      {
+        "form": "weißt",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "genau",
+        "lemma": "genau",
+        "pos": "adjective",
+        "gloss_hint": "exact"
+      },
+      {
+        "form": "Ursache",
+        "lemma": "Ursache",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verlust",
+        "lemma": "Verlust",
+        "pos": "noun",
+        "gloss_hint": "deficit"
+      }
     ]
   },
   "36a06a3f6e": {
@@ -19193,11 +19621,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone's eyes are opened",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "36a53b5c9c": {
     "text": "Die Konstanz der Lichtgeschwindigkeit ist in der Speziellen Relativitätstheorie ein Grundpostulat.",
@@ -20242,18 +20671,40 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have it in one's blood",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "36b237bfff": {
     "text": "„Die Dividende wird um ein Zehntel erhöht.“",
-    "translation": null,
+    "translation": "The dividend will be increased by one tenth.",
     "source": "wiktionary",
     "lemmas": [
       "Zehntel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Dividende",
+        "lemma": "Dividende",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erhöht",
+        "lemma": "erhöhen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zehntel",
+        "lemma": "Zehntel",
+        "pos": "noun",
+        "gloss_hint": "tenth (second)"
+      }
     ]
   },
   "36b249d8d5": {
@@ -21306,12 +21757,13 @@
     "type": "expression",
     "note": "plötzlich, unvermittelt, unerwartet",
     "synonyms": [],
-    "translation": null,
+    "translation": "like a bat out of hell",
     "source": "wiktionary",
     "lemmas": [
       "stechen"
     ],
-    "ref": "phrases/wie von der Tarantel gestochen"
+    "ref": "phrases/wie von der Tarantel gestochen",
+    "translation_model": "openai/gpt-4.1"
   },
   "36baeae01c": {
     "text": "Peter und Paul folgen aufeinander.",
@@ -21354,11 +21806,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Everyone has their own demons.",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "36bba47267": {
     "text": "„Das Publikum wollte Musik.“",
@@ -22391,11 +22844,12 @@
     "type": "expression",
     "note": "Hier ist alles möglich, auch wenn es noch so verrückt ist.",
     "synonyms": [],
-    "translation": null,
+    "translation": "Nothing surprises me anymore.",
     "source": "wiktionary",
     "lemmas": [
       "wundern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "36c658c9c1": {
     "text": "Heute spielt Peter keine Turnierpartie, sondern Blitz.",
@@ -23309,11 +23763,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Someone gets knocked flat.",
     "source": "wiktionary",
     "lemmas": [
       "Matte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "36d1bb8a01": {
     "text": "Lieferanten bitte durch den Nebeneingang!",
@@ -25463,10 +25918,61 @@
   },
   "36e3dd783b": {
     "text": "„Wir verließen diese unmenschliche Stätte alle voll Trauer über den Anblick der Opfer solcher Tyrannei.“",
-    "translation": null,
+    "translation": "We left that inhumane place all full of grief at the sight of the victims of such tyranny.",
     "source": "wiktionary",
     "lemmas": [
       "Stätte"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "verließen",
+        "lemma": "verlassen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "unmenschliche",
+        "lemma": "unmenschlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stätte",
+        "lemma": "Stätte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "voll",
+        "lemma": "voll",
+        "pos": "adjective",
+        "gloss_hint": "full"
+      },
+      {
+        "form": "Trauer",
+        "lemma": "Trauer",
+        "pos": "noun",
+        "gloss_hint": "grief"
+      },
+      {
+        "form": "Anblick",
+        "lemma": "Anblick",
+        "pos": "noun",
+        "gloss_hint": "view"
+      },
+      {
+        "form": "Opfer",
+        "lemma": "Opfer",
+        "pos": "noun",
+        "gloss_hint": "victim"
+      },
+      {
+        "form": "Tyrannei",
+        "lemma": "Tyrannei",
+        "pos": "noun",
+        "gloss_hint": "tyranny"
+      }
     ]
   },
   "36e4672037": {
@@ -26513,10 +27019,43 @@
   },
   "36f08ff9b7": {
     "text": "„Hinkebein wird inzwischen hinter einem Strohschober versteckt und erhält soviel Hafer, wie wohl seit Wochen nicht mehr.“",
-    "translation": null,
+    "translation": "Limpy is now hidden behind a straw stack and gets as much oats as he probably hasn't had in weeks.",
     "source": "wiktionary",
     "lemmas": [
       "Hafer"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hinkebein",
+        "lemma": "Hinkebein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "versteckt",
+        "lemma": "verstecken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strohschober",
+        "lemma": "Strohschober",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hafer",
+        "lemma": "Hafer",
+        "pos": "noun",
+        "gloss_hint": "oat"
+      },
+      {
+        "form": "Wochen",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "36f0c10a0a": {
@@ -26887,10 +27426,19 @@
   },
   "36f2d22a9f": {
     "text": "Mist, mein Auto ist schon wieder im Arsch!",
-    "translation": null,
+    "translation": "Damn, my car is broken again!",
     "source": "wiktionary",
     "lemmas": [
       "im Arsch sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Auto",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": "car"
+      }
     ]
   },
   "36f34f253f": {

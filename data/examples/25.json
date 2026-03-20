@@ -674,11 +674,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "kick someone in the stomach",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2501486a2f": {
     "text": "Bei der bis zum 1. April dauernden Verhandlung will Kroatien nachweisen, dass Serbien die sogenannte \"ethnische Säuberung\" in Kroatien geplant hatte.",
@@ -1231,10 +1232,43 @@
   },
   "2509b361c0": {
     "text": "[Heinz Mewes:] „Aus meiner Sicht war die Entscheidung richtig und notwendig.“",
-    "translation": null,
+    "translation": "[Heinz Mewes:] In my view, the decision was correct and necessary.",
     "source": "wiktionary",
     "lemmas": [
       "aus meiner Sicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Heinz Mewes",
+        "lemma": "Heinz Mewes",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sicht",
+        "lemma": "Sicht",
+        "pos": "noun",
+        "gloss_hint": "view"
+      },
+      {
+        "form": "Entscheidung",
+        "lemma": "Entscheidung",
+        "pos": "noun",
+        "gloss_hint": "decision"
+      },
+      {
+        "form": "richtig",
+        "lemma": "richtig",
+        "pos": "adjective",
+        "gloss_hint": "correct"
+      },
+      {
+        "form": "notwendig",
+        "lemma": "notwendig",
+        "pos": "adjective",
+        "gloss_hint": "necessary"
+      }
     ]
   },
   "250a763fca": {
@@ -1293,10 +1327,85 @@
   },
   "250bb128d6": {
     "text": "„Die Erschütterung über die in deutschem Namen verübten Massenmorde ließ ein Klagen über nationale Gebietsverluste und ethnische Säuberungen, selbst über Vergewaltigungen als unangemessen erscheinen.“",
-    "translation": null,
+    "translation": "The shock at the mass murders perpetrated in Germany's name made lamenting over national territorial losses and ethnic cleansing, even over rape, seem inappropriate.",
     "source": "wiktionary",
     "lemmas": [
       "Erschütterung"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erschütterung",
+        "lemma": "Erschütterung",
+        "pos": "noun",
+        "gloss_hint": "shock"
+      },
+      {
+        "form": "deutschem",
+        "lemma": "deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Namen",
+        "lemma": "Name",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verübten",
+        "lemma": "verüben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Massenmorde",
+        "lemma": "Massenmord",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klagen",
+        "lemma": "Klage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gebietsverluste",
+        "lemma": "Gebietsverlust",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ethnische",
+        "lemma": "ethnisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Säuberungen",
+        "lemma": "Säuberung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vergewaltigungen",
+        "lemma": "Vergewaltigung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "unangemessen",
+        "lemma": "unangemessen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "erscheinen",
+        "lemma": "erscheinen",
+        "pos": "verb",
+        "gloss_hint": "seem"
+      }
     ]
   },
   "250dbc04d1": {
@@ -3224,10 +3333,61 @@
   },
   "251dacfe49": {
     "text": "„Sie sprangen auf das Motorrad. Kalle folterte den Gashebel, der Motor heulte auf. »Let’s fetz!‘, schrie er.“",
-    "translation": null,
+    "translation": "They jumped onto the motorcycle. Kalle twisted the throttle, the engine roared. \"Let's fetz!\" he shouted.",
     "source": "wiktionary",
     "lemmas": [
       "let’s fetz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sprangen",
+        "lemma": "springen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Motorrad",
+        "lemma": "Motorrad",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kalle",
+        "lemma": "Kalle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "folterte",
+        "lemma": "foltern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gashebel",
+        "lemma": "Gashebel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Motor",
+        "lemma": "Motor",
+        "pos": "noun",
+        "gloss_hint": "motor"
+      },
+      {
+        "form": "heulte",
+        "lemma": "heulen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schrie",
+        "lemma": "schreien",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "251e08776b": {
@@ -3607,10 +3767,37 @@
   },
   "2523966f99": {
     "text": "Meine Eltern streiten schon wieder, da gehe ich, ich will nicht zwischen die Fronten geraten.",
-    "translation": null,
+    "translation": "My parents are arguing again, so I'm leaving—I don't want to get caught in the crossfire.",
     "source": "wiktionary",
     "lemmas": [
       "zwischen die Fronten geraten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Eltern",
+        "lemma": "Eltern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "streiten",
+        "lemma": "streiten",
+        "pos": "verb",
+        "gloss_hint": "argue"
+      },
+      {
+        "form": "geraten",
+        "lemma": "geraten",
+        "pos": "verb",
+        "gloss_hint": "end up"
+      },
+      {
+        "form": "Fronten",
+        "lemma": "Front",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2523a9ac22": {
@@ -7451,12 +7638,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be drunk",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
     ],
-    "ref": "phrases/einen sitzen haben"
+    "ref": "phrases/einen sitzen haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "25465e10a5": {
     "text": "„Er hielt nicht mehr an ſich. Eine lange aufgeſpeicherte Menge von Wut entlud ſich.“",
@@ -10021,11 +10209,12 @@
     "type": "expression",
     "note": "vollen Einsatz zeigen",
     "synonyms": [],
-    "translation": null,
+    "translation": "go all out",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "255860d7de": {
     "text": "Ein Bänderriss zwang ihn zur Aufgabe.",
@@ -10387,10 +10576,43 @@
   },
   "255c36e7aa": {
     "text": "„Als es dann nach dem Mauerfall in Berlin einen Techno-Hype gab, habe ich meine damaligen Plattenspieler heraus gepackt und einfach - just for fun - ein bisschen gemixt.“",
-    "translation": null,
+    "translation": "\"When there was a techno hype in Berlin after the fall of the Wall, I pulled out my turntables from back then and just—just for fun—mixed a bit.\"",
     "source": "wiktionary",
     "lemmas": [
       "just for fun"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mauerfall",
+        "lemma": "Mauerfall",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Berlin",
+        "lemma": "Berlin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Techno-Hype",
+        "lemma": "Techno-Hype",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Plattenspieler",
+        "lemma": "Plattenspieler",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gemixt",
+        "lemma": "mixen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "255c7111df": {
@@ -12055,11 +12277,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get the brush-off",
     "source": "wiktionary",
     "lemmas": [
       "Abfuhr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "256f721ca5": {
     "text": "„Du wartest hier, und ich hole Seine Lordschaft.“",
@@ -14197,10 +14420,37 @@
   },
   "25860be672": {
     "text": "„Einmal mehr zeigt er, welch ein Ensemble der Ballhof besitzt: er faßt es wie ein Orchester zusammen: er spielt wie auf einem Instrument darauf.“",
-    "translation": null,
+    "translation": "\"Once again he shows what an ensemble the Ballhof possesses: he brings it together like an orchestra; he plays it like an instrument.\"",
     "source": "wiktionary",
     "lemmas": [
       "einmal mehr"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ensemble",
+        "lemma": "Ensemble",
+        "pos": "noun",
+        "gloss_hint": "ensemble (performing)"
+      },
+      {
+        "form": "Ballhof",
+        "lemma": "Ballhof",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Orchester",
+        "lemma": "Orchester",
+        "pos": "noun",
+        "gloss_hint": "orchestra"
+      },
+      {
+        "form": "Instrument",
+        "lemma": "Instrument",
+        "pos": "noun",
+        "gloss_hint": "instrument"
+      }
     ]
   },
   "258612a705": {
@@ -14270,10 +14520,25 @@
   },
   "258655bcad": {
     "text": "„Hier haben wir eine Folie, die den Umweltschutzaspekt beleuchtet.“",
-    "translation": null,
+    "translation": "\"Here we have a slide that illuminates the environmental protection aspect.\"",
     "source": "wiktionary",
     "lemmas": [
       "Folie"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Folie",
+        "lemma": "Folie",
+        "pos": "noun",
+        "gloss_hint": "slide"
+      },
+      {
+        "form": "Umweltschutzaspekt",
+        "lemma": "Umweltschutzaspekt",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "25866fc2fb": {
@@ -16034,11 +16299,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "here and there",
     "source": "wiktionary",
     "lemmas": [
       "da"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "25996280dd": {
     "text": "Der Klan verehrte sein Totem als den Ahnen, dem in jeder Lebenslage Respekt zu zollen war.",
@@ -16225,11 +16491,12 @@
     "type": "expression",
     "note": "ohne Verzug",
     "synonyms": [],
-    "translation": null,
+    "translation": "in no time at all",
     "source": "wiktionary",
     "lemmas": [
       "Komma"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "259b25bef4": {
     "text": "„Die Habsburger sind eine europäische Dynastie, deren Name sich von ihrer Stammburg Habsburg im heutigen Kanton Aargau herleitet.“",
@@ -16464,11 +16731,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If your mouth is watering, you'll probably learn to swim.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "259d6c997f": {
     "text": "bis an den Hals",
@@ -16650,11 +16918,12 @@
     "type": "expression",
     "note": "eine große Neuigkeit",
     "synonyms": [],
-    "translation": null,
+    "translation": "That's a real bombshell!",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "259fdc08ee": {
     "text": "„Der Braten wurde auf einer Platte serviert, die Kartoffeln in einer Schüssel, die Soße in einer Sauciere, zwei Runden, dazwischen eine Pause.“",
@@ -17859,12 +18128,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make a run for it",
     "source": "wiktionary",
     "lemmas": [
       "Mücke"
     ],
-    "ref": "phrases/die Mücke machen"
+    "ref": "phrases/die Mücke machen",
+    "translation_model": "openai/gpt-4.1"
   },
   "25ae3f9462": {
     "text": "Ihm ist plötzlich aufgegangen, wie die Lösung aussehen muss.",
@@ -19431,10 +19701,31 @@
   },
   "25be27486f": {
     "text": "Was Sex und Drogen angeht, bist du auch kein unbeschriebenes Blatt, oder?",
-    "translation": null,
+    "translation": "As for sex and drugs, you're no innocent either, are you?",
     "source": "wiktionary",
     "lemmas": [
       "kein unbeschriebenes Blatt sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sex",
+        "lemma": "Sex",
+        "pos": "noun",
+        "gloss_hint": "sex (act)"
+      },
+      {
+        "form": "Drogen",
+        "lemma": "Droge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blatt",
+        "lemma": "Blatt",
+        "pos": "noun",
+        "gloss_hint": "sheet"
+      }
     ]
   },
   "25be7f1df9": {
@@ -19580,10 +19871,31 @@
   },
   "25c18ea583": {
     "text": "Nachdem ich den Gitarrengriff drei Wochen lang geübt habe, kann ich ihn aus dem Effeff.",
-    "translation": null,
+    "translation": "After practicing the guitar chord for three weeks, I can do it with my eyes closed.",
     "source": "wiktionary",
     "lemmas": [
       "aus dem Effeff"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gitarrengriff",
+        "lemma": "Gitarrengriff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geübt",
+        "lemma": "üben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Effeff",
+        "lemma": "Effeff",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "25c1ecf043": {
@@ -19851,10 +20163,49 @@
   },
   "25c449d76a": {
     "text": "„»Die kleine Scheißpunkband aus Kreuzberg läuft plötzlich im Deutschlandradio mit ihrem Drosten-Song, das war sehr ulkig. Das haben viele Leute gehört und gesehen, die sonst nichts mit unserer Musik zu tun haben, aber auch in Zukunft nichts zu tun haben wollen, glaub ich!«“",
-    "translation": null,
+    "translation": "\"The little punk band from Kreuzberg suddenly gets played on German radio with their Drosten song—that was pretty funny. A lot of people heard and saw it who otherwise have nothing to do with our music, but won't in the future either, I think!\"",
     "source": "wiktionary",
     "lemmas": [
       "mit etwas nichts zu tun haben wollen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Scheißpunkband",
+        "lemma": "Scheißpunkband",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kreuzberg",
+        "lemma": "Kreuzberg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschlandradio",
+        "lemma": "Deutschlandradio",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Drosten-Song",
+        "lemma": "Drosten-Song",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leute",
+        "lemma": "Leute",
+        "pos": "noun",
+        "gloss_hint": "people"
+      },
+      {
+        "form": "Musik",
+        "lemma": "Musik",
+        "pos": "noun",
+        "gloss_hint": "music"
+      }
     ]
   },
   "25c6509a14": {
@@ -19862,11 +20213,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "let the thread slip from your hand",
     "source": "wiktionary",
     "lemmas": [
       "Faden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "25c835e709": {
     "text": "„Er sah Débras und Siméon an, er hörte die Kirchturmuhren von Marseille die Dreiviertelstunde schlagen, von weit her, verweht und dünn.“",
@@ -21779,10 +22131,25 @@
   },
   "25d67dc775": {
     "text": "Diese Verspätung brachte mich ganz schön in die Bredouille.",
-    "translation": null,
+    "translation": "This delay put me in quite a pickle.",
     "source": "wiktionary",
     "lemmas": [
       "in die Bredouille bringen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verspätung",
+        "lemma": "Verspätung",
+        "pos": "noun",
+        "gloss_hint": "delay (duration)"
+      },
+      {
+        "form": "Bredouille",
+        "lemma": "Bredouille",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "25d692dc44": {
@@ -22498,18 +22865,40 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "across the alley",
     "source": "wiktionary",
     "lemmas": [
       "Gasse"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "25e21e41f7": {
     "text": "„»Wie kommt es, daß du mit Thomas Mann zum Essen eingeladen warst?« erkundigte sich Marie.“",
-    "translation": null,
+    "translation": "\"How is it that you were invited to dinner with Thomas Mann?\" Marie inquired.",
     "source": "wiktionary",
     "lemmas": [
       "erkundigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Thomas Mann",
+        "lemma": "Thomas Mann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Essen",
+        "lemma": "Essen",
+        "pos": "noun",
+        "gloss_hint": "meal"
+      },
+      {
+        "form": "Marie",
+        "lemma": "Marie",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "25e272b423": {
@@ -23013,10 +23402,43 @@
   },
   "25e7172668": {
     "text": "Jenseits dies Orts voll Zorn und Tränen ragt auf der Alb der Schattenwelt.",
-    "translation": null,
+    "translation": "Beyond this place full of wrath and tears, on the Swabian Alps rises the shadow world.",
     "source": "wiktionary",
     "lemmas": [
       "Alb"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Orts",
+        "lemma": "Ort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zorn",
+        "lemma": "Zorn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tränen",
+        "lemma": "Träne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Alb",
+        "lemma": "Alb",
+        "pos": "noun",
+        "gloss_hint": "elf"
+      },
+      {
+        "form": "Schattenwelt",
+        "lemma": "Schattenwelt",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "25e726e235": {
@@ -25138,10 +25560,73 @@
   },
   "25faeda2d1": {
     "text": "„Unter den vielen Ideen und Drehbuchentwürfen, die für die wöchentlichen Mystery-Fälle der Hit-Serie »Akte X« ausgearbeitet wurden, fand sich auch eine, deren zentrales Thema eine Gruppe von Teenagern war, die allesamt irgendwie dem Tod von der Schippe gesprungen sind.“",
-    "translation": null,
+    "translation": "Among the many ideas and screenplay drafts that were developed for the weekly mystery cases of the hit series \"The X-Files,\" there was also one whose central theme was a group of teenagers who had all somehow cheated death.",
     "source": "wiktionary",
     "lemmas": [
       "dem Tod von der Schippe springen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ideen",
+        "lemma": "Idee",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Drehbuchentwürfen",
+        "lemma": "Drehbuchentwurf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hit-Serie",
+        "lemma": "Hit-Serie",
+        "pos": "noun",
+        "gloss_hint": "hit"
+      },
+      {
+        "form": "Akte X",
+        "lemma": "Akte X",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgearbeitet",
+        "lemma": "ausarbeiten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zentrales",
+        "lemma": "zentral",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Thema",
+        "lemma": "Thema",
+        "pos": "noun",
+        "gloss_hint": "topic"
+      },
+      {
+        "form": "Gruppe",
+        "lemma": "Gruppe",
+        "pos": "noun",
+        "gloss_hint": "group"
+      },
+      {
+        "form": "Teenagern",
+        "lemma": "Teenager",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tod",
+        "lemma": "Tod",
+        "pos": "noun",
+        "gloss_hint": "death"
+      }
     ]
   },
   "25fb47256f": {
@@ -25639,10 +26124,31 @@
   },
   "25ff0ac830": {
     "text": "In diesem Urlaub bin ich vollkommen off.",
-    "translation": null,
+    "translation": "On this vacation, I'm completely off the grid.",
     "source": "wiktionary",
     "lemmas": [
       "off"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Urlaub",
+        "lemma": "Urlaub",
+        "pos": "noun",
+        "gloss_hint": "vacation"
+      },
+      {
+        "form": "vollkommen",
+        "lemma": "vollkommen",
+        "pos": "adjective",
+        "gloss_hint": "complete"
+      },
+      {
+        "form": "off",
+        "lemma": "off",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "25ff4567cb": {

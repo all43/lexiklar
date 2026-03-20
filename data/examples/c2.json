@@ -273,12 +273,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go into the lion's den",
     "source": "wiktionary",
     "lemmas": [
       "Löwe"
     ],
-    "ref": "phrases/in die Höhle des Löwen gehen"
+    "ref": "phrases/in die Höhle des Löwen gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "c20443da21": {
     "text": "„Deutlicher konnte sie mir meine Vermutung nicht bestätigen, daß die angebliche Nichte ihre Tochter war und ich ihr Onkel.“",
@@ -899,10 +900,43 @@
   },
   "c207220823": {
     "text": "„Die Männer fingerten zwischen den Gelenken der Puppe herum.“",
-    "translation": null,
+    "translation": "The men fumbled around between the joints of the doll.",
     "source": "wiktionary",
     "lemmas": [
       "Gelenk"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Männer",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fingerten",
+        "lemma": "fingern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gelenken",
+        "lemma": "Gelenk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Puppe",
+        "lemma": "Puppe",
+        "pos": "noun",
+        "gloss_hint": "doll"
+      },
+      {
+        "form": "herum",
+        "lemma": "herum",
+        "pos": "adverb",
+        "gloss_hint": "around"
+      }
     ]
   },
   "c20739031e": {
@@ -982,11 +1016,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "moment of truth",
     "source": "wiktionary",
     "lemmas": [
       "Stunde"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2080761b0": {
     "text": "Zunächst der Staatsoper befinden sich viele ausgezeichnete Restaurants.",
@@ -2020,11 +2055,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as fresh as a daisy",
     "source": "wiktionary",
     "lemmas": [
       "Morgen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c20dfcc514": {
     "text": "Auf der Halbinsel Alaska befinden sich zahlreiche Vulkane und Nationalparks.",
@@ -2226,10 +2262,31 @@
   },
   "c2104355b1": {
     "text": "Kommen Sie morgen bitte ins Min.",
-    "translation": null,
+    "translation": "Please come to the ministry tomorrow.",
     "source": "wiktionary",
     "lemmas": [
       "Min."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kommen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": "arrive"
+      },
+      {
+        "form": "morgen",
+        "lemma": "morgen",
+        "pos": "adverb",
+        "gloss_hint": "tomorrow"
+      },
+      {
+        "form": "Min",
+        "lemma": "Ministerium",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c2110cd540": {
@@ -2800,11 +2857,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to insist on one's rights",
     "source": "wiktionary",
     "lemmas": [
       "Recht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c215f2f1c0": {
     "text": "„Nach H. Kropf muss der Jäger darauf achten, wann das Schalenwild am Morgen ‚zu Holze zieht‘.“",
@@ -3787,11 +3845,13 @@
   },
   "c21c958699": {
     "text": "Siehe Noll, Nick (o.J.), „Irre Ideen“, Eigenverlag, o.O., Seite 11 f.",
-    "translation": null,
+    "translation": "See Noll, Nick (n.d.), \"Crazy Ideas\", Self-published, n.p., page 11 et seq.",
     "source": "wiktionary",
     "lemmas": [
       "o."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "c21cd112b8": {
     "text": "„Die deutsche Luftwaffe greift die italienische Schlachtflotte an, die den Waffenstillstandsbedingungen mit den Alliierten gemäß von La Spezia nach Malta ausgelaufen ist, und versenkt das Schlachtschiff \"Roma\".“",
@@ -5116,11 +5176,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have what it takes",
     "source": "wiktionary",
     "lemmas": [
       "haben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2296e7bda": {
     "text": "Zur Zeit wird diskutiert, ob die Stütze nicht zu hoch ist.",
@@ -5433,14 +5494,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "free rein",
     "source": "wiktionary",
     "lemmas": [
       "frei"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "c22a87befb": {
     "text": "„Phrasen können entweder unmittelbare Konstituenten eines Satzes = Satzteile sein (Prädikat, Subjekt, Objekt usw.), oder sie fungieren als Teile solcher Satzteile und sind damit nur mittelbare Konstituenten eines Satzes.“",
@@ -5803,14 +5862,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a sight for sore eyes",
     "source": "wiktionary",
     "lemmas": [
       "Bild"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "c22f87929c": {
     "text": "„Ich habe gerade einen Brief an meinen deutschen Agenten geschrieben und ihn gefragt, ob es möglich wäre, die Deadline für den ersten Entwurf dieses Buches bis Montag zu verlängern.“",
@@ -6182,11 +6239,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep someone on their toes",
     "source": "wiktionary",
     "lemmas": [
       "Trab"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c230c0e652": {
     "text": "Und wieder ist die Frage, inwieweit soll sich da der Staat einmischen?",
@@ -7768,11 +7826,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get the hang of it",
     "source": "wiktionary",
     "lemmas": [
       "Dreh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c247e49497": {
     "text": "Es ist höflich, „bitte“ und „danke“ zu sagen.",
@@ -9098,10 +9157,49 @@
   },
   "c2589c8f9b": {
     "text": "„Gemeinsam studierten wir die akribischen und banalen Berichte der IM.“",
-    "translation": null,
+    "translation": "\"Together we studied the meticulous and banal reports of the IM.\"",
     "source": "wiktionary",
     "lemmas": [
       "IM"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gemeinsam",
+        "lemma": "gemeinsam",
+        "pos": "adjective",
+        "gloss_hint": "shared"
+      },
+      {
+        "form": "studierten",
+        "lemma": "studieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "akribischen",
+        "lemma": "akribisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "banalen",
+        "lemma": "banal",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Berichte",
+        "lemma": "Bericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "IM",
+        "lemma": "IM",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c25987515c": {
@@ -11978,22 +12076,24 @@
     "type": "expression",
     "note": "vor jemandem keine Angst (zu) haben (brauchen)",
     "synonyms": [],
-    "translation": null,
+    "translation": "No one is going to bite your head off.",
     "source": "wiktionary",
     "lemmas": [
       "fressen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c273bb3c2f": {
     "text": "in den Kinderschuhen stecken",
     "type": "expression",
     "note": ") – noch nicht fertig sein, unausgereift",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in its infancy",
     "source": "wiktionary",
     "lemmas": [
       "stecken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c273ed9375": {
     "text": "Die Handlung des Films ist ziemlich simpel.",
@@ -12702,11 +12802,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be able to figure something out easily",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c280ecb14c": {
     "text": "„Ein Kapitänsposten fand sich nicht für mich und so mußte ich schließlich froh sein, wieder als Steuermann in See gehen zu können.“",
@@ -13165,10 +13266,109 @@
   },
   "c2862a67b6": {
     "text": "Nach dem Tode von Chaim Weizmann, Israels erstem Präsidenten, bot David Ben-Gurion das Amt Albert Einstein an, da dieser damals der respektierteste Jude auf Erden war – er war aber auch erleichtert, als der notorisch unabhängig denkende Einstein dankend ablehnte.",
-    "translation": null,
+    "translation": "After the death of Chaim Weizmann, Israel's first president, David Ben-Gurion offered the office to Albert Einstein, since he was then the most respected Jew on earth – but he was also relieved when the notoriously independent-minded Einstein politely declined.",
     "source": "wiktionary",
     "lemmas": [
       "respektiert"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tode",
+        "lemma": "Tod",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Chaim Weizmann",
+        "lemma": "Chaim Weizmann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Israels",
+        "lemma": "Israel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erstem",
+        "lemma": "erst",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Präsidenten",
+        "lemma": "Präsident",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "David Ben-Gurion",
+        "lemma": "David Ben-Gurion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Amt",
+        "lemma": "Amt",
+        "pos": "noun",
+        "gloss_hint": "office"
+      },
+      {
+        "form": "Albert Einstein",
+        "lemma": "Albert Einstein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "respektierteste",
+        "lemma": "respektiert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jude",
+        "lemma": "Jude",
+        "pos": "noun",
+        "gloss_hint": "Jew (ethnic)"
+      },
+      {
+        "form": "erleichtert",
+        "lemma": "erleichtert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "notorisch",
+        "lemma": "notorisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "unabhängig",
+        "lemma": "unabhängig",
+        "pos": "adjective",
+        "gloss_hint": "independent"
+      },
+      {
+        "form": "denkende",
+        "lemma": "denken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einstein",
+        "lemma": "Einstein",
+        "pos": "noun",
+        "gloss_hint": "genius"
+      },
+      {
+        "form": "ablehnte",
+        "lemma": "ablehnen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "c286696e7a": {
@@ -13176,11 +13376,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to enter the final round",
     "source": "wiktionary",
     "lemmas": [
       "Runde"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c28718dc8a": {
     "text": "„Von dem Verhalten der Prinzessin und des Fürsten Wassilij erzählte sie auch, und zwar mit ernstlicher Missbilligung, aber nur im Flüsterton und unter dem Siegel der tiefsten Verschwiegenheit.“",
@@ -15040,11 +15241,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give stones instead of bread",
     "source": "wiktionary",
     "lemmas": [
       "Brot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c298f4b0a9": {
     "text": "„Schneeflocken strömen den Scheinwerfern entgegen, platzen auf dem Glas der Windschutzscheibe.“",
@@ -16501,10 +16703,37 @@
   },
   "c2a25c2b7e": {
     "text": "Wir gingen zurück in die Herberge, um zu schlafen.",
-    "translation": null,
+    "translation": "We went back to the inn to sleep.",
     "source": "wiktionary",
     "lemmas": [
       "Herberge"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gingen",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zurück",
+        "lemma": "zurück",
+        "pos": "adverb",
+        "gloss_hint": "back"
+      },
+      {
+        "form": "Herberge",
+        "lemma": "Herberge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schlafen",
+        "lemma": "schlafen",
+        "pos": "verb",
+        "gloss_hint": "sleep"
+      }
     ]
   },
   "c2a3b4a32d": {
@@ -16545,10 +16774,79 @@
   },
   "c2a40b535f": {
     "text": "„Die folgende Fußballgeschichte handelt vom letzten Habsburger, Otto Habsburg, der in Bayern lebte und für die CSU im Europaparlament in Straßburg saß.“",
-    "translation": null,
+    "translation": "\"The following football story is about the last Habsburg, Otto Habsburg, who lived in Bavaria and sat for the CSU in the European Parliament in Strasbourg.\"",
     "source": "wiktionary",
     "lemmas": [
       "CSU"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "folgende",
+        "lemma": "folgend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fußballgeschichte",
+        "lemma": "Fußballgeschichte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "handelt",
+        "lemma": "handeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "letzten",
+        "lemma": "letzt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Habsburger",
+        "lemma": "Habsburger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Otto Habsburg",
+        "lemma": "Otto Habsburg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bayern",
+        "lemma": "Bayern",
+        "pos": "noun",
+        "gloss_hint": "Bavaria"
+      },
+      {
+        "form": "lebte",
+        "lemma": "leben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "CSU",
+        "lemma": "CSU",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Europaparlament",
+        "lemma": "Europaparlament",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Straßburg",
+        "lemma": "Straßburg",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c2a4302047": {
@@ -16799,10 +17097,37 @@
   },
   "c2a61bf96f": {
     "text": "„Es erinnert uns an den Purpurmantel, womit man Christum nach seiner Geißlung umhängt hat.“ (1847)",
-    "translation": null,
+    "translation": "\"It reminds us of the purple cloak with which Christ was clothed after his scourging.\" (1847)",
     "source": "wiktionary",
     "lemmas": [
       "umhängen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "erinnert",
+        "lemma": "erinnern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Purpurmantel",
+        "lemma": "Purpurmantel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Christum",
+        "lemma": "Christus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geißlung",
+        "lemma": "Geißlung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c2a7e19517": {
@@ -16810,33 +17135,36 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A house cannot support two masters.",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2a7f04381": {
     "text": "wenn die Katze fort ist, tanzen die Mäuse",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When the cat's away, the mice will play.",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2a81887a6": {
     "text": "über den Bach gehen",
     "type": "expression",
     "note": "sterben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to pass away",
     "source": "wiktionary",
     "lemmas": [
       "Bach"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2ab493dd0": {
     "text": "Das Wort „Wiktionary“ hat die Länge 10.",
@@ -17816,11 +18144,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on a high horse",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2b7cbc33d": {
     "text": "An den Volkshochschulen ist Spanisch ein recht beliebtes Unterrichtsfach.",
@@ -18124,22 +18453,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to help someone get back on their feet",
     "source": "wiktionary",
     "lemmas": [
       "Damm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2be2936db": {
     "text": "kurz und schmerzlos",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "short and sweet",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2be79f336": {
     "text": "„Diese Konvention fördert den Überblick über die Quellen und Standpunkte.“",
@@ -18351,23 +18682,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "lose heart",
     "source": "wiktionary",
     "lemmas": [
       "hängen"
     ],
-    "ref": "phrases/die Ohren hängen lassen"
+    "ref": "phrases/die Ohren hängen lassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "c2c0921e8c": {
     "text": "jemanden auf die Matte legen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pin someone to the mat",
     "source": "wiktionary",
     "lemmas": [
       "Matte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2c1cf633b": {
     "text": "Wenn Peter I. die Kreml in Moskau, Pskow, Smolensk, Nowgorod und Kiew noch verstärkte, so ist das auf den drohenden Einfall der Schweden zurückzuführen.",
@@ -19836,10 +20169,79 @@
   },
   "c2cd181e94": {
     "text": "„Auf dem Beistelltisch stehen bereits Kaffeetassen und Kuchenteller bereit, ein Mix aus geblümtem und rein weißem Geschirr.“",
-    "translation": null,
+    "translation": "\"On the side table, coffee cups and cake plates are already laid out, a mix of floral and pure white dishes.\"",
     "source": "wiktionary",
     "lemmas": [
       "Mix"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Beistelltisch",
+        "lemma": "Beistelltisch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stehen",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": "be located"
+      },
+      {
+        "form": "bereits",
+        "lemma": "bereits",
+        "pos": "adverb",
+        "gloss_hint": "already"
+      },
+      {
+        "form": "Kaffeetassen",
+        "lemma": "Kaffeetasse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kuchenteller",
+        "lemma": "Kuchenteller",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bereit",
+        "lemma": "bereit",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mix",
+        "lemma": "Mix",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geblümtem",
+        "lemma": "geblümt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "rein",
+        "lemma": "rein",
+        "pos": "adjective",
+        "gloss_hint": "pure"
+      },
+      {
+        "form": "weißem",
+        "lemma": "weiß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geschirr",
+        "lemma": "Geschirr",
+        "pos": "noun",
+        "gloss_hint": "dishes"
+      }
     ]
   },
   "c2cd7c3f9b": {
@@ -21153,10 +21555,49 @@
   },
   "c2d78f660d": {
     "text": "Wir sind erst fertig, wenn die Ernte unter Dach und Fach gebracht ist.",
-    "translation": null,
+    "translation": "We are only finished when the harvest is safely stored away.",
     "source": "wiktionary",
     "lemmas": [
       "unter Dach und Fach"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sind",
+        "lemma": "sein",
+        "pos": "verb",
+        "gloss_hint": "be (copula)"
+      },
+      {
+        "form": "erst",
+        "lemma": "erst",
+        "pos": "adverb",
+        "gloss_hint": "only then"
+      },
+      {
+        "form": "fertig",
+        "lemma": "fertig",
+        "pos": "adjective",
+        "gloss_hint": "finished"
+      },
+      {
+        "form": "Ernte",
+        "lemma": "Ernte",
+        "pos": "noun",
+        "gloss_hint": "harvest"
+      },
+      {
+        "form": "Dach",
+        "lemma": "Dach",
+        "pos": "noun",
+        "gloss_hint": "roof"
+      },
+      {
+        "form": "Fach",
+        "lemma": "Fach",
+        "pos": "noun",
+        "gloss_hint": "compartment"
+      }
     ]
   },
   "c2d7c4bf7f": {
@@ -21428,11 +21869,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "never know happiness again",
     "source": "wiktionary",
     "lemmas": [
       "froh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2d9fea87b": {
     "text": "Im Jahr 1983 startete die erste amerikanische Astronautin ins All.",
@@ -21534,11 +21976,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bring something to light",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2db23bff1": {
     "text": "Der Hai steht am Ende der Nahrungskette.",
@@ -21620,12 +22063,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "paint a rosy picture",
     "source": "wiktionary",
     "lemmas": [
       "zeichnen"
     ],
-    "ref": "phrases/ein rosiges Bild zeichnen"
+    "ref": "phrases/ein rosiges Bild zeichnen",
+    "translation_model": "openai/gpt-4.1"
   },
   "c2dcd3a488": {
     "text": "Hol doch mal die Schüssel aus dem Schrank.",
@@ -22663,11 +23107,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "set someone back by years",
     "source": "wiktionary",
     "lemmas": [
       "werfen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2eca38c05": {
     "text": "Er kaufte eine Dose mit passierten Tomaten.",
@@ -22766,11 +23211,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "walk around like a lost soul",
     "source": "wiktionary",
     "lemmas": [
       "Falschgeld"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2f24c5246": {
     "text": "„Tobias wohnte zur Miete in einem kleinen Häuschen neben einem Kindergarten.“",
@@ -22921,11 +23367,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Holy Family",
     "source": "wiktionary",
     "lemmas": [
       "Familie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c2f55980b5": {
     "text": "Im Meisterschaftskampf sammelte Borussia Dortmund weiter Punkte. Das Heimspiel gegen Werder Bremen gewannen die Dortmunder Borussia mit 1:0.",
@@ -23521,10 +23968,61 @@
   },
   "c2fa03c228": {
     "text": "An den verletzten Fußballer Holger Badshuber: \"Lass den Kopf nicht hängen\", twitterte sein Mannschaftskollege Mario Götze.",
-    "translation": null,
+    "translation": "To the injured footballer Holger Badshuber: \"Keep your head up,\" tweeted his teammate Mario Götze.",
     "source": "wiktionary",
     "lemmas": [
       "den Kopf hängen lassen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "verletzten",
+        "lemma": "verletzt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fußballer",
+        "lemma": "Fußballer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Holger Badshuber",
+        "lemma": "Holger Badshuber",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kopf",
+        "lemma": "Kopf",
+        "pos": "noun",
+        "gloss_hint": "head"
+      },
+      {
+        "form": "hängen",
+        "lemma": "hängen",
+        "pos": "verb",
+        "gloss_hint": "hang"
+      },
+      {
+        "form": "twitterte",
+        "lemma": "twittern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mannschaftskollege",
+        "lemma": "Mannschaftskollege",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mario Götze",
+        "lemma": "Mario Götze",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c2fb9df892": {

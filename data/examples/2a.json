@@ -2414,11 +2414,12 @@
     "type": "expression",
     "note": "(einen Wettbewerb) verlieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be knocked out of the race",
     "source": "wiktionary",
     "lemmas": [
       "fliegen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2a1a5c3d8d": {
     "text": "Aemilius führt die Römer an.",
@@ -2808,10 +2809,37 @@
   },
   "2a1f7a68ce": {
     "text": "Es ist eine wahre Wonne, Ihnen beim Tanzen zuzusehen.",
-    "translation": null,
+    "translation": "It is a true delight to watch you dance.",
     "source": "wiktionary",
     "lemmas": [
       "Wonne"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wahre",
+        "lemma": "wahr",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wonne",
+        "lemma": "Wonne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tanzen",
+        "lemma": "tanzen",
+        "pos": "verb",
+        "gloss_hint": "dance"
+      },
+      {
+        "form": "zuzusehen",
+        "lemma": "zusehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "2a1f98a0b3": {
@@ -3979,10 +4007,43 @@
   },
   "2a2d209d49": {
     "text": "Der Verbrauch dieser Waren stieg im letzten Jahr beträchtlich an.",
-    "translation": null,
+    "translation": "The consumption of these goods increased considerably in the last year.",
     "source": "wiktionary",
     "lemmas": [
       "Verbrauch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verbrauch",
+        "lemma": "Verbrauch",
+        "pos": "noun",
+        "gloss_hint": "consumption"
+      },
+      {
+        "form": "Waren",
+        "lemma": "Ware",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stieg",
+        "lemma": "steigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "beträchtlich",
+        "lemma": "beträchtlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "2a2f5d3d10": {
@@ -7405,10 +7466,55 @@
   },
   "2a46130ce8": {
     "text": "„Für alle, die kein wandelndes lateinisches Lexikon sind und dennoch ihren Wortschatz mit mehr oder weniger ausdrucksstarken Redewendungen füllen möchten, hat der Software-Hersteller Directmedia nun das »Lexikon lateinischer Zitate und Wendungen« herausgegeben.“",
-    "translation": null,
+    "translation": "For all those who are not walking Latin dictionaries and yet want to fill their vocabulary with more or less expressive idioms, the software manufacturer Directmedia has now published the \"Lexicon of Latin Quotations and Phrases.\"",
     "source": "wiktionary",
     "lemmas": [
       "ein wandelndes Lexikon sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wandelndes",
+        "lemma": "wandelnd",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "lateinisches",
+        "lemma": "lateinisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lexikon",
+        "lemma": "Lexikon",
+        "pos": "noun",
+        "gloss_hint": "dictionary"
+      },
+      {
+        "form": "Wortschatz",
+        "lemma": "Wortschatz",
+        "pos": "noun",
+        "gloss_hint": "vocabulary"
+      },
+      {
+        "form": "Redewendungen",
+        "lemma": "Redewendung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Software-Hersteller",
+        "lemma": "Software-Hersteller",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "herausgegeben",
+        "lemma": "herausgeben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "2a46594ba5": {
@@ -8992,11 +9098,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If you're too picky, you'll rarely have a good day.",
     "source": "wiktionary",
     "lemmas": [
       "heikel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2a56c7cbca": {
     "text": "Zum letzten Mal: „Räum dein Zimmer auf!“",
@@ -11388,11 +11495,12 @@
     "type": "expression",
     "note": "umgangssprachlich: jemandem nicht (so schnell) entgehen, wie befürchtet",
     "synonyms": [],
-    "translation": null,
+    "translation": "not get away from someone",
     "source": "wiktionary",
     "lemmas": [
       "weglaufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2a6b48c9e0": {
     "text": "Ich setze die Geranien in den Kübel.",
@@ -11464,12 +11572,13 @@
     "type": "expression",
     "note": "ohnmächtig werden, das Bewusstsein verlieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "black out",
     "source": "wiktionary",
     "lemmas": [
       "kippen"
     ],
-    "ref": "phrases/aus den Latschen kippen"
+    "ref": "phrases/aus den Latschen kippen",
+    "translation_model": "openai/gpt-4.1"
   },
   "2a6c548de4": {
     "text": "„Immerhin braucht es noch obskure ‚Kosmische Konstanten‘, Dunkle Materien und noch dunklere Energien, damit die ART nicht kollabiert.“",
@@ -12631,10 +12740,97 @@
   },
   "2a747c64fb": {
     "text": "Seine innig geliebe Frau ist vor einer Woche gestorben. Dabei sieht er so ruhig aus, er trägt sein Unglück wirklich mit Fassung. (= er verzweifelt nicht, er erträgt seinen Schicksalsschlag)",
-    "translation": null,
+    "translation": "His dearly beloved wife died a week ago. Yet he looks so calm; he truly bears his misfortune with composure. (= he does not despair, he endures his stroke of fate)",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "innig",
+        "lemma": "innig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "geliebe",
+        "lemma": "geliebt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "wife"
+      },
+      {
+        "form": "gestorben",
+        "lemma": "sterben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Woche",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": "week"
+      },
+      {
+        "form": "sieht",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ruhig",
+        "lemma": "ruhig",
+        "pos": "adjective",
+        "gloss_hint": "calm"
+      },
+      {
+        "form": "trägt",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unglück",
+        "lemma": "Unglück",
+        "pos": "noun",
+        "gloss_hint": "misfortune"
+      },
+      {
+        "form": "wirklich",
+        "lemma": "wirklich",
+        "pos": "adjective",
+        "gloss_hint": "truly"
+      },
+      {
+        "form": "Fassung",
+        "lemma": "Fassung",
+        "pos": "noun",
+        "gloss_hint": "control"
+      },
+      {
+        "form": "verzweifelt",
+        "lemma": "verzweifeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "erträgt",
+        "lemma": "ertragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schicksalsschlag",
+        "lemma": "Schicksalsschlag",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2a748b9014": {
@@ -14949,18 +15145,71 @@
   },
   "2a8b0708c7": {
     "text": "a² + b² = c²",
-    "translation": null,
+    "translation": "a² + b² = c²",
     "source": "wiktionary",
     "lemmas": [
       "b"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "2a8b185eeb": {
     "text": "„Wer mit seinem Nachbarn juristischen Streit vom Zaun bricht, hat bei Gerichten oft schlechte Karten.“",
-    "translation": null,
+    "translation": "Whoever picks a legal quarrel with his neighbor often has poor prospects in court.",
     "source": "wiktionary",
     "lemmas": [
       "schlechte Karten haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Nachbarn",
+        "lemma": "Nachbar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "juristischen",
+        "lemma": "juristisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Streit",
+        "lemma": "Streit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zaun",
+        "lemma": "Zaun",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bricht",
+        "lemma": "brechen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gerichten",
+        "lemma": "Gericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schlechte",
+        "lemma": "schlecht",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Karten",
+        "lemma": "Karte",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2a8bd98697": {
@@ -16958,10 +17207,61 @@
   },
   "2a9b5914fe": {
     "text": "„Helmut organisierte manchmal Touren mit zahlenden Gästen, dann war er dankbar über die helfende Hand seines Neffen.“",
-    "translation": null,
+    "translation": "Helmut sometimes organized tours with paying guests, and then he was grateful for the helping hand of his nephew.",
     "source": "wiktionary",
     "lemmas": [
       "helfende Hand"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "organisierte",
+        "lemma": "organisieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Touren",
+        "lemma": "Tour",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zahlenden",
+        "lemma": "zahlend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gästen",
+        "lemma": "Gast",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dankbar",
+        "lemma": "dankbar",
+        "pos": "adjective",
+        "gloss_hint": "grateful"
+      },
+      {
+        "form": "helfende",
+        "lemma": "helfend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hand",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": "hand"
+      },
+      {
+        "form": "Neffen",
+        "lemma": "Neffe",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2a9c04ce86": {
@@ -17313,22 +17613,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Election day is payday.",
     "source": "wiktionary",
     "lemmas": [
       "Zahltag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2aa07e25e1": {
     "text": "einen an der Matte haben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a bit crazy",
     "source": "wiktionary",
     "lemmas": [
       "Matte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2aa0f111ec": {
     "text": "„Mein Vater, mein Vater, jetzt fasst er mich an! Erlkönig hat mir ein Leids getan!“",
@@ -18401,11 +18703,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give someone a hard time",
     "source": "wiktionary",
     "lemmas": [
       "Zimt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2aa9758f71": {
     "text": "Gestern hat unser Nachbar wieder keinen Abgang gefunden.",
@@ -19024,11 +19327,12 @@
     "type": "expression",
     "note": "je älter, desto verrückter",
     "synonyms": [],
-    "translation": null,
+    "translation": "the older, the crazier",
     "source": "wiktionary",
     "lemmas": [
       "doll"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2ab105ee28": {
     "text": "Der Vollmond scheint, Dracula, die Werwölfe und Fritz Neugebauer erschrecken unschuldige Schulkinder, und meine Kinder verlangen auch noch, dass ich den letzten Band von Harry Potter im Morgengrauen des Samstags aus der Buchhandlung hole.",
@@ -20231,11 +20535,12 @@
     "type": "expression",
     "note": "unkonkrete Antwort auf die Frage, was es zu essen gibt",
     "synonyms": [],
-    "translation": null,
+    "translation": "A bit of everything and a potholder in between.",
     "source": "wiktionary",
     "lemmas": [
       "Eintopf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2abd7819b5": {
     "text": "„In jedem Wehrpfeiler sind besondere Aalleitern eingebaut, das sind mit Faschinen umkleidete Ketten, an denen sich die Jungaale beim Aufstieg in die Mosel ‚hochturnen‘ können.“",
@@ -23327,10 +23632,43 @@
   },
   "2ad765e0b4": {
     "text": "Der Schlitten mit BH XX-999 bleibt heute beim Blitzmarathon in der Garage.",
-    "translation": null,
+    "translation": "The sledge with registration BH XX-999 will remain in the garage today during the lightning marathon.",
     "source": "wiktionary",
     "lemmas": [
       "BH"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schlitten",
+        "lemma": "Schlitten",
+        "pos": "noun",
+        "gloss_hint": "sled"
+      },
+      {
+        "form": "bleibt",
+        "lemma": "bleiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "Blitzmarathon",
+        "lemma": "Blitzmarathon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Garage",
+        "lemma": "Garage",
+        "pos": "noun",
+        "gloss_hint": "garage"
+      }
     ]
   },
   "2ad97bc38a": {
@@ -23464,11 +23802,12 @@
     "type": "expression",
     "note": "dort sein, wo man hinpasst und sich wohlfühlt",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in one's element",
     "source": "wiktionary",
     "lemmas": [
       "Element"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2adcd4beba": {
     "text": "Die Wunde wurde durch Verpflanzung eines Hautlappens vom Oberschenkel geschlossen.",
@@ -23694,11 +24033,13 @@
   },
   "2ade2be4da": {
     "text": "„Die Überlegung, den Kraillinger Duathlon im Laufe des Jahres nachzuholen, ist derweil definitiv vom Tisch.“",
-    "translation": null,
+    "translation": "The idea of making up the Krailling duathlon later in the year is definitely off the table.",
     "source": "wiktionary",
     "lemmas": [
       "vom Tisch sein"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "2adecb0e23": {
     "text": "Die Autoren werfen ein scharfes Licht auf ein der breiten Öffentlichkeit wenig bekanntes Geschichtsbild.",
@@ -23879,11 +24220,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have guts",
     "source": "wiktionary",
     "lemmas": [
       "Mumm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2ae1c991e6": {
     "text": "„Der Pfarrer zieht aus seiner Soutane ein weißes, mit Spitzen besetztes Taschentuch hervor, das in einer Ecke sein schwarz eingesticktes Monogramm trägt.“",
@@ -25267,10 +25609,61 @@
   },
   "2aefe88c78": {
     "text": "„Mit einfühlsamen Weisen und Lesungen stimmen heimische Sänger und Musikanten ihr Publikum auf die stade Zeit ein.“",
-    "translation": null,
+    "translation": "With sensitive melodies and readings, local singers and musicians attune their audience to the quiet season.",
     "source": "wiktionary",
     "lemmas": [
       "stade Zeit"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Weisen",
+        "lemma": "Weise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lesungen",
+        "lemma": "Lesung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stimmen",
+        "lemma": "stimmen",
+        "pos": "verb",
+        "gloss_hint": "tune"
+      },
+      {
+        "form": "Sänger",
+        "lemma": "Sänger",
+        "pos": "noun",
+        "gloss_hint": "singer"
+      },
+      {
+        "form": "Musikanten",
+        "lemma": "Musikant",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Publikum",
+        "lemma": "Publikum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stade",
+        "lemma": "stad",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      }
     ]
   },
   "2af0a44a35": {
@@ -25770,11 +26163,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to mind one's own business",
     "source": "wiktionary",
     "lemmas": [
       "Suppe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2af4f4f3db": {
     "text": "„Als Napoleon mit seinen strategisch besonders geschickt und schnell agierenden Truppen 1805 ruhmreich aus der \"Dreikaiserschlacht\" von Austerlitz in Böhmen hervorgeht, können die beiden anderen Kaiser der stolzen gegnerischen Truppen Österreichs und Russlands ihre Verblüffung nicht mehr verbergen.“",
@@ -25847,11 +26241,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone was born somewhere",
     "source": "wiktionary",
     "lemmas": [
       "Wiege"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2af8356123": {
     "text": "Das menschliche Gebiss umfasst 32 Zähne.",

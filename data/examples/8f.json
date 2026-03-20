@@ -217,10 +217,49 @@
   },
   "8f030b5f0d": {
     "text": "Sie hat kalte Füße bekommen und das Weite gesucht.",
-    "translation": null,
+    "translation": "She got cold feet and made herself scarce.",
     "source": "wiktionary",
     "lemmas": [
       "das Weite suchen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sie",
+        "lemma": "sie",
+        "pos": "pronoun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kalte",
+        "lemma": "kalt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Füße",
+        "lemma": "Fuß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bekommen",
+        "lemma": "bekommen",
+        "pos": "verb",
+        "gloss_hint": "get"
+      },
+      {
+        "form": "Weite",
+        "lemma": "Weite",
+        "pos": "noun",
+        "gloss_hint": "distance"
+      },
+      {
+        "form": "gesucht",
+        "lemma": "suchen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "8f0351fdd7": {
@@ -387,22 +426,25 @@
   },
   "8f0453086e": {
     "text": "„Der Terminus Kontrastive Linguistik (KL) stellt einen Sammelbegriff dar, für den sich oft auch andere Bezeichnungen wie »Kontrastive Analysen«, »Kontrastive Grammatik«, »Sprachvergleich«, »Komparative Linguistik« sowie »Komparatistische Linguistik« finden.“",
-    "translation": null,
+    "translation": "\"The term contrastive linguistics (CL) represents a collective concept for which other designations such as 'contrastive analyses', 'contrastive grammar', 'language comparison', 'comparative linguistics', and 'comparatistic linguistics' are also often found.\"",
     "source": "wiktionary",
     "lemmas": [
       "Kontrastive Linguistik"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "8f05456136": {
     "text": "das merkt doch ein Blinder mit Krückstock",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's obvious to anyone",
     "source": "wiktionary",
     "lemmas": [
       "doch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8f07c6507d": {
     "text": "„Asche auf mein Haupt - ich gebe meinen Fehler reumütig zu!“",
@@ -915,11 +957,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go smoothly",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8f113a2a9e": {
     "text": "Das Kämpfen ist die Aufgabe der Kriegerin.",
@@ -2370,11 +2413,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in service",
     "source": "wiktionary",
     "lemmas": [
       "Dienst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8f1b15ba3d": {
     "text": "Sie ist die Anführerin der Räuberbande.",
@@ -3562,11 +3606,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not stand a chance",
     "source": "wiktionary",
     "lemmas": [
       "gewinnen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8f25021671": {
     "text": "„Auweh, denkt er, ihr seid's abg'haust. Bettlleut und Abbrandler auf einmal.“",
@@ -4239,14 +4284,12 @@
     "type": "expression",
     "note": "schmeicheln",
     "synonyms": [],
-    "translation": null,
+    "translation": "to flatter someone",
     "source": "wiktionary",
     "lemmas": [
       "schön"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "8f30bddbf9": {
     "text": "„Ich habe mal einen Hund in so einer Wolke ersticken sehen.“",
@@ -6093,10 +6136,73 @@
   },
   "8f41c97de0": {
     "text": "Nach dem gegenwärtigen Konsens ist dunkle Energie die Triebkraft des expandierenden Universums, sie wirkt der Schwerkraft entgegen, die das Universum ansonsten zusammenziehen würde.",
-    "translation": null,
+    "translation": "According to current consensus, dark energy is the driving force of the expanding universe; it acts against gravity, which would otherwise cause the universe to contract.",
     "source": "wiktionary",
     "lemmas": [
       "dunkle Energie"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gegenwärtigen",
+        "lemma": "gegenwärtig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Konsens",
+        "lemma": "Konsens",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dunkle",
+        "lemma": "dunkel",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Energie",
+        "lemma": "Energie",
+        "pos": "noun",
+        "gloss_hint": "energy (physics)"
+      },
+      {
+        "form": "Triebkraft",
+        "lemma": "Triebkraft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "expandierenden",
+        "lemma": "expandierend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Universums",
+        "lemma": "Universum",
+        "pos": "noun",
+        "gloss_hint": "universe"
+      },
+      {
+        "form": "wirkt",
+        "lemma": "wirken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schwerkraft",
+        "lemma": "Schwerkraft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zusammenziehen",
+        "lemma": "zusammenziehen",
+        "pos": "verb",
+        "gloss_hint": "shrink"
+      }
     ]
   },
   "8f43f616f8": {
@@ -6104,11 +6210,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pull the rug out from under someone",
     "source": "wiktionary",
     "lemmas": [
       "Hintern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8f44215828": {
     "text": "„Vielleicht stammte dieser Witz aus der Giftküche von Goebbels.“",
@@ -7037,11 +7144,12 @@
     "type": "expression",
     "note": "mit etwas fertig sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have something in the bag",
     "source": "wiktionary",
     "lemmas": [
       "Kasten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8f526456fa": {
     "text": "„Als Tewje einmal in Kiew mit seinen Milchwaren unterwegs ist, begegnet er einem Mann namens Menachem Mendel, der sich ihm als Verwandter vorstellt, ein entfernter Cousin seiner Frau Golda.“",
@@ -7055,10 +7163,49 @@
   },
   "8f5309e5b4": {
     "text": "Die Kinder schneiden in der Bastelstunde Sterne aus und bekleben damit Geschenkpapier.",
-    "translation": null,
+    "translation": "The children cut out stars during the craft hour and decorate wrapping paper with them.",
     "source": "wiktionary",
     "lemmas": [
       "ausschneiden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schneiden",
+        "lemma": "schneiden",
+        "pos": "verb",
+        "gloss_hint": "cut out"
+      },
+      {
+        "form": "Bastelstunde",
+        "lemma": "Bastelstunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sterne",
+        "lemma": "Stern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bekleben",
+        "lemma": "bekleben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geschenkpapier",
+        "lemma": "Geschenkpapier",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "8f5344ea8d": {
@@ -8038,11 +8185,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to laugh one's head off",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8f5fad26ab": {
     "text": "Das Auto hat einen Hubraum von 2,6 Litern.",
@@ -8594,10 +8742,31 @@
   },
   "8f6565e25b": {
     "text": "Der Bibliothek fehlt es an Sachbüchern an allen Ecken und Enden.",
-    "translation": null,
+    "translation": "The library is lacking non-fiction books in every way.",
     "source": "wiktionary",
     "lemmas": [
       "an allen Ecken und Enden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bibliothek",
+        "lemma": "Bibliothek",
+        "pos": "noun",
+        "gloss_hint": "library"
+      },
+      {
+        "form": "fehlt",
+        "lemma": "fehlen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sachbüchern",
+        "lemma": "Sachbuch",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "8f68252763": {
@@ -8689,11 +8858,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The sea Buddha has no shores. (Everything is connected; there are no boundaries.)",
     "source": "wiktionary",
     "lemmas": [
       "Buddha"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8f6b64837b": {
     "text": "„Deshalb begann er mit den Leuten in der Menge zu sprechen, um ihre Reaktion zu erfahren.“",
@@ -9534,10 +9704,37 @@
   },
   "8f7283daa3": {
     "text": "„Ein Motorradmotor treibt den Rennwagen \"TUfast\" der Maschinenbaustudenten der TU Garching an.“",
-    "translation": null,
+    "translation": "\"A motorcycle engine powers the racing car 'TUfast' of the mechanical engineering students at TU Garching.\"",
     "source": "wiktionary",
     "lemmas": [
       "TU"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Motorradmotor",
+        "lemma": "Motorradmotor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "treibt",
+        "lemma": "treiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rennwagen",
+        "lemma": "Rennwagen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Maschinenbaustudenten",
+        "lemma": "Maschinenbausstudent",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "8f748a613c": {
@@ -9916,11 +10113,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go whichever way the wind blows",
     "source": "wiktionary",
     "lemmas": [
       "Mantel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8f77e67667": {
     "text": "Die XYZ GmbH kauft einen neuen Lieferwagen auf Ziel.",
@@ -11236,18 +11434,60 @@
   },
   "8f88c68af4": {
     "text": "Zuzutrauen wäre es ihr.",
-    "translation": null,
+    "translation": "One would have to give her credit for it.",
     "source": "wiktionary",
     "lemmas": [
       "zutrauen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zuzutrauen",
+        "lemma": "zutrauen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "8f88f78df0": {
     "text": "„Da dieses rasselnde Geräusch vorzüglich während der Paarungszeit gemacht wird, so ist es als ein Liebesgesang angesehen worden; es ist aber strenger genommen vielleicht nur ein Lockruf.“",
-    "translation": null,
+    "translation": "\"Since this rattling sound is made primarily during mating season, it has been regarded as a love song; but strictly speaking, it is perhaps merely a mating call.\"",
     "source": "wiktionary",
     "lemmas": [
       "streng genommen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "rasselnde",
+        "lemma": "rasselnd",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geräusch",
+        "lemma": "Geräusch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Paarungszeit",
+        "lemma": "Paarungszeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Liebesgesang",
+        "lemma": "Liebesgesang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lockruf",
+        "lemma": "Lockruf",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "8f89318eda": {
@@ -11788,19 +12028,53 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a weight falls from someone's shoulders",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
     ],
-    "ref": "phrases/jemandem fällt ein Stein vom Herzen"
+    "ref": "phrases/jemandem fällt ein Stein vom Herzen",
+    "translation_model": "openai/gpt-4.1"
   },
   "8f94fb246f": {
     "text": "„Ich fragte sie nach ihrem Befinden, und ob sie im Zusammenhang mit ihrer Entbindung Beschwerden habe.“",
-    "translation": null,
+    "translation": "\"I asked her about her condition and whether she had any complaints in connection with her childbirth.\"",
     "source": "wiktionary",
     "lemmas": [
       "Entbindung"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "fragte",
+        "lemma": "fragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Befinden",
+        "lemma": "Befinden",
+        "pos": "noun",
+        "gloss_hint": "state"
+      },
+      {
+        "form": "Zusammenhang",
+        "lemma": "Zusammenhang",
+        "pos": "noun",
+        "gloss_hint": "connection"
+      },
+      {
+        "form": "Entbindung",
+        "lemma": "Entbindung",
+        "pos": "noun",
+        "gloss_hint": "childbirth"
+      },
+      {
+        "form": "Beschwerden",
+        "lemma": "Beschwerde",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "8f94fde231": {
@@ -12886,11 +13160,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a job and a livelihood",
     "source": "wiktionary",
     "lemmas": [
       "Brot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8f991542c0": {
     "text": "„Was aussieht wie die Reste einer Baustelle, sind Fragmente zusammengebrochener Grabsteine.“",
@@ -13238,14 +13513,15 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like a shot",
     "source": "wiktionary",
     "lemmas": [
       "wie",
       "schießen",
       "Pistole"
     ],
-    "ref": "phrases/wie aus der Pistole geschossen"
+    "ref": "phrases/wie aus der Pistole geschossen",
+    "translation_model": "openai/gpt-4.1"
   },
   "8f9c8ab76b": {
     "text": "„Der türkische Unternehmer lud mich derweil zu einer Geburtstagsparty ein.“",
@@ -14070,18 +14346,84 @@
   },
   "8f9f4cd122": {
     "text": "„In der vorliegenden Untersuchung wurde speziell die Erfassung synonymer und antonymer Bedeutungszusammenhänge analysiert, […]“",
-    "translation": null,
+    "translation": "\"In the present study, the capture of synonymous and antonymous semantic relationships was specifically analyzed, [...]\"",
     "source": "wiktionary",
     "lemmas": [
       "antonym"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "vorliegenden",
+        "lemma": "vorliegend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Untersuchung",
+        "lemma": "Untersuchung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erfassung",
+        "lemma": "Erfassung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "synonymer",
+        "lemma": "synonym",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "antonymer",
+        "lemma": "antonym",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bedeutungszusammenhänge",
+        "lemma": "Bedeutungszusammenhang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "analysiert",
+        "lemma": "analysieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "8fa27fb542": {
     "text": "„Der Hund muß doch irgendwo begraben liegen.“",
-    "translation": null,
+    "translation": "The dog must be buried somewhere, after all.",
     "source": "wiktionary",
     "lemmas": [
       "da liegt der Hund begraben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hund",
+        "lemma": "Hund",
+        "pos": "noun",
+        "gloss_hint": "dog"
+      },
+      {
+        "form": "begraben",
+        "lemma": "begraben",
+        "pos": "verb",
+        "gloss_hint": "bury"
+      },
+      {
+        "form": "liegen",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": "be located"
+      }
     ]
   },
   "8fa29ecf61": {
@@ -14346,22 +14688,25 @@
   },
   "8fa4bb501e": {
     "text": "Vgl. N.N. (2001), »Bildband Berlin 2000«, o.V., Berlin (2. Auflage), Abb. 4d–g.",
-    "translation": null,
+    "translation": "See N.N. (2001), \"Picture Book Berlin 2000\", n.p., Berlin (2nd edition), Figs. 4d–g.",
     "source": "wiktionary",
     "lemmas": [
       "o."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "8fa4dec277": {
     "text": "du lieber Himmel!",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Good heavens!",
     "source": "wiktionary",
     "lemmas": [
       "Himmel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8fa513d39b": {
     "text": "Von 1414 bis 1418 fand in Konstanz ein Konzil statt.",
@@ -14509,11 +14854,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "January, wood burner (January is a month for burning wood)",
     "source": "wiktionary",
     "lemmas": [
       "Jänner"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8fa6dee34f": {
     "text": "Die Aussagen der Vorstände sind ein gutes Zeichen für die Wirtschaft in der nächsten Zeit.",
@@ -14622,13 +14968,14 @@
     "type": "expression",
     "note": "intelligent sein, etwas auswendig wissen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have something in one's head (to be clever or knowledgeable)",
     "source": "wiktionary",
     "lemmas": [
       "Kopf",
       "im"
     ],
-    "ref": "phrases/etwas im Kopf haben"
+    "ref": "phrases/etwas im Kopf haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "8fa749dcc9": {
     "text": "Die Klasse aller Mengen ist selbst keine Menge.",
@@ -16887,11 +17234,12 @@
     "type": "expression",
     "note": "Ausruf der Überraschung / des Erstaunens",
     "synonyms": [],
-    "translation": null,
+    "translation": "I can't believe it!",
     "source": "wiktionary",
     "lemmas": [
       "Pferd"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8fbe7ad868": {
     "text": "Ein sichtlich erfreuter Trainer gratulierte nach dem Gewinn seinen Spielern.",
@@ -16907,11 +17255,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's enough to make a dog feel pity",
     "source": "wiktionary",
     "lemmas": [
       "erbarmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8fbf3029e8": {
     "text": "„Es war ganz nach ihrer Art, die Sentimentalität eines Abschieds zu vermeiden.“",
@@ -18288,11 +18637,12 @@
       "Sachverhalt",
       "beseitigen"
     ],
-    "translation": null,
+    "translation": "to get something out of the way",
     "source": "wiktionary",
     "lemmas": [
       "Weg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8fd4c505cd": {
     "text": "„Jenseits der linken Leitplanke endet hier Georgiens Hoheitsgebiet.“",
@@ -19056,11 +19406,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to spill someone's guts",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8fdd749e96": {
     "text": "„Nie wieder habe ich Börek gegessen, der an die Qualität des unbekannten Belgrader Bäckers herangereicht hätte.“",
@@ -19547,11 +19898,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to leave a mark on someone",
     "source": "wiktionary",
     "lemmas": [
       "spurlos"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8fe18d4361": {
     "text": "Genies denken oft ziemlich durchschnittlich. Umgekehrt kann jeder geniale Ideen haben.",
@@ -21619,11 +21971,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I would have told him something different",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8ff6461fbb": {
     "text": "Die erste Münze aus reinem Nickel wurde 1881 geprägt.",

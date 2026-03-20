@@ -432,10 +432,73 @@
   },
   "7305c96023": {
     "text": "„Das Kirmes-Gelände im Süden der Stadt ist vor allem beim sogenannten Nightglow (Ballonglühen) und an den beiden Samstagen, an denen das Eröffnungs- und Abschlussfeuerwerk stattfindet, gut besucht.“",
-    "translation": null,
+    "translation": "\"The fairground in the south of the city is especially well-attended during the so-called Nightglow (balloon glow) and on the two Saturdays when the opening and closing fireworks take place.\"",
     "source": "wiktionary",
     "lemmas": [
       "gut besucht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kirmes-Gelände",
+        "lemma": "Gelände",
+        "pos": "noun",
+        "gloss_hint": "area"
+      },
+      {
+        "form": "Süden",
+        "lemma": "Süden",
+        "pos": "noun",
+        "gloss_hint": "south"
+      },
+      {
+        "form": "Stadt",
+        "lemma": "Stadt",
+        "pos": "noun",
+        "gloss_hint": "city"
+      },
+      {
+        "form": "Nightglow",
+        "lemma": "Nightglow",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ballonglühen",
+        "lemma": "Ballonglühen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Samstagen",
+        "lemma": "Samstag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eröffnungs-",
+        "lemma": "Eröffnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abschlussfeuerwerk",
+        "lemma": "Abschlussfeuerwerk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stattfindet",
+        "lemma": "stattfinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "besucht",
+        "lemma": "besuchen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "73066e06c4": {
@@ -2025,19 +2088,22 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be stuck with someone",
     "source": "wiktionary",
     "lemmas": [
       "schlagen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "731584ae68": {
     "text": "Max u. Moritz",
-    "translation": null,
+    "translation": "Max and Moritz",
     "source": "wiktionary",
     "lemmas": [
       "u."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "7315d05874": {
     "text": "„Doch er schenkte seinen vielen Verehrerinnen keinen Funken Aufmerksamkeit und hatte es nie getan.“",
@@ -3238,11 +3304,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "He who pays the piper calls the tune.",
     "source": "wiktionary",
     "lemmas": [
       "anschaffen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "731f3dbde7": {
     "text": "„Als sie aber am sechsten Tage nach ihrem Aufbruche vom Talk oder der Zusammenkunft sich soeben an demselben Platze zur Nachtruhe niedergelassen hatten, den die Späher nicht viele Stunden zuvor eingenommen, konnte El Sol seiner Zunge nicht länger mehr gebieten.“",
@@ -3807,10 +3874,25 @@
   },
   "73208eb1cb": {
     "text": "Aber, aber, kannst du nicht auf mich hören!",
-    "translation": null,
+    "translation": "But, but, can't you listen to me!",
     "source": "wiktionary",
     "lemmas": [
       "aber, aber"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kannst",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "hören",
+        "lemma": "hören",
+        "pos": "verb",
+        "gloss_hint": "obey"
+      }
     ]
   },
   "73215ee2d9": {
@@ -4607,11 +4689,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "before I let myself be beaten",
     "source": "wiktionary",
     "lemmas": [
       "schlagen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "732cbe831e": {
     "text": "Zum Glück hatte ich meine Brieftasche dabei.",
@@ -4902,12 +4985,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "cry one's heart out",
     "source": "wiktionary",
     "lemmas": [
       "Seele"
     ],
-    "ref": "phrases/sich die Seele aus dem Leib weinen"
+    "ref": "phrases/sich die Seele aus dem Leib weinen",
+    "translation_model": "openai/gpt-4.1"
   },
   "73309d4064": {
     "text": "»Ich bitte um Verzeihung, hochwürdiger Herr Doktor Martine,« sagte er, »daß ich Euch in Eurem schönen Liede gestört habe. Ich stand schon eine gute Weile draußen und habe mit herzlicher Andacht zugehört, mochte auch während des Gesangs nicht anklopfen, aber es ist eine grimmige Kälte, die mir bei meinem Alter schwer zu ertragen fällt.«",
@@ -6464,11 +6548,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is paralyzed by fear",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "734440a075": {
     "text": "„Deltafliegen, die ursprüngliche Art des Hängegleitens, ist mit dem Aufkommen des Gleitschirmes etwas in Vergessenheit geraten.“",
@@ -7124,11 +7209,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a blow below the belt",
     "source": "wiktionary",
     "lemmas": [
       "Schlag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "734bcef944": {
     "text": "„Er saß herum in den Hallen der Luxushotels, in den Bars der Stadt, in den Cafés, wo die Börsianer saßen.“",
@@ -7487,11 +7573,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "One man's meat is another man's poison.",
     "source": "wiktionary",
     "lemmas": [
       "Tod"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "734dcc11c5": {
     "text": "„Wenn am Freitag der AfD-Bundesvorstand trotz Corona in Berlin zusammenkommt, wird es wohl heiß hergehen.“",
@@ -8015,11 +8102,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to paint a bleak picture of something",
     "source": "wiktionary",
     "lemmas": [
       "Farbe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7352e45c13": {
     "text": "Einige Universitäten, zum Beispiel die Universität Göttingen, sind in Stiftungen umgewandelt worden.",
@@ -8358,12 +8446,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "tree of knowledge",
     "source": "wiktionary",
     "lemmas": [
       "Baum"
     ],
-    "ref": "phrases/Baum der Erkenntnis"
+    "ref": "phrases/Baum der Erkenntnis",
+    "translation_model": "openai/gpt-4.1"
   },
   "73591f6545": {
     "text": "Mithilfe brillanter Laserstrahlung und hochfrequenter Strahloszillation konnten die Forscher nach eigenen Angaben erstmals eine Schweißverbindung erzeugen, die sich durch eine äußerst geringe Porenhäufigkeit im Schweißgut auszeichnet.",
@@ -9252,10 +9341,43 @@
   },
   "735f4ff66f": {
     "text": "Dieser Versuch, wenn auch erfolglos, ist auf jeden Fall aller Ehre wert.",
-    "translation": null,
+    "translation": "This attempt, even if unsuccessful, is certainly worthy of honor.",
     "source": "wiktionary",
     "lemmas": [
       "aller Ehren wert sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Versuch",
+        "lemma": "Versuch",
+        "pos": "noun",
+        "gloss_hint": "attempt"
+      },
+      {
+        "form": "erfolglos",
+        "lemma": "erfolglos",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fall",
+        "lemma": "Fall",
+        "pos": "noun",
+        "gloss_hint": "case"
+      },
+      {
+        "form": "Ehre",
+        "lemma": "Ehre",
+        "pos": "noun",
+        "gloss_hint": "honor"
+      },
+      {
+        "form": "wert",
+        "lemma": "wert",
+        "pos": "adjective",
+        "gloss_hint": "worthwhile"
+      }
     ]
   },
   "73621cbf7d": {
@@ -11234,11 +11356,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "then the poor soul will be at peace",
     "source": "wiktionary",
     "lemmas": [
       "arm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7376b1ef4c": {
     "text": "„Und dann zog, von dieser Eiche ausgehend, eine ganze Reihe hoffnungsloser, aber doch von einem wehmütigen Glücksgefühl erfüllter Gedanken durch Fürst Andrejs Seele.“",
@@ -11407,10 +11530,61 @@
   },
   "7377e63b9e": {
     "text": "„Das Mutual UFO Network (MUFON) ist eine US-amerikanische Non-Profit-Organisation, welche sich die wissenschaftliche Erforschung des UFO-Phänomens zur Aufgabe gemacht hat.“",
-    "translation": null,
+    "translation": "\"The Mutual UFO Network (MUFON) is a US-American non-profit organization that has made the scientific research of the UFO phenomenon its task.\"",
     "source": "wiktionary",
     "lemmas": [
       "UFO"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mutual UFO Network",
+        "lemma": "Mutual UFO Network",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "MUFON",
+        "lemma": "MUFON",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "US-amerikanische",
+        "lemma": "US-amerikanisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Non-Profit-Organisation",
+        "lemma": "Organisation",
+        "pos": "noun",
+        "gloss_hint": "organization"
+      },
+      {
+        "form": "Erforschung",
+        "lemma": "Erforschung",
+        "pos": "noun",
+        "gloss_hint": "research"
+      },
+      {
+        "form": "UFO-Phänomens",
+        "lemma": "Phänomen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufgabe",
+        "lemma": "Aufgabe",
+        "pos": "noun",
+        "gloss_hint": "task"
+      },
+      {
+        "form": "gemacht",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "7378b3aa24": {
@@ -11478,11 +11652,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to quit in a huff",
     "source": "wiktionary",
     "lemmas": [
       "Brocken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7379ccd7e2": {
     "text": "„Es war eine große Hochzeit, und lustig ging es dabei her, obzwar kein einziger Mann betrunken war.“",
@@ -13202,12 +13377,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone's heart leaps for joy",
     "source": "wiktionary",
     "lemmas": [
       "Herz",
       "lachen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7389452e6a": {
     "text": "„Und der russische Oberbefehlshaber warf nun rücksichtslos seine letzten Reserven an die Front.“",
@@ -14023,11 +14199,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to brag like crazy",
     "source": "wiktionary",
     "lemmas": [
       "Tüte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "73910322e2": {
     "text": "„Beim Kunstfliegen geht es nicht darum, schnell an ein Ziel zu kommen, sondern Flugmanöver so spektakulär wie möglich auszuführen.“",
@@ -14299,11 +14476,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to quit without notice",
     "source": "wiktionary",
     "lemmas": [
       "abbrechen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "739436eca0": {
     "text": "„Dieses mein Drohen machte ihn wütend, und er drohte mir mit seinem Stockdegen, worüber ich ergrimmt mit dem Messer auf ihn zuging; das Übrige ist Ihnen bekannt.“",
@@ -15817,11 +15995,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to follow someone around like a lovesick puppy",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "73a42bd477": {
     "text": "Zwar redet Heribert immer sehr wichtigtuerisch daher, aber in Wahrheit ist das alles nichts als höherer Blödsinn.",
@@ -16939,11 +17118,13 @@
   },
   "73b16b7640": {
     "text": "„Das also war des Pudels Kern! / Ein fahrender Skolast? Der Kasus macht mich lachen.“ (Faust I, Johann Wolfgang von Goethe)",
-    "translation": null,
+    "translation": "\"So that was the poodle's secret! / A wandering scholar? The case makes me laugh.\" (Faust I, Johann Wolfgang von Goethe)",
     "source": "wiktionary",
     "lemmas": [
       "des Pudels Kern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "73b38bd047": {
     "text": "„Manchmal wurde Compass Rose schon von der folgenden See erfaßt, wenn sie noch schwerfällig schwankend im Tal lag, und erlitt einen Schlag, bevor sie sich wieder aufrichten konnte.“",
@@ -17540,10 +17721,49 @@
   },
   "73c1c63140": {
     "text": "Der grobkörnige Sand und die scharfen Steinsplitter verschleißen das Gummi.",
-    "translation": null,
+    "translation": "The coarse sand and sharp stone splinters wear out the rubber.",
     "source": "wiktionary",
     "lemmas": [
       "verschleißen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "grobkörnige",
+        "lemma": "grobkörnig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sand",
+        "lemma": "Sand",
+        "pos": "noun",
+        "gloss_hint": "sand"
+      },
+      {
+        "form": "scharfen",
+        "lemma": "scharf",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Steinsplitter",
+        "lemma": "Steinsplitter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verschleißen",
+        "lemma": "verschleißen",
+        "pos": "verb",
+        "gloss_hint": "wear out"
+      },
+      {
+        "form": "Gummi",
+        "lemma": "Gummi",
+        "pos": "noun",
+        "gloss_hint": "rubber"
+      }
     ]
   },
   "73c1ca8c66": {
@@ -18452,10 +18672,43 @@
   },
   "73c9f6e1da": {
     "text": "Hier wachsen ganz wunderbare Geigenvirtuosen nach. Die Förderung ist aber auch einzigartig.",
-    "translation": null,
+    "translation": "Wonderful violin virtuosos are growing up here. But the support is also unique.",
     "source": "wiktionary",
     "lemmas": [
       "nachwachsen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wachsen",
+        "lemma": "wachsen",
+        "pos": "verb",
+        "gloss_hint": "grow"
+      },
+      {
+        "form": "wunderbare",
+        "lemma": "wunderbar",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geigenvirtuosen",
+        "lemma": "Geigenvirtuose",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Förderung",
+        "lemma": "Förderung",
+        "pos": "noun",
+        "gloss_hint": "support"
+      },
+      {
+        "form": "einzigartig",
+        "lemma": "einzigartig",
+        "pos": "adjective",
+        "gloss_hint": "unique"
+      }
     ]
   },
   "73ca4385fb": {
@@ -21132,16 +21385,14 @@
     "type": "expression",
     "note": "redegewandt, schlagfertig sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have the gift of the gab",
     "source": "wiktionary",
     "lemmas": [
       "Mund",
       "fallen"
     ],
     "ref": "phrases/nicht auf den Mund gefallen sein",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "73efbc18b4": {
     "text": "„Einer der Haupt-Lärmverursacher [in den Ozeanen] sind dabei die Militärs mit ihren Sonargeräten zur U-Boot-Ortung. Diese Schallgeräte geben in kurzen Abständen einen hohen Piepton ab. Wird der Ton reflektiert, befindet sich ein Gegenstand (meist ein weiteres U-Boot) in der Nähe.“",
@@ -22898,11 +23149,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in the middle of nowhere",
     "source": "wiktionary",
     "lemmas": [
       "Hirsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "73fed258af": {
     "text": "Beim Fixgeschäft ist die Leistung nach Vertragsschluss unmittelbar fällig, auch wenn die Zahlung mit Ziel vereinbart wird.",

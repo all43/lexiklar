@@ -1,10 +1,43 @@
 {
   "8100943c65": {
     "text": "„»Soviel kostet ein Flug nach New York auch nicht mehr.» / »Wie viel denn?» / »Na, so vierhundert um den Dreh», wird sie zaghafter.“",
-    "translation": null,
+    "translation": "\"'A flight to New York doesn't cost that much anymore.' / 'How much then?' / 'Well, around four hundred or so,' she says more hesitantly.\"",
     "source": "wiktionary",
     "lemmas": [
       "um den Dreh"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kostet",
+        "lemma": "kosten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Flug",
+        "lemma": "Flug",
+        "pos": "noun",
+        "gloss_hint": "flight"
+      },
+      {
+        "form": "New York",
+        "lemma": "New York",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dreh",
+        "lemma": "Dreh",
+        "pos": "noun",
+        "gloss_hint": "turn"
+      },
+      {
+        "form": "zaghafter",
+        "lemma": "zaghaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "8101f8f41c": {
@@ -314,11 +347,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone gets cold feet",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8105115dbf": {
     "text": "„Das Essen in der Werkskantine war verboten worden, und die Arbeiter mussten ihre Mahlzeiten in den Schlafsälen einnehmen.“",
@@ -837,10 +871,55 @@
   },
   "810aca0d0c": {
     "text": "„Bin ich zu gierig oder backe ich kleinere Brötchen? Diese Gratwanderung ist entscheidend [beim Würfelspiel 'Qwantum'].“",
-    "translation": null,
+    "translation": "\"Am I too greedy or should I aim lower? This balancing act is crucial [in the dice game 'Qwantum'].\"",
     "source": "wiktionary",
     "lemmas": [
       "kleinere Brötchen backen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gierig",
+        "lemma": "gierig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "backe",
+        "lemma": "backen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Brötchen",
+        "lemma": "Brötchen",
+        "pos": "noun",
+        "gloss_hint": "bread roll"
+      },
+      {
+        "form": "Gratwanderung",
+        "lemma": "Gratwanderung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entscheidend",
+        "lemma": "entscheidend",
+        "pos": "adjective",
+        "gloss_hint": "crucial"
+      },
+      {
+        "form": "Würfelspiel",
+        "lemma": "Würfelspiel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Qwantum",
+        "lemma": "Qwantum",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "810adcefc2": {
@@ -977,12 +1056,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put one's foot in it",
     "source": "wiktionary",
     "lemmas": [
       "treten"
     ],
-    "ref": "phrases/ins Fettnäpfchen treten"
+    "ref": "phrases/ins Fettnäpfchen treten",
+    "translation_model": "openai/gpt-4.1"
   },
   "810d30f7b5": {
     "text": "[Vorschul-Sprachtests:] „42.300 dieser Kinder sind gut ein Jahr vor ihrer Einschulung getestet worden[.] Gut die Hälfte von ihnen ist durchgefallen. Genauer: 56 Prozent.“",
@@ -1381,10 +1461,73 @@
   },
   "811264778d": {
     "text": "„Gut, ich verstehe das Interesse ein bisschen, aber auch nicht wirklich. Wer denkt, ich hätte einen Dachschaden, soll mir einfach eine Milliarde Euro spenden und gucken, ob's hilft.“",
-    "translation": null,
+    "translation": "\"Well, I understand the interest a bit, but not really. Whoever thinks I have a screw loose should just donate me a billion euros and see if it helps.\"",
     "source": "wiktionary",
     "lemmas": [
       "einen Dachschaden haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "verstehe",
+        "lemma": "verstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Interesse",
+        "lemma": "Interesse",
+        "pos": "noun",
+        "gloss_hint": "interest"
+      },
+      {
+        "form": "bisschen",
+        "lemma": "bisschen",
+        "pos": "pronoun",
+        "gloss_hint": "bit"
+      },
+      {
+        "form": "wirklich",
+        "lemma": "wirklich",
+        "pos": "adjective",
+        "gloss_hint": "genuine"
+      },
+      {
+        "form": "Dachschaden",
+        "lemma": "Dachschaden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Milliarde",
+        "lemma": "Milliarde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "spenden",
+        "lemma": "spenden",
+        "pos": "verb",
+        "gloss_hint": "donate"
+      },
+      {
+        "form": "gucken",
+        "lemma": "gucken",
+        "pos": "verb",
+        "gloss_hint": "look"
+      },
+      {
+        "form": "hilft",
+        "lemma": "helfen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "8113b0a56a": {
@@ -2665,18 +2808,40 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to feel very small",
     "source": "wiktionary",
     "lemmas": [
       "klein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8118de1415": {
     "text": "„Und überhaupt: Nur weil man lustig sein kann, heißt das ja nicht, dass man einen Clown gefrühstückt hat.“",
-    "translation": null,
+    "translation": "And anyway: just because someone can be funny doesn't mean they've had a clown for breakfast.",
     "source": "wiktionary",
     "lemmas": [
       "einen Clown gefrühstückt haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "lustig",
+        "lemma": "lustig",
+        "pos": "adjective",
+        "gloss_hint": "funny"
+      },
+      {
+        "form": "Clown",
+        "lemma": "Clown",
+        "pos": "noun",
+        "gloss_hint": "clown"
+      },
+      {
+        "form": "gefrühstückt",
+        "lemma": "frühstücken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "811970e8e7": {
@@ -2693,11 +2858,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not make a fortune with something",
     "source": "wiktionary",
     "lemmas": [
       "gewinnen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "811ad001d6": {
     "text": "In seinem Urlaub hat er sich den Tripper eingefangen.",
@@ -3243,11 +3409,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "cling to a straw",
     "source": "wiktionary",
     "lemmas": [
       "Strohhalm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "811ec02347": {
     "text": "„Für das Stipendium kann man sich nicht bewerben. Die Nominierung erfolgt anonym.“",
@@ -3512,26 +3679,125 @@
   },
   "8124a96017": {
     "text": "Als Geschäftsführer kann er sich im Privatleben auch nicht auf die faule Haut legen.",
-    "translation": null,
+    "translation": "As managing director, he can't take it easy in his private life either.",
     "source": "wiktionary",
     "lemmas": [
       "sich auf die faule Haut legen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geschäftsführer",
+        "lemma": "Geschäftsführer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "faule",
+        "lemma": "faul",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haut",
+        "lemma": "Haut",
+        "pos": "noun",
+        "gloss_hint": "skin"
+      }
     ]
   },
   "8124e435aa": {
     "text": "„Oft allerdings nicht als Söldner um des Geldes willen, sondern aus Überzeugung.“",
-    "translation": null,
+    "translation": "Often, however, not as mercenaries for the sake of money, but out of conviction.",
     "source": "wiktionary",
     "lemmas": [
       "willen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Söldner",
+        "lemma": "Söldner",
+        "pos": "noun",
+        "gloss_hint": "mercenary"
+      },
+      {
+        "form": "Geldes",
+        "lemma": "Geld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Überzeugung",
+        "lemma": "Überzeugung",
+        "pos": "noun",
+        "gloss_hint": "conviction"
+      }
     ]
   },
   "81256ebf0f": {
     "text": "„Bei einem Tensor handelt es sich um eine mathematische Funktion, die eine bestimmte Anzahl von Vektoren auf einen Wert abbildet. Die Anzahl von Vektoren, die ein Tensor entgegennimmt, wird als Rang r oder Stufe des Tensors bezeichnet.“",
-    "translation": null,
+    "translation": "A tensor is a mathematical function that maps a certain number of vectors to a value. The number of vectors that a tensor accepts is called the rank r or order of the tensor.",
     "source": "wiktionary",
     "lemmas": [
       "Vektor"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tensor",
+        "lemma": "Tensor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "mathematische",
+        "lemma": "mathematisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Funktion",
+        "lemma": "Funktion",
+        "pos": "noun",
+        "gloss_hint": "mapping"
+      },
+      {
+        "form": "Anzahl",
+        "lemma": "Anzahl",
+        "pos": "noun",
+        "gloss_hint": "number"
+      },
+      {
+        "form": "Vektoren",
+        "lemma": "Vektor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wert",
+        "lemma": "Wert",
+        "pos": "noun",
+        "gloss_hint": "value"
+      },
+      {
+        "form": "entgegennimmt",
+        "lemma": "entgegennehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rang",
+        "lemma": "Rang",
+        "pos": "noun",
+        "gloss_hint": "rank"
+      },
+      {
+        "form": "Stufe",
+        "lemma": "Stufe",
+        "pos": "noun",
+        "gloss_hint": "stage"
+      }
     ]
   },
   "81257f83f5": {
@@ -3553,10 +3819,25 @@
   },
   "8125d33486": {
     "text": "„Als Spurensicherer müsse man einen Knall haben.“",
-    "translation": null,
+    "translation": "As a forensic investigator, one must have a screw loose.",
     "source": "wiktionary",
     "lemmas": [
       "einen Knall haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Spurensicherer",
+        "lemma": "Spurensicherer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Knall",
+        "lemma": "Knall",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "8126500ca4": {
@@ -5341,12 +5622,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like a pigsty",
     "source": "wiktionary",
     "lemmas": [
       "Sofa"
     ],
-    "ref": "phrases/wie bei Hempels unterm Sofa"
+    "ref": "phrases/wie bei Hempels unterm Sofa",
+    "translation_model": "openai/gpt-4.1"
   },
   "813def5649": {
     "text": "Nach Ende des Ersten Weltkrieges brach die Novemberrevolution aus, infolgedessen der Deutsche Kaiser abdankte.",
@@ -5443,37 +5725,37 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put something out of one's mind",
     "source": "wiktionary",
     "lemmas": [
       "schlagen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "813e6d2985": {
     "text": "ein guter Abend währt nicht lange",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A good thing never lasts long.",
     "source": "wiktionary",
     "lemmas": [
       "Abend"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "813e87c9b4": {
     "text": "den Mund halten",
     "type": "expression",
     "note": "still sein, nicht reden",
     "synonyms": [],
-    "translation": null,
+    "translation": "keep one's mouth shut",
     "source": "wiktionary",
     "lemmas": [
       "Mund",
       "halten"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "813ef148e4": {
     "text": "„Sie haben in ihrer Bewerbung keinen Termin genannt, ab dem sie frei sind. Wann könnten sie loslegen?“",
@@ -5570,11 +5852,12 @@
     "type": "expression",
     "note": "viel versprechen",
     "synonyms": [],
-    "translation": null,
+    "translation": "make big promises",
     "source": "wiktionary",
     "lemmas": [
       "schwingen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8140165923": {
     "text": "„‚Ich bin um ein Armutszeugnis eingekommen‘, sagte die Baronin.“",
@@ -5590,11 +5873,12 @@
     "type": "expression",
     "note": "eine wertvolle Quelle zum Versiegen bringen, eine lebenswichtige Grundlage zerstören",
     "synonyms": [],
-    "translation": null,
+    "translation": "to kill the goose that lays the golden eggs",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8141b22ffd": {
     "text": "„Andererseits fügt sich der Satz leider wunderbar in die neoliberale Erzählung ein, der zufolge wir alles schaffen können, wenn wir uns nur genug anstrengen. Als gäbe es keine rassistischen und patriarchalen Strukturen. Kein Vitamin B.“",
@@ -5911,11 +6195,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone can get lost (for all I care)",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81430f586c": {
     "text": "„Schnell schloss er die Tür hinter sich und rief die SMSe ab.“",
@@ -7755,12 +8040,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's set in stone",
     "source": "wiktionary",
     "lemmas": [
       "kein"
     ],
-    "ref": "phrases/das schleckt keine Geiß weg"
+    "ref": "phrases/das schleckt keine Geiß weg",
+    "translation_model": "openai/gpt-4.1"
   },
   "8153d44346": {
     "text": "Der Staatsumbau [Polens] im Rahmen der konservativen Revolution [durch die PIS-Partei] wurde ins Werk gesetzt nach dem Motto \"der Zweck heiligt die Mittel\".",
@@ -8097,7 +8383,7 @@
     "type": "proverb",
     "note": "ohne Aufsicht kommen echte Gefühle zum Ausdruck",
     "synonyms": [],
-    "translation": null,
+    "translation": "when the cat's away, the mice will play",
     "source": "wiktionary",
     "lemmas": [
       "Tisch",
@@ -8105,7 +8391,8 @@
       "Maus",
       "Katze"
     ],
-    "ref": "phrases/wenn die Katze aus dem Haus ist, tanzen die Mäuse auf dem Tisch"
+    "ref": "phrases/wenn die Katze aus dem Haus ist, tanzen die Mäuse auf dem Tisch",
+    "translation_model": "openai/gpt-4.1"
   },
   "815662053a": {
     "text": "Im Norden sind die Menschen weniger gesprächig.",
@@ -8886,43 +9173,13 @@
   },
   "815f996f04": {
     "text": "„‹Können wir uns vielleicht irgendwohin zurückziehen? Ich bin überzeugt, dass ihre Leute Ihr volles Vertrauen genießen, aber in einem Land wie diesem haben die Wände doch häufig Ohren.›“",
-    "translation": "",
+    "translation": "\"Can we perhaps withdraw somewhere? I'm convinced that your people enjoy your full trust, but in a country like this, the walls often have ears.\"",
     "source": "wiktionary",
     "lemmas": [
       "die Wände haben Ohren"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
     "annotations": [
-      {
-        "form": "Können",
-        "lemma": "können",
-        "pos": "verb",
-        "gloss_hint": "manage"
-      },
-      {
-        "form": "wir",
-        "lemma": "wir",
-        "pos": "pronoun",
-        "gloss_hint": "we"
-      },
-      {
-        "form": "uns",
-        "lemma": "uns",
-        "pos": "pronoun",
-        "gloss_hint": "us"
-      },
-      {
-        "form": "vielleicht",
-        "lemma": "vielleicht",
-        "pos": "adverb",
-        "gloss_hint": "perhaps"
-      },
-      {
-        "form": "irgendwohin",
-        "lemma": "irgendwohin",
-        "pos": "adverb",
-        "gloss_hint": null
-      },
       {
         "form": "zurückziehen",
         "lemma": "zurückziehen",
@@ -8930,34 +9187,10 @@
         "gloss_hint": "withdraw"
       },
       {
-        "form": "Ich",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": "I"
-      },
-      {
-        "form": "bin",
-        "lemma": "sein",
-        "pos": "verb",
-        "gloss_hint": "be"
-      },
-      {
         "form": "überzeugt",
-        "lemma": "überzeugen",
+        "lemma": "überzeugt",
         "pos": "adjective",
-        "gloss_hint": "convinced"
-      },
-      {
-        "form": "dass",
-        "lemma": "dass",
-        "pos": "conjunction",
         "gloss_hint": null
-      },
-      {
-        "form": "ihre",
-        "lemma": "ihr",
-        "pos": "pronoun",
-        "gloss_hint": "their"
       },
       {
         "form": "Leute",
@@ -8966,46 +9199,16 @@
         "gloss_hint": "people"
       },
       {
-        "form": "Ihr",
-        "lemma": "Ihr",
-        "pos": "pronoun",
-        "gloss_hint": "your"
-      },
-      {
-        "form": "volles",
-        "lemma": "voll",
-        "pos": "adjective",
-        "gloss_hint": "full"
-      },
-      {
         "form": "Vertrauen",
         "lemma": "Vertrauen",
         "pos": "noun",
-        "gloss_hint": "trust"
+        "gloss_hint": null
       },
       {
         "form": "genießen",
         "lemma": "genießen",
         "pos": "verb",
-        "gloss_hint": "enjoy"
-      },
-      {
-        "form": "aber",
-        "lemma": "aber",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "einem",
-        "lemma": "ein",
-        "pos": "determiner",
-        "gloss_hint": null
+        "gloss_hint": "experience"
       },
       {
         "form": "Land",
@@ -9014,52 +9217,16 @@
         "gloss_hint": "country"
       },
       {
-        "form": "wie",
-        "lemma": "wie",
-        "pos": "adverb",
-        "gloss_hint": "such as"
-      },
-      {
-        "form": "diesem",
-        "lemma": "dies",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "haben",
-        "lemma": "haben",
-        "pos": "verb",
-        "gloss_hint": "possess"
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
         "form": "Wände",
         "lemma": "Wand",
         "pos": "noun",
-        "gloss_hint": "walls"
-      },
-      {
-        "form": "doch",
-        "lemma": "doch",
-        "pos": "particle",
-        "gloss_hint": "indeed"
-      },
-      {
-        "form": "häufig",
-        "lemma": "häufig",
-        "pos": "adjective",
-        "gloss_hint": "frequent"
+        "gloss_hint": null
       },
       {
         "form": "Ohren",
         "lemma": "Ohr",
         "pos": "noun",
-        "gloss_hint": "ears"
+        "gloss_hint": null
       }
     ],
     "text_linked": "„‹[[Können|verbs/können_beherrschen]] [[wir|pronouns/wir#1]] [[uns|pronouns/uns#2]] [[vielleicht|adverbs/vielleicht#1]] [[irgendwohin|adverbs/irgendwohin]] [[zurückziehen|verbs/zurückziehen#2]]? [[Ich|pronouns/ich#1]] [[bin|verbs/sein#2]] überzeugt, [[dass|conjunctions/dass]] [[ihre|pronouns/ihr_zu#2]] [[Leute|nouns/Leute#1]] [[Ihr|pronouns/Ihr_besitzanzeigendes#1]] [[volles|adjectives/voll#1]] [[Vertrauen|nouns/Vertrauen#1]] [[genießen|verbs/genießen]], [[aber|conjunctions/aber]] [[in|prepositions/in]] [[einem|determiners/ein]] [[Land|nouns/Land#2]] [[wie|adverbs/wie]] [[diesem|pronouns/dies]] [[haben|verbs/haben#2]] [[die|determiners/die]] [[Wände|nouns/Wand#3]] [[doch|particles/doch_betont#1]] [[häufig|adjectives/häufig#1]] [[Ohren|nouns/Ohr]].›“"
@@ -12659,11 +12826,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "only kneeling camels get loaded",
     "source": "wiktionary",
     "lemmas": [
       "Kamel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81821d6bf7": {
     "text": "„Die letzten Reste des Westjiddischen wurden von Wissenschaftlern nach den Zweiten Weltkrieg im Elsass, der Schweiz und in Südwestdeutschland aufgezeichnet.“",
@@ -12696,11 +12864,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm all alone out in the field",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8182ed4b4b": {
     "text": "Das Beurteilungssystem stuft die Leistungen nach Noten von 1 bis 6.",
@@ -13689,10 +13858,31 @@
   },
   "8185a62dd2": {
     "text": "Der DFB richtet nicht die WM aus.",
-    "translation": null,
+    "translation": "The DFB is not hosting the World Cup.",
     "source": "wiktionary",
     "lemmas": [
       "DFB"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "DFB",
+        "lemma": "DFB",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "richtet",
+        "lemma": "richten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "WM",
+        "lemma": "WM",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "8185a6dd2e": {
@@ -13931,10 +14121,67 @@
   },
   "818974768b": {
     "text": "„In Negenborn hätte er einkehren dürfen, da der fränkische Heereszug in dieser Nacht noch nicht über Bevern hinausging; aber vielleicht war dort im Dorfe der unruhigen Zeiten halber der Förster auch noch wach.“",
-    "translation": null,
+    "translation": "In Negenborn he would have been allowed to stop, since the Franconian army column had not yet gone beyond Bevern that night; but perhaps the forester in the village was still awake because of the troubled times.",
     "source": "wiktionary",
     "lemmas": [
       "halber"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "einkehren",
+        "lemma": "einkehren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "dürfen",
+        "lemma": "dürfen",
+        "pos": "verb",
+        "gloss_hint": "be allowed to"
+      },
+      {
+        "form": "fränkische",
+        "lemma": "fränkisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Heereszug",
+        "lemma": "Heereszug",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nacht",
+        "lemma": "Nacht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dorfe",
+        "lemma": "Dorf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeiten",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Förster",
+        "lemma": "Förster",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wach",
+        "lemma": "wach",
+        "pos": "adjective",
+        "gloss_hint": "awake"
+      }
     ]
   },
   "81899b6771": {
@@ -15781,12 +16028,13 @@
     "type": "expression",
     "note": "jemandem zum Reden bringen, der eigentlich nichts erzählen will",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have to drag everything out of someone",
     "source": "wiktionary",
     "lemmas": [
       "Nase",
       "ziehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "819625abbf": {
     "text": "Der Bub erkältete sich schon zum zweiten Mal in diesem Frühjahr.",
@@ -16369,11 +16617,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "two sides of the same coin",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "819a674b48": {
     "text": "„Infolge der beim Durchschlag verursachten extremen Wärme kommt es im Panzer meist zu Sekundärexplosionen.“",
@@ -18517,11 +18766,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "round trip",
     "source": "wiktionary",
     "lemmas": [
       "hin"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81a879bbeb": {
     "text": "„Ich war eigentlich kein Fan von solchen Veranstaltungen, aber hier war der Herdentrieb unersetzlich, um die Angst zu überwinden.“",
@@ -18971,10 +19221,67 @@
   },
   "81ad405668": {
     "text": "„Auch in der Vergangenheit war es an der Tagesordnung, dass sich lokale Machthaber, sogenannte Coronéis und Bandeirantes, Störenfriede mit Gewalt vom Hals hielten.“",
-    "translation": null,
+    "translation": "In the past too, it was commonplace for local rulers, so-called Coronéis and Bandeirantes, to keep troublemakers at bay with violence.",
     "source": "wiktionary",
     "lemmas": [
       "an der Tagesordnung sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vergangenheit",
+        "lemma": "Vergangenheit",
+        "pos": "noun",
+        "gloss_hint": "past"
+      },
+      {
+        "form": "Tagesordnung",
+        "lemma": "Tagesordnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lokale",
+        "lemma": "lokal",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Machthaber",
+        "lemma": "Machthaber",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Coronéis",
+        "lemma": "Coronéis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bandeirantes",
+        "lemma": "Bandeirantes",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Störenfriede",
+        "lemma": "Störenfried",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gewalt",
+        "lemma": "Gewalt",
+        "pos": "noun",
+        "gloss_hint": "violence"
+      },
+      {
+        "form": "Hals",
+        "lemma": "Hals",
+        "pos": "noun",
+        "gloss_hint": "neck"
+      }
     ]
   },
   "81adc63932": {
@@ -18991,12 +19298,13 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "time will tell",
     "source": "wiktionary",
     "lemmas": [
       "Zeit"
     ],
-    "ref": "phrases/kommt Zeit, kommt Rat"
+    "ref": "phrases/kommt Zeit, kommt Rat",
+    "translation_model": "openai/gpt-4.1"
   },
   "81af4e894d": {
     "text": "„Mit so abgelaufenen Schuhen kannst du nicht zu einem Vorstellungsgespräch gehen. Das sieht unmöglich aus!“",
@@ -19263,10 +19571,31 @@
   },
   "81b16e6352": {
     "text": "Lass uns noch schnell die Getränke einpacken und dann ab nach Kassel!",
-    "translation": null,
+    "translation": "Let's quickly pack the drinks and then off to Kassel!",
     "source": "wiktionary",
     "lemmas": [
       "ab nach Kassel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "schnell",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": "quick"
+      },
+      {
+        "form": "Getränke",
+        "lemma": "Getränk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "einpacken",
+        "lemma": "einpacken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "81b30d4a61": {
@@ -19274,11 +19603,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I've been told...",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81b37ee165": {
     "text": "Der Ärger frisst an ihm.",
@@ -19854,11 +20184,12 @@
     "type": "expression",
     "note": "kriminell werden",
     "synonyms": [],
-    "translation": null,
+    "translation": "to go off the rails",
     "source": "wiktionary",
     "lemmas": [
       "schief"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81b994617e": {
     "text": "„Die Rede ist von der Taube. Kaum ein Tier polarisiert wie dieser Vogel, der einerseits auf Kirchenbildern als Sinnbild des Heiligen Geistes zu bewundern ist, aber gleichzeitig in Städten als ‚Ratte der Lüfte‘ bekämpft wird.“",
@@ -21224,11 +21555,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to make the bed",
     "source": "wiktionary",
     "lemmas": [
       "Bett"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81c1e1d25b": {
     "text": "Auch das Deutsche ist in einem gewissen Maß eine isolierende Sprache; in Sätzen wie „Alt trifft Jung“ oder „Hans sieht Inge“ werden die grammatischen Verhältnisse (Was ist Subjekt? Was Objekt?) durch die Wortstellung ausgedrückt, da die Flexionsendungen bei den Substantiven fehlen.",
@@ -21550,11 +21882,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a girl in every port",
     "source": "wiktionary",
     "lemmas": [
       "Hafen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81c2884726": {
     "text": "ein Sturm im Wasserglas",
@@ -22002,11 +22335,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "blow out my plane",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81ca579d4f": {
     "text": "„George hatte das Sandwich zubereitet, es in Butterbrotpapier gewickelt, in eine Tüte gesteckt und hineingebracht, und der Mann hatte bezahlt und das Lokal verlassen.“",
@@ -22776,11 +23110,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to let someone walk into a trap",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81d09bdc90": {
     "text": "Es waren aber ihrer sechzig.",
@@ -23235,11 +23570,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go to the gallows",
     "source": "wiktionary",
     "lemmas": [
       "Henker"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81d3f2fa9e": {
     "text": "Chemie: „Fast alle bekannten Elemente hat man zu solchen Triaden, wie man sie nennt, vereinigt.“",
@@ -23450,11 +23786,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to live by the work of one's own hands",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81da2c5291": {
     "text": "Das 13. Lebensjahr beginnt bereits am 12. Geburtstag, und nicht erst am 13. Geburtstag. Trotzdem ist man während dieses Lebensjahres 12 Jahre alt.",
@@ -23689,11 +24026,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Every little bit helps.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81dbc5c808": {
     "text": "Mein Kollege ist Türke.",
@@ -25027,11 +25365,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Contentment turns water into wine.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81e85d8c9a": {
     "text": "„[…] die aktuell geförderte Kohle [wird] ein künftiges Problem für die Gewässerbelastung sein: 'Auch durch die heute aktiven Tagebaue werden Schadstoffe freigesetzt, die auf Jahrzehnte hinaus die umliegenden Fließgewässer belasten werden.'“",
@@ -26300,30 +26639,34 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something has gone down the drain",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81f1514aca": {
     "text": "s. a. (siehe auch)",
-    "translation": null,
+    "translation": "see also",
     "source": "wiktionary",
     "lemmas": [
       "a."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "81f16bd00b": {
     "text": "der Student geht so lange zur Mensa, bis er bricht",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The student keeps going to the cafeteria until he gets sick.",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81f16d7753": {
     "text": "Wasser ist bei Zimmertemperatur flüssig.",
@@ -27818,11 +28161,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get by on one's money",
     "source": "wiktionary",
     "lemmas": [
       "auskommen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "81ffde42c0": {
     "text": "Der Detailhändler Frischknecht eröffnet nächsten Montag in Zürich eine neue Filiale.",

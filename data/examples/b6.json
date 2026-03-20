@@ -764,11 +764,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to entrust something to someone for safekeeping",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b609805f5f": {
     "text": "„Welche gravierenden Folgen die zunehmende Industrialisierung der Landwirtschaft für Menschen und Umwelt haben kann, schildert der Autor besonders eindrücklich anhand der brasilianischen Cerrados.“",
@@ -1193,11 +1194,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get going",
     "source": "wiktionary",
     "lemmas": [
       "Tour"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b60eef5605": {
     "text": "„Doch er weiß Rat: Die hübsche Moslemin Sabaha soll als Geisel dienen und gegen seinen Sohn ausgetauscht werden.“",
@@ -1649,10 +1651,91 @@
   },
   "b611c52614": {
     "text": "„Anhand der Spurenlage wird angenommen, dass er aus ungeklärter Ursache stürzte und sich dabei die tödlichen Verletzungen zugezogen hat. […] Eine Obduktion des Mannes soll weiteren Aufschluss über seinen Tod geben.“",
-    "translation": null,
+    "translation": "Based on the evidence, it is assumed that he fell from an unexplained cause and sustained fatal injuries in the process. […] An autopsy of the man is intended to provide further clarification about his death.",
     "source": "wiktionary",
     "lemmas": [
       "Aufschluss"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Anhand",
+        "lemma": "anhand",
+        "pos": "preposition",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spurenlage",
+        "lemma": "Spurenlage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "angenommen",
+        "lemma": "annehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ungeklärter",
+        "lemma": "ungeklärt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ursache",
+        "lemma": "Ursache",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stürzte",
+        "lemma": "stürzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "tödlichen",
+        "lemma": "tödlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verletzungen",
+        "lemma": "Verletzung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zugezogen",
+        "lemma": "zuziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Obduktion",
+        "lemma": "Obduktion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mannes",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufschluss",
+        "lemma": "Aufschluss",
+        "pos": "noun",
+        "gloss_hint": "answer"
+      },
+      {
+        "form": "Tod",
+        "lemma": "Tod",
+        "pos": "noun",
+        "gloss_hint": "death"
+      }
     ]
   },
   "b612bbefe8": {
@@ -1749,11 +1832,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that would be the last straw",
     "source": "wiktionary",
     "lemmas": [
       "lachen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b612deec32": {
     "text": "„Er brach frühmorgens auf, kehrte abends wieder, ohne Kopfbedeckung, die Jacke zerrissen und die Hosen mit Schlamm beschmutzt.“",
@@ -1968,11 +2052,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be stunned as if struck by lightning",
     "source": "wiktionary",
     "lemmas": [
       "Schlag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b614fcc0b1": {
     "text": "Lass mich heute Abend die Rechnung übernehmen!",
@@ -4369,10 +4454,67 @@
   },
   "b6307a848b": {
     "text": "„Als die Schlacht von Okinawa am 30. Juni 1945 zu Ende war, hatten über 120000 Zivilisten ihr Leben verloren – ein Drittel der Bevölkerung.“",
-    "translation": null,
+    "translation": "When the Battle of Okinawa ended on June 30, 1945, over 120,000 civilians had lost their lives – a third of the population.",
     "source": "wiktionary",
     "lemmas": [
       "Zivilist"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schlacht",
+        "lemma": "Schlacht",
+        "pos": "noun",
+        "gloss_hint": "battle"
+      },
+      {
+        "form": "Okinawa",
+        "lemma": "Okinawa",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ende",
+        "lemma": "Ende",
+        "pos": "noun",
+        "gloss_hint": "end (time)"
+      },
+      {
+        "form": "Juni",
+        "lemma": "Juni",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zivilisten",
+        "lemma": "Zivilist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leben",
+        "lemma": "Leben",
+        "pos": "noun",
+        "gloss_hint": "life"
+      },
+      {
+        "form": "verloren",
+        "lemma": "verlieren",
+        "pos": "verb",
+        "gloss_hint": "lost"
+      },
+      {
+        "form": "Drittel",
+        "lemma": "Drittel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bevölkerung",
+        "lemma": "Bevölkerung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "b6314a8072": {
@@ -4391,11 +4533,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "half halt (equestrian term)",
     "source": "wiktionary",
     "lemmas": [
       "Parade"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b632a140ed": {
     "text": "Zur Verhinderung von Infektionen wird abgestorbenes Gewebe entfernt.",
@@ -6523,10 +6666,73 @@
   },
   "b64450b562": {
     "text": "Wir brauchen hier sofort eine Vertretung, unsere Telefonzentrale muss unter allen Umständen permanent besetzt sein. – Und woher nehmen und nicht stehlen? – Lassen Sie sich was einfallen.",
-    "translation": null,
+    "translation": "We need a substitute here immediately; our switchboard must be staffed at all times. – And where are we supposed to find one? – Come up with something.",
     "source": "wiktionary",
     "lemmas": [
       "woher nehmen und nicht stehlen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "brauchen",
+        "lemma": "brauchen",
+        "pos": "verb",
+        "gloss_hint": "need"
+      },
+      {
+        "form": "Vertretung",
+        "lemma": "Vertretung",
+        "pos": "noun",
+        "gloss_hint": "substitute"
+      },
+      {
+        "form": "Telefonzentrale",
+        "lemma": "Telefonzentrale",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umständen",
+        "lemma": "Umstand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "permanent",
+        "lemma": "permanent",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "besetzt",
+        "lemma": "besetzt",
+        "pos": "adjective",
+        "gloss_hint": "occupied (in use)"
+      },
+      {
+        "form": "woher",
+        "lemma": "woher",
+        "pos": "adverb",
+        "gloss_hint": "from where"
+      },
+      {
+        "form": "nehmen",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": "take"
+      },
+      {
+        "form": "stehlen",
+        "lemma": "stehlen",
+        "pos": "verb",
+        "gloss_hint": "steal"
+      },
+      {
+        "form": "einfallen",
+        "lemma": "einfallen",
+        "pos": "verb",
+        "gloss_hint": "think of"
+      }
     ]
   },
   "b64504ab71": {
@@ -6669,12 +6875,13 @@
     "type": "expression",
     "note": "sehr liebevoll und aufmerksam sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to treat someone with great care and affection",
     "source": "wiktionary",
     "lemmas": [
       "Hand",
       "tragen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b646ac800a": {
     "text": "Nach Lauer führten viele Wege.",
@@ -6911,10 +7118,43 @@
   },
   "b64a386953": {
     "text": "„Umfangreiche Kontrollen bei sportlichen Großveranstaltungen sind seit vielen Jahren an der Tagesordnung.“",
-    "translation": null,
+    "translation": "Extensive security checks at major sporting events have been standard practice for many years.",
     "source": "wiktionary",
     "lemmas": [
       "an der Tagesordnung sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kontrollen",
+        "lemma": "Kontrolle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sportlichen",
+        "lemma": "sportlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Großveranstaltungen",
+        "lemma": "Großveranstaltung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tagesordnung",
+        "lemma": "Tagesordnung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "b64ab71a20": {
@@ -6933,11 +7173,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get fed up with something",
     "source": "wiktionary",
     "lemmas": [
       "dicke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b64c052d3d": {
     "text": "„Im Umkreis von 10 Kilometer Halbmesser um einen Flughafenbezugspunkt gilt als Höhe der höchsten Bodenerhebung die Höhe des Flughafenbezugspunktes.“",
@@ -7466,10 +7707,43 @@
   },
   "b64ef408b6": {
     "text": "Gehts euch allen gut heute Morgen?",
-    "translation": null,
+    "translation": "Is everyone doing well this morning?",
     "source": "wiktionary",
     "lemmas": [
       "gehts"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gehts",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "euch",
+        "lemma": "euch",
+        "pos": "pronoun",
+        "gloss_hint": "you (dative)"
+      },
+      {
+        "form": "gut",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": "good"
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "Morgen",
+        "lemma": "Morgen",
+        "pos": "noun",
+        "gloss_hint": "morning"
+      }
     ]
   },
   "b64fadf36a": {
@@ -8026,13 +8300,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "easy come, easy go",
     "source": "wiktionary",
     "lemmas": [
       "gewinnen",
       "wie"
     ],
-    "ref": "phrases/wie gewonnen, so zerronnen"
+    "ref": "phrases/wie gewonnen, so zerronnen",
+    "translation_model": "openai/gpt-4.1"
   },
   "b653c8b8c9": {
     "text": "[Coronapandemie:] „Inzwischen sollen auf der Insel 3000 weitere Beatmungsgeräte hinzu gekommen sein, auch das ist aber immer noch weit entfernt von der Versorgung in Deutschland.“",
@@ -10830,10 +11105,55 @@
   },
   "b66ff470d2": {
     "text": "Sobald das Buffet eröffnet ist, stürmen die Menschen in den Speisesaal, denn keiner will zu kurz kommen.",
-    "translation": null,
+    "translation": "As soon as the buffet opens, people rush into the dining hall, because no one wants to miss out.",
     "source": "wiktionary",
     "lemmas": [
       "zu kurz kommen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Buffet",
+        "lemma": "Buffet",
+        "pos": "noun",
+        "gloss_hint": "buffet"
+      },
+      {
+        "form": "eröffnet",
+        "lemma": "eröffnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "stürmen",
+        "lemma": "stürmen",
+        "pos": "verb",
+        "gloss_hint": "rush"
+      },
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Speisesaal",
+        "lemma": "Speisesaal",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "keiner",
+        "lemma": "keiner",
+        "pos": "pronoun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kurz",
+        "lemma": "kurz",
+        "pos": "adjective",
+        "gloss_hint": "short"
+      }
     ]
   },
   "b670baeb42": {
@@ -14314,11 +14634,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be none of someone's business",
     "source": "wiktionary",
     "lemmas": [
       "feucht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b68e8381df": {
     "text": "„Eigentlich sind es sogar viel mehr Gipfel, dann der Seebuck und der Stübenwasen liegen direkt auf der Strecke, so dass sie letztlich zum Gipfelsammler werden.“",
@@ -15786,12 +16107,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take control of one's own life",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
     ],
-    "ref": "phrases/sein Leben selbst in die Hand nehmen"
+    "ref": "phrases/sein Leben selbst in die Hand nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "b69efef606": {
     "text": "„In diesem Augenblick fühlte er nichts anderes als einen unbestimmten Zorn, einen tiefen Widerwillen und den Beginn einer grenzenlosen Hoffnungslosigkeit.“",
@@ -15809,11 +16131,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Some people build castles in the air who couldn't build a hut on the ground.",
     "source": "wiktionary",
     "lemmas": [
       "Schlösser in die Luft bauen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b6a1fcd53e": {
     "text": "„Klimafonds versprechen ärmeren Staaten, beim Klimaschutz zu helfen - und beim Umgang mit den Folgen des Klimawandels.“",
@@ -16055,11 +16378,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "finally get off your butt and do something",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b6a422a10d": {
     "text": "„Was mich mehr interessierte, war das Publikum auf dem Markt.“",
@@ -17972,11 +18296,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "ride a wave",
     "source": "wiktionary",
     "lemmas": [
       "Welle"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b6b95a1a17": {
     "text": "In ihrer Steuererklärung können sie jeden gefahrenen Kilometer von und zur Arbeit mit 30 Cent ansetzen.",
@@ -18067,11 +18392,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a heart for something",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b6b9f9ca0f": {
     "text": "Dafür muss Entschädigung geleistet werden.",
@@ -19209,11 +19535,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be hilarious",
     "source": "wiktionary",
     "lemmas": [
       "quieken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b6c1aa22e0": {
     "text": "Ich muss eine Schraube eindrehen, für einen Hammer habe ich keine Verwendung.",
@@ -20372,11 +20699,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not be well off financially",
     "source": "wiktionary",
     "lemmas": [
       "dicke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b6ccb02a4e": {
     "text": "Sie nennen es Werk – ich nenne es Pamphlet.",
@@ -21071,10 +21399,61 @@
   },
   "b6df869188": {
     "text": "„Als Unternehmer beziehungsweise Unternehmerin bezeichnet man meist den Inhaber eines Unternehmens oder Betriebes, das von dieser Person ebenfalls eigenständig geführt wird.“",
-    "translation": null,
+    "translation": "An entrepreneur is usually referred to as the owner of a business or enterprise that is also independently managed by that person.",
     "source": "wiktionary",
     "lemmas": [
       "Unternehmerin"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Unternehmer",
+        "lemma": "Unternehmer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unternehmerin",
+        "lemma": "Unternehmerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Inhaber",
+        "lemma": "Inhaber",
+        "pos": "noun",
+        "gloss_hint": "owner"
+      },
+      {
+        "form": "Unternehmens",
+        "lemma": "Unternehmen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Betriebes",
+        "lemma": "Betrieb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Person",
+        "lemma": "Person",
+        "pos": "noun",
+        "gloss_hint": "person"
+      },
+      {
+        "form": "eigenständig",
+        "lemma": "eigenständig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "geführt",
+        "lemma": "führen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "b6dfb5723e": {
@@ -21670,13 +22049,14 @@
     "type": "expression",
     "note": "ein Thema längerfristig verfolgen",
     "synonyms": [],
-    "translation": null,
+    "translation": "make something one's mission",
     "source": "wiktionary",
     "lemmas": [
       "schreiben",
       "Fahne"
     ],
-    "ref": "phrases/sich etwas auf die Fahne schreiben"
+    "ref": "phrases/sich etwas auf die Fahne schreiben",
+    "translation_model": "openai/gpt-4.1"
   },
   "b6e3f51477": {
     "text": "„In einer globalisierten Nachrichten-Welt wird jede Meldung auf Leser, Hörer und Seher treffen, die sich darüber freuen oder empören.“",
@@ -21776,11 +22156,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get something into shape",
     "source": "wiktionary",
     "lemmas": [
       "Schuss"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b6e581e17d": {
     "text": "jemandem ist eine Laus über die Leber gelaufen",
@@ -22416,10 +22797,67 @@
   },
   "b6e600417a": {
     "text": "„Zu ungleich seien die sozialen, wirtschaftlichen und politischen Verhältnisse, als dass das tunesische Beispiel auf einen regionalen Flächenbrand hindeutete.“",
-    "translation": null,
+    "translation": "The social, economic, and political conditions are far too unequal for the Tunisian example to suggest a regional conflagration.",
     "source": "wiktionary",
     "lemmas": [
       "regional"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ungleich",
+        "lemma": "ungleich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "sozialen",
+        "lemma": "sozial",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "wirtschaftlichen",
+        "lemma": "wirtschaftlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "politischen",
+        "lemma": "politisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verhältnisse",
+        "lemma": "Verhältnis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tunesische",
+        "lemma": "tunesisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beispiel",
+        "lemma": "Beispiel",
+        "pos": "noun",
+        "gloss_hint": "example (model)"
+      },
+      {
+        "form": "regionalen",
+        "lemma": "regional",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Flächenbrand",
+        "lemma": "Flächenbrand",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "b6e71051c0": {
@@ -22556,11 +22994,13 @@
   },
   "b6e729b9ca": {
     "text": "u. a. (und auch)",
-    "translation": null,
+    "translation": "and others; among other things",
     "source": "wiktionary",
     "lemmas": [
       "a."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "b6e755c4d0": {
     "text": "„Eine Nachsuche wird im ungünstigen Falle zu einer Hetze führen, wenn das kranke Wild vor dem Hund flüchtig wird.“",
@@ -22757,13 +23197,14 @@
     "type": "expression",
     "note": "einen Nachteil in Kauf nehmen, eine unangenehme Aufgabe erledigen",
     "synonyms": [],
-    "translation": null,
+    "translation": "bite the bullet",
     "source": "wiktionary",
     "lemmas": [
       "Apfel",
       "beißen"
     ],
-    "ref": "phrases/in den sauren Apfel beißen"
+    "ref": "phrases/in den sauren Apfel beißen",
+    "translation_model": "openai/gpt-4.1"
   },
   "b6e90482be": {
     "text": "„»Der Kerl hatte gestern noch soo'ne Matratze im Gesicht.«“",
@@ -23407,11 +23848,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "on the high seas",
     "source": "wiktionary",
     "lemmas": [
       "See"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b6edc3866d": {
     "text": "„Mit Kummer beenden wir die Eierproduktion und nehmen eine Notschlachtung vor.“",
@@ -23771,10 +24213,43 @@
   },
   "b6f0be15ff": {
     "text": "„So strecke ich auch allen gescheiterten Partnerschaften meine helfende Hand entgegen.“",
-    "translation": null,
+    "translation": "Thus I extend my helping hand to all failed partnerships as well.",
     "source": "wiktionary",
     "lemmas": [
       "helfende Hand"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "strecke",
+        "lemma": "strecken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gescheiterten",
+        "lemma": "gescheitert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Partnerschaften",
+        "lemma": "Partnerschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "helfende",
+        "lemma": "helfend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hand",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": "hand"
+      }
     ]
   },
   "b6f20d2796": {
@@ -24400,10 +24875,11 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I took the plunge",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   }
 }

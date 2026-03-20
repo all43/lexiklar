@@ -738,11 +738,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on the wrong track",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "75062d4836": {
     "text": "Das Jiddische wird traditionell hebräisch geschrieben.",
@@ -1479,12 +1480,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be at the end of one's tether",
     "source": "wiktionary",
     "lemmas": [
       "Latein"
     ],
-    "ref": "phrases/mit seinem Latein am Ende sein"
+    "ref": "phrases/mit seinem Latein am Ende sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "750d097441": {
     "text": "„»Wenn eine Gas-Pipeline undicht ist, tritt meistens Methan aus.«“",
@@ -3292,11 +3294,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as before",
     "source": "wiktionary",
     "lemmas": [
       "wie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "75174da3b7": {
     "text": "„Er war noch aggressiver als sonst.“",
@@ -3393,10 +3396,37 @@
   },
   "7518e48953": {
     "text": "Ist doch klar, dass du da Kreuz nachspielen musst! Wo hast du denn deinen Kopf gelassen?",
-    "translation": null,
+    "translation": "Of course you have to play clubs! Where did you leave your head?",
     "source": "wiktionary",
     "lemmas": [
       "nachspielen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "klar",
+        "lemma": "klar",
+        "pos": "adjective",
+        "gloss_hint": "clear"
+      },
+      {
+        "form": "Kreuz",
+        "lemma": "Kreuz",
+        "pos": "noun",
+        "gloss_hint": "clubs"
+      },
+      {
+        "form": "nachspielen",
+        "lemma": "nachspielen",
+        "pos": "verb",
+        "gloss_hint": "follow suit"
+      },
+      {
+        "form": "Kopf",
+        "lemma": "Kopf",
+        "pos": "noun",
+        "gloss_hint": "head"
+      }
     ]
   },
   "751919533a": {
@@ -4743,11 +4773,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "don't do anything crazy",
     "source": "wiktionary",
     "lemmas": [
       "machen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "75267507d1": {
     "text": "„Bei aller vermeintlichen Nonchalance war er von Anfang bis Ende auf der Hut gewesen.“",
@@ -5467,10 +5498,61 @@
   },
   "752e969e92": {
     "text": "„Die Militärs hatten alles mitgenommen, und heute nagte die Familie des einstigen Präsidenten am Hungertuch.“",
-    "translation": null,
+    "translation": "\"The military had taken everything, and today the family of the former president was living in poverty.\"",
     "source": "wiktionary",
     "lemmas": [
       "am Hungertuch nagen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Militärs",
+        "lemma": "Militär",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "mitgenommen",
+        "lemma": "mitnehmen",
+        "pos": "verb",
+        "gloss_hint": "taken along"
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "nagte",
+        "lemma": "nagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Familie",
+        "lemma": "Familie",
+        "pos": "noun",
+        "gloss_hint": "basic social unit"
+      },
+      {
+        "form": "einstigen",
+        "lemma": "einstig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Präsidenten",
+        "lemma": "Präsident",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hungertuch",
+        "lemma": "Hungertuch",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "752efa1c4d": {
@@ -5565,10 +5647,121 @@
   },
   "752f890e7f": {
     "text": "„Im Nachhinein zeigten sich die Betreuer beeindruckt vom Leistungsvermögen der hiesigen Mannschaften. ‚Das Niveau ist absolut vergleichbar, die können ohne weiteres in der zweiten Liga bei uns mithalten. Schade ist nur, dass hier viel mit Geld gemacht wird. Bei uns läuft alles just for fun‘, bedauerte Herrmann.“",
-    "translation": null,
+    "translation": "\"In retrospect, the supervisors were impressed by the performance capacity of the local teams. 'The standard is absolutely comparable, they can easily hold their own in the second division with us. It's a shame that a lot of money is involved here. With us everything runs just for fun,' Herrmann regretted.\"",
     "source": "wiktionary",
     "lemmas": [
       "just for fun"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Nachhinein",
+        "lemma": "Nachhinein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zeigten",
+        "lemma": "zeigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Betreuer",
+        "lemma": "Betreuer",
+        "pos": "noun",
+        "gloss_hint": "caretaker"
+      },
+      {
+        "form": "beeindruckt",
+        "lemma": "beeindrucken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leistungsvermögen",
+        "lemma": "Leistungsvermögen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hiesigen",
+        "lemma": "hiesig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mannschaften",
+        "lemma": "Mannschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Niveau",
+        "lemma": "Niveau",
+        "pos": "noun",
+        "gloss_hint": "level"
+      },
+      {
+        "form": "absolut",
+        "lemma": "absolut",
+        "pos": "adjective",
+        "gloss_hint": "definitely"
+      },
+      {
+        "form": "vergleichbar",
+        "lemma": "vergleichbar",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Liga",
+        "lemma": "Liga",
+        "pos": "noun",
+        "gloss_hint": "league"
+      },
+      {
+        "form": "mithalten",
+        "lemma": "mithalten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geld",
+        "lemma": "Geld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gemacht",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "made"
+      },
+      {
+        "form": "läuft",
+        "lemma": "laufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fun",
+        "lemma": "Fun",
+        "pos": "noun",
+        "gloss_hint": "fun"
+      },
+      {
+        "form": "bedauerte",
+        "lemma": "bedauern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herrmann",
+        "lemma": "Herrmann",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7531a47502": {
@@ -7367,11 +7560,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be stunned (as if doused with cold water)",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "75454ba17e": {
     "text": "„Ich bestellte ein Omelett und eine Cola und aß, während ich im Bett lag und fernsah.“",
@@ -9244,11 +9438,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to air one's behind (e.g., to moon someone)",
     "source": "wiktionary",
     "lemmas": [
       "lüften"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7555b213c5": {
     "text": "Während der Zeit der Bestellung hat der Bauer viel zu tun.",
@@ -11050,10 +11245,91 @@
   },
   "75639937eb": {
     "text": "«Kaum jemand steht dazu, der Schönheit künstlich nachgeholfen zu haben. Mit Ausnahme der jungen Frauen ‹mit Brüsten im Porno-Look, was man auch vom Schiff aus sieht›, sagt Wolfensberger.»",
-    "translation": null,
+    "translation": "\"Hardly anyone admits to having had artificial help with beauty. With the exception of young women 'with breasts in porn-look, which you can see even from the ship', says Wolfensberger.\"",
     "source": "wiktionary",
     "lemmas": [
       "vom Schiff aus"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kaum",
+        "lemma": "kaum",
+        "pos": "adverb",
+        "gloss_hint": "hardly"
+      },
+      {
+        "form": "steht",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schönheit",
+        "lemma": "Schönheit",
+        "pos": "noun",
+        "gloss_hint": "beauty"
+      },
+      {
+        "form": "künstlich",
+        "lemma": "künstlich",
+        "pos": "adjective",
+        "gloss_hint": "artificial"
+      },
+      {
+        "form": "nachgeholfen",
+        "lemma": "nachhelfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausnahme",
+        "lemma": "Ausnahme",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "jungen",
+        "lemma": "jung",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Brüsten",
+        "lemma": "Brust",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Porno-Look",
+        "lemma": "Porno-Look",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schiff",
+        "lemma": "Schiff",
+        "pos": "noun",
+        "gloss_hint": "ship"
+      },
+      {
+        "form": "sieht",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wolfensberger",
+        "lemma": "Wolfensberger",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7563d431a8": {
@@ -11510,11 +11786,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Speak of the devil (and he appears).",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7567b1093d": {
     "text": "„In Bayern hat die CSU-Staatsregierung längst angefangen, aufmüpfige Pfarreien an die Kandare zu nehmen.“",
@@ -11652,11 +11929,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to wear out one's feet looking for something",
     "source": "wiktionary",
     "lemmas": [
       "Fuß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "756b707c88": {
     "text": "[Klimawandel:] „Unter Leugnen wird dabei „das Abstreiten von allgemein bekannten Tatsachen“ verstanden.“",
@@ -12047,11 +12325,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in the same boat",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "75711a2fe7": {
     "text": "„Projektziel: Nachverfolgung der für Umweltprojekte zugesagten Gelder und Aufdeckung von Missbrauch, Misswirtschaft und Verschwendung durch die Forderung nach Rechenschaftspflicht und Transparenz.“",
@@ -12834,11 +13113,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something becomes instantly clear to someone",
     "source": "wiktionary",
     "lemmas": [
       "Schlag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "757a3988d2": {
     "text": "Der General nahm die Truppe vor El Alamein zurück.",
@@ -13314,10 +13594,67 @@
   },
   "757fbc8085": {
     "text": "„Falls sich die 193 Mitgliedstaaten der ITU auf eine Abschaffung einigen, könnte der Schaltsekunde in der zweiten Hälfte des Jahrzehnts das letzte Stündlein geschlagen haben.“",
-    "translation": null,
+    "translation": "\"If the 193 member states of the ITU agree on an abolition, the leap second could have its final hour struck in the second half of the decade.\"",
     "source": "wiktionary",
     "lemmas": [
       "jemandes letztes Stündlein hat geschlagen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mitgliedstaaten",
+        "lemma": "Mitgliedstaat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ITU",
+        "lemma": "ITU",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abschaffung",
+        "lemma": "Abschaffung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "einigen",
+        "lemma": "einigen",
+        "pos": "verb",
+        "gloss_hint": "settle"
+      },
+      {
+        "form": "Schaltsekunde",
+        "lemma": "Schaltsekunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hälfte",
+        "lemma": "Hälfte",
+        "pos": "noun",
+        "gloss_hint": "half"
+      },
+      {
+        "form": "Jahrzehnts",
+        "lemma": "Jahrzehnt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stündlein",
+        "lemma": "Stündlein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geschlagen",
+        "lemma": "schlagen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "75814b8928": {
@@ -16280,11 +16617,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get back on one's feet",
     "source": "wiktionary",
     "lemmas": [
       "Bein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7593ca55af": {
     "text": "„Die Initiatoren der Studie kommen klar und unmissverständlich zu dem Schluss, dass die Behandlungsergebnisse deutlich besser sind, wenn man nach der chirurgischen Entfernung der Geschwulst eine Chemotherapie anstelle der bisher üblichen Strahlentherapie durchführt.“",
@@ -16506,12 +16844,13 @@
     "type": "expression",
     "note": "die konkrete Absicht der eigenen Aussage offenlegen; die Konsequenz der vorangehenden Darlegung ziehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to get to the point",
     "source": "wiktionary",
     "lemmas": [
       "Punkt"
     ],
-    "ref": "phrases/auf den Punkt kommen"
+    "ref": "phrases/auf den Punkt kommen",
+    "translation_model": "openai/gpt-4.1"
   },
   "759954e00f": {
     "text": "Die Bundesregierung hat sich auf einen Entwurf zu einem Anti-Doping-Gesetz verständigt.",
@@ -17957,11 +18296,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put coins into circulation",
     "source": "wiktionary",
     "lemmas": [
       "Münze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "75a6e9fab5": {
     "text": "„In der Literatur findet man jedoch auch Strukturbestimmungen, in denen die Gleitkomponente in Richtung der a-Achse liegt.“",
@@ -19633,14 +19973,12 @@
     "synonyms": [
       "Fähnchen"
     ],
-    "translation": null,
+    "translation": "one's true colors (figuratively: one's real allegiance)",
     "source": "wiktionary",
     "lemmas": [
       "Wind"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "75b4c29c4a": {
     "text": "„Und die schmalen Bürgersteige füllen sich allmählich wieder mit schweigenden und debattierenden Leuten, von denen die meisten auf dem Heimweg von der Arbeit sind, wie man weiß, und fremd in dieser Straße.“",
@@ -20633,23 +20971,25 @@
     "type": "expression",
     "note": "nichts sagen",
     "synonyms": [],
-    "translation": null,
+    "translation": "be as silent as the grave",
     "source": "wiktionary",
     "lemmas": [
       "stumm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "75ca7f66fe": {
     "text": "in Strömen regnen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pour down",
     "source": "wiktionary",
     "lemmas": [
       "regnen"
     ],
-    "ref": "phrases/in Strömen regnen"
+    "ref": "phrases/in Strömen regnen",
+    "translation_model": "openai/gpt-4.1"
   },
   "75cb6572f4": {
     "text": "„Als weiterer Vertreter eines Swing States kommt Gouverneur Roy Cooper (67) aus North Carolina infrage.“",
@@ -23679,11 +24019,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "catch crickets",
     "source": "wiktionary",
     "lemmas": [
       "Grille"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "75efd1c0e6": {
     "text": "Schau das Bild an, der Maler ist direkt darunter auf einem Metallschildchen verewigt.",

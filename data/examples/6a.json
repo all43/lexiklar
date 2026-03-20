@@ -4,11 +4,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You must be crazy.",
     "source": "wiktionary",
     "lemmas": [
       "Storch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6a00149861": {
     "text": "„Wie die hellen Locken ihr Gesicht umrahmt hatten, und ihre Augen, die hatten gefunkelt!“",
@@ -1742,10 +1743,31 @@
   },
   "6a0adb73c5": {
     "text": "Die Straßenbahnlinie 6 geht durch bis zum Bahnhof.",
-    "translation": null,
+    "translation": "Tram line 6 runs all the way through to the station.",
     "source": "wiktionary",
     "lemmas": [
       "durchgehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Straßenbahnlinie",
+        "lemma": "Straßenbahnlinie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geht",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bahnhof",
+        "lemma": "Bahnhof",
+        "pos": "noun",
+        "gloss_hint": "station"
+      }
     ]
   },
   "6a0b513826": {
@@ -6094,11 +6116,12 @@
     "type": "expression",
     "note": "handgreiflich werden",
     "synonyms": [],
-    "translation": null,
+    "translation": "Someone loses their temper.",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6a3226bbcb": {
     "text": "Egoismus ist keine angenehme Haltung.",
@@ -6168,11 +6191,12 @@
     "type": "expression",
     "note": "keine Überlegungen zu einem bestimmten Thema anstellen (wollen)",
     "synonyms": [],
-    "translation": null,
+    "translation": "not waste a single thought on something",
     "source": "wiktionary",
     "lemmas": [
       "verschwenden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6a3463adb7": {
     "text": "„Die Besucher des Fort Konstantin sind immer wieder begeistert von der Aussicht, die sie von hier aus über die Stadt an Rhein und Mosel und deren herrliche Umgebung genießen können.“",
@@ -6353,11 +6377,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a lot of nerve",
     "source": "wiktionary",
     "lemmas": [
       "dick"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6a35714b90": {
     "text": "„Aber die Männer, denen sie am Ufer begegnete, hatten zu schwere Gedanken, als daß sie bemerkten, ob der Rock einer Landstreicherin einen Zoll mehr oder minder lang war.“",
@@ -7030,11 +7055,12 @@
     "type": "expression",
     "note": "der Lauf, der Fortgang, die Entwicklung",
     "synonyms": [],
-    "translation": null,
+    "translation": "the course of events",
     "source": "wiktionary",
     "lemmas": [
       "Gang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6a3d81a93a": {
     "text": "Die Verletzung am Arm von Peter wird durch die Krankenschwester mit einem Pflaster versorgt.",
@@ -8134,18 +8160,102 @@
   },
   "6a46a6e0f9": {
     "text": "Die Eigenschaft des Hartriegels, dass die Rinde beim Trocknen fest mit dem Holz verbunden bleibt, führt zu einer besonders guten und angenehmen Haptik.",
-    "translation": null,
+    "translation": "The property of dogwood that its bark remains firmly bonded to the wood when drying leads to a particularly good and pleasant tactile quality.",
     "source": "wiktionary",
     "lemmas": [
       "Hartriegel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Eigenschaft",
+        "lemma": "Eigenschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hartriegels",
+        "lemma": "Hartriegel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rinde",
+        "lemma": "Rinde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Trocknen",
+        "lemma": "trocknen",
+        "pos": "verb",
+        "gloss_hint": "dry"
+      },
+      {
+        "form": "fest",
+        "lemma": "fest",
+        "pos": "adjective",
+        "gloss_hint": "firmly"
+      },
+      {
+        "form": "Holz",
+        "lemma": "Holz",
+        "pos": "noun",
+        "gloss_hint": "wood"
+      },
+      {
+        "form": "verbunden",
+        "lemma": "verbunden",
+        "pos": "adjective",
+        "gloss_hint": "connected"
+      },
+      {
+        "form": "besonders",
+        "lemma": "besonders",
+        "pos": "adjective",
+        "gloss_hint": "notably"
+      },
+      {
+        "form": "Haptik",
+        "lemma": "Haptik",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6a48185212": {
     "text": "[…] das Team passte aus meiner Sicht perfekt zusammen.",
-    "translation": null,
+    "translation": "From my perspective, the team fit together perfectly.",
     "source": "wiktionary",
     "lemmas": [
       "aus meiner Sicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Team",
+        "lemma": "Team",
+        "pos": "noun",
+        "gloss_hint": "team"
+      },
+      {
+        "form": "passte",
+        "lemma": "passen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "perfekt",
+        "lemma": "perfekt",
+        "pos": "adjective",
+        "gloss_hint": "flawless"
+      },
+      {
+        "form": "zusammen",
+        "lemma": "zusammen",
+        "pos": "adverb",
+        "gloss_hint": "together"
+      }
     ]
   },
   "6a483817d3": {
@@ -8153,11 +8263,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be born with a talent",
     "source": "wiktionary",
     "lemmas": [
       "Wiege"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6a485f8f98": {
     "text": "„Tausende Biker aus ganz Hessen haben am Samstag in Wiesbaden gegen eine vom Bundesrat geforderte strengere Regulierung von Motorradlärm demonstriert.“",
@@ -8174,15 +8285,13 @@
     "type": "expression",
     "note": "seine Verdienste / sein Wissen verbergen",
     "synonyms": [],
-    "translation": null,
+    "translation": "hide one's light under a bushel",
     "source": "wiktionary",
     "lemmas": [
       "stellen"
     ],
     "ref": "phrases/sein Licht unter den Scheffel stellen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "6a498f8bfd": {
     "text": "Du bist mir für die Reisekasse verantwortlich!",
@@ -8615,10 +8724,25 @@
   },
   "6a4cda9e35": {
     "text": "Wir haben in Brehna unseren Urlaub verbracht.",
-    "translation": null,
+    "translation": "We spent our vacation in Brehna.",
     "source": "wiktionary",
     "lemmas": [
       "Brehna"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Urlaub",
+        "lemma": "Urlaub",
+        "pos": "noun",
+        "gloss_hint": "vacation"
+      },
+      {
+        "form": "verbracht",
+        "lemma": "verbringen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "6a4e90bed9": {
@@ -9933,11 +10057,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "autumn of life",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6a590525e6": {
     "text": "„Ihr Hauptverbreitungsgebiet war von jeher die Mark Brandenburg, so kam der größte Vogel Europas zu seinem Beinamen ‚Märkischer Strauß‘.“",
@@ -10331,10 +10456,31 @@
   },
   "6a5b39eeb6": {
     "text": "Um zur Insel zu kommen, musst du übers Wasser.",
-    "translation": null,
+    "translation": "To get to the island, you have to go across the water.",
     "source": "wiktionary",
     "lemmas": [
       "übers"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Insel",
+        "lemma": "Insel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": "arrive"
+      },
+      {
+        "form": "Wasser",
+        "lemma": "Wasser",
+        "pos": "noun",
+        "gloss_hint": "water"
+      }
     ]
   },
   "6a5b6993d3": {
@@ -11270,10 +11416,43 @@
   },
   "6a6103f96e": {
     "text": "„Allem Aufschwung zum Trotz aber galten die Taiwaner gegenüber den Japanern als Bürger zweiter Klasse.“",
-    "translation": null,
+    "translation": "Despite all the economic upswing, however, Taiwanese were regarded as second-class citizens compared to the Japanese.",
     "source": "wiktionary",
     "lemmas": [
       "zweiter Klasse"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Aufschwung",
+        "lemma": "Aufschwung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Taiwaner",
+        "lemma": "Taiwaner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Japanern",
+        "lemma": "Japaner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bürger",
+        "lemma": "Bürger",
+        "pos": "noun",
+        "gloss_hint": "citizen"
+      },
+      {
+        "form": "Klasse",
+        "lemma": "Klasse",
+        "pos": "noun",
+        "gloss_hint": "class"
+      }
     ]
   },
   "6a6267c01b": {
@@ -11389,11 +11568,12 @@
     "type": "expression",
     "note": "Hinweis auf etwas Bemerkenswertes, „alle Achtung!“",
     "synonyms": [],
-    "translation": null,
+    "translation": "Well, I'll be!",
     "source": "wiktionary",
     "lemmas": [
       "Mensch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6a6386caf7": {
     "text": "seit kurzem",
@@ -14337,12 +14517,13 @@
     "type": "expression",
     "note": "lästern",
     "synonyms": [],
-    "translation": null,
+    "translation": "to lash out at someone",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
     ],
-    "ref": "phrases/vom Leder ziehen"
+    "ref": "phrases/vom Leder ziehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "6a810d75d5": {
     "text": "Man versucht Korridore zu vernetzen, damit zum Beispiel größere Säugetiere wie Wolf oder Bär in Westeuropa eine Chance haben, sich von einem Gebiet in ein anderes zu bewegen.",
@@ -14526,10 +14707,31 @@
   },
   "6a8276bd9e": {
     "text": "„In der Praxis ist IP fast ausschließlich in der Version IPv4 im Einsatz.“",
-    "translation": null,
+    "translation": "In practice, IP is almost exclusively used in the IPv4 version.",
     "source": "wiktionary",
     "lemmas": [
       "IP"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Praxis",
+        "lemma": "Praxis",
+        "pos": "noun",
+        "gloss_hint": "practice"
+      },
+      {
+        "form": "Version",
+        "lemma": "Version",
+        "pos": "noun",
+        "gloss_hint": "variant"
+      },
+      {
+        "form": "Einsatz",
+        "lemma": "Einsatz",
+        "pos": "noun",
+        "gloss_hint": "use"
+      }
     ]
   },
   "6a82be30a6": {
@@ -14970,10 +15172,43 @@
   },
   "6a857dc5b5": {
     "text": "„Im 21. Band dieser Reihe geht es hauptsächlich um den historischen politischen Machtwechsel in Den Haag, der sich im Herbst 2010 vollzogen hat.“",
-    "translation": null,
+    "translation": "In the 21st volume of this series, it is mainly about the historical political change of power in The Hague that took place in autumn 2010.",
     "source": "wiktionary",
     "lemmas": [
       "Band"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Band",
+        "lemma": "Band",
+        "pos": "noun",
+        "gloss_hint": "volume (bound book)"
+      },
+      {
+        "form": "Reihe",
+        "lemma": "Reihe",
+        "pos": "noun",
+        "gloss_hint": "series (media)"
+      },
+      {
+        "form": "hauptsächlich",
+        "lemma": "hauptsächlich",
+        "pos": "adjective",
+        "gloss_hint": "principal"
+      },
+      {
+        "form": "Machtwechsel",
+        "lemma": "Machtwechsel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herbst",
+        "lemma": "Herbst",
+        "pos": "noun",
+        "gloss_hint": "autumn"
+      }
     ]
   },
   "6a86473de1": {
@@ -15213,10 +15448,79 @@
   },
   "6a87915ea0": {
     "text": "„Du dumme Liese du, willst du die Hosen anhaben und deinem Vater Gesetze vorschreiben? Seit wann ist es Mode, daß ein Ding, das noch nicht trocken hinter den Ohren ist, sich meinem Willen widersetzt?“",
-    "translation": null,
+    "translation": "You foolish Liese, do you want to wear the pants and dictate laws to your father? Since when is it fashionable for something that is still wet behind the ears to defy my will?",
     "source": "wiktionary",
     "lemmas": [
       "die Hosen anhaben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "dumme",
+        "lemma": "dumm",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hosen",
+        "lemma": "Hose",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "anhaben",
+        "lemma": "anhaben",
+        "pos": "verb",
+        "gloss_hint": "wear"
+      },
+      {
+        "form": "Vater",
+        "lemma": "Vater",
+        "pos": "noun",
+        "gloss_hint": "father"
+      },
+      {
+        "form": "Gesetze",
+        "lemma": "Gesetz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vorschreiben",
+        "lemma": "vorschreiben",
+        "pos": "verb",
+        "gloss_hint": "dictate"
+      },
+      {
+        "form": "Mode",
+        "lemma": "Mode",
+        "pos": "noun",
+        "gloss_hint": "fashion"
+      },
+      {
+        "form": "Ding",
+        "lemma": "Ding",
+        "pos": "noun",
+        "gloss_hint": "thing"
+      },
+      {
+        "form": "trocken",
+        "lemma": "trocken",
+        "pos": "adjective",
+        "gloss_hint": "dry"
+      },
+      {
+        "form": "Ohren",
+        "lemma": "Ohr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Willen",
+        "lemma": "Wille",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6a880f530c": {
@@ -16176,11 +16480,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to defuse the situation",
     "source": "wiktionary",
     "lemmas": [
       "Kessel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6a93bc6316": {
     "text": "„Frisch gewaschene Wäsche war samt Korb in hohem Bogen in den Dreck geflogen und noch mehr.“",
@@ -17209,11 +17514,12 @@
     "type": "expression",
     "note": "etwas völlig Veraltetes, Altmodisches sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be completely outdated",
     "source": "wiktionary",
     "lemmas": [
       "Lavendel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6aa2ceb183": {
     "text": "„Mein Vater und Ditti schickten mich bereits kurz nach meiner Ankunft in den Feldafinger Kindergarten, der in Baracken am alten Fußballplatz des Dorfes untergebracht war.“",
@@ -19585,10 +19891,49 @@
   },
   "6ab521eac5": {
     "text": "Die von langer Hand geplante Übernahme des Unternehmens geschah dann im Frühjahr des Folgejahres.",
-    "translation": null,
+    "translation": "The takeover of the company, which had been planned long in advance, then took place in the spring of the following year.",
     "source": "wiktionary",
     "lemmas": [
       "von langer Hand"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hand",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": "side (hand)"
+      },
+      {
+        "form": "geplante",
+        "lemma": "planen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Übernahme",
+        "lemma": "Übernahme",
+        "pos": "noun",
+        "gloss_hint": "takeover"
+      },
+      {
+        "form": "Unternehmens",
+        "lemma": "Unternehmen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frühjahr",
+        "lemma": "Frühjahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Folgejahres",
+        "lemma": "Folgejahr",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6ab5e0f706": {
@@ -19686,11 +20031,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the matter is settled",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6ab67a46fe": {
     "text": "Der Stoß traf mich in den Rücken.",
@@ -20688,12 +21034,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be the deciding factor",
     "source": "wiktionary",
     "lemmas": [
       "Waage"
     ],
-    "ref": "phrases/das Zünglein an der Waage sein"
+    "ref": "phrases/das Zünglein an der Waage sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "6abee5149b": {
     "text": "„Die Kanzlerin lässt diesem Vorschlag einen der angewidertsten Blicke folgen, die je aus dem Frühstückraum eines Hotels auf dessen Pool-Landschaft geworfen wurden.“",
@@ -22421,11 +22768,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the shot is in the net",
     "source": "wiktionary",
     "lemmas": [
       "Schuss"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6ad09bac0b": {
     "text": "„In der Syrischen Wüste war es kalt und still und auf der mit einer Plane abgedeckten Ladefläche des Lastwagens stank es unerträglich nach Diesel.“",
@@ -22744,10 +23092,49 @@
   },
   "6ad4c2d61e": {
     "text": "„Dort legten sie sie in eine Mulde zwischen hohen Sandhügeln, die sie auf der einen Seite gegen den Strand und auf der andern gegen die Häuser abschirmten.“",
-    "translation": null,
+    "translation": "There they laid her in a depression between high sand dunes, which shielded her on one side from the beach and on the other from the houses.",
     "source": "wiktionary",
     "lemmas": [
       "Mulde"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "legten",
+        "lemma": "legen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mulde",
+        "lemma": "Mulde",
+        "pos": "noun",
+        "gloss_hint": "depression"
+      },
+      {
+        "form": "Sandhügeln",
+        "lemma": "Sandhügel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Seite",
+        "lemma": "Seite",
+        "pos": "noun",
+        "gloss_hint": "side"
+      },
+      {
+        "form": "Strand",
+        "lemma": "Strand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Häuser",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6ad4f79d69": {
@@ -23788,11 +24175,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If you can't swim, you shouldn't jump into the water.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6ae186405c": {
     "text": "„Plötzlich fühlte er ihre Hand leise auf der seinen.“",
@@ -23916,10 +24304,31 @@
   },
   "6ae4eaab6f": {
     "text": "„Schon einen Tag später setzt sich K. in den Flieger.“",
-    "translation": null,
+    "translation": "Just a day later, K. gets on the plane.",
     "source": "wiktionary",
     "lemmas": [
       "K."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "später",
+        "lemma": "später",
+        "pos": "adverb",
+        "gloss_hint": "later"
+      },
+      {
+        "form": "Flieger",
+        "lemma": "Flieger",
+        "pos": "noun",
+        "gloss_hint": "airplane"
+      }
     ]
   },
   "6ae5805fa7": {
@@ -24844,11 +25253,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have something in the back of one's mind",
     "source": "wiktionary",
     "lemmas": [
       "Hinterkopf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6aeff4823e": {
     "text": "„Im Schein der Taschenlampen blitzten Gasmasken, Kleidungs- und Ausrüstungsstücke auf.“",
@@ -24993,22 +25403,24 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I once had something so precious.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6af3d905e3": {
     "text": "Kommt der Ochs in fremdes Land, wird er doch als Rind erkannt.",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A cow is a cow, even in a foreign land.",
     "source": "wiktionary",
     "lemmas": [
       "Rind"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6af525627b": {
     "text": "Ich kaufte ein sehr altes Haus.",

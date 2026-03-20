@@ -1594,11 +1594,12 @@
     "type": "expression",
     "note": "jemanden necken",
     "synonyms": [],
-    "translation": null,
+    "translation": "to tease someone",
     "source": "wiktionary",
     "lemmas": [
       "Affe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "be0c493380": {
     "text": "„Zur allgemeinen Überraschung konnte sich der große Favorit für den Langlauf und die nordische Kombination, der dreifache Sachsenmeister Norbert Friedel, nicht durchsetzen.“",
@@ -3077,11 +3078,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's enough to drive anyone crazy",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "be19722b8c": {
     "text": "Auf den Berg gibt es einen steilen Aufstieg und eine Gondelbahn.",
@@ -4196,10 +4198,49 @@
   },
   "be20c94da2": {
     "text": "„Schließlich hatten auch die Inder Wind von der Sache bekommen und verstanden, dass er über Manbai zu reisen gedachte.“",
-    "translation": null,
+    "translation": "Finally, the Indians too had gotten wind of the matter and understood that he intended to travel via Mumbai.",
     "source": "wiktionary",
     "lemmas": [
       "von etwas Wind bekommen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Inder",
+        "lemma": "Inder",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wind",
+        "lemma": "Wind",
+        "pos": "noun",
+        "gloss_hint": "wind"
+      },
+      {
+        "form": "Sache",
+        "lemma": "Sache",
+        "pos": "noun",
+        "gloss_hint": "matter"
+      },
+      {
+        "form": "verstanden",
+        "lemma": "verstehen",
+        "pos": "verb",
+        "gloss_hint": "understood (they)"
+      },
+      {
+        "form": "reisen",
+        "lemma": "reisen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gedachte",
+        "lemma": "gedenken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "be217fc9f4": {
@@ -4423,11 +4464,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone food for thought",
     "source": "wiktionary",
     "lemmas": [
       "denken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "be26a7f806": {
     "text": "„Gewalt gegen Frauen ist eine der am weitesten verbreiteten Menschenrechtsverletzungen weltweit.“",
@@ -5043,10 +5085,43 @@
   },
   "be2c3bcf0f": {
     "text": "„Also bei dem was Eltern alles im Laufe erledigen müssen, kann man das ja nun auch übernehmen. Das macht den Kohl auch nicht fett.“",
-    "translation": null,
+    "translation": "Well, given everything parents have to do over the course of time, one could certainly take that on too. It doesn't make things any worse.",
     "source": "wiktionary",
     "lemmas": [
       "das macht den Kohl auch nicht fett"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Eltern",
+        "lemma": "Eltern",
+        "pos": "noun",
+        "gloss_hint": "basic social unit"
+      },
+      {
+        "form": "erledigen",
+        "lemma": "erledigen",
+        "pos": "verb",
+        "gloss_hint": "complete"
+      },
+      {
+        "form": "übernehmen",
+        "lemma": "übernehmen",
+        "pos": "verb",
+        "gloss_hint": "take over"
+      },
+      {
+        "form": "Kohl",
+        "lemma": "Kohl",
+        "pos": "noun",
+        "gloss_hint": "nonsense"
+      },
+      {
+        "form": "fett",
+        "lemma": "fett",
+        "pos": "adjective",
+        "gloss_hint": "big (in size)"
+      }
     ]
   },
   "be2cfa68d1": {
@@ -5311,10 +5386,43 @@
   },
   "be2ed6e1a2": {
     "text": "„Gegen die Einbahn zu fahren ist knapp jedem Dritten (32 Prozent) schon passiert.“",
-    "translation": null,
+    "translation": "Driving the wrong way down a one-way street has happened to nearly one in three people (32 percent).",
     "source": "wiktionary",
     "lemmas": [
       "Einbahn"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Einbahn",
+        "lemma": "Einbahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fahren",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": "drive"
+      },
+      {
+        "form": "knapp",
+        "lemma": "knapp",
+        "pos": "adjective",
+        "gloss_hint": "slightly under"
+      },
+      {
+        "form": "Dritten",
+        "lemma": "Drittel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prozent",
+        "lemma": "Prozent",
+        "pos": "noun",
+        "gloss_hint": "percentage"
+      }
     ]
   },
   "be2eeb667d": {
@@ -8591,12 +8699,13 @@
     "type": "expression",
     "note": "ansprechen",
     "synonyms": [],
-    "translation": null,
+    "translation": "bring something up",
     "source": "wiktionary",
     "lemmas": [
       "Sprache"
     ],
-    "ref": "phrases/etwas zur Sprache bringen"
+    "ref": "phrases/etwas zur Sprache bringen",
+    "translation_model": "openai/gpt-4.1"
   },
   "be4313bd84": {
     "text": "Woraufhin hat er denn so böse reagiert?",
@@ -9423,11 +9532,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If the water is bad, no horse will drink it.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "be5134c552": {
     "text": "„Auf Polnisch nannten sie sich »Flisarzy«, das kommt vom deutschen Wort »Flößer«, mal wieder eines der unzähligen Beispiele für deutsche Lehnwörter, so wie »urlop« (Urlaub) oder »zigzag« (Zickzack) oder »plaga« (Plage) oder »sznurek« (Schnur).“",
@@ -10017,10 +10127,25 @@
   },
   "be55468e2e": {
     "text": "Ich so: „Kommst du mal eben mit?“ Und sie nur so: „Nee.“",
-    "translation": null,
+    "translation": "Me: \"Will you come along for a sec?\" And she just: \"Nope.\"",
     "source": "wiktionary",
     "lemmas": [
       "so"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kommst",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "eben",
+        "lemma": "eben",
+        "pos": "adverb",
+        "gloss_hint": "just"
+      }
     ]
   },
   "be5655794c": {
@@ -11224,10 +11349,19 @@
   },
   "be6288db60": {
     "text": "300 m n. rechts",
-    "translation": null,
+    "translation": "300 m north, right",
     "source": "wiktionary",
     "lemmas": [
       "n."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "rechts",
+        "lemma": "rechts",
+        "pos": "adverb",
+        "gloss_hint": "right"
+      }
     ]
   },
   "be628e8186": {
@@ -11593,10 +11727,43 @@
   },
   "be6724694d": {
     "text": "„Was mich zum Spielen zwang, war eine Regung des Geizes.“",
-    "translation": null,
+    "translation": "\"What compelled me to play was an impulse of greed.\"",
     "source": "wiktionary",
     "lemmas": [
       "Geiz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "mich",
+        "lemma": "ich",
+        "pos": "pronoun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zwang",
+        "lemma": "zwingen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spielen",
+        "lemma": "spielen",
+        "pos": "verb",
+        "gloss_hint": "play"
+      },
+      {
+        "form": "Regung",
+        "lemma": "Regung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geizes",
+        "lemma": "Geiz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "be67402a76": {
@@ -11871,11 +12038,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I think something suspicious is going on.",
     "source": "wiktionary",
     "lemmas": [
       "Papst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "be6d2f0a11": {
     "text": "„Die meisten glauben jedoch, dass sich das Leben auf der Erde mit der Zunahme immer verschiedenartigerer und komplexerer, Kohlenstoff enthaltender chemischer Stoffe langsam in geschützten Umgebungen entwickelte.“",
@@ -12198,24 +12366,27 @@
   },
   "be70db8627": {
     "text": "tan 30°",
-    "translation": null,
+    "translation": "tan 30°",
     "source": "wiktionary",
     "lemmas": [
       "tan"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "be7162f0b0": {
     "text": "ein heißes Eisen anfassen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "tackle a hot potato",
     "source": "wiktionary",
     "lemmas": [
       "anfassen",
       "ein heißes Eisen"
     ],
-    "ref": "phrases/ein heißes Eisen anfassen"
+    "ref": "phrases/ein heißes Eisen anfassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "be7193e6c3": {
     "text": "Das herrliche Wetter hat am heutigen Mittwoch Hunderte von durstigen Kehlen zum \"Tag des Bieres\" auf den Freisinger Marienplatz gelockt.",
@@ -12426,11 +12597,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "slam on the brakes",
     "source": "wiktionary",
     "lemmas": [
       "Bremse"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "be74f55b79": {
     "text": "„Es ging mit ihm immer mehr bergab, fünf oder sechs Jahre später beging er Fälschungen, für die er zu den Galeeren verurteilt wurde, wo er vor sechs oder sieben Jahren starb.“",
@@ -13017,10 +13189,37 @@
   },
   "be7a44c896": {
     "text": "Beim letzten Projekt hast du dir kein Bein ausgerissen.",
-    "translation": null,
+    "translation": "In your last project, you didn't go the extra mile.",
     "source": "wiktionary",
     "lemmas": [
       "sich kein Bein ausreißen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "letzten",
+        "lemma": "letzte",
+        "pos": "adjective",
+        "gloss_hint": "last"
+      },
+      {
+        "form": "Projekt",
+        "lemma": "Projekt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bein",
+        "lemma": "Bein",
+        "pos": "noun",
+        "gloss_hint": "leg"
+      },
+      {
+        "form": "ausgerissen",
+        "lemma": "ausreißen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "be7bd9b03b": {
@@ -13079,10 +13278,37 @@
   },
   "be7dd1ee4d": {
     "text": "Bist du auf Krawall gebürstet oder warum hast du meine kleine Schwester geschubst?",
-    "translation": null,
+    "translation": "Are you spoiling for a fight, or why did you push my little sister?",
     "source": "wiktionary",
     "lemmas": [
       "auf Krawall gebürstet sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Krawall",
+        "lemma": "Krawall",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kleine",
+        "lemma": "kleine",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schwester",
+        "lemma": "Schwester",
+        "pos": "noun",
+        "gloss_hint": "sister"
+      },
+      {
+        "form": "geschubst",
+        "lemma": "schubsen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "be7ebf57fe": {
@@ -14605,10 +14831,103 @@
   },
   "be934b6247": {
     "text": "„Ihr graues Baumwollkleid faltete sich wie eine Harmonika um ihre Füße mit dem Goldstaub der Heimlichkeit zwischen jedem Rinnsal des Gewebes, eine Reise mit endlosen Umwegen, auf denen seine Männlichkeit verstrickt und gefangen wurde.“",
-    "translation": null,
+    "translation": "\"Her gray cotton dress folded like an accordion around her feet with the gold dust of secrecy between every rivulet of fabric, a journey with endless detours on which his masculinity became entangled and trapped.\"",
     "source": "wiktionary",
     "lemmas": [
       "Harmonika"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "graues",
+        "lemma": "grau",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Baumwollkleid",
+        "lemma": "Baumwollkleid",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "faltete",
+        "lemma": "falten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Harmonika",
+        "lemma": "Harmonika",
+        "pos": "noun",
+        "gloss_hint": "accordion"
+      },
+      {
+        "form": "Füße",
+        "lemma": "Fuß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Goldstaub",
+        "lemma": "Goldstaub",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Heimlichkeit",
+        "lemma": "Heimlichkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rinnsal",
+        "lemma": "Rinnsal",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gewebes",
+        "lemma": "Gewebe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reise",
+        "lemma": "Reise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "endlosen",
+        "lemma": "endlos",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umwegen",
+        "lemma": "Umweg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Männlichkeit",
+        "lemma": "Männlichkeit",
+        "pos": "noun",
+        "gloss_hint": "masculinity"
+      },
+      {
+        "form": "verstrickt",
+        "lemma": "verstricken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gefangen",
+        "lemma": "fangen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "be93d393fa": {
@@ -15013,10 +15332,43 @@
   },
   "be96f9c79e": {
     "text": "„Aus einer hebräischen Wurzel können im Jiddischen auf verschiedene Weise Verben gebildet werden.“",
-    "translation": null,
+    "translation": "\"From a Hebrew root, verbs can be formed in Yiddish in various ways.\"",
     "source": "wiktionary",
     "lemmas": [
       "Wurzel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hebräischen",
+        "lemma": "hebräisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wurzel",
+        "lemma": "Wurzel",
+        "pos": "noun",
+        "gloss_hint": "root"
+      },
+      {
+        "form": "Jiddischen",
+        "lemma": "Jiddisch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verben",
+        "lemma": "Verb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gebildet",
+        "lemma": "bilden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "be9781f25c": {
@@ -16621,12 +16973,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "write a clean copy",
     "source": "wiktionary",
     "lemmas": [
       "Reine"
     ],
-    "ref": "phrases/ins Reine schreiben"
+    "ref": "phrases/ins Reine schreiben",
+    "translation_model": "openai/gpt-4.1"
   },
   "beac21b8d0": {
     "text": "Nicht weit vom Haus entfernt stand ein finsterer Geselle mit einer riesigen Schrotflinte und ballerte in der Gegend herum.",
@@ -17609,10 +17962,115 @@
   },
   "beb1ef2824": {
     "text": "„Aus der Alltagssprache ist hieb als Präteritum von hauen trotz Belegen in Zeitungstexten und Stützung durch das Substantiv Hieb eigentlich verschwunden (eine Umfrage bei Sprechern unter 30 bestätigte das) und wird sogar von Journalisten gelegentlich für das Präteritum von heben gehalten.“",
-    "translation": null,
+    "translation": "\"From everyday language, 'hieb' as the preterite of 'hauen' has actually disappeared despite evidence in newspaper texts and support from the noun 'Hieb' (a survey of speakers under 30 confirmed this), and is even occasionally mistaken by journalists for the preterite of 'heben'.\"",
     "source": "wiktionary",
     "lemmas": [
       "hieb"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Alltagssprache",
+        "lemma": "Alltagssprache",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hieb",
+        "lemma": "hieb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Präteritum",
+        "lemma": "Präteritum",
+        "pos": "noun",
+        "gloss_hint": "preterite"
+      },
+      {
+        "form": "hauen",
+        "lemma": "hauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Belegen",
+        "lemma": "Beleg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeitungstexten",
+        "lemma": "Zeitungstext",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stützung",
+        "lemma": "Stützung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Substantiv",
+        "lemma": "Substantiv",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hieb",
+        "lemma": "Hieb",
+        "pos": "noun",
+        "gloss_hint": "strike"
+      },
+      {
+        "form": "eigentlich",
+        "lemma": "eigentlich",
+        "pos": "adverb",
+        "gloss_hint": "actually"
+      },
+      {
+        "form": "verschwunden",
+        "lemma": "verschwinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umfrage",
+        "lemma": "Umfrage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sprechern",
+        "lemma": "Sprecher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bestätigte",
+        "lemma": "bestätigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gelegentlich",
+        "lemma": "gelegentlich",
+        "pos": "adverb",
+        "gloss_hint": "occasionally"
+      },
+      {
+        "form": "Journalisten",
+        "lemma": "Journalist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "heben",
+        "lemma": "heben",
+        "pos": "verb",
+        "gloss_hint": "lift"
+      }
     ]
   },
   "beb2e8945a": {
@@ -17653,11 +18111,12 @@
     "type": "expression",
     "note": "(von Mädchen oder Kleinkindern) besonders ansehnlich sein; besonders hübsch, niedlich aussehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "look absolutely adorable",
     "source": "wiktionary",
     "lemmas": [
       "Fressen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "beb3b2cf64": {
     "text": "Holger ist jetzt 40 Jahre alt. Er hatte schon mehrere Partner. Mit dem letzten lebte er acht Jahre lang zusammen.",
@@ -17788,11 +18247,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that would suit someone just fine",
     "source": "wiktionary",
     "lemmas": [
       "passen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "beb5e3a55f": {
     "text": "„Aber kurz bevor die Gerüste wieder abgebaut wurden, hatte sich mit einem Schreiben der Hausverwaltung herausgestellt, dass sie weder Laden noch Wohnung halten konnten.“",
@@ -17805,10 +18265,37 @@
   },
   "beb606deaf": {
     "text": "Der Wagen trägt das Kennzeichen RA für Argentinien.",
-    "translation": null,
+    "translation": "The car bears the license plate RA for Argentina.",
     "source": "wiktionary",
     "lemmas": [
       "RA"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wagen",
+        "lemma": "Wagen",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "trägt",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kennzeichen",
+        "lemma": "Kennzeichen",
+        "pos": "noun",
+        "gloss_hint": "license plate"
+      },
+      {
+        "form": "Argentinien",
+        "lemma": "Argentinien",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "beb7d16823": {
@@ -18129,22 +18616,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "collapse like a ton of bricks",
     "source": "wiktionary",
     "lemmas": [
       "Brett"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bebdde9677": {
     "text": "der Esel fährt raus",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the donkey is acting up",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bec0737882": {
     "text": "Hiermit erkläre ich das Museum für eröffnet.",
@@ -18163,13 +18652,14 @@
     "type": "expression",
     "note": "stur und unüberlegt handeln",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be headstrong",
     "source": "wiktionary",
     "lemmas": [
       "Kopf",
       "Wand"
     ],
-    "ref": "phrases/mit dem Kopf durch die Wand wollen"
+    "ref": "phrases/mit dem Kopf durch die Wand wollen",
+    "translation_model": "openai/gpt-4.1"
   },
   "bec2334707": {
     "text": "Kannst Du mir einen Tipp geben, wie ich dieses Programm richtig konfiguriere?",
@@ -19268,11 +19758,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to stab someone in the back",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "beca043e97": {
     "text": "„Schatz, hab ich heute nacht das ganze Rindfleisch gefressen oder der Hund?…Gott! Ich hab'n Kopf wie'n Sieb!! Wir haben ja gar kein' Hund.“",
@@ -20141,11 +20632,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "one crow does not peck out another crow's eye",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bed03b0ff1": {
     "text": "Die Proteste haben mittlerweile eine eigene Dynamik entwickelt.",
@@ -21006,18 +21498,154 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to weigh on one's stomach",
     "source": "wiktionary",
     "lemmas": [
       "Magen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bed84beda7": {
     "text": "„In anderen Fragen bleibt allerdings das Grundgesetz hinter der Konvention zurück. Dies gilt insbesondere in Ansehung der Vorbehalte, durch welche die Ausübung einzelner Grundrechte eingeschränkt wird. Während die Konvention diese Vorbehalte in kasuistischer Weise regelt (so in Art. 4 Abs. 3d, Art. 5 Abs. 1, Art. 8 Abs. 2, Art. 9 Abs. 2, Art. 10 Abs. 2 und Art. 11 Abs. 2) und zwar in unmittelbarem Zusammenhang mit dem einzelnen Grundrecht, also in Ablehnung eines allgemeinen Gesetzesvorbehalts, kennt das Grundgesetz nur einen allgemeinen Gesetzesvorbehalt des Inhalts, daß Beschränkungen das Grundrecht nicht in seinem Wesensgehalt antasten dürfen (Art. 19 Abs. 2 GG).“",
-    "translation": null,
+    "translation": "\"In other respects, however, the Basic Law falls short of the Convention. This applies in particular regarding the reservations by which the exercise of individual fundamental rights is restricted. While the Convention regulates these reservations in a case-by-case manner (as in Art. 4 para. 3d, Art. 5 para. 1, Art. 8 para. 2, Art. 9 para. 2, Art. 10 para. 2 and Art. 11 para. 2) and does so in direct connection with the individual fundamental right, thus rejecting a general statutory reservation, the Basic Law knows only a general statutory reservation to the effect that restrictions must not impair the fundamental right in its essential content (Art. 19 para. 2 GG).\"",
     "source": "wiktionary",
     "lemmas": [
       "Art."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fragen",
+        "lemma": "Frage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "allerdings",
+        "lemma": "allerdings",
+        "pos": "adverb",
+        "gloss_hint": "however"
+      },
+      {
+        "form": "Grundgesetz",
+        "lemma": "Grundgesetz",
+        "pos": "noun",
+        "gloss_hint": "basic law"
+      },
+      {
+        "form": "Konvention",
+        "lemma": "Konvention",
+        "pos": "noun",
+        "gloss_hint": "convention"
+      },
+      {
+        "form": "zurück",
+        "lemma": "zurück",
+        "pos": "adverb",
+        "gloss_hint": "back"
+      },
+      {
+        "form": "Ansehung",
+        "lemma": "Ansehung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorbehalte",
+        "lemma": "Vorbehalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausübung",
+        "lemma": "Ausübung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grundrechte",
+        "lemma": "Grundrecht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eingeschränkt",
+        "lemma": "einschränken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "regelt",
+        "lemma": "regeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "kasuistischer",
+        "lemma": "kasuistisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zusammenhang",
+        "lemma": "Zusammenhang",
+        "pos": "noun",
+        "gloss_hint": "connection"
+      },
+      {
+        "form": "Ablehnung",
+        "lemma": "Ablehnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "allgemeinen",
+        "lemma": "allgemein",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesetzesvorbehalts",
+        "lemma": "Gesetzesvorbehalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kennt",
+        "lemma": "kennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Inhalts",
+        "lemma": "Inhalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beschränkungen",
+        "lemma": "Beschränkung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wesensgehalt",
+        "lemma": "Wesensgehalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "antasten",
+        "lemma": "antasten",
+        "pos": "verb",
+        "gloss_hint": "impair"
+      },
+      {
+        "form": "dürfen",
+        "lemma": "dürfen",
+        "pos": "verb",
+        "gloss_hint": "be allowed"
+      }
     ]
   },
   "bed862fab5": {
@@ -21359,11 +21987,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to let go of the reins",
     "source": "wiktionary",
     "lemmas": [
       "Zügel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bedcb263b1": {
     "text": "Der Sprit kostet so viel wie noch nie.",
@@ -22048,11 +22677,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a gentle hand",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bee2b04cdf": {
     "text": "„Der Geist des Zielka schwebte drohend über ihm und schimpfte ihn einen Verräter.“",
@@ -22068,11 +22698,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be free of guilt",
     "source": "wiktionary",
     "lemmas": [
       "Schuld"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bee8125cd8": {
     "text": "„Konflikte, so wurde bereits vor Jahren hochgerechnet, steigen nach der Geburt in Partnerschaften um den Faktor neun an.“",

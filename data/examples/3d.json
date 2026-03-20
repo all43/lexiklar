@@ -1162,12 +1162,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "ticking time bomb",
     "source": "wiktionary",
     "lemmas": [
       "Zeitbombe"
     ],
-    "ref": "phrases/tickende Zeitbombe"
+    "ref": "phrases/tickende Zeitbombe",
+    "translation_model": "openai/gpt-4.1"
   },
   "3d07c1cf42": {
     "text": "Dieser Hammer hat einen schwereren Kopf.",
@@ -1885,11 +1886,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in the long run",
     "source": "wiktionary",
     "lemmas": [
       "lang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3d0ff5bf0a": {
     "text": "Er versteht etwas vom Fotografieren.",
@@ -2562,11 +2564,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in broad daylight",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3d148c5f98": {
     "text": "Bedecke deine Scham!",
@@ -4202,10 +4205,37 @@
   },
   "3d1f9389f4": {
     "text": "Bei Ratzdorf fließt die Neiße in die Oder",
-    "translation": null,
+    "translation": "Near Ratzdorf, the Neiße flows into the Oder.",
     "source": "wiktionary",
     "lemmas": [
       "Neiße"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ratzdorf",
+        "lemma": "Ratzdorf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Neiße",
+        "lemma": "Neiße",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fließt",
+        "lemma": "fließen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Oder",
+        "lemma": "Oder",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3d2120e4ae": {
@@ -4979,11 +5009,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to make a big fuss",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3d2529fcdf": {
     "text": "„Die Beamten errichteten Protokoll gegen eine besonders aggressive Dame.“",
@@ -5310,12 +5341,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's a nice gesture from someone",
     "source": "wiktionary",
     "lemmas": [
       "Zug"
     ],
-    "ref": "phrases/ein schöner Zug von jemandem sein"
+    "ref": "phrases/ein schöner Zug von jemandem sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "3d25afe252": {
     "text": "Wir müssen nach einer Lösung suchen, die ohne Nachteil für die Arbeitnehmer ist.",
@@ -6926,11 +6958,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have lost one's marbles",
     "source": "wiktionary",
     "lemmas": [
       "beisammen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3d317026d5": {
     "text": "„Dadurch sind auch die informellen Kanäle ausgetrocknet, über die früher hinter den Kulissen und unabhängig von der öffentlichen Meinung Kompromisse angebahnt und abgeschlossen wurden.“",
@@ -10470,10 +10503,97 @@
   },
   "3d472b8d0e": {
     "text": "„Denn gar nicht so selten erleben auch Männer schwangerschaftsähnliche Symptome, wenn ihre Frau in anderen Umständen ist: Sie nehmen deutlich zu, leiden unter Morgenübelkeit und Sodbrennen oder sind psychisch labiler als sonst.“",
-    "translation": null,
+    "translation": "For men not infrequently experience pregnancy-like symptoms when their wife is expecting: they gain considerable weight, suffer from morning sickness and heartburn, or are psychologically more unstable than usual.",
     "source": "wiktionary",
     "lemmas": [
       "in anderen Umständen sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Männer",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "selten",
+        "lemma": "selten",
+        "pos": "adjective",
+        "gloss_hint": "infrequent"
+      },
+      {
+        "form": "erleben",
+        "lemma": "erleben",
+        "pos": "verb",
+        "gloss_hint": "experience"
+      },
+      {
+        "form": "schwangerschaftsähnliche",
+        "lemma": "schwangerschaftsähnlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Symptome",
+        "lemma": "Symptom",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "wife"
+      },
+      {
+        "form": "Umständen",
+        "lemma": "Umstand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "nehmen",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": "take"
+      },
+      {
+        "form": "deutlich",
+        "lemma": "deutlich",
+        "pos": "adjective",
+        "gloss_hint": "distinct"
+      },
+      {
+        "form": "leiden",
+        "lemma": "leiden",
+        "pos": "verb",
+        "gloss_hint": "suffer"
+      },
+      {
+        "form": "Morgenübelkeit",
+        "lemma": "Morgenübelkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sodbrennen",
+        "lemma": "Sodbrennen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "labiler",
+        "lemma": "labil",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "sonst",
+        "lemma": "sonst",
+        "pos": "adverb",
+        "gloss_hint": "usually"
+      }
     ]
   },
   "3d489ad8b1": {
@@ -15903,11 +16023,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not have an ounce of understanding",
     "source": "wiktionary",
     "lemmas": [
       "Funke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3d8d934c73": {
     "text": "„Sie haben gerade mit der Band einen ganzen Schwung Lieder für Cyndis erstes Album \"She's so Unusual\" aufgenommen. Trotzdem ist der Produzent des Albums noch nicht zufrieden und verlangt auf den letzten Drücker einen weiteren Song.“",
@@ -16271,10 +16392,25 @@
   },
   "3d8e01ca07": {
     "text": "u. Teil abnehmbar",
-    "translation": null,
+    "translation": "and part removable",
     "source": "wiktionary",
     "lemmas": [
       "u."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Teil",
+        "lemma": "Teil",
+        "pos": "noun",
+        "gloss_hint": "part"
+      },
+      {
+        "form": "abnehmbar",
+        "lemma": "abnehmbar",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "3d8e128936": {
@@ -18106,11 +18242,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to begrudge someone even the smallest thing",
     "source": "wiktionary",
     "lemmas": [
       "Wurst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3d9a9d3595": {
     "text": "Die Ausfertigungen der Edikte und die Mitteilungen über Verlustanzeigen sind dem Herausgeber erst zu übersenden, wenn das Entgelt für die Einschaltung entrichtet worden ist.",
@@ -18631,11 +18768,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be at the end of one's rope",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3d9c52787d": {
     "text": "Meine Frau kann manchmal ein wenig zickig sein.",
@@ -19323,12 +19461,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be irresistible",
     "source": "wiktionary",
     "lemmas": [
       "anbeißen"
     ],
-    "ref": "phrases/zum Anbeißen sein"
+    "ref": "phrases/zum Anbeißen sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "3da14c6a47": {
     "text": "„Die GEZ benötigt jetzt nicht mehr den ALG-II-Leistungsbescheid zur Rundfunkgebührenbefreiung.“",
@@ -19617,11 +19756,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as stubborn as a mule",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3da5b3ef85": {
     "text": "Reisende in der Wüste sehen oft Oasen am Horizont, doch meist ist es nur Trug.",
@@ -19998,19 +20138,48 @@
   },
   "3da85ad3c4": {
     "text": "Praxis D. Grube-Lüdenscheid wegen Krankheit geschlossen.",
-    "translation": null,
+    "translation": "Practice D. Grube-Lüdenscheid closed due to illness.",
     "source": "wiktionary",
     "lemmas": [
       "D."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Praxis",
+        "lemma": "Praxis",
+        "pos": "noun",
+        "gloss_hint": "practice (medical)"
+      },
+      {
+        "form": "Grube-Lüdenscheid",
+        "lemma": "Grube-Lüdenscheid",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Krankheit",
+        "lemma": "Krankheit",
+        "pos": "noun",
+        "gloss_hint": "illness"
+      },
+      {
+        "form": "geschlossen",
+        "lemma": "geschlossen",
+        "pos": "adjective",
+        "gloss_hint": "closed"
+      }
     ]
   },
   "3da8638063": {
     "text": "„Die Malteser seien katholischer als der Papst, versichern die Einheimischen.“",
-    "translation": null,
+    "translation": "\"The Maltese are more Catholic than the Pope, the locals assure us.\"",
     "source": "wiktionary",
     "lemmas": [
       "katholischer als der Papst sein"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "3da895ff1d": {
     "text": "„Přemysl Pitter lebte später als Schriftsteller und Sozialarbeiter in der Schweiz.“",
@@ -20912,11 +21081,12 @@
     "type": "expression",
     "note": ") – eine Wohnung/ein Haus, was von Eltern für einen kurzen Zeitraum (beispielsweise einen Abend, ein Wochenende) nicht benutzt wird und dann Jugendlichen/den eigenen Kindern zur freien Verfügung steht",
     "synonyms": [],
-    "translation": null,
+    "translation": "have the place to yourself",
     "source": "wiktionary",
     "lemmas": [
       "Bude"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3db10bd420": {
     "text": "Die Möglichkeit des Menschen, die Realität zu erkennen, ist Objekt erkenntnistheoretischen Denkens.",
@@ -22467,13 +22637,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "grill someone with questions",
     "source": "wiktionary",
     "lemmas": [
       "Bauch",
       "Loch"
     ],
-    "ref": "phrases/jemandem Löcher in den Bauch fragen"
+    "ref": "phrases/jemandem Löcher in den Bauch fragen",
+    "translation_model": "openai/gpt-4.1"
   },
   "3dba329076": {
     "text": "Wir wurden mit einem Gruß aus der Küche überrascht: gratinierte Jakobsmuschel auf Mangoldstreifen.",
@@ -23315,10 +23486,55 @@
   },
   "3dbfa99e9b": {
     "text": "SRF: „Was zeichnet Sporttreibende aus, die mental besonders stark sind?“ Hanspeter Gubelmann: „Aus meiner Sicht gibt es keinen Prototypen eines mental starken Athleten.“",
-    "translation": null,
+    "translation": "SRF: \"What distinguishes athletes who are particularly mentally strong?\" Hanspeter Gubelmann: \"From my perspective, there is no prototype of a mentally strong athlete.\"",
     "source": "wiktionary",
     "lemmas": [
       "aus meiner Sicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "zeichnet",
+        "lemma": "zeichnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sporttreibende",
+        "lemma": "Sporttreibende",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "mental",
+        "lemma": "mental",
+        "pos": "adjective",
+        "gloss_hint": "mental"
+      },
+      {
+        "form": "stark",
+        "lemma": "stark",
+        "pos": "adjective",
+        "gloss_hint": "powerful"
+      },
+      {
+        "form": "Sicht",
+        "lemma": "Sicht",
+        "pos": "noun",
+        "gloss_hint": "perspective"
+      },
+      {
+        "form": "Prototypen",
+        "lemma": "Prototyp",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Athleten",
+        "lemma": "Athlet",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3dbfda65c6": {
@@ -23326,18 +23542,76 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone pulls all the strings",
     "source": "wiktionary",
     "lemmas": [
       "Faden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3dc189de5d": {
     "text": "„‚Du sollst einem dreschenden Ochsen das Maul nicht verbinden…‘ rät die Bibel. Dass heute Arbeit nicht mehr vor Armut schützt, ist eine Schande!“",
-    "translation": null,
+    "translation": "\"'Thou shalt not muzzle the ox that treads out the grain,' the Bible advises. That work today no longer protects against poverty is a disgrace!\"",
     "source": "wiktionary",
     "lemmas": [
       "einem dreschenden Ochsen soll man nicht das Maul verbinden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "dreschenden",
+        "lemma": "dreschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ochsen",
+        "lemma": "Ochse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Maul",
+        "lemma": "Maul",
+        "pos": "noun",
+        "gloss_hint": "animal mouth"
+      },
+      {
+        "form": "verbinden",
+        "lemma": "verbinden",
+        "pos": "verb",
+        "gloss_hint": "bandage"
+      },
+      {
+        "form": "Bibel",
+        "lemma": "Bibel",
+        "pos": "noun",
+        "gloss_hint": "Bible"
+      },
+      {
+        "form": "Arbeit",
+        "lemma": "Arbeit",
+        "pos": "noun",
+        "gloss_hint": "job"
+      },
+      {
+        "form": "Armut",
+        "lemma": "Armut",
+        "pos": "noun",
+        "gloss_hint": "poverty"
+      },
+      {
+        "form": "schützt",
+        "lemma": "schützen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schande",
+        "lemma": "Schande",
+        "pos": "noun",
+        "gloss_hint": "disgrace"
+      }
     ]
   },
   "3dc1a982f2": {
@@ -24094,10 +24368,43 @@
   },
   "3dcb97ed2e": {
     "text": "Fieber als klinischer Befund, wenn es durch eine Untersuchung festgestellt wurde",
-    "translation": null,
+    "translation": "Fever as a clinical finding when it has been determined by an examination.",
     "source": "wiktionary",
     "lemmas": [
       "klinisch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fieber",
+        "lemma": "Fieber",
+        "pos": "noun",
+        "gloss_hint": "fever"
+      },
+      {
+        "form": "klinischer",
+        "lemma": "klinisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Befund",
+        "lemma": "Befund",
+        "pos": "noun",
+        "gloss_hint": "finding"
+      },
+      {
+        "form": "Untersuchung",
+        "lemma": "Untersuchung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "festgestellt",
+        "lemma": "feststellen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "3dcba0e59a": {
@@ -24888,11 +25195,12 @@
     "type": "expression",
     "note": "Aufforderung des Verschwindens",
     "synonyms": [],
-    "translation": null,
+    "translation": "get lost!",
     "source": "wiktionary",
     "lemmas": [
       "Kuckuck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3dd42ced38": {
     "text": "„Im Jahre 1973 hatte er bei einer Wanderung in einem Krater des Puy de Dôme eine Begegnung mit Außerirdischen gehabt.“",
@@ -28330,10 +28638,49 @@
   },
   "3de8bafa83": {
     "text": "Morgen kommt mein Bruder mitsamt seiner Familie zu Besuch.",
-    "translation": null,
+    "translation": "Tomorrow my brother is coming to visit along with his whole family.",
     "source": "wiktionary",
     "lemmas": [
       "mitsamt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Morgen",
+        "lemma": "Morgen",
+        "pos": "noun",
+        "gloss_hint": "tomorrow"
+      },
+      {
+        "form": "kommt",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bruder",
+        "lemma": "Bruder",
+        "pos": "noun",
+        "gloss_hint": "brother"
+      },
+      {
+        "form": "mitsamt",
+        "lemma": "mitsamt",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Familie",
+        "lemma": "Familie",
+        "pos": "noun",
+        "gloss_hint": "nuclear family"
+      },
+      {
+        "form": "Besuch",
+        "lemma": "Besuch",
+        "pos": "noun",
+        "gloss_hint": "visit"
+      }
     ]
   },
   "3de955a0e9": {

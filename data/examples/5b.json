@@ -541,10 +541,31 @@
   },
   "5b073ec2e3": {
     "text": "Es gab keine Gewähr, dass das Seil hält.",
-    "translation": null,
+    "translation": "There was no guarantee that the rope would hold.",
     "source": "wiktionary",
     "lemmas": [
       "Gewähr"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gewähr",
+        "lemma": "Gewähr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Seil",
+        "lemma": "Seil",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hält",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5b075bfa86": {
@@ -3996,19 +4017,23 @@
   },
   "5b23823d4a": {
     "text": "„Manche Amerikaner mögen sagen ‚macht nichts, dann sind wir längst nicht mehr da‘.“",
-    "translation": null,
+    "translation": "\"Some Americans might say 'it doesn't matter, we'll be long gone anyway'.\"",
     "source": "wiktionary",
     "lemmas": [
       "macht nichts"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "5b2484e98b": {
     "text": "„Ach was wird’s sein, ein Opossum, das sie hier aufgebäumt haben, aber man kann jetzt nicht hinaus, es gießt wie mit Eimern […]“",
-    "translation": null,
+    "translation": "\"Oh, what will it be, a possum that they've reared up here, but we can't go out now, it's raining cats and dogs [...]\"",
     "source": "wiktionary",
     "lemmas": [
       "wie mit Eimern gießen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "5b24f550a1": {
     "text": "Schlemmen, rauchen, träge sein: Ein solcher Lebensstil tut den Blutbahnen im Körper nicht gut.",
@@ -7142,11 +7167,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a bad day",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5b4373153d": {
     "text": "„Zehntausende von Migranten und Flüchtlingen, vor allem aus dem Nahen Osten, haben seit 2021 die Grenze von Belarus nach Polen überquert oder versucht, sie zu überqueren.“",
@@ -9367,12 +9393,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Fair winds and following seas.",
     "source": "wiktionary",
     "lemmas": [
       "Mast"
     ],
-    "ref": "phrases/Mast- und Schotbruch"
+    "ref": "phrases/Mast- und Schotbruch",
+    "translation_model": "openai/gpt-4.1"
   },
   "5b539c5ca9": {
     "text": "„Du bist mein Schirm und Schild; ich hoffe auf dein Wort.“ Psalm 119.114 - Unter einer Schirmherrschaft stehen.",
@@ -10980,10 +11007,85 @@
   },
   "5b5bf74201": {
     "text": "„Weniger Auto fahren, seltener Fleisch essen, Strom sparen, bewusster einkaufen, Müll vermeiden: Klimaschutz fängt im Kleinen an, und jeder kann im Alltag seinen Beitrag leisten, Tag für Tag.“",
-    "translation": null,
+    "translation": "\"Drive less, eat meat less often, save electricity, shop more consciously, avoid waste: climate protection starts small, and everyone can make their contribution in everyday life, day after day.\"",
     "source": "wiktionary",
     "lemmas": [
       "seinen Beitrag leisten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "fahren",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": "drive"
+      },
+      {
+        "form": "Fleisch",
+        "lemma": "Fleisch",
+        "pos": "noun",
+        "gloss_hint": "meat"
+      },
+      {
+        "form": "essen",
+        "lemma": "essen",
+        "pos": "verb",
+        "gloss_hint": "eat"
+      },
+      {
+        "form": "Strom",
+        "lemma": "Strom",
+        "pos": "noun",
+        "gloss_hint": "electricity"
+      },
+      {
+        "form": "sparen",
+        "lemma": "sparen",
+        "pos": "verb",
+        "gloss_hint": "save"
+      },
+      {
+        "form": "einkaufen",
+        "lemma": "einkaufen",
+        "pos": "verb",
+        "gloss_hint": "buy"
+      },
+      {
+        "form": "Müll",
+        "lemma": "Müll",
+        "pos": "noun",
+        "gloss_hint": "trash"
+      },
+      {
+        "form": "vermeiden",
+        "lemma": "vermeiden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klimaschutz",
+        "lemma": "Klimaschutz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beitrag",
+        "lemma": "Beitrag",
+        "pos": "noun",
+        "gloss_hint": "contribution"
+      },
+      {
+        "form": "leisten",
+        "lemma": "leisten",
+        "pos": "verb",
+        "gloss_hint": "perform"
+      },
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      }
     ]
   },
   "5b5ca3f3cd": {
@@ -11509,11 +11611,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When it rains porridge, you have to hold out your spoon.",
     "source": "wiktionary",
     "lemmas": [
       "raushalten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5b64fe9046": {
     "text": "Der Spaziergänger lenkte seine Schritte unwillkürlich zum See.",
@@ -13794,12 +13897,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Never in a million years.",
     "source": "wiktionary",
     "lemmas": [
       "Ostern"
     ],
-    "ref": "phrases/wenn Ostern und Pfingsten auf einen Tag fallen"
+    "ref": "phrases/wenn Ostern und Pfingsten auf einen Tag fallen",
+    "translation_model": "openai/gpt-4.1"
   },
   "5b7fdc586c": {
     "text": "Wenn du so weiter machst, kommst du noch in die Klapsmühle.",
@@ -14590,11 +14694,12 @@
     "type": "expression",
     "note": "eine interessante, bedeutsame Neuigkeit sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be big news",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5b84f9fde6": {
     "text": "„Vor diesem Hintergrund wäre es dem Beschwerdeführer auch nicht zumutbar, seinen Glauben in Form eines Widerrufs zu leugnen.“",
@@ -16193,11 +16298,12 @@
     "type": "expression",
     "note": "auf ungewöhnlichem Wege ein Ziel erreichen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to take a roundabout approach",
     "source": "wiktionary",
     "lemmas": [
       "kalt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5b92543f71": {
     "text": "„Intelligentes Wohnen dient nicht nur der Bequemlichkeit, sondern auch dem Energiesparen und der Sicherheit.“",
@@ -16786,25 +16892,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in sound and vision",
     "source": "wiktionary",
     "lemmas": [
       "Bild"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "5b9af25cf4": {
     "text": "seine / die Groschen zusammenhalten",
     "type": "expression",
     "note": "das heißt sparen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to pinch pennies",
     "source": "wiktionary",
     "lemmas": [
       "Groschen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5b9b061b03": {
     "text": "Seit dem Sturz Gaddafis ist die Lage in Libyen chaotisch.",
@@ -17513,11 +17618,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be going smoothly",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5ba0d02a57": {
     "text": "„Wie ist der bemerkenswerte Gleichklang der US-Politik mit der Israels zu erklären? Das hat zunächst innenpolitische Gründe: die hervorragende Vernetzung besagter Lobby-Verbände, allen voran AIPAC, gegen dessen erklärten Willen kaum ein US-Politiker Karriere macht oder bestehen vermag.“",
@@ -18292,11 +18398,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to grow a thick skin",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5ba6ac1eb9": {
     "text": "Die Billigairline will bald ihre komplette Flotte erneuern.",
@@ -18660,11 +18767,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Give him an inch and he'll take a mile.",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5baa980d96": {
     "text": "„Hast du aber eine häßliche Fresse!“",
@@ -18848,10 +18956,43 @@
   },
   "5bab147a1e": {
     "text": "„Über ihn hatte ich mir nie Illusionen gemacht, und nicht einmal die Tatsache, daß er jetzt Wahlreden für die CDU hielt, konnte mich in Erstaunen versetzen.“",
-    "translation": null,
+    "translation": "\"I had never harbored any illusions about him, and not even the fact that he was now giving campaign speeches for the CDU could astonish me.\"",
     "source": "wiktionary",
     "lemmas": [
       "CDU"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Illusionen",
+        "lemma": "Illusion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tatsache",
+        "lemma": "Tatsache",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wahlreden",
+        "lemma": "Wahlrede",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hielt",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "versetzen",
+        "lemma": "versetzen",
+        "pos": "verb",
+        "gloss_hint": "astonish"
+      }
     ]
   },
   "5bab6ab683": {
@@ -19750,10 +19891,49 @@
   },
   "5bb2c56018": {
     "text": "„Stellt ein Arbeitnehmer (AN) einem Unternehmen seine Arbeitsleistung zur Verfügung, so erhält er dafür vom Arbeitgeber (AG) ein monatliches Entgelt.“",
-    "translation": null,
+    "translation": "\"When an employee (EE) provides their work performance to a company, they receive a monthly salary from the employer (ER) in return.\"",
     "source": "wiktionary",
     "lemmas": [
       "AG"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Arbeitnehmer",
+        "lemma": "Arbeitnehmer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unternehmen",
+        "lemma": "Unternehmen",
+        "pos": "noun",
+        "gloss_hint": "company"
+      },
+      {
+        "form": "Arbeitsleistung",
+        "lemma": "Arbeitsleistung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verfügung",
+        "lemma": "Verfügung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arbeitgeber",
+        "lemma": "Arbeitgeber",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Entgelt",
+        "lemma": "Entgelt",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5bb3d687ec": {
@@ -19809,13 +19989,14 @@
     "type": "expression",
     "note": "anstrengend sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "be exhausting",
     "source": "wiktionary",
     "lemmas": [
       "gehen",
       "Bein"
     ],
-    "ref": "phrases/in die Beine gehen"
+    "ref": "phrases/in die Beine gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "5bb619fa04": {
     "text": "Auf Facebook machen (schon wieder) gefälschte Gewinnspiele die Runde. Und weil tausende Menschen den Betrügern auf den Leim gehen, verbreiten die Posts sich viral.",
@@ -21161,10 +21342,43 @@
   },
   "5bbf1bf652": {
     "text": "Die Firma hat keinerlei Anstalten getroffen, das Risiko in den Griff zu kriegen.",
-    "translation": null,
+    "translation": "The company made no effort whatsoever to get the risk under control.",
     "source": "wiktionary",
     "lemmas": [
       "Anstalten treffen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Firma",
+        "lemma": "Firma",
+        "pos": "noun",
+        "gloss_hint": "company"
+      },
+      {
+        "form": "Anstalten",
+        "lemma": "Anstalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Risiko",
+        "lemma": "Risiko",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Griff",
+        "lemma": "Griff",
+        "pos": "noun",
+        "gloss_hint": "grasp"
+      },
+      {
+        "form": "kriegen",
+        "lemma": "kriegen",
+        "pos": "verb",
+        "gloss_hint": "get"
+      }
     ]
   },
   "5bc0116daf": {
@@ -21504,10 +21718,37 @@
   },
   "5bc1c5e486": {
     "text": "Weißenburg liegt in Deutschlands Südosten.",
-    "translation": null,
+    "translation": "Weißenburg is located in southeastern Germany.",
     "source": "wiktionary",
     "lemmas": [
       "Weißenburg"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Weißenburg",
+        "lemma": "Weißenburg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "liegt",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschlands",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Südosten",
+        "lemma": "Südosten",
+        "pos": "noun",
+        "gloss_hint": "southeast"
+      }
     ]
   },
   "5bc2005fc1": {
@@ -23164,10 +23405,43 @@
   },
   "5bcddd2f2b": {
     "text": "Dieser Befehl ist ungesetzlich. Ich werde dem Herrn Staatssekretär gehörig aufs Dach steigen.",
-    "translation": null,
+    "translation": "This order is unlawful. I will give the Permanent Secretary a proper piece of my mind.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem aufs Dach steigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Befehl",
+        "lemma": "Befehl",
+        "pos": "noun",
+        "gloss_hint": "order"
+      },
+      {
+        "form": "ungesetzlich",
+        "lemma": "ungesetzlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staatssekretär",
+        "lemma": "Staatssekretär",
+        "pos": "noun",
+        "gloss_hint": "permanent secretary"
+      },
+      {
+        "form": "steigen",
+        "lemma": "steigen",
+        "pos": "verb",
+        "gloss_hint": "climb"
+      },
+      {
+        "form": "Dach",
+        "lemma": "Dach",
+        "pos": "noun",
+        "gloss_hint": "head"
+      }
     ]
   },
   "5bce92fb0d": {
@@ -23214,10 +23488,67 @@
   },
   "5bce936931": {
     "text": "„Er wand sich bei der Frage, warum er einen ‚belasteten Mann‘ an die Spitze des Stasis gestellt habe, er wand sich, als es um den Haß im Volk gegen die Aufpasser von gestern ging, er wand sich bei der Frage, warum Wolf Biermann nicht ins Land darf.“",
-    "translation": null,
+    "translation": "\"He squirmed at the question of why he had appointed a 'tainted man' to the head of the Stasi, he squirmed when it came to the hatred among the people against the watchers of yesteryear, he squirmed at the question of why Wolf Biermann was not allowed into the country.\"",
     "source": "wiktionary",
     "lemmas": [
       "Stasi"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wand",
+        "lemma": "winden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frage",
+        "lemma": "Frage",
+        "pos": "noun",
+        "gloss_hint": "question"
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "Spitze",
+        "lemma": "Spitze",
+        "pos": "noun",
+        "gloss_hint": "peak"
+      },
+      {
+        "form": "Haß",
+        "lemma": "Haß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Volk",
+        "lemma": "Volk",
+        "pos": "noun",
+        "gloss_hint": "people"
+      },
+      {
+        "form": "Aufpasser",
+        "lemma": "Aufpasser",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wolf",
+        "lemma": "Wolf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Land",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": "country"
+      }
     ]
   },
   "5bcf01c196": {
@@ -24595,10 +24926,25 @@
   },
   "5bdc39c81e": {
     "text": "„Fahr an den Automaten heran.“",
-    "translation": null,
+    "translation": "Drive up to the ATM.",
     "source": "wiktionary",
     "lemmas": [
       "Automat"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fahr",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Automaten",
+        "lemma": "Automat",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5bddac68f4": {
@@ -24606,14 +24952,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Golden Book",
     "source": "wiktionary",
     "lemmas": [
       "Buch"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "5bdea789b1": {
     "text": "Uwe Seeler war ein fantastischer Stürmer.",
@@ -24627,10 +24971,49 @@
   },
   "5bdf21db2c": {
     "text": "Seit Mitte Oktober kommt da nichts mehr. Ich habe jetzt wirklich die Faxen dicke.",
-    "translation": null,
+    "translation": "Since mid-October nothing has come through. I'm really fed up now.",
     "source": "wiktionary",
     "lemmas": [
       "die Faxen dicke haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mitte",
+        "lemma": "Mitte",
+        "pos": "noun",
+        "gloss_hint": "midpoint"
+      },
+      {
+        "form": "Oktober",
+        "lemma": "Oktober",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommt",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "nichts",
+        "lemma": "nichts",
+        "pos": "noun",
+        "gloss_hint": "nothingness"
+      },
+      {
+        "form": "Faxen",
+        "lemma": "Faxe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dicke",
+        "lemma": "dicke",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "5bdf59fad0": {
@@ -25787,12 +26170,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have one's hands full",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
     ],
-    "ref": "phrases/beide Hände voll zu tun haben"
+    "ref": "phrases/beide Hände voll zu tun haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "5beb576d58": {
     "text": "Er ging aus dem Haus hinaus.",
@@ -26433,18 +26817,54 @@
   },
   "5bf0d89f05": {
     "text": "Auf der DVD befindet sich unter anderem der OST.",
-    "translation": null,
+    "translation": "The DVD contains, among other things, the soundtrack.",
     "source": "wiktionary",
     "lemmas": [
       "OST"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "DVD",
+        "lemma": "DVD",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "befindet",
+        "lemma": "befinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "OST",
+        "lemma": "OST",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5bf0faddd8": {
     "text": "Und sowas weißt du nicht? Schäm dich!",
-    "translation": null,
+    "translation": "And you don't know something like that? Shame on you!",
     "source": "wiktionary",
     "lemmas": [
       "sowas"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "weißt",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schäm",
+        "lemma": "schämen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5bf3723b68": {
@@ -26823,11 +27243,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be up for discussion",
     "source": "wiktionary",
     "lemmas": [
       "stehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5bf7831204": {
     "text": "Der Roboter baut mit seinen Armen Autos zusammen.",
@@ -27000,12 +27421,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "run low",
     "source": "wiktionary",
     "lemmas": [
       "Neige"
     ],
-    "ref": "phrases/zur Neige gehen"
+    "ref": "phrases/zur Neige gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "5bfb780958": {
     "text": "Wenn wir in den Sommerferien zu Oma nach Duisburg fahren, gehen wir zuallererst in den Zoo.",
@@ -27377,10 +27799,11 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be caught between two stools",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   }
 }

@@ -328,22 +328,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to paint a bleak picture",
     "source": "wiktionary",
     "lemmas": [
       "schwarz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a90551a209": {
     "text": "Essen ist menschlich, Verdauen göttlich",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "To eat is human, to digest is divine.",
     "source": "wiktionary",
     "lemmas": [
       "verdauen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a9069c96c6": {
     "text": "„Sie kackte und kackte und hatte das Gefühl, dass das Leben aus ihr herauslief und nichts mehr von ihr übrig blieb, sie spürte den Brei an ihrer Hand, an ihrer Haut, weich und warm, sie sank tiefer und immer tiefer und dann war nichts mehr.“",
@@ -820,11 +822,12 @@
     "type": "expression",
     "note": "in der Eile, in der Aufregung",
     "synonyms": [],
-    "translation": null,
+    "translation": "in the heat of the moment",
     "source": "wiktionary",
     "lemmas": [
       "Eifer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a909ee1f16": {
     "text": "„Dieser Dämon hielt in der einen Hand ein Buch und in der anderen eine große Gabel.“",
@@ -956,11 +959,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "you can split hairs over anything",
     "source": "wiktionary",
     "lemmas": [
       "Messer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a90b47aa98": {
     "text": "„Auf dem Monitor erscheint ein typisches Muster, das mit denen einer Datenbank verglichen und so einem bestimmten Stoff zugeordnet werden kann.“",
@@ -1260,11 +1264,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone can't even cut butter that's been sitting in the sun for two weeks",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a91086afba": {
     "text": "„Nach sechs Monaten an Bord der der chinesischen Raumstation \"Tiangong\" sind drei Astronauten wieder sicher in der Wüste Gobi gelandet.“",
@@ -1769,11 +1774,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pat oneself on the back",
     "source": "wiktionary",
     "lemmas": [
       "klopfen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a915e4fd44": {
     "text": "„Und dann: ein Griff, ein leichter, vorsichtiger Zug, und plötzlich hatte ich das kleine, nicht sehr umfangreiche Buch in der Hand.“",
@@ -3914,18 +3920,40 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not let someone take advantage of you",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a9230929e7": {
     "text": "In vielen Bahnhöfen stehen Automaten für Süßwaren.",
-    "translation": null,
+    "translation": "In many train stations there are vending machines for sweets.",
     "source": "wiktionary",
     "lemmas": [
       "Automat"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bahnhöfen",
+        "lemma": "Bahnhof",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Automaten",
+        "lemma": "Automat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Süßwaren",
+        "lemma": "Süßware",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a9239327b4": {
@@ -4816,11 +4844,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to show someone the red card",
     "source": "wiktionary",
     "lemmas": [
       "rot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a9323e9e30": {
     "text": "„Ich hab’s hundertmal gemöchtet.“",
@@ -5007,10 +5036,49 @@
   },
   "a933347352": {
     "text": "„Niemand nahm es so genau, denn man hätte den edlen Stifter ja verärgern können.“",
-    "translation": null,
+    "translation": "Nobody took it so seriously, because one might have angered the noble benefactor.",
     "source": "wiktionary",
     "lemmas": [
       "Stifter"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "nahm",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "genau",
+        "lemma": "genau",
+        "pos": "adjective",
+        "gloss_hint": "precise"
+      },
+      {
+        "form": "hätte",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "edlen",
+        "lemma": "edel",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stifter",
+        "lemma": "Stifter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verärgern",
+        "lemma": "verärgern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "a9349592a7": {
@@ -5346,11 +5414,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's a pity about someone",
     "source": "wiktionary",
     "lemmas": [
       "schade"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a937d9fd36": {
     "text": "In dieser Stadt herrscht die Korruption.",
@@ -5363,10 +5432,103 @@
   },
   "a9384b8897": {
     "text": "„Der angreifenden Partei kommt dabei die schillernde Semantik von Ideologie zugute: zwar ist der semantische Gehalt nicht für jede Verwendungsweise ex nihilo positiv voraussagbar, jedoch wird Ideologie im Alltagssprachgebrauch meist in einem antonymem Verhältnis zu etwas verwendet, das sich als Wahrheit, Wirklichkeit, Wissenschaft, Erkenntnis (oder auch plumper als ›gesunder Menschenverstand‹) geriert.“",
-    "translation": null,
+    "translation": "The attacking party benefits from the shimmering semantics of ideology: while the semantic content is not ex nihilo positively predictable for every usage, in everyday language ideology is usually employed in an antonymous relationship to something that presents itself as truth, reality, science, insight (or more crudely as 'common sense').",
     "source": "wiktionary",
     "lemmas": [
       "antonym"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "angreifenden",
+        "lemma": "angreifend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Partei",
+        "lemma": "Partei",
+        "pos": "noun",
+        "gloss_hint": "party"
+      },
+      {
+        "form": "Semantik",
+        "lemma": "Semantik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ideologie",
+        "lemma": "Ideologie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "semantische",
+        "lemma": "semantisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gehalt",
+        "lemma": "Gehalt",
+        "pos": "noun",
+        "gloss_hint": "content"
+      },
+      {
+        "form": "Verwendungsweise",
+        "lemma": "Verwendungsweise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Alltagssprachgebrauch",
+        "lemma": "Alltagssprachgebrauch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "antonymem",
+        "lemma": "antonym",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verhältnis",
+        "lemma": "Verhältnis",
+        "pos": "noun",
+        "gloss_hint": "relationship"
+      },
+      {
+        "form": "Wahrheit",
+        "lemma": "Wahrheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wirklichkeit",
+        "lemma": "Wirklichkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wissenschaft",
+        "lemma": "Wissenschaft",
+        "pos": "noun",
+        "gloss_hint": "science"
+      },
+      {
+        "form": "Erkenntnis",
+        "lemma": "Erkenntnis",
+        "pos": "noun",
+        "gloss_hint": "insight"
+      },
+      {
+        "form": "Menschenverstand",
+        "lemma": "Menschenverstand",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a939a79e34": {
@@ -5374,11 +5536,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone's hopes are drifting away",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a93b5962d2": {
     "text": "Mein vorgestellter Schreibtisch steht schief.",
@@ -5397,11 +5560,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "admit defeat",
     "source": "wiktionary",
     "lemmas": [
       "schlagen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a93cb8e5d8": {
     "text": "Die Keeperin der Heimmannschaft musste drei Gegentore hinnehmen.",
@@ -7398,11 +7562,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Show your true colors.",
     "source": "wiktionary",
     "lemmas": [
       "grau"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a953634439": {
     "text": "„Tatsächlich war der Geheimniskrämer, der seinen Namen nicht preisgab, ein Naturforscher der ganz anderen Art gewesen, nämlich ein anglikanischer Geistlicher namens John Leifchild.“",
@@ -8285,10 +8450,67 @@
   },
   "a95ed3df65": {
     "text": "Wir werden ihm den Diebstahl nicht nachweisen können, außerdem ist er glatt wie ein Aal und hat jede Menge Ausreden parat, der wird sich nicht selbst ans Messer liefern.",
-    "translation": null,
+    "translation": "We won't be able to prove the theft against him; besides, he's slippery as an eel and has plenty of excuses ready—he won't incriminate himself.",
     "source": "wiktionary",
     "lemmas": [
       "glatt wie ein Aal sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Diebstahl",
+        "lemma": "Diebstahl",
+        "pos": "noun",
+        "gloss_hint": "theft"
+      },
+      {
+        "form": "nachweisen",
+        "lemma": "nachweisen",
+        "pos": "verb",
+        "gloss_hint": "prove"
+      },
+      {
+        "form": "glatt",
+        "lemma": "glatt",
+        "pos": "adjective",
+        "gloss_hint": "slippery"
+      },
+      {
+        "form": "Aal",
+        "lemma": "Aal",
+        "pos": "noun",
+        "gloss_hint": "eel"
+      },
+      {
+        "form": "Menge",
+        "lemma": "Menge",
+        "pos": "noun",
+        "gloss_hint": "quantity"
+      },
+      {
+        "form": "Ausreden",
+        "lemma": "Ausrede",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "parat",
+        "lemma": "parat",
+        "pos": "adjective",
+        "gloss_hint": "ready"
+      },
+      {
+        "form": "Messer",
+        "lemma": "Messer",
+        "pos": "noun",
+        "gloss_hint": "knife"
+      },
+      {
+        "form": "liefern",
+        "lemma": "liefern",
+        "pos": "verb",
+        "gloss_hint": "deliver"
+      }
     ]
   },
   "a95fbb9c5d": {
@@ -9499,11 +9721,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be an impossibility",
     "source": "wiktionary",
     "lemmas": [
       "Ding"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a96b07643d": {
     "text": "„Fräulein Oppermann hielt sich etwas vor die Augen, das ich nur aus alten Romanen kannte, ein Lorgnon, und musterte mich wie eine aufgespießte Spinne.“",
@@ -10034,14 +10257,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be an open book to someone",
     "source": "wiktionary",
     "lemmas": [
       "Buch"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "a96cf96f3a": {
     "text": "Durch seine Nähe zu Karatschi ist Hub ein wichtiger Wirtschaftsstandort.",
@@ -10789,22 +11010,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "see someone home",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a970beaba7": {
     "text": "da liegt der Kamm bei der Butter",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's where the problem lies",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a972b4f9e2": {
     "text": "Zu dem Sekt erhielten sie vom Kellner einen Kühler.",
@@ -10877,13 +11100,14 @@
     "type": "expression",
     "note": "jemandem die Wahrheit/Meinung sagen, ins Gewissen reden",
     "synonyms": [],
-    "translation": null,
+    "translation": "take someone to task",
     "source": "wiktionary",
     "lemmas": [
       "Brust",
       "nehmen"
     ],
-    "ref": "phrases/sich jemanden zur Brust nehmen"
+    "ref": "phrases/sich jemanden zur Brust nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "a974f46b13": {
     "text": "„Bei öffentlichen Auftritten war Vorsicht die Mutter der Porzellankiste. Zumindest in der Politik. Nichts war peinlicher, als im Internet mit Aussagen aufrufbar zu sein, die sich später als falsch darstellten.“",
@@ -11363,12 +11587,13 @@
     "type": "expression",
     "note": "vorschnell reagieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "throw out the baby with the bathwater",
     "source": "wiktionary",
     "lemmas": [
       "Kind"
     ],
-    "ref": "phrases/das Kind mit dem Bade ausschütten"
+    "ref": "phrases/das Kind mit dem Bade ausschütten",
+    "translation_model": "openai/gpt-4.1"
   },
   "a979ee8574": {
     "text": "„Ich hätte nicht mitgehen sollen; aber der Wunsch, den Gegenwert meiner Kaution zurückzuerhalten, trübte meinen Verstand.“",
@@ -11384,11 +11609,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fall from grace",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a97abf298d": {
     "text": "Am 16. November war schon eine geschlossene Schneedecke auf den Kammlagen des Thüringerwaldes oberhalb von 800 Metern zu sehen.",
@@ -11527,22 +11753,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the police, your friend and helper",
     "source": "wiktionary",
     "lemmas": [
       "Freund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a97b57d56c": {
     "text": "die Hand in anderer Leute Taschen haben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have one's hand in other people's pockets",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a97b77dff0": {
     "text": "„Dieses Projekt lebt von freiwilligen Helfern, welche aus Telefonisten, Gestaltern, Kritikern, Planern, Ideengebern und beispielsweise Technikern besteht.“",
@@ -13418,11 +13646,12 @@
     "type": "expression",
     "note": "von einem Haus zum nächsten",
     "synonyms": [],
-    "translation": null,
+    "translation": "go from door to door",
     "source": "wiktionary",
     "lemmas": [
       "Tür"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a99238042d": {
     "text": "„Im Jahr 2024 wurden in Deutschland 13.320  Fälle von Vergewaltigung, sexueller Nötigung und sexuellem Übergriff im besonders schweren Fall erfasst. Ein Anstieg von 9,3 Prozent im Vergleich zum Vorjahr und ein Anstieg zum sechsten Mal in Folge.“",
@@ -13636,11 +13865,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make something one's own",
     "source": "wiktionary",
     "lemmas": [
       "eigen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a9947830b3": {
     "text": "[übertragen:] „Ach ja, die Zeit fliegt schnell vorüber, und sie bringt nicht immer die Erfüllung unserer Wünsche.“",
@@ -16164,11 +16394,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get out of one's depth",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a99e3e3176": {
     "text": "Die Hauptstadt der Republik Indonesien ist Jakarta.",
@@ -16448,34 +16679,37 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "cry one's eyes out",
     "source": "wiktionary",
     "lemmas": [
       "heulen"
     ],
-    "ref": "phrases/heulen wie ein Schlosshund"
+    "ref": "phrases/heulen wie ein Schlosshund",
+    "translation_model": "openai/gpt-4.1"
   },
   "a9a2fa646c": {
     "text": "ein Herz aus Gold haben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a heart of gold",
     "source": "wiktionary",
     "lemmas": [
       "Gold"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a9a3c2f342": {
     "text": "Der Stute ist ein Hengst lieber als zehn Stiere",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A mare would rather have one stallion than ten bulls.",
     "source": "wiktionary",
     "lemmas": [
       "Hengst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a9a431157f": {
     "text": "Wo steht der Stall?",
@@ -18626,11 +18860,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fulfill someone's every wish",
     "source": "wiktionary",
     "lemmas": [
       "Wunsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a9b50bb75e": {
     "text": "Das Milliardengeschäft mit Falschgeld nimmt kein Ende.",
@@ -21581,12 +21816,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have the knack for something",
     "source": "wiktionary",
     "lemmas": [
       "Bogen"
     ],
-    "ref": "phrases/den Bogen raushaben"
+    "ref": "phrases/den Bogen raushaben",
+    "translation_model": "openai/gpt-4.1"
   },
   "a9d4536fd0": {
     "text": "„Für solche Dateien gibt es die Quarantäne.“",
@@ -22496,11 +22732,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Good heavens!",
     "source": "wiktionary",
     "lemmas": [
       "Wetter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a9e01be3c4": {
     "text": "Meiner Ansicht nach wollte Jesus, dass den Armen geholfen wird. Warum wurde dann in den Kirchen so viel Prunk verbaut?",
@@ -23461,11 +23698,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Distant water won't put out a nearby fire.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a9e58b06cc": {
     "text": "Man begegnet ihr, von der Hochzeitsreise zurückgekehrt, als Gattin des versponnenen Gelehrten Tesman, der es gar nicht fassen kann, dass die wohl begehrteste und scheinbar unerreichbarste aller Frauen ihn gewählt hat.",
@@ -23833,12 +24071,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take its course",
     "source": "wiktionary",
     "lemmas": [
       "Lauf"
     ],
-    "ref": "phrases/seinen Lauf nehmen"
+    "ref": "phrases/seinen Lauf nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "a9e7eecd93": {
     "text": "Die Schuldige wurde zu zwei Jahren Haft verurteilt.",
@@ -25664,11 +25903,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "travel from A to B",
     "source": "wiktionary",
     "lemmas": [
       "fahren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a9facf519e": {
     "text": "Ich will ja kein neues Fass aufmachen, aber wer bezahlt das eigentlich?",

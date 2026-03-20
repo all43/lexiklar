@@ -14,11 +14,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a knight without fear or reproach",
     "source": "wiktionary",
     "lemmas": [
       "Ritter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "930283c1e6": {
     "text": "Die Spule hat eine Induktivität von 0,1 Henry.",
@@ -388,11 +389,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at your service",
     "source": "wiktionary",
     "lemmas": [
       "Dienst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9305b67b31": {
     "text": "„Manche Kinder essen während der Beikostphase fast alles und werden dann auf einmal heikel.“",
@@ -476,11 +478,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to show one's teeth",
     "source": "wiktionary",
     "lemmas": [
       "zeigen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9307f9d93d": {
     "text": "„Im Sinne dieses Bundesgesetzes ist: 1. »Bienenvolk« die Gesamtheit der in einer Bienenwohnung (Beute) lebenden Bienen mit ihrer Brut und ihren Waben; …“",
@@ -819,25 +822,38 @@
   },
   "930ad03213": {
     "text": "Meinst du, das Seil geht durch das Loch durch?",
-    "translation": null,
+    "translation": "Do you think the rope goes through the hole?",
     "source": "wiktionary",
     "lemmas": [
       "durchgehen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Seil",
+        "lemma": "Seil",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Loch",
+        "lemma": "Loch",
+        "pos": "noun",
+        "gloss_hint": "hole"
+      }
+    ]
   },
   "930b1e8534": {
     "text": "wo denkst du hin",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "what are you thinking?",
     "source": "wiktionary",
     "lemmas": [
       "hin"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "930b5f0927": {
     "text": "Wenn man mit anderen Instrumenten spielt, die man nicht so leicht umstimmen kann (z.B. Klavier oder Flöte), dann richtet sich die Gitarre natürlich an diesen Instrumenten aus und nimmt von denen die Stimmtöne ab.",
@@ -2020,10 +2036,49 @@
   },
   "9318e24388": {
     "text": "„George war Daphnes Neffe zweiten Grades und überdies ihr Lieblingsneffe; und sie wollte mit ihm über ihre Karriere sprechen.“",
-    "translation": null,
+    "translation": "\"George was Daphne's second cousin and moreover her favorite nephew; and she wanted to speak with him about her career.\"",
     "source": "wiktionary",
     "lemmas": [
       "Neffe"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "George",
+        "lemma": "George",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Daphnes",
+        "lemma": "Daphne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Neffe",
+        "lemma": "Neffe",
+        "pos": "noun",
+        "gloss_hint": "nephew"
+      },
+      {
+        "form": "Lieblingsneffe",
+        "lemma": "Lieblingsneffe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Karriere",
+        "lemma": "Karriere",
+        "pos": "noun",
+        "gloss_hint": "career"
+      },
+      {
+        "form": "sprechen",
+        "lemma": "sprechen",
+        "pos": "verb",
+        "gloss_hint": "speak"
+      }
     ]
   },
   "93197fd227": {
@@ -2109,11 +2164,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone belongs with someone",
     "source": "wiktionary",
     "lemmas": [
       "Platz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "931a1e809c": {
     "text": "„§. 98. Agramer Gespanschaft. (Zagrabechka V.)\n1. Lage Im Osten ist die Kreutzer Gespanschaft bis zum Zusammenflusse der Sau mit der Culpa, welche von diesem Punct an bis Karlstadt die Grenze gegen Süden bildet. […]“",
@@ -2291,10 +2347,37 @@
   },
   "931a5c5586": {
     "text": "„Die Gesamtheit aller Beeren am Kamm ist die Traube.“",
-    "translation": null,
+    "translation": "\"The totality of all berries on the comb is the bunch.\"",
     "source": "wiktionary",
     "lemmas": [
       "Beere"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gesamtheit",
+        "lemma": "Gesamtheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beeren",
+        "lemma": "Beere",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kamm",
+        "lemma": "Kamm",
+        "pos": "noun",
+        "gloss_hint": "comb"
+      },
+      {
+        "form": "Traube",
+        "lemma": "Traube",
+        "pos": "noun",
+        "gloss_hint": "bunch"
+      }
     ]
   },
   "931c1bdf84": {
@@ -2302,11 +2385,12 @@
     "type": "expression",
     "note": "Himalaya",
     "synonyms": [],
-    "translation": null,
+    "translation": "the roof of the world",
     "source": "wiktionary",
     "lemmas": [
       "Dach"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "931dc2d7c1": {
     "text": "„Der Legionär mit den vielen Medaillen drang bei mir ein.“",
@@ -2748,11 +2832,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to scrutinize someone",
     "source": "wiktionary",
     "lemmas": [
       "Lupe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "93218e5938": {
     "text": "„CHORFÜHRERIN. Wie häßlich neben Schönheit zeigt sich Häßlichkeit.",
@@ -2764,10 +2849,103 @@
   },
   "9321bf6f36": {
     "text": "„Das Ereignis [Fußball-WM in Russland] ist wirtschaftlich zu klein, um einen nachhaltigen Einfluss auf das Wachstum zu haben“, sagt Gert Wagner vom Berliner DIW-Institut mit Blick auf die künftige Konjunktur.",
-    "translation": null,
+    "translation": "\"The event [World Cup in Russia] is economically too small to have a lasting impact on growth,\" says Gert Wagner from the Berlin DIW Institute with a view to future economic conditions.",
     "source": "wiktionary",
     "lemmas": [
       "mit Blick auf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ereignis",
+        "lemma": "Ereignis",
+        "pos": "noun",
+        "gloss_hint": "event"
+      },
+      {
+        "form": "Fußball-WM",
+        "lemma": "Fußball-WM",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Russland",
+        "lemma": "Russland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wirtschaftlich",
+        "lemma": "wirtschaftlich",
+        "pos": "adjective",
+        "gloss_hint": "economic"
+      },
+      {
+        "form": "klein",
+        "lemma": "klein",
+        "pos": "adjective",
+        "gloss_hint": "small"
+      },
+      {
+        "form": "nachhaltigen",
+        "lemma": "nachhaltig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einfluss",
+        "lemma": "Einfluss",
+        "pos": "noun",
+        "gloss_hint": "influence"
+      },
+      {
+        "form": "Wachstum",
+        "lemma": "Wachstum",
+        "pos": "noun",
+        "gloss_hint": "growth"
+      },
+      {
+        "form": "Gert",
+        "lemma": "Gert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wagner",
+        "lemma": "Wagner",
+        "pos": "noun",
+        "gloss_hint": "driver"
+      },
+      {
+        "form": "Berliner",
+        "lemma": "Berliner",
+        "pos": "noun",
+        "gloss_hint": "Berlin resident"
+      },
+      {
+        "form": "DIW-Institut",
+        "lemma": "DIW-Institut",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blick",
+        "lemma": "Blick",
+        "pos": "noun",
+        "gloss_hint": "view"
+      },
+      {
+        "form": "künftige",
+        "lemma": "künftig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Konjunktur",
+        "lemma": "Konjunktur",
+        "pos": "noun",
+        "gloss_hint": "economy"
+      }
     ]
   },
   "9321dd21af": {
@@ -3034,11 +3212,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "soaked to the skin",
     "source": "wiktionary",
     "lemmas": [
       "baden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "932454d0f4": {
     "text": "zum Vorschein kommen",
@@ -3412,10 +3591,37 @@
   },
   "932e05df75": {
     "text": "Die FDP wurde am 11. Dezember 1948 in Heppenheim gegründet.",
-    "translation": null,
+    "translation": "The FDP was founded on December 11, 1948 in Heppenheim.",
     "source": "wiktionary",
     "lemmas": [
       "FDP"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "FDP",
+        "lemma": "FDP",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gegründet",
+        "lemma": "gründen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dezember",
+        "lemma": "Dezember",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Heppenheim",
+        "lemma": "Heppenheim",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "932f466eee": {
@@ -3507,11 +3713,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a hanging striker",
     "source": "wiktionary",
     "lemmas": [
       "hängen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "932fa873cf": {
     "text": "Die Zerstörung der Natur durch die Industrie ist erschreckend.",
@@ -3608,10 +3815,43 @@
   },
   "9331404028": {
     "text": "„Schon zur Pause war der Drops gelutscht, der Favorit war mit 18:6 enteilt.“",
-    "translation": null,
+    "translation": "By halftime the game was already decided; the favorite had pulled away 18:6.",
     "source": "wiktionary",
     "lemmas": [
       "der Drops ist gelutscht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Pause",
+        "lemma": "Pause",
+        "pos": "noun",
+        "gloss_hint": "break"
+      },
+      {
+        "form": "Drops",
+        "lemma": "Drops",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gelutscht",
+        "lemma": "lutschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Favorit",
+        "lemma": "Favorit",
+        "pos": "noun",
+        "gloss_hint": "favorite (participant)"
+      },
+      {
+        "form": "enteilt",
+        "lemma": "enteilen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "9331c46068": {
@@ -3844,10 +4084,31 @@
   },
   "93326d5a4a": {
     "text": "„Doch! Leugnen Sie nicht! Wir haben uns erkundigt. Sie — haben —“",
-    "translation": null,
+    "translation": "Yes! Don't deny it! We made inquiries. You — have —",
     "source": "wiktionary",
     "lemmas": [
       "erkundigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Leugnen",
+        "lemma": "leugnen",
+        "pos": "verb",
+        "gloss_hint": "deny"
+      },
+      {
+        "form": "erkundigt",
+        "lemma": "erkundigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "haben",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": "have (auxiliary)"
+      }
     ]
   },
   "933324ac38": {
@@ -4353,10 +4614,37 @@
   },
   "9335674584": {
     "text": "„Es gießt der Regen wie mit Eimern vom Himmel herunter.“",
-    "translation": null,
+    "translation": "The rain is pouring down from the sky as if from buckets.",
     "source": "wiktionary",
     "lemmas": [
       "wie mit Eimern gießen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gießt",
+        "lemma": "gießen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regen",
+        "lemma": "Regen",
+        "pos": "noun",
+        "gloss_hint": "rain"
+      },
+      {
+        "form": "Eimern",
+        "lemma": "Eimer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Himmel",
+        "lemma": "Himmel",
+        "pos": "noun",
+        "gloss_hint": "sky"
+      }
     ]
   },
   "9335836563": {
@@ -4496,10 +4784,67 @@
   },
   "933661d631": {
     "text": "„Wir machten uns auf, als zum Morgengebet gerufen wurde, also ungefähr fünf Uhr, halb Sechs, so um den Dreh, es war dunkel.“",
-    "translation": null,
+    "translation": "We set out when the morning prayer was called, so around five o'clock, half past five, thereabouts, it was dark.",
     "source": "wiktionary",
     "lemmas": [
       "so um den Dreh"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "machten",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Morgengebet",
+        "lemma": "Morgengebet",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gerufen",
+        "lemma": "rufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ungefähr",
+        "lemma": "ungefähr",
+        "pos": "adverb",
+        "gloss_hint": "approximately"
+      },
+      {
+        "form": "fünf",
+        "lemma": "fünf",
+        "pos": "numeral",
+        "gloss_hint": "five o'clock"
+      },
+      {
+        "form": "halb",
+        "lemma": "halb",
+        "pos": "adverb",
+        "gloss_hint": "half an hour before"
+      },
+      {
+        "form": "Sechs",
+        "lemma": "Sechs",
+        "pos": "noun",
+        "gloss_hint": "six"
+      },
+      {
+        "form": "Dreh",
+        "lemma": "Dreh",
+        "pos": "noun",
+        "gloss_hint": "turn"
+      },
+      {
+        "form": "dunkel",
+        "lemma": "dunkel",
+        "pos": "adjective",
+        "gloss_hint": "dark"
+      }
     ]
   },
   "933754beb9": {
@@ -4860,11 +5205,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone's nerves are stretched to breaking point",
     "source": "wiktionary",
     "lemmas": [
       "spannen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "933a3e4929": {
     "text": "Der Beifahrer behauptet, der Fahrer soll angemessen langsam gefahren sein.",
@@ -5101,10 +5447,61 @@
   },
   "933d44f656": {
     "text": "„Der Beschwerdeführer war seit dem Schuljahr 1993/1994 zur Unterstützung des Schulleiters als Administrator an dieser aus zehn Klassen bestehenden Schule bestellt.“",
-    "translation": null,
+    "translation": "The complainant had been appointed as administrator to support the school principal at this school consisting of ten classes since the school year 1993/1994.",
     "source": "wiktionary",
     "lemmas": [
       "Administrator"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Beschwerdeführer",
+        "lemma": "Beschwerdeführer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schuljahr",
+        "lemma": "Schuljahr",
+        "pos": "noun",
+        "gloss_hint": "school year"
+      },
+      {
+        "form": "Unterstützung",
+        "lemma": "Unterstützung",
+        "pos": "noun",
+        "gloss_hint": "support"
+      },
+      {
+        "form": "Schulleiters",
+        "lemma": "Schulleiter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Administrator",
+        "lemma": "Administrator",
+        "pos": "noun",
+        "gloss_hint": "system administrator"
+      },
+      {
+        "form": "Klassen",
+        "lemma": "Klasse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schule",
+        "lemma": "Schule",
+        "pos": "noun",
+        "gloss_hint": "school"
+      },
+      {
+        "form": "bestellt",
+        "lemma": "bestellen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "933ef76fcd": {
@@ -5515,12 +5912,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a screw loose",
     "source": "wiktionary",
     "lemmas": [
       "Rad"
     ],
-    "ref": "phrases/ein Rad abhaben"
+    "ref": "phrases/ein Rad abhaben",
+    "translation_model": "openai/gpt-4.1"
   },
   "9344fa3a71": {
     "text": "„Der Salon d'argent erfreut sich doppelter Berühmtheit: Hier unterzeichnete Napoléon Bonaparte seine Abdankung nach der Niederlage von Waterloo, und Jahre später erlag Präsident Félix Faure in diesem Raum einem Herzstillstand, nachdem seine Mätresse Marguerite Steinheil ihm einen energischen Blowjob verpasst hatte.“",
@@ -6935,11 +7333,12 @@
     "type": "expression",
     "note": "sich verspäten",
     "synonyms": [],
-    "translation": null,
+    "translation": "be late",
     "source": "wiktionary",
     "lemmas": [
       "kommen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9351aa333b": {
     "text": "„Und wannst auf dei Schatzal",
@@ -8865,11 +9264,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "low-hanging fruit",
     "source": "wiktionary",
     "lemmas": [
       "hängen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9360d6bce5": {
     "text": "Das Herz, ein faustförmiger Hohlmuskel, zieht sich etwa siebzigmal in der Minute zusammen und pumpt so am Tag bis zu 10.000 Liter durch den Körper.",
@@ -9463,11 +9863,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "keep something secret",
     "source": "wiktionary",
     "lemmas": [
       "Zaun"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "93638d211b": {
     "text": "Danke für die Erinnerung, Milch mitzubringen. Ich hätte nicht mehr daran gedacht.",
@@ -9508,11 +9909,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the Holy Land",
     "source": "wiktionary",
     "lemmas": [
       "Land"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "936564ba56": {
     "text": "„Nachdem sie alles Nötige eingekauft hatten, zogen sie sich in öffentlichen Toiletten um.“",
@@ -9638,11 +10040,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the order of the day",
     "source": "wiktionary",
     "lemmas": [
       "Gebot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9365ef9d22": {
     "text": "„In einer solchen Nacht nämlich wurde plötzlich heftig mit Fäusten gegen die Haustür der Bertinis geschlagen.“",
@@ -9745,11 +10148,12 @@
     "type": "expression",
     "note": "großes Problem haben, Ärger bekommen, müde/kaputt sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "be in deep trouble",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9367e6b80e": {
     "text": "„Heinz lud mich zum Abendessen ein, zu Reis und Fioliwurst.“",
@@ -9911,11 +10315,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "call a spade a spade",
     "source": "wiktionary",
     "lemmas": [
       "Fleck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "936bb9b7e6": {
     "text": "„Romane, Sachbücher und Werke zu westafrikanischen Kulturen füllten die Wandregale.“",
@@ -10124,12 +10529,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "by trade",
     "source": "wiktionary",
     "lemmas": [
       "Zeichen"
     ],
-    "ref": "phrases/seines Zeichens"
+    "ref": "phrases/seines Zeichens",
+    "translation_model": "openai/gpt-4.1"
   },
   "936f085587": {
     "text": "„Seit Donnerstag hält sich in dem AKW eine Expertengruppe der Internationalen Atomenergiebehörde (IAEA) auf, um die Anlage auf mögliche Schäden hin zu untersuchen.“",
@@ -10883,11 +11289,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "protect someone",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9375dba58c": {
     "text": "Könnten Sie das noch genauer ausführen?",
@@ -11317,11 +11724,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the eternal ice",
     "source": "wiktionary",
     "lemmas": [
       "Eis"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "937d324918": {
     "text": "In diesem Moment landet eine Ladung Wodka direkt vor den Füßen des Reiseleiters.",
@@ -11874,10 +12282,55 @@
   },
   "9388ab488d": {
     "text": "„Unsere Hände sind nun wieder auf andere helfende Hände angewiesen, ob wir es wollen oder nicht. Der Kreislauf des Lebens hat sich geschlossen.“",
-    "translation": null,
+    "translation": "Our hands are now dependent on other helping hands again, whether we want it or not. The cycle of life has closed.",
     "source": "wiktionary",
     "lemmas": [
       "helfende Hand"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hände",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "angewiesen",
+        "lemma": "anweisen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "helfende",
+        "lemma": "helfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wollen",
+        "lemma": "wollen",
+        "pos": "verb",
+        "gloss_hint": "wish"
+      },
+      {
+        "form": "Kreislauf",
+        "lemma": "Kreislauf",
+        "pos": "noun",
+        "gloss_hint": "cycle"
+      },
+      {
+        "form": "Lebens",
+        "lemma": "Leben",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geschlossen",
+        "lemma": "schließen",
+        "pos": "adjective",
+        "gloss_hint": "closed"
+      }
     ]
   },
   "9388cb629e": {
@@ -14720,12 +15173,13 @@
     "synonyms": [
       "geschehen"
     ],
-    "translation": null,
+    "translation": "long story short",
     "source": "wiktionary",
     "lemmas": [
       "Sinn"
     ],
-    "ref": "phrases/lange Rede, kurzer Sinn"
+    "ref": "phrases/lange Rede, kurzer Sinn",
+    "translation_model": "openai/gpt-4.1"
   },
   "939acd08fb": {
     "text": "„Der Hauptgeschäftsführer des Deutschen Paritätischen Wohlfahrtsverbandes, Ulrich Schneider, stellt unter dem Strich allerdings fest: »Wir haben mit 15,7 Prozent einen neuerlichen Höchststand der Armut im wiedervereinten Deutschland.«“",
@@ -15423,11 +15877,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on one's high horse",
     "source": "wiktionary",
     "lemmas": [
       "Ross"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "93a0b7a5f6": {
     "text": "Die Elchin trägt um die 240 Tage.",
@@ -15720,11 +16175,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go jump in a lake",
     "source": "wiktionary",
     "lemmas": [
       "blasen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "93a33bee5d": {
     "text": "„Während sie auf dem bunt bemalten Brette der Schaukel standen, umklammerten ihre nephritgleichen Hände fest die Stränge.“",
@@ -19288,29 +19744,70 @@
     "type": "expression",
     "note": "worden sein - ein Schwachkopf sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "not the sharpest tool in the shed",
     "source": "wiktionary",
     "lemmas": [
       "baden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "93bdce97c6": {
     "text": "das feuchte Element",
     "type": "expression",
     "note": "Wasser",
     "synonyms": [],
-    "translation": null,
+    "translation": "the wet element (water)",
     "source": "wiktionary",
     "lemmas": [
       "feucht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "93bf64e8c9": {
     "text": "Wenn jemand mehrere akademische Titel hat, so wird in der Anrede nur der höchste genannt.",
-    "translation": null,
+    "translation": "When someone has multiple academic titles, only the highest one is used in the form of address.",
     "source": "wiktionary",
     "lemmas": [
       "Anrede"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "mehrere",
+        "lemma": "mehrere",
+        "pos": "pronoun",
+        "gloss_hint": "several"
+      },
+      {
+        "form": "akademische",
+        "lemma": "akademisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Titel",
+        "lemma": "Titel",
+        "pos": "noun",
+        "gloss_hint": "title"
+      },
+      {
+        "form": "Anrede",
+        "lemma": "Anrede",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "höchste",
+        "lemma": "hoch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "genannt",
+        "lemma": "nennen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "93bf93bdb7": {
@@ -20018,11 +20515,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take care of oneself",
     "source": "wiktionary",
     "lemmas": [
       "Hut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "93c911f058": {
     "text": "Er schrie sie an, weshalb sie das Zimmer verließ.",
@@ -20842,11 +21340,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is facing tough times",
     "source": "wiktionary",
     "lemmas": [
       "blasen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "93d40152fa": {
     "text": "Die drei Frauen, die gerade aus einer jahrelangen Gefangenschaft befreit wurden, sind immer wieder missbraucht worden.",
@@ -21420,11 +21919,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "by following one's nose",
     "source": "wiktionary",
     "lemmas": [
       "Nase"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "93dc05fe6d": {
     "text": "Sein Drive landete nach 280 Metern leider im Sandbunker.",
@@ -22107,10 +22607,49 @@
   },
   "93e3028ef5": {
     "text": "[Corona:] „Wo sonst im Mai die Wallfahrer in Scharen zu den Marienwallfahrtsorten gepilgert sind, herrscht nun eine fast gespenstische Stille.“",
-    "translation": null,
+    "translation": "[Corona:] Where pilgrims otherwise flocked to the Marian pilgrimage sites in May, there now reigns an almost eerie silence.",
     "source": "wiktionary",
     "lemmas": [
       "in Scharen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wallfahrer",
+        "lemma": "Wallfahrer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Scharen",
+        "lemma": "Scharen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gepilgert",
+        "lemma": "pilgern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Marienwallfahrtsorten",
+        "lemma": "Marienwallfahrtsort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gespenstische",
+        "lemma": "gespenstisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stille",
+        "lemma": "Stille",
+        "pos": "noun",
+        "gloss_hint": "silence"
+      }
     ]
   },
   "93e512b7c6": {
@@ -23398,10 +23937,25 @@
   },
   "93edb3a266": {
     "text": "Wann ist die nächste Tagung der VIP?",
-    "translation": null,
+    "translation": "When is the next VIP meeting?",
     "source": "wiktionary",
     "lemmas": [
       "VIP"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tagung",
+        "lemma": "Tagung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "VIP",
+        "lemma": "VIP",
+        "pos": "abbreviation",
+        "gloss_hint": null
+      }
     ]
   },
   "93ef61ae78": {
@@ -24695,11 +25249,13 @@
   },
   "93fdf9368d": {
     "text": "„Er war bei der SS gewesen.“",
-    "translation": null,
+    "translation": "He had been in the SS.",
     "source": "wiktionary",
     "lemmas": [
       "SS"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "93fe07cfd8": {
     "text": "Er muss den ganzen Tag schwitzen.",

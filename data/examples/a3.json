@@ -4,11 +4,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "right in the thick of it",
     "source": "wiktionary",
     "lemmas": [
       "mittendrin"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a3007edc4d": {
     "text": "Beim Klettern verlor er den Halt und hing in der Wand, bis ihn die Bergwacht rettete.",
@@ -982,11 +983,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep your eyes open",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a3086d637b": {
     "text": "Ich konnte mir bis dato kein rechtes Bild vom Krieg machen.",
@@ -1113,10 +1115,31 @@
   },
   "a309614c15": {
     "text": "Entlang dem Fluss wurden die Dämme ausgebaut.",
-    "translation": null,
+    "translation": "The dams along the river were expanded.",
     "source": "wiktionary",
     "lemmas": [
       "entlang"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fluss",
+        "lemma": "Fluss",
+        "pos": "noun",
+        "gloss_hint": "river"
+      },
+      {
+        "form": "Dämme",
+        "lemma": "Damm",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgebaut",
+        "lemma": "ausbauen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "a30a50a898": {
@@ -1334,11 +1357,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Are you out of your mind?",
     "source": "wiktionary",
     "lemmas": [
       "Schuss"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a30bdf8685": {
     "text": "„Von frei fließender Kreativität findet sich anfangs keine Spur.“",
@@ -1758,10 +1782,49 @@
   },
   "a3105c1502": {
     "text": "„Ich bin Rentner und muss trotzdem noch arbeiten, damit ich über die Runden komme,“ klagt ein älterer Mann […].",
-    "translation": null,
+    "translation": "\"I'm a pensioner and still have to work just to get by,\" complains an older man.",
     "source": "wiktionary",
     "lemmas": [
       "über die Runden kommen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rentner",
+        "lemma": "Rentner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "arbeiten",
+        "lemma": "arbeiten",
+        "pos": "verb",
+        "gloss_hint": "work"
+      },
+      {
+        "form": "Runden",
+        "lemma": "Runde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "klagt",
+        "lemma": "klagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "älterer",
+        "lemma": "alt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      }
     ]
   },
   "a31087f15e": {
@@ -1769,12 +1832,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "helter-skelter",
     "source": "wiktionary",
     "lemmas": [
       "Kreuz"
     ],
-    "ref": "phrases/kreuz und quer"
+    "ref": "phrases/kreuz und quer",
+    "translation_model": "openai/gpt-4.1"
   },
   "a3112f59f7": {
     "text": "Hier in der Gegend entstehen ständig neue Graffitis.",
@@ -2717,13 +2781,14 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "To err is human.",
     "source": "wiktionary",
     "lemmas": [
       "menschlich",
       "irren"
     ],
-    "ref": "phrases/Irren ist menschlich"
+    "ref": "phrases/Irren ist menschlich",
+    "translation_model": "openai/gpt-4.1"
   },
   "a316913885": {
     "text": "„Alle Abalienationen von kirchlichen Gütern und Rechten, die seit dem Tode Gregors XI. von Päpsten oder angeblichen Päpsten vorgenommen wurden, […] sin nichtig […].“",
@@ -3613,11 +3678,12 @@
     "type": "expression",
     "note": "russische Nationalallegorie (Матушка-Россия, Mátuschka-Rossíja)",
     "synonyms": [],
-    "translation": null,
+    "translation": "Mother Russia",
     "source": "wiktionary",
     "lemmas": [
       "Mutter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a321f49392": {
     "text": "„Es war ein Spätnachmittag im Freistaat, und die Sonne warf einen scharfen Lichtstrahl auf den Schreibtisch, einen magischen Sonnenkegel auf den Pappkarton.“",
@@ -4026,12 +4092,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "all of a sudden",
     "source": "wiktionary",
     "lemmas": [
       "Schlag"
     ],
-    "ref": "phrases/mit einem Schlag"
+    "ref": "phrases/mit einem Schlag",
+    "translation_model": "openai/gpt-4.1"
   },
   "a323416577": {
     "text": "Der Fisch brät nun schon eine Viertelstunde.",
@@ -4387,11 +4454,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If you love your bike, you push it.",
     "source": "wiktionary",
     "lemmas": [
       "Fahrrad"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a327c83159": {
     "text": "„Dieser Vorfall bringt einen Entschluß zur Reife, an den ich mich in nächtlichen Überlegungen allmählich, aber bisher nur mit Zögern herangetastet habe: Ich werde eine Erkundungsfahrt in den Westen unternehmen, um festzustellen, wie es dort aussieht und ob wir irgendwo eine sichere Zuflucht finden können.“",
@@ -4950,11 +5018,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Good grief!",
     "source": "wiktionary",
     "lemmas": [
       "Strohsack"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a33054f3ff": {
     "text": "»Fest soll mein Taufbund immer stehen, ich will die Kirche hören.« (Liedtext)",
@@ -5338,11 +5407,13 @@
   },
   "a3336888ef": {
     "text": "Gib ihm den Rest!",
-    "translation": null,
+    "translation": "Give him the rest!",
     "source": "wiktionary",
     "lemmas": [
       "den Rest geben"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "a33370e58e": {
     "text": "„Und nie tun wir es vergeblich, stets füllen sich unsere Säckchen mit Mehl und mit Grieß.“",
@@ -6331,11 +6402,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "human torch",
     "source": "wiktionary",
     "lemmas": [
       "Fackel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a33adbea89": {
     "text": "„Jako aber, der sich bereits als Mann fühlte und ein echtes Jagdmesser am Gürtel trug, verzichtete zugunsten von Bruder und Schwester auf die Leckerei.“",
@@ -6369,11 +6441,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Good heavens!",
     "source": "wiktionary",
     "lemmas": [
       "dick"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a33da7ce45": {
     "text": "„Fünfunddreißig von ihnen wurden von ihren Ehefrauen begleitet.“",
@@ -6389,11 +6462,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pulled out of thin air",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a33ecf95b5": {
     "text": "„Manchmal erfährt man auch, dass die Mutter gestorben ist oder der Ehemann auf halber Strecke des Lebens verloren gegangen ist.“",
@@ -6556,12 +6630,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make a noise like a thunderstorm",
     "source": "wiktionary",
     "lemmas": [
       "Löwe"
     ],
-    "ref": "phrases/umhergehen wie ein brüllender Löwe"
+    "ref": "phrases/umhergehen wie ein brüllender Löwe",
+    "translation_model": "openai/gpt-4.1"
   },
   "a3405394d4": {
     "text": "„Die angeblichen Barbaren vom Kontinent sollten Britannien kulturell und sprachlich stärker prägen als zuvor die Römer und später die Wikinger und Normannen.“",
@@ -6937,12 +7012,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a hide like a rhinoceros",
     "source": "wiktionary",
     "lemmas": [
       "Gemüt"
     ],
-    "ref": "phrases/ein Gemüt wie ein Fleischerhund haben"
+    "ref": "phrases/ein Gemüt wie ein Fleischerhund haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "a343fdb9ed": {
     "text": "Soviel weiß ich allerdings: das Yin-Yang-Symbol genießt in Ostasien die höchste Verehrung.",
@@ -7639,11 +7715,12 @@
     "type": "expression",
     "note": "pessimistisch/deprimiert sein, in trüber Stimmung sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "see everything in a dreary light",
     "source": "wiktionary",
     "lemmas": [
       "grau"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a34fc42814": {
     "text": "„Dann war für längere Zeit nur das monotone Brummen des Diesels in der Fahrerkabine des Trucks zu hören.“",
@@ -8861,22 +8938,24 @@
     "type": "expression",
     "note": "bildhafter Ausdruck für die Trägheit, Faulheit, Bequemlichkeit",
     "synonyms": [],
-    "translation": null,
+    "translation": "have to drag someone to do something",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a357209025": {
     "text": "jemandem schräg von der Seite kommen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "come at someone sideways",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a357c104dd": {
     "text": "„Und die Pferde, die den Leichenwagen ziehen, welcher plötzlich vor ihm ist, haben goldene Zügel und schwarzweiße Federbüsche.“",
@@ -10853,11 +10932,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Go with God.",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a366f84a9b": {
     "text": "Mensch Meier",
@@ -14503,11 +14583,12 @@
     "type": "expression",
     "note": "genüsslich unter die Nase reiben",
     "synonyms": [],
-    "translation": null,
+    "translation": "rub something in someone's face",
     "source": "wiktionary",
     "lemmas": [
       "streichen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a37ef5625b": {
     "text": "„Sketche, die schon einen Bart haben, nimmt man ihnen nicht übel.“",
@@ -14687,10 +14768,55 @@
   },
   "a3802ae023": {
     "text": "„Die FPÖ liegt konstant bei etwa 30 Prozent in den Umfragen, weit vor SPÖ und ÖVP.“",
-    "translation": null,
+    "translation": "\"The FPÖ is consistently at about 30 percent in the polls, far ahead of the SPÖ and ÖVP.\"",
     "source": "wiktionary",
     "lemmas": [
       "FPÖ"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "FPÖ",
+        "lemma": "FPÖ",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "konstant",
+        "lemma": "konstant",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prozent",
+        "lemma": "Prozent",
+        "pos": "noun",
+        "gloss_hint": "percentage"
+      },
+      {
+        "form": "Umfragen",
+        "lemma": "Umfrage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "weit",
+        "lemma": "weit",
+        "pos": "adjective",
+        "gloss_hint": "far"
+      },
+      {
+        "form": "SPÖ",
+        "lemma": "SPÖ",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ÖVP",
+        "lemma": "ÖVP",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a380965b1e": {
@@ -15377,12 +15503,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "steal something from under someone's nose",
     "source": "wiktionary",
     "lemmas": [
       "mitgehen"
     ],
-    "ref": "phrases/etwas mitgehen lassen"
+    "ref": "phrases/etwas mitgehen lassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "a388844454": {
     "text": "„Seither liefert er den nigerianischen Sicherheitskräften wertvolle Informationen und begleitet als Scout eine bewaffnete Bürgerwehr.“",
@@ -17008,11 +17135,12 @@
     "type": "expression",
     "note": "sehr schnell",
     "synonyms": [],
-    "translation": null,
+    "translation": "like lightning",
     "source": "wiktionary",
     "lemmas": [
       "Blitz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a39660bbc6": {
     "text": "Dieses Hemd gehört nicht mit in die Buntwäsche.",
@@ -18063,11 +18191,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get a beating",
     "source": "wiktionary",
     "lemmas": [
       "Hut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a3a13845ad": {
     "text": "Uhrwerke sollten vom Fachmann geölt und gereinigt werden.",
@@ -18240,11 +18369,12 @@
     "type": "expression",
     "note": "Er ist einer der wenigen Gerechten.",
     "synonyms": [],
-    "translation": null,
+    "translation": "He is one of the righteous in the land.",
     "source": "wiktionary",
     "lemmas": [
       "fromm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a3a6e35ef7": {
     "text": "Natürlich war sie Alphabetin, hatte in der Heimat sogar das Gymnasium besucht.",
@@ -18329,11 +18459,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "out of one's mind",
     "source": "wiktionary",
     "lemmas": [
       "Geist"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a3a9cf0331": {
     "text": "„Was die Wirkung oder Wirkungen von Sprachkritik und populärer Stillehre auf den allgemeinen Sprachgebrauch betrifft, scheint in der Tat Bescheidenheit angebracht.“",
@@ -18848,10 +18979,43 @@
   },
   "a3af37d67d": {
     "text": "„Es wird wieder mal Zeit, dass die Stimmenden der Administration gehörig auf die Finger klopfen.“",
-    "translation": null,
+    "translation": "\"It's time again for voters to give the administration a proper telling-off.\"",
     "source": "wiktionary",
     "lemmas": [
       "jemandem auf die Finger klopfen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      },
+      {
+        "form": "Stimmenden",
+        "lemma": "Stimmende",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Administration",
+        "lemma": "Administration",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Finger",
+        "lemma": "Finger",
+        "pos": "noun",
+        "gloss_hint": "finger"
+      },
+      {
+        "form": "klopfen",
+        "lemma": "klopfen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "a3b046faef": {
@@ -20056,10 +20220,37 @@
   },
   "a3b9450830": {
     "text": "Die Vorbereitungen für unsere diesjährige Versammlung laufen auf Hochtouren.",
-    "translation": null,
+    "translation": "Preparations for our assembly this year are in full swing.",
     "source": "wiktionary",
     "lemmas": [
       "auf Hochtouren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vorbereitungen",
+        "lemma": "Vorbereitung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Versammlung",
+        "lemma": "Versammlung",
+        "pos": "noun",
+        "gloss_hint": "meeting"
+      },
+      {
+        "form": "laufen",
+        "lemma": "laufen",
+        "pos": "verb",
+        "gloss_hint": "proceed"
+      },
+      {
+        "form": "Hochtouren",
+        "lemma": "Hochtouren",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a3b984fa73": {
@@ -20283,11 +20474,12 @@
     "type": "expression",
     "note": "jemandem sehr ähnlich sehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "be the spitting image of someone",
     "source": "wiktionary",
     "lemmas": [
       "Gesicht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a3bcf3395d": {
     "text": "„Auf der Straße trägt Sam seinen Stock wie eine Trophäe im Maul und läuft dicht neben Jürgen.“",
@@ -22486,11 +22678,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go to war",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a3d69144e9": {
     "text": "Ich schaue hinaus in das schöne, hügelige Land.",
@@ -23014,10 +23207,19 @@
   },
   "a3d969f509": {
     "text": "„Sorry, ich bin mal off.“",
-    "translation": null,
+    "translation": "\"Sorry, I'm offline for a moment.\"",
     "source": "wiktionary",
     "lemmas": [
       "off"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "off",
+        "lemma": "off",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "a3d9763417": {
@@ -24091,11 +24293,12 @@
     "type": "expression",
     "note": "verrückt, ein Idiot sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "be crazy",
     "source": "wiktionary",
     "lemmas": [
       "Narr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a3e67f0a38": {
     "text": "„‚Nur ein Veto des Präsidenten kann hier noch helfen‘, sagte er. Tschujews Worte in Gottes Ohr!“",
@@ -24773,10 +24976,43 @@
   },
   "a3ec64873c": {
     "text": "Das e ist der häufigste Buchstabe in der deutschen Sprache.",
-    "translation": null,
+    "translation": "The letter e is the most frequent letter in the German language.",
     "source": "wiktionary",
     "lemmas": [
       "e"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "e",
+        "lemma": "e",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "häufigste",
+        "lemma": "häufig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Buchstabe",
+        "lemma": "Buchstabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "deutschen",
+        "lemma": "deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sprache",
+        "lemma": "Sprache",
+        "pos": "noun",
+        "gloss_hint": "language system"
+      }
     ]
   },
   "a3ec7db685": {
@@ -24784,11 +25020,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fall on one's backside",
     "source": "wiktionary",
     "lemmas": [
       "setzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a3ed4168d0": {
     "text": "Die Chemie im deutschsprachigen Wiktionary stimmt.",
@@ -25214,11 +25451,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get rid of someone",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a3f29f4d6a": {
     "text": "„Shaw musste Avon zugutehalten, dass die ersten Worte aus dessen Mund nicht die Befürchtung äußerten, der Vorfall könne noch mehr schlechte Publicity für ihn und sein Spiel bedeuten.“",
@@ -25498,12 +25736,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "since childhood",
     "source": "wiktionary",
     "lemmas": [
       "klein"
     ],
-    "ref": "phrases/von klein auf"
+    "ref": "phrases/von klein auf",
+    "translation_model": "openai/gpt-4.1"
   },
   "a3f7370ee7": {
     "text": "Nach dem Polieren glänzte die Maschine wie ein Judenei.",
@@ -26096,11 +26335,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "wrongly attributed",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a3fe90be2c": {
     "text": "„Der Augustus war der sechste Monat des altrömischen Kalenders und Vorläufer des heutigen Monats August.“",

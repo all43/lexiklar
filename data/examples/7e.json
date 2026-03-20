@@ -1,10 +1,67 @@
 {
   "7e009bf4a4": {
     "text": "„Sie haben erst neulich Orb geplündert, Braunfels eingenommen und Staden in die Asche gelegt.“",
-    "translation": null,
+    "translation": "\"You have recently plundered Orb, taken Braunfels, and laid Staden in ashes.\"",
     "source": "wiktionary",
     "lemmas": [
       "in Asche legen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "haben",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": "possess"
+      },
+      {
+        "form": "neulich",
+        "lemma": "neulich",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Orb",
+        "lemma": "Orb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geplündert",
+        "lemma": "plündern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Braunfels",
+        "lemma": "Braunfels",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eingenommen",
+        "lemma": "einnehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staden",
+        "lemma": "Staden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Asche",
+        "lemma": "Asche",
+        "pos": "noun",
+        "gloss_hint": "ash"
+      },
+      {
+        "form": "gelegt",
+        "lemma": "legen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "7e017d8817": {
@@ -516,11 +573,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is getting too big for their boots",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e075fd2d3": {
     "text": "„Es waren entbehrungsreiche Jahre, die meine Mutter zeit ihres Lebens prägen sollten.“",
@@ -827,11 +885,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get involved and let go",
     "source": "wiktionary",
     "lemmas": [
       "einlassen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e0d50e328": {
     "text": "„In der Nacht, die er zum erstenmal im Archiv verbracht hatte, war der Patron seines Gasthofs von Stadtwächtern abgeholt und, wie es hieß, mit einem Transport in die abseits liegenden nordwestlichen Randgebiete auf den Weg gebracht worden.“",
@@ -1453,10 +1512,31 @@
   },
   "7e14500d09": {
     "text": "Dein IQ ist sehr hoch.",
-    "translation": null,
+    "translation": "Your IQ is very high.",
     "source": "wiktionary",
     "lemmas": [
       "IQ"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "IQ",
+        "lemma": "IQ",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sehr",
+        "lemma": "sehr",
+        "pos": "particle",
+        "gloss_hint": "very"
+      },
+      {
+        "form": "hoch",
+        "lemma": "hoch",
+        "pos": "adjective",
+        "gloss_hint": "high (rank)"
+      }
     ]
   },
   "7e148da956": {
@@ -1464,11 +1544,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to slip through the cracks",
     "source": "wiktionary",
     "lemmas": [
       "Masche"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e14b0cad5": {
     "text": "Mein Vater ist Pariser.",
@@ -3298,11 +3379,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to know how to stand up for oneself",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e230f99bd": {
     "text": "„So enthält al-Wasitis Schrift Fada’il al-Bayt al-Muqaddas (Vorzüge des geheiligten Hauses) die Überlieferung, dass Adams Kopf rechts vom heiligen Felsen (im Felsendom) liege, sich seine Beine aber in der Abraham-Moschee befänden - wohl das Grab der Patriarchen in Hebron.“",
@@ -3984,11 +4066,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to seize the opportunity",
     "source": "wiktionary",
     "lemmas": [
       "Gunst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e2bfbb3f3": {
     "text": "Indem er Klinken putzt, verdient er sich sein Brot.",
@@ -4127,11 +4210,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to make a complete turnaround",
     "source": "wiktionary",
     "lemmas": [
       "Ruder"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e2d5ff97a": {
     "text": "Die Idee als solche ist ja gar nicht mal schlecht, aber wir haben nicht so viel Zeit, dass das klappen könnte.",
@@ -4261,22 +4345,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like master, like servant",
     "source": "wiktionary",
     "lemmas": [
       "wie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e3139c2a7": {
     "text": "herumschleichen wie die Katze um den heißen Brei",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to beat around the bush",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e3147f055": {
     "text": "Einige Wortarten kann man im Deutschen durch extensionale Definition bestimmen, indem man die entsprechenden Wörter aufzählt. Die extensionale Definition von Artikel könnte lauten: \"Artikel\" sind \"der\" und \"ein\" mit ihren Flexionsformen, verwendet in Kongruenz mit einem folgenden Adjektiv oder Substantiv.",
@@ -4554,11 +4640,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to squeeze someone dry",
     "source": "wiktionary",
     "lemmas": [
       "Zitrone"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e35103c84": {
     "text": "Die weibliche Hauptrolle wurde mit einer unbekannten, jungen Schauspielerin besetzt.",
@@ -6640,10 +6727,43 @@
   },
   "7e3e6bcf75": {
     "text": "Im Winter trägt mancher statt Socken lieber Strümpfe.",
-    "translation": null,
+    "translation": "In winter, some people prefer to wear stockings instead of socks.",
     "source": "wiktionary",
     "lemmas": [
       "Strumpf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Winter",
+        "lemma": "Winter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "trägt",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Socken",
+        "lemma": "Socke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lieber",
+        "lemma": "lieber",
+        "pos": "adverb",
+        "gloss_hint": "preferably"
+      },
+      {
+        "form": "Strümpfe",
+        "lemma": "Strumpf",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7e3eac66f8": {
@@ -6903,11 +7023,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put someone in a box",
     "source": "wiktionary",
     "lemmas": [
       "Schublade"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e412307bb": {
     "text": "„Man muss den Autoren zugute halten, dass sie ihr eigenes Land streng behandeln.“",
@@ -8733,10 +8854,37 @@
   },
   "7e5433a2a4": {
     "text": "Verglichen mit dem Stellenwert der Konkurrenz laufen wir eher unter ferner liefen.",
-    "translation": null,
+    "translation": "Compared to the significance of the competition, we're rather running in the also-rans.",
     "source": "wiktionary",
     "lemmas": [
       "unter ferner liefen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Stellenwert",
+        "lemma": "Stellenwert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Konkurrenz",
+        "lemma": "Konkurrenz",
+        "pos": "noun",
+        "gloss_hint": "competitors"
+      },
+      {
+        "form": "laufen",
+        "lemma": "laufen",
+        "pos": "verb",
+        "gloss_hint": "run (course)"
+      },
+      {
+        "form": "eher",
+        "lemma": "eher",
+        "pos": "adverb",
+        "gloss_hint": "rather"
+      }
     ]
   },
   "7e54976696": {
@@ -9911,10 +10059,55 @@
   },
   "7e6190f5c0": {
     "text": "„In Hooksiel durften Volker und ich eine Schlickschlacht machen, in Badehosen, und uns bis zum Gehtnichtmehr mit Schlick bekleistern.“",
-    "translation": null,
+    "translation": "\"In Hooksiel, Volker and I were allowed to have a mud fight in swimming trunks, and we covered ourselves with mud to the max.\"",
     "source": "wiktionary",
     "lemmas": [
       "bis zum Gehtnichtmehr"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hooksiel",
+        "lemma": "Hooksiel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Volker",
+        "lemma": "Volker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schlickschlacht",
+        "lemma": "Schlickschlacht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "machen",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "do"
+      },
+      {
+        "form": "Badehosen",
+        "lemma": "Badehose",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schlick",
+        "lemma": "Schlick",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bekleistern",
+        "lemma": "bekleistern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "7e6194f3d5": {
@@ -9957,11 +10150,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Bread and salt keep you healthy.",
     "source": "wiktionary",
     "lemmas": [
       "Brot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e630586c8": {
     "text": "„Und auch seine Spieler schienen sich zu fragen, ob denn heut' schon Weihnachten sei.“",
@@ -10934,11 +11128,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Consistency is key.",
     "source": "wiktionary",
     "lemmas": [
       "Aber"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e66582910": {
     "text": "„Die Patientinnen sollen am besten mit ihrem Arzt sprechen und per Ultraschall oder Kernspintomografie erfassen lassen, ob ihr Implantat möglicherweise beschädigt ist.“",
@@ -11341,26 +11536,25 @@
     "type": "expression",
     "note": "nicht fähig sein etwas auszusprechen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to not be able to say something out loud",
     "source": "wiktionary",
     "lemmas": [
       "Lippe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e6873b3ec": {
     "text": "nur mit dem Finger schnippen müssen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have someone in the palm of one's hand",
     "source": "wiktionary",
     "lemmas": [
       "Finger"
     ],
     "ref": "phrases/nur mit dem Finger schnippen müssen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "7e68c4109b": {
     "text": "„Challenge ist englisch und bedeutet wörtlich übersetzt nichts anderes als Herausforderung: Eine Person macht meist eine Aktion oder Tätigkeit vor und nominiert anschließend weitere Leute, das Gleiche zu tun – also eine Art Wette.“",
@@ -11738,11 +11932,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be stunned as if struck by lightning",
     "source": "wiktionary",
     "lemmas": [
       "Schlag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7e7000ff1d": {
     "text": "Durch den Kurzschluss fing das Kabel an zu schmoren.",
@@ -11821,14 +12016,15 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "act like a bull in a china shop",
     "source": "wiktionary",
     "lemmas": [
       "Elefant",
       "benehmen",
       "Porzellan"
     ],
-    "ref": "phrases/sich wie ein Elefant im Porzellanladen benehmen"
+    "ref": "phrases/sich wie ein Elefant im Porzellanladen benehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "7e733ca276": {
     "text": "„Sie hatte ihren Bademantel ausgezogen und stand am Beckenrand.“",
@@ -13157,10 +13353,43 @@
   },
   "7e81a387ac": {
     "text": "Tag und Nacht höre ich den Lärm der Autobahn.",
-    "translation": null,
+    "translation": "Day and night I hear the noise of the motorway.",
     "source": "wiktionary",
     "lemmas": [
       "Tag und Nacht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "Nacht",
+        "lemma": "Nacht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "höre",
+        "lemma": "hören",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lärm",
+        "lemma": "Lärm",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Autobahn",
+        "lemma": "Autobahn",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7e81a6089a": {
@@ -14290,12 +14519,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "cover for someone",
     "source": "wiktionary",
     "lemmas": [
       "freihalten"
     ],
-    "ref": "phrases/jemandem den Rücken freihalten"
+    "ref": "phrases/jemandem den Rücken freihalten",
+    "translation_model": "openai/gpt-4.1"
   },
   "7e8d21026e": {
     "text": "zwischen den Zeilen stehen",
@@ -14798,12 +15028,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in my opinion",
     "source": "wiktionary",
     "lemmas": [
       "mein"
     ],
-    "ref": "phrases/meiner Ansicht nach"
+    "ref": "phrases/meiner Ansicht nach",
+    "translation_model": "openai/gpt-4.1"
   },
   "7e960ab3e7": {
     "text": "Einzig und allein die Form ist hier ausschlaggebend für die Beurteilung.",
@@ -15464,11 +15695,12 @@
     "type": "expression",
     "note": "überall dabei sein, anwesend sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be everywhere",
     "source": "wiktionary",
     "lemmas": [
       "Suppe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7ea504ae77": {
     "text": "Als ich klein war, hatten wir nie genug Geld und so war bei uns oft Schmalhans Küchenmeister.",
@@ -15724,13 +15956,14 @@
     "type": "expression",
     "note": "körperlich unangenehm intensiv sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "cut to the bone",
     "source": "wiktionary",
     "lemmas": [
       "gehen",
       "Bein"
     ],
-    "ref": "phrases/durch Mark und Bein gehen"
+    "ref": "phrases/durch Mark und Bein gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "7ea80dc2f4": {
     "text": "Ey korrekt, Alter!",
@@ -15845,11 +16078,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone's hands are tied",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7eadc919f3": {
     "text": "„Manchmal sind sie auch etwas weniger redlich, aber nicht, um selbst einen Vorteil daraus zu ziehen, sondern weil sie im Interesse der Bank stillschweigende Vorgaben erfüllen, wie sie es schon immer gemacht haben. Auch dies geschieht auf den oberen ebenso wie auf den unteren Ebenen, und es hat System. So entsteht ein weltumspannender Mechanismus, der wie ein Komplott aussehen mag, tatsächlich aber eher in einer Weise funktioniert, die man die ›Banalität des Bösen‹ nennen könnte.“",
@@ -16615,11 +16849,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the sweet life",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7eb0468751": {
     "text": "Nach über 30 Jahren tauchten nun neue Beweise gegen den Täter auf, doch weil sein Freispruch rechtskräftig ist, ist es fast unmöglich, wieder gegen ihn zu ermitteln.",
@@ -16959,11 +17194,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that tastes bland",
     "source": "wiktionary",
     "lemmas": [
       "Fuß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7eb6d1d720": {
     "text": "„Esoterisch ausgedrückt: Ich musste mich wieder erden.“",
@@ -18634,13 +18870,14 @@
     "type": "expression",
     "note": "ungeplant spontan",
     "synonyms": [],
-    "translation": null,
+    "translation": "in a hurry",
     "source": "wiktionary",
     "lemmas": [
       "Kopf",
       "Hals"
     ],
-    "ref": "phrases/Hals über Kopf"
+    "ref": "phrases/Hals über Kopf",
+    "translation_model": "openai/gpt-4.1"
   },
   "7ece34b378": {
     "text": "Er ist dem Wahnsinn verfallen.",
@@ -19429,11 +19666,12 @@
     "type": "expression",
     "note": "wütend werden",
     "synonyms": [],
-    "translation": null,
+    "translation": "fly off the handle",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7ed4a5ab43": {
     "text": "Peter hat nach seinem Schlaganfall eine mehrmonatige Reha gemacht.",
@@ -21020,11 +21258,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "flip the switch",
     "source": "wiktionary",
     "lemmas": [
       "Hebel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7eea3cd395": {
     "text": "„Enno Ried brachte sich leidenschaftlich in die Dorfgemeinschaft ein.“",
@@ -22224,12 +22463,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Iller, Lech, Isar, Inn flow into the Danube from the right. Altmühl, Naab, and Regen join it from the left.",
     "source": "wiktionary",
     "lemmas": [
       "Donau",
       "Inn"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7ef8f477c1": {
     "text": "„Mit Schrecken sah Emil Kiste, daß das ganze Rohr löcherige Stellen zeigte, die wohl durch den Saft dieses Tieres verursacht wurden. Und jetzt bemerkte er mit stierem Entsetzen, daß der ganze Mechanismus von diesem furchtbaren Ungeziefer verseucht war, überall klebten diese Zerstörer. Das war die Ursache des irren Benehmens des Autos.“",
@@ -23199,11 +23439,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "keep someone afloat",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7efe241b13": {
     "text": "Ein Waggon Kohle reicht für ein Jahr.",

@@ -758,10 +758,49 @@
   },
   "ae07db7b42": {
     "text": "„Im Unterricht kann sich Josef alles erlauben. Die Lehrer schimpfen nie mit ihm.“ — „Kein Wunder, die haben alle einen Narren an ihm gefressen.“",
-    "translation": null,
+    "translation": "\"In class, Josef can get away with anything. The teachers never scold him.\" — \"No wonder, they're all crazy about him.\"",
     "source": "wiktionary",
     "lemmas": [
       "einen Narren an jemandem gefressen haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Unterricht",
+        "lemma": "Unterricht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Josef",
+        "lemma": "Josef",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erlauben",
+        "lemma": "erlauben",
+        "pos": "verb",
+        "gloss_hint": "break rules"
+      },
+      {
+        "form": "Lehrer",
+        "lemma": "Lehrer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schimpfen",
+        "lemma": "schimpfen",
+        "pos": "verb",
+        "gloss_hint": "scold"
+      },
+      {
+        "form": "Narren",
+        "lemma": "Narr",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "ae09638d4f": {
@@ -1908,10 +1947,25 @@
   },
   "ae169f5e8a": {
     "text": "„Es geht die Rede, er sei wieder im Land.“",
-    "translation": null,
+    "translation": "\"There is talk that he is back in the country.\"",
     "source": "wiktionary",
     "lemmas": [
       "es geht die Rede"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rede",
+        "lemma": "Rede",
+        "pos": "noun",
+        "gloss_hint": "speech"
+      },
+      {
+        "form": "Land",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": "country"
+      }
     ]
   },
   "ae16fc6790": {
@@ -2120,10 +2174,25 @@
   },
   "ae17c3c8f6": {
     "text": "Sie erkundigte sich nach seinem Befinden.",
-    "translation": null,
+    "translation": "She inquired about his well-being.",
     "source": "wiktionary",
     "lemmas": [
       "erkundigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "erkundigte",
+        "lemma": "erkundigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Befinden",
+        "lemma": "Befinden",
+        "pos": "noun",
+        "gloss_hint": "state"
+      }
     ]
   },
   "ae17d5dd09": {
@@ -2777,12 +2846,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go into the lion's den",
     "source": "wiktionary",
     "lemmas": [
       "Löwe"
     ],
-    "ref": "phrases/sich in die Höhle des Löwen begeben"
+    "ref": "phrases/sich in die Höhle des Löwen begeben",
+    "translation_model": "openai/gpt-4.1"
   },
   "ae1b8e9a0d": {
     "text": "Du solltest dich viel mehr mit der Endspieltheorie beschäftigen, sie ist das A und das O des Schachspiels.",
@@ -2909,11 +2979,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to skate on thin ice",
     "source": "wiktionary",
     "lemmas": [
       "Eis"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ae1cc53322": {
     "text": "Kinder können ihre Eltern den ganzen Tag beschlagnahmen.",
@@ -3520,28 +3591,24 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Bad examples corrupt good manners.",
     "source": "wiktionary",
     "lemmas": [
       "Beispiel"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ae23ebd68b": {
     "text": "dir wird schon kein Stein aus der Krone fallen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You won't lose anything by doing that.",
     "source": "wiktionary",
     "lemmas": [
       "Stein"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ae2467952b": {
     "text": "„Im Fall Ukraine gegen Russland, der derzeit am Internationalen Gerichtshof (IGH) anhängig ist, geht es um mutmaßliche Verletzungen zweier UN-Konventionen – der Konvention zur Beseitigung von Rassendiskriminierung und der Konvention gegen die Finanzierung des Terrorismus.“",
@@ -3983,11 +4050,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to let off steam",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ae27f1ebbf": {
     "text": "Irans Präsident Ahmadineschad ist ein Nuklear-Angeber. Die Politik des Regimes ist gleichwohl riskant.",
@@ -4172,11 +4240,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "an angel with a B in front (i.e., a 'Bengel', a rascal)",
     "source": "wiktionary",
     "lemmas": [
       "Engel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ae2980816e": {
     "text": "„In der dichten Vegetation sind sie kaum auszumachen. Nur der Ruf verrät ihre Anwesenheit.“",
@@ -4781,11 +4850,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the devil's grandmother (an imaginary or mysterious person)",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ae2f2a90c9": {
     "text": "„Entgegen der Ansicht des Revisionswerbers haben die Beobachtungen durch die Detektivagentur ein ehewidriges Verhalten des Beklagten zum Vorschein gebracht, das nämlich gerade darin gelegen ist, dass er die nötige Aufklärung über seine Beziehung zu einer anderen Frau unterließ, obwohl er den objektiv begründeten Anschein ehewidriger Beziehungen erweckt hatte.“",
@@ -6146,10 +6216,79 @@
   },
   "ae386b927d": {
     "text": "„Die angebotene, 68 mal 48 Zentimeter messende Version, aus deutschem Privatbesitz stammend, malte die Barockkünstlerin unter der Assistenz von ihrem Mitarbeiter Onofrio Palumbo zwischen 1645 und 1650 […].“",
-    "translation": null,
+    "translation": "\"The offered version measuring 68 by 48 centimeters, originating from German private ownership, was painted by the Baroque artist under the assistance of her collaborator Onofrio Palumbo between 1645 and 1650 [...].",
     "source": "wiktionary",
     "lemmas": [
       "Assistenz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "angebotene",
+        "lemma": "angeboten",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "messende",
+        "lemma": "messen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Version",
+        "lemma": "Version",
+        "pos": "noun",
+        "gloss_hint": "variant"
+      },
+      {
+        "form": "deutschem",
+        "lemma": "deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Privatbesitz",
+        "lemma": "Privatbesitz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stammend",
+        "lemma": "stammen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "malte",
+        "lemma": "malen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Barockkünstlerin",
+        "lemma": "Barockkünstlerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Assistenz",
+        "lemma": "Assistenz",
+        "pos": "noun",
+        "gloss_hint": "assistant"
+      },
+      {
+        "form": "Mitarbeiter",
+        "lemma": "Mitarbeiter",
+        "pos": "noun",
+        "gloss_hint": "employee"
+      },
+      {
+        "form": "Onofrio Palumbo",
+        "lemma": "Onofrio Palumbo",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "ae3b67a191": {
@@ -6253,11 +6392,12 @@
     "type": "expression",
     "note": "feststehender Begriff für die Exekutive in einem Staatssystem mit Gewaltenteilung",
     "synonyms": [],
-    "translation": null,
+    "translation": "the executive branch",
     "source": "wiktionary",
     "lemmas": [
       "ausüben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ae3cb862d8": {
     "text": "Jede Frau, die in Bayern das Wahlrecht hat, gilt als Bayerin.",
@@ -6410,14 +6550,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have someone covering your back",
     "source": "wiktionary",
     "lemmas": [
       "frei"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ae3de1f2fa": {
     "text": "Schickt mir die Unterlagen mal mit der Läuferin herüber!",
@@ -7461,11 +7599,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to play the leading role",
     "source": "wiktionary",
     "lemmas": [
       "spielen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ae44734931": {
     "text": "„Die G7 sind immer noch für rund ein Viertel der weltweiten Emissionen verantwortlich. Innerhalb der Gruppe stoßen die USA unter dem Strich die meisten Klimagase aus, vor allem durch die Öl- und Gasförderung.“",
@@ -8124,14 +8263,12 @@
     "type": "expression",
     "note": "\"die Konzentration verloren haben\", \"aus dem Konzept gebracht worden sein\", \"die Linie verloren haben\" (leitet sich von den Steherrennen im Radsport ab, wo ein Fahrer fast alle Chance verliert, wenn er den Kontakt zu seinem Schrittmacher und damit den Windschatten verliert)",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be thrown off track",
     "source": "wiktionary",
     "lemmas": [
       "Rolle"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ae487ea422": {
     "text": "„Sie kehrten zurück, kletterten über die umgestürzten Eisentore und nahmen ihre Fahrräder, schüttelten das Unbehagen ab und schwangen sich auf die Sättel.“",
@@ -8475,11 +8612,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be riding high",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ae520496f7": {
     "text": "Ich arbeite soviel, meine Hobbys bleiben auf der Strecke.",
@@ -9220,11 +9358,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "speak of the devil and he appears",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ae584459d1": {
     "text": "in den Seilen hängen",
@@ -9719,10 +9858,31 @@
   },
   "ae6314bd6d": {
     "text": "Die Kosten werden, so Pi mal Daumen, 100 bis 200 Euro betragen.",
-    "translation": null,
+    "translation": "The costs will, roughly speaking, amount to 100 to 200 euros.",
     "source": "wiktionary",
     "lemmas": [
       "Pi mal Daumen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kosten",
+        "lemma": "Kosten",
+        "pos": "noun",
+        "gloss_hint": "costs"
+      },
+      {
+        "form": "betragen",
+        "lemma": "betragen",
+        "pos": "verb",
+        "gloss_hint": "amount"
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      }
     ]
   },
   "ae63aebe8d": {
@@ -10452,10 +10612,43 @@
   },
   "ae6b00c7f4": {
     "text": "„In der Erklärung von 2015 gibt L. an, letztlich habe Winkelsdorf mit dem Beitrag nichts zu tun gehabt.“",
-    "translation": null,
+    "translation": "\"In the 2015 declaration, L. states that ultimately Winkelsdorf had nothing to do with the contribution.\"",
     "source": "wiktionary",
     "lemmas": [
       "L."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erklärung",
+        "lemma": "Erklärung",
+        "pos": "noun",
+        "gloss_hint": "declaration"
+      },
+      {
+        "form": "gibt",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Winkelsdorf",
+        "lemma": "Winkelsdorf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beitrag",
+        "lemma": "Beitrag",
+        "pos": "noun",
+        "gloss_hint": "contribution"
+      },
+      {
+        "form": "tun",
+        "lemma": "tun",
+        "pos": "verb",
+        "gloss_hint": "do"
+      }
     ]
   },
   "ae6cc14cb8": {
@@ -10590,12 +10783,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "besides",
     "source": "wiktionary",
     "lemmas": [
       "im Übrigen"
     ],
-    "ref": "phrases/im Übrigen"
+    "ref": "phrases/im Übrigen",
+    "translation_model": "openai/gpt-4.1"
   },
   "ae72b610fc": {
     "text": "„Die reifen Cercarien verlassen die Tochtersporocysten durch eine terminale Geburtsöffnung und schwärmen dann ins Wasser aus.“",
@@ -12066,11 +12260,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be pushing up daisies",
     "source": "wiktionary",
     "lemmas": [
       "Kartoffel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ae7c803394": {
     "text": "Mit ihren ungewohnt hohen Absätzen stolperte die Braut den Gang entlang.",
@@ -12155,11 +12350,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take a risk",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ae7da5f3e3": {
     "text": "Ich habe mein Motorrad gegen ein kleines, älteres Auto eingetauscht.",
@@ -12232,11 +12428,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to dress to the nines",
     "source": "wiktionary",
     "lemmas": [
       "Gala"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ae7f080619": {
     "text": "„Doch wo ist der Schnee vom letzten (oft auch „vergangenen“) Jahr?“ (Im Original: „Mais ou sont les neiges d'antan?“)",
@@ -13907,12 +14104,13 @@
     "type": "expression",
     "note": "vor jemandem – jemandes Leistungen anerkennen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to take one’s hat off (to someone)",
     "source": "wiktionary",
     "lemmas": [
       "Hut",
       "ziehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ae97fec9f0": {
     "text": "„Ich deutscher Klugscheißer wusste damals nicht mal, wo der Kandidat Mitterand eigentlich herkam.“",
@@ -16270,22 +16468,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to remove obstacles",
     "source": "wiktionary",
     "lemmas": [
       "abbauen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aeb146c5ad": {
     "text": "langen Zimt machen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to talk nonsense",
     "source": "wiktionary",
     "lemmas": [
       "Zimt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aeb19e077a": {
     "text": "„Was in einer Sprache ein morphologisches Wort ist, wird durch die einzelsprachlichen morphologischen Regularitäten bestimmt…“",
@@ -16532,18 +16732,66 @@
   },
   "aeb4de04cc": {
     "text": "Schaffst du es übern Graben zu springen?",
-    "translation": null,
+    "translation": "Can you manage to jump across the ditch?",
     "source": "wiktionary",
     "lemmas": [
       "übern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schaffst",
+        "lemma": "schaffen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "springen",
+        "lemma": "springen",
+        "pos": "verb",
+        "gloss_hint": "jump"
+      },
+      {
+        "form": "Graben",
+        "lemma": "Graben",
+        "pos": "noun",
+        "gloss_hint": "ditch"
+      }
     ]
   },
   "aeb53b8ce4": {
     "text": "„Anrede und Grußformel werden vom übrigen Text durch jeweils eine Leerzeile abgesetzt.“",
-    "translation": null,
+    "translation": "\"The salutation and greeting formula are separated from the rest of the text by a blank line respectively.\"",
     "source": "wiktionary",
     "lemmas": [
       "Anrede"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Anrede",
+        "lemma": "Anrede",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grußformel",
+        "lemma": "Grußformel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Text",
+        "lemma": "Text",
+        "pos": "noun",
+        "gloss_hint": "wording"
+      },
+      {
+        "form": "Leerzeile",
+        "lemma": "Leerzeile",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "aeb556bc73": {
@@ -16716,11 +16964,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pitiful",
     "source": "wiktionary",
     "lemmas": [
       "erbarmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aeb6fdcd62": {
     "text": "„Auch sozialdemokratische Arbeiter ließ die Faszination des Militärischen nicht unberührt.“",
@@ -17252,18 +17501,52 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to hint at",
     "source": "wiktionary",
     "lemmas": [
       "geben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aec4468815": {
     "text": "Das ist doch ein alter Zopf! So haben schon meine Eltern Urlaub gemacht.",
-    "translation": null,
+    "translation": "That's such an old-fashioned idea! My parents already took vacations that way.",
     "source": "wiktionary",
     "lemmas": [
       "ein alter Zopf sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "alter",
+        "lemma": "alt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zopf",
+        "lemma": "Zopf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eltern",
+        "lemma": "Eltern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Urlaub",
+        "lemma": "Urlaub",
+        "pos": "noun",
+        "gloss_hint": "vacation"
+      },
+      {
+        "form": "gemacht",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "aec47440c1": {
@@ -17315,10 +17598,31 @@
   },
   "aec5e37d80": {
     "text": "„Doch auch dann fiel sein Plan ins Wasser.“",
-    "translation": null,
+    "translation": "\"But even then his plan fell through.\"",
     "source": "wiktionary",
     "lemmas": [
       "ins Wasser fallen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Plan",
+        "lemma": "Plan",
+        "pos": "noun",
+        "gloss_hint": "plan"
+      },
+      {
+        "form": "fiel",
+        "lemma": "fallen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wasser",
+        "lemma": "Wasser",
+        "pos": "noun",
+        "gloss_hint": "water"
+      }
     ]
   },
   "aec77d0fa7": {
@@ -19296,10 +19600,61 @@
   },
   "aed36bd3dc": {
     "text": "„Also fragte ich sie, warum keine deutsche DVD darunter sei bzw. warum Hollywoodfilme ihrer Meinung nach hierzulande so viel beliebter seien.“",
-    "translation": null,
+    "translation": "\"So I asked her why there was no German DVD among them, or respectively why Hollywood films were so much more popular in this country in her opinion.\"",
     "source": "wiktionary",
     "lemmas": [
       "DVD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "fragte",
+        "lemma": "fragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "warum",
+        "lemma": "warum",
+        "pos": "adverb",
+        "gloss_hint": "why"
+      },
+      {
+        "form": "deutsche",
+        "lemma": "deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "DVD",
+        "lemma": "DVD",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "darunter",
+        "lemma": "darunter",
+        "pos": "adverb",
+        "gloss_hint": "among them"
+      },
+      {
+        "form": "Hollywoodfilme",
+        "lemma": "Hollywoodfilm",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Meinung",
+        "lemma": "Meinung",
+        "pos": "noun",
+        "gloss_hint": "opinion"
+      },
+      {
+        "form": "beliebter",
+        "lemma": "beliebt",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "aed3e9bd7d": {
@@ -19581,11 +19936,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "traditional household",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aeda0386c5": {
     "text": "Im März fahren die Bauern aus.",
@@ -19763,11 +20119,12 @@
     "type": "expression",
     "note": "verschuldet sein, Schulden haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be deep in debt",
     "source": "wiktionary",
     "lemmas": [
       "Kreide"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aededd49bc": {
     "text": "Viele öffentliche Einrichtungen werden von einem Direktor geleitet, so zum Beispiel ein Zoo durch den Zoodirektor.",
@@ -19921,14 +20278,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "lucky at cards, unlucky in love",
     "source": "wiktionary",
     "lemmas": [
       "Glück"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "aee3271941": {
     "text": "Adel verpflichtet.",
@@ -21439,12 +21794,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to a T",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
     ],
-    "ref": "phrases/aufs Haar"
+    "ref": "phrases/aufs Haar",
+    "translation_model": "openai/gpt-4.1"
   },
   "aeef4edb92": {
     "text": "„Beim Orgasmus krümmte sie sich weit nach hinten und stieß einen langen Schrei aus.“",

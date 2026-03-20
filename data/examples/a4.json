@@ -724,11 +724,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Where there are frogs, there is also water.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a402e4cbc8": {
     "text": "Im Boxen werden vor jedem Kampf die Hymnen der Beteiligten gespielt.",
@@ -1329,12 +1330,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pretend",
     "source": "wiktionary",
     "lemmas": [
       "tun"
     ],
-    "ref": "phrases/so tun, als ob"
+    "ref": "phrases/so tun, als ob",
+    "translation_model": "openai/gpt-4.1"
   },
   "a40a54c7df": {
     "text": "Die Marathonläuferin hatte endlich ihre ärgste Verfolgerin abgeschüttelt.",
@@ -1811,12 +1813,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "back and forth like a ping-pong ball",
     "source": "wiktionary",
     "lemmas": [
       "Kartoffel"
     ],
-    "ref": "phrases/rein in die Kartoffeln, raus aus den Kartoffeln"
+    "ref": "phrases/rein in die Kartoffeln, raus aus den Kartoffeln",
+    "translation_model": "openai/gpt-4.1"
   },
   "a40e2ea454": {
     "text": "„In der ersten Etage machte sie halt, horchte nach innen, prüfte ihren Puls.“",
@@ -2981,10 +2984,79 @@
   },
   "a41a410567": {
     "text": "Im Thelestrion, einer circa 50 Meter langen, fensterlosen Halle, im antiken, griechischen Eleusis wurde bei den Mysterienkulten Gerstensaft mit LSD-ähnlichen Substanzen konsumiert.",
-    "translation": null,
+    "translation": "In the Telesterion, a windowless hall approximately 50 meters long in ancient Eleusis, Greece, barley juice with LSD-like substances was consumed during the mystery cults.",
     "source": "wiktionary",
     "lemmas": [
       "LSD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Thelestrion",
+        "lemma": "Thelestrion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Halle",
+        "lemma": "Halle",
+        "pos": "noun",
+        "gloss_hint": "hall"
+      },
+      {
+        "form": "Meter",
+        "lemma": "Meter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fensterlosen",
+        "lemma": "fensterlos",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "antiken",
+        "lemma": "antik",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "griechischen",
+        "lemma": "griechisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eleusis",
+        "lemma": "Eleusis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mysterienkulten",
+        "lemma": "Mysterienkult",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gerstensaft",
+        "lemma": "Gerstensaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Substanzen",
+        "lemma": "Substanz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "konsumiert",
+        "lemma": "konsumieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "a41b4cbb23": {
@@ -3346,23 +3418,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to cry one's eyes out",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
     ],
-    "ref": "phrases/Rotz und Wasser heulen"
+    "ref": "phrases/Rotz und Wasser heulen",
+    "translation_model": "openai/gpt-4.1"
   },
   "a420189527": {
     "text": "egal ist 88",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I don't care at all",
     "source": "wiktionary",
     "lemmas": [
       "egal"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a420b9f5ad": {
     "text": "Als seine Tochter abends nicht nach Hause kam, machte sich der Vater große Sorgen, doch am Morgen lag sie friedlich in ihrem Bett und ihm fiel ein Stein vom Herzen.",
@@ -4150,11 +4224,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'll tell her/him something different",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a4257e6abe": {
     "text": "Sie haben bei uns mehr Freiheiten als anderswo.",
@@ -5382,11 +5457,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Johannes Mario Simmel",
     "source": "wiktionary",
     "lemmas": [
       "Kaviar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a437f5d7a3": {
     "text": "Die Enterprise war den Borg gefolgt und hatte sie daran gehindert die Erde zu assimilieren.",
@@ -6443,10 +6519,55 @@
   },
   "a43ceb31e6": {
     "text": "Bei der Verteilung der neuen Zuständigkeiten hat Gerhard schon wieder den Kürzeren gezogen und ein ganz arbeitsintensives Ressort bekommen.",
-    "translation": null,
+    "translation": "In the distribution of new responsibilities, Gerhard came off short again and got a very labor-intensive portfolio.",
     "source": "wiktionary",
     "lemmas": [
       "den Kürzeren ziehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verteilung",
+        "lemma": "Verteilung",
+        "pos": "noun",
+        "gloss_hint": "allocation"
+      },
+      {
+        "form": "Zuständigkeiten",
+        "lemma": "Zuständigkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gerhard",
+        "lemma": "Gerhard",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kürzeren",
+        "lemma": "Kurz",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "arbeitsintensives",
+        "lemma": "arbeitsintensiv",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ressort",
+        "lemma": "Ressort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bekommen",
+        "lemma": "bekommen",
+        "pos": "verb",
+        "gloss_hint": "receive"
+      }
     ]
   },
   "a43d916ea3": {
@@ -7134,12 +7255,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is getting off",
     "source": "wiktionary",
     "lemmas": [
       "abgehen"
     ],
-    "ref": "phrases/jemandem geht einer ab"
+    "ref": "phrases/jemandem geht einer ab",
+    "translation_model": "openai/gpt-4.1"
   },
   "a443bf3fce": {
     "text": "Die A 45 ist eine Autobahn von Norden nach Süden.",
@@ -7804,18 +7926,40 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "ask me something easy",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a44efd751a": {
     "text": "Ach, des Pudels Kern ist also, dass du aus dem Testament gestrichen wurdest!",
-    "translation": null,
+    "translation": "Ah, so that's the crux of the matter – you were written out of the will!",
     "source": "wiktionary",
     "lemmas": [
       "des Pudels Kern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kern",
+        "lemma": "Kern",
+        "pos": "noun",
+        "gloss_hint": "core"
+      },
+      {
+        "form": "Testament",
+        "lemma": "Testament",
+        "pos": "noun",
+        "gloss_hint": "will"
+      },
+      {
+        "form": "gestrichen",
+        "lemma": "streichen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "a44f26e1a1": {
@@ -7910,20 +8054,54 @@
     "type": "expression",
     "note": "gehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "burn all one's bridges",
     "source": "wiktionary",
     "lemmas": [
       "abbrechen",
       "Brücke"
     ],
-    "ref": "phrases/alle Brücken hinter sich abbrechen"
+    "ref": "phrases/alle Brücken hinter sich abbrechen",
+    "translation_model": "openai/gpt-4.1"
   },
   "a454082091": {
     "text": "Wenn die Schüler wollen, können sie die Übungen schaffen.",
-    "translation": null,
+    "translation": "If the students want to, they can manage the exercises.",
     "source": "wiktionary",
     "lemmas": [
       "können"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schüler",
+        "lemma": "Schüler",
+        "pos": "noun",
+        "gloss_hint": "student"
+      },
+      {
+        "form": "wollen",
+        "lemma": "wollen",
+        "pos": "verb",
+        "gloss_hint": "wish"
+      },
+      {
+        "form": "können",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": "can"
+      },
+      {
+        "form": "Übungen",
+        "lemma": "Übung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schaffen",
+        "lemma": "schaffen",
+        "pos": "verb",
+        "gloss_hint": "accomplish"
+      }
     ]
   },
   "a45443b58e": {
@@ -8249,14 +8427,12 @@
     "type": "expression",
     "note": "…",
     "synonyms": [],
-    "translation": null,
+    "translation": "it's too good to be true",
     "source": "wiktionary",
     "lemmas": [
       "schön"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "a45e5d1977": {
     "text": "Dann werde ich älter und fange an, die Dinge durcheinander zu bringen, ohne wirklich einen Einfluss darauf zu haben.",
@@ -9563,10 +9739,43 @@
   },
   "a469f9810c": {
     "text": "Als Pleonasmus bezeichnet man einen Ausdruck, der in sich doppelt gemoppelt ist, wie zum Beispiel „alter Greis“ oder „auseinanderdividieren.“",
-    "translation": null,
+    "translation": "A pleonasm is an expression that is redundant in itself, such as 'old graybeard' or 'divide apart.'",
     "source": "wiktionary",
     "lemmas": [
       "doppelt gemoppelt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Pleonasmus",
+        "lemma": "Pleonasmus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausdruck",
+        "lemma": "Ausdruck",
+        "pos": "noun",
+        "gloss_hint": "expression"
+      },
+      {
+        "form": "doppelt",
+        "lemma": "doppelt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beispiel",
+        "lemma": "Beispiel",
+        "pos": "noun",
+        "gloss_hint": "example"
+      },
+      {
+        "form": "Greis",
+        "lemma": "Greis",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a46a2d6964": {
@@ -9628,11 +9837,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "shady business",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a46b50cfb4": {
     "text": "„Er knüllt den Schriftsatz zusammen und haut ihn auf den Tisch, daß die Tassen fliegen.“",
@@ -9830,10 +10040,19 @@
   },
   "a46df4e41d": {
     "text": "Dort liegen meine Wurzeln.",
-    "translation": null,
+    "translation": "That's where my roots are.",
     "source": "wiktionary",
     "lemmas": [
       "Wurzel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wurzeln",
+        "lemma": "Wurzel",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a46e9098d9": {
@@ -10500,16 +10719,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be close to someone's heart",
     "source": "wiktionary",
     "lemmas": [
       "liegen",
       "Herz"
     ],
     "ref": "phrases/jemandem am Herzen liegen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "a473b83ff9": {
     "text": "Nimm sofort den Kaugummi aus dem Mund!",
@@ -10746,10 +10963,49 @@
   },
   "a475f41425": {
     "text": "Es gibt viele Arten der Zubereitung, zum Beispiel Kochen, Grillen, im Teigmantel Backen oder im Wasserdampf Garen.",
-    "translation": null,
+    "translation": "There are many methods of preparation, for example cooking, grilling, baking in pastry, or steaming.",
     "source": "wiktionary",
     "lemmas": [
       "zum Beispiel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Arten",
+        "lemma": "Art",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zubereitung",
+        "lemma": "Zubereitung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kochen",
+        "lemma": "Kochen",
+        "pos": "noun",
+        "gloss_hint": "cooking"
+      },
+      {
+        "form": "Grillen",
+        "lemma": "Grillen",
+        "pos": "noun",
+        "gloss_hint": "grilling"
+      },
+      {
+        "form": "Backen",
+        "lemma": "Backen",
+        "pos": "noun",
+        "gloss_hint": "baking"
+      },
+      {
+        "form": "Garen",
+        "lemma": "Garen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a477d4d056": {
@@ -11228,11 +11484,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not want to be in someone's shoes",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a47d48a148": {
     "text": "Nach der Geburt war sie zwar erschöpft, aber ansonsten wohlauf.",
@@ -11333,13 +11590,14 @@
     "type": "expression",
     "note": "riskieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "play with fire",
     "source": "wiktionary",
     "lemmas": [
       "Feuer",
       "spielen"
     ],
-    "ref": "phrases/mit dem Feuer spielen"
+    "ref": "phrases/mit dem Feuer spielen",
+    "translation_model": "openai/gpt-4.1"
   },
   "a481695979": {
     "text": "„Zu beiden Seiten einer ungeheuren Säge stehen zwei Männer und schneiden Planken.“",
@@ -11491,11 +11749,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be in charge",
     "source": "wiktionary",
     "lemmas": [
       "Hut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a484c84708": {
     "text": "„Zum frühen Selbstverständnis der Interkulturellen Theologie gehört – viertens –, dass primär der christliche Glaube beziehungsweise die kirchlich verfassten Christentümer den Ausgangs- und Zielpunkt ihrer Arbeit darstellen.“",
@@ -12549,11 +12808,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in the most earnest tone of conviction",
     "source": "wiktionary",
     "lemmas": [
       "tief"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a48e1de12f": {
     "text": "Viele Studenten haben davon abgelassen, diese Mühe weiter auf sich zu nehmen.",
@@ -12617,10 +12877,31 @@
   },
   "a48e6f9bce": {
     "text": "Im Zuge der Bundeswehrreform kam es beim MAD zu Stellenkürzungen.",
-    "translation": null,
+    "translation": "In the course of the Bundeswehr reform, the MAD underwent staff cuts.",
     "source": "wiktionary",
     "lemmas": [
       "MAD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zuge",
+        "lemma": "Zug",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundeswehrreform",
+        "lemma": "Bundeswehrreform",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stellenkürzungen",
+        "lemma": "Stellenkürzung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a48f0c78a5": {
@@ -13582,11 +13863,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is crazy",
     "source": "wiktionary",
     "lemmas": [
       "piepen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a49a8ebc5a": {
     "text": "„Eine militärische Karriere erscheine nicht mehr so attraktiv wie auch schon.“",
@@ -13816,11 +14098,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to drop in on someone unexpectedly",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a49fe82415": {
     "text": "„Die Trumpisten agieren zunehmend wie eine dritte Partei neben Demokraten und Republikanern.“",
@@ -13961,11 +14244,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "one after another",
     "source": "wiktionary",
     "lemmas": [
       "nach"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a4a54d6d9f": {
     "text": "„Tante Grete war aber gar keine richtige Tante, die war nur Renates Patin und eine alte Freundin von Mama.“",
@@ -14413,18 +14697,72 @@
   },
   "a4a84707de": {
     "text": "Eine WM kostet 0,55 Euro.",
-    "translation": null,
+    "translation": "A WM costs 0.55 euros.",
     "source": "wiktionary",
     "lemmas": [
       "WM"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "WM",
+        "lemma": "WM",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      }
     ]
   },
   "a4a92b9708": {
     "text": "„So kam es, dass ich das Klavierspielen begann und in der Schule – meine erste und einzige AG – einen Buchbinderei-Kurs besuchte.“",
-    "translation": null,
+    "translation": "\"So it came about that I began playing piano and at school – my first and only club – I attended a bookbinding course.\"",
     "source": "wiktionary",
     "lemmas": [
       "AG"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Klavierspielen",
+        "lemma": "Klavierspielen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "begann",
+        "lemma": "beginnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schule",
+        "lemma": "Schule",
+        "pos": "noun",
+        "gloss_hint": "school"
+      },
+      {
+        "form": "AG",
+        "lemma": "AG",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Buchbinderei-Kurs",
+        "lemma": "Buchbinderei-Kurs",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besuchte",
+        "lemma": "besuchen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "a4abc94ff9": {
@@ -14462,18 +14800,46 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be wholeheartedly involved",
     "source": "wiktionary",
     "lemmas": [
       "Seele"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a4adf99cd5": {
     "text": "Dass du viele Hausaufgabe bekommen hast, interessiert mich nicht die Bohne!",
-    "translation": null,
+    "translation": "I don't care one bit that you got a lot of homework!",
     "source": "wiktionary",
     "lemmas": [
       "nicht die Bohne interessieren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hausaufgabe",
+        "lemma": "Hausaufgabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bekommen",
+        "lemma": "bekommen",
+        "pos": "verb",
+        "gloss_hint": "receive"
+      },
+      {
+        "form": "interessiert",
+        "lemma": "interessieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bohne",
+        "lemma": "Bohne",
+        "pos": "noun",
+        "gloss_hint": "bean"
+      }
     ]
   },
   "a4ae6c22af": {
@@ -15185,22 +15551,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "oh, come on!",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a4b5ea1674": {
     "text": "ich denk, mich tritt ein Pferd",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I can't believe it!",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a4b6b2a11e": {
     "text": "„‚Die Baufahrzeuge brettern hier volle Kanne durch. Aber auch die Anlieger selbst halten sich weder an das Tempolimit noch an die Rechts-vor-Links-Regelung‘, hat sie beobachtet.“",
@@ -15377,19 +15745,71 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "everyone has their own troubles",
     "source": "wiktionary",
     "lemmas": [
       "Bündel"
     ],
-    "ref": "phrases/jeder hat sein Bündel zu tragen"
+    "ref": "phrases/jeder hat sein Bündel zu tragen",
+    "translation_model": "openai/gpt-4.1"
   },
   "a4b91f91a4": {
     "text": "„[Der Argentinier Luis Moreno Ocampo] will, wie er der Zeitung ‚Dziennik‘ sagte, ‚ausschließlich als Experte und Berater im Kontext des internationalen Rechts‘ seinen Beitrag leisten.“",
-    "translation": null,
+    "translation": "\"[The Argentine Luis Moreno Ocampo] wants, as he told the newspaper 'Dziennik', to make his contribution 'exclusively as an expert and advisor in the context of international law.'\"",
     "source": "wiktionary",
     "lemmas": [
       "seinen Beitrag leisten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Argentinier",
+        "lemma": "Argentinier",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeitung",
+        "lemma": "Zeitung",
+        "pos": "noun",
+        "gloss_hint": "newspaper"
+      },
+      {
+        "form": "Experte",
+        "lemma": "Experte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Berater",
+        "lemma": "Berater",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kontext",
+        "lemma": "Kontext",
+        "pos": "noun",
+        "gloss_hint": "context"
+      },
+      {
+        "form": "Recht",
+        "lemma": "Recht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beitrag",
+        "lemma": "Beitrag",
+        "pos": "noun",
+        "gloss_hint": "contribution"
+      },
+      {
+        "form": "leisten",
+        "lemma": "leisten",
+        "pos": "verb",
+        "gloss_hint": "perform"
+      }
     ]
   },
   "a4b95455ae": {
@@ -15652,11 +16072,12 @@
     "type": "expression",
     "note": "näher kommen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to get up close and personal",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a4bede657d": {
     "text": "Die Wühlmäuse untergraben die Fundamente.",
@@ -17251,10 +17672,37 @@
   },
   "a4cf90d247": {
     "text": "Der Unfallzeuge war sich nicht sicher, ob auf dem Kennzeichen DEL oder EL stand.",
-    "translation": null,
+    "translation": "The accident witness was not sure whether the license plate read DEL or EL.",
     "source": "wiktionary",
     "lemmas": [
       "DEL"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Unfallzeuge",
+        "lemma": "Unfallzeuge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sicher",
+        "lemma": "sicher",
+        "pos": "adjective",
+        "gloss_hint": "certain"
+      },
+      {
+        "form": "Kennzeichen",
+        "lemma": "Kennzeichen",
+        "pos": "noun",
+        "gloss_hint": "license plate"
+      },
+      {
+        "form": "stand",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "a4cfb6ca14": {
@@ -17825,11 +18273,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "no way",
     "source": "wiktionary",
     "lemmas": [
       "ach"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a4d8d38595": {
     "text": "„Wenn dem denn so ist, bleibt uns nichts anderes übrig, als alles in unserer Macht Stehende zu tun, um dieses Schicksal zu ändern, koste es, was es wolle – Ausweisung, Einkerkerung, Folter, Tod.“",
@@ -18211,10 +18660,43 @@
   },
   "a4dc704d07": {
     "text": "In Teilen der Regierung setzte sich die Meinung durch, der Kaiser müsse zum Abdanken gebracht werden.",
-    "translation": null,
+    "translation": "In parts of the government, the opinion prevailed that the emperor must be forced to abdicate.",
     "source": "wiktionary",
     "lemmas": [
       "durchsetzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Teilen",
+        "lemma": "Teil",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regierung",
+        "lemma": "Regierung",
+        "pos": "noun",
+        "gloss_hint": "government"
+      },
+      {
+        "form": "Meinung",
+        "lemma": "Meinung",
+        "pos": "noun",
+        "gloss_hint": "opinion"
+      },
+      {
+        "form": "Kaiser",
+        "lemma": "Kaiser",
+        "pos": "noun",
+        "gloss_hint": "emperor"
+      },
+      {
+        "form": "Abdanken",
+        "lemma": "abdanken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "a4dccbe4db": {
@@ -18893,11 +19375,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "find a sympathetic ear",
     "source": "wiktionary",
     "lemmas": [
       "Ohr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a4e4822744": {
     "text": "sich etwas aus den Fingern saugen",
@@ -19447,10 +19930,37 @@
   },
   "a4e7a67c9a": {
     "text": "Die häufigste Ursache für eine BU sind Krankheiten, nicht Unfälle.",
-    "translation": null,
+    "translation": "The most common cause of disability insurance claims is illness, not accidents.",
     "source": "wiktionary",
     "lemmas": [
       "BU"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "häufigste",
+        "lemma": "häufig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ursache",
+        "lemma": "Ursache",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Krankheiten",
+        "lemma": "Krankheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unfälle",
+        "lemma": "Unfall",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a4e7ce6bf8": {
@@ -19563,11 +20073,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone can visit me in the evening",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a4eaf23969": {
     "text": "In dieser Zeit war er Thüringer Außenminister.",
@@ -20909,18 +21420,88 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pull a lot of strings",
     "source": "wiktionary",
     "lemmas": [
       "Rad"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a4f4988f88": {
     "text": "Ein weiterer Tipp für mündliche Prüfungen dreht sich um das Lautdenken. Wenn dem Prüfungskandidaten nach der Frage des Prüfers die ersten Gedanken zur Beantwortung durch den Kopf schiessen, können diese ggf. laut artikuliert werden.",
-    "translation": null,
+    "translation": "Another tip for oral exams concerns thinking aloud. When the exam candidate's first thoughts on how to answer the examiner's question flash through their mind, these can potentially be articulated out loud.",
     "source": "wiktionary",
     "lemmas": [
       "laut denken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tipp",
+        "lemma": "Tipp",
+        "pos": "noun",
+        "gloss_hint": "tip"
+      },
+      {
+        "form": "mündliche",
+        "lemma": "mündlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prüfungen",
+        "lemma": "Prüfung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lautdenken",
+        "lemma": "Lautdenken",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prüfungskandidaten",
+        "lemma": "Prüfungskandidat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frage",
+        "lemma": "Frage",
+        "pos": "noun",
+        "gloss_hint": "question"
+      },
+      {
+        "form": "Prüfers",
+        "lemma": "Prüfer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gedanken",
+        "lemma": "Gedanke",
+        "pos": "noun",
+        "gloss_hint": "thoughts"
+      },
+      {
+        "form": "Beantwortung",
+        "lemma": "Beantwortung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kopf",
+        "lemma": "Kopf",
+        "pos": "noun",
+        "gloss_hint": "head"
+      },
+      {
+        "form": "artikuliert",
+        "lemma": "artikulieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "a4f64d44b8": {
@@ -21192,10 +21773,49 @@
   },
   "a4f9856fc5": {
     "text": "„Er ſchüttelte verzweifelt den Kopf ‚Gutes Kind: das iſt doch immer dieſelbe Couleur in Grün! …‘“",
-    "translation": null,
+    "translation": "\"He shook his head desperately. 'Good child: that is always the same shade of green! …'\"",
     "source": "wiktionary",
     "lemmas": [
       "dieselbe Couleur in Grün"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "schüttelte",
+        "lemma": "schütteln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "verzweifelt",
+        "lemma": "verzweifelt",
+        "pos": "adjective",
+        "gloss_hint": "desperate"
+      },
+      {
+        "form": "Kopf",
+        "lemma": "Kopf",
+        "pos": "noun",
+        "gloss_hint": "head"
+      },
+      {
+        "form": "Kind",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": "child"
+      },
+      {
+        "form": "Couleur",
+        "lemma": "Couleur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grün",
+        "lemma": "Grün",
+        "pos": "noun",
+        "gloss_hint": "green"
+      }
     ]
   },
   "a4f9eb9524": {
@@ -21287,11 +21907,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bell the cat",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a4fd1c006f": {
     "text": "„Die äthiopische Regierung hat das unfruchtbare Land, rund sechzig Kilometer südlich der Grenze zum Erzfeind Eritrea, für die Errichtung eines Flüchtlingslagers ausgewiesen.“",

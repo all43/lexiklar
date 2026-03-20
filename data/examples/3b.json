@@ -1230,10 +1230,79 @@
   },
   "3b112ac700": {
     "text": "China hatte [Friedensnobelpreisträger Liu Xiaobo], der im Land eine mehrjährige Haftstrafe verbüßt, die Teilnahme an der Zeremonie verweigert und weitere Staaten unter Druck gesetzt, der Verleihung fernzubleiben.",
-    "translation": null,
+    "translation": "China had refused to allow Friedensnobelpreisträger Liu Xiaobo, who had served a multi-year prison sentence in the country, to participate in the ceremony and pressured other states to stay away from the award ceremony.",
     "source": "wiktionary",
     "lemmas": [
       "jemanden unter Druck setzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "China",
+        "lemma": "China",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Friedensnobelpreisträger",
+        "lemma": "Friedensnobelpreisträger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haftstrafe",
+        "lemma": "Haftstrafe",
+        "pos": "noun",
+        "gloss_hint": "prison sentence"
+      },
+      {
+        "form": "verbüßt",
+        "lemma": "verbüßen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Teilnahme",
+        "lemma": "Teilnahme",
+        "pos": "noun",
+        "gloss_hint": "participation"
+      },
+      {
+        "form": "Zeremonie",
+        "lemma": "Zeremonie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verweigert",
+        "lemma": "verweigern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staaten",
+        "lemma": "Staat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Druck",
+        "lemma": "Druck",
+        "pos": "noun",
+        "gloss_hint": "pressure"
+      },
+      {
+        "form": "Verleihung",
+        "lemma": "Verleihung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fernzubleiben",
+        "lemma": "fernbleiben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "3b13372165": {
@@ -1649,16 +1718,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "straighten someone out",
     "source": "wiktionary",
     "lemmas": [
       "stellen",
       "Senkel"
     ],
     "ref": "phrases/jemanden in den Senkel stellen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "3b16ce29e1": {
     "text": "„Mit einem Mal haben Sie keine Zeit.“",
@@ -1971,11 +2038,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bell the cat",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3b1b46011f": {
     "text": "„Die Wäller hann de Kowelenzer am 20. April 1347 bei der sog. „Grenzhauer Fehd“ en ganz scheene Nidderlach beigebraacht.",
@@ -2868,10 +2936,37 @@
   },
   "3b244b0d15": {
     "text": "Wir tun alles, um den Täter zur Strecke zu bringen.",
-    "translation": null,
+    "translation": "We are doing everything to bring the perpetrator to justice.",
     "source": "wiktionary",
     "lemmas": [
       "jemanden zur Strecke bringen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "tun",
+        "lemma": "tun",
+        "pos": "verb",
+        "gloss_hint": "do"
+      },
+      {
+        "form": "Täter",
+        "lemma": "Täter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strecke",
+        "lemma": "Strecke",
+        "pos": "noun",
+        "gloss_hint": "stretch"
+      },
+      {
+        "form": "bringen",
+        "lemma": "bringen",
+        "pos": "verb",
+        "gloss_hint": "cause"
+      }
     ]
   },
   "3b2625564a": {
@@ -3055,11 +3150,12 @@
     "type": "expression",
     "note": "jemand soll sich entfernen",
     "synonyms": [],
-    "translation": null,
+    "translation": "see that someone makes themselves scarce",
     "source": "wiktionary",
     "lemmas": [
       "Land"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3b2a0e9c4c": {
     "text": "„Auch, wenn es ein Routineeinsatz war, bestand dennoch die Möglichkeit, in die Luft gebombt zu werden.“",
@@ -3690,12 +3786,13 @@
     "type": "expression",
     "note": "augenscheinlich übereinstimmen",
     "synonyms": [],
-    "translation": null,
+    "translation": "cut from the same cloth",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
     ],
-    "ref": "phrases/wie aus demselben Ei gebrütet"
+    "ref": "phrases/wie aus demselben Ei gebrütet",
+    "translation_model": "openai/gpt-4.1"
   },
   "3b3240162e": {
     "text": "In der Kita wurde ein Spielraum für Regenwetter eingerichtet.",
@@ -5340,12 +5437,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "vent one's spleen",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
     ],
-    "ref": "phrases/seinem Ärger Luft machen"
+    "ref": "phrases/seinem Ärger Luft machen",
+    "translation_model": "openai/gpt-4.1"
   },
   "3b420cefa6": {
     "text": "Die Sätze dieses Textes bilden eine sprachliche Einheit. In Grenzfällen kann man auch von Ein-Wort-Texten sprechen, etwa bei Ausrufen.",
@@ -6571,11 +6669,12 @@
     "type": "expression",
     "note": "jemanden zwingen. etwas zu tun, Druck ausüben",
     "synonyms": [],
-    "translation": null,
+    "translation": "put the screws on someone",
     "source": "wiktionary",
     "lemmas": [
       "ansetzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3b5231562a": {
     "text": "„Doch auf die Frage, wo er neue Akzente in der Politik gegenüber Polen setzen wolle, antwortete Westerwelle wenig konkret.“",
@@ -7041,10 +7140,55 @@
   },
   "3b57b209a9": {
     "text": "„Andererseits ist Kommunikation ganz offensichtlich eine Conditio sine qua non menschlichen Lebens und gesellschaftlicher Ordnung.“",
-    "translation": null,
+    "translation": "On the other hand, communication is quite obviously a sine qua non of human life and social order.",
     "source": "wiktionary",
     "lemmas": [
       "Conditio sine qua non"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kommunikation",
+        "lemma": "Kommunikation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "offensichtlich",
+        "lemma": "offensichtlich",
+        "pos": "adjective",
+        "gloss_hint": "obvious"
+      },
+      {
+        "form": "Conditio sine qua non",
+        "lemma": "Conditio sine qua non",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "menschlichen",
+        "lemma": "menschlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lebens",
+        "lemma": "Leben",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesellschaftlicher",
+        "lemma": "gesellschaftlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ordnung",
+        "lemma": "Ordnung",
+        "pos": "noun",
+        "gloss_hint": "order"
+      }
     ]
   },
   "3b58d2e250": {
@@ -7052,11 +7196,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be too stupid to pour water out of a boot",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3b59e2c302": {
     "text": "„Der folgende Tag, der 1. August 1914, fegte diese Skepsis allerdings beiseite, jedenfalls in der öffentlichen Wahrnehmung.“",
@@ -7174,10 +7319,43 @@
   },
   "3b5a011f1f": {
     "text": "Wenn es hoch kommt, werdet ihr zwanzig Leutchen sein und dafür reicht das Essen allemal.",
-    "translation": null,
+    "translation": "At most, you'll be twenty people, and the food will be more than enough for that.",
     "source": "wiktionary",
     "lemmas": [
       "wenn es hoch kommt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hoch",
+        "lemma": "hoch",
+        "pos": "noun",
+        "gloss_hint": "peak"
+      },
+      {
+        "form": "zwanzig",
+        "lemma": "zwanzig",
+        "pos": "numeral",
+        "gloss_hint": "twenty"
+      },
+      {
+        "form": "Leutchen",
+        "lemma": "Leutchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Essen",
+        "lemma": "Essen",
+        "pos": "noun",
+        "gloss_hint": "food"
+      },
+      {
+        "form": "allemal",
+        "lemma": "allemal",
+        "pos": "adverb",
+        "gloss_hint": "definitely"
+      }
     ]
   },
   "3b5a02c8fe": {
@@ -7660,10 +7838,37 @@
   },
   "3b5de36e21": {
     "text": "„Wegen eines Wärmeeinbruchs im Flachland gab es dann allerdings doch meist grüne Weihnachten.“",
-    "translation": null,
+    "translation": "Because of a warm spell in the lowlands, there were usually green Christmases after all.",
     "source": "wiktionary",
     "lemmas": [
       "grüne Weihnachten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wärmeeinbruchs",
+        "lemma": "Wärmeeinbruch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Flachland",
+        "lemma": "Flachland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "grüne",
+        "lemma": "grün",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weihnachten",
+        "lemma": "Weihnachten",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3b5f0ab92f": {
@@ -9477,11 +9682,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's unheard of",
     "source": "wiktionary",
     "lemmas": [
       "sowas"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3b723643b0": {
     "text": "„Nikolai brachte seinen ganzen Urlaub bei seinen Angehörigen zu.“",
@@ -10844,10 +11050,49 @@
   },
   "3b7e11f720": {
     "text": "„Und die Presse Südkoreas ist um Welten freier als die Presse des liberalsten kommunistischen Landes.“",
-    "translation": null,
+    "translation": "And the press of South Korea is by far freer than the press of the most liberal communist country.",
     "source": "wiktionary",
     "lemmas": [
       "um Welten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Presse",
+        "lemma": "Presse",
+        "pos": "noun",
+        "gloss_hint": "press (media)"
+      },
+      {
+        "form": "Südkoreas",
+        "lemma": "Südkorea",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "freier",
+        "lemma": "frei",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "liberalsten",
+        "lemma": "liberal",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommunistischen",
+        "lemma": "kommunistisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Landes",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3b7ee5da4f": {
@@ -11942,11 +12187,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be made for something",
     "source": "wiktionary",
     "lemmas": [
       "machen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3b8b91163f": {
     "text": "„Ein Freund von mir wurde auf offener Strasse von einer Maschinengewehrsalve durchsiebt.“",
@@ -12420,11 +12666,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not like to get one's hands dirty",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3b8f0aa4e8": {
     "text": "„Außerdem ermittelt derzeit der Oberste Gerichtshof gegen den Ex-Präsidenten wegen des Verdachts, zu Unruhen nach seiner Wahlniederlage angestiftet zu haben.“",
@@ -13919,10 +14166,49 @@
   },
   "3b9b39ea79": {
     "text": "Der Fußballverein SC Paderborn 07 spielte in der Saison 2014/2015 erstmals in der Bundesliga.",
-    "translation": null,
+    "translation": "The football club SC Paderborn 07 played in the Bundesliga for the first time in the 2014/2015 season.",
     "source": "wiktionary",
     "lemmas": [
       "SC"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fußballverein",
+        "lemma": "Fußballverein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "SC Paderborn 07",
+        "lemma": "SC Paderborn 07",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "spielte",
+        "lemma": "spielen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Saison",
+        "lemma": "Saison",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erstmals",
+        "lemma": "erstmals",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundesliga",
+        "lemma": "Bundesliga",
+        "pos": "noun",
+        "gloss_hint": "Bundesliga (soccer)"
+      }
     ]
   },
   "3b9b4ebe30": {
@@ -13930,11 +14216,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Nothing can wash that away.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3b9b867c66": {
     "text": "Diese Aussagen sind nur für die Galerie und dienen dazu, sich zu profilieren.",
@@ -16048,11 +16335,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the pot calling the kettle black",
     "source": "wiktionary",
     "lemmas": [
       "Weizen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3bbd2184e5": {
     "text": "Es ist wahr, wenn ein Schaffner mich mit der echten Höflichkeit des Herzens um meine Fahrkarte bittet, dann werde ich weich, sage: »Hier, mein Herr!«, präsentiere ihm meine Cigarrentasche, betrachte während der ganzen Fahrt diesen gebildeten Mann als meinen Freund und begrüße ihn, wo er erscheint, mit einem liebevollen Blick des Einvernehmens.",
@@ -17090,11 +17378,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be free and clear of something",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3bc9accc59": {
     "text": "außer Tätigkeit setzen",
@@ -19166,10 +19455,79 @@
   },
   "3bdbb7e2f9": {
     "text": "„Gern werden – als eine Art Gralsritterschaft – die Mitglieder der noch von Wagner gegründeten ‚Freunde von Bayreuth‘ […] als eigentliche Träger des Festspielgedankens genannt. […] Heute machen die Mitgliedsbeiträge das Kraut längst nicht mehr fett.“",
-    "translation": null,
+    "translation": "The members of the 'Friends of Bayreuth' – founded by Wagner himself – are often cited as a kind of Grail knights and the true bearers of the festival idea. Nowadays, membership fees no longer make a significant contribution.",
     "source": "wiktionary",
     "lemmas": [
       "das macht das Kraut nicht fett"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gralsritterschaft",
+        "lemma": "Gralsritterschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mitglieder",
+        "lemma": "Mitglied",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wagner",
+        "lemma": "Wagner",
+        "pos": "noun",
+        "gloss_hint": "carriage maker"
+      },
+      {
+        "form": "gegründeten",
+        "lemma": "gründen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Freunde",
+        "lemma": "Freund",
+        "pos": "noun",
+        "gloss_hint": "friend"
+      },
+      {
+        "form": "Bayreuth",
+        "lemma": "Bayreuth",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Träger",
+        "lemma": "Träger",
+        "pos": "noun",
+        "gloss_hint": "responsible party"
+      },
+      {
+        "form": "Festspielgedankens",
+        "lemma": "Festspielgedanke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mitgliedsbeiträge",
+        "lemma": "Mitgliedsbeitrag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kraut",
+        "lemma": "Kraut",
+        "pos": "noun",
+        "gloss_hint": "cabbage"
+      },
+      {
+        "form": "fett",
+        "lemma": "fett",
+        "pos": "adjective",
+        "gloss_hint": "valuable"
+      }
     ]
   },
   "3bdc31707f": {
@@ -20309,22 +20667,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be rid of something",
     "source": "wiktionary",
     "lemmas": [
       "ledig"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3be505bbc2": {
     "text": "Einkommen zum Auskommen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "just enough income to get by",
     "source": "wiktionary",
     "lemmas": [
       "Auskommen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3be75bd3ee": {
     "text": "Manche verfielen ihm, andere misstrauten ihm rasch, bis heute verkörpert der Mystifex Cagliostro die zwielichternde Seite des leuchtenden Jahrhunderts.",
@@ -20662,10 +21022,61 @@
   },
   "3be9f3cdb4": {
     "text": "„Die Katze war mein bevorzugter Freund und Spielkamerad. Ich selbst fütterte sie, und wo ich im Hause stand und ging, war sie bei mir.“",
-    "translation": null,
+    "translation": "The cat was my preferred friend and playmate. I myself fed her, and wherever I stood and went in the house, she was with me.",
     "source": "wiktionary",
     "lemmas": [
       "füttern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Katze",
+        "lemma": "Katze",
+        "pos": "noun",
+        "gloss_hint": "domestic cat"
+      },
+      {
+        "form": "bevorzugter",
+        "lemma": "bevorzugt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Freund",
+        "lemma": "Freund",
+        "pos": "noun",
+        "gloss_hint": "friend"
+      },
+      {
+        "form": "Spielkamerad",
+        "lemma": "Spielkamerad",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fütterte",
+        "lemma": "füttern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "stand",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ging",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hause",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3bea0e91bd": {
@@ -22364,10 +22775,31 @@
   },
   "3bf43110ff": {
     "text": "Ob es wohl von Mao Tse-tung ein Bild gibt, auf dem er als Zivilist zu sehen ist?",
-    "translation": null,
+    "translation": "I wonder if there is a picture of Mao Tse-tung showing him as a civilian?",
     "source": "wiktionary",
     "lemmas": [
       "Zivilist"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bild",
+        "lemma": "Bild",
+        "pos": "noun",
+        "gloss_hint": "image"
+      },
+      {
+        "form": "Mao Tse-tung",
+        "lemma": "Mao Tse-tung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zivilist",
+        "lemma": "Zivilist",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3bf505d32b": {

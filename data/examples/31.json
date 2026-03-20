@@ -507,10 +507,19 @@
   },
   "3105cc803a": {
     "text": "Schreiben wir jetzt Fidschi oder Fidji mit j?",
-    "translation": null,
+    "translation": "Should we write Fiji with an 'i' or Fidji with a 'j' now?",
     "source": "wiktionary",
     "lemmas": [
       "j"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "schreiben",
+        "lemma": "schreiben",
+        "pos": "verb",
+        "gloss_hint": "write"
+      }
     ]
   },
   "31061ac903": {
@@ -1147,10 +1156,25 @@
   },
   "310dada29c": {
     "text": "Du triffst es ins Schwarze.",
-    "translation": null,
+    "translation": "You've hit the nail on the head.",
     "source": "wiktionary",
     "lemmas": [
       "ins Schwarze treffen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "triffst",
+        "lemma": "treffen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schwarze",
+        "lemma": "Schwarz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "310de031b0": {
@@ -1562,10 +1586,37 @@
   },
   "31135243f1": {
     "text": "Russisch ist eine Sprache, die einen Instrumental mit eigenen Flexionsendungen hat.",
-    "translation": null,
+    "translation": "Russian is a language that has an instrumental case with its own inflectional endings.",
     "source": "wiktionary",
     "lemmas": [
       "Instrumental"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Russisch",
+        "lemma": "Russisch",
+        "pos": "noun",
+        "gloss_hint": "Russian language"
+      },
+      {
+        "form": "Sprache",
+        "lemma": "Sprache",
+        "pos": "noun",
+        "gloss_hint": "language"
+      },
+      {
+        "form": "Instrumental",
+        "lemma": "Instrumental",
+        "pos": "noun",
+        "gloss_hint": "instrumental case"
+      },
+      {
+        "form": "Flexionsendungen",
+        "lemma": "Flexionsendung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "311432d970": {
@@ -2671,11 +2722,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get someone pregnant",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "31239707f8": {
     "text": "Die betagten Männer im Alter von etwa 90 Jahren […] haben eingeräumt, der [SS-]Einheit angehört zu haben [, die am 1. April 1944 an der Ermordung von 86 Einwohnern der französischen Stadt Ascq beteiligt war]. Sie stritten aber ab, an Tötungen beteiligt gewesen zu sein, erklärten die Ermittler.",
@@ -5008,12 +5060,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "wear one's heart on one's sleeve",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
     ],
-    "ref": "phrases/sein Herz auf den Lippen tragen"
+    "ref": "phrases/sein Herz auf den Lippen tragen",
+    "translation_model": "openai/gpt-4.1"
   },
   "31336a437b": {
     "text": "„Die Rennen traten nie zwischen uns, das konnten nur Menschen; doch die Rennen wichen uns lange Zeit nicht von der Seite wie eine anspruchsvolle Freundin.",
@@ -5425,11 +5478,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "win a case",
     "source": "wiktionary",
     "lemmas": [
       "Recht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3138afa71f": {
     "text": "Sie hatte sich in ein Gewebe aus Lügen verstrickt.",
@@ -5765,12 +5819,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a bone to pick with someone",
     "source": "wiktionary",
     "lemmas": [
       "Hühnchen"
     ],
-    "ref": "phrases/mit jemandem noch ein Hühnchen zu rupfen haben"
+    "ref": "phrases/mit jemandem noch ein Hühnchen zu rupfen haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "313b48d26f": {
     "text": "„Auch wenn die Blütezeit des legendären Studentenklubs längst vorüber ist, erfreut sich das Lokal unter jüngeren Leuten immer noch großer Beliebtheit. Sporadisch werden hier Konzerte gespielt, ansonsten feiert man ab 21 Uhr zu Acid Jazz, Jazz, Funk, House, Latinomusik, Soul und Reggae.“",
@@ -6849,11 +6904,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "manage a household",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "314362590a": {
     "text": "„Schon in der Vorstadt standen Händler am Straßenrand und priesen laut ihre Waren an.“",
@@ -6953,10 +7009,49 @@
   },
   "314458b31a": {
     "text": "„TV-Produzent Jörg Winger hat ein Händchen für die filmische Umsetzung deutscher Geschichte“",
-    "translation": null,
+    "translation": "TV producer Jörg Winger has a knack for the cinematic adaptation of German history.",
     "source": "wiktionary",
     "lemmas": [
       "ein Händchen für etwas haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "TV-Produzent",
+        "lemma": "TV-Produzent",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Händchen",
+        "lemma": "Händchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "filmische",
+        "lemma": "filmisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umsetzung",
+        "lemma": "Umsetzung",
+        "pos": "noun",
+        "gloss_hint": "adaptation"
+      },
+      {
+        "form": "deutscher",
+        "lemma": "deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geschichte",
+        "lemma": "Geschichte",
+        "pos": "noun",
+        "gloss_hint": "history"
+      }
     ]
   },
   "3144b3e54a": {
@@ -10128,7 +10223,7 @@
   },
   "316582970e": {
     "text": "„Mit QB Ken Stabler, WR Fred Biletnikoff, TE Dave Casper, OT Art Shell, G Gene Upshaw, DE John Matuszak, LB Ted Hendricks und S Jack Tatum verfügten die Raiders über einige der herausragenden Spieler der 70er Jahre.“",
-    "translation": null,
+    "translation": "With QB Ken Stabler, WR Fred Biletnikoff, TE Dave Casper, OT Art Shell, G Gene Upshaw, DE John Matuszak, LB Ted Hendricks, and S Jack Tatum, the Raiders had some of the outstanding players of the 1970s.",
     "source": "wiktionary",
     "lemmas": [
       "G",
@@ -10136,9 +10231,27 @@
       "DE",
       "TE"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Raiders",
+        "lemma": "Raiders",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spieler",
+        "lemma": "Spieler",
+        "pos": "noun",
+        "gloss_hint": "player"
+      },
+      {
+        "form": "Jahre",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ]
   },
   "3165b96166": {
     "text": "„Seguns Statur erinnert eher an ein scheues Tier, das sich bei der geringsten Gefahr aus dem Staub macht.“",
@@ -10932,10 +11045,37 @@
   },
   "316ba3d55b": {
     "text": "Beim Zanken wurde ihr ein Schopf vom Kopf gerissen.",
-    "translation": null,
+    "translation": "During the quarrel, a tuft of hair was torn from her head.",
     "source": "wiktionary",
     "lemmas": [
       "Schopf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zanken",
+        "lemma": "zanken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schopf",
+        "lemma": "Schopf",
+        "pos": "noun",
+        "gloss_hint": "tuft"
+      },
+      {
+        "form": "Kopf",
+        "lemma": "Kopf",
+        "pos": "noun",
+        "gloss_hint": "head"
+      },
+      {
+        "form": "gerissen",
+        "lemma": "reißen",
+        "pos": "verb",
+        "gloss_hint": "torn"
+      }
     ]
   },
   "316bc60443": {
@@ -12544,10 +12684,55 @@
   },
   "317d59fc1d": {
     "text": "„Auf dem kleinen Dienstweg geholfen wird übrigens nicht nur den Menschen, sondern auch tierischen Gästen auf dem weitläufigen Gelände im Unterföhringer Gewerbegebiet.“",
-    "translation": null,
+    "translation": "\"On the small service route, help is provided not only to people, but also to animal guests on the extensive grounds in the Unterföhring industrial area.\"",
     "source": "wiktionary",
     "lemmas": [
       "auf dem kleinen Dienstweg"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Dienstweg",
+        "lemma": "Dienstweg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geholfen",
+        "lemma": "helfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": "person"
+      },
+      {
+        "form": "tierischen",
+        "lemma": "tierisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gästen",
+        "lemma": "Gast",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gelände",
+        "lemma": "Gelände",
+        "pos": "noun",
+        "gloss_hint": "area"
+      },
+      {
+        "form": "Gewerbegebiet",
+        "lemma": "Gewerbegebiet",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "317d647842": {
@@ -12876,10 +13061,37 @@
   },
   "318072de4a": {
     "text": "In einer römischen Zahl können bis zu vier X auftreten.",
-    "translation": null,
+    "translation": "In a Roman numeral, up to four X's can occur.",
     "source": "wiktionary",
     "lemmas": [
       "X"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "römischen",
+        "lemma": "römisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zahl",
+        "lemma": "Zahl",
+        "pos": "noun",
+        "gloss_hint": "number"
+      },
+      {
+        "form": "vier",
+        "lemma": "vier",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "auftreten",
+        "lemma": "auftreten",
+        "pos": "verb",
+        "gloss_hint": "occur"
+      }
     ]
   },
   "3182272ba8": {
@@ -13603,10 +13815,37 @@
   },
   "318bc5b51d": {
     "text": "Das Baby erblickte vor wenigen Stunden das Licht der Welt.",
-    "translation": null,
+    "translation": "The baby saw the light of day a few hours ago.",
     "source": "wiktionary",
     "lemmas": [
       "das Licht der Welt erblicken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Baby",
+        "lemma": "Baby",
+        "pos": "noun",
+        "gloss_hint": "infant"
+      },
+      {
+        "form": "erblickte",
+        "lemma": "erblicken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Licht",
+        "lemma": "Licht",
+        "pos": "noun",
+        "gloss_hint": "light"
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      }
     ]
   },
   "318bcd1656": {
@@ -14666,11 +14905,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Imagination is also a kind of education.",
     "source": "wiktionary",
     "lemmas": [
       "Einbildung"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "31939123fb": {
     "text": "Ein Passagier hatte mit einem der Ryanair-Rubbellose 10.000,- Euro in Bar gewonnen. Die Flugbegleiter gratulierten dem Gewinner und erklärten ihm die notwendigen Formalitäten zur Einlösung seines Gewinnes. Der Passagier war jedoch sehr verärgert darüber, den Gewinn nicht umgehend ausbezahlt zu bekommen. Er beschloss daher seinen Gewinn sofort zu konsumieren und verspeiste das Gewinnlos.",
@@ -15242,11 +15482,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be almost impossible to find someone",
     "source": "wiktionary",
     "lemmas": [
       "Lupe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "319d9a6bda": {
     "text": "Das ständige Ein- und Ausschalten schadet dem Gerät.",
@@ -15736,10 +15977,133 @@
   },
   "31a14c3024": {
     "text": "„Die Regierenden scheinen sich mit Lösungen auf dem Papier zu begnügen. Indem man die Klimasünder etwa zu ‚verbindlichen Nachhaltigkeitsberichten‘ zwingt. Ein großer CO2-Emittent wie HeidelbergCement, der zweitgrößte Baustoffhersteller der Welt, kann dann schreiben, er wolle ‚seinen Beitrag‘ leisten, ‚den weltweiten Temperaturanstieg auf unter 2°C zu begrenzen.‘ Aber gleichzeitig darf der Konzern seinen CO2-Ausstoß enorm steigern (von 41 Millionen Tonnen 2010 auf 70 Millionen Tonnen 2017), ohne dafür einen angemessenen Preis zahlen zu müssen.“",
-    "translation": null,
+    "translation": "\"The rulers seem to be satisfied with solutions on paper. By forcing polluters, for example, to produce 'binding sustainability reports.' A major CO2 emitter like HeidelbergCement, the world's second-largest building materials manufacturer, can then write that it wants to 'make its contribution' to 'limiting global temperature rise to below 2°C.' But at the same time, the corporation is allowed to increase its CO2 emissions enormously (from 41 million tons in 2010 to 70 million tons in 2017) without having to pay an appropriate price for it.\"",
     "source": "wiktionary",
     "lemmas": [
       "seinen Beitrag leisten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Regierenden",
+        "lemma": "Regierender",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "scheinen",
+        "lemma": "scheinen",
+        "pos": "verb",
+        "gloss_hint": "seem"
+      },
+      {
+        "form": "Lösungen",
+        "lemma": "Lösung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Papier",
+        "lemma": "Papier",
+        "pos": "noun",
+        "gloss_hint": "paper"
+      },
+      {
+        "form": "begnügen",
+        "lemma": "begnügen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klimasünder",
+        "lemma": "Klimasünder",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zwingt",
+        "lemma": "zwingen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nachhaltigkeitsberichten",
+        "lemma": "Nachhaltigkeitsbericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "CO2-Emittent",
+        "lemma": "CO2-Emittent",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Baustoffhersteller",
+        "lemma": "Baustoffhersteller",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beitrag",
+        "lemma": "Beitrag",
+        "pos": "noun",
+        "gloss_hint": "contribution"
+      },
+      {
+        "form": "leisten",
+        "lemma": "leisten",
+        "pos": "verb",
+        "gloss_hint": "accomplish"
+      },
+      {
+        "form": "Temperaturanstieg",
+        "lemma": "Temperaturanstieg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "begrenzen",
+        "lemma": "begrenzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Konzern",
+        "lemma": "Konzern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "CO2-Ausstoß",
+        "lemma": "CO2-Ausstoß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "steigern",
+        "lemma": "steigern",
+        "pos": "verb",
+        "gloss_hint": "increase"
+      },
+      {
+        "form": "Tonnen",
+        "lemma": "Tonne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Preis",
+        "lemma": "Preis",
+        "pos": "noun",
+        "gloss_hint": "price"
+      },
+      {
+        "form": "zahlen",
+        "lemma": "zahlen",
+        "pos": "verb",
+        "gloss_hint": "pay"
+      }
     ]
   },
   "31a15a444d": {
@@ -20843,11 +21207,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "soaking wet",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "31c6b320a0": {
     "text": "Sie haben behauptet, ich hätte die Unterlagen an die Konkurrenz weitergeleitet, wogegen ich Einspruch eingelegt habe.",
@@ -22218,10 +22583,79 @@
   },
   "31d49fbe05": {
     "text": "„Steinbrück schloss zugleich aus, dass der Bund sich über die bislang gemachten Zusagen an etwaigen Mehrkosten beteiligen werde: ‚Wenn Ministerpräsident Stoiber die Finanzierungslücke schließen will, sage ich à la bonne heure‘, zitiert ihn die Zeitung.“",
-    "translation": null,
+    "translation": "\"Steinbrück also ruled out that the federal government would participate in any additional costs beyond the commitments made so far: 'If Prime Minister Stoiber wants to close the financing gap, I say à la bonne heure,' the newspaper quotes him.\"",
     "source": "wiktionary",
     "lemmas": [
       "à la bonne heure"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Steinbrück",
+        "lemma": "Steinbrück",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schloss",
+        "lemma": "schließen",
+        "pos": "verb",
+        "gloss_hint": "conclude"
+      },
+      {
+        "form": "Bund",
+        "lemma": "Bund",
+        "pos": "noun",
+        "gloss_hint": "federal government"
+      },
+      {
+        "form": "Zusagen",
+        "lemma": "Zusage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mehrkosten",
+        "lemma": "Mehrkosten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beteiligen",
+        "lemma": "beteiligen",
+        "pos": "verb",
+        "gloss_hint": "participate"
+      },
+      {
+        "form": "Ministerpräsident",
+        "lemma": "Ministerpräsident",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stoiber",
+        "lemma": "Stoiber",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Finanzierungslücke",
+        "lemma": "Finanzierungslücke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schließen",
+        "lemma": "schließen",
+        "pos": "verb",
+        "gloss_hint": "close"
+      },
+      {
+        "form": "Zeitung",
+        "lemma": "Zeitung",
+        "pos": "noun",
+        "gloss_hint": "newspaper"
+      }
     ]
   },
   "31d4a737db": {
@@ -22394,10 +22828,31 @@
   },
   "31d7241062": {
     "text": "Man kann auch als Zivilist bei der Bundeswehr arbeiten.",
-    "translation": null,
+    "translation": "You can also work as a civilian at the Bundeswehr.",
     "source": "wiktionary",
     "lemmas": [
       "Zivilist"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zivilist",
+        "lemma": "Zivilist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundeswehr",
+        "lemma": "Bundeswehr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "arbeiten",
+        "lemma": "arbeiten",
+        "pos": "verb",
+        "gloss_hint": "work"
+      }
     ]
   },
   "31d826fa84": {
@@ -22480,10 +22935,55 @@
   },
   "31d9575351": {
     "text": "„HSV kommen weltweit vor und werden übertragen durch Schmierinfektion, Tröpfcheninfektion und Sexualkontakt.“",
-    "translation": null,
+    "translation": "\"HSV occurs worldwide and is transmitted through contact infection, droplet infection, and sexual contact.\"",
     "source": "wiktionary",
     "lemmas": [
       "HSV"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "HSV",
+        "lemma": "HSV",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": "occur"
+      },
+      {
+        "form": "weltweit",
+        "lemma": "weltweit",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "übertragen",
+        "lemma": "übertragen",
+        "pos": "verb",
+        "gloss_hint": "transmit"
+      },
+      {
+        "form": "Schmierinfektion",
+        "lemma": "Schmierinfektion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tröpfcheninfektion",
+        "lemma": "Tröpfcheninfektion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sexualkontakt",
+        "lemma": "Sexualkontakt",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "31d9a98e65": {
@@ -23981,10 +24481,79 @@
   },
   "31e6a8548d": {
     "text": "Licht ist eine bestimmte Art von elektromagnetischer Strahlung, nämlich die, die wir mit den Augen wahrnehmen können. Darüber hinaus gibt es aber auch Strahlung, die wir nicht wahrnehmen können. UV-Strahlung zum Beispiel kann der Mensch nicht sehen […]",
-    "translation": null,
+    "translation": "Light is a particular kind of electromagnetic radiation, namely the kind that we can perceive with our eyes. Beyond that, however, there is also radiation that we cannot perceive. UV radiation, for example, humans cannot see [...]",
     "source": "wiktionary",
     "lemmas": [
       "darüber hinaus"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Licht",
+        "lemma": "Licht",
+        "pos": "noun",
+        "gloss_hint": "light"
+      },
+      {
+        "form": "Art",
+        "lemma": "Art",
+        "pos": "noun",
+        "gloss_hint": "kind"
+      },
+      {
+        "form": "elektromagnetischer",
+        "lemma": "elektromagnetisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strahlung",
+        "lemma": "Strahlung",
+        "pos": "noun",
+        "gloss_hint": "radiation"
+      },
+      {
+        "form": "wahrnehmen",
+        "lemma": "wahrnehmen",
+        "pos": "verb",
+        "gloss_hint": "perceive"
+      },
+      {
+        "form": "Augen",
+        "lemma": "Auge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strahlung",
+        "lemma": "Strahlung",
+        "pos": "noun",
+        "gloss_hint": "radiation"
+      },
+      {
+        "form": "wahrnehmen",
+        "lemma": "wahrnehmen",
+        "pos": "verb",
+        "gloss_hint": "perceive"
+      },
+      {
+        "form": "UV-Strahlung",
+        "lemma": "UV-Strahlung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mensch",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": "person"
+      },
+      {
+        "form": "sehen",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": "see"
+      }
     ]
   },
   "31e8f70e34": {
@@ -25540,10 +26109,43 @@
   },
   "31fb4f47b8": {
     "text": "„Einmal legten wir uns dicht an dicht auf den Waldboden, hielten es aber nicht lange aus.“",
-    "translation": null,
+    "translation": "\"Once we lay close together on the forest floor, but we couldn't endure it for long.\"",
     "source": "wiktionary",
     "lemmas": [
       "dicht an dicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "legten",
+        "lemma": "legen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "dicht",
+        "lemma": "dicht",
+        "pos": "adjective",
+        "gloss_hint": "dense"
+      },
+      {
+        "form": "Waldboden",
+        "lemma": "Waldboden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hielten",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "aus",
+        "lemma": "aushalten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "31fcb54447": {

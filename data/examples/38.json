@@ -412,11 +412,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Here I am human, here I am allowed to be myself.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "38002e5c00": {
     "text": "Nun heißt der Satz: „In allem Wissen um sein eigenes Versagen darf der Glaubende dessen gewiss sein, dass Gott sein Heil will“.",
@@ -1278,10 +1279,31 @@
   },
   "3809465ef6": {
     "text": "Diese Schrottkiste ist doch keinen Pfifferling mehr wert!",
-    "translation": null,
+    "translation": "This heap of junk isn't worth a thing anymore!",
     "source": "wiktionary",
     "lemmas": [
       "keinen Pfifferling wert sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schrottkiste",
+        "lemma": "Schrottkiste",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pfifferling",
+        "lemma": "Pfifferling",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wert",
+        "lemma": "wert",
+        "pos": "adjective",
+        "gloss_hint": "worthwhile"
+      }
     ]
   },
   "380967a0ee": {
@@ -1807,11 +1829,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with a firm hand",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "380d87e61f": {
     "text": "Durch den Geruch einer brennenden Zigarre fühlen sich viele Menschen belästigt.",
@@ -3542,11 +3565,12 @@
     "type": "expression",
     "note": "etwas aufgeben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to lay a hope to rest",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "382c1bd413": {
     "text": "Ich möchte gern dieses alte Möbelstück verkaufen, aber ich werde es nicht los.",
@@ -4400,11 +4424,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to come under fire",
     "source": "wiktionary",
     "lemmas": [
       "Beschuss"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "383614a4b0": {
     "text": "„Lumpen, Knochen, Eisen und Papier, / ausgeschlagne Zähne sammeln wir, / Lumpen, Knochen, Eisen und Papier, / ja, das sammeln wir.“ (Straßenlied der Altmaterialsammler ums Jahr 1944)",
@@ -6663,10 +6688,31 @@
   },
   "384c360b03": {
     "text": "Als Bayer habe ich an meinem Wagen ein BY stehen.",
-    "translation": null,
+    "translation": "As a Bavarian, I have a BY on my car.",
     "source": "wiktionary",
     "lemmas": [
       "BY"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bayer",
+        "lemma": "Bayer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wagen",
+        "lemma": "Wagen",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "stehen",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": "be located"
+      }
     ]
   },
   "384c938b01": {
@@ -8180,11 +8226,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the scales fall from someone's eyes",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "385a1c831a": {
     "text": "Sie ist gertenschlank, dunkelhaarig und überzeugte mit ihrer Grazie sämtliche Juroren: Vanessa ist \"Germany's next Topmodel\".",
@@ -8300,11 +8347,12 @@
     "type": "expression",
     "note": "sehr bewährt oder erfahren sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have weathered many storms",
     "source": "wiktionary",
     "lemmas": [
       "überstehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "385ad6b616": {
     "text": "„Ich schaute mir den Kasten sehr genau an und ging um den Kiosk herum, und dann fragte ich den Mann im Kiosk, was das über ihm für ein Kasten sei.“",
@@ -10656,10 +10704,61 @@
   },
   "387af44c4a": {
     "text": "Allein etwas anderes ist es mit allgemeinen Prinzipien der äußern Politik; diese kann und soll die Legislatur, durch förmliche Gesetze, der Regierung vorschreiben.",
-    "translation": null,
+    "translation": "But it is quite another matter with general principles of foreign policy; the legislature can and should prescribe these to the government through formal laws.",
     "source": "wiktionary",
     "lemmas": [
       "Legislatur"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "allein",
+        "lemma": "allein",
+        "pos": "adjective",
+        "gloss_hint": "sole"
+      },
+      {
+        "form": "Prinzipien",
+        "lemma": "Prinzip",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "äußern",
+        "lemma": "äußern",
+        "pos": "verb",
+        "gloss_hint": "express"
+      },
+      {
+        "form": "Politik",
+        "lemma": "Politik",
+        "pos": "noun",
+        "gloss_hint": "politics"
+      },
+      {
+        "form": "Legislatur",
+        "lemma": "Legislatur",
+        "pos": "noun",
+        "gloss_hint": "legislation"
+      },
+      {
+        "form": "Gesetze",
+        "lemma": "Gesetz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regierung",
+        "lemma": "Regierung",
+        "pos": "noun",
+        "gloss_hint": "government"
+      },
+      {
+        "form": "vorschreiben",
+        "lemma": "vorschreiben",
+        "pos": "verb",
+        "gloss_hint": "prescribe"
+      }
     ]
   },
   "387b45a029": {
@@ -11156,10 +11255,25 @@
   },
   "387dac6d4d": {
     "text": "Die Anstrengungen waren völlig nutzlos.",
-    "translation": null,
+    "translation": "The efforts were completely futile.",
     "source": "wiktionary",
     "lemmas": [
       "nutzlos"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Anstrengungen",
+        "lemma": "Anstrengung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "nutzlos",
+        "lemma": "nutzlos",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "387ebdb89d": {
@@ -11352,11 +11466,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's about as important as a sack of rice falling over in China",
     "source": "wiktionary",
     "lemmas": [
       "umfallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "38814e4830": {
     "text": "„Die Baufirmen melden die höchsten Umsätze seit über 20 Jahren.“",
@@ -11494,12 +11609,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to hit a brick wall",
     "source": "wiktionary",
     "lemmas": [
       "beißen"
     ],
-    "ref": "phrases/auf Granit beißen"
+    "ref": "phrases/auf Granit beißen",
+    "translation_model": "openai/gpt-4.1"
   },
   "3885f3ce46": {
     "text": "Er isst mich noch arm!",
@@ -11884,11 +12000,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to dump someone",
     "source": "wiktionary",
     "lemmas": [
       "sausen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "38882f08dd": {
     "text": "„So gern wir dieser hoffnungsvollen Feststellung beipflichten möchten, wir können bis jetzt mit unbewaffnetem Auge nur wahrnehmen, daß in der europäischen Politik die lastende Starre der vergangenen Monate einer gewissen Bewegung gewichen ist.“",
@@ -13511,10 +13628,37 @@
   },
   "389a9052ff": {
     "text": "„Offiziell finden die Beratungen in Berlin statt, wegen der Corona-Pandemie wird aber vorwiegend virtuell beraten.“",
-    "translation": null,
+    "translation": "Officially the consultations take place in Berlin, but due to the coronavirus pandemic, discussions are conducted primarily virtually.",
     "source": "wiktionary",
     "lemmas": [
       "vorwiegend"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Beratungen",
+        "lemma": "Beratung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Berlin",
+        "lemma": "Berlin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Corona-Pandemie",
+        "lemma": "Corona-Pandemie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beraten",
+        "lemma": "beraten",
+        "pos": "verb",
+        "gloss_hint": "consult"
+      }
     ]
   },
   "389a9785b2": {
@@ -16260,12 +16404,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to run for the hills",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
     ],
-    "ref": "phrases/die Beine in die Hand nehmen"
+    "ref": "phrases/die Beine in die Hand nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "38aaf5e09d": {
     "text": "„Am Anfang stehen kleine Fehler wie vergessene Termine, der verlorene Schlüssel oder die Situation, in ein Zimmer zu kommen und nicht mehr zu wissen, was man dort eigentlich wollte.“",
@@ -17820,10 +17965,25 @@
   },
   "38b7471266": {
     "text": "„So ging es auch mir; und was ich da hörte, hing mir noch lange an.“",
-    "translation": null,
+    "translation": "It was the same with me; and what I heard there stayed with me for a long time.",
     "source": "wiktionary",
     "lemmas": [
       "anhängen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hörte",
+        "lemma": "hören",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "hing",
+        "lemma": "hängen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "38ba1147d1": {
@@ -21334,12 +21494,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "without flaw",
     "source": "wiktionary",
     "lemmas": [
       "Fehl"
     ],
-    "ref": "phrases/ohne Fehl und Tadel"
+    "ref": "phrases/ohne Fehl und Tadel",
+    "translation_model": "openai/gpt-4.1"
   },
   "38dac6ffd9": {
     "text": "„Leif Bent (24) ist ein Musiker und Songwriter mit Dortmunder Wurzeln. Er fing klein an. Zuletzt trat er vor Tausenden Zuschauern auf.“",
@@ -22675,10 +22836,31 @@
   },
   "38e2d91fe8": {
     "text": "„Teterboro, JFK, Newark und La Guardia sind wegen des Blizzards geschlossen.“",
-    "translation": null,
+    "translation": "Teterboro, JFK, Newark and La Guardia are closed because of the blizzard.",
     "source": "wiktionary",
     "lemmas": [
       "JFK"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Newark",
+        "lemma": "Newark",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blizzards",
+        "lemma": "Blizzard",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geschlossen",
+        "lemma": "geschlossen",
+        "pos": "adjective",
+        "gloss_hint": "closed"
+      }
     ]
   },
   "38e326df56": {
@@ -22830,11 +23012,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bread instead of fireworks",
     "source": "wiktionary",
     "lemmas": [
       "Brot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "38e3d30354": {
     "text": "„Aaldorsche leben in antarktischen Meeren, sind ca. 20 cm lang, haben eine aalähnliche Flossenanordnung und Körperform, doch kehlständige Bauchflossen und einen einzelnen Strahl vor der Rückenflosse.“",
@@ -23487,12 +23670,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take something to heart",
     "source": "wiktionary",
     "lemmas": [
       "Gemüt"
     ],
-    "ref": "phrases/sich etwas zu Gemüte führen"
+    "ref": "phrases/sich etwas zu Gemüte führen",
+    "translation_model": "openai/gpt-4.1"
   },
   "38e89869ac": {
     "text": "„Ich hatte mir sagen lassen, dass die Weißen in Westafrika immer noch sehr gut angesehen waren.“",
@@ -24630,12 +24814,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be oversized for its purpose",
     "source": "wiktionary",
     "lemmas": [
       "Zuwachs"
     ],
-    "ref": "phrases/auf Zuwachs berechnet sein"
+    "ref": "phrases/auf Zuwachs berechnet sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "38f91c94c0": {
     "text": "„Keine Hand regte sich zu seinem Beistand; aus den verhangenen Augen drohte der Blitz, niemand gelüstete die verdiente Niederlage zu teilen.“",

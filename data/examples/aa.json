@@ -493,11 +493,12 @@
     "type": "expression",
     "note": "etwas (beispielsweise eine Aufgabe) ablehnen / abwimmeln",
     "synonyms": [],
-    "translation": null,
+    "translation": "get something off one's back",
     "source": "wiktionary",
     "lemmas": [
       "Hals"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa0439aef9": {
     "text": "„Er ist dumm wie hundert Meter Feldweg.“",
@@ -1069,10 +1070,55 @@
   },
   "aa07d096f7": {
     "text": "„Internetauftritt des BKA mit einem Link zu den Erreichbarkeiten der ZAC des BKA und der 16 Bundesländer, abgerufen am 16.08.2017 unter https …“",
-    "translation": null,
+    "translation": "Federal Criminal Police Office (BKA) website with a link to the contact information of the Central Contact Point (ZAC) of the BKA and the 16 federal states, accessed on 16.08.2017 at https …",
     "source": "wiktionary",
     "lemmas": [
       "ZAC"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Internetauftritt",
+        "lemma": "Internetauftritt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "BKA",
+        "lemma": "BKA",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Link",
+        "lemma": "Link",
+        "pos": "noun",
+        "gloss_hint": "clickable text"
+      },
+      {
+        "form": "Erreichbarkeiten",
+        "lemma": "Erreichbarkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ZAC",
+        "lemma": "ZAC",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundesländer",
+        "lemma": "Bundesland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abgerufen",
+        "lemma": "abrufen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "aa082f666c": {
@@ -2103,11 +2149,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "do one's own thing",
     "source": "wiktionary",
     "lemmas": [
       "Stiefel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa148787cb": {
     "text": "„Es macht ihm anscheinend nichts aus, daß er zum Frühstück Kaffee-Ersatz trinken und sich beim Abendessen mit Schwarzbrot in Wasser begnügen muß.“",
@@ -2653,11 +2700,12 @@
     "type": "expression",
     "note": "! – man ist gezwungen auf diese oder jene Art und Weise etwas zu akzeptieren, zu entscheiden; jemandem bleibt keine andere Wahl",
     "synonyms": [],
-    "translation": null,
+    "translation": "It's do or die.",
     "source": "wiktionary",
     "lemmas": [
       "fressen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa1c35d543": {
     "text": "„Das Mädchen krümmte sich und bog die Hüften durch.“",
@@ -3786,11 +3834,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have eyes in the back of one's head",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa2307471d": {
     "text": "„Die Hände hatte er gefaltet und vor sich hingelegt, und die Tasse Kaffee zwischen seinen Unterarmen wurde kalt und bekam auf der Oberfläche eine ölige Haut.“",
@@ -4337,10 +4386,43 @@
   },
   "aa273edd5d": {
     "text": "„Wieder fand sich ein Witzbold. Er erkundigte sich höflich: ‚Muß er auch Geige spielen können?‘“",
-    "translation": null,
+    "translation": "Again a joker appeared. He inquired politely: 'Does he also have to be able to play the violin?'",
     "source": "wiktionary",
     "lemmas": [
       "erkundigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Witzbold",
+        "lemma": "Witzbold",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erkundigte",
+        "lemma": "erkundigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "höflich",
+        "lemma": "höflich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geige",
+        "lemma": "Geige",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "spielen",
+        "lemma": "spielen",
+        "pos": "verb",
+        "gloss_hint": "play"
+      }
     ]
   },
   "aa278b6e4b": {
@@ -5545,10 +5627,49 @@
   },
   "aa36c3682d": {
     "text": "Produkte aus biologischer Landwirtschaft erhalten das Prädikat Bio.",
-    "translation": null,
+    "translation": "Products from organic agriculture receive the organic label.",
     "source": "wiktionary",
     "lemmas": [
       "Bio"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Produkte",
+        "lemma": "Produkt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "biologischer",
+        "lemma": "biologisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Landwirtschaft",
+        "lemma": "Landwirtschaft",
+        "pos": "noun",
+        "gloss_hint": "agriculture"
+      },
+      {
+        "form": "erhalten",
+        "lemma": "erhalten",
+        "pos": "verb",
+        "gloss_hint": "receive"
+      },
+      {
+        "form": "Prädikat",
+        "lemma": "Prädikat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bio",
+        "lemma": "Bio",
+        "pos": "noun",
+        "gloss_hint": "organic"
+      }
     ]
   },
   "aa370c11aa": {
@@ -5781,10 +5902,43 @@
   },
   "aa3aa2c527": {
     "text": "„Auch die Hochschule Wismar hat Künstliche Intelligenz mit in ihrem Programm.“",
-    "translation": null,
+    "translation": "Wismar University of Applied Sciences also includes artificial intelligence in its program.",
     "source": "wiktionary",
     "lemmas": [
       "Künstliche Intelligenz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hochschule",
+        "lemma": "Hochschule",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wismar",
+        "lemma": "Wismar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Künstliche",
+        "lemma": "künstlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Intelligenz",
+        "lemma": "Intelligenz",
+        "pos": "noun",
+        "gloss_hint": "intelligence"
+      },
+      {
+        "form": "Programm",
+        "lemma": "Programm",
+        "pos": "noun",
+        "gloss_hint": "program"
+      }
     ]
   },
   "aa3ad9aba9": {
@@ -6756,11 +6910,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "It amazes both laymen and experts alike.",
     "source": "wiktionary",
     "lemmas": [
       "wundern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa4164745f": {
     "text": "„Die Verdunkelung des Himmels, von Mallarmé und Rimbaud betrieben, hat eine Leere hinterlassen, eine Sehnsucht, die durch die Fülle der Welt nicht aufzuwiegen zu sein scheint.“",
@@ -7163,10 +7318,43 @@
   },
   "aa45575dc1": {
     "text": "Der florierende Internetbuchhandel dreht den kleinen Buchhandlungen immer mehr die Luft ab.",
-    "translation": null,
+    "translation": "The flourishing online book trade is increasingly squeezing the air out of small bookstores.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem die Luft abdrehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "florierende",
+        "lemma": "florierend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Internetbuchhandel",
+        "lemma": "Internetbuchhandel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dreht",
+        "lemma": "drehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Buchhandlungen",
+        "lemma": "Buchhandlung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Luft",
+        "lemma": "Luft",
+        "pos": "noun",
+        "gloss_hint": "air"
+      }
     ]
   },
   "aa45e893d5": {
@@ -7562,10 +7750,31 @@
   },
   "aa49cf7631": {
     "text": "„Langsam, langsam! Reißt mich doch nicht so, als ob ich wettrennen sollte.“",
-    "translation": null,
+    "translation": "Slowly, slowly! Don't pull me like that, as if I should be racing.",
     "source": "wiktionary",
     "lemmas": [
       "wettrennen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Langsam",
+        "lemma": "langsam",
+        "pos": "adjective",
+        "gloss_hint": "slow"
+      },
+      {
+        "form": "Reißt",
+        "lemma": "reißen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wettrennen",
+        "lemma": "wettrennen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "aa4d4092cb": {
@@ -7737,11 +7946,12 @@
     "type": "expression",
     "note": "Ab hier geht es für mich nicht weiter",
     "synonyms": [],
-    "translation": null,
+    "translation": "This is the end of the line for me!",
     "source": "wiktionary",
     "lemmas": [
       "Endstation"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa52c51c03": {
     "text": "Fahren, Schauen, Baden und Schlemmen an der Küste von Maine: ein Ausflug nach Portland und durch die abwechslungsreiche Küstenlandschaft. Maine hat ein ganz spezielles Parfüm.",
@@ -8458,22 +8668,24 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "May God preserve hops and malt.",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa5fa3ab3d": {
     "text": "gespannt sein wie ein Flitzbogen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on tenterhooks",
     "source": "wiktionary",
     "lemmas": [
       "spannen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa5ff28c24": {
     "text": "Oh, hallo. Dich gibt es also auch noch?",
@@ -8796,10 +9008,79 @@
   },
   "aa62777441": {
     "text": "„1961 fuhr sie nach Jerusalem, um über den Prozess gegen Adolf Eichmann“ [zu] „berichten, der die Deportation der Juden in die Vernichtungslager im großen Stil organisierte.“",
-    "translation": null,
+    "translation": "In 1961 she traveled to Jerusalem to report on the trial against Adolf Eichmann, who organized the deportation of Jews to the extermination camps on a massive scale.",
     "source": "wiktionary",
     "lemmas": [
       "im großen Stil"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "fuhr",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jerusalem",
+        "lemma": "Jerusalem",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prozess",
+        "lemma": "Prozess",
+        "pos": "noun",
+        "gloss_hint": "trial"
+      },
+      {
+        "form": "Adolf",
+        "lemma": "Adolf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eichmann",
+        "lemma": "Eichmann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "berichten",
+        "lemma": "berichten",
+        "pos": "verb",
+        "gloss_hint": "report"
+      },
+      {
+        "form": "Deportation",
+        "lemma": "Deportation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Juden",
+        "lemma": "Jude",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vernichtungslager",
+        "lemma": "Vernichtungslager",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stil",
+        "lemma": "Stil",
+        "pos": "noun",
+        "gloss_hint": "style"
+      },
+      {
+        "form": "organisierte",
+        "lemma": "organisieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "aa63b0dafc": {
@@ -9823,10 +10104,67 @@
   },
   "aa67b577b3": {
     "text": "In der chemischen Analytik können Acetate leicht nachgewiesen werden, indem man die Probe mit Kaliumhydrogensulfat im Mörser zerreibt.",
-    "translation": null,
+    "translation": "In chemical analysis, acetates can be easily detected by grinding the sample with potassium hydrogen sulfate in a mortar.",
     "source": "wiktionary",
     "lemmas": [
       "Acetat"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "chemischen",
+        "lemma": "chemisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Analytik",
+        "lemma": "Analytik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Acetate",
+        "lemma": "Acetat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "leicht",
+        "lemma": "leicht",
+        "pos": "adjective",
+        "gloss_hint": "easy"
+      },
+      {
+        "form": "nachgewiesen",
+        "lemma": "nachweisen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Probe",
+        "lemma": "Probe",
+        "pos": "noun",
+        "gloss_hint": "sample"
+      },
+      {
+        "form": "Kaliumhydrogensulfat",
+        "lemma": "Kaliumhydrogensulfat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mörser",
+        "lemma": "Mörser",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zerreibt",
+        "lemma": "zerreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "aa67dd8022": {
@@ -9834,11 +10172,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the genie is out of the bottle",
     "source": "wiktionary",
     "lemmas": [
       "Geist"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa6888d52b": {
     "text": "„Das auch als AMOC (Atlantic meridional overturning circulation) bekannte Strömungssystem schwächt sich seit geraumer Zeit ab. Und der Golfstrom ist Teil der AMOC.“",
@@ -10160,10 +10499,49 @@
   },
   "aa6a63b9ca": {
     "text": "Wer hätte das gedacht? William und Kate flitterten pauschal – mit All-inclusive-Verpflegung.",
-    "translation": null,
+    "translation": "Who would have thought? William and Kate honeymooned on an all-inclusive package.",
     "source": "wiktionary",
     "lemmas": [
       "flittern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gedacht",
+        "lemma": "denken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "William",
+        "lemma": "William",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kate",
+        "lemma": "Kate",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "flitterten",
+        "lemma": "flittern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "pauschal",
+        "lemma": "pauschal",
+        "pos": "adjective",
+        "gloss_hint": "flat-rate"
+      },
+      {
+        "form": "All-inclusive-Verpflegung",
+        "lemma": "All-inclusive-Verpflegung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "aa6a8f2c34": {
@@ -10192,11 +10570,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's enough to make a dog cry",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa6be4ee77": {
     "text": "„Merke: Königsberger Klopse waren nie deftige Fleischkugeln, sondern eine in der deutschen Küche selten feine Variante der weltweit gekochten Fleischklöße.“",
@@ -10239,20 +10618,66 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go to hell",
     "source": "wiktionary",
     "lemmas": [
       "gehen",
       "Teufel"
     ],
-    "ref": "phrases/zum Teufel gehen"
+    "ref": "phrases/zum Teufel gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "aa6d21a9ac": {
     "text": "Und schau: er hätt den ganzen Häring zusammengegessen, wann der Simmerl nicht so wüst geschrien hätt.",
-    "translation": null,
+    "translation": "And look: he would have eaten the whole herring, if Simmerl hadn't screamed so wildly.",
     "source": "wiktionary",
     "lemmas": [
       "geschrien"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "schau",
+        "lemma": "schauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "hätt",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Häring",
+        "lemma": "Hering",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zusammengegessen",
+        "lemma": "zusammenessen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Simmerl",
+        "lemma": "Simmerl",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geschrien",
+        "lemma": "schreien",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wüst",
+        "lemma": "wüst",
+        "pos": "adjective",
+        "gloss_hint": "wild"
+      }
     ]
   },
   "aa6d3d53b3": {
@@ -10829,11 +11254,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's impossible to recover",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa740ae245": {
     "text": "„Ich habe die Zeiten der strengen Rassentrennung in den Vereinigten Staaten nicht mehr erlebt, ich musste nie im Bus hinten stehen, doch als ich aus den tristen Fluren der Berliner Ausländerpolizei in ein frisch gestrichenes Zimmer mit Topfpflanzen und Postern gebeten wurde, konnte ich mich des Gefühls nicht erwehren, dass man mich durch den Eingang für Gewöhnliche gelassen hatte.'Buschgirl. Wie ich unter die Deutschen geriet, Bertelsmann, München 2010, Seite 68, ISBN 978-3-570-10042-4.",
@@ -11275,10 +11701,61 @@
   },
   "aa7499abf5": {
     "text": "Du könntest ruhig mal kleinere Brötchen backen, das würde dich sympathischer machen.",
-    "translation": null,
+    "translation": "You could really afford to be a bit more modest; it would make you more likeable.",
     "source": "wiktionary",
     "lemmas": [
       "kleinere Brötchen backen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "könntest",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": "be able"
+      },
+      {
+        "form": "ruhig",
+        "lemma": "ruhig",
+        "pos": "adjective",
+        "gloss_hint": "calm"
+      },
+      {
+        "form": "kleinere",
+        "lemma": "klein",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Brötchen",
+        "lemma": "Brötchen",
+        "pos": "noun",
+        "gloss_hint": "bread roll"
+      },
+      {
+        "form": "backen",
+        "lemma": "backen",
+        "pos": "verb",
+        "gloss_hint": "bake"
+      },
+      {
+        "form": "würde",
+        "lemma": "werden",
+        "pos": "verb",
+        "gloss_hint": "become"
+      },
+      {
+        "form": "sympathischer",
+        "lemma": "sympathisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "machen",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "make"
+      }
     ]
   },
   "aa7566583a": {
@@ -12278,10 +12755,43 @@
   },
   "aa816ac0b2": {
     "text": "Schon ein halbes Jahr nach der Hochzeit war die Ehe wieder im Eimer.",
-    "translation": null,
+    "translation": "Just half a year after the wedding, the marriage was already down the drain.",
     "source": "wiktionary",
     "lemmas": [
       "im Eimer sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "halbes",
+        "lemma": "halb",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "Hochzeit",
+        "lemma": "Hochzeit",
+        "pos": "noun",
+        "gloss_hint": "wedding"
+      },
+      {
+        "form": "Ehe",
+        "lemma": "Ehe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eimer",
+        "lemma": "Eimer",
+        "pos": "noun",
+        "gloss_hint": "flop"
+      }
     ]
   },
   "aa8275097a": {
@@ -13548,10 +14058,37 @@
   },
   "aa932f128e": {
     "text": "Solche Angelegenheiten diskutieren wir nicht coram publico.",
-    "translation": null,
+    "translation": "We don't discuss such matters in public.",
     "source": "wiktionary",
     "lemmas": [
       "coram publico"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Angelegenheiten",
+        "lemma": "Angelegenheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "diskutieren",
+        "lemma": "diskutieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "coram",
+        "lemma": "coram",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "publico",
+        "lemma": "publico",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "aa939ab5bd": {
@@ -13802,12 +14339,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "nobody",
     "source": "wiktionary",
     "lemmas": [
       "kein"
     ],
-    "ref": "phrases/kein Arsch"
+    "ref": "phrases/kein Arsch",
+    "translation_model": "openai/gpt-4.1"
   },
   "aa95bec7a9": {
     "text": "„Während meiner Schulzeit fühlte ich mich oft wie ein Zaungast.“",
@@ -13919,11 +14457,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with an iron fist",
     "source": "wiktionary",
     "lemmas": [
       "Faust"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa9b75a798": {
     "text": "Achte auf Flyer, um weitere Informationen zu erhalten.",
@@ -14032,11 +14571,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "you've got another thing coming!",
     "source": "wiktionary",
     "lemmas": [
       "husten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa9e3c394e": {
     "text": "„Jacky haßte Junkies. Nicht nur, weil sie am Morgen nicht aus den Federn kamen.“",
@@ -14127,11 +14667,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If you need water, you look for it in the well.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aa9ef9d609": {
     "text": "„Edelsteins gesunder Menschenverstand — und sein Mut — machten ihn faktisch zur zentralen Persönlichkeit der tschechischen Judenheit bei ihren Kontakten mit den Deutschen.“",
@@ -15652,11 +16193,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "One more wave and you'll be able to swim.",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aaa6f330d5": {
     "text": "„Karl Joswig konnte und wollte er nicht als Hindernis ansehen, da Eddi Sillus es allein übernommen hatte, mit unserem Lieblingswärter fertig zu werden - Eddi, der schon früh den Meistergürtel der nordwestdeutschen Judokas erworben hatte.“",
@@ -15762,11 +16304,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I lost my heart in Heidelberg.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aaa8274097": {
     "text": "„Wie er da stand, über den Tisch gebeugt, mit der großen Glatze und dem grauen, unordentlichen Haarkranz, kam er mir sehr alt vor.“",
@@ -17212,11 +17755,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Give them an inch and they'll take a mile.",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aabb4a4132": {
     "text": "Das Thema der Ausstellung ist Kunst des 19. Jahrhunderts.",
@@ -17519,10 +18063,91 @@
   },
   "aabd18c259": {
     "text": "„Wir werden mit einer breiten Brust ins Spiel gehen“, kündigte Trainer Heiko Herrlich an, stellte aber gleichzeitig klar, dass er keine große Töne spucken wolle: „Von mir wird man keine Kampfansage hören, […]“",
-    "translation": null,
+    "translation": "\"We will enter the game with confidence,\" announced coach Heiko Herrlich, but at the same time made clear that he didn't want to make big threats: \"You won't hear any battle cry from me, [...]\"",
     "source": "wiktionary",
     "lemmas": [
       "große Töne spucken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "breiten",
+        "lemma": "breiten",
+        "pos": "verb",
+        "gloss_hint": "spread"
+      },
+      {
+        "form": "Brust",
+        "lemma": "Brust",
+        "pos": "noun",
+        "gloss_hint": "chest"
+      },
+      {
+        "form": "Spiel",
+        "lemma": "Spiel",
+        "pos": "noun",
+        "gloss_hint": "game"
+      },
+      {
+        "form": "gehen",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "go"
+      },
+      {
+        "form": "kündigte",
+        "lemma": "ankündigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Trainer",
+        "lemma": "Trainer",
+        "pos": "noun",
+        "gloss_hint": "coach"
+      },
+      {
+        "form": "stellte",
+        "lemma": "stellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "klar",
+        "lemma": "klar",
+        "pos": "adjective",
+        "gloss_hint": "clear"
+      },
+      {
+        "form": "große",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Töne",
+        "lemma": "Ton",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "spucken",
+        "lemma": "spucken",
+        "pos": "verb",
+        "gloss_hint": "spit"
+      },
+      {
+        "form": "Kampfansage",
+        "lemma": "Kampfansage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hören",
+        "lemma": "hören",
+        "pos": "verb",
+        "gloss_hint": "hear"
+      }
     ]
   },
   "aabeed5bb1": {
@@ -17646,11 +18271,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to wallow in the mud",
     "source": "wiktionary",
     "lemmas": [
       "Schlamm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aac265cb09": {
     "text": "am Abend ist der Tanz lieb, am Morgen der Schlaf süß",
@@ -18966,10 +19592,55 @@
   },
   "aad1dfca59": {
     "text": "„Er war nicht aktiv bei der Resistance, hat viel zu lang den Kommunisten angehangen, nun fühlt er sich ständig an der Front.“",
-    "translation": null,
+    "translation": "\"He was not actively involved in the Resistance, clung to communism for far too long, and now he constantly feels under pressure.\"",
     "source": "wiktionary",
     "lemmas": [
       "anhängen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "aktiv",
+        "lemma": "aktiv",
+        "pos": "adjective",
+        "gloss_hint": "active"
+      },
+      {
+        "form": "Resistance",
+        "lemma": "Resistance",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lang",
+        "lemma": "lang",
+        "pos": "adjective",
+        "gloss_hint": "long"
+      },
+      {
+        "form": "Kommunisten",
+        "lemma": "Kommunist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "angehangen",
+        "lemma": "anhängen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ständig",
+        "lemma": "ständig",
+        "pos": "adjective",
+        "gloss_hint": "constant"
+      },
+      {
+        "form": "Front",
+        "lemma": "Front",
+        "pos": "noun",
+        "gloss_hint": "frontline"
+      }
     ]
   },
   "aad24104c2": {
@@ -19217,11 +19888,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's not his doing",
     "source": "wiktionary",
     "lemmas": [
       "Garten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aad4c2e815": {
     "text": "Ich habe mir eine neue Börse geleistet.",
@@ -19564,11 +20236,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "around that time",
     "source": "wiktionary",
     "lemmas": [
       "Dreh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aad903cfc1": {
     "text": "„Das Wetter verschlechterte sich wieder, und es war notwendig, einen Halt einzulegen.“",
@@ -20713,11 +21386,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not be able to get something done",
     "source": "wiktionary",
     "lemmas": [
       "backen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aae5a4af9e": {
     "text": "„Flugzeuge, die mit Agrokerosin fliegen, stoßen trotzdem das klimaschädliche Treibhausgas Kohlendioxid aus – aber eben nur so viel, wie die Pflanzen der Atmosphäre zu Lebzeiten entzogen haben.“",
@@ -22134,11 +22808,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "guardian of the law",
     "source": "wiktionary",
     "lemmas": [
       "Gesetz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aaedb70f80": {
     "text": "„Diese Worte hatten auch sie mit Erleichterung erfüllt.“",
@@ -22803,11 +23478,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone kicks the bucket",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aaf1a0581f": {
     "text": "„Der Mythos wurde nicht schön widergespiegelt, sondern in einer lang hingezogenen Diskussion mit vielen scharfen Spitzen zersetzt.“",
@@ -23457,11 +24133,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be as happy as can be",
     "source": "wiktionary",
     "lemmas": [
       "Keks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "aaf8a2da6c": {
     "text": "„Ebenso sensibel für Empfindlichkeiten regierte Theoderich seine höchst unterschiedlichen Untertanen.“",
@@ -24115,15 +24792,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hit the nail on the head",
     "source": "wiktionary",
     "lemmas": [
       "Finger"
     ],
     "ref": "phrases/den Finger auf die Wunde legen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "aafb5fe1a8": {
     "text": "Ich weiß nicht, ob ich wirklich hier hingehöre, alle anderen sind so viel älter.",

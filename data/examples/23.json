@@ -790,13 +790,14 @@
     "type": "expression",
     "note": "Ärger liegt in der Luft",
     "synonyms": [],
-    "translation": null,
+    "translation": "the shit is hitting the fan",
     "source": "wiktionary",
     "lemmas": [
       "Kacke",
       "dampfen"
     ],
-    "ref": "phrases/die Kacke ist am Dampfen"
+    "ref": "phrases/die Kacke ist am Dampfen",
+    "translation_model": "openai/gpt-4.1"
   },
   "2302a33964": {
     "text": "„Nun kroch ich auf der Oberseite des Schanzkleids nach achtern, inmitten eines unglaublich schrecklichen und höllischen Getöses aus Donner und Geschrei und grellen Blitzen, während der Wind die ganze Zeit wie ein Tornado blies.“",
@@ -2378,11 +2379,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "wear woolen stockings",
     "source": "wiktionary",
     "lemmas": [
       "Strumpf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "230f907cbc": {
     "text": "„Eine Zeit lang hatte sie mehrmals am Tag die Kassette eingelegt, es gehört, zurückgespult, es noch einmal gehört, wieder zurückgespult.“",
@@ -2647,11 +2649,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Where there is no water, no calf can drink.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2310c16473": {
     "text": "Einige Menschen bekommen ständig Nervenzusammenbrüche, etwa wenn die Haare nicht ordentlich sind, der Lieblingspulli einen Fleck hat oder der gerade reparierte Wagen wieder kaputtgeht. „Ich krieg' einen Nervenzusammenbruch“, regen sie sich dann ganz laut auf. Das sind natürlich im medizinischen Sinn keine richtigen Nervenzusammenbrüche.",
@@ -4235,10 +4238,37 @@
   },
   "231eec40dd": {
     "text": "„Seine Arbeit fand häufig in Regionen statt, wo noch kurz zuvor Gewalt und Gräueltaten an der Tagesordnung gewesen waren, kam aber eigentlich nie direkt damit in Berührung.“",
-    "translation": null,
+    "translation": "His work often took place in regions where violence and atrocities had been commonplace just shortly before, but he actually never came into direct contact with it.",
     "source": "wiktionary",
     "lemmas": [
       "an der Tagesordnung sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Arbeit",
+        "lemma": "Arbeit",
+        "pos": "noun",
+        "gloss_hint": "task"
+      },
+      {
+        "form": "Gewalt",
+        "lemma": "Gewalt",
+        "pos": "noun",
+        "gloss_hint": "violence"
+      },
+      {
+        "form": "Gräueltaten",
+        "lemma": "Gräueltat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Berührung",
+        "lemma": "Berührung",
+        "pos": "noun",
+        "gloss_hint": "contact"
+      }
     ]
   },
   "2320622bc4": {
@@ -4592,12 +4622,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go overboard",
     "source": "wiktionary",
     "lemmas": [
       "Strang"
     ],
-    "ref": "phrases/über die Stränge schlagen"
+    "ref": "phrases/über die Stränge schlagen",
+    "translation_model": "openai/gpt-4.1"
   },
   "232494ab05": {
     "text": "Haben Sie schon eine Kontaktperson in der Gruppe? Ich kann Ihnen gerne die Telefonnummer von meinem Ansprechpartner geben.",
@@ -6176,18 +6207,64 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "come off well in something",
     "source": "wiktionary",
     "lemmas": [
       "wegkommen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "233561557a": {
     "text": "„Fernsehen und Rundfunk, Videos, Musik-CDs und digitale Fotografie - jede audiovisuelle Vergnügung soll das Media Center bieten, und dies ohne das Gefühl, man sei ein PC-Benutzer.“",
-    "translation": null,
+    "translation": "Television and radio, videos, music CDs and digital photography—every audiovisual entertainment should be offered by the media center, and all without the feeling that you are a PC user.",
     "source": "wiktionary",
     "lemmas": [
       "Vergnügung"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fernsehen",
+        "lemma": "Fernsehen",
+        "pos": "noun",
+        "gloss_hint": "television"
+      },
+      {
+        "form": "Rundfunk",
+        "lemma": "Rundfunk",
+        "pos": "noun",
+        "gloss_hint": "broadcasting"
+      },
+      {
+        "form": "Musik",
+        "lemma": "Musik",
+        "pos": "noun",
+        "gloss_hint": "music"
+      },
+      {
+        "form": "Fotografie",
+        "lemma": "Fotografie",
+        "pos": "noun",
+        "gloss_hint": "photography"
+      },
+      {
+        "form": "Vergnügung",
+        "lemma": "Vergnügung",
+        "pos": "noun",
+        "gloss_hint": "entertainment"
+      },
+      {
+        "form": "Gefühl",
+        "lemma": "Gefühl",
+        "pos": "noun",
+        "gloss_hint": "feeling"
+      },
+      {
+        "form": "Benutzer",
+        "lemma": "Benutzer",
+        "pos": "noun",
+        "gloss_hint": "user"
+      }
     ]
   },
   "2335c27e91": {
@@ -7525,11 +7602,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is dead tired",
     "source": "wiktionary",
     "lemmas": [
       "Socke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "233e513a99": {
     "text": "Es findet jährlich eine nationale Fußballmeisterschaft statt.",
@@ -11019,11 +11097,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone barely covers themselves (with a blanket)",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "235fba27e0": {
     "text": "Dieses Mittel dient dazu, Unkraut abzutöten.",
@@ -11070,11 +11149,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "drink away everything you own",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "23600113ce": {
     "text": "in Gang bringen",
@@ -13333,11 +13413,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a hard bed",
     "source": "wiktionary",
     "lemmas": [
       "Strohsack"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2370a792c2": {
     "text": "„Die Terrasse ist mit einem dekorativen Fries geschmückt, der Vertreter verschiedenster Völker bei der Verehrung des Königs zeigt.“",
@@ -14595,11 +14676,12 @@
     "type": "expression",
     "note": "unwürdig sterben",
     "synonyms": [],
-    "translation": null,
+    "translation": "die like a dog",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "23812927a7": {
     "text": "„Ein größerer Gegensatz zum Korsett vergangener Moden ist kaum vorstellbar.“",
@@ -15239,11 +15321,12 @@
     "type": "expression",
     "note": "nicht beachten",
     "synonyms": [],
-    "translation": null,
+    "translation": "not spare someone a glance",
     "source": "wiktionary",
     "lemmas": [
       "verschwenden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2383a3f790": {
     "text": "Die Flüchtlingskrise kann als heißes Eisen bezeichnet werden.",
@@ -16277,11 +16360,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as tense as a drum",
     "source": "wiktionary",
     "lemmas": [
       "Regenschirm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "238d198b6a": {
     "text": "Ich möchte dir ein Geheimnis anvertrauen.",
@@ -16956,10 +17040,31 @@
   },
   "23931e6a4e": {
     "text": "„Alle drei Gewächse reichen dem sich erholenden Rentner bis zur Gürtellinie.“",
-    "translation": null,
+    "translation": "All three plants reach the retired man recovering up to his waist.",
     "source": "wiktionary",
     "lemmas": [
       "Gewächs"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gewächse",
+        "lemma": "Gewächs",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rentner",
+        "lemma": "Rentner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erholenden",
+        "lemma": "erholen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "239323cc2f": {
@@ -18045,11 +18150,12 @@
     "type": "expression",
     "note": "übermäßiges Selbstbewusstsein entwickeln, überschwänglich / euphorisch werden, unrealistische Pläne haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "get carried away",
     "source": "wiktionary",
     "lemmas": [
       "ansetzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "23a4125ad3": {
     "text": "„Doch die Ernte war tatsächlich unterdurchschnittlich, was einerseits an schlechtem Saatgut, andererseits am fehlenden Dünger lag - das Vieh war aufgrund des Futtermangels stark reduziert worden, und weil künstlicher Dünger aus denselben Rohstoffen bestand wie Pulver und Sprengstoff, stand nicht genügend für die Landwirtschaft zur Verfügung.“",
@@ -18614,10 +18720,19 @@
   },
   "23a8917917": {
     "text": "Hast du es eilig? Nicht im Entferntesten.",
-    "translation": null,
+    "translation": "Are you in a hurry? Not in the slightest.",
     "source": "wiktionary",
     "lemmas": [
       "nicht im Entferntesten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "eilig",
+        "lemma": "eilig",
+        "pos": "adjective",
+        "gloss_hint": "hurried"
+      }
     ]
   },
   "23ac304b8e": {
@@ -18625,11 +18740,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "can't keep one's hands to oneself",
     "source": "wiktionary",
     "lemmas": [
       "Pfote"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "23ae004a6a": {
     "text": "„Dass es die Oranjes mit dem Rauchverbot nicht allzu genau nahmen, machte ihm die Monarchie fast schon wieder sympathisch.“",
@@ -19299,12 +19415,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be amazed",
     "source": "wiktionary",
     "lemmas": [
       "staunen"
     ],
-    "ref": "phrases/Bauklötzer staunen"
+    "ref": "phrases/Bauklötzer staunen",
+    "translation_model": "openai/gpt-4.1"
   },
   "23b57821ef": {
     "text": "warten können, bis man schwarz wird",
@@ -20355,11 +20472,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to dress someone up",
     "source": "wiktionary",
     "lemmas": [
       "schick"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "23c0e62585": {
     "text": "„Die Existenz von Pflanzen erfordert ein Mindestmaß an Kohlendioxid in der Planetenatmosphäre“. (Quelle: Der Spiegel ONLINE)",
@@ -22185,11 +22303,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is overjoyed",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "23d2262716": {
     "text": "Er hat den Müll höchstpersönlich rausgebracht.",
@@ -22529,10 +22648,49 @@
   },
   "23d3fda1d4": {
     "text": "… der Bauch des Schiffes ist nicht beschlagen; der große Mast wurzelt nicht im Zwischendeck, sondern ist rechts und links unter den Mastkörben gesprießt.",
-    "translation": null,
+    "translation": "…the hull of the ship is not sheathed; the great mast does not root in the between-deck, but is sprouted to the right and left under the mast baskets.",
     "source": "wiktionary",
     "lemmas": [
       "sprießen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bauch",
+        "lemma": "Bauch",
+        "pos": "noun",
+        "gloss_hint": "hull bottom"
+      },
+      {
+        "form": "Schiffes",
+        "lemma": "Schiff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beschlagen",
+        "lemma": "beschlagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mast",
+        "lemma": "Mast",
+        "pos": "noun",
+        "gloss_hint": "mast"
+      },
+      {
+        "form": "wurzelt",
+        "lemma": "wurzeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesprießt",
+        "lemma": "sprießen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "23d40b1ef0": {
@@ -23157,10 +23315,25 @@
   },
   "23db9cca4c": {
     "text": "Für das Projekt wurde alles Notwendige in die Wege geleitet.",
-    "translation": null,
+    "translation": "Everything necessary was set in motion for the project.",
     "source": "wiktionary",
     "lemmas": [
       "etwas in die Wege leiten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Projekt",
+        "lemma": "Projekt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Notwendige",
+        "lemma": "notwendig",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "23dbce1605": {
@@ -23694,10 +23867,49 @@
   },
   "23e1e3524d": {
     "text": "„Den Monarchen zu kritisieren gilt als überaus unhöflich, sonst würde mancher Tongaer vielleicht längst laut darüber nachgedacht haben, ob der König nicht selber einen Sprung in der Schüssel hat.“",
-    "translation": null,
+    "translation": "Criticizing the monarch is considered extremely impolite; otherwise, some Tongans might have long since openly wondered whether the king himself doesn't have a screw loose.",
     "source": "wiktionary",
     "lemmas": [
       "einen Sprung in der Schüssel haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Monarchen",
+        "lemma": "Monarch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kritisieren",
+        "lemma": "kritisieren",
+        "pos": "verb",
+        "gloss_hint": "criticize"
+      },
+      {
+        "form": "unhöflich",
+        "lemma": "unhöflich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "König",
+        "lemma": "König",
+        "pos": "noun",
+        "gloss_hint": "king"
+      },
+      {
+        "form": "Sprung",
+        "lemma": "Sprung",
+        "pos": "noun",
+        "gloss_hint": "crack"
+      },
+      {
+        "form": "Schüssel",
+        "lemma": "Schüssel",
+        "pos": "noun",
+        "gloss_hint": "bowl"
+      }
     ]
   },
   "23e1e41508": {
@@ -23912,10 +24124,37 @@
   },
   "23e388c486": {
     "text": "Der Wolf schaute ihn regungslos an und schnürte davon.",
-    "translation": null,
+    "translation": "The wolf looked at him motionlessly and slipped away.",
     "source": "wiktionary",
     "lemmas": [
       "schnüren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wolf",
+        "lemma": "Wolf",
+        "pos": "noun",
+        "gloss_hint": "wolf"
+      },
+      {
+        "form": "schaute",
+        "lemma": "schauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "regungslos",
+        "lemma": "regungslos",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "schnürte",
+        "lemma": "schnüren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "23e47bb616": {
@@ -24205,11 +24444,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The donkey goes first.",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "23e7bd4c2b": {
     "text": "Die Störche tragen, anders als die Reiher, den Hals im Fluge gestreckt.",
@@ -25757,12 +25997,13 @@
     "type": "expression",
     "note": "Spiegelei und Schinken auf Brot",
     "synonyms": [],
-    "translation": null,
+    "translation": "Strammer Max (fried egg and ham on bread)",
     "source": "wiktionary",
     "lemmas": [
       "stramm"
     ],
-    "ref": "phrases/Strammer Max"
+    "ref": "phrases/Strammer Max",
+    "translation_model": "openai/gpt-4.1"
   },
   "23f3ea2c6c": {
     "text": "„Ein Bauarbeiter verunglückt tödlich.“",
@@ -26745,10 +26986,25 @@
   },
   "23fa8ce7ac": {
     "text": "Einen EL Öl dazugeben.",
-    "translation": null,
+    "translation": "Add one tablespoon of oil.",
     "source": "wiktionary",
     "lemmas": [
       "EL"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Öl",
+        "lemma": "Öl",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dazugeben",
+        "lemma": "dazugeben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "23fb81211f": {

@@ -1747,12 +1747,12 @@
     "text": "Stock und Hut",
     "type": "expression",
     "note": null,
-    "translation": "Stick and hat",
+    "translation": "stick and hat (ready to go)",
     "source": "wiktionary",
     "lemmas": [
       "Hut"
     ],
-    "translation_model": "openai/gpt-4.1"
+    "translation_model": "manual"
   },
   "00192ea345": {
     "text": "Wer Wasser trinkt, hat keinen Wein zu bezahlen",
@@ -2400,10 +2400,37 @@
   },
   "001f513543": {
     "text": "Helene war außer sich, als sie vom Unfall ihres Mannes erfuhr.",
-    "translation": null,
+    "translation": "Helene was beside herself when she learned of her husband's accident.",
     "source": "wiktionary",
     "lemmas": [
       "außer sich sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Helene",
+        "lemma": "Helene",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erfuhr",
+        "lemma": "erfahren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unfall",
+        "lemma": "Unfall",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mannes",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "0020ec53e9": {
@@ -2545,12 +2572,12 @@
     "type": "expression",
     "note": "verrückt sein",
     "synonyms": [],
-    "translation": "to be crazy",
+    "translation": "to have someone on one's tail",
     "source": "wiktionary",
     "lemmas": [
       "Hacke"
     ],
-    "translation_model": "openai/gpt-4.1"
+    "translation_model": "manual"
   },
   "0024fa2e49": {
     "text": "„Dabei war die Fahrtschnelligkeit natürlich nicht immer die gleiche. Wenn auf einzelnen Plätzen infolge allzu großen Andrangs von den Seiten große Umstellungen vorgenommen werden mußten, stockten die ganzen Reihen und fuhren nur Schritt für Schritt, dann aber kam es auch wieder vor, daß für ein Weilchen alles blitzschnell vorbeijagte, bis es, wie von einer einzigen Bremse regiert, sich wieder besänftigte.“",
@@ -2564,10 +2591,37 @@
   },
   "002659323f": {
     "text": "Nach dem Nachtschießen mit dem G36 ersehnte er den Zapfenstreich.",
-    "translation": null,
+    "translation": "After night shooting with the G36, he longed for lights out.",
     "source": "wiktionary",
     "lemmas": [
       "Zapfenstreich"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Nachtschießen",
+        "lemma": "Nachtschießen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "G36",
+        "lemma": "G36",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ersehnte",
+        "lemma": "ersehnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zapfenstreich",
+        "lemma": "Zapfenstreich",
+        "pos": "noun",
+        "gloss_hint": "lights out"
+      }
     ]
   },
   "002681f54e": {
@@ -4023,12 +4077,12 @@
     "text": "der ganze Segen",
     "type": "expression",
     "note": null,
-    "translation": "the whole blessing",
+    "translation": "the whole lot",
     "source": "wiktionary",
     "lemmas": [
       "Segen"
     ],
-    "translation_model": "openai/gpt-4.1"
+    "translation_model": "manual"
   },
   "00423af41d": {
     "text": "Junge, gehorche mir und räum dein Zimmer auf!",
@@ -4817,10 +4871,43 @@
   },
   "004f7ccf13": {
     "text": "Der Pädagoge des SPD empfiehlt den Besuch einer Tagesstätte.",
-    "translation": null,
+    "translation": "The SPD educator recommends visiting a day care facility.",
     "source": "wiktionary",
     "lemmas": [
       "SPD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Pädagoge",
+        "lemma": "Pädagoge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "SPD",
+        "lemma": "SPD",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "empfiehlt",
+        "lemma": "empfehlen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Besuch",
+        "lemma": "Besuch",
+        "pos": "noun",
+        "gloss_hint": "visit"
+      },
+      {
+        "form": "Tagesstätte",
+        "lemma": "Tagesstätte",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "00514b04b8": {
@@ -5695,10 +5782,109 @@
   },
   "005d5975d1": {
     "text": "Josef Ostermann: „Und so haben wir also fünf Jahre lang aus eigenen Mitteln die Kirche mit all ihren Unkosten erhalten. Steuern und Strom und Wasser und Heizung, das ist über fünf Jahre geschehen, wir haben auch jetzt noch Geld in unserer Kasse.“",
-    "translation": null,
+    "translation": "Josef Ostermann: \"And so we maintained the church with all its expenses from our own resources for five years. Taxes and electricity and water and heating—that happened over five years, and we still have money in our funds.\"",
     "source": "wiktionary",
     "lemmas": [
       "Unkosten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Josef",
+        "lemma": "Josef",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ostermann",
+        "lemma": "Ostermann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fünf",
+        "lemma": "fünf",
+        "pos": "numeral",
+        "gloss_hint": "five"
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eigenen",
+        "lemma": "eigen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mitteln",
+        "lemma": "Mittel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kirche",
+        "lemma": "Kirche",
+        "pos": "noun",
+        "gloss_hint": "church building"
+      },
+      {
+        "form": "Unkosten",
+        "lemma": "Unkosten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erhalten",
+        "lemma": "erhalten",
+        "pos": "verb",
+        "gloss_hint": "support"
+      },
+      {
+        "form": "Steuern",
+        "lemma": "Steuer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strom",
+        "lemma": "Strom",
+        "pos": "noun",
+        "gloss_hint": "electricity"
+      },
+      {
+        "form": "Wasser",
+        "lemma": "Wasser",
+        "pos": "noun",
+        "gloss_hint": "water"
+      },
+      {
+        "form": "Heizung",
+        "lemma": "Heizung",
+        "pos": "noun",
+        "gloss_hint": "heating"
+      },
+      {
+        "form": "geschehen",
+        "lemma": "geschehen",
+        "pos": "verb",
+        "gloss_hint": "occur"
+      },
+      {
+        "form": "Geld",
+        "lemma": "Geld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kasse",
+        "lemma": "Kasse",
+        "pos": "noun",
+        "gloss_hint": "funds"
+      }
     ]
   },
   "005dc1b64d": {
@@ -8876,10 +9062,49 @@
   },
   "008219a173": {
     "text": "„New York also wie so oft eine Folie, ein Vorbild, nur diesmal für Angst: das neue Weltgefühl?“",
-    "translation": null,
+    "translation": "\"New York then, as so often, a foil, a model—only this time for fear: the new world feeling?\"",
     "source": "wiktionary",
     "lemmas": [
       "Folie"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "New",
+        "lemma": "New",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "York",
+        "lemma": "York",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Folie",
+        "lemma": "Folie",
+        "pos": "noun",
+        "gloss_hint": "foil"
+      },
+      {
+        "form": "Vorbild",
+        "lemma": "Vorbild",
+        "pos": "noun",
+        "gloss_hint": "model"
+      },
+      {
+        "form": "Angst",
+        "lemma": "Angst",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weltgefühl",
+        "lemma": "Weltgefühl",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "0084014a58": {
@@ -9913,10 +10138,55 @@
   },
   "0089e27179": {
     "text": "Obwohl, wie es im Märchen heißt, die Sonne alles an den Tag bringt, scheuen sich die Menschen nicht, zu lügen, was das Zeug hält.",
-    "translation": null,
+    "translation": "Although, as the fairy tale says, the sun brings everything to light, people do not hesitate to lie with all their might.",
     "source": "wiktionary",
     "lemmas": [
       "was das Zeug hält"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Märchen",
+        "lemma": "Märchen",
+        "pos": "noun",
+        "gloss_hint": "fairy tale"
+      },
+      {
+        "form": "Sonne",
+        "lemma": "Sonne",
+        "pos": "noun",
+        "gloss_hint": "sun"
+      },
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "daylight"
+      },
+      {
+        "form": "scheuen",
+        "lemma": "scheuen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lügen",
+        "lemma": "lügen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeug",
+        "lemma": "Zeug",
+        "pos": "noun",
+        "gloss_hint": "stuff"
+      }
     ]
   },
   "008a2ef96e": {
@@ -10200,10 +10470,25 @@
   },
   "009707d2b3": {
     "text": "»Er ist mir nicht grün!« bedeutet »Ich mag ihn nicht!«.",
-    "translation": null,
+    "translation": "\"He is not in my favor!\" means \"I don't like him!\"",
     "source": "wiktionary",
     "lemmas": [
       "jemandem nicht grün sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "grün",
+        "lemma": "grün",
+        "pos": "adjective",
+        "gloss_hint": "green"
+      },
+      {
+        "form": "mag",
+        "lemma": "mögen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "009a116f7d": {
@@ -12359,10 +12644,61 @@
   },
   "00b41d14ea": {
     "text": "„Fussgänger gehen vom Bahnhofe durch Novéant und die dritte Strasse r. ab 1 1/2 St. bis Gorze 1416 Einw. (Croix d’Or).“",
-    "translation": null,
+    "translation": "Pedestrians walk from the railway station through Novéant and turn off onto the third street on the right; it is 1½ hours on foot to Gorze, a town of 1,416 inhabitants (Croix d'Or).",
     "source": "wiktionary",
     "lemmas": [
       "r."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fussgänger",
+        "lemma": "Fussgänger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gehen",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "walk"
+      },
+      {
+        "form": "Bahnhofe",
+        "lemma": "Bahnhof",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Novéant",
+        "lemma": "Novéant",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dritte",
+        "lemma": "dritte",
+        "pos": "adjective",
+        "gloss_hint": "third"
+      },
+      {
+        "form": "Strasse",
+        "lemma": "Strasse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gorze",
+        "lemma": "Gorze",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einw",
+        "lemma": "Einwohner",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "00b4ab014d": {
@@ -13591,10 +13927,43 @@
   },
   "00c481cc79": {
     "text": "„Natürlich aber folge man dem unterzeichneten Abkommen auf Punkt und Beistrich.“",
-    "translation": null,
+    "translation": "Of course, one should follow the signed agreement to the letter.",
     "source": "wiktionary",
     "lemmas": [
       "auf Punkt und Beistrich"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "folge",
+        "lemma": "folgen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "unterzeichneten",
+        "lemma": "unterzeichnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abkommen",
+        "lemma": "Abkommen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Punkt",
+        "lemma": "Punkt",
+        "pos": "noun",
+        "gloss_hint": "period"
+      },
+      {
+        "form": "Beistrich",
+        "lemma": "Beistrich",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "00c48ca094": {
@@ -17986,10 +18355,73 @@
   },
   "00e729d182": {
     "text": "Das kommunale Engagement bewirkte, dass die Stadt kurz vor Weihnachten trotz desolater Haushaltslage ihr Vorkaufsrecht wahrnahm.",
-    "translation": null,
+    "translation": "The municipal commitment meant that the city exercised its right of first refusal shortly before Christmas despite its dire financial situation.",
     "source": "wiktionary",
     "lemmas": [
       "kommunal"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kommunale",
+        "lemma": "kommunal",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Engagement",
+        "lemma": "Engagement",
+        "pos": "noun",
+        "gloss_hint": "commitment"
+      },
+      {
+        "form": "bewirkte",
+        "lemma": "bewirken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stadt",
+        "lemma": "Stadt",
+        "pos": "noun",
+        "gloss_hint": "city"
+      },
+      {
+        "form": "kurz",
+        "lemma": "kurz",
+        "pos": "adjective",
+        "gloss_hint": "brief"
+      },
+      {
+        "form": "Weihnachten",
+        "lemma": "Weihnachten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "desolater",
+        "lemma": "desolat",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haushaltslage",
+        "lemma": "Haushaltslage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorkaufsrecht",
+        "lemma": "Vorkaufsrecht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wahrnahm",
+        "lemma": "wahrnehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "00e765d8b0": {

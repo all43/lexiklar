@@ -990,11 +990,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "It's nice to be lucky.",
     "source": "wiktionary",
     "lemmas": [
       "Schwein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b006b9ffc9": {
     "text": "Im Parlament werden die Gesetzesvorhaben der Regierung beraten.",
@@ -1572,10 +1573,37 @@
   },
   "b009b97f26": {
     "text": "Sie gestaltet sich ihren Tag frei Schnauze.",
-    "translation": null,
+    "translation": "She structures her day as she pleases.",
     "source": "wiktionary",
     "lemmas": [
       "frei Schnauze"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gestaltet",
+        "lemma": "gestalten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "frei",
+        "lemma": "frei",
+        "pos": "adjective",
+        "gloss_hint": "free"
+      },
+      {
+        "form": "Schnauze",
+        "lemma": "Schnauze",
+        "pos": "noun",
+        "gloss_hint": "snout"
+      }
     ]
   },
   "b00b571c2b": {
@@ -2208,11 +2236,12 @@
     "type": "expression",
     "note": "leiden",
     "synonyms": [],
-    "translation": null,
+    "translation": "to go through hell",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b01024f93b": {
     "text": "„Bevorzugtes Habitat sind Wälder, seltener trifft man den Dachs in städtischen Parks.“",
@@ -2519,11 +2548,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to make a pact with the devil",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b014b0bfc4": {
     "text": "„Der Lakai auf dem Kutschbock versucht mit verklammten Fingern das Halstuch um die frostroten Ohren zu knüpfen.“",
@@ -3023,10 +3053,61 @@
   },
   "b0185a2b81": {
     "text": "Die Mordserie geht weiter, die Soko jedoch hat vom Mörder keine Spur und tappt immer noch im Dunkeln.",
-    "translation": null,
+    "translation": "The murder series continues, but the task force has no trace of the murderer and is still in the dark.",
     "source": "wiktionary",
     "lemmas": [
       "im Dunkeln tappen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mordserie",
+        "lemma": "Mordserie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geht",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "weiter",
+        "lemma": "weiter",
+        "pos": "adverb",
+        "gloss_hint": "further"
+      },
+      {
+        "form": "Soko",
+        "lemma": "Soko",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mörder",
+        "lemma": "Mörder",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spur",
+        "lemma": "Spur",
+        "pos": "noun",
+        "gloss_hint": "clue"
+      },
+      {
+        "form": "tappt",
+        "lemma": "tappen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dunkeln",
+        "lemma": "dunkeln",
+        "pos": "verb",
+        "gloss_hint": "grow dark"
+      }
     ]
   },
   "b018793b71": {
@@ -3157,12 +3238,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Life is not a bed of roses.",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
     ],
-    "ref": "phrases/das Leben ist kein Ponyhof"
+    "ref": "phrases/das Leben ist kein Ponyhof",
+    "translation_model": "openai/gpt-4.1"
   },
   "b01aba3806": {
     "text": "„In Grenoble stellte Brasiliens Mittelfeldspielerin Formiga mit Anpfiff einen Rekord auf: Im Alter von 41 Jahren und 48 Tagen wurde sie die älteste Spielerin der WM-Geschichte.“",
@@ -3518,11 +3600,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to show off",
     "source": "wiktionary",
     "lemmas": [
       "dick"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b01f5f804f": {
     "text": "„In Wirklichkeit war der arme Scheißer in Trance.“",
@@ -3838,11 +3921,12 @@
     "type": "expression",
     "note": "! – ungeduldige Beschwichtigung",
     "synonyms": [],
-    "translation": null,
+    "translation": "Oh, fine!",
     "source": "wiktionary",
     "lemmas": [
       "doch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b026169fdb": {
     "text": "Wie viel kostet dieser Fernseher?",
@@ -4213,10 +4297,37 @@
   },
   "b02a245b16": {
     "text": "„Sogar bei Bioprodukten kann transgenes Soja im Spiel sein.“",
-    "translation": null,
+    "translation": "Even in organic products, transgenic soy can be involved.",
     "source": "wiktionary",
     "lemmas": [
       "im Spiel sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bioprodukten",
+        "lemma": "Bioprodukt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "transgenes",
+        "lemma": "transgen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Soja",
+        "lemma": "Soja",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spiel",
+        "lemma": "Spiel",
+        "pos": "noun",
+        "gloss_hint": "play"
+      }
     ]
   },
   "b02a44f3b1": {
@@ -4233,12 +4344,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "just the two of us",
     "source": "wiktionary",
     "lemmas": [
       "zu"
     ],
-    "ref": "phrases/zu zweit"
+    "ref": "phrases/zu zweit",
+    "translation_model": "openai/gpt-4.1"
   },
   "b02af899cc": {
     "text": "Maschine schreiben",
@@ -5630,11 +5742,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "connections (through friends)",
     "source": "wiktionary",
     "lemmas": [
       "Vitamin"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b03dfe55dd": {
     "text": "„Verächtlich spitzte er den Mund: »Das wird Folgen haben.« »Und ob!«“",
@@ -5746,19 +5859,65 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "live beyond one's means",
     "source": "wiktionary",
     "lemmas": [
       "leben"
     ],
-    "ref": "phrases/über seine Verhältnisse leben"
+    "ref": "phrases/über seine Verhältnisse leben",
+    "translation_model": "openai/gpt-4.1"
   },
   "b042e12bc8": {
     "text": "„Wie sich's nun herausgestellt hat, würde Ihre Gegenwart nicht nötig gewesen sein, und ich würde den Fall auch ohne Sie zu diesem gedeihlichen Ende geführt haben; aber nichtsdestoweniger bin ich Ihnen dankbar.“",
-    "translation": null,
+    "translation": "As it has now turned out, your presence would not have been necessary, and I would have brought the case to this satisfactory conclusion even without you; but nevertheless, I am grateful to you.",
     "source": "wiktionary",
     "lemmas": [
       "nichtsdestoweniger"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "herausgestellt",
+        "lemma": "herausstellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gegenwart",
+        "lemma": "Gegenwart",
+        "pos": "noun",
+        "gloss_hint": "presence"
+      },
+      {
+        "form": "nötig",
+        "lemma": "nötig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fall",
+        "lemma": "Fall",
+        "pos": "noun",
+        "gloss_hint": "case"
+      },
+      {
+        "form": "gedeihlichen",
+        "lemma": "gedeihlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ende",
+        "lemma": "Ende",
+        "pos": "noun",
+        "gloss_hint": "end (time)"
+      },
+      {
+        "form": "dankbar",
+        "lemma": "dankbar",
+        "pos": "adjective",
+        "gloss_hint": "grateful"
+      }
     ]
   },
   "b0432d83d1": {
@@ -6149,11 +6308,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something is easy to count on one hand",
     "source": "wiktionary",
     "lemmas": [
       "fünf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b04882f6f9": {
     "text": "Die Kanne ist auf den Boden geknallt.",
@@ -7148,11 +7308,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have no place in something",
     "source": "wiktionary",
     "lemmas": [
       "Platz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b050a7ccdd": {
     "text": "„Der Chefarzt vertrete den Versicherungsträger nach § 49 Gesamtvertrag in allen medizinischen Angelegenheiten gegenüber dem Vertragsarzt. […] Die medizinischen Vorfragen bei Prüfung einer Abrechnung seien daher keine medizinischen Angelegenheiten im Sinne des § 49 GV, die zwischen Chefarzt und Vertragsarzt zu klären wären.“",
@@ -7637,10 +7798,61 @@
   },
   "b05860dd08": {
     "text": "Wenn ein Schloss oder eine Burg keine Aborte beinhaltete, so verrichteten dessen Bewohner ihre Notdurft des Öfteren in den Fluren oder Sälen.",
-    "translation": null,
+    "translation": "If a castle or fortress did not contain latrines, its inhabitants would often relieve themselves in the corridors or halls.",
     "source": "wiktionary",
     "lemmas": [
       "seine Notdurft verrichten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schloss",
+        "lemma": "Schloss",
+        "pos": "noun",
+        "gloss_hint": "castle"
+      },
+      {
+        "form": "Burg",
+        "lemma": "Burg",
+        "pos": "noun",
+        "gloss_hint": "castle"
+      },
+      {
+        "form": "Aborte",
+        "lemma": "Abort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beinhaltete",
+        "lemma": "beinhalten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bewohner",
+        "lemma": "Bewohner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Notdurft",
+        "lemma": "Notdurft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fluren",
+        "lemma": "Flur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sälen",
+        "lemma": "Saal",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "b058f6b62e": {
@@ -7906,11 +8118,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "play dead",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b05e5af6ac": {
     "text": "jemandem auf den Schlips treten",
@@ -8462,19 +8675,47 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with full justification",
     "source": "wiktionary",
     "lemmas": [
       "Recht"
     ],
-    "ref": "phrases/mit Fug und Recht"
+    "ref": "phrases/mit Fug und Recht",
+    "translation_model": "openai/gpt-4.1"
   },
   "b062f56534": {
     "text": "Da du neu hier bist, hast du nichts zu melden.",
-    "translation": null,
+    "translation": "Since you're new here, you have no say in the matter.",
     "source": "wiktionary",
     "lemmas": [
       "nichts zu melden haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "neu",
+        "lemma": "neu",
+        "pos": "adjective",
+        "gloss_hint": "recent"
+      },
+      {
+        "form": "hier",
+        "lemma": "hier",
+        "pos": "adverb",
+        "gloss_hint": "here"
+      },
+      {
+        "form": "hast",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": "have (auxiliary)"
+      },
+      {
+        "form": "melden",
+        "lemma": "melden",
+        "pos": "verb",
+        "gloss_hint": "report"
+      }
     ]
   },
   "b0653d0884": {
@@ -8482,14 +8723,12 @@
     "type": "expression",
     "note": "jemanden schützen, protegieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "stand up for someone",
     "source": "wiktionary",
     "lemmas": [
       "stellen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "b0675693e4": {
     "text": "„95 Forderungen ‚zur Reformation von Bildungsinstitutionen‘ haben die Protestierenden an der HU im November aufgestellt – sie forderten neben besseren Bedingungen im Bachelor auch weniger Einfluss der Wirtschaft auf die Unis, faire Arbeitsbedingungen für Angestellte im öffentlichen Dienst und die Abschaffung des dreigliedrigen Schulsystems.“",
@@ -8881,10 +9120,43 @@
   },
   "b0696444ca": {
     "text": "Wer viel raucht oder trinkt, altert schneller.",
-    "translation": null,
+    "translation": "Whoever smokes or drinks a lot ages faster.",
     "source": "wiktionary",
     "lemmas": [
       "altern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "raucht",
+        "lemma": "rauchen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "trinkt",
+        "lemma": "trinken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "viel",
+        "lemma": "viel",
+        "pos": "adverb",
+        "gloss_hint": "much"
+      },
+      {
+        "form": "altert",
+        "lemma": "altern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schneller",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "b069ef2a96": {
@@ -8979,11 +9251,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You probably need to go to the bathroom.",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b06c8649f8": {
     "text": "An diesem Schnitt kann man sehen, wie die Führung der Rohrleitungen angedacht ist.",
@@ -9863,11 +10136,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not be able to look someone in the eye",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b073ccf2c3": {
     "text": "Eine Annehmlichkeit ist ein angenehmes Ereignis.",
@@ -10747,10 +11021,43 @@
   },
   "b08020772b": {
     "text": "Der Gradient des Druckfeldes P kann abgekürzt mit grad P angegeben werden (oder auch durch ∇ P).",
-    "translation": null,
+    "translation": "The gradient of the pressure field P can be abbreviated as grad P (or also as ∇ P).",
     "source": "wiktionary",
     "lemmas": [
       "grad"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gradient",
+        "lemma": "Gradient",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Druckfeldes",
+        "lemma": "Druckfeld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abgekürzt",
+        "lemma": "abkürzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "grad",
+        "lemma": "grad",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "angegeben",
+        "lemma": "angeben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "b080793f6e": {
@@ -11416,18 +11723,40 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be an old-timer (at university)",
     "source": "wiktionary",
     "lemmas": [
       "Semester"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b083a457f1": {
     "text": "„Einer knurrt, dann geht das Gebell los.“",
-    "translation": null,
+    "translation": "One starts growling, then the barking begins.",
     "source": "wiktionary",
     "lemmas": [
       "Gebell"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Einer",
+        "lemma": "Einer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "knurrt",
+        "lemma": "knurren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gebell",
+        "lemma": "Gebell",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "b08404deaa": {
@@ -11569,10 +11898,43 @@
   },
   "b0854d379c": {
     "text": "MGs sind gut im städtischen Kampf einsetzbar.",
-    "translation": null,
+    "translation": "Machine guns are effective in urban combat.",
     "source": "wiktionary",
     "lemmas": [
       "MG"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "MGs",
+        "lemma": "MG",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gut",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": "good"
+      },
+      {
+        "form": "städtischen",
+        "lemma": "städtisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kampf",
+        "lemma": "Kampf",
+        "pos": "noun",
+        "gloss_hint": "battle"
+      },
+      {
+        "form": "einsetzbar",
+        "lemma": "einsetzbar",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "b08762e19c": {
@@ -12489,10 +12851,97 @@
   },
   "b08c35bb4d": {
     "text": "„Kein Mobiltelefon, kein Notebook, kein GPS wäre je erfunden worden, wenn nicht Querdenker wie Einstein, Bohr oder Planck ihre Genialität darauf verwendet hätten, jahrhundertealte Vorstellungen über Raum und Zeit umzustürzen.“",
-    "translation": null,
+    "translation": "No mobile phone, no notebook, no GPS would ever have been invented if unconventional thinkers like Einstein, Bohr, or Planck had not used their genius to overturn centuries-old ideas about space and time.",
     "source": "wiktionary",
     "lemmas": [
       "GPS"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mobiltelefon",
+        "lemma": "Mobiltelefon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Notebook",
+        "lemma": "Notebook",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "GPS",
+        "lemma": "GPS",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erfunden",
+        "lemma": "erfinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Querdenker",
+        "lemma": "Querdenker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einstein",
+        "lemma": "Einstein",
+        "pos": "noun",
+        "gloss_hint": "genius"
+      },
+      {
+        "form": "Bohr",
+        "lemma": "Bohr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Planck",
+        "lemma": "Planck",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Genialität",
+        "lemma": "Genialität",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verwendet",
+        "lemma": "verwenden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorstellungen",
+        "lemma": "Vorstellung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Raum",
+        "lemma": "Raum",
+        "pos": "noun",
+        "gloss_hint": "space"
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      },
+      {
+        "form": "umzustürzen",
+        "lemma": "umstürzen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "b08ce6d5f0": {
@@ -12910,10 +13359,55 @@
   },
   "b092314947": {
     "text": "„Ein hohes Alter und bestehende Vorerkrankungen: Diese Faktoren werden im Zusammenhang mit den Corona-Risikogruppen stets genannt.“",
-    "translation": null,
+    "translation": "Advanced age and existing pre-existing conditions: these factors are always mentioned in connection with coronavirus risk groups.",
     "source": "wiktionary",
     "lemmas": [
       "im Zusammenhang mit"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hohes",
+        "lemma": "hoch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Alter",
+        "lemma": "Alter",
+        "pos": "noun",
+        "gloss_hint": "old age"
+      },
+      {
+        "form": "Vorerkrankungen",
+        "lemma": "Vorerkrankung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Faktoren",
+        "lemma": "Faktor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zusammenhang",
+        "lemma": "Zusammenhang",
+        "pos": "noun",
+        "gloss_hint": "context"
+      },
+      {
+        "form": "Corona-Risikogruppen",
+        "lemma": "Corona-Risikogruppe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "genannt",
+        "lemma": "nennen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "b093124627": {
@@ -14012,10 +14506,25 @@
   },
   "b09d0fda11": {
     "text": "Sowas kann schon mal passieren, davon geht die Welt nicht unter.",
-    "translation": null,
+    "translation": "Something like that can happen, but it's not the end of the world.",
     "source": "wiktionary",
     "lemmas": [
       "sowas"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "passieren",
+        "lemma": "passieren",
+        "pos": "verb",
+        "gloss_hint": "happen"
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      }
     ]
   },
   "b09d5169ac": {
@@ -14089,11 +14598,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "see someone home (with a light)",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b09e2d1c84": {
     "text": "Er ist zwar kein ausgesprochener Streber, aber doch ziemlich ehrgeizig.",
@@ -14286,22 +14796,24 @@
     "type": "expression",
     "note": "fallen, stürzen; scheitern",
     "synonyms": [],
-    "translation": null,
+    "translation": "fall flat on your face",
     "source": "wiktionary",
     "lemmas": [
       "fliegen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b0a1deb5ee": {
     "text": "ins Benehmen setzen",
     "type": "expression",
     "note": "absprechen",
     "synonyms": [],
-    "translation": null,
+    "translation": "come to an agreement",
     "source": "wiktionary",
     "lemmas": [
       "setzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b0a21a3e23": {
     "text": "Das passt nicht mehr in die heutige Welt.",
@@ -14602,10 +15114,37 @@
   },
   "b0a8566752": {
     "text": "„Hin und wieder befeuchtete Mr. Mullins die Watte mit Alkohol.“",
-    "translation": null,
+    "translation": "Now and then Mr. Mullins moistened the cotton with alcohol.",
     "source": "wiktionary",
     "lemmas": [
       "Watte"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "befeuchtete",
+        "lemma": "befeuchten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mullins",
+        "lemma": "Mullins",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Watte",
+        "lemma": "Watte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Alkohol",
+        "lemma": "Alkohol",
+        "pos": "noun",
+        "gloss_hint": "alcohol (beverage)"
+      }
     ]
   },
   "b0a87c008e": {
@@ -16776,10 +17315,25 @@
   },
   "b0b562641d": {
     "text": "„Deine Exen waren ja eher so, na ja, so Jungs halt.“",
-    "translation": null,
+    "translation": "Your exes were more like, well, just boys, you know.",
     "source": "wiktionary",
     "lemmas": [
       "Ex"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Exen",
+        "lemma": "Ex",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jungs",
+        "lemma": "Junge",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "b0b5848b02": {
@@ -17658,10 +18212,25 @@
   },
   "b0baaa2c6f": {
     "text": "In diesem Shop gibt es auch Zeitungen.",
-    "translation": null,
+    "translation": "This shop also has newspapers.",
     "source": "wiktionary",
     "lemmas": [
       "Shop"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Shop",
+        "lemma": "Shop",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeitungen",
+        "lemma": "Zeitung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "b0bbdaee12": {
@@ -17777,11 +18346,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not care about it",
     "source": "wiktionary",
     "lemmas": [
       "draus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b0bcc43814": {
     "text": "„Vespasian hatte ihnen freie Religionsübung gestattet, doch mußten sie das Kopfgeld von einem halben Sekel, das sie früher an den Tempelschatz zahlten, an den Kapitolinischen Jupiter entrichten.“",
@@ -18815,11 +19385,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something gets you down",
     "source": "wiktionary",
     "lemmas": [
       "Gemüt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b0c3bd7496": {
     "text": "Bordeaux liegt an der Garonne, etwa 45 Kilometer vom Meer entfernt.",
@@ -18904,11 +19475,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "near post (in soccer)",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b0c4e5494b": {
     "text": "Die Neugierigen umzingelten den Mann, der am Aufzug zusammengebrochen war.",
@@ -18978,10 +19550,43 @@
   },
   "b0c4f149cb": {
     "text": "Die geplante Renovierung des Rathauses fiel dem Rotstift zum Opfer.",
-    "translation": null,
+    "translation": "The planned renovation of the town hall fell victim to budget cuts.",
     "source": "wiktionary",
     "lemmas": [
       "dem Rotstift zum Opfer fallen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "geplante",
+        "lemma": "geplant",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Renovierung",
+        "lemma": "Renovierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rathauses",
+        "lemma": "Rathaus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rotstift",
+        "lemma": "Rotstift",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Opfer",
+        "lemma": "Opfer",
+        "pos": "noun",
+        "gloss_hint": "victim"
+      }
     ]
   },
   "b0c51c9b97": {
@@ -19142,11 +19747,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "push it to the limit",
     "source": "wiktionary",
     "lemmas": [
       "treiben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b0c631f6c9": {
     "text": "Die Schenkel verbleiben beim Rückschnitt am Stock.",
@@ -19700,11 +20306,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not lift a finger",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b0ccb28925": {
     "text": "„Da lädt zum Beispiel ein Schreiben der Hausverwaltung offen zur Denunziation ein.“",
@@ -19721,12 +20328,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pull a rabbit out of the hat",
     "source": "wiktionary",
     "lemmas": [
       "Hut"
     ],
-    "ref": "phrases/aus dem Hut zaubern"
+    "ref": "phrases/aus dem Hut zaubern",
+    "translation_model": "openai/gpt-4.1"
   },
   "b0cd149196": {
     "text": "„Bei diesen Waren stehen dann meist der egale Warenausfall, die Fehlerlosigkeit der Ware und die Reinheit des Warenbildes im Vordergrund, und diese Eigenschaften stellen die qualitätsentscheidenden Merkmale des Artikels dar.“",
@@ -19976,11 +20584,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "you could do anything for me (even the impossible)",
     "source": "wiktionary",
     "lemmas": [
       "Storch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b0d3e9df04": {
     "text": "„Nach den Konflikten um politische Partizipation und Repräsentation, Verfassungsgebung und Nationalstaat traten nun neue Phänomene wie die soziale Frage der Industriearbeiter und die Folgen der Urbanisierung in den Vordergrund.“",
@@ -20447,12 +21056,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to harness the oxen",
     "source": "wiktionary",
     "lemmas": [
       "Ochse",
       "spannen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b0d6a4ef33": {
     "text": "„Zur Rolle von Formeln in den Schreibprozessen von Kindern mit Migrationshintergrund nannte Prof. Kostrzewa folgende Thesen:…“",
@@ -20713,10 +21323,43 @@
   },
   "b0da8c47c7": {
     "text": "Ich weiß, dieses Auto können wir uns nicht leisten, aber wir können ja mal ein Auge riskieren.",
-    "translation": null,
+    "translation": "I know we can't afford this car, but we can at least take a look.",
     "source": "wiktionary",
     "lemmas": [
       "ein Auge riskieren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "weiß",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auto",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "leisten",
+        "lemma": "leisten",
+        "pos": "verb",
+        "gloss_hint": "afford"
+      },
+      {
+        "form": "riskieren",
+        "lemma": "riskieren",
+        "pos": "verb",
+        "gloss_hint": "dare"
+      },
+      {
+        "form": "Auge",
+        "lemma": "Auge",
+        "pos": "noun",
+        "gloss_hint": "eye"
+      }
     ]
   },
   "b0db6da503": {
@@ -21809,12 +22452,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "let someone walk right into a trap",
     "source": "wiktionary",
     "lemmas": [
       "laufen",
       "Messer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b0e2dbc571": {
     "text": "Das Stellenangebot war eine einmalige Gelegenheit, die ich einfach ergreifen musste.",
@@ -22686,11 +23330,12 @@
     "type": "expression",
     "note": "jemanden betrügen, jemanden übervorteilen",
     "synonyms": [],
-    "translation": null,
+    "translation": "rip someone off",
     "source": "wiktionary",
     "lemmas": [
       "hauen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b0eaf48308": {
     "text": "Der Zusammenhalt in einer Familie zeigt sich erst richtig bei Problemen, Ärger und Streit.",
@@ -22922,10 +23567,61 @@
   },
   "b0ecacdcaa": {
     "text": "„Der HSV Hamburg gewinnt den ersten internationalen Titel im Pokalsiegerwettbewerb gegen Ademar Leon (Spanien).“",
-    "translation": null,
+    "translation": "HSV Hamburg wins its first international title in the cup winners' competition against Ademar Leon (Spain).",
     "source": "wiktionary",
     "lemmas": [
       "HSV"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "HSV Hamburg",
+        "lemma": "HSV Hamburg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gewinnt",
+        "lemma": "gewinnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ersten",
+        "lemma": "erste",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "internationalen",
+        "lemma": "international",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Titel",
+        "lemma": "Titel",
+        "pos": "noun",
+        "gloss_hint": "title"
+      },
+      {
+        "form": "Pokalsiegerwettbewerb",
+        "lemma": "Pokalsiegerwettbewerb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ademar Leon",
+        "lemma": "Ademar Leon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spanien",
+        "lemma": "Spanien",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "b0eccd3c33": {
@@ -24154,11 +24850,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "come to drink water from my toilet (act shamelessly or take advantage)",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b0f97cdd4d": {
     "text": "sich nicht vom Tisch wischen lassen",
@@ -24394,11 +25091,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Spiders in the morning bring sorrow and worry.",
     "source": "wiktionary",
     "lemmas": [
       "spinnen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "b0fa02159d": {
     "text": "„Als sein erstes Orchesterstück 1911 in München uraufgeführt wurde, stieß es bei den Musikern auf Unverständnis, sogar auf Feindseligkeit.“",

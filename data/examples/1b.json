@@ -795,11 +795,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be able to rely on someone completely",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1b0bf83c89": {
     "text": "„Das Land gehört der Gemeinschaft, es ist heilig, denn man hat es von den Ahnen übernommen.“",
@@ -2798,11 +2799,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a thick skin",
     "source": "wiktionary",
     "lemmas": [
       "Buckel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1b2575554e": {
     "text": "Er ist wirklich so beschränkt, dass eine Sonderschule für ihn die bestmögliche Förderung ermöglichen würde.",
@@ -3266,10 +3268,25 @@
   },
   "1b28119aea": {
     "text": "Ich werde mich nun ein Stündchen aufs Ohr legen.",
-    "translation": null,
+    "translation": "I'm going to take a little nap now.",
     "source": "wiktionary",
     "lemmas": [
       "sich aufs Ohr legen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "legen",
+        "lemma": "legen",
+        "pos": "verb",
+        "gloss_hint": "lay"
+      },
+      {
+        "form": "Ohr",
+        "lemma": "Ohr",
+        "pos": "noun",
+        "gloss_hint": "ear"
+      }
     ]
   },
   "1b28939e31": {
@@ -5318,11 +5335,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to drop a trick",
     "source": "wiktionary",
     "lemmas": [
       "Masche"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1b361c8143": {
     "text": "„Roger drückte den Knopf für die Instrumentenbeleuchtung im Cockpit.“",
@@ -6269,12 +6287,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to wrap someone in cotton wool",
     "source": "wiktionary",
     "lemmas": [
       "Zuckerwatte"
     ],
-    "ref": "phrases/jemanden in Zuckerwatte packen"
+    "ref": "phrases/jemanden in Zuckerwatte packen",
+    "translation_model": "openai/gpt-4.1"
   },
   "1b3dc02361": {
     "text": "„Gegen 11.00 Uhr MEZ öffneten Mitarbeiter des Instituts für Biomedizinische Probleme (IMBP) eine versiegelte Luke, um die Isolationsstudie planmäßig zu beenden.“",
@@ -6524,12 +6543,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to suit someone down to the ground",
     "source": "wiktionary",
     "lemmas": [
       "Kram"
     ],
-    "ref": "phrases/jemandem in den Kram passen"
+    "ref": "phrases/jemandem in den Kram passen",
+    "translation_model": "openai/gpt-4.1"
   },
   "1b4338e883": {
     "text": "„Durch sein aggressives Auftreten hatte er sich den Zorn der englischen Regierung zugezogen.“",
@@ -8481,11 +8501,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take the wind out of someone's sails",
     "source": "wiktionary",
     "lemmas": [
       "Trumpf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1b56ec3f69": {
     "text": "Kurz vor Weihnachten sind alle Züge total überfüllt.",
@@ -12019,11 +12040,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go off like a rocket",
     "source": "wiktionary",
     "lemmas": [
       "abgehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1b771dbaa4": {
     "text": "Alle strebten nach draußen.",
@@ -13093,11 +13115,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to find something out indirectly",
     "source": "wiktionary",
     "lemmas": [
       "Umweg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1b7fa7d08a": {
     "text": "„Die Richterin nutzte die Gelegenheit auch für eine Mahnung, die sich auf Rechtsextremismus und Rassismus in der heutigen Zeit bezieht: ‚Wehret den Anfängen, wenn Menschen ausgegrenzt und ihrer Werte beraubt werden‘, sagte Meier-Göring in einer leidenschaftlich vorgetragenen Urteilsbegründung.“",
@@ -13308,11 +13331,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the ups and downs",
     "source": "wiktionary",
     "lemmas": [
       "Wehe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1b820e3e6c": {
     "text": "Der Knappe führt das Pferd in den Stall.",
@@ -13920,10 +13944,73 @@
   },
   "1b8c510451": {
     "text": "„Er leistete auf der Stelle mit tiefer Verbeugung Dank und Abbitte, wobei er bedachte, wie nachsichtig er behandelt worden und wie billig er davongekommen war.“",
-    "translation": null,
+    "translation": "He immediately offered his thanks and apologies with a deep bow, reflecting on how leniently he had been treated and how fortunate he had been to escape so lightly.",
     "source": "wiktionary",
     "lemmas": [
       "Abbitte leisten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "leistete",
+        "lemma": "leisten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stelle",
+        "lemma": "Stelle",
+        "pos": "noun",
+        "gloss_hint": "place"
+      },
+      {
+        "form": "Verbeugung",
+        "lemma": "Verbeugung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dank",
+        "lemma": "Dank",
+        "pos": "noun",
+        "gloss_hint": "thanks"
+      },
+      {
+        "form": "Abbitte",
+        "lemma": "Abbitte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bedachte",
+        "lemma": "bedenken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "nachsichtig",
+        "lemma": "nachsichtig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "behandelt",
+        "lemma": "behandeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "billig",
+        "lemma": "billig",
+        "pos": "adjective",
+        "gloss_hint": "fair"
+      },
+      {
+        "form": "davongekommen",
+        "lemma": "davonkommen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "1b8c575208": {
@@ -14453,11 +14540,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like a bull in a china shop",
     "source": "wiktionary",
     "lemmas": [
       "Storch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1b8f8a37e5": {
     "text": "[Rezept:] „Die geformten Brote mit dem Schluss nach unten in die mit Roggenmehl ausgestaubten Peddigrohrkörbchen setzen und zugedeckt 40- 50 Minuten gehen lassen.“",
@@ -14889,11 +14977,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to call it a day",
     "source": "wiktionary",
     "lemmas": [
       "Feierabend"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1b98125774": {
     "text": "sage und schreibe",
@@ -16694,13 +16783,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make a mountain out of a molehill",
     "source": "wiktionary",
     "lemmas": [
       "Mücke",
       "Elefant"
     ],
-    "ref": "phrases/aus einer Mücke einen Elefanten machen"
+    "ref": "phrases/aus einer Mücke einen Elefanten machen",
+    "translation_model": "openai/gpt-4.1"
   },
   "1ba32dcac3": {
     "text": "„Mir wäre es, ehrlich gesagt, lieber gewesen, der Professor hätte von seinem eigenen Buch erzählt, als Passagen von Andrew vorzulesen.“",
@@ -20651,11 +20741,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be a red rag (to someone) / be a provocation",
     "source": "wiktionary",
     "lemmas": [
       "Tuch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1bd16db39e": {
     "text": "„Angestellte der Marine, die zu / von einer Schwimmbohrinsel reisen, welche selbständig manövrierbar ist, müssen in Besitz eines Schreibens sein, der vom Arbeitgeber oder dem Schwimmplattform-Inhaber ausgestellt wurde.“",
@@ -22566,11 +22657,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "complete beginner",
     "source": "wiktionary",
     "lemmas": [
       "Anfänger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1bde3ff76c": {
     "text": "„Die eine oder andere Lage Korn, gemischt mit einigen Bierchen, versetzt die Stehenden hinter der Theke in immer bessere Stimmung.“",
@@ -23611,11 +23703,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have an eye for something",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1be77cbe9e": {
     "text": "„Ob in Brennstoffzellen, zur medizinischen Diagnostik oder Produktion neuer Materialien und Energieträger — Katalysatoren haben ein enormes Einsatzpotenzial.“",

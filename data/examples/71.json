@@ -1349,10 +1349,25 @@
   },
   "7112c034a7": {
     "text": "9. Platz - Müller-Lüdenscheid",
-    "translation": null,
+    "translation": "9th place - Müller-Lüdenscheid",
     "source": "wiktionary",
     "lemmas": [
       "9."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Platz",
+        "lemma": "Platz",
+        "pos": "noun",
+        "gloss_hint": "rank"
+      },
+      {
+        "form": "Müller-Lüdenscheid",
+        "lemma": "Müller-Lüdenscheid",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7115fde02a": {
@@ -2607,11 +2622,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "see from the cow's udder what butter will cost in the city",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "711f5eea1a": {
     "text": "„Man gab eine Tragödie, in der eine hübsche Schauspielerin die stumme Rolle einer Priesterin zu spielen hatte.“",
@@ -3071,11 +3087,12 @@
     "type": "expression",
     "note": ") – sich für eine Person einsetzen",
     "synonyms": [],
-    "translation": null,
+    "translation": "stick up for someone",
     "source": "wiktionary",
     "lemmas": [
       "Lanze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "712305f010": {
     "text": "„Der Buchstabe für das Thorn geht übrigens auf ein entsprechendes, gleichlautendes Runenzeichen zurück.“",
@@ -4389,11 +4406,12 @@
     "type": "expression",
     "note": "Ausdruck der Verwunderung",
     "synonyms": [],
-    "translation": null,
+    "translation": "you've got to be kidding!",
     "source": "wiktionary",
     "lemmas": [
       "Motte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "71323b0491": {
     "text": "„Ursache für ein Geräusch sind Schwingungsvorgänge, die in der Regel nicht periodisch verlaufen und sich in ihrer Struktur zeitlich ändern können.“",
@@ -4506,11 +4524,12 @@
       "Filmpremiere",
       "Schauspieler"
     ],
-    "translation": null,
+    "translation": "a red carpet",
     "source": "wiktionary",
     "lemmas": [
       "rot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "71348f99e2": {
     "text": "Ingendorf liegt in Deutschlands Westen.",
@@ -5212,12 +5231,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "drink too much",
     "source": "wiktionary",
     "lemmas": [
       "tief"
     ],
-    "ref": "phrases/zu tief ins Glas schauen"
+    "ref": "phrases/zu tief ins Glas schauen",
+    "translation_model": "openai/gpt-4.1"
   },
   "713a4d38d1": {
     "text": "Sie ist offiziell auf einer Geschäftsreise, aber in Wirklichkeit arbeitet sie weiter an dem geheimen Projekt.",
@@ -5479,10 +5499,31 @@
   },
   "713bd0fa35": {
     "text": "„Sollten sie sich doch untereinander zerfleischen, was sie ja auch zur Genüge taten.“",
-    "translation": null,
+    "translation": "If only they would tear each other apart, which they certainly did enough of.",
     "source": "wiktionary",
     "lemmas": [
       "zur Genüge"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "untereinander",
+        "lemma": "untereinander",
+        "pos": "adverb",
+        "gloss_hint": "among each other"
+      },
+      {
+        "form": "zerfleischen",
+        "lemma": "zerfleischen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Genüge",
+        "lemma": "Genüge",
+        "pos": "noun",
+        "gloss_hint": "sufficiency"
+      }
     ]
   },
   "713c61f1fc": {
@@ -6796,10 +6837,67 @@
   },
   "714570f08c": {
     "text": "„Da ich nun an diese Geschichte dachte und meines Gastherren letzte Worte betrachtete, konnte ich mir unschwer einbilden, was die Glocke geschlagen hat.“",
-    "translation": null,
+    "translation": "Since I now thought about this story and considered my host's last words, I could easily imagine what the bell had struck.",
     "source": "wiktionary",
     "lemmas": [
       "was die Glocke geschlagen hat"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "dachte",
+        "lemma": "denken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geschichte",
+        "lemma": "Geschichte",
+        "pos": "noun",
+        "gloss_hint": "story"
+      },
+      {
+        "form": "Gastherren",
+        "lemma": "Gastherr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "letzte",
+        "lemma": "letzte",
+        "pos": "adjective",
+        "gloss_hint": "last"
+      },
+      {
+        "form": "Worte",
+        "lemma": "Wort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "betrachtete",
+        "lemma": "betrachten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "einbilden",
+        "lemma": "einbilden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Glocke",
+        "lemma": "Glocke",
+        "pos": "noun",
+        "gloss_hint": "bell"
+      },
+      {
+        "form": "geschlagen",
+        "lemma": "schlagen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "7146afda0b": {
@@ -6816,11 +6914,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "kiss my ass",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "714834ddc6": {
     "text": "Auf Wochenmärkten wird viel Gemüse vertrieben.",
@@ -7486,10 +7585,43 @@
   },
   "714f4f2652": {
     "text": "Das THW leistete wertvolle Hilfe in der Krisenregion.",
-    "translation": null,
+    "translation": "The THW provided valuable assistance in the crisis region.",
     "source": "wiktionary",
     "lemmas": [
       "THW"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "THW",
+        "lemma": "THW",
+        "pos": "abbreviation",
+        "gloss_hint": null
+      },
+      {
+        "form": "leistete",
+        "lemma": "leisten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wertvolle",
+        "lemma": "wertvoll",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hilfe",
+        "lemma": "Hilfe",
+        "pos": "noun",
+        "gloss_hint": "help"
+      },
+      {
+        "form": "Krisenregion",
+        "lemma": "Krisenregion",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "714f56f72f": {
@@ -7873,11 +8005,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give someone a pep talk",
     "source": "wiktionary",
     "lemmas": [
       "Pfeffer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "71565d8d30": {
     "text": "Das Pilsner Bier schmeckt dem Leo.",
@@ -8423,11 +8556,12 @@
     "type": "expression",
     "note": "Tuberkulose",
     "synonyms": [],
-    "translation": null,
+    "translation": "he has tuberculosis",
     "source": "wiktionary",
     "lemmas": [
       "Motte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "715ec8274b": {
     "text": "„Durch den Wald, über Wiesen und Bäche, über Stock und Stein und kommen doch eigentlich kaum voran, weil sich hinter jedem unscheinbaren Grünzeug für uns Unwissende eine neue kleine Welt auftut.“",
@@ -9370,10 +9504,43 @@
   },
   "71651739cb": {
     "text": "Fritz hatte bei Onkel Hans schon immer einen Stein im Brett.",
-    "translation": null,
+    "translation": "Fritz had always had a soft spot with Uncle Hans.",
     "source": "wiktionary",
     "lemmas": [
       "bei jemandem einen Stein im Brett haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fritz",
+        "lemma": "Fritz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Onkel",
+        "lemma": "Onkel",
+        "pos": "noun",
+        "gloss_hint": "uncle"
+      },
+      {
+        "form": "Hans",
+        "lemma": "Hans",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stein",
+        "lemma": "Stein",
+        "pos": "noun",
+        "gloss_hint": "stone"
+      },
+      {
+        "form": "Brett",
+        "lemma": "Brett",
+        "pos": "noun",
+        "gloss_hint": "board"
+      }
     ]
   },
   "7167657a74": {
@@ -9392,18 +9559,40 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pull someone's chestnuts out of the fire",
     "source": "wiktionary",
     "lemmas": [
       "holen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7169ebbba0": {
     "text": "„Ihn vollends aufrichtend, führten und trugen sie ihn von dannen.“",
-    "translation": null,
+    "translation": "Straightening him up completely, they led and carried him away from there.",
     "source": "wiktionary",
     "lemmas": [
       "von dannen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "aufrichtend",
+        "lemma": "aufrichtend",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "führten",
+        "lemma": "führen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "trugen",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "7169fe570c": {
@@ -9883,12 +10072,13 @@
     "type": "expression",
     "note": "sich der Aufgabe gewachsen zeigen",
     "synonyms": [],
-    "translation": null,
+    "translation": "stand one's ground",
     "source": "wiktionary",
     "lemmas": [
       "Mann"
     ],
-    "ref": "phrases/seinen Mann stehen"
+    "ref": "phrases/seinen Mann stehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "716fdec3d0": {
     "text": "„Und mütterlich im stillen Schattenkreise",
@@ -9912,11 +10102,12 @@
     "type": "expression",
     "note": "sich nur mit Mühe beherrschen und etwas nicht sagen",
     "synonyms": [],
-    "translation": null,
+    "translation": "bite one's tongue",
     "source": "wiktionary",
     "lemmas": [
       "Zunge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "71717500c7": {
     "text": "„Ich kann das alles noch nicht recht realisieren.“",
@@ -11073,10 +11264,19 @@
   },
   "717d65983a": {
     "text": "Du bist vielleicht ein Ross!",
-    "translation": null,
+    "translation": "You're quite a blockhead!",
     "source": "wiktionary",
     "lemmas": [
       "Ross"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ross",
+        "lemma": "Ross",
+        "pos": "noun",
+        "gloss_hint": "blockhead"
+      }
     ]
   },
   "717e498de0": {
@@ -11658,11 +11858,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "settle an old score",
     "source": "wiktionary",
     "lemmas": [
       "Rechnung"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7182395ddf": {
     "text": "Ich glaube, dass diese Lösung die einzig richtige ist.",
@@ -11872,10 +12073,55 @@
   },
   "7186bd3f29": {
     "text": "Bis heute sind es vor allem hochtechnische Anwendungen, die die ganz genaue Atomzeit direkt von der „Master Clock“ des BEV beziehen.",
-    "translation": null,
+    "translation": "To this day, it is primarily high-tech applications that obtain the very precise atomic time directly from the BEV's \"Master Clock\".",
     "source": "wiktionary",
     "lemmas": [
       "BEV"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hochtechnische",
+        "lemma": "hochtechnisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anwendungen",
+        "lemma": "Anwendung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Atomzeit",
+        "lemma": "Atomzeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beziehen",
+        "lemma": "beziehen",
+        "pos": "verb",
+        "gloss_hint": "order"
+      },
+      {
+        "form": "Master",
+        "lemma": "Master",
+        "pos": "noun",
+        "gloss_hint": "master's degree"
+      },
+      {
+        "form": "Clock",
+        "lemma": "Clock",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "BEV",
+        "lemma": "BEV",
+        "pos": "noun",
+        "gloss_hint": "Federal Office of Metrology and Surveying"
+      }
     ]
   },
   "7187b913e6": {
@@ -13140,13 +13386,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be a burden to someone",
     "source": "wiktionary",
     "lemmas": [
       "fallen",
       "Last"
     ],
-    "ref": "phrases/jemandem zur Last fallen"
+    "ref": "phrases/jemandem zur Last fallen",
+    "translation_model": "openai/gpt-4.1"
   },
   "718fff7d3c": {
     "text": "Gib dem Kind einen Schal um, damit es sich nicht erkältet!",
@@ -13970,10 +14217,37 @@
   },
   "719949bf25": {
     "text": "„Insgesamt stellt die quantitative Linguistik gegenüber der Sprachstatistik einen deutlichen theoretischen und methodologischen Fortschritt dar.“",
-    "translation": null,
+    "translation": "Overall, quantitative linguistics represents a clear theoretical and methodological advance over language statistics.",
     "source": "wiktionary",
     "lemmas": [
       "quantitative Linguistik"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "quantitative",
+        "lemma": "quantitativ",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Linguistik",
+        "lemma": "Linguistik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sprachstatistik",
+        "lemma": "Sprachstatistik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fortschritt",
+        "lemma": "Fortschritt",
+        "pos": "noun",
+        "gloss_hint": "progress (societal)"
+      }
     ]
   },
   "719aefbfd7": {
@@ -13981,11 +14255,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be in deep trouble",
     "source": "wiktionary",
     "lemmas": [
       "Kacke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "719bdd4615": {
     "text": "Der ist ganz lieb, der beißt nicht!",
@@ -14001,11 +14276,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hatch a plot",
     "source": "wiktionary",
     "lemmas": [
       "Komplott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "719de7a946": {
     "text": "»Südafrika ist weltweit in Wertschöpfungsketten eingebunden und damit ähnlich verletzlich wie die europäischen Volkswirtschaften.«",
@@ -14537,19 +14813,59 @@
     "type": "expression",
     "note": "verschwinden, sterben",
     "synonyms": [],
-    "translation": null,
+    "translation": "pass away",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
     ],
-    "ref": "phrases/über die Wupper gehen"
+    "ref": "phrases/über die Wupper gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "71a3d7903a": {
     "text": "Die Künstlerin ging auf wie ein Pfannkuchen und betrat dann die Bühnen der Welt.",
-    "translation": null,
+    "translation": "The artist rose like a pancake and then took to the stages of the world.",
     "source": "wiktionary",
     "lemmas": [
       "aufgehen wie ein Pfannkuchen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Künstlerin",
+        "lemma": "Künstlerin",
+        "pos": "noun",
+        "gloss_hint": "female artist"
+      },
+      {
+        "form": "ging",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pfannkuchen",
+        "lemma": "Pfannkuchen",
+        "pos": "noun",
+        "gloss_hint": "pancake"
+      },
+      {
+        "form": "betrat",
+        "lemma": "betreten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bühnen",
+        "lemma": "Bühne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world (society)"
+      }
     ]
   },
   "71a3f3b4c8": {
@@ -14644,11 +14960,12 @@
     "type": "expression",
     "note": "antreiben, strafen, züchtigen",
     "synonyms": [],
-    "translation": null,
+    "translation": "light a fire under someone",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "71a6cf48f8": {
     "text": "„Durch Mechanisierung und Technisierung konnte die Landwirtschaft in den 1960 Jahren ihre Erträge enorm steigern.“",
@@ -14762,11 +15079,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give someone backbone",
     "source": "wiktionary",
     "lemmas": [
       "steifen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "71a8209016": {
     "text": "„Einer fragte mich: ‚Kommst du zum zweitenmal hin?‘, und als ich nickte, sagte er: ‚Du kannst dich auf was gefaßt machen!‘“",
@@ -15082,10 +15400,43 @@
   },
   "71a9c8c06f": {
     "text": "Liebe Grüße auch im Namen von Klaus und den Kindern!",
-    "translation": null,
+    "translation": "Warm regards also on behalf of Klaus and the children!",
     "source": "wiktionary",
     "lemmas": [
       "im Namen von"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Liebe",
+        "lemma": "Liebe",
+        "pos": "noun",
+        "gloss_hint": "affection"
+      },
+      {
+        "form": "Grüße",
+        "lemma": "Gruß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Namen",
+        "lemma": "Name",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klaus",
+        "lemma": "Klaus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kindern",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "71aab6dccb": {
@@ -15607,11 +15958,12 @@
     "type": "expression",
     "note": "ein bestimmter Zeitpunkt ist gekommen, eine Zeitdauer ist abgelaufen.",
     "synonyms": [],
-    "translation": null,
+    "translation": "Time's up.",
     "source": "wiktionary",
     "lemmas": [
       "Zeit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "71b66983ec": {
     "text": "„Er sah Vs in Schwarz-Weiß, Vs, eingebrannt in Felix Gordeans Gesicht. Vs überall auf den Rosenkranz betenden mexikanischen Illegalen, die sich trauernd zusammendrängten.“",
@@ -17100,10 +17452,61 @@
   },
   "71c4ba845e": {
     "text": "„»Der Wiener geht nicht unter.« Hoffnung oder Drohung? Vielleicht nur eine Höflichkeit, für »Unkraut verdirbt nicht«.“",
-    "translation": null,
+    "translation": "\"The Viennese will not perish.\" Hope or threat? Perhaps merely a courtesy, for \"weeds don't spoil.\"",
     "source": "wiktionary",
     "lemmas": [
       "Unkraut verdirbt nicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wiener",
+        "lemma": "Wiener",
+        "pos": "noun",
+        "gloss_hint": "Viennese"
+      },
+      {
+        "form": "geht",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "unter",
+        "lemma": "untergehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hoffnung",
+        "lemma": "Hoffnung",
+        "pos": "noun",
+        "gloss_hint": "hope"
+      },
+      {
+        "form": "Drohung",
+        "lemma": "Drohung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Höflichkeit",
+        "lemma": "Höflichkeit",
+        "pos": "noun",
+        "gloss_hint": "courtesy"
+      },
+      {
+        "form": "Unkraut",
+        "lemma": "Unkraut",
+        "pos": "noun",
+        "gloss_hint": "weed"
+      },
+      {
+        "form": "verdirbt",
+        "lemma": "verderben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "71c53ed4ef": {
@@ -20186,22 +20589,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "That doesn't move anyone at all.",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "71e7c547a1": {
     "text": "jemanden vor Liebe fressen können",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "To be crazy in love with someone.",
     "source": "wiktionary",
     "lemmas": [
       "Liebe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "71e804b002": {
     "text": "Nimm, was du kriegen kannst.",
@@ -21029,11 +21434,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "To keep someone on a string.",
     "source": "wiktionary",
     "lemmas": [
       "Band"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "71f3431b76": {
     "text": "„Die Verwüstungen, nach denen Robert Franke im September 1914 noch meist vergeblich gesucht hatte, waren nun im ganzen östlichen Ostpreußen unübersehbar.“",
@@ -21258,10 +21664,25 @@
   },
   "71f3ee369a": {
     "text": "Die DR war eine Staatseisenbahn.",
-    "translation": null,
+    "translation": "The DR was a state railway.",
     "source": "wiktionary",
     "lemmas": [
       "DR"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "DR",
+        "lemma": "DR",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staatseisenbahn",
+        "lemma": "Staatseisenbahn",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "71f7884771": {
@@ -21278,13 +21699,14 @@
     "type": "expression",
     "note": "verlieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "To come off worse.",
     "source": "wiktionary",
     "lemmas": [
       "ziehen",
       "kurz"
     ],
-    "ref": "phrases/den Kürzeren ziehen"
+    "ref": "phrases/den Kürzeren ziehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "71f7d9b7cc": {
     "text": "Zum Kaffee bringt Oma Pfannkuchen mit Zuckerguss mit.",

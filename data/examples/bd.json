@@ -70,11 +70,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's just what I needed (sarcastic)",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bd062c36f7": {
     "text": "Sie sah attraktiv aus.",
@@ -90,11 +91,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take a dump",
     "source": "wiktionary",
     "lemmas": [
       "Haufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bd0847d708": {
     "text": "„Immer wenn Sabina sich in der Schlaflosigkeit verloren fühlte, nahm sie den verworrenen Faden ihres Lebens auf, vom Anfang an, um die Stelle zu finden, an der sich ihre Wege verwirrt hatten.“",
@@ -995,10 +997,61 @@
   },
   "bd0b6b39d4": {
     "text": "„Oberflächlich betrachtet erhält der Mensch mit Behinderung Geld vom Staat und finanziert daraus seine Assistenz.“",
-    "translation": null,
+    "translation": "Superficially considered, a person with a disability receives money from the state and finances their assistance from it.",
     "source": "wiktionary",
     "lemmas": [
       "Assistenz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Oberflächlich",
+        "lemma": "oberflächlich",
+        "pos": "adjective",
+        "gloss_hint": "superficial"
+      },
+      {
+        "form": "betrachtet",
+        "lemma": "betrachten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mensch",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": "person"
+      },
+      {
+        "form": "Behinderung",
+        "lemma": "Behinderung",
+        "pos": "noun",
+        "gloss_hint": "disability"
+      },
+      {
+        "form": "Geld",
+        "lemma": "Geld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staat",
+        "lemma": "Staat",
+        "pos": "noun",
+        "gloss_hint": "state (political)"
+      },
+      {
+        "form": "finanziert",
+        "lemma": "finanzieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Assistenz",
+        "lemma": "Assistenz",
+        "pos": "noun",
+        "gloss_hint": "assistance"
+      }
     ]
   },
   "bd0c3a385e": {
@@ -2465,10 +2518,43 @@
   },
   "bd1d4ae2b4": {
     "text": "Mithilfe der DNS lassen sich instationäre Strömungsvorgänge berechnen.",
-    "translation": null,
+    "translation": "With the help of DNS, unsteady flow processes can be calculated.",
     "source": "wiktionary",
     "lemmas": [
       "DNS"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "DNS",
+        "lemma": "DNS",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lassen",
+        "lemma": "lassen",
+        "pos": "verb",
+        "gloss_hint": "admit of"
+      },
+      {
+        "form": "instationäre",
+        "lemma": "instationär",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strömungsvorgänge",
+        "lemma": "Strömungsvorgang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "berechnen",
+        "lemma": "berechnen",
+        "pos": "verb",
+        "gloss_hint": "calculate"
+      }
     ]
   },
   "bd1f480e79": {
@@ -3810,10 +3896,85 @@
   },
   "bd28c6956c": {
     "text": "„Völlig von den Socken sind beratungsbedürftige Eltern dagegen, wenn man ihnen erklärt, dass sich für selten mehr als 400 Euro gut konfigurierte Lern-, Spiel- und Arbeits-PCs zusammenbasteln lassen.“",
-    "translation": null,
+    "translation": "Parents seeking advice are completely taken aback when they're told that well-configured learning, gaming, and work computers can be assembled for little more than 400 euros.",
     "source": "wiktionary",
     "lemmas": [
       "von den Socken sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Völlig",
+        "lemma": "völlig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Socken",
+        "lemma": "Socke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beratungsbedürftige",
+        "lemma": "beratungsbedürftig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eltern",
+        "lemma": "Eltern",
+        "pos": "noun",
+        "gloss_hint": "basic social unit"
+      },
+      {
+        "form": "erklärt",
+        "lemma": "erklären",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "selten",
+        "lemma": "selten",
+        "pos": "adjective",
+        "gloss_hint": "rare"
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "konfigurierte",
+        "lemma": "konfigurieren",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lern-",
+        "lemma": "Lern-",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spiel-",
+        "lemma": "Spiel",
+        "pos": "noun",
+        "gloss_hint": "game"
+      },
+      {
+        "form": "Arbeits-PCs",
+        "lemma": "Arbeits-PC",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zusammenbasteln",
+        "lemma": "zusammenbasteln",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "bd295673d7": {
@@ -4292,11 +4453,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "let me tell you",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bd2ecb5827": {
     "text": "Ich hätte mich schon lange krankgemeldet. Wie hältst du das da bloß aus? Du musst ja Nerven wie Drahtseile haben.",
@@ -4600,11 +4762,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like a deer in the headlights",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bd352f0c57": {
     "text": "in voller Aktion",
@@ -6718,11 +6881,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the dear livestock",
     "source": "wiktionary",
     "lemmas": [
       "Vieh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bd452f0a35": {
     "text": "Durch die Großzügigkeit mehrerer Privatleute konnte der Spielplatz wieder instand gesetzt werden.",
@@ -7077,11 +7241,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not give someone the time of day",
     "source": "wiktionary",
     "lemmas": [
       "Hintern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bd47c979a5": {
     "text": "„Seit Jahren wandelt die Deutsche Börse auf Freiersfüßen, und doch droht die New York Stock Exchange jetzt den Frankfurtern die Euronext wegzuschnappen.“",
@@ -7970,10 +8135,37 @@
   },
   "bd5432766e": {
     "text": "„Das EKG und ein Ultraschall des Herzens waren normal.“",
-    "translation": null,
+    "translation": "The ECG and an ultrasound of the heart were normal.",
     "source": "wiktionary",
     "lemmas": [
       "EKG"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "EKG",
+        "lemma": "EKG",
+        "pos": "noun",
+        "gloss_hint": "electrocardiogram"
+      },
+      {
+        "form": "Ultraschall",
+        "lemma": "Ultraschall",
+        "pos": "noun",
+        "gloss_hint": "ultrasound (imaging)"
+      },
+      {
+        "form": "Herzens",
+        "lemma": "Herz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "normal",
+        "lemma": "normal",
+        "pos": "adjective",
+        "gloss_hint": "normal"
+      }
     ]
   },
   "bd549c899e": {
@@ -10298,25 +10490,24 @@
     "type": "expression",
     "note": "Kommentar des Ungläubigen",
     "synonyms": [],
-    "translation": null,
+    "translation": "Believe it or not!",
     "source": "wiktionary",
     "lemmas": [
       "hören"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "bd68cc59e2": {
     "text": "sich in die Hosen scheißen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be scared shitless",
     "source": "wiktionary",
     "lemmas": [
       "scheißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bd697c78ac": {
     "text": "„Warum sollte er sein Haus in der Innenstadt verkaufen? Da würde er ja das Huhn, das goldene Eier legt, schlachten!“",
@@ -11695,11 +11886,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have everything under control",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bd730a6cea": {
     "text": "Seine vorzeitige Abreise war überraschend.",
@@ -11842,11 +12034,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Grey morning, beautiful day.",
     "source": "wiktionary",
     "lemmas": [
       "Morgen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bd75e82829": {
     "text": "Ich habe dich gestern nicht gesehen.",
@@ -12117,10 +12310,31 @@
   },
   "bd76e604a5": {
     "text": "„Aber da hat der Ganove längst das Weite gesucht.“",
-    "translation": null,
+    "translation": "But by then the crook had long since made his escape.",
     "source": "wiktionary",
     "lemmas": [
       "das Weite suchen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ganove",
+        "lemma": "Ganove",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "längst",
+        "lemma": "längst",
+        "pos": "adverb",
+        "gloss_hint": "long ago"
+      },
+      {
+        "form": "Weite",
+        "lemma": "Weite",
+        "pos": "noun",
+        "gloss_hint": "distance"
+      }
     ]
   },
   "bd7729bc60": {
@@ -12128,11 +12342,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "picture-perfect",
     "source": "wiktionary",
     "lemmas": [
       "wie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bd7737ba30": {
     "text": "Neben den Meeren gibt es auf dem Mond einen einzigen Ozean, den Ozean der Stürme.",
@@ -12397,10 +12612,37 @@
   },
   "bd7921be6f": {
     "text": "Die Artillerie hatte früher einen Kanonenschuss als Zapfenstreich.",
-    "translation": null,
+    "translation": "Previously, the artillery used a cannon shot as lights out.",
     "source": "wiktionary",
     "lemmas": [
       "Zapfenstreich"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Artillerie",
+        "lemma": "Artillerie",
+        "pos": "noun",
+        "gloss_hint": "artillery (branch)"
+      },
+      {
+        "form": "früher",
+        "lemma": "früher",
+        "pos": "adverb",
+        "gloss_hint": "formerly"
+      },
+      {
+        "form": "Kanonenschuss",
+        "lemma": "Kanonenschuss",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zapfenstreich",
+        "lemma": "Zapfenstreich",
+        "pos": "noun",
+        "gloss_hint": "lights out"
+      }
     ]
   },
   "bd7a139051": {
@@ -14086,11 +14328,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Abuse does not become a habit.",
     "source": "wiktionary",
     "lemmas": [
       "Missbrauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bd84e01817": {
     "text": "[Die französische Politikerin Marine Le Pen über die EU:] „Man muss Schluss machen mit diesem bürokratischen Monstrum, wie es jetzt ist.“",
@@ -16049,11 +16292,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be wrapped around someone's little finger",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bd9d891fa1": {
     "text": "Das kommt davon, dass du dir zu wenig Mühe gegeben hast.",
@@ -16507,11 +16751,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go whichever way the wind blows",
     "source": "wiktionary",
     "lemmas": [
       "hängen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bda4cb5166": {
     "text": "Hast du schon diese schwarze Mieze dort gesehen, Mama?",
@@ -16631,13 +16876,14 @@
     "type": "expression",
     "note": "missglücken",
     "synonyms": [],
-    "translation": null,
+    "translation": "to go pear-shaped",
     "source": "wiktionary",
     "lemmas": [
       "gehen",
       "Hose"
     ],
-    "ref": "phrases/in die Hose gehen"
+    "ref": "phrases/in die Hose gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "bda82b350f": {
     "text": "„Wir haben Schluss gemacht. Vier Jahre hat es gehalten, aber zum Schluss hat sie mich nur noch finanziell ausgenutzt und ist auch fremdgegangen.“",
@@ -16806,23 +17052,25 @@
     "type": "expression",
     "note": "es ist Zeit für dich zu gehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "time for you to go",
     "source": "wiktionary",
     "lemmas": [
       "Fliege"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bda9868de5": {
     "text": "der Zug ist abgefahren",
     "type": "expression",
     "note": "die Möglichkeit ist verpasst",
     "synonyms": [],
-    "translation": null,
+    "translation": "the train has left the station",
     "source": "wiktionary",
     "lemmas": [
       "abfahren"
     ],
-    "ref": "phrases/der Zug ist abgefahren"
+    "ref": "phrases/der Zug ist abgefahren",
+    "translation_model": "openai/gpt-4.1"
   },
   "bdaa8af09e": {
     "text": "„Ab 1870 kauften europäische Geschäftsleute […] den Häuptlingen Land ab und legten Kokosplantagen an.“",
@@ -18600,11 +18848,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "he gets up at the crack of dawn",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bdb8dec901": {
     "text": "In der Vergangenheit bestand ein Bund zwischen beiden Staaten.",
@@ -19202,11 +19451,12 @@
     "type": "expression",
     "note": "basta, keine Widerrede, da ist nichts zu machen",
     "synonyms": [],
-    "translation": null,
+    "translation": "That's it. End of story.",
     "source": "wiktionary",
     "lemmas": [
       "Punkt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bdc2e325a1": {
     "text": "„Auf dem Weg ins Waidspital, angeschnallt auf der Bahre, beklagt er sich über die Fahrweise von Markus Reutemann, der am Steuer des Rettungswagens sitzt: «Muss das so holpern?», fragt er wiederholt, worauf ihm Andrea Müller im Fond des Wagens geduldig versichert, ihr Kollege fahre ganz anständig.“",
@@ -20070,11 +20320,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to express something",
     "source": "wiktionary",
     "lemmas": [
       "Ausdruck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bdcc84db5e": {
     "text": "Innig herzte er sein Kind zum Abschied.",
@@ -20651,11 +20902,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to absorb an impact",
     "source": "wiktionary",
     "lemmas": [
       "Stoß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bdd3d6b6fd": {
     "text": "Wir haben Rind, Schwein und Pferd im Angebot.",
@@ -21444,10 +21696,43 @@
   },
   "bddd3e8e49": {
     "text": "„Die eigentlichen Schwierigkeiten gingen jedoch von meiner Familie aus, als sie von der Sache Wind bekam.“",
-    "translation": null,
+    "translation": "The real difficulties, however, came from my family when they got wind of the matter.",
     "source": "wiktionary",
     "lemmas": [
       "von etwas Wind bekommen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "eigentlichen",
+        "lemma": "eigentlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schwierigkeiten",
+        "lemma": "Schwierigkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Familie",
+        "lemma": "Familie",
+        "pos": "noun",
+        "gloss_hint": "basic social unit"
+      },
+      {
+        "form": "Wind",
+        "lemma": "Wind",
+        "pos": "noun",
+        "gloss_hint": "wind"
+      },
+      {
+        "form": "Sache",
+        "lemma": "Sache",
+        "pos": "noun",
+        "gloss_hint": "matter"
+      }
     ]
   },
   "bddddbf6af": {
@@ -21957,11 +22242,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "day after day",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bde14cb3b5": {
     "text": "Der harte Gaumen ist der Artikulationsort der Laute [k], [g], [x] (wie in \"Bach\") im Deutschen.",
@@ -24005,11 +24291,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I can't believe it!",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bdf8d30bd0": {
     "text": "„Die nigerianische Zentralbank hat am Freitag die Vorstände von 17 notleidenden Banken für abgesetzt erklärt und die Institute unter ihre direkte Aufsicht gestellt.“",

@@ -1639,10 +1639,25 @@
   },
   "3c138435d1": {
     "text": "Hast du dich schon wieder vom Wirte scheren lassen?",
-    "translation": null,
+    "translation": "Have you had your hair cut by the innkeeper again?",
     "source": "wiktionary",
     "lemmas": [
       "scheren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "scheren",
+        "lemma": "scheren",
+        "pos": "verb",
+        "gloss_hint": "shear"
+      },
+      {
+        "form": "Wirte",
+        "lemma": "Wirt",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3c13b4ff51": {
@@ -2863,11 +2878,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "strike the same note",
     "source": "wiktionary",
     "lemmas": [
       "gleich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3c213829e4": {
     "text": "Bad Bleiberg liegt in Kärnten.",
@@ -2910,11 +2926,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get down to business",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3c21dbdb9d": {
     "text": "„Sie untermalte jedes ‚bla‘ mit ausladenden Gesten, wobei sie mit der einen Hand die Afrin-Flasche und mit der anderen das zerknüllte Taschentuch schwenkte.“",
@@ -3844,10 +3861,25 @@
   },
   "3c27c16055": {
     "text": "Nun kommt die Aufgabe Nr. 3 an die Reihe.",
-    "translation": null,
+    "translation": "Now task number 3 comes up.",
     "source": "wiktionary",
     "lemmas": [
       "Nr."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Aufgabe",
+        "lemma": "Aufgabe",
+        "pos": "noun",
+        "gloss_hint": "task"
+      },
+      {
+        "form": "Reihe",
+        "lemma": "Reihe",
+        "pos": "noun",
+        "gloss_hint": "sequence"
+      }
     ]
   },
   "3c282b0504": {
@@ -5456,10 +5488,25 @@
   },
   "3c33662ad4": {
     "text": "Ich bin in Brehna geboren.",
-    "translation": null,
+    "translation": "I was born in Brehna.",
     "source": "wiktionary",
     "lemmas": [
       "Brehna"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "geboren",
+        "lemma": "geboren",
+        "pos": "adjective",
+        "gloss_hint": "born"
+      },
+      {
+        "form": "Brehna",
+        "lemma": "Brehna",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3c35053e7b": {
@@ -5515,12 +5562,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put someone on the spot",
     "source": "wiktionary",
     "lemmas": [
       "Zange"
     ],
-    "ref": "phrases/jemanden in die Zange nehmen"
+    "ref": "phrases/jemanden in die Zange nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "3c36ed1d8f": {
     "text": "„Wir haben uns vor ca. einem Jahr das letztemal gesehen, aber bei mir will einfach nicht der Groschen fallen: Wie war nochmal Ihr Name?“",
@@ -6769,11 +6817,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I can't believe my ears",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3c43b0b9fd": {
     "text": "Glücklicherweise hatte der Auslöser versagt, sonst hätte man mit Verletzten oder Toten rechnen können.",
@@ -11035,11 +11084,12 @@
     "type": "expression",
     "note": "Eeas hat nur geringe Bedeutung, bekommt nur sehr wenig Aufmerksamkeit, hat keine spürbare Auswirkung",
     "synonyms": [],
-    "translation": null,
+    "translation": "Something gets lost in the noise",
     "source": "wiktionary",
     "lemmas": [
       "untergehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3c6764b227": {
     "text": "Der Schmuck wird im Tresor aufbewahrt.",
@@ -11091,10 +11141,121 @@
   },
   "3c6b7c9f8c": {
     "text": "„Am 6. und 20. November folgen Vorträge zu den Themen plötzlicher Herztod und Rückenschmerzen. Etwas aus der Reihe tanzt der letzte Vortrag in diesem Jahr am 4. Dezember, bei dem zwei Ärzte von ihren Erfahrungen in der Gesundheitsversorgung in Kenia und Haiti berichten.“",
-    "translation": null,
+    "translation": "On November 6th and 20th, lectures on sudden cardiac death and back pain will follow. The last lecture of the year on December 4th dances somewhat out of line, in which two doctors report on their experiences in healthcare in Kenya and Haiti.",
     "source": "wiktionary",
     "lemmas": [
       "aus der Reihe tanzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "folgen",
+        "lemma": "folgen",
+        "pos": "verb",
+        "gloss_hint": "follow"
+      },
+      {
+        "form": "Vorträge",
+        "lemma": "Vortrag",
+        "pos": "noun",
+        "gloss_hint": "speech"
+      },
+      {
+        "form": "Themen",
+        "lemma": "Thema",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herztod",
+        "lemma": "Herztod",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rückenschmerzen",
+        "lemma": "Rückenschmerz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reihe",
+        "lemma": "Reihe",
+        "pos": "noun",
+        "gloss_hint": "series"
+      },
+      {
+        "form": "tanzt",
+        "lemma": "tanzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "letzte",
+        "lemma": "letzte",
+        "pos": "adjective",
+        "gloss_hint": "last"
+      },
+      {
+        "form": "Vortrag",
+        "lemma": "Vortrag",
+        "pos": "noun",
+        "gloss_hint": "speech"
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "Dezember",
+        "lemma": "Dezember",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zwei",
+        "lemma": "zwei",
+        "pos": "numeral",
+        "gloss_hint": "two"
+      },
+      {
+        "form": "Ärzte",
+        "lemma": "Arzt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erfahrungen",
+        "lemma": "Erfahrung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesundheitsversorgung",
+        "lemma": "Gesundheitsversorgung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kenia",
+        "lemma": "Kenia",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haiti",
+        "lemma": "Haiti",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "berichten",
+        "lemma": "berichten",
+        "pos": "verb",
+        "gloss_hint": "report"
+      }
     ]
   },
   "3c6d667074": {
@@ -11351,10 +11512,43 @@
   },
   "3c743508b8": {
     "text": "Mit dem Witz über Schwiegermütter ist mein Mann ganz schön ins Fettnäpfchen getreten.",
-    "translation": null,
+    "translation": "With the joke about mothers-in-law, my husband really put his foot in it.",
     "source": "wiktionary",
     "lemmas": [
       "ins Fettnäpfchen treten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Witz",
+        "lemma": "Witz",
+        "pos": "noun",
+        "gloss_hint": "joke"
+      },
+      {
+        "form": "Schwiegermütter",
+        "lemma": "Schwiegermutter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "husband"
+      },
+      {
+        "form": "ganz",
+        "lemma": "ganz",
+        "pos": "adjective",
+        "gloss_hint": "considerable"
+      },
+      {
+        "form": "Fettnäpfchen",
+        "lemma": "Fettnäpfchen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3c756fd3c8": {
@@ -12367,10 +12561,37 @@
   },
   "3c81004a69": {
     "text": "Die Hufe des Pferdes mussten neu beschlagen werden.",
-    "translation": null,
+    "translation": "The horse's hooves had to be reshod.",
     "source": "wiktionary",
     "lemmas": [
       "Huf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hufe",
+        "lemma": "Huf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pferdes",
+        "lemma": "Pferd",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beschlagen",
+        "lemma": "beschlagen",
+        "pos": "verb",
+        "gloss_hint": "shoe"
+      },
+      {
+        "form": "neu",
+        "lemma": "neu",
+        "pos": "adjective",
+        "gloss_hint": "recent"
+      }
     ]
   },
   "3c81cefda5": {
@@ -12378,22 +12599,24 @@
     "type": "expression",
     "note": "etwas ohne gesicherten Absatz produzieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "produce for stock",
     "source": "wiktionary",
     "lemmas": [
       "Halde"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3c82c0c9f1": {
     "text": "seinen Gang gehen",
     "type": "expression",
     "note": "seine Entwicklung nehmen, seinen Fortgang nehmen",
     "synonyms": [],
-    "translation": null,
+    "translation": "run its course",
     "source": "wiktionary",
     "lemmas": [
       "Gang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3c82fb1ba8": {
     "text": "den Seinen gibts der Herr im Schlaf",
@@ -12918,11 +13141,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "do something in a rush",
     "source": "wiktionary",
     "lemmas": [
       "nähen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3c8619d6e5": {
     "text": "„Wie das Statistische Bundesamt mitteilte, haben sich die Preise für Backwaren von 2019 bis 2023 um gut ein Drittel erhöht.“",
@@ -14028,11 +14252,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have to deal with it",
     "source": "wiktionary",
     "lemmas": [
       "tun"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3c9703bbdd": {
     "text": "„Nach der Enteignung durch Vallex ist ihm nur noch dieses Stück Land geblieben; seitdem lebt er mehr schlecht als recht von der Imkerei.“",
@@ -14276,11 +14501,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "eavesdrop",
     "source": "wiktionary",
     "lemmas": [
       "lang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3c9859fe05": {
     "text": "„Im Westen stand die Sonne schon tief über dem Sumpf, doch bis die Dunkelheit anbrach, konnten sie noch mit zwei Stunden Helligkeit rechnen.“",
@@ -14640,10 +14866,85 @@
   },
   "3c9d18634d": {
     "text": "„Die Teilnehmer der ersten Gruppe ernährten sich bewusster: mehr fettarme Milchprodukte, Obst, Vollkorn, Geflügel, Fisch und Gemüse.“",
-    "translation": null,
+    "translation": "The participants of the first group ate more consciously: more low-fat dairy products, fruit, whole grain, poultry, fish, and vegetables.",
     "source": "wiktionary",
     "lemmas": [
       "Vollkorn"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Teilnehmer",
+        "lemma": "Teilnehmer",
+        "pos": "noun",
+        "gloss_hint": "participant"
+      },
+      {
+        "form": "Gruppe",
+        "lemma": "Gruppe",
+        "pos": "noun",
+        "gloss_hint": "group"
+      },
+      {
+        "form": "ernährten",
+        "lemma": "ernähren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "bewusster",
+        "lemma": "bewusst",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "mehr",
+        "lemma": "mehr",
+        "pos": "adverb",
+        "gloss_hint": "more"
+      },
+      {
+        "form": "fettarme",
+        "lemma": "fettarm",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Milchprodukte",
+        "lemma": "Milchprodukt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Obst",
+        "lemma": "Obst",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vollkorn",
+        "lemma": "Vollkorn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geflügel",
+        "lemma": "Geflügel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fisch",
+        "lemma": "Fisch",
+        "pos": "noun",
+        "gloss_hint": "fish (food)"
+      },
+      {
+        "form": "Gemüse",
+        "lemma": "Gemüse",
+        "pos": "noun",
+        "gloss_hint": "vegetables"
+      }
     ]
   },
   "3c9d22d989": {
@@ -20128,10 +20429,19 @@
   },
   "3cce3315d8": {
     "text": "1. Platz - Müller-Lüdenscheid",
-    "translation": null,
+    "translation": "1st place - Müller-Lüdenscheid",
     "source": "wiktionary",
     "lemmas": [
       "1."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Platz",
+        "lemma": "Platz",
+        "pos": "noun",
+        "gloss_hint": "rank"
+      }
     ]
   },
   "3cce3909a5": {
@@ -21651,11 +21961,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be lying in a pool of one's own blood",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3ce646fde6": {
     "text": "Diese Beweise sind hieb- und stichfest, die Staatsanwaltschaft wird den Angeklagten hinter Gitter bringen.",
@@ -23834,10 +24145,12 @@
   },
   "3cfff5d673": {
     "text": "F-RS 456",
-    "translation": null,
+    "translation": "F-RS 456",
     "source": "wiktionary",
     "lemmas": [
       "F"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   }
 }

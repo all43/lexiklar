@@ -129,13 +129,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "live on the streets",
     "source": "wiktionary",
     "lemmas": [
       "Straße",
       "leben"
     ],
-    "ref": "phrases/auf der Straße leben"
+    "ref": "phrases/auf der Straße leben",
+    "translation_model": "openai/gpt-4.1"
   },
   "97024126d0": {
     "text": "Von einem Moment auf den anderen kann die Stimmung kippen.",
@@ -1034,10 +1035,55 @@
   },
   "9706a65228": {
     "text": "Erst feuert ihn seine Firma, dann verlässt ihn seine Frau für einen anderen. Kein Wunder, dass ihm das das Rückgrat bricht.",
-    "translation": null,
+    "translation": "First his company fires him, then his wife leaves him for another man. No wonder it breaks his spirit.",
     "source": "wiktionary",
     "lemmas": [
       "das Rückgrat brechen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "feuert",
+        "lemma": "feuern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Firma",
+        "lemma": "Firma",
+        "pos": "noun",
+        "gloss_hint": "company"
+      },
+      {
+        "form": "verlässt",
+        "lemma": "verlassen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "wife"
+      },
+      {
+        "form": "Wunder",
+        "lemma": "Wunder",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rückgrat",
+        "lemma": "Rückgrat",
+        "pos": "noun",
+        "gloss_hint": "backbone"
+      },
+      {
+        "form": "bricht",
+        "lemma": "brechen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "97071578f9": {
@@ -2214,11 +2260,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "work in the theater",
     "source": "wiktionary",
     "lemmas": [
       "Theater"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9717dab862": {
     "text": "„Beinahe jeden Abend saßen sie in einer anderen Loge.“",
@@ -2492,11 +2539,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "armed service",
     "source": "wiktionary",
     "lemmas": [
       "Waffe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "971b5be4c4": {
     "text": "„Wie oben schon kurz angeklungen ist, war man bei der General-Verwaltung der königlichen Posten und Eisenbahnen eigentlich von Anfang an mit den oft mangelhaften Entwertungen durch die vorphilatelistischen Stempel nicht recht zufrieden.“",
@@ -3632,11 +3680,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take a strange turn",
     "source": "wiktionary",
     "lemmas": [
       "Blüte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9726ee744a": {
     "text": "„Der irische Nobelpreisträger Seamus Heany blieb ein Rufer in der Wüste, als er warnte, der »Bloomsday« sei zu einem Karneval heruntergekommen.“",
@@ -6231,11 +6280,12 @@
     "type": "expression",
     "note": "nicht das Eine und (auch) nicht das Andere; nicht so und (auch) nicht anders, nicht vorwärts und nicht rückwärts, nicht nach links und nicht nach rechts",
     "synonyms": [],
-    "translation": null,
+    "translation": "neither here nor there",
     "source": "wiktionary",
     "lemmas": [
       "weder … noch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9747272d72": {
     "text": "Mit rund 2,26 Milliarden Anhängern ist das Christentum vor dem Islam (rund 1,57 Milliarden) und dem Hinduismus (rund 900 Millionen) die am meisten verbreitete Religion der Erde.",
@@ -6860,10 +6910,133 @@
   },
   "974dc4ba78": {
     "text": "„Zum Finale gibts jetzt noch was aus der Gerüchteküche: Die höchste Weihe, die ein Grillaner erreichen kann, ist angeblich nicht Grillmeister, nicht Grill-Sheriff und auch nicht Grill-King, sondern Grill-Bill. Wer sich diesen Titel verdienen will, kauft seine Steaks nicht beim Metzger, er erlegt sie in der freien Wildbahn - und zwar von Hand, mit der 5-Punkte-Pressur-Herzexplosionstechnik. Sachen gibts, die gibts gar nicht.“",
-    "translation": null,
+    "translation": "And now for the finale, here's some gossip: the highest honour a griller can achieve is allegedly not Grill Master, not Grill Sheriff, and not Grill King, but Grill Bill. Whoever wants to earn this title doesn't buy his steaks from the butcher—he hunts them in the wild, and by hand, using the 5-point pressure heart explosion technique. Some things are just too crazy to be true.",
     "source": "wiktionary",
     "lemmas": [
       "Sachen gibts, die gibts gar nicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Finale",
+        "lemma": "Finale",
+        "pos": "noun",
+        "gloss_hint": "finale"
+      },
+      {
+        "form": "Gerüchteküche",
+        "lemma": "Gerüchteküche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weihe",
+        "lemma": "Weihe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grillaner",
+        "lemma": "Grillaner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erreichen",
+        "lemma": "erreichen",
+        "pos": "verb",
+        "gloss_hint": "achieve"
+      },
+      {
+        "form": "Grillmeister",
+        "lemma": "Grillmeister",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grill-Sheriff",
+        "lemma": "Grill-Sheriff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grill-King",
+        "lemma": "Grill-King",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grill-Bill",
+        "lemma": "Grill-Bill",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Titel",
+        "lemma": "Titel",
+        "pos": "noun",
+        "gloss_hint": "title"
+      },
+      {
+        "form": "verdienen",
+        "lemma": "verdienen",
+        "pos": "verb",
+        "gloss_hint": "deserve"
+      },
+      {
+        "form": "kauft",
+        "lemma": "kaufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Steaks",
+        "lemma": "Steak",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Metzger",
+        "lemma": "Metzger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erlegt",
+        "lemma": "erlegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wildbahn",
+        "lemma": "Wildbahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hand",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": "hand"
+      },
+      {
+        "form": "Pressur-Herzexplosionstechnik",
+        "lemma": "Pressur-Herzexplosionstechnik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sachen",
+        "lemma": "Sache",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gibts",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "974ecfe493": {
@@ -7251,14 +7424,15 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a heart of gold",
     "source": "wiktionary",
     "lemmas": [
       "Herz",
       "Fleck",
       "recht"
     ],
-    "ref": "phrases/das Herz am rechten Fleck haben"
+    "ref": "phrases/das Herz am rechten Fleck haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "9751893aa8": {
     "text": "Es ist ihm Jacke wie Hose, was es heute Abend zu essen gibt.",
@@ -8217,11 +8391,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to poach in someone else's territory",
     "source": "wiktionary",
     "lemmas": [
       "räubern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "975c1061f3": {
     "text": "Auf vielen Postkarten steht der Satz „Bitte freimachen, falls Marke zur Hand.“",
@@ -8656,10 +8831,31 @@
   },
   "97616fe290": {
     "text": "„Also fühlte er sich einmal mehr bloßgestellt.“",
-    "translation": null,
+    "translation": "So he felt exposed once again.",
     "source": "wiktionary",
     "lemmas": [
       "einmal mehr"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "fühlte",
+        "lemma": "fühlen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "bloßgestellt",
+        "lemma": "bloßstellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "einmal",
+        "lemma": "einmal",
+        "pos": "adverb",
+        "gloss_hint": "once"
+      }
     ]
   },
   "976244396c": {
@@ -9719,16 +9915,14 @@
     "type": "expression",
     "note": "überhaupt nicht; ganz sicher nicht",
     "synonyms": [],
-    "translation": null,
+    "translation": "under no circumstances",
     "source": "wiktionary",
     "lemmas": [
       "Fall",
       "kein"
     ],
     "ref": "phrases/auf keinen Fall",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "9769f841ec": {
     "text": "„Aus seinem Soldbuch geht hervor, dass er in den kommenden zwei Jahren an drei Gefechten teilnimmt und in der rechten Brust durch einen Granatsplitter verwundet wird…“",
@@ -10432,11 +10626,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to stay hot on someone's heels",
     "source": "wiktionary",
     "lemmas": [
       "bleiben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "976e48a787": {
     "text": "„Sie denken, wenn etwas „Gesundheitsklausur“ heißt, dann müsse es anschließend so eine Art Nachprüfung geben, und wenn man den großen Test vermasselt hat, könne man das im Mündlichen wettmachen.“",
@@ -10866,10 +11061,31 @@
   },
   "976f7fddee": {
     "text": "Für diese Arbeit wird eine Fachkraft benötigt.",
-    "translation": null,
+    "translation": "A specialist is needed for this work.",
     "source": "wiktionary",
     "lemmas": [
       "Fachkraft"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Arbeit",
+        "lemma": "Arbeit",
+        "pos": "noun",
+        "gloss_hint": "work"
+      },
+      {
+        "form": "Fachkraft",
+        "lemma": "Fachkraft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "benötigt",
+        "lemma": "benötigen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "97704634f8": {
@@ -11398,11 +11614,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Fools build houses and wise men buy them.",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9771da82bf": {
     "text": "„Nach Generalaussprache sah das hier ja Gott sei Dank nicht mehr aus.“",
@@ -11912,11 +12129,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be at a loss",
     "source": "wiktionary",
     "lemmas": [
       "Rand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9775a6972c": {
     "text": "Nach seinem Autounfall wurde er mit dem Krankenwagen in die Notaufnahme gebracht.",
@@ -12504,10 +12722,55 @@
   },
   "9778efee75": {
     "text": "Unangehmer Typ, du weißt, so einer ist glatt wie ein Aal, was immer man an Argument vorbringt, prallt an dem ab und er macht sein Ding weiter, als ob nichts los ist.",
-    "translation": null,
+    "translation": "Unpleasant character, you know, the type who's slippery as an eel—whatever argument you bring up just slides off him and he carries on as if nothing's going on.",
     "source": "wiktionary",
     "lemmas": [
       "glatt wie ein Aal sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Typ",
+        "lemma": "Typ",
+        "pos": "noun",
+        "gloss_hint": "character"
+      },
+      {
+        "form": "glatt",
+        "lemma": "glatt",
+        "pos": "adjective",
+        "gloss_hint": "slippery"
+      },
+      {
+        "form": "Aal",
+        "lemma": "Aal",
+        "pos": "noun",
+        "gloss_hint": "eel"
+      },
+      {
+        "form": "Argument",
+        "lemma": "Argument",
+        "pos": "noun",
+        "gloss_hint": "argument"
+      },
+      {
+        "form": "prallt",
+        "lemma": "prallen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ding",
+        "lemma": "Ding",
+        "pos": "noun",
+        "gloss_hint": "thing"
+      },
+      {
+        "form": "los",
+        "lemma": "los",
+        "pos": "adjective",
+        "gloss_hint": "going on"
+      }
     ]
   },
   "9779060c1c": {
@@ -13948,11 +14211,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a breath of fresh air",
     "source": "wiktionary",
     "lemmas": [
       "lüften"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "978c4953be": {
     "text": "„Wir hatten uns nun so sehr daran gewöhnt, den Kavalier zu spielen, dass wir nicht im Traum daran dachten, diese Frau im Stich zu lassen, und schworen, auch ihr zur Seite zu stehen.“",
@@ -14324,12 +14588,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with flying colors",
     "source": "wiktionary",
     "lemmas": [
       "Fahne"
     ],
-    "ref": "phrases/mit wehenden Fahnen"
+    "ref": "phrases/mit wehenden Fahnen",
+    "translation_model": "openai/gpt-4.1"
   },
   "978fc029b6": {
     "text": "In seiner Begegnung mit den Bischöfen habe Benedikt XVI. seinen Mitbrüdern für ihre nicht leichte Aufgabe seine Unterstützung gegeben…",
@@ -15175,11 +15440,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be fed up with someone",
     "source": "wiktionary",
     "lemmas": [
       "dicke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "979593da08": {
     "text": "„Der neue Scheich regierte ganz so wie sein Vorgänger und verschwand gleich ihm am letzten Freitag eines jeden Monats.“",
@@ -15384,12 +15650,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "life and limb",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
     ],
-    "ref": "phrases/Leib und Leben"
+    "ref": "phrases/Leib und Leben",
+    "translation_model": "openai/gpt-4.1"
   },
   "97966112f8": {
     "text": "Einstein, der an „Spinozas Gott“ glaubte, war ein Pantheist.",
@@ -15999,11 +16266,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "gut-wrenching",
     "source": "wiktionary",
     "lemmas": [
       "Niere"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97a178e8f8": {
     "text": "Jetzt muss der Installateur nur noch die Kabel legen.",
@@ -17917,11 +18185,12 @@
     "type": "expression",
     "note": "wütend aufgeben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to throw in the towel in anger",
     "source": "wiktionary",
     "lemmas": [
       "schmeißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97ad0a2796": {
     "text": "„Jedes Telefonat mit einem Bankmitarbeiter muss zukünftig aufgezeichnet werden“",
@@ -19113,22 +19382,24 @@
     "type": "expression",
     "note": "typisch für rhetorische Fragen oder Fragen von Kleinkindern",
     "synonyms": [],
-    "translation": null,
+    "translation": "Why is the sky blue?",
     "source": "wiktionary",
     "lemmas": [
       "Banane"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97b920edb7": {
     "text": "Es ist noch kein Meister vom Himmel gefallen",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Practice makes perfect.",
     "source": "wiktionary",
     "lemmas": [
       "Meister"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97b9255d9d": {
     "text": "„Mein Onkel und ich grüßten unsere Gastgeber noch einmal laut und herzlich und machten uns zu Fuß auf den Weg.“",
@@ -19204,40 +19475,58 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to let everything be done for you without any effort",
     "source": "wiktionary",
     "lemmas": [
       "Taube"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97baf9eb7b": {
     "text": "das ist doppelt gemoppelt",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's redundant",
     "source": "wiktionary",
     "lemmas": [
       "doppelt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97bb848316": {
     "text": "die linke Hand weiß nicht, was die rechte tut",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the left hand doesn't know what the right is doing",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97bc03b711": {
     "text": "Ob wir dieser Pandemie jemals Herr werden?",
-    "translation": null,
+    "translation": "Will we ever get this pandemic under control?",
     "source": "wiktionary",
     "lemmas": [
       "etwas Herr werden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Pandemie",
+        "lemma": "Pandemie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herr",
+        "lemma": "Herr",
+        "pos": "noun",
+        "gloss_hint": "master"
+      }
     ]
   },
   "97bccd8d0c": {
@@ -20640,14 +20929,15 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the child within (someone)",
     "source": "wiktionary",
     "lemmas": [
       "Kind",
       "Mann",
       "im"
     ],
-    "ref": "phrases/das Kind im Manne"
+    "ref": "phrases/das Kind im Manne",
+    "translation_model": "openai/gpt-4.1"
   },
   "97c832db9a": {
     "text": "„Aktuell kursieren in diversen Social-Media-Kanälen Fälschungen des Grünen Passes, wie z.B. die App „Corona Green Pass Austria“. Es handelt sich hierbei um Betrug.“",
@@ -20795,11 +21085,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on a knife-edge",
     "source": "wiktionary",
     "lemmas": [
       "Kippe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97cbc6a1e0": {
     "text": "Ich habe gestern im Laden Eistee gekauft.",
@@ -21138,11 +21429,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "for several days",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97ce4732af": {
     "text": "Kurz vor der Bescherung schmückten wir Kinder den Weihnachtsbaum.",
@@ -21560,11 +21852,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Where water flows away, it will flow back again.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97d35bb731": {
     "text": "„Enthusiastische Zustimmung für dieses Buch kam von Thomas Mann, Romain Rolland, Alfred Kerr, Maxim Gorki und Heinrich Mann.“",
@@ -21782,10 +22075,31 @@
   },
   "97d3a78ddf": {
     "text": "„Manchmal würde ich meinen Freund am liebsten zum Teufel schicken.“",
-    "translation": null,
+    "translation": "\"Sometimes I'd like to send my friend to the devil.\"",
     "source": "wiktionary",
     "lemmas": [
       "jemanden zum Teufel schicken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Freund",
+        "lemma": "Freund",
+        "pos": "noun",
+        "gloss_hint": "friend"
+      },
+      {
+        "form": "Teufel",
+        "lemma": "Teufel",
+        "pos": "noun",
+        "gloss_hint": "Satan"
+      },
+      {
+        "form": "schicken",
+        "lemma": "schicken",
+        "pos": "verb",
+        "gloss_hint": "send"
+      }
     ]
   },
   "97d436e2d7": {
@@ -22261,10 +22575,49 @@
   },
   "97d8469502": {
     "text": "„War ein unscheinbares Fastfood-Restaurant in Gersthofen bei Augsburg Umschlagplatz für Drogenhandel im großen Stil?“",
-    "translation": null,
+    "translation": "\"Was an inconspicuous fast-food restaurant in Gersthofen near Augsburg a hub for large-scale drug trafficking?\"",
     "source": "wiktionary",
     "lemmas": [
       "im großen Stil"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Restaurant",
+        "lemma": "Restaurant",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gersthofen",
+        "lemma": "Gersthofen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Augsburg",
+        "lemma": "Augsburg",
+        "pos": "noun",
+        "gloss_hint": "Augsburg (city)"
+      },
+      {
+        "form": "Umschlagplatz",
+        "lemma": "Umschlagplatz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Drogenhandel",
+        "lemma": "Drogenhandel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stil",
+        "lemma": "Stil",
+        "pos": "noun",
+        "gloss_hint": "style"
+      }
     ]
   },
   "97d8d81235": {
@@ -22470,22 +22823,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to feel completely drained",
     "source": "wiktionary",
     "lemmas": [
       "fühlen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97dcddbd01": {
     "text": "jemandem das Leben aushauchen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to breathe one's last",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97dceb4e09": {
     "text": "„Sie reinigen Wasser: Schwermetalle, Öle, Fette - Verschmutzungen, bei denen andere kapitulieren, kriegen die Experten der Firma H2O wieder weg.“",
@@ -22657,11 +23012,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "overnight",
     "source": "wiktionary",
     "lemmas": [
       "morgen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97e15af188": {
     "text": "„Die Kreativwirtschaft in Oberösterreich zeichnet sich dadurch aus, dass hier wenig branchenspezifisch, dafür sehr übergreifend und interaktiv gearbeitet wird“, sagt dazu Patrick Bartos, Geschäftsführer der Creative Region, einer Plattform für Kreativwirtschaft in Oberösterreich.",
@@ -22976,11 +23332,12 @@
     "synonyms": [
       "Ätsch"
     ],
-    "translation": null,
+    "translation": "to thumb one's nose at someone",
     "source": "wiktionary",
     "lemmas": [
       "Nase"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97e684b5e0": {
     "text": "Am späten Montagnachmittag soll das Wetter allmählich freundlicher werden.",
@@ -23203,11 +23560,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "work to rule",
     "source": "wiktionary",
     "lemmas": [
       "Dienst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97ebd8f0d7": {
     "text": "„Die Männer applaudierten und pfiffen.“",
@@ -23554,11 +23912,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "damned if you do, damned if you don't",
     "source": "wiktionary",
     "lemmas": [
       "machen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97edd392ab": {
     "text": "„Denn für die Bewirtschaftung der Plantagen im fernen Amerika brauchen die Weißen immer neue Arbeiter.“",
@@ -23700,12 +24059,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to feel at home",
     "source": "wiktionary",
     "lemmas": [
       "Haus",
       "fühlen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "97f171d95c": {
     "text": "Der Tod ist das absoluteste und dabei das relativste aller Phänomene.",
@@ -23724,12 +24084,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "no money, no honey",
     "source": "wiktionary",
     "lemmas": [
       "Moos"
     ],
-    "ref": "phrases/ohne Moos nix los"
+    "ref": "phrases/ohne Moos nix los",
+    "translation_model": "openai/gpt-4.1"
   },
   "97f3818225": {
     "text": "„Die jüngsten Turbulenzen in Beirut nähren aber offenbar so sehr die Furcht vor einer neuen bürgerkriegsartigen Eskalation, dass beide Führer sich entschlossen haben, in einer gemeinsamen Mission die Gemüter im Libanon zu beruhigen.“",
@@ -25104,10 +25465,11 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the bulletin board",
     "source": "wiktionary",
     "lemmas": [
       "schwarz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   }
 }

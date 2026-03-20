@@ -139,22 +139,25 @@
   },
   "95009c0b2f": {
     "text": "„‚Bissig wie hundert Ameisen, der liebe Härtel […].‘ ‚Fakt bleibt trotzdem: wo er Recht hat, hat er Recht.‘“",
-    "translation": null,
+    "translation": "'Vicious as a hundred ants, dear Härtel [...]. 'The fact remains: where he's right, he's right.'",
     "source": "wiktionary",
     "lemmas": [
       "wo er Recht hat, hat er Recht"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "9500b27192": {
     "text": "jemandes Wiege stand irgendwo",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone was born somewhere",
     "source": "wiktionary",
     "lemmas": [
       "Wiege"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9501c8d9e5": {
     "text": "„Mit deren Hilfe wurde es möglich, in diese uralte Sprache einzudringen; mit Hilfe der ältesten akkadischen Keilschriftformen waren aber auch die noch älteren sumerischen Formen zu erschließen.“",
@@ -1241,10 +1244,37 @@
   },
   "9508f0097e": {
     "text": "„Der Tod eines 14-jährigen Mädchens in Dietfurt (Lkr. Neumarkt) bleibt weiter rätselhaft.“",
-    "translation": null,
+    "translation": "The death of a 14-year-old girl in Dietfurt (Neumarkt district) remains mysterious.",
     "source": "wiktionary",
     "lemmas": [
       "rätselhaft"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tod",
+        "lemma": "Tod",
+        "pos": "noun",
+        "gloss_hint": "death"
+      },
+      {
+        "form": "Mädchens",
+        "lemma": "Mädchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bleibt",
+        "lemma": "bleiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "rätselhaft",
+        "lemma": "rätselhaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "95091abb58": {
@@ -1312,13 +1342,14 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Love is blind.",
     "source": "wiktionary",
     "lemmas": [
       "Liebe",
       "blind"
     ],
-    "ref": "phrases/Liebe macht blind"
+    "ref": "phrases/Liebe macht blind",
+    "translation_model": "openai/gpt-4.1"
   },
   "95096206c1": {
     "text": "„Sie tragen Sonnenbrillen.“",
@@ -2126,10 +2157,43 @@
   },
   "951194772d": {
     "text": "Ich muss noch einmal die Frage der Atommüllentsorgung zur Sprache bringen.",
-    "translation": null,
+    "translation": "I must raise the question of nuclear waste disposal again.",
     "source": "wiktionary",
     "lemmas": [
       "etwas zur Sprache bringen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "muss",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frage",
+        "lemma": "Frage",
+        "pos": "noun",
+        "gloss_hint": "issue"
+      },
+      {
+        "form": "Atommüllentsorgung",
+        "lemma": "Atommüllentsorgung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sprache",
+        "lemma": "Sprache",
+        "pos": "noun",
+        "gloss_hint": "speech"
+      },
+      {
+        "form": "bringen",
+        "lemma": "bringen",
+        "pos": "verb",
+        "gloss_hint": "cause"
+      }
     ]
   },
   "95132d8dd6": {
@@ -3162,11 +3226,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not be true love",
     "source": "wiktionary",
     "lemmas": [
       "Liebe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9522dd8ea5": {
     "text": "es ist Druck auf dem Kessel",
@@ -3534,10 +3599,37 @@
   },
   "9524c9da03": {
     "text": "Die imperativen Formen der Verben werden im Wiktionary übersichtlich dargestellt.",
-    "translation": null,
+    "translation": "The imperative forms of verbs are presented clearly in Wiktionary.",
     "source": "wiktionary",
     "lemmas": [
       "imperativ"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "imperativen",
+        "lemma": "imperativ",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Formen",
+        "lemma": "Form",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verben",
+        "lemma": "Verb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dargestellt",
+        "lemma": "darstellen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "9525083ebd": {
@@ -3761,20 +3853,78 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "blow someone's socks off",
     "source": "wiktionary",
     "lemmas": [
       "Hocker",
       "hauen"
     ],
-    "ref": "phrases/jemanden vom Hocker hauen"
+    "ref": "phrases/jemanden vom Hocker hauen",
+    "translation_model": "openai/gpt-4.1"
   },
   "9525f25339": {
     "text": "„Nach meiner Erfahrung sind Schrot Nr. 4, wovon 48 Stück ein Loth wiegen, zum Schießen auf Auerhähne allem gröberen Schrot vorzuziehen, da diese besser decken und hinreichend stark sind.“ (1875)",
-    "translation": null,
+    "translation": "'In my experience, shot No. 4, of which 48 pieces weigh one lot, is preferable to all coarser shot for shooting at capercaillie, as these provide better coverage and are sufficiently powerful.' (1875)",
     "source": "wiktionary",
     "lemmas": [
       "Schrot"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erfahrung",
+        "lemma": "Erfahrung",
+        "pos": "noun",
+        "gloss_hint": "experience (knowledge)"
+      },
+      {
+        "form": "Schrot",
+        "lemma": "Schrot",
+        "pos": "noun",
+        "gloss_hint": "shot"
+      },
+      {
+        "form": "Stück",
+        "lemma": "Stück",
+        "pos": "noun",
+        "gloss_hint": "piece"
+      },
+      {
+        "form": "wiegen",
+        "lemma": "wiegen",
+        "pos": "verb",
+        "gloss_hint": "weigh"
+      },
+      {
+        "form": "Schießen",
+        "lemma": "schießen",
+        "pos": "verb",
+        "gloss_hint": "shooting (of sprouts)"
+      },
+      {
+        "form": "Auerhähne",
+        "lemma": "Auerhahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vorzuziehen",
+        "lemma": "vorziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "decken",
+        "lemma": "decken",
+        "pos": "verb",
+        "gloss_hint": "cover"
+      },
+      {
+        "form": "stark",
+        "lemma": "stark",
+        "pos": "adjective",
+        "gloss_hint": "powerful"
+      }
     ]
   },
   "9527363ac8": {
@@ -4042,11 +4192,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Vitamin L (love/affection)",
     "source": "wiktionary",
     "lemmas": [
       "Vitamin"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "952d981712": {
     "text": "Er kam aus der Tiefe des Raumes.",
@@ -4194,12 +4345,13 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's not over yet",
     "source": "wiktionary",
     "lemmas": [
       "Abend"
     ],
-    "ref": "phrases/es ist noch nicht aller Tage Abend"
+    "ref": "phrases/es ist noch nicht aller Tage Abend",
+    "translation_model": "openai/gpt-4.1"
   },
   "952f7d27fe": {
     "text": "im Adamskostüm",
@@ -4481,11 +4633,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be over the moon",
     "source": "wiktionary",
     "lemmas": [
       "Loch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "95353138bb": {
     "text": "Im Bug klafft ein Leck.",
@@ -6107,11 +6260,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Where the wolf grazes the flock, the lambs are soon devoured.",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "95401aaa59": {
     "text": "„Die Spielplätze waren nur staubige und steinige Rechtecke, und über der gesamten ausgedehnten Siedlung hing der eisige Hauch von Trostlosigkeit.“",
@@ -6777,10 +6931,55 @@
   },
   "95488aed75": {
     "text": "Das geschah nur, um uns willenlos zu machen, um unser Rückgrat zu brechen und uns zu Befehlsempfängern um jeden Preis zu machen.",
-    "translation": null,
+    "translation": "This happened only to make us compliant, to break our backbone, and to turn us into obedient servants at any cost.",
     "source": "wiktionary",
     "lemmas": [
       "das Rückgrat brechen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "geschah",
+        "lemma": "geschehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "willenlos",
+        "lemma": "willenlos",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "machen",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "cause"
+      },
+      {
+        "form": "Rückgrat",
+        "lemma": "Rückgrat",
+        "pos": "noun",
+        "gloss_hint": "backbone (courage)"
+      },
+      {
+        "form": "brechen",
+        "lemma": "brechen",
+        "pos": "verb",
+        "gloss_hint": "break"
+      },
+      {
+        "form": "Befehlsempfängern",
+        "lemma": "Befehlsempfänger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Preis",
+        "lemma": "Preis",
+        "pos": "noun",
+        "gloss_hint": "cost"
+      }
     ]
   },
   "954b21cd96": {
@@ -8626,11 +8825,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be like soup without salt",
     "source": "wiktionary",
     "lemmas": [
       "Suppe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9561ec85b7": {
     "text": "Das Wasser flutet über die Deiche.",
@@ -9253,14 +9453,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get a grip on the situation",
     "source": "wiktionary",
     "lemmas": [
       "Herr"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "95678266db": {
     "text": "„Erst später hatte man erfahren, dass der Zahnarzt in Hindenburg gar kein gelernter Zahnarzt war.“",
@@ -11620,11 +11818,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A cut and a set, please!",
     "source": "wiktionary",
     "lemmas": [
       "schneiden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "957d157294": {
     "text": "„Wie er mich ablenkte mit seiner Angewohnheit, beim Fahren mit einer Hand zu gestikulieren, wenn wir uns über die richtige Ordnung eines Bibliothekskatalogs austauschten und die Restauration von antikem Papier, über Landkarten und alte Manuskripte – und das nicht nur, weil er mich mit seinem Fahrstil in Todesangst versetzte.“",
@@ -13889,10 +14088,37 @@
   },
   "959152383a": {
     "text": "Der Kollege sägt seit langem am Stuhl seines Vorgesetzten.",
-    "translation": null,
+    "translation": "The colleague has been undermining his superior's position for a long time.",
     "source": "wiktionary",
     "lemmas": [
       "an jemandes Stuhl sägen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kollege",
+        "lemma": "Kollege",
+        "pos": "noun",
+        "gloss_hint": "colleague"
+      },
+      {
+        "form": "sägt",
+        "lemma": "sägen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stuhl",
+        "lemma": "Stuhl",
+        "pos": "noun",
+        "gloss_hint": "office"
+      },
+      {
+        "form": "Vorgesetzten",
+        "lemma": "Vorgesetzter",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "9597316afd": {
@@ -14178,12 +14404,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "lead to",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
     ],
-    "ref": "phrases/nach sich ziehen"
+    "ref": "phrases/nach sich ziehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "9599b7d7c2": {
     "text": "„Beide Eltern fielen der Tuberkulose zum Opfer - wie schließlich Bolívar selbst.“",
@@ -14343,10 +14570,97 @@
   },
   "959b020a4d": {
     "text": "„Man kennt nicht die Gründe der Dürerschen Kinderlosigkeit, tappt im Dunkeln über die melancholia generosissima seiner späten Jahre und über die Todeskrankheit, die ihn nach Aussage eines Freundes »ausgezehrt wie ein Strohbündel« 1528 dahinraffte.“",
-    "translation": null,
+    "translation": "'The reasons for Dürer's childlessness are unknown; we are in the dark about the melancholia generosissima of his later years and about the fatal illness that, according to a friend's account, wasted him away like a bundle of straw and carried him off in 1528.'",
     "source": "wiktionary",
     "lemmas": [
       "im Dunkeln tappen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kennt",
+        "lemma": "kennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gründe",
+        "lemma": "Grund",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kinderlosigkeit",
+        "lemma": "Kinderlosigkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tappt",
+        "lemma": "tappen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dunkeln",
+        "lemma": "Dunkeln",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "melancholia",
+        "lemma": "melancholia",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "späten",
+        "lemma": "spät",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahre",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Todeskrankheit",
+        "lemma": "Todeskrankheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aussage",
+        "lemma": "Aussage",
+        "pos": "noun",
+        "gloss_hint": "testimony"
+      },
+      {
+        "form": "Freundes",
+        "lemma": "Freund",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgezehrt",
+        "lemma": "auszehren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strohbündel",
+        "lemma": "Strohbündel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dahinraffte",
+        "lemma": "dahinraffen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "959b82ac8a": {
@@ -14510,10 +14824,73 @@
   },
   "959db37545": {
     "text": "„Nachdem die Genossen von der Kontrollkommission sich erkundigt hatten, bestätigten sie ihr, sogar ohne die sonst üblichen Überprüfungsgespräche, die Anerkennung als »Verfolgte des Naziregimes« und ihre Mitgliedschaft in der Kommunistischen Partei seit 1933.“",
-    "translation": null,
+    "translation": "After the comrades from the control commission had inquired, they confirmed to her, even without the usual review meetings otherwise customary, the recognition as a 'victim of Nazi persecution' and her membership in the Communist Party since 1933.",
     "source": "wiktionary",
     "lemmas": [
       "erkundigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Genossen",
+        "lemma": "Genosse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kontrollkommission",
+        "lemma": "Kontrollkommission",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erkundigt",
+        "lemma": "erkundigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "bestätigten",
+        "lemma": "bestätigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Überprüfungsgespräche",
+        "lemma": "Überprüfungsgespräch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anerkennung",
+        "lemma": "Anerkennung",
+        "pos": "noun",
+        "gloss_hint": "recognition"
+      },
+      {
+        "form": "Verfolgte",
+        "lemma": "Verfolgter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Naziregimes",
+        "lemma": "Naziregime",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mitgliedschaft",
+        "lemma": "Mitgliedschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kommunistischen Partei",
+        "lemma": "Kommunistische Partei",
+        "pos": "noun",
+        "gloss_hint": "political party"
+      }
     ]
   },
   "959dba24d9": {
@@ -15546,10 +15923,31 @@
   },
   "95a541223a": {
     "text": "„So kamen sie dennoch über die Runden, trotz der Inflation.“",
-    "translation": null,
+    "translation": "So they managed to get by despite the inflation.",
     "source": "wiktionary",
     "lemmas": [
       "über die Runden kommen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kamen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Runden",
+        "lemma": "Runde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Inflation",
+        "lemma": "Inflation",
+        "pos": "noun",
+        "gloss_hint": "period of high inflation"
+      }
     ]
   },
   "95a6c4961d": {
@@ -15707,11 +16105,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "old wine in a new bottle",
     "source": "wiktionary",
     "lemmas": [
       "Schlauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "95aa1898ec": {
     "text": "Als sie ihn in den Bus einsteigen sah, hatte sie sofort Schmetterlinge im Bauch.",
@@ -15780,10 +16179,37 @@
   },
   "95aa85bcd6": {
     "text": "Nachdem ich die Geräte synchronisiert habe, ist die Änderung überall sichtbar.",
-    "translation": null,
+    "translation": "After I have synchronized the devices, the change is visible everywhere.",
     "source": "wiktionary",
     "lemmas": [
       "synchronisieren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "synchronisiert",
+        "lemma": "synchronisieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geräte",
+        "lemma": "Gerät",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Änderung",
+        "lemma": "Änderung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sichtbar",
+        "lemma": "sichtbar",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "95acd7e291": {
@@ -15800,11 +16226,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be quick to offer something",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "95adadb45d": {
     "text": "Weil er lebte, war er sparsam.",
@@ -16033,10 +16460,49 @@
   },
   "95ae3c8db8": {
     "text": "Ein Zwang zu elektronischen Kassensystemen zöge den kleinen Einzelhändlern den Boden unter den Füßen weg.",
-    "translation": null,
+    "translation": "A requirement for electronic cash registers would pull the rug out from under small retailers.",
     "source": "wiktionary",
     "lemmas": [
       "den Boden unter den Füßen wegziehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zwang",
+        "lemma": "Zwang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "elektronischen Kassensystemen",
+        "lemma": "elektronisches Kassensystem",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zöge",
+        "lemma": "ziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einzelhändlern",
+        "lemma": "Einzelhändler",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Boden",
+        "lemma": "Boden",
+        "pos": "noun",
+        "gloss_hint": "foundation"
+      },
+      {
+        "form": "Füßen",
+        "lemma": "Fuß",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "95ae53784f": {
@@ -16134,11 +16600,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm going to the little chapel",
     "source": "wiktionary",
     "lemmas": [
       "Kapelle"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "95af68f156": {
     "text": "Als sich der Rauch verzogen hatte, war das Ausmaß des Schadens klar.",
@@ -17392,11 +17859,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to let someone run into a brick wall",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "95b5c7ce5d": {
     "text": "Die Hunde hetzten das Wildschwein.",
@@ -17585,10 +18053,121 @@
   },
   "95b6f7fe4e": {
     "text": "Wer wegen glatter Straßen zu spät zur Arbeit kommt, bewegt sich […] auf dünnem Eis. Chefs dürfen zu Recht auf pünktliches Erscheinen pochen: „Der Angestellte verpflichtet sich im Arbeitsvertrag, für seinen Arbeitgeber während eines bestimmten, vertraglich vereinbarten Zeitrahmens – also beispielsweise von 9 bis 18 Uhr – tätig zu sein“, sagt Arbeitsexperte Walle. „Diese Pflicht besteht bei jeder Witterung.“",
-    "translation": null,
+    "translation": "Whoever arrives late to work because of slippery roads is on thin ice. Bosses are right to insist on punctual arrival: \"The employee commits himself in the employment contract to work for his employer during a specific, contractually agreed time frame – for example from 9 to 6 p.m. – \" says labor expert Walle. \"This obligation exists in any weather.\"",
     "source": "wiktionary",
     "lemmas": [
       "auf dünnem Eis"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kommt",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Straßen",
+        "lemma": "Straße",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arbeit",
+        "lemma": "Arbeit",
+        "pos": "noun",
+        "gloss_hint": "employment"
+      },
+      {
+        "form": "bewegt",
+        "lemma": "bewegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eis",
+        "lemma": "Eis",
+        "pos": "noun",
+        "gloss_hint": "ice"
+      },
+      {
+        "form": "Chefs",
+        "lemma": "Chef",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dürfen",
+        "lemma": "dürfen",
+        "pos": "verb",
+        "gloss_hint": "be allowed to"
+      },
+      {
+        "form": "pochen",
+        "lemma": "pochen",
+        "pos": "verb",
+        "gloss_hint": "insist"
+      },
+      {
+        "form": "Angestellte",
+        "lemma": "Angestellter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verpflichtet",
+        "lemma": "verpflichten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arbeitsvertrag",
+        "lemma": "Arbeitsvertrag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arbeitgeber",
+        "lemma": "Arbeitgeber",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeitrahmens",
+        "lemma": "Zeitrahmen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Uhr",
+        "lemma": "Uhr",
+        "pos": "noun",
+        "gloss_hint": "clock/watch"
+      },
+      {
+        "form": "tätig",
+        "lemma": "tätig",
+        "pos": "adjective",
+        "gloss_hint": "employed"
+      },
+      {
+        "form": "Arbeitsexperte",
+        "lemma": "Arbeitsexperte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pflicht",
+        "lemma": "Pflicht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Witterung",
+        "lemma": "Witterung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "95b7d4abd5": {
@@ -22438,11 +23017,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to look like a drowned cat",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "95d9ed71a2": {
     "text": "Sie drückte mir einen Zettel in die Hand und fuhr einfach wieder weg.",
@@ -23096,11 +23676,12 @@
     "type": "expression",
     "note": "„ein Gewitter zieht auf, zieht herauf“ und im übertragenen Sinn: „jemand, der wütend ist, kommt hinzu“",
     "synonyms": [],
-    "translation": null,
+    "translation": "a storm is brewing",
     "source": "wiktionary",
     "lemmas": [
       "Gewitter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "95e0f2285a": {
     "text": "Der Autofahrer von heute gibt durchschnittlich 1256 Euro jährlich für Sprit aus, berechnete der Autoclub ADAC für die \"Bild\"-Zeitung.",
@@ -23203,11 +23784,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have both feet firmly on the ground",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "95e11fff12": {
     "text": "Ihre Eltern leben in Sydney.",
@@ -23466,10 +24048,37 @@
   },
   "95e2ad95e6": {
     "text": "Dieses Ehepaar trägt seine Streitigkeiten immer coram publico aus.",
-    "translation": null,
+    "translation": "This married couple always airs their disputes in public.",
     "source": "wiktionary",
     "lemmas": [
       "coram publico"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ehepaar",
+        "lemma": "Ehepaar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "trägt",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Streitigkeiten",
+        "lemma": "Streitigkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "coram publico",
+        "lemma": "coram publico",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "95e3e2fc2a": {
@@ -24008,16 +24617,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get the ball rolling",
     "source": "wiktionary",
     "lemmas": [
       "Stein",
       "bringen"
     ],
     "ref": "phrases/einen Stein ins Rollen bringen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "95e81cce05": {
     "text": "„Seit 19 Jahren organisieren deshalb Privatpersonen aus Basel und der Rotary Club Ferien für meist waise oder halbwaise Kinder aus dem Grossraum Tschernobyl.“",
@@ -24436,10 +25043,43 @@
   },
   "95ea67d517": {
     "text": "Nach einigen missbilligenden Blicken von Seiten seiner Mutter, rückte er endlich mit der Sprache heraus.",
-    "translation": null,
+    "translation": "After some disapproving looks from his mother, he finally came out with it.",
     "source": "wiktionary",
     "lemmas": [
       "mit der Sprache herausrücken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "missbilligenden",
+        "lemma": "missbilligend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blicken",
+        "lemma": "Blick",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mutter",
+        "lemma": "Mutter",
+        "pos": "noun",
+        "gloss_hint": "mother"
+      },
+      {
+        "form": "rückte",
+        "lemma": "rücken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sprache",
+        "lemma": "Sprache",
+        "pos": "noun",
+        "gloss_hint": "speech"
+      }
     ]
   },
   "95eb053c82": {
@@ -25061,12 +25701,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to run for the hills",
     "source": "wiktionary",
     "lemmas": [
       "Fuß"
     ],
-    "ref": "phrases/die Füße unter den Arm nehmen"
+    "ref": "phrases/die Füße unter den Arm nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "95f382c011": {
     "text": "„Eine Umfrage des Marktforschungsinstituts Ipsos […] kam 2018 zu dem Ergebnis, dass 94 Prozent der chinesischen Jugendlichen optimistisch gestimmt waren, was die Zukunft des eigenen Landes anging, im Gegensatz zu 64 Prozent in den USA und 56 Prozent in Deutschland.“",
@@ -25484,11 +26125,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be soaked to the skin",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "95f91784d0": {
     "text": "„Die Waräger machen zahlreiche Feinde nieder, schlagen die übrigen in die Flucht und nehmen einen Kommandeur gefangen.“",
@@ -25970,10 +26612,31 @@
   },
   "95ff64439c": {
     "text": "Ich habe für die Arbeit pauschal 1000 Euro bezahlt.",
-    "translation": null,
+    "translation": "I paid a flat rate of 1000 euros for the work.",
     "source": "wiktionary",
     "lemmas": [
       "pauschal"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Arbeit",
+        "lemma": "Arbeit",
+        "pos": "noun",
+        "gloss_hint": "task"
+      },
+      {
+        "form": "pauschal",
+        "lemma": "pauschal",
+        "pos": "adjective",
+        "gloss_hint": "flat-rate"
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      }
     ]
   },
   "95ffd43070": {

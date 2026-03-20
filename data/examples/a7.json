@@ -558,11 +558,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Left, two, three, four!",
     "source": "wiktionary",
     "lemmas": [
       "zwo"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a706df55fe": {
     "text": "„Die Intensivstation hatte er lediglich verlassen dürfen, weil die Ärzte ihm keine Chance mehr gaben.“",
@@ -2634,11 +2635,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to look foolish",
     "source": "wiktionary",
     "lemmas": [
       "Röhre"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a71d9db2b8": {
     "text": "Der Fürst verheiratete seine jüngste Tochter an den jungen Erbprinzen.",
@@ -3089,11 +3091,12 @@
     "type": "expression",
     "note": "nach dem Tod eines nahen Angehörigen schwarze Kleidung tragen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in mourning",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a72207b511": {
     "text": "„Bei den Rotweinen dominieren Merlot, Frankovka, Schwarzer Burgunder und Cabernet.“",
@@ -4749,11 +4752,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to bring someone to their knees",
     "source": "wiktionary",
     "lemmas": [
       "Knie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a73632679e": {
     "text": "„Mein Färöisch hörte sich an wie die Freundin mit Schnupfen, die in ein kindliches Sprechen verfällt, um sich bemitleiden zu lassen.“",
@@ -5418,11 +5422,12 @@
     "type": "expression",
     "note": "seinen gewohnten Gang gehen, sich ohne Veränderung, Überraschung bewegen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to go on in its usual way",
     "source": "wiktionary",
     "lemmas": [
       "Gang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a73a765cbc": {
     "text": "„Rammstein-Keyboarder Flake wohnt wieder in seinem Jugendhaus im Prenzlauer Berg, »in einer Blase von Reichen«.“",
@@ -8720,22 +8725,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's as busy as Grand Central Station",
     "source": "wiktionary",
     "lemmas": [
       "zugehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a75b60870c": {
     "text": "jemandem etwas am Zeug flicken",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to find fault with someone",
     "source": "wiktionary",
     "lemmas": [
       "Zeug"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a75bb4b039": {
     "text": "„›Bleibt’s dabei?‹ grunzte es unter seinem Tischchen hervor. […] ›Was liegt, das pickt‹, antwortete der Schuster, der wohl wußte, mit wem er es zu tun hatte, und seine Fassung nicht verlor. “",
@@ -8944,10 +8951,157 @@
   },
   "a75caaad9a": {
     "text": "„Das größte Gelenk des Menschen kann kurzfristig sogar bis zu eineinhalb Tonnen Gewicht tragen. Ohne unsere Kniegelenke könnten wir weder gehen, noch uns hinsetzen und schon gar nicht umherhüpfen. Damit wir all diese Bewegungen ausführen können, besteht das Kniegelenk aus einem ausgeklügelten System von Knochen, Bändern, Muskeln und Knorpel. Das Kniegelenk wird deshalb auch - zu recht - als das komplizierteste Gelenk im ganzen Körper bezeichnet.“",
-    "translation": null,
+    "translation": "The largest joint in the human body can even bear up to one and a half tons of weight in the short term. Without our knee joints, we could neither walk nor sit down, and certainly not hop around. So that we can perform all these movements, the knee joint consists of a sophisticated system of bones, ligaments, muscles, and cartilage. For this reason, the knee joint is also—quite rightly—referred to as the most complicated joint in the entire body.",
     "source": "wiktionary",
     "lemmas": [
       "Gelenk"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "größte",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gelenk",
+        "lemma": "Gelenk",
+        "pos": "noun",
+        "gloss_hint": "joint"
+      },
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kurzfristig",
+        "lemma": "kurzfristig",
+        "pos": "adjective",
+        "gloss_hint": "short-term"
+      },
+      {
+        "form": "eineinhalb",
+        "lemma": "eineinhalb",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tonnen",
+        "lemma": "Tonne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gewicht",
+        "lemma": "Gewicht",
+        "pos": "noun",
+        "gloss_hint": "weight"
+      },
+      {
+        "form": "tragen",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": "bear weight"
+      },
+      {
+        "form": "Kniegelenke",
+        "lemma": "Kniegelenk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gehen",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "walk"
+      },
+      {
+        "form": "hinsetzen",
+        "lemma": "hinsetzen",
+        "pos": "verb",
+        "gloss_hint": "sit down"
+      },
+      {
+        "form": "umherhüpfen",
+        "lemma": "umherhüpfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bewegungen",
+        "lemma": "Bewegung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausführen",
+        "lemma": "ausführen",
+        "pos": "verb",
+        "gloss_hint": "execute"
+      },
+      {
+        "form": "besteht",
+        "lemma": "bestehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgeklügelten",
+        "lemma": "ausgeklügelt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "System",
+        "lemma": "System",
+        "pos": "noun",
+        "gloss_hint": "structure"
+      },
+      {
+        "form": "Knochen",
+        "lemma": "Knochen",
+        "pos": "noun",
+        "gloss_hint": "bone"
+      },
+      {
+        "form": "Bändern",
+        "lemma": "Band",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Muskeln",
+        "lemma": "Muskel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Knorpel",
+        "lemma": "Knorpel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "komplizierteste",
+        "lemma": "kompliziert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Körper",
+        "lemma": "Körper",
+        "pos": "noun",
+        "gloss_hint": "body"
+      },
+      {
+        "form": "bezeichnet",
+        "lemma": "bezeichnen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "a75d20651d": {
@@ -10478,10 +10632,85 @@
   },
   "a76a61b85d": {
     "text": "„Schließlich war bereits der letzte große Diamantenraub im Jahr 2003 in der Antwerpener City ein Versicherungsbetrug gewesen – jedenfalls, wenn man dem Haupttäter glaubt. Der plauderte im März 2009 aus dem Nähkästchen.“",
-    "translation": null,
+    "translation": "After all, the last major diamond heist in 2003 in Antwerp's city center had already been an insurance fraud—at least, if you believe the main perpetrator. He spilled the beans in March 2009.",
     "source": "wiktionary",
     "lemmas": [
       "aus dem Nähkästchen plaudern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "letzte",
+        "lemma": "letzte",
+        "pos": "adjective",
+        "gloss_hint": "last"
+      },
+      {
+        "form": "große",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Diamantenraub",
+        "lemma": "Diamantenraub",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "Antwerpener",
+        "lemma": "Antwerpen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "City",
+        "lemma": "City",
+        "pos": "noun",
+        "gloss_hint": "city center"
+      },
+      {
+        "form": "Versicherungsbetrug",
+        "lemma": "Versicherungsbetrug",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haupttäter",
+        "lemma": "Haupttäter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "glaubt",
+        "lemma": "glauben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "plauderte",
+        "lemma": "plaudern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "März",
+        "lemma": "März",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nähkästchen",
+        "lemma": "Nähkästchen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a76a8ccb13": {
@@ -10936,11 +11165,12 @@
     "synonyms": [
       "Seite"
     ],
-    "translation": null,
+    "translation": "thick as thieves",
     "source": "wiktionary",
     "lemmas": [
       "ein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a76fad4056": {
     "text": "Wenn Sie mich rechtzeitig informieren, soll es nicht zu Ihrem Schaden sein.",
@@ -11726,19 +11956,22 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be ready for action",
     "source": "wiktionary",
     "lemmas": [
       "Tinte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a779bde0ed": {
     "text": "mit Dativ: laut jemandem, jemandes Zitat aufgreifen.",
-    "translation": null,
+    "translation": "with dative: according to someone, picking up someone's quote.",
     "source": "wiktionary",
     "lemmas": [
       "nach"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "a77ac28d17": {
     "text": "„[…] Auf den Plakaten der großen Protestkundgebungen nach der Präsidentschaftswahl 2016 war »American Psycho« das Synonym für Trump schlechthin.“",
@@ -12285,22 +12518,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep something under wraps",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a77fae6d69": {
     "text": "jemand kann mich mal",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone can get lost",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a77fe503b4": {
     "text": "Sie hat ein freundliches Wesen.",
@@ -13497,13 +13732,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "come into play",
     "source": "wiktionary",
     "lemmas": [
       "treten",
       "Plan"
     ],
-    "ref": "phrases/auf den Plan treten"
+    "ref": "phrases/auf den Plan treten",
+    "translation_model": "openai/gpt-4.1"
   },
   "a7866f2e29": {
     "text": "Es sind noch zwei Eier erforderlich, damit der Teig weicher wird.",
@@ -13558,10 +13794,31 @@
   },
   "a7895e6573": {
     "text": "„Die Führung der SPD jedenfalls will ein Entgegenkommen.“",
-    "translation": null,
+    "translation": "In any case, the SPD leadership wants to make a concession.",
     "source": "wiktionary",
     "lemmas": [
       "SPD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Führung",
+        "lemma": "Führung",
+        "pos": "noun",
+        "gloss_hint": "leadership"
+      },
+      {
+        "form": "SPD",
+        "lemma": "SPD",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Entgegenkommen",
+        "lemma": "Entgegenkommen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a7898a2188": {
@@ -13569,11 +13826,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "you're really something (sarcastic)",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a789a8d65b": {
     "text": "„Es gibt zwei Arten langer Satzgefüge (Perioden): den Schachtelsatz und den Kettensatz.“",
@@ -13704,11 +13962,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "maneuver oneself into the line of fire",
     "source": "wiktionary",
     "lemmas": [
       "Schusslinie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a78c61abce": {
     "text": "eins auf die Mütze bekommen",
@@ -13815,11 +14074,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put all one's weight behind something",
     "source": "wiktionary",
     "lemmas": [
       "Gewicht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a7912bdc28": {
     "text": "sich etwas auf die Fahne heften",
@@ -14945,16 +15205,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "let go of something",
     "source": "wiktionary",
     "lemmas": [
       "Finger",
       "lassen"
     ],
     "ref": "phrases/die Finger von etwas lassen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "a7963e9951": {
     "text": "Der ganze Vulkan ist in Aufruhr, ein Ausbruch könnte unmittelbar bevorstehen.",
@@ -15083,12 +15341,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's not over until the fat lady sings",
     "source": "wiktionary",
     "lemmas": [
       "Ente",
       "kacken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a797e12155": {
     "text": "„Franklin D. Roosevelt ist bis heute der einzige US-Präsident, der mehr als zweimal ins Weiße Haus gewählt wurde.“",
@@ -18414,11 +18673,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "we're not exactly poor here",
     "source": "wiktionary",
     "lemmas": [
       "arm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a7ab514077": {
     "text": "Komm mit einem Strauß Blumen, meine Mutter ist da leicht zu beeindrucken.",
@@ -18674,11 +18934,12 @@
     "type": "expression",
     "note": "verzweifelt, ratlos sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "that's enough to drive you crazy",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a7af2dc1b4": {
     "text": "Diese Baumart wächst auf feuchtem Boden am besten.",
@@ -19145,13 +19406,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be at risk",
     "source": "wiktionary",
     "lemmas": [
       "stehen",
       "Spiel"
     ],
-    "ref": "phrases/auf dem Spiel stehen"
+    "ref": "phrases/auf dem Spiel stehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "a7b654aff6": {
     "text": "„Ob sich also der Körper noch am Ausgangspunkte der Fallbewegung befindet, oder ob er bereits eine Strecke durchfallen hat, immer zieht ihn die Erde mit derselben Kraft an.“",
@@ -20464,11 +20726,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a razor's edge ride",
     "source": "wiktionary",
     "lemmas": [
       "Ritt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a7bf4cf3f6": {
     "text": "„Er hätte in Großbritannien bleiben sollen, statt in eines der beiden Deutschländer zurückzukehren, die mittlerweile einen waffenlosen, einen kalten Krieg gegeneinander führten.“",
@@ -20521,11 +20784,12 @@
     "type": "expression",
     "note": "sich gierig verhalten",
     "synonyms": [],
-    "translation": null,
+    "translation": "like vultures",
     "source": "wiktionary",
     "lemmas": [
       "Geier"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a7c1d9a08e": {
     "text": "„Sie schwamm bis zu den Terrassen der Fasanerie, vertraute sich ganz dem Rhythmus ihrer Arme und Beine an, zerschlug mit weiten Schwüngen das Spiegelbild der Putten auf dem See und fühlte sich wieder glücklich in diesem faulen Sommer.“",
@@ -21316,10 +21580,31 @@
   },
   "a7c5fbf721": {
     "text": "Ich lass mich doch nicht von dir zum Narren halten!",
-    "translation": null,
+    "translation": "I won't let you make a fool of me!",
     "source": "wiktionary",
     "lemmas": [
       "jemanden zum Narren halten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "lass",
+        "lemma": "lassen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Narren",
+        "lemma": "Narr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "halten",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": "hold"
+      }
     ]
   },
   "a7c65ca019": {
@@ -22025,11 +22310,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get under one's skin",
     "source": "wiktionary",
     "lemmas": [
       "fahren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a7ca1da93f": {
     "text": "Die Beziehung ist kaputt gegangen.",
@@ -22081,11 +22367,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "for breakfast",
     "source": "wiktionary",
     "lemmas": [
       "Morgen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a7cb54c364": {
     "text": "Die Bezeichnung Fräulein ist heutzutage bei vielen Frauen verpönt; manche (besonders ältere) legen jedoch Wert auf sie.",
@@ -22329,27 +22616,26 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be scatterbrained",
     "source": "wiktionary",
     "lemmas": [
       "Wind"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "a7cca9a4c4": {
     "text": "im Dreieck springen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "lose one's temper",
     "source": "wiktionary",
     "lemmas": [
       "Dreieck",
       "im"
     ],
-    "ref": "phrases/im Dreieck springen"
+    "ref": "phrases/im Dreieck springen",
+    "translation_model": "openai/gpt-4.1"
   },
   "a7ccef9f37": {
     "text": "Das ist hier so Gesetz: wer neu anfängt, ist für die Kaffeekasse zuständig.",
@@ -23009,11 +23295,12 @@
     "type": "expression",
     "note": "zu/mit acht Personen",
     "synonyms": [],
-    "translation": null,
+    "translation": "for eight people",
     "source": "wiktionary",
     "lemmas": [
       "zu"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a7d50d2e73": {
     "text": "„Immer wieder erhält sie Morddrohungen, weil sie Russland als Terrorstaat bezeichnete und Putin als Diktator.“",
@@ -25920,12 +26207,13 @@
     "type": "expression",
     "note": "überall dabei sein, anwesend sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "be everywhere",
     "source": "wiktionary",
     "lemmas": [
       "Suppe"
     ],
-    "ref": "phrases/ein Schnittlauch auf allen Suppen sein"
+    "ref": "phrases/ein Schnittlauch auf allen Suppen sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "a7e4586107": {
     "text": "„Die Forschung weiß, dass diese Art von Aufopferung zu den härtesten Belastungen gehört, denen ein Mensch sich aussetzen kann.“",
@@ -26121,13 +26409,14 @@
     "type": "expression",
     "note": "jemanden zur Abschreckung besonders hart bestrafen",
     "synonyms": [],
-    "translation": null,
+    "translation": "set an example",
     "source": "wiktionary",
     "lemmas": [
       "Exempel",
       "statuieren"
     ],
-    "ref": "phrases/ein Exempel statuieren"
+    "ref": "phrases/ein Exempel statuieren",
+    "translation_model": "openai/gpt-4.1"
   },
   "a7e733bdc6": {
     "text": "Während der großen Fluthen, in der ersten Hälfte des 17 . Jahrhunderts (1634) zogen viele Friesen von den Halligen nach Föhr, und ließen sich in Wyk und dem Dorfe Rieblum nieder, […] [Anmerkung: ‚Fluthen‘ ist veraltete deutsche Rechtschreibung]",
@@ -27855,14 +28144,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Give credit where credit is due.",
     "source": "wiktionary",
     "lemmas": [
       "Ehre"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "a7f0b7d0b8": {
     "text": "„Als zwei Passanten in Richtung des Attentäters eilten, schoss er wieder.“",

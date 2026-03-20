@@ -208,12 +208,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "dance around the golden calf",
     "source": "wiktionary",
     "lemmas": [
       "Kalb",
       "golden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3a03ae8b15": {
     "text": "„Sogar der Versuch, die Pünktlichkeit der Züge teils nur ‚auf dem Papier‘ anzuheben, hat die Statistik nur vorübergehend verbessern können.“",
@@ -368,11 +369,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "and who will kiss me",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3a05bd402f": {
     "text": "Der dänische Kronprinz Frederik kann nicht mehr ungestört mit Facebook-Freunden unter dem Pseudonym \"Jens Peter Hansen\" chatten.",
@@ -1543,12 +1545,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get into a hair-raising fight",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
     ],
-    "ref": "phrases/sich in die Haare kriegen"
+    "ref": "phrases/sich in die Haare kriegen",
+    "translation_model": "openai/gpt-4.1"
   },
   "3a164d154b": {
     "text": "drehen und wenden",
@@ -1935,10 +1938,37 @@
   },
   "3a18558b2c": {
     "text": "„Der Drops in dieser Begegnung war bereits nach der ersten Spielhälfte gelutscht.“",
-    "translation": null,
+    "translation": "\"The game was already decided after the first half.\"",
     "source": "wiktionary",
     "lemmas": [
       "der Drops ist gelutscht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Drops",
+        "lemma": "Drops",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Begegnung",
+        "lemma": "Begegnung",
+        "pos": "noun",
+        "gloss_hint": "match (sports)"
+      },
+      {
+        "form": "gelutscht",
+        "lemma": "lutschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spielhälfte",
+        "lemma": "Spielhälfte",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3a1997d6df": {
@@ -2456,11 +2486,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "cut someone to the heart",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3a1e54403b": {
     "text": "„Jetzt hörte ich die Polizeisirenen.“",
@@ -4436,10 +4467,43 @@
   },
   "3a2e2ff9a3": {
     "text": "Ein gefliestes Wohnzimmer wirkt klinisch sauber.",
-    "translation": null,
+    "translation": "A tiled living room looks clinically clean.",
     "source": "wiktionary",
     "lemmas": [
       "klinisch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gefliestes",
+        "lemma": "gefliest",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wohnzimmer",
+        "lemma": "Wohnzimmer",
+        "pos": "noun",
+        "gloss_hint": "living room"
+      },
+      {
+        "form": "wirkt",
+        "lemma": "wirken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "klinisch",
+        "lemma": "klinisch",
+        "pos": "adjective",
+        "gloss_hint": "clinical"
+      },
+      {
+        "form": "sauber",
+        "lemma": "sauber",
+        "pos": "adjective",
+        "gloss_hint": "clean"
+      }
     ]
   },
   "3a300bff67": {
@@ -6779,10 +6843,37 @@
   },
   "3a486f6e6a": {
     "text": "„Ein paar Häuser nennt er aber schon noch sein Eigen.“",
-    "translation": null,
+    "translation": "\"But he still owns a couple of houses.\"",
     "source": "wiktionary",
     "lemmas": [
       "etwas sein Eigen nennen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Paar",
+        "lemma": "Paar",
+        "pos": "noun",
+        "gloss_hint": "pair"
+      },
+      {
+        "form": "Häuser",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "nennt",
+        "lemma": "nennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "eigen",
+        "lemma": "eigen",
+        "pos": "adjective",
+        "gloss_hint": "own"
+      }
     ]
   },
   "3a48bfb96f": {
@@ -7845,10 +7936,67 @@
   },
   "3a55531b3a": {
     "text": "„Mit fröhlichem Sang nimmt das Tagwerk den Fortgang, bis gegen Abend die Glocke vom Turm zur Heimkehr gemahnet.“",
-    "translation": null,
+    "translation": "\"With cheerful song the day's work progresses, until toward evening the bell from the tower calls to return home.\"",
     "source": "wiktionary",
     "lemmas": [
       "Sang"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "fröhlichem",
+        "lemma": "fröhlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sang",
+        "lemma": "Sang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tagwerk",
+        "lemma": "Tagwerk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fortgang",
+        "lemma": "Fortgang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abend",
+        "lemma": "Abend",
+        "pos": "noun",
+        "gloss_hint": "evening"
+      },
+      {
+        "form": "Glocke",
+        "lemma": "Glocke",
+        "pos": "noun",
+        "gloss_hint": "bell"
+      },
+      {
+        "form": "Turm",
+        "lemma": "Turm",
+        "pos": "noun",
+        "gloss_hint": "tower"
+      },
+      {
+        "form": "Heimkehr",
+        "lemma": "Heimkehr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gemahnet",
+        "lemma": "mahnen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "3a58d92b87": {
@@ -8047,18 +8195,66 @@
   },
   "3a60eebcbc": {
     "text": "„Nicht nur mir ist es in meinem Berufsleben schon mehrfach selbst so ergangen.“",
-    "translation": null,
+    "translation": "\"It's not just me—it's happened to me several times in my professional life as well.\"",
     "source": "wiktionary",
     "lemmas": [
       "nicht nur"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Berufsleben",
+        "lemma": "Berufsleben",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "mehrfach",
+        "lemma": "mehrfach",
+        "pos": "adjective",
+        "gloss_hint": "multiple (ways)"
+      },
+      {
+        "form": "ergangen",
+        "lemma": "ergehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "3a611277bc": {
     "text": "Die beiden Brüder sind zwar keine Zwillinge, aber dennoch gleichen sie sich aufs Haar.",
-    "translation": null,
+    "translation": "Although the two brothers are not twins, they resemble each other to a hair.",
     "source": "wiktionary",
     "lemmas": [
       "aufs Haar"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Brüder",
+        "lemma": "Bruder",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zwillinge",
+        "lemma": "Zwilling",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gleichen",
+        "lemma": "gleichen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haar",
+        "lemma": "Haar",
+        "pos": "noun",
+        "gloss_hint": "head hair"
+      }
     ]
   },
   "3a61d79ff2": {
@@ -8832,11 +9028,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not even tempt a dog out of the oven with it",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3a6bee5722": {
     "text": "„Studien mit großer Fallzahl führen aufgrund der hohen statistischen Power (Teststärke) oft zu hoch signifikanten Ergebnissen.“",
@@ -9009,12 +9206,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take someone's bread and butter",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
     ],
-    "ref": "phrases/jemandem die Butter vom Brot nehmen"
+    "ref": "phrases/jemandem die Butter vom Brot nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "3a6ea1f700": {
     "text": "Von den bisher offiziell gemeldeten 1229 Todesfällen seien 760 eindeutig als Folge einer Infektion mit dem Virus bestätigt, bei den anderen Fällen bestehe ein begründeter Verdacht, teilte die WHO mit.",
@@ -9831,11 +10029,12 @@
     "type": "expression",
     "note": "wie ist die allgemeine Lage?",
     "synonyms": [],
-    "translation": null,
+    "translation": "How are things going?",
     "source": "wiktionary",
     "lemmas": [
       "Aktie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3a75d75522": {
     "text": "Es schneit.",
@@ -10534,10 +10733,31 @@
   },
   "3a7c2b1fc0": {
     "text": "Der Schlitten mit ALF XX-999 bleibt heute beim Blitzmarathon in der Garage.",
-    "translation": null,
+    "translation": "The sledge with ALF XX-999 stays in the garage today for the lightning marathon.",
     "source": "wiktionary",
     "lemmas": [
       "ALF"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schlitten",
+        "lemma": "Schlitten",
+        "pos": "noun",
+        "gloss_hint": "sledge"
+      },
+      {
+        "form": "Garage",
+        "lemma": "Garage",
+        "pos": "noun",
+        "gloss_hint": "garage"
+      },
+      {
+        "form": "Blitzmarathon",
+        "lemma": "Blitzmarathon",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3a7d64ed73": {
@@ -10545,12 +10765,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in a flash",
     "source": "wiktionary",
     "lemmas": [
       "Handumdrehen"
     ],
-    "ref": "phrases/im Handumdrehen"
+    "ref": "phrases/im Handumdrehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "3a7dc41019": {
     "text": "„Sophies erster Termin führte uns auf den Campus der Universität von Dakar.“",
@@ -10743,11 +10964,12 @@
     "type": "expression",
     "note": "geheim, inoffiziell geschehen; anderenorts geschehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "take place behind the scenes",
     "source": "wiktionary",
     "lemmas": [
       "Kulisse"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3a825534ce": {
     "text": "„Bislang führte die Bekämpfung von Bakterien durch Phagen in westlichen Industrieländern ein Schattendasein.“",
@@ -10846,11 +11068,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "run with the big dogs",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3a84207fff": {
     "text": "Er kennt sehr gute Witze.",
@@ -11363,11 +11586,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "good heavens",
     "source": "wiktionary",
     "lemmas": [
       "Donner"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3a86943abb": {
     "text": "Seit dem 29. Oktober 2009 ist Steffen Kampeter parlamentarischer Staatssekretär beim Bundesminister der Finanzen.",
@@ -11934,10 +12158,67 @@
   },
   "3a89d68008": {
     "text": "„Die Zuschauer in dem kleinen Kino hielten den Atem an. Alle wussten, was kam, trotzdem war es immer wieder toll, diesen Film zu sehen. Er war schon Kult geworden.“",
-    "translation": null,
+    "translation": "\"The spectators in the small cinema held their breath. Everyone knew what was coming, yet it was always wonderful to see this film. It had become a cult classic.\"",
     "source": "wiktionary",
     "lemmas": [
       "Kult sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zuschauer",
+        "lemma": "Zuschauer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kino",
+        "lemma": "Kino",
+        "pos": "noun",
+        "gloss_hint": "cinema"
+      },
+      {
+        "form": "Atem",
+        "lemma": "Atem",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wussten",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "kam",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "toll",
+        "lemma": "toll",
+        "pos": "adjective",
+        "gloss_hint": "great"
+      },
+      {
+        "form": "Film",
+        "lemma": "Film",
+        "pos": "noun",
+        "gloss_hint": "movie"
+      },
+      {
+        "form": "sehen",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": "see"
+      },
+      {
+        "form": "Kult",
+        "lemma": "Kult",
+        "pos": "noun",
+        "gloss_hint": "cult (excessive admiration)"
+      }
     ]
   },
   "3a8b33af70": {
@@ -11999,11 +12280,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm tired of this dry tone now.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3a8c099706": {
     "text": "„Die Schranke ließ sich hydraulisch anheben, um autorisierten Fahrzeugen das Vordringen zum nächsten Checkpoint zu ermöglichen.“",
@@ -12844,10 +13126,25 @@
   },
   "3a934337ac": {
     "text": "Er strotzte nur so vor Gesundheit.",
-    "translation": null,
+    "translation": "He was bursting with health.",
     "source": "wiktionary",
     "lemmas": [
       "vor Gesundheit strotzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "strotzte",
+        "lemma": "strotzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesundheit",
+        "lemma": "Gesundheit",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3a93b6021a": {
@@ -12927,11 +13224,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fall into the hands of robbers",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3a9513c239": {
     "text": "„Wir waren im gleichen Augenblick in eins verschmolzen und hatten nicht die Kraft, unser erstes Verlangen länger als eine Minute zu zügeln; es erreichte seinen Höhepunkt ohne jedes Geräusch von Küssen und ohne die geringste Bewegung unsererseits.“",
@@ -14770,11 +15068,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a sunny disposition",
     "source": "wiktionary",
     "lemmas": [
       "sonnig"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3aa56a1086": {
     "text": "Ich spritze mein Gemüse regelmäßig gegen Blattläuse.",
@@ -17138,12 +17437,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take to one's heels",
     "source": "wiktionary",
     "lemmas": [
       "Weite"
     ],
-    "ref": "phrases/das Weite suchen"
+    "ref": "phrases/das Weite suchen",
+    "translation_model": "openai/gpt-4.1"
   },
   "3ab781e834": {
     "text": "„Ich war erstaunt über die vielen Katzen, die man auf den Pariser Friedhöfen vorfand, die Gefährtinnen der toten Dichter, wie sie es zu deren Lebzeiten schon immer gewesen waren: […].“",
@@ -17581,11 +17881,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "send someone to the hereafter",
     "source": "wiktionary",
     "lemmas": [
       "befördern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3abd3a09e7": {
     "text": "Wir sollten bereits das Ziel erreicht haben.",
@@ -18712,10 +19013,67 @@
   },
   "3ac653fcc1": {
     "text": "„Sie war landauf landab gereist in Deutschland, hatte mit Hunderten Frauen gesprochen, Abgründe gesehen, von denen sie nichts ahnte, hatte akribisch recherchiert und war vom Ausmaß des Elends der Frauen erschüttert.“",
-    "translation": null,
+    "translation": "\"She had traveled far and wide throughout Germany, spoken with hundreds of women, witnessed abysses of which she had known nothing, researched meticulously, and was shaken by the extent of women's suffering.\"",
     "source": "wiktionary",
     "lemmas": [
       "landauf, landab"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "landauf",
+        "lemma": "landauf",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "gereist",
+        "lemma": "reisen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abgründe",
+        "lemma": "Abgrund",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "recherchiert",
+        "lemma": "recherchieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausmaß",
+        "lemma": "Ausmaß",
+        "pos": "noun",
+        "gloss_hint": "extent"
+      },
+      {
+        "form": "Elends",
+        "lemma": "Elend",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erschüttert",
+        "lemma": "erschüttern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "3ac86e24c7": {
@@ -18963,19 +19321,53 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take responsibility for something",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
     ],
-    "ref": "phrases/etwas in die Hand nehmen"
+    "ref": "phrases/etwas in die Hand nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "3acb74fedb": {
     "text": "„Grosso modo handelt es sich um das, was man im Laufe eines Lebens im Mindestlohnbereich verdient.“",
-    "translation": null,
+    "translation": "\"Broadly speaking, it's roughly what one earns over a lifetime in the minimum wage sector.\"",
     "source": "wiktionary",
     "lemmas": [
       "grosso modo"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Grosso",
+        "lemma": "Grosso",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "modo",
+        "lemma": "modo",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lebens",
+        "lemma": "Leben",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mindestlohnbereich",
+        "lemma": "Mindestlohnbereich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verdient",
+        "lemma": "verdienen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "3acc07780b": {
@@ -19589,11 +19981,12 @@
     "type": "expression",
     "note": "der Überbringer der Nachricht ist nicht für den Inhalt verantwortlich, also soll man seinen Zorn nicht an ihm auslassen",
     "synonyms": [],
-    "translation": null,
+    "translation": "Don't shoot the messenger",
     "source": "wiktionary",
     "lemmas": [
       "Bote"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3ad0382b7f": {
     "text": "„Er hatte in Simon Balcairns Spalte gelesen, seine Tochter sei in einem Nachtklub gesehen worden, was aber Kenner von Miss Strappers Lebensgewohnheiten durchaus nicht wunderte.“",
@@ -20472,12 +20865,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "grin like a Cheshire cat",
     "source": "wiktionary",
     "lemmas": [
       "grinsen"
     ],
-    "ref": "phrases/grinsen wie ein Honigkuchenpferd"
+    "ref": "phrases/grinsen wie ein Honigkuchenpferd",
+    "translation_model": "openai/gpt-4.1"
   },
   "3ad947fd23": {
     "text": "Der Oberleutnant befahl ihm, zehn Liegestütze zu machen.",
@@ -20580,11 +20974,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When your neighbor's house is on fire, you carry water to your own",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3ad9fc27a1": {
     "text": "Machst du bitte die Gardinen zu?",
@@ -20827,11 +21222,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is in hot water",
     "source": "wiktionary",
     "lemmas": [
       "Fuß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3ae04c501c": {
     "text": "Er versteht sich als Künstler.",

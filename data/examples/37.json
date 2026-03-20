@@ -1470,12 +1470,13 @@
     "type": "expression",
     "note": "sich dumm stellen, dumm dastehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "To stand there like a deer in the headlights.",
     "source": "wiktionary",
     "lemmas": [
       "Ochse"
     ],
-    "ref": "phrases/dastehen wie der Ochse vor dem Scheunentor"
+    "ref": "phrases/dastehen wie der Ochse vor dem Scheunentor",
+    "translation_model": "openai/gpt-4.1"
   },
   "3709b32818": {
     "text": "„Der georgische Präsident Eduard Schewardnadse hat den ‚eingefrorenen Konflikt‘ um Abchasien in seinem Land in Erinnerung gerufen und die ‚Mißhandlungen, Vertreibungen und Ermordungen von Georgiern‘ in der abtrünnigen Region beklagt.“",
@@ -2268,11 +2269,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "To drop in on someone unexpectedly.",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "37127189ae": {
     "text": "Meinhard hat sich derart heftig am Kopf gestoßen, dass er ins Krankenhaus musste.",
@@ -3109,11 +3111,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "To be as light as a feather.",
     "source": "wiktionary",
     "lemmas": [
       "Feder"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3718799b0b": {
     "text": "das julisch-claudische Geschlecht; das Geschlecht der Merowinger, Karolinger, Ottonen, Staufer, Welfen, Habsburger, Bourbonen, …",
@@ -3494,10 +3497,43 @@
   },
   "371f0a0ef9": {
     "text": "Gesamtmarktführer bleibt die ARD, beim jungen Publikum liegt RTL vorne.",
-    "translation": null,
+    "translation": "ARD remains the overall market leader; RTL is ahead with younger audiences.",
     "source": "wiktionary",
     "lemmas": [
       "RTL"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gesamtmarktführer",
+        "lemma": "Gesamtmarktführer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ARD",
+        "lemma": "ARD",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "RTL",
+        "lemma": "RTL",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Publikum",
+        "lemma": "Publikum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vorne",
+        "lemma": "vorne",
+        "pos": "adverb",
+        "gloss_hint": "ahead"
+      }
     ]
   },
   "371f15536d": {
@@ -5495,10 +5531,31 @@
   },
   "373aab2c99": {
     "text": "Er ist ein alter Hase im Showgeschäft.",
-    "translation": null,
+    "translation": "He is an old hand in the show business.",
     "source": "wiktionary",
     "lemmas": [
       "ein alter Hase sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "alter",
+        "lemma": "alt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hase",
+        "lemma": "Hase",
+        "pos": "noun",
+        "gloss_hint": "old hand"
+      },
+      {
+        "form": "Showgeschäft",
+        "lemma": "Showgeschäft",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "373ae5ccb3": {
@@ -5554,20 +5611,60 @@
     "type": "expression",
     "note": "unordentlich",
     "synonyms": [],
-    "translation": null,
+    "translation": "All mixed up like a barrel of monkeys.",
     "source": "wiktionary",
     "lemmas": [
       "Kraut",
       "Rübe"
     ],
-    "ref": "phrases/wie Kraut und Rüben"
+    "ref": "phrases/wie Kraut und Rüben",
+    "translation_model": "openai/gpt-4.1"
   },
   "373c2fc743": {
     "text": "„Passersatz zur Rückkehr nach Deutschland (RAP) wird nur bei touristischem Aufenthalt anerkannt“.",
-    "translation": null,
+    "translation": "Travel document for return to Germany (RAP) is only recognized for tourist stays.",
     "source": "wiktionary",
     "lemmas": [
       "RAP"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Passersatz",
+        "lemma": "Passersatz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rückkehr",
+        "lemma": "Rückkehr",
+        "pos": "noun",
+        "gloss_hint": "return"
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "anerkannt",
+        "lemma": "anerkannt",
+        "pos": "adjective",
+        "gloss_hint": "recognized"
+      },
+      {
+        "form": "touristischem",
+        "lemma": "touristisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufenthalt",
+        "lemma": "Aufenthalt",
+        "pos": "noun",
+        "gloss_hint": "stay"
+      }
     ]
   },
   "373cac90a1": {
@@ -9237,12 +9334,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "To take a shit.",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
     ],
-    "ref": "phrases/ein Ei legen"
+    "ref": "phrases/ein Ei legen",
+    "translation_model": "openai/gpt-4.1"
   },
   "37632f7a7e": {
     "text": "Sie bleibt lieber auf dem Sofa sitzen, statt uns zu helfen.",
@@ -12610,10 +12708,43 @@
   },
   "37788cb250": {
     "text": "Jedes Wochenende füttert die Oma die Kleinen mit Süßigkeiten.",
-    "translation": null,
+    "translation": "Every weekend, Grandma feeds the little ones with sweets.",
     "source": "wiktionary",
     "lemmas": [
       "füttern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wochenende",
+        "lemma": "Wochenende",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Oma",
+        "lemma": "Oma",
+        "pos": "noun",
+        "gloss_hint": "grandma"
+      },
+      {
+        "form": "füttert",
+        "lemma": "füttern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kleinen",
+        "lemma": "Kleine",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Süßigkeiten",
+        "lemma": "Süßigkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "377ad2a354": {
@@ -12708,10 +12839,61 @@
   },
   "377b7fae0d": {
     "text": "\"34,5 Prozent der Deutschen interessiert beim Bodenkontakt ihres Fliegers nur eins: „Wo kann ich eine rauchen?“ Das ergibt eine Umfrage von HolidayCheck.de.\"",
-    "translation": null,
+    "translation": "34.5 percent of Germans care about only one thing when their plane touches down: \"Where can I have a smoke?\" That's the result of a survey by HolidayCheck.de.",
     "source": "wiktionary",
     "lemmas": [
       "eine rauchen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Prozent",
+        "lemma": "Prozent",
+        "pos": "noun",
+        "gloss_hint": "percentage"
+      },
+      {
+        "form": "Deutschen",
+        "lemma": "Deutscher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "interessiert",
+        "lemma": "interessiert",
+        "pos": "adjective",
+        "gloss_hint": "interested"
+      },
+      {
+        "form": "Bodenkontakt",
+        "lemma": "Bodenkontakt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fliegers",
+        "lemma": "Flieger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eins",
+        "lemma": "eins",
+        "pos": "noun",
+        "gloss_hint": "one"
+      },
+      {
+        "form": "rauchen",
+        "lemma": "rauchen",
+        "pos": "verb",
+        "gloss_hint": "smoke"
+      },
+      {
+        "form": "Umfrage",
+        "lemma": "Umfrage",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "377b90c2db": {
@@ -13392,10 +13574,67 @@
   },
   "37838b77fc": {
     "text": "Der Enkel Emanuele Filiberto lässt es jetzt erst mal bescheidener angehen: Geflittert wird jedenfalls nur ein paar Tage lang, und zwar in Florenz.",
-    "translation": null,
+    "translation": "Grandson Emanuele Filiberto is now taking things more modestly: the honeymoon lasts only a couple of days, namely in Florence.",
     "source": "wiktionary",
     "lemmas": [
       "flittern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Enkel",
+        "lemma": "Enkel",
+        "pos": "noun",
+        "gloss_hint": "grandson"
+      },
+      {
+        "form": "Emanuele",
+        "lemma": "Emanuele",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Filiberto",
+        "lemma": "Filiberto",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bescheidener",
+        "lemma": "bescheiden",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "angehen",
+        "lemma": "angehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geflittert",
+        "lemma": "geflittert",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Paar",
+        "lemma": "Paar",
+        "pos": "noun",
+        "gloss_hint": "couple"
+      },
+      {
+        "form": "Tage",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Florenz",
+        "lemma": "Florenz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3783c5cf2b": {
@@ -13559,11 +13798,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "To be crazy in the head.",
     "source": "wiktionary",
     "lemmas": [
       "Kopfschuss"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3784d6217e": {
     "text": "„Vielleicht war es Ausdruck von Angst oder Vorfreude, vielleicht zeigte es aber auch nur, wie aufgeregt wir alle waren.“",
@@ -14902,10 +15142,67 @@
   },
   "3792825de4": {
     "text": "„Sie besorgte Medikamente, das war die offizielle Begründung für ihre Fahrten, und erkundigte sich beim Palästina-Amt, ob es schon einen Termin für Minnas Abreise gebe.“",
-    "translation": null,
+    "translation": "She obtained medicines—that was the official reason for her trips—and inquired at the Palestine Office whether there was already a date set for Minna's departure.",
     "source": "wiktionary",
     "lemmas": [
       "erkundigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "besorgte",
+        "lemma": "besorgen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Medikamente",
+        "lemma": "Medikament",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Begründung",
+        "lemma": "Begründung",
+        "pos": "noun",
+        "gloss_hint": "reasoning"
+      },
+      {
+        "form": "Fahrten",
+        "lemma": "Fahrt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erkundigte",
+        "lemma": "erkundigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Palästina-Amt",
+        "lemma": "Palästina-Amt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Termin",
+        "lemma": "Termin",
+        "pos": "noun",
+        "gloss_hint": "date"
+      },
+      {
+        "form": "Minnas",
+        "lemma": "Minna",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abreise",
+        "lemma": "Abreise",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "3792d2cb50": {
@@ -16432,11 +16729,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "To talk a lot of nonsense.",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "37a1e50e2d": {
     "text": "Kannst du mir dieses Formular, wovon Dieter sprach, bitte noch unterschreiben: „Zeig den Wisch erstmal her!“",
@@ -18037,11 +18335,12 @@
     "type": "expression",
     "note": "eine ausgeprägte Fantasie haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "To have a vivid imagination.",
     "source": "wiktionary",
     "lemmas": [
       "blühen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "37b22b5490": {
     "text": "„Man hatte auch ein paar Straßen durchgekämmt, ein paar Wohnungen durchsucht.“",
@@ -18498,10 +18797,109 @@
   },
   "37b6675ac5": {
     "text": "„Meine Mutter, ein vierzehnjähriges Kind, stand in ihrem knöchellangen weißen Hemd auf den Dielen und wand sich ihr Haar ums Handgelenk und sah hin und her zwischen Papenbrock, ihrer Schwester Hilde und den Arbeitern, die sie auf Platt ausfragten.“",
-    "translation": null,
+    "translation": "My mother, a fourteen-year-old child, stood in her ankle-length white shirt on the floorboards and wound her hair around her wrist, looking back and forth between Papenbrock, her sister Hilde, and the workers who questioned her in Low German.",
     "source": "wiktionary",
     "lemmas": [
       "hin und her"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mutter",
+        "lemma": "Mutter",
+        "pos": "noun",
+        "gloss_hint": "mother"
+      },
+      {
+        "form": "vierzehnjähriges",
+        "lemma": "vierzehnjährig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kind",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": "child"
+      },
+      {
+        "form": "knöchellangen",
+        "lemma": "knöchellang",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "weißen",
+        "lemma": "weiß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hemd",
+        "lemma": "Hemd",
+        "pos": "noun",
+        "gloss_hint": "shirt"
+      },
+      {
+        "form": "Dielen",
+        "lemma": "Diele",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wand",
+        "lemma": "winden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haar",
+        "lemma": "Haar",
+        "pos": "noun",
+        "gloss_hint": "hair"
+      },
+      {
+        "form": "Handgelenk",
+        "lemma": "Handgelenk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Papenbrock",
+        "lemma": "Papenbrock",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schwester",
+        "lemma": "Schwester",
+        "pos": "noun",
+        "gloss_hint": "sister"
+      },
+      {
+        "form": "Hilde",
+        "lemma": "Hilde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arbeitern",
+        "lemma": "Arbeiter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausfragten",
+        "lemma": "ausfragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Platt",
+        "lemma": "Platt",
+        "pos": "noun",
+        "gloss_hint": "Low German"
+      }
     ]
   },
   "37b7627347": {
@@ -19365,18 +19763,58 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a shadow is cast over something",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "37c06070bb": {
     "text": "„…; gemeint ist damit, daß sich in diesen Städten ein bestimmter Lebensstil und bestimmte Kommunikationsformen herausgebildet haben, die nolens volens auch von den Zugewanderten übernommen werden.“",
-    "translation": null,
+    "translation": "…; what is meant by this is that a certain lifestyle and certain forms of communication have developed in these cities, which are adopted by the newcomers willy-nilly.",
     "source": "wiktionary",
     "lemmas": [
       "nolens volens"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gemeint",
+        "lemma": "meinen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lebensstil",
+        "lemma": "Lebensstil",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kommunikationsformen",
+        "lemma": "Kommunikationsform",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "herausgebildet",
+        "lemma": "herausbilden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zugewanderten",
+        "lemma": "Zugewanderte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "übernommen",
+        "lemma": "übernehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "37c135e971": {
@@ -21412,11 +21850,12 @@
     "type": "expression",
     "note": "! – wenn man eine einfache Lösung für ein Problem vorschlägt",
     "synonyms": [],
-    "translation": null,
+    "translation": "problem solved!",
     "source": "wiktionary",
     "lemmas": [
       "Lack"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "37d019d693": {
     "text": "„Erst verlor Anna ihren Job, dann die Wohnung. Seitdem lebt sie auf der Straße.“",
@@ -28510,10 +28949,55 @@
   },
   "37ff88ac76": {
     "text": "„Allmählich wurde das Repertoire der Namen für die Kartoffel immer breiter: Erdnuss, Bodenbirnen und Erdbirnen, mundartlich Ärbirå, Äår(d)birå, Äbbirå, Äåbirå, Aebirå, Jabirå.“",
-    "translation": null,
+    "translation": "Gradually the repertoire of names for the potato became ever broader: peanut, ground pears and earth pears, dialectally Ärbirå, Äår(d)birå, Äbbirå, Äåbirå, Aebirå, Jabirå.",
     "source": "wiktionary",
     "lemmas": [
       "Erdnuss"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Repertoire",
+        "lemma": "Repertoire",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Namen",
+        "lemma": "Name",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kartoffel",
+        "lemma": "Kartoffel",
+        "pos": "noun",
+        "gloss_hint": "potato tuber"
+      },
+      {
+        "form": "breiter",
+        "lemma": "breit",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erdnuss",
+        "lemma": "Erdnuss",
+        "pos": "noun",
+        "gloss_hint": "potato"
+      },
+      {
+        "form": "Bodenbirnen",
+        "lemma": "Bodenbirne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erdbirnen",
+        "lemma": "Erdbirne",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   }
 }

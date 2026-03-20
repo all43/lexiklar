@@ -1156,11 +1156,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not make a peep anymore",
     "source": "wiktionary",
     "lemmas": [
       "Piep"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "18061240c5": {
     "text": "Am 19. November 2005 wurde der deutsche Bundeskanzler Gerhard Schröder in Hannover mit einem Großen Zapfenstreich aus seinem Amt verabschiedet.",
@@ -1880,11 +1881,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to release books",
     "source": "wiktionary",
     "lemmas": [
       "freilassen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "181460cd20": {
     "text": "Der Richter erkannte auf Totschlag.",
@@ -3008,10 +3010,85 @@
   },
   "181cc0ccbe": {
     "text": "„In der russischsprachigen Zeitung hatte meine Mutter gelesen, am dritten Advent werde am Brandenburger Tor ein Chanukkaleuchter angezündet, ein Leuchter aus acht oder neun Kerzen, der zum jüdischen Lichterfest gehört.“",
-    "translation": null,
+    "translation": "\"In the Russian-language newspaper, my mother had read that on the third Sunday of Advent a menorah would be lit at the Brandenburg Gate, a candelabrum with eight or nine candles that belongs to the Jewish festival of lights.\"",
     "source": "wiktionary",
     "lemmas": [
       "Leuchter"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "russischsprachigen",
+        "lemma": "russischsprachig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeitung",
+        "lemma": "Zeitung",
+        "pos": "noun",
+        "gloss_hint": "newspaper"
+      },
+      {
+        "form": "Mutter",
+        "lemma": "Mutter",
+        "pos": "noun",
+        "gloss_hint": "mother"
+      },
+      {
+        "form": "gelesen",
+        "lemma": "lesen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Advent",
+        "lemma": "Advent",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Brandenburger",
+        "lemma": "Brandenburger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tor",
+        "lemma": "Tor",
+        "pos": "noun",
+        "gloss_hint": "gate"
+      },
+      {
+        "form": "Chanukkaleuchter",
+        "lemma": "Chanukkaleuchter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "angezündet",
+        "lemma": "anzünden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leuchter",
+        "lemma": "Leuchter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kerzen",
+        "lemma": "Kerze",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lichterfest",
+        "lemma": "Lichterfest",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "181ced00f1": {
@@ -3807,10 +3884,55 @@
   },
   "1822ab4162": {
     "text": "„Statt auf den Adel des Geldes setzt Monaco heute auf den Massentourismus. Die Hautevolee muss lernen, mit ‚Krethi und Plethi‘ zu teilen.“",
-    "translation": null,
+    "translation": "\"Instead of relying on the nobility of wealth, Monaco today is betting on mass tourism. The high society must learn to share with the common rabble.\"",
     "source": "wiktionary",
     "lemmas": [
       "Krethi und Plethi"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Adel",
+        "lemma": "Adel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geldes",
+        "lemma": "Geld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Monaco",
+        "lemma": "Monaco",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Massentourismus",
+        "lemma": "Massentourismus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hautevolee",
+        "lemma": "Hautevolee",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lernen",
+        "lemma": "lernen",
+        "pos": "verb",
+        "gloss_hint": "study"
+      },
+      {
+        "form": "teilen",
+        "lemma": "teilen",
+        "pos": "verb",
+        "gloss_hint": "share"
+      }
     ]
   },
   "182308d488": {
@@ -6137,10 +6259,19 @@
   },
   "18366005fa": {
     "text": "Betriebssystem MS DOS",
-    "translation": null,
+    "translation": "Operating system MS DOS",
     "source": "wiktionary",
     "lemmas": [
       "MS"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Betriebssystem",
+        "lemma": "Betriebssystem",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "1838b178d7": {
@@ -6415,10 +6546,31 @@
   },
   "183a6f7455": {
     "text": "„Dieses Buch ist keinen Pfifferling wert.“",
-    "translation": null,
+    "translation": "\"This book is not worth a fig.\"",
     "source": "wiktionary",
     "lemmas": [
       "keinen Pfifferling wert sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Buch",
+        "lemma": "Buch",
+        "pos": "noun",
+        "gloss_hint": "book"
+      },
+      {
+        "form": "Pfifferling",
+        "lemma": "Pfifferling",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wert",
+        "lemma": "wert",
+        "pos": "adjective",
+        "gloss_hint": "worthwhile"
+      }
     ]
   },
   "183ab07120": {
@@ -6719,22 +6871,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to sit on one's hands",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "18414682da": {
     "text": "dem hätte ich was anderes erzählt",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I would have told him something different",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "18415c068e": {
     "text": "„Und ich versichere dir, heute Nacht wird er ganz sicher der einundvierzigsten Frau seinen Dödel reinstecken.“",
@@ -7004,11 +7158,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to make a fool of oneself",
     "source": "wiktionary",
     "lemmas": [
       "Löffel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "184389bd08": {
     "text": "„Dracula verschwand; alles war ruhig, mit Ausnahme des Japsens der Hunde.“",
@@ -7174,10 +7329,31 @@
   },
   "184602f482": {
     "text": "Die Details kannst du alle in seiner Bio nachlesen.",
-    "translation": null,
+    "translation": "You can read all the details in his bio.",
     "source": "wiktionary",
     "lemmas": [
       "Bio"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Details",
+        "lemma": "Detail",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bio",
+        "lemma": "Bio",
+        "pos": "noun",
+        "gloss_hint": "biography"
+      },
+      {
+        "form": "nachlesen",
+        "lemma": "nachlesen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "1846b4b0d9": {
@@ -7525,11 +7701,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to consider oneself lucky",
     "source": "wiktionary",
     "lemmas": [
       "preisen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "184a51739f": {
     "text": "adverbial: Eventuell komme ich morgen später.",
@@ -9676,10 +9853,37 @@
   },
   "1860a185a1": {
     "text": "„Besonders beeindruckt hatte sie dabei, daß die Polizei bei der Fahndung noch immer im dunkeln tappte.“",
-    "translation": null,
+    "translation": "\"What particularly impressed her was that the police were still in the dark during the manhunt.\"",
     "source": "wiktionary",
     "lemmas": [
       "im Dunkeln tappen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "beeindruckt",
+        "lemma": "beeindrucken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Polizei",
+        "lemma": "Polizei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fahndung",
+        "lemma": "Fahndung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dunkeln",
+        "lemma": "dunkeln",
+        "pos": "verb",
+        "gloss_hint": "grow dark"
+      }
     ]
   },
   "18619c46fc": {
@@ -10068,12 +10272,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have an epiphany",
     "source": "wiktionary",
     "lemmas": [
       "Damaskus"
     ],
-    "ref": "phrases/sein Damaskus erleben"
+    "ref": "phrases/sein Damaskus erleben",
+    "translation_model": "openai/gpt-4.1"
   },
   "18641cb15f": {
     "text": "„Auf dem Weg ins Zentrum der neuen Macht glauben sich meine West-Augen im Kino, in einem Spionagefilm aus der Zeit des kalten Krieges: Die breiten Fahrbahnen des Prachtboulevards wirken furchterregend tot.“",
@@ -10275,10 +10480,73 @@
   },
   "18642c506b": {
     "text": "„Prinzessin Marja seufzte betrübt und räumte mit diesem Seufzer die Berechtigung dessen ein, was Natascha gesagt hatte, musste ihr aber doch widersprechen.“",
-    "translation": null,
+    "translation": "\"Princess Maria sighed sadly and with that sigh acknowledged the validity of what Natasha had said, but still had to contradict her.\"",
     "source": "wiktionary",
     "lemmas": [
       "Berechtigung"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Prinzessin",
+        "lemma": "Prinzessin",
+        "pos": "noun",
+        "gloss_hint": "princess"
+      },
+      {
+        "form": "Marja",
+        "lemma": "Marja",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "seufzte",
+        "lemma": "seufzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "betrübt",
+        "lemma": "betrübt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "räumte",
+        "lemma": "räumen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Seufzer",
+        "lemma": "Seufzer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Berechtigung",
+        "lemma": "Berechtigung",
+        "pos": "noun",
+        "gloss_hint": "justification"
+      },
+      {
+        "form": "Natascha",
+        "lemma": "Natascha",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesagt",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "widersprechen",
+        "lemma": "widersprechen",
+        "pos": "verb",
+        "gloss_hint": "contradict"
+      }
     ]
   },
   "186519077d": {
@@ -11639,11 +11907,12 @@
     "type": "expression",
     "note": "jemanden versohlen, jemanden auf den Hintern prügeln",
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a spanking",
     "source": "wiktionary",
     "lemmas": [
       "stramm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "187392b756": {
     "text": "„Belachew geht zum nächsten Kursteilnehmer.“",
@@ -11804,11 +12073,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "beanpole",
     "source": "wiktionary",
     "lemmas": [
       "lang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "187745c4f2": {
     "text": "Zur Mittagszeit rief der Kommandant: „Essen fassen!“",
@@ -13056,10 +13326,43 @@
   },
   "1883468d35": {
     "text": "Möchten Sie den englischen Sender BBC empfangen, geht dies nur über einen VPN-Dienst.",
-    "translation": null,
+    "translation": "If you want to receive the English broadcaster BBC, this is only possible via a VPN service.",
     "source": "wiktionary",
     "lemmas": [
       "BBC"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "englischen",
+        "lemma": "englisch",
+        "pos": "adjective",
+        "gloss_hint": "English"
+      },
+      {
+        "form": "Sender",
+        "lemma": "Sender",
+        "pos": "noun",
+        "gloss_hint": "station"
+      },
+      {
+        "form": "BBC",
+        "lemma": "BBC",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "empfangen",
+        "lemma": "empfangen",
+        "pos": "verb",
+        "gloss_hint": "receive"
+      },
+      {
+        "form": "VPN-Dienst",
+        "lemma": "VPN-Dienst",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "18834aab74": {
@@ -14823,10 +15126,31 @@
   },
   "18918ffa7c": {
     "text": "Er zog noch Zigaretten am Automaten.",
-    "translation": null,
+    "translation": "He was still buying cigarettes from the vending machine.",
     "source": "wiktionary",
     "lemmas": [
       "Automat"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "zog",
+        "lemma": "ziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zigaretten",
+        "lemma": "Zigarette",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Automaten",
+        "lemma": "Automat",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "1891e83bcc": {
@@ -15496,11 +15820,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fall flat on your face",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "189b1b28c2": {
     "text": "Wir sollten das genauer betrachten.",
@@ -16688,11 +17013,12 @@
     "type": "expression",
     "note": "rege dich nicht auf",
     "synonyms": [],
-    "translation": null,
+    "translation": "don’t make a fuss",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "18a20ecc7d": {
     "text": "„Wenn Ihr’s doch absolut wissen müßt, da läuft ein niederträchtiger Schuft durchs Land, ein Kerl, sage ich Euch, nicht ’nen Schuß Pulver wert, der den Leuten schlechte Ware für teures Geld verkauft, arm und reich betrügt, ein Tagedieb, ein Gauner, ein Marktschreier –“",
@@ -17799,10 +18125,103 @@
   },
   "18aaff7b73": {
     "text": "[Tiroler Alpen:] „Touristen aus ganz Europa kamen in Scharen in die Berge, um Abfahrten und Après-Ski zu genießen - aus Deutschland, Großbritannien und den Niederlanden, aus Norwegen, Schweden und Island.“",
-    "translation": null,
+    "translation": "Tourists from all over Europe came in droves to the mountains to enjoy skiing and après-ski – from Germany, Great Britain and the Netherlands, from Norway, Sweden and Iceland.",
     "source": "wiktionary",
     "lemmas": [
       "in Scharen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Touristen",
+        "lemma": "Tourist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ganz",
+        "lemma": "ganz",
+        "pos": "adjective",
+        "gloss_hint": "whole"
+      },
+      {
+        "form": "Europa",
+        "lemma": "Europa",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kamen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Scharen",
+        "lemma": "Schar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Berge",
+        "lemma": "Berg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abfahrten",
+        "lemma": "Abfahrt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Après-Ski",
+        "lemma": "Après-Ski",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "genießen",
+        "lemma": "genießen",
+        "pos": "verb",
+        "gloss_hint": "relish"
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Großbritannien",
+        "lemma": "Großbritannien",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Niederlanden",
+        "lemma": "Niederlande",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Norwegen",
+        "lemma": "Norwegen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schweden",
+        "lemma": "Schweden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Island",
+        "lemma": "Island",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "18ab501b69": {
@@ -18559,11 +18978,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "lame duck",
     "source": "wiktionary",
     "lemmas": [
       "Ente"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "18b18411fe": {
     "text": "„Wahrscheinlich war die Bevölkerungsdichte gegen Ende des 15. Jahrhunderts höher als je zuvor in der mesoamerikanischen Geschichte und auf jeden Fall deutlich höher als auf der Iberischen Halbinsel, ein Faktum, das allerdings Konflikte und Kriege zur Folge hatte.“",
@@ -21320,11 +21740,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "breathe down someone's neck",
     "source": "wiktionary",
     "lemmas": [
       "Gläubiger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "18c21da82a": {
     "text": "„Als sie als Gymnasiasten aus Kristiania nach Dresden gekommen waren, hatten sie nur gebrochen Deutsch gesprochen und keinen Benimm gehabt.“",
@@ -22811,11 +23232,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If you're foolish, you have to pay the price.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "18ccdbd036": {
     "text": "Das Fass fasst fünfhundert Liter.",
@@ -25153,12 +25575,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hit the hay",
     "source": "wiktionary",
     "lemmas": [
       "Feder"
     ],
-    "ref": "phrases/in die Federn"
+    "ref": "phrases/in die Federn",
+    "translation_model": "openai/gpt-4.1"
   },
   "18e85b3203": {
     "text": "Welcher Argumente sie sich bedient, weiß ich nicht.",
@@ -25285,11 +25708,12 @@
     "type": "expression",
     "note": "jemanden verraten",
     "synonyms": [],
-    "translation": null,
+    "translation": "betray someone",
     "source": "wiktionary",
     "lemmas": [
       "Messer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "18e9696c19": {
     "text": "Hör doch mal die letzte Einspielung ab.",

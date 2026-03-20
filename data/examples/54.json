@@ -1169,11 +1169,12 @@
     "type": "expression",
     "note": "eine Glatze haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "be as bald as a coot",
     "source": "wiktionary",
     "lemmas": [
       "Schwamm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5408247b81": {
     "text": "„Geht lieber schlafen, eh ihr wieder streitet. Morgen früh ist die Nacht zu Ende.“",
@@ -1693,10 +1694,73 @@
   },
   "54118bf511": {
     "text": "„Ich bin gegen die übertriebene Höflichkeit auf Hochschulboden, gegen dieses amikale sich gegenseitig in den Arsch kriechen: »Wie geeehts, werter Herr Kolleeege?« Und schwups hat man hinterrücks das Hackl im Kreuz.“",
-    "translation": null,
+    "translation": "\"I'm against excessive politeness on university grounds, against this friendly mutual groveling: 'How are you doing, dear colleague?' And suddenly you get stabbed in the back.\"",
     "source": "wiktionary",
     "lemmas": [
       "das Hackl im Kreuz stecken haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gegen",
+        "lemma": "gegen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "übertriebene",
+        "lemma": "übertrieben",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Höflichkeit",
+        "lemma": "Höflichkeit",
+        "pos": "noun",
+        "gloss_hint": "politeness"
+      },
+      {
+        "form": "Hochschulboden",
+        "lemma": "Hochschulboden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "amikale",
+        "lemma": "amikal",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "kriechen",
+        "lemma": "kriechen",
+        "pos": "verb",
+        "gloss_hint": "grovel"
+      },
+      {
+        "form": "Herr",
+        "lemma": "Herr",
+        "pos": "noun",
+        "gloss_hint": "sir"
+      },
+      {
+        "form": "Kollege",
+        "lemma": "Kollege",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hackl",
+        "lemma": "Hackl",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kreuz",
+        "lemma": "Kreuz",
+        "pos": "noun",
+        "gloss_hint": "back area"
+      }
     ]
   },
   "5412f5e8c4": {
@@ -3331,11 +3395,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hit the sack",
     "source": "wiktionary",
     "lemmas": [
       "Matte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5421017cd3": {
     "text": "Das Lagerfeuer am Europäischen Nordmeer erlosch erst am frühen Morgen.",
@@ -5006,11 +5071,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "weird bald head",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "542f4c5e15": {
     "text": "Der Rüde hatte seine Visitenkarte am Vorderreifen des Jaguars hinterlassen.",
@@ -7108,10 +7174,31 @@
   },
   "543f856203": {
     "text": "Sie studiert an der TU Berlin.",
-    "translation": null,
+    "translation": "She studies at TU Berlin.",
     "source": "wiktionary",
     "lemmas": [
       "TU"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "studiert",
+        "lemma": "studieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "TU",
+        "lemma": "TU",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Berlin",
+        "lemma": "Berlin",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5440380a67": {
@@ -9804,11 +9891,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "until one's last breath",
     "source": "wiktionary",
     "lemmas": [
       "Atemzug"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "545d41f07a": {
     "text": "Diesen Winter war es teuflisch kalt.",
@@ -10584,15 +10672,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be in someone's good books",
     "source": "wiktionary",
     "lemmas": [
       "Stein"
     ],
     "ref": "phrases/bei jemandem einen Stein im Brett haben",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "5466bd8236": {
     "text": "„Jedenfalls wurde ausgeblendet, dass traumatisierte deutsche Kinder genauso zu den Opfern der Nazis gehörten.“",
@@ -10689,12 +10775,13 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Idleness is the root of all evil.",
     "source": "wiktionary",
     "lemmas": [
       "Laster"
     ],
-    "ref": "phrases/Müßiggang ist aller Laster Anfang"
+    "ref": "phrases/Müßiggang ist aller Laster Anfang",
+    "translation_model": "openai/gpt-4.1"
   },
   "5468d82c66": {
     "text": "Die Waschmaschine schleudert noch.",
@@ -12159,10 +12246,43 @@
   },
   "547c8f1ffc": {
     "text": "Sie hat schwer an ihrer Entstellung durch den Unfall zu tragen. (= leidet darunter)",
-    "translation": null,
+    "translation": "She has had to bear the burden of her disfigurement from the accident.",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hat",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": "have"
+      },
+      {
+        "form": "schwer",
+        "lemma": "schwer",
+        "pos": "adjective",
+        "gloss_hint": "difficult"
+      },
+      {
+        "form": "Entstellung",
+        "lemma": "Entstellung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unfall",
+        "lemma": "Unfall",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tragen",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": "bear"
+      }
     ]
   },
   "547d3f3110": {
@@ -12745,11 +12865,12 @@
     "type": "expression",
     "note": "eine Sache gekonnt angehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "pull the right lever",
     "source": "wiktionary",
     "lemmas": [
       "ansetzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "548635aa15": {
     "text": "„Ich liege in meinem schönen Hotelzimmer, schaue hinaus auf den Leuchtturm und frage mich: Was soll das alles?“",
@@ -13278,11 +13399,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be an honest soul",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5491308e02": {
     "text": "Eine Annäherung an die Militärbasis ist nur bei Nacht möglich.",
@@ -13476,11 +13598,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Do you want a bucket of water?",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5494a2a70b": {
     "text": "Er legte sich auf dem Sofa zurück und schlief ein.",
@@ -16102,11 +16225,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put the finishing touches on something",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "54a590270c": {
     "text": "„Als das Gift zu wirken begann und der Mann verzweifelt um Hilfe schrie, drohte sie ihm, wiederzukommen und ihn zu entmannen, wenn er es noch einmal wagen sollte, ihrer Enkelin zu nahe zu kommen.“",
@@ -16618,14 +16742,32 @@
   },
   "54abc6e26c": {
     "text": "„Auf ca. 1000 S wird die Landschaft Badens analysiert.“",
-    "translation": null,
+    "translation": "On approximately 1000 pages, the landscape of Baden is analyzed.",
     "source": "wiktionary",
     "lemmas": [
       "S"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Landschaft",
+        "lemma": "Landschaft",
+        "pos": "noun",
+        "gloss_hint": "landscape"
+      },
+      {
+        "form": "Badens",
+        "lemma": "Baden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "analysiert",
+        "lemma": "analysieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ]
   },
   "54ac0ca286": {
     "text": "Sie waren schon zu siech, als daß man sie hätte können in ein Hospital verführen.",
@@ -16848,12 +16990,13 @@
     "type": "expression",
     "note": "sich trollen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to depart",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
     ],
-    "ref": "phrases/von dannen ziehen"
+    "ref": "phrases/von dannen ziehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "54b09e5a42": {
     "text": "mit etwas hinter dem Berg halten",
@@ -18307,11 +18450,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "priceless",
     "source": "wiktionary",
     "lemmas": [
       "Geld"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "54bfa110b0": {
     "text": "„Wie konfliktträchtig das Vertreibungsthema auch in anderen europäischen Foren diskutiert wird, belegt die Reaktion der Parlamentarischen Versammlung des Europarats auf den Vorschlag des Komitees für Migration, Flüchtlinge und Bevölkerung dieser ältesten paneuropäischen Institution zur Einrichtung eines »Europäischen Zentrums der Erinnerung an Opfer erzwungener Bevölkerungsbewegungen und ethnischer Säuberungen«: Er erreichte aufgrund einer französisch-russisch-türkischen Ablehnungsfront zweimal, im Januar 2005 und im Oktober 2006, nicht die notwendige Zweidrittelmehrheit (Dok. 41–44).“",
@@ -22710,12 +22854,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fall victim to the budget axe",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
     ],
-    "ref": "phrases/dem Rotstift zum Opfer fallen"
+    "ref": "phrases/dem Rotstift zum Opfer fallen",
+    "translation_model": "openai/gpt-4.1"
   },
   "54e9853ec9": {
     "text": "„Klimawandel in Deutschland heißt auch, dass auch der Winterniederschlag steigt.“",
@@ -23496,11 +23641,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to worry about things that haven't happened yet",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "54f0ff6860": {
     "text": "„Ein Deputy spricht gerade mit den erschütterten Fahrern, während ein anderer den Verkehr um die Unfallstelle herumleitet.“",
@@ -23818,11 +23964,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be pregnant",
     "source": "wiktionary",
     "lemmas": [
       "Storch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "54f370e256": {
     "text": "„Frauen haben eine viel größere Mitgift an Muttervorbildern mitbekommen als Männer an Vatervorbildern.“",

@@ -922,11 +922,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go at someone like a bull",
     "source": "wiktionary",
     "lemmas": [
       "Stier"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5c0ac1cebe": {
     "text": "„Abbruchstimmung in Moorfleet, in der Fabrik an der Andreas-Meyer-Straße.“",
@@ -1047,10 +1048,61 @@
   },
   "5c0b4579fd": {
     "text": "„Rückenmeister Küppers bewies einmal mehr seine Vorrangstellung, indem er dem Magdeburger Schumburg mühelos das Nachsehen gab.“",
-    "translation": null,
+    "translation": "\"Back-master Küppers once again demonstrated his supremacy by easily outpacing Magdeburg's Schumburg.\"",
     "source": "wiktionary",
     "lemmas": [
       "einmal mehr"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rückenmeister",
+        "lemma": "Rückenmeister",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Küppers",
+        "lemma": "Küppers",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bewies",
+        "lemma": "beweisen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorrangstellung",
+        "lemma": "Vorrangstellung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Magdeburger",
+        "lemma": "Magdeburger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schumburg",
+        "lemma": "Schumburg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "mühelos",
+        "lemma": "mühelos",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nachsehen",
+        "lemma": "Nachsehen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5c0c765fd3": {
@@ -2189,11 +2241,12 @@
     "type": "expression",
     "note": "anständig, aufrichtig; vom alten Schlag",
     "synonyms": [],
-    "translation": null,
+    "translation": "old-fashioned and honorable",
     "source": "wiktionary",
     "lemmas": [
       "Schrot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5c125ee01f": {
     "text": "Ich betrachte die Situation als wenig aussichtsreich.",
@@ -2374,12 +2427,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "all one's belongings",
     "source": "wiktionary",
     "lemmas": [
       "Pack"
     ],
-    "ref": "phrases/Hab und Gut"
+    "ref": "phrases/Hab und Gut",
+    "translation_model": "openai/gpt-4.1"
   },
   "5c14261dc3": {
     "text": "Vielleicht solltest du dir einen Hund zutun.",
@@ -2448,10 +2502,67 @@
   },
   "5c153119f3": {
     "text": "„Kostunica übte indirekt auch immer wieder Kritik an der Conditio sine qua non, die die Auslieferung des gesuchten Kriegsverbrechers Ratko Mladic verlangt.“",
-    "translation": null,
+    "translation": "\"Kostunica indirectly repeatedly criticized the sine qua non condition that demanded the extradition of the wanted war criminal Ratko Mladic.\"",
     "source": "wiktionary",
     "lemmas": [
       "Conditio sine qua non"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kostunica",
+        "lemma": "Kostunica",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "übte",
+        "lemma": "üben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "indirekt",
+        "lemma": "indirekt",
+        "pos": "adjective",
+        "gloss_hint": "indirect"
+      },
+      {
+        "form": "Kritik",
+        "lemma": "Kritik",
+        "pos": "noun",
+        "gloss_hint": "criticism"
+      },
+      {
+        "form": "Conditio",
+        "lemma": "Conditio",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auslieferung",
+        "lemma": "Auslieferung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kriegsverbrechers",
+        "lemma": "Kriegsverbrecher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ratko",
+        "lemma": "Ratko",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mladic",
+        "lemma": "Mladic",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5c15b4c213": {
@@ -2624,10 +2735,31 @@
   },
   "5c16f60c92": {
     "text": "Der Gebrauchstemperaturbereich von PC liegt zwischen −50 °C und +135 °C.",
-    "translation": null,
+    "translation": "The operating temperature range of PC is between −50 °C and +135 °C.",
     "source": "wiktionary",
     "lemmas": [
       "PC"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gebrauchstemperaturbereich",
+        "lemma": "Gebrauchstemperaturbereich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "PC",
+        "lemma": "PC",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "liegt",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5c16fb74cc": {
@@ -3019,11 +3151,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is losing everything they have",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5c1c81bdc4": {
     "text": "Ohne seine Einwilligung können Sie das Haus nicht verkaufen.",
@@ -3507,22 +3640,24 @@
     "type": "expression",
     "note": "etwas entstellt wiedergeben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to paint something with a broad brush",
     "source": "wiktionary",
     "lemmas": [
       "Pinsel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5c239afc29": {
     "text": "jemandem schwimmen alle Felle davon",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to see everything slipping away",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5c2690313f": {
     "text": "„Er zeigte Martin den rechten Umgang mit einer Muskete und die furchtbare Wirkung einer Kanonenkugel.“",
@@ -6280,11 +6415,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be the highlight",
     "source": "wiktionary",
     "lemmas": [
       "Krönung"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5c38058a1d": {
     "text": "Die Quote der Studienabbrecher sank im letzten Jahr um 3 Prozent.",
@@ -6360,10 +6496,43 @@
   },
   "5c3815e3ff": {
     "text": "Dem kleinen Jungen wurden wegen Läusebefalls die Haare geschoren.",
-    "translation": null,
+    "translation": "The little boy's hair was shaved off because of lice infestation.",
     "source": "wiktionary",
     "lemmas": [
       "scheren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kleinen",
+        "lemma": "klein",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jungen",
+        "lemma": "Junge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Läusebefalls",
+        "lemma": "Läusebefall",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haare",
+        "lemma": "Haar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geschoren",
+        "lemma": "scheren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5c390497c9": {
@@ -7220,10 +7389,43 @@
   },
   "5c440e0805": {
     "text": "„Weiß der Geier, was meine Zunge lähmte; ich hörte schon wieder auf, wenn ich anfing.“",
-    "translation": null,
+    "translation": "\"God knows what paralyzed my tongue; I would stop again as soon as I started.\"",
     "source": "wiktionary",
     "lemmas": [
       "weiß der Geier"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geier",
+        "lemma": "Geier",
+        "pos": "noun",
+        "gloss_hint": "vulture"
+      },
+      {
+        "form": "Zunge",
+        "lemma": "Zunge",
+        "pos": "noun",
+        "gloss_hint": "tongue"
+      },
+      {
+        "form": "lähmte",
+        "lemma": "lähmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "hörte",
+        "lemma": "hören",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "anfing",
+        "lemma": "anfangen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5c44fb6ba9": {
@@ -7844,12 +8046,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "money makes the world go round",
     "source": "wiktionary",
     "lemmas": [
       "Moos"
     ],
-    "ref": "phrases/ohne Moos nichts los"
+    "ref": "phrases/ohne Moos nichts los",
+    "translation_model": "openai/gpt-4.1"
   },
   "5c4c83ae37": {
     "text": "„Und selbst diejenigen, die in eine Maßnahme der Arbeitsagentur oder in eine Vollzeitklasse der beruflichen Schulen gehen, selbst die landen dann hinterher nicht alle in Ausbildung, sondern drehen eine weitere Warteschleife.“",
@@ -8072,11 +8275,12 @@
       "Gattin",
       "Gatte"
     ],
-    "translation": null,
+    "translation": "one's better half",
     "source": "wiktionary",
     "lemmas": [
       "Hälfte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5c4fc87992": {
     "text": "„Vor einigen Jahren hatte ich einmal als Zeuge an einer Verhandlung teilnehmen müssen.“",
@@ -12820,11 +13024,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something is a slap in the face for someone",
     "source": "wiktionary",
     "lemmas": [
       "Schlag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5c7d6a6438": {
     "text": "„Und ob ich schon wanderte im finstern Tal, fürchte ich kein Unglück; denn du bist bei mir, dein Stecken und Stab trösten mich.“",
@@ -14038,11 +14243,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give her an inch and she'll take a mile",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5c89a7203d": {
     "text": "„Seit alters wurde hier Schiffbau betrieben, wozu die Eichenbestände der Umgebung das Material lieferten.“",
@@ -14175,11 +14381,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be as pale as a ghost",
     "source": "wiktionary",
     "lemmas": [
       "Kreide"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5c8bf4a8bf": {
     "text": "„Es fing bereits an, hell zu werden, die Wolken hatten sich zerteilt, und es regnete nicht mehr.“",
@@ -14404,10 +14611,43 @@
   },
   "5c8f4c37de": {
     "text": "Er ist eher ein stiller Zeitgenosse, aber wenn er mal was sagt, hat das immer Hand und Fuß.",
-    "translation": null,
+    "translation": "He's rather a quiet contemporary, but when he says something, it always makes sense.",
     "source": "wiktionary",
     "lemmas": [
       "Hand und Fuß haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "stiller",
+        "lemma": "still",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeitgenosse",
+        "lemma": "Zeitgenosse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sagt",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hand",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": "hand"
+      },
+      {
+        "form": "Fuß",
+        "lemma": "Fuß",
+        "pos": "noun",
+        "gloss_hint": "base"
+      }
     ]
   },
   "5c903f91f5": {
@@ -14600,10 +14840,55 @@
   },
   "5c937ffb0c": {
     "text": "Jemand muss ihm mal den Zahn ziehen, dass er hier so etwas wie den Juniorchef darstellt. Der ist Angestellter hier, wie wir alle.",
-    "translation": null,
+    "translation": "Someone needs to disabuse him of the notion that he's acting like the junior boss here. He's an employee like the rest of us.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem den Zahn ziehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Jemand",
+        "lemma": "jemand",
+        "pos": "pronoun",
+        "gloss_hint": null
+      },
+      {
+        "form": "muss",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": "must"
+      },
+      {
+        "form": "Zahn",
+        "lemma": "Zahn",
+        "pos": "noun",
+        "gloss_hint": "tooth"
+      },
+      {
+        "form": "ziehen",
+        "lemma": "ziehen",
+        "pos": "verb",
+        "gloss_hint": "pull"
+      },
+      {
+        "form": "darstellt",
+        "lemma": "darstellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Juniorchef",
+        "lemma": "Juniorchef",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Angestellter",
+        "lemma": "Angestellter",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5c9498e4bc": {
@@ -16034,10 +16319,37 @@
   },
   "5ca1a16460": {
     "text": "„Du kümmerst dich ja rührend um den Halunken, der dem Tod noch einmal von der Schippe gesprungen ist.“",
-    "translation": null,
+    "translation": "\"You're taking such touching care of the scoundrel who's cheated death once more.\"",
     "source": "wiktionary",
     "lemmas": [
       "dem Tod von der Schippe springen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kümmerst",
+        "lemma": "kümmern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Halunken",
+        "lemma": "Halunke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tod",
+        "lemma": "Tod",
+        "pos": "noun",
+        "gloss_hint": "death"
+      },
+      {
+        "form": "gesprungen",
+        "lemma": "springen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5ca1c7e2fc": {
@@ -16536,10 +16848,61 @@
   },
   "5caa876daf": {
     "text": "Die kommunalen Versorger haben von der Bundesregierung \"deutliche\" Nachbesserungen bei der geplanten Novelle der Düngeverordnung gefordert.",
-    "translation": null,
+    "translation": "The municipal utilities have demanded \"substantial\" improvements from the federal government in the planned revision of the Fertilizer Ordinance.",
     "source": "wiktionary",
     "lemmas": [
       "kommunal"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kommunalen",
+        "lemma": "kommunal",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Versorger",
+        "lemma": "Versorger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundesregierung",
+        "lemma": "Bundesregierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nachbesserungen",
+        "lemma": "Nachbesserung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geplanten",
+        "lemma": "geplant",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Novelle",
+        "lemma": "Novelle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Düngeverordnung",
+        "lemma": "Düngeverordnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gefordert",
+        "lemma": "fordern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5cab04ec8b": {
@@ -17398,12 +17761,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to spill the beans",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
     ],
-    "ref": "phrases/die Hüllen fallen lassen"
+    "ref": "phrases/die Hüllen fallen lassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "5cb5c141f7": {
     "text": "„Am Thema ‚Sicherheit im Internet‘ können Nutzer kaum mehr vorbei, egal ob sie mobil oder am PC surfen.“",
@@ -18339,11 +18703,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have shot one's bolt",
     "source": "wiktionary",
     "lemmas": [
       "Pfeil"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5cbdfbf9be": {
     "text": "„Wegen angeblich subversiver Umtriebe wurde er 1889 denunziert, verlor seine Zulassung als Anwalt und war fortan bei der jüdischen Gemeinde in Warschau angestellt.“",
@@ -18438,10 +18803,25 @@
   },
   "5cbe714113": {
     "text": "„Die Reiseführerin verabschiedet uns.“",
-    "translation": null,
+    "translation": "\"The tour guide says goodbye to us.\"",
     "source": "wiktionary",
     "lemmas": [
       "Reiseführerin"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Reiseführerin",
+        "lemma": "Reiseführerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verabschiedet",
+        "lemma": "verabschieden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5cbef2b837": {
@@ -19030,11 +19410,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to scratch someone's eyes out like a cat",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5cc4ab7810": {
     "text": "„Schon mit 29 Jahren veröffentlichte er als ersten Teil seiner Dissertation die Beschreibung von 70 Darmwürmern, die als Parasiten den Menschen und andere Wirbeltiere befallen.“",
@@ -20404,11 +20785,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to see everything through dark glasses",
     "source": "wiktionary",
     "lemmas": [
       "schwarz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5cd36d5b1a": {
     "text": "„‚[…] Antworteten die Rabbinen: »Weh dem, der es sagt; weh dem, der es nicht sagt.« Was du tust, mein Junge, er wird versuchen, dir einen Strick zu drehen.‘“",
@@ -24073,10 +24455,37 @@
   },
   "5cfb2b823a": {
     "text": "Die Schafe müssen geschoren werden.",
-    "translation": null,
+    "translation": "The sheep need to be sheared.",
     "source": "wiktionary",
     "lemmas": [
       "scheren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schafe",
+        "lemma": "Schaf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "müssen",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": "have to"
+      },
+      {
+        "form": "geschoren",
+        "lemma": "scheren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "werden",
+        "lemma": "werden",
+        "pos": "verb",
+        "gloss_hint": "auxiliary"
+      }
     ]
   },
   "5cfb87d614": {

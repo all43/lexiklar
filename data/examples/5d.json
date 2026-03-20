@@ -34,11 +34,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it would make even a dog feel pity",
     "source": "wiktionary",
     "lemmas": [
       "erbarmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d008425a8": {
     "text": "Wir wollen bald nach Sankt Petersburg reisen.",
@@ -405,11 +406,12 @@
     "type": "expression",
     "note": "man kann sich nichts Besseres wünschen",
     "synonyms": [],
-    "translation": null,
+    "translation": "What more could you wish for?",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d0db40834": {
     "text": "Sie übte an diesem Nachmittag die Kippe.",
@@ -731,10 +733,61 @@
   },
   "5d0fa90a69": {
     "text": "„Ich mache das Für und Wider geltend, und sogar diesen Zustand von Unentschlossenheit mußte ich mir unter so schwierigen Verhältnissen verzeihen.“",
-    "translation": null,
+    "translation": "\"I present both sides of the argument, and I even had to forgive myself for this state of indecision under such difficult circumstances.\"",
     "source": "wiktionary",
     "lemmas": [
       "Für und Wider"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Für",
+        "lemma": "Für",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wider",
+        "lemma": "Wider",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geltend",
+        "lemma": "geltend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zustand",
+        "lemma": "Zustand",
+        "pos": "noun",
+        "gloss_hint": "condition"
+      },
+      {
+        "form": "Unentschlossenheit",
+        "lemma": "Unentschlossenheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verzeihen",
+        "lemma": "verzeihen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwierigen",
+        "lemma": "schwierig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verhältnissen",
+        "lemma": "Verhältnis",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5d113f0fcf": {
@@ -840,10 +893,61 @@
   },
   "5d11b22ee4": {
     "text": "„Wer dieser Stimme nichts entgegenhalten konnte, musste sich nolens volens für die von ihr angeprangerten Missstände mitverantwortlich fühlen und sie abschaffen.“",
-    "translation": null,
+    "translation": "\"Whoever could not counter this voice was forced, willy-nilly, to feel co-responsible for the abuses it denounced and to abolish them.\"",
     "source": "wiktionary",
     "lemmas": [
       "nolens volens"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Stimme",
+        "lemma": "Stimme",
+        "pos": "noun",
+        "gloss_hint": "voice"
+      },
+      {
+        "form": "entgegenhalten",
+        "lemma": "entgegenhalten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "musste",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": "must"
+      },
+      {
+        "form": "fühlen",
+        "lemma": "fühlen",
+        "pos": "verb",
+        "gloss_hint": "feel"
+      },
+      {
+        "form": "angeprangerten",
+        "lemma": "anprangern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Missstände",
+        "lemma": "Missstand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "mitverantwortlich",
+        "lemma": "mitverantwortlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "abschaffen",
+        "lemma": "abschaffen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5d124f823d": {
@@ -2031,10 +2135,49 @@
   },
   "5d1a77fb5c": {
     "text": "Die kontrastive Linguistik erarbeitet wichtige Erkenntnisse für den Fremdsprachenunterricht.",
-    "translation": null,
+    "translation": "Contrastive linguistics develops important insights for foreign language teaching.",
     "source": "wiktionary",
     "lemmas": [
       "Kontrastive Linguistik"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kontrastive",
+        "lemma": "kontrastiv",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Linguistik",
+        "lemma": "Linguistik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erarbeitet",
+        "lemma": "erarbeiten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wichtige",
+        "lemma": "wichtig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erkenntnisse",
+        "lemma": "Erkenntnis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fremdsprachenunterricht",
+        "lemma": "Fremdsprachenunterricht",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5d1a8fd4cc": {
@@ -2267,10 +2410,49 @@
   },
   "5d1c650f8f": {
     "text": "»Wir haben von diesem Katz-und-Maus-Spiel die Faxen dicke«, ärgert sich Opel-Betriebsratschef Klaus Franz.",
-    "translation": null,
+    "translation": "\"We're fed up with this cat-and-mouse game,\" complains Opel works council chief Klaus Franz.",
     "source": "wiktionary",
     "lemmas": [
       "die Faxen dicke haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "haben",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": "have"
+      },
+      {
+        "form": "Katz-und-Maus-Spiel",
+        "lemma": "Katz-und-Maus-Spiel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Faxen",
+        "lemma": "Faxe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dicke",
+        "lemma": "dicke",
+        "pos": "particle",
+        "gloss_hint": "plenty"
+      },
+      {
+        "form": "ärgert",
+        "lemma": "ärgern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Betriebsratschef",
+        "lemma": "Betriebsratschef",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5d1cd7ba55": {
@@ -2435,11 +2617,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not to lose face",
     "source": "wiktionary",
     "lemmas": [
       "Krone"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d1dd00d99": {
     "text": "Die Verbindung zwischen beiden Kabeln wurde unterbrochen.",
@@ -2473,10 +2656,49 @@
   },
   "5d1de02cf6": {
     "text": "Das fass ich nicht an, da krieg ich ja Handpilz - apropos, gibt's sowas überhaupt?",
-    "translation": null,
+    "translation": "I won't touch that; I'll get a fungal infection from it—speaking of which, does such a thing even exist?",
     "source": "wiktionary",
     "lemmas": [
       "sowas"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "fass",
+        "lemma": "fassen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "krieg",
+        "lemma": "kriegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Handpilz",
+        "lemma": "Handpilz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gibt's",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sowas",
+        "lemma": "so etwas",
+        "pos": "pronoun",
+        "gloss_hint": null
+      },
+      {
+        "form": "überhaupt",
+        "lemma": "überhaupt",
+        "pos": "adverb",
+        "gloss_hint": "at all"
+      }
     ]
   },
   "5d20109a7b": {
@@ -3390,11 +3612,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "amazingly",
     "source": "wiktionary",
     "lemmas": [
       "wie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d2651d09f": {
     "text": "„In den siebziger Jahren brachte das große Erschrecken über die Grenzen des Wachstums radikale Einsprüche gegen Konsumismus und die Zerstörung von Stadt und Natur hervor.“",
@@ -4364,11 +4587,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Every end is also a beginning.",
     "source": "wiktionary",
     "lemmas": [
       "Ende"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d2cda3869": {
     "text": "„›Wenn eine Zusammenarbeit unmöglich ist, wird keiner von uns etwas erreichen. Was für eine Chance ich auch immer haben mag, dieser Sache auf den Grund zu kommen, es wird Streit und böses Blut geben‹, knurrte er.“",
@@ -7085,11 +7309,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take the wind out of someone's sails",
     "source": "wiktionary",
     "lemmas": [
       "Schneid"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d449b49e8": {
     "text": "Der Bund wird den Bauauftrag unter den sich in der gesetzten Frist bewerbenden Unternehmern vergeben.",
@@ -8098,11 +8323,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is growing up fast",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d481f3b97": {
     "text": "Dieser Sportwagen erreicht eine Höchstgeschwindigkeit von 260 km/h.",
@@ -8602,11 +8828,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Barking dogs seldom bite.",
     "source": "wiktionary",
     "lemmas": [
       "beißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d4d1db2bb": {
     "text": "„Das Jüngste Gericht wird in Filmen so gut wie nie dargestellt, weil die Regisseure ihren Zuschauern wahrscheinlich nicht vorzeitig die gute Laune verderben wollen.“",
@@ -8814,10 +9041,61 @@
   },
   "5d4da8fdac": {
     "text": "„Die beladenen Mulden brachte sie entweder am selben Tag oder am Morgen des Folgetages mit einem Lkw in ihren Betrieb.“",
-    "translation": null,
+    "translation": "The loaded containers she transported to her company either the same day or the morning of the following day by truck.",
     "source": "wiktionary",
     "lemmas": [
       "Mulde"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "beladenen",
+        "lemma": "beladen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mulden",
+        "lemma": "Mulde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "brachte",
+        "lemma": "bringen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "Morgen",
+        "lemma": "Morgen",
+        "pos": "noun",
+        "gloss_hint": "morning"
+      },
+      {
+        "form": "Folgetages",
+        "lemma": "Folgetag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lkw",
+        "lemma": "Lkw",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Betrieb",
+        "lemma": "Betrieb",
+        "pos": "noun",
+        "gloss_hint": "company"
+      }
     ]
   },
   "5d4e5408f0": {
@@ -9173,11 +9451,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to save face",
     "source": "wiktionary",
     "lemmas": [
       "Gesicht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d5247d419": {
     "text": "„Elisabeth besaß eines der führenden Geschäfte für Anglerzubehör in der Pariser Rue de Châteaudun, heute eine der großen Einkaufsstraßen in der französischen Hauptstadt.“",
@@ -10121,11 +10400,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "well camouflaged",
     "source": "wiktionary",
     "lemmas": [
       "getarnt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d5b0f3677": {
     "text": "Er bleibt lieber zu Hause, statt sich uns anzuschließen.",
@@ -10471,10 +10751,145 @@
   },
   "5d60769c46": {
     "text": "„Inzwischen hatte auch Premier Radschai die inneren und äußeren Gefahren einer weiteren Verzögerung erkannt und setzte sich flugs an die Spitze der Freilassungsfreunde. Es ergab sich das Kuriosum, daß er es plötzlich mit der Geiselbefreiung ebenso eilig hatte wie Amerikas scheidender Jimmy Carter, der sich einen guten Abgang verschaffen wollte.“",
-    "translation": null,
+    "translation": "Meanwhile, Premier Radschai had also recognized the internal and external dangers of further delay and quickly positioned himself at the head of the hostage-release supporters. It turned out to be a curious situation in which he suddenly became as eager about the hostage liberation as America's departing Jimmy Carter, who wanted to make a good exit.",
     "source": "wiktionary",
     "lemmas": [
       "sich einen guten Abgang verschaffen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Inzwischen",
+        "lemma": "inzwischen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Premier",
+        "lemma": "Premier",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Radschai",
+        "lemma": "Radschai",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "inneren",
+        "lemma": "inner",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "äußeren",
+        "lemma": "äußer",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gefahren",
+        "lemma": "Gefahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verzögerung",
+        "lemma": "Verzögerung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erkannt",
+        "lemma": "erkennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "setzte",
+        "lemma": "setzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "flugs",
+        "lemma": "flugs",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spitze",
+        "lemma": "Spitze",
+        "pos": "noun",
+        "gloss_hint": "head"
+      },
+      {
+        "form": "Freilassungsfreunde",
+        "lemma": "Freilassungsfreund",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ergab",
+        "lemma": "ergeben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kuriosum",
+        "lemma": "Kuriosum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geiselbefreiung",
+        "lemma": "Geiselbefreiung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eilig",
+        "lemma": "eilig",
+        "pos": "adjective",
+        "gloss_hint": "urgent"
+      },
+      {
+        "form": "Amerikas",
+        "lemma": "Amerika",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "scheidender",
+        "lemma": "scheidend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jimmy",
+        "lemma": "Jimmy",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Carter",
+        "lemma": "Carter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abgang",
+        "lemma": "Abgang",
+        "pos": "noun",
+        "gloss_hint": "exit"
+      },
+      {
+        "form": "verschaffen",
+        "lemma": "verschaffen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5d61818e83": {
@@ -11893,11 +12308,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to wriggle like a snake",
     "source": "wiktionary",
     "lemmas": [
       "winden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d6c134b16": {
     "text": "„Die Sinus Markt- und Sozialforschung GmbH (auch: SINUS-Institut) ist ein Markt- und Sozialforschungsinstitut mit Sitz Heidelberg und Berlin. […] In der Milieuforschung hat es mit den Sinus-Milieus eine eigene und auch in wissenschaftlichen Kreisen anerkannte Methode zur Zielgruppenanalyse entwickelt.“",
@@ -12827,11 +13243,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Keep believing that the stork brings the babies.",
     "source": "wiktionary",
     "lemmas": [
       "Storch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d75bc3873": {
     "text": "Bei uns können Turnübungen praktiziert werden.",
@@ -13756,11 +14173,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to freeze your butt off",
     "source": "wiktionary",
     "lemmas": [
       "Hintern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d7e47ea43": {
     "text": "„Nein, Kinder, unsere Zeit ist abgelaufen, und ich müßte mich, nach allen Vorbereitungen zu urteilen, sehr irren, wenn wir nicht schon morgen abend um diese Zeit wieder unsere regelmäßige Wacht gehen und uns die Hälse abdrehen, nach den Schwarzkitteln auszuschauen.“",
@@ -14195,10 +14613,31 @@
   },
   "5d80acc4f1": {
     "text": "„Die SA läuft aus dem Ruder.“",
-    "translation": null,
+    "translation": "The SA is getting out of control.",
     "source": "wiktionary",
     "lemmas": [
       "SA"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "SA",
+        "lemma": "SA",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "läuft",
+        "lemma": "laufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ruder",
+        "lemma": "Ruder",
+        "pos": "noun",
+        "gloss_hint": "control"
+      }
     ]
   },
   "5d80c181c2": {
@@ -14437,10 +14876,31 @@
   },
   "5d82bdf7a3": {
     "text": "Solch eine Anschuldigung kann man doch nicht kommentarlos in den Raum stellen!",
-    "translation": null,
+    "translation": "You can't just throw such an accusation out there without comment!",
     "source": "wiktionary",
     "lemmas": [
       "etwas in den Raum stellen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Anschuldigung",
+        "lemma": "Anschuldigung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommentarlos",
+        "lemma": "kommentarlos",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Raum",
+        "lemma": "Raum",
+        "pos": "noun",
+        "gloss_hint": "space"
+      }
     ]
   },
   "5d82d9f90d": {
@@ -15622,11 +16082,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put something in someone's hands",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5d8e70c067": {
     "text": "Bevor wir losfahren, muss ich noch ein Ei legen!",
@@ -15699,12 +16160,13 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "All that glitters is not gold.",
     "source": "wiktionary",
     "lemmas": [
       "glänzen"
     ],
-    "ref": "phrases/es ist nicht alles Gold, was glänzt"
+    "ref": "phrases/es ist nicht alles Gold, was glänzt",
+    "translation_model": "openai/gpt-4.1"
   },
   "5d8ef2f159": {
     "text": "„Und endlich steht es an der Klappertorstraße in Monheim - dort, wo die Besucher ab Juni einen lebendigen Einblick in das Leben der Aalfischer auf dem Rhein bekommen können.“",
@@ -18214,10 +18676,67 @@
   },
   "5da55c4915": {
     "text": "„Selbst Anbieter, deren Produkte aus sozialer und ökologischer Perspektive besser sind als die ihrer Wettbewerber, müssten dann ihre Produktion herunterfahren oder sogar konsequenterweise einstellen.“",
-    "translation": null,
+    "translation": "Even providers whose products are better from a social and ecological perspective than those of their competitors would then have to scale down their production or even consistently discontinue it.",
     "source": "wiktionary",
     "lemmas": [
       "herunterfahren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Anbieter",
+        "lemma": "Anbieter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Produkte",
+        "lemma": "Produkt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sozialer",
+        "lemma": "sozial",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "ökologischer",
+        "lemma": "ökologisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Perspektive",
+        "lemma": "Perspektive",
+        "pos": "noun",
+        "gloss_hint": "viewpoint"
+      },
+      {
+        "form": "Wettbewerber",
+        "lemma": "Wettbewerber",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Produktion",
+        "lemma": "Produktion",
+        "pos": "noun",
+        "gloss_hint": "production"
+      },
+      {
+        "form": "herunterfahren",
+        "lemma": "herunterfahren",
+        "pos": "verb",
+        "gloss_hint": "scale down"
+      },
+      {
+        "form": "einstellen",
+        "lemma": "einstellen",
+        "pos": "verb",
+        "gloss_hint": "stop doing"
+      }
     ]
   },
   "5da57ebf07": {
@@ -18556,14 +19075,12 @@
     "type": "expression",
     "note": "(schweizerdeutsch: fürt'i) – seid (durch Gott) geleitet; gute Heimreise",
     "synonyms": [],
-    "translation": null,
+    "translation": "safe travels",
     "source": "wiktionary",
     "lemmas": [
       "führen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "5da96b3053": {
     "text": "„Am 7. Februar beschloss das taiwanische Aussenministerium, die Einreise für alle Personen, die in den zurückliegenden 14 Tagen in China waren, zu verbieten.“",
@@ -18798,11 +19315,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be after someone like the devil",
     "source": "wiktionary",
     "lemmas": [
       "Satan"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5dab99448c": {
     "text": "die Geste zählt",
@@ -20390,10 +20908,37 @@
   },
   "5dbdd9edbd": {
     "text": "Ein Oberförster hatte einen höheren Rang als ein Förster.",
-    "translation": null,
+    "translation": "A chief forester had a higher rank than a forester.",
     "source": "wiktionary",
     "lemmas": [
       "ober-"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Oberförster",
+        "lemma": "Oberförster",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "höheren",
+        "lemma": "hoch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rang",
+        "lemma": "Rang",
+        "pos": "noun",
+        "gloss_hint": "rank"
+      },
+      {
+        "form": "Förster",
+        "lemma": "Förster",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5dbff95500": {
@@ -20443,12 +20988,13 @@
     "type": "expression",
     "note": "spitzfindig sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to split hairs",
     "source": "wiktionary",
     "lemmas": [
       "Floh",
       "husten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5dc149d966": {
     "text": "Der neue Kollege ist die Inkompetenz in Person. Der kann fast gar nichts.",
@@ -21073,11 +21619,12 @@
     "type": "expression",
     "note": "eine vorgefundene Situation verbessern, insbesondere: eingerissene schlechte Gewohnheiten austreiben",
     "synonyms": [],
-    "translation": null,
+    "translation": "break bad habits and make a fresh start",
     "source": "wiktionary",
     "lemmas": [
       "Sehne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5dc6dc2095": {
     "text": "Im Unternehmen wird absolute Loyalität nach außen verlangt, nach dem Motto: Wes Brot ich ess, des Lied ich sing.",
@@ -22602,10 +23149,19 @@
   },
   "5dd4c0fa45": {
     "text": "„Er ist am JFK.“",
-    "translation": null,
+    "translation": "He is at JFK.",
     "source": "wiktionary",
     "lemmas": [
       "JFK"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "JFK",
+        "lemma": "JFK",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5dd5125d84": {
@@ -22613,11 +23169,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the royal game (chess)",
     "source": "wiktionary",
     "lemmas": [
       "königlich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5dd51e0778": {
     "text": "Freie Morpheme sind alle für sich allein wortfähigen Morpheme wie \"Hut\", \"Tisch\", \"für\", \"der\", \"mein\", \"groß\".",
@@ -23263,11 +23820,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "follow what the moment demands",
     "source": "wiktionary",
     "lemmas": [
       "Gebot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5ddaa1cd34": {
     "text": "Nachdem der Griff nachgab, musste er umfassen.",
@@ -23703,11 +24261,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "gut instinct",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5ddf138971": {
     "text": "„Sie war in einer Toilette, wie sie sie gewöhnlich auf ihren Petersburger Gesellschaften getragen hatte, und gerade das liess es noch deutlicher werden, wieviel hässlicher sie geworden war.“",
@@ -25379,10 +25938,43 @@
   },
   "5de930e417": {
     "text": "Um bis zum Monatsende über die Runden zu kommen habe ich Schmuck verpfändet.",
-    "translation": null,
+    "translation": "To get through until the end of the month, I pawned jewelry.",
     "source": "wiktionary",
     "lemmas": [
       "über die Runden kommen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Monatsende",
+        "lemma": "Monatsende",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Runden",
+        "lemma": "Runde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": "get by"
+      },
+      {
+        "form": "Schmuck",
+        "lemma": "Schmuck",
+        "pos": "noun",
+        "gloss_hint": "jewelry"
+      },
+      {
+        "form": "verpfändet",
+        "lemma": "verpfänden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5de9632753": {

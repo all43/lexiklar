@@ -4,11 +4,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "oh my goodness",
     "source": "wiktionary",
     "lemmas": [
       "dick"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b02a00f64": {
     "text": "Mit Schwung kugelte sie die Bowlingkugel über den trockenen Lehmboden.",
@@ -249,11 +250,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get off my back",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b06502f1f": {
     "text": "„Buschs Werdegang wäre leichter gewesen, wenn ihn eine eindeutige Begabung der Malerei zugeführt hätte.“",
@@ -590,11 +592,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "work by intuition",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b0a32a226": {
     "text": "\"Frau Nick forderte mich auf, auf der Bühne nackt ein Rad zu schlagen\", sagte die Klägerin Christa Pfeiffer der Zeitung \"Bild am Sonntag\".",
@@ -2259,11 +2262,12 @@
     "type": "expression",
     "note": "anfangen, beginnen, aufstehen, sich erheben",
     "synonyms": [],
-    "translation": null,
+    "translation": "get going",
     "source": "wiktionary",
     "lemmas": [
       "Gang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b16a92118": {
     "text": "Ich will darüber nichts mehr hören.",
@@ -2318,13 +2322,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be dear to someone's heart",
     "source": "wiktionary",
     "lemmas": [
       "Herz",
       "wachsen"
     ],
-    "ref": "phrases/jemandem ans Herz gewachsen sein"
+    "ref": "phrases/jemandem ans Herz gewachsen sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "7b17cbb78c": {
     "text": "Sofia liegt auf dem Balkan.",
@@ -4839,13 +4844,14 @@
     "type": "expression",
     "note": "jemandem etwas vertraulich sagen wollen",
     "synonyms": [],
-    "translation": null,
+    "translation": "take someone aside",
     "source": "wiktionary",
     "lemmas": [
       "Seite",
       "nehmen"
     ],
-    "ref": "phrases/jemanden zur Seite nehmen"
+    "ref": "phrases/jemanden zur Seite nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "7b26e80f52": {
     "text": "„Wie konnte der geheimnisvolle Millionär mit dem einzigen armen Teufel, den das Hotel zu bieten hatte, gemeinsame Sache machen!“",
@@ -5694,22 +5700,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "speak from the gut",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b30783ebc": {
     "text": "man muss die Feste feiern, wie sie fallen",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You have to celebrate occasions as they come.",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b31248e85": {
     "text": "„Mit dem kleinen Finger betupft sie die äußeren Augenwinkel.“",
@@ -6354,11 +6362,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You want the benefits without the drawbacks.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b36a3ee90": {
     "text": "Habt ihr auch schon Kabel?",
@@ -6512,10 +6521,67 @@
   },
   "7b37e065ef": {
     "text": "„Die Produktion von privaten PKWS könne zu einem späteren Zeitpunkt erwogen werden, wenn das Land stabil sei und wieder ein Faktor auf dem Weltmarkt.“",
-    "translation": null,
+    "translation": "The production of private cars could be considered at a later point in time if the country were stable and again a factor on the world market.",
     "source": "wiktionary",
     "lemmas": [
       "PKW"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Produktion",
+        "lemma": "Produktion",
+        "pos": "noun",
+        "gloss_hint": "production"
+      },
+      {
+        "form": "privaten",
+        "lemma": "privat",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "PKWS",
+        "lemma": "PKW",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erwogen",
+        "lemma": "erwägen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeitpunkt",
+        "lemma": "Zeitpunkt",
+        "pos": "noun",
+        "gloss_hint": "moment"
+      },
+      {
+        "form": "Land",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": "country"
+      },
+      {
+        "form": "stabil",
+        "lemma": "stabil",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Faktor",
+        "lemma": "Faktor",
+        "pos": "noun",
+        "gloss_hint": "factor"
+      },
+      {
+        "form": "Weltmarkt",
+        "lemma": "Weltmarkt",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7b37f5b6fe": {
@@ -7146,11 +7212,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "flaky biscuit",
     "source": "wiktionary",
     "lemmas": [
       "Keks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b3ce17f6d": {
     "text": "Ich möchte mit dir ficken!",
@@ -7537,11 +7604,12 @@
     "type": "expression",
     "note": "militärisch grüßen Österreichisch/Wienerisch",
     "synonyms": [],
-    "translation": null,
+    "translation": "to snap a salute",
     "source": "wiktionary",
     "lemmas": [
       "servus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b4263fd3b": {
     "text": "Mit ihrer Krankheit ist Bäppche wirklich schlecht dran.",
@@ -7971,10 +8039,25 @@
   },
   "7b4586ba4c": {
     "text": "Kannst du nicht endlich damit aufhören zu turnen?",
-    "translation": null,
+    "translation": "Can't you finally stop doing gymnastics?",
     "source": "wiktionary",
     "lemmas": [
       "turnen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "aufhören",
+        "lemma": "aufhören",
+        "pos": "verb",
+        "gloss_hint": "stop"
+      },
+      {
+        "form": "turnen",
+        "lemma": "turnen",
+        "pos": "verb",
+        "gloss_hint": "do gymnastics"
+      }
     ]
   },
   "7b45bd5143": {
@@ -8192,11 +8275,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be skin and bones",
     "source": "wiktionary",
     "lemmas": [
       "Rippe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b48d8900d": {
     "text": "Das Kind, das Ellen bekommt, wird ein Junge. Die Hebamme rief: „Es ist ein Junge.\" Ein kleiner Junge spielt mit dem Ball. „Jungs, kommt mal alle her!“",
@@ -8374,10 +8458,19 @@
   },
   "7b4d250f21": {
     "text": "Hä? kA was du meinst",
-    "translation": null,
+    "translation": "Huh? I don't know what you mean.",
     "source": "wiktionary",
     "lemmas": [
       "kA"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "meinst",
+        "lemma": "meinen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "7b4d3825c3": {
@@ -8620,11 +8713,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Checkmate!",
     "source": "wiktionary",
     "lemmas": [
       "Schach"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b5147a5e1": {
     "text": "„Von daher [Unschuldigkeit des aktiven Parts] lässt sich auch erklären, warum Prostituierte, egal ob männlich oder weiblich, infam sind.“",
@@ -9324,12 +9418,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "small but perfectly formed",
     "source": "wiktionary",
     "lemmas": [
       "klein"
     ],
-    "ref": "phrases/klein, aber fein"
+    "ref": "phrases/klein, aber fein",
+    "translation_model": "openai/gpt-4.1"
   },
   "7b57958e25": {
     "text": "„Die Forschung geht heute von ungefähr zehn Millionen Vergewaltigungen allein auf russischem Boden aus.“",
@@ -9910,11 +10005,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in ambush",
     "source": "wiktionary",
     "lemmas": [
       "Hinterhalt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b6289806a": {
     "text": "„Nach binnen gedreht, schließen sie sich in der Mitte fest zusammen.“",
@@ -10299,11 +10395,12 @@
     "type": "expression",
     "note": "vergebens",
     "synonyms": [],
-    "translation": null,
+    "translation": "for nothing",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b649d0cdf": {
     "text": "Seit Jahren sucht er eine Frau.",
@@ -11586,10 +11683,109 @@
   },
   "7b75c823c1": {
     "text": "«[…] – es war nicht klar, glaubte er selbst noch daran, nach den Jahren in diesem verlassenen Fort an der Küste, am Arsch der Welt, Verzeihung, sagte er, aber dieser Küstenstrich sei ja nun wirklich am Arsch der Welt, man hätte vermuten können, das Wort Arsch befriedige ihn irgendwie, hätte es sich bloß nicht, oder nicht bloß um eine Art Fachausdruck für die Küstenregion gehandelt, den eigentlich jeder und jede verwendete, völlig selbstverständlich in der belanglosesten wie der gehobensten Konversation; […].»",
-    "translation": null,
+    "translation": "[…] – it was unclear, he himself still believed in it, after the years in this abandoned fort on the coast, at the back of beyond, pardon me, he said, but this coastal strip really was at the back of beyond, one might have supposed the word ass satisfied him somehow, if only it hadn't been, or hadn't merely been a kind of technical term for the coastal region, which actually everyone used, completely naturally in the most trivial as well as the most elevated conversation; […].",
     "source": "wiktionary",
     "lemmas": [
       "am Arsch der Welt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "klar",
+        "lemma": "klar",
+        "pos": "adjective",
+        "gloss_hint": "clear"
+      },
+      {
+        "form": "glaubte",
+        "lemma": "glauben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verlassenen",
+        "lemma": "verlassen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fort",
+        "lemma": "Fort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Küste",
+        "lemma": "Küste",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arsch",
+        "lemma": "Arsch",
+        "pos": "noun",
+        "gloss_hint": "butt"
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      },
+      {
+        "form": "Küstenstrich",
+        "lemma": "Küstenstrich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wirklich",
+        "lemma": "wirklich",
+        "pos": "adjective",
+        "gloss_hint": "actual"
+      },
+      {
+        "form": "Wort",
+        "lemma": "Wort",
+        "pos": "noun",
+        "gloss_hint": "word"
+      },
+      {
+        "form": "befriedige",
+        "lemma": "befriedigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fachausdruck",
+        "lemma": "Fachausdruck",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Küstenregion",
+        "lemma": "Küstenregion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verwendete",
+        "lemma": "verwenden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Konversation",
+        "lemma": "Konversation",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7b765b5b36": {
@@ -12573,10 +12769,43 @@
   },
   "7b845667c3": {
     "text": "„Wenn Du von Deiner Freundin den Laufpass gekriegt hast, warum kannst Du dann heute Abend nicht mit mir einen trinken gehen?“",
-    "translation": null,
+    "translation": "If you've been dumped by your girlfriend, why can't you come have a drink with me this evening?",
     "source": "wiktionary",
     "lemmas": [
       "den Laufpass kriegen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Freundin",
+        "lemma": "Freundin",
+        "pos": "noun",
+        "gloss_hint": "girlfriend"
+      },
+      {
+        "form": "Laufpass",
+        "lemma": "Laufpass",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gekriegt",
+        "lemma": "kriegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abend",
+        "lemma": "Abend",
+        "pos": "noun",
+        "gloss_hint": "evening"
+      },
+      {
+        "form": "trinken",
+        "lemma": "trinken",
+        "pos": "verb",
+        "gloss_hint": "drink"
+      }
     ]
   },
   "7b84696d32": {
@@ -13340,11 +13569,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Back when Adam dug and Eve spun, where was the nobleman?",
     "source": "wiktionary",
     "lemmas": [
       "Edelmann"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b86d85208": {
     "text": "Moskau verletzte mehrfach den estnischen Luftraum und die Seegrenzen der baltischen Staaten in der Ostsee. Die NATO denkt erstmals über Großmanöver in der Region nach.",
@@ -14427,11 +14657,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "show oneself in the best light",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b91fdf801": {
     "text": "„Bei Bedarf kann man einen Benutzer abmelden, ohne vorher umständlich zum betreffenden Konto zu wechseln.“",
@@ -14830,33 +15061,36 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not want to be in someone's shoes",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b98e67628": {
     "text": "Grüß Gott",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Hello",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b9a289b36": {
     "text": "nur mit dem kleinen Finger winken müssen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get by with minimal effort",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b9aa0677e": {
     "text": "„Die morgendliche Julisonne stach sie in den Rücken, als Sylvia die Tür zu ihrer Buchhandlung aufschloss und die Läden vor den beiden großen Schaufenstern beiseiteklappte.“",
@@ -15005,11 +15239,12 @@
     "type": "expression",
     "note": "dermaßen",
     "synonyms": [],
-    "translation": null,
+    "translation": "totally",
     "source": "wiktionary",
     "lemmas": [
       "sowas"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7b9d916e5a": {
     "text": "Der unnatürliche Klimawandel scheint sich u. a. durch den vermehrten Ausstoß von Kohlendioxid zu beschleunigen.",
@@ -15989,10 +16224,25 @@
   },
   "7bac40c80d": {
     "text": "Der Film geht 120 Min.",
-    "translation": null,
+    "translation": "The film runs 120 minutes.",
     "source": "wiktionary",
     "lemmas": [
       "Min."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Film",
+        "lemma": "Film",
+        "pos": "noun",
+        "gloss_hint": "movie"
+      },
+      {
+        "form": "geht",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "work"
+      }
     ]
   },
   "7baeb5ec47": {
@@ -17706,10 +17956,31 @@
   },
   "7bc1b05b5d": {
     "text": "Die Blasse Koralle ist eine Pilzsorte.",
-    "translation": null,
+    "translation": "The pale coral is a type of fungus.",
     "source": "wiktionary",
     "lemmas": [
       "Blasse Koralle"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Blasse",
+        "lemma": "blass",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Koralle",
+        "lemma": "Koralle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pilzsorte",
+        "lemma": "Pilzsorte",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7bc278cfe8": {
@@ -19281,11 +19552,12 @@
     "type": "expression",
     "note": "abtreten, vernichtet werden, ohne das jemand Notiz davon nimmt oder Interesse daran hätte",
     "synonyms": [],
-    "translation": null,
+    "translation": "disappear without a trace",
     "source": "wiktionary",
     "lemmas": [
       "untergehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7bd3217dab": {
     "text": "Die Wand ist aber dick.",
@@ -19637,10 +19909,31 @@
   },
   "7bd44a68ce": {
     "text": "„In einer Herberge fanden sie Unterkunft.“",
-    "translation": null,
+    "translation": "In an inn they found lodging.",
     "source": "wiktionary",
     "lemmas": [
       "Herberge"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Herberge",
+        "lemma": "Herberge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fanden",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unterkunft",
+        "lemma": "Unterkunft",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7bd48aebbb": {
@@ -19648,11 +19941,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a free hand",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7bd4f7ee4b": {
     "text": "„Das Haus ist irgendwann in den Zwanzigern abgebrannt.“",
@@ -20169,14 +20463,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at random",
     "source": "wiktionary",
     "lemmas": [
       "Glück"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "7bd94d548d": {
     "text": "„Damals, als er diese Barbara geheiratet hatte, das Bürgermädchen, da war Juliette zuversichtlich und furchtlos geblieben: sie hatte gewußt, daß er zu ihr, zu seiner Schwarzen Venus zurückkehren würde.“",
@@ -20975,11 +21267,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not let oneself be used by someone",
     "source": "wiktionary",
     "lemmas": [
       "spannen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7be127a83d": {
     "text": "„Wir haben hier zu unterscheiden zwischen dem Kinderwitz, das heißt dem von Kindern für Kinder produzierten Witz, den Kinder selbst erzählen und lustig finden, und dem sogenannten Kindermundwitz, der wirklichen oder vermeintlichen unfreiwilligen Komik ernstgemeinter kindlicher Aussagen für Erwachsene.“",
@@ -21171,10 +21464,25 @@
   },
   "7be3d0e039": {
     "text": "HF - (Fluorwasserstoff, sprich: ha-eff)",
-    "translation": null,
+    "translation": "HF – (hydrogen fluoride, pronounced: ha-eff)",
     "source": "wiktionary",
     "lemmas": [
       "F"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fluorwasserstoff",
+        "lemma": "Fluorwasserstoff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sprich",
+        "lemma": "sprechen",
+        "pos": "verb",
+        "gloss_hint": "pronounce"
+      }
     ]
   },
   "7be43c89ad": {
@@ -21575,11 +21883,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get off scot-free",
     "source": "wiktionary",
     "lemmas": [
       "ungeschoren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7beb6b10ab": {
     "text": "Das Schaukelpferd. (Gedicht)",
@@ -22046,10 +22355,31 @@
   },
   "7bf254f31d": {
     "text": "Mach dich auf die Socken, es ist schon spät.",
-    "translation": null,
+    "translation": "Get a move on, it's already late.",
     "source": "wiktionary",
     "lemmas": [
       "sich auf die Socken machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mach",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Socken",
+        "lemma": "Socke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "spät",
+        "lemma": "spät",
+        "pos": "adjective",
+        "gloss_hint": "late"
+      }
     ]
   },
   "7bf3715ddc": {
@@ -22141,11 +22471,13 @@
   },
   "7bf58a4850": {
     "text": "„Reziproke Pronomen werden benutzt, um eine wechselseitige Beziehung auszudücken. Die reziproken Pronomen im Englischen sind:\neach other einander, sich (gegenseitig)\none another einander, sich (gegenseitig)“",
-    "translation": null,
+    "translation": "Reciprocal pronouns are used to express a mutual relationship. The reciprocal pronouns in English are: each other one another, each other one another.",
     "source": "wiktionary",
     "lemmas": [
       "reziprok"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "7bf5d9cd87": {
     "text": "Die Flotte lief im Morgengrauen aus.",
@@ -22182,11 +22514,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fear and trembling",
     "source": "wiktionary",
     "lemmas": [
       "bang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7bf6ac3327": {
     "text": "„Das Wort „Nazi\" kann aber auch als bloßes Schimpfwort gebraucht werden; in diesem Fall wäre es unsinnig, den Wahrheitsgehalt der Aussage zu ermitteln.“",
@@ -22818,12 +23151,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "throw good money after bad",
     "source": "wiktionary",
     "lemmas": [
       "Geld"
     ],
-    "ref": "phrases/gutes Geld schlechtem hinterherwerfen"
+    "ref": "phrases/gutes Geld schlechtem hinterherwerfen",
+    "translation_model": "openai/gpt-4.1"
   },
   "7bfdd95101": {
     "text": "Monatelang hat die Finanzwelt spekuliert: Erhöht die US-Notenbank Federal Reserve die Zinsen oder tut sie es nicht? Sie tut es.",

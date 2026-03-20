@@ -55,11 +55,13 @@
   },
   "4112105471": {
     "text": "v = s / t",
-    "translation": null,
+    "translation": "v = s / t",
     "source": "wiktionary",
     "lemmas": [
       "v"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "4118122383": {
     "text": "Sie haben Ihren Hund aber gut erzogen.",
@@ -1443,11 +1445,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the land of milk and honey",
     "source": "wiktionary",
     "lemmas": [
       "Land"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4107209b56": {
     "text": "„Beide Spanierinnen kreischten mit metallenen Stimmen auf Raoul ein.“",
@@ -6564,23 +6567,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "keep an eye out",
     "source": "wiktionary",
     "lemmas": [
       "Ausschau"
     ],
-    "ref": "phrases/Ausschau halten"
+    "ref": "phrases/Ausschau halten",
+    "translation_model": "openai/gpt-4.1"
   },
   "4140630a44": {
     "text": "ein dickes Ei legen",
     "type": "expression",
     "note": "euphemistisch: Stuhlgang haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to take a dump",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4142cf7fb7": {
     "text": "„Erdogan habe betont, die Türkei wolle nicht mit Kampfeinheiten an der Operation in Libyen teilnehmen, sondern die Koordinierung von humanitären Hilfen übernehmen.“",
@@ -7467,10 +7472,37 @@
   },
   "414943cfb6": {
     "text": "Gunzenhausen liegt im Südosten von Deutschland.",
-    "translation": null,
+    "translation": "Gunzenhausen is located in the southeast of Germany.",
     "source": "wiktionary",
     "lemmas": [
       "Gunzenhausen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gunzenhausen",
+        "lemma": "Gunzenhausen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "liegt",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Südosten",
+        "lemma": "Südosten",
+        "pos": "noun",
+        "gloss_hint": "southeast"
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "4149506d1f": {
@@ -8027,11 +8059,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not have the faintest idea about something",
     "source": "wiktionary",
     "lemmas": [
       "blass"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "414fe9ead1": {
     "text": "Ein smarter Politiker ist selten um eine Antwort verlegen.",
@@ -8459,11 +8492,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fall into someone's hands",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4156ade4ad": {
     "text": "„Ist ein gehöriges Abandonnement erfolgt: so läuft die Verjährung von dem Tage der Andeutung desselben, ohne Rücksicht auf die nachher etwa eingegangene Nachricht.“",
@@ -8620,11 +8654,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to target something",
     "source": "wiktionary",
     "lemmas": [
       "Korn"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4158752edd": {
     "text": "„Das Wetter hätte nicht besser sein können: strahlender Sonnenschein und eine geniale Weitsicht in alle Richtungen, ob ins Rheintal, ins Saminatal, ins Vorarlberg oder auf die Gipfel rund herum.“",
@@ -10269,12 +10304,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in one go",
     "source": "wiktionary",
     "lemmas": [
       "Zug"
     ],
-    "ref": "phrases/in einem Zug"
+    "ref": "phrases/in einem Zug",
+    "translation_model": "openai/gpt-4.1"
   },
   "416c89366a": {
     "text": "Zeit ist Geld",
@@ -10412,10 +10448,73 @@
   },
   "4170114d20": {
     "text": "Die meisten Deutschen lehnen weitere Finanzhilfen für Griechenland ab. Doch viele wissen nicht, dass Deutschland nach dem 2. Weltkrieg Griechenland um Hilfe gebeten hat.",
-    "translation": null,
+    "translation": "Most Germans reject further financial aid for Greece. Yet many do not know that Germany asked Greece for help after the Second World War.",
     "source": "wiktionary",
     "lemmas": [
       "2. Weltkrieg"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "meisten",
+        "lemma": "meist",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschen",
+        "lemma": "Deutscher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lehnen",
+        "lemma": "lehnen",
+        "pos": "verb",
+        "gloss_hint": "reject"
+      },
+      {
+        "form": "Finanzhilfen",
+        "lemma": "Finanzhilfe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Griechenland",
+        "lemma": "Griechenland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wissen",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": "know"
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weltkrieg",
+        "lemma": "Weltkrieg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hilfe",
+        "lemma": "Hilfe",
+        "pos": "noun",
+        "gloss_hint": "help"
+      },
+      {
+        "form": "gebeten",
+        "lemma": "bitten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "41717ecd72": {
@@ -10899,10 +10998,25 @@
   },
   "4178c0c4c4": {
     "text": "Ich empfehle den EN.",
-    "translation": null,
+    "translation": "I recommend the EN.",
     "source": "wiktionary",
     "lemmas": [
       "EN"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "empfehle",
+        "lemma": "empfehlen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "EN",
+        "lemma": "EN",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "4179bee16e": {
@@ -11924,10 +12038,85 @@
   },
   "417febf2b8": {
     "text": "„Wenn man 14 Stunden wie ein Dackel schafft, hockt man abends nur noch müde rum, lässt sich im Fernsehen von Schwachsinn berieseln und mag sich selbst nicht mehr. Und wenn man eine Woche total im Dreh ist, kann man den freien Samstag auch glatt vergessen.“",
-    "translation": null,
+    "translation": "\"If you work 14 hours like a dog, you just sit around exhausted in the evening, let yourself be bombarded with nonsense on television, and can't stand yourself anymore. And if you're constantly on the go for a week, you can just forget about having a free Saturday.\"",
     "source": "wiktionary",
     "lemmas": [
       "im Dreh sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "schafft",
+        "lemma": "schaffen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dackel",
+        "lemma": "Dackel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hockt",
+        "lemma": "hocken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "müde",
+        "lemma": "müde",
+        "pos": "adjective",
+        "gloss_hint": "weary"
+      },
+      {
+        "form": "Fernsehen",
+        "lemma": "Fernsehen",
+        "pos": "noun",
+        "gloss_hint": "television"
+      },
+      {
+        "form": "Schwachsinn",
+        "lemma": "Schwachsinn",
+        "pos": "noun",
+        "gloss_hint": "nonsense"
+      },
+      {
+        "form": "berieseln",
+        "lemma": "berieseln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Woche",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": "week"
+      },
+      {
+        "form": "Dreh",
+        "lemma": "Dreh",
+        "pos": "noun",
+        "gloss_hint": "turn"
+      },
+      {
+        "form": "freien",
+        "lemma": "freien",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Samstag",
+        "lemma": "Samstag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vergessen",
+        "lemma": "vergessen",
+        "pos": "verb",
+        "gloss_hint": "forget"
+      }
     ]
   },
   "417ff7e559": {
@@ -12464,11 +12653,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that doesn't do me any good",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "41868a1ce8": {
     "text": "Die Sicherung sprang heraus, als er einen Kurzen gebaut hatte.",
@@ -12629,22 +12819,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the business is off to a good start",
     "source": "wiktionary",
     "lemmas": [
       "anlassen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "418a49e72b": {
     "text": "den Reigen beschließen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to bring the event to a close",
     "source": "wiktionary",
     "lemmas": [
       "beschließen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "418ae4ed19": {
     "text": "Es war gar nicht so einfach, den Nachnamen rauszufinden.",
@@ -13461,11 +13653,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "don't be a spoilsport",
     "source": "wiktionary",
     "lemmas": [
       "Frosch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "41918dac7c": {
     "text": "[Schlagzeile:] „Erneuerbare Energie – Landwirte ernten mit Solarstrom doppelt“",
@@ -14170,10 +14363,43 @@
   },
   "41960eb840": {
     "text": "Der Schlitten mit AU XX-999 bleibt heute beim Blitzmarathon in der Garage.",
-    "translation": null,
+    "translation": "The sled with license plate AU XX-999 stays in the garage today during the speed radar marathon.",
     "source": "wiktionary",
     "lemmas": [
       "AU"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schlitten",
+        "lemma": "Schlitten",
+        "pos": "noun",
+        "gloss_hint": "sled"
+      },
+      {
+        "form": "bleibt",
+        "lemma": "bleiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "Blitzmarathon",
+        "lemma": "Blitzmarathon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Garage",
+        "lemma": "Garage",
+        "pos": "noun",
+        "gloss_hint": "garage"
+      }
     ]
   },
   "419629bc37": {
@@ -14298,10 +14524,67 @@
   },
   "4196c653bb": {
     "text": "„Mit einem Förderprogramm in Höhe von 90 Millionen Euro sollen gemeinsam mit den Bundesländern «an den richtigen Stellen» wieder Sirenen installiert werden.“",
-    "translation": null,
+    "translation": "\"With a funding program worth 90 million euros, sirens are to be installed again at the right places together with the federal states.\"",
     "source": "wiktionary",
     "lemmas": [
       "in Höhe von"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Förderprogramm",
+        "lemma": "Förderprogramm",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Höhe",
+        "lemma": "Höhe",
+        "pos": "noun",
+        "gloss_hint": "level"
+      },
+      {
+        "form": "Millionen",
+        "lemma": "Million",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "gemeinsam",
+        "lemma": "gemeinsam",
+        "pos": "adjective",
+        "gloss_hint": "joint"
+      },
+      {
+        "form": "Bundesländern",
+        "lemma": "Bundesland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stellen",
+        "lemma": "Stelle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sirenen",
+        "lemma": "Sirene",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "installiert",
+        "lemma": "installieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "41974f2f77": {
@@ -14544,11 +14827,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'll be damned",
     "source": "wiktionary",
     "lemmas": [
       "Henker"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "419ba5f370": {
     "text": "Die Front hatte die Aufgabe, den Zugang zu Leningrad zu decken und die Wegnahme der Stadt durch den Gegner zu verhindern.",
@@ -16175,11 +16459,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to masturbate (male, vulgar)",
     "source": "wiktionary",
     "lemmas": [
       "Palme"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "41ad456493": {
     "text": "Die beiden Jungen sind früh losgezogen und klettern jetzt im Fels.",
@@ -17511,11 +17796,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's all the same",
     "source": "wiktionary",
     "lemmas": [
       "hüpfen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "41b788959a": {
     "text": "Der ganze Bezirk zwischen Süderbrarup und Rieseby ist betroffen.",
@@ -17783,10 +18069,25 @@
   },
   "41b9ec7571": {
     "text": "Er füttert sein Meerschweinchen.",
-    "translation": null,
+    "translation": "He feeds his guinea pig.",
     "source": "wiktionary",
     "lemmas": [
       "füttern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "füttert",
+        "lemma": "füttern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Meerschweinchen",
+        "lemma": "Meerschweinchen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "41bb15271e": {
@@ -18001,18 +18302,84 @@
   },
   "41bde68d26": {
     "text": "„Das Haus, in dem er wohnte, glich, geklebt an eine Klippe, mehr einer Fischerhütte als einer Pfarre.“",
-    "translation": null,
+    "translation": "\"The house in which he lived, clinging to a cliff, resembled a fisherman's hut more than a rectory.\"",
     "source": "wiktionary",
     "lemmas": [
       "Pfarre"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Haus",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": "residence"
+      },
+      {
+        "form": "wohnte",
+        "lemma": "wohnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "glich",
+        "lemma": "gleichen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "geklebt",
+        "lemma": "kleben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klippe",
+        "lemma": "Klippe",
+        "pos": "noun",
+        "gloss_hint": "cliff"
+      },
+      {
+        "form": "Fischerhütte",
+        "lemma": "Fischerhütte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pfarre",
+        "lemma": "Pfarre",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "41bf76ff3b": {
     "text": "„So etwas Wichtiges haben Sie noch nie gelesen! Wo er Recht hat, hat er Recht.“",
-    "translation": null,
+    "translation": "\"You've never read anything so important! Where he's right, he's right.\"",
     "source": "wiktionary",
     "lemmas": [
       "wo er Recht hat, hat er Recht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wichtiges",
+        "lemma": "wichtig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "gelesen",
+        "lemma": "lesen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Recht",
+        "lemma": "Recht",
+        "pos": "noun",
+        "gloss_hint": "right"
+      }
     ]
   },
   "41bfd48684": {
@@ -18477,11 +18844,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fish should be accompanied by a drink",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "41c6838164": {
     "text": "„Täglich engagieren sich Menschen gegen Pöbelei und Hass im Netz. Sie schreiben an gegen so genannte Hater (Hasser) und Trolle […] Forscher sagen: Die Gegenrede in Sozialen Netzwerken ist nicht nur ein Tropfen auf den heißen Stein.“",
@@ -19486,12 +19854,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it stands to reason that there might be ulterior motives",
     "source": "wiktionary",
     "lemmas": [
       "Böses"
     ],
-    "ref": "phrases/ein Schelm, wer Böses dabei denkt"
+    "ref": "phrases/ein Schelm, wer Böses dabei denkt",
+    "translation_model": "openai/gpt-4.1"
   },
   "41d3a346f2": {
     "text": "„Da öffnen alle Geschäftsleute ihre mit Waren verhangenen Türen, kommen gelenkig herbei, schaffen den Toten in ein Haus, kommen dann, Lächeln um Mund und Augen, heraus und reden: ‚Guten Tag — der Himmel ist blaß — ich verkaufe viele Kopftücher — ja, der Krieg.‘“",
@@ -19707,10 +20076,43 @@
   },
   "41d664620a": {
     "text": "„Zuletzt fand eine US-europäische Forscherkooperation das Gen NEK1, einen der wohl wichtigsten Bausteine zum Verständnis von ALS.“",
-    "translation": null,
+    "translation": "\"Most recently, a US-European research collaboration discovered the NEK1 gene, one of the most important building blocks for understanding ALS.\"",
     "source": "wiktionary",
     "lemmas": [
       "ALS"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zuletzt",
+        "lemma": "zuletzt",
+        "pos": "adverb",
+        "gloss_hint": "recently"
+      },
+      {
+        "form": "Forscherkooperation",
+        "lemma": "Forscherkooperation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gen",
+        "lemma": "Gen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bausteine",
+        "lemma": "Baustein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verständnis",
+        "lemma": "Verständnis",
+        "pos": "noun",
+        "gloss_hint": "comprehension"
+      }
     ]
   },
   "41d73a7218": {
@@ -19718,11 +20120,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is completely useless",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "41d75c2f82": {
     "text": "„Mein Versuch, die Sache zu retten, indem ich alle Bekannten bat, bei Wilmas Weihnachtsbüdchen Kissen zu kaufen, war ein Schuss in den Ofen.“",
@@ -22723,11 +23126,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I came, I saw, I conquered",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "41f6de1eb2": {
     "text": "Kannst du auch mehr als nur ein Wort sagen? Benutz mal zusammenhängende Rede.",
@@ -23413,11 +23817,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not even chase a cat out of the house anymore",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "41feaa8d91": {
     "text": "„Immerhin hatte ich gegen einen geringen Aufpreis ein Flugticket erwerben können.“",

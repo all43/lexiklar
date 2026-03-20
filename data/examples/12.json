@@ -294,10 +294,31 @@
   },
   "120125f126": {
     "text": "Die SP ist eine Regierungspartei in der Schweiz.",
-    "translation": null,
+    "translation": "The SP is a governing party in Switzerland.",
     "source": "wiktionary",
     "lemmas": [
       "SP"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "SP",
+        "lemma": "SP",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regierungspartei",
+        "lemma": "Regierungspartei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schweiz",
+        "lemma": "Schweiz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "12018097d7": {
@@ -377,11 +398,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pigeonhole something",
     "source": "wiktionary",
     "lemmas": [
       "Schublade"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "12036fd01f": {
     "text": "Ich wünsche Euch allen ein gesegnetes und besinnliches Weihnachtsfest.",
@@ -1616,12 +1638,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to overcome one's inner demons",
     "source": "wiktionary",
     "lemmas": [
       "Schweinehund"
     ],
-    "ref": "phrases/den inneren Schweinehund überwinden"
+    "ref": "phrases/den inneren Schweinehund überwinden",
+    "translation_model": "openai/gpt-4.1"
   },
   "120f47660a": {
     "text": "Er hat uns mit seinen Verrücktheiten immer wieder überrascht.",
@@ -2660,11 +2683,12 @@
     "type": "expression",
     "note": "umgangssprachlich: etwas zurücklegen, auf längere Frist bevorraten",
     "synonyms": [],
-    "translation": null,
+    "translation": "to stockpile",
     "source": "wiktionary",
     "lemmas": [
       "Halde"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "121a194117": {
     "text": "Jede Pose kann auch als Tour getanzt werden.",
@@ -4755,10 +4779,31 @@
   },
   "122cf34156": {
     "text": "Der Film hätte es verdient, besser synchronisiert zu werden.",
-    "translation": null,
+    "translation": "The film would have deserved to be dubbed better.",
     "source": "wiktionary",
     "lemmas": [
       "synchronisieren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Film",
+        "lemma": "Film",
+        "pos": "noun",
+        "gloss_hint": "movie"
+      },
+      {
+        "form": "verdient",
+        "lemma": "verdienen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "synchronisiert",
+        "lemma": "synchronisieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "122cfab0f3": {
@@ -5437,10 +5482,79 @@
   },
   "1234c4fcbe": {
     "text": "Den wöchentlichen Verbrechensbericht lesen, eine Zusammenfassung schreiben und ans Schwarze Brett heften – eine Aufgabe, die nie jemand anders machte, weil alle wußten, daß er das am besten konnte.“",
-    "translation": null,
+    "translation": "Reading the weekly crime report, writing a summary, and pinning it to the bulletin board – a task that no one else ever did, because everyone knew he could do it best.",
     "source": "wiktionary",
     "lemmas": [
       "Schwarzes Brett"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "lesen",
+        "lemma": "lesen",
+        "pos": "verb",
+        "gloss_hint": "read"
+      },
+      {
+        "form": "wöchentlichen",
+        "lemma": "wöchentlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verbrechensbericht",
+        "lemma": "Verbrechensbericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zusammenfassung",
+        "lemma": "Zusammenfassung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schreiben",
+        "lemma": "schreiben",
+        "pos": "verb",
+        "gloss_hint": "write"
+      },
+      {
+        "form": "Schwarze Brett",
+        "lemma": "Schwarzes Brett",
+        "pos": "noun",
+        "gloss_hint": "bulletin board"
+      },
+      {
+        "form": "heften",
+        "lemma": "heften",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufgabe",
+        "lemma": "Aufgabe",
+        "pos": "noun",
+        "gloss_hint": "task"
+      },
+      {
+        "form": "machte",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wußten",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "konnte",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "1238802c5c": {
@@ -6223,11 +6337,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone loses control of their emotions",
     "source": "wiktionary",
     "lemmas": [
       "Emotion"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "123e58aaf0": {
     "text": "damit lockt man keine Katze hinterm Ofen hervor",
@@ -6275,11 +6390,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go up in smoke",
     "source": "wiktionary",
     "lemmas": [
       "aufgehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "12401eab13": {
     "text": "„Monatelang hatte Wörle den Stunt vorbereitet.“",
@@ -7142,10 +7258,49 @@
   },
   "124943cc85": {
     "text": "[Schlagzeile:] Drei Frauen setzen Trump vor Gericht unter Druck",
-    "translation": null,
+    "translation": "Three Women Put Trump Under Pressure in Court",
     "source": "wiktionary",
     "lemmas": [
       "jemanden unter Druck setzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Drei",
+        "lemma": "Drei",
+        "pos": "noun",
+        "gloss_hint": "three (number)"
+      },
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "setzen",
+        "lemma": "setzen",
+        "pos": "verb",
+        "gloss_hint": "place (verb)"
+      },
+      {
+        "form": "Trump",
+        "lemma": "Trump",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gericht",
+        "lemma": "Gericht",
+        "pos": "noun",
+        "gloss_hint": "court (place)"
+      },
+      {
+        "form": "Druck",
+        "lemma": "Druck",
+        "pos": "noun",
+        "gloss_hint": "pressure"
+      }
     ]
   },
   "12496923bc": {
@@ -7456,11 +7611,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put someone in charge",
     "source": "wiktionary",
     "lemmas": [
       "Ruder"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "124db3b11b": {
     "text": "Eine häufige Anwendung des Computers ist das Surfen im Internet.",
@@ -9031,11 +9187,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Give her an inch and she'll take a mile.",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "125da5c226": {
     "text": "„Die Ohnmacht verließ ihn nur so weit, daß sich allein der Rauschzustand in seinem Bewußtsein bewegte.“",
@@ -9286,10 +9443,37 @@
   },
   "125ed7e728": {
     "text": "„Wohne in Z. 14“, simste Herbert seiner Schwester.",
-    "translation": null,
+    "translation": "\"Live in Z. 14,\" Herbert texted his sister.",
     "source": "wiktionary",
     "lemmas": [
       "Z."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wohne",
+        "lemma": "wohnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "simste",
+        "lemma": "simsen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herbert",
+        "lemma": "Herbert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schwester",
+        "lemma": "Schwester",
+        "pos": "noun",
+        "gloss_hint": "sister"
+      }
     ]
   },
   "125ee85fb2": {
@@ -10146,11 +10330,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The donkey gives up.",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "126d0454ca": {
     "text": "Der Jäger oder der Förster ist auch ein Schütze mit Gewehr.",
@@ -10455,10 +10640,25 @@
   },
   "1272f6196b": {
     "text": "Traust du dir zu, dort alleine hinzugehen?",
-    "translation": null,
+    "translation": "Do you dare to go there alone?",
     "source": "wiktionary",
     "lemmas": [
       "zutrauen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Traust",
+        "lemma": "trauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "hinzugehen",
+        "lemma": "hingehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "12733fe9d3": {
@@ -10719,11 +10919,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Wait for good things to fall into your lap.",
     "source": "wiktionary",
     "lemmas": [
       "Taube"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1276601fe2": {
     "text": "„Bei Renate war der Wohlstand ausgebrochen.“",
@@ -11910,10 +12111,37 @@
   },
   "1280b9abc3": {
     "text": "Sie haben den Verein in „TuS Wacker“ umbenannt.",
-    "translation": null,
+    "translation": "They renamed the organization to \"TuS Wacker\".",
     "source": "wiktionary",
     "lemmas": [
       "umbenennen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "haben",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": "have (auxiliary)"
+      },
+      {
+        "form": "Verein",
+        "lemma": "Verein",
+        "pos": "noun",
+        "gloss_hint": "organization"
+      },
+      {
+        "form": "umbenannt",
+        "lemma": "umbenennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "TuS Wacker",
+        "lemma": "TuS Wacker",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "1280d90a7d": {
@@ -12203,11 +12431,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Keep someone hanging.",
     "source": "wiktionary",
     "lemmas": [
       "zappeln"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "12835f62ab": {
     "text": "Euer Gnaden",
@@ -12477,11 +12706,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I won't say no to that.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1283f1981e": {
     "text": "Seit Franz letztes Jahr Monika kennengelernt hat, ist er wieder in festen Händen.",
@@ -12638,11 +12868,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Dead as a dodo.",
     "source": "wiktionary",
     "lemmas": [
       "Dodo"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1287341cc6": {
     "text": "„Nach einer Strecke mit sumpfigem Untergrund wurde der Boden trocken und sandig und stieg allmählich an.“",
@@ -14505,10 +14736,31 @@
   },
   "12969804d4": {
     "text": "Dieser Mäher ist mit Hinterradantrieb ausgestattet.",
-    "translation": null,
+    "translation": "This mower is equipped with rear-wheel drive.",
     "source": "wiktionary",
     "lemmas": [
       "Mäher"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mäher",
+        "lemma": "Mäher",
+        "pos": "noun",
+        "gloss_hint": "mower"
+      },
+      {
+        "form": "Hinterradantrieb",
+        "lemma": "Hinterradantrieb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgestattet",
+        "lemma": "ausstatten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "1297d82006": {
@@ -14603,10 +14855,61 @@
   },
   "1299039e0c": {
     "text": "„Ich drehte den Kopf und sah der Gestalt, die da gerade gesprochen hatte, ins Gesicht. Holla, die Waldfee – was für eine hässliche Fratze!“",
-    "translation": null,
+    "translation": "\"I turned my head and looked at the figure who had just spoken in the face. Wow, what an ugly mug!\"",
     "source": "wiktionary",
     "lemmas": [
       "Holla die Waldfee"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "drehte",
+        "lemma": "drehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kopf",
+        "lemma": "Kopf",
+        "pos": "noun",
+        "gloss_hint": "head (human)"
+      },
+      {
+        "form": "sah",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gestalt",
+        "lemma": "Gestalt",
+        "pos": "noun",
+        "gloss_hint": "figure (shadowy)"
+      },
+      {
+        "form": "gesprochen",
+        "lemma": "sprechen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesicht",
+        "lemma": "Gesicht",
+        "pos": "noun",
+        "gloss_hint": "face (human)"
+      },
+      {
+        "form": "hässliche",
+        "lemma": "hässlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fratze",
+        "lemma": "Fratze",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "12999b7068": {
@@ -17890,10 +18193,49 @@
   },
   "12c07fd192": {
     "text": "„Es erschienen hungrige Landfrauen sonder Zahl, und dann wurde gefrühstückt.“",
-    "translation": null,
+    "translation": "\"Hungry country women appeared in countless numbers, and then breakfast was served.\"",
     "source": "wiktionary",
     "lemmas": [
       "sonder"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "erschienen",
+        "lemma": "erscheinen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "hungrige",
+        "lemma": "hungrig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Landfrauen",
+        "lemma": "Landfrau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zahl",
+        "lemma": "Zahl",
+        "pos": "noun",
+        "gloss_hint": "number"
+      },
+      {
+        "form": "wurde",
+        "lemma": "werden",
+        "pos": "verb",
+        "gloss_hint": "auxiliary (future/passive)"
+      },
+      {
+        "form": "gefrühstückt",
+        "lemma": "frühstücken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "12c1056d0b": {
@@ -18050,10 +18392,31 @@
   },
   "12c4274ddd": {
     "text": "Im ZDF läuft eine neue Krimiserie.",
-    "translation": null,
+    "translation": "A new crime series is running on ZDF.",
     "source": "wiktionary",
     "lemmas": [
       "ZDF"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ZDF",
+        "lemma": "ZDF",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "neue",
+        "lemma": "neu",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Krimiserie",
+        "lemma": "Krimiserie",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "12c4b5c00a": {
@@ -18249,11 +18612,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Brave as a lion.",
     "source": "wiktionary",
     "lemmas": [
       "tapfer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "12c6c5cbde": {
     "text": "„Für verwegene Kerle, die gut bezahlt wurden, ein Kinderspiel, ihn und die ganzen lästigen Aufsichtsbeamten hier irgendwo an der Küste verschwinden zu lassen.“",
@@ -19931,10 +20295,49 @@
   },
   "12d27d4ecc": {
     "text": "Der Breisgau gehört zu den sonnigsten Gegenden Deutschlands und ist eine bekannte Weinbauregion.",
-    "translation": null,
+    "translation": "The Breisgau is one of the sunniest regions of Germany and is a well-known wine-growing region.",
     "source": "wiktionary",
     "lemmas": [
       "Breisgau"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Breisgau",
+        "lemma": "Breisgau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sonnigsten",
+        "lemma": "sonnig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gegenden",
+        "lemma": "Gegend",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschlands",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bekannte",
+        "lemma": "bekannt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weinbauregion",
+        "lemma": "Weinbauregion",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "12d2c7b1e0": {
@@ -20472,10 +20875,79 @@
   },
   "12d93212d5": {
     "text": "„Mit seinem Tod würde er zu dem großen Heer zählen, das ohne Namen war und ohne Zahl, Humusboden, auf dem einstmals eine schönere Welt erblühen wird.“",
-    "translation": null,
+    "translation": "\"With his death he would join the great host that was without name and without number, humus soil on which a more beautiful world will once blossom.\"",
     "source": "wiktionary",
     "lemmas": [
       "ohne Zahl"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tod",
+        "lemma": "Tod",
+        "pos": "noun",
+        "gloss_hint": "death"
+      },
+      {
+        "form": "würde",
+        "lemma": "würde",
+        "pos": "noun",
+        "gloss_hint": "dignity"
+      },
+      {
+        "form": "zählen",
+        "lemma": "zählen",
+        "pos": "verb",
+        "gloss_hint": "belong to"
+      },
+      {
+        "form": "großen",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Heer",
+        "lemma": "Heer",
+        "pos": "noun",
+        "gloss_hint": "host"
+      },
+      {
+        "form": "Namen",
+        "lemma": "Name",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zahl",
+        "lemma": "Zahl",
+        "pos": "noun",
+        "gloss_hint": "number"
+      },
+      {
+        "form": "Humusboden",
+        "lemma": "Humusboden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schönere",
+        "lemma": "schön",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      },
+      {
+        "form": "erblühen",
+        "lemma": "erblühen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "12d952a0b9": {
@@ -21796,10 +22268,31 @@
   },
   "12e6197f01": {
     "text": "Das hätte leicht ins Auge gehen können.",
-    "translation": null,
+    "translation": "That could easily have gone wrong.",
     "source": "wiktionary",
     "lemmas": [
       "ins Auge gehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "leicht",
+        "lemma": "leicht",
+        "pos": "adjective",
+        "gloss_hint": "easy"
+      },
+      {
+        "form": "Auge",
+        "lemma": "Auge",
+        "pos": "noun",
+        "gloss_hint": "eye"
+      },
+      {
+        "form": "gehen",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "go"
+      }
     ]
   },
   "12e6bf4239": {
@@ -22503,11 +22996,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Be the trump card.",
     "source": "wiktionary",
     "lemmas": [
       "Trumpf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "12ebd17e39": {
     "text": "Die Worte waren deutlich hinter der Tür vernehmbar.",
@@ -24150,10 +24644,97 @@
   },
   "12f9ed75c4": {
     "text": "„Immerhin wurde Anfang der 60er Jahre das Institut für deutsche Sprache gegründet, und Wortfeldforschung und inhaltbezogene Grammatik waren etabliert, einschließlich einer älteren Fach- und Sondersprachenforschung.“",
-    "translation": null,
+    "translation": "\"After all, at the beginning of the 1960s the Institute for the German Language was founded, and word-field research and content-related grammar were established, including an older specialized and technical language research.\"",
     "source": "wiktionary",
     "lemmas": [
       "inhaltbezogene Grammatik"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Anfang",
+        "lemma": "Anfang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "60er",
+        "lemma": "60er",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahre",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Institut",
+        "lemma": "Institut",
+        "pos": "noun",
+        "gloss_hint": "institution"
+      },
+      {
+        "form": "deutsche",
+        "lemma": "deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sprache",
+        "lemma": "Sprache",
+        "pos": "noun",
+        "gloss_hint": "language"
+      },
+      {
+        "form": "gegründet",
+        "lemma": "gründen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wortfeldforschung",
+        "lemma": "Wortfeldforschung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "inhaltbezogene",
+        "lemma": "inhaltbezogen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grammatik",
+        "lemma": "Grammatik",
+        "pos": "noun",
+        "gloss_hint": "grammar"
+      },
+      {
+        "form": "etabliert",
+        "lemma": "etabliert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "älteren",
+        "lemma": "alt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fach-",
+        "lemma": "Fach",
+        "pos": "noun",
+        "gloss_hint": "field"
+      },
+      {
+        "form": "Sondersprachenforschung",
+        "lemma": "Sondersprachenforschung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "12fdef73e0": {

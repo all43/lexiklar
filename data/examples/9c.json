@@ -840,11 +840,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a patient donkey",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9c0a91fb79": {
     "text": "Die räuberisch im Sand lebende Ameisenlöwenlarve sitzt im Zentrum ihres selbstgebauten kleinen Kraters und lauert dort auf vorbeilaufende kleine Insekten, die einmal in den Krater gerutscht, kaum eine Überlebenschance haben.",
@@ -3102,12 +3103,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "sooner or later",
     "source": "wiktionary",
     "lemmas": [
       "lang",
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9c242451a1": {
     "text": "In der gesamten Barockepoche verwendete man Ornamente wie: Akanthus, Palmette, Kassette, Zahnschnitt, Eierstab, Perlstab, Bündelstab, Blattstab und Feston.",
@@ -3826,10 +3828,43 @@
   },
   "9c28fd2aa8": {
     "text": "Der neue Nachbar kann wieder nicht mit auf den Männerausflug kommen, denn seine Frau hat die Hosen an.",
-    "translation": null,
+    "translation": "The new neighbor can't come along on the men's outing again because his wife wears the pants.",
     "source": "wiktionary",
     "lemmas": [
       "die Hosen anhaben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Nachbar",
+        "lemma": "Nachbar",
+        "pos": "noun",
+        "gloss_hint": "neighbor"
+      },
+      {
+        "form": "kommen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": "come"
+      },
+      {
+        "form": "Männerausflug",
+        "lemma": "Männerausflug",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "wife"
+      },
+      {
+        "form": "Hosen",
+        "lemma": "Hose",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "9c295396b2": {
@@ -3977,11 +4012,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something turns someone's stomach",
     "source": "wiktionary",
     "lemmas": [
       "Magen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9c2bb26985": {
     "text": "Mir ist aufgefallen, dass du heute so still bist. Geht es dir nicht gut?",
@@ -5641,11 +5677,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lose face",
     "source": "wiktionary",
     "lemmas": [
       "verlieren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9c49e05eb5": {
     "text": "Das Buch werde zeigen, dass Monroe \"eine wirklich nachdenkliche Person\" gewesen sei, sagte Herausgeberin Courtney Hodell.",
@@ -5872,10 +5909,43 @@
   },
   "9c4ce3835a": {
     "text": "Mami, kannst du mir mein Taschengeld schon heute geben?",
-    "translation": null,
+    "translation": "Mom, can you give me my pocket money today?",
     "source": "wiktionary",
     "lemmas": [
       "Mami"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mami",
+        "lemma": "Mami",
+        "pos": "noun",
+        "gloss_hint": "mommy"
+      },
+      {
+        "form": "kannst",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": "can"
+      },
+      {
+        "form": "geben",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": "give"
+      },
+      {
+        "form": "Taschengeld",
+        "lemma": "Taschengeld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      }
     ]
   },
   "9c4d2b7b0f": {
@@ -6490,22 +6560,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to grit your teeth and bear it",
     "source": "wiktionary",
     "lemmas": [
       "Hintern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9c54af5207": {
     "text": "den Dreh begreifen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get the hang of it",
     "source": "wiktionary",
     "lemmas": [
       "Dreh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9c54f80271": {
     "text": "Es war einmal eine neue Zahnpasta-Tube, die glänzte so schön auf der Fensterbank, dass sich der alten Zahnbürste im Glas neben ihr vor Bewunderung die Borsten sträubten.",
@@ -7771,10 +7843,49 @@
   },
   "9c5c2603d0": {
     "text": "Malloch Brown, der zugleich noch Administrator der Uno-Entwicklungsorganisation UNDP ist, forderte die deutsche Regierung auf, den \"eigenen Führungsanspruch noch nachhaltig zu demonstrieren\".",
-    "translation": null,
+    "translation": "Malloch Brown, who is simultaneously administrator of the UN development organization UNDP, called on the German government to demonstrate its own leadership claim more sustainably.",
     "source": "wiktionary",
     "lemmas": [
       "Administrator"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Administrator",
+        "lemma": "Administrator",
+        "pos": "noun",
+        "gloss_hint": "manager"
+      },
+      {
+        "form": "Entwicklungsorganisation",
+        "lemma": "Entwicklungsorganisation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "forderte",
+        "lemma": "fordern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regierung",
+        "lemma": "Regierung",
+        "pos": "noun",
+        "gloss_hint": "government"
+      },
+      {
+        "form": "Führungsanspruch",
+        "lemma": "Führungsanspruch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "demonstrieren",
+        "lemma": "demonstrieren",
+        "pos": "verb",
+        "gloss_hint": "demonstrate"
+      }
     ]
   },
   "9c601ceed1": {
@@ -9175,10 +9286,43 @@
   },
   "9c680f3c76": {
     "text": "Der Vertrag ist unter Dach und Fach, jetzt kann die Arbeit beginnen.",
-    "translation": null,
+    "translation": "The contract is signed and sealed; now the work can begin.",
     "source": "wiktionary",
     "lemmas": [
       "unter Dach und Fach"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vertrag",
+        "lemma": "Vertrag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dach",
+        "lemma": "Dach",
+        "pos": "noun",
+        "gloss_hint": "roof"
+      },
+      {
+        "form": "Fach",
+        "lemma": "Fach",
+        "pos": "noun",
+        "gloss_hint": "compartment"
+      },
+      {
+        "form": "Arbeit",
+        "lemma": "Arbeit",
+        "pos": "noun",
+        "gloss_hint": "work"
+      },
+      {
+        "form": "beginnen",
+        "lemma": "beginnen",
+        "pos": "verb",
+        "gloss_hint": "begin"
+      }
     ]
   },
   "9c691277bc": {
@@ -9282,13 +9426,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the upper crust",
     "source": "wiktionary",
     "lemmas": [
       "Zehntausend",
       "ober-"
     ],
-    "ref": "phrases/die oberen Zehntausend"
+    "ref": "phrases/die oberen Zehntausend",
+    "translation_model": "openai/gpt-4.1"
   },
   "9c6a60f009": {
     "text": "„Wer die Gesellschaft von Morgen, die Next Society, skizzieren will, bewegt sich auf unsicherem Terrain.“",
@@ -10328,11 +10473,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Five minutes early is on time for a soldier.",
     "source": "wiktionary",
     "lemmas": [
       "fünf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9c6fc8b69a": {
     "text": "Auch wenn du eine Mitverantwortung an den Vorkommnissen trägst, brauchst du doch nicht gleich in Sack und Asche zu gehen.",
@@ -10580,11 +10726,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Count Coke (slang for a cocaine user)",
     "source": "wiktionary",
     "lemmas": [
       "Graf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9c755de3da": {
     "text": "unter einer Decke stecken",
@@ -10951,10 +11098,61 @@
   },
   "9c79a46502": {
     "text": "„Er suchte einen neuen Geschäftsführer dafür und hat mir damals, 1992, eine Assistenz der Geschäftsführung angeboten, die ich annahm.“",
-    "translation": null,
+    "translation": "He was looking for a new managing director for it and at that time, in 1992, he offered me a position as assistant to the management, which I accepted.",
     "source": "wiktionary",
     "lemmas": [
       "Assistenz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "suchte",
+        "lemma": "suchen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "neuen",
+        "lemma": "neu",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geschäftsführer",
+        "lemma": "Geschäftsführer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dafür",
+        "lemma": "dafür",
+        "pos": "adverb",
+        "gloss_hint": "for that purpose"
+      },
+      {
+        "form": "angeboten",
+        "lemma": "anbieten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Assistenz",
+        "lemma": "Assistenz",
+        "pos": "noun",
+        "gloss_hint": "assistant"
+      },
+      {
+        "form": "Geschäftsführung",
+        "lemma": "Geschäftsführung",
+        "pos": "noun",
+        "gloss_hint": "management"
+      },
+      {
+        "form": "annahm",
+        "lemma": "annehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "9c79f8d13e": {
@@ -12068,11 +12266,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as shy as a deer",
     "source": "wiktionary",
     "lemmas": [
       "Reh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9c875c6fc1": {
     "text": "Oft lassen sich Kind und Beruf nur schwer miteinander vereinbaren.",
@@ -13333,12 +13532,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "slim and slender",
     "source": "wiktionary",
     "lemmas": [
       "schlank"
     ],
-    "ref": "phrases/rank und schlank"
+    "ref": "phrases/rank und schlank",
+    "translation_model": "openai/gpt-4.1"
   },
   "9c8c9b347e": {
     "text": "Es geht ihm ganz gut.",
@@ -13354,11 +13554,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to vent one's sorrow",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9c8cda9b20": {
     "text": "„Aus dem Kontinent des Aufbruchs wird ein Erdteil der Hoffnungslosigkeit, der Krisen und Kriege, scheinbar verdammt zu Armut und Verschuldung.“",
@@ -14082,11 +14283,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "nothing comes easy to someone",
     "source": "wiktionary",
     "lemmas": [
       "schenken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9c984acd17": {
     "text": "„Seine Frau stand neben ihm, außerdem hielt er gerade Smalltalk mit einem wichtigen Mandanten.“",
@@ -14248,11 +14450,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "open ending",
     "source": "wiktionary",
     "lemmas": [
       "Schluss"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9c995c9042": {
     "text": "„Ich war so abgelenkt, dass ich nicht einmal registriert hatte, dass ich auf eine steile, nicht einsehbare Kuppe zufuhr, und jetzt donnert auf einmal ein riesiger Truck darüber, nimmt die ganze Straßenbreite ein und rast direkt auf mich zu, viel zu schnell, um noch bremsen zu können.“",
@@ -14267,10 +14470,31 @@
   },
   "9c9a199f0b": {
     "text": "Dieser Fernseher ist noch in der OP.",
-    "translation": null,
+    "translation": "This television is still in the operating room.",
     "source": "wiktionary",
     "lemmas": [
       "OP"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fernseher",
+        "lemma": "Fernseher",
+        "pos": "noun",
+        "gloss_hint": "television"
+      },
+      {
+        "form": "noch",
+        "lemma": "noch",
+        "pos": "adverb",
+        "gloss_hint": "still"
+      },
+      {
+        "form": "OP",
+        "lemma": "OP",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "9c9ac0466d": {
@@ -14666,11 +14890,12 @@
     "type": "expression",
     "note": "Mmt viel Getöse vernichtet werden, versagen; bei seinem Untergang die Aufmerksamkeit Aller auf sich ziehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to go down with a bang",
     "source": "wiktionary",
     "lemmas": [
       "untergehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9c9efa5b52": {
     "text": "In dieser Ambulanz wurde eine Diabetikerschulung über mehrere Tage durchgeführt, wodurch meine Frau endlich ihre Fragen beantwortet bekam.",
@@ -15004,18 +15229,120 @@
   },
   "9ca1e62cc8": {
     "text": "„Da sie politisch an dem hohen Jubilar nichts Anziehendes finden, feiern sie wenigstens seinen Charakter und versichern, daß ihre Huldigungen nur dem Amt und nicht dem Manne zugedacht seien. Quatsch mit Sauce.“",
-    "translation": null,
+    "translation": "Since they find nothing politically appealing about the distinguished jubilee, they at least celebrate his character and assure that their tributes are intended for the office and not for the man. That's nonsense.",
     "source": "wiktionary",
     "lemmas": [
       "Quatsch mit Sauce"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "finden",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": "find"
+      },
+      {
+        "form": "politisch",
+        "lemma": "politisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "hohen",
+        "lemma": "hoch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jubilar",
+        "lemma": "Jubilar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anziehendes",
+        "lemma": "anziehend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "feiern",
+        "lemma": "feiern",
+        "pos": "verb",
+        "gloss_hint": "celebrate"
+      },
+      {
+        "form": "Charakter",
+        "lemma": "Charakter",
+        "pos": "noun",
+        "gloss_hint": "character"
+      },
+      {
+        "form": "versichern",
+        "lemma": "versichern",
+        "pos": "verb",
+        "gloss_hint": "assure"
+      },
+      {
+        "form": "Huldigungen",
+        "lemma": "Huldigung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Amt",
+        "lemma": "Amt",
+        "pos": "noun",
+        "gloss_hint": "office"
+      },
+      {
+        "form": "Manne",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Quatsch",
+        "lemma": "Quatsch",
+        "pos": "noun",
+        "gloss_hint": "nonsense"
+      }
     ]
   },
   "9ca22d3122": {
     "text": "„Man unterscheidet folgende Typen von Verfahren: […] Pfadüberdeckung (C4)“",
-    "translation": null,
+    "translation": "The following types of procedures are distinguished: [...] path coverage (C4)",
     "source": "wiktionary",
     "lemmas": [
       "C4"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "unterscheidet",
+        "lemma": "unterscheiden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Typen",
+        "lemma": "Typ",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verfahren",
+        "lemma": "Verfahren",
+        "pos": "noun",
+        "gloss_hint": "procedure"
+      },
+      {
+        "form": "Pfadüberdeckung",
+        "lemma": "Pfadüberdeckung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "9ca3305e19": {
@@ -15023,11 +15350,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Red sky at night, shepherd's delight; red sky in the morning, shepherd's warning.",
     "source": "wiktionary",
     "lemmas": [
       "Abend"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9ca4367eda": {
     "text": "Die Dichte eines Körpers wird durch sein Material bestimmt.",
@@ -16259,12 +16587,13 @@
     "type": "expression",
     "note": "etwas etwas total zerstören",
     "synonyms": [],
-    "translation": null,
+    "translation": "to raze something to the ground",
     "source": "wiktionary",
     "lemmas": [
       "Erdboden"
     ],
-    "ref": "phrases/dem Erdboden gleichmachen"
+    "ref": "phrases/dem Erdboden gleichmachen",
+    "translation_model": "openai/gpt-4.1"
   },
   "9cb1f9b307": {
     "text": "Er illustrierte seine Vorlesungen mit spektakulären Versuchen.",
@@ -17266,11 +17595,13 @@
   },
   "9cbc571449": {
     "text": "1 h = 60 min",
-    "translation": null,
+    "translation": "1 h = 60 min",
     "source": "wiktionary",
     "lemmas": [
       "h"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "9cbe6c4f1e": {
     "text": "Die ganze Stadt ist mit Plakaten zugepflastert.",
@@ -17941,11 +18272,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to throw someone in jail",
     "source": "wiktionary",
     "lemmas": [
       "Loch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9cc261abf2": {
     "text": "„Wir räubern zusammen die Stachel- und Johannisbeersträucher, schütteln uns Äpfel und Birnen herunter und verzehren sie ungesehen in irgendeinem heimlichen Gartenwinkel.“",
@@ -18180,12 +18512,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "on foot",
     "source": "wiktionary",
     "lemmas": [
       "Schuster"
     ],
-    "ref": "phrases/auf Schusters Rappen"
+    "ref": "phrases/auf Schusters Rappen",
+    "translation_model": "openai/gpt-4.1"
   },
   "9cc6b520b4": {
     "text": "Mit ihren neuen hochhackigen Schuhen stöckelt sie herum wie ein Storch im Salat.",
@@ -19116,10 +19449,97 @@
   },
   "9cc811e37e": {
     "text": "„So werden im Rückgriff auf sprachphilosophische Positionen W. von Humboldts Prinzipien einer inhalt- und leistungsbezogenen Grammatik (L. Weisgerber) entwickelt, die auch in bedeutenden grammatischen Handbüchern (…) ihren praktischen Niederschlag finden…“",
-    "translation": null,
+    "translation": "Thus, drawing on philosophy of language positions, W. von Humboldt's principles of a content- and performance-oriented grammar (L. Weisgerber) are developed, which also find their practical application in significant grammatical handbooks (...)",
     "source": "wiktionary",
     "lemmas": [
       "inhaltbezogene Grammatik"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rückgriff",
+        "lemma": "Rückgriff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sprachphilosophische",
+        "lemma": "sprachphilosophisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Positionen",
+        "lemma": "Position",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prinzipien",
+        "lemma": "Prinzip",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "inhalt-",
+        "lemma": "Inhalt",
+        "pos": "noun",
+        "gloss_hint": "content"
+      },
+      {
+        "form": "leistungsbezogenen",
+        "lemma": "leistungsbezogen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grammatik",
+        "lemma": "Grammatik",
+        "pos": "noun",
+        "gloss_hint": "grammar"
+      },
+      {
+        "form": "entwickelt",
+        "lemma": "entwickeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "bedeutenden",
+        "lemma": "bedeutend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "grammatischen",
+        "lemma": "grammatisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Handbüchern",
+        "lemma": "Handbuch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "praktischen",
+        "lemma": "praktisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Niederschlag",
+        "lemma": "Niederschlag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "finden",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": "find"
+      }
     ]
   },
   "9cc8968779": {
@@ -19127,11 +19547,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "D-day",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9cc8ff3f19": {
     "text": "„Die ganze Nachbarschaft war auf den Beinen, um zu löschen und zu helfen, wo Hilfe nottat.“",
@@ -19296,10 +19717,19 @@
   },
   "9cce76f341": {
     "text": "„Er“ in „Er ist groß“ ist ein Pronomen.",
-    "translation": null,
+    "translation": "\"He\" in \"He is tall\" is a pronoun.",
     "source": "wiktionary",
     "lemmas": [
       "Pronomen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Pronomen",
+        "lemma": "Pronomen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "9cd0326f52": {
@@ -21304,10 +21734,43 @@
   },
   "9ce2e2089c": {
     "text": "Nachdem der bekannte Fußballmoderator Gary Lineker Londons neue Asylpolitik kritisiert hatte, wurde er von der BBC suspendiert.",
-    "translation": null,
+    "translation": "After the well-known football commentator Gary Lineker criticized London's new asylum policy, he was suspended by the BBC.",
     "source": "wiktionary",
     "lemmas": [
       "BBC"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "bekannte",
+        "lemma": "bekannt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fußballmoderator",
+        "lemma": "Fußballmoderator",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kritisiert",
+        "lemma": "kritisieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Asylpolitik",
+        "lemma": "Asylpolitik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "suspendiert",
+        "lemma": "suspendieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "9ce306a473": {
@@ -21333,10 +21796,37 @@
   },
   "9ce4da558c": {
     "text": "Der Halter meines Selfie-Sticks ist mir im Urlaub abgebrochen.",
-    "translation": null,
+    "translation": "The holder of my selfie stick broke off during my vacation.",
     "source": "wiktionary",
     "lemmas": [
       "Halter"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Halter",
+        "lemma": "Halter",
+        "pos": "noun",
+        "gloss_hint": "holder"
+      },
+      {
+        "form": "Selfie-Sticks",
+        "lemma": "Selfie-Stick",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abgebrochen",
+        "lemma": "abbrechen",
+        "pos": "adjective",
+        "gloss_hint": "broken off"
+      },
+      {
+        "form": "Urlaub",
+        "lemma": "Urlaub",
+        "pos": "noun",
+        "gloss_hint": "vacation"
+      }
     ]
   },
   "9ce5315174": {
@@ -21434,11 +21924,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to dissolve into tears",
     "source": "wiktionary",
     "lemmas": [
       "Träne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9ce8aea877": {
     "text": "Tretet ein, meine Dame. (eintreten¹)",
@@ -21625,11 +22116,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to rub one's hands",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9ced52066e": {
     "text": "„Sie sagten, sie wären aus Glückstadt in Holstein und sollten Malz und Hopfen holen.“",
@@ -21853,10 +22345,37 @@
   },
   "9cef277030": {
     "text": "In dieser Brauerei werden die Flaschen von Automaten abgefüllt.",
-    "translation": null,
+    "translation": "In this brewery, the bottles are filled by machines.",
     "source": "wiktionary",
     "lemmas": [
       "Automat"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Brauerei",
+        "lemma": "Brauerei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Flaschen",
+        "lemma": "Flasche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Automaten",
+        "lemma": "Automat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abgefüllt",
+        "lemma": "abfüllen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "9cf07b80b0": {
@@ -22185,23 +22704,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have two left hands",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
     ],
-    "ref": "phrases/zwei linke Hände haben"
+    "ref": "phrases/zwei linke Hände haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "9cf44f092c": {
     "text": "bei jemandem die Rippen zählen können",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be able to count someone's ribs (because they're so thin)",
     "source": "wiktionary",
     "lemmas": [
       "Rippe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9cf46c322a": {
     "text": "„Auch die 33 Zimmer und Suiten überzeugen durch Eleganz.“",
@@ -22217,11 +22738,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "It doesn't cost a fortune!",
     "source": "wiktionary",
     "lemmas": [
       "Welt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9cf49bc39a": {
     "text": "Sie suchen unsere Gesellschaft.",
@@ -22970,10 +23492,31 @@
   },
   "9cfc47a06c": {
     "text": "„›Sie liegt im künstlichen Koma, Mickey.‹“",
-    "translation": null,
+    "translation": "\"She's in an induced coma, Mickey.\"",
     "source": "wiktionary",
     "lemmas": [
       "künstliches Koma"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "liegt",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "künstlichen",
+        "lemma": "künstlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Koma",
+        "lemma": "Koma",
+        "pos": "noun",
+        "gloss_hint": "coma"
+      }
     ]
   },
   "9cfc77d38d": {

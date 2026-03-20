@@ -1199,11 +1199,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have something on your mind",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2609590ff8": {
     "text": "Erwin erpresst seine Mitschüler auf dem Pausenhof.",
@@ -1477,10 +1478,31 @@
   },
   "260cbf9719": {
     "text": "Sein Nachbar wird vom FBI beobachtet.",
-    "translation": null,
+    "translation": "His neighbor is being watched by the FBI.",
     "source": "wiktionary",
     "lemmas": [
       "FBI"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Nachbar",
+        "lemma": "Nachbar",
+        "pos": "noun",
+        "gloss_hint": "neighbor"
+      },
+      {
+        "form": "beobachtet",
+        "lemma": "beobachten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "FBI",
+        "lemma": "FBI",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "260cca5ab0": {
@@ -4283,11 +4305,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's no small matter",
     "source": "wiktionary",
     "lemmas": [
       "Kleinigkeit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "26301d306a": {
     "text": "„Tom of Finland hat den Homosexuellen zu neuem Selbstbewusstsein verholfen, heißt es in den Portraits.“",
@@ -4576,11 +4599,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone really got the short end of the stick",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2633f79d36": {
     "text": "„Mit ihren zwanzig Jahren hatte sie Breslau noch nie verlassen und war wohl neugierig, wie die übrige Welt aussah; es mußte sehr reizvoll für sie sein, mit Dresden zu beginnen.“",
@@ -5333,11 +5357,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the steam is gone",
     "source": "wiktionary",
     "lemmas": [
       "Dampf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "263eb33579": {
     "text": "Heute Nacht schlafe ich bei dir, morgen fahre ich dann zurück nach Hause.",
@@ -5620,14 +5645,15 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a bad weed never dies",
     "source": "wiktionary",
     "lemmas": [
       "vergehen",
       "verderben",
       "Unkraut"
     ],
-    "ref": "phrases/Unkraut vergeht nicht"
+    "ref": "phrases/Unkraut vergeht nicht",
+    "translation_model": "openai/gpt-4.1"
   },
   "2641c261f6": {
     "text": "Hast etwa du die Presse informiert?",
@@ -6888,11 +6914,12 @@
     "type": "expression",
     "note": "weggehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to make oneself scarce",
     "source": "wiktionary",
     "lemmas": [
       "stiften"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "26533bbc9d": {
     "text": "Das Wort „Sodbrennen“ ist ein verdeutlichendes Kompositum, in dem das veraltete Wort „Sod“ durch das nahezu gleichbedeutende Wort „Brennen“ verdeutlicht wird.",
@@ -7028,10 +7055,37 @@
   },
   "2653c29cd8": {
     "text": "„Sie umfassen Informations- und Kommunikationstechnologie, Robotik,… sowie Medizintechnik.“",
-    "translation": null,
+    "translation": "They encompass information and communication technology, robotics, as well as medical technology.",
     "source": "wiktionary",
     "lemmas": [
       "umfassen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "umfassen",
+        "lemma": "umfassen",
+        "pos": "verb",
+        "gloss_hint": "include"
+      },
+      {
+        "form": "Informations- und Kommunikationstechnologie",
+        "lemma": "Informations- und Kommunikationstechnologie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Robotik",
+        "lemma": "Robotik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Medizintechnik",
+        "lemma": "Medizintechnik",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "265416be35": {
@@ -7177,11 +7231,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be out of place",
     "source": "wiktionary",
     "lemmas": [
       "fehl am Platze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2656c7f0fd": {
     "text": "„In letzter Zeit hat sich nun der Verdacht erhärtet, dass es, von den Managergehältern selbstverständlich abgesehen, auch um die staatliche Holdinggesellschaft ÖIAG nicht zum Allerbesten bestellt sei: Zoff im Vorstand, Stunk im Aufsichtsrat und eine Art der Geschäftsgebarung, die den Finanzsprecher der Grünen, Werner Kogler, zur unverblümten Einschätzung motiviert hat, bei der ÖIAG handle es sich um einen veritablen Schweinsladen.“",
@@ -7939,10 +7994,55 @@
   },
   "26591a5047": {
     "text": "[…] der Leser [findet] den Umriss einer allgemeinen Altersethik, die den Autoren besonders am Herzen liegt. Angesichts der rasant zunehmenden Alterspyramide eine äußerst wichtige Lektüre.",
-    "translation": null,
+    "translation": "The reader finds the outline of a general ethics of aging, which is particularly close to the author's heart. Given the rapidly increasing aging pyramid, an extremely important read.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem am Herzen liegen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Leser",
+        "lemma": "Leser",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umriss",
+        "lemma": "Umriss",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Altersethik",
+        "lemma": "Altersethik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Autoren",
+        "lemma": "Autor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herzen",
+        "lemma": "Herz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Alterspyramide",
+        "lemma": "Alterspyramide",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lektüre",
+        "lemma": "Lektüre",
+        "pos": "noun",
+        "gloss_hint": "reading"
+      }
     ]
   },
   "265948d6e5": {
@@ -9235,11 +9335,13 @@
   },
   "2665d77d13": {
     "text": "u(t)=U_0· sin (ωt)",
-    "translation": null,
+    "translation": "u(t) = U₀ · sin(ωt)",
     "source": "wiktionary",
     "lemmas": [
       "u"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "26666f1471": {
     "text": "Durch das Eindringen des Nagels wurde der Reifen undicht.",
@@ -9312,11 +9414,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "everyone has their own burden to bear",
     "source": "wiktionary",
     "lemmas": [
       "Päckchen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "26679f8d00": {
     "text": "Der Zeuge tätigte zwar eine Aussage, sagte jedoch nicht die Wahrheit.",
@@ -11129,10 +11232,37 @@
   },
   "2673454a63": {
     "text": "„Bereits am 1. September 1920 schuf Frankreich innerhalb seines Mandatsgebiets den Staat Libanon.“",
-    "translation": null,
+    "translation": "As early as September 1, 1920, France created the state of Lebanon within its mandate territory.",
     "source": "wiktionary",
     "lemmas": [
       "Libanon"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Frankreich",
+        "lemma": "Frankreich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mandatsgebiets",
+        "lemma": "Mandatsgebiet",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staat",
+        "lemma": "Staat",
+        "pos": "noun",
+        "gloss_hint": "state"
+      },
+      {
+        "form": "Libanon",
+        "lemma": "Libanon",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "267543b6ef": {
@@ -11578,11 +11708,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "clubs are trumps here",
     "source": "wiktionary",
     "lemmas": [
       "Trumpf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "26791b3357": {
     "text": "Er taugt nicht zu dieser Arbeit/für diese Arbeit bedeutet, man kann ihn nicht für diese Arbeit gebrauchen.",
@@ -12255,11 +12386,12 @@
     "type": "expression",
     "note": "sich zu viel herausnehmen oder zumuten",
     "synonyms": [],
-    "translation": null,
+    "translation": "to bite off more than one can chew",
     "source": "wiktionary",
     "lemmas": [
       "abbeißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "267f9e626a": {
     "text": "Die Maschine wurde von einer marktbeherrschenden Firma erzeugt.",
@@ -12634,10 +12766,91 @@
   },
   "26847e58ec": {
     "text": "„Während die Verhaltensforschung das Verhalten der Sprechenden und ihrer Partner zueinander in einer bestimmten Lage beobachtet und mit der Lautung der Äußerung in Beziehung setzt, faßt die inhaltbezogene Grammatik (…) in erster Linie das Verhältnis der Äußerung zu den Sachverhalten ins Auge.“",
-    "translation": null,
+    "translation": "While behavioral research observes the conduct of speakers and their partners toward each other in a particular situation and relates it to the utterance, content-oriented grammar primarily focuses on the relationship of the utterance to the facts.",
     "source": "wiktionary",
     "lemmas": [
       "inhaltbezogene Grammatik"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verhaltensforschung",
+        "lemma": "Verhaltensforschung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verhalten",
+        "lemma": "Verhalten",
+        "pos": "noun",
+        "gloss_hint": "behavior"
+      },
+      {
+        "form": "Sprechenden",
+        "lemma": "Sprecher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Partner",
+        "lemma": "Partner",
+        "pos": "noun",
+        "gloss_hint": "partner"
+      },
+      {
+        "form": "Lage",
+        "lemma": "Lage",
+        "pos": "noun",
+        "gloss_hint": "situation"
+      },
+      {
+        "form": "Lautung",
+        "lemma": "Lautung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Äußerung",
+        "lemma": "Äußerung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beziehung",
+        "lemma": "Beziehung",
+        "pos": "noun",
+        "gloss_hint": "relation"
+      },
+      {
+        "form": "inhaltbezogene",
+        "lemma": "inhaltbezogen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grammatik",
+        "lemma": "Grammatik",
+        "pos": "noun",
+        "gloss_hint": "grammar"
+      },
+      {
+        "form": "Verhältnis",
+        "lemma": "Verhältnis",
+        "pos": "noun",
+        "gloss_hint": "relationship"
+      },
+      {
+        "form": "Sachverhalten",
+        "lemma": "Sachverhalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auge",
+        "lemma": "Auge",
+        "pos": "noun",
+        "gloss_hint": "eye"
+      }
     ]
   },
   "26852052de": {
@@ -12884,11 +13097,12 @@
     "type": "expression",
     "note": "ist alles in Ordnung?",
     "synonyms": [],
-    "translation": null,
+    "translation": "so, how are the finances looking?",
     "source": "wiktionary",
     "lemmas": [
       "Finanz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2686b952e0": {
     "text": "Dahinten steht ein rotes Auto.",
@@ -14112,11 +14326,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to forbid someone to do something",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2692e9c311": {
     "text": "Jedes bewaffnete Schiff konnte als Kriegsschiff gedeutet werden.",
@@ -16752,10 +16967,43 @@
   },
   "26af926412": {
     "text": "Indem ich auf die rechte Spur fuhr, machte ich es dem schnelleren Autofahrer recht.",
-    "translation": null,
+    "translation": "By moving to the right lane, I accommodated the faster driver.",
     "source": "wiktionary",
     "lemmas": [
       "es jemandem recht machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "rechte",
+        "lemma": "recht",
+        "pos": "adjective",
+        "gloss_hint": "right"
+      },
+      {
+        "form": "Spur",
+        "lemma": "Spur",
+        "pos": "noun",
+        "gloss_hint": "lane"
+      },
+      {
+        "form": "fuhr",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schnelleren",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Autofahrer",
+        "lemma": "Autofahrer",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "26afe4e402": {
@@ -17309,10 +17557,37 @@
   },
   "26b82dd6e4": {
     "text": "Die Überlegungen des Vorstandes riefen die Wettbewerbshüter auf den Plan.",
-    "translation": null,
+    "translation": "The board's deliberations prompted the competition authorities to take action.",
     "source": "wiktionary",
     "lemmas": [
       "jemanden auf den Plan rufen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Überlegungen",
+        "lemma": "Überlegung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorstandes",
+        "lemma": "Vorstand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wettbewerbshüter",
+        "lemma": "Wettbewerbshüter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Plan",
+        "lemma": "Plan",
+        "pos": "noun",
+        "gloss_hint": "field"
+      }
     ]
   },
   "26bb817b55": {
@@ -18226,10 +18501,49 @@
   },
   "26c59048b3": {
     "text": "Ich habe heute aus Versehen eine Katze überfahren.",
-    "translation": null,
+    "translation": "I accidentally ran over a cat today.",
     "source": "wiktionary",
     "lemmas": [
       "überfahren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ich",
+        "lemma": "ich",
+        "pos": "noun",
+        "gloss_hint": "the self"
+      },
+      {
+        "form": "habe",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Versehen",
+        "lemma": "Versehen",
+        "pos": "noun",
+        "gloss_hint": "mistake"
+      },
+      {
+        "form": "Katze",
+        "lemma": "Katze",
+        "pos": "noun",
+        "gloss_hint": "domestic cat"
+      },
+      {
+        "form": "überfahren",
+        "lemma": "überfahren",
+        "pos": "verb",
+        "gloss_hint": "run over"
+      }
     ]
   },
   "26c610aca3": {
@@ -22333,10 +22647,37 @@
   },
   "26e6dd70ec": {
     "text": "Das musst du mir nicht erzählen, ich bin ja schließlich auch nicht auf der Brennsuppe dahergeschwommen.",
-    "translation": null,
+    "translation": "You don't need to tell me that; I'm not exactly naive either.",
     "source": "wiktionary",
     "lemmas": [
       "nicht auf der Brennsuppe dahergeschwommen sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "musst",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "erzählen",
+        "lemma": "erzählen",
+        "pos": "verb",
+        "gloss_hint": "tell"
+      },
+      {
+        "form": "bin",
+        "lemma": "sein",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Brennsuppe",
+        "lemma": "Brennsuppe",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "26e70b1273": {
@@ -23180,11 +23521,12 @@
     "type": "expression",
     "note": "seine (ungebetene) Meinung zu etwas sagen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to put in one's two cents",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "26f24db6a1": {
     "text": "Die Verhandlungen sind noch in vollem Gange.",
@@ -24176,11 +24518,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on coke",
     "source": "wiktionary",
     "lemmas": [
       "Koks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "26fe6f7bf0": {
     "text": "„Einmal war er ihm in Sansibar begegnet, als er unter einer Palme Nietzsche las.“",

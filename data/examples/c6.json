@@ -197,11 +197,12 @@
     "type": "expression",
     "note": "uninteressante, belanglose oder allgemein bekannte, auch: ältere Informationen mündlich kundtun",
     "synonyms": [],
-    "translation": null,
+    "translation": "that's old news",
     "source": "wiktionary",
     "lemmas": [
       "Friseur"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c600f1aa14": {
     "text": "„Jeder von uns sitzt solchen Zwängen und Trugbildern auf.“",
@@ -398,11 +399,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "can't stop laughing",
     "source": "wiktionary",
     "lemmas": [
       "können"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c60184bf4c": {
     "text": "Die Turnerinnen werden auch immer jünger!",
@@ -1550,11 +1552,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pious belly",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c60c34f145": {
     "text": "Obwohl ich keine Kopfschmerzen habe, ist mir seit einiger Zeit schwindelig.",
@@ -2626,38 +2629,38 @@
     "type": "expression",
     "note": "sich aushalten lassen",
     "synonyms": [],
-    "translation": null,
+    "translation": "be a burden on someone",
     "source": "wiktionary",
     "lemmas": [
       "Tasche",
       "liegen"
     ],
     "ref": "phrases/jemandem auf der Tasche liegen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "c613509293": {
     "text": "ich bin der Letzte meines Stammes",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm the last of my tribe.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c6139ef159": {
     "text": "Leib und Seele lacht, wenn man sich früh aufmacht",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Body and soul rejoice when you set out early.",
     "source": "wiktionary",
     "lemmas": [
       "Leib und Seele"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c613e2d017": {
     "text": "Der Crack ist nicht nur offensichtlich illegal, für Betroffene wird die Angelegenheit oftmals auch sehr teuer.",
@@ -4071,24 +4074,26 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be down the drain",
     "source": "wiktionary",
     "lemmas": [
       "im",
       "Eimer"
     ],
-    "ref": "phrases/im Eimer sein"
+    "ref": "phrases/im Eimer sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "c627588065": {
     "text": "auf etwas Gewicht legen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "attach importance to something",
     "source": "wiktionary",
     "lemmas": [
       "Gewicht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c627f14424": {
     "text": "Die Kunst dieses Goldschmieds ist eine wahre Pracht.",
@@ -4809,10 +4814,55 @@
   },
   "c634731e3a": {
     "text": "„Er wußte Ausgaben und Einnahmen, die er gemacht, von vielen Jahren her auf Heller und Pfennig anzugeben.“",
-    "translation": null,
+    "translation": "\"He was able to account for expenditures and income that he had made over many years down to the last penny.\"",
     "source": "wiktionary",
     "lemmas": [
       "auf Heller und Pfennig"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wußte",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausgaben",
+        "lemma": "Ausgabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einnahmen",
+        "lemma": "Einnahme",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gemacht",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "made"
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Heller",
+        "lemma": "Heller",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pfennig",
+        "lemma": "Pfennig",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c634a7bb3d": {
@@ -6925,11 +6975,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "can't stand someone",
     "source": "wiktionary",
     "lemmas": [
       "riechen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c643e12ef2": {
     "text": "„Ihr Enkelsohn spielt im Wohnzimmer Playstation und rückt ein wenig zur Seite, als wir uns zu ihm auf das Sofa setzen.“",
@@ -7191,10 +7242,37 @@
   },
   "c6444776c7": {
     "text": "Bei ausgefahrenem Auszug darf der Kran nicht voll belastet werden.",
-    "translation": null,
+    "translation": "When the extension is fully extended, the crane must not be fully loaded.",
     "source": "wiktionary",
     "lemmas": [
       "Auszug"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ausgefahrenem",
+        "lemma": "ausfahren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auszug",
+        "lemma": "Auszug",
+        "pos": "noun",
+        "gloss_hint": "extension"
+      },
+      {
+        "form": "Kran",
+        "lemma": "Kran",
+        "pos": "noun",
+        "gloss_hint": "crane"
+      },
+      {
+        "form": "belastet",
+        "lemma": "belasten",
+        "pos": "verb",
+        "gloss_hint": "loaded"
+      }
     ]
   },
   "c64486f1a5": {
@@ -8348,11 +8426,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "you can forget about it",
     "source": "wiktionary",
     "lemmas": [
       "Pfeife"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c64e86d422": {
     "text": "„Heute trägt er ein gelbes Band um den Oberarm, weil er Ordner ist auf dem Trauermarsch der Kopten.“",
@@ -9177,10 +9256,37 @@
   },
   "c654edfea1": {
     "text": "Beim Skat schoren wir für gewöhnlich den dritten Mann, bis irgendwann keiner mehr mit uns spielen wollte.",
-    "translation": null,
+    "translation": "In Skat, we usually cheated the third player until eventually no one wanted to play with us anymore.",
     "source": "wiktionary",
     "lemmas": [
       "scheren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Skat",
+        "lemma": "Skat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schoren",
+        "lemma": "scheren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "spielen",
+        "lemma": "spielen",
+        "pos": "verb",
+        "gloss_hint": "play"
+      }
     ]
   },
   "c656cf8f55": {
@@ -11043,10 +11149,55 @@
   },
   "c666147d54": {
     "text": "Der Waffenstillstand [in der Ukraine] halte zwar weitgehend, so [der Vizechef der OSZE-Mission Alexander] Hug in Kiew, \"aber er ist auf dünnem Eis\".",
-    "translation": null,
+    "translation": "The ceasefire in Ukraine is holding largely, according to Alexander Hug, deputy head of the OSCE mission in Kyiv, \"but it is on thin ice.\"",
     "source": "wiktionary",
     "lemmas": [
       "auf dünnem Eis"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Waffenstillstand",
+        "lemma": "Waffenstillstand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ukraine",
+        "lemma": "Ukraine",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "weitgehend",
+        "lemma": "weitgehend",
+        "pos": "adjective",
+        "gloss_hint": "largely"
+      },
+      {
+        "form": "Vizechef",
+        "lemma": "Vizechef",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "OSZE-Mission",
+        "lemma": "OSZE-Mission",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kiew",
+        "lemma": "Kiew",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eis",
+        "lemma": "Eis",
+        "pos": "noun",
+        "gloss_hint": "ice"
+      }
     ]
   },
   "c668403b58": {
@@ -11117,10 +11268,37 @@
   },
   "c668d11be8": {
     "text": "Er hat sich bis auf die Knochen blamiert, als er seinen eigenen Chef nicht erkannte.",
-    "translation": null,
+    "translation": "He completely humiliated himself when he didn't recognize his own boss.",
     "source": "wiktionary",
     "lemmas": [
       "sich bis auf die Knochen blamieren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "blamiert",
+        "lemma": "blamieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Knochen",
+        "lemma": "Knochen",
+        "pos": "noun",
+        "gloss_hint": "bone"
+      },
+      {
+        "form": "Chef",
+        "lemma": "Chef",
+        "pos": "noun",
+        "gloss_hint": "boss"
+      },
+      {
+        "form": "erkannte",
+        "lemma": "erkennen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "c6697f0283": {
@@ -11281,11 +11459,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "shortly afterwards",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c66ce901e3": {
     "text": "„Ich öffnete den Mund, um zu antworten, als mir das Funkeln in seinen braunen Augen auffiel.“",
@@ -12162,11 +12341,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the devil take it",
     "source": "wiktionary",
     "lemmas": [
       "holen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c6766da9b2": {
     "text": "Sie konnte den Fehler einfach nicht finden.",
@@ -13335,11 +13515,12 @@
     "type": "expression",
     "note": "Getränk, das aus einem Mix von Cola und Orangenlimonade besteht",
     "synonyms": [],
-    "translation": null,
+    "translation": "Spezi (cola and orange soda mix)",
     "source": "wiktionary",
     "lemmas": [
       "Kaffee"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c6827d70bc": {
     "text": "„Haben Sie Tomaten auf den Augen oder was? schrie die Frau vor ihrem Opel und holte eine Plastiktüte aus dem Wagen, die sie sich auf den Kopf setzte.“",
@@ -14148,11 +14329,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's a bit much",
     "source": "wiktionary",
     "lemmas": [
       "dick"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c6867bed39": {
     "text": "Heute läuft die »S.M. Yacht Hohenzollern« ein, eine Staatsyacht des Kaisers.",
@@ -14225,12 +14407,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "look a sight for sore eyes",
     "source": "wiktionary",
     "lemmas": [
       "aussehen"
     ],
-    "ref": "phrases/wie das Leiden Christi aussehen"
+    "ref": "phrases/wie das Leiden Christi aussehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "c687003e64": {
     "text": "„Und auch in der Forschung haben die Hochschulen aufgeholt.“",
@@ -14808,11 +14991,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as rare as hen's teeth",
     "source": "wiktionary",
     "lemmas": [
       "rar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c68df4f7f1": {
     "text": "Der erwählten Person werden besondere Privilegien zugestanden.",
@@ -15735,10 +15919,67 @@
   },
   "c69a8d81c2": {
     "text": "„Leider sind relativ milde und grüne Weihnachten nach Angaben des Wetterdienstes Meteomedia in Deutschland keine Seltenheit.“",
-    "translation": null,
+    "translation": "According to the weather service Meteomedia, relatively mild and green Christmases in Germany are not uncommon.",
     "source": "wiktionary",
     "lemmas": [
       "grüne Weihnachten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "relativ",
+        "lemma": "relativ",
+        "pos": "adjective",
+        "gloss_hint": "considerable"
+      },
+      {
+        "form": "milde",
+        "lemma": "mild",
+        "pos": "adjective",
+        "gloss_hint": "mildness"
+      },
+      {
+        "form": "grüne",
+        "lemma": "grün",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weihnachten",
+        "lemma": "Weihnachten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Angaben",
+        "lemma": "Angabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wetterdienstes",
+        "lemma": "Wetterdienst",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Meteomedia",
+        "lemma": "Meteomedia",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Seltenheit",
+        "lemma": "Seltenheit",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c69ad79b6b": {
@@ -16609,11 +16850,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "mobile home",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c6a2071444": {
     "text": "„Der Gruß ist zu beenden, sobald dieser erwidert wurde oder die zu grüßende Person vorbeigegangen ist.“",
@@ -17889,11 +18131,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "black hole",
     "source": "wiktionary",
     "lemmas": [
       "Loch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c6ab195be0": {
     "text": "„Das eine [spanische] wie das andere [britische] Imperium kann durchaus auch als informelles Bündnis europäischer und kolonialer Eliten zur Ausbeutung der kolonialen und bisweilen auch der europäischen Unterschichten angesehen werden.“",
@@ -18255,12 +18498,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to marry someone",
     "source": "wiktionary",
     "lemmas": [
       "Hand",
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c6b003bca9": {
     "text": "die Hölle ist los",
@@ -18926,11 +19170,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "more and more",
     "source": "wiktionary",
     "lemmas": [
       "mehr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c6b9f4bb58": {
     "text": "Am Wochenende lehnte sogar der französische Ministerpräsident Manuel Valls feste Quoten [der Verteilung von Flüchtlingen auf EU-Mitgliedsländer] ab und fiel damit [Bundeskanzlerin Angela] Merkel in den Rücken.",
@@ -19087,11 +19332,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Red Orchestra (anti-Nazi resistance group)",
     "source": "wiktionary",
     "lemmas": [
       "Kapelle"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c6baf0d089": {
     "text": "„Mir erteilte er ihn sehr nachdrücklich und schenkte mir noch einen Rosenkranz aus Achat mit einem dünnen Goldkettchen, der wohl zwölf Zechinen wert war.“",
@@ -19539,10 +19785,55 @@
   },
   "c6c0c42a42": {
     "text": "„Max ist zum Halbjahre neu in die Klasse gekommen und hat sich gut in die Gemeinschaft eingefügt.“",
-    "translation": null,
+    "translation": "Max came to the class as a new student at the midterm and integrated well into the community.",
     "source": "wiktionary",
     "lemmas": [
       "einfügen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Max",
+        "lemma": "Max",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Halbjahre",
+        "lemma": "Halbjahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "neu",
+        "lemma": "neu",
+        "pos": "adjective",
+        "gloss_hint": "unfamiliar"
+      },
+      {
+        "form": "Klasse",
+        "lemma": "Klasse",
+        "pos": "noun",
+        "gloss_hint": "class (group of students)"
+      },
+      {
+        "form": "gekommen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "eingefügt",
+        "lemma": "einfügen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gemeinschaft",
+        "lemma": "Gemeinschaft",
+        "pos": "noun",
+        "gloss_hint": "community"
+      }
     ]
   },
   "c6c2ed3980": {
@@ -19791,14 +20082,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a clear run",
     "source": "wiktionary",
     "lemmas": [
       "Fahrt"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "c6c4d1790f": {
     "text": "„Ich habe nur eine ganz verschwommene Erinnerung an die Lehrer der Fächer, die mich nicht besonders interessierten.“",
@@ -20144,11 +20433,13 @@
   },
   "c6ca1eb544": {
     "text": "„Wer einmal in seinem Leben den Kartoffelsalat von der Oma probiert hat, der schaut keinen anderen mehr an. Nicht ums Verrecken.“",
-    "translation": null,
+    "translation": "Once you've tasted grandma's potato salad in your life, you won't look at any other. Not for anything in the world.",
     "source": "wiktionary",
     "lemmas": [
       "nicht ums Verrecken"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "c6ca9b4cd1": {
     "text": "Ein Besuch des Museums lohnt sich immer.",
@@ -20331,11 +20622,12 @@
     "type": "expression",
     "note": "vollständig, komplett",
     "synonyms": [],
-    "translation": null,
+    "translation": "completely; with everything",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c6ccb4e91e": {
     "text": "„Dieser Teufelskerl, der mir am Monatsende den Hals abschneiden wollte, flößte mir beinahe Respekt ein.“",
@@ -20871,12 +21163,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "enter the bonds of matrimony",
     "source": "wiktionary",
     "lemmas": [
       "Hafen"
     ],
-    "ref": "phrases/in den Hafen der Ehe einlaufen"
+    "ref": "phrases/in den Hafen der Ehe einlaufen",
+    "translation_model": "openai/gpt-4.1"
   },
   "c6d1aca6ed": {
     "text": "In die Kinder investiert man, und die Enkel sind die Rendite.",
@@ -24028,11 +24321,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fall flat on your face",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c6ec1145a6": {
     "text": "Der Libero in der Mannschaft hat vor dem Tor mit seinem Einsatz geklärt.",
@@ -24614,11 +24908,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be under fire",
     "source": "wiktionary",
     "lemmas": [
       "Beschuss"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c6f09d8648": {
     "text": "Eutin gehörte früher zu Oldenburg.",
@@ -24760,12 +25055,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "no one around",
     "source": "wiktionary",
     "lemmas": [
       "Menschenseele"
     ],
-    "ref": "phrases/keine Menschenseele"
+    "ref": "phrases/keine Menschenseele",
+    "translation_model": "openai/gpt-4.1"
   },
   "c6f5805d5e": {
     "text": "„Ich riß meinen Operngucker heraus und gewahrte nun deutlich die blendend weiße, schön geformte Hand eines Frauenzimmers, an deren kleinem Finger ein Brillant mit ungewöhnlichem Feuer funkelte, ein reiches Band blitzte an dem in üppiger Schönheit geründeten Arm.“ (E.T.A. Hoffmann, Das öde Haus)",
@@ -25021,12 +25317,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "chip in",
     "source": "wiktionary",
     "lemmas": [
       "Senf"
     ],
-    "ref": "phrases/seinen Senf dazugeben"
+    "ref": "phrases/seinen Senf dazugeben",
+    "translation_model": "openai/gpt-4.1"
   },
   "c6f7d6faef": {
     "text": "„Im weiteren Verlauf dieses Textes wird es nicht nötig sein, die Norweger nochmals zu erwähnen.“",
@@ -25621,12 +25918,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take the whole kit and caboodle",
     "source": "wiktionary",
     "lemmas": [
       "Kind"
     ],
-    "ref": "phrases/mit Kind und Kegel"
+    "ref": "phrases/mit Kind und Kegel",
+    "translation_model": "openai/gpt-4.1"
   },
   "c6faa4518b": {
     "text": "„Der Beerdigung schloss sich ein Leichenschmaus im Dorfgasthof an.“",
@@ -26033,10 +26331,37 @@
   },
   "c6ffbceca1": {
     "text": "„US-Präsident Bush muss den Schalter umlegen - er kann nicht mehr anders.“",
-    "translation": null,
+    "translation": "US President Bush has to change course – he has no other choice.",
     "source": "wiktionary",
     "lemmas": [
       "den Schalter umlegen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "US-Präsident",
+        "lemma": "US-Präsident",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bush",
+        "lemma": "Bush",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schalter",
+        "lemma": "Schalter",
+        "pos": "noun",
+        "gloss_hint": "switch"
+      },
+      {
+        "form": "umlegen",
+        "lemma": "umlegen",
+        "pos": "verb",
+        "gloss_hint": "change position"
+      }
     ]
   }
 }

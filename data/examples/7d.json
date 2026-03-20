@@ -642,12 +642,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the walls have ears",
     "source": "wiktionary",
     "lemmas": [
       "Ohr"
     ],
-    "ref": "phrases/die Wände haben Ohren"
+    "ref": "phrases/die Wände haben Ohren",
+    "translation_model": "openai/gpt-4.1"
   },
   "7d0730e562": {
     "text": "Die Zeit vergeht so schnell.",
@@ -2672,10 +2673,31 @@
   },
   "7d1969210e": {
     "text": "„Was er über IT und Marketing wissen muss, bringt er sich selbst bei.“",
-    "translation": null,
+    "translation": "\"What he needs to know about IT and marketing, he teaches himself.\"",
     "source": "wiktionary",
     "lemmas": [
       "IT"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wissen",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": "know"
+      },
+      {
+        "form": "bringt",
+        "lemma": "bringen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "beibringt",
+        "lemma": "beibringen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "7d1a247ca5": {
@@ -2683,22 +2705,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Vitamin A",
     "source": "wiktionary",
     "lemmas": [
       "Vitamin"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7d1b4a6a5c": {
     "text": "jemandem ein Ding verpassen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a piece of your mind",
     "source": "wiktionary",
     "lemmas": [
       "Ding"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7d1b56a2a3": {
     "text": "„Der Rummel war wie jedes Jahr überfüllt und ich versuchte mir einen Weg durch die dichte Menschenmasse zu bahnen.“",
@@ -3118,10 +3142,37 @@
   },
   "7d223f2a56": {
     "text": "„Es gibt überall was zu sehen; die Stadt unterhält einen straßauf, straßab.“",
-    "translation": null,
+    "translation": "\"There's something to see everywhere; the city entertains you at every turn.\"",
     "source": "wiktionary",
     "lemmas": [
       "straßauf, straßab"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gibt",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sehen",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": "see"
+      },
+      {
+        "form": "Stadt",
+        "lemma": "Stadt",
+        "pos": "noun",
+        "gloss_hint": "city"
+      },
+      {
+        "form": "unterhält",
+        "lemma": "unterhalten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "7d22935eb7": {
@@ -3144,10 +3195,67 @@
   },
   "7d233e9e32": {
     "text": "„Den Mitarbeitern des Deutschen Forschungszentrums für Künstliche Intelligenz an der Saarbrücker Universität bietet sich zur Zeit jedoch noch ein weiterer Anlaß, dem Fernweh zu verfallen.“",
-    "translation": null,
+    "translation": "\"The employees of the German Research Center for Artificial Intelligence at Saarbrücken University currently have yet another reason to succumb to wanderlust.\"",
     "source": "wiktionary",
     "lemmas": [
       "Künstliche Intelligenz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mitarbeitern",
+        "lemma": "Mitarbeiter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Forschungszentrums",
+        "lemma": "Forschungszentrum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Künstliche",
+        "lemma": "künstlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Intelligenz",
+        "lemma": "Intelligenz",
+        "pos": "noun",
+        "gloss_hint": "intelligence"
+      },
+      {
+        "form": "Universität",
+        "lemma": "Universität",
+        "pos": "noun",
+        "gloss_hint": "university"
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      },
+      {
+        "form": "Anlaß",
+        "lemma": "Anlass",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verfallen",
+        "lemma": "verfallen",
+        "pos": "verb",
+        "gloss_hint": "succumb"
+      },
+      {
+        "form": "Fernweh",
+        "lemma": "Fernweh",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7d23b241b1": {
@@ -3390,12 +3498,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in my eyes",
     "source": "wiktionary",
     "lemmas": [
       "mein"
     ],
-    "ref": "phrases/in meinen Augen"
+    "ref": "phrases/in meinen Augen",
+    "translation_model": "openai/gpt-4.1"
   },
   "7d29733bf0": {
     "text": "„In der Beschränkung zeigt sich erst der Meister.“ (Goethe, Sonett in „Was wir bringen“)",
@@ -3832,10 +3941,25 @@
   },
   "7d330ad5fe": {
     "text": "Die Hündin ist wieder läufig.",
-    "translation": null,
+    "translation": "The female dog is in heat again.",
     "source": "wiktionary",
     "lemmas": [
       "läufig"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hündin",
+        "lemma": "Hündin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "läufig",
+        "lemma": "läufig",
+        "pos": "adjective",
+        "gloss_hint": "in heat"
+      }
     ]
   },
   "7d3310045e": {
@@ -4470,11 +4594,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be someone's right",
     "source": "wiktionary",
     "lemmas": [
       "Recht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7d3ba3e5c4": {
     "text": "Die türkische Belagerung Wiens im Jahre 1683 scheiterte trotz zahlenmäßiger Überlegenheit, womit der Niedergang Osmanischen Reiches für ganz Europa deutlich wurde.",
@@ -4897,11 +5022,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to melt away like butter in the sun",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7d423a045d": {
     "text": "„Währenddessen setzt meine Monatsblutung ein, doch ich traue mich nicht, bei einem der Schergen um Binden zu bitten.“",
@@ -6944,11 +7070,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Don't trust appearances.",
     "source": "wiktionary",
     "lemmas": [
       "misstrauen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7d5165feb2": {
     "text": "Wir waren im Urlaub in den Marken.",
@@ -7542,11 +7669,12 @@
     "type": "expression",
     "note": "strafen, züchtigen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a spanking",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7d5a69a653": {
     "text": "Glaubst du nicht, dass deine Eltern Lunte riechen, wenn du den Rucksack mitnimmst?",
@@ -8232,10 +8360,49 @@
   },
   "7d604d0e79": {
     "text": "Dem König meldeten sie, der Mann sei ein Fremdling und jeden Anstandes bar.",
-    "translation": null,
+    "translation": "They reported to the king that the man was a stranger and utterly lacking in decency.",
     "source": "wiktionary",
     "lemmas": [
       "bar"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "König",
+        "lemma": "König",
+        "pos": "noun",
+        "gloss_hint": "king"
+      },
+      {
+        "form": "meldeten",
+        "lemma": "melden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "Fremdling",
+        "lemma": "Fremdling",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anstandes",
+        "lemma": "Anstand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bar",
+        "lemma": "bar",
+        "pos": "adjective",
+        "gloss_hint": "bare"
+      }
     ]
   },
   "7d62582471": {
@@ -8253,11 +8420,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The early bird catches the worm.",
     "source": "wiktionary",
     "lemmas": [
       "Gold"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7d63e01f55": {
     "text": "Während Kunden in der Tiefkühltruhe nach Hühnerfüßen wühlen, erklärt er: „Das Geschäft hat mit Olympia nichts zu tun.“",
@@ -8450,11 +8618,12 @@
     "type": "expression",
     "note": "zu/mit zwölf Personen",
     "synonyms": [],
-    "translation": null,
+    "translation": "as a group of twelve",
     "source": "wiktionary",
     "lemmas": [
       "zu"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7d64f125d1": {
     "text": "„Der reich ausgestattete Band präsentiert nicht nur die Funde aus dem Römerlager und Außenposten, die teilweise bereits restauriert wurden, sondern bettet die Funde auch in die römisch-germanische Geschichte der Zeitenwende ein.“",
@@ -9372,11 +9541,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Better a terrible end than terror without end.",
     "source": "wiktionary",
     "lemmas": [
       "Ende"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7d71a055d7": {
     "text": "„Eine unheimliche Verwandlung ging in Miss Carey vor.“",
@@ -9631,11 +9801,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep reminding someone of something (in an annoying way)",
     "source": "wiktionary",
     "lemmas": [
       "Brot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7d77bd6d9d": {
     "text": "Daraus mache ich mir nichts. Es ist mir egal.",
@@ -10539,10 +10710,67 @@
   },
   "7d802ccfdf": {
     "text": "Der Katalog imperativer Daten, den die Pariser Gipfelkonferenz aufgestellt hat, richtet freilich an alle Mitgliedstaaten die Aufforderung zu nationaler Selbstentäußerung.",
-    "translation": null,
+    "translation": "The catalogue of imperative data that the Paris summit conference has drawn up certainly directs to all member states the call for national self-disclosure.",
     "source": "wiktionary",
     "lemmas": [
       "imperativ"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Katalog",
+        "lemma": "Katalog",
+        "pos": "noun",
+        "gloss_hint": "list of measures"
+      },
+      {
+        "form": "Daten",
+        "lemma": "Daten",
+        "pos": "noun",
+        "gloss_hint": "data"
+      },
+      {
+        "form": "Pariser",
+        "lemma": "Pariser",
+        "pos": "noun",
+        "gloss_hint": "Parisian"
+      },
+      {
+        "form": "Gipfelkonferenz",
+        "lemma": "Gipfelkonferenz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgestellt",
+        "lemma": "aufstellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "richtet",
+        "lemma": "richten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufforderung",
+        "lemma": "Aufforderung",
+        "pos": "noun",
+        "gloss_hint": "request"
+      },
+      {
+        "form": "Mitgliedstaaten",
+        "lemma": "Mitgliedstaat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Selbstentäußerung",
+        "lemma": "Selbstentäußerung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7d80ec4965": {
@@ -12281,12 +12509,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to spill the beans to someone",
     "source": "wiktionary",
     "lemmas": [
       "Nase"
     ],
-    "ref": "phrases/auf die Nase binden"
+    "ref": "phrases/auf die Nase binden",
+    "translation_model": "openai/gpt-4.1"
   },
   "7d93d3d1b9": {
     "text": "Da keine Atmung des Patienten feststellbar war, wurde er beatmet.",
@@ -13661,10 +13890,43 @@
   },
   "7da029fdc8": {
     "text": "Wir müssen einen neuen Leuchter für die großen Kerzen besorgen.",
-    "translation": null,
+    "translation": "We need to get a new candelabra for the large candles.",
     "source": "wiktionary",
     "lemmas": [
       "Leuchter"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "müssen",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": "must"
+      },
+      {
+        "form": "Leuchter",
+        "lemma": "Leuchter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "großen",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kerzen",
+        "lemma": "Kerze",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besorgen",
+        "lemma": "besorgen",
+        "pos": "verb",
+        "gloss_hint": "get"
+      }
     ]
   },
   "7da0887db3": {
@@ -13768,10 +14030,37 @@
   },
   "7da313b6c0": {
     "text": "Der Hartriegel ist auf der Nordhalbkugel weit verbreitet.",
-    "translation": null,
+    "translation": "The dogwood is widely distributed in the Northern Hemisphere.",
     "source": "wiktionary",
     "lemmas": [
       "Hartriegel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hartriegel",
+        "lemma": "Hartriegel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nordhalbkugel",
+        "lemma": "Nordhalbkugel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "weit",
+        "lemma": "weit",
+        "pos": "adjective",
+        "gloss_hint": "extensive"
+      },
+      {
+        "form": "verbreitet",
+        "lemma": "verbreiten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "7da47a4121": {
@@ -14939,11 +15228,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to beat around the bush",
     "source": "wiktionary",
     "lemmas": [
       "Brei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7dae4e3bdd": {
     "text": "„Ihre wundervollen Kinder würden eine gute Schule besuchen, und sie hätte drei Dienstmädchen, einen Gärtner, einen Chauffeur und eine Köchin.“",
@@ -15634,11 +15924,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "God only knows",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7db67f5d0f": {
     "text": "„Die Äcker verödeten, die Niederlassung verfiel, die Männer, zermürbt von Weiberklagen, rosteten mit ihrem Eisen und überließen das kaum geklärte Feld dem Unkraut und Samenflug des Waldes, die Zäune dem Moder.“",
@@ -17649,11 +17940,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as a group of four",
     "source": "wiktionary",
     "lemmas": [
       "zu"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7dcc18007b": {
     "text": "Das Gerät ist wohl vom Laster gefallen.",
@@ -17822,11 +18114,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something goes down the drain",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7dcce02ba2": {
     "text": "Die Familie fliegt im Sommer nach Italien.",
@@ -20072,12 +20365,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something seems fishy to someone",
     "source": "wiktionary",
     "lemmas": [
       "spanisch"
     ],
-    "ref": "phrases/etwas kommt jemandem spanisch vor"
+    "ref": "phrases/etwas kommt jemandem spanisch vor",
+    "translation_model": "openai/gpt-4.1"
   },
   "7de495bbc3": {
     "text": "„Diejenigen, die er bislang wegen ihres wichtigtuerischen Eifers gescheut hatte, verdächtigte er nunmehr als heimliche Feinde.“",
@@ -20149,11 +20443,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You reap what you sow.",
     "source": "wiktionary",
     "lemmas": [
       "säen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7dec980ce0": {
     "text": "„Der spontane, unvorbereitete Lehrervortrag ergibt sich aus der Unterrichtssituation.“",
@@ -21659,11 +21954,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a hard time",
     "source": "wiktionary",
     "lemmas": [
       "Keks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7dfedd4038": {
     "text": "„So kam es, dass der Schriftsetzer mit dem ruinierten Nervenkostüm dem allerletzten Vers des allerletzten Kapitels der schwedischen Bibel noch etwas hinzufügte, bevor das Ganze in Druck ging.“",

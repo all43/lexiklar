@@ -1062,11 +1062,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not let someone out of your sight",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5e0c223022": {
     "text": "„Die Mutter war Jüdin, der Vater ein armseliger kränklicher Schneider.“",
@@ -1306,11 +1307,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I could dance with you all the way to heaven",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5e0e6a5855": {
     "text": "„Die verstärkten Anschläge im Irak stellen nach den Worten von US-Präsident Barack Obama nicht die Abzugspläne für die US-Kampftruppen bis Ende August infrage.“",
@@ -1431,11 +1433,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone feels relieved",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5e0ff192c2": {
     "text": "„Die Insekten verstummten, die Vögel schwiegen; es wurde zunehmend dunkler, und das Brummen des Traktors hallte eintönig durch die Stille.“",
@@ -1851,10 +1854,73 @@
   },
   "5e13c9e2b2": {
     "text": "„Du hast Spaß an Technik, ein Händchen für Elektronik und schreckst auch vor mathematischen Aufgaben nicht zurück? Dann ist Mechatroniker für Kältetechnik vielleicht der richtige Job für dich!“",
-    "translation": null,
+    "translation": "You enjoy technology, have a knack for electronics, and aren't afraid of mathematical tasks? Then mechatronics technician for refrigeration technology might be the right job for you!",
     "source": "wiktionary",
     "lemmas": [
       "ein Händchen für etwas haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Spaß",
+        "lemma": "Spaß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Technik",
+        "lemma": "Technik",
+        "pos": "noun",
+        "gloss_hint": "technology"
+      },
+      {
+        "form": "Händchen",
+        "lemma": "Händchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Elektronik",
+        "lemma": "Elektronik",
+        "pos": "noun",
+        "gloss_hint": "electronics"
+      },
+      {
+        "form": "schreckst",
+        "lemma": "schrecken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "mathematischen",
+        "lemma": "mathematisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufgaben",
+        "lemma": "Aufgabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mechatroniker",
+        "lemma": "Mechatroniker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kältetechnik",
+        "lemma": "Kältetechnik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Job",
+        "lemma": "Job",
+        "pos": "noun",
+        "gloss_hint": "job"
+      }
     ]
   },
   "5e150db68f": {
@@ -2501,11 +2567,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bang away at the keys",
     "source": "wiktionary",
     "lemmas": [
       "Taste"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5e19aa5d96": {
     "text": "„Ich legte auf und schwang die Füße auf den Schreibtisch.“",
@@ -3564,12 +3631,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "sit on your hands",
     "source": "wiktionary",
     "lemmas": [
       "Hand",
       "sitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5e25dd2c3a": {
     "text": "Ich werde dir eine schöne Ansicht unseres Hotels mitbringen.",
@@ -4661,22 +4729,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "of pure blood",
     "source": "wiktionary",
     "lemmas": [
       "Blut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5e2dba4a7a": {
     "text": "Zoff machen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pick a fight",
     "source": "wiktionary",
     "lemmas": [
       "Zoff"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5e2e04718c": {
     "text": "„Ja, ich fiel ihr zu Füßen, umschlang liebend ihre Knie und küßte sie ihr voll Zärtlichkeit und Dankbarkeit.“",
@@ -5413,12 +5483,13 @@
     "type": "expression",
     "note": "unter Zeitdruck und nachlässig gefertigt",
     "synonyms": [],
-    "translation": null,
+    "translation": "rushed job",
     "source": "wiktionary",
     "lemmas": [
       "Nadel"
     ],
-    "ref": "phrases/mit heißer Nadel gestrickt"
+    "ref": "phrases/mit heißer Nadel gestrickt",
+    "translation_model": "openai/gpt-4.1"
   },
   "5e32fc851a": {
     "text": "„Bei vom Bergbau aufgefahrenen Hohlräumen ist deren Standfestigkeit und Stehzeit, geologisch bedingt, abhängig vom gewählten Abbauverfahren, von der gewählten Art des Abstützens und von der ungesicherten Stützweite.“",
@@ -5825,10 +5896,61 @@
   },
   "5e39b425a0": {
     "text": "„Zwei Jahrhunderte lang, seit Anbruch des Industriezeitalters, wurde das Revier durchbuddelt und durchfurcht.“",
-    "translation": null,
+    "translation": "For two centuries, since the onset of the industrial age, the mining district was dug through and furrowed.",
     "source": "wiktionary",
     "lemmas": [
       "Anbruch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zwei",
+        "lemma": "Zwei",
+        "pos": "noun",
+        "gloss_hint": "two"
+      },
+      {
+        "form": "Jahrhunderte",
+        "lemma": "Jahrhundert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lang",
+        "lemma": "lang",
+        "pos": "adjective",
+        "gloss_hint": "long"
+      },
+      {
+        "form": "Anbruch",
+        "lemma": "Anbruch",
+        "pos": "noun",
+        "gloss_hint": "onset"
+      },
+      {
+        "form": "Industriezeitalters",
+        "lemma": "Industriezeitalter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Revier",
+        "lemma": "Revier",
+        "pos": "noun",
+        "gloss_hint": "district"
+      },
+      {
+        "form": "durchbuddelt",
+        "lemma": "durchbuddeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "durchfurcht",
+        "lemma": "durchfurchen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5e3c4c1f34": {
@@ -5880,10 +6002,49 @@
   },
   "5e3f00002d": {
     "text": "„Das Fernsehprogramm besteht nur aus zwei Sendern und alle DVDs sind irgendwann geguckt.“",
-    "translation": null,
+    "translation": "The television programme consists of only two channels and all DVDs have been watched at some point.",
     "source": "wiktionary",
     "lemmas": [
       "DVD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fernsehprogramm",
+        "lemma": "Fernsehprogramm",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besteht",
+        "lemma": "bestehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zwei",
+        "lemma": "zwei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sendern",
+        "lemma": "Sender",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "DVDs",
+        "lemma": "DVD",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geguckt",
+        "lemma": "gucken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5e3ff44294": {
@@ -6017,11 +6178,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get on someone's last nerve",
     "source": "wiktionary",
     "lemmas": [
       "Nerv"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5e42c6a86d": {
     "text": "Danas neuer Verlobter ist schon aus dem rechten Holz geschnitzt.",
@@ -7732,10 +7894,31 @@
   },
   "5e5073c887": {
     "text": "Von mir aus kann Herbert ein Motorrad haben.",
-    "translation": null,
+    "translation": "As far as I'm concerned, Herbert can have a motorcycle.",
     "source": "wiktionary",
     "lemmas": [
       "können"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Herbert",
+        "lemma": "Herbert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Motorrad",
+        "lemma": "Motorrad",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "haben",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": "possess"
+      }
     ]
   },
   "5e512c2a69": {
@@ -10460,18 +10643,46 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "money (as a useful connection)",
     "source": "wiktionary",
     "lemmas": [
       "Vitamin"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5e6cfa36c7": {
     "text": "Bei den 32 Sendern, die ich empfangen kann, ist der HR nicht dabei.",
-    "translation": null,
+    "translation": "Among the 32 channels I can receive, HR is not included.",
     "source": "wiktionary",
     "lemmas": [
       "HR"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "32",
+        "lemma": "zweiunddreißig",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sendern",
+        "lemma": "Sender",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "empfangen",
+        "lemma": "empfangen",
+        "pos": "verb",
+        "gloss_hint": "receive"
+      },
+      {
+        "form": "HR",
+        "lemma": "HR",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5e6d273afe": {
@@ -12466,10 +12677,49 @@
   },
   "5e873e3ed0": {
     "text": "Nach 2 min 32 s erreichte der erste Läufer das Ziel.",
-    "translation": null,
+    "translation": "After 2 minutes 32 seconds, the first runner reached the finish line.",
     "source": "wiktionary",
     "lemmas": [
       "min"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "min",
+        "lemma": "Minute",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "s",
+        "lemma": "Sekunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erste",
+        "lemma": "erste",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Läufer",
+        "lemma": "Läufer",
+        "pos": "noun",
+        "gloss_hint": "runner"
+      },
+      {
+        "form": "erreichte",
+        "lemma": "erreichen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ziel",
+        "lemma": "Ziel",
+        "pos": "noun",
+        "gloss_hint": "finish line"
+      }
     ]
   },
   "5e8743b602": {
@@ -12620,11 +12870,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to bring up to date",
     "source": "wiktionary",
     "lemmas": [
       "Höhe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5e8981dacf": {
     "text": "Florian redet viel, wenn der Tag lang ist.",
@@ -13122,10 +13373,61 @@
   },
   "5e9127f146": {
     "text": "Und, übrigens: Verlogen ist es doch wohl auch, sich einerseits dauernd in Sachen China und Menschenrechte in die Brust zu werfen, um andererseits klammheimlich von der Billigarbeit der Küchensklaven dort zu profitieren.",
-    "translation": null,
+    "translation": "And, by the way: it is surely also dishonest to beat one's chest about China and human rights on the one hand, while on the other hand quietly profiting from the cheap labour of kitchen slaves there.",
     "source": "wiktionary",
     "lemmas": [
       "sich in die Brust werfen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verlogen",
+        "lemma": "verlogen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "China",
+        "lemma": "China",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menschenrechte",
+        "lemma": "Menschenrecht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Brust",
+        "lemma": "Brust",
+        "pos": "noun",
+        "gloss_hint": "chest"
+      },
+      {
+        "form": "werfen",
+        "lemma": "werfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Billigarbeit",
+        "lemma": "Billigarbeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Küchensklaven",
+        "lemma": "Küchensklave",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "profitieren",
+        "lemma": "profitieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5e913c35ed": {
@@ -13234,11 +13536,12 @@
     "type": "expression",
     "note": "über zukünftige ungewisse, noch nicht spruchreife, fremde Dinge oder Sachverhalte sprechen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to count your chickens before they hatch",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5e9214cd51": {
     "text": "„Der auf der Straße gekaufte Stoff kann gepanscht sein, sich dauerhaft Drogen in die Venen zu spritzen ist mit zahlreichen Gesundheitsgefahren verbunden, jede Überdosierung könnte zum ‚goldenen Schuss‘ werden, also zum letzten, tödlichen Schuss.“",
@@ -16054,10 +16357,115 @@
   },
   "5eac821907": {
     "text": "„Der Bletterbach ist ein Mekka für Geologen aus aller Welt: 20 Millionen Jahre Erdgeschichte sind hier in idealer Weise aufgeschlossen. Kein anderer Aufschluss bietet einen so umfassenden und vielseitigen Einblick in die oberpermische bis mitteltriassische Sedimentabfolge der Südalpen.“",
-    "translation": null,
+    "translation": "The Bletterbach is a mecca for geologists from all over the world: 20 million years of geological history are exposed here in an ideal manner. No other outcrop offers such a comprehensive and diverse insight into the Upper Permian to Middle Triassic sedimentary sequence of the Southern Alps.",
     "source": "wiktionary",
     "lemmas": [
       "Aufschluss"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bletterbach",
+        "lemma": "Bletterbach",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mekka",
+        "lemma": "Mekka",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geologen",
+        "lemma": "Geologe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      },
+      {
+        "form": "Millionen",
+        "lemma": "Million",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahre",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erdgeschichte",
+        "lemma": "Erdgeschichte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgeschlossen",
+        "lemma": "aufschließen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufschluss",
+        "lemma": "Aufschluss",
+        "pos": "noun",
+        "gloss_hint": "outcrop"
+      },
+      {
+        "form": "bietet",
+        "lemma": "bieten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "umfassenden",
+        "lemma": "umfassend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "vielseitigen",
+        "lemma": "vielseitig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einblick",
+        "lemma": "Einblick",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "oberpermische",
+        "lemma": "oberpermisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "mitteltriassische",
+        "lemma": "mitteltriassisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sedimentabfolge",
+        "lemma": "Sedimentabfolge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Südalpen",
+        "lemma": "Südalpen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5eacaf8873": {
@@ -17176,11 +17584,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be extremely perceptive",
     "source": "wiktionary",
     "lemmas": [
       "niesen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5eb7f182c2": {
     "text": "Die englische Nationalmannschaft spielt heute auf Schalke.",
@@ -18185,10 +18594,55 @@
   },
   "5eca1abadb": {
     "text": "Wenn du einen guten Schnitt machen willst, solltest du mit dem Kauf noch warten, da die Preise bald drastisch sinken werden.",
-    "translation": null,
+    "translation": "If you want to get a good deal, you should wait before buying, as prices will soon drop drastically.",
     "source": "wiktionary",
     "lemmas": [
       "einen guten Schnitt machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schnitt",
+        "lemma": "Schnitt",
+        "pos": "noun",
+        "gloss_hint": "deal"
+      },
+      {
+        "form": "machen",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kauf",
+        "lemma": "Kauf",
+        "pos": "noun",
+        "gloss_hint": "purchase"
+      },
+      {
+        "form": "warten",
+        "lemma": "warten",
+        "pos": "verb",
+        "gloss_hint": "wait"
+      },
+      {
+        "form": "Preise",
+        "lemma": "Preis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sinken",
+        "lemma": "sinken",
+        "pos": "verb",
+        "gloss_hint": "decrease"
+      },
+      {
+        "form": "drastisch",
+        "lemma": "drastisch",
+        "pos": "adjective",
+        "gloss_hint": "drastic"
+      }
     ]
   },
   "5ecae7e6cd": {
@@ -18379,11 +18833,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "recently",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5ecdb1e6d6": {
     "text": "In der Kinderzeit ist es wichtig, unbeschwert heranzuwachsen.",
@@ -18826,11 +19281,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Thirst is worse than homesickness.",
     "source": "wiktionary",
     "lemmas": [
       "Durst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5ed132561f": {
     "text": "Diplomatinnen genießen besondere Rechte.",
@@ -21329,24 +21785,26 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be crazy",
     "source": "wiktionary",
     "lemmas": [
       "Keks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5ee0fa4393": {
     "text": "Trübsal blasen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "mope around",
     "source": "wiktionary",
     "lemmas": [
       "blasen",
       "Trübsal"
     ],
-    "ref": "phrases/Trübsal blasen"
+    "ref": "phrases/Trübsal blasen",
+    "translation_model": "openai/gpt-4.1"
   },
   "5ee0ffaadc": {
     "text": "„Der kleine Maxi war beim Arzt und bekam eine Spritze.“",
@@ -21590,11 +22048,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be swimming in grease",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5ee59e9f9d": {
     "text": "„Ich dachte an Bosse, der versuchte, sich eine neue Existenz aufzubauen.“",
@@ -23050,11 +23509,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a shove",
     "source": "wiktionary",
     "lemmas": [
       "Stoß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5ef4a73652": {
     "text": "„Draußen auf See hatte er sich ausgemalt, wie er in ihrer Garderobe auf sie warten würde, mit dem Schminkkasten spielend oder im Gespräch mit ihrer Garderobiere, bis Elaine von der Bühne kam.“",
@@ -23266,11 +23726,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be there for someone",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5ef5d38086": {
     "text": "„Wir passieren Checkpoint um Checkpoint.“",

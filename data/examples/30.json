@@ -1360,10 +1360,49 @@
   },
   "300be67f4a": {
     "text": "Warum sollten wir einem Land wie China Entwicklungshilfe zahlen? Da könnte man gleich Wasser ins Meer tragen!",
-    "translation": null,
+    "translation": "Why should we pay development aid to a country like China? That would be like carrying water to the sea!",
     "source": "wiktionary",
     "lemmas": [
       "Wasser ins Meer tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "zahlen",
+        "lemma": "zahlen",
+        "pos": "verb",
+        "gloss_hint": "pay"
+      },
+      {
+        "form": "Land",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": "country"
+      },
+      {
+        "form": "China",
+        "lemma": "China",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tragen",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": "carry"
+      },
+      {
+        "form": "Wasser",
+        "lemma": "Wasser",
+        "pos": "noun",
+        "gloss_hint": "water"
+      },
+      {
+        "form": "Meer",
+        "lemma": "Meer",
+        "pos": "noun",
+        "gloss_hint": "sea"
+      }
     ]
   },
   "300ce0374d": {
@@ -2158,10 +2197,61 @@
   },
   "30149e59c9": {
     "text": "„In der Renaissance, als der Hexenwahn seinem Höhepunkt zutrieb, traten Ärzte auf den Plan, welche die angeblichen Hexen oder auch Besessene zu Geisteskranken erklärten, die nicht dem Inquisitor, sondern dem Arzt zu übergeben seien.“",
-    "translation": null,
+    "translation": "\"During the Renaissance, as the witch hunts reached their peak, doctors came forward who declared the alleged witches or the possessed to be mentally ill, who should be handed over not to the Inquisitor but to the physician.\"",
     "source": "wiktionary",
     "lemmas": [
       "auf den Plan treten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Renaissance",
+        "lemma": "Renaissance",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hexenwahn",
+        "lemma": "Hexenwahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Höhepunkt",
+        "lemma": "Höhepunkt",
+        "pos": "noun",
+        "gloss_hint": "peak"
+      },
+      {
+        "form": "Ärzte",
+        "lemma": "Arzt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hexen",
+        "lemma": "Hexe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Besessene",
+        "lemma": "Besessener",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geisteskranken",
+        "lemma": "Geisteskranker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "übergeben",
+        "lemma": "übergeben",
+        "pos": "verb",
+        "gloss_hint": "hand over"
+      }
     ]
   },
   "3014ce67db": {
@@ -3262,11 +3352,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "parliament",
     "source": "wiktionary",
     "lemmas": [
       "hoch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "301a9559fe": {
     "text": "Der Pkw wurde durch die Wucht des Aufpralls in einen Graben geschleudert.",
@@ -3705,11 +3796,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Happy New Year",
     "source": "wiktionary",
     "lemmas": [
       "Neues Jahr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "301d765e91": {
     "text": "In Benin ist Gun Amtssprache.",
@@ -4663,11 +4755,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "labor of love lost",
     "source": "wiktionary",
     "lemmas": [
       "verlieren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3022ad4c8d": {
     "text": "„Da sie negative Konsequenzen für ihren laufenden Asylantrag befürchtet, will sie weder ihren echten Namen noch ihren exakten Aufenthaltsort preisgeben.“",
@@ -6077,11 +6170,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Beating a dead horse won't get you anywhere.",
     "source": "wiktionary",
     "lemmas": [
       "treten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "302e5ff30f": {
     "text": "Meine Hände sind voller Creme.",
@@ -6807,23 +6901,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "stand up straight",
     "source": "wiktionary",
     "lemmas": [
       "halten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3035b289e4": {
     "text": "das Abendmahl auf etwas nehmen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take something on oath",
     "source": "wiktionary",
     "lemmas": [
       "Abendmahl"
     ],
-    "ref": "phrases/das Abendmahl auf etwas nehmen"
+    "ref": "phrases/das Abendmahl auf etwas nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "303658d8a6": {
     "text": "„Die Pubertät hatte früh bei ihm eingesetzt.“",
@@ -7442,11 +7538,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone gets chills down their spine",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "303b28470d": {
     "text": "„Er gab der Frau die Tabletten und übersetzte.“",
@@ -10520,15 +10617,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "deny something",
     "source": "wiktionary",
     "lemmas": [
       "stellen"
     ],
     "ref": "phrases/etwas in Abrede stellen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "305df9b945": {
     "text": "Brich doch das Schloss auf!",
@@ -10994,10 +11089,61 @@
   },
   "306291687f": {
     "text": "„Die Sprachstatistik hat sich inzwischen in vielen linguistischen Teildisziplinen methodisch etabliert, die quantitative Linguistik ihrerseits hat sich in verschiedene Objektbereiche differenziert (…).“",
-    "translation": null,
+    "translation": "\"Language statistics has meanwhile become methodologically established in many linguistic subdisciplines, and quantitative linguistics for its part has differentiated itself into various fields of study.\"",
     "source": "wiktionary",
     "lemmas": [
       "quantitative Linguistik"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sprachstatistik",
+        "lemma": "Sprachstatistik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "etabliert",
+        "lemma": "etablieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "linguistischen",
+        "lemma": "linguistisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Teildisziplinen",
+        "lemma": "Teildisziplin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "quantitative",
+        "lemma": "quantitativ",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Linguistik",
+        "lemma": "Linguistik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "differenziert",
+        "lemma": "differenzieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Objektbereiche",
+        "lemma": "Objektbereich",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "30630ad0f8": {
@@ -12474,11 +12620,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "black gold",
     "source": "wiktionary",
     "lemmas": [
       "schwarz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "306d966ee5": {
     "text": "„Rating-Agenturen messen tatsächlich oft mit zweierlei Maß und bewerten einige Länder kategorisch besser als andere.“",
@@ -14158,10 +14305,43 @@
   },
   "307e4c900a": {
     "text": "„Hör mal, wenn du meiner Alten diesmal aus der Patsche hilfst, hast du etwas gut bei mir, wenn ich wieder draußen bin.“",
-    "translation": null,
+    "translation": "\"Listen, if you help my old lady out of this jam this time, you'll have something to thank me for when I'm back out.\"",
     "source": "wiktionary",
     "lemmas": [
       "jemandem aus der Patsche helfen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Alten",
+        "lemma": "Alte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Patsche",
+        "lemma": "Patsche",
+        "pos": "noun",
+        "gloss_hint": "predicament"
+      },
+      {
+        "form": "hilfst",
+        "lemma": "helfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gut",
+        "lemma": "Gut",
+        "pos": "noun",
+        "gloss_hint": "good"
+      },
+      {
+        "form": "draußen",
+        "lemma": "draußen",
+        "pos": "adverb",
+        "gloss_hint": "released"
+      }
     ]
   },
   "307e6a9092": {
@@ -14430,10 +14610,37 @@
   },
   "307f4899fa": {
     "text": "Der hohe CO²-Ausstoß fällt bei der Erderwärmung ins Gewicht.",
-    "translation": null,
+    "translation": "High CO₂ emissions contribute significantly to global warming.",
     "source": "wiktionary",
     "lemmas": [
       "ins Gewicht fallen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hohe",
+        "lemma": "hoch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "CO²-Ausstoß",
+        "lemma": "CO₂-Ausstoß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erderwärmung",
+        "lemma": "Erderwärmung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gewicht",
+        "lemma": "Gewicht",
+        "pos": "noun",
+        "gloss_hint": "importance"
+      }
     ]
   },
   "307fe4fb2c": {
@@ -16950,23 +17157,25 @@
     "type": "expression",
     "note": "jemanden sehr gernhaben",
     "synonyms": [],
-    "translation": null,
+    "translation": "be crazy about someone",
     "source": "wiktionary",
     "lemmas": [
       "Fressen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "30940a0edd": {
     "text": "ins Auge fallen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "catch the eye",
     "source": "wiktionary",
     "lemmas": [
       "Auge",
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "3094c6e305": {
     "text": "Er ist sich seiner Sache sicher.",
@@ -19218,11 +19427,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Big ships, big troubles",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "30aa84686d": {
     "text": "Im Stadion war es so laut, dass ich einen wichtigen Anruf nicht mitbekommen habe.",
@@ -20071,11 +20281,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Might makes right",
     "source": "wiktionary",
     "lemmas": [
       "Stärkerer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "30b405d2a0": {
     "text": "„Die anderen drei standen in Verbindung zum Internationalen Währungsfonds, zur Weltbank und der US-Stiftung für Demokratie.“",
@@ -20531,10 +20742,43 @@
   },
   "30b8afc494": {
     "text": "Die konstitutionellen Bedingungen erlauben es, die Wahlen vorzuziehen.",
-    "translation": null,
+    "translation": "The constitutional conditions allow the elections to be brought forward.",
     "source": "wiktionary",
     "lemmas": [
       "konstitutionell"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "konstitutionellen",
+        "lemma": "konstitutionell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bedingungen",
+        "lemma": "Bedingung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erlauben",
+        "lemma": "erlauben",
+        "pos": "verb",
+        "gloss_hint": "allow"
+      },
+      {
+        "form": "Wahlen",
+        "lemma": "Wahl",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vorzuziehen",
+        "lemma": "vorziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "30b9642344": {
@@ -20840,13 +21084,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "urinate",
     "source": "wiktionary",
     "lemmas": [
       "Wasser",
       "lassen"
     ],
-    "ref": "phrases/Wasser lassen"
+    "ref": "phrases/Wasser lassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "30bdb0fa07": {
     "text": "„Um sieben Uhr morgens, zur offiziellen Abfahrtszeit, ist der sonst fast menschenleere Bahnhof plötzlich ein Hort voller Geschäftigkeit.“",
@@ -22011,11 +22256,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "yuck!",
     "source": "wiktionary",
     "lemmas": [
       "pfui"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "30c5951da5": {
     "text": "Er machte einen großen Sprung über die Schlucht.",
@@ -22735,10 +22981,37 @@
   },
   "30ccb9e266": {
     "text": "„Ist Ibuprofen im Zusammenhang mit dem Virus schädlich oder nicht?“",
-    "translation": null,
+    "translation": "\"Is ibuprofen harmful in connection with the virus or not?\"",
     "source": "wiktionary",
     "lemmas": [
       "im Zusammenhang mit"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ibuprofen",
+        "lemma": "Ibuprofen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zusammenhang",
+        "lemma": "Zusammenhang",
+        "pos": "noun",
+        "gloss_hint": "connection"
+      },
+      {
+        "form": "Virus",
+        "lemma": "Virus",
+        "pos": "noun",
+        "gloss_hint": "virus"
+      },
+      {
+        "form": "schädlich",
+        "lemma": "schädlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "30cd2e1299": {
@@ -23398,18 +23671,58 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "talk yourself hoarse",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "30d3c2385c": {
     "text": "„[…] ich hatte am Abend zu viel von dem in unserer Gegend Mohnstrietzel benannten Gerichte gegessen, das meine erste Frau, Gott hab sie selig, vortrefflich zu bereiten verstand.“",
-    "translation": null,
+    "translation": "[…] I had eaten too much in the evening of the dish called Mohnstrietzel in our region, which my first wife, God rest her soul, understood how to prepare excellently.",
     "source": "wiktionary",
     "lemmas": [
       "Gott hab sie selig"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Abend",
+        "lemma": "Abend",
+        "pos": "noun",
+        "gloss_hint": "evening"
+      },
+      {
+        "form": "Gegend",
+        "lemma": "Gegend",
+        "pos": "noun",
+        "gloss_hint": "region"
+      },
+      {
+        "form": "Mohnstrietzel",
+        "lemma": "Mohnstrietzel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "wife"
+      },
+      {
+        "form": "Gott",
+        "lemma": "Gott",
+        "pos": "noun",
+        "gloss_hint": "God"
+      },
+      {
+        "form": "bereiten",
+        "lemma": "bereiten",
+        "pos": "verb",
+        "gloss_hint": "prepare"
+      }
     ]
   },
   "30d42c342b": {
@@ -24339,11 +24652,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be absolutely starving",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "30da1017bd": {
     "text": "[Weitsprung:] „Wer vor dem Balken abspringt, verschenkt wertvolle Zentimeter.“",
@@ -25953,10 +26267,43 @@
   },
   "30e9d24e82": {
     "text": "[Fußballtrainer Jürgen Klopp:] „»Er hat dieses Charisma, diese unglaubliche Energie«. Ausgestattet dazu nicht nur mit einem guten Auge für die Spieler, sondern auch mit dem Händchen dafür, sie zu verbessern.“",
-    "translation": null,
+    "translation": "[Football coach Jürgen Klopp:] \"He has this charisma, this incredible energy. Equipped not only with a good eye for players, but also with the knack for improving them.\"",
     "source": "wiktionary",
     "lemmas": [
       "ein Händchen für etwas haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Charisma",
+        "lemma": "Charisma",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Energie",
+        "lemma": "Energie",
+        "pos": "noun",
+        "gloss_hint": "vitality"
+      },
+      {
+        "form": "Auge",
+        "lemma": "Auge",
+        "pos": "noun",
+        "gloss_hint": "eye"
+      },
+      {
+        "form": "Spieler",
+        "lemma": "Spieler",
+        "pos": "noun",
+        "gloss_hint": "player"
+      },
+      {
+        "form": "verbessern",
+        "lemma": "verbessern",
+        "pos": "verb",
+        "gloss_hint": "improve"
+      }
     ]
   },
   "30ea006925": {
@@ -26241,18 +26588,34 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get what is rightfully yours",
     "source": "wiktionary",
     "lemmas": [
       "Recht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "30eb128598": {
     "text": "Das ist wirklich zum aus der Haut Fahren!",
-    "translation": null,
+    "translation": "That's really enough to drive you up the wall!",
     "source": "wiktionary",
     "lemmas": [
       "aus der Haut fahren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Haut",
+        "lemma": "Haut",
+        "pos": "noun",
+        "gloss_hint": "skin"
+      },
+      {
+        "form": "fahren",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": "drive"
+      }
     ]
   },
   "30ec013ec8": {
@@ -26738,18 +27101,66 @@
   },
   "30f10ad713": {
     "text": "Kol 2-3,17 handelt vom Leben im Herrschaftsbereich Christi.",
-    "translation": null,
+    "translation": "Colossians 2-3:17 deals with life in the realm of Christ's dominion.",
     "source": "wiktionary",
     "lemmas": [
       "Kol"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Leben",
+        "lemma": "Leben",
+        "pos": "noun",
+        "gloss_hint": "life"
+      },
+      {
+        "form": "Herrschaftsbereich",
+        "lemma": "Herrschaftsbereich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Christi",
+        "lemma": "Christus",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "30f1f50952": {
     "text": "Einige Hunderassen haben verwirrende Namen. Die Dänische Dogge kommt eigentlich aus Deutschland.",
-    "translation": null,
+    "translation": "Some dog breeds have confusing names. The Great Dane actually comes from Germany.",
     "source": "wiktionary",
     "lemmas": [
       "verwirrend"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hunderassen",
+        "lemma": "Hunderasse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Namen",
+        "lemma": "Name",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dänische Dogge",
+        "lemma": "Dänische Dogge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "30f2fadbb3": {

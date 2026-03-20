@@ -2455,22 +2455,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be lazy / to be sluggish",
     "source": "wiktionary",
     "lemmas": [
       "Hintern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "581826d760": {
     "text": "auf der letzten Rille laufen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be running on fumes",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "581832b0e1": {
     "text": "«Singtänze gehören zur Hochzeitsmusik der Kurden. Männer und Frauen nehmen teil. In einer Linie tanzend, haken sich die Tänzer nur mit den kleinen Fingern ein.»",
@@ -6238,11 +6240,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to feel comfortable in one's own skin",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5836ec2d58": {
     "text": "Lass Papa man in Ruhe den Vergaser reinigen, er hat das nicht so gerne, wenn man ihm ins Handwerk pfuscht.",
@@ -6876,13 +6879,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in a sticky situation",
     "source": "wiktionary",
     "lemmas": [
       "sitzen",
       "Dreck"
     ],
-    "ref": "phrases/im Dreck sitzen"
+    "ref": "phrases/im Dreck sitzen",
+    "translation_model": "openai/gpt-4.1"
   },
   "583c85b949": {
     "text": "Die Geschirrspülmaschine war eine Segen bringende Erfindung.",
@@ -7823,10 +7827,31 @@
   },
   "5845410795": {
     "text": "Das Gewicht einer Hausmaus liegt bei 20–25 g.",
-    "translation": null,
+    "translation": "The weight of a house mouse is 20–25 g.",
     "source": "wiktionary",
     "lemmas": [
       "g"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gewicht",
+        "lemma": "Gewicht",
+        "pos": "noun",
+        "gloss_hint": "weight"
+      },
+      {
+        "form": "Hausmaus",
+        "lemma": "Hausmaus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "liegt",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5845b78928": {
@@ -8583,11 +8608,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get the hang of it",
     "source": "wiktionary",
     "lemmas": [
       "Dreh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "584a2ddbe4": {
     "text": "Er war Edelmann und gleichzeitig Prolet.",
@@ -8951,22 +8977,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be crazy / to have lost one's marbles",
     "source": "wiktionary",
     "lemmas": [
       "Keks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5850ac7cfc": {
     "text": "die Welt aus den Angeln heben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to move heaven and earth",
     "source": "wiktionary",
     "lemmas": [
       "Welt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5850e6fa04": {
     "text": "Wir werden solange etwas an den Einstellungen ändern, bis eine Verbesserung eintritt.",
@@ -12537,12 +12565,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "there's no point in trying",
     "source": "wiktionary",
     "lemmas": [
       "kein"
     ],
-    "ref": "phrases/damit ist kein Blumentopf zu gewinnen"
+    "ref": "phrases/damit ist kein Blumentopf zu gewinnen",
+    "translation_model": "openai/gpt-4.1"
   },
   "586d9bc99f": {
     "text": "„Der wesentliche Grund für diese Beobachtung ist sprachstruktureller Art: Im Unterschied zu den (west)europäischen Sprachen weist das klassische Latein einen vergleichsweise synthetischen Sprachbau auf.“",
@@ -13170,10 +13199,85 @@
   },
   "587287292f": {
     "text": "Historiker wagen sich auf ein Feld der Forschung [Geheimdienste in Deutschland], auf dem die Aktenlage unsicher wie dünnes Eis ist und wichtige Dokumente im Rachen des Reißwolfs verschwunden und, kleingeheckselt, im Ofen verbrannt sind.",
-    "translation": null,
+    "translation": "Historians venture into a field of research [secret services in Germany] where the documentary situation is as uncertain as thin ice and important documents have disappeared into the jaws of the shredder and, minced up, have been burned in the oven.",
     "source": "wiktionary",
     "lemmas": [
       "auf dünnem Eis"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Historiker",
+        "lemma": "Historiker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wagen",
+        "lemma": "wagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Feld",
+        "lemma": "Feld",
+        "pos": "noun",
+        "gloss_hint": "discipline"
+      },
+      {
+        "form": "Forschung",
+        "lemma": "Forschung",
+        "pos": "noun",
+        "gloss_hint": "research"
+      },
+      {
+        "form": "Aktenlage",
+        "lemma": "Aktenlage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "unsicher",
+        "lemma": "unsicher",
+        "pos": "adjective",
+        "gloss_hint": "uncertain"
+      },
+      {
+        "form": "Eis",
+        "lemma": "Eis",
+        "pos": "noun",
+        "gloss_hint": "ice"
+      },
+      {
+        "form": "Dokumente",
+        "lemma": "Dokument",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verschwunden",
+        "lemma": "verschwinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reißwolf",
+        "lemma": "Reißwolf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ofen",
+        "lemma": "Ofen",
+        "pos": "noun",
+        "gloss_hint": "oven"
+      },
+      {
+        "form": "verbrannt",
+        "lemma": "verbrennen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "587372fb04": {
@@ -13525,11 +13629,12 @@
     "type": "expression",
     "note": "! – schweig still!",
     "synonyms": [],
-    "translation": null,
+    "translation": "shut your mouth!",
     "source": "wiktionary",
     "lemmas": [
       "Backe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "587775adb8": {
     "text": "Oft arbeiteten die Schüler bis tief in die Nacht.",
@@ -15639,11 +15744,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to help someone get dressed",
     "source": "wiktionary",
     "lemmas": [
       "Strumpf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "588d0b2e0a": {
     "text": "„Tagtäglich wird hier auf das raffinierteste gekocht, gebraten, gegrillt und gebacken und schließlich serviert.“",
@@ -15749,10 +15855,25 @@
   },
   "588eb89ff9": {
     "text": "9. Die Aufgabe der Politik",
-    "translation": null,
+    "translation": "9. The Task of Politics",
     "source": "wiktionary",
     "lemmas": [
       "9."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Aufgabe",
+        "lemma": "Aufgabe",
+        "pos": "noun",
+        "gloss_hint": "task"
+      },
+      {
+        "form": "Politik",
+        "lemma": "Politik",
+        "pos": "noun",
+        "gloss_hint": "politics"
+      }
     ]
   },
   "58909d0db9": {
@@ -16261,10 +16382,49 @@
   },
   "589336c986": {
     "text": "„Ich bin der Geist der stets verneint! Und das mit Recht; denn alles was entsteht / Ist werth daß es zu Grunde geht; “",
-    "translation": null,
+    "translation": "\"I am the spirit that always denies! And rightly so; for everything that comes into being / Is worthy that it should pass away;\"",
     "source": "wiktionary",
     "lemmas": [
       "zu Grunde gehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geist",
+        "lemma": "Geist",
+        "pos": "noun",
+        "gloss_hint": "spirit"
+      },
+      {
+        "form": "verneint",
+        "lemma": "verneinen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Recht",
+        "lemma": "Recht",
+        "pos": "noun",
+        "gloss_hint": "right"
+      },
+      {
+        "form": "entsteht",
+        "lemma": "entstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "werth",
+        "lemma": "wert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grunde",
+        "lemma": "Grund",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "58936d3ee6": {
@@ -21516,10 +21676,73 @@
   },
   "58c18aea26": {
     "text": "„Ich beobachtete ihn, um herauszubringen, warum er einen Artikel nach dem anderen durchbrachte, während ich, und auch andere, oft ein halbes oder ganzes Jahr mit einem Artikel nicht bloß von Pontius zu Pilatus, sondern auch noch zu Hinz und Kunz, Krethi und Plethi, den oberen und den unteren und den mittleren Zehntausend rennen, bis wir eingesehen haben, daß wir mit diesem Artikel wieder nicht zu jenen Markteroberern werden, die wir werden wollten.“",
-    "translation": null,
+    "translation": "\"I observed him to find out why he pushed through one article after another, while I, and also others, often spent half a year or a whole year with an article not just running from pillar to post, but also to all and sundry, the upper and lower and middle ten thousand, until we realized that with this article we again would not become those market conquerors that we wanted to become.\"",
     "source": "wiktionary",
     "lemmas": [
       "Krethi und Plethi"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "beobachtete",
+        "lemma": "beobachten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "herauszubringen",
+        "lemma": "herausbringen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Artikel",
+        "lemma": "Artikel",
+        "pos": "noun",
+        "gloss_hint": "article"
+      },
+      {
+        "form": "durchbrachte",
+        "lemma": "durchbringen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "rennen",
+        "lemma": "rennen",
+        "pos": "verb",
+        "gloss_hint": "run"
+      },
+      {
+        "form": "Zehntausend",
+        "lemma": "Zehntausend",
+        "pos": "noun",
+        "gloss_hint": "ten thousand"
+      },
+      {
+        "form": "eingesehen",
+        "lemma": "einsehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Markteroberern",
+        "lemma": "Markteroberern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "werden",
+        "lemma": "werden",
+        "pos": "verb",
+        "gloss_hint": "become"
+      }
     ]
   },
   "58c22e92fe": {
@@ -21976,11 +22199,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Morning is wiser than evening.",
     "source": "wiktionary",
     "lemmas": [
       "Morgen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "58c59bb1e4": {
     "text": "Es war an der Zeit die Decke neu zu streichen.",
@@ -22440,10 +22664,37 @@
   },
   "58ce06e8bb": {
     "text": "Ich habe die Schnauze voll vom schlechten Wetter.",
-    "translation": null,
+    "translation": "I'm fed up with the bad weather.",
     "source": "wiktionary",
     "lemmas": [
       "die Schnauze voll haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schnauze",
+        "lemma": "Schnauze",
+        "pos": "noun",
+        "gloss_hint": "mouth"
+      },
+      {
+        "form": "voll",
+        "lemma": "voll",
+        "pos": "adjective",
+        "gloss_hint": "full"
+      },
+      {
+        "form": "schlechten",
+        "lemma": "schlecht",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wetter",
+        "lemma": "Wetter",
+        "pos": "noun",
+        "gloss_hint": "weather"
+      }
     ]
   },
   "58ce2d7110": {
@@ -22958,23 +23209,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be good for something",
     "source": "wiktionary",
     "lemmas": [
       "gut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "58d0e3be62": {
     "text": "sich in den Haaren liegen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be at loggerheads",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
     ],
-    "ref": "phrases/sich in den Haaren liegen"
+    "ref": "phrases/sich in den Haaren liegen",
+    "translation_model": "openai/gpt-4.1"
   },
   "58d2a26a9d": {
     "text": "Ihre Seelen erwartet die Verdammnis.",
@@ -23023,11 +23276,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like a whirlwind",
     "source": "wiktionary",
     "lemmas": [
       "wie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "58d3eeaba1": {
     "text": "Bis zu seiner Fertigstellung bekam allein der Maler das Bild zu Gesicht.",
@@ -23187,12 +23441,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "down to the ground",
     "source": "wiktionary",
     "lemmas": [
       "Boden"
     ],
-    "ref": "phrases/in Grund und Boden"
+    "ref": "phrases/in Grund und Boden",
+    "translation_model": "openai/gpt-4.1"
   },
   "58d7d8cce9": {
     "text": "Jeder Fahrradfahrer und jede Fahrradfahrerin muss den Fahrradweg benutzen, wenn dieser auf der Fahrbahn extra eingezeichnet ist.",
@@ -23400,10 +23655,49 @@
   },
   "58d8a1791e": {
     "text": "Die jeweiligen Verbräuche der einzelnen Marken lassen sich grafisch darstellen.",
-    "translation": null,
+    "translation": "The respective consumption figures of the individual brands can be presented graphically.",
     "source": "wiktionary",
     "lemmas": [
       "Verbrauch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "jeweiligen",
+        "lemma": "jeweilig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verbräuche",
+        "lemma": "Verbrauch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "einzelnen",
+        "lemma": "einzeln",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Marken",
+        "lemma": "Marke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lassen",
+        "lemma": "lassen",
+        "pos": "verb",
+        "gloss_hint": "allow"
+      },
+      {
+        "form": "darstellen",
+        "lemma": "darstellen",
+        "pos": "verb",
+        "gloss_hint": "present"
+      }
     ]
   },
   "58d98f3355": {
@@ -25467,11 +25761,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to stay on the ball",
     "source": "wiktionary",
     "lemmas": [
       "bleiben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "58e957d9a7": {
     "text": "Die Verlage scheinen gerade erst zu begreifen, dass sie sich neu erfinden müssen […]. Vor ihnen liegt das Kunststück, wenn sie nicht untergehen wollen, über den eigenen Schatten zu springen und dabei deutliche Substanzverluste zu verkraften.",
@@ -26824,11 +27119,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "you're a real piece of work",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "58edebaea4": {
     "text": "Komm mal kurz her, du wirst am Telefon verlangt.",
@@ -27677,10 +27973,55 @@
   },
   "58f72af2db": {
     "text": "„Aber manchmal möchte man sie auch – verzeihen Sie die drastische Ausdrucksweise – ungespitzt in den Boden rammen.“",
-    "translation": null,
+    "translation": "\"But sometimes you also want to – forgive the blunt language – drive them in unsharpened.\"",
     "source": "wiktionary",
     "lemmas": [
       "jemanden ungespitzt in den Boden rammen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "manchmal",
+        "lemma": "manchmal",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "möchte",
+        "lemma": "mögen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "drastische",
+        "lemma": "drastisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausdrucksweise",
+        "lemma": "Ausdrucksweise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ungespitzt",
+        "lemma": "ungespitzt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Boden",
+        "lemma": "Boden",
+        "pos": "noun",
+        "gloss_hint": "ground"
+      },
+      {
+        "form": "rammen",
+        "lemma": "rammen",
+        "pos": "verb",
+        "gloss_hint": "drive in"
+      }
     ]
   },
   "58f7416a8e": {
@@ -27688,11 +28029,12 @@
     "type": "expression",
     "note": "dir bringe ich noch Gehorsam bei, dich zähme ich noch, dich richte ich noch ab!",
     "synonyms": [],
-    "translation": null,
+    "translation": "I'll make you behave yet!",
     "source": "wiktionary",
     "lemmas": [
       "fromm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "58f7cff0f8": {
     "text": "Wenn wir dieses Thema genauer betrachten, werden wir feststellen, dass es sich nicht so verhält wie zuerst vermutet.",

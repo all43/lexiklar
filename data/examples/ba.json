@@ -253,10 +253,43 @@
   },
   "ba06054301": {
     "text": "„Gleichzeitig gehen die Reserven an Gold, Diamanten und wertvollen Mineralien zur Neige.“",
-    "translation": null,
+    "translation": "At the same time, reserves of gold, diamonds, and valuable minerals are running out.",
     "source": "wiktionary",
     "lemmas": [
       "Mineral"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Reserven",
+        "lemma": "Reserve",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gold",
+        "lemma": "Gold",
+        "pos": "noun",
+        "gloss_hint": "gold"
+      },
+      {
+        "form": "Diamanten",
+        "lemma": "Diamant",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mineralien",
+        "lemma": "Mineral",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Neige",
+        "lemma": "Neige",
+        "pos": "noun",
+        "gloss_hint": "last bit"
+      }
     ]
   },
   "ba066bcbf5": {
@@ -417,11 +450,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "firsthand",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba09c23d11": {
     "text": "„Die Bankette finden deshalb im Schloss Charlottenburg statt, einst Wohnsitz der preußischen Könige.“",
@@ -687,12 +721,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "watch one's hopes dashed",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
     ],
-    "ref": "phrases/seine Felle wegschwimmen sehen"
+    "ref": "phrases/seine Felle wegschwimmen sehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "ba0c6336d1": {
     "text": "„Man löst nämlich an der ersten Kasse eine Eintrittskarte für das Theater und an einer zweiten Kasse das Billett für den Platz, den man zu haben wünscht.“",
@@ -1053,11 +1088,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If you act like a sheep, the wolves will eat you.",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba120933a4": {
     "text": "Das Problem des Klimawandels betrifft die ganze Menschheit, besonders aber jenen Teil, der in den Entwicklungsländern lebt.",
@@ -1073,11 +1109,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "throw a wrench in the works",
     "source": "wiktionary",
     "lemmas": [
       "Sand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba12d73873": {
     "text": "Hallo, bist du vollkommen bescheuert?",
@@ -1328,11 +1365,12 @@
     "type": "expression",
     "note": "ein Getriebe schalten, (an Geschwindigkeit) zulegen",
     "synonyms": [],
-    "translation": null,
+    "translation": "shift into gear",
     "source": "wiktionary",
     "lemmas": [
       "Gang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba1780727b": {
     "text": "„Sie sorgte für sich selbst, sie fiel niemandem zur Last und schuldete niemandem etwas.“",
@@ -1513,10 +1551,31 @@
   },
   "ba198c67e9": {
     "text": "„Weder ABS noch selbstblockierende Differenziale können mich beeindrucken.“",
-    "translation": null,
+    "translation": "Neither ABS nor self-locking differentials can impress me.",
     "source": "wiktionary",
     "lemmas": [
       "ABS"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ABS",
+        "lemma": "ABS",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Differenziale",
+        "lemma": "Differential",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beeindrucken",
+        "lemma": "beeindrucken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "ba1a147d8e": {
@@ -2163,24 +2222,26 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "play second fiddle",
     "source": "wiktionary",
     "lemmas": [
       "spielen"
     ],
-    "ref": "phrases/die zweite Geige spielen"
+    "ref": "phrases/die zweite Geige spielen",
+    "translation_model": "openai/gpt-4.1"
   },
   "ba2179e3b5": {
     "text": "nicht im Traum einfallen",
     "type": "expression",
     "note": "etwas Gewünschtem oder Verlangtem keinesfalls nachgeben",
     "synonyms": [],
-    "translation": null,
+    "translation": "never even consider",
     "source": "wiktionary",
     "lemmas": [
       "Traum",
       "einfallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba2305f5e9": {
     "text": "Früher waren wir häufig in dem Etablissement, in dem Tante Britta damals strippte.",
@@ -2945,25 +3006,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "become a laughingstock",
     "source": "wiktionary",
     "lemmas": [
       "Gespött"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba26a93ac9": {
     "text": "bessere Zeiten gekannt haben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have seen better days",
     "source": "wiktionary",
     "lemmas": [
       "kennen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ba27007bc4": {
     "text": "„Der Mensch ist frei, und keiner sollte mehr in Ketten geboren werden.“",
@@ -3216,11 +3276,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I have a good memory, madam.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba2918a33d": {
     "text": "Voran die Messdiener, danach der Pfarrer.",
@@ -3272,11 +3333,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go berserk",
     "source": "wiktionary",
     "lemmas": [
       "toben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba30c8a23d": {
     "text": "Ich habe mich noch nie gewundert, warum mein Bruder und ich nicht klarkommen.",
@@ -4198,12 +4260,13 @@
     "type": "expression",
     "note": "assoziative Verwendung für scheibenförmige, fliegende Objekte in der Form einer Untertasse",
     "synonyms": [],
-    "translation": null,
+    "translation": "flying saucer",
     "source": "wiktionary",
     "lemmas": [
       "Untertasse"
     ],
-    "ref": "phrases/fliegende Untertasse"
+    "ref": "phrases/fliegende Untertasse",
+    "translation_model": "openai/gpt-4.1"
   },
   "ba368710f6": {
     "text": "„Daher schilderte Tom nur grob den Sachverhalt, das Universum sei womöglich nichts anderes als eine Computersimulation.“",
@@ -4339,11 +4402,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to kill someone",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba3743d622": {
     "text": "Hier ist die Vollmacht, ich möchte im Namen meines Mannes die Briefwahlunterlagen beantragen.",
@@ -5956,11 +6020,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to forget about something (because it's useless)",
     "source": "wiktionary",
     "lemmas": [
       "Pfeife"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba49348750": {
     "text": "Die Aufführung endete in einem Fiasko, als die Sopranistin sich in den Orchestergraben erbrach.",
@@ -6613,12 +6678,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the cup passes someone by (to be spared from something unpleasant)",
     "source": "wiktionary",
     "lemmas": [
       "Kelch"
     ],
-    "ref": "phrases/der Kelch geht an jemandem vorüber"
+    "ref": "phrases/der Kelch geht an jemandem vorüber",
+    "translation_model": "openai/gpt-4.1"
   },
   "ba568a0cf4": {
     "text": "Ich habe die Bilder abgehängt.",
@@ -7294,11 +7360,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on pins and needles",
     "source": "wiktionary",
     "lemmas": [
       "Kohle"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba619b4a92": {
     "text": "Der Präsident hielt eine Ansprache bei der Gedenkfeier.",
@@ -8101,11 +8168,12 @@
     "type": "expression",
     "note": "schaudern",
     "synonyms": [],
-    "translation": null,
+    "translation": "to get shivers down one's spine",
     "source": "wiktionary",
     "lemmas": [
       "heiß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba72b3540e": {
     "text": "Ich fühle mich schlapp und ohne jeden Schwung.",
@@ -8289,11 +8357,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to see heaven open (to have a sudden feeling of hope or relief)",
     "source": "wiktionary",
     "lemmas": [
       "Himmel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba75e254e4": {
     "text": "„Bisher hatte Sylvia für alles, was sie vollbracht hatte, nie mehr als ein paar Komplimente von Familie und Freunden bekommen.“",
@@ -8500,11 +8569,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "poor devil",
     "source": "wiktionary",
     "lemmas": [
       "arm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba79ba86d2": {
     "text": "[Philipp Hammond] gilt zwar nicht als Europafreund, aber als Pragmatiker und im Gegensatz zum Hitzkopf Boris Johnson gleichzeitig als vernünftig.",
@@ -9202,13 +9272,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a poor devil",
     "source": "wiktionary",
     "lemmas": [
       "Schwein",
       "arm"
     ],
-    "ref": "phrases/ein armes Schwein sein"
+    "ref": "phrases/ein armes Schwein sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "ba818d1b17": {
     "text": "Wieso fährt das Taxi am Taxistand vorbei?",
@@ -9519,34 +9590,37 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be as well-known as the village gossip",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
     ],
-    "ref": "phrases/bekannt sein wie ein bunter Hund"
+    "ref": "phrases/bekannt sein wie ein bunter Hund",
+    "translation_model": "openai/gpt-4.1"
   },
   "ba840a8ee1": {
     "text": "wie ein Schwein bluten",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to bleed like a stuck pig",
     "source": "wiktionary",
     "lemmas": [
       "Schwein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba847b1908": {
     "text": "die lachenden Erben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the laughing heirs",
     "source": "wiktionary",
     "lemmas": [
       "lachen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba86ac5675": {
     "text": "Es traten vier als Indianer verkleidete Jungen auf die Bühne.",
@@ -10917,12 +10991,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to call something one's own",
     "source": "wiktionary",
     "lemmas": [
       "Eigen"
     ],
-    "ref": "phrases/etwas sein Eigen nennen"
+    "ref": "phrases/etwas sein Eigen nennen",
+    "translation_model": "openai/gpt-4.1"
   },
   "ba8c39e4e1": {
     "text": "„Ich bin mit Michael dann sofort auf die Moselwiesen gegangen, und Michael hat zwei Äste als Torpfosten auf die Moselwiesen gelegt, und dann ist er ins Tor gegangen, und ich habe den Ball auf sein Tor geschossen.“",
@@ -12370,11 +12445,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to live in an illusion",
     "source": "wiktionary",
     "lemmas": [
       "Illusion"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ba94d29642": {
     "text": "Die Früchte seiner Bemühungen waren schon sichtbar.",
@@ -15194,11 +15270,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the Lord gives to his own while they sleep",
     "source": "wiktionary",
     "lemmas": [
       "Schlaf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "baa8e00f15": {
     "text": "Ungewöhnlich für omanische Forts ist es, dass der gesamte Komplex mit einem breiten Burggraben umzogen ist.",
@@ -15301,10 +15378,37 @@
   },
   "baac73c5ea": {
     "text": "Der Taxifahrer war seinem Fahrgast beim Einsteigen behilflich.",
-    "translation": null,
+    "translation": "The taxi driver helped his passenger board.",
     "source": "wiktionary",
     "lemmas": [
       "Taxifahrer"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Taxifahrer",
+        "lemma": "Taxifahrer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fahrgast",
+        "lemma": "Fahrgast",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einsteigen",
+        "lemma": "einsteigen",
+        "pos": "verb",
+        "gloss_hint": "board"
+      },
+      {
+        "form": "behilflich",
+        "lemma": "behilflich",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "baac8158d1": {
@@ -16374,10 +16478,25 @@
   },
   "babadcd6c8": {
     "text": "„Wo hast du das denn her? Das ist doch Quark mit Soße!“",
-    "translation": null,
+    "translation": "Where did you get that from? That's complete nonsense!",
     "source": "wiktionary",
     "lemmas": [
       "Quark mit Soße"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Quark",
+        "lemma": "Quark",
+        "pos": "noun",
+        "gloss_hint": "nonsense"
+      },
+      {
+        "form": "Soße",
+        "lemma": "Soße",
+        "pos": "noun",
+        "gloss_hint": "sauce"
+      }
     ]
   },
   "babb324efe": {
@@ -17808,11 +17927,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go down with flying colors",
     "source": "wiktionary",
     "lemmas": [
       "Fahne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bac47c2105": {
     "text": "Die zache Bratensoße ergoss sich über den Frack.",
@@ -19471,11 +19591,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to guard something like the apple of one's eye",
     "source": "wiktionary",
     "lemmas": [
       "Augapfel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bad4f0bcc7": {
     "text": "„Dieses Modell stirbt: Die Hirten und Hirtinnen gehen großenteils auf die Rente zu, kaum jemand kommt nach.“",
@@ -21045,11 +21166,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it takes one to know one",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bae447fc15": {
     "text": "Die verschiedenen sozialen Gruppen oder Schichten haben ihre jeweils eigene Sprache.",
@@ -21134,11 +21256,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a bee in one's bonnet",
     "source": "wiktionary",
     "lemmas": [
       "fressen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bae47e3c77": {
     "text": "„Dass sich hier die anspruchsvollste und berühmteste Rennstrecke der Welt befindet, ist aber erst auf den letzten Kilometern vor dem Ziel zu spüren.“",
@@ -21553,11 +21676,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "play by the rules",
     "source": "wiktionary",
     "lemmas": [
       "spielen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bae8968b4f": {
     "text": "Kacke! Schon wieder den Schlüssel vergessen!",
@@ -21612,11 +21736,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "try to do the impossible",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bae9f1bc7b": {
     "text": "„Gleichzeitig könnte der Vulkanausbruch auch das Ende der Trichterbecherkultur in Skandinavien eingeläutet haben.“",
@@ -21638,11 +21763,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be at home for someone",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "baeadf9707": {
     "text": "„Schrödingers Arschloch – bigotten Mist verzapfen, und wenn das scheiße ankommt, sich mit ‚war doch nur ein Witz‘ ausreden.“",
@@ -22013,11 +22139,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "God willing",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "baf0c48500": {
     "text": "„Ich zog mit meiner Familie von einer Dachstube in die nächste, von denen man jedoch nicht auf die Seine, sondern auf einige der weniger appetitlichen Straßen von Bangor herunterblickte, diejenigen, in denen die Streifenwagen der Polizei immer Samstag nachts um zwei aufzutauchen scheinen“",
@@ -22331,10 +22458,37 @@
   },
   "baf5ef3426": {
     "text": "„Auch sie hatte verweinte Augen, doch sah sie nichtsdestoweniger sehr grimmig aus.“",
-    "translation": null,
+    "translation": "She too had tear-stained eyes, yet despite this she looked very grim.",
     "source": "wiktionary",
     "lemmas": [
       "nichtsdestoweniger"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "verweinte",
+        "lemma": "verweinen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Augen",
+        "lemma": "Auge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sah",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "grimmig",
+        "lemma": "grimmig",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "baf68692c3": {
@@ -22483,11 +22637,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go to hell",
     "source": "wiktionary",
     "lemmas": [
       "Satan"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "baf7382308": {
     "text": "Indem kam der Sprecher dann doch noch zu seinem Thema.",
@@ -22557,11 +22712,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get hold of someone",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "baf8a37774": {
     "text": "Der geht doch glatt in Badeschlappen auf die Straße. Sie geht nur noch in Samt und Seide. Du kannst doch nicht in diesen Jeans zum Vorstellungsgespräch gehen. Ich würde bei diesem Wetter nicht ohne Schirm gehen.",
@@ -22850,11 +23006,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "sink into chaos",
     "source": "wiktionary",
     "lemmas": [
       "Chaos"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "bafa1069ce": {
     "text": "„Der Raum ist voll; der Kellner macht eine Tür auf, eine enge Hinterstube ist frei.“",
@@ -22868,10 +23025,43 @@
   },
   "bafa2db113": {
     "text": "Mit überhöhten Preisen wird der Kunde ausgenommen wie eine Weihnachtsgans.",
-    "translation": null,
+    "translation": "With inflated prices, the customer is fleeced like a Christmas goose.",
     "source": "wiktionary",
     "lemmas": [
       "jemanden ausnehmen wie eine Weihnachtsgans"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "überhöhten",
+        "lemma": "überhöht",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Preisen",
+        "lemma": "Preis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kunde",
+        "lemma": "Kunde",
+        "pos": "noun",
+        "gloss_hint": "customer"
+      },
+      {
+        "form": "ausgenommen",
+        "lemma": "ausnehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weihnachtsgans",
+        "lemma": "Weihnachtsgans",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "bafa67021b": {

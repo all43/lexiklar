@@ -15,12 +15,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I can't believe it",
     "source": "wiktionary",
     "lemmas": [
       "ich"
     ],
-    "ref": "phrases/ich glaub, mein Schwein pfeift"
+    "ref": "phrases/ich glaub, mein Schwein pfeift",
+    "translation_model": "openai/gpt-4.1"
   },
   "8c0398b037": {
     "text": "„Fast unbehelligt hat diese Horde eine Sprache erfunden, die außerhalb Deutschlands niemand kennt. Es handelt sich um das \"Amerikanische\", wie in der Formel: \"Übersetzt aus dem Amerikanischen.\"“",
@@ -432,22 +433,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go one's own way",
     "source": "wiktionary",
     "lemmas": [
       "Weg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8c080a5d42": {
     "text": "jemandem Beine machen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get someone moving",
     "source": "wiktionary",
     "lemmas": [
       "Bein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8c08589de2": {
     "text": "Hast du einen Scanner? Ich meine nicht nur das Gerät, sondern, viel wichtiger, die Software zur Worterkennung?",
@@ -3089,10 +3092,103 @@
   },
   "8c21082255": {
     "text": "„Mit List und Tücke ergatterte er den Vorsitz der parteieigenen Studentenvereinigung, der damalige Parteichef und spätere Präsident George Bush förderte das Talent nach Kräften.“",
-    "translation": null,
+    "translation": "\"Through cunning and trickery he secured the chairmanship of the party's student association; the party chief at the time and later president George Bush promoted the talent with all his might.\"",
     "source": "wiktionary",
     "lemmas": [
       "mit List und Tücke"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "List",
+        "lemma": "List",
+        "pos": "noun",
+        "gloss_hint": "cunning"
+      },
+      {
+        "form": "Tücke",
+        "lemma": "Tücke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ergatterte",
+        "lemma": "erggattern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorsitz",
+        "lemma": "Vorsitz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "parteieigenen",
+        "lemma": "parteieigen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Studentenvereinigung",
+        "lemma": "Studentenvereinigung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "damalige",
+        "lemma": "damalig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Parteichef",
+        "lemma": "Parteichef",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "spätere",
+        "lemma": "später",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Präsident",
+        "lemma": "Präsident",
+        "pos": "noun",
+        "gloss_hint": "president"
+      },
+      {
+        "form": "George",
+        "lemma": "George",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bush",
+        "lemma": "Bush",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "förderte",
+        "lemma": "fördern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Talent",
+        "lemma": "Talent",
+        "pos": "noun",
+        "gloss_hint": "ability"
+      },
+      {
+        "form": "Kräften",
+        "lemma": "Kraft",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "8c215750eb": {
@@ -4791,11 +4887,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a smack",
     "source": "wiktionary",
     "lemmas": [
       "schießen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8c311460b8": {
     "text": "Das Happy-End bestand aus einem gewaltlosen Sieg der Guten über die Bösen.",
@@ -5208,11 +5305,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get into the black",
     "source": "wiktionary",
     "lemmas": [
       "schwarz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8c3374aa1a": {
     "text": "Von Ihnen wird ein gutes Benehmen, Pünktlichkeit und Fleiß erwartet.",
@@ -7113,11 +7211,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at the end of the world",
     "source": "wiktionary",
     "lemmas": [
       "Welt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8c464b23f3": {
     "text": "„Sie studieren gerade die Speisekarte.“",
@@ -8285,11 +8384,12 @@
     "type": "expression",
     "note": "leidenschaftlich diskutieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a heated discussion",
     "source": "wiktionary",
     "lemmas": [
       "heiß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8c51962581": {
     "text": "Tanz auf dem Seil",
@@ -10389,11 +10489,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "No conditions attached.",
     "source": "wiktionary",
     "lemmas": [
       "Aber"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8c66a1367e": {
     "text": "Wer zu spät kommt, den bestraft das Leben",
@@ -10623,22 +10724,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Let something rest.",
     "source": "wiktionary",
     "lemmas": [
       "beruhen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8c6b8c9b58": {
     "text": "wie Hund und Katz leben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Fight like cats and dogs.",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8c6c76e558": {
     "text": "Alle gehen davon aus, dass Sven Löven seinen Titel im Herbst verteidigen wird.",
@@ -13340,12 +13443,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Turn the tables.",
     "source": "wiktionary",
     "lemmas": [
       "Spieß"
     ],
-    "ref": "phrases/den Spieß umdrehen"
+    "ref": "phrases/den Spieß umdrehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "8c84f0732d": {
     "text": "„Der große Stapel von Tonbändern, den Claire säuberlich aufgeschichtet hatte, brannte lichterloh, und die Flammen drohten soeben auf die Vorhänge überzugreifen.“",
@@ -14382,10 +14486,31 @@
   },
   "8c9047b1f1": {
     "text": "Das war ein gewisser Herr X, der hier eben vorsprach.",
-    "translation": null,
+    "translation": "That was a certain Mr. X who auditioned here.",
     "source": "wiktionary",
     "lemmas": [
       "X"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gewisser",
+        "lemma": "gewiss",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herr",
+        "lemma": "Herr",
+        "pos": "noun",
+        "gloss_hint": "gentleman"
+      },
+      {
+        "form": "vorsprach",
+        "lemma": "vorsprechen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "8c91521b26": {
@@ -14543,11 +14668,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Roar like a bull.",
     "source": "wiktionary",
     "lemmas": [
       "Stier"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8c93c83f08": {
     "text": "Am Zugfenster steht in verschiedenen Sprachen: Bitte während der Fahrt nicht die Fenster öffnen.",
@@ -14819,11 +14945,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Sound the attack.",
     "source": "wiktionary",
     "lemmas": [
       "blasen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8c976301e9": {
     "text": "„Diese Süßigkeiten da habe ich letzte Woche aus Beirut mitgebracht.“",
@@ -15342,11 +15469,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Be dressed to the nines.",
     "source": "wiktionary",
     "lemmas": [
       "Schale"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8c9fd5df7c": {
     "text": "„Zur Herstellung von Munition, aber auch von Düngemitteln für die Landwirtschaft bilden Stickstoffverbindungen (Nitrate), darunter insbesondere Salpeter (NaNO₃) und Salpetersäure (HNO₃), einen unentbehrlichen Grundbestandteil.“",
@@ -15369,11 +15497,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Tighten the reins.",
     "source": "wiktionary",
     "lemmas": [
       "Zügel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8ca038a429": {
     "text": "Er stieg von der Leiter.",
@@ -15610,11 +15739,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Bone dry.",
     "source": "wiktionary",
     "lemmas": [
       "trocken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8ca6a4060d": {
     "text": "„Hot die stackndirre Baa!“",
@@ -16769,11 +16899,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Go off the hinges.",
     "source": "wiktionary",
     "lemmas": [
       "Angel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8cb7ad466c": {
     "text": "Schau mal die kleinen Katzenbabys.",
@@ -16796,10 +16927,49 @@
   },
   "8cb83f1e48": {
     "text": "Die SPÖ unternimmt den untauglichen Versuch, ihre Krise zu bewältigen.",
-    "translation": null,
+    "translation": "The SPÖ is making an ineffective attempt to manage its crisis.",
     "source": "wiktionary",
     "lemmas": [
       "SPÖ"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "SPÖ",
+        "lemma": "SPÖ",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "unternimmt",
+        "lemma": "unternehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "untauglichen",
+        "lemma": "untauglich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Versuch",
+        "lemma": "Versuch",
+        "pos": "noun",
+        "gloss_hint": "attempt"
+      },
+      {
+        "form": "Krise",
+        "lemma": "Krise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bewältigen",
+        "lemma": "bewältigen",
+        "pos": "verb",
+        "gloss_hint": "manage"
+      }
     ]
   },
   "8cb862f20c": {
@@ -16891,11 +17061,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to risk something",
     "source": "wiktionary",
     "lemmas": [
       "Spiel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8cb8899a81": {
     "text": "„Ein Arzt erklärte Ingvald, dass es sich um eine recht gewöhnliche Folge einer Apoplexie handelte, die von den Psychiatern als akute Psychose bezeichnet wird.“",
@@ -18133,10 +18304,55 @@
   },
   "8cc17c2bc0": {
     "text": "Das b steht im Wort „nebenbei“ an dritter und sechster Stelle.",
-    "translation": null,
+    "translation": "The letter b appears in the word \"nebenbei\" in the third and sixth position.",
     "source": "wiktionary",
     "lemmas": [
       "b"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "b",
+        "lemma": "b",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "steht",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wort",
+        "lemma": "Wort",
+        "pos": "noun",
+        "gloss_hint": "word"
+      },
+      {
+        "form": "nebenbei",
+        "lemma": "nebenbei",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "dritter",
+        "lemma": "dritter",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "sechster",
+        "lemma": "sechster",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stelle",
+        "lemma": "Stelle",
+        "pos": "noun",
+        "gloss_hint": "position"
+      }
     ]
   },
   "8cc2fb6a96": {
@@ -18701,22 +18917,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be scared stiff",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8ccacbff96": {
     "text": "sich einen Bauch stehen lassen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to let oneself get a beer belly",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8ccb8add09": {
     "text": "„Und die Kinder weinten oft abends in ihren Bettchen.“",
@@ -20735,11 +20953,12 @@
     "type": "expression",
     "note": "ein heikles Problem besprechen, eine im übertragenen Sinn heiße Sache anfassen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to tackle a hot potato",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8ce419c3c3": {
     "text": "„Nach seinem langen Ausflug vom Vortag meldete sich bereits am Morgen starker Hunger zurück.“",
@@ -21278,10 +21497,61 @@
   },
   "8ced6cbf9a": {
     "text": "Könnte es sein, dass die Selbstheilungskräfte unseres Körpers nicht mehr nachkommen, weil wir durch unsere Lebensweise, durch das, was wir tun, und durch das, was wir missachten, den Bogen überspannen?",
-    "translation": null,
+    "translation": "Could it be that the self-healing powers of our body can no longer keep up because we overreach through our lifestyle, through what we do, and through what we disregard?",
     "source": "wiktionary",
     "lemmas": [
       "den Bogen überspannen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Selbstheilungskräfte",
+        "lemma": "Selbstheilungskraft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Körpers",
+        "lemma": "Körper",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "nachkommen",
+        "lemma": "nachkommen",
+        "pos": "verb",
+        "gloss_hint": "keep up"
+      },
+      {
+        "form": "Lebensweise",
+        "lemma": "Lebensweise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tun",
+        "lemma": "tun",
+        "pos": "verb",
+        "gloss_hint": "do"
+      },
+      {
+        "form": "missachten",
+        "lemma": "missachten",
+        "pos": "verb",
+        "gloss_hint": "disregard"
+      },
+      {
+        "form": "Bogen",
+        "lemma": "Bogen",
+        "pos": "noun",
+        "gloss_hint": "arch"
+      },
+      {
+        "form": "überspannen",
+        "lemma": "überspannen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "8ced6d4017": {
@@ -21358,11 +21628,13 @@
   },
   "8ced7f770c": {
     "text": "Wessen Hund ist das? (= Wem gehört dieser Hund?)",
-    "translation": null,
+    "translation": "Whose dog is that? (= Who does this dog belong to?)",
     "source": "wiktionary",
     "lemmas": [
       "wessen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "8ced9e5330": {
     "text": "„Komm, du schönes Abendlicht!",
@@ -21822,11 +22094,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be the boss at home",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8cf7549bdc": {
     "text": "Der Ring der ganzen Zahlen bedeutet, dass sie unter anderem bezüglich der Addition einen Ring bilden.",
@@ -21908,10 +22181,61 @@
   },
   "8cf7c0bbd8": {
     "text": "„Es war das Modell einer prächtigen Jacht und die riesige Fernsteuerung mit zwei Antennen trug der Sohn stolz an einem Gurt um den Hals.“",
-    "translation": null,
+    "translation": "It was the model of a magnificent yacht, and the son proudly wore the huge remote control with two antennas on a strap around his neck.",
     "source": "wiktionary",
     "lemmas": [
       "Jacht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Modell",
+        "lemma": "Modell",
+        "pos": "noun",
+        "gloss_hint": "model"
+      },
+      {
+        "form": "Jacht",
+        "lemma": "Jacht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fernsteuerung",
+        "lemma": "Fernsteuerung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Antennen",
+        "lemma": "Antenne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sohn",
+        "lemma": "Sohn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stolz",
+        "lemma": "stolz",
+        "pos": "adjective",
+        "gloss_hint": "proud"
+      },
+      {
+        "form": "Gurt",
+        "lemma": "Gurt",
+        "pos": "noun",
+        "gloss_hint": "strap"
+      },
+      {
+        "form": "Hals",
+        "lemma": "Hals",
+        "pos": "noun",
+        "gloss_hint": "neck"
+      }
     ]
   },
   "8cf7c585fb": {
@@ -21928,11 +22252,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If you don't have wine, you have to drink water.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8cf82b6203": {
     "text": "Üttfeld liegt in Deutschlands Südwesten.",
@@ -22044,10 +22369,25 @@
   },
   "8cf9310057": {
     "text": "Roland ist mein Ex.",
-    "translation": null,
+    "translation": "Roland is my ex.",
     "source": "wiktionary",
     "lemmas": [
       "Ex"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Roland",
+        "lemma": "Roland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ex",
+        "lemma": "Ex",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "8cfa2cf4ce": {
@@ -22226,22 +22566,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not someone's thing",
     "source": "wiktionary",
     "lemmas": [
       "Ding"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8cfcc81ef3": {
     "text": "im höchsten Grade",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to the highest degree",
     "source": "wiktionary",
     "lemmas": [
       "Grad"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8cfd72eb36": {
     "text": "Viele Bands lösen sich nach ein paar Jahren wieder auf.",
@@ -22350,11 +22692,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to drown in alcohol",
     "source": "wiktionary",
     "lemmas": [
       "ertränken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8cff42fc8a": {
     "text": "Du guckst so, als ob dir jemand auf die Füße getreten ist.",

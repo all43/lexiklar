@@ -862,10 +862,43 @@
   },
   "9e09dbf33d": {
     "text": "Die Kinder pflegten das verletzte Tierchen wieder gesund.",
-    "translation": null,
+    "translation": "The children nursed the injured little animal back to health.",
     "source": "wiktionary",
     "lemmas": [
       "Tierchen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "pflegten",
+        "lemma": "pflegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "verletzte",
+        "lemma": "verletzt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tierchen",
+        "lemma": "Tierchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesund",
+        "lemma": "gesund",
+        "pos": "adjective",
+        "gloss_hint": "healthy"
+      }
     ]
   },
   "9e0a7c52a3": {
@@ -2397,10 +2430,37 @@
   },
   "9e167ceef3": {
     "text": "„Sophie Scholl sagt den Beamten ins Gesicht, dass sie »mit dem Nationalsozialismus nichts zu tun haben« wolle.“",
-    "translation": null,
+    "translation": "\"Sophie Scholl tells the officials to their face that she wants nothing to do with National Socialism.\"",
     "source": "wiktionary",
     "lemmas": [
       "mit etwas nichts zu tun haben wollen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sophie Scholl",
+        "lemma": "Sophie Scholl",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beamten",
+        "lemma": "Beamte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesicht",
+        "lemma": "Gesicht",
+        "pos": "noun",
+        "gloss_hint": "face (human)"
+      },
+      {
+        "form": "Nationalsozialismus",
+        "lemma": "Nationalsozialismus",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "9e1763577e": {
@@ -2933,12 +2993,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go the rounds",
     "source": "wiktionary",
     "lemmas": [
       "Runde"
     ],
-    "ref": "phrases/die Runde machen"
+    "ref": "phrases/die Runde machen",
+    "translation_model": "openai/gpt-4.1"
   },
   "9e1e4705bb": {
     "text": "Der alte Sioux kannte seine Frau schon als Mädchen.",
@@ -3053,11 +3114,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Concessions must be made.",
     "source": "wiktionary",
     "lemmas": [
       "Aber"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e1fe81230": {
     "text": "„In den folgenden Tagen spitzte sich die Lage immer mehr zu, und die Einwohner beschreiben in den sozialen Medien, wie entsetzlich sich die heftigen Bombardierungen aus Israel anfühlen.“",
@@ -3623,11 +3685,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to rescue someone from the gutter",
     "source": "wiktionary",
     "lemmas": [
       "holen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e290cabf2": {
     "text": "„Jeden Tag bekommt unser Hotel um 16 Uhr eine neue Lieferung von 99 Litern frischem Heilquellwasser. Das Wasser ist in 0,33-Liter-Flaschen abgefüllt.“",
@@ -4794,18 +4857,46 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not have much going for oneself",
     "source": "wiktionary",
     "lemmas": [
       "Schlamm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e334c407a": {
     "text": "„Christian jedoch, der von einem anderen Knaben dorthin geführt wurde, schlägt ihm ein Schnippchen, und so bleibt Cupido verborgen, was er gesehen hatte.“",
-    "translation": null,
+    "translation": "\"But Christian, who was led there by another boy, plays a trick on him, and so Cupido remains unaware of what he had seen.\"",
     "source": "wiktionary",
     "lemmas": [
       "jemandem ein Schnippchen schlagen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Christian",
+        "lemma": "Christian",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Knaben",
+        "lemma": "Knabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schnippchen",
+        "lemma": "Schnippchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Cupido",
+        "lemma": "Cupido",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "9e33f4b398": {
@@ -4861,11 +4952,12 @@
     "type": "expression",
     "note": "unschuldig sein; sich nichts haben zuschulden kommen lassen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a clean record",
     "source": "wiktionary",
     "lemmas": [
       "Weste"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e3460aa09": {
     "text": "„Die Stimmung war deutlich besser geworden und der Distrikt verzeichnete viel weniger Konflikte zwischen Weißen und Indianern als das restliche Amerika.“",
@@ -5211,10 +5303,49 @@
   },
   "9e35caa2b5": {
     "text": "„Sisi bedankte sich beim Taxifahrer und krabbelte müde aus dem Mercedes.“",
-    "translation": null,
+    "translation": "\"Sisi thanked the taxi driver and wearily crawled out of the Mercedes.\"",
     "source": "wiktionary",
     "lemmas": [
       "Taxifahrer"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sisi",
+        "lemma": "Sisi",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bedankte",
+        "lemma": "bedanken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Taxifahrer",
+        "lemma": "Taxifahrer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "krabbelte",
+        "lemma": "krabbeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "müde",
+        "lemma": "müde",
+        "pos": "adjective",
+        "gloss_hint": "weary"
+      },
+      {
+        "form": "Mercedes",
+        "lemma": "Mercedes",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "9e35ccaf96": {
@@ -6377,10 +6508,37 @@
   },
   "9e3ee7f22e": {
     "text": "„Denn von den 230 Autos, die zwischen 1917 und 1972 gebaut wurden, werden nur wenige wirklich just for fun gelenkt.“",
-    "translation": null,
+    "translation": "\"For of the 230 cars that were built between 1917 and 1972, only a few are actually driven just for fun.\"",
     "source": "wiktionary",
     "lemmas": [
       "just for fun"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Autos",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gebaut",
+        "lemma": "bauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wirklich",
+        "lemma": "wirklich",
+        "pos": "adjective",
+        "gloss_hint": "actual"
+      },
+      {
+        "form": "gelenkt",
+        "lemma": "lenken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "9e3ef804bc": {
@@ -7143,10 +7301,31 @@
   },
   "9e46de6739": {
     "text": "„Das mag leichtsinnig erscheinen, aber nichtsdestoweniger kann ich es nicht dafür halten.“",
-    "translation": null,
+    "translation": "\"That may seem reckless, but nevertheless I cannot regard it as justified.\"",
     "source": "wiktionary",
     "lemmas": [
       "nichtsdestoweniger"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "leichtsinnig",
+        "lemma": "leichtsinnig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "erscheinen",
+        "lemma": "erscheinen",
+        "pos": "verb",
+        "gloss_hint": "seem"
+      },
+      {
+        "form": "halten",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": "regard"
+      }
     ]
   },
   "9e47ccee8d": {
@@ -7268,11 +7447,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A prophet is not without honor except in his own country.",
     "source": "wiktionary",
     "lemmas": [
       "Land"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e483dd21d": {
     "text": "„Dieser Tage waren Mönche aus dem Tibet mit ihren orangefarbenen Kutten zu Gast in Norddeutschland.“",
@@ -9113,12 +9293,13 @@
     "type": "expression",
     "note": "sehr still sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be able to hear a pin drop",
     "source": "wiktionary",
     "lemmas": [
       "Nadel"
     ],
-    "ref": "phrases/eine Nadel fallen hören können"
+    "ref": "phrases/eine Nadel fallen hören können",
+    "translation_model": "openai/gpt-4.1"
   },
   "9e5b446d5d": {
     "text": "Ich kann diese Wunde bei Vollmond besprechen, vielleicht heilt sie dann besser.",
@@ -9144,11 +9325,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to (not) fill the position",
     "source": "wiktionary",
     "lemmas": [
       "Platz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e5c32c4a5": {
     "text": "Früher konnte man auf Flügen Raucher buchen. Im Raucher war meistens noch ein Platz frei.",
@@ -9497,35 +9679,38 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to set someone up for trouble",
     "source": "wiktionary",
     "lemmas": [
       "Loch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e5ce234d6": {
     "text": "gut Holz",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "good luck",
     "source": "wiktionary",
     "lemmas": [
       "gut",
       "Holz"
     ],
-    "ref": "phrases/gut Holz"
+    "ref": "phrases/gut Holz",
+    "translation_model": "openai/gpt-4.1"
   },
   "9e5f2ac10c": {
     "text": "das lobe ich mir",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's just what I like",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e5f51bda0": {
     "text": "„Christian hat von Kindesbeinen an mit seinen Trommeln die Ruhe in Haus und Umgebung empfindlich gestört.“",
@@ -10228,10 +10413,91 @@
   },
   "9e6b43f8e3": {
     "text": "Damit nicht Hinz und Kunz sich für hochbegabt erklären kann, will die Studienstiftung die exzellenten Selbstbewerber vorher ausfiltern: durch einen Test, der neben der Intelligenz die praktische Begabung und soziale Kompetenzen erfassen soll.",
-    "translation": null,
+    "translation": "So that not just anyone can declare themselves gifted, the scholarship foundation wants to pre-filter the excellent self-applicants: through a test that should assess intelligence, practical talent, and social competencies.",
     "source": "wiktionary",
     "lemmas": [
       "Hinz und Kunz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hinz",
+        "lemma": "Hinz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kunz",
+        "lemma": "Kunz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hochbegabt",
+        "lemma": "hochbegabt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "erklären",
+        "lemma": "erklären",
+        "pos": "verb",
+        "gloss_hint": "declare"
+      },
+      {
+        "form": "Studienstiftung",
+        "lemma": "Studienstiftung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "exzellenten",
+        "lemma": "exzellent",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Selbstbewerber",
+        "lemma": "Selbstbewerber",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausfiltern",
+        "lemma": "ausfiltern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Test",
+        "lemma": "Test",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Intelligenz",
+        "lemma": "Intelligenz",
+        "pos": "noun",
+        "gloss_hint": "intelligence"
+      },
+      {
+        "form": "Begabung",
+        "lemma": "Begabung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kompetenzen",
+        "lemma": "Kompetenz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erfassen",
+        "lemma": "erfassen",
+        "pos": "verb",
+        "gloss_hint": "comprehend"
+      }
     ]
   },
   "9e6b67e009": {
@@ -10422,12 +10688,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "on an empty stomach",
     "source": "wiktionary",
     "lemmas": [
       "nüchtern"
     ],
-    "ref": "phrases/auf nüchternen Magen"
+    "ref": "phrases/auf nüchternen Magen",
+    "translation_model": "openai/gpt-4.1"
   },
   "9e6dba4f2d": {
     "text": "„Denn auf dem trüben Wasser der Lagune fetzten Söhne der Wüste mit wild flatternden Kopftüchern auf lärmenden Scootern, Rennbooten und hübschen kleinen Yachten hin und her; in Feiertagsstimmung auch sie.“",
@@ -10608,11 +10875,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be extremely hungry",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e715e75c8": {
     "text": "Ich habe Sehnsucht nach dir.",
@@ -10963,11 +11231,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to try to please both sides",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e752c7485": {
     "text": "„Seine Zeichnungen und Radierungen aus den Jahren zuvor belegen eine unglaubliche Akribie und Ausdauer, als wollte er das Bild erzwingen.“",
@@ -11094,11 +11363,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to eat like a bird",
     "source": "wiktionary",
     "lemmas": [
       "Spatz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e7595bb13": {
     "text": "„Nun zu den Maschen: Eine Masche ist zum Beispiel der Weg von der Spannungsquelle U_0 über den Widerstand R_1 zurück zur Spannungsquelle.“",
@@ -11219,11 +11489,12 @@
     "type": "expression",
     "note": "etwas verstanden haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have understood something",
     "source": "wiktionary",
     "lemmas": [
       "fressen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e75e897e1": {
     "text": "Er ist zwar nur ein Amateur, aber mit viel Fachwissen.",
@@ -11535,11 +11806,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "signed and sealed",
     "source": "wiktionary",
     "lemmas": [
       "Tüte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e77d0f72e": {
     "text": "„Und wer nicht Holzklasse fliegen wollte, aber sollte, wartete mit seiner Buchung eben so lange, bis nur noch die Plätze mit viel Beinfreiheit gleich hinter dem Cockpit frei waren. Das ist nicht nur deutlich angenehmer, sondern gibt obendrein auch mehr Bonusmeilen - die man dann selbst für den nächsten Urlaub oder die neue Kaffeekanne nutzen kann.“",
@@ -11870,11 +12142,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something passes through someone's hands",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e799fe1db": {
     "text": "„Stundenlang wühlte sie in den Abfällen nach etwas Verwertbarem. Nach Dingen, mit denen sich ein paar peruanische Sols verdienen ließen.“",
@@ -12100,10 +12373,31 @@
   },
   "9e79e51808": {
     "text": "Der Rötende Schirmling ist eine Pilzsorte.",
-    "translation": null,
+    "translation": "The blusher is a type of mushroom.",
     "source": "wiktionary",
     "lemmas": [
       "Rötender Schirmling"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rötende",
+        "lemma": "rötend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schirmling",
+        "lemma": "Schirmling",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pilzsorte",
+        "lemma": "Pilzsorte",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "9e7aaf390b": {
@@ -12201,12 +12495,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bear fruit",
     "source": "wiktionary",
     "lemmas": [
       "Frucht"
     ],
-    "ref": "phrases/Früchte tragen"
+    "ref": "phrases/Früchte tragen",
+    "translation_model": "openai/gpt-4.1"
   },
   "9e7f29071a": {
     "text": "Der Nerv wurde künstlich gereizt.",
@@ -12332,10 +12627,43 @@
   },
   "9e807101c7": {
     "text": "Sein Versuch den starken Mann zu markieren war nicht sehr erfolgreich.",
-    "translation": null,
+    "translation": "His attempt to play the tough guy was not very successful.",
     "source": "wiktionary",
     "lemmas": [
       "den starken Mann markieren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Versuch",
+        "lemma": "Versuch",
+        "pos": "noun",
+        "gloss_hint": "attempt"
+      },
+      {
+        "form": "starken",
+        "lemma": "stark",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "markieren",
+        "lemma": "markieren",
+        "pos": "verb",
+        "gloss_hint": "pretend"
+      },
+      {
+        "form": "erfolgreich",
+        "lemma": "erfolgreich",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "9e80ebdb74": {
@@ -12693,11 +13021,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "through informal channels",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e8263f5d5": {
     "text": "„Der Fette Vetter ist der Cousin vom Dicken Michi und im Vergleich zu ihm wirkt der Dicke Michi plötzlich so dünn wie eine Spaghetti.“",
@@ -13331,11 +13660,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fatten up one's belly",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e88b77ff2": {
     "text": "„Jetzt erweiterten die Entwickler OpenEyes um [ein Modul], mit dem Chirurgen ihre Befunde und Behandlungen inklusive Diagrammen und Bildern elektronisch erfassen können.“",
@@ -13471,10 +13801,31 @@
   },
   "9e88e40cb8": {
     "text": "Sein Vater wurde damals vom KGB verhört.",
-    "translation": null,
+    "translation": "His father was interrogated by the KGB at that time.",
     "source": "wiktionary",
     "lemmas": [
       "KGB"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vater",
+        "lemma": "Vater",
+        "pos": "noun",
+        "gloss_hint": "father"
+      },
+      {
+        "form": "KGB",
+        "lemma": "KGB",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verhört",
+        "lemma": "verhören",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "9e898a5610": {
@@ -14308,22 +14659,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a slap on the wrist",
     "source": "wiktionary",
     "lemmas": [
       "Pfote"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e93c3c50c": {
     "text": "ein Narr kann mehr fragen, als zehn Weise beantworten können",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A fool can ask more questions than ten wise men can answer.",
     "source": "wiktionary",
     "lemmas": [
       "Narr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e93c81c8d": {
     "text": "Nur keine Bange! Das wird schon wieder.",
@@ -15002,11 +15355,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to knock one's knees together (from cold or fear)",
     "source": "wiktionary",
     "lemmas": [
       "klopfen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9e9c12766b": {
     "text": "Am bewaldeten Ufer der Havel bei Oranienburg sind alle Flecken besetzt, an denen man mit einer Angel ausschwingen kann. Niemand sieht auf, als ich vorbeigehe. […] Ich wage nicht, nach Tipps zu fragen, und klettere auf einen glitschigen Baumstamm, der im Wasser modert.",
@@ -15627,11 +15981,12 @@
     "type": "expression",
     "note": "Ausdruck des Unbeirrtseins (meist von einer bestimmten politischen Linie)",
     "synonyms": [],
-    "translation": null,
+    "translation": "The dogs bark, but the caravan moves on.",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9ea2c9fe43": {
     "text": "„Die Mannschaft ist gut und willig, hat Qualität, aber steht leider auf einem bescheidenen Tabellenplatz.“",
@@ -15740,11 +16095,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fight someone with their own weapons",
     "source": "wiktionary",
     "lemmas": [
       "Waffe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9ea41f29a9": {
     "text": "„Im Risikosport verschaffen wir uns schon zu Lebzeiten einen Unsterblichkeitskick.“",
@@ -17510,11 +17866,12 @@
     "type": "expression",
     "note": "noch jung und unerfahren sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be wet behind the ears",
     "source": "wiktionary",
     "lemmas": [
       "feucht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9eb5ad47af": {
     "text": "„Der Bär grub sich dann zur Hibernierung unter einer zerfallenen Scheune dicht neben dem Weg ein und störte uns nicht, wir ihn auch nicht, und man bekam ihn nie zu Gesicht, nur im Vorfrühling roch man ihn, wenn der Wind von Südwesten wehte.“",
@@ -18036,11 +18393,13 @@
   },
   "9ebae31a69": {
     "text": "Wer tut sowas?; (ironisierend): Wer macht denn sowas!",
-    "translation": null,
+    "translation": "Who does such a thing?; (ironically): Who on earth does such a thing!",
     "source": "wiktionary",
     "lemmas": [
       "sowas"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "9ebba70fb0": {
     "text": "„Nachdem sie die Schaluppe an Land gezogen hatten, hatte der Bootsmann die Matrosen aufgeteilt, um auf der Suche nach Trinkwasser mehr Chancen zu haben.“",
@@ -18317,18 +18676,46 @@
     "type": "expression",
     "note": "genug haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be fed up",
     "source": "wiktionary",
     "lemmas": [
       "streichen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9ebc84dc79": {
     "text": "„Bei dieser Kälte nach draußen gehen? Du hast wohl eine Meise!“",
-    "translation": null,
+    "translation": "\"Go outside in this cold? You must be crazy!\"",
     "source": "wiktionary",
     "lemmas": [
       "eine Meise haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kälte",
+        "lemma": "Kälte",
+        "pos": "noun",
+        "gloss_hint": "cold"
+      },
+      {
+        "form": "draußen",
+        "lemma": "draußen",
+        "pos": "adverb",
+        "gloss_hint": "outside"
+      },
+      {
+        "form": "gehen",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "go"
+      },
+      {
+        "form": "Meise",
+        "lemma": "Meise",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "9ebcb0e450": {
@@ -19195,11 +19582,44 @@
   },
   "9ec21f2b6b": {
     "text": "Der Schlitten mit AA XX-999 bleibt heute beim Blitzmarathon in der Garage.",
-    "translation": null,
+    "translation": "The sled with registration AA XX-999 stays in the garage today during the speed marathon.",
     "source": "wiktionary",
     "lemmas": [
       "AA",
       "BO"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schlitten",
+        "lemma": "Schlitten",
+        "pos": "noun",
+        "gloss_hint": "sled"
+      },
+      {
+        "form": "bleibt",
+        "lemma": "bleiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "Blitzmarathon",
+        "lemma": "Blitzmarathon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Garage",
+        "lemma": "Garage",
+        "pos": "noun",
+        "gloss_hint": "garage"
+      }
     ]
   },
   "9ec3905f0c": {
@@ -19898,10 +20318,61 @@
   },
   "9ecfbcdc8d": {
     "text": "Mein Freund Harvey, mit dem das Wiener Volkstheater seine Spielzeit beschließt, ist ein alter Hase unter den Boulevardkomödien.",
-    "translation": null,
+    "translation": "My friend Harvey, with whom the Vienna People's Theatre concludes its season, is an old hand at boulevard comedies.",
     "source": "wiktionary",
     "lemmas": [
       "ein alter Hase sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Freund",
+        "lemma": "Freund",
+        "pos": "noun",
+        "gloss_hint": "friend"
+      },
+      {
+        "form": "Wiener",
+        "lemma": "Wiener",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Volkstheater",
+        "lemma": "Volkstheater",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spielzeit",
+        "lemma": "Spielzeit",
+        "pos": "noun",
+        "gloss_hint": "season"
+      },
+      {
+        "form": "beschließt",
+        "lemma": "beschließen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "alter",
+        "lemma": "alt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hase",
+        "lemma": "Hase",
+        "pos": "noun",
+        "gloss_hint": "old hand"
+      },
+      {
+        "form": "Boulevardkomödien",
+        "lemma": "Boulevardkomödie",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "9ed033ed64": {
@@ -20961,11 +21432,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "After a bad day comes a good evening.",
     "source": "wiktionary",
     "lemmas": [
       "Abend"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9ed6dac919": {
     "text": "Bisher kann man noch nicht sagen, ob der Weltraum unendlich oder einfach sehr groß ist.",
@@ -21310,11 +21782,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to judge someone harshly",
     "source": "wiktionary",
     "lemmas": [
       "Stab"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9edac9167f": {
     "text": "Die Hauptstadt von Australien ist Canberra.",
@@ -22519,10 +22992,55 @@
   },
   "9eed9f1f7e": {
     "text": "[Coronapandemie 2022:] „Das Risiko der Wiederansteckungsgefahr bleibt noch an vielen Stellen rätselhaft. Fest steht aber: BA.2 verbreitet sich schnell.“",
-    "translation": null,
+    "translation": "[COVID-19 pandemic 2022:] \"The risk of reinfection remains unclear in many respects. But one thing is certain: BA.2 spreads quickly.\"",
     "source": "wiktionary",
     "lemmas": [
       "rätselhaft"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Risiko",
+        "lemma": "Risiko",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wiederansteckungsgefahr",
+        "lemma": "Wiederansteckungsgefahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bleibt",
+        "lemma": "bleiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "rätselhaft",
+        "lemma": "rätselhaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fest",
+        "lemma": "fest",
+        "pos": "adjective",
+        "gloss_hint": "fixed"
+      },
+      {
+        "form": "verbreitet",
+        "lemma": "verbreiten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schnell",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": "fast"
+      }
     ]
   },
   "9eee356015": {
@@ -23519,22 +24037,24 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "At night, all cats are gray.",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9efa51cd8d": {
     "text": "nur sein eigenes Fell anhaben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have nothing but the shirt on your back",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9efac36b01": {
     "text": "„Goethes Biographie wird in den Schlitz geworfen, sofort fällt vorn die Kurzdefinition heraus: ‚je oller, je doller.‘“",

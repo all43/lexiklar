@@ -3031,11 +3031,12 @@
     "type": "expression",
     "note": "schädliche Mittel einsetzen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to fight fire with fire",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "45180ceae0": {
     "text": "„Vorsteher Oliver Kahn erklärt ‚bei der Ehre aller meiner Rolexe‘, er lebe jetzt ‚von einer Art Bürgergeld und meinem kargen Schonvermögen‘.“",
@@ -8298,10 +8299,37 @@
   },
   "454123ab7c": {
     "text": "Die MA 48 ist für die Müllabfuhr in Wien verantwortlich.",
-    "translation": null,
+    "translation": "MA 48 is responsible for garbage collection in Vienna.",
     "source": "wiktionary",
     "lemmas": [
       "MA"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "MA",
+        "lemma": "MA",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Müllabfuhr",
+        "lemma": "Müllabfuhr",
+        "pos": "noun",
+        "gloss_hint": "garbage collection"
+      },
+      {
+        "form": "Wien",
+        "lemma": "Wien",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verantwortlich",
+        "lemma": "verantwortlich",
+        "pos": "adjective",
+        "gloss_hint": "responsible"
+      }
     ]
   },
   "4543dd3079": {
@@ -8565,11 +8593,12 @@
     "type": "expression",
     "note": "umgangssprachlich: etwas zurückgelegt, auf längere Frist bevorratet haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have something in reserve",
     "source": "wiktionary",
     "lemmas": [
       "Halde"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4546fcf851": {
     "text": "„Eine schmale Frau mit Dauerwelle und Sonnenbrand im Gesicht springt auf.“",
@@ -9632,11 +9661,12 @@
     "type": "expression",
     "note": "verrückt sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be crazy",
     "source": "wiktionary",
     "lemmas": [
       "ticken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "454ec3cffd": {
     "text": "Wenn die Frist herum ist, kann man sich nicht mehr anmelden.",
@@ -9846,10 +9876,37 @@
   },
   "4550bff0d1": {
     "text": "Der Hauptsitz vom MDR befindet sich in Leipzig.",
-    "translation": null,
+    "translation": "The headquarters of MDR is located in Leipzig.",
     "source": "wiktionary",
     "lemmas": [
       "MDR"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hauptsitz",
+        "lemma": "Hauptsitz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "MDR",
+        "lemma": "MDR",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "befindet",
+        "lemma": "befinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leipzig",
+        "lemma": "Leipzig",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "45520d9d0e": {
@@ -10572,11 +10629,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "glitz and glamour",
     "source": "wiktionary",
     "lemmas": [
       "Glanz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "45577764e0": {
     "text": "„Besser aber wäre es, nicht zu sterben und den Duft trotzdem zu besitzen, oder zumindest seinen Verlust so lange als irgend möglich hinauszuzögern.“",
@@ -10733,11 +10791,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the coast is clear",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "45599ee5ef": {
     "text": "Ich hörte noch wie der Motor des Mustangs beschleunigte, danach war es wieder totenstill.",
@@ -13188,11 +13247,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When the cat's away, the mice will play.",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "456c8cc1ac": {
     "text": "„»Sie tun so, als ob es die Probleme nicht gäbe und machen wie gewohnt weiter«, sagt sie.“",
@@ -13800,12 +13860,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to separate the wheat from the chaff",
     "source": "wiktionary",
     "lemmas": [
       "Weizen"
     ],
-    "ref": "phrases/die Spreu vom Weizen trennen"
+    "ref": "phrases/die Spreu vom Weizen trennen",
+    "translation_model": "openai/gpt-4.1"
   },
   "457538020c": {
     "text": "„Elma lächelte instinktiv zurück, als er ihr zur Begrüßung die Hand reichte und sich vorstellte.“",
@@ -14233,10 +14294,55 @@
   },
   "4579c188f5": {
     "text": "„Im Deutschen werden sie, wie auch vielzellige Rot- und Grünalgen, allgemein als Tang bezeichnet […].“",
-    "translation": null,
+    "translation": "In German, they, like multicellular red and green algae, are generally referred to as seaweed.",
     "source": "wiktionary",
     "lemmas": [
       "vielzellig"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Deutschen",
+        "lemma": "Deutsche",
+        "pos": "noun",
+        "gloss_hint": "German language"
+      },
+      {
+        "form": "vielzellige",
+        "lemma": "vielzellig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rot-",
+        "lemma": "Rot",
+        "pos": "noun",
+        "gloss_hint": "red"
+      },
+      {
+        "form": "Grünalgen",
+        "lemma": "Grünalge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "allgemein",
+        "lemma": "allgemein",
+        "pos": "adjective",
+        "gloss_hint": "universal"
+      },
+      {
+        "form": "Tang",
+        "lemma": "Tang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bezeichnet",
+        "lemma": "bezeichnen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "457a77ca9d": {
@@ -14992,11 +15098,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have to search high and low for something",
     "source": "wiktionary",
     "lemmas": [
       "Laterne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "45809e46cd": {
     "text": "Lasst den Quatsch, jetzt wird aufgeräumt und Abendbrot gegessen!",
@@ -15039,11 +15146,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a piece of your mind",
     "source": "wiktionary",
     "lemmas": [
       "Deckel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "458216b31a": {
     "text": "„Der Mann, der heute in den Geschichtsbüchern als Führer der Solidarnośćbewegung und als der Zerstörer des Kommunismus gilt, lebte mit seiner Frau Danuta (die für ihn später den Nobelpreis in Stockholm abholen sollte) in einer winzigen Wohnung in einer Betonsiedlung am Rande Danzigs.“",
@@ -15542,11 +15650,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to make someone a scapegoat",
     "source": "wiktionary",
     "lemmas": [
       "Sündenbock"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "45836646dc": {
     "text": "„Zur Tatwaffe befragt, sagte mein Sohn, ihm sei das Schießeisen - übrigens eine 7-mm-Tokarev aus sowjetischen Armeebeständen - schon vor eineinhalb Jahren zur Hand gewesen.“",
@@ -15698,11 +15807,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Names are just smoke and mirrors",
     "source": "wiktionary",
     "lemmas": [
       "Schall"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4584c40419": {
     "text": "Das ist bald zwei Jahre her, dass die beiden geheiratet haben.",
@@ -16457,10 +16567,73 @@
   },
   "458bfde582": {
     "text": "Ein bekanntes onomasiologisches Wörterbuch des Deutschen ist von Franz Dornseiff: Der deutsche Wortschatz nach Sachgruppen, das in etlichen Auflagen erschienen ist.",
-    "translation": null,
+    "translation": "A well-known onomasiological dictionary of German is by Franz Dornseiff: German Vocabulary by Subject Groups, which has appeared in several editions.",
     "source": "wiktionary",
     "lemmas": [
       "onomasiologisches Wörterbuch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "bekanntes",
+        "lemma": "bekannt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "onomasiologisches",
+        "lemma": "onomasiologisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wörterbuch",
+        "lemma": "Wörterbuch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschen",
+        "lemma": "Deutsche",
+        "pos": "noun",
+        "gloss_hint": "German language"
+      },
+      {
+        "form": "Franz",
+        "lemma": "Franz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dornseiff",
+        "lemma": "Dornseiff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wortschatz",
+        "lemma": "Wortschatz",
+        "pos": "noun",
+        "gloss_hint": "vocabulary"
+      },
+      {
+        "form": "Sachgruppen",
+        "lemma": "Sachgruppe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auflagen",
+        "lemma": "Auflage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erschienen",
+        "lemma": "erscheinen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "458ca3c75d": {
@@ -17432,11 +17605,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to leave someone out in the cold",
     "source": "wiktionary",
     "lemmas": [
       "lang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4594f3a246": {
     "text": "„Ich war stolz, daß ich einen so elenden Versager zustande gebracht hatte.“",
@@ -17787,11 +17961,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the donkey is looking out",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "459759fe74": {
     "text": "„Ein Psychiater von heute hätte vielleicht die verschiedenartigsten narzißstischen Persönlichkeitsstörungen diagnostiziert.“",
@@ -20727,11 +20902,12 @@
     "type": "expression",
     "note": "Warnung",
     "synonyms": [],
-    "translation": null,
+    "translation": "a shot across the bow",
     "source": "wiktionary",
     "lemmas": [
       "Bug"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "45b02492de": {
     "text": "Für die [Erd-]Erwärmung sei vor allem die Zunahme atmosphärischen Kohlendioxids verantwortlich, sagen die NASA- und NOAA-Wissenschaftler. Seit den 1960er Jahren stieg der CO2-Anteil von 315 ppm (Teilchen pro Million) auf etwa 400 ppm. Grund dafür ist vor allem die Verbrennung fossiler Rohstoffe.",
@@ -21258,10 +21434,73 @@
   },
   "45b8cfdf68": {
     "text": "„Zusätzliche 1,2 Milliarden Euro hatten Berlin, Brandenburg und der Bund Ende 2012 für die Fertigstellung des BER bewilligt.“",
-    "translation": null,
+    "translation": "An additional 1.2 billion euros had been approved by Berlin, Brandenburg, and the federal government at the end of 2012 for the completion of BER.",
     "source": "wiktionary",
     "lemmas": [
       "BER"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zusätzliche",
+        "lemma": "zusätzlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Milliarden",
+        "lemma": "Milliarde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "Berlin",
+        "lemma": "Berlin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Brandenburg",
+        "lemma": "Brandenburg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bund",
+        "lemma": "Bund",
+        "pos": "noun",
+        "gloss_hint": "federal government"
+      },
+      {
+        "form": "Ende",
+        "lemma": "Ende",
+        "pos": "noun",
+        "gloss_hint": "end"
+      },
+      {
+        "form": "Fertigstellung",
+        "lemma": "Fertigstellung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "BER",
+        "lemma": "BER",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bewilligt",
+        "lemma": "bewilligen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "45b8d135f1": {
@@ -23087,11 +23326,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the soup is too thin",
     "source": "wiktionary",
     "lemmas": [
       "Suppe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "45c85178da": {
     "text": "„Gekennzeichnete Wanderwege ermöglichen ein Betreten des Gebiets.“",
@@ -23293,18 +23533,46 @@
     "synonyms": [
       "Gen."
     ],
-    "translation": null,
+    "translation": "by the sweat of your brow you shall eat your bread",
     "source": "wiktionary",
     "lemmas": [
       "Brot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "45cafe6104": {
     "text": "Man sollte ihm keinen Vorwurf machen, denn er handelte nur entsprechend seiner Weisung.",
-    "translation": null,
+    "translation": "One should not blame him, because he acted only in accordance with his instructions.",
     "source": "wiktionary",
     "lemmas": [
       "entsprechend"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vorwurf",
+        "lemma": "Vorwurf",
+        "pos": "noun",
+        "gloss_hint": "accusation"
+      },
+      {
+        "form": "machen",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "make"
+      },
+      {
+        "form": "handelte",
+        "lemma": "handeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weisung",
+        "lemma": "Weisung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "45ce9faf2c": {
@@ -23746,10 +24014,37 @@
   },
   "45d9084594": {
     "text": "A: »Kannst Du ein Geheimnis für Dich behalten?« B: »Ich kann die Schnauze halten.«",
-    "translation": null,
+    "translation": "A: \"Can you keep a secret?\" B: \"I can keep my mouth shut.\"",
     "source": "wiktionary",
     "lemmas": [
       "die Schnauze halten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geheimnis",
+        "lemma": "Geheimnis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "behalten",
+        "lemma": "behalten",
+        "pos": "verb",
+        "gloss_hint": "keep"
+      },
+      {
+        "form": "Schnauze",
+        "lemma": "Schnauze",
+        "pos": "noun",
+        "gloss_hint": "mouth"
+      },
+      {
+        "form": "halten",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": "hold"
+      }
     ]
   },
   "45d99e4929": {
@@ -24046,11 +24341,12 @@
     "type": "expression",
     "note": "um jeden Preis vermeiden",
     "synonyms": [],
-    "translation": null,
+    "translation": "to avoid something like the plague",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "45dabb87ef": {
     "text": "Es [Europa] muss aufpassen, dass es in diesem Sandwich nicht zerquetscht wird.",
@@ -24346,11 +24642,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "wanting to have your cake and eat it too",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "45dfa6dae6": {
     "text": "„ ›Um wiedergeboren zu werden‹, sang Gibril Farishta, während er vom Himmel stürzte, ›mußt du erst sterben. Ho ji! Ho ji! Um weich zu landen am Busen der Erde, mußt du erst zum Vogel werden. Tat-Taa! Taka-tan! Um heiter zu genießen, müssen erst Tränen fließen. Wie willst du die Liebe wagen, mein Herr, ohne zu klagen? Baba, willst du wiedergeboren werden …‹ “",
@@ -24795,10 +25092,25 @@
   },
   "45e4c0d91c": {
     "text": "Frankfurt a. d. Oder (Frankfurt an der Oder)",
-    "translation": null,
+    "translation": "Frankfurt on the Oder (Frankfurt an der Oder)",
     "source": "wiktionary",
     "lemmas": [
       "a."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Frankfurt",
+        "lemma": "Frankfurt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Oder",
+        "lemma": "Oder",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "45e4d162f2": {
@@ -25715,10 +26027,43 @@
   },
   "45ed78746c": {
     "text": "Warum baust du dein Haus nicht an der Halde? Du hättest einen schönen Blick aufs Tal.",
-    "translation": null,
+    "translation": "Why don't you build your house on the slope? You would have a nice view of the valley.",
     "source": "wiktionary",
     "lemmas": [
       "Halde"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "baust",
+        "lemma": "bauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haus",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": "residence"
+      },
+      {
+        "form": "Halde",
+        "lemma": "Halde",
+        "pos": "noun",
+        "gloss_hint": "slope"
+      },
+      {
+        "form": "Blick",
+        "lemma": "Blick",
+        "pos": "noun",
+        "gloss_hint": "view"
+      },
+      {
+        "form": "Tal",
+        "lemma": "Tal",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "45ed8547eb": {
@@ -26301,11 +26646,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the black art",
     "source": "wiktionary",
     "lemmas": [
       "schwarz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "45f3591695": {
     "text": "Nachdem wir alles aufgegessen und ausgetrunken haben, können wir ja gehen.",
@@ -27452,10 +27798,55 @@
   },
   "45fca9a1f2": {
     "text": "Doch der jüngste Grand-Prix-Sieger aller Zeiten ist mit 21 Jahren ein alter Hase im Motorsport.",
-    "translation": null,
+    "translation": "Yet at 21 years old, the youngest Grand Prix winner of all time is an old hand in motorsport.",
     "source": "wiktionary",
     "lemmas": [
       "ein alter Hase sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "jüngste",
+        "lemma": "jüngste",
+        "pos": "noun",
+        "gloss_hint": "youngest"
+      },
+      {
+        "form": "Grand-Prix-Sieger",
+        "lemma": "Grand-Prix-Sieger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeiten",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "alter",
+        "lemma": "alt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hase",
+        "lemma": "Hase",
+        "pos": "noun",
+        "gloss_hint": "hare"
+      },
+      {
+        "form": "Motorsport",
+        "lemma": "Motorsport",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "45ff4dba60": {

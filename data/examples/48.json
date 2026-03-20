@@ -2249,10 +2249,67 @@
   },
   "4817ca31a7": {
     "text": "„Ich trinke einen weißen Gspritzten und lese Douglas Adams, zum vierten Mal in meinem Leben, ich bin gerade beim Satz: ‚Don’t panic‘, dabei trifft mich der Schlag. Aus die Maus. Ich bin 107.“",
-    "translation": null,
+    "translation": "I'm drinking a white spritzer and reading Douglas Adams for the fourth time in my life; I'm just at the sentence: 'Don't panic' when I'm struck down. That's it. I'm 107.",
     "source": "wiktionary",
     "lemmas": [
       "aus die Maus"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "trinke",
+        "lemma": "trinken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "weißen",
+        "lemma": "weiß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gspritzten",
+        "lemma": "Gespritztes",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lese",
+        "lemma": "lesen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leben",
+        "lemma": "Leben",
+        "pos": "noun",
+        "gloss_hint": "life"
+      },
+      {
+        "form": "Satz",
+        "lemma": "Satz",
+        "pos": "noun",
+        "gloss_hint": "sentence"
+      },
+      {
+        "form": "trifft",
+        "lemma": "treffen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schlag",
+        "lemma": "Schlag",
+        "pos": "noun",
+        "gloss_hint": "stroke"
+      },
+      {
+        "form": "Maus",
+        "lemma": "Maus",
+        "pos": "noun",
+        "gloss_hint": "out"
+      }
     ]
   },
   "481956bcc8": {
@@ -3137,11 +3194,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to suspend someone from duty",
     "source": "wiktionary",
     "lemmas": [
       "Dienst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "481d335050": {
     "text": "in Schönheit sterben",
@@ -4996,23 +5054,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to escape with one's life",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "48319d6094": {
     "text": "auf gutem Fuß stehen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be on good terms",
     "source": "wiktionary",
     "lemmas": [
       "Fuß"
     ],
-    "ref": "phrases/auf gutem Fuß stehen"
+    "ref": "phrases/auf gutem Fuß stehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "4832054722": {
     "text": "„Sie haben fünf Passwörter, aber können sich nur an eins erinnern.“",
@@ -6487,11 +6547,12 @@
     "type": "expression",
     "note": "bildhafter Ausdruck für die Bewegungen hyperaktiver, unruhiger Kinder (insbesondere das Beine baumeln lassen)",
     "synonyms": [],
-    "translation": null,
+    "translation": "fidget like a hyperactive child",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "484201bb1e": {
     "text": "„Mittlerweile in Rente, gab sie sich reiselustig in ihrem Trabi.“",
@@ -7387,11 +7448,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put up a fierce fight for one's life",
     "source": "wiktionary",
     "lemmas": [
       "verkaufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "484cc3933f": {
     "text": "„Die soziale Frage entscheidet über den Erfolg des Friedens in Kolumbien.“",
@@ -8624,10 +8686,49 @@
   },
   "48599d30cc": {
     "text": "„Es beängstigt, dass in einigen Ländern, die während Jahren niemanden mehr hingerichtet haben, Todesurteile wieder an der Tagesordnung sind.“",
-    "translation": null,
+    "translation": "It is disturbing that in some countries that have not executed anyone for years, death sentences are again becoming routine.",
     "source": "wiktionary",
     "lemmas": [
       "an der Tagesordnung sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "beängstigt",
+        "lemma": "beängstigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ländern",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hingerichtet",
+        "lemma": "hinrichten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Todesurteile",
+        "lemma": "Todesurteil",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tagesordnung",
+        "lemma": "Tagesordnung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "485a850994": {
@@ -11951,10 +12052,31 @@
   },
   "4878f7e8c9": {
     "text": "Es ist so kalt, ich werde mir einen Mantel überziehen.",
-    "translation": null,
+    "translation": "It's so cold, I'll put on a coat.",
     "source": "wiktionary",
     "lemmas": [
       "überziehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kalt",
+        "lemma": "kalt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mantel",
+        "lemma": "Mantel",
+        "pos": "noun",
+        "gloss_hint": "coat"
+      },
+      {
+        "form": "überziehen",
+        "lemma": "überziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "48793ce521": {
@@ -13337,11 +13459,12 @@
     "type": "expression",
     "note": "bildhafter Ausdruck für die Bestrafung eines Schwächeren in Gegenwart eines Stärkeren",
     "synonyms": [],
-    "translation": null,
+    "translation": "punish the weak in front of the strong",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "48887a65dd": {
     "text": "„Das einzige Problem war, dass der Polizeichef sich gerade in einer sehr ausgedehnten Mittagspause befand.“",
@@ -15465,35 +15588,38 @@
     "type": "expression",
     "note": "sich in Verlegenheit befinden",
     "synonyms": [],
-    "translation": null,
+    "translation": "be in a tight spot",
     "source": "wiktionary",
     "lemmas": [
       "Teer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "489e666146": {
     "text": "ein Raub der Flammen werden",
     "type": "expression",
     "note": "der Wellen werden – im Meer versinken",
     "synonyms": [],
-    "translation": null,
+    "translation": "go up in flames",
     "source": "wiktionary",
     "lemmas": [
       "Raub",
       "Flamme"
     ],
-    "ref": "phrases/ein Raub der Flammen werden"
+    "ref": "phrases/ein Raub der Flammen werden",
+    "translation_model": "openai/gpt-4.1"
   },
   "489f427c92": {
     "text": "aus der Form gehen",
     "type": "expression",
     "note": "dick werden",
     "synonyms": [],
-    "translation": null,
+    "translation": "put on weight",
     "source": "wiktionary",
     "lemmas": [
       "Form"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "48a00c796c": {
     "text": "Die zähe Masse härtet dann aus. (Lebensmittel wie Teig- oder Zuckerwaren)",
@@ -15854,11 +15980,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "relieve someone of their duties",
     "source": "wiktionary",
     "lemmas": [
       "Dienst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "48a49e43ee": {
     "text": "„Diese Unwissenheit war später die Quelle verschiedener Mythen über das wahre Atlantis.“",
@@ -16058,10 +16185,67 @@
   },
   "48a8de0b88": {
     "text": "Menschen mit einer Allergie auf Soja und daraus gewonnene Erzeugnisse müssen Lebensmittel meiden, die mit dem Buchstabencode F gekennzeichnet sind.",
-    "translation": null,
+    "translation": "People with an allergy to soy and products derived from it must avoid food products marked with the letter code F.",
     "source": "wiktionary",
     "lemmas": [
       "F"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Allergie",
+        "lemma": "Allergie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Soja",
+        "lemma": "Soja",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erzeugnisse",
+        "lemma": "Erzeugnis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "müssen",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lebensmittel",
+        "lemma": "Lebensmittel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "meiden",
+        "lemma": "meiden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Buchstabencode",
+        "lemma": "Buchstabencode",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gekennzeichnet",
+        "lemma": "kennzeichnen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "48a9a0b35c": {
@@ -16435,11 +16619,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "modest question",
     "source": "wiktionary",
     "lemmas": [
       "bescheiden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "48abda36d1": {
     "text": "Die Verbände haben ihre Lobby in Berlin.",
@@ -16473,10 +16658,25 @@
   },
   "48abe8f3d8": {
     "text": "Unser Test hat auf Anhieb funktioniert.",
-    "translation": null,
+    "translation": "Our test worked right away.",
     "source": "wiktionary",
     "lemmas": [
       "auf Anhieb"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Test",
+        "lemma": "Test",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "funktioniert",
+        "lemma": "funktionieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "48acc392c4": {
@@ -16652,11 +16852,12 @@
     "type": "expression",
     "note": "etwas ist nicht in Ordnung",
     "synonyms": [],
-    "translation": null,
+    "translation": "there's trouble brewing",
     "source": "wiktionary",
     "lemmas": [
       "krachen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "48ae91f16e": {
     "text": "Diesen Beleg würde ich mir aus Garantiegründen lieber aufheben.",
@@ -16729,11 +16930,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put a damper on the fun",
     "source": "wiktionary",
     "lemmas": [
       "treten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "48b06bbe95": {
     "text": "„Oder er kann der diebischen Göre die Schaufel emport wegnehmen und ihr zeigen: Auf Kevin trampelt keiner rum.“",
@@ -19311,11 +19513,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "only half-listen",
     "source": "wiktionary",
     "lemmas": [
       "Ohr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "48bb4d1c2e": {
     "text": "Es muss geregnet haben, weil der Boden ist nass.",
@@ -19352,11 +19555,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have something in the pipeline",
     "source": "wiktionary",
     "lemmas": [
       "Pipeline"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "48c05cc24a": {
     "text": "„In Tibet herrscht Hochlandklima mit großen Tagestemperaturschwankungen und viel Sonnenschein.“",
@@ -20389,10 +20593,85 @@
   },
   "48c8ed42ea": {
     "text": "„Drei Jahre später, als die Revolution ihre eigenen Kinder zu fressen begann, floh er allerdings ins Ausland, während seine Verwandten aus den Kreisen des französischen Hochadels scharenweise zum Schafott geführt wurden.“",
-    "translation": null,
+    "translation": "\"Three years later, when the revolution began to devour its own children, he fled abroad, while his relatives from the circles of French high nobility were led to the scaffold by the hundreds.\"",
     "source": "wiktionary",
     "lemmas": [
       "die Revolution frisst ihre eigenen Kinder"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Drei",
+        "lemma": "Drei",
+        "pos": "noun",
+        "gloss_hint": "three"
+      },
+      {
+        "form": "Jahre",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "später",
+        "lemma": "später",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Revolution",
+        "lemma": "Revolution",
+        "pos": "noun",
+        "gloss_hint": "revolution"
+      },
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fressen",
+        "lemma": "fressen",
+        "pos": "verb",
+        "gloss_hint": "devour"
+      },
+      {
+        "form": "floh",
+        "lemma": "fliehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausland",
+        "lemma": "Ausland",
+        "pos": "noun",
+        "gloss_hint": "foreign country"
+      },
+      {
+        "form": "Verwandten",
+        "lemma": "Verwandter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kreisen",
+        "lemma": "Kreis",
+        "pos": "noun",
+        "gloss_hint": "circle"
+      },
+      {
+        "form": "Hochadels",
+        "lemma": "Hochadel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schafott",
+        "lemma": "Schafott",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "48ca85fa5b": {
@@ -22448,11 +22727,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "risk your neck",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "48da3cce40": {
     "text": "„Unter rechtlichen Aspekten läßt sich die nationale Flagge vergleichen mit Personalausweis oder Paß.“",
@@ -22590,10 +22870,25 @@
   },
   "48db4f2b39": {
     "text": "Da habe ich ihr aber kräftig Kontra gegeben, „so nicht!“, habe ich ihr gesagt.",
-    "translation": null,
+    "translation": "I gave her quite a strong objection to that, \"not like that!\", I told her.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem Kontra geben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kontra",
+        "lemma": "Kontra",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kräftig",
+        "lemma": "kräftig",
+        "pos": "adjective",
+        "gloss_hint": "strong"
+      }
     ]
   },
   "48dbab0482": {

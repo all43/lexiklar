@@ -162,10 +162,43 @@
   },
   "4248652034": {
     "text": "Die TSG 1899 Hoffenheim wurde in der Bundesligasaison 2011/12 nicht Deutscher Meister.",
-    "translation": null,
+    "translation": "TSG 1899 Hoffenheim did not become German champions in the 2011/12 Bundesliga season.",
     "source": "wiktionary",
     "lemmas": [
       "TSG"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "TSG",
+        "lemma": "TSG",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hoffenheim",
+        "lemma": "Hoffenheim",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundesligasaison",
+        "lemma": "Bundesligasaison",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutscher",
+        "lemma": "Deutscher",
+        "pos": "noun",
+        "gloss_hint": "German person"
+      },
+      {
+        "form": "Meister",
+        "lemma": "Meister",
+        "pos": "noun",
+        "gloss_hint": "champion"
+      }
     ]
   },
   "4281042436": {
@@ -1782,12 +1815,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to each their own",
     "source": "wiktionary",
     "lemmas": [
       "Tierchen"
     ],
-    "ref": "phrases/jedem Tierchen sein Pläsierchen"
+    "ref": "phrases/jedem Tierchen sein Pläsierchen",
+    "translation_model": "openai/gpt-4.1"
   },
   "420eea2bd2": {
     "text": "„Gegen die Finkelsteins lag kein Haftbefehl vor – wenigstens damals noch nicht, im Jahre 1936.“",
@@ -2939,18 +2973,84 @@
   },
   "421e67af18": {
     "text": "Ich hab keinen Schimmer, wovon du redest.",
-    "translation": null,
+    "translation": "I haven't got a clue what you're talking about.",
     "source": "wiktionary",
     "lemmas": [
       "keinen Schimmer haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hab",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": "have"
+      },
+      {
+        "form": "Schimmer",
+        "lemma": "Schimmer",
+        "pos": "noun",
+        "gloss_hint": "inkling"
+      },
+      {
+        "form": "redest",
+        "lemma": "reden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "421eb5e9ad": {
     "text": "„[…] da kam es halt vor, dass wir von der Klassenlehrerin ziemlich unter Druck gesetzt wurden, dass das Schreiben unterschrieben werden müsste, dass das Kind in eine Förderschule müsste.“",
-    "translation": null,
+    "translation": "\"[…] it happened that we were put under considerable pressure by the class teacher to have the letter signed, saying that the child would have to go to a special needs school.\"",
     "source": "wiktionary",
     "lemmas": [
       "jemanden unter Druck setzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Klassenlehrerin",
+        "lemma": "Klassenlehrerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Druck",
+        "lemma": "Druck",
+        "pos": "noun",
+        "gloss_hint": "pressure"
+      },
+      {
+        "form": "gesetzt",
+        "lemma": "setzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schreiben",
+        "lemma": "Schreiben",
+        "pos": "noun",
+        "gloss_hint": "letter"
+      },
+      {
+        "form": "unterschrieben",
+        "lemma": "unterschreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kind",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": "child"
+      },
+      {
+        "form": "Förderschule",
+        "lemma": "Förderschule",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "421ef42418": {
@@ -3018,11 +3118,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "end with a bang",
     "source": "wiktionary",
     "lemmas": [
       "Knall"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "421ff9ba8e": {
     "text": "Der wirtschaftliche Aufschwung spielte die erste Geige, vom Krieg hatten wir die Nase voll.",
@@ -4592,10 +4693,55 @@
   },
   "422ab96cbf": {
     "text": "„Audi-Chef Rupert Stadler ließ auf der Peking Auto Show wenig Zweifel offen: Bis 2020 werden 45 Prozent aller verkauften Audi-Modelle SUV sein.“",
-    "translation": null,
+    "translation": "\"Audi boss Rupert Stadler left little doubt at the Beijing Auto Show: by 2020, 45 percent of all sold Audi models will be SUVs.\"",
     "source": "wiktionary",
     "lemmas": [
       "SUV"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Chef",
+        "lemma": "Chef",
+        "pos": "noun",
+        "gloss_hint": "boss"
+      },
+      {
+        "form": "Peking",
+        "lemma": "Peking",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auto",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "Zweifel",
+        "lemma": "Zweifel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prozent",
+        "lemma": "Prozent",
+        "pos": "noun",
+        "gloss_hint": "percentage"
+      },
+      {
+        "form": "verkauften",
+        "lemma": "verkaufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Modelle",
+        "lemma": "Modell",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "422bae61f2": {
@@ -6469,10 +6615,55 @@
   },
   "423ee20c69": {
     "text": "„Klatschend schlug ihm Kluttig die Hände ins Gesicht und schrie in einem fort: «Wer sind die anderen? Sag die Namen!»“",
-    "translation": null,
+    "translation": "\"Clapping, Kluttig slapped him in the face and screamed incessantly: 'Who are the others? Tell me the names!'\"",
     "source": "wiktionary",
     "lemmas": [
       "in einem fort"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Klatschend",
+        "lemma": "klatschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schlug",
+        "lemma": "schlagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hände",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesicht",
+        "lemma": "Gesicht",
+        "pos": "noun",
+        "gloss_hint": "face"
+      },
+      {
+        "form": "schrie",
+        "lemma": "schreien",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "fort",
+        "lemma": "fort",
+        "pos": "adverb",
+        "gloss_hint": "onwards"
+      },
+      {
+        "form": "Namen",
+        "lemma": "Name",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "423f3a2cda": {
@@ -8674,11 +8865,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be deeply ashamed",
     "source": "wiktionary",
     "lemmas": [
       "Grund und Boden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "425e04711f": {
     "text": "„Was nützte es, wenn sie, besonders einer von ihnen, jeden längeren Redebeitrag trotzig mit dem auf den laufenden Streik bezüglichen ceterum-censeo-Analogon beendeten: ‚until we've won!‘ – während zugleich der Streikkasse sowie den Streikenden selbst jede Luft ausging, […] und […] sich sogar irgendein Bischof oder Erzbischof öffentlich mit ein paar darbenden Streikträgern zeigte, denn es heißt ja: ‚Wo ein Aas ist, sammeln sich die Raben.‘“",
@@ -9102,10 +9294,67 @@
   },
   "425ed6819b": {
     "text": "„1919 zwangen die Siegermächte im Versailler Vertrag (Artikel 231) Deutschland zur Anerkennung einer deutschen Alleinschuld am 1. Weltkrieg.“",
-    "translation": null,
+    "translation": "In 1919, the victorious powers forced Germany to acknowledge sole responsibility for World War I in the Treaty of Versailles (Article 231).",
     "source": "wiktionary",
     "lemmas": [
       "1. Weltkrieg"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "1919",
+        "lemma": "1919",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zwangen",
+        "lemma": "zwingen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Siegermächte",
+        "lemma": "Siegermacht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Versailler Vertrag",
+        "lemma": "Versailler Vertrag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Artikel",
+        "lemma": "Artikel",
+        "pos": "noun",
+        "gloss_hint": "legal"
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anerkennung",
+        "lemma": "Anerkennung",
+        "pos": "noun",
+        "gloss_hint": "acknowledgment"
+      },
+      {
+        "form": "Alleinschuld",
+        "lemma": "Alleinschuld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weltkrieg",
+        "lemma": "Weltkrieg",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "425ef80cf3": {
@@ -9282,11 +9531,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to look inside oneself",
     "source": "wiktionary",
     "lemmas": [
       "blättern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4260b75cc8": {
     "text": "„Der natürliche Preis der landwirtschaftlichen Erzeugnisse wird bestimmt durch die Kosten plus dem Überschuß oder Reinertrag (vorausgesetzt, daß sie im Großbetrieb hervorgebracht werden und ein Überschuß entsteht).“",
@@ -10095,11 +10345,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a hard time",
     "source": "wiktionary",
     "lemmas": [
       "lüften"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "42687f28c7": {
     "text": "Das war ein Fehler. Du musst in Zukunft besser aufpassen.",
@@ -10929,12 +11180,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take the wind out of someone's sails",
     "source": "wiktionary",
     "lemmas": [
       "Segel"
     ],
-    "ref": "phrases/jemandem den Wind aus den Segeln nehmen"
+    "ref": "phrases/jemandem den Wind aus den Segeln nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "4272a91343": {
     "text": "„Das Huhn hat die Straße nicht überquert.“",
@@ -12131,10 +12383,85 @@
   },
   "427cb0ad16": {
     "text": "„[…] ergreift Parlamentarier Pilz das Mikrophon und gibt die Linie vor: »Wir spüren nach einem Jahr Parlamentsarbeit, daß das Hackel ganz tief im Kreuz steckt.«“",
-    "translation": null,
+    "translation": "Parliamentarian Pilz seizes the microphone and sets the tone: \"After a year of parliamentary work, we feel that the back pain is deeply rooted.\"",
     "source": "wiktionary",
     "lemmas": [
       "das Hackl im Kreuz stecken haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ergreift",
+        "lemma": "ergreifen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Parlamentarier",
+        "lemma": "Parlamentarier",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pilz",
+        "lemma": "Pilz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mikrophon",
+        "lemma": "Mikrophon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gibt",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Linie",
+        "lemma": "Linie",
+        "pos": "noun",
+        "gloss_hint": "approach"
+      },
+      {
+        "form": "spüren",
+        "lemma": "spüren",
+        "pos": "verb",
+        "gloss_hint": "feel"
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "Parlamentsarbeit",
+        "lemma": "Parlamentsarbeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hackel",
+        "lemma": "Hackel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kreuz",
+        "lemma": "Kreuz",
+        "pos": "noun",
+        "gloss_hint": "back area"
+      },
+      {
+        "form": "steckt",
+        "lemma": "stecken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "427d9f1a09": {
@@ -13440,10 +13767,115 @@
   },
   "4289a15f17": {
     "text": "[28 Missbrauchsfälle im Bistum Dresden-Meißen:] „Der Dresdner Bischof Heinrich Timmerevers zeigte sich erschüttert über die Ergebnisse. \"Ich schäme mich dafür, dass Kleriker und Ordensleute die menschliche Würde von Kindern, Jugendlichen und Schutzbefohlenen mit Füßen getreten haben\", sagte er.“",
-    "translation": null,
+    "translation": "Dresden's Bishop Heinrich Timmerevers expressed shock at the findings. \"I am ashamed that clergy and members of religious orders trampled on the human dignity of children, adolescents, and those in their care,\" he said.",
     "source": "wiktionary",
     "lemmas": [
       "mit Füßen getreten werden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bischof",
+        "lemma": "Bischof",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Heinrich",
+        "lemma": "Heinrich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Timmerevers",
+        "lemma": "Timmerevers",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zeigte",
+        "lemma": "zeigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "erschüttert",
+        "lemma": "erschüttern",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ergebnisse",
+        "lemma": "Ergebnis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schäme",
+        "lemma": "schämen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kleriker",
+        "lemma": "Kleriker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ordensleute",
+        "lemma": "Ordensleute",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "menschliche",
+        "lemma": "menschlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Würde",
+        "lemma": "Würde",
+        "pos": "noun",
+        "gloss_hint": "dignity"
+      },
+      {
+        "form": "Kindern",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jugendlichen",
+        "lemma": "Jugendlicher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schutzbefohlenen",
+        "lemma": "Schutzbefohlener",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Füßen",
+        "lemma": "Fuß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "getreten",
+        "lemma": "treten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sagte",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "428a12a005": {
@@ -16339,10 +16771,43 @@
   },
   "42a161532a": {
     "text": "Endlich können wir diesen Vorfall zu den Akten legen.",
-    "translation": null,
+    "translation": "Finally, we can close the book on this incident.",
     "source": "wiktionary",
     "lemmas": [
       "etwas zu den Akten legen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Endlich",
+        "lemma": "endlich",
+        "pos": "adverb",
+        "gloss_hint": "finally"
+      },
+      {
+        "form": "können",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": "be able"
+      },
+      {
+        "form": "Vorfall",
+        "lemma": "Vorfall",
+        "pos": "noun",
+        "gloss_hint": "incident"
+      },
+      {
+        "form": "Akten",
+        "lemma": "Akte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "legen",
+        "lemma": "legen",
+        "pos": "verb",
+        "gloss_hint": "discard"
+      }
     ]
   },
   "42a19d398b": {
@@ -17442,10 +17907,43 @@
   },
   "42acfb5d91": {
     "text": "„Bis anhin hatte sie sich über ihr Aussehen keine Gedanken gemacht.“",
-    "translation": null,
+    "translation": "Until then, she had given no thought to her appearance.",
     "source": "wiktionary",
     "lemmas": [
       "bis anhin"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bis",
+        "lemma": "bis",
+        "pos": "particle",
+        "gloss_hint": "until"
+      },
+      {
+        "form": "anhin",
+        "lemma": "anhin",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gedanken",
+        "lemma": "Gedanke",
+        "pos": "noun",
+        "gloss_hint": "thoughts"
+      },
+      {
+        "form": "Aussehen",
+        "lemma": "Aussehen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gemacht",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "42ad2a145f": {
@@ -18324,11 +18822,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "from the bottom of one's heart",
     "source": "wiktionary",
     "lemmas": [
       "tief"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "42b3487772": {
     "text": "Es regnete über das Wochenende.",
@@ -18627,14 +19126,12 @@
     "type": "expression",
     "note": "jemanden unterstützen (umgangssprachlich; eigentlich: hinter jemandem stehen)",
     "synonyms": [],
-    "translation": null,
+    "translation": "to back someone up",
     "source": "wiktionary",
     "lemmas": [
       "stellen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "42b660e02b": {
     "text": "Feierlich läuteten die Glocken.",
@@ -19089,11 +19586,12 @@
     "type": "expression",
     "note": "einen Kontakt trotz Schwierigkeiten aufrecht erhalten",
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep in touch despite difficulties",
     "source": "wiktionary",
     "lemmas": [
       "abreißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "42b934fbb1": {
     "text": "„Von der Nasenspitze an ein zurückfliehendes Gesicht, zwei schräg nach hinten laufende Augenpartien. Aber über der schrägen Stirn ein ruhiges, fast gefroren wirkendes Gewell rotblonder Haare.“",
@@ -20837,11 +21335,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "good heavens",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "42ccac5509": {
     "text": "Die Schale ist eitel Gold.",
@@ -21345,11 +21844,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "sentenced to death by hanging",
     "source": "wiktionary",
     "lemmas": [
       "Strang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "42d1151043": {
     "text": "Wenn du zwei Schritte vortrittst, bist du auch auf dem Foto mit drauf.",
@@ -21560,11 +22060,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take the helm",
     "source": "wiktionary",
     "lemmas": [
       "Ruder"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "42d3847fef": {
     "text": "Der Morgen grau, der Abend rot, ist ein gut Wetterbot.",
@@ -22641,11 +23142,12 @@
     "type": "expression",
     "note": "in jemanden vernarrt sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be crazy about someone",
     "source": "wiktionary",
     "lemmas": [
       "Affe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "42da021c32": {
     "text": "[Fußball-WM 2022 in Katar:] „Nach Angaben der Veranstalter werden alle verursachten Emissionen durch den Kauf von Klimazertifikaten kompensiert.“",
@@ -25869,12 +26371,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to do time",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
     ],
-    "ref": "phrases/gesiebte Luft atmen"
+    "ref": "phrases/gesiebte Luft atmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "42f172913d": {
     "text": "Herr Lehmann hat mir das Du angeboten.",
@@ -26582,11 +27085,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "familiar spirit",
     "source": "wiktionary",
     "lemmas": [
       "Spiritus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "42fee16634": {
     "text": "„Die Pferdetritte verwandeln sich vom Dumpfen ins Fröhliche, wenn wir die Wege wechseln, die Sandheide verlassen und auf die alte gepflasterte Handelsstraße hinauskommen, und immer mehr orangene Lichter, die an den Fuhrwerken anderer Pferdemänner hängen, kommen aus den Seitenwegen auf die gepflasterte Straße, reihen sich vor uns oder hinter uns ein, und die Peitschen knallen, und die Rufe der Pferdelenker hallen und machen aus der Nacht einen durchlärmten dunklen Tag, bis sich endlich das Morgenlicht über den Waldwipfeln hochfächert, als wäre es für uns angefertigt, für uns alle, die wir mit unseren Fuhrwerken und Pferden unterwegs und bestrebt sind, rechtzeitig in Muskau zu sein, damit der Markt nicht ausgekauft ist, bevor wir dort sind.“",

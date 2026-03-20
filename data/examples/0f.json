@@ -2364,10 +2364,61 @@
   },
   "0f12ff8360": {
     "text": "„Im Kampf um die Deutungshoheit zitieren Unterhaltungsindustrie und Netzaktivisten mit Vorliebe lediglich die Zahlen, die ihnen am besten in den Kram passen.“",
-    "translation": null,
+    "translation": "\"In the struggle for interpretive authority, the entertainment industry and internet activists prefer to cite only the figures that suit their purposes best.\"",
     "source": "wiktionary",
     "lemmas": [
       "jemandem in den Kram passen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kampf",
+        "lemma": "Kampf",
+        "pos": "noun",
+        "gloss_hint": "struggle"
+      },
+      {
+        "form": "Deutungshoheit",
+        "lemma": "Deutungshoheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unterhaltungsindustrie",
+        "lemma": "Unterhaltungsindustrie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Netzaktivisten",
+        "lemma": "Netzaktivist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorliebe",
+        "lemma": "Vorliebe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zahlen",
+        "lemma": "Zahl",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kram",
+        "lemma": "Kram",
+        "pos": "noun",
+        "gloss_hint": "stuff"
+      },
+      {
+        "form": "passen",
+        "lemma": "passen",
+        "pos": "verb",
+        "gloss_hint": "suit"
+      }
     ]
   },
   "0f134d8a81": {
@@ -3034,11 +3085,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to let someone take advantage of you",
     "source": "wiktionary",
     "lemmas": [
       "Wurst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0f17fe0b49": {
     "text": "Menschen mit einer Allergie auf Krebstiere (auch Krustentiere) müssen Lebensmittel meiden, die mit dem Buchstabencode B gekennzeichnet sind.",
@@ -5250,11 +5302,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "noblesse oblige",
     "source": "wiktionary",
     "lemmas": [
       "Adel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0f2ef4fae8": {
     "text": "Sie säuft wie ein Loch.",
@@ -6022,10 +6075,31 @@
   },
   "0f32d8f432": {
     "text": "Dieser Schrei ging durch Mark und Bein.",
-    "translation": null,
+    "translation": "This cry pierced through to the bone.",
     "source": "wiktionary",
     "lemmas": [
       "durch Mark und Bein gehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schrei",
+        "lemma": "Schrei",
+        "pos": "noun",
+        "gloss_hint": "shout"
+      },
+      {
+        "form": "Mark",
+        "lemma": "Mark",
+        "pos": "noun",
+        "gloss_hint": "marrow"
+      },
+      {
+        "form": "Bein",
+        "lemma": "Bein",
+        "pos": "noun",
+        "gloss_hint": "bone"
+      }
     ]
   },
   "0f32e39ce2": {
@@ -6595,11 +6669,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be like night and day",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0f3b3b95e5": {
     "text": "Der Gang des Films war verworren.",
@@ -6679,10 +6754,67 @@
   },
   "0f3c47c0d2": {
     "text": "Dieser Beschluss wurde jedoch jetzt rückgängig gemacht, nachdem zahlreiche Bürger aus Protest gegen diese Neuerung zu einem Boykott der Panda-Geschäfte aufgerufen hatten.",
-    "translation": null,
+    "translation": "However, this decision has now been reversed after numerous citizens called for a boycott of the Panda stores in protest against this innovation.",
     "source": "wiktionary",
     "lemmas": [
       "etwas rückgängig machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Beschluss",
+        "lemma": "Beschluss",
+        "pos": "noun",
+        "gloss_hint": "decision"
+      },
+      {
+        "form": "rückgängig gemacht",
+        "lemma": "rückgängig machen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zahlreiche",
+        "lemma": "zahlreich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bürger",
+        "lemma": "Bürger",
+        "pos": "noun",
+        "gloss_hint": "citizen"
+      },
+      {
+        "form": "Protest",
+        "lemma": "Protest",
+        "pos": "noun",
+        "gloss_hint": "protest"
+      },
+      {
+        "form": "Neuerung",
+        "lemma": "Neuerung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Boykott",
+        "lemma": "Boykott",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Panda-Geschäfte",
+        "lemma": "Panda-Geschäft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgerufen",
+        "lemma": "aufrufen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "0f3f055a9e": {
@@ -8912,24 +9044,26 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lower one's sights",
     "source": "wiktionary",
     "lemmas": [
       "backen",
       "Brötchen"
     ],
-    "ref": "phrases/kleinere Brötchen backen"
+    "ref": "phrases/kleinere Brötchen backen",
+    "translation_model": "openai/gpt-4.1"
   },
   "0f4e9f3c14": {
     "text": "Haus Gottes",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "house of God",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0f4ea6a62b": {
     "text": "„[Das Rasen bleibt erlaubt, weil] natürlich die Industrie entsprechend schnelle und teure Autos verkaufen will.“",
@@ -11177,10 +11311,61 @@
   },
   "0f62d53bac": {
     "text": "„Jugoslawen […] bezeichnet zum einen Staatsangehörige Jugoslawiens […] ungeachtet ihrer spezifischen ethnischen Identität und zum anderen die der jugoslawischen Ethnie zugehörigen Personen.“",
-    "translation": null,
+    "translation": "\"Yugoslavs [...] denotes on the one hand the nationals of Yugoslavia [...] regardless of their specific ethnic identity and on the other hand the persons belonging to the Yugoslav ethnic group.\"",
     "source": "wiktionary",
     "lemmas": [
       "ungeachtet"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Jugoslawen",
+        "lemma": "Jugoslawe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staatsangehörige",
+        "lemma": "Staatsangehöriger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jugoslawiens",
+        "lemma": "Jugoslawien",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ethnischen",
+        "lemma": "ethnisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Identität",
+        "lemma": "Identität",
+        "pos": "noun",
+        "gloss_hint": "identity"
+      },
+      {
+        "form": "jugoslawischen",
+        "lemma": "jugoslawisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ethnie",
+        "lemma": "Ethnie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Personen",
+        "lemma": "Person",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "0f62f5f54f": {
@@ -12027,11 +12212,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Water washes everything away",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0f6b8293c4": {
     "text": "Die Klage wurde vor Gericht abgewiesen.",
@@ -13377,10 +13563,61 @@
   },
   "0f7908a5f6": {
     "text": "„Als die beiden Taxifahrer die Halle betraten, ging plötzlich alles so schnell, daß Perlmann, der doch die Stunden gezählt hatte, sich ganz unvorbereitet vorkam.“",
-    "translation": null,
+    "translation": "\"When the two taxi drivers entered the hall, everything suddenly happened so quickly that Perlmann, who had been counting the hours, felt completely unprepared.\"",
     "source": "wiktionary",
     "lemmas": [
       "Taxifahrer"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Taxifahrer",
+        "lemma": "Taxifahrer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Halle",
+        "lemma": "Halle",
+        "pos": "noun",
+        "gloss_hint": "hall"
+      },
+      {
+        "form": "betraten",
+        "lemma": "betreten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schnell",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": "fast"
+      },
+      {
+        "form": "Perlmann",
+        "lemma": "Perlmann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stunden",
+        "lemma": "Stunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gezählt",
+        "lemma": "zählen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "unvorbereitet",
+        "lemma": "unvorbereitet",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "0f791f6431": {
@@ -15222,11 +15459,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lose the thread",
     "source": "wiktionary",
     "lemmas": [
       "Faden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0f89b89da4": {
     "text": "„Die psychotraumatische Bedeutung von solchen Erlebnissen für das Leben der Überlebenden ist kaum zu ermessen.“",
@@ -17144,11 +17382,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put it plainly",
     "source": "wiktionary",
     "lemmas": [
       "Klartext"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0f9b6eb5d7": {
     "text": "„‚[…] Meine Weste ist ganz verdorben, die habe ich überhaupt dort gelassen, meine Hosen sind zerfetzt, ich bin in Unterhosen‘ — und er lüftete die Decke ein wenig und lud Karl ein, unter sie zu schauen.“",
@@ -17745,22 +17984,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "second string",
     "source": "wiktionary",
     "lemmas": [
       "Garde"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0fa1b69c89": {
     "text": "jemanden den Keks weich hauen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to annoy someone to death",
     "source": "wiktionary",
     "lemmas": [
       "Keks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0fa1dad595": {
     "text": "„Ihre anfängliche Befürchtung, in ein peinliches Gerichtsverfahren mit hineinverwickelt zu werden, erwies sich als gegenstandslos.“",
@@ -18561,10 +18802,31 @@
   },
   "0fa65222e9": {
     "text": "„Könnten wir's ertragen, mal auf die Schaufel genommen zu werden, so müssten wir uns nicht so aufblähen.“",
-    "translation": null,
+    "translation": "\"If we could bear to be shoveled away, we wouldn't have to puff ourselves up so much.\"",
     "source": "wiktionary",
     "lemmas": [
       "jemanden auf die Schaufel nehmen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ertragen",
+        "lemma": "ertragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schaufel",
+        "lemma": "Schaufel",
+        "pos": "noun",
+        "gloss_hint": "shovel"
+      },
+      {
+        "form": "aufblähen",
+        "lemma": "aufblähen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "0fa69027b1": {
@@ -18843,10 +19105,19 @@
   },
   "0faa4b9599": {
     "text": "Habt ihr hier auch sowas wie Senf?",
-    "translation": null,
+    "translation": "Do you have mustard here too?",
     "source": "wiktionary",
     "lemmas": [
       "sowas"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Senf",
+        "lemma": "Senf",
+        "pos": "noun",
+        "gloss_hint": "mustard"
+      }
     ]
   },
   "0faae47b37": {
@@ -19372,11 +19643,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a whole bunch of them",
     "source": "wiktionary",
     "lemmas": [
       "Stall"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0fb02a8b87": {
     "text": "„Die Atlas-Bergregion lockt seit langem abenteuerlustige Entdecker an, darunter viele Wanderer, die das schöne Massiv zwischen Atlantik und Sahara als Natur- und Kulturlandschaft schätzen.“",
@@ -21515,10 +21787,31 @@
   },
   "0fbba4f34f": {
     "text": "Erdnüsse wachsen in den Tropen.",
-    "translation": null,
+    "translation": "Peanuts grow in the tropics.",
     "source": "wiktionary",
     "lemmas": [
       "Erdnuss"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erdnüsse",
+        "lemma": "Erdnuss",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wachsen",
+        "lemma": "wachsen",
+        "pos": "verb",
+        "gloss_hint": "grow"
+      },
+      {
+        "form": "Tropen",
+        "lemma": "Tropen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "0fbbd58659": {
@@ -25196,10 +25489,79 @@
   },
   "0fd687c7c8": {
     "text": "„»[Hubertus Heil] ist auch jemand, der die Sozialpartnerschaft in Deutschland nicht nur versteht, sondern hier auch beste vernetzt ist. Das ist ehrlich gesagt für dieses Ressort [Bundesministerium für Arbeit und Soziales] auch sehr sehr wichtig.«“",
-    "translation": null,
+    "translation": "\"[Hubertus Heil] is also someone who not only understands social partnership in Germany, but is also very well networked here. To be honest, this is also very, very important for this ministry [Federal Ministry for Labor and Social Affairs].\"",
     "source": "wiktionary",
     "lemmas": [
       "ehrlich gesagt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hubertus Heil",
+        "lemma": "Hubertus Heil",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sozialpartnerschaft",
+        "lemma": "Sozialpartnerschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": "Germany"
+      },
+      {
+        "form": "versteht",
+        "lemma": "verstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "vernetzt",
+        "lemma": "vernetzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ehrlich",
+        "lemma": "ehrlich",
+        "pos": "adjective",
+        "gloss_hint": "honest"
+      },
+      {
+        "form": "Ressort",
+        "lemma": "Ressort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundesministerium",
+        "lemma": "Bundesministerium",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arbeit",
+        "lemma": "Arbeit",
+        "pos": "noun",
+        "gloss_hint": "job"
+      },
+      {
+        "form": "Soziales",
+        "lemma": "Soziales",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wichtig",
+        "lemma": "wichtig",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "0fd74ad90a": {
@@ -28283,11 +28645,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "don't bother, tomorrow is another day",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0ff60ca5b4": {
     "text": "Ob das funktionieren kann, müssen wir noch testen.",
@@ -29846,10 +30209,11 @@
     "synonyms": [
       "nice-to-have"
     ],
-    "translation": null,
+    "translation": "nice guy",
     "source": "wiktionary",
     "lemmas": [
       "nice"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   }
 }

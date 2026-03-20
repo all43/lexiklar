@@ -505,10 +505,73 @@
   },
   "7a076b1102": {
     "text": "„Sie wurde auf die Ladefläche eines Lkws gehoben und nahm wie durch einen Schleier wahr, dass nicht nur die Kindergruppe, sondern auch die Erwachsenen in die Falle geraten waren.“",
-    "translation": null,
+    "translation": "\"She was lifted onto the bed of a truck and perceived as if through a veil that not only the group of children but also the adults had fallen into the trap.\"",
     "source": "wiktionary",
     "lemmas": [
       "Lkw"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gehoben",
+        "lemma": "heben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ladefläche",
+        "lemma": "Ladefläche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lkws",
+        "lemma": "Lkw",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "nahm",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": "took (3rd sg.)"
+      },
+      {
+        "form": "Schleier",
+        "lemma": "Schleier",
+        "pos": "noun",
+        "gloss_hint": "veil"
+      },
+      {
+        "form": "wahr",
+        "lemma": "wahr",
+        "pos": "adjective",
+        "gloss_hint": "true"
+      },
+      {
+        "form": "Kindergruppe",
+        "lemma": "Kindergruppe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erwachsenen",
+        "lemma": "Erwachsener",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Falle",
+        "lemma": "Falle",
+        "pos": "noun",
+        "gloss_hint": "trap"
+      },
+      {
+        "form": "geraten",
+        "lemma": "geraten",
+        "pos": "verb",
+        "gloss_hint": "end up"
+      }
     ]
   },
   "7a07cd5ce2": {
@@ -1356,11 +1419,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the penny drops",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a0f9c40f1": {
     "text": "Die meisten Deutschen kennen die Mulligatawny Soup aus dem berühmten Sketch Dinner for One, der jedes Jahr zu Silvester im Fernsehen läuft.",
@@ -1733,11 +1797,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "and who will kiss me?",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a11e8def0": {
     "text": "„Das Motorgehäuse war nicht durch eine besondere Leitungsader im Zuleitungskabel geerdet oder genullt.“",
@@ -3382,11 +3447,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take it easy",
     "source": "wiktionary",
     "lemmas": [
       "angehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a1eb11d6b": {
     "text": "„Auf das Wie bin ich schon jetzt neugierig.“",
@@ -3643,11 +3709,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to head for the port of marriage",
     "source": "wiktionary",
     "lemmas": [
       "Hafen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a25642ba6": {
     "text": "„In der Schweiz ist es ein Novum: das Bestattervelo. Ein Berner Unternehmen will damit das Thema Tod und Sterben enttabuisieren.“",
@@ -3861,11 +3928,12 @@
     "type": "expression",
     "note": "Begabung, Geschick, Talent für etwas haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a knack for something",
     "source": "wiktionary",
     "lemmas": [
       "Ader"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a269e2eef": {
     "text": "„Nel bleibt dabei, dass in der Mehrfachsteckdose kein Platz für einen weiteren Ventilator gewesen sei. Ob die Steckdose verstellt wurde oder nicht, spiele gar keine Rolle.“",
@@ -4788,11 +4856,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "out of the abundance of the heart the mouth speaks",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a2cef359f": {
     "text": "Auf der Wiese wachsen viele verschiedene Gräser.",
@@ -5141,11 +5210,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "my private parts",
     "source": "wiktionary",
     "lemmas": [
       "Stück"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a30a800f3": {
     "text": "Bei den meisten Hotelbetten sind mir die Matratzen zu weich.",
@@ -5620,18 +5690,89 @@
   },
   "7a338f068a": {
     "text": "sin 45°",
-    "translation": null,
+    "translation": "sine 45°",
     "source": "wiktionary",
     "lemmas": [
       "sin"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "7a3495a2e6": {
     "text": "„Ost-Studenten geben ihren Professoren durchweg bessere Noten als im Westen, unabhängig vom Fachbereich. Kein Wunder: Studierende treffen in den neuen Bundesländern fast doppelt so oft mit den Lehrenden zusammen wie im Westen, um über Fachliches oder Persönliches zu sprechen, untersuchte das Deutsche Studentenwerk.“",
-    "translation": null,
+    "translation": "East German students give their professors consistently better grades than in the West, regardless of field of study. No wonder: students in the new federal states meet with their instructors almost twice as often as in the West to discuss academic or personal matters, according to research by the German Student Association.",
     "source": "wiktionary",
     "lemmas": [
       "kein Wunder"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ost-Studenten",
+        "lemma": "Ost-Student",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Professoren",
+        "lemma": "Professor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Noten",
+        "lemma": "Note",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Westen",
+        "lemma": "Westen",
+        "pos": "noun",
+        "gloss_hint": "West"
+      },
+      {
+        "form": "Fachbereich",
+        "lemma": "Fachbereich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Studierende",
+        "lemma": "Studierende",
+        "pos": "noun",
+        "gloss_hint": "student"
+      },
+      {
+        "form": "Bundesländern",
+        "lemma": "Bundesland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lehrenden",
+        "lemma": "Lehrende",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sprechen",
+        "lemma": "sprechen",
+        "pos": "verb",
+        "gloss_hint": "speak"
+      },
+      {
+        "form": "untersuchte",
+        "lemma": "untersuchen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Studentenwerk",
+        "lemma": "Studentenwerk",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7a351cf921": {
@@ -5694,22 +5835,24 @@
     "type": "expression",
     "note": "dumm sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "be empty-headed",
     "source": "wiktionary",
     "lemmas": [
       "hohl"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a35de6e97": {
     "text": "den alten Kohl wieder aufwärmen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "rehash old issues",
     "source": "wiktionary",
     "lemmas": [
       "aufwärmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a36273a90": {
     "text": "„Es bereitete mir Vergnügen, zu sehen, daß meine Gouvernante ganz anders beschaffen war als ich.“",
@@ -6010,11 +6153,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone's heart skips a beat",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a39ffe6dd": {
     "text": "„Unter dem Physiker Igor Kurtschakow arbeiteten die Sowjets seit Anfang 1943 an ihrer eigenen Atombombe.“",
@@ -6654,10 +6798,25 @@
   },
   "7a3daa60cf": {
     "text": "Er gestand ihr seine Zuneigung.",
-    "translation": null,
+    "translation": "He confessed his affection to her.",
     "source": "wiktionary",
     "lemmas": [
       "gestehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gestand",
+        "lemma": "gestehen",
+        "pos": "verb",
+        "gloss_hint": "confessed"
+      },
+      {
+        "form": "Zuneigung",
+        "lemma": "Zuneigung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7a3ec860f6": {
@@ -8370,11 +8529,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "leave someone hanging",
     "source": "wiktionary",
     "lemmas": [
       "schmoren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a4ab32dd1": {
     "text": "Sie hat schönes Haar. Das Musikstück ist schön.",
@@ -8715,11 +8875,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "speak one's mind",
     "source": "wiktionary",
     "lemmas": [
       "Schnauze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a4fee0512": {
     "text": "Er hat die meisten Bücher.",
@@ -9310,10 +9471,25 @@
   },
   "7a57e985ba": {
     "text": "Du bist ja nicht mehr ganz bei Trost.",
-    "translation": null,
+    "translation": "You're not quite in your right mind.",
     "source": "wiktionary",
     "lemmas": [
       "nicht ganz bei Trost sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "bist",
+        "lemma": "sein",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Trost",
+        "lemma": "Trost",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7a57f7d88b": {
@@ -9539,11 +9715,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "sell like hotcakes",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a5aac4914": {
     "text": "Die Beneluxstaaten sind allesamt parlamentarische Monarchien.",
@@ -9557,10 +9734,97 @@
   },
   "7a5acbaa84": {
     "text": "„René Descartes (1596–1650) behandelt in seinem 1637 erschienen Grundlagenwerk Discours de la méthode u.a. den Unterschied zwischen Mensch und Tier. Beide sind von Gott erschaffen, aber nur der Mensch hat eine unsterbliche Seele. Tiere müssen als höchst komplizierte Maschinen angesehen werden (la bête machine), als Automaten. Und er hält es für durchaus wahrscheinlich, dass es dem Menschen eines Tages glücken wird, eine Maschine in Gestalt eines Tieres zu bauen, die sich wie ein Tier verhalten würde.“",
-    "translation": null,
+    "translation": "René Descartes (1596–1650) addresses in his foundational work Discourse on Method, published in 1637, among other things the distinction between humans and animals. Both are created by God, but only humans have an immortal soul. Animals must be regarded as highly complicated machines (la bête machine), as automata. And he considers it quite plausible that humans will one day succeed in building a machine in the form of an animal that would behave like an animal.",
     "source": "wiktionary",
     "lemmas": [
       "Automat"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "behandelt",
+        "lemma": "behandeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grundlagenwerk",
+        "lemma": "Grundlagenwerk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unterschied",
+        "lemma": "Unterschied",
+        "pos": "noun",
+        "gloss_hint": "difference"
+      },
+      {
+        "form": "Mensch",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": "human"
+      },
+      {
+        "form": "Tier",
+        "lemma": "Tier",
+        "pos": "noun",
+        "gloss_hint": "animal"
+      },
+      {
+        "form": "erschaffen",
+        "lemma": "erschaffen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gott",
+        "lemma": "Gott",
+        "pos": "noun",
+        "gloss_hint": "God"
+      },
+      {
+        "form": "Seele",
+        "lemma": "Seele",
+        "pos": "noun",
+        "gloss_hint": "soul"
+      },
+      {
+        "form": "Maschinen",
+        "lemma": "Maschine",
+        "pos": "noun",
+        "gloss_hint": "machine"
+      },
+      {
+        "form": "Automaten",
+        "lemma": "Automat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "glücken",
+        "lemma": "glücken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "bauen",
+        "lemma": "bauen",
+        "pos": "verb",
+        "gloss_hint": "build"
+      },
+      {
+        "form": "Gestalt",
+        "lemma": "Gestalt",
+        "pos": "noun",
+        "gloss_hint": "form"
+      },
+      {
+        "form": "verhalten",
+        "lemma": "verhalten",
+        "pos": "verb",
+        "gloss_hint": "behave"
+      }
     ]
   },
   "7a5b2e93c9": {
@@ -9972,11 +10236,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give someone a good beating",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a6108d7fa": {
     "text": "Hinz und Kunz, Jansen und Thomsen und wie sie alle heißen mögen.",
@@ -11018,10 +11283,43 @@
   },
   "7a6195a101": {
     "text": "„Das FA – und später das FG – müssen sich mit einem auf Ermessensfehlgebrauch hindeutenden Sachvortrag des Steuerpflichtigen auseinandersetzen.“",
-    "translation": null,
+    "translation": "The tax office and later the tax court must address the taxpayer's factual arguments that point to an abuse of discretion.",
     "source": "wiktionary",
     "lemmas": [
       "FA"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "FA",
+        "lemma": "Finanzamt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "FG",
+        "lemma": "Finanzgericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "auseinandersetzen",
+        "lemma": "auseinandersetzen",
+        "pos": "verb",
+        "gloss_hint": "sich mit jemandem oder etwas eingehend beschäftigen"
+      },
+      {
+        "form": "Sachvortrag",
+        "lemma": "Sachvortrag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Steuerpflichtigen",
+        "lemma": "Steuerpflichtiger",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7a620a6e3f": {
@@ -11113,22 +11411,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fall on hard times",
     "source": "wiktionary",
     "lemmas": [
       "Rad"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a64e6f4cd": {
     "text": "herumreden wie die Katze um den heißen Brei",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "beat around the bush",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a6523e5a5": {
     "text": "Die obere Kammer ist das Oberhaus.",
@@ -11144,12 +11444,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be on a roll",
     "source": "wiktionary",
     "lemmas": [
       "Lauf"
     ],
-    "ref": "phrases/einen Lauf haben"
+    "ref": "phrases/einen Lauf haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "7a65a2f3f4": {
     "text": "„Wie der Untergang des habsburgischen Reichs hätte der Zerfall des sowjetischen Imperiums erfahrungsgemäss zahllose, endlose Konflikte nach sich ziehen müssen. Aber es blieb friedlich in allen osteuropäischen Staaten, denen die EU den Beitritt anbieten konnte.“",
@@ -11569,26 +11870,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "earn a living",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a6ba09416": {
     "text": "Glück im Unglück haben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a stroke of luck in misfortune",
     "source": "wiktionary",
     "lemmas": [
       "Glück",
       "im"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "7a6bff9572": {
     "text": "„Mirko, unbeweglich vier Stunden vor dem Brett sitzend, besiegte, ohne ein Wort zu sprechen oder auch nur aufzuschauen, einen Spieler nach dem andern;“ […]",
@@ -11880,14 +12180,15 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "wait on tenterhooks",
     "source": "wiktionary",
     "lemmas": [
       "Bein",
       "Bauch",
       "stehen"
     ],
-    "ref": "phrases/sich die Beine in den Bauch stehen"
+    "ref": "phrases/sich die Beine in den Bauch stehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "7a739e6ab6": {
     "text": "Dabei bemerkte ich, daß die Dame einen weißen Schnurrbart hatte, erzeugt durch den Schaum der Zahnpasta, und daß in ihren schweren Augensäcken noch viel Schlaf lag.",
@@ -12062,23 +12363,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "subscribe to stock",
     "source": "wiktionary",
     "lemmas": [
       "Aktie"
     ],
-    "ref": "phrases/eine Aktie zeichnen"
+    "ref": "phrases/eine Aktie zeichnen",
+    "translation_model": "openai/gpt-4.1"
   },
   "7a748f7264": {
     "text": "nein doch",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "no way!",
     "source": "wiktionary",
     "lemmas": [
       "doch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a74fb83da": {
     "text": "„1519 landete Cortez in Mexiko, nahm Tenochtitlan ein, setzte Moctezuma II., den Herrscher der Azteken, ab und richtete ihn schließlich hin.“",
@@ -12091,10 +12394,43 @@
   },
   "7a76d6e077": {
     "text": "„In den letzten vier Jahren sind viele Jugendliche im Knast gelandet, in einem gigantischen Gefängnissystem, wo Folter an der Tagesordnung ist.“",
-    "translation": null,
+    "translation": "In the last four years, many young people have ended up in prison, in a gigantic prison system where torture is commonplace.",
     "source": "wiktionary",
     "lemmas": [
       "an der Tagesordnung sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Jugendliche",
+        "lemma": "Jugendlicher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Knast",
+        "lemma": "Knast",
+        "pos": "noun",
+        "gloss_hint": "prison"
+      },
+      {
+        "form": "Gefängnissystem",
+        "lemma": "Gefängnissystem",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Folter",
+        "lemma": "Folter",
+        "pos": "noun",
+        "gloss_hint": "torture"
+      },
+      {
+        "form": "Tagesordnung",
+        "lemma": "Tagesordnung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7a772bbe7d": {
@@ -12538,11 +12874,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "wring something out of someone",
     "source": "wiktionary",
     "lemmas": [
       "Rippe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a7a5b4ecb": {
     "text": "„Dass sie zu Rebellengeworden sind, wäre zu viel gesagt.“",
@@ -13690,11 +14027,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "continue the train of thought",
     "source": "wiktionary",
     "lemmas": [
       "Faden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7a90cf6a48": {
     "text": "Diese Reaktoren stellen eine große Bedrohung dar.",
@@ -17224,23 +17562,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "nothing's happening here",
     "source": "wiktionary",
     "lemmas": [
       "da"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7ab5b79e60": {
     "text": "Rosinen im Kopf haben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have ideas above one's station",
     "source": "wiktionary",
     "lemmas": [
       "Rosinen im Kopf haben"
     ],
-    "ref": "phrases/Rosinen im Kopf haben"
+    "ref": "phrases/Rosinen im Kopf haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "7ab5f449ed": {
     "text": "Er zeigte dem Feind die Stärke seiner Mäuse und Fäuste.",
@@ -18096,11 +18436,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "play defensively",
     "source": "wiktionary",
     "lemmas": [
       "tief"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7ac34ddce8": {
     "text": "„Religionen im Plural Gott aber nur im Singular. ›Gott‹ gibt es nur im Monotheismus, also in den drei abrahamitischen Religionen (benannt nach dem ihnen gemeinsamen legendären Stammvater Abraham), im Judentum, Christentum und Islam. Die Kultkonzentration auf einen Gott ist die singuläre kulturgeschichtliche, über eine längere Zeit hin aufgebaute Innovation des frühen Judentums.“",
@@ -18960,10 +19301,85 @@
   },
   "7ac9e36e60": {
     "text": "Die heute noch häufig angewendete Redewendung, jemand habe den Schalk im Nacken oder hinter den Ohren, meint einen lustigen Menschen mit verschmitztem, verstecktem Humor. Die Wendung bezieht sich auf eine Person, die gleichsam von einem kleinen schalkhaften Dämon besessen ist, doch so, dass ihm der Wicht hinten im Nacken oder auch hinter den Ohren sitzt, so dass der Genarrte ihn nicht sehen kann.",
-    "translation": null,
+    "translation": "The expression, still frequently used today, that someone has the rogue in the back of their neck or behind their ears, refers to a funny person with mischievous, hidden humor. The phrase refers to a person who is, as it were, possessed by a small roguish demon, but in such a way that the creature sits at the back of their neck or behind their ears, so that the person being tricked cannot see it.",
     "source": "wiktionary",
     "lemmas": [
       "den Schalk im Nacken haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Redewendung",
+        "lemma": "Redewendung",
+        "pos": "noun",
+        "gloss_hint": "idiom"
+      },
+      {
+        "form": "Schalk",
+        "lemma": "Schalk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nacken",
+        "lemma": "Nacken",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ohren",
+        "lemma": "Ohr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mensch",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": "person"
+      },
+      {
+        "form": "Humor",
+        "lemma": "Humor",
+        "pos": "noun",
+        "gloss_hint": "humor"
+      },
+      {
+        "form": "Wendung",
+        "lemma": "Wendung",
+        "pos": "noun",
+        "gloss_hint": "phrase"
+      },
+      {
+        "form": "Person",
+        "lemma": "Person",
+        "pos": "noun",
+        "gloss_hint": "person"
+      },
+      {
+        "form": "Dämon",
+        "lemma": "Dämon",
+        "pos": "noun",
+        "gloss_hint": "demon"
+      },
+      {
+        "form": "Wicht",
+        "lemma": "Wicht",
+        "pos": "noun",
+        "gloss_hint": "creature"
+      },
+      {
+        "form": "sitzt",
+        "lemma": "sitzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sehen",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": "see"
+      }
     ]
   },
   "7aca632de3": {
@@ -21826,11 +22242,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with flair",
     "source": "wiktionary",
     "lemmas": [
       "Glanz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7ae37aca07": {
     "text": "„Hinter Paarreim und Lautmalerei, hinter Alliterationen und Metaphorik spürt man die mit Konsequenz geführte Feder eines Insiders, der das, was er berichtet, selbst erlebt hat.“",
@@ -21997,11 +22414,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "show someone who's boss",
     "source": "wiktionary",
     "lemmas": [
       "holen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7ae411bd6c": {
     "text": "„Amtsgericht und Landgericht München hielten Abschleppkosten von 100 beziehungsweise 175 Euro für gerechtfertigt. Der Fall ging hoch bis vor den Bundesgerichtshof.“",
@@ -22209,10 +22627,43 @@
   },
   "7ae4f44d8d": {
     "text": "Cerdo Molina will sich als Präsident bewerben. Er will die Sterne vom Himmel holen.",
-    "translation": null,
+    "translation": "Cerdo Molina wants to run for president. He wants to reach for the stars.",
     "source": "wiktionary",
     "lemmas": [
       "die Sterne vom Himmel holen wollen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "bewerben",
+        "lemma": "bewerben",
+        "pos": "verb",
+        "gloss_hint": "apply for"
+      },
+      {
+        "form": "Präsident",
+        "lemma": "Präsident",
+        "pos": "noun",
+        "gloss_hint": "president"
+      },
+      {
+        "form": "Sterne",
+        "lemma": "Stern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Himmel",
+        "lemma": "Himmel",
+        "pos": "noun",
+        "gloss_hint": "sky"
+      },
+      {
+        "form": "holen",
+        "lemma": "holen",
+        "pos": "verb",
+        "gloss_hint": "reach for"
+      }
     ]
   },
   "7ae541f2ed": {
@@ -22581,11 +23032,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Necessity is the mother of invention.",
     "source": "wiktionary",
     "lemmas": [
       "Not"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "7ae91de405": {
     "text": "so weit wie möglich",
@@ -23140,10 +23592,61 @@
   },
   "7aeece99d6": {
     "text": "Der Hofmarschall war ein alter lebenslustiger, aufgeweckter Mann, die Kammerjunker muntre Jünglinge, die nicht im mindesten darnach aussahen, als führten sie Böses im Schilde.",
-    "translation": null,
+    "translation": "The court marshal was an old, fun-loving, sharp-witted man; the young chamberlains were lively youths who showed no sign whatsoever of harboring any evil intentions.",
     "source": "wiktionary",
     "lemmas": [
       "Böses im Schilde führen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hofmarschall",
+        "lemma": "Hofmarschall",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "Kammerjunker",
+        "lemma": "Kammerjunker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jünglinge",
+        "lemma": "Jüngling",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aussahen",
+        "lemma": "aussehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "führten",
+        "lemma": "führen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Böses",
+        "lemma": "Böses",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schilde",
+        "lemma": "Schild",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "7aef41f7b5": {
@@ -24619,10 +25122,49 @@
   },
   "7afc1f56ff": {
     "text": "„Ich nehme den Acht-Uhr-Flug zum JFK und muss in spätestens einer Stunde nach Heathrow aufbrechen.“",
-    "translation": null,
+    "translation": "I'm taking the 8 o'clock flight to JFK and have to depart for Heathrow within an hour at the latest.",
     "source": "wiktionary",
     "lemmas": [
       "JFK"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "nehme",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Acht-Uhr-Flug",
+        "lemma": "Flug",
+        "pos": "noun",
+        "gloss_hint": "flight"
+      },
+      {
+        "form": "JFK",
+        "lemma": "JFK",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stunde",
+        "lemma": "Stunde",
+        "pos": "noun",
+        "gloss_hint": "hour"
+      },
+      {
+        "form": "Heathrow",
+        "lemma": "Heathrow",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufbrechen",
+        "lemma": "aufbrechen",
+        "pos": "verb",
+        "gloss_hint": "depart"
+      }
     ]
   },
   "7afd2d5058": {

@@ -261,11 +261,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "missed the mark",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a80341af09": {
     "text": "„Dieses Apartment mußte ich allmählich loswerden.“",
@@ -970,11 +971,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Wishful thinking.",
     "source": "wiktionary",
     "lemmas": [
       "Vater"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a81166057b": {
     "text": "bei jemandem gut Wetter machen",
@@ -2109,11 +2111,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a bit crazy",
     "source": "wiktionary",
     "lemmas": [
       "Piep"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a81b470bc2": {
     "text": "„Die Häuser warfen schon lange Schatten auf die Fahrbahn der Kilburn High Road, als wir ankamen, es umwehte uns eine befremdliche Ruhe und wir dachten, das müsse wohl die berühmte Ruhe vor dem Sturm sein und jetzt könne die Party aber langsam steigen.“",
@@ -2360,11 +2363,12 @@
     "type": "expression",
     "note": "bildlich: die Menschen stehen so dicht beieinander, dass kein Apfel zwischen die Leiber passt und zu Boden fallen kann",
     "synonyms": [],
-    "translation": null,
+    "translation": "You can't move an inch.",
     "source": "wiktionary",
     "lemmas": [
       "Apfel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a81b971689": {
     "text": "„Ebensowenig wie in dem Übergang vom Rohen zum Matten der Ästhetiker, kann der Sittenrichter in dem Übergang von der Plautinischen Zote und Indifferenz zu der Terenzischen Akkommodierungsmoral einen Fortschritt erkennen.“",
@@ -2536,10 +2540,43 @@
   },
   "a81cccd8d4": {
     "text": "Ich kann mit Fug und Recht behaupten, dass Rot nicht Schwarz ist!",
-    "translation": null,
+    "translation": "I can quite rightly claim that red is not black!",
     "source": "wiktionary",
     "lemmas": [
       "mit Fug und Recht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fug",
+        "lemma": "Fug",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Recht",
+        "lemma": "Recht",
+        "pos": "noun",
+        "gloss_hint": "right"
+      },
+      {
+        "form": "behaupten",
+        "lemma": "behaupten",
+        "pos": "verb",
+        "gloss_hint": "claim"
+      },
+      {
+        "form": "Rot",
+        "lemma": "rot",
+        "pos": "adjective",
+        "gloss_hint": "red"
+      },
+      {
+        "form": "Schwarz",
+        "lemma": "schwarz",
+        "pos": "adjective",
+        "gloss_hint": "black"
+      }
     ]
   },
   "a81d6c1a1f": {
@@ -3265,16 +3302,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be at large",
     "source": "wiktionary",
     "lemmas": [
       "frei",
       "Fuß"
     ],
     "ref": "phrases/auf freiem Fuß sein",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "a8280e0861": {
     "text": "„Wie eine Maschine stampfte er auf dem Mädchen herum, seine Wut berauschte ihn stärker als seine Lust, er war ein Beleidiger, kein Liebhaber, er liebte sowenig wie diese lieblose, elende Fotze, die ihn herausgefordert hatte.“",
@@ -3876,12 +3911,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have no clue",
     "source": "wiktionary",
     "lemmas": [
       "kein"
     ],
-    "ref": "phrases/keinen blassen Schimmer haben"
+    "ref": "phrases/keinen blassen Schimmer haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "a82afc56e7": {
     "text": "„Ab Oktober ist er Delegationsmitglied der EU zum arabischen Raum und in dieser Funktion auch mit dem Irak betraut.“",
@@ -4498,11 +4534,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at the very last minute",
     "source": "wiktionary",
     "lemmas": [
       "allerletzte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a8346edf26": {
     "text": "Es ist schon spät: Es wird Zeit, dass wir zurückgehen.",
@@ -5767,12 +5804,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to look for something to complain about",
     "source": "wiktionary",
     "lemmas": [
       "Haar",
       "Suppe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a844b57c08": {
     "text": "Auf zweier oder dreier Zeugen Mund soll sterben, wer des Todes wert ist.",
@@ -6441,10 +6479,79 @@
   },
   "a848f128ce": {
     "text": "Anbei ist der Quartalsbericht, darüber hinaus habe ich eine Analyse in einer weiteren Datei zu den größten Abweichungen auf Kontenebene angefügt.“",
-    "translation": null,
+    "translation": "Enclosed is the quarterly report; furthermore, I have attached an analysis in a separate file regarding the largest deviations at account level.",
     "source": "wiktionary",
     "lemmas": [
       "darüber hinaus"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Anbei",
+        "lemma": "anbei",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Quartalsbericht",
+        "lemma": "Quartalsbericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "darüber",
+        "lemma": "darüber",
+        "pos": "adverb",
+        "gloss_hint": "over it"
+      },
+      {
+        "form": "hinaus",
+        "lemma": "hinaus",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Analyse",
+        "lemma": "Analyse",
+        "pos": "noun",
+        "gloss_hint": "analysis"
+      },
+      {
+        "form": "weiteren",
+        "lemma": "weitere",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Datei",
+        "lemma": "Datei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "größten",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abweichungen",
+        "lemma": "Abweichung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kontenebene",
+        "lemma": "Kontenebene",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "angefügt",
+        "lemma": "anfügen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "a849563468": {
@@ -8126,11 +8233,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Water runs uphill in a foreign land.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a85964d032": {
     "text": "„»[…] Die Engländer haben nicht die leiseste Ahnung von Schottland und was sie uns angetan haben, als sie sich unseren König geholt und unsere Selbständigkeit gestohlen haben«, sagte der Captain.“",
@@ -8813,10 +8921,31 @@
   },
   "a85fddc68e": {
     "text": "Halt endlich die Klappe!",
-    "translation": null,
+    "translation": "Finally shut your mouth!",
     "source": "wiktionary",
     "lemmas": [
       "die Klappe halten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Halt",
+        "lemma": "Halt",
+        "pos": "noun",
+        "gloss_hint": "stop"
+      },
+      {
+        "form": "endlich",
+        "lemma": "endlich",
+        "pos": "adverb",
+        "gloss_hint": "finally"
+      },
+      {
+        "form": "Klappe",
+        "lemma": "Klappe",
+        "pos": "noun",
+        "gloss_hint": "mouth"
+      }
     ]
   },
   "a86071c16e": {
@@ -8920,14 +9049,12 @@
     "type": "expression",
     "note": "ein wirklich vorhandener Mensch",
     "synonyms": [],
-    "translation": null,
+    "translation": "a real, flesh-and-blood person",
     "source": "wiktionary",
     "lemmas": [
       "Fleisch"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "a8617684b4": {
     "text": "Im Oktober 1856 wurde er zum Leutnant befördert und in der Folge vielfach als Adjutant verwendet.",
@@ -9476,11 +9603,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The wolf doesn't circle to catch mosquitoes.",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a86a9b4b4c": {
     "text": "Kaum war er im Zimmer, gab es Streit.",
@@ -9503,10 +9631,55 @@
   },
   "a86b14deef": {
     "text": "Die Regel heißt: Soldaten müssen sich verteidigen, aber sehr vorsichtig sein im Umgang mit Zivilisten.",
-    "translation": null,
+    "translation": "The rule is: soldiers must defend themselves, but be very careful in dealing with civilians.",
     "source": "wiktionary",
     "lemmas": [
       "Zivilist"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Regel",
+        "lemma": "Regel",
+        "pos": "noun",
+        "gloss_hint": "rule"
+      },
+      {
+        "form": "Soldaten",
+        "lemma": "Soldat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "müssen",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": "must"
+      },
+      {
+        "form": "verteidigen",
+        "lemma": "verteidigen",
+        "pos": "verb",
+        "gloss_hint": "defend"
+      },
+      {
+        "form": "vorsichtig",
+        "lemma": "vorsichtig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umgang",
+        "lemma": "Umgang",
+        "pos": "noun",
+        "gloss_hint": "handling"
+      },
+      {
+        "form": "Zivilisten",
+        "lemma": "Zivilist",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a86bc69b24": {
@@ -10858,10 +11031,43 @@
   },
   "a885fb5034": {
     "text": "Ich hatte schon Angst, der macht die Grätsche, aber dann hat sich Onkel Otto wieder berappelt.",
-    "translation": null,
+    "translation": "I was already afraid he would do the splits, but then Uncle Otto pulled himself together again.",
     "source": "wiktionary",
     "lemmas": [
       "die Grätsche machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Angst",
+        "lemma": "Angst",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grätsche",
+        "lemma": "Grätsche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "berappelt",
+        "lemma": "berappeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Onkel",
+        "lemma": "Onkel",
+        "pos": "noun",
+        "gloss_hint": "uncle"
+      },
+      {
+        "form": "Otto",
+        "lemma": "Otto",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a885fcdde8": {
@@ -11514,11 +11720,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to suck on one's paws",
     "source": "wiktionary",
     "lemmas": [
       "Pfote"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a88a8dc44a": {
     "text": "„Außerdem existiert seit 1999 ein neues EU-Gesetz, demzufolge die Dokumente eines jeden EU-Bürgers in jedem anderen EU-Land in der Originalsprache Gültigkeit besitzen; etwaige Übersetzungen müssen von den Behörden und nicht mehr von den Bürgern selbst geleistet werden.“",
@@ -11809,12 +12016,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to sow one's wild oats",
     "source": "wiktionary",
     "lemmas": [
       "Horn"
     ],
-    "ref": "phrases/sich die Hörner abstoßen"
+    "ref": "phrases/sich die Hörner abstoßen",
+    "translation_model": "openai/gpt-4.1"
   },
   "a88e13ff87": {
     "text": "„Der Erbbesitz soll durch das Los aufgeteilt werden!“",
@@ -13452,10 +13660,91 @@
   },
   "a8a1b9d8bd": {
     "text": "„In der darauf folgenden Verbalisierung ihrer Erinnerung greift Angela dann allerdings nicht zum zunächst erwartbaren Pronomen der ersten Person Singular, sondern sie wählt die entsprechende Pluralform mir (wir), womit sie sich als Mitglied einer Gruppe - hier ihrer Familie - identifiziert und als Vertreterin dieser erzählt.“",
-    "translation": null,
+    "translation": "In the verbalization of her memory that follows, Angela, however, does not resort to the initially expected first-person singular pronoun; instead, she chooses the corresponding plural form 'we', thereby identifying herself as a member of a group—here her family—and narrating as a representative of it.",
     "source": "wiktionary",
     "lemmas": [
       "Pronomen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verbalisierung",
+        "lemma": "Verbalisierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erinnerung",
+        "lemma": "Erinnerung",
+        "pos": "noun",
+        "gloss_hint": "memory"
+      },
+      {
+        "form": "greift",
+        "lemma": "greifen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pronomen",
+        "lemma": "Pronomen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Person",
+        "lemma": "Person",
+        "pos": "noun",
+        "gloss_hint": "person"
+      },
+      {
+        "form": "Singular",
+        "lemma": "Singular",
+        "pos": "noun",
+        "gloss_hint": "singular"
+      },
+      {
+        "form": "wählt",
+        "lemma": "wählen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pluralform",
+        "lemma": "Pluralform",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gruppe",
+        "lemma": "Gruppe",
+        "pos": "noun",
+        "gloss_hint": "group"
+      },
+      {
+        "form": "Familie",
+        "lemma": "Familie",
+        "pos": "noun",
+        "gloss_hint": "basic social unit"
+      },
+      {
+        "form": "identifiziert",
+        "lemma": "identifizieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vertreterin",
+        "lemma": "Vertreterin",
+        "pos": "noun",
+        "gloss_hint": "representative"
+      },
+      {
+        "form": "erzählt",
+        "lemma": "erzählen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "a8a2d54aa2": {
@@ -13561,10 +13850,37 @@
   },
   "a8a3f67faa": {
     "text": "„Sein dichter grauer Schopf war zur Bürste getrimmt.“",
-    "translation": null,
+    "translation": "His thick grey hair was trimmed into a buzz cut.",
     "source": "wiktionary",
     "lemmas": [
       "Schopf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schopf",
+        "lemma": "Schopf",
+        "pos": "noun",
+        "gloss_hint": "head of hair"
+      },
+      {
+        "form": "grauer",
+        "lemma": "grau",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bürste",
+        "lemma": "Bürste",
+        "pos": "noun",
+        "gloss_hint": "buzz cut"
+      },
+      {
+        "form": "getrimmt",
+        "lemma": "trimmen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "a8a4b5cc3c": {
@@ -14626,18 +14942,84 @@
   },
   "a8adc0671b": {
     "text": "Ein Rind darf seit 2008 laut Europäischer Union nur bis zum achten Monat die Bezeichnung „Kalb“ tragen.",
-    "translation": null,
+    "translation": "According to the European Union, since 2008 a bovine may only bear the designation 'calf' until the eighth month.",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rind",
+        "lemma": "Rind",
+        "pos": "noun",
+        "gloss_hint": "bovine"
+      },
+      {
+        "form": "Europäischer",
+        "lemma": "europäisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Union",
+        "lemma": "Union",
+        "pos": "noun",
+        "gloss_hint": "union"
+      },
+      {
+        "form": "Bezeichnung",
+        "lemma": "Bezeichnung",
+        "pos": "noun",
+        "gloss_hint": "label"
+      },
+      {
+        "form": "Kalb",
+        "lemma": "Kalb",
+        "pos": "noun",
+        "gloss_hint": "calf"
+      },
+      {
+        "form": "tragen",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": "wear"
+      }
     ]
   },
   "a8af819fc9": {
     "text": "Der besseren Lesbarkeit zuliebe lagere ich die Quellenangaben in Fußnoten aus.",
-    "translation": null,
+    "translation": "For the sake of better readability, I place the source citations in footnotes.",
     "source": "wiktionary",
     "lemmas": [
       "zuliebe"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Lesbarkeit",
+        "lemma": "Lesbarkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lagere",
+        "lemma": "lagern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Quellenangaben",
+        "lemma": "Quellenangabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fußnoten",
+        "lemma": "Fußnote",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a8afad56bb": {
@@ -14991,11 +15373,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "praise be to what makes you tough",
     "source": "wiktionary",
     "lemmas": [
       "hart"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a8ba0741f8": {
     "text": "„Daher haben wir die Absicht, dieses Testament anfechten und für ungültig erklären zu lassen.“",
@@ -15233,10 +15616,31 @@
   },
   "a8bd9dda5b": {
     "text": "Beim Kauf meines Gebrauchtwagens wurde ich übers Ohr gehauen!",
-    "translation": null,
+    "translation": "When I bought my used car, I was completely ripped off!",
     "source": "wiktionary",
     "lemmas": [
       "übers Ohr hauen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kauf",
+        "lemma": "Kauf",
+        "pos": "noun",
+        "gloss_hint": "purchase"
+      },
+      {
+        "form": "Gebrauchtwagens",
+        "lemma": "Gebrauchtwagen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ohr",
+        "lemma": "Ohr",
+        "pos": "noun",
+        "gloss_hint": "ear"
+      }
     ]
   },
   "a8be2d6fc9": {
@@ -15298,11 +15702,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "for heaven's sake",
     "source": "wiktionary",
     "lemmas": [
       "Henker"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a8beda7e85": {
     "text": "„Um seine Lungen ein wenig zu kräftigen, ging er ins Schwimmbad, zuerst alleine, dann mit der Schulklasse.“",
@@ -15515,11 +15920,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to skate on thin ice",
     "source": "wiktionary",
     "lemmas": [
       "Eis"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a8c544aa33": {
     "text": "Der Baum treibt gerade Blüten.",
@@ -18236,11 +18642,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to come to someone's attention",
     "source": "wiktionary",
     "lemmas": [
       "treten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a8dae2d69c": {
     "text": "über Geschmack lässt sich streiten",
@@ -18273,10 +18680,43 @@
   },
   "a8db5cfcc5": {
     "text": "Hierzu kommt noch Bosnien, welches im Gegenstandsjahre 228.830 q für den Bedarf Österreichs lieferte.",
-    "translation": null,
+    "translation": "In addition, there is Bosnia, which in the year in question supplied 228,830 quintals for Austria's needs.",
     "source": "wiktionary",
     "lemmas": [
       "q"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bosnien",
+        "lemma": "Bosnien",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gegenstandsjahre",
+        "lemma": "Gegenstandsjahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lieferte",
+        "lemma": "liefern",
+        "pos": "verb",
+        "gloss_hint": "deliver"
+      },
+      {
+        "form": "Bedarf",
+        "lemma": "Bedarf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Österreichs",
+        "lemma": "Österreich",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "a8dbc44986": {
@@ -18461,11 +18901,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to expose to ridicule",
     "source": "wiktionary",
     "lemmas": [
       "Gespött"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a8e0583029": {
     "text": "Sein Lebenslauf ist sehr chaotisch, er hat schon in fünf verschiedenen Branchen gearbeitet.",
@@ -19703,11 +20144,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "life is not a bed of roses",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a8eae95935": {
     "text": "Maria empfing Jesus vom Heiligen Geist.",
@@ -20462,11 +20904,12 @@
     "type": "expression",
     "note": "(Bibel, Psalm 21,7)",
     "synonyms": [],
-    "translation": null,
+    "translation": "But I am a worm and not a man",
     "source": "wiktionary",
     "lemmas": [
       "Wurm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a8f79cd2f5": {
     "text": "Ach du dickes Ei, jetzt regnet es auch noch.",
@@ -20539,11 +20982,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I would have told her something different",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "a8f87c7058": {
     "text": "„Die Tische waren gedeckt, Kaffeeduft lag in der Luft.“",

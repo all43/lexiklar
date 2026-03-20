@@ -927,11 +927,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "you can count on that",
     "source": "wiktionary",
     "lemmas": [
       "lassen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6108deb378": {
     "text": "[…] wenn er bisher in den ersten Tagen seit seiner Wahl eines überzeugend unter Beweis gestellt hat: Donald Trump ist immer für Überraschungen gut.",
@@ -2440,11 +2441,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the cat is out of the bag",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "61110c5adb": {
     "text": "Es war bewegend, dass zur Trauerfeier für meinen Onkel so viele Leute kamen.",
@@ -2653,11 +2655,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "wanting to have your cake and eat it too",
     "source": "wiktionary",
     "lemmas": [
       "Pelz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "611426e815": {
     "text": "Als Reiseziel schlage ich Stuttgart vor, da kann man viel Spaß haben.",
@@ -3236,11 +3239,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Am I my brother's keeper?",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "611b593975": {
     "text": "Tallinn ist die Hauptstadt der Republik Estland.",
@@ -4114,11 +4118,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a real sight to behold",
     "source": "wiktionary",
     "lemmas": [
       "Pracht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6125abbf43": {
     "text": "„Nun fand ich sie, reichlich mit allem versehen und auf dem Sprung, nach Augsburg zu fahren; so malte ich mir im voraus die Freuden aus, die mir ein derartiges Zusammentreffen verschaffen würde.“",
@@ -4517,11 +4522,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be as lively as a fish in water",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6129729a62": {
     "text": "Friedrich Lists politische und volkswirtschaftliche Schriften bezeugen Leben und Werk eines großen Deutschen.",
@@ -4765,10 +4771,55 @@
   },
   "612a16ad58": {
     "text": "Die Eltern meines Stiefvaters sind Halter von zwei Motorrädern und drei Autos.",
-    "translation": null,
+    "translation": "The parents of my stepfather are owners of two motorcycles and three cars.",
     "source": "wiktionary",
     "lemmas": [
       "Halter"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Eltern",
+        "lemma": "Eltern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stiefvaters",
+        "lemma": "Stiefvater",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Halter",
+        "lemma": "Halter",
+        "pos": "noun",
+        "gloss_hint": "owner"
+      },
+      {
+        "form": "zwei",
+        "lemma": "zwei",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Motorrädern",
+        "lemma": "Motorrad",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "drei",
+        "lemma": "drei",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Autos",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "612a3d6201": {
@@ -5650,11 +5701,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in a tone of deep conviction",
     "source": "wiktionary",
     "lemmas": [
       "tief"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "613836551d": {
     "text": "„Sie konzentrierten ihre ganze Anstrengung darauf, sich zu beherrschen und die Fiktion eines normalen Tagesablaufs aufrechtzuerhalten.“",
@@ -6616,11 +6668,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be burned by experience",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6144e2503e": {
     "text": "„Wenn das erste Opfer des Krieges die Wahrheit ist, muss gelten, dass viele Behauptungen, die im Rahmen eines Konflikts von einer Seite aufgestellt werden, zunächst mit Vorsicht zu behandeln sind.“",
@@ -8211,10 +8264,49 @@
   },
   "61573e1fc7": {
     "text": "„Dazu erklingt die Melodie eines Trauermarsches (trotz des Dreivierteltaktes !); aus der Ferne naht der Leichenzug.“",
-    "translation": null,
+    "translation": "To this, the melody of a funeral march sounds (despite the three-four time!); from afar the funeral procession approaches.",
     "source": "wiktionary",
     "lemmas": [
       "erklingen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "erklingt",
+        "lemma": "erklingen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Melodie",
+        "lemma": "Melodie",
+        "pos": "noun",
+        "gloss_hint": "melody"
+      },
+      {
+        "form": "Trauermarsches",
+        "lemma": "Trauermarsch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ferne",
+        "lemma": "Ferne",
+        "pos": "noun",
+        "gloss_hint": "distance"
+      },
+      {
+        "form": "naht",
+        "lemma": "nahen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leichenzug",
+        "lemma": "Leichenzug",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "615746489a": {
@@ -8548,10 +8640,31 @@
   },
   "6158da1b7b": {
     "text": "„Der OB ist wieder mal umgezogen, in eine Balka hinter Gumrak.“",
-    "translation": null,
+    "translation": "The mayor has moved again, into a dugout behind Gumrak.",
     "source": "wiktionary",
     "lemmas": [
       "OB"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "OB",
+        "lemma": "Oberbürgermeister",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "umgezogen",
+        "lemma": "umziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Balka",
+        "lemma": "Balka",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "615ab61ebd": {
@@ -8649,11 +8762,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "who never ate his bread with tears",
     "source": "wiktionary",
     "lemmas": [
       "Träne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "615dc1ba77": {
     "text": "„Die \"Operation Cumulus\" der britischen Royal Air Force aus dem Jahr 1952 steht unter Verdacht, in Devon für Überflutungen gesorgt zu haben, bei denen 35 Menschen starben.“",
@@ -9850,11 +9964,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be enough to make you cry",
     "source": "wiktionary",
     "lemmas": [
       "heulen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "61650e5121": {
     "text": "„Einer der Seeen, die diese Seeenkette bilden, heißt ‚der Stechlin‘.“",
@@ -10993,11 +11108,12 @@
     "type": "expression",
     "note": "enge, knappe Schuhe",
     "synonyms": [],
-    "translation": null,
+    "translation": "tight shoes",
     "source": "wiktionary",
     "lemmas": [
       "genau"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "61813fedd8": {
     "text": "Malerei: \"Höhere Mächte befahlen: rechte obere Ecke schwarz malen!\" Das schrieb er in ein Bild, das prompt zu seinem bekanntesten wurde.",
@@ -12100,20 +12216,48 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to ruin someone financially",
     "source": "wiktionary",
     "lemmas": [
       "abdrehen",
       "Gurgel"
     ],
-    "ref": "phrases/jemandem die Gurgel abdrehen"
+    "ref": "phrases/jemandem die Gurgel abdrehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "618de0715c": {
     "text": "Wenn du nicht ins Fettnäpfchen treten willst, solltest du das Thema Autokauf vermeiden.",
-    "translation": null,
+    "translation": "If you don't want to put your foot in it, you should avoid the topic of car buying.",
     "source": "wiktionary",
     "lemmas": [
       "ins Fettnäpfchen treten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "treten",
+        "lemma": "treten",
+        "pos": "verb",
+        "gloss_hint": "step on"
+      },
+      {
+        "form": "Fettnäpfchen",
+        "lemma": "Fettnäpfchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Thema",
+        "lemma": "Thema",
+        "pos": "noun",
+        "gloss_hint": "topic"
+      },
+      {
+        "form": "Autokauf",
+        "lemma": "Autokauf",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "618e18c43a": {
@@ -14158,11 +14302,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the bogeyman",
     "source": "wiktionary",
     "lemmas": [
       "schwarz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "619c6bbc49": {
     "text": "„Na, wie gesagt, – wenn er einer Maid tief ins Auge sah, so vergaß sie das nun und nimmermehr, sondern folgte ihm in Gedanken, wo er ging und stand, und welkte hin vor Gram.“",
@@ -15821,10 +15966,61 @@
   },
   "61a9870319": {
     "text": "„Dafür benötigt der Körper seine volle Kraft und da schadet körperliche Anstrengung, denn dadurch fährt das Immunsystem seine Leistung herunter.“",
-    "translation": null,
+    "translation": "For this, the body needs its full strength, and physical exertion is harmful because it causes the immune system to reduce its performance.",
     "source": "wiktionary",
     "lemmas": [
       "herunterfahren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "benötigt",
+        "lemma": "benötigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Körper",
+        "lemma": "Körper",
+        "pos": "noun",
+        "gloss_hint": "body"
+      },
+      {
+        "form": "Kraft",
+        "lemma": "Kraft",
+        "pos": "noun",
+        "gloss_hint": "strength"
+      },
+      {
+        "form": "schadet",
+        "lemma": "schaden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anstrengung",
+        "lemma": "Anstrengung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fährt",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Immunsystem",
+        "lemma": "Immunsystem",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leistung",
+        "lemma": "Leistung",
+        "pos": "noun",
+        "gloss_hint": "performance"
+      }
     ]
   },
   "61aa0064c5": {
@@ -16222,12 +16418,13 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Well chewed is half digested.",
     "source": "wiktionary",
     "lemmas": [
       "kauen"
     ],
-    "ref": "phrases/gut gekaut ist halb verdaut"
+    "ref": "phrases/gut gekaut ist halb verdaut",
+    "translation_model": "openai/gpt-4.1"
   },
   "61ae2490f1": {
     "text": "„Diese füllte auch tatsächlich eine zinnerne Schüssel mit Wasser und ließ Zimtknospe sich die Hände waschen.“",
@@ -16715,10 +16912,37 @@
   },
   "61b65f8cd2": {
     "text": "Ich spiele jetzt noch mal Herz an, dann kann mein Partner vielleicht aus dem Hinterhalt pupen.",
-    "translation": null,
+    "translation": "I'm playing hearts now, then my partner might perhaps be able to play from the hand.",
     "source": "wiktionary",
     "lemmas": [
       "aus dem Hinterhalt pupen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "spiele",
+        "lemma": "spielen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herz",
+        "lemma": "Herz",
+        "pos": "noun",
+        "gloss_hint": "hearts (cards)"
+      },
+      {
+        "form": "Partner",
+        "lemma": "Partner",
+        "pos": "noun",
+        "gloss_hint": "partner (relationship)"
+      },
+      {
+        "form": "Hinterhalt",
+        "lemma": "Hinterhalt",
+        "pos": "noun",
+        "gloss_hint": "hand"
+      }
     ]
   },
   "61b706e7ec": {
@@ -18924,10 +19148,37 @@
   },
   "61c4a7b12e": {
     "text": "„Der Wohnungsmangel greift nach Angaben des Deutschen Mieterbundes auch in Mecklenburg-Vorpommern immer weiter um sich.“",
-    "translation": null,
+    "translation": "According to the German Tenants' Association, the housing shortage is increasingly spreading in Mecklenburg-Vorpommern as well.",
     "source": "wiktionary",
     "lemmas": [
       "um sich greifen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wohnungsmangel",
+        "lemma": "Wohnungsmangel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "greift",
+        "lemma": "greifen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschen",
+        "lemma": "Deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mieterbundes",
+        "lemma": "Mieterbund",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "61c545ae0b": {
@@ -19221,11 +19472,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to stay at home (because of illness)",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "61c9e062ad": {
     "text": "„Karin hatte der Unterhaltung zugehört und fragte mit einem Mal den Übersetzer, warum die alten Schreiber denn so zurückhaltend seien, wenn es um Informationen zu einem guten altmodischen Fick ginge, wie sie sich ausdrückte.“",
@@ -20511,14 +20763,12 @@
     "type": "expression",
     "note": "opportunistisch genau das sagen, was jemand hören will",
     "synonyms": [],
-    "translation": null,
+    "translation": "to tell people what they want to hear",
     "source": "wiktionary",
     "lemmas": [
       "Mund"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "61cef22069": {
     "text": "(1874) „Nach den „Beiträgen“ Hahn's, nach dem „Versuche“ Camarda's und nach so mancher anderen arbeit brauchen wir an ein buch, welches sich „grammatik der albanischen sprache“ betitelt, keine gar zu geringen anforderungen mehr, weder in bezug auf material, noch auf methode, zu stellen. „Die albanische sprache“ kann streng genommen nur bedeuten: die gesammtheit der albanischen mundarten oder zum mindesten die summe derjenigen, deren kenntniſs uns bis jetzt durch die litteratur eröffnet worden ist; keineswegs aber eine einzige albanische mundart.“",
@@ -23388,11 +23638,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to defect with flying colors",
     "source": "wiktionary",
     "lemmas": [
       "Fahne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "61e3146b5d": {
     "text": "Sonst trinke ich eigentlich immer Tee, aber heute mache ich gerne eine Ausnahme.",
@@ -24800,11 +25051,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When the goat sees water, it has to drink.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "61ecd10cbb": {
     "text": "Mach's Loch zu!",
@@ -24832,10 +25084,43 @@
   },
   "61ee1b1a8b": {
     "text": "„Neben seiner dortigen Lehrtätigkeit hielt er private Vorlesungen, die anscheinend besser besucht waren als die universitären.“",
-    "translation": null,
+    "translation": "In addition to his teaching position there, he held private lectures, which apparently were better attended than the university ones.",
     "source": "wiktionary",
     "lemmas": [
       "gut besucht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Lehrtätigkeit",
+        "lemma": "Lehrtätigkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hielt",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorlesungen",
+        "lemma": "Vorlesung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besucht",
+        "lemma": "besuchen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "universitären",
+        "lemma": "universitär",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "61ef4213b5": {
@@ -26534,11 +26819,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "mossy house",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "61fb5342d8": {
     "text": "„Val stellte erleichtert fest, dass der heftige Wind ihr die Illusion verschaffte, nüchtern zu sein.“",
@@ -26826,11 +27112,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone only has to lift a finger to achieve something",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "61fd353c75": {
     "text": "„›Ich weiß schon warum du grinst, Halunke‹, fuhr Pfeill ärgerlich fort; ›du spielst auf die gottverfluchten paar Kröten an, die ich da dem Schuster – aus Versehen natürlich – geschickt habe. Der Geist ist willig, aber das Fleisch ist schwach. – – Was sind das für Taktlosigkeiten, mir meine Schwächen vorzuhalten! Die ganze Nacht habe ich mich wegen meiner Charakterlosigkeit gegiftet.‹“",

@@ -88,11 +88,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'll eat my hat",
     "source": "wiktionary",
     "lemmas": [
       "Besen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4601444884": {
     "text": "Pass auf, das Gewehr ist geladen!",
@@ -316,10 +317,31 @@
   },
   "4602064178": {
     "text": "Es ist mir ehrlich gesagt egal, was jemand über mich denkt.",
-    "translation": null,
+    "translation": "To be honest, I don't care what anyone thinks of me.",
     "source": "wiktionary",
     "lemmas": [
       "ehrlich gesagt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ehrlich",
+        "lemma": "ehrlich",
+        "pos": "adjective",
+        "gloss_hint": "honestly"
+      },
+      {
+        "form": "egal",
+        "lemma": "egal",
+        "pos": "adjective",
+        "gloss_hint": "indifferent"
+      },
+      {
+        "form": "denkt",
+        "lemma": "denken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "46024b5285": {
@@ -334,10 +356,55 @@
   },
   "46029fe978": {
     "text": "Du willst mit dem Skateboard durch den Wald fahren?! Du bist wohl von allen guten Geistern verlassen!",
-    "translation": null,
+    "translation": "You want to ride a skateboard through the forest?! You must be out of your mind!",
     "source": "wiktionary",
     "lemmas": [
       "von allen guten Geistern verlassen sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "willst",
+        "lemma": "wollen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Skateboard",
+        "lemma": "Skateboard",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wald",
+        "lemma": "Wald",
+        "pos": "noun",
+        "gloss_hint": "forest"
+      },
+      {
+        "form": "fahren",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": "drive"
+      },
+      {
+        "form": "guten",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geistern",
+        "lemma": "Geist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verlassen",
+        "lemma": "verlassen",
+        "pos": "verb",
+        "gloss_hint": "abandon"
+      }
     ]
   },
   "46032a424c": {
@@ -1287,12 +1354,13 @@
     "type": "expression",
     "note": "! - Diese Gruß- und Segensformel geht explizit nicht auf das deutsche Substantiv „Rutsch“ zurück, sondern ist eine Verballhornung des hebräischen „Rosch ha-Schana“! (Näheres hierzu im Eintrag zu der betreffenden Gruß- und Segensformel)",
     "synonyms": [],
-    "translation": null,
+    "translation": "Happy New Year!",
     "source": "wiktionary",
     "lemmas": [
       "Rutsch",
       "Neues Jahr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "460bed478f": {
     "text": "An seine Situation als Arbeitsloser konnte Rafael sich nie gewöhnen.",
@@ -2315,11 +2383,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be out of control",
     "source": "wiktionary",
     "lemmas": [
       "Band"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "461a2f2552": {
     "text": "Bis die Anlage wieder betriebsbereit war, mußte das ausströmende Gas abgefackelt werden.",
@@ -3118,11 +3187,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be flooded",
     "source": "wiktionary",
     "lemmas": [
       "Hochwasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "462416a59b": {
     "text": "„Unter dem Abdampfrückstand wird der Rückstand verstanden, der nach dem hier beschriebenen Verfahren erhalten wird. Der Abdampfrückstand wird in mg/100 ml r. A. angegeben.“",
@@ -3405,11 +3475,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go with the flow",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4629488595": {
     "text": "„Ich stellte mir Onkel Louis vor, mit seiner Mütze auf dem Kopf, wie er am Steuer seines Citroëns saß und in den sonnigen Süden aufbrach.“",
@@ -3963,10 +4034,109 @@
   },
   "462dc58543": {
     "text": "„Die BAM, wie die Baikal-Amur-Eisenbahn kurz genannt wird, ist wohl das aufwendigste Erschließungsprojekt der Sowjetunion und war mit der Vielzahl der notwendigen Siedlungen, Versorgungseinrichtungen und anspruchsvollen Technologien die teuerste Baustelle der Welt.“",
-    "translation": null,
+    "translation": "\"The BAM, as the Baikal-Amur Railway is briefly called, is probably the most ambitious development project of the Soviet Union and, with the multitude of necessary settlements, supply facilities, and demanding technologies, was the most expensive construction site in the world.\"",
     "source": "wiktionary",
     "lemmas": [
       "BAM"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "BAM",
+        "lemma": "BAM",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Baikal-Amur-Eisenbahn",
+        "lemma": "Baikal-Amur-Eisenbahn",
+        "pos": "noun",
+        "gloss_hint": "railway"
+      },
+      {
+        "form": "kurz",
+        "lemma": "kurz",
+        "pos": "adjective",
+        "gloss_hint": "brief"
+      },
+      {
+        "form": "genannt",
+        "lemma": "nennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufwendigste",
+        "lemma": "aufwendig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erschließungsprojekt",
+        "lemma": "Erschließungsprojekt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sowjetunion",
+        "lemma": "Sowjetunion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vielzahl",
+        "lemma": "Vielzahl",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "notwendigen",
+        "lemma": "notwendig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Siedlungen",
+        "lemma": "Siedlung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Versorgungseinrichtungen",
+        "lemma": "Versorgungseinrichtung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "anspruchsvollen",
+        "lemma": "anspruchsvoll",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Technologien",
+        "lemma": "Technologie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "teuerste",
+        "lemma": "teuer",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Baustelle",
+        "lemma": "Baustelle",
+        "pos": "noun",
+        "gloss_hint": "construction site"
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      }
     ]
   },
   "462e397baa": {
@@ -5623,10 +5793,49 @@
   },
   "463ab65550": {
     "text": "Der Schlitten mit BOT XX-999 bleibt heute beim Blitzmarathon in der Garage.",
-    "translation": null,
+    "translation": "The sled with BOT XX-999 stays in the garage today during the lightning marathon.",
     "source": "wiktionary",
     "lemmas": [
       "BOT"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schlitten",
+        "lemma": "Schlitten",
+        "pos": "noun",
+        "gloss_hint": "sled"
+      },
+      {
+        "form": "BOT",
+        "lemma": "BOT",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bleibt",
+        "lemma": "bleiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "Blitzmarathon",
+        "lemma": "Blitzmarathon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Garage",
+        "lemma": "Garage",
+        "pos": "noun",
+        "gloss_hint": "garage"
+      }
     ]
   },
   "463bf98833": {
@@ -5673,10 +5882,37 @@
   },
   "463cc2b77d": {
     "text": "Das Theater hat ein Stück von Nestroy inszeniert.",
-    "translation": null,
+    "translation": "The theater staged a play by Nestroy.",
     "source": "wiktionary",
     "lemmas": [
       "inszenieren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Theater",
+        "lemma": "Theater",
+        "pos": "noun",
+        "gloss_hint": "playhouse"
+      },
+      {
+        "form": "Stück",
+        "lemma": "Stück",
+        "pos": "noun",
+        "gloss_hint": "play"
+      },
+      {
+        "form": "Nestroy",
+        "lemma": "Nestroy",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "inszeniert",
+        "lemma": "inszenieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "463ddf262d": {
@@ -5899,11 +6135,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go from pillar to post",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "463ef310ba": {
     "text": "„«Herr Winkelhock», heult er herzlich, «Sie werden sehen, Qualität setzt sich durch, und Qualität braucht ihre Zeit. Rom wurde auch nicht an einem Tag gebaut!» «Ja», sage ich, «aber Rom wurde von Fachleuten gebaut.»“",
@@ -6454,10 +6691,43 @@
   },
   "464470baa3": {
     "text": "Wir müssen noch Hafer für die Pferde kaufen.",
-    "translation": null,
+    "translation": "We still need to buy oats for the horses.",
     "source": "wiktionary",
     "lemmas": [
       "Hafer"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "müssen",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": "must"
+      },
+      {
+        "form": "noch",
+        "lemma": "noch",
+        "pos": "adverb",
+        "gloss_hint": "still"
+      },
+      {
+        "form": "Hafer",
+        "lemma": "Hafer",
+        "pos": "noun",
+        "gloss_hint": "oat"
+      },
+      {
+        "form": "Pferde",
+        "lemma": "Pferd",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kaufen",
+        "lemma": "kaufen",
+        "pos": "verb",
+        "gloss_hint": "buy"
+      }
     ]
   },
   "46448e4086": {
@@ -6735,10 +7005,37 @@
   },
   "464708f783": {
     "text": "Glaubst du, dass der Nagel wieder nachwächst?",
-    "translation": null,
+    "translation": "Do you think the nail will grow back?",
     "source": "wiktionary",
     "lemmas": [
       "nachwachsen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Glaubst",
+        "lemma": "glauben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nagel",
+        "lemma": "Nagel",
+        "pos": "noun",
+        "gloss_hint": "nail"
+      },
+      {
+        "form": "wieder",
+        "lemma": "wieder",
+        "pos": "adverb",
+        "gloss_hint": "again"
+      },
+      {
+        "form": "nachwächst",
+        "lemma": "nachwachsen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "46470f2d52": {
@@ -6926,11 +7223,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lie through one's teeth",
     "source": "wiktionary",
     "lemmas": [
       "Himmel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4648c38040": {
     "text": "Die letzte Woche hat es bei uns in Strömen geregnet.",
@@ -7054,10 +7352,43 @@
   },
   "464c9832fc": {
     "text": "Er lebt seit mehreren Jahren in Thun.",
-    "translation": null,
+    "translation": "He has been living in Thun for several years.",
     "source": "wiktionary",
     "lemmas": [
       "Thun"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "lebt",
+        "lemma": "leben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "seit",
+        "lemma": "seit",
+        "pos": "preposition",
+        "gloss_hint": "since"
+      },
+      {
+        "form": "mehreren",
+        "lemma": "mehrere",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Thun",
+        "lemma": "Thun",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "464ccd68d3": {
@@ -7489,11 +7820,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be overwhelmed (by emotions)",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "465052bdd3": {
     "text": "„Die AMOC transportiert an der Oberfläche warmes, salzhaltigeres Wasser nach Norden, und kaltes, salzärmeres Wasser fließt in mehreren Kilometern Tiefe und in entgegengesetzter Richtung zurück.“",
@@ -8383,10 +8715,67 @@
   },
   "4657a03aa7": {
     "text": "„Die klassische Industrie wetteifert mit der modernen IT-Wirtschaft darum, wer im Geschäft mit Servicerobotern die Nase vorn hat.“",
-    "translation": null,
+    "translation": "\"Classical industry is competing with modern IT business to get ahead in the service robot market.\"",
     "source": "wiktionary",
     "lemmas": [
       "die Nase vorn haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "klassische",
+        "lemma": "klassisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Industrie",
+        "lemma": "Industrie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wetteifert",
+        "lemma": "wetteifern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "modernen",
+        "lemma": "modern",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "IT-Wirtschaft",
+        "lemma": "IT-Wirtschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geschäft",
+        "lemma": "Geschäft",
+        "pos": "noun",
+        "gloss_hint": "business"
+      },
+      {
+        "form": "Servicerobotern",
+        "lemma": "Serviceroboter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nase",
+        "lemma": "Nase",
+        "pos": "noun",
+        "gloss_hint": "nose"
+      },
+      {
+        "form": "vorn",
+        "lemma": "vorn",
+        "pos": "adverb",
+        "gloss_hint": null
+      }
     ]
   },
   "465a5041d8": {
@@ -9554,11 +9943,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to tell someone off",
     "source": "wiktionary",
     "lemmas": [
       "niesen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4662e31030": {
     "text": "Die Nachhaltigkeit dieser Therapie konnte statistisch belegt werden.",
@@ -10089,12 +10479,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in a hurry",
     "source": "wiktionary",
     "lemmas": [
       "Schnelle"
     ],
-    "ref": "phrases/auf die Schnelle"
+    "ref": "phrases/auf die Schnelle",
+    "translation_model": "openai/gpt-4.1"
   },
   "4669084a5f": {
     "text": "„Ein trauriges Ende nahm die Weltraum-Expedition einer Mücke, die vor drei Tagen als blinder Passagier an Bord der US-Raumfähre Endeavour ins All gestartet war.“",
@@ -10191,11 +10582,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to play the violin badly",
     "source": "wiktionary",
     "lemmas": [
       "sägen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "466a547e73": {
     "text": "Selbstverständlich kann man Rassen- und Volksunterschiede nicht leugnen – aber diese lokalen Eigentümlichkeiten sind stellenweise schon Kulissen geworden; wirtschaftliches Leben, seine Aufwände und Erträgnisse sind sich im tiefsten Grunde sehr ähnlich.",
@@ -10274,11 +10666,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to become petty and mean",
     "source": "wiktionary",
     "lemmas": [
       "hässlich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "466ac5920b": {
     "text": "„Auf der rechten Seite sah er Henni mit ihrem Anwalt und auf der linken Schwester Angelika in ihrem Habit.“",
@@ -11130,12 +11523,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be born and bred in Hamburg",
     "source": "wiktionary",
     "lemmas": [
       "taufen"
     ],
-    "ref": "phrases/mit Alsterwasser getauft sein"
+    "ref": "phrases/mit Alsterwasser getauft sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "467164a1fd": {
     "text": "„Der Abbé schloß die Augen, dann antwortete er: Man müsse stets unterscheiden zwischen dem Sinn und dem Buchstaben.“",
@@ -13796,11 +14190,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to break up",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4680c29a52": {
     "text": "Vom Staatsanwalt wurde Untersuchungshaft beantragt, da Fluchtgefahr bestand.",
@@ -14350,10 +14745,61 @@
   },
   "4683a8e5b4": {
     "text": "„Getreu dem Spruch, Männer seien vom Mars und Frauen von der Venus, kommt uns das Verhalten des anderen Geschlechts tatsächlich oft rätselhaft vor.“",
-    "translation": null,
+    "translation": "True to the saying that men are from Mars and women are from Venus, the behavior of the opposite sex often seems genuinely puzzling to us.",
     "source": "wiktionary",
     "lemmas": [
       "rätselhaft"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Spruch",
+        "lemma": "Spruch",
+        "pos": "noun",
+        "gloss_hint": "saying"
+      },
+      {
+        "form": "Männer",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mars",
+        "lemma": "Mars",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Venus",
+        "lemma": "Venus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verhalten",
+        "lemma": "Verhalten",
+        "pos": "noun",
+        "gloss_hint": "behavior"
+      },
+      {
+        "form": "Geschlechts",
+        "lemma": "Geschlecht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "rätselhaft",
+        "lemma": "rätselhaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "4684ced1be": {
@@ -14751,12 +15197,13 @@
     "type": "expression",
     "note": "eine gefährliche Sache anfassen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to stir up a hornet's nest",
     "source": "wiktionary",
     "lemmas": [
       "stechen"
     ],
-    "ref": "phrases/in ein Wespennest stechen"
+    "ref": "phrases/in ein Wespennest stechen",
+    "translation_model": "openai/gpt-4.1"
   },
   "4687fd9101": {
     "text": "„Deren Flotte wuchs von anfangs acht auf mehr als 100 Containerfrachter.“",
@@ -15091,10 +15538,55 @@
   },
   "468c2afc87": {
     "text": "„So gutes Essen hat Guđriđur nämlich noch nie gegessen, nicht einmal gewusst, dass man solche Wonnen zubereiten kann.“",
-    "translation": null,
+    "translation": "For Guđriđur had never eaten such good food, had never even known that one could prepare such delights.",
     "source": "wiktionary",
     "lemmas": [
       "Wonne"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gutes",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Essen",
+        "lemma": "Essen",
+        "pos": "noun",
+        "gloss_hint": "food"
+      },
+      {
+        "form": "Guđriđur",
+        "lemma": "Guđriđur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gegessen",
+        "lemma": "essen",
+        "pos": "verb",
+        "gloss_hint": "eat"
+      },
+      {
+        "form": "gewusst",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zubereiten",
+        "lemma": "zubereiten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wonnen",
+        "lemma": "Wonne",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "468cbdd9a6": {
@@ -16705,10 +17197,67 @@
   },
   "469d7e32ea": {
     "text": "Laut den TOM müssen die Zugangs- und Zutrittskontrollen für die Serverräume sowie die Weitergabe- und Zugriffskontrolle der Daten definiert sein.",
-    "translation": null,
+    "translation": "According to the TOM, access and entry controls for server rooms as well as data transfer and access controls must be defined.",
     "source": "wiktionary",
     "lemmas": [
       "TOM"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "TOM",
+        "lemma": "TOM",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "müssen",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": "must"
+      },
+      {
+        "form": "Zugangs-",
+        "lemma": "Zugang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zutrittskontrollen",
+        "lemma": "Zutrittskontrolle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Serverräume",
+        "lemma": "Serverraum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weitergabe-",
+        "lemma": "Weitergabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zugriffskontrolle",
+        "lemma": "Zugriffskontrolle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Daten",
+        "lemma": "Daten",
+        "pos": "noun",
+        "gloss_hint": "data"
+      },
+      {
+        "form": "definiert",
+        "lemma": "definieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "469d844e8f": {
@@ -16842,11 +17391,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Vitamin X",
     "source": "wiktionary",
     "lemmas": [
       "Vitamin"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "469ea9f5bc": {
     "text": "Die Nabelschnur des Neugeborenen wurde von der Hebamme etwa fünf Minuten nach der Geburt des Neugeborenen nahe am Bauchnabel zweifach abgeklemmt, nachdem das Blut in der Nabelschnur aufgehört hatte zu pulsieren.",
@@ -17891,13 +18441,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "without batting an eyelid",
     "source": "wiktionary",
     "lemmas": [
       "Miene",
       "verziehen"
     ],
-    "ref": "phrases/ohne eine Miene zu verziehen"
+    "ref": "phrases/ohne eine Miene zu verziehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "46a8dd6377": {
     "text": "„Denn es ging ums Plündern und nichts außerdem.“",
@@ -19971,11 +20522,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the devil take me",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "46bbb44332": {
     "text": "Städtebau ist projizierte Weltanschauung. Unter diesem Gesichtspunkt ist am Stadtbild Berlins seit nunmehr hundert Jahren ununterbrochen gesündigt worden.",
@@ -21988,10 +22540,31 @@
   },
   "46ca7c0dc5": {
     "text": "Das ZDF hat seinen Hauptsitz in Mainz.",
-    "translation": null,
+    "translation": "The ZDF has its headquarters in Mainz.",
     "source": "wiktionary",
     "lemmas": [
       "ZDF"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ZDF",
+        "lemma": "ZDF",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hauptsitz",
+        "lemma": "Hauptsitz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mainz",
+        "lemma": "Mainz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "46caa51fdf": {
@@ -23132,10 +23705,37 @@
   },
   "46cfaf8259": {
     "text": "Wir müssen den Fisch tiefkühlen, damit er nicht verdirbt.",
-    "translation": null,
+    "translation": "We must freeze the fish so that it doesn't spoil.",
     "source": "wiktionary",
     "lemmas": [
       "tiefkühlen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "müssen",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": "must"
+      },
+      {
+        "form": "Fisch",
+        "lemma": "Fisch",
+        "pos": "noun",
+        "gloss_hint": "fish"
+      },
+      {
+        "form": "tiefkühlen",
+        "lemma": "tiefkühlen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "verdirbt",
+        "lemma": "verderben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "46d040c3a4": {
@@ -23805,19 +24405,71 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "thick darkness",
     "source": "wiktionary",
     "lemmas": [
       "Finsternis"
     ],
-    "ref": "phrases/ägyptische Finsternis"
+    "ref": "phrases/ägyptische Finsternis",
+    "translation_model": "openai/gpt-4.1"
   },
   "46d644be10": {
     "text": "„Mitte des ersten Satzes schien es so, als wolle der Primus seinen aktuell ersten Verfolger quasi ungespitzt in den Boden rammen.“",
-    "translation": null,
+    "translation": "In the middle of the first set, it seemed as if the leader wanted to ram his current closest challenger into the ground, as it were.",
     "source": "wiktionary",
     "lemmas": [
       "jemanden ungespitzt in den Boden rammen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mitte",
+        "lemma": "Mitte",
+        "pos": "noun",
+        "gloss_hint": "middle"
+      },
+      {
+        "form": "Satzes",
+        "lemma": "Satz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schien",
+        "lemma": "scheinen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Primus",
+        "lemma": "Primus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aktuell",
+        "lemma": "aktuell",
+        "pos": "adjective",
+        "gloss_hint": "current"
+      },
+      {
+        "form": "Verfolger",
+        "lemma": "Verfolger",
+        "pos": "noun",
+        "gloss_hint": "challenger"
+      },
+      {
+        "form": "rammen",
+        "lemma": "rammen",
+        "pos": "verb",
+        "gloss_hint": "ram"
+      },
+      {
+        "form": "Boden",
+        "lemma": "Boden",
+        "pos": "noun",
+        "gloss_hint": "ground"
+      }
     ]
   },
   "46d6e5757d": {
@@ -25534,10 +26186,85 @@
   },
   "46e83f008e": {
     "text": "(Die) Drohungen der griechischen Priester genügten dazu, dem Faß den Boden auszuschlagen und alle späteren Versuche, das entrüstete Volksgewissen wieder zu versöhnen, sind vollständig erfolglos geblieben.",
-    "translation": null,
+    "translation": "The threats of the Greek priests were enough to knock the bottom out of the barrel, and all subsequent attempts to reconcile the outraged public conscience have remained completely unsuccessful.",
     "source": "wiktionary",
     "lemmas": [
       "dem Fass den Boden ausschlagen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Drohungen",
+        "lemma": "Drohung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "griechischen",
+        "lemma": "griechisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Priester",
+        "lemma": "Priester",
+        "pos": "noun",
+        "gloss_hint": "ordained clergyman"
+      },
+      {
+        "form": "genügten",
+        "lemma": "genügen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Faß",
+        "lemma": "Fass",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Boden",
+        "lemma": "Boden",
+        "pos": "noun",
+        "gloss_hint": "bottom"
+      },
+      {
+        "form": "Versuche",
+        "lemma": "Versuch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entrüstete",
+        "lemma": "entrüstet",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Volksgewissen",
+        "lemma": "Volksgewissen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "versöhnen",
+        "lemma": "versöhnen",
+        "pos": "verb",
+        "gloss_hint": "reconcile"
+      },
+      {
+        "form": "vollständig",
+        "lemma": "vollständig",
+        "pos": "adjective",
+        "gloss_hint": "complete"
+      },
+      {
+        "form": "erfolglos",
+        "lemma": "erfolglos",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "46e8b6218a": {
@@ -26441,10 +27168,25 @@
   },
   "46ed679f1a": {
     "text": "Diese Feinstrumpfhose hat 20 den.",
-    "translation": null,
+    "translation": "This fine-knit pantyhose has 20 denier.",
     "source": "wiktionary",
     "lemmas": [
       "den"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Feinstrumpfhose",
+        "lemma": "Feinstrumpfhose",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "den",
+        "lemma": "den",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "46ed88875a": {
@@ -27013,36 +27755,36 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The Moor has done his duty, the Moor may go.",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "46f7b6da6a": {
     "text": "ich habe schon so viel für dich getan",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I've already done so much for you.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "46f7bcc79b": {
     "text": "über etwas Herr werden",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get something under control",
     "source": "wiktionary",
     "lemmas": [
       "Herr"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "46f7d5399a": {
     "text": "„Wer lesen kann, ist klar im Vorteil, so lautet eine hämische Redewendung.“",
@@ -27140,10 +27882,49 @@
   },
   "46fa5141fe": {
     "text": "„Auf mancher der Sprecherstimmen hat sich nach einem halben Jahrhundert sicher ein bisschen Staub abgelagert; macht nichts.“",
-    "translation": null,
+    "translation": "On some of the voice-overs, after half a century, a bit of dust has surely settled; it doesn't matter.",
     "source": "wiktionary",
     "lemmas": [
       "macht nichts"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sprecherstimmen",
+        "lemma": "Sprecherstimme",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahrhundert",
+        "lemma": "Jahrhundert",
+        "pos": "noun",
+        "gloss_hint": "century"
+      },
+      {
+        "form": "Staub",
+        "lemma": "Staub",
+        "pos": "noun",
+        "gloss_hint": "dust"
+      },
+      {
+        "form": "abgelagert",
+        "lemma": "ablagern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "macht",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nichts",
+        "lemma": "Nichts",
+        "pos": "noun",
+        "gloss_hint": "nothingness"
+      }
     ]
   },
   "46fa7591eb": {
@@ -27693,11 +28474,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to rub someone's nose in something",
     "source": "wiktionary",
     "lemmas": [
       "stoßen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "46fd49637f": {
     "text": "„Er war, wie viele Juden im Deutschland Wilhelms II., ein glühender Patriot gewesen, als Antisemitismus noch als vulgär angesehen wurde und Juden in die Aristokratie aufsteigen konnten.“",

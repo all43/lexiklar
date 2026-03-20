@@ -831,11 +831,12 @@
     "type": "expression",
     "note": "erstaunter Ausruf, Ausdruck für verwundert, überrascht sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "Well, well, well, Mrs. Zimmermann!",
     "source": "wiktionary",
     "lemmas": [
       "ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2b06d90be4": {
     "text": "„Wieder macht der Ex-Präsident negative Schlagzeilen: Die brasilianische Bundespolizei will Jair Bolsonaro wegen Unterschlagung vor Gericht bringen.“",
@@ -1648,10 +1649,85 @@
   },
   "2b0a50ab14": {
     "text": "„Die radikal-islamische Hamas verletze die von ihr angekündigte Feuerpause selbst, sagte Regierungschef Benjamin Netanjahu am Sonntag in einem Interview des US-Senders CNN.“",
-    "translation": null,
+    "translation": "The radical-Islamist Hamas violates the ceasefire it announced itself, said Prime Minister Benjamin Netanyahu on Sunday in an interview with US broadcaster CNN.",
     "source": "wiktionary",
     "lemmas": [
       "CNN"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "radikal-islamische",
+        "lemma": "radikal-islamisch",
+        "pos": "adjective",
+        "gloss_hint": "radical"
+      },
+      {
+        "form": "Hamas",
+        "lemma": "Hamas",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verletze",
+        "lemma": "verletzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Feuerpause",
+        "lemma": "Feuerpause",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "angekündigte",
+        "lemma": "ankündigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sagte",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regierungschef",
+        "lemma": "Regierungschef",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Benjamin Netanjahu",
+        "lemma": "Benjamin Netanjahu",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sonntag",
+        "lemma": "Sonntag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Interview",
+        "lemma": "Interview",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "US-Senders",
+        "lemma": "US-Sender",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "CNN",
+        "lemma": "CNN",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2b0abe42b4": {
@@ -2196,10 +2272,61 @@
   },
   "2b0c827125": {
     "text": "„Bei der Bundesagentur für Arbeit (BA) waren 3,082 Millionen Erwerbslose registriert, wie die Behörde mitteilte.“",
-    "translation": null,
+    "translation": "The Federal Employment Agency (BA) registered 3.082 million unemployed persons, as the authority reported.",
     "source": "wiktionary",
     "lemmas": [
       "BA"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bundesagentur",
+        "lemma": "Bundesagentur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arbeit",
+        "lemma": "Arbeit",
+        "pos": "noun",
+        "gloss_hint": "employment"
+      },
+      {
+        "form": "BA",
+        "lemma": "BA",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Millionen",
+        "lemma": "Million",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erwerbslose",
+        "lemma": "Erwerbslose",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "registriert",
+        "lemma": "registrieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Behörde",
+        "lemma": "Behörde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "mitteilte",
+        "lemma": "mitteilen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "2b0d35a8be": {
@@ -4515,10 +4642,55 @@
   },
   "2b230fa5a5": {
     "text": "„Ohne die stille Kooperation der Bevölkerung stand er auf verlorenem Posten — Härte hin oder her.“",
-    "translation": null,
+    "translation": "Without the silent cooperation of the population, he stood on lost ground—severity or not.",
     "source": "wiktionary",
     "lemmas": [
       "auf verlorenem Posten stehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "stille",
+        "lemma": "still",
+        "pos": "adjective",
+        "gloss_hint": "stillness"
+      },
+      {
+        "form": "Kooperation",
+        "lemma": "Kooperation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bevölkerung",
+        "lemma": "Bevölkerung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stand",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "verlorenem",
+        "lemma": "verloren",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Posten",
+        "lemma": "Posten",
+        "pos": "noun",
+        "gloss_hint": "position"
+      },
+      {
+        "form": "Härte",
+        "lemma": "Härte",
+        "pos": "noun",
+        "gloss_hint": "severity"
+      }
     ]
   },
   "2b231a5727": {
@@ -4883,10 +5055,67 @@
   },
   "2b242a3320": {
     "text": "Johannes Müller veröffentlicht 1807 Herders Werk \"Stimmen der Völker in Liedern\" post mortem.",
-    "translation": null,
+    "translation": "In 1807, Johannes Müller posthumously published Herder's work \"Voices of the Peoples in Songs\".",
     "source": "wiktionary",
     "lemmas": [
       "post mortem"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Johannes Müller",
+        "lemma": "Johannes Müller",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "veröffentlicht",
+        "lemma": "veröffentlichen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "1807",
+        "lemma": "1807",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herders",
+        "lemma": "Herder",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Werk",
+        "lemma": "Werk",
+        "pos": "noun",
+        "gloss_hint": "work"
+      },
+      {
+        "form": "Stimmen",
+        "lemma": "Stimme",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Völker",
+        "lemma": "Volk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Liedern",
+        "lemma": "Lied",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "post mortem",
+        "lemma": "post mortem",
+        "pos": "adverb",
+        "gloss_hint": null
+      }
     ]
   },
   "2b24d12c1b": {
@@ -5907,10 +6136,37 @@
   },
   "2b2ea40823": {
     "text": "Die eulersche Zahl e ist eine irrationale und transzendente Zahl.",
-    "translation": null,
+    "translation": "Euler's number e is an irrational and transcendental number.",
     "source": "wiktionary",
     "lemmas": [
       "e"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "eulersche",
+        "lemma": "eulersch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zahl",
+        "lemma": "Zahl",
+        "pos": "noun",
+        "gloss_hint": "number"
+      },
+      {
+        "form": "irrationale",
+        "lemma": "irrational",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "transzendente",
+        "lemma": "transzendent",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "2b2fe544b9": {
@@ -6578,10 +6834,37 @@
   },
   "2b348e4301": {
     "text": "„Beamtin“ steht hier synonym für „Polizistin“.",
-    "translation": null,
+    "translation": "\"Female civil servant\" is used here synonymously for \"policewoman\".",
     "source": "wiktionary",
     "lemmas": [
       "synonym"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Beamtin",
+        "lemma": "Beamtin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "steht",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "synonym",
+        "lemma": "synonym",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Polizistin",
+        "lemma": "Polizistin",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2b34e1a016": {
@@ -7279,11 +7562,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have an open house",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2b399468d9": {
     "text": "Hinfort mit dir, du Ungeheuer!",
@@ -7533,11 +7817,12 @@
     "type": "expression",
     "note": "Ausdruck des Grauens, Grusels oder Ekels",
     "synonyms": [],
-    "translation": null,
+    "translation": "that's just revolting",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2b3f0668ae": {
     "text": "Kanadier werden sitzend oder kniend gefahren.",
@@ -8039,10 +8324,85 @@
   },
   "2b429a82cf": {
     "text": "Lagert sich bei falscher Bedienung oder dem Verbrennen von nassem Holz doch Russ in den Zügen ab, sind diese leicht durch die eingebauten Reinigungsöffnungen zugängig und zu reinigen.",
-    "translation": null,
+    "translation": "If soot deposits in the flues due to incorrect operation or burning of wet wood, these are easily accessible and can be cleaned through the built-in cleaning openings.",
     "source": "wiktionary",
     "lemmas": [
       "Russ"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Lagert",
+        "lemma": "lagern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "falscher",
+        "lemma": "falsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bedienung",
+        "lemma": "Bedienung",
+        "pos": "noun",
+        "gloss_hint": "operation"
+      },
+      {
+        "form": "Verbrennen",
+        "lemma": "verbrennen",
+        "pos": "verb",
+        "gloss_hint": "burn"
+      },
+      {
+        "form": "nassem",
+        "lemma": "nass",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Holz",
+        "lemma": "Holz",
+        "pos": "noun",
+        "gloss_hint": "wood"
+      },
+      {
+        "form": "Russ",
+        "lemma": "Russ",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zügen",
+        "lemma": "Zug",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "leicht",
+        "lemma": "leicht",
+        "pos": "adjective",
+        "gloss_hint": "easy"
+      },
+      {
+        "form": "Reinigungsöffnungen",
+        "lemma": "Reinigungsöffnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zugängig",
+        "lemma": "zugänglich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "reinigen",
+        "lemma": "reinigen",
+        "pos": "verb",
+        "gloss_hint": "clean"
+      }
     ]
   },
   "2b42f254fc": {
@@ -10013,11 +10373,12 @@
     "type": "expression",
     "note": "jemanden behindern oder stören",
     "synonyms": [],
-    "translation": null,
+    "translation": "to get in someone's way",
     "source": "wiktionary",
     "lemmas": [
       "Gehege"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2b533fe1e2": {
     "text": "„Wolle nur was du sollst, so kannst du was du willst.“",
@@ -13188,11 +13549,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be off-kilter",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2b729799de": {
     "text": "Die Kapazität der Maschinen wird laufend überprüft.",
@@ -14077,11 +14439,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to look completely bewildered",
     "source": "wiktionary",
     "lemmas": [
       "Gans"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2b7b86127a": {
     "text": "145.97.39.139 ist eine der IP-Adressen von de.wiktionary.org.",
@@ -14427,11 +14790,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "lazybones",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2b84a43e16": {
     "text": "„Während wir Touristen das Mahl genießen, erscheinen junge Männer mit Speeren und kunstvoll geflochtenem Kopfhaar.“",
@@ -14911,10 +15275,49 @@
   },
   "2b88ffce47": {
     "text": "Der Schlitten mit AH XX-999 bleibt heute beim Blitzmarathon in der Garage.",
-    "translation": null,
+    "translation": "The sledge with AH XX-999 is staying in the garage today for the lightning marathon.",
     "source": "wiktionary",
     "lemmas": [
       "AH"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schlitten",
+        "lemma": "Schlitten",
+        "pos": "noun",
+        "gloss_hint": "sledge"
+      },
+      {
+        "form": "AH XX-999",
+        "lemma": "AH XX-999",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bleibt",
+        "lemma": "bleiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "Blitzmarathon",
+        "lemma": "Blitzmarathon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Garage",
+        "lemma": "Garage",
+        "pos": "noun",
+        "gloss_hint": "garage"
+      }
     ]
   },
   "2b8a07a0d3": {
@@ -15079,10 +15482,73 @@
   },
   "2b8baedfad": {
     "text": "„Denn in Helfrichs Programm erfahren sie, wo sich Differenzen in der verbal-genetischen Evolutionsgeschichte am stärksten auswirken, warum ein daraus resultierender S-Fehler besser ist als ein SS-Fehler und wo letztendlich der Hund begraben liegt.“",
-    "translation": null,
+    "translation": "For in Helfrich's program they learn where differences in the verbal-genetic evolutionary history have the strongest effect, why a resulting S-error is better than an SS-error, and ultimately where the real problem lies.",
     "source": "wiktionary",
     "lemmas": [
       "da liegt der Hund begraben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Helfrichs",
+        "lemma": "Helfrich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Programm",
+        "lemma": "Programm",
+        "pos": "noun",
+        "gloss_hint": "program"
+      },
+      {
+        "form": "erfahren",
+        "lemma": "erfahren",
+        "pos": "verb",
+        "gloss_hint": "learn"
+      },
+      {
+        "form": "Differenzen",
+        "lemma": "Differenz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Evolutionsgeschichte",
+        "lemma": "Evolutionsgeschichte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "auswirken",
+        "lemma": "auswirken",
+        "pos": "verb",
+        "gloss_hint": "affect"
+      },
+      {
+        "form": "Fehler",
+        "lemma": "Fehler",
+        "pos": "noun",
+        "gloss_hint": "error"
+      },
+      {
+        "form": "SS-Fehler",
+        "lemma": "SS-Fehler",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hund",
+        "lemma": "Hund",
+        "pos": "noun",
+        "gloss_hint": "scoundrel"
+      },
+      {
+        "form": "begraben",
+        "lemma": "begraben",
+        "pos": "verb",
+        "gloss_hint": "discard"
+      }
     ]
   },
   "2b8cafdfab": {
@@ -16237,11 +16703,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "What I have written, I have written.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2b95f502d8": {
     "text": "„Sie kauert am Boden, eine weiße Eidechse, und zischt Flüche gegen mich, Beleidigungen, einen Strom von geflüsterten Fuhrmannsflüchen, Soldatenflüchen, Hurenflüchen, Flüchen, die ich nicht einmal alle kenne, Beleidigungen, die treffen wie Messer und Peitschenhiebe, Worte, die ich nie bei ihr vermutet hätte, Worte, auf die man nur mit den Fäusten antwortet.“",
@@ -16575,10 +17042,37 @@
   },
   "2b98343e69": {
     "text": "Petra gab ihrem Hamster eine Erdnuss.",
-    "translation": null,
+    "translation": "Petra gave her hamster a peanut.",
     "source": "wiktionary",
     "lemmas": [
       "Erdnuss"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Petra",
+        "lemma": "Petra",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gab",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hamster",
+        "lemma": "Hamster",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erdnuss",
+        "lemma": "Erdnuss",
+        "pos": "noun",
+        "gloss_hint": "peanut"
+      }
     ]
   },
   "2b9a3c276a": {
@@ -17747,11 +18241,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something has already passed through many hands",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2ba380ee5d": {
     "text": "Niemand bot auf diese umfangreiche Münzsammlung.",
@@ -19392,10 +19887,91 @@
   },
   "2baf9cc0a8": {
     "text": "„Das Flossenbürger Konzentrationslager kann am besten als eine Fabrik beschrieben werden, die mit dem Tode handelt. Boshafte Tötungen von Juden waren an der Tagesordnung, Einspritzungen von Gift und Genickschüsse waren alltägliche Begebenheiten.“",
-    "translation": null,
+    "translation": "The Flossenbürg concentration camp can best be described as a factory that dealt in death. Malicious killings of Jews were commonplace, injections of poison and shots to the back of the head were everyday occurrences.",
     "source": "wiktionary",
     "lemmas": [
       "an der Tagesordnung sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Flossenbürger",
+        "lemma": "Flossenbürger",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Konzentrationslager",
+        "lemma": "Konzentrationslager",
+        "pos": "noun",
+        "gloss_hint": "concentration camp"
+      },
+      {
+        "form": "Fabrik",
+        "lemma": "Fabrik",
+        "pos": "noun",
+        "gloss_hint": "factory"
+      },
+      {
+        "form": "beschrieben",
+        "lemma": "beschreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "handelt",
+        "lemma": "handeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tode",
+        "lemma": "Tod",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tötungen",
+        "lemma": "Tötung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Juden",
+        "lemma": "Jude",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tagesordnung",
+        "lemma": "Tagesordnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einspritzungen",
+        "lemma": "Einspritzung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gift",
+        "lemma": "Gift",
+        "pos": "noun",
+        "gloss_hint": "poison"
+      },
+      {
+        "form": "Genickschüsse",
+        "lemma": "Genickschuss",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Begebenheiten",
+        "lemma": "Begebenheit",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2bb074b1c2": {
@@ -21282,24 +21858,26 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something is lacking or insufficient",
     "source": "wiktionary",
     "lemmas": [
       "Auge",
       "Suppe"
     ],
-    "ref": "phrases/in die Suppe schauen mehr Augen hinein als heraus"
+    "ref": "phrases/in die Suppe schauen mehr Augen hinein als heraus",
+    "translation_model": "openai/gpt-4.1"
   },
   "2bc4585755": {
     "text": "oft ist eines Wolfes Herz bedeckt mit Schaffellen",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A wolf in sheep's clothing.",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2bc48aab98": {
     "text": "„Solche Gedanken lösten mitunter tiefe Emotionen in ihm aus, die er damals mit niemandem teilen konnte.“",
@@ -23352,10 +23930,61 @@
   },
   "2bd282fd73": {
     "text": "„Zu glauben, die Lehren der Vergangenheit zur Vorhersage der Zukunft nutzen zu können, ist genauso falsch, wie zu glauben, sie nicht zur Vorsorge nutzen zu müssen.“",
-    "translation": null,
+    "translation": "To believe that one can use the lessons of the past to predict the future is just as wrong as to believe that one need not use them for precaution.",
     "source": "wiktionary",
     "lemmas": [
       "Vorhersage"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "glauben",
+        "lemma": "glauben",
+        "pos": "verb",
+        "gloss_hint": "believe"
+      },
+      {
+        "form": "Lehren",
+        "lemma": "Lehre",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vergangenheit",
+        "lemma": "Vergangenheit",
+        "pos": "noun",
+        "gloss_hint": "past"
+      },
+      {
+        "form": "Vorhersage",
+        "lemma": "Vorhersage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zukunft",
+        "lemma": "Zukunft",
+        "pos": "noun",
+        "gloss_hint": "future"
+      },
+      {
+        "form": "falsch",
+        "lemma": "falsch",
+        "pos": "adjective",
+        "gloss_hint": "incorrect"
+      },
+      {
+        "form": "Vorsorge",
+        "lemma": "Vorsorge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "müssen",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": "must"
+      }
     ]
   },
   "2bd2c892cc": {
@@ -23495,11 +24124,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Drink water like the animals and pretend it's something special.",
     "source": "wiktionary",
     "lemmas": [
       "Vieh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2bd558c7a5": {
     "text": "„Die blaublaue Kornblume wird untergepflügt. Kein Jammer. Das Blümchen hat geblüht, nun ordnet es sich den menschlichen Plänen unter. Eine moderne Blume. Weh dem, der weint!“",
@@ -24894,10 +25524,43 @@
   },
   "2be324e795": {
     "text": "Der Hut des Rötlichen Holzritterlings kann Durchmesser von bis zu 15 cm erreichen.",
-    "translation": null,
+    "translation": "The cap of the reddish wood knight fungus can reach diameters of up to 15 cm.",
     "source": "wiktionary",
     "lemmas": [
       "Rötlicher Holzritterling"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hut",
+        "lemma": "Hut",
+        "pos": "noun",
+        "gloss_hint": "cap"
+      },
+      {
+        "form": "Rötlichen",
+        "lemma": "rötlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Holzritterlings",
+        "lemma": "Holzritterling",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Durchmesser",
+        "lemma": "Durchmesser",
+        "pos": "noun",
+        "gloss_hint": "diameter"
+      },
+      {
+        "form": "erreichen",
+        "lemma": "erreichen",
+        "pos": "verb",
+        "gloss_hint": "reach"
+      }
     ]
   },
   "2be3fc81b0": {
@@ -25270,12 +25933,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give someone the brush-off",
     "source": "wiktionary",
     "lemmas": [
       "Abfuhr"
     ],
-    "ref": "phrases/jemandem eine Abfuhr erteilen"
+    "ref": "phrases/jemandem eine Abfuhr erteilen",
+    "translation_model": "openai/gpt-4.1"
   },
   "2be9185a7b": {
     "text": "In Liebesdingen spannen Bruno und Brunhilde oft den Pflug vor die Ochsen.",
@@ -26213,21 +26877,94 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the ball is rolling",
     "source": "wiktionary",
     "lemmas": [
       "Stein"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "2bf4c5b853": {
     "text": "„Als Ersatzverkehr sind Busse im Einsatz, zudem können Reisende den Nahverkehr ab Siegburg/Bonn in Richtung Köln nutzen und ab Limburg in Richtung Frankfurt/Flughafen.“",
-    "translation": null,
+    "translation": "As replacement service, buses are in operation; moreover, travelers can use local transport from Siegburg/Bonn towards Cologne and from Limburg towards Frankfurt/Airport.",
     "source": "wiktionary",
     "lemmas": [
       "Ersatzverkehr"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ersatzverkehr",
+        "lemma": "Ersatzverkehr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Busse",
+        "lemma": "Bus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einsatz",
+        "lemma": "Einsatz",
+        "pos": "noun",
+        "gloss_hint": "use"
+      },
+      {
+        "form": "Reisende",
+        "lemma": "Reisender",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nahverkehr",
+        "lemma": "Nahverkehr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Siegburg",
+        "lemma": "Siegburg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bonn",
+        "lemma": "Bonn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Richtung",
+        "lemma": "Richtung",
+        "pos": "noun",
+        "gloss_hint": "direction"
+      },
+      {
+        "form": "Köln",
+        "lemma": "Köln",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Limburg",
+        "lemma": "Limburg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frankfurt",
+        "lemma": "Frankfurt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Flughafen",
+        "lemma": "Flughafen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2bf4c680ce": {
@@ -27499,10 +28236,31 @@
   },
   "2bfdc5282d": {
     "text": "„Der Zapfenstreich für die Bevölkerung ist vorverlegt worden.“",
-    "translation": null,
+    "translation": "The lights out ceremony for the public has been moved up.",
     "source": "wiktionary",
     "lemmas": [
       "Zapfenstreich"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zapfenstreich",
+        "lemma": "Zapfenstreich",
+        "pos": "noun",
+        "gloss_hint": "lights out"
+      },
+      {
+        "form": "Bevölkerung",
+        "lemma": "Bevölkerung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vorverlegt",
+        "lemma": "vorverlegen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "2bfdd1d8c2": {
@@ -27510,11 +28268,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "cost a fortune",
     "source": "wiktionary",
     "lemmas": [
       "Stange"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2bfe6dc1b7": {
     "text": "Der Raum war mit Matten ausgelegt.",

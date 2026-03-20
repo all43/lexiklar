@@ -197,10 +197,61 @@
   },
   "6c02afad29": {
     "text": "„Filme wie \"The Untouchables\" und \"Mission Impossible\" zogen die Zuschauer in Scharen in die Kinos […].“",
-    "translation": null,
+    "translation": "Films like \"The Untouchables\" and \"Mission Impossible\" drew audiences in droves to the cinemas.",
     "source": "wiktionary",
     "lemmas": [
       "in Scharen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Filme",
+        "lemma": "Film",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Untouchables",
+        "lemma": "Untouchables",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mission",
+        "lemma": "Mission",
+        "pos": "noun",
+        "gloss_hint": "mission"
+      },
+      {
+        "form": "Impossible",
+        "lemma": "Impossible",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "zogen",
+        "lemma": "ziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zuschauer",
+        "lemma": "Zuschauer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Scharen",
+        "lemma": "Schar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kinos",
+        "lemma": "Kino",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6c03ea9763": {
@@ -690,22 +741,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to live for the day",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c08800902": {
     "text": "zu kurz greifen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fall short",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c09adbf03": {
     "text": "„Eine weitere Spielart der berittenen Post ist der legendäre Pony Express durch die noch nicht von der Eisenbahn und Telegrafenlinien erschlossenen Weiten der USA.“",
@@ -1506,12 +1559,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "jump on the bandwagon",
     "source": "wiktionary",
     "lemmas": [
       "Zug"
     ],
-    "ref": "phrases/auf den fahrenden Zug aufspringen"
+    "ref": "phrases/auf den fahrenden Zug aufspringen",
+    "translation_model": "openai/gpt-4.1"
   },
   "6c12b1e774": {
     "text": "„Da dieses Gebäude von einer Pyramide überbaut wurde, ist es sehr gut erhalten. Hier konnte man einen vollständigen mit Stuck besetzten Dachkamm entdecken.“",
@@ -1770,21 +1824,88 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "appeal to someone's sense of honor",
     "source": "wiktionary",
     "lemmas": [
       "Ehre"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "6c1429223e": {
     "text": "„Sie sieht auf Südtirols ehrenamtliche Vereine eine enorme Zusatzbelastung zukommen und ärgert sich, dass einmal mehr die autonomen Bestimmungen nicht greifen.“",
-    "translation": null,
+    "translation": "She sees an enormous additional burden coming for South Tyrol's volunteer organizations and is annoyed that once again the autonomous provisions are not taking effect.",
     "source": "wiktionary",
     "lemmas": [
       "einmal mehr"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sieht",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Südtirols",
+        "lemma": "Südtirol",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ehrenamtliche",
+        "lemma": "ehrenamtlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vereine",
+        "lemma": "Verein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "enorme",
+        "lemma": "enorm",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zusatzbelastung",
+        "lemma": "Zusatzbelastung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zukommen",
+        "lemma": "zukommen",
+        "pos": "verb",
+        "gloss_hint": "be imminent"
+      },
+      {
+        "form": "ärgert",
+        "lemma": "ärgern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "autonomen",
+        "lemma": "autonom",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bestimmungen",
+        "lemma": "Bestimmung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "greifen",
+        "lemma": "greifen",
+        "pos": "verb",
+        "gloss_hint": "take effect"
+      }
     ]
   },
   "6c1532ce16": {
@@ -1924,11 +2045,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "completely; with every fiber of one's being",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c1626d96c": {
     "text": "Bei diesem gar hässlichen Wetter bekommen mich keine zehn Pferde nach draußen.",
@@ -2222,11 +2344,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "always have to give one's two cents",
     "source": "wiktionary",
     "lemmas": [
       "Senf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c1a6d6155": {
     "text": "„Der Kramer Zeller, so hieß der Besitzer dieses wunderbaren Einkaufsparadieses, war die Erfüllung meiner Bubenwünsche.“",
@@ -2958,12 +3081,13 @@
     "type": "expression",
     "note": "eine Vorahnung haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "smell a rat",
     "source": "wiktionary",
     "lemmas": [
       "Braten"
     ],
-    "ref": "phrases/den Braten riechen"
+    "ref": "phrases/den Braten riechen",
+    "translation_model": "openai/gpt-4.1"
   },
   "6c208292fb": {
     "text": "Luther verbreitete seine Thesen in Wittenberg.",
@@ -3821,11 +3945,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be ready to leave at a moment's notice",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c29d403cc": {
     "text": "Nach langjähriger Bekanntschaft stellte sich Vertrautheit ein.",
@@ -4141,11 +4266,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with a walking stick",
     "source": "wiktionary",
     "lemmas": [
       "Blinder"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c2e29dfee": {
     "text": "„So geht das weiter, tagaus, tagein, Woche für Woche, bis die Vortragsverpflichtungen erfüllt sind.“",
@@ -4954,11 +5080,12 @@
     "type": "expression",
     "note": "zu/mit drei Personen",
     "synonyms": [],
-    "translation": null,
+    "translation": "as a group of three",
     "source": "wiktionary",
     "lemmas": [
       "zu"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c34bd8869": {
     "text": "Und wenn ich bis zum Kaiser weitergehe! Das bleibt nicht ungesühnt!",
@@ -5262,10 +5389,79 @@
   },
   "6c3824fdec": {
     "text": "„Eher würde man wohl sagen, die betreffende Sache sei für den Hugo, für die Wiascht oder, wenn man die untere Schublade nicht scheut, für den Arsch.“",
-    "translation": null,
+    "translation": "Rather, one would say the matter in question is for the Hugo, for the Wiascht, or, if one doesn't shy away from the bottom drawer, for the ass.",
     "source": "wiktionary",
     "lemmas": [
       "für den Hugo sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Eher",
+        "lemma": "eher",
+        "pos": "adverb",
+        "gloss_hint": "rather"
+      },
+      {
+        "form": "würde",
+        "lemma": "würde",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sagen",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": "say"
+      },
+      {
+        "form": "betreffende",
+        "lemma": "betreffend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sache",
+        "lemma": "Sache",
+        "pos": "noun",
+        "gloss_hint": "thing"
+      },
+      {
+        "form": "Hugo",
+        "lemma": "Hugo",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wiascht",
+        "lemma": "Wiascht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "untere",
+        "lemma": "unter",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schublade",
+        "lemma": "Schublade",
+        "pos": "noun",
+        "gloss_hint": "drawer"
+      },
+      {
+        "form": "scheut",
+        "lemma": "scheuen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arsch",
+        "lemma": "Arsch",
+        "pos": "noun",
+        "gloss_hint": "butt"
+      }
     ]
   },
   "6c3980efe6": {
@@ -5616,11 +5812,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have sex like rabbits",
     "source": "wiktionary",
     "lemmas": [
       "Karnickel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c3b687305": {
     "text": "„Die Unterhaltung verstummte den ganzen Abend über nicht für einen Augenblick und bewegte sich vornehmlich um politische Neuigkeiten.“",
@@ -6836,11 +7033,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "by law",
     "source": "wiktionary",
     "lemmas": [
       "Recht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c46d38459": {
     "text": "„Er hatte kürzlich eine Espressomaschine erstanden, die inzwischen mehr genutzt wurde als die Kaffeemaschine, doch er brachte es nicht über sich, das alte Schätzchen zu entsorgen.“",
@@ -8763,10 +8961,61 @@
   },
   "6c52bf3769": {
     "text": "„Ihren Namen verdanken die seltenen Erden den [sic!] Umstand, dass sie wenig eigene Lagerstätten bilden und meistens mit anderen Seltenen Erden zusammen vorkommen.“",
-    "translation": null,
+    "translation": "Rare earths owe their name to the circumstance that they form few deposits of their own and usually occur together with other rare earths.",
     "source": "wiktionary",
     "lemmas": [
       "Seltene Erden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Namen",
+        "lemma": "Name",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verdanken",
+        "lemma": "verdanken",
+        "pos": "verb",
+        "gloss_hint": "owe thanks to"
+      },
+      {
+        "form": "seltenen",
+        "lemma": "selten",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erden",
+        "lemma": "Erde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umstand",
+        "lemma": "Umstand",
+        "pos": "noun",
+        "gloss_hint": "circumstance"
+      },
+      {
+        "form": "bilden",
+        "lemma": "bilden",
+        "pos": "verb",
+        "gloss_hint": "form"
+      },
+      {
+        "form": "Lagerstätten",
+        "lemma": "Lagerstätte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vorkommen",
+        "lemma": "vorkommen",
+        "pos": "verb",
+        "gloss_hint": "occur"
+      }
     ]
   },
   "6c52e619d7": {
@@ -8774,11 +9023,12 @@
     "type": "expression",
     "note": "jemand hat schlechte Manieren, schlechtes Benehmen; früher: Bezeichnung für jemand niederer sozialer Herkunft",
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is not of good character",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c530aac1e": {
     "text": "„Bei den Vereinten Nationen wuchs die Präsenz des Globalen Südens, was zu einem günstigeren Umfeld führte.“",
@@ -10524,11 +10774,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "curly hair, quirky mind",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c5f63f1ca": {
     "text": "eine Hand wäscht die andere",
@@ -11092,10 +11343,49 @@
   },
   "6c63447549": {
     "text": "„Baji Rao soll im Hinblick auf das Mogulreich gesagt haben, dass man den Stamm abhacken muss, wenn man einen Baum fällen will.“",
-    "translation": null,
+    "translation": "Baji Rao is said to have remarked with regard to the Mughal Empire that one must cut down the trunk if one wants to fell a tree.",
     "source": "wiktionary",
     "lemmas": [
       "im Hinblick auf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Baji Rao",
+        "lemma": "Baji Rao",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mogulreich",
+        "lemma": "Mogulreich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stamm",
+        "lemma": "Stamm",
+        "pos": "noun",
+        "gloss_hint": "trunk"
+      },
+      {
+        "form": "abhacken",
+        "lemma": "abhacken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Baum",
+        "lemma": "Baum",
+        "pos": "noun",
+        "gloss_hint": "tree"
+      },
+      {
+        "form": "fällen",
+        "lemma": "fällen",
+        "pos": "verb",
+        "gloss_hint": "cut down"
+      }
     ]
   },
   "6c64b107fb": {
@@ -11194,11 +11484,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be on shaky ground",
     "source": "wiktionary",
     "lemmas": [
       "Fuß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c65e66d23": {
     "text": "Nachmittags spielen die Jungen Fußball.",
@@ -11853,10 +12144,79 @@
   },
   "6c6f284ec5": {
     "text": "„In der Nacht, bis in den frühen Morgen, krochen die Autos dicht an dicht am Fluß in das lange Wochenende und schickten kurze Wellen dumpfen Lärms in die offenen Fenster am Riverside Drive.“",
-    "translation": null,
+    "translation": "During the night, into the early morning, cars crawled bumper to bumper along the river into the long weekend and sent short waves of dull noise through the open windows on Riverside Drive.",
     "source": "wiktionary",
     "lemmas": [
       "dicht an dicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Nacht",
+        "lemma": "Nacht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Morgen",
+        "lemma": "Morgen",
+        "pos": "noun",
+        "gloss_hint": "morning"
+      },
+      {
+        "form": "krochen",
+        "lemma": "kriechen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Autos",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dicht",
+        "lemma": "dicht",
+        "pos": "adjective",
+        "gloss_hint": "dense"
+      },
+      {
+        "form": "Fluß",
+        "lemma": "Fluss",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wochenende",
+        "lemma": "Wochenende",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wellen",
+        "lemma": "Welle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lärms",
+        "lemma": "Lärm",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fenster",
+        "lemma": "Fenster",
+        "pos": "noun",
+        "gloss_hint": "window"
+      },
+      {
+        "form": "Riverside Drive",
+        "lemma": "Riverside Drive",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6c6f767745": {
@@ -12110,12 +12470,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "teach someone a lesson",
     "source": "wiktionary",
     "lemmas": [
       "beibringen"
     ],
-    "ref": "phrases/jemandem die Flötentöne beibringen"
+    "ref": "phrases/jemandem die Flötentöne beibringen",
+    "translation_model": "openai/gpt-4.1"
   },
   "6c74d52d91": {
     "text": "Die Abstimmung hat die Prognose vom Vormittag bestätigt.",
@@ -12193,11 +12554,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "cool trick",
     "source": "wiktionary",
     "lemmas": [
       "Dreh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c783947b1": {
     "text": "„Die Prominenz der Doktorandin lenkt ab vom wahren Missstand.“",
@@ -13047,11 +13409,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "or a sack of rice falls over in China",
     "source": "wiktionary",
     "lemmas": [
       "umfallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c7df11ce0": {
     "text": "Mit dem Auftauchen sollte man sich Zeit lassen, damit es nicht der Lunge schadet.",
@@ -13971,14 +14334,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get something under control",
     "source": "wiktionary",
     "lemmas": [
       "Herr"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "6c88aa967d": {
     "text": "„Im Curling gilt es, den Stein ins Haus zu schieben – deshalb gelten erfolgreiche Curler als «häusliche Typen».“",
@@ -14096,10 +14457,31 @@
   },
   "6c88df67ca": {
     "text": "Der Geiz der Schotten ist sprichwörtlich.",
-    "translation": null,
+    "translation": "Scottish stinginess is proverbial.",
     "source": "wiktionary",
     "lemmas": [
       "Geiz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geiz",
+        "lemma": "Geiz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schotten",
+        "lemma": "Schotte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sprichwörtlich",
+        "lemma": "sprichwörtlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "6c8990f7f3": {
@@ -14769,11 +15151,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "change with the wind",
     "source": "wiktionary",
     "lemmas": [
       "hängen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c91465f95": {
     "text": "Es ist mir ehrlich gesagt scheißegal, was er dazu meint.",
@@ -15139,11 +15522,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "children of the open road",
     "source": "wiktionary",
     "lemmas": [
       "Landstraße"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c9606dd04": {
     "text": "„Über ein mögliches neues Datum für das Eintreffen der Schiffe sei Ankara nicht informiert worden.“",
@@ -15228,12 +15612,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the real deal",
     "source": "wiktionary",
     "lemmas": [
       "Korn",
       "Schrot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6c97c091b2": {
     "text": "„Die Maßeinheit Zoll gibt es aber noch! In den USA zum Beispiel wird mit ihr gemessen. Die Amerikaner nutzen nämlich das angloamerikanische Maßsystem. Dort heißt das Zoll \"inch\" und ist tatsächlich genau 2,54 cm lang. 12 inches ergeben zusammen einen \"foot\" (deutsch: Fuß) von 30,48 cm. An dem Wort kann man also noch heute gut erkennen, wo das Maß einmal hergekommen ist.“",
@@ -16243,10 +16628,31 @@
   },
   "6c9ffa0ae9": {
     "text": "„‚Aus der wird nie was!‘ ‚Kein Wunder bei diesen Eltern!‘“",
-    "translation": null,
+    "translation": "\"Nothing will come of her!\" \"No wonder with parents like that!\"",
     "source": "wiktionary",
     "lemmas": [
       "kein Wunder"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wird",
+        "lemma": "werden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wunder",
+        "lemma": "Wunder",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eltern",
+        "lemma": "Eltern",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6ca15856d1": {
@@ -16519,11 +16925,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the Black Death",
     "source": "wiktionary",
     "lemmas": [
       "schwarz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6ca40cd886": {
     "text": "„Temple zog eine Packung Zigaretten heraus, nahm sich eine und zündete sie mit seinem Feuerzeug an.“",
@@ -17635,11 +18042,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "sixth period",
     "source": "wiktionary",
     "lemmas": [
       "sechste"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6caccaa710": {
     "text": "„In den folgenden Wochen eskalierte der Kampf zwischen Revolution und Reaktion in ganz Deutschland.“",
@@ -18122,10 +18530,55 @@
   },
   "6cb4ed69b4": {
     "text": "„Zufällig für den Tag der österreichischen Kriegserklärung hatte die SPD zu einer großen Antikriegsdemonstration im Zentrum Berlins aufgerufen.“",
-    "translation": null,
+    "translation": "Coinciding with the day of Austria's declaration of war, the SPD had called for a major anti-war demonstration in the center of Berlin.",
     "source": "wiktionary",
     "lemmas": [
       "SPD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "österreichischen",
+        "lemma": "österreichisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kriegserklärung",
+        "lemma": "Kriegserklärung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "SPD",
+        "lemma": "SPD",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Antikriegsdemonstration",
+        "lemma": "Antikriegsdemonstration",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zentrum",
+        "lemma": "Zentrum",
+        "pos": "noun",
+        "gloss_hint": "center"
+      },
+      {
+        "form": "Berlins",
+        "lemma": "Berlin",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6cb4f0d1be": {
@@ -19587,18 +20040,100 @@
     "type": "expression",
     "note": "veröffentlichen",
     "synonyms": [],
-    "translation": null,
+    "translation": "spread a rumor",
     "source": "wiktionary",
     "lemmas": [
       "setzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6cc2d20308": {
     "text": "„Wir, die wir nicht so tugendhaft und stäte sind, sondern immer tapfer und resolut auf Taten ausziehen, für die man früher geadelt wurde, jetzt aber ins Kittchen gesperrt wird - wir müssen immer die Ohren steif und die Augen offen halten.“",
-    "translation": null,
+    "translation": "We, who are not so virtuous and steadfast, but always bravely and resolutely set out on deeds for which one was formerly ennobled but is now locked up—we must always keep our ears stiff and our eyes open.",
     "source": "wiktionary",
     "lemmas": [
       "die Ohren steif halten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "tugendhaft",
+        "lemma": "tugendhaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "stäte",
+        "lemma": "stät",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "tapfer",
+        "lemma": "tapfer",
+        "pos": "adjective",
+        "gloss_hint": "brave"
+      },
+      {
+        "form": "resolut",
+        "lemma": "resolut",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Taten",
+        "lemma": "Tat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausziehen",
+        "lemma": "ausziehen",
+        "pos": "verb",
+        "gloss_hint": "set out"
+      },
+      {
+        "form": "geadelt",
+        "lemma": "adeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kittchen",
+        "lemma": "Kittchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesperrt",
+        "lemma": "sperren",
+        "pos": "verb",
+        "gloss_hint": "locked"
+      },
+      {
+        "form": "Ohren",
+        "lemma": "Ohr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "steif",
+        "lemma": "steif",
+        "pos": "adjective",
+        "gloss_hint": "stiff"
+      },
+      {
+        "form": "Augen",
+        "lemma": "Auge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "offen",
+        "lemma": "offen",
+        "pos": "adjective",
+        "gloss_hint": "open"
+      }
     ]
   },
   "6cc2e3b53f": {
@@ -20493,11 +21028,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like a mother without milk",
     "source": "wiktionary",
     "lemmas": [
       "Mutter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6cc8f9ea09": {
     "text": "Die linke Hand kommt von Herzen.",
@@ -21062,11 +21598,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take a detour",
     "source": "wiktionary",
     "lemmas": [
       "Umweg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6cccc25811": {
     "text": "Der Alter Markt ist einen halben Kilometer lang.",
@@ -22059,10 +22596,43 @@
   },
   "6cd2be62ca": {
     "text": "Das ABS verhindert bei einer Vollbremsung das Blockieren der Räder.",
-    "translation": null,
+    "translation": "ABS prevents the wheels from locking during hard braking.",
     "source": "wiktionary",
     "lemmas": [
       "ABS"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ABS",
+        "lemma": "ABS",
+        "pos": "noun",
+        "gloss_hint": "anti-lock braking system"
+      },
+      {
+        "form": "verhindert",
+        "lemma": "verhindern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vollbremsung",
+        "lemma": "Vollbremsung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blockieren",
+        "lemma": "blockieren",
+        "pos": "verb",
+        "gloss_hint": "block"
+      },
+      {
+        "form": "Räder",
+        "lemma": "Rad",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6cd3888ae0": {
@@ -22074,11 +22644,12 @@
       "Portmonee",
       "Konto"
     ],
-    "translation": null,
+    "translation": "be broke",
     "source": "wiktionary",
     "lemmas": [
       "Ebbe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6cd4f7f994": {
     "text": "„Der Ruhm stieg aber Annette nicht zu Kopf; ihre Freundin Sibylle vergaß sie darüber mitnichten.“",
@@ -22566,11 +23137,12 @@
     "type": "expression",
     "note": "etwas verschweigen",
     "synonyms": [],
-    "translation": null,
+    "translation": "keep something secret",
     "source": "wiktionary",
     "lemmas": [
       "Busch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6cd7bc3aa5": {
     "text": "Manche Tiere erweisen sich als besonders geschmeidig im Gelände.",
@@ -23009,12 +23581,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pull a long face",
     "source": "wiktionary",
     "lemmas": [
       "lang",
       "Gesicht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6cdca1f285": {
     "text": "Langsam kugelt der Ball am Torhüter vorbei in den Kasten.",
@@ -23657,11 +24230,12 @@
     "type": "expression",
     "note": "zu dick, zu groß sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "burst at the seams",
     "source": "wiktionary",
     "lemmas": [
       "platzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6cdf3c3f4e": {
     "text": "„Dann sitze ich im Wartezimmer und habe Angst.“",
@@ -24012,13 +24586,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hats off",
     "source": "wiktionary",
     "lemmas": [
       "Hut",
       "ab"
     ],
-    "ref": "phrases/Hut ab"
+    "ref": "phrases/Hut ab",
+    "translation_model": "openai/gpt-4.1"
   },
   "6ce0963db7": {
     "text": "Er muss sich um jeden Quark selber kümmern, von Delegieren hat er noch nie was gehört.",
@@ -25792,10 +26367,49 @@
   },
   "6cef66c166": {
     "text": "Warte, jetzt habe ich den Faden wiedergefunden, ich wollte von meiner Großmutter erzählen, weil die auch früh Witwe geworden ist.",
-    "translation": null,
+    "translation": "Wait, now I've found the thread again; I wanted to tell you about my grandmother because she also became a widow early.",
     "source": "wiktionary",
     "lemmas": [
       "den Faden wiederfinden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Faden",
+        "lemma": "Faden",
+        "pos": "noun",
+        "gloss_hint": "train of thought"
+      },
+      {
+        "form": "wiedergefunden",
+        "lemma": "wiederfinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "erzählen",
+        "lemma": "erzählen",
+        "pos": "verb",
+        "gloss_hint": "tell"
+      },
+      {
+        "form": "Großmutter",
+        "lemma": "Großmutter",
+        "pos": "noun",
+        "gloss_hint": "grandmother"
+      },
+      {
+        "form": "früh",
+        "lemma": "früh",
+        "pos": "adjective",
+        "gloss_hint": "early"
+      },
+      {
+        "form": "Witwe",
+        "lemma": "Witwe",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6cf015683c": {
@@ -25803,23 +26417,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to the ends of the earth",
     "source": "wiktionary",
     "lemmas": [
       "Ende"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6cf0423825": {
     "text": "etwas in die Wege leiten",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "set something in motion",
     "source": "wiktionary",
     "lemmas": [
       "Weg"
     ],
-    "ref": "phrases/etwas in die Wege leiten"
+    "ref": "phrases/etwas in die Wege leiten",
+    "translation_model": "openai/gpt-4.1"
   },
   "6cf0d15727": {
     "text": "Sanaa ist die Hauptstadt von Jemen.",

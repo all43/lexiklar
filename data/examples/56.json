@@ -46,11 +46,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Spin in the evening, refreshing and invigorating.",
     "source": "wiktionary",
     "lemmas": [
       "Abend"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5601b48f77": {
     "text": "Krankenschwestern haben einen aufreibenden Beruf.",
@@ -552,10 +553,25 @@
   },
   "560557f36e": {
     "text": "Das Wasser siedet bereits.",
-    "translation": null,
+    "translation": "The water is already boiling.",
     "source": "wiktionary",
     "lemmas": [
       "sieden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wasser",
+        "lemma": "Wasser",
+        "pos": "noun",
+        "gloss_hint": "water"
+      },
+      {
+        "form": "siedet",
+        "lemma": "sieden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "5606b06528": {
@@ -732,12 +748,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take a walk around the block",
     "source": "wiktionary",
     "lemmas": [
       "Pudding"
     ],
-    "ref": "phrases/um den Pudding gehen"
+    "ref": "phrases/um den Pudding gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "560773eb4d": {
     "text": "„In diesem unzugänglichen Kloster leben die Nonnen gemeinschaftlich unter der Leitung einer Oberin, deren Güte ihren Kummer lindert, den ihnen der Übergang von den Freuden dieser Welt zu größter Kasteiung bereiten muß.“",
@@ -1971,11 +1988,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take into consideration",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "56119bdddf": {
     "text": "„Wir sollten Namensschilder malen.“",
@@ -3568,11 +3586,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be in danger",
     "source": "wiktionary",
     "lemmas": [
       "schweben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "561bc41c80": {
     "text": "Keine Sau ist gekommen.",
@@ -3589,11 +3608,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "turn something into something",
     "source": "wiktionary",
     "lemmas": [
       "machen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "561c8a4fc8": {
     "text": "„Man könne das Vorhandensein einer Krise daran erkennen, dass die Menge der Ratgeber rasant steige: ‚Wo ein Aas ist, da sammeln sich die Geier‘, zitiert Pater Mertes mit einem Augenzwinkern die Bibel.“",
@@ -4044,11 +4064,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a full stomach",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "561eb585e3": {
     "text": "Wo befindet sich die nächste Tankstelle?",
@@ -4660,10 +4681,25 @@
   },
   "5625bc75d0": {
     "text": "Ich kann grad nicht weiterlesen, denn ich muss mal ganz dringend auf den AB.",
-    "translation": null,
+    "translation": "I can't read any further right now because I urgently need to use the toilet.",
     "source": "wiktionary",
     "lemmas": [
       "AB"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "weiterlesen",
+        "lemma": "weiterlesen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "dringend",
+        "lemma": "dringend",
+        "pos": "adjective",
+        "gloss_hint": "urgent"
+      }
     ]
   },
   "5625fbf8d8": {
@@ -6275,10 +6311,31 @@
   },
   "56304360de": {
     "text": "Eine Feuersbrunft hat viele Gebäude in Asche gelegt.",
-    "translation": null,
+    "translation": "A great fire reduced many buildings to ashes.",
     "source": "wiktionary",
     "lemmas": [
       "in Asche legen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Feuersbrunft",
+        "lemma": "Feuersbrunst",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gebäude",
+        "lemma": "Gebäude",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Asche",
+        "lemma": "Asche",
+        "pos": "noun",
+        "gloss_hint": "ash"
+      }
     ]
   },
   "56308821cd": {
@@ -6778,10 +6835,73 @@
   },
   "563554c23c": {
     "text": "„Als er heimkehrte wurde er dank vielfacher Empfehlungen und besonderer Geschicklichkeit Pförtner einer wunderthätigen Kapelle, die unter dem Schutze der heiligen Jungfrau steht und besonders in Ehren steht bei Mädchen, die in anderen Umständen sind.“",
-    "translation": null,
+    "translation": "\"When he returned home, thanks to numerous recommendations and special skill, he became doorman of a miraculous chapel, which stands under the protection of the Holy Virgin and is held in particular honor among girls who are in other circumstances.\"",
     "source": "wiktionary",
     "lemmas": [
       "in anderen Umständen sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "heimkehrte",
+        "lemma": "heimkehren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dank",
+        "lemma": "Dank",
+        "pos": "noun",
+        "gloss_hint": "thanks"
+      },
+      {
+        "form": "Empfehlungen",
+        "lemma": "Empfehlung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geschicklichkeit",
+        "lemma": "Geschicklichkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pförtner",
+        "lemma": "Pförtner",
+        "pos": "noun",
+        "gloss_hint": "doorman"
+      },
+      {
+        "form": "Kapelle",
+        "lemma": "Kapelle",
+        "pos": "noun",
+        "gloss_hint": "chapel"
+      },
+      {
+        "form": "heiligen",
+        "lemma": "heiligen",
+        "pos": "verb",
+        "gloss_hint": "revere"
+      },
+      {
+        "form": "Jungfrau",
+        "lemma": "Jungfrau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ehren",
+        "lemma": "Ehre",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mädchen",
+        "lemma": "Mädchen",
+        "pos": "noun",
+        "gloss_hint": "girl"
+      }
     ]
   },
   "5635d7d652": {
@@ -7297,13 +7417,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The bottom line is",
     "source": "wiktionary",
     "lemmas": [
       "lang",
       "kurz"
     ],
-    "ref": "phrases/der langen Rede kurzer Sinn"
+    "ref": "phrases/der langen Rede kurzer Sinn",
+    "translation_model": "openai/gpt-4.1"
   },
   "563a8e95aa": {
     "text": "„Quatschen Sie mich nicht voll, quatschen Sie Ihren Zimt ins Mikrophon und hauen Sie gefälligst bald wieder ab.“",
@@ -8221,10 +8342,73 @@
   },
   "564b37ced1": {
     "text": "In seiner Funktion als nationales Metrologieinstitut hält das BEV in der Gruppe Eichwesen die verbindlichen Nationalen Etalons (Messnormale) zur Darstellung der gesetzlichen Maßeinheiten bereit und stellt deren internationale Gleichwertigkeit sicher.",
-    "translation": null,
+    "translation": "In its function as the national metrology institute, the BEV holds in the calibration division the binding National Standards (measurement standards) for the representation of the statutory units of measurement and ensures their international equivalence.",
     "source": "wiktionary",
     "lemmas": [
       "BEV"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Funktion",
+        "lemma": "Funktion",
+        "pos": "noun",
+        "gloss_hint": "function"
+      },
+      {
+        "form": "Metrologieinstitut",
+        "lemma": "Metrologieinstitut",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "BEV",
+        "lemma": "BEV",
+        "pos": "noun",
+        "gloss_hint": "Federal Office of Metrology and Surveying"
+      },
+      {
+        "form": "Gruppe",
+        "lemma": "Gruppe",
+        "pos": "noun",
+        "gloss_hint": "group"
+      },
+      {
+        "form": "Eichwesen",
+        "lemma": "Eichwesen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Etalons",
+        "lemma": "Etalon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Messnormale",
+        "lemma": "Messnormal",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Darstellung",
+        "lemma": "Darstellung",
+        "pos": "noun",
+        "gloss_hint": "representation"
+      },
+      {
+        "form": "Maßeinheiten",
+        "lemma": "Maßeinheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gleichwertigkeit",
+        "lemma": "Gleichwertigkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "564b3cf692": {
@@ -10809,11 +10993,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "let things take their natural course",
     "source": "wiktionary",
     "lemmas": [
       "Ding"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5668b60599": {
     "text": "Bei der Geschwindigkeit, mit der meine Freundin die Diplomarbeit in den Computer gehackt hat, mussten ja einige Tippfehler drin sein.",
@@ -11839,11 +12024,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "laugh your head off",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "566eba323a": {
     "text": "[Heiko Maas (SPD)] ist seit dem 17. Dezember 2013 Bundesminister der Justiz und für Verbraucherschutz. Mediale Aufmerksamkeit bekam er im Zuge von Auseinandersetzungen mit Facebook, Twitter und Google.",
@@ -13389,10 +13575,49 @@
   },
   "567f9b78bc": {
     "text": "„Im Rahmen des Modernisierungsgesetzes wurde das Niedersächsische Ausführungsgesetz zur Verwaltungsgerichtsordnung (Nds. AG VwGO) um die §§ 8a und 8b erweitert.“",
-    "translation": null,
+    "translation": "\"Within the framework of the Modernization Act, the Lower Saxony Implementing Act on the Administrative Court Code (Nds. AG VwGO) was expanded to include sections 8a and 8b.\"",
     "source": "wiktionary",
     "lemmas": [
       "AG"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rahmen",
+        "lemma": "Rahmen",
+        "pos": "noun",
+        "gloss_hint": "context"
+      },
+      {
+        "form": "Modernisierungsgesetzes",
+        "lemma": "Modernisierungsgesetz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Niedersächsische",
+        "lemma": "niedersächsisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausführungsgesetz",
+        "lemma": "Ausführungsgesetz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verwaltungsgerichtsordnung",
+        "lemma": "Verwaltungsgerichtsordnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erweitert",
+        "lemma": "erweitern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "567fd35184": {
@@ -15071,11 +15296,12 @@
     "type": "expression",
     "note": "ein langes, eher vergebliches Suchen",
     "synonyms": [],
-    "translation": null,
+    "translation": "search high and low",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "568a37cfb7": {
     "text": "der Schlüssel zum Erfolg",
@@ -15135,12 +15361,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "let yourself get discouraged",
     "source": "wiktionary",
     "lemmas": [
       "Schneid"
     ],
-    "ref": "phrases/sich den Schneid abkaufen lassen"
+    "ref": "phrases/sich den Schneid abkaufen lassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "568d9028f1": {
     "text": "„Der Bürgermeister muss beide Thesen zugleich vertreten: Alles ist so schlimm wie noch nie – und alles ist halb so wild.“",
@@ -16540,11 +16767,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give yourself a break",
     "source": "wiktionary",
     "lemmas": [
       "gönnen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "56961e0f6e": {
     "text": "Und was soll mir das nützen?",
@@ -16590,10 +16818,55 @@
   },
   "5696bac47a": {
     "text": "Die funktionale Satzperspektive wird darüber hinaus auch dazu verwendet, die Verbindungen zwischen Sätzen eines Textes zu erarbeiten.",
-    "translation": null,
+    "translation": "Functional sentence perspective is furthermore also used to work out the connections between sentences in a text.",
     "source": "wiktionary",
     "lemmas": [
       "funktionale Satzperspektive"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "funktionale",
+        "lemma": "funktional",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Satzperspektive",
+        "lemma": "Satzperspektive",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verwendet",
+        "lemma": "verwenden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verbindungen",
+        "lemma": "Verbindung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sätzen",
+        "lemma": "Satz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Textes",
+        "lemma": "Text",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erarbeiten",
+        "lemma": "erarbeiten",
+        "pos": "verb",
+        "gloss_hint": "develop"
+      }
     ]
   },
   "569716355e": {
@@ -17199,18 +17472,40 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it tastes terrible",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "569cdfb1cd": {
     "text": "Letzte Woche habe ich eine BU abgeschlossen.",
-    "translation": null,
+    "translation": "Last week I concluded a disability insurance policy.",
     "source": "wiktionary",
     "lemmas": [
       "BU"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Letzte",
+        "lemma": "letzte",
+        "pos": "adjective",
+        "gloss_hint": "last"
+      },
+      {
+        "form": "Woche",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": "week"
+      },
+      {
+        "form": "abgeschlossen",
+        "lemma": "abschließen",
+        "pos": "verb",
+        "gloss_hint": "completed"
+      }
     ]
   },
   "569d2c0343": {
@@ -18275,11 +18570,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "countless",
     "source": "wiktionary",
     "lemmas": [
       "sonder"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "56a6c0e600": {
     "text": "Schau, das ist eine Stange Dynamit.",
@@ -18395,10 +18691,43 @@
   },
   "56a91ea8c4": {
     "text": "Daher sein imperativer Ton, seine kosakisch-directe Handhabung der Cravatten-Justiz.",
-    "translation": null,
+    "translation": "Hence his imperious tone, his Cossack-direct handling of cravat justice.",
     "source": "wiktionary",
     "lemmas": [
       "imperativ"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "imperativer",
+        "lemma": "imperativ",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ton",
+        "lemma": "Ton",
+        "pos": "noun",
+        "gloss_hint": "manner"
+      },
+      {
+        "form": "kosakisch-directe",
+        "lemma": "kosakisch-direkt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Handhabung",
+        "lemma": "Handhabung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Cravatten-Justiz",
+        "lemma": "Cravatten-Justiz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "56abf7fb6e": {
@@ -20801,12 +21130,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "mind your own business",
     "source": "wiktionary",
     "lemmas": [
       "scheren"
     ],
-    "ref": "phrases/jemanden den Teufel scheren"
+    "ref": "phrases/jemanden den Teufel scheren",
+    "translation_model": "openai/gpt-4.1"
   },
   "56be445a4a": {
     "text": "„Der niederländische Filmstar Rutger Hauer ist nach kurzer Krankheit im Alter von 75 Jahren gestorben.“",
@@ -21090,30 +21420,59 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "look like a drowned rat",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "56bfdc3ccb": {
     "text": "auf Heller und Pfennig",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to the last penny",
     "source": "wiktionary",
     "lemmas": [
       "Pfennig"
     ],
-    "ref": "phrases/auf Heller und Pfennig"
+    "ref": "phrases/auf Heller und Pfennig",
+    "translation_model": "openai/gpt-4.1"
   },
   "56c07a9a04": {
     "text": "Er brachte den Müll hinters Haus in die Mülltonne.",
-    "translation": null,
+    "translation": "He took the trash behind the house and put it in the garbage bin.",
     "source": "wiktionary",
     "lemmas": [
       "hinters"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "brachte",
+        "lemma": "bringen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Müll",
+        "lemma": "Müll",
+        "pos": "noun",
+        "gloss_hint": "trash"
+      },
+      {
+        "form": "Haus",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": "building"
+      },
+      {
+        "form": "Mülltonne",
+        "lemma": "Mülltonne",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "56c0afd338": {
@@ -21121,13 +21480,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to throw in the towel",
     "source": "wiktionary",
     "lemmas": [
       "Korn",
       "Flinte"
     ],
-    "ref": "phrases/die Flinte ins Korn werfen"
+    "ref": "phrases/die Flinte ins Korn werfen",
+    "translation_model": "openai/gpt-4.1"
   },
   "56c3cc5864": {
     "text": "Bei Partizipien:",
@@ -21878,11 +22238,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "quirky girl",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "56caea16ec": {
     "text": "Das Bewusstsein ist die Voraussetzung für intelligentes Leben nach der gängigen Definition.",
@@ -23502,10 +23863,115 @@
   },
   "56e1481c98": {
     "text": "„Im Gegensatz zur EZB ist die … Fed nicht nur zur Sicherung der Preisstabilität verfpflichtet. Sie muss darüber hinaus auch das Wirtschaftswachstum und die Beschäftigung im Auge haben. Auf der Suche nach einer neuen Strategie entschied sich die Fed gegen ein direktes Inflationsziel, weil sie der Ansicht war, dieses Konzept lasse sich mit ihrem direkten Auftrag nicht vereinbaren.“",
-    "translation": null,
+    "translation": "\"In contrast to the ECB, the Fed is not only obligated to ensure price stability. Beyond that, it must also keep economic growth and employment in view. In search of a new strategy, the Fed decided against a direct inflation target because it was of the opinion that this concept could not be reconciled with its direct mandate.\"",
     "source": "wiktionary",
     "lemmas": [
       "Fed"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gegensatz",
+        "lemma": "Gegensatz",
+        "pos": "noun",
+        "gloss_hint": "contrast"
+      },
+      {
+        "form": "EZB",
+        "lemma": "EZB",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fed",
+        "lemma": "Fed",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sicherung",
+        "lemma": "Sicherung",
+        "pos": "noun",
+        "gloss_hint": "safety"
+      },
+      {
+        "form": "Preisstabilität",
+        "lemma": "Preisstabilität",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verpflichtet",
+        "lemma": "verpflichten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wirtschaftswachstum",
+        "lemma": "Wirtschaftswachstum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beschäftigung",
+        "lemma": "Beschäftigung",
+        "pos": "noun",
+        "gloss_hint": "employment"
+      },
+      {
+        "form": "Auge",
+        "lemma": "Auge",
+        "pos": "noun",
+        "gloss_hint": "eye"
+      },
+      {
+        "form": "Suche",
+        "lemma": "Suche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strategie",
+        "lemma": "Strategie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entschied",
+        "lemma": "entscheiden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Inflationsziel",
+        "lemma": "Inflationsziel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ansicht",
+        "lemma": "Ansicht",
+        "pos": "noun",
+        "gloss_hint": "opinion"
+      },
+      {
+        "form": "Konzept",
+        "lemma": "Konzept",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auftrag",
+        "lemma": "Auftrag",
+        "pos": "noun",
+        "gloss_hint": "mission"
+      },
+      {
+        "form": "vereinbaren",
+        "lemma": "vereinbaren",
+        "pos": "verb",
+        "gloss_hint": "reconcile"
+      }
     ]
   },
   "56e1ee20f4": {
@@ -23576,10 +24042,31 @@
   },
   "56e2fae5cd": {
     "text": "Der Henker hängte den Dieb.",
-    "translation": null,
+    "translation": "The executioner hanged the thief.",
     "source": "wiktionary",
     "lemmas": [
       "hängen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Henker",
+        "lemma": "Henker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hängte",
+        "lemma": "hängen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dieb",
+        "lemma": "Dieb",
+        "pos": "noun",
+        "gloss_hint": "thief"
+      }
     ]
   },
   "56e30aaca5": {
@@ -24796,10 +25283,37 @@
   },
   "56eb6d91f3": {
     "text": "Er hat Haus und Hof bei Pferdewetten verspielt.",
-    "translation": null,
+    "translation": "He gambled away his house and farm on horse racing.",
     "source": "wiktionary",
     "lemmas": [
       "Haus und Hof"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Haus",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": "building"
+      },
+      {
+        "form": "Hof",
+        "lemma": "Hof",
+        "pos": "noun",
+        "gloss_hint": "farm"
+      },
+      {
+        "form": "Pferdewetten",
+        "lemma": "Pferdewetten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verspielt",
+        "lemma": "verspielen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "56ec8c8771": {
@@ -25474,11 +25988,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'll be damned",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "56f4fae700": {
     "text": "„Es war alles umsonst, keinen Cent an Geld fanden sie, nur einzelne Schmucksachen, die sie zu sich steckten, die aber doch für den Augenblick nicht das waren, was sie brauchten.“",

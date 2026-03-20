@@ -2264,11 +2264,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "taken out of context",
     "source": "wiktionary",
     "lemmas": [
       "Kontext"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ad0eaeb9a9": {
     "text": "„Die größte Unruhe entstand jedoch um die Mitte des 5. Jahrhunderts, als die Hunnen in Westeuropa erschienen.“",
@@ -2554,11 +2555,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get goosebumps",
     "source": "wiktionary",
     "lemmas": [
       "Gänsehaut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ad1207da20": {
     "text": "Sie schlug das Öl aus den Nüssen aus.",
@@ -3651,11 +3653,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give something one's blessing",
     "source": "wiktionary",
     "lemmas": [
       "Segen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ad1e597195": {
     "text": "„Mütter und Kinder, Ehegatten, Liebespaare, die sich vor wenigen Tagen auf kurze Zeit getrennt, die sich auf dem Bahnsteig mit zwei oder drei Ermahnungen verabschiedet hatten, in der Gewißheit, daß sie sich in ein paar Tagen oder Wochen wiedersehen würden, die sich, erfüllt vom blinden Vertrauen der Menschen, durch diese Abreise kaum von ihren gewohnten Gedankengängen ablenken ließen, sie alle waren mit einem Schlag hoffnungslos weit entfernt voneinander, unfähig, zusammenzukommen oder miteinander zu verkehren.“",
@@ -4362,14 +4365,15 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "all roads lead to Rome",
     "source": "wiktionary",
     "lemmas": [
       "Weg",
       "Rom",
       "nach"
     ],
-    "ref": "phrases/alle Wege führen nach Rom"
+    "ref": "phrases/alle Wege führen nach Rom",
+    "translation_model": "openai/gpt-4.1"
   },
   "ad1ffa1a33": {
     "text": "„Ihr Vater konnte diesen Auftritt gut gebrauchen, denn er lief Gefahr, durch seine abfälligen Äußerungen Frauen gegenüber in der Wählergunst abzusacken.“",
@@ -4839,11 +4843,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get someone back on their feet",
     "source": "wiktionary",
     "lemmas": [
       "Damm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ad23ca700a": {
     "text": "„»Dennoch bin ich seit 2017 nirgendwo mehr hingeflogen und habe mich 2019 verpflichtet, überhaupt nicht mehr zu fliegen. So geht es halt nicht mehr, das ist vorbei.«“",
@@ -5401,11 +5406,12 @@
     "type": "expression",
     "note": "in vernünftigen Grenzen, ohne Maßen (veraltet: sonder Maßen), über alle Maßen / über die Maßen - sehr, extrem, fast übertrieben",
     "synonyms": [],
-    "translation": null,
+    "translation": "in moderation",
     "source": "wiktionary",
     "lemmas": [
       "Maß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ad293fd430": {
     "text": "Du wäscht Dich.",
@@ -8408,11 +8414,12 @@
     "type": "expression",
     "note": "Schimpfwort für einen ungeschickten Menschen",
     "synonyms": [],
-    "translation": null,
+    "translation": "You klutz!",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ad478dc03f": {
     "text": "Wer hoch steigt, kann tief fallen.",
@@ -8946,11 +8953,12 @@
     "type": "expression",
     "note": "! — ärgerlicher Fluch, wenn etwas mißlingt oder nicht funktioniert",
     "synonyms": [],
-    "translation": null,
+    "translation": "Damn it!",
     "source": "wiktionary",
     "lemmas": [
       "Dreck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ad4d51843a": {
     "text": "„Auf einer zweispurigen Asphaltstraße fahren wir durch die Wüste, immer geradeaus, schneebedeckte Gebirgsketten zu unserer Rechten, flimmernde Weite zu unserer Linken.“",
@@ -9070,10 +9078,49 @@
   },
   "ad5149cf10": {
     "text": "„Eigentum verpflichtet - nach diesem Motto handeln die meisten Stifter und setzten sich für Notleidende oder gegen ein konkretes Problem ein.“",
-    "translation": null,
+    "translation": "\"Property entails responsibility – according to this motto, most founders act and commit themselves to those in need or against a concrete problem.\"",
     "source": "wiktionary",
     "lemmas": [
       "Stifter"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Eigentum",
+        "lemma": "Eigentum",
+        "pos": "noun",
+        "gloss_hint": "property"
+      },
+      {
+        "form": "Motto",
+        "lemma": "Motto",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stifter",
+        "lemma": "Stifter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "handeln",
+        "lemma": "handeln",
+        "pos": "verb",
+        "gloss_hint": "act"
+      },
+      {
+        "form": "Notleidende",
+        "lemma": "Notleidender",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Problem",
+        "lemma": "Problem",
+        "pos": "noun",
+        "gloss_hint": "problem"
+      }
     ]
   },
   "ad5182c738": {
@@ -9775,11 +9822,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to leave crumbs everywhere",
     "source": "wiktionary",
     "lemmas": [
       "Brot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ad5e0d4625": {
     "text": "Ich bestätige Ihre Buchung.",
@@ -10796,11 +10844,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hard to believe",
     "source": "wiktionary",
     "lemmas": [
       "glauben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ad654ad559": {
     "text": "Secondlage ist die Lage, bei welcher die Faust gegen die Prime eine umgekehrte Lage erhält.",
@@ -11435,13 +11484,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "ignore someone",
     "source": "wiktionary",
     "lemmas": [
       "Arsch",
       "ansehen"
     ],
-    "ref": "phrases/jemanden nicht mit dem Arsch ansehen"
+    "ref": "phrases/jemanden nicht mit dem Arsch ansehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "ad6c5783f2": {
     "text": "Heute Abend gibt es Nudeln.",
@@ -11759,26 +11809,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "tough guy",
     "source": "wiktionary",
     "lemmas": [
       "schwer",
       "Junge"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ad74909a6f": {
     "text": "Schuld und Sühne",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Crime and Punishment",
     "source": "wiktionary",
     "lemmas": [
       "Schuld"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ad7585d524": {
     "text": "Wem soll ich helfen?",
@@ -12131,11 +12180,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to turn as white as a sheet",
     "source": "wiktionary",
     "lemmas": [
       "Kreide"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ad7b4b5ccd": {
     "text": "Präsident: Ich ersuche diejenigen Herren, die diesen Antrag unterstützen wollen, sich gefälligst zu erheben. (1850)",
@@ -12748,13 +12798,14 @@
     "type": "expression",
     "note": "unerwartet, unverhofft etwas bekommen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to stumble into something by accident",
     "source": "wiktionary",
     "lemmas": [
       "Kind",
       "kommen"
     ],
-    "ref": "phrases/zu etwas kommen wie die Jungfrau zum Kind"
+    "ref": "phrases/zu etwas kommen wie die Jungfrau zum Kind",
+    "translation_model": "openai/gpt-4.1"
   },
   "ad8635b341": {
     "text": "„Rechts und links von dem Pfahl standen geschlossene französische Formationen mit blauen Monturen, roten Epauletten, Stiefeletten und Tschakos.“",
@@ -13365,11 +13416,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You made your bed, now lie in it.",
     "source": "wiktionary",
     "lemmas": [
       "betten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ad8df21f3d": {
     "text": "Ich kann den Ast nicht erreichen.",
@@ -13985,13 +14037,14 @@
     "type": "expression",
     "note": "kaputt sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "be shot",
     "source": "wiktionary",
     "lemmas": [
       "Arsch",
       "im"
     ],
-    "ref": "phrases/im Arsch sein"
+    "ref": "phrases/im Arsch sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "ad9542460b": {
     "text": "Der Griff an der Schultasche ist ganz locker, der geht bestimmt bald ab.",
@@ -15004,13 +15057,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be uncultured",
     "source": "wiktionary",
     "lemmas": [
       "Kultur",
       "kein"
     ],
-    "ref": "phrases/von keiner Kultur beleckt sein"
+    "ref": "phrases/von keiner Kultur beleckt sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "ada1dab20e": {
     "text": "Wer hat uns gerufen?",
@@ -15053,11 +15107,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not give a damn about someone",
     "source": "wiktionary",
     "lemmas": [
       "Keks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ada20003d2": {
     "text": "„Er formt die Landwirtschaft um, vom Ackerbau für den Eigenbedarf zum Anbau von lukrativen Exportgütern, vor allem Kaffee.“",
@@ -15212,12 +15267,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not be worth a dime",
     "source": "wiktionary",
     "lemmas": [
       "kein"
     ],
-    "ref": "phrases/keinen Heller wert sein"
+    "ref": "phrases/keinen Heller wert sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "ada64adc1e": {
     "text": "„Wir haben bei der Veranstaltung in Brüssel klar gesagt, dass die EU in diesem Bereich [der Presse- und Meinungsfreiheit] stärker aktiv werden muss, gerade in den Ländern, die den Beitritt anstreben.“",
@@ -15770,11 +15826,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "she wasn't exactly blessed with beauty",
     "source": "wiktionary",
     "lemmas": [
       "Grazie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "adaa450bcf": {
     "text": "Unikale Morpheme sind im Deutschen u.a.: \"-lier-\" (in: \"verlieren\"), \"Schorn-\" (in: \"Schornstein\"), \"Brom-\" (in: \"Brombeere\"). \"Schorn-\" z.B. kommt nur zusammen mit \"-stein\" vor und ist deshalb ein unikales Morphem.",
@@ -16720,12 +16777,13 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm done with it",
     "source": "wiktionary",
     "lemmas": [
       "ich"
     ],
-    "ref": "phrases/ich habe fertig"
+    "ref": "phrases/ich habe fertig",
+    "translation_model": "openai/gpt-4.1"
   },
   "adb74fd75e": {
     "text": "Er widerrief seine Aussage.",
@@ -17404,12 +17462,13 @@
     "type": "expression",
     "note": "umgangssprachlich: heroinsüchtig sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "be hooked on heroin",
     "source": "wiktionary",
     "lemmas": [
       "Nadel"
     ],
-    "ref": "phrases/an der Nadel hängen"
+    "ref": "phrases/an der Nadel hängen",
+    "translation_model": "openai/gpt-4.1"
   },
   "adbd7e694e": {
     "text": "Er aß zwei Spiegeleier und hinterher noch ein Müsli.",
@@ -17902,12 +17961,13 @@
     "type": "expression",
     "note": "masturbieren (beim Mann)",
     "synonyms": [],
-    "translation": null,
+    "translation": "masturbate",
     "source": "wiktionary",
     "lemmas": [
       "Palme"
     ],
-    "ref": "phrases/sich einen von der Palme wedeln"
+    "ref": "phrases/sich einen von der Palme wedeln",
+    "translation_model": "openai/gpt-4.1"
   },
   "adc7f923fa": {
     "text": "„Auch zu Inhabern des grünen Turbans kamen wir.“",
@@ -19498,22 +19558,24 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm head over heels in love",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "add2b80d01": {
     "text": "jemandem auf die Nerven gehen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get on someone's nerves",
     "source": "wiktionary",
     "lemmas": [
       "Nerv"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "add447f954": {
     "text": "Der lokutive Akt des kleinen Satzes \"Es zieht\" besteht in der Äußerung von zwei Wörtern, die phonetisch, grammatisch und semantisch richtig gebildet sind und einen korrekten Satz ergeben.",
@@ -20121,10 +20183,55 @@
   },
   "addaeee96e": {
     "text": "„Die Wohnpauschale von bald 325 Euro reicht in der bayerischen Landeshauptstadt [München] vorne und hinten nicht, in Leipzig dagegen locker.“",
-    "translation": null,
+    "translation": "\"The housing allowance of soon 325 euros is nowhere near enough in Bavaria's state capital Munich, but in Leipzig it's more than adequate.\"",
     "source": "wiktionary",
     "lemmas": [
       "vorne und hinten nicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wohnpauschale",
+        "lemma": "Wohnpauschale",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "bayerischen",
+        "lemma": "bayerisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Landeshauptstadt",
+        "lemma": "Landeshauptstadt",
+        "pos": "noun",
+        "gloss_hint": "state capital"
+      },
+      {
+        "form": "München",
+        "lemma": "München",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leipzig",
+        "lemma": "Leipzig",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "locker",
+        "lemma": "locker",
+        "pos": "adjective",
+        "gloss_hint": "easily"
+      }
     ]
   },
   "addaf6bbde": {
@@ -20175,10 +20282,49 @@
   },
   "addb68a3ab": {
     "text": "„Von meiner Mutter bekam ich trotz Nachfrage stereotyp die Information: ‚Dein Vater ist im Krieg geblieben.‘ Sonst nichts.“",
-    "translation": null,
+    "translation": "\"From my mother I received, despite asking, stereotypically the information: 'Your father was killed in the war.' Nothing else.\"",
     "source": "wiktionary",
     "lemmas": [
       "im Krieg bleiben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mutter",
+        "lemma": "Mutter",
+        "pos": "noun",
+        "gloss_hint": "mother"
+      },
+      {
+        "form": "Nachfrage",
+        "lemma": "Nachfrage",
+        "pos": "noun",
+        "gloss_hint": "inquiry"
+      },
+      {
+        "form": "Information",
+        "lemma": "Information",
+        "pos": "noun",
+        "gloss_hint": "information"
+      },
+      {
+        "form": "Vater",
+        "lemma": "Vater",
+        "pos": "noun",
+        "gloss_hint": "father"
+      },
+      {
+        "form": "Krieg",
+        "lemma": "Krieg",
+        "pos": "noun",
+        "gloss_hint": "war"
+      },
+      {
+        "form": "Nichts",
+        "lemma": "Nichts",
+        "pos": "noun",
+        "gloss_hint": "nothing"
+      }
     ]
   },
   "addb810138": {
@@ -20659,11 +20805,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to feel like you've been put through the wringer",
     "source": "wiktionary",
     "lemmas": [
       "fühlen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ade204d486": {
     "text": "jemandem die Tür weisen",
@@ -21029,10 +21176,37 @@
   },
   "ade4869f2d": {
     "text": "Du kannst so oft du willst deine Unschuld beteuern, die Beweise sprechen eine andere Sprache.",
-    "translation": null,
+    "translation": "You can protest your innocence as often as you like, but the evidence speaks a different language.",
     "source": "wiktionary",
     "lemmas": [
       "eine andere Sprache sprechen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Unschuld",
+        "lemma": "Unschuld",
+        "pos": "noun",
+        "gloss_hint": "innocence (legal)"
+      },
+      {
+        "form": "beteuern",
+        "lemma": "beteuern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beweise",
+        "lemma": "Beweis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sprache",
+        "lemma": "Sprache",
+        "pos": "noun",
+        "gloss_hint": "language"
+      }
     ]
   },
   "ade4956f47": {
@@ -21051,11 +21225,12 @@
     "type": "expression",
     "note": "ist teuer",
     "synonyms": [],
-    "translation": null,
+    "translation": "that costs a fortune",
     "source": "wiktionary",
     "lemmas": [
       "Schwein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ade5ee1ac1": {
     "text": "Columbia liegt nordwestlich von Jefferson City.",
@@ -21919,11 +22094,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to save your own skin",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "adeed7c6c3": {
     "text": "Mann, der heizt vielleicht die Straße lang!",
@@ -21984,11 +22160,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When the boss is talking, everyone else keeps quiet.",
     "source": "wiktionary",
     "lemmas": [
       "Keks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "adeefee644": {
     "text": "Manche mieten ein Apartment an ihrem Arbeitsort als Zweitwohnung.",
@@ -22375,10 +22552,25 @@
   },
   "adf40c8329": {
     "text": "[Schlagzeile:] „Wirtschaft – Steuerhinterziehungen im großen Stil“",
-    "translation": null,
+    "translation": "Business – Large-scale tax evasion",
     "source": "wiktionary",
     "lemmas": [
       "im großen Stil"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wirtschaft",
+        "lemma": "Wirtschaft",
+        "pos": "noun",
+        "gloss_hint": "economy"
+      },
+      {
+        "form": "Steuerhinterziehungen",
+        "lemma": "Steuerhinterziehung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "adf4cd9c49": {
@@ -22452,11 +22644,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take part",
     "source": "wiktionary",
     "lemmas": [
       "dabei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "adf658d630": {
     "text": "Die Athleten waren dieses Jahr alle sehr gut.",

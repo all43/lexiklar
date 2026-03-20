@@ -765,11 +765,13 @@
   },
   "2d06e0de8b": {
     "text": "MS „Friede-Freude-Eierkuchen“",
-    "translation": null,
+    "translation": "Peace, joy, and happiness.",
     "source": "wiktionary",
     "lemmas": [
       "MS"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "2d08a8cc34": {
     "text": "„Mochten Adam, Eva (»Heua« bei Luther), Noah und ihr Schöpfer Deutsch gesprochen haben oder nicht, die Priester an den Altären, die Gelehrten auf den Kathedern und die Studenten am Biertisch sprachen Latein.“",
@@ -910,11 +912,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "talk without stopping",
     "source": "wiktionary",
     "lemmas": [
       "Bremse"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2d09992dd9": {
     "text": "„Mehrzweckschiffe und ein Seenotrettungskreuzer kühlten den Tanker mit großen Mengen Wasser und bekämpften den Brand von außen.“",
@@ -984,11 +987,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "regret something from the bottom of one's heart",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2d09e59455": {
     "text": "Da schwingt sich eine zur Apostelin auf.",
@@ -3355,11 +3359,12 @@
     "type": "expression",
     "note": "(e) um (jemanden) – (jemand) sorgt sich (jemanden)",
     "synonyms": [],
-    "translation": null,
+    "translation": "be worried sick",
     "source": "wiktionary",
     "lemmas": [
       "bang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2d1ea721d2": {
     "text": "„Er kann Bedingungen stellen.“",
@@ -4346,11 +4351,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "broaden one's horizons",
     "source": "wiktionary",
     "lemmas": [
       "Horizont"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2d2646d824": {
     "text": "„Nebenbei stopfte er Vögel aus und spielte auch zum Tanz auf; denn er versteht sich auf die Ziehharmonika und die Trompete und wird auch ganz gut mit der Fiedel fertig.“",
@@ -8048,10 +8054,25 @@
   },
   "2d3d98eb42": {
     "text": "An deinem Wagen steht ja noch BEL dran!",
-    "translation": null,
+    "translation": "Your car still has BEL on it!",
     "source": "wiktionary",
     "lemmas": [
       "BEL"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wagen",
+        "lemma": "Wagen",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "BEL",
+        "lemma": "BEL",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2d3dcc4f34": {
@@ -14248,12 +14269,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Jack of all trades",
     "source": "wiktionary",
     "lemmas": [
       "Gasse"
     ],
-    "ref": "phrases/Hans Dampf in allen Gassen"
+    "ref": "phrases/Hans Dampf in allen Gassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "2d796b519e": {
     "text": "„Jetzt ist er direkt vor meinem Gesicht, ein Sausen in meinem Ohr.“",
@@ -15745,11 +15767,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be at someone's disposal",
     "source": "wiktionary",
     "lemmas": [
       "Gebot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2d8992c381": {
     "text": "„Die Geflügelten Worte gehen uns in dieser Darstellung weniger an: sie sind Zitate von Wörtern, häufiger ganzen Wendungen, Sätzen oder Versen von Dichtern.“",
@@ -16865,11 +16888,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something reeks a mile away",
     "source": "wiktionary",
     "lemmas": [
       "Meile"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2d9ca991b6": {
     "text": "„Ich streifte die Aquarien mit einem letzten Blick.“",
@@ -20016,10 +20040,49 @@
   },
   "2db641e3f8": {
     "text": "„Die Annahme, daß es in Böhmen je Indogermanen gegeben habe, gehört also ins Reich der Fabel.“",
-    "translation": null,
+    "translation": "The assumption that there were ever Indo-Europeans in Bohemia thus belongs in the realm of fable.",
     "source": "wiktionary",
     "lemmas": [
       "ins Reich der Fabel gehören"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Annahme",
+        "lemma": "Annahme",
+        "pos": "noun",
+        "gloss_hint": "assumption"
+      },
+      {
+        "form": "Böhmen",
+        "lemma": "Böhmen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Indogermanen",
+        "lemma": "Indogermane",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gegeben",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reich",
+        "lemma": "Reich",
+        "pos": "noun",
+        "gloss_hint": "realm"
+      },
+      {
+        "form": "Fabel",
+        "lemma": "Fabel",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2db6533a88": {
@@ -20216,10 +20279,79 @@
   },
   "2dba0f89f8": {
     "text": "[…] Welche dieser Aktien sind mit Blick auf Ausschüttungsquote, Verschuldung, Cashflow, und Bewertung im Verhältnis zum Wachstum auch künftig am ehesten in der Lage, einen starken Konjunktureinbruch zu meistern?",
-    "translation": null,
+    "translation": "Which of these stocks are, in view of payout ratio, debt, cash flow, and valuation relative to growth, most likely to be able to weather a severe economic downturn in the future?",
     "source": "wiktionary",
     "lemmas": [
       "mit Blick auf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Aktien",
+        "lemma": "Aktie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blick",
+        "lemma": "Blick",
+        "pos": "noun",
+        "gloss_hint": "view"
+      },
+      {
+        "form": "Ausschüttungsquote",
+        "lemma": "Ausschüttungsquote",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verschuldung",
+        "lemma": "Verschuldung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Cashflow",
+        "lemma": "Cashflow",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bewertung",
+        "lemma": "Bewertung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verhältnis",
+        "lemma": "Verhältnis",
+        "pos": "noun",
+        "gloss_hint": "ratio"
+      },
+      {
+        "form": "Wachstum",
+        "lemma": "Wachstum",
+        "pos": "noun",
+        "gloss_hint": "growth"
+      },
+      {
+        "form": "Lage",
+        "lemma": "Lage",
+        "pos": "noun",
+        "gloss_hint": "situation"
+      },
+      {
+        "form": "Konjunktureinbruch",
+        "lemma": "Konjunktureinbruch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "meistern",
+        "lemma": "meistern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "2dbb08f34c": {
@@ -21237,10 +21369,85 @@
   },
   "2dc85fcd21": {
     "text": "Joan Baez und Ai Weiwei seien eine \"Inspiration für tausende Menschenrechtsaktivisten, in Amerika, Asien und darüber hinaus\", sagt Salil Shetty, Internationaler Generalsekretär von Amnesty International.",
-    "translation": null,
+    "translation": "Joan Baez and Ai Weiwei are an \"inspiration for thousands of human rights activists in America, Asia and beyond,\" says Salil Shetty, International Secretary General of Amnesty International.",
     "source": "wiktionary",
     "lemmas": [
       "darüber hinaus"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Joan Baez",
+        "lemma": "Joan Baez",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ai Weiwei",
+        "lemma": "Ai Weiwei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Inspiration",
+        "lemma": "Inspiration",
+        "pos": "noun",
+        "gloss_hint": "inspiration"
+      },
+      {
+        "form": "tausende",
+        "lemma": "tausend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menschenrechtsaktivisten",
+        "lemma": "Menschenrechtsaktivisten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Amerika",
+        "lemma": "Amerika",
+        "pos": "noun",
+        "gloss_hint": "America"
+      },
+      {
+        "form": "Asien",
+        "lemma": "Asien",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sagt",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Salil Shetty",
+        "lemma": "Salil Shetty",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Internationaler",
+        "lemma": "international",
+        "pos": "adjective",
+        "gloss_hint": "between nations"
+      },
+      {
+        "form": "Generalsekretär",
+        "lemma": "Generalsekretär",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Amnesty International",
+        "lemma": "Amnesty International",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2dc8d59c5b": {
@@ -22913,11 +23120,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone has a heavy heart",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2ddb5d8d38": {
     "text": "„Das denkwürdige Mahl fand sodann am Abend des 31. August 1939 im Extrazimmer des ersten Hauses am Platz statt.“",
@@ -23665,10 +23873,55 @@
   },
   "2de17d72da": {
     "text": "„Für diese Bezugswörter und Bereiche liegen im Korpus zahlreiche synonyme Belege vor.“",
-    "translation": null,
+    "translation": "For these reference words and domains, the corpus contains numerous synonymous examples.",
     "source": "wiktionary",
     "lemmas": [
       "synonym"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bezugswörter",
+        "lemma": "Bezugswörter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bereiche",
+        "lemma": "Bereich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "liegen",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": "be located"
+      },
+      {
+        "form": "Korpus",
+        "lemma": "Korpus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zahlreiche",
+        "lemma": "zahlreich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "synonyme",
+        "lemma": "synonym",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Belege",
+        "lemma": "Beleg",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "2de22e83be": {
@@ -24072,11 +24325,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to slam on the brakes",
     "source": "wiktionary",
     "lemmas": [
       "Bremse"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2de616c36f": {
     "text": "Ihr kommt es bei der Wahl der Frisur vor allem auf die Betonung ihres Typs an.",
@@ -24722,25 +24976,27 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to hold the reins",
     "source": "wiktionary",
     "lemmas": [
       "Heft"
     ],
-    "ref": "phrases/das Heft in der Hand halten"
+    "ref": "phrases/das Heft in der Hand halten",
+    "translation_model": "openai/gpt-4.1"
   },
   "2dedc80e79": {
     "text": "einen Clown gefrühstückt haben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in a clownish mood",
     "source": "wiktionary",
     "lemmas": [
       "Clown",
       "frühstücken"
     ],
-    "ref": "phrases/einen Clown gefrühstückt haben"
+    "ref": "phrases/einen Clown gefrühstückt haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "2dee2c8dcf": {
     "text": "„Sie ging am äußersten Rand des Bürgersteigs, um nicht von einem Verfolger in einen Hausflur gezogen zu werden.“",
@@ -26735,11 +26991,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to dance like a dervish",
     "source": "wiktionary",
     "lemmas": [
       "Derwisch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2df8c003f7": {
     "text": "„Er war ein Freigeist wie sie, doch in größter Heimlichkeit, denn in Salerno hatte niemand Geist; so lebte er mit seiner Frau und seiner Schwiegermutter als guter Christ und fügte sich allen Vorurteilen seiner Landsleute.“",

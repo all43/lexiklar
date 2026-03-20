@@ -1858,10 +1858,49 @@
   },
   "c40bd8b9a2": {
     "text": "„Der Staat war lediglich der Administrator, sorgte aber dafür, dass die Sklaven ebenso besteuert wurden wie Vieh oder Gerätschaften.“",
-    "translation": null,
+    "translation": "The state was merely the administrator, but it ensured that slaves were taxed just like livestock or equipment.",
     "source": "wiktionary",
     "lemmas": [
       "Administrator"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Staat",
+        "lemma": "Staat",
+        "pos": "noun",
+        "gloss_hint": "state"
+      },
+      {
+        "form": "Administrator",
+        "lemma": "Administrator",
+        "pos": "noun",
+        "gloss_hint": "manager"
+      },
+      {
+        "form": "Sklaven",
+        "lemma": "Sklave",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besteuert",
+        "lemma": "besteuern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vieh",
+        "lemma": "Vieh",
+        "pos": "noun",
+        "gloss_hint": "livestock"
+      },
+      {
+        "form": "Gerätschaften",
+        "lemma": "Gerätschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c40bebff4e": {
@@ -1893,10 +1932,31 @@
   },
   "c40d59fc43": {
     "text": "„Nun aber sieh zu, daß Du Dich umkleidest. Das Publikum wird bereits ungeduldig.“",
-    "translation": null,
+    "translation": "Now then, see to it that you change your clothes. The audience is already growing impatient.",
     "source": "wiktionary",
     "lemmas": [
       "umkleiden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "umkleidest",
+        "lemma": "umkleiden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Publikum",
+        "lemma": "Publikum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ungeduldig",
+        "lemma": "ungeduldig",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "c40d912b7b": {
@@ -2248,14 +2308,12 @@
     "type": "expression",
     "note": "als Vorbild zur Nachahmung dienen/herausfordern",
     "synonyms": [],
-    "translation": null,
+    "translation": "to set a good example",
     "source": "wiktionary",
     "lemmas": [
       "Beispiel"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "c415833436": {
     "text": "Wenn Vater unter der Erde liegt, werde ich um ihn trauern.",
@@ -2764,10 +2822,55 @@
   },
   "c418bf9e3e": {
     "text": "„Wer in Mangue ein Transistorradio sein Eigen nennt, gehört zu den Privilegierten.“",
-    "translation": null,
+    "translation": "Whoever owns a transistor radio in Mangue belongs to the privileged.",
     "source": "wiktionary",
     "lemmas": [
       "etwas sein Eigen nennen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wer",
+        "lemma": "wer",
+        "pos": "pronoun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mangue",
+        "lemma": "Mangue",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Transistorradio",
+        "lemma": "Transistorradio",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eigen",
+        "lemma": "eigen",
+        "pos": "adjective",
+        "gloss_hint": "own"
+      },
+      {
+        "form": "nennt",
+        "lemma": "nennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gehört",
+        "lemma": "gehören",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Privilegierten",
+        "lemma": "privilegiert",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "c41910f3e1": {
@@ -2910,13 +3013,14 @@
     "type": "expression",
     "note": "regelmäßig auftauchen",
     "synonyms": [],
-    "translation": null,
+    "translation": "come and go",
     "source": "wiktionary",
     "lemmas": [
       "gehen",
       "ein"
     ],
-    "ref": "phrases/ein und aus gehen"
+    "ref": "phrases/ein und aus gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "c41b24b73a": {
     "text": "„Die ältere Tochter vom Hauptmann, sie war wohl fast dreißig, war ein lustiges Haus.“",
@@ -3360,13 +3464,14 @@
     "type": "expression",
     "note": "jemanden anderen für sich arbeiten lassen",
     "synonyms": [],
-    "translation": null,
+    "translation": "put someone to work",
     "source": "wiktionary",
     "lemmas": [
       "spannen",
       "Karren"
     ],
-    "ref": "phrases/jemanden vor seinen Karren spannen"
+    "ref": "phrases/jemanden vor seinen Karren spannen",
+    "translation_model": "openai/gpt-4.1"
   },
   "c420c35fcb": {
     "text": "„Wenn der Biber auf dieser Seite aussteigen würde – was bis jetzt noch nicht beobachtet wurde – würde er sicher diese geschützte, flache Uferzone mit hohem Grasbewuchs wählen.“",
@@ -3613,11 +3718,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "deep down in his heart",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c421eca32b": {
     "text": "„Ich verstreiche Foundation auf meinen Wangen und bis zu den Augenwinkeln.“",
@@ -4330,13 +4436,14 @@
     "type": "expression",
     "note": "kündigen",
     "synonyms": [],
-    "translation": null,
+    "translation": "throw in the towel",
     "source": "wiktionary",
     "lemmas": [
       "Hut",
       "nehmen"
     ],
-    "ref": "phrases/seinen Hut nehmen"
+    "ref": "phrases/seinen Hut nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "c429bef530": {
     "text": "„Dem Gesindel hatte er damit gleich einmal gezeigt, wer in Tratschen das Sagen hat und dass weder Verbrecher, noch unmoralische Schlampen im Ort willkommen sind.“",
@@ -6171,10 +6278,43 @@
   },
   "c43a2cd530": {
     "text": "Nach Jahren des Streits machte sie ihren Frieden mit ihrem Schwiegersohn.",
-    "translation": null,
+    "translation": "After years of conflict, she made peace with her son-in-law.",
     "source": "wiktionary",
     "lemmas": [
       "seinen Frieden mit etwas machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Streits",
+        "lemma": "Streit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "machte",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "make"
+      },
+      {
+        "form": "Frieden",
+        "lemma": "Frieden",
+        "pos": "noun",
+        "gloss_hint": "peace treaty"
+      },
+      {
+        "form": "Schwiegersohn",
+        "lemma": "Schwiegersohn",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c43a57ef6c": {
@@ -6182,11 +6322,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fitted at the waist",
     "source": "wiktionary",
     "lemmas": [
       "Taille"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c43a9e4524": {
     "text": "Ich habe mir beim Bäcker ein süßes Stückchen geholt.",
@@ -6238,10 +6379,37 @@
   },
   "c43b2ff16f": {
     "text": "„Eine japanische Mutter sprach sich für Sushi aus.“",
-    "translation": null,
+    "translation": "A Japanese mother spoke in favor of sushi.",
     "source": "wiktionary",
     "lemmas": [
       "Sushi"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "japanische",
+        "lemma": "japanisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mutter",
+        "lemma": "Mutter",
+        "pos": "noun",
+        "gloss_hint": "mother"
+      },
+      {
+        "form": "sprach",
+        "lemma": "sprechen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sushi",
+        "lemma": "Sushi",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c43b7662da": {
@@ -6513,11 +6681,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the big wide world",
     "source": "wiktionary",
     "lemmas": [
       "Welt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c43ce7dec7": {
     "text": "„Für die niedersächsische Landtagswahl 1955 wurde von Oertzen von der SPD für den Wahlkreis Göttingen-Stadt aufgestellt, den er überraschend gewann.“",
@@ -7187,11 +7356,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not know how to handle something",
     "source": "wiktionary",
     "lemmas": [
       "lassen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c442414a56": {
     "text": "„Fünf Minuten später betrachtete er kritisch den Erfolg seiner Handarbeit, füllte sein Zigarettenetui auf, verschloss die Tür, ging in die Halle hinunter, durchquerte sie und trat in das Mondlicht hinaus.“",
@@ -7414,11 +7584,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a life in the fast lane",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c444a51b82": {
     "text": "Was hast du denn?",
@@ -8023,10 +8194,43 @@
   },
   "c44e2eaa57": {
     "text": "Der neue Absatz muss nach dem Bild eingefügt werden.",
-    "translation": null,
+    "translation": "The new paragraph must be inserted after the image.",
     "source": "wiktionary",
     "lemmas": [
       "einfügen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "neue",
+        "lemma": "neu",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Absatz",
+        "lemma": "Absatz",
+        "pos": "noun",
+        "gloss_hint": "paragraph"
+      },
+      {
+        "form": "muss",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "eingefügt",
+        "lemma": "einfügen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bild",
+        "lemma": "Bild",
+        "pos": "noun",
+        "gloss_hint": "image"
+      }
     ]
   },
   "c44fb71171": {
@@ -8746,12 +8950,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have had enough of",
     "source": "wiktionary",
     "lemmas": [
       "Nase"
     ],
-    "ref": "phrases/die Nase voll haben"
+    "ref": "phrases/die Nase voll haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "c459f8a23a": {
     "text": "„Die politischen und ökonomischen Folgen des Ersten Weltkrieges waren noch nicht überwunden. Während sich der Rückfall in den alten Nationalismus in den zwanziger Jahren sogar noch verschärfte, lastete auf den Verlierern das vae victis des Versailler Friedensvertrages.“",
@@ -9052,10 +9257,73 @@
   },
   "c45afa534b": {
     "text": "„›Und wenn ich ewig und drei Tage suchen soll‹, fluchte der Hauptmann, ›finden will ich sie, und dann könnt ihr euch mit ihnen einen kleinen Scherz machen, Leute!‹“",
-    "translation": null,
+    "translation": "\"And if I have to search for an eternity,\" the captain cursed, \"I will find her, and then you can play a little prank on her, men!\"",
     "source": "wiktionary",
     "lemmas": [
       "ewig und drei Tage"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ewig",
+        "lemma": "ewig",
+        "pos": "adjective",
+        "gloss_hint": "eternal"
+      },
+      {
+        "form": "drei",
+        "lemma": "drei",
+        "pos": "numeral",
+        "gloss_hint": "three"
+      },
+      {
+        "form": "Tage",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "suchen",
+        "lemma": "suchen",
+        "pos": "verb",
+        "gloss_hint": "search for"
+      },
+      {
+        "form": "fluchte",
+        "lemma": "fluchen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hauptmann",
+        "lemma": "Hauptmann",
+        "pos": "noun",
+        "gloss_hint": "captain (military rank)"
+      },
+      {
+        "form": "finden",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": "discover"
+      },
+      {
+        "form": "Scherz",
+        "lemma": "Scherz",
+        "pos": "noun",
+        "gloss_hint": "prank"
+      },
+      {
+        "form": "machen",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "make"
+      },
+      {
+        "form": "Leute",
+        "lemma": "Leute",
+        "pos": "noun",
+        "gloss_hint": "people"
+      }
     ]
   },
   "c45b03cbae": {
@@ -9237,11 +9505,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "on the wrong side of the law",
     "source": "wiktionary",
     "lemmas": [
       "Tour"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c45de2c129": {
     "text": "Von der Band kenne ich alle Alben – bis auf das letzte.",
@@ -9846,11 +10115,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "still better than a kick in the pants",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c464964077": {
     "text": "Alle Freunde wandten sich von ihr ab, nachdem ihr der Doktortitel aberkannt worden war.",
@@ -10096,11 +10366,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "swear by something",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c4677b1fb9": {
     "text": "Die für den Export bestimmte Ware liegt im Zolllager.",
@@ -10541,10 +10812,31 @@
   },
   "c46ae00cb8": {
     "text": "„Womöglich liegt genau da der Hund begraben.“",
-    "translation": null,
+    "translation": "Perhaps that's exactly where the problem lies.",
     "source": "wiktionary",
     "lemmas": [
       "da liegt der Hund begraben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hund",
+        "lemma": "Hund",
+        "pos": "noun",
+        "gloss_hint": "scoundrel"
+      },
+      {
+        "form": "begraben",
+        "lemma": "begraben",
+        "pos": "verb",
+        "gloss_hint": "discard (thoughts)"
+      },
+      {
+        "form": "genau",
+        "lemma": "genau",
+        "pos": "adjective",
+        "gloss_hint": "exact"
+      }
     ]
   },
   "c46b6f7983": {
@@ -10947,23 +11239,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "clip someone's wings",
     "source": "wiktionary",
     "lemmas": [
       "Flügel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c472b4005d": {
     "text": "die Flügel hängen lassen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "lose heart",
     "source": "wiktionary",
     "lemmas": [
       "Flügel",
       "hängen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c472bbdf0f": {
     "text": "Seit heute ist der neue Bundespräsident in Amt und Würden.",
@@ -11042,11 +11336,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the banter is flowing",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c4747d23c7": {
     "text": "„Der hatte sein Mahl in der Mattenzeltlaube beendet und saß nun wie auf Kohlen.“",
@@ -11149,11 +11444,12 @@
     "type": "expression",
     "note": "nicht ganz richtig im Kopf sein, spinnen",
     "synonyms": [],
-    "translation": null,
+    "translation": "not be quite right in the head",
     "source": "wiktionary",
     "lemmas": [
       "heiß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c475af28a1": {
     "text": "jemandem das Handwerk legen",
@@ -11517,11 +11813,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get someone out of the way",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c47b534961": {
     "text": "Kurz vor Abpfiff legte der Spieler ein Solo ein, welches er mit einem erfolgreichen Tor abschließen konnte.",
@@ -11816,13 +12113,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fall through",
     "source": "wiktionary",
     "lemmas": [
       "Wasser",
       "fallen"
     ],
-    "ref": "phrases/ins Wasser fallen"
+    "ref": "phrases/ins Wasser fallen",
+    "translation_model": "openai/gpt-4.1"
   },
   "c47fddd0a9": {
     "text": "„Vor der wohlverdienten Winterpause steht Borussia Dortmund im Duell bei Fortuna Düsseldorf ein letzter Kraftakt bevor.“",
@@ -12558,10 +12856,85 @@
   },
   "c48285754d": {
     "text": "Ich faßte endlich ein Herz, und trat an einen jungen Mann heran, der mir von minderem Ansehen schien, als die andern, und der öfter allein gestanden hatte.",
-    "translation": null,
+    "translation": "I finally plucked up courage and approached a young man who seemed to me of lesser standing than the others, and who had often stood alone.",
     "source": "wiktionary",
     "lemmas": [
       "ein Herz fassen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "faßte",
+        "lemma": "fassen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "endlich",
+        "lemma": "endlich",
+        "pos": "adverb",
+        "gloss_hint": "finally"
+      },
+      {
+        "form": "Herz",
+        "lemma": "Herz",
+        "pos": "noun",
+        "gloss_hint": "heart"
+      },
+      {
+        "form": "trat",
+        "lemma": "treten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "jungen",
+        "lemma": "jung",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "minderem",
+        "lemma": "minder",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ansehen",
+        "lemma": "Ansehen",
+        "pos": "noun",
+        "gloss_hint": "reputation"
+      },
+      {
+        "form": "andern",
+        "lemma": "ander",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "öfter",
+        "lemma": "oft",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "allein",
+        "lemma": "allein",
+        "pos": "adjective",
+        "gloss_hint": "alone"
+      },
+      {
+        "form": "gestanden",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "c482a6a3c6": {
@@ -12857,12 +13230,13 @@
     "type": "expression",
     "note": "! – Ausruf bei Überraschung",
     "synonyms": [],
-    "translation": null,
+    "translation": "good grief!",
     "source": "wiktionary",
     "lemmas": [
       "grün",
       "ach"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c489d5abc4": {
     "text": "In seinem umstrittenen Buch [Struwwelpeter] erzählt [Heinrich] Hoffmann in mehreren kurzen Geschichten von ungehorsamen Kindern, die alle am Ende eine schlimme Strafe erwartet.",
@@ -14078,22 +14452,24 @@
     "type": "expression",
     "note": "stumm dasitzen",
     "synonyms": [],
-    "translation": null,
+    "translation": "sit there like a statue",
     "source": "wiktionary",
     "lemmas": [
       "Buddha"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c490da4d18": {
     "text": "bei Weitem",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "by far",
     "source": "wiktionary",
     "lemmas": [
       "weit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c491a04cff": {
     "text": "Die Techniker warten den großen Bootsmotor.",
@@ -14916,10 +15292,43 @@
   },
   "c49be4e933": {
     "text": "Der Sonne wegen werden im Sommer Sonnenbrillen getragen.",
-    "translation": null,
+    "translation": "Sunglasses are worn in summer because of the sun.",
     "source": "wiktionary",
     "lemmas": [
       "wegen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sonne",
+        "lemma": "Sonne",
+        "pos": "noun",
+        "gloss_hint": "sun"
+      },
+      {
+        "form": "wegen",
+        "lemma": "wegen",
+        "pos": "preposition",
+        "gloss_hint": "because of"
+      },
+      {
+        "form": "Sommer",
+        "lemma": "Sommer",
+        "pos": "noun",
+        "gloss_hint": "summer (meteorological)"
+      },
+      {
+        "form": "Sonnenbrillen",
+        "lemma": "Sonnenbrille",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "getragen",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "c49e9cebf7": {
@@ -17393,11 +17802,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "poor devil",
     "source": "wiktionary",
     "lemmas": [
       "arm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c4b1212528": {
     "text": "Abgabe nur gegen Barzahlung.",
@@ -17683,10 +18093,37 @@
   },
   "c4b6e94fd1": {
     "text": "Die Kosten für das Auto in dieser Ausstattung betragen summa summarum 30000 €.",
-    "translation": null,
+    "translation": "The costs for the car in this configuration amount to a total of 30,000 euros.",
     "source": "wiktionary",
     "lemmas": [
       "summa summarum"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kosten",
+        "lemma": "Kosten",
+        "pos": "noun",
+        "gloss_hint": "costs"
+      },
+      {
+        "form": "Auto",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "Ausstattung",
+        "lemma": "Ausstattung",
+        "pos": "noun",
+        "gloss_hint": "equipment"
+      },
+      {
+        "form": "betragen",
+        "lemma": "betragen",
+        "pos": "verb",
+        "gloss_hint": "amount"
+      }
     ]
   },
   "c4b703a1a8": {
@@ -19042,36 +19479,39 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "full blast",
     "source": "wiktionary",
     "lemmas": [
       "Kanne"
     ],
-    "ref": "phrases/volle Kanne"
+    "ref": "phrases/volle Kanne",
+    "translation_model": "openai/gpt-4.1"
   },
   "c4c158ce60": {
     "text": "er ist wie ein großes Kind",
     "type": "expression",
     "note": "Erwachsener, der gerne spielt",
     "synonyms": [],
-    "translation": null,
+    "translation": "he's like a big kid",
     "source": "wiktionary",
     "lemmas": [
       "Kind"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c4c36296ad": {
     "text": "Unkraut verdirbt nicht",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a bad penny always turns up",
     "source": "wiktionary",
     "lemmas": [
       "verderben",
       "Unkraut"
     ],
-    "ref": "phrases/Unkraut verdirbt nicht"
+    "ref": "phrases/Unkraut verdirbt nicht",
+    "translation_model": "openai/gpt-4.1"
   },
   "c4c4006ccb": {
     "text": "„Für Schweitzer bedeutet es, ein geistiger Abenteurer zu sein, wie die Welt sie nötig hat, wenn man die Fähigkeit entwickelt, sein Vorhaben nicht als etwas Außergewöhnliches, sondern als etwas Selbstverständliches zu begreifen, bei dem man nur seine Pflicht erfüllt.\"",
@@ -19272,21 +19712,70 @@
     "type": "expression",
     "note": ": Formel für einen fröhlichen, feucht-fröhlichen, ausgelassenen Lebensstil",
     "synonyms": [],
-    "translation": null,
+    "translation": "wine, women, and song",
     "source": "wiktionary",
     "lemmas": [
       "Wein"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "c4c82e77d1": {
     "text": "„Heiraten – nein danke, sagen landauf, landab immer mehr Frauen und Männer, quer durch alle Schichten und Generationen.“",
-    "translation": null,
+    "translation": "\"Marriage – no thanks, say more and more women and men everywhere, across all classes and generations.\"",
     "source": "wiktionary",
     "lemmas": [
       "landauf, landab"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Heiraten",
+        "lemma": "heiraten",
+        "pos": "verb",
+        "gloss_hint": "marry"
+      },
+      {
+        "form": "nein",
+        "lemma": "nein",
+        "pos": "particle",
+        "gloss_hint": "no"
+      },
+      {
+        "form": "danke",
+        "lemma": "danke",
+        "pos": "particle",
+        "gloss_hint": "thank you"
+      },
+      {
+        "form": "sagen",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": "say"
+      },
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Männer",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "Schichten",
+        "lemma": "Schicht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Generationen",
+        "lemma": "Generation",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c4c8880ef9": {
@@ -20170,11 +20659,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I can't believe it!",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c4cfd70983": {
     "text": "Die germanischen Sprachen umfassen etwa 15 Sprachen mit rund 500 Millionen Muttersprachlern.",
@@ -20318,11 +20808,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "nonsense",
     "source": "wiktionary",
     "lemmas": [
       "Zeug"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c4d2bc3bd2": {
     "text": "\"Starke Verben sind nicht automatisch unregelmäßig, schwache Verben sind aber regelmäßig.\"",
@@ -21390,11 +21881,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get off my back!",
     "source": "wiktionary",
     "lemmas": [
       "Buckel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c4e333d974": {
     "text": "Die Firma legte Referenzen vor, woraufhin sie den Auftrag sofort bekam.",
@@ -23186,10 +23678,55 @@
   },
   "c4f08b7b2c": {
     "text": "Als der Reiter an den Fluss kam, setzte sein Pferd mutig durch.",
-    "translation": null,
+    "translation": "When the rider came to the river, his horse boldly crossed through.",
     "source": "wiktionary",
     "lemmas": [
       "durchsetzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Reiter",
+        "lemma": "Reiter",
+        "pos": "noun",
+        "gloss_hint": "rider"
+      },
+      {
+        "form": "Fluss",
+        "lemma": "Fluss",
+        "pos": "noun",
+        "gloss_hint": "river"
+      },
+      {
+        "form": "kam",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pferd",
+        "lemma": "Pferd",
+        "pos": "noun",
+        "gloss_hint": "horse"
+      },
+      {
+        "form": "mutig",
+        "lemma": "mutig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "setzte",
+        "lemma": "setzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "durch",
+        "lemma": "durchsetzen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "c4f1218d2e": {
@@ -24127,11 +24664,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Home, sweet home",
     "source": "wiktionary",
     "lemmas": [
       "traut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c4fb08e98d": {
     "text": "Am sichersten ist es, das Zentrum zu erobern.",

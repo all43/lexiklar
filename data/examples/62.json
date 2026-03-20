@@ -262,11 +262,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "stand by someone",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "62022afa7d": {
     "text": "„Am schärfsten nahm der patrouillierende Witz das Handwerk der Maurer aufs Korn.“",
@@ -3839,11 +3840,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone's heart belongs to someone",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6217c15cfd": {
     "text": "„Langsam aber sicher begann jetzt das Arabische die einheimische Sprache abzulösen.“",
@@ -4107,11 +4109,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "spend a lot of money",
     "source": "wiktionary",
     "lemmas": [
       "Geld"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6219608ec5": {
     "text": "wenn Ostern und Weihnachten auf einen Tag fallen",
@@ -6187,11 +6190,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be on the way",
     "source": "wiktionary",
     "lemmas": [
       "Anflug"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6234b687b6": {
     "text": "„Was entsteht also daraus, wenn ein Geschwister dem andern nicht nachgeben will, wenn eines dem andern widerspricht, und eines alles besser wissen will, als das andere?“",
@@ -6506,23 +6510,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have one too many drinks",
     "source": "wiktionary",
     "lemmas": [
       "tief"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6238a4ff86": {
     "text": "am Ende des Tages",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at the end of the day",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
     ],
-    "ref": "phrases/am Ende des Tages"
+    "ref": "phrases/am Ende des Tages",
+    "translation_model": "openai/gpt-4.1"
   },
   "6238aae406": {
     "text": "Es wurde ein Polizeitaucher über Funk angefordert.",
@@ -6871,11 +6877,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "stand on one's own two feet",
     "source": "wiktionary",
     "lemmas": [
       "Fuß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "623ec1a44c": {
     "text": "In dieser Saison punktete er erstmals auch im Riesenslalom.",
@@ -8830,13 +8837,74 @@
   },
   "6249f2e92e": {
     "text": "„›Stalin, die Romanows, der Große Vaterländische Krieg, das aktuelle Phänomen russischer nationalistischer Skinheads ... Wie Sie sehen, hege ich eine Affinität für schlimme, schlimme Dinge.‹“",
-    "translation": "",
+    "translation": "'Stalin, the Romanovs, the Great Patriotic War, the current phenomenon of Russian nationalist skinheads... As you can see, I have an affinity for terrible, terrible things.'",
     "source": "wiktionary",
     "lemmas": [
       "Großer Vaterländischer Krieg"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
-    "annotations": []
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Stalin",
+        "lemma": "Stalin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Romanows",
+        "lemma": "Romanow",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Großen",
+        "lemma": "Groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vaterländischen",
+        "lemma": "vaterländisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Krieg",
+        "lemma": "Krieg",
+        "pos": "noun",
+        "gloss_hint": "war"
+      },
+      {
+        "form": "Phänomen",
+        "lemma": "Phänomen",
+        "pos": "noun",
+        "gloss_hint": "phenomenon"
+      },
+      {
+        "form": "Skinheads",
+        "lemma": "Skinhead",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sehen",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": "see"
+      },
+      {
+        "form": "hege",
+        "lemma": "hegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Affinität",
+        "lemma": "Affinität",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ]
   },
   "624ab8e26d": {
     "text": "„Nicht mal dafür ist sie zur Rechenschaft gezogen worden. Soff sich ins Koma, schluckte Pillen, ließ sich einweisen, entzog sich allem und hatte reichlich Zeit, um sich darüber klar zu werden, wie sie weiter als Opfer durchs Leben gehen kann.“",
@@ -9041,11 +9109,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something goes to someone's head",
     "source": "wiktionary",
     "lemmas": [
       "schießen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "624bd7b8ee": {
     "text": "„Die interne Auswertung kam zu dem Ergebnis, dass sich in der mittleren Leitungsebene eine hohe Zahl unterqualifizierter Mitarbeiter befinde.“",
@@ -10089,10 +10158,73 @@
   },
   "6254692ce2": {
     "text": "„Für Fertiggerichte und die Gastronomie werden spezielle Paniermehle hergestellt, die z. B. dafür sorgen, dass eine ungebratene Panierung nicht aufweicht oder panierte Gerichte auch warmgehalten knusprig bleiben.“",
-    "translation": null,
+    "translation": "For ready-made meals and the catering industry, special breading flours are manufactured that, for example, ensure that unfried breading does not become soggy or breaded dishes remain crispy even when kept warm.",
     "source": "wiktionary",
     "lemmas": [
       "knusprig"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fertiggerichte",
+        "lemma": "Fertiggericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gastronomie",
+        "lemma": "Gastronomie",
+        "pos": "noun",
+        "gloss_hint": "culinary industry"
+      },
+      {
+        "form": "Paniermehle",
+        "lemma": "Paniermehl",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hergestellt",
+        "lemma": "herstellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sorgen",
+        "lemma": "sorgen",
+        "pos": "verb",
+        "gloss_hint": "ensure"
+      },
+      {
+        "form": "Panierung",
+        "lemma": "Panierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufweicht",
+        "lemma": "aufweichen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gerichte",
+        "lemma": "Gericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "warmgehalten",
+        "lemma": "warmhalten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "knusprig",
+        "lemma": "knusprig",
+        "pos": "adjective",
+        "gloss_hint": "crispy"
+      }
     ]
   },
   "6255135174": {
@@ -10320,11 +10452,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the devil take you",
     "source": "wiktionary",
     "lemmas": [
       "braten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6255e44db4": {
     "text": "„Wir hatten da unseren gemeinsamen Schatz in Portugal.“",
@@ -13018,11 +13151,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to beat the crap out of someone",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "62696cd35d": {
     "text": "Die Aktivierung der Bevölkerung gegen rechte, nationalistische und fremdenfeindliche Bewegungen ist wichtig.",
@@ -13611,11 +13745,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like butter in the sun",
     "source": "wiktionary",
     "lemmas": [
       "Sonne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "626d80e306": {
     "text": "Die Bauern geben vorher an, wieviel Vieh sie auftreiben wollen.",
@@ -13961,11 +14096,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to want to turn back time",
     "source": "wiktionary",
     "lemmas": [
       "zurückdrehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6270279ad6": {
     "text": "„Meine Schwägerin stand in der Stube und gab mir die Hand.“",
@@ -14398,10 +14534,31 @@
   },
   "62725fc3f4": {
     "text": "„Das AA hatte sich in den letzten zweieinhalb Jahren intensiv um die Freilassung von Katharina M. eingesetzt.“",
-    "translation": null,
+    "translation": "The Foreign Office had made intensive efforts over the past two and a half years to secure the release of Katharina M.",
     "source": "wiktionary",
     "lemmas": [
       "AA"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "AA",
+        "lemma": "Auswärtiges Amt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eingesetzt",
+        "lemma": "einsetzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Freilassung",
+        "lemma": "Freilassung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "62740af86f": {
@@ -14945,13 +15102,164 @@
   },
   "627a410e70": {
     "text": "„Unter Ausbeuten ist mit dem BGH zu verstehen, dass der Täter durch »planmäßiges und eigensüchtiges Ausnutzen der Prostitutionsausübung als Erwerbsquelle eine spürbare Verschlechterung der wirtschaftlichen Lage der« oder des »Prostituierten herbeiführt«, so z. B. bei der Unmöglichkeit, Ersparnisse zu bilden oder auch nur Schulden zu tilgen (weit überhöhte Mietforderungen allein reichen nicht aus); insoweit ist Absicht als zielgerichtetes Verhalten (darauf ankommen) erforderlich.“",
-    "translation": "",
+    "translation": "According to the Federal Court of Justice, exploitation means that the perpetrator, through systematic and self-interested exploitation of prostitution as a source of income, brings about a noticeable deterioration in the economic situation of the prostitute—for example, by making it impossible to save money or even to pay off debts (excessively high rent demands alone are insufficient); in this respect, intent as goal-directed conduct (that it matters) is required.",
     "source": "wiktionary",
     "lemmas": [
       "Prostituierter"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
-    "annotations": []
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ausbeuten",
+        "lemma": "ausbeuten",
+        "pos": "verb",
+        "gloss_hint": "exploit"
+      },
+      {
+        "form": "Täter",
+        "lemma": "Täter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "planmäßiges",
+        "lemma": "planmäßig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "eigensüchtiges",
+        "lemma": "eigensüchtig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausnutzen",
+        "lemma": "ausnutzen",
+        "pos": "verb",
+        "gloss_hint": "exploit"
+      },
+      {
+        "form": "Prostitutionsausübung",
+        "lemma": "Prostitutionsausübung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erwerbsquelle",
+        "lemma": "Erwerbsquelle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verschlechterung",
+        "lemma": "Verschlechterung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wirtschaftlichen",
+        "lemma": "wirtschaftlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lage",
+        "lemma": "Lage",
+        "pos": "noun",
+        "gloss_hint": "situation"
+      },
+      {
+        "form": "Prostituierten",
+        "lemma": "Prostituierte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "herbeiführt",
+        "lemma": "herbeiführen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unmöglichkeit",
+        "lemma": "Unmöglichkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ersparnisse",
+        "lemma": "Ersparnisse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bilden",
+        "lemma": "bilden",
+        "pos": "verb",
+        "gloss_hint": "create a reserve"
+      },
+      {
+        "form": "Schulden",
+        "lemma": "Schulden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tilgen",
+        "lemma": "tilgen",
+        "pos": "verb",
+        "gloss_hint": "repay"
+      },
+      {
+        "form": "überhöhte",
+        "lemma": "überhöht",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mietforderungen",
+        "lemma": "Mietforderung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "reichen",
+        "lemma": "reichen",
+        "pos": "verb",
+        "gloss_hint": "suffice"
+      },
+      {
+        "form": "Absicht",
+        "lemma": "Absicht",
+        "pos": "noun",
+        "gloss_hint": "intent (legal)"
+      },
+      {
+        "form": "zielgerichtetes",
+        "lemma": "zielgerichtet",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verhalten",
+        "lemma": "Verhalten",
+        "pos": "noun",
+        "gloss_hint": "conduct"
+      },
+      {
+        "form": "ankommen",
+        "lemma": "ankommen",
+        "pos": "verb",
+        "gloss_hint": "matter"
+      },
+      {
+        "form": "erforderlich",
+        "lemma": "erforderlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
+    ]
   },
   "627ab98265": {
     "text": "Eine Halbgruppe, die ein neutrales Element besitzt und dazu noch zu jedem Element ein Inverses, wird dadurch zur Gruppe.",
@@ -15877,10 +16185,55 @@
   },
   "6288987467": {
     "text": "Tut mir leid, aber heute kann ich euch nicht aus der Patsche helfen, auch wenn heute drei Kollegen krank sind: Ihr müsst euch einen anderen suchen.",
-    "translation": null,
+    "translation": "I'm sorry, but I can't help you out of this jam today, even though three colleagues are sick: you'll have to find someone else.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem aus der Patsche helfen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Leid",
+        "lemma": "Leid",
+        "pos": "noun",
+        "gloss_hint": "grief"
+      },
+      {
+        "form": "helfen",
+        "lemma": "helfen",
+        "pos": "verb",
+        "gloss_hint": "help"
+      },
+      {
+        "form": "Patsche",
+        "lemma": "Patsche",
+        "pos": "noun",
+        "gloss_hint": "predicament"
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "Kollegen",
+        "lemma": "Kollege",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "krank",
+        "lemma": "krank",
+        "pos": "adjective",
+        "gloss_hint": "sick"
+      },
+      {
+        "form": "suchen",
+        "lemma": "suchen",
+        "pos": "verb",
+        "gloss_hint": "search for"
+      }
     ]
   },
   "6289346f77": {
@@ -15934,11 +16287,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lose time",
     "source": "wiktionary",
     "lemmas": [
       "verlieren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "628a89dc4d": {
     "text": "„Der Müller Bachmann war der einzige Freund dieser Art in seinem Leben.“",
@@ -16336,11 +16690,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "who knows how",
     "source": "wiktionary",
     "lemmas": [
       "wie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6292c0c3c0": {
     "text": "„Er hatte in seinem Horoskop gelesen, daß er an einem solchen Tag ermordet werden sollte, und als kluger Mann mußte er daher unerreichbar bleiben.“",
@@ -19551,10 +19906,67 @@
   },
   "62af1e7039": {
     "text": "Verluste aus griechischen Schuldtiteln würden, nachdem diese durch die EZB aufgekauft wurden, deren Anteilseigner tragen, also die Staaten der Eurozone.",
-    "translation": null,
+    "translation": "Losses from Greek government bonds would, after these were purchased by the ECB, be borne by its shareholders—that is, the states of the eurozone.",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verluste",
+        "lemma": "Verlust",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "griechischen",
+        "lemma": "griechisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schuldtiteln",
+        "lemma": "Schuldtitel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgekauft",
+        "lemma": "aufkaufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "EZB",
+        "lemma": "EZB",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anteilseigner",
+        "lemma": "Anteilseigner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tragen",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": "bear (cost)"
+      },
+      {
+        "form": "Staaten",
+        "lemma": "Staat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eurozone",
+        "lemma": "Eurozone",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "62af85285c": {
@@ -19754,11 +20166,12 @@
     "type": "expression",
     "note": "an jemandem, etwas – jemandem, etwas im übersteigertem Maße gern mögen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a soft spot for someone",
     "source": "wiktionary",
     "lemmas": [
       "fressen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "62b0cdc118": {
     "text": "„Und die EU setzt sich für eine weltweite Abschaffung der Todesstrafe ein. Damit das kein bloßes Lippenbekenntnis ist, wurde 2005 eine EU-Verordnung erlassen, die den Handel mit Gütern verbietet, die zu Folter, unmenschlicher Bestrafung oder Vollstreckung der Todesstrafe eingesetzt werden können. Zunächst standen Instrumente wie elektrische Stühle auf der Liste. Ende 2011 wurden dann auch Narkosemittel darauf gesetzt, weil sie überdosiert für Hinrichtungen eingesetzt werden.“",
@@ -19807,11 +20220,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to open one's mouth and nose wide",
     "source": "wiktionary",
     "lemmas": [
       "aufreißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "62b1d0d86d": {
     "text": "Es muss Besseres im Leben geben, als sich am Wochenende einen zu knallen.",
@@ -19908,12 +20322,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to watch one's hopes fade",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
     ],
-    "ref": "phrases/die Felle wegschwimmen sehen"
+    "ref": "phrases/die Felle wegschwimmen sehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "62b241a816": {
     "text": "Kennst Du die Platte „ABBA - Greatest Hits“?",
@@ -20399,11 +20814,12 @@
     "type": "expression",
     "note": "jemanden verlassen, im Stich lassen/jemanden in der Schule nicht versetzen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to leave someone in the lurch",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "62b59a634c": {
     "text": "Wie viele Sonnensysteme gibt es im Universum?",
@@ -21065,10 +21481,37 @@
   },
   "62bcabf045": {
     "text": "„Andreas daneben quasselte in einem fort.“",
-    "translation": null,
+    "translation": "Andreas, meanwhile, chattered away incessantly.",
     "source": "wiktionary",
     "lemmas": [
       "in einem fort"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Andreas",
+        "lemma": "Andreas",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "daneben",
+        "lemma": "daneben",
+        "pos": "adverb",
+        "gloss_hint": "also"
+      },
+      {
+        "form": "quasselte",
+        "lemma": "quasseln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "fort",
+        "lemma": "fort",
+        "pos": "adverb",
+        "gloss_hint": "onwards"
+      }
     ]
   },
   "62bd806a1c": {
@@ -22448,10 +22891,61 @@
   },
   "62c8bba82d": {
     "text": "„LSD erlebt gerade eine Renaissance in Island, es ist günstig zu bekommen und einfach zu konsumieren.“",
-    "translation": null,
+    "translation": "LSD is currently experiencing a renaissance in Iceland; it's cheap to get and easy to consume.",
     "source": "wiktionary",
     "lemmas": [
       "LSD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "LSD",
+        "lemma": "LSD",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erlebt",
+        "lemma": "erleben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Renaissance",
+        "lemma": "Renaissance",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Island",
+        "lemma": "Island",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "günstig",
+        "lemma": "günstig",
+        "pos": "adjective",
+        "gloss_hint": "affordable"
+      },
+      {
+        "form": "bekommen",
+        "lemma": "bekommen",
+        "pos": "verb",
+        "gloss_hint": "get (future)"
+      },
+      {
+        "form": "einfach",
+        "lemma": "einfach",
+        "pos": "adjective",
+        "gloss_hint": "easy"
+      },
+      {
+        "form": "konsumieren",
+        "lemma": "konsumieren",
+        "pos": "verb",
+        "gloss_hint": "consume"
+      }
     ]
   },
   "62c976710b": {
@@ -22828,11 +23322,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the landlord was not at home",
     "source": "wiktionary",
     "lemmas": [
       "Wirt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "62cc0dae89": {
     "text": "Er hat eine Karriere wie im Bilderbuch hingelegt.",
@@ -23211,10 +23706,43 @@
   },
   "62d0e34310": {
     "text": "Ich frage mich, ob der Typ etwas auf dem Kerbholz hat, so merkwürdig wie der sich benimmt.",
-    "translation": null,
+    "translation": "I wonder if that guy has something to hide, the way he's behaving so strangely.",
     "source": "wiktionary",
     "lemmas": [
       "etwas auf dem Kerbholz haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "frage",
+        "lemma": "fragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Typ",
+        "lemma": "Typ",
+        "pos": "noun",
+        "gloss_hint": "character"
+      },
+      {
+        "form": "Kerbholz",
+        "lemma": "Kerbholz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "merkwürdig",
+        "lemma": "merkwürdig",
+        "pos": "adjective",
+        "gloss_hint": "strange"
+      },
+      {
+        "form": "benimmt",
+        "lemma": "benehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "62d11593d6": {
@@ -23222,13 +23750,14 @@
     "type": "expression",
     "note": "Person verhält sich waghalsig oder irrational; oft auch als rhetorische Frage: „Hast du Lack gesoffen?“, ein abwertender Ausruf der Empörung",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be crazy",
     "source": "wiktionary",
     "lemmas": [
       "saufen",
       "Lack"
     ],
-    "ref": "phrases/Lack gesoffen haben"
+    "ref": "phrases/Lack gesoffen haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "62d16d3372": {
     "text": "[Der Literaturkritiker] Marcel Reich-Ranicki hat mit diesen oft krass formulierten Urteilen auch Viele verschreckt.",
@@ -23708,12 +24237,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to run for it",
     "source": "wiktionary",
     "lemmas": [
       "nehmen"
     ],
-    "ref": "phrases/Reißaus nehmen"
+    "ref": "phrases/Reißaus nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "62d35297fe": {
     "text": "Die Elle ist weniger kräftig als die Speiche.",

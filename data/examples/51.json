@@ -389,11 +389,12 @@
     "type": "expression",
     "note": "Ausdruck der Kritik",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be absolutely unacceptable",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5105df47a1": {
     "text": "„Sie ging auf den Balkon und blickte hinunter zum Swimmingpool, in dem ein Mann seine Bahnen schwamm.“",
@@ -1766,11 +1767,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "holy cow",
     "source": "wiktionary",
     "lemmas": [
       "Strohsack"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5110b68bb0": {
     "text": "„‚Reifes Team verw. Dich! Mutter bläst Dich in den Himmel, während Du Tochters Schnecke leckst!‘ Diese Sex-Anzeige im Berliner Tip war die eine Anzeige zu viel.“",
@@ -2644,10 +2646,25 @@
   },
   "5119302605": {
     "text": "[Werbespruch:] Ihre Zufriedenheit liegt uns sehr am Herzen!",
-    "translation": null,
+    "translation": "Your satisfaction is very important to us!",
     "source": "wiktionary",
     "lemmas": [
       "jemandem am Herzen liegen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zufriedenheit",
+        "lemma": "Zufriedenheit",
+        "pos": "noun",
+        "gloss_hint": "satisfaction"
+      },
+      {
+        "form": "Herzen",
+        "lemma": "Herz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "5119474fe4": {
@@ -3756,10 +3773,31 @@
   },
   "5123bc6c6a": {
     "text": "„Was ich aber definitiv niemals werden wollte, ist Unternehmerin und Chefin.“",
-    "translation": null,
+    "translation": "But what I definitely never wanted to become is an entrepreneur and boss.",
     "source": "wiktionary",
     "lemmas": [
       "Unternehmerin"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "definitiv",
+        "lemma": "definitiv",
+        "pos": "adjective",
+        "gloss_hint": "definitely"
+      },
+      {
+        "form": "Unternehmerin",
+        "lemma": "Unternehmerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Chefin",
+        "lemma": "Chefin",
+        "pos": "noun",
+        "gloss_hint": "female boss"
+      }
     ]
   },
   "5127d199c7": {
@@ -3857,11 +3895,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to flutter one's eyelashes",
     "source": "wiktionary",
     "lemmas": [
       "klimpern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "512be4afa4": {
     "text": "„Während die Meeresspiegel fast unmerklich um etwa 3,4 Millimeter pro Jahr steigen, sind andere Klimakatastrophen weit aufälliger. Vor allem Hitze und Dürren nehmen zu.“",
@@ -4024,12 +4063,13 @@
     "type": "expression",
     "note": "Zentrum der Welt, wichtigster Ort der Welt",
     "synonyms": [],
-    "translation": null,
+    "translation": "center of the world",
     "source": "wiktionary",
     "lemmas": [
       "Nabel"
     ],
-    "ref": "phrases/Nabel der Welt"
+    "ref": "phrases/Nabel der Welt",
+    "translation_model": "openai/gpt-4.1"
   },
   "512c7548bd": {
     "text": "„Zuerst meinten sie, es könne ein Kaperschiff der Piraten von der Berberküste sein, die im Monat Juni häufig in den Gewässern um Teneriffa Jagd auf wehrlose Kauffahrer machten.“",
@@ -5164,11 +5204,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in the short term",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "51335dd495": {
     "text": "„Sein misstrauischer Blick flog über die anwesenden Gäste, als hielte er nach verkleideten Scharfschützen Ausschau.“",
@@ -5526,10 +5567,37 @@
   },
   "513477c342": {
     "text": "Zum Schutz der Produkte sind diese in Folie verpackt.",
-    "translation": null,
+    "translation": "To protect the products, they are wrapped in film.",
     "source": "wiktionary",
     "lemmas": [
       "Folie"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schutz",
+        "lemma": "Schutz",
+        "pos": "noun",
+        "gloss_hint": "protection"
+      },
+      {
+        "form": "Produkte",
+        "lemma": "Produkt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Folie",
+        "lemma": "Folie",
+        "pos": "noun",
+        "gloss_hint": "film (plastic)"
+      },
+      {
+        "form": "verpackt",
+        "lemma": "verpacken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "51353847dd": {
@@ -7306,11 +7374,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is running out of steam",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5148abff43": {
     "text": "Mandelas Witwe Graça Machel steht als Partnerin gemäß südafrikanischem Familienrecht die Hälfte von Mandelas gesamtem Vermögen zu.",
@@ -8016,10 +8085,25 @@
   },
   "514d418100": {
     "text": "Nach alldem, was er mir angetan hat, würde ich ihm nur allzu gern eins auswischen.",
-    "translation": null,
+    "translation": "After everything he has done to me, I would very much like to get back at him.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem eins auswischen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "angetan",
+        "lemma": "angetan",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "auswischen",
+        "lemma": "auswischen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "514d949422": {
@@ -8573,11 +8657,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "follow on someone's heels",
     "source": "wiktionary",
     "lemmas": [
       "Fuß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5155d31226": {
     "text": "„Na, dann machen Se’s doch passend, ich wart’ derweil.“",
@@ -11289,10 +11374,31 @@
   },
   "516a942fcc": {
     "text": "Die Untereinheit der Krone ist der Heller, 1 Krone (K) = 100 Heller (h).",
-    "translation": null,
+    "translation": "The subunit of the crown is the heller; 1 crown (K) = 100 hellers (h).",
     "source": "wiktionary",
     "lemmas": [
       "K"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Untereinheit",
+        "lemma": "Untereinheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Krone",
+        "lemma": "Krone",
+        "pos": "noun",
+        "gloss_hint": "krone (currency)"
+      },
+      {
+        "form": "Heller",
+        "lemma": "Heller",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "516b7734e8": {
@@ -12243,11 +12349,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "eat yourself a potbelly",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "516f4d84ec": {
     "text": "Ich durchschaue ihr dunkles Vorhaben und werde alles in meiner Macht stehende tun, um sie aufzuhalten!",
@@ -14254,10 +14361,67 @@
   },
   "51807f39fe": {
     "text": "„»Heute büchsen sie aus«“, schimpft er, »und wollen sich alle profilieren, nach dem Motto: Leg dich quer, dann bist du wer. Mit den Wölfen heulen, das wollen doch heute viele nicht mehr. Die sind meistens schon so gescheit, so unabhängig von Anfang an, daß sie nur lächeln. Wer macht denn heute noch, was ein Alter sagt?«“",
-    "translation": null,
+    "translation": "\"'Today they're running away,' he grumbles, 'and they all want to make a name for themselves, with the motto: Be rebellious and you're somebody. Howl with the wolves—many don't want to do that anymore these days. Most of them are already so clever, so independent from the start, that they just smile. Who does what an old man says anymore?'\"",
     "source": "wiktionary",
     "lemmas": [
       "mit den Wölfen heulen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "büchsen",
+        "lemma": "büchsen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "profilieren",
+        "lemma": "profilieren",
+        "pos": "verb",
+        "gloss_hint": "ein Profil in der Öffentlichkeit gewinnen, sich beweisen"
+      },
+      {
+        "form": "quer",
+        "lemma": "quer",
+        "pos": "adverb",
+        "gloss_hint": "diagonally"
+      },
+      {
+        "form": "Wölfen",
+        "lemma": "Wolf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "heulen",
+        "lemma": "heulen",
+        "pos": "verb",
+        "gloss_hint": "howl"
+      },
+      {
+        "form": "gescheit",
+        "lemma": "gescheit",
+        "pos": "adjective",
+        "gloss_hint": "intelligent"
+      },
+      {
+        "form": "unabhängig",
+        "lemma": "unabhängig",
+        "pos": "adjective",
+        "gloss_hint": "independent"
+      },
+      {
+        "form": "lächeln",
+        "lemma": "lächeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Alter",
+        "lemma": "Alter",
+        "pos": "noun",
+        "gloss_hint": "old man"
+      }
     ]
   },
   "5180ee7ac7": {
@@ -14398,10 +14562,67 @@
   },
   "518224c3a0": {
     "text": "Der türkische Ministerpräsident Erdogan hat ein Reformpaket präsentiert. Frauen im Staatsdienst dürften künftig Kopftücher tragen […]",
-    "translation": null,
+    "translation": "Turkish Prime Minister Erdogan presented a reform package. Women in civil service will henceforth be allowed to wear headscarves [...]",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "türkische",
+        "lemma": "türkisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ministerpräsident",
+        "lemma": "Ministerpräsident",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erdogan",
+        "lemma": "Erdogan",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reformpaket",
+        "lemma": "Reformpaket",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "präsentiert",
+        "lemma": "präsentieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staatsdienst",
+        "lemma": "Staatsdienst",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kopftücher",
+        "lemma": "Kopftuch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tragen",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": "wear"
+      }
     ]
   },
   "5182328bb4": {
@@ -16859,11 +17080,12 @@
     "type": "expression",
     "note": "! — Spruch beim Kriegenspielen",
     "synonyms": [],
-    "translation": null,
+    "translation": "tag, you're it",
     "source": "wiktionary",
     "lemmas": [
       "ticken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "5198dd62c4": {
     "text": "Du hast wohl was an den Ohren?",
@@ -17707,13 +17929,14 @@
     "synonyms": [
       "schauen"
     ],
-    "translation": null,
+    "translation": "come up empty-handed",
     "source": "wiktionary",
     "lemmas": [
       "gucken",
       "Gebirge"
     ],
-    "ref": "phrases/mit dem Ofenrohr ins Gebirge gucken"
+    "ref": "phrases/mit dem Ofenrohr ins Gebirge gucken",
+    "translation_model": "openai/gpt-4.1"
   },
   "51a3163650": {
     "text": "„Gezaubert hat Borussia Dortmund zuvor schon dicke genug.“",
@@ -17906,11 +18129,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make a rough estimate",
     "source": "wiktionary",
     "lemmas": [
       "peilen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "51a58602d9": {
     "text": "„Durch den Einsatz von Spatenruder und Kiel mit Bombe konnte die benetzte Oberfläche reduziert und die Stabilität erhöht werden.“",
@@ -18055,18 +18279,70 @@
     "type": "expression",
     "note": "aus dem Märchen „Rotkäppchen“",
     "synonyms": [],
-    "translation": null,
+    "translation": "the Big Bad Wolf",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "51a83d9ac6": {
     "text": "Ein besonderer Schwerpunkt ist die Bildung und Reduktion von Schadstoffen wie NOx, SO2 und Russ, die bei der Verbrennung entstehen können, sowie Messmethoden zu deren Bestimmung.",
-    "translation": null,
+    "translation": "A particular focus is the reduction and formation of pollutants such as NOx, SO2, and soot, which can arise during combustion, as well as measurement methods for their determination.",
     "source": "wiktionary",
     "lemmas": [
       "Russ"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schwerpunkt",
+        "lemma": "Schwerpunkt",
+        "pos": "noun",
+        "gloss_hint": "main focus"
+      },
+      {
+        "form": "Bildung",
+        "lemma": "Bildung",
+        "pos": "noun",
+        "gloss_hint": "formation"
+      },
+      {
+        "form": "Reduktion",
+        "lemma": "Reduktion",
+        "pos": "noun",
+        "gloss_hint": "reduction"
+      },
+      {
+        "form": "Schadstoffen",
+        "lemma": "Schadstoff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verbrennung",
+        "lemma": "Verbrennung",
+        "pos": "noun",
+        "gloss_hint": "combustion"
+      },
+      {
+        "form": "entstehen",
+        "lemma": "entstehen",
+        "pos": "verb",
+        "gloss_hint": "arise"
+      },
+      {
+        "form": "Messmethoden",
+        "lemma": "Messmethode",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bestimmung",
+        "lemma": "Bestimmung",
+        "pos": "noun",
+        "gloss_hint": "determination (scientific)"
+      }
     ]
   },
   "51a86caa45": {
@@ -18618,18 +18894,102 @@
   },
   "51afefbed9": {
     "text": "„Dass sich die FDP ausdrücklich als „Partei der Besserverdienenden“ verstand, ist zwar lange her. Doch eindeutig Schlechterverdienende wie Pflegekräfte zählen noch immer nicht zu ihrer Kernwählerschaft.“",
-    "translation": null,
+    "translation": "That the FDP explicitly understood itself as a 'party of the better-off' is admittedly long ago. But clearly lower-earning workers like care staff still do not count among its core voters.",
     "source": "wiktionary",
     "lemmas": [
       "FDP"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "FDP",
+        "lemma": "FDP",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausdrücklich",
+        "lemma": "ausdrücklich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Partei",
+        "lemma": "Partei",
+        "pos": "noun",
+        "gloss_hint": "political party"
+      },
+      {
+        "form": "Besserverdienenden",
+        "lemma": "Besserverdienender",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zwar",
+        "lemma": "zwar",
+        "pos": "conjunction",
+        "gloss_hint": "indeed"
+      },
+      {
+        "form": "lange",
+        "lemma": "lange",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schlechterverdienende",
+        "lemma": "Schlechterverdienender",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pflegekräfte",
+        "lemma": "Pflegekraft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zählen",
+        "lemma": "zählen",
+        "pos": "verb",
+        "gloss_hint": "belong to"
+      },
+      {
+        "form": "Kernwählerschaft",
+        "lemma": "Kernwählerschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "51b0049e15": {
     "text": "Die SVP ist eine Regierungspartei in der Schweiz.",
-    "translation": null,
+    "translation": "The SVP is a governing party in Switzerland.",
     "source": "wiktionary",
     "lemmas": [
       "SVP"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "SVP",
+        "lemma": "SVP",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regierungspartei",
+        "lemma": "Regierungspartei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schweiz",
+        "lemma": "Schweiz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "51b072318e": {
@@ -19123,10 +19483,43 @@
   },
   "51b737f6ee": {
     "text": "Ist die Krone der Schöpfung jemals in der Lage, in Frieden zu leben?",
-    "translation": null,
+    "translation": "Is the crown of creation ever able to live in peace?",
     "source": "wiktionary",
     "lemmas": [
       "Krone der Schöpfung"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Krone",
+        "lemma": "Krone",
+        "pos": "noun",
+        "gloss_hint": "peak"
+      },
+      {
+        "form": "Schöpfung",
+        "lemma": "Schöpfung",
+        "pos": "noun",
+        "gloss_hint": "creation"
+      },
+      {
+        "form": "Lage",
+        "lemma": "Lage",
+        "pos": "noun",
+        "gloss_hint": "situation"
+      },
+      {
+        "form": "Frieden",
+        "lemma": "Frieden",
+        "pos": "noun",
+        "gloss_hint": "peace"
+      },
+      {
+        "form": "leben",
+        "lemma": "leben",
+        "pos": "verb",
+        "gloss_hint": "live"
+      }
     ]
   },
   "51b76b7d1a": {
@@ -19706,11 +20099,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at the last minute",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "51c356b955": {
     "text": "Nach dem Polieren sieht die Münze wieder glänzend aus.",
@@ -19783,11 +20177,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "turn a blind eye",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "51c3f6e4f9": {
     "text": "„Viele Pesten kommen nämlich, die nicht tödlich wären, sie sind aber doch tödlich, weil Zufälle wie Gelbsucht, Wassersucht, Paralyse etc. hinzukommen.“",
@@ -20785,11 +21180,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something is up to someone",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "51cca92aa6": {
     "text": "Hör auf mich zu nerven, du Pennerin.",
@@ -20889,10 +21285,55 @@
   },
   "51ce1c08d3": {
     "text": "„Wir beschlossen, ins Hauptquartier der britischen Militärregierung zu gehen und uns zu erkundigen, wie wir diesen Anspruch geltend machen können.“",
-    "translation": null,
+    "translation": "\"We decided to go to the headquarters of the British military government and inquire how we could assert this claim.\"",
     "source": "wiktionary",
     "lemmas": [
       "erkundigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "beschlossen",
+        "lemma": "beschließen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hauptquartier",
+        "lemma": "Hauptquartier",
+        "pos": "noun",
+        "gloss_hint": "headquarters"
+      },
+      {
+        "form": "britischen",
+        "lemma": "britisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Militärregierung",
+        "lemma": "Militärregierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erkundigen",
+        "lemma": "erkundigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anspruch",
+        "lemma": "Anspruch",
+        "pos": "noun",
+        "gloss_hint": "claim"
+      },
+      {
+        "form": "geltend",
+        "lemma": "geltend",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "51d133298e": {
@@ -21526,11 +21967,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "just for the record",
     "source": "wiktionary",
     "lemmas": [
       "Tüte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "51d500075c": {
     "text": "Die Besatzung der Stadt behauptete sich gegen wiederholte feindliche Angriffe.",
@@ -21699,11 +22141,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to win people's hearts",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "51d690e992": {
     "text": "„Für die Siedler waren die Papageien einfach Schädlinge ersten Ranges — »Ratten der Lüfte«.“",
@@ -26069,10 +26512,49 @@
   },
   "51f57bc20a": {
     "text": "Was hampelst du denn da so lange mit dem Zollstock rum, nimm doch einfach 'ne Wasserwaage! – Du bist gut, woher nehmen und nicht stehlen!",
-    "translation": null,
+    "translation": "Why are you fiddling around with that measuring stick for so long? Just use a spirit level! – You're a fine one to talk, where would you get it if you didn't steal it!",
     "source": "wiktionary",
     "lemmas": [
       "woher nehmen und nicht stehlen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hampelst",
+        "lemma": "hampeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zollstock",
+        "lemma": "Zollstock",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wasserwaage",
+        "lemma": "Wasserwaage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gut",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": "good"
+      },
+      {
+        "form": "nehmen",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": "take"
+      },
+      {
+        "form": "stehlen",
+        "lemma": "stehlen",
+        "pos": "verb",
+        "gloss_hint": "steal"
+      }
     ]
   },
   "51f6170212": {
@@ -26973,11 +27455,12 @@
     "synonyms": [
       "sein"
     ],
-    "translation": null,
+    "translation": "to stay hot on someone's heels",
     "source": "wiktionary",
     "lemmas": [
       "bleiben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "51ff2a47c1": {
     "text": "Wegen angeblich sittengefährdenden Bücher verbannte Kaiser Augustus den Dichter Ovid aus Rom.",

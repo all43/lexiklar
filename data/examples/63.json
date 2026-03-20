@@ -4205,11 +4205,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get into trouble",
     "source": "wiktionary",
     "lemmas": [
       "Schlitten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "631ed06b2a": {
     "text": "„Der junge Lübecker war buchstäblich mit einem blauen Auge davongekommen.“",
@@ -4641,24 +4642,26 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to shrug one's shoulders",
     "source": "wiktionary",
     "lemmas": [
       "zucken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6323aabe6f": {
     "text": "Jubel, Trubel, Heiterkeit",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a riot of activity",
     "source": "wiktionary",
     "lemmas": [
       "Jubel",
       "Trubel"
     ],
-    "ref": "phrases/Jubel, Trubel, Heiterkeit"
+    "ref": "phrases/Jubel, Trubel, Heiterkeit",
+    "translation_model": "openai/gpt-4.1"
   },
   "6324c914a4": {
     "text": "Genossen und Genossinnen, hier kommt der Rechenschaftsbericht.",
@@ -4749,11 +4752,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to drink like a fish",
     "source": "wiktionary",
     "lemmas": [
       "Loch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6328265add": {
     "text": "„Bevor Vanderbrecken uns gehen ließ, suchte er sehr sorgfältig durch sein Teleskop jeden Meter Strand ab.“",
@@ -5315,10 +5319,37 @@
   },
   "632de51265": {
     "text": "Der erste Band behandelt das deutsche Mittelalter.",
-    "translation": null,
+    "translation": "The first volume covers the German Middle Ages.",
     "source": "wiktionary",
     "lemmas": [
       "Band"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Band",
+        "lemma": "Band",
+        "pos": "noun",
+        "gloss_hint": "volume (bound book)"
+      },
+      {
+        "form": "behandelt",
+        "lemma": "behandeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "deutsche",
+        "lemma": "deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mittelalter",
+        "lemma": "Mittelalter",
+        "pos": "noun",
+        "gloss_hint": "Middle Ages"
+      }
     ]
   },
   "632f20de16": {
@@ -6353,10 +6384,37 @@
   },
   "633a1b79f9": {
     "text": "Was sagst du da? Er hat mich also die ganze Zeit an der Nase herumgeführt!",
-    "translation": null,
+    "translation": "What are you saying? So he's been leading me by the nose the whole time!",
     "source": "wiktionary",
     "lemmas": [
       "jemanden an der Nase herumführen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sagst",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nase",
+        "lemma": "Nase",
+        "pos": "noun",
+        "gloss_hint": "nose"
+      },
+      {
+        "form": "herumgeführt",
+        "lemma": "herumführen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      }
     ]
   },
   "633b6d02fe": {
@@ -6415,18 +6473,144 @@
   },
   "633b8ec54d": {
     "text": "„Zunächst einmal müssen alle interessierten Anbieter an der 5G-Auktion im Frühjahr 2019 teilnehmen und ihre Lizenzen erwerben.“",
-    "translation": null,
+    "translation": "First of all, all interested providers must participate in the 5G auction in spring 2019 and acquire their licenses.",
     "source": "wiktionary",
     "lemmas": [
       "5G-Auktion"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "zunächst",
+        "lemma": "zunächst",
+        "pos": "adverb",
+        "gloss_hint": "first"
+      },
+      {
+        "form": "interessierten",
+        "lemma": "interessiert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anbieter",
+        "lemma": "Anbieter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auktion",
+        "lemma": "Auktion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frühjahr",
+        "lemma": "Frühjahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "teilnehmen",
+        "lemma": "teilnehmen",
+        "pos": "verb",
+        "gloss_hint": "participate"
+      },
+      {
+        "form": "Lizenzen",
+        "lemma": "Lizenz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erwerben",
+        "lemma": "erwerben",
+        "pos": "verb",
+        "gloss_hint": "buy"
+      }
     ]
   },
   "633b9d9d2e": {
     "text": "[Stefan Zweig:] Der berühmte Schriftsteller flüchtete vor den Nazis. Das Exil brachte Zweig kein Glück. In Brasilien nahm er sich mit seiner Frau 1942 das Leben.",
-    "translation": null,
+    "translation": "The famous writer Stefan Zweig fled from the Nazis. Exile brought Zweig no happiness. In Brazil, he and his wife took their own lives in 1942.",
     "source": "wiktionary",
     "lemmas": [
       "sich das Leben nehmen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Stefan Zweig",
+        "lemma": "Stefan Zweig",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "berühmte",
+        "lemma": "berühmt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schriftsteller",
+        "lemma": "Schriftsteller",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "flüchtete",
+        "lemma": "fliehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nazis",
+        "lemma": "Nazi",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Exil",
+        "lemma": "Exil",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "brachte",
+        "lemma": "bringen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Glück",
+        "lemma": "Glück",
+        "pos": "noun",
+        "gloss_hint": "happiness"
+      },
+      {
+        "form": "Brasilien",
+        "lemma": "Brasilien",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "nahm",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "wife"
+      },
+      {
+        "form": "Leben",
+        "lemma": "Leben",
+        "pos": "noun",
+        "gloss_hint": "life"
+      }
     ]
   },
   "633bb428f9": {
@@ -6867,10 +7051,37 @@
   },
   "633e166409": {
     "text": "„Schizophrenie ist eine ebenso furchteinflößende wie rätselhafte Krankheit.“",
-    "translation": null,
+    "translation": "Schizophrenia is as terrifying as it is enigmatic a disease.",
     "source": "wiktionary",
     "lemmas": [
       "rätselhaft"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schizophrenie",
+        "lemma": "Schizophrenie",
+        "pos": "noun",
+        "gloss_hint": "schizophrenia"
+      },
+      {
+        "form": "furchteinflößende",
+        "lemma": "furchteinflößend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "rätselhafte",
+        "lemma": "rätselhaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Krankheit",
+        "lemma": "Krankheit",
+        "pos": "noun",
+        "gloss_hint": "disease"
+      }
     ]
   },
   "633e9d5428": {
@@ -7840,11 +8051,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in someone's favor",
     "source": "wiktionary",
     "lemmas": [
       "Gunst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6348e9c5d6": {
     "text": "Sie erkannte Peter erst, als er direkt vor ihr stand.",
@@ -8392,11 +8604,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "behind bars",
     "source": "wiktionary",
     "lemmas": [
       "Gitter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "63507304bb": {
     "text": "binnen kurzem",
@@ -8414,14 +8627,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to handle something with kid gloves",
     "source": "wiktionary",
     "lemmas": [
       "Finger"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "635184c419": {
     "text": "„Die Näherin war schon bestellt, der Heiratsvertrag war aufgesetzt, da bekam der Bauer einen Schlaganfall und starb, ohne wieder zu sich gekommen zu sein.“",
@@ -8566,11 +8777,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to touch someone's heart",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6351d21fbe": {
     "text": "Wir sind sehr stolz über unsere ausgebauten Handelsbeziehungen, die beiden Nationen nur Vorteile bringen.",
@@ -9423,22 +9635,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Even the most unwilling fish can be caught with the right bait.",
     "source": "wiktionary",
     "lemmas": [
       "Angel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6354c9967e": {
     "text": "fressen oder gefressen werden",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Eat or be eaten.",
     "source": "wiktionary",
     "lemmas": [
       "fressen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6356a359c3": {
     "text": "Den Wolken nach zu urteilen, wird es offensichtlich regnen.",
@@ -9478,10 +9692,97 @@
   },
   "635766b73b": {
     "text": "„Zu Zeiten Stalins übernahmen die Meisterwerke von Künstlern wie etwa Boris Pasternak oder Dmitrij Schostakowitsch die Aufgabe, der mundtoten Zivilgesellschaft eine künstlerische Stimme zu verleihen.“",
-    "translation": null,
+    "translation": "In Stalin's time, masterworks by artists such as Boris Pasternak and Dmitri Shostakovich took on the task of giving an artistic voice to a silenced civil society.",
     "source": "wiktionary",
     "lemmas": [
       "jemanden mundtot machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zeiten",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stalins",
+        "lemma": "Stalin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "übernahmen",
+        "lemma": "übernehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Meisterwerke",
+        "lemma": "Meisterwerk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Künstlern",
+        "lemma": "Künstler",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Boris",
+        "lemma": "Boris",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pasternak",
+        "lemma": "Pasternak",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dmitrij",
+        "lemma": "Dmitrij",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schostakowitsch",
+        "lemma": "Schostakowitsch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufgabe",
+        "lemma": "Aufgabe",
+        "pos": "noun",
+        "gloss_hint": "task"
+      },
+      {
+        "form": "mundtoten",
+        "lemma": "mundtot",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zivilgesellschaft",
+        "lemma": "Zivilgesellschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "künstlerische",
+        "lemma": "künstlerisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stimme",
+        "lemma": "Stimme",
+        "pos": "noun",
+        "gloss_hint": "voice"
+      }
     ]
   },
   "63577c107d": {
@@ -9612,10 +9913,61 @@
   },
   "6358aec205": {
     "text": "„Wir wollen unser Glück nicht bloß geschenkt bekommen, es passiv entgegennehmen oder es einkaufen, denn wir wollen etwas tun, damit wir glücklich sind, einen eigenen, aktiven Beitrag zu unserem Glück leisten.“",
-    "translation": null,
+    "translation": "We don't want our happiness merely given to us, to receive it passively or to buy it, because we want to do something to make ourselves happy, to make our own active contribution to our happiness.",
     "source": "wiktionary",
     "lemmas": [
       "seinen Beitrag leisten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Glück",
+        "lemma": "Glück",
+        "pos": "noun",
+        "gloss_hint": "happiness"
+      },
+      {
+        "form": "geschenkt",
+        "lemma": "schenken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "bekommen",
+        "lemma": "bekommen",
+        "pos": "verb",
+        "gloss_hint": "receive"
+      },
+      {
+        "form": "einkaufen",
+        "lemma": "einkaufen",
+        "pos": "verb",
+        "gloss_hint": "buy"
+      },
+      {
+        "form": "tun",
+        "lemma": "tun",
+        "pos": "verb",
+        "gloss_hint": "do"
+      },
+      {
+        "form": "glücklich",
+        "lemma": "glücklich",
+        "pos": "adjective",
+        "gloss_hint": "happy"
+      },
+      {
+        "form": "Beitrag",
+        "lemma": "Beitrag",
+        "pos": "noun",
+        "gloss_hint": "contribution"
+      },
+      {
+        "form": "leisten",
+        "lemma": "leisten",
+        "pos": "verb",
+        "gloss_hint": "perform"
+      }
     ]
   },
   "6359197afd": {
@@ -10505,10 +10857,49 @@
   },
   "635b1447ef": {
     "text": "„Er betrachtete mich wachsam und ich hielt meine Schnauze. Ich hatte sie gerade aufgerissen gehabt und hätte das besser unterlassen.“",
-    "translation": null,
+    "translation": "He regarded me watchfully and I kept my mouth shut. I had just opened it and would have done better to refrain.",
     "source": "wiktionary",
     "lemmas": [
       "die Schnauze halten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "betrachtete",
+        "lemma": "betrachten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wachsam",
+        "lemma": "wachsam",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "hielt",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schnauze",
+        "lemma": "Schnauze",
+        "pos": "noun",
+        "gloss_hint": "mouth"
+      },
+      {
+        "form": "aufgerissen",
+        "lemma": "aufreißen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "unterlassen",
+        "lemma": "unterlassen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "635b24a121": {
@@ -11062,11 +11453,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Squeeze someone dry.",
     "source": "wiktionary",
     "lemmas": [
       "Zitrone"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "635d6472f1": {
     "text": "Es heißt, er hätte im Lotto gewonnen.",
@@ -12084,11 +12476,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Teach someone a lesson in fear.",
     "source": "wiktionary",
     "lemmas": [
       "lehren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "636883cd2c": {
     "text": "Schnell! Hol den Feuerlöscher, denn es brennt!",
@@ -13962,18 +14355,70 @@
     "type": "expression",
     "note": "jemand ist unantastbar sicher",
     "synonyms": [],
-    "translation": null,
+    "translation": "No one can touch them.",
     "source": "wiktionary",
     "lemmas": [
       "können"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "636fc0cd47": {
     "text": "„»Man muß den Leuten des Hackl ins Kreuz hauen, damit sie aufwachen«, sagte Qualtinger einmal.“",
-    "translation": null,
+    "translation": "\"You have to hit the Hackl people in the back to wake them up,\" Qualtinger said once.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem das Hackl ins Kreuz hauen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hauen",
+        "lemma": "hauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leuten",
+        "lemma": "Leute",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hackl",
+        "lemma": "Hackl",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kreuz",
+        "lemma": "Kreuz",
+        "pos": "noun",
+        "gloss_hint": "back area"
+      },
+      {
+        "form": "aufwachen",
+        "lemma": "aufwachen",
+        "pos": "verb",
+        "gloss_hint": "wake up"
+      },
+      {
+        "form": "sagte",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Qualtinger",
+        "lemma": "Qualtinger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "einmal",
+        "lemma": "einmal",
+        "pos": "adverb",
+        "gloss_hint": "once"
+      }
     ]
   },
   "636fc68adc": {
@@ -14404,10 +14849,37 @@
   },
   "6373cb453e": {
     "text": "Die Melodie wechselte, aber der Grundrhythmus ging durch.",
-    "translation": null,
+    "translation": "The melody changed, but the basic rhythm continued.",
     "source": "wiktionary",
     "lemmas": [
       "durchgehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Melodie",
+        "lemma": "Melodie",
+        "pos": "noun",
+        "gloss_hint": "melody"
+      },
+      {
+        "form": "wechselte",
+        "lemma": "wechseln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grundrhythmus",
+        "lemma": "Grundrhythmus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ging",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "63744252ac": {
@@ -15513,10 +15985,55 @@
   },
   "638387a0c4": {
     "text": "Das Damengambit ist eine solide Eröffnung, die eher ruhige, strategische Stellungen ergibt.",
-    "translation": null,
+    "translation": "The Queen's Gambit is a solid opening that tends to produce quiet, strategic positions.",
     "source": "wiktionary",
     "lemmas": [
       "Damengambit"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Damengambit",
+        "lemma": "Damengambit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "solide",
+        "lemma": "solide",
+        "pos": "adjective",
+        "gloss_hint": "well-founded"
+      },
+      {
+        "form": "Eröffnung",
+        "lemma": "Eröffnung",
+        "pos": "noun",
+        "gloss_hint": "opening (chess)"
+      },
+      {
+        "form": "ruhige",
+        "lemma": "ruhig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "strategische",
+        "lemma": "strategisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stellungen",
+        "lemma": "Stellung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ergibt",
+        "lemma": "ergeben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "63842057db": {
@@ -15854,11 +16371,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The race is over.",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6387d1e5b8": {
     "text": "„Debian-Entwickler planen eine soziale Plattform, die mehrere Dienste zur besseren Vernetzung der Debian-Gemeinschaft unterhalten will. Erste Dienste sollen noch 2020 zugänglich sein.“",
@@ -17405,10 +17923,43 @@
   },
   "63921207c2": {
     "text": "Am Wegesrand liegen mehrere Haufen mit Anbrüchen.",
-    "translation": null,
+    "translation": "Along the roadside lie several piles of broken pieces.",
     "source": "wiktionary",
     "lemmas": [
       "Anbruch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wegesrand",
+        "lemma": "Wegesrand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "liegen",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": "lie"
+      },
+      {
+        "form": "mehrere",
+        "lemma": "mehrere",
+        "pos": "pronoun",
+        "gloss_hint": "several"
+      },
+      {
+        "form": "Haufen",
+        "lemma": "Haufen",
+        "pos": "noun",
+        "gloss_hint": "pile"
+      },
+      {
+        "form": "Anbrüchen",
+        "lemma": "Anbruch",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "639402bd93": {
@@ -18824,10 +19375,43 @@
   },
   "639c7aaeba": {
     "text": "Er blies immer wieder ins gleiche Horn: „Die Lohnnebenkosten bringen uns noch um.“ Von etwas anderem mochte er gar nicht reden.",
-    "translation": null,
+    "translation": "He kept harping on the same theme: \"Labor costs will be the death of us.\" He didn't want to talk about anything else.",
     "source": "wiktionary",
     "lemmas": [
       "ins gleiche Horn blasen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "blies",
+        "lemma": "blasen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Horn",
+        "lemma": "Horn",
+        "pos": "noun",
+        "gloss_hint": "horn (signal)"
+      },
+      {
+        "form": "Lohnnebenkosten",
+        "lemma": "Lohnnebenkosten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bringen",
+        "lemma": "bringen",
+        "pos": "verb",
+        "gloss_hint": "cause"
+      },
+      {
+        "form": "reden",
+        "lemma": "reden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "639cc35844": {
@@ -20483,10 +21067,25 @@
   },
   "63ac3aaad8": {
     "text": "Es scherte ihn nicht, was aus seiner Exfrau wurde.",
-    "translation": null,
+    "translation": "He didn't care what became of his ex-wife.",
     "source": "wiktionary",
     "lemmas": [
       "scheren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "scherte",
+        "lemma": "scheren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Exfrau",
+        "lemma": "Exfrau",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "63ac3abfac": {
@@ -21054,11 +21653,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Be in someone's good graces.",
     "source": "wiktionary",
     "lemmas": [
       "Gunst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "63b0894268": {
     "text": "Das Bild hatte einen Rahmen aus Holz.",
@@ -21657,11 +22257,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Have the upper hand.",
     "source": "wiktionary",
     "lemmas": [
       "lang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "63b82e39eb": {
     "text": "Für quadratische Matrizen A definiert man die Spur sp(A) als Summe der Einträge auf der Diagonalen.",
@@ -22309,10 +22910,67 @@
   },
   "63bbb2581a": {
     "text": "Das Baby hielt die junge Mutter die ganze Nacht auf Trab, sie konnte kein Auge zutun.",
-    "translation": null,
+    "translation": "The baby kept the young mother on her toes all night; she couldn't get a wink of sleep.",
     "source": "wiktionary",
     "lemmas": [
       "kein Auge zutun"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Baby",
+        "lemma": "Baby",
+        "pos": "noun",
+        "gloss_hint": "infant"
+      },
+      {
+        "form": "hielt",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "junge",
+        "lemma": "jung",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mutter",
+        "lemma": "Mutter",
+        "pos": "noun",
+        "gloss_hint": "mother"
+      },
+      {
+        "form": "Nacht",
+        "lemma": "Nacht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Trab",
+        "lemma": "Trab",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "konnte",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": "be able"
+      },
+      {
+        "form": "Auge",
+        "lemma": "Auge",
+        "pos": "noun",
+        "gloss_hint": "eye"
+      },
+      {
+        "form": "zutun",
+        "lemma": "zutun",
+        "pos": "verb",
+        "gloss_hint": "close"
+      }
     ]
   },
   "63bc749033": {
@@ -22589,14 +23247,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Take something into consideration.",
     "source": "wiktionary",
     "lemmas": [
       "Acht"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "63bfd6c5e7": {
     "text": "Für dich verlobe ich, mir die Trunksucht abzugewöhnen.",
@@ -23599,11 +24255,12 @@
     "type": "expression",
     "note": "überraschen, verblüffen",
     "synonyms": [],
-    "translation": null,
+    "translation": "Blow someone's socks off.",
     "source": "wiktionary",
     "lemmas": [
       "Socke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "63c599d82e": {
     "text": "Er liefert in der Schule durchschnittliche Leistungen ab.",
@@ -23820,23 +24477,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to hit the brakes",
     "source": "wiktionary",
     "lemmas": [
       "Bremse"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "63c96ec5e5": {
     "text": "im Leben nicht",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not in a million years",
     "source": "wiktionary",
     "lemmas": [
       "Leben",
       "im"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "63ca6c91a8": {
     "text": "„Ein Wasser, Zahnstocher und die Zeitung bitte!“",
@@ -26782,11 +27441,13 @@
   },
   "63e61488c5": {
     "text": "Die Situation steht Spitz auf Knopf.",
-    "translation": null,
+    "translation": "The situation is on a knife's edge.",
     "source": "wiktionary",
     "lemmas": [
       "Spitz auf Knopf stehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "63e65b7e5a": {
     "text": "„Als der Piccolo mit fünf Mark Trinkgeld gegangen war, schloß Michael die Tür, während Laura Leonore in dem Zimmer umherging und neugierig mit den Fingern über alle Sachen strich.“",
@@ -27632,10 +28293,61 @@
   },
   "63ed73c63b": {
     "text": "„Woher diese (Zwerchfell-)erschütternden Witze stammen? Nein, nicht von einem übermütigen Nackerbazi im Stadion, das einen Clown gefrühstückt hat, sondern von einer dreilagigen Klopapierrolle, die zeitgerecht auf den Markt gebracht wurde.“",
-    "translation": null,
+    "translation": "\"Where do these side-splitting jokes come from? No, not from an impudent brat in the stadium who had a clown for breakfast, but from a three-ply toilet paper roll that was brought to market at just the right time.\"",
     "source": "wiktionary",
     "lemmas": [
       "einen Clown gefrühstückt haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Witze",
+        "lemma": "Witz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stammen",
+        "lemma": "stammen",
+        "pos": "verb",
+        "gloss_hint": "come from"
+      },
+      {
+        "form": "Nackerbazi",
+        "lemma": "Nackerbazi",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stadion",
+        "lemma": "Stadion",
+        "pos": "noun",
+        "gloss_hint": "stadium"
+      },
+      {
+        "form": "Clown",
+        "lemma": "Clown",
+        "pos": "noun",
+        "gloss_hint": "clown"
+      },
+      {
+        "form": "gefrühstückt",
+        "lemma": "frühstücken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klopapierrolle",
+        "lemma": "Klopapierrolle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Markt",
+        "lemma": "Markt",
+        "pos": "noun",
+        "gloss_hint": "market"
+      }
     ]
   },
   "63ed8c3347": {
@@ -28337,10 +29049,43 @@
   },
   "63f4e04f25": {
     "text": "Im Zusammenhang mit der Coronapandemie wurden die Schulen in Deutschland geschlossen.",
-    "translation": null,
+    "translation": "In connection with the coronavirus pandemic, schools in Germany were closed.",
     "source": "wiktionary",
     "lemmas": [
       "im Zusammenhang mit"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zusammenhang",
+        "lemma": "Zusammenhang",
+        "pos": "noun",
+        "gloss_hint": "connection"
+      },
+      {
+        "form": "Coronapandemie",
+        "lemma": "Coronapandemie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schulen",
+        "lemma": "Schule",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geschlossen",
+        "lemma": "schließen",
+        "pos": "verb",
+        "gloss_hint": "closed"
+      }
     ]
   },
   "63f53f9392": {
@@ -28423,10 +29168,49 @@
   },
   "63f5cf045e": {
     "text": "„Die Überlandzentrale Mainfranken mit Sitz in Lülsfeld ist bei der Vergabe des Deutschen Innovationspreis leer ausgegangen.“",
-    "translation": null,
+    "translation": "\"The Überlandzentrale Mainfranken, headquartered in Lülsfeld, came away empty-handed in the awarding of the German Innovation Prize.\"",
     "source": "wiktionary",
     "lemmas": [
       "leer ausgehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Überlandzentrale",
+        "lemma": "Überlandzentrale",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sitz",
+        "lemma": "Sitz",
+        "pos": "noun",
+        "gloss_hint": "headquarters"
+      },
+      {
+        "form": "Vergabe",
+        "lemma": "Vergabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschen",
+        "lemma": "Deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Innovationspreis",
+        "lemma": "Innovationspreis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgegangen",
+        "lemma": "ausgehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "63f664f43f": {
@@ -29216,11 +30000,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fleece someone",
     "source": "wiktionary",
     "lemmas": [
       "Feder"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "63fcb1e141": {
     "text": "„‹Bedauerlicherweise empfangen Sie Fördermittel der Regierungsbehörden, die unserer nationalen Sicherheit dienen.›“",

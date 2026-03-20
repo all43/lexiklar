@@ -91,10 +91,37 @@
   },
   "0b026e059d": {
     "text": "Die Europäische Währungsunion steckt zur Zeit in einer Krise.",
-    "translation": null,
+    "translation": "The European Monetary Union is currently in crisis.",
     "source": "wiktionary",
     "lemmas": [
       "europäisch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Europäische",
+        "lemma": "europäisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Währungsunion",
+        "lemma": "Währungsunion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      },
+      {
+        "form": "Krise",
+        "lemma": "Krise",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "0b037d77ae": {
@@ -503,12 +530,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to make a good exit",
     "source": "wiktionary",
     "lemmas": [
       "Abgang"
     ],
-    "ref": "phrases/sich einen guten Abgang verschaffen"
+    "ref": "phrases/sich einen guten Abgang verschaffen",
+    "translation_model": "openai/gpt-4.1"
   },
   "0b063522ec": {
     "text": "Zwischen den Halbzeiten eines Fußballspiels liegt eine Pause von fünfzehn Minuten.",
@@ -2051,11 +2079,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to writhe like a worm that's been stepped on",
     "source": "wiktionary",
     "lemmas": [
       "Wurm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0b14235539": {
     "text": "„Einberufen hatte sie Max von Schillings, Nachfolger Max Liebermanns, der nach zwölfjähriger Tätigkeit sein Amt als Akademiepräsident niedergelegt hatte.“",
@@ -4530,10 +4559,79 @@
   },
   "0b305ec5c9": {
     "text": "„Bei diesem Kräftemessen innerhalb der Forschung zur Künstlichen Intelligenz tritt auch das Brainstormers-Team der Universität Osnabrück um die Qualifikation für die Weltmeisterschaft an, die das Team 2006 und 2007 für sich entscheiden konnte.“",
-    "translation": null,
+    "translation": "In this competition within artificial intelligence research, the Brainstormers team from the University of Osnabrück also competes for qualification for the world championship, which the team won in 2006 and 2007.",
     "source": "wiktionary",
     "lemmas": [
       "Künstliche Intelligenz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kräftemessen",
+        "lemma": "Kräftemessen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Forschung",
+        "lemma": "Forschung",
+        "pos": "noun",
+        "gloss_hint": "research"
+      },
+      {
+        "form": "Künstlichen",
+        "lemma": "künstlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Intelligenz",
+        "lemma": "Intelligenz",
+        "pos": "noun",
+        "gloss_hint": "intelligence"
+      },
+      {
+        "form": "Brainstormers-Team",
+        "lemma": "Brainstormers-Team",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Universität",
+        "lemma": "Universität",
+        "pos": "noun",
+        "gloss_hint": "university"
+      },
+      {
+        "form": "Osnabrück",
+        "lemma": "Osnabrück",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Qualifikation",
+        "lemma": "Qualifikation",
+        "pos": "noun",
+        "gloss_hint": "qualification"
+      },
+      {
+        "form": "Weltmeisterschaft",
+        "lemma": "Weltmeisterschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Team",
+        "lemma": "Team",
+        "pos": "noun",
+        "gloss_hint": "team"
+      },
+      {
+        "form": "entscheiden",
+        "lemma": "entscheiden",
+        "pos": "verb",
+        "gloss_hint": "choose"
+      }
     ]
   },
   "0b308e2e5c": {
@@ -4640,10 +4738,73 @@
   },
   "0b314f2731": {
     "text": "Viele der jetzt entdeckten Unregelmäßigkeiten stellen keine Gesetzesverstöße dar, weil entsprechende gesetzliche Regelungen in der kroatischen Legislatur einfach nicht vorkommen.",
-    "translation": null,
+    "translation": "Many of the irregularities now discovered do not constitute legal violations because the corresponding legal regulations simply do not exist in Croatian legislation.",
     "source": "wiktionary",
     "lemmas": [
       "Legislatur"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Viele",
+        "lemma": "viel",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "entdeckten",
+        "lemma": "entdecken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unregelmäßigkeiten",
+        "lemma": "Unregelmäßigkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stellen",
+        "lemma": "stellen",
+        "pos": "verb",
+        "gloss_hint": "contribute"
+      },
+      {
+        "form": "Gesetzesverstöße",
+        "lemma": "Gesetzesverstöß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesetzliche",
+        "lemma": "gesetzlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regelungen",
+        "lemma": "Regelung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kroatischen",
+        "lemma": "kroatisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Legislatur",
+        "lemma": "Legislatur",
+        "pos": "noun",
+        "gloss_hint": "legislation"
+      },
+      {
+        "form": "vorkommen",
+        "lemma": "vorkommen",
+        "pos": "verb",
+        "gloss_hint": "exist"
+      }
     ]
   },
   "0b316ec70a": {
@@ -8030,10 +8191,31 @@
   },
   "0b504a4fc1": {
     "text": "Das ist eine, im Großen und Ganzen betrachtet, gute Idee.",
-    "translation": null,
+    "translation": "That is, all things considered, a good idea.",
     "source": "wiktionary",
     "lemmas": [
       "im Großen und Ganzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Das",
+        "lemma": "das",
+        "pos": "pronoun",
+        "gloss_hint": "that (nom.)"
+      },
+      {
+        "form": "Idee",
+        "lemma": "Idee",
+        "pos": "noun",
+        "gloss_hint": "idea"
+      },
+      {
+        "form": "gute",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "0b51372f01": {
@@ -12886,11 +13068,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a bit odd",
     "source": "wiktionary",
     "lemmas": [
       "stricken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0b7d169976": {
     "text": "auf ein gutes neues Jahr",
@@ -15243,10 +15426,67 @@
   },
   "0b97192993": {
     "text": "„Neben Weinhandel, Weinbrennereien und Sektkellereien ist in den Orten auf der Talterrasse entlang dem Rhein (90–100 m ü. M.), die die Hauptverkehrswege trägt, auch Industrie entstanden …“",
-    "translation": null,
+    "translation": "In addition to wine trading, distilleries, and sparkling wine celleries, industry has also developed in the towns on the river terrace along the Rhine (90–100 m above sea level), which carries the main traffic routes …",
     "source": "wiktionary",
     "lemmas": [
       "entlang"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Weinhandel",
+        "lemma": "Weinhandel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weinbrennereien",
+        "lemma": "Weinbrennerei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sektkellereien",
+        "lemma": "Sektkellerei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Orten",
+        "lemma": "Ort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Talterrasse",
+        "lemma": "Talterrasse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rhein",
+        "lemma": "Rhein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hauptverkehrswege",
+        "lemma": "Hauptverkehrsweg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Industrie",
+        "lemma": "Industrie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entstanden",
+        "lemma": "entstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "0b975bb49a": {
@@ -19294,10 +19534,55 @@
   },
   "0bbe11c429": {
     "text": "„Auch Strümpfe gab es, die wir jedoch nicht brauchten, denn wir konnten die unseren anbehalten; aber die Schuhschnallen mußten wir wechseln, denn an unseren hätte man uns erkennen können.“",
-    "translation": null,
+    "translation": "There were also stockings, but we didn't need them, because we were allowed to keep our own; however, we had to change our shoe buckles, because they could have identified us by ours.",
     "source": "wiktionary",
     "lemmas": [
       "Strumpf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Strümpfe",
+        "lemma": "Strumpf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "brauchten",
+        "lemma": "brauchen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "konnten",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": "be able"
+      },
+      {
+        "form": "anbehalten",
+        "lemma": "anbehalten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schuhschnallen",
+        "lemma": "Schuhschnalle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wechseln",
+        "lemma": "wechseln",
+        "pos": "verb",
+        "gloss_hint": "change"
+      },
+      {
+        "form": "erkennen",
+        "lemma": "erkennen",
+        "pos": "verb",
+        "gloss_hint": "identify"
+      }
     ]
   },
   "0bc0952740": {
@@ -20704,10 +20989,43 @@
   },
   "0bcc443a37": {
     "text": "Der zu Schrot gemahlene Weizen wird in Wasser eingeweicht.",
-    "translation": null,
+    "translation": "The wheat ground into meal is soaked in water.",
     "source": "wiktionary",
     "lemmas": [
       "Schrot"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schrot",
+        "lemma": "Schrot",
+        "pos": "noun",
+        "gloss_hint": "grain (crushed)"
+      },
+      {
+        "form": "gemahlene",
+        "lemma": "mahlen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weizen",
+        "lemma": "Weizen",
+        "pos": "noun",
+        "gloss_hint": "wheat"
+      },
+      {
+        "form": "Wasser",
+        "lemma": "Wasser",
+        "pos": "noun",
+        "gloss_hint": "water"
+      },
+      {
+        "form": "eingeweicht",
+        "lemma": "einweichen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "0bcdb61ada": {
@@ -21840,10 +22158,37 @@
   },
   "0bd5dce914": {
     "text": "„Ein Alb war es nicht, der sie so zittern ließ – sie hätte sich gewünscht, es wäre nur ein Traum gewesen.“",
-    "translation": null,
+    "translation": "It was not an elf that made her tremble so – she would have wished it had only been a dream.",
     "source": "wiktionary",
     "lemmas": [
       "Alb"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Alb",
+        "lemma": "Alb",
+        "pos": "noun",
+        "gloss_hint": "nightmare"
+      },
+      {
+        "form": "zittern",
+        "lemma": "zittern",
+        "pos": "verb",
+        "gloss_hint": "tremble"
+      },
+      {
+        "form": "gewünscht",
+        "lemma": "wünschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Traum",
+        "lemma": "Traum",
+        "pos": "noun",
+        "gloss_hint": "dream"
+      }
     ]
   },
   "0bd5ed17cb": {
@@ -24570,10 +24915,25 @@
   },
   "0bea542d27": {
     "text": "Der Kaffee war nicht von schlechten Eltern.",
-    "translation": null,
+    "translation": "The coffee was of good quality.",
     "source": "wiktionary",
     "lemmas": [
       "nicht von schlechten Eltern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kaffee",
+        "lemma": "Kaffee",
+        "pos": "noun",
+        "gloss_hint": "coffee"
+      },
+      {
+        "form": "schlechten",
+        "lemma": "schlecht",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "0bea6d06d3": {
@@ -24913,22 +25273,24 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep someone hanging on",
     "source": "wiktionary",
     "lemmas": [
       "Aber"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0bf1b3c31d": {
     "text": "Tauben im Kopf haben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have bats in the belfry",
     "source": "wiktionary",
     "lemmas": [
       "Taube"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "0bf1e1617f": {
     "text": "Als mein Nachbar den Rauch im Flur bemerkte, alarmierte er umgehend die Feuerwehr.",

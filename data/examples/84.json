@@ -185,11 +185,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be on ice",
     "source": "wiktionary",
     "lemmas": [
       "Eis"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "840297eb1c": {
     "text": "„Das Stück hat fünf Akte, im ersten erfährt Alceste vom bevorstehenden Tod Admets und von ihrer Fähigkeit, ihn abzuwenden.“",
@@ -412,12 +413,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hot air",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
     ],
-    "ref": "phrases/heiße Luft"
+    "ref": "phrases/heiße Luft",
+    "translation_model": "openai/gpt-4.1"
   },
   "8404c6a48e": {
     "text": "Die Möbel waren mit Bettlaken abgehängt.",
@@ -760,10 +762,37 @@
   },
   "84075f0946": {
     "text": "Die Wörter „Apfelsine“ und „Orange“ sind synonym.",
-    "translation": null,
+    "translation": "The words \"Apfelsine\" and \"Orange\" are synonymous.",
     "source": "wiktionary",
     "lemmas": [
       "synonym"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wörter",
+        "lemma": "Wort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Apfelsine",
+        "lemma": "Apfelsine",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Orange",
+        "lemma": "Orange",
+        "pos": "noun",
+        "gloss_hint": "orange"
+      },
+      {
+        "form": "synonym",
+        "lemma": "synonym",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "84076780c0": {
@@ -834,11 +863,13 @@
   },
   "8407799525": {
     "text": "„Andere kommen nicht vom Fleck: zum Beispiel, weil auf dem Podium so viele Leute sitzen. Ein Votum pro Nase und aus die Maus.“",
-    "translation": null,
+    "translation": "Others don't get anywhere: for example, because so many people are sitting on the podium. One vote per person and that's that.",
     "source": "wiktionary",
     "lemmas": [
       "aus die Maus"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "84083eca12": {
     "text": "„Der neue Vizekönig Lord Willingdon verachtete Gandhi und fand, dass sein Vorgänger Irwin ihn unnötig aufgewertet hatte.“",
@@ -854,11 +885,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is on the up and up",
     "source": "wiktionary",
     "lemmas": [
       "bergauf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8409549e3d": {
     "text": "Wie kommst du darauf, dass ich so naiv wäre zu glauben, dass es denen um den Erhalt der Dorfgemeinschaft ginge?",
@@ -997,11 +1029,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pick up the thread again",
     "source": "wiktionary",
     "lemmas": [
       "Faden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "840abd9c41": {
     "text": "Erdnussbutter ist vor allem in den Vereinigten Staaten ein beliebter Brotbelag.",
@@ -1086,11 +1119,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Easy come, easy go.",
     "source": "wiktionary",
     "lemmas": [
       "Abend"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "840c035719": {
     "text": "„Sehr zu empfehlen sind Bäder aus geilen Lustkräutern, die eine immense erogene Wirkung haben, hat Bruni gesagt.“",
@@ -1436,11 +1470,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to sugarcoat the bitter pill for someone",
     "source": "wiktionary",
     "lemmas": [
       "Pille"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "840d4d5b7e": {
     "text": "„Die Ehe der beiden bedeutenden Menschen zeichnete sich, wie alle Zeugnisse erweisen, durch seltene Innigkeit aus. Den Rollen in den Stücken Hebbels widmete sie sich mit besonderer Hingebung.“",
@@ -2711,13 +2746,56 @@
   },
   "84154c1fa9": {
     "text": "„‚Natürlich wird alles wieder gut! Ganz sicher!‘, antwortete auch Marie und ich fühlte eine tiefe Beruhigung.“",
-    "translation": "",
+    "translation": "\"Of course everything will be all right again! Absolutely certain!\" Marie answered as well, and I felt a deep sense of reassurance.",
     "source": "wiktionary",
     "lemmas": [
       "Beruhigung"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
-    "annotations": []
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Natürlich",
+        "lemma": "natürlich",
+        "pos": "adverb",
+        "gloss_hint": "of course"
+      },
+      {
+        "form": "gut",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": "good"
+      },
+      {
+        "form": "antwortete",
+        "lemma": "antworten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Marie",
+        "lemma": "Marie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fühlte",
+        "lemma": "fühlen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "tiefe",
+        "lemma": "tief",
+        "pos": "adjective",
+        "gloss_hint": "depth"
+      },
+      {
+        "form": "Beruhigung",
+        "lemma": "Beruhigung",
+        "pos": "noun",
+        "gloss_hint": "reassurance"
+      }
+    ]
   },
   "84155ff70c": {
     "text": "„Dieser Tank füllt sich, so wie sich der Damm füllt. Solange der Wasserspiegel im Tank und draußen im Damm gleich ist, passiert nichts.“",
@@ -3420,11 +3498,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the cats yawn",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "841d5cd369": {
     "text": "„Carlota hätte man als präraffaelitische Schönheit bezeichnen können, während Pepa einer Yankeehure der Zwischenkriegszeit glich.“",
@@ -4694,23 +4773,25 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be able to visit in the evening",
     "source": "wiktionary",
     "lemmas": [
       "Abend"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8427187c16": {
     "text": "auf einer Welle schwimmen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on the same wavelength",
     "source": "wiktionary",
     "lemmas": [
       "Welle",
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8428f3ae20": {
     "text": "Hab keine Angst, sprich mit mir!",
@@ -5913,11 +5994,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "come to my green side",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "843443ed68": {
     "text": "Vor dem Winter hatte er das Brennholz unter dem Vordach gestapelt.",
@@ -6539,11 +6621,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "of course",
     "source": "wiktionary",
     "lemmas": [
       "doch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84380d5490": {
     "text": "Ich habe nur en passant erfahren, dass er sich von seiner Frau getrennt hat.",
@@ -7075,11 +7158,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give him an inch and he'll take a mile",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "844143731c": {
     "text": "Dann betraten sie miteinander die Mehlkammer, einen niedrigen Raum mit zwei winzigen Fensterchen, blind von Mehlstaub.",
@@ -7362,11 +7446,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the freedom I mean",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8442062a69": {
     "text": "„Mielkes Truppe spannte einen desillusionierten Mittelständler vor ihren Karren.“",
@@ -7991,10 +8076,31 @@
   },
   "8446b8adfa": {
     "text": "Auf diesem Feld wächst Hafer.",
-    "translation": null,
+    "translation": "Oats grow in this field.",
     "source": "wiktionary",
     "lemmas": [
       "Hafer"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Feld",
+        "lemma": "Feld",
+        "pos": "noun",
+        "gloss_hint": "field (agriculture)"
+      },
+      {
+        "form": "wächst",
+        "lemma": "wachsen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hafer",
+        "lemma": "Hafer",
+        "pos": "noun",
+        "gloss_hint": "oat"
+      }
     ]
   },
   "8448332ea6": {
@@ -8632,11 +8738,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "That's hardly anything at all.",
     "source": "wiktionary",
     "lemmas": [
       "Maus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "844f5c5e6f": {
     "text": "„»Ich habe meine Großeltern gefragt, wie konnte das mit dem Zweiten Weltkrieg passieren?«, erzählt Heiko Hilmer. »Da ist mir eingefallen: Meine Enkelkinder werden mich fragen: Wie konnte das mit der Umwelt passieren?«“",
@@ -8657,11 +8764,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Someone is about to faint.",
     "source": "wiktionary",
     "lemmas": [
       "schwarz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84508002a4": {
     "text": "Guatemala-Stadt ist die Hauptstadt der Republik Guatemala.",
@@ -8719,10 +8827,37 @@
   },
   "84509f7d9b": {
     "text": "Der Teig wird in einer Mulde gebacken.",
-    "translation": null,
+    "translation": "The dough is baked in a trough.",
     "source": "wiktionary",
     "lemmas": [
       "Mulde"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Teig",
+        "lemma": "Teig",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wird",
+        "lemma": "werden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mulde",
+        "lemma": "Mulde",
+        "pos": "noun",
+        "gloss_hint": "trough"
+      },
+      {
+        "form": "gebacken",
+        "lemma": "backen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "84527681ec": {
@@ -10788,11 +10923,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "It's too late to do anything about it now.",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "845fb256af": {
     "text": "„Vor neun Jahrzehnten erlitt das bevölkerungsreichste, technisch fortgeschrittenste und fleißigste Land Kontinentaleuropas einen furchtbaren Rückschlag.“",
@@ -11478,11 +11614,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to spout platitudes",
     "source": "wiktionary",
     "lemmas": [
       "klopfen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8463d719e3": {
     "text": "Wie ist dein Name?",
@@ -12391,23 +12528,25 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If God doesn't give you children, the devil gives you nieces and nephews.",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84703951b9": {
     "text": "jemandem juckt das Fell",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Someone is itching to do something.",
     "source": "wiktionary",
     "lemmas": [
       "Fell",
       "jucken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84704c67dd": {
     "text": "dem lieben Gott den Tag stehlen",
@@ -12935,11 +13074,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to ruin with your actions what you previously built up with effort",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8476a48345": {
     "text": "„Nach seinem auffallenden Auftritt in der Bar hat ihm der Keeper später beim Absacker etwas von dubiosen Geschäften erzählt.“",
@@ -13235,12 +13375,13 @@
     "type": "expression",
     "note": "die Wahrheit sagen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to come clean",
     "source": "wiktionary",
     "lemmas": [
       "Sprache"
     ],
-    "ref": "phrases/mit der Sprache herausrücken"
+    "ref": "phrases/mit der Sprache herausrücken",
+    "translation_model": "openai/gpt-4.1"
   },
   "847952c084": {
     "text": "weg vom Fenster sein",
@@ -13650,11 +13791,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a dark horse",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84803349a8": {
     "text": "„Colletet hatte nämlich nicht bemerkt, dass G. Teshault ein Pseudonym und teilweises Anagramm für G. Deshautels ist und hatte in einigen Jugendgedichten Desautels, die unter diesem Pseudonym in den ruisseaux de Charles Fontaine erschienen, das Werk eines andern Dichters gesehen.“",
@@ -14553,11 +14695,12 @@
     "synonyms": [
       "empfehlen"
     ],
-    "translation": null,
+    "translation": "to give someone advice for the journey ahead",
     "source": "wiktionary",
     "lemmas": [
       "Weg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8487e86258": {
     "text": "„Die beiden Mannschaften wechseln sich mit ihren Spielzügen ab. Sobald alle Steine in einem End gespielt worden sind, wird das Resultat festgehalten. Ein Spiel dauert in der Regel zehn Ends.“",
@@ -16007,22 +16150,24 @@
     "type": "expression",
     "note": "eine Arbeitsstelle neu beginnen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to take up a new position",
     "source": "wiktionary",
     "lemmas": [
       "treten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8497c08d20": {
     "text": "wo Aas ist, da versammeln sich die Raben",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Where there's carrion, the ravens gather.",
     "source": "wiktionary",
     "lemmas": [
       "Aas"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8497fd91ea": {
     "text": "„Seit dem 8. Jahrhundert erwuchsen im Frankrenreich reichhaltige und für die damalige Zeit stattliche Bibliotheken, in aller Regel mit angesehenen Schulen und leistungsfähigen Skriptorien verbunden und von hervorragenden Gelehrten geleitet, betreut oder gefördert.“",
@@ -17123,12 +17268,13 @@
     "type": "expression",
     "note": "vertrauen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to vouch for someone",
     "source": "wiktionary",
     "lemmas": [
       "Feuer"
     ],
-    "ref": "phrases/für jemanden die Hand ins Feuer legen"
+    "ref": "phrases/für jemanden die Hand ins Feuer legen",
+    "translation_model": "openai/gpt-4.1"
   },
   "84a4fe1725": {
     "text": "Du bist doch eine Träumerin! Glaubst Du wirklich, dass er freiwillig nachgeben wird?",
@@ -18182,11 +18328,12 @@
     "synonyms": [
       "e"
     ],
-    "translation": null,
+    "translation": "by itself",
     "source": "wiktionary",
     "lemmas": [
       "allein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84aef799f2": {
     "text": "Das Gefecht der beiden Finalisten dauerte sehr lange.",
@@ -21289,11 +21436,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to risk everything",
     "source": "wiktionary",
     "lemmas": [
       "Miete"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84cf2cd98c": {
     "text": "„Der Vogel flatterte hektisch herum, und ich gab Vollgas.“",
@@ -21513,11 +21661,12 @@
     "type": "expression",
     "note": "eine Sache nicht mögen",
     "synonyms": [],
-    "translation": null,
+    "translation": "not be a fan of something",
     "source": "wiktionary",
     "lemmas": [
       "Freund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84d1fabd35": {
     "text": "Jeder Deutsche kann den Europäischer Gerichtshof für Menschenrechte anrufen, unter der Voraussetzung, dass der innerstaatliche Instanzenzug durchlaufen ist.",
@@ -21858,11 +22007,12 @@
     "type": "expression",
     "note": "das ist nichts Rechtes (eigentlich keine rechte Verwundung)",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be neither fish nor fowl",
     "source": "wiktionary",
     "lemmas": [
       "stechen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84d3e7a988": {
     "text": "Dieser Eintrag gehört in die Kategorien „Deutsch“ und „Substantiv“.",
@@ -22124,11 +22274,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get lost",
     "source": "wiktionary",
     "lemmas": [
       "schleichen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84d5dc5429": {
     "text": "„Er hatte große Probleme mit dem Kauen, litt unter Sodbrennen und aß meist allein.“",
@@ -23861,11 +24012,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to laugh one's head off",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84e3b23a48": {
     "text": "„Doch bei den großen Herzinfarkt- und Krebsstudien kam es sogar zu mehr Todesfällen bei Probanden, die vorsorglich antioxidative Vitamine in Kapselform schluckten.“",
@@ -24083,11 +24235,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to rely on someone completely",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84e6523ebb": {
     "text": "„[…] der Arzt hat gemeint, daß er dies schon lange nicht mehr könne und daß unsere Oma eine gute Vorturnerin beim Seniorensport wäre, aber daß sie sicher keine Hilflosenrente brauche, und so sind wir um das Geld umgefallen, weil vom Alter her hätte sie es längst kriegen müssen.“",
@@ -25576,11 +25729,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Give someone an inch and they'll take a mile.",
     "source": "wiktionary",
     "lemmas": [
       "schenken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84fa18c04d": {
     "text": "Die Netzspannung hat eine Periode von 20 ms. Die Sinusfunktion hat eine Periode von 2π.",
@@ -25698,11 +25852,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the morning after",
     "source": "wiktionary",
     "lemmas": [
       "Morgen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "84fadcafef": {
     "text": "„Die Anzahl der Fahrten auf diesem Weg, in dieser Richtung, sei dann xᵢ (z.B. gerader Index für die Hinrichtung und ungerader Index für die Rückrichtung).“",
@@ -25928,10 +26083,49 @@
   },
   "84fd8640c3": {
     "text": "Das LG Köln gab heute sein Urteil bekannt.",
-    "translation": null,
+    "translation": "The Cologne Regional Court announced its verdict today.",
     "source": "wiktionary",
     "lemmas": [
       "LG"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "LG",
+        "lemma": "LG",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Köln",
+        "lemma": "Köln",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gab",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "Urteil",
+        "lemma": "Urteil",
+        "pos": "noun",
+        "gloss_hint": "verdict"
+      },
+      {
+        "form": "bekannt",
+        "lemma": "bekannt",
+        "pos": "adjective",
+        "gloss_hint": "publicized"
+      }
     ]
   },
   "84fdd03c28": {

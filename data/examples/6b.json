@@ -641,13 +641,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "mind one's own business",
     "source": "wiktionary",
     "lemmas": [
       "Gott",
       "lassen"
     ],
-    "ref": "phrases/den lieben Gott einen guten Mann sein lassen"
+    "ref": "phrases/den lieben Gott einen guten Mann sein lassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "6b05a08cd3": {
     "text": "Vermehrt müssen die Reifen daran glauben und werden viel zu sehr abgefahren. (Internetbeleg)",
@@ -1529,11 +1530,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Oh dear",
     "source": "wiktionary",
     "lemmas": [
       "je"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b0e46f4b6": {
     "text": "„Alter versprödeter Kitt lässt sich am schonendsten durch kurze Bestrahlung mit kurzwelligen Infrarotstrahlen erweichen und dann leicht ausschaben.“",
@@ -1684,11 +1686,12 @@
     "type": "expression",
     "note": "nichts sagen, keinen Ton herausbringen",
     "synonyms": [],
-    "translation": null,
+    "translation": "not say a word",
     "source": "wiktionary",
     "lemmas": [
       "weder … noch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b1048a9a2": {
     "text": "Seitdem ich einen neuen Arbeitsplatz gefunden habe, fühle ich mich aller Sorgen ledig.",
@@ -3773,11 +3776,12 @@
     "type": "expression",
     "note": "aufbrausen, in sehr kurzer Zeit sehr wütend werden",
     "synonyms": [],
-    "translation": null,
+    "translation": "blow up like a rocket",
     "source": "wiktionary",
     "lemmas": [
       "hochgehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b2187c089": {
     "text": "Gestern habe ich mir eine neue Maschine gekauft - der Rechner hat 500 Gigabyte Speicherplatz, zwei Gigabyte Arbeitsspeicher und einen Prozessor mit 2.2 Gigahertz.",
@@ -5060,11 +5064,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have crazy ideas",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b30ef0983": {
     "text": "Abtreiben bedeutet, Butter oder Eier und Zucker (ohne Hitze) so lange mit einem Rührlöffel in einem Geschirr rühren, bis die Masse dick wird und Blasen wirft.",
@@ -5354,10 +5359,19 @@
   },
   "6b35199e25": {
     "text": "»Kannst Du nicht einfach mal die Schnauze halten?«",
-    "translation": null,
+    "translation": "Can't you just shut your mouth?",
     "source": "wiktionary",
     "lemmas": [
       "die Schnauze halten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schnauze",
+        "lemma": "Schnauze",
+        "pos": "noun",
+        "gloss_hint": "mouth"
+      }
     ]
   },
   "6b36357569": {
@@ -8090,10 +8104,43 @@
   },
   "6b43da8cfa": {
     "text": "In alten Funkgeräten befinden sich einfache Detektoren.",
-    "translation": null,
+    "translation": "Old radios contain simple detectors.",
     "source": "wiktionary",
     "lemmas": [
       "Detektor"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "alten",
+        "lemma": "alt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Funkgeräten",
+        "lemma": "Funkgerät",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "befinden",
+        "lemma": "befinden",
+        "pos": "verb",
+        "gloss_hint": "be located"
+      },
+      {
+        "form": "einfache",
+        "lemma": "einfach",
+        "pos": "adjective",
+        "gloss_hint": "simple (group)"
+      },
+      {
+        "form": "Detektoren",
+        "lemma": "Detektor",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6b468cd061": {
@@ -8764,11 +8811,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "cut corners",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b50852a0d": {
     "text": "„Ich ging dann in die Bar, und da stand der Fischer, mit einer Pranke auf den Tresen gestützt, die andere in die Hüfte gestemmt, mächtig.“",
@@ -10715,11 +10763,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a dry sense of humor",
     "source": "wiktionary",
     "lemmas": [
       "trocken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b5eba5521": {
     "text": "„Der Prozess läuft mit einer niedrigeren Priorität.“",
@@ -10909,10 +10958,43 @@
   },
   "6b60c04368": {
     "text": "Das Bussardei ist sehr geflacht und auch am stumpfen Ende kaum wellig.",
-    "translation": null,
+    "translation": "The buzzard egg is very flattened and barely undulating even at the blunt end.",
     "source": "wiktionary",
     "lemmas": [
       "flachen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bussardei",
+        "lemma": "Bussardei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geflacht",
+        "lemma": "flachen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "stumpfen",
+        "lemma": "stumpf",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ende",
+        "lemma": "Ende",
+        "pos": "noun",
+        "gloss_hint": "end (time)"
+      },
+      {
+        "form": "kaum",
+        "lemma": "kaum",
+        "pos": "adverb",
+        "gloss_hint": "hardly"
+      }
     ]
   },
   "6b61b8a2be": {
@@ -11292,11 +11374,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put something under the sign of something",
     "source": "wiktionary",
     "lemmas": [
       "Zeichen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b66db3671": {
     "text": "„Die Mitbischöfe Anselms standen in dieser Auseinandersetzung mehrheitlich auf Seiten des Königs, […]“",
@@ -11625,11 +11708,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You can't get blood from a stone.",
     "source": "wiktionary",
     "lemmas": [
       "Recht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b6b134435": {
     "text": "Der Junge begreift schnell.",
@@ -11852,11 +11936,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to visit Rome and not see the Pope",
     "source": "wiktionary",
     "lemmas": [
       "Papst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b6b8b8da4": {
     "text": "„‚Mir passiert so was nicht; verlaß Dich darauf’, meinte Hans Wurst; ‚ich bin daran gewöhnt, aufzupassen, wie ein Luchs, denn ich gehöre zu den Vogelfreien, die auch unter Menschen immer auf der Hut sein müssen.‘“",
@@ -12160,10 +12245,61 @@
   },
   "6b6c94908d": {
     "text": "„Wohl dem Mann, der nicht dem Rat der Frevler folgt, nicht auf dem Weg der Sünder geht, nicht im Kreis der Spötter sitzt“ (Ps 1,1 in der Einheitsübersetzung).",
-    "translation": null,
+    "translation": "Blessed is the man who does not follow the counsel of the wicked, does not walk on the path of sinners, does not sit in the circle of mockers (Ps 1:1 in the Unified Translation).",
     "source": "wiktionary",
     "lemmas": [
       "Ps"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wohl",
+        "lemma": "Wohl",
+        "pos": "noun",
+        "gloss_hint": "well-being"
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "Rat",
+        "lemma": "Rat",
+        "pos": "noun",
+        "gloss_hint": "advice"
+      },
+      {
+        "form": "Frevler",
+        "lemma": "Frevler",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weg",
+        "lemma": "Weg",
+        "pos": "noun",
+        "gloss_hint": "path"
+      },
+      {
+        "form": "Sünder",
+        "lemma": "Sünder",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kreis",
+        "lemma": "Kreis",
+        "pos": "noun",
+        "gloss_hint": "circle (group)"
+      },
+      {
+        "form": "Spötter",
+        "lemma": "Spötter",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6b6ca76246": {
@@ -12403,11 +12539,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to see one's chances slipping away",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b71e440c9": {
     "text": "„Sie umschlingen ihre Beute und ersticken sie, um sie dann als Ganzes zu verschlingen.“",
@@ -12884,10 +13021,61 @@
   },
   "6b754b5083": {
     "text": "Er hat seine guten Vorsätze für das Neue Jahr über Bord geworfen.",
-    "translation": null,
+    "translation": "He threw his good New Year's resolutions overboard.",
     "source": "wiktionary",
     "lemmas": [
       "Neues Jahr"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Er",
+        "lemma": "er",
+        "pos": "pronoun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hat",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "seine",
+        "lemma": "sein",
+        "pos": "pronoun",
+        "gloss_hint": null
+      },
+      {
+        "form": "guten",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorsätze",
+        "lemma": "Vorsatz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "Bord",
+        "lemma": "Bord",
+        "pos": "noun",
+        "gloss_hint": "edge"
+      },
+      {
+        "form": "geworfen",
+        "lemma": "werfen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "6b7611103d": {
@@ -12895,11 +13083,12 @@
     "type": "expression",
     "note": "negative Erfahrung erleben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to get one's fingers burned",
     "source": "wiktionary",
     "lemmas": [
       "verbrennen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b7622830c": {
     "text": "Seine kleinen Menschlichkeiten konnte man ihm leicht verzeihen.",
@@ -13110,11 +13299,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be behind the times",
     "source": "wiktionary",
     "lemmas": [
       "vorgestern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b79c9f990": {
     "text": "„Doch nicht nur deswegen wirkte meine Uroma auf uns so geheimnisvoll, sie kannte sich außerdem mit Kräutern, Medizin und Aberglaube ganz gut aus.“",
@@ -14249,10 +14439,115 @@
   },
   "6b8269622a": {
     "text": "„Ab August 2013 haben Eltern einen rechtlichen Anspruch auf einen Platz in einer Betreuungseinrichtung. Der Bedarf an Betreuungsplätzen für Kinder könnte dann nach Schätzungen des Nürnberger Jugendamtes um 50 Prozent steigen. Und das obwohl die Plätze schon jetzt vorne und hinten nicht ausreichen.“",
-    "translation": null,
+    "translation": "From August 2013, parents have a legal entitlement to a place in a childcare facility. The demand for childcare places for children could then increase by 50 percent according to estimates by the Nuremberg Youth Office. And this despite the fact that places are already in short supply.",
     "source": "wiktionary",
     "lemmas": [
       "vorne und hinten nicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "August",
+        "lemma": "August",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eltern",
+        "lemma": "Eltern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "rechtlichen",
+        "lemma": "rechtlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anspruch",
+        "lemma": "Anspruch",
+        "pos": "noun",
+        "gloss_hint": "entitlement"
+      },
+      {
+        "form": "Platz",
+        "lemma": "Platz",
+        "pos": "noun",
+        "gloss_hint": "space"
+      },
+      {
+        "form": "Betreuungseinrichtung",
+        "lemma": "Betreuungseinrichtung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bedarf",
+        "lemma": "Bedarf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Betreuungsplätzen",
+        "lemma": "Betreuungsplatz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "steigen",
+        "lemma": "steigen",
+        "pos": "verb",
+        "gloss_hint": "increase"
+      },
+      {
+        "form": "Prozent",
+        "lemma": "Prozent",
+        "pos": "noun",
+        "gloss_hint": "percentage"
+      },
+      {
+        "form": "Schätzungen",
+        "lemma": "Schätzung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nürnberger",
+        "lemma": "Nürnberger",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jugendamtes",
+        "lemma": "Jugendamt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "obwohl",
+        "lemma": "obwohl",
+        "pos": "conjunction",
+        "gloss_hint": null
+      },
+      {
+        "form": "Plätze",
+        "lemma": "Platz",
+        "pos": "noun",
+        "gloss_hint": "space"
+      },
+      {
+        "form": "ausreichen",
+        "lemma": "ausreichen",
+        "pos": "verb",
+        "gloss_hint": "suffice"
+      }
     ]
   },
   "6b837ae948": {
@@ -14477,14 +14772,12 @@
       "lange",
       "bekannt"
     ],
-    "translation": null,
+    "translation": "old hat",
     "source": "wiktionary",
     "lemmas": [
       "alt"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "6b863b2d6b": {
     "text": "Täuschen Sie sich nicht! Das wird teurer als Sie denken!",
@@ -14638,10 +14931,55 @@
   },
   "6b871269c5": {
     "text": "Petre liest immer die neusten Fachzeitschriften, um stets auf dem Laufenden zu sein.",
-    "translation": null,
+    "translation": "Petre always reads the latest specialist journals in order to stay up to date.",
     "source": "wiktionary",
     "lemmas": [
       "auf dem Laufenden sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Petre",
+        "lemma": "Petre",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "liest",
+        "lemma": "lesen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "immer",
+        "lemma": "immer",
+        "pos": "adverb",
+        "gloss_hint": "always"
+      },
+      {
+        "form": "neusten",
+        "lemma": "neu",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fachzeitschriften",
+        "lemma": "Fachzeitschrift",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stets",
+        "lemma": "stets",
+        "pos": "adverb",
+        "gloss_hint": "always"
+      },
+      {
+        "form": "Laufenden",
+        "lemma": "Laufende",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6b87e2663e": {
@@ -15060,10 +15398,61 @@
   },
   "6b87f6db56": {
     "text": "„Es gab einmal eine Zeit in der arabischen Welt, da hatten Allianzen noch ihre Ordnung. Wenn A mit B und C verbandelt war, bedeutete es im Umkehrschluss, dass B und C ebenfalls Verbündete waren. Tempi passati!“",
-    "translation": null,
+    "translation": "There was once a time in the Arab world when alliances still had their order. If A was allied with B and C, it meant conversely that B and C were also allies. Those were the days!",
     "source": "wiktionary",
     "lemmas": [
       "Tempi passati"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "period"
+      },
+      {
+        "form": "arabischen",
+        "lemma": "arabisch",
+        "pos": "adjective",
+        "gloss_hint": "Arabic"
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      },
+      {
+        "form": "Allianzen",
+        "lemma": "Allianz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ordnung",
+        "lemma": "Ordnung",
+        "pos": "noun",
+        "gloss_hint": "order"
+      },
+      {
+        "form": "verbandelt",
+        "lemma": "verbandeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umkehrschluss",
+        "lemma": "Umkehrschluss",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verbündete",
+        "lemma": "Verbündete",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6b881f1af3": {
@@ -15991,11 +16380,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Let's get down to business.",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b92406c4b": {
     "text": "Die USA haben Geheimdokumente von 1956 veröffentlicht, die Pläne für einen möglichen Krieg mit der Sowjetunion offenbaren. Sie zeigen, wie kalt mit dem Tod vieler Zivilisten kalkuliert wurde.",
@@ -16530,11 +16920,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Hello",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6b97e6e2a8": {
     "text": "Leg doch mal was Rockiges auf den Teller.",
@@ -17570,12 +17961,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to boot out",
     "source": "wiktionary",
     "lemmas": [
       "ab"
     ],
-    "ref": "phrases/ab trimo"
+    "ref": "phrases/ab trimo",
+    "translation_model": "openai/gpt-4.1"
   },
   "6b9f910be5": {
     "text": "lieber Schlichter denn Richter",
@@ -17870,11 +18262,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone's place is at a certain location",
     "source": "wiktionary",
     "lemmas": [
       "Platz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6ba50af699": {
     "text": "Mit 24 Jahren erlangte auch ich das Abitur.",
@@ -17989,11 +18382,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to throw in the towel",
     "source": "wiktionary",
     "lemmas": [
       "Handtuch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6ba854699b": {
     "text": "Er beschimpfte das Auto, das vor ihm fuhr, als lahme Ente, überholte und baute einen Unfall.",
@@ -18428,14 +18822,80 @@
   },
   "6bae02d42f": {
     "text": "„Der Absatz der verflossenen Woche war in Exemplaren … gleich dem Absatz derselben Woche im Vorjahr. An Geldwert blieb die Woche um ca. 1000 S zurück, weil …“",
-    "translation": null,
+    "translation": "The sales of the past week in units were equal to the sales of the same week in the previous year. In monetary value, the week fell short by approximately 1000 S, because…",
     "source": "wiktionary",
     "lemmas": [
       "S"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Absatz",
+        "lemma": "Absatz",
+        "pos": "noun",
+        "gloss_hint": "sales"
+      },
+      {
+        "form": "verflossenen",
+        "lemma": "verflossen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Woche",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": "week"
+      },
+      {
+        "form": "Exemplaren",
+        "lemma": "Exemplar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gleich",
+        "lemma": "gleich",
+        "pos": "adjective",
+        "gloss_hint": "equal"
+      },
+      {
+        "form": "Absatz",
+        "lemma": "Absatz",
+        "pos": "noun",
+        "gloss_hint": "sales"
+      },
+      {
+        "form": "Woche",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": "week"
+      },
+      {
+        "form": "Vorjahr",
+        "lemma": "Vorjahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geldwert",
+        "lemma": "Geldwert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Woche",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": "week"
+      },
+      {
+        "form": "zurück",
+        "lemma": "zurück",
+        "pos": "adverb",
+        "gloss_hint": "behind"
+      }
+    ]
   },
   "6baea65c2e": {
     "text": "„Das Team bestand aus neun Männern verschiedenen Alters – schweigsame Wettergesichter, geräuschlos lachend, sie hatten ihr Leben verbracht im Holz dieser Inseln, er bemerkte die fehlenden Finger und hinkenden Beine, die Trunksucht in Auge und Haut, den bewußtlosen Stolz.“",
@@ -18553,11 +19013,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "jerks lined up one after another",
     "source": "wiktionary",
     "lemmas": [
       "Band"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6bb05ed719": {
     "text": "Ich kann versuchen, das Loch zu füllen, aber das wird nicht lange halten, und dann brauchen Sie eine Krone.",
@@ -19437,11 +19898,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lead an unconventional life",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6bbbdad338": {
     "text": "„Es gehe ihr um schwer vermittelbare Hartz-IV-Empfänger, die zum Beispiel einen 1-Euro-Job machen, den aber nach einem Jahr wieder aufgeben müssen.“",
@@ -19707,10 +20169,49 @@
   },
   "6bbeaa2cf7": {
     "text": "„Die Gemahlin des Grafen hatte die Reise nicht antreten können, denn sie befand sich in anderen Umständen.“",
-    "translation": null,
+    "translation": "The Count's wife had not been able to undertake the journey, for she was in a family way.",
     "source": "wiktionary",
     "lemmas": [
       "sich in anderen Umständen befinden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gemahlin",
+        "lemma": "Gemahlin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grafen",
+        "lemma": "Graf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reise",
+        "lemma": "Reise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "antreten",
+        "lemma": "antreten",
+        "pos": "verb",
+        "gloss_hint": "start"
+      },
+      {
+        "form": "befand",
+        "lemma": "befinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umständen",
+        "lemma": "Umstand",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6bbed4c80d": {
@@ -20927,11 +21428,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bit by bit",
     "source": "wiktionary",
     "lemmas": [
       "Stück"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6bce6e8257": {
     "text": "„Wir mußten lernen, den Torf in gleichmäßigen Stücken zu stechen, also gerade, nicht schräg, damit wir aus den Stücken nachher Mieten setzen konnten, die hielten, ähnlich Holzmieten aus gespaltenem Holz. Das Bauen der Mieten war ebenfalls eine komplizierte Arbeit, schwer zu lernen.“",
@@ -21566,11 +22068,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be for nothing",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6bd8b2d250": {
     "text": "Kinder, reinkommen, es gibt Mittag!",
@@ -21741,18 +22244,76 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to shirk work",
     "source": "wiktionary",
     "lemmas": [
       "Arbeit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6bdc7830ea": {
     "text": "Ohne abgeschlossene Schulausbildung hatte sie einen schweren Start ins Berufsleben, aber sie war eine Kämpferin und schlug sich tapfer durchs Leben.",
-    "translation": null,
+    "translation": "Without a completed school education, she had a difficult start in working life, but she was a fighter and got through life bravely.",
     "source": "wiktionary",
     "lemmas": [
       "sich durchs Leben schlagen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "abgeschlossene",
+        "lemma": "abgeschlossen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schulausbildung",
+        "lemma": "Schulausbildung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schweren",
+        "lemma": "schwer",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Start",
+        "lemma": "Start",
+        "pos": "noun",
+        "gloss_hint": "start"
+      },
+      {
+        "form": "Berufsleben",
+        "lemma": "Berufsleben",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kämpferin",
+        "lemma": "Kämpferin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schlug",
+        "lemma": "schlagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "tapfer",
+        "lemma": "tapfer",
+        "pos": "adjective",
+        "gloss_hint": "brave"
+      },
+      {
+        "form": "Leben",
+        "lemma": "Leben",
+        "pos": "noun",
+        "gloss_hint": "life"
+      }
     ]
   },
   "6bdd6e85d8": {
@@ -22090,11 +22651,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give you an inch and you take a mile",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6be0eba63b": {
     "text": "bis aufs Messer",
@@ -24655,11 +25217,12 @@
     "type": "expression",
     "note": "eine Sache ist kompliziert, fehlerhaft, problembehaftet, knifflig",
     "synonyms": [],
-    "translation": null,
+    "translation": "that's a real headache",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6bf3888079": {
     "text": "Durch den Erdrutsch kamen 125 Menschen ums Leben.",

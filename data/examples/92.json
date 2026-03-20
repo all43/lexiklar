@@ -693,12 +693,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "all right",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
     ],
-    "ref": "phrases/alles in Butter"
+    "ref": "phrases/alles in Butter",
+    "translation_model": "openai/gpt-4.1"
   },
   "92086604ad": {
     "text": "[…] in der gesellschaftlichen und politischen Debatte in Deutschland spielen frühkindliche Bildung und Betreuung bislang noch eine untergeordnete Rolle.",
@@ -1083,30 +1084,59 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "turn down with a vengeance",
     "source": "wiktionary",
     "lemmas": [
       "Wand"
     ],
-    "ref": "phrases/scheiß die Wand an"
+    "ref": "phrases/scheiß die Wand an",
+    "translation_model": "openai/gpt-4.1"
   },
   "920975352a": {
     "text": "die Karten aufdecken",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "reveal your cards",
     "source": "wiktionary",
     "lemmas": [
       "Karte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "920982e70c": {
     "text": "Habt ihr schon zu Mittag gegessen?",
-    "translation": null,
+    "translation": "Have you already had lunch?",
     "source": "wiktionary",
     "lemmas": [
       "zu Mittag essen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Habt",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schon",
+        "lemma": "schon",
+        "pos": "particle",
+        "gloss_hint": "already"
+      },
+      {
+        "form": "Mittag",
+        "lemma": "Mittag",
+        "pos": "noun",
+        "gloss_hint": "lunch"
+      },
+      {
+        "form": "gegessen",
+        "lemma": "essen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "920a527693": {
@@ -1239,27 +1269,26 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pull the plug",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
     ],
-    "ref": "phrases/die Reißleine ziehen"
+    "ref": "phrases/die Reißleine ziehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "920c6f5f05": {
     "text": "es juckt jemandem in den Fingern",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have an itch to do something",
     "source": "wiktionary",
     "lemmas": [
       "Finger"
     ],
     "ref": "phrases/es juckt jemandem in den Fingern",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "920e2aeea5": {
     "text": "Herr von Knigge lässt bitten.",
@@ -4688,14 +4717,12 @@
     "type": "expression",
     "note": "von jemandem eine Antwort/eine Rechtfertigung verlangen",
     "synonyms": [],
-    "translation": null,
+    "translation": "call someone to account",
     "source": "wiktionary",
     "lemmas": [
       "stellen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "922a6358df": {
     "text": "Ihr aggressives Verhalten war auffällig.",
@@ -6928,11 +6955,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "you can kiss my ass",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92443a6c47": {
     "text": "„Der Herzog befahl, erſt Brod herbey zuſchaffen, ehe das Lager aufgebrochen werden ſollte; und dieſes hinderte uns, fruͤh aufzubrechen.“",
@@ -7164,10 +7192,37 @@
   },
   "924518edbc": {
     "text": "Nach dem harten Winter gab es auf den Straßen Schlaglöcher noch und nöcher.",
-    "translation": null,
+    "translation": "After the harsh winter, there were potholes all over the streets.",
     "source": "wiktionary",
     "lemmas": [
       "noch und nöcher"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "harten",
+        "lemma": "hart",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Winter",
+        "lemma": "Winter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Straßen",
+        "lemma": "Straße",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schlaglöcher",
+        "lemma": "Schlagloch",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "924533e2d3": {
@@ -7767,10 +7822,31 @@
   },
   "9248444d52": {
     "text": "Ein Kondensator mit einer Kapazität von 1 F ist sehr groß.",
-    "translation": null,
+    "translation": "A capacitor with a capacitance of 1 F is very large.",
     "source": "wiktionary",
     "lemmas": [
       "F"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kondensator",
+        "lemma": "Kondensator",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kapazität",
+        "lemma": "Kapazität",
+        "pos": "noun",
+        "gloss_hint": "capacity"
+      },
+      {
+        "form": "groß",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": "large"
+      }
     ]
   },
   "9248bde67b": {
@@ -9427,12 +9503,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "easily",
     "source": "wiktionary",
     "lemmas": [
       "gut"
     ],
-    "ref": "phrases/gut und gerne"
+    "ref": "phrases/gut und gerne",
+    "translation_model": "openai/gpt-4.1"
   },
   "92564b71a3": {
     "text": "Sie ist nicht hässlich, aber auch nicht schön, man könnte vielleicht sagen, dass die apart ist und auf ihre Weise höchst interessant.",
@@ -10549,11 +10626,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be willing to go to any lengths for someone",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "9267048d64": {
     "text": "Mein Schwager kann wunderbare Komplimente machen.",
@@ -11329,15 +11407,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go whichever way the wind blows",
     "source": "wiktionary",
     "lemmas": [
       "Wind"
     ],
     "ref": "phrases/sein Mäntelchen nach dem Wind hängen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "926de91959": {
     "text": "Gott zum Gruß",
@@ -11797,11 +11873,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "sell like hotcakes",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92732f43b3": {
     "text": "Die Jury mitsamt der Schauspielerin Diane Kruger hat gesprochen: Die Gewinner für die Bären 2008 stehen fest.",
@@ -11814,10 +11891,43 @@
   },
   "927357f620": {
     "text": "„Der Pass traf die Shoulder Pads von Oaklands SS Jack Tatum, der Fuqua deckte.“",
-    "translation": null,
+    "translation": "\"The pass hit the shoulder pads of Oakland's SS Jack Tatum, who covered Fuqua.\"",
     "source": "wiktionary",
     "lemmas": [
       "SS"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Pass",
+        "lemma": "Pass",
+        "pos": "noun",
+        "gloss_hint": "pass"
+      },
+      {
+        "form": "traf",
+        "lemma": "treffen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Shoulder",
+        "lemma": "Shoulder",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pads",
+        "lemma": "Pad",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "deckte",
+        "lemma": "decken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "92745eb04f": {
@@ -14229,11 +14339,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go down with flying colors",
     "source": "wiktionary",
     "lemmas": [
       "Fahne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "928b40ffbe": {
     "text": "Durch den Frost stand ihm ein deutlicher Hauch vor dem Mund.",
@@ -14282,12 +14393,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "An eye for an eye, a tooth for a tooth.",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
     ],
-    "ref": "phrases/Auge um Auge, Zahn um Zahn"
+    "ref": "phrases/Auge um Auge, Zahn um Zahn",
+    "translation_model": "openai/gpt-4.1"
   },
   "928def5305": {
     "text": "Für das jüdische Volk ist Israel das „Heilige Land“.",
@@ -15282,10 +15394,31 @@
   },
   "929a84067c": {
     "text": "„Und dies ist ein Bereich, in dem gerade auch in Österreich der Hund begraben liegt.“",
-    "translation": null,
+    "translation": "\"And this is an area where the real problem lies, especially in Austria as well.\"",
     "source": "wiktionary",
     "lemmas": [
       "da liegt der Hund begraben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bereich",
+        "lemma": "Bereich",
+        "pos": "noun",
+        "gloss_hint": "area"
+      },
+      {
+        "form": "Hund",
+        "lemma": "Hund",
+        "pos": "noun",
+        "gloss_hint": "dog"
+      },
+      {
+        "form": "begraben",
+        "lemma": "begraben",
+        "pos": "verb",
+        "gloss_hint": "bury"
+      }
     ]
   },
   "929b411189": {
@@ -16200,12 +16333,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fight like cats and dogs",
     "source": "wiktionary",
     "lemmas": [
       "Hund",
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92a4ddacd4": {
     "text": "„Anfänglich wurde Schwarzpulver nur für Feuerwerkskörper benutzt, später war es als Schießpulver unentbehrlich.“",
@@ -16399,11 +16533,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to live under the same roof as someone",
     "source": "wiktionary",
     "lemmas": [
       "Dach"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92a63f2092": {
     "text": "„So konnten sie offensichtlich eigennützige Feldzüge als altruistische Missionen tarnen, die dazu dienten, wilde Barbaren zu zivilisieren.“",
@@ -16591,11 +16726,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "What does the proud oak care if the wild boar rubs itself against it?",
     "source": "wiktionary",
     "lemmas": [
       "Eiche"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92a953b059": {
     "text": "Die Glühbirne passt nicht in diese Fassung.",
@@ -16912,12 +17048,13 @@
     "type": "expression",
     "note": "Pilze sammeln gehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to go mushroom picking",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
     ],
-    "ref": "phrases/in die Pilze gehen"
+    "ref": "phrases/in die Pilze gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "92ad73671a": {
     "text": "„Zwar fordern in einer aktuellen Umfrage 70 Prozent der Befragten mehr Akzeptanz für Muslime, aber sie zeigen wenig Bereitschaft zur Integration, sagt die Berliner Migrationsforscherin Naika Foroutan.“",
@@ -17095,10 +17232,85 @@
   },
   "92ad9611ec": {
     "text": "In einem Rundschreiben der Jungen Konservativen, die aus einem Jugendverband der Deutschen Konservativen e. V. hervorgegangen sind, heißt es, dass der Vorsitzende Joachim Siegerist „stets an vorderster Front“ stehe, „wenn es darum geht, große Töne zu spucken“.",
-    "translation": null,
+    "translation": "\"In a circular letter from the Young Conservatives, which emerged from a youth organization of the German Conservatives e.V., it states that the chairman Joachim Siegerist 'always stands at the forefront' when it comes to 'making big talk'.\"",
     "source": "wiktionary",
     "lemmas": [
       "große Töne spucken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rundschreiben",
+        "lemma": "Rundschreiben",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jungen",
+        "lemma": "jung",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Konservativen",
+        "lemma": "Konservative",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jugendverband",
+        "lemma": "Jugendverband",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorsitzende",
+        "lemma": "Vorsitzender",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Joachim",
+        "lemma": "Joachim",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Siegerist",
+        "lemma": "Siegerist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stets",
+        "lemma": "stets",
+        "pos": "adverb",
+        "gloss_hint": "always"
+      },
+      {
+        "form": "vorderster",
+        "lemma": "vorderst",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Front",
+        "lemma": "Front",
+        "pos": "noun",
+        "gloss_hint": "front"
+      },
+      {
+        "form": "Töne",
+        "lemma": "Ton",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "spucken",
+        "lemma": "spucken",
+        "pos": "verb",
+        "gloss_hint": "spit"
+      }
     ]
   },
   "92ad9dce0e": {
@@ -17501,11 +17713,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to beat around the bush",
     "source": "wiktionary",
     "lemmas": [
       "schleichen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92b11dde87": {
     "text": "Ich bin grundsätzlich gegen diesen Vorschlag.",
@@ -17530,11 +17743,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get a bloody nose",
     "source": "wiktionary",
     "lemmas": [
       "Nase"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92b1ba8d7e": {
     "text": "frieren wie ein junger Hund",
@@ -17609,11 +17823,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be just someone's type",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92b4e9739c": {
     "text": "Verliebte Menschen haben die seltsamsten Einfälle.",
@@ -19180,12 +19395,13 @@
     "type": "expression",
     "note": "benachteiligt werden, eine besonders schlecht angesehen Arbeit machen müssen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to draw the short straw",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
     ],
-    "ref": "phrases/die Arschkarte ziehen"
+    "ref": "phrases/die Arschkarte ziehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "92bf9cc707": {
     "text": "„Die programmatische Erweiterung dieser Perspektive ist u. a. Ziel der modernen funktionalen Sprachtypologie (…) und auch der synergetischen Linguistik (…).“",
@@ -19258,11 +19474,12 @@
     "type": "expression",
     "note": "unkonzentriert/dumm sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have mush for brains",
     "source": "wiktionary",
     "lemmas": [
       "Kopf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92c0b53cd0": {
     "text": "„Das Wetter stellte sich offensichtlich auf den Sohan ein, die jährliche Frostperiode Anfang Januar.“",
@@ -19431,11 +19648,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to suspect no evil",
     "source": "wiktionary",
     "lemmas": [
       "Böses"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92c16bfeb2": {
     "text": "„Des öfteren wird Klein-Erna als Hausmädchen engagiert, und so können viele wohlbekannte Dienstmädchenwitze unbedenklich auf sie übertragen werden.“",
@@ -19573,11 +19791,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be pulled in two directions at once",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92c425f7b1": {
     "text": "Das ist mir zu wenig konkret.",
@@ -19904,11 +20123,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "What a sight for sore eyes!",
     "source": "wiktionary",
     "lemmas": [
       "Hütte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92c6d4fa86": {
     "text": "Sein steifer Gang zeigte, wie gereizt er war.",
@@ -20186,11 +20406,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep one's word",
     "source": "wiktionary",
     "lemmas": [
       "halten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92c7c3729b": {
     "text": "„Sogar die, dieses Geborensein feiernden Geschenke, und auch noch die Gaben unterm Weihnachtsbaum, trotzdem er doch reine Gnadenherrlichkeit auszustrahlen schien, bargen noch irgendwie heimliche Fallen für den Egoismus und besagten stumm: »wir liegen hier, teils, weil du brav gewesen bist, teils weil du es hoffentlich sein wirst«.“",
@@ -21811,11 +22032,12 @@
     "type": "expression",
     "note": "sich besinnen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to come to one's senses",
     "source": "wiktionary",
     "lemmas": [
       "Verstand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92d3feceec": {
     "text": "Mark ist noch einen zwitschern gegangen.",
@@ -22840,11 +23062,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the plague and cholera (between a rock and a hard place)",
     "source": "wiktionary",
     "lemmas": [
       "Cholera"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92ddb44142": {
     "text": "Durch den Verkauf von 500 Kugeln Speiseeis zu 1 Euro pro Kugel hatte der Eisverkäufer einen Umsatz von 500 Euro.",
@@ -22887,11 +23110,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like Christmas and Easter all in one day",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92e0b8829c": {
     "text": "Manila ist die Hauptstadt der Philippinen.",
@@ -24310,22 +24534,24 @@
     "type": "expression",
     "note": "Ausruf des Erstaunens, des Fluchens",
     "synonyms": [],
-    "translation": null,
+    "translation": "for heaven's sake",
     "source": "wiktionary",
     "lemmas": [
       "Kuckuck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92edb65135": {
     "text": "eher geht ein Kamel durch ein Nadelöhr",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "It's easier for a camel to go through the eye of a needle",
     "source": "wiktionary",
     "lemmas": [
       "Kamel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92ee488de4": {
     "text": "„Der griechische Geschichtsschreiber Polybios (ca. 200 - 120 vor Christus) schrieb nicht nur die erste Universalgeschichte der Welt, sondern erfand auch - nebenbei - den folgenden Code.“",
@@ -24782,11 +25008,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put the kettle on",
     "source": "wiktionary",
     "lemmas": [
       "Dampf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "92f7a70ef3": {
     "text": "Deutsche Familiengerichte urteilten viele Jahre auf der Grundlage dieser Entscheidung.",

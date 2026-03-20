@@ -532,11 +532,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the grass isn't always greener on the other side",
     "source": "wiktionary",
     "lemmas": [
       "grün"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b03fe0a15": {
     "text": "Die Lehrerin schlug mit dem Zeigestock auf den Tisch auf.",
@@ -614,12 +615,13 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a friend in need is a friend indeed",
     "source": "wiktionary",
     "lemmas": [
       "gehen",
       "Not"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b051a1f3f": {
     "text": "„Keine Science-Fiction, sondern Realität: Manche Menschen verändern mit Technik-Implantaten ihre Sinneswahrnehmung. Sie nennen sich Bodyhacker oder Cyborgs.“",
@@ -1831,10 +1833,43 @@
   },
   "8b11e8c2a5": {
     "text": "Wir haben zehn verschiedene automatische Mäher getestet.",
-    "translation": null,
+    "translation": "We tested ten different automatic mowers.",
     "source": "wiktionary",
     "lemmas": [
       "Mäher"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "zehn",
+        "lemma": "zehn",
+        "pos": "numeral",
+        "gloss_hint": "ten"
+      },
+      {
+        "form": "verschiedene",
+        "lemma": "verschieden",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "automatische",
+        "lemma": "automatisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mäher",
+        "lemma": "Mäher",
+        "pos": "noun",
+        "gloss_hint": "mower"
+      },
+      {
+        "form": "getestet",
+        "lemma": "testen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "8b12658028": {
@@ -2085,11 +2120,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something is coming to an end",
     "source": "wiktionary",
     "lemmas": [
       "Ende"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b17f0d76b": {
     "text": "„Allein im letzten Jahrhundert traten drei große Pandemien auf: 1968 und 1957 starben etwa eine Million Menschen; die spanische Grippe im Jahr 1918 führte sogar zu einer geschätzten Zahl von 20 bis 50 Millionen Toten.“",
@@ -2321,14 +2357,15 @@
       "Hoffnung",
       "Hoffnungsschimmer"
     ],
-    "translation": null,
+    "translation": "nip something in the bud",
     "source": "wiktionary",
     "lemmas": [
       "im",
       "Keim",
       "ersticken"
     ],
-    "ref": "phrases/etwas im Keim ersticken"
+    "ref": "phrases/etwas im Keim ersticken",
+    "translation_model": "openai/gpt-4.1"
   },
   "8b1a1ea0c1": {
     "text": "sich auf Französisch verabschieden",
@@ -4184,13 +4221,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "loosen someone's tongue",
     "source": "wiktionary",
     "lemmas": [
       "Zunge",
       "lösen"
     ],
-    "ref": "phrases/jemandem die Zunge lösen"
+    "ref": "phrases/jemandem die Zunge lösen",
+    "translation_model": "openai/gpt-4.1"
   },
   "8b286f69b6": {
     "text": "Zur Vorbereitung organisiert er die notwendigen Hilfsmittel.",
@@ -5875,11 +5913,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Like the spring, so the water",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b381e9310": {
     "text": "dich haben wir beim Betten machen gefunden",
@@ -6684,10 +6723,31 @@
   },
   "8b3e87d157": {
     "text": "Du hast dich wirklich angestrengt. Trotzdem, mit Verlaub, ist das Ergebnis nicht besonders.",
-    "translation": null,
+    "translation": "You really did make an effort. Nevertheless, with all due respect, the result is not particularly good.",
     "source": "wiktionary",
     "lemmas": [
       "mit Verlaub"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "angestrengt",
+        "lemma": "anstrengen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ergebnis",
+        "lemma": "Ergebnis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besonders",
+        "lemma": "besonders",
+        "pos": "adverb",
+        "gloss_hint": "notably"
+      }
     ]
   },
   "8b3f0494cb": {
@@ -6695,11 +6755,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pretend",
     "source": "wiktionary",
     "lemmas": [
       "tun"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b3f3e7ad5": {
     "text": "„Stix bekräftigte vor den Delegierten, sich um das Vertrauen der Burgenländer zu bewerben, um auch in der nächsten Legislaturperiode Landeshauptmann zu werden.“",
@@ -7276,12 +7337,13 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not all are the same",
     "source": "wiktionary",
     "lemmas": [
       "son"
     ],
-    "ref": "phrases/es gibt sone und solche"
+    "ref": "phrases/es gibt sone und solche",
+    "translation_model": "openai/gpt-4.1"
   },
   "8b43e887e6": {
     "text": "Die Decke müssen wir beziehen, damit sie geschont wird.",
@@ -7513,10 +7575,43 @@
   },
   "8b46ff78d0": {
     "text": "Das Geschäft hat er ganz alleine aus dem Boden gestampft.",
-    "translation": null,
+    "translation": "He built the business entirely from the ground up on his own.",
     "source": "wiktionary",
     "lemmas": [
       "etwas aus dem Boden stampfen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geschäft",
+        "lemma": "Geschäft",
+        "pos": "noun",
+        "gloss_hint": "business"
+      },
+      {
+        "form": "ganz",
+        "lemma": "ganz",
+        "pos": "adjective",
+        "gloss_hint": "whole"
+      },
+      {
+        "form": "alleine",
+        "lemma": "allein",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Boden",
+        "lemma": "Boden",
+        "pos": "noun",
+        "gloss_hint": "ground"
+      },
+      {
+        "form": "gestampft",
+        "lemma": "stampfen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "8b47339fc1": {
@@ -8029,10 +8124,55 @@
   },
   "8b4a9ade9c": {
     "text": "\"Das Gericht hat festgestellt, dass sich die Anklage auf dünnem Eis bewegt\", sagte er [, der Anwalt des beklagten Buchladens \"Oh 21\", Ulrich von Klinggräff,] der taz.",
-    "translation": null,
+    "translation": "\"The court has determined that the accusation is on thin ice,\" said Ulrich von Klinggräff, the lawyer for the defendant bookstore \"Oh 21\", to the taz.",
     "source": "wiktionary",
     "lemmas": [
       "auf dünnem Eis"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gericht",
+        "lemma": "Gericht",
+        "pos": "noun",
+        "gloss_hint": "court (institution)"
+      },
+      {
+        "form": "festgestellt",
+        "lemma": "feststellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anklage",
+        "lemma": "Anklage",
+        "pos": "noun",
+        "gloss_hint": "accusation"
+      },
+      {
+        "form": "Eis",
+        "lemma": "Eis",
+        "pos": "noun",
+        "gloss_hint": "ice"
+      },
+      {
+        "form": "Anwalt",
+        "lemma": "Anwalt",
+        "pos": "noun",
+        "gloss_hint": "lawyer"
+      },
+      {
+        "form": "beklagten",
+        "lemma": "beklagt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Buchladens",
+        "lemma": "Buchladen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "8b4aafad81": {
@@ -8100,18 +8240,180 @@
   },
   "8b4b1066af": {
     "text": "Änderungen sollten nicht sofort wirken, sondern explizit freigegeben werden können, und es sollte möglich sein, sowohl fremde als auch den eigenen Virenscanner zentral zu deinstallieren.",
-    "translation": null,
+    "translation": "Changes should not take effect immediately, but should be able to be explicitly approved, and it should be possible to uninstall both third-party and one's own antivirus scanner centrally.",
     "source": "wiktionary",
     "lemmas": [
       "deinstallieren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Änderungen",
+        "lemma": "Änderung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wirken",
+        "lemma": "wirken",
+        "pos": "verb",
+        "gloss_hint": "take effect"
+      },
+      {
+        "form": "explizit",
+        "lemma": "explizit",
+        "pos": "adjective",
+        "gloss_hint": "explicit"
+      },
+      {
+        "form": "freigegeben",
+        "lemma": "freigeben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "möglich",
+        "lemma": "möglich",
+        "pos": "adjective",
+        "gloss_hint": "possible (logic)"
+      },
+      {
+        "form": "fremde",
+        "lemma": "Fremde",
+        "pos": "noun",
+        "gloss_hint": "foreigner"
+      },
+      {
+        "form": "Virenscanner",
+        "lemma": "Virenscanner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zentral",
+        "lemma": "zentral",
+        "pos": "adjective",
+        "gloss_hint": "central"
+      },
+      {
+        "form": "deinstallieren",
+        "lemma": "deinstallieren",
+        "pos": "verb",
+        "gloss_hint": "uninstall"
+      }
     ]
   },
   "8b4b8b2cc5": {
     "text": "„Mich laust der Affe. Zuerst hatten wir einen Frosch (im Hals), nun ist die Hirsch Hahn im Korb. Jedem Tierchen sein Pläsierchen! Und welcher ist der nächste (Kunst)Bär, den man uns aufbindet? Die (kafkaeske) ‚Verwandlung‘ des Museion in eine Menagerie? Für Fleisch oder Fisch wird man sich entscheiden müssen – darin liegt der Hund begraben!“",
-    "translation": null,
+    "translation": "\"I'm at my wit's end. First we had a frog in the throat, now we have a stag as cock of the walk. To each their own! And which is the next (art) bear that's being foisted on us? The (Kafkaesque) 'transformation' of the Museion into a menagerie? One will have to choose between meat or fish—that's where the real problem lies!\"",
     "source": "wiktionary",
     "lemmas": [
       "da liegt der Hund begraben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Affe",
+        "lemma": "Affe",
+        "pos": "noun",
+        "gloss_hint": "monkey"
+      },
+      {
+        "form": "Frosch",
+        "lemma": "Frosch",
+        "pos": "noun",
+        "gloss_hint": "frog"
+      },
+      {
+        "form": "Hals",
+        "lemma": "Hals",
+        "pos": "noun",
+        "gloss_hint": "throat"
+      },
+      {
+        "form": "Hirsch",
+        "lemma": "Hirsch",
+        "pos": "noun",
+        "gloss_hint": "stag"
+      },
+      {
+        "form": "Hahn",
+        "lemma": "Hahn",
+        "pos": "noun",
+        "gloss_hint": "cock (bird)"
+      },
+      {
+        "form": "Korb",
+        "lemma": "Korb",
+        "pos": "noun",
+        "gloss_hint": "basket"
+      },
+      {
+        "form": "Tierchen",
+        "lemma": "Tierchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pläsierchen",
+        "lemma": "Pläsierchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kunst",
+        "lemma": "Kunst",
+        "pos": "noun",
+        "gloss_hint": "art"
+      },
+      {
+        "form": "Bär",
+        "lemma": "Bär",
+        "pos": "noun",
+        "gloss_hint": "bear"
+      },
+      {
+        "form": "Verwandlung",
+        "lemma": "Verwandlung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menagerie",
+        "lemma": "Menagerie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fleisch",
+        "lemma": "Fleisch",
+        "pos": "noun",
+        "gloss_hint": "meat"
+      },
+      {
+        "form": "Fisch",
+        "lemma": "Fisch",
+        "pos": "noun",
+        "gloss_hint": "fish"
+      },
+      {
+        "form": "entscheiden",
+        "lemma": "entscheiden",
+        "pos": "verb",
+        "gloss_hint": "choose"
+      },
+      {
+        "form": "Hund",
+        "lemma": "Hund",
+        "pos": "noun",
+        "gloss_hint": "dog"
+      },
+      {
+        "form": "begraben",
+        "lemma": "begraben",
+        "pos": "verb",
+        "gloss_hint": "bury"
+      }
     ]
   },
   "8b4b9df1a1": {
@@ -8119,11 +8421,12 @@
     "type": "expression",
     "note": "gelegentlich, ab und zu",
     "synonyms": [],
-    "translation": null,
+    "translation": "from time to time",
     "source": "wiktionary",
     "lemmas": [
       "Zeit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b4bd53cef": {
     "text": "„Wer sich den Traum vom Motorfliegen erfüllen will, dem bietet sich in Brandenburg die Möglichkeit, den Privatpilotenschein, kurz PPL genannt, zu erwerben.“",
@@ -8321,10 +8624,37 @@
   },
   "8b4e067ca8": {
     "text": "Diese kleinen Kinder tanzen mir auf der Nase herum!",
-    "translation": null,
+    "translation": "These little children are running circles around me!",
     "source": "wiktionary",
     "lemmas": [
       "jemandem auf der Nase herumtanzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kleinen",
+        "lemma": "klein",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tanzen",
+        "lemma": "tanzen",
+        "pos": "verb",
+        "gloss_hint": "bounce"
+      },
+      {
+        "form": "Nase",
+        "lemma": "Nase",
+        "pos": "noun",
+        "gloss_hint": "nose"
+      }
     ]
   },
   "8b4fa5272c": {
@@ -8754,10 +9084,115 @@
   },
   "8b55a58ac5": {
     "text": "„Leute, die mir erzählen, dass sie zwei Kinder haben, der Mann studiert noch, die Frau hat drei Jobs und es reicht finanziell einfach vorne und hinten nicht, die kamen auf die Liste der Personen, die in die engere Auswahl kommen.“",
-    "translation": null,
+    "translation": "\"People who tell me they have two children, the husband is still studying, the wife has three jobs and financially it just doesn't add up either way, they made it onto the list of candidates for the shortlist.\"",
     "source": "wiktionary",
     "lemmas": [
       "vorne und hinten nicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Leute",
+        "lemma": "Leute",
+        "pos": "noun",
+        "gloss_hint": "people"
+      },
+      {
+        "form": "erzählen",
+        "lemma": "erzählen",
+        "pos": "verb",
+        "gloss_hint": "tell"
+      },
+      {
+        "form": "zwei",
+        "lemma": "zwei",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "husband"
+      },
+      {
+        "form": "studiert",
+        "lemma": "studieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "wife"
+      },
+      {
+        "form": "drei",
+        "lemma": "drei",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jobs",
+        "lemma": "Job",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "reicht",
+        "lemma": "reichen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "finanziell",
+        "lemma": "finanziell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "einfach",
+        "lemma": "einfach",
+        "pos": "adverb",
+        "gloss_hint": "simply"
+      },
+      {
+        "form": "vorne",
+        "lemma": "vorne",
+        "pos": "adverb",
+        "gloss_hint": "front"
+      },
+      {
+        "form": "hinten",
+        "lemma": "hinten",
+        "pos": "adverb",
+        "gloss_hint": "back"
+      },
+      {
+        "form": "Liste",
+        "lemma": "Liste",
+        "pos": "noun",
+        "gloss_hint": "list"
+      },
+      {
+        "form": "Personen",
+        "lemma": "Person",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auswahl",
+        "lemma": "Auswahl",
+        "pos": "noun",
+        "gloss_hint": "shortlist"
+      }
     ]
   },
   "8b5848cf96": {
@@ -11011,10 +11446,115 @@
   },
   "8b67f54a48": {
     "text": "„In dieser Welt wollen die Bürger eine gute Regierung und interessieren sich weniger dafür, was gut oder schlecht ist für die SPD. In der SPD indessen, so stellen einige Genossen selbstkritisch fest, sei es umgekehrt: Kaum jemand interessiere sich für eine gute Regierung – ganz viele sorgen sich um Wohl und Wehe der Partei.“",
-    "translation": null,
+    "translation": "\"In this world, citizens want good government and care less about what is good or bad for the SPD. In the SPD, however, as some comrades note with self-criticism, it is the opposite: hardly anyone cares about good government – many worry about the party's well-being and woes.\"",
     "source": "wiktionary",
     "lemmas": [
       "Wohl und Wehe"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      },
+      {
+        "form": "Bürger",
+        "lemma": "Bürger",
+        "pos": "noun",
+        "gloss_hint": "citizen"
+      },
+      {
+        "form": "wollen",
+        "lemma": "wollen",
+        "pos": "verb",
+        "gloss_hint": "wish"
+      },
+      {
+        "form": "gute",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": "good"
+      },
+      {
+        "form": "Regierung",
+        "lemma": "Regierung",
+        "pos": "noun",
+        "gloss_hint": "government"
+      },
+      {
+        "form": "interessieren",
+        "lemma": "interessieren",
+        "pos": "verb",
+        "gloss_hint": "be interested"
+      },
+      {
+        "form": "schlecht",
+        "lemma": "schlecht",
+        "pos": "adjective",
+        "gloss_hint": "bad"
+      },
+      {
+        "form": "SPD",
+        "lemma": "SPD",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Genossen",
+        "lemma": "Genosse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "selbstkritisch",
+        "lemma": "selbstkritisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "umgekehrt",
+        "lemma": "umgekehrt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "kaum",
+        "lemma": "kaum",
+        "pos": "adverb",
+        "gloss_hint": "hardly"
+      },
+      {
+        "form": "interessiere",
+        "lemma": "interessieren",
+        "pos": "verb",
+        "gloss_hint": "be interested"
+      },
+      {
+        "form": "sorgen",
+        "lemma": "sorgen",
+        "pos": "verb",
+        "gloss_hint": "worry"
+      },
+      {
+        "form": "Wohl",
+        "lemma": "Wohl",
+        "pos": "noun",
+        "gloss_hint": "well-being"
+      },
+      {
+        "form": "Wehe",
+        "lemma": "Wehe",
+        "pos": "noun",
+        "gloss_hint": "woes"
+      },
+      {
+        "form": "Partei",
+        "lemma": "Partei",
+        "pos": "noun",
+        "gloss_hint": "party"
+      }
     ]
   },
   "8b6809aa93": {
@@ -11022,11 +11562,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Things are different in Bavaria.",
     "source": "wiktionary",
     "lemmas": [
       "Uhr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b6852dcf5": {
     "text": "Wenn du nicht mitkommen willst, dann bleibst du hier.",
@@ -11053,11 +11594,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If you fall into the water, you don't need to be afraid of the rain.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b69823291": {
     "text": "Der Hauptmann zwiebelt ihn über die Maßen.",
@@ -12020,11 +12562,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Holy Spirit",
     "source": "wiktionary",
     "lemmas": [
       "Spiritus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b74fb4d80": {
     "text": "„Sie hatten aber auch einen brillanten Verteidiger: den Rechtsanwalt und Abgeordneten Karel Baxa, der schon Leopold Hilsner als Ritualmörder zu fassen versucht hatte.“",
@@ -13526,12 +14069,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to turn someone down",
     "source": "wiktionary",
     "lemmas": [
       "Korb"
     ],
-    "ref": "phrases/jemandem einen Korb geben"
+    "ref": "phrases/jemandem einen Korb geben",
+    "translation_model": "openai/gpt-4.1"
   },
   "8b832fb2d2": {
     "text": "Der Staat muss für eine angemessene Unterbringung von Asylbewerbern sorgen, so hat es jetzt der Europäische Gerichtshof entschieden.",
@@ -13574,11 +14118,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have an entitlement",
     "source": "wiktionary",
     "lemmas": [
       "Anrecht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b85f141ac": {
     "text": "„Des andern Tags hatte mein Herr seinen Offiziern und andern guten Freunden eine fürstliche Gasterei angestellt, weil er die angenehme Zeitung bekommen, daß die Seinigen das feste Haus Braunfels ohne Verlust einzigen Manns eingenommen“",
@@ -15294,11 +15839,12 @@
     "type": "expression",
     "note": "Übles verbreiten, übel nachreden",
     "synonyms": [],
-    "translation": null,
+    "translation": "to enjoy spreading nasty rumors about others",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b9031ede8": {
     "text": "Zwischen den beiden soll es richtig Zoff geben.",
@@ -15365,12 +15911,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "behind closed doors",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
     ],
-    "ref": "phrases/hinter vorgehaltener Hand"
+    "ref": "phrases/hinter vorgehaltener Hand",
+    "translation_model": "openai/gpt-4.1"
   },
   "8b91bdb009": {
     "text": "Inge hat ihr Spiel gewonnen, Hans hingegen verlor.",
@@ -15539,12 +16086,13 @@
     "type": "proverb",
     "note": "auf Dauer bleibt nichts geheim",
     "synonyms": [],
-    "translation": null,
+    "translation": "The truth will come out in the end.",
     "source": "wiktionary",
     "lemmas": [
       "Tag",
       "Sonne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b93547d85": {
     "text": "„Der junge Drubezkoi, Ihr Cousin, bemüht sich auch kräftig um sie.“",
@@ -15590,11 +16138,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get lost in the noise",
     "source": "wiktionary",
     "lemmas": [
       "untergehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b97284c4c": {
     "text": "Der Vergleich hinkt.",
@@ -15961,11 +16510,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not give a damn",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b9c872fd7": {
     "text": "Er war neu in der Klasse und kannte niemanden.",
@@ -15984,11 +16534,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "grant mercy",
     "source": "wiktionary",
     "lemmas": [
       "halten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8b9e4a5446": {
     "text": "„Nicht nur liegt Ostpreußen, mit seiner bedeutenderen Hälfte, hinter einem neuen Eisernen Vorhang, der Grenze zu Russland.“",
@@ -19096,22 +19647,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "everyone should find happiness in their own way",
     "source": "wiktionary",
     "lemmas": [
       "selig"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8bbbce8fd2": {
     "text": "den Sack schlagen und den Esel meinen",
     "type": "expression",
     "note": "den Falschen bestrafen",
     "synonyms": [],
-    "translation": null,
+    "translation": "punish the wrong person",
     "source": "wiktionary",
     "lemmas": [
       "Sack"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8bbd9747ea": {
     "text": "„In Ischim war Humboldt zum Mißfallen der Polizei mit polnischen Strafgefangenen ins Gespräch gekommen, dann hatte er sich davongeschlichen, einen Hügel bestiegen und sein Teleskop aufgebaut.“",
@@ -19505,10 +20058,73 @@
   },
   "8bc1d6419c": {
     "text": "„Die Quittung kommt garantiert bei der nächsten Wahl: Und da kann so eine vermeintlich starke Linke auch ganz schnell wieder weg vom Fenster sein – diesmal endgültig.“",
-    "translation": null,
+    "translation": "\"The bill will come due at the next election: and then such a supposedly strong left can quickly be out of the picture – this time for good.\"",
     "source": "wiktionary",
     "lemmas": [
       "weg vom Fenster sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Quittung",
+        "lemma": "Quittung",
+        "pos": "noun",
+        "gloss_hint": "consequence"
+      },
+      {
+        "form": "kommt",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": "arrive"
+      },
+      {
+        "form": "nächsten",
+        "lemma": "nächst",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wahl",
+        "lemma": "Wahl",
+        "pos": "noun",
+        "gloss_hint": "election"
+      },
+      {
+        "form": "starke",
+        "lemma": "stark",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Linke",
+        "lemma": "Linke",
+        "pos": "noun",
+        "gloss_hint": "leftists"
+      },
+      {
+        "form": "schnell",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": "quickly"
+      },
+      {
+        "form": "weg",
+        "lemma": "weg",
+        "pos": "adverb",
+        "gloss_hint": "away"
+      },
+      {
+        "form": "Fenster",
+        "lemma": "Fenster",
+        "pos": "noun",
+        "gloss_hint": "picture"
+      },
+      {
+        "form": "endgültig",
+        "lemma": "endgültig",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "8bc2144cf2": {
@@ -20488,12 +21104,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get one over on someone",
     "source": "wiktionary",
     "lemmas": [
       "ein"
     ],
-    "ref": "phrases/jemandem eins auswischen"
+    "ref": "phrases/jemandem eins auswischen",
+    "translation_model": "openai/gpt-4.1"
   },
   "8bc9d05bdc": {
     "text": "Die durch die permanente Indoktrination der staatlichen Medien beeinflusste öffentliche Meinung in Russland sieht den Krieg in und gegen die Ukraine als gerechtfertigt an.",
@@ -20509,11 +21126,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "find someone a buyer",
     "source": "wiktionary",
     "lemmas": [
       "Mann"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8bca890f4c": {
     "text": "„Ich mag keine Insekten, Anneliese ist dagegen durch ihre Gartenarbeit gegen jeglichen Ekel vor Würmern, Schnecken und anderem Getier immun; lässig wirft sie ein Küchentuch über die Hummel und befördert das brummende Bündel auf schonende Weise nach draußen.“",
@@ -21402,10 +22020,97 @@
   },
   "8bd1f6c687": {
     "text": "Die Maßeinheit Röntgen war definiert als die Strahlenmenge, die nötig ist, um positive und negative Ionen von einer elektrostatischen Einheit im Volumen von einem Kubikzentimeter Luft bei Normalbedingungen freizusetzen.",
-    "translation": null,
+    "translation": "The unit of measurement roentgen was defined as the amount of radiation necessary to release positive and negative ions from an electrostatic unit in the volume of one cubic centimeter of air under normal conditions.",
     "source": "wiktionary",
     "lemmas": [
       "Röntgen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Maßeinheit",
+        "lemma": "Maßeinheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Röntgen",
+        "lemma": "Röntgen",
+        "pos": "noun",
+        "gloss_hint": "roentgen"
+      },
+      {
+        "form": "definiert",
+        "lemma": "definieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strahlenmenge",
+        "lemma": "Strahlenmenge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "nötig",
+        "lemma": "nötig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "positive",
+        "lemma": "positiv",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "negative",
+        "lemma": "negativ",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ionen",
+        "lemma": "Ion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "elektrostatischen",
+        "lemma": "elektrostatisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einheit",
+        "lemma": "Einheit",
+        "pos": "noun",
+        "gloss_hint": "unit"
+      },
+      {
+        "form": "Volumen",
+        "lemma": "Volumen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kubikzentimeter",
+        "lemma": "Kubikzentimeter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Luft",
+        "lemma": "Luft",
+        "pos": "noun",
+        "gloss_hint": "air"
+      },
+      {
+        "form": "Normalbedingungen",
+        "lemma": "Normalbedingung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "8bd254e3d7": {
@@ -21572,12 +22277,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the back of beyond",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
     ],
-    "ref": "phrases/Arsch der Welt"
+    "ref": "phrases/Arsch der Welt",
+    "translation_model": "openai/gpt-4.1"
   },
   "8bd3b9ad8c": {
     "text": "„Sie trug eine Reihe von Halsketten aus gelb gefärbten Muscheln, eine riesige Sonnenbrille mit gelbem Rahmen und braune Handschuhe, Stiefel und ein weiß geblümtes Tuch, das ihr feuerrotes Haar zurückband.“",
@@ -22484,11 +23190,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "thanks for nothing",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8bdb0616d2": {
     "text": "„Und doch sind seine Fragestellungen in theoretischer und angewandter Hinsicht nicht nur für Linguisten, Psychologen und Pädagogen von Belang, sondern auch für Mediziner und für Verhaltens- und Kommunikationswissenschaftler.“",
@@ -22853,11 +23560,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Say 'peep,' little mouse!",
     "source": "wiktionary",
     "lemmas": [
       "piep"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8be0b274cb": {
     "text": "„Die angebliche Verbindung nach China diente dazu, dem jungen Mann alle Bedenken zu nehmen, es könnte womöglich Schwierigkeiten mit dem Nationalen Volkskongress geben, wenn er nach Hause zurückkehrte.“",
@@ -23798,11 +24506,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Life is a quarantine for paradise.",
     "source": "wiktionary",
     "lemmas": [
       "Quarantäne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8be6298016": {
     "text": "„Voriges Jahr kündigte Manhattans Bezirksstaatsanwalt Cyrus Vance unerwartet an, den Fall neu aufzurollen.“",
@@ -24340,10 +25049,55 @@
   },
   "8be82935e1": {
     "text": "„Die These, dass früher alles besser war, gehört nämlich ins Reich der Fabel.“",
-    "translation": null,
+    "translation": "\"The thesis that everything was better in the past belongs in the realm of fable.\"",
     "source": "wiktionary",
     "lemmas": [
       "ins Reich der Fabel gehören"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "These",
+        "lemma": "These",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "früher",
+        "lemma": "früher",
+        "pos": "adverb",
+        "gloss_hint": "formerly"
+      },
+      {
+        "form": "alles",
+        "lemma": "all",
+        "pos": "pronoun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besser",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": "good"
+      },
+      {
+        "form": "gehört",
+        "lemma": "gehören",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reich",
+        "lemma": "Reich",
+        "pos": "noun",
+        "gloss_hint": "realm"
+      },
+      {
+        "form": "Fabel",
+        "lemma": "Fabel",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "8be833ad49": {
@@ -24772,14 +25526,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "know someone by sight",
     "source": "wiktionary",
     "lemmas": [
       "kennen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "8beb0bb485": {
     "text": "Schade, dass sie das Loch in seiner Tasche nicht gestopft hatte.",
@@ -25365,11 +26117,12 @@
     "type": "expression",
     "note": "etwas demonstrativ (in aller Öffentlichkeit) zeigen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to flaunt something",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8bf5951982": {
     "text": "Ein endgültiges Ja steht noch aus.",
@@ -25568,11 +26321,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not to think at all",
     "source": "wiktionary",
     "lemmas": [
       "fünf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8bfad8864b": {
     "text": "„Wir wohnten nahe an der Kirche, an der Heinrich Behlen Kaplan war, und er hatte mir dieses Sälchen mit Bühne als Trainingsmöglichkeit besorgt, auch das Zimmer in der Pension.“",
@@ -25947,11 +26701,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on the same wavelength",
     "source": "wiktionary",
     "lemmas": [
       "Welle"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "8bfe25e389": {
     "text": "Der Kleine Hund ist ein Sternbild.",

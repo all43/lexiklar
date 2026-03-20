@@ -697,10 +697,37 @@
   },
   "6705bfe88c": {
     "text": "Das Bellen des Hundes geht Peter auf den Wecker.",
-    "translation": null,
+    "translation": "The dog's barking gets on Peter's nerves.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem auf den Wecker gehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bellen",
+        "lemma": "bellen",
+        "pos": "verb",
+        "gloss_hint": "bark"
+      },
+      {
+        "form": "Hundes",
+        "lemma": "Hund",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Peter",
+        "lemma": "Peter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wecker",
+        "lemma": "Wecker",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6705fb1802": {
@@ -708,11 +735,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Have an ace up one's sleeve.",
     "source": "wiktionary",
     "lemmas": [
       "Karte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6707643614": {
     "text": "Er ging auf die Straße. Dann kamen wir auf die Bäckerstraße. (aber: Dann fuhren/zogen wir in die Bäckerstraße.)",
@@ -1371,11 +1399,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Have no trump card left.",
     "source": "wiktionary",
     "lemmas": [
       "Trumpf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "670f8014d1": {
     "text": "Heute ist mein Sohn überaus zahm.",
@@ -2294,13 +2323,14 @@
     "synonyms": [
       "ausstecken"
     ],
-    "translation": null,
+    "translation": "make a bad impression",
     "source": "wiktionary",
     "lemmas": [
       "Reif",
       "anstecken"
     ],
-    "ref": "phrases/einen Reif anstecken"
+    "ref": "phrases/einen Reif anstecken",
+    "translation_model": "openai/gpt-4.1"
   },
   "6718e0aaf5": {
     "text": "„Das Lazarett ist voll belegt worden aus unserm Zug, es sind viele schwere Fälle dabei.“",
@@ -2581,11 +2611,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not give a damn about someone",
     "source": "wiktionary",
     "lemmas": [
       "scheißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "671c908d3c": {
     "text": "„Wenn sie aber die uneheliche Geburt ihres Kindes eingesteht, und keinen Anspruch auf die Einschreibung des Namens des Vaters macht, so darf ihr das Geheimniß ihres wahren Namens nicht entrissen werden, sondern es ist der angegebene Name mit dem Beisatze ‚a n g e b l i c h‘ in das Geburtsbuch einzutragen, das Kind als ein unehelich gebornes zu bezeichnen und die Rubrik des Namens des Vaters ganz leer zu lassen […].“",
@@ -2832,11 +2863,12 @@
     "type": "expression",
     "note": "zurechtrücken",
     "synonyms": [],
-    "translation": null,
+    "translation": "straighten something out",
     "source": "wiktionary",
     "lemmas": [
       "Stoß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "671e069481": {
     "text": "„Robinson zog sich noch mehrmals in die Verborgenheit der Höhle zurück, aber durch die Kornernte und die Heumahd wurde er davon abgelenkt.“",
@@ -3148,11 +3180,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pull oneself up by one's own bootstraps",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "671fec2939": {
     "text": "In Deutsch habe ich immerhin eine Drei.",
@@ -4558,11 +4591,12 @@
       "Richtung",
       "Abzweigungen"
     ],
-    "translation": null,
+    "translation": "ask for directions",
     "source": "wiktionary",
     "lemmas": [
       "Weg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "672946cdd6": {
     "text": "„Die Neue kam nicht näher als 40 cm an Jessika heran.“",
@@ -4732,10 +4766,31 @@
   },
   "672c9ef8d9": {
     "text": "Alle Beteiligten schieben sich den Schwarzen Peter gegenseitig zu.",
-    "translation": null,
+    "translation": "All those involved keep passing the buck to each other.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem den Schwarzen Peter zuschieben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Beteiligten",
+        "lemma": "Beteiligter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schieben",
+        "lemma": "schieben",
+        "pos": "verb",
+        "gloss_hint": "blame"
+      },
+      {
+        "form": "Schwarzen Peter",
+        "lemma": "Schwarzer Peter",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "672d6d5672": {
@@ -4743,24 +4798,26 @@
     "type": "expression",
     "note": "unruhig sitzen",
     "synonyms": [],
-    "translation": null,
+    "translation": "have ants in one's pants",
     "source": "wiktionary",
     "lemmas": [
       "im",
       "Hintern"
     ],
-    "ref": "phrases/Hummeln im Hintern haben"
+    "ref": "phrases/Hummeln im Hintern haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "672e36994a": {
     "text": "einem Schmeichler und Wolf ist nicht zu trauen",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You can't trust a flatterer or a wolf.",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "673179296b": {
     "text": "„Wenn man zweieinhalb bis 3.000 Leute aus dem Werk rausschmeiße, würden ja enorme Kosten gespart.“",
@@ -5490,10 +5547,43 @@
   },
   "6734c60f1a": {
     "text": "Der Bibliothek fehlt es an Sachbüchern an allen Ecken und Kanten.",
-    "translation": null,
+    "translation": "The library is lacking reference books everywhere.",
     "source": "wiktionary",
     "lemmas": [
       "an allen Ecken und Kanten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bibliothek",
+        "lemma": "Bibliothek",
+        "pos": "noun",
+        "gloss_hint": "library"
+      },
+      {
+        "form": "fehlt",
+        "lemma": "fehlen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sachbüchern",
+        "lemma": "Sachbuch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ecken",
+        "lemma": "Ecke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kanten",
+        "lemma": "Kante",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "6734d15a76": {
@@ -6000,11 +6090,12 @@
     "type": "expression",
     "note": "es besonders schätzen und behüten",
     "synonyms": [],
-    "translation": null,
+    "translation": "be especially protective of something",
     "source": "wiktionary",
     "lemmas": [
       "heikel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6737ec4006": {
     "text": "eine schmieren",
@@ -6013,11 +6104,12 @@
     "synonyms": [
       "ohrfeigen"
     ],
-    "translation": null,
+    "translation": "give someone a slap",
     "source": "wiktionary",
     "lemmas": [
       "schmieren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "673838b724": {
     "text": "„Die Wirtin mußterte uns mißtrauisch.“",
@@ -6626,10 +6718,37 @@
   },
   "673f630a0e": {
     "text": "Alle waren geladen, Gesinde, Mäher und Tagelöhner.",
-    "translation": null,
+    "translation": "Everyone was invited—servants, mowers, and day laborers.",
     "source": "wiktionary",
     "lemmas": [
       "Mäher"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "geladen",
+        "lemma": "geladen",
+        "pos": "adjective",
+        "gloss_hint": "invited"
+      },
+      {
+        "form": "Gesinde",
+        "lemma": "Gesinde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mäher",
+        "lemma": "Mäher",
+        "pos": "noun",
+        "gloss_hint": "mower"
+      },
+      {
+        "form": "Tagelöhner",
+        "lemma": "Tagelöhner",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "674079612e": {
@@ -6817,11 +6936,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I can tell you",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "674527174e": {
     "text": "Herr Lotze verliebte sich unmittelbar nach seiner Ankunft am Honolulu International Airport in das bezaubernde Honolulu und weigert sich seitdem standhaft, es wieder zu verlassen.",
@@ -7702,11 +7822,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to meet one's Waterloo",
     "source": "wiktionary",
     "lemmas": [
       "Waterloo"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "674dc3b004": {
     "text": "„So konnte ich mir bald seinen Lebenslauf zusammenreimen, der durch ein alltägliches und geringfügiges Versäumnis eine außergewöhnliche Wendung genommen hatte.“",
@@ -8454,10 +8575,91 @@
   },
   "675564b2cd": {
     "text": "„Zweiundzwanzig Monate lang hatte er als Botschafter bei den Vereinten Nationen gedient, und während der Watergate-Affäre hielt er als unverwüstlich optimistischer Vorsitzender des Republikanischen Parteikomitees Nixon die Stange.“",
-    "translation": null,
+    "translation": "For twenty-two months he had served as ambassador to the United Nations, and during the Watergate scandal he stood by Nixon as an indestructibly optimistic chairman of the Republican National Committee.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem die Stange halten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zweiundzwanzig",
+        "lemma": "zweiundzwanzig",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Monate",
+        "lemma": "Monat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Botschafter",
+        "lemma": "Botschafter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vereinten",
+        "lemma": "vereint",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nationen",
+        "lemma": "Nation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Watergate-Affäre",
+        "lemma": "Watergate-Affäre",
+        "pos": "noun",
+        "gloss_hint": "scandal"
+      },
+      {
+        "form": "unverwüstlich",
+        "lemma": "unverwüstlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "optimistischer",
+        "lemma": "optimistisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorsitzender",
+        "lemma": "Vorsitzender",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Republikanischen",
+        "lemma": "republikanisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Parteikomitees",
+        "lemma": "Parteikomitee",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nixon",
+        "lemma": "Nixon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stange",
+        "lemma": "Stange",
+        "pos": "noun",
+        "gloss_hint": "bar"
+      }
     ]
   },
   "67565eb049": {
@@ -8654,10 +8856,73 @@
   },
   "67574e4f83": {
     "text": "„Obwohl Vater Artur gleich in zwei Jobs täglich 16 Stunden hart arbeitet, reicht das Geld vorne und hinten nicht.“",
-    "translation": null,
+    "translation": "Although Father Artur works hard in two jobs for 16 hours daily, the money is not enough by a long shot.",
     "source": "wiktionary",
     "lemmas": [
       "vorne und hinten nicht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vater",
+        "lemma": "Vater",
+        "pos": "noun",
+        "gloss_hint": "father"
+      },
+      {
+        "form": "Artur",
+        "lemma": "Artur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jobs",
+        "lemma": "Job",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "täglich",
+        "lemma": "täglich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stunden",
+        "lemma": "Stunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hart",
+        "lemma": "hart",
+        "pos": "adjective",
+        "gloss_hint": "hard"
+      },
+      {
+        "form": "arbeitet",
+        "lemma": "arbeiten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geld",
+        "lemma": "Geld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vorne",
+        "lemma": "vorne",
+        "pos": "adverb",
+        "gloss_hint": "front"
+      },
+      {
+        "form": "hinten",
+        "lemma": "hinten",
+        "pos": "adverb",
+        "gloss_hint": "back"
+      }
     ]
   },
   "675939ad25": {
@@ -8797,11 +9062,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "beanpole (a very tall, thin person)",
     "source": "wiktionary",
     "lemmas": [
       "lang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6759f5793e": {
     "text": "„Die sonderbare Grille schien ihn weniger zu überraschen, als ich im geheimen befürchtet hatte; er ging vielmehr sorgfältig darauf ein und brachte dabei gewiß nicht minder wunderliche Dinge vor.“",
@@ -9006,11 +9272,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to cut someone off (in conversation)",
     "source": "wiktionary",
     "lemmas": [
       "fahren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "675a25dd80": {
     "text": "Am Bungeejumping reizt mich vor allem der Nervenkitzel.",
@@ -9708,11 +9975,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to stop the drama",
     "source": "wiktionary",
     "lemmas": [
       "Theater"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "675ed937bb": {
     "text": "Noch weicher wird ein Gewebe, wenn man die Fäden der Schlingen aufschneidet.",
@@ -13534,10 +13802,31 @@
   },
   "677d593e5f": {
     "text": "Der Schuppige Stielporling ist eine Pilzsorte.",
-    "translation": null,
+    "translation": "The scaly polypore is a type of fungus.",
     "source": "wiktionary",
     "lemmas": [
       "Schuppiger Stielporling"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schuppige",
+        "lemma": "schuppig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stielporling",
+        "lemma": "Stielporling",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pilzsorte",
+        "lemma": "Pilzsorte",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "677da8af41": {
@@ -15632,11 +15921,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in balance",
     "source": "wiktionary",
     "lemmas": [
       "Waage"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6791ce2a6f": {
     "text": "„[…] der Zugriff auf private Daten der Bürger wird durch das Gesetz erleichtert.“",
@@ -15715,13 +16005,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's the crux of the matter",
     "source": "wiktionary",
     "lemmas": [
       "Hase",
       "Pfeffer"
     ],
-    "ref": "phrases/da liegt der Hase im Pfeffer"
+    "ref": "phrases/da liegt der Hase im Pfeffer",
+    "translation_model": "openai/gpt-4.1"
   },
   "67920b0944": {
     "text": "„Will einer hinaus in die Fremde, muss er Fremdsprachen können.“",
@@ -16342,11 +16633,12 @@
     "synonyms": [
       "tragen"
     ],
-    "translation": null,
+    "translation": "to carry coals to Newcastle (to do something pointless)",
     "source": "wiktionary",
     "lemmas": [
       "Rhein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "6794c2d85d": {
     "text": "„Edna heizte nun den Ofen im Wohnzimmer, und obwohl wir im selben Raum saßen, sprach sie genauso laut weiter: ‚Und dein Mosmann ist auch so ein Blindgänger! […]Und du gibst für den armen hilflosen Menschen dein Studium auf, erziehst seine Kinder, wäschst seine Hemden, gehst arbeiten, damit er sich ein Auto kaufen kann - und jetzt, jetzt hat er ’ne andere!‘“",
@@ -17518,11 +17810,12 @@
     "type": "expression",
     "note": "meint die sozial schlechter gestellten Teile einer Ortschaft (aus den USA)",
     "synonyms": [],
-    "translation": null,
+    "translation": "on the wrong side of the tracks",
     "source": "wiktionary",
     "lemmas": [
       "Eisenbahn"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "679d24dc3b": {
     "text": "Jetzt werden Fakten geschaffen, oder wie wir sagen: Jetzt gibt es Butter bei die Fische!",
@@ -17631,18 +17924,52 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to know every nook and cranny",
     "source": "wiktionary",
     "lemmas": [
       "Weg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "679f4c4f6c": {
     "text": "„Die Fahrt mit einem SUV sollte um die hundert Euro kosten.“",
-    "translation": null,
+    "translation": "A ride in an SUV should cost around a hundred euros.",
     "source": "wiktionary",
     "lemmas": [
       "SUV"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fahrt",
+        "lemma": "Fahrt",
+        "pos": "noun",
+        "gloss_hint": "drive"
+      },
+      {
+        "form": "SUV",
+        "lemma": "SUV",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hundert",
+        "lemma": "hundert",
+        "pos": "numeral",
+        "gloss_hint": "hundred"
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "kosten",
+        "lemma": "kosten",
+        "pos": "verb",
+        "gloss_hint": "cost"
+      }
     ]
   },
   "679f988191": {
@@ -18804,12 +19131,13 @@
       "neugierig",
       "etwas"
     ],
-    "translation": null,
+    "translation": "to crane one's neck",
     "source": "wiktionary",
     "lemmas": [
       "Hals",
       "lang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "67a7ccb871": {
     "text": "„Südkurdisch kennt keinen Ergativ; hier steht das Agens im Casus rectus und das Patiens im Casus obliquus.“",
@@ -19581,11 +19909,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to plan something well in advance",
     "source": "wiktionary",
     "lemmas": [
       "lang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "67b3ba0e2d": {
     "text": "„Ida hielt ihren Koffer umklammert und beeilte sich, die Gangway hinunterzukommen, um sich eine weitere Zigarette anzustecken, die erste auf festem Boden nach dreizehn Tagen Überfahrt.“",
@@ -21609,11 +21938,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something is going wrong",
     "source": "wiktionary",
     "lemmas": [
       "Wurm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "67bdd1a05c": {
     "text": "späte Reu ist selten treu",
@@ -22027,11 +22357,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fight like a lion",
     "source": "wiktionary",
     "lemmas": [
       "Löwe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "67c086f2d8": {
     "text": "„Der Verkehrsstrom, Yard um Yard vorwärtsflutend, hatte endlich Punkt B erreicht, von wo auf dem Plan des Oberinspektors die punktierten Linien auseinanderliefen.“",
@@ -22652,11 +22983,12 @@
     "synonyms": [
       "bohren"
     ],
-    "translation": null,
+    "translation": "to play the fool",
     "source": "wiktionary",
     "lemmas": [
       "Narr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "67c51d88fd": {
     "text": "Manche Leute sind echte Glückspilze.",
@@ -25302,22 +25634,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "opium for the masses",
     "source": "wiktionary",
     "lemmas": [
       "Opium"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "67de843b57": {
     "text": "weder mit Geld noch guten Worten",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "neither with money nor kind words",
     "source": "wiktionary",
     "lemmas": [
       "Geld"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "67dee6a598": {
     "text": "„Da ging einer von den Zwölfen, mit Namen Judas Iskariot, zu den Hohenpriestern und sprach: Was wollt ihr mir geben? Ich will ihn euch verraten. Und sie boten ihm dreißig Silberlinge.“",
@@ -26616,10 +26950,25 @@
   },
   "67e73e755a": {
     "text": "Oranienburg n. Berlin",
-    "translation": null,
+    "translation": "Oranienburg near Berlin",
     "source": "wiktionary",
     "lemmas": [
       "n."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Oranienburg",
+        "lemma": "Oranienburg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Berlin",
+        "lemma": "Berlin",
+        "pos": "noun",
+        "gloss_hint": "Berlin"
+      }
     ]
   },
   "67e763dac2": {
@@ -29058,11 +29407,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to top it all off",
     "source": "wiktionary",
     "lemmas": [
       "aufsetzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "67fd5d0a93": {
     "text": "Mit einem Klick auf diesen Button können Sie sich mit ihrem Benutzerkonto abmelden.",
