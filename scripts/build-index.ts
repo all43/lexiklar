@@ -826,7 +826,12 @@ function main(): void {
           lemmaMap.get(partLemma) ||
           lemmaMap.get(partLemma.toLowerCase()) ||
           []
-        ).slice().sort((a, b) => (b.data.zipf ?? 0) - (a.data.zipf ?? 0));
+        ).slice().sort((a, b) => {
+          const zipfDiff = (b.data.zipf ?? 0) - (a.data.zipf ?? 0);
+          if (zipfDiff !== 0) return zipfDiff;
+          // Tie-break: more senses = more general word, put first
+          return (b.data.senses?.length ?? 0) - (a.data.senses?.length ?? 0);
+        });
         for (const target of targets) {
           if (seenFiles.has(target.fileKey)) continue;
           seenFiles.add(target.fileKey);
