@@ -244,15 +244,24 @@
 
       <!-- Grammar -->
       <template v-if="word.pos === 'verb'">
-        <f7-block-title id="word-grammar">{{ t('word.conjugation') }}</f7-block-title>
+        <div class="block-title meanings-header" id="word-grammar">
+          <span>{{ t('word.conjugation') }}</span>
+          <a class="grammar-jump" @click.prevent="scrollToTop">↑ {{ t('word.meanings') }}</a>
+        </div>
         <VerbConjugation :verb="word" />
       </template>
       <template v-else-if="word.pos === 'noun' || word.pos === 'proper noun'">
-        <f7-block-title id="word-grammar">{{ t('word.declension') }}</f7-block-title>
+        <div class="block-title meanings-header" id="word-grammar">
+          <span>{{ t('word.declension') }}</span>
+          <a class="grammar-jump" @click.prevent="scrollToTop">↑ {{ t('word.meanings') }}</a>
+        </div>
         <NounDeclension :word="(word as NounWord)" />
       </template>
       <template v-else-if="word.pos === 'adjective'">
-        <f7-block-title id="word-grammar">{{ t('word.grammar') }}</f7-block-title>
+        <div class="block-title meanings-header" id="word-grammar">
+          <span>{{ t('word.grammar') }}</span>
+          <a class="grammar-jump" @click.prevent="scrollToTop">↑ {{ t('word.meanings') }}</a>
+        </div>
         <AdjectiveDeclension :word="word" />
       </template>
       <template v-else>
@@ -688,6 +697,11 @@ export default defineComponent({
       const marginTop = parseInt(getComputedStyle(el).marginTop) || 0;
       const target = pageContent.scrollTop + el.getBoundingClientRect().top - navbarHeight - marginTop - 8;
       pageContent.scrollTo({ top: target, behavior: "smooth" });
+    },
+
+    scrollToTop() {
+      const pageContent = document.querySelector(".page-current .page-content") as HTMLElement | null;
+      pageContent?.scrollTo({ top: 0, behavior: "smooth" });
     },
   },
   beforeUnmount() {
