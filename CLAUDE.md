@@ -684,12 +684,11 @@ Configured via `vite-plugin-pwa` in `vite.config.ts`. Capacitor provides no PWA 
 
 High-frequency words are verified using Claude Code's built-in model as a subagent (no API credits). The workflow:
 
-1. Launch subagent with prompt from `prompts/proofread-subagent.md`, replacing the word list at the bottom
-2. Subagent writes `data/proofread-results.json`
-3. Apply: `npx tsx scripts/apply-proofread-results.ts --results data/proofread-results-bNN.json --cleanup`
+1. **Pre-filter examples**: when generating the word list, collect each word's `example_ids` and check shards for `_proofread` status. Only include unproofread example IDs as `check_examples` per word entry. This avoids bloating subagent context with already-verified examples.
+2. Launch subagent with prompt from `prompts/proofread-subagent.md`, replacing the word list at the bottom
+3. Subagent writes `data/proofread-results.json`
+4. Apply: `npx tsx scripts/apply-proofread-results.ts --results data/proofread-results-bNN.json --cleanup`
    (`--cleanup` deletes the results file automatically if there are no unresolved issues)
-
-The subagent skips examples already marked in `_proofread` — shared examples are verified only once even if referenced by multiple words.
 
 `grammar_override` issues in the results are automatically written as `_overrides` by the apply script, so corrections survive re-transform.
 

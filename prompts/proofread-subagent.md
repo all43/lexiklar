@@ -11,11 +11,7 @@ You are proofreading German dictionary entries for the Lexiklar project. Use you
 
 For each word, read its JSON file from `data/words/{pos}/{word}.json` and referenced example shards from `data/examples/{xx}.json` (first 2 chars of example ID).
 
-**IMPORTANT: Skip already-verified examples.** Before verifying any example, check its `_proofread` field in the shard:
-- If `_proofread.translation` is already set → skip translation check, it was verified in a prior batch
-- If `_proofread.annotations` is already set (a hash string) → skip annotation check
-- If both are set → add it to `verified` without re-checking
-- Only verify what is not yet marked
+**IMPORTANT: Only check examples listed in the word list below.** Each word entry may include `check_examples: [id1, id2, ...]` — these are the unproofread example IDs. Only read shard files for these IDs. Skip all other examples owned by the word (they are already proofread). If `check_examples` is absent or not provided, check all examples from `senses[].example_ids`.
 
 For each example that needs verification:
 1. **Translation**: Is the English translation accurate and natural?
@@ -50,7 +46,7 @@ Write to `data/proofread-results.json` (overwrite existing):
 ```
 
 Rules:
-- `verified`: BOTH translation AND annotations correct (or already marked in `_proofread`)
+- `verified`: BOTH translation AND annotations correct
 - `translation_ok`: translation correct but annotation issues
 - `word_glosses_ok`: ALL senses have accurate `gloss_en` AND `gloss_en_full`
 - Only content words (nouns, verbs, adjectives) are annotated — pronouns/articles/prepositions not expected
@@ -59,10 +55,10 @@ Rules:
 
 ## Words to proofread
 
-Replace this section with the current batch of word paths, e.g.:
+Replace this section with the current batch of word paths. When `check_examples` is provided, only read and verify those example IDs (others are already proofread). Example:
 
-1. `verbs/sagen`
-2. `nouns/Kind`
-3. `adjectives/groß`
+1. `verbs/sagen` — check_examples: `ff9c6017fd`, `a1b2c3d4e5`
+2. `nouns/Kind` — check_examples: `d3e4f5a6b7`
+3. `adjectives/groß` (all examples need checking)
 
 Start reading the first word file, then proceed through the list.
