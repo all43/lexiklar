@@ -608,7 +608,7 @@ export default defineComponent({
           { text: t("report.cancel") },
           {
             text: t("favorites.remove"),
-            bold: true,
+            strong: true,
             onClick: () => {
               const { pos, file } = this.f7route.params as { pos: string; file: string };
               const fileKey = `${pos}/${file}`;
@@ -764,14 +764,14 @@ export default defineComponent({
     },
 
     getSenseSynonyms(sense: Sense): SearchResult[] {
-      const words: string[] = (sense as Record<string, unknown>).synonyms as string[] ?? [];
+      const words = sense.synonyms ?? [];
       if (!words.length) return [];
       const map = this.relatedByLemma;
       return words.map((w) => map[w]).filter((r): r is SearchResult => !!r);
     },
 
     getSenseAntonyms(sense: Sense): SearchResult[] {
-      const words: string[] = (sense as Record<string, unknown>).antonyms as string[] ?? [];
+      const words = sense.antonyms ?? [];
       if (!words.length) return [];
       const map = this.relatedByLemma;
       return words.map((w) => map[w]).filter((r): r is SearchResult => !!r);

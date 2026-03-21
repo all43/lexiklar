@@ -19,10 +19,6 @@ import {
   lookupFPM,
   combineZipf,
   CORPUS_WEIGHTS,
-  LEIPZIG_NEWS_WORDS,
-  LEIPZIG_WIKI_WORDS,
-  SUBTLEX_FILE,
-  OPENSUBTITLES_FILE,
   type FPMMap,
 } from "./lib/corpus.js";
 

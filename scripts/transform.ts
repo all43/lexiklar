@@ -148,6 +148,7 @@ interface GroupEntry {
   offset: number;
   length: number;
   hash: string;
+  stateKey: string;
 }
 
 interface CompoundBufferEntry {
@@ -251,6 +252,7 @@ interface CollectedExample {
   note?: string | null;
   synonyms?: string[];
   annotations?: unknown[];
+  text_linked?: string;
   _proofread?: unknown;
 }
 
@@ -528,6 +530,27 @@ function extractExpressions(entry: WiktionaryEntry): string[] {
   }
 
   return ids;
+}
+
+/**
+ * Parse Wiktionary sense_index strings → 0-based indices.
+ * Handles: "1" → [0], "1a" → [0], "1, 2" → [0,1], "1–3" → [0,1,2]
+ */
+function parseSenseIndices(idx: string | undefined): number[] {
+  if (!idx) return [];
+  const parts: number[] = [];
+  for (const seg of idx.split(",").map((s) => s.trim())) {
+    const rangeMatch = seg.match(/^(\d+)[–-](\d+)/);
+    if (rangeMatch) {
+      const start = parseInt(rangeMatch[1]);
+      const end = parseInt(rangeMatch[2]);
+      for (let i = start; i <= end; i++) parts.push(i - 1);
+    } else {
+      const n = parseInt(seg);
+      if (!isNaN(n) && n > 0) parts.push(n - 1);
+    }
+  }
+  return [...new Set(parts)];
 }
 
 /**
@@ -1535,10 +1558,12 @@ async function main(): Promise<void> {
 
     const key = `${entry.word}|${entry.pos}`;
     if (!groups.has(key)) groups.set(key, []);
-    // Store byte offset + length + hash only. Raw line is read back on demand in
-    // Phase 2 to keep memory usage proportional to entry count, not entry size.
+    // Store byte offset + length + hash + stateKey. Raw line is read back on
+    // demand in Phase 2 to keep memory proportional to entry count, not size.
+    // stateKey lets Phase 2 check the hash against .import-state without re-reading.
     const lineBytes = Buffer.byteLength(line, "utf-8");
-    groups.get(key)!.push({ offset: lineStart, length: lineBytes, hash: sha256(line) });
+    const stateKey = `${entry.word}|${entry.pos}|${entry.etymology_number || 1}`;
+    groups.get(key)!.push({ offset: lineStart, length: lineBytes, hash: sha256(line), stateKey });
   }
 
   const totalEntries = [...groups.values()].reduce(
@@ -1581,7 +1606,9 @@ async function main(): Promise<void> {
         if (bufferedOffset == null) break; // not present in Wiktionary data
         const bufferedRaw = readLineAt(bufferedOffset);
         const bufferedLen = Buffer.byteLength(bufferedRaw, "utf-8");
-        groups.set(counterpartKey, [{ offset: bufferedOffset, length: bufferedLen, hash: sha256(bufferedRaw) }]);
+        const bufferedParsed = JSON.parse(bufferedRaw) as WiktionaryEntry;
+        const bufferedStateKey = `${bufferedParsed.word}|${bufferedParsed.pos}|${bufferedParsed.etymology_number || 1}`;
+        groups.set(counterpartKey, [{ offset: bufferedOffset, length: bufferedLen, hash: sha256(bufferedRaw), stateKey: bufferedStateKey }]);
         counterpartsAdded++;
         break; // counterpart added, no need to check other entries in this group
       }
@@ -1622,7 +1649,8 @@ async function main(): Promise<void> {
       const bufferedParsed = JSON.parse(bufferedRaw) as WiktionaryEntry;
       const key = `${bufferedParsed.word}|${bufferedParsed.pos}`;
       if (groups.has(key)) continue;
-      groups.set(key, [{ offset: buffered.offset, length: buffered.length, hash: sha256(bufferedRaw) }]);
+      const compStateKey = `${bufferedParsed.word}|${bufferedParsed.pos}|${bufferedParsed.etymology_number || 1}`;
+      groups.set(key, [{ offset: buffered.offset, length: buffered.length, hash: sha256(bufferedRaw), stateKey: compStateKey }]);
       compoundPartsAdded++;
     }
     if (compoundPartsAdded > 0)
@@ -1644,6 +1672,7 @@ async function main(): Promise<void> {
         const raw = readLineAt(entry.offset, entry.length);
         const parsed = JSON.parse(raw) as WiktionaryEntry;
         if (parsed.pos !== "verb") continue;
+        if (!parsed.senses?.length) continue;
         // Only care about entries where EVERY sense is form-of
         const allFormOf = parsed.senses.every(
           (s) => (s.form_of?.length ?? 0) > 0 || s.tags?.includes("form-of"),
@@ -1664,10 +1693,13 @@ async function main(): Promise<void> {
       const buffered = compoundBuffer.get(parentWord.toLowerCase());
       if (!buffered) continue; // parent not in Wiktionary data
       const bufferedRaw = readLineAt(buffered.offset, buffered.length);
+      const parentParsed = JSON.parse(bufferedRaw) as WiktionaryEntry;
+      const parentStateKey = `${parentParsed.word}|${parentParsed.pos}|${parentParsed.etymology_number || 1}`;
       groups.set(parentKey, [{
         offset: buffered.offset,
         length: buffered.length,
         hash: sha256(bufferedRaw),
+        stateKey: parentStateKey,
       }]);
       parentVerbsAdded++;
     }
@@ -1741,12 +1773,27 @@ async function main(): Promise<void> {
     let groupWord = "";
     let groupPosDir = "";
 
-    for (const { offset, length, hash } of entries) {
-      // Read raw line from disk on demand — groups stores only byte offsets to
-      // keep Phase 1 memory proportional to entry count, not entry size.
+    for (const { offset, length, hash, stateKey } of entries) {
+      // Fast-path: check hash against import state BEFORE reading the JSONL line.
+      // stateKey was captured during Phase 1 so we can skip the expensive
+      // readLineAt + JSON.parse for unchanged entries (~99% of full runs).
+      const stateEntry = state.entries[stateKey];
+
+      if (!forcePos && !wordsFilter && stateEntry?.hash === hash) {
+        if (stateEntry.file === "__form-of-skip__") {
+          skipped++;
+          continue;
+        }
+        const expectedPath = join(DATA_DIR, stateEntry.file);
+        if (existsSync(expectedPath)) {
+          skipped++;
+          continue;
+        }
+      }
+
+      // Hash mismatch or forced — read and parse the full JSONL line
       const raw = readLineAt(offset, length);
       const parsed = JSON.parse(raw) as WiktionaryEntry;
-      const stateKey = `${parsed.word}|${parsed.pos}|${parsed.etymology_number || 1}`;
 
       // --force-pos: only re-process entries of the specified POS
       if (forcePos && parsed.pos !== forcePos) {
@@ -1754,28 +1801,11 @@ async function main(): Promise<void> {
         continue;
       }
 
-      const stateEntry = state.entries[stateKey];
-
       // --force-pos re-processes existing files only — skip entries not yet in
       // the dataset so that rule-change runs don't pull in new words
       if (forcePos && !stateEntry) {
         skipped++;
         continue;
-      }
-
-      // Skip if source unchanged and not explicitly targeted.
-      // Two valid states: file exists on disk, or entry was intentionally skipped
-      // (sentinel "__form-of-skip__" written by the form-of skip below).
-      if (stateEntry?.hash === hash && !forcePos && !wordsFilter) {
-        if (stateEntry.file === "__form-of-skip__") {
-          skipped++;
-          continue;
-        }
-        const expectedPath = join(DATA_DIR, stateEntry.file + ".json");
-        if (existsSync(expectedPath)) {
-          skipped++;
-          continue;
-        }
       }
 
       const transform = transformers[parsed.pos];
@@ -1805,26 +1835,6 @@ async function main(): Promise<void> {
       const rawHyponyms = (parsed.hyponyms || [])
         .map((h) => h.word)
         .filter(Boolean);
-      // Antonyms and synonyms: entry-level in German Wiktionary, but carry sense_index.
-      // Parse sense_index → 0-based indices and populate senses[N].synonyms/antonyms.
-      // Handles: "1" → [0], "1a" → [0], "1, 2" → [0,1], "1–3" → [0,1,2]
-      function parseSenseIndices(idx: string | undefined): number[] {
-        if (!idx) return [];
-        const parts: number[] = [];
-        for (const seg of idx.split(",").map((s) => s.trim())) {
-          const rangeMatch = seg.match(/^(\d+)[–-](\d+)/);
-          if (rangeMatch) {
-            const start = parseInt(rangeMatch[1]);
-            const end = parseInt(rangeMatch[2]);
-            for (let i = start; i <= end; i++) parts.push(i - 1);
-          } else {
-            const n = parseInt(seg);
-            if (!isNaN(n) && n > 0) parts.push(n - 1);
-          }
-        }
-        return [...new Set(parts)];
-      }
-
       const senseCount = data.senses?.length ?? 0;
       for (const [items, field] of [
         [parsed.synonyms || [], "synonyms"],
