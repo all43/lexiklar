@@ -8,24 +8,56 @@
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "etwas zu tun vermögen",
-      "gloss_en": "be able to",
+      "gloss": "etwas beherrschen, wissen; fähig sein, etwas zu tun",
+      "gloss_en": "can (be able)",
       "tags": [],
       "example_ids": [
-        "a454082091",
-        "afbb42c34f"
+        "c52b95b646",
+        "9af32414f0",
+        "404c8ae749"
+      ],
+      "synonyms": [
+        "beherrschen",
+        "verstehen",
+        "wissen"
+      ],
+      "antonyms": [],
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "To master or know something; to be capable of doing something",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "able to",
+        "capable of",
+        "know how to"
+      ],
+      "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "auf eine bestimmte Art und Weise zu etwas in der Lage sein",
+      "gloss_en": "manage",
+      "tags": [],
+      "example_ids": [
+        "07ea1bdfed",
+        "e855b192a5",
+        "04a0f068ab"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To be able to do something",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "To be able to do something in a particular way or manner",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "pull off",
+        "handle"
+      ],
+      "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
-      "gloss": "durch bestimmte Umstände die Möglichkeit haben, etwas zu tun",
+      "gloss": "die Erlaubnis, die Möglichkeit haben, etwas tun zu dürfen",
       "gloss_en": "be allowed",
       "tags": [],
       "example_ids": [
+        "8bd0d9c392",
         "3771a96f29",
         "6e893cc71e",
         "27c3635a9c"
@@ -43,74 +75,24 @@
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
-      "gloss": "aufgrund bestimmter Gegebenheiten zu einem Verhalten berechtigt sein",
-      "gloss_en": "be entitled to",
-      "tags": [],
-      "example_ids": [
-        "b888816222",
-        "eae4d1243a"
+      "gloss": "noch die nötige Kraft für etwas haben",
+      "gloss_en": "have strength for",
+      "tags": [
+        "colloquial"
       ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To be entitled to behave in a certain way due to specific circumstances",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "sofern es erlaubt ist, die Möglichkeit haben, etwas zu tun",
-      "gloss_en": "may (permission)",
-      "tags": [],
       "example_ids": [
-        "b8507fd9c4",
-        "5e5073c887"
+        "997795ad7b"
       ],
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
-      "gloss_en_full": "To have permission or the opportunity to be allowed to do something",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "unter Umständen in Betracht kommen, vielleicht der Fall sein",
-      "gloss_en": "might",
-      "tags": [],
-      "example_ids": [
-        "5e1b4a8171",
-        "3b8d20dbef"
+      "gloss_en_full": "To still have the necessary strength or energy for something",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "have energy for",
+        "have stamina for"
       ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To be possible under certain conditions, perhaps the case",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "von Zeit zu Zeit etwas zu tun vermögen",
-      "gloss_en": "occasionally be able to",
-      "tags": [],
-      "example_ids": [
-        "06ae526c3d",
-        "a196e962a4"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To be able to do something from time to time",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "etwas auf Wunsch einer anderen Person tun sollen",
-      "gloss_en": "be supposed to",
-      "tags": [],
-      "example_ids": [
-        "ab1dce828c",
-        "cba9b8015a"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To be expected to do something at another person's request",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
+      "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -155,72 +137,102 @@
     },
     "imperative": {},
     "participle1": "könnend",
-    "participle2": "können"
+    "participle2": "gekonnt"
   },
-  "past_participle": "können",
+  "past_participle": "gekonnt",
   "expression_ids": [
-    "4944cd54c6",
-    "d75eb4a78a",
-    "ead1634700",
-    "c60180f913"
+    "636f792a92",
+    "d0e2976302",
+    "24bde9c96c"
   ],
   "_derived": [
-    "umhinkönnen"
+    "Können",
+    "Könner"
+  ],
+  "_hyponyms": [
+    "abkönnen",
+    "ankönnen",
+    "auskönnen",
+    "dafürkönnen",
+    "durchkönnen",
+    "fortkönnen",
+    "heimkönnen",
+    "herankönnen",
+    "herauskönnen",
+    "hereinkönnen",
+    "herkönnen",
+    "herüberkönnen",
+    "herunterkönnen",
+    "hinkönnen",
+    "hinaufkönnen",
+    "hinauskönnen",
+    "hinüberkönnen",
+    "hinunterkönnen",
+    "hinwegkönnen",
+    "hochkönnen",
+    "loskönnen",
+    "mitkönnen",
+    "rankönnen",
+    "rauskönnen",
+    "reinkönnen",
+    "umhinkönnen",
+    "vorbeikönnen",
+    "wegkönnen",
+    "weiterkönnen",
+    "zurückkönnen"
   ],
   "_synonyms": [
-    "fertigbringen",
-    "meistern",
-    "schaffen",
-    "vermögen",
-    "dürfen",
-    "sollen"
+    "beherrschen",
+    "verstehen",
+    "wissen"
   ],
   "_meta": {
-    "source_hash": "ed2a438373893021",
-    "generated_at": "2026-03-20"
+    "source_hash": "e1dbdb97a56926a1",
+    "generated_at": "2026-03-21"
   },
   "zipf": 6.09,
   "_orphaned_translations": [
     {
-      "gloss": "etwas beherrschen, wissen; fähig sein, etwas zu tun",
-      "gloss_en": "can (be able)",
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
-      "gloss_en_full": "To master or know something; to be capable of doing something",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
-      "synonyms_en": [
-        "able to",
-        "capable of",
-        "know how to"
-      ],
-      "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss": "etwas zu tun vermögen",
+      "gloss_en": "be able to",
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To be able to do something",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     },
     {
-      "gloss": "auf eine bestimmte Art und Weise zu etwas in der Lage sein",
-      "gloss_en": "manage",
-      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
-      "gloss_en_full": "To be able to do something in a particular way or manner",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
-      "synonyms_en": [
-        "pull off",
-        "handle"
-      ],
-      "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss": "aufgrund bestimmter Gegebenheiten zu einem Verhalten berechtigt sein",
+      "gloss_en": "be entitled to",
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To be entitled to behave in a certain way due to specific circumstances",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     },
     {
-      "gloss": "noch die nötige Kraft für etwas haben",
-      "gloss_en": "have strength for",
+      "gloss": "sofern es erlaubt ist, die Möglichkeit haben, etwas zu tun",
+      "gloss_en": "may (permission)",
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
-      "gloss_en_full": "To still have the necessary strength or energy for something",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
-      "synonyms_en": [
-        "have energy for",
-        "have stamina for"
-      ],
-      "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_full": "To have permission or the opportunity to be allowed to do something",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "unter Umständen in Betracht kommen, vielleicht der Fall sein",
+      "gloss_en": "might",
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To be possible under certain conditions, perhaps the case",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "von Zeit zu Zeit etwas zu tun vermögen",
+      "gloss_en": "occasionally be able to",
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To be able to do something from time to time",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "etwas auf Wunsch einer anderen Person tun sollen",
+      "gloss_en": "be supposed to",
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To be expected to do something at another person's request",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
-  ],
-  "_proofread": {
-    "gloss_en": true,
-    "gloss_en_full": true
-  }
+  ]
 }

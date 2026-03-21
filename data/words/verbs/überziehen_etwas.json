@@ -3,76 +3,27 @@
   "pos": "verb",
   "etymology_number": null,
   "auxiliary": "haben",
-  "separable": true,
-  "prefix": "über",
+  "separable": false,
+  "prefix": null,
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "etwas sich oder jemandem über den Körper oder einen Körperteil ziehen",
-      "gloss_en": null,
-      "tags": [
-        "transitive"
-      ],
-      "example_ids": [
-        "4878f7e8c9",
-        "79061d1f2e",
-        "d0c7c117c2"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_full": "To pull something over oneself or someone else, covering the body or a body part.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "jemanden mit einem Gegenstand schlagen",
-      "gloss_en": null,
-      "tags": [
-        "transitive"
-      ],
-      "example_ids": [
-        "4ba3d64dc0"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_full": "To hit someone with an object.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ˈyːbɐˌt͡siːən]",
-      "tags": []
-    }
-  ],
-  "conjugation_class": "strong",
-  "stems": {
-    "present": "zieh",
-    "past": "zog",
-    "subj2": "zög"
-  },
-  "past_participle": "übergezogen",
-  "_derived": [
-    "übergezogen",
-    "Überziehen",
-    "überziehend",
-    "Überzieher",
-    "Überzug"
-  ],
-  "_synonyms": [
-    "anziehen",
-    "hauen",
-    "prügeln",
-    "verprügeln"
-  ],
-  "_meta": {
-    "source_hash": "d60757a77f217ba9",
-    "generated_at": "2026-03-20"
-  },
-  "zipf": 3.13,
-  "_orphaned_translations": [
-    {
       "gloss": "etwas mit etwas bespannen, bedecken",
       "gloss_en": "cover",
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "12b84157b1",
+        "065d4b1d10",
+        "1ff075303d",
+        "3657778bbb"
+      ],
+      "synonyms": [
+        "bespannen",
+        "beziehen"
+      ],
+      "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To stretch or cover something with something else",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
@@ -80,9 +31,73 @@
     {
       "gloss": "etwas über das Maß ausreizen",
       "gloss_en": "overdraw",
+      "tags": [
+        "intransitive",
+        "transitive"
+      ],
+      "example_ids": [
+        "17a7e0005c",
+        "b2ba21f9a3",
+        "03b6afca5b"
+      ],
+      "synonyms": [
+        "überspannen"
+      ],
+      "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To push something beyond its limits or to overextend",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    },
+    {
+      "gloss": "eine Sache durchschauen",
+      "gloss_en": "see through",
+      "tags": [
+        "Austrian German",
+        "transitive"
+      ],
+      "example_ids": [
+        "9765a8db61"
+      ],
+      "synonyms": [
+        "durchschauen",
+        "begreifen"
+      ],
+      "antonyms": [],
+      "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_full": "To see through or understand the true nature of something",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
-  ]
+  ],
+  "sounds": [
+    {
+      "ipa": "[ˌyːbɐˈt͡siːən]",
+      "tags": []
+    }
+  ],
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "überzieh",
+    "past": "überzog",
+    "subj2": "überzög",
+    "imperative_du": "überziehe"
+  },
+  "past_participle": "überzogen",
+  "_derived": [
+    "Überziehen",
+    "überziehend",
+    "überzogen",
+    "Überziehung"
+  ],
+  "_synonyms": [
+    "bespannen",
+    "beziehen",
+    "überspannen",
+    "durchschauen",
+    "begreifen"
+  ],
+  "_meta": {
+    "source_hash": "ca3e66a6a40321a6",
+    "generated_at": "2026-03-21"
+  },
+  "zipf": 3.13
 }

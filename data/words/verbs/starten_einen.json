@@ -2,7 +2,7 @@
   "word": "starten",
   "pos": "verb",
   "etymology_number": null,
-  "auxiliary": "haben",
+  "auxiliary": "sein",
   "separable": false,
   "prefix": null,
   "reflexive": "none",
@@ -12,12 +12,23 @@
       "gloss_en": "start",
       "tags": [],
       "example_ids": [
+        "243ddceae2",
+        "344fb880dd",
+        "9648763537",
+        "71533a66f3",
         "143abf0aae",
         "0294faea26",
         "3dc978c7ce"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "anfangen",
+        "beginnen"
+      ],
+      "antonyms": [
+        "aufhören",
+        "beenden",
+        "stoppen"
+      ],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To begin a process or operation",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -28,33 +39,6 @@
         "launch"
       ],
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "einen Motor zum Laufen bringen",
-      "gloss_en": "start (engine)",
-      "tags": [],
-      "example_ids": [
-        "5eb6062aea",
-        "c6c82b1380"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "claude-sonnet-4-6",
-      "gloss_en_full": "To get an engine running",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "einen Wettkampf eröffnen",
-      "gloss_en": "kick off",
-      "tags": [],
-      "example_ids": [
-        "f7e63e79a0"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To open or commence a competition",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
   ],
   "sounds": [
@@ -71,32 +55,37 @@
   "past_participle": "gestartet",
   "_derived": [
     "Start",
-    "Startautomatik",
-    "Startbahn",
     "Starter",
-    "Startknopf",
-    "Startleine",
-    "Startpiste",
-    "Startroutine",
-    "Startsignal",
-    "Startzeichen"
+    "Starter"
   ],
   "_antonyms": [
     "aufhören",
     "beenden",
-    "stoppen",
-    "abstellen",
-    "ausmachen",
-    "abbrechen"
+    "stoppen"
   ],
   "_synonyms": [
     "anfangen",
-    "beginnen",
-    "anlassen"
+    "beginnen"
   ],
   "_meta": {
-    "source_hash": "f8de381c10172af6",
-    "generated_at": "2026-03-20"
+    "source_hash": "3db15a4c4697dc65",
+    "generated_at": "2026-03-21"
   },
-  "zipf": 4.52
+  "zipf": 4.52,
+  "_orphaned_translations": [
+    {
+      "gloss": "einen Motor zum Laufen bringen",
+      "gloss_en": "start (engine)",
+      "gloss_en_model": "claude-sonnet-4-6",
+      "gloss_en_full": "To get an engine running",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "einen Wettkampf eröffnen",
+      "gloss_en": "kick off",
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To open or commence a competition",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    }
+  ]
 }

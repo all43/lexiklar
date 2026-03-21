@@ -25,35 +25,25 @@
   },
   "senses": [
     {
-      "gloss": "Person, die nicht dem Militär angehört und kein Mitglied einer anderen Kampforganisation ist",
-      "gloss_en": null,
+      "gloss": "Person, die das Zivilrecht lehrt, es studiert oder ein Kenner desselben ist",
+      "gloss_en": "civil law expert",
       "tags": [],
       "example_ids": [
-        "31d7241062",
-        "8dfe70c47e",
-        "a86b14deef",
-        "e32ce4934f",
-        "b6307a848b",
-        "89c5a2d37f"
+        "311258fb7c",
+        "d54e67e1b1"
       ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_full": "A person who does not belong to the military and is not a member of any other combat organization.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "Person, die Zivilkleidung trägt",
-      "gloss_en": null,
-      "tags": [],
-      "example_ids": [
-        "4c6127aa0b",
-        "3bf43110ff",
-        "6d7c48476d"
+      "synonyms": [
+        "Zivilrechtler"
       ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_full": "A person who wears civilian clothing.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
+      "antonyms": [
+        "Kanonist",
+        "Publizist",
+        "Strafrechtler",
+        "Völkerrechtler"
+      ],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A person who teaches civil law, studies it, or is an expert in it",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -62,19 +52,15 @@
       "tags": []
     }
   ],
-  "_derived": [
-    "zivilistisch"
-  ],
   "_antonyms": [
-    "Militär",
-    "Militärangehöriger",
-    "Soldat"
+    "Kanonist",
+    "Publizist",
+    "Strafrechtler",
+    "Völkerrechtler"
   ],
   "_synonyms": [
-    "Bürger",
-    "Zivilperson"
+    "Zivilrechtler"
   ],
-  "_gender_counterpart": "Zivilistin",
   "compound_parts": [
     "Zivil",
     "Ist"
@@ -82,17 +68,8 @@
   "compound_source": "algorithmic",
   "compound_verified": false,
   "_meta": {
-    "source_hash": "54124fe29c6ff563",
-    "generated_at": "2026-03-20"
+    "source_hash": "97b15cb441c91212",
+    "generated_at": "2026-03-21"
   },
-  "zipf": 2.96,
-  "_orphaned_translations": [
-    {
-      "gloss": "Person, die das Zivilrecht lehrt, es studiert oder ein Kenner desselben ist",
-      "gloss_en": "civil law expert",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A person who teaches civil law, studies it, or is an expert in it",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ]
+  "zipf": 2.96
 }

@@ -3,48 +3,29 @@
   "pos": "adjective",
   "etymology_number": null,
   "is_indeclinable": false,
-  "comparative": "verschiedner",
-  "superlative": "am verschiedensten",
+  "comparative": null,
+  "superlative": null,
   "umlaut_in_comparison": false,
   "senses": [
     {
-      "gloss": "nicht gleich, andere Eigenschaften habend",
-      "gloss_en": "different",
-      "tags": [],
-      "example_ids": [
-        "e1bf1e19c4",
-        "e60670a7fc",
-        "b06181c769",
-        "c5601f6c2a"
+      "gloss": "nicht mehr am Leben",
+      "gloss_en": "dead",
+      "tags": [
+        "literary"
       ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_full": "Not the same, having different characteristics",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "nicht der-/die-/dasselbe, nicht identisch",
-      "gloss_en": "distinct",
-      "tags": [],
       "example_ids": [
-        "168533d616"
+        "441816d5a7",
+        "853ceea8dd"
       ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_full": "Not the same one, not identical",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "mehrere (gleichgültig, ob gleich oder unterscheidbar)",
-      "gloss_en": "various",
-      "tags": [],
-      "example_ids": [
-        "c8a20b0914"
+      "synonyms": [
+        "abgeschieden",
+        "dahingeschieden",
+        "verstorben"
       ],
-      "synonyms": [],
       "antonyms": [],
-      "gloss_en_full": "Several (regardless of whether they are the same or distinguishable)",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "No longer alive; dead",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -55,47 +36,34 @@
   ],
   "declension_stem": "verschieden",
   "declension_regular": true,
-  "_derived": [
-    "verschiedenartig",
-    "verschiedenerlei",
-    "Verschiedenes",
-    "verschiedenfarbig",
-    "verschiedengeschlechtlich",
-    "verschiedengestaltig",
-    "Verschiedenheit",
-    "verschiedentlich"
-  ],
-  "_hyponyms": [
-    "artverschieden",
-    "glaubensverschieden",
-    "grundverschieden",
-    "konfessionsverschieden",
-    "niveauverschieden",
-    "wesensverschieden",
-    "disjunkt"
-  ],
-  "_antonyms": [
-    "gleich",
-    "identisch"
-  ],
   "_synonyms": [
-    "andersartig",
-    "divers",
-    "ungleich",
-    "unterschiedlich",
-    "verschiedenartig",
-    "andere",
-    "anders",
-    "unterscheidbar",
-    "allerlei",
-    "einige",
-    "manche",
-    "mehrere",
-    "wenige"
+    "abgeschieden",
+    "dahingeschieden",
+    "verstorben"
   ],
   "_meta": {
-    "source_hash": "777469b40305033b",
-    "generated_at": "2026-03-18"
+    "source_hash": "d35a08d26bbbef3c",
+    "generated_at": "2026-03-21"
   },
-  "zipf": 3.82
+  "zipf": 3.82,
+  "_orphaned_translations": [
+    {
+      "gloss": "nicht gleich, andere Eigenschaften habend",
+      "gloss_en": "different",
+      "gloss_en_full": "Not the same, having different characteristics",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "nicht der-/die-/dasselbe, nicht identisch",
+      "gloss_en": "distinct",
+      "gloss_en_full": "Not the same one, not identical",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "mehrere (gleichgültig, ob gleich oder unterscheidbar)",
+      "gloss_en": "various",
+      "gloss_en_full": "Several (regardless of whether they are the same or distinguishable)",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    }
+  ]
 }

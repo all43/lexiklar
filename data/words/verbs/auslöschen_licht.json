@@ -2,38 +2,29 @@
   "word": "auslöschen",
   "pos": "verb",
   "etymology_number": null,
-  "auxiliary": "haben",
+  "auxiliary": "sein",
   "separable": true,
   "prefix": "aus",
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "Licht oder Feuer zum Erlöschen bringen",
+      "gloss": "Licht oder Feuer geht aus: erlöschen",
       "gloss_en": "extinguish",
       "tags": [],
       "example_ids": [
+        "934540a279",
+        "ad012c6836",
+        "1a68234447",
         "2768b76e1f"
       ],
       "synonyms": [],
-      "antonyms": [],
+      "antonyms": [
+        "aufflackern",
+        "entzünden"
+      ],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To go out; to be extinguished (of light or fire)",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    },
-    {
-      "gloss": "entfernen oder auch ermorden",
-      "gloss_en": "erase",
-      "tags": [
-        "figurative"
-      ],
-      "example_ids": [
-        "3efb3bf043"
-      ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To remove or also to murder",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
   ],
   "sounds": [
@@ -42,27 +33,31 @@
       "tags": []
     }
   ],
-  "conjugation_class": "weak",
+  "conjugation_class": "strong",
   "stems": {
     "present": "lösch",
-    "past": ""
+    "past": "losch",
+    "present_du_er": "lisch",
+    "subj2": "lösch",
+    "imperative_du": "lisch"
   },
-  "past_participle": "ausgelöscht",
-  "_derived": [
-    "Auslöschung",
-    "unauslöschlich"
-  ],
+  "past_participle": "ausgeloschen",
   "_antonyms": [
-    "anmachen",
-    "entfachen",
-    "anbeten",
-    "heilighalten",
-    "inthronisieren",
-    "vergöttern"
+    "aufflackern",
+    "entzünden"
   ],
   "_meta": {
-    "source_hash": "69ca09877890d10e",
-    "generated_at": "2026-03-19"
+    "source_hash": "cc746206e692131d",
+    "generated_at": "2026-03-21"
   },
-  "zipf": 3.27
+  "zipf": 3.27,
+  "_orphaned_translations": [
+    {
+      "gloss": "entfernen oder auch ermorden",
+      "gloss_en": "erase",
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To remove or also to murder",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    }
+  ]
 }

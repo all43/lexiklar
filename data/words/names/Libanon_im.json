@@ -9,10 +9,10 @@
   "gender_rule": null,
   "case_forms": {
     "singular": {
-      "nom": "der Libanon",
-      "acc": "den Libanon",
-      "dat": "dem Libanon",
-      "gen": "des Libanon"
+      "nom": "Libanon",
+      "acc": "Libanon",
+      "dat": "Libanon",
+      "gen": "Libanon"
     },
     "plural": {
       "nom": null,
@@ -23,20 +23,22 @@
   },
   "senses": [
     {
-      "gloss": "im Nahen Osten gelegener Staat, der an Syrien und Israel grenzt",
-      "gloss_en": null,
+      "gloss": "im Nahen Osten gelegenes Gebirge",
+      "gloss_en": "Lebanon Mountains",
       "tags": [],
       "example_ids": [
-        "141afe1bc2",
-        "47401ccb06",
-        "2673454a63",
-        "1319185aa3",
-        "fabfe9a47c"
+        "ef8ec52c3d"
       ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_full": "A country located in the Middle East, bordering Syria and Israel",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
+      "synonyms": [
+        "Libanongebirge",
+        "Libanon-Gebirge"
+      ],
+      "antonyms": [
+        "Anti-Libanon"
+      ],
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "A mountain range located in the Near East",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
   ],
   "sounds": [
@@ -45,29 +47,16 @@
       "tags": []
     }
   ],
-  "_derived": [
-    "Libanese",
-    "Libanesin",
-    "libanesisch",
-    "Libanonzeder"
+  "_antonyms": [
+    "Anti-Libanon"
   ],
   "_synonyms": [
-    "Libanesische Republik",
-    "Zedernrepublik",
-    "Zedernstaat"
+    "Libanongebirge",
+    "Libanon-Gebirge"
   ],
   "_meta": {
-    "source_hash": "599e3408eded07c6",
-    "generated_at": "2026-03-20"
+    "source_hash": "f4d6884d799f93fa",
+    "generated_at": "2026-03-21"
   },
-  "zipf": 3.65,
-  "_orphaned_translations": [
-    {
-      "gloss": "im Nahen Osten gelegenes Gebirge",
-      "gloss_en": "Lebanon Mountains",
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "A mountain range located in the Near East",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ]
+  "zipf": 3.65
 }
