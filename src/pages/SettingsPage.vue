@@ -71,6 +71,10 @@
         :title="t('settings.dictionaryVersion')"
         :after="dbVersionDisplay"
       />
+      <f7-list-item
+        :title="t('settings.appVersion')"
+        :after="appVersion"
+      />
       <f7-list-item v-if="updateState === 'idle'">
         <template #title>
           <f7-link @click="checkUpdates">{{ t('settings.checkUpdates') }}</f7-link>
@@ -95,9 +99,6 @@
       </f7-list-item>
       <f7-list-item v-else-if="updateState === 'error'" :title="t('settings.updateFailed')" />
     </f7-list>
-    <f7-block-footer class="padding-horizontal">
-      {{ t('settings.appVersion') }} {{ appVersion }}
-    </f7-block-footer>
   </f7-page>
 </template>
 
