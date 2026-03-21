@@ -1805,7 +1805,43 @@ async function main(): Promise<void> {
       const rawHyponyms = (parsed.hyponyms || [])
         .map((h) => h.word)
         .filter(Boolean);
-      // Antonyms and synonyms are entry-level in German Wiktionary (not sense-level)
+      // Antonyms and synonyms: entry-level in German Wiktionary, but carry sense_index.
+      // Parse sense_index → 0-based indices and populate senses[N].synonyms/antonyms.
+      // Handles: "1" → [0], "1a" → [0], "1, 2" → [0,1], "1–3" → [0,1,2]
+      function parseSenseIndices(idx: string | undefined): number[] {
+        if (!idx) return [];
+        const parts: number[] = [];
+        for (const seg of idx.split(",").map((s) => s.trim())) {
+          const rangeMatch = seg.match(/^(\d+)[–-](\d+)/);
+          if (rangeMatch) {
+            const start = parseInt(rangeMatch[1]);
+            const end = parseInt(rangeMatch[2]);
+            for (let i = start; i <= end; i++) parts.push(i - 1);
+          } else {
+            const n = parseInt(seg);
+            if (!isNaN(n) && n > 0) parts.push(n - 1);
+          }
+        }
+        return [...new Set(parts)];
+      }
+
+      const senseCount = data.senses?.length ?? 0;
+      for (const [items, field] of [
+        [parsed.synonyms || [], "synonyms"],
+        [parsed.antonyms || [], "antonyms"],
+      ] as [{ word?: string; sense_index?: string }[], "synonyms" | "antonyms"][]) {
+        for (const item of items) {
+          if (!item.word) continue;
+          const indices = parseSenseIndices(item.sense_index);
+          for (const idx of indices) {
+            if (idx >= 0 && idx < senseCount) {
+              const arr = (data.senses[idx][field] ??= []);
+              if (!arr.includes(item.word)) arr.push(item.word);
+            }
+          }
+        }
+      }
+
       const rawAntonyms = [...new Set(
         (parsed.antonyms || []).map((a) => a.word).filter(Boolean),
       )];

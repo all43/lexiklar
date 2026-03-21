@@ -34,6 +34,29 @@
   font-weight: 600;
 }
 
+/* Sense-level synonyms & antonyms */
+.sense-syn-ant-item {
+  padding-left: 28px;
+}
+.sense-syn-ant-inner {
+  padding-top: 4px;
+  padding-bottom: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.sense-syn-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.sense-syn-label {
+  font-size: 1em;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
 /* Example sentences */
 .example-item {
   padding-left: 28px;

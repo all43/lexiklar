@@ -153,6 +153,33 @@
               </div>
             </div>
           </li>
+          <!-- Sense-level synonyms & antonyms -->
+          <li v-if="getSenseSynonyms(sense).length || getSenseAntonyms(sense).length" class="sense-syn-ant-item">
+            <div class="item-content">
+              <div class="item-inner sense-syn-ant-inner">
+                <div v-if="getSenseSynonyms(sense).length" class="sense-syn-row">
+                  <span class="sense-syn-label">≈</span>
+                  <f7-chip
+                    v-for="r in getSenseSynonyms(sense)"
+                    :key="r.file"
+                    :text="r.lemma"
+                    class="syn-chip"
+                    @click="f7router.navigate(`/word/${r.file}/`)"
+                  />
+                </div>
+                <div v-if="getSenseAntonyms(sense).length" class="sense-syn-row">
+                  <span class="sense-syn-label">≠</span>
+                  <f7-chip
+                    v-for="r in getSenseAntonyms(sense)"
+                    :key="r.file"
+                    :text="r.lemma"
+                    class="ant-chip"
+                    @click="f7router.navigate(`/word/${r.file}/`)"
+                  />
+                </div>
+              </div>
+            </div>
+          </li>
         </template>
       </f7-list>
 
@@ -539,6 +566,11 @@ export default defineComponent({
     relatedTotal(): number {
       return this.relatedGroups.reduce((sum, g) => sum + g.items.length, 0);
     },
+    relatedByLemma(): Record<string, SearchResult> {
+      const map: Record<string, SearchResult> = {};
+      for (const rw of this.relatedWords) map[rw.lemma] = rw;
+      return map;
+    },
     wordExpressions(): ExpressionItem[] {
       if (!this.word?.expression_ids) return [];
       return this.word.expression_ids
@@ -733,6 +765,20 @@ export default defineComponent({
     scrollToTop() {
       const pageContent = document.querySelector(".page-current .page-content") as HTMLElement | null;
       pageContent?.scrollTo({ top: 0, behavior: "smooth" });
+    },
+
+    getSenseSynonyms(sense: Sense): SearchResult[] {
+      const words: string[] = (sense as Record<string, unknown>).synonyms as string[] ?? [];
+      if (!words.length) return [];
+      const map = this.relatedByLemma;
+      return words.map((w) => map[w]).filter((r): r is SearchResult => !!r);
+    },
+
+    getSenseAntonyms(sense: Sense): SearchResult[] {
+      const words: string[] = (sense as Record<string, unknown>).antonyms as string[] ?? [];
+      if (!words.length) return [];
+      const map = this.relatedByLemma;
+      return words.map((w) => map[w]).filter((r): r is SearchResult => !!r);
     },
   },
   beforeUnmount() {
