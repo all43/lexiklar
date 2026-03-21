@@ -85,7 +85,7 @@
       <!-- Senses -->
       <div class="block-title meanings-header">
         <span>{{ t('word.meanings') }}</span>
-        <a v-if="word.pos === 'verb' || word.pos === 'noun' || word.pos === 'proper noun' || word.pos === 'adjective'" class="grammar-jump" @click.prevent="scrollToGrammar">{{ word.pos === 'verb' ? t('word.conjugation') : (word.pos === 'noun' || word.pos === 'proper noun') ? t('word.declension') : t('word.grammar') }} ↓</a>
+        <a v-if="word.pos === 'verb' || word.pos === 'noun' || word.pos === 'proper noun' || word.pos === 'adjective' || word.pos === 'pronoun' || word.pos === 'determiner' || word.pos === 'numeral'" class="grammar-jump" @click.prevent="scrollToGrammar">{{ word.pos === 'verb' ? t('word.conjugation') : (word.pos === 'noun' || word.pos === 'proper noun') ? t('word.declension') : t('word.grammar') }} ↓</a>
       </div>
       <f7-list>
         <template v-for="(sense, idx) in word.senses" :key="idx">
@@ -287,9 +287,13 @@
         </div>
         <AdjectiveDeclension :word="word" />
       </template>
-      <template v-else>
-        <f7-block-title>{{ t('word.grammar') }}</f7-block-title>
-        <f7-block>
+      <template v-else-if="word.pos === 'pronoun' || word.pos === 'determiner' || word.pos === 'numeral'">
+        <div class="block-title meanings-header" id="word-grammar">
+          <span>{{ t('word.grammar') }}</span>
+          <a class="grammar-jump" @click.prevent="scrollToTop">↑ {{ t('word.meanings') }}</a>
+        </div>
+        <PronounDeclension v-if="word.pos === 'pronoun'" :word="word" />
+        <f7-block v-else>
           <p><em>{{ t('word.grammarSoon') }}</em></p>
         </f7-block>
       </template>
@@ -359,6 +363,7 @@ import GlossText from "../components/GlossText.vue";
 import VerbConjugation from "../components/VerbConjugation.vue";
 import NounDeclension from "../components/NounDeclension.vue";
 import AdjectiveDeclension from "../components/AdjectiveDeclension.vue";
+import PronounDeclension from "../components/PronounDeclension.vue";
 import VerbSepPipe from "../components/VerbSepPipe.vue";
 import { getWord, getExamples, getRelatedWords, searchByLemma } from "../utils/db.js";
 import { submitReport } from "../utils/report.js";
@@ -439,7 +444,7 @@ const POS_COLORS: Record<string, string> = {
 };
 
 export default defineComponent({
-  components: { GlossText, VerbConjugation, NounDeclension, AdjectiveDeclension, VerbSepPipe },
+  components: { GlossText, VerbConjugation, NounDeclension, AdjectiveDeclension, VerbSepPipe, PronounDeclension },
   props: {
     f7route: { type: Object, default: null },
     f7router: { type: Object, default: null },
