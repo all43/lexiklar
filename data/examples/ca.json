@@ -3451,25 +3451,25 @@
     "annotations": [
       {
         "form": "Haus",
-        "lemma": "house",
+        "lemma": "Haus",
         "pos": "noun",
         "gloss_hint": "building"
       },
       {
         "form": "Kopf",
-        "lemma": "head",
+        "lemma": "Kopf",
         "pos": "noun",
-        "gloss_hint": "top (sail)"
+        "gloss_hint": "head"
       },
       {
         "form": "gestellt",
         "lemma": "stellen",
         "pos": "verb",
-        "gloss_hint": "put"
+        "gloss_hint": "stand"
       },
       {
         "form": "Betten",
-        "lemma": "bed",
+        "lemma": "Bett",
         "pos": "noun",
         "gloss_hint": "bed"
       },
@@ -3480,33 +3480,15 @@
         "gloss_hint": null
       },
       {
-        "form": "auf",
-        "lemma": "on",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "dem",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
         "form": "Tisch",
-        "lemma": "table",
+        "lemma": "Tisch",
         "pos": "noun",
         "gloss_hint": "table"
       },
       {
         "form": "stand",
-        "lemma": "stand",
-        "pos": "noun",
-        "gloss_hint": "stand"
-      },
-      {
-        "form": "eine",
-        "lemma": "a",
-        "pos": "determiner",
+        "lemma": "stehen",
+        "pos": "verb",
         "gloss_hint": null
       },
       {
@@ -3517,12 +3499,16 @@
       },
       {
         "form": "Mahlzeit",
-        "lemma": "meal",
+        "lemma": "Mahlzeit",
         "pos": "noun",
         "gloss_hint": "meal"
       }
     ],
-    "text_linked": "„Das ganze Haus war auf den Kopf [[gestellt|verbs/stellen#1]], die Betten ungemacht, auf dem Tisch stand eine halbgegessene Mahlzeit.“"
+    "text_linked": "„Das ganze Haus war auf den Kopf [[gestellt|verbs/stellen#1]], die Betten ungemacht, auf dem Tisch stand eine halbgegessene Mahlzeit.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "0b38b92c"
+    }
   },
   "ca290459c0": {
     "text": "[COVID-19-Pandemie:] „Präsidentin Tsai Ing-wen ordnete an, Flüge vom chinesischen Festland und Hongkong einzuschränken und die Produktion von Schutzausrüstung zu steigern […].“",
@@ -6602,7 +6588,32 @@
     "lemmas": [
       "Stadt"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ganze",
+        "lemma": "ganz",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stadt",
+        "lemma": "Stadt",
+        "pos": "noun",
+        "gloss_hint": "population"
+      },
+      {
+        "form": "Beinen",
+        "lemma": "Bein",
+        "pos": "noun",
+        "gloss_hint": "leg"
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "3d7c5245"
+    },
+    "text_linked": "Die [[ganze|adjectives/ganz]] [[Stadt|nouns/Stadt#2]] war auf den [[Beinen|nouns/Bein#1]]."
   },
   "ca3eed772b": {
     "text": "\"Die Krisen, die wir haben, werden bleiben, und es werden neue dazu kommen\", sagt der Präsident der EU-Kommission zum Ausblick auf das neue Jahr. Jean-Claude Juncker ist ein alter Fahrensmann der europäischen Politik. Er hat es nicht nötig, sich und anderen etwas vorzumachen.",

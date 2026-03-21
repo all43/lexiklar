@@ -3269,31 +3269,23 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Sie",
-        "lemma": "sie",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "macht",
         "lemma": "machen",
         "pos": "verb",
-        "gloss_hint": "power"
-      },
-      {
-        "form": "auf",
-        "lemma": "auf",
-        "pos": "preposition",
-        "gloss_hint": "on"
+        "gloss_hint": "pretend"
       },
       {
         "form": "cool",
         "lemma": "cool",
         "pos": "adjective",
-        "gloss_hint": "calm"
+        "gloss_hint": "calm (adj)"
       }
     ],
-    "text_linked": "Sie [[macht|verbs/machen]] [[auf|prepositions/auf#1]] [[cool|adjectives/cool#1]]."
+    "text_linked": "Sie [[macht|verbs/machen]] [[auf|prepositions/auf#1]] [[cool|adjectives/cool#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "430283a9"
+    }
   },
   "75162083a5": {
     "text": "wie gehabt",
@@ -4716,7 +4708,10 @@
       "hoch",
       "Damm"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "75258ef976": {
     "text": "„Diese letzten Zeilen hatte ich damals rot unterstrichen.“",
@@ -4986,14 +4981,17 @@
   },
   "7529b6e9a7": {
     "text": "„Die Wehen setzen ein, als Charlotte zusammen mit ihrem Freund dort einem Boxkampf beiwohnt.“",
-    "translation": "The labor pains set in when Charlotte, together with her friend, attends a boxing match there.",
+    "translation": "The labor pains set in when Charlotte, together with her boyfriend, attends a boxing match there.",
     "source": "wiktionary",
     "lemmas": [
       "Freund",
       "Wehe",
       "Boxkampf"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "7529cc6af9": {
     "text": "Ein Beobachtungsteam habe ihm am Morgen aus der Stadt Mundri berichtet, dort würden die Menschen schon verhungern, berichtete der Leiter der internationalen Beobachtungsmission (JMEC), Festus Mogae, am Dienstag in Juba.",
@@ -6960,7 +6958,11 @@
         "gloss_hint": "rainfall"
       }
     ],
-    "text_linked": "„Im [[Nordwesten|nouns/Nordwesten#2]] [[des|determiners/der]] [[Landes|nouns/Land#2]] [[erwarten|verbs/erwarten#1]] Meterologen [[sogar|particles/sogar#1]] überdurchschnittlich [[hohe|adjectives/hoch#1]] Niederschläge.“"
+    "text_linked": "„Im [[Nordwesten|nouns/Nordwesten#2]] [[des|determiners/der]] [[Landes|nouns/Land#2]] [[erwarten|verbs/erwarten#1]] Meterologen [[sogar|particles/sogar#1]] überdurchschnittlich [[hohe|adjectives/hoch#1]] Niederschläge.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "42fec80d"
+    }
   },
   "753c3638e9": {
     "text": "Die [Flüchtlinge] aufnehmenden Länder sind Schweden, Deutschland, die Niederlande, Finnland und Litauen. Alle andere EU-Staaten machten sich einen schlanken Fuß bemängelte EU-Kommissar Dimitris Avramopoulos.",
@@ -11493,7 +11495,7 @@
         "gloss_hint": "reinstalled"
       }
     ],
-    "text_linked": "„Big Ben ist [[bereits|adverbs/bereits#1]] [[halb|adjectives/halb#2]] eingerüstet [[wegen|prepositions/wegen#1]] [[der|pronouns/der_nominativ]] [[laufenden|adjectives/laufend]] [[Sanierung|nouns/Sanierung#1]] des Turmgebäudes. […] [[Das|pronouns/das_[1]]] [[Uhrwerk|nouns/Uhrwerk]] [[wird|verbs/werden]] solange [[von|prepositions/von]] [[einem|determiners/ein]] [[modernen|adjectives/modern#3]] Elektromotor [[betrieben|verbs/betrieben#1]], [[bis|particles/bis#1]] der Originalmechanismus [[wieder|adverbs/wieder#1]] eingesetzt wird.“"
+    "text_linked": "„Big Ben ist [[bereits|adverbs/bereits#1]] [[halb|adjectives/halb#2]] eingerüstet [[wegen|prepositions/wegen#1]] [[der|pronouns/der_nominativ]] [[laufenden|adjectives/laufend]] [[Sanierung|nouns/Sanierung#1]] des Turmgebäudes. […] [[Das|pronouns/das_[1]]] [[Uhrwerk|nouns/Uhrwerk]] [[wird|verbs/werden]] solange [[von|prepositions/von]] [[einem|determiners/ein]] [[modernen|adjectives/modern#3]] Elektromotor betrieben, [[bis|particles/bis#1]] der Originalmechanismus [[wieder|adverbs/wieder#1]] eingesetzt wird.“"
   },
   "75643196bc": {
     "text": "Siehst Du die Zwerge in meinem Garten?",
@@ -15804,7 +15806,11 @@
         "gloss_hint": "been"
       }
     ],
-    "text_linked": "„Die ganze Moskauer [[Gesellschaft|nouns/Gesellschaft#1]], von den alten Damen bis zu den Kindern, [[nahm|verbs/nehmen#2]] Pierre [[wie|adverbs/wie#1]] [[einen|determiners/ein]] [[vertrauten|adjectives/vertraut#1]] [[und|conjunctions/und]] [[lange|adverbs/lange]] [[erwarteten|verbs/erwarten#2]] [[Gast|nouns/Gast_person#1]] auf, [[dessen|pronouns/dessen]] [[Platz|nouns/Platz#5]] [[immer|adverbs/immer#1]] [[bereit|adjectives/bereit#1]] [[stand|verbs/stehen#1]] und [[für|prepositions/für]] ihn [[freigehalten|verbs/freihalten]] [[worden|verbs/werden#1]] war.“"
+    "text_linked": "„Die ganze Moskauer [[Gesellschaft|nouns/Gesellschaft#1]], von den alten Damen bis zu den Kindern, [[nahm|verbs/nehmen#2]] Pierre [[wie|adverbs/wie#1]] [[einen|determiners/ein]] [[vertrauten|adjectives/vertraut#1]] [[und|conjunctions/und]] [[lange|adverbs/lange]] [[erwarteten|verbs/erwarten#2]] [[Gast|nouns/Gast_person#1]] auf, [[dessen|pronouns/dessen]] [[Platz|nouns/Platz#5]] [[immer|adverbs/immer#1]] [[bereit|adjectives/bereit#1]] [[stand|verbs/stehen#1]] und [[für|prepositions/für]] ihn [[freigehalten|verbs/freihalten]] [[worden|verbs/werden#1]] war.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "dbb38f6c"
+    }
   },
   "758c96063a": {
     "text": "„Ich spießte meine Serviette mit einer Gabel auf und winkte damit.“",
@@ -17229,7 +17235,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Er [[läuft|verbs/laufen]] [[gern|adverbs/gern#3]] Schlittschuh, aber manchmal läuft er [[auch|adverbs/auch]] Rollschuh."
+    "text_linked": "Er [[läuft|verbs/laufen]] [[gern|adverbs/gern#3]] Schlittschuh, aber manchmal läuft er [[auch|adverbs/auch]] Rollschuh.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "fa7dc680"
+    }
   },
   "759dd1a024": {
     "text": "„Also, Mustafa Chokay war ein Kasache, aus einer sehr angesehenen Familie der Mittleren Horde.“",
@@ -19342,7 +19352,11 @@
         "gloss_hint": "meet"
       }
     ],
-    "text_linked": "Marion [[dachte|verbs/denken#1]] [[noch|adverbs/noch#1]] [[tagelang|adjectives/tagelang]] [[an|prepositions/an]] [[die|pronouns/die#1]] [[Worte|nouns/Wort_kleinste#1]] [[ihrer|pronouns/ihr_zu#1]] [[Mutter|nouns/Mutter_weiblicher#1]] [[und|conjunctions/und]] [[ihr|pronouns/ihr_zu#1]] letztes [[Zusammenkommen|verbs/zusammenkommen#1]]."
+    "text_linked": "Marion [[dachte|verbs/denken#1]] [[noch|adverbs/noch#1]] [[tagelang|adjectives/tagelang]] [[an|prepositions/an]] [[die|pronouns/die#1]] [[Worte|nouns/Wort_kleinste#1]] [[ihrer|pronouns/ihr_zu#1]] [[Mutter|nouns/Mutter_weiblicher#1]] [[und|conjunctions/und]] [[ihr|pronouns/ihr_zu#1]] letztes [[Zusammenkommen|verbs/zusammenkommen#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "b97546ff"
+    }
   },
   "75b01adbbe": {
     "text": "„Die, längst eingespielt, lasen szenisch, meisterten quengelnde Kleinkinder ebenso wie den Großvater, der dem „Notruf einer Jungfrau“ im Fernsehen unter einer 0190er-Nummer folgt.“",
@@ -24720,7 +24734,7 @@
         "gloss_hint": "word"
       }
     ],
-    "text_linked": "„Größtenteils [[haben|verbs/haben]] sie [[auf|prepositions/auf#1]] [[dem|determiners/der]] [[Index|nouns/Index#6]] librorum prohibitorum [[gestanden|verbs/gestanden_partizip#1]], [[aber|conjunctions/aber]] [[es|pronouns/es]] [[sind|verbs/sein]] [[auch|adverbs/auch]] [[Bücher|nouns/Buch#1]] [[darunter|adverbs/darunter#4]], [[die|pronouns/die]] [[Gegenstand|nouns/Gegenstand#1]] [[eines|determiners/eines]] [[Verbrechens|nouns/Verbrechen#3]] [[waren|verbs/sein#2]] oder [[von|prepositions/von#2]] [[Verbrechern|nouns/Verbrecher#1]] [[(welch|pronouns/welch#1]] häßliches [[Wort|nouns/Wort_kleinste#1]]) geschrieben wurden.“"
+    "text_linked": "„Größtenteils [[haben|verbs/haben]] sie [[auf|prepositions/auf#1]] [[dem|determiners/der]] [[Index|nouns/Index#6]] librorum prohibitorum gestanden, [[aber|conjunctions/aber]] [[es|pronouns/es]] [[sind|verbs/sein]] [[auch|adverbs/auch]] [[Bücher|nouns/Buch#1]] [[darunter|adverbs/darunter#4]], [[die|pronouns/die]] [[Gegenstand|nouns/Gegenstand#1]] [[eines|determiners/eines]] [[Verbrechens|nouns/Verbrechen#3]] [[waren|verbs/sein#2]] oder [[von|prepositions/von#2]] [[Verbrechern|nouns/Verbrecher#1]] [[(welch|pronouns/welch#1]] häßliches [[Wort|nouns/Wort_kleinste#1]]) geschrieben wurden.“"
   },
   "75f7d1c81f": {
     "text": "„Nur in solcher Art, wie mit einem edeln Akkord, durfte diese Nacht abschließen, wenn sie mehr bedeuten sollte als ein schattenhaft wüstes Nacheinander von düsteren, trübseligen, skurrilen und lüsternen Abenteuern, deren doch keines zu Ende gelebt worden war.“",

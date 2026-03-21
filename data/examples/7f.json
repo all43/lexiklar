@@ -4712,7 +4712,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Das [[Verhältnis|nouns/Verhältnis#2]] zwischen [[Bedeutung|nouns/Bedeutung#1]] und [[Form|nouns/Form#1]] eines Wortes [[kann|verbs/können_beherrschen#1]] [[willkürlich|adjectives/willkürlich#1]] sein [[wie|adverbs/wie]] [[bei|prepositions/bei]] „[[Stuhl|nouns/Stuhl#1]]“, „[[Tisch|nouns/Tisch#1]]“, „[[Wald|nouns/Wald#1]]“; [[in|prepositions/in]] solchen [[Fällen|nouns/Fällen]] kann [[man|pronouns/man]] [[aus|prepositions/aus#1]] [[der|determiners/der]] Wortform [[nicht|particles/nicht]] [[auf|prepositions/auf]] [[die|determiners/die]] Bedeutung der [[Wörter|nouns/Wort_kleinste#1]] [[schließen|verbs/schließen#3]]; anders [[verhält|verbs/verhalten_partizip#1]] es [[sich|pronouns/sich#1]] bei [[Wörtern|nouns/Wort_kleinste#1]] wie [[„Kuckuck“|nouns/Kuckuck#1]], „Uhu“, „Zilp-Zalp“."
+    "text_linked": "Das [[Verhältnis|nouns/Verhältnis#2]] zwischen [[Bedeutung|nouns/Bedeutung#1]] und [[Form|nouns/Form#1]] eines Wortes [[kann|verbs/können_beherrschen#1]] [[willkürlich|adjectives/willkürlich#1]] sein [[wie|adverbs/wie]] [[bei|prepositions/bei]] „[[Stuhl|nouns/Stuhl#1]]“, „[[Tisch|nouns/Tisch#1]]“, „[[Wald|nouns/Wald#1]]“; [[in|prepositions/in]] solchen [[Fällen|nouns/Fällen]] kann [[man|pronouns/man]] [[aus|prepositions/aus#1]] [[der|determiners/der]] Wortform [[nicht|particles/nicht]] [[auf|prepositions/auf]] [[die|determiners/die]] Bedeutung der [[Wörter|nouns/Wort_kleinste#1]] [[schließen|verbs/schließen#3]]; anders [[verhält|verbs/verhalten_zurückhalten#2]] es [[sich|pronouns/sich#1]] bei [[Wörtern|nouns/Wort_kleinste#1]] wie [[„Kuckuck“|nouns/Kuckuck#1]], „Uhu“, „Zilp-Zalp“."
   },
   "7f2b0ab504": {
     "text": "„Die Gesellschaft für Deutsche Sprache unterstützt die Arbeit des Bundestages seit 1966.“",
@@ -8988,7 +8988,11 @@
         "gloss_hint": "uninhabitable"
       }
     ],
-    "text_linked": "„In ‚Hologrammatica‘ aus dem Jahr 2018 schildert Hillenbrand [[die|pronouns/die]] [[Welt|nouns/Welt#3]] [[im|prepositions/in]] [[Jahre|nouns/Jahr#1]] 2088: [[Die|pronouns/die]] Weltbevölkerung [[ist|verbs/sein#1]] [[um|prepositions/um]] die [[Hälfte|nouns/Hälfte#1]] [[geschrumpft|verbs/schrumpfen]], [[große|adjectives/groß#1]] [[Teile|nouns/Teil_stück#1]] [[der|pronouns/der_nominativ]] Welt [[sind|verbs/sein#2]] [[wegen|prepositions/wegen#1]] [[zu|prepositions/zu]] [[großer|adjectives/groß#1]] [[Hitze|nouns/Hitze#1]] unbewohnbar […]“"
+    "text_linked": "„In ‚Hologrammatica‘ aus dem Jahr 2018 schildert Hillenbrand [[die|pronouns/die]] [[Welt|nouns/Welt#3]] [[im|prepositions/in]] [[Jahre|nouns/Jahr#1]] 2088: [[Die|pronouns/die]] Weltbevölkerung [[ist|verbs/sein#1]] [[um|prepositions/um]] die [[Hälfte|nouns/Hälfte#1]] [[geschrumpft|verbs/schrumpfen]], [[große|adjectives/groß#1]] [[Teile|nouns/Teil_stück#1]] [[der|pronouns/der_nominativ]] Welt [[sind|verbs/sein#2]] [[wegen|prepositions/wegen#1]] [[zu|prepositions/zu]] [[großer|adjectives/groß#1]] [[Hitze|nouns/Hitze#1]] unbewohnbar […]“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "7f774c19"
+    }
   },
   "7f65db6825": {
     "text": "„Alle reden von Blockchain im Zusammenhang mit Kryptowährungen – die Technologie könnte aber auch die Film- und Musikwelt auf den Kopf stellen.“",
@@ -10874,8 +10878,42 @@
     ],
     "translation_model": "anthropic/claude-haiku-4-5-20251001",
     "_proofread": {
-      "translation": true
-    }
+      "translation": true,
+      "annotations": "39b2e6b9"
+    },
+    "annotations": [
+      {
+        "form": "habe",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mal",
+        "lemma": "Mal",
+        "pos": "noun",
+        "gloss_hint": "moment"
+      },
+      {
+        "form": "gesagt",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": "tell"
+      },
+      {
+        "form": "Räum",
+        "lemma": "aufräumen",
+        "pos": "verb",
+        "gloss_hint": "tidy up"
+      },
+      {
+        "form": "Zimmer",
+        "lemma": "Zimmer",
+        "pos": "noun",
+        "gloss_hint": "room"
+      }
+    ],
+    "text_linked": "Ich [[habe|verbs/haben]] Dir hundert [[Mal|nouns/Mal_bestimmter#1]] [[gesagt|verbs/sagen#2]]: „[[Räum|verbs/aufräumen#1]] dein [[Zimmer|nouns/Zimmer#1]] auf!“"
   },
   "7f7bf22a4e": {
     "text": "Er hat die Angewohnheit, sich immer wieder zu entschuldigen.",
@@ -18734,12 +18772,37 @@
   },
   "7fc2baa393": {
     "text": "Das Problem ist schon klar geworden.",
-    "translation": "The <b>problem</b> has already become clear.",
+    "translation": "The problem has already become clear.",
     "source": "wiktionary",
     "lemmas": [
       "klar"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Problem",
+        "lemma": "Problem",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "klar",
+        "lemma": "klar",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "geworden",
+        "lemma": "werden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "20254c83"
+    },
+    "text_linked": "Das [[Problem|nouns/Problem]] ist schon [[klar|adjectives/klar]] [[geworden|verbs/werden]]."
   },
   "7fc36e8a71": {
     "text": "den Anfang machen",
@@ -19006,12 +19069,15 @@
   },
   "7fc86f740a": {
     "text": "Sie machte sich Sorgen, da sie ihren Mann telefonisch nicht erreichen konnte.",
-    "translation": "She was <b>worried</b> because she could not <b>reach</b> her <b>husband</b> by <b>phone</b>.",
+    "translation": "She was worried because she could not reach her husband by phone.",
     "source": "wiktionary",
     "lemmas": [
       "erreichen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "7fc970b159": {
     "text": "„1314 war es nämlich, als der Habsburgische Herzog hungernd durch den Wienerwald irrte und danach die Kartause Mauerbach errichten ließ – ein Kloster für einen Prior und zwölf Mönche, die hier in der Abgeschiedenheit ihr Schweigegelübde lebten.“",
@@ -19906,7 +19972,11 @@
         "gloss_hint": "lost"
       }
     ],
-    "text_linked": "„[[Auf|prepositions/auf]] [[der|determiners/der]] [[Suche|nouns/Suche#1]] [[nach|prepositions/nach]] O'Neills [[Haus|nouns/Haus#1]] [[war|verbs/sein#2]] sie [[in|prepositions/in]] [[die|determiners/die]] Dünen [[gegangen|verbs/gehen#4]] [[und|conjunctions/und]] [[hatte|verbs/haben#1]] [[den|determiners/der]] [[Weg|nouns/Weg#1]] [[verloren|verbs/verlieren#4]].“"
+    "text_linked": "„[[Auf|prepositions/auf]] [[der|determiners/der]] [[Suche|nouns/Suche#1]] [[nach|prepositions/nach]] O'Neills [[Haus|nouns/Haus#1]] [[war|verbs/sein#2]] sie [[in|prepositions/in]] [[die|determiners/die]] Dünen [[gegangen|verbs/gehen#4]] [[und|conjunctions/und]] [[hatte|verbs/haben#1]] [[den|determiners/der]] [[Weg|nouns/Weg#1]] [[verloren|verbs/verlieren#4]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "557f015d"
+    }
   },
   "7fd16c864f": {
     "text": "Die Schwungscheibe wird über einen Riemen angetrieben.",
@@ -22083,7 +22153,7 @@
         "gloss_hint": "clergyman"
       }
     ],
-    "text_linked": "„Die Mutter hatte vor [[Erregung|nouns/Erregung#1]] [[ihr|pronouns/ihr_person]] Hochdeutsch [[vergessen|verbs/vergessen_partizip#1]], [[um|prepositions/um]] [[das|pronouns/das_[1]]] sie [[sich|pronouns/sich#1]] [[in|prepositions/in]] [[der|determiners/der]] [[Gegenwart|nouns/Gegenwart#1]] [[des|determiners/des]] Kirchenmannes sonst bemühte.“"
+    "text_linked": "„Die Mutter hatte vor [[Erregung|nouns/Erregung#1]] [[ihr|pronouns/ihr_person]] Hochdeutsch [[vergessen|verbs/vergessen_sich]], [[um|prepositions/um]] [[das|pronouns/das_[1]]] sie [[sich|pronouns/sich#1]] [[in|prepositions/in]] [[der|determiners/der]] [[Gegenwart|nouns/Gegenwart#1]] [[des|determiners/des]] Kirchenmannes sonst bemühte.“"
   },
   "7feb89932f": {
     "text": "„Rund 10 000 Spinnenarten wurden in Australien bereits wissenschaftlich beschrieben, doch das ist wohl nur ein Teil der beeindruckenden Achtbeinervielfalt auf dem Kontinent.“",
@@ -22382,7 +22452,11 @@
         "gloss_hint": "decrease"
       }
     ],
-    "text_linked": "„[[Wenn|conjunctions/wenn]] zwei parallele rechtwinklig angreifende [[Kräfte|nouns/Kraft#1]] [[an|prepositions/an]] [[einem|determiners/ein]] [[Hebel|nouns/Hebel#1]] [[einander|pronouns/einander]] [[das|pronouns/das_[1]]] [[Gleichgewicht|nouns/Gleichgewicht#3]] [[halten|verbs/halten#2]], [[so|adverbs/so]] [[wird|verbs/werden]] das Gleichgewicht [[nicht|particles/nicht]] [[gestört|adjectives/gestört#1]], [[wenn|conjunctions/wenn]] [[man|pronouns/man]] sie [[in|prepositions/in]] [[gleichem|adjectives/gleich#1]] [[Verhältniss|nouns/Verhältnis#1]] [[vergrössert|verbs/vergrößern#2]] oder [[verkleinert|verbs/verkleinern]].“"
+    "text_linked": "„[[Wenn|conjunctions/wenn]] zwei parallele rechtwinklig angreifende [[Kräfte|nouns/Kraft#1]] [[an|prepositions/an]] [[einem|determiners/ein]] [[Hebel|nouns/Hebel#1]] [[einander|pronouns/einander]] [[das|pronouns/das_[1]]] [[Gleichgewicht|nouns/Gleichgewicht#3]] [[halten|verbs/halten#2]], [[so|adverbs/so]] [[wird|verbs/werden]] das Gleichgewicht [[nicht|particles/nicht]] [[gestört|adjectives/gestört#1]], [[wenn|conjunctions/wenn]] [[man|pronouns/man]] sie [[in|prepositions/in]] [[gleichem|adjectives/gleich#1]] [[Verhältniss|nouns/Verhältnis#1]] [[vergrössert|verbs/vergrößern#2]] oder [[verkleinert|verbs/verkleinern]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "b3023457"
+    }
   },
   "7feddd08af": {
     "text": "Die höchste Anzahl an Toten bestand aus den Rekruten, da die meisten von ihnen nicht erfahren genug waren.",
@@ -23142,7 +23216,10 @@
     "lemmas": [
       "Freundin"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "7ff73cdba5": {
     "text": "[Der Mond] Prometheus [wirkt sich] vor allem auch stabilisierend auf den F-Ring [des Saturn] aus; er hält von innen und Pandora von außen den Ring in seiner schmalen Form, und die Vereinigung der anziehenden Kräfte dieser beiden Monde verhindert, dass der Staub sich in die Breite verteilt.",
@@ -23591,7 +23668,10 @@
     "lemmas": [
       "Vier"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "7ffb90bf29": {
     "text": "„Nur die jüdischen Friedhöfe zeugen als Denkmale in Dresden noch vom Judentum.“",

@@ -1367,13 +1367,7 @@
         "form": "Art",
         "lemma": "Art",
         "pos": "noun",
-        "gloss_hint": "kind"
-      },
-      {
-        "form": "der",
-        "lemma": "der",
-        "pos": "pronoun",
-        "gloss_hint": "the (masc)"
+        "gloss_hint": "characteristic"
       },
       {
         "form": "Essenszubereitung",
@@ -1382,27 +1376,16 @@
         "gloss_hint": null
       },
       {
-        "form": "ist",
-        "lemma": "sein",
-        "pos": "verb",
-        "gloss_hint": "be"
-      },
-      {
-        "form": "sehr",
-        "lemma": "sehr",
-        "pos": "particle",
-        "gloss_hint": "very"
-      },
-      {
         "form": "exotisch",
         "lemma": "exotisch",
         "pos": "adjective",
-        "gloss_hint": "foreign | exotic"
+        "gloss_hint": "exotic"
       }
     ],
-    "text_linked": "Diese [[Art|nouns/Art#1]] [[der|pronouns/der_nominativ#1]] Essenszubereitung [[ist|verbs/sein#2]] [[sehr|particles/sehr#1]] [[exotisch|adjectives/exotisch#1]].",
+    "text_linked": "Diese [[Art|nouns/Art#2]] der Essenszubereitung ist sehr [[exotisch|adjectives/exotisch#2]].",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "799adace"
     }
   },
   "a013ee4917": {
@@ -8681,8 +8664,24 @@
     ],
     "translation_model": "anthropic/claude-haiku-4-5-20251001",
     "_proofread": {
-      "translation": true
-    }
+      "translation": true,
+      "annotations": "dbb16746"
+    },
+    "annotations": [
+      {
+        "form": "Male",
+        "lemma": "Mal",
+        "pos": "noun",
+        "gloss_hint": "moment"
+      },
+      {
+        "form": "erwischt",
+        "lemma": "erwischen",
+        "pos": "verb",
+        "gloss_hint": "catch red-handed"
+      }
+    ],
+    "text_linked": "Er wurde schon mehrere [[Male|nouns/Mal_bestimmter#1]] [[erwischt|verbs/erwischen#2]]."
   },
   "a057a48309": {
     "text": "„Ein Merkmal von Trends ist es, dass man ihre Existenz meist erst dann bemerkt, wenn sie schon wieder vorbei sind.“",
@@ -20785,66 +20784,35 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Mother",
-        "lemma": "mother",
+        "form": "Mutter",
+        "lemma": "Mutter",
         "pos": "noun",
         "gloss_hint": "mother (religious)"
       },
       {
-        "form": "Teresa",
-        "lemma": "Teresa",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "was",
-        "lemma": "be",
+        "form": "war",
+        "lemma": "sein",
         "pos": "verb",
         "gloss_hint": null
       },
       {
-        "form": "a",
-        "lemma": "a",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "nun",
-        "lemma": "nun",
+        "form": "Ordensschwester",
+        "lemma": "Ordensschwester",
         "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "and",
-        "lemma": "and",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "Nobel",
-        "lemma": "Nobel",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "Peace",
-        "lemma": "Peace",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "Prize",
-        "lemma": "Prize",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "laureate",
-        "lemma": "laureate",
+        "form": "Friedensnobelpreisträgerin",
+        "lemma": "Friedensnobelpreisträgerin",
         "pos": "noun",
         "gloss_hint": null
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "66c88fb6"
+    },
+    "text_linked": "[[Mutter|nouns/Mutter_weiblicher#5]] Theresa [[war|verbs/sein]] Ordensschwester und Friedensnobelpreisträgerin."
   },
   "a0c3f3823a": {
     "text": "„Beim Schlafen sickerte in der Nase der Schnött immer auf die Seite, die unten war.“",
@@ -22668,7 +22636,7 @@
         "gloss_hint": "worthy"
       }
     ],
-    "text_linked": "„Na kurios [[hat|verbs/haben#1]] er's [[gnädig|adjectives/gnädig#1]] [[gehabt|verbs/haben#1]], – ich [[bin|verbs/sein#2]] [[bei|prepositions/bei#1]] [[der|pronouns/der_nominativ#1]] [[Thür|nouns/Tür#1]] [[gestanden|verbs/gestanden_partizip#1]], [[wie|adverbs/wie#1]] er [[vorbei|adverbs/vorbei#1]] [[geschossen|verbs/schießen#2]] [[ist|verbs/sein#2]], [[und|conjunctions/und#1]] [[hab'|verbs/haben#1]] [[einen|determiners/ein]] [[Knix|nouns/Knicks]] [[nach|prepositions/nach#1]] [[dem|determiners/der]] andern [[gemacht|verbs/machen#2]] – [[nicht|particles/nicht#1]] [[einmal|adverbs/einmal#1]] [[angeschaut|verbs/anschauen#1]] hat er mich, der [[noble|adjectives/nobel#2]] [[Herr|nouns/Herr#1]], – ich [[glaub'|verbs/glauben#1]], [[das|pronouns/das_nominativ]] [[Anschauen|verbs/anschauen#1]] [[wäre|verbs/sein#2]] ich [[doch|particles/doch_betont#1]] [[werth|adjectives/wert]].“"
+    "text_linked": "„Na kurios [[hat|verbs/haben#1]] er's [[gnädig|adjectives/gnädig#1]] [[gehabt|verbs/haben#1]], – ich [[bin|verbs/sein#2]] [[bei|prepositions/bei#1]] [[der|pronouns/der_nominativ#1]] [[Thür|nouns/Tür#1]] gestanden, [[wie|adverbs/wie#1]] er [[vorbei|adverbs/vorbei#1]] [[geschossen|verbs/schießen#2]] [[ist|verbs/sein#2]], [[und|conjunctions/und#1]] [[hab'|verbs/haben#1]] [[einen|determiners/ein]] [[Knix|nouns/Knicks]] [[nach|prepositions/nach#1]] [[dem|determiners/der]] andern [[gemacht|verbs/machen#2]] – [[nicht|particles/nicht#1]] [[einmal|adverbs/einmal#1]] [[angeschaut|verbs/anschauen#1]] hat er mich, der [[noble|adjectives/nobel#2]] [[Herr|nouns/Herr#1]], – ich [[glaub'|verbs/glauben#1]], [[das|pronouns/das_nominativ]] [[Anschauen|verbs/anschauen#1]] [[wäre|verbs/sein#2]] ich [[doch|particles/doch_betont#1]] [[werth|adjectives/wert]].“"
   },
   "a0d63699c0": {
     "text": "Zwei Wochen nach der Entbindung war sie schon wieder topfit.",

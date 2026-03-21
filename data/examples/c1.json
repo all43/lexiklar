@@ -3482,42 +3482,17 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "I",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": "ego"
-      },
-      {
-        "form": "did",
+        "form": "tat",
         "lemma": "tun",
         "pos": "verb",
-        "gloss_hint": "action"
-      },
-      {
-        "form": "all",
-        "lemma": "alle",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "this",
-        "lemma": "dies",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "for",
-        "lemma": "für",
-        "pos": "preposition",
-        "gloss_hint": "for"
-      },
-      {
-        "form": "you",
-        "lemma": "euch",
-        "pos": "pronoun",
-        "gloss_hint": "you"
+        "gloss_hint": "do"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "16628c5c"
+    },
+    "text_linked": "All dies [[tat|verbs/tun_handlung#1]] ich für Euch!"
   },
   "c129682492": {
     "text": "Wir haben einen wunderbaren Abend in der Oper verbracht.",
@@ -3529,54 +3504,35 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "We",
-        "lemma": "we",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "spent",
-        "lemma": "spend",
-        "pos": "verb",
-        "gloss_hint": "spend"
-      },
-      {
-        "form": "a",
-        "lemma": "a",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "wonderful",
-        "lemma": "wonderful",
+        "form": "wunderbaren",
+        "lemma": "wunderbar",
         "pos": "adjective",
         "gloss_hint": null
       },
       {
-        "form": "evening",
-        "lemma": "evening",
+        "form": "Abend",
+        "lemma": "Abend",
         "pos": "noun",
         "gloss_hint": "evening"
       },
       {
-        "form": "at",
-        "lemma": "at",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "opera",
-        "lemma": "opera",
+        "form": "Oper",
+        "lemma": "Oper",
         "pos": "noun",
-        "gloss_hint": "opera"
+        "gloss_hint": null
+      },
+      {
+        "form": "verbracht",
+        "lemma": "verbringen",
+        "pos": "verb",
+        "gloss_hint": null
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "d849bef9"
+    },
+    "text_linked": "Wir haben einen [[wunderbaren|adjectives/wunderbar]] [[Abend|nouns/Abend#1]] in der [[Oper|nouns/Oper]] [[verbracht|verbs/verbringen]]."
   },
   "c1297d9440": {
     "text": "Im Bewegungsbad können Sie Wassergymnastik- und Aquafitnesskurse auf privater Basis besuchen, falls Sie keine Verordnung von Ihrem Arzt bekommen haben.",
@@ -5062,12 +5018,6 @@
         "gloss_hint": "suffer"
       },
       {
-        "form": "sein",
-        "lemma": "sein",
-        "pos": "verb",
-        "gloss_hint": "be (copula)"
-      },
-      {
         "form": "Herz",
         "lemma": "Herz",
         "pos": "noun",
@@ -5092,7 +5042,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Aref [[machte|verbs/machen#2]] [[einen|determiners/ein]] [[Gesichtsausdruck|nouns/Gesichtsausdruck]], [[als|conjunctions/als#1]] [[litte|verbs/leiden#1]] [[sein|verbs/sein#1]] [[Herz|nouns/Herz#1]] [[unter|prepositions/unter#1]] [[der|pronouns/der_nominativ]] Fremdherrschaft.“"
+    "text_linked": "„Aref [[machte|verbs/machen#2]] [[einen|determiners/ein]] [[Gesichtsausdruck|nouns/Gesichtsausdruck]], [[als|conjunctions/als#1]] [[litte|verbs/leiden#1]] sein [[Herz|nouns/Herz#1]] [[unter|prepositions/unter#1]] [[der|pronouns/der_nominativ]] Fremdherrschaft.“"
   },
   "c13d02a315": {
     "text": "„Er war ein ungefähr vierzigjähriger Mann von mittlerer Größe und Figur, nur die rötliche Gesichtsfarbe verriet den ausgeprägten Sanguiniker.“",
@@ -8277,7 +8227,10 @@
       "Gesellschaft",
       "Makkaroni"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c160c62a40": {
     "text": "In der Schar der kreischenden Fans fanden sich auch vereinzelt über Zwölfjährige.",
@@ -11840,7 +11793,7 @@
   },
   "c18a22b716": {
     "text": "Grand Hand ist angesagt.",
-    "translation": "Grand Hand is in fashion.",
+    "translation": "Grand Hand has been declared.",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
@@ -11860,7 +11813,11 @@
         "gloss_hint": "hand"
       }
     ],
-    "text_linked": "[[Grand|nouns/Grand_gegenstand#1]] [[Hand|nouns/Hand#2]] ist angesagt."
+    "text_linked": "[[Grand|nouns/Grand_gegenstand#1]] [[Hand|nouns/Hand#2]] ist angesagt.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "c44af565"
+    }
   },
   "c18a30ff19": {
     "text": "Vorgesetzte",
@@ -13268,54 +13225,28 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "game",
-        "lemma": "game",
+        "form": "Spiel",
+        "lemma": "Spiel",
         "pos": "noun",
-        "gloss_hint": "play"
+        "gloss_hint": "game"
       },
       {
-        "form": "was",
-        "lemma": "sein",
-        "pos": "verb",
-        "gloss_hint": "be"
-      },
-      {
-        "form": "called off",
-        "lemma": "abbrechen",
-        "pos": "verb",
-        "gloss_hint": "broken off"
-      },
-      {
-        "form": "at",
-        "lemma": "bei",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "the",
-        "lemma": "der",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "score",
+        "form": "Stand",
         "lemma": "Stand",
         "pos": "noun",
         "gloss_hint": "standing"
       },
       {
-        "form": "of",
-        "lemma": "von",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "1:1",
-        "lemma": "1:1",
-        "pos": "noun",
-        "gloss_hint": null
+        "form": "abgebrochen",
+        "lemma": "abbrechen",
+        "pos": "verb",
+        "gloss_hint": "cancel"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true
+    },
+    "text_linked": "Das [[Spiel|nouns/Spiel#8]] wurde beim [[Stand|nouns/Stand#4]] von 1:1 [[abgebrochen|verbs/abbrechen#3]]."
   },
   "c1a17141aa": {
     "text": "„Sein Opfer nun ließ er mich von vorn und hinten und von allen Seiten in fünf oder sechs verschiedenen Stellungen sehen, die er als Herkules im Liebesakt anwandte, wobei die Kranke nach besten Kräften mithalf.“",
@@ -14682,7 +14613,11 @@
         "gloss_hint": "rose"
       }
     ],
-    "text_linked": "„[[Dank|nouns/Dank#1]] [[der|pronouns/der_nominativ#1]] [[hohen|adjectives/hoch#1]] Regenfälle [[ist|verbs/sein#1]] der Pegel des Kuiseb-Riviers [[auf|prepositions/auf#1]] der [[Farm|nouns/Farm#1]] Schlesien [[binnen|prepositions/innerhalb#1]] 24 [[Stunden|nouns/Stunde#1]] [[von|prepositions/von#1]] 0,12 [[m|nouns/Meter#1]] auf 1,10 m [[gestiegen|verbs/steigen]].“"
+    "text_linked": "„[[Dank|nouns/Dank#1]] [[der|pronouns/der_nominativ#1]] [[hohen|adjectives/hoch#1]] Regenfälle [[ist|verbs/sein#1]] der Pegel des Kuiseb-Riviers [[auf|prepositions/auf#1]] der [[Farm|nouns/Farm#1]] Schlesien [[binnen|prepositions/innerhalb#1]] 24 [[Stunden|nouns/Stunde#1]] [[von|prepositions/von#1]] 0,12 [[m|nouns/Meter#1]] auf 1,10 m [[gestiegen|verbs/steigen]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "9889007f"
+    }
   },
   "c1aef8666f": {
     "text": "Meine Schwester wohnt noch bei unseren Eltern, ich dagegen in einer WG.",
@@ -15663,7 +15598,11 @@
         "pos": "noun",
         "gloss_hint": "refrigerator"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "5ed373e3"
+    }
   },
   "c1b82f6f1f": {
     "text": "„Er bog auf den kleinen Parkplatz vor dem winzigen Rathaus ein.“",
@@ -19737,7 +19676,11 @@
         "gloss_hint": "boils water"
       }
     ],
-    "text_linked": "„[[Die|determiners/die]] [[Mutter|nouns/Mutter_weiblicher#1]] [[des|determiners/der]] [[Mädchens|nouns/Mädchen]] [[weckt|verbs/wecken#1]] [[eilig|adjectives/eilig#2]] [[den|determiners/der]] [[Mann|nouns/Mann#5]] des [[Hauses|nouns/Haus#4]], [[der|determiners/der]] [[sich|pronouns/sich]] [[gerade|adjectives/gerade]] [[zu|prepositions/zu]] [[einem|determiners/ein]] Mittagsschläfchen hingelegt [[hat|verbs/haben#1]], [[während|conjunctions/während]] [[die|determiners/die]] [[Tochter|nouns/Tochter#1]] [[Wasser|nouns/Wasser#1]] [[für|prepositions/für]] [[Tee|nouns/Tee_koffeinhaltiges#1]] [[aufsetzt|verbs/aufsetzen]].“"
+    "text_linked": "„[[Die|determiners/die]] [[Mutter|nouns/Mutter_weiblicher#1]] [[des|determiners/der]] [[Mädchens|nouns/Mädchen]] [[weckt|verbs/wecken#1]] [[eilig|adjectives/eilig#2]] [[den|determiners/der]] [[Mann|nouns/Mann#5]] des [[Hauses|nouns/Haus#4]], [[der|determiners/der]] [[sich|pronouns/sich]] [[gerade|adjectives/gerade]] [[zu|prepositions/zu]] [[einem|determiners/ein]] Mittagsschläfchen hingelegt [[hat|verbs/haben#1]], [[während|conjunctions/während]] [[die|determiners/die]] [[Tochter|nouns/Tochter#1]] [[Wasser|nouns/Wasser#1]] [[für|prepositions/für]] [[Tee|nouns/Tee_koffeinhaltiges#1]] [[aufsetzt|verbs/aufsetzen]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "59419763"
+    }
   },
   "c1dc0c5aca": {
     "text": "„Die Anfänge der Kolonie [Hongkong] datieren bereits aus der Zeit des Ersten Opiumkrieges (1839–1842).“",
@@ -20656,7 +20599,7 @@
   },
   "c1e1ad11cc": {
     "text": "Ist dieser Baum aus der Schule in Hintertupfingen?",
-    "translation": "Is this tree from the school in Hintertupfingen?",
+    "translation": "Is this tree from the nursery in Hintertupfingen?",
     "source": "wiktionary",
     "lemmas": [
       "Schule"
@@ -20697,7 +20640,7 @@
         "form": "Schule",
         "lemma": "Schule",
         "pos": "noun",
-        "gloss_hint": "school"
+        "gloss_hint": "nursery"
       },
       {
         "form": "in",
@@ -20712,7 +20655,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Ist|verbs/sein]] [[dieser|pronouns/dieser]] [[Baum|nouns/Baum#1]] [[aus|prepositions/aus#1]] [[der|pronouns/der_nominativ]] [[Schule|nouns/Schule#1]] [[in|prepositions/in]] Hintertupfingen?"
+    "text_linked": "[[Ist|verbs/sein]] [[dieser|pronouns/dieser]] [[Baum|nouns/Baum#1]] [[aus|prepositions/aus#1]] [[der|pronouns/der_nominativ]] [[Schule|nouns/Schule#1]] [[in|prepositions/in]] Hintertupfingen?",
+    "_proofread": {
+      "translation": true,
+      "annotations": "cda9a4b4"
+    }
   },
   "c1e1f0b092": {
     "text": "Papi, kommst du bitte mal.",
@@ -23333,9 +23280,9 @@
     "annotations": [
       {
         "form": "Arbeiten",
-        "lemma": "Arbeiten",
+        "lemma": "Arbeit",
         "pos": "noun",
-        "gloss_hint": "work"
+        "gloss_hint": "creative work"
       },
       {
         "form": "von",
@@ -23392,7 +23339,11 @@
         "gloss_hint": "ask"
       }
     ],
-    "text_linked": "Die Arbeiten [[von|prepositions/von]] Pablo [[Picasso|nouns/Picasso]] [[sind|verbs/sein#2]] [[auf|prepositions/auf#1]] [[dem|determiners/der]] Kunstmarkt [[sehr|particles/sehr#1]] [[gefragt|verbs/fragen#1]]."
+    "text_linked": "Die Arbeiten [[von|prepositions/von]] Pablo [[Picasso|nouns/Picasso]] [[sind|verbs/sein#2]] [[auf|prepositions/auf#1]] [[dem|determiners/der]] Kunstmarkt [[sehr|particles/sehr#1]] [[gefragt|verbs/fragen#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "b9d1945c"
+    }
   },
   "c1f97ce294": {
     "text": "Wir können nicht beides anbieten, wir müssen uns zwischen den Blumen und den Schuhen entscheiden.",

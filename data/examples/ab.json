@@ -1296,7 +1296,7 @@
         "form": "stark",
         "lemma": "stark",
         "pos": "adjective",
-        "gloss_hint": "powerful | high-performing | durable | intense | concentrated | influential | resolute | thick | stout | numerous | numbering | capable | impressive | ablaut (verb) | strong (declension)"
+        "gloss_hint": "intense"
       },
       {
         "form": "angewachsen",
@@ -1305,7 +1305,11 @@
         "gloss_hint": "increase | grow | expand"
       }
     ],
-    "text_linked": "Die Mitgliedszahlen sind [[stark|adjectives/stark#1]] [[angewachsen|verbs/anwachsen]]."
+    "text_linked": "Die Mitgliedszahlen sind [[stark|adjectives/stark#4]] [[angewachsen|verbs/anwachsen]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "03b65ba8"
+    }
   },
   "ab0cf856f7": {
     "text": "Dieses Erlebnis stellte seinen Übergang in den Zustand der Erleuchtung dar.",
@@ -2358,24 +2362,6 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "haben",
-        "lemma": "haben",
-        "pos": "verb",
-        "gloss_hint": "possess"
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "pronoun",
-        "gloss_hint": "which"
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "determiner",
-        "gloss_hint": "the"
-      },
-      {
         "form": "gleichen",
         "lemma": "gleich",
         "pos": "adjective",
@@ -2385,16 +2371,14 @@
         "form": "Schuhe",
         "lemma": "Schuh",
         "pos": "noun",
-        "gloss_hint": "shoes"
-      },
-      {
-        "form": "an",
-        "lemma": "an",
-        "pos": "adverb",
         "gloss_hint": null
       }
     ],
-    "text_linked": "Wir [[haben|verbs/haben#2]] ja [[die|pronouns/die#1]] [[gleichen|adjectives/gleich#1]] [[Schuhe|nouns/Schuh]] [[an|adverbs/an]]!"
+    "text_linked": "Wir [[haben|verbs/haben#2]] ja [[die|pronouns/die#1]] [[gleichen|adjectives/gleich#1]] [[Schuhe|nouns/Schuh]] [[an|adverbs/an]]!",
+    "_proofread": {
+      "translation": true,
+      "annotations": "9ba0a1d4"
+    }
   },
   "ab1b1c1f49": {
     "text": "„In beiden Weltkriegen kämpfen Soldaten aus Algerien auf Seiten der Franzosen.“",
@@ -6236,7 +6220,11 @@
         "gloss_hint": "home"
       }
     ],
-    "text_linked": "[[Kommst|verbs/kommen#5]] [[du|pronouns/du]] [[mit|adverbs/mit#1]] [[nach|prepositions/nach#1]] [[Hause|nouns/Haus#2]]?"
+    "text_linked": "[[Kommst|verbs/kommen#5]] [[du|pronouns/du]] [[mit|adverbs/mit#1]] [[nach|prepositions/nach#1]] [[Hause|nouns/Haus#2]]?",
+    "_proofread": {
+      "translation": true,
+      "annotations": "6159fa8d"
+    }
   },
   "ab3ff48af1": {
     "text": "„Da ich etwas unternehmen mußte, um die Absichten der beiden Betrügerinnen zu vereiteln, verließ ich sie wortlos und schloß mich mit Madame d'Urfé ein, um das Orakel über die Operation zu befragen, die zu ihrem Glück führen sollte.“",
@@ -6476,7 +6464,7 @@
         "gloss_hint": "was supposed to"
       }
     ],
-    "text_linked": "„[[Da|conjunctions/da]] [[ich|pronouns/ich]] [[etwas|pronouns/etwas#1]] [[unternehmen|verbs/unternehmen_etwas#1]] [[mußte|verbs/müssen#1]], [[um|prepositions/um]] [[die|determiners/die]] [[Absichten|nouns/Absicht#1]] [[der|determiners/der]] beiden [[Betrügerinnen|nouns/Betrügerin]] [[zu|prepositions/zu]] [[vereiteln|verbs/vereiteln]], [[verließ|verbs/verlassen_partizip#1]] ich sie wortlos [[und|conjunctions/und]] [[schloß|verbs/schließen]] [[mich|pronouns/ich]] [[mit|prepositions/mit]] [[Madame|nouns/Madame]] d'Urfé [[ein|determiners/ein]], um [[das|pronouns/das_[1]]] [[Orakel|nouns/Orakel#1]] [[über|prepositions/über]] die [[Operation|nouns/Operation#2]] zu [[befragen|verbs/befragen]], die zu [[ihrem|pronouns/ihr_zu#1]] [[Glück|nouns/Glück#3]] [[führen|verbs/führen#2]] [[sollte|verbs/sollen#4]].“"
+    "text_linked": "„[[Da|conjunctions/da]] [[ich|pronouns/ich]] [[etwas|pronouns/etwas#1]] [[unternehmen|verbs/unternehmen_etwas#1]] [[mußte|verbs/müssen#1]], [[um|prepositions/um]] [[die|determiners/die]] [[Absichten|nouns/Absicht#1]] [[der|determiners/der]] beiden [[Betrügerinnen|nouns/Betrügerin]] [[zu|prepositions/zu]] [[vereiteln|verbs/vereiteln]], [[verließ|verbs/verlassen_weggehen#1]] ich sie wortlos [[und|conjunctions/und]] [[schloß|verbs/schließen]] [[mich|pronouns/ich]] [[mit|prepositions/mit]] [[Madame|nouns/Madame]] d'Urfé [[ein|determiners/ein]], um [[das|pronouns/das_[1]]] [[Orakel|nouns/Orakel#1]] [[über|prepositions/über]] die [[Operation|nouns/Operation#2]] zu [[befragen|verbs/befragen]], die zu [[ihrem|pronouns/ihr_zu#1]] [[Glück|nouns/Glück#3]] [[führen|verbs/führen#2]] [[sollte|verbs/sollen#4]].“"
   },
   "ab3ffcfb43": {
     "text": "dreimal umgezogen ist einmal abgebrannt",
@@ -6689,8 +6677,24 @@
     ],
     "translation_model": "anthropic/claude-haiku-4-5-20251001",
     "_proofread": {
-      "translation": true
-    }
+      "translation": true,
+      "annotations": "28340ef4"
+    },
+    "annotations": [
+      {
+        "form": "habe",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": "possess"
+      },
+      {
+        "form": "Haus",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": "building"
+      }
+    ],
+    "text_linked": "Ich [[habe|verbs/haben#2]] ein [[Haus|nouns/Haus#1]]."
   },
   "ab41445d46": {
     "text": "Hier wird seltener polemisiert, doch unterlässt es unser Moser zum Schlusse hin nie, sein ceterum censeo noch beizufügen und den Protestanten Eins dran zu geben.",
@@ -10619,28 +10623,16 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Sie",
-        "lemma": "sie",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "antwortete",
         "lemma": "antworten",
         "pos": "verb",
-        "gloss_hint": "answer"
-      },
-      {
-        "form": "mit",
-        "lemma": "mit",
-        "pos": "preposition",
-        "gloss_hint": "with"
+        "gloss_hint": null
       },
       {
         "form": "klarer",
         "lemma": "klar",
         "pos": "adjective",
-        "gloss_hint": "clear"
+        "gloss_hint": null
       },
       {
         "form": "Stimme",
@@ -10649,7 +10641,11 @@
         "gloss_hint": "voice"
       }
     ],
-    "text_linked": "Sie [[antwortete|verbs/antworten#1]] [[mit|prepositions/mit#1]] [[klarer|adjectives/klar#1]] [[Stimme|nouns/Stimme#1]]."
+    "_proofread": {
+      "translation": true,
+      "annotations": "6e1c1284"
+    },
+    "text_linked": "Sie [[antwortete|verbs/antworten]] mit [[klarer|adjectives/klar]] [[Stimme|nouns/Stimme#1]]."
   },
   "ab6c52aa6f": {
     "text": "in die Röhre gucken",
@@ -14582,7 +14578,7 @@
         "gloss_hint": "failure (explosive)"
       }
     ],
-    "text_linked": "„»Ich will mich wirklich nicht wieder mit diesem Ekel abmühen, heute.« »Mindestens kriegst du von dem keine Kopfschmerzen. Der Dicke gestern Abend, der schafft es absolut nicht, wenn er nicht [[so|adverbs/so]] schrill wie eine Sirene kreischt. Erst kreischt er und dann schreit er: ‚Jetzt kommt’s und [[ist|verbs/is]] kein Blindgänger.‘[…]«“"
+    "text_linked": "„»Ich will mich wirklich nicht wieder mit diesem Ekel abmühen, heute.« »Mindestens kriegst du von dem keine Kopfschmerzen. Der Dicke gestern Abend, der schafft es absolut nicht, wenn er nicht [[so|adverbs/so]] schrill wie eine Sirene kreischt. Erst kreischt er und dann schreit er: ‚Jetzt kommt’s und ist kein Blindgänger.‘[…]«“"
   },
   "ab8f5bac6b": {
     "text": "Er möchte mit uns über seine Abenteuerreise in die Arktis sprechen.",
@@ -14644,7 +14640,8 @@
     ],
     "text_linked": "Er möchte [[mit|prepositions/mit#1]] [[uns|pronouns/wir]] [[über|prepositions/über#2]] seine Abenteuerreise [[in|prepositions/in]] [[die|determiners/die]] Arktis sprechen.",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "9ac71ea4"
     }
   },
   "ab8fc1fb46": {
@@ -15037,7 +15034,11 @@
         "gloss_hint": "barn"
       }
     ],
-    "text_linked": "[[Der|determiners/der]] [[Bauer|nouns/Bauer_jemand#1]] [[hält|verbs/halten#3]] [[über|adverbs/über#1]] [[hundert|numerals/hundert#1]] [[Kühe|nouns/Kuh]] [[im|prepositions/in]] [[Stall|nouns/Stall#1]]."
+    "text_linked": "[[Der|determiners/der]] [[Bauer|nouns/Bauer_jemand#1]] [[hält|verbs/halten#3]] [[über|adverbs/über#1]] [[hundert|numerals/hundert#1]] [[Kühe|nouns/Kuh]] [[im|prepositions/in]] [[Stall|nouns/Stall#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "778b3d33"
+    }
   },
   "ab92268932": {
     "text": "„Der Finstermünzpass ist eine Engstelle der Reschenstraße beim Sperrfort Nauders im Bezirk Landeck, Tirol. Bei dieser Engstelle handelt es sich nicht um einen Pass im eigentlichen Wortsinn, da die bezeichnete Stelle weder eine Wasserscheide, noch eine Straßen- oder Weghöhe ist, von der das jenseitige Terrain abwärts führt.“",
@@ -22301,7 +22302,11 @@
         "gloss_hint": "misfortune"
       }
     ],
-    "text_linked": "Sie [[mussten|verbs/müssen#1]] [[sich|pronouns/sich]] [[in|prepositions/in]] [[ihr|pronouns/ihr_person]] [[Unglück|nouns/Unglück#1]] finden."
+    "text_linked": "Sie [[mussten|verbs/müssen#1]] [[sich|pronouns/sich]] [[in|prepositions/in]] [[ihr|pronouns/ihr_person]] [[Unglück|nouns/Unglück#1]] finden.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "540c8790"
+    }
   },
   "abd8acd8fd": {
     "text": "Ungeschickt versuchte sie, die Wagentür mit der Hüfte zuzustoßen.",
@@ -22717,7 +22722,11 @@
         "gloss_hint": "cause"
       }
     ],
-    "text_linked": "Das [[Spannen|verbs/spannen#1]] einer [[Feder|nouns/Feder#7]] [[oder|particles/oder]] [[das|pronouns/das_[1]]] [[Anheben|verbs/anheben#1]] [[eines|determiners/eines]] [[Gewichts|nouns/Gewicht#1]] [[kann|verbs/können_beherrschen#1]] [[durch|prepositions/durch#1]] [[Arbeit|nouns/Arbeit#8]] [[bewirkt|verbs/bewirken#1]] werden."
+    "text_linked": "Das [[Spannen|verbs/spannen#1]] einer [[Feder|nouns/Feder#7]] [[oder|particles/oder]] [[das|pronouns/das_[1]]] [[Anheben|verbs/anheben#1]] [[eines|determiners/eines]] [[Gewichts|nouns/Gewicht#1]] [[kann|verbs/können_beherrschen#1]] [[durch|prepositions/durch#1]] [[Arbeit|nouns/Arbeit#8]] [[bewirkt|verbs/bewirken#1]] werden.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "4971a225"
+    }
   },
   "abdcacb35e": {
     "text": "Er hat eine Tendenz zum Schielen.",

@@ -1444,7 +1444,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Als wir aus Nizza [[abfuhren|verbs/abfahren]], war [[Sommer|nouns/Sommer#1]] - einen Tag später hatten wir in Amsterdam [[Regen|nouns/Regen#1]] und [[Winter|nouns/Winter]].“"
+    "text_linked": "„Als wir aus Nizza [[abfuhren|verbs/abfahren]], war [[Sommer|nouns/Sommer#1]] - einen Tag später hatten wir in Amsterdam [[Regen|nouns/Regen#1]] und [[Winter|nouns/Winter]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "528f558e"
+    }
   },
   "31124ae5e2": {
     "text": "Emotionen sind das Fenster zur Seele.",
@@ -3744,7 +3748,7 @@
     "_proofread": {
       "translation": true
     },
-    "text_linked": "„Die syrische [[Armee|nouns/Armee]] [[fordert|verbs/auffordern]] [[Rebellen|nouns/Rebell]] und [[Bewohner|nouns/Bewohner]] auf, die [[Stadt|nouns/Stadt]] zu [[verlassen|verbs/verlassen_partizip]].“"
+    "text_linked": "„Die syrische [[Armee|nouns/Armee]] [[fordert|verbs/auffordern]] [[Rebellen|nouns/Rebell]] und [[Bewohner|nouns/Bewohner]] auf, die [[Stadt|nouns/Stadt]] zu [[verlassen|verbs/verlassen_weggehen]].“"
   },
   "312d4529df": {
     "text": "Mein Urgroßvater hatte einen Bart.",
@@ -6122,7 +6126,8 @@
     ],
     "text_linked": "[[Beim|prepositions/bei]] [[Fällen|verbs/fällen#1]] [[des|determiners/der]] [[Baums|nouns/Baum#1]] [[lief|verbs/laufen#1]] ihm [[das|pronouns/das_[1]]] [[Wasser|nouns/Wasser#1]] [[nur|particles/nur#1]] [[so|adverbs/so]] [[herunter|adverbs/herunter]].",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "cdb6130f"
     }
   },
   "313e47e8f2": {
@@ -16233,7 +16238,7 @@
   },
   "31a2e14481": {
     "text": "„[…]und ein armes Volk draußen, das glücklich und in Frieden lebt, mehr und mehr in Banden schlagen zu helfen, während man ihm vorschreit, daß es erst glücklich gemacht wird.“",
-    "translation": "...and a poor people outside, who live happily and in peace, increasingly falling into groups, while it is being told to them that they will only be made happy first.",
+    "translation": "\"...and to help put a poor people outside, who live happily and in peace, more and more in chains, while proclaiming to them that they will only be made happy first.\"",
     "source": "wiktionary",
     "lemmas": [
       "Band"
@@ -16241,157 +16246,71 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "draußen",
-        "lemma": "außen",
-        "pos": "adverb",
-        "gloss_hint": "outside"
+        "form": "armes",
+        "lemma": "arm",
+        "pos": "adjective",
+        "gloss_hint": "poor"
       },
       {
-        "form": "das",
-        "lemma": "der/die/das",
-        "pos": "pronoun",
+        "form": "Volk",
+        "lemma": "Volk",
+        "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "das",
-        "lemma": "der/die/das",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "leben",
-        "lemma": "leben",
-        "pos": "verb",
-        "gloss_hint": "live"
-      },
-      {
-        "form": "mehr",
-        "lemma": "mehr",
-        "pos": "adverb",
-        "gloss_hint": "more"
-      },
-      {
-        "form": "und",
-        "lemma": "und",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
+        "form": "glücklich",
+        "lemma": "glücklich",
+        "pos": "adjective",
         "gloss_hint": null
       },
       {
         "form": "Frieden",
         "lemma": "Frieden",
         "pos": "noun",
-        "gloss_hint": "peace"
+        "gloss_hint": null
       },
       {
         "form": "lebt",
         "lemma": "leben",
         "pos": "verb",
-        "gloss_hint": "lives"
-      },
-      {
-        "form": "mehr",
-        "lemma": "mehr",
-        "pos": "adverb",
-        "gloss_hint": "more"
-      },
-      {
-        "form": "und",
-        "lemma": "und",
-        "pos": "conjunction",
         "gloss_hint": null
       },
       {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "Frieden",
-        "lemma": "Frieden",
+        "form": "Banden",
+        "lemma": "Band",
         "pos": "noun",
-        "gloss_hint": "peace"
+        "gloss_hint": "captivity"
       },
       {
-        "form": "schlägt",
+        "form": "schlagen",
         "lemma": "schlagen",
         "pos": "verb",
-        "gloss_hint": "fall into groups"
-      },
-      {
-        "form": "zu",
-        "lemma": "zu",
-        "pos": "particle",
         "gloss_hint": null
       },
       {
         "form": "helfen",
         "lemma": "helfen",
         "pos": "verb",
-        "gloss_hint": "help"
-      },
-      {
-        "form": "während",
-        "lemma": "während",
-        "pos": "conjunction",
         "gloss_hint": null
-      },
-      {
-        "form": "man",
-        "lemma": "man",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "ihm",
-        "lemma": "er",
-        "pos": "pronoun",
-        "gloss_hint": "him"
-      },
-      {
-        "form": "vorschreit",
-        "lemma": "vorschreiten",
-        "pos": "verb",
-        "gloss_hint": "it is being told"
-      },
-      {
-        "form": "daß",
-        "lemma": "dass",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "es",
-        "lemma": "es",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "erst",
-        "lemma": "erst",
-        "pos": "adverb",
-        "gloss_hint": "only then"
       },
       {
         "form": "glücklich",
         "lemma": "glücklich",
         "pos": "adjective",
-        "gloss_hint": "happy"
+        "gloss_hint": null
       },
       {
         "form": "gemacht",
         "lemma": "machen",
         "pos": "verb",
-        "gloss_hint": "made"
+        "gloss_hint": null
       }
     ],
-    "text_linked": "„[…][[und|conjunctions/und]] ein armes Volk [[draußen|adverbs/außen#1]], das [[glücklich|adjectives/glücklich#2]] und [[in|prepositions/in]] [[Frieden|nouns/Frieden#1]] [[lebt|verbs/leben#2]], [[mehr|adverbs/mehr#1]] und mehr in Banden schlagen [[zu|particles/zu_drückt]] [[helfen|verbs/helfen#1]], [[während|conjunctions/während]] [[man|pronouns/man]] ihm vorschreit, [[daß|conjunctions/dass]] [[es|pronouns/es]] [[erst|adverbs/erst#3]] glücklich [[gemacht|verbs/machen#2]] wird.“"
+    "text_linked": "„[…]und ein [[armes|adjectives/arm#1]] [[Volk|nouns/Volk]] draußen, das [[glücklich|adjectives/glücklich]] und in [[Frieden|nouns/Frieden]] [[lebt|verbs/leben]], mehr und mehr in [[Banden|nouns/Band_plural#24]] [[schlagen|verbs/schlagen]] zu [[helfen|verbs/helfen]], während man ihm vorschreit, daß es erst glücklich [[gemacht|verbs/machen]] wird.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "f3851930"
+    }
   },
   "31a41285fc": {
     "text": "Im Kriminalroman entwickelte die Kommissarin ausgefallene Theorien.",
@@ -22002,7 +21921,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Wer sein bürgerliches [[Leben|nouns/Leben#1]] zu [[erheblichen|adjectives/erheblich]] [[Teilen|nouns/Teil_element#1]] auf Kapitaleinkünften oder einem zu [[erwartenden|verbs/erwarten#1]] [[Erbe|nouns/Erbe_besitz#1]] [[aufbaut|verbs/aufbauen]], wird eine [[Vermögen|nouns/Vermögen#2]]- und eine [[vernünftige|adjectives/vernünftig#2]] Erbschaftsteuer eher nicht so gut finden.“"
+    "text_linked": "„Wer sein bürgerliches [[Leben|nouns/Leben#1]] zu [[erheblichen|adjectives/erheblich]] [[Teilen|nouns/Teil_element#1]] auf Kapitaleinkünften oder einem zu [[erwartenden|verbs/erwarten#1]] [[Erbe|nouns/Erbe_besitz#1]] [[aufbaut|verbs/aufbauen]], wird eine [[Vermögen|nouns/Vermögen#2]]- und eine [[vernünftige|adjectives/vernünftig#2]] Erbschaftsteuer eher nicht so gut finden.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "cbef1c48"
+    }
   },
   "31ce9c0392": {
     "text": "„Selbst verheiratet, wird sie für die nächsten Monate Helferin im turbulenten Alltag.“",
@@ -23323,7 +23246,11 @@
         "gloss_hint": "mathematics"
       }
     ],
-    "text_linked": "Die Mengenlehre zählt zu den [[Grundlagen|nouns/Grundlage#1]] der [[Mathematik|nouns/Mathematik#1]]."
+    "text_linked": "Die Mengenlehre zählt zu den [[Grundlagen|nouns/Grundlage#1]] der [[Mathematik|nouns/Mathematik#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "104b2db3"
+    }
   },
   "31dacb34fc": {
     "text": "Die Konjunktion ‚und‘ ist eines von vielen Mitteln, um in einem Satz gleichrangige Einheiten zu koordinieren.",
@@ -25653,7 +25580,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Wenn die [[Straße|nouns/Straße#1]] das bergige [[Gelände|nouns/Gelände#1]] [[verlässt|verbs/verlassen_partizip]], [[erweitert|verbs/erweitern]] sie sich."
+    "text_linked": "Wenn die [[Straße|nouns/Straße#1]] das bergige [[Gelände|nouns/Gelände#1]] [[verlässt|verbs/verlassen_weggehen]], [[erweitert|verbs/erweitern]] sie sich."
   },
   "31f5d3375e": {
     "text": "kein Stück",

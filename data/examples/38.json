@@ -9042,7 +9042,8 @@
     ],
     "text_linked": "Er hat einen [[Papagei|nouns/Papagei#1]], der [[sprechen|verbs/sprechen#1]] kann.",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "f26e6852"
     }
   },
   "3862bd7ad6": {
@@ -9295,7 +9296,7 @@
         "gloss_hint": "lost"
       }
     ],
-    "text_linked": "Er ist viel auf [[Reisen|nouns/Reise]] gewesen, [[wodurch|adverbs/wodurch]] natürlich auch [[kostbare|adjectives/kostbar]] [[Zeit|nouns/Zeit#1]] [[verlorengegangen|verbs/verloren_partizip#1]] ist."
+    "text_linked": "Er ist viel auf [[Reisen|nouns/Reise]] gewesen, [[wodurch|adverbs/wodurch]] natürlich auch [[kostbare|adjectives/kostbar]] [[Zeit|nouns/Zeit#1]] verlorengegangen ist."
   },
   "38685df5d9": {
     "text": "„Einige Kinder schwammen im See und tauchten nach den großen weißen Muscheln, die sie, weil sie noch geschlossen waren, wieder in den See zurückwarfen.“",
@@ -11671,7 +11672,7 @@
   },
   "3885f3ce46": {
     "text": "Er isst mich noch arm!",
-    "translation": "He still considers me poor!",
+    "translation": "He's eating me out of house and home!",
     "source": "wiktionary",
     "lemmas": [
       "essen"
@@ -11679,37 +11680,23 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Er",
-        "lemma": "er",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "isst",
         "lemma": "essen",
         "pos": "verb",
-        "gloss_hint": null
-      },
-      {
-        "form": "mich",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "noch",
-        "lemma": "noch",
-        "pos": "adverb",
-        "gloss_hint": "furthermore"
+        "gloss_hint": "eat"
       },
       {
         "form": "arm",
         "lemma": "arm",
-        "pos": "noun",
-        "gloss_hint": "arm | limb | help | power"
+        "pos": "adjective",
+        "gloss_hint": null
       }
     ],
-    "text_linked": "Er [[isst|verbs/essen]] [[mich|pronouns/ich]] [[noch|adverbs/noch#1]] arm!"
+    "text_linked": "Er [[isst|verbs/essen]] [[mich|pronouns/ich]] [[noch|adverbs/noch#1]] arm!",
+    "_proofread": {
+      "translation": true,
+      "annotations": "8e479fc6"
+    }
   },
   "3885fc0344": {
     "text": "Freiburg liegt circa 20 Kilometer südöstlich von Brunsbüttel.",
@@ -12045,7 +12032,11 @@
         "gloss_hint": "wine"
       }
     ],
-    "text_linked": "Der [[Wirt|nouns/Wirt#1]] [[bot|verbs/bieten]] einen sehr [[guten|adjectives/gut#1]] [[offenen|adjectives/offen#1]] [[Wein|nouns/Wein#3]] an."
+    "text_linked": "Der [[Wirt|nouns/Wirt#1]] [[bot|verbs/bieten]] einen sehr [[guten|adjectives/gut#1]] [[offenen|adjectives/offen#1]] [[Wein|nouns/Wein#3]] an.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "dff61064"
+    }
   },
   "388800fde1": {
     "text": "jemanden sausen lassen",
@@ -15925,7 +15916,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Im [[Wörterbuch|nouns/Wörterbuch]] [[folgt|verbs/folgen]] „Töfftoff“ nicht [[unmittelbar|adjectives/unmittelbar#2]] auf „Töff, Töff Töff“ – [[dazwischen|adverbs/dazwischen]] steht ein Töffel."
+    "text_linked": "Im [[Wörterbuch|nouns/Wörterbuch]] [[folgt|verbs/folgen]] „Töfftoff“ nicht [[unmittelbar|adjectives/unmittelbar#2]] auf „Töff, Töff Töff“ – [[dazwischen|adverbs/dazwischen]] steht ein Töffel.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "217e6739"
+    }
   },
   "38a48cd222": {
     "text": "„So kurz wie möglich berichtete ich ihm alles, was seit der Meuterei geschehen war.“",
@@ -19171,12 +19166,6 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Die",
-        "lemma": "die",
-        "pos": "pronoun",
-        "gloss_hint": "which"
-      },
-      {
         "form": "Zeitung",
         "lemma": "Zeitung",
         "pos": "noun",
@@ -19189,19 +19178,17 @@
         "gloss_hint": "produce"
       },
       {
-        "form": "eine",
-        "lemma": "ein",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
         "form": "Nachricht",
         "lemma": "Nachricht",
         "pos": "noun",
         "gloss_hint": "news"
       }
     ],
-    "text_linked": "[[Die|pronouns/die#1]] [[Zeitung|nouns/Zeitung#1]] [[bringt|verbs/bringen#3]] [[eine|determiners/ein]] [[Nachricht|nouns/Nachricht#1]]."
+    "text_linked": "Die [[Zeitung|nouns/Zeitung#1]] [[bringt|verbs/bringen#3]] eine [[Nachricht|nouns/Nachricht#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "450c89be"
+    }
   },
   "38c2a718dd": {
     "text": "„… stapel tausend wirre Worte auf, die dich am Ärmel ziehen …“ (Liedtext von „Wir sind Helden“, Nur ein Wort)",
@@ -20357,7 +20344,7 @@
         "gloss_hint": "die"
       }
     ],
-    "text_linked": "„Nach dem [[Ende|nouns/Ende#1]] [[des|determiners/der]] Zweiten [[Weltkrieges|nouns/Weltkrieg#1]] 1945 [[musste|verbs/müssen#1]] [[eine|determiners/ein]] [[schreckliche|adjectives/schrecklich]] [[Bilanz|nouns/Bilanz#1]] [[gezogen|verbs/ziehen#4]] [[werden|verbs/werden#1]]: 145 Pfarrangehörige [[waren|verbs/sein#2]] [[zum|prepositions/zu]] Kriegsdienst [[einberufen|verbs/einberufen#2]] [[worden|verbs/werden#1]], 24 [[sind|verbs/sein#2]] [[gefallen|verbs/fallen#1]], 12 [[vermisst|verbs/vermisst_partizip#1]], 2 [[in|prepositions/in]] Russland [[und|conjunctions/und]] [[4|numerals/4]] in [[der|determiners/der]] [[Heimat|nouns/Heimat#1]] [[an|prepositions/an]] [[den|determiners/der]] Folgen [[ihrer|pronouns/ihrer#2]] Kriegsverletzungen [[gestorben|verbs/sterben#1]].“"
+    "text_linked": "„Nach dem [[Ende|nouns/Ende#1]] [[des|determiners/der]] Zweiten [[Weltkrieges|nouns/Weltkrieg#1]] 1945 [[musste|verbs/müssen#1]] [[eine|determiners/ein]] [[schreckliche|adjectives/schrecklich]] [[Bilanz|nouns/Bilanz#1]] [[gezogen|verbs/ziehen#4]] [[werden|verbs/werden#1]]: 145 Pfarrangehörige [[waren|verbs/sein#2]] [[zum|prepositions/zu]] Kriegsdienst [[einberufen|verbs/einberufen#2]] [[worden|verbs/werden#1]], 24 [[sind|verbs/sein#2]] [[gefallen|verbs/fallen#1]], 12 vermisst, 2 [[in|prepositions/in]] Russland [[und|conjunctions/und]] [[4|numerals/4]] in [[der|determiners/der]] [[Heimat|nouns/Heimat#1]] [[an|prepositions/an]] [[den|determiners/der]] Folgen [[ihrer|pronouns/ihrer#2]] Kriegsverletzungen [[gestorben|verbs/sterben#1]].“"
   },
   "38cfd51a06": {
     "text": "Das ist mir so was von egal!",
@@ -22799,7 +22786,11 @@
         "gloss_hint": "joint"
       }
     ],
-    "text_linked": "[[Lass|verbs/lassen#3]] [[das|pronouns/das_[1]]] [[Laufen|verbs/laufen]]! [[Das|pronouns/das_[1]]] [[ist|verbs/sein#2]] [[schlecht|adjectives/schlecht#1]] [[für|prepositions/für#1]] [[deine|pronouns/dein#1]] [[Gelenke|nouns/Gelenk#1]]."
+    "text_linked": "[[Lass|verbs/lassen#3]] [[das|pronouns/das_[1]]] [[Laufen|verbs/laufen]]! [[Das|pronouns/das_[1]]] [[ist|verbs/sein#2]] [[schlecht|adjectives/schlecht#1]] [[für|prepositions/für#1]] [[deine|pronouns/dein#1]] [[Gelenke|nouns/Gelenk#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "6df1672e"
+    }
   },
   "38e1d8fcbb": {
     "text": "Wenn du es mit einem hörbaren Klick rasten hörst, sind die beiden Teile fest miteinander verbunden.",
@@ -25214,7 +25205,11 @@
         "gloss_hint": "Christians"
       }
     ],
-    "text_linked": "„[…] Joshua Wong [[kommt|verbs/kommen]] [[aus|prepositions/aus#1]] [[konservativem|adjectives/konservativ]] [[Haus|nouns/Haus#1]], [[seine|pronouns/sein]] [[Eltern|nouns/Eltern#1]] [[sind|verbs/sein]] [[fromme|adjectives/fromm]] [[Christen|nouns/Christ#1]].“"
+    "text_linked": "„[…] Joshua Wong [[kommt|verbs/kommen]] [[aus|prepositions/aus#1]] [[konservativem|adjectives/konservativ]] [[Haus|nouns/Haus#1]], [[seine|pronouns/sein]] [[Eltern|nouns/Eltern#1]] [[sind|verbs/sein]] [[fromme|adjectives/fromm]] [[Christen|nouns/Christ#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "ecf0cafc"
+    }
   },
   "38fb4cc180": {
     "text": "„Internationale Telefon- und Faxnummern werden im Schriftsatz üblicherweise ohne Klammern gesetzt.“",

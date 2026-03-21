@@ -1043,7 +1043,10 @@
     "lemmas": [
       "Wohl"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c50cbd73f3": {
     "text": "„Es ging ein leichter Wind, der seine Frisur in Unordnung brachte.“",
@@ -3488,7 +3491,8 @@
     ],
     "text_linked": "[[Ich|pronouns/ich]] [[kann|verbs/können_etwas#1]] [[mehrere|pronouns/mehrere#1]] [[Sprachen|nouns/Sprache#1]].",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "12b680c4"
     }
   },
   "c52c25a70c": {
@@ -6144,46 +6148,22 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Seit",
-        "lemma": "seit",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "ich",
-        "lemma": "ich",
-        "pos": "noun",
-        "gloss_hint": "we | I (pronoun) | ego"
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "determiner",
-        "gloss_hint": "the (feminine)"
-      },
-      {
         "form": "neue",
         "lemma": "neu",
         "pos": "adjective",
-        "gloss_hint": "snow (fresh) | newcomer"
+        "gloss_hint": "recent"
       },
       {
         "form": "Brille",
         "lemma": "Brille",
         "pos": "noun",
-        "gloss_hint": "glasses | toilet seat (bowl)"
+        "gloss_hint": "glasses"
       },
       {
         "form": "habe",
         "lemma": "haben",
         "pos": "verb",
-        "gloss_hint": "have"
-      },
-      {
-        "form": "ich",
-        "lemma": "ich",
-        "pos": "noun",
-        "gloss_hint": "we | I (pronoun) | ego"
+        "gloss_hint": "possess"
       },
       {
         "form": "sehe",
@@ -6192,25 +6172,17 @@
         "gloss_hint": "see"
       },
       {
-        "form": "ich",
-        "lemma": "ich",
-        "pos": "noun",
-        "gloss_hint": "we | I (pronoun) | ego"
-      },
-      {
-        "form": "viel",
-        "lemma": "viel",
-        "pos": "adverb",
-        "gloss_hint": "much | frequently | very much"
-      },
-      {
         "form": "besser",
         "lemma": "gut",
         "pos": "adjective",
         "gloss_hint": "good"
       }
     ],
-    "text_linked": "[[Seit|prepositions/seit]] ich [[die|determiners/die#1]] [[neue|adjectives/neu]] [[Brille|nouns/Brille#1]] [[habe|verbs/haben#1]], [[sehe|verbs/sehen#1]] ich [[viel|adverbs/viel#1]] [[besser|adjectives/gut#1]]."
+    "text_linked": "[[Seit|prepositions/seit]] ich [[die|determiners/die#1]] [[neue|adjectives/neu]] [[Brille|nouns/Brille#1]] [[habe|verbs/haben#1]], [[sehe|verbs/sehen#1]] ich [[viel|adverbs/viel#1]] [[besser|adjectives/gut#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "68a2c961"
+    }
   },
   "c54dbd34a1": {
     "text": "„»Spritz mir ins Gesicht«, verlange ich.“",
@@ -8201,7 +8173,11 @@
         "gloss_hint": "tie"
       }
     ],
-    "text_linked": "„Sie [[kann|verbs/können_beherrschen]] [[durch|prepositions/durch]] die [[Ich-|nouns/Ich#3]] oder Wir-Form das Band zwischen Erzähler und Leser noch enger knüpfen.“"
+    "text_linked": "„Sie [[kann|verbs/können_beherrschen]] [[durch|prepositions/durch]] die [[Ich-|nouns/Ich#3]] oder Wir-Form das Band zwischen Erzähler und Leser noch enger knüpfen.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "cfe37614"
+    }
   },
   "c565d005d4": {
     "text": "Nach dem Essen verspürte ich eine angenehme Sättigung.",
@@ -10487,7 +10463,10 @@
     "lemmas": [
       "Sagen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c57c95145a": {
     "text": "Und darum ersuche ich Sie höflichst, Ljubowj Grigorjewna, mein Schicksal unter Ihrer gefälligen Mitwirkung betreiben zu wollen.",
@@ -10649,7 +10628,11 @@
         "gloss_hint": "organism"
       }
     ],
-    "text_linked": "Er [[zog|verbs/ziehen#1]] [[die|determiners/die]] [[Arme|nouns/Arm#2]] [[dicht|adjectives/dicht#2]] [[an|prepositions/an]] [[seinen|pronouns/sein#1]] [[Körper|nouns/Körper#1]]."
+    "text_linked": "Er [[zog|verbs/ziehen#1]] [[die|determiners/die]] [[Arme|nouns/Arm#2]] [[dicht|adjectives/dicht#2]] [[an|prepositions/an]] [[seinen|pronouns/sein#1]] [[Körper|nouns/Körper#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "a7b23397"
+    }
   },
   "c57e8f9edb": {
     "text": "Du kannst dich doch nicht an fremden Sachen vergreifen!",
@@ -15880,7 +15863,7 @@
         "gloss_hint": "pronoun"
       }
     ],
-    "text_linked": "„[[Das|pronouns/das_[1]]] Besondere daran [[ist|verbs/sein#2]], [[dass|conjunctions/dass#1]] [[sich|pronouns/sich#1]] [[das|pronouns/das_nominativ]] [[Pronomen|nouns/Pronomen#1]] [[auf|prepositions/auf#1]] das [[Subjekt|nouns/Subjekt#1]] [[bezieht|verbs/bezogen_partizip#1]]. [[Daher|adverbs/daher#3]] [[auch|adverbs/auch]] [[die|pronouns/die#2]] [[Bezeichnung|nouns/Bezeichnung#1]] \"rückbezügliches\" Pronomen.“"
+    "text_linked": "„[[Das|pronouns/das_[1]]] Besondere daran [[ist|verbs/sein#2]], [[dass|conjunctions/dass#1]] [[sich|pronouns/sich#1]] [[das|pronouns/das_nominativ]] [[Pronomen|nouns/Pronomen#1]] [[auf|prepositions/auf#1]] das [[Subjekt|nouns/Subjekt#1]] bezieht. [[Daher|adverbs/daher#3]] [[auch|adverbs/auch]] [[die|pronouns/die#2]] [[Bezeichnung|nouns/Bezeichnung#1]] \"rückbezügliches\" Pronomen.“"
   },
   "c5a299fb9d": {
     "text": "Ein Tatverdächtiger wurde zunächst wegen Mordes verurteilt, aber trotz schwerwiegender Indizien in einem späteren Revisionsverfahren freigesprochen. Nach über 30 Jahren tauchten nun neue Beweise gegen den Täter auf, doch weil sein Freispruch rechtskräftig ist, ist es fast unmöglich, wieder gegen ihn zu ermitteln.",
@@ -18194,7 +18177,11 @@
         "gloss_hint": "church building"
       }
     ],
-    "text_linked": "Alles [[Land|nouns/Land#6]] [[hier|adverbs/hier#1]] [[gehört|verbs/gehören#1]] [[der|pronouns/der_nominativ#1]] [[Kirche|nouns/Kirche#1]]."
+    "text_linked": "Alles [[Land|nouns/Land#6]] [[hier|adverbs/hier#1]] [[gehört|verbs/gehören#1]] [[der|pronouns/der_nominativ#1]] [[Kirche|nouns/Kirche#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "024f73cc"
+    }
   },
   "c5b887b49c": {
     "text": "du kannst mir viel erzählen",
@@ -18871,7 +18858,10 @@
     "lemmas": [
       "Teil"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c5c02893dc": {
     "text": "„Experten setzen [Anmerkung: das Medikament] Acarizax inzwischen auch bei Stauballergikern ein, die noch kein Asthma entwickelt haben, um ein Fortschreiten zu verhindern.“",
@@ -21156,7 +21146,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Die|pronouns/der_nominativ#1]] [[Tage|nouns/Tag_angehängter]] [[der|pronouns/der_nominativ]] [[Jugend|nouns/Jugend#1]] [[sind|verbs/sein#2]] unwiederbringlich."
+    "text_linked": "[[Die|pronouns/der_nominativ#1]] [[Tage|nouns/Tag_angehängter]] [[der|pronouns/der_nominativ]] [[Jugend|nouns/Jugend#1]] [[sind|verbs/sein#2]] unwiederbringlich.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "e67e2af3"
+    }
   },
   "c5cfdfb998": {
     "text": "Nachruf: „Er kümmerte sich wirklich liebevoll um Kinder und setzte sich für sie ein. Er war auch sehr aktiv im Sportverein und in der kommunalen Politik. Dabei hatte er das Herz am rechten Fleck. […]“",
@@ -23612,7 +23606,7 @@
   },
   "c5e8bb4950": {
     "text": "„Sie war Trudis Vorschlag gefolgt und hatte einen Termin beim Friseur Riss ausgemacht.“",
-    "translation": "She followed Trudi's suggestion and made an appointment with the hairdresser for a crack (or tear).",
+    "translation": "\"She had followed Trudi's suggestion and made an appointment with the hairdresser Riss.\"",
     "source": "wiktionary",
     "lemmas": [
       "folgen",
@@ -23681,19 +23675,17 @@
         "gloss_hint": "hairdresser"
       },
       {
-        "form": "Riss",
-        "lemma": "Riss",
-        "pos": "noun",
-        "gloss_hint": "tear"
-      },
-      {
         "form": "ausgemacht",
         "lemma": "ausmachen",
         "pos": "verb",
         "gloss_hint": "made"
       }
     ],
-    "text_linked": "„Sie [[war|verbs/sein#2]] Trudis [[Vorschlag|nouns/Vorschlag#1]] [[gefolgt|verbs/folgen#1]] [[und|conjunctions/und]] [[hatte|verbs/haben#1]] [[einen|determiners/ein]] [[Termin|nouns/Termin#2]] [[beim|prepositions/bei]] [[Friseur|nouns/Friseur#1]] [[Riss|nouns/Riss_trennungsspalt#1]] [[ausgemacht|verbs/ausmachen]].“"
+    "text_linked": "„Sie [[war|verbs/sein#2]] Trudis [[Vorschlag|nouns/Vorschlag#1]] [[gefolgt|verbs/folgen#1]] [[und|conjunctions/und]] [[hatte|verbs/haben#1]] [[einen|determiners/ein]] [[Termin|nouns/Termin#2]] [[beim|prepositions/bei]] [[Friseur|nouns/Friseur#1]] Riss [[ausgemacht|verbs/ausmachen]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "169b45f3"
+    }
   },
   "c5e8be56c5": {
     "text": "„Die beiden hatten sich schnell angefreundet, was vielleicht daran lag, dass Nobys Großvater mütterlicherseits deutsche Wurzeln hatte.“",

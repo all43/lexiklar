@@ -1038,78 +1038,46 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "difference",
-        "lemma": "difference",
+        "form": "Unterschied",
+        "lemma": "Unterschied",
         "pos": "noun",
-        "gloss_hint": "difference"
-      },
-      {
-        "form": "between",
-        "lemma": "between",
-        "pos": "preposition",
         "gloss_hint": null
       },
       {
-        "form": "gorilla",
-        "lemma": "gorilla",
+        "form": "Gorilla",
+        "lemma": "Gorilla",
         "pos": "noun",
-        "gloss_hint": "gorilla"
-      },
-      {
-        "form": "and",
-        "lemma": "and",
-        "pos": "conjunction",
         "gloss_hint": null
       },
       {
-        "form": "human",
-        "lemma": "human",
+        "form": "Mensch",
+        "lemma": "Mensch",
         "pos": "noun",
-        "gloss_hint": "human"
+        "gloss_hint": null
       },
       {
-        "form": "is",
-        "lemma": "be",
+        "form": "beträgt",
+        "lemma": "betragen",
         "pos": "verb",
         "gloss_hint": null
       },
       {
-        "form": "just",
-        "lemma": "just",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "three",
-        "lemma": "three",
+        "form": "Prozent",
+        "lemma": "Prozent",
         "pos": "noun",
-        "gloss_hint": "three"
-      },
-      {
-        "form": "percent",
-        "lemma": "percent",
-        "pos": "noun",
-        "gloss_hint": "percentage"
-      },
-      {
-        "form": "of",
-        "lemma": "of",
-        "pos": "preposition",
         "gloss_hint": null
       },
       {
-        "form": "their",
-        "lemma": "their",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "DNA",
-        "lemma": "DNA",
+        "form": "Erbguts",
+        "lemma": "Erbgut",
         "pos": "noun",
         "gloss_hint": null
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true
+    },
+    "text_linked": "Der [[Unterschied|nouns/Unterschied]] zwischen [[Gorilla|nouns/Gorilla]] und [[Mensch|nouns/Mensch_junge]] [[beträgt|verbs/betragen]] gerade mal drei [[Prozent|nouns/Prozent]] ihres Erbguts."
   },
   "c70b10cf66": {
     "text": "Bischofsheim liegt in Deutschlands Südosten.",
@@ -1847,7 +1815,10 @@
     "lemmas": [
       "Sommer"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c714a9f1a8": {
     "text": "„Einige Stunden angenehmer Geselligkeit sind mir nach jeder Blindvorstellung sehr erwünscht und dazu, als Conditio sine qua non, Alkoholgenuss – etwas mehr als gewöhnlich … Wer das Unglück hat, grundsätzlicher Antialkoholiker zu sein, der soll abends nicht blind und überhaupt nicht ernst Schach spielen.“",
@@ -4531,49 +4502,29 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "knew",
+        "form": "wusste",
         "lemma": "wissen",
         "pos": "verb",
-        "gloss_hint": "help"
+        "gloss_hint": "be able"
       },
       {
-        "form": "sich",
-        "lemma": "sich",
-        "pos": "pronoun",
-        "gloss_hint": "himself"
-      },
-      {
-        "form": "zu helfen",
+        "form": "helfen",
         "lemma": "helfen",
         "pos": "verb",
-        "gloss_hint": "help"
-      },
-      {
-        "form": "und",
-        "lemma": "und",
-        "pos": "conjunction",
         "gloss_hint": null
       },
       {
-        "form": "auch",
-        "lemma": "auch",
-        "pos": "adverb",
-        "gloss_hint": null
-      },
-      {
-        "form": "zu verteidigen",
+        "form": "verteidigen",
         "lemma": "verteidigen",
         "pos": "verb",
-        "gloss_hint": "defend"
-      },
-      {
-        "form": "sich",
-        "lemma": "sich",
-        "pos": "pronoun",
-        "gloss_hint": "himself"
+        "gloss_hint": null
       }
     ],
-    "text_linked": "„Er selber wusste [[sich|pronouns/sich#1]] [[zu helfen|verbs/helfen#1]] [[und|conjunctions/und]] [[auch|adverbs/auch]] [[zu verteidigen|verbs/verteidigen#1]] […].“"
+    "text_linked": "„Er selber wusste [[sich|pronouns/sich#1]] [[zu helfen|verbs/helfen#1]] [[und|conjunctions/und]] [[auch|adverbs/auch]] [[zu verteidigen|verbs/verteidigen#1]] […].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "e8c00a0f"
+    }
   },
   "c7332d759d": {
     "text": "„Der Topf kann auch auf den Dampfapparat oder in einen zu diesem gehörigen Abdampfkessel gesetzt werden, wenn er mit einem Dichtungsring von Messing versehen ist.“",
@@ -6352,21 +6303,35 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Love",
-        "lemma": "love",
+        "form": "Liebe",
+        "lemma": "Liebe",
         "pos": "noun",
         "gloss_hint": "affection"
       },
       {
-        "form": "literature",
-        "lemma": "literature",
+        "form": "Literatur",
+        "lemma": "Literatur",
         "pos": "noun",
         "gloss_hint": "literature"
+      },
+      {
+        "form": "dargestellt",
+        "lemma": "darstellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "hinzugefügt",
+        "lemma": "hinzufügen",
+        "pos": "verb",
+        "gloss_hint": null
       }
     ],
     "_proofread": {
-      "translation": true
-    }
+      "translation": true,
+      "annotations": "8689e6aa"
+    },
+    "text_linked": "„Die [[Liebe|nouns/Liebe#1]] ist in der [[Literatur|nouns/Literatur#1]] ausreichend [[dargestellt|verbs/darstellen]] worden, ihren Schilderungen kann nichts Neues [[hinzugefügt|verbs/hinzufügen]] werden.“"
   },
   "c74581b890": {
     "text": "Leinen los!",
@@ -11395,7 +11360,11 @@
         "gloss_hint": "belong to"
       }
     ],
-    "text_linked": "Die [[Kenntniss|nouns/Kenntnis#1]] [[dieser|pronouns/dieser]] Dinge [[ist|verbs/sein#2]] [[so|adverbs/so]] [[sehr|particles/sehr]] [[verdunkelt|verbs/verdunkeln]], [[dass|conjunctions/dass]] [[selbst|pronouns/selbst]] viele [[fromme|adjectives/fromm]] [[Priester|nouns/Priester#2]] [[die|pronouns/die]] [[alten|adjectives/alt]] [[Bilder|nouns/Bild#2]] [[in|prepositions/in]] [[ihren|pronouns/ihr_person]] [[eigenen|adjectives/eigen]] [[Kirchen|nouns/Kirche#1]] [[nicht|particles/nicht]] [[mehr|adverbs/mehr#1]] [[verstehen|verbs/verstehen_gesprochenes#2]], [[und|conjunctions/und]] dass [[gerade|adjectives/gerade]] die [[schönsten|adjectives/schön]] und [[geistreichsten|adjectives/geistreich]] Abhandlungen und Homilien [[der|pronouns/der_nominativ]] Kirchenväter und Mystiker […] [[zu|prepositions/zu]] [[den|determiners/der]] [[vergessensten|adjectives/vergessen]] Dingen [[im|prepositions/in]] [[ganzen|adjectives/ganz]] [[Bereiche|nouns/Bereich]] [[des|determiners/der]] [[menschlichen|adjectives/menschlich#1]] [[Wissens|nouns/Wissen#1]] [[gehören|verbs/gehören#1]]."
+    "text_linked": "Die [[Kenntniss|nouns/Kenntnis#1]] [[dieser|pronouns/dieser]] Dinge [[ist|verbs/sein#2]] [[so|adverbs/so]] [[sehr|particles/sehr]] [[verdunkelt|verbs/verdunkeln]], [[dass|conjunctions/dass]] [[selbst|pronouns/selbst]] viele [[fromme|adjectives/fromm]] [[Priester|nouns/Priester#2]] [[die|pronouns/die]] [[alten|adjectives/alt]] [[Bilder|nouns/Bild#2]] [[in|prepositions/in]] [[ihren|pronouns/ihr_person]] [[eigenen|adjectives/eigen]] [[Kirchen|nouns/Kirche#1]] [[nicht|particles/nicht]] [[mehr|adverbs/mehr#1]] [[verstehen|verbs/verstehen_gesprochenes#2]], [[und|conjunctions/und]] dass [[gerade|adjectives/gerade]] die [[schönsten|adjectives/schön]] und [[geistreichsten|adjectives/geistreich]] Abhandlungen und Homilien [[der|pronouns/der_nominativ]] Kirchenväter und Mystiker […] [[zu|prepositions/zu]] [[den|determiners/der]] [[vergessensten|adjectives/vergessen]] Dingen [[im|prepositions/in]] [[ganzen|adjectives/ganz]] [[Bereiche|nouns/Bereich]] [[des|determiners/der]] [[menschlichen|adjectives/menschlich#1]] [[Wissens|nouns/Wissen#1]] [[gehören|verbs/gehören#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "9ab8e2ef"
+    }
   },
   "c76e659b03": {
     "text": "Karoline Friederike Louise Maximiliane von Günderrode (* 11. Februar 1780 in Karlsruhe; † 26. Juli 1806 in Winkel) war deutsche Romantikerin.",
@@ -13763,7 +13732,10 @@
       "Situation",
       "Audienz"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c782bd8281": {
     "text": "„Insbesondere junge Literaten des Expressionismus machten ihrem Verdruß über die verknöcherte Gesellschaft durch Herbeirufen der Apokalypse Luft.“",
@@ -14429,7 +14401,11 @@
         "gloss_hint": "lost | we lost | they lost"
       }
     ],
-    "text_linked": "Er [[hat|verbs/haben]] [[seine|pronouns/sein]] [[Arbeit|nouns/Arbeit#1]] [[verloren|verbs/verlieren#4]]."
+    "text_linked": "Er [[hat|verbs/haben]] [[seine|pronouns/sein]] [[Arbeit|nouns/Arbeit#1]] [[verloren|verbs/verlieren#4]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "673157d9"
+    }
   },
   "c78af0c0a4": {
     "text": "Der gebürtige Lake lebt seit vielen Jahren in Moskau.",
@@ -16631,7 +16607,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Vollbärte werden seiner [des 39-jährige [[Fotografen|nouns/Fotograf]] Gunnar Hämmerle] [[Beobachtung|nouns/Beobachtung#1]] zufolge [[gerade|adverbs/gerade#1]] in alternativeren [[Kreisen|nouns/Kreis]] [[schön|adjectives/schön#3]] [[länger|adverbs/lange]] [[getragen|verbs/tragen]], den \"Nasenbesen\" – so kann man den [[Schnurrbart|nouns/Schnurrbart#1]] auch [[bezeichnen|verbs/bezeichnen#1]] – sehe er bislang noch [[seltener|adjectives/selten]]."
+    "text_linked": "Vollbärte werden seiner [des 39-jährige [[Fotografen|nouns/Fotograf]] Gunnar Hämmerle] [[Beobachtung|nouns/Beobachtung#1]] zufolge [[gerade|adverbs/gerade#1]] in alternativeren [[Kreisen|nouns/Kreis]] [[schön|adjectives/schön#3]] [[länger|adverbs/lange]] [[getragen|verbs/tragen]], den \"Nasenbesen\" – so kann man den [[Schnurrbart|nouns/Schnurrbart#1]] auch [[bezeichnen|verbs/bezeichnen#1]] – sehe er bislang noch [[seltener|adjectives/selten]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "5e3e5628"
+    }
   },
   "c79fa9cf82": {
     "text": "jemanden mit einer einladenden Geste ins Haus bitten",
@@ -16730,7 +16710,11 @@
         "gloss_hint": "think | believe | plan | consider | imagine"
       }
     ],
-    "text_linked": "[[Wenn|conjunctions/wenn]] ich [[zu|particles/zu_drückt]] viel [[getrunken|verbs/trinken]] [[hab|verbs/haben]], [[kann|verbs/können_beherrschen]] ich [[nicht|particles/nicht#1]] [[mehr|adverbs/mehr#1]] [[ordentlich|adjectives/ordentlich#1]] [[denken|verbs/denken#1]]."
+    "text_linked": "[[Wenn|conjunctions/wenn]] ich [[zu|particles/zu_drückt]] viel [[getrunken|verbs/trinken]] [[hab|verbs/haben]], [[kann|verbs/können_beherrschen]] ich [[nicht|particles/nicht#1]] [[mehr|adverbs/mehr#1]] [[ordentlich|adjectives/ordentlich#1]] [[denken|verbs/denken#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "10f2ac4d"
+    }
   },
   "c7a21899a3": {
     "text": "ins Schwimmen kommen",
@@ -25534,7 +25518,10 @@
     "lemmas": [
       "Möglichkeit"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c7f45ad294": {
     "text": "„Die Ursache [für die schmerzhafte Entzündung] liegt in einer Überlastung der Muskelsehnen am Ellenbogengelenkt, das heißt beim Tennisarm sind die Muskelsehnen getroffen, die die Hand strecken und den Daumen nach hinten ziehen, und beim Golferarm sind die Muskelgruppen betroffen, die am Ellenbogen ansetzen und die Hand im Kleinfingerbereich beugen.“",
@@ -27687,7 +27674,7 @@
   },
   "c7fea30944": {
     "text": "Er fuhr sich mit den Händen durchs Gesicht.",
-    "translation": "He ran his hands through his face.",
+    "translation": "He ran his hands over his face.",
     "source": "wiktionary",
     "lemmas": [
       "Gesicht"
@@ -27695,34 +27682,10 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "sich",
-        "lemma": "sich",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "mit",
-        "lemma": "mit",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "den",
-        "lemma": "der",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
         "form": "Händen",
         "lemma": "Hand",
         "pos": "noun",
         "gloss_hint": "hand"
-      },
-      {
-        "form": "durchs",
-        "lemma": "durchs",
-        "pos": "verb",
-        "gloss_hint": "durchs"
       },
       {
         "form": "Gesicht",
@@ -27731,7 +27694,11 @@
         "gloss_hint": "face"
       }
     ],
-    "text_linked": "Er fuhr [[sich|pronouns/sich]] [[mit|prepositions/mit]] [[den|determiners/der]] [[Händen|nouns/Hand#2]] durchs [[Gesicht|nouns/Gesicht#1]]."
+    "text_linked": "Er fuhr [[sich|pronouns/sich]] [[mit|prepositions/mit]] [[den|determiners/der]] [[Händen|nouns/Hand#2]] durchs [[Gesicht|nouns/Gesicht#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "970466be"
+    }
   },
   "c7ff345125": {
     "text": "„Nach der Vorführung konnten sie nicht gehen, sondern mußten mit Bundschuh in der Wohnküche noch eine Flasche Bier trinken und sich unterhalten.“",

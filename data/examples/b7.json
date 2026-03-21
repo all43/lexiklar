@@ -5839,7 +5839,7 @@
         "gloss_hint": "left | leave | abandon | rely on"
       }
     ],
-    "text_linked": "[[Auf|prepositions/auf]] [[unseren|pronouns/unser_personalpronomen]] [[Macker|nouns/Macker#1]] [[können|verbs/können_etwas#1]] wir [[uns|pronouns/uns#1]] [[verlassen|verbs/verlassen_partizip#1]]."
+    "text_linked": "[[Auf|prepositions/auf]] [[unseren|pronouns/unser_personalpronomen]] [[Macker|nouns/Macker#1]] [[können|verbs/können_etwas#1]] wir [[uns|pronouns/uns#1]] [[verlassen|verbs/verlassen_weggehen#1]]."
   },
   "b7474b428f": {
     "text": "„Befindet sich in einem Akt (die Gesamtheit des Schriftgutes, das im Einzelfall sachlich eine Einheit bildet) solches Schriftgut, so gilt der gesamte Akt als Archivgut.“",
@@ -10842,7 +10842,10 @@
     "lemmas": [
       "Typ"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "b78ff2d2f8": {
     "text": "Die Aktienkurse befinden sich im freien Fall.",
@@ -15261,7 +15264,7 @@
   },
   "b7bcc674e9": {
     "text": "Dieser Hengst ist der Vater dutzender erfolgreicher Rennpferde.",
-    "translation": "This stallion is the father of dozens of successful racehorses.",
+    "translation": "This stallion is the sire of dozens of successful racehorses.",
     "source": "wiktionary",
     "lemmas": [
       "Vater"
@@ -15270,29 +15273,28 @@
     "annotations": [
       {
         "form": "Hengst",
-        "lemma": "stallion",
+        "lemma": "Hengst",
         "pos": "noun",
-        "gloss_hint": "male equid"
+        "gloss_hint": "stallion"
       },
       {
         "form": "Vater",
-        "lemma": "father",
+        "lemma": "Vater",
         "pos": "noun",
-        "gloss_hint": "father"
+        "gloss_hint": "sire"
       },
       {
-        "form": "der",
-        "lemma": "the",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "dieser",
-        "lemma": "this",
-        "pos": "pronoun",
+        "form": "erfolgreicher",
+        "lemma": "erfolgreich",
+        "pos": "adjective",
         "gloss_hint": null
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "2d633c24"
+    },
+    "text_linked": "Dieser [[Hengst|nouns/Hengst#1]] ist der [[Vater|nouns/Vater#3]] dutzender [[erfolgreicher|adjectives/erfolgreich]] Rennpferde."
   },
   "b7bda507b7": {
     "text": "Das Unternehmen schreibt im 3. Quartal in Folge schwarze Zahlen.",
@@ -17183,25 +17185,13 @@
   },
   "b7ce912365": {
     "text": "In der letzten Stunde haben wir die binomischen Formeln durchgenommen.",
-    "translation": "In the last hour, we covered the binomial formulas.",
+    "translation": "In the last class, we covered the binomial formulas.",
     "source": "wiktionary",
     "lemmas": [
       "Stunde"
     ],
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
-      {
-        "form": "In",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "der",
-        "lemma": "der",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
       {
         "form": "letzten",
         "lemma": "letzte",
@@ -17212,25 +17202,13 @@
         "form": "Stunde",
         "lemma": "Stunde",
         "pos": "noun",
-        "gloss_hint": "hour"
+        "gloss_hint": "class (school)"
       },
       {
         "form": "haben",
         "lemma": "haben",
         "pos": "verb",
         "gloss_hint": "have (auxiliary)"
-      },
-      {
-        "form": "wir",
-        "lemma": "wir",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "determiner",
-        "gloss_hint": null
       },
       {
         "form": "binomischen",
@@ -17251,7 +17229,10 @@
         "gloss_hint": "cover"
       }
     ],
-    "text_linked": "[[In|prepositions/in]] [[der|pronouns/der_nominativ]] [[letzten|adjectives/letzte#1]] [[Stunde|nouns/Stunde#1]] [[haben|verbs/haben#1]] [[wir|pronouns/wir]] [[die|determiners/die]] binomischen [[Formeln|nouns/Formel#1]] durchgenommen."
+    "text_linked": "In der [[letzten|adjectives/letzte#1]] [[Stunde|nouns/Stunde#4]] [[haben|verbs/haben#1]] wir die binomischen [[Formeln|nouns/Formel#1]] durchgenommen.",
+    "_proofread": {
+      "translation": true
+    }
   },
   "b7ceb56dd1": {
     "text": "Die angekündigte Party wurde abgesagt.",
@@ -21143,7 +21124,11 @@
         "gloss_hint": "was"
       }
     ],
-    "text_linked": "„[[In|prepositions/in]] Montreal kursiert [[eine|determiners/ein]] Anekdote, [[nach|prepositions/nach]] [[der|pronouns/der_nominativ]] [[man|pronouns/man]] [[im|prepositions/in]] [[Notfall|nouns/Notfall]] [[besser|adverbs/besser]] [[nicht|particles/nicht]] [[die|pronouns/die]] überlasteten [[Krankenhäuser|nouns/Krankenhaus]] [[anrufen|verbs/anrufen#1]] [[soll|verbs/sollen#4]], [[sondern|conjunctions/sondern]] [[lieber|adverbs/lieber]] [[ein|determiners/ein]] [[Taxi|nouns/Taxi]]. [[Denn|particles/denn_als]] die [[Taxifahrer|nouns/Taxifahrer]] [[sind|verbs/sein#2]] [[Ärzte|nouns/Arzt]] [[aus|prepositions/aus#2]] [[dem|determiners/der]] Maghreb oder Schwarzafrika, [[deren|pronouns/der_nominativ]] Berufsabschluss nicht [[anerkannt|adjectives/anerkannt#2]] [[wurde|verbs/werden#1]].“"
+    "text_linked": "„[[In|prepositions/in]] Montreal kursiert [[eine|determiners/ein]] Anekdote, [[nach|prepositions/nach]] [[der|pronouns/der_nominativ]] [[man|pronouns/man]] [[im|prepositions/in]] [[Notfall|nouns/Notfall]] [[besser|adverbs/besser]] [[nicht|particles/nicht]] [[die|pronouns/die]] überlasteten [[Krankenhäuser|nouns/Krankenhaus]] [[anrufen|verbs/anrufen#1]] [[soll|verbs/sollen#4]], [[sondern|conjunctions/sondern]] [[lieber|adverbs/lieber]] [[ein|determiners/ein]] [[Taxi|nouns/Taxi]]. [[Denn|particles/denn_als]] die [[Taxifahrer|nouns/Taxifahrer]] [[sind|verbs/sein#2]] [[Ärzte|nouns/Arzt]] [[aus|prepositions/aus#2]] [[dem|determiners/der]] Maghreb oder Schwarzafrika, [[deren|pronouns/der_nominativ]] Berufsabschluss nicht [[anerkannt|adjectives/anerkannt#2]] [[wurde|verbs/werden#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "0858a847"
+    }
   },
   "b7ee732dae": {
     "text": "„Lassen sich Leistungssport und berufliche Karriere vereinbaren?“",
@@ -22091,7 +22076,7 @@
   },
   "b7f69130c1": {
     "text": "„Mehr als jede andere dieser Band ist ‚El Camino‘ eine groß gedachte Rock’n’Roll-Platte.“",
-    "translation": "More than any other band, 'El Camino' is a well-conceived rock and roll record.",
+    "translation": "More than any other album by this band, El Camino is a grand-scale rock and roll record.",
     "source": "wiktionary",
     "lemmas": [
       "Band"
@@ -22177,7 +22162,11 @@
         "gloss_hint": "record"
       }
     ],
-    "text_linked": "„[[Mehr|adverbs/mehr#1]] [[als|conjunctions/als]] jede andere [[dieser|pronouns/dieser]] [[Band|nouns/Band_plural#14]] [[ist|verbs/sein#2]] [[‚El|nouns/El]] Camino‘ [[eine|determiners/ein]] [[groß|adjectives/groß#1]] gedachte Rock’n’Roll-Platte.“"
+    "text_linked": "„[[Mehr|adverbs/mehr#1]] [[als|conjunctions/als]] jede andere [[dieser|pronouns/dieser]] [[Band|nouns/Band_plural#14]] [[ist|verbs/sein#2]] [[‚El|nouns/El]] Camino‘ [[eine|determiners/ein]] [[groß|adjectives/groß#1]] gedachte Rock’n’Roll-Platte.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "dad40ffa"
+    }
   },
   "b7f79b347b": {
     "text": "Das hat er bestimmt nur so ohne Bedacht einfach dahergesagt.",

@@ -1499,7 +1499,10 @@
     "lemmas": [
       "Teil"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "aa105c8874": {
     "text": "Werden wir für immer zusammen bleiben?",
@@ -8580,7 +8583,10 @@
     "lemmas": [
       "einfach"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "aa5c6dc5b3": {
     "text": "„Victor sprang wie ein Boxer auf Speed von einem Bein aufs andere.“",
@@ -13862,7 +13868,7 @@
         "gloss_hint": "should"
       }
     ],
-    "text_linked": "„[[Millionen|nouns/Million]] [[Euro|nouns/Euro_europameisterschaft]] [[werden|verbs/werden#2]] [[in|prepositions/in]] [[eine|determiners/ein]] Produktionsanlage [[investiert|verbs/investieren#1]], [[die|pronouns/die]] mithilfe [[von|prepositions/von]] erneuerbaren [[Energien|nouns/Energie#2]] [[wie|adverbs/wie]] Windkraft, Biogas [[und|conjunctions/und]] Sonnenenergie [[betrieben|verbs/betrieben#1]] werden [[soll|verbs/sollen#4]].“"
+    "text_linked": "„[[Millionen|nouns/Million]] [[Euro|nouns/Euro_europameisterschaft]] [[werden|verbs/werden#2]] [[in|prepositions/in]] [[eine|determiners/ein]] Produktionsanlage [[investiert|verbs/investieren#1]], [[die|pronouns/die]] mithilfe [[von|prepositions/von]] erneuerbaren [[Energien|nouns/Energie#2]] [[wie|adverbs/wie]] Windkraft, Biogas [[und|conjunctions/und]] Sonnenenergie betrieben werden [[soll|verbs/sollen#4]].“"
   },
   "aa9016e7c9": {
     "text": "„Bald klebten an meiner Windschutzscheibe innen mehr Mücken als tote Insekten vorne an meinem Kühlergrill.“",
@@ -15122,7 +15128,10 @@
     "lemmas": [
       "arbeiten"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "aaa17f4d7a": {
     "text": "In Anbetracht der Umstände kann man die spontane Reaktion des Angeklagten sogar nachvollziehen.",
@@ -15944,7 +15953,7 @@
         "gloss_hint": "admitted"
       }
     ],
-    "text_linked": "„Der 50-Jährige [[hatte|verbs/haben]] [[bereits|adverbs/bereits#1]] [[dem|determiners/der]] Untersuchungsausschuss [[des|determiners/der]] bayerischen [[Landtags|nouns/Landtag]] [[Rede|nouns/Rede#1]] [[und|conjunctions/und]] [[Antwort|nouns/Antwort]] [[gestanden|verbs/gestanden_partizip#1]].“"
+    "text_linked": "„Der 50-Jährige [[hatte|verbs/haben]] [[bereits|adverbs/bereits#1]] [[dem|determiners/der]] Untersuchungsausschuss [[des|determiners/der]] bayerischen [[Landtags|nouns/Landtag]] [[Rede|nouns/Rede#1]] [[und|conjunctions/und]] [[Antwort|nouns/Antwort]] gestanden.“"
   },
   "aaa48cfc47": {
     "text": "„Als die Sonne um die Mittagszeit wie ein Feuerrad am Himmel brannte, war kein Wolkenfetzen sichtbar.“",
@@ -17851,54 +17860,31 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "The",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "theme",
-        "lemma": "theme",
+        "form": "Thema",
+        "lemma": "Thema",
         "pos": "noun",
         "gloss_hint": "subject"
       },
       {
-        "form": "of",
-        "lemma": "of",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "exhibition",
-        "lemma": "exhibition",
+        "form": "Ausstellung",
+        "lemma": "Ausstellung",
         "pos": "noun",
         "gloss_hint": "exhibition"
       },
       {
-        "form": "is",
-        "lemma": "be",
-        "pos": "verb",
-        "gloss_hint": null
-      },
-      {
-        "form": "19th-century",
-        "lemma": "19th-century",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "art",
-        "lemma": "art",
+        "form": "Kunst",
+        "lemma": "Kunst",
         "pos": "noun",
         "gloss_hint": "art"
+      },
+      {
+        "form": "Jahrhunderts",
+        "lemma": "Jahrhundert",
+        "pos": "noun",
+        "gloss_hint": "century (calendar)"
       }
-    ]
+    ],
+    "text_linked": "Das [[Thema|nouns/Thema#1]] der [[Ausstellung|nouns/Ausstellung#1]] ist [[Kunst|nouns/Kunst#1]] des 19. [[Jahrhunderts|nouns/Jahrhundert#1]]."
   },
   "aabc2a9eec": {
     "text": "„Robert bietet Annabelle seine Hotelanteile an. Annabelle weist das Angebot jedoch zurück und stellt klar, dass sie sowieso am längeren Hebel sitzt.“",
@@ -21342,7 +21328,7 @@
         "form": "gehören",
         "lemma": "gehören",
         "pos": "verb",
-        "gloss_hint": "belong to"
+        "gloss_hint": "should (necessity)"
       },
       {
         "form": "um",
@@ -21375,7 +21361,7 @@
         "gloss_hint": "bed"
       }
     ],
-    "text_linked": "[[Kinder|nouns/Kind#1]] [[gehören|verbs/gehören#1]] [[um|prepositions/um]] diese [[Zeit|nouns/Zeit#1]] [[ins|abbreviations/ins]] [[Bett|nouns/Bett#1]]."
+    "text_linked": "[[Kinder|nouns/Kind#1]] [[gehören|verbs/gehören#5]] [[um|prepositions/um]] diese [[Zeit|nouns/Zeit#1]] [[ins|abbreviations/ins]] [[Bett|nouns/Bett#1]]."
   },
   "aae28efbc0": {
     "text": "Zieh Leine, du Hirsch!",
@@ -24432,7 +24418,11 @@
         "gloss_hint": "cheek"
       }
     ],
-    "text_linked": "[[Der|determiners/der]] [[Kleine|adjectives/klein]] [[hat|verbs/haben#1]] [[aber|conjunctions/aber#1]] [[volle|adjectives/voll#1]] [[Backen|nouns/Backen_backe#1]]."
+    "text_linked": "[[Der|determiners/der]] [[Kleine|adjectives/klein]] [[hat|verbs/haben#1]] [[aber|conjunctions/aber#1]] [[volle|adjectives/voll#1]] [[Backen|nouns/Backen_backe#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "c2513d5e"
+    }
   },
   "aafa0e2718": {
     "text": "Die Versuchung, im Glaubenschaos der Gegenwart auf den Tisch zu hauen und Tabula rasa zu machen, sich den ganzen lästigen Weltanschauungskram einfach mit einem Schlag vom Halse zu schaffen, ist groß, aber man muss ihr widerstehen.",

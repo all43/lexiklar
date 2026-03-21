@@ -9506,7 +9506,10 @@
       "Dampf",
       "Badestube"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "7a57e985ba": {
     "text": "Du bist ja nicht mehr ganz bei Trost.",
@@ -9872,7 +9875,7 @@
         "gloss_hint": "behave"
       }
     ],
-    "text_linked": "„René Descartes (1596–1650) [[behandelt|verbs/behandeln]] in seinem 1637 erschienen Grundlagenwerk Discours de la méthode u.a. den [[Unterschied|nouns/Unterschied#1]] zwischen [[Mensch|nouns/Mensch_lebewesen#1]] und [[Tier|nouns/Tier#1]]. Beide sind von [[Gott|nouns/Gott#2]] [[erschaffen|verbs/erschaffen]], aber nur der Mensch hat eine unsterbliche [[Seele|nouns/Seele#1]]. Tiere müssen als höchst komplizierte [[Maschinen|nouns/Maschine#1]] angesehen werden (la bête machine), als [[Automaten|nouns/Automat]]. Und er hält es für durchaus wahrscheinlich, dass es dem Menschen eines Tages glücken wird, eine Maschine in [[Gestalt|nouns/Gestalt#1]] eines Tieres zu [[bauen|verbs/bauen#3]], die sich wie ein Tier [[verhalten|verbs/verhalten_partizip#1]] würde.“"
+    "text_linked": "„René Descartes (1596–1650) [[behandelt|verbs/behandeln]] in seinem 1637 erschienen Grundlagenwerk Discours de la méthode u.a. den [[Unterschied|nouns/Unterschied#1]] zwischen [[Mensch|nouns/Mensch_lebewesen#1]] und [[Tier|nouns/Tier#1]]. Beide sind von [[Gott|nouns/Gott#2]] [[erschaffen|verbs/erschaffen]], aber nur der Mensch hat eine unsterbliche [[Seele|nouns/Seele#1]]. Tiere müssen als höchst komplizierte [[Maschinen|nouns/Maschine#1]] angesehen werden (la bête machine), als [[Automaten|nouns/Automat]]. Und er hält es für durchaus wahrscheinlich, dass es dem Menschen eines Tages glücken wird, eine Maschine in [[Gestalt|nouns/Gestalt#1]] eines Tieres zu [[bauen|verbs/bauen#3]], die sich wie ein Tier [[verhalten|verbs/verhalten_zurückhalten#2]] würde.“"
   },
   "7a5b2e93c9": {
     "text": "Die Wahrnehmung von Gerüchen ist ein komplexer Vorgang.",
@@ -11561,7 +11564,11 @@
         "gloss_hint": "traffic"
       }
     ],
-    "text_linked": "Es [[herrscht|verbs/herrschen]] [[starker|adjectives/stark]] [[Verkehr|nouns/Verkehr#1]]."
+    "text_linked": "Es [[herrscht|verbs/herrschen]] [[starker|adjectives/stark]] [[Verkehr|nouns/Verkehr#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "2e5b5dc2"
+    }
   },
   "7a686c6271": {
     "text": "„Tatsächlich verlor der Patient bei der OP viel Blut, und seine Laborwerte sanken lebensgefährlich tief ab.“",
@@ -16618,7 +16625,7 @@
   },
   "7aa7aa1a67": {
     "text": "„Er lässt arbeiten, dachte ich mir, einer von denen ist er.“",
-    "translation": "I thought to myself, he's one of those who are employed.",
+    "translation": "\"He has others do the work, I thought to myself, he's one of those.\"",
     "source": "wiktionary",
     "lemmas": [
       "lassen"
@@ -16626,16 +16633,10 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Er",
-        "lemma": "er",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "lässt",
         "lemma": "lassen",
         "pos": "verb",
-        "gloss_hint": null
+        "gloss_hint": "have done"
       },
       {
         "form": "arbeiten",
@@ -16648,51 +16649,13 @@
         "lemma": "denken",
         "pos": "verb",
         "gloss_hint": "think"
-      },
-      {
-        "form": "ich",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": "I"
-      },
-      {
-        "form": "mir",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": "we"
-      },
-      {
-        "form": "einer",
-        "lemma": "einer",
-        "pos": "noun",
-        "gloss_hint": "one"
-      },
-      {
-        "form": "von",
-        "lemma": "von",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "denen",
-        "lemma": "der",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "ist",
-        "lemma": "sein",
-        "pos": "verb",
-        "gloss_hint": "be"
-      },
-      {
-        "form": "er",
-        "lemma": "er",
-        "pos": "pronoun",
-        "gloss_hint": null
       }
     ],
-    "text_linked": "„Er [[lässt|verbs/lassen]] [[arbeiten|verbs/arbeiten#1]], [[dachte|verbs/denken#1]] [[ich|pronouns/ich#1]] [[mir|pronouns/ich]], einer [[von|prepositions/von]] [[denen|pronouns/der_nominativ]] [[ist|verbs/sein#2]] er.“"
+    "text_linked": "„Er [[lässt|verbs/lassen]] [[arbeiten|verbs/arbeiten#1]], [[dachte|verbs/denken#1]] [[ich|pronouns/ich#1]] [[mir|pronouns/ich]], einer [[von|prepositions/von]] [[denen|pronouns/der_nominativ]] [[ist|verbs/sein#2]] er.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "53ec0e8d"
+    }
   },
   "7aa8937a4d": {
     "text": "Es handelt sich um ein gewagtes Unternehmen.",

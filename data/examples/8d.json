@@ -1041,7 +1041,7 @@
   },
   "8d120f9cca": {
     "text": "Er arbeitet beim Film.",
-    "translation": "He works in film. | works: arbeitet (verb), film: Film (noun)",
+    "translation": "He works in film.",
     "source": "wiktionary",
     "lemmas": [
       "Film"
@@ -3326,7 +3326,11 @@
         "gloss_hint": "dissolved"
       }
     ],
-    "text_linked": "Alle meine [[Träume|nouns/Traum#1]] [[haben|verbs/haben#1]] [[sich|pronouns/sich]] [[in|prepositions/in]] [[Luft|nouns/Luft_überwiegend#7]] [[aufgelöst|adjectives/aufgelöst#1]]."
+    "text_linked": "Alle meine [[Träume|nouns/Traum#1]] [[haben|verbs/haben#1]] [[sich|pronouns/sich]] [[in|prepositions/in]] [[Luft|nouns/Luft_überwiegend#7]] [[aufgelöst|adjectives/aufgelöst#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "021d4b5a"
+    }
   },
   "8d29d4c3b8": {
     "text": "Diese Ampel ist hier doch völlig fehl am Platz.",
@@ -13099,7 +13103,7 @@
   },
   "8d9c2485d7": {
     "text": "„Watvögel, so ein Beispiel Lamarcks, hätten ihre Beine tagtäglich etwas mehr gereckt, um ihre Hinterteile trocken zu halten.“",
-    "translation": "Birds of prey, such as a Lamarckian example, would stretch their legs a little more every day to keep their behinds dry.",
+    "translation": "Wading birds, as an example from Lamarck, would have stretched their legs a little more every day to keep their behinds dry.",
     "source": "wiktionary",
     "lemmas": [
       "halten"
@@ -13107,138 +13111,41 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Birds",
-        "lemma": "bird",
+        "form": "Beine",
+        "lemma": "Bein",
         "pos": "noun",
-        "gloss_hint": "animal"
+        "gloss_hint": "leg"
       },
       {
-        "form": "of",
-        "lemma": "of",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "prey",
-        "lemma": "prey",
-        "pos": "noun",
-        "gloss_hint": "animal"
-      },
-      {
-        "form": "such",
-        "lemma": "such",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "as",
-        "lemma": "as",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "a",
-        "lemma": "a",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "Lamarckian",
-        "lemma": "Lamarckian",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "example",
-        "lemma": "example",
-        "pos": "noun",
-        "gloss_hint": "sample"
-      },
-      {
-        "form": "would",
-        "lemma": "would",
+        "form": "gereckt",
+        "lemma": "recken",
         "pos": "verb",
         "gloss_hint": null
       },
       {
-        "form": "stretch",
-        "lemma": "stretch",
-        "pos": "verb",
-        "gloss_hint": "extend"
-      },
-      {
-        "form": "their",
-        "lemma": "their",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "legs",
-        "lemma": "leg",
+        "form": "Hinterteile",
+        "lemma": "Hinterteil",
         "pos": "noun",
-        "gloss_hint": "body part"
-      },
-      {
-        "form": "a",
-        "lemma": "a",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
-        "form": "little",
-        "lemma": "little",
+        "form": "trocken",
+        "lemma": "trocken",
         "pos": "adjective",
         "gloss_hint": null
       },
       {
-        "form": "more",
-        "lemma": "more",
-        "pos": "adjective",
-        "gloss_hint": "additional"
-      },
-      {
-        "form": "every",
-        "lemma": "every",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "day",
-        "lemma": "day",
-        "pos": "noun",
-        "gloss_hint": "time period"
-      },
-      {
-        "form": "to",
-        "lemma": "to",
-        "pos": "particle",
-        "gloss_hint": null
-      },
-      {
-        "form": "keep",
-        "lemma": "keep",
+        "form": "halten",
+        "lemma": "halten",
         "pos": "verb",
         "gloss_hint": "maintain"
-      },
-      {
-        "form": "their",
-        "lemma": "their",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "behinds",
-        "lemma": "behind",
-        "pos": "noun",
-        "gloss_hint": "body part"
-      },
-      {
-        "form": "dry",
-        "lemma": "dry",
-        "pos": "adjective",
-        "gloss_hint": "not wet"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "4487398c"
+    },
+    "text_linked": "„Watvögel, so ein Beispiel Lamarcks, hätten ihre [[Beine|nouns/Bein#1]] tagtäglich etwas mehr gereckt, um ihre [[Hinterteile|nouns/Hinterteil]] [[trocken|adjectives/trocken]] zu [[halten|verbs/halten#2]].“"
   },
   "8d9ce6e1f8": {
     "text": "Sieh an, was Opa und Oma noch für eine flotte Sohle aufs Parkett legen.",
@@ -15518,7 +15425,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Die ganze Klasse [[dachte|verbs/denken]] [[so|adverbs/so]], [[auch|adverbs/auch]] [[die|pronouns/die]] [[drei|numerals/drei#1]] Klassenmitglieder, die ich [[nicht|particles/nicht]] [[zu|particles/zu_drückt]] [[Sekretären|nouns/Sekretär#1]] [[hatte|verbs/haben]] [[schlagen|verbs/schlagen#1]] [[können|verbs/können_etwas#1]], [[weil|conjunctions/weil_konjunktion]] sie nicht in [[der|pronouns/der_nominativ]] FDJ [[waren|verbs/sein]], solche gesellschaftlichen [[Blindgänger|nouns/Blindgänger#2]] [[gab|verbs/geben]] [[es|nouns/es]] ja [[durchaus|adverbs/durchaus#1]], [[was|pronouns/was#1]] [[ebenfalls|adverbs/ebenfalls]] [[mittlerweile|adverbs/mittlerweile]] [[vergessen|verbs/vergessen_partizip#1]] zu [[werden|verbs/werden]] [[droht|verbs/drohen]].“"
+    "text_linked": "„Die ganze Klasse [[dachte|verbs/denken]] [[so|adverbs/so]], [[auch|adverbs/auch]] [[die|pronouns/die]] [[drei|numerals/drei#1]] Klassenmitglieder, die ich [[nicht|particles/nicht]] [[zu|particles/zu_drückt]] [[Sekretären|nouns/Sekretär#1]] [[hatte|verbs/haben]] [[schlagen|verbs/schlagen#1]] [[können|verbs/können_etwas#1]], [[weil|conjunctions/weil_konjunktion]] sie nicht in [[der|pronouns/der_nominativ]] FDJ [[waren|verbs/sein]], solche gesellschaftlichen [[Blindgänger|nouns/Blindgänger#2]] [[gab|verbs/geben]] [[es|nouns/es]] ja [[durchaus|adverbs/durchaus#1]], [[was|pronouns/was#1]] [[ebenfalls|adverbs/ebenfalls]] [[mittlerweile|adverbs/mittlerweile]] [[vergessen|verbs/vergessen_sich]] zu [[werden|verbs/werden]] [[droht|verbs/drohen]].“"
   },
   "8db63aa79e": {
     "text": "„Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheuren Ungeziefer verwandelt.“",
@@ -16176,49 +16083,28 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Er",
-        "lemma": "er",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "lernt",
         "lemma": "lernen",
         "pos": "verb",
         "gloss_hint": null
       },
       {
-        "form": "aus",
-        "lemma": "aus",
-        "pos": "preposition",
-        "gloss_hint": "out"
-      },
-      {
-        "form": "der",
-        "lemma": "der",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "„Schule",
+        "form": "Schule",
         "lemma": "Schule",
         "pos": "noun",
-        "gloss_hint": "school"
-      },
-      {
-        "form": "für",
-        "lemma": "für",
-        "pos": "preposition",
-        "gloss_hint": "for"
+        "gloss_hint": "textbook"
       },
       {
         "form": "Gitarre",
         "lemma": "Gitarre",
         "pos": "noun",
-        "gloss_hint": "guitar"
+        "gloss_hint": null
       }
     ],
-    "text_linked": "Er [[lernt|verbs/lernen]] [[aus|prepositions/aus#1]] [[der|pronouns/der_nominativ]] [[„Schule|nouns/Schule#1]] [[für|prepositions/für#1]] [[Gitarre|nouns/Gitarre#1]]“."
+    "text_linked": "Er [[lernt|verbs/lernen]] aus der „[[Schule|nouns/Schule#7]] für [[Gitarre|nouns/Gitarre]]“.",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8dbcccbda2": {
     "text": "„Die Übertragung des englischen Originals gestaltete sich in mancher Hinsicht schwierig, weil verschiedene grundlegende Begriffe der Kommunikationslehre keine semantisch einwandfreien deutschen Entsprechungen haben.“",
@@ -18916,7 +18802,10 @@
     "lemmas": [
       "gehören"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8dd9ad3f60": {
     "text": "…Heast Habschi, waunst so weidatuast wer ma kane Freind!",
@@ -20397,54 +20286,35 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Marriage",
+        "form": "Ehe",
         "lemma": "Ehe",
         "pos": "noun",
-        "gloss_hint": "bond"
-      },
-      {
-        "form": "is",
-        "lemma": "sein",
-        "pos": "verb",
-        "gloss_hint": "be"
-      },
-      {
-        "form": "a",
-        "lemma": "ein",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
-        "form": "strong",
+        "form": "starke",
         "lemma": "stark",
         "pos": "adjective",
-        "gloss_hint": null
+        "gloss_hint": "intense"
       },
       {
-        "form": "bond",
+        "form": "Bindung",
         "lemma": "Bindung",
         "pos": "noun",
-        "gloss_hint": "bond"
-      },
-      {
-        "form": "between",
-        "lemma": "zwischen",
-        "pos": "preposition",
         "gloss_hint": null
       },
       {
-        "form": "two",
-        "lemma": "zwei",
-        "pos": "adjective",
-        "gloss_hint": "two"
-      },
-      {
-        "form": "people",
-        "lemma": "Menschen",
+        "form": "Menschen",
+        "lemma": "Mensch",
         "pos": "noun",
         "gloss_hint": null
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "7c489e54"
+    },
+    "text_linked": "Die [[Ehe|nouns/Ehe]] ist eine [[starke|adjectives/stark#4]] [[Bindung|nouns/Bindung]] zweier [[Menschen|nouns/Mensch_junge]]."
   },
   "8dec021b28": {
     "text": "„Es war nicht zuletzt der wissenschaftliche Positivismus des späten 19. Jahrhunderts, der die Erforscher außereuropäischer Regionen und Kulturen wieder zu Jägern und Sammlern werden ließ.“",

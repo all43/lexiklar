@@ -1216,57 +1216,29 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Time",
-        "lemma": "time",
+        "form": "Zeit",
+        "lemma": "Zeit",
         "pos": "noun",
-        "gloss_hint": "time"
-      },
-      {
-        "form": "with",
-        "lemma": "mit",
-        "pos": "adverb",
-        "gloss_hint": "with"
-      },
-      {
-        "form": "the",
-        "lemma": "die",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
-        "form": "children",
+        "form": "Kindern",
         "lemma": "Kind",
         "pos": "noun",
-        "gloss_hint": "children"
+        "gloss_hint": "child"
       },
       {
-        "form": "is",
-        "lemma": "sein",
-        "pos": "verb",
-        "gloss_hint": "be"
-      },
-      {
-        "form": "very",
-        "lemma": "sehr",
-        "pos": "particle",
-        "gloss_hint": null
-      },
-      {
-        "form": "important",
+        "form": "wichtig",
         "lemma": "wichtig",
         "pos": "adjective",
         "gloss_hint": null
-      },
-      {
-        "form": "to",
-        "lemma": "mir",
-        "pos": "pronoun",
-        "gloss_hint": "myself"
       }
     ],
     "_proofread": {
-      "translation": true
-    }
+      "translation": true,
+      "annotations": "8dd1de2f"
+    },
+    "text_linked": "Mir ist die [[Zeit|nouns/Zeit]] mit den [[Kindern|nouns/Kind#1]] sehr [[wichtig|adjectives/wichtig]]."
   },
   "920b941a5e": {
     "text": "„Am Tisch mit den Kartenspielern hatte Rummel gerade einen Grand mit vieren in der Hand; dazu die ganze Kreuzflöte.“",
@@ -8362,7 +8334,56 @@
     "lemmas": [
       "Stadt"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kommen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Städte",
+        "lemma": "Stadt",
+        "pos": "noun",
+        "gloss_hint": "city"
+      },
+      {
+        "form": "Phänomen",
+        "lemma": "Phänomen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "letzten",
+        "lemma": "letzt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Krieg",
+        "lemma": "Krieg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Punkt",
+        "lemma": "Punkt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gebracht",
+        "lemma": "bringen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "31fd732d"
+    },
+    "text_linked": "„Viel [[kommen|verbs/kommen]] die [[Städte|nouns/Stadt#1]] herum neuerdings, hat Alfred Polgar das [[Phänomen|nouns/Phänomen]] nach dem letzten [[Krieg|nouns/Krieg]] auf den [[Punkt|nouns/Punkt]] [[gebracht|verbs/bringen]].“"
   },
   "924f65c27b": {
     "text": "Ich esse lieber Birnen als Äpfel.",
@@ -12280,7 +12301,7 @@
   },
   "9275da83ec": {
     "text": "„Frohtal ward in Bande gelegt.“",
-    "translation": "Frohtal was put in a gang.",
+    "translation": "\"Frohtal was put in chains.\"",
     "source": "wiktionary",
     "lemmas": [
       "Band"
@@ -12288,37 +12309,23 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Frohtal",
-        "lemma": "Frohtal",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "ward",
-        "lemma": "ward",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
         "form": "Bande",
         "lemma": "Band",
         "pos": "noun",
-        "gloss_hint": "gang"
+        "gloss_hint": "shackles"
       },
       {
         "form": "gelegt",
         "lemma": "legen",
         "pos": "verb",
-        "gloss_hint": "put in"
+        "gloss_hint": null
       }
     ],
-    "text_linked": "„Frohtal ward [[in|prepositions/in]] [[Bande|nouns/Band_plural#21]] [[gelegt|verbs/legen]].“"
+    "text_linked": "„Frohtal ward in [[Bande|nouns/Band_plural#23]] [[gelegt|verbs/legen]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "8cd96811"
+    }
   },
   "9275ec541a": {
     "text": "Wenn man bedenkt, was die Ärzte vor Opas Tod noch alles mit ihm angestellt haben …",
@@ -21060,7 +21067,10 @@
       "Befreiungskrieg",
       "Schriftsetzer"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "92caecfa75": {
     "text": "Trägt der Mann während des Geschlechtsverkehrs ein Kondom, so wird das Risiko einer Schwangerschaft bei seiner Geschlechtspartnerin deutlich reduziert.",
@@ -22498,7 +22508,7 @@
         "gloss_hint": "worth reading"
       }
     ],
-    "text_linked": "[[Gut|adjectives/gut]] [[Ding|nouns/Ding_gegenstand#1]] [[will|verbs/wollen#2]] [[Weile|nouns/Weile#1]] [[haben|verbs/haben#1]]? [[Das|pronouns/das_[1]]] [[gilt|verbs/gelten#4]] [[wohl|particles/wohl]] [[für|prepositions/für]] [[so|adverbs/so]] manchen [[Roman|nouns/Roman#1]]: [[Einst|adverbs/einst]] [[vergessen|verbs/vergessen_partizip#1]], [[verloren|verbs/verlieren#4]], [[verkannt|verbs/verkennen]] [[erscheint|verbs/erscheinen#1]] er viele [[Jahrzehnte|nouns/Jahrzehnt#1]] [[nach|prepositions/nach]] [[dem|determiners/der]] [[Tod|nouns/Tod#1]] [[des|determiners/der]] [[Autors|nouns/Autor#1]]. Dennoch lesenswert!"
+    "text_linked": "[[Gut|adjectives/gut]] [[Ding|nouns/Ding_gegenstand#1]] [[will|verbs/wollen#2]] [[Weile|nouns/Weile#1]] [[haben|verbs/haben#1]]? [[Das|pronouns/das_[1]]] [[gilt|verbs/gelten#4]] [[wohl|particles/wohl]] [[für|prepositions/für]] [[so|adverbs/so]] manchen [[Roman|nouns/Roman#1]]: [[Einst|adverbs/einst]] [[vergessen|verbs/vergessen_sich]], [[verloren|verbs/verlieren#4]], [[verkannt|verbs/verkennen]] [[erscheint|verbs/erscheinen#1]] er viele [[Jahrzehnte|nouns/Jahrzehnt#1]] [[nach|prepositions/nach]] [[dem|determiners/der]] [[Tod|nouns/Tod#1]] [[des|determiners/der]] [[Autors|nouns/Autor#1]]. Dennoch lesenswert!"
   },
   "92d653c4d4": {
     "text": "Der Festakt ist eine symbolische Handlung, er soll das Andenken erhalten.",
@@ -23220,7 +23230,10 @@
     "lemmas": [
       "weiter"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "92e0b1cb98": {
     "text": "wie Weihnachten und Ostern an einem Tag",

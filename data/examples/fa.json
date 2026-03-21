@@ -497,7 +497,10 @@
       "Speicherkarte",
       "Fluggerät"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "fa050cf9de": {
     "text": "Weihnachten werden Plätzchen gebacken.",
@@ -3814,7 +3817,11 @@
         "pos": "noun",
         "gloss_hint": "train"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "7092b4a9"
+    }
   },
   "fa2c6acf02": {
     "text": "„Möglich ist natürlich auch, beiden ein teilweises Recht zuzuerkennen; doch nur in der Weise, daß beide Teilrechte sich harmonisch ineinander fügen.“",
@@ -5085,7 +5092,10 @@
       "Betteln",
       "Durchsage"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "fa3e1ccb4c": {
     "text": "Nach drei durchzechten Nächten forderte der Schlaf seinen Tribut.",
@@ -6851,7 +6861,11 @@
       "Wahrheit"
     ],
     "translation_model": "openai/gpt-4.1-nano",
-    "annotations": []
+    "annotations": [],
+    "_proofread": {
+      "translation": true,
+      "annotations": "4f53cda1"
+    }
   },
   "fa53ac28e5": {
     "text": "Die Bedienung war freundlich, aber reserviert.",
@@ -12806,7 +12820,7 @@
   },
   "fa907943c7": {
     "text": "Zieh die Schraube nicht so fest an, die muss noch etwas Luft haben.",
-    "translation": "Don't tighten the screw so much; it still needs a bit of air.",
+    "translation": "Don't tighten the screw so much; it still needs a bit of play.",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
@@ -12814,85 +12828,29 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Zieh",
-        "lemma": "ziehen",
-        "pos": "verb",
-        "gloss_hint": "pull"
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "Schraube",
         "lemma": "Schraube",
         "pos": "noun",
-        "gloss_hint": "screw"
-      },
-      {
-        "form": "nicht",
-        "lemma": "nicht",
-        "pos": "particle",
-        "gloss_hint": null
-      },
-      {
-        "form": "so",
-        "lemma": "so",
-        "pos": "adverb",
         "gloss_hint": null
       },
       {
         "form": "fest",
         "lemma": "fest",
         "pos": "adjective",
-        "gloss_hint": "solid"
-      },
-      {
-        "form": "an",
-        "lemma": "an",
-        "pos": "particle",
         "gloss_hint": null
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "muss",
-        "lemma": "müssen",
-        "pos": "verb",
-        "gloss_hint": "must"
-      },
-      {
-        "form": "noch",
-        "lemma": "noch",
-        "pos": "adverb",
-        "gloss_hint": "still"
-      },
-      {
-        "form": "etwas",
-        "lemma": "etwas",
-        "pos": "pronoun",
-        "gloss_hint": "something"
       },
       {
         "form": "Luft",
         "lemma": "Luft",
         "pos": "noun",
-        "gloss_hint": "air"
-      },
-      {
-        "form": "haben",
-        "lemma": "haben",
-        "pos": "verb",
-        "gloss_hint": "have"
+        "gloss_hint": "space"
       }
     ],
-    "text_linked": "[[Zieh|verbs/ziehen#1]] [[die|pronouns/die]] [[Schraube|nouns/Schraube#1]] [[nicht|particles/nicht]] [[so|adverbs/so]] [[fest|adjectives/fest#6]] an, die [[muss|verbs/müssen#1]] [[noch|adverbs/noch#3]] [[etwas|pronouns/etwas#1]] [[Luft|nouns/Luft_überwiegend#1]] [[haben|verbs/haben#1]]."
+    "text_linked": "[[Zieh|verbs/ziehen#1]] [[die|pronouns/die]] [[Schraube|nouns/Schraube#1]] [[nicht|particles/nicht]] [[so|adverbs/so]] [[fest|adjectives/fest#6]] an, die [[muss|verbs/müssen#1]] [[noch|adverbs/noch#3]] [[etwas|pronouns/etwas#1]] [[Luft|nouns/Luft_überwiegend#1]] [[haben|verbs/haben#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "038fb056"
+    }
   },
   "fa912c9da6": {
     "text": "Wenn Du mir eine Pizza ausgibst, erkläre ich dir als Ausgleich die Matheaufgaben.",
@@ -17953,7 +17911,7 @@
         "gloss_hint": "forgot"
       }
     ],
-    "text_linked": "„Mein [[Kellner|nouns/Kellner#1]] [[hat|verbs/haben#1]] [[den|determiners/der]] [[Zucker|nouns/Zucker#1]] [[vergessen|verbs/vergessen_partizip#1]].“"
+    "text_linked": "„Mein [[Kellner|nouns/Kellner#1]] [[hat|verbs/haben#1]] [[den|determiners/der]] [[Zucker|nouns/Zucker#1]] [[vergessen|verbs/vergessen_sich]].“"
   },
   "fac4af3f93": {
     "text": "Warst du auch bei der Asche?",
@@ -18515,7 +18473,7 @@
         "gloss_hint": "left"
       }
     ],
-    "text_linked": "„[[Jetzt|adverbs/jetzt#1]], da [[in|prepositions/in]] Kiew kriegsähnliche [[Zustände|nouns/Zustand#1]] [[herrschten|verbs/herrschen]], starb Olga tausend [[Tode|nouns/Tod#1]], [[wenn|conjunctions/wenn#3]] [[ihr|pronouns/ihr_zu#1]] dreiundzwanzigjähriger [[Enkel|nouns/Enkel_männliches#2]] [[das|pronouns/das_[1]]] [[Haus|nouns/Haus#4]] [[verließ|verbs/verlassen_partizip#1]].“"
+    "text_linked": "„[[Jetzt|adverbs/jetzt#1]], da [[in|prepositions/in]] Kiew kriegsähnliche [[Zustände|nouns/Zustand#1]] [[herrschten|verbs/herrschen]], starb Olga tausend [[Tode|nouns/Tod#1]], [[wenn|conjunctions/wenn#3]] [[ihr|pronouns/ihr_zu#1]] dreiundzwanzigjähriger [[Enkel|nouns/Enkel_männliches#2]] [[das|pronouns/das_[1]]] [[Haus|nouns/Haus#4]] [[verließ|verbs/verlassen_weggehen#1]].“"
   },
   "faca531771": {
     "text": "„Um mich heil ins Tageslicht zu geleiten, brauchte es jetzt Bannsprüche und Beschwörungsformeln, Gebetsmühlen, Rosenkränze und Litaneien.“",
@@ -20983,7 +20941,11 @@
         "gloss_hint": "forest"
       }
     ],
-    "text_linked": "„[[Seine|pronouns/sein]] [[Familie|nouns/Familie#1]] [[lebt|verbs/leben#1]] [[seit|prepositions/seit#1]] [[fünf|numerals/fünf#1]] Jahrhunderten [[in|prepositions/in]] [[der|determiners/der]] [[Gegend|nouns/Gegend#1]], [[verpachtet|verbs/verpachten]] [[Felder|nouns/Feld_acker#1]] [[an|prepositions/an]] Reisbauern [[und|conjunctions/und]] lebt [[von|prepositions/von#2]] [[den|determiners/der]] [[Erträgen|nouns/Ertrag#1]] [[eines|determiners/eines#2]] [[kleinen|adjectives/klein#1]] [[Waldes|nouns/Wald#1]].“"
+    "text_linked": "„[[Seine|pronouns/sein]] [[Familie|nouns/Familie#1]] [[lebt|verbs/leben#1]] [[seit|prepositions/seit#1]] [[fünf|numerals/fünf#1]] Jahrhunderten [[in|prepositions/in]] [[der|determiners/der]] [[Gegend|nouns/Gegend#1]], [[verpachtet|verbs/verpachten]] [[Felder|nouns/Feld_acker#1]] [[an|prepositions/an]] Reisbauern [[und|conjunctions/und]] lebt [[von|prepositions/von#2]] [[den|determiners/der]] [[Erträgen|nouns/Ertrag#1]] [[eines|determiners/eines#2]] [[kleinen|adjectives/klein#1]] [[Waldes|nouns/Wald#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "198ef436"
+    }
   },
   "fae420e15a": {
     "text": "die Woche lässt sich gut an",

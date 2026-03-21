@@ -5259,12 +5259,61 @@
   },
   "933a3e4929": {
     "text": "Der Beifahrer behauptet, der Fahrer soll angemessen langsam gefahren sein.",
-    "translation": "The passenger claims that the driver was supposed to have driven at an appropriate speed.",
+    "translation": "The passenger claims that the driver allegedly drove at an appropriately slow speed.",
     "source": "wiktionary",
     "lemmas": [
       "sollen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Beifahrer",
+        "lemma": "Beifahrer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "behauptet",
+        "lemma": "behaupten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fahrer",
+        "lemma": "Fahrer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "soll",
+        "lemma": "sollen",
+        "pos": "verb",
+        "gloss_hint": "suggest"
+      },
+      {
+        "form": "angemessen",
+        "lemma": "angemessen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "langsam",
+        "lemma": "langsam",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "gefahren",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "fd0c2594"
+    },
+    "text_linked": "Der [[Beifahrer|nouns/Beifahrer]] [[behauptet|verbs/behaupten]], der [[Fahrer|nouns/Fahrer]] [[soll|verbs/sollen#3]] [[angemessen|adjectives/angemessen]] [[langsam|adjectives/langsam]] [[gefahren|verbs/fahren]] sein."
   },
   "933a6732f0": {
     "text": "„Perfekt asphaltierte Straßen schlängeln sich an gepflegten Vorgärten vorbei, Kinder schaukeln, Rentner trinken Eistee.“",
@@ -9480,7 +9529,11 @@
         "gloss_hint": "body"
       }
     ],
-    "text_linked": "Das [[Herz|nouns/Herz#1]], [[ein|determiners/ein]] faustförmiger Hohlmuskel, [[zieht|verbs/ziehen]] [[sich|pronouns/sich]] [[etwa|adverbs/etwa#1]] siebzigmal [[in|prepositions/in]] [[der|determiners/der]] [[Minute|nouns/Minute#1]] [[zusammen|adverbs/zusammen#1]] [[und|conjunctions/und]] [[pumpt|verbs/pumpen#1]] [[so|adverbs/so]] [[am|prepositions/an]] [[Tag|nouns/Tag_zeitraum#1]] [[bis|particles/bis]] [[zu|prepositions/zu]] 10.000 [[Liter|nouns/Liter#1]] [[durch|prepositions/durch#1]] [[den|determiners/der]] [[Körper|nouns/Körper#1]]."
+    "text_linked": "Das [[Herz|nouns/Herz#1]], [[ein|determiners/ein]] faustförmiger Hohlmuskel, [[zieht|verbs/ziehen]] [[sich|pronouns/sich]] [[etwa|adverbs/etwa#1]] siebzigmal [[in|prepositions/in]] [[der|determiners/der]] [[Minute|nouns/Minute#1]] [[zusammen|adverbs/zusammen#1]] [[und|conjunctions/und]] [[pumpt|verbs/pumpen#1]] [[so|adverbs/so]] [[am|prepositions/an]] [[Tag|nouns/Tag_zeitraum#1]] [[bis|particles/bis]] [[zu|prepositions/zu]] 10.000 [[Liter|nouns/Liter#1]] [[durch|prepositions/durch#1]] [[den|determiners/der]] [[Körper|nouns/Körper#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "9cb0d9cc"
+    }
   },
   "9360ea46d2": {
     "text": "schweren Herzens",
@@ -10077,18 +10130,19 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "band",
-        "lemma": "band",
+        "form": "Band",
+        "lemma": "Band",
         "pos": "noun",
-        "gloss_hint": "music genre"
+        "gloss_hint": "band"
       },
       {
-        "form": "Blues",
-        "lemma": "blues",
-        "pos": "noun",
-        "gloss_hint": "music genre"
+        "form": "spielt",
+        "lemma": "spielen",
+        "pos": "verb",
+        "gloss_hint": "play (music)"
       }
-    ]
+    ],
+    "text_linked": "Die [[Band|nouns/Band_plural#14]] [[spielt|verbs/spielen#2]] Blues."
   },
   "936588336a": {
     "text": "Trotz meines hohen Blutdruckes erlaube ich mir heute eine Zigarre.",
@@ -10766,7 +10820,8 @@
     ],
     "text_linked": "„[[Seit|prepositions/seit]] [[Donnerstag|nouns/Donnerstag]] [[hält|verbs/halten]] [[sich|pronouns/sich]] [[in|prepositions/in]] [[dem|determiners/der]] AKW [[eine|determiners/ein]] Expertengruppe [[der|determiners/der]] Internationalen Atomenergiebehörde (IAEA) [[auf|prepositions/auf]], [[um|prepositions/um]] [[die|determiners/die]] [[Anlage|nouns/Anlage#9]] auf [[mögliche|adjectives/möglich]] [[Schäden|nouns/Schaden#2]] [[hin|adverbs/hin#1]] [[zu|prepositions/zu]] [[untersuchen|verbs/untersuchen#1]].“",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "46b15cc1"
     }
   },
   "936f5404ac": {
@@ -12115,7 +12170,10 @@
     "lemmas": [
       "fragen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "93858b2488": {
     "text": "„Sékou rückte sein Bündel auf dem Rücken zurecht und setzte zu einer seiner Verrenkungen an, überlegte es sich dann aber anders, nahm sein Funkgerät aus dem Gürtel und sprach leise hinein.“",
@@ -14806,7 +14864,10 @@
       "in Saus und Braus leben",
       "leben"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "939864cbac": {
     "text": "„Der islamistische Fundamentalismus hatte besorgniserregende Ausmaße angenommen; nach London war jetzt auch Brüssel zu einem Heiligtum des Terrors geworden.“",
@@ -20672,7 +20733,8 @@
     ],
     "text_linked": "Das Kindermädchen sah [[nach|prepositions/nach#1]] [[den|determiners/der]] Kleinen.",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "5c3617d6"
     }
   },
   "93c934341a": {
@@ -21171,7 +21233,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Man [[zieht|verbs/ziehen#4]] eine [[Linie|nouns/Linie#1]] [[von|prepositions/von#1]] A [[nach|prepositions/nach#1]] B."
+    "text_linked": "Man [[zieht|verbs/ziehen#4]] eine [[Linie|nouns/Linie#1]] [[von|prepositions/von#1]] A [[nach|prepositions/nach#1]] B.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "2e05ad27"
+    }
   },
   "93d1573105": {
     "text": "„Inmitten all der Leute kam sie sich vor wie eine Außenseiterin.“",
@@ -24325,7 +24391,7 @@
         "form": "Sonntag",
         "lemma": "Sonntag",
         "pos": "noun",
-        "gloss_hint": "morning"
+        "gloss_hint": null
       },
       {
         "form": "gegen",
@@ -24514,7 +24580,11 @@
         "gloss_hint": "flood"
       }
     ],
-    "text_linked": "Am [[Sonntag|nouns/Sonntag]] [[gegen|particles/gegen]] 5 [[Uhr|nouns/Uhr#2]] [[am|prepositions/an]] [[Morgen|nouns/Morgen_tageszeit#1]] [[brach|verbs/brechen#1]] [[in|prepositions/in]] [[Münchner|nouns/Münchner]] [[Stadtteil|nouns/Stadtteil]] Sendling in [[der|determiners/der]] der Hansastraße gegenüber der Einmündung Daxenberger [[Straße|nouns/Straße#2]] [[ein|determiners/ein]] Wasserrohr. [[Schnell|adjectives/schnell#1]] [[war|verbs/sein#2]] [[die|determiners/die]] Straße in [[einem|determiners/ein]] [[Bereich|nouns/Bereich#1]] [[von|prepositions/von]] 50 [[Meter|nouns/Meter]] [[überschwemmt|verbs/überschwemmen]]."
+    "text_linked": "Am [[Sonntag|nouns/Sonntag]] [[gegen|particles/gegen]] 5 [[Uhr|nouns/Uhr#2]] [[am|prepositions/an]] [[Morgen|nouns/Morgen_tageszeit#1]] [[brach|verbs/brechen#1]] [[in|prepositions/in]] [[Münchner|nouns/Münchner]] [[Stadtteil|nouns/Stadtteil]] Sendling in [[der|determiners/der]] der Hansastraße gegenüber der Einmündung Daxenberger [[Straße|nouns/Straße#2]] [[ein|determiners/ein]] Wasserrohr. [[Schnell|adjectives/schnell#1]] [[war|verbs/sein#2]] [[die|determiners/die]] Straße in [[einem|determiners/ein]] [[Bereich|nouns/Bereich#1]] [[von|prepositions/von]] 50 [[Meter|nouns/Meter]] [[überschwemmt|verbs/überschwemmen]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "d6ccf07d"
+    }
   },
   "93f594d780": {
     "text": "„‚Getestet, geimpft oder genesen‘: Das sind die Voraussetzungen, um als Person zu gelten, von der ein geringes Risiko einer Ansteckung mit dem Corona-Virus (SARS-CoV-2) ausgeht. Der Grüne Pass beinhaltet Nachweise (“Zertifikate”), dass man eine Corona-Schutzimpfung erhalten hat (“Impfzertifikat”), einen aktuellen negativen Corona-Test hat (“Testzertifikat”) oder von COVID-19 genesen ist (“Genesungszertifikat”).“",
@@ -25352,16 +25422,10 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Ich",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": "ego"
-      },
-      {
         "form": "gehe",
         "lemma": "gehen",
         "pos": "verb",
-        "gloss_hint": "buy"
+        "gloss_hint": "go"
       },
       {
         "form": "einkaufen",
@@ -25370,7 +25434,11 @@
         "gloss_hint": "buy"
       }
     ],
-    "text_linked": "[[Ich|pronouns/ich]] [[gehe|verbs/gehen]] [[einkaufen|verbs/einkaufen#1]]."
+    "text_linked": "[[Ich|pronouns/ich]] [[gehe|verbs/gehen]] [[einkaufen|verbs/einkaufen#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "9b8c7b4b"
+    }
   },
   "93fdf9368d": {
     "text": "„Er war bei der SS gewesen.“",

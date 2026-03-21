@@ -7047,7 +7047,10 @@
     "lemmas": [
       "deutlich"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "91418cd89d": {
     "text": "Der Plan hat sich geändert.",
@@ -7427,7 +7430,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Was mich [[angeht|verbs/angehen#6]]: Ich [[habe|verbs/haben]] mich [[in|prepositions/in]] [[Beziehungen|nouns/Beziehung#1]] [[vielleicht|adverbs/vielleicht#1]] [[hin|adverbs/hin#1]] [[und|conjunctions/und]] [[wieder|adverbs/wieder#1]] verantwortungslos und [[selbstsüchtig|adjectives/selbstsüchtig]] [[verhalten|verbs/verhalten_partizip#1]], [[doch|conjunctions/doch]] [[die|pronouns/die#1]] [[Tatsache|nouns/Tatsache#1]], [[dass|conjunctions/dass]] ich Gewissensbisse habe, [[zeigt|verbs/zeigen#1]], dass ich keine [[Psychopathin|nouns/Psychopathin#1]] [[bin|verbs/sein]].“"
+    "text_linked": "„Was mich [[angeht|verbs/angehen#6]]: Ich [[habe|verbs/haben]] mich [[in|prepositions/in]] [[Beziehungen|nouns/Beziehung#1]] [[vielleicht|adverbs/vielleicht#1]] [[hin|adverbs/hin#1]] [[und|conjunctions/und]] [[wieder|adverbs/wieder#1]] verantwortungslos und [[selbstsüchtig|adjectives/selbstsüchtig]] [[verhalten|verbs/verhalten_zurückhalten#2]], [[doch|conjunctions/doch]] [[die|pronouns/die#1]] [[Tatsache|nouns/Tatsache#1]], [[dass|conjunctions/dass]] ich Gewissensbisse habe, [[zeigt|verbs/zeigen#1]], dass ich keine [[Psychopathin|nouns/Psychopathin#1]] [[bin|verbs/sein]].“"
   },
   "9147c40e19": {
     "text": "„Ich machte mich zum Erzähler und erzählte die Geschichte meiner Großmutter auch aus eigenem Recht.“",
@@ -8030,7 +8033,10 @@
     "lemmas": [
       "falsch"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "91572a3d61": {
     "text": "Der neue Lehrling lässt sich gut an.",
@@ -19805,7 +19811,10 @@
     "lemmas": [
       "gehören"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "91cb53231a": {
     "text": "Ich habe für so etwas einen siebten Sinn.",
@@ -20460,31 +20469,23 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Ich",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": "ego"
-      },
-      {
         "form": "würde",
-        "lemma": "würde",
+        "lemma": "werden",
         "pos": "verb",
-        "gloss_hint": "do (auxiliary)"
+        "gloss_hint": null
       },
       {
-        "form": "alles",
-        "lemma": "alles",
-        "pos": "noun",
-        "gloss_hint": "action"
-      },
-      {
-        "form": "dafür",
-        "lemma": "dafür",
-        "pos": "adverb",
-        "gloss_hint": "for that purpose"
+        "form": "tun",
+        "lemma": "tun",
+        "pos": "verb",
+        "gloss_hint": "do"
       }
     ],
-    "text_linked": "[[Ich|pronouns/ich]] würde alles [[dafür|adverbs/dafür#1]] tun."
+    "text_linked": "Ich [[würde|verbs/werden]] alles dafür [[tun|verbs/tun_handlung#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "a667e484"
+    }
   },
   "91d4ed5dfd": {
     "text": "„Schon nach vier Minuten hatte Timo Werner die Führung auf dem Fuß, fand aus sechs Metern aber in FC-Keeper Timo Horn und dessen rechten Fuß seinen Meister.“",
@@ -20661,25 +20662,13 @@
         "form": "haben",
         "lemma": "haben",
         "pos": "verb",
-        "gloss_hint": "have (auxiliary)"
-      },
-      {
-        "form": "all",
-        "lemma": "all",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "unsere",
-        "lemma": "unser",
-        "pos": "adjective",
         "gloss_hint": null
       },
       {
         "form": "Arbeiten",
         "lemma": "Arbeit",
         "pos": "noun",
-        "gloss_hint": "work"
+        "gloss_hint": null
       },
       {
         "form": "getan",
@@ -20688,7 +20677,11 @@
         "gloss_hint": "do"
       }
     ],
-    "text_linked": "Wir [[haben|verbs/haben#1]] all unsere [[Arbeiten|nouns/Arbeit#1]] [[getan|verbs/tun_handlung#1]]."
+    "text_linked": "Wir [[haben|verbs/haben#1]] all unsere [[Arbeiten|nouns/Arbeit#1]] [[getan|verbs/tun_handlung#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "385e5de2"
+    }
   },
   "91d695ea22": {
     "text": "„Andererseits glaube ich aber, dass ein Krieg wie in Gaza keine Lösung ist und nur den Nährboden für weitere Konflikte und Hass bereitet - bis sich eines Tages wieder ein Selbstmordattentäter in Tel Aviv hochjagt und zwanzig Unschuldige mit in den Tod reißt.“",

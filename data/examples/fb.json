@@ -3347,7 +3347,11 @@
         "gloss_hint": "day"
       }
     ],
-    "text_linked": "Sie [[ist|verbs/sein]] [[wirklich|adjectives/wirklich#1]] [[schnell|adjectives/schnell#1]], [[kein|pronouns/kein#1]] [[anderer|pronouns/anderer#1]] [[schafft|verbs/schaffen_etwas]] soviel [[an|prepositions/an]] [[einem|determiners/ein]] [[Tag|nouns/Tag_zeitraum#1]]."
+    "text_linked": "Sie [[ist|verbs/sein]] [[wirklich|adjectives/wirklich#1]] [[schnell|adjectives/schnell#1]], [[kein|pronouns/kein#1]] [[anderer|pronouns/anderer#1]] [[schafft|verbs/schaffen_etwas]] soviel [[an|prepositions/an]] [[einem|determiners/ein]] [[Tag|nouns/Tag_zeitraum#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "d754ef67"
+    }
   },
   "fb16ad9048": {
     "text": "„«Wenn wir ein Gen herausschneiden, sehen wir, ob die Korallen mehr oder weniger hitzeempfindlich sind», erklärt Cleves.“",
@@ -4645,120 +4649,55 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "The",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "62",
-        "lemma": "62",
-        "pos": "numeral",
-        "gloss_hint": null
-      },
-      {
-        "form": "richest",
-        "lemma": "rich",
+        "form": "reichsten",
+        "lemma": "reich",
         "pos": "adjective",
         "gloss_hint": null
       },
       {
-        "form": "people",
-        "lemma": "person",
+        "form": "Menschen",
+        "lemma": "Mensch",
         "pos": "noun",
-        "gloss_hint": "noun"
-      },
-      {
-        "form": "on",
-        "lemma": "on",
-        "pos": "preposition",
         "gloss_hint": null
       },
       {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
+        "form": "Planeten",
+        "lemma": "Planet",
+        "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "planet",
-        "lemma": "planet",
-        "pos": "noun",
-        "gloss_hint": "noun"
-      },
-      {
-        "form": "own",
-        "lemma": "own",
+        "form": "besitzen",
+        "lemma": "besitzen",
         "pos": "verb",
-        "gloss_hint": "possess"
-      },
-      {
-        "form": "as",
-        "lemma": "as",
-        "pos": "conjunction",
         "gloss_hint": null
       },
       {
-        "form": "much",
-        "lemma": "much",
-        "pos": "adverb",
-        "gloss_hint": null
-      },
-      {
-        "form": "as",
-        "lemma": "as",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "entire",
-        "lemma": "entire",
+        "form": "gesamte",
+        "lemma": "gesamt",
         "pos": "adjective",
         "gloss_hint": null
       },
       {
-        "form": "poorer",
-        "lemma": "poor",
+        "form": "ärmere",
+        "lemma": "arm",
         "pos": "adjective",
-        "gloss_hint": null
+        "gloss_hint": "poor"
       },
       {
-        "form": "half",
-        "lemma": "half",
+        "form": "Hälfte",
+        "lemma": "Hälfte",
         "pos": "noun",
-        "gloss_hint": "noun"
+        "gloss_hint": "half"
       },
       {
-        "form": "of",
-        "lemma": "of",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "world",
-        "lemma": "world",
-        "pos": "noun",
-        "gloss_hint": "noun"
-      },
-      {
-        "form": "population",
-        "lemma": "population",
+        "form": "Weltbevölkerung",
+        "lemma": "Weltbevölkerung",
         "pos": "noun",
         "gloss_hint": null
       }
-    ]
+    ],
+    "text_linked": "„Die 62 [[reichsten|adjectives/reich]] [[Menschen|nouns/Mensch_junge]] des [[Planeten|nouns/Planet]] [[besitzen|verbs/besitzen]] so viel wie die gesamte [[ärmere|adjectives/arm#1]] [[Hälfte|nouns/Hälfte#1]] der Weltbevölkerung.“"
   },
   "fb291f4403": {
     "text": "[Bill Hayton:] Der Schlüssel aus meiner Sicht ist, dass alle Seiten [Malaysia, Vietnam, Philippinen] die Gewissheit haben müssen, dass es keine weiteren Besetzungen von Inseln [durch China] gibt.",
@@ -9253,25 +9192,7 @@
         "form": "Kannst",
         "lemma": "können",
         "pos": "verb",
-        "gloss_hint": "arrive"
-      },
-      {
-        "form": "du",
-        "lemma": "du",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "am",
-        "lemma": "an",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "Freitag",
-        "lemma": "Freitag",
-        "pos": "noun",
-        "gloss_hint": "Friday"
+        "gloss_hint": "can (be able)"
       },
       {
         "form": "kommen",
@@ -9280,19 +9201,17 @@
         "gloss_hint": "arrive"
       },
       {
-        "form": "Ja",
-        "lemma": "ja",
-        "pos": "adverb",
-        "gloss_hint": null
-      },
-      {
-        "form": "das",
-        "lemma": "das",
-        "pos": "pronoun",
-        "gloss_hint": "which (nominative)"
+        "form": "geht",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "work"
       }
     ],
-    "text_linked": "[[Kannst|verbs/können_beherrschen]] [[du|pronouns/du]] [[am|prepositions/an]] [[Freitag|nouns/Freitag_fünfter#1]] [[kommen|verbs/kommen#1]]? Ja, [[das|pronouns/das_nominativ]] geht."
+    "text_linked": "[[Kannst|verbs/können_beherrschen]] [[du|pronouns/du]] [[am|prepositions/an]] [[Freitag|nouns/Freitag_fünfter#1]] [[kommen|verbs/kommen#1]]? Ja, [[das|pronouns/das_nominativ]] geht.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "092161e1"
+    }
   },
   "fb653dcc13": {
     "text": "Wird die Verdrehung der Wirbelsäule nicht rechtzeitig behandelt, können mit zunehmendem Alter neben den Rückenbeschwerden auch innere Organe in Mitleidenschaft gezogen werden.",
@@ -9434,7 +9353,7 @@
   },
   "fb659c1ed1": {
     "text": "Du musst Annekes Schwester sein; ich habe schon viel von dir gehört.",
-    "translation": "You must be Annekes's sister; I have already heard a lot about you.",
+    "translation": "You must be Anneke's sister; I have already heard a lot about you.",
     "source": "wiktionary",
     "lemmas": [
       "müssen"
@@ -9442,84 +9361,29 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "You",
-        "lemma": "you",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "must",
-        "lemma": "must",
+        "form": "musst",
+        "lemma": "müssen",
         "pos": "verb",
-        "gloss_hint": null
+        "gloss_hint": "must"
       },
       {
-        "form": "be",
-        "lemma": "be",
-        "pos": "verb",
-        "gloss_hint": null
-      },
-      {
-        "form": "Annekes's",
-        "lemma": "Annekes",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "sister",
-        "lemma": "sister",
+        "form": "Schwester",
+        "lemma": "Schwester",
         "pos": "noun",
         "gloss_hint": "sister"
       },
       {
-        "form": "I",
-        "lemma": "I",
-        "pos": "pronoun",
-        "gloss_hint": "ego"
-      },
-      {
-        "form": "have",
-        "lemma": "have",
+        "form": "gehört",
+        "lemma": "hören",
         "pos": "verb",
-        "gloss_hint": null
-      },
-      {
-        "form": "already",
-        "lemma": "already",
-        "pos": "adverb",
-        "gloss_hint": null
-      },
-      {
-        "form": "heard",
-        "lemma": "hear",
-        "pos": "verb",
-        "gloss_hint": null
-      },
-      {
-        "form": "a",
-        "lemma": "a",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "lot",
-        "lemma": "lot",
-        "pos": "noun",
-        "gloss_hint": "plenty"
-      },
-      {
-        "form": "about",
-        "lemma": "about",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "you",
-        "lemma": "you",
-        "pos": "pronoun",
-        "gloss_hint": null
+        "gloss_hint": "hear"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "c1eaedac"
+    },
+    "text_linked": "Du [[musst|verbs/müssen#1]] Annekes [[Schwester|nouns/Schwester#1]] sein; ich habe schon viel von dir [[gehört|verbs/hören#1]]."
   },
   "fb6786dfb1": {
     "text": "Während sich das ältere Personal mürrisch und in sarkastischen Andeutungen über die neuen Öffnungszeiten auslässt, zeigen sich die Jüngeren flexibler.",
@@ -10174,37 +10038,47 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "bekanntwerdens",
-        "lemma": "bekanntwerden",
+        "form": "Bekanntwerdens",
+        "lemma": "Bekanntwerden",
         "pos": "noun",
-        "gloss_hint": "noun: becoming known"
+        "gloss_hint": "becoming known"
       },
       {
-        "form": "Zeit",
-        "lemma": "Zeit",
+        "form": "Tag",
+        "lemma": "Tag",
         "pos": "noun",
-        "gloss_hint": "noun: time"
-      },
-      {
-        "form": "bekommen",
-        "lemma": "bekommen",
-        "pos": "verb",
-        "gloss_hint": "verb: receive"
-      },
-      {
-        "form": "lösen",
-        "lemma": "lösen",
-        "pos": "verb",
-        "gloss_hint": "verb: solve"
+        "gloss_hint": "day"
       },
       {
         "form": "lang",
         "lemma": "lang",
         "pos": "adjective",
         "gloss_hint": null
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bekommen",
+        "lemma": "bekommen",
+        "pos": "verb",
+        "gloss_hint": "receive"
+      },
+      {
+        "form": "lösen",
+        "lemma": "lösen",
+        "pos": "verb",
+        "gloss_hint": "solve"
       }
     ],
-    "text_linked": "Wir hatten ab dem Zeitpunkt des Bekanntwerdens einen Tag [[lang|adjectives/lang]] [[Zeit|nouns/Zeit]] [[bekommen|verbs/bekommen]], um das Problem zu [[lösen|verbs/lösen]]."
+    "text_linked": "Wir hatten ab dem Zeitpunkt des [[Bekanntwerdens|nouns/Bekanntwerden]] einen [[Tag|nouns/Tag_zeitraum#1]] [[lang|adjectives/lang]] [[Zeit|nouns/Zeit]] [[bekommen|verbs/bekommen]], um das Problem zu [[lösen|verbs/lösen]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "85b3639c"
+    }
   },
   "fb6d2b5d8e": {
     "text": "„In Deutschland ist die Landwirtschaft für 60 Prozent der Methan-Emissionen verantwortlich.“",
@@ -10952,7 +10826,11 @@
         "gloss_hint": "hall"
       }
     ],
-    "text_linked": "„[[Ein|determiners/ein]] [[mächtiges|adjectives/mächtig]] [[Feuer|nouns/Feuer#1]] [[aus|prepositions/aus#1]] Reisig [[und|conjunctions/und]] Kienäpfeln flammte [[im|prepositions/in]] [[Saal|nouns/Saal#1]].“"
+    "text_linked": "„[[Ein|determiners/ein]] [[mächtiges|adjectives/mächtig]] [[Feuer|nouns/Feuer#1]] [[aus|prepositions/aus#1]] Reisig [[und|conjunctions/und]] Kienäpfeln flammte [[im|prepositions/in]] [[Saal|nouns/Saal#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "c78ba553"
+    }
   },
   "fb751e5f48": {
     "text": "„Am 3. Mai 1775 meldet Alexander Cummings ein \"Water Closet\" zum Patent an, dessen wichtigste Neuerung in einem zweifach gekrümmten Abflussrohr besteht.“",
@@ -17198,7 +17076,11 @@
         "gloss_hint": "form"
       }
     ],
-    "text_linked": "Die [[Menge|nouns/Menge#3]] aller Teilmengen einer vorgegebenen Menge [[bildet|verbs/bilden#1]] unter den üblichen Mengenoperationen einen booleschen Verband."
+    "text_linked": "Die [[Menge|nouns/Menge#3]] aller Teilmengen einer vorgegebenen Menge [[bildet|verbs/bilden#1]] unter den üblichen Mengenoperationen einen booleschen Verband.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "11d184eb"
+    }
   },
   "fbb0bf1d07": {
     "text": "„Aber indem ich um diese Erlaubnis bat, arbeitete sich meine Hand, ohne auf die Genehmigung zu warten, bereits so gut vor, daß ich mich überzeugte und mehr als überzeugte, nicht nur, daß die Pensionärin ein reizendes Püppchen war, sondern daß sowohl M. M. wie sie selber ihre Freude an meiner Neugier hatten.“",
@@ -23641,7 +23523,11 @@
         "gloss_hint": "faster"
       }
     ],
-    "text_linked": "[[Lass|verbs/lassen]] [[mich|pronouns/ich]] [[dir|pronouns/du]] [[helfen|verbs/helfen#1]], [[dann|adverbs/dann#1]] [[geht|verbs/gehen]] [[es|pronouns/es]] [[schneller|adjectives/schnell]]."
+    "text_linked": "[[Lass|verbs/lassen]] [[mich|pronouns/ich]] [[dir|pronouns/du]] [[helfen|verbs/helfen#1]], [[dann|adverbs/dann#1]] [[geht|verbs/gehen]] [[es|pronouns/es]] [[schneller|adjectives/schnell]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "b85b5696"
+    }
   },
   "fbe6859cbe": {
     "text": "„Dieser Mensch war eine einzige Pleite.“",

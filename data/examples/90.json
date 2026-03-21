@@ -3991,12 +3991,15 @@
   },
   "902878083a": {
     "text": "Das ist nicht mein Fehler.",
-    "translation": "That is not my fault. [fault: Fehler|noun]",
+    "translation": "That is not my fault.",
     "source": "wiktionary",
     "lemmas": [
       "Fehler"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "902cae03e0": {
     "text": "da möchte ich nicht begraben sein",
@@ -4090,7 +4093,11 @@
         "gloss_hint": "social movement"
       }
     ],
-    "text_linked": "Im Frühsommer 71 [[setzte|verbs/setzen]] er [[sich|pronouns/sich#1]] [[an|prepositions/an]] [[die|determiners/die]] [[Spitze|nouns/Spitze#2]] [[der|pronouns/der_nominativ]] [[Bewegung|nouns/Bewegung#4]]."
+    "text_linked": "Im Frühsommer 71 [[setzte|verbs/setzen]] er [[sich|pronouns/sich#1]] [[an|prepositions/an]] [[die|determiners/die]] [[Spitze|nouns/Spitze#2]] [[der|pronouns/der_nominativ]] [[Bewegung|nouns/Bewegung#4]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "88c1317c"
+    }
   },
   "902e391af8": {
     "text": "große Augen machen",
@@ -5821,7 +5828,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Kennen|verbs/kennen#1]] [[Sie|nouns/Sie_besondere]] [[den|determiners/der]] [[Weg|nouns/Weg#1]] [[zum|prepositions/zu]] [[Flughafen|nouns/Flughafen]]?"
+    "text_linked": "[[Kennen|verbs/kennen#1]] [[Sie|nouns/Sie_besondere]] [[den|determiners/der]] [[Weg|nouns/Weg#1]] [[zum|prepositions/zu]] [[Flughafen|nouns/Flughafen]]?",
+    "_proofread": {
+      "translation": true,
+      "annotations": "e10aa04b"
+    }
   },
   "90434b41fa": {
     "text": "„Experten schätzen, dass gut ein Drittel der bestehenden Gebäude ohne weiteres mit Erdwärmeheizungen ausgerüstet werden können.“",
@@ -6389,37 +6400,29 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Die",
-        "lemma": "die",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
         "form": "Partei",
         "lemma": "Partei",
         "pos": "noun",
-        "gloss_hint": "party"
+        "gloss_hint": "political party"
       },
       {
         "form": "macht",
         "lemma": "machen",
         "pos": "verb",
-        "gloss_hint": "make"
-      },
-      {
-        "form": "auf",
-        "lemma": "auf",
-        "pos": "preposition",
-        "gloss_hint": "on"
+        "gloss_hint": "pretend"
       },
       {
         "form": "Optimismus",
         "lemma": "Optimismus",
         "pos": "noun",
-        "gloss_hint": "belief in best possible world"
+        "gloss_hint": "general positive outlook"
       }
     ],
-    "text_linked": "[[Die|determiners/die]] [[Partei|nouns/Partei#2]] [[macht|verbs/machen#2]] [[auf|prepositions/auf#1]] [[Optimismus|nouns/Optimismus#1]]."
+    "text_linked": "[[Die|determiners/die]] [[Partei|nouns/Partei#2]] [[macht|verbs/machen#2]] [[auf|prepositions/auf#1]] [[Optimismus|nouns/Optimismus#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "5afee476"
+    }
   },
   "9047f85b1c": {
     "text": "„Erinnerst du dich an sie, Parker? Früher habe ich bei ihr babygesittet.“",
@@ -9313,7 +9316,11 @@
         "gloss_hint": "empty"
       }
     ],
-    "text_linked": "„[[Die|determiners/die]] [[Kirche|nouns/Kirche#1]] [[war|verbs/sein#2]] [[kalt|adjectives/kalt#1]] [[und|conjunctions/und]] [[leer|adjectives/leer#1]].“"
+    "text_linked": "„[[Die|determiners/die]] [[Kirche|nouns/Kirche#1]] [[war|verbs/sein#2]] [[kalt|adjectives/kalt#1]] [[und|conjunctions/und]] [[leer|adjectives/leer#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "16c8cce5"
+    }
   },
   "906fa8e92d": {
     "text": "„Bravo! rief er mit seinem ironischen Lachen. Bravo, mein Sohn!“",
@@ -13054,7 +13061,7 @@
         "gloss_hint": "memory"
       }
     ],
-    "text_linked": "„In [[den|determiners/der]] [[Seminaren|nouns/Seminar#1]] [[lebte|verbs/leben]] er [[von|prepositions/von]] [[der|pronouns/der_nominativ]] [[Hand|nouns/Hand#2]] [[in|prepositions/in]] den [[Mund|nouns/Mund_öffnung#1]] [[und|conjunctions/und]] [[verließ|verbs/verlassen_partizip]] [[sich|pronouns/sich]] [[auf|prepositions/auf#1]] [[sein|verbs/sein#1]] [[Gedächtnis|nouns/Gedächtnis#1]].“"
+    "text_linked": "„In [[den|determiners/der]] [[Seminaren|nouns/Seminar#1]] [[lebte|verbs/leben]] er [[von|prepositions/von]] [[der|pronouns/der_nominativ]] [[Hand|nouns/Hand#2]] [[in|prepositions/in]] den [[Mund|nouns/Mund_öffnung#1]] [[und|conjunctions/und]] [[verließ|verbs/verlassen_weggehen]] [[sich|pronouns/sich]] [[auf|prepositions/auf#1]] [[sein|verbs/sein#1]] [[Gedächtnis|nouns/Gedächtnis#1]].“"
   },
   "9093eba9f7": {
     "text": "den Himmel auf Erden haben",
@@ -16210,7 +16217,11 @@
         "gloss_hint": "evening"
       }
     ],
-    "text_linked": "[[Abend|nouns/Abend#1]] allerseits!"
+    "text_linked": "[[Abend|nouns/Abend#1]] allerseits!",
+    "_proofread": {
+      "translation": true,
+      "annotations": "9ecad96d"
+    }
   },
   "90b9ecfbf0": {
     "text": "Schießen erst nach Freigabe.",
@@ -18907,49 +18918,23 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Ich",
-        "lemma": "ich",
-        "pos": "noun",
-        "gloss_hint": "I (pronoun)"
-      },
-      {
         "form": "mache",
         "lemma": "machen",
         "pos": "verb",
-        "gloss_hint": "exaggeration | style"
-      },
-      {
-        "form": "mich",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "jetzt",
-        "lemma": "jetzt",
-        "pos": "adverb",
-        "gloss_hint": "now | nowadays"
-      },
-      {
-        "form": "an",
-        "lemma": "an",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "determiner",
-        "gloss_hint": "the (feminine)"
+        "gloss_hint": "do"
       },
       {
         "form": "Arbeit",
         "lemma": "Arbeit",
         "pos": "noun",
-        "gloss_hint": "creative work | task | job | employment | exam | labor (economic) | mechanical work | effort | product | workplace"
+        "gloss_hint": "task"
       }
     ],
-    "text_linked": "Ich [[mache|verbs/machen]] [[mich|pronouns/ich]] [[jetzt|adverbs/jetzt#1]] [[an|prepositions/an]] [[die|determiners/die#1]] [[Arbeit|nouns/Arbeit#1]]."
+    "text_linked": "Ich [[mache|verbs/machen#4]] mich jetzt an die [[Arbeit|nouns/Arbeit#2]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "b702f5d9"
+    }
   },
   "90c6fb6f2f": {
     "text": "Der Kleptomane ließ alles mitgehen, was nicht niet- und nagelfest war.",
@@ -22580,7 +22565,7 @@
   },
   "90e143d6af": {
     "text": "„Sie humpelte die Straße entlang, als ihr auch schon die ersten Dorfbewohner mit dem Löschhandwagen entgegenkamen.“",
-    "translation": "She hobbled along the street when the first villagers with the fire truck were already approaching her.",
+    "translation": "She hobbled along the street when the first villagers with the manual fire cart were already approaching her.",
     "source": "wiktionary",
     "lemmas": [
       "Straße"
@@ -22684,7 +22669,11 @@
         "gloss_hint": "approaching"
       }
     ],
-    "text_linked": "„Sie [[humpelte|verbs/humpeln]] [[die|pronouns/die#1]] [[Straße|nouns/Straße#2]] [[entlang|adverbs/entlang]], [[als|conjunctions/als#2]] [[ihr|pronouns/ihr_zu#1]] auch [[schon|particles/schon_antwort#1]] die ersten [[Dorfbewohner|nouns/Dorfbewohner#1]] [[mit|prepositions/mit#1]] [[dem|determiners/dem#1]] Löschhandwagen [[entgegenkamen|verbs/entgegenkommen#1]].“"
+    "text_linked": "„Sie [[humpelte|verbs/humpeln]] [[die|pronouns/die#1]] [[Straße|nouns/Straße#2]] [[entlang|adverbs/entlang]], [[als|conjunctions/als#2]] [[ihr|pronouns/ihr_zu#1]] auch [[schon|particles/schon_antwort#1]] die ersten [[Dorfbewohner|nouns/Dorfbewohner#1]] [[mit|prepositions/mit#1]] [[dem|determiners/dem#1]] Löschhandwagen [[entgegenkamen|verbs/entgegenkommen#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "e60a35cf"
+    }
   },
   "90e210891a": {
     "text": "Die Begriffsbedeutungen \"Putsch\" und \"Staatsstreich\" sind nicht völlig identisch. Bei einem Putsch wird der gewaltsame Sturz der Regierung von außen versucht (etwa vom Militär), während an einem Staatsstreich ein oder mehrere Mitglieder der aktuellen Regierung beteiligt sind.",
@@ -23582,7 +23571,11 @@
         "gloss_hint": "become"
       }
     ],
-    "text_linked": "„Berechnete [[Uhr|nouns/Uhr#2]] [[des|pronouns/der_nominativ]] Wasserverbrauchs [[zur|prepositions/zu]] [[Bestimmung|nouns/Bestimmung#3]] [[der|determiners/der]] [[Leistung|nouns/Leistung#1]] der Wasseraufbereitung [[und|conjunctions/und]] der [[entsprechenden|adjectives/entsprechend]] [[Ausrüstung|nouns/Ausrüstung#1]] [[zum|prepositions/zu]] [[Füttern|verbs/füttern_einem#2]] des Wärmeversorgungssystems [[sollte|verbs/sollen#4]] [[genommen|verbs/nehmen]] [[werden|verbs/werden#1]] …“"
+    "text_linked": "„Berechnete [[Uhr|nouns/Uhr#2]] [[des|pronouns/der_nominativ]] Wasserverbrauchs [[zur|prepositions/zu]] [[Bestimmung|nouns/Bestimmung#3]] [[der|determiners/der]] [[Leistung|nouns/Leistung#1]] der Wasseraufbereitung [[und|conjunctions/und]] der [[entsprechenden|adjectives/entsprechend]] [[Ausrüstung|nouns/Ausrüstung#1]] [[zum|prepositions/zu]] [[Füttern|verbs/füttern_einem#2]] des Wärmeversorgungssystems [[sollte|verbs/sollen#4]] [[genommen|verbs/nehmen]] [[werden|verbs/werden#1]] …“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "017423e6"
+    }
   },
   "90e93b1b3c": {
     "text": "„Hartes Wasser wird in der Alltagssprache oft als kalkhaltiges Wasser bezeichnet.“",

@@ -766,7 +766,11 @@
       "Krankenhaus"
     ],
     "translation_model": "openai/gpt-4.1-nano",
-    "annotations": []
+    "annotations": [],
+    "_proofread": {
+      "translation": true,
+      "annotations": "4f53cda1"
+    }
   },
   "7b0c0043d8": {
     "text": "„Vor acht Jahren ist die damals dreißigjährige geschiedene Elfriede als Schreibkraft im Rathaus in W angestellt worden und hat den dort beschäftigten Albert, der Beamter auf Lebenszeit und mit Widerspruchsverfahren befaßt ist, wegen ihres südländischen Aussehens sofort fasziniert.“",
@@ -1746,84 +1750,29 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "world",
-        "lemma": "world",
+        "form": "Welt",
+        "lemma": "Welt",
         "pos": "noun",
         "gloss_hint": "world (society)"
       },
       {
-        "form": "of",
-        "lemma": "of",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "indigenous",
-        "lemma": "indigenous",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "peoples",
-        "lemma": "people",
-        "pos": "noun",
-        "gloss_hint": "people"
-      },
-      {
-        "form": "of",
-        "lemma": "of",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "America",
-        "lemma": "America",
+        "form": "Ureinwohner",
+        "lemma": "Ureinwohner",
         "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "is",
-        "lemma": "be",
-        "pos": "verb",
-        "gloss_hint": "be"
-      },
-      {
-        "form": "still",
-        "lemma": "still",
-        "pos": "adverb",
-        "gloss_hint": "still (present)"
-      },
-      {
-        "form": "largely",
-        "lemma": "largely",
-        "pos": "adjective",
-        "gloss_hint": "extensive"
-      },
-      {
-        "form": "unknown",
-        "lemma": "unknown",
+        "form": "unbekannt",
+        "lemma": "unbekannt",
         "pos": "adjective",
         "gloss_hint": "unknown"
-      },
-      {
-        "form": "to",
-        "lemma": "to",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "us",
-        "lemma": "we",
-        "pos": "pronoun",
-        "gloss_hint": "us (accusative)"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "ad761a7a"
+    },
+    "text_linked": "Die [[Welt|nouns/Welt#4]] der [[Ureinwohner|nouns/Ureinwohner]] Amerikas ist uns noch weitgehend [[unbekannt|adjectives/unbekannt#2]]."
   },
   "7b130053a7": {
     "text": "man kann alt werden wie ein Haus – man lernt nie aus",
@@ -5462,7 +5411,10 @@
     "lemmas": [
       "sie"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "7b2c7b5def": {
     "text": "sich nicht vom Tisch fegen lassen",
@@ -6382,7 +6334,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Sie [[stellte|verbs/stellen]] [[an|prepositions/an]] [[ihre|pronouns/ihr_person]] [[Mitarbeiter|nouns/Mitarbeiter#1]] [[hohe|adjectives/hoch]] [[Ansprüche|nouns/Anspruch]]."
+    "text_linked": "Sie [[stellte|verbs/stellen]] [[an|prepositions/an]] [[ihre|pronouns/ihr_person]] [[Mitarbeiter|nouns/Mitarbeiter#1]] [[hohe|adjectives/hoch]] [[Ansprüche|nouns/Anspruch]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "833e2b7e"
+    }
   },
   "7b35192988": {
     "text": "Er ging mit einer abgerissenen Jacke ins Theater.",
@@ -14601,7 +14557,10 @@
       "Ölkonzern",
       "aufheizen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "7b8fa6d7a6": {
     "text": "Nennen Sie mir bitte die exakte Uhrzeit.",
@@ -16420,7 +16379,11 @@
         "gloss_hint": "left"
       }
     ],
-    "text_linked": "[[Als|conjunctions/als#2]] Maria [[kam|verbs/kommen#1]], [[war|verbs/sein#2]] Peter [[bereits|adverbs/bereits#1]] [[gegangen|verbs/gehen#3]]."
+    "text_linked": "[[Als|conjunctions/als#2]] Maria [[kam|verbs/kommen#1]], [[war|verbs/sein#2]] Peter [[bereits|adverbs/bereits#1]] [[gegangen|verbs/gehen#3]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "d65b4c0a"
+    }
   },
   "7bb31c967f": {
     "text": "Hacker können so Nachrichten unter Ihrem Namen verschicken und empfangen – und sogar den Account übernehmen, ohne dass Sie etwas dagegen tun können.",
@@ -22477,7 +22440,11 @@
         "gloss_hint": "sky"
       }
     ],
-    "text_linked": "„Eilende [[Wolken|nouns/Wolke#1]]! Segler [[der|pronouns/der_nominativ#1]] [[Lüfte|nouns/Luft_überwiegend#2]]!"
+    "text_linked": "„Eilende [[Wolken|nouns/Wolke#1]]! Segler [[der|pronouns/der_nominativ#1]] [[Lüfte|nouns/Luft_überwiegend#2]]!",
+    "_proofread": {
+      "translation": true,
+      "annotations": "5fb7193d"
+    }
   },
   "7bf254f31d": {
     "text": "Mach dich auf die Socken, es ist schon spät.",

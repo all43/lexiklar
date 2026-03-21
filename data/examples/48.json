@@ -1104,7 +1104,7 @@
         "gloss_hint": "have"
       }
     ],
-    "text_linked": "[[Lass|verbs/lassen]] [[uns|pronouns/wir]] alle [[faulen|adjectives/faul#2]] [[Leute|nouns/Leute#1]], die [[ihre|pronouns/ihr_person]] Silvestervorsätze [[vergessen|verbs/vergessen_partizip#1]] [[haben|verbs/haben#1]], hochjagen."
+    "text_linked": "[[Lass|verbs/lassen]] [[uns|pronouns/wir]] alle [[faulen|adjectives/faul#2]] [[Leute|nouns/Leute#1]], die [[ihre|pronouns/ihr_person]] Silvestervorsätze [[vergessen|verbs/vergessen_sich]] [[haben|verbs/haben#1]], hochjagen."
   },
   "480ab429cb": {
     "text": "Nach Art. 32 des Bundesgesetzes über die Bundesversammlung vom 13. Dezember 2002 versammelt sich die Bundesversammlung in Bern. Gemäss Art. 58 des Regierungs- und Verwaltungsorganisationsgesetzes vom 21. März 1997 ist die Stadt Bern Amtssitz des Bundesrates, der Departemente und der Bundeskanzlei.",
@@ -4471,7 +4471,7 @@
   },
   "482ca3644c": {
     "text": "Wenn du zur Autobahnabfahrt Süd kommst, kannst du an der Brücke den Tag bewundern, fett groß und in knallrot, direkt unter dem Bild der Fabrikanlage.",
-    "translation": "When you come to the south highway exit, you can admire the scene under the bridge, large and in bright red, directly below the picture of the factory complex.",
+    "translation": "When you come to the south highway exit, you can admire the tag at the bridge, big and bold in bright red, directly below the picture of the factory complex.",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
@@ -4479,85 +4479,77 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Bild",
-        "lemma": "Bild",
+        "form": "Autobahnabfahrt",
+        "lemma": "Autobahnabfahrt",
         "pos": "noun",
-        "gloss_hint": "painting | image | TV picture | reflection | impression | view | image file | scene | illustration | metaphor | mapping element | newspaper | range"
-      },
-      {
-        "form": "Brücke",
-        "lemma": "Brücke",
-        "pos": "noun",
-        "gloss_hint": "bridge | dental bridge | runner (carpet) | pons | connection | bridge (gymnastics) | bridge (command) | loading ramp | bridge day"
-      },
-      {
-        "form": "fett",
-        "lemma": "fett",
-        "pos": "noun",
-        "gloss_hint": "fat (chemical) | fat (nutrient) | fat (body tissue) | fat (food) | grease"
-      },
-      {
-        "form": "groß",
-        "lemma": "groß",
-        "pos": "adjective",
-        "gloss_hint": "large | above average | grown-up | significant | this size"
+        "gloss_hint": null
       },
       {
         "form": "Süd",
         "lemma": "Süd",
         "pos": "noun",
-        "gloss_hint": "south | southerly wind | southern hemisphere | south (prefix) | south (suffix)"
+        "gloss_hint": "south"
+      },
+      {
+        "form": "kommst",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "kannst",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Brücke",
+        "lemma": "Brücke",
+        "pos": "noun",
+        "gloss_hint": "bridge"
       },
       {
         "form": "Tag",
         "lemma": "Tag",
         "pos": "noun",
-        "gloss_hint": "ending (jazz) | tag (HTML) | tag (electronics) | tag (graffiti) | daylight | day | time | menstruation | earth | assembly"
+        "gloss_hint": "tag (graffiti)"
+      },
+      {
+        "form": "bewundern",
+        "lemma": "bewundern",
+        "pos": "verb",
+        "gloss_hint": null
       },
       {
         "form": "fett",
         "lemma": "fett",
         "pos": "adjective",
-        "gloss_hint": "fat | fatty | big (in size) | bold (typography) | fertile | valuable | insulting | drunk"
+        "gloss_hint": "bold (typography)"
       },
       {
         "form": "groß",
         "lemma": "groß",
         "pos": "adjective",
-        "gloss_hint": "large | above average | grown-up | significant | this size"
+        "gloss_hint": "large"
       },
       {
-        "form": "unter",
-        "lemma": "unter",
-        "pos": "preposition",
-        "gloss_hint": "below | beneath | among | during"
+        "form": "Bild",
+        "lemma": "Bild",
+        "pos": "noun",
+        "gloss_hint": "image"
       },
       {
-        "form": "und",
-        "lemma": "und",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "wenn",
-        "lemma": "wenn",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "der",
-        "lemma": "der",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "dem",
-        "lemma": "dem",
-        "pos": "determiner",
+        "form": "Fabrikanlage",
+        "lemma": "Fabrikanlage",
+        "pos": "noun",
         "gloss_hint": null
       }
     ],
-    "text_linked": "Wenn du zur Autobahnabfahrt [[Süd|nouns/Süd#1]] kommst, kannst du an [[der|pronouns/der_nominativ]] [[Brücke|nouns/Brücke#1]] den [[Tag|nouns/Tag_angehängter#1]] bewundern, [[fett|adjectives/fett#1]] [[groß|adjectives/groß#1]] [[und|conjunctions/und]] in knallrot, direkt [[unter|prepositions/unter#1]] [[dem|determiners/dem]] [[Bild|nouns/Bild#1]] der Fabrikanlage."
+    "_proofread": {
+      "translation": true,
+      "annotations": "6ccd1e3a"
+    },
+    "text_linked": "Wenn du zur Autobahnabfahrt [[Süd|nouns/Süd#1]] [[kommst|verbs/kommen]], [[kannst|verbs/können_beherrschen]] du an der [[Brücke|nouns/Brücke#1]] den [[Tag|nouns/Tag_sichtbares#3]] [[bewundern|verbs/bewundern]], [[fett|adjectives/fett#4]] [[groß|adjectives/groß#1]] und in knallrot, direkt unter dem [[Bild|nouns/Bild#2]] der Fabrikanlage."
   },
   "482d3fe0c7": {
     "text": "Auf die Beschuldigung schließlich, er erlaube der jungen Generation, ihre Väter totzuschlagen, bemerkte Fetjukowitsch mit zutiefst verletzter Würde, darauf wolle er nichts erwidern.",
@@ -8341,7 +8333,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Der Schweizerische Handels- und Industrieverein (SHIV), genannt [[Vorort,|nouns/Vorort#2]] seit 2000 mit der Gesellschaft zur Förderung der schweizerischen Wirtschaft zum Verband Economiesuisse zusammengeschlossen, [[ist|verbs/is]] der älteste der vier grossen Schweizer Wirtschaftsverbände (Schweizerischer Gewerbeverband, Schweizerischer Gewerkschaftsbund, Schweizerischer Bauernverband).“"
+    "text_linked": "„Der Schweizerische Handels- und Industrieverein (SHIV), genannt [[Vorort,|nouns/Vorort#2]] seit 2000 mit der Gesellschaft zur Förderung der schweizerischen Wirtschaft zum Verband Economiesuisse zusammengeschlossen, ist der älteste der vier grossen Schweizer Wirtschaftsverbände (Schweizerischer Gewerbeverband, Schweizerischer Gewerkschaftsbund, Schweizerischer Bauernverband).“"
   },
   "4851af2681": {
     "text": "„Am Mittwoch voriger Woche hatte sich Irland der Klage Südafrikas gegen Israel wegen Verstoßes gegen die Völkermordkonvention vor dem Internationalen Gerichtshof (IGH) angeschlossen.“",
@@ -8472,7 +8464,11 @@
       "gewinnen"
     ],
     "translation_model": "anthropic/claude-haiku-4-5-20251001",
-    "annotations": []
+    "annotations": [],
+    "_proofread": {
+      "translation": true,
+      "annotations": "4f53cda1"
+    }
   },
   "48550bfbcc": {
     "text": "„ABC-Alarm wird ausgelöst, wenn Verdacht auf den Einsatz atomarer, biologischer oder chemischer Kampfstoffe besteht.“",
@@ -8872,7 +8868,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Ok, [[verhalten|verbs/verhalten_partizip#1]] wir uns mal den [[Regeln|nouns/Regel#1]] entsprechend. Wer ist denn dann jetzt [[dran|adverbs/dran_direkte]]?"
+    "text_linked": "Ok, [[verhalten|verbs/verhalten_zurückhalten#2]] wir uns mal den [[Regeln|nouns/Regel#1]] entsprechend. Wer ist denn dann jetzt [[dran|adverbs/dran_direkte]]?"
   },
   "485d818e42": {
     "text": "Hans Schäfer junior übernimmt die Firma von seinem Vater.",
@@ -12073,7 +12069,11 @@
         "gloss_hint": "since"
       }
     ],
-    "text_linked": "Schilder warnen: \"[[Vorsicht|nouns/Vorsicht#1]], Strahlengefahr!\" Monate sind vergangen [[seit|prepositions/seit#1]] dem Atomunfall [von Tschernobyl], seit die radioaktive [[Wolke|nouns/Wolke#1]] übers Land zog."
+    "text_linked": "Schilder warnen: \"[[Vorsicht|nouns/Vorsicht#1]], Strahlengefahr!\" Monate sind vergangen [[seit|prepositions/seit#1]] dem Atomunfall [von Tschernobyl], seit die radioaktive [[Wolke|nouns/Wolke#1]] übers Land zog.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "f4166ce2"
+    }
   },
   "4878b50943": {
     "text": "unter vier Augen",
@@ -12736,7 +12736,11 @@
         "gloss_hint": "transforms"
       }
     ],
-    "text_linked": "\"Was für ein [[grobes|adjectives/grob#1]] [[Tier|nouns/Tier#1]] ist der [[Mensch|nouns/Mensch_lebewesen#1]]! Alles / was die [[Natur|nouns/Natur#1]] [[gutes|adjectives/gut#1]] tut [[entstellt|verbs/entstellen]] er, / sie macht eine [[Sache|nouns/Sache#1]] [[einfach|adjectives/einfach#5]] und [[rein|adjectives/rein#2]] / und er mit seinen [[Händen|nouns/Hand]] [[wandelt|verbs/wandeln#2]] sie um.\" (Original vec: \"Gran bestia che xe l’omo! Lu defforma / tutto quel che de ben fa la natura, / ella una cossa fa semplice, e pura, / e lu colle so man el la trasforma.\")"
+    "text_linked": "\"Was für ein [[grobes|adjectives/grob#1]] [[Tier|nouns/Tier#1]] ist der [[Mensch|nouns/Mensch_lebewesen#1]]! Alles / was die [[Natur|nouns/Natur#1]] [[gutes|adjectives/gut#1]] tut [[entstellt|verbs/entstellen]] er, / sie macht eine [[Sache|nouns/Sache#1]] [[einfach|adjectives/einfach#5]] und [[rein|adjectives/rein#2]] / und er mit seinen [[Händen|nouns/Hand]] [[wandelt|verbs/wandeln#2]] sie um.\" (Original vec: \"Gran bestia che xe l’omo! Lu defforma / tutto quel che de ben fa la natura, / ella una cossa fa semplice, e pura, / e lu colle so man el la trasforma.\")",
+    "_proofread": {
+      "translation": true,
+      "annotations": "a0991100"
+    }
   },
   "487f4505ce": {
     "text": "Die konservative Regierung will sich an dem historisch gewachsenen Gesetz orientieren und es in moderner Form in die Gegenwart übertragen.",
@@ -20006,7 +20010,11 @@
         "gloss_hint": "people"
       }
     ],
-    "text_linked": "[[In|prepositions/in]] [[der|determiners/der]] [[Innenstadt|nouns/Innenstadt#1]] [[zahlt|verbs/zahlen#1]] [[man|pronouns/man#2]] eine hohe Miete."
+    "text_linked": "[[In|prepositions/in]] [[der|determiners/der]] [[Innenstadt|nouns/Innenstadt#1]] [[zahlt|verbs/zahlen#1]] [[man|pronouns/man#2]] eine hohe Miete.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "30780509"
+    }
   },
   "48c45d1d57": {
     "text": "Möchtest du einen Tee? Ich habe Hagebutte oder Malve.",
@@ -21503,7 +21511,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Das byzantinische [[Reich|nouns/Reich#1]] ist in [[Themen|nouns/Thema]] [[gegliedert|verbs/gliedern]]."
+    "text_linked": "Das byzantinische [[Reich|nouns/Reich#1]] ist in [[Themen|nouns/Thema]] [[gegliedert|verbs/gliedern]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "779d5b9b"
+    }
   },
   "48cf269833": {
     "text": "Zu Weihnachten, zu Ostern und zu Pfingsten wäscht sich Jule die Füße.",
@@ -23232,7 +23244,11 @@
         "gloss_hint": "crystals"
       }
     ],
-    "text_linked": "„Für die [[Beschäftigung|nouns/Beschäftigung#2]] Jonathan Leverkühns mit der Naturwissenschaft werden im [[Roman|nouns/Roman#1]] zwölf [[Beispiele|nouns/Beispiel#1]] [[gegeben|verbs/geben]]: das Blaulicht auf den Falterflügeln mit der [[Frage|nouns/Frage#1]], ob das Himmelblau [[Trug|nouns/Trug#1]] sei, der Glasflügler Haetera Esmeralda, der Blattschmetterling, der sich seiner [[Umgebung|nouns/Umgebung#3]] anpaßt und daher [[nicht sichtbar|adjectives/sichtbar#1]] ist, der [[Schmetterling|nouns/Schmetterling#1]], der durch [[Schönheit|nouns/Schönheit#1]] und Ungenießbarkeit [[gekennzeichnet|verbs/kennzeichnen]] ist, die Nachahmung dessen durch einen weiteren Schmetterling, der den Betrachter [[täuscht|verbs/täuschen#1]], das [[Haus|nouns/Haus#4]] der [[Schnecken|nouns/Schnecke#1]] und [[Muscheln|nouns/Muschel#2]], die [[schöne|adjectives/schön#1]], aber [[giftige|adjectives/giftig]] Kegelschnecke, die Strich-Ornamentik auf den Schneckenhäusern, die sichtbare Musik, die Eisblumen, der fressende Tropfen und die toten Gewächse der [[Kristalle|nouns/Kristall_geschliffenes#1]].“"
+    "text_linked": "„Für die [[Beschäftigung|nouns/Beschäftigung#2]] Jonathan Leverkühns mit der Naturwissenschaft werden im [[Roman|nouns/Roman#1]] zwölf [[Beispiele|nouns/Beispiel#1]] [[gegeben|verbs/geben]]: das Blaulicht auf den Falterflügeln mit der [[Frage|nouns/Frage#1]], ob das Himmelblau [[Trug|nouns/Trug#1]] sei, der Glasflügler Haetera Esmeralda, der Blattschmetterling, der sich seiner [[Umgebung|nouns/Umgebung#3]] anpaßt und daher [[nicht sichtbar|adjectives/sichtbar#1]] ist, der [[Schmetterling|nouns/Schmetterling#1]], der durch [[Schönheit|nouns/Schönheit#1]] und Ungenießbarkeit [[gekennzeichnet|verbs/kennzeichnen]] ist, die Nachahmung dessen durch einen weiteren Schmetterling, der den Betrachter [[täuscht|verbs/täuschen#1]], das [[Haus|nouns/Haus#4]] der [[Schnecken|nouns/Schnecke#1]] und [[Muscheln|nouns/Muschel#2]], die [[schöne|adjectives/schön#1]], aber [[giftige|adjectives/giftig]] Kegelschnecke, die Strich-Ornamentik auf den Schneckenhäusern, die sichtbare Musik, die Eisblumen, der fressende Tropfen und die toten Gewächse der [[Kristalle|nouns/Kristall_geschliffenes#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "63f544dc"
+    }
   },
   "48dc057679": {
     "text": "„Ihr Lkw-Fuhrpark verbindet rund um die Uhr und sieben Tage die Woche Los Angeles mit den Städten des Mittleren Westens.“",

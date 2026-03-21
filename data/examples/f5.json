@@ -1659,7 +1659,11 @@
         "gloss_hint": "Monday"
       }
     ],
-    "text_linked": "[[Ich|pronouns/ich]] [[dachte|verbs/denken#1]], [[heute|adverbs/heute#1]] [[wäre|verbs/sein#2]] [[Montag|nouns/Montag#1]]."
+    "text_linked": "[[Ich|pronouns/ich]] [[dachte|verbs/denken#1]], [[heute|adverbs/heute#1]] [[wäre|verbs/sein#2]] [[Montag|nouns/Montag#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "7281f70d"
+    }
   },
   "f50c11eb79": {
     "text": "Die Wohnungen der Menschen waren damals klein und armselig möbliert.",
@@ -2863,7 +2867,11 @@
         "gloss_hint": "personality"
       }
     ],
-    "text_linked": "Er beeindruckte alle [[durch|prepositions/durch#1]] [[sein|pronouns/sein]] [[offenes|adjectives/offen]] [[Wesen|nouns/Wesen#2]]."
+    "text_linked": "Er beeindruckte alle [[durch|prepositions/durch#1]] [[sein|pronouns/sein]] [[offenes|adjectives/offen]] [[Wesen|nouns/Wesen#2]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "f4de58f9"
+    }
   },
   "f5183b0423": {
     "text": "das Buch der Bücher",
@@ -3655,7 +3663,7 @@
   },
   "f523d4b6cd": {
     "text": "„Ich weiß auf solche Fragen so wenig Antwort, wie ich meine Rolle als die Beichtmutter mit dem Kind zu erklären vermag.“",
-    "translation": "I know so little answer to such questions as I can explain my role as the confessor with the child.",
+    "translation": "\"I have so little answer to such questions, just as I am unable to explain my role as the confessor with the child.\"",
     "source": "wiktionary",
     "lemmas": [
       "Frage",
@@ -3670,57 +3678,15 @@
         "gloss_hint": "know"
       },
       {
-        "form": "auf",
-        "lemma": "auf",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "solche",
-        "lemma": "solche",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
         "form": "Fragen",
         "lemma": "Frage",
         "pos": "noun",
-        "gloss_hint": "questions"
-      },
-      {
-        "form": "so",
-        "lemma": "so",
-        "pos": "adverb",
-        "gloss_hint": null
-      },
-      {
-        "form": "wenig",
-        "lemma": "wenig",
-        "pos": "adjective",
-        "gloss_hint": null
+        "gloss_hint": "question"
       },
       {
         "form": "Antwort",
         "lemma": "Antwort",
         "pos": "noun",
-        "gloss_hint": "answer"
-      },
-      {
-        "form": "wie",
-        "lemma": "wie",
-        "pos": "adverb",
-        "gloss_hint": null
-      },
-      {
-        "form": "ich",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": "I"
-      },
-      {
-        "form": "meine",
-        "lemma": "mein",
-        "pos": "pronoun",
         "gloss_hint": null
       },
       {
@@ -3730,33 +3696,9 @@
         "gloss_hint": "role"
       },
       {
-        "form": "als",
-        "lemma": "als",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "Beichtmutter",
         "lemma": "Beichtmutter",
         "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "mit",
-        "lemma": "mit",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "dem",
-        "lemma": "der",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
@@ -3766,13 +3708,22 @@
         "gloss_hint": "child"
       },
       {
-        "form": "zu",
-        "lemma": "zu",
-        "pos": "preposition",
+        "form": "erklären",
+        "lemma": "erklären",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "vermag",
+        "lemma": "vermögen",
+        "pos": "verb",
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Ich [[weiß|verbs/wissen#1]] [[auf|prepositions/auf]] solche [[Fragen|nouns/Frage#1]] [[so|adverbs/so]] wenig [[Antwort|nouns/Antwort#1]], [[wie|adverbs/wie]] [[ich|pronouns/ich#1]] [[meine|pronouns/mein]] [[Rolle|nouns/Rolle_drehbares#14]] [[als|conjunctions/als]] [[die|pronouns/die]] Beichtmutter [[mit|prepositions/mit]] [[dem|determiners/der]] [[Kind|nouns/Kind#1]] [[zu|prepositions/zu]] erklären vermag.“"
+    "text_linked": "„Ich [[weiß|verbs/wissen#1]] auf solche [[Fragen|nouns/Frage#1]] so wenig [[Antwort|nouns/Antwort]], wie ich meine [[Rolle|nouns/Rolle_drehbares#14]] als die Beichtmutter mit dem [[Kind|nouns/Kind#1]] zu [[erklären|verbs/erklären]] [[vermag|verbs/vermögen]].“",
+    "_proofread": {
+      "translation": true
+    }
   },
   "f5244099b2": {
     "text": "„Der Tisch steht direkt neben dem Herd.“",
@@ -4660,56 +4611,20 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Er",
-        "lemma": "he",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "stellte",
         "lemma": "stellen",
         "pos": "verb",
-        "gloss_hint": "be positioned"
-      },
-      {
-        "form": "sich",
-        "lemma": "sich",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "an",
-        "lemma": "an",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "den",
-        "lemma": "der",
-        "pos": "determiner",
-        "gloss_hint": null
+        "gloss_hint": "stand"
       },
       {
         "form": "Baum",
-        "lemma": "tree",
+        "lemma": "Baum",
         "pos": "noun",
         "gloss_hint": "tree"
       },
       {
-        "form": "um",
-        "lemma": "um",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "sein",
-        "lemma": "sein",
-        "pos": "verb",
-        "gloss_hint": "be (copula)"
-      },
-      {
         "form": "Wasser",
-        "lemma": "water",
+        "lemma": "Wasser",
         "pos": "noun",
         "gloss_hint": "water"
       },
@@ -4717,12 +4632,13 @@
         "form": "abzuschlagen",
         "lemma": "abschlagen",
         "pos": "verb",
-        "gloss_hint": "cut off"
+        "gloss_hint": null
       }
     ],
-    "text_linked": "Er [[stellte|verbs/stellen]] [[sich|pronouns/sich]] [[an|prepositions/an]] [[den|determiners/der]] Baum, [[um|prepositions/um]] [[sein|verbs/sein#1]] Wasser [[abzuschlagen|verbs/abschlagen]].",
+    "text_linked": "Er [[stellte|verbs/stellen#1]] sich an den [[Baum|nouns/Baum#1]], um sein [[Wasser|nouns/Wasser#1]] [[abzuschlagen|verbs/abschlagen]].",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "96abf063"
     }
   },
   "f52de802bb": {
@@ -12905,7 +12821,11 @@
         "gloss_hint": "cut off"
       }
     ],
-    "text_linked": "[[Könnte|verbs/können_beherrschen]] [[bitte|particles/bitte]] jemand [[ein|pronouns/ein]] [[Fenster|nouns/Fenster#1]] [[aufmachen|verbs/aufmachen#1]], [[die|pronouns/die]] [[Luft|nouns/Luft_überwiegend#1]] [[ist|verbs/sein]] [[ja|particles/ja_bekanntlich]] [[zum|prepositions/zu]] [[Schneiden|verbs/schneiden#1]]."
+    "text_linked": "[[Könnte|verbs/können_beherrschen]] [[bitte|particles/bitte]] jemand [[ein|pronouns/ein]] [[Fenster|nouns/Fenster#1]] [[aufmachen|verbs/aufmachen#1]], [[die|pronouns/die]] [[Luft|nouns/Luft_überwiegend#1]] [[ist|verbs/sein]] [[ja|particles/ja_bekanntlich]] [[zum|prepositions/zu]] [[Schneiden|verbs/schneiden#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "06f5f335"
+    }
   },
   "f563fd22d8": {
     "text": "„Dann fliegen sie aus, – von einem Schaufenster zum andern, von einem Geschäft zum andern, – sie drangsalieren die Verkäufer, ohne die Absicht, etwas zu kaufen, sie erzählen den letzten Klatsch, Gossip genannt, den die Zeitungen ihnen servieren, und sie haben bei ihren Promenaden die einfache Hierarchie des Geldes; die reichste marschiert in der Mitte, zwei weniger reiche flankieren sie.“",
@@ -18750,7 +18670,7 @@
         "gloss_hint": "forgotten"
       }
     ],
-    "text_linked": "„Die anderen Namen [[habe|verbs/haben#1]] ich leider – Asche auf mein Haupt – [[vergessen|verbs/vergessen_partizip#1]].“"
+    "text_linked": "„Die anderen Namen [[habe|verbs/haben#1]] ich leider – Asche auf mein Haupt – [[vergessen|verbs/vergessen_sich]].“"
   },
   "f58b6c9200": {
     "text": "„Kufalt blickt, ungewiß, abwartend, ſieht nichts wie ein leeres Fach.“",
@@ -19284,55 +19204,29 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "In",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "high school",
-        "lemma": "high school",
+        "form": "Gymnasium",
+        "lemma": "Gymnasium",
         "pos": "noun",
-        "gloss_hint": "school"
+        "gloss_hint": "high school"
       },
       {
-        "form": "I",
-        "lemma": "I",
+        "form": "Klassenbeste",
+        "lemma": "Klassenbeste",
         "pos": "noun",
-        "gloss_hint": "we | I | ego"
-      },
-      {
-        "form": "was",
-        "lemma": "be",
-        "pos": "verb",
-        "gloss_hint": "be"
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
-        "form": "best",
-        "lemma": "best",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "history",
-        "lemma": "history",
+        "form": "Geschichte",
+        "lemma": "Geschichte",
         "pos": "noun",
-        "gloss_hint": "history | historical science | story | incident"
+        "gloss_hint": "history"
       }
     ],
-    "text_linked": "Auf dem Gymnasium war ich der Klassenbeste [[in|prepositions/in]] Geschichte."
+    "text_linked": "Auf dem Gymnasium war ich der Klassenbeste [[in|prepositions/in]] Geschichte.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "222010e4"
+    }
   },
   "f5906bc835": {
     "text": "„Der Erlass des Gesetzes Ende Juni als Reaktion auf die seit einem Jahr anhaltenden Demonstrationen in Hongkong war international auf scharfe Kritik gestoßen.“",
@@ -22812,7 +22706,11 @@
         "gloss_hint": "split into"
       }
     ],
-    "text_linked": "[[Groß|adjectives/groß#1]] [[ist|verbs/sein#2]] [[die|determiners/die]] [[Familie|nouns/Familie#2]] [[der|determiners/der]] indogermanischen (= indoeuropäischen) [[Sprachen|nouns/Sprache#1]], die [[schon|particles/schon_antwort#1]] [[sehr|particles/sehr#1]] lange [[existiert|verbs/existieren#1]] [[und|conjunctions/und]] [[sich|pronouns/sich#1]] [[mit|prepositions/mit#1]] der [[Zeit|nouns/Zeit#1]] [[in|prepositions/in]] viele Subfamilien aufgegliedert hat."
+    "text_linked": "[[Groß|adjectives/groß#1]] [[ist|verbs/sein#2]] [[die|determiners/die]] [[Familie|nouns/Familie#2]] [[der|determiners/der]] indogermanischen (= indoeuropäischen) [[Sprachen|nouns/Sprache#1]], die [[schon|particles/schon_antwort#1]] [[sehr|particles/sehr#1]] lange [[existiert|verbs/existieren#1]] [[und|conjunctions/und]] [[sich|pronouns/sich#1]] [[mit|prepositions/mit#1]] der [[Zeit|nouns/Zeit#1]] [[in|prepositions/in]] viele Subfamilien aufgegliedert hat.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "49cc221e"
+    }
   },
   "f5b5be01fd": {
     "text": "„So haben viele Leute geglaubt, dass die Sonnenfinsternis von 1999 den Beginn des Weltunterganges um den Jahrtausendwechsel ankündigt.“",
@@ -26783,7 +26681,11 @@
         "gloss_hint": "away | across"
       }
     ],
-    "text_linked": "„[[Mit|adverbs/mit]] ‚Band‘ [[werden|verbs/werden#1]] solche Verstrebungen [[benannt|verbs/benennen#1]], [[die|pronouns/die]] außer [[den|determiners/der]] beiden [[miteinander|adverbs/miteinander#1]] [[zu|prepositions/zu]] verstrebenden [[Hölzern|nouns/Holz_bezeichnung#1]] keine [[weiteren|adjectives/weiter#2]] [[Hölzer|nouns/Holz_bezeichnung#1]] überkreuzen [[und|conjunctions/und]] [[daher|adverbs/daher#3]] [[zumeist|adverbs/zumeist#1]] [[kurz|adjectives/kurz#1]] [[sind|verbs/sein#2]], [[eine|determiners/ein]] ‚Strebe‘ (im engeren [[Sinn|nouns/Sinn#1]]) [[ist|verbs/sein#2]] länger und [[geht|verbs/gehen#4]] [[noch|adverbs/noch#3]] [[über|prepositions/über#2]] [[ein|determiners/ein]] [[weiteres|adjectives/weiter#2]] [[Holz|nouns/Holz_bezeichnung#1]], [[hier|adverbs/hier#1]] [[immer|adverbs/immer#1]] über den [[Riegel|nouns/Riegel#4]], [[hinweg|adverbs/hinweg#1]][…].“"
+    "text_linked": "„[[Mit|adverbs/mit]] ‚Band‘ [[werden|verbs/werden#1]] solche Verstrebungen [[benannt|verbs/benennen#1]], [[die|pronouns/die]] außer [[den|determiners/der]] beiden [[miteinander|adverbs/miteinander#1]] [[zu|prepositions/zu]] verstrebenden [[Hölzern|nouns/Holz_bezeichnung#1]] keine [[weiteren|adjectives/weiter#2]] [[Hölzer|nouns/Holz_bezeichnung#1]] überkreuzen [[und|conjunctions/und]] [[daher|adverbs/daher#3]] [[zumeist|adverbs/zumeist#1]] [[kurz|adjectives/kurz#1]] [[sind|verbs/sein#2]], [[eine|determiners/ein]] ‚Strebe‘ (im engeren [[Sinn|nouns/Sinn#1]]) [[ist|verbs/sein#2]] länger und [[geht|verbs/gehen#4]] [[noch|adverbs/noch#3]] [[über|prepositions/über#2]] [[ein|determiners/ein]] [[weiteres|adjectives/weiter#2]] [[Holz|nouns/Holz_bezeichnung#1]], [[hier|adverbs/hier#1]] [[immer|adverbs/immer#1]] über den [[Riegel|nouns/Riegel#4]], [[hinweg|adverbs/hinweg#1]][…].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "499cb415"
+    }
   },
   "f5e3b76822": {
     "text": "Das Auto bestach durch seine feine Lederausstattung.",
@@ -28215,7 +28117,11 @@
         "gloss_hint": "certain"
       }
     ],
-    "text_linked": "„[[Befürchtete|verbs/befürchten]] [[etwa|adverbs/etwa#1]] Thomas Mann, daß [[der|pronouns/der_nominativ]] [[Schwiegersohn|nouns/Schwiegersohn]] [[und|conjunctions/und]] [[Nachfolger|nouns/Nachfolger#1]] Samuel Fischers, der [[seit|prepositions/seit]] 1928 [[als|conjunctions/als]] [[Geschäftsführer|nouns/Geschäftsführer]] [[des|determiners/des]] [[berühmten|adjectives/berühmt#1]] [[Verlages|nouns/Verlag]] [[tätige|adjectives/tätig]] Gottfried Bermann Fischer ihn, [[den|determiners/der]] [[in|prepositions/in]] den [[Jahren|nouns/Jahr]] der Emigration (und [[natürlich|adverbs/natürlich#1]] [[auch|adverbs/auch]] [[später)|adjectives/später#1]] prominentesten [[Autor|nouns/Autor#1]] des [[Hauses|nouns/Haus]] schlechterdings übervorteilen [[wollte|verbs/wollen]]? [[Aber|conjunctions/aber]] [[sicher|adjectives/sicher#2]].“"
+    "text_linked": "„[[Befürchtete|verbs/befürchten]] [[etwa|adverbs/etwa#1]] Thomas Mann, daß [[der|pronouns/der_nominativ]] [[Schwiegersohn|nouns/Schwiegersohn]] [[und|conjunctions/und]] [[Nachfolger|nouns/Nachfolger#1]] Samuel Fischers, der [[seit|prepositions/seit]] 1928 [[als|conjunctions/als]] [[Geschäftsführer|nouns/Geschäftsführer]] [[des|determiners/des]] [[berühmten|adjectives/berühmt#1]] [[Verlages|nouns/Verlag]] [[tätige|adjectives/tätig]] Gottfried Bermann Fischer ihn, [[den|determiners/der]] [[in|prepositions/in]] den [[Jahren|nouns/Jahr]] der Emigration (und [[natürlich|adverbs/natürlich#1]] [[auch|adverbs/auch]] [[später)|adjectives/später#1]] prominentesten [[Autor|nouns/Autor#1]] des [[Hauses|nouns/Haus]] schlechterdings übervorteilen [[wollte|verbs/wollen]]? [[Aber|conjunctions/aber]] [[sicher|adjectives/sicher#2]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "77d3fab5"
+    }
   },
   "f5ebde1701": {
     "text": "Ichlaut [ç] und Achlaut [x] sind Varianten desselben Phonems.",
@@ -28646,7 +28552,10 @@
     "lemmas": [
       "Woche"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "f5f2bc4b81": {
     "text": "„Eine Familienministerin stand nach dem Konzert vor Grönemeyers Garderobe.“",

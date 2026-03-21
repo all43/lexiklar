@@ -747,7 +747,11 @@
         "gloss_hint": "school"
       }
     ],
-    "text_linked": "[[Die|determiners/der]] [[Freunde|nouns/Freund#1]] [[treffen|verbs/treffen#1]] [[sich|pronouns/sich]] [[nach|prepositions/nach#3]] [[der|determiners/der]] [[Schule|nouns/Schule#1]]."
+    "text_linked": "[[Die|determiners/der]] [[Freunde|nouns/Freund#1]] [[treffen|verbs/treffen#1]] [[sich|pronouns/sich]] [[nach|prepositions/nach#3]] [[der|determiners/der]] [[Schule|nouns/Schule#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "ac6cbd01"
+    }
   },
   "870c6b6454": {
     "text": "Kann man diesen Riss in der Regenjacke flicken?",
@@ -882,22 +886,10 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Sie",
-        "lemma": "sie",
-        "pos": "noun",
-        "gloss_hint": "she (pronoun)"
-      },
-      {
         "form": "sind",
         "lemma": "sein",
         "pos": "verb",
         "gloss_hint": "be"
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "determiner",
-        "gloss_hint": "the"
       },
       {
         "form": "Einzigen",
@@ -906,19 +898,16 @@
         "gloss_hint": null
       },
       {
-        "form": "die",
-        "lemma": "die",
-        "pos": "noun",
-        "gloss_hint": "which"
-      },
-      {
-        "form": "mich",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": "me"
+        "form": "verstehen",
+        "lemma": "verstehen",
+        "pos": "verb",
+        "gloss_hint": "comprehend"
       }
     ],
-    "text_linked": "Sie [[sind|verbs/sein#2]] [[die|determiners/die#1]] [[Einzigen|adjectives/einzig]], die [[mich|pronouns/ich]] verstehen."
+    "text_linked": "Sie [[sind|verbs/sein#2]] die [[Einzigen|adjectives/einzig]], die mich [[verstehen|verbs/verstehen_gesprochenes#2]].",
+    "_proofread": {
+      "translation": true
+    }
   },
   "870fb79bb1": {
     "text": "„Zunächst ist an diesem Monstrum kein leerer Fleck zu entdecken. Es hat die Ornamenten-Masern. […] Und Ornamente und sich bäumende Reptile und gewürgte Schlangen und […] es war großartig. Ich schwieg erschüttert und sah Jakoppn an. „Ja“, sagte Jakopp, „das ist das Kaiser-Wilhelm-Denkmal am Deutschen Eck.““",
@@ -4841,7 +4830,11 @@
         "gloss_hint": "houses"
       }
     ],
-    "text_linked": "„[[Da|adverbs/da]] Curling [[immer|adverbs/immer#1]] abwechselnd [[von|prepositions/von]] [[einer|pronouns/ein]] [[auf|prepositions/auf]] [[die|pronouns/die]] andere [[Seite|nouns/Seite#1]] [[gespielt|verbs/spielen#1]] [[wird|verbs/werden#1]], [[gibt|verbs/geben#2]] [[es|pronouns/es]] pro Rink [[zwei|numerals/zwei#1]] [[Häuser|nouns/Haus#4]].“"
+    "text_linked": "„[[Da|adverbs/da]] Curling [[immer|adverbs/immer#1]] abwechselnd [[von|prepositions/von]] [[einer|pronouns/ein]] [[auf|prepositions/auf]] [[die|pronouns/die]] andere [[Seite|nouns/Seite#1]] [[gespielt|verbs/spielen#1]] [[wird|verbs/werden#1]], [[gibt|verbs/geben#2]] [[es|pronouns/es]] pro Rink [[zwei|numerals/zwei#1]] [[Häuser|nouns/Haus#4]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "8106c474"
+    }
   },
   "872c99866b": {
     "text": "„Was aber auch für den Roller als das motorisierte Zweirad schlechthin für Frauen spricht, ist seine runde, weiche, irgendwie niedliche Form.“",
@@ -15382,7 +15375,7 @@
   },
   "8797041506": {
     "text": "„Ein Russe ist, wer eine Datscha hat. Kleine Obst- und Gemüsegärten außerhalb der Großstädte haben schon immer den Menschen von Kaliningrad bis Wladiwostok geholfen, Lebensmittelkrisen und andere schlechte Zeiten durchzustehen.“",
-    "translation": "\"A Russian is someone who owns a dacha. Small fruit and vegetable gardens outside the major cities have always helped people from Kaliningrad to Vladivostok survive food crises and other difficult times.\" | Russian (noun), owns (verb), dacha (noun), gardens (noun), cities (noun), helped (verb), people (noun), survive (verb), crises (noun), times (noun)",
+    "translation": "\"A Russian is someone who owns a dacha. Small fruit and vegetable gardens outside the major cities have always helped people from Kaliningrad to Vladivostok survive food crises and other difficult times.\"",
     "source": "wiktionary",
     "lemmas": [
       "helfen"
@@ -16676,8 +16669,18 @@
     ],
     "translation_model": "anthropic/claude-haiku-4-5-20251001",
     "_proofread": {
-      "translation": true
-    }
+      "translation": true,
+      "annotations": "0f5e5d5b"
+    },
+    "annotations": [
+      {
+        "form": "Hab",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": "make fuss"
+      }
+    ],
+    "text_linked": "[[Hab|verbs/haben#6]] dich nicht so!"
   },
   "87ac6e93d1": {
     "text": "„James B. Donovan legte sein Besteck fort.“",
@@ -17574,7 +17577,11 @@
         "gloss_hint": "both"
       }
     ],
-    "text_linked": "„[[Wenn|conjunctions/wenn]] [[die|pronouns/die]] Möllnitz [[etwas|pronouns/etwas#1]] [[sagte|verbs/sagen#1]], [[dann|adverbs/dann#1]] [[hatte|verbs/haben#1]] [[es|pronouns/es]] [[Gewicht|nouns/Gewicht#1]]. [[Oder|nouns/Oder#1]] [[Herz|nouns/Herz#1]]. Oder beides!“"
+    "text_linked": "„[[Wenn|conjunctions/wenn]] [[die|pronouns/die]] Möllnitz [[etwas|pronouns/etwas#1]] [[sagte|verbs/sagen#1]], [[dann|adverbs/dann#1]] [[hatte|verbs/haben#1]] [[es|pronouns/es]] [[Gewicht|nouns/Gewicht#1]]. [[Oder|nouns/Oder#1]] [[Herz|nouns/Herz#1]]. Oder beides!“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "ef25330c"
+    }
   },
   "87b7412577": {
     "text": "Seine Freunde unterstützten ihn tatkräftig beim Auszug aus der alten Wohnung.",

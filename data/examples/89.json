@@ -8419,7 +8419,7 @@
         "gloss_hint": "forgot"
       }
     ],
-    "text_linked": "Der [[Vortrag|nouns/Vortrag#1]] [[des|pronouns/der_nominativ]] [[Studenten|nouns/Student#1]] [[geriet|verbs/geraten]] [[zum|prepositions/zu]] [[Desaster|nouns/Desaster#1]], [[als|conjunctions/als]] er [[vor|prepositions/vor#1]] [[Aufregung|nouns/Aufregung#1]] [[seinen|pronouns/sein]] [[ganzen|adjectives/ganz]] [[Text|nouns/Text#2]] [[vergaß|verbs/vergessen_partizip#1]]."
+    "text_linked": "Der [[Vortrag|nouns/Vortrag#1]] [[des|pronouns/der_nominativ]] [[Studenten|nouns/Student#1]] [[geriet|verbs/geraten]] [[zum|prepositions/zu]] [[Desaster|nouns/Desaster#1]], [[als|conjunctions/als]] er [[vor|prepositions/vor#1]] [[Aufregung|nouns/Aufregung#1]] [[seinen|pronouns/sein]] [[ganzen|adjectives/ganz]] [[Text|nouns/Text#2]] [[vergaß|verbs/vergessen_sich]]."
   },
   "8949543e4b": {
     "text": "[2023:] „Die Schuldenbremse soll nicht erneut ausgesetzt werden.“",
@@ -9179,7 +9179,10 @@
       "Gleitschirm",
       "Fertigkeit"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "895647d6eb": {
     "text": "„Äußerlich anpassungsfähig und im Innern zählebig, haben die Stierspiele bisher alle Anfeindungen überlebt.“",
@@ -9468,108 +9471,46 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "accused",
-        "lemma": "accuse",
+        "form": "Mordes",
+        "lemma": "Mord",
+        "pos": "noun",
+        "gloss_hint": "murder"
+      },
+      {
+        "form": "Lehrer",
+        "lemma": "Lehrer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "angeklagte",
+        "lemma": "anklagen",
         "pos": "verb",
-        "gloss_hint": null
+        "gloss_hint": "prosecute"
       },
       {
-        "form": "of",
-        "lemma": "of",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "murder",
-        "lemma": "murder",
-        "pos": "noun",
-        "gloss_hint": "crime"
-      },
-      {
-        "form": "of",
-        "lemma": "of",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "his",
-        "lemma": "his",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "teacher",
-        "lemma": "teacher",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "explains",
-        "lemma": "explain",
+        "form": "erklärt",
+        "lemma": "erklären",
         "pos": "verb",
-        "gloss_hint": null
+        "gloss_hint": "explain"
       },
       {
-        "form": "his",
-        "lemma": "his",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "act",
-        "lemma": "act",
+        "form": "Tat",
+        "lemma": "Tat",
         "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "here",
-        "lemma": "here",
-        "pos": "adverb",
-        "gloss_hint": "here"
-      },
-      {
-        "form": "before",
-        "lemma": "before",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "court",
-        "lemma": "court",
-        "pos": "noun",
-        "gloss_hint": "court (place) | court (institution)"
-      },
-      {
-        "form": "with",
-        "lemma": "with",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "forgotten",
-        "lemma": "forget",
-        "pos": "verb",
-        "gloss_hint": null
-      },
-      {
-        "form": "childhood",
-        "lemma": "childhood",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "experiences",
-        "lemma": "experience",
-        "pos": "noun",
-        "gloss_hint": null
+        "form": "vergessenen",
+        "lemma": "vergessen",
+        "pos": "adjective",
+        "gloss_hint": "forgotten (long-term)"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true
+    },
+    "text_linked": "„Der des [[Mordes|nouns/Mord#1]] an seinem [[Lehrer|nouns/Lehrer]] [[angeklagte|verbs/anklagen#2]] Protagonist [[erklärt|verbs/erklären#1]] hier seine [[Tat|nouns/Tat]] vor Gericht mit [[vergessenen|adjectives/vergessen#2]] Kinheitserlebnissen.“"
   },
   "89590b38fa": {
     "text": "„Auch nach Aufhebung des Ausnahmezustands im Jahr 2011 verboten die Behörden weiterhin Demonstrationen in Algier und beriefen sich dabei auf ein Dekret aus dem Jahr 2001.“",
@@ -10406,7 +10347,11 @@
         "gloss_hint": "children"
       }
     ],
-    "text_linked": "[[Immer|adverbs/immer#1]] denkst [[du|pronouns/du]] [[nur|particles/nur#1]] [[ans|prepositions/an]] [[Geld|nouns/Geld#1]]! [[Denk|verbs/denken]] mal [[an|prepositions/an]] [[mich|pronouns/ich]] [[und|conjunctions/und]] an unsere [[Ehe|nouns/Ehe]] und an [[die|pronouns/die#1]] Kinder!"
+    "text_linked": "[[Immer|adverbs/immer#1]] denkst [[du|pronouns/du]] [[nur|particles/nur#1]] [[ans|prepositions/an]] [[Geld|nouns/Geld#1]]! [[Denk|verbs/denken]] mal [[an|prepositions/an]] [[mich|pronouns/ich]] [[und|conjunctions/und]] an unsere [[Ehe|nouns/Ehe]] und an [[die|pronouns/die#1]] Kinder!",
+    "_proofread": {
+      "translation": true,
+      "annotations": "1bb2113e"
+    }
   },
   "895e66ea9d": {
     "text": "Ich komme aus Ernst.",
@@ -13282,7 +13227,11 @@
         "gloss_hint": "surface"
       }
     ],
-    "text_linked": "„Das [[Haus|nouns/Haus#1]] ist [[vollständig|adjectives/vollständig#1]] [[eingerichtet|verbs/einrichten]], im [[Wohnzimmer|nouns/Wohnzimmer#1]] gibt es diesen [[riesig|adjectives/riesig#1]] [[großen|adjectives/groß#1]] [[Schreibtisch|nouns/Schreibtisch#1]] aus dunkelbraunem [[Holz|nouns/Holz_bezeichnung#1]] mit einer [[grünen|adjectives/grün#1]] Ledereinlage auf der [[Oberfläche|nouns/Oberfläche#1]].“"
+    "text_linked": "„Das [[Haus|nouns/Haus#1]] ist [[vollständig|adjectives/vollständig#1]] [[eingerichtet|verbs/einrichten]], im [[Wohnzimmer|nouns/Wohnzimmer#1]] gibt es diesen [[riesig|adjectives/riesig#1]] [[großen|adjectives/groß#1]] [[Schreibtisch|nouns/Schreibtisch#1]] aus dunkelbraunem [[Holz|nouns/Holz_bezeichnung#1]] mit einer [[grünen|adjectives/grün#1]] Ledereinlage auf der [[Oberfläche|nouns/Oberfläche#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "81f4d61a"
+    }
   },
   "8988938f38": {
     "text": "„Was tun, damit verzweifelte Menschen auf ihrer Flucht nicht im Mittelmeer ertrinken?“",
@@ -18361,12 +18310,6 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Es",
-        "lemma": "es",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
         "form": "waren",
         "lemma": "sein",
         "pos": "verb",
@@ -18376,30 +18319,19 @@
         "form": "gut",
         "lemma": "gut",
         "pos": "adjective",
-        "gloss_hint": "good"
-      },
-      {
-        "form": "zwanzig",
-        "lemma": "zwanzig",
-        "pos": "numeral",
-        "gloss_hint": "twenty"
+        "gloss_hint": "generous"
       },
       {
         "form": "Leute",
         "lemma": "Leute",
         "pos": "noun",
-        "gloss_hint": "people"
-      },
-      {
-        "form": "da",
-        "lemma": "da",
-        "pos": "adverb",
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Es|nouns/es]] [[waren|verbs/sein]] [[gut|adjectives/gut#1]] (seltener: gute) [[zwanzig|numerals/zwanzig#1]] [[Leute|nouns/Leute#1]] [[da|adverbs/da]].",
+    "text_linked": "Es [[waren|verbs/sein]] [[gut|adjectives/gut#7]] (seltener: gute) zwanzig [[Leute|nouns/Leute]] da.",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "eecd5989"
     }
   },
   "89c7251047": {
@@ -21175,7 +21107,10 @@
     "lemmas": [
       "Preis"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "89e45a0cd4": {
     "text": "alter Zimt",
@@ -22173,7 +22108,11 @@
         "gloss_hint": "GIs"
       }
     ],
-    "text_linked": "„Brubeck [[war|verbs/sein#2]] 1945 [[mit|prepositions/mit#1]] [[seinem|pronouns/sein#1]] Militärorchester [[ein|determiners/ein]] [[paar|nouns/Paar#1]] [[Monate|nouns/Monat#1]] [[in|prepositions/in#1]] Nürnberg [[stationiert|verbs/stationieren#1]]; [[von|prepositions/von#1]] [[hier|adverbs/hier#1]] [[aus|prepositions/aus#1]] [[machte|verbs/machen#2]] [[seine|pronouns/sein#1]] [[Band|nouns/Band_plural#14]] Abstecher [[nach|prepositions/nach#1]] [[ganz|adjectives/ganz#2]] Bayern [[und|conjunctions/und#1]] [[spielte|verbs/spielen#1]] in [[Clubs|nouns/Club#1]], [[Kasernen|nouns/Kaserne#1]] und [[Theatern|nouns/Theater#4]] [[für|prepositions/für#1]] GIs.“"
+    "text_linked": "„Brubeck [[war|verbs/sein#2]] 1945 [[mit|prepositions/mit#1]] [[seinem|pronouns/sein#1]] Militärorchester [[ein|determiners/ein]] [[paar|nouns/Paar#1]] [[Monate|nouns/Monat#1]] [[in|prepositions/in#1]] Nürnberg [[stationiert|verbs/stationieren#1]]; [[von|prepositions/von#1]] [[hier|adverbs/hier#1]] [[aus|prepositions/aus#1]] [[machte|verbs/machen#2]] [[seine|pronouns/sein#1]] [[Band|nouns/Band_plural#14]] Abstecher [[nach|prepositions/nach#1]] [[ganz|adjectives/ganz#2]] Bayern [[und|conjunctions/und#1]] [[spielte|verbs/spielen#1]] in [[Clubs|nouns/Club#1]], [[Kasernen|nouns/Kaserne#1]] und [[Theatern|nouns/Theater#4]] [[für|prepositions/für#1]] GIs.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "cb2afea6"
+    }
   },
   "89eaa713f6": {
     "text": "„Durch Grenzübergang zu unendlich kleinen Stücken erhält man die genaue Masse.“",

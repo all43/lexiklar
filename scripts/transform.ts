@@ -1818,7 +1818,8 @@ async function main(): Promise<void> {
       // Write a sentinel state entry so the hash check short-circuits on future runs
       // without requiring the file to exist on disk.
       if (parsed.pos === "verb" && data.senses?.length > 0 &&
-          data.senses.every((s) => s.tags?.includes("form-of"))) {
+          data.senses.every((s) => s.tags?.includes("form-of") ||
+            (s.tags?.includes("no-gloss") && !s.gloss))) {
         state.entries[stateKey] = { hash, file: "__form-of-skip__" };
         skipped++;
         continue;

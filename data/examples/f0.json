@@ -1852,40 +1852,16 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Sie",
-        "lemma": "sie",
-        "pos": "pronoun",
-        "gloss_hint": "she (pronoun)"
-      },
-      {
         "form": "würde",
-        "lemma": "würden",
+        "lemma": "werden",
         "pos": "verb",
-        "gloss_hint": "would"
-      },
-      {
-        "form": "sich",
-        "lemma": "sich",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "gern",
-        "lemma": "gern",
-        "pos": "adverb",
-        "gloss_hint": "like"
-      },
-      {
-        "form": "ein",
-        "lemma": "ein",
-        "pos": "determiner",
-        "gloss_hint": null
+        "gloss_hint": "auxiliary (future/passive)"
       },
       {
         "form": "Fahrrad",
         "lemma": "Fahrrad",
         "pos": "noun",
-        "gloss_hint": "bicycle"
+        "gloss_hint": null
       },
       {
         "form": "kaufen",
@@ -1897,25 +1873,7 @@
         "form": "hat",
         "lemma": "haben",
         "pos": "verb",
-        "gloss_hint": "has"
-      },
-      {
-        "form": "aber",
-        "lemma": "aber",
-        "pos": "conjunction",
-        "gloss_hint": "but"
-      },
-      {
-        "form": "nicht",
-        "lemma": "nicht",
-        "pos": "particle",
-        "gloss_hint": "not"
-      },
-      {
-        "form": "genügend",
-        "lemma": "genügend",
-        "pos": "adjective",
-        "gloss_hint": "sufficient"
+        "gloss_hint": "possess"
       },
       {
         "form": "Geld",
@@ -1924,7 +1882,11 @@
         "gloss_hint": "money"
       }
     ],
-    "text_linked": "Sie würde [[sich|pronouns/sich]] [[gern|adverbs/gern#3]] [[ein|determiners/ein]] [[Fahrrad|nouns/Fahrrad#1]] [[kaufen|verbs/kaufen#1]], [[hat|verbs/haben#1]] [[aber|conjunctions/aber#1]] [[nicht|particles/nicht#1]] [[genügend|adjectives/genügend#1]] [[Geld|nouns/Geld#1]]."
+    "text_linked": "Sie würde [[sich|pronouns/sich]] [[gern|adverbs/gern#3]] [[ein|determiners/ein]] [[Fahrrad|nouns/Fahrrad#1]] [[kaufen|verbs/kaufen#1]], [[hat|verbs/haben#1]] [[aber|conjunctions/aber#1]] [[nicht|particles/nicht#1]] [[genügend|adjectives/genügend#1]] [[Geld|nouns/Geld#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "acabff27"
+    }
   },
   "f0165cd3bd": {
     "text": "jemanden auf freien Fuß setzen",
@@ -3699,7 +3661,11 @@
         "gloss_hint": "us (dative)"
       }
     ],
-    "text_linked": "[[Gottes|nouns/Gott]] [[Meinung|nouns/Meinung#1]] [[ist|verbs/sein#2]] [[nicht|particles/nicht#1]], [[uns|pronouns/wir]] zu strafen."
+    "text_linked": "[[Gottes|nouns/Gott]] [[Meinung|nouns/Meinung#1]] [[ist|verbs/sein#2]] [[nicht|particles/nicht#1]], [[uns|pronouns/wir]] zu strafen.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "269d4a8c"
+    }
   },
   "f0259a25da": {
     "text": "„Es war die Resignation eines Volkes, das durch die Jahrtausende von der eigenen Religion, durch Jahrhunderte von fremder Herrschaft entmündigt worden war.“",
@@ -5751,7 +5717,11 @@
         "gloss_hint": "water"
       }
     ],
-    "text_linked": "„Das ist kein natürlicher See, sondern eine ehemalige Kiesgrube, die voller [[Wasser|nouns/Wasser#1]] gelaufen ist.“"
+    "text_linked": "„Das ist kein natürlicher See, sondern eine ehemalige Kiesgrube, die voller [[Wasser|nouns/Wasser#1]] gelaufen ist.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "d0a35558"
+    }
   },
   "f03b948a43": {
     "text": "„Die Clubs und die Ferienhäuser sind fest verschlossen, ihre Zufahrtswege von Schranken versperrt.“",
@@ -7489,7 +7459,7 @@
         "gloss_hint": "university"
       }
     ],
-    "text_linked": "„Wieland [[und|conjunctions/und]] [[die|pronouns/die]] Erwähnten [[bezogen|verbs/bezogen_partizip#1]] [[ihre|pronouns/ihr_person]] [[Honorare|nouns/Honorar]] [[von|prepositions/von#1]] [[der|pronouns/der_nominativ]] [[Universität|nouns/Universität#1]].“"
+    "text_linked": "„Wieland [[und|conjunctions/und]] [[die|pronouns/die]] Erwähnten bezogen [[ihre|pronouns/ihr_person]] [[Honorare|nouns/Honorar]] [[von|prepositions/von#1]] [[der|pronouns/der_nominativ]] [[Universität|nouns/Universität#1]].“"
   },
   "f0509d4980": {
     "text": "Alle wollten die Missetäterin baumeln sehen.",
@@ -11095,7 +11065,10 @@
     "lemmas": [
       "fragen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "f07617e8d6": {
     "text": "„Die Armee des Alten Fritz bestand zu einem Gutteil aus Kroaten, Sachsen, Schotten, Spaniern, Russen, Hessen und anderen unproduktiven Fremden.“",
@@ -12096,7 +12069,7 @@
         "gloss_hint": "sew up"
       }
     ],
-    "text_linked": "„Die dürften [[sich|pronouns/sich#2]] [[nicht|particles/nicht#1]] mucksen, [[sonst|adverbs/sonst#3]] [[wär|verbs/wären#1]] [[die|pronouns/die#2]] Mensur [[ungültig|adjectives/ungültig#1]], [[so|adverbs/so]], [[ohne|prepositions/ohne#1]] [[Betäubung|nouns/Betäubung#1]] die Schmisse zunähen.“"
+    "text_linked": "„Die dürften [[sich|pronouns/sich#2]] [[nicht|particles/nicht#1]] mucksen, [[sonst|adverbs/sonst#3]] wär [[die|pronouns/die#2]] Mensur [[ungültig|adjectives/ungültig#1]], [[so|adverbs/so]], [[ohne|prepositions/ohne#1]] [[Betäubung|nouns/Betäubung#1]] die Schmisse zunähen.“"
   },
   "f081dffb07": {
     "text": "Kannst du mir ein paar Euro vorlegen?",

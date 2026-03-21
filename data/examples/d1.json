@@ -1246,22 +1246,10 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Wir",
-        "lemma": "wir",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "können",
         "lemma": "können",
         "pos": "verb",
         "gloss_hint": "can (be able)"
-      },
-      {
-        "form": "keine",
-        "lemma": "keine",
-        "pos": "adjective",
-        "gloss_hint": null
       },
       {
         "form": "bezahlbarer",
@@ -1273,10 +1261,20 @@
         "form": "Wohnung",
         "lemma": "Wohnung",
         "pos": "noun",
-        "gloss_hint": "apartment"
+        "gloss_hint": null
+      },
+      {
+        "form": "finden",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": "discover"
       }
     ],
-    "text_linked": "[[Wir|pronouns/wir]] [[können|verbs/können_etwas#1]] keine bezahlbarer [[Wohnung|nouns/Wohnung#1]] finden."
+    "text_linked": "Wir [[können|verbs/können_etwas#1]] keine bezahlbarer [[Wohnung|nouns/Wohnung]] [[finden|verbs/finden#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "06e2e36d"
+    }
   },
   "d10f84cac5": {
     "text": "„Natürlich kannte sie einen Staatssekretär im Postministerium, bei dem sie sich sofort über den ›geldgierigen, impertinenten Menschen‹ beschwerte.“",
@@ -11630,7 +11628,11 @@
         "gloss_hint": "bands"
       }
     ],
-    "text_linked": "„Viele Demonstranten [[trugen|verbs/tragen#3]] [[als|conjunctions/als]] [[Zeichen|nouns/Zeichen#7]] [[der|pronouns/der_nominativ]] [[Trauer|nouns/Trauer#2]] [[für|prepositions/für]] [[die|pronouns/die]] [[in|prepositions/in]] [[den|determiners/der]] [[Vortagen|nouns/Vortag]] Getöteten [[Schwarz|adjectives/schwarz#1]] [[und|conjunctions/und]] [[darüber|adverbs/darüber#1]] [[hinaus|adverbs/hinaus#1]] - als Zeichen für den angestrebten [[Wandel|nouns/Wandel#1]] - [[noch|adverbs/noch#3]] [[grüne|adjectives/grün#1]] [[Bänder|nouns/Band_plural#14]].“"
+    "text_linked": "„Viele Demonstranten [[trugen|verbs/tragen#3]] [[als|conjunctions/als]] [[Zeichen|nouns/Zeichen#7]] [[der|pronouns/der_nominativ]] [[Trauer|nouns/Trauer#2]] [[für|prepositions/für]] [[die|pronouns/die]] [[in|prepositions/in]] [[den|determiners/der]] [[Vortagen|nouns/Vortag]] Getöteten [[Schwarz|adjectives/schwarz#1]] [[und|conjunctions/und]] [[darüber|adverbs/darüber#1]] [[hinaus|adverbs/hinaus#1]] - als Zeichen für den angestrebten [[Wandel|nouns/Wandel#1]] - [[noch|adverbs/noch#3]] [[grüne|adjectives/grün#1]] [[Bänder|nouns/Band_plural#14]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "97b2f663"
+    }
   },
   "d16bd1a2ca": {
     "text": "Ich bin zuversichtlich, dass du die Stelle bekommen wirst.",
@@ -12180,7 +12182,7 @@
         "gloss_hint": "have"
       }
     ],
-    "text_linked": "„Dann [[hab|verbs/haben#1]] ich [[noch|adverbs/noch#1]] [[gestanden|verbs/gestanden_partizip#1]], [[dass|conjunctions/dass]] ich [[mit|prepositions/mit#1]] der [[Frau|nouns/Frau#1]] [[schon|particles/schon_antwort#1]] [[Wickel|nouns/Wickel_blütenstand#1]] [[gehabt|verbs/haben#1]] [[hätte|verbs/haben#1]].“"
+    "text_linked": "„Dann [[hab|verbs/haben#1]] ich [[noch|adverbs/noch#1]] gestanden, [[dass|conjunctions/dass]] ich [[mit|prepositions/mit#1]] der [[Frau|nouns/Frau#1]] [[schon|particles/schon_antwort#1]] [[Wickel|nouns/Wickel_blütenstand#1]] [[gehabt|verbs/haben#1]] [[hätte|verbs/haben#1]].“"
   },
   "d16ee2adb8": {
     "text": "„Ich habe auch die Insekten und die Fliegen und die Mücken bemerkt.“",
@@ -14511,7 +14513,7 @@
         "gloss_hint": "related | we referred | they referred"
       }
     ],
-    "text_linked": "„[[Bald|adverbs/bald#1]] [[nach|prepositions/nach#1]] [[der|pronouns/der_nominativ#1]] [[Vermählung|nouns/Vermählung]] [[hatten|verbs/haben#1]] sie [[die|pronouns/die#1]] [[Wohnung|nouns/Wohnung#1]] [[am|prepositions/an#2]] Althanplatz [[bezogen|verbs/bezogen_partizip#1]]. Der Frühling verging mit der Frage nach Vorhängen, Läufern, Geschirr und Besteck.“"
+    "text_linked": "„[[Bald|adverbs/bald#1]] [[nach|prepositions/nach#1]] [[der|pronouns/der_nominativ#1]] [[Vermählung|nouns/Vermählung]] [[hatten|verbs/haben#1]] sie [[die|pronouns/die#1]] [[Wohnung|nouns/Wohnung#1]] [[am|prepositions/an#2]] Althanplatz bezogen. Der Frühling verging mit der Frage nach Vorhängen, Läufern, Geschirr und Besteck.“"
   },
   "d183af70c8": {
     "text": "sich an etwas gesund stoßen",
@@ -16676,7 +16678,10 @@
     "lemmas": [
       "Woche"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "d198d8eb7a": {
     "text": "„Das Pfund hat 16 Unzen, oder 32 Loth, oder 128 Quint, oder 512 Ort (Pfennig), oder 8192 Es, oder 65536 Gran; die Unze hat 2 Loth oder 8 Quint; das Loth hat 4 Quint oder 16 Ort (Pfennig); das Quint hat 4 Ort oder Pfennig; das Ort hat 16 Es, und das Es 8 Gran.“",
@@ -25154,7 +25159,11 @@
         "gloss_hint": "half"
       }
     ],
-    "text_linked": "„[[Zahlten|verbs/zahlen]] [[internationale|adjectives/international]] Geber 2015 [[noch|adverbs/noch#1]] 37,9 [[Millionen|nouns/Million#1]] [[Dollar|nouns/Dollar#1]] [[für|prepositions/für#1]] humanitäre [[Hilfe|nouns/Hilfe#2]], [[war|verbs/sein#2]] [[es|pronouns/es]] [[in|prepositions/in#1]] diesem [[Jahr|nouns/Jahr#1]] weniger [[als|conjunctions/als#1]] [[die|pronouns/die]] [[Hälfte|nouns/Hälfte#1]].“"
+    "text_linked": "„[[Zahlten|verbs/zahlen]] [[internationale|adjectives/international]] Geber 2015 [[noch|adverbs/noch#1]] 37,9 [[Millionen|nouns/Million#1]] [[Dollar|nouns/Dollar#1]] [[für|prepositions/für#1]] humanitäre [[Hilfe|nouns/Hilfe#2]], [[war|verbs/sein#2]] [[es|pronouns/es]] [[in|prepositions/in#1]] diesem [[Jahr|nouns/Jahr#1]] weniger [[als|conjunctions/als#1]] [[die|pronouns/die]] [[Hälfte|nouns/Hälfte#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "77248f46"
+    }
   },
   "d1e0d0301f": {
     "text": "„Jeſſas! Da oben unter dem Ferner… dös muß ein Eisloch ſein!“",

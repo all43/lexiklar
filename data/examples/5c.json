@@ -237,7 +237,11 @@
         "gloss_hint": "bankrupt"
       }
     ],
-    "text_linked": "[[Kurz|adjectives/kurz#1]] [[und|conjunctions/und]] [[gut|adjectives/gut#1]], ich [[bin|verbs/sein#2]] [[pleite|adjectives/pleite#1]]."
+    "text_linked": "[[Kurz|adjectives/kurz#1]] [[und|conjunctions/und]] [[gut|adjectives/gut#1]], ich [[bin|verbs/sein#2]] [[pleite|adjectives/pleite#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "a7709e25"
+    }
   },
   "5c048103e9": {
     "text": "„Virologe Christian Drosten von der Charité in Berlin gilt als Fachmann.“",
@@ -494,7 +498,11 @@
         "gloss_hint": "feed"
       }
     ],
-    "text_linked": "Die [[Hunde|nouns/Hund#1]] [[bellen|verbs/bellen#1]], du musst sie [[füttern|verbs/füttern_einem#2]]."
+    "text_linked": "Die [[Hunde|nouns/Hund#1]] [[bellen|verbs/bellen#1]], du musst sie [[füttern|verbs/füttern_einem#2]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "aaf90f67"
+    }
   },
   "5c081454fd": {
     "text": "„Äijsch honnen schun vor dräi Johr betrouert.“",
@@ -1008,45 +1016,28 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "her",
-        "lemma": "she",
-        "pos": "pronoun",
-        "gloss_hint": null
+        "form": "stand",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": "stand"
       },
       {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "water",
-        "lemma": "water",
+        "form": "Wasser",
+        "lemma": "Wasser",
         "pos": "noun",
-        "gloss_hint": "liquid"
+        "gloss_hint": "water"
       },
       {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "her",
-        "lemma": "she",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "eyes",
-        "lemma": "eye",
+        "form": "Augen",
+        "lemma": "Auge",
         "pos": "noun",
-        "gloss_hint": "body of water"
+        "gloss_hint": "eye"
       }
     ],
-    "text_linked": "Vor lauter Rührung stand ihr das Wasser [[in|prepositions/in]] den Augen.",
+    "text_linked": "Vor lauter Rührung [[stand|verbs/stehen#1]] ihr das [[Wasser|nouns/Wasser#1]] in den [[Augen|nouns/Auge#1]].",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "c2553cf4"
     }
   },
   "5c0b4579fd": {
@@ -5174,7 +5165,11 @@
         "gloss_hint": "unfamiliar"
       }
     ],
-    "text_linked": "Man lernt jeden [[Tag|nouns/Tag_zeitraum#1]] etwas [[Neues|adjectives/neu#2]]."
+    "text_linked": "Man lernt jeden [[Tag|nouns/Tag_zeitraum#1]] etwas [[Neues|adjectives/neu#2]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "a006db86"
+    }
   },
   "5c31490480": {
     "text": "„Als der gesunde Menschenverstand, auch Gemeinsinn, von lateinisch sensus communis, oder Hausverstand wird zum einen ein normaler oder natürlicher Verstand bzw. das Denkvermögen eines Menschen bezeichnet, zum anderen das einfache, erfahrungsbezogene und allgemein geteilte Verständnis einer Sache, so wie sie sich einem „natürlichen Urteilsvermögen“ darstellt. Immanuel Kant zufolge ist er „nichts anderes als der durchschnittliche Verstand eines gesunden Menschen“.“",
@@ -12267,7 +12262,11 @@
         "gloss_hint": "opinion"
       }
     ],
-    "text_linked": "Bist du nicht der [[gleichen|adjectives/gleich#1]] [[Meinung|nouns/Meinung#1]]?"
+    "text_linked": "Bist du nicht der [[gleichen|adjectives/gleich#1]] [[Meinung|nouns/Meinung#1]]?",
+    "_proofread": {
+      "translation": true,
+      "annotations": "cfa35856"
+    }
   },
   "5c7496fbef": {
     "text": "Die Hubers feiern nächsten Sonntag Hochzeit.",
@@ -16106,7 +16105,11 @@
         "gloss_hint": "duck"
       }
     ],
-    "text_linked": "[[Ich|pronouns/ich]] [[nehme|verbs/nehmen#3]] [[die|determiners/die#1]] [[gebratene|adjectives/gebraten]] [[Ente|nouns/Ente#1]]."
+    "text_linked": "[[Ich|pronouns/ich]] [[nehme|verbs/nehmen#3]] [[die|determiners/die#1]] [[gebratene|adjectives/gebraten]] [[Ente|nouns/Ente#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "9df36c0b"
+    }
   },
   "5ca0f47aaa": {
     "text": "„Der Bauer flehte und bat und bettelte und sagte: ‚Bitte, sei doch so gut und verzeih mir meine früheren Fehler und erkläre mir nur noch einen einzigen Traum, sonst werde ich für nichts und wieder nichts totgeschlagen.‘“",
@@ -20205,7 +20208,7 @@
   },
   "5ccab3b098": {
     "text": "Tu mir nichts.",
-    "translation": "Do nothing to me.",
+    "translation": "Don't hurt me.",
     "source": "wiktionary",
     "lemmas": [
       "tun"
@@ -20213,19 +20216,17 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "mir",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": "we"
-      },
-      {
-        "form": "nichts",
-        "lemma": "nichts",
-        "pos": "noun",
-        "gloss_hint": "nothingness"
+        "form": "Tu",
+        "lemma": "tun",
+        "pos": "verb",
+        "gloss_hint": "do"
       }
     ],
-    "text_linked": "Tu [[mir|pronouns/ich]] nichts."
+    "text_linked": "[[Tu|verbs/tun_handlung#1]] mir nichts.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "9972e89f"
+    }
   },
   "5ccd170cfa": {
     "text": "[Der Dichter Paul Celan] ist nie über diese Erfahrungen [Anmerkung: als Zwangsarbeiter 1942 und 1943 in verschiedenen Arbeitslagern der Deutschen] hinweggekommen und nahm sich 1970 in Paris das Leben.",

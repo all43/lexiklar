@@ -8385,7 +8385,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„An [[der|pronouns/der_nominativ#1]] nächsten Haltestelle [[verläßt|verbs/verlassen_partizip]] er [[den|pronouns/der_nominativ#1]] [[Wagen|nouns/Wagen#4]], [[noch|adverbs/noch#3]] [[bevor|conjunctions/bevor]] der [[Schaffner|nouns/Schaffner#1]] [[merkt|verbs/merken]], [[daß|conjunctions/dass]] er [[kein|pronouns/kein#1]] Billet [[gekauft|verbs/kaufen]] [[hat|verbs/haben]].“"
+    "text_linked": "„An [[der|pronouns/der_nominativ#1]] nächsten Haltestelle [[verläßt|verbs/verlassen_weggehen]] er [[den|pronouns/der_nominativ#1]] [[Wagen|nouns/Wagen#4]], [[noch|adverbs/noch#3]] [[bevor|conjunctions/bevor]] der [[Schaffner|nouns/Schaffner#1]] [[merkt|verbs/merken]], [[daß|conjunctions/dass]] er [[kein|pronouns/kein#1]] Billet [[gekauft|verbs/kaufen]] [[hat|verbs/haben]].“"
   },
   "c058baab54": {
     "text": "„Ich bin der einzige Friseur auf diesem Jammerkasten.“",
@@ -12772,7 +12772,11 @@
         "pos": "noun",
         "gloss_hint": "ground"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "6dd1b760"
+    }
   },
   "c08784c848": {
     "text": "Kaum dass wir angekommen waren, stürzten sie sich in die Fluten.",
@@ -14570,7 +14574,38 @@
     "lemmas": [
       "wollen"
     ],
-    "translation_model": "openai/gpt-4.1-nano"
+    "translation_model": "openai/gpt-4.1-nano",
+    "annotations": [
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wollen",
+        "lemma": "wollen",
+        "pos": "verb",
+        "gloss_hint": "wish"
+      },
+      {
+        "form": "Geschenk",
+        "lemma": "Geschenk",
+        "pos": "noun",
+        "gloss_hint": "present"
+      },
+      {
+        "form": "Weihnachtsmann",
+        "lemma": "Weihnachtsmann",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "5c7363dc"
+    },
+    "text_linked": "[[Kinder|nouns/Kind]] [[wollen|verbs/wollen#2]] ein [[Geschenk|nouns/Geschenk#2]] vom [[Weihnachtsmann|nouns/Weihnachtsmann]]."
   },
   "c096c83587": {
     "text": "„Alternative Fakten“ und Falschnachrichten speziell im Internet bedrohen nach den Worten des Bundespräsidenten den Zusammenhalt in der Gesellschaft. Steinmeier mahnte zu mehr Vernunft in der öffentlichen Debatte.",
@@ -18736,7 +18771,10 @@
     "lemmas": [
       "besser"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c0c76e30c1": {
     "text": "„Der Exmann hingegen fängt den ganzen Zirkus noch mal von vorne an.“",
@@ -21793,7 +21831,7 @@
         "gloss_hint": "forgot"
       }
     ],
-    "text_linked": "Du [[hast|verbs/haben#1]] [[schon|adverbs/schon#1]] [[wieder|adverbs/wieder#1]] [[vergessen|verbs/vergessen_partizip#1]] abzuziehen!"
+    "text_linked": "Du [[hast|verbs/haben#1]] [[schon|adverbs/schon#1]] [[wieder|adverbs/wieder#1]] [[vergessen|verbs/vergessen_sich]] abzuziehen!"
   },
   "c0e1319de2": {
     "text": "Der Nachteil beim Frühstück im Bett ist bekanntlich, dass es danach nicht mehr sehr gemütlich ist, da die vielen Krümel pieksen.",
@@ -24198,7 +24236,11 @@
         "gloss_hint": "selection"
       }
     ],
-    "text_linked": "„[[Wer|pronouns/wer_derjenige]] [[noch|adverbs/noch#1]] mehr [[Anwendungen|nouns/Anwendung#2]] [[will|verbs/wollen#2]], [[dem|determiners/der]] [[stehen|verbs/stehen#1]] [[zusätzliche|adjectives/zusätzlich]] [[Kuren|nouns/Kur_maßnahmen]], [[Massagen|nouns/Massage#1]] [[und|conjunctions/und]] [[Spezialitäten|nouns/Spezialität]] [[des|determiners/der]] [[Hauses|nouns/Haus#4]] [[zur|prepositions/zu]] [[Auswahl|nouns/Auswahl#1]].“"
+    "text_linked": "„[[Wer|pronouns/wer_derjenige]] [[noch|adverbs/noch#1]] mehr [[Anwendungen|nouns/Anwendung#2]] [[will|verbs/wollen#2]], [[dem|determiners/der]] [[stehen|verbs/stehen#1]] [[zusätzliche|adjectives/zusätzlich]] [[Kuren|nouns/Kur_maßnahmen]], [[Massagen|nouns/Massage#1]] [[und|conjunctions/und]] [[Spezialitäten|nouns/Spezialität]] [[des|determiners/der]] [[Hauses|nouns/Haus#4]] [[zur|prepositions/zu]] [[Auswahl|nouns/Auswahl#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "e4b9793a"
+    }
   },
   "c0f9be8072": {
     "text": "Immer wenn ich eine Idee hab, sagt mir Lena, die Kritikerin, das sie nichts bringe.",

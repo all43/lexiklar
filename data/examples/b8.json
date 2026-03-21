@@ -3867,7 +3867,7 @@
         "gloss_hint": "fall"
       }
     ],
-    "text_linked": "[[Doch|particles/doch_betont]] Fati el Nema Isa hatte kein Glück. Als er ernten wollte, [[sind|verbs/sein#2]] [[die|pronouns/die]] [[Preise|nouns/Preis#1]] [[gefallen|verbs/gefallen_partizip#1]]. Die [[Arbeit|nouns/Arbeit#8]] [[hat|verbs/haben]] [[sich|pronouns/sich]] [[nicht|particles/nicht]] [[mehr|adverbs/mehr#1]] [[gelohnt|verbs/lohnen]]. [[Also|adverbs/also]] hat [[der|pronouns/der_nominativ]] [[Bauer|nouns/Bauer_jemand#1]] [[seine|pronouns/sein]] [[Bäume|nouns/Baum]] [[wieder|adverbs/wieder#1]] [[gefällt|verbs/fällen#1]] [[und|conjunctions/und]] Sesam [[gepflanzt|verbs/pflanzen#1]]. Doch [[auch|adverbs/auch]] [[das|pronouns/das_[1]]] [[ging|verbs/gehen#4]] [[schief|adjectives/schief]]. [[Auch|adverbs/auch]] [[da|adverbs/da]] sind die Preise gefallen."
+    "text_linked": "[[Doch|particles/doch_betont]] Fati el Nema Isa hatte kein Glück. Als er ernten wollte, [[sind|verbs/sein#2]] [[die|pronouns/die]] [[Preise|nouns/Preis#1]] [[gefallen|verbs/gefallen_jemandem]]. Die [[Arbeit|nouns/Arbeit#8]] [[hat|verbs/haben]] [[sich|pronouns/sich]] [[nicht|particles/nicht]] [[mehr|adverbs/mehr#1]] [[gelohnt|verbs/lohnen]]. [[Also|adverbs/also]] hat [[der|pronouns/der_nominativ]] [[Bauer|nouns/Bauer_jemand#1]] [[seine|pronouns/sein]] [[Bäume|nouns/Baum]] [[wieder|adverbs/wieder#1]] [[gefällt|verbs/fällen#1]] [[und|conjunctions/und]] Sesam [[gepflanzt|verbs/pflanzen#1]]. Doch [[auch|adverbs/auch]] [[das|pronouns/das_[1]]] [[ging|verbs/gehen#4]] [[schief|adjectives/schief]]. [[Auch|adverbs/auch]] [[da|adverbs/da]] sind die Preise gefallen."
   },
   "b827f87950": {
     "text": "Wir versammelten uns jeden Freitag.",
@@ -4585,7 +4585,7 @@
   },
   "b82d13593a": {
     "text": "Er steht auf dem Teppich.",
-    "translation": "He is on the carpet.",
+    "translation": "He is standing on the carpet.",
     "source": "wiktionary",
     "lemmas": [
       "stehen"
@@ -4593,27 +4593,22 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "auf",
-        "lemma": "auf",
-        "pos": "preposition",
-        "gloss_hint": "on | onto | face down | facing down | on surface | to surface | at (event) | to (event) | at (below) | to (below) | in (language) | for (duration)"
-      },
-      {
-        "form": "dem",
-        "lemma": "der",
-        "pos": "determiner",
-        "gloss_hint": "to the (masc.) | to the (neut.)"
+        "form": "steht",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": "stand"
       },
       {
         "form": "Teppich",
         "lemma": "Teppich",
         "pos": "noun",
-        "gloss_hint": "carpet | tapestry | throw blanket"
+        "gloss_hint": "carpet"
       }
     ],
-    "text_linked": "Er steht [[auf|prepositions/auf#1]] [[dem|determiners/der]] [[Teppich|nouns/Teppich#1]].",
+    "text_linked": "Er [[steht|verbs/stehen#1]] auf dem [[Teppich|nouns/Teppich#1]].",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "44f18618"
     }
   },
   "b82db2ef3e": {
@@ -4782,37 +4777,22 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Sie",
-        "lemma": "sie",
-        "pos": "noun",
-        "gloss_hint": "trumpet solo"
-      },
-      {
         "form": "versteht",
         "lemma": "verstehen",
         "pos": "verb",
-        "gloss_hint": "understand"
-      },
-      {
-        "form": "sich",
-        "lemma": "sich",
-        "pos": "pronoun",
-        "gloss_hint": "himself"
-      },
-      {
-        "form": "aufs",
-        "lemma": "auf",
-        "pos": "preposition",
-        "gloss_hint": null
+        "gloss_hint": "be able"
       },
       {
         "form": "Singen",
         "lemma": "Singen",
         "pos": "noun",
-        "gloss_hint": "Singen (proper noun)"
+        "gloss_hint": "singing"
       }
     ],
-    "text_linked": "Sie [[versteht|verbs/verstehen_gesprochenes#2]] [[sich|pronouns/sich#1]] [[aufs|prepositions/auf]] [[Singen|nouns/Singen]]."
+    "text_linked": "Sie [[versteht|verbs/verstehen_gesprochenes#14]] sich aufs [[Singen|nouns/Singen#1]].",
+    "_proofread": {
+      "translation": true
+    }
   },
   "b82efd1817": {
     "text": "„Doch hebt sich der Fachwerkbau noch durch zwei weitere Besonderheiten von [an]deren ab: Der Altar ist nicht geostet, sondern steht nordwestlich im Raum.“",
@@ -9243,7 +9223,7 @@
   },
   "b855290444": {
     "text": "Der Hund hat auf den Teppich gemacht.",
-    "translation": "The dog made on the carpet.",
+    "translation": "The dog did its business on the carpet.",
     "source": "wiktionary",
     "lemmas": [
       "machen"
@@ -9251,34 +9231,10 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Der",
-        "lemma": "der",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "Hund",
         "lemma": "Hund",
         "pos": "noun",
         "gloss_hint": "dog"
-      },
-      {
-        "form": "hat",
-        "lemma": "haben",
-        "pos": "verb",
-        "gloss_hint": "have"
-      },
-      {
-        "form": "auf",
-        "lemma": "auf",
-        "pos": "preposition",
-        "gloss_hint": "on"
-      },
-      {
-        "form": "den",
-        "lemma": "der",
-        "pos": "determiner",
-        "gloss_hint": null
       },
       {
         "form": "Teppich",
@@ -9290,10 +9246,14 @@
         "form": "gemacht",
         "lemma": "machen",
         "pos": "verb",
-        "gloss_hint": "made"
+        "gloss_hint": "defecate"
       }
     ],
-    "text_linked": "[[Der|pronouns/der_nominativ]] [[Hund|nouns/Hund#1]] [[hat|verbs/haben#1]] [[auf|prepositions/auf#1]] [[den|determiners/der]] [[Teppich|nouns/Teppich#1]] [[gemacht|verbs/machen#2]]."
+    "text_linked": "[[Der|pronouns/der_nominativ]] [[Hund|nouns/Hund#1]] [[hat|verbs/haben#1]] [[auf|prepositions/auf#1]] [[den|determiners/der]] [[Teppich|nouns/Teppich#1]] [[gemacht|verbs/machen#2]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "6a04ba4e"
+    }
   },
   "b8556899dc": {
     "text": "„Er holte aus den Fach einer Truhe die Flasche hervor.“",
@@ -12447,7 +12407,11 @@
         "gloss_hint": "capital"
       }
     ],
-    "text_linked": "[[Aus|adverbs/aus]] [[der|pronouns/der_nominativ]] [[Idee|nouns/Idee]] [[lässt|verbs/lassen#3]] [[sich|pronouns/sich]] [[Kapital|nouns/Kapital#1]] schlagen."
+    "text_linked": "[[Aus|adverbs/aus]] [[der|pronouns/der_nominativ]] [[Idee|nouns/Idee]] [[lässt|verbs/lassen#3]] [[sich|pronouns/sich]] [[Kapital|nouns/Kapital#1]] schlagen.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "924ed838"
+    }
   },
   "b8784ded3b": {
     "text": "„Schon hatte der Räuber Obmann, der allerjüngste und frechste, das Schwert über ihm geschwungen zum Todesstreich, da hatte er, Jaakob, in höchster Not seinen Gott angerufen und den Namen des Gottes seiner Väter[…]“",
@@ -12722,7 +12686,8 @@
     ],
     "text_linked": "Er [[rief|verbs/rufen]] [[seine|pronouns/sein]] [[Mannen|nouns/Mann]] [[zusammen|adverbs/zusammen#1]].",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "51336d31"
     }
   },
   "b87b49be91": {
@@ -16102,7 +16067,11 @@
         "gloss_hint": "just"
       }
     ],
-    "text_linked": "„Die Waschmaschine [[läuft|verbs/laufen#1]] [[gerade|adverbs/gerade#1]].“"
+    "text_linked": "„Die Waschmaschine [[läuft|verbs/laufen#1]] [[gerade|adverbs/gerade#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "564dede7"
+    }
   },
   "b8a29f6147": {
     "text": "Man sieht sich immer wo wieder.",
@@ -16150,16 +16119,10 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Ich",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": "ego"
-      },
-      {
         "form": "bekomm",
         "lemma": "bekommen",
         "pos": "verb",
-        "gloss_hint": "get"
+        "gloss_hint": "get (future)"
       },
       {
         "form": "noch",
@@ -16180,7 +16143,11 @@
         "gloss_hint": "apology"
       }
     ],
-    "text_linked": "[[Ich|pronouns/ich]] [[bekomm|verbs/bekommen#4]] [[noch|adverbs/noch#3]] [[ne|determiners/ein]] [[Entschuldigung|nouns/Entschuldigung#1]]."
+    "text_linked": "[[Ich|pronouns/ich]] [[bekomm|verbs/bekommen#4]] [[noch|adverbs/noch#3]] [[ne|determiners/ein]] [[Entschuldigung|nouns/Entschuldigung#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "6e63a1c3"
+    }
   },
   "b8a2fc1484": {
     "text": "Sprachlicher Determinismus ist Whorfs „Hypothese, der zufolge jede Einzelsprache Wahrnehmung, Erfahrung und Handeln ihrer Sprecher so stark bestimmt, dass Sprecher verschiedener Sprachen in dem Maße zu unterschiedlichen Weltauffassungen gelangen müssen, wie ihre Sprachen verschieden strukturiert sind.“",
@@ -16465,7 +16432,11 @@
         "gloss_hint": "hair"
       }
     ],
-    "text_linked": "Sie [[fuhr|verbs/fahren#6]] [[sich|pronouns/sich#1]] [[mit|prepositions/mit#1]] [[der|determiners/der]] [[Hand|nouns/Hand#2]] durchs [[Haar|nouns/Haar#1]]."
+    "text_linked": "Sie [[fuhr|verbs/fahren#6]] [[sich|pronouns/sich#1]] [[mit|prepositions/mit#1]] [[der|determiners/der]] [[Hand|nouns/Hand#2]] durchs [[Haar|nouns/Haar#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "7c88d240"
+    }
   },
   "b8a37b82d4": {
     "text": "Luther wird im Grimmschen Wörterbuch wie folgt zitiert: „die leutchen müssen mehr als eine hand zu schreiben wissen“, desgleichen findet man Goethe: „er hatte sich eine flüchtige, leserliche hand erworben“.",
@@ -19658,7 +19629,11 @@
         "gloss_hint": "band | bands | bond | ribbon | girlfriend | measuring tape | typewriter ribbon | finish line tape | magnetic strip | audio tape | video tape | conveyor belt | assembly line belt | ligament | bandsaw blade | hinge strap | metal band | brace | hoop | climbing route | frequency band | gang | bondage | shackles | captivity | tie | tire (vehicle)"
       }
     ],
-    "text_linked": "„[[Frühling|nouns/Frühling#1]] [[läßt|verbs/lassen#3]] [[sein|verbs/sein#1]] [[blaues|adjectives/blau]] [[Band|nouns/Band_plural#14]]"
+    "text_linked": "„[[Frühling|nouns/Frühling#1]] [[läßt|verbs/lassen#3]] [[sein|verbs/sein#1]] [[blaues|adjectives/blau]] [[Band|nouns/Band_plural#14]]",
+    "_proofread": {
+      "translation": true,
+      "annotations": "44232459"
+    }
   },
   "b8c0787ae9": {
     "text": "Statt an die Arbeit zu gehen lag er lieber auf der faulen Haut.",
@@ -21897,7 +21872,10 @@
     "lemmas": [
       "Weise"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "b8dd71c839": {
     "text": "Ich bin gelaufen.",
@@ -21929,7 +21907,8 @@
     ],
     "text_linked": "[[Ich|pronouns/ich]] [[bin|verbs/sein#4]] [[gelaufen|verbs/laufen#1]].",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "0c17df35"
     }
   },
   "b8dd79e22d": {
@@ -22283,7 +22262,7 @@
   },
   "b8e12f31a8": {
     "text": "„Gouverneur Dannel P. Malloy hat ein entsprechendes Gesetz unterzeichnet. Connecticut erkennt damit Weißkopf als ersten Motorflieger der Geschichte an.“",
-    "translation": "\"Governor Dannel P. Malloy signed a corresponding law. Connecticut thereby recognizes the Bald Eagle as the first motorized flyer in history.\"",
+    "translation": "Governor Dannel P. Malloy signed a corresponding law. Connecticut thereby recognizes Weißkopf as the first motorized aviator in history.",
     "source": "wiktionary",
     "lemmas": [
       "Gesetz",
@@ -24884,7 +24863,11 @@
         "gloss_hint": "days"
       }
     ],
-    "text_linked": "[[Während|conjunctions/während#1]] [[ihrer|pronouns/ihr_person]] [[Tage|nouns/Tag_angehängter]] [[ist|verbs/sein#2]] sie [[immer|adverbs/immer#1]] [[schlecht|adjectives/schlecht#2]] [[gelaunt|adjectives/gelaunt]]."
+    "text_linked": "[[Während|conjunctions/während#1]] [[ihrer|pronouns/ihr_person]] [[Tage|nouns/Tag_angehängter]] [[ist|verbs/sein#2]] sie [[immer|adverbs/immer#1]] [[schlecht|adjectives/schlecht#2]] [[gelaunt|adjectives/gelaunt]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "84eb9554"
+    }
   },
   "b8f84ac52f": {
     "text": "„Es herrschte bittere Kälte, als die junge Gräfin ihren Fuchswallach Alarich bestieg und im Mondlicht losritt.“",
@@ -25435,7 +25418,10 @@
       "bescheinigen",
       "z.B."
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "b8fc67d149": {
     "text": "„Sind Bitcoins eine lukrative Anlagemöglichkeit oder platzt bald die Blase?“",

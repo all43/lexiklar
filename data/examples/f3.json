@@ -205,7 +205,7 @@
   },
   "f30395f384": {
     "text": "Er macht es mit jeder.",
-    "translation": "He does it with everyone.",
+    "translation": "He sleeps with every woman.",
     "source": "wiktionary",
     "lemmas": [
       "machen"
@@ -213,37 +213,17 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Er",
-        "lemma": "er",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "macht",
         "lemma": "machen",
         "pos": "verb",
-        "gloss_hint": "do"
-      },
-      {
-        "form": "es",
-        "lemma": "es",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "mit",
-        "lemma": "mit",
-        "pos": "preposition",
-        "gloss_hint": "with"
-      },
-      {
-        "form": "jeder",
-        "lemma": "jeder",
-        "pos": "pronoun",
-        "gloss_hint": "everyone"
+        "gloss_hint": "have sex"
       }
     ],
-    "text_linked": "Er [[macht|verbs/machen#4]] [[es|pronouns/es]] [[mit|prepositions/mit#1]] [[jeder|pronouns/jeder#1]]."
+    "text_linked": "Er [[macht|verbs/machen#4]] [[es|pronouns/es]] [[mit|prepositions/mit#1]] [[jeder|pronouns/jeder#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "2520d1e4"
+    }
   },
   "f303f51788": {
     "text": "„Ich habe Opa Langbein gefunden – der dreijährige Phillip Worreschk steckt als einer der Ersten seiner Kita-Gruppe einen Weberknecht in seinen Lupenbecher.“",
@@ -13499,7 +13479,11 @@
         "pos": "noun",
         "gloss_hint": null
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "904b1737"
+    }
   },
   "f380d5ad76": {
     "text": "Ich bin in Wahlen geboren.",
@@ -14522,7 +14506,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Sie [[hat|verbs/haben]] [[im|prepositions/in]] [[Gespräch|nouns/Gespräch#1]] [[so|adverbs/so]] [[verhalten|verbs/verhalten_partizip#1]] [[reagiert|verbs/reagieren]], [[dass|conjunctions/dass]] [[der|pronouns/der_nominativ]] [[Mann|nouns/Mann#5]] [[vom|prepositions/von]] Wochenblatt [[nicht|particles/nicht]] [[weiter|adverbs/weiter#1]] [[nachgefragt|verbs/nachfragen]] hat."
+    "text_linked": "Sie [[hat|verbs/haben]] [[im|prepositions/in]] [[Gespräch|nouns/Gespräch#1]] [[so|adverbs/so]] [[verhalten|verbs/verhalten_zurückhalten#2]] [[reagiert|verbs/reagieren]], [[dass|conjunctions/dass]] [[der|pronouns/der_nominativ]] [[Mann|nouns/Mann#5]] [[vom|prepositions/von]] Wochenblatt [[nicht|particles/nicht]] [[weiter|adverbs/weiter#1]] [[nachgefragt|verbs/nachfragen]] hat."
   },
   "f3945225f2": {
     "text": "Sekunde, ich komme gleich!",
@@ -15449,42 +15433,29 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "My",
-        "lemma": "I",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "house",
-        "lemma": "house",
+        "form": "Haus",
+        "lemma": "Haus",
         "pos": "noun",
-        "gloss_hint": "building"
+        "gloss_hint": "residence"
       },
       {
-        "form": "is",
-        "lemma": "be",
+        "form": "wird",
+        "lemma": "werden",
         "pos": "verb",
         "gloss_hint": null
       },
       {
-        "form": "currently",
-        "lemma": "currently",
-        "pos": "adverb",
-        "gloss_hint": null
-      },
-      {
-        "form": "being",
-        "lemma": "be",
+        "form": "renoviert",
+        "lemma": "renovieren",
         "pos": "verb",
         "gloss_hint": null
-      },
-      {
-        "form": "renovated",
-        "lemma": "renovate",
-        "pos": "verb",
-        "gloss_hint": "rebuild"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "8bc371b2"
+    },
+    "text_linked": "Mein [[Haus|nouns/Haus#2]] [[wird|verbs/werden]] gerade [[renoviert|verbs/renovieren]]."
   },
   "f3a005bbba": {
     "text": "Der im Treibsand versunkene Mann krallt sich an einem dünnen Ast fest.",
@@ -21530,7 +21501,11 @@
         "gloss_hint": "which"
       }
     ],
-    "text_linked": "„[[Wolle|verbs/wollen#2]] [[das|pronouns/das_[1]]] Gute, erkenne das Wahre, fühle das Schöne“"
+    "text_linked": "„[[Wolle|verbs/wollen#2]] [[das|pronouns/das_[1]]] Gute, erkenne das Wahre, fühle das Schöne“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "9fb50d61"
+    }
   },
   "f3d76f5d2d": {
     "text": "Den Einwand verstehe ich nicht, es hat doch eine tatsächliche Veränderung stattgefunden, oder nicht?",
@@ -22262,7 +22237,10 @@
     "lemmas": [
       "Wahrheit"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "f3e79b5149": {
     "text": "„Auch ein kostbares Bodenmosaik aus der Römerzeit fiel den Plünderern zum Opfer.“",

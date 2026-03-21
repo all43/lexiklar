@@ -3632,7 +3632,7 @@
   },
   "fe1fadbbc8": {
     "text": "Sie wandten sich gen Morgen.",
-    "translation": "They turned toward the morning.",
+    "translation": "They turned toward the east.",
     "source": "wiktionary",
     "lemmas": [
       "Morgen"
@@ -3640,31 +3640,23 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Sie",
-        "lemma": "sie",
-        "pos": "noun",
-        "gloss_hint": "trumpet solo"
-      },
-      {
         "form": "wandten",
         "lemma": "wenden",
         "pos": "verb",
-        "gloss_hint": "turn"
+        "gloss_hint": null
       },
       {
-        "form": "sich",
-        "lemma": "sich",
-        "pos": "pronoun",
-        "gloss_hint": "themselves"
-      },
-      {
-        "form": "gen",
-        "lemma": "gen",
-        "pos": "adverb",
-        "gloss_hint": "morning"
+        "form": "Morgen",
+        "lemma": "Morgen",
+        "pos": "noun",
+        "gloss_hint": "east"
       }
     ],
-    "text_linked": "Sie [[wandten|verbs/wenden#1]] [[sich|pronouns/sich#2]] gen Morgen."
+    "text_linked": "Sie [[wandten|verbs/wenden#1]] [[sich|pronouns/sich#2]] gen Morgen.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "bc7cae53"
+    }
   },
   "fe20469da9": {
     "text": "Hüte dich vor der Eifersucht!",
@@ -7420,72 +7412,41 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "When",
-        "lemma": "when",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "he",
-        "lemma": "he",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "came",
+        "form": "kam",
         "lemma": "kommen",
         "pos": "verb",
-        "gloss_hint": "come"
+        "gloss_hint": "arrive"
       },
       {
-        "form": "home",
-        "lemma": "home",
-        "pos": "noun",
-        "gloss_hint": "home"
-      },
-      {
-        "form": "he",
-        "lemma": "he",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "found",
+        "form": "fand",
         "lemma": "finden",
         "pos": "verb",
-        "gloss_hint": "find"
+        "gloss_hint": "discover"
       },
       {
-        "form": "his",
-        "lemma": "his",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "wife",
+        "form": "Frau",
         "lemma": "Frau",
         "pos": "noun",
-        "gloss_hint": "woman|wife"
+        "gloss_hint": "wife"
       },
       {
-        "form": "sick",
+        "form": "krank",
         "lemma": "krank",
         "pos": "adjective",
-        "gloss_hint": "sick"
-      },
-      {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
         "gloss_hint": null
       },
       {
-        "form": "bed",
+        "form": "Bett",
         "lemma": "Bett",
         "pos": "noun",
         "gloss_hint": "bed"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "b6324e43"
+    },
+    "text_linked": "Als er nach Hause [[kam|verbs/kommen#1]], [[fand|verbs/finden#1]] er seine [[Frau|nouns/Frau#2]] [[krank|adjectives/krank]] im [[Bett|nouns/Bett#1]] liegend."
   },
   "fe4250058f": {
     "text": "„Und der Ekel riss ihn in den totalen Zusammenbruch.“",
@@ -16699,7 +16660,11 @@
         "gloss_hint": "nonsense"
       }
     ],
-    "text_linked": "Ich [[halte|verbs/halten#5]] [[das|pronouns/das_[1]]] Ganze [[für|prepositions/für#1]] ausgemachten [[Schwachsinn|nouns/Schwachsinn#2]]."
+    "text_linked": "Ich [[halte|verbs/halten#5]] [[das|pronouns/das_[1]]] Ganze [[für|prepositions/für#1]] ausgemachten [[Schwachsinn|nouns/Schwachsinn#2]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "cc261680"
+    }
   },
   "fe886dc945": {
     "text": "„Eigentlich müsste es längst pleite und verwüstet sein und am Tropf hängen.“",
@@ -21865,7 +21830,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Wir [[werden|verbs/werden]] in einem einfachen Hotel [[übernachten|verbs/übernachten]]."
+    "text_linked": "Wir [[werden|verbs/werden]] in einem einfachen Hotel [[übernachten|verbs/übernachten]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "e1ceb3e6"
+    }
   },
   "feb8b22473": {
     "text": "Die frühesten Kirschen reifen schon im Mai.",
@@ -22279,7 +22248,11 @@
         "gloss_hint": "home"
       }
     ],
-    "text_linked": "[[Der|determiners/der]] [[Mann|nouns/Mann#5]] [[blieb|verbs/bleiben#1]] [[zu|prepositions/zu]] [[Hause|nouns/Haus#2]]."
+    "text_linked": "[[Der|determiners/der]] [[Mann|nouns/Mann#5]] [[blieb|verbs/bleiben#1]] [[zu|prepositions/zu]] [[Hause|nouns/Haus#2]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "28769c22"
+    }
   },
   "fec542ebfa": {
     "text": "Der geborene Berliner sagt „Pfannkuchen“ zum gebackenen Berliner.",
@@ -23037,7 +23010,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Rüdin [[trat|verbs/treten]] [[durch|prepositions/durch#1]] [[Arbeiten|nouns/Arbeit#1]] [[zur|prepositions/zu]] Eugenik [[und|conjunctions/und]] Rassenhygiene [[hervor|adverbs/hervor]], [[war|verbs/sein#2]] [[offizieller|adjectives/offiziell]] Kommentator [[des|determiners/des]] Sterilisationsgesetzes und [[wurde|verbs/werden#1]] 1934 Beisitzer [[im|prepositions/in]] Erbgesundheitsobergericht.“"
+    "text_linked": "„Rüdin [[trat|verbs/treten]] [[durch|prepositions/durch#1]] [[Arbeiten|nouns/Arbeit#1]] [[zur|prepositions/zu]] Eugenik [[und|conjunctions/und]] Rassenhygiene [[hervor|adverbs/hervor]], [[war|verbs/sein#2]] [[offizieller|adjectives/offiziell]] Kommentator [[des|determiners/des]] Sterilisationsgesetzes und [[wurde|verbs/werden#1]] 1934 Beisitzer [[im|prepositions/in]] Erbgesundheitsobergericht.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "d97f1cd6"
+    }
   },
   "fecefe45ec": {
     "text": "Musste ich vor meinem Chef wieder die Klappe aufreißen? So wird das nie etwas mit meiner Beförderung.",
@@ -27455,7 +27432,11 @@
         "gloss_hint": "organism"
       }
     ],
-    "text_linked": "„[[Ein|determiners/ein]] [[Korsett|nouns/Korsett#1]] [[von|prepositions/von]] [[weißen|adjectives/weiß]] Bandagen [[hält|verbs/halten#1]] [[den|determiners/der]] [[Körper|nouns/Körper#1]] zusammen.“"
+    "text_linked": "„[[Ein|determiners/ein]] [[Korsett|nouns/Korsett#1]] [[von|prepositions/von]] [[weißen|adjectives/weiß]] Bandagen [[hält|verbs/halten#1]] [[den|determiners/der]] [[Körper|nouns/Körper#1]] zusammen.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "034ec00d"
+    }
   },
   "fefb1944cc": {
     "text": "etwas wie seine Hosentasche kennen",

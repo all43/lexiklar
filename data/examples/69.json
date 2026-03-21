@@ -601,7 +601,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Plötzlich [[dachte|verbs/denken#1]] sie [[an|prepositions/an]] [[einen|determiners/ein]] [[alten|adjectives/alt]] [[Beau|nouns/Beau]], [[den|determiners/der]] sie [[vergessen hatte|verbs/vergessen_partizip#1]], einen [[Angestellten|nouns/Angestellter]] [[im|prepositions/in]] Imperial [[Hotel|nouns/Hotel]].“"
+    "text_linked": "„Plötzlich [[dachte|verbs/denken#1]] sie [[an|prepositions/an]] [[einen|determiners/ein]] [[alten|adjectives/alt]] [[Beau|nouns/Beau]], [[den|determiners/der]] sie [[vergessen hatte|verbs/vergessen_sich]], einen [[Angestellten|nouns/Angestellter]] [[im|prepositions/in]] Imperial [[Hotel|nouns/Hotel]].“"
   },
   "6903b36de8": {
     "text": "„In Mannheim/Ludwigshafen war gerade der 100. Luftangriff vorüber.“",
@@ -5238,7 +5238,10 @@
         "gloss_hint": "gained"
       }
     ],
-    "text_linked": "[[Gut|adjectives/gut#1]], [[dass|conjunctions/dass]] [[die|pronouns/die]] Abordnung [[im|prepositions/in]] [[Schnee|nouns/Schnee#1]] steckengeblieben [[ist|verbs/sein#2]], [[da|conjunctions/da]] [[haben|verbs/haben#1]] [[wir|pronouns/wir]] [[etwas|pronouns/etwas#1]] [[Luft|nouns/Luft_überwiegend#1]] [[für|prepositions/für]] die [[Planung|nouns/Planung#1]] [[gewonnen|verbs/gewinnen#9]]."
+    "text_linked": "[[Gut|adjectives/gut#1]], [[dass|conjunctions/dass]] [[die|pronouns/die]] Abordnung [[im|prepositions/in]] [[Schnee|nouns/Schnee#1]] steckengeblieben [[ist|verbs/sein#2]], [[da|conjunctions/da]] [[haben|verbs/haben#1]] [[wir|pronouns/wir]] [[etwas|pronouns/etwas#1]] [[Luft|nouns/Luft_überwiegend#1]] [[für|prepositions/für]] die [[Planung|nouns/Planung#1]] [[gewonnen|verbs/gewinnen#9]].",
+    "_proofread": {
+      "translation": true
+    }
   },
   "6931eab0ff": {
     "text": "[Film „Eine Karte der Klänge von Tokio“:] „Natürlich muss man an „Nikita“ denken, Luc Bessons Film-noir-Portrait einer kühlen, innerlich verhärteten Auftragskillerin.“",
@@ -5793,7 +5796,8 @@
     ],
     "text_linked": "Sie [[mischte|verbs/mischen#1]] wohlriechende [[Wässer|nouns/Wasser#1]].",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "b92b0fcc"
     }
   },
   "6933e7f9ac": {
@@ -10924,48 +10928,35 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Over",
-        "lemma": "over",
-        "pos": "adverb",
-        "gloss_hint": null
-      },
-      {
-        "form": "eight",
-        "lemma": "eight",
-        "pos": "numeral",
-        "gloss_hint": "eight"
-      },
-      {
-        "form": "billion",
-        "lemma": "billion",
+        "form": "Erde",
+        "lemma": "Erde",
         "pos": "noun",
-        "gloss_hint": null
+        "gloss_hint": "Earth"
       },
       {
-        "form": "people",
-        "lemma": "people",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "live",
-        "lemma": "live",
+        "form": "leben",
+        "lemma": "leben",
         "pos": "verb",
         "gloss_hint": "live"
       },
       {
-        "form": "on",
-        "lemma": "on",
-        "pos": "preposition",
+        "form": "Milliarden",
+        "lemma": "Milliarde",
+        "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "Earth",
-        "lemma": "Earth",
+        "form": "Menschen",
+        "lemma": "Mensch",
         "pos": "noun",
-        "gloss_hint": "Earth"
+        "gloss_hint": "human"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "6fa485d9"
+    },
+    "text_linked": "[2023:] Auf der [[Erde|nouns/Erde#3]] [[leben|verbs/leben#1]] über acht [[Milliarden|nouns/Milliarde]] [[Menschen|nouns/Mensch_lebewesen#1]]."
   },
   "696abc2c1a": {
     "text": "„Und ein gutes Marketing kann auch bei künstlerischen Produkten folgenreich sein.“",
@@ -15147,7 +15138,11 @@
         "gloss_hint": "slow"
       }
     ],
-    "text_linked": "Eine [[Schnecke|nouns/Schnecke#1]] [[bewegt|verbs/bewegen_handlung]] sich im [[Vergleich|nouns/Vergleich#1]] zu einem Verkehrsflugzeug sehr [[langsam|adjectives/langsam#1]]."
+    "text_linked": "Eine [[Schnecke|nouns/Schnecke#1]] [[bewegt|verbs/bewegen_handlung]] sich im [[Vergleich|nouns/Vergleich#1]] zu einem Verkehrsflugzeug sehr [[langsam|adjectives/langsam#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "7f5bd4ba"
+    }
   },
   "6981e7d189": {
     "text": "„Seine Ehefrau Karin werde die Brotzeit herrichten.“",
@@ -23341,144 +23336,41 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "region",
-        "lemma": "region",
-        "pos": "noun",
-        "gloss_hint": "region"
-      },
-      {
-        "form": "extended",
-        "lemma": "extend",
+        "form": "erstreckte",
+        "lemma": "erstrecken",
         "pos": "verb",
-        "gloss_hint": "extend"
-      },
-      {
-        "form": "from",
-        "lemma": "from",
-        "pos": "preposition",
         "gloss_hint": null
       },
       {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "Low Countries",
-        "lemma": "Low Countries",
-        "pos": "noun",
-        "gloss_hint": "Low Countries"
-      },
-      {
-        "form": "north",
-        "lemma": "north",
-        "pos": "adverb",
-        "gloss_hint": null
-      },
-      {
-        "form": "of",
-        "lemma": "of",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "Ardennes",
-        "lemma": "Ardennes",
-        "pos": "noun",
-        "gloss_hint": "Ardennes"
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "Eifel",
-        "lemma": "Eifel",
-        "pos": "noun",
-        "gloss_hint": "Eifel"
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "Rhenish",
-        "lemma": "Rhenish",
+        "form": "niederen",
+        "lemma": "nieder",
         "pos": "adjective",
         "gloss_hint": null
       },
       {
-        "form": "Slate Mountains",
-        "lemma": "Slate Mountains",
+        "form": "Landen",
+        "lemma": "Land",
         "pos": "noun",
-        "gloss_hint": "Slate Mountains"
+        "gloss_hint": "country"
       },
       {
-        "form": "and",
-        "lemma": "and",
-        "pos": "conjunction",
+        "form": "rheinischen",
+        "lemma": "rheinisch",
+        "pos": "adjective",
         "gloss_hint": null
       },
       {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "Teutoburg Forest",
-        "lemma": "Teutoburg Forest",
+        "form": "Flüssen",
+        "lemma": "Fluss",
         "pos": "noun",
-        "gloss_hint": "Teutoburg Forest"
-      },
-      {
-        "form": "between",
-        "lemma": "between",
-        "pos": "preposition",
         "gloss_hint": null
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "rivers",
-        "lemma": "river",
-        "pos": "noun",
-        "gloss_hint": "river"
-      },
-      {
-        "form": "Maas",
-        "lemma": "Maas",
-        "pos": "noun",
-        "gloss_hint": "Maas"
-      },
-      {
-        "form": "and",
-        "lemma": "and",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "Ems",
-        "lemma": "Ems",
-        "pos": "noun",
-        "gloss_hint": "Ems"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "25fc9881"
+    },
+    "text_linked": "„Die Grutregion [[erstreckte|verbs/erstrecken]] sich von den [[niederen|adjectives/nieder]] [[Landen|nouns/Land#2]] nördlich der Ardennen, die Eifel, dem rheinischen Schiefergebirge und Teutoburger Wald zwischen den [[Flüssen|nouns/Fluss]] Maas und Ems.“"
   },
   "69cc11619d": {
     "text": "„Die Staatsanwaltschaft Innsbruck reagierte wenige Stunden nach der Pressekonferenz auf die Anwürfe von Heiss und Kapferer.“",
@@ -27067,7 +26959,7 @@
         "gloss_hint": "end (time) | ending (story) | edge | death | rope end | part"
       }
     ],
-    "text_linked": "„Gestern [[hast|verbs/haben]] [[du|pronouns/du]] [[auch|adverbs/auch]] [[schon|particles/schon_antwort]] [[den|determiners/der]] Kompott [[vergessen|verbs/vergessen_partizip#1]], du [[Penner|nouns/Penner#1]], du [[Nichtsnutz|nouns/Nichtsnutz]], [[das|pronouns/das_nominativ]] [[kommt|verbs/kommen#5]] [[ohne|prepositions/ohne]] [[Ende|nouns/Ende#1]].“"
+    "text_linked": "„Gestern [[hast|verbs/haben]] [[du|pronouns/du]] [[auch|adverbs/auch]] [[schon|particles/schon_antwort]] [[den|determiners/der]] Kompott [[vergessen|verbs/vergessen_sich]], du [[Penner|nouns/Penner#1]], du [[Nichtsnutz|nouns/Nichtsnutz]], [[das|pronouns/das_nominativ]] [[kommt|verbs/kommen#5]] [[ohne|prepositions/ohne]] [[Ende|nouns/Ende#1]].“"
   },
   "69ec517d11": {
     "text": "Niemand konnte telefonieren, denn das Kabel war abgerissen.",
@@ -27780,22 +27672,10 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Ich",
-        "lemma": "ich",
-        "pos": "noun",
-        "gloss_hint": "I (pronoun)"
-      },
-      {
         "form": "esse",
         "lemma": "essen",
         "pos": "verb",
         "gloss_hint": "eat"
-      },
-      {
-        "form": "einen",
-        "lemma": "ein",
-        "pos": "determiner",
-        "gloss_hint": null
       },
       {
         "form": "Apfel",
@@ -27804,7 +27684,11 @@
         "gloss_hint": "apple"
       }
     ],
-    "text_linked": "Ich [[esse|verbs/essen#1]] [[einen|determiners/ein]] [[Apfel|nouns/Apfel#1]]."
+    "text_linked": "Ich [[esse|verbs/essen#1]] [[einen|determiners/ein]] [[Apfel|nouns/Apfel#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "ffcfa316"
+    }
   },
   "69f1175ccd": {
     "text": "Möchtest du vielleicht etwas davon abhaben?",

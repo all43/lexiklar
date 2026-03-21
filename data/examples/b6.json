@@ -955,33 +955,21 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "die Rolle",
-        "lemma": "roll",
+        "form": "Rolle",
+        "lemma": "Rolle",
         "pos": "noun",
         "gloss_hint": "roll"
       },
       {
         "form": "Packpapier",
-        "lemma": "packpapier",
+        "lemma": "Packpapier",
         "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "sie",
-        "lemma": "she",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "auf",
-        "lemma": "auf",
-        "pos": "preposition",
-        "gloss_hint": "on surface"
-      },
-      {
-        "form": "und",
-        "lemma": "und",
-        "pos": "conjunction",
+        "form": "rollte",
+        "lemma": "rollen",
+        "pos": "verb",
         "gloss_hint": null
       },
       {
@@ -991,43 +979,23 @@
         "gloss_hint": "push"
       },
       {
-        "form": "sie",
-        "lemma": "she",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "unter",
-        "lemma": "unter",
-        "pos": "preposition",
-        "gloss_hint": "below"
-      },
-      {
-        "form": "den",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
         "form": "Körper",
         "lemma": "Körper",
         "pos": "noun",
-        "gloss_hint": "organism | torso | solid object"
-      },
-      {
-        "form": "des",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
+        "gloss_hint": "body"
       },
       {
         "form": "Toten",
-        "lemma": "tote",
+        "lemma": "Toter",
         "pos": "noun",
-        "gloss_hint": "organism | torso | solid object"
+        "gloss_hint": null
       }
     ],
-    "text_linked": "„Max Schulz holte die Rolle Packpapier, rollte sie [[auf|prepositions/auf#5]] [[und|conjunctions/und]] [[schob|verbs/schieben#1]] sie [[unter|prepositions/unter#1]] den [[Körper|nouns/Körper#1]] des Toten.“"
+    "text_linked": "„Max Schulz holte die Rolle Packpapier, rollte sie [[auf|prepositions/auf#5]] [[und|conjunctions/und]] [[schob|verbs/schieben#1]] sie [[unter|prepositions/unter#1]] den [[Körper|nouns/Körper#1]] des Toten.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "3f552256"
+    }
   },
   "b60ddaf689": {
     "text": "„Nachprüfung ergibt, daß tatsächlich fast alle mittelhochdeutschen kurzen Vokale in offenen Silben im Neuhochdeutschen gedehnt werden…“",
@@ -1977,7 +1945,10 @@
     "lemmas": [
       "Fehler"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "b613e6b8cc": {
     "text": "„Der Kommunismus ist eine sehr einfache, optimistiche Religion; der Nihilismus das Ergebnis eines pessimistischen Denkens.“",
@@ -2117,7 +2088,11 @@
         "pos": "adverb",
         "gloss_hint": "tonight"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "fad6c3cc"
+    }
   },
   "b615dedf00": {
     "text": "Die traditionelle Anrede für Rektoren an Universitäten lautet: „Eure Magnifizenz“.",
@@ -8540,66 +8515,40 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "In",
-        "lemma": "in",
-        "pos": "preposition",
+        "form": "Krankenhaus",
+        "lemma": "Krankenhaus",
+        "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "emergency",
-        "lemma": "emergency",
-        "pos": "noun",
-        "gloss_hint": "medical emergency"
-      },
-      {
-        "form": "ambulance",
-        "lemma": "ambulance",
-        "pos": "noun",
-        "gloss_hint": "vehicle for emergencies"
-      },
-      {
-        "form": "that",
-        "lemma": "that",
-        "pos": "pronoun",
-        "gloss_hint": "relative pronoun"
-      },
-      {
-        "form": "took",
-        "lemma": "nehmen",
+        "form": "brachte",
+        "lemma": "bringen",
         "pos": "verb",
-        "gloss_hint": "take, transport"
+        "gloss_hint": "carry"
       },
       {
-        "form": "her",
-        "lemma": "she",
-        "pos": "pronoun",
-        "gloss_hint": "she"
-      },
-      {
-        "form": "to",
-        "lemma": "to",
-        "pos": "preposition",
+        "form": "zuckte",
+        "lemma": "zucken",
+        "pos": "verb",
         "gloss_hint": null
       },
       {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "hospital",
-        "lemma": "hospital",
+        "form": "Krämpfen",
+        "lemma": "Krampf",
         "pos": "noun",
-        "gloss_hint": "medical facility"
+        "gloss_hint": "cramp"
+      },
+      {
+        "form": "geschüttelt",
+        "lemma": "schütteln",
+        "pos": "verb",
+        "gloss_hint": null
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true
+    },
+    "text_linked": "„Im Notarztwagen, der sie ins [[Krankenhaus|nouns/Krankenhaus]] [[brachte|verbs/bringen#1]], [[zuckte|verbs/zucken]] sie, von [[Krämpfen|nouns/Krampf#1]] [[geschüttelt|verbs/schütteln]].“"
   },
   "b655f1f811": {
     "text": "Mädchen wie Buben freuen sich gleichermaßen auf Weihnachten.",
@@ -9085,7 +9034,11 @@
         "gloss_hint": "is"
       }
     ],
-    "text_linked": "Die [[Zahl|nouns/Zahl#1]] [[der|pronouns/der_nominativ]] Geflüchteten, [[die|pronouns/die]] [[mit|prepositions/mit#1]] [[einem|determiners/ein]] [[Schulabschluss|nouns/Schulabschluss]] [[nach|prepositions/nach#1]] [[Deutschland|names/Deutschland#1]] [[kommen|verbs/kommen#1]], [[ist|verbs/sein#1]] [[höher|adjectives/hoch]] [[als|conjunctions/als#1]] [[oft|adverbs/oft#1]] [[angenommen|verbs/annehmen#1]] [[wird|verbs/werden#1]]."
+    "text_linked": "Die [[Zahl|nouns/Zahl#1]] [[der|pronouns/der_nominativ]] Geflüchteten, [[die|pronouns/die]] [[mit|prepositions/mit#1]] [[einem|determiners/ein]] [[Schulabschluss|nouns/Schulabschluss]] [[nach|prepositions/nach#1]] [[Deutschland|names/Deutschland#1]] [[kommen|verbs/kommen#1]], [[ist|verbs/sein#1]] [[höher|adjectives/hoch]] [[als|conjunctions/als#1]] [[oft|adverbs/oft#1]] [[angenommen|verbs/annehmen#1]] [[wird|verbs/werden#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "4badfc3f"
+    }
   },
   "b65d10c492": {
     "text": "Manche Krebse laufen seitwärts.",
@@ -10340,7 +10293,7 @@
         "gloss_hint": "behave"
       }
     ],
-    "text_linked": "„[[Es|pronouns/es]] [[handelte|verbs/handeln_etwas#4]] [[sich|pronouns/sich]] [[um|prepositions/um]] [[eine|determiners/ein]] Straßenkarte [[von|prepositions/von]] Großbritannien, [[die|pronouns/die]] [[Route|nouns/Route#1]] [[bis|particles/bis#1]] [[zu|prepositions/zu]] Simons [[Häuschen|nouns/Häuschen#1]] [[in|prepositions/in]] Yorkshire [[war|verbs/sein#2]] grellorange eingezeichnet, [[außerdem|adverbs/außerdem]] [[gab|verbs/geben]] [[es|pronouns/es]] Anmerkungen, [[wie|adverbs/wie#1]] [[man|pronouns/man#2]] sich [[auf|prepositions/auf]] [[den|determiners/der]] unbefestigten [[Straßen|nouns/Straße#1]] zu [[verhalten|verbs/verhalten_partizip#1]] hatte.“"
+    "text_linked": "„[[Es|pronouns/es]] [[handelte|verbs/handeln_etwas#4]] [[sich|pronouns/sich]] [[um|prepositions/um]] [[eine|determiners/ein]] Straßenkarte [[von|prepositions/von]] Großbritannien, [[die|pronouns/die]] [[Route|nouns/Route#1]] [[bis|particles/bis#1]] [[zu|prepositions/zu]] Simons [[Häuschen|nouns/Häuschen#1]] [[in|prepositions/in]] Yorkshire [[war|verbs/sein#2]] grellorange eingezeichnet, [[außerdem|adverbs/außerdem]] [[gab|verbs/geben]] [[es|pronouns/es]] Anmerkungen, [[wie|adverbs/wie#1]] [[man|pronouns/man#2]] sich [[auf|prepositions/auf]] [[den|determiners/der]] unbefestigten [[Straßen|nouns/Straße#1]] zu [[verhalten|verbs/verhalten_zurückhalten#2]] hatte.“"
   },
   "b66db5b88c": {
     "text": "„Einerseits war die Stadt tatsächlich nicht mehr durch die gewöhnlichen Verkehrsmittel mit dem übrigen Land verbunden, und andererseits untersagte eine neue Verordnung jeglichen Briefwechsel, um zu verhüten, daß die Briefe zu Infektionsträgern würden.“",
@@ -15225,7 +15178,10 @@
     "lemmas": [
       "Paar"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "b69193ad76": {
     "text": "„Ich brachte sogar Marie, die mehr zum Schachspielen neigt, dazu, süchtig auf dieses Spiel zu werden.“",
@@ -15514,7 +15470,10 @@
     "lemmas": [
       "Weise"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "b69787f75f": {
     "text": "Sich seine voreingenommenen Sichtweisen bewusst zu machen, ist ein wichtiger Schritt zur Veränderung.",
@@ -15858,7 +15817,7 @@
         "gloss_hint": "shadow"
       }
     ],
-    "text_linked": "„Pass auf, [[wie|adverbs/wie#1]] [[du|pronouns/du]] dich [[verhältst|verbs/verhalten_partizip]]. Er [[ist|verbs/sein]] [[ziemlich|adjectives/ziemlich#1]] [[paranoid|adjectives/paranoid#1]] [[und|conjunctions/und]] [[hat|verbs/haben]] [[Angst|nouns/Angst#1]] [[vor|prepositions/vor#1]] seinem [[eigenen|adjectives/eigen#1]] [[Schatten|nouns/Schatten#1]].“"
+    "text_linked": "„Pass auf, [[wie|adverbs/wie#1]] [[du|pronouns/du]] dich [[verhältst|verbs/verhalten_zurückhalten]]. Er [[ist|verbs/sein]] [[ziemlich|adjectives/ziemlich#1]] [[paranoid|adjectives/paranoid#1]] [[und|conjunctions/und]] [[hat|verbs/haben]] [[Angst|nouns/Angst#1]] [[vor|prepositions/vor#1]] seinem [[eigenen|adjectives/eigen#1]] [[Schatten|nouns/Schatten#1]].“"
   },
   "b699299f6c": {
     "text": "„Und Honecker war es auch, der 1952 die Einführung des Schießunterrichts, des Fallschirmspringens und des Motorfliegens bei der FDJ verkündete.“",
@@ -15998,7 +15957,10 @@
       "Mehrsprachigkeit",
       "Instanz"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "b69cd387c0": {
     "text": "„Ich hatte häufig Alpträume, in denen ich entweder vor meiner Mutter weglief oder meine schwangere Hand hinter dem Rücken versteckte.“",
@@ -16745,7 +16707,11 @@
         "gloss_hint": "band"
       }
     ],
-    "text_linked": "[[Mein|pronouns/mein]] [[Freund|nouns/Freund#1]] [[spielt|verbs/spielen#1]] [[seit|prepositions/seit]] [[drei|numerals/drei#1]] [[Jahren|nouns/Jahr#1]] [[in|prepositions/in]] [[einer|determiners/ein]] [[Band|nouns/Band_plural#14]]."
+    "text_linked": "[[Mein|pronouns/mein]] [[Freund|nouns/Freund#1]] [[spielt|verbs/spielen#1]] [[seit|prepositions/seit]] [[drei|numerals/drei#1]] [[Jahren|nouns/Jahr#1]] [[in|prepositions/in]] [[einer|determiners/ein]] [[Band|nouns/Band_plural#14]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "44fb827c"
+    }
   },
   "b6a7b531e3": {
     "text": "Der Versicherungsvertreter war so gerissen, dass er dem Kunden gleich drei unsinnige Versicherungen aufschwatzte.",
@@ -18593,7 +18559,7 @@
         "gloss_hint": "anymore"
       }
     ],
-    "text_linked": "„Sie [[hatte|verbs/haben#1]] [[einen|determiners/ein]] [[Nervenzusammenbruch|nouns/Nervenzusammenbruch#1]] [[erlitten|verbs/erleiden#1]] [[und|conjunctions/und]] [[verließ|verbs/verlassen_partizip#1]] [[wegen|prepositions/wegen#1]] Angstzuständen [[ihr|pronouns/ihr_zu#1]] [[Zimmer|nouns/Zimmer#1]] [[nicht|particles/nicht#1]] [[mehr|adverbs/mehr#2]].“"
+    "text_linked": "„Sie [[hatte|verbs/haben#1]] [[einen|determiners/ein]] [[Nervenzusammenbruch|nouns/Nervenzusammenbruch#1]] [[erlitten|verbs/erleiden#1]] [[und|conjunctions/und]] [[verließ|verbs/verlassen_weggehen#1]] [[wegen|prepositions/wegen#1]] Angstzuständen [[ihr|pronouns/ihr_zu#1]] [[Zimmer|nouns/Zimmer#1]] [[nicht|particles/nicht#1]] [[mehr|adverbs/mehr#2]].“"
   },
   "b6bba34c39": {
     "text": "Na, wenn das mal gut geht.",
@@ -20865,7 +20831,7 @@
   },
   "b6cf946af3": {
     "text": "„Es war ein hochgelehrtes Haus, berühmt als Orgelspieler und stets etwas stutzerhaft gekleidet mit Cut und gestreifter Hose.“",
-    "translation": "It was a highly learned house, famous as an organ player and always somewhat snobbish in dress with a morning coat and striped trousers.",
+    "translation": "He was a highly learned fellow, famous as an organ player and always somewhat dandily dressed with a morning coat and striped trousers.",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
@@ -20882,7 +20848,7 @@
         "form": "Haus",
         "lemma": "Haus",
         "pos": "noun",
-        "gloss_hint": "building"
+        "gloss_hint": "person"
       },
       {
         "form": "berühmt",
@@ -20951,7 +20917,11 @@
         "gloss_hint": "pants"
       }
     ],
-    "text_linked": "„Es war ein hochgelehrtes [[Haus|nouns/Haus#1]], [[berühmt|adjectives/berühmt]] als Orgelspieler [[und|conjunctions/und]] [[stets|adverbs/stets#1]] [[etwas|pronouns/etwas]] stutzerhaft [[gekleidet|verbs/kleiden#1]] [[mit|prepositions/mit#1]] [[Cut|nouns/Cut#1]] und [[gestreifter|adjectives/gestreift]] [[Hose|nouns/Hose#1]].“"
+    "text_linked": "„Es war ein hochgelehrtes [[Haus|nouns/Haus#1]], [[berühmt|adjectives/berühmt]] als Orgelspieler [[und|conjunctions/und]] [[stets|adverbs/stets#1]] [[etwas|pronouns/etwas]] stutzerhaft [[gekleidet|verbs/kleiden#1]] [[mit|prepositions/mit#1]] [[Cut|nouns/Cut#1]] und [[gestreifter|adjectives/gestreift]] [[Hose|nouns/Hose#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "a15d2ab9"
+    }
   },
   "b6d0e8bb97": {
     "text": "„Am ersten internationalen Kongress zum Thema «Humor in der Therapie», der im Oktober 1996 in Basel stattfand, sind erstmals «therapeutische Clowns» vorgestellt worden.“",

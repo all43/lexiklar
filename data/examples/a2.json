@@ -5986,7 +5986,10 @@
     "lemmas": [
       "Sommer"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "a252a65767": {
     "text": "Der Kapitän steuerte mit seinem Kahn den nächsten Hafen an.",
@@ -14324,37 +14327,35 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "know",
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wissen",
         "lemma": "wissen",
         "pos": "verb",
-        "gloss_hint": "know (emphatic)"
-      },
-      {
-        "form": "sich",
-        "lemma": "sich",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "von",
-        "lemma": "von",
-        "pos": "preposition",
-        "gloss_hint": "from | of"
-      },
-      {
-        "form": "ihren",
-        "lemma": "ihr",
-        "pos": "pronoun",
-        "gloss_hint": null
+        "gloss_hint": "be certain"
       },
       {
         "form": "Eltern",
         "lemma": "Eltern",
         "pos": "noun",
-        "gloss_hint": "parents"
+        "gloss_hint": null
+      },
+      {
+        "form": "geliebt",
+        "lemma": "lieben",
+        "pos": "verb",
+        "gloss_hint": null
       }
     ],
-    "text_linked": "Die Kinder wissen [[sich|pronouns/sich]] [[von|prepositions/von#1]] [[ihren|pronouns/ihr_person]] [[Eltern|nouns/Eltern#1]] geliebt."
+    "_proofread": {
+      "translation": true,
+      "annotations": "a14b937c"
+    },
+    "text_linked": "Die [[Kinder|nouns/Kind]] [[wissen|verbs/wissen#2]] sich von ihren [[Eltern|nouns/Eltern]] [[geliebt|verbs/lieben]]."
   },
   "a2a37b902c": {
     "text": "„Der Jumpsuit ist wahnsinnig patent (außer wenn man auf Toilette muss) und genauso sexy wie ein Kleid. Er ist so bequem wie ein Babystrampler und im Gegensatz zum Minirock lässt sich darin prima Rad fahren.“",
@@ -18976,7 +18977,10 @@
     "lemmas": [
       "Nacht"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "a2d8da44a0": {
     "text": "„Willst du mich verarschen?“",

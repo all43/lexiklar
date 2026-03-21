@@ -156,7 +156,7 @@
         "gloss_hint": "left | leave | abandon | rely on"
       }
     ],
-    "text_linked": "„Ich [[muss|verbs/müssen]] mich [[vorne|adverbs/vorne#1]] [[auf|prepositions/auf#1]] den [[Flieger|nouns/Flieger#1]] [[verlassen|verbs/verlassen_partizip#1]] können. Aber als er einstieg, schwankte er und sah betrunken aus!“"
+    "text_linked": "„Ich [[muss|verbs/müssen]] mich [[vorne|adverbs/vorne#1]] [[auf|prepositions/auf#1]] den [[Flieger|nouns/Flieger#1]] [[verlassen|verbs/verlassen_weggehen#1]] können. Aber als er einstieg, schwankte er und sah betrunken aus!“"
   },
   "d604ccddd9": {
     "text": "Dieses Fahrzeug können Sie ab morgen Ihr Eigen nennen.",
@@ -3015,7 +3015,7 @@
   },
   "d62c300818": {
     "text": "Wer hat noch nicht von ihr gehört, der berühmten Berliner Luft?",
-    "translation": "Who hasn't heard of her, the famous Berliner Luft?",
+    "translation": "Who hasn't heard of it, the famous Berliner Luft?",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
@@ -3023,64 +3023,22 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Wer",
-        "lemma": "wer",
-        "pos": "pronoun",
-        "gloss_hint": "who"
-      },
-      {
-        "form": "hat",
-        "lemma": "haben",
-        "pos": "verb",
-        "gloss_hint": "have"
-      },
-      {
-        "form": "noch",
-        "lemma": "noch",
-        "pos": "adverb",
-        "gloss_hint": "still"
-      },
-      {
-        "form": "nicht",
-        "lemma": "nicht",
-        "pos": "particle",
-        "gloss_hint": "not"
-      },
-      {
-        "form": "von",
-        "lemma": "von",
-        "pos": "preposition",
-        "gloss_hint": "from"
-      },
-      {
-        "form": "ihr",
-        "lemma": "sie",
-        "pos": "pronoun",
-        "gloss_hint": "her"
-      },
-      {
         "form": "gehört",
         "lemma": "hören",
         "pos": "verb",
-        "gloss_hint": "heard"
-      },
-      {
-        "form": "der",
-        "lemma": "der",
-        "pos": "pronoun",
-        "gloss_hint": "the"
+        "gloss_hint": null
       },
       {
         "form": "berühmten",
         "lemma": "berühmt",
         "pos": "adjective",
-        "gloss_hint": "famous"
+        "gloss_hint": null
       },
       {
         "form": "Berliner",
         "lemma": "Berliner",
-        "pos": "noun",
-        "gloss_hint": "Berlin resident"
+        "pos": "adjective",
+        "gloss_hint": null
       },
       {
         "form": "Luft",
@@ -3089,7 +3047,11 @@
         "gloss_hint": "air"
       }
     ],
-    "text_linked": "[[Wer|pronouns/wer_derjenige#1]] [[hat|verbs/haben#1]] [[noch|adverbs/noch#3]] [[nicht|particles/nicht#1]] [[von|prepositions/von#1]] ihr [[gehört|verbs/hören]], [[der|pronouns/der_nominativ#1]] [[berühmten|adjectives/berühmt#1]] [[Berliner|nouns/Berliner_einwohner#1]] [[Luft|nouns/Luft_überwiegend#1]]?"
+    "text_linked": "[[Wer|pronouns/wer_derjenige#1]] [[hat|verbs/haben#1]] [[noch|adverbs/noch#3]] [[nicht|particles/nicht#1]] [[von|prepositions/von#1]] ihr [[gehört|verbs/hören]], [[der|pronouns/der_nominativ#1]] [[berühmten|adjectives/berühmt#1]] [[Berliner|nouns/Berliner_einwohner#1]] [[Luft|nouns/Luft_überwiegend#1]]?",
+    "_proofread": {
+      "translation": true,
+      "annotations": "34bd9e12"
+    }
   },
   "d62cbd5db7": {
     "text": "„Er wollte die Beziehung beenden, aber jetzt würde er wie der größte Vollidiot dastehen, wenn er etwas sagte.“",
@@ -17324,7 +17286,8 @@
     ],
     "text_linked": "Die Ärzte taten alles, [[was|pronouns/was#1]] [[möglich|adjectives/möglich#1]] [[war|verbs/sein]], um ihn zu retten.",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "907e2c30"
     }
   },
   "d6b9fbd8e7": {
@@ -19085,37 +19048,35 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "sicher",
-        "lemma": "sicher",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "bei",
-        "lemma": "bei",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "seiner",
-        "lemma": "sein",
-        "pos": "pronoun",
-        "gloss_hint": "his"
+        "form": "wusste",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": "be certain"
       },
       {
         "form": "liebenswürdigen",
         "lemma": "liebenswürdig",
         "pos": "adjective",
-        "gloss_hint": "kind-hearted"
+        "gloss_hint": null
       },
       {
         "form": "Tante",
         "lemma": "Tante",
         "pos": "noun",
-        "gloss_hint": "aunt"
+        "gloss_hint": null
+      },
+      {
+        "form": "Sicherheit",
+        "lemma": "Sicherheit",
+        "pos": "noun",
+        "gloss_hint": null
       }
     ],
-    "text_linked": "Er wusste sich [[bei|prepositions/bei]] [[seiner|pronouns/sein#1]] [[liebenswürdigen|adjectives/liebenswürdig]] [[Tante|nouns/Tante#1]] in Sicherheit."
+    "_proofread": {
+      "translation": true,
+      "annotations": "061e5b09"
+    },
+    "text_linked": "Er [[wusste|verbs/wissen#2]] sich bei seiner [[liebenswürdigen|adjectives/liebenswürdig]] [[Tante|nouns/Tante]] in [[Sicherheit|nouns/Sicherheit]]."
   },
   "d6ca73bdd9": {
     "text": "„Der Schwächling fing zu weinen an und sagte, er werde nach Paris fahren.“",
@@ -24572,22 +24533,10 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Ich",
-        "lemma": "ich",
-        "pos": "noun",
-        "gloss_hint": "ego"
-      },
-      {
-        "form": "über",
-        "lemma": "über",
-        "pos": "adverb",
-        "gloss_hint": "over"
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "determiner",
-        "gloss_hint": "the"
+        "form": "gehe",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "walk"
       },
       {
         "form": "Straße",
@@ -24596,7 +24545,11 @@
         "gloss_hint": "street"
       }
     ],
-    "text_linked": "Ich gehe [[über|adverbs/über#1]] [[die|determiners/die#1]] [[Straße|nouns/Straße#2]]."
+    "text_linked": "Ich gehe [[über|adverbs/über#1]] [[die|determiners/die#1]] [[Straße|nouns/Straße#2]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "4e623b00"
+    }
   },
   "d6f35a63a6": {
     "text": "das macht den Kohl nicht fett",
@@ -25293,7 +25246,11 @@
         "gloss_hint": "be (auxiliary)"
       }
     ],
-    "text_linked": "„[[Etwa|adverbs/etwa#1]] zehn [[Millionen|nouns/Million#1]] [[Fass|nouns/Fass#1]] [[Öl|nouns/Öl#1]] [[sollen|verbs/sollen#4]] [[in|prepositions/in]] [[den|determiners/der]] [[vergangenen|adjectives/vergangen]] 50 [[Jahren|nouns/Jahr#1]] [[ins|prepositions/in]] Niger-Delta [[gelaufen|verbs/laufen#2]] [[sein|verbs/sein#4]].“"
+    "text_linked": "„[[Etwa|adverbs/etwa#1]] zehn [[Millionen|nouns/Million#1]] [[Fass|nouns/Fass#1]] [[Öl|nouns/Öl#1]] [[sollen|verbs/sollen#4]] [[in|prepositions/in]] [[den|determiners/der]] [[vergangenen|adjectives/vergangen]] 50 [[Jahren|nouns/Jahr#1]] [[ins|prepositions/in]] Niger-Delta [[gelaufen|verbs/laufen#2]] [[sein|verbs/sein#4]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "cb20cfc1"
+    }
   },
   "d6f888c6f4": {
     "text": "der Liebe keinen Abbruch tun",

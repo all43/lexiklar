@@ -4318,16 +4318,10 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Dieser",
-        "lemma": "dieser",
-        "pos": "pronoun",
-        "gloss_hint": "this"
-      },
-      {
         "form": "Brillant",
         "lemma": "Brillant",
         "pos": "noun",
-        "gloss_hint": "sparkle"
+        "gloss_hint": "diamond (cut)"
       },
       {
         "form": "hat",
@@ -4336,22 +4330,10 @@
         "gloss_hint": "have"
       },
       {
-        "form": "ein",
-        "lemma": "ein",
-        "pos": "pronoun",
-        "gloss_hint": "one"
-      },
-      {
-        "form": "ganz",
-        "lemma": "ganz",
-        "pos": "adjective",
-        "gloss_hint": "whole"
-      },
-      {
         "form": "besonderes",
-        "lemma": "besonders",
+        "lemma": "besondere",
         "pos": "adjective",
-        "gloss_hint": "special"
+        "gloss_hint": null
       },
       {
         "form": "Feuer",
@@ -4360,7 +4342,10 @@
         "gloss_hint": "sparkle"
       }
     ],
-    "text_linked": "[[Dieser|pronouns/dieser#1]] [[Brillant|nouns/Brillant]] [[hat|verbs/haben#1]] [[ein|pronouns/ein#1]] [[ganz|adjectives/ganz#2]] besonderes [[Feuer|nouns/Feuer#6]]."
+    "text_linked": "Dieser [[Brillant|nouns/Brillant#1]] [[hat|verbs/haben#1]] ein ganz [[besonderes|adjectives/besondere]] [[Feuer|nouns/Feuer#6]].",
+    "_proofread": {
+      "translation": true
+    }
   },
   "952ed8622b": {
     "text": "es ist noch nicht aller Tage Abend",
@@ -14806,7 +14791,10 @@
     "lemmas": [
       "Treffen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "959cce5852": {
     "text": "Bitte teilen Sie dem Hotel Ihre voraussichtliche Abfahrtszeit mit.",
@@ -20194,7 +20182,11 @@
         "gloss_hint": "poor"
       }
     ],
-    "text_linked": "„[[Die|determiners/die]] [[Stiftung|nouns/Stiftung#2]] Warentest [[hat|verbs/haben#1]] [[aktuell|adjectives/aktuell#1]] 108 [[Tarife|nouns/Tarif]] [[untersucht|verbs/untersuchen]] – [[über|prepositions/über#2]] [[die|determiners/die]] [[Hälfte|nouns/Hälfte#1]] [[davon|adverbs/davon#2]] [[sind|verbs/sein#2]] [[‚mangelhaft‘|adjectives/mangelhaft#2]].“"
+    "text_linked": "„[[Die|determiners/die]] [[Stiftung|nouns/Stiftung#2]] Warentest [[hat|verbs/haben#1]] [[aktuell|adjectives/aktuell#1]] 108 [[Tarife|nouns/Tarif]] [[untersucht|verbs/untersuchen]] – [[über|prepositions/über#2]] [[die|determiners/die]] [[Hälfte|nouns/Hälfte#1]] [[davon|adverbs/davon#2]] [[sind|verbs/sein#2]] [[‚mangelhaft‘|adjectives/mangelhaft#2]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "81d45ad9"
+    }
   },
   "95c8a0f3b2": {
     "text": "„Im Backes-Haus hatten die Helfer eine Kaffeetafel aufgebaut, die Platte wurde bis auf wenige Kuchenstücke geputzt.“",
@@ -25960,7 +25952,11 @@
         "pos": "noun",
         "gloss_hint": "visitor"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "f82e00b9"
+    }
   },
   "95f54840db": {
     "text": "Der Ping zum Server war erfolglos.",

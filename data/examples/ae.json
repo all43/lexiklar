@@ -511,84 +511,41 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "She",
-        "lemma": "she",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "is",
-        "lemma": "be",
-        "pos": "verb",
-        "gloss_hint": null
-      },
-      {
-        "form": "95",
-        "lemma": "95",
-        "pos": "numeral",
-        "gloss_hint": null
-      },
-      {
-        "form": "years",
-        "lemma": "year",
+        "form": "Jahre",
+        "lemma": "Jahr",
         "pos": "noun",
-        "gloss_hint": "time"
+        "gloss_hint": "age (years)"
       },
       {
-        "form": "old",
-        "lemma": "old",
+        "form": "alt",
+        "lemma": "alt",
         "pos": "adjective",
         "gloss_hint": "aged"
       },
       {
-        "form": "and",
-        "lemma": "and",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "sick",
-        "lemma": "sick",
+        "form": "krank",
+        "lemma": "krank",
         "pos": "adjective",
-        "gloss_hint": "ill"
+        "gloss_hint": "sick"
       },
       {
-        "form": "and",
-        "lemma": "and",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "no",
-        "lemma": "not",
-        "pos": "particle",
-        "gloss_hint": null
-      },
-      {
-        "form": "longer",
-        "lemma": "longer",
-        "pos": "adverb",
-        "gloss_hint": "more"
-      },
-      {
-        "form": "wants",
-        "lemma": "want",
+        "form": "will",
+        "lemma": "wollen",
         "pos": "verb",
-        "gloss_hint": null
+        "gloss_hint": "wish"
       },
       {
-        "form": "to",
-        "lemma": "to",
-        "pos": "particle",
-        "gloss_hint": null
-      },
-      {
-        "form": "live",
-        "lemma": "live",
+        "form": "leben",
+        "lemma": "leben",
         "pos": "verb",
         "gloss_hint": "live"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "c9426e35"
+    },
+    "text_linked": "Sie ist 95 [[Jahre|nouns/Jahr#2]] [[alt|adjectives/alt#2]] und [[krank|adjectives/krank#1]] und [[will|verbs/wollen#2]] nicht mehr [[leben|verbs/leben#1]]."
   },
   "ae059f9438": {
     "text": "Wochenlang hat er an seinem Projekt gearbeitet, und nun zeigt keiner Interesse daran, jetzt muss er erst einmal seinem Ärger Luft machen.",
@@ -18215,28 +18172,10 @@
     "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
-        "form": "Der",
-        "lemma": "der",
-        "pos": "pronoun",
-        "gloss_hint": "the (masc)"
-      },
-      {
         "form": "Alte",
-        "lemma": "alt",
+        "lemma": "Alter",
         "pos": "noun",
-        "gloss_hint": "old woman"
-      },
-      {
-        "form": "ist",
-        "lemma": "sein",
-        "pos": "verb",
-        "gloss_hint": "be"
-      },
-      {
-        "form": "heut'",
-        "lemma": "heute",
-        "pos": "adverb",
-        "gloss_hint": "today"
+        "gloss_hint": "old man"
       },
       {
         "form": "stinkig",
@@ -18245,7 +18184,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Der|pronouns/der_nominativ#1]] Alte [[ist|verbs/sein#2]] [[heut'|adverbs/heute#1]] stinkig."
+    "text_linked": "Der [[Alte|nouns/Alter_alter#1]] ist heut' stinkig.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "c64819a6"
+    }
   },
   "aecf816cdb": {
     "text": "„Leuchtgarben geisterten weißrot und grün durch die ungeheuere dunkle Himmelsglocke. An der Küste blitzten Scheinwerfer auf.“",

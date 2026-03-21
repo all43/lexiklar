@@ -626,33 +626,21 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Das",
-        "lemma": "das",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "Beiboot",
         "lemma": "Beiboot",
         "pos": "noun",
-        "gloss_hint": "lifeboat"
+        "gloss_hint": null
       },
       {
         "form": "ist",
         "lemma": "sein",
         "pos": "verb",
-        "gloss_hint": "be"
+        "gloss_hint": null
       },
       {
         "form": "klar",
         "lemma": "klar",
         "pos": "adjective",
-        "gloss_hint": "clear"
-      },
-      {
-        "form": "zum",
-        "lemma": "zu",
-        "pos": "particle",
         "gloss_hint": null
       },
       {
@@ -662,7 +650,11 @@
         "gloss_hint": "use"
       }
     ],
-    "text_linked": "[[Das|pronouns/das_[1]]] Beiboot [[ist|verbs/sein#2]] [[klar|adjectives/klar#1]] [[zum|particles/zu_drückt]] [[Einsatz|nouns/Einsatz#6]]."
+    "_proofread": {
+      "translation": true,
+      "annotations": "24912b9a"
+    },
+    "text_linked": "Das Beiboot [[ist|verbs/sein]] [[klar|adjectives/klar]] zum [[Einsatz|nouns/Einsatz#6]]."
   },
   "f10aafb223": {
     "text": "Der Kamin im Wohnzimmer qualmte heftig, da der Schornstein keinen rechten Zug hat.",
@@ -2820,31 +2812,23 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Welche",
-        "lemma": "welcher",
-        "pos": "pronoun",
-        "gloss_hint": "which (indefinite)"
-      },
-      {
         "form": "Straße",
         "lemma": "Straße",
         "pos": "noun",
-        "gloss_hint": "road | street | strait | hand (cards)"
+        "gloss_hint": "street"
       },
       {
         "form": "wohnst",
         "lemma": "wohnen",
         "pos": "verb",
-        "gloss_hint": "live"
-      },
-      {
-        "form": "du",
-        "lemma": "du",
-        "pos": "pronoun",
         "gloss_hint": null
       }
     ],
-    "text_linked": "In welcher [[Straße|nouns/Straße#1]] [[wohnst|verbs/wohnen#1]] [[du|pronouns/du]]?"
+    "text_linked": "In welcher [[Straße|nouns/Straße#1]] [[wohnst|verbs/wohnen#1]] [[du|pronouns/du]]?",
+    "_proofread": {
+      "translation": true,
+      "annotations": "e453e1ab"
+    }
   },
   "f11d1769ad": {
     "text": "Ich habe rasende Kopfschmerzen.",
@@ -5062,7 +5046,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Er [Gerald Hüther] [[studierte|verbs/studieren]] [[und|conjunctions/und]] promovierte [[in|prepositions/in]] Leipzig – und [[verließ|verbs/verlassen_partizip]] 1979 [[die|pronouns/die]] DDR. Er [[hatte|verbs/haben]] [[sich|pronouns/sich]] [[zuvor|adverbs/zuvor]] in vielen [[Versuchen|nouns/Versuch#1]] selbst [[beigebracht|verbs/beibringen]], [[wie|adverbs/wie#1]] [[man|pronouns/man#2]] [[einen|determiners/ein]] Visumsstempel [[fälscht|verbs/fälschen]]: [[\"Wenn|conjunctions/wenn]] man [[ein|determiners/ein]] hinreichend [[starkes|adjectives/stark]] [[Motiv|nouns/Motiv#1]] [[hat|verbs/haben]], [[lernt|verbs/lernen]] man alles.\""
+    "text_linked": "Er [Gerald Hüther] [[studierte|verbs/studieren]] [[und|conjunctions/und]] promovierte [[in|prepositions/in]] Leipzig – und [[verließ|verbs/verlassen_weggehen]] 1979 [[die|pronouns/die]] DDR. Er [[hatte|verbs/haben]] [[sich|pronouns/sich]] [[zuvor|adverbs/zuvor]] in vielen [[Versuchen|nouns/Versuch#1]] selbst [[beigebracht|verbs/beibringen]], [[wie|adverbs/wie#1]] [[man|pronouns/man#2]] [[einen|determiners/ein]] Visumsstempel [[fälscht|verbs/fälschen]]: [[\"Wenn|conjunctions/wenn]] man [[ein|determiners/ein]] hinreichend [[starkes|adjectives/stark]] [[Motiv|nouns/Motiv#1]] [[hat|verbs/haben]], [[lernt|verbs/lernen]] man alles.\""
   },
   "f132509a21": {
     "text": "Ich komme nicht aus Göttin.",
@@ -13921,7 +13905,11 @@
         "gloss_hint": "part-time work"
       }
     ],
-    "text_linked": "Ab Montag arbeite [[ich|pronouns/ich]] [[Teilzeit|nouns/Teilzeit#1]]."
+    "text_linked": "Ab Montag arbeite [[ich|pronouns/ich]] [[Teilzeit|nouns/Teilzeit#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "1e002782"
+    }
   },
   "f18df0bb12": {
     "text": "Mir wurde das Fahrrad geklaut, dabei hatte ich es mit einem Schloss gesichert.",
@@ -14741,7 +14729,11 @@
         "gloss_hint": "enemy"
       }
     ],
-    "text_linked": "Um [[Feinde|nouns/Feind#1]] fernzuhalten, wurde eine starke Stadtmauer errichtet."
+    "text_linked": "Um [[Feinde|nouns/Feind#1]] fernzuhalten, wurde eine starke Stadtmauer errichtet.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "feab0904"
+    }
   },
   "f1978b3532": {
     "text": "„In einem bunten Strauß ineinander verschachtelter Szenen rasen Autos gegen Hauswände (auf der Tonspur), quälen Altenpfleger die Dementen, vergessen Eltern ihre Kinder, stürzen Paare in gemeinsame Abgründe, und Internet-Bekanntschaften enden im Totschlag.“",
@@ -16221,7 +16213,10 @@
       "Menge",
       "Geräusch"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "f1a53eafe3": {
     "text": "„Bei ihren Begegnungen mit dem andern Geschlecht zeichnete sich, so war nun einmal das Leben, immer auf eine undeutliche Weise auch die Möglichkeit des Horizontalen ab und wollte in Rechnung gezogen sein.“",
@@ -21297,7 +21292,11 @@
         "gloss_hint": "back"
       }
     ],
-    "text_linked": "[[Unser|pronouns/unser_personalpronomen#1]] [[Garten|nouns/Garten#1]] [[geht|verbs/gehen#4]] [[bis|particles/bis#6]] [[zu|prepositions/zu]] [[den|determiners/der]] [[Bäumen|nouns/Baum#1]] [[da|adverbs/da#1]] [[hinten|adverbs/hinten#1]]."
+    "text_linked": "[[Unser|pronouns/unser_personalpronomen#1]] [[Garten|nouns/Garten#1]] [[geht|verbs/gehen#4]] [[bis|particles/bis#6]] [[zu|prepositions/zu]] [[den|determiners/der]] [[Bäumen|nouns/Baum#1]] [[da|adverbs/da#1]] [[hinten|adverbs/hinten#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "1c51f628"
+    }
   },
   "f1d9ceafaa": {
     "text": "„Das Resultat dieses Briefes war die Bereitstellung einer vernünftigen Summe, damit Csoma seine Mission erfüllen konnte.“",
@@ -24187,7 +24186,7 @@
         "gloss_hint": "forgotten"
       }
     ],
-    "text_linked": "[[Das|pronouns/das_[1]]] [[kannst|verbs/können_beherrschen#1]] [[du|pronouns/du]] [[voll|adjectives/voll#1]] [[vergessen|verbs/vergessen_partizip#1]]!"
+    "text_linked": "[[Das|pronouns/das_[1]]] [[kannst|verbs/können_beherrschen#1]] [[du|pronouns/du]] [[voll|adjectives/voll#1]] [[vergessen|verbs/vergessen_sich]]!"
   },
   "f1eab41c40": {
     "text": "„Was vor allem müssen denn die Deutschen beitragen, nicht nur die aktiven Helfer, sondern die Gesellschaft insgesamt, damit die Flüchtlinge, die zu uns kommen, tatsächlich auch ankommen in unserem Land?“",

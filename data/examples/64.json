@@ -403,7 +403,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Ich|pronouns/ich]] habe [[den|determiners/der]] [[Läufer|nouns/Läufer#4]] [[nach|prepositions/nach#1]] E4 gezogen."
+    "text_linked": "[[Ich|pronouns/ich]] habe [[den|determiners/der]] [[Läufer|nouns/Läufer#4]] [[nach|prepositions/nach#1]] E4 gezogen.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "fc41f409"
+    }
   },
   "6409a87ad4": {
     "text": "„Gegen Ende der Spielzeit kam noch NHL-Rückkehrer Marco Sturm hinzu, der sich trotz längerer Pause in bester Spiellaune präsentierte und mit sechs Punkten aus fünf Partien zum Topscorer in den Playoffs avancierte.“",
@@ -1470,66 +1474,35 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "All",
-        "lemma": "all",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "that",
-        "lemma": "that",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "remained",
-        "lemma": "remain",
+        "form": "blieb",
+        "lemma": "bleiben",
         "pos": "verb",
-        "gloss_hint": "stay"
+        "gloss_hint": "remain"
       },
       {
-        "form": "was",
-        "lemma": "be",
-        "pos": "verb",
-        "gloss_hint": "past tense"
-      },
-      {
-        "form": "an",
-        "lemma": "a",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "idea",
-        "lemma": "idea",
+        "form": "Idee",
+        "lemma": "Idee",
         "pos": "noun",
-        "gloss_hint": "insight"
+        "gloss_hint": "idea"
       },
       {
-        "form": "of",
-        "lemma": "of",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "a",
-        "lemma": "a",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "better",
-        "lemma": "better",
+        "form": "besseren",
+        "lemma": "gut",
         "pos": "adjective",
         "gloss_hint": null
       },
       {
-        "form": "future",
-        "lemma": "future",
+        "form": "Zukunft",
+        "lemma": "Zukunft",
         "pos": "noun",
-        "gloss_hint": "future tense"
+        "gloss_hint": "future"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "eb5ae997"
+    },
+    "text_linked": "Alles, was [[blieb|verbs/bleiben#2]], war eine [[Idee|nouns/Idee#2]] von einer [[besseren|adjectives/gut]] [[Zukunft|nouns/Zukunft#1]]."
   },
   "64133e3c31": {
     "text": "In Zeiten, in denen viele den Verfall der Sprach- und Lesefähigkeit von Kindern und Jugendlichen beklagen, setzt ´Tatort Bodensee´ gerade auf die Entwicklung und Förderung dieser Fähigkeiten[…]",
@@ -3278,72 +3251,29 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "We",
-        "lemma": "we",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "are",
-        "lemma": "be",
-        "pos": "verb",
-        "gloss_hint": null
-      },
-      {
-        "form": "eating",
-        "lemma": "eat",
+        "form": "essen",
+        "lemma": "essen",
         "pos": "verb",
         "gloss_hint": "eat"
       },
       {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "vegetable",
-        "lemma": "vegetable",
-        "pos": "noun",
-        "gloss_hint": "food"
-      },
-      {
-        "form": "broth",
-        "lemma": "broth",
-        "pos": "noun",
-        "gloss_hint": "dish"
-      },
-      {
-        "form": "that",
-        "lemma": "that",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "Stanislaw",
-        "lemma": "Stanislaw",
+        "form": "Gemüsebrühe",
+        "lemma": "Gemüsebrühe",
         "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "cooked",
-        "lemma": "cook",
+        "form": "gekocht",
+        "lemma": "kochen",
         "pos": "verb",
-        "gloss_hint": "cook"
-      },
-      {
-        "form": "for",
-        "lemma": "for",
-        "pos": "preposition",
-        "gloss_hint": "for"
-      },
-      {
-        "form": "us",
-        "lemma": "us",
-        "pos": "pronoun",
-        "gloss_hint": "us"
+        "gloss_hint": null
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "a3e4055c"
+    },
+    "text_linked": "„Wir [[essen|verbs/essen#1]] die Gemüsebrühe, die Stanislaw für uns [[gekocht|verbs/kochen]] hat.“"
   },
   "641f00c579": {
     "text": "in den Miesen sein",
@@ -6792,7 +6722,11 @@
         "gloss_hint": "justification"
       }
     ],
-    "text_linked": "„Die [[Freundin|nouns/Freundin#1]] [[bemerkte|verbs/bemerken]] seine [[Verzweiflung|nouns/Verzweiflung]] und [[verlor|verbs/verlieren]] sich in [[Rechtfertigungen|nouns/Rechtfertigung#1]].“"
+    "text_linked": "„Die [[Freundin|nouns/Freundin#1]] [[bemerkte|verbs/bemerken]] seine [[Verzweiflung|nouns/Verzweiflung]] und [[verlor|verbs/verlieren]] sich in [[Rechtfertigungen|nouns/Rechtfertigung#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "d3075080"
+    }
   },
   "643e060ad0": {
     "text": "„Die Bahn hat vorschnell die Sanierung als großen Erfolg dargestellt.“",
@@ -13655,7 +13589,11 @@
         "gloss_hint": "service (help)"
       }
     ],
-    "text_linked": "[[Ich|pronouns/ich]] [[tu|verbs/tun_handlung#1]] [[dir|pronouns/du]] [[einen|determiners/ein]] [[Gefallen|nouns/Gefallen_handlung#1]]…"
+    "text_linked": "[[Ich|pronouns/ich]] [[tu|verbs/tun_handlung#1]] [[dir|pronouns/du]] [[einen|determiners/ein]] [[Gefallen|nouns/Gefallen_handlung#1]]…",
+    "_proofread": {
+      "translation": true,
+      "annotations": "83ec1b8b"
+    }
   },
   "648c75c4a6": {
     "text": "„Mugabe legte direkt nach der Auszählung den Amtseid ab: ‚Ich werde diesem Land gut und aufrichtig als Präsident dienen, so wahr mir Gott helfe‘, sagte der 84-Jährige vor dem Obersten Richter.“",
@@ -13907,7 +13845,11 @@
         "gloss_hint": "deep"
       }
     ],
-    "text_linked": "„Wenn eine wie Cathy ihren [[Job|nouns/Job#1]] [[verliert|verbs/verlieren]], geht es [[schnell|adjectives/schnell#1]] [[hinab|adverbs/hinab]] in einer [[Stadt|nouns/Stadt#1]] ohne [[Netz|nouns/Netz#2]], und [[tief|adjectives/tief#1]].“"
+    "text_linked": "„Wenn eine wie Cathy ihren [[Job|nouns/Job#1]] [[verliert|verbs/verlieren]], geht es [[schnell|adjectives/schnell#1]] [[hinab|adverbs/hinab]] in einer [[Stadt|nouns/Stadt#1]] ohne [[Netz|nouns/Netz#2]], und [[tief|adjectives/tief#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "8cfe2e5f"
+    }
   },
   "648d4accd7": {
     "text": "„Ich kenne eine Mutter, die Buchenwald überlebt hat und ihre Tochter nie Schuhe mit Holzsohlen tragen ließ und nie erlaubt, daß man in ihrer Gegenwart Fleisch grillt.“",
@@ -18058,7 +18000,11 @@
         "gloss_hint": "follow"
       }
     ],
-    "text_linked": "[[Können|verbs/können_beherrschen]] Sie sich [[vorstellen|verbs/vorstellen#6]], diesem [[Vorschlag|nouns/Vorschlag#1]] zu [[folgen|verbs/folgen#1]]?"
+    "text_linked": "[[Können|verbs/können_beherrschen]] Sie sich [[vorstellen|verbs/vorstellen#6]], diesem [[Vorschlag|nouns/Vorschlag#1]] zu [[folgen|verbs/folgen#1]]?",
+    "_proofread": {
+      "translation": true,
+      "annotations": "18c1571f"
+    }
   },
   "64b2248425": {
     "text": "Ihre Rede war ein befriedigender Abschluss der Tagung und dafür danken wir.",
@@ -21412,7 +21358,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Unter|prepositions/unter]] [[der|determiners/der]] Erdoberfläche [[ziehen|verbs/ziehen#7]] [[sich|pronouns/sich]] [[zwei|numerals/zwei#1]] [[neue|adjectives/neu#1]] [Gas-][[Pipelines|nouns/Pipeline#1]] [[wie|adverbs/wie]] [[feine|adjectives/fein#1]] [[Fäden|nouns/Faden#1]] [[durch|prepositions/durch#1]] [[den|determiners/der]] Südkaukasus, […]"
+    "text_linked": "[[Unter|prepositions/unter]] [[der|determiners/der]] Erdoberfläche [[ziehen|verbs/ziehen#7]] [[sich|pronouns/sich]] [[zwei|numerals/zwei#1]] [[neue|adjectives/neu#1]] [Gas-][[Pipelines|nouns/Pipeline#1]] [[wie|adverbs/wie]] [[feine|adjectives/fein#1]] [[Fäden|nouns/Faden#1]] [[durch|prepositions/durch#1]] [[den|determiners/der]] Südkaukasus, […]",
+    "_proofread": {
+      "translation": true,
+      "annotations": "e84eede6"
+    }
   },
   "64c929e430": {
     "text": "Hauptsache ich krieg gleich ´n Ass.",

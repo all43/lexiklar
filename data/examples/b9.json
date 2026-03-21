@@ -1455,7 +1455,7 @@
   },
   "b90ba97af9": {
     "text": "„Die zweite Nummer des Programms beginnt.“",
-    "translation": "The second number of the program begins.",
+    "translation": "The second act of the program begins.",
     "source": "wiktionary",
     "lemmas": [
       "Nummer"
@@ -1499,7 +1499,11 @@
         "gloss_hint": "begins"
       }
     ],
-    "text_linked": "„[[Die|determiners/die#1]] zweite [[Nummer|nouns/Nummer#1]] [[des|determiners/des]] [[Programms|nouns/Programm#4]] [[beginnt|verbs/beginnen#2]].“"
+    "text_linked": "„[[Die|determiners/die#1]] zweite [[Nummer|nouns/Nummer#1]] [[des|determiners/des]] [[Programms|nouns/Programm#4]] [[beginnt|verbs/beginnen#2]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "d8ff4c5d"
+    }
   },
   "b90cc47a7f": {
     "text": "Die Voraussetzungen für eine Notiz im Prime Market der Wiener Börse sind nicht mehr gegeben.",
@@ -2883,7 +2887,10 @@
     "lemmas": [
       "Entscheidung"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "b9161a5c93": {
     "text": "„Sie lobten ihr immer besser werdendes Deutsch.“",
@@ -3738,7 +3745,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Erst|adverbs/erst#2]] [[gehst|verbs/gehen#4]] [[du|pronouns/du]] [[auf|prepositions/auf#1]] [[„Öffnen“|verbs/öffnen#1]] [[und|conjunctions/und]] [[dann|adverbs/dann#1]] [[klickst|verbs/klicken#1]] du auf „OK“."
+    "text_linked": "[[Erst|adverbs/erst#2]] [[gehst|verbs/gehen#4]] [[du|pronouns/du]] [[auf|prepositions/auf#1]] [[„Öffnen“|verbs/öffnen#1]] [[und|conjunctions/und]] [[dann|adverbs/dann#1]] [[klickst|verbs/klicken#1]] du auf „OK“.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "33668cdd"
+    }
   },
   "b91dc36996": {
     "text": "Die Partei Zentrum war katholisch ausgerichtet.",
@@ -4414,19 +4425,13 @@
   },
   "b921c1c85f": {
     "text": "attributiv: Das gare Gemüse lässt sich zwar leichter kauen, enthält aber längst nicht mehr alle seine ursprünglichen Inhaltsstoffe.",
-    "translation": "She only uses cooked vegetables.",
+    "translation": "The cooked vegetables are indeed easier to chew, but they no longer contain all their original nutrients.",
     "source": "wiktionary",
     "lemmas": [
       "gar"
     ],
     "translation_model": "claude-sonnet-4-6",
     "annotations": [
-      {
-        "form": "Das",
-        "lemma": "das",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
       {
         "form": "gare",
         "lemma": "gar",
@@ -4437,94 +4442,50 @@
         "form": "Gemüse",
         "lemma": "Gemüse",
         "pos": "noun",
-        "gloss_hint": "vegetables"
+        "gloss_hint": null
       },
       {
         "form": "lässt",
         "lemma": "lassen",
         "pos": "verb",
-        "gloss_hint": "allow"
-      },
-      {
-        "form": "sich",
-        "lemma": "sich",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "zwar",
-        "lemma": "zwar",
-        "pos": "conjunction",
-        "gloss_hint": null
+        "gloss_hint": "admit of"
       },
       {
         "form": "leichter",
         "lemma": "leicht",
         "pos": "adjective",
-        "gloss_hint": "easier"
+        "gloss_hint": "easy"
       },
       {
-        "form": "kaue",
+        "form": "kauen",
         "lemma": "kauen",
         "pos": "verb",
-        "gloss_hint": "chew"
+        "gloss_hint": null
       },
       {
         "form": "enthält",
         "lemma": "enthalten",
         "pos": "verb",
-        "gloss_hint": "contain"
-      },
-      {
-        "form": "aber",
-        "lemma": "aber",
-        "pos": "conjunction",
-        "gloss_hint": "but"
-      },
-      {
-        "form": "längst",
-        "lemma": "längst",
-        "pos": "adverb",
-        "gloss_hint": "long ago"
-      },
-      {
-        "form": "nicht",
-        "lemma": "nicht",
-        "pos": "particle",
-        "gloss_hint": "not"
-      },
-      {
-        "form": "mehr",
-        "lemma": "mehr",
-        "pos": "adverb",
-        "gloss_hint": "more"
-      },
-      {
-        "form": "alle",
-        "lemma": "alle",
-        "pos": "pronoun",
-        "gloss_hint": "all"
-      },
-      {
-        "form": "seine",
-        "lemma": "sein",
-        "pos": "pronoun",
-        "gloss_hint": "his"
+        "gloss_hint": null
       },
       {
         "form": "ursprünglichen",
         "lemma": "ursprünglich",
         "pos": "adjective",
-        "gloss_hint": "original"
+        "gloss_hint": null
       },
       {
         "form": "Inhaltsstoffe",
         "lemma": "Inhaltsstoff",
         "pos": "noun",
-        "gloss_hint": "nutrients"
+        "gloss_hint": null
       }
     ],
-    "text_linked": "attributiv: [[Das|pronouns/das_[1]]] [[gare|adjectives/gar]] [[Gemüse|nouns/Gemüse#1]] [[lässt|verbs/lassen#3]] [[sich|pronouns/sich]] [[zwar|conjunctions/zwar]] [[leichter|adjectives/leicht]] kauen, [[enthält|verbs/enthalten#1]] [[aber|conjunctions/aber#1]] [[längst|adverbs/längst#1]] [[nicht|particles/nicht#1]] [[mehr|adverbs/mehr#1]] alle [[seine|pronouns/sein#1]] [[ursprünglichen|adjectives/ursprünglich#1]] Inhaltsstoffe."
+    "text_linked": "attributiv: [[Das|pronouns/das_[1]]] [[gare|adjectives/gar]] [[Gemüse|nouns/Gemüse#1]] [[lässt|verbs/lassen#3]] [[sich|pronouns/sich]] [[zwar|conjunctions/zwar]] [[leichter|adjectives/leicht]] kauen, [[enthält|verbs/enthalten#1]] [[aber|conjunctions/aber#1]] [[längst|adverbs/längst#1]] [[nicht|particles/nicht#1]] [[mehr|adverbs/mehr#1]] alle [[seine|pronouns/sein#1]] [[ursprünglichen|adjectives/ursprünglich#1]] Inhaltsstoffe.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "31a05670"
+    }
   },
   "b921f5b6d7": {
     "text": "Die Galeeren waren bis zu vierzig Meter lang und wurden je nach Größe von achtzig bis zu dreihundert Ruderern angetrieben.",
@@ -11325,7 +11286,7 @@
   },
   "b96edc0bbf": {
     "text": "„Swelch Mensche lebt in Gotes Gebote, / In dem ist Got und er ist in Gote. / Demselben ich mir befehlen tu. / Wird mir helfen zu rechter Ruh. Amen.“",
-    "translation": "Who lives in God's commandments, / In him is God and he is in God. / I myself command to myself. / It will help me to true rest. Amen.",
+    "translation": "Whoever lives in God's commandments, / In him is God and he is in God. / To him I commend myself. / He will help me to true rest. Amen.",
     "source": "wiktionary",
     "lemmas": [
       "recht"
@@ -11351,14 +11312,8 @@
         "gloss_hint": "live"
       },
       {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
         "form": "Gotes",
-        "lemma": "Gottes",
+        "lemma": "Gott",
         "pos": "noun",
         "gloss_hint": "God"
       },
@@ -11367,18 +11322,6 @@
         "lemma": "Gebot",
         "pos": "noun",
         "gloss_hint": "commandments"
-      },
-      {
-        "form": "In",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "dem",
-        "lemma": "der",
-        "pos": "determiner",
-        "gloss_hint": null
       },
       {
         "form": "ist",
@@ -11393,28 +11336,10 @@
         "gloss_hint": "God"
       },
       {
-        "form": "und",
-        "lemma": "und",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "er",
-        "lemma": "er",
-        "pos": "pronoun",
-        "gloss_hint": "he"
-      },
-      {
         "form": "ist",
         "lemma": "sein",
         "pos": "verb",
         "gloss_hint": "is"
-      },
-      {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
       },
       {
         "form": "Gote",
@@ -11423,28 +11348,10 @@
         "gloss_hint": "God"
       },
       {
-        "form": "Demselben",
-        "lemma": "derselbe",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "ich",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": "I"
-      },
-      {
-        "form": "mir",
-        "lemma": "mir",
-        "pos": "pronoun",
-        "gloss_hint": "myself"
-      },
-      {
         "form": "befehlen",
         "lemma": "befehlen",
         "pos": "verb",
-        "gloss_hint": "command"
+        "gloss_hint": "entrust"
       },
       {
         "form": "tu",
@@ -11459,22 +11366,10 @@
         "gloss_hint": "will"
       },
       {
-        "form": "mir",
-        "lemma": "mir",
-        "pos": "pronoun",
-        "gloss_hint": "me"
-      },
-      {
         "form": "helfen",
         "lemma": "helfen",
         "pos": "verb",
         "gloss_hint": "help"
-      },
-      {
-        "form": "zu",
-        "lemma": "zu",
-        "pos": "preposition",
-        "gloss_hint": null
       },
       {
         "form": "rechter",
@@ -11487,15 +11382,13 @@
         "lemma": "Ruhe",
         "pos": "noun",
         "gloss_hint": "rest"
-      },
-      {
-        "form": "Amen",
-        "lemma": "Amen",
-        "pos": "interjection",
-        "gloss_hint": null
       }
     ],
-    "text_linked": "„Swelch [[Mensche|nouns/Mensch_lebewesen#1]] [[lebt|verbs/leben#1]] [[in|prepositions/in]] Gotes [[Gebote|nouns/Gebot]], / [[In|prepositions/in]] [[dem|determiners/der]] [[ist|verbs/sein#1]] [[Got|nouns/Gott#2]] [[und|conjunctions/und]] er ist in [[Gote|nouns/Gott#2]]. / [[Demselben|pronouns/derselbe]] [[ich|pronouns/ich#1]] [[mir|pronouns/mir_dativ#1]] [[befehlen|verbs/befehlen#1]] [[tu|verbs/tun_handlung#1]]. / [[Wird|verbs/werden#3]] mir [[helfen|verbs/helfen#1]] [[zu|prepositions/zu]] [[rechter|adjectives/recht]] [[Ruh|nouns/Ruhe#2]]. Amen.“"
+    "text_linked": "„Swelch [[Mensche|nouns/Mensch_lebewesen#1]] [[lebt|verbs/leben#1]] in [[Gotes|nouns/Gott#2]] [[Gebote|nouns/Gebot]], / In dem [[ist|verbs/sein#1]] [[Got|nouns/Gott#2]] und er ist in [[Gote|nouns/Gott#2]]. / Demselben ich mir [[befehlen|verbs/befehlen#5]] [[tu|verbs/tun_handlung#1]]. / [[Wird|verbs/werden#3]] mir [[helfen|verbs/helfen#1]] zu [[rechter|adjectives/recht]] [[Ruh|nouns/Ruhe#2]]. Amen.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "3321b25e"
+    }
   },
   "b9701c1ba5": {
     "text": "die Stirn haben",
@@ -11711,7 +11604,11 @@
         "gloss_hint": "lake"
       }
     ],
-    "text_linked": "Ich [[glaube|verbs/glauben]], [[dass|conjunctions/dass]] [[der|pronouns/der_nominativ#1]] Wanderweg [[um|prepositions/um]] [[den|determiners/der]] [[See|nouns/See_stehendes#1]] läuft."
+    "text_linked": "Ich [[glaube|verbs/glauben]], [[dass|conjunctions/dass]] [[der|pronouns/der_nominativ#1]] Wanderweg [[um|prepositions/um]] [[den|determiners/der]] [[See|nouns/See_stehendes#1]] läuft.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "0705d307"
+    }
   },
   "b973bec0f8": {
     "text": "ein breites Kreuz haben",
@@ -17154,7 +17051,7 @@
         "form": "Ort",
         "lemma": "Ort",
         "pos": "noun",
-        "gloss_hint": "location"
+        "gloss_hint": null
       },
       {
         "form": "Aufzug",
@@ -17163,7 +17060,11 @@
         "gloss_hint": "elevator"
       }
     ],
-    "text_linked": "Momentan befinden sich drei Grubenarbeiter vor [[Ort|nouns/Ort_lokalisierbarer#1]] und zwölf im [[Aufzug|nouns/Aufzug#1]]."
+    "text_linked": "Momentan befinden sich drei Grubenarbeiter vor [[Ort|nouns/Ort_1]] und zwölf im [[Aufzug|nouns/Aufzug#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "9631481b"
+    }
   },
   "b99b5d78e6": {
     "text": "Nach dem Essen trinke ich immer einen Cappuccino oder einen Espresso.",
@@ -21541,7 +21442,11 @@
         "gloss_hint": "placed"
       }
     ],
-    "text_linked": "[[Auf|prepositions/auf]] [[seinen|pronouns/sein]] [[Kopf|nouns/Kopf#1]] [[ist|verbs/sein]] [[ein|determiners/ein]] [[Preis|nouns/Preis#1]] [[ausgesetzt|verbs/aussetzen]]."
+    "text_linked": "[[Auf|prepositions/auf]] [[seinen|pronouns/sein]] [[Kopf|nouns/Kopf#1]] [[ist|verbs/sein]] [[ein|determiners/ein]] [[Preis|nouns/Preis#1]] [[ausgesetzt|verbs/aussetzen]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "5c96721f"
+    }
   },
   "b9ca3473e5": {
     "text": "Grube befindet sich unweit der Ostsee.",
@@ -21889,7 +21794,7 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Berühmt wurde er [[mit|adverbs/mit]] einem [[Buch|nouns/Buch#1]], [[das|pronouns/das_[1]]] [[bis|particles/bis]] weit ins 20. [[Jahrhundert|nouns/Jahrhundert#1]] hinein unsere [[Sicht|nouns/Sicht#1]] [[auf|prepositions/auf]] [[den|pronouns/der_nominativ]] Siebenjährigen [[Krieg|nouns/Krieg#1]] [[beeinflusst|verbs/beeinflussen#1]] [[hat|verbs/haben]] [[und|conjunctions/und]] [[damit|adverbs/damit]] [[auch|adverbs/auch]] das [[Bild|nouns/Bild#2]] [[des|pronouns/der_nominativ]] Preußenkönigs Friedrich II., [[der|pronouns/der_nominativ]] [[für|prepositions/für]] Archenholtz [[selbstverständlich|adjectives/selbstverständlich]] [[»der|determiners/der]] [[Große«|nouns/Große#2]] [[hieß|verbs/heißen_fahne]].“"
+    "text_linked": "„Berühmt wurde er [[mit|adverbs/mit]] einem [[Buch|nouns/Buch#1]], [[das|pronouns/das_[1]]] [[bis|particles/bis]] weit ins 20. [[Jahrhundert|nouns/Jahrhundert#1]] hinein unsere [[Sicht|nouns/Sicht#1]] [[auf|prepositions/auf]] [[den|pronouns/der_nominativ]] Siebenjährigen [[Krieg|nouns/Krieg#1]] [[beeinflusst|verbs/beeinflussen#1]] [[hat|verbs/haben]] [[und|conjunctions/und]] [[damit|adverbs/damit]] [[auch|adverbs/auch]] das [[Bild|nouns/Bild#2]] [[des|pronouns/der_nominativ]] Preußenkönigs Friedrich II., [[der|pronouns/der_nominativ]] [[für|prepositions/für]] Archenholtz [[selbstverständlich|adjectives/selbstverständlich]] [[»der|determiners/der]] [[Große«|nouns/Große]] [[hieß|verbs/heißen_fahne]].“"
   },
   "b9cdd07a19": {
     "text": "kein Schwein",
@@ -24416,7 +24321,7 @@
         "gloss_hint": "stone"
       }
     ],
-    "text_linked": "„Die Tempelstadt Angkor Wat [[aus|prepositions/aus]] [[dem|determiners/der]] zwölften [[Jahrhundert|nouns/Jahrhundert#1]] [[ist|verbs/sein#2]] [[mit|prepositions/mit#1]] [[einzigartigen|adjectives/einzigartig#1]] Reliefs [[bedeckt|verbs/bedeckt_partizip#1]]. [[Doch|conjunctions/doch#1]] [[der|determiners/der]] [[Zahn|nouns/Zahn#1]] der [[Zeit|nouns/Zeit#1]] zerfrisst [[den|determiners/der]] [[Stein|nouns/Stein#2]].“"
+    "text_linked": "„Die Tempelstadt Angkor Wat [[aus|prepositions/aus]] [[dem|determiners/der]] zwölften [[Jahrhundert|nouns/Jahrhundert#1]] [[ist|verbs/sein#2]] [[mit|prepositions/mit#1]] [[einzigartigen|adjectives/einzigartig#1]] Reliefs bedeckt. [[Doch|conjunctions/doch#1]] [[der|determiners/der]] [[Zahn|nouns/Zahn#1]] der [[Zeit|nouns/Zeit#1]] zerfrisst [[den|determiners/der]] [[Stein|nouns/Stein#2]].“"
   },
   "b9e28bae7e": {
     "text": "Abhilfe bei Sodbrennen schaffen neutralisierende Mittel wie doppelkohlensaures Natron und Magnesia.",
@@ -24948,45 +24853,15 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Was",
-        "lemma": "was",
-        "pos": "pronoun",
-        "gloss_hint": "what"
-      },
-      {
         "form": "macht",
         "lemma": "machen",
         "pos": "verb",
-        "gloss_hint": "power"
-      },
-      {
-        "form": "denn",
-        "lemma": "denn",
-        "pos": "adverb",
-        "gloss_hint": "then"
-      },
-      {
-        "form": "so",
-        "lemma": "so",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "ein",
-        "lemma": "ein",
-        "pos": "pronoun",
-        "gloss_hint": "one (indefinite)"
+        "gloss_hint": "do"
       },
       {
         "form": "IOC-Mitglied",
         "lemma": "IOC-Mitglied",
         "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "Es",
-        "lemma": "es",
-        "pos": "pronoun",
         "gloss_hint": null
       },
       {
@@ -25024,18 +24899,6 @@
         "lemma": "Beherbergung",
         "pos": "noun",
         "gloss_hint": "accommodation"
-      },
-      {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "den",
-        "lemma": "der",
-        "pos": "determiner",
-        "gloss_hint": null
       },
       {
         "form": "nobelsten",
@@ -25224,7 +25087,11 @@
         "gloss_hint": "be set for life"
       }
     ],
-    "text_linked": "„[[Was|pronouns/was#1]] [[macht|verbs/machen]] [[denn|adverbs/denn#2]] so [[ein|pronouns/ein#2]] IOC-Mitglied? [[Es|pronouns/es]] [[besucht|verbs/besuchen#1]] [[kandidierende|verbs/kandidieren]] Möchtegern-Olympiastädte. [[Kostenloses|adjectives/kostenlos]] [[Reisen|nouns/Reisen#1]], Beherbergung [[in|prepositions/in]] [[den|determiners/der]] [[nobelsten|adjectives/nobel]] [[Häusern|nouns/Haus]], festliche [[Anlässe|nouns/Anlass]], piekfeine [[Verpflegung|nouns/Verpflegung#1]], [[Geschenke|nouns/Geschenk]] (keine [[Bestechung|nouns/Bestechung]] [[versteht|verbs/verstehen_gesprochenes#2]] [[sich|pronouns/sich#1]]) [[entgegennehmen|verbs/entgegennehmen]] [[und|conjunctions/und]] [[schlussendlich|adverbs/schlussendlich]] eine [[fast|adverbs/fast]] unkündbare [[Anstellung|nouns/Anstellung]] [[auf|prepositions/auf]] [[Lebzeiten|nouns/Lebenszeit]] geniessen… Keine [[Frage|nouns/Frage]], [[wer|pronouns/wer_derjenige#1]] [[es|pronouns/es]] in [[dieses|pronouns/dies]] [[Gremium|nouns/Gremium#1]] [[schafft|verbs/schaffen_etwas]], [[hat|verbs/haben#1]] ausgesorgt.“"
+    "text_linked": "„[[Was|pronouns/was#1]] [[macht|verbs/machen]] [[denn|adverbs/denn#2]] so [[ein|pronouns/ein#2]] IOC-Mitglied? [[Es|pronouns/es]] [[besucht|verbs/besuchen#1]] [[kandidierende|verbs/kandidieren]] Möchtegern-Olympiastädte. [[Kostenloses|adjectives/kostenlos]] [[Reisen|nouns/Reisen#1]], Beherbergung [[in|prepositions/in]] [[den|determiners/der]] [[nobelsten|adjectives/nobel]] [[Häusern|nouns/Haus]], festliche [[Anlässe|nouns/Anlass]], piekfeine [[Verpflegung|nouns/Verpflegung#1]], [[Geschenke|nouns/Geschenk]] (keine [[Bestechung|nouns/Bestechung]] [[versteht|verbs/verstehen_gesprochenes#2]] [[sich|pronouns/sich#1]]) [[entgegennehmen|verbs/entgegennehmen]] [[und|conjunctions/und]] [[schlussendlich|adverbs/schlussendlich]] eine [[fast|adverbs/fast]] unkündbare [[Anstellung|nouns/Anstellung]] [[auf|prepositions/auf]] [[Lebzeiten|nouns/Lebenszeit]] geniessen… Keine [[Frage|nouns/Frage]], [[wer|pronouns/wer_derjenige#1]] [[es|pronouns/es]] in [[dieses|pronouns/dies]] [[Gremium|nouns/Gremium#1]] [[schafft|verbs/schaffen_etwas]], [[hat|verbs/haben#1]] ausgesorgt.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "e9d9946c"
+    }
   },
   "b9e6116655": {
     "text": "„Und auch ich traute mich nicht, einfach mal bei meinen Cousins zu fragen, wie es Tantchen denn so geht.“",

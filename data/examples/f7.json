@@ -1725,7 +1725,10 @@
       "agglutinierend",
       "Nominalflexion"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "f716273832": {
     "text": "„Der heutige Format-R’n’B hat mit dem erdigen Soul der 70er kaum mehr etwas zu tun.“",
@@ -3513,7 +3516,11 @@
         "gloss_hint": "have"
       }
     ],
-    "text_linked": "„Die jungen Eidechsen [[saugen|verbs/saugen#1]] niemals an ihren Müttern. Die Mütter [[haben|verbs/haben#1]] deßwegen auch keine Brüste.“"
+    "text_linked": "„Die jungen Eidechsen [[saugen|verbs/saugen#1]] niemals an ihren Müttern. Die Mütter [[haben|verbs/haben#1]] deßwegen auch keine Brüste.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "0d2111ec"
+    }
   },
   "f72a9a6a43": {
     "text": "Ich liebe!",
@@ -6968,42 +6975,29 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "rarely",
-        "lemma": "rarely",
-        "pos": "adjective",
-        "gloss_hint": "scarce | infrequent | rare"
-      },
-      {
-        "form": "more",
-        "lemma": "more",
+        "form": "Autobahn",
+        "lemma": "Autobahn",
         "pos": "noun",
-        "gloss_hint": "more | majority"
+        "gloss_hint": null
       },
       {
-        "form": "still",
-        "lemma": "still",
-        "pos": "adverb",
-        "gloss_hint": "furthermore | yet (future) | still (present) | not even | even so"
+        "form": "fahre",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": "drive"
       },
       {
-        "form": "on",
-        "lemma": "on",
-        "pos": "preposition",
-        "gloss_hint": "on | onto | face down | facing down | on surface | to surface | at (event) | to (event) | at (below) | to (below) | in (language) | for (duration)"
-      },
-      {
-        "form": "than",
-        "lemma": "than",
-        "pos": "conjunction",
-        "gloss_hint": "than | when | while | after | before | as (adverbial) | as (appositive)"
-      },
-      {
-        "form": "only",
-        "lemma": "only",
-        "pos": "particle",
-        "gloss_hint": "only | solely | merely | just"
+        "form": "Stundenkilometer",
+        "lemma": "Stundenkilometer",
+        "pos": "noun",
+        "gloss_hint": null
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "2bacaf34"
+    },
+    "text_linked": "„Auf der [[Autobahn|nouns/Autobahn]] [[fahre|verbs/fahren#1]] ich nur noch selten mehr als 120 Stundenkilometer.“"
   },
   "f74d1f37b7": {
     "text": "„Doch aktuelle Umfragewerte untermauern die Brisanz der Entwicklung: 90 Prozent der Amerikaner bezeichnen sich als gläubig, mehr als 60 Prozent halten die biblische Schöpfungsgeschichte für buchstäblich wahr. Darunter finden sich viele evangelikale Christen, die Abtreibung und Homosexuellenehe strikt ablehnen und angewidert das Gesicht verziehen, wenn es heißt, sie seien evolutionsbiologisch mit Affen verwandt.“",
@@ -8584,7 +8578,7 @@
   },
   "f75dd9bc74": {
     "text": "Hier zieht es ganz fürchterlich, mach bitte die Tür zu.",
-    "translation": "It's terribly cold here, please close the door.",
+    "translation": "There's a terrible draft here, please close the door.",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
@@ -8592,22 +8586,10 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Hier",
-        "lemma": "hier",
-        "pos": "adverb",
-        "gloss_hint": "here"
-      },
-      {
         "form": "zieht",
         "lemma": "ziehen",
         "pos": "verb",
-        "gloss_hint": "to pull"
-      },
-      {
-        "form": "es",
-        "lemma": "es",
-        "pos": "pronoun",
-        "gloss_hint": null
+        "gloss_hint": "draft"
       },
       {
         "form": "ganz",
@@ -8628,31 +8610,17 @@
         "gloss_hint": "to make/do"
       },
       {
-        "form": "bitte",
-        "lemma": "bitte",
-        "pos": "particle",
-        "gloss_hint": "please"
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
         "form": "Tür",
         "lemma": "Tür",
         "pos": "noun",
         "gloss_hint": "door"
-      },
-      {
-        "form": "zu",
-        "lemma": "zu",
-        "pos": "particle",
-        "gloss_hint": null
       }
     ],
-    "text_linked": "[[Hier|adverbs/hier#1]] [[zieht|verbs/ziehen]] [[es|pronouns/es]] [[ganz|adjectives/ganz]] [[fürchterlich|adjectives/fürchterlich#1]], [[mach|verbs/machen]] [[bitte|particles/bitte#1]] [[die|determiners/die]] [[Tür|nouns/Tür#1]] [[zu|particles/zu_drückt]]."
+    "text_linked": "Hier [[zieht|verbs/ziehen#11]] es [[ganz|adjectives/ganz]] [[fürchterlich|adjectives/fürchterlich#1]], [[mach|verbs/machen]] bitte die [[Tür|nouns/Tür#1]] zu.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "b6184d09"
+    }
   },
   "f75ddfddc4": {
     "text": "… Wobei ich sagen muss, dass es auch Ausnahmen gibt.",
@@ -10206,22 +10174,10 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Sie",
-        "lemma": "sie",
-        "pos": "noun",
-        "gloss_hint": "trumpet solo"
-      },
-      {
         "form": "verstehen",
         "lemma": "verstehen",
         "pos": "verb",
-        "gloss_hint": "hear"
-      },
-      {
-        "form": "es",
-        "lemma": "es",
-        "pos": "pronoun",
-        "gloss_hint": null
+        "gloss_hint": "master"
       },
       {
         "form": "andere",
@@ -10236,19 +10192,16 @@
         "gloss_hint": "work"
       },
       {
-        "form": "zu",
-        "lemma": "zu",
-        "pos": "particle",
-        "gloss_hint": null
-      },
-      {
         "form": "lassen",
         "lemma": "lassen",
         "pos": "verb",
         "gloss_hint": "allow"
       }
     ],
-    "text_linked": "Sie [[verstehen|verbs/verstehen_gesprochenes#1]] [[es|pronouns/es]], andere [[arbeiten|verbs/arbeiten#1]] [[zu|particles/zu_drückt]] [[lassen|verbs/lassen#3]]."
+    "text_linked": "Sie [[verstehen|verbs/verstehen_gesprochenes#12]] es, andere [[arbeiten|verbs/arbeiten#1]] zu [[lassen|verbs/lassen#3]].",
+    "_proofread": {
+      "translation": true
+    }
   },
   "f76f905e97": {
     "text": "„Was bedeutet das für Frau Thies? Als Deutsche ist sie weniger risikobereit und tendiert eher zur Einstellung von Frau Fuchs, von der zwar keine Höhenflüge zu erwarten sind, doch die der Klinik vermutlich eher treu bleiben wird.“",
@@ -16265,7 +16218,11 @@
         "gloss_hint": "steep"
       }
     ],
-    "text_linked": "[[Ich|pronouns/ich]] [[lasse|verbs/lassen#3]] [[den|determiners/der]] [[Tee|nouns/Tee_koffeinhaltiges#1]] [[drei|numerals/drei#1]] [[Minuten|nouns/Minute#1]] [[ziehen|verbs/ziehen#5]]."
+    "text_linked": "[[Ich|pronouns/ich]] [[lasse|verbs/lassen#3]] [[den|determiners/der]] [[Tee|nouns/Tee_koffeinhaltiges#1]] [[drei|numerals/drei#1]] [[Minuten|nouns/Minute#1]] [[ziehen|verbs/ziehen#5]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "9843dedf"
+    }
   },
   "f7b4a28a47": {
     "text": "am Morgen Fango, am Abend Tango",
@@ -17652,7 +17609,7 @@
         "gloss_hint": "amount of money"
       }
     ],
-    "text_linked": "Er [[vergalt|verbs/vergessen_partizip]] [[mit|prepositions/mit#1]] [[die|pronouns/die#1]] [[Anstrengung|nouns/Anstrengung#1]] [[durch|prepositions/durch#2]] [[einen|determiners/ein]] [[großzügigen|adjectives/großzügig#1]] Geldbetrag."
+    "text_linked": "Er [[vergalt|verbs/vergessen_sich]] [[mit|prepositions/mit#1]] [[die|pronouns/die#1]] [[Anstrengung|nouns/Anstrengung#1]] [[durch|prepositions/durch#2]] [[einen|determiners/ein]] [[großzügigen|adjectives/großzügig#1]] Geldbetrag."
   },
   "f7c0f1f2c7": {
     "text": "„Auf jeden Fall sollte man in einem Schwimmbecken mehr treiben als schwimmen, sich drehen und wenden, um die Wirbelsäule zu lockern.“",
