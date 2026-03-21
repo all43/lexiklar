@@ -155,29 +155,25 @@
           </li>
           <!-- Sense-level synonyms & antonyms -->
           <li v-if="getSenseSynonyms(sense).length || getSenseAntonyms(sense).length" class="sense-syn-ant-item">
-            <div class="item-content">
-              <div class="item-inner sense-syn-ant-inner">
-                <div v-if="getSenseSynonyms(sense).length" class="sense-syn-row">
-                  <span class="sense-syn-label">≈</span>
-                  <f7-chip
-                    v-for="r in getSenseSynonyms(sense)"
-                    :key="r.file"
-                    :text="r.lemma"
-                    class="syn-chip"
-                    @click="f7router.navigate(`/word/${r.file}/`)"
-                  />
-                </div>
-                <div v-if="getSenseAntonyms(sense).length" class="sense-syn-row">
-                  <span class="sense-syn-label">≠</span>
-                  <f7-chip
-                    v-for="r in getSenseAntonyms(sense)"
-                    :key="r.file"
-                    :text="r.lemma"
-                    class="ant-chip"
-                    @click="f7router.navigate(`/word/${r.file}/`)"
-                  />
-                </div>
-              </div>
+            <div v-if="getSenseSynonyms(sense).length" class="sense-syn-row">
+              <span class="sense-syn-label">≈</span>
+              <f7-chip
+                v-for="r in getSenseSynonyms(sense)"
+                :key="r.file"
+                :text="r.lemma"
+                class="syn-chip"
+                @click="f7router.navigate(`/word/${r.file}/`)"
+              />
+            </div>
+            <div v-if="getSenseAntonyms(sense).length" class="sense-syn-row">
+              <span class="sense-syn-label">≠</span>
+              <f7-chip
+                v-for="r in getSenseAntonyms(sense)"
+                :key="r.file"
+                :text="r.lemma"
+                class="ant-chip"
+                @click="f7router.navigate(`/word/${r.file}/`)"
+              />
             </div>
           </li>
         </template>
