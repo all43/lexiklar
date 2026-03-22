@@ -1826,6 +1826,18 @@ async function main(): Promise<void> {
         continue;
       }
 
+      // Skip entries where ALL senses have corrupt/markup glosses (Wiktionary parsing
+      // artifacts like "==== Worttrennung ====" captured as gloss text).
+      const CORRUPT_GLOSS_RE = /^={2,}|^\{\{|^\[\[Kategorie:/;
+      data.senses = data.senses.filter(
+        (s) => !s.gloss || !CORRUPT_GLOSS_RE.test(s.gloss),
+      );
+      if (data.senses.length === 0) {
+        state.entries[stateKey] = { hash, file: "__form-of-skip__" };
+        skipped++;
+        continue;
+      }
+
       // Extract expressions and proverbs (word-level, not sense-level)
       const expressionIds = deduplicateExpressions(extractExpressions(parsed));
       if (expressionIds.length > 0) data.expression_ids = expressionIds;
