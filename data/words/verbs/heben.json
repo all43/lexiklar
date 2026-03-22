@@ -20,7 +20,14 @@
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To bring to a greater height",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "raise",
+        "elevate",
+        "hoist",
+        "pick up"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "steigern",
@@ -34,7 +41,14 @@
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To increase or raise",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "raise",
+        "raise up",
+        "boost",
+        "amplify"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "etwas halten, etwas festhalten",
@@ -50,7 +64,13 @@
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To hold or grasp something",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "grip",
+        "clutch",
+        "grasp"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "halten, ausdauern, in einem bestimmten Zustand bleiben",
@@ -66,7 +86,13 @@
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To hold, endure, or remain in a particular state",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "withstand",
+        "tolerate",
+        "sustain"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
     }
   ],
   "sounds": [
@@ -171,5 +197,10 @@
     "source_hash": "0a8b748e7c65a797",
     "generated_at": "2026-03-18"
   },
-  "zipf": 4.1
+  "zipf": 4.1,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }

@@ -79,7 +79,14 @@
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To cause plants to sprout or put forth growth",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "promote growth",
+        "stimulate growth",
+        "spur growth",
+        "cause to sprout"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "sich passiv mit der Strömung fortbewegen",
@@ -169,7 +176,14 @@
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To engage in sexual intercourse",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "make love",
+        "copulate",
+        "mate",
+        "breed"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "(Technik) in Bewegung versetzen oder halten",
@@ -306,5 +320,10 @@
     "source_hash": "9536ea4579642367",
     "generated_at": "2026-03-18"
   },
-  "zipf": 4.26
+  "zipf": 4.26,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }

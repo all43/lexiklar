@@ -55,7 +55,13 @@
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "The male craftsman or expert who has achieved master qualification in their trade (masculine form).",
-      "gloss_en_full_model": "claude-sonnet-4-6"
+      "gloss_en_full_model": "claude-sonnet-4-6",
+      "synonyms_en": [
+        "craftsman",
+        "expert",
+        "skilled worker"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
     },
     {
       "gloss": "Bezeichnung und Anrede für eine Person mit besonderen Fähigkeiten",
@@ -372,5 +378,10 @@
     "source_hash": "9083110adf849898",
     "generated_at": "2026-03-09"
   },
-  "zipf": 4.84
+  "zipf": 4.84,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }

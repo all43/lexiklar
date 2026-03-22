@@ -91,7 +91,13 @@
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A mathematical structure similar to the integers, consisting of a set with two operations (addition and multiplication) satisfying certain axioms.",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "mathematical domain",
+        "ring without zero divisors",
+        "algebraic domain"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
     }
   ],
   "sounds": [
@@ -884,6 +890,7 @@
   "zipf": 4.82,
   "_proofread": {
     "gloss_en": true,
-    "gloss_en_full": true
+    "gloss_en_full": true,
+    "synonyms_en": true
   }
 }
