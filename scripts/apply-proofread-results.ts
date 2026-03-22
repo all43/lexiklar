@@ -19,7 +19,8 @@
  *     {"type": "annotation_replace", "id": "exId", "annotations": [...]},
  *     {"type": "annotation_update", "id": "exId", "form": "word", "updates": {"lemma": "..."}},
  *     {"type": "annotation_remove", "id": "exId", "form": "word"},
- *     {"type": "word_field_fix", "word": "nouns/Foo", "field": "plural_form", "value": "..."}
+ *     {"type": "word_field_fix", "word": "nouns/Foo", "field": "plural_form", "value": "..."},
+ *     {"type": "synonyms_en_fix", "word": "nouns/Foo", "sense": 0, "value": ["synonym1", "synonym2"]}
  *   ]
  * }
  *
@@ -115,13 +116,22 @@ interface WordFieldFix {
   form?: never;
 }
 
+interface SynonymsEnFix {
+  type: "synonyms_en_fix";
+  word: string;
+  sense: number;
+  value: string[];
+  detail?: string;
+}
+
 type Fix =
   | GlossFix
   | TranslationFix
   | AnnotationReplaceFix
   | AnnotationUpdateFix
   | AnnotationRemoveFix
-  | WordFieldFix;
+  | WordFieldFix
+  | SynonymsEnFix;
 
 interface GrammarOverride {
   type: "grammar_override";
@@ -196,10 +206,13 @@ for (const relPath of wordGlossesOk) {
   const translatableSenses = (data.senses || []).filter((s: Sense) => s.gloss);
   const allSensesHaveGlossEn = translatableSenses.every((s: Sense) => s.gloss_en);
   const allSensesHaveGlossEnFull = translatableSenses.every((s: Sense) => s.gloss_en_full);
+  const sensesWithSynonymsEn = translatableSenses.filter((s: Sense) => s.synonyms_en?.length);
+  const allSynonymsEnProofread = sensesWithSynonymsEn.length > 0;
 
   const proofread = { ...(data._proofread || {}) };
   if (allSensesHaveGlossEn) proofread.gloss_en = true;
   if (allSensesHaveGlossEnFull) proofread.gloss_en_full = true;
+  if (allSynonymsEnProofread) proofread.synonyms_en = true;
 
   if (!DRY_RUN) {
     writeFileSync(filePath, JSON.stringify({ ...data, _proofread: proofread }, null, 2) + "\n");
@@ -232,6 +245,28 @@ for (const fix of glossFixes) {
   glossFixMark++;
 }
 if (glossFixMark > 0) console.log(`  Applied ${glossFixMark} gloss fixes`);
+
+// -- Synonyms-EN fixes --------------------------------------------------------
+// Issues with type "synonyms_en_fix" carry { word, sense, value } and replace
+// the synonyms_en array on the specified sense.
+
+const synonymsEnFixes = (results.fixes || []).filter((f): f is SynonymsEnFix => f.type === "synonyms_en_fix");
+let synonymsEnFixMark = 0;
+for (const fix of synonymsEnFixes) {
+  if (!fix.word || fix.sense == null || !fix.value) continue;
+  const filePath = join(WORDS_DIR, `${fix.word}.json`);
+  if (!existsSync(filePath)) { console.warn(`  Warning: word file not found: ${fix.word}`); continue; }
+  let data: Word;
+  try { data = JSON.parse(readFileSync(filePath, "utf-8")) as Word; } catch { continue; }
+  if (!data.senses || data.senses.length <= fix.sense) { console.warn(`  Warning: no sense ${fix.sense} in ${fix.word}`); continue; }
+  const sense = data.senses[fix.sense] as unknown as Record<string, unknown>;
+  const old = sense.synonyms_en;
+  sense.synonyms_en = fix.value;
+  if (!DRY_RUN) writeFileSync(filePath, JSON.stringify(data, null, 2) + "\n");
+  console.log(`  ${DRY_RUN ? "[dry] " : ""}Synonyms-EN fix ${fix.word} sense ${fix.sense}: ${JSON.stringify(old)} → ${JSON.stringify(fix.value)}`);
+  synonymsEnFixMark++;
+}
+if (synonymsEnFixMark > 0) console.log(`  Applied ${synonymsEnFixMark} synonyms_en fixes`);
 
 // -- Translation fixes --------------------------------------------------------
 // issues with type "translation_fix" carry { id, value } and patch the example's translation field.

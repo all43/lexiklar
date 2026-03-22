@@ -68,10 +68,10 @@ const SHOW_RAW = args.includes("--show-raw");
 
 // --skip-proofread [aspects]  — skip words where listed aspects are marked+valid
 // --mark-proofread [aspects]  — after check, write _proofread flags to word files
-// aspects: comma-separated subset of: gloss_en,gloss_en_full,examples_owned (or "all")
+// aspects: comma-separated subset of: gloss_en,gloss_en_full,synonyms_en,examples_owned (or "all")
 // Word-level aspects (stored in word file _proofread)
 // Example-level aspects (stored in example entry _proofread, written to shards)
-const ALL_ASPECTS = ["gloss_en", "gloss_en_full", "examples_owned", "ex_translation", "ex_annotations"] as const;
+const ALL_ASPECTS = ["gloss_en", "gloss_en_full", "synonyms_en", "examples_owned", "ex_translation", "ex_annotations"] as const;
 type ProofreadAspect = typeof ALL_ASPECTS[number];
 
 function parseAspects(flagName: string): ProofreadAspect[] | null {
@@ -150,6 +150,7 @@ function validProofreadAspects(data: Word): Set<string> {
   const valid = new Set<string>();
   if (pr.gloss_en === true) valid.add("gloss_en");
   if (pr.gloss_en_full === true) valid.add("gloss_en_full");
+  if (pr.synonyms_en === true) valid.add("synonyms_en");
   if (pr.examples_owned != null && pr.examples_owned === exampleIdsHash(data)) {
     valid.add("examples_owned");
   }
@@ -531,6 +532,7 @@ if (MARK_PROOFREAD) {
       for (const aspect of wordAspects) {
         if (aspect === "gloss_en") proofread.gloss_en = true;
         else if (aspect === "gloss_en_full") proofread.gloss_en_full = true;
+        else if (aspect === "synonyms_en") proofread.synonyms_en = true;
         else if (aspect === "examples_owned") proofread.examples_owned = exampleIdsHash(fileData);
       }
 

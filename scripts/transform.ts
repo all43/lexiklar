@@ -1398,6 +1398,7 @@ function mergeWithExisting(newData: TransformOutput, existingPath: string): Tran
     if (sourceHashChanged) {
       delete proofread.gloss_en;
       delete proofread.gloss_en_full;
+      delete proofread.synonyms_en;
     }
 
     // examples_owned is tied to the set of owned example IDs.

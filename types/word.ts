@@ -29,6 +29,7 @@ export interface WordMeta {
 export interface ProofreadFlags {
   gloss_en?: true;
   gloss_en_full?: true;
+  synonyms_en?: true;
   examples_owned?: string;
 }
 

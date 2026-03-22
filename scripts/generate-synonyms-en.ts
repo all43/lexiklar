@@ -83,13 +83,41 @@ interface SenseInfo {
   idx: number;
   gloss_en: string;
   gloss_en_full: string | null;
+  /** Wiktionary German synonyms that exist in our dataset, with their gloss_en */
+  wiktionary_synonyms?: { word: string; gloss_en: string }[];
+}
+
+// ============================================================
+// Build lookup: German word → best gloss_en (for resolving Wiktionary synonyms)
+// ============================================================
+
+/** Map lowercase German word → gloss_en values from our dataset */
+function buildGlossLookup(): Map<string, string[]> {
+  const lookup = new Map<string, string[]>();
+  for (const posDir of POS_DIRS) {
+    const dir = join(WORDS_DIR, posDir);
+    if (!existsSync(dir)) continue;
+    for (const file of readdirSync(dir)) {
+      if (!file.endsWith(".json")) continue;
+      const data = JSON.parse(readFileSync(join(dir, file), "utf-8")) as Word;
+      const glosses = (data.senses || [])
+        .map((s: Sense) => s.gloss_en)
+        .filter((g): g is string => !!g);
+      if (glosses.length > 0) {
+        const key = data.word.toLowerCase();
+        const existing = lookup.get(key) || [];
+        lookup.set(key, [...existing, ...glosses]);
+      }
+    }
+  }
+  return lookup;
 }
 
 // ============================================================
 // Collect words needing synonyms
 // ============================================================
 
-function collectJobs(): WordJob[] {
+function collectJobs(glossLookup: Map<string, string[]>): WordJob[] {
   const jobs: WordJob[] = [];
 
   for (const posDir of POS_DIRS) {
@@ -112,10 +140,21 @@ function collectJobs(): WordJob[] {
         // Skip if already has synonyms_en (unless --reset)
         if (s.synonyms_en?.length && !RESET) continue;
 
+        // Resolve Wiktionary German synonyms to English via glossLookup
+        const wiktSyns: SenseInfo["wiktionary_synonyms"] = [];
+        for (const syn of (s.synonyms || []) as string[]) {
+          const glosses = glossLookup.get(syn.toLowerCase());
+          if (glosses?.length) {
+            // Include first gloss_en — gives the LLM context on what this synonym means
+            wiktSyns.push({ word: syn, gloss_en: glosses[0] });
+          }
+        }
+
         senses.push({
           idx: i,
           gloss_en: s.gloss_en,
           gloss_en_full: s.gloss_en_full ?? null,
+          wiktionary_synonyms: wiktSyns.length > 0 ? wiktSyns : undefined,
         });
       }
 
@@ -159,12 +198,19 @@ Rules:
 - Do NOT repeat a term across different senses of the SAME word
 - Prefer terms where this German word is the best or most natural translation
 - Return empty array [] if the existing translations already cover the most natural search terms
+- When German synonyms are provided, use them as hints — but ONLY include their English translations if they are genuine synonyms for THIS specific sense. Wiktionary often lists related-but-not-synonymous words (e.g. "table" is related to "chair" but not a synonym). Filter these out.
 - Return valid JSON`;
+
+function formatWiktSyns(syns: SenseInfo["wiktionary_synonyms"]): string {
+  if (!syns?.length) return "";
+  return ` [DE synonyms: ${syns.map((s) => `${s.word} ("${s.gloss_en}")`).join(", ")}]`;
+}
 
 function buildMultiSensePrompt(job: WordJob): string {
   const senses = job.senses.map((s) => {
     let line = `  ${s.idx + 1}. "${s.gloss_en}"`;
     if (s.gloss_en_full) line += ` — ${s.gloss_en_full}`;
+    line += formatWiktSyns(s.wiktionary_synonyms);
     return line;
   }).join("\n");
   return `${job.word} (${job.pos}):\n${senses}\n\nReturn: { "${job.word}": { "1": ["term1"], "2": [] } }`;
@@ -175,6 +221,7 @@ function buildBatchPrompt(jobs: WordJob[]): string {
     const s = j.senses[0];
     let line = `${j.word} (${j.pos}): "${s.gloss_en}"`;
     if (s.gloss_en_full) line += ` — ${s.gloss_en_full}`;
+    line += formatWiktSyns(s.wiktionary_synonyms);
     return line;
   }).join("\n");
   return `${lines}\n\nReturn: { "word": ["term1", "term2"], ... }`;
@@ -310,8 +357,12 @@ async function runPool<T>(items: T[], concurrency: number, fn: (item: T) => Prom
 // ============================================================
 
 async function main(): Promise<void> {
+  console.log(`Building gloss lookup for Wiktionary synonym resolution...`);
+  const glossLookup = buildGlossLookup();
+  console.log(`  ${glossLookup.size} lemmas with gloss_en in dataset`);
+
   console.log(`Collecting words needing synonyms_en...`);
-  let jobs = collectJobs();
+  let jobs = collectJobs(glossLookup);
 
   if (JOB_LIMIT > 0) jobs = jobs.slice(0, JOB_LIMIT);
 
