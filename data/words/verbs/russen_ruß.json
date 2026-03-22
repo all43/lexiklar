@@ -2,13 +2,13 @@
   "word": "russen",
   "pos": "verb",
   "etymology_number": null,
-  "auxiliary": null,
+  "auxiliary": "haben",
   "separable": false,
   "prefix": null,
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "==== Worttrennung ====\n:rus·sen\nÄhnliche Wörter (Deutsch):\n:Anagramme: Nurses, unsres",
+      "gloss": "Ruß absondern, rußen",
       "gloss_en": "soot up",
       "tags": [],
       "example_ids": [],
@@ -27,15 +27,15 @@
   "sounds": [],
   "conjugation_class": "weak",
   "conjugation": {
-    "present": {},
-    "preterite": {},
-    "subjunctive1": {},
-    "subjunctive2": {},
-    "imperative": {},
-    "participle1": null,
-    "participle2": null
+    "present": { "ich": "russe", "du": "russt", "er": "russt", "wir": "russen", "ihr": "russt", "sie": "russen" },
+    "preterite": { "ich": "russte", "du": "russtest", "er": "russte", "wir": "russten", "ihr": "russtet", "sie": "russten" },
+    "subjunctive1": { "ich": "russe", "du": "russest", "er": "russe", "wir": "russen", "ihr": "russet", "sie": "russen" },
+    "subjunctive2": { "ich": "russte", "du": "russtest", "er": "russte", "wir": "russten", "ihr": "russtet", "sie": "russten" },
+    "imperative": { "du": "russ!", "ihr": "russt!", "Sie": "russen Sie!" },
+    "participle1": "russend",
+    "participle2": "gerusst"
   },
-  "past_participle": null,
+  "past_participle": "gerusst",
   "_meta": {
     "source_hash": "70b511c20ff59878",
     "generated_at": "2026-03-18"
@@ -43,5 +43,10 @@
   "zipf": 4.31,
   "_overrides": {
     "conjugation_class": "weak"
+  },
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
   }
 }
