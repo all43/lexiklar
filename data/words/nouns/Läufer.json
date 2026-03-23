@@ -199,14 +199,14 @@
     },
     {
       "gloss": "ein in Mauerrichtung längs verbauter Stein",
-      "gloss_en": "header stone",
+      "gloss_en": "stretcher (masonry)",
       "tags": [],
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A stone laid lengthwise in the direction of the wall.",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_model": "manual",
+      "gloss_en_full": "A brick or stone laid lengthwise with its long side facing outward",
+      "gloss_en_full_model": "manual",
       "synonyms_en": [
         "wall stone",
         "lengthwise stone"
@@ -388,5 +388,10 @@
     "source_hash": "2cae59d4d9e0aed5",
     "generated_at": "2026-03-12"
   },
-  "zipf": 3.83
+  "zipf": 3.83,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }
