@@ -12,15 +12,13 @@
           v-for="item in words"
           :key="item.file"
           swipeout
-          :title="item.pluralDominant ? item.pluralForm : item.lemma"
+          :title="itemTitle(item)"
           :subtitle="item.glossEn?.[0] ?? ''"
           :link="`/word/${item.file}/`"
           @swipeout:deleted="removeFavorite(item.file)"
         >
           <template #after>
-            <span class="list-item-pos">{{ item.pos }}</span>
-            <f7-badge v-if="item.pluralDominant" color="orange" class="list-item-badge">Pl.</f7-badge>
-            <f7-badge v-else-if="item.gender" :color="genderColor(item.gender)" class="list-item-badge">{{ item.gender }}</f7-badge>
+            <WordListBadges :pos="item.pos" :gender="item.gender" :plural-dominant="item.pluralDominant" />
           </template>
           <f7-swipeout-actions right>
             <f7-swipeout-button delete>{{ t('favorites.remove') }}</f7-swipeout-button>
@@ -41,14 +39,19 @@ import { getRelatedWords } from "../utils/db.js";
 import { t } from "../js/i18n.js";
 import { getCached, setItem } from "../utils/storage.js";
 import type { SearchResult } from "../../types/search.js";
+import WordListBadges from "../components/WordListBadges.vue";
+import { wordListTitle } from "../components/WordListBadges.vue";
+import { SHOW_ARTICLES_KEY } from "./SettingsPage.vue";
 
 const FAVORITES_KEY = "lexiklar_favorites";
 
 export default defineComponent({
+  components: { WordListBadges },
   data() {
     return {
       words: [] as SearchResult[],
       loading: true,
+      showArticles: getCached(SHOW_ARTICLES_KEY) !== "0",
     };
   },
   computed: {
@@ -59,6 +62,7 @@ export default defineComponent({
   },
   methods: {
     async loadFavorites() {
+      this.showArticles = getCached(SHOW_ARTICLES_KEY) !== "0";
       this.loading = true;
       try {
         const fileKeys: string[] = JSON.parse(getCached(FAVORITES_KEY) || "[]");
@@ -76,6 +80,10 @@ export default defineComponent({
       this.loading = false;
     },
 
+    itemTitle(item: SearchResult): string {
+      return wordListTitle(item, this.showArticles);
+    },
+
     removeFavorite(file: string) {
       try {
         const favs: string[] = JSON.parse(getCached(FAVORITES_KEY) || "[]");
@@ -86,12 +94,6 @@ export default defineComponent({
       }
     },
 
-    genderColor(gender: string): string {
-      if (gender === "M") return "blue";
-      if (gender === "F") return "pink";
-      if (gender === "N") return "green";
-      return "";
-    },
   },
 });
 </script>

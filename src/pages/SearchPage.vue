@@ -28,7 +28,7 @@
               <span v-html="highlightPhraseWords(item.lemma)"></span>
             </template>
             <template #after>
-              <span class="list-item-pos">{{ item.pos }}</span>
+              <WordListBadges :pos="item.pos" />
             </template>
           </f7-list-item>
           <f7-list-button
@@ -58,9 +58,7 @@
             :virtual-list-index="item.index"
           >
             <template #after>
-              <span class="list-item-pos">{{ item.pos }}</span>
-              <f7-badge v-if="item.pluralDominant" color="orange" class="list-item-badge">Pl.</f7-badge>
-              <f7-badge v-else-if="item.gender" :color="genderColor(item.gender)" class="list-item-badge">{{ item.gender }}</f7-badge>
+              <WordListBadges :pos="item.pos" :gender="item.gender" :plural-dominant="item.pluralDominant" />
             </template>
           </f7-list-item>
         </ul>
@@ -83,8 +81,7 @@
             :link="`/word/${item.file}/`"
           >
             <template #after>
-              <span class="list-item-pos">{{ item.pos }}</span>
-              <f7-badge v-if="item.gender" :color="genderColor(item.gender)" class="list-item-badge">{{ item.gender }}</f7-badge>
+              <WordListBadges :pos="item.pos" :gender="item.gender" :plural-dominant="item.pluralDominant" />
             </template>
           </f7-list-item>
         </f7-list>
@@ -108,9 +105,7 @@
             :link="`/word/${item.file}/`"
           >
             <template #after>
-              <span class="list-item-pos">{{ item.pos }}</span>
-              <f7-badge v-if="item.pluralDominant" color="orange" class="list-item-badge">Pl.</f7-badge>
-              <f7-badge v-else-if="item.gender" :color="genderColor(item.gender)" class="list-item-badge">{{ item.gender }}</f7-badge>
+              <WordListBadges :pos="item.pos" :gender="item.gender" :plural-dominant="item.pluralDominant" />
             </template>
           </f7-list-item>
         </f7-list>
@@ -128,9 +123,7 @@
             :link="`/word/${item.file}/`"
           >
             <template #after>
-              <span class="list-item-pos">{{ item.pos }}</span>
-              <f7-badge v-if="item.pluralDominant" color="orange" class="list-item-badge">Pl.</f7-badge>
-              <f7-badge v-else-if="item.gender" :color="genderColor(item.gender)" class="list-item-badge">{{ item.gender }}</f7-badge>
+              <WordListBadges :pos="item.pos" :gender="item.gender" :plural-dominant="item.pluralDominant" />
             </template>
           </f7-list-item>
         </f7-list>
@@ -156,6 +149,8 @@ import { submitReport } from "../utils/report.js";
 import { SHOW_ARTICLES_KEY } from "./SettingsPage.vue";
 import { getCached, setItem } from "../utils/storage.js";
 import type { SearchResult } from "../../types/search.js";
+import WordListBadges from "../components/WordListBadges.vue";
+import { wordListTitle } from "../components/WordListBadges.vue";
 import {
   searchByLemma,
   searchByGlossEn,
@@ -199,6 +194,7 @@ function loadPhraseTerms(): PhraseTerm[] {
 }
 
 export default defineComponent({
+  components: { WordListBadges },
   data() {
     return {
       results: [] as SearchResultWithForm[],
@@ -263,19 +259,8 @@ export default defineComponent({
       return item.glossEn?.[0] || "";
     },
 
-    genderColor(gender: string): string {
-      if (gender === "M") return "blue";
-      if (gender === "F") return "pink";
-      if (gender === "N") return "green";
-      return "";
-    },
     itemTitle(item: SearchResultWithForm): string {
-      const base = item.pluralDominant ? item.pluralForm : item.lemma;
-      if (this.showArticles && item.gender && !item.pluralDominant) {
-        const article = item.gender === "M" ? "der" : item.gender === "F" ? "die" : "das";
-        return `${article} ${base}`;
-      }
-      return base || "";
+      return wordListTitle(item, this.showArticles);
     },
 
     renderExternal(vl: unknown, vlData: VLData) {
@@ -540,17 +525,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* POS label in the after slot */
-.list-item-pos {
-  color: var(--f7-list-item-footer-text-color);
-  font-size: var(--f7-list-item-footer-font-size, 12px);
-}
-
-/* Gender / Pl. badge sits right after the POS label */
-.list-item-badge {
-  margin-left: 5px;
-}
-
 /* Phrase match section — subtle background to distinguish from regular results */
 .phrase-matches {
   --f7-list-bg-color: color-mix(in srgb, var(--f7-theme-color) 5%, var(--f7-page-bg-color));
