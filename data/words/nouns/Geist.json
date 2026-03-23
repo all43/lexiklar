@@ -5,10 +5,7 @@
   "gender": "M",
   "article": "der",
   "plural_form": "Geister",
-  "gender_rule": {
-    "rule_id": "suffix_ist",
-    "is_exception": false
-  },
+  "gender_rule": null,
   "case_forms": {
     "singular": {
       "nom": "Geist",
@@ -418,5 +415,8 @@
     "source_hash": "3dd184754f530da0",
     "generated_at": "2026-03-09"
   },
-  "zipf": 4.55
+  "zipf": 4.55,
+  "_overrides": {
+    "gender_rule": null
+  }
 }
