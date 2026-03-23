@@ -1,0 +1,127 @@
+name: Publish Dictionary Data
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_bundle:
+        description: "Also publish app bundle (Capawesome OTA)"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - "data/words/**"
+      - "data/examples/**"
+      - "data/rules/**"
+      - "scripts/build-index.ts"
+      - "src/utils/verb-forms.js"
+
+jobs:
+  publish-db:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build search index
+        run: npm run build-index
+
+      - name: Checkout lexiklar-data repo
+        uses: actions/checkout@v4
+        with:
+          repository: evgeniimalikov/lexiklar-data
+          path: lexiklar-data
+          token: ${{ secrets.DATA_REPO_TOKEN }}
+        continue-on-error: true
+
+      - name: Initialize lexiklar-data if empty
+        run: |
+          if [ ! -d lexiklar-data/.git ]; then
+            mkdir -p lexiklar-data
+            cd lexiklar-data
+            git init
+            git remote add origin "https://x-access-token:${{ secrets.DATA_REPO_TOKEN }}@github.com/evgeniimalikov/lexiklar-data.git"
+          fi
+
+      - name: Generate update manifest and patches
+        run: |
+          OLD_DB=""
+          if [ -f lexiklar-data/lexiklar.db ]; then
+            OLD_DB="--old lexiklar-data/lexiklar.db"
+          fi
+          npx tsx scripts/publish-update.ts $OLD_DB --out lexiklar-data
+
+      - name: Push to lexiklar-data
+        working-directory: lexiklar-data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No data changes to publish."
+          else
+            git commit -m "data: update $(date +%Y-%m-%d)"
+            git push -u origin HEAD:main
+          fi
+
+  publish-bundle:
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.publish_bundle == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build app
+        run: npm run build
+
+      - name: Checkout lexiklar-data repo
+        uses: actions/checkout@v4
+        with:
+          repository: evgeniimalikov/lexiklar-data
+          path: lexiklar-data
+          token: ${{ secrets.DATA_REPO_TOKEN }}
+
+      - name: Create app bundle
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          mkdir -p lexiklar-data/bundles
+          cd dist && zip -r ../lexiklar-data/bundles/${VERSION}.zip .
+          cd ..
+          BUNDLE_SIZE=$(stat --format=%s "lexiklar-data/bundles/${VERSION}.zip" 2>/dev/null || stat -f%z "lexiklar-data/bundles/${VERSION}.zip")
+          cat > lexiklar-data/bundles/manifest.json << EOF
+          {
+            "current_version": "${VERSION}",
+            "url": "bundles/${VERSION}.zip",
+            "size": ${BUNDLE_SIZE}
+          }
+          EOF
+
+      - name: Push bundle to lexiklar-data
+        working-directory: lexiklar-data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No bundle changes to publish."
+          else
+            VERSION=$(node -p "require('../package.json').version")
+            git commit -m "bundle: v${VERSION}"
+            git push
+          fi

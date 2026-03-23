@@ -98,6 +98,18 @@
         </template>
       </f7-list-item>
       <f7-list-item v-else-if="updateState === 'error'" :title="t('settings.updateFailed')" />
+      <f7-list-item v-if="appUpdateState === 'available'">
+        <template #title>
+          <f7-link @click="downloadAppUpdate">{{ t('settings.appUpdateAvailable') }}</f7-link>
+        </template>
+      </f7-list-item>
+      <f7-list-item v-else-if="appUpdateState === 'downloading'" :title="t('settings.appUpdateDownloading')" />
+      <f7-list-item v-else-if="appUpdateState === 'ready'">
+        <template #title>
+          <f7-link @click="restartApp">{{ t('settings.appUpdateRestart') }}</f7-link>
+        </template>
+      </f7-list-item>
+      <f7-list-item v-else-if="appUpdateState === 'error'" :title="t('settings.updateFailed')" />
     </f7-list>
   </f7-page>
 </template>
@@ -109,6 +121,7 @@ import { applyTheme, THEME_KEY, type ThemeValue } from "../js/theme.js";
 import { t, setLocale, getLocale, LANGUAGE_KEY, type LanguagePreference } from "../js/i18n.js";
 import { getCached, setItem, removeItem } from "../utils/storage.js";
 import { getDbVersion, checkForUpdates, applyUpdate as applyDbUpdate, type UpdateInfo } from "../utils/db.js";
+import { pendingAppUpdate, downloadAndApplyAppUpdate, reloadApp as liveReloadApp, type AppUpdateInfo } from "../utils/live-update.js";
 
 const THEME_OPTIONS = [
   { value: "auto" as const, labelKey: "settings.themeAuto" },
@@ -139,6 +152,7 @@ export default defineComponent({
       updateState: "idle" as UpdateState,
       updateInfo: null as UpdateInfo | null,
       appVersion: __APP_VERSION__,
+      appUpdateState: "idle" as "idle" | "available" | "downloading" | "ready" | "error",
     };
   },
   computed: {
@@ -157,6 +171,10 @@ export default defineComponent({
       this.dbBuiltAt = builtAt;
     } catch {
       // DB not ready yet
+    }
+    // Check if an app update was detected at startup
+    if (pendingAppUpdate.value?.available) {
+      this.appUpdateState = "available";
     }
   },
   methods: {
@@ -199,6 +217,22 @@ export default defineComponent({
     },
     reloadApp() {
       window.location.reload();
+    },
+    async downloadAppUpdate() {
+      const info = pendingAppUpdate.value;
+      if (!info) return;
+      this.appUpdateState = "downloading";
+      const result = await downloadAndApplyAppUpdate(info);
+      if (result.ok) {
+        this.appUpdateState = "ready";
+      } else {
+        this.appUpdateState = "error";
+        f7.toast.create({ text: `${t("settings.updateFailed")}: ${result.error}`, closeTimeout: 3000, position: "center" }).open();
+        setTimeout(() => { this.appUpdateState = "idle"; }, 3000);
+      }
+    },
+    async restartApp() {
+      await liveReloadApp();
     },
     setTheme(value: ThemeValue) {
       this.theme = value;

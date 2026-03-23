@@ -4,5 +4,13 @@
   "webDir": "dist",
   "server": {
     "androidScheme": "https"
+  },
+  "plugins": {
+    "LiveUpdate": {
+      "appId": "app.lexiklar",
+      "autoDeleteBundles": true,
+      "enabled": true,
+      "readyTimeout": 10000
+    }
   }
 }

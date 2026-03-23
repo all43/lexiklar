@@ -632,7 +632,7 @@ When a user searches multiple words in sequence (e.g., "Achse" then "sein"), mat
 - Word-boundary matching: `(' ' || lower(lemma) || ' ') LIKE '% word %'`
 - Results filtered client-side to confirm ≥2 actual word matches (with umlaut folding)
 
-**i18n keys**: `search.matchingPhrases`, `search.searchResults`, `search.showMorePhrases`
+**i18n keys**: `search.matchingExpressions`, `search.searchResults`, `search.showMorePhrases`
 
 The SQLite index handles all searching, filtering, and data serving. Word JSON files on disk are only used during the build pipeline.
 

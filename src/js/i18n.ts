@@ -118,6 +118,9 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "settings.updateDone": "Dictionary updated",
     "settings.updateFailed": "Update failed",
     "settings.updateReload": "Update applied. Reload to use new data.",
+    "settings.appUpdateAvailable": "App update available \u2014 tap to download",
+    "settings.appUpdateDownloading": "Downloading app update\u2026",
+    "settings.appUpdateRestart": "App update ready \u2014 tap to restart",
 
     // NounDeclension
     "noun.pluraletantum": "Pluraletantum \u2014 always used in plural",
@@ -174,6 +177,14 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "pwa.updateAvailable": "A new version is available.",
     "pwa.reload": "Update",
     "pwa.dismiss": "Later",
+
+    // DB update toast
+    "dbUpdate.available": "Dictionary update available",
+    "dbUpdate.update": "Update",
+    "dbUpdate.later": "Later",
+    "dbUpdate.applying": "Updating dictionary\u2026",
+    "dbUpdate.done": "Dictionary updated. Reload for new data.",
+    "dbUpdate.failed": "Dictionary update failed",
   },
   de: {
     // Tab bar
@@ -277,6 +288,9 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "settings.updateDone": "W\u00F6rterbuch aktualisiert",
     "settings.updateFailed": "Update fehlgeschlagen",
     "settings.updateReload": "Update angewendet. Neu laden f\u00FCr neue Daten.",
+    "settings.appUpdateAvailable": "App-Update verf\u00FCgbar \u2014 tippen zum Herunterladen",
+    "settings.appUpdateDownloading": "App-Update wird heruntergeladen\u2026",
+    "settings.appUpdateRestart": "App-Update bereit \u2014 tippen zum Neustarten",
 
     // NounDeclension
     "noun.pluraletantum": "Pluraletantum \u2014 immer im Plural verwendet",
@@ -333,6 +347,14 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "pwa.updateAvailable": "Eine neue Version ist verf\u00FCgbar.",
     "pwa.reload": "Aktualisieren",
     "pwa.dismiss": "Sp\u00E4ter",
+
+    // DB update toast
+    "dbUpdate.available": "W\u00F6rterbuch-Update verf\u00FCgbar",
+    "dbUpdate.update": "Aktualisieren",
+    "dbUpdate.later": "Sp\u00E4ter",
+    "dbUpdate.applying": "W\u00F6rterbuch wird aktualisiert\u2026",
+    "dbUpdate.done": "W\u00F6rterbuch aktualisiert. Neu laden f\u00FCr neue Daten.",
+    "dbUpdate.failed": "W\u00F6rterbuch-Update fehlgeschlagen",
   },
 };
 
