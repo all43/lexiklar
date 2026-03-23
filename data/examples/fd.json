@@ -241,10 +241,43 @@
   },
   "fd02616439": {
     "text": "Wie viel kostet ein achtel Kilo Fisch?",
-    "translation": null,
+    "translation": "How much does an eighth of a kilo of fish cost?",
     "source": "wiktionary",
     "lemmas": [
       "achtel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "viel",
+        "lemma": "viel",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "kostet",
+        "lemma": "kosten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "achtel",
+        "lemma": "achtel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kilo",
+        "lemma": "Kilo",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fisch",
+        "lemma": "Fisch",
+        "pos": "noun",
+        "gloss_hint": "fish"
+      }
     ]
   },
   "fd02af19e6": {
@@ -3566,11 +3599,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to throw something out to the group",
     "source": "wiktionary",
     "lemmas": [
       "Runde"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd18bdea73": {
     "text": "In der Mathematik gibt es auch gekrümmte Ebenen, die Kugeloberfläche ist ein Beispiel.",
@@ -5105,11 +5139,13 @@
   },
   "fd2c866c72": {
     "text": "„Diese Kippen sammelten wir nun auf, stukten sie, was sagen will, daß man sie en passant, beiläufig, als wäre was am Schuhwerk oder an den Strümpfen zu richten, aufhob.“",
-    "translation": null,
+    "translation": "\"These cigarette butts we now picked up, snatched them, which is to say that we picked them up casually, incidentally, as if something needed to be fixed on the footwear or on the stockings.\"",
     "source": "wiktionary",
     "lemmas": [
       "Strumpf"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "fd2d7f8a1d": {
     "text": "„Paul stellte den Fuß auf die Motorbremse, was der Diesel mit einem lauten Brummen quittierte.“",
@@ -5274,11 +5310,13 @@
   },
   "fd2e703409": {
     "text": "Mo 13.3., 18:00 Uhr",
-    "translation": null,
+    "translation": "Mon 13.3., 18:00",
     "source": "wiktionary",
     "lemmas": [
       "Mo"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "fd2e895f1c": {
     "text": "„Für die Begriffe ‚Serienmord‘ und ‚Serienmörder‘ gibt es verschiedene Definitionen, aber im deutschsprachigen Raum keine Legaldefinition.“",
@@ -5919,11 +5957,12 @@
     "type": "expression",
     "note": "egal sein, gleichgültig sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to not care at all",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd35a82358": {
     "text": "Das Wetter ist heute einfach wunderbar.",
@@ -5936,10 +5975,73 @@
   },
   "fd37809473": {
     "text": "Seine Mutter war an Alzheimer erkrankt, und sein Vater nahm sich daraufhin, aus Gram und Trauer, dem geistigen und körperlichen Verfall seiner Frau tatenlos zusehen zu müssen, das Leben.",
-    "translation": null,
+    "translation": "His mother had contracted Alzheimer's, and his father subsequently took his own life, unable to bear the mental and physical deterioration of his wife, out of grief and sorrow.",
     "source": "wiktionary",
     "lemmas": [
       "Alzheimer"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mutter",
+        "lemma": "Mutter",
+        "pos": "noun",
+        "gloss_hint": "mother"
+      },
+      {
+        "form": "Alzheimer",
+        "lemma": "Alzheimer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erkrankt",
+        "lemma": "erkranken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vater",
+        "lemma": "Vater",
+        "pos": "noun",
+        "gloss_hint": "father"
+      },
+      {
+        "form": "nahm",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leben",
+        "lemma": "Leben",
+        "pos": "noun",
+        "gloss_hint": "life"
+      },
+      {
+        "form": "Gram",
+        "lemma": "Gram",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Trauer",
+        "lemma": "Trauer",
+        "pos": "noun",
+        "gloss_hint": "grief"
+      },
+      {
+        "form": "Verfall",
+        "lemma": "Verfall",
+        "pos": "noun",
+        "gloss_hint": "deterioration"
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "wife"
+      }
     ]
   },
   "fd3833d917": {
@@ -6215,10 +6317,79 @@
   },
   "fd39a281f6": {
     "text": "[…] Großbritannien muss umgerechnet 56 Milliarden Euro neue Schulden aufnehmen. Die Staatsverschuldung erreicht mit über 86 Prozent des Sozialprodukts einen Höhepunkt, sie soll dann aber bis zum Jahr 2022 unter die 80 Prozent-Marke fallen.",
-    "translation": null,
+    "translation": "[…] Great Britain must take on the equivalent of 56 billion euros in new debt. Government debt reaches over 86 percent of gross domestic product at its peak, but is then supposed to fall below the 80 percent mark by 2022.",
     "source": "wiktionary",
     "lemmas": [
       "Höhepunkt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Großbritannien",
+        "lemma": "Großbritannien",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufnehmen",
+        "lemma": "aufnehmen",
+        "pos": "verb",
+        "gloss_hint": "take on"
+      },
+      {
+        "form": "Milliarden",
+        "lemma": "Milliarde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "Schulden",
+        "lemma": "Schulden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staatsverschuldung",
+        "lemma": "Staatsverschuldung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prozent",
+        "lemma": "Prozent",
+        "pos": "noun",
+        "gloss_hint": "percentage"
+      },
+      {
+        "form": "Höhepunkt",
+        "lemma": "Höhepunkt",
+        "pos": "noun",
+        "gloss_hint": "peak"
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "Marke",
+        "lemma": "Marke",
+        "pos": "noun",
+        "gloss_hint": "mark"
+      },
+      {
+        "form": "fallen",
+        "lemma": "fallen",
+        "pos": "verb",
+        "gloss_hint": "decrease"
+      }
     ]
   },
   "fd3b1e6db0": {
@@ -6692,22 +6863,25 @@
   },
   "fd41d61eb2": {
     "text": "„Bei Environment und Installation handelt es sich jeweils um Formen künstlerischer Raumgestaltung. Im Unterschied zum Environment, das in seiner formalen wie inhaltlichen Anordnung in sich geschlossen ist, wird die Installation häufig in direkter Bezugnahme auf die Raumsituation mit ihren spezifischen Lichtverhältnissen, Farbgebungen und Ausmaßen erarbeitet, sodass die Installation in gewissem Sinne auf den Raum reagiert.“",
-    "translation": null,
+    "translation": "\"Environment and installation are each forms of artistic spatial design. In contrast to the environment, which is formally and conceptually self-contained in its arrangement, installation is often developed in direct reference to the spatial situation with its specific lighting conditions, color schemes, and dimensions, so that the installation in a certain sense responds to the space.\"",
     "source": "wiktionary",
     "lemmas": [
       "Installation"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "fd41e5e942": {
     "text": "auf den Tisch kommen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to come up for discussion",
     "source": "wiktionary",
     "lemmas": [
       "Tisch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd42943aaa": {
     "text": "Zeit seines Lebens hat er fleißig gearbeitet und ist doch bettelarm gestorben.",
@@ -7292,10 +7466,49 @@
   },
   "fd483ea5bf": {
     "text": "Die Polizei ertappte den Dieb in flagranti, als er gerade ein Fahrrad stehlen wollte.",
-    "translation": null,
+    "translation": "The police caught the thief red-handed as he was about to steal a bicycle.",
     "source": "wiktionary",
     "lemmas": [
       "in flagranti"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Polizei",
+        "lemma": "Polizei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ertappte",
+        "lemma": "ertappen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dieb",
+        "lemma": "Dieb",
+        "pos": "noun",
+        "gloss_hint": "thief"
+      },
+      {
+        "form": "flagranti",
+        "lemma": "flagranti",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fahrrad",
+        "lemma": "Fahrrad",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stehlen",
+        "lemma": "stehlen",
+        "pos": "verb",
+        "gloss_hint": "steal"
+      }
     ]
   },
   "fd495b2788": {
@@ -7515,11 +7728,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a nice life",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd4d519d59": {
     "text": "„Von Anfang an waren wir uns beide darüber im Klaren, dass unser Interesse füreinander alles andere als platonisch war.“",
@@ -8085,10 +8299,25 @@
   },
   "fd50ff85d5": {
     "text": "„Und die, die auf ihn herabschauten, waren Astronauten.“",
-    "translation": null,
+    "translation": "\"And those who looked down on him were astronauts.\"",
     "source": "wiktionary",
     "lemmas": [
       "Astronaut"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "herabschauten",
+        "lemma": "herabschauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Astronauten",
+        "lemma": "Astronaut",
+        "pos": "noun",
+        "gloss_hint": "astronauts"
+      }
     ]
   },
   "fd519f79aa": {
@@ -8894,18 +9123,78 @@
   },
   "fd564c6de0": {
     "text": "Die Aussagen der Nachbarin schienen dem Polizisten wenig glaubwürdig.",
-    "translation": null,
+    "translation": "The neighbor's statements seemed little credible to the police officer.",
     "source": "wiktionary",
     "lemmas": [
       "glaubwürdig"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Aussagen",
+        "lemma": "Aussage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nachbarin",
+        "lemma": "Nachbarin",
+        "pos": "noun",
+        "gloss_hint": "female neighbor"
+      },
+      {
+        "form": "schienen",
+        "lemma": "scheinen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Polizisten",
+        "lemma": "Polizist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "glaubwürdig",
+        "lemma": "glaubwürdig",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "fd5663a437": {
     "text": "Die Steilwand bei dem Wetter hoch zu klettern ist mir zu riskant.",
-    "translation": null,
+    "translation": "Climbing the steep wall in this weather is too risky for me.",
     "source": "wiktionary",
     "lemmas": [
       "riskant"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Steilwand",
+        "lemma": "Steilwand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wetter",
+        "lemma": "Wetter",
+        "pos": "noun",
+        "gloss_hint": "weather"
+      },
+      {
+        "form": "klettern",
+        "lemma": "klettern",
+        "pos": "verb",
+        "gloss_hint": "climb"
+      },
+      {
+        "form": "riskant",
+        "lemma": "riskant",
+        "pos": "adjective",
+        "gloss_hint": "risky"
+      }
     ]
   },
   "fd570c2d5b": {
@@ -8913,11 +9202,12 @@
     "type": "expression",
     "note": "jemanden sehr beunruhigen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone sleepless nights",
     "source": "wiktionary",
     "lemmas": [
       "bereiten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd5778f301": {
     "text": "„Ich imitierte Maman; wenn wir in Köln Konzerte iranischer Bands besuchten, stand ich am Rand der Tanzfläche und schaute ihr stundenlang dabei zu, wie sie tanzte.“",
@@ -9355,28 +9645,143 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be crazy about something",
     "source": "wiktionary",
     "lemmas": [
       "Narr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd5c063d82": {
     "text": "„Sie stoßen sich daran, dass bei der Regierungsklausur in der Steiermark in der Vorwoche auch Nationalratspräsident Wolfgang Sobotka (ÖVP) und die Dritte Präsidentin Anneliese Kitzmüller (FPÖ) anwesend waren.“",
-    "translation": null,
+    "translation": "They are bothered by the fact that National Council President Wolfgang Sobotka (ÖVP) and Third President Anneliese Kitzmüller (FPÖ) were also present at the government retreat in Styria the previous week.",
     "source": "wiktionary",
     "lemmas": [
       "Vorwoche",
       "Nationalratspräsident",
       "Regierungsklausur"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "stoßen",
+        "lemma": "stoßen",
+        "pos": "verb",
+        "gloss_hint": "take offense"
+      },
+      {
+        "form": "Regierungsklausur",
+        "lemma": "Regierungsklausur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Steiermark",
+        "lemma": "Steiermark",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorwoche",
+        "lemma": "Vorwoche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nationalratspräsident",
+        "lemma": "Nationalratspräsident",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wolfgang Sobotka",
+        "lemma": "Wolfgang Sobotka",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dritte Präsidentin",
+        "lemma": "Präsidentin",
+        "pos": "noun",
+        "gloss_hint": "president (female)"
+      },
+      {
+        "form": "Anneliese Kitzmüller",
+        "lemma": "Anneliese Kitzmüller",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "anwesend",
+        "lemma": "anwesend",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "fd5c1dd2f7": {
     "text": "„Obwohl Wohnen ein Grundrecht ist, wird es seit Jahren mit Füßen getreten, meint GA-Redakteurin Lisa Inhoffen. Gegen die Mangelware bezahlbare Wohnungen sollte schnell etwas getan werden.“",
-    "translation": null,
+    "translation": "Although housing is a fundamental right, it has been trampled on for years, says GA editor Lisa Inhoffen. Something should be done quickly about the shortage of affordable apartments.",
     "source": "wiktionary",
     "lemmas": [
       "mit Füßen getreten werden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wohnen",
+        "lemma": "Wohnen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grundrecht",
+        "lemma": "Grundrecht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Füßen",
+        "lemma": "Fuß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "getreten",
+        "lemma": "treten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Redakteurin",
+        "lemma": "Redakteurin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lisa Inhoffen",
+        "lemma": "Lisa Inhoffen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mangelware",
+        "lemma": "Mangelware",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bezahlbare Wohnungen",
+        "lemma": "Wohnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "getan",
+        "lemma": "tun",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "fd5c3020dc": {
@@ -9705,10 +10110,85 @@
   },
   "fd5de85846": {
     "text": "„Der untersetzte Mann mit dem kahlgeschorenen Schädel stellte die Fragen, während der mit dem Pferdeschwanz Ushikawa die ganze Zeit stumm und reglos anstarrte wie einer von diesen steinernen Löwenhunden, die die Tore von Shinto-Schreinen bewachen.“",
-    "translation": null,
+    "translation": "The stocky man with the closely shaved skull asked the questions, while the one with the ponytail, Ushikawa, stared at him silently and motionlessly the whole time like one of those stone lion dogs that guard the gates of Shinto shrines.",
     "source": "wiktionary",
     "lemmas": [
       "anstarren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "untersetzte Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "kahlgeschorenen Schädel",
+        "lemma": "Schädel",
+        "pos": "noun",
+        "gloss_hint": "skull"
+      },
+      {
+        "form": "Fragen",
+        "lemma": "Frage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stellte",
+        "lemma": "stellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pferdeschwanz",
+        "lemma": "Pferdeschwanz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ushikawa",
+        "lemma": "Ushikawa",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stumm",
+        "lemma": "stumm",
+        "pos": "adjective",
+        "gloss_hint": "silent"
+      },
+      {
+        "form": "reglos",
+        "lemma": "reglos",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "anstarrte",
+        "lemma": "anstarren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "steinernen Löwenhunden",
+        "lemma": "Löwenhund",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tore",
+        "lemma": "Tor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Shinto-Schreinen",
+        "lemma": "Shinto-Schrein",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "fd5eaaae42": {
@@ -9930,11 +10410,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put some real effort into something",
     "source": "wiktionary",
     "lemmas": [
       "Dampf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd65dee82c": {
     "text": "„Er war Witwer, hatte nur Adele und fuhr jetzt nach Louviers, um in einer Manufaktur zu arbeiten.“",
@@ -10310,11 +10791,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to break even",
     "source": "wiktionary",
     "lemmas": [
       "null"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd67b1b161": {
     "text": "[Errichtung von Windkraftanlagen in Deutschland:] […] „im Schnitt dauern die Verfahren pro Windkraftanlage sechs Jahre.“",
@@ -10480,10 +10962,61 @@
   },
   "fd696cee56": {
     "text": "„Am 28. Oktober [2015] wurde mit der Kommunistin und Frauenrechtlerin Bidhya Devis Bhandari erstmals eine Frau zur Präsidentin Nepals gewählt.“",
-    "translation": null,
+    "translation": "On October 28, 2015, communist and women's rights activist Bidhya Devis Bhandari was elected as the first female president of Nepal.",
     "source": "wiktionary",
     "lemmas": [
       "Kommunistin"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Oktober",
+        "lemma": "Oktober",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kommunistin",
+        "lemma": "Kommunistin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frauenrechtlerin",
+        "lemma": "Frauenrechtlerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bidhya Devis Bhandari",
+        "lemma": "Bidhya Devis Bhandari",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "woman"
+      },
+      {
+        "form": "Präsidentin",
+        "lemma": "Präsidentin",
+        "pos": "noun",
+        "gloss_hint": "president (female)"
+      },
+      {
+        "form": "Nepals",
+        "lemma": "Nepal",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gewählt",
+        "lemma": "wählen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "fd69852c54": {
@@ -10611,31 +11144,66 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lose sight of someone or something",
     "source": "wiktionary",
     "lemmas": [
       "Auge",
       "verlieren"
     ],
-    "ref": "phrases/aus den Augen verlieren"
+    "ref": "phrases/aus den Augen verlieren",
+    "translation_model": "openai/gpt-4.1"
   },
   "fd6d472d19": {
     "text": "Mancher nimmt das nächste Wasser zum Löschen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to make do with whatever is at hand",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd6e9fa70a": {
     "text": "„Während einer Gala saß er an einem Tisch mit Präsident Wladimir Putin.“",
-    "translation": null,
+    "translation": "During a gala, he sat at a table with President Vladimir Putin.",
     "source": "wiktionary",
     "lemmas": [
       "Gala"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gala",
+        "lemma": "Gala",
+        "pos": "noun",
+        "gloss_hint": "gala event"
+      },
+      {
+        "form": "Tisch",
+        "lemma": "Tisch",
+        "pos": "noun",
+        "gloss_hint": "table"
+      },
+      {
+        "form": "Präsident",
+        "lemma": "Präsident",
+        "pos": "noun",
+        "gloss_hint": "president (state)"
+      },
+      {
+        "form": "Wladimir Putin",
+        "lemma": "Wladimir Putin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "saß",
+        "lemma": "sitzen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "fd6f08d7f2": {
@@ -11073,18 +11641,94 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Every day has its evening.",
     "source": "wiktionary",
     "lemmas": [
       "Abend"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd71b4cf05": {
     "text": "Das Eis in den Polarmeeren scheint ein unbelebter Ort zu sein. Zwar laufen Eisbären oder Pinguine auf seiner Oberfläche, Fische und Robben schwimmen unter ihm her - das Eis selbst hingegen ist für viele nichts weiter als ein Klumpen gefrorenes Wasser.",
-    "translation": null,
+    "translation": "The ice in the polar seas seems to be a lifeless place. While polar bears or penguins walk on its surface and fish and seals swim beneath it, the ice itself is for many nothing more than a lump of frozen water.",
     "source": "wiktionary",
     "lemmas": [
       "Eis"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Eis",
+        "lemma": "Eis",
+        "pos": "noun",
+        "gloss_hint": "ice"
+      },
+      {
+        "form": "Polarmeeren",
+        "lemma": "Polarmeer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "unbelebter Ort",
+        "lemma": "Ort",
+        "pos": "noun",
+        "gloss_hint": "location"
+      },
+      {
+        "form": "Eisbären",
+        "lemma": "Eisbär",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pinguine",
+        "lemma": "Pinguin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "laufen",
+        "lemma": "laufen",
+        "pos": "verb",
+        "gloss_hint": "walk"
+      },
+      {
+        "form": "Oberfläche",
+        "lemma": "Oberfläche",
+        "pos": "noun",
+        "gloss_hint": "surface"
+      },
+      {
+        "form": "Fische",
+        "lemma": "Fisch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Robben",
+        "lemma": "Robbe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwimmen",
+        "lemma": "schwimmen",
+        "pos": "verb",
+        "gloss_hint": "swim"
+      },
+      {
+        "form": "Klumpen",
+        "lemma": "Klumpen",
+        "pos": "noun",
+        "gloss_hint": "lump"
+      },
+      {
+        "form": "gefrorenes Wasser",
+        "lemma": "Wasser",
+        "pos": "noun",
+        "gloss_hint": "water"
+      }
     ]
   },
   "fd7282d265": {
@@ -11092,11 +11736,12 @@
     "type": "expression",
     "note": "mehrere Dinge parallel machen/bearbeiten",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have too many irons in the fire at once",
     "source": "wiktionary",
     "lemmas": [
       "tanzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd7292232c": {
     "text": "Meine Schwester arbeitet zur Zeit abgeschlossen an ihrer Doktorarbeit, ich habe sie seit Wochen nicht gesprochen.",
@@ -11112,20 +11757,36 @@
     "type": "expression",
     "note": "das Wichtigste; das, worauf es wirklich ankommt",
     "synonyms": [],
-    "translation": null,
+    "translation": "the crux of the matter",
     "source": "wiktionary",
     "lemmas": [
       "Punkt",
       "springen"
     ],
-    "ref": "phrases/der springende Punkt"
+    "ref": "phrases/der springende Punkt",
+    "translation_model": "openai/gpt-4.1"
   },
   "fd745de08e": {
     "text": "Der Weg ist aus Kies.",
-    "translation": null,
+    "translation": "The path is made of gravel.",
     "source": "wiktionary",
     "lemmas": [
       "Kies"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Weg",
+        "lemma": "Weg",
+        "pos": "noun",
+        "gloss_hint": "path"
+      },
+      {
+        "form": "Kies",
+        "lemma": "Kies",
+        "pos": "noun",
+        "gloss_hint": "gravel"
+      }
     ]
   },
   "fd74dd14b5": {
@@ -11321,11 +11982,74 @@
   },
   "fd7843a0c2": {
     "text": "„Mit Hilfe von Klimamodellen haben die Wissenschaftlerinnen und Wissenschaftler die Auswirkungen auf das globale und regionale Klima auf der Basis von Szenarien untersucht.“",
-    "translation": null,
+    "translation": "With the help of climate models, the scientists examined the effects on global and regional climate on the basis of scenarios.",
     "source": "wiktionary",
     "lemmas": [
       "Szenario",
       "Klimamodell"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hilfe",
+        "lemma": "Hilfe",
+        "pos": "noun",
+        "gloss_hint": "help"
+      },
+      {
+        "form": "Klimamodellen",
+        "lemma": "Klimamodell",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wissenschaftlerinnen",
+        "lemma": "Wissenschaftlerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wissenschaftler",
+        "lemma": "Wissenschaftler",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auswirkungen",
+        "lemma": "Auswirkung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "globale",
+        "lemma": "global",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "regionale Klima",
+        "lemma": "Klima",
+        "pos": "noun",
+        "gloss_hint": "climate"
+      },
+      {
+        "form": "Basis",
+        "lemma": "Basis",
+        "pos": "noun",
+        "gloss_hint": "base (operations)"
+      },
+      {
+        "form": "Szenarien",
+        "lemma": "Szenario",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "untersucht",
+        "lemma": "untersuchen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "fd78cd3279": {
@@ -11443,11 +12167,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be versatile",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd7b619d23": {
     "text": "„Religion kann Trost spenden, sie kann Ruhe und Harmonie stiften.“",
@@ -11685,12 +12410,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Happy New Year!",
     "source": "wiktionary",
     "lemmas": [
       "prost",
       "Neujahr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd7efedd20": {
     "text": "Das hat doch Vorteile, wenn ihr euch zusammentut.",
@@ -11751,11 +12477,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to think outside the box",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd805667da": {
     "text": "„Die endgültigen Zahlen für das laufende Monat würden aber erst nach Ostern erhoben.“",
@@ -12460,10 +13187,43 @@
   },
   "fd86a13174": {
     "text": "„Anders als eine Silvesterparty ist Rosch Ha-Schana eher beschaulich, wir feiern nur mit der Familie.“",
-    "translation": null,
+    "translation": "Unlike a New Year's Eve party, Rosh Hashanah is rather quiet and contemplative; we celebrate only with our family.",
     "source": "wiktionary",
     "lemmas": [
       "Rosch Ha-Schana"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Silvesterparty",
+        "lemma": "Silvesterparty",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rosch Ha-Schana",
+        "lemma": "Rosch Ha-Schana",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beschaulich",
+        "lemma": "beschaulich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "feiern",
+        "lemma": "feiern",
+        "pos": "verb",
+        "gloss_hint": "celebrate"
+      },
+      {
+        "form": "Familie",
+        "lemma": "Familie",
+        "pos": "noun",
+        "gloss_hint": "basic social unit"
+      }
     ]
   },
   "fd87254ada": {
@@ -12579,33 +13339,36 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be the talk of the town",
     "source": "wiktionary",
     "lemmas": [
       "Gasse"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd8785c29f": {
     "text": "sein Gift verspritzen",
     "type": "expression",
     "note": "bösartige Bemerkungen machen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to make malicious remarks",
     "source": "wiktionary",
     "lemmas": [
       "Gift"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd88818f9f": {
     "text": "Haus der sieben Sünden",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "house of seven sins",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd88b2ae75": {
     "text": "„Immanuel Kant kennzeichnet mit a priori Begriffe, die allein dem Verstande, der Vernunft entstammen, allerdings erst dann in Erscheinung bzw. Tätigkeit treten, wenn mit ihrer Hilfe Wahrnehmungen zu Begriffen geformt werden.“",
@@ -12729,12 +13492,99 @@
   },
   "fd89802f9a": {
     "text": "„Die Meldung aus England, der englische Kriminologe Hawkins habe geäußert, dass Verbrechen sich auszahle, da die Polizei von 83 Millionen DM Diebesgut, gestohlen 1958 in London, nur 32 Millionen wieder beibringen konnte, stimmt mich nachdenklich.“",
-    "translation": null,
+    "translation": "The report from England that English criminologist Hawkins stated that crime pays because the police were only able to recover 32 million marks out of 83 million marks in stolen goods, stolen in 1958 in London, makes me thoughtful.",
     "source": "wiktionary",
     "lemmas": [
       "Verbrechen",
       "Diebesgut",
       "Kriminologe"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Meldung",
+        "lemma": "Meldung",
+        "pos": "noun",
+        "gloss_hint": "news item"
+      },
+      {
+        "form": "England",
+        "lemma": "England",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "englische Kriminologe",
+        "lemma": "Kriminologe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hawkins",
+        "lemma": "Hawkins",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geäußert",
+        "lemma": "äußern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verbrechen",
+        "lemma": "Verbrechen",
+        "pos": "noun",
+        "gloss_hint": "crime (legal category)"
+      },
+      {
+        "form": "auszahle",
+        "lemma": "auszahlen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Polizei",
+        "lemma": "Polizei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Diebesgut",
+        "lemma": "Diebesgut",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gestohlen",
+        "lemma": "stehlen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "London",
+        "lemma": "London",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beibringen",
+        "lemma": "beibringen",
+        "pos": "verb",
+        "gloss_hint": "teach"
+      },
+      {
+        "form": "stimmt",
+        "lemma": "stimmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "nachdenklich",
+        "lemma": "nachdenklich",
+        "pos": "adjective",
+        "gloss_hint": "thoughtful"
+      }
     ]
   },
   "fd89d9659e": {
@@ -13602,11 +14452,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to collapse",
     "source": "wiktionary",
     "lemmas": [
       "Boden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd8f7117b3": {
     "text": "„Erst viel später erkannte ich, daß die symbiotische Dreiecksbeziehung von Herrchen, Frauchen und Hund erst durch den Tod des Dackels ein Ende gefunden und den Weg für einen Neubeginn frei gemacht hatte.“",
@@ -14176,11 +15027,12 @@
     "type": "expression",
     "note": "die Sonne scheint",
     "synonyms": [],
-    "translation": null,
+    "translation": "the sun is shining",
     "source": "wiktionary",
     "lemmas": [
       "Sonne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd917c97e6": {
     "text": "„Waldbrände entstehen unter natürlichen Bedingungen durch Blitzschlag, vulkanische Aktivitäten und Selbstentzündung.[…]Weitere Ursachen für Waldbrand in Deutschland sind vor allem:",
@@ -15108,11 +15960,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "every coin has two sides",
     "source": "wiktionary",
     "lemmas": [
       "Ding"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fd99b08dcc": {
     "text": "„Wie übel ist's auf dieser Welt",
@@ -15242,10 +16095,67 @@
   },
   "fd9ac9894e": {
     "text": "Der Schauspieler lehnte den Vorschlag des Regisseurs ab, kurzzeitig die Darstellung des Massenmörders für seinen kranken Kollegen zu übernehmen.",
-    "translation": null,
+    "translation": "The actor declined the director's suggestion to temporarily take over the role of the serial killer for his sick colleague.",
     "source": "wiktionary",
     "lemmas": [
       "Darstellung"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schauspieler",
+        "lemma": "Schauspieler",
+        "pos": "noun",
+        "gloss_hint": "actor"
+      },
+      {
+        "form": "lehnte",
+        "lemma": "lehnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorschlag",
+        "lemma": "Vorschlag",
+        "pos": "noun",
+        "gloss_hint": "suggestion"
+      },
+      {
+        "form": "Regisseurs",
+        "lemma": "Regisseur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Darstellung",
+        "lemma": "Darstellung",
+        "pos": "noun",
+        "gloss_hint": "performance"
+      },
+      {
+        "form": "Massenmörders",
+        "lemma": "Massenmörder",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "übernehmen",
+        "lemma": "übernehmen",
+        "pos": "verb",
+        "gloss_hint": "take over"
+      },
+      {
+        "form": "kranken",
+        "lemma": "kranken",
+        "pos": "verb",
+        "gloss_hint": "be ill"
+      },
+      {
+        "form": "Kollegen",
+        "lemma": "Kollege",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "fd9ad3d9e0": {
@@ -15900,11 +16810,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be skin and bones",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fda2fb37ef": {
     "text": "Sie ist ganz unglücklich, weil ihre Katze eingegangen ist.",
@@ -16131,10 +17042,55 @@
   },
   "fda5815f97": {
     "text": "„»Du wirst nie reich werden«, sagte der Junge. »Und du nicht alt«, sagte der Mann, »wenn du in einem fort stichelst.«“",
-    "translation": null,
+    "translation": "\"You will never become rich,\" said the boy. \"And you will never grow old,\" said the man, \"if you keep needling me like that.\"",
     "source": "wiktionary",
     "lemmas": [
       "in einem fort"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wirst",
+        "lemma": "werden",
+        "pos": "verb",
+        "gloss_hint": "become"
+      },
+      {
+        "form": "reich",
+        "lemma": "reich",
+        "pos": "adjective",
+        "gloss_hint": "wealthy"
+      },
+      {
+        "form": "Junge",
+        "lemma": "Junge",
+        "pos": "noun",
+        "gloss_hint": "boy"
+      },
+      {
+        "form": "sagte",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "alt",
+        "lemma": "alt",
+        "pos": "adjective",
+        "gloss_hint": "old"
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "stichelst",
+        "lemma": "sticheln",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "fda63b31ab": {
@@ -18171,10 +19127,55 @@
   },
   "fdba90d8e2": {
     "text": "„Und schon gleich am ersten Tag der Bohrungen stieß man auf die Geruchsquelle: Was da so müffelte, waren drei mausetote Ratten.“",
-    "translation": null,
+    "translation": "And already on the very first day of drilling, they discovered the source of the smell: what was reeking so badly were three dead rats.",
     "source": "wiktionary",
     "lemmas": [
       "mausetot"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gleich",
+        "lemma": "gleich",
+        "pos": "adverb",
+        "gloss_hint": "soon"
+      },
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "Bohrungen",
+        "lemma": "Bohrung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stieß",
+        "lemma": "stoßen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geruchsquelle",
+        "lemma": "Geruchsquelle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "müffelte",
+        "lemma": "müffeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ratten",
+        "lemma": "Ratte",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "fdbbfbbad2": {
@@ -18360,11 +19361,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to become weird",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fdbf9e89d1": {
     "text": "Kurt Kalb hatte ihm tags zuvor einen vagen Tipp gegeben – und Jeannée witterte die Sensation.",
@@ -19610,12 +20612,127 @@
     ],
     "text_linked": "„[[Russischer|adjectives/russisch]] [[Train|nouns/Zug#1]], [[Artillerie|nouns/Artillerie#1]] [[und|conjunctions/und]] [[Infanteriekolonnen|nouns/Infanterie]] [[zogen|verbs/ziehen#7]] um [[die|determiners/die]] [[Mittagszeit|nouns/Mittagszeit]] [[durch|prepositions/durch#1]] die [[Stadt|nouns/Stadt#1]] Enns und [[drängten|verbs/drängen#1]] [[sich|pronouns/sich]] [[auf|prepositions/auf#1]] [[der|determiners/der]] [[Strasse|nouns/Straße#2]] [[zu|prepositions/zu#1]] beiden [[Seiten|nouns/Seite#1]] [[des|determiners/des]] [[Flusses|nouns/Fluss#1]].“"
   },
+  "fdce179946": {
+    "text": "Heidewitzka und ab geht die Fahrt!",
+    "translation": "Off we go!",
+    "source": "wiktionary",
+    "lemmas": [
+      "Heidewitzka"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
+  },
   "fdcec036c2": {
     "text": "„Wir Frauen aber wissen es, wir wissen, dass es viele Dschinn geben wird, und auch, wo sie sich aufhalten: unter der Spüle, im Badezimmer, hinter dem Wassertank aus Blech, über dem Küchenverschlag, unter den Betten der einsamen Frauen, hinter den Gardinen der Pubertierenden, die sich in ihren neuen Körpern nicht zurechtfinden, in den Schränken der Kinder …“",
-    "translation": null,
+    "translation": "But we women know it, we know that there will be many jinn, and also where they are located: under the sink, in the bathroom, behind the tin water tank, above the kitchen cupboard, under the beds of lonely women, behind the curtains of teenagers who cannot find their way in their new bodies, in the wardrobes of children...",
     "source": "wiktionary",
     "lemmas": [
       "Dschinn"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wissen",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": "know"
+      },
+      {
+        "form": "Dschinn",
+        "lemma": "Dschinn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geben",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": "exist"
+      },
+      {
+        "form": "aufhalten",
+        "lemma": "aufhalten",
+        "pos": "verb",
+        "gloss_hint": "be located"
+      },
+      {
+        "form": "Spüle",
+        "lemma": "Spüle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Badezimmer",
+        "lemma": "Badezimmer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wassertank",
+        "lemma": "Wassertank",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blech",
+        "lemma": "Blech",
+        "pos": "noun",
+        "gloss_hint": "sheet metal"
+      },
+      {
+        "form": "Küchenverschlag",
+        "lemma": "Küchenverschlag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Betten",
+        "lemma": "Bett",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gardinen",
+        "lemma": "Gardine",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pubertierenden",
+        "lemma": "Pubertierender",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Körpern",
+        "lemma": "Körper",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schränken",
+        "lemma": "Schrank",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "fdcecb0797": {
@@ -21175,11 +22292,12 @@
     "type": "expression",
     "note": "siegen, in einem Wettbewerb den ersten Platz erringen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to win first place",
     "source": "wiktionary",
     "lemmas": [
       "Palme"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fddcfaee40": {
     "text": "Für meinen Geschmack ist das Schlagzeug zu laut.",
@@ -22370,13 +23488,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to play with open cards",
     "source": "wiktionary",
     "lemmas": [
       "Karte",
       "spielen"
     ],
-    "ref": "phrases/mit offenen Karten spielen"
+    "ref": "phrases/mit offenen Karten spielen",
+    "translation_model": "openai/gpt-4.1"
   },
   "fde5a9432b": {
     "text": "„In der KI-Forschung wird daran gearbeitet, dass KI immer mehr Dinge so gut oder sogar besser kann als Menschen.“",
@@ -22922,14 +24041,15 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "all good things must come to an end",
     "source": "wiktionary",
     "lemmas": [
       "Baum",
       "Himmel",
       "wachsen"
     ],
-    "ref": "phrases/die Bäume wachsen nicht in den Himmel"
+    "ref": "phrases/die Bäume wachsen nicht in den Himmel",
+    "translation_model": "openai/gpt-4.1"
   },
   "fdeac3f457": {
     "text": "Er wies nach links.",
@@ -23544,11 +24664,12 @@
     "type": "expression",
     "note": "die Führung übernehmen",
     "synonyms": [],
-    "translation": null,
+    "translation": "take the wheel",
     "source": "wiktionary",
     "lemmas": [
       "Steuer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fdf07bfcb4": {
     "text": "„All die Lager der letzten Jahre, sie spürte sie noch in ihren Knochen: die Pritsche in Marseille, die Strohsäcke auf dem Frachter, in Casablanca die Krankenliegen.“",
@@ -23586,10 +24707,79 @@
   },
   "fdf126ae30": {
     "text": "„Wer einer Behörde gegenüber eine unrichtige oder unvollständige Versicherung an Eides Statt abgibt, wird mit Gefängnis bis zu drei Jahren bestraft.“",
-    "translation": null,
+    "translation": "Whoever makes a false or incomplete sworn statement to an authority shall be punished with imprisonment of up to three years.",
     "source": "wiktionary",
     "lemmas": [
       "Versicherung an Eides Statt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Behörde",
+        "lemma": "Behörde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gegenüber",
+        "lemma": "gegenüber",
+        "pos": "preposition",
+        "gloss_hint": "toward"
+      },
+      {
+        "form": "unrichtige",
+        "lemma": "unrichtig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "unvollständige",
+        "lemma": "unvollständig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Versicherung",
+        "lemma": "Versicherung",
+        "pos": "noun",
+        "gloss_hint": "confirmation"
+      },
+      {
+        "form": "Eides Statt",
+        "lemma": "Eides Statt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abgibt",
+        "lemma": "abgeben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "bestraft",
+        "lemma": "bestrafen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gefängnis",
+        "lemma": "Gefängnis",
+        "pos": "noun",
+        "gloss_hint": "imprisonment"
+      },
+      {
+        "form": "drei",
+        "lemma": "drei",
+        "pos": "numeral",
+        "gloss_hint": "three"
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "fdf128654a": {
@@ -24062,11 +25252,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "things really get going there",
     "source": "wiktionary",
     "lemmas": [
       "abgehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fdf5fa8dad": {
     "text": "Der Rauchblättrige Schwefelkopf ist eine Pilzsorte.",
@@ -24404,11 +25595,12 @@
     "type": "expression",
     "note": "knapp, eng am Körper anliegen",
     "synonyms": [],
-    "translation": null,
+    "translation": "fit closely to the body",
     "source": "wiktionary",
     "lemmas": [
       "genau"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fdf67eaff0": {
     "text": "Sie besiegelten ihren Handel per Handschlag.",
@@ -24626,11 +25818,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give someone a slap on the wrist",
     "source": "wiktionary",
     "lemmas": [
       "klopfen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fdf8713079": {
     "text": "„Warum an dieser Scholle, diesem Gewerbe hängen, warum hinhorchen nach dem, was der Nachbar sagt?“",

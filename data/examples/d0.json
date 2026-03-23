@@ -4,11 +4,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in someone's eyes",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d0029d0d45": {
     "text": "Bist du gerade in der Schule?",
@@ -238,10 +239,31 @@
   },
   "d007a3aea4": {
     "text": "Diese Sonate ist in der Tonart c geschrieben.",
-    "translation": null,
+    "translation": "This sonata is written in the key of C minor.",
     "source": "wiktionary",
     "lemmas": [
       "c"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sonate",
+        "lemma": "Sonate",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tonart",
+        "lemma": "Tonart",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geschrieben",
+        "lemma": "schreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d007c2af11": {
@@ -298,11 +320,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to chatter like a parrot",
     "source": "wiktionary",
     "lemmas": [
       "Papagei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d009581df7": {
     "text": "„An der Art des schriftstellerischen Verfahrens lag Bouvard wenig.“",
@@ -509,14 +532,12 @@
     "type": "expression",
     "note": "tot sein (ideom.) (euphemistisch)",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have lifeless eyes",
     "source": "wiktionary",
     "lemmas": [
       "brechen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d00d9eace4": {
     "text": "„Und auch Joseph Kabila liebäugelt damit, sich unter Missachtung der Verfassung bei den nächsten Präsidentschaftswahlen im Herbst 2016 für eine dritte Amtszeit aufstellen zu lassen.“",
@@ -2068,12 +2089,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep one's mouth shut",
     "source": "wiktionary",
     "lemmas": [
       "Klappe"
     ],
-    "ref": "phrases/die Klappe halten"
+    "ref": "phrases/die Klappe halten",
+    "translation_model": "openai/gpt-4.1"
   },
   "d01a162f6b": {
     "text": "Häufig findet man eine Krippe mit Heu vor, die regelmäßig nachgefüllt wird. Futterstellen für Wildschweine erkennt man an großen Mengen von Kastanien und Eicheln.",
@@ -2672,11 +2694,12 @@
     "type": "expression",
     "note": "bildhaft für: arglose, friedfertige Gesinnung (abgewandelt nach Friedrich Schiller, Wilhelm Tell)",
     "synonyms": [],
-    "translation": null,
+    "translation": "the milk of human kindness",
     "source": "wiktionary",
     "lemmas": [
       "Milch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d01df517c3": {
     "text": "Der Hamelner Torwart fing die Rückgabe sicher.",
@@ -3454,11 +3477,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be between a rock and a hard place",
     "source": "wiktionary",
     "lemmas": [
       "Hammer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d0225991ac": {
     "text": "Ich kann Ihnen das Geld in vielen kleinen oder wenigen großen Beträgen geben.",
@@ -3759,11 +3783,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a pub crawl",
     "source": "wiktionary",
     "lemmas": [
       "Zug"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d025e01a33": {
     "text": "Sie ist Angehörige des Widerstandes.",
@@ -4177,11 +4202,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be all in one go",
     "source": "wiktionary",
     "lemmas": [
       "Abwasch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d02a1ebd29": {
     "text": "Der Zutritt ist nur über einen kleinen Steg über den Wassergraben möglich.",
@@ -4584,11 +4610,12 @@
     "synonyms": [
       "Zores"
     ],
-    "translation": null,
+    "translation": "give someone a hard time",
     "source": "wiktionary",
     "lemmas": [
       "sauer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d02e11f905": {
     "text": "„Sechs Wochen waren damals auf dem Atlantik eine lange Zeit, wenn die nächsten sechs Stunden oder gar sechs Minuten ihnen die Katastrophe bringen konnten.“",
@@ -5383,10 +5410,43 @@
   },
   "d03778c1fc": {
     "text": "„Die Hufe wurden jeden Abend gesäubert, damit die Pferde nicht an Mauke erkrankten.“",
-    "translation": null,
+    "translation": "\"The hooves were cleaned every evening so that the horses wouldn't get mud fever.\"",
     "source": "wiktionary",
     "lemmas": [
       "Huf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hufe",
+        "lemma": "Huf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abend",
+        "lemma": "Abend",
+        "pos": "noun",
+        "gloss_hint": "evening"
+      },
+      {
+        "form": "gesäubert",
+        "lemma": "säubern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pferde",
+        "lemma": "Pferd",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mauke",
+        "lemma": "Mauke",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d0381c4ae7": {
@@ -6682,34 +6742,37 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be clever",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d049edaa07": {
     "text": "von einem Ohr zum anderen strahlen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "grin from ear to ear",
     "source": "wiktionary",
     "lemmas": [
       "Ohr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d04a4588fa": {
     "text": "dastehen wie die Kuh vorm neuen Tor",
     "type": "expression",
     "note": "sich in einer neuen Situation nicht zu helfen wissen",
     "synonyms": [],
-    "translation": null,
+    "translation": "be at a loss",
     "source": "wiktionary",
     "lemmas": [
       "Tor"
     ],
-    "ref": "phrases/dastehen wie die Kuh vorm neuen Tor"
+    "ref": "phrases/dastehen wie die Kuh vorm neuen Tor",
+    "translation_model": "openai/gpt-4.1"
   },
   "d04a47f95b": {
     "text": "„Am Tag nach dem Feuer auf einem mit Öl beladenen Tankschiff auf der Ostsee beginnt die Suche nach der Ursache.“",
@@ -7441,16 +7504,14 @@
     "type": "expression",
     "note": "die Fassung verlieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "lose it",
     "source": "wiktionary",
     "lemmas": [
       "Rad",
       "drehen"
     ],
     "ref": "phrases/am Rad drehen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d051d13bf7": {
     "text": "Jeder weiß doch, dass ihr Ehemann bei einer Dirne war.",
@@ -10903,10 +10964,37 @@
   },
   "d06f861ebe": {
     "text": "Das Wort „Abbau“ schreibt man mit zwei b. / umgangssprachlich: Das Wort „Abbau“ schreibt man mit zwei bs.",
-    "translation": null,
+    "translation": "The word \"Abbau\" is spelled with two b's.",
     "source": "wiktionary",
     "lemmas": [
       "b"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wort",
+        "lemma": "Wort",
+        "pos": "noun",
+        "gloss_hint": "word"
+      },
+      {
+        "form": "Abbau",
+        "lemma": "Abbau",
+        "pos": "noun",
+        "gloss_hint": "demolition"
+      },
+      {
+        "form": "schreibt",
+        "lemma": "schreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zwei",
+        "lemma": "zwei",
+        "pos": "numeral",
+        "gloss_hint": "two"
+      }
     ]
   },
   "d06fe817fb": {
@@ -11838,10 +11926,40 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "risk a lot for little gain",
     "source": "wiktionary",
     "lemmas": [
       "Wurst"
+    ],
+    "translation_model": "openai/gpt-4.1"
+  },
+  "d07677a075": {
+    "text": "„Ich spring da jetzt runter. Tschakka!“",
+    "translation": "\"I'm jumping down now. Here goes!\"",
+    "source": "wiktionary",
+    "lemmas": [
+      "tschakka"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "spring",
+        "lemma": "springen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "runter",
+        "lemma": "runter",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "jetzt",
+        "lemma": "jetzt",
+        "pos": "adverb",
+        "gloss_hint": "now"
+      }
     ]
   },
   "d076880ccb": {
@@ -13559,11 +13677,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "know someone has your back",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d087cfa705": {
     "text": "In Verhandlungen konnten die unterschiedlichen Interessen weitgehend zur Deckung gebracht werden.",
@@ -14111,13 +14230,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "belt and braces",
     "source": "wiktionary",
     "lemmas": [
       "halten",
       "doppelt"
     ],
-    "ref": "phrases/doppelt gemoppelt hält besser"
+    "ref": "phrases/doppelt gemoppelt hält besser",
+    "translation_model": "openai/gpt-4.1"
   },
   "d08c488b44": {
     "text": "„Der Sohn einer Indianerin und eines irischen Schmiedes trat in Schweden noch unter seinem ursprünglichen Namen Wa Tho Huck an.“",
@@ -14756,12 +14876,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the problem is solved",
     "source": "wiktionary",
     "lemmas": [
       "Kuh",
       "Eis"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d0930b0e38": {
     "text": "„Halleluja, endlich Ferien!“",
@@ -14778,11 +14899,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to crucify someone",
     "source": "wiktionary",
     "lemmas": [
       "schlagen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d093c9bd70": {
     "text": "Kyoto der Hort der japanischen Teetradition.",
@@ -15599,11 +15721,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to mess with someone",
     "source": "wiktionary",
     "lemmas": [
       "dumm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d09d3bb383": {
     "text": "Zu meiner Zeit galten noch andere Werte.",
@@ -18143,18 +18266,70 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to paint a bleak picture of something",
     "source": "wiktionary",
     "lemmas": [
       "malen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d0b49d00a0": {
     "text": "Weil die Eltern den Jungen schon lange in ein Zimmer eingesperrt hatten, musste er seine Notdurft in Kübeln oder gar auf den Fußboden verrichten.",
-    "translation": null,
+    "translation": "Because the parents had locked the boy in a room for a long time, he had to relieve himself in buckets or even on the floor.",
     "source": "wiktionary",
     "lemmas": [
       "seine Notdurft verrichten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Eltern",
+        "lemma": "Eltern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jungen",
+        "lemma": "Junge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zimmer",
+        "lemma": "Zimmer",
+        "pos": "noun",
+        "gloss_hint": "room"
+      },
+      {
+        "form": "eingesperrt",
+        "lemma": "einsperren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Notdurft",
+        "lemma": "Notdurft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kübeln",
+        "lemma": "Kübel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fußboden",
+        "lemma": "Fußboden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verrichten",
+        "lemma": "verrichten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d0b4ef1e7a": {
@@ -19110,11 +19285,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to come into play",
     "source": "wiktionary",
     "lemmas": [
       "Spiel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d0c30f4e86": {
     "text": "„Die Erfüllung des Rituals dispensierte von der Strafverfolgung, denn durch den Vollzug wurden die Bande mit der Götterwelt geknüpft und erneuert.“",
@@ -19606,10 +19782,31 @@
   },
   "d0c72f3e76": {
     "text": "Die Polizei geht gewaltsam gegen die Demonstranten vor.",
-    "translation": null,
+    "translation": "The police are using force against the demonstrators.",
     "source": "wiktionary",
     "lemmas": [
       "gewaltsam"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Polizei",
+        "lemma": "Polizei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gewaltsam",
+        "lemma": "gewaltsam",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Demonstranten",
+        "lemma": "Demonstrant",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d0c7af172b": {
@@ -19623,10 +19820,31 @@
   },
   "d0c7c117c2": {
     "text": "„Dann wurden die Gebeine mit einer Lehmschicht überzogen.“",
-    "translation": null,
+    "translation": "Then the bones were covered with a layer of clay.",
     "source": "wiktionary",
     "lemmas": [
       "überziehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gebeine",
+        "lemma": "Gebein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lehmschicht",
+        "lemma": "Lehmschicht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "überzogen",
+        "lemma": "überziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d0c920af3a": {
@@ -21044,23 +21262,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pull something out of one's sleeve",
     "source": "wiktionary",
     "lemmas": [
       "schütteln"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d0d53537be": {
     "text": "eine Schlange an seinem Busen nähren",
     "type": "expression",
     "note": "einen Unwürdigen zum Vertrauten machen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to nurture a snake in one's bosom",
     "source": "wiktionary",
     "lemmas": [
       "Busen",
       "nähren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d0d591726d": {
     "text": "„Da kommt ein einziger Dax-Vorstandschef Berechnungen zufolge auf Pensionszusagen von 30 Millionen Euro, insgesamt liegt die Summe der Rückstellungen für Pensionen im Dax bei sagenhaften 637 Millionen Euro.“",
@@ -22798,22 +23018,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have jelly knees",
     "source": "wiktionary",
     "lemmas": [
       "Pudding"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d0e2976302": {
     "text": "für etwas nichts können",
     "type": "expression",
     "note": "unschuldig sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to not be to blame for something",
     "source": "wiktionary",
     "lemmas": [
       "können"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d0e3fefcf7": {
     "text": "Die Speisen gehen heute auf mich, die Getränke zahlt ihr bitte selbst.",
@@ -23257,18 +23479,108 @@
   },
   "d0e9d0cbeb": {
     "text": "„Sie soll die beiden Mechaniker und ihr Handwerkerzeug zurückholen, denn der eine hat sich schweren Herzens entschlossen, ausnahmsweise doch zu fliegen.“",
-    "translation": null,
+    "translation": "She is supposed to retrieve the two mechanics and their tools, because one of them has reluctantly decided to fly after all.",
     "source": "wiktionary",
     "lemmas": [
       "schweren Herzens"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mechaniker",
+        "lemma": "Mechaniker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Handwerkerzeug",
+        "lemma": "Handwerkerzeug",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zurückholen",
+        "lemma": "zurückholen",
+        "pos": "verb",
+        "gloss_hint": "retrieve"
+      },
+      {
+        "form": "schweren",
+        "lemma": "schwer",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herzens",
+        "lemma": "Herz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entschlossen",
+        "lemma": "entschließen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "fliegen",
+        "lemma": "fliegen",
+        "pos": "verb",
+        "gloss_hint": "fly"
+      }
     ]
   },
   "d0ea5f7351": {
     "text": "„Im Zusammenhang mit einem Korruptionsskandal in Lateinamerika hat die Polizei auf Juist eine Mexikanerin festgenommen.“",
-    "translation": null,
+    "translation": "In connection with a corruption scandal in Latin America, police arrested a Mexican woman on Juist.",
     "source": "wiktionary",
     "lemmas": [
       "im Zusammenhang mit"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zusammenhang",
+        "lemma": "Zusammenhang",
+        "pos": "noun",
+        "gloss_hint": "connection"
+      },
+      {
+        "form": "Korruptionsskandal",
+        "lemma": "Korruptionsskandal",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lateinamerika",
+        "lemma": "Lateinamerika",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Polizei",
+        "lemma": "Polizei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Juist",
+        "lemma": "Juist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mexikanerin",
+        "lemma": "Mexikanerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "festgenommen",
+        "lemma": "festnehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d0eadb9dca": {
@@ -24440,10 +24752,91 @@
   },
   "d0f6746def": {
     "text": "„Da sitzt man nun, auf der Straße, in Osnabrück, hat die Praxis dieses Gesetzes vor der Nase und stellt ernüchtert fest: es ist rigoros, umfassend, einschneidend. Die Raucher, also beinahe 30% der erwachsenen deutschen Bevölkerung, können einpacken.“",
-    "translation": null,
+    "translation": "So there you sit, on the street in Osnabrück, with the practice of this law right before your eyes, and you realize soberly: it is rigorous, comprehensive, far-reaching. The smokers, that is almost 30% of the adult German population, can pack up.",
     "source": "wiktionary",
     "lemmas": [
       "einpacken können"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sitzt",
+        "lemma": "sitzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Straße",
+        "lemma": "Straße",
+        "pos": "noun",
+        "gloss_hint": "street"
+      },
+      {
+        "form": "Osnabrück",
+        "lemma": "Osnabrück",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Praxis",
+        "lemma": "Praxis",
+        "pos": "noun",
+        "gloss_hint": "practice"
+      },
+      {
+        "form": "Gesetzes",
+        "lemma": "Gesetz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nase",
+        "lemma": "Nase",
+        "pos": "noun",
+        "gloss_hint": "nose"
+      },
+      {
+        "form": "ernüchtert",
+        "lemma": "ernüchtern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "rigoros",
+        "lemma": "rigoros",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "umfassend",
+        "lemma": "umfassend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "einschneidend",
+        "lemma": "einschneidend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Raucher",
+        "lemma": "Raucher",
+        "pos": "noun",
+        "gloss_hint": "smoker"
+      },
+      {
+        "form": "Bevölkerung",
+        "lemma": "Bevölkerung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "können",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": "can"
+      }
     ]
   },
   "d0f7274991": {

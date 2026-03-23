@@ -1919,12 +1919,13 @@
     "type": "expression",
     "note": "interessiert sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to become interested",
     "source": "wiktionary",
     "lemmas": [
       "Feuer"
     ],
-    "ref": "phrases/Feuer fangen"
+    "ref": "phrases/Feuer fangen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d7139e2878": {
     "text": "„Die Zeugenaussagen sprachen eine deutliche Sprache.“",
@@ -1979,12 +1980,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to handle someone with kid gloves",
     "source": "wiktionary",
     "lemmas": [
       "anfassen"
     ],
-    "ref": "phrases/jemanden mit Glacéhandschuhen anfassen"
+    "ref": "phrases/jemanden mit Glacéhandschuhen anfassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d7147489c8": {
     "text": "Er ging zurück in das Land, woher er stammte.",
@@ -3398,16 +3400,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "rain or shine",
     "source": "wiktionary",
     "lemmas": [
       "Wetter",
       "Wind"
     ],
     "ref": "phrases/bei Wind und Wetter",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d71fdf3324": {
     "text": "„Maschinen gibt es nicht. Schlägel und Eisen, Schaufel und Hacke müssen genügen. Und manchmal, erzählt Kumpel Höllering, sind es „mehr Menschen als Hacken“. Arbeitskleidung und Geleucht fehlen.“",
@@ -3666,6 +3666,35 @@
     "_proofread": {
       "translation": true
     }
+  },
+  "d721ec2103": {
+    "text": "Sie singen und tanzen: Den ganzen Abend heißt es trallala und hopsasa.",
+    "translation": "They sing and dance: the whole evening is filled with tra-la-la and hop-sa-sa.",
+    "source": "wiktionary",
+    "lemmas": [
+      "hopsasa"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "singen",
+        "lemma": "singen",
+        "pos": "verb",
+        "gloss_hint": "sing"
+      },
+      {
+        "form": "tanzen",
+        "lemma": "tanzen",
+        "pos": "verb",
+        "gloss_hint": "dance"
+      },
+      {
+        "form": "Abend",
+        "lemma": "Abend",
+        "pos": "noun",
+        "gloss_hint": "evening"
+      }
+    ]
   },
   "d722189298": {
     "text": "Die Forschung an humanen Stammzellen unterliegt strengen Auflagen.",
@@ -4578,10 +4607,49 @@
   },
   "d72ea9c0f8": {
     "text": "„Sie hatte beschlossen, ihr nichts zu sagen, und hatte auch ihren Vater überredet, der jungen Frau die schreckliche Nachricht bis nach ihrer unmittelbar bevorstehenden Entbindung zu verheimlichen.“",
-    "translation": null,
+    "translation": "\"She had decided to tell her nothing, and had also persuaded her father to conceal the terrible news from the young woman until after her imminent childbirth.\"",
     "source": "wiktionary",
     "lemmas": [
       "Entbindung"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "beschlossen",
+        "lemma": "beschließen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sagen",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": "say"
+      },
+      {
+        "form": "Vater",
+        "lemma": "Vater",
+        "pos": "noun",
+        "gloss_hint": "father"
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "woman"
+      },
+      {
+        "form": "Nachricht",
+        "lemma": "Nachricht",
+        "pos": "noun",
+        "gloss_hint": "news"
+      },
+      {
+        "form": "Entbindung",
+        "lemma": "Entbindung",
+        "pos": "noun",
+        "gloss_hint": "childbirth"
+      }
     ]
   },
   "d72f381cc0": {
@@ -4799,11 +4867,12 @@
     "type": "expression",
     "note": "eine kulinarische Spezialität aus Frankfurt am Main",
     "synonyms": [],
-    "translation": null,
+    "translation": "Handkäs with music (a culinary specialty from Frankfurt am Main)",
     "source": "wiktionary",
     "lemmas": [
       "Musik"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7316f6845": {
     "text": "Und da 50 Gäste nicht in die Kachelstube passen, ließ die Gastgeberin ein weißes Zelt aufbauen.",
@@ -4906,11 +4975,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Do you want us to build you into the house as well?",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7333a7342": {
     "text": "„Man weiß nie recht, wie man mit ihr dran ist und wie man sie nennen soll, Oberförsterin Katzler oder Durchlaucht.“",
@@ -5847,11 +5917,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get wasted",
     "source": "wiktionary",
     "lemmas": [
       "Kanne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d73c4926aa": {
     "text": "„Die meist acht Sehzellen eines einzelnen Ommatidiums sind im Kreis angeordnet.“",
@@ -7187,11 +7258,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at night all cats are gray",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d742d3c5fd": {
     "text": "Sie brach die Schokoladentafel durch, und gab ihrer Schwester die eine Hälfte ab.",
@@ -7413,10 +7485,31 @@
   },
   "d744300c0a": {
     "text": "„Stare kommen immer in Scharen.“",
-    "translation": null,
+    "translation": "\"Starlings always come in flocks.\"",
     "source": "wiktionary",
     "lemmas": [
       "in Scharen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Stare",
+        "lemma": "Star",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": "arrive"
+      },
+      {
+        "form": "Scharen",
+        "lemma": "Schar",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d74476f53f": {
@@ -8559,11 +8652,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "full-grown donkey",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d74f26babd": {
     "text": "„Das Konzept der natürlichen Phonologie im Sinne Stampes erlaubt eine recht plausible Erklärung phonologischer Veränderungen.“",
@@ -8666,11 +8760,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something reeks from a mile away",
     "source": "wiktionary",
     "lemmas": [
       "Meile"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d74fb9c988": {
     "text": "eine weiße Weste haben",
@@ -8925,14 +9020,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to shout at the top of one's lungs",
     "source": "wiktionary",
     "lemmas": [
       "schreien"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d751483aa7": {
     "text": "Dieser Tisch ist aus Kirsche.",
@@ -9630,11 +9723,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to never get enough",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d756c51378": {
     "text": "Der von der WM-Spitze verdrängte Brite [Lewis Hamilton] wurde Dritter vor Kimi Räikkönen im Ferrari und zollte seinem Teamkollegen auf dem Siegerpodest größten Respekt: \"Riesenkompliment an Nico. Er hat den Sieg verdient.\"",
@@ -9926,11 +10020,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "As for me and my house, we will serve the Lord.",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d75844221e": {
     "text": "Ohne die Pferde wird es schwierig werden, denn wir können dann im Frühjahr keine Saat ausbringen.",
@@ -11333,11 +11428,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to tell someone off",
     "source": "wiktionary",
     "lemmas": [
       "können"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d75f635771": {
     "text": "„Ein Witz von einem Zimmer, in dem ein Einzelbett stand, bezogen mit Bettwäsche, die von einem so irrealen Weiß war, dass sie staunte.“",
@@ -12559,13 +12655,14 @@
     "type": "expression",
     "note": "Schluss",
     "synonyms": [],
-    "translation": null,
+    "translation": "that's all she wrote",
     "source": "wiktionary",
     "lemmas": [
       "Maus",
       "aus"
     ],
-    "ref": "phrases/aus die Maus"
+    "ref": "phrases/aus die Maus",
+    "translation_model": "openai/gpt-4.1"
   },
   "d76bfc84ae": {
     "text": "„Was in diesem Fall mißlang, weil es klipp und klar gesagt und völlig durchsichtig war und an Amalia einen überlegenen Gegner fand, kann in tausend anderen Fällen bei nur ein wenig ungünstigeren Umständen völlig gelingen und kann sich jedem Blick entziehen, auch dem Blick des Mißbrauchten.“",
@@ -12869,11 +12966,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the oddball relatives",
     "source": "wiktionary",
     "lemmas": [
       "Verwandtschaft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d76cd4713b": {
     "text": "„Die britischen Kriegsschiffe waren in den Hafen zurückgekehrt.“",
@@ -14412,11 +14510,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a smack",
     "source": "wiktionary",
     "lemmas": [
       "ein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7771f8609": {
     "text": "In der Vermittlung gehen täglich viele Anrufe ein.",
@@ -14441,12 +14540,13 @@
     "type": "expression",
     "note": "[1] Es regnet sich ein – ein zuvor sehr leichter Tröpfel-Regen verdichtet sich, so daß die Körperwärme nicht mehr die hinzukommenden Tropfen zu verdunsten vermag.",
     "synonyms": [],
-    "translation": null,
+    "translation": "it's pouring down",
     "source": "wiktionary",
     "lemmas": [
       "regnen"
     ],
-    "ref": "phrases/Bindfäden regnen"
+    "ref": "phrases/Bindfäden regnen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d7796498d8": {
     "text": "„Sie beugte sich hinter die Tür und schlug den Haken mit der Hand hoch, und ich hörte den Haken gegen die Wand schlagen.“",
@@ -15437,11 +15537,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When a great house falls, many small ones are crushed.",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d785e1216a": {
     "text": "Das Saarland leitet seinen Namen von der Saar ab.",
@@ -15638,14 +15739,15 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to swim against the current",
     "source": "wiktionary",
     "lemmas": [
       "Strom",
       "schwimmen",
       "gegen"
     ],
-    "ref": "phrases/gegen den Strom schwimmen"
+    "ref": "phrases/gegen den Strom schwimmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d78b69376a": {
     "text": "„Durch seinen umfangreichen Grundbesitz erwirtschaftete das von reichen Kaufmännern gegründete Hospital die Mittel für die Pflege von Kranken und die Aufnahme von Armen und Alten.“",
@@ -17117,10 +17219,67 @@
   },
   "d796a68b00": {
     "text": "[…] bei der Atomkraft [müssen] in der Gesamtbetrachtung Kosten hinzugerechnet werden, die von den Kraftwerksbetreibern nicht getragen werden und vor allem durch Atomunfälle entstehen könnten. Auf mehrere hundert Milliarden Euro werden die Kosten der Atomunfälle von Fukushima und Tschernobyl geschätzt.",
-    "translation": null,
+    "translation": "[...] with nuclear power, costs must be added in the overall assessment that are not borne by the power plant operators and could arise especially from nuclear accidents. The costs of the nuclear accidents in Fukushima and Chernobyl are estimated at several hundred billion euros.",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Atomkraft",
+        "lemma": "Atomkraft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kosten",
+        "lemma": "Kosten",
+        "pos": "noun",
+        "gloss_hint": "costs"
+      },
+      {
+        "form": "Kraftwerksbetreibern",
+        "lemma": "Kraftwerksbetreiber",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Atomunfälle",
+        "lemma": "Atomunfall",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entstehen",
+        "lemma": "entstehen",
+        "pos": "verb",
+        "gloss_hint": "arise"
+      },
+      {
+        "form": "Milliarden",
+        "lemma": "Milliarde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "Fukushima",
+        "lemma": "Fukushima",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tschernobyl",
+        "lemma": "Tschernobyl",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d796aa4363": {
@@ -17230,11 +17389,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "now things are getting serious",
     "source": "wiktionary",
     "lemmas": [
       "feierlich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d797b10020": {
     "text": "„In vielen Tarifverträgen sind sogenannte vermögensbildende Leistungen vorgesehen.“",
@@ -17460,13 +17620,14 @@
     "type": "expression",
     "note": "eine aussichtslose Suche betreiben",
     "synonyms": [],
-    "translation": null,
+    "translation": "look for a needle in a haystack",
     "source": "wiktionary",
     "lemmas": [
       "Nadel",
       "Heuhaufen"
     ],
-    "ref": "phrases/die Nadel im Heuhaufen suchen"
+    "ref": "phrases/die Nadel im Heuhaufen suchen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d79b36a041": {
     "text": "„Als die Türe der Kapelle ins Schloss gefallen war, legte er seine Stirn auf den Handlauf des Beichtstuhls.“",
@@ -17874,18 +18035,34 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a wolf in sheep's clothing (but actually harmless)",
     "source": "wiktionary",
     "lemmas": [
       "Pelz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7a029e620": {
     "text": "„Am nächsten Tag ist der Alb von mir gewichen.“",
-    "translation": null,
+    "translation": "\"The next day the nightmare has left me.\"",
     "source": "wiktionary",
     "lemmas": [
       "Alb"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "Alb",
+        "lemma": "Alb",
+        "pos": "noun",
+        "gloss_hint": "nightmare"
+      }
     ]
   },
   "d7a1726e4e": {
@@ -19120,11 +19297,12 @@
     "type": "expression",
     "note": "sterben",
     "synonyms": [],
-    "translation": null,
+    "translation": "go on one's final journey",
     "source": "wiktionary",
     "lemmas": [
       "Reise"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7adeb02ac": {
     "text": "Du geile Sau!",
@@ -19669,25 +19847,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "deliver something to someone free of charge",
     "source": "wiktionary",
     "lemmas": [
       "liefern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7b333881a": {
     "text": "es toll treiben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go wild",
     "source": "wiktionary",
     "lemmas": [
       "treiben"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d7b3ef612e": {
     "text": "Thüringen liegt in der Mitte Deutschlands.",
@@ -20312,11 +20489,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "betray one's principles",
     "source": "wiktionary",
     "lemmas": [
       "untreu"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7bacd994b": {
     "text": "„Das Herz war mir schwer.“",
@@ -21073,14 +21251,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "heel, toe, one, two, three",
     "source": "wiktionary",
     "lemmas": [
       "Spitze"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d7bfaa7831": {
     "text": "„Wir steuern, obschon das Schiff jetzt sehr langsam in Schritttempo fährt, gegen eine starke Strömung.“",
@@ -21503,10 +21679,31 @@
   },
   "d7c39327fb": {
     "text": "„›Aber meiner Meinung nach haben diese Patienten die lebensbedrohliche akute respiratorische Insuffizienz einfach überlebt.‹“",
-    "translation": null,
+    "translation": "\"'But in my opinion, these patients simply survived the life-threatening acute respiratory insufficiency.'\"",
     "source": "wiktionary",
     "lemmas": [
       "respiratorische Insuffizienz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Meinung",
+        "lemma": "Meinung",
+        "pos": "noun",
+        "gloss_hint": "opinion"
+      },
+      {
+        "form": "Patienten",
+        "lemma": "Patient",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "überlebt",
+        "lemma": "überleben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d7c3be06a3": {
@@ -21811,11 +22008,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be golden compared to someone",
     "source": "wiktionary",
     "lemmas": [
       "Gold"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7c7c3caec": {
     "text": "Viele Tiere fürchten sich vor dem Sekret der Stinktiere.",
@@ -22802,11 +23000,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "only need to lift a finger",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7d36af582": {
     "text": "Ihm wurde übel mitgespielt.",
@@ -24759,11 +24958,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in the broadest sense",
     "source": "wiktionary",
     "lemmas": [
       "weit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7e5fc3199": {
     "text": "Unsere Großmutter schnitt die Torte auf.",
@@ -25128,11 +25328,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm so full, I couldn't eat another bite",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7e9b4dc11": {
     "text": "Hamburger Jubel: Ivica Olic hat den Ball unter die Latte gezimmert, die Gastgeber gewinnen 2:1.",
@@ -26669,11 +26870,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the law of the jungle",
     "source": "wiktionary",
     "lemmas": [
       "Dschungel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7f13507f3": {
     "text": "„Somit kann man davon ausgehen, dass Knaben durchaus unter dem Deckmantel der Knabenliebe wie Prostituierte benutzt und sexuell ausgebeutet wurden.“",
@@ -26978,11 +27180,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "devour with one's eyes",
     "source": "wiktionary",
     "lemmas": [
       "verschlingen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7f956feb4": {
     "text": "„Das Abendbrot mußte sich jeder selbst schmieren, am Tisch, auf Tellern statt auf Brettchen, und Tante Gertrud goß Bodo und mir Ovomaltine ein.“",
@@ -27437,11 +27640,12 @@
     "type": "expression",
     "note": "Glück und Erfolg im Leben, ein unbeschwertes Leben",
     "synonyms": [],
-    "translation": null,
+    "translation": "a place in the sun",
     "source": "wiktionary",
     "lemmas": [
       "Sonne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d7fbd49fcf": {
     "text": "„Als Organe der Wojewodschaft fungieren der Sejmik sowie der Vorstand der Wojewodschaft, dessen Vorsitz der Marschall einnimmt.“",

@@ -14,22 +14,59 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "talk nonstop",
     "source": "wiktionary",
     "lemmas": [
       "Buch",
       "reden"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d6037bd1f2": {
     "text": "„Galatasaray Istanbul zieht offenbar erneut den Kürzeren. Der italienische Nationalspieler João Pedro (30) hat sich laut Informationen von ‚Sky‘ in Italien für einen Transfer zu Fenerbahce Istanbul entschieden.“",
-    "translation": null,
+    "translation": "Galatasaray Istanbul apparently comes off worse once again. According to information from Sky, Italian international João Pedro (30) has decided in Italy to transfer to Fenerbahce Istanbul.",
     "source": "wiktionary",
     "lemmas": [
       "den Kürzeren ziehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "zieht",
+        "lemma": "ziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kürzeren",
+        "lemma": "Kürzere",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "italienische",
+        "lemma": "italienisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nationalspieler",
+        "lemma": "Nationalspieler",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entschieden",
+        "lemma": "entscheiden",
+        "pos": "verb",
+        "gloss_hint": "decided"
+      },
+      {
+        "form": "Transfer",
+        "lemma": "Transfer",
+        "pos": "noun",
+        "gloss_hint": "transfer (sports)"
+      }
     ]
   },
   "d603814c81": {
@@ -160,10 +197,37 @@
   },
   "d604ccddd9": {
     "text": "Dieses Fahrzeug können Sie ab morgen Ihr Eigen nennen.",
-    "translation": null,
+    "translation": "You can call this vehicle your own starting tomorrow.",
     "source": "wiktionary",
     "lemmas": [
       "etwas sein Eigen nennen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fahrzeug",
+        "lemma": "Fahrzeug",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "können",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": "be able"
+      },
+      {
+        "form": "morgen",
+        "lemma": "morgen",
+        "pos": "adverb",
+        "gloss_hint": "tomorrow"
+      },
+      {
+        "form": "eigen",
+        "lemma": "eigen",
+        "pos": "adjective",
+        "gloss_hint": "own"
+      }
     ]
   },
   "d6059aa86f": {
@@ -171,11 +235,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the rest of it",
     "source": "wiktionary",
     "lemmas": [
       "Rest"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d605e070ff": {
     "text": "Hervor aus der dunklen Ecke! Zeig dich!",
@@ -527,13 +592,14 @@
     "type": "expression",
     "note": "manchmal, hin und wieder;",
     "synonyms": [],
-    "translation": null,
+    "translation": "from time to time",
     "source": "wiktionary",
     "lemmas": [
       "ab",
       "zu"
     ],
-    "ref": "phrases/ab und zu"
+    "ref": "phrases/ab und zu",
+    "translation_model": "openai/gpt-4.1"
   },
   "d60c559d1e": {
     "text": "„Wir liegen neun Kilometer hinter der Front.“",
@@ -652,26 +718,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not be wet behind the ears yet",
     "source": "wiktionary",
     "lemmas": [
       "trocken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d60dc0a883": {
     "text": "mit dem Ofenrohr ins Gebirge schauen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "come up empty-handed",
     "source": "wiktionary",
     "lemmas": [
       "schauen"
     ],
     "ref": "phrases/mit dem Ofenrohr ins Gebirge schauen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d60e2baa64": {
     "text": "„Auch das amüsante Gemälde eines tanzenden Mädchens hätte er in der Kiste entdeckt.“",
@@ -864,10 +929,43 @@
   },
   "d613ab8e68": {
     "text": "Heute bestellen wir mal was nach Hause. Möchtest du lieber Pizza oder Sushi?",
-    "translation": null,
+    "translation": "Today we're ordering something to eat at home. Would you rather have pizza or sushi?",
     "source": "wiktionary",
     "lemmas": [
       "Sushi"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "bestellen",
+        "lemma": "bestellen",
+        "pos": "verb",
+        "gloss_hint": "order"
+      },
+      {
+        "form": "Hause",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lieber",
+        "lemma": "lieber",
+        "pos": "adverb",
+        "gloss_hint": "rather"
+      },
+      {
+        "form": "Pizza",
+        "lemma": "Pizza",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sushi",
+        "lemma": "Sushi",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d61412d7b5": {
@@ -896,11 +994,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "without having accomplished anything",
     "source": "wiktionary",
     "lemmas": [
       "Ding"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d615cb4862": {
     "text": "Diese Leute türken doch, wo sie können!",
@@ -1222,11 +1321,12 @@
     "type": "expression",
     "note": "jetzt reicht es, jetzt ist es genug, jetzt ist ein bestimmter Punkt, Zustand erreicht",
     "synonyms": [],
-    "translation": null,
+    "translation": "now that's enough",
     "source": "wiktionary",
     "lemmas": [
       "feierlich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d61af1e487": {
     "text": "Als Kinder mussten wir zur Begrüßung einen Diener machen.",
@@ -1695,10 +1795,73 @@
   },
   "d621e335f5": {
     "text": "„Das Dezernat Zukunftsanalyse - ein Think Tank, der zum Zentrum für Transformation der Bundeswehr gehört - hat erstmals die sicherheitspolitische Dimension des Peak-Oil-Problems analysiert.“",
-    "translation": null,
+    "translation": "The Department for Future Analysis—a think tank that belongs to the Center for Transformation of the Bundeswehr—has for the first time analyzed the security policy dimension of the peak oil problem.",
     "source": "wiktionary",
     "lemmas": [
       "Dezernat"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Dezernat",
+        "lemma": "Dezernat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zukunftsanalyse",
+        "lemma": "Zukunftsanalyse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Think Tank",
+        "lemma": "Think Tank",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zentrum",
+        "lemma": "Zentrum",
+        "pos": "noun",
+        "gloss_hint": "center"
+      },
+      {
+        "form": "Transformation",
+        "lemma": "Transformation",
+        "pos": "noun",
+        "gloss_hint": "transformation"
+      },
+      {
+        "form": "Bundeswehr",
+        "lemma": "Bundeswehr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "analysiert",
+        "lemma": "analysieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sicherheitspolitische",
+        "lemma": "sicherheitspolitisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dimension",
+        "lemma": "Dimension",
+        "pos": "noun",
+        "gloss_hint": "extent"
+      },
+      {
+        "form": "Peak-Oil-Problems",
+        "lemma": "Peak-Oil-Problem",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d62286efe6": {
@@ -2810,10 +2973,37 @@
   },
   "d62783089f": {
     "text": "Seoul ist die Hauptstadt der Republik Korea.",
-    "translation": null,
+    "translation": "Seoul is the capital of the Republic of Korea.",
     "source": "wiktionary",
     "lemmas": [
       "Republik Korea"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Seoul",
+        "lemma": "Seoul",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hauptstadt",
+        "lemma": "Hauptstadt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Republik",
+        "lemma": "Republik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Korea",
+        "lemma": "Korea",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d628894ade": {
@@ -5400,11 +5590,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "smell a rat",
     "source": "wiktionary",
     "lemmas": [
       "Maus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d6468ade83": {
     "text": "„Im Juli 2012 wurde der Lebensunterhalt von etwa 800 Roma-Familien gefährdet, als die Polizei von Tirana einen Verwaltungsakt umsetzte, der das Sammeln von Abfall und anderen wiederverwendbaren Materialien verbot, und ihre Fahrzeuge und andere Ausrüstungsgegenstände beschlagnahmte.“",
@@ -5695,11 +5886,12 @@
     "type": "expression",
     "note": "metaphorische Befürchtung, wie im Morast zu versinken",
     "synonyms": [],
-    "translation": null,
+    "translation": "sink into the muck",
     "source": "wiktionary",
     "lemmas": [
       "Dreck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d649deb6ca": {
     "text": "„Wir begannen unsere Partie Schach aufs Neue.“",
@@ -5995,10 +6187,37 @@
   },
   "d64abd1343": {
     "text": "„Das muss Ihnen ja sehr am Herzen liegen. Warum ist Ihnen diese Arbeit so wichtig?“",
-    "translation": null,
+    "translation": "This must be very close to your heart. Why is this work so important to you?",
     "source": "wiktionary",
     "lemmas": [
       "jemandem am Herzen liegen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Herzen",
+        "lemma": "Herz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "liegen",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": "be situated"
+      },
+      {
+        "form": "Arbeit",
+        "lemma": "Arbeit",
+        "pos": "noun",
+        "gloss_hint": "task"
+      },
+      {
+        "form": "wichtig",
+        "lemma": "wichtig",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "d64b6f6880": {
@@ -8089,11 +8308,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at someone's hand",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d65d1f2749": {
     "text": "„In Stätten höherer Bildung, vom einfachsten College bis zu den Gefilden der University of Edinburgh, in denen er sich gerade befand, kam er sich immer reichlich dumm vor.“",
@@ -8274,11 +8494,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When the wolf teaches the goats to pray, he eats them for the lesson fee.",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d65e4a6c22": {
     "text": "Reifer Mais wird an Hühner verfüttert, unreifer an Kühe.",
@@ -8650,11 +8871,12 @@
     "type": "expression",
     "note": "die Essgewohnheiten und Vorlieben eines Menschen geben oft Aufschluss über seinen Charakter.",
     "synonyms": [],
-    "translation": null,
+    "translation": "You are what you eat.",
     "source": "wiktionary",
     "lemmas": [
       "Mensch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d661d650fa": {
     "text": "sich auf Französisch empfehlen",
@@ -9258,11 +9480,12 @@
     "type": "expression",
     "note": "etwas beobachten und verfolgen, etwas im Blick haben, etwas unter Kontrolle halten ( Audio⁽ᴵⁿᶠᵒ⁾)",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have something on your radar",
     "source": "wiktionary",
     "lemmas": [
       "Radar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d665671ebb": {
     "text": "Kratz mich mal!",
@@ -9669,11 +9892,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at the last minute",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d6701756cd": {
     "text": "„Obwohl er seine juristischen Examen mit Auszeichnung bestanden hat, nimmt er nur den Posten eines unbezahlten Assessors ein und ist darauf angewiesen, von den spärlichen Mitteln zu leben, die ihm seine Familie aus Königsberg zukommen läßt.“",
@@ -10557,10 +10781,67 @@
   },
   "d6778a6176": {
     "text": "„Nur ganz am Ende hat er einen Wunsch geäußert, seine Asche betreffend. Sie soll verteilt werden auf Berlin, den Libanon und das Mittelmeer vor Alexandria.“",
-    "translation": null,
+    "translation": "Only at the very end did he express a wish concerning his ashes. They are to be scattered in Berlin, Lebanon, and the Mediterranean Sea off Alexandria.",
     "source": "wiktionary",
     "lemmas": [
       "betreffend"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ende",
+        "lemma": "Ende",
+        "pos": "noun",
+        "gloss_hint": "end (time)"
+      },
+      {
+        "form": "Wunsch",
+        "lemma": "Wunsch",
+        "pos": "noun",
+        "gloss_hint": "wish"
+      },
+      {
+        "form": "geäußert",
+        "lemma": "äußern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Asche",
+        "lemma": "Asche",
+        "pos": "noun",
+        "gloss_hint": "ash"
+      },
+      {
+        "form": "verteilt",
+        "lemma": "verteilen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Berlin",
+        "lemma": "Berlin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Libanon",
+        "lemma": "Libanon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mittelmeer",
+        "lemma": "Mittelmeer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Alexandria",
+        "lemma": "Alexandria",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d677dd05e5": {
@@ -11792,11 +12073,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a piece of your mind",
     "source": "wiktionary",
     "lemmas": [
       "Meinung"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d682700ba2": {
     "text": "„Die Hänge am östlichen Ufer waren befestigt und wurden von den Russen gehalten, in den Uferbüschen standen ihre Scharfschützen.“",
@@ -13297,11 +13579,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to betray yourself",
     "source": "wiktionary",
     "lemmas": [
       "untreu"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d68c5e8059": {
     "text": "„80 Prozent der Menschen in seinem Dorf verdienen ihren Lebensunterhalt durch Betteln im Ausland, sagt er.“",
@@ -13428,12 +13711,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "It’s not over until the fat lady sings.",
     "source": "wiktionary",
     "lemmas": [
       "Ente",
       "kacken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d68d05b63f": {
     "text": "In der Kanalisation fühlen sich die Ratten wohl, da nicht nur Scheiße daher schwimmt.",
@@ -14320,10 +14604,37 @@
   },
   "d6978ab1fc": {
     "text": "Gestern haben wir zusammen Liebe gemacht.",
-    "translation": null,
+    "translation": "Yesterday we made love together.",
     "source": "wiktionary",
     "lemmas": [
       "Liebe machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gestern",
+        "lemma": "gestern",
+        "pos": "adverb",
+        "gloss_hint": "yesterday"
+      },
+      {
+        "form": "zusammen",
+        "lemma": "zusammen",
+        "pos": "adverb",
+        "gloss_hint": "together"
+      },
+      {
+        "form": "Liebe",
+        "lemma": "Liebe",
+        "pos": "noun",
+        "gloss_hint": "sexual intercourse"
+      },
+      {
+        "form": "gemacht",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d6986a04cc": {
@@ -14545,11 +14856,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go to hell!",
     "source": "wiktionary",
     "lemmas": [
       "Satan"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d6a06a69d5": {
     "text": "„In den frühen Morgenstunden packte er kalt entschlossen statt der Schulsachen ein paar Kleider in seinen Ranzen, dazu alles Geld, das er sich insgeheim mühsam zusammengespart hatte, und verließ sein Elternhaus, um fast drei Jahrzehnte lang nicht wiederzukehren, auch nicht zum Begräbnis seiner Mutter.“",
@@ -15780,11 +16092,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not to give someone the time of day",
     "source": "wiktionary",
     "lemmas": [
       "gönnen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d6b2d7d399": {
     "text": "„Das sogenannte »Menzerathsche Gesetz« setzt zum Beispiel die Länge einer sprachlichen Einheit in Abhängigkeit von ihren Konstituenten: je länger ein Wort ist, desto kürzer sind seine Silben.“",
@@ -17334,11 +17647,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a burden to someone",
     "source": "wiktionary",
     "lemmas": [
       "schaffen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d6bb728103": {
     "text": "An den Stadtgründer erinnert ein Mal aus Granit.",
@@ -17463,10 +17777,175 @@
   },
   "d6be712329": {
     "text": "„Die unerwartete Vernichtung des Koͤnigthums, das fuͤnfzehn Jahrhunderte aufrecht geſtanden hatte, das ſo feſt zu ſtehen ſchien, beweiſt einmal mehr, wie wenig auf die ſcheinbare Dauer der Dinge zu bauen ſey, und ſtatt deſſen, ſtatt des getraͤumten Reichs von Freiheit, von Gleichheit von Menſchenrechten ſtand nur das der Gewalt, der Bubenobenheit, der Rechtsverachtung da, und die Kriegsheere, die dieſes umzuſtoßen nur den dafür vereinigten Willen bedurften; Kriegsheere, wo altfranzoͤſiſche Biedernheit noch mehr als außer ihnen zu finden war, erkannten es an!!!“",
-    "translation": null,
+    "translation": "The unexpected destruction of the kingdom, which had stood for fifteen centuries, which seemed so firmly established, proves once more how little reliance can be placed on the apparent permanence of things, and instead of the dreamed-of realm of freedom, of equality, of human rights, there stood only that of violence, of brute force, of contempt for law, and the armies of war, which needed only the united will to overthrow it; armies of war in which old French integrity was found even more than outside them, recognized it!!!",
     "source": "wiktionary",
     "lemmas": [
       "einmal mehr"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vernichtung",
+        "lemma": "Vernichtung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Königthums",
+        "lemma": "Königtum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahrhunderte",
+        "lemma": "Jahrhundert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufrecht",
+        "lemma": "aufrecht",
+        "pos": "adjective",
+        "gloss_hint": "upright (posture)"
+      },
+      {
+        "form": "geſtanden",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "feſt",
+        "lemma": "fest",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "ſtehen",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "beweiſt",
+        "lemma": "beweisen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wenig",
+        "lemma": "wenig",
+        "pos": "pronoun",
+        "gloss_hint": "little"
+      },
+      {
+        "form": "ſcheinbare",
+        "lemma": "scheinbar",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dauer",
+        "lemma": "Dauer",
+        "pos": "noun",
+        "gloss_hint": "duration"
+      },
+      {
+        "form": "bauen",
+        "lemma": "bauen",
+        "pos": "verb",
+        "gloss_hint": "rely on"
+      },
+      {
+        "form": "getraͤumten",
+        "lemma": "träumen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reichs",
+        "lemma": "Reich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Freiheit",
+        "lemma": "Freiheit",
+        "pos": "noun",
+        "gloss_hint": "freedom"
+      },
+      {
+        "form": "Gleichheit",
+        "lemma": "Gleichheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menſchenrechten",
+        "lemma": "Menschenrecht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gewalt",
+        "lemma": "Gewalt",
+        "pos": "noun",
+        "gloss_hint": "violence"
+      },
+      {
+        "form": "Bubenobenheit",
+        "lemma": "Bubenobernheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rechtsverachtung",
+        "lemma": "Rechtsverachtung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kriegsheere",
+        "lemma": "Kriegsheer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "umzuſtoßen",
+        "lemma": "umstoßen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "vereinigten",
+        "lemma": "vereinigt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Willen",
+        "lemma": "Wille",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "altfranzoͤſiſche",
+        "lemma": "altfranzösisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Biedernheit",
+        "lemma": "Biedernheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erkannten",
+        "lemma": "erkennen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d6be8904b5": {
@@ -17966,14 +18445,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to throw something in the trash",
     "source": "wiktionary",
     "lemmas": [
       "treten"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d6c177b6fd": {
     "text": "„Im Ehevertrag [vom März 1797] hat sie (Friederike Karoline Wilhelmine, eine geborene Prinzessin von Baden) sich ausbedungen, dass sie ihre Konfession behalten darf und dass ihr ein eigener protestantischer Kabinettsprediger zusteht, den sie gleich mitbringt.“",
@@ -18295,10 +18772,79 @@
   },
   "d6c29bc5aa": {
     "text": "elliptisch: „‚So ist das halt beim Elfmeterschießen‘, sagte Andreas Reinke, ‚der Torwart versucht zu halten, und der andere versucht zu treffen. Manchmal klappt’s. Manchmal nicht.‘ Aus die Maus, Drops gelutscht.“",
-    "translation": null,
+    "translation": "'That's just how it is with penalty shootouts,' said Andreas Reinke, 'the goalkeeper tries to save, and the other guy tries to score. Sometimes it works. Sometimes it doesn't.' And that's that, the deal is done.",
     "source": "wiktionary",
     "lemmas": [
       "der Drops ist gelutscht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Elfmeterschießen",
+        "lemma": "Elfmeterschießen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Andreas",
+        "lemma": "Andreas",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reinke",
+        "lemma": "Reinke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Torwart",
+        "lemma": "Torwart",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "versucht",
+        "lemma": "versuchen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "halten",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": "save (goal)"
+      },
+      {
+        "form": "treffen",
+        "lemma": "treffen",
+        "pos": "verb",
+        "gloss_hint": "strike the mark"
+      },
+      {
+        "form": "klappt's",
+        "lemma": "klappen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Maus",
+        "lemma": "Maus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Drops",
+        "lemma": "Drop",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gelutscht",
+        "lemma": "lutschen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d6c2c300e3": {
@@ -20067,11 +20613,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "People who live in glass houses shouldn't throw stones.",
     "source": "wiktionary",
     "lemmas": [
       "wer im Glashaus sitzt, soll nicht mit Steinen werfen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d6d23edbc6": {
     "text": "Der Anzug des Gewitters kündigte sich mit dunklen Wolken und aufkommendem Wind an.",
@@ -20157,10 +20704,73 @@
   },
   "d6d2825738": {
     "text": "Wutentbrannt unterbreche ich ihn und zeige mit dem Finger auf ihn, als ich sage: „Wehe du wirfst mir jetzt meine angeblich fehlende Fahrerfahrung vor. Dann steige ich dir aufs Dach!“",
-    "translation": null,
+    "translation": "Furious, I interrupt him and point my finger at him as I say: \"You'd better not throw my supposedly lacking driving experience in my face now. Then I'll climb on your roof!\"",
     "source": "wiktionary",
     "lemmas": [
       "jemandem aufs Dach steigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wutentbrannt",
+        "lemma": "wutentbrannt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "unterbreche",
+        "lemma": "unterbrechen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zeige",
+        "lemma": "zeigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Finger",
+        "lemma": "Finger",
+        "pos": "noun",
+        "gloss_hint": "finger"
+      },
+      {
+        "form": "sage",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": "say"
+      },
+      {
+        "form": "Wehe",
+        "lemma": "Wehe",
+        "pos": "interjection",
+        "gloss_hint": "oh no"
+      },
+      {
+        "form": "wirfst",
+        "lemma": "werfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fahrerfahrung",
+        "lemma": "Fahrerfahrung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "steige",
+        "lemma": "steigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dach",
+        "lemma": "Dach",
+        "pos": "noun",
+        "gloss_hint": "roof"
+      }
     ]
   },
   "d6d3368b1f": {
@@ -20893,11 +21503,12 @@
     "synonyms": [
       "obersächsischer"
     ],
-    "translation": null,
+    "translation": "to be a couple",
     "source": "wiktionary",
     "lemmas": [
       "Paar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d6d94a1e9b": {
     "text": "Hast du das Geld gestohlen? — Schon.",
@@ -20913,22 +21524,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to wear the pants at home",
     "source": "wiktionary",
     "lemmas": [
       "Hose"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d6da050569": {
     "text": "auf letzter Rille laufen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be running on fumes",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d6db000b3e": {
     "text": "In ihrem Dokumentarfilm \"Bambule\" porträtierte Ulrike Meinhof Ende der 1960er-Jahre ein Westberliner Erziehungsheim für Mädchen.",
@@ -21895,11 +22508,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in a tight spot",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d6e022f0c0": {
     "text": "Als tatsächliche Kosten muss man den Kaufpreis minus des Skontos bei frühzeitiger Begleichung der Rechnung.",
@@ -21931,12 +22545,13 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Passion is brief, regret is long.",
     "source": "wiktionary",
     "lemmas": [
       "lang",
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d6e0e444e2": {
     "text": "„Offenbar hängt die WM-Teilnahme [Anmerkung: des Torwarts Manuel] Neuers, der nach langer Verletzungspause wegen eines Mittelfußbruchs auf sein Comeback hinarbeitet, am seidenen Faden.“",
@@ -22669,12 +23284,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pack it in",
     "source": "wiktionary",
     "lemmas": [
       "einpacken"
     ],
-    "ref": "phrases/einpacken können"
+    "ref": "phrases/einpacken können",
+    "translation_model": "openai/gpt-4.1"
   },
   "d6e4c65394": {
     "text": "Menschen und Tiere haben Seelen, ein Gegenstand jedoch nicht.",
@@ -22752,23 +23368,25 @@
     "type": "expression",
     "note": "jemanden in das Gesicht schlagen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to punch someone in the face",
     "source": "wiktionary",
     "lemmas": [
       "polieren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d6e5c70656": {
     "text": "auf die Barrikaden gehen",
     "type": "expression",
     "note": "protestieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "to take to the barricades",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
     ],
-    "ref": "phrases/auf die Barrikaden gehen"
+    "ref": "phrases/auf die Barrikaden gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d6e6f0b091": {
     "text": "Ja, er wurde beleidigt und er ging am Tage darauf zum Chef.",
@@ -23059,10 +23677,31 @@
   },
   "d6e8d8df39": {
     "text": "Noch ist der König nicht matt gesetzt.",
-    "translation": null,
+    "translation": "The king is not yet in checkmate.",
     "source": "wiktionary",
     "lemmas": [
       "matt setzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "König",
+        "lemma": "König",
+        "pos": "noun",
+        "gloss_hint": "king (chess)"
+      },
+      {
+        "form": "matt",
+        "lemma": "matt",
+        "pos": "adjective",
+        "gloss_hint": "checkmate"
+      },
+      {
+        "form": "gesetzt",
+        "lemma": "setzen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d6e919160c": {
@@ -23070,11 +23709,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lay all one's cards on the table",
     "source": "wiktionary",
     "lemmas": [
       "Tisch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d6e926b6d6": {
     "text": "„Und da sie, befangen durch seine Gegenwart, den Grund nicht nennen konnte, warum sie mit einem Mal lässig geworden war, schwieg sie.“",
@@ -25321,10 +25961,61 @@
   },
   "d6fbbb8609": {
     "text": "„In einem Traume soll sie ihre Freundin besuchen; die Mutter hat ihr gesagt, sie soll fahren, nicht gehen; sie läuft aber und fällt dabei in einem fort.“",
-    "translation": null,
+    "translation": "\"In a dream she is supposed to visit her friend; her mother has told her she should drive, not walk; but she runs and keeps falling in the process.\"",
     "source": "wiktionary",
     "lemmas": [
       "in einem fort"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Traume",
+        "lemma": "Traum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besuchen",
+        "lemma": "besuchen",
+        "pos": "verb",
+        "gloss_hint": "visit (person)"
+      },
+      {
+        "form": "Freundin",
+        "lemma": "Freundin",
+        "pos": "noun",
+        "gloss_hint": "friend (female)"
+      },
+      {
+        "form": "Mutter",
+        "lemma": "Mutter",
+        "pos": "noun",
+        "gloss_hint": "mother"
+      },
+      {
+        "form": "fahren",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": "drive"
+      },
+      {
+        "form": "gehen",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "walk"
+      },
+      {
+        "form": "läuft",
+        "lemma": "laufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "fällt",
+        "lemma": "fallen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d6fbc8a27b": {
@@ -25344,14 +26035,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not worth a dime",
     "source": "wiktionary",
     "lemmas": [
       "wert"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d6fcbd0c46": {
     "text": "„Noch vor kurzer Zeit gaben sich viele Fachleute ganz sicher, Elektrofahrzeuge mit Batterie könnten den Brennstoffzellenautos nicht das Wasser reichen.“",

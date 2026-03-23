@@ -153,14 +153,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a hand in something",
     "source": "wiktionary",
     "lemmas": [
       "Finger"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ca00ea060d": {
     "text": "„Er machte sich sein Frühstück noch immer selbst und begann sie durch die Fliegentür zu grüßen, wenn sie morgens zum Pool ging: »Slim!«, rief er dann.“",
@@ -177,11 +175,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lose one's temper",
     "source": "wiktionary",
     "lemmas": [
       "aufgehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ca02db6014": {
     "text": "Peters Kollegen empfanden ihm gegenüber ein hohes Maß an \"Achtung\".",
@@ -1689,11 +1688,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to ask for a sympathetic ear",
     "source": "wiktionary",
     "lemmas": [
       "bitten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ca15177141": {
     "text": "Seine heldenhaften Taten waren eine bloße Erfindung.",
@@ -4353,11 +4353,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Business is business.",
     "source": "wiktionary",
     "lemmas": [
       "Geschäft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ca31262c76": {
     "text": "Firefox 4 Beta 10 freigegeben. Das Entwicklerteam von Mozilla will sich nun offenbar schnell der Freigabe von Firefox 4.0 nähern. Nach der jetzt veröffentlichten zehnten Betaversion soll nur noch eine weitere Betaversion von Firefox 4.0 kommen.",
@@ -4610,10 +4611,85 @@
   },
   "ca33077c89": {
     "text": "„Er betrachtete sich die Felder rechts und links, die mit schon gelbem Roggen, die mit dichtem, noch grünem Hafer, und die noch schwarzen, mit deren Umackerung eben erst begonnen worden war.“",
-    "translation": null,
+    "translation": "He looked at the fields on the right and left, those with already yellowing rye, those with dense, still green oats, and those still black, with whose ploughing had just been begun.",
     "source": "wiktionary",
     "lemmas": [
       "Hafer"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "betrachtete",
+        "lemma": "betrachten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Felder",
+        "lemma": "Feld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "rechts",
+        "lemma": "rechts",
+        "pos": "adverb",
+        "gloss_hint": "right"
+      },
+      {
+        "form": "links",
+        "lemma": "links",
+        "pos": "adverb",
+        "gloss_hint": "left-handedly"
+      },
+      {
+        "form": "gelbem",
+        "lemma": "gelb",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Roggen",
+        "lemma": "Roggen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dichtem",
+        "lemma": "dicht",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "grünem",
+        "lemma": "grün",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hafer",
+        "lemma": "Hafer",
+        "pos": "noun",
+        "gloss_hint": "oat"
+      },
+      {
+        "form": "schwarzen",
+        "lemma": "schwarz",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umackerung",
+        "lemma": "Umackerung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "begonnen",
+        "lemma": "beginnen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "ca3477b23b": {
@@ -4892,10 +4968,25 @@
   },
   "ca35889f11": {
     "text": "Das werde ich dir mit gleicher Münze heimzahlen.",
-    "translation": null,
+    "translation": "I'll pay you back in kind.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem etwas mit gleicher Münze heimzahlen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "werde",
+        "lemma": "werden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "heimzahlen",
+        "lemma": "heimzahlen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "ca35e51faf": {
@@ -7552,12 +7643,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not make an exit",
     "source": "wiktionary",
     "lemmas": [
       "Abgang"
     ],
-    "ref": "phrases/keinen Abgang finden"
+    "ref": "phrases/keinen Abgang finden",
+    "translation_model": "openai/gpt-4.1"
   },
   "ca455faa46": {
     "text": "[Schlagzeile:] „Konventionelles Soja ist ideal für europäische Äcker“",
@@ -7956,12 +8048,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "keep your fingers crossed for someone",
     "source": "wiktionary",
     "lemmas": [
       "Daumen"
     ],
-    "ref": "phrases/jemandem die Daumen drücken"
+    "ref": "phrases/jemandem die Daumen drücken",
+    "translation_model": "openai/gpt-4.1"
   },
   "ca50c6d047": {
     "text": "Die Mörderin wurde zu lebenslanger Haft verurteilt.",
@@ -8890,11 +8983,12 @@
     "type": "expression",
     "note": "genauer untersuchen oder diskutieren als nötig",
     "synonyms": [],
-    "translation": null,
+    "translation": "split hairs",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ca5c7deb51": {
     "text": "„Was frag' ich viel nach Geld und Gut, | Wenn ich zufrieden bin.“ (aus einem deutschen Volkslied)",
@@ -11076,11 +11170,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "just you wait until you get home",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ca70509c0f": {
     "text": "Den afrikanischen Medien fehlt also nicht der Wille, die Ursachen der Flüchtlingskrise zu hinterfragen. Es mangelt an Mitteln, Struktur, Pressefreiheit oder auch dem qualifizierten Personal.",
@@ -11249,11 +11344,12 @@
     "type": "expression",
     "note": "clever, ausgebufft, durchtrieben sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "be street-smart",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ca70a4386d": {
     "text": "„Denn Telomere leiden nachweislich, wenn Herausforderungen uns ständig grübeln und zweifeln lassen.“",
@@ -12046,11 +12142,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be ready for the scrap heap",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ca79e70474": {
     "text": "„Er nahm die Zigarette aus dem Munde, besah sie und spuckte ein paar Krümel Tabak aus.“",
@@ -12635,11 +12732,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's high time",
     "source": "wiktionary",
     "lemmas": [
       "Zeit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ca8071d0ff": {
     "text": "„Aber ein Bettvorleger sei ja da, eine Decke und ein Kissen könne sie ihm ebenfalls abtreten.“",
@@ -13145,12 +13243,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Lamb of God",
     "source": "wiktionary",
     "lemmas": [
       "Lamm"
     ],
-    "ref": "phrases/Lamm Gottes"
+    "ref": "phrases/Lamm Gottes",
+    "translation_model": "openai/gpt-4.1"
   },
   "ca843f806c": {
     "text": "Wir kaufen unsere Wurst- und Fleischwaren beim Metzger.",
@@ -13643,11 +13742,12 @@
     "type": "expression",
     "note": "das hat unangenehme, negative Folgen",
     "synonyms": [],
-    "translation": null,
+    "translation": "that will have unpleasant consequences",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ca8a762e79": {
     "text": "„Publius Cornelius Scipio kommandierte zwischen 211 und 201 v.Chr. ununterbrochen große Armeen, ähnlich wie Titus Quinctius Flamininus, der zwischen 198 und 183 v.Chr. maßgeblich Einfluss auf die römische Ostpolitik ausübte.“",
@@ -13842,11 +13942,12 @@
     "type": "expression",
     "note": "etwas zum richtigen Zeitpunkt realisieren und damit den Zeitgeist (Trend) treffen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to strike a chord with the times",
     "source": "wiktionary",
     "lemmas": [
       "Zeit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ca8b154aeb": {
     "text": "„So heißt es immer, die ersten Vertreibungen hätten am Anfang des 20. Jahrhunderts stattgefunden, die Vertreibung und massenhafte Tötung von Armeniern zum Beispiel oder der Bevölkerungsaustausch zwischen Griechenland und der Türkei – letzterer war 1923.“",
@@ -14046,11 +14147,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "an unexplored area",
     "source": "wiktionary",
     "lemmas": [
       "Fleck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ca8bf095e5": {
     "text": "„Tiefgekühlte Gemüse […] direkt aus der Verpackung in die Pfanne geben […] Die Kochzeit ist etwas kürzer zu bemessen.“",
@@ -14700,6 +14802,16 @@
       "Mythenbildung"
     ],
     "translation_model": "anthropic/claude-haiku-4-5-20251001"
+  },
+  "ca9159b755": {
+    "text": "„Vier Stund' in dera Sauhitz! Sacklzement!“",
+    "translation": "\"Four hours in this sweltering heat! For heaven's sake!\"",
+    "source": "wiktionary",
+    "lemmas": [
+      "Sacklzement"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "ca9169f649": {
     "text": "„Ich habe diese Idee im Kopf, wie wir künftig mit neuartigen Batterien Autos fahren. Ich muss sie nur noch zu Ende entwickeln.“",
@@ -16138,11 +16250,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm OK, you're OK.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "caa5539a0f": {
     "text": "„Ein Sergeant braucht Essen und Trinken für seine Leute, klopft an die Tür des Schlosses.“",
@@ -16461,10 +16574,25 @@
   },
   "caa6ff3fef": {
     "text": "Bio wird den Naturwissenschaften zugeordnet.",
-    "translation": null,
+    "translation": "Biology is classified as a natural science.",
     "source": "wiktionary",
     "lemmas": [
       "Bio"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bio",
+        "lemma": "Bio",
+        "pos": "noun",
+        "gloss_hint": "biology"
+      },
+      {
+        "form": "zugeordnet",
+        "lemma": "zuordnen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "caa7ec31ce": {
@@ -17743,11 +17871,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be clever but lack common sense",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cab5f02797": {
     "text": "„Kehre die Handtasche um und suche nach dem Geldbeutel, um das Geld zu verstauen.“",
@@ -18988,11 +19117,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get too close for comfort",
     "source": "wiktionary",
     "lemmas": [
       "Pelle"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cac1879ac8": {
     "text": "„Bei echten kubisch-raumzentrierten Gittern befindet sich die gleiche Spezies (Atome, Ionen, Moleküle) sowohl an den Ecken als auch im Zentrum der Elementarzelle.“",
@@ -21653,11 +21783,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to demand one's rights",
     "source": "wiktionary",
     "lemmas": [
       "Recht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cae42912ed": {
     "text": "„Mit ihren zum Teil selbst gebauten Bomben tritt die Elite der Feuerwerker jedes Jahr in Hannover zum Wettbewerb an.“",
@@ -21976,18 +22107,58 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not be well off",
     "source": "wiktionary",
     "lemmas": [
       "dicke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cae59cffc4": {
     "text": "[Eritrea:] „Noch immer fliehen die Menschen in Scharen. Rund 6000 Flüchtlinge kamen letztes Jahr pro Monat im Nachbarland Äthiopien an.“",
-    "translation": null,
+    "translation": "[Eritrea:] \"People are still fleeing in droves. Around 6,000 refugees arrived in the neighboring country of Ethiopia every month last year.\"",
     "source": "wiktionary",
     "lemmas": [
       "in Scharen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "fliehen",
+        "lemma": "fliehen",
+        "pos": "verb",
+        "gloss_hint": "flee"
+      },
+      {
+        "form": "Scharen",
+        "lemma": "Scharen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Flüchtlinge",
+        "lemma": "Flüchtling",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kamen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "Monat",
+        "lemma": "Monat",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "cae640e6c9": {
@@ -22063,11 +22234,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "right is right",
     "source": "wiktionary",
     "lemmas": [
       "Recht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cae707ddf4": {
     "text": "„In den slawischen Sprachen selbst ist der Gebrauch von Präfixen nur eine von mehreren Möglichkeiten, Aktionsarten wie zum Beispiel das Andauern einer Handlung oder Aspekte wie »vollendet/unvollendet« auszudrücken.“",
@@ -22080,10 +22252,37 @@
   },
   "cae823b421": {
     "text": "Er kontrollierte die Unversehrtheit der Gelenke der Antriebswellen.",
-    "translation": null,
+    "translation": "He inspected the integrity of the joints of the drive shafts.",
     "source": "wiktionary",
     "lemmas": [
       "Gelenk"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kontrollierte",
+        "lemma": "kontrollieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unversehrtheit",
+        "lemma": "Unversehrtheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gelenke",
+        "lemma": "Gelenk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Antriebswellen",
+        "lemma": "Antriebswelle",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "cae8538673": {
@@ -23880,11 +24079,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone wings",
     "source": "wiktionary",
     "lemmas": [
       "Flügel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cafaf10f99": {
     "text": "„Es war ein Meister in allen Kartenspielen, ein guter Jäger, besaß eine schöne Handschrift und hatte daheim eine Drehbank stehen.“",

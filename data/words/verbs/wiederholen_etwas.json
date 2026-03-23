@@ -3,33 +3,94 @@
   "pos": "verb",
   "etymology_number": null,
   "auxiliary": "haben",
-  "separable": true,
-  "prefix": "wieder",
-  "reflexive": "none",
+  "separable": false,
+  "prefix": null,
+  "reflexive": "optional",
   "senses": [
+    {
+      "gloss": "etwas zum zweiten oder mehrfachen Male, erneut tun, durchführen, stattfinden lassen",
+      "gloss_en": "repeat",
+      "tags": [],
+      "example_ids": [
+        "13f0311df4",
+        "575e7c0ca2"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To do, carry out, or cause something to happen again one or more times.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "etwas Gelerntes zum Zwecke der Übung",
+      "gloss_en": "review",
+      "tags": [],
+      "example_ids": [],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To review something learned for the purpose of practice.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "etwas zum zweiten oder mehrfachen Male, erneut aussprechen, sagen",
+      "gloss_en": "restate",
+      "tags": [
+        "reflexive"
+      ],
+      "example_ids": [
+        "800d035a0e"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To say or pronounce something again one or more times.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "erneut geschehen",
+      "gloss_en": "recur",
+      "tags": [
+        "reflexive"
+      ],
+      "example_ids": [
+        "efc9ae7a16"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To happen again.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[ˌviːdɐˈhoːlən]",
+      "tags": []
+    }
+  ],
+  "conjugation_class": "weak",
+  "stems": {
+    "present": "wiederhol",
+    "past": ""
+  },
+  "past_participle": "wiederholt",
+  "_derived": [
+    "wiederholbar",
+    "Wiederholen",
+    "wiederholend",
+    "wiederholt",
+    "Wiederholung"
+  ],
+  "_meta": {
+    "source_hash": "9d08640e6b9e25a4",
+    "generated_at": "2026-03-23"
+  },
+  "zipf": 4.21,
+  "_orphaned_translations": [
     {
       "gloss": "etwas oder jemanden an den ursprünglichen Ort zurückholen",
       "gloss_en": "return",
-      "tags": [
-        "transitive"
-      ],
-      "example_ids": [
-        "2b3e085d62",
-        "a926490f78",
-        "05ea22669b",
-        "4c793acae1",
-        "5883953762"
-      ],
-      "synonyms": [
-        "zurückbeordern",
-        "zurückholen",
-        "zurückrufen"
-      ],
-      "antonyms": [
-        "dalassen",
-        "hierlassen",
-        "zurücklassen"
-      ],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To bring something or someone back to the original place",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -39,71 +100,6 @@
         "go back"
       ],
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ˈviːdɐˌhoːlən]",
-      "tags": []
-    }
-  ],
-  "conjugation_class": "weak",
-  "stems": {
-    "present": "hol",
-    "past": ""
-  },
-  "past_participle": "wiedergeholt",
-  "_derived": [
-    "wiedergeholt",
-    "Wiederholen",
-    "wiederholend"
-  ],
-  "_hyponyms": [
-    "abholen"
-  ],
-  "_antonyms": [
-    "dalassen",
-    "hierlassen",
-    "zurücklassen"
-  ],
-  "_synonyms": [
-    "zurückbeordern",
-    "zurückholen",
-    "zurückrufen"
-  ],
-  "_meta": {
-    "source_hash": "9d989eaf9710417a",
-    "generated_at": "2026-03-21"
-  },
-  "zipf": 4.21,
-  "_orphaned_translations": [
-    {
-      "gloss": "etwas zum zweiten oder mehrfachen Male, erneut tun, durchführen, stattfinden lassen",
-      "gloss_en": "repeat",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To do, carry out, or cause something to happen again one or more times.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "etwas Gelerntes zum Zwecke der Übung",
-      "gloss_en": "review",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To review something learned for the purpose of practice.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "etwas zum zweiten oder mehrfachen Male, erneut aussprechen, sagen",
-      "gloss_en": "restate",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To say or pronounce something again one or more times.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "erneut geschehen",
-      "gloss_en": "recur",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To happen again.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
   ]
 }

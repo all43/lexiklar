@@ -1694,10 +1694,61 @@
   },
   "d80ff2593c": {
     "text": "\"Jetzt raucht er immer mehr. \"Heute muss ich alle paar Stunden eine rauchen, weil die Sucht mich dazu treibt.\" Er weiß, wie gesundheitsschädlich und teuer das Rauchen ist.\"",
-    "translation": null,
+    "translation": "\"Now he smokes more and more. 'Today I have to smoke one every few hours because the addiction drives me to it.' He knows how harmful to health and expensive smoking is.\"",
     "source": "wiktionary",
     "lemmas": [
       "eine rauchen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "raucht",
+        "lemma": "rauchen",
+        "pos": "verb",
+        "gloss_hint": "smoke"
+      },
+      {
+        "form": "Stunden",
+        "lemma": "Stunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sucht",
+        "lemma": "Sucht",
+        "pos": "noun",
+        "gloss_hint": "addiction"
+      },
+      {
+        "form": "treibt",
+        "lemma": "treiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "weiß",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesundheitsschädlich",
+        "lemma": "gesundheitsschädlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "teuer",
+        "lemma": "teuer",
+        "pos": "adjective",
+        "gloss_hint": "expensive"
+      },
+      {
+        "form": "Rauchen",
+        "lemma": "Rauchen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d81073d345": {
@@ -1716,11 +1767,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "somewhere the action is happening",
     "source": "wiktionary",
     "lemmas": [
       "Post"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d81153caf6": {
     "text": "„Am Ende der städtischen Werften begannen die Becken, wo die Schiffe ausgestattet oder gebaut wurden.“",
@@ -1892,11 +1944,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "tear someone to shreds",
     "source": "wiktionary",
     "lemmas": [
       "Sau"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d81228f2b6": {
     "text": "„Bei der Hälfte der Strecke hatte sich [die deutsche Marathonläuferin Anja] Scherl mit rund 4:10 Minuten Rückstand auf die Spitze immerhin auf den 65. Rang verbessert.“",
@@ -2153,11 +2206,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give someone a hard time",
     "source": "wiktionary",
     "lemmas": [
       "Pelz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d813459ca7": {
     "text": "Mit Leverkusen verbindet man Chemie, Bayer und die Fußballer von Bayer 04 Leverkusen.",
@@ -3094,10 +3148,37 @@
   },
   "d81cf7955a": {
     "text": "Die Band hat schon den vierten Gitarristen verschlissen.",
-    "translation": null,
+    "translation": "The band has already worn out the fourth guitarist.",
     "source": "wiktionary",
     "lemmas": [
       "verschleißen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Band",
+        "lemma": "Band",
+        "pos": "noun",
+        "gloss_hint": "band"
+      },
+      {
+        "form": "vierten",
+        "lemma": "vier",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gitarristen",
+        "lemma": "Gitarrist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verschlissen",
+        "lemma": "verschleißen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d81d5137b9": {
@@ -6634,11 +6715,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "social policy failure",
     "source": "wiktionary",
     "lemmas": [
       "Blindgänger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d835a21dc7": {
     "text": "„[…] und dieser Straßenbezeichnung bestehende gedankliche Zusammenhang auch auf den volkstümlichen Wiener Ausdruck für einen verkommenen Menschen – ‚der liegt auf der Dacken‘ – ausgeweitet werden kann, bleibt fraglich.“",
@@ -6930,11 +7012,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Money is there for the taking",
     "source": "wiktionary",
     "lemmas": [
       "Straße"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d836c53aaf": {
     "text": "„In Westeuropa beträgt die Lebenserwartung für Neugeborene mittlerweile im Schnitt 79,5 Jahre (männlich) und 84,2 Jahre (weiblich). Deutschland liegt den Angaben zufolge mit 78,2 und 83 Jahren deutlich darunter.“",
@@ -8704,23 +8787,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "come to my place for a drink of water",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d83f5a66dd": {
     "text": "den Kochlöffel schwingen",
     "type": "expression",
     "note": "kochen",
     "synonyms": [],
-    "translation": null,
+    "translation": "cook up a storm",
     "source": "wiktionary",
     "lemmas": [
       "schwingen"
     ],
-    "ref": "phrases/den Kochlöffel schwingen"
+    "ref": "phrases/den Kochlöffel schwingen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d842c5c09f": {
     "text": "„Maximal zwei Grad Erderwärmung im Vergleich zur vorindustriellen Zeit, im besten Fall sogar nur 1,5 Grad: Die Ziele des Pariser Klimaabkommens von 2015 sind ehrgeizig. Innerhalb vergleichsweise kurzer Zeit müssten die Länder den Ausstoß von Treibhausgasen radikal senken, damit das gelingt.“",
@@ -8990,10 +9075,43 @@
   },
   "d842ff2f1e": {
     "text": "[Bei dem Brand] „dürften nach Angaben des \"Bund für Naturschutz Deutschland\" (BUND) mehr als eine halbe Million Tonnen CO₂ freigesetzt worden sein.“",
-    "translation": null,
+    "translation": "According to the German Federal Association for Nature Conservation (BUND), more than half a million tons of CO₂ are said to have been released in the fire.",
     "source": "wiktionary",
     "lemmas": [
       "BUND"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Brand",
+        "lemma": "Brand",
+        "pos": "noun",
+        "gloss_hint": "fire"
+      },
+      {
+        "form": "dürften",
+        "lemma": "dürfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Million",
+        "lemma": "Million",
+        "pos": "noun",
+        "gloss_hint": "million"
+      },
+      {
+        "form": "Tonnen",
+        "lemma": "Tonne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "freigesetzt",
+        "lemma": "freisetzen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d8433aba24": {
@@ -10285,11 +10403,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "better to be eaten by a wolf than by a sheep",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d84ec69cb5": {
     "text": "Die Jacke ist doch viel weiblicher!",
@@ -10791,10 +10910,55 @@
   },
   "d85152a6f5": {
     "text": "[…] sie [die Tennisspielerin Angelique Kerber] arbeitete weiter beharrlich daran, besser zu werden. Ohne viel Medien-Tamtam. Dass ausgerechnet sie, die statt große Töne zu spucken, einfach ihr Ding durchzieht, den ersten Grand-Slam-Sieg einer deutschen Tennisspielerin seit 17 Jahren feiert, macht es doppelt schön.",
-    "translation": null,
+    "translation": "She [the tennis player Angelique Kerber] continued to work persistently at becoming better. Without much media fuss. The fact that she, who instead of making big noise simply does her thing, celebrates the first Grand Slam victory of a German tennis player in 17 years makes it doubly beautiful.",
     "source": "wiktionary",
     "lemmas": [
       "große Töne spucken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "arbeitete",
+        "lemma": "arbeiten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "beharrlich",
+        "lemma": "beharrlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ding",
+        "lemma": "Ding",
+        "pos": "noun",
+        "gloss_hint": "thing"
+      },
+      {
+        "form": "Grand-Slam-Sieg",
+        "lemma": "Grand-Slam-Sieg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tennisspielerin",
+        "lemma": "Tennisspielerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schön",
+        "lemma": "schön",
+        "pos": "adjective",
+        "gloss_hint": "beautiful"
+      }
     ]
   },
   "d8518d6ca6": {
@@ -10889,11 +11053,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get a slap",
     "source": "wiktionary",
     "lemmas": [
       "kriegen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d853ad7eac": {
     "text": "der Ball liegt bei",
@@ -11208,11 +11373,12 @@
     "type": "expression",
     "note": "keine Aussicht auf Erfolg haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "have no chance of success",
     "source": "wiktionary",
     "lemmas": [
       "Sonne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d85b41ab6b": {
     "text": "Die USA wollten schlicht und ergreifend eine neue Waffe testen und Stärke demonstrieren. Gegenüber den Japanern, vor allem aber gegenüber Russland. Hier ließ die Supermacht USA zum ersten Mal ihre nuklearen Muskeln spielen und setzte damit die atomare Aufrüstungsspirale in Gang, deren Nachwirkungen wir noch heute spüren.",
@@ -13088,16 +13254,14 @@
     "type": "expression",
     "note": "trotz schlechter Wahrscheinlichkeit/Prognose glücken",
     "synonyms": [],
-    "translation": null,
+    "translation": "be lucky enough to pull through",
     "source": "wiktionary",
     "lemmas": [
       "Glück",
       "Verstand"
     ],
     "ref": "phrases/mehr Glück als Verstand haben",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d86b66d4e4": {
     "text": "Er besaß auch nicht die Nase Lord Henrys, jene berühmte rötliche Kartoffel, welche nach der Versicherung eines frivolen Franzosen einzig und allein von der großen Erdäpfelseuche des Jahres 1845 verschont geblieben sein soll – nein, der Buchhalter Lenz besaß seine eigene Nase, er konnte sich bei seiner eigenen Nase ziehen.",
@@ -14170,11 +14334,12 @@
     "type": "expression",
     "note": "sich betrinken",
     "synonyms": [],
-    "translation": null,
+    "translation": "get drunk",
     "source": "wiktionary",
     "lemmas": [
       "Affe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d87322de98": {
     "text": "Ich habe in Wahlen meinen Urlaub verbracht.",
@@ -14187,10 +14352,37 @@
   },
   "d8735f612e": {
     "text": "„Die ARD hat das alles gefilmt und eine unglückliche Passage daraus ausgestrahlt.“",
-    "translation": null,
+    "translation": "The ARD filmed all of it and broadcast an unfortunate passage from it.",
     "source": "wiktionary",
     "lemmas": [
       "ARD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ARD",
+        "lemma": "ARD",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gefilmt",
+        "lemma": "filmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Passage",
+        "lemma": "Passage",
+        "pos": "noun",
+        "gloss_hint": "text passage"
+      },
+      {
+        "form": "ausgestrahlt",
+        "lemma": "ausstrahlen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d874664f00": {
@@ -16671,22 +16863,24 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I do not know the reasons, but I must disapprove of them",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d88f946bca": {
     "text": "zwei Eisen im Feuer haben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have two irons in the fire",
     "source": "wiktionary",
     "lemmas": [
       "Eisen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d88fcc993b": {
     "text": "Mein Nachbar ist ein begeisterter Fußballer.",
@@ -17045,11 +17239,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's off the table",
     "source": "wiktionary",
     "lemmas": [
       "Essig"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d892489280": {
     "text": "[…]: Der Kellner hat die Funktion der Tür übernommen, und damit kehrt sich alles um, was einst der Werkzeuggebrauch des Homo Faber versprach: Der Mensch der Moderne ist zum Werkzeug seines Werkzeugs geworden.",
@@ -18798,7 +18993,7 @@
     "type": "expression",
     "note": "etwas (hinterlistiges) planen",
     "synonyms": [],
-    "translation": null,
+    "translation": "have something up one's sleeve",
     "source": "wiktionary",
     "lemmas": [
       "im",
@@ -18806,9 +19001,7 @@
       "Schild"
     ],
     "ref": "phrases/etwas im Schilde führen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d89cffd63e": {
     "text": "Das Erzählen fiel ihr schwerer als das Zeichnen.",
@@ -18863,11 +19056,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Water and fire will never be friends",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d89e56136c": {
     "text": "„Nach der Gründung der Vereinten Nationen (United Nations – UN) und der Schaffung des Internationalen Gerichtshofs (IGH) im Jahr 1945 wurde der PCIJ im April 1946 offiziell aufgelöst und der IGH nahm seine Arbeit auf. Der IGH urteilt ebenfalls über Streitigkeiten zwischen Staaten, die seine Zuständigkeit anerkennen.“",
@@ -19541,10 +19735,55 @@
   },
   "d8a1ac8174": {
     "text": "„Im Schrank roch es seltsam, und sie war sicher, dass allerlei Tierchen herumkrabbelten, aber dort konnte ihr niemand etwas anhaben.“",
-    "translation": null,
+    "translation": "The cupboard smelled strange, and she was certain that all sorts of little creatures were crawling around in there, but no one could harm her there.",
     "source": "wiktionary",
     "lemmas": [
       "Tierchen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schrank",
+        "lemma": "Schrank",
+        "pos": "noun",
+        "gloss_hint": "cupboard"
+      },
+      {
+        "form": "roch",
+        "lemma": "riechen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "seltsam",
+        "lemma": "seltsam",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "sicher",
+        "lemma": "sicher",
+        "pos": "adjective",
+        "gloss_hint": "certain"
+      },
+      {
+        "form": "Tierchen",
+        "lemma": "Tierchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "herumkrabbelten",
+        "lemma": "herumkrabbeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "anhaben",
+        "lemma": "anhaben",
+        "pos": "verb",
+        "gloss_hint": "accuse"
+      }
     ]
   },
   "d8a1beff75": {
@@ -19706,19 +19945,59 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "by the book",
     "source": "wiktionary",
     "lemmas": [
       "Schema"
     ],
-    "ref": "phrases/nach Schema F"
+    "ref": "phrases/nach Schema F",
+    "translation_model": "openai/gpt-4.1"
   },
   "d8a2a49ae7": {
     "text": "„Sie stand schließlich hastig auf, hing sich einen alten Brotbeutel um und verließ schnell den Wartesaal.“",
-    "translation": null,
+    "translation": "She finally stood up hastily, slung an old bread bag around herself, and quickly left the waiting room.",
     "source": "wiktionary",
     "lemmas": [
       "umhängen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "stand",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "hastig",
+        "lemma": "hastig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Brotbeutel",
+        "lemma": "Brotbeutel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verließ",
+        "lemma": "verlassen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schnell",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": "fast"
+      },
+      {
+        "form": "Wartesaal",
+        "lemma": "Wartesaal",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d8a30417bd": {
@@ -20711,10 +20990,31 @@
   },
   "d8aab88e75": {
     "text": "Binde dir doch endlich die Senkel, ich sehe schon, wie du noch stolperst!",
-    "translation": null,
+    "translation": "Finally tie your shoelaces, I can already see you stumbling!",
     "source": "wiktionary",
     "lemmas": [
       "Senkel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Senkel",
+        "lemma": "Senkel",
+        "pos": "noun",
+        "gloss_hint": "shoelace"
+      },
+      {
+        "form": "endlich",
+        "lemma": "endlich",
+        "pos": "adverb",
+        "gloss_hint": "finally"
+      },
+      {
+        "form": "stolperst",
+        "lemma": "stolpern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d8aaf7c858": {
@@ -22070,11 +22370,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hammer and sickle",
     "source": "wiktionary",
     "lemmas": [
       "Zirkel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d8b73ca751": {
     "text": "Wir wirken für den Frieden und den Schutz der Umwelt.",
@@ -23729,10 +24030,43 @@
   },
   "d8c705a0ff": {
     "text": "Nach dem Zusammenstoß suchte ich nach einer Möglichkeit um mich gewandt aus der Affäre zu ziehen.",
-    "translation": null,
+    "translation": "After the collision, I looked for a way to extricate myself skillfully from the predicament.",
     "source": "wiktionary",
     "lemmas": [
       "gewandt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zusammenstoß",
+        "lemma": "Zusammenstoß",
+        "pos": "noun",
+        "gloss_hint": "collision"
+      },
+      {
+        "form": "suchte",
+        "lemma": "suchen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Möglichkeit",
+        "lemma": "Möglichkeit",
+        "pos": "noun",
+        "gloss_hint": "option"
+      },
+      {
+        "form": "gewandt",
+        "lemma": "gewandt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Affäre",
+        "lemma": "Affäre",
+        "pos": "noun",
+        "gloss_hint": "scandal"
+      }
     ]
   },
   "d8c7ea0668": {
@@ -24843,11 +25177,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at the end of the rainbow",
     "source": "wiktionary",
     "lemmas": [
       "Regenbogen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d8d5ae99d2": {
     "text": "Als Herr Ting im Auswärtigen Amt vorspricht, wird er durch Herrn von Trebitz empfangen.",
@@ -25283,11 +25618,12 @@
     "type": "expression",
     "note": "etwas ist unsinnig",
     "synonyms": [],
-    "translation": null,
+    "translation": "that's nonsense",
     "source": "wiktionary",
     "lemmas": [
       "Käse"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d8dd6c9762": {
     "text": "Frau Meier, bitte übernehmen Sie die Kontrolle beim Wareneingang.",
@@ -25370,6 +25706,35 @@
       "translation": true,
       "annotations": "91c0b6ca"
     }
+  },
+  "d8dfd6dba3": {
+    "text": "Feurio! Feurio! Das Haus brennt schon lichterloh!",
+    "translation": "Fire! Fire! The house is already burning fiercely!",
+    "source": "wiktionary",
+    "lemmas": [
+      "feurio"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Haus",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": "building"
+      },
+      {
+        "form": "brennt",
+        "lemma": "brennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "lichterloh",
+        "lemma": "lichterloh",
+        "pos": "adverb",
+        "gloss_hint": null
+      }
+    ]
   },
   "d8e07a7597": {
     "text": "Er drohte in seiner Arbeit zu ertrinken.",
@@ -25619,10 +25984,97 @@
   },
   "d8e3d66a4e": {
     "text": "Der Schlüsseldienst forderte 850 € für einen 5-Minuten-Einsatz. Ohne mit der Wimper zu zucken konterte Laura und drohte dem Monteur, die Sache einem Rechtsanwalt zu übergeben, falls die Forderung nicht deutlich reduziert würde.",
-    "translation": null,
+    "translation": "The locksmith demanded €850 for a 5-minute job. Without batting an eyelash, Laura countered and threatened the technician to hand the matter over to a lawyer if the demand was not significantly reduced.",
     "source": "wiktionary",
     "lemmas": [
       "ohne mit der Wimper zu zucken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schlüsseldienst",
+        "lemma": "Schlüsseldienst",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "forderte",
+        "lemma": "fordern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einsatz",
+        "lemma": "Einsatz",
+        "pos": "noun",
+        "gloss_hint": "mission"
+      },
+      {
+        "form": "Wimper",
+        "lemma": "Wimper",
+        "pos": "noun",
+        "gloss_hint": "eyelash"
+      },
+      {
+        "form": "zucken",
+        "lemma": "zucken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "konterte",
+        "lemma": "kontern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "drohte",
+        "lemma": "drohen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Monteur",
+        "lemma": "Monteur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sache",
+        "lemma": "Sache",
+        "pos": "noun",
+        "gloss_hint": "matter"
+      },
+      {
+        "form": "Rechtsanwalt",
+        "lemma": "Rechtsanwalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "übergeben",
+        "lemma": "übergeben",
+        "pos": "verb",
+        "gloss_hint": "hand over"
+      },
+      {
+        "form": "Forderung",
+        "lemma": "Forderung",
+        "pos": "noun",
+        "gloss_hint": "claim"
+      },
+      {
+        "form": "deutlich",
+        "lemma": "deutlich",
+        "pos": "adjective",
+        "gloss_hint": "clear"
+      },
+      {
+        "form": "reduziert",
+        "lemma": "reduzieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d8e457c4f7": {
@@ -28185,10 +28637,43 @@
   },
   "d8f8760b0c": {
     "text": "„Der Bayerische Fußballverband (BFV) hat seinen Schiedsrichtern offenbar einen Maulkorb verpasst.“",
-    "translation": null,
+    "translation": "The Bavarian Football Association (BFV) has apparently muzzled its referees.",
     "source": "wiktionary",
     "lemmas": [
       "jemandem einen Maulkorb verpassen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bayerische",
+        "lemma": "bayerisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fußballverband",
+        "lemma": "Fußballverband",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schiedsrichtern",
+        "lemma": "Schiedsrichter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Maulkorb",
+        "lemma": "Maulkorb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verpasst",
+        "lemma": "verpassen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d8f9277d52": {
@@ -28462,11 +28947,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "cling to someone's coattails",
     "source": "wiktionary",
     "lemmas": [
       "hängen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d8fcbbb18e": {
     "text": "Darf ich mal dein Gedächtnis auffrischen? Du warst selbst dabei, als Hans das wortwörtlich gesagt hat.",

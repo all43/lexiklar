@@ -3,22 +3,125 @@
   "pos": "verb",
   "etymology_number": null,
   "auxiliary": "haben",
-  "separable": true,
-  "prefix": "über",
+  "separable": false,
+  "prefix": null,
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "etwas so lange und so oft angesehen haben, dass es langweilig oder sogar unangenehm ist, weiter hinzuschauen",
-      "gloss_en": "tire of watching",
+      "gloss": "etwas oder jemanden nicht wahrnehmen; versehentlich nicht beachten",
+      "gloss_en": "overlook (unintentionally)",
       "tags": [
         "transitive"
       ],
       "example_ids": [
-        "2e7888c267",
-        "d028025092"
+        "44fe4b61a1"
       ],
       "synonyms": [],
       "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To fail to notice something or someone; to overlook unintentionally.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "etwas absichtlich nicht beachten ( ein erkanntes Fehlverhalten ungetadelt lassen)",
+      "gloss_en": "ignore (intentionally)",
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "5b58b3d32e"
+      ],
+      "synonyms": [
+        "hinwegsehen",
+        "ignorieren",
+        "hinwegblicken"
+      ],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To deliberately ignore something (to leave recognized misconduct unpunished).",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "mit seinem Blick weitläufig erfassen; überblicken",
+      "gloss_en": "survey",
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "63f53f9392"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To take in a wide view with one's gaze; to overlook.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "vollständig verstehen",
+      "gloss_en": "comprehend",
+      "tags": [
+        "transitive"
+      ],
+      "example_ids": [
+        "2baac3b6b1"
+      ],
+      "synonyms": [
+        "begreifen",
+        "erfassen",
+        "erkennen",
+        "nachvollziehen",
+        "realisieren",
+        "überschauen"
+      ],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To fully understand.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[yːbɐˈzeːən]",
+      "tags": []
+    }
+  ],
+  "conjugation_class": "strong",
+  "stems": {
+    "present": "überseh",
+    "past": "übersah",
+    "present_du_er": "übersieh",
+    "subj2": "übersäh",
+    "imperative_du": "übersieh"
+  },
+  "past_participle": "übersehen",
+  "_derived": [
+    "übersehbar",
+    "unübersehbar",
+    "Übersehen",
+    "übersehen",
+    "übersehend",
+    "Übersicht"
+  ],
+  "_synonyms": [
+    "hinwegsehen",
+    "ignorieren",
+    "hinwegblicken",
+    "begreifen",
+    "erfassen",
+    "erkennen",
+    "nachvollziehen",
+    "realisieren",
+    "überschauen"
+  ],
+  "_meta": {
+    "source_hash": "814924fec014aa8a",
+    "generated_at": "2026-03-23"
+  },
+  "zipf": 4.07,
+  "_orphaned_translations": [
+    {
+      "gloss": "etwas so lange und so oft angesehen haben, dass es langweilig oder sogar unangenehm ist, weiter hinzuschauen",
+      "gloss_en": "tire of watching",
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To have looked at something so long and so often that it becomes tedious or even unpleasant to continue looking at it",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -27,65 +130,5 @@
       ],
       "synonyms_en_model": "openai/gpt-4.1-mini"
     }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ˈyːbɐˌzeːən]",
-      "tags": []
-    }
-  ],
-  "conjugation_class": "strong",
-  "stems": {
-    "present": "seh",
-    "past": "sah",
-    "present_du_er": "sieh",
-    "subj2": "säh",
-    "imperative_du": "sieh"
-  },
-  "past_participle": "übergesehen",
-  "_derived": [
-    "übergesehen",
-    "Übersehen",
-    "übersehend"
-  ],
-  "_meta": {
-    "source_hash": "124aad32047a868f",
-    "generated_at": "2026-03-21"
-  },
-  "zipf": 4.07,
-  "_orphaned_translations": [
-    {
-      "gloss": "etwas oder jemanden nicht wahrnehmen; versehentlich nicht beachten",
-      "gloss_en": "overlook (unintentionally)",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To fail to notice something or someone; to overlook unintentionally.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "etwas absichtlich nicht beachten ( ein erkanntes Fehlverhalten ungetadelt lassen)",
-      "gloss_en": "ignore (intentionally)",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To deliberately ignore something (to leave recognized misconduct unpunished).",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "mit seinem Blick weitläufig erfassen; überblicken",
-      "gloss_en": "survey",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To take in a wide view with one's gaze; to overlook.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "vollständig verstehen",
-      "gloss_en": "comprehend",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To fully understand.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
-    }
-  ],
-  "_proofread": {
-    "gloss_en": true,
-    "gloss_en_full": true,
-    "synonyms_en": true
-  }
+  ]
 }

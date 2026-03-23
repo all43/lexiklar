@@ -420,11 +420,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get a bloody nose (figuratively: suffer a setback)",
     "source": "wiktionary",
     "lemmas": [
       "holen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e007c95526": {
     "text": "„In der immer hitzigeren Debatte um die Gesundheitsreform in den USA versucht Präsident Barack Obama die Wogen zu glätten.“",
@@ -588,11 +589,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be of the purest kind",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e00b7e6afc": {
     "text": "„Nach Tschernobyl zieht sich Prophet Messerschmidt auf eine wachsweiche Prognose zurück: ‚Ich halte die deutschen Kernkraftwerke für sicherer als Tschernobyl.‘ Ihr Wort in Gottes Ohr, Herr Oberst.“",
@@ -854,11 +856,12 @@
     "type": "expression",
     "note": "durch Farbe, Kleidung, Schönheit und Ähnliches besondere Beachtung finden",
     "synonyms": [],
-    "translation": null,
+    "translation": "attract attention",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e00fe7f218": {
     "text": "Duden online „Glyzerin“",
@@ -1238,10 +1241,37 @@
   },
   "e015d91742": {
     "text": "Zufolge des Gerüchts geht das Unternehmen bald pleite.",
-    "translation": null,
+    "translation": "According to the rumor, the company will soon go bankrupt.",
     "source": "wiktionary",
     "lemmas": [
       "zufolge"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gerüchts",
+        "lemma": "Gerücht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unternehmen",
+        "lemma": "Unternehmen",
+        "pos": "noun",
+        "gloss_hint": "company"
+      },
+      {
+        "form": "bald",
+        "lemma": "bald",
+        "pos": "adverb",
+        "gloss_hint": "soon"
+      },
+      {
+        "form": "pleite",
+        "lemma": "pleite",
+        "pos": "adjective",
+        "gloss_hint": "bankrupt"
+      }
     ]
   },
   "e015fb6b69": {
@@ -1451,11 +1481,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "for all I care",
     "source": "wiktionary",
     "lemmas": [
       "trommeln"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e01dab80e4": {
     "text": "Die Unternehmung krankt an mangelnder Vorbereitung.",
@@ -1934,7 +1965,7 @@
     "type": "expression",
     "note": "die ganzen Einnahmen sofort aufbrauchen, nichts sparen können",
     "synonyms": [],
-    "translation": null,
+    "translation": "live from paycheck to paycheck",
     "source": "wiktionary",
     "lemmas": [
       "Hand",
@@ -1942,9 +1973,7 @@
       "leben"
     ],
     "ref": "phrases/von der Hand in den Mund leben",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e0288059b7": {
     "text": "Flehend sah er sie an, als könnte sein Blick sie noch umstimmen.",
@@ -2105,11 +2134,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it was reported from usually well-informed circles",
     "source": "wiktionary",
     "lemmas": [
       "Kreis"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0307cfe97": {
     "text": "Der Festgenommene schweigt wie ein Grab.",
@@ -2146,11 +2176,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "show someone what you're made of",
     "source": "wiktionary",
     "lemmas": [
       "zeigen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0318f0c66": {
     "text": "Da zeigten es aber die Altgedienten den Aalen.",
@@ -2235,25 +2266,24 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When the need is greatest, God's help is nearest.",
     "source": "wiktionary",
     "lemmas": [
       "Not"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e033d8e253": {
     "text": "Bilder an die Wand werfen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "project images onto the wall",
     "source": "wiktionary",
     "lemmas": [
       "werfen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e033f2d939": {
     "text": "[NSU-Prozess 2013 – 2018:] „Scholl: Und Sie haben wirklich alles protokolliert, jedes Wort mitgeschrieben – eine Großtat von Ihnen und Ihren Kollegen. Denn was man durch Ihr Protokoll und durch das Material als verblüffter juristischer Laie auch erfährt: Die deutsche Strafgesetzordnung sieht ein Protokoll nicht zwingend vor. Es gibt keine offiziellen Mitschriften der Zeugenaussagen, des ganzen Prozesses, keine Tonbandaufnahmen.“ […].",
@@ -2834,11 +2864,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "full steam ahead",
     "source": "wiktionary",
     "lemmas": [
       "Dampf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0404e0b6c": {
     "text": "„Humboldt wandte sich an den Kapitän, zeigte einmal noch seinen spanischen Paß und erbat eine Passage.“",
@@ -3005,11 +3036,12 @@
     "type": "expression",
     "note": "ähnlich wie ein Schatten seiner selbst sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to feel like half a person",
     "source": "wiktionary",
     "lemmas": [
       "Mensch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0462edaa4": {
     "text": "Ein Zelt stellt man am besten dort auf, wo der Boden eben ist.",
@@ -3074,22 +3106,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You never miss the water till the well runs dry.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e04bc70b8c": {
     "text": "nichts zu lachen haben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not have anything to laugh about",
     "source": "wiktionary",
     "lemmas": [
       "lachen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e04c6ffff7": {
     "text": "„Dass Israel sich prinzipiell zu den Aktivitäten seines Geheimdienstes nicht äußert, heizt die Gerüchte nur weiter an. Fachleute halten es allerdings für unwahrscheinlich, dass der Mossad die Vielzahl von Sabotageakten allein stemmen könnte.“",
@@ -3861,11 +3895,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone's heart is pounding in their throat",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0596bdda7": {
     "text": "In die Verwirrung kann sich auch ein wenig Eifersucht einmischen.",
@@ -4590,13 +4625,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make a good impression",
     "source": "wiktionary",
     "lemmas": [
       "machen",
       "Figur"
     ],
-    "ref": "phrases/eine gute Figur machen"
+    "ref": "phrases/eine gute Figur machen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e064a1c967": {
     "text": "„Auch wenn ein scheidungsakzessorischer Statuswechsel de lege lata die Zustimmung des Ehemannes erfordert, handelt es sich bei der Zustimmung doch nur um eines von mehreren Indizien, die gegen eine Vaterschaft des Ehemannes sprechen.“",
@@ -4954,12 +4990,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fumble in the dark",
     "source": "wiktionary",
     "lemmas": [
       "Nebel"
     ],
-    "ref": "phrases/im Nebel herumstochern"
+    "ref": "phrases/im Nebel herumstochern",
+    "translation_model": "openai/gpt-4.1"
   },
   "e069253e7c": {
     "text": "Nur getroffene Hunde bellen.",
@@ -5380,12 +5417,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be about to happen",
     "source": "wiktionary",
     "lemmas": [
       "Haus",
       "stehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0791969e3": {
     "text": "„Touristen, sagt Papa, wandern nicht und beobachten auch nicht genau, Touristen lassen sich irgendwohin fahren und schauen dann, wo sie den nächsten Apfelkuchen mit Sahne bekommen.“",
@@ -5645,11 +5683,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to need something like the air you breathe",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e07baa2739": {
     "text": "„Kohlenstaub ist staubförmige Braun- oder Steinkohle. Dieser Staub entsteht beim Abbauvorgang der Kohle in der Lagerstätte oder der Staub wird in Mahlanlagen gezielt hergestellt.“",
@@ -6297,11 +6336,12 @@
     "type": "expression",
     "note": "da ist etwas nicht in Ordnung, da stimmt etwas nicht",
     "synonyms": [],
-    "translation": null,
+    "translation": "there's something wrong",
     "source": "wiktionary",
     "lemmas": [
       "Wurm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0882b7622": {
     "text": "Kennst du jemanden, der gern Gedichte auswendig lernt?",
@@ -6881,11 +6921,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "defend deep",
     "source": "wiktionary",
     "lemmas": [
       "tief"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e08f0f3370": {
     "text": "„Das gefühlvolle Ausbalancieren der Vorlage stellt den Schlüssel zur Kontrolle der Geschwindigkeit dar.“",
@@ -7496,18 +7537,106 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to suffer a setback",
     "source": "wiktionary",
     "lemmas": [
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e09ac78371": {
     "text": "„Sogar Peter Hintze vom Bundesministerium für Frauen und Jugend darf auspacken, wie er vor zwanzig Jahren beim Festival der Weltjugend aufm Alex den CDU-Standpunkt durchsetzen wollte und an der Diktatur gescheitert ist.“",
-    "translation": null,
+    "translation": "Even Peter Hintze from the Federal Ministry for Women and Youth is allowed to speak out about how twenty years ago at the Festival of World Youth on the Alex he wanted to enforce the CDU position and failed against the dictatorship.",
     "source": "wiktionary",
     "lemmas": [
       "aufm"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Peter",
+        "lemma": "Peter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundesministerium",
+        "lemma": "Bundesministerium",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jugend",
+        "lemma": "Jugend",
+        "pos": "noun",
+        "gloss_hint": "youth"
+      },
+      {
+        "form": "auspacken",
+        "lemma": "auspacken",
+        "pos": "verb",
+        "gloss_hint": "confess"
+      },
+      {
+        "form": "zwanzig",
+        "lemma": "zwanzig",
+        "pos": "numeral",
+        "gloss_hint": "twenty"
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Festival",
+        "lemma": "Festival",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weltjugend",
+        "lemma": "Weltjugend",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Alex",
+        "lemma": "Alex",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "CDU-Standpunkt",
+        "lemma": "CDU-Standpunkt",
+        "pos": "noun",
+        "gloss_hint": "position"
+      },
+      {
+        "form": "durchsetzen",
+        "lemma": "durchsetzen",
+        "pos": "verb",
+        "gloss_hint": "enforce"
+      },
+      {
+        "form": "Diktatur",
+        "lemma": "Diktatur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gescheitert",
+        "lemma": "scheitern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "e09b5ee2be": {
@@ -7657,22 +7786,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Cats have nine lives",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e09ed100ed": {
     "text": "im Stück",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in one piece",
     "source": "wiktionary",
     "lemmas": [
       "Stück"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0a01010ac": {
     "text": "„Nur dann wäre in dieser Sicht ein wissenschaftlicher Gottesbeweis gelungen, wenn der Unterschied empirisch feststellbar wäre, den seine Existenz bzw. Nichtexistenz für eine naturwissenschaftliche Beschreibung der Wirklichkeit machen würde.“",
@@ -7940,33 +8071,36 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "sudden shock",
     "source": "wiktionary",
     "lemmas": [
       "Schlag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0a5c21191": {
     "text": "da speit das doppelt geöffnete Haus zwei Leoparden auf einmal aus",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When the doors open wide, two leopards come out at once.",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0a6af7d54": {
     "text": "von Mensch zu Mensch",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "from person to person",
     "source": "wiktionary",
     "lemmas": [
       "Mensch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0a841b738": {
     "text": "„Seine Schultern und die langen Arme offenbarten zudem eine zähe, agile Wendigkeit, die an einen Boxer erinnerte.“",
@@ -8221,11 +8355,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with heart and soul",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0b0994fd6": {
     "text": "Einer der Nikolause auf dem Weihnachtsmarkt erlitt einen Kollaps.",
@@ -8274,11 +8409,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to build a bridge",
     "source": "wiktionary",
     "lemmas": [
       "Brücke"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0b1430e80": {
     "text": "Der Heiratsschwindler war ein begabter Hochstapler, dem die Frauen glaubten, er sei Freiherr und Richter und dass er ein größeres Erbe zu erwarten hatte.",
@@ -8357,11 +8493,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "… until things get really heated",
     "source": "wiktionary",
     "lemmas": [
       "Fetzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0b33f6d3f": {
     "text": "„»Aber inzwischen geht er mit seinem Freibauern auf d7, bedroht Ihren Turm, und auch wenn Sie mit dem Springer Schach sagen, verlieren Sie und sind nach neun bis zehn Zügen erledigt.«“",
@@ -8453,10 +8590,49 @@
   },
   "e0b3420010": {
     "text": "„Bei gut 3000 Vollzeitjobs im ORF selbst und fast 4000 Vollzeitstellen im ORF-Konzern samt Tochterunternehmen klingt das recht überschaubar.“",
-    "translation": null,
+    "translation": "With roughly 3,000 full-time jobs at the ORF itself and almost 4,000 full-time positions in the ORF group including subsidiaries, that sounds quite manageable.",
     "source": "wiktionary",
     "lemmas": [
       "ORF"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vollzeitjobs",
+        "lemma": "Vollzeitjob",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ORF",
+        "lemma": "ORF",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vollzeitstellen",
+        "lemma": "Vollzeitstelle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ORF-Konzern",
+        "lemma": "ORF-Konzern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tochterunternehmen",
+        "lemma": "Tochterunternehmen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "überschaubar",
+        "lemma": "überschaubar",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "e0b4e95e4d": {
@@ -8518,22 +8694,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on shaky ground",
     "source": "wiktionary",
     "lemmas": [
       "Fuß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0b624749f": {
     "text": "wie bei Muttern (zu Hause)",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "just like home (cooked by mom)",
     "source": "wiktionary",
     "lemmas": [
       "wie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0b67c71dc": {
     "text": "„Wir haben genügend Erfahrene, um hoffentlich nicht komplett zu verkrampfen.“",
@@ -9245,16 +9423,14 @@
     "type": "expression",
     "note": "sich selbst schaden",
     "synonyms": [],
-    "translation": null,
+    "translation": "to cut off one's nose to spite one's face",
     "source": "wiktionary",
     "lemmas": [
       "Fleisch",
       "schneiden"
     ],
     "ref": "phrases/sich ins eigene Fleisch schneiden",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e0c4eccf3d": {
     "text": "Die Fundamente moderner Gebäude sind fast immer aus Beton.",
@@ -9827,11 +10003,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have the upper hand",
     "source": "wiktionary",
     "lemmas": [
       "lang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0cfea42c4": {
     "text": "„…Und als Bärin wäre Kallisto beinahe von ihrem Sohn Arkas getötet worden, der seine Mutter in der Tiergestalt nicht erkannte. Das wiederum erbarmte Zeus: Er verwandelte auch Arkas in einen Bären - den Kleinen Bären (auch: Kleiner Wagen) - und versetzte beide an den Himmel. Und weil er sie bei ihrem Schwanz griff und zu den Sternen schleuderte, sind die Schwänze des Kleinen und des Großen Bären (jeweils die Deichseln der Wagen) auch so lang.“",
@@ -11085,11 +11262,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Tomb of the Unknown Soldier",
     "source": "wiktionary",
     "lemmas": [
       "Grab"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0ddc93a29": {
     "text": "„Die Bauherren und Architekten haben sich wüst geirrt.“",
@@ -11132,11 +11310,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "people are creatures of habit",
     "source": "wiktionary",
     "lemmas": [
       "Mensch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0de50950b": {
     "text": "„Er hatte sich nach Kiew aufgemacht in der Hoffnung, etwas Essbares heimzubringen.“",
@@ -11648,10 +11827,37 @@
   },
   "e0e4f54d9e": {
     "text": "Durch ständiges Rühren kannst du verhindern, dass der Grießbrei anhängt.",
-    "translation": null,
+    "translation": "By stirring constantly, you can prevent the semolina porridge from sticking.",
     "source": "wiktionary",
     "lemmas": [
       "anhängen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rühren",
+        "lemma": "rühren",
+        "pos": "verb",
+        "gloss_hint": "stir"
+      },
+      {
+        "form": "verhindern",
+        "lemma": "verhindern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grießbrei",
+        "lemma": "Grießbrei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "anhängt",
+        "lemma": "anhängen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "e0e7285f18": {
@@ -11846,22 +12052,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get some fresh air",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0ec2045ee": {
     "text": "o wüsst ich doch den Weg zurück",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Oh, if only I knew the way back!",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0eca79f93": {
     "text": "Ich werde dieses Miststück umbringen.",
@@ -12415,11 +12623,12 @@
     "type": "expression",
     "note": "acht geben, bedachtsam vorgehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to work with great care",
     "source": "wiktionary",
     "lemmas": [
       "Pinsel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0f3f0612c": {
     "text": "„Die schlussendliche Diagnose stellt sich meist aus einer Kombination von Auffälligkeiten in diesen Instrumenten.“",
@@ -13111,11 +13320,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get on someone's nerves",
     "source": "wiktionary",
     "lemmas": [
       "Zeiger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e0ff440c64": {
     "text": "„In Schuldiener sein Schani horrchte von draussen zu und sagte zu mier: Hörst Poldi, das schaugn mir sich an, diese Schweineren, daß muß eine Gaudee sein.“",

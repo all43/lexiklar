@@ -5,47 +5,49 @@
   "auxiliary": "haben",
   "separable": false,
   "prefix": null,
-  "reflexive": "none",
+  "reflexive": "mandatory",
   "senses": [
     {
-      "gloss": "sich als Tier auf einem Baum begeben, dort hinfliegen und sich niederlassen",
-      "gloss_en": "perch (bird)",
-      "tags": [],
+      "gloss": "sich mit einem Ruck aufrichten, sich auf die Hinterbeine aufrecht stellen",
+      "gloss_en": "rear up",
+      "tags": [
+        "intransitive",
+        "reflexive"
+      ],
       "example_ids": [
-        "e612d388ce"
+        "36c19c464e",
+        "a595bbb6af"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "sich aufbäumen"
+      ],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To go up into a tree as an animal, fly there and perch",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
-      "synonyms_en": [
-        "roost",
-        "settle in tree",
-        "bird perch"
-      ],
-      "synonyms_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To straighten up with a jerk, to stand upright on the hind legs.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     },
     {
-      "gloss": "Material auf einen Baum spannen",
-      "gloss_en": "hang up (on a tree)",
-      "tags": [],
+      "gloss": "gegen etwas Widerstand leisten",
+      "gloss_en": "resist",
+      "tags": [
+        "figurative",
+        "literary",
+        "reflexive"
+      ],
       "example_ids": [
-        "8c4296d94d"
+        "092ebf65ae",
+        "884a8ecee1"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "sich aufbäumen",
+        "sich auflehnen",
+        "sich empören",
+        "sich widersetzen"
+      ],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To stretch material onto a tree",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
-      "synonyms_en": [
-        "stretch fabric",
-        "stretch cloth",
-        "stretch material",
-        "stretch on beam",
-        "hang on tree"
-      ],
-      "synonyms_en_model": "openai/gpt-4.1-mini"
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To offer resistance against something.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
   ],
   "sounds": [
@@ -60,25 +62,51 @@
     "past": ""
   },
   "past_participle": "gebäumt",
+  "_derived": [
+    "Gebäume"
+  ],
+  "_hyponyms": [
+    "aufbäumen"
+  ],
+  "_synonyms": [
+    "sich aufbäumen",
+    "sich auflehnen",
+    "sich empören",
+    "sich widersetzen"
+  ],
   "_meta": {
-    "source_hash": "ca936730623290b1",
-    "generated_at": "2026-03-21"
+    "source_hash": "9c23e032bff8edc8",
+    "generated_at": "2026-03-23"
   },
   "zipf": 4.07,
   "_orphaned_translations": [
     {
-      "gloss": "sich mit einem Ruck aufrichten, sich auf die Hinterbeine aufrecht stellen",
-      "gloss_en": "rear up",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To straighten up with a jerk, to stand upright on the hind legs.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
+      "gloss": "sich als Tier auf einem Baum begeben, dort hinfliegen und sich niederlassen",
+      "gloss_en": "perch (bird)",
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To go up into a tree as an animal, fly there and perch",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "roost",
+        "settle in tree",
+        "bird perch"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
     },
     {
-      "gloss": "gegen etwas Widerstand leisten",
-      "gloss_en": "resist",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To offer resistance against something.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
+      "gloss": "Material auf einen Baum spannen",
+      "gloss_en": "hang up (on a tree)",
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To stretch material onto a tree",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "stretch fabric",
+        "stretch cloth",
+        "stretch material",
+        "stretch on beam",
+        "hang on tree"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
     }
   ]
 }

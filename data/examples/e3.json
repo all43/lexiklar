@@ -281,11 +281,12 @@
     "type": "expression",
     "note": "[1–3] umgangssprachlich seltener: Holz vor dem Haus haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "prefabricated house",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e3052202b8": {
     "text": "„Als er aufwachte, blendete ihn die Sonne, und er glaubte, er schwebte. Das Schweben störte ihn nicht.“",
@@ -394,11 +395,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lose touch with someone",
     "source": "wiktionary",
     "lemmas": [
       "verlieren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e307852d53": {
     "text": "Er verringerte seinen Einsatz.",
@@ -661,11 +663,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "zero hour",
     "source": "wiktionary",
     "lemmas": [
       "Stunde"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e30d53e796": {
     "text": "„‚Wo Mannesmut und Frauentreu’ / die Heimat sich erstritt aufs neu’, / wo man mit Blut die Grenze schrieb / und frei in Not und Tod verblieb; / hell jubelnd klingt’s zur Bergeswand: Das ist mein herrlich Heimatland!‘ Mit der vierten Strophe des Kärntner Heimatlieds im Gepäck wollte man von der Alpe bis zur Adria die pannonische Tiefebene erobern - erfolglos.“",
@@ -1068,11 +1071,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "what someone is really like",
     "source": "wiktionary",
     "lemmas": [
       "wes"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e3126dbf4a": {
     "text": "Sie lachten viel über die Sketche beim Abschlussfest der Schulklasse.",
@@ -1522,10 +1526,85 @@
   },
   "e319987bf0": {
     "text": "„Georg wartete vor dem Ladenfenster, ohne sein gewoehnliches Laecheln, mit einem fast finsteren Gesicht, das Franz gar nicht verstand, obwohl er in einem fort aus dem Ladeninnern ueber die Auslage weg durch die Scheibe spaehte.“",
-    "translation": null,
+    "translation": "\"Georg waited in front of the shop window, without his usual smile, with an almost dark face that Franz didn't understand at all, even though he kept peering through the window pane from inside the shop across the display.\"",
     "source": "wiktionary",
     "lemmas": [
       "in einem fort"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Georg",
+        "lemma": "Georg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wartete",
+        "lemma": "warten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ladenfenster",
+        "lemma": "Ladenfenster",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lächeln",
+        "lemma": "Lächeln",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "finsteren",
+        "lemma": "finster",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesicht",
+        "lemma": "Gesicht",
+        "pos": "noun",
+        "gloss_hint": "face"
+      },
+      {
+        "form": "Franz",
+        "lemma": "Franz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verstand",
+        "lemma": "verstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ladeninnern",
+        "lemma": "Ladeninnern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auslage",
+        "lemma": "Auslage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Scheibe",
+        "lemma": "Scheibe",
+        "pos": "noun",
+        "gloss_hint": "pane"
+      },
+      {
+        "form": "spähte",
+        "lemma": "spähen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "e319b6a24b": {
@@ -2503,6 +2582,95 @@
     ],
     "translation_model": "anthropic/claude-haiku-4-5-20251001"
   },
+  "e32419b523": {
+    "text": "Das Volk aber, das vorging und nachfolgte, schrie und sprach: Hosianna dem Sohn Davids! Gelobt sei, der da kommt in dem Namen des HERRN! Hosianna in der Höhe!",
+    "translation": "But the crowd that went before and followed after cried out and said: Hosanna to the Son of David! Blessed is he that comes in the name of the Lord! Hosanna in the highest!",
+    "source": "wiktionary",
+    "lemmas": [
+      "hosianna"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Volk",
+        "lemma": "Volk",
+        "pos": "noun",
+        "gloss_hint": "crowd"
+      },
+      {
+        "form": "vorging",
+        "lemma": "vorgehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "nachfolgte",
+        "lemma": "nachfolgen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schrie",
+        "lemma": "schreien",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sprach",
+        "lemma": "sprechen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hosianna",
+        "lemma": "Hosianna",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sohn",
+        "lemma": "Sohn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Davids",
+        "lemma": "David",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gelobt",
+        "lemma": "loben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommt",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Namen",
+        "lemma": "Name",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "HERRN",
+        "lemma": "Herr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Höhe",
+        "lemma": "Höhe",
+        "pos": "noun",
+        "gloss_hint": "height"
+      }
+    ]
+  },
   "e3246649a2": {
     "text": "„Von mir aus kann sie verrecken, die alte Hexe!“",
     "translation": "As far as I'm concerned, she can die, the old witch!",
@@ -2959,23 +3127,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is itching to do something",
     "source": "wiktionary",
     "lemmas": [
       "Fell",
       "jucken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e32a7f66d5": {
     "text": "seine Fahne nach dem Wind drehen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go whichever way the wind blows",
     "source": "wiktionary",
     "lemmas": [
       "Fahne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e32ad20f0f": {
     "text": "„Diese Gewißheit nahmen wir Deutschen mit nach Hause, zugleich die schöne Erfahrung, daß es unter der in Straßburg versammelten Jugend, unter all den Franzosen, Engländern, Belgiern, Holländern, Schweizern, keine Aversion gegen uns junge Deutsche gab, es gab nur eine echte Kameradschaft.“",
@@ -3126,10 +3296,43 @@
   },
   "e32ce4934f": {
     "text": "„Obwohl der Rittmeister selber Zivil trug, rechnete er sich nicht zu den Zivilisten.“",
-    "translation": null,
+    "translation": "\"Although the cavalry captain himself wore civilian clothes, he did not count himself among the civilians.\"",
     "source": "wiktionary",
     "lemmas": [
       "Zivilist"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rittmeister",
+        "lemma": "Rittmeister",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zivil",
+        "lemma": "Zivil",
+        "pos": "noun",
+        "gloss_hint": "civilian clothes"
+      },
+      {
+        "form": "trug",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "rechnete",
+        "lemma": "rechnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zivilisten",
+        "lemma": "Zivilist",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e32cee34d7": {
@@ -4417,14 +4620,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have hardly more than the clothes on one's back",
     "source": "wiktionary",
     "lemmas": [
       "Name"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e33ea7ba83": {
     "text": "„Vergleichen wir einmal diese Völker mit denjenigen, welche unter den Bedrückungen der willkürlichen Gewalt einer harten Regierung schmachten!“",
@@ -4877,12 +5078,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "clear as day",
     "source": "wiktionary",
     "lemmas": [
       "klar"
     ],
-    "ref": "phrases/klar wie Kloßbrühe"
+    "ref": "phrases/klar wie Kloßbrühe",
+    "translation_model": "openai/gpt-4.1"
   },
   "e343f92f10": {
     "text": "Der Oberst befahl ihm, zehn Liegestütze zu machen.",
@@ -6261,11 +6463,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be expecting a baby",
     "source": "wiktionary",
     "lemmas": [
       "Hoffnung"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e3599bd0fd": {
     "text": "„Und das Unternehmen zeigt keinerlei Neigung, die lukrative Rohstoffförderung einfach so in die Hände Lumumbas zu geben – die Firma erzielt im Kongo etwa die Hälfte ihrer jährlichen Gewinne.“",
@@ -6908,11 +7111,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "rehash old stories",
     "source": "wiktionary",
     "lemmas": [
       "aufwärmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e36621a749": {
     "text": "Beim Telefon sollte man immer einen Block bereitliegen haben.",
@@ -6947,11 +7151,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a postcard is enough, I'll be there",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e366d8b581": {
     "text": "Noch gehört er zur Mannschaft, aber eigentlich wäre er gerne Offizier.",
@@ -7478,25 +7683,24 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If January is mild, expect a good spring and a hot summer.",
     "source": "wiktionary",
     "lemmas": [
       "Januar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e36d5b328c": {
     "text": "Wies kommt, wirds gefressen",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Whatever comes along gets eaten.",
     "source": "wiktionary",
     "lemmas": [
       "fressen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e36d9f7baa": {
     "text": "Ich habe den Hund jetzt ausgeschlossen.",
@@ -7753,11 +7957,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hold your breath",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e372a94dea": {
     "text": "Zeig mir mal bitte eine seiner Malereien.",
@@ -8032,11 +8237,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "from left to diagonal",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e375d6b3cf": {
     "text": "„Die größten Schwachstellen von mRNA-Impfstoffen sind die begrenzte Haltbarkeit und die aufwendige Lagerung. Die ersten Impfchargen hielten nur sechs Monate, mittlerweile werden sie nach neun Monaten vernichtet.“",
@@ -8223,11 +8429,12 @@
     "type": "expression",
     "note": "ehrlich sein, die Wahrheit sagen",
     "synonyms": [],
-    "translation": null,
+    "translation": "lay all your cards on the table",
     "source": "wiktionary",
     "lemmas": [
       "Tisch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e37af544ab": {
     "text": "Das mittelgroße Unternehmen hat klare Strukturen und eine schriftlich festgehaltene Strategie.",
@@ -8243,11 +8450,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is losing out",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e37bb3d057": {
     "text": "„Dies führte dazu, dass das Pfand nur gegen Vorlage eines Belegs dort eingelöst werden konnte, wo die dazugehörige Verpackung erstanden worden war.“",
@@ -9171,22 +9379,24 @@
     "type": "expression",
     "note": "etwas beenden",
     "synonyms": [],
-    "translation": null,
+    "translation": "pull the plug",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e38e134326": {
     "text": "über Eck",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at an angle",
     "source": "wiktionary",
     "lemmas": [
       "über"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e38f89be1c": {
     "text": "Ich gehe links herum.",
@@ -9317,11 +9527,13 @@
   },
   "e39059c432": {
     "text": "Mi 13.3., 18:00 Uhr",
-    "translation": null,
+    "translation": "Wednesday 13.3., 6:00 PM",
     "source": "wiktionary",
     "lemmas": [
       "Mi"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "e3947bdf19": {
     "text": "„Denn war man faul, … man legte sich / Hin auf die Bank und pflegte sich.“ - (August Kopisch, „Die Heinzelmännchen zu Köln“)",
@@ -9368,13 +9580,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "patience",
     "source": "wiktionary",
     "lemmas": [
       "lang",
       "Atem"
     ],
-    "ref": "phrases/langer Atem"
+    "ref": "phrases/langer Atem",
+    "translation_model": "openai/gpt-4.1"
   },
   "e396cd1dbe": {
     "text": "Kein Ball, weil es Bälle gibt, war prächtiger als dieser.",
@@ -9454,12 +9667,13 @@
     "type": "expression",
     "note": "zum Aufbruch bereit sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "ready to go",
     "source": "wiktionary",
     "lemmas": [
       "Aufbruch"
     ],
-    "ref": "phrases/in den Startlöchern sitzen"
+    "ref": "phrases/in den Startlöchern sitzen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e3996e141d": {
     "text": "„Das Deprimierendste am September 1938 ist die Überlegenheit der skrupellosen (und zur Zerschlagung der Tschechoslowakei längst fest entschlossenen) Naziregierung in Deutschland.“",
@@ -9640,11 +9854,12 @@
     "type": "expression",
     "note": "eine günstige Gelegenheit geboten bekommen",
     "synonyms": [],
-    "translation": null,
+    "translation": "have something lined up",
     "source": "wiktionary",
     "lemmas": [
       "Haken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e39aed7cf4": {
     "text": "Ich esse gerne Kirschen.",
@@ -10129,11 +10344,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Everyone cooks with water just like everyone else.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e3aa4f6df1": {
     "text": "„Quod erat demonstrandum“ schliest einen Nachweis ab, das Problem, bei dem es auf die Ausführung ankommt, hat eine ganz ähnliche Schlussformel: „Was zu machen war“ - „quod erat faciendum“.",
@@ -11465,11 +11681,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "How do you seem to me?",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e3c65887f4": {
     "text": "„Auch wenn Ehe und Treue derzeit nicht so eng verlötet sind wie auch schon, gilt Fremdgehen nach wie vor als grosser Vertrauensbruch.“",
@@ -11601,11 +11818,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with great pomp and circumstance",
     "source": "wiktionary",
     "lemmas": [
       "Glanz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e3ca76b389": {
     "text": "Das ist eine wirklich originelle Idee!",
@@ -11868,23 +12086,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "better to stuff yourself than leave anything for the landlord",
     "source": "wiktionary",
     "lemmas": [
       "schenken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e3cba2be52": {
     "text": "die Bombe platzen lassen",
     "type": "expression",
     "note": "jemandem eine Überraschung bereiten",
     "synonyms": [],
-    "translation": null,
+    "translation": "drop the bombshell",
     "source": "wiktionary",
     "lemmas": [
       "platzen"
     ],
-    "ref": "phrases/die Bombe platzen lassen"
+    "ref": "phrases/die Bombe platzen lassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e3cbbd0177": {
     "text": "„Erotik ist Überwindung von Hindernissen. Das verlockendste und populärste Hindernis ist die Moral.“",
@@ -12141,11 +12361,12 @@
     "type": "expression",
     "note": "alles hat auch Nachteile",
     "synonyms": [],
-    "translation": null,
+    "translation": "Every rose has its thorn.",
     "source": "wiktionary",
     "lemmas": [
       "Rose"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e3ce9029ed": {
     "text": "„Mit Unterstützung, Ermutigung und Anleitung seiner Mutter, des Genies, und seiner Frau, die nur ein kleines bisschen klüger als die Mutter war, verkaufte Franco den größten Teil seines Immobilienbestands und begann, Einkaufszentren im ganzen Mittleren Westen zu bauen.“",
@@ -12266,11 +12487,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "from a single piece",
     "source": "wiktionary",
     "lemmas": [
       "Stück"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e3cfbd7cb1": {
     "text": "„Sie stand neben ihm, als die Fundamente des neuen Zuhauses gelegt wurden.“",
@@ -12662,23 +12884,25 @@
     "type": "expression",
     "note": "das Opfer sein)",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be the one to suffer (to be the victim)",
     "source": "wiktionary",
     "lemmas": [
       "glauben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e3d949aca9": {
     "text": "jemandem einen Bären aufbinden",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pull someone's leg",
     "source": "wiktionary",
     "lemmas": [
       "Bär"
     ],
-    "ref": "phrases/jemandem einen Bären aufbinden"
+    "ref": "phrases/jemandem einen Bären aufbinden",
+    "translation_model": "openai/gpt-4.1"
   },
   "e3d9ef7f61": {
     "text": "„Trifft das noch zu im Zeitalter der Weltraumfahrt? Dieses Wort ist eine maßlose Übertreibung, ebenso wie sein Synonym Astronautik. Es gibt eine Reihe von Vergleichen, die das anschaulich machen. Einer mag genügen: Wenn jemand am Alpenrand, etwa bei Grainau unweit Garmisch, in 900 m Höhe über dem Meeresspiegel steht und zum Gipfel der Zugspitze (2000 m über ihm) hinaufblickt, und wenn er seinen Hals reckt, um dort oben etwas zu erkennen, und wenn ihm dann ein hilfsbereiter Freund ein Blatt von 0,2 mm Stärke unter die Schuhe schiebt, »damit du etwas näher dran bist und besser sehen kannst«, so hat sich dieser Jemand damit dem Zugspitzgipfel nur um ein Zehnmillionstel der gegebenen Distanz genähert (1 km = 1 Million mm). Ein »Astronaut«, der den Mond betritt, hat mit der Reise von der Erde bis dorthin von der Entfernung, die uns vom sonnennächsten Fixstern trennt, noch weniger, nämlich 1 Hundertmillionstel, zurückgelegt. Andere Fixsterne sind millionen- und milliardenmal weiter entfernt.“",
@@ -12998,11 +13222,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get off your butt (to get moving)",
     "source": "wiktionary",
     "lemmas": [
       "Hintern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e3debd3efd": {
     "text": "Da haben sie ja ein paar schöne Figuren in den Vorstand gewählt!",
@@ -13114,11 +13339,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep your eyes and ears open",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e3e47878e5": {
     "text": "„Guten Tag Herr Bootsmann!“",
@@ -13928,10 +14154,55 @@
   },
   "e3f65e170d": {
     "text": "Wenn es in einer Schulklasse drunter und drüber geht, dann hat a) die Lehrerin die Klasse nicht im Griff und b) lernen die Schüler weniger, als sie könnten.",
-    "translation": null,
+    "translation": "When a classroom is in chaos, then a) the teacher doesn't have control of the class and b) the students learn less than they could.",
     "source": "wiktionary",
     "lemmas": [
       "drunter und drüber"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schulklasse",
+        "lemma": "Schulklasse",
+        "pos": "noun",
+        "gloss_hint": "class (group of students)"
+      },
+      {
+        "form": "Lehrerin",
+        "lemma": "Lehrerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klasse",
+        "lemma": "Klasse",
+        "pos": "noun",
+        "gloss_hint": "mastery"
+      },
+      {
+        "form": "Griff",
+        "lemma": "Griff",
+        "pos": "noun",
+        "gloss_hint": "mastery"
+      },
+      {
+        "form": "lernen",
+        "lemma": "lernen",
+        "pos": "verb",
+        "gloss_hint": "study"
+      },
+      {
+        "form": "Schüler",
+        "lemma": "Schüler",
+        "pos": "noun",
+        "gloss_hint": "student"
+      },
+      {
+        "form": "könnten",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "e3f67e5282": {

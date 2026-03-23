@@ -4,14 +4,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to let one's tears flow freely",
     "source": "wiktionary",
     "lemmas": [
       "frei"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "cd00344b53": {
     "text": "vor Dreck stehen",
@@ -1232,35 +1230,38 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A friend in need is a friend indeed.",
     "source": "wiktionary",
     "lemmas": [
       "gehen",
       "Freund",
       "Not"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd13b53356": {
     "text": "… dass die Fetzen fliegen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "... with tempers flaring",
     "source": "wiktionary",
     "lemmas": [
       "Fetzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd1426d08b": {
     "text": "Donner und Blitz",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "thunder and lightning",
     "source": "wiktionary",
     "lemmas": [
       "Donner"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd14f3bee5": {
     "text": "„Hab ick da wat verbrochen, wenn ick mithelfe eingraben?“",
@@ -3329,11 +3330,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "slippery slope argument",
     "source": "wiktionary",
     "lemmas": [
       "schiefe Ebene"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd2c6444d7": {
     "text": "Butter ist ein wertvolles Nahrungsmittel.",
@@ -3625,11 +3627,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm happy to do that.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd3351b91c": {
     "text": "Der Kochtopf steht auf der Herdplatte.",
@@ -3863,14 +3866,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "sir",
     "source": "wiktionary",
     "lemmas": [
       "Herr"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "cd3b63d3a9": {
     "text": "Oh, daran habe ich nicht gedacht.",
@@ -4450,11 +4451,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "weirdo",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd41986cfc": {
     "text": "Der Pfriemförmige Hörnling ist eine Pilzsorte.",
@@ -4539,22 +4541,24 @@
     "type": "expression",
     "note": "verrückt, exzentrisch, überdreht, ausgelassen",
     "synonyms": [],
-    "translation": null,
+    "translation": "wild and crazy",
     "source": "wiktionary",
     "lemmas": [
       "doll"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd451ceb52": {
     "text": "nun mach aber mal einen Punkt",
     "type": "expression",
     "note": "höre auf, setze einen Schlusspunkt",
     "synonyms": [],
-    "translation": null,
+    "translation": "Just stop it already.",
     "source": "wiktionary",
     "lemmas": [
       "Punkt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd454bfe88": {
     "text": "„Manchmal erbettelt sich der kleine Dieb selbst die Erlaubniß von ihm, mein Schlafkamerade zu sein“",
@@ -4999,11 +5003,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a floating hotel",
     "source": "wiktionary",
     "lemmas": [
       "schwimmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd491936c2": {
     "text": "„Ich denke also an Jørgensen und versuche, den Junkie in mir zu finden.“",
@@ -5085,10 +5090,31 @@
   },
   "cd4a423391": {
     "text": "Wir haben jedes Teil in verschiedenen Größen da.",
-    "translation": null,
+    "translation": "We have every item in different sizes.",
     "source": "wiktionary",
     "lemmas": [
       "Teil"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Teil",
+        "lemma": "Teil",
+        "pos": "noun",
+        "gloss_hint": "item"
+      },
+      {
+        "form": "verschiedenen",
+        "lemma": "verschieden",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Größen",
+        "lemma": "Größe",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "cd4b1b562e": {
@@ -5848,6 +5874,47 @@
     ],
     "text_linked": "Maria Callas [[gehörte|verbs/gehören#5]] [[zu|prepositions/zu]] [[den|determiners/der]] Opernstars, [[die|pronouns/die]] [[Gold|nouns/Gold#5]] [[in|prepositions/in]] [[der|determiners/der]] [[Kehle|nouns/Kehle#1]] haben."
   },
+  "cd525eb578": {
+    "text": "„Ich habe eine Eins in Latein!“ – „Gottverdammmich! Wie machst du das bloß immer? Du lernst doch gar nicht.“",
+    "translation": "\"I got an A in Latin!\" – \"Damn! How do you always manage that? You don't even study.\"",
+    "source": "wiktionary",
+    "lemmas": [
+      "gottverdammmich"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Eins",
+        "lemma": "Eins",
+        "pos": "noun",
+        "gloss_hint": "top grade"
+      },
+      {
+        "form": "Latein",
+        "lemma": "Latein",
+        "pos": "noun",
+        "gloss_hint": "Latin"
+      },
+      {
+        "form": "Gottverdammmich",
+        "lemma": "Gottverdammmich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "machst",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "lernst",
+        "lemma": "lernen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ]
+  },
   "cd528d73ee": {
     "text": "Deine Argumentation entbehrt jeglicher Grundlage!",
     "translation": "Your argumentation lacks any basis!",
@@ -6437,10 +6504,31 @@
   },
   "cd57ac00ce": {
     "text": "„Es war ihr gar nicht in den Sinn gekommen, sich danach zu erkundigen.“",
-    "translation": null,
+    "translation": "\"It had not even occurred to her to inquire about it.\"",
     "source": "wiktionary",
     "lemmas": [
       "erkundigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sinn",
+        "lemma": "Sinn",
+        "pos": "noun",
+        "gloss_hint": "mind"
+      },
+      {
+        "form": "gekommen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "erkundigen",
+        "lemma": "erkundigen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "cd5919ac90": {
@@ -6553,10 +6641,37 @@
   },
   "cd5a813ca2": {
     "text": "„Und wieder andere hatten sich umgezogen, um einen Nachtclub zu besuchen.“",
-    "translation": null,
+    "translation": "And still others had changed clothes to visit a nightclub.",
     "source": "wiktionary",
     "lemmas": [
       "Nachtclub"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "andere",
+        "lemma": "ander",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "umgezogen",
+        "lemma": "umziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nachtclub",
+        "lemma": "Nachtclub",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besuchen",
+        "lemma": "besuchen",
+        "pos": "verb",
+        "gloss_hint": "visit"
+      }
     ]
   },
   "cd5ac2f79a": {
@@ -6642,11 +6757,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "lay one's cards on the table",
     "source": "wiktionary",
     "lemmas": [
       "Karte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd5b097a0d": {
     "text": "„Die Gruppe der Schulkinder geht schnell weiter und setzt sich auf die Wiese, packt die Brotzeit aus und Limonade.“",
@@ -6970,10 +7086,37 @@
   },
   "cd6128d2f8": {
     "text": "Du darfst noch aufbleiben, aber um zehn ist Zapfenstreich!",
-    "translation": null,
+    "translation": "You may stay up, but at ten it's lights out!",
     "source": "wiktionary",
     "lemmas": [
       "Zapfenstreich"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "darfst",
+        "lemma": "dürfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufbleiben",
+        "lemma": "aufbleiben",
+        "pos": "verb",
+        "gloss_hint": "stay awake"
+      },
+      {
+        "form": "zehn",
+        "lemma": "zehn",
+        "pos": "numeral",
+        "gloss_hint": "ten"
+      },
+      {
+        "form": "Zapfenstreich",
+        "lemma": "Zapfenstreich",
+        "pos": "noun",
+        "gloss_hint": "lights out"
+      }
     ]
   },
   "cd62c0fd63": {
@@ -6981,11 +7124,12 @@
     "type": "expression",
     "note": "sehr wütend sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "fly into a rage",
     "source": "wiktionary",
     "lemmas": [
       "Dreieck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd62e0a3dd": {
     "text": "„Dafür spielen diese zur Strafe bis zum heutigen Tag Panflöte in der Fußgängerzone.“",
@@ -7399,10 +7543,97 @@
   },
   "cd6642daf4": {
     "text": "„Es war so sonntäglich still in der Wohnung, und wenn Paula schwieg, war es mir, wie es dem Uhland’schen Hirten sein mag, der allein auf weiter Flur eine Morgenglocke hört, und es dann stille wird, nah und fern.“",
-    "translation": null,
+    "translation": "It was so quiet and peaceful in the apartment, and when Paula fell silent, it seemed to me as it must seem to Uhland's shepherd, who alone on a wide field hears a morning bell, and then it becomes still, near and far.",
     "source": "wiktionary",
     "lemmas": [
       "allein auf weiter Flur"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sonntäglich",
+        "lemma": "sonntäglich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "still",
+        "lemma": "still",
+        "pos": "adjective",
+        "gloss_hint": "silent"
+      },
+      {
+        "form": "Wohnung",
+        "lemma": "Wohnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Paula",
+        "lemma": "Paula",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwieg",
+        "lemma": "schweigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hirten",
+        "lemma": "Hirte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "allein",
+        "lemma": "allein",
+        "pos": "adjective",
+        "gloss_hint": "alone"
+      },
+      {
+        "form": "weiter",
+        "lemma": "weit",
+        "pos": "adjective",
+        "gloss_hint": "further"
+      },
+      {
+        "form": "Flur",
+        "lemma": "Flur",
+        "pos": "noun",
+        "gloss_hint": "field"
+      },
+      {
+        "form": "Morgenglocke",
+        "lemma": "Morgenglocke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hört",
+        "lemma": "hören",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "stille",
+        "lemma": "still",
+        "pos": "adjective",
+        "gloss_hint": "silent"
+      },
+      {
+        "form": "nah",
+        "lemma": "nah",
+        "pos": "adjective",
+        "gloss_hint": "close"
+      },
+      {
+        "form": "fern",
+        "lemma": "fern",
+        "pos": "adjective",
+        "gloss_hint": "distant"
+      }
     ]
   },
   "cd671636e1": {
@@ -7410,11 +7641,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "write something off as lost",
     "source": "wiktionary",
     "lemmas": [
       "Esse"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd675b7ee6": {
     "text": "„Sie rannte zurück zu dem Streifenwagen, immer noch schreiend, und warf die Tür hinter sich zu.“",
@@ -7857,11 +8089,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be on the tip of someone's tongue",
     "source": "wiktionary",
     "lemmas": [
       "Zunge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd6962ccf2": {
     "text": "Für Hugenberg bildete dies jedoch kein größeres Problem, denn er hatte stets mehrere Eisen im Feuer. Konkret bedeutete dies, dass er auch mit der großen Konkurrenz zum WTB, der Telegraphen-Union, in Kontakt stand.",
@@ -8327,11 +8560,12 @@
     "type": "expression",
     "note": "schwer zu finden",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have to look for something with a magnifying glass (i.e., something is very hard to find)",
     "source": "wiktionary",
     "lemmas": [
       "Lupe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd708ab52b": {
     "text": "Wir rechnen fest mit Ihnen.",
@@ -8347,11 +8581,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not know which way to turn",
     "source": "wiktionary",
     "lemmas": [
       "aus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd735d8c01": {
     "text": "Wenn ich ihn durch den Irrgarten führe, was bekomme ich dafür?",
@@ -8614,11 +8849,12 @@
     "type": "expression",
     "note": "wie kommst du denn nur auf diese unsinnige Idee?",
     "synonyms": [],
-    "translation": null,
+    "translation": "How on earth did you come up with that crazy idea?",
     "source": "wiktionary",
     "lemmas": [
       "Brett"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd745d4867": {
     "text": "„Bei Video und Fernsehen werden in den europäischen Verfahren PAL und SECAM 25 Bilder bzw. 50 Halbbilder pro Sekunde gezeigt, da dies der in europäischen Stromnetzen üblichen Wechselstromfrequenz von 50 Hertz entspricht.“",
@@ -8967,11 +9203,12 @@
     "type": "expression",
     "note": "! – ironisch ein fürchterliches Pack!",
     "synonyms": [],
-    "translation": null,
+    "translation": "what a lovely family (said ironically: what a dreadful bunch)",
     "source": "wiktionary",
     "lemmas": [
       "Verwandtschaft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd76529002": {
     "text": "„Konzernchef Joe Kaeser will Siemens schlanker und effizienter machen – auf Kosten Tausender Arbeitnehmer.\"",
@@ -9066,10 +9303,37 @@
   },
   "cd768a4f96": {
     "text": "„Der Erste erkundigt sich besorgt nach dem Gesundheitszustand.“",
-    "translation": null,
+    "translation": "The first one inquires with concern about the state of health.",
     "source": "wiktionary",
     "lemmas": [
       "erkundigen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erste",
+        "lemma": "erst",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "erkundigt",
+        "lemma": "erkundigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "besorgt",
+        "lemma": "besorgt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesundheitszustand",
+        "lemma": "Gesundheitszustand",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "cd76f8ce17": {
@@ -9083,18 +9347,108 @@
   },
   "cd772cb229": {
     "text": "Ich kann noch keine Anbrüche erkennen.",
-    "translation": null,
+    "translation": "I cannot yet detect any cracks.",
     "source": "wiktionary",
     "lemmas": [
       "Anbruch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kann",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": "can"
+      },
+      {
+        "form": "Anbrüche",
+        "lemma": "Anbruch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erkennen",
+        "lemma": "erkennen",
+        "pos": "verb",
+        "gloss_hint": "recognize"
+      }
     ]
   },
   "cd77549053": {
     "text": "„Die Saar fließt in Generalrichtung Nordnordwest und entwässert über die dann sich nach Nordost schlängelnde Mosel und den wieder nach NNW verlaufenden Rhein in die Nordsee.“",
-    "translation": null,
+    "translation": "The Saar flows in a general northwesterly direction and drains via the Mosel, which then winds toward the northeast, and the Rhine, which again runs in a NNW direction, into the North Sea.",
     "source": "wiktionary",
     "lemmas": [
       "Saar"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Saar",
+        "lemma": "Saar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fließt",
+        "lemma": "fließen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Generalrichtung",
+        "lemma": "Generalrichtung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nordnordwest",
+        "lemma": "Nordnordwest",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entwässert",
+        "lemma": "entwässern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mosel",
+        "lemma": "Mosel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schlängelnde",
+        "lemma": "schlängeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nordost",
+        "lemma": "Nordost",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rhein",
+        "lemma": "Rhein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verlaufenden",
+        "lemma": "verlaufen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nordsee",
+        "lemma": "Nordsee",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "cd78bde550": {
@@ -11667,14 +12021,38 @@
   },
   "cd89d866cc": {
     "text": "Das Min. liegt bei 1000 Euro pro Woche.",
-    "translation": null,
+    "translation": "The minimum is 1000 euros per week.",
     "source": "wiktionary",
     "lemmas": [
       "Min."
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Min.",
+        "lemma": "Minimum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "liegt",
+        "lemma": "liegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "Woche",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": "week"
+      }
+    ]
   },
   "cd8c34250a": {
     "text": "„Noch mehr Kopfzerbrechen aber bereitete den Ermittlern der Inhalt seiner Hosentasche: Dort fanden sie zwei beschriebene Papierzettel - die einzig möglichen Hinweise auf die mysteriösen Umstände dieses Todesfalls.“",
@@ -12233,25 +12611,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a little bird told me",
     "source": "wiktionary",
     "lemmas": [
       "zwitschern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd9238c371": {
     "text": "Was der Bauer nicht kennt, frisst er nicht",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "What the farmer doesn't know, he won't eat.",
     "source": "wiktionary",
     "lemmas": [
       "fressen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "cd93324e47": {
     "text": "„Anschließend stieg Freiligrath vom Drachenfels den steilen Pfad nach Honnef hinab, fand die Stadt aber als künftigen Wohnort nicht geeignet, da sie ihm zu weit vom Ufer des Flusses entfernt lag.“",
@@ -12672,11 +13049,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If you spare the wolf, you endanger the sheep.",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cd98f4154c": {
     "text": "„Von einer Palme fallende Kokosnüsse können zu Kopfverletzungen führen. Nur wenige Unfälle mit Todesfolge sind durch Medienberichte dokumentiert. Einer Legende nach kommt es aber regelmäßig zu einer hohen Anzahl von Todesfällen bei Kokosnuss-Unfällen. Diese Zahl wird häufig zum Vergleich von Todesfällen durch Haiangriffe genutzt.“",
@@ -13295,12 +13673,13 @@
     "type": "expression",
     "note": "sich fürchten",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be scared stiff",
     "source": "wiktionary",
     "lemmas": [
       "Hemd"
     ],
-    "ref": "phrases/sich ins Hemd machen"
+    "ref": "phrases/sich ins Hemd machen",
+    "translation_model": "openai/gpt-4.1"
   },
   "cd9b24fdde": {
     "text": "Das Sonnenlicht zieht die Farbe aus.",
@@ -13406,11 +13785,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to sneeze at something",
     "source": "wiktionary",
     "lemmas": [
       "niesen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cda1b74fec": {
     "text": "„Der große Mann verschränkte die Arme und kaute auf einem Zahnstocher.“",
@@ -14474,13 +14854,14 @@
     "type": "expression",
     "note": "Kleinigkeiten helfen nicht viel weiter",
     "synonyms": [],
-    "translation": null,
+    "translation": "that won't make much difference",
     "source": "wiktionary",
     "lemmas": [
       "Kohl",
       "fett"
     ],
-    "ref": "phrases/das macht den Kohl auch nicht fett"
+    "ref": "phrases/das macht den Kohl auch nicht fett",
+    "translation_model": "openai/gpt-4.1"
   },
   "cda7f54ec2": {
     "text": "„Früh hatte der Ostgote begonnen, verwandtschaftliche Bande zu anderen Königshäusern zu knüpfen.“",
@@ -15348,12 +15729,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take the plunge",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
     ],
-    "ref": "phrases/ins kalte Wasser springen"
+    "ref": "phrases/ins kalte Wasser springen",
+    "translation_model": "openai/gpt-4.1"
   },
   "cdb017da10": {
     "text": "Bad Fischau-Brunn liegt in Niederösterreich.",
@@ -16680,10 +17062,43 @@
   },
   "cdb533e068": {
     "text": "Mein lieber Herr Gesangsverein, ist das Schiff groß!",
-    "translation": null,
+    "translation": "My goodness, what a large ship!",
     "source": "wiktionary",
     "lemmas": [
       "mein lieber Herr Gesangsverein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "lieber",
+        "lemma": "lieb",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herr",
+        "lemma": "Herr",
+        "pos": "noun",
+        "gloss_hint": "sir"
+      },
+      {
+        "form": "Gesangsverein",
+        "lemma": "Gesangsverein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schiff",
+        "lemma": "Schiff",
+        "pos": "noun",
+        "gloss_hint": "ship"
+      },
+      {
+        "form": "groß",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": "large"
+      }
     ]
   },
   "cdb5bfe11d": {
@@ -17523,11 +17938,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be as dumb as a box of rocks",
     "source": "wiktionary",
     "lemmas": [
       "dumm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cdc12b5c89": {
     "text": "Wir hielten heute in der Schule eine Wahl zum Amt des Klassensprechers ab.",
@@ -18162,11 +18578,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fall flat on your face",
     "source": "wiktionary",
     "lemmas": [
       "Schnauze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cdca9f5d63": {
     "text": "unter dem Leuchtturm ist es am dunkelsten",
@@ -18207,11 +18624,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "God does not play dice",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cdcd4be940": {
     "text": "„Allein Niemand wußte etwas zu sagen und kein Mensch hatte Jemanden beobachtet, der dem Hirschen nachstellte.“",
@@ -18494,11 +18912,12 @@
     "type": "expression",
     "note": "etwas nicht wahrnehmen oder etwas nicht wahrnehmen wollen",
     "synonyms": [],
-    "translation": null,
+    "translation": "be blind to something",
     "source": "wiktionary",
     "lemmas": [
       "Blindheit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cdd160034f": {
     "text": "Ab 2015 soll es in der Steiermark nicht mehr wie bisher 539 Gemeinden geben, sondern 287.",
@@ -20991,11 +21410,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "come to light",
     "source": "wiktionary",
     "lemmas": [
       "Vorschein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cdefe4ee47": {
     "text": "Die schlichte Holzbauweise shintoistischer Schreine hat in vielfacher Hinsicht die moderne Architektur beeinflusst.",
@@ -21296,11 +21716,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bring someone back down to earth",
     "source": "wiktionary",
     "lemmas": [
       "holen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cdf193ca2b": {
     "text": "„In dieses, in der Perspektive Canettis friedliche und strebsame Kinderleben bricht ganz plötzlich das größte Unglück ein, das ihm die Fortsetzung seiner Kindheit raubt.“",
@@ -21944,11 +22365,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put money aside for a rainy day",
     "source": "wiktionary",
     "lemmas": [
       "hoch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cdfb256f5b": {
     "text": "„Die Franken zeigten nicht ihr wahres Leistungsvermögen, spielten mit angezogener Handbremse, ließen den nötigen Zug nach vorne vermissen.“",

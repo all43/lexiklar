@@ -358,12 +358,13 @@
     "type": "expression",
     "note": "(Matthäus 4,4) – der Mensch braucht nicht nur die Erfüllung seiner körperlichen Bedürfnisse, damit es ihm gut geht.",
     "synonyms": [],
-    "translation": null,
+    "translation": "Man does not live by bread alone.",
     "source": "wiktionary",
     "lemmas": [
       "Mensch",
       "Brot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef0446c470": {
     "text": "Der Landstrich war karg und unfruchtbar.",
@@ -562,10 +563,49 @@
   },
   "ef061b4b75": {
     "text": "Das Salzwasser im Toten Meer ist so konzentriert, dass ein Mensch dort vom Wasser getragen wird.",
-    "translation": null,
+    "translation": "The salt water in the Dead Sea is so concentrated that a person is carried by the water there.",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Salzwasser",
+        "lemma": "Salzwasser",
+        "pos": "noun",
+        "gloss_hint": "salt water"
+      },
+      {
+        "form": "Toten Meer",
+        "lemma": "Totes Meer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "konzentriert",
+        "lemma": "konzentriert",
+        "pos": "adjective",
+        "gloss_hint": "concentrated"
+      },
+      {
+        "form": "Mensch",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": "human"
+      },
+      {
+        "form": "Wasser",
+        "lemma": "Wasser",
+        "pos": "noun",
+        "gloss_hint": "water"
+      },
+      {
+        "form": "getragen",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "ef06cd0bbe": {
@@ -1493,11 +1533,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go down easily",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef19651614": {
     "text": "Da werden die meisten Wetter lange Gesichter machen.",
@@ -2347,11 +2388,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The pitcher goes to the well once too often.",
     "source": "wiktionary",
     "lemmas": [
       "bis"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef22ba78c2": {
     "text": "„Herbert Schöning saß mit dem Rücken zur Fahrtrichtung, sah auf die Hügel, Täler und Orte, die der Zug bereits passiert hatte.“",
@@ -2990,11 +3032,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I keep quiet, danger is near.",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef298f99d0": {
     "text": "Die Soldaten sahen tatenlos zu, wie die Plünderer die Geschäfte ausraubten.",
@@ -3191,11 +3234,12 @@
     "type": "expression",
     "note": "! – Stoßseufzer",
     "synonyms": [],
-    "translation": null,
+    "translation": "Oh great.",
     "source": "wiktionary",
     "lemmas": [
       "servus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef2d590114": {
     "text": "[Silke van Dyk:] „»Interessant ist: Die in Deutschland, die sich am ökologischsten gerieren, haben oft den größten ökologischen Fußabdruck. Ein Hartz-IV-Empfänger verkörpert nicht den ökologisch bewussten Lebensstil, hat dennoch einen vergleichsweise geringen Fußabdruck gegenüber denen mit Öko-Haus und Manufactum-Möbeln.«“",
@@ -3837,11 +3881,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in the prime of one's life",
     "source": "wiktionary",
     "lemmas": [
       "Blüte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef3689fc56": {
     "text": "Sie wollen doch nicht weiter an dieser Illusion festhalten?",
@@ -4223,12 +4268,13 @@
     "type": "expression",
     "note": "(im Schacht): an dem Ort, wo etwas geschieht",
     "synonyms": [],
-    "translation": null,
+    "translation": "on site",
     "source": "wiktionary",
     "lemmas": [
       "Ort"
     ],
-    "ref": "phrases/vor Ort"
+    "ref": "phrases/vor Ort",
+    "translation_model": "openai/gpt-4.1"
   },
   "ef38df7d5c": {
     "text": "Die Studiengebühren für den IMS-Masterstudiengang betragen insgesamt 6.000 €. Eine begrenzte Anzahl von Voll- und Teilstipendienplätzen wird Bewerbern zur Verfügung gestellt.",
@@ -5032,10 +5078,79 @@
   },
   "ef40d944f8": {
     "text": "„Die Definition des Vektors in der linearen Algebra als Element eines Vektorraumes ist eine viel umfassendere […] Auch alle benannten Größen – wie Längenangaben in Meter, Geldbeträge usw. – sind in diesem Sinn Vektoren.“",
-    "translation": null,
+    "translation": "The definition of the vector in linear algebra as an element of a vector space is a much more comprehensive one. All named quantities—such as length specifications in meters, monetary amounts, etc.—are vectors in this sense.",
     "source": "wiktionary",
     "lemmas": [
       "Vektor"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Definition",
+        "lemma": "Definition",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vektors",
+        "lemma": "Vektor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "linearen Algebra",
+        "lemma": "lineare Algebra",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Element",
+        "lemma": "Element",
+        "pos": "noun",
+        "gloss_hint": "set member"
+      },
+      {
+        "form": "Vektorraumes",
+        "lemma": "Vektorraum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "umfassendere",
+        "lemma": "umfassend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "benannten Größen",
+        "lemma": "benannte Größe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Längenangaben",
+        "lemma": "Längenangabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geldbeträge",
+        "lemma": "Geldbetrag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vektoren",
+        "lemma": "Vektor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sinn",
+        "lemma": "Sinn",
+        "pos": "noun",
+        "gloss_hint": "meaning"
+      }
     ]
   },
   "ef417854e9": {
@@ -5069,11 +5184,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "you can't escape your fate",
     "source": "wiktionary",
     "lemmas": [
       "sterben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef429e143b": {
     "text": "„Beim nächsten Hotel mußte Miss Runcible draußen im Wagen bleiben, wohin ihr kaltes Lamm und Salzheringe gebracht wurden.“",
@@ -6168,11 +6284,12 @@
     "type": "expression",
     "note": "reichlich vorhanden sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to pour down",
     "source": "wiktionary",
     "lemmas": [
       "Strom"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef4b47c58a": {
     "text": "„Das Bataillon lag am Ufer zur Linken.“",
@@ -6316,10 +6433,25 @@
   },
   "ef4eb831b0": {
     "text": "Wartest du immer noch darauf?",
-    "translation": null,
+    "translation": "Are you still waiting for that?",
     "source": "wiktionary",
     "lemmas": [
       "immer noch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wartest",
+        "lemma": "warten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "darauf",
+        "lemma": "darauf",
+        "pos": "adverb",
+        "gloss_hint": "on it"
+      }
     ]
   },
   "ef4eec166e": {
@@ -8424,22 +8556,24 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Don't get upset, just be amazed.",
     "source": "wiktionary",
     "lemmas": [
       "wundern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef60e560df": {
     "text": "allein schon",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "just by itself",
     "source": "wiktionary",
     "lemmas": [
       "allein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef60fd1f57": {
     "text": "Auf der Geburtstagskarte ist nicht viel Platz, du musst ganz eng schreiben.",
@@ -8934,11 +9068,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "quirky character",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef651c00e0": {
     "text": "„Regel Nummer zehn im Handbuch des Morddezernats: Es gibt ihn, den perfekten Mord.“",
@@ -9191,23 +9326,25 @@
     "type": "expression",
     "note": "sich von jemandem oder etwas aufgrund des ersten Eindrucks ein falsches Bild machen",
     "synonyms": [],
-    "translation": null,
+    "translation": "appearances can be deceiving",
     "source": "wiktionary",
     "lemmas": [
       "Schein"
     ],
-    "ref": "phrases/der Schein trügt"
+    "ref": "phrases/der Schein trügt",
+    "translation_model": "openai/gpt-4.1"
   },
   "ef6a6d8899": {
     "text": "Höhen und Tiefen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "ups and downs",
     "source": "wiktionary",
     "lemmas": [
       "Höhe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef6b52ca5e": {
     "text": "„Rico ging hinein und setzte sich auf die Bank an der Wand und bewegte sich nicht.“",
@@ -9975,11 +10112,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "one fine day",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef74897d0e": {
     "text": "„Aufgespannt kann ein Parapluie zur tödlichen Waffe werden, was in der alkoholisiert hysterischen Atmosphäre eines derartigen Rummels nicht selten zur Realität wird.“",
@@ -10633,11 +10771,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not be able to stand someone",
     "source": "wiktionary",
     "lemmas": [
       "schmecken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef85f38257": {
     "text": "„Zwei Moldauer, zwei Transnistrier und drei Russen leben hier in einer Baracke zusammen, Soldaten dreier Armeen.“",
@@ -12538,23 +12677,25 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "watchdog",
     "source": "wiktionary",
     "lemmas": [
       "tanzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef92095cdb": {
     "text": "wer zuletzt lacht, lacht am besten",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "he who laughs last, laughs best",
     "source": "wiktionary",
     "lemmas": [
       "lachen"
     ],
-    "ref": "phrases/wer zuletzt lacht, lacht am besten"
+    "ref": "phrases/wer zuletzt lacht, lacht am besten",
+    "translation_model": "openai/gpt-4.1"
   },
   "ef92424f3e": {
     "text": "„Für den Rest des Weges stellt er dem Deutschen eine Art Empfehlungsschreiben aus, in dem er zur Toleranz gegenüber dem Andersgläubigen aufruft.“",
@@ -13444,11 +13585,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something is better than nothing",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ef9eabadda": {
     "text": "Offenbar haben unsere Vor-, Vor-, Vor- . . . Vorfahren Afrika ungefähr 100 000 Jahre früher verlassen als bisher angenommen.",
@@ -14169,10 +14311,43 @@
   },
   "efa21832da": {
     "text": "Ich hab die Hausaufgaben für Bio vergessen, kann ich mal gucken, was du geschrieben hast?",
-    "translation": null,
+    "translation": "I forgot my biology homework; can I take a look at what you wrote?",
     "source": "wiktionary",
     "lemmas": [
       "Bio"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hausaufgaben",
+        "lemma": "Hausaufgabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bio",
+        "lemma": "Bio",
+        "pos": "noun",
+        "gloss_hint": "biology"
+      },
+      {
+        "form": "vergessen",
+        "lemma": "vergessen",
+        "pos": "verb",
+        "gloss_hint": "forget"
+      },
+      {
+        "form": "gucken",
+        "lemma": "gucken",
+        "pos": "verb",
+        "gloss_hint": "look"
+      },
+      {
+        "form": "geschrieben",
+        "lemma": "schreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "efa29431fc": {
@@ -14182,11 +14357,12 @@
     "synonyms": [
       "kriegen"
     ],
-    "translation": null,
+    "translation": "get to do it",
     "source": "wiktionary",
     "lemmas": [
       "tun"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "efa3ca3143": {
     "text": "Wir haben im Winter viele sonnige Tage.",
@@ -15372,23 +15548,25 @@
     "type": "expression",
     "note": "entschiedene Ablehnung; das ist nicht meine (deine, seine, unsere, eure, ihre) Sache, Angelegenheit oder Ähnliches",
     "synonyms": [],
-    "translation": null,
+    "translation": "not someone's business",
     "source": "wiktionary",
     "lemmas": [
       "Bier"
     ],
-    "ref": "phrases/nicht jemandes Bier sein"
+    "ref": "phrases/nicht jemandes Bier sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "efaf7b460d": {
     "text": "brüllen wie ein hungriger Löwe",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "roar like a hungry lion",
     "source": "wiktionary",
     "lemmas": [
       "Löwe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "efaf8712be": {
     "text": "Die Angreifer waren maskiert und flohen in Richtung Stadtmitte.",
@@ -15872,12 +16050,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have drive",
     "source": "wiktionary",
     "lemmas": [
       "Biss"
     ],
-    "ref": "phrases/Biss haben"
+    "ref": "phrases/Biss haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "efb0dcedd2": {
     "text": "„Bei der Untersuchung zeigte sich, dass die Reptilien beim Fressen nicht nur feuchte Augen bekommen, sondern dass es aus den Tränendrüsen mitunter sogar regelrecht sprudelt.“",
@@ -17054,13 +17233,98 @@
   },
   "efc153ccf9": {
     "text": "„‚Du sollst dem Ochsen, der da drischt, nicht das Maul verbinden‘, argumentierte schon Paulus, als man ihn wegen einer Kollekte Schmarotzer nannte. Und ganz ähnlich wehrt sich bis heute, wer beruflich vom Wohl der Menschheit lebt.“",
-    "translation": "",
+    "translation": "\"You shall not muzzle the ox that treads out the grain,\" Paul already argued when he was called a freeloader because of a collection. And in much the same way, anyone who professionally lives from the welfare of humanity resists it to this day.",
     "source": "wiktionary",
     "lemmas": [
       "du sollst dem Ochsen, der da drischt, nicht das Maul verbinden"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
-    "annotations": []
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ochsen",
+        "lemma": "Ochse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "drischt",
+        "lemma": "dreschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Maul",
+        "lemma": "Maul",
+        "pos": "noun",
+        "gloss_hint": "animal mouth"
+      },
+      {
+        "form": "verbinden",
+        "lemma": "verbinden",
+        "pos": "verb",
+        "gloss_hint": "bandage"
+      },
+      {
+        "form": "argumentierte",
+        "lemma": "argumentieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Paulus",
+        "lemma": "Paulus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kollekte",
+        "lemma": "Kollekte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schmarotzer",
+        "lemma": "Schmarotzer",
+        "pos": "noun",
+        "gloss_hint": "freeloader"
+      },
+      {
+        "form": "ähnlich",
+        "lemma": "ähnlich",
+        "pos": "adjective",
+        "gloss_hint": "similar"
+      },
+      {
+        "form": "wehrt",
+        "lemma": "wehren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "beruflich",
+        "lemma": "beruflich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wohl",
+        "lemma": "Wohl",
+        "pos": "noun",
+        "gloss_hint": "well-being"
+      },
+      {
+        "form": "Menschheit",
+        "lemma": "Menschheit",
+        "pos": "noun",
+        "gloss_hint": "humanity"
+      },
+      {
+        "form": "lebt",
+        "lemma": "leben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ]
   },
   "efc2eb8101": {
     "text": "Gib mir auch eine Spalte der Orange zum Kosten.",
@@ -17386,13 +17650,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be off by a mile",
     "source": "wiktionary",
     "lemmas": [
       "gehen",
       "Mond"
     ],
-    "ref": "phrases/nach dem Mond gehen"
+    "ref": "phrases/nach dem Mond gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "efc55fde7b": {
     "text": "Das Gericht berücksichtigte ihre ausweglose Situation und milderte die Strafe.",
@@ -18272,10 +18537,73 @@
   },
   "efcd78852a": {
     "text": "Es nützt ja nichts, auch dieses heiße Eisen werden wir heute Abend in der Sitzung anfassen müssen. Wir müssen nach einer Diskussion einen Beschluss fassen, ob wir unseren ehemaligen Kassenwart auch polizeilich anzeigen.",
-    "translation": null,
+    "translation": "It's no use; we'll have to tackle this hot potato tonight at the meeting. After a discussion, we need to make a decision on whether we should also report our former treasurer to the police.",
     "source": "wiktionary",
     "lemmas": [
       "ein heißes Eisen anfassen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "nützt",
+        "lemma": "nutzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eisen",
+        "lemma": "Eisen",
+        "pos": "noun",
+        "gloss_hint": "iron object"
+      },
+      {
+        "form": "anfassen",
+        "lemma": "anfassen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "müssen",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": "must"
+      },
+      {
+        "form": "Diskussion",
+        "lemma": "Diskussion",
+        "pos": "noun",
+        "gloss_hint": "discussion"
+      },
+      {
+        "form": "Beschluss",
+        "lemma": "Beschluss",
+        "pos": "noun",
+        "gloss_hint": "decision"
+      },
+      {
+        "form": "fassen",
+        "lemma": "fassen",
+        "pos": "verb",
+        "gloss_hint": "grasp"
+      },
+      {
+        "form": "ehemaligen",
+        "lemma": "ehemalig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kassenwart",
+        "lemma": "Kassenwart",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "anzeigen",
+        "lemma": "anzeigen",
+        "pos": "verb",
+        "gloss_hint": "report crime"
+      }
     ]
   },
   "efcdc7485c": {
@@ -18735,12 +19063,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the real deal",
     "source": "wiktionary",
     "lemmas": [
       "wahr"
     ],
-    "ref": "phrases/der wahre Jakob"
+    "ref": "phrases/der wahre Jakob",
+    "translation_model": "openai/gpt-4.1"
   },
   "efd207739c": {
     "text": "„Das Militär verschleppt Abd el-Kader und seine Entourage in ein Schloss und stellt ihn unter Hausarrest.“",
@@ -18863,11 +19192,12 @@
     "type": "expression",
     "note": ") – sich stark für jemanden oder etwas einsetzen",
     "synonyms": [],
-    "translation": null,
+    "translation": "be on the front lines",
     "source": "wiktionary",
     "lemmas": [
       "Front"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "efd3fa9e92": {
     "text": "Im letzten Quartal sind die Preise allgemein gestiegen, für Wohneigentum sind sie jedoch gesunken.",
@@ -20142,10 +20472,61 @@
   },
   "efdd5d9461": {
     "text": "„So sitzt er nun“ […] „in seinem stinkigen Büro und wartet auf einen Auftrag. Schon bald taucht dort eine Dame auf, rätselhaft und wunderschön.“",
-    "translation": null,
+    "translation": "\"So there he sits\" [...] \"in his dingy office and waits for an order. Soon a lady appears there, mysterious and beautiful.\"",
     "source": "wiktionary",
     "lemmas": [
       "rätselhaft"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sitzt",
+        "lemma": "sitzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Büro",
+        "lemma": "Büro",
+        "pos": "noun",
+        "gloss_hint": "office"
+      },
+      {
+        "form": "wartet",
+        "lemma": "warten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auftrag",
+        "lemma": "Auftrag",
+        "pos": "noun",
+        "gloss_hint": "order"
+      },
+      {
+        "form": "taucht",
+        "lemma": "tauchen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dame",
+        "lemma": "Dame",
+        "pos": "noun",
+        "gloss_hint": "woman"
+      },
+      {
+        "form": "rätselhaft",
+        "lemma": "rätselhaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "wunderschön",
+        "lemma": "wunderschön",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "efddbba9dd": {
@@ -20370,11 +20751,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Don't make a mountain out of a molehill.",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "efe00d2cdb": {
     "text": "Er stieß kräftig ins Horn.",
@@ -20495,12 +20877,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "champing at the bit",
     "source": "wiktionary",
     "lemmas": [
       "Huf"
     ],
-    "ref": "phrases/mit den Hufen scharren"
+    "ref": "phrases/mit den Hufen scharren",
+    "translation_model": "openai/gpt-4.1"
   },
   "efe2a805cc": {
     "text": "Wir haben uns ein neues Bett gekauft.",
@@ -20565,10 +20948,37 @@
   },
   "efe589fc94": {
     "text": "„Als Mitsotakis kürzlich mit der Kanzlerin in Berlin redete, erhielt also auch er eine Abfuhr.“",
-    "translation": null,
+    "translation": "\"When Mitsotakis recently spoke with the Chancellor in Berlin, he too received a rebuff.\"",
     "source": "wiktionary",
     "lemmas": [
       "Abfuhr"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "redete",
+        "lemma": "reden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kanzlerin",
+        "lemma": "Kanzlerin",
+        "pos": "noun",
+        "gloss_hint": "chancellor"
+      },
+      {
+        "form": "erhielt",
+        "lemma": "erhalten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abfuhr",
+        "lemma": "Abfuhr",
+        "pos": "noun",
+        "gloss_hint": "rebuff"
+      }
     ]
   },
   "efe6694198": {
@@ -21864,11 +22274,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "those who",
     "source": "wiktionary",
     "lemmas": [
       "welche"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "effcfac93c": {
     "text": "Er zog die Arme dicht an den Leib.",
@@ -22185,11 +22596,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a firm grip on the reins",
     "source": "wiktionary",
     "lemmas": [
       "Ruder"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "efff4b3f38": {
     "text": "y = a·x³; bei Variation des Parameters a ergibt sich graphisch eine ganze Schar von Kurven (Kurvenschar).",

@@ -2,8 +2,8 @@
   "word": "Gemahl",
   "pos": "noun",
   "etymology_number": null,
-  "gender": "N",
-  "article": "das",
+  "gender": "M",
+  "article": "der",
   "plural_form": "Gemahle",
   "gender_rule": null,
   "case_forms": {
@@ -22,20 +22,44 @@
   },
   "senses": [
     {
-      "gloss": "die vermählte oder verlobte Frau",
-      "gloss_en": "wife",
+      "gloss": "der vermählte Mann",
+      "gloss_en": "husband",
       "tags": [
-        "archaic",
-        "poetic"
+        "literary"
       ],
       "example_ids": [
-        "6ef3492172"
+        "32b2181bcf"
       ],
       "synonyms": [
-        "Ehefrau",
-        "Gattin"
+        "Ehemann",
+        "Gatte"
       ],
       "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "The married man.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[ɡəˈmaːl]",
+      "tags": []
+    }
+  ],
+  "_synonyms": [
+    "Ehemann",
+    "Gatte"
+  ],
+  "_gender_counterpart": "Gemahlin",
+  "_meta": {
+    "source_hash": "086445cc9c73f3f7",
+    "generated_at": "2026-03-23"
+  },
+  "zipf": 2.94,
+  "_orphaned_translations": [
+    {
+      "gloss": "die vermählte oder verlobte Frau",
+      "gloss_en": "wife",
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A married or engaged woman; a spouse or betrothed.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -46,31 +70,6 @@
         "significant other"
       ],
       "synonyms_en_model": "openai/gpt-4.1-mini"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ɡəˈmaːl]",
-      "tags": []
-    }
-  ],
-  "_synonyms": [
-    "Ehefrau",
-    "Gattin"
-  ],
-  "_gender_counterpart": "Gemahl",
-  "_meta": {
-    "source_hash": "74f208b8871fe339",
-    "generated_at": "2026-03-21"
-  },
-  "zipf": 2.94,
-  "_orphaned_translations": [
-    {
-      "gloss": "der vermählte Mann",
-      "gloss_en": "husband",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "The married man.",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
   ]
 }

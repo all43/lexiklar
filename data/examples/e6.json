@@ -733,15 +733,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to speak without holding back",
     "source": "wiktionary",
     "lemmas": [
       "frei"
     ],
     "ref": "phrases/frei von der Leber weg",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e60a2dc9ec": {
     "text": "Sie rüttelten den ganzen Nachmittag Sektflaschen.",
@@ -781,11 +779,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "God strike me down if ...",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e60dcf4be4": {
     "text": "„Die Matrosen holten das Hauptmarssegel und das Großsegel ein, sodass nur noch die Segel des Fockmastes die Diligent vorantrieben.“",
@@ -890,10 +889,37 @@
   },
   "e60f015020": {
     "text": "„Oder aber er gerät auf die schiefe Bahn, dann wird man auch noch viel von ihm hören.“",
-    "translation": null,
+    "translation": "\"Or else he goes off the rails, and then people will hear much more from him.\"",
     "source": "wiktionary",
     "lemmas": [
       "auf die schiefe Bahn geraten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gerät",
+        "lemma": "geraten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schiefe",
+        "lemma": "schief",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bahn",
+        "lemma": "Bahn",
+        "pos": "noun",
+        "gloss_hint": "pathway"
+      },
+      {
+        "form": "hören",
+        "lemma": "hören",
+        "pos": "verb",
+        "gloss_hint": "hear"
+      }
     ]
   },
   "e60f29e417": {
@@ -1129,10 +1155,37 @@
   },
   "e6115567ac": {
     "text": "Nach der Korruptionsaffäre musste der Behördenleiter seinen Hut nehmen.",
-    "translation": null,
+    "translation": "After the corruption scandal, the head of the agency had to step down.",
     "source": "wiktionary",
     "lemmas": [
       "seinen Hut nehmen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Korruptionsaffäre",
+        "lemma": "Korruptionsaffäre",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Behördenleiter",
+        "lemma": "Behördenleiter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hut",
+        "lemma": "Hut",
+        "pos": "noun",
+        "gloss_hint": "hat"
+      },
+      {
+        "form": "nehmen",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": "take"
+      }
     ]
   },
   "e612b40891": {
@@ -1986,14 +2039,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "clear your head",
     "source": "wiktionary",
     "lemmas": [
       "frei"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e62468dc9a": {
     "text": "„Mit Hebräisch bezeichnet man die Sprache des AT mit Ausnahme der aramäischen Teile […].“",
@@ -2314,11 +2365,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "tighten the screws",
     "source": "wiktionary",
     "lemmas": [
       "Schraube"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e628750777": {
     "text": "Gute Filme gibt es wie Sand am Meer, aber wer hat Zeit, sie alle anzuschauen?",
@@ -3303,13 +3355,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hell on earth",
     "source": "wiktionary",
     "lemmas": [
       "Erde",
       "Hölle"
     ],
-    "ref": "phrases/die Hölle auf Erden"
+    "ref": "phrases/die Hölle auf Erden",
+    "translation_model": "openai/gpt-4.1"
   },
   "e63d52c391": {
     "text": "„Daneben wird eine Schlacht gegen die Daker dargestellt, die durch die Überlegenheit der römischen Soldaten siegreich endet.“",
@@ -3369,20 +3422,48 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "work hard",
     "source": "wiktionary",
     "lemmas": [
       "legen",
       "Zeug"
     ],
-    "ref": "phrases/sich ins Zeug legen"
+    "ref": "phrases/sich ins Zeug legen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e63dacda82": {
     "text": "Mit Wonne schlachtete die Presse den peinlichen Auftritt aus.",
-    "translation": null,
+    "translation": "The press gleefully exploited the embarrassing performance.",
     "source": "wiktionary",
     "lemmas": [
       "Wonne"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wonne",
+        "lemma": "Wonne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Presse",
+        "lemma": "Presse",
+        "pos": "noun",
+        "gloss_hint": "press (media)"
+      },
+      {
+        "form": "peinlichen",
+        "lemma": "peinlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auftritt",
+        "lemma": "Auftritt",
+        "pos": "noun",
+        "gloss_hint": "demeanor"
+      }
     ]
   },
   "e63dae5023": {
@@ -3438,11 +3519,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "when push comes to shove",
     "source": "wiktionary",
     "lemmas": [
       "hart"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e63dfccf59": {
     "text": "Sie fuhren in einem Konvoi zum Einsatzort.",
@@ -3672,11 +3754,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I can't believe it!",
     "source": "wiktionary",
     "lemmas": [
       "knutschen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6427c9437": {
     "text": "„Ich zwinkere ihr zu, während ich die Reißverschlüsse meines Windbreakers öffne und aus jeder der beiden Taschen ein Fläschchen Wein ziehe. Nur kleine 0,2-Liter-Flaschen, damit sie nicht auffallen.“",
@@ -4032,6 +4115,29 @@
     ],
     "translation_model": "anthropic/claude-haiku-4-5-20251001"
   },
+  "e64d5ab759": {
+    "text": "Die Piste ist aber steil, ja lecko mio!",
+    "translation": "The slope is steep, wow!",
+    "source": "wiktionary",
+    "lemmas": [
+      "lecko mio"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Piste",
+        "lemma": "Piste",
+        "pos": "noun",
+        "gloss_hint": "ski run"
+      },
+      {
+        "form": "steil",
+        "lemma": "steil",
+        "pos": "adjective",
+        "gloss_hint": "steep"
+      }
+    ]
+  },
   "e64d8de329": {
     "text": "Werder Bremen suchte einen Nachfolger für seinen Stürmer Davie Selke. Der 20-Jährige wechselt zur kommenden Saison zu RB Leipzig.",
     "translation": "Werder Bremen was looking for a successor for their striker Davie Selke. The 20-year-old is transferring to RB Leipzig for the upcoming season.",
@@ -4137,11 +4243,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "house special",
     "source": "wiktionary",
     "lemmas": [
       "Art"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6520906c7": {
     "text": "Für den perfekten Ansatz bedarf es einer exakten Positionierung des Instruments.",
@@ -4573,10 +4680,25 @@
   },
   "e65fbcb0db": {
     "text": "Messe in h (Messe in Ha-Moll)",
-    "translation": null,
+    "translation": "Mass in B minor",
     "source": "wiktionary",
     "lemmas": [
       "h"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Messe",
+        "lemma": "Messe",
+        "pos": "noun",
+        "gloss_hint": "mass (religious)"
+      },
+      {
+        "form": "h",
+        "lemma": "h",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e6607a6da1": {
@@ -4584,11 +4706,12 @@
     "type": "expression",
     "note": "jemandem helfen",
     "synonyms": [],
-    "translation": null,
+    "translation": "lend someone a helping hand",
     "source": "wiktionary",
     "lemmas": [
       "Arm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e660ba7b08": {
     "text": "Das Allerlei auf dem Teller sah dann doch irgendwie lecker aus.",
@@ -4975,11 +5098,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give him an inch and he'll take a mile",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6663aa1e5": {
     "text": "„Die Arbeit der ostdeutschen Meisterspione wird nicht bestraft, ihre Bubenstücke schon.“",
@@ -5277,10 +5401,37 @@
   },
   "e66a438283": {
     "text": "Der Oberrhein liegt der Quelle näher als der Niederrhein.",
-    "translation": null,
+    "translation": "The Upper Rhine is closer to the source than the Lower Rhine.",
     "source": "wiktionary",
     "lemmas": [
       "ober-"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Oberrhein",
+        "lemma": "Oberrhein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Quelle",
+        "lemma": "Quelle",
+        "pos": "noun",
+        "gloss_hint": "spring"
+      },
+      {
+        "form": "näher",
+        "lemma": "nah",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Niederrhein",
+        "lemma": "Niederrhein",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e66b54639c": {
@@ -5423,11 +5574,12 @@
     "synonyms": [
       "Zicke"
     ],
-    "translation": null,
+    "translation": "the poor man's cow",
     "source": "wiktionary",
     "lemmas": [
       "Kuh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e66d8537bd": {
     "text": "Es kam uns vor wie ein Zauber.",
@@ -6184,11 +6336,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "may I have this dance?",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e67b19cad5": {
     "text": "[Daimler:] „Petronas sponsort das Formel-1-Team des Konzerns.“",
@@ -6698,18 +6851,58 @@
     "type": "expression",
     "note": "abhauen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to get lost",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e67f1a74a9": {
     "text": "Um das richtige Acetat zu spinnen, muss man erst die Zellulose durch Azetylieren in das Zelluloseazetat überführen.",
-    "translation": null,
+    "translation": "To spin the correct acetate, one must first convert the cellulose into cellulose acetate through acetylation.",
     "source": "wiktionary",
     "lemmas": [
       "Acetat"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Acetat",
+        "lemma": "Acetat",
+        "pos": "noun",
+        "gloss_hint": "acetate"
+      },
+      {
+        "form": "spinnen",
+        "lemma": "spinnen",
+        "pos": "verb",
+        "gloss_hint": "spin"
+      },
+      {
+        "form": "Zellulose",
+        "lemma": "Zellulose",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Azetylieren",
+        "lemma": "azetylieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zelluloseazetat",
+        "lemma": "Zelluloseazetat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "überführen",
+        "lemma": "überführen",
+        "pos": "verb",
+        "gloss_hint": "convert"
+      }
     ]
   },
   "e67f1a7a0a": {
@@ -7597,12 +7790,13 @@
     "type": "expression",
     "note": "im Delirium sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to see pink elephants",
     "source": "wiktionary",
     "lemmas": [
       "Maus",
       "weiß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6933208b0": {
     "text": "Machen Sie mir bitte eine Rechnung, aus der das Verlustrisiko nach Sparten hervorgeht.",
@@ -7672,10 +7866,49 @@
   },
   "e6942bc086": {
     "text": "„Am 1. September feiert Seiji Ozawa nun seinen 85. Geburtstag. […] Heute besuchen die jungen Dirigenten in Scharen seine Kurse.“",
-    "translation": null,
+    "translation": "On September 1st, Seiji Ozawa is now celebrating his 85th birthday. [...] Today young conductors are attending his courses in droves.",
     "source": "wiktionary",
     "lemmas": [
       "in Scharen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "September",
+        "lemma": "September",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "feiert",
+        "lemma": "feiern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geburtstag",
+        "lemma": "Geburtstag",
+        "pos": "noun",
+        "gloss_hint": "birthday"
+      },
+      {
+        "form": "besuchen",
+        "lemma": "besuchen",
+        "pos": "verb",
+        "gloss_hint": "attend"
+      },
+      {
+        "form": "Dirigenten",
+        "lemma": "Dirigent",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kurse",
+        "lemma": "Kurs",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e6943af18b": {
@@ -7902,12 +8135,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "oh no you don't",
     "source": "wiktionary",
     "lemmas": [
       "doch"
     ],
-    "ref": "phrases/aber nicht doch"
+    "ref": "phrases/aber nicht doch",
+    "translation_model": "openai/gpt-4.1"
   },
   "e69a0b7d27": {
     "text": "Viele Leute fahren mit dem Auto zur Arbeit, wenngleich es schneller wäre, das Fahrrad zu nehmen.",
@@ -8235,12 +8469,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to eat out of someone's hand",
     "source": "wiktionary",
     "lemmas": [
       "essen",
       "Faust"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6a04070f8": {
     "text": "„Ich selbst habe zu den kleinen Vorträgen wenig oder nichts zu sagen.“",
@@ -8704,12 +8939,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "all-in-one solution",
     "source": "wiktionary",
     "lemmas": [
       "Sau"
     ],
-    "ref": "phrases/eierlegende Wollmilchsau"
+    "ref": "phrases/eierlegende Wollmilchsau",
+    "translation_model": "openai/gpt-4.1"
   },
   "e6a737c954": {
     "text": "Damake aber antwortete dem ersten, daß die Heuschrecke sieben Tiere in sich vereinige: dieweil sie einen Pferdekopf, einen Rinderhals, Adlerflügel, Kamelbeine, den Schwanz einer Schlange, Hirschhörner und den Bauch eines Skorpions habe.",
@@ -8942,11 +9178,12 @@
     "type": "expression",
     "note": "[1] Reihe halten – Beispiel: Die Kartoffeln können schon Reihe halten. (Es schauen bereits genügend Jungpflanzen aus der Erde, sodass ich die Reihen erkennen und zwischen ihnen hacken kann.)",
     "synonyms": [],
-    "translation": null,
+    "translation": "to stand in line",
     "source": "wiktionary",
     "lemmas": [
       "Reihe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6ace2220d": {
     "text": "„Es mag auch sein, dass der Trenchcoat ein Klassiker ist, der, wenn man ihn tragen kann, ein überall einsetzbares Kleidungsstück ist.“",
@@ -9165,10 +9402,61 @@
   },
   "e6af5e2ae3": {
     "text": "„»Jetzt haben wir die aberwitzige Situation, dass die Mächtigen in Europa […] allesamt vorgeben, ein Programm umzusetzen, von dem sie wissen, dass es nicht umgesetzt werden kann. Mit diesem Schwindel wollte ich nichts zu tun haben, deshalb bin ich zurückgetreten.«“ [Anmerkung: Aussage von Yanis Varoufakis, ehemaliger griechischer Finanzminister]",
-    "translation": null,
+    "translation": "\"Now we have the absurd situation that the powerful in Europe [...] all pretend to implement a program that they know cannot be implemented. I wanted nothing to do with this fraud, which is why I resigned.\"",
     "source": "wiktionary",
     "lemmas": [
       "mit etwas nichts zu tun haben wollen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Situation",
+        "lemma": "Situation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mächtigen",
+        "lemma": "Mächtige",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Europa",
+        "lemma": "Europa",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vorgeben",
+        "lemma": "vorgeben",
+        "pos": "verb",
+        "gloss_hint": "pretend"
+      },
+      {
+        "form": "Programm",
+        "lemma": "Programm",
+        "pos": "noun",
+        "gloss_hint": "program"
+      },
+      {
+        "form": "wissen",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": "know"
+      },
+      {
+        "form": "Schwindel",
+        "lemma": "Schwindel",
+        "pos": "noun",
+        "gloss_hint": "lie"
+      },
+      {
+        "form": "zurückgetreten",
+        "lemma": "zurücktreten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "e6b14cc93e": {
@@ -9268,11 +9556,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "God in heaven",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6b1a99c3c": {
     "text": "„Starke Abblendung ist auch bei den meisten Landschafts- oder Interieuraufnahmen erforderlich, um die nötige Tiefenschärfe zu erzielen.“",
@@ -9592,11 +9881,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like in a madhouse",
     "source": "wiktionary",
     "lemmas": [
       "Irrenhaus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6b542136e": {
     "text": "Physische Belastungen sind ein Teil des menschlichen Daseins und zum Erhalt der Gesundheit zwingend erforderlich.",
@@ -10168,11 +10458,12 @@
     "type": "expression",
     "note": "nur selten oder vereinzelt vorhanden",
     "synonyms": [],
-    "translation": null,
+    "translation": "few and far between",
     "source": "wiktionary",
     "lemmas": [
       "säen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6c11e8ab6": {
     "text": "Bei spiegelgesteuerten Scannern trifft die Projektion auf eine Spiegelfläche, die mit Hilfe zweier Motoren seitlich und neigend bewegt wird, so dass der Lichtstrahl auf die Projektionsfläche abgelenkt wird.",
@@ -10967,23 +11258,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bring a secret to light",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6c91ebe6e": {
     "text": "jemanden in Watte packen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "coddle someone",
     "source": "wiktionary",
     "lemmas": [
       "Watte"
     ],
-    "ref": "phrases/jemanden in Watte packen"
+    "ref": "phrases/jemanden in Watte packen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e6c9a9ee57": {
     "text": "„Ola beugte sich vor und schnitt noch ein Stück Lasagne ab, das er auf meinen Teller legte, ehe er sich selbst auch noch eins nahm.“",
@@ -11310,22 +11603,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be back on one's feet",
     "source": "wiktionary",
     "lemmas": [
       "Fuß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6cf2c980f": {
     "text": "Speck an den Rippen haben",
     "type": "expression",
     "note": "wohl genährt sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "have some meat on one's bones",
     "source": "wiktionary",
     "lemmas": [
       "Speck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6d177577a": {
     "text": "Dieses Computerprogramm hat einen kritischen Fehler in der Behandlung der Texteingabe. Dieser Umstand kann ausgenutzt werden, um beliebigen Programmcode auszuführen.",
@@ -11485,11 +11780,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "save someone's butt",
     "source": "wiktionary",
     "lemmas": [
       "Hintern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6d7afa648": {
     "text": "„Zur Mittagszeit rief dann ein Junge durch ein offenes Fenster, dass die Soldaten anrückten.“",
@@ -11547,10 +11843,31 @@
   },
   "e6d843fb24": {
     "text": "Dieses Lied geht mir auf den Geist.",
-    "translation": null,
+    "translation": "This song gets on my nerves.",
     "source": "wiktionary",
     "lemmas": [
       "auf den Geist gehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Lied",
+        "lemma": "Lied",
+        "pos": "noun",
+        "gloss_hint": "song"
+      },
+      {
+        "form": "geht",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geist",
+        "lemma": "Geist",
+        "pos": "noun",
+        "gloss_hint": "mind"
+      }
     ]
   },
   "e6d9301c58": {
@@ -11715,6 +12032,23 @@
     ],
     "text_linked": "Eigentlich hat sich [[Deutschland|names/Deutschland]] das [[Ziel|nouns/Ziel#1]] gesetzt, die [[hoch|adjectives/hoch#1]] ansteckende [[Krankheit|nouns/Krankheit#1]] [Masern] bis zum [[Jahr|nouns/Jahr#1]] 2015 auszurotten. Damit dies [[möglich|adjectives/möglich#4]] wird, müssten 95 [[Prozent|nouns/Prozent#1]] der [[Bevölkerung|nouns/Bevölkerung]] [[immun|adjectives/immun#1]] gegen die Krankheit [[werden|verbs/werden#1]]."
   },
+  "e6daa7cf76": {
+    "text": "Lecko mio, ist das ein Käffchen!",
+    "translation": "Wow, that's a great little coffee!",
+    "source": "wiktionary",
+    "lemmas": [
+      "lecko mio"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Käffchen",
+        "lemma": "Käffchen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ]
+  },
   "e6dacaae5e": {
     "text": "„[Es ist] ein wichtiger Aspekt in der Sterbebegleitung, das Bewusstsein des Sterbenden auf das zu richten, was gut war im Leben, was er gutes erfahren hat im Leben und was auch gutes von ihm ausgegangen ist.“",
     "translation": "\"An important aspect in end-of-life care is to focus the dying person's awareness on what was good in life, what good he experienced in life, and what good also came from him.\"",
@@ -11843,10 +12177,37 @@
   },
   "e6dbf0e678": {
     "text": "„Wir werden Ihnen in Bälde einen entsprechenden Antrag vorlegen, der vorsieht, die bislang gültigen Fristen aufzuheben.“",
-    "translation": null,
+    "translation": "We will present you with a corresponding proposal in the near future that provides for the abolition of the previously valid deadlines.",
     "source": "wiktionary",
     "lemmas": [
       "in Bälde"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Antrag",
+        "lemma": "Antrag",
+        "pos": "noun",
+        "gloss_hint": "proposal"
+      },
+      {
+        "form": "vorlegen",
+        "lemma": "vorlegen",
+        "pos": "verb",
+        "gloss_hint": "present"
+      },
+      {
+        "form": "Fristen",
+        "lemma": "Frist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufzuheben",
+        "lemma": "aufheben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "e6dc148526": {
@@ -11854,11 +12215,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be wrong",
     "source": "wiktionary",
     "lemmas": [
       "falsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6dc687f9f": {
     "text": "Was viel schwerer auf dem Wohnungskonzern lastet, sind die Folgen der zahlreichen falschen Einschätzungen und Fehlentscheidungen Vietors und seiner Vorstandskollegen.",
@@ -12185,11 +12547,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be in floods of tears",
     "source": "wiktionary",
     "lemmas": [
       "baden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6e2430ca9": {
     "text": "Die Nebenflüsse speisen den Stausee.",
@@ -12352,11 +12715,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Here's looking at you, kid.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6e4cd4a5e": {
     "text": "Die Vorstellung hat doch noch gar nicht begonnen.",
@@ -13012,14 +13376,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a loyal servant to his master",
     "source": "wiktionary",
     "lemmas": [
       "Herr"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e6efeaf5a7": {
     "text": "„Im Zentrum angelangt machte ich mich auf die Suche nach einem Campingplatz, doch leider gab es in der Hauptstadt keine Möglichkeit zum Zeltaufschlagen.“",
@@ -13175,10 +13537,61 @@
   },
   "e6f405a010": {
     "text": "„Brautpaaren werden Granatäpfel vor die Haustür gelegt. Auch bei den sephardischen Juden symbolisieren sie beim Neujahrsfest Rosch Ha-Schana den Wunsch nach zahlreichen Nachkommen.“",
-    "translation": null,
+    "translation": "Pomegranates are placed in front of the bride and groom's door. Among Sephardic Jews, they also symbolize the wish for numerous descendants at the New Year festival Rosh Hashanah.",
     "source": "wiktionary",
     "lemmas": [
       "Rosch Ha-Schana"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Granatäpfel",
+        "lemma": "Granatapfel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Brautpaaren",
+        "lemma": "Brautpaar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haustür",
+        "lemma": "Haustür",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Juden",
+        "lemma": "Jude",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "symbolisieren",
+        "lemma": "symbolisieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Neujahrsfest",
+        "lemma": "Neujahrsfest",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wunsch",
+        "lemma": "Wunsch",
+        "pos": "noun",
+        "gloss_hint": "wish"
+      },
+      {
+        "form": "Nachkommen",
+        "lemma": "Nachkomme",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e6f42b65a1": {
@@ -13803,11 +14216,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a piece of one's mind",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e6fd89d273": {
     "text": "Eine Unze wird eingetheilt in 8 Drachmen oder Quintel; ein Drachma in 3 Skrupel, und ein Skrupel in 2o Apothekergrane. (1822)",

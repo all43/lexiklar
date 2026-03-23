@@ -1859,10 +1859,25 @@
   },
   "d21043bb45": {
     "text": "Der Bart beginnt zu sprießen.",
-    "translation": null,
+    "translation": "The beard is beginning to grow.",
     "source": "wiktionary",
     "lemmas": [
       "sprießen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bart",
+        "lemma": "Bart",
+        "pos": "noun",
+        "gloss_hint": "beard"
+      },
+      {
+        "form": "sprießen",
+        "lemma": "sprießen",
+        "pos": "verb",
+        "gloss_hint": "sprout"
+      }
     ]
   },
   "d210504b59": {
@@ -2057,10 +2072,25 @@
   },
   "d212edae21": {
     "text": "„Komm, zieh dich an, kein Wunder, daß du so erkältet bist.“",
-    "translation": null,
+    "translation": "\"Come on, get dressed; no wonder you've caught such a cold.\"",
     "source": "wiktionary",
     "lemmas": [
       "kein Wunder"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "zieh",
+        "lemma": "ziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "erkältet",
+        "lemma": "erkälten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d2130d9118": {
@@ -2779,10 +2809,37 @@
   },
   "d21571e52c": {
     "text": "Unterdessen war das Buch auch auf spanisch erschienen, erregte aber kaum Aufsehen.",
-    "translation": null,
+    "translation": "Meanwhile, the book had also appeared in Spanish, but attracted hardly any attention.",
     "source": "wiktionary",
     "lemmas": [
       "Aufsehen erregen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Buch",
+        "lemma": "Buch",
+        "pos": "noun",
+        "gloss_hint": "book"
+      },
+      {
+        "form": "spanisch",
+        "lemma": "spanisch",
+        "pos": "adjective",
+        "gloss_hint": "Spanish"
+      },
+      {
+        "form": "erschienen",
+        "lemma": "erscheinen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufsehen",
+        "lemma": "Aufsehen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d216c0f986": {
@@ -2790,14 +2847,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "become respectable again",
     "source": "wiktionary",
     "lemmas": [
       "Ehre"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d21745576f": {
     "text": "Verfügen Sie über eine abgeschlossene Berufsausbildung?",
@@ -3528,10 +3583,37 @@
   },
   "d220790e7a": {
     "text": "„Die dauerhaft mittlere Temperatur bei Fontane, bei dauerhaft dahinplätscherndem Gerede, das mach ihn à la longue so leicht ausrechenbar wie schwer ermüdend.“",
-    "translation": null,
+    "translation": "\"The persistently moderate temperature in Fontane, with persistently meandering chatter, makes him in the long run as predictable as he is tediously exhausting.\"",
     "source": "wiktionary",
     "lemmas": [
       "à la longue"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Temperatur",
+        "lemma": "Temperatur",
+        "pos": "noun",
+        "gloss_hint": "temperature"
+      },
+      {
+        "form": "Gerede",
+        "lemma": "Gerede",
+        "pos": "noun",
+        "gloss_hint": "babble"
+      },
+      {
+        "form": "leicht",
+        "lemma": "leicht",
+        "pos": "adjective",
+        "gloss_hint": "easy"
+      },
+      {
+        "form": "schwer",
+        "lemma": "schwer",
+        "pos": "adjective",
+        "gloss_hint": "difficult"
+      }
     ]
   },
   "d221d85a79": {
@@ -3569,6 +3651,29 @@
       }
     ],
     "text_linked": "[[Der|determiners/der]] [[Kartoffelbrei|nouns/Kartoffelbrei]] [[dampft|verbs/dampfen#1]] [[verführerisch|adjectives/verführerisch#1]]!"
+  },
+  "d223b9c292": {
+    "text": "Manometer, das ging aber flott!",
+    "translation": "Wow, that was quick!",
+    "source": "wiktionary",
+    "lemmas": [
+      "Manometer"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Manometer",
+        "lemma": "Manometer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "flott",
+        "lemma": "flott",
+        "pos": "adjective",
+        "gloss_hint": "fast"
+      }
+    ]
   },
   "d223e74c27": {
     "text": "Ach, war man heute wieder einmal krank?",
@@ -3831,10 +3936,55 @@
   },
   "d22bf488a5": {
     "text": "Alle Benutzer werden gebeten, den Ort so zu verlassen, wie sie selbst ihn vorfinden möchten.",
-    "translation": null,
+    "translation": "All users are requested to leave the location in the condition they would like to find it themselves.",
     "source": "wiktionary",
     "lemmas": [
       "Benutzer"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Benutzer",
+        "lemma": "Benutzer",
+        "pos": "noun",
+        "gloss_hint": "user"
+      },
+      {
+        "form": "werden",
+        "lemma": "werden",
+        "pos": "verb",
+        "gloss_hint": "auxiliary"
+      },
+      {
+        "form": "gebeten",
+        "lemma": "bitten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ort",
+        "lemma": "Ort",
+        "pos": "noun",
+        "gloss_hint": "location"
+      },
+      {
+        "form": "verlassen",
+        "lemma": "verlassen",
+        "pos": "verb",
+        "gloss_hint": "leave"
+      },
+      {
+        "form": "vorfinden",
+        "lemma": "vorfinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "möchten",
+        "lemma": "mögen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d22c374cca": {
@@ -3842,24 +3992,26 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "force oneself to do something",
     "source": "wiktionary",
     "lemmas": [
       "gewinnen"
     ],
-    "ref": "phrases/es über sich gewinnen, etwas zu tun"
+    "ref": "phrases/es über sich gewinnen, etwas zu tun",
+    "translation_model": "openai/gpt-4.1"
   },
   "d22cf300c2": {
     "text": "auf Punkt und Beistrich",
     "type": "expression",
     "note": "genau",
     "synonyms": [],
-    "translation": null,
+    "translation": "to a T",
     "source": "wiktionary",
     "lemmas": [
       "Punkt"
     ],
-    "ref": "phrases/auf Punkt und Beistrich"
+    "ref": "phrases/auf Punkt und Beistrich",
+    "translation_model": "openai/gpt-4.1"
   },
   "d22d55a523": {
     "text": "„Die Schurken im Steinbruch schienen zu verhandeln, was sie machen sollten.“",
@@ -4116,6 +4268,59 @@
       "translation": true,
       "annotations": "e534e937"
     }
+  },
+  "d22e9d649a": {
+    "text": "Wer als erstes im Wasser ist, hat gewonnen! Achtung, fertig, los!",
+    "translation": "Whoever gets in the water first wins! Ready, set, go!",
+    "source": "wiktionary",
+    "lemmas": [
+      "Achtung, fertig, los"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wer",
+        "lemma": "wer",
+        "pos": "pronoun",
+        "gloss_hint": "who"
+      },
+      {
+        "form": "erstes",
+        "lemma": "erste",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wasser",
+        "lemma": "Wasser",
+        "pos": "noun",
+        "gloss_hint": "water"
+      },
+      {
+        "form": "gewonnen",
+        "lemma": "gewinnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Achtung",
+        "lemma": "Achtung",
+        "pos": "noun",
+        "gloss_hint": "attention"
+      },
+      {
+        "form": "fertig",
+        "lemma": "fertig",
+        "pos": "adjective",
+        "gloss_hint": "finished"
+      },
+      {
+        "form": "los",
+        "lemma": "los",
+        "pos": "adverb",
+        "gloss_hint": "go!"
+      }
+    ]
   },
   "d22ee2884f": {
     "text": "„Tut es sehr weh?“ – „Allerdings!“",
@@ -4639,11 +4844,12 @@
     "type": "expression",
     "note": "jemanden unter Kontrolle bekommen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep someone on a tight leash",
     "source": "wiktionary",
     "lemmas": [
       "Leine"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d23196085d": {
     "text": "„Neben dem herrschaftlichen Haus gab es sogar eine richtige Liegewiese mit einem kleinen Brunnen und Sonnenschirmen und Liegestühlen.“",
@@ -4950,11 +5156,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to foam at the mouth with rage",
     "source": "wiktionary",
     "lemmas": [
       "Wut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d235670880": {
     "text": "Peter, du bist mal wieder gar nicht präsent.",
@@ -5021,11 +5228,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the rest is silence",
     "source": "wiktionary",
     "lemmas": [
       "Rest"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d238851c42": {
     "text": "„Die Station war stillgelegt.“",
@@ -5135,11 +5343,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give one's life",
     "source": "wiktionary",
     "lemmas": [
       "Leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d23da24887": {
     "text": "Ich lass mir doch kein X für ein U vormachen!",
@@ -5396,11 +5605,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pay someone back in kind",
     "source": "wiktionary",
     "lemmas": [
       "gleich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d23ef066e4": {
     "text": "Ich muss morgen in das Klinikum.",
@@ -5563,14 +5773,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to make a name for oneself",
     "source": "wiktionary",
     "lemmas": [
       "Name"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d23f671b5d": {
     "text": "„David Ben-Gurion, Israels erster Regierungschef, wurde auf den jungen Genossen von der Mapai (Vorläufer der Arbeitspartei) aufmerksam, der inzwischen aus dem polnischen Perski ein hebräisches Peres gemacht hat, und nahm ihn unter seine Fittiche.“",
@@ -6002,11 +6210,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pull someone else's chestnuts out of the fire",
     "source": "wiktionary",
     "lemmas": [
       "holen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d243686261": {
     "text": "„Im Altfranzösischen ist er ein Meister; von den Surrealisten hat er vorzügliche Übertragungen gemacht; aber eine einfache Sache zu sagen, wie: »Zum Teufel, hau doch ab, du alter Hurenbock!« – das bringt er nicht fertig.“",
@@ -7524,11 +7733,12 @@
     "synonyms": [
       "nutzen"
     ],
-    "translation": null,
+    "translation": "to know what to do with something",
     "source": "wiktionary",
     "lemmas": [
       "anfangen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d25a73d402": {
     "text": "„Die Ecke, wo der Marmeladeeimer stand, schwamm im Unrat und verpestete die Luft, die kaum noch zum Atmen war.“",
@@ -8520,10 +8730,49 @@
   },
   "d262408115": {
     "text": "Neben dem NYPD gibt es zum Beispiel noch das FDNY, das Fire Department of the City of New York.",
-    "translation": null,
+    "translation": "Besides the NYPD, there is also, for example, the FDNY, the Fire Department of the City of New York.",
     "source": "wiktionary",
     "lemmas": [
       "NYPD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Beispiel",
+        "lemma": "Beispiel",
+        "pos": "noun",
+        "gloss_hint": "example"
+      },
+      {
+        "form": "FDNY",
+        "lemma": "FDNY",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fire",
+        "lemma": "Fire",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Department",
+        "lemma": "Department",
+        "pos": "noun",
+        "gloss_hint": "department"
+      },
+      {
+        "form": "City",
+        "lemma": "City",
+        "pos": "noun",
+        "gloss_hint": "city center"
+      },
+      {
+        "form": "York",
+        "lemma": "York",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d2625a3c0c": {
@@ -9394,11 +9643,12 @@
     "type": "expression",
     "note": "stumm lächeln",
     "synonyms": [],
-    "translation": null,
+    "translation": "to smile serenely",
     "source": "wiktionary",
     "lemmas": [
       "Buddha"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d2707f351c": {
     "text": "„In einer Kneipe allein am Tisch zusitzen war ein zweifelhaftes Vergnügen.“",
@@ -11388,11 +11638,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take off (leave quickly)",
     "source": "wiktionary",
     "lemmas": [
       "Platte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d27a217731": {
     "text": "„Bezeichnend für ein derartiges Denken kann gerade der Umgang mit handfestem Material sein: ‚Alle Materialien, die verwendet werden, zum Beispiel Baumaterialien, sollten pre- oder recycelt werden‘, sagt Pipilotti Rist.“",
@@ -12584,11 +12835,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to feel called to greater things",
     "source": "wiktionary",
     "lemmas": [
       "fühlen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d2879a2818": {
     "text": "„Viele klassische Genetiker machten aus dieser Not eine Tugend und kokettierten gerne mit dieser Ignoranz, die es ihnen erlaubte, das Gen als einen „Erbfaktor“, einen Faktor mit der mathematischen Schönheit des Abstrakten, zu betrachten … Nicht dass sich niemand Gedanken gemacht hätte über die materielle Natur der Gene. So z. B. hatte Hermann Muller … schon im Jahre 1926 die Möglichkeit erwogen, das Gen auch physisch in den Griff zu bekommen, und dazu auch einen der ersten Ansätze geliefert, indem er zeigte, daß Röntgenstrahlen Mutationen auslösen (Muller 1927).“",
@@ -14757,11 +15009,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to stiffen someone's resolve",
     "source": "wiktionary",
     "lemmas": [
       "steifen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d2986d2f4e": {
     "text": "Sie hat ihre Periode.",
@@ -17101,12 +17354,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to stand on one's hind legs",
     "source": "wiktionary",
     "lemmas": [
       "Männchen"
     ],
-    "ref": "phrases/Männchen machen"
+    "ref": "phrases/Männchen machen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d2af69dfd1": {
     "text": "Nun bezifferte der britische Schatzkanzler, welche Auswirkungen der EU-Ausstieg auf den britischen Haushalt hat. Umgerechnet 3,4 Milliarden Euro werden zur Vorbereitung des Brexit beiseite gelegt.",
@@ -17896,10 +18150,55 @@
   },
   "d2b5b5d9f0": {
     "text": "„»Ehrlich gesagt freu ich mich total darüber, dass es Menschen gibt, die in den Mediatheken [der ARD] nach Schätzen suchen.«“",
-    "translation": null,
+    "translation": "\"Honestly, I'm really delighted that there are people searching for treasures in the media libraries of the ARD.\"",
     "source": "wiktionary",
     "lemmas": [
       "ehrlich gesagt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ehrlich",
+        "lemma": "ehrlich",
+        "pos": "adjective",
+        "gloss_hint": "honest"
+      },
+      {
+        "form": "freu",
+        "lemma": "freuen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mediatheken",
+        "lemma": "Mediathek",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ARD",
+        "lemma": "ARD",
+        "pos": "abbreviation",
+        "gloss_hint": "ARD"
+      },
+      {
+        "form": "Schätzen",
+        "lemma": "schätzen",
+        "pos": "verb",
+        "gloss_hint": "appreciate"
+      },
+      {
+        "form": "suchen",
+        "lemma": "suchen",
+        "pos": "verb",
+        "gloss_hint": "search for"
+      }
     ]
   },
   "d2b6debb8e": {
@@ -18406,11 +18705,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Where there's a will, there's a way!",
     "source": "wiktionary",
     "lemmas": [
       "Mühe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d2b9cd6443": {
     "text": "etwas in Grenzen halten",
@@ -19106,10 +19406,25 @@
   },
   "d2bb7d7d10": {
     "text": "1 w hat 7 Tage.",
-    "translation": null,
+    "translation": "1 week has 7 days.",
     "source": "wiktionary",
     "lemmas": [
       "w"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Woche",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tage",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d2bc241670": {
@@ -19333,10 +19648,43 @@
   },
   "d2c2de06f2": {
     "text": "Die dunkle Materie und die dunkle Energie sind die kosmischen Urpolaritäten.",
-    "translation": null,
+    "translation": "Dark matter and dark energy are the cosmic primordial polarities.",
     "source": "wiktionary",
     "lemmas": [
       "dunkle Energie"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "dunkle",
+        "lemma": "dunkel",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Materie",
+        "lemma": "Materie",
+        "pos": "noun",
+        "gloss_hint": "matter"
+      },
+      {
+        "form": "Energie",
+        "lemma": "Energie",
+        "pos": "noun",
+        "gloss_hint": "energy"
+      },
+      {
+        "form": "kosmischen",
+        "lemma": "kosmisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Urpolaritäten",
+        "lemma": "Urpolarität",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d2c336e4b8": {
@@ -19443,10 +19791,37 @@
   },
   "d2c5c055fb": {
     "text": "Wir alle wollen nichts mit dem Tod zu tun haben, wir verdrängen ihn.",
-    "translation": null,
+    "translation": "We all want nothing to do with death; we repress it.",
     "source": "wiktionary",
     "lemmas": [
       "mit etwas nichts zu tun haben wollen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wollen",
+        "lemma": "wollen",
+        "pos": "verb",
+        "gloss_hint": "intend"
+      },
+      {
+        "form": "nichts",
+        "lemma": "nichts",
+        "pos": "noun",
+        "gloss_hint": "nothingness"
+      },
+      {
+        "form": "Tod",
+        "lemma": "Tod",
+        "pos": "noun",
+        "gloss_hint": "death"
+      },
+      {
+        "form": "verdrängen",
+        "lemma": "verdrängen",
+        "pos": "verb",
+        "gloss_hint": "repress"
+      }
     ]
   },
   "d2c5f773ba": {
@@ -20111,11 +20486,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to stretch one's legs",
     "source": "wiktionary",
     "lemmas": [
       "Bein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d2c93d80ba": {
     "text": "„Ein paar Kuh- und Schweineställe bildeten das Ganze dieser Hinterwäldler-Siedlung.“",
@@ -20557,11 +20933,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Fire consumes, water sustains",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d2cce54472": {
     "text": "„Als das griechische Heer unter Ptolemaios I. (Soter, Retter, genannt!) an Schabbat angriff, war es daher das Schicksal der Kohanim (Priester), die im Jahre 320 vor der gängigen Zeitrechnung im Tempel Dienst taten, daß sie ohne die Möglichkeit zur Gegenwehr den Tod erlitten.“",
@@ -22757,11 +23134,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have water in one's ears",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d2dc508ae3": {
     "text": "Im Umfeld des Hafens soll es öfters zu Überfällen kommen.",
@@ -23700,11 +24078,12 @@
     "type": "expression",
     "note": "Von etwas abhängig sein, sich durch etwas versorgen lassen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be dependent on something",
     "source": "wiktionary",
     "lemmas": [
       "Nabel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d2e98f525f": {
     "text": "Die Nationalspielerin schoss zwei Tore bei der Weltmeisterschaft.",
@@ -24388,11 +24767,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Big fish are caught in big waters",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d2ef42d468": {
     "text": "Für den italienischen Oscar-Preisträger Benigni ist Belusconis Kandidatur für den Posten des Ministerpräsidenten schlimmer als jeder Weltuntergang.",
@@ -25078,11 +25458,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in one go",
     "source": "wiktionary",
     "lemmas": [
       "Rutsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d2f5fc1992": {
     "text": "Wegen seiner schlechten Noten verabreichte sein Vater ihm eine Ohrfeige.",
@@ -25158,10 +25539,31 @@
   },
   "d2f63b4f80": {
     "text": "Die Generalprobe war voll in die Hose gegangen.",
-    "translation": null,
+    "translation": "The dress rehearsal went completely wrong.",
     "source": "wiktionary",
     "lemmas": [
       "in die Hose gehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Generalprobe",
+        "lemma": "Generalprobe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "voll",
+        "lemma": "voll",
+        "pos": "adjective",
+        "gloss_hint": "complete"
+      },
+      {
+        "form": "Hose",
+        "lemma": "Hose",
+        "pos": "noun",
+        "gloss_hint": "pants"
+      }
     ]
   },
   "d2f7090efa": {
@@ -25335,11 +25737,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "One hand washes the other.",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d2f97e720a": {
     "text": "Beim nächsten Sprung wird sie ganz sicher die 100-m-Marke passieren.",
@@ -25410,11 +25813,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If someone wants to drown, they'll find water everywhere.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d2fc4faa6a": {
     "text": "Um überzeugen zu können, brauchen wir jetzt schnelle Erfolge!",
@@ -25461,11 +25865,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Forget about it.",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d2fcee4164": {
     "text": "Wer nicht schwimmen kann, könnte im Wasser ertrinken.",

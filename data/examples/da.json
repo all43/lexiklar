@@ -310,10 +310,43 @@
   },
   "da034cfa3a": {
     "text": "„Man darf es noch nicht einmal laut denken, aber der Umschwung liegt in der Luft.“",
-    "translation": null,
+    "translation": "\"You can't even think it aloud, but a turning point is in the air.\"",
     "source": "wiktionary",
     "lemmas": [
       "laut denken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "darf",
+        "lemma": "dürfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "laut",
+        "lemma": "laut",
+        "pos": "adjective",
+        "gloss_hint": "loud"
+      },
+      {
+        "form": "denken",
+        "lemma": "denken",
+        "pos": "verb",
+        "gloss_hint": "think"
+      },
+      {
+        "form": "Umschwung",
+        "lemma": "Umschwung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Luft",
+        "lemma": "Luft",
+        "pos": "noun",
+        "gloss_hint": "air"
+      }
     ]
   },
   "da03898840": {
@@ -1167,11 +1200,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "short and sweet",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da0791e4e5": {
     "text": "Das Geozentrische Weltbild des Ptolemäus ist komplizierter als das Heliozentrische Weltbild des Kopernikus.",
@@ -1220,10 +1254,85 @@
   },
   "da081d828c": {
     "text": "„Die Insel [Island] hatte sich mit ihren rund 330.000 Einwohnern wirtschaftlich erstaunlich schnell vom katastrophalen Finanzcrash 2008 erholt - angetrieben vor allem von einem wachsenden Tourismus. Politisch jedoch ging es in den vergangenen zwei Jahren drunter und drüber.“",
-    "translation": null,
+    "translation": "The island of Iceland, with its roughly 330,000 inhabitants, recovered economically in a remarkably swift manner from the catastrophic financial crash of 2008 – driven above all by growing tourism. Politically, however, things have been in complete chaos over the past two years.",
     "source": "wiktionary",
     "lemmas": [
       "drunter und drüber"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Insel",
+        "lemma": "Insel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einwohnern",
+        "lemma": "Einwohner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "wirtschaftlich",
+        "lemma": "wirtschaftlich",
+        "pos": "adjective",
+        "gloss_hint": "economic"
+      },
+      {
+        "form": "erstaunlich",
+        "lemma": "erstaunlich",
+        "pos": "adjective",
+        "gloss_hint": "surprising"
+      },
+      {
+        "form": "schnell",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": "fast"
+      },
+      {
+        "form": "Finanzcrash",
+        "lemma": "Finanzcrash",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erholt",
+        "lemma": "erholen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "angetrieben",
+        "lemma": "antreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tourismus",
+        "lemma": "Tourismus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Politisch",
+        "lemma": "politisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "drunter",
+        "lemma": "drunter",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "drüber",
+        "lemma": "drüber",
+        "pos": "adverb",
+        "gloss_hint": null
+      }
     ]
   },
   "da08d0e999": {
@@ -2139,10 +2248,31 @@
   },
   "da16572318": {
     "text": "Franz ist Mitglied der ÖVP.",
-    "translation": null,
+    "translation": "Franz is a member of the ÖVP.",
     "source": "wiktionary",
     "lemmas": [
       "ÖVP"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Franz",
+        "lemma": "Franz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mitglied",
+        "lemma": "Mitglied",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ÖVP",
+        "lemma": "ÖVP",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "da168e77d3": {
@@ -2275,12 +2405,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "shake one's head in disbelief",
     "source": "wiktionary",
     "lemmas": [
       "Haupt"
     ],
-    "ref": "phrases/sein greises Haupt schütteln"
+    "ref": "phrases/sein greises Haupt schütteln",
+    "translation_model": "openai/gpt-4.1"
   },
   "da1912e33b": {
     "text": "Diejenigen Herren, welche diese Fassung annehmen wollen, würde ich bitten, sich gefälligst zu erheben. (1849)",
@@ -2920,6 +3051,35 @@
       "translation": true,
       "annotations": "b7eef1ef"
     }
+  },
+  "da2126c63b": {
+    "text": "Ätsch, mein Vater hat ein größeres Auto als deiner.",
+    "translation": "Nyah-nyah, my father has a bigger car than yours.",
+    "source": "wiktionary",
+    "lemmas": [
+      "ätsch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vater",
+        "lemma": "Vater",
+        "pos": "noun",
+        "gloss_hint": "father"
+      },
+      {
+        "form": "Auto",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "größeres",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
+    ]
   },
   "da2219a2b4": {
     "text": "„Gott möge dir ewigen Ruhm schenken und dich reich mit seinem Segen belohnen. Denn in der Not unseres Volkes hast du dein Leben nicht geschont; nein, du hast entschlossen unseren Untergang von uns abgewehrt, du bist vor unserem Gott auf geradem Weg gegangen. Und alles Volk rief: Amen, amen.“",
@@ -3892,11 +4052,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "dressed up like a Christmas tree",
     "source": "wiktionary",
     "lemmas": [
       "Weihnachtsbaum"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da29ab3006": {
     "text": "„Abziehen ist eine Straftat.“",
@@ -3992,13 +4153,14 @@
     "synonyms": [
       "stürzen"
     ],
-    "translation": null,
+    "translation": "come down to earth with a bump",
     "source": "wiktionary",
     "lemmas": [
       "Himmel",
       "fallen"
     ],
-    "ref": "phrases/aus allen Himmeln fallen"
+    "ref": "phrases/aus allen Himmeln fallen",
+    "translation_model": "openai/gpt-4.1"
   },
   "da2b01038b": {
     "text": "„Ein Handicap sind die Fahrräder, meistens Vorkriegsmodelle, die in keiner Weise dem inzwischen moderneren DDR-Verkehr gewachsen sind.“",
@@ -4584,11 +4746,12 @@
     "type": "expression",
     "note": "im übertragenden Sinne der beste Mitarbeiter, Kollege",
     "synonyms": [],
-    "translation": null,
+    "translation": "the best employee in the company",
     "source": "wiktionary",
     "lemmas": [
       "Pferd"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da3493e200": {
     "text": "Er ist auf seinem schlechten Weg umgekehrt, um ein besserer Mensch zu werden.",
@@ -4948,11 +5111,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "come into fashion",
     "source": "wiktionary",
     "lemmas": [
       "Mode"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da38b05b63": {
     "text": "„Beim Näherkommen erkannte ich, daß es nur ein Kloster sein konnte, und ich war froh, in einem katholischen Kanton zu sein.“",
@@ -5121,13 +5285,14 @@
     "synonyms": [
       "kriegen"
     ],
-    "translation": null,
+    "translation": "get something to eat",
     "source": "wiktionary",
     "lemmas": [
       "bekommen",
       "Zahn"
     ],
-    "ref": "phrases/etwas zwischen die Zähne bekommen"
+    "ref": "phrases/etwas zwischen die Zähne bekommen",
+    "translation_model": "openai/gpt-4.1"
   },
   "da3d0e2d87": {
     "text": "„An der Spitze der männlichen Milizen standen oft Offiziersanwärter, Offiziere und buddhistische Mönche.“",
@@ -5848,11 +6013,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "follow your nose",
     "source": "wiktionary",
     "lemmas": [
       "nachgehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da4466a179": {
     "text": "„Für mich ist die kollektive Hysterie nicht immer nachvollziehbar.“",
@@ -6051,22 +6217,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Keep your eyes peeled!",
     "source": "wiktionary",
     "lemmas": [
       "wachsam"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da4512dce6": {
     "text": "Brot und Arbeit",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bread and butter",
     "source": "wiktionary",
     "lemmas": [
       "Brot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da457d8d9d": {
     "text": "„Gregor Gysi, heute charming Wirtschaftssenator, drängte es noch 1999, dem mutmaßlichen Schwerverbrecher Milosevic ergeben die Hand zu schütteln.“",
@@ -6672,10 +6840,49 @@
   },
   "da490452e9": {
     "text": "Gegen Ende der Sitzung hatte ich die Sprache auf das Problem der Müllentsorgung gebracht.",
-    "translation": null,
+    "translation": "Towards the end of the meeting, I had brought up the problem of waste disposal.",
     "source": "wiktionary",
     "lemmas": [
       "die Sprache auf etwas bringen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ende",
+        "lemma": "Ende",
+        "pos": "noun",
+        "gloss_hint": "end"
+      },
+      {
+        "form": "Sitzung",
+        "lemma": "Sitzung",
+        "pos": "noun",
+        "gloss_hint": "meeting"
+      },
+      {
+        "form": "Sprache",
+        "lemma": "Sprache",
+        "pos": "noun",
+        "gloss_hint": "speech"
+      },
+      {
+        "form": "Problem",
+        "lemma": "Problem",
+        "pos": "noun",
+        "gloss_hint": "problem"
+      },
+      {
+        "form": "Müllentsorgung",
+        "lemma": "Müllentsorgung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gebracht",
+        "lemma": "bringen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "da49ed6adf": {
@@ -7015,11 +7222,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take a shot",
     "source": "wiktionary",
     "lemmas": [
       "Schuss"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da4c6b117e": {
     "text": "„Pinneberg ist gerade nach Hause gekommen, hat einen Augenblick an der Krippe gestanden und auf den schlafenden Murkel gesehen.“",
@@ -8445,10 +8653,49 @@
   },
   "da5816567e": {
     "text": "„Er sagt zu allem ja, will morgen bei der Visite das Problem besprechen, am nächsten Tag dasselbe in grün.“",
-    "translation": null,
+    "translation": "He says yes to everything, wants to discuss the problem at tomorrow's round, and the next day it's the same old story.",
     "source": "wiktionary",
     "lemmas": [
       "dasselbe in Grün"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sagt",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": "say"
+      },
+      {
+        "form": "morgen",
+        "lemma": "morgen",
+        "pos": "adverb",
+        "gloss_hint": "tomorrow"
+      },
+      {
+        "form": "Visite",
+        "lemma": "Visite",
+        "pos": "noun",
+        "gloss_hint": "round"
+      },
+      {
+        "form": "Problem",
+        "lemma": "Problem",
+        "pos": "noun",
+        "gloss_hint": "problem"
+      },
+      {
+        "form": "besprechen",
+        "lemma": "besprechen",
+        "pos": "verb",
+        "gloss_hint": "discuss"
+      },
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      }
     ]
   },
   "da5830e801": {
@@ -8472,11 +8719,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fly into a rage",
     "source": "wiktionary",
     "lemmas": [
       "in"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da58e466c3": {
     "text": "In der Landwirtschaft muss man harte körperliche Arbeit verrichten können.",
@@ -9039,11 +9287,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a piece of the pie",
     "source": "wiktionary",
     "lemmas": [
       "Stück"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da5f78f651": {
     "text": "Man kann die Medien untersuchen, die in der Philosophie betrachtet wurden, zum Beispiel, was Platon über die Schrift zu sagen hatte.",
@@ -9501,6 +9750,65 @@
       "Theriak"
     ]
   },
+  "da6235eb70": {
+    "text": "„Stattdessen lobt er lieber den schwergewichtsresistenten Klapphocker aus Polyestertuch und einer ausgeklügelten Unterkonstruktion aus Sechs-Millimeter-Stahl, die sich schwuppdiwupp gefaltet in die mitgelieferte Tragetasche schieben lässt.“",
+    "translation": "Instead, he prefers to praise the heavyweight-resistant folding stool made of polyester fabric and an ingeniously designed substructure of six-millimetre steel, which can be folded up in a snap and pushed into the supplied carrying bag.",
+    "source": "wiktionary",
+    "lemmas": [
+      "schwuppdiwupp"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "lobt",
+        "lemma": "loben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klapphocker",
+        "lemma": "Klapphocker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Polyestertuch",
+        "lemma": "Polyestertuch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unterkonstruktion",
+        "lemma": "Unterkonstruktion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stahl",
+        "lemma": "Stahl",
+        "pos": "noun",
+        "gloss_hint": "steel"
+      },
+      {
+        "form": "gefaltet",
+        "lemma": "falten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schieben",
+        "lemma": "schieben",
+        "pos": "verb",
+        "gloss_hint": "push"
+      },
+      {
+        "form": "Tragetasche",
+        "lemma": "Tragetasche",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ]
+  },
   "da65662c89": {
     "text": "In einem Buch „Prinzipien der politischen Ökonomie“ braucht man nicht zu erwarten, die neueste Managementmode beschrieben zu sehen.",
     "translation": "In a book \"Principles of Political Economy,\" one does not expect to see the latest management trends described.",
@@ -9818,18 +10126,70 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it seems to me",
     "source": "wiktionary",
     "lemmas": [
       "wollen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da674f5d65": {
     "text": "„Ich erinnere mich noch, wie aufgeregt du warst und wie du überlegt hast, ob die Kraft, von der dein Vater und meine Urgroßmutter immer gesprochen hatten, nicht dunkle Materie gewesen sein könnte.“",
-    "translation": null,
+    "translation": "I still remember how excited you were and how you wondered whether the force that your father and my great-grandmother had always spoken of might not have been dark matter.",
     "source": "wiktionary",
     "lemmas": [
       "dunkle Materie"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "erinnere",
+        "lemma": "erinnern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgeregt",
+        "lemma": "aufgeregt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "überlegt",
+        "lemma": "überlegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kraft",
+        "lemma": "Kraft",
+        "pos": "noun",
+        "gloss_hint": "force"
+      },
+      {
+        "form": "Vater",
+        "lemma": "Vater",
+        "pos": "noun",
+        "gloss_hint": "father"
+      },
+      {
+        "form": "Urgroßmutter",
+        "lemma": "Urgroßmutter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesprochen",
+        "lemma": "sprechen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Materie",
+        "lemma": "Materie",
+        "pos": "noun",
+        "gloss_hint": "matter"
+      }
     ]
   },
   "da67a74271": {
@@ -10134,10 +10494,55 @@
   },
   "da6b0d55e3": {
     "text": "Was war denn das für einer gerade!? - Wer denn? Ach so, das ist nur unser Herr Hartmann. Der ist sowas wie unser Maskottchen. Der Chef nennt ihn ‚unsere gute Seele‘, die anderen sagen ‚das Faktotum‘, such dir was aus.",
-    "translation": null,
+    "translation": "What was that guy just now!? – Who? Oh, that's just our Mr. Hartmann. He's something like our mascot. The boss calls him 'our good soul', the others say 'the factotum', take your pick.",
     "source": "wiktionary",
     "lemmas": [
       "sowas"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "einer",
+        "lemma": "einer",
+        "pos": "noun",
+        "gloss_hint": "one"
+      },
+      {
+        "form": "Herr",
+        "lemma": "Herr",
+        "pos": "noun",
+        "gloss_hint": "gentleman"
+      },
+      {
+        "form": "Hartmann",
+        "lemma": "Hartmann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Maskottchen",
+        "lemma": "Maskottchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Chef",
+        "lemma": "Chef",
+        "pos": "noun",
+        "gloss_hint": "boss"
+      },
+      {
+        "form": "Seele",
+        "lemma": "Seele",
+        "pos": "noun",
+        "gloss_hint": "soul"
+      },
+      {
+        "form": "Faktotum",
+        "lemma": "Faktotum",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "da6bee09ec": {
@@ -11307,22 +11712,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Thank heaven!",
     "source": "wiktionary",
     "lemmas": [
       "Himmel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da72cab1eb": {
     "text": "mal für kleine Mädchen müssen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go to the little girls' room",
     "source": "wiktionary",
     "lemmas": [
       "Mädchen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da732513be": {
     "text": "Ursprünglich war die Geburt erst für nächste oder übernächste Woche geplant gewesen. Weil es der Mutter aber am Freitag abrupt schlechter ging, entschloss sich das Ärzte-Team zum sofortigen Kaiserschnitt.",
@@ -11615,10 +12022,85 @@
   },
   "da746f70e7": {
     "text": "1952: „Recht unbeholfen, durch den schweren Rucksack behindert, kletterte ich die fünfzehn Meter bis zu meiner Burg hoch, schliefte ein wie ein Dachs in seine Höhle, baute die Kamera auf … und wartete.“",
-    "translation": null,
+    "translation": "1952: Somewhat awkwardly, hindered by the heavy backpack, I climbed the fifteen metres up to my castle, slept like a badger in its den, set up the camera … and waited.",
     "source": "wiktionary",
     "lemmas": [
       "schliefen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "unbeholfen",
+        "lemma": "unbeholfen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rucksack",
+        "lemma": "Rucksack",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kletterte",
+        "lemma": "klettern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "fünfzehn",
+        "lemma": "fünfzehn",
+        "pos": "numeral",
+        "gloss_hint": "fifteen"
+      },
+      {
+        "form": "Meter",
+        "lemma": "Meter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Burg",
+        "lemma": "Burg",
+        "pos": "noun",
+        "gloss_hint": "castle"
+      },
+      {
+        "form": "schliefte",
+        "lemma": "schliefen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dachs",
+        "lemma": "Dachs",
+        "pos": "noun",
+        "gloss_hint": "badger"
+      },
+      {
+        "form": "Höhle",
+        "lemma": "Höhle",
+        "pos": "noun",
+        "gloss_hint": "den"
+      },
+      {
+        "form": "baute",
+        "lemma": "bauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kamera",
+        "lemma": "Kamera",
+        "pos": "noun",
+        "gloss_hint": "camera"
+      },
+      {
+        "form": "wartete",
+        "lemma": "warten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "da7473d71e": {
@@ -12051,11 +12533,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone always has to ruin everything",
     "source": "wiktionary",
     "lemmas": [
       "mies"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da7fcdc336": {
     "text": "„Mein Kopf fühlte sich fast völlig leer an, und das war sicher das Beste.“",
@@ -13164,11 +13647,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "there's no hope for someone",
     "source": "wiktionary",
     "lemmas": [
       "verlieren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da8b7c5f92": {
     "text": "„Das Ganze ist nichts anders als ein riesiger, erloschener Krater, der größte auf unserer Erde – der Ngorongoro-Krater. Wo einmal Lava brodelte, da dehnt sich jetzt unten eine riesige, von steilen Kraterwänden umgebene grüne Weidefläche.“",
@@ -13313,11 +13797,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put on a mask",
     "source": "wiktionary",
     "lemmas": [
       "vornehmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "da8cd87a5e": {
     "text": "Der Vertrag wurde von einem Rechtsanwalt entworfen.",
@@ -14423,11 +14908,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "set something in motion",
     "source": "wiktionary",
     "lemmas": [
       "Werk"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "daa447b584": {
     "text": "„Wenn du dann abends das Kino oder das Theater in der Königgrätzer Straße verläßt, wo Čapeks »Aus dem Leben der Insekten« immer noch als die einzige Sensation gespielt wird, strecken sich dir halbe Arme und halbe Beine wie Querhölzer eines Tourniquets entgegen…“",
@@ -14509,10 +14995,49 @@
   },
   "daa66f1639": {
     "text": "„Jörg war mein letzter Boss, als ich noch im Office als Assistenz tätig war.“",
-    "translation": null,
+    "translation": "Jörg was my last boss when I was still working in the office as an assistant.",
     "source": "wiktionary",
     "lemmas": [
       "Assistenz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Jörg",
+        "lemma": "Jörg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "letzter",
+        "lemma": "letzter",
+        "pos": "noun",
+        "gloss_hint": "last"
+      },
+      {
+        "form": "Boss",
+        "lemma": "Boss",
+        "pos": "noun",
+        "gloss_hint": "supervisor"
+      },
+      {
+        "form": "Office",
+        "lemma": "Office",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Assistenz",
+        "lemma": "Assistenz",
+        "pos": "noun",
+        "gloss_hint": "assistant"
+      },
+      {
+        "form": "tätig",
+        "lemma": "tätig",
+        "pos": "adjective",
+        "gloss_hint": "employed"
+      }
     ]
   },
   "daa6d30501": {
@@ -14565,10 +15090,25 @@
   },
   "daaaf8d8e5": {
     "text": "2. Die Aufgabe der Politik",
-    "translation": null,
+    "translation": "The Task of Politics",
     "source": "wiktionary",
     "lemmas": [
       "2."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Aufgabe",
+        "lemma": "Aufgabe",
+        "pos": "noun",
+        "gloss_hint": "task"
+      },
+      {
+        "form": "Politik",
+        "lemma": "Politik",
+        "pos": "noun",
+        "gloss_hint": "politics"
+      }
     ]
   },
   "daac4a7ecb": {
@@ -14684,11 +15224,12 @@
     "type": "expression",
     "note": "erwarten, dass etwas Bestimmtes geschieht, sich auf etwas vorbereiten",
     "synonyms": [],
-    "translation": null,
+    "translation": "prepare for something",
     "source": "wiktionary",
     "lemmas": [
       "einrichten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dab0714dc0": {
     "text": "„Alle Essenszubereitungen mussten außerhalb des Wagens stattfinden und niemand durfte im Wagen ein Sandwich essen, für den Fall, dass Brotkrumen hinunterfielen.“",
@@ -15351,23 +15892,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "shut down for the night",
     "source": "wiktionary",
     "lemmas": [
       "Bürgersteig"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dabcb6c9ff": {
     "text": "ein Aas auf der Bassgeige sein",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be a sharp operator",
     "source": "wiktionary",
     "lemmas": [
       "Aas"
     ],
-    "ref": "phrases/ein Aas auf der Bassgeige sein"
+    "ref": "phrases/ein Aas auf der Bassgeige sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "dabe94e44f": {
     "text": "„Janies Cleverness bestand darin, dass sie, als sie in den Vorort kam, erkannte, wozu die Vororte da waren.“",
@@ -15998,11 +16541,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "catch on",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "daca6ef8a6": {
     "text": "Die Verwendung von Isolierband zur Isolation von blanken Stellen ist nicht erlaubt.",
@@ -16293,12 +16837,13 @@
     "type": "expression",
     "note": "unfair sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "cross the line",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
     ],
-    "ref": "phrases/unter die Gürtellinie gehen"
+    "ref": "phrases/unter die Gürtellinie gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "dad0605bc2": {
     "text": "„Er gehört ins Krankenhaus.“",
@@ -17373,10 +17918,31 @@
   },
   "dadf28a974": {
     "text": "Irgendwann geht auch der spaßigste Tag zu Ende.",
-    "translation": null,
+    "translation": "Eventually, even the most fun day comes to an end.",
     "source": "wiktionary",
     "lemmas": [
       "spaßig"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "spaßigste",
+        "lemma": "spaßig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "Ende",
+        "lemma": "Ende",
+        "pos": "noun",
+        "gloss_hint": "end"
+      }
     ]
   },
   "dadf4e3be6": {
@@ -17526,11 +18092,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "God's blessing",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dae2e6be3d": {
     "text": "Die Reaktion zwischen Magnesium und Kohlenstoffdioxid ist spannend.",
@@ -17573,33 +18140,36 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "manage the household",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dae3e106a2": {
     "text": "eine Reise von tausend Meilen beginnt mit dem ersten Schritt",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A journey of a thousand miles begins with a single step.",
     "source": "wiktionary",
     "lemmas": [
       "Meile"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dae3fc1539": {
     "text": "ein Schritt nach dem anderen",
     "type": "expression",
     "note": "langsam und bedacht",
     "synonyms": [],
-    "translation": null,
+    "translation": "One step at a time.",
     "source": "wiktionary",
     "lemmas": [
       "Schritt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dae4057410": {
     "text": "Der Ruf „Feuer!“ hallte durch das Haus.",
@@ -17788,10 +18358,37 @@
   },
   "dae7574a59": {
     "text": "Der völlig neuartige Studiengang wurde von Professor Meyer aus der Taufe gehoben.",
-    "translation": null,
+    "translation": "The completely novel degree program was launched by Professor Meyer.",
     "source": "wiktionary",
     "lemmas": [
       "etwas aus der Taufe heben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "neuartige",
+        "lemma": "neuartig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Studiengang",
+        "lemma": "Studiengang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Professor",
+        "lemma": "Professor",
+        "pos": "noun",
+        "gloss_hint": "professor"
+      },
+      {
+        "form": "Meyer",
+        "lemma": "Meyer",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "dae880bc38": {
@@ -18193,25 +18790,24 @@
     "type": "expression",
     "note": "Schluss!",
     "synonyms": [],
-    "translation": null,
+    "translation": "Case closed!",
     "source": "wiktionary",
     "lemmas": [
       "Kiste"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "daf347628f": {
     "text": "etwas in den Schmutz treten",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to drag something through the mud",
     "source": "wiktionary",
     "lemmas": [
       "treten"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "daf34db2fa": {
     "text": "Tun und Treiben",
@@ -18220,11 +18816,12 @@
     "synonyms": [
       "sinnvolles"
     ],
-    "translation": null,
+    "translation": "comings and goings",
     "source": "wiktionary",
     "lemmas": [
       "Tun"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "daf35fb3a1": {
     "text": "„Wir legten das Geld für die Übernachtung auf den Küchentisch.“",
@@ -18400,10 +18997,55 @@
   },
   "daf63af8c4": {
     "text": "„Das Fußballbusiness treibt bisweilen seltsame Blüten, das hat nun auch der norwegische Meister FK Bodø/Glimt erfahren.“",
-    "translation": null,
+    "translation": "\"Football business sometimes produces strange results, as Norwegian champions FK Bodø/Glimt have now discovered.\"",
     "source": "wiktionary",
     "lemmas": [
       "seltsame Blüten treiben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fußballbusiness",
+        "lemma": "Fußballbusiness",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bisweilen",
+        "lemma": "bisweilen",
+        "pos": "adverb",
+        "gloss_hint": "occasionally"
+      },
+      {
+        "form": "seltsame",
+        "lemma": "seltsam",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blüten",
+        "lemma": "Blüte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "norwegische",
+        "lemma": "norwegisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Meister",
+        "lemma": "Meister",
+        "pos": "noun",
+        "gloss_hint": "champion"
+      },
+      {
+        "form": "erfahren",
+        "lemma": "erfahren",
+        "pos": "verb",
+        "gloss_hint": "learn"
+      }
     ]
   },
   "daf71c6014": {
@@ -18932,11 +19574,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fight like cats and dogs",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "daff74584d": {
     "text": "„»Sieht aus wie die Dicke Bertha, nicht wahr?«“",

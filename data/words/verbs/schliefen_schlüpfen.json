@@ -10,7 +10,10 @@
     {
       "gloss": "schlüpfen",
       "gloss_en": "slip",
-      "tags": [],
+      "tags": [
+        "Austrian German",
+        "South-German"
+      ],
       "example_ids": [
         "f1dd33fda3",
         "57ca150dd5",
@@ -18,7 +21,17 @@
         "11d2b4fa45",
         "dd0b275144"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "schlüpfen",
+        "kriechen",
+        "huschen",
+        "überziehen",
+        "überwerfen",
+        "anziehen",
+        "überstreifen",
+        "ablegen",
+        "ausziehen"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To slip or slide quickly through a narrow opening or space",
@@ -30,11 +43,105 @@
         "slip by"
       ],
       "synonyms_en_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "sich (durch eine enge Öffnung gleitend) an einen bestimmten Ort begeben",
+      "gloss_en": "slide in",
+      "tags": [
+        "Austrian German",
+        "South-German"
+      ],
+      "example_ids": [
+        "cf2e440bdc",
+        "5a7aff529a",
+        "67f2052249",
+        "226b7ce62f",
+        "f3a8a41e23"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To glide through a narrow opening to reach a specific place",
+      "gloss_en_full_model": "manual"
+    },
+    {
+      "gloss": "ein Kleidungsstück anziehen, ein Kleidungsstück ablegen",
+      "gloss_en": "put on",
+      "tags": [
+        "Austrian German",
+        "South-German"
+      ],
+      "example_ids": [
+        "ee451cabd4",
+        "9fd23dc4d1"
+      ],
+      "synonyms": [
+        "schlufen",
+        "kriechen"
+      ],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To put on or take off a piece of clothing",
+      "gloss_en_full_model": "manual"
+    },
+    {
+      "gloss": "aus dem Ei, der Puppe kriechen",
+      "gloss_en": "hatch",
+      "tags": [
+        "Austrian German",
+        "South-German"
+      ],
+      "example_ids": [
+        "3378dbfa92",
+        "9bb53d4a05",
+        "dc15383529",
+        "3de29c7339"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To hatch — to crawl out of an egg or pupa",
+      "gloss_en_full_model": "manual"
+    },
+    {
+      "gloss": "in einen Bau kriechen",
+      "gloss_en": "crawl in",
+      "tags": [],
+      "example_ids": [
+        "dd0b275144",
+        "bc10b1b374",
+        "98251c770e",
+        "da746f70e7",
+        "b1547bafac"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To crawl into a burrow or den",
+      "gloss_en_full_model": "manual"
+    },
+    {
+      "gloss": "einen Schluf passieren",
+      "gloss_en": "pass through",
+      "tags": [],
+      "example_ids": [
+        "95c9fdf791",
+        "40357eb60f"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To pass through a narrow underground passage (Schluf) in caving",
+      "gloss_en_full_model": "manual"
     }
   ],
   "sounds": [
     {
-      "ipa": "[…]",
+      "ipa": "[ˈʃliːfn̩]",
+      "tags": []
+    },
+    {
+      "ipa": "[ˈʃliːfm̩]",
       "tags": []
     }
   ],
@@ -42,27 +149,72 @@
   "conjugation": {
     "present": {
       "ich": "schliefe",
-      "du": "schleufest",
-      "er": "schleufet"
+      "du": "schliefst",
+      "er": "schlieft",
+      "wir": "schliefen",
+      "ihr": "schlieft",
+      "sie": "schliefen"
     },
     "preterite": {
-      "ich": "schloff"
+      "ich": "schloff",
+      "du": "schlieftest",
+      "er": "schliefte",
+      "wir": "schlieften",
+      "ihr": "schlieftet",
+      "sie": "schlieften"
     },
-    "subjunctive1": {},
+    "subjunctive1": {
+      "ich": "schliefe",
+      "du": "schliefest",
+      "er": "schliefe",
+      "wir": "schliefen",
+      "ihr": "schliefet",
+      "sie": "schliefen"
+    },
     "subjunctive2": {
-      "ich": "schlöffe"
+      "ich": "schlöffe",
+      "du": "schlieftest",
+      "er": "schliefte",
+      "wir": "schlieften",
+      "ihr": "schlieftet",
+      "sie": "schlieften"
     },
     "imperative": {
-      "du": "schleufe!",
-      "ihr": "schliefet!"
+      "du": "schliefe!",
+      "ihr": "schlieft!",
+      "Sie": "schliefen Sie!"
     },
-    "participle1": null,
-    "participle2": "geschloffen"
+    "participle1": "schliefend",
+    "participle2": "geschlieft"
   },
-  "past_participle": "geschloffen",
+  "past_participle": "geschlieft",
+  "_derived": [
+    "schliefbar",
+    "Schlief",
+    "Schluf",
+    "Schliefer",
+    "Ohrenschliefer",
+    "durchschliefen",
+    "einschliefen",
+    "ausschliefen",
+    "verschliefen",
+    "abschliefen"
+  ],
+  "_synonyms": [
+    "schlüpfen",
+    "kriechen",
+    "huschen",
+    "überziehen",
+    "überwerfen",
+    "anziehen",
+    "überstreifen",
+    "ablegen",
+    "ausziehen",
+    "schlufen"
+  ],
   "_meta": {
-    "source_hash": "bea01eaa5311fa63",
-    "generated_at": "2026-03-20"
+    "source_hash": "f07d0cf69a79ce55",
+    "generated_at": "2026-03-23"
   },
   "zipf": 3.19
 }

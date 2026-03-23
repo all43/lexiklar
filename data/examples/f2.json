@@ -136,10 +136,37 @@
   },
   "f20379515d": {
     "text": "Als Schüler bastelten wir uns einen Detektor mit Bleiglanz.",
-    "translation": null,
+    "translation": "As students, we built ourselves a detector with galena.",
     "source": "wiktionary",
     "lemmas": [
       "Detektor"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schüler",
+        "lemma": "Schüler",
+        "pos": "noun",
+        "gloss_hint": "student"
+      },
+      {
+        "form": "bastelten",
+        "lemma": "basteln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Detektor",
+        "lemma": "Detektor",
+        "pos": "noun",
+        "gloss_hint": "detector"
+      },
+      {
+        "form": "Bleiglanz",
+        "lemma": "Bleiglanz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "f203825576": {
@@ -213,11 +240,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fly into a rage",
     "source": "wiktionary",
     "lemmas": [
       "in"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f206c5431d": {
     "text": "Um den mutmaßlichen Erreger [des Marburg-Fiebers] sichtbar zu machen, schickt er [der Virologe Werner Slenczka] inaktivierte Proben an das Tropeninstitut in Hamburg.",
@@ -2115,11 +2143,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Charity begins at home.",
     "source": "wiktionary",
     "lemmas": [
       "Rock"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f21f027f10": {
     "text": "„Eigentlich war Reinhold Messner allein zur finalen Etappe in die Todeszone aufgebrochen, ohne Seil, ohne Zelt, ohne Proviant; er wollte zum Gipfel und so schnell wie möglich wieder zurück.“",
@@ -2324,11 +2353,12 @@
     "type": "expression",
     "note": "tot sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have passed away",
     "source": "wiktionary",
     "lemmas": [
       "Flügel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f220519445": {
     "text": "min. 3 Personen",
@@ -2640,11 +2670,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Hard work brings its own reward.",
     "source": "wiktionary",
     "lemmas": [
       "Segen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2230a4faa": {
     "text": "„Roland Hilbert war dran gewesen, der stellvertretende Chefredakteur der überregionalen Tageszeitung, für die ich aus Köln berichtete.“",
@@ -3728,59 +3759,23 @@
   },
   "f22693023f": {
     "text": "„250 Kilometer mit dem E-Auto, das muss doch easy möglich sein, dachte unser Autor.“",
-    "translation": "",
+    "translation": "\"250 kilometers with an electric car—that should be easy, our author thought.\"",
     "source": "wiktionary",
     "lemmas": [
       "easy"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
     "annotations": [
       {
-        "form": "250 Kilometer",
-        "lemma": "250 Kilometer",
+        "form": "Kilometer",
+        "lemma": "Kilometer",
         "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "mit",
-        "lemma": "mit",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "dem",
-        "lemma": "der",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
         "form": "E-Auto",
         "lemma": "E-Auto",
         "pos": "noun",
-        "gloss_hint": "car"
-      },
-      {
-        "form": "das",
-        "lemma": "das",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "muss",
-        "lemma": "müssen",
-        "pos": "verb",
-        "gloss_hint": "must"
-      },
-      {
-        "form": "doch",
-        "lemma": "doch",
-        "pos": "particle",
-        "gloss_hint": null
-      },
-      {
-        "form": "easy",
-        "lemma": "easy",
-        "pos": "adjective",
         "gloss_hint": null
       },
       {
@@ -3788,24 +3783,6 @@
         "lemma": "möglich",
         "pos": "adjective",
         "gloss_hint": "possible"
-      },
-      {
-        "form": "sein",
-        "lemma": "sein",
-        "pos": "verb",
-        "gloss_hint": "be (copula)"
-      },
-      {
-        "form": "dachte",
-        "lemma": "denken",
-        "pos": "verb",
-        "gloss_hint": "thought"
-      },
-      {
-        "form": "unser",
-        "lemma": "unser",
-        "pos": "pronoun",
-        "gloss_hint": null
       },
       {
         "form": "Autor",
@@ -4306,11 +4283,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to cling to one's position",
     "source": "wiktionary",
     "lemmas": [
       "kleben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f22e2dac78": {
     "text": "Er leidet an Demenz und verliert zunehmend seine Orientierung.",
@@ -4858,11 +4836,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's as clear as day",
     "source": "wiktionary",
     "lemmas": [
       "dick"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2324fabf4": {
     "text": "„Die Nacht war erfüllt vom Flattern der Fledermäuse, dem Zirpen der Insekten, den Rufen der Reiher und dem Rascheln der Flusspferde, die unter meiner Schlafplattform im Schilf weideten.“",
@@ -5817,10 +5796,37 @@
   },
   "f23cc136be": {
     "text": "Sekretärinnen sollten unangenehme Fehler bei der Anrede vermeiden.",
-    "translation": null,
+    "translation": "Secretaries should avoid unpleasant mistakes in forms of address.",
     "source": "wiktionary",
     "lemmas": [
       "Anrede"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sekretärinnen",
+        "lemma": "Sekretärin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fehler",
+        "lemma": "Fehler",
+        "pos": "noun",
+        "gloss_hint": "mistake"
+      },
+      {
+        "form": "Anrede",
+        "lemma": "Anrede",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vermeiden",
+        "lemma": "vermeiden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "f23cda2dcf": {
@@ -6670,11 +6676,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "full throttle",
     "source": "wiktionary",
     "lemmas": [
       "Suppe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f240caecf1": {
     "text": "„Der zurückbleibende helle und durchsichtige Zuckersaft kommt in den Abdampfkessel, in welchem er ins Kochen gebracht und etwa um ein Drittel eingedampft wird.“",
@@ -7019,11 +7026,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's not over yet",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2434205fb": {
     "text": "„Das Kabinett Gusenbauer umfasst 14 Minister und sechs Staatssekretäre, jeweils sieben bzw. drei von SPÖ bzw. ÖVP.“",
@@ -7295,20 +7303,120 @@
     "type": "expression",
     "note": "sehr dringend sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be burning to do something",
     "source": "wiktionary",
     "lemmas": [
       "Nagel",
       "brennen"
     ],
-    "ref": "phrases/jemandem unter den Nägeln brennen"
+    "ref": "phrases/jemandem unter den Nägeln brennen",
+    "translation_model": "openai/gpt-4.1"
   },
   "f24d30fd57": {
     "text": "„Wenn die beiden auch recht fix und vielfingerig einander zusetzten, ließen sie mich doch an den entscheidenden Stellen in Ruhe, boten mir eine teilweise recht amüsante Schau, tranken mit mir zu warmen Sekt und erprobten, mit meiner Erlaubnis, den Widerstand meines am äußersten Punkt recht stößigen Buckels, hatten wohl Glück dabei – was meine These einmal mehr bestätigt: ein Buckel bringt den Frauen Glück.“",
-    "translation": null,
+    "translation": "\"Although the two of them attacked me quite swiftly and with many fingers, they left me in peace at the decisive moments, offered me a partly quite amusing spectacle, drank warm champagne with me, and tested, with my permission, the resistance of my hump, which was quite protruding at its outermost point—they probably had luck with it, which confirms my thesis once more: a hump brings women luck.\"",
     "source": "wiktionary",
     "lemmas": [
       "einmal mehr"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "fix",
+        "lemma": "fix",
+        "pos": "adjective",
+        "gloss_hint": "quick"
+      },
+      {
+        "form": "vielfingerig",
+        "lemma": "vielfingerig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "zusetzten",
+        "lemma": "zusetzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ruhe",
+        "lemma": "Ruhe",
+        "pos": "noun",
+        "gloss_hint": "peace"
+      },
+      {
+        "form": "Schau",
+        "lemma": "Schau",
+        "pos": "noun",
+        "gloss_hint": "show"
+      },
+      {
+        "form": "amüsante",
+        "lemma": "amüsant",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sekt",
+        "lemma": "Sekt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erprobten",
+        "lemma": "erproben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erlaubnis",
+        "lemma": "Erlaubnis",
+        "pos": "noun",
+        "gloss_hint": "permission"
+      },
+      {
+        "form": "Widerstand",
+        "lemma": "Widerstand",
+        "pos": "noun",
+        "gloss_hint": "resistance"
+      },
+      {
+        "form": "Punkt",
+        "lemma": "Punkt",
+        "pos": "noun",
+        "gloss_hint": "point"
+      },
+      {
+        "form": "stößigen",
+        "lemma": "stößig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Buckels",
+        "lemma": "Buckel",
+        "pos": "noun",
+        "gloss_hint": "hump"
+      },
+      {
+        "form": "Glück",
+        "lemma": "Glück",
+        "pos": "noun",
+        "gloss_hint": "luck"
+      },
+      {
+        "form": "Buckel",
+        "lemma": "Buckel",
+        "pos": "noun",
+        "gloss_hint": "hump"
+      },
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "f24ee9290e": {
@@ -7337,15 +7445,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get the upper hand over someone",
     "source": "wiktionary",
     "lemmas": [
       "Herr"
     ],
     "ref": "phrases/jemandes Herr werden",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "f251ada0bf": {
     "text": "„Dann klangen aus der Tiefe alarmierte Männerstimmen empor, dann kreischten Frauen, heulten Kinder.“",
@@ -7550,11 +7656,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in one's innermost soul",
     "source": "wiktionary",
     "lemmas": [
       "tief"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f25331542a": {
     "text": "„Sie trug die Tracht ihres Dorfes, sah jedoch mit ihren goldenen Ketten um Hals und Handgelenke sehr nett aus.“",
@@ -8043,13 +8150,14 @@
     "type": "expression",
     "note": "auch nicht besser sein als andere",
     "synonyms": [],
-    "translation": null,
+    "translation": "be just as good as the next person",
     "source": "wiktionary",
     "lemmas": [
       "Wasser",
       "kochen"
     ],
-    "ref": "phrases/auch nur mit Wasser kochen"
+    "ref": "phrases/auch nur mit Wasser kochen",
+    "translation_model": "openai/gpt-4.1"
   },
   "f256eefd40": {
     "text": "[Russland-Ukraine-Krieg 2022:] „Im flachen Land der Ostukraine kämpfen russische und ukrainische Soldaten im Hagel der Geschosse um jeden Meter.“",
@@ -8144,12 +8252,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "there's a lot going on",
     "source": "wiktionary",
     "lemmas": [
       "Bär",
       "da"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f25ceb3dae": {
     "text": "„Dieser bewegte die Falltür hin und her, die laut in den Angeln stöhnte.“",
@@ -12853,10 +12962,121 @@
   },
   "f280d2459c": {
     "text": "„Der Neffe — zur Zeit, als Bertha in die Stadt kam, zählte er dreizehn Jahre — war hübsch und keck; die Nichte ein sehr stilles Kind von neun Jahren, mit großen, erstaunten Augen, war Bertha von allem Anfang an am herzlichsten zugethan.“",
-    "translation": null,
+    "translation": "\"The nephew—at the time when Bertha came to the city, he was thirteen years old—was handsome and bold; the niece, a very quiet child of nine years with large, astonished eyes, was from the very beginning most affectionately attached to Bertha.\"",
     "source": "wiktionary",
     "lemmas": [
       "Neffe"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Neffe",
+        "lemma": "Neffe",
+        "pos": "noun",
+        "gloss_hint": "nephew"
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      },
+      {
+        "form": "Stadt",
+        "lemma": "Stadt",
+        "pos": "noun",
+        "gloss_hint": "city"
+      },
+      {
+        "form": "zählte",
+        "lemma": "zählen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "dreizehn",
+        "lemma": "dreizehn",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahre",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hübsch",
+        "lemma": "hübsch",
+        "pos": "adjective",
+        "gloss_hint": "pretty"
+      },
+      {
+        "form": "keck",
+        "lemma": "keck",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nichte",
+        "lemma": "Nichte",
+        "pos": "noun",
+        "gloss_hint": "niece"
+      },
+      {
+        "form": "stilles",
+        "lemma": "still",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kind",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": "child"
+      },
+      {
+        "form": "neun",
+        "lemma": "neun",
+        "pos": "numeral",
+        "gloss_hint": "nine"
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "großen",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "erstaunten",
+        "lemma": "erstaunt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Augen",
+        "lemma": "Auge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "herzlichsten",
+        "lemma": "herzlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "zugethan",
+        "lemma": "zugethan",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "f281141829": {
@@ -13550,11 +13770,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's only a matter of time",
     "source": "wiktionary",
     "lemmas": [
       "Frage"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f288b255b8": {
     "text": "Die Flasche ist mit einer Kapsel verschlossen.",
@@ -14186,11 +14407,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be in the dark",
     "source": "wiktionary",
     "lemmas": [
       "dunkel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f28e9244b6": {
     "text": "steiler Zahn",
@@ -14376,11 +14598,12 @@
     "type": "expression",
     "note": "Fluch",
     "synonyms": [],
-    "translation": null,
+    "translation": "hell and damnation",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f295a582c7": {
     "text": "Im ganzen Haus konnten wir niemanden finden.",
@@ -14820,16 +15043,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "from my perspective",
     "source": "wiktionary",
     "lemmas": [
       "Sicht",
       "mein"
     ],
     "ref": "phrases/aus meiner Sicht",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "f29eb500b4": {
     "text": "„Empathische Eltern können das eigene Einfühlungsvermögen an ihre Kinder weitergeben – und diese wiederum an ihren späteren Nachwuchs. Das zeigt eine Langzeitstudie.“",
@@ -15619,11 +15840,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "challenge someone to a duel",
     "source": "wiktionary",
     "lemmas": [
       "Pistole"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2a95b1eb8": {
     "text": "Ich stehe zeitig auf, bin bald im Büro, vielfach auch samstags und sonntags.",
@@ -16007,11 +16229,12 @@
     "type": "expression",
     "note": "ironisch: für Altklugheit, Überheblichkeit",
     "synonyms": [],
-    "translation": null,
+    "translation": "a smart aleck",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2ac4abc68": {
     "text": "„Ist das Erkenntnis also schon in seiner Feststellung der Rechtswidrigkeit problematisch, so verstößt es in flagranter Weise gegen die andere Vorgabe, die verlangt, dass eine allenfalls vorliegende Rechtswidrigkeit ‚auf das Wahlergebnis von Einfluss war‘.“",
@@ -16423,11 +16646,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "now things are really getting serious",
     "source": "wiktionary",
     "lemmas": [
       "dick"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2b055c982": {
     "text": "Unser Blick ging senkrecht in die Tiefe.",
@@ -16479,10 +16703,85 @@
   },
   "f2b281cb10": {
     "text": "„Erinnern Sie sich noch an den William-Wylers-Krimi-Klassiker aus den Fünfzigern, wo Humphrey Bogart ‚an einem Tag wie jeder andere‘ eine biedere Sippe in den erpresserischen Clinch nahm, um schließlich an ihrer eisenharten Solidarität kaputtzugehen?“",
-    "translation": null,
+    "translation": "\"Do you still remember the William Wyler crime classic from the fifties, where Humphrey Bogart took a respectable family into extortionate clinches on a day like any other, only to ultimately break apart under their iron-hard solidarity?\"",
     "source": "wiktionary",
     "lemmas": [
       "in den Clinch nehmen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erinnern",
+        "lemma": "erinnern",
+        "pos": "verb",
+        "gloss_hint": "remember"
+      },
+      {
+        "form": "William-Wylers-Krimi-Klassiker",
+        "lemma": "Klassiker",
+        "pos": "noun",
+        "gloss_hint": "classic"
+      },
+      {
+        "form": "Fünfzigern",
+        "lemma": "Fünfziger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Humphrey",
+        "lemma": "Humphrey",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bogart",
+        "lemma": "Bogart",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "biedere",
+        "lemma": "bieder",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sippe",
+        "lemma": "Sippe",
+        "pos": "noun",
+        "gloss_hint": "clan"
+      },
+      {
+        "form": "erpresserischen",
+        "lemma": "erpresserisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Clinch",
+        "lemma": "Clinch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eisenharten",
+        "lemma": "eisenhart",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Solidarität",
+        "lemma": "Solidarität",
+        "pos": "noun",
+        "gloss_hint": "solidarity"
+      }
     ]
   },
   "f2b2b57524": {
@@ -16607,10 +16906,25 @@
   },
   "f2b3add861": {
     "text": "Ich arbeite bei BMW.",
-    "translation": null,
+    "translation": "I work at BMW.",
     "source": "wiktionary",
     "lemmas": [
       "BMW"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "arbeite",
+        "lemma": "arbeiten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "BMW",
+        "lemma": "BMW",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "f2b47bf14e": {
@@ -19017,11 +19331,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "with a firm hand",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2c28fbb5d": {
     "text": "„Kein anderer Erdteil wurde aus europäischer Perspektive so eng mit einem einzigen Topos verbunden.“",
@@ -20052,12 +20367,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "keep quiet as the grave",
     "source": "wiktionary",
     "lemmas": [
       "Grab"
     ],
-    "ref": "phrases/wie ein Grab schweigen"
+    "ref": "phrases/wie ein Grab schweigen",
+    "translation_model": "openai/gpt-4.1"
   },
   "f2ca27b0a0": {
     "text": "Wir haben in Jerusalem unseren Urlaub verbracht.",
@@ -20073,11 +20389,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Why do you see the splinter in your brother's eye, but fail to notice the beam in your own?",
     "source": "wiktionary",
     "lemmas": [
       "Splitter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2cb5e4eec": {
     "text": "[Politik- und Sozialwissenschaftler Farhad Dilmaghani:] Meines Erachtens sind unter den Muslimen nicht mehr radikale, dümmere oder integrationsunwillige Personen als im Rest der Bevölkerung.",
@@ -22798,11 +23115,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Heaven knows!",
     "source": "wiktionary",
     "lemmas": [
       "Himmel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2dd7671fe": {
     "text": "Am besten wäre eine Klemme, die die beiden Teile mindestens eine Stunde zusammenpresst.",
@@ -22833,22 +23151,24 @@
     "type": "expression",
     "note": "jemandem etwas wegnehmen",
     "synonyms": [],
-    "translation": null,
+    "translation": "deprive someone of something",
     "source": "wiktionary",
     "lemmas": [
       "bringen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2e002d370": {
     "text": "Mann von der Straße",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "average man on the street",
     "source": "wiktionary",
     "lemmas": [
       "Straße"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2e0187af2": {
     "text": "„«Wenn man die Realität nicht kennt, kann man kaum die Zukunft planen», gab die Abteilungsleiterin der Urban Unit, eines Ablegers der Planungsbehörde in Lahore, in einem Interview resigniert zu Protokoll.“",
@@ -23972,11 +24292,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "by Satan",
     "source": "wiktionary",
     "lemmas": [
       "Satan"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2e9433df2": {
     "text": "Am Sonntag ist um 11 Uhr Kirche.",
@@ -25016,11 +25337,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When the donkey is too well off, he goes out on the ice and breaks his leg.",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2ef3254f2": {
     "text": "danke für die Blumen",
@@ -25863,11 +26185,12 @@
     "type": "expression",
     "note": "jemanden verklagen",
     "synonyms": [],
-    "translation": null,
+    "translation": "take to court",
     "source": "wiktionary",
     "lemmas": [
       "ziehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f2f7d03e46": {
     "text": "„Der große Wuh verduftete, als ob er einen Rundgang zum Verkaufe machte, und kehrte dann zurück.“",

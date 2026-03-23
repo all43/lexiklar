@@ -787,10 +787,61 @@
   },
   "eb068218e2": {
     "text": "«Die Versandapotheke führt zurzeit einige Prozesse, nicht nur in der Schweiz. Wie viele es genau sind, könne Oberhänsli ‹vom Schiff aus› nicht sagen, wie die Ostschweiz am Sonntag gestern berichtete.»",
-    "translation": null,
+    "translation": "\"The mail-order pharmacy is currently conducting several lawsuits, not only in Switzerland. How many exactly, Oberhänsli cannot say from the ship, as reported in the Eastern Switzerland newspaper yesterday.\"",
     "source": "wiktionary",
     "lemmas": [
       "vom Schiff aus"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Versandapotheke",
+        "lemma": "Versandapotheke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "führt",
+        "lemma": "führen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prozesse",
+        "lemma": "Prozess",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schweiz",
+        "lemma": "Schweiz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "genau",
+        "lemma": "genau",
+        "pos": "adjective",
+        "gloss_hint": "exact"
+      },
+      {
+        "form": "Schiff",
+        "lemma": "Schiff",
+        "pos": "noun",
+        "gloss_hint": "ship"
+      },
+      {
+        "form": "sagen",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": "say"
+      },
+      {
+        "form": "berichtete",
+        "lemma": "berichten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "eb079768b5": {
@@ -905,26 +956,25 @@
     "type": "expression",
     "note": "sehr wütend sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be boiling with rage",
     "source": "wiktionary",
     "lemmas": [
       "kochen",
       "Wut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb0b2f393e": {
     "text": "sich auf die Hinterbeine stellen",
     "type": "expression",
     "note": "sich protesthaft erheben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to put up a fight",
     "source": "wiktionary",
     "lemmas": [
       "stellen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "eb0b5904bd": {
     "text": "Der Tatbestand der Beleidigung wird vielfach wegen seiner Unbestimmtheit kritisiert.",
@@ -1044,11 +1094,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep someone on a short leash",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb0dc3ef3a": {
     "text": "Die dem Verhör unterzogenen Gefangenen wurden anschließend wieder in ihre Zellen gebracht.",
@@ -2031,11 +2082,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something is up to someone",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb169f13f2": {
     "text": "Sie hat ein paar Takte des Walzers auf dem Klavier gespielt.",
@@ -2787,33 +2839,36 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the cat's got it (it's gone and no one knows where)",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb1e22567b": {
     "text": "Es ist ein Wirt, der den Barbieren ins Handwerk greift",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "He is someone who meddles in other people's business.",
     "source": "wiktionary",
     "lemmas": [
       "Wirt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb1ebc274c": {
     "text": "jetzt kommt es dicke",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "now things are getting really bad",
     "source": "wiktionary",
     "lemmas": [
       "dick"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb1ebe69c6": {
     "text": "Verfaulte Eier verströmen einen unerträglichen Gestank.",
@@ -3141,10 +3196,25 @@
   },
   "eb205e9873": {
     "text": "Weitere Bemerkungen: Seite 45 o.",
-    "translation": null,
+    "translation": "Further remarks: page 45 et seq.",
     "source": "wiktionary",
     "lemmas": [
       "o."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bemerkungen",
+        "lemma": "Bemerkung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Seite",
+        "lemma": "Seite",
+        "pos": "noun",
+        "gloss_hint": "page"
+      }
     ]
   },
   "eb2071181f": {
@@ -3635,25 +3705,63 @@
   },
   "eb2660357c": {
     "text": "„‚Na, wennschon, dennschon‘, sagte Christine, ging noch einmal um den Tisch herum und verteilte die Servietten.“",
-    "translation": "",
+    "translation": "\"Well, in for a penny, in for a pound,\" said Christine, went around the table once more and distributed the napkins.",
     "source": "wiktionary",
     "lemmas": [
       "wennschon, dennschon"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
-    "annotations": []
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sagte",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": "say"
+      },
+      {
+        "form": "Christine",
+        "lemma": "Christine",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ging",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "go"
+      },
+      {
+        "form": "Tisch",
+        "lemma": "Tisch",
+        "pos": "noun",
+        "gloss_hint": "table"
+      },
+      {
+        "form": "verteilte",
+        "lemma": "verteilen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Servietten",
+        "lemma": "Serviette",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ]
   },
   "eb2774c386": {
     "text": "an sich halten",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "keep one's cool",
     "source": "wiktionary",
     "lemmas": [
       "halten"
     ],
-    "ref": "phrases/an sich halten"
+    "ref": "phrases/an sich halten",
+    "translation_model": "openai/gpt-4.1"
   },
   "eb28493de6": {
     "text": "für nötig halten",
@@ -3827,10 +3935,55 @@
   },
   "eb2b8c0760": {
     "text": "Bei den Grünen ist man längst nicht mehr sicher, dass die Koalition bis zum Ende der Legislatur hält.",
-    "translation": null,
+    "translation": "Among the Greens, there is no longer any certainty that the coalition will hold until the end of the legislative term.",
     "source": "wiktionary",
     "lemmas": [
       "Legislatur"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Grünen",
+        "lemma": "Grüne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "längst",
+        "lemma": "längst",
+        "pos": "adjective",
+        "gloss_hint": "by far"
+      },
+      {
+        "form": "sicher",
+        "lemma": "sicher",
+        "pos": "adjective",
+        "gloss_hint": "certain"
+      },
+      {
+        "form": "Koalition",
+        "lemma": "Koalition",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hält",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ende",
+        "lemma": "Ende",
+        "pos": "noun",
+        "gloss_hint": "end (time)"
+      },
+      {
+        "form": "Legislatur",
+        "lemma": "Legislatur",
+        "pos": "noun",
+        "gloss_hint": "legislative term"
+      }
     ]
   },
   "eb2bbd8473": {
@@ -4475,11 +4628,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go for a spin with someone",
     "source": "wiktionary",
     "lemmas": [
       "Karussell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb318b075f": {
     "text": "„Die Oberfläche der Pyramide war mit Steinplatten bedeckt, die 70 steinerne Skulpturen trugen.“",
@@ -4826,11 +4980,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "let time slip away uselessly",
     "source": "wiktionary",
     "lemmas": [
       "Zeit verstreichen lassen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb349231fc": {
     "text": "Willkürlich wurde der Nullmeridian genau auf die Sternwarte in Greenwich gelegt.",
@@ -5017,6 +5172,35 @@
     ],
     "text_linked": "„Sie [[backte|verbs/backen_im#1]] [[die|determiners/die]] [[besten|adjectives/gut]] [[Strudel|nouns/Strudel#2]] [[der|determiners/der]] [[Stadt|nouns/Stadt#1]].“"
   },
+  "eb377600a1": {
+    "text": "Dann eröffnen wir jetzt die Fragestunde und ich sage nur: Feuer frei!",
+    "translation": "Then we open the question period now and I say only: fire away!",
+    "source": "wiktionary",
+    "lemmas": [
+      "Feuer frei"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "eröffnen",
+        "lemma": "eröffnen",
+        "pos": "verb",
+        "gloss_hint": "open (verb)"
+      },
+      {
+        "form": "Fragestunde",
+        "lemma": "Fragestunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Feuer",
+        "lemma": "Feuer",
+        "pos": "noun",
+        "gloss_hint": "gunfire"
+      }
+    ]
+  },
   "eb37f8208c": {
     "text": "„Es fehlen ausreichend Studienplätze für Mediziner. Und die Studenten, die es gibt, spezialisieren sich lieber und übernehmen eine lukrative Facharztpraxis in einem Ballungsgebiet.“",
     "translation": "There are insufficient study places for medical students. And the students who do exist prefer to specialize and take over a lucrative specialist medical practice in an urban area.",
@@ -5164,11 +5348,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make something of oneself",
     "source": "wiktionary",
     "lemmas": [
       "machen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb3a74d68d": {
     "text": "Hat er euch die Nachricht nicht übermittelt?",
@@ -5560,16 +5745,14 @@
     "synonyms": [
       "freiwillig"
     ],
-    "translation": null,
+    "translation": "voluntarily",
     "source": "wiktionary",
     "lemmas": [
       "frei",
       "Stück"
     ],
     "ref": "phrases/aus freien Stücken",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "eb3e8d660d": {
     "text": "„An der Tür zu den Büroräumen, wo Felber jetzt die Anwaltspraxis führte, befand sich noch das alte Namensschild.“",
@@ -5738,11 +5921,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "looking like it's been ripped down",
     "source": "wiktionary",
     "lemmas": [
       "wie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb40fb88db": {
     "text": "Reis quillt beim Kochen ungefähr auf das Vierfache seines ursprünglichen Volumens.",
@@ -7738,11 +7922,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go out of one's way for someone",
     "source": "wiktionary",
     "lemmas": [
       "ausreißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb4e72e217": {
     "text": "„Sie fand es peinlich, dass ihre Tochter so verschlafen aussah.“",
@@ -7835,11 +8020,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I can tell you",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb50f4e9fe": {
     "text": "Durch das Fehlen von geeigneten Habitaten kommt das Auerhuhn in Deutschland immer seltener vor.",
@@ -8441,11 +8627,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "let someone starve without helping them",
     "source": "wiktionary",
     "lemmas": [
       "steif"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb56b691de": {
     "text": "Putz deine Schuhe, morgen kommt der Nikolaus!",
@@ -9914,10 +10101,37 @@
   },
   "eb655a5f76": {
     "text": "„Ich denke nicht, dass die Freigabe des [ägyptischen] Pfunds eine Reform darstellt.“",
-    "translation": null,
+    "translation": "\"I do not think that the release of the Egyptian pound constitutes a reform.\"",
     "source": "wiktionary",
     "lemmas": [
       "Freigabe"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "denke",
+        "lemma": "denken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Freigabe",
+        "lemma": "Freigabe",
+        "pos": "noun",
+        "gloss_hint": "release (permission)"
+      },
+      {
+        "form": "Pfunds",
+        "lemma": "Pfund",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reform",
+        "lemma": "Reform",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "eb65bfd8a8": {
@@ -11944,11 +12158,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "all that nonsense",
     "source": "wiktionary",
     "lemmas": [
       "Zimt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb765e9928": {
     "text": "Das ist der Junge, der meine Fensterscheibe zerbrochen hat!",
@@ -13072,10 +13287,31 @@
   },
   "eb82a68b83": {
     "text": "Die Mutter hat bei der dortigen Sozialbehörde um Hilfe angefragt.",
-    "translation": null,
+    "translation": "The mother inquired for help at the local social welfare office.",
     "source": "wiktionary",
     "lemmas": [
       "anfragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mutter",
+        "lemma": "Mutter",
+        "pos": "noun",
+        "gloss_hint": "mother"
+      },
+      {
+        "form": "Sozialbehörde",
+        "lemma": "Sozialbehörde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hilfe",
+        "lemma": "Hilfe",
+        "pos": "noun",
+        "gloss_hint": "help"
+      }
     ]
   },
   "eb83016173": {
@@ -13774,11 +14010,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be able to bring oneself to do something",
     "source": "wiktionary",
     "lemmas": [
       "über"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb8f33a8ce": {
     "text": "Das Christentum selbst liegt darüber hinaus: das heißt, vage Begriffe über ein gescheitertes historisches Ereignis wurden von Männern herumgetragen, die dabei beteiligt gewesen waren.",
@@ -14146,11 +14383,12 @@
     "type": "expression",
     "note": "schlecht auf der Geige spielen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to scratch away on the violin",
     "source": "wiktionary",
     "lemmas": [
       "kratzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb91b095d4": {
     "text": "„Villa, der erstmals seit seinem Schienbeinbruch im Dezember 2011 bei Barça wieder in der Startelf stand, verteidigte sich damit, dass er den Ball doch abgespielt habe.“",
@@ -14593,10 +14831,67 @@
   },
   "eb93bd65eb": {
     "text": "„Aber sein Herz widerstritt, und so galt es denn für ihn, etwas ausfindig zu machen, was Gehorsam und Ungehorsam in sich vereinigte, was dem Befehle seines Königs und dem Befehle seiner eigenen Natur gleichmäßig entsprach.“",
-    "translation": null,
+    "translation": "\"But his heart resisted, and so it was necessary for him to find something that united obedience and disobedience, something that equally satisfied the command of his king and the command of his own nature.\"",
     "source": "wiktionary",
     "lemmas": [
       "Ungehorsam"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Herz",
+        "lemma": "Herz",
+        "pos": "noun",
+        "gloss_hint": "heart"
+      },
+      {
+        "form": "widerstritt",
+        "lemma": "widerstreben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausfindig",
+        "lemma": "ausfindig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "machen",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "make"
+      },
+      {
+        "form": "Gehorsam",
+        "lemma": "Gehorsam",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ungehorsam",
+        "lemma": "Ungehorsam",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Befehle",
+        "lemma": "Befehl",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Königs",
+        "lemma": "König",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Natur",
+        "lemma": "Natur",
+        "pos": "noun",
+        "gloss_hint": "character"
+      }
     ]
   },
   "eb948f46e8": {
@@ -14614,11 +14909,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on the same wavelength",
     "source": "wiktionary",
     "lemmas": [
       "Welle"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eb95402be6": {
     "text": "„Fast gleichzeitig wurde Newton, die konstruirende Methode der alten Mathematiker vorziehend und dabei die Einführung des empirischen Begriffes der Bewegung nicht achtend, Erfinder der Fluxions-Rechnung [Differenzialrechnung].“",
@@ -14790,10 +15086,43 @@
   },
   "eb954eee71": {
     "text": "Langer Rede kurzer Sinn: Es gibt keinen Grund, in dieser Sache aktiv zu werden.",
-    "translation": null,
+    "translation": "Long story short: there is no reason to take active steps in this matter.",
     "source": "wiktionary",
     "lemmas": [
       "langer Rede kurzer Sinn"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rede",
+        "lemma": "Rede",
+        "pos": "noun",
+        "gloss_hint": "speech"
+      },
+      {
+        "form": "Sinn",
+        "lemma": "Sinn",
+        "pos": "noun",
+        "gloss_hint": "meaning"
+      },
+      {
+        "form": "Grund",
+        "lemma": "Grund",
+        "pos": "noun",
+        "gloss_hint": "cause"
+      },
+      {
+        "form": "aktiv",
+        "lemma": "aktiv",
+        "pos": "adjective",
+        "gloss_hint": "engaged"
+      },
+      {
+        "form": "Sache",
+        "lemma": "Sache",
+        "pos": "noun",
+        "gloss_hint": "matter"
+      }
     ]
   },
   "eb96d61379": {
@@ -17072,10 +17401,145 @@
   },
   "ebb0b6fd45": {
     "text": "Wenn aber der Knecht schlecht ist und denkt: Mein Herr kommt noch lange nicht!, und anfängt, seine Mitknechte zu schlagen, wenn er mit Trinkern Gelage feiert, dann wird der Herr an einem Tag kommen, an dem der Knecht es nicht erwartet, und zu einer Stunde, die er nicht kennt; und der Herr wird ihn in Stücke hauen und ihm seinen Platz unter den Heuchlern zuweisen. Dort wird er heulen und mit den Zähnen knirschen.",
-    "translation": null,
+    "translation": "\"But if the servant is wicked and thinks: My master will not come for a long time, and begins to beat his fellow servants, and feasts with drunkards, then the master will come on a day when the servant does not expect him, and at an hour he does not know; and the master will cut him to pieces and assign him a place with the hypocrites. There he will weep and gnash his teeth.\"",
     "source": "wiktionary",
     "lemmas": [
       "Trinker"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Knecht",
+        "lemma": "Knecht",
+        "pos": "noun",
+        "gloss_hint": "servant"
+      },
+      {
+        "form": "schlecht",
+        "lemma": "schlecht",
+        "pos": "adjective",
+        "gloss_hint": "bad"
+      },
+      {
+        "form": "denkt",
+        "lemma": "denken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herr",
+        "lemma": "Herr",
+        "pos": "noun",
+        "gloss_hint": "master"
+      },
+      {
+        "form": "kommt",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": "arrive"
+      },
+      {
+        "form": "anfängt",
+        "lemma": "anfangen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mitknechte",
+        "lemma": "Mitknecht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schlagen",
+        "lemma": "schlagen",
+        "pos": "verb",
+        "gloss_hint": "hit"
+      },
+      {
+        "form": "Trinkern",
+        "lemma": "Trinker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gelage",
+        "lemma": "Gelage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "feiert",
+        "lemma": "feiern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wird",
+        "lemma": "werden",
+        "pos": "verb",
+        "gloss_hint": "auxiliary (future/passive)"
+      },
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "erwartet",
+        "lemma": "erwarten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stunde",
+        "lemma": "Stunde",
+        "pos": "noun",
+        "gloss_hint": "hour"
+      },
+      {
+        "form": "kennt",
+        "lemma": "kennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "hauen",
+        "lemma": "hauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Platz",
+        "lemma": "Platz",
+        "pos": "noun",
+        "gloss_hint": "location"
+      },
+      {
+        "form": "Heuchlern",
+        "lemma": "Heuchler",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "heulen",
+        "lemma": "heulen",
+        "pos": "verb",
+        "gloss_hint": "cry"
+      },
+      {
+        "form": "Zähnen",
+        "lemma": "Zahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "knirschen",
+        "lemma": "knirschen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "ebb1275337": {
@@ -18597,14 +19061,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be hilarious",
     "source": "wiktionary",
     "lemmas": [
       "schießen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ebc0ff7f0a": {
     "text": "Er hat sich zu benehmen.",
@@ -19017,11 +19479,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "until the end of their days",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ebc60ab654": {
     "text": "„Es folgte eine von Bürgerkriegen und inneren Auseinandersetzungen geprägte Zeit.“",
@@ -19037,11 +19500,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Death makes people quiet.",
     "source": "wiktionary",
     "lemmas": [
       "Tod"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ebc6d6fd09": {
     "text": "Nach zwei Jahren ist der Eigentümerin die Luft ausgegangen, und seitdem steht das Gebäude leer.",
@@ -19287,11 +19751,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to rest in the bosom of the earth",
     "source": "wiktionary",
     "lemmas": [
       "Schoß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ebcceb9f10": {
     "text": "„Er hatte es geliebt, den Kindern Philosophie und Geschichte zu vermitteln, stotterte aber auch so heftig, dass der Unterricht zum Albtraum werden konnte.“",
@@ -20645,16 +21110,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "everywhere",
     "source": "wiktionary",
     "lemmas": [
       "Ende",
       "Ecke"
     ],
     "ref": "phrases/an allen Ecken und Enden",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ebde761886": {
     "text": "„Sobald wir seine schwarze Limousine von Weitem sahen, verdrückten wir uns – wenn dieser Mann Friedel besuchte, waren wir Kinder auch nicht erwünscht.“",
@@ -20805,11 +21268,12 @@
     "type": "expression",
     "note": "jemanden beschuldigen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to accuse someone of something",
     "source": "wiktionary",
     "lemmas": [
       "Kopf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ebe3515a83": {
     "text": "Zuerst muss er seine Arbeiten erledigen. Danach kann er sich mit einem guten Buch entspannen.",
@@ -21711,11 +22175,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a good person",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ebe97bbab7": {
     "text": "Er hatte bewiesen, dass er einen lauteren Charakter besaß.",
@@ -21996,6 +22461,101 @@
       }
     ],
     "text_linked": "[[Nun|adverbs/nun]] [[stell|verbs/stellen#1]] [[dich|pronouns/du]] [[nicht|particles/nicht#1]] [[so|adverbs/so]] an, [[eine|determiners/ein]] [[kleine|adjectives/klein#1]] Notlüge [[ist|verbs/sein#1]] [[doch|particles/doch_betont#1]] nicht [[schlimm|adjectives/schlimm#1]], [[du|pronouns/du]] [[weißt|verbs/wissen#1]] doch: [[Der|pronouns/der_nominativ#1]] [[Zweck|nouns/Zweck#1]] heiligt [[die|determiners/die]] [[Mittel|nouns/Mittel_etwas#1]]!"
+  },
+  "ebeb446224": {
+    "text": "„Und während diese gerade beim Einsalzen des Bratens ist, fängt Baby mörderisch zu schreien an, denn es ist bäbä. Die Köchin eilt herbei, legt das Kind trocken und alsdann fährt sie in der Zubereitung der Speisen fort!“",
+    "translation": "\"And while she is just salting the roast, baby starts screaming terribly, because it is fussy. The cook hurries over, dries the child, and then she continues preparing the food!\"",
+    "source": "wiktionary",
+    "lemmas": [
+      "bäbä"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Einsalzen",
+        "lemma": "einsalzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bratens",
+        "lemma": "Braten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Baby",
+        "lemma": "Baby",
+        "pos": "noun",
+        "gloss_hint": "infant"
+      },
+      {
+        "form": "schreien",
+        "lemma": "schreien",
+        "pos": "verb",
+        "gloss_hint": "scream"
+      },
+      {
+        "form": "Köchin",
+        "lemma": "Köchin",
+        "pos": "noun",
+        "gloss_hint": "female cook"
+      },
+      {
+        "form": "eilt",
+        "lemma": "eilen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "herbei",
+        "lemma": "herbei",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "legt",
+        "lemma": "legen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kind",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": "child"
+      },
+      {
+        "form": "trocken",
+        "lemma": "trocken",
+        "pos": "adjective",
+        "gloss_hint": "dry"
+      },
+      {
+        "form": "fährt",
+        "lemma": "fahren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zubereitung",
+        "lemma": "Zubereitung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Speisen",
+        "lemma": "Speise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fort",
+        "lemma": "fort",
+        "pos": "adverb",
+        "gloss_hint": "onwards"
+      }
+    ]
   },
   "ebeb490e28": {
     "text": "„Und so erhielten die Veteranen und Kriegsversehrten in diesem Jahrzehnt Gesellschaft von ehemaligen Verkäuferinnen, früheren Milchmädchen, einstigen Arbeiterinnen und entlassenen Dienstmädchen.“",
@@ -22723,11 +23283,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have something at one's side",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ebf2e9d8d8": {
     "text": "„Die Indianerin näherte sich dem Prediger, kreuzte ihre beiden Hände über ihrem Busen und senkte demütig das Haupt.“",
@@ -23347,11 +23908,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "country innocent",
     "source": "wiktionary",
     "lemmas": [
       "Land"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ebf8715217": {
     "text": "die Abwechslung lieben",
@@ -23510,11 +24072,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to curse like the devil himself",
     "source": "wiktionary",
     "lemmas": [
       "Satan"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ebfa6a8bf2": {
     "text": "„Bewegung ist ein kindliches Grundbedürfnis. Kriegen spielen, kleine Mutproben beweisen, Geschicklichkeit üben – beim Spiel mit Anderen trainieren Kinder nicht nur ihre körperlichen Fähigkeiten, sondern auch ihre soziale Kompetenz.“",
@@ -24094,11 +24657,12 @@
     "type": "expression",
     "note": "in Summe",
     "synonyms": [],
-    "translation": null,
+    "translation": "in total",
     "source": "wiktionary",
     "lemmas": [
       "Zahl"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ebfefe6ee5": {
     "text": "In Bamberg haben wir auch die schöne katholische Kirche 'Heilige Dreifaltigkeit' im Stadtteil Bug bewundert.",

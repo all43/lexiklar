@@ -147,18 +147,72 @@
   },
   "c9002ab7ed": {
     "text": "„Die Zahl der Ermittlungsverfahren im Zusammenhang mit Clan-Kriminalität ist in Niedersachsen im vergangenen Jahr leicht zurückgegangen.“",
-    "translation": null,
+    "translation": "\"The number of investigations in connection with organized crime has declined slightly in Lower Saxony in the past year.\"",
     "source": "wiktionary",
     "lemmas": [
       "im Zusammenhang mit"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zahl",
+        "lemma": "Zahl",
+        "pos": "noun",
+        "gloss_hint": "number"
+      },
+      {
+        "form": "Ermittlungsverfahren",
+        "lemma": "Ermittlungsverfahren",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zusammenhang",
+        "lemma": "Zusammenhang",
+        "pos": "noun",
+        "gloss_hint": "connection"
+      },
+      {
+        "form": "Clan-Kriminalität",
+        "lemma": "Clan-Kriminalität",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Niedersachsen",
+        "lemma": "Niedersachsen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "zurückgegangen",
+        "lemma": "zurückgehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "c900bda92a": {
     "text": "So 13.3., 18:00 Uhr",
-    "translation": null,
+    "translation": "Sunday 13.3., 6:00 PM",
     "source": "wiktionary",
     "lemmas": [
       "So"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Uhr",
+        "lemma": "Uhr",
+        "pos": "noun",
+        "gloss_hint": "clock"
+      }
     ]
   },
   "c901553fc8": {
@@ -380,11 +434,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have something in the bag",
     "source": "wiktionary",
     "lemmas": [
       "Sack"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c905a38755": {
     "text": "„Das ist sein journalistisches Credo, alle Beiträge des »Merkur«, nicht nur die literarischen Rezensionen betreffend.“",
@@ -1826,11 +1881,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "around that time",
     "source": "wiktionary",
     "lemmas": [
       "Dreh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9118f4302": {
     "text": "Steffen versucht gerade seinen gebrauchten indischen Teppich zu flicken.",
@@ -2181,10 +2237,37 @@
   },
   "c91a61e424": {
     "text": "Der Empfang fand entsprechend dem diplomatischen Protokoll statt.",
-    "translation": null,
+    "translation": "The reception took place in accordance with diplomatic protocol.",
     "source": "wiktionary",
     "lemmas": [
       "entsprechend"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Empfang",
+        "lemma": "Empfang",
+        "pos": "noun",
+        "gloss_hint": "reception"
+      },
+      {
+        "form": "fand",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "diplomatischen",
+        "lemma": "diplomatisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Protokoll",
+        "lemma": "Protokoll",
+        "pos": "noun",
+        "gloss_hint": "diplomatic protocol"
+      }
     ]
   },
   "c91aa95e6d": {
@@ -4308,11 +4391,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be at the wheel",
     "source": "wiktionary",
     "lemmas": [
       "Steuer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c92ff9f05a": {
     "text": "„Jedes Zeichen hat zwei Seiten, eine Ausdrucks- und eine Inhaltsseite.“",
@@ -4396,6 +4480,59 @@
       "cool"
     ],
     "translation_model": "anthropic/claude-haiku-4-5-20251001"
+  },
+  "c931038ed9": {
+    "text": "Der Lehrer beschwerte sich über unsere Leistung: Wir wären undiszipliniert, infantil, kümmerten uns nicht um unsere Aufgaben, bla, bla, bla.",
+    "translation": "The teacher complained about our performance: we were undisciplined, infantile, didn't take care of our tasks, blah, blah, blah.",
+    "source": "wiktionary",
+    "lemmas": [
+      "bla, bla, bla"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Lehrer",
+        "lemma": "Lehrer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beschwerte",
+        "lemma": "beschweren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leistung",
+        "lemma": "Leistung",
+        "pos": "noun",
+        "gloss_hint": "performance"
+      },
+      {
+        "form": "undiszipliniert",
+        "lemma": "undiszipliniert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "infantil",
+        "lemma": "infantil",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "kümmerten",
+        "lemma": "kümmern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufgaben",
+        "lemma": "Aufgabe",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ]
   },
   "c931747ce8": {
     "text": "„Seit einiger Zeit mehren sich die Schlägereien zwischen Jugendbanden aus den Vorstädten […].“",
@@ -4672,11 +4809,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take something into account",
     "source": "wiktionary",
     "lemmas": [
       "Rechnung"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c934c9411f": {
     "text": "„Die anderen schmieren sich bioaktives Streichfett unnötigerweise aufs Brot - und das, obwohl neuere Studien darauf hindeuten, dass zu viele der pflanzlichen Blutfettsenker die Arterien womöglich ähnlich verkalken lassen wie das Cholesterin selbst.“",
@@ -5018,11 +5156,12 @@
     "type": "expression",
     "note": "Angst haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is scared stiff",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9399f9778": {
     "text": "„Heute ist schönes Wetter“, meinte er.",
@@ -5092,10 +5231,67 @@
   },
   "c93b4d38af": {
     "text": "Darüberhinaus sagte sie [EU-Handelskommissarin Cecilia Malmström] mit Blick auf die US-Strafzölle, dass es ermutigend sei, dass Australien die Ansichten der EU für einen freien Welthandel unterstütze.",
-    "translation": null,
+    "translation": "Furthermore, she [EU Trade Commissioner Cecilia Malmström] said with regard to US tariffs that it was encouraging that Australia supported the EU's views for free world trade.",
     "source": "wiktionary",
     "lemmas": [
       "mit Blick auf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sagte",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blick",
+        "lemma": "Blick",
+        "pos": "noun",
+        "gloss_hint": "view"
+      },
+      {
+        "form": "US-Strafzölle",
+        "lemma": "US-Strafzoll",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ermutigend",
+        "lemma": "ermutigend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Australien",
+        "lemma": "Australien",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ansichten",
+        "lemma": "Ansicht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "freien",
+        "lemma": "frei",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Welthandel",
+        "lemma": "Welthandel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "unterstütze",
+        "lemma": "unterstützen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "c93bb0fcbd": {
@@ -5854,29 +6050,183 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "my goodness",
     "source": "wiktionary",
     "lemmas": [
       "Herr"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "c94d059b28": {
     "text": "„Da Christian S. für Christian K. einsprang, konnten Bernd und Gunther das Dreier-Doppel spielen und gewannen dieses locker (6:0, 6:2). Damit war der Drops gelutscht, der Klassenerhalt gesichert.“",
-    "translation": null,
+    "translation": "\"Since Christian S. stepped in for Christian K., Bernd and Gunther were able to play the doubles match and won it easily (6:0, 6:2). With that, the deal was sealed, promotion was secured.\"",
     "source": "wiktionary",
     "lemmas": [
       "der Drops ist gelutscht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Christian",
+        "lemma": "Christian",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "einsprang",
+        "lemma": "einspringen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "konnten",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dreier-Doppel",
+        "lemma": "Dreier-Doppel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "spielen",
+        "lemma": "spielen",
+        "pos": "verb",
+        "gloss_hint": "play"
+      },
+      {
+        "form": "gewannen",
+        "lemma": "gewinnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "locker",
+        "lemma": "locker",
+        "pos": "adjective",
+        "gloss_hint": "casual"
+      },
+      {
+        "form": "Drops",
+        "lemma": "Drops",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gelutscht",
+        "lemma": "lutschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klassenerhalt",
+        "lemma": "Klassenerhalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesichert",
+        "lemma": "gesichert",
+        "pos": "adjective",
+        "gloss_hint": "secured"
+      }
     ]
   },
   "c94d193ea5": {
     "text": "„Die Haushaltslinie TEN enthielt für den Zeitraum 2000−2006 insgesamt 4,855 Mrd. Euro, davon ca. 90 % für Verkehr und 10 % für Energie und Telekommunikation. 255 Mio. Euro hiervon waren in den Jahren 2004 bis 2006 für Projekte in den neu beigetretenen Staaten reserviert.“",
-    "translation": null,
+    "translation": "The budget line TEN contained a total of 4.855 billion euros for the period 2000–2006, of which approximately 90% was allocated to transport and 10% to energy and telecommunications. 255 million euros of this was reserved in the years 2004 to 2006 for projects in the newly acceded states.",
     "source": "wiktionary",
     "lemmas": [
       "TEN"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Haushaltslinie",
+        "lemma": "Haushaltslinie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "TEN",
+        "lemma": "TEN",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "enthielt",
+        "lemma": "enthalten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeitraum",
+        "lemma": "Zeitraum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mrd",
+        "lemma": "Milliarde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "Verkehr",
+        "lemma": "Verkehr",
+        "pos": "noun",
+        "gloss_hint": "traffic"
+      },
+      {
+        "form": "Energie",
+        "lemma": "Energie",
+        "pos": "noun",
+        "gloss_hint": "energy (physics)"
+      },
+      {
+        "form": "Telekommunikation",
+        "lemma": "Telekommunikation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mio",
+        "lemma": "Million",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Projekte",
+        "lemma": "Projekt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staaten",
+        "lemma": "Staat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "reserviert",
+        "lemma": "reservieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "c94dd4a637": {
@@ -6109,11 +6459,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "what someone is really like",
     "source": "wiktionary",
     "lemmas": [
       "Geist"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c951b09d41": {
     "text": "Die Eidechse sucht Schutz und verkriecht sich unter einem Stein.",
@@ -6404,12 +6755,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be done for",
     "source": "wiktionary",
     "lemmas": [
       "liefern"
     ],
-    "ref": "phrases/geliefert sein"
+    "ref": "phrases/geliefert sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "c9547f3a4f": {
     "text": "Die Sonnenfinsternis war für alle ein unvergessliches Schauspiel.",
@@ -7183,11 +7535,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "undercover cop",
     "source": "wiktionary",
     "lemmas": [
       "Zivil"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c964d00a34": {
     "text": "Dein Schlitz steht offen.",
@@ -7876,11 +8229,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be caught between a rock and a hard place",
     "source": "wiktionary",
     "lemmas": [
       "Hammer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c96b4f1ec7": {
     "text": "Ich kann morgen nicht kommen. Ich habe andere Verpflichtungen.",
@@ -7893,10 +8247,55 @@
   },
   "c96bd45ed3": {
     "text": "Sie [Coco Chanel] entwarf das zeitlose „kleine Schwarze“, ihre Kostüme trug die internationale Prominenz.",
-    "translation": null,
+    "translation": "She [Coco Chanel] designed the timeless little black dress, and international celebrities wore her costumes.",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "entwarf",
+        "lemma": "entwerfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zeitlose",
+        "lemma": "zeitlos",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schwarze",
+        "lemma": "Schwarze",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kostüme",
+        "lemma": "Kostüm",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "trug",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "internationale",
+        "lemma": "international",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prominenz",
+        "lemma": "Prominenz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c96d65ae5a": {
@@ -8416,13 +8815,14 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "All's well that ends well.",
     "source": "wiktionary",
     "lemmas": [
       "gut",
       "Ende"
     ],
-    "ref": "phrases/Ende gut, alles gut"
+    "ref": "phrases/Ende gut, alles gut",
+    "translation_model": "openai/gpt-4.1"
   },
   "c977466327": {
     "text": "Man muss das Schießpulver trocken halten.",
@@ -8854,11 +9254,12 @@
     "type": "expression",
     "note": "blind sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be as blind as a bat",
     "source": "wiktionary",
     "lemmas": [
       "Maulwurf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9795e2a88": {
     "text": "Seine Eltern wohnen in Olympia.",
@@ -9007,11 +9408,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a lot for a little money",
     "source": "wiktionary",
     "lemmas": [
       "allerhand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c97ad71722": {
     "text": "Sein Charakter wurde von seinem Lehrer geformt.",
@@ -9268,11 +9670,12 @@
     "type": "expression",
     "note": "wenn Kräfte zusammen in dieselbe Richtung wirken",
     "synonyms": [],
-    "translation": null,
+    "translation": "when forces act together in the same direction",
     "source": "wiktionary",
     "lemmas": [
       "Druck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c97c281b5b": {
     "text": "Eiskaffee trinkt man mit dem Strohhalm.",
@@ -9327,18 +9730,76 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "rotten fish",
     "source": "wiktionary",
     "lemmas": [
       "Fisch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9800d2bcd": {
     "text": "„Er war davon besessen, auf Punkt und Komma abzurechnen. Er war ein Buchhalter, grauenvoll pedantisch, mit stechendem Blick, korrekt und unbestechlich.“",
-    "translation": null,
+    "translation": "He was obsessed with accounting for every detail. He was a bookkeeper, terribly pedantic, with a piercing gaze, correct and incorruptible.",
     "source": "wiktionary",
     "lemmas": [
       "auf Punkt und Komma"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "besessen",
+        "lemma": "besessen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "abzurechnen",
+        "lemma": "abrechnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Buchhalter",
+        "lemma": "Buchhalter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "grauenvoll",
+        "lemma": "grauenvoll",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "pedantisch",
+        "lemma": "pedantisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "stechendem",
+        "lemma": "stechend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Blick",
+        "lemma": "Blick",
+        "pos": "noun",
+        "gloss_hint": "look"
+      },
+      {
+        "form": "korrekt",
+        "lemma": "korrekt",
+        "pos": "adjective",
+        "gloss_hint": "correct"
+      },
+      {
+        "form": "unbestechlich",
+        "lemma": "unbestechlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "c98098c17d": {
@@ -9716,12 +10177,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get out of a sticky situation",
     "source": "wiktionary",
     "lemmas": [
       "Eis"
     ],
-    "ref": "phrases/die Kuh vom Eis führen"
+    "ref": "phrases/die Kuh vom Eis führen",
+    "translation_model": "openai/gpt-4.1"
   },
   "c984b33e1f": {
     "text": "Er wartete schon über eine halbe Stunde und langsam wurde er ungeduldig.",
@@ -10291,11 +10753,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to open someone's eyes",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c98b34cb31": {
     "text": "„Wahrscheinlich haben Raubtiere irgendwo Niederwild geschlagen.“",
@@ -10344,22 +10807,24 @@
     "type": "expression",
     "note": "ein Vergleich zu großer, meist emotionaler Kälte",
     "synonyms": [],
-    "translation": null,
+    "translation": "cold as ice",
     "source": "wiktionary",
     "lemmas": [
       "kalt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c98d5e3f25": {
     "text": "aus einer Ohnmacht in die andere fallen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go from one fainting spell to another",
     "source": "wiktionary",
     "lemmas": [
       "Ohnmacht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c98eb38c23": {
     "text": "Außerdem sei Öcalan nicht genügend Zeit zur Vorbereitung seiner Verteidigung eingeräumt worden: Er hatte gerade 15 Tage, sich durch die 17 Ordner umfassende Anklageschrift zu wühlen.",
@@ -10770,11 +11235,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lead someone on a false trail",
     "source": "wiktionary",
     "lemmas": [
       "Fährte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c99272eedb": {
     "text": "„Obwohl der Australopithecus deyiremeda zeitgleich mit Lucy und ihren Artgenossen vorkam, war er demnach in Anatomie, Ernährung und Lebensweise deutlich primitiver.“",
@@ -12053,11 +12519,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm in!",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9a1634b4b": {
     "text": "Die Hauptstadt von Idaho ist Boise.",
@@ -12359,11 +12826,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I have enjoyed earthly happiness; I have lived and loved.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9a714ce06": {
     "text": "„Somit können sich auf der gleichen Ebene die staatliche Behörde (Woiwode) und die Selbstverwaltungskörperschaft (Marschall) gegenüberstehen.“",
@@ -13314,10 +13782,85 @@
   },
   "c9ae8e2a7a": {
     "text": "„So begannen im Spätsommer es Jahres 55 v. Chr. die ersten Maßnahmen zur Ausdehnung des römischen Machtbereichs auf Britannien, die 100 Jahre später in die Eroberung eines Großteils der Insel mündeten.“",
-    "translation": null,
+    "translation": "Thus, in the late summer of the year 55 BCE, the first measures began to extend Roman power to Britain, which a hundred years later resulted in the conquest of much of the island.",
     "source": "wiktionary",
     "lemmas": [
       "Britannien"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "begannen",
+        "lemma": "beginnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spätsommer",
+        "lemma": "Spätsommer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahres",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Maßnahmen",
+        "lemma": "Maßnahme",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausdehnung",
+        "lemma": "Ausdehnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "römischen",
+        "lemma": "römisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Machtbereichs",
+        "lemma": "Machtbereich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Britannien",
+        "lemma": "Britannien",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eroberung",
+        "lemma": "Eroberung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Großteils",
+        "lemma": "Großteil",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Insel",
+        "lemma": "Insel",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c9aff4cf1e": {
@@ -13870,11 +14413,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's easy to fool fools, but hard to deal with the consequences",
     "source": "wiktionary",
     "lemmas": [
       "verdauen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9b7c44e9d": {
     "text": "Ampelkoalitionen gab es von 1990 bis 1994 in Brandenburg und von 1991 bis 1995 in Bremen.",
@@ -14354,23 +14898,25 @@
     "synonyms": [
       "gelassen"
     ],
-    "translation": null,
+    "translation": "to put the finishing touches on something",
     "source": "wiktionary",
     "lemmas": [
       "geben"
     ],
-    "ref": "phrases/etwas den letzten Schliff geben"
+    "ref": "phrases/etwas den letzten Schliff geben",
+    "translation_model": "openai/gpt-4.1"
   },
   "c9bc6884c7": {
     "text": "der Katze die Schelle umhängen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to bell the cat",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9bcba0377": {
     "text": "„Für uns ist es wichtig, dass wir unseren Mitarbeitern in der Produktion entsprechende Impfstoffdosen zukommen lassen.“",
@@ -15153,10 +15699,25 @@
   },
   "c9c616663b": {
     "text": "Wir haben uns lange unterhalten und sind dabei vom Hölzchen aufs Stöckchen gekommen.",
-    "translation": null,
+    "translation": "We talked for a long time and ended up going off on a tangent.",
     "source": "wiktionary",
     "lemmas": [
       "vom Hölzchen aufs Stöckchen kommen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "unterhalten",
+        "lemma": "unterhalten",
+        "pos": "verb",
+        "gloss_hint": "chat"
+      },
+      {
+        "form": "lange",
+        "lemma": "lange",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "c9c6a5a6c0": {
@@ -15677,10 +16238,73 @@
   },
   "c9cae2df36": {
     "text": "„Sushi ist nicht nur das Essen der ästhetisch veranlagten Damen, es versprüht auch nach wie vor den Glanz sowohl der weiten als auch der reichen Welt.“",
-    "translation": null,
+    "translation": "Sushi is not only the food of aesthetically inclined ladies; it also continues to radiate the glamour of both the vast and the wealthy world.",
     "source": "wiktionary",
     "lemmas": [
       "Sushi"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sushi",
+        "lemma": "Sushi",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Essen",
+        "lemma": "Essen",
+        "pos": "noun",
+        "gloss_hint": "food"
+      },
+      {
+        "form": "ästhetisch",
+        "lemma": "ästhetisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "veranlagten",
+        "lemma": "veranlagt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Damen",
+        "lemma": "Dame",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "versprüht",
+        "lemma": "versprühen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Glanz",
+        "lemma": "Glanz",
+        "pos": "noun",
+        "gloss_hint": "splendor"
+      },
+      {
+        "form": "weiten",
+        "lemma": "weit",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "reichen",
+        "lemma": "reich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world (society)"
+      }
     ]
   },
   "c9cb970335": {
@@ -17032,11 +17656,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to land a plane on its belly",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9d7dcf27e": {
     "text": "„Seit der Einführung des Matrixcodes ist eine Stempelung der Marken nicht mehr unbedingt erforderlich.“",
@@ -17112,12 +17737,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to ask someone endless questions",
     "source": "wiktionary",
     "lemmas": [
       "Bauch",
       "Loch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9d9c96ed0": {
     "text": "„Im südlich anstoßenden ehemaligen Klostergebäude befindet sich eine Säule mit Würfelkapitell, dessen konkaver Ablauf ebenfalls auf das frühe 13. Jahrhundert weist.“",
@@ -17133,12 +17759,13 @@
     "type": "expression",
     "note": "der bessere Teil",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be the best part",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
     ],
-    "ref": "phrases/das Gelbe vom Ei sein"
+    "ref": "phrases/das Gelbe vom Ei sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "c9da56c541": {
     "text": "Diese Regelung hier ist eindeutig zu meinem Nachteil.",
@@ -17716,12 +18343,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "blind spot",
     "source": "wiktionary",
     "lemmas": [
       "blind"
     ],
-    "ref": "phrases/blinder Fleck"
+    "ref": "phrases/blinder Fleck",
+    "translation_model": "openai/gpt-4.1"
   },
   "c9dee0106a": {
     "text": "In der Wirtschaftskrise wird die Ausbeutung der Rohstoffe zurückgehen.",
@@ -17794,11 +18422,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to turn a deaf ear",
     "source": "wiktionary",
     "lemmas": [
       "Ohr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9df4e3c8a": {
     "text": "Wenn wir nicht artig waren, wurden wir mit Ruten ausgeschlagen.",
@@ -18285,11 +18914,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as happy as a clam",
     "source": "wiktionary",
     "lemmas": [
       "froh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9e1ebbd01": {
     "text": "Trotz einer starken zweiten Runde hatte er den Cut um einen Schlag verpasst und musste nach Hause fahren.",
@@ -18497,10 +19127,91 @@
   },
   "c9e3e61908": {
     "text": "„Dort macht mit der Aufhebung des dreimonatigen Kriegszustands nunmehr die lange Zeit mundtote Opposition mobil gegen das Regime des postkommunistischen Despoten Slobodan Milosevic, fordert selbst dessen Regierungspartner, der Ultranationalist Vojislav Seselj, baldige Neuwahlen ([…]).“",
-    "translation": null,
+    "translation": "There, with the lifting of the three-month state of war, the long-silenced opposition now mobilizes against the regime of the postcommunist despot Slobodan Milosevic, and even his coalition partner, the ultranationalist Vojislav Seselj, demands early elections.",
     "source": "wiktionary",
     "lemmas": [
       "jemanden mundtot machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Aufhebung",
+        "lemma": "Aufhebung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dreimonatigen",
+        "lemma": "dreimonatig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kriegszustands",
+        "lemma": "Kriegszustand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Opposition",
+        "lemma": "Opposition",
+        "pos": "noun",
+        "gloss_hint": "opposing group"
+      },
+      {
+        "form": "mobil",
+        "lemma": "mobil",
+        "pos": "adjective",
+        "gloss_hint": "ready (for deployment)"
+      },
+      {
+        "form": "Regime",
+        "lemma": "Regime",
+        "pos": "noun",
+        "gloss_hint": "authoritarian government"
+      },
+      {
+        "form": "postkommunistischen",
+        "lemma": "postkommunistisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Despoten",
+        "lemma": "Despot",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regierungspartner",
+        "lemma": "Regierungspartner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ultranationalist",
+        "lemma": "Ultranationalist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fordert",
+        "lemma": "fordern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "baldige",
+        "lemma": "baldig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Neuwahlen",
+        "lemma": "Neuwahl",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c9e4b5d938": {
@@ -18587,22 +19298,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to barely scrape by",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9e65ab406": {
     "text": "zu siebent",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as a group of seven",
     "source": "wiktionary",
     "lemmas": [
       "zu"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9e7105d5c": {
     "text": "Mein Siebeck'sches Weihnachtsmenü sah als Dessert ein Zimtparfait mit in Burgunder eingelegten Backpflaumen vor und schmeckte ganz vorzüglich.",
@@ -18773,6 +19486,47 @@
       }
     ],
     "text_linked": "Die [[Weite|nouns/Weite#1]] des kreisrunden Lochs betrug an die 5 Meter."
+  },
+  "c9ea0df2d2": {
+    "text": "„Holüber!“, scholl es vom anderen Ufer herüber, woraufhin Seppi sich mit seinem Nachen dorthin aufmachte.",
+    "translation": "\"Ahoy!\" came the call from the other shore, whereupon Seppi set out in his boat to go there.",
+    "source": "wiktionary",
+    "lemmas": [
+      "holüber"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "scholl",
+        "lemma": "schallen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ufer",
+        "lemma": "Ufer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Seppi",
+        "lemma": "Seppi",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nachen",
+        "lemma": "Nachen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufmachte",
+        "lemma": "aufmachen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ]
   },
   "c9eb19264b": {
     "text": "Wenn dein Bewährungshelfer davon erfährt, wanderst du direkt in den Knast.",
@@ -18953,11 +19707,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Procrastination is the thief of time.",
     "source": "wiktionary",
     "lemmas": [
       "Zeit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9ecc5f612": {
     "text": "„Während die Verteidiger von Xuan Loc ausgelöscht wurden und jenseits der Grenze Phnom Penh an die Roten Khmer fiel, überarbeitete ich mehrere Tage lang die Liste.“",
@@ -19699,11 +20454,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to show up on time",
     "source": "wiktionary",
     "lemmas": [
       "Matte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "c9f29012b0": {
     "text": "Die Sonne ist der Sender und Spender der Wärmestrahlung und des Lichts.",
@@ -20591,10 +21347,43 @@
   },
   "c9f99d4e49": {
     "text": "Der Europäische Gerichtshof spricht Recht für ganz Europa.",
-    "translation": null,
+    "translation": "The European Court of Justice administers justice for all of Europe.",
     "source": "wiktionary",
     "lemmas": [
       "europäisch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Europäische",
+        "lemma": "europäisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gerichtshof",
+        "lemma": "Gerichtshof",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "spricht",
+        "lemma": "sprechen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Recht",
+        "lemma": "Recht",
+        "pos": "noun",
+        "gloss_hint": "law"
+      },
+      {
+        "form": "Europa",
+        "lemma": "Europa",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "c9f9f183b4": {

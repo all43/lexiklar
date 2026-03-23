@@ -94,11 +94,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a sharp tongue",
     "source": "wiktionary",
     "lemmas": [
       "Zunge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ec01c57f79": {
     "text": "Im Laufen war er besser als im Weitspringen.",
@@ -555,11 +556,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "tough nut",
     "source": "wiktionary",
     "lemmas": [
       "Nuss"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ec06f9cece": {
     "text": "„[…] Der Streik sei ‚einer der zwecklosesten, die es jemals gegeben hat‘.“",
@@ -990,10 +992,79 @@
   },
   "ec08c07853": {
     "text": "Die Klosterbewohner, die Monate oder auch Jahre hier bleiben, bekommen keinen Lohn, müssen ihre Unkosten selbst tragen, für ihren Lebensunterhalt selbst aufkommen.",
-    "translation": null,
+    "translation": "The monastery residents who stay here for months or even years receive no wages, must bear their own expenses, and must provide for their own livelihood.",
     "source": "wiktionary",
     "lemmas": [
       "Unkosten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Klosterbewohner",
+        "lemma": "Klosterbewohner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Monate",
+        "lemma": "Monat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahre",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bleiben",
+        "lemma": "bleiben",
+        "pos": "verb",
+        "gloss_hint": "stay"
+      },
+      {
+        "form": "bekommen",
+        "lemma": "bekommen",
+        "pos": "verb",
+        "gloss_hint": "receive"
+      },
+      {
+        "form": "Lohn",
+        "lemma": "Lohn",
+        "pos": "noun",
+        "gloss_hint": "pay"
+      },
+      {
+        "form": "müssen",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": "must"
+      },
+      {
+        "form": "Unkosten",
+        "lemma": "Unkosten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tragen",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": "bear (cost)"
+      },
+      {
+        "form": "Lebensunterhalt",
+        "lemma": "Lebensunterhalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufkommen",
+        "lemma": "aufkommen",
+        "pos": "verb",
+        "gloss_hint": "pay"
+      }
     ]
   },
   "ec08e62f18": {
@@ -1421,22 +1492,53 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to make a blunder",
     "source": "wiktionary",
     "lemmas": [
       "schießen",
       "Bock"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ec0e5ff3bb": {
     "text": "„Damit kann unter anderem eingestellt werden, ob „Benutzerin:…“ oder „Benutzer:…“ auf der Nutzerseite erscheint.“",
-    "translation": null,
+    "translation": "\"With this, it can be set, among other things, whether 'User:...' or 'User:...' appears on the user page.\"",
     "source": "wiktionary",
     "lemmas": [
       "Benutzer"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "eingestellt",
+        "lemma": "einstellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Benutzerin",
+        "lemma": "Benutzerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Benutzer",
+        "lemma": "Benutzer",
+        "pos": "noun",
+        "gloss_hint": "user"
+      },
+      {
+        "form": "Nutzerseite",
+        "lemma": "Nutzerseite",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erscheint",
+        "lemma": "erscheinen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "ec0f39ca0c": {
@@ -2471,10 +2573,31 @@
   },
   "ec1deb676d": {
     "text": "Wehe dem Mann, der mich schlug!",
-    "translation": null,
+    "translation": "Woe to the man who struck me!",
     "source": "wiktionary",
     "lemmas": [
       "der"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wehe",
+        "lemma": "Wehe",
+        "pos": "interjection",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "schlug",
+        "lemma": "schlagen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "ec1e88f5a0": {
@@ -3330,11 +3453,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to squeeze something dry",
     "source": "wiktionary",
     "lemmas": [
       "Zitrone"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ec293cc029": {
     "text": "Man könnte die Preise senken.",
@@ -3500,10 +3624,85 @@
   },
   "ec2c9161a9": {
     "text": "„Kommt er von rechts [ÖVP, FPÖ] \\ und rührt mit verwegener Feder an roten [SPÖ] Wunden, \\ spürt er nicht selten \\ des Kanzlers Hackl im Kreuz.“",
-    "translation": null,
+    "translation": "\"If he comes from the right [ÖVP, FPÖ] and touches red [SPÖ] wounds with audacious pen, he not infrequently feels the Chancellor's cudgel in his back.\"",
     "source": "wiktionary",
     "lemmas": [
       "das Hackl im Kreuz spüren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kommt",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "rechts",
+        "lemma": "rechts",
+        "pos": "adverb",
+        "gloss_hint": "right-wing"
+      },
+      {
+        "form": "rührt",
+        "lemma": "rühren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "verwegener",
+        "lemma": "verweген",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Feder",
+        "lemma": "Feder",
+        "pos": "noun",
+        "gloss_hint": "quill"
+      },
+      {
+        "form": "roten",
+        "lemma": "rot",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wunden",
+        "lemma": "Wunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "spürt",
+        "lemma": "spüren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "selten",
+        "lemma": "selten",
+        "pos": "adjective",
+        "gloss_hint": "infrequent"
+      },
+      {
+        "form": "Kanzlers",
+        "lemma": "Kanzler",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hackl",
+        "lemma": "Hackl",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kreuz",
+        "lemma": "Kreuz",
+        "pos": "noun",
+        "gloss_hint": "back area"
+      }
     ]
   },
   "ec2d30bc8b": {
@@ -5319,12 +5518,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have an ace up one's sleeve",
     "source": "wiktionary",
     "lemmas": [
       "Ärmel",
       "Trumpf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ec40e857d6": {
     "text": "„Gemäß preußischem Recht sollten die Partner einer interkonfessionellen Ehe selbst entscheiden, nach welchem Bekenntnis sie ihre Kinder erziehen wollten.“",
@@ -7845,13 +8045,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in the dark",
     "source": "wiktionary",
     "lemmas": [
       "im",
       "tappen"
     ],
-    "ref": "phrases/im Dunkeln tappen"
+    "ref": "phrases/im Dunkeln tappen",
+    "translation_model": "openai/gpt-4.1"
   },
   "ec51e1ebf1": {
     "text": "von der Bildfläche verschwinden",
@@ -7955,11 +8156,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to sneak out without saying goodbye",
     "source": "wiktionary",
     "lemmas": [
       "Abgang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ec555bbb3b": {
     "text": "„Hierbei handelt es sich um eine komplexe Abbaukrankheit von Weinreben, die in den vergangenen drei Jahrzehnten weltweit stark zugenommen hat.“",
@@ -9325,10 +9527,43 @@
   },
   "ec5dda525d": {
     "text": "„Diese Sache darf uns keiner wegnehmen, sonst macht der Präsident Hackfleisch aus mir.“",
-    "translation": null,
+    "translation": "\"This matter must not be taken from us, otherwise the President will make mincemeat of me.\"",
     "source": "wiktionary",
     "lemmas": [
       "aus jemandem Hackfleisch machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sache",
+        "lemma": "Sache",
+        "pos": "noun",
+        "gloss_hint": "matter"
+      },
+      {
+        "form": "darf",
+        "lemma": "dürfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wegnehmen",
+        "lemma": "wegnehmen",
+        "pos": "verb",
+        "gloss_hint": "take away"
+      },
+      {
+        "form": "macht",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Präsident",
+        "lemma": "Präsident",
+        "pos": "noun",
+        "gloss_hint": "president"
+      }
     ]
   },
   "ec5ee1602d": {
@@ -9578,10 +9813,55 @@
   },
   "ec5fdcad49": {
     "text": "Im neu errichteten Wohnhaus stehen zwölf EP zur Verfügung.",
-    "translation": null,
+    "translation": "In the newly constructed residential building, twelve parking spaces are available.",
     "source": "wiktionary",
     "lemmas": [
       "EP"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "neu",
+        "lemma": "neu",
+        "pos": "adjective",
+        "gloss_hint": "recent"
+      },
+      {
+        "form": "errichteten",
+        "lemma": "errichten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wohnhaus",
+        "lemma": "Wohnhaus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stehen",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": "be available"
+      },
+      {
+        "form": "zwölf",
+        "lemma": "zwölf",
+        "pos": "noun",
+        "gloss_hint": "twelve"
+      },
+      {
+        "form": "EP",
+        "lemma": "EP",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verfügung",
+        "lemma": "Verfügung",
+        "pos": "noun",
+        "gloss_hint": "disposition"
+      }
     ]
   },
   "ec606976d9": {
@@ -12030,22 +12310,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "for all the money in the world",
     "source": "wiktionary",
     "lemmas": [
       "Geld"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ec77b73b93": {
     "text": "im gleichen Atem",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in the same breath",
     "source": "wiktionary",
     "lemmas": [
       "gleich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ec77c21342": {
     "text": "In dieser Kate lebten mehr als zehn Leute.",
@@ -12579,11 +12861,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a slap",
     "source": "wiktionary",
     "lemmas": [
       "ein"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ec80e3c127": {
     "text": "„Bereits bei ihnen aber zeigt sich, was, schon zuvor erwähnt, nun für den Rahmen ganz grundsätzlich auszusprechen bleibt: Jeder Rahmen schafft ein Überordnungsverhältnis, denn er erhebt, was er rahmt, zum Zentrum. “",
@@ -13224,11 +13507,12 @@
     "type": "expression",
     "note": "fertig sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be done",
     "source": "wiktionary",
     "lemmas": [
       "Kasten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ec83d2d7a1": {
     "text": "Sie hat eine Pipeline zu ihren Kunden.",
@@ -13289,11 +13573,12 @@
     "type": "expression",
     "note": "eng, nah bei einander schreiben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to write very close together",
     "source": "wiktionary",
     "lemmas": [
       "genau"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ec85aeaf82": {
     "text": "„Indische Frauen, die besser ausgebildet sind als ihre Ehemänner und womöglich sogar mehr verdienen, werden mit größerer Wahrscheinlichkeit Opfer häuslicher Gewalt.“",
@@ -13920,10 +14205,61 @@
   },
   "ec8a008e62": {
     "text": "„Pillen-berauscht oder haschisch-happy tanzen die Mods nächtelang die Tänze, die sie ihren Idolen (‚Faces‘) der TV-Show ‚Ready, Steady, Go‘ des Kommerziellen Britischen Fernsehens abgeguckt haben.“",
-    "translation": null,
+    "translation": "\"Intoxicated by pills or high on hashish, the Mods dance night after night the dances they copied from their idols ('Faces') of the TV show 'Ready, Steady, Go' of Commercial British Television.\"",
     "source": "wiktionary",
     "lemmas": [
       "happy"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "berauscht",
+        "lemma": "berauschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "tanzen",
+        "lemma": "tanzen",
+        "pos": "verb",
+        "gloss_hint": "dance"
+      },
+      {
+        "form": "nächtelang",
+        "lemma": "nächtelang",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tänze",
+        "lemma": "Tanz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Idolen",
+        "lemma": "Idol",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Faces",
+        "lemma": "Face",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Show",
+        "lemma": "Show",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abgeguckt",
+        "lemma": "abgucken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "ec8aa159c5": {
@@ -14498,10 +14834,49 @@
   },
   "ec904d7216": {
     "text": "„Außerdem zeigte Annette sich noch von einer weiteren Besonderheit des Rheinlands fasziniert.“",
-    "translation": null,
+    "translation": "\"Moreover, Annette showed herself fascinated by yet another peculiarity of the Rhineland.\"",
     "source": "wiktionary",
     "lemmas": [
       "Rheinland"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Außerdem",
+        "lemma": "außerdem",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zeigte",
+        "lemma": "zeigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Annette",
+        "lemma": "Annette",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fasziniert",
+        "lemma": "faszinieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Besonderheit",
+        "lemma": "Besonderheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rheinlands",
+        "lemma": "Rheinland",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "ec91a95952": {
@@ -14605,14 +14980,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get the situation under control",
     "source": "wiktionary",
     "lemmas": [
       "Herr"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ec95aec5ba": {
     "text": "Mein Bruder hat viele Gesichter, es kommt ganz darauf an, wo und wann du ihn triffst.",
@@ -15944,10 +16317,67 @@
   },
   "eca039f842": {
     "text": "„Geschätzt 1600 Juristen können nun pro Nase 511 Euro Prüfungsgebühr vom Land Berlin zurückverlangen.“",
-    "translation": null,
+    "translation": "\"Approximately 1600 lawyers can now demand back 511 euros in examination fees per person from the state of Berlin.\"",
     "source": "wiktionary",
     "lemmas": [
       "pro Nase"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geschätzt",
+        "lemma": "schätzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Juristen",
+        "lemma": "Jurist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "können",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": "be able"
+      },
+      {
+        "form": "Nase",
+        "lemma": "Nase",
+        "pos": "noun",
+        "gloss_hint": "nose"
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "Prüfungsgebühr",
+        "lemma": "Prüfungsgebühr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Land",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": "state"
+      },
+      {
+        "form": "Berlin",
+        "lemma": "Berlin",
+        "pos": "proper noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zurückverlangen",
+        "lemma": "zurückverlangen",
+        "pos": "verb",
+        "gloss_hint": "demand back"
+      }
     ]
   },
   "eca0e2ef4e": {
@@ -16422,11 +16852,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to soften the blow for someone",
     "source": "wiktionary",
     "lemmas": [
       "Pille"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eca2aa2a9b": {
     "text": "„Mehrere Rudel des Stammes bilden die Meute, die von einem vom Stammesführer eingesetzten Meutenführer geführt wird. Die Meute ist die geschlossene Gruppe der Wölflinge des Stammes, während die Rudel nur Spielgemeinschaften darstellen.“",
@@ -16638,10 +17069,49 @@
   },
   "eca51be737": {
     "text": "Beim Festakt waren Vertreter aus Politik, Wirtschaft und Finanz anwesend.",
-    "translation": null,
+    "translation": "At the ceremony, representatives from politics, business, and financial circles were present.",
     "source": "wiktionary",
     "lemmas": [
       "Finanz"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Festakt",
+        "lemma": "Festakt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vertreter",
+        "lemma": "Vertreter",
+        "pos": "noun",
+        "gloss_hint": "representative"
+      },
+      {
+        "form": "Politik",
+        "lemma": "Politik",
+        "pos": "noun",
+        "gloss_hint": "political class"
+      },
+      {
+        "form": "Wirtschaft",
+        "lemma": "Wirtschaft",
+        "pos": "noun",
+        "gloss_hint": "economy"
+      },
+      {
+        "form": "Finanz",
+        "lemma": "Finanz",
+        "pos": "noun",
+        "gloss_hint": "financial circles"
+      },
+      {
+        "form": "anwesend",
+        "lemma": "anwesend",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "eca58af57f": {
@@ -16649,11 +17119,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to talk someone's ear off",
     "source": "wiktionary",
     "lemmas": [
       "blasen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "eca60281ec": {
     "text": "„In dem Brief bedauerte Hansteen, sich nicht schon früher gemeldet zu haben und nannte als Grund die vielen Versammlungen, Vorlesungen und Verpflichtungen, die sich aufgehäuft hatten, seit er im Herbst von seiner Expedition in den Bottnischen Meerbusen zurückgekehrt war, sowie all die zusätzliche Arbeit nach dem Ausscheiden von Professor Rasmussen.“",
@@ -18623,10 +19094,61 @@
   },
   "ecb791c9d3": {
     "text": "„Nein, sie ist vollständig auf dem Holzweg, weil sie an dem Geld gerade das Sauerverdiente so schätzt und hervorhebt.“",
-    "translation": null,
+    "translation": "\"No, she is completely on the wrong track, because she particularly values and emphasizes the hard-earned money.\"",
     "source": "wiktionary",
     "lemmas": [
       "auf dem Holzweg sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Nein",
+        "lemma": "nein",
+        "pos": "particle",
+        "gloss_hint": "no"
+      },
+      {
+        "form": "vollständig",
+        "lemma": "vollständig",
+        "pos": "adjective",
+        "gloss_hint": "complete"
+      },
+      {
+        "form": "Holzweg",
+        "lemma": "Holzweg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geld",
+        "lemma": "Geld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gerade",
+        "lemma": "gerade",
+        "pos": "particle",
+        "gloss_hint": "just"
+      },
+      {
+        "form": "Sauerverdiente",
+        "lemma": "sauerverdient",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "schätzt",
+        "lemma": "schätzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "hervorhebt",
+        "lemma": "hervorheben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "ecb7eb3243": {
@@ -18634,11 +19156,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take someone's side",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ecb8db502f": {
     "text": "bittere Medizin schlucken müssen",
@@ -18650,11 +19173,12 @@
       "hinnehmen",
       "müssen"
     ],
-    "translation": null,
+    "translation": "to have to swallow a bitter pill",
     "source": "wiktionary",
     "lemmas": [
       "bitter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ecbaf491d0": {
     "text": "Bern: Wo das Bier in Stangen kommt und die Schokolade Gipfel hat.",
@@ -18743,11 +19267,12 @@
     "type": "expression",
     "note": "jemandem seine Grenze aufzeigen; jemandem den Punkt zeigen, den er nicht übertreten darf",
     "synonyms": [],
-    "translation": null,
+    "translation": "to put someone in their place",
     "source": "wiktionary",
     "lemmas": [
       "verweisen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ecbd09c3f3": {
     "text": "„Trotz der vorgerückten Stunde konnte der Pfarrer sich nicht enthalten, seinen halb analphabetischen Famulus zu einem Zweikampf herauszufordern.“",
@@ -19104,14 +19629,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "an example sets a precedent",
     "source": "wiktionary",
     "lemmas": [
       "Beispiel"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ecc3949a42": {
     "text": "„Er spricht wie ein Philosoph.“",
@@ -19157,10 +19680,43 @@
   },
   "ecc44cdc11": {
     "text": "Der Vogel geriet in Panik und flatterte mit den Flügeln.",
-    "translation": null,
+    "translation": "The bird panicked and fluttered its wings.",
     "source": "wiktionary",
     "lemmas": [
       "flattern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vogel",
+        "lemma": "Vogel",
+        "pos": "noun",
+        "gloss_hint": "bird"
+      },
+      {
+        "form": "geriet",
+        "lemma": "geraten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Panik",
+        "lemma": "Panik",
+        "pos": "noun",
+        "gloss_hint": "panic"
+      },
+      {
+        "form": "flatterte",
+        "lemma": "flattern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Flügeln",
+        "lemma": "Flügel",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "ecc5fdda85": {
@@ -19651,10 +20207,49 @@
   },
   "ecc973e6ff": {
     "text": "Ich weiß wirklich nicht, was sie im Schilde führt, kannst du nicht ihren Mann mal fragen?",
-    "translation": null,
+    "translation": "I really don't know what she's up to, can't you ask her husband?",
     "source": "wiktionary",
     "lemmas": [
       "etwas im Schilde führen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "weiß",
+        "lemma": "wissen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wirklich",
+        "lemma": "wirklich",
+        "pos": "adjective",
+        "gloss_hint": "actual"
+      },
+      {
+        "form": "Schilde",
+        "lemma": "Schild",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "führt",
+        "lemma": "führen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "husband"
+      },
+      {
+        "form": "fragen",
+        "lemma": "fragen",
+        "pos": "verb",
+        "gloss_hint": "ask"
+      }
     ]
   },
   "eccaf8f176": {
@@ -20101,11 +20696,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "recently",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ecd05c40f9": {
     "text": "„Irgendwann würde ich so weit sein, daß ich Kinkel anpumpte, auch Sommerwild und sogar diesen Sadisten Fredebeul, der mir wahrscheinlich ein Fünfmarkstück vor die Nase halten und mich zwingen würde, danach zu springen.“",
@@ -20329,11 +20925,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "goodness gracious",
     "source": "wiktionary",
     "lemmas": [
       "ach"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ecd1ada088": {
     "text": "„Der Skipper hatte das Gerät schon einmal zerlegt, um einen neuen Joystickschalter einzubauen. So zerlegt er auch diesmal das Gerät, trocknet die Einzelteile mit Hilfe des Haarföhns und – oh Wunder – nach dem Zusammenbau arbeitet der Plotter bestimmungsgemäß. Gut gemacht!“",
@@ -20482,22 +21079,25 @@
   },
   "ecd31f9fd4": {
     "text": "„Der Verschwörungstheoretiker liebt sein Stigma wie sich selbst, denn nur als Ausgeschlossener kann er sich selbst dann noch als mundtotes Opfer fühlen, wenn er im ‚Lügenäther‘ zur besten Sendezeit immer weiterreden darf.“",
-    "translation": null,
+    "translation": "\"The conspiracy theorist loves his stigma as he loves himself, because only as an outsider can he still feel like a silenced victim when he is allowed to keep talking on the 'lying airwaves' at prime time.\"",
     "source": "wiktionary",
     "lemmas": [
       "jemanden mundtot machen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "ecd33699b2": {
     "text": "der Tod ist das Ende aller Not",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Death is the end of all suffering.",
     "source": "wiktionary",
     "lemmas": [
       "Tod"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ecd4accebc": {
     "text": "Du kannst mich totschlagen, aber ich erinnere mich einfach nicht, wie spät es genau war!",
@@ -20906,10 +21506,31 @@
   },
   "ecd6ade665": {
     "text": "Am 1. September 2001 starben einige Polizisten vom NYPD.",
-    "translation": null,
+    "translation": "On September 1, 2001, some NYPD police officers died.",
     "source": "wiktionary",
     "lemmas": [
       "NYPD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "starben",
+        "lemma": "sterben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Polizisten",
+        "lemma": "Polizist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "NYPD",
+        "lemma": "NYPD",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "ecd6c6dd96": {
@@ -21751,10 +22372,37 @@
   },
   "ece2dc688d": {
     "text": "Die Gräben müssen fachgerecht gespriesst, in Schichten von max. 40 cm aufgefüllt und maschinell verdichtet werden.",
-    "translation": null,
+    "translation": "The trenches must be properly braced, filled in layers of max. 40 cm and mechanically compacted.",
     "source": "wiktionary",
     "lemmas": [
       "sprießen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gräben",
+        "lemma": "Graben",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gespriesst",
+        "lemma": "sprießen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgefüllt",
+        "lemma": "auffüllen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "verdichtet",
+        "lemma": "verdichten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "ece496f263": {
@@ -22768,15 +23416,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "low-hanging fruit",
     "source": "wiktionary",
     "lemmas": [
       "tief",
       "hängen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "eceda7c543": {
     "text": "„Der Butler legt mir jeden Morgen die Zeitung links neben den Teller.“",
@@ -22873,14 +23519,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "In wine, there is truth.",
     "source": "wiktionary",
     "lemmas": [
       "Wein"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ecefc0ff50": {
     "text": "Es war unbegreiflich kalt.",

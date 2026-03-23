@@ -8,10 +8,12 @@
       "gloss_en": "like",
       "tags": [],
       "example_ids": [
-        "6dca5cc0b7",
-        "c5a00cbe78"
+        "c5a00cbe78",
+        "6dca5cc0b7"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "derart"
+      ],
       "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
       "gloss_en_full": "Expresses a comparison",
@@ -24,19 +26,47 @@
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
-      "gloss": "Festlegung einer Bedingung",
-      "gloss_en": "if",
+      "gloss": "Einleitung einer wörtlichen Rede",
+      "gloss_en": "quote",
       "tags": [
-        "literary"
+        "colloquial"
       ],
       "example_ids": [
-        "d3bbb99ee2",
-        "e22e914536"
+        "be55468e2e",
+        "3f4167f486"
       ],
-      "synonyms": [
-        "falls"
-      ],
+      "synonyms": [],
       "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "Introduction to a direct quotation",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[zoː]",
+      "tags": []
+    }
+  ],
+  "_derived": [
+    "sodass",
+    "sofern",
+    "soviel",
+    "sowie",
+    "sowohl"
+  ],
+  "_synonyms": [
+    "derart"
+  ],
+  "_meta": {
+    "source_hash": "802b1847c22c2c1d",
+    "generated_at": "2026-03-23"
+  },
+  "zipf": 6.45,
+  "_orphaned_translations": [
+    {
+      "gloss": "Festlegung einer Bedingung",
+      "gloss_en": "if",
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
       "gloss_en_full": "Establishes a condition",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -50,10 +80,6 @@
     {
       "gloss": "Festlegung einer Art und Weise",
       "gloss_en": "so that",
-      "tags": [],
-      "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
       "gloss_en_full": "Specifies a manner or way",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
@@ -67,12 +93,6 @@
     {
       "gloss": "(als einteilige Subjunktion) → siehe auch sodass",
       "gloss_en": "such that",
-      "tags": [],
-      "example_ids": [
-        "909b155ec2"
-      ],
-      "synonyms": [],
-      "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
       "gloss_en_full": "(As a single-part subordinating conjunction) see also sodass",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
@@ -85,12 +105,6 @@
     {
       "gloss": "(als mehrteilige Subjunktion)",
       "gloss_en": "so...as",
-      "tags": [],
-      "example_ids": [
-        "964d7f1163"
-      ],
-      "synonyms": [],
-      "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
       "gloss_en_full": "(As a multi-part subordinating conjunction)",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
@@ -99,36 +113,6 @@
         "as much as"
       ],
       "synonyms_en_model": "openai/gpt-4.1-mini"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[zoː]",
-      "tags": []
-    }
-  ],
-  "expression_ids": [
-    "bf05a4d03c"
-  ],
-  "_derived": [
-    "sobald",
-    "soweit"
-  ],
-  "_synonyms": [
-    "falls"
-  ],
-  "_meta": {
-    "source_hash": "6fdc2a3dcae0bbad",
-    "generated_at": "2026-03-21"
-  },
-  "zipf": 6.45,
-  "_orphaned_translations": [
-    {
-      "gloss": "Einleitung einer wörtlichen Rede",
-      "gloss_en": "quote",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "Introduction to a direct quotation",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
   ]
 }

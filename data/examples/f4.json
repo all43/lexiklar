@@ -308,18 +308,64 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go wild",
     "source": "wiktionary",
     "lemmas": [
       "bunt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f4097d7663": {
     "text": "Was will die ISIS? Was bedeuten die Begriffe Islamischer Staat, ISIS und ISIL?",
-    "translation": null,
+    "translation": "What does ISIS want? What do the terms Islamic State, ISIS, and ISIL mean?",
     "source": "wiktionary",
     "lemmas": [
       "ISIS"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ISIS",
+        "lemma": "ISIS",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Begriffe",
+        "lemma": "Begriff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Islamischer",
+        "lemma": "islamisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staat",
+        "lemma": "Staat",
+        "pos": "noun",
+        "gloss_hint": "state (political)"
+      },
+      {
+        "form": "ISIS",
+        "lemma": "ISIS",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ISIL",
+        "lemma": "ISIL",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bedeuten",
+        "lemma": "bedeuten",
+        "pos": "verb",
+        "gloss_hint": "mean"
+      }
     ]
   },
   "f409b1ba33": {
@@ -485,14 +531,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in the know about something",
     "source": "wiktionary",
     "lemmas": [
       "Bild"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "f40a270b53": {
     "text": "Wir sahen bewundernd zu ihm auf.",
@@ -1316,11 +1360,12 @@
     "type": "expression",
     "note": "überhaupt nichts",
     "synonyms": [],
-    "translation": null,
+    "translation": "absolutely nothing",
     "source": "wiktionary",
     "lemmas": [
       "gar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f411d19776": {
     "text": "Das ist eine Tatsache.",
@@ -1336,18 +1381,58 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "weirdo",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f412624f2c": {
     "text": "„‚Der Drops ist noch lange nicht gelutscht‘, warnt der Wasserfreunde-Präsident und Ex-Nationalspieler vor Leichtsinn.“",
-    "translation": null,
+    "translation": "\"The game is far from over,\" warns the Wasserfreunde president and former national player against complacency.",
     "source": "wiktionary",
     "lemmas": [
       "der Drops ist gelutscht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Drops",
+        "lemma": "Drops",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gelutscht",
+        "lemma": "lutschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "warnt",
+        "lemma": "warnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wasserfreunde-Präsident",
+        "lemma": "Wasserfreunde-Präsident",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ex-Nationalspieler",
+        "lemma": "Ex-Nationalspieler",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leichtsinn",
+        "lemma": "Leichtsinn",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "f412cf1397": {
@@ -1577,12 +1662,13 @@
     "type": "expression",
     "note": "genau ansehen, auch im übertragenen Sinne",
     "synonyms": [],
-    "translation": null,
+    "translation": "to look into something closely",
     "source": "wiktionary",
     "lemmas": [
       "Lupe"
     ],
-    "ref": "phrases/etwas unter die Lupe nehmen"
+    "ref": "phrases/etwas unter die Lupe nehmen",
+    "translation_model": "openai/gpt-4.1"
   },
   "f4156260e2": {
     "text": "Bei schönem Wetter läuft er den ganzen Tag mit seinem Hund im Englischen Garten herum.",
@@ -2166,11 +2252,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to realize where one's bread is buttered",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f419646096": {
     "text": "Ich habe eine Banane gegessen.",
@@ -2644,10 +2731,43 @@
   },
   "f41ce463e9": {
     "text": "„Castro war zunächst eher national-kubanisch als marxistisch orientiert.“",
-    "translation": null,
+    "translation": "Castro was initially oriented more toward national-Cuban than Marxist ideology.",
     "source": "wiktionary",
     "lemmas": [
       "marxistisch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Castro",
+        "lemma": "Castro",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zunächst",
+        "lemma": "zunächst",
+        "pos": "adverb",
+        "gloss_hint": "initially"
+      },
+      {
+        "form": "national-kubanisch",
+        "lemma": "national-kubanisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "marxistisch",
+        "lemma": "marxistisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "orientiert",
+        "lemma": "orientieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "f41cfc780d": {
@@ -2827,6 +2947,29 @@
       }
     ],
     "text_linked": "Der [[Hausen|nouns/Hausen]] ist [[vom|prepositions/von]] [[Aussterben|nouns/Aussterben]] bedroht."
+  },
+  "f41f4098ac": {
+    "text": "Donnerlittchen, war das ein Sturm!",
+    "translation": "Thunderation, what a storm that was!",
+    "source": "wiktionary",
+    "lemmas": [
+      "donnerlittchen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Donnerlittchen",
+        "lemma": "Donnerlittchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sturm",
+        "lemma": "Sturm",
+        "pos": "noun",
+        "gloss_hint": "storm"
+      }
+    ]
   },
   "f41fb0ed42": {
     "text": "Papst Benedikt XVI. trat am 28. Februar 2013 überraschend von seinem Amt zurück.",
@@ -4150,11 +4293,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as dry as a bone",
     "source": "wiktionary",
     "lemmas": [
       "Keks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f429a6959c": {
     "text": "„Und eine Firma für Taubenabwehr installierte an einem Gebäude viel weniger Gumminägel als vereinbart: Mehr seien nicht nötig, gegen Geld nacharbeiten wolle man nicht, und tschüss.“",
@@ -4314,10 +4458,61 @@
   },
   "f429e11239": {
     "text": "„Es gibt Momente, da kommt einem der 61-jährige Mann mit dem hermelinweißen Schopf geradezu wie eine Erscheinung vor.“",
-    "translation": null,
+    "translation": "There are moments when the 61-year-old man with the snow-white hair seems almost like an apparition to one.",
     "source": "wiktionary",
     "lemmas": [
       "Schopf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Momente",
+        "lemma": "Moment",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommt",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "61-jährige",
+        "lemma": "61-jährig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "hermelinweißen",
+        "lemma": "hermelinweiß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schopf",
+        "lemma": "Schopf",
+        "pos": "noun",
+        "gloss_hint": "head of hair"
+      },
+      {
+        "form": "geradezu",
+        "lemma": "geradezu",
+        "pos": "adverb",
+        "gloss_hint": "just"
+      },
+      {
+        "form": "Erscheinung",
+        "lemma": "Erscheinung",
+        "pos": "noun",
+        "gloss_hint": "apparition"
+      }
     ]
   },
   "f42a0571c2": {
@@ -4694,11 +4889,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "tell me",
     "source": "wiktionary",
     "lemmas": [
       "sagen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f42e224c28": {
     "text": "Sie sahen das große Gebäude. Davor stand eine Siegessäule.",
@@ -4837,10 +5033,31 @@
   },
   "f42ed2d796": {
     "text": "Der König reitet auf einem Ross daher.",
-    "translation": null,
+    "translation": "The king rides along on a steed.",
     "source": "wiktionary",
     "lemmas": [
       "Ross"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "König",
+        "lemma": "König",
+        "pos": "noun",
+        "gloss_hint": "king"
+      },
+      {
+        "form": "reitet",
+        "lemma": "reiten",
+        "pos": "verb",
+        "gloss_hint": "rides"
+      },
+      {
+        "form": "Ross",
+        "lemma": "Ross",
+        "pos": "noun",
+        "gloss_hint": "steed"
+      }
     ]
   },
   "f42f094e6e": {
@@ -4981,11 +5198,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "up to one's neck",
     "source": "wiktionary",
     "lemmas": [
       "bis"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f42fee2f87": {
     "text": "Mietshäuser Syndikat, Jazz Syndikat, Hip-Hop Syndikat",
@@ -5280,11 +5498,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "use one's elbows",
     "source": "wiktionary",
     "lemmas": [
       "Ellbogen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f4372282e2": {
     "text": "Ich habe mir alles Süße versagt, um abzunehmen.",
@@ -5880,12 +6099,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "teach someone a lesson",
     "source": "wiktionary",
     "lemmas": [
       "lehren"
     ],
-    "ref": "phrases/jemanden Mores lehren"
+    "ref": "phrases/jemanden Mores lehren",
+    "translation_model": "openai/gpt-4.1"
   },
   "f43c952ed9": {
     "text": "„Insbesondere Robert Mugabe begann unverzüglich, für eine Revision zu kämpfen, und setzte dafür alle Hebel in Bewegung.“",
@@ -6006,11 +6226,12 @@
     "type": "expression",
     "note": "bei Sachen: etwas ist nicht mehr neu; bei Personen: jemand sieht nicht mehr jung aus",
     "synonyms": [],
-    "translation": null,
+    "translation": "the shine has worn off",
     "source": "wiktionary",
     "lemmas": [
       "Lack"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f43d9ba8de": {
     "text": "Mein alter Käfer läuft noch wie geschmiert.",
@@ -6264,26 +6485,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go from bad to worse",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f4432282a8": {
     "text": "sich den Mund fusselig reden",
     "type": "expression",
     "note": "vergebens viel argumentieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "talk oneself blue in the face",
     "source": "wiktionary",
     "lemmas": [
       "Mund"
     ],
     "ref": "phrases/sich den Mund fusselig reden",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "f44527930b": {
     "text": "Der Hotelbetrieb läuft auch in der Umbauphase weiter.",
@@ -7200,11 +7420,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone's guardian angel inspired them to do something",
     "source": "wiktionary",
     "lemmas": [
       "Engel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f44d1f3cc4": {
     "text": "Die Gewalt geht bei den Demonstrationen immer vom schwarzen Block aus.",
@@ -7607,13 +7828,14 @@
     "type": "expression",
     "note": "keinen Mut haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "have no guts",
     "source": "wiktionary",
     "lemmas": [
       "Arsch",
       "kein"
     ],
-    "ref": "phrases/keinen Arsch in der Hose haben"
+    "ref": "phrases/keinen Arsch in der Hose haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "f45385c405": {
     "text": "„Ab hier kannte ich eine noch bessere Abkürzung durch ein Loch im Zaun einer Baustelle.“",
@@ -8814,13 +9036,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "grill someone for information",
     "source": "wiktionary",
     "lemmas": [
       "fühlen",
       "Zahn"
     ],
-    "ref": "phrases/jemandem auf den Zahn fühlen"
+    "ref": "phrases/jemandem auf den Zahn fühlen",
+    "translation_model": "openai/gpt-4.1"
   },
   "f45c7563c4": {
     "text": "Vy ist im Wuhlegarten berühmt für ihre vietnamesischen Riesenkürbisse. Die verschenkt sie schon mal an die ganze Kolonie.",
@@ -9221,10 +9444,43 @@
   },
   "f46443fe29": {
     "text": "„Die Polizeipferde waren Idee und Herzensprojekt des ehemaligen FPÖ-Innenministers Herbert Kickl.“",
-    "translation": null,
+    "translation": "\"The police horses were the idea and pet project of former Interior Minister Herbert Kickl.\"",
     "source": "wiktionary",
     "lemmas": [
       "FPÖ"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Polizeipferde",
+        "lemma": "Polizeipferd",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Idee",
+        "lemma": "Idee",
+        "pos": "noun",
+        "gloss_hint": "idea"
+      },
+      {
+        "form": "Herzensprojekt",
+        "lemma": "Herzensprojekt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ehemaligen",
+        "lemma": "ehemalig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Innenministers",
+        "lemma": "Innenminister",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "f4648ee8f7": {
@@ -10098,10 +10354,31 @@
   },
   "f46c56f33d": {
     "text": "Das Bild hängt überm Kamin.",
-    "translation": null,
+    "translation": "The picture hangs above the fireplace.",
     "source": "wiktionary",
     "lemmas": [
       "überm"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bild",
+        "lemma": "Bild",
+        "pos": "noun",
+        "gloss_hint": "painting"
+      },
+      {
+        "form": "hängt",
+        "lemma": "hängen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kamin",
+        "lemma": "Kamin",
+        "pos": "noun",
+        "gloss_hint": "fireplace"
+      }
     ]
   },
   "f46cb2ede2": {
@@ -10291,11 +10568,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "when the wolf marries the sheep",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f46dda881b": {
     "text": "Früher haben Assistenzärzte Überstunden und Nachtdienste akzeptiert.",
@@ -10555,11 +10833,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "It's easier to start a fire than to put it out.",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f47238f5a9": {
     "text": "Die gleichstufige Temperatur zielt auf ein Frequenzverhältnis von ^(12])√ zwischen benachbarten Tönen ab.",
@@ -11171,10 +11450,49 @@
   },
   "f47a0fe3ff": {
     "text": "«‹Man sieht vom Schiff aus, dass dieser Lösungsansatz nicht funktioniert›, meint der Jagdinspektor.»",
-    "translation": null,
+    "translation": "\"'One can see from the ship that this approach doesn't work,' says the hunting inspector.\"",
     "source": "wiktionary",
     "lemmas": [
       "vom Schiff aus"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sieht",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schiff",
+        "lemma": "Schiff",
+        "pos": "noun",
+        "gloss_hint": "ship"
+      },
+      {
+        "form": "Lösungsansatz",
+        "lemma": "Lösungsansatz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "funktioniert",
+        "lemma": "funktionieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "meint",
+        "lemma": "meinen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jagdinspektor",
+        "lemma": "Jagdinspektor",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "f47a4a4c65": {
@@ -11182,11 +11500,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "betray one's ideals",
     "source": "wiktionary",
     "lemmas": [
       "verkaufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f47a858e69": {
     "text": "„Oliver Gerber heisst eigentlich anders. Weil die Familie seiner Partnerin in China lebt und mit Repressionen rechnet, wenn sein Name in der Zeitung steht, möchte er anonym bleiben.“",
@@ -11418,11 +11737,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not for all the money in the world",
     "source": "wiktionary",
     "lemmas": [
       "Gold"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f47cfce596": {
     "text": "„Nach der Währungsreform vom Juni 1948 konnten sie es sich leisten, ihre Industrie auf das modernste neu auszurüsten.“",
@@ -11809,11 +12129,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I wandered alone through the forest.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f480710dbc": {
     "text": "So weit westlich wie hier wart ihr noch nie, oder?",
@@ -12273,11 +12594,12 @@
     "type": "expression",
     "note": "perfektionistisch, erbsenzählerisch, überkorrekt, übergenau, haarspalterisch sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "split hairs",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f48526731a": {
     "text": "Das deutsche Reinheitsgebot ist die Basis für die Qualität der deutschen Biere.",
@@ -13527,11 +13849,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm not familiar with this expression.",
     "source": "wiktionary",
     "lemmas": [
       "Ausdruck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f4913b0dec": {
     "text": "„Ich hatte plötzlich am linken Handballen ein wenig Scheiße.“",
@@ -14047,12 +14370,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone has lost their advantage",
     "source": "wiktionary",
     "lemmas": [
       "Brot",
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f493a2203c": {
     "text": "„Während im vergangenen Jahr insgesamt 60 gewilderte Nashörner gezählt wurden, haben die beiden jüngsten Fälle die Zahl im laufenden Jahr auf 26 steigen lassen.“",
@@ -14245,11 +14569,12 @@
     "type": "expression",
     "note": "dagegen ist nicht anzukommen",
     "synonyms": [],
-    "translation": null,
+    "translation": "there's no cure for that",
     "source": "wiktionary",
     "lemmas": [
       "Kraut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f495ac2f97": {
     "text": "„Nach Eintritt in die Tagesordnung kann ein Gegenstand nicht mehr von der Tagesordnung abgesetzt werden, über eine allfällige »Vertagung« entscheidet der Prüfungsausschuss.“",
@@ -14443,13 +14768,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "from cradle to grave",
     "source": "wiktionary",
     "lemmas": [
       "Wiege",
       "Bahre"
     ],
-    "ref": "phrases/von der Wiege bis zur Bahre"
+    "ref": "phrases/von der Wiege bis zur Bahre",
+    "translation_model": "openai/gpt-4.1"
   },
   "f498019de8": {
     "text": "Ich verliebte mich sofort in sie, weil sie so lieblich lächelte.",
@@ -16463,11 +16789,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to report someone without taking them into custody",
     "source": "wiktionary",
     "lemmas": [
       "anzeigen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f4aaf7fbe8": {
     "text": "Mehrzellige Lebewesen haben sich aus Einzellern entwickelt.",
@@ -16992,11 +17319,12 @@
     "type": "expression",
     "note": "sich grob irren",
     "synonyms": [],
-    "translation": null,
+    "translation": "to make a huge mistake",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f4b14b2272": {
     "text": "Wir sind wegen des Unwetters ebenso schockiert wie ihr.",
@@ -17297,18 +17625,60 @@
   },
   "f4b2571d60": {
     "text": "„Doch erst musst man sie an der langen Leine lassen, ein bisschen im eigenen Saft schmoren lassen.“",
-    "translation": null,
+    "translation": "\"But first you have to let them off the leash for a while, let them stew in their own juices a bit.\"",
     "source": "wiktionary",
     "lemmas": [
       "jemanden im eigenen Saft schmoren lassen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "lassen",
+        "lemma": "lassen",
+        "pos": "verb",
+        "gloss_hint": "allow"
+      },
+      {
+        "form": "Leine",
+        "lemma": "Leine",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Saft",
+        "lemma": "Saft",
+        "pos": "noun",
+        "gloss_hint": "juice"
+      }
     ]
   },
   "f4b2c41ad4": {
     "text": "Dieses Musikstück ist in der Tonart b geschrieben.",
-    "translation": null,
+    "translation": "This musical piece is written in the key of B flat.",
     "source": "wiktionary",
     "lemmas": [
       "b"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Musikstück",
+        "lemma": "Musikstück",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tonart",
+        "lemma": "Tonart",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geschrieben",
+        "lemma": "schreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "f4b32ec1ca": {
@@ -17700,12 +18070,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be drunk",
     "source": "wiktionary",
     "lemmas": [
       "Krone"
     ],
-    "ref": "phrases/einen in der Krone haben"
+    "ref": "phrases/einen in der Krone haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "f4bca192cf": {
     "text": "„Eins, zwei, drei, sagte sich Gerd Brendel traf gleich drei Doppelgänger des Alten Fritz.“",
@@ -18325,11 +18696,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "from the very highest authority",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f4c29a34aa": {
     "text": "„Ein echtes Hindernis für seine Abreise war die Schwierigkeit, einen Paß zu bekommen.“",
@@ -18628,11 +19000,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You can't sail without water.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f4c4f41280": {
     "text": "„Also nimm Dir Zeit wie dort am Spreetshoogte-Pass und net nich so hastach ins neue Jahr einsteigen.“",
@@ -19282,22 +19655,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to throw something on the scrap heap",
     "source": "wiktionary",
     "lemmas": [
       "Eisen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f4cb6891b9": {
     "text": "Mitarbeiter",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "employees are a company's greatest asset",
     "source": "wiktionary",
     "lemmas": [
       "tanzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f4cbb21207": {
     "text": "Jemand erzählt einen schlechten Witz. Darauf reagiert eine andere Person mit Ironie: „Sehr witzig!“",
@@ -19568,11 +19943,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "so that the house may be filled",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f4cd102310": {
     "text": "Die Kinder sind heute besonders albern.",
@@ -19788,11 +20164,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to strain your stomach",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f4d1d17f9f": {
     "text": "„So wurde Sphenodon ähnlich wie Quastenflosser, Schnabeltier und Tempelbaum in den exklusiven Kreis lebender Fossilien aufgenommen.“",
@@ -20000,11 +20377,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to walk right into a trap",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f4d77e7127": {
     "text": "„Mit seiner druckvollen Vorhand dominierte der Russe die Partie, Haas fand darauf keine Antwort, spielte häufig zu kurz und unpräzise und schlug schlecht auf.“",
@@ -22364,6 +22742,41 @@
       "annotations": "dcbb90c1"
     }
   },
+  "f4eef25fa5": {
+    "text": "Mutter: „Guck mal, was für ein süsser Hund! Was macht der?“ Tochter: „wau, wau!“",
+    "translation": "Mother: \"Look, what a sweet dog! What is it doing?\" Daughter: \"Woof, woof!\"",
+    "source": "wiktionary",
+    "lemmas": [
+      "wau, wau"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mutter",
+        "lemma": "Mutter",
+        "pos": "noun",
+        "gloss_hint": "mother"
+      },
+      {
+        "form": "Hund",
+        "lemma": "Hund",
+        "pos": "noun",
+        "gloss_hint": "dog"
+      },
+      {
+        "form": "macht",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "do"
+      },
+      {
+        "form": "Tochter",
+        "lemma": "Tochter",
+        "pos": "noun",
+        "gloss_hint": "daughter"
+      }
+    ]
+  },
   "f4ef12b61f": {
     "text": "„Der Weißabgleich erfolgt erst bei der Konvertierung oder bei der Bearbeitung der Bilder am Computer.“",
     "translation": "White balance is only adjusted during conversion or when editing the images on the computer.",
@@ -23311,13 +23724,14 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "slow and steady wins the race",
     "source": "wiktionary",
     "lemmas": [
       "Kraft",
       "Ruhe"
     ],
-    "ref": "phrases/in der Ruhe liegt die Kraft"
+    "ref": "phrases/in der Ruhe liegt die Kraft",
+    "translation_model": "openai/gpt-4.1"
   },
   "f4f556d1e0": {
     "text": "„Die Jugendlichen sprechen mehr übereinander als miteinander, und es entstehen Missverständnisse, die man vis-a-vis nicht gehabt hat.“",
@@ -24288,13 +24702,14 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "necessity is the mother of invention",
     "source": "wiktionary",
     "lemmas": [
       "machen",
       "Not"
     ],
-    "ref": "phrases/Not macht erfinderisch"
+    "ref": "phrases/Not macht erfinderisch",
+    "translation_model": "openai/gpt-4.1"
   },
   "f4fdcc2469": {
     "text": "Die Wikimedia Deutschland betonte in ihrer Stellungnahme, dass sie nicht die deutsche Wikipedia unterhält.",

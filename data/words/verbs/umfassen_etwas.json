@@ -3,44 +3,74 @@
   "pos": "verb",
   "etymology_number": null,
   "auxiliary": "haben",
-  "separable": true,
-  "prefix": "um",
+  "separable": false,
+  "prefix": null,
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "etwas anders fassen, anders anfassen, nachfassen",
-      "gloss_en": "grasp",
+      "gloss": "etwas umgreifen, umfangen, umgeben",
+      "gloss_en": "embrace",
       "tags": [],
       "example_ids": [
-        "5ddaa1cd34"
+        "ac25c59025",
+        "d9fd6f0160"
       ],
       "synonyms": [
-        "umgreifen"
+        "umarmen",
+        "umschlingen"
       ],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To grasp something differently or anew",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_full": "To grasp, surround, or encircle something.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini",
+      "gloss_en_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "etwas einschliessen, beinhalten, enthalten",
+      "gloss_en": "include",
+      "tags": [
+        "figurative"
+      ],
+      "example_ids": [
+        "2653c29cd8"
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_full": "To include, comprise, or contain something.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini",
+      "gloss_en_model": "openai/gpt-4.1-mini"
     }
   ],
   "sounds": [
     {
-      "ipa": "[ˈʊmˌfasn̩]",
+      "ipa": "[ʊmˈfasn̩]",
       "tags": []
     }
   ],
   "conjugation_class": "weak",
   "stems": {
-    "present": "fass",
+    "present": "umfass",
     "past": ""
   },
-  "past_participle": "umgefasst",
+  "past_participle": "umfasst",
+  "_derived": [
+    "umfassend"
+  ],
   "_synonyms": [
-    "umgreifen"
+    "umarmen",
+    "umschlingen"
   ],
   "_meta": {
-    "source_hash": "e00d069d502360d1",
-    "generated_at": "2026-03-21"
+    "source_hash": "e82b3f551fa3b078",
+    "generated_at": "2026-03-23"
   },
-  "zipf": 3.4
+  "zipf": 3.4,
+  "_orphaned_translations": [
+    {
+      "gloss": "etwas anders fassen, anders anfassen, nachfassen",
+      "gloss_en": "grasp",
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To grasp something differently or anew",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+    }
+  ]
 }

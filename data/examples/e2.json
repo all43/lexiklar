@@ -340,14 +340,12 @@
     "type": "expression",
     "note": "ursprünglich im Sinne von: »eine Latte aus einem Zaun brechen und so den (Grenz-)Streit beginnen« - sich mutwillig verhalten, sich streitsüchtig verhalten (umgangssprachlich)",
     "synonyms": [],
-    "translation": null,
+    "translation": "pick a fight",
     "source": "wiktionary",
     "lemmas": [
       "brechen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e2044e266b": {
     "text": "In meinem Herzen haust nur du.",
@@ -378,14 +376,12 @@
     "type": "expression",
     "note": "…",
     "synonyms": [],
-    "translation": null,
+    "translation": "one at a time",
     "source": "wiktionary",
     "lemmas": [
       "schön"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e205a3a0ba": {
     "text": "„In Anbetracht von Ernests Ego und aufbrausender Art und Gertrudes Intoleranz gegenüber jedem, der es wagte, ihr zu widersprechn, war es nur eine Frage der Zeit gewesen.“",
@@ -781,22 +777,24 @@
     "type": "expression",
     "note": "ihn finanziell ausplündern, ihm alles wegnehmen",
     "synonyms": [],
-    "translation": null,
+    "translation": "strip someone of everything",
     "source": "wiktionary",
     "lemmas": [
       "Hemd"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e20dec14c2": {
     "text": "etwas tragisch nehmen",
     "type": "expression",
     "note": "etwas zu ernst, etwas zu sehr zu Herzen nehmen",
     "synonyms": [],
-    "translation": null,
+    "translation": "take something too seriously",
     "source": "wiktionary",
     "lemmas": [
       "tragisch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e20efcefa1": {
     "text": "„Von so einer Torlawine war Rapid weit entfernt, solche Sternstunden passieren nur alle heiligen Zeiten. Zuletzt trennten sich die beiden ‚Giganten‘ in Wien mit 2:2.“",
@@ -1436,11 +1434,12 @@
     "type": "expression",
     "note": "ein Verzweiflungsakt",
     "synonyms": [],
-    "translation": null,
+    "translation": "act of desperation",
     "source": "wiktionary",
     "lemmas": [
       "Akt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e2185d8c96": {
     "text": "Ich könnte mich wegschmeißen vor Lachen. Der Fee sieht einfach zu köstlich aus.",
@@ -1586,11 +1585,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be out of control",
     "source": "wiktionary",
     "lemmas": [
       "Band"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e21c1b4064": {
     "text": "Es ist eine Wonne, den frisch geduschten Ueli unter der Bettdecke zu wissen.",
@@ -1910,12 +1910,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "break someone's spirit",
     "source": "wiktionary",
     "lemmas": [
       "Rückgrat"
     ],
-    "ref": "phrases/das Rückgrat brechen"
+    "ref": "phrases/das Rückgrat brechen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e2256df3da": {
     "text": "„Ich erzählte ihr alles, was ich von ihrer Schwester wußte, und versprach ihr, nach Turin zu schreiben, um ihren jetzigen Aufenthaltsort zu erfahren und ihn ihr dann mitzuteilen.“",
@@ -2117,11 +2118,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "talk without thinking",
     "source": "wiktionary",
     "lemmas": [
       "Bauch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e228ee03bd": {
     "text": "Welchen Zweck soll es haben, dass wir seit Stunden in der Hitze umherlaufen?",
@@ -2245,18 +2247,40 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be under the weather",
     "source": "wiktionary",
     "lemmas": [
       "Damm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e22cacefb2": {
     "text": "Diese Neuerung konnte sich bei unseren Kunden nicht durchsetzen.",
-    "translation": null,
+    "translation": "This innovation failed to gain acceptance with our customers.",
     "source": "wiktionary",
     "lemmas": [
       "durchsetzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Neuerung",
+        "lemma": "Neuerung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "durchsetzen",
+        "lemma": "durchsetzen",
+        "pos": "verb",
+        "gloss_hint": "gain acceptance"
+      },
+      {
+        "form": "Kunden",
+        "lemma": "Kunde",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e22d8d61df": {
@@ -2654,6 +2678,35 @@
     ],
     "text_linked": "Dieser [[Zug|nouns/Zug#1]] hat aus Sicherheitsgründen sogar zwei [[Loks|nouns/Lok]]."
   },
+  "e230599788": {
+    "text": "„»Inschallah,« sagte der Kalif zu sich selbst, »ich werde endlich doch noch mit Dir quitt werden.«“",
+    "translation": "\"'God willing,' the caliph said to himself, 'I will finally be even with you at last.'\"",
+    "source": "wiktionary",
+    "lemmas": [
+      "inschallah"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Inschallah",
+        "lemma": "Inschallah",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kalif",
+        "lemma": "Kalif",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "quitt",
+        "lemma": "quitt",
+        "pos": "adjective",
+        "gloss_hint": "debt-free"
+      }
+    ]
+  },
   "e2307df2f2": {
     "text": "Durch eine geschickte Wortwahl kann man harsche Kritik wie ein Lob aussehen lassen.",
     "translation": "With skillful choice of words, one can make harsh criticism look like praise.",
@@ -2701,11 +2754,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I bear no grudge, even if my heart breaks.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e23140168b": {
     "text": "„An dem Foto des Klosterfensters wird deutlich, dass der Baumeister unter anderem vor dem Problem stand, das Pentagramm in ein rundes Fenster einzubauen. Dafür musste er zuerst ein regelmäßiges Fünfeck, ein sogenanntes Pentagon konstruieren.“",
@@ -3077,14 +3131,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Something casts a long shadow ahead of it.",
     "source": "wiktionary",
     "lemmas": [
       "werfen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e236022663": {
     "text": "Es gibt mehrere Anwärterinnen für den Abteilungsleiterposten.",
@@ -3321,14 +3373,12 @@
     "type": "expression",
     "note": "in seinem Verhalten beziehungsweise Tun wenig Überlegung zeigend äußern",
     "synonyms": [],
-    "translation": null,
+    "translation": "to act as if one had swallowed a dictionary of stupidity",
     "source": "wiktionary",
     "lemmas": [
       "fressen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e23ba68a0c": {
     "text": "„Selbst dem vielseitigsten, begabtesten und einsatzbereitesten Kandidaten müssen Zweifel kommen, ob er diese Fülle verschiedener Aufgaben und Ämter je bewältigen kann. “",
@@ -3462,10 +3512,73 @@
   },
   "e23c4ff040": {
     "text": "„Nachdem bereits das Land Niedersachsen und die Sparkassen angekündigt haben, die angeschlagene Norddeutsche Landesbank (Nord/LB) retten zu wollen, wird nun offenbar auch das Land Sachsen-Anhalt – ebenfalls Anteilseigner – seinen Beitrag leisten.“",
-    "translation": null,
+    "translation": "\"After the state of Lower Saxony and the savings banks have already announced they want to rescue the troubled Norddeutsche Landesbank (Nord/LB), it now appears that the state of Saxony-Anhalt – also a shareholder – will also make its contribution.\"",
     "source": "wiktionary",
     "lemmas": [
       "seinen Beitrag leisten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Land",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": "state"
+      },
+      {
+        "form": "Niedersachsen",
+        "lemma": "Niedersachsen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sparkassen",
+        "lemma": "Sparkasse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "angekündigt",
+        "lemma": "ankündigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "retten",
+        "lemma": "retten",
+        "pos": "verb",
+        "gloss_hint": "rescue"
+      },
+      {
+        "form": "Norddeutsche Landesbank",
+        "lemma": "Norddeutsche Landesbank",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sachsen-Anhalt",
+        "lemma": "Sachsen-Anhalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anteilseigner",
+        "lemma": "Anteilseigner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beitrag",
+        "lemma": "Beitrag",
+        "pos": "noun",
+        "gloss_hint": "contribution"
+      },
+      {
+        "form": "leisten",
+        "lemma": "leisten",
+        "pos": "verb",
+        "gloss_hint": "perform"
+      }
     ]
   },
   "e23d160717": {
@@ -4190,10 +4303,31 @@
   },
   "e2439df856": {
     "text": "Der RE 4 verspätet sich um 5 Minuten.",
-    "translation": null,
+    "translation": "The RE 4 is running 5 minutes late.",
     "source": "wiktionary",
     "lemmas": [
       "RE"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "RE 4",
+        "lemma": "RE 4",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verspätet",
+        "lemma": "verspäten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Minuten",
+        "lemma": "Minute",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e243df6f6a": {
@@ -4475,10 +4609,31 @@
   },
   "e245876ff4": {
     "text": "Du schon wieder die Tagschicht und ich hab wieder die Nachtschicht. Da hab ich ja wohl wieder mal den Kürzeren gezogen!",
-    "translation": null,
+    "translation": "You've got the day shift again and I've got the night shift again. So I've drawn the short straw again!",
     "source": "wiktionary",
     "lemmas": [
       "den Kürzeren ziehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tagschicht",
+        "lemma": "Tagschicht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nachtschicht",
+        "lemma": "Nachtschicht",
+        "pos": "noun",
+        "gloss_hint": "night shift"
+      },
+      {
+        "form": "Kürzeren",
+        "lemma": "Kürzerer",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e245eb199a": {
@@ -4988,11 +5143,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to tell someone what you really think",
     "source": "wiktionary",
     "lemmas": [
       "Meinung"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e24eb82228": {
     "text": "Der Erfolg der Sanierung [des Erdbodens] muss mit geeigneten Messverfahren nachgewiesen werden, evtl. mit wiederkehrenden Messungen (z. B. die dauerhafte Wirksamkeit der Sicherung).",
@@ -5680,10 +5836,37 @@
   },
   "e25da7b113": {
     "text": "Der Wagen mit dem amtlichen Kennzeichen FR-XY-123 wird gerade abgeschleppt.",
-    "translation": null,
+    "translation": "The car with the official license plate FR-XY-123 is being towed away right now.",
     "source": "wiktionary",
     "lemmas": [
       "FR"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wagen",
+        "lemma": "Wagen",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "amtlichen",
+        "lemma": "amtlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kennzeichen",
+        "lemma": "Kennzeichen",
+        "pos": "noun",
+        "gloss_hint": "license plate"
+      },
+      {
+        "form": "abgeschleppt",
+        "lemma": "abschleppen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "e25ef8e6fc": {
@@ -6420,11 +6603,13 @@
   },
   "e26abc9861": {
     "text": "Zu seinem Junggesellenabschied kippten sie sich einen hinter die Binde.",
-    "translation": null,
+    "translation": "At his bachelor party, they drank heavily.",
     "source": "wiktionary",
     "lemmas": [
       "sich einen hinter die Binde kippen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "e26b1280aa": {
     "text": "„Im Jemen gibt es immer wieder Entführung westlicher Bürger.“",
@@ -6467,11 +6652,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Here we go!",
     "source": "wiktionary",
     "lemmas": [
       "abgehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e26bd2d852": {
     "text": "„Je nach Brotart und gewünschtem Look wird der Teig für die Stückgare entweder mit dem Schluss nach oben oder mit dem Schluss nach unten auf dem Backpapier, dem Bäckerleinen oder im Gärkorb platziert.“",
@@ -6625,11 +6811,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I am a free man and I sing.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e270179786": {
     "text": "„Ihr Verhalten verriet weder Mitleid noch Mitgefühl.“",
@@ -6760,11 +6947,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A good rope is worth as much as a light rain.",
     "source": "wiktionary",
     "lemmas": [
       "Tau"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e2729c8ec9": {
     "text": "Mit dem Clavichord, einem frühen Vorgänger des Klaviers, tourte er durch Deutschland und genoss die Gunst des Augenblicks, wenn auch hin und wieder nur vor drei Zuhörern.",
@@ -7184,22 +7372,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "old jalopy",
     "source": "wiktionary",
     "lemmas": [
       "Eimer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e27bc0abe8": {
     "text": "Schere zwischen Arm und Reich",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "gap between rich and poor",
     "source": "wiktionary",
     "lemmas": [
       "Schere"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e27c291478": {
     "text": "„Pannella berief eine Pressekonferenz ein, innerhalb derer er den Journalisten mitteilte, daß er nicht bereit sei, das Band, wie von den Terroristen gewünscht, im Fernsehen abzuspielen. Lautstark gab Pannella in der Konferenz seinen Unmut über das ‚barbarische Verhalten‘ der Terroristen kund, das Band sollte man innerhalb von vierundzwanzig Stunden nach der Freilassung oder dem Tod Cirillos senden lassen, damit ‚alle lesen und verstehen sollen‘.“",
@@ -7487,11 +7677,12 @@
     "type": "expression",
     "note": "strafen, züchtigen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to kick someone's ass",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e281d5633b": {
     "text": "„Stundenlang donnern die Wagen über Ebenen, auf denen scharfkantige Steine verstreut liegen.“",
@@ -7623,10 +7814,73 @@
   },
   "e283ca57cc": {
     "text": "„Im Verlauf der Lektüre möchte man ihm wiederholt zurufen: Wohl ’nen Clown gefrühstückt, so penetrant witzelt sich Schatte durch die Seiten, fast jeder Satz ist mit Wortspielen, ulkigen Metaphern oder Kalauern gespickt.“",
-    "translation": null,
+    "translation": "\"In the course of reading, one wants to repeatedly call out to him: Well, must have had a clown for breakfast, the way Schatte jokes so persistently through the pages, almost every sentence is packed with puns, funny metaphors, or corny jokes.\"",
     "source": "wiktionary",
     "lemmas": [
       "einen Clown gefrühstückt haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verlauf",
+        "lemma": "Verlauf",
+        "pos": "noun",
+        "gloss_hint": "sequence"
+      },
+      {
+        "form": "Lektüre",
+        "lemma": "Lektüre",
+        "pos": "noun",
+        "gloss_hint": "reading"
+      },
+      {
+        "form": "Clown",
+        "lemma": "Clown",
+        "pos": "noun",
+        "gloss_hint": "clown"
+      },
+      {
+        "form": "gefrühstückt",
+        "lemma": "frühstücken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "witzelt",
+        "lemma": "witzeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Satz",
+        "lemma": "Satz",
+        "pos": "noun",
+        "gloss_hint": "sentence"
+      },
+      {
+        "form": "Wortspielen",
+        "lemma": "Wortspiel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Metaphern",
+        "lemma": "Metapher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kalauern",
+        "lemma": "Kalauer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gespickt",
+        "lemma": "spicken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "e285e557d8": {
@@ -7944,18 +8198,82 @@
     "type": "expression",
     "note": "einen Kontakt trotz Schwierigkeiten aufrecht erhalten, im Gespräch bleiben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep the conversation going",
     "source": "wiktionary",
     "lemmas": [
       "abreißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e28c6e81c2": {
     "text": "Mit Blick auf die mutmaßlichen russischen Cyberattacken im amerikanischen Wahlkampf prangerte der prominente republikanische US-Senator John McCain einen „Tiefpunkt in der Geschichte der amerikanischen Präsidentschaft“ an.",
-    "translation": null,
+    "translation": "With regard to the alleged Russian cyberattacks in the American election campaign, prominent Republican US Senator John McCain denounced a \"low point in the history of the American presidency.\"",
     "source": "wiktionary",
     "lemmas": [
       "mit Blick auf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Blick",
+        "lemma": "Blick",
+        "pos": "noun",
+        "gloss_hint": "view"
+      },
+      {
+        "form": "mutmaßlichen",
+        "lemma": "mutmaßlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Cyberattacken",
+        "lemma": "Cyberattacke",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wahlkampf",
+        "lemma": "Wahlkampf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "prangerte",
+        "lemma": "anprangern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "prominente",
+        "lemma": "prominent",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Senator",
+        "lemma": "Senator",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tiefpunkt",
+        "lemma": "Tiefpunkt",
+        "pos": "noun",
+        "gloss_hint": "low point"
+      },
+      {
+        "form": "Geschichte",
+        "lemma": "Geschichte",
+        "pos": "noun",
+        "gloss_hint": "history"
+      },
+      {
+        "form": "Präsidentschaft",
+        "lemma": "Präsidentschaft",
+        "pos": "noun",
+        "gloss_hint": "presidency"
+      }
     ]
   },
   "e28cad5d9c": {
@@ -8078,10 +8396,31 @@
   },
   "e28fb52045": {
     "text": "Geeigneter wären Orangen, Mandarinen o.Ä.",
-    "translation": null,
+    "translation": "Oranges, mandarins, or similar would be more suitable.",
     "source": "wiktionary",
     "lemmas": [
       "o."
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geeigneter",
+        "lemma": "geeignet",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Orangen",
+        "lemma": "Orange",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mandarinen",
+        "lemma": "Mandarine",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e29035e209": {
@@ -8321,10 +8660,49 @@
   },
   "e291e843bf": {
     "text": "„[Augentropfen] sollten handwarm sein und nach Anbruch der Packung innerhalb von 6 Wochen verbraucht werden.“",
-    "translation": null,
+    "translation": "\"[Eye drops] should be at body temperature and should be used within 6 weeks of opening the package.\"",
     "source": "wiktionary",
     "lemmas": [
       "Anbruch"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Augentropfen",
+        "lemma": "Augentropfen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "handwarm",
+        "lemma": "handwarm",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anbruch",
+        "lemma": "Anbruch",
+        "pos": "noun",
+        "gloss_hint": "opening"
+      },
+      {
+        "form": "Packung",
+        "lemma": "Packung",
+        "pos": "noun",
+        "gloss_hint": "package"
+      },
+      {
+        "form": "Wochen",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verbraucht",
+        "lemma": "verbrauchen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "e29269a65b": {
@@ -9485,11 +9863,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have the grace",
     "source": "wiktionary",
     "lemmas": [
       "Gnade"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e2a3fbdb7f": {
     "text": "Mit zusätzlichen Schwierigkeiten würde ich da nicht rechnen.",
@@ -11108,11 +11487,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to turn red (in the face)",
     "source": "wiktionary",
     "lemmas": [
       "rot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e2bb7a1522": {
     "text": "Die Geschworenen haben ihr Urteil längst gefällt.",
@@ -11393,12 +11773,13 @@
     "type": "expression",
     "note": "sicher unterbringen, abschließen",
     "synonyms": [],
-    "translation": null,
+    "translation": "in the bag",
     "source": "wiktionary",
     "lemmas": [
       "Fach"
     ],
-    "ref": "phrases/unter Dach und Fach"
+    "ref": "phrases/unter Dach und Fach",
+    "translation_model": "openai/gpt-4.1"
   },
   "e2c2f15ae5": {
     "text": "„Nun ist aber das Bewußtsein Träger des Denkens. Wollte das Denken ein Nicht-Bewußtsein denken, entzöge es sich seine Grundlage.“",
@@ -11523,11 +11904,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Blind zeal does more harm than good.",
     "source": "wiktionary",
     "lemmas": [
       "blind"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e2c4218ef6": {
     "text": "„Sein Beruf ist ungemein nützlich und skandalös unmenschlich.“",
@@ -12459,11 +12841,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I did what I couldn't help doing.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e2d1911067": {
     "text": "Nach drei Wochen konnte die Quarantäne wieder aufgehoben werden.",
@@ -12982,11 +13365,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be the weakest link in the chain",
     "source": "wiktionary",
     "lemmas": [
       "Kette"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e2da1abd46": {
     "text": "Seine Bestimmung ist es, Polizist zu werden.",
@@ -13547,24 +13931,26 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take heart",
     "source": "wiktionary",
     "lemmas": [
       "Mut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e2e358fac9": {
     "text": "die Ruhe vor dem Sturm",
     "type": "expression",
     "note": "etwas Schlimmes wird erwartet / etwas (Un-)Erwartetes mit heftiger Auswirkung wird möglicherweise eintreffen",
     "synonyms": [],
-    "translation": null,
+    "translation": "the calm before the storm",
     "source": "wiktionary",
     "lemmas": [
       "Sturm",
       "Ruhe"
     ],
-    "ref": "phrases/die Ruhe vor dem Sturm"
+    "ref": "phrases/die Ruhe vor dem Sturm",
+    "translation_model": "openai/gpt-4.1"
   },
   "e2e3b1023d": {
     "text": "„Ich wohne in einem Funkloch, da bin ich per Handy nicht erreichbar.“",
@@ -13706,14 +14092,12 @@
       "eitler",
       "Mann"
     ],
-    "translation": null,
+    "translation": "old rooster",
     "source": "wiktionary",
     "lemmas": [
       "alt"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e2e5c369c5": {
     "text": "Mein Hobby ist Fußballspielen.",
@@ -14596,12 +14980,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to decide to do something",
     "source": "wiktionary",
     "lemmas": [
       "Auge"
     ],
-    "ref": "phrases/etwas ins Auge fassen"
+    "ref": "phrases/etwas ins Auge fassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e2f0aafd57": {
     "text": "„Zusätzlich zum Studium sieht man die Notwendigkeit, den Studierenden auch Angebote für ihre spirituelle und ‚ganzheitliche‘ Formation zu machen.“",
@@ -15065,10 +15450,31 @@
   },
   "e2f68565ec": {
     "text": "Er hat Geld in Hülle und Fülle.",
-    "translation": null,
+    "translation": "He has money in abundance.",
     "source": "wiktionary",
     "lemmas": [
       "in Hülle und Fülle"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geld",
+        "lemma": "Geld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hülle",
+        "lemma": "Hülle",
+        "pos": "noun",
+        "gloss_hint": "cover"
+      },
+      {
+        "form": "Fülle",
+        "lemma": "Fülle",
+        "pos": "noun",
+        "gloss_hint": "abundance"
+      }
     ]
   },
   "e2f768efde": {

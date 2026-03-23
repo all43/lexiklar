@@ -3,23 +3,52 @@
   "pos": "verb",
   "etymology_number": null,
   "auxiliary": "haben",
-  "separable": true,
-  "prefix": "unter",
+  "separable": false,
+  "prefix": null,
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "etwas real und praktisch unter jemanden oder etwas legen",
-      "gloss_en": "place under",
+      "gloss": "etwas durch etwas ergänzen",
+      "gloss_en": "supplement",
       "tags": [
-        "transitive",
-        "with-dative"
+        "transitive"
       ],
       "example_ids": [
-        "2b7009610d",
-        "e4d1d27bfd"
+        "b4abe263ad",
+        "27961cf2d3"
       ],
       "synonyms": [],
       "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "To supplement something with something else",
+      "gloss_en_full_model": "openai/gpt-4.1-mini"
+    }
+  ],
+  "sounds": [
+    {
+      "ipa": "[ˌʊntɐˈleːɡn̩]",
+      "tags": []
+    }
+  ],
+  "conjugation_class": "weak",
+  "stems": {
+    "present": "unterleg",
+    "past": ""
+  },
+  "past_participle": "unterlegt",
+  "_derived": [
+    "Unterlage",
+    "Unterlegung"
+  ],
+  "_meta": {
+    "source_hash": "e106b628fc977b33",
+    "generated_at": "2026-03-23"
+  },
+  "zipf": 3.39,
+  "_orphaned_translations": [
+    {
+      "gloss": "etwas real und praktisch unter jemanden oder etwas legen",
+      "gloss_en": "place under",
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To place something physically and practically beneath someone or something",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -29,36 +58,6 @@
         "set below"
       ],
       "synonyms_en_model": "openai/gpt-4.1-mini"
-    }
-  ],
-  "sounds": [
-    {
-      "ipa": "[ˈʊntɐˌleːɡn̩]",
-      "tags": []
-    }
-  ],
-  "conjugation_class": "weak",
-  "stems": {
-    "present": "leg",
-    "past": ""
-  },
-  "past_participle": "untergelegt",
-  "_derived": [
-    "Unterlegung",
-    "Unterlegscheibe"
-  ],
-  "_meta": {
-    "source_hash": "efd911c3a68d433c",
-    "generated_at": "2026-03-21"
-  },
-  "zipf": 3.39,
-  "_orphaned_translations": [
-    {
-      "gloss": "etwas durch etwas ergänzen",
-      "gloss_en": "supplement",
-      "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To supplement something with something else",
-      "gloss_en_full_model": "openai/gpt-4.1-mini"
     }
   ]
 }

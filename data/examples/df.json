@@ -572,10 +572,85 @@
   },
   "df058a2494": {
     "text": "„Die böse Geschichte mit dem abgeschnittenen Ohr ist rätselhaft. Warum hat Van Gogh zum Rasiermesser gegriffen und sich selbst verstümmelt? Doch noch rätselhafter ist die Frage, warum er sich später auch noch eine Kugel in den Leib geschossen hat - am 27. Juli 1890.“",
-    "translation": null,
+    "translation": "\"The dark story of the severed ear is mysterious. Why did Van Gogh reach for a razor and mutilate himself? But even more mysterious is the question of why he later shot himself in the body—on July 27, 1890.\"",
     "source": "wiktionary",
     "lemmas": [
       "rätselhaft"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "böse",
+        "lemma": "böse",
+        "pos": "adjective",
+        "gloss_hint": "evil"
+      },
+      {
+        "form": "Geschichte",
+        "lemma": "Geschichte",
+        "pos": "noun",
+        "gloss_hint": "story"
+      },
+      {
+        "form": "abgeschnittenen",
+        "lemma": "abschneiden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ohr",
+        "lemma": "Ohr",
+        "pos": "noun",
+        "gloss_hint": "ear"
+      },
+      {
+        "form": "rätselhaft",
+        "lemma": "rätselhaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frage",
+        "lemma": "Frage",
+        "pos": "noun",
+        "gloss_hint": "question"
+      },
+      {
+        "form": "gegriffen",
+        "lemma": "greifen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rasiermesser",
+        "lemma": "Rasiermesser",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verstümmelt",
+        "lemma": "verstümmeln",
+        "pos": "verb",
+        "gloss_hint": "mutilated"
+      },
+      {
+        "form": "Kugel",
+        "lemma": "Kugel",
+        "pos": "noun",
+        "gloss_hint": "bullet"
+      },
+      {
+        "form": "Leib",
+        "lemma": "Leib",
+        "pos": "noun",
+        "gloss_hint": "body"
+      },
+      {
+        "form": "geschossen",
+        "lemma": "schießen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "df05ca5f5f": {
@@ -1770,22 +1845,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in the wrong place",
     "source": "wiktionary",
     "lemmas": [
       "Fleck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df1aa491bc": {
     "text": "die Gebühr gebührt dem, der sie gebührt",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The fee goes to the one who deserves it.",
     "source": "wiktionary",
     "lemmas": [
       "Gebühr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df1b0da676": {
     "text": "„Seine millionenschweren Manipulationen werteten die Staatsanwälte in ihrem Plädoyer jedenfalls nicht als organisierte Kriminalität, sondern als dreistes Bubenstück.“",
@@ -2131,11 +2208,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "look like a mess",
     "source": "wiktionary",
     "lemmas": [
       "aussehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df212ebb20": {
     "text": "Auf dem Kongress war alles vertreten, was Rang und Namen hat.",
@@ -2259,10 +2337,67 @@
   },
   "df22dc5b93": {
     "text": "In einem Zeitungsbericht der Tageszeitung Mainichi shinbun war zu lesen, dass es sich bei der „Handysprache“ besonders bei der jüngeren Generation um eine Art „Tippsprache“ handelt, nach dem Motto „Bis der Daumen schwillt!“.",
-    "translation": null,
+    "translation": "In a newspaper report in the daily newspaper Mainichi shinbun, it was stated that \"mobile phone language,\" particularly among the younger generation, is a kind of \"typing language,\" according to the motto \"Until your thumb swells!\"",
     "source": "wiktionary",
     "lemmas": [
       "schwellen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zeitungsbericht",
+        "lemma": "Zeitungsbericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tageszeitung",
+        "lemma": "Tageszeitung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lesen",
+        "lemma": "lesen",
+        "pos": "verb",
+        "gloss_hint": "read"
+      },
+      {
+        "form": "Handysprache",
+        "lemma": "Handysprache",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Generation",
+        "lemma": "Generation",
+        "pos": "noun",
+        "gloss_hint": "generation"
+      },
+      {
+        "form": "Art",
+        "lemma": "Art",
+        "pos": "noun",
+        "gloss_hint": "kind"
+      },
+      {
+        "form": "Tippsprache",
+        "lemma": "Tippsprache",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Daumen",
+        "lemma": "Daumen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwillt",
+        "lemma": "schwellen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "df236dbcdc": {
@@ -2393,11 +2528,12 @@
     "type": "expression",
     "note": "im Augenblick kein Geld haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "be short on cash",
     "source": "wiktionary",
     "lemmas": [
       "flüssig"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df272d4d16": {
     "text": "Im Bürgerkriegsgebiet geht das Morden weiter.",
@@ -2443,11 +2579,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "circumvent an obstacle",
     "source": "wiktionary",
     "lemmas": [
       "Klippe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df296f5a0d": {
     "text": "Die Sache, die wir neulich besprochen haben, lässt sich nicht so besonders an.",
@@ -2725,11 +2862,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "come to nothing",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df3218bb36": {
     "text": "Daß der preußische Minister des Innern sich im Jahre 1902 gnädigst bereit erklärte, Frauen das Recht des Zuhörens in Versammlungen politischer Vereine zu gewähren, vorausgesetzt, daß sie, ähnlich wie die jüdischen Frauen in der Synagoge, in einem besonderen Abteil des Saales Platz nehmen, charakterisiert die Kleinlichkeit unserer öffentlichen Zustände.",
@@ -3051,14 +3189,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Once a shooter, always a shooter.",
     "source": "wiktionary",
     "lemmas": [
       "schießen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "df34e2ab97": {
     "text": "Die Flammen tanzen im Kamin.",
@@ -3113,11 +3249,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "grow a thick skin",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df36a708aa": {
     "text": "Das bringt ja eh nichts.",
@@ -3273,23 +3410,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "day by day",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
     ],
-    "ref": "phrases/Tag für Tag"
+    "ref": "phrases/Tag für Tag",
+    "translation_model": "openai/gpt-4.1"
   },
   "df3a7d5ffe": {
     "text": "ich bin ja kein Kopfschüssler",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm not a hothead.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df3bee709d": {
     "text": "Ein Gummi war darum gespannt, um es zusammenzuhalten.",
@@ -3560,11 +3699,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like a bat out of hell",
     "source": "wiktionary",
     "lemmas": [
       "Sau"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df4546b565": {
     "text": "„Ich jage die Treppe hoch, immer drei Stufen gleichzeitig nehmend.“",
@@ -3673,12 +3813,13 @@
     "type": "expression",
     "note": "nicht bekommen können",
     "synonyms": [],
-    "translation": null,
+    "translation": "slip through someone's fingers",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
     ],
-    "ref": "phrases/jemandem durch die Lappen gehen"
+    "ref": "phrases/jemandem durch die Lappen gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "df48c704b5": {
     "text": "„Hinter der Bühne herrscht ein emsiges Hin und Her. Einige Musiker räumen ihre Instrumente in die Koffer, andere ziehen sich vor den geöffneten Transportkästen um und hängen ihre Fräcke und Kleider hinein.“",
@@ -3784,11 +3925,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not see the light of day",
     "source": "wiktionary",
     "lemmas": [
       "Sonne"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df49f17c63": {
     "text": "Dem Umbau liegt ein durchgängig gestaltetes Konzept zugrunde.",
@@ -3988,10 +4130,31 @@
   },
   "df4bf51cc1": {
     "text": "A: „Wie bist du mit Deinem Projekt fertiggeworden?“ B: „Ich bin so über die Runden gekommen.“",
-    "translation": null,
+    "translation": "A: \"How did you manage to finish your project?\" B: \"I managed to get by.\"",
     "source": "wiktionary",
     "lemmas": [
       "über die Runden kommen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "fertiggeworden",
+        "lemma": "fertigwerden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Projekt",
+        "lemma": "Projekt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Runden",
+        "lemma": "Runde",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "df4c14f00d": {
@@ -4737,12 +4900,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "look the picture of health",
     "source": "wiktionary",
     "lemmas": [
       "Leben",
       "aussehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df54a36ea0": {
     "text": "Wir kennen das doch: erst gibt es eine Provokation, hierauf Feindseligkeiten hierauf Streit und schließlich dann die Versöhnung.",
@@ -5317,22 +5481,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "start a chain reaction",
     "source": "wiktionary",
     "lemmas": [
       "Lawine"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df5be81b97": {
     "text": "die Hand auf etwas legen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put your hand on something",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df5bffd9e8": {
     "text": "In Diktaturen wird alle Kritik am Regime aus den Zeitungen verbannt.",
@@ -5390,11 +5556,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put the brakes on someone",
     "source": "wiktionary",
     "lemmas": [
       "Bremse"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df5e04d056": {
     "text": "„Da bist du ja.“ Ihre Stimme hallte zu ihm herüber und wirkte dabei noch kühler, noch gefühlloser als sonst.",
@@ -5443,11 +5610,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be as quick as a cat",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df5fe17591": {
     "text": "„Ohne Frage war er machtbewusst, skrupellos und visionär.“",
@@ -5809,23 +5977,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be born with a silver spoon in one's mouth",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df6c3a58f5": {
     "text": "Der Mensch lebt nicht vom Brot allein",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Man does not live by bread alone",
     "source": "wiktionary",
     "lemmas": [
       "allein",
       "leben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "df6cb4d3a9": {
     "text": "„»[…] Ich wollte die fetteste Schnecke im Bordell bezahlen, dass sie deinen kleinen Pimmel zum Glühen bringt!«“",
@@ -6495,14 +6665,12 @@
     "type": "expression",
     "note": "gehen, aufhören",
     "synonyms": [],
-    "translation": null,
+    "translation": "throw in the towel",
     "source": "wiktionary",
     "lemmas": [
       "streichen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "df77c85599": {
     "text": "Kinder haben freien Eintritt.",
@@ -7475,10 +7643,85 @@
   },
   "df8afd171c": {
     "text": "„Das FBI ermittelt gegen drei ehemalige enge Trump-Mitarbeiter: Paul Manafort, Trumps Ex-Kampagnen-Chef, der jahrelang den ukrainischen Präsidenten Janukowitsch beriet und zwölf Millionen Dollar Schmiergelt kassiert haben soll.“",
-    "translation": null,
+    "translation": "\"The FBI is investigating three former close Trump associates: Paul Manafort, Trump's ex-campaign chief, who advised the Ukrainian president Yanukovych for years and is said to have pocketed twelve million dollars in bribes.\"",
     "source": "wiktionary",
     "lemmas": [
       "FBI"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "FBI",
+        "lemma": "FBI",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ermittelt",
+        "lemma": "ermitteln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ehemalige",
+        "lemma": "ehemalig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "enge",
+        "lemma": "eng",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mitarbeiter",
+        "lemma": "Mitarbeiter",
+        "pos": "noun",
+        "gloss_hint": "employee"
+      },
+      {
+        "form": "Kampagnen-Chef",
+        "lemma": "Kampagnen-Chef",
+        "pos": "noun",
+        "gloss_hint": "leader"
+      },
+      {
+        "form": "Präsidenten",
+        "lemma": "Präsident",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beriet",
+        "lemma": "beraten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Millionen",
+        "lemma": "Million",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dollar",
+        "lemma": "Dollar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schmiergelt",
+        "lemma": "Schmiergelt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kassiert",
+        "lemma": "kassieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "df8b0f6900": {
@@ -7869,15 +8112,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take a look",
     "source": "wiktionary",
     "lemmas": [
       "werfen"
     ],
     "ref": "phrases/einen Blick werfen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "df9829de5a": {
     "text": "„Damals pilgerten immer mehr Gläubige in das geheimnisvolle Tal, um in der unscheinbaren Kapelle vor dem Gnadenbild zu beten.“",
@@ -9310,11 +9551,12 @@
     "type": "expression",
     "note": "etwas ist total langweilig",
     "synonyms": [],
-    "translation": null,
+    "translation": "something is deadly boring",
     "source": "wiktionary",
     "lemmas": [
       "Sterben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dfb729bb22": {
     "text": "Ich achte schon auf dich.",
@@ -9366,11 +9608,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "there's trouble brewing",
     "source": "wiktionary",
     "lemmas": [
       "Holland"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dfbb2df839": {
     "text": "„Samen und Blütenstäube schwirrten durch die Luft.“",
@@ -9453,10 +9696,97 @@
   },
   "dfbb5be132": {
     "text": "Diesen Effekt, die gravitative Zeitdilatation, hat Albert Einstein bereits 1908 vorausgesagt, sieben Jahre vor Fertigstellung seiner Allgemeinen Relativitätstheorie (ART), der Theorie der Gravitation.",
-    "translation": null,
+    "translation": "This effect, gravitational time dilation, was already predicted by Albert Einstein in 1908, seven years before the completion of his General Theory of Relativity (GR), the theory of gravitation.",
     "source": "wiktionary",
     "lemmas": [
       "ART"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Effekt",
+        "lemma": "Effekt",
+        "pos": "noun",
+        "gloss_hint": "effect"
+      },
+      {
+        "form": "gravitative",
+        "lemma": "gravitativ",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeitdilatation",
+        "lemma": "Zeitdilatation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Albert",
+        "lemma": "Albert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einstein",
+        "lemma": "Einstein",
+        "pos": "noun",
+        "gloss_hint": "genius"
+      },
+      {
+        "form": "vorausgesagt",
+        "lemma": "voraussagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sieben",
+        "lemma": "sieben",
+        "pos": "numeral",
+        "gloss_hint": "seven"
+      },
+      {
+        "form": "Jahre",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fertigstellung",
+        "lemma": "Fertigstellung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Allgemeinen",
+        "lemma": "allgemein",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Relativitätstheorie",
+        "lemma": "Relativitätstheorie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ART",
+        "lemma": "ART",
+        "pos": "abbreviation",
+        "gloss_hint": "general relativity"
+      },
+      {
+        "form": "Theorie",
+        "lemma": "Theorie",
+        "pos": "noun",
+        "gloss_hint": "theory"
+      },
+      {
+        "form": "Gravitation",
+        "lemma": "Gravitation",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "dfbb6bc7de": {
@@ -9464,11 +9794,12 @@
     "type": "expression",
     "note": "! — Parole zur Vermeidung oder Beseitigung von Schmutz aller Art",
     "synonyms": [],
-    "translation": null,
+    "translation": "away with the mess",
     "source": "wiktionary",
     "lemmas": [
       "Dreck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dfbc5a9cd6": {
     "text": "Das war aber eine wirklich clevere Idee!",
@@ -9972,10 +10303,73 @@
   },
   "dfcc4303a7": {
     "text": "„Er wählte flugs Gewand und Hut, hieß zwei Diener mitgehn und begab sich auf stattlichem Rosse sofort zu Familie Hwa.“",
-    "translation": null,
+    "translation": "He quickly chose clothes and hat, ordered two servants to accompany him, and set off at once to the Hwa family on a stately horse.",
     "source": "wiktionary",
     "lemmas": [
       "Ross"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wählte",
+        "lemma": "wählen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "flugs",
+        "lemma": "flugs",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gewand",
+        "lemma": "Gewand",
+        "pos": "noun",
+        "gloss_hint": "garment"
+      },
+      {
+        "form": "Hut",
+        "lemma": "Hut",
+        "pos": "noun",
+        "gloss_hint": "hat"
+      },
+      {
+        "form": "Diener",
+        "lemma": "Diener",
+        "pos": "noun",
+        "gloss_hint": "servant"
+      },
+      {
+        "form": "mitgehn",
+        "lemma": "mitgehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "begab",
+        "lemma": "begeben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "stattlichem",
+        "lemma": "stattlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rosse",
+        "lemma": "Ross",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Familie",
+        "lemma": "Familie",
+        "pos": "noun",
+        "gloss_hint": "basic social unit"
+      }
     ]
   },
   "dfcd84f034": {
@@ -10031,11 +10425,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "politeness will get you everywhere",
     "source": "wiktionary",
     "lemmas": [
       "Land"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dfd03d0379": {
     "text": "Immanuel Kant befasste sich mit der Ethik.",
@@ -10154,11 +10549,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "go too far",
     "source": "wiktionary",
     "lemmas": [
       "Spiel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dfd43b1fd3": {
     "text": "„In jedem Reiseführer steht, daß es die berühmteste Burg Polens ist.“",
@@ -10635,10 +11031,31 @@
   },
   "dfdebbb559": {
     "text": "Sie ist sowas wie ein Shooting-Star in der Freiburger Gastro-Szene.",
-    "translation": null,
+    "translation": "She is something like a shooting star in the Freiburg gastro scene.",
     "source": "wiktionary",
     "lemmas": [
       "sowas"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Shooting-Star",
+        "lemma": "Shooting-Star",
+        "pos": "noun",
+        "gloss_hint": "celebrity"
+      },
+      {
+        "form": "Freiburger",
+        "lemma": "Freiburger",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gastro-Szene",
+        "lemma": "Gastro-Szene",
+        "pos": "noun",
+        "gloss_hint": "scene"
+      }
     ]
   },
   "dfdf319ed6": {
@@ -10696,11 +11113,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "rain cats and dogs",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dfe35e9f1b": {
     "text": "Ich glaube, am Wochenende fährt der Bus nicht so oft.",
@@ -10754,12 +11172,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "holier than the Pope",
     "source": "wiktionary",
     "lemmas": [
       "Papst"
     ],
-    "ref": "phrases/päpstlicher als der Papst sein"
+    "ref": "phrases/päpstlicher als der Papst sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "dfe6d4faec": {
     "text": "Vor dem Wartesaal des Bahnhofes trieben sich einige merkwürdige Gestalten herum.",
@@ -10971,11 +11390,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be in one's right mind",
     "source": "wiktionary",
     "lemmas": [
       "bei"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dfea9ec499": {
     "text": "„Dass sie für beide Tatzeiten kein Alibi vorweisen konnte und nicht zuletzt ihr stoisches Schweigen in den Verhören erhärteten den Verdacht.“",
@@ -11758,10 +12178,31 @@
   },
   "dff5c3da93": {
     "text": "Lasst die olympischen Fahnen flattern!",
-    "translation": null,
+    "translation": "Let the Olympic flags flutter!",
     "source": "wiktionary",
     "lemmas": [
       "flattern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "olympischen",
+        "lemma": "olympisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fahnen",
+        "lemma": "Fahne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "flattern",
+        "lemma": "flattern",
+        "pos": "verb",
+        "gloss_hint": "flutter"
+      }
     ]
   },
   "dff75c295e": {

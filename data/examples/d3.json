@@ -169,12 +169,13 @@
     "type": "expression",
     "note": "mit allen erdenklichen Mitteln",
     "synonyms": [],
-    "translation": null,
+    "translation": "at any cost",
     "source": "wiktionary",
     "lemmas": [
       "Haken"
     ],
-    "ref": "phrases/mit Haken und Ösen"
+    "ref": "phrases/mit Haken und Ösen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d305465762": {
     "text": "Eine Stunde hat sechzig Minuten.",
@@ -822,27 +823,26 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to live in a gilded cage",
     "source": "wiktionary",
     "lemmas": [
       "Käfig"
     ],
-    "ref": "phrases/in einem goldenen Käfig sitzen"
+    "ref": "phrases/in einem goldenen Käfig sitzen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d3132b1889": {
     "text": "mit leeren Händen dastehen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be left empty-handed",
     "source": "wiktionary",
     "lemmas": [
       "Hand",
       "leer"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d317476359": {
     "text": "Ich habe es wirklich satt, dass du jedesmal zu spät kommst.",
@@ -1203,12 +1203,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be six feet under",
     "source": "wiktionary",
     "lemmas": [
       "Erde"
     ],
-    "ref": "phrases/unter der Erde liegen"
+    "ref": "phrases/unter der Erde liegen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d31af61b79": {
     "text": "„Ein Stückchen weiter weg, fast so weit, daß er sie gerade eben noch sehen konnte, traten zwei Gestalten auf den Straßenrand; dann drehten sie sich um und kamen, auf dem Rain entlanggehend, auf ihn zu.“",
@@ -1518,11 +1519,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to skin someone alive",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d320075500": {
     "text": "Ein jeder hier begehrt, dass der Krieg endlich ein Ende haben möge.",
@@ -2081,11 +2083,12 @@
     "type": "expression",
     "note": "umgangssprachlich: etwas nicht verkaufen können",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be stuck with something",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d323b63b38": {
     "text": "„Ihr Blick fiel auf die Kartons hinten im Kofferraum.“",
@@ -2472,10 +2475,43 @@
   },
   "d324e2d0a0": {
     "text": "„Wir haben außerordentlich viel Spaß, obwohl wir von unseren Begleitern ganz schön auf die Schaufel genommen werden […].“",
-    "translation": null,
+    "translation": "\"We're having an extraordinary amount of fun, even though we're being quite harshly criticized by our companions […].\"",
     "source": "wiktionary",
     "lemmas": [
       "jemanden auf die Schaufel nehmen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "außerordentlich",
+        "lemma": "außerordentlich",
+        "pos": "adjective",
+        "gloss_hint": "extraordinary"
+      },
+      {
+        "form": "viel",
+        "lemma": "viel",
+        "pos": "adjective",
+        "gloss_hint": "much"
+      },
+      {
+        "form": "Spaß",
+        "lemma": "Spaß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Begleitern",
+        "lemma": "Begleiter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schaufel",
+        "lemma": "Schaufel",
+        "pos": "noun",
+        "gloss_hint": "shovel"
+      }
     ]
   },
   "d3250cfafc": {
@@ -2641,11 +2677,12 @@
     "type": "expression",
     "note": "ein sehr hohes Alter",
     "synonyms": [],
-    "translation": null,
+    "translation": "a very old age",
     "source": "wiktionary",
     "lemmas": [
       "Alter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3270f55a3": {
     "text": "„Der Schluß, daß der Wahn des Todes die Wahrheit desselben säe, … fiel wie eine Trauer in seine Liebesfeste ein.“",
@@ -4269,10 +4306,115 @@
   },
   "d3346bce80": {
     "text": "„Dieses Programm, untermalt von nimmermüdem Lächeln und Strahlen, hielt sie vier Wochen durch, dann hieß es in der Bäckerei nur trocken: ‚Die hatte einen Nervenzusammenbruch.‘ Kein Wunder! Hand aufs Herz: Würden wir eine Einkaufswelt, in der es zugeht wie in der Dallmayr-Werbung, wirklich wollen?“",
-    "translation": null,
+    "translation": "\"This program, accompanied by an unwearying smile and radiance, she kept up for four weeks, then it was said dryly in the bakery: 'She had a nervous breakdown.' No wonder! Hand on heart: would we really want a shopping world that operates like in the Dallmayr advertisement?\"",
     "source": "wiktionary",
     "lemmas": [
       "kein Wunder"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Programm",
+        "lemma": "Programm",
+        "pos": "noun",
+        "gloss_hint": "program"
+      },
+      {
+        "form": "untermalt",
+        "lemma": "untermalen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "nimmermüdem",
+        "lemma": "nimmermüde",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lächeln",
+        "lemma": "Lächeln",
+        "pos": "noun",
+        "gloss_hint": "smile"
+      },
+      {
+        "form": "Strahlen",
+        "lemma": "Strahlen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hielt",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "vier",
+        "lemma": "vier",
+        "pos": "noun",
+        "gloss_hint": "four"
+      },
+      {
+        "form": "Wochen",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bäckerei",
+        "lemma": "Bäckerei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "trocken",
+        "lemma": "trocken",
+        "pos": "adjective",
+        "gloss_hint": "dry"
+      },
+      {
+        "form": "Nervenzusammenbruch",
+        "lemma": "Nervenzusammenbruch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hand",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": "hand"
+      },
+      {
+        "form": "Herz",
+        "lemma": "Herz",
+        "pos": "noun",
+        "gloss_hint": "heart"
+      },
+      {
+        "form": "Einkaufswelt",
+        "lemma": "Einkaufswelt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zugeht",
+        "lemma": "zugehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dallmayr-Werbung",
+        "lemma": "Werbung",
+        "pos": "noun",
+        "gloss_hint": "advertising"
+      },
+      {
+        "form": "wirklich",
+        "lemma": "wirklich",
+        "pos": "adjective",
+        "gloss_hint": "genuine"
+      }
     ]
   },
   "d335ae460e": {
@@ -4880,10 +5022,37 @@
   },
   "d339e5a5dd": {
     "text": "St. Johann will Tagebauflächen rekultivieren und dem Tourismus so auf die Sprünge helfen.",
-    "translation": null,
+    "translation": "St. Johann wants to recultivate mining areas and give tourism a boost.",
     "source": "wiktionary",
     "lemmas": [
       "etwas auf die Sprünge helfen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tagebauflächen",
+        "lemma": "Tagebaufläche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "rekultivieren",
+        "lemma": "rekultivieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tourismus",
+        "lemma": "Tourismus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sprünge",
+        "lemma": "Sprung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d33ab694ac": {
@@ -4900,11 +5069,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "taste like boobs",
     "source": "wiktionary",
     "lemmas": [
       "Titte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d33b3493de": {
     "text": "Wenn die Gäste kommen, wird der Tisch ausgezogen.",
@@ -5209,12 +5379,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a lot on one's plate",
     "source": "wiktionary",
     "lemmas": [
       "Ohr"
     ],
-    "ref": "phrases/viel um die Ohren haben"
+    "ref": "phrases/viel um die Ohren haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "d33f875af3": {
     "text": "Von Energiesparlampen haben wir genau dreizehn Stück in der Wohnung.",
@@ -6492,11 +6663,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be at death's door",
     "source": "wiktionary",
     "lemmas": [
       "ringen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3447ea2e2": {
     "text": "Wie süß ists mir, mein sehr geliebtes Kind, meine gute Eleonore, von deinem Glück noch reden zu dürfen, da schon für mich die Sonne bald emporsteigt drüben im Reich der Schatten.",
@@ -7189,11 +7361,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "show someone who's boss",
     "source": "wiktionary",
     "lemmas": [
       "Butter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d34b159759": {
     "text": "„Die Kennerin bestaunte den Teller, den sie auf das Jahr 1740 datierte. […] Wesentlich kleiner und rund 150 Jahre jünger war der angeschlagene Teller, den Margitta Strunk, in Servietten eingeschlagen, aus ihrer Tasche holte.“",
@@ -7404,11 +7577,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "don't reinvent the wheel",
     "source": "wiktionary",
     "lemmas": [
       "Rad"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d34bd7bc90": {
     "text": "Klar scheint inzwischen, dass die Bank sofort mit einer klaren Mehrheit einsteigen wird und sich nicht in einem ersten Schritt mit einer Minderheit begnügt.",
@@ -7763,13 +7937,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "let things slide",
     "source": "wiktionary",
     "lemmas": [
       "fünf",
       "lassen",
       "gerade"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d34dc39ba2": {
     "text": "„Ein Sänger singt bei einem Agenten eine Arie vor.“",
@@ -7847,23 +8022,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "bring back to normal",
     "source": "wiktionary",
     "lemmas": [
       "Vordermann"
     ],
-    "ref": "phrases/auf Vordermann bringen"
+    "ref": "phrases/auf Vordermann bringen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d34eb481b9": {
     "text": "wie nichts Gutes",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like nobody's business",
     "source": "wiktionary",
     "lemmas": [
       "wie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d34fc78d07": {
     "text": "„Doch an diesem Sonntagmorgen stand eine Tür offen.“",
@@ -9392,13 +9569,14 @@
     "type": "expression",
     "note": "alles riskieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "go all in",
     "source": "wiktionary",
     "lemmas": [
       "Karte",
       "setzen"
     ],
-    "ref": "phrases/alles auf eine Karte setzen"
+    "ref": "phrases/alles auf eine Karte setzen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d35d6317a7": {
     "text": "„Er spielt in den frühen fünfziger Jahren, als in Deutschland das Wirtschaftswunder eingesetzt hat und die Restauration allerorts den politischen Alltag bestimmt.“",
@@ -9922,18 +10100,40 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "thick skin",
     "source": "wiktionary",
     "lemmas": [
       "dick"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d362148caa": {
     "text": "Manche Politiker haben keinen Plan, wovon sie reden.",
-    "translation": null,
+    "translation": "Some politicians have no idea what they're talking about.",
     "source": "wiktionary",
     "lemmas": [
       "keinen Plan haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Politiker",
+        "lemma": "Politiker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Plan",
+        "lemma": "Plan",
+        "pos": "noun",
+        "gloss_hint": "plan"
+      },
+      {
+        "form": "reden",
+        "lemma": "reden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d363d411d4": {
@@ -10253,10 +10453,67 @@
   },
   "d367eef490": {
     "text": "„Klar, Mensch, da gibt’s doch keinen Zweifel, am Arsch der Welt, das ist die Eifel – recht glauben wollte es jedoch niemand.“",
-    "translation": null,
+    "translation": "\"Sure, man, there's no doubt about it, in the middle of nowhere, that's the Eifel – but nobody really wanted to believe it.\"",
     "source": "wiktionary",
     "lemmas": [
       "am Arsch der Welt"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Klar",
+        "lemma": "klar",
+        "pos": "adjective",
+        "gloss_hint": "clear"
+      },
+      {
+        "form": "Mensch",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": "person"
+      },
+      {
+        "form": "Zweifel",
+        "lemma": "Zweifel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arsch",
+        "lemma": "Arsch",
+        "pos": "noun",
+        "gloss_hint": "butt"
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      },
+      {
+        "form": "Eifel",
+        "lemma": "Eifel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "recht",
+        "lemma": "recht",
+        "pos": "adjective",
+        "gloss_hint": "right"
+      },
+      {
+        "form": "glauben",
+        "lemma": "glauben",
+        "pos": "verb",
+        "gloss_hint": "believe"
+      },
+      {
+        "form": "wollte",
+        "lemma": "wollen",
+        "pos": "verb",
+        "gloss_hint": "wish"
+      }
     ]
   },
   "d3687795a2": {
@@ -10812,18 +11069,84 @@
   },
   "d36cf462c8": {
     "text": "Hast du gestern Abend den Krimi auf ARD gesehen?",
-    "translation": null,
+    "translation": "Did you watch the crime thriller on ARD yesterday evening?",
     "source": "wiktionary",
     "lemmas": [
       "ARD"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gestern",
+        "lemma": "gestern",
+        "pos": "adverb",
+        "gloss_hint": "yesterday"
+      },
+      {
+        "form": "Abend",
+        "lemma": "Abend",
+        "pos": "noun",
+        "gloss_hint": "evening"
+      },
+      {
+        "form": "Krimi",
+        "lemma": "Krimi",
+        "pos": "noun",
+        "gloss_hint": "crime story"
+      },
+      {
+        "form": "ARD",
+        "lemma": "ARD",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gesehen",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d36e7918ff": {
     "text": "Es ist zum Beispiel nicht möglich, alle reellen Zahlen abzuzählen.",
-    "translation": null,
+    "translation": "For example, it is not possible to count all real numbers.",
     "source": "wiktionary",
     "lemmas": [
       "zum Beispiel"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Beispiel",
+        "lemma": "Beispiel",
+        "pos": "noun",
+        "gloss_hint": "example"
+      },
+      {
+        "form": "möglich",
+        "lemma": "möglich",
+        "pos": "adjective",
+        "gloss_hint": "possible"
+      },
+      {
+        "form": "reellen",
+        "lemma": "reell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zahlen",
+        "lemma": "Zahl",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abzuzählen",
+        "lemma": "abzählen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d3721695e7": {
@@ -11622,11 +11945,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to break in someone's house (by visiting often)",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d37b68a95a": {
     "text": "Tafelweine und nicht sehr bedeutende Qualitätsweine haben in der Regel keinen Abgang, d. h. sie hinterlassen keinen Nachgeschmack und die Geschmacksempfindung am Gaumen setzt aus; […]",
@@ -12471,11 +12795,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is missing the knack",
     "source": "wiktionary",
     "lemmas": [
       "Dreh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d37f57d803": {
     "text": "„Drei Viertel der Schweizer Wohnbevölkerung spenden mindestens einmal pro Jahr Geld oder Naturalien.“",
@@ -12986,11 +13311,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'll take the liberty",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3813e4d7a": {
     "text": "„Darüberhinaus besaß Ségouin das unverkennbare Air des Reichtums.“",
@@ -13098,10 +13424,55 @@
   },
   "d38198b97f": {
     "text": "Bekannte Vereine mit diesem Kürzel sind der VFL Herzlake, der VFL Bochum oder auch der VFL Wolfsburg.",
-    "translation": null,
+    "translation": "Well-known clubs with this abbreviation are VFL Herzlake, VFL Bochum, or also VFL Wolfsburg.",
     "source": "wiktionary",
     "lemmas": [
       "VFL"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bekannte",
+        "lemma": "bekannt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vereine",
+        "lemma": "Verein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kürzel",
+        "lemma": "Kürzel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "VFL",
+        "lemma": "VFL",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herzlake",
+        "lemma": "Herzlake",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bochum",
+        "lemma": "Bochum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wolfsburg",
+        "lemma": "Wolfsburg",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d3823f6ecd": {
@@ -13187,11 +13558,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to shoot one's mouth off",
     "source": "wiktionary",
     "lemmas": [
       "aufreißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d38288978a": {
     "text": "„Und nicht zum erstenmal diente die West Side als Filmkulisse, allerdings war sie selten so idyllisch wie bei Nora Ephron. Um die 66. Straße liegt das Lincoln Center, für dessen Bau Hunderte von Familien vertrieben wurden. Kurz vor dem Abriß wurde in den verlassenen Häusern West Side Story gedreht.“",
@@ -13610,11 +13982,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be cheeky as a sparrow",
     "source": "wiktionary",
     "lemmas": [
       "Spatz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d38ce83e32": {
     "text": "Der Schüler hat einen scharfen Verstand, er ist sehr gescheit.",
@@ -15506,11 +15879,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "God bless you",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3a2ec0d4e": {
     "text": "Zehn Prozent der in Berlin ankommenden Flüchtlinge sind unbegleitete minderjährige Flüchtlinge.",
@@ -15684,11 +16058,12 @@
     "type": "expression",
     "note": "wenig Umstände machen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to approach something in a rough-and-ready way",
     "source": "wiktionary",
     "lemmas": [
       "Pinsel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3a70351f3": {
     "text": "Die böse Königin vergiftete den Apfel.",
@@ -16228,10 +16603,49 @@
   },
   "d3a9b9e743": {
     "text": "„Was ist der kommenden Bundesregierung betreffend Agrarpolitik und Agrarfinanzierung zu empfehlen?“",
-    "translation": null,
+    "translation": "\"What recommendations should be made to the incoming federal government regarding agricultural policy and agricultural financing?\"",
     "source": "wiktionary",
     "lemmas": [
       "betreffend"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kommenden",
+        "lemma": "kommend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundesregierung",
+        "lemma": "Bundesregierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "betreffend",
+        "lemma": "betreffen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Agrarpolitik",
+        "lemma": "Agrarpolitik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Agrarfinanzierung",
+        "lemma": "Agrarfinanzierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "empfehlen",
+        "lemma": "empfehlen",
+        "pos": "verb",
+        "gloss_hint": "recommend"
+      }
     ]
   },
   "d3aa85e51f": {
@@ -16413,12 +16827,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to the point",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
     ],
-    "ref": "phrases/kurz und bündig"
+    "ref": "phrases/kurz und bündig",
+    "translation_model": "openai/gpt-4.1"
   },
   "d3b1a66a82": {
     "text": "„Jonathan fuchtelte mit seiner Taschenlampe herum und trieb zum Aufbruch.“",
@@ -16847,11 +17262,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to rub someone the wrong way",
     "source": "wiktionary",
     "lemmas": [
       "sauer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3b86db544": {
     "text": "Nirgends leben so viele Milliardäre wie in Peking. Selfmademen sind die wenigsten unter ihnen: Reich wird man in China am besten, in dem man mit der KP mauschelt.",
@@ -17979,10 +18395,49 @@
   },
   "d3c2ffe829": {
     "text": "Diese Bilder der Neugeborenen gehen jedem Betrachter durch Mark und Bein.",
-    "translation": null,
+    "translation": "These images of newborns cut through every viewer to the bone.",
     "source": "wiktionary",
     "lemmas": [
       "durch Mark und Bein gehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bilder",
+        "lemma": "Bild",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Neugeborenen",
+        "lemma": "Neugeborenes",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gehen",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "go"
+      },
+      {
+        "form": "Betrachter",
+        "lemma": "Betrachter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mark",
+        "lemma": "Mark",
+        "pos": "noun",
+        "gloss_hint": "marrow"
+      },
+      {
+        "form": "Bein",
+        "lemma": "Bein",
+        "pos": "noun",
+        "gloss_hint": "bone"
+      }
     ]
   },
   "d3c302e76e": {
@@ -19308,10 +19763,73 @@
   },
   "d3cb615fa9": {
     "text": "Und so ließ man sie am Hungertuch nagen. Sie nagte daran und nagte, – aber es bekam ihr sehr gut. Je dünner sie wurde, umsoweniger von ihrem Körper konnte verfallen, und Geist hatte sie ohnehin so gut wie gar nicht aufzugeben.",
-    "translation": null,
+    "translation": "And so they let her live on meager rations. She gnawed at it and gnawed, – but it suited her very well. The thinner she became, the less of her body could decay, and she had hardly any mind to lose anyway.",
     "source": "wiktionary",
     "lemmas": [
       "am Hungertuch nagen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "ließ",
+        "lemma": "lassen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hungertuch",
+        "lemma": "Hungertuch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "nagen",
+        "lemma": "nagen",
+        "pos": "verb",
+        "gloss_hint": "gnaw"
+      },
+      {
+        "form": "bekam",
+        "lemma": "bekommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gut",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": "good"
+      },
+      {
+        "form": "dünner",
+        "lemma": "dünn",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Körper",
+        "lemma": "Körper",
+        "pos": "noun",
+        "gloss_hint": "body"
+      },
+      {
+        "form": "verfallen",
+        "lemma": "verfallen",
+        "pos": "verb",
+        "gloss_hint": "decay"
+      },
+      {
+        "form": "Geist",
+        "lemma": "Geist",
+        "pos": "noun",
+        "gloss_hint": "mind"
+      },
+      {
+        "form": "aufzugeben",
+        "lemma": "aufgeben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d3cb69cb89": {
@@ -19567,11 +20085,12 @@
     "type": "expression",
     "note": "versuchen, beruflich höher zu steigen; sein Leben stark an geistigen Idealen orientieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "to strive for greater things",
     "source": "wiktionary",
     "lemmas": [
       "hoch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3cf59b361": {
     "text": "Kannst du mir einen Hunderter wechseln?",
@@ -20041,19 +20560,53 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "curse like a sailor",
     "source": "wiktionary",
     "lemmas": [
       "fluchen"
     ],
-    "ref": "phrases/fluchen wie ein Bierkutscher"
+    "ref": "phrases/fluchen wie ein Bierkutscher",
+    "translation_model": "openai/gpt-4.1"
   },
   "d3d8a1c5f7": {
     "text": "„Alle gehen mit Projekten schwanger, aber keiner gibt es zu.“",
-    "translation": null,
+    "translation": "Everyone is pregnant with projects, but nobody admits it.",
     "source": "wiktionary",
     "lemmas": [
       "mit etwas schwanger gehen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gehen",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Projekten",
+        "lemma": "Projekt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwanger",
+        "lemma": "schwanger",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "keiner",
+        "lemma": "keiner",
+        "pos": "pronoun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gibt",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d3d8d20a60": {
@@ -20830,6 +21383,53 @@
     ],
     "text_linked": "„[[Die|determiners/die]] [[Armut|nouns/Armut#1]] [[beeinflusst|verbs/beeinflussen]] alle [[Stadien|nouns/Stadium]] [[des|determiners/der]] [[menschlichen|adjectives/menschlich]] [[Lebens|nouns/Leben#1]], [[von|prepositions/von#1]] [[der|determiners/die]] [[Wiege|nouns/Wiege#1]] [[bis|particles/bis#1]] [[zur|prepositions/zu#1]] Bahre.“"
   },
+  "d3dd21227d": {
+    "text": "Bei den Proben fehlte uns ein Becken, weshalb Herr Brösel an den entsprechenden Stellen immer nur „tsching“ machen konnte.",
+    "translation": "During rehearsals we were missing cymbals, which is why Mr. Brösel could only make a \"tsching\" sound at the appropriate places.",
+    "source": "wiktionary",
+    "lemmas": [
+      "tsching"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Proben",
+        "lemma": "Probe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fehlte",
+        "lemma": "fehlen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Becken",
+        "lemma": "Becken",
+        "pos": "noun",
+        "gloss_hint": "cymbals"
+      },
+      {
+        "form": "Herr",
+        "lemma": "Herr",
+        "pos": "noun",
+        "gloss_hint": "sir"
+      },
+      {
+        "form": "machen",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "make (sound)"
+      },
+      {
+        "form": "konnte",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ]
+  },
   "d3dd2467cc": {
     "text": "einen Ballon kriegen",
     "type": "expression",
@@ -20837,11 +21437,12 @@
     "synonyms": [
       "bekommen"
     ],
-    "translation": null,
+    "translation": "get a big head",
     "source": "wiktionary",
     "lemmas": [
       "Ballon"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3dd3cd55c": {
     "text": "„Viele Jahre später, als ich die Geschichte schon fast vergessen hatte, las ich ein Interview mit einem persischen Dichter, der seit den Sechzigerjahren in München im Exil lebte.“",
@@ -21148,11 +21749,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not be able to figure out the trick",
     "source": "wiktionary",
     "lemmas": [
       "Dreh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3e16b1126": {
     "text": "Male ist die Hauptstadt der Republik Malediven.",
@@ -22127,11 +22729,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not buy a pig in a poke",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3edc8aa63": {
     "text": "„Ich hatte Claudine versprochen, noch vor der Eröffnung rechtzeitig Schlange zu stehen vor einem kleinen Geschäft in der Rue de Tournon.“",
@@ -22189,18 +22792,40 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "stand awkwardly (like a stork)",
     "source": "wiktionary",
     "lemmas": [
       "Storch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3f0734aaa": {
     "text": "Der gesuchte Straftäter hat ein Kennzeichen aus EN.",
-    "translation": null,
+    "translation": "The wanted offender has a license plate from EN.",
     "source": "wiktionary",
     "lemmas": [
       "EN"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gesuchte",
+        "lemma": "gesucht",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Straftäter",
+        "lemma": "Straftäter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kennzeichen",
+        "lemma": "Kennzeichen",
+        "pos": "noun",
+        "gloss_hint": "license plate"
+      }
     ]
   },
   "d3f0cfa3e2": {
@@ -22248,11 +22873,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "water at hand puts out the fire",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3f15f7043": {
     "text": "„Drei Jahr später begegneten wir uns an einem Sommerabend auf einer Party in Hastings wieder.“",
@@ -22712,11 +23338,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "mount Pegasus (be inspired to write poetry)",
     "source": "wiktionary",
     "lemmas": [
       "besteigen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3f48912f4": {
     "text": "Das Fischen mit großen Netzen ist nur der Berufsfischerei vorbehalten.",
@@ -22805,11 +23432,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "blame the cat for something",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3f6e5120d": {
     "text": "„Bei einer Auszeichnung mit solcher Wirkung muss der Auszeichnende für möglichst große Transparenz sorgen und sicherstellen, dass alles mit rechten Dingen zugeht.“",
@@ -22948,11 +23576,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "ring the donkey's death knell",
     "source": "wiktionary",
     "lemmas": [
       "Esel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d3f86722e4": {
     "text": "„Ein Herzkatheter ist ein etwa zwei Millimeter dicker und 1,5 Meter langer Plastikschlauch, der über eine Vene oder eine Schlagader ins Herz eingeführt wird.“",
@@ -24301,13 +24930,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "built on sand",
     "source": "wiktionary",
     "lemmas": [
       "Sand",
       "bauen"
     ],
-    "ref": "phrases/auf Sand gebaut haben"
+    "ref": "phrases/auf Sand gebaut haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "d3ffd0a702": {
     "text": "Er ist mehr der ruhige Typ.",

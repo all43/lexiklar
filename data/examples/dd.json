@@ -655,11 +655,12 @@
     "type": "expression",
     "note": "für Gerissenheit, Durchtriebenheit, Cleverness zum eigenen Vorteil, ein Vergleich zu großer, meist emotionaler Kälte",
     "synonyms": [],
-    "translation": null,
+    "translation": "cold as ice",
     "source": "wiktionary",
     "lemmas": [
       "kalt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd075b433a": {
     "text": "„Ich machte mich mit dem blutigen Dolch in der Hand auf die Suche nach Moro.“",
@@ -1787,11 +1788,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a trump card",
     "source": "wiktionary",
     "lemmas": [
       "Karte"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd191d3cd1": {
     "text": "Ich habe mir den Ellbogen gebrochen.",
@@ -2017,11 +2019,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You'd love to be a fly on the wall there.",
     "source": "wiktionary",
     "lemmas": [
       "Fliege"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd1d6dbab0": {
     "text": "die fünfte Kolonne",
@@ -2497,11 +2500,12 @@
     "type": "expression",
     "note": "spöttischer Ausspruch, wenn jemand sein Ziel nur um Haaresbreite verfehlt hat",
     "synonyms": [],
-    "translation": null,
+    "translation": "Close, but no cigar.",
     "source": "wiktionary",
     "lemmas": [
       "knapp"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd24352b16": {
     "text": "„Eine Zofe, ebenfalls im historischen Kostüm, bringt frisch geräucherte Forellen.“",
@@ -3241,10 +3245,73 @@
   },
   "dd2960b865": {
     "text": "„China macht verschwundenem Milliardär Xiao Jianhua den Prozess“ […] „Der vormals einflussreiche Geschäftsmann war Anfang 2017 unter rätselhaften Umständen aus Hongkongs Nobelhotel \"Four Seasons\" verschwunden,“ […].",
-    "translation": null,
+    "translation": "\"China puts disappeared billionaire Xiao Jianhua on trial\" [...] \"The formerly influential businessman disappeared from Hong Kong's luxury hotel 'Four Seasons' in early 2017 under mysterious circumstances,\" [...]. ",
     "source": "wiktionary",
     "lemmas": [
       "rätselhaft"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "China",
+        "lemma": "China",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "macht",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "put (into state)"
+      },
+      {
+        "form": "verschwundenem",
+        "lemma": "verschwunden",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Milliardär",
+        "lemma": "Milliardär",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prozess",
+        "lemma": "Prozess",
+        "pos": "noun",
+        "gloss_hint": "trial (legal)"
+      },
+      {
+        "form": "einflussreiche",
+        "lemma": "einflussreich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geschäftsmann",
+        "lemma": "Geschäftsmann",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verschwunden",
+        "lemma": "verschwinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nobelhotel",
+        "lemma": "Nobelhotel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umständen",
+        "lemma": "Umstand",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "dd29ab48ca": {
@@ -3501,11 +3568,12 @@
     "type": "expression",
     "note": "da ist was los",
     "synonyms": [],
-    "translation": null,
+    "translation": "the place is rocking",
     "source": "wiktionary",
     "lemmas": [
       "wackeln"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd2dee7adb": {
     "text": "Alle Gefangenen zu erlösen war Teil einer Übung.",
@@ -5050,10 +5118,61 @@
   },
   "dd3ff53944": {
     "text": "Wenn sie nämlich ihren Diskontsatz, der jetzt real unter Null liegt, in die Höhe setzt, wird sie noch stärker mit Devisen überschwemmt und dadurch in ihrer Kreditpolitik noch stärker matt gesetzt.",
-    "translation": null,
+    "translation": "For if it raises its discount rate, which is now actually below zero, it will be even more inundated with foreign currency and thereby weakened even further in its credit policy.",
     "source": "wiktionary",
     "lemmas": [
       "matt setzen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Diskontsatz",
+        "lemma": "Diskontsatz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "real",
+        "lemma": "real",
+        "pos": "adjective",
+        "gloss_hint": "actual"
+      },
+      {
+        "form": "Null",
+        "lemma": "Null",
+        "pos": "noun",
+        "gloss_hint": "zero"
+      },
+      {
+        "form": "Höhe",
+        "lemma": "Höhe",
+        "pos": "noun",
+        "gloss_hint": "level"
+      },
+      {
+        "form": "überschwemmt",
+        "lemma": "überschwemmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Devisen",
+        "lemma": "Devise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kreditpolitik",
+        "lemma": "Kreditpolitik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "matt",
+        "lemma": "matt",
+        "pos": "adjective",
+        "gloss_hint": "helpless"
+      }
     ]
   },
   "dd40f523f3": {
@@ -5329,11 +5448,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "last period",
     "source": "wiktionary",
     "lemmas": [
       "Stunde"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd4547e5f7": {
     "text": "Auf dem Foto, das sie sich gerade anschauen, ist die Darstellung einer betagten Frau im Regenmantel zu sehen.",
@@ -5668,10 +5788,85 @@
   },
   "dd4f39ea79": {
     "text": "„Früher hatte es welche gegeben: bescheidene, ehrsame Handwerker, die zwar die Weisheit nicht mit Löffeln gegessen, die aber gelernt hatten, für jeden Fuß einen passenden Stiefel zu machen.“",
-    "translation": null,
+    "translation": "\"Earlier there had been some: modest, honorable craftsmen who certainly hadn't learned wisdom from a spoon, but who had learned to make a fitting boot for every foot.\"",
     "source": "wiktionary",
     "lemmas": [
       "die Weisheit nicht mit Löffeln gegessen haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Früher",
+        "lemma": "früher",
+        "pos": "adverb",
+        "gloss_hint": "formerly"
+      },
+      {
+        "form": "gegeben",
+        "lemma": "geben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "bescheidene",
+        "lemma": "bescheiden",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "ehrsame",
+        "lemma": "ehrsam",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Handwerker",
+        "lemma": "Handwerker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weisheit",
+        "lemma": "Weisheit",
+        "pos": "noun",
+        "gloss_hint": "wisdom"
+      },
+      {
+        "form": "Löffeln",
+        "lemma": "Löffel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gegessen",
+        "lemma": "essen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "gelernt",
+        "lemma": "lernen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fuß",
+        "lemma": "Fuß",
+        "pos": "noun",
+        "gloss_hint": "foot (body part)"
+      },
+      {
+        "form": "passenden",
+        "lemma": "passend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stiefel",
+        "lemma": "Stiefel",
+        "pos": "noun",
+        "gloss_hint": "boot (shoe)"
+      }
     ]
   },
   "dd4f4fe91b": {
@@ -6241,23 +6436,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "damn it",
     "source": "wiktionary",
     "lemmas": [
       "Henker"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd5ebb13fe": {
     "text": "keine Eier in der Hose haben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "chicken out",
     "source": "wiktionary",
     "lemmas": [
       "kein"
     ],
-    "ref": "phrases/keine Eier in der Hose haben"
+    "ref": "phrases/keine Eier in der Hose haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "dd5f15a79e": {
     "text": "Atlas erreicht heute seine maximale Entfernung vom Saturn.",
@@ -6627,22 +6824,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "stay in the dark",
     "source": "wiktionary",
     "lemmas": [
       "dunkel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd66ac353a": {
     "text": "reichst du ihr den kleinen Finger, nimmt sie die ganze Hand",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give her an inch and she'll take a mile",
     "source": "wiktionary",
     "lemmas": [
       "kleiner Finger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd671e9f95": {
     "text": "Kannst du morgen bei mir babysitten?",
@@ -8148,11 +8347,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take something with good humor",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd814751d4": {
     "text": "Das Risiko für Altersarmut in Deutschland nimmt in den nächsten Jahren weiter zu.",
@@ -8409,11 +8609,12 @@
     "type": "expression",
     "note": "Geheimnisse entlocken",
     "synonyms": [],
-    "translation": null,
+    "translation": "worm secrets out of someone",
     "source": "wiktionary",
     "lemmas": [
       "Wurm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd85614054": {
     "text": "„»Er ist eigentlich lange geblieben«, sagte Polzin, während er sich wieder an den Webstuhl setzte. »Wie war es denn?« -- »Gar nichts war es. Und wird auch nichts.« -- »I wo«, sagte Polzin. »Es wird schon werden. Alles muß doch Zeit und Weile haben. Aber du denkst immer…«“",
@@ -8813,11 +9014,12 @@
     "type": "expression",
     "note": "etwas trotz schwieriger Umstände voraussichtlich gut bewerkstelligen (Optimismus)",
     "synonyms": [],
-    "translation": null,
+    "translation": "pull it off, even if it's tough",
     "source": "wiktionary",
     "lemmas": [
       "Kind"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd8d09ed88": {
     "text": "Wie geht es deinem Nachwuchs?",
@@ -9153,11 +9355,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "patient sheep go into many pens",
     "source": "wiktionary",
     "lemmas": [
       "Stall"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd922324e4": {
     "text": "„Als der Kapitän 1812 starb, hatte Hugh den Rang eines Ersten Offiziers inne.“",
@@ -9535,11 +9738,12 @@
     "type": "expression",
     "note": "umschreibender Ausdruck für eine Wassersuppe oder Kaffee ohne Milch",
     "synonyms": [],
-    "translation": null,
+    "translation": "weak coffee",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dd96ff10a8": {
     "text": "„Gleichzeitig beobachtete er die Zustände.“",
@@ -10598,10 +10802,37 @@
   },
   "dda6076fca": {
     "text": "Ich finde meine Schuhe nicht. — Hast du auch unterm Bett geschaut?",
-    "translation": null,
+    "translation": "I can't find my shoes. — Have you looked under the bed too?",
     "source": "wiktionary",
     "lemmas": [
       "unterm"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "finde",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schuhe",
+        "lemma": "Schuh",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geschaut",
+        "lemma": "schauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bett",
+        "lemma": "Bett",
+        "pos": "noun",
+        "gloss_hint": "bed"
+      }
     ]
   },
   "dda613304d": {
@@ -10699,11 +10930,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be as hungry as a bear",
     "source": "wiktionary",
     "lemmas": [
       "hungrig"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dda8edaebb": {
     "text": "Das Siegel wurde immer versperrt aufbewahrt.",
@@ -11430,11 +11662,12 @@
     "type": "expression",
     "note": "Mut in einer ausweglosen Situation beweisen",
     "synonyms": [],
-    "translation": null,
+    "translation": "with desperate courage",
     "source": "wiktionary",
     "lemmas": [
       "Mut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ddb74be998": {
     "text": "„›Keiner hat auch nur einen halbwegs anständigen Brocken Fleisch aus dir herausgerissen. Geht ja auch gar nicht mit bloßen Gaumen und falschen Zähnen. Wahrscheinlich hast du dir selbst mehr wehgetan, als du versucht hast aufzustehen.‹“",
@@ -11513,11 +11746,12 @@
     "type": "expression",
     "note": "Macht haben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to hold the levers of power",
     "source": "wiktionary",
     "lemmas": [
       "Hebel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ddb94801f3": {
     "text": "Zieh doch in seiner Gegenwart nicht immer so über die Übergewichtigen her, du trittst ihm damit auf seine Hühneraugen!",
@@ -11892,11 +12126,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be mad at someone",
     "source": "wiktionary",
     "lemmas": [
       "sauer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ddc236f757": {
     "text": "Rein optisch ist das ein sehr gelungenes Buch.",
@@ -12086,11 +12321,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to open your mouth wide (like a spoon)",
     "source": "wiktionary",
     "lemmas": [
       "Löffel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ddc379675a": {
     "text": "Faith stemmte die Hände in die Hüften. »Das geht dich, offen gesagt, einen feuchten Kehricht an.«",
@@ -12349,14 +12585,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to step on each other's toes",
     "source": "wiktionary",
     "lemmas": [
       "treten"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ddc89de540": {
     "text": "Wo nichts ist, hat der Kaiser sein Recht verloren",
@@ -12560,11 +12794,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "gratitude and recognition",
     "source": "wiktionary",
     "lemmas": [
       "Dank"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ddca226032": {
     "text": "Cornelia Camichel Bromeis wird die erste Dekanin in Graubünden. […] Sie will nicht alles auf den Kopf stellen, aber drängende Antworten auf die Fragen unserer Zeit finden.",
@@ -12625,11 +12860,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at someone's mercy",
     "source": "wiktionary",
     "lemmas": [
       "Gnade"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ddcacc7efa": {
     "text": "Die Kulisse steht meistens auf der Bühne.",
@@ -14096,11 +14332,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "When the goose sees water, it starts to wiggle its tail (with anticipation).",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dde5c47456": {
     "text": "„Im Oktober 2007 bekam die Regierung in Bukarest eine schriftliche Verwarnung der Europäischen Kommission, da das Land seine Gesetze zur Erhaltung der Biodiversität nicht eingehalten habe.“",
@@ -14322,11 +14559,12 @@
     "type": "expression",
     "note": "ganz schnell (zu Kindern beziehungsweise Kindersprache)",
     "synonyms": [],
-    "translation": null,
+    "translation": "at a gallop",
     "source": "wiktionary",
     "lemmas": [
       "Pferd"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dde96e67b6": {
     "text": "„Es wurde ferner verordnet, daß keine mit einem Papisten, beziehungsweise mit einer Papistin vermählte Person fähig sein solle, in England zu regieren und daß die Unterthanen, wenn der Souverän eine Papistin oder die Souveränin einen Papisten heirate, von ihrem Gehorsam losgesprochen werden sollten.“",
@@ -14426,12 +14664,13 @@
     "type": "expression",
     "note": "höchstens",
     "synonyms": [],
-    "translation": null,
+    "translation": "at most",
     "source": "wiktionary",
     "lemmas": [
       "hoch"
     ],
-    "ref": "phrases/wenn es hoch kommt"
+    "ref": "phrases/wenn es hoch kommt",
+    "translation_model": "openai/gpt-4.1"
   },
   "ddea3e7403": {
     "text": "Konjugation bezeichnet bei Bakterien die vorübergehende Verbindung über einen Pilus des Donor mit dem Rezipienten, durch den DNA übertragen wird.",
@@ -14876,10 +15115,31 @@
   },
   "ddf34fee93": {
     "text": "Eine der weltgrößten Sammlungen von Mineralien befindet sich in Freiberg.",
-    "translation": null,
+    "translation": "One of the world's largest collections of minerals is located in Freiberg.",
     "source": "wiktionary",
     "lemmas": [
       "Mineral"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sammlungen",
+        "lemma": "Sammlung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mineralien",
+        "lemma": "Mineral",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "befindet",
+        "lemma": "befinden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "ddf3f5636d": {
@@ -14983,11 +15243,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "assembly line girl",
     "source": "wiktionary",
     "lemmas": [
       "Band"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ddf5e9bb94": {
     "text": "„Revolver gingen manchmal von selbst los.“",
@@ -15081,12 +15342,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fall into someone's hands",
     "source": "wiktionary",
     "lemmas": [
       "Hand",
       "fallen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ddf7a5db40": {
     "text": "In Bayern suchen vermehrt Studenten nach günstigem Wohnraum.",
@@ -15195,11 +15457,12 @@
     "type": "expression",
     "note": "jemanden adoptieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "adopt as one's own child",
     "source": "wiktionary",
     "lemmas": [
       "Kind"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ddf911be60": {
     "text": "„Hauptverantwortlich dafür, dass das natürliche Ressourcenbudgets des Planeten regelmäßig überschritten wird, sind die CO₂-Emissionen, die derzeit 60 Prozent des ökologischen Fußabdrucks der Menschheit ausmachen.“",
@@ -15654,12 +15917,13 @@
     "type": "expression",
     "note": "gehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "make a run for it",
     "source": "wiktionary",
     "lemmas": [
       "Fliege"
     ],
-    "ref": "phrases/die Fliege machen"
+    "ref": "phrases/die Fliege machen",
+    "translation_model": "openai/gpt-4.1"
   },
   "ddffb0380a": {
     "text": "„›Onkel!‹ rief das junge Mädchen, ›stelle dich, wie du willst, ich weiß doch, daß dir nicht einfällt, das zerbrochene Wappen der Gnadewitze wieder zusammenzufügen.‹ / ›Aber ich sehe nicht ein, es ist ein ganz hübsches Wappen mit Balken, Sternen –‹ / ›Und einem Rade voller Blutflecken,‹ unterbrach ihn Elisabeth.“",

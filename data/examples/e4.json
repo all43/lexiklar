@@ -540,11 +540,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have no business somewhere",
     "source": "wiktionary",
     "lemmas": [
       "verlieren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e40b80d88f": {
     "text": "„Diese musikalische Nachzeichnung von Stürzen mit Trommelwirbeln könnte auch im Break – dem kurzen solistischen Zwischenspiel – der Jazzschlagzeuger seine Spuren hinterlassen haben.“",
@@ -2001,13 +2002,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put up with something",
     "source": "wiktionary",
     "lemmas": [
       "lassen",
       "gefallen"
     ],
-    "ref": "phrases/sich etwas gefallen lassen"
+    "ref": "phrases/sich etwas gefallen lassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e4231ef186": {
     "text": "„Ohnehin sei juristische Forschung, wie sie jetzt in Kooperation mit den russischen Strafrechtlern erfolgt […], keine Selbstverständlichkeit, so der Potsdamer Rechtswissenschaftler.“",
@@ -2029,12 +2031,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get under one's skin",
     "source": "wiktionary",
     "lemmas": [
       "Haut"
     ],
-    "ref": "phrases/unter die Haut gehen"
+    "ref": "phrases/unter die Haut gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e4240b179e": {
     "text": "„Eine weitere Größe einer jeden Verteilung ist die sogenannte Streuung.“",
@@ -3277,11 +3280,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep changing your mind",
     "source": "wiktionary",
     "lemmas": [
       "Kartoffel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e435ca3601": {
     "text": "Freiheit! Gleichheit! Brüderlichkeit!",
@@ -4083,11 +4087,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to have someone on your side",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e4456f5aff": {
     "text": "Wenn ich vorstellen darf, das ist Mutter Margarete, unsere Klostervorsteherin.",
@@ -4847,11 +4852,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be out of the house",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e45017cff7": {
     "text": "„Zugleich brauchen Eurostaaten wie Deutschland und die Niederlande den Währungsfonds, um Rückhalt in den Parlamenten zu finden.“",
@@ -4864,10 +4870,115 @@
   },
   "e451a74e23": {
     "text": "„11. Oktober: Habe gute Kopien relevanter Passagen aus dem Nec. mit Hilfe von Wallingford in London aufgetrieben, müssen aber aus der unvollständigen deutschen Ausgabe des fünfzehnten Jahrhunderts stammen - der gleichen Ausgabe, wie sie die Kester-Bibliothek in Salem besitzt.“",
-    "translation": null,
+    "translation": "\"October 11: Found good copies of relevant passages from the Nec. with the help of Wallingford in London, but they must come from the incomplete German edition of the fifteenth century—the same edition that the Kester Library in Salem possesses.\"",
     "source": "wiktionary",
     "lemmas": [
       "Salem"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Oktober",
+        "lemma": "Oktober",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kopien",
+        "lemma": "Kopie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Passagen",
+        "lemma": "Passage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hilfe",
+        "lemma": "Hilfe",
+        "pos": "noun",
+        "gloss_hint": "help"
+      },
+      {
+        "form": "Wallingford",
+        "lemma": "Wallingford",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "London",
+        "lemma": "London",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgetrieben",
+        "lemma": "auftreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "stammen",
+        "lemma": "stammen",
+        "pos": "verb",
+        "gloss_hint": "date from"
+      },
+      {
+        "form": "unvollständigen",
+        "lemma": "unvollständig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "deutschen",
+        "lemma": "deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausgabe",
+        "lemma": "Ausgabe",
+        "pos": "noun",
+        "gloss_hint": "edition"
+      },
+      {
+        "form": "fünfzehnten",
+        "lemma": "fünfzehnt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahrhunderts",
+        "lemma": "Jahrhundert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ausgabe",
+        "lemma": "Ausgabe",
+        "pos": "noun",
+        "gloss_hint": "edition"
+      },
+      {
+        "form": "Kester-Bibliothek",
+        "lemma": "Kester-Bibliothek",
+        "pos": "noun",
+        "gloss_hint": "library"
+      },
+      {
+        "form": "Salem",
+        "lemma": "Salem",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besitzt",
+        "lemma": "besitzen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "e45443aad3": {
@@ -5052,11 +5163,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make room",
     "source": "wiktionary",
     "lemmas": [
       "Platz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e45b7f07a8": {
     "text": "Im Frühjahr werden die Kühe auf die Weide getrieben.",
@@ -5436,13 +5548,14 @@
     "type": "expression",
     "note": "etwas zeitbedingt richtig einschätzen, realisieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "read the signs of the times",
     "source": "wiktionary",
     "lemmas": [
       "Zeit",
       "Zeichen",
       "erkennen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e463767a71": {
     "text": "Das kann sich durchaus über mehrere Wochen hinziehen.",
@@ -5455,10 +5568,115 @@
   },
   "e463bbed11": {
     "text": "„Spötter meinen allerdings ohnehin, die ganze Sparschwein-Aktion diene Bohlen allein dazu, sein mit Abstand größtes Talent mal ganz plastisch auf der Bühne vorzuführen: aus Scheiße Geld machen.“",
-    "translation": null,
+    "translation": "\"Mockers, however, claim that the whole piggy-bank campaign serves Bohlen alone to showcase his by far greatest talent quite vividly on stage: turning shit into money.\"",
     "source": "wiktionary",
     "lemmas": [
       "aus Scheiße Geld machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Spötter",
+        "lemma": "Spötter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "meinen",
+        "lemma": "meinen",
+        "pos": "verb",
+        "gloss_hint": "hold (opinion)"
+      },
+      {
+        "form": "allerdings",
+        "lemma": "allerdings",
+        "pos": "adverb",
+        "gloss_hint": "however"
+      },
+      {
+        "form": "Sparschwein-Aktion",
+        "lemma": "Sparschwein-Aktion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "diene",
+        "lemma": "dienen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bohlen",
+        "lemma": "Bohlen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "allein",
+        "lemma": "allein",
+        "pos": "adjective",
+        "gloss_hint": "sole"
+      },
+      {
+        "form": "Abstand",
+        "lemma": "Abstand",
+        "pos": "noun",
+        "gloss_hint": "distance (literal)"
+      },
+      {
+        "form": "größtes",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": "large"
+      },
+      {
+        "form": "Talent",
+        "lemma": "Talent",
+        "pos": "noun",
+        "gloss_hint": "ability"
+      },
+      {
+        "form": "ganz",
+        "lemma": "ganz",
+        "pos": "adjective",
+        "gloss_hint": "whole"
+      },
+      {
+        "form": "plastisch",
+        "lemma": "plastisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bühne",
+        "lemma": "Bühne",
+        "pos": "noun",
+        "gloss_hint": "stage"
+      },
+      {
+        "form": "vorzuführen",
+        "lemma": "vorführen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Scheiße",
+        "lemma": "Scheiße",
+        "pos": "noun",
+        "gloss_hint": "crap"
+      },
+      {
+        "form": "Geld",
+        "lemma": "Geld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "machen",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "make"
+      }
     ]
   },
   "e4641ac62d": {
@@ -5973,11 +6191,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "swallow a bitter pill",
     "source": "wiktionary",
     "lemmas": [
       "Pille"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e46bcac1be": {
     "text": "Alles war vorbereitet gewesen, die Damen hatten schon neben ihren Pferden gestanden, welche sich kaum noch halten ließen, über zwanzig Herren bückten sich, zwanzig Hände wurden untergehalten, ohne den Zaum des eigenen Tieres loszulassen, und im Nu saßen alle Damen im Sattel.",
@@ -6651,10 +6870,109 @@
   },
   "e47a655a49": {
     "text": "„Das MRT bestätigte, was die Teilnehmer berichteten, und attestierte größere neuronale Aktivitäten im medialen präfrontalen Cortex, wo unsere Gehirne alternierende und gefühlsbesetzte Informationen verarbeiten.“",
-    "translation": null,
+    "translation": "\"The MRI confirmed what the participants reported and attested greater neural activity in the medial prefrontal cortex, where our brains process alternating and emotionally charged information.\"",
     "source": "wiktionary",
     "lemmas": [
       "MRT"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "MRT",
+        "lemma": "MRT",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bestätigte",
+        "lemma": "bestätigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Teilnehmer",
+        "lemma": "Teilnehmer",
+        "pos": "noun",
+        "gloss_hint": "participant"
+      },
+      {
+        "form": "berichteten",
+        "lemma": "berichten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "attestierte",
+        "lemma": "attestieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "größere",
+        "lemma": "groß",
+        "pos": "adjective",
+        "gloss_hint": "large"
+      },
+      {
+        "form": "neuronale",
+        "lemma": "neuronal",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aktivitäten",
+        "lemma": "Aktivität",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "medialen",
+        "lemma": "medial",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "präfrontalen",
+        "lemma": "präfrontal",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Cortex",
+        "lemma": "Cortex",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gehirne",
+        "lemma": "Gehirn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "alternierende",
+        "lemma": "alternierend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "gefühlsbesetzte",
+        "lemma": "gefühlsbesetzt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Informationen",
+        "lemma": "Information",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verarbeiten",
+        "lemma": "verarbeiten",
+        "pos": "verb",
+        "gloss_hint": "process"
+      }
     ]
   },
   "e47af31452": {
@@ -6776,12 +7094,13 @@
     "type": "expression",
     "note": ") – sehr genau",
     "synonyms": [],
-    "translation": null,
+    "translation": "exact to the letter",
     "source": "wiktionary",
     "lemmas": [
       "Haar",
       "genau"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e47e72446d": {
     "text": "„Und der Geruch aus seinen Wunden lockte zahllose Fliegen herbei.“",
@@ -6842,11 +7161,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is acting possessed",
     "source": "wiktionary",
     "lemmas": [
       "reiten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e480728027": {
     "text": "„Drei der Spieler wechselten mit anderen ab; der vierte spielte ohne Ablösung durch.“",
@@ -6872,10 +7192,109 @@
   },
   "e4828578dd": {
     "text": "„Letzterer eilte zu Manon, aber es war ihm nicht möglich, verstanden zu werden, so lange die Instrumente erklangen. Endlich verhallte ihr Schmettern, und Mehrere aus der Gesellschaft näherten sich, um den Verlobten Glück zu wünschen.“",
-    "translation": null,
+    "translation": "\"The latter hurried to Manon, but he was unable to make himself understood as long as the instruments were playing. Finally their blaring ceased, and several members of the party approached to wish the betrothed couple happiness.\"",
     "source": "wiktionary",
     "lemmas": [
       "erklingen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Letzterer",
+        "lemma": "Letzterer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eilte",
+        "lemma": "eilen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Manon",
+        "lemma": "Manon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "möglich",
+        "lemma": "möglich",
+        "pos": "adjective",
+        "gloss_hint": "possible (logic)"
+      },
+      {
+        "form": "verstanden",
+        "lemma": "verstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Instrumente",
+        "lemma": "Instrument",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erklangen",
+        "lemma": "erklingen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Endlich",
+        "lemma": "endlich",
+        "pos": "adverb",
+        "gloss_hint": "finally"
+      },
+      {
+        "form": "verhallte",
+        "lemma": "verhallen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schmettern",
+        "lemma": "Schmettern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mehrere",
+        "lemma": "mehrere",
+        "pos": "pronoun",
+        "gloss_hint": "several"
+      },
+      {
+        "form": "Gesellschaft",
+        "lemma": "Gesellschaft",
+        "pos": "noun",
+        "gloss_hint": "party"
+      },
+      {
+        "form": "näherten",
+        "lemma": "nähern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verlobten",
+        "lemma": "Verlobte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Glück",
+        "lemma": "Glück",
+        "pos": "noun",
+        "gloss_hint": "happiness"
+      },
+      {
+        "form": "wünschen",
+        "lemma": "wünschen",
+        "pos": "verb",
+        "gloss_hint": "wish (someone)"
+      }
     ]
   },
   "e485c3b339": {
@@ -7242,12 +7661,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be blind with rage",
     "source": "wiktionary",
     "lemmas": [
       "blind"
     ],
-    "ref": "phrases/blind vor Wut sein"
+    "ref": "phrases/blind vor Wut sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "e48b8c3cb6": {
     "text": "„Der Auf- und Untergang der Sonne, des Mondes, der Lichtwechsel des Mondes, der Venus, des Saturnringes und viele andere bedeutsame Erscheinungen entsprachen ihrer Voraussage in den astronomischen Jahrbüchern.“",
@@ -8159,11 +8579,12 @@
     "type": "expression",
     "note": "jemanden sehr rühmen",
     "synonyms": [],
-    "translation": null,
+    "translation": "praise someone to the skies",
     "source": "wiktionary",
     "lemmas": [
       "grün"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e4993d7fc2": {
     "text": "„Nur die USA verzeichnen mit mehr als 71.000 Toten weltweit noch mehr Corona-Oper als Großbritannien.“",
@@ -8354,15 +8775,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be worth a try",
     "source": "wiktionary",
     "lemmas": [
       "Versuch",
       "wert"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e49d86c472": {
     "text": "„Ein Fahrrad muss zu einer Frau passen wie ihre Garderobe.“",
@@ -8563,10 +8982,67 @@
   },
   "e49f69406d": {
     "text": "„Kim Han Sol, Neffe des Diktators von Nordkorea, hat die Zustände im kommunistischen Staat scharf kritisiert.“",
-    "translation": null,
+    "translation": "\"Kim Han Sol, nephew of North Korea's dictator, has sharply criticized conditions in the communist state.\"",
     "source": "wiktionary",
     "lemmas": [
       "Neffe"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kim Han Sol",
+        "lemma": "Kim Han Sol",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Neffe",
+        "lemma": "Neffe",
+        "pos": "noun",
+        "gloss_hint": "nephew"
+      },
+      {
+        "form": "Diktators",
+        "lemma": "Diktator",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nordkorea",
+        "lemma": "Nordkorea",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zustände",
+        "lemma": "Zustand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommunistischen",
+        "lemma": "kommunistisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staat",
+        "lemma": "Staat",
+        "pos": "noun",
+        "gloss_hint": "state (political)"
+      },
+      {
+        "form": "kritisiert",
+        "lemma": "kritisieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "scharf",
+        "lemma": "scharf",
+        "pos": "adjective",
+        "gloss_hint": "biting"
+      }
     ]
   },
   "e4a03e7503": {
@@ -8977,11 +9453,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get beside oneself with excitement",
     "source": "wiktionary",
     "lemmas": [
       "Häuschen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e4ad257e1e": {
     "text": "„Wir wissen, daß die unlustige Figur des Hockers, der keinen Abgang finden kann, den Nachfahren der Germanen viel von ihrer Kontaktlust genommen hat.“",
@@ -9817,13 +10294,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have a hunch",
     "source": "wiktionary",
     "lemmas": [
       "im",
       "Urin"
     ],
-    "ref": "phrases/etwas im Urin haben"
+    "ref": "phrases/etwas im Urin haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "e4c6a9ebc4": {
     "text": "„Der Inhalt der Erzählung scheint die himmliche Gerichtsverhandlung zu sein, die jeder zu besuchen hat, bevor er ins Paradies kommt.“",
@@ -10670,11 +11148,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be dyed-in-the-wool",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e4d3e2d8d4": {
     "text": "„Die Jüngeren fragte man besser nur nach zehn oder zwanzig Cent, alles andere wäre ihnen unverschämt vorgekommen, während die alten Omis auch mal 'n bisschen tiefer in die Tasche griffen.“",
@@ -10789,11 +11268,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at someone's mercy",
     "source": "wiktionary",
     "lemmas": [
       "Gnade"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e4d630bcc4": {
     "text": "Er stellte Wurst und Käse auf den Frühstückstisch.",
@@ -11106,11 +11586,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "from ambush",
     "source": "wiktionary",
     "lemmas": [
       "Hinterhalt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e4da13ba3e": {
     "text": "„Man nimmt hierzu Rippenstück oder Karree, ein Stück Kamm oder Keule von einem jungen Schwein, weil von einem alten die Schwarte zu dick ist und daher leicht hart bratet.“",
@@ -11472,11 +11953,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Please do not feed the trolls!",
     "source": "wiktionary",
     "lemmas": [
       "Troll"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e4dc54a420": {
     "text": "Eine Geburt ist immer ein erfreuliches Ereignis.",
@@ -11991,13 +12473,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make a getaway",
     "source": "wiktionary",
     "lemmas": [
       "Land",
       "gewinnen"
     ],
-    "ref": "phrases/Land gewinnen"
+    "ref": "phrases/Land gewinnen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e4e7ce3b85": {
     "text": "„Er besaß Latifundien nicht nur im Grasser Raum, wo er Orangen, Öl, Weizen und Hanf anbauen ließ, sondern auch bei Vence und gegen Antibes zu, wo er verpachtet hatte.“",
@@ -12122,11 +12605,12 @@
     "type": "expression",
     "note": "unerhört",
     "synonyms": [],
-    "translation": null,
+    "translation": "that's a bit much",
     "source": "wiktionary",
     "lemmas": [
       "stark"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e4eb5aca7c": {
     "text": "„Drei Gemälde will er den Mittelsmännern der Bank überlassen: einen Picasso, einen Rubens und ein Gemälde des englischen Malers Joshua Reynolds aus dem 18. Jahrhundert.“",
@@ -12250,12 +12734,13 @@
     "type": "expression",
     "note": "gut leben, im Überfluss leben",
     "synonyms": [],
-    "translation": null,
+    "translation": "live the life of Riley",
     "source": "wiktionary",
     "lemmas": [
       "Speck",
       "Made"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e4ee9e1323": {
     "text": "Verzeihung, da habe ich mich wohl geirrt.",
@@ -12517,10 +13002,91 @@
   },
   "e4f05fdcb7": {
     "text": "„Da saßen also ich und der kleine Sohn des Parteigenossen - ein ekelhafter Prolet war er - auf dem Boden, vor uns groß die Ledergamaschenstiefel der beiden Väter, und hoch oben ihre Armbinden der SA am Jackett.“",
-    "translation": null,
+    "translation": "\"So there I sat with the little son of the party comrade—a disgusting proletarian he was—on the ground, before us the large leather gaiters of both fathers, and high above their SA armbands on their jackets.\"",
     "source": "wiktionary",
     "lemmas": [
       "SA"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "saßen",
+        "lemma": "sitzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "kleine",
+        "lemma": "klein",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sohn",
+        "lemma": "Sohn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Parteigenossen",
+        "lemma": "Parteigenosse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ekelhafter",
+        "lemma": "ekelhaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Prolet",
+        "lemma": "Prolet",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Boden",
+        "lemma": "Boden",
+        "pos": "noun",
+        "gloss_hint": "floor"
+      },
+      {
+        "form": "Ledergamaschenstiefel",
+        "lemma": "Ledergamaschenstiefel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Väter",
+        "lemma": "Vater",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hoch",
+        "lemma": "hoch",
+        "pos": "adjective",
+        "gloss_hint": "high (position)"
+      },
+      {
+        "form": "oben",
+        "lemma": "oben",
+        "pos": "adverb",
+        "gloss_hint": "above"
+      },
+      {
+        "form": "Armbinden",
+        "lemma": "Armbinde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jackett",
+        "lemma": "Jackett",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e4f105e400": {
@@ -12586,11 +13152,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "eat like a horse",
     "source": "wiktionary",
     "lemmas": [
       "essen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e4f2ba179d": {
     "text": "Er misst sich mit dem Gegner.",
@@ -12822,11 +13389,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not be at one's best",
     "source": "wiktionary",
     "lemmas": [
       "Höhe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e4f8635cd1": {
     "text": "[Die Vorsitzende der Evangelischen Kirche Deutschland EKD] Margot Käßmann hat kein Kavaliersdelikt begangen, auch wenn Trunkenheit am Steuer in Deutschland gern so gesehen wird.",
@@ -13181,11 +13749,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "someone is itching to do something",
     "source": "wiktionary",
     "lemmas": [
       "jucken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e4fc4a5914": {
     "text": "„Aber ich höre schon das Sensenblatt sirren und schwirren, stetig wie das Ticken einer Uhr.“",

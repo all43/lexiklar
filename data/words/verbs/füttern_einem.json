@@ -8,40 +8,70 @@
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "mit einem Innenstoff (Futter) versehen",
-      "gloss_en": "stuff",
+      "gloss": "einem Tier Nahrung geben",
+      "gloss_en": "feed (animal)",
       "tags": [],
       "example_ids": [
-        "2bf9d25427"
+        "41b9ec7571",
+        "55c2f777ca",
+        "3be9f3cdb4"
       ],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To line with an inner fabric (lining)",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
-      "synonyms_en": [
-        "line",
-        "inner lining",
-        "interior fabric"
+      "synonyms": [
+        "ernähren"
       ],
-      "synonyms_en_model": "openai/gpt-4.1-mini"
+      "antonyms": [
+        "fressen"
+      ],
+      "gloss_en_full": "To give food to an animal.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini",
+      "gloss_en_model": "openai/gpt-4.1-mini"
     },
     {
-      "gloss": "mit einer Auskleidung (Futter) versehen",
-      "gloss_en": "feed",
+      "gloss": "jemandem, der nicht selbstständig essen kann, die mundgerechte Nahrung zuführen",
+      "gloss_en": "feed (person)",
       "tags": [],
-      "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To provide with a lining (lining)",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
-      "synonyms_en": [
-        "supply food",
-        "give food",
-        "nourish"
+      "example_ids": [
+        "356b9a9cbb",
+        "0eb6bf8ed6"
       ],
-      "synonyms_en_model": "openai/gpt-4.1-mini"
+      "synonyms": [
+        "ernähren"
+      ],
+      "antonyms": [],
+      "gloss_en_full": "To provide bite-sized food to someone who cannot eat independently.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini",
+      "gloss_en_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "ständig zur Verfügung stellen",
+      "gloss_en": "provide continuously",
+      "tags": [],
+      "example_ids": [
+        "37788cb250"
+      ],
+      "synonyms": [
+        "bombardieren",
+        "zuschütten"
+      ],
+      "antonyms": [],
+      "gloss_en_full": "To make something constantly available.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini",
+      "gloss_en_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "(einer Maschine, einem Programm) Daten liefern",
+      "gloss_en": "input (data)",
+      "tags": [],
+      "example_ids": [
+        "3ff2c22c00"
+      ],
+      "synonyms": [
+        "eingeben"
+      ],
+      "antonyms": [],
+      "gloss_en_full": "To supply data to a machine or a program.",
+      "gloss_en_full_model": "openai/gpt-4.1-mini",
+      "gloss_en_model": "openai/gpt-4.1-mini"
     }
   ],
   "sounds": [
@@ -63,12 +93,63 @@
   ],
   "_hyponyms": [
     "abfüttern",
+    "anfüttern",
+    "auffüttern",
     "ausfüttern",
-    "unterfüttern"
+    "beifüttern",
+    "dickfüttern",
+    "durchfüttern",
+    "einfüttern",
+    "fettfüttern",
+    "großfüttern",
+    "herausfüttern",
+    "mästen",
+    "päppeln",
+    "überfüttern",
+    "unterfüttern",
+    "verfüttern",
+    "zufüttern"
+  ],
+  "_antonyms": [
+    "fressen"
+  ],
+  "_synonyms": [
+    "ernähren",
+    "bombardieren",
+    "zuschütten",
+    "eingeben"
   ],
   "_meta": {
-    "source_hash": "f359463be2126830",
-    "generated_at": "2026-03-21"
+    "source_hash": "33e8f8def74b45d7",
+    "generated_at": "2026-03-23"
   },
-  "zipf": 3.67
+  "zipf": 3.67,
+  "_orphaned_translations": [
+    {
+      "gloss": "mit einem Innenstoff (Futter) versehen",
+      "gloss_en": "stuff",
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To line with an inner fabric (lining)",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "line",
+        "inner lining",
+        "interior fabric"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "mit einer Auskleidung (Futter) versehen",
+      "gloss_en": "feed",
+      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_full": "To provide with a lining (lining)",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "supply food",
+        "give food",
+        "nourish"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
+    }
+  ]
 }

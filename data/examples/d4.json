@@ -274,14 +274,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "There is trouble at home.",
     "source": "wiktionary",
     "lemmas": [
       "hängen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "d40158ac01": {
     "text": "Auch Chicago hat die Kälte fest im Griff. Selbst für Anana, die Eisbärdame des Lincoln-Park-Zoos, ist es zu kalt - sie darf ihr Innengehege nicht verlassen.",
@@ -714,11 +712,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Lawyers and soldiers are the devil's playmates.",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d406fd25cb": {
     "text": "„[…] ja ein im Jahre 1498 zu Frankfurt gegebenes Passionsspiel hat nicht weniger als zweihundertfünfundsechzig Personen. Wie volksmäßig aber diese Stücke geworden, bezeugt schon der Umstand, daß sie, gleich dem alten Epos, nicht aufgeschrieben wurden, sondern als Nationalgut traditionell von Geschlecht zu Geschlecht sich forterbten.“",
@@ -2526,22 +2525,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to wriggle like a worm",
     "source": "wiktionary",
     "lemmas": [
       "winden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d419afa5b8": {
     "text": "seit langem",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "for a long time",
     "source": "wiktionary",
     "lemmas": [
       "lang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d41a2b3a0f": {
     "text": "„Als er nun durch die Hochzeit mit meiner Großmutter zu einem reichen Ehemann geworden war, spielte er den Playboy und fand im Spielcasino seinen liebsten Aufenthaltsort.“",
@@ -3478,6 +3479,107 @@
       "translation": true
     }
   },
+  "d41fb1ade2": {
+    "text": "„Nach seinem Triumph bei der Landtagswahl stand Ministerpräsident Horst Seehofer den Journalisten vor der CSU-Zentrale freudig Rede und Antwort. Am Schluss rundete er seine Stellungnahme mit einem herzhaften »Alright!« ab. Das ist Globalisierungsdeutsch. Früher hätte ein bayerischer Politiker bei solchen Anlässen sodala gesagt […].“",
+    "translation": "After his victory in the state election, Minister-President Horst Seehofer happily answered questions from journalists in front of the CSU headquarters. At the end, he rounded off his statement with a hearty \"Alright!\" That is globalization German. In the old days, a Bavarian politician would have said \"sodala\" at such occasions.",
+    "source": "wiktionary",
+    "lemmas": [
+      "sodala"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Triumph",
+        "lemma": "Triumph",
+        "pos": "noun",
+        "gloss_hint": "victory"
+      },
+      {
+        "form": "Landtagswahl",
+        "lemma": "Landtagswahl",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stand",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Journalisten",
+        "lemma": "Journalist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rede",
+        "lemma": "Rede",
+        "pos": "noun",
+        "gloss_hint": "speech"
+      },
+      {
+        "form": "Antwort",
+        "lemma": "Antwort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schluss",
+        "lemma": "Schluss",
+        "pos": "noun",
+        "gloss_hint": "end"
+      },
+      {
+        "form": "rundete",
+        "lemma": "runden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stellungnahme",
+        "lemma": "Stellungnahme",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "herzhaften",
+        "lemma": "herzhaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Globalisierungsdeutsch",
+        "lemma": "Globalisierungsdeutsch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "früher",
+        "lemma": "früher",
+        "pos": "adverb",
+        "gloss_hint": "formerly"
+      },
+      {
+        "form": "bayerischer",
+        "lemma": "bayerisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Politiker",
+        "lemma": "Politiker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anlässen",
+        "lemma": "Anlass",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ]
+  },
   "d41fee44e2": {
     "text": "„Etwas Riesiges und Hartes wühlt sich tiefer in mich hinein, und die furchtbare Polizistenstimme sagt: ›Ja, immer locker bleiben, Freundchen.‹“",
     "translation": "Something enormous and hard pushes deeper into me, and the terrible police officer's voice says: 'Yes, always stay calm, buddy.'",
@@ -3634,11 +3736,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to gain ground",
     "source": "wiktionary",
     "lemmas": [
       "gewinnen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d420ac8e09": {
     "text": "Die Verbrennung im Krematorium ist nicht öffentlich zugänglich.",
@@ -3765,11 +3868,12 @@
     "type": "expression",
     "note": "jemanden unterbrechen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to cut someone off mid-sentence",
     "source": "wiktionary",
     "lemmas": [
       "abschneiden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d42264a343": {
     "text": "Der elektrische Strom ist eine Größe, man misst ihn in Ampere.",
@@ -5344,11 +5448,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to feel someone's pulse",
     "source": "wiktionary",
     "lemmas": [
       "fühlen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d42f4dd739": {
     "text": "Adriana Altaras ist ein Multitalent: Schauspielerin, Regisseurin und Autorin, intelligent, schlagfertig und ungeheuer witzig.",
@@ -5699,11 +5804,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to see one's hopes slipping away",
     "source": "wiktionary",
     "lemmas": [
       "Fell"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d43199464c": {
     "text": "Die Ampel war rot, als ich sie überfuhr.",
@@ -5909,10 +6015,61 @@
   },
   "d4397897b5": {
     "text": "Im Rahmen der Software-Entwicklung helfen Nutzer, die während der Interaktion mit einer Anwendung „laut denken“, deren Usability zu prüfen.",
-    "translation": null,
+    "translation": "In the context of software development, users who \"think aloud\" during interaction with an application help to test its usability.",
     "source": "wiktionary",
     "lemmas": [
       "laut denken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rahmen",
+        "lemma": "Rahmen",
+        "pos": "noun",
+        "gloss_hint": "context"
+      },
+      {
+        "form": "Software-Entwicklung",
+        "lemma": "Software-Entwicklung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "helfen",
+        "lemma": "helfen",
+        "pos": "verb",
+        "gloss_hint": "help"
+      },
+      {
+        "form": "Nutzer",
+        "lemma": "Nutzer",
+        "pos": "noun",
+        "gloss_hint": "user (person)"
+      },
+      {
+        "form": "Interaktion",
+        "lemma": "Interaktion",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Anwendung",
+        "lemma": "Anwendung",
+        "pos": "noun",
+        "gloss_hint": "application (software)"
+      },
+      {
+        "form": "Usability",
+        "lemma": "Usability",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "prüfen",
+        "lemma": "prüfen",
+        "pos": "verb",
+        "gloss_hint": "test (someone)"
+      }
     ]
   },
   "d43a7014d5": {
@@ -6541,11 +6698,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "God have mercy!",
     "source": "wiktionary",
     "lemmas": [
       "erbarmen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d43ff7c036": {
     "text": "Gerhard VI. war Herzog zu Schleswig und Graf zu Holstein.",
@@ -7581,11 +7739,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to take everything out of the house",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d44d9d232c": {
     "text": "„Seine Hose steht vor Dreck. Als hätte er die Nacht in einem Erdloch geschlafen.“",
@@ -9596,11 +9755,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to completely ignore someone",
     "source": "wiktionary",
     "lemmas": [
       "Hintern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d45f24afab": {
     "text": "Wir hauen die Tanne um, dann bekommt der Rasen mehr Licht.",
@@ -10834,11 +10994,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that can't be true",
     "source": "wiktionary",
     "lemmas": [
       "doch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d468a61f01": {
     "text": "Was ist Deine Funktion in der Firma?",
@@ -10941,11 +11102,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be out of it",
     "source": "wiktionary",
     "lemmas": [
       "stehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d46ae2405b": {
     "text": "Das schottische Parlament in Edinburgh hat für eine erneute Volksabstimmung über die Unabhängigkeit von Großbritannien gestimmt.",
@@ -11296,11 +11458,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go for someone's throat",
     "source": "wiktionary",
     "lemmas": [
       "Gurgel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d46eebb5f2": {
     "text": "„Greet hatte die Gabe des Zweiten Gesichts, das sie häufig nachts überfiel, sodass sie das Bett verließ und durch das Dorf und die Felder irrte. Namentlich drei Gesichte sind in der örtlichen Überlieferung noch heute bekannt.“",
@@ -11796,11 +11959,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to drink like a fish",
     "source": "wiktionary",
     "lemmas": [
       "trinken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d4741355e8": {
     "text": "„Bleibt der Gehalt eines Beamten, der Dienste einer höheren Verwendungsgruppe leistet, hinter dem Anfangsgehalt der entsprechenden höheren Verwendungsgruppe zurück, so ist eine Mehrleistungsvergütung in der Höhe des Unterschiedsbetrages zwischen dem Anfangsgehalt der höheren Verwendungsgruppe und dem tatsächlichen Gehalt des Beamten als angemessen anzusehen.“",
@@ -12171,11 +12335,12 @@
     "synonyms": [
       "haben"
     ],
-    "translation": null,
+    "translation": "no interest",
     "source": "wiktionary",
     "lemmas": [
       "Bock"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d47c0c47cc": {
     "text": "Und sowas schimpft sich nun Freundschaft!",
@@ -12771,22 +12936,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put someone to work",
     "source": "wiktionary",
     "lemmas": [
       "Dienst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d4812f94a5": {
     "text": "die gleiche Wellenlänge haben",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on the same wavelength",
     "source": "wiktionary",
     "lemmas": [
       "Wellenlänge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d481e01407": {
     "text": "Mit dieser Nummer wirst du nichts erreichen. Die Nummer zieht nicht.",
@@ -13020,11 +13187,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get by on one's income",
     "source": "wiktionary",
     "lemmas": [
       "auskommen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d485c4c08c": {
     "text": "Wir rannten schnell, dass wir den Bus bekamen.",
@@ -13065,11 +13233,12 @@
     "type": "expression",
     "note": "etwas unüberlegt kritisieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "to put one's foot in one's mouth",
     "source": "wiktionary",
     "lemmas": [
       "verbrennen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d487b7cd19": {
     "text": "„Sie gingen weiter Richtung Golfplatz und durch einen Ortsteil namens Jörundarholt.“",
@@ -13475,11 +13644,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "went badly",
     "source": "wiktionary",
     "lemmas": [
       "schlecht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d48b73b53f": {
     "text": "Reich mir bitte die Kotze.",
@@ -13603,10 +13773,43 @@
   },
   "d48cd906ab": {
     "text": "Unglaublich, wie schnell das Gras nach dem Mähen wieder nachwächst!",
-    "translation": null,
+    "translation": "It's incredible how quickly the grass grows back after mowing!",
     "source": "wiktionary",
     "lemmas": [
       "nachwachsen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Unglaublich",
+        "lemma": "unglaublich",
+        "pos": "adjective",
+        "gloss_hint": "extraordinary"
+      },
+      {
+        "form": "schnell",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": "fast"
+      },
+      {
+        "form": "Gras",
+        "lemma": "Gras",
+        "pos": "noun",
+        "gloss_hint": "grass (plant)"
+      },
+      {
+        "form": "Mähen",
+        "lemma": "mähen",
+        "pos": "verb",
+        "gloss_hint": "mow"
+      },
+      {
+        "form": "nachwächst",
+        "lemma": "nachwachsen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "d48db84fbd": {
@@ -13831,11 +14034,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "drive someone wild",
     "source": "wiktionary",
     "lemmas": [
       "Band"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d48dca5f38": {
     "text": "Auch in Deutschland wird seit Jahren gefordert, den Absatz von Elektroautos mit staatlicher Unterstützung anzukurbeln. „Wir werden die gesteckten Ziele nur erreichen, wenn die Rahmenbedingungen stimmen“, sagt Matthias Wissmann, Präsident des Verbandes der Automobilindustrie.",
@@ -14411,11 +14615,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get cold feet",
     "source": "wiktionary",
     "lemmas": [
       "kalt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d497191bf9": {
     "text": "„Ich habe einen Brief hingeschickt, um es herauszufinden, und hoffe, es antwortet bald jemand.“",
@@ -15686,11 +15891,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "steal someone's time",
     "source": "wiktionary",
     "lemmas": [
       "Zeit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d4a077ba8b": {
     "text": "„Der internationale Gerichtshof hält eine öffentliche Anhörung im Fall der Ukraine vs. Russland am 06. März 2017 in Den Haag.“",
@@ -18176,11 +18382,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the grass is always greener on the other side of the fence",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d4b7fdd570": {
     "text": "„Daran angelehnt kann ein Hack Zugang zu einem Gerät oder einer neuen Funktionalität verschaffen, die vom Hersteller nicht vorgesehen ist.“",
@@ -18990,18 +19197,70 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I greet you, my one and only vial",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d4bf5603a0": {
     "text": "„Tragen genetische Faktoren zu einer meiotischen oder rekombinanten Aneuploidie in der Eizelle und im Embryo bei?“",
-    "translation": null,
+    "translation": "Do genetic factors contribute to meiotic or recombinant aneuploidy in the egg cell and in the embryo?",
     "source": "wiktionary",
     "lemmas": [
       "rekombinant"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tragen",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": "contribute to"
+      },
+      {
+        "form": "genetische",
+        "lemma": "genetisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Faktoren",
+        "lemma": "Faktor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "meiotischen",
+        "lemma": "meiotisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "rekombinanten",
+        "lemma": "rekombinant",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aneuploidie",
+        "lemma": "Aneuploidie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eizelle",
+        "lemma": "Eizelle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Embryo",
+        "lemma": "Embryo",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d4bfbf4060": {
@@ -19117,11 +19376,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "tighten your belt",
     "source": "wiktionary",
     "lemmas": [
       "Riemen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d4c0707de7": {
     "text": "Trinken wir noch ein Gläschen?",
@@ -19956,11 +20216,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "dance on a volcano",
     "source": "wiktionary",
     "lemmas": [
       "Vulkan"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d4cc2eb6e5": {
     "text": "Zuletzt geben Sie das Dressing an den Salat.",
@@ -22639,10 +22900,25 @@
   },
   "d4dd841f66": {
     "text": "Die Dosen sind aus Alu.",
-    "translation": null,
+    "translation": "The cans are made of aluminum.",
     "source": "wiktionary",
     "lemmas": [
       "Alu"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Dosen",
+        "lemma": "Dose",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Alu",
+        "lemma": "Alu",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "d4ddead89c": {
@@ -23550,11 +23826,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give someone a piece of your mind",
     "source": "wiktionary",
     "lemmas": [
       "Hut"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d4e54d90ce": {
     "text": "„In Die Dionysische Weltanschauung findet sich eine Passage, die darauf hinzudeuten scheint, dass Nietzsche mit der Beschreibung des apollinischen Traumzustandes auf die Erfahrung eines luziden Traumes abzielt:[…]“",
@@ -23846,12 +24123,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "lift the veil",
     "source": "wiktionary",
     "lemmas": [
       "Schleier",
       "lüften"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d4e614f8fe": {
     "text": "Wegen seiner kommen wir zu spät.",
@@ -24246,11 +24524,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "He takes the sheep the wolf has eaten away from him.",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d4ed50e8b3": {
     "text": "Diese kleine Episode bleibt auf ewig unser Geheimnis.",
@@ -24260,6 +24539,29 @@
       "Geheimnis"
     ],
     "translation_model": "anthropic/claude-haiku-4-5-20251001"
+  },
+  "d4ed6fddac": {
+    "text": "„Menno, ich will auch!“",
+    "translation": "Ugh, I want to as well!",
+    "source": "wiktionary",
+    "lemmas": [
+      "menno"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Menno",
+        "lemma": "Menno",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "will",
+        "lemma": "wollen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ]
   },
   "d4ee5a712e": {
     "text": "„Wenige Schritt entfernt delirierte Wilson und zitterte unter der Decke.“",
@@ -24869,11 +25171,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a written guarantee for something",
     "source": "wiktionary",
     "lemmas": [
       "Brief und Siegel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d4f2435082": {
     "text": "„Das Schlimmste, was einem Komiker heute passieren kann, ist, dass ihm keiner mehr zuhört.“",
@@ -25538,11 +25841,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Hope dies last.",
     "source": "wiktionary",
     "lemmas": [
       "Hoffnung"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "d4fa56c007": {
     "text": "„Lizzie war ſo viel unbeſchwerter. Ja, wie eine luſtige Katze erſchien ſie Grete Erb, eine Katze, die geſtreichelt werden wollte und die Krallen wies, wenn man nicht nach ihrem Willen tat.“",
@@ -26297,12 +26601,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to show one's true colors",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
     ],
-    "ref": "phrases/etwas an den Tag legen"
+    "ref": "phrases/etwas an den Tag legen",
+    "translation_model": "openai/gpt-4.1"
   },
   "d4fff9a357": {
     "text": "Von Süden aus erreicht man Bad Dürrenberg über die Autobahn München–Berlin.",

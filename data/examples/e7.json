@@ -1,14 +1,26 @@
 {
   "e70062c022": {
     "text": "Erschrick nicht, wenn du mich gleich siehst.",
-    "translation": null,
+    "translation": "Don't be startled when you see me shortly.",
     "source": "wiktionary",
     "lemmas": [
       "erschrecken"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erschrick",
+        "lemma": "erschrecken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "siehst",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ]
   },
   "e702920d3b": {
     "text": "da fährt die Eisenbahn drüber",
@@ -17,11 +29,12 @@
     "synonyms": [
       "österr."
     ],
-    "translation": null,
+    "translation": "that's non-negotiable",
     "source": "wiktionary",
     "lemmas": [
       "Eisenbahn"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e7029fa8c6": {
     "text": "Von Ultramarinblau gibt es hellere und dunklere Varianten.",
@@ -217,11 +230,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "weird music",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e7052b55f6": {
     "text": "Von der Wiege bis ans Grab währt unser Leben.",
@@ -368,11 +382,12 @@
     "type": "expression",
     "note": "platzen, explodieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "to blow up in someone's face",
     "source": "wiktionary",
     "lemmas": [
       "fliegen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e70739d428": {
     "text": "Den Tabak zum Kauen, legt man sich in die Wangentasche bis er Saft lässt; gelegentlich kaut und lutscht man daran rum.",
@@ -942,11 +957,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to break out of the gilded cage",
     "source": "wiktionary",
     "lemmas": [
       "Käfig"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e70c6b6284": {
     "text": "„Nicht nur war die Nachricht an sich eine außerordentliche, auch die Empfängerin, die Tochter, eine Studierte, war perplex.“",
@@ -1369,11 +1385,12 @@
     "type": "expression",
     "note": "sich weit fernhalten von einem Ort",
     "synonyms": [],
-    "translation": null,
+    "translation": "to steer clear of something",
     "source": "wiktionary",
     "lemmas": [
       "Bogen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e710b42301": {
     "text": "Viele Bewohner überlegen sich einen Wechsel zu einem anderen Energieversorger.",
@@ -1693,11 +1710,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "thirst turns water into wine",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e7170e0145": {
     "text": "An Leuten wie Leibniz oder Lichtenberg bewunderte man ihr universales Wissen.",
@@ -2375,11 +2393,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone a hard look",
     "source": "wiktionary",
     "lemmas": [
       "Pistole"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e71ed9bce8": {
     "text": "„Für eine erste Entspannung sorgten dann ausgerechnet die militärischen Rückschläge in Ostpreußen, denn die Heeresverwaltung brauchte dringend Helfer für einfache Festungsbauarbeiten.“",
@@ -3331,11 +3350,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to drop the mask",
     "source": "wiktionary",
     "lemmas": [
       "Maske"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e72e00d374": {
     "text": "„Die präpositionalen Objekte sind nicht zu verwechseln mit präpositionalen Ergänzungen.“",
@@ -3765,15 +3785,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to know one's people",
     "source": "wiktionary",
     "lemmas": [
       "kennen"
     ],
     "ref": "phrases/seine Pappenheimer kennen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e73828acc6": {
     "text": "„Mittlerweile sei H. aufgrund einer möglichen Bedrohung in den Zeugenschutz aufgenommen worden.“",
@@ -3988,12 +4006,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "under cover of darkness",
     "source": "wiktionary",
     "lemmas": [
       "Nebel",
       "Nacht"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e73e354368": {
     "text": "Ich würde mir an deiner Stelle eine eigene Meinung verschaffen, anstatt mich auf Andere zu verlassen.",
@@ -4637,10 +4656,31 @@
   },
   "e7497b13c0": {
     "text": "Morgen beginnt die Fußball-EM.",
-    "translation": null,
+    "translation": "Tomorrow the European Football Championship begins.",
     "source": "wiktionary",
     "lemmas": [
       "Fußball-EM"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Morgen",
+        "lemma": "Morgen",
+        "pos": "noun",
+        "gloss_hint": "tomorrow"
+      },
+      {
+        "form": "beginnt",
+        "lemma": "beginnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fußball-EM",
+        "lemma": "Fußball-EM",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e74b2b43cc": {
@@ -5068,11 +5108,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "many hands make light work",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e752b9931f": {
     "text": "Eine Verletzung am Oberschenkel verhindert eine weitere sportliche Karriere.",
@@ -5181,11 +5222,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "You must be joking!",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e7553b9ddb": {
     "text": "„Nun setzte er vorsichtig einen Fuß vor den anderen, aber bei jedem Schritt stöhnte er laut und stützte sich mit seinem vollen Gewicht auf meine Schultern, sodass mir vor Anstrengung fast die Luft weggeblieben wäre.“",
@@ -5586,20 +5628,54 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "for ages and ages",
     "source": "wiktionary",
     "lemmas": [
       "Tag",
       "ewig"
     ],
-    "ref": "phrases/ewig und drei Tage"
+    "ref": "phrases/ewig und drei Tage",
+    "translation_model": "openai/gpt-4.1"
   },
   "e7585c01a0": {
     "text": "Der THW Kiel kann auf eine erfolgreiche Vereinsgeschichte zurückblicken.",
-    "translation": null,
+    "translation": "THW Kiel can look back on a successful club history.",
     "source": "wiktionary",
     "lemmas": [
       "THW"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "THW",
+        "lemma": "THW",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kiel",
+        "lemma": "Kiel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zurückblicken",
+        "lemma": "zurückblicken",
+        "pos": "verb",
+        "gloss_hint": "look back"
+      },
+      {
+        "form": "erfolgreiche",
+        "lemma": "erfolgreich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vereinsgeschichte",
+        "lemma": "Vereinsgeschichte",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e7597118ec": {
@@ -5607,11 +5683,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The world is a small village.",
     "source": "wiktionary",
     "lemmas": [
       "Welt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e75a200006": {
     "text": "„Die Bühne in einem derartigen improvisierten Theater ist gewöhnlich nicht sehr groß oder tief; sie hat gerade genug Raum, um nicht sehr anspruchsvolle Kulissen aufzubauen und alle Arten von Szenen außer Massenszenen zu spielen.“",
@@ -5707,11 +5784,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to live for the moment",
     "source": "wiktionary",
     "lemmas": [
       "Tag"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e75f5d6f2d": {
     "text": "„Mein Handy schlug an.“",
@@ -7185,11 +7263,12 @@
     "type": "expression",
     "note": "die zwischenmenschlichen Beziehungen sind in Ordnung",
     "synonyms": [],
-    "translation": null,
+    "translation": "the chemistry is right",
     "source": "wiktionary",
     "lemmas": [
       "Chemie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e775368838": {
     "text": "„Wir sind die mittleren Kinder der Geschichte, und das Fernsehen hat uns zu dem Glauben erzogen, dass wir eines Tages Millionäre, Filmstars und Rockstars sein werden, aber das werden wir nicht sein.“",
@@ -7483,14 +7562,12 @@
     "type": "expression",
     "note": "von einem Tier: das Leiden durch eine schwere Verletzung mit einem Todesstoß beenden",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be put out of one's misery",
     "source": "wiktionary",
     "lemmas": [
       "erhalten"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e77a627ff1": {
     "text": "In dichtem Nebel haben sich zwei griechische Soldaten anscheinend verlaufen und die Grenze zur Türkei überquert. […] Ihnen wird nun versuchte Militärspionage vorgeworfen.",
@@ -7710,6 +7787,47 @@
     ],
     "text_linked": "Er [[stand|verbs/stehen#1]] dem [[Angreifer|nouns/Angreifer]] [[wehrlos|adjectives/wehrlos]] [[gegenüber|prepositions/gegenüber#1]]."
   },
+  "e77dc7c0f5": {
+    "text": "Hoppe, hoppe Reiter, wenn er fällt, dann schreit er. […] Fällt er in den Sumpf, macht der Reiter plumps. (Kinderreim)",
+    "translation": "Hop, hop, rider, if he falls, then he cries. […] If he falls in the swamp, the rider goes plump.",
+    "source": "wiktionary",
+    "lemmas": [
+      "plumps"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Reiter",
+        "lemma": "Reiter",
+        "pos": "noun",
+        "gloss_hint": "rider"
+      },
+      {
+        "form": "fällt",
+        "lemma": "fallen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schreit",
+        "lemma": "schreien",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sumpf",
+        "lemma": "Sumpf",
+        "pos": "noun",
+        "gloss_hint": "swamp"
+      },
+      {
+        "form": "macht",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ]
+  },
   "e77edec07f": {
     "text": "Sie müssen sich anmelden, um Beiträge im Forum posten zu können.",
     "translation": "You must register to be able to post contributions in the forum.",
@@ -7754,10 +7872,37 @@
   },
   "e77f2e6bb1": {
     "text": "„Diese Leute, die dich sonst so mißverstehen, daß die das auf einmal wirklich peilen.“",
-    "translation": null,
+    "translation": "\"These people, who otherwise misunderstand you so much, suddenly really get it.\"",
     "source": "wiktionary",
     "lemmas": [
       "peilen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Leute",
+        "lemma": "Leute",
+        "pos": "noun",
+        "gloss_hint": "people"
+      },
+      {
+        "form": "mißverstehen",
+        "lemma": "missverstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "peilen",
+        "lemma": "peilen",
+        "pos": "verb",
+        "gloss_hint": "grasp"
+      },
+      {
+        "form": "wirklich",
+        "lemma": "wirklich",
+        "pos": "adjective",
+        "gloss_hint": "genuine"
+      }
     ]
   },
   "e77f5d1c17": {
@@ -8038,10 +8183,37 @@
   },
   "e786f33792": {
     "text": "„Die Seuche griff um sich und verbreitete sich immer weiter und weiter.“",
-    "translation": null,
+    "translation": "\"The plague spread and propagated further and further.\"",
     "source": "wiktionary",
     "lemmas": [
       "um sich greifen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Seuche",
+        "lemma": "Seuche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "griff",
+        "lemma": "greifen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "verbreitete",
+        "lemma": "verbreiten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "weiter",
+        "lemma": "weiter",
+        "pos": "adjective",
+        "gloss_hint": "further"
+      }
     ]
   },
   "e787758c94": {
@@ -8289,18 +8461,76 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to apply different standards",
     "source": "wiktionary",
     "lemmas": [
       "anlegen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e790b9c454": {
     "text": "„Ich will nicht Mittäterin sein. Ich will nichts zu tun haben mit dem Sperrfeuer, das auf Frauen, Kinder und Greise eröffnet wird, die mit weißen Fahnen aus den Trümmern ihrer Häuser kommen.“",
-    "translation": null,
+    "translation": "\"I will not be an accomplice. I will have nothing to do with the barrage of fire that is opened on women, children and the elderly, who come out of the ruins of their houses with white flags.\"",
     "source": "wiktionary",
     "lemmas": [
       "mit etwas nichts zu tun haben wollen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mittäterin",
+        "lemma": "Mittäterin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sperrfeuer",
+        "lemma": "Sperrfeuer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frauen",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Greise",
+        "lemma": "Greis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fahnen",
+        "lemma": "Fahne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Trümmern",
+        "lemma": "Trümmer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Häuser",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommen",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": "arrive"
+      }
     ]
   },
   "e79170307c": {
@@ -8498,11 +8728,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not have the heart to do something",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e795f9f24a": {
     "text": "„Bei hohem Tempo wurde es schlagartig so still wie in einem Flugzeug, dem in luftiger Höhe die Triebwerke ausfallen.“",
@@ -8617,25 +8848,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to fire someone",
     "source": "wiktionary",
     "lemmas": [
       "laden"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e798c3b275": {
     "text": "in Stücke springen",
     "type": "expression",
     "note": "zerspringen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to shatter into pieces",
     "source": "wiktionary",
     "lemmas": [
       "springen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e79a148190": {
     "text": "„Psychologie und Fingerspitzengefühl sind beim Ausfüllen von Lücken im Lebenslauf von Vorteil.“",
@@ -9248,10 +9478,49 @@
   },
   "e7a79533eb": {
     "text": "Geflittert wird, wenn nicht im Garten oder auf dem Campingplatz nebenan, so doch wenigstens mit lizensierten Ökotourismusanbietern wie …",
-    "translation": null,
+    "translation": "Flirting happens, if not in the garden or at the neighboring campsite, then at least with licensed ecotourism providers like …",
     "source": "wiktionary",
     "lemmas": [
       "flittern"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Geflittert",
+        "lemma": "flirten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Garten",
+        "lemma": "Garten",
+        "pos": "noun",
+        "gloss_hint": "garden"
+      },
+      {
+        "form": "Campingplatz",
+        "lemma": "Campingplatz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "nebenan",
+        "lemma": "nebenan",
+        "pos": "adverb",
+        "gloss_hint": "nearby"
+      },
+      {
+        "form": "lizensierten",
+        "lemma": "lizensiert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ökotourismusanbietern",
+        "lemma": "Ökotourismusanbieter",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e7a9105814": {
@@ -9779,14 +10048,15 @@
     "synonyms": [
       "drehen"
     ],
-    "translation": null,
+    "translation": "to spin one's wheels",
     "source": "wiktionary",
     "lemmas": [
       "Kreis",
       "im",
       "bewegen"
     ],
-    "ref": "phrases/sich im Kreis bewegen"
+    "ref": "phrases/sich im Kreis bewegen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e7b3334082": {
     "text": "„Nein, hier geht es um die ultimative Vertrauensfrage: Mit wem würdest du so weit gehen, eine Firma zu gründen?“",
@@ -9847,11 +10117,12 @@
     "type": "expression",
     "note": "nie die Hoffnung aufgeben",
     "synonyms": [],
-    "translation": null,
+    "translation": "there's always hope",
     "source": "wiktionary",
     "lemmas": [
       "Sau"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e7b4768acf": {
     "text": "Er warf mit der Kreide nach ihr.",
@@ -9897,11 +10168,12 @@
     "type": "expression",
     "note": "sich etwas gut merken",
     "synonyms": [],
-    "translation": null,
+    "translation": "to remember something well",
     "source": "wiktionary",
     "lemmas": [
       "Löffel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e7b71a0b88": {
     "text": "Nach dem Anwerbestopp holten viele [Türken] erst recht ihre Familien nach, weil sie befürchteten, dass Deutschland womöglich bald die Schotten ganz dicht machen könnte.",
@@ -10672,10 +10944,127 @@
   },
   "e7c31bfe88": {
     "text": "„Das Spektrum der britischen Polittouristen reichte von tumben linken Fanatikern, die katholischer als der Papst waren, bis zu ein paar Rechten (in der Regel Parlamentarier der Konservativen Partei), die das Regime, das Land und das Essen gleichermaßen grauenhaft fanden und dies offen sagten.“",
-    "translation": null,
+    "translation": "\"The spectrum of British political tourists ranged from dumb left-wing fanatics who were more Catholic than the Pope, to a couple of right-wingers (usually Conservative Party parliamentarians) who found the regime, the country and the food equally appalling and said so openly.\"",
     "source": "wiktionary",
     "lemmas": [
       "katholischer als der Papst sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Spektrum",
+        "lemma": "Spektrum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "britischen",
+        "lemma": "britisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Polittouristen",
+        "lemma": "Polittourist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "reichte",
+        "lemma": "reichen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "tumben",
+        "lemma": "tumb",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "linken",
+        "lemma": "link",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fanatikern",
+        "lemma": "Fanatiker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Papst",
+        "lemma": "Papst",
+        "pos": "noun",
+        "gloss_hint": "pope"
+      },
+      {
+        "form": "Paar",
+        "lemma": "Paar",
+        "pos": "noun",
+        "gloss_hint": "couple"
+      },
+      {
+        "form": "Rechten",
+        "lemma": "Rechte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Parlamentarier",
+        "lemma": "Parlamentarier",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Konservativen",
+        "lemma": "konservativ",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Partei",
+        "lemma": "Partei",
+        "pos": "noun",
+        "gloss_hint": "political party"
+      },
+      {
+        "form": "Regime",
+        "lemma": "Regime",
+        "pos": "noun",
+        "gloss_hint": "authoritarian government"
+      },
+      {
+        "form": "Land",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": "country"
+      },
+      {
+        "form": "Essen",
+        "lemma": "Essen",
+        "pos": "noun",
+        "gloss_hint": "food"
+      },
+      {
+        "form": "grauenhaft",
+        "lemma": "grauenhaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "sagten",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "offen",
+        "lemma": "offen",
+        "pos": "adjective",
+        "gloss_hint": "candid"
+      }
     ]
   },
   "e7c3a0ada8": {
@@ -10998,11 +11387,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to play into someone's hands",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e7c69a3452": {
     "text": "Sie hat schon alles mögliche versucht, um schwanger zu werden.",
@@ -11382,10 +11772,19 @@
   },
   "e7cd3174ac": {
     "text": "Verfügbarkeit: kA.",
-    "translation": null,
+    "translation": "Availability: unknown.",
     "source": "wiktionary",
     "lemmas": [
       "kA"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verfügbarkeit",
+        "lemma": "Verfügbarkeit",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e7cea2e707": {
@@ -11800,11 +12199,12 @@
     "type": "expression",
     "note": "anfangen, beginnen, aufstehen, sich erheben",
     "synonyms": [],
-    "translation": null,
+    "translation": "to get going",
     "source": "wiktionary",
     "lemmas": [
       "Gang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e7d6caa2ee": {
     "text": "„Aber andererseits konnte der weibliche Späher ihm sicher eine riesige Menge an Informationen liefern. Er musste wieder zurück zu ihr. Ausgerechnet, dachte er, ein weiblicher Späher, von irgendeinem unbekannten Planeten geraubt oder einfach mitgenommen. Oder vielleicht ging sie freiwillig mit?“",
@@ -12629,11 +13029,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "just as someone is",
     "source": "wiktionary",
     "lemmas": [
       "wie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e7ea7e8fd1": {
     "text": "So! Lasst uns anfangen.",
@@ -12748,12 +13149,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be a contender",
     "source": "wiktionary",
     "lemmas": [
       "Frage"
     ],
-    "ref": "phrases/in Frage kommen"
+    "ref": "phrases/in Frage kommen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e7edae2f99": {
     "text": "„»Man kann mit großer Wahrscheinlichkeit sagen, dass es im vergangenen Vierteljahrtausend keine vergleichbare Dürre-Situation in Mitteleuropa gegeben hat.«“",
@@ -13522,10 +13924,55 @@
   },
   "e7f7b3f39e": {
     "text": "„Klar, zum Loslassen gehören eben immer zwei! Doch halt! Nicht gleich den Zeigefinger auf unsere Exen und Schwiegermütter richten.“",
-    "translation": null,
+    "translation": "\"Sure, letting go always takes two! But wait! Don't immediately point the finger at our exes and mothers-in-law.\"",
     "source": "wiktionary",
     "lemmas": [
       "Ex"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Loslassen",
+        "lemma": "loslassen",
+        "pos": "verb",
+        "gloss_hint": "let go"
+      },
+      {
+        "form": "gehören",
+        "lemma": "gehören",
+        "pos": "verb",
+        "gloss_hint": "be required for"
+      },
+      {
+        "form": "zwei",
+        "lemma": "zwei",
+        "pos": "numeral",
+        "gloss_hint": "two"
+      },
+      {
+        "form": "Zeigefinger",
+        "lemma": "Zeigefinger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Exen",
+        "lemma": "Ex",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schwiegermütter",
+        "lemma": "Schwiegermutter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "richten",
+        "lemma": "richten",
+        "pos": "verb",
+        "gloss_hint": "aim"
+      }
     ]
   },
   "e7f81434f9": {
@@ -13743,10 +14190,37 @@
   },
   "e7fcc7a925": {
     "text": "Ich kann mit Fug und Recht behaupten, dass ich hochintelligent bin.",
-    "translation": null,
+    "translation": "I can with full justification claim that I am highly intelligent.",
     "source": "wiktionary",
     "lemmas": [
       "mit Fug und Recht"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fug",
+        "lemma": "Fug",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Recht",
+        "lemma": "Recht",
+        "pos": "noun",
+        "gloss_hint": "right"
+      },
+      {
+        "form": "behaupten",
+        "lemma": "behaupten",
+        "pos": "verb",
+        "gloss_hint": "claim"
+      },
+      {
+        "form": "hochintelligent",
+        "lemma": "hochintelligent",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "e7fce12b90": {
@@ -13912,22 +14386,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to do something pointless",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e7fe8977c5": {
     "text": "der Käse ist gegessen",
     "type": "expression",
     "note": "eine Sache ist abgeschlossen",
     "synonyms": [],
-    "translation": null,
+    "translation": "It's a done deal.",
     "source": "wiktionary",
     "lemmas": [
       "Käse"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e7fee0a583": {
     "text": "Ein Kalender ist sehr nützlich.",

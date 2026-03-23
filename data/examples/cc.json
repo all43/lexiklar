@@ -1403,10 +1403,43 @@
   },
   "cc1744fb65": {
     "text": "„Bleibt abzuwarten, ob die Revolution nicht ihre eigenen Kinder frißt.“",
-    "translation": null,
+    "translation": "\"It remains to be seen whether the revolution will not devour its own children.\"",
     "source": "wiktionary",
     "lemmas": [
       "die Revolution frisst ihre eigenen Kinder"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bleibt",
+        "lemma": "bleiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "abzuwarten",
+        "lemma": "abwarten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Revolution",
+        "lemma": "Revolution",
+        "pos": "noun",
+        "gloss_hint": "revolution"
+      },
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "frißt",
+        "lemma": "fressen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "cc17a06bb1": {
@@ -2091,6 +2124,41 @@
       "annotations": "9f032ed6"
     }
   },
+  "cc1d92fa80": {
+    "text": "„Oh Sackerment, nur Tod und Grauen muß ich in diesem Hause schauen!“",
+    "translation": "\"Oh damnation, only death and horror must I behold in this house!\"",
+    "source": "wiktionary",
+    "lemmas": [
+      "sackerment"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tod",
+        "lemma": "Tod",
+        "pos": "noun",
+        "gloss_hint": "death"
+      },
+      {
+        "form": "Grauen",
+        "lemma": "Grauen",
+        "pos": "noun",
+        "gloss_hint": "horror"
+      },
+      {
+        "form": "schauen",
+        "lemma": "schauen",
+        "pos": "verb",
+        "gloss_hint": "look"
+      },
+      {
+        "form": "Hause",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ]
+  },
   "cc1dfd197f": {
     "text": "Josiane Chevalier war lange Präfektin Korsikas.",
     "translation": "Josiane Chevalier was the prefect of Corsica for a long time.",
@@ -2114,11 +2182,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "rob at gunpoint",
     "source": "wiktionary",
     "lemmas": [
       "Pistole"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc1ea9ea63": {
     "text": "Nachdem er den Staub vom Fernseher mühsam abgeblasen hatte, stellte er fest, dass er doch ein Staubtuch gehabt hätte.",
@@ -3025,11 +3094,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as if it mattered (sarcastic: as if a bicycle fell over in China)",
     "source": "wiktionary",
     "lemmas": [
       "Fahrrad"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc2322c24a": {
     "text": "Auf der Speisekarte steht »Passierte Erbsensuppe mit Graupen«.",
@@ -3516,22 +3586,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make the dog aggressive",
     "source": "wiktionary",
     "lemmas": [
       "Hund"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc292259ca": {
     "text": "In trüben Wassern ist gut fischen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's easy to take advantage of a confused situation",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc29990329": {
     "text": "„Die Psychologin lächelte und sah so aus, als würde sie sich darüber amüsieren, dass ich es spannend machte.“",
@@ -4168,11 +4240,12 @@
     "type": "expression",
     "note": "strafen",
     "synonyms": [],
-    "translation": null,
+    "translation": "punish severely",
     "source": "wiktionary",
     "lemmas": [
       "Arsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc2f18d2ba": {
     "text": "Die Prinzessin galt zu ihrer Zeit als eine der elegantesten Frauen weltweit.",
@@ -4408,11 +4481,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be under pressure",
     "source": "wiktionary",
     "lemmas": [
       "Druck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc30b5c4e4": {
     "text": "Das Wort 'geschäftsmäßig' im Paragraph 217 StGB gehört rausgeschmissen.",
@@ -5442,12 +5516,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "all day long",
     "source": "wiktionary",
     "lemmas": [
       "Tag",
       "lang"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc3d376101": {
     "text": "„Haben Sie schon davon gehört, also Sachen gibt’s, die gibt’s gar nicht, jedenfalls soll’s diesen Kaffee geben, da werden die Bohnen von Katzen gefressen und verdaut und Sie wissen schon. Verrückt.“",
@@ -6207,10 +6282,49 @@
   },
   "cc405d1d06": {
     "text": "„Wenn einem die Wilde Jagd begegnet, kann es vorkommen, daß man einen Schmerz im Kreuz verspürt, »wie wenn jemand ein Hackl einighaut hät«.“",
-    "translation": null,
+    "translation": "\"If one encounters the Wild Hunt, it can happen that one feels a pain in the back, 'as if someone had driven an axe into it.'\"",
     "source": "wiktionary",
     "lemmas": [
       "jemandem das Hackl ins Kreuz hauen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wilde Jagd",
+        "lemma": "Jagd",
+        "pos": "noun",
+        "gloss_hint": "hunting"
+      },
+      {
+        "form": "begegnet",
+        "lemma": "begegnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schmerz",
+        "lemma": "Schmerz",
+        "pos": "noun",
+        "gloss_hint": "pain"
+      },
+      {
+        "form": "Kreuz",
+        "lemma": "Kreuz",
+        "pos": "noun",
+        "gloss_hint": "back area"
+      },
+      {
+        "form": "verspürt",
+        "lemma": "verspüren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hackl",
+        "lemma": "Hackl",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "cc419622d9": {
@@ -6293,11 +6407,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Time heals all wounds.",
     "source": "wiktionary",
     "lemmas": [
       "Zeit"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc42b4ae05": {
     "text": "„Die Strassen waren wie ausgestorben, Brandgeruch lag in der Luft, überall lagen Daunenfedern herum und Kissen und auch zerstörte Möbel.“",
@@ -7063,23 +7178,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to bring something to the public",
     "source": "wiktionary",
     "lemmas": [
       "Straße"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc4a8276be": {
     "text": "schlafen wie ein Stein",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "sleep like a log",
     "source": "wiktionary",
     "lemmas": [
       "schlafen"
     ],
-    "ref": "phrases/schlafen wie ein Stein"
+    "ref": "phrases/schlafen wie ein Stein",
+    "translation_model": "openai/gpt-4.1"
   },
   "cc4a8b6e90": {
     "text": "„Doch auch wenn die Politiker von heute eine eher biedere Wortwahl treffen, so schaffen sie es dennoch, der deutschen Sprache immer wieder frische, neue Energie zu verleihen.“",
@@ -7287,10 +7404,55 @@
   },
   "cc4ab4892a": {
     "text": "„Eine finstere Lichtgestalt demokratischer Macht, die so viel Kreide gefressen hat, dass sie nicht anders kann, als Schleim zu scheißen.“",
-    "translation": null,
+    "translation": "\"A sinister figure of democratic power that has eaten so much chalk that it can do nothing but excrete slime.\"",
     "source": "wiktionary",
     "lemmas": [
       "Kreide fressen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "finstere",
+        "lemma": "finster",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lichtgestalt",
+        "lemma": "Lichtgestalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Macht",
+        "lemma": "Macht",
+        "pos": "noun",
+        "gloss_hint": "power"
+      },
+      {
+        "form": "Kreide",
+        "lemma": "Kreide",
+        "pos": "noun",
+        "gloss_hint": "chalk"
+      },
+      {
+        "form": "gefressen",
+        "lemma": "fressen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schleim",
+        "lemma": "Schleim",
+        "pos": "noun",
+        "gloss_hint": "mucus"
+      },
+      {
+        "form": "scheißen",
+        "lemma": "scheißen",
+        "pos": "verb",
+        "gloss_hint": "disregard"
+      }
     ]
   },
   "cc4bac8bcd": {
@@ -8296,10 +8458,43 @@
   },
   "cc512a0838": {
     "text": "„Honky Tonk ist ein bedeutendes Sub-Genre der Country-Musik, aber streng genommen kein eigener musikalischer Stil.“",
-    "translation": null,
+    "translation": "Honky Tonk is a significant sub-genre of country music, but strictly speaking not a distinct musical style.",
     "source": "wiktionary",
     "lemmas": [
       "streng genommen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Honky Tonk",
+        "lemma": "Honky Tonk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bedeutendes",
+        "lemma": "bedeutend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sub-Genre",
+        "lemma": "Sub-Genre",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Country-Musik",
+        "lemma": "Country-Musik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stil",
+        "lemma": "Stil",
+        "pos": "noun",
+        "gloss_hint": "style"
+      }
     ]
   },
   "cc516c6d5d": {
@@ -8831,11 +9026,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "fight like cats and dogs",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc5431fb81": {
     "text": "„Ich bin froh, das zu hören.“",
@@ -8979,12 +9175,13 @@
     "type": "expression",
     "note": "nachdenken",
     "synonyms": [],
-    "translation": null,
+    "translation": "to think something over",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
     ],
-    "ref": "phrases/sich etwas durch den Kopf gehen lassen"
+    "ref": "phrases/sich etwas durch den Kopf gehen lassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "cc554bb07e": {
     "text": "„Und ihre Berührung hat die gefrorenen Kanäle meines Herzens gelöst und mir den Frieden gebracht.“",
@@ -9008,22 +9205,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Count Snot",
     "source": "wiktionary",
     "lemmas": [
       "Graf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc5d18f16f": {
     "text": "jemandem zeigen, wie der Hase läuft",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to show someone how it's done",
     "source": "wiktionary",
     "lemmas": [
       "laufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc5dfb85d2": {
     "text": "„Sie konvertierten erst nach der Eroberung des Balkans durch die Osmanen ab dem 17. Jahrhundert zum Islam.“",
@@ -9465,11 +9664,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to remain at sea",
     "source": "wiktionary",
     "lemmas": [
       "See"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc64984d79": {
     "text": "Nach der Wiedervereinigung übernahm Berlin wieder die Hauptstadtfunktion für Gesamtdeutschland.",
@@ -10271,11 +10471,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on the road to recovery",
     "source": "wiktionary",
     "lemmas": [
       "Besserung"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc6d85a6b0": {
     "text": "„Es bestand zu der Zeit noch die leise Hoffnung, dass das ganze Brexit-Ding demnächst rückgängig gemacht würde.“",
@@ -11721,11 +11922,12 @@
     "type": "expression",
     "note": "zwei unvergleichbare Dinge gegeneinander aufrechnen, wenn es logisch und mathematisch unzulässig ist (zulässig ist etwa „2 Äpfel und 3 Birnen sind 5 Früchte“)",
     "synonyms": [],
-    "translation": null,
+    "translation": "to compare apples and oranges",
     "source": "wiktionary",
     "lemmas": [
       "Apfel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc7ce87a08": {
     "text": "In unserer Stadt gibt es eine große Galerie mit berühmten Meistern.",
@@ -12690,11 +12892,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get out into the open air",
     "source": "wiktionary",
     "lemmas": [
       "gewinnen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cc892da8a5": {
     "text": "Die Schürfwunde entzündete sich, weil Margot sie nicht desinfiziert hatte.",
@@ -14921,11 +15124,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If you have no water, you use what you have.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cca523bd41": {
     "text": "Wir erwägen eine neue Niederlassung in Belgien zu gründen.",
@@ -15082,11 +15286,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to knock on every door",
     "source": "wiktionary",
     "lemmas": [
       "klopfen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cca5e83a26": {
     "text": "»Lass eine Zeile leer, dann sieht dein Bericht besser aus.«",
@@ -16374,12 +16579,13 @@
     "type": "expression",
     "note": "verprügeln",
     "synonyms": [],
-    "translation": null,
+    "translation": "to beat someone's face in",
     "source": "wiktionary",
     "lemmas": [
       "Fresse"
     ],
-    "ref": "phrases/jemandem die Fresse polieren"
+    "ref": "phrases/jemandem die Fresse polieren",
+    "translation_model": "openai/gpt-4.1"
   },
   "ccb1347b58": {
     "text": "„Und die Ida, flötete die Dame, die sei ja schon so groß und hübsch.“",
@@ -16589,13 +16795,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not put on airs",
     "source": "wiktionary",
     "lemmas": [
       "abbrechen",
       "kein"
     ],
-    "ref": "phrases/sich keine Verzierung abbrechen"
+    "ref": "phrases/sich keine Verzierung abbrechen",
+    "translation_model": "openai/gpt-4.1"
   },
   "ccb4935cfc": {
     "text": "Sie hat ihren Doktor in Philosophie gemacht.",
@@ -17694,11 +17901,12 @@
     "type": "expression",
     "note": "oft böse Dinge sagen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to have a sharp tongue",
     "source": "wiktionary",
     "lemmas": [
       "Zunge"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ccbcf75e21": {
     "text": "Sieh mal zu, dass du das Teil noch getauscht kriegst.",
@@ -18181,13 +18389,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get a foothold",
     "source": "wiktionary",
     "lemmas": [
       "Fuß",
       "fassen"
     ],
-    "ref": "phrases/Fuß fassen"
+    "ref": "phrases/Fuß fassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "ccc1f8a624": {
     "text": "Deinen Dreck kannst du allein wegmachen!",
@@ -18556,10 +18765,55 @@
   },
   "ccc68b1bd4": {
     "text": "EKG steht für Elektrokardiographie und bezeichnet eine Untersuchungsmethode, bei der die elektrische Aktivität des Herzens gemessen wird.",
-    "translation": null,
+    "translation": "EKG stands for electrocardiography and refers to an examination method in which the electrical activity of the heart is measured.",
     "source": "wiktionary",
     "lemmas": [
       "EKG"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "EKG",
+        "lemma": "EKG",
+        "pos": "noun",
+        "gloss_hint": "electrocardiography"
+      },
+      {
+        "form": "Elektrokardiographie",
+        "lemma": "Elektrokardiographie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Untersuchungsmethode",
+        "lemma": "Untersuchungsmethode",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "elektrische",
+        "lemma": "elektrisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aktivität",
+        "lemma": "Aktivität",
+        "pos": "noun",
+        "gloss_hint": "activity"
+      },
+      {
+        "form": "Herzens",
+        "lemma": "Herz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gemessen",
+        "lemma": "messen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "ccc73f6dc1": {
@@ -19600,12 +19854,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "within touching distance",
     "source": "wiktionary",
     "lemmas": [
       "anfassen"
     ],
-    "ref": "phrases/zum Anfassen"
+    "ref": "phrases/zum Anfassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "cccf601120": {
     "text": "Die Zelte sind um das Lagerfeuer herum errichtet.",
@@ -20188,12 +20443,13 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "A bird in the hand is worth two in the bush.",
     "source": "wiktionary",
     "lemmas": [
       "Spatz"
     ],
-    "ref": "phrases/lieber den Spatz in der Hand als die Taube auf dem Dach"
+    "ref": "phrases/lieber den Spatz in der Hand als die Taube auf dem Dach",
+    "translation_model": "openai/gpt-4.1"
   },
   "ccd3ee847b": {
     "text": "In dieser Zeile ist noch drei Strich Platz.",
@@ -20564,12 +20820,42 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like two peas in a pod",
     "source": "wiktionary",
     "lemmas": [
       "Ei"
     ],
-    "ref": "phrases/wie aus demselben Ei gekrochen"
+    "ref": "phrases/wie aus demselben Ei gekrochen",
+    "translation_model": "openai/gpt-4.1"
+  },
+  "ccdbfbcca7": {
+    "text": "„Hossa Hossa und die Stimmung war im Partykeller.“",
+    "translation": "\"Hossa Hossa and the mood was in the party cellar.\"",
+    "source": "wiktionary",
+    "lemmas": [
+      "hossa"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hossa Hossa",
+        "lemma": "Hossa Hossa",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stimmung",
+        "lemma": "Stimmung",
+        "pos": "noun",
+        "gloss_hint": "mood"
+      },
+      {
+        "form": "Partykeller",
+        "lemma": "Partykeller",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ]
   },
   "ccdc4e0a5f": {
     "text": "Der Braune Knollenblätterpilz ist hochgiftig.",
@@ -20636,10 +20922,49 @@
   },
   "ccdf75c3e4": {
     "text": "[F. W. Steinmeier:] „Die DDR war ein Staat, der die persönliche Freiheit seiner Bürger mit Füßen getreten hat […]“",
-    "translation": null,
+    "translation": "\"The GDR was a state that trampled on the personal freedom of its citizens [...]\"",
     "source": "wiktionary",
     "lemmas": [
       "mit Füßen getreten werden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "DDR",
+        "lemma": "DDR",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Staat",
+        "lemma": "Staat",
+        "pos": "noun",
+        "gloss_hint": "state"
+      },
+      {
+        "form": "persönliche",
+        "lemma": "persönlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Freiheit",
+        "lemma": "Freiheit",
+        "pos": "noun",
+        "gloss_hint": "freedom"
+      },
+      {
+        "form": "Bürger",
+        "lemma": "Bürger",
+        "pos": "noun",
+        "gloss_hint": "citizen"
+      },
+      {
+        "form": "getreten",
+        "lemma": "treten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "ccdf9c48bc": {
@@ -21040,11 +21365,12 @@
     "type": "expression",
     "note": "überzogen, überdreht, Aufmerksamkeit erregend",
     "synonyms": [],
-    "translation": null,
+    "translation": "to be eccentric",
     "source": "wiktionary",
     "lemmas": [
       "abdrehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "cce2a9c533": {
     "text": "Wer nur Bewerber ist, weiß noch nicht, ob seine Bewerbung Erfolg haben wird.",
@@ -23179,11 +23505,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "off the bat",
     "source": "wiktionary",
     "lemmas": [
       "Stand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ccf7981f32": {
     "text": "„Alarmierender Befund: 60 Prozent der Insektenarten in der Schweiz sind gefährdet.“",
@@ -23438,15 +23765,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to watch out",
     "source": "wiktionary",
     "lemmas": [
       "Acht"
     ],
     "ref": "phrases/sich in Acht nehmen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "ccf932ab88": {
     "text": "„Das Firmament blaut ewig und die Erde",
@@ -23513,10 +23838,31 @@
   },
   "ccfaf8bcbb": {
     "text": "Das Kind sitzt wiedermal vorm Fernseher.",
-    "translation": null,
+    "translation": "The child is sitting in front of the television again.",
     "source": "wiktionary",
     "lemmas": [
       "vorm"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kind",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": "child"
+      },
+      {
+        "form": "sitzt",
+        "lemma": "sitzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fernseher",
+        "lemma": "Fernseher",
+        "pos": "noun",
+        "gloss_hint": "television"
+      }
     ]
   },
   "ccfd02f8d6": {
@@ -23524,11 +23870,12 @@
     "type": "expression",
     "note": "zu/mit sieben Personen",
     "synonyms": [],
-    "translation": null,
+    "translation": "with seven people",
     "source": "wiktionary",
     "lemmas": [
       "zu"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "ccfd604805": {
     "text": "Seit jeher ruft das Festkomitee Kölner Karneval die Bürger dazu auf, Themen zu nennen, die ihnen unter den Nägeln brennen.",

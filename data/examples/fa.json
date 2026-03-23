@@ -4,11 +4,12 @@
     "type": "expression",
     "note": "direkt, offen, unverblümt miteinander reden; Klartext miteinander reden",
     "synonyms": [],
-    "translation": null,
+    "translation": "to speak frankly with each other",
     "source": "wiktionary",
     "lemmas": [
       "deutsch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa012851c7": {
     "text": "„Es ist ein uns nicht mehr gewohntes Zusammenspiel von Ernst und Spaß, Maskenspiel, Schäferspiel und am Schluss ein Feuerwerk außerhalb des Schlosses.“",
@@ -1701,11 +1702,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to pleat",
     "source": "wiktionary",
     "lemmas": [
       "schlagen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa0ce0ad6e": {
     "text": "Ich brauche keine dicken Gläser für meine Brille.",
@@ -1908,10 +1910,31 @@
   },
   "fa10a6c87c": {
     "text": "„Auch dort ist gerade Frühling, und so wurde auch dort straßauf, straßab auf jeder Speisekarte frischer Spargel angeboten.“",
-    "translation": null,
+    "translation": "\"Spring is also just arriving there, and so fresh asparagus was being offered on every restaurant menu throughout the town.\"",
     "source": "wiktionary",
     "lemmas": [
       "straßauf, straßab"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Frühling",
+        "lemma": "Frühling",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spargel",
+        "lemma": "Spargel",
+        "pos": "noun",
+        "gloss_hint": "asparagus"
+      },
+      {
+        "form": "angeboten",
+        "lemma": "anbieten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "fa11a6da4c": {
@@ -2948,11 +2971,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to still be around",
     "source": "wiktionary",
     "lemmas": [
       "Welt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa1c72688f": {
     "text": "„Nicht mit einem Hund, sondern mit seiner Schlange ging ein Mann im Stadtteil Mülheim gegen Mitternacht auf Gassi-Runde.“",
@@ -3155,13 +3179,14 @@
     "type": "expression",
     "note": "missglücken",
     "synonyms": [],
-    "translation": null,
+    "translation": "to backfire",
     "source": "wiktionary",
     "lemmas": [
       "gehen",
       "Auge"
     ],
-    "ref": "phrases/ins Auge gehen"
+    "ref": "phrases/ins Auge gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "fa20c832ae": {
     "text": "„Nun geraten wir in all ihren Staub, und es wird unmöglich, zu atmen.“",
@@ -3483,11 +3508,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be an expensive pleasure",
     "source": "wiktionary",
     "lemmas": [
       "Vergnügen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa25c814a1": {
     "text": "„Und verschone uns mit Einzelheiten aus deinem Sexleben.“",
@@ -3554,11 +3580,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in a mocking manner",
     "source": "wiktionary",
     "lemmas": [
       "spöttisch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa28fda160": {
     "text": "Der Kaffee ist fertig; das bedeutet bei uns: aufstehen!",
@@ -4209,10 +4236,49 @@
   },
   "fa3242fd76": {
     "text": "Die neue Brücke wird nun doch nicht gebaut. In der letzten Sitzung hat der Stadtrat das Projekt endgültig zu den Akten gelegt.",
-    "translation": null,
+    "translation": "The new bridge will not be built after all. In the last council meeting, the city council definitively shelved the project.",
     "source": "wiktionary",
     "lemmas": [
       "etwas zu den Akten legen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Brücke",
+        "lemma": "Brücke",
+        "pos": "noun",
+        "gloss_hint": "bridge"
+      },
+      {
+        "form": "gebaut",
+        "lemma": "bauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sitzung",
+        "lemma": "Sitzung",
+        "pos": "noun",
+        "gloss_hint": "meeting"
+      },
+      {
+        "form": "Stadtrat",
+        "lemma": "Stadtrat",
+        "pos": "noun",
+        "gloss_hint": "city council"
+      },
+      {
+        "form": "Projekt",
+        "lemma": "Projekt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gelegt",
+        "lemma": "legen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "fa328b5b04": {
@@ -4393,11 +4459,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not have the heart to do something",
     "source": "wiktionary",
     "lemmas": [
       "Herz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa33410ab2": {
     "text": "Baue bitte das Zelt auf.",
@@ -4413,11 +4480,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to tackle a hot issue",
     "source": "wiktionary",
     "lemmas": [
       "ein heißes Eisen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa36bcedeb": {
     "text": "Wo warst du gestern Abend?",
@@ -4644,11 +4712,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put someone in irons",
     "source": "wiktionary",
     "lemmas": [
       "Eisen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa39f73198": {
     "text": "Göttingen gehörte zur Gemeinde Liesborn, die später in der Gemeinde Wadersloh aufging.",
@@ -5238,11 +5307,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "gossip about someone",
     "source": "wiktionary",
     "lemmas": [
       "zerreißen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa42543101": {
     "text": "Um durch das Loch im Zaun zu gelangen, ging er in die Beuge.",
@@ -5956,10 +6026,55 @@
   },
   "fa44bc3dd3": {
     "text": "„Uns, als künftigen Weltraumpassagieren, drängt sich die Frage auf, was die Tierchen unter diesen ungewöhnlichen Umständen bewogen haben mag, sich so kühn zu vermehren.“",
-    "translation": null,
+    "translation": "\"As future space travelers, we are compelled to ask ourselves what could have prompted these little creatures to reproduce so boldly under such unusual circumstances.\"",
     "source": "wiktionary",
     "lemmas": [
       "Tierchen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "künftigen",
+        "lemma": "künftig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weltraumpassagieren",
+        "lemma": "Weltraumpassagier",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frage",
+        "lemma": "Frage",
+        "pos": "noun",
+        "gloss_hint": "question"
+      },
+      {
+        "form": "Tierchen",
+        "lemma": "Tierchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bewogen",
+        "lemma": "bewegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "kühn",
+        "lemma": "kühn",
+        "pos": "adjective",
+        "gloss_hint": "bold"
+      },
+      {
+        "form": "vermehren",
+        "lemma": "vermehren",
+        "pos": "verb",
+        "gloss_hint": "reproduce"
+      }
     ]
   },
   "fa454b03ae": {
@@ -5976,11 +6091,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "turn a deaf ear to something",
     "source": "wiktionary",
     "lemmas": [
       "Ohr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa4621c0ae": {
     "text": "Die Schuhe waren frisch gewichst.",
@@ -6129,11 +6245,12 @@
     "type": "expression",
     "note": "nur das Notwendige",
     "synonyms": [],
-    "translation": null,
+    "translation": "not a step more than necessary",
     "source": "wiktionary",
     "lemmas": [
       "Schritt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa49b95edc": {
     "text": "Der Mechaniker befestigte gerade den Bolzen.",
@@ -6188,12 +6305,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give someone a piece of one's mind",
     "source": "wiktionary",
     "lemmas": [
       "lang"
     ],
-    "ref": "phrases/jemandem die Hammelbeine lang ziehen"
+    "ref": "phrases/jemandem die Hammelbeine lang ziehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "fa4a0650c4": {
     "text": "Er ist hinter den Mädchen her.",
@@ -6680,12 +6798,13 @@
     "type": "expression",
     "note": "irre werden",
     "synonyms": [],
-    "translation": null,
+    "translation": "lose one's mind",
     "source": "wiktionary",
     "lemmas": [
       "verlieren",
       "Verstand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa4e1acb88": {
     "text": "„Das Esszimmer war im Parterre, das weiß ich, auch der Salon, in der ersten Etage die Bibliothek und Steins Arbeitszimmer.“",
@@ -6833,10 +6952,37 @@
   },
   "fa4e64a1ac": {
     "text": "Ich bin in der falschen Richtung in eine Einbahn eingebogen.",
-    "translation": null,
+    "translation": "I turned into a one-way street going in the wrong direction.",
     "source": "wiktionary",
     "lemmas": [
       "Einbahn"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "falschen",
+        "lemma": "falsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Richtung",
+        "lemma": "Richtung",
+        "pos": "noun",
+        "gloss_hint": "direction"
+      },
+      {
+        "form": "Einbahn",
+        "lemma": "Einbahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eingebogen",
+        "lemma": "einbiegen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "fa4e841541": {
@@ -6867,12 +7013,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not have all one's marbles",
     "source": "wiktionary",
     "lemmas": [
       "Pfeil"
     ],
-    "ref": "phrases/nicht alle Pfeile im Köcher haben"
+    "ref": "phrases/nicht alle Pfeile im Köcher haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "fa51b709d4": {
     "text": "Im letzten Akt des Theaterstücks starb der Protagonist, damit endete auch das Stück.",
@@ -7009,11 +7156,12 @@
     "synonyms": [
       "Maße"
     ],
-    "translation": null,
+    "translation": "to the same extent",
     "source": "wiktionary",
     "lemmas": [
       "Maß"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa548b832b": {
     "text": "„In Wahrheit ist die Toskana noch tausendmal schöner als in den Reiseberichten der deutschen Dichter.“",
@@ -10192,11 +10340,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "at the aforementioned location",
     "source": "wiktionary",
     "lemmas": [
       "Ort"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa6d8fe69d": {
     "text": "„In anderen Fächergruppen, wie Pädagogik, Gesundheit und Sozialwesen sowie Geisteswissenschaften und Künste, nimmt der Anteil der Frauen zwischen Master- und Promotionsbildungsgängen zwar ab, dennoch bilden Frauen immer noch die Mehrzahl der kürzlichen Absolventen von Promotionsbildungsgängen.“",
@@ -10212,24 +10361,26 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "set oneself up as a judge over someone",
     "source": "wiktionary",
     "lemmas": [
       "Richter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa6efe6854": {
     "text": "ins gleiche Horn tuten",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "sing from the same hymn sheet",
     "source": "wiktionary",
     "lemmas": [
       "gleich",
       "Horn"
     ],
-    "ref": "phrases/ins gleiche Horn tuten"
+    "ref": "phrases/ins gleiche Horn tuten",
+    "translation_model": "openai/gpt-4.1"
   },
   "fa702b44da": {
     "text": "das kommt in den besten Familien vor",
@@ -10404,23 +10555,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be out of the woods",
     "source": "wiktionary",
     "lemmas": [
       "Schneider"
     ],
-    "ref": "phrases/aus dem Schneider sein"
+    "ref": "phrases/aus dem Schneider sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "fa7866880b": {
     "text": "jemanden knapp halten",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to keep someone on a tight budget",
     "source": "wiktionary",
     "lemmas": [
       "halten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa79c61074": {
     "text": "Die Beschleunigung drückt den Piloten in den Sitz.",
@@ -11994,11 +12147,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on the safe side",
     "source": "wiktionary",
     "lemmas": [
       "Seite"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fa845041a4": {
     "text": "„Die Frankfurter Co-Trainerin sei bereits im Jahr 2005 schriftlich darauf hingewiesen worden, ihre Stundenabrechnung korrekt abzugeben.“",
@@ -12751,10 +12905,55 @@
   },
   "fa8eb7b01e": {
     "text": "Na klar, ein toller neuer Mercedes wär' besser als ein alter klappriger Kadett, aber woher nehmen und nicht stehlen?",
-    "translation": null,
+    "translation": "\"Sure, a nice new Mercedes would be better than an old clunky Kadett, but where would you get it without stealing?\"",
     "source": "wiktionary",
     "lemmas": [
       "woher nehmen und nicht stehlen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "klar",
+        "lemma": "klar",
+        "pos": "adjective",
+        "gloss_hint": "clear"
+      },
+      {
+        "form": "toller",
+        "lemma": "toll",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mercedes",
+        "lemma": "Mercedes",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "klappriger",
+        "lemma": "klapprig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kadett",
+        "lemma": "Kadett",
+        "pos": "noun",
+        "gloss_hint": "Cadet"
+      },
+      {
+        "form": "nehmen",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": "take"
+      },
+      {
+        "form": "stehlen",
+        "lemma": "stehlen",
+        "pos": "verb",
+        "gloss_hint": "steal"
+      }
     ]
   },
   "fa8f8d43cc": {
@@ -13338,10 +13537,37 @@
   },
   "fa9722c546": {
     "text": "„Die TuS Dassendorf (offiziell: Turn- und Sportgemeinschaft Dassendorf von 1948 e.V.) ist ein Sportverein aus Dassendorf.“",
-    "translation": null,
+    "translation": "\"The TuS Dassendorf (officially: Dassendorf Gymnastics and Sports Association, founded 1948) is a sports club from Dassendorf.\"",
     "source": "wiktionary",
     "lemmas": [
       "TuS"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "TuS",
+        "lemma": "TuS",
+        "pos": "noun",
+        "gloss_hint": "gymnastics and sports club"
+      },
+      {
+        "form": "Dassendorf",
+        "lemma": "Dassendorf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "offiziell",
+        "lemma": "offiziell",
+        "pos": "adjective",
+        "gloss_hint": "official"
+      },
+      {
+        "form": "Sportverein",
+        "lemma": "Sportverein",
+        "pos": "noun",
+        "gloss_hint": "sports club"
+      }
     ]
   },
   "fa98319b44": {
@@ -13848,13 +14074,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in a sticky situation",
     "source": "wiktionary",
     "lemmas": [
       "stecken",
       "Dreck"
     ],
-    "ref": "phrases/im Dreck stecken"
+    "ref": "phrases/im Dreck stecken",
+    "translation_model": "openai/gpt-4.1"
   },
   "fa9f109c0d": {
     "text": "„Unsere Zimmer hatten ein Bett mit einem Nachttopf darunter und einen Nachttisch mit einer Bibel.“",
@@ -14251,11 +14478,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Business is business and morality is morality.",
     "source": "wiktionary",
     "lemmas": [
       "Geschäft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "faa4cee522": {
     "text": "[Ausspracheregeln:] […] aber: in einigen Einzelwörtern ist es daneben auch üblich, den zweiten Vokal, sofern er akzentuiert ist, mit Glottisschlag neu einzusetzen, z. B. Beate [beˈ^ʔaːtə] neben [beˈaːtə], Theater [teˈ^ʔaːtɐ] neben: [teˈaːtɐ]; […].",
@@ -14606,10 +14834,61 @@
   },
   "faa69ac501": {
     "text": "Zum Monatsende musst du dich mal entscheiden, ob du im väterlichen Betrieb bleibst oder hier bei uns weitermachen möchtest: Du kannst halt nicht auf zwei Hochzeiten tanzen.",
-    "translation": null,
+    "translation": "By the end of the month, you need to decide whether you want to stay in your father's business or continue working here with us: you can't have it both ways.",
     "source": "wiktionary",
     "lemmas": [
       "nicht auf zwei Hochzeiten tanzen können"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Monatsende",
+        "lemma": "Monatsende",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entscheiden",
+        "lemma": "entscheiden",
+        "pos": "verb",
+        "gloss_hint": "choose"
+      },
+      {
+        "form": "väterlichen",
+        "lemma": "väterlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Betrieb",
+        "lemma": "Betrieb",
+        "pos": "noun",
+        "gloss_hint": "company"
+      },
+      {
+        "form": "bleibst",
+        "lemma": "bleiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "weitermachen",
+        "lemma": "weitermachen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hochzeiten",
+        "lemma": "Hochzeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "tanzen",
+        "lemma": "tanzen",
+        "pos": "verb",
+        "gloss_hint": "dance"
+      }
     ]
   },
   "faa69bffa4": {
@@ -14801,13 +15080,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to go to sea",
     "source": "wiktionary",
     "lemmas": [
       "fahren",
       "See"
     ],
-    "ref": "phrases/zur See fahren"
+    "ref": "phrases/zur See fahren",
+    "translation_model": "openai/gpt-4.1"
   },
   "faa8722c20": {
     "text": "„So hatte Baji Rao genügend Geld, um seine Truppen zu bezahlen, und es blieb ihm das Schicksal vieler berühmter Feldheern Indiens erspart, die zwar Schlachten gewannen, aber dann erleben mussten, dass ihre Truppen davonliefen, weil sie ihnen den Sold schuldig geblieben waren.“",
@@ -15156,6 +15436,35 @@
       }
     ],
     "text_linked": "„Nun [[trennen|verbs/trennen#1]] sich die französischen Kommunisten von Hammer und Sichel und damit von einer Tradition. […] Der Verzicht auf Hammer und Sichel wird an der Seine mit melancholischem Spott kommentiert.“"
+  },
+  "faa8e5cc08": {
+    "text": "Die Uhr macht ticktack.",
+    "translation": "The clock goes tick-tock.",
+    "source": "wiktionary",
+    "lemmas": [
+      "ticktack"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Uhr",
+        "lemma": "Uhr",
+        "pos": "noun",
+        "gloss_hint": "clock/watch"
+      },
+      {
+        "form": "macht",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": "make"
+      },
+      {
+        "form": "ticktack",
+        "lemma": "ticktack",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ]
   },
   "faa8fe5cab": {
     "text": "Schließlich trugen ihre Bemühungen Früchte, und sie konnte im darauffolgenden Monat mit dem Studium beginnen.",
@@ -15729,11 +16038,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be generous",
     "source": "wiktionary",
     "lemmas": [
       "Hand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "faaed054e9": {
     "text": "„Und ohne die Antwort des zur Seite tretenden Postens abzuwarten, ritt Dolochow im Schritt bergan.“",
@@ -15842,18 +16152,70 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "this is where our paths part",
     "source": "wiktionary",
     "lemmas": [
       "Weg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "faafc8409e": {
     "text": "Alterspräsident Christoph Blocher hat zum Auftakt der neuen Legislatur das Schweizer Parlament zu mehr Bodenhaftung aufgerufen.",
-    "translation": null,
+    "translation": "Senior member Christoph Blocher called on the Swiss Parliament at the start of the new legislative term to be more grounded.",
     "source": "wiktionary",
     "lemmas": [
       "Legislatur"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Alterspräsident",
+        "lemma": "Alterspräsident",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Christoph Blocher",
+        "lemma": "Christoph Blocher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auftakt",
+        "lemma": "Auftakt",
+        "pos": "noun",
+        "gloss_hint": "beginning"
+      },
+      {
+        "form": "neuen",
+        "lemma": "neu",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Legislatur",
+        "lemma": "Legislatur",
+        "pos": "noun",
+        "gloss_hint": "legislative term"
+      },
+      {
+        "form": "Schweizer",
+        "lemma": "Schweizer",
+        "pos": "adjective",
+        "gloss_hint": "Swiss"
+      },
+      {
+        "form": "Parlament",
+        "lemma": "Parlament",
+        "pos": "noun",
+        "gloss_hint": "parliament"
+      },
+      {
+        "form": "Bodenhaftung",
+        "lemma": "Bodenhaftung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "faafd4aeee": {
@@ -16842,10 +17204,37 @@
   },
   "fab781bc1d": {
     "text": "Ich sollte am Wochenende meinen Schopf aufräumen.",
-    "translation": null,
+    "translation": "I should tidy up my shed on the weekend.",
     "source": "wiktionary",
     "lemmas": [
       "Schopf"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sollte",
+        "lemma": "sollen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wochenende",
+        "lemma": "Wochenende",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schopf",
+        "lemma": "Schopf",
+        "pos": "noun",
+        "gloss_hint": "shed"
+      },
+      {
+        "form": "aufräumen",
+        "lemma": "aufräumen",
+        "pos": "verb",
+        "gloss_hint": "tidy up"
+      }
     ]
   },
   "fab7d96501": {
@@ -17695,11 +18084,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "weird guy",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fabf5be5a9": {
     "text": "Die Auswahl der Teilnehmer erfolgt in Unabhängigkeit von Alter und formaler Ausbildung, einziges Kriterium ist die eingereichte Arbeitsprobe.",
@@ -17820,18 +18210,112 @@
     "type": "expression",
     "note": "halbherzig tun",
     "synonyms": [],
-    "translation": null,
+    "translation": "to do something half-heartedly",
     "source": "wiktionary",
     "lemmas": [
       "Backe"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fabfe9a47c": {
     "text": "„Viele Rostlauben aus Duisburg, Hamburg oder Berlin wurden in Beirut bisher meistbietend verscherbelt. Doch Abwrackprämie und Wirtschaftskrise verändern jetzt auch im Libanon den Gebrauchtwagenmarkt. Neuerdings heißt die Devise: Cadillac statt Mercedes.“",
-    "translation": null,
+    "translation": "Many old bangers from Duisburg, Hamburg or Berlin were previously sold to the highest bidder in Beirut. But the scrappage premium and economic crisis are now changing the used car market in Lebanon too. Nowadays the motto is: Cadillac instead of Mercedes.",
     "source": "wiktionary",
     "lemmas": [
       "Libanon"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rostlauben",
+        "lemma": "Rostlaube",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Duisburg",
+        "lemma": "Duisburg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hamburg",
+        "lemma": "Hamburg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Berlin",
+        "lemma": "Berlin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beirut",
+        "lemma": "Beirut",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "meistbietend",
+        "lemma": "meistbietend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "verscherbelt",
+        "lemma": "verscherbeln",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abwrackprämie",
+        "lemma": "Abwrackprämie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wirtschaftskrise",
+        "lemma": "Wirtschaftskrise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verändern",
+        "lemma": "verändern",
+        "pos": "verb",
+        "gloss_hint": "change"
+      },
+      {
+        "form": "Libanon",
+        "lemma": "Libanon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gebrauchtwagenmarkt",
+        "lemma": "Gebrauchtwagenmarkt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Devise",
+        "lemma": "Devise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Cadillac",
+        "lemma": "Cadillac",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mercedes",
+        "lemma": "Mercedes",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "fac0a96ae2": {
@@ -18040,22 +18524,24 @@
     "type": "expression",
     "note": "sich eine Sache leicht/er machen",
     "synonyms": [],
-    "translation": null,
+    "translation": "take the path of least resistance",
     "source": "wiktionary",
     "lemmas": [
       "Brett"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fac4dc2d8b": {
     "text": "ich bin nur ein armer Wandergesell",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "I'm just a poor wandering journeyman.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fac53a5b31": {
     "text": "„Heute sind es riesige, hochmoderne Frachter.“",
@@ -18110,12 +18596,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "keep someone in suspense",
     "source": "wiktionary",
     "lemmas": [
       "spannen"
     ],
-    "ref": "phrases/jemanden auf die Folter spannen"
+    "ref": "phrases/jemanden auf die Folter spannen",
+    "translation_model": "openai/gpt-4.1"
   },
   "fac6b87160": {
     "text": "In der EU gibt es ausreichend Geld, um Grenzzäune zu errichten, aber nicht genug, um den Ländern zu helfen, die zufälligerweise auf der Flüchtlingsroute liegen und diese Hilfe dringend brauchen.",
@@ -18667,11 +19154,12 @@
     "type": "expression",
     "note": "asketisch und keusch leben",
     "synonyms": [],
-    "translation": null,
+    "translation": "live like a monk",
     "source": "wiktionary",
     "lemmas": [
       "Mönch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "facae89406": {
     "text": "„Die Möglichkeit, die konservative Machtbasis der Republikaner […] nachhaltig festigen zu können, ist Donald Trump gewissermaßen in den Schoß gefallen, nachdem der fast 82-jährige Verfassungsrichter Anthony Kennedy unlängst seinen Rücktritt angekündigt hatte.“",
@@ -19590,12 +20078,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be only a shadow of one's former self",
     "source": "wiktionary",
     "lemmas": [
       "Schatten"
     ],
-    "ref": "phrases/nur noch ein Schatten seiner selbst sein"
+    "ref": "phrases/nur noch ein Schatten seiner selbst sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "fad7abae6a": {
     "text": "Erst wenn man auf „Speichern“ klickt wird die Datei auf die Festplatte geschrieben.",
@@ -19779,34 +20268,37 @@
     "type": "expression",
     "note": "beenden",
     "synonyms": [],
-    "translation": null,
+    "translation": "wrap it up",
     "source": "wiktionary",
     "lemmas": [
       "Sack"
     ],
-    "ref": "phrases/den Sack zumachen"
+    "ref": "phrases/den Sack zumachen",
+    "translation_model": "openai/gpt-4.1"
   },
   "fad7f16c38": {
     "text": "bei jemanden hat es gezündet",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "something clicked for someone",
     "source": "wiktionary",
     "lemmas": [
       "zünden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fad9661d8e": {
     "text": "zum Piepen sein",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be hilarious",
     "source": "wiktionary",
     "lemmas": [
       "piepen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fad9e1a8c3": {
     "text": "„Die Kapazität in Abhängikeit [sic] vom Plattenabstand und die Wirkung von Dielektrika bei Kondensatoren lassen sich am Plattenkondensator sehr gut zeigen.“",
@@ -19982,22 +20474,24 @@
     "type": "expression",
     "note": "man isst aus Hunger etwas wenig Schmackhaftes",
     "synonyms": [],
-    "translation": null,
+    "translation": "hunger makes you eat anything",
     "source": "wiktionary",
     "lemmas": [
       "Hunger"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fadccd61dd": {
     "text": "es ist schade um jemanden",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "it's a pity about someone",
     "source": "wiktionary",
     "lemmas": [
       "schade"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fadce15b3b": {
     "text": "Dieser Raum bietet genügend Platz für Großveranstaltungen.",
@@ -21049,11 +21543,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The week is off to a good start.",
     "source": "wiktionary",
     "lemmas": [
       "anlassen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fae5ba3195": {
     "text": "[Vicco von Bülow:] „Seine Rede über den Sinn des Fernsehens erinnerte an Loriots Fernsehauftritte in den goldenen Fernsehzeiten der 1970er-Jahre. Viel Nostalgie lag in der Luft.“",
@@ -21879,10 +22374,61 @@
   },
   "faef9b0180": {
     "text": "„Viele Branchenexperten konnten sich noch immer keinen Reim darauf machen, warum die Aktien der einstmals stolzen Investmenthäuser so stark unter Druck standen.“",
-    "translation": null,
+    "translation": "Many industry experts still could not make sense of why the shares of the once-proud investment houses came under such strong pressure.",
     "source": "wiktionary",
     "lemmas": [
       "sich einen Reim auf etwas machen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Branchenexperten",
+        "lemma": "Branchenexperte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reim",
+        "lemma": "Reim",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aktien",
+        "lemma": "Aktie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "einstmals",
+        "lemma": "einstmals",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "stolzen",
+        "lemma": "stolz",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Investmenthäuser",
+        "lemma": "Investmenthaus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stark",
+        "lemma": "stark",
+        "pos": "adjective",
+        "gloss_hint": "intense"
+      },
+      {
+        "form": "Druck",
+        "lemma": "Druck",
+        "pos": "noun",
+        "gloss_hint": "pressure"
+      }
     ]
   },
   "faeff653ff": {
@@ -22084,19 +22630,77 @@
     "synonyms": [
       "Schuhe"
     ],
-    "translation": null,
+    "translation": "Those are two completely different things.",
     "source": "wiktionary",
     "lemmas": [
       "Paar"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "faf2e84e65": {
     "text": "„Nordöstlich des Plans erheben sich die Zwiebeltürme der Kirche Liebfrauen, die man durch einen Durchgang im Haus Nr. 11 über mehrere Treppenstufen erreicht.“",
-    "translation": null,
+    "translation": "Northeast of the square rise the onion domes of the Church of Our Lady, which can be reached through a passageway in building no. 11 via several steps.",
     "source": "wiktionary",
     "lemmas": [
       "Durchgang",
       "Zwiebelturm"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Nordöstlich",
+        "lemma": "nordöstlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Plans",
+        "lemma": "Plan",
+        "pos": "noun",
+        "gloss_hint": "map"
+      },
+      {
+        "form": "erheben",
+        "lemma": "erheben",
+        "pos": "verb",
+        "gloss_hint": "tower"
+      },
+      {
+        "form": "Zwiebeltürme",
+        "lemma": "Zwiebelturm",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kirche",
+        "lemma": "Kirche",
+        "pos": "noun",
+        "gloss_hint": "church building"
+      },
+      {
+        "form": "Liebfrauen",
+        "lemma": "Liebfrauen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Durchgang",
+        "lemma": "Durchgang",
+        "pos": "noun",
+        "gloss_hint": "passageway"
+      },
+      {
+        "form": "Haus",
+        "lemma": "Haus",
+        "pos": "noun",
+        "gloss_hint": "building"
+      },
+      {
+        "form": "Treppenstufen",
+        "lemma": "Treppenstufe",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "faf3107c8a": {
@@ -22932,11 +23536,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in control",
     "source": "wiktionary",
     "lemmas": [
       "Heft"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "fafb68c115": {
     "text": "„Die uralte Technik des Fermentierens erlebt derzeit ein Revival.“",

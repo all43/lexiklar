@@ -232,22 +232,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "could write volumes about something",
     "source": "wiktionary",
     "lemmas": [
       "Band"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e902addfd5": {
     "text": "welch Glanz in meiner Hütte!",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "What an honor for my humble home!",
     "source": "wiktionary",
     "lemmas": [
       "Glanz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e903f8f7f1": {
     "text": "„An den unversehrten Stellen war ihr Haut so weiß wie Schnee. Aber ihr Bauch war übel zugerichtet, aufgeschlitzt.“",
@@ -1078,11 +1080,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Once your reputation is ruined, you can live completely carefree.",
     "source": "wiktionary",
     "lemmas": [
       "ruinieren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e9114e0043": {
     "text": "[Klimakatastrophe:] „Schon bei den Fluchtbewegungen, die daraus entstehen, sterben mehr Menschen als bei der Atomkatastrophe von Fukushima.“",
@@ -1345,14 +1348,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as true as my name is...",
     "source": "wiktionary",
     "lemmas": [
       "Name"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e91544f4a5": {
     "text": "„Flöten und Geigen erklangen.“",
@@ -2346,18 +2347,34 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to paint something in the darkest colors",
     "source": "wiktionary",
     "lemmas": [
       "malen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e91d8caaea": {
     "text": "RA Puvogel",
-    "translation": null,
+    "translation": "Attorney Puvogel",
     "source": "wiktionary",
     "lemmas": [
       "RA"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "RA",
+        "lemma": "RA",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Puvogel",
+        "lemma": "Puvogel",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e91debf0dc": {
@@ -2365,11 +2382,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "put an end to something",
     "source": "wiktionary",
     "lemmas": [
       "Ende"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e91f44848a": {
     "text": "„Dieser Bohrer ist unscharf, damit dauert es ewig durch den Stahl zu kommen.“",
@@ -2717,14 +2735,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "play it by ear",
     "source": "wiktionary",
     "lemmas": [
       "Sicht"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "e925f64c28": {
     "text": "„In dem langen, reich möblierten Salon sitzen die beiden Frauen auf der Couch.“",
@@ -4152,12 +4168,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make a complete fool of oneself",
     "source": "wiktionary",
     "lemmas": [
       "blamieren"
     ],
-    "ref": "phrases/sich bis auf die Knochen blamieren"
+    "ref": "phrases/sich bis auf die Knochen blamieren",
+    "translation_model": "openai/gpt-4.1"
   },
   "e933ebde97": {
     "text": "Er hat ein riesiges Fest veranstaltet.",
@@ -4437,12 +4454,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be up to one's ears in debt",
     "source": "wiktionary",
     "lemmas": [
       "Haar"
     ],
-    "ref": "phrases/mehr Schulden als Haare auf dem Kopf haben"
+    "ref": "phrases/mehr Schulden als Haare auf dem Kopf haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "e937fc29d8": {
     "text": "Der Winter in Kanada ist äußerst hart.",
@@ -5354,12 +5372,13 @@
     "type": "expression",
     "note": "kaputt gehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "fall apart",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
     ],
-    "ref": "phrases/in die Brüche gehen"
+    "ref": "phrases/in die Brüche gehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e940bd66ec": {
     "text": "Die Maschinen liefen auf Hochtouren, um die Stückkosten niedrig zu halten.",
@@ -5712,10 +5731,31 @@
   },
   "e94398fd05": {
     "text": "Sagst du mir, was passiert ist? — Auf keinen Fall!",
-    "translation": null,
+    "translation": "Will you tell me what happened? — Absolutely not!",
     "source": "wiktionary",
     "lemmas": [
       "auf keinen Fall"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sagst",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "passiert",
+        "lemma": "passieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fall",
+        "lemma": "Fall",
+        "pos": "noun",
+        "gloss_hint": "case"
+      }
     ]
   },
   "e943c4fc5f": {
@@ -5998,10 +6038,43 @@
   },
   "e9450914f7": {
     "text": "Ich bin wegen deines großzügigen Geschenks ganz ausm Häuschen.",
-    "translation": null,
+    "translation": "I'm absolutely over the moon because of your generous gift.",
     "source": "wiktionary",
     "lemmas": [
       "ausm"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wegen",
+        "lemma": "wegen",
+        "pos": "preposition",
+        "gloss_hint": null
+      },
+      {
+        "form": "großzügigen",
+        "lemma": "großzügig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geschenks",
+        "lemma": "Geschenk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausm",
+        "lemma": "aus",
+        "pos": "preposition",
+        "gloss_hint": null
+      },
+      {
+        "form": "Häuschen",
+        "lemma": "Häuschen",
+        "pos": "noun",
+        "gloss_hint": "outhouse"
+      }
     ]
   },
   "e9467518a9": {
@@ -6009,11 +6082,12 @@
     "type": "expression",
     "note": "das Ergebnis einer Arbeit ist typisch oder charakteristisch für jemanden",
     "synonyms": [],
-    "translation": null,
+    "translation": "bear someone's stamp",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e946d47bc3": {
     "text": "„Frauen sitzen in weiten, mit Gold bestickten Gewändern aus purpurfarbener, oranger oder türkisblauer Seide auf ausgebreiteten Tüchern.“",
@@ -6851,11 +6925,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Eat something, bread is running low.",
     "source": "wiktionary",
     "lemmas": [
       "Brot"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e94c60973c": {
     "text": "„Bei einem schweren Verkehrsunfall in Brakel (Kreis Höxter) sind am frühen Samstagmorgen zwei junge Männer im Alter von 20 und 23 Jahren ums Leben gekommen.“",
@@ -7001,11 +7076,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "There's no getting along with someone.",
     "source": "wiktionary",
     "lemmas": [
       "Auskommen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e94c986b1b": {
     "text": "„Das BH ist nach den Grundsätzen eines Milizsystems eingerichtet (Art 79 Abs 1 B-VG), das auf einer Verbindung eines Präsenzdienstes mit wiederkehrenden Übungen beruht.“",
@@ -8107,24 +8183,26 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "have something in mind",
     "source": "wiktionary",
     "lemmas": [
       "Auge",
       "im"
     ],
-    "ref": "phrases/etwas im Auge haben"
+    "ref": "phrases/etwas im Auge haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "e95c258b21": {
     "text": "Die dümmsten Bauern ernten die größten Kartoffeln",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The dumbest farmers harvest the biggest potatoes.",
     "source": "wiktionary",
     "lemmas": [
       "Kartoffel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e95c89e6e0": {
     "text": "„Sie wurden durch kleine Kinder vorgeſtellt, welche gar mahleriſch fernten.“",
@@ -9375,11 +9453,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to cast a spell on someone",
     "source": "wiktionary",
     "lemmas": [
       "Bann"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e9619e041d": {
     "text": "Der Wollbaum liefert den Kapok.",
@@ -9428,12 +9507,13 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "If the mountain will not come to Muhammad, then Muhammad must go to the mountain.",
     "source": "wiktionary",
     "lemmas": [
       "gehen",
       "Berg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e962c3fd3e": {
     "text": "„Und dann ist er ja auch noch ein glühender Europäer, was viele schreckt, die nicht so genau hinschauen.“",
@@ -9692,11 +9772,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get out of the line of fire",
     "source": "wiktionary",
     "lemmas": [
       "Schusslinie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e96603c822": {
     "text": "„Wer wirkliches Mitgefühl hat, leistet tätige Hilfe oder versucht, durch besondere Rücksicht oder ein gutes Wort den Schmerz zu lindern.“",
@@ -9796,11 +9877,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to get into trouble",
     "source": "wiktionary",
     "lemmas": [
       "Pfeffer"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e9666385dc": {
     "text": "„Bis auf die Wachen in der Maschine und an Deck war für die Besatzung Landgang angesagt.“",
@@ -9968,11 +10050,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to feel at home",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e96844bd2e": {
     "text": "Ich kenne den Vorstand einer großen AG sehr gut.",
@@ -10867,11 +10950,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to impress someone",
     "source": "wiktionary",
     "lemmas": [
       "antun"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e96c932527": {
     "text": "Natürlich müssen Sie das Gewerbe auch anmelden und dann Gewerbesteuer bezahlen.",
@@ -12813,11 +12897,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Actions speak louder than words.",
     "source": "wiktionary",
     "lemmas": [
       "ich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e97a4a42cc": {
     "text": "Im Dualen System werden die Wertstoffe vom Müll gesondert.",
@@ -13464,10 +13549,37 @@
   },
   "e98099a64b": {
     "text": "„Bis dahin hatte ich kein Parteiamt in der FDP gehabt.“",
-    "translation": null,
+    "translation": "\"Until then, I had not held any party office in the FDP.\"",
     "source": "wiktionary",
     "lemmas": [
       "FDP"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bis",
+        "lemma": "bis",
+        "pos": "particle",
+        "gloss_hint": null
+      },
+      {
+        "form": "dahin",
+        "lemma": "dahin",
+        "pos": "adverb",
+        "gloss_hint": "by then"
+      },
+      {
+        "form": "Parteiamt",
+        "lemma": "Parteiamt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "FDP",
+        "lemma": "FDP",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e980fef859": {
@@ -13561,11 +13673,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a wolf in sheep's clothing",
     "source": "wiktionary",
     "lemmas": [
       "Wolf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e986a38491": {
     "text": "So! Habt ihr die Aufgabe beendet?",
@@ -14813,11 +14926,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "as pale as a ghost",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e98bcc649e": {
     "text": "„Die Zahl der Gletscher, die kleinen Ferner mitgerechnet, gibt Heim mit 2 000 in den Alpen an.“",
@@ -15377,11 +15491,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to try to pull a fast one on someone",
     "source": "wiktionary",
     "lemmas": [
       "schräg"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e98f2a4290": {
     "text": "Das nennst du den besten Film aller Zeiten? Jetzt mach aber mal halblang!",
@@ -15544,11 +15659,12 @@
     "type": "expression",
     "note": "„die Luft wird sauberer“ und im übertragenen Sinn: „ein klares Wort beseitigt Differenzen“",
     "synonyms": [],
-    "translation": null,
+    "translation": "A thunderstorm clears the air (and: a frank word clears the air).",
     "source": "wiktionary",
     "lemmas": [
       "Gewitter"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e99099f0b0": {
     "text": "Die an der Prügelei beteiligten Spieler wurden gesperrt.",
@@ -15758,10 +15874,79 @@
   },
   "e99246d8f8": {
     "text": "Das Erstlingswerk [von Edgar Reitz] trug den Titel \"Gesicht einer Residenz\" und es war der Beginn einer Karriere, die Edgar Reitz an die Seite jener Menschen stellte, die die Geschichte des deutschen Films schrieben.",
-    "translation": null,
+    "translation": "His debut work bore the title \"Face of a Residence\" and it was the beginning of a career that placed Edgar Reitz alongside those who wrote the history of German film.",
     "source": "wiktionary",
     "lemmas": [
       "tragen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erstlingswerk",
+        "lemma": "Erstlingswerk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "trug",
+        "lemma": "tragen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Titel",
+        "lemma": "Titel",
+        "pos": "noun",
+        "gloss_hint": "title"
+      },
+      {
+        "form": "Gesicht",
+        "lemma": "Gesicht",
+        "pos": "noun",
+        "gloss_hint": "face (human)"
+      },
+      {
+        "form": "Residenz",
+        "lemma": "Residenz",
+        "pos": "noun",
+        "gloss_hint": "official residence"
+      },
+      {
+        "form": "Beginn",
+        "lemma": "Beginn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Karriere",
+        "lemma": "Karriere",
+        "pos": "noun",
+        "gloss_hint": "career"
+      },
+      {
+        "form": "Seite",
+        "lemma": "Seite",
+        "pos": "noun",
+        "gloss_hint": "side"
+      },
+      {
+        "form": "Geschichte",
+        "lemma": "Geschichte",
+        "pos": "noun",
+        "gloss_hint": "history"
+      },
+      {
+        "form": "deutschen",
+        "lemma": "deutsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Films",
+        "lemma": "Film",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e992b692f4": {
@@ -15769,11 +15954,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Hallelujah, praise be to God.",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e99392ea76": {
     "text": "„Design, Mode und Performatives bilden neue Schwerpunkte und mithin die Frage, was angewandte Kunst heute sein kann.“",
@@ -16122,12 +16308,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not break a sweat",
     "source": "wiktionary",
     "lemmas": [
       "kein"
     ],
-    "ref": "phrases/sich kein Bein ausreißen"
+    "ref": "phrases/sich kein Bein ausreißen",
+    "translation_model": "openai/gpt-4.1"
   },
   "e996e2fd44": {
     "text": "Wie sollen wir unser Fest gestalten?",
@@ -17768,11 +17955,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like a hole in the head",
     "source": "wiktionary",
     "lemmas": [
       "Kopf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e9a7929227": {
     "text": "Gindorf liegt in Deutschlands Südwesten.",
@@ -19191,10 +19379,31 @@
   },
   "e9b36e093a": {
     "text": "Ich werde dich finden, komme was wolle.",
-    "translation": null,
+    "translation": "I will find you, come what may.",
     "source": "wiktionary",
     "lemmas": [
       "komme, was wolle"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "finden",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": "discover"
+      },
+      {
+        "form": "komme",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "wolle",
+        "lemma": "wolle",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e9b37d8f06": {
@@ -20387,11 +20596,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "look to your own faults first",
     "source": "wiktionary",
     "lemmas": [
       "Nase"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e9bae5e5d2": {
     "text": "„Von den Jahrgängen Zehn und Elf noch ein paar Flaschen. Ich persönlich würde den Zehner vorziehen.“",
@@ -20457,13 +20667,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not sleep a wink",
     "source": "wiktionary",
     "lemmas": [
       "Auge",
       "kein"
     ],
-    "ref": "phrases/kein Auge zutun"
+    "ref": "phrases/kein Auge zutun",
+    "translation_model": "openai/gpt-4.1"
   },
   "e9be6dc6c2": {
     "text": "„Ich setz den Zwiebel in die Erde, er wächst, wird wie ein Haus so groß, selbst das Gartenhaus muß durchbrochen werden, die Pflanze trägt fünfhundert Blüthen und jede Blüthe eine Frucht so groß wie eine Kokusnuß.“",
@@ -20931,10 +21142,43 @@
   },
   "e9c060b234": {
     "text": "Wenn Du den Sinn von Belegen nicht peilst, bist Du falsch im Wikiwörterbuch.",
-    "translation": null,
+    "translation": "If you don't understand the point of citations, you're in the wrong place in the Wiktionary.",
     "source": "wiktionary",
     "lemmas": [
       "peilen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sinn",
+        "lemma": "Sinn",
+        "pos": "noun",
+        "gloss_hint": "meaning"
+      },
+      {
+        "form": "Belegen",
+        "lemma": "belegen",
+        "pos": "verb",
+        "gloss_hint": "prove"
+      },
+      {
+        "form": "peilst",
+        "lemma": "peilen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "falsch",
+        "lemma": "falsch",
+        "pos": "adjective",
+        "gloss_hint": "incorrect"
+      },
+      {
+        "form": "Wikiwörterbuch",
+        "lemma": "Wikiwörterbuch",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "e9c25e7908": {
@@ -21146,11 +21390,12 @@
     "type": "expression",
     "note": "jemanden umbringen",
     "synonyms": [],
-    "translation": null,
+    "translation": "cut someone's throat",
     "source": "wiktionary",
     "lemmas": [
       "abschneiden"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e9c2d7e526": {
     "text": "etwas Lügen strafen",
@@ -21823,10 +22068,43 @@
   },
   "e9c801d4ce": {
     "text": "Mein Sohn verschleißt seine Reithosen nur so. Jetzt habe ich ihm die dritte in diesem Jahr gekauft.",
-    "translation": null,
+    "translation": "My son wears out his riding breeches so quickly. I've now bought him the third pair this year.",
     "source": "wiktionary",
     "lemmas": [
       "verschleißen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sohn",
+        "lemma": "Sohn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verschleißt",
+        "lemma": "verschleißen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reithosen",
+        "lemma": "Reithose",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dritte",
+        "lemma": "dritte",
+        "pos": "numeral",
+        "gloss_hint": "third"
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year (calendar)"
+      }
     ]
   },
   "e9c8327f4f": {
@@ -21984,11 +22262,12 @@
     "type": "expression",
     "note": "zum Aufbruch bereit sein",
     "synonyms": [],
-    "translation": null,
+    "translation": "be ready to go at a moment's notice",
     "source": "wiktionary",
     "lemmas": [
       "Aufbruch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e9cba3af16": {
     "text": "„Um diese Zeit ist Hoffmann vor allem Musiker; er empfindet und bewältigt die Welt musikalisch.“",
@@ -23608,11 +23887,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a real blessing",
     "source": "wiktionary",
     "lemmas": [
       "Segen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e9df6e4b85": {
     "text": "„Um eine solche Erklärung herbeizuführen, richtete sie es so ein, dass die jungen Leute vor dem Hochamt beim Bischof zusammenkamen.“",
@@ -24792,11 +25072,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the land where the lemons bloom",
     "source": "wiktionary",
     "lemmas": [
       "blühen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e9ef98f45f": {
     "text": "Das Geburtsdatum bitte ins rechte Feld eintragen.",
@@ -24861,12 +25142,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "never ever",
     "source": "wiktionary",
     "lemmas": [
       "nimmer"
     ],
-    "ref": "phrases/nie und nimmer"
+    "ref": "phrases/nie und nimmer",
+    "translation_model": "openai/gpt-4.1"
   },
   "e9f0a17c84": {
     "text": "Holocaust-Überlebende berichten oft: Seit Auschwitz können wir nicht mehr religiös sein. Wer die Nazi-Verbrechen miterlebt hat, kann nicht mehr an einen allmächtigen, gütigen Gott glauben.",
@@ -25541,11 +25823,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to eat backwards (to vomit)",
     "source": "wiktionary",
     "lemmas": [
       "essen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e9f9747b54": {
     "text": "Du hast mich richtig lecker gemacht, als du mir von deinem neuen Nachbarn erzählt hast.",
@@ -25673,22 +25956,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "near post (in football/soccer)",
     "source": "wiktionary",
     "lemmas": [
       "kurz"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e9fb3c2bb8": {
     "text": "eine geschlagene Stunde",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a whole hour",
     "source": "wiktionary",
     "lemmas": [
       "schlagen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "e9fe797eda": {
     "text": "Der HSV stürmte mit drei Spitzen, und das wurde belohnt.",
@@ -25938,10 +26223,11 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "never go to your lord unless you are summoned",
     "source": "wiktionary",
     "lemmas": [
       "Fürst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   }
 }

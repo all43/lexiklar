@@ -209,10 +209,43 @@
   },
   "db0331cfba": {
     "text": "Sie hatte ein Händchen für ihre Schüler, die Kinder waren sehr motiviert und lernten fleißig.",
-    "translation": null,
+    "translation": "She had a gift for her students; the children were very motivated and learned diligently.",
     "source": "wiktionary",
     "lemmas": [
       "ein Händchen für etwas haben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Händchen",
+        "lemma": "Händchen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schüler",
+        "lemma": "Schüler",
+        "pos": "noun",
+        "gloss_hint": "student"
+      },
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "motiviert",
+        "lemma": "motiviert",
+        "pos": "adjective",
+        "gloss_hint": "motivated"
+      },
+      {
+        "form": "lernten",
+        "lemma": "lernen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "db035addcf": {
@@ -778,11 +811,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to not care about someone",
     "source": "wiktionary",
     "lemmas": [
       "machen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "db0c7378f9": {
     "text": "„Sie ließ den Motor an, schaltete die Scheinwerfer ein und setzte rückwärts aus der Einfahrt.“",
@@ -796,10 +830,55 @@
   },
   "db0ca28de4": {
     "text": "„Danach setzten Regen und Föhn ein, die gemeinsam für grüne Weihnachten sorgten und die Temperaturen auf über 20 Grad trieben.“",
-    "translation": null,
+    "translation": "\"After that, rain and föhn winds set in, which together brought green Christmases and drove temperatures above 20 degrees.\"",
     "source": "wiktionary",
     "lemmas": [
       "grüne Weihnachten"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Regen",
+        "lemma": "Regen",
+        "pos": "noun",
+        "gloss_hint": "rain"
+      },
+      {
+        "form": "Föhn",
+        "lemma": "Föhn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gemeinsam",
+        "lemma": "gemeinsam",
+        "pos": "adjective",
+        "gloss_hint": "shared"
+      },
+      {
+        "form": "grüne",
+        "lemma": "grün",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Weihnachten",
+        "lemma": "Weihnachten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Temperaturen",
+        "lemma": "Temperatur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grad",
+        "lemma": "Grad",
+        "pos": "noun",
+        "gloss_hint": "degree"
+      }
     ]
   },
   "db0da6d843": {
@@ -1006,22 +1085,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be able to handle someone",
     "source": "wiktionary",
     "lemmas": [
       "machen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "db11c11cf4": {
     "text": "jemandem den Kopf abhacken",
     "type": "expression",
     "note": "jemanden bestrafen, degradieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "to chop someone's head off",
     "source": "wiktionary",
     "lemmas": [
       "abhacken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "db13d4341c": {
     "text": "„So löst die Gegenüberstellung von Dichtung und Wahrheit, von Subjektivität und Objektivität, in diesem Fall nicht nur einige literaturwissenschaftliche Rätsel.“",
@@ -1604,10 +1685,49 @@
   },
   "db1b041da7": {
     "text": "„Auf CNN sah man eine Moderatorin, die zwei jungen Menschen in einem Fernsehstudio gegenübersaß.“",
-    "translation": null,
+    "translation": "\"On CNN, one saw a moderator who sat opposite two young people in a television studio.\"",
     "source": "wiktionary",
     "lemmas": [
       "CNN"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "CNN",
+        "lemma": "CNN",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Moderatorin",
+        "lemma": "Moderatorin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zwei",
+        "lemma": "zwei",
+        "pos": "numeral",
+        "gloss_hint": "two"
+      },
+      {
+        "form": "jungen",
+        "lemma": "jung",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fernsehstudio",
+        "lemma": "Fernsehstudio",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "db1b7b1fae": {
@@ -2899,18 +3019,94 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to lick someone's boots",
     "source": "wiktionary",
     "lemmas": [
       "lecken"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "db3435180e": {
     "text": "„Emanzipation und Freiheit hatten sich auch das sogenannte Lützowsches Freikorps, ein Freiwilligenverband der preußischen Armee, auf die Fahne geschrieben, das sich zu Beginn des 19. Jahrhunderts an den Kämpfen gegen die Armee des französischen Kaisers Napoleon beteiligte.“",
-    "translation": null,
+    "translation": "\"Emancipation and freedom were also the ideals of the so-called Lützow Free Corps, a volunteer unit of the Prussian army, which at the beginning of the 19th century participated in the fights against the army of French Emperor Napoleon.\"",
     "source": "wiktionary",
     "lemmas": [
       "sich etwas auf die Fahne schreiben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Emanzipation",
+        "lemma": "Emanzipation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Freiheit",
+        "lemma": "Freiheit",
+        "pos": "noun",
+        "gloss_hint": "freedom"
+      },
+      {
+        "form": "Lützowsches",
+        "lemma": "Lützowsch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Freikorps",
+        "lemma": "Freikorps",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Freiwilligenverband",
+        "lemma": "Freiwilligenverband",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "preußischen",
+        "lemma": "preußisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Armee",
+        "lemma": "Armee",
+        "pos": "noun",
+        "gloss_hint": "army"
+      },
+      {
+        "form": "Fahne",
+        "lemma": "Fahne",
+        "pos": "noun",
+        "gloss_hint": "motto"
+      },
+      {
+        "form": "Kämpfen",
+        "lemma": "kämpfen",
+        "pos": "verb",
+        "gloss_hint": "fight"
+      },
+      {
+        "form": "französischen",
+        "lemma": "französisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kaiser",
+        "lemma": "Kaiser",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Napoleon",
+        "lemma": "Napoleon",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "db3483f490": {
@@ -3263,10 +3459,73 @@
   },
   "db373f9237": {
     "text": "„Seit Jahrzehnten suchen Sonnenforscher nach der Erklärung für ein rätselhaftes Phänomen: Wie kommt es, dass die Atmosphäre der Sonne bis zu fünfhundert Mal heißer ist als ihre Oberfläche?“",
-    "translation": null,
+    "translation": "\"For decades, solar researchers have been searching for an explanation for a mysterious phenomenon: How is it that the atmosphere of the sun is up to five hundred times hotter than its surface?\"",
     "source": "wiktionary",
     "lemmas": [
       "rätselhaft"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Jahrzehnten",
+        "lemma": "Jahrzehnt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sonnenforscher",
+        "lemma": "Sonnenforscher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "suchen",
+        "lemma": "suchen",
+        "pos": "verb",
+        "gloss_hint": "search for"
+      },
+      {
+        "form": "Erklärung",
+        "lemma": "Erklärung",
+        "pos": "noun",
+        "gloss_hint": "explanation"
+      },
+      {
+        "form": "rätselhaftes",
+        "lemma": "rätselhaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Phänomen",
+        "lemma": "Phänomen",
+        "pos": "noun",
+        "gloss_hint": "phenomenon"
+      },
+      {
+        "form": "Atmosphäre",
+        "lemma": "Atmosphäre",
+        "pos": "noun",
+        "gloss_hint": "atmosphere"
+      },
+      {
+        "form": "Sonne",
+        "lemma": "Sonne",
+        "pos": "noun",
+        "gloss_hint": "sun"
+      },
+      {
+        "form": "heißer",
+        "lemma": "heiß",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Oberfläche",
+        "lemma": "Oberfläche",
+        "pos": "noun",
+        "gloss_hint": "surface"
+      }
     ]
   },
   "db3d4c8c32": {
@@ -3322,12 +3581,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "roll up one's sleeves",
     "source": "wiktionary",
     "lemmas": [
       "Ärmel"
     ],
-    "ref": "phrases/die Ärmel hochkrempeln"
+    "ref": "phrases/die Ärmel hochkrempeln",
+    "translation_model": "openai/gpt-4.1"
   },
   "db4023d26e": {
     "text": "Der Kaugummi schmeckt nach Pfefferminz.",
@@ -3620,12 +3880,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "take someone seriously",
     "source": "wiktionary",
     "lemmas": [
       "ansehen"
     ],
-    "ref": "phrases/jemanden für voll ansehen"
+    "ref": "phrases/jemanden für voll ansehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "db4260a438": {
     "text": "Er verdient schon Millionen und kriegt trotzdem den Hals nicht voll.",
@@ -3974,11 +4235,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "nothing ever happens there at night",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "db4b4d9859": {
     "text": "„Ich fühle mich wie eine neugierige Touristin“ […].",
@@ -4336,10 +4598,61 @@
   },
   "db4e40f606": {
     "text": "„Wer in Sachsen das Radio anschaltet, wird vom MDR ohne Scham über das Wetter für »Mitteldeutschland« informiert und warum sollte er es auch anders sagen?“",
-    "translation": null,
+    "translation": "\"Whoever turns on the radio in Saxony is informed by MDR without shame about the weather for 'Central Germany,' and why should they say it any differently?\"",
     "source": "wiktionary",
     "lemmas": [
       "MDR"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sachsen",
+        "lemma": "Sachsen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Radio",
+        "lemma": "Radio",
+        "pos": "noun",
+        "gloss_hint": "radio"
+      },
+      {
+        "form": "MDR",
+        "lemma": "MDR",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Scham",
+        "lemma": "Scham",
+        "pos": "noun",
+        "gloss_hint": "shame"
+      },
+      {
+        "form": "Wetter",
+        "lemma": "Wetter",
+        "pos": "noun",
+        "gloss_hint": "weather"
+      },
+      {
+        "form": "Mitteldeutschland",
+        "lemma": "Mitteldeutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sagen",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": "say"
+      },
+      {
+        "form": "anders",
+        "lemma": "anders",
+        "pos": "adverb",
+        "gloss_hint": "differently"
+      }
     ]
   },
   "db4e49abe4": {
@@ -4347,11 +4660,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "spoon-feed something to someone",
     "source": "wiktionary",
     "lemmas": [
       "eingeben"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "db4f152cc5": {
     "text": "Die Rückkehr in sein Berufsleben wurde ihm nach seinem schweren Unfall leicht gemacht.",
@@ -4488,10 +4802,31 @@
   },
   "db531e549e": {
     "text": "„Wenn wir rechtzeitig da sein wollen, müssen wir einen Zahn zulegen!\"",
-    "translation": null,
+    "translation": "If we want to get there on time, we need to step on it!",
     "source": "wiktionary",
     "lemmas": [
       "einen Zahn zulegen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "rechtzeitig",
+        "lemma": "rechtzeitig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zahn",
+        "lemma": "Zahn",
+        "pos": "noun",
+        "gloss_hint": "speed"
+      },
+      {
+        "form": "zulegen",
+        "lemma": "zulegen",
+        "pos": "verb",
+        "gloss_hint": "accelerate"
+      }
     ]
   },
   "db5320c8cc": {
@@ -4557,16 +4892,27 @@
     ],
     "translation_model": "anthropic/claude-haiku-4-5-20251001"
   },
+  "db54452a5c": {
+    "text": "Zappzarapp und weg war er!",
+    "translation": "In a flash he was gone!",
+    "source": "wiktionary",
+    "lemmas": [
+      "zappzarapp"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
+  },
   "db546fb91d": {
     "text": "jeden einzelnen Stein umdrehen",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "leave no stone unturned",
     "source": "wiktionary",
     "lemmas": [
       "einzeln"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "db54b1b7de": {
     "text": "Bei der Verleihung der Emmy Awards am Montagabend klärte er die Journalisten über den Stand der Dinge auf: „Sie sind einfach losgezogen und haben geheiratet und ich weiß nicht, wo das Problem liegt.“",
@@ -5272,10 +5618,43 @@
   },
   "db646131e2": {
     "text": "Um nichts in der Welt hatte er Lust nachzugeben, das kam gar nicht in Frage, er würde nicht um Haaresbreite nachgeben. Nicht ein Jota!",
-    "translation": null,
+    "translation": "He had no desire whatsoever to give in; it was completely out of the question; he would not yield an inch. Not one jot!",
     "source": "wiktionary",
     "lemmas": [
       "nicht um Haaresbreite nachgeben"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Lust",
+        "lemma": "Lust",
+        "pos": "noun",
+        "gloss_hint": "desire"
+      },
+      {
+        "form": "nachgeben",
+        "lemma": "nachgeben",
+        "pos": "verb",
+        "gloss_hint": "give in"
+      },
+      {
+        "form": "Frage",
+        "lemma": "Frage",
+        "pos": "noun",
+        "gloss_hint": "question"
+      },
+      {
+        "form": "Haaresbreite",
+        "lemma": "Haaresbreite",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jota",
+        "lemma": "Jota",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "db64d656f7": {
@@ -6246,10 +6625,37 @@
   },
   "db6ea79f25": {
     "text": "Hast du das Auto mit dem Kennzeichen AI gesehen? Das ist selten, denn in Zürich sieht man sie wenig.",
-    "translation": null,
+    "translation": "Have you seen the car with the license plate AI? That's rare, because you don't see them often in Zurich.",
     "source": "wiktionary",
     "lemmas": [
       "AI"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Auto",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "Kennzeichen",
+        "lemma": "Kennzeichen",
+        "pos": "noun",
+        "gloss_hint": "license plate"
+      },
+      {
+        "form": "selten",
+        "lemma": "selten",
+        "pos": "adjective",
+        "gloss_hint": "rare"
+      },
+      {
+        "form": "Zürich",
+        "lemma": "Zürich",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "db6f421da3": {
@@ -6408,10 +6814,61 @@
   },
   "db73d054be": {
     "text": "„Mit leiser Ironie und einer kleinen Portion schwarzen Humors erzählt, entwickelt der Autor ein kriminales Szenario, das [sich] von „Down under“ über Franken bis in den Bayerischen Wald erstreckt und den Leser von der ersten bis zur letzten Seite fesselt.“",
-    "translation": null,
+    "translation": "With subtle irony and a touch of dark humor, the author develops a criminal scenario that spans from \"Down under\" across Franconia to the Bavarian Forest and captivates the reader from the first to the last page.",
     "source": "wiktionary",
     "lemmas": [
       "kriminal"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ironie",
+        "lemma": "Ironie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Humor",
+        "lemma": "Humor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Autor",
+        "lemma": "Autor",
+        "pos": "noun",
+        "gloss_hint": "author"
+      },
+      {
+        "form": "Szenario",
+        "lemma": "Szenario",
+        "pos": "noun",
+        "gloss_hint": "setting"
+      },
+      {
+        "form": "Franken",
+        "lemma": "Franken",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wald",
+        "lemma": "Wald",
+        "pos": "noun",
+        "gloss_hint": "forest"
+      },
+      {
+        "form": "Leser",
+        "lemma": "Leser",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Seite",
+        "lemma": "Seite",
+        "pos": "noun",
+        "gloss_hint": "page"
+      }
     ]
   },
   "db7422e896": {
@@ -6419,11 +6876,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pay off",
     "source": "wiktionary",
     "lemmas": [
       "bezahlen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "db747a0532": {
     "text": "Der Richter beschloss, den Zeugen durch die Justiz seines Heimatlandes vernehmen zu lassen.",
@@ -6628,11 +7086,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "dressed up like a Christmas tree",
     "source": "wiktionary",
     "lemmas": [
       "Weihnachtsbaum"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "db7774b850": {
     "text": "Die Busfahrerin verkauft auch Fahrscheine.",
@@ -6787,11 +7246,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "withdraw coins from circulation",
     "source": "wiktionary",
     "lemmas": [
       "Münze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "db7c16861e": {
     "text": "„Ich ließ ihn blödeln, ohne zu antworten. […] Ich ließ mich nicht anstecken und arbeitete.“",
@@ -7129,11 +7589,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "contradiction",
     "source": "wiktionary",
     "lemmas": [
       "Aber"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "db8a36b89d": {
     "text": "Ich fahre mit dem Auto nach Italien.",
@@ -8130,11 +8591,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "let one's mask fall",
     "source": "wiktionary",
     "lemmas": [
       "Maske"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "db97f371be": {
     "text": "Der Rock reicht ihr bis zu den Waden.",
@@ -8653,11 +9115,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that's a load of nonsense",
     "source": "wiktionary",
     "lemmas": [
       "Katze"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dba215cf04": {
     "text": "Der Schauspieler filmt gerade in Brasilien.",
@@ -8688,6 +9151,59 @@
       }
     ],
     "text_linked": "Der [[Schauspieler|nouns/Schauspieler]] [[filmt|verbs/filmen]] gerade in Brasilien."
+  },
+  "dba2276f43": {
+    "text": "„»Hossa!« »Hossa!«, rufen die Gefangenen im Chor. »Von nun an soll eure Arbeit nicht mehr vergebens sein!« »Hossa!« »Von nun an werdet ihr nicht mehr Hunger leiden, während ihr Feldfrüchte für den Tisch des Generaldirektors anbaut!“",
+    "translation": "\"Huzzah!\" \"Huzzah!\" the prisoners shout in chorus. \"From now on your labor shall not be in vain!\" \"Huzzah!\" \"From now on you shall no longer suffer hunger while you cultivate crops for the Generaldirector's table!\"",
+    "source": "wiktionary",
+    "lemmas": [
+      "hossa"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gefangenen",
+        "lemma": "Gefangener",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Chor",
+        "lemma": "Chor",
+        "pos": "noun",
+        "gloss_hint": "chorus"
+      },
+      {
+        "form": "Arbeit",
+        "lemma": "Arbeit",
+        "pos": "noun",
+        "gloss_hint": "labor"
+      },
+      {
+        "form": "Hunger",
+        "lemma": "Hunger",
+        "pos": "noun",
+        "gloss_hint": "hunger"
+      },
+      {
+        "form": "leiden",
+        "lemma": "leiden",
+        "pos": "verb",
+        "gloss_hint": "suffer"
+      },
+      {
+        "form": "Feldfrüchte",
+        "lemma": "Feldfrüchte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tisch",
+        "lemma": "Tisch",
+        "pos": "noun",
+        "gloss_hint": "table"
+      }
+    ]
   },
   "dba36c654c": {
     "text": "Er hat schon aus Gewohnheit angefangen, sich auf japanisch zu entschuldigen.",
@@ -10060,6 +10576,41 @@
       }
     ],
     "text_linked": "„[[Pfui|interjections/pfui]]! Wenn Sie Ihren [[Hund|nouns/Hund#1]] schon hier [[ausführen|verbs/ausführen]] müssen, dann benutzen Sie [[bitte|particles/bitte]] auch eine [[Tüte|nouns/Tüte#1]] für die Hinterlassenschaften desselben.“"
+  },
+  "dbc0b9944e": {
+    "text": "„Na ja, ich meine, ich beobachte das Geschehen am Strand, ich bin doch deine beste Freundin.“",
+    "translation": "Well, I mean, I'm observing what's happening on the beach; after all, I'm your best friend.",
+    "source": "wiktionary",
+    "lemmas": [
+      "na ja"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "beobachte",
+        "lemma": "beobachten",
+        "pos": "verb",
+        "gloss_hint": "observe"
+      },
+      {
+        "form": "Geschehen",
+        "lemma": "Geschehen",
+        "pos": "noun",
+        "gloss_hint": "event"
+      },
+      {
+        "form": "Strand",
+        "lemma": "Strand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Freundin",
+        "lemma": "Freundin",
+        "pos": "noun",
+        "gloss_hint": "friend"
+      }
+    ]
   },
   "dbc0dfc1f2": {
     "text": "Die Zweitstimme entscheidet über die Stärke der einzelnen Parteien bei der Zusammensetzung des gesamten Parlaments.",
@@ -11985,28 +12536,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to give someone too much credit",
     "source": "wiktionary",
     "lemmas": [
       "Ehre"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "dbdd7a1252": {
     "text": "an die Seite stellen",
     "type": "expression",
     "note": "jemanden jemandem in beratender, unterstützender Funktion zuordnen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to assign someone as an advisor or supporter",
     "source": "wiktionary",
     "lemmas": [
       "stellen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "dbddda25d1": {
     "text": "Sie flüchteten aus dem Dorf, nachdem bewaffnete Truppen in der Ferne sichtbar wurden.",
@@ -12755,14 +13302,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to do someone the honor (of one's presence)",
     "source": "wiktionary",
     "lemmas": [
       "Ehre"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "dbef136039": {
     "text": "Sie betrachteten es als ein Privileg, für würdig erachtet zu werden.",
@@ -12993,16 +13538,14 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "people who live in glass houses shouldn't throw stones",
     "source": "wiktionary",
     "lemmas": [
       "Stein",
       "werfen"
     ],
     "ref": "phrases/wer im Glashaus sitzt, soll nicht mit Steinen werfen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "dbf0e29921": {
     "text": "„»Ich weiß, dass du, als du aus Italien gekommen bist, von der heiligen Vorhaut schwanger warst.«“",
@@ -13065,11 +13608,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "a bad workman blames his tools",
     "source": "wiktionary",
     "lemmas": [
       "Handwerker"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dbf1d2203c": {
     "text": "Der Rock ist nicht totzukriegen.",
@@ -13085,11 +13629,12 @@
     "type": "expression",
     "note": "trotz der Narrheit auf den eigenen Vorteil aus sein, an den eigenen Nutzen denken",
     "synonyms": [],
-    "translation": null,
+    "translation": "to look out for one's own interests despite being foolish",
     "source": "wiktionary",
     "lemmas": [
       "Narr"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dbf3b6fa5c": {
     "text": "„So wie jetzt hier, hatte er an jenem Tag am Fenster des Schlafsaals gestanden.“",
@@ -13301,10 +13846,49 @@
   },
   "dbfaef1e06": {
     "text": "„SubSeven kann unter anderem auch Webcams steuern, um das Opfer zu beobachten oder den Computer des Opfers einfach herunterfahren.“",
-    "translation": null,
+    "translation": "SubSeven can, among other things, also control webcams to observe the victim or simply shut down the victim's computer.",
     "source": "wiktionary",
     "lemmas": [
       "herunterfahren"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Webcams",
+        "lemma": "Webcam",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "steuern",
+        "lemma": "steuern",
+        "pos": "verb",
+        "gloss_hint": "control"
+      },
+      {
+        "form": "Opfer",
+        "lemma": "Opfer",
+        "pos": "noun",
+        "gloss_hint": "victim"
+      },
+      {
+        "form": "beobachten",
+        "lemma": "beobachten",
+        "pos": "verb",
+        "gloss_hint": "observe"
+      },
+      {
+        "form": "Computer",
+        "lemma": "Computer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "herunterfahren",
+        "lemma": "herunterfahren",
+        "pos": "verb",
+        "gloss_hint": "shut down"
+      }
     ]
   },
   "dbfbde20b9": {
@@ -13312,11 +13896,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the devil is in the details",
     "source": "wiktionary",
     "lemmas": [
       "Teufel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "dbfbf32b90": {
     "text": "„Das entscheidende Geschehen dieses Romans spielt sich nicht in der Außenwelt, sondern im Kopf des Erzählers ab.“",

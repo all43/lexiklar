@@ -947,11 +947,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be in a good position",
     "source": "wiktionary",
     "lemmas": [
       "heraus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f905ca7b99": {
     "text": "Aufgrund ihrer Schönheit machen ihr viele junge Männer den Hof.",
@@ -1840,11 +1841,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Green Christmas, white Easter",
     "source": "wiktionary",
     "lemmas": [
       "grüne Weihnachten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f90a599491": {
     "text": "„Die italienische Polizei hat zehn Telegram-Kanäle geschlossen, auf denen gefälschte Impfbescheinigungen und Grüne Pässe mit QR-Codes angeboten wurden.“",
@@ -2267,12 +2269,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "just the tip of the iceberg",
     "source": "wiktionary",
     "lemmas": [
       "Eisberg"
     ],
-    "ref": "phrases/nur die Spitze des Eisbergs sein"
+    "ref": "phrases/nur die Spitze des Eisbergs sein",
+    "translation_model": "openai/gpt-4.1"
   },
   "f90cef1329": {
     "text": "„Aber die Ohnmacht lähmt.“",
@@ -2360,14 +2363,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to ruin someone's reputation",
     "source": "wiktionary",
     "lemmas": [
       "Ehre"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "f9101e05bb": {
     "text": "ins Blaue",
@@ -3893,44 +3894,78 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "nothing comes from nothing",
     "source": "wiktionary",
     "lemmas": [
       "nichts"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f91dc006f7": {
     "text": "\"ist\", \"hatten\", \"spieltest\" sind finite Verbformen der Verben \"sein\", \"haben\" und \"spielen\".",
-    "translation": "",
+    "translation": "\"is\", \"had\", \"played\" are finite verb forms of the verbs \"be\", \"have\", and \"play\".",
     "source": "wiktionary",
     "lemmas": [
       "finite Verbform"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
-    "annotations": []
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verbformen",
+        "lemma": "Verbform",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verben",
+        "lemma": "Verb",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sein",
+        "lemma": "sein",
+        "pos": "verb",
+        "gloss_hint": "be"
+      },
+      {
+        "form": "haben",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": "have"
+      },
+      {
+        "form": "spielen",
+        "lemma": "spielen",
+        "pos": "verb",
+        "gloss_hint": "play"
+      }
+    ]
   },
   "f91df7e580": {
     "text": "Das dicke Ende kommt noch.",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The worst is yet to come.",
     "source": "wiktionary",
     "lemmas": [
       "Ende"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f91e04e2eb": {
     "text": "sich schwarz ärgern",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be furious",
     "source": "wiktionary",
     "lemmas": [
       "schwarz"
     ],
-    "ref": "phrases/sich schwarz ärgern"
+    "ref": "phrases/sich schwarz ärgern",
+    "translation_model": "openai/gpt-4.1"
   },
   "f91e5679ba": {
     "text": "Der Verkäufer ließ den Preis für das Auto etwas nach.",
@@ -4009,22 +4044,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to make a virtue out of necessity",
     "source": "wiktionary",
     "lemmas": [
       "Not"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f91fea1cc4": {
     "text": "das Juwel in der Krone sein",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be the jewel in the crown",
     "source": "wiktionary",
     "lemmas": [
       "Juwel"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f92096fc74": {
     "text": "Ansaugen, verdichten, arbeiten und ausstoßen – dieser Kreislauf findet in einem Viertaktmotor viele hundert Mal in der Minute statt.",
@@ -5325,11 +5362,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be on a drip",
     "source": "wiktionary",
     "lemmas": [
       "Tropf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f92e382547": {
     "text": "Die Gleichheit vor dem Gesetz ist ein demokratisches Grundprinzip.",
@@ -6207,10 +6245,61 @@
   },
   "f9380b9789": {
     "text": "„Diesen Leuchter nahm jetzt Krist vom Kamin und zündete die beiden Wachslichter an, die seit lange schon in den Leuchtertellern steckten und ihrerzeit der verstorbenen Gnädigen zum Siegeln ihrer Briefe gedient hatten.“",
-    "translation": null,
+    "translation": "\"Now Krist took this candelabra from the fireplace and lit the two wax candles that had been stuck in the candle holders for a long time and had once served the late mistress for sealing her letters.\"",
     "source": "wiktionary",
     "lemmas": [
       "Leuchter"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Leuchter",
+        "lemma": "Leuchter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "nahm",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Krist",
+        "lemma": "Krist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kamin",
+        "lemma": "Kamin",
+        "pos": "noun",
+        "gloss_hint": "fireplace"
+      },
+      {
+        "form": "zündete",
+        "lemma": "zünden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wachslichter",
+        "lemma": "Wachslicht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Leuchtertellern",
+        "lemma": "Leuchterteller",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Briefe",
+        "lemma": "Brief",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "f93816c6b7": {
@@ -6230,12 +6319,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to treat someone like they don't exist",
     "source": "wiktionary",
     "lemmas": [
       "Luft"
     ],
-    "ref": "phrases/jemanden wie Luft behandeln"
+    "ref": "phrases/jemanden wie Luft behandeln",
+    "translation_model": "openai/gpt-4.1"
   },
   "f93861c38f": {
     "text": "Den Fritz haben sie auf seiner Geburtstagsfeier ganz schön durch den Kakao gezogen.",
@@ -7566,12 +7656,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be crazy about someone",
     "source": "wiktionary",
     "lemmas": [
       "Narr"
     ],
-    "ref": "phrases/einen Narren an jemandem gefressen haben"
+    "ref": "phrases/einen Narren an jemandem gefressen haben",
+    "translation_model": "openai/gpt-4.1"
   },
   "f945444e5a": {
     "text": "Spielst du eigentlich die erste oder die zweite Stimme?",
@@ -8243,15 +8334,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "slip through someone's fingers",
     "source": "wiktionary",
     "lemmas": [
       "Finger"
     ],
     "ref": "phrases/jemandem durch die Finger schlüpfen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "f949a4cf02": {
     "text": "„Trimethoxyphenethylamin, wiederholte Nobbi, im Bewusstsein seiner wissenschaftlichen Kompetenz jede Silbe auskostend, auch Meskalin genannt.“",
@@ -9644,14 +9733,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "make a big fuss about something",
     "source": "wiktionary",
     "lemmas": [
       "treiben"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "f94f5adf92": {
     "text": "„Karneval ist auch etwas wie Krieg.“",
@@ -10329,11 +10416,12 @@
     "type": "expression",
     "note": "etwas ist wertlos",
     "synonyms": [],
-    "translation": null,
+    "translation": "you might as well forget about it",
     "source": "wiktionary",
     "lemmas": [
       "Hase"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f955e4dae7": {
     "text": "Der Pullover hat schwarze und weiße Streifen auf der Vorderseite.",
@@ -11502,13 +11590,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "lump everything together",
     "source": "wiktionary",
     "lemmas": [
       "Kamm",
       "scheren"
     ],
-    "ref": "phrases/alles über einen Kamm scheren"
+    "ref": "phrases/alles über einen Kamm scheren",
+    "translation_model": "openai/gpt-4.1"
   },
   "f95f751096": {
     "text": "Nimm den Knopf aus dem Ohr! Ich rede mit dir!",
@@ -11760,11 +11849,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "just pretend",
     "source": "wiktionary",
     "lemmas": [
       "tun"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f964441780": {
     "text": "Dass Alkohol den Körper wärmt, ist ein verbreiteter Irrtum.",
@@ -12157,10 +12247,31 @@
   },
   "f965c41ea3": {
     "text": "Der Fisch wird noch an Bord tiefgekühlt.",
-    "translation": null,
+    "translation": "The fish is still being deep-frozen on board.",
     "source": "wiktionary",
     "lemmas": [
       "tiefkühlen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fisch",
+        "lemma": "Fisch",
+        "pos": "noun",
+        "gloss_hint": "fish"
+      },
+      {
+        "form": "Bord",
+        "lemma": "Bord",
+        "pos": "noun",
+        "gloss_hint": "ship"
+      },
+      {
+        "form": "tiefgekühlt",
+        "lemma": "tiefkühlen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "f965dfdd32": {
@@ -12597,18 +12708,40 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get the hang of it",
     "source": "wiktionary",
     "lemmas": [
       "Dreh"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f96dbe0ed6": {
     "text": "MO ist Sport, DO Sauna und SA Marktbesuch.",
-    "translation": null,
+    "translation": "Monday is sports, Thursday is sauna, and Saturday is market visit.",
     "source": "wiktionary",
     "lemmas": [
       "SA"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sport",
+        "lemma": "Sport",
+        "pos": "noun",
+        "gloss_hint": "athletic activity"
+      },
+      {
+        "form": "Sauna",
+        "lemma": "Sauna",
+        "pos": "noun",
+        "gloss_hint": "sauna"
+      },
+      {
+        "form": "Marktbesuch",
+        "lemma": "Marktbesuch",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "f96dc40ede": {
@@ -13510,10 +13643,49 @@
   },
   "f97773a3d2": {
     "text": "„Es begann damit, dass ein Dschihadist einen mit Sprengstoff vollgepackten Wagen in unsere Stellungen steuerte und sich in die Luft jagte.“",
-    "translation": null,
+    "translation": "\"It began with a jihadist steering a car packed with explosives into our positions and blowing himself up.\"",
     "source": "wiktionary",
     "lemmas": [
       "in die Luft jagen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "begann",
+        "lemma": "beginnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dschihadist",
+        "lemma": "Dschihadist",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wagen",
+        "lemma": "Wagen",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "Sprengstoff",
+        "lemma": "Sprengstoff",
+        "pos": "noun",
+        "gloss_hint": "explosive"
+      },
+      {
+        "form": "Stellungen",
+        "lemma": "Stellung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Luft",
+        "lemma": "Luft",
+        "pos": "noun",
+        "gloss_hint": "air"
+      }
     ]
   },
   "f977b33232": {
@@ -15232,10 +15404,43 @@
   },
   "f9837f1064": {
     "text": "Ich glaube, mein Bildschirm ist im Eimer, er flackert die ganze Zeit so komisch.",
-    "translation": null,
+    "translation": "I think my screen is broken; it flickers in such a strange way the whole time.",
     "source": "wiktionary",
     "lemmas": [
       "im Eimer sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "glaube",
+        "lemma": "glauben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bildschirm",
+        "lemma": "Bildschirm",
+        "pos": "noun",
+        "gloss_hint": "screen"
+      },
+      {
+        "form": "Eimer",
+        "lemma": "Eimer",
+        "pos": "noun",
+        "gloss_hint": "jalopy"
+      },
+      {
+        "form": "flackert",
+        "lemma": "flackern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "komisch",
+        "lemma": "komisch",
+        "pos": "adjective",
+        "gloss_hint": "odd"
+      }
     ]
   },
   "f984521021": {
@@ -16691,22 +16896,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "there's no house without a mouse",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f99c629690": {
     "text": "ein unbeschriebenes Blatt",
     "type": "expression",
     "note": "unerfahren",
     "synonyms": [],
-    "translation": null,
+    "translation": "a blank slate",
     "source": "wiktionary",
     "lemmas": [
       "Blatt"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f99d34518b": {
     "text": "Bei nächster Gelegenheit werden wir Station machen.",
@@ -16755,6 +16962,59 @@
       }
     ],
     "text_linked": "Bei nächster [[Gelegenheit|nouns/Gelegenheit]] [[werden|verbs/werden#2]] [[wir|pronouns/wir]] [[Station|nouns/Station]] [[machen|verbs/machen#2]]."
+  },
+  "f99dc212a5": {
+    "text": "„Die EU-Kommission hat Pläne für eine Asyl-Reform vorgestellt. Viele haben die Hoffnung, dass es in Europa eine gemeinsame, menschenfreundliche Flüchtlingspolitik geben sollte. Pustekuchen.“",
+    "translation": "\"The EU Commission has presented plans for asylum reform. Many have the hope that there should be a common, humane refugee policy in Europe. Fat chance.\"",
+    "source": "wiktionary",
+    "lemmas": [
+      "Pustekuchen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "EU-Kommission",
+        "lemma": "EU-Kommission",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pläne",
+        "lemma": "Plan",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Asyl-Reform",
+        "lemma": "Asyl-Reform",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vorgestellt",
+        "lemma": "vorstellen",
+        "pos": "verb",
+        "gloss_hint": "presented"
+      },
+      {
+        "form": "Hoffnung",
+        "lemma": "Hoffnung",
+        "pos": "noun",
+        "gloss_hint": "hope"
+      },
+      {
+        "form": "Europa",
+        "lemma": "Europa",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Flüchtlingspolitik",
+        "lemma": "Flüchtlingspolitik",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ]
   },
   "f99e403ac8": {
     "text": "„Irgendwann habe ich kapiert, dass meine edle Visage niemandem hilft.“",
@@ -18296,14 +18556,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "after the rain comes the sun",
     "source": "wiktionary",
     "lemmas": [
       "Regen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "f9b194d22d": {
     "text": "„Aus Butterkeksen hatte Mia einen kalten Hund gebacken. Dabei wurde das Gebäck mit Schokoladencreme in eine Form geschichtet, sodass ein länglicher Kasten entstand.“",
@@ -18626,12 +18884,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "do time (in prison)",
     "source": "wiktionary",
     "lemmas": [
       "Knast"
     ],
-    "ref": "phrases/Knast schieben"
+    "ref": "phrases/Knast schieben",
+    "translation_model": "openai/gpt-4.1"
   },
   "f9b50e01d9": {
     "text": "Der Fußboden ist mit Teppichen ausgelegt.",
@@ -19206,11 +19465,12 @@
     "type": "expression",
     "note": "alles wissen wollen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to poke one's nose into everything",
     "source": "wiktionary",
     "lemmas": [
       "Dreck"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f9b7896da4": {
     "text": "„AVG TuneUp […] ist eine […] Systemsoftware für Microsoft Windows, die unterschiedliche Dienstprogramme (utilities) zum Analysieren, Konfigurieren und Warten von Computern enthält.“",
@@ -19557,11 +19817,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "in one go",
     "source": "wiktionary",
     "lemmas": [
       "Abwasch"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f9ba9dd831": {
     "text": "„Neben dem rechtsextremistischen Gewaltpotenzial gehörten die Abgründe an Häme und Hass inmitten unserer Gesellschaft gegenüber denen, die in unserem Land Verantwortung übernähmen, zu den beklemmenden Erfahrungen der jüngsten Tage, sagte Schäuble.“",
@@ -20693,10 +20954,31 @@
   },
   "f9c9c46781": {
     "text": "Das neue Verfahren bringt an und für sich keine Vorteile.",
-    "translation": null,
+    "translation": "The new procedure brings no advantages in itself.",
     "source": "wiktionary",
     "lemmas": [
       "an und für sich"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verfahren",
+        "lemma": "Verfahren",
+        "pos": "noun",
+        "gloss_hint": "procedure"
+      },
+      {
+        "form": "bringt",
+        "lemma": "bringen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorteile",
+        "lemma": "Vorteil",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "f9c9c59694": {
@@ -22344,11 +22626,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to force something out of someone",
     "source": "wiktionary",
     "lemmas": [
       "Feder"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f9d05e78ab": {
     "text": "Ein großes Wörterbuch des Deutschen muss mindestens 200000 Stichwörter haben.",
@@ -22391,6 +22674,41 @@
       }
     ],
     "text_linked": "Ein großes Wörterbuch des Deutschen [[muss|verbs/müssen#1]] [[mindestens|adverbs/mindestens]] 200000 [[Stichwörter|nouns/Stichwort#1]] [[haben|verbs/haben#3]]."
+  },
+  "f9d09b61f7": {
+    "text": "Die Kinder klatschten in die Hände und riefen „Tschingderassassa, tschingderassassa!“",
+    "translation": "The children clapped their hands and shouted \"Tschingderassassa, tschingderassassa!\"",
+    "source": "wiktionary",
+    "lemmas": [
+      "tschingderassassa"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "klatschten",
+        "lemma": "klatschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hände",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "riefen",
+        "lemma": "rufen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ]
   },
   "f9d1346a8f": {
     "text": "„Sowohl Männchen als auch Weibchen des Rebenstechers treten in allen Schattierungen auf.“",
@@ -22874,11 +23192,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "different places, different faces",
     "source": "wiktionary",
     "lemmas": [
       "Mädchen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f9db4f5521": {
     "text": "Entwicklungsländer führen meist einfache landwirtschaftliche Produkte aus.",
@@ -23485,11 +23804,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to leave no stone unturned",
     "source": "wiktionary",
     "lemmas": [
       "versuchen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f9dfc3f2df": {
     "text": "Die Ärzte konnten sie vollständig heilen.",
@@ -24415,10 +24735,31 @@
   },
   "f9e73bbc73": {
     "text": "„Er ist ein armes Schwein, das war ihm ja anzusehen.“",
-    "translation": null,
+    "translation": "\"He's a poor wretch, you could see it written all over him.\"",
     "source": "wiktionary",
     "lemmas": [
       "ein armes Schwein sein"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "armes",
+        "lemma": "arm",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schwein",
+        "lemma": "Schwein",
+        "pos": "noun",
+        "gloss_hint": "vile person"
+      },
+      {
+        "form": "anzusehen",
+        "lemma": "ansehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "f9e8bcecbe": {
@@ -25404,11 +25745,12 @@
     "type": "expression",
     "note": "vermeiden",
     "synonyms": [],
-    "translation": null,
+    "translation": "to avoid someone",
     "source": "wiktionary",
     "lemmas": [
       "gehen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f9f2f37cc8": {
     "text": "„Rechtsextremisten instrumentalisieren den Gedenktag seit Jahren für ihre Zwecke. Die Trauer um die Toten dient als Vorwand, um deutsche Schuld am Zweiten Weltkrieg zu leugnen und die Alliierten als Kriegsverbrecher zu geißeln.“",
@@ -26030,11 +26372,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "thick soup",
     "source": "wiktionary",
     "lemmas": [
       "dick"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f9f431be37": {
     "text": "„Was die Merkmale 4 - 7 betrifft, so korrelieren sie derart miteinander, daß ein Vokal, der lang ist, gleichzeitig geschlossen, gespannt und nichtzentralisiert ist, während ein Vokal, der kurz ist, gleichzeitig offen, ungespannt und zentralisiert ist.“",
@@ -26198,10 +26541,37 @@
   },
   "f9f5c595b2": {
     "text": "„Im Mittelalter ging es drunter und drüber: Kreuzzüge, Hungersnöte, Verfolgungen ….“",
-    "translation": null,
+    "translation": "\"In the Middle Ages, everything was in chaos: crusades, famines, persecutions....\"",
     "source": "wiktionary",
     "lemmas": [
       "drunter und drüber"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mittelalter",
+        "lemma": "Mittelalter",
+        "pos": "noun",
+        "gloss_hint": "Middle Ages"
+      },
+      {
+        "form": "Kreuzzüge",
+        "lemma": "Kreuzzug",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hungersnöte",
+        "lemma": "Hungersnot",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verfolgungen",
+        "lemma": "Verfolgung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "f9f6d164e9": {
@@ -26251,11 +26621,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "He who drinks from the source gets the purest water.",
     "source": "wiktionary",
     "lemmas": [
       "Wasser"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f9f7527567": {
     "text": "Der lokutionäre Akt des kleinen Satzes „Es zieht“ besteht in der Äußerung von zwei Wörtern, die phonetisch, grammatisch und semantisch richtig gebildet sind und einen korrekten Satz ergeben.",
@@ -26446,11 +26817,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to put something at the service of a cause",
     "source": "wiktionary",
     "lemmas": [
       "Dienst"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f9f89d85e2": {
     "text": "[Supermarkt:] „Darf man eine Packung anbrechen oder schon einmal einen Schluck aus der Flasche nehmen, auch wenn die Ware noch nicht bezahlt ist? Rein rechtlich ist die Sache klar: Man darf nicht.“",
@@ -27071,7 +27443,7 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Good luck is fragile.",
     "source": "wiktionary",
     "lemmas": [
       "brechen",
@@ -27079,9 +27451,7 @@
       "Glück"
     ],
     "ref": "phrases/Glück und Glas, wie leicht bricht das",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "f9fb3c4701": {
     "text": "„Bis dahin hatte Nikolai das Regime nur mit vagem Widerwillen betrachtet; nun erkannte er dessen archaische Barbarei in ihrem ganzen grauenvollen Ausmaß.“",
@@ -27566,11 +27936,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to make plans",
     "source": "wiktionary",
     "lemmas": [
       "Plan"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f9fd633def": {
     "text": "Der Rennwagen hatte das Ziel fast erreicht, als auf der Zielgeraden das Getriebe versagte.",

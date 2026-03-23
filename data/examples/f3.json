@@ -874,11 +874,12 @@
     "type": "expression",
     "note": "aufwändig erstellt und beeindruckend",
     "synonyms": [],
-    "translation": null,
+    "translation": "blockbuster",
     "source": "wiktionary",
     "lemmas": [
       "Kino"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f30872925b": {
     "text": "Ich freue mich schon darauf, dass meine Tante zum Mittagessen wieder ihre Kartoffelpuffer bäckt.",
@@ -1232,12 +1233,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the die is cast",
     "source": "wiktionary",
     "lemmas": [
       "lutschen"
     ],
-    "ref": "phrases/der Drops ist gelutscht"
+    "ref": "phrases/der Drops ist gelutscht",
+    "translation_model": "openai/gpt-4.1"
   },
   "f30cf3e1f5": {
     "text": "Mit diesem verschwommenen Photo kann ich nichts anfangen, das werfe ich weg.",
@@ -3650,10 +3652,55 @@
   },
   "f31aef9bbd": {
     "text": "„[Diese Abfahrt] war naturbelassen und stark kupiert, allgemein hügelig und von Mulden durchzogen.“",
-    "translation": null,
+    "translation": "\"[This descent] was natural and steeply rolling, generally hilly and traversed by hollows.\"",
     "source": "wiktionary",
     "lemmas": [
       "Mulde"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Abfahrt",
+        "lemma": "Abfahrt",
+        "pos": "noun",
+        "gloss_hint": "descent"
+      },
+      {
+        "form": "naturbelassen",
+        "lemma": "naturbelassen",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "stark",
+        "lemma": "stark",
+        "pos": "adjective",
+        "gloss_hint": "intense"
+      },
+      {
+        "form": "kupiert",
+        "lemma": "kupiert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "allgemein",
+        "lemma": "allgemein",
+        "pos": "adjective",
+        "gloss_hint": "universal"
+      },
+      {
+        "form": "hügelig",
+        "lemma": "hügelig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mulden",
+        "lemma": "Mulde",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "f31b572e66": {
@@ -4849,11 +4896,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "intellectual midwife",
     "source": "wiktionary",
     "lemmas": [
       "Hebamme"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f32a321d97": {
     "text": "Die Unterscheidung von Programmierer zum Softwareentwickler ist fließend, teilweise werden die Begriffe auch synonym verwendet.",
@@ -5149,11 +5197,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "What am I supposed to think of that?",
     "source": "wiktionary",
     "lemmas": [
       "wie"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f331bfaf18": {
     "text": "„Die Herstellung von individuellem Tabak kann der erste Schritt zu einem völlig neuen Rauchgenuss sein, denn der eigene Tabak ist frei von Zusatzstoffen, der Anbau und die Behandlung der Tabakblätter macht Spaß und der Tabakgenuss wird nicht durch hohe Steuern beeinträchtigt.“",
@@ -9910,11 +9959,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Every advantage has its disadvantage.",
     "source": "wiktionary",
     "lemmas": [
       "Nachteil"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f358406624": {
     "text": "Du machst dir nichts aus Gefahr und Abenteuer, und du machst dir auch nichts aus Jungens, die Mumm und Mut haben und was riskieren.",
@@ -11049,11 +11099,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "like Lord Muck",
     "source": "wiktionary",
     "lemmas": [
       "Koks"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f360842eed": {
     "text": "„In einem Pavillon spielte ein kleines Orchester ein Menuett.“",
@@ -12049,11 +12100,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Good heavens!",
     "source": "wiktionary",
     "lemmas": [
       "Gott"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f37359a209": {
     "text": "Amnesty geht davon aus, dass es dort [in China] Jahr für Jahr Tausende Todesurteile und Hinrichtungen gibt.",
@@ -12551,11 +12603,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "get what’s coming to one",
     "source": "wiktionary",
     "lemmas": [
       "Fett"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f37522c6f7": {
     "text": "Mehrere neue Wachleute wurden auf Grund der erhöhten Sicherheitslage eingestellt, darunter auch zwei Frauen.",
@@ -12757,10 +12810,43 @@
   },
   "f376d52013": {
     "text": "Mit 20 Fehlern in diesem Diktat hatte Josef diesmal den Vogel abgeschossen.",
-    "translation": null,
+    "translation": "With 20 errors in this dictation, Josef really outdid himself this time.",
     "source": "wiktionary",
     "lemmas": [
       "den Vogel abschießen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fehlern",
+        "lemma": "Fehler",
+        "pos": "noun",
+        "gloss_hint": "error"
+      },
+      {
+        "form": "Diktat",
+        "lemma": "Diktat",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Josef",
+        "lemma": "Josef",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vogel",
+        "lemma": "Vogel",
+        "pos": "noun",
+        "gloss_hint": "bird"
+      },
+      {
+        "form": "abgeschossen",
+        "lemma": "abschießen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "f376e6be61": {
@@ -13128,10 +13214,139 @@
   },
   "f37e9c0b4a": {
     "text": "\"Jedenfalls ist seit Inkrafttreten des Gesetzes, das Rauchen an öffentlichen Orten grundsätzlich verbietet, eine neue Spezies auffällig geworden. Das sind jene, die unter dem Vorwand, „mal eben eine rauchen zu gehen“, die Bar verlassen, ohne ihre Rechnung bezahlt zu haben, und weil sie auf diese unschöne Weise verschwinden – „sin pagar“ –, nennt man sie „simpa“, was naturgemäß nicht „simpático“ ist.\"",
-    "translation": null,
+    "translation": "In any case, since the law came into force that fundamentally prohibits smoking in public places, a new species has become conspicuous. These are those who, under the pretext of \"just going out for a smoke\", leave the bar without having paid their bill, and because they disappear in this unsavory way – \"sin pagar\" – they are called \"simpa\", which is naturally not \"simpático\".",
     "source": "wiktionary",
     "lemmas": [
       "eine rauchen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Inkrafttreten",
+        "lemma": "Inkrafttreten",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesetzes",
+        "lemma": "Gesetz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rauchen",
+        "lemma": "rauchen",
+        "pos": "verb",
+        "gloss_hint": "smoke"
+      },
+      {
+        "form": "öffentlichen",
+        "lemma": "öffentlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Orten",
+        "lemma": "Ort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "grundsätzlich",
+        "lemma": "grundsätzlich",
+        "pos": "adjective",
+        "gloss_hint": "fundamentally"
+      },
+      {
+        "form": "verbietet",
+        "lemma": "verbieten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spezies",
+        "lemma": "Spezies",
+        "pos": "noun",
+        "gloss_hint": "species"
+      },
+      {
+        "form": "auffällig",
+        "lemma": "auffällig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "geworden",
+        "lemma": "werden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorwand",
+        "lemma": "Vorwand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "rauchen",
+        "lemma": "rauchen",
+        "pos": "verb",
+        "gloss_hint": "smoke"
+      },
+      {
+        "form": "gehen",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": "leave"
+      },
+      {
+        "form": "Bar",
+        "lemma": "Bar",
+        "pos": "noun",
+        "gloss_hint": "bar (place)"
+      },
+      {
+        "form": "verlassen",
+        "lemma": "verlassen",
+        "pos": "verb",
+        "gloss_hint": "leave"
+      },
+      {
+        "form": "Rechnung",
+        "lemma": "Rechnung",
+        "pos": "noun",
+        "gloss_hint": "bill"
+      },
+      {
+        "form": "bezahlt",
+        "lemma": "bezahlen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "verschwinden",
+        "lemma": "verschwinden",
+        "pos": "verb",
+        "gloss_hint": "disappear from view"
+      },
+      {
+        "form": "nennt",
+        "lemma": "nennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "simpa",
+        "lemma": "simpa",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "simpático",
+        "lemma": "simpático",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
     ]
   },
   "f37eab400a": {
@@ -13652,24 +13867,92 @@
   },
   "f382385750": {
     "text": "[Schaufensterkrankheit:] „75 Prozent der Patienten mit einer ausgeprägten arteriellen Verschlusskrankheit in den Beinen erleiden früher oder später einen lebensbedrohenden Herzinfarkt.“",
-    "translation": "",
+    "translation": "75 percent of patients with pronounced arterial occlusive disease in the legs suffer a life-threatening heart attack sooner or later.",
     "source": "wiktionary",
     "lemmas": [
       "früher oder später"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
-    "annotations": []
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Prozent",
+        "lemma": "Prozent",
+        "pos": "noun",
+        "gloss_hint": "percentage"
+      },
+      {
+        "form": "Patienten",
+        "lemma": "Patient",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgeprägten",
+        "lemma": "ausgeprägt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "arteriellen",
+        "lemma": "arteriell",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verschlusskrankheit",
+        "lemma": "Verschlusskrankheit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beinen",
+        "lemma": "Bein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erleiden",
+        "lemma": "erleiden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "früher",
+        "lemma": "früher",
+        "pos": "adverb",
+        "gloss_hint": "sooner"
+      },
+      {
+        "form": "später",
+        "lemma": "später",
+        "pos": "adverb",
+        "gloss_hint": "later"
+      },
+      {
+        "form": "lebensbedrohenden",
+        "lemma": "lebensbedrohend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herzinfarkt",
+        "lemma": "Herzinfarkt",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ]
   },
   "f38441c251": {
     "text": "etwas mit gleicher Münze vergelten",
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "give someone a taste of their own medicine",
     "source": "wiktionary",
     "lemmas": [
       "gleich"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f38489d5e6": {
     "text": "„Die Kammer war klein, sie hatte nicht viel Licht und ging zum Hinterhof hinaus.“",
@@ -15286,13 +15569,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "shut oneself off from others",
     "source": "wiktionary",
     "lemmas": [
       "dicht machen",
       "Schott"
     ],
-    "ref": "phrases/die Schotten dichtmachen"
+    "ref": "phrases/die Schotten dichtmachen",
+    "translation_model": "openai/gpt-4.1"
   },
   "f39dc826d5": {
     "text": "„Seitdem habe ich mir kein eigenes Haustier mehr angeschafft.“",
@@ -15359,12 +15643,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the signs point to trouble",
     "source": "wiktionary",
     "lemmas": [
       "Zeichen",
       "Sturm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f39e9ab9f3": {
     "text": "„Karl Nordström favorisiert das skandinavienspezifische Licht der weißen Nächte mit dem tiefen Unterklang eines Zurück-zur-Natur.“",
@@ -16119,11 +16404,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "blow all one's money",
     "source": "wiktionary",
     "lemmas": [
       "Geld"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f3a33378e0": {
     "text": "Können Sie uns die Grafik noch einmal an die Wand beamen?",
@@ -16208,11 +16494,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "hearth and home",
     "source": "wiktionary",
     "lemmas": [
       "Haus"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f3a660d466": {
     "text": "„Vier Rentiere mit goldenem Geschirr und roten Nasen standen davor.“",
@@ -16336,10 +16623,73 @@
   },
   "f3a8a41e23": {
     "text": "1911: „Komme ich da eines Morgens, Donnerstag war es, in mein Bureau, und finde eine Akte, eine Akte, sage ich Ihnen, gerade was für einen Mann, der mit drei Flaschen Sekt nachts um drei ins Lager geschlieft ist.“",
-    "translation": null,
+    "translation": "1911: \"When I come in one morning, it was a Thursday, to my office, and find a file, a file, I tell you, just the thing for a man who had slipped into the warehouse with three bottles of champagne at three in the morning.\"",
     "source": "wiktionary",
     "lemmas": [
       "schliefen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Morgens",
+        "lemma": "Morgen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Donnerstag",
+        "lemma": "Donnerstag",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bureau",
+        "lemma": "Bureau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Akte",
+        "lemma": "Akte",
+        "pos": "noun",
+        "gloss_hint": "file (documents)"
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "man"
+      },
+      {
+        "form": "drei",
+        "lemma": "drei",
+        "pos": "numeral",
+        "gloss_hint": "three"
+      },
+      {
+        "form": "Flaschen",
+        "lemma": "Flasche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sekt",
+        "lemma": "Sekt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lager",
+        "lemma": "Lager",
+        "pos": "noun",
+        "gloss_hint": "temporary shelter (military)"
+      },
+      {
+        "form": "geschlieft",
+        "lemma": "schliefen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "f3aac5bdb6": {
@@ -17038,15 +17388,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Pleased to meet you.",
     "source": "wiktionary",
     "lemmas": [
       "Ehre"
     ],
     "ref": "phrases/habe die Ehre",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "f3ae0b1502": {
     "text": "„Götterstatuen und Inschriften verraten uns, dass man in den Umgangstempeln ebenfalls Gelübde darbrachte.“",
@@ -17229,11 +17577,12 @@
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Absolute power corrupts absolutely.",
     "source": "wiktionary",
     "lemmas": [
       "tanzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f3b2ab4044": {
     "text": "„Talente sind aber auch eine Bürde, weil sie Hingabe, Aufmerksamkeit, Training und Disziplin fordern.“",
@@ -18116,12 +18465,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "The operation was a success, but the patient died.",
     "source": "wiktionary",
     "lemmas": [
       "Operation",
       "Patient"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f3b8194249": {
     "text": "Der Kanzler spricht die unangenehme Wahrheit aus.",
@@ -18952,11 +19302,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "the order of the day",
     "source": "wiktionary",
     "lemmas": [
       "Stunde"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f3bec4cff0": {
     "text": "„Seit Beginn der dreißiger Jahre war Louis Leakey im östlichen Afrika auf der Suche nach Zeugnissen der Existenz menschlicher Vorfahren; vor allem suchte er Steinwerkzeuge.“",
@@ -19611,34 +19962,150 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to be back on one's feet",
     "source": "wiktionary",
     "lemmas": [
       "Damm"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f3c5433708": {
     "text": "vom Fleisch fallen",
     "type": "expression",
     "note": "sehr stark abnehmen, abmagern",
     "synonyms": [],
-    "translation": null,
+    "translation": "to waste away",
     "source": "wiktionary",
     "lemmas": [
       "fallen",
       "Fleisch"
     ],
     "ref": "phrases/vom Fleisch fallen",
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "f3c5fe0c35": {
     "text": "„Als im Jahre 1541 Margarete von Österreich, die elfjährige Tochter Maximilians I., vom französischen König, dessen Sohn sie anverlobt war, aus Paris nach Deutschland zurückgeschickt wurde, sprach der zornige Vater bei ihrem Empfang das Wort vom „französischen Erbfeind“.“",
-    "translation": null,
+    "translation": "When in the year 1541 Margaret of Austria, the eleven-year-old daughter of Maximilian I, was sent back from Paris to Germany by the French king, whose son she had been betrothed to, the angry father spoke at her reception the word of the \"French hereditary enemy\".",
     "source": "wiktionary",
     "lemmas": [
       "zurückschicken"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Jahre",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Margarete",
+        "lemma": "Margarete",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Österreich",
+        "lemma": "Österreich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "elfjährige",
+        "lemma": "elfjährig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tochter",
+        "lemma": "Tochter",
+        "pos": "noun",
+        "gloss_hint": "daughter"
+      },
+      {
+        "form": "Maximilians",
+        "lemma": "Maximilian",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "französischen",
+        "lemma": "französisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "König",
+        "lemma": "König",
+        "pos": "noun",
+        "gloss_hint": "king (monarch)"
+      },
+      {
+        "form": "Sohn",
+        "lemma": "Sohn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "anverlobt",
+        "lemma": "anverloben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Paris",
+        "lemma": "Paris",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutschland",
+        "lemma": "Deutschland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zurückgeschickt",
+        "lemma": "zurückschicken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "zornige",
+        "lemma": "zornig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vater",
+        "lemma": "Vater",
+        "pos": "noun",
+        "gloss_hint": "father"
+      },
+      {
+        "form": "Empfang",
+        "lemma": "Empfang",
+        "pos": "noun",
+        "gloss_hint": "greeting"
+      },
+      {
+        "form": "Wort",
+        "lemma": "Wort",
+        "pos": "noun",
+        "gloss_hint": "word"
+      },
+      {
+        "form": "französischen",
+        "lemma": "französisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erbfeind",
+        "lemma": "Erbfeind",
+        "pos": "noun",
+        "gloss_hint": null
+      }
     ]
   },
   "f3c608266c": {
@@ -21268,10 +21735,67 @@
   },
   "f3d6185026": {
     "text": "„Schon am Parkplatz davor fällt mein verdreckter Dacia-Lieferwagen unter den ganzen schnittigen Sportwagen und den SUVs ziemlich auf.“",
-    "translation": null,
+    "translation": "Already at the parking lot in front of it, my filthy Dacia van stands out quite a bit among all the sleek sports cars and SUVs.",
     "source": "wiktionary",
     "lemmas": [
       "SUV"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Parkplatz",
+        "lemma": "Parkplatz",
+        "pos": "noun",
+        "gloss_hint": "parking area"
+      },
+      {
+        "form": "davor",
+        "lemma": "davor",
+        "pos": "adverb",
+        "gloss_hint": "in front of it"
+      },
+      {
+        "form": "verdreckter",
+        "lemma": "verdreckt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dacia-Lieferwagen",
+        "lemma": "Dacia-Lieferwagen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ganzen",
+        "lemma": "ganz",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "schnittigen",
+        "lemma": "schnittig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sportwagen",
+        "lemma": "Sportwagen",
+        "pos": "noun",
+        "gloss_hint": "sports car"
+      },
+      {
+        "form": "SUVs",
+        "lemma": "SUV",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ziemlich",
+        "lemma": "ziemlich",
+        "pos": "adverb",
+        "gloss_hint": "fairly"
+      }
     ]
   },
   "f3d62c458a": {
@@ -21801,26 +22325,25 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to bang one's head against a brick wall",
     "source": "wiktionary",
     "lemmas": [
       "Wand"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f3d86da1d1": {
     "text": "ein Ding drehen",
     "type": "expression",
     "note": "ein Verbrechen (oft ein Einbruch) begehen",
     "synonyms": [],
-    "translation": null,
+    "translation": "to pull a job",
     "source": "wiktionary",
     "lemmas": [
       "Ding",
       "drehen"
     ],
-    "_proofread": {
-      "translation": true
-    }
+    "translation_model": "openai/gpt-4.1"
   },
   "f3d89bba89": {
     "text": "Bad Säckingen liegt im Landkreis Waldshut.",
@@ -21886,12 +22409,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to wear one's pants at half-mast",
     "source": "wiktionary",
     "lemmas": [
       "Hose"
     ],
-    "ref": "phrases/die Hosen auf halbmast tragen"
+    "ref": "phrases/die Hosen auf halbmast tragen",
+    "translation_model": "openai/gpt-4.1"
   },
   "f3dde10cfd": {
     "text": "Schweiß dient der Kühlung des Körpers.",
@@ -22408,22 +22932,24 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "to mess oneself in one's sleep",
     "source": "wiktionary",
     "lemmas": [
       "Schlaf"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f3e8abca72": {
     "text": "Bei Geld hört die Freundschaft auf",
     "type": "proverb",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Money is the end of friendship.",
     "source": "wiktionary",
     "lemmas": [
       "Geld"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f3eaf417e5": {
     "text": "„Halten sich noch »Gestrandete«, Junkies und jugendliche Prostituierte am Bahnhof Zoo auf, für die er über Jahrzehnte ein Treffpunkt war?“",
@@ -23791,6 +24317,18 @@
     ],
     "text_linked": "„[[Verlieren|verbs/verlieren#4]] hingegen [[Kunstwerke|nouns/Kunstwerk#1]] [[ihre|pronouns/ihr_person]] innere [[Form|nouns/Form#1]], [[so|adverbs/so]] [[hören|verbs/hören#1]] sie [[auf|prepositions/auf]], Kunstwerke [[zu|particles/zu_drückt]] [[sein|verbs/sein#1]] [[und|conjunctions/und]] [[erfüllen|verbs/erfüllen#2]] [[damit|adverbs/damit#1]] ihre Hauptfunktion [[nicht|particles/nicht#1]] [[mehr|adverbs/mehr#2]].“"
   },
+  "f3f700993e": {
+    "text": "prosit Neujahr",
+    "type": "expression",
+    "note": null,
+    "synonyms": [],
+    "translation": "Happy New Year!",
+    "source": "wiktionary",
+    "lemmas": [
+      "prosit"
+    ],
+    "translation_model": "openai/gpt-4.1"
+  },
   "f3f877f66c": {
     "text": "Die Gang hat die Aufgabe bereits erledigt.",
     "translation": "The gang has already completed the task.",
@@ -24007,11 +24545,12 @@
     "type": "expression",
     "note": ") - verloren gehen, an Wert/Qualität verlieren",
     "synonyms": [],
-    "translation": null,
+    "translation": "to go down the drain",
     "source": "wiktionary",
     "lemmas": [
       "Bach"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "f3ffbc7207": {
     "text": "„Wie die Pflanze den Versuch macht, fehlende Aufbaustoffe durch andere zu ersetzen, wie der Bauer sich bemüht, den Mangel an Düngemitteln auf irgendeine Weise auszugleichen, selbst wenn der Aufwand dadurch wächst (etwa durch vermehrte Heranziehung von Stalldung), so sind auch in der Volkswirtschaft vielerlei Kräfte wirksam, um das Gesetz vom Minimum in seiner Bedeutung abzuschwächen.“",
