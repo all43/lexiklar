@@ -206,13 +206,11 @@ for (const relPath of wordGlossesOk) {
   const translatableSenses = (data.senses || []).filter((s: Sense) => s.gloss);
   const allSensesHaveGlossEn = translatableSenses.every((s: Sense) => s.gloss_en);
   const allSensesHaveGlossEnFull = translatableSenses.every((s: Sense) => s.gloss_en_full);
-  const sensesWithSynonymsEn = translatableSenses.filter((s: Sense) => s.synonyms_en?.length);
-  const allSynonymsEnProofread = sensesWithSynonymsEn.length > 0;
-
   const proofread = { ...(data._proofread || {}) };
   if (allSensesHaveGlossEn) proofread.gloss_en = true;
   if (allSensesHaveGlossEnFull) proofread.gloss_en_full = true;
-  if (allSynonymsEnProofread) proofread.synonyms_en = true;
+  // word_glosses_ok means agent reviewed synonyms_en (whether present or absent)
+  proofread.synonyms_en = true;
 
   if (!DRY_RUN) {
     writeFileSync(filePath, JSON.stringify({ ...data, _proofread: proofread }, null, 2) + "\n");
