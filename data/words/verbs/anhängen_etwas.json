@@ -175,11 +175,11 @@
     },
     "preterite": {
       "ich": "hängte an",
-      "du": "hingst an",
-      "er": "hing an",
-      "wir": "hingen an",
-      "ihr": "hingt an",
-      "sie": "hingen an"
+      "du": "hängtest an",
+      "er": "hängte an",
+      "wir": "hängten an",
+      "ihr": "hängtet an",
+      "sie": "hängten an"
     },
     "subjunctive1": {
       "ich": "hänge an",
@@ -191,11 +191,11 @@
     },
     "subjunctive2": {
       "ich": "hängte an",
-      "du": "hingest an",
-      "er": "hinge an",
-      "wir": "hingen an",
-      "ihr": "hinget an",
-      "sie": "hingen an"
+      "du": "hängtest an",
+      "er": "hängte an",
+      "wir": "hängten an",
+      "ihr": "hängtet an",
+      "sie": "hängten an"
     },
     "imperative": {
       "du": "hänge an!",
@@ -233,5 +233,25 @@
       "gloss_en_full": "To follow someone immediately",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
     }
-  ]
+  ],
+  "_overrides": {
+    "conjugation": {
+      "preterite": {
+        "ich": "hängte an",
+        "du": "hängtest an",
+        "er": "hängte an",
+        "wir": "hängten an",
+        "ihr": "hängtet an",
+        "sie": "hängten an"
+      },
+      "subjunctive2": {
+        "ich": "hängte an",
+        "du": "hängtest an",
+        "er": "hängte an",
+        "wir": "hängten an",
+        "ihr": "hängtet an",
+        "sie": "hängten an"
+      }
+    }
+  }
 }
