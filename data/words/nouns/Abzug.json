@@ -65,7 +65,7 @@
     },
     {
       "gloss": "Ergebnis einer fotografischen Vergrößerung in der Fotografie",
-      "gloss_en": "enlargement",
+      "gloss_en": "print (photography)",
       "tags": [],
       "example_ids": [
         "dc5ce65dcb",
@@ -74,7 +74,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "A photographic print made by enlarging a negative.",
+      "gloss_en_full": "A photographic print or copy made from a negative or digital file",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "photo print",
@@ -85,7 +85,7 @@
     },
     {
       "gloss": "Zug, bei dem eine andere Figur aktiviert wird",
-      "gloss_en": "move",
+      "gloss_en": "discovered attack",
       "tags": [],
       "example_ids": [
         "fcf91c21ea"
@@ -93,7 +93,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "A move in which another piece is activated.",
+      "gloss_en_full": "A chess tactic where a piece moves to reveal an attack by another piece behind it",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "activating move",
@@ -202,5 +202,10 @@
     "source_hash": "e1c40e485fea404a",
     "generated_at": "2026-03-09"
   },
-  "zipf": 3.93
+  "zipf": 3.93,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }
