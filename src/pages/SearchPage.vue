@@ -16,7 +16,7 @@
     <template v-if="searchQuery">
       <!-- Phrase suggestions from sequential searches -->
       <template v-if="phraseMatches.length">
-        <f7-block-title>{{ t('search.matchingPhrases') }}</f7-block-title>
+        <f7-block-title>{{ t('search.matchingExpressions') }}</f7-block-title>
         <f7-list class="phrase-matches" media-list>
           <f7-list-item
             v-for="item in visiblePhrases"
