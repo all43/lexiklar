@@ -399,16 +399,28 @@ export default defineComponent({
       const cutoff = Date.now() - PHRASE_TERM_MAX_AGE_MS;
       return this.phraseTerms
         .filter(e => e.ts >= cutoff)
+        .slice(-3)
         .map(e => e.term);
     },
 
-    async findPhraseMatches(_q: string, alreadySeen: Set<string>) {
+    async findPhraseMatches(q: string, alreadySeen: Set<string>) {
       this.phraseMatches = [];
       this.matchedTerms = [];
       this.phrasesExpanded = false;
 
-      // Require ≥2 distinct recent lemmas to search for phrases
-      const terms = this.recentPhraseTermStrings();
+      // Tokenize multi-word queries (e.g. "Achse sein" or "Achse, sein")
+      const queryTokens = q.split(/[\s,]+/).filter(t => t.length >= 3);
+
+      // Merge query tokens with recent phrase terms, deduplicate
+      const seen = new Set<string>();
+      const terms: string[] = [];
+      for (const t of [...this.recentPhraseTermStrings(), ...queryTokens]) {
+        const key = t.toLowerCase();
+        if (!seen.has(key)) {
+          seen.add(key);
+          terms.push(t);
+        }
+      }
       if (terms.length < 2) return;
 
       const phraseHits = await searchPhrasesByWords(terms);
