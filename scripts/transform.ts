@@ -704,7 +704,10 @@ function transformSenses(entry: WiktionaryEntry): Sense[] {
         synonyms: (s.synonyms || []).map((x) => x.word).filter(Boolean),
         antonyms: (s.antonyms || []).map((x) => x.word).filter(Boolean),
       };
-    });
+    })
+    // Drop Wiktionary section-header artifacts (e.g. "transitiv:", "Plural 1:")
+    // — they carry no definition content and clutter the sense list
+    .filter((s) => !(s.gloss.trim().endsWith(":") && s.example_ids.length === 0));
 }
 
 function extractSounds(entry: WiktionaryEntry): Sound[] {
