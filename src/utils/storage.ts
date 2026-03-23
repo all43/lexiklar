@@ -24,6 +24,7 @@ const KEYS = [
   "lexiklar_favorites",
   "lexiklar_recents",
   "lexiklar_view_counts",
+  "lexiklar_phrase_terms",
 ] as const;
 
 /**

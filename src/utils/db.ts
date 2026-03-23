@@ -293,6 +293,26 @@ export async function getAllWords(): Promise<SearchResult[]> {
   return rows.map(processSearchRow);
 }
 
+/**
+ * Search phrases whose lemma contains ALL of the given words (whole-word match).
+ * Uses ' ' || lemma || ' ' to enforce word boundaries in LIKE patterns.
+ */
+export async function searchPhrasesByWords(words: string[]): Promise<SearchResult[]> {
+  if (words.length < 2) return [];
+  // Sum boolean matches — require at least 2 words to appear (whole-word boundary)
+  const matchExprs = words.map(() => "((' ' || lower(lemma) || ' ') LIKE ? ESCAPE '\\')");
+  const params = words.map(w => `% ${w.toLowerCase()} %`);
+  const rows = await query(
+    `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en
+     FROM words
+     WHERE pos = 'PHRASE' AND (${matchExprs.join(" + ")}) >= 2
+     ORDER BY CASE WHEN frequency IS NULL THEN 999999 ELSE frequency END
+     LIMIT 10`,
+    params,
+  );
+  return rows.map(processSearchRow);
+}
+
 // ---- Fuzzy suggestions (Levenshtein) ----
 
 /**

@@ -14,6 +14,32 @@
 
     <!-- ═══ Search results (VL) — shown when a query is active ═══ -->
     <template v-if="searchQuery">
+      <!-- Phrase suggestions from sequential searches -->
+      <template v-if="phraseMatches.length">
+        <f7-block-title>{{ t('search.matchingPhrases') }}</f7-block-title>
+        <f7-list class="phrase-matches" media-list>
+          <f7-list-item
+            v-for="item in visiblePhrases"
+            :key="item.file"
+            :subtitle="item.glossEn?.[0] ?? ''"
+            :link="`/word/${item.file}/`"
+          >
+            <template #title>
+              <span v-html="highlightPhraseWords(item.lemma)"></span>
+            </template>
+            <template #after>
+              <span class="list-item-pos">{{ item.pos }}</span>
+            </template>
+          </f7-list-item>
+          <f7-list-button
+            v-if="hiddenPhrasesCount > 0"
+            :title="t('search.showMorePhrases').replace('{n}', String(hiddenPhrasesCount))"
+            @click="phrasesExpanded = true"
+          />
+        </f7-list>
+      </template>
+
+      <f7-block-title v-if="phraseMatches.length && results.length > 0">{{ t('search.searchResults') }}</f7-block-title>
       <f7-list
         v-if="results.length > 0"
         class="search-results"
@@ -128,12 +154,13 @@ import { f7, theme } from "framework7-vue";
 import { t } from "../js/i18n.js";
 import { submitReport } from "../utils/report.js";
 import { SHOW_ARTICLES_KEY } from "./SettingsPage.vue";
-import { getCached } from "../utils/storage.js";
+import { getCached, setItem } from "../utils/storage.js";
 import type { SearchResult } from "../../types/search.js";
 import {
   searchByLemma,
   searchByGlossEn,
   searchByWordForm,
+  searchPhrasesByWords,
   getRelatedWords,
   getSuggestions,
   foldUmlauts,
@@ -149,16 +176,37 @@ interface VLData {
   topPosition: number;
 }
 
+interface PhraseTerm {
+  term: string;
+  ts: number;
+}
+
 const RECENTS_KEY = "lexiklar_recents";
 const COUNTS_KEY = "lexiklar_view_counts";
+const PHRASE_TERMS_KEY = "lexiklar_phrase_terms";
 const HOME_FREQ_COUNT = 5;
 const HOME_RECENT_COUNT = 5;
+/** Only consider phrase terms from the last 5 minutes */
+const PHRASE_TERM_MAX_AGE_MS = 5 * 60 * 1000;
+
+function loadPhraseTerms(): PhraseTerm[] {
+  try {
+    const raw = JSON.parse(getCached(PHRASE_TERMS_KEY) || "[]");
+    // Migration: old format was string[], new is {term,ts}[]
+    if (raw.length && typeof raw[0] === "string") return [];
+    return raw as PhraseTerm[];
+  } catch { return []; }
+}
 
 export default defineComponent({
   data() {
     return {
       results: [] as SearchResultWithForm[],
       suggestions: [] as SearchResult[],
+      phraseMatches: [] as SearchResult[],
+      phrasesExpanded: false,
+      phraseTerms: loadPhraseTerms(),
+      matchedTerms: [] as string[],
       vlData: { items: [], topPosition: 0 } as VLData,
       vl: null as unknown,
       searchQuery: "",
@@ -172,6 +220,13 @@ export default defineComponent({
 
   computed: {
     t() { return t; },
+    visiblePhrases(): SearchResult[] {
+      if (this.phrasesExpanded) return this.phraseMatches;
+      return this.phraseMatches.slice(0, 3);
+    },
+    hiddenPhrasesCount(): number {
+      return this.phraseMatches.length - this.visiblePhrases.length;
+    },
     vlItems(): SearchResultWithForm[] {
       return this.results.map((item, i) => ({ ...item, index: i }));
     },
@@ -190,6 +245,8 @@ export default defineComponent({
   methods: {
     onPageVisible() {
       this.showArticles = getCached(SHOW_ARTICLES_KEY) !== "0";
+      // Reload phrase terms from storage (may have been cleared from Settings or WordPage)
+      this.phraseTerms = loadPhraseTerms();
       if (!this.searchQuery) this.loadHomeScreen();
     },
     onSearch(_searchbar: unknown, query: string) {
@@ -224,6 +281,20 @@ export default defineComponent({
     renderExternal(vl: unknown, vlData: VLData) {
       this.vl = vl;
       this.vlData = vlData;
+    },
+
+    highlightPhraseWords(lemma: string): string {
+      if (!this.matchedTerms.length) return lemma;
+      const termsLower = this.matchedTerms.map(t => t.toLowerCase());
+      const termsFolded = this.matchedTerms.map(t => foldUmlauts(t));
+      // Split phrase into words, highlight those that exactly match a search term
+      return lemma.split(/(\s+)/).map(token => {
+        if (/^\s+$/.test(token)) return token;
+        const lower = token.toLowerCase();
+        const folded = foldUmlauts(token);
+        const matches = termsLower.includes(lower) || termsFolded.includes(folded);
+        return matches ? `<b style="color: var(--f7-theme-color)">${token}</b>` : token;
+      }).join("");
     },
 
     async search(q: string) {
@@ -298,7 +369,70 @@ export default defineComponent({
         this.suggestions = [];
       }
 
+      // Track resolved lemma as phrase term (not the raw query)
+      // Prefer exact lemma match over form hit — "Tisch" should register as "Tisch" not "tischen"
+      const bestMatch = lemmaExact[0] || formHits[0];
+      if (bestMatch) {
+        this.addPhraseTerm(bestMatch.lemma);
+      }
+
+      // Phrase discovery: require ≥2 distinct recent lemmas to match
+      await this.findPhraseMatches(q, seen);
+
       this.loading = false;
+    },
+
+    addPhraseTerm(lemma: string) {
+      if (lemma.length < 3) return;
+      const now = Date.now();
+      // Deduplicate by lemma (case-insensitive) — update timestamp if already present
+      this.phraseTerms = this.phraseTerms.filter(
+        e => e.term.toLowerCase() !== lemma.toLowerCase(),
+      );
+      this.phraseTerms.push({ term: lemma, ts: now });
+      // Cap to 10 entries
+      if (this.phraseTerms.length > 10) this.phraseTerms = this.phraseTerms.slice(-10);
+      setItem(PHRASE_TERMS_KEY, JSON.stringify(this.phraseTerms));
+    },
+
+    recentPhraseTermStrings(): string[] {
+      const cutoff = Date.now() - PHRASE_TERM_MAX_AGE_MS;
+      return this.phraseTerms
+        .filter(e => e.ts >= cutoff)
+        .map(e => e.term);
+    },
+
+    async findPhraseMatches(_q: string, alreadySeen: Set<string>) {
+      this.phraseMatches = [];
+      this.matchedTerms = [];
+      this.phrasesExpanded = false;
+
+      // Require ≥2 distinct recent lemmas to search for phrases
+      const terms = this.recentPhraseTermStrings();
+      if (terms.length < 2) return;
+
+      const phraseHits = await searchPhrasesByWords(terms);
+      // Require ≥ 2 terms to match whole words in each phrase
+      const filtered: SearchResult[] = [];
+      const usedTerms = new Set<string>();
+      for (const r of phraseHits) {
+        if (alreadySeen.has(r.file)) continue;
+        const phraseWords = r.lemma.toLowerCase().split(/\s+/);
+        const phraseWordsFolded = phraseWords.map(w => foldUmlauts(w));
+        const hits = terms.filter(t => {
+          const tLower = t.toLowerCase();
+          const tFolded = foldUmlauts(t);
+          return phraseWords.includes(tLower) || phraseWordsFolded.includes(tFolded);
+        });
+        if (hits.length >= 2) {
+          filtered.push(r);
+          for (const h of hits) usedTerms.add(h);
+        }
+      }
+      if (!filtered.length) return;
+
+      this.phraseMatches = filtered;
+      this.matchedTerms = [...usedTerms];
     },
 
     reportMissing() {
@@ -403,5 +537,10 @@ export default defineComponent({
 /* Gender / Pl. badge sits right after the POS label */
 .list-item-badge {
   margin-left: 5px;
+}
+
+/* Phrase match section — subtle background to distinguish from regular results */
+.phrase-matches {
+  --f7-list-bg-color: color-mix(in srgb, var(--f7-theme-color) 5%, var(--f7-page-bg-color));
 }
 </style>

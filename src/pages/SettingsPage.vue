@@ -220,6 +220,7 @@ export default defineComponent({
         () => {
           removeItem("lexiklar_recents");
           removeItem("lexiklar_view_counts");
+          removeItem("lexiklar_phrase_terms");
           f7.toast
             .create({ text: t("settings.clearDone"), closeTimeout: 2000, position: "center" })
             .open();

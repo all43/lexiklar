@@ -626,6 +626,19 @@ export default defineComponent({
                 const counts: Record<string, number> = JSON.parse(getCached("lexiklar_view_counts") || "{}");
                 delete counts[fileKey];
                 setItem("lexiklar_view_counts", JSON.stringify(counts));
+                // Remove lemma from phrase search terms
+                const lemma = file.includes("_") ? file.split("_")[0] : file;
+                try {
+                  const raw = JSON.parse(getCached("lexiklar_phrase_terms") || "[]");
+                  const terms: { term: string; ts: number }[] =
+                    (raw.length && typeof raw[0] === "string") ? [] : raw;
+                  const filtered2 = terms.filter(
+                    (e: { term: string }) => e.term.toLowerCase() !== lemma.toLowerCase(),
+                  );
+                  if (filtered2.length !== terms.length) {
+                    setItem("lexiklar_phrase_terms", JSON.stringify(filtered2));
+                  }
+                } catch { /* ignore */ }
                 this.inHistory = false;
               } catch {
                 // silently skip
@@ -813,6 +826,23 @@ export default defineComponent({
           const counts: Record<string, number> = JSON.parse(getCached(COUNTS_KEY) || "{}");
           counts[fileKey] = (counts[fileKey] || 0) + 1;
           setItem(COUNTS_KEY, JSON.stringify(counts));
+
+          // Track visited word for phrase discovery (timestamped)
+          const PHRASE_TERMS_KEY = "lexiklar_phrase_terms";
+          const lemma = file.includes("_") ? file.split("_")[0] : file;
+          if (lemma.length >= 3) {
+            try {
+              const raw = JSON.parse(getCached(PHRASE_TERMS_KEY) || "[]");
+              const terms: { term: string; ts: number }[] =
+                (raw.length && typeof raw[0] === "string") ? [] : raw;
+              const now = Date.now();
+              const updated = terms.filter(
+                (e: { term: string }) => e.term.toLowerCase() !== lemma.toLowerCase(),
+              );
+              updated.push({ term: lemma, ts: now });
+              setItem(PHRASE_TERMS_KEY, JSON.stringify(updated.slice(-10)));
+            } catch { /* ignore */ }
+          }
 
           this.inHistory = true;
 

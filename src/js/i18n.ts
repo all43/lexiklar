@@ -27,6 +27,9 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "search.frequentlyViewed": "Frequently Viewed",
     "search.recentlyVisited": "Recently Visited",
     "search.noResults": "No words found.",
+    "search.matchingPhrases": "Matching Phrases",
+    "search.searchResults": "Search Results",
+    "search.showMorePhrases": "Show {n} more",
     "search.emptyHint": "Start typing to search for a German word or English meaning.",
 
     // WordPage
@@ -183,6 +186,9 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "search.frequentlyViewed": "H\u00E4ufig angesehen",
     "search.recentlyVisited": "Zuletzt besucht",
     "search.noResults": "Keine W\u00F6rter gefunden.",
+    "search.matchingPhrases": "Passende Redewendungen",
+    "search.searchResults": "Suchergebnisse",
+    "search.showMorePhrases": "{n} weitere anzeigen",
     "search.emptyHint": "Tippe ein deutsches Wort oder eine englische Bedeutung ein.",
 
     // WordPage
