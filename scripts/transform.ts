@@ -1555,7 +1555,7 @@ async function main(): Promise<void> {
 
     if (wordsFilter && !wordsFilter.has(entry.word.toLowerCase())) continue;
     if (seedWords && !seedWords.has(entry.word.toLowerCase())) continue;
-    if (freqFilter && entry.pos !== "phrase" && !freqFilter.has(entry.word.toLowerCase())) continue;
+    if (freqFilter && entry.pos !== "phrase" && entry.pos !== "intj" && !freqFilter.has(entry.word.toLowerCase())) continue;
 
     const key = `${entry.word}|${entry.pos}`;
     if (!groups.has(key)) groups.set(key, []);
@@ -1989,6 +1989,23 @@ async function main(): Promise<void> {
 
       state.entries[stateKey] = { hash, file: relPath };
       written++;
+    }
+  }
+
+  // Prune state entries pointing to files that no longer exist on disk.
+  // This prevents future runs from re-creating files that were intentionally
+  // removed (e.g. after switching from full to B2-filtered mode).
+  {
+    let pruned = 0;
+    for (const [key, entry] of Object.entries(state.entries)) {
+      if (entry.file === "__form-of-skip__") continue;
+      if (!existsSync(join(DATA_DIR, entry.file))) {
+        delete state.entries[key];
+        pruned++;
+      }
+    }
+    if (pruned > 0) {
+      console.log(`Pruned ${pruned} stale state entries (files no longer on disk).`);
     }
   }
 

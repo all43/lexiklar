@@ -1,11 +1,14 @@
 import { readFileSync, appendFileSync, readdirSync, existsSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel, resolveLocalModel, PROVIDER_DEFAULTS, estimateCost } from "./lib/llm.js";
+import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, isLocalProvider, getDefaultModel, resolveLocalModel, PROVIDER_DEFAULTS, estimateCost, ensureApiKey } from "./lib/llm.js";
 import { stripReferences } from "./lib/references.js";
 import { POS_CONFIG } from "./lib/pos.js";
 import { EXAMPLES_SYSTEM_PROMPT } from "./lib/prompts.js";
 import { loadExamples, saveExamples, EXAMPLES_DIR } from "./lib/examples.js";
+import { runPool } from "./lib/pool.js";
+import { intArg, intArgOptional } from "./lib/cli.js";
+import { WORDS_DIR } from "./lib/words.js";
 import type { Word, Sense, Annotation, ExampleMap, Example } from "../types/index.js";
 import type { LLMProvider, LLMResponse, ProviderConfig } from "../types/llm.js";
 import type { PosConfig } from "../types/pos.js";
@@ -13,7 +16,6 @@ import type { PosConfig } from "../types/pos.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const DATA_DIR = join(ROOT, "data");
-const WORDS_DIR = join(DATA_DIR, "words");
 
 // ============================================================
 // CLI args
@@ -41,37 +43,13 @@ const IDIOM_MODEL: string | undefined = MODEL_EXPLICIT ? (MODEL ?? undefined) : 
 const IDIOM_MODEL_LABEL = `${IDIOM_PROVIDER}/${IDIOM_MODEL}`;
 
 // Local models have small context windows — default to a much smaller batch.
-// Cloud providers can handle 10+ easily.
 const DEFAULT_BATCH_SIZE = isLocalProvider(PROVIDER) ? 3 : 10;
-const BATCH_SIZE: number = (() => {
-  const idx = args.indexOf("--batch-size");
-  return idx >= 0 ? parseInt(args[idx + 1], 10) || DEFAULT_BATCH_SIZE : DEFAULT_BATCH_SIZE;
-})();
-
-const MAX_CONSECUTIVE_ERRORS: number = (() => {
-  const idx = args.indexOf("--max-consecutive-errors");
-  return idx >= 0 ? parseInt(args[idx + 1], 10) || 5 : 20;
-})();
-
-const LIMIT: number | null = (() => {
-  const idx = args.indexOf("--limit");
-  return idx >= 0 ? parseInt(args[idx + 1], 10) || null : null;
-})();
-
-const CONCURRENCY: number = (() => {
-  const idx = args.indexOf("--concurrency");
-  return idx >= 0 ? parseInt(args[idx + 1], 10) || 1 : 1;
-})();
-
-const MAX_PER_WORD: number | null = (() => {
-  const idx = args.indexOf("--max-per-word");
-  return idx >= 0 ? parseInt(args[idx + 1], 10) || null : null;
-})();
-
-const FREQ_LIMIT: number | null = (() => {
-  const idx = args.indexOf("--freq-limit");
-  return idx >= 0 ? parseInt(args[idx + 1], 10) || null : null;
-})();
+const BATCH_SIZE = intArg(args, "--batch-size", DEFAULT_BATCH_SIZE);
+const MAX_CONSECUTIVE_ERRORS = intArg(args, "--max-consecutive-errors", 20);
+const LIMIT = intArgOptional(args, "--limit");
+const CONCURRENCY = intArg(args, "--concurrency", 1);
+const MAX_PER_WORD = intArgOptional(args, "--max-per-word");
+const FREQ_LIMIT = intArgOptional(args, "--freq-limit");
 
 const NO_ANNOTATIONS = args.includes("--no-annotations");
 
@@ -166,18 +144,6 @@ function buildWordFreqMap(): Map<string, WordFreqInfo> {
     }
   }
   return map;
-}
-
-/** Run items through fn with at most `concurrency` calls in-flight at once. */
-async function runPool<T>(items: T[], concurrency: number, fn: (item: T, index: number) => Promise<void>): Promise<void> {
-  let i = 0;
-  const workers = Array(Math.min(concurrency, items.length)).fill(null).map(async () => {
-    while (i < items.length) {
-      const idx = i++;
-      await fn(items[idx], idx);
-    }
-  });
-  await Promise.all(workers);
 }
 
 // Disambiguation dict is needed for correct gloss_hint — enabled for all providers.
@@ -461,16 +427,7 @@ function logError(batchNum: number, totalBatches: number, err: Error, rawRespons
 
 async function main(): Promise<void> {
   // Check API key
-  if (!isLocalProvider(PROVIDER) && !DRY_RUN) {
-    const apiKey = getApiKey(PROVIDER);
-    if (!apiKey) {
-      const keyName = PROVIDER === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
-      console.log(
-        `No ${keyName} found. Skipping translation step. Set the env var to enable.`,
-      );
-      process.exit(0);
-    }
-  }
+  ensureApiKey(PROVIDER, DRY_RUN);
 
   // Load examples
   if (!existsSync(EXAMPLES_DIR)) {

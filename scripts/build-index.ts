@@ -29,6 +29,7 @@ import Database from "better-sqlite3";
 import { stripReferences } from "./lib/references.js";
 import { POS_DIRS } from "./lib/pos.js";
 import { loadExamples, saveExamples } from "./lib/examples.js";
+import { findWordFilePaths } from "./lib/words.js";
 import { computeConjugation, computeAllForms } from "../src/utils/verb-forms.js";
 import type {
   Word,
@@ -192,19 +193,7 @@ function contentHash(str: string): string {
   return createHash("sha256").update(str).digest("hex").slice(0, 16);
 }
 
-function findJsonFiles(): string[] {
-  const results: string[] = [];
-  for (const dir of POS_DIRS) {
-    const fullDir = join(DATA_DIR, "words", dir);
-    if (!existsSync(fullDir)) continue;
-    for (const file of readdirSync(fullDir)) {
-      if (file.endsWith(".json")) {
-        results.push(join(fullDir, file));
-      }
-    }
-  }
-  return results;
-}
+// findJsonFiles is now provided by lib/words.ts as findWordFilePaths()
 
 /**
  * Compute a version hash from all word file paths + their modification times.
@@ -499,6 +488,10 @@ function resolveWordFile(
     }
   }
 
+  // Only include sense number when the entry has multiple senses —
+  // for single-sense words, #1 is redundant noise.
+  if (senseNumber && entry.senses.length <= 1) senseNumber = null;
+
   return { posDir: entry.posDir, file: entry.file, senseNumber };
 }
 
@@ -663,7 +656,7 @@ function main(): void {
     INSERT INTO meta (key, value) VALUES (@key, @value)
   `);
 
-  const files = findJsonFiles();
+  const files = findWordFilePaths();
 
   // --------------------------------------------------------
   // Phase 1a: Load all word data for relationship resolution
@@ -928,7 +921,7 @@ function main(): void {
       delete enriched._oscillating;
 
       if (isVerbWord(data) && verbEndings) {
-        if (data.conjugation_class !== "irregular") {
+        if (data.conjugation_class !== "irregular" && data.stems) {
           // Pre-compute conjugation table from stems + endings
           enriched.conjugation = computeConjugation(data, verbEndings);
         }
@@ -964,7 +957,7 @@ function main(): void {
       const wordId = result.lastInsertRowid;
 
       // Pre-compute verb forms for search
-      if (isVerbWord(data) && verbEndings) {
+      if (isVerbWord(data) && verbEndings && (data.conjugation_class === "irregular" || data.stems)) {
         const verbForInput = data.conjugation_class === "irregular"
           ? data
           : { ...data, conjugation: enriched.conjugation as ConjugationTable };

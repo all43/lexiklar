@@ -11,12 +11,11 @@
  *   node scripts/cleanup-words.ts          # dry run (default)
  *   node scripts/cleanup-words.ts --delete  # actually delete
  */
-import { readdirSync, readFileSync, statSync, unlinkSync } from "fs";
-import { join } from "path";
+import { readFileSync, unlinkSync } from "fs";
+import { iterWordFiles } from "./lib/words.js";
 import type { Word } from "../types/word.js";
 
 const DELETE: boolean = process.argv.includes("--delete");
-const WORDS_DIR = "data/words";
 
 // Load whitelist
 const whitelist = new Set<string>();
@@ -27,33 +26,23 @@ try {
   // whitelist missing — proceed without it
 }
 
-const posDirs: string[] = readdirSync(WORDS_DIR).filter(
-  (d) => !d.startsWith(".") && statSync(join(WORDS_DIR, d)).isDirectory(),
-);
-
 let kept = 0;
 let toRemove = 0;
 const removePaths: string[] = [];
 
-for (const pos of posDirs) {
-  const dir: string = join(WORDS_DIR, pos);
-  for (const file of readdirSync(dir)) {
-    if (!file.endsWith(".json")) continue;
-    const filePath: string = join(dir, file);
-    const data: Word = JSON.parse(readFileSync(filePath, "utf-8"));
-    const senses = data.senses || [];
+for (const { filePath, data } of iterWordFiles()) {
+  const senses = data.senses || [];
 
-    const hasGlossEn: boolean = senses.some((s) => s.gloss_en);
-    const hasGlossEnFull: boolean = senses.some((s) => s.gloss_en_full);
-    const hasZipf: boolean = data.zipf != null;
-    const inWhitelist: boolean = whitelist.has((data.word || "").toLowerCase());
+  const hasGlossEn: boolean = senses.some((s) => s.gloss_en);
+  const hasGlossEnFull: boolean = senses.some((s) => s.gloss_en_full);
+  const hasZipf: boolean = data.zipf != null;
+  const inWhitelist: boolean = whitelist.has((data.word || "").toLowerCase());
 
-    if (hasGlossEn || hasGlossEnFull || hasZipf || inWhitelist) {
-      kept++;
-    } else {
-      toRemove++;
-      removePaths.push(filePath);
-    }
+  if (hasGlossEn || hasGlossEnFull || hasZipf || inWhitelist) {
+    kept++;
+  } else {
+    toRemove++;
+    removePaths.push(filePath);
   }
 }
 

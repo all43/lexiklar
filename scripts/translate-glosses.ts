@@ -22,7 +22,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, getApiKey, isLocalProvider, getDefaultModel, estimateCost } from "./lib/llm.js";
+import { callLLM, extractJSON, retryWithBackoff, parseProviderArgs, isLocalProvider, getDefaultModel, estimateCost, ensureApiKey } from "./lib/llm.js";
 import { stripReferences } from "./lib/references.js";
 import { POS_DIRS } from "./lib/pos.js";
 import {
@@ -32,12 +32,11 @@ import {
   SYSTEM_PROMPT_FULL,
   TRANSLATIONS_SCHEMA,
 } from "./lib/prompts.js";
+import { runPool } from "./lib/pool.js";
+import { intArg, wordListFilter } from "./lib/cli.js";
+import { WORDS_DIR } from "./lib/words.js";
 import type { Word, Sense } from "../types/index.js";
 import type { LLMProvider, LLMResponse } from "../types/llm.js";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = join(__dirname, "..");
-const WORDS_DIR = join(ROOT, "data", "words");
 
 // ============================================================
 // CLI args
@@ -52,24 +51,10 @@ const FULL_MODE       = args.includes("--full");
 const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args) as { provider: LLMProvider; model: string | null };
 const MODEL_LABEL = `${PROVIDER}/${MODEL ?? getDefaultModel(PROVIDER)}`;
 
-// How many single-sense words to pack into one API call.
-// Multi-sense words always get their own call.
-const batchSizeIdx = args.indexOf("--batch-size");
-const SINGLE_SENSE_BATCH_SIZE = batchSizeIdx >= 0 ? parseInt(args[batchSizeIdx + 1], 10) : 20;
-
-// Limit total word-jobs processed (for test runs). 0 = no limit.
-const limitIdx = args.indexOf("--limit");
-const JOB_LIMIT = limitIdx >= 0 ? parseInt(args[limitIdx + 1], 10) : 0;
-
-// Number of concurrent API calls. Default: 1 (sequential). Use 5–10 for cloud providers.
-const concurrencyIdx = args.indexOf("--concurrency");
-const CONCURRENCY = concurrencyIdx >= 0 ? parseInt(args[concurrencyIdx + 1], 10) : 1;
-
-// Optional word list filter: only process files whose key (e.g. "verbs/sagen") is in the list.
-const wordListIdx = args.indexOf("--word-list");
-const WORD_LIST_FILTER: Set<string> | null = wordListIdx >= 0
-  ? new Set(readFileSync(args[wordListIdx + 1], "utf-8").split("\n").map(l => l.trim()).filter(Boolean))
-  : null;
+const SINGLE_SENSE_BATCH_SIZE = intArg(args, "--batch-size", 20);
+const JOB_LIMIT = intArg(args, "--limit", 0);
+const CONCURRENCY = intArg(args, "--concurrency", 1);
+const WORD_LIST_FILTER = wordListFilter(args);
 
 // ============================================================
 // Types
@@ -112,18 +97,6 @@ interface SingleSenseItem extends GlossPromptItem {
 
 // JSON Schema type compatible with Record<string, unknown>
 type JsonSchemaObject = Record<string, unknown>;
-
-/** Run items through fn with at most `concurrency` calls in-flight at once. */
-async function runPool<T>(items: T[], concurrency: number, fn: (item: T, index: number) => Promise<void>): Promise<void> {
-  let i = 0;
-  const workers = Array(Math.min(concurrency, items.length)).fill(null).map(async () => {
-    while (i < items.length) {
-      const idx = i++;
-      await fn(items[idx], idx);
-    }
-  });
-  await Promise.all(workers);
-}
 
 // ============================================================
 // Collect untranslated senses from all word files
@@ -475,16 +448,7 @@ async function main(): Promise<void> {
   }
 
   // Check API key now (after resets, so reset-only runs don't need a key)
-  if (!isLocalProvider(PROVIDER) && !DRY_RUN) {
-    const apiKey = getApiKey(PROVIDER);
-    if (!apiKey) {
-      const keyName = PROVIDER === "anthropic" ? "ANTHROPIC_API_KEY" : "OPENAI_API_KEY";
-      console.log(
-        `No ${keyName} found. Skipping gloss translation. Set the env var to enable, or use --provider ollama for local.`,
-      );
-      process.exit(0);
-    }
-  }
+  ensureApiKey(PROVIDER, DRY_RUN);
 
   // ── FULL_MODE: batch senses per word file ──────────────────────────────────
   if (FULL_MODE) {

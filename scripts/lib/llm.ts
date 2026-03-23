@@ -175,6 +175,22 @@ export function getDefaultModel(provider: string): string {
 }
 
 /**
+ * Check that an API key is available for the given provider.
+ * Exits gracefully (code 0) if no key is found — pipeline-safe.
+ * Skips the check for local providers and when dryRun is true.
+ */
+export function ensureApiKey(provider: string, dryRun = false): void {
+  if (isLocalProvider(provider) || dryRun) return;
+  const key = getApiKey(provider);
+  if (!key) {
+    const config = PROVIDER_DEFAULTS[provider as LLMProvider] as ProviderConfig | undefined;
+    const keyName = config?.keyEnv ?? "API_KEY";
+    console.log(`No ${keyName} found. Exiting gracefully (pipeline-safe).`);
+    process.exit(0);
+  }
+}
+
+/**
  * Parse --provider and --model from argv.
  * @param {string[]} argv - process.argv.slice(2)
  * @returns {{ provider: string, model: string|null }}

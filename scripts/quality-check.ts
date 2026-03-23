@@ -35,12 +35,14 @@
  *   node scripts/quality-check.ts --skip-proofread gloss_en                # those words skipped
  */
 
-import { readdirSync, readFileSync, writeFileSync, existsSync, statSync, openSync, readSync, closeSync } from "fs";
+import { readFileSync, writeFileSync, existsSync, openSync, readSync, closeSync } from "fs";
 import { execFileSync } from "child_process";
 import { createHash } from "crypto";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { loadExamplesByIds, annotationsHash, patchExamples } from "./lib/examples.js";
+import { intArg, stringArg } from "./lib/cli.js";
+import { loadAllWordFiles, WORDS_DIR } from "./lib/words.js";
 import type { ExamplePatch } from "./lib/examples.js";
 import type { Word, Sense, ProofreadFlags } from "../types/index.js";
 import type { Example, ExampleMap, Annotation } from "../types/index.js";
@@ -48,21 +50,16 @@ import Database from "better-sqlite3";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-const WORDS_DIR = join(ROOT, "data", "words");
 const WHITELIST_FILE = join(ROOT, "config", "word-whitelist.json");
 
 // ── CLI args ──────────────────────────────────────────────────────────────────
 
 const args = process.argv.slice(2);
-const topIdx = args.indexOf("--top");
-const TOP_N = topIdx !== -1 ? parseInt(args[topIdx + 1]) : 500;
+const TOP_N = intArg(args, "--top", 500);
 const WHITELIST_ONLY = args.includes("--whitelist-only");
-const wordIdx = args.indexOf("--word");
-const WORD_FILTER = wordIdx !== -1 ? args[wordIdx + 1] : null;
-const wordListIdx = args.indexOf("--word-list");
-const WORD_LIST_FILE = wordListIdx !== -1 ? args[wordListIdx + 1] : null;
-const posIdx = args.indexOf("--pos");
-const POS_FILTER = posIdx !== -1 ? args[posIdx + 1] : null;
+const WORD_FILTER = stringArg(args, "--word");
+const WORD_LIST_FILE = stringArg(args, "--word-list");
+const POS_FILTER = stringArg(args, "--pos");
 const SKIP_EXAMPLES = args.includes("--no-examples");
 const SHOW_RAW = args.includes("--show-raw");
 
@@ -89,7 +86,6 @@ const MARK_PROOFREAD = parseAspects("--mark-proofread");
 // ── Types ─────────────────────────────────────────────────────────────────────
 
 interface WordEntry {
-  file: string;
   relPath: string;
   data: Word;
 }
@@ -160,20 +156,12 @@ function validProofreadAspects(data: Word): Set<string> {
 // ── Load all word files ───────────────────────────────────────────────────────
 
 console.log("Loading word files...");
-const allWords: WordEntry[] = []; // { file, relPath, data }
-const knownLemmas = new Set<string>(); // lowercase lemmas in our index
+const allWords: WordEntry[] = [];
+const knownLemmas = new Set<string>();
 
-for (const posDir of readdirSync(WORDS_DIR)) {
-  if (posDir.startsWith(".")) continue;
-  const dir = join(WORDS_DIR, posDir);
-  if (!existsSync(dir) || !statSync(dir).isDirectory()) continue;
-  for (const file of readdirSync(dir)) {
-    if (!file.endsWith(".json")) continue;
-    const relPath = `${posDir}/${file.replace(".json", "")}`;
-    const data = JSON.parse(readFileSync(join(dir, file), "utf-8")) as Word;
-    allWords.push({ file, relPath, data });
-    knownLemmas.add(data.word.toLowerCase());
-  }
+for (const { fileKey, data } of loadAllWordFiles()) {
+  allWords.push({ relPath: fileKey, data });
+  knownLemmas.add(data.word.toLowerCase());
 }
 console.log(`Loaded ${allWords.length} word files.`);
 

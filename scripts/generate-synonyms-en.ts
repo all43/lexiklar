@@ -17,25 +17,22 @@
  *   npx tsx scripts/generate-synonyms-en.ts --reset                  # clear existing synonyms_en, regenerate
  */
 
-import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
-import { join, dirname } from "path";
-import { fileURLToPath } from "url";
-import { POS_DIRS } from "./lib/pos.js";
+import { readFileSync, writeFileSync } from "fs";
+import { join } from "path";
 import {
   callLLM,
   extractJSON,
   retryWithBackoff,
   parseProviderArgs,
-  getApiKey,
   isLocalProvider,
   getDefaultModel,
+  ensureApiKey,
 } from "./lib/llm.js";
+import { runPool } from "./lib/pool.js";
+import { intArg, wordListFilter } from "./lib/cli.js";
+import { iterWordFiles, WORDS_DIR } from "./lib/words.js";
 import type { Word, Sense } from "../types/index.js";
 import type { LLMProvider } from "../types/llm.js";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = join(__dirname, "..");
-const WORDS_DIR = join(ROOT, "data", "words");
 
 // ============================================================
 // CLI args
@@ -50,23 +47,11 @@ const { provider: PROVIDER, model: MODEL_OVERRIDE } = parseProviderArgs(args) as
 };
 const MODEL_LABEL = `${PROVIDER}/${MODEL_OVERRIDE ?? getDefaultModel(PROVIDER)}`;
 
-const topIdx = args.indexOf("--top");
-const TOP_N = topIdx >= 0 ? parseInt(args[topIdx + 1], 10) : 0; // 0 = all
-
-const batchIdx = args.indexOf("--batch-size");
-const BATCH_SIZE = batchIdx >= 0 ? parseInt(args[batchIdx + 1], 10) : 15;
-
-const concIdx = args.indexOf("--concurrency");
-const CONCURRENCY = concIdx >= 0 ? parseInt(args[concIdx + 1], 10) : 1;
-
-const limitIdx = args.indexOf("--limit");
-const JOB_LIMIT = limitIdx >= 0 ? parseInt(args[limitIdx + 1], 10) : 0;
-
-// Optional word list filter: only process files whose key (e.g. "verbs/sagen") is in the list.
-const wordListIdx = args.indexOf("--word-list");
-const WORD_LIST_FILTER: Set<string> | null = wordListIdx >= 0
-  ? new Set(readFileSync(args[wordListIdx + 1], "utf-8").split("\n").map((l: string) => l.trim()).filter(Boolean))
-  : null;
+const TOP_N = intArg(args, "--top", 0);
+const BATCH_SIZE = intArg(args, "--batch-size", 15);
+const CONCURRENCY = intArg(args, "--concurrency", 1);
+const JOB_LIMIT = intArg(args, "--limit", 0);
+const WORD_LIST_FILTER = wordListFilter(args);
 
 // ============================================================
 // Types
@@ -94,20 +79,14 @@ interface SenseInfo {
 /** Map lowercase German word → gloss_en values from our dataset */
 function buildGlossLookup(): Map<string, string[]> {
   const lookup = new Map<string, string[]>();
-  for (const posDir of POS_DIRS) {
-    const dir = join(WORDS_DIR, posDir);
-    if (!existsSync(dir)) continue;
-    for (const file of readdirSync(dir)) {
-      if (!file.endsWith(".json")) continue;
-      const data = JSON.parse(readFileSync(join(dir, file), "utf-8")) as Word;
-      const glosses = (data.senses || [])
-        .map((s: Sense) => s.gloss_en)
-        .filter((g): g is string => !!g);
-      if (glosses.length > 0) {
-        const key = data.word.toLowerCase();
-        const existing = lookup.get(key) || [];
-        lookup.set(key, [...existing, ...glosses]);
-      }
+  for (const { data } of iterWordFiles()) {
+    const glosses = (data.senses || [])
+      .map((s: Sense) => s.gloss_en)
+      .filter((g): g is string => !!g);
+    if (glosses.length > 0) {
+      const key = data.word.toLowerCase();
+      const existing = lookup.get(key) || [];
+      lookup.set(key, [...existing, ...glosses]);
     }
   }
   return lookup;
@@ -120,16 +99,9 @@ function buildGlossLookup(): Map<string, string[]> {
 function collectJobs(glossLookup: Map<string, string[]>): WordJob[] {
   const jobs: WordJob[] = [];
 
-  for (const posDir of POS_DIRS) {
-    const dir = join(WORDS_DIR, posDir);
-    if (!existsSync(dir)) continue;
-
-    for (const file of readdirSync(dir)) {
-      if (!file.endsWith(".json")) continue;
-      const fileKey = `${posDir}/${file.replace(/\.json$/, "")}`;
+  for (const { filePath, fileKey, data: rawData } of iterWordFiles()) {
       if (WORD_LIST_FILTER && !WORD_LIST_FILTER.has(fileKey)) continue;
-      const filePath = join(dir, file);
-      const data = JSON.parse(readFileSync(filePath, "utf-8")) as Word & Record<string, unknown>;
+      const data = rawData as Word & Record<string, unknown>;
 
       // Only process words that have at least one sense with gloss_en
       const senses: SenseInfo[] = [];
@@ -167,7 +139,6 @@ function collectJobs(glossLookup: Map<string, string[]>): WordJob[] {
       }
 
       jobs.push({ filePath, word: data.word, pos: data.pos, senses });
-    }
   }
 
   // Sort by frequency (highest zipf first) for --top filtering
@@ -338,21 +309,6 @@ async function processBatch(jobs: WordJob[]): Promise<number> {
 }
 
 // ============================================================
-// Concurrency pool
-// ============================================================
-
-async function runPool<T>(items: T[], concurrency: number, fn: (item: T) => Promise<void>): Promise<void> {
-  let i = 0;
-  const workers = Array(Math.min(concurrency, items.length)).fill(null).map(async () => {
-    while (i < items.length) {
-      const idx = i++;
-      await fn(items[idx]);
-    }
-  });
-  await Promise.all(workers);
-}
-
-// ============================================================
 // Main
 // ============================================================
 
@@ -386,13 +342,7 @@ async function main(): Promise<void> {
   }
 
   // Check API key
-  if (!isLocalProvider(PROVIDER)) {
-    const key = getApiKey(PROVIDER);
-    if (!key) {
-      console.log(`No API key for ${PROVIDER}. Exiting gracefully (pipeline-safe).`);
-      process.exit(0);
-    }
-  }
+  ensureApiKey(PROVIDER);
 
   let totalChanged = 0;
 
