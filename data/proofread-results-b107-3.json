@@ -1,0 +1,249 @@
+{
+  "verified": [
+    "d889523dea",
+    "d572f2fc29",
+    "ce4905796b",
+    "da916fdd41",
+    "db678f691a",
+    "0271885a0e",
+    "6ebfb881df",
+    "1f45444063",
+    "35549245ea",
+    "244d24b8ca",
+    "b883ad3ca5",
+    "39362c745e",
+    "0a30cbc5b3",
+    "effe1fc82a",
+    "aefce8b482",
+    "a604d43cc9",
+    "73034aa4c3",
+    "1959a9a99f",
+    "833388c3b5",
+    "e801a9d1a3",
+    "4999bca29b",
+    "94c069f3fb",
+    "664129c3b2",
+    "a23b27a23e",
+    "8de8b24712",
+    "b781740a58",
+    "73ae47ed42",
+    "6079e23cf0",
+    "3512dfaf3c",
+    "6195755389",
+    "6479fdc885",
+    "4c2dacc6fe",
+    "abba365c86",
+    "1bdb80c210",
+    "b06c8649f8",
+    "ea248264d1",
+    "e7fe100ab5",
+    "075621a249",
+    "1d92172c14",
+    "315ecb19ae",
+    "58ae6e89e0",
+    "39088104e8",
+    "7749cd9b74",
+    "9e626cb353",
+    "559ddd3e5a",
+    "d1a7aa8a1a",
+    "3d0f1eb113",
+    "d836c53aaf",
+    "c941a49b02",
+    "d25107f158",
+    "36b8ceea00",
+    "32b7c83a34",
+    "047b1c6091",
+    "cd6bde94e4",
+    "1aa82a1d60",
+    "a461afa770",
+    "dbaa5b0bf1",
+    "0317897949",
+    "cb2fe751b2",
+    "9510bacf4d",
+    "5196a5a52e",
+    "9c288919e5",
+    "b39cd6d334",
+    "e2f0aafd57",
+    "1549984288",
+    "c663235673",
+    "dbc49ca2f3",
+    "ad8635b341",
+    "5ed9b5f9b0",
+    "91ae62b457",
+    "2573db3a27",
+    "fd221b2831",
+    "81bd7ffcaf",
+    "e1ee27d75a",
+    "6aee33f35b",
+    "1f3e7fcc2f",
+    "115d4bcce0",
+    "fe7a4ea948",
+    "dad15f0ccc"
+  ],
+  "translation_ok": [
+    "938c7040e5",
+    "67d8049ae5",
+    "e83cb50b36",
+    "11713b9b5d",
+    "d5d20ee4b7",
+    "bcd6c55f1c",
+    "088294679f",
+    "4cdcdd35ff",
+    "74347c7260",
+    "9b9feb9399",
+    "40e468f797",
+    "7cd9c62561",
+    "474c6aae99",
+    "fd681b034d",
+    "4eccbc4702",
+    "ac28784607",
+    "a04df5ffa3",
+    "ed93b75dd9",
+    "8806d05763",
+    "c90fb164a0",
+    "f430921dea"
+  ],
+  "word_glosses_ok": [
+    "abbreviations/w.",
+    "verbs/anstoßen",
+    "verbs/auffahren",
+    "adjectives/englischen",
+    "nouns/Bund_gruppe",
+    "nouns/Zehner_etwas",
+    "prepositions/auf",
+    "nouns/Eimer_hohes",
+    "nouns/Knoten",
+    "nouns/Formation",
+    "nouns/Gabel",
+    "nouns/Fünfer",
+    "names/Plan",
+    "nouns/Lauf",
+    "nouns/Amt",
+    "nouns/Schnitt"
+  ],
+  "issues": [
+    {
+      "word": "abbreviations/OK",
+      "type": "gloss",
+      "sense": 8,
+      "detail": "gloss_en is 'local gravity' but Ortskraft means 'local employee/staff'. gloss_en_full 'Local employee' is correct but gloss_en is wrong."
+    },
+    {
+      "word": "nouns/Bruch_körperliche",
+      "type": "synonyms_en_fix",
+      "sense": 6,
+      "value": ["crease", "fold", "pleat"],
+      "detail": "Current synonyms_en [rip, snag, hole, damage] are not synonyms of 'crease (clothing)'. A Bruch in fabric is a fold/crease, not a rip or hole. Replaced with accurate synonyms."
+    },
+    {
+      "id": "71d97aee7b",
+      "type": "annotation",
+      "detail": "All annotations are in English — annotated the translation text instead of the German sentence. Forms are 'Interest rates', 'will', 'stay', 'low' instead of German words 'Zinsen', 'bleiben', 'niedrig' etc."
+    },
+    {
+      "id": "40e468f797",
+      "type": "annotation",
+      "detail": "Multiple annotation errors: (1) 'Eimer' has English lemma 'fool' instead of 'Eimer', (2) 'ich' is pos 'noun' with gloss_hint 'we' — should not be annotated (pronoun), (3) 'mein'' has lemma 'mein'' instead of 'meinen', (4) 'Salz' has English lemma 'salt' instead of 'Salz'."
+    },
+    {
+      "id": "938c7040e5",
+      "type": "annotation",
+      "detail": "Annotation for 'Bund' has gloss_hint 'federation' but this example is about a pipe collar (sense: Verstärkung am Ende eines Rohres). gloss_hint should be 'collar'."
+    },
+    {
+      "id": "e862ec51fe",
+      "type": "translation",
+      "detail": "Translation 'I am currently on the way according to plan' is wrong. 'nach Plan' here is a place name (the proper noun Plan). Should be 'I am currently on the way to Plan.'"
+    },
+    {
+      "id": "e862ec51fe",
+      "type": "annotation",
+      "detail": "Annotation for 'Plan' has pos 'noun' and gloss_hint 'plan' but this is a proper noun (place name). Should have pos 'noun' with gloss_hint 'Plan (place name)' or reference names/Plan."
+    },
+    {
+      "id": "7384306fe0",
+      "type": "translation",
+      "detail": "Translation 'the plan of the previous century' is wrong. 'das Plan' with neuter article refers to the place name Plan, not a plan/scheme. Should be 'the Plan of the previous century' (referring to the locality)."
+    },
+    {
+      "id": "088294679f",
+      "type": "annotation",
+      "detail": "Translation says '(failing grade)' but context 'Der Fünfer fährt in die Innenstadt' refers to bus/tram line, not a grade. gloss_hint 'five (failing grade)' is wrong — should match sense 'five (number)' or have no hint."
+    },
+    {
+      "id": "12d6311596",
+      "type": "translation",
+      "detail": "Translation incorrectly says 'from the fork (utensil)' — Gabel here means Astgabel (tree fork/branch fork), sense 0. The person is standing in a tree fork, not on a utensil."
+    },
+    {
+      "id": "12d6311596",
+      "type": "annotation",
+      "detail": "Annotation for 'Auge' has English lemma 'eye' instead of German lemma 'Auge'."
+    },
+    {
+      "id": "474c6aae99",
+      "type": "annotation",
+      "detail": "Annotation has form 'dorp' but the German text says 'Dorf'. 'dorp' is not in the sentence."
+    },
+    {
+      "id": "11713b9b5d",
+      "type": "annotation",
+      "detail": "Annotation for 'zugefallen' has lemma 'zugefallen' (past participle) — correct lemma should be 'zufallen' (infinitive)."
+    },
+    {
+      "id": "4cdcdd35ff",
+      "type": "annotation",
+      "detail": "Annotation for 'eben' has gloss_hint 'level' but here 'eben' is an adverb meaning 'just/precisely', not the adjective 'level/flat'."
+    },
+    {
+      "id": "7cd9c62561",
+      "type": "annotation",
+      "detail": "Annotation for 'fünf' has English lemma 'five' instead of German lemma 'fünf'."
+    },
+    {
+      "id": "74347c7260",
+      "type": "annotation",
+      "detail": "Annotation for 'Ende' has English lemma 'end' instead of German lemma 'Ende'. Also annotation for 'geboren' is wrong — the text says 'gehoben' (aus der Taufe gehoben), not 'geboren'."
+    },
+    {
+      "id": "9b9feb9399",
+      "type": "annotation",
+      "detail": "All annotations are in English — annotated the translation text instead of the German sentence. Forms are 'Her', 'long', 'black' instead of German words 'Ihre', 'langen', 'schwarzen' etc."
+    },
+    {
+      "id": "8806d05763",
+      "type": "annotation",
+      "detail": "Annotation for 'Formation' has English lowercase lemma 'formation' instead of German 'Formation'. Also gloss_hint is a pipe-delimited list of all senses instead of just 'military unit'."
+    },
+    {
+      "id": "c90fb164a0",
+      "type": "annotation",
+      "detail": "Annotation for 'der' has English lemma 'the' instead of German 'der'. Also 'Formationen' has gloss_hint 'category' which doesn't match any sense — context is geological/vegetation formations."
+    },
+    {
+      "id": "a04df5ffa3",
+      "type": "annotation",
+      "detail": "Annotation for 'Sie' has English lemma 'she' instead of German 'sie'."
+    },
+    {
+      "id": "ed93b75dd9",
+      "type": "annotation",
+      "detail": "Annotation for 'Hüte' has lemma 'Hut' (noun: hat) but here 'Hüte dich' is the imperative of 'hüten' (to beware). Lemma should be 'hüten', pos 'verb'."
+    },
+    {
+      "id": "ac28784607",
+      "type": "annotation",
+      "detail": "Annotation for 'Sie' has pos 'noun' with gloss_hint 'she' — should not be annotated (pronoun). Also 'da' has pos 'adjective' but is an adverb here."
+    },
+    {
+      "id": "f430921dea",
+      "type": "annotation",
+      "detail": "Annotation for 'Ich' has pos 'noun' with gloss_hint 'I (pronoun)' — should not be annotated (pronoun)."
+    },
+    {
+      "id": "fd681b034d",
+      "type": "annotation",
+      "detail": "Annotation for 'Das' has pos 'pronoun' with gloss_hint 'which (nominative)' — 'Das' here is a determiner article, not a relative pronoun."
+    }
+  ]
+}

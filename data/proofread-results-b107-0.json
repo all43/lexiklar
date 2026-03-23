@@ -1,0 +1,255 @@
+{
+  "verified": [
+    "a7dd1f29d1",
+    "4c4f415e91",
+    "0462aed2de",
+    "8c769fbd6a",
+    "0dee3dd591",
+    "d38167ee0a",
+    "6d4c68b365",
+    "e541a432a6",
+    "c1641c0561",
+    "fbd80a30af",
+    "2d6962213d",
+    "f2b2fbf2b6",
+    "c7adfe5eac",
+    "8d646a9933",
+    "f665110283",
+    "5176046c8b",
+    "b74e3e5b3a",
+    "19fe7c85a7",
+    "429e65903c",
+    "5650ccb816",
+    "63f9cad04e",
+    "723fbd79b2",
+    "e9ccef0cae",
+    "3c7d7334cf",
+    "e6f0f9e3ae",
+    "5f4b5edae8",
+    "d5fee5dc2c",
+    "fc3ed20f10",
+    "2b4518af54",
+    "2a2d17fa8b",
+    "58b7aeba0f",
+    "999bfb4011",
+    "8fcb619b4f",
+    "320a0f5711",
+    "0dd141c61b",
+    "1c405f37c3",
+    "89dbbd4a9b",
+    "36187dc5e1",
+    "f19814200d",
+    "4ea581b5a7",
+    "739ad067c9",
+    "562e77cd73",
+    "5865e3dbd0",
+    "b5221b072c",
+    "021dbb3652",
+    "1673b5996a",
+    "80ef88b845",
+    "2b0d35a8be",
+    "454fa28029",
+    "cc2d4d961c",
+    "2b63cecce5",
+    "0a7acde932",
+    "2fb4e5b77f",
+    "0b5d3ce1f8",
+    "347b69ffa7",
+    "d9a9dd5446",
+    "a888720924",
+    "1158ddcf87",
+    "21537b1e5b"
+  ],
+  "translation_ok": [
+    "875a1794ac",
+    "d37f588406",
+    "3f41e5df33",
+    "45ea0c9408",
+    "61ecd10cbb",
+    "992e3687ef",
+    "8c819c4ab6",
+    "5683c25042",
+    "3e92619012",
+    "93197fd227",
+    "04e0221108",
+    "855b94caf9",
+    "c237f5dcbd",
+    "09b49b9f5d",
+    "7249721906",
+    "9f8b898617",
+    "f28469ad66",
+    "15360022dc",
+    "b7d58cf4bd",
+    "9620d1928e",
+    "97bd28f415",
+    "a4b9e40fa8",
+    "0fac5c5c18",
+    "86b6cfe8e4"
+  ],
+  "word_glosses_ok": [
+    "verbs/beibringen",
+    "nouns/Kammer",
+    "nouns/Anlage",
+    "nouns/Dreier",
+    "verbs/abtreiben",
+    "nouns/Loch_stelle",
+    "nouns/Stift_künstlich",
+    "nouns/Korb",
+    "nouns/Matrix",
+    "adverbs/heraus",
+    "nouns/Schlüssel",
+    "nouns/Bauch"
+  ],
+  "issues": [
+    {
+      "id": "875a1794ac",
+      "type": "annotation",
+      "detail": "Annotation for 'Sie' has lemma 'Sie' with pos 'noun' and gloss_hint 'she (pronoun)' — 'Sie' (formal you) is a pronoun, not a noun"
+    },
+    {
+      "id": "d37f588406",
+      "type": "annotation",
+      "detail": "Example is under sense 9 (design/Plan/Entwurf) but annotation gloss_hint for Anlage says 'disposition' (sense 0). Context is about a bad plan/design where the execution could not improve. Correct gloss_hint should be 'design'"
+    },
+    {
+      "id": "3f41e5df33",
+      "type": "annotation",
+      "detail": "gloss_hint for Dreier is 'three-point shot' but this example is under sense 1 (number three). Correct gloss_hint should be 'number three'"
+    },
+    {
+      "id": "45ea0c9408",
+      "type": "annotation",
+      "detail": "Annotation for 'Sie' has lemma 'she', pos 'noun', gloss_hint 'trumpet solo' — completely wrong. 'Sie' here is formal you (pronoun). Only one annotation present, missing all other content words"
+    },
+    {
+      "id": "61ecd10cbb",
+      "type": "annotation",
+      "detail": "gloss_hint for Loch is 'hole' but this example appears under both sense 4 (orifice) and sense 6 (opening/door/window). For 'Mach's Loch zu!' (shut your trap/shut the door), hint should match the intended sense not the physical hole sense"
+    },
+    {
+      "id": "992e3687ef",
+      "type": "annotation",
+      "detail": "All annotations are on English translation text (Children, who, are, susceptible, pathogens, holes, defense, etc.) instead of German source text. Entire annotation set is invalid"
+    },
+    {
+      "id": "8c819c4ab6",
+      "type": "annotation",
+      "detail": "gloss_hint for Stift is 'pen' but this example is under sense 2 (rod — elongated metal object). Should be 'rod'. Translation says 'pointless cylindrical pin' which is correct for the rod sense"
+    },
+    {
+      "id": "5683c25042",
+      "type": "annotation",
+      "detail": "lemma for Stift is lowercase 'stift' — should be capitalized 'Stift' (it is a noun). gloss_hint is 'tree\\'s trunk' which is not a valid gloss_en substring"
+    },
+    {
+      "id": "3e92619012",
+      "type": "annotation",
+      "detail": "All annotations are on English translation text (their, grandmother, basket, full, of, bright, red, apples) instead of German source text. Entire annotation set is invalid"
+    },
+    {
+      "id": "93197fd227",
+      "type": "annotation",
+      "detail": "Multiple annotations have English lemmas: Buch has lemma 'book', Korb has lemma 'basket', Päckchen has lemma 'package', Bücher has lemma 'book'. Lemmas must be German dictionary forms: Buch, Korb, Päckchen, Buch"
+    },
+    {
+      "id": "04e0221108",
+      "type": "annotation",
+      "detail": "Multiple annotations have lowercase German lemmas: Truhe lemma is 'truh' (should be 'Truhe'), geflochtenem lemma is 'geflecht' (should be 'geflochten'), Korb lemma is 'korb' (should be 'Korb'), Trödelmarkt lemma is 'trödelmarkt' (should be 'Trödelmarkt')"
+    },
+    {
+      "id": "68c0d4b73f",
+      "type": "annotation",
+      "detail": "This example is under sense 10 (metal hand guard) but annotation gloss_hint for Korb says 'basket'. Should match 'metal hand guard'. Translation also incorrectly says 'basket' instead of 'hand guard'"
+    },
+    {
+      "id": "72715a2519",
+      "type": "annotation",
+      "detail": "This example is under sense 9 (wire face guard) but annotation gloss_hint for Korb says 'basket'. Should match 'wire face guard'"
+    },
+    {
+      "id": "855b94caf9",
+      "type": "annotation",
+      "detail": "First annotation 'Sein' has lemma 'sein' with pos 'verb' and gloss_hint 'be (copula)' but 'Sein' here is a possessive pronoun meaning 'his', not the verb 'sein'"
+    },
+    {
+      "id": "c237f5dcbd",
+      "type": "annotation",
+      "detail": "All annotations are on English translation text (long-awaited, film, finally, out) instead of German source text. Entire annotation set is invalid"
+    },
+    {
+      "id": "09b49b9f5d",
+      "type": "annotation",
+      "detail": "Annotation for 'heraus' has pos 'adjective' but heraus is an adverb. Should be pos 'adverb'"
+    },
+    {
+      "id": "7249721906",
+      "type": "annotation",
+      "detail": "Annotation has form 'that age' (English) with lemma 'Alter|noun'. Form should be from German text ('Alter'), lemma should be just 'Alter'"
+    },
+    {
+      "id": "9f8b898617",
+      "type": "annotation",
+      "detail": "Annotation for 'Reich' has lemma 'reich' (adjective, wealthy) but 'Reich' here is the imperative form of 'reichen' (to pass/hand). Should be lemma 'reichen', pos 'verb'"
+    },
+    {
+      "id": "f28469ad66",
+      "type": "annotation",
+      "detail": "All annotations are on English translation text (I, need, a, key, to, understand, the, message) instead of German source text. Entire annotation set is invalid"
+    },
+    {
+      "id": "15360022dc",
+      "type": "annotation",
+      "detail": "Annotation for 'Bauch' has English lemma 'belly' — should be German lemma 'Bauch'"
+    },
+    {
+      "id": "b7d58cf4bd",
+      "type": "annotation",
+      "detail": "Annotations have English lemmas: Bauch has lemma 'belly' (should be 'Bauch'), Vase has lemma 'vase' (should be 'Vase'). Duplicate Bauch annotation"
+    },
+    {
+      "id": "9620d1928e",
+      "type": "annotation",
+      "detail": "All annotations have English lemmas: Bauch='belly', Fähre='ferry', Autos='auto', Lastkraftwagen='lastkraftwagen'. Should be German: Bauch, Fähre, Auto, Lastkraftwagen"
+    },
+    {
+      "id": "97bd28f415",
+      "type": "annotation",
+      "detail": "Annotation for 'Bauch' has English lemma 'belly' — should be 'Bauch'"
+    },
+    {
+      "id": "a4b9e40fa8",
+      "type": "annotation",
+      "detail": "Annotations have English lemmas: Bauch='belly' (x2), Höhe='height', Geschwindigkeit='speed'. Should all be German dictionary forms"
+    },
+    {
+      "id": "0fac5c5c18",
+      "type": "annotation",
+      "detail": "Annotations have English lemmas: Anlage='facility', Bauch='belly', Boden='ground', Koffer='suitcase', Stunde='hour'. Should all be German dictionary forms"
+    },
+    {
+      "id": "86b6cfe8e4",
+      "type": "annotation",
+      "detail": "Annotation for 'Bauch' has English lemma 'belly' — should be 'Bauch'"
+    },
+    {
+      "id": "fad7c7e572",
+      "type": "translation",
+      "detail": "Translation is null. German: 'Ein bestimmter Hafen in Südvietnam soll erfolgreich gegen feindliche Froschmänner von Delphinen verteidigt worden sein, denen man das Töten beigebracht hatte.'"
+    },
+    {
+      "id": "81a703f54c",
+      "type": "translation",
+      "detail": "Translation says 'the holes in the baskets' but German 'die löchrigen Körbe' means 'the holey/damaged baskets' — the baskets are löchrig (full of holes), not 'she saw holes in the baskets'"
+    },
+    {
+      "id": "68c0d4b73f",
+      "type": "translation",
+      "detail": "Example is for sense 10 (metal hand guard). Translation says 'The basket got a scratch' but Korb here means hand guard. Should be 'The hand guard got a scratch, but that is what it was there for.'"
+    },
+    {
+      "id": "72715a2519",
+      "type": "translation",
+      "detail": "Example is for sense 9 (wire face guard). Translation says 'She pushed the basket upward' but Korb here means wire face guard. Should be 'She pushed the face guard up and glanced at the referees.'"
+    }
+  ]
+}
