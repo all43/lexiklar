@@ -191,6 +191,25 @@ npm run release:minor   # 0.9.0 → 0.10.0 (new features)
 npm run release:major   # 0.9.0 → 1.0.0 (public release)
 ```
 
+### Publishing OTA Updates
+
+Dictionary data and app bundles are published to [lexiklar-data](https://github.com/evgeniimalikov/lexiklar-data) (GitHub Pages).
+
+**Automatic** — pushes to `main` that change `data/`, `scripts/build-index.ts`, or `src/utils/verb-forms.js` trigger the `publish-db` GitHub Actions job.
+
+**Manual** — via workflow dispatch:
+
+```bash
+# Publish DB update locally (for testing)
+npm run build-index
+npx tsx scripts/publish-update.ts --old <old.db> --out <output-dir>
+
+# Publish app bundle (Capawesome OTA for native builds)
+# Use GitHub Actions workflow dispatch with "publish_bundle: true"
+```
+
+The app checks for DB updates automatically on startup (24h throttle) and shows a non-intrusive toast when one is available. Native app shell updates use `@capawesome/capacitor-live-update` — web builds use the PWA service worker instead.
+
 ---
 
 ## Project Structure
@@ -199,7 +218,8 @@ npm run release:major   # 0.9.0 → 1.0.0 (public release)
 /
 ├── src/                    Vue app
 │   ├── utils/
-│   │   ├── db.ts           SQLite WASM loader + Cache API caching
+│   │   ├── db.ts           SQLite WASM loader + Cache API caching + OTA update client
+│   │   ├── live-update.ts  Capawesome live update for native app shell OTA
 │   │   └── storage.ts      @capacitor/preferences wrapper with sync cache
 │   └── js/
 │       ├── i18n.ts         UI localisation (EN + DE)
@@ -212,7 +232,8 @@ npm run release:major   # 0.9.0 → 1.0.0 (public release)
 │   ├── enrich-frequency.ts
 │   ├── translate-glosses.ts
 │   ├── translate-examples.ts
-│   └── build-index.ts
+│   ├── build-index.ts
+│   └── publish-update.ts   OTA update manifest + SQL patch generation
 ├── data/
 │   ├── words/              Per-word JSON files (nouns / verbs / adjectives / …)
 │   ├── examples/           Shared example sentences (256 shards: 00.json … ff.json)
@@ -224,6 +245,8 @@ npm run release:major   # 0.9.0 → 1.0.0 (public release)
 │   ├── privacy.html        Privacy policy (served with app build)
 │   ├── icon.svg            App icon source (generates PWA PNGs)
 │   └── pwa-*.png           Generated PWA icons (192, 512, apple-touch)
+├── .github/workflows/
+│   └── publish-data.yml    CI: publish DB updates + app bundles to GitHub Pages
 └── capacitor.config.json
 ```
 

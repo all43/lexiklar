@@ -103,6 +103,7 @@ download → transform → enrich → translate → build-index
 | `scripts/lib/corpus.ts` | — | Shared corpus loaders (`loadLeipzigFPM`, `loadSubtlexFPM`, `loadOpensubtitlesFPM`, `toZipf`, `combineZipf`, `loadAllCorpora`) |
 | `scripts/generate-synonyms-en.ts` | — | LLM-generates English search synonyms (`synonyms_en`) for reverse lookup |
 | `scripts/benchmark-frequency.ts` | — | Benchmark corpus weights against LLM reference scores (Spearman correlation, grid search) |
+| `scripts/publish-update.ts` | — | Generates OTA update manifest + SQL patches by diffing old/new DBs (see OTA Updates section) |
 
 **IMPORTANT: Do not run a full transform (`npm run transform`) just to re-process a few words.** Use `--words` to scope to specific entries — a full transform touches thousands of files and causes massive git churn:
 
@@ -657,7 +658,7 @@ import { t } from "../js/i18n.js";
 // In script:   computed: { t() { return t; } }
 ```
 
-- Keys are namespaced by component/domain: `tab.*`, `word.*`, `noun.*`, `adj.*`, `verb.*`, `related.*`, `settings.*`, `report.*`, `pwa.*`
+- Keys are namespaced by component/domain: `tab.*`, `word.*`, `noun.*`, `adj.*`, `verb.*`, `related.*`, `settings.*`, `report.*`, `pwa.*`, `dbUpdate.*`
 - `t(key)` falls back to English, then to the raw key — so missing translations degrade gracefully
 - Locale preference stored via `@capacitor/preferences` under `lexiklar_language` (`"auto" | "en" | "de"`)
 - `"auto"` resolves to `"de"` if `navigator.language` starts with `"de"`, otherwise `"en"`
@@ -692,6 +693,51 @@ Configured via `vite-plugin-pwa` in `vite.config.ts`. Capacitor provides no PWA 
 **Interaction with OTA DB updates**: the SW does not interfere with `checkForUpdates()` — those are cross-origin fetches to `evgeniimalikov.github.io/lexiklar-data` which bypass the SW's scope.
 
 **App version vs DB version**: these are independent. App version (`package.json`) tracks UI/code; DB version (content hash in `db-version.txt`) tracks dictionary data; SW version is implicit from Workbox content hashes. See README → Running Locally for release commands.
+
+### OTA Updates
+
+Three independent update channels, all self-hosted on GitHub Pages (`evgeniimalikov.github.io/lexiklar-data`):
+
+| Channel | What updates | Mechanism | Trigger |
+|---|---|---|---|
+| **PWA service worker** | App shell (HTML/CSS/JS) on web | Workbox `registerType: 'prompt'` → `PwaUpdatePrompt.vue` | Automatic (SW lifecycle) |
+| **DB data update** | Dictionary content (words, examples) | `checkForUpdates()` in `db.ts` → `DbUpdatePrompt.vue` toast | Auto on startup (24h throttle) + manual in Settings |
+| **Capawesome live update** | App shell on native iOS/Android | `@capawesome/capacitor-live-update` → `live-update.ts` | Auto on startup + manual in Settings |
+
+**DB update flow**:
+1. `main.ts` calls `checkForUpdates()` after `initDb()` (fire-and-forget, 24h throttle via `lexiklar_last_update_check`)
+2. Fetches `manifest.json` from `UPDATE_BASE_URL`, compares `current_version` against local DB `meta.version`
+3. Prefers SQL patch (small) over full DB download (large) — patches are keyed by source version
+4. `applyUpdate()` runs patch via `exec_batch` (transactional) or replaces full DB, then re-caches via Cache API
+5. `DbUpdatePrompt.vue` shows a toast; user can apply immediately or dismiss
+
+**Capawesome flow** (`src/utils/live-update.ts`):
+1. `notifyReady()` called on every startup to confirm current bundle is stable (prevents rollback)
+2. `checkAppUpdate()` fetches `bundles/manifest.json`, compares version against `__APP_VERSION__`
+3. `downloadAndApplyAppUpdate()` downloads zip via `LiveUpdate.downloadBundle()`, stages with `setNextBundle()`
+4. User restarts app (or taps "Restart" in Settings) to load new bundle
+5. No-op on web — PWA service worker handles app shell updates
+
+**Manifest format** (`lexiklar-data/manifest.json`):
+```json
+{
+  "current_version": "<16-char DB hash>",
+  "built_at": "YYYY-MM-DD",
+  "patches": { "<old_version>": { "url": "patches/<old>_to_<new>.sql", "size": 1234 } },
+  "full_db": { "url": "lexiklar.db", "size": 12345678 }
+}
+```
+
+**SQL patch generation** (`scripts/publish-update.ts`):
+```bash
+npx tsx scripts/publish-update.ts --old <old.db> --out <dir> [--keep-patches 3]
+```
+Diffs `words` and `examples` tables using the `hash` column (SHA-256 of JSON `data`). Generates INSERT/UPDATE/DELETE statements; uses `(SELECT id FROM words WHERE file = ?)` subqueries for word_id references since client DBs have different autoincrement IDs. Patches run inside a transaction via `exec_batch` in the Web Worker.
+
+**GitHub Actions** (`.github/workflows/publish-data.yml`):
+- **`publish-db` job**: triggers on push to `data/`, `scripts/build-index.ts`, or manual dispatch. Builds index, generates patches, pushes to `lexiklar-data` repo.
+- **`publish-bundle` job**: manual dispatch only. Runs `vite build`, zips `dist/`, pushes to `lexiklar-data/bundles/`.
+- Requires `DATA_REPO_TOKEN` secret (PAT with `repo` scope) and `lexiklar-data` repo with GitHub Pages enabled.
 
 ---
 
