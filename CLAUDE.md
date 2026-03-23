@@ -613,6 +613,27 @@ User types "cup" (English reverse search)
   → within each tier: frequency order
 ```
 
+### Phrase Discovery
+
+When a user searches multiple words in sequence (e.g., "Achse" then "sein"), matching phrases (e.g., "auf Achse sein") appear as prioritized results with highlighted matching words.
+
+**Phrase term tracking** (`SearchPage.vue`):
+- Each search that resolves to a known lemma is stored as a `PhraseTerm { term, ts }` in `lexiklar_phrase_terms`
+- Lemma resolution prefers exact lemma match over word_forms to avoid misresolution (e.g., "Tisch" → noun, not verb "tischen")
+- Terms are deduplicated by lemma (case-insensitive) — inflected forms don't create false triggers
+- Pool limited to last 10 stored entries; only the **last 3 non-expired** entries (5-minute TTL) are used for matching
+- Terms are also registered when visiting a word page (`WordPage.vue`) and removed when removing a word from history
+- Clearing search bar does **not** clear phrase terms — they expire naturally or are cleared via Settings
+
+**Multi-word tokenization**: queries containing spaces or commas (e.g., "Achse sein") are split into tokens (min 3 chars each) and merged with recent phrase terms for matching.
+
+**SQL matching** (`searchPhrasesByWords()` in `db.ts`):
+- Uses `SUM(boolean) >= 2` instead of `AND` — requires at least 2 of N terms to match, so irrelevant accumulated terms don't prevent matches
+- Word-boundary matching: `(' ' || lower(lemma) || ' ') LIKE '% word %'`
+- Results filtered client-side to confirm ≥2 actual word matches (with umlaut folding)
+
+**i18n keys**: `search.matchingPhrases`, `search.searchResults`, `search.showMorePhrases`
+
 The SQLite index handles all searching, filtering, and data serving. Word JSON files on disk are only used during the build pipeline.
 
 ---
