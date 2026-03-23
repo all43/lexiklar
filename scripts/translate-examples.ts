@@ -52,6 +52,7 @@ const MAX_PER_WORD = intArgOptional(args, "--max-per-word");
 const FREQ_LIMIT = intArgOptional(args, "--freq-limit");
 
 const NO_ANNOTATIONS = args.includes("--no-annotations");
+const REANNOTATE = args.includes("--reannotate");
 
 // ============================================================
 // Types
@@ -438,10 +439,12 @@ async function main(): Promise<void> {
   const examples: ExampleMap = loadExamples();
   const total = Object.keys(examples).length;
 
-  // Filter to untranslated
+  // Filter to untranslated (or missing-annotation in --reannotate mode)
   const alreadyDone = Object.values(examples).filter((ex: Example) => ex.translation).length;
   let untranslated: UntranslatedItem[] = Object.entries(examples)
-    .filter(([, ex]) => !ex.translation)
+    .filter(([, ex]) => REANNOTATE
+      ? (ex.translation && (!ex.annotations || ex.annotations.length === 0))
+      : !ex.translation)
     .map(([id, ex]) => {
       const isIdiom = ex.type === "expression" || ex.type === "proverb";
       return {
@@ -511,7 +514,9 @@ async function main(): Promise<void> {
   }
 
   if (untranslated.length === 0) {
-    console.log(`All ${total} examples already translated. Nothing to do.`);
+    console.log(REANNOTATE
+      ? `No examples need re-annotation. Nothing to do.`
+      : `All ${total} examples already translated. Nothing to do.`);
     return;
   }
 
@@ -599,12 +604,14 @@ async function main(): Promise<void> {
         for (const result of results) {
           if (examples[result.id]) {
             const ex = examples[result.id];
-            ex.translation = result.translation;
-            ex.translation_model = modelLabel;
-            // New translation invalidates the human-verified flag
-            if (ex._proofread) {
-              delete ex._proofread.translation;
-              if (Object.keys(ex._proofread).length === 0) delete ex._proofread;
+            if (!REANNOTATE) {
+              ex.translation = result.translation;
+              ex.translation_model = modelLabel;
+              // New translation invalidates the human-verified flag
+              if (ex._proofread) {
+                delete ex._proofread.translation;
+                if (Object.keys(ex._proofread).length === 0) delete ex._proofread;
+              }
             }
             const exType = ex.type;
             if (NO_ANNOTATIONS || exType === "expression" || exType === "proverb") {
