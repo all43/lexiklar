@@ -1530,6 +1530,15 @@ async function main(): Promise<void> {
     if (entry.lang_code !== "de") continue;
     if (!SUPPORTED_POS[entry.pos]) continue;
 
+    // Reclassify nouns tagged as abbreviations (e.g. "RUF" pos=noun tags=[abbrev])
+    // to avoid filename collisions with the regular noun (e.g. "Ruf").
+    if (
+      entry.pos === "noun" &&
+      entry.tags?.some((t: string) => t === "abbrev" || t === "abbreviation")
+    ) {
+      entry.pos = "abbrev";
+    }
+
     // Skip surnames and first names — only keep toponyms for proper nouns.
     // pos_title: "Toponym" (places), "Nachname" (surnames), "Vorname" (first names)
     if (
@@ -1801,6 +1810,15 @@ async function main(): Promise<void> {
       // Hash mismatch or forced — read and parse the full JSONL line
       const raw = readLineAt(offset, length);
       const parsed = JSON.parse(raw) as WiktionaryEntry;
+
+      // Re-apply abbreviation reclassification (same as Phase 1 — the raw
+      // JSONL still says pos=noun, but we reclassified during scanning)
+      if (
+        parsed.pos === "noun" &&
+        parsed.tags?.some((t: string) => t === "abbrev" || t === "abbreviation")
+      ) {
+        parsed.pos = "abbrev";
+      }
 
       // --force-pos: only re-process entries of the specified POS
       if (forcePos && parsed.pos !== forcePos) {
