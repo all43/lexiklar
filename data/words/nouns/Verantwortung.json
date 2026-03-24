@@ -50,7 +50,7 @@
     },
     {
       "gloss": "Erklärung eines Angeklagten/Beschuldigten zur Beschuldigung",
-      "gloss_en": "responsibility (legal)",
+      "gloss_en": "defense statement",
       "tags": [
         "Austrian German"
       ],
@@ -61,7 +61,7 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "A defendant's or accused person's statement in response to a charge",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -113,5 +113,10 @@
     "source_hash": "65a1b2dc5ec9eefd",
     "generated_at": "2026-03-09"
   },
-  "zipf": 4.67
+  "zipf": 4.67,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }
