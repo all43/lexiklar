@@ -91,6 +91,12 @@ function lookupNoun(lemma: string): NounInfo | null {
 
   try {
     const data = JSON.parse(readFileSync(path, "utf-8"));
+    // Skip acronym collisions: file says "RUF" but annotation says "Ruf"
+    const fileWord = data.word as string;
+    if (fileWord && fileWord === fileWord.toUpperCase() && cap !== fileWord) {
+      nounCache.set(lemma, null);
+      return null;
+    }
     const info: NounInfo = {
       gender: data.gender, // "M" | "F" | "N"
       plural_nom: data.case_forms?.plural?.nom,
