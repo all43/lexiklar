@@ -19,6 +19,7 @@ Framework7.use(Framework7Vue);
 
 // Persistent storage (Capacitor Preferences with sync cache)
 import { initStorage } from "./utils/storage.js";
+import { initDevice } from "./utils/device.js";
 
 // Database
 import { initDb, checkForUpdates } from "./utils/db.js";
@@ -33,6 +34,7 @@ import App from "./App.vue";
 
 // Initialize storage cache, then database, then mount Vue app
 await initStorage();
+await initDevice();
 await initDb();
 
 const app = createApp(App);

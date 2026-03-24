@@ -1,7 +1,7 @@
 <template>
-  <f7-page name="search" with-subnavbar @page:tabshow="onPageVisible" @page:afterin="onPageVisible">
+  <f7-page name="search" :with-subnavbar="!searchBarBottom" @page:tabshow="onPageVisible" @page:afterin="onPageVisible">
     <f7-navbar title="Lexiklar">
-      <f7-subnavbar :inner="false">
+      <f7-subnavbar v-if="!searchBarBottom" :inner="false">
         <f7-searchbar
           custom-search
           :disable-button="false"
@@ -138,6 +138,16 @@
     <f7-block v-if="loading" class="text-align-center">
       <f7-preloader />
     </f7-block>
+
+    <f7-toolbar v-if="searchBarBottom" position="bottom" :inner="false" class="searchbar-bottom-toolbar">
+      <f7-searchbar
+        custom-search
+        :disable-button="false"
+        :placeholder="t('search.placeholder')"
+        @searchbar:search="onSearch"
+        @searchbar:clear="onClear"
+      />
+    </f7-toolbar>
   </f7-page>
 </template>
 
@@ -146,7 +156,8 @@ import { defineComponent } from "vue";
 import { f7, theme } from "framework7-vue";
 import { t } from "../js/i18n.js";
 import { submitReport } from "../utils/report.js";
-import { SHOW_ARTICLES_KEY } from "./SettingsPage.vue";
+import { SHOW_ARTICLES_KEY, SEARCH_BAR_POSITION_KEY, type SearchBarPosition } from "./SettingsPage.vue";
+import { isIOS26Plus } from "../utils/device.js";
 import { getCached, setItem } from "../utils/storage.js";
 import type { SearchResult } from "../../types/search.js";
 import WordListBadges from "../components/WordListBadges.vue";
@@ -211,11 +222,18 @@ export default defineComponent({
       loading: true,
       debounceTimer: null as ReturnType<typeof setTimeout> | null,
       showArticles: getCached(SHOW_ARTICLES_KEY) !== "0",
+      searchBarPosition: (getCached(SEARCH_BAR_POSITION_KEY) || "auto") as SearchBarPosition,
     };
   },
 
   computed: {
     t() { return t; },
+    searchBarBottom(): boolean {
+      if (this.searchBarPosition === "bottom") return true;
+      if (this.searchBarPosition === "top") return false;
+      // auto: bottom on iOS 26+
+      return isIOS26Plus();
+    },
     visiblePhrases(): SearchResult[] {
       if (this.phrasesExpanded) return this.phraseMatches;
       return this.phraseMatches.slice(0, 3);
@@ -241,6 +259,7 @@ export default defineComponent({
   methods: {
     onPageVisible() {
       this.showArticles = getCached(SHOW_ARTICLES_KEY) !== "0";
+      this.searchBarPosition = (getCached(SEARCH_BAR_POSITION_KEY) || "auto") as SearchBarPosition;
       // Reload phrase terms from storage (may have been cleared from Settings or WordPage)
       this.phraseTerms = loadPhraseTerms();
       if (!this.searchQuery) this.loadHomeScreen();

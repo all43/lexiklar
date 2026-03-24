@@ -97,6 +97,10 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "settings.langGerman": "Deutsch",
     "settings.showArticles": "Show articles in search",
     "settings.showArticlesFooter": "Displays der/die/das before nouns in search results and history.",
+    "settings.searchBarPosition": "Search Bar Position",
+    "settings.searchBarAuto": "System Default",
+    "settings.searchBarTop": "Top",
+    "settings.searchBarBottom": "Bottom",
 
     // Data Sources / Attribution
     "settings.dataSources": "Data Sources",
@@ -267,6 +271,10 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "settings.langGerman": "Deutsch",
     "settings.showArticles": "Artikel in der Suche anzeigen",
     "settings.showArticlesFooter": "Zeigt der/die/das vor Nomen in Suchergebnissen und Verlauf.",
+    "settings.searchBarPosition": "Position der Suchleiste",
+    "settings.searchBarAuto": "Systemstandard",
+    "settings.searchBarTop": "Oben",
+    "settings.searchBarBottom": "Unten",
 
     // Data Sources / Attribution
     "settings.dataSources": "Datenquellen",

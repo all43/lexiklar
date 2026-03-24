@@ -431,3 +431,8 @@ mark.example-highlight {
 .dark .swipe-handler {
   background: rgba(255, 255, 255, 0.2);
 }
+
+/* Bottom search bar: position above the tab bar */
+.searchbar-bottom-toolbar {
+  bottom: var(--f7-tabbar-icons-height, 56px) !important;
+}

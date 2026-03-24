@@ -26,6 +26,20 @@
       {{ t('settings.showArticlesFooter') }}
     </f7-block-footer>
 
+    <f7-block-title>{{ t('settings.searchBarPosition') }}</f7-block-title>
+    <f7-list inset strong-ios outline-ios>
+      <f7-list-item
+        v-for="opt in searchBarPositionOptions"
+        :key="opt.value"
+        radio
+        radio-icon="end"
+        :title="t(opt.labelKey)"
+        name="search-bar-position"
+        :checked="searchBarPosition === opt.value"
+        @change="setSearchBarPosition(opt.value)"
+      />
+    </f7-list>
+
     <f7-block-title>{{ t('settings.language') }}</f7-block-title>
     <f7-list inset strong-ios outline-ios>
       <f7-list-item
@@ -135,7 +149,15 @@ const LANG_OPTIONS = [
   { value: "de" as const, labelKey: "settings.langGerman" },
 ];
 
+const SEARCH_BAR_POSITION_OPTIONS = [
+  { value: "auto" as const, labelKey: "settings.searchBarAuto" },
+  { value: "top" as const, labelKey: "settings.searchBarTop" },
+  { value: "bottom" as const, labelKey: "settings.searchBarBottom" },
+];
+
 export const SHOW_ARTICLES_KEY = "lexiklar_show_articles";
+export const SEARCH_BAR_POSITION_KEY = "lexiklar_search_position";
+export type SearchBarPosition = "auto" | "top" | "bottom";
 
 type UpdateState = "idle" | "checking" | "up-to-date" | "available" | "downloading" | "applying" | "done" | "error";
 
@@ -146,6 +168,8 @@ export default defineComponent({
       language: getLocale(),
       themeOptions: THEME_OPTIONS,
       langOptions: LANG_OPTIONS,
+      searchBarPositionOptions: SEARCH_BAR_POSITION_OPTIONS,
+      searchBarPosition: (getCached(SEARCH_BAR_POSITION_KEY) || "auto") as SearchBarPosition,
       showArticles: getCached(SHOW_ARTICLES_KEY) !== "0",
       dbVersion: null as string | null,
       dbBuiltAt: null as string | null,
@@ -246,6 +270,10 @@ export default defineComponent({
     setShowArticles(value: boolean) {
       this.showArticles = value;
       setItem(SHOW_ARTICLES_KEY, value ? "1" : "0");
+    },
+    setSearchBarPosition(value: SearchBarPosition) {
+      this.searchBarPosition = value;
+      setItem(SEARCH_BAR_POSITION_KEY, value);
     },
     confirmClear() {
       f7.dialog.confirm(
