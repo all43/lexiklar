@@ -9,7 +9,7 @@
   "senses": [
     {
       "gloss": "anordnen oder vereinbaren, wie etwas auszuführen sei, um einen gewünschten Zustand zu erreichen",
-      "gloss_en": "rule",
+      "gloss_en": "regulate",
       "tags": [],
       "example_ids": [
         "557b056d5c",
@@ -17,26 +17,26 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "To arrange or agree on how something should be carried out in order to achieve a desired state",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
-        "set rules",
-        "establish guidelines",
-        "lay down rules"
+        "regulate",
+        "arrange",
+        "settle"
       ],
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
       "gloss": "etwas in einen gewünschten Zustand bringen, zum Beispiel ein Gerät",
-      "gloss_en": "repair",
+      "gloss_en": "adjust",
       "tags": [],
       "example_ids": [
         "f6007cd826"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "To bring something into a desired state, for example a device",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -108,5 +108,10 @@
     "source_hash": "3fc94d767bde0816",
     "generated_at": "2026-03-18"
   },
-  "zipf": 4.37
+  "zipf": 4.37,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }

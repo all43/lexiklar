@@ -94,14 +94,14 @@
     },
     {
       "gloss": "ein Urteil über jemanden fällen",
-      "gloss_en": "sentence (legal)",
+      "gloss_en": "judge",
       "tags": [],
       "example_ids": [
         "dabbd28c44"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "To pass judgment on someone",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -171,5 +171,10 @@
     "source_hash": "5365ed6f1ccc056d",
     "generated_at": "2026-03-18"
   },
-  "zipf": 4.29
+  "zipf": 4.29,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }

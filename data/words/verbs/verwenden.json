@@ -35,7 +35,7 @@
     },
     {
       "gloss": "sich um jemandes Interessen kümmern",
-      "gloss_en": "care for",
+      "gloss_en": "intercede for",
       "tags": [
         "reflexive"
       ],
@@ -44,13 +44,13 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "To look after or attend to someone's interests",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "gloss_en_model": "claude-sonnet-4-6",
+      "gloss_en_full": "To intercede or advocate on someone's behalf",
+      "gloss_en_full_model": "claude-sonnet-4-6",
       "synonyms_en": [
-        "use",
-        "apply",
-        "employ"
+        "intercede",
+        "advocate",
+        "put in a good word"
       ],
       "synonyms_en_model": "openai/gpt-4.1-mini"
     }
@@ -89,5 +89,10 @@
     "source_hash": "22b2507b61a8704d",
     "generated_at": "2026-03-18"
   },
-  "zipf": 4.42
+  "zipf": 4.42,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }
