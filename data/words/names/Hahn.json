@@ -24,14 +24,14 @@
   "senses": [
     {
       "gloss": "ein Stadtteil, ein Ortsteil von Aachen in Nordrhein-Westfalen",
-      "gloss_en": "Rothenburg (district)",
+      "gloss_en": "Hahn (Aachen district)",
       "tags": [],
       "example_ids": [
         "571a88ee62"
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "A district of Aachen in North Rhine-Westphalia",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -42,12 +42,12 @@
     },
     {
       "gloss": "weitere Orte tragen den Namen Hahn, wie zum Beispiel",
-      "gloss_en": "Rooster (place name)",
+      "gloss_en": "Hahn (other places)",
       "tags": [],
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "Several other places bear the name Hahn",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -90,12 +90,12 @@
     },
     {
       "gloss": "Hahn am See, Ortsgemeinde im Westerwaldkreis",
-      "gloss_en": "Rooster Lake",
+      "gloss_en": "Hahn am See",
       "tags": [],
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "Hahn am See, a municipality in the Westerwald district",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -106,12 +106,12 @@
     },
     {
       "gloss": "Hahn bei Marienberg, Ortsgemeinde im Westerwaldkreis und viele andere",
-      "gloss_en": "Rooster",
+      "gloss_en": "Hahn bei Marienberg",
       "tags": [],
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "Hahn bei Marienberg, a municipality in the Westerwald district, among many others",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -135,5 +135,10 @@
     "source_hash": "d7c7ba4a20bfdab4",
     "generated_at": "2026-03-14"
   },
-  "zipf": 3.93
+  "zipf": 3.93,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }

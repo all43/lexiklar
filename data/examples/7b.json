@@ -2262,8 +2262,8 @@
         "gloss_hint": "ego"
       },
       {
-        "form": "möchte",
-        "lemma": "möchte",
+        "form": "will",
+        "lemma": "wollen",
         "pos": "verb",
         "gloss_hint": "want"
       },
@@ -2292,7 +2292,10 @@
         "gloss_hint": "hear"
       }
     ],
-    "text_linked": "[[Ich|pronouns/ich]] will [[darüber|adverbs/darüber#5]] nichts mehr [[hören|verbs/hören#1]]."
+    "text_linked": "[[Ich|pronouns/ich]] will [[darüber|adverbs/darüber#5]] nichts mehr [[hören|verbs/hören#1]].",
+    "_proofread": {
+      "translation": true
+    }
   },
   "7b16bafb66": {
     "text": "jemandem ans Herz gewachsen sein",
@@ -8022,7 +8025,7 @@
         "gloss_hint": "should"
       }
     ],
-    "text_linked": "„[[Mir|pronouns/ich]] [[ist|verbs/sein#2]] [[das|pronouns/das_nominativ#1]] Innere [[des|determiners/der]] [[betreffenden|adjectives/betreffend]] [[Teils|nouns/Teil_stück#1]] [[der|determiners/der]] [[Wohnung|nouns/Wohnung]] [[auf|prepositions/auf#1]] [[einem|determiners/ein]] [[Foto|nouns/Foto_hilfe]] einsehbar [[geworden|verbs/werden#1]], das auf besagter [[Homepage|nouns/Homepage#1]] [[den|determiners/der]] eingerückten [[Text|nouns/Text#1]] [[illustrieren|verbs/illustrieren#1]] [[sollte|verbs/sollen#4]].“"
+    "text_linked": "„[[Mir|pronouns/ich]] [[ist|verbs/sein#2]] [[das|pronouns/das_nominativ#1]] Innere [[des|determiners/der]] [[betreffenden|adjectives/betreffend]] [[Teils|nouns/Teil_stück#1]] [[der|determiners/der]] [[Wohnung|nouns/Wohnung]] [[auf|prepositions/auf#1]] [[einem|determiners/ein]] [[Foto|nouns/Foto_hilfe]] einsehbar [[geworden|verbs/werden#1]], das auf besagter [[Homepage|nouns/Homepage#1]] [[den|determiners/der]] eingerückten [[Text|nouns/Text]] [[illustrieren|verbs/illustrieren#1]] [[sollte|verbs/sollen#4]].“"
   },
   "7b449cd369": {
     "text": "Markus, man wäscht sich vor dem Essen die Hände!",
@@ -13732,12 +13735,12 @@
   },
   "7b88b8aec0": {
     "text": "Die beide ersten Halswirbel heißen Atlas und Dreher.",
-    "translation": "The first two cervical vertebrae are called Atlas and Drehers.",
+    "translation": "The first two cervical vertebrae are called the atlas and the axis.",
     "source": "wiktionary",
     "lemmas": [
       "Atlas"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Die",
@@ -13788,7 +13791,10 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Die|pronouns/die]] [[beide|numerals/beide]] ersten Halswirbel [[heißen|verbs/heißen_genannt#1]] [[Atlas|names/Atlas_einer]] [[und|conjunctions/und]] Dreher."
+    "text_linked": "[[Die|pronouns/die]] [[beide|numerals/beide]] ersten Halswirbel [[heißen|verbs/heißen_genannt#1]] [[Atlas|names/Atlas_einer]] [[und|conjunctions/und]] Dreher.",
+    "_proofread": {
+      "translation": true
+    }
   },
   "7b89056abb": {
     "text": "„Die Experten, wenn sie die Überschwemmungen unserer Zeit erklären, verweisen gerne auf die begradigten Flüsse, auf die vom Asphalt versiegelten Landschaften, auf die steppengleichen Flächen der modernen Landwirtschaft – mit anderen Worten: auf Menschenwerk.“",
@@ -21709,7 +21715,11 @@
         "gloss_hint": "pronounce"
       }
     ],
-    "text_linked": "HF - (Fluorwasserstoff, [[sprich|verbs/sprechen]]: ha-eff)"
+    "text_linked": "HF - (Fluorwasserstoff, [[sprich|verbs/sprechen]]: ha-eff)",
+    "_proofread": {
+      "translation": true,
+      "annotations": "4074fdf0"
+    }
   },
   "7be43c89ad": {
     "text": "„Für Melis ist das Zeichnen am Computer ganz normal, obschon sie bestimmt auch Farb- und Filzstifte hat. Aber Zeichnen – oder vielleicht eher grafisches Gestalten - am «Compi» geht schnell, macht Spass, und «Gümmele» kann man im Fall noch besser.“",
