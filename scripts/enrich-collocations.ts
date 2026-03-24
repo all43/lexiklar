@@ -28,7 +28,9 @@ const NOUNS_DIR = join(ROOT, "data", "words", "nouns");
 /** Nouns to skip entirely — nominalized pronouns, proper names, number words, etc. */
 const SKIP_NOUNS = new Set([
   // Nominalized pronouns/particles
-  "Ich", "Nichts", "Niemand", "Er", "Sie", "Mehr", "Viel",
+  "Ich", "Nichts", "Niemand", "Er", "Sie", "Es", "Du", "Mehr", "Viel",
+  // Too short for useful examples
+  "Ei", "Öl", "H", "VW",
   // Number words
   "Zwei", "Drei", "10.", "20.", "50.000", "60",
   // Proper names that appear as noun files
@@ -37,6 +39,10 @@ const SKIP_NOUNS = new Set([
   "Rot", "Schwere",
   // Gender-ambiguous
   "Couch",
+  // Slurs
+  "Nigger",
+  // English words leaked from annotations
+  "Thing", "German",
 ]);
 
 /** Animate nouns get a penalty score but are NOT excluded. */
