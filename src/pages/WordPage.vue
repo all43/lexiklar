@@ -299,7 +299,7 @@
       </template>
 
       <!-- Report issue -->
-      <f7-block-footer class="padding-horizontal" style="text-align: center; margin-top: 24px; margin-bottom: 40px;">
+      <f7-block-footer class="padding-horizontal" style="text-align: center; margin-top: 24px; margin-bottom: 32px;">
         <f7-link @click="reportIssue('bottom')" class="text-color-gray">{{ t('report.incorrectData') }}</f7-link>
       </f7-block-footer>
     </template>
