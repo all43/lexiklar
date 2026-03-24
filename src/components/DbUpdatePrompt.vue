@@ -1,20 +1,20 @@
 <template>
-  <div v-if="visible" class="db-update-toast">
+  <div v-if="visible" class="update-toast">
     <template v-if="state === 'available'">
       <span>{{ t('dbUpdate.available') }}</span>
-      <button class="db-update-btn" @click="applyNow()">{{ t('dbUpdate.update') }}</button>
-      <button class="db-update-dismiss" @click="dismiss()">{{ t('dbUpdate.later') }}</button>
+      <button class="update-toast-btn" @click="applyNow()">{{ t('dbUpdate.update') }}</button>
+      <button class="update-toast-dismiss" @click="dismiss()">{{ t('dbUpdate.later') }}</button>
     </template>
     <template v-else-if="state === 'applying'">
       <span>{{ t('dbUpdate.applying') }}</span>
     </template>
     <template v-else-if="state === 'done'">
       <span>{{ t('dbUpdate.done') }}</span>
-      <button class="db-update-btn" @click="reload()">{{ t('pwa.reload') }}</button>
+      <button class="update-toast-btn" @click="reload()">{{ t('pwa.reload') }}</button>
     </template>
     <template v-else-if="state === 'error'">
       <span>{{ t('dbUpdate.failed') }}</span>
-      <button class="db-update-dismiss" @click="dismiss()">OK</button>
+      <button class="update-toast-dismiss" @click="dismiss()">OK</button>
     </template>
   </div>
 </template>
@@ -72,47 +72,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped>
-.db-update-toast {
-  position: fixed;
-  bottom: calc(var(--f7-toolbar-height, 44px) + env(safe-area-inset-bottom, 0px) + 12px);
-  left: 12px;
-  right: 12px;
-  background: var(--f7-bars-bg-color, #333);
-  color: var(--f7-bars-text-color, #fff);
-  padding: 12px 16px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 99999;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  font-size: 14px;
-}
-
-.db-update-toast span {
-  flex: 1;
-}
-
-.db-update-btn {
-  background: var(--f7-theme-color, #007aff);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 6px 14px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.db-update-dismiss {
-  background: none;
-  border: none;
-  color: inherit;
-  opacity: 0.7;
-  font-size: 14px;
-  cursor: pointer;
-  padding: 6px 8px;
-}
-</style>

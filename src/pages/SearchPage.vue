@@ -131,7 +131,7 @@
 
       <!-- Empty state -->
       <f7-block v-if="!freqWords.length && !recentWords.length">
-        <p style="color: var(--f7-list-item-footer-text-color);">{{ t('search.emptyHint') }}</p>
+        <p class="text-secondary">{{ t('search.emptyHint') }}</p>
       </f7-block>
     </template>
 

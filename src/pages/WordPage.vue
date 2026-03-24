@@ -33,7 +33,7 @@
     <template v-else-if="word">
       <!-- Header: word + pronunciation -->
       <f7-block strong>
-        <h1 style="margin: 0;">
+        <h1 class="no-margin">
           <span v-if="word.plural_dominant" class="gender-f">{{ 'die ' }}</span>
           <span v-else-if="word.article" :class="`gender-${word.gender?.toLowerCase()}`">{{ word.article + ' ' }}</span>
           <!-- Separable verb: show prefix|stem -->

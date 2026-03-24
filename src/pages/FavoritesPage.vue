@@ -28,7 +28,7 @@
     </template>
 
     <f7-block v-else-if="!loading">
-      <p style="color: var(--f7-list-item-footer-text-color);">{{ t('favorites.empty') }}</p>
+      <p class="text-secondary">{{ t('favorites.empty') }}</p>
     </f7-block>
   </f7-page>
 </template>
