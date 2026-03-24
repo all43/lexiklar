@@ -11,6 +11,7 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
+      injectRegister: false,
       registerType: 'prompt',
       workbox: {
         globPatterns: ['**/*.{js,css,html,woff2,woff,ttf,ico}'],
