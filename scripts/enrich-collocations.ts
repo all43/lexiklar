@@ -215,9 +215,14 @@ function extractCollocations(
 
     if (best) {
       result[gender] = best.lemma;
-      // Track best plural candidate
-      if (best.plural_nom && (!bestPlural || best.score > bestPlural.score)) {
-        bestPlural = { noun: best.plural_nom, score: best.score };
+      // Track plural candidates — prefer nouns with a visibly different plural
+      for (const [lemma, { total, plural_nom }] of scoreByLemma) {
+        if (!plural_nom) continue;
+        const distinct = plural_nom !== lemma;
+        const score = total + (distinct ? 5 : 0); // bonus for distinct plural
+        if (!bestPlural || score > bestPlural.score) {
+          bestPlural = { noun: plural_nom, score };
+        }
       }
     }
   }
@@ -227,7 +232,9 @@ function extractCollocations(
     if (!result[gender]) result[gender] = fallback;
   }
 
-  // Add plural: prefer derived from best example noun, fall back to FALLBACK_PLURAL
+  // Add plural: prefer derived from best example noun, fall back to FALLBACK_PLURAL.
+  // Distinct plurals get a +5 bonus above, but identical ones (Sportler/Sportler)
+  // are still used — the template context (die ... -en) makes plural clear.
   result.Pl = bestPlural?.noun || FALLBACK_PLURAL;
 
   return result;
