@@ -33,7 +33,7 @@
     },
     {
       "gloss": "einfach und gewöhnlich; nicht besser als der Durchschnitt",
-      "gloss_en": "common (adj)",
+      "gloss_en": "ordinary",
       "tags": [
         "outdated"
       ],
@@ -42,7 +42,7 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "Ordinary and simple; not superior to the average",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -55,7 +55,7 @@
     },
     {
       "gloss": "vulgär; von niederer Gesinnung",
-      "gloss_en": "common (low)",
+      "gloss_en": "vulgar",
       "tags": [
         "derogatory"
       ],
@@ -64,7 +64,7 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "Vulgar; of base or ignoble character",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -97,7 +97,7 @@
     },
     {
       "gloss": "sehr; intensiv oder schmerzhaft",
-      "gloss_en": "very (adjective)",
+      "gloss_en": "terribly",
       "tags": [],
       "example_ids": [
         "6740adb9a0",
@@ -105,7 +105,7 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "Very; intense or painful",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -192,5 +192,10 @@
     "source_hash": "7c8571cc93428ea8",
     "generated_at": "2026-03-14"
   },
-  "zipf": 3.92
+  "zipf": 3.92,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }

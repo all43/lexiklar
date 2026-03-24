@@ -9,7 +9,7 @@
   "senses": [
     {
       "gloss": "sehnig, kräftig, kraftvoll, stark, zäh; „den Eindruck angespannter Kraft vermittelnd“",
-      "gloss_en": "muscular",
+      "gloss_en": "sinewy",
       "tags": [],
       "example_ids": [
         "d464db3a20",
@@ -17,7 +17,7 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "Sinewy, strong, and vigorous; conveying an impression of taut power.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -89,12 +89,12 @@
     },
     {
       "gloss": "sich auf Nerven beziehend",
-      "gloss_en": "nervous",
+      "gloss_en": "neural",
       "tags": [],
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "Relating to or affecting the nerves.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -148,5 +148,10 @@
     "source_hash": "61141b4fc9cd1109",
     "generated_at": "2026-03-14"
   },
-  "zipf": 3.3
+  "zipf": 3.3,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }

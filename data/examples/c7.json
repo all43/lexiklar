@@ -578,38 +578,16 @@
   },
   "c706714434": {
     "text": "Die Torte ist geil.",
-    "translation": "The cake is awesome.",
+    "translation": "The cake is incredibly rich.",
     "source": "wiktionary",
     "lemmas": [
       "geil"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
-    "annotations": [
-      {
-        "form": "The",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "cake",
-        "lemma": "cake",
-        "pos": "noun",
-        "gloss_hint": "dessert"
-      },
-      {
-        "form": "is",
-        "lemma": "be",
-        "pos": "verb",
-        "gloss_hint": null
-      },
-      {
-        "form": "awesome",
-        "lemma": "awesome",
-        "pos": "adjective",
-        "gloss_hint": null
-      }
-    ]
+    "translation_model": "claude-sonnet-4-6",
+    "annotations": [],
+    "_proofread": {
+      "translation": true
+    }
   },
   "c7068c75fe": {
     "text": "„Lampe, sich seiner Pflicht bewußt, entwindet Papin behutsam die Zaange, um nach den Resten der Scherbe im Topf zu forschen .“",
@@ -24460,7 +24438,10 @@
     "lemmas": [
       "fein"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c7e65dac5c": {
     "text": "weiß der Kuckuck",

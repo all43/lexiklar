@@ -129,7 +129,7 @@
     },
     {
       "gloss": "mit geringem zeitlichen Abstand von etwas",
-      "gloss_en": "soon",
+      "gloss_en": "shortly before",
       "tags": [],
       "example_ids": [
         "b53c9399ab",
@@ -140,7 +140,7 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "Occurring at a short time interval from something",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -372,5 +372,10 @@
     "source_hash": "8d14ef39e9c967d0",
     "generated_at": "2026-03-16"
   },
-  "zipf": 3.75
+  "zipf": 3.75,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }

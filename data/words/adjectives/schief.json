@@ -30,7 +30,7 @@
     },
     {
       "gloss": "nicht gerade, leicht verwachsen",
-      "gloss_en": "slant",
+      "gloss_en": "crooked",
       "tags": [],
       "example_ids": [
         "580f95718d",
@@ -40,7 +40,7 @@
       ],
       "synonyms": [],
       "antonyms": [],
-      "gloss_en_model": "lm-studio/sauerkraut",
+      "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "Not straight; slightly crooked or deformed",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -164,5 +164,10 @@
     "source_hash": "1122f155e2a42a3e",
     "generated_at": "2026-03-14"
   },
-  "zipf": 4.12
+  "zipf": 4.12,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }
