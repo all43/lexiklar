@@ -1,7 +1,7 @@
 <template>
   <div v-if="visible" class="update-toast">
     <template v-if="state === 'available'">
-      <span>{{ t('dbUpdate.available') }}</span>
+      <span>{{ t('dbUpdate.available') }}<span v-if="sizeLabel" class="update-toast-size"> ({{ sizeLabel }})</span></span>
       <button class="update-toast-btn" @click="applyNow()">{{ t('dbUpdate.update') }}</button>
       <button class="update-toast-dismiss" @click="dismiss()">{{ t('dbUpdate.later') }}</button>
     </template>
@@ -37,6 +37,14 @@ export default defineComponent({
       return pendingDbUpdate.value !== null;
     });
 
+    const sizeLabel = computed(() => {
+      const bytes = pendingDbUpdate.value?.size;
+      if (!bytes) return "";
+      if (bytes < 1024) return `${bytes} B`;
+      if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
+      return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+    });
+
     // Reset state when a new update becomes available
     watch(pendingDbUpdate, (val) => {
       if (val) {
@@ -68,7 +76,7 @@ export default defineComponent({
       window.location.reload();
     }
 
-    return { visible, state, applyNow, dismiss, reload, t };
+    return { visible, state, sizeLabel, applyNow, dismiss, reload, t };
   },
 });
 </script>

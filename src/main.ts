@@ -44,18 +44,21 @@ app.mount("#app");
 // Notify Capawesome that current bundle is stable (prevents rollback)
 notifyReady();
 
-// Non-blocking background check for DB updates (throttled to once per 24h)
-const UPDATE_CHECK_KEY = "lexiklar_last_update_check";
-const UPDATE_CHECK_INTERVAL = 24 * 60 * 60 * 1000; // 24 hours
-const lastCheck = Number(getCached(UPDATE_CHECK_KEY)) || 0;
-if (Date.now() - lastCheck > UPDATE_CHECK_INTERVAL) {
-  checkForUpdates().then((info) => {
-    setItem(UPDATE_CHECK_KEY, String(Date.now()));
-    if (info?.available) pendingDbUpdate.value = info;
-  }).catch(() => { /* silent — network may be unavailable */ });
-}
+// Non-blocking background check for updates (throttled to once per 24h)
+const autoCheck = getCached("lexiklar_auto_check_updates") !== "0"; // on by default
+if (autoCheck) {
+  const UPDATE_CHECK_KEY = "lexiklar_last_update_check";
+  const UPDATE_CHECK_INTERVAL = 24 * 60 * 60 * 1000; // 24 hours
+  const lastCheck = Number(getCached(UPDATE_CHECK_KEY)) || 0;
+  if (Date.now() - lastCheck > UPDATE_CHECK_INTERVAL) {
+    checkForUpdates().then((info) => {
+      setItem(UPDATE_CHECK_KEY, String(Date.now()));
+      if (info?.available) pendingDbUpdate.value = info;
+    }).catch(() => { /* silent — network may be unavailable */ });
+  }
 
-// Non-blocking check for app shell updates (native only, same throttle)
-checkAppUpdate().then((info) => {
-  if (info?.available) pendingAppUpdate.value = info;
-}).catch(() => { /* silent */ });
+  // Non-blocking check for app shell updates (native only)
+  checkAppUpdate().then((info) => {
+    if (info?.available) pendingAppUpdate.value = info;
+  }).catch(() => { /* silent */ });
+}

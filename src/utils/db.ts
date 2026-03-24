@@ -115,8 +115,9 @@ async function cacheVersionWrite(version: string): Promise<void> {
 }
 
 // ---- Update manifest URL ----
-// GitHub Pages base URL for OTA updates (patches + manifest)
-const UPDATE_BASE_URL = "https://evgeniimalikov.github.io/lexiklar-data";
+// Permanent GitHub Release that always holds the latest manifest
+const MANIFEST_URL =
+  "https://github.com/evgeniimalikov/lexiklar/releases/download/manifest/manifest.json";
 
 // ---- Public API ----
 
@@ -414,37 +415,37 @@ export interface UpdateInfo {
 export async function checkForUpdates(): Promise<UpdateInfo | null> {
   try {
     const { version: localVersion } = await getDbVersion();
-    const resp = await fetch(`${UPDATE_BASE_URL}/manifest.json`, {
-      cache: "no-cache",
-    });
+    const resp = await fetch(MANIFEST_URL, { cache: "no-cache" });
     if (!resp.ok) return null;
     const manifest = await resp.json();
+    const db = manifest.db;
+    if (!db) return null;
 
-    if (manifest.current_version === localVersion) {
+    if (db.current_version === localVersion) {
       return { available: false };
     }
 
-    // Check if a patch exists for our version
-    const patch = manifest.patches?.[localVersion as string];
+    // Check if a patch exists for our version (URLs are absolute)
+    const patch = db.patches?.[localVersion as string];
     if (patch) {
       return {
         available: true,
         type: "patch",
-        url: `${UPDATE_BASE_URL}/${patch.url}`,
+        url: patch.url,
         size: patch.size,
-        targetVersion: manifest.current_version,
-        builtAt: manifest.built_at,
+        targetVersion: db.current_version,
+        builtAt: db.built_at,
       };
     }
 
-    // Fall back to full download
+    // Fall back to full download (URL is absolute)
     return {
       available: true,
       type: "full",
-      url: `${UPDATE_BASE_URL}/${manifest.full_db.url}`,
-      size: manifest.full_db.size,
-      targetVersion: manifest.current_version,
-      builtAt: manifest.built_at,
+      url: db.full_db.url,
+      size: db.full_db.size,
+      targetVersion: db.current_version,
+      builtAt: db.built_at,
     };
   } catch {
     return null;

@@ -1,8 +1,9 @@
 /**
  * Capawesome Live Update integration for native app shell updates.
  *
- * Self-hosted approach: bundles are hosted on GitHub Pages at
- * https://evgeniimalikov.github.io/lexiklar-data/bundles/
+ * Bundle manifests and assets are hosted as GitHub Releases on the main repo.
+ * The unified manifest at the permanent "manifest" release tag contains a
+ * `bundle` section with absolute URLs to release assets.
  *
  * Web builds use the PWA service worker instead — this module is a no-op on web.
  */
@@ -10,7 +11,9 @@
 import { Capacitor } from "@capacitor/core";
 import { ref } from "vue";
 
-const UPDATE_BASE_URL = "https://evgeniimalikov.github.io/lexiklar-data";
+// Same permanent release as db.ts — single manifest for both channels
+const MANIFEST_URL =
+  "https://github.com/evgeniimalikov/lexiklar/releases/download/manifest/manifest.json";
 
 export interface AppUpdateInfo {
   available: boolean;
@@ -25,12 +28,6 @@ export const pendingAppUpdate = ref<AppUpdateInfo | null>(null);
 /** Whether an app update bundle has been downloaded and is ready to apply. */
 export const appUpdateReady = ref(false);
 
-interface BundleManifest {
-  current_version: string;
-  url: string;
-  size: number;
-}
-
 /**
  * Check if a newer app bundle is available.
  * Only runs on native platforms — returns null on web.
@@ -39,23 +36,24 @@ export async function checkAppUpdate(): Promise<AppUpdateInfo | null> {
   if (!Capacitor.isNativePlatform()) return null;
 
   try {
-    const resp = await fetch(`${UPDATE_BASE_URL}/bundles/manifest.json`, {
-      cache: "no-cache",
-    });
+    const resp = await fetch(MANIFEST_URL, { cache: "no-cache" });
     if (!resp.ok) return null;
 
-    const manifest = (await resp.json()) as BundleManifest;
+    const manifest = await resp.json();
+    const bundle = manifest.bundle;
+    if (!bundle) return null;
+
     const currentVersion = __APP_VERSION__;
 
-    if (manifest.current_version === currentVersion) {
+    if (bundle.current_version === currentVersion) {
       return { available: false };
     }
 
     return {
       available: true,
-      version: manifest.current_version,
-      url: `${UPDATE_BASE_URL}/${manifest.url}`,
-      size: manifest.size,
+      version: bundle.current_version,
+      url: bundle.url,
+      size: bundle.size,
     };
   } catch {
     return null;

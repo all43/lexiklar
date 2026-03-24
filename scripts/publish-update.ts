@@ -4,10 +4,14 @@
  * Compares old and new SQLite databases using row-level content hashes,
  * generates SQL patches for incremental updates, and writes a manifest.
  *
+ * Assets (DB, patches) are uploaded to GitHub Releases by the CI workflow.
+ * The manifest references them via absolute release download URLs.
+ *
  * Usage:
- *   npx tsx scripts/publish-update.ts --out <dir>                    # full DB only
- *   npx tsx scripts/publish-update.ts --old <old.db> --out <dir>     # with patch
+ *   npx tsx scripts/publish-update.ts --out <dir>                                    # full DB only
+ *   npx tsx scripts/publish-update.ts --old <old.db> --out <dir>                     # with patch
  *   npx tsx scripts/publish-update.ts --old <old.db> --out <dir> --keep-patches 3
+ *   npx tsx scripts/publish-update.ts --out <dir> --release-url <base>               # absolute URLs in manifest
  */
 
 import Database from "better-sqlite3";
@@ -17,11 +21,20 @@ import { stringArg, intArg } from "./lib/cli.js";
 
 // ---- Types ----
 
-interface Manifest {
+interface DbManifest {
   current_version: string;
   built_at: string;
   patches: Record<string, { url: string; size: number }>;
   full_db: { url: string; size: number };
+}
+
+interface UnifiedManifest {
+  db: DbManifest;
+  bundle?: {
+    current_version: string;
+    url: string;
+    size: number;
+  };
 }
 
 interface WordRow {
@@ -196,9 +209,10 @@ function main(): void {
   const oldPath = stringArg(args, "--old");
   const outDir = stringArg(args, "--out");
   const keepPatches = intArg(args, "--keep-patches", 3);
+  const releaseUrl = stringArg(args, "--release-url"); // e.g. https://github.com/user/repo/releases/download/data-20260324
 
   if (!outDir) {
-    console.error("Usage: npx tsx scripts/publish-update.ts --out <dir> [--old <old.db>] [--keep-patches 3]");
+    console.error("Usage: npx tsx scripts/publish-update.ts --out <dir> [--old <old.db>] [--keep-patches 3] [--release-url <url>]");
     process.exit(1);
   }
 
@@ -227,14 +241,13 @@ function main(): void {
 
   // Ensure output directory exists
   mkdirSync(outDir, { recursive: true });
-  mkdirSync(join(outDir, "patches"), { recursive: true });
 
-  // Load existing manifest to preserve older patches
-  let existingManifest: Manifest | null = null;
+  // Load existing manifest to preserve older patches and bundle section
+  let existingManifest: UnifiedManifest | null = null;
   const manifestPath = join(outDir, "manifest.json");
   if (existsSync(manifestPath)) {
     try {
-      existingManifest = JSON.parse(readFileSync(manifestPath, "utf-8")) as Manifest;
+      existingManifest = JSON.parse(readFileSync(manifestPath, "utf-8")) as UnifiedManifest;
     } catch {
       // corrupt manifest — start fresh
     }
@@ -259,10 +272,11 @@ function main(): void {
       console.log(`Generating patch: ${oldVersion} → ${newVersion}`);
       const patchSql = generatePatch(oldDb, newDb);
       const patchFileName = `${oldVersion}_to_${newVersion}.sql`;
-      const patchPath = join(outDir, "patches", patchFileName);
+      const patchPath = join(outDir, patchFileName);
       writeFileSync(patchPath, patchSql + "\n");
       const patchSize = statSync(patchPath).size;
-      patches[oldVersion] = { url: `patches/${patchFileName}`, size: patchSize };
+      const patchUrl = releaseUrl ? `${releaseUrl}/${patchFileName}` : patchFileName;
+      patches[oldVersion] = { url: patchUrl, size: patchSize };
 
       // Count changes for logging
       const lines = patchSql.split("\n").filter(Boolean);
@@ -276,23 +290,18 @@ function main(): void {
   newDb.close();
 
   // Carry forward older patches from existing manifest (up to keepPatches)
-  if (existingManifest?.patches) {
-    for (const [ver, patch] of Object.entries(existingManifest.patches)) {
+  if (existingManifest?.db?.patches) {
+    for (const [ver, patch] of Object.entries(existingManifest.db.patches)) {
       if (ver === newVersion) continue; // skip self-referencing
       if (!patches[ver]) {
-        // Verify the patch file still exists
-        const patchFilePath = join(outDir, patch.url);
-        if (existsSync(patchFilePath)) {
-          patches[ver] = patch;
-        }
+        patches[ver] = patch; // already absolute URL from prior run
       }
     }
   }
 
-  // Trim to keepPatches most recent (by filename which includes version hashes)
+  // Trim to keepPatches most recent
   const patchEntries = Object.entries(patches);
   const prunedPatches: Record<string, { url: string; size: number }> = {};
-  // Keep the newest keepPatches entries (arbitrary order, but limited count)
   const toKeep = patchEntries.slice(-keepPatches);
   for (const [ver, patch] of toKeep) {
     prunedPatches[ver] = patch;
@@ -304,26 +313,35 @@ function main(): void {
   const fullDbSize = statSync(outDbPath).size;
   console.log(`Copied DB: ${(fullDbSize / (1024 * 1024)).toFixed(1)} MB`);
 
-  // Write manifest
-  const manifest: Manifest = {
+  // Build DB manifest section
+  const fullDbUrl = releaseUrl ? `${releaseUrl}/lexiklar.db` : "lexiklar.db";
+  const dbManifest: DbManifest = {
     current_version: newVersion,
     built_at: builtAt,
     patches: prunedPatches,
-    full_db: { url: "lexiklar.db", size: fullDbSize },
+    full_db: { url: fullDbUrl, size: fullDbSize },
+  };
+
+  // Write unified manifest — preserve existing bundle section
+  const manifest: UnifiedManifest = {
+    db: dbManifest,
+    bundle: existingManifest?.bundle,
   };
   writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
   console.log(`Manifest written: ${Object.keys(prunedPatches).length} patch(es), full DB ${(fullDbSize / (1024 * 1024)).toFixed(1)} MB`);
 
-  // Prune unreferenced patch files
-  const referencedUrls = new Set(Object.values(prunedPatches).map(p => p.url));
-  const patchesDir = join(outDir, "patches");
-  if (existsSync(patchesDir)) {
-    for (const file of readdirSync(patchesDir)) {
-      const relUrl = `patches/${file}`;
-      if (!referencedUrls.has(relUrl)) {
-        unlinkSync(join(patchesDir, file));
-        console.log(`Pruned old patch: ${file}`);
-      }
+  // Prune unreferenced local patch files
+  const referencedFiles = new Set(
+    Object.values(prunedPatches).map(p => {
+      // Extract filename from URL (may be absolute or relative)
+      const parts = p.url.split("/");
+      return parts[parts.length - 1];
+    }),
+  );
+  for (const file of readdirSync(outDir)) {
+    if (file.endsWith(".sql") && !referencedFiles.has(file)) {
+      unlinkSync(join(outDir, file));
+      console.log(`Pruned old patch: ${file}`);
     }
   }
 

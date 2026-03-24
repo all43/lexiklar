@@ -99,6 +99,11 @@
         :title="t('settings.appVersion')"
         :after="appVersion"
       />
+      <f7-list-item :title="t('settings.autoCheckUpdates')">
+        <template #after>
+          <f7-toggle :checked="autoCheckUpdates" @toggle:change="setAutoCheckUpdates" />
+        </template>
+      </f7-list-item>
       <f7-list-item v-if="updateState === 'idle'">
         <template #title>
           <f7-link @click="checkUpdates">{{ t('settings.checkUpdates') }}</f7-link>
@@ -168,6 +173,7 @@ const SEARCH_BAR_POSITION_OPTIONS = [
 export const SHOW_ARTICLES_KEY = "lexiklar_show_articles";
 export const CONDENSED_GRAMMAR_KEY = "lexiklar_condensed_grammar";
 export const SEARCH_BAR_POSITION_KEY = "lexiklar_search_position";
+export const AUTO_CHECK_UPDATES_KEY = "lexiklar_auto_check_updates";
 export type SearchBarPosition = "auto" | "top" | "bottom";
 
 type UpdateState = "idle" | "checking" | "up-to-date" | "available" | "downloading" | "applying" | "done" | "error";
@@ -183,6 +189,7 @@ export default defineComponent({
       searchBarPosition: (getCached(SEARCH_BAR_POSITION_KEY) || "auto") as SearchBarPosition,
       showArticles: getCached(SHOW_ARTICLES_KEY) !== "0",
       condensedGrammar: getCached(CONDENSED_GRAMMAR_KEY) === "1",
+      autoCheckUpdates: getCached(AUTO_CHECK_UPDATES_KEY) !== "0",
       dbVersion: null as string | null,
       dbBuiltAt: null as string | null,
       updateState: "idle" as UpdateState,
@@ -290,6 +297,10 @@ export default defineComponent({
     setSearchBarPosition(value: SearchBarPosition) {
       this.searchBarPosition = value;
       setItem(SEARCH_BAR_POSITION_KEY, value);
+    },
+    setAutoCheckUpdates(value: boolean) {
+      this.autoCheckUpdates = value;
+      setItem(AUTO_CHECK_UPDATES_KEY, value ? "1" : "0");
     },
     confirmClear() {
       f7.dialog.confirm(

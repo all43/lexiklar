@@ -193,7 +193,7 @@ npm run release:major   # 0.9.0 → 1.0.0 (public release)
 
 ### Publishing OTA Updates
 
-Dictionary data and app bundles are published to [lexiklar-data](https://github.com/evgeniimalikov/lexiklar-data) (GitHub Pages).
+Dictionary data and app bundles are published as GitHub Releases on the main repo. A permanent `manifest` release holds the unified manifest; `data-*` and `app-*` releases hold the heavy assets. No separate repo or PAT needed — the workflow uses `GITHUB_TOKEN`.
 
 **Automatic** — pushes to `main` that change `data/`, `scripts/build-index.ts`, or `src/utils/verb-forms.js` trigger the `publish-db` GitHub Actions job.
 

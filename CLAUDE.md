@@ -690,13 +690,13 @@ Configured via `vite-plugin-pwa` in `vite.config.ts`. Capacitor provides no PWA 
 
 **COOP/COEP headers**: set in `vite.config.ts` `server.headers` for dev only. Not needed in production — the app uses `sqlite3_deserialize` with plain `ArrayBuffer`, not `SharedArrayBuffer`. GitHub Pages cannot set custom headers, but this is fine.
 
-**Interaction with OTA DB updates**: the SW does not interfere with `checkForUpdates()` — those are cross-origin fetches to `evgeniimalikov.github.io/lexiklar-data` which bypass the SW's scope.
+**Interaction with OTA DB updates**: the SW does not interfere with `checkForUpdates()` — those are cross-origin fetches to GitHub Release asset URLs which bypass the SW's scope.
 
 **App version vs DB version**: these are independent. App version (`package.json`) tracks UI/code; DB version (content hash in `db-version.txt`) tracks dictionary data; SW version is implicit from Workbox content hashes. See README → Running Locally for release commands.
 
 ### OTA Updates
 
-Three independent update channels, all self-hosted on GitHub Pages (`evgeniimalikov.github.io/lexiklar-data`):
+Three independent update channels, all using GitHub Releases on the main repo:
 
 | Channel | What updates | Mechanism | Trigger |
 |---|---|---|---|
@@ -704,40 +704,54 @@ Three independent update channels, all self-hosted on GitHub Pages (`evgeniimali
 | **DB data update** | Dictionary content (words, examples) | `checkForUpdates()` in `db.ts` → `DbUpdatePrompt.vue` toast | Auto on startup (24h throttle) + manual in Settings |
 | **Capawesome live update** | App shell on native iOS/Android | `@capawesome/capacitor-live-update` → `live-update.ts` | Auto on startup + manual in Settings |
 
+**Release structure**:
+- **`manifest`** tag — permanent release holding `manifest.json` (unified, updated by both jobs via `--clobber`)
+- **`data-YYYYMMDD-<hash8>`** tags — immutable per publish, hold `lexiklar.db` + SQL patch files
+- **`app-vX.Y.Z`** tags — immutable per publish, hold app bundle zip
+
+**Unified manifest format** (on the `manifest` release):
+```json
+{
+  "db": {
+    "current_version": "<16-char DB hash>",
+    "built_at": "YYYY-MM-DD",
+    "patches": { "<old_version>": { "url": "https://github.com/.../releases/download/data-.../old_to_new.sql", "size": 1234 } },
+    "full_db": { "url": "https://github.com/.../releases/download/data-.../lexiklar.db", "size": 12345678 }
+  },
+  "bundle": {
+    "current_version": "0.9.1",
+    "url": "https://github.com/.../releases/download/app-v0.9.1/0.9.1.zip",
+    "size": 2345678
+  }
+}
+```
+
+All asset URLs in the manifest are absolute GitHub Release download URLs.
+
 **DB update flow**:
 1. `main.ts` calls `checkForUpdates()` after `initDb()` (fire-and-forget, 24h throttle via `lexiklar_last_update_check`)
-2. Fetches `manifest.json` from `UPDATE_BASE_URL`, compares `current_version` against local DB `meta.version`
+2. Fetches `manifest.json` from the permanent `manifest` release, reads `db` section, compares `current_version` against local DB `meta.version`
 3. Prefers SQL patch (small) over full DB download (large) — patches are keyed by source version
 4. `applyUpdate()` runs patch via `exec_batch` (transactional) or replaces full DB, then re-caches via Cache API
 5. `DbUpdatePrompt.vue` shows a toast; user can apply immediately or dismiss
 
 **Capawesome flow** (`src/utils/live-update.ts`):
 1. `notifyReady()` called on every startup to confirm current bundle is stable (prevents rollback)
-2. `checkAppUpdate()` fetches `bundles/manifest.json`, compares version against `__APP_VERSION__`
+2. `checkAppUpdate()` fetches the same `manifest.json`, reads `bundle` section, compares version against `__APP_VERSION__`
 3. `downloadAndApplyAppUpdate()` downloads zip via `LiveUpdate.downloadBundle()`, stages with `setNextBundle()`
 4. User restarts app (or taps "Restart" in Settings) to load new bundle
 5. No-op on web — PWA service worker handles app shell updates
 
-**Manifest format** (`lexiklar-data/manifest.json`):
-```json
-{
-  "current_version": "<16-char DB hash>",
-  "built_at": "YYYY-MM-DD",
-  "patches": { "<old_version>": { "url": "patches/<old>_to_<new>.sql", "size": 1234 } },
-  "full_db": { "url": "lexiklar.db", "size": 12345678 }
-}
-```
-
 **SQL patch generation** (`scripts/publish-update.ts`):
 ```bash
-npx tsx scripts/publish-update.ts --old <old.db> --out <dir> [--keep-patches 3]
+npx tsx scripts/publish-update.ts --old <old.db> --out <dir> [--keep-patches 3] [--release-url <url>]
 ```
-Diffs `words` and `examples` tables using the `hash` column (SHA-256 of JSON `data`). Generates INSERT/UPDATE/DELETE statements; uses `(SELECT id FROM words WHERE file = ?)` subqueries for word_id references since client DBs have different autoincrement IDs. Patches run inside a transaction via `exec_batch` in the Web Worker.
+Diffs `words` and `examples` tables using the `hash` column (SHA-256 of JSON `data`). Generates INSERT/UPDATE/DELETE statements; uses `(SELECT id FROM words WHERE file = ?)` subqueries for word_id references since client DBs have different autoincrement IDs. Patches run inside a transaction via `exec_batch` in the Web Worker. `--release-url` makes all asset URLs absolute (used by CI).
 
 **GitHub Actions** (`.github/workflows/publish-data.yml`):
-- **`publish-db` job**: triggers on push to `data/`, `scripts/build-index.ts`, or manual dispatch. Builds index, generates patches, pushes to `lexiklar-data` repo.
-- **`publish-bundle` job**: manual dispatch only. Runs `vite build`, zips `dist/`, pushes to `lexiklar-data/bundles/`.
-- Requires `DATA_REPO_TOKEN` secret (PAT with `repo` scope) and `lexiklar-data` repo with GitHub Pages enabled.
+- **`publish-db` job**: triggers on push to `data/`, `scripts/build-index.ts`, or manual dispatch. Builds index, creates `data-*` release with DB + patches, updates `manifest` release.
+- **`publish-bundle` job**: manual dispatch only. Runs `vite build`, creates `app-*` release with bundle zip, updates `manifest` release.
+- Uses `GITHUB_TOKEN` (automatic) — no PAT or separate repo needed.
 
 ---
 
