@@ -41,6 +41,12 @@ const SKIP_NOUNS = new Set([
   "Couch",
   // Slurs
   "Nigger",
+  // Vulgar/awkward body parts
+  "Fresse", "Arsch", "Busen", "Hintern",
+  // Too long/obscure
+  "Mindesthaltbarkeitsdatum",
+  // Poor standalone examples (abstract nominalizations)
+  "Unheil",
   // English words leaked from annotations
   "Thing", "German",
 ]);
