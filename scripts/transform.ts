@@ -1347,6 +1347,9 @@ function mergeWithExisting(newData: TransformOutput, existingPath: string): Tran
   if ((existing as { plural_dominant?: boolean }).plural_dominant != null) {
     newData.plural_dominant = (existing as { plural_dominant: boolean }).plural_dominant;
   }
+  if ((existing as Record<string, unknown>).collocation_nouns) {
+    newData.collocation_nouns = (existing as Record<string, unknown>).collocation_nouns;
+  }
 
   // Preserve compound data if already set (may have been LLM-verified or manually corrected)
   if ((existing as { compound_parts?: string[] }).compound_parts && !newData.compound_parts) {

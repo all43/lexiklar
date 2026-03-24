@@ -26,6 +26,7 @@ const KEYS = [
   "lexiklar_view_counts",
   "lexiklar_phrase_terms",
   "lexiklar_search_position",
+  "lexiklar_condensed_grammar",
 ] as const;
 
 /**

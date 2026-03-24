@@ -25,6 +25,16 @@
     <f7-block-footer class="padding-horizontal">
       {{ t('settings.showArticlesFooter') }}
     </f7-block-footer>
+    <f7-list inset strong-ios outline-ios>
+      <f7-list-item :title="t('settings.condensedGrammar')">
+        <template #after>
+          <f7-toggle :checked="condensedGrammar" @toggle:change="setCondensedGrammar" />
+        </template>
+      </f7-list-item>
+    </f7-list>
+    <f7-block-footer class="padding-horizontal">
+      {{ t('settings.condensedGrammarFooter') }}
+    </f7-block-footer>
 
     <f7-block-title>{{ t('settings.searchBarPosition') }}</f7-block-title>
     <f7-list inset strong-ios outline-ios>
@@ -156,6 +166,7 @@ const SEARCH_BAR_POSITION_OPTIONS = [
 ];
 
 export const SHOW_ARTICLES_KEY = "lexiklar_show_articles";
+export const CONDENSED_GRAMMAR_KEY = "lexiklar_condensed_grammar";
 export const SEARCH_BAR_POSITION_KEY = "lexiklar_search_position";
 export type SearchBarPosition = "auto" | "top" | "bottom";
 
@@ -171,6 +182,7 @@ export default defineComponent({
       searchBarPositionOptions: SEARCH_BAR_POSITION_OPTIONS,
       searchBarPosition: (getCached(SEARCH_BAR_POSITION_KEY) || "auto") as SearchBarPosition,
       showArticles: getCached(SHOW_ARTICLES_KEY) !== "0",
+      condensedGrammar: getCached(CONDENSED_GRAMMAR_KEY) === "1",
       dbVersion: null as string | null,
       dbBuiltAt: null as string | null,
       updateState: "idle" as UpdateState,
@@ -270,6 +282,10 @@ export default defineComponent({
     setShowArticles(value: boolean) {
       this.showArticles = value;
       setItem(SHOW_ARTICLES_KEY, value ? "1" : "0");
+    },
+    setCondensedGrammar(value: boolean) {
+      this.condensedGrammar = value;
+      setItem(CONDENSED_GRAMMAR_KEY, value ? "1" : "0");
     },
     setSearchBarPosition(value: SearchBarPosition) {
       this.searchBarPosition = value;

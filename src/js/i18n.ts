@@ -97,6 +97,8 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "settings.langGerman": "Deutsch",
     "settings.showArticles": "Show articles in search",
     "settings.showArticlesFooter": "Displays der/die/das before nouns in search results and history.",
+    "settings.condensedGrammar": "Condensed adjective tables",
+    "settings.condensedGrammarFooter": "Replaces the full declension grid with grouped rules and examples showing why each ending is used.",
     "settings.searchBarPosition": "Search Bar Position",
     "settings.searchBarAuto": "System Default",
     "settings.searchBarTop": "Top",
@@ -165,6 +167,20 @@ const locales: Record<LocaleKey, TranslationMap> = {
 
     // AdjectiveDeclension
     "adj.indeclinable": "Indeclinable \u2014 no case endings",
+    "adj.afterDefinite": "After der/die/das",
+    "adj.afterDefiniteWhy": "Article already signals gender + case \u2192 adjective just adds -e or -en",
+    "adj.afterIndefinite": "After ein/kein/mein",
+    "adj.afterIndefiniteWhy": "\"ein\" alone doesn\u2019t reveal masc./neut. \u2192 adjective takes over the signal",
+    "adj.withoutArticle": "Without article",
+    "adj.withoutArticleWhy": "No article \u2192 adjective must signal gender + case itself (like the article)",
+    "adj.nomSg": "Nom. Sg.",
+    "adj.accSgMascEn": "Akk. Sg. masc. \u2192 -en",
+    "adj.restAlwaysEn": "Everything else \u2192 always -en",
+    "adj.mixedExceptWhere": "Like weak, but where ein- has no signal:",
+    "adj.mascNom": "masc. Nom.",
+    "adj.neutNomAcc": "neut. Nom./Akk.",
+    "adj.viewRules": "Rules",
+    "adj.viewTable": "Table",
 
     // Data reports
     "search.didYouMean": "Did you mean?",
@@ -271,6 +287,8 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "settings.langGerman": "Deutsch",
     "settings.showArticles": "Artikel in der Suche anzeigen",
     "settings.showArticlesFooter": "Zeigt der/die/das vor Nomen in Suchergebnissen und Verlauf.",
+    "settings.condensedGrammar": "Kompakte Adjektivtabellen",
+    "settings.condensedGrammarFooter": "Ersetzt die vollst\u00E4ndige Deklinationstabelle durch gruppierte Regeln mit Beispielen.",
     "settings.searchBarPosition": "Position der Suchleiste",
     "settings.searchBarAuto": "Systemstandard",
     "settings.searchBarTop": "Oben",
@@ -339,6 +357,20 @@ const locales: Record<LocaleKey, TranslationMap> = {
 
     // AdjectiveDeclension
     "adj.indeclinable": "Indeklinabel \u2014 keine Kasusendungen",
+    "adj.afterDefinite": "Nach der/die/das",
+    "adj.afterDefiniteWhy": "Artikel zeigt Genus + Kasus \u2192 Adjektiv nur -e oder -en",
+    "adj.afterIndefinite": "Nach ein/kein/mein",
+    "adj.afterIndefiniteWhy": "\u201Eein\u201C allein zeigt nicht mask./neutr. \u2192 Adjektiv \u00FCbernimmt das Signal",
+    "adj.withoutArticle": "Ohne Artikel",
+    "adj.withoutArticleWhy": "Kein Artikel \u2192 Adjektiv muss Genus + Kasus selbst zeigen (wie der Artikel)",
+    "adj.nomSg": "Nom. Sg.",
+    "adj.accSgMascEn": "Akk. Sg. Mask. \u2192 -en",
+    "adj.restAlwaysEn": "Alles andere \u2192 immer -en",
+    "adj.mixedExceptWhere": "Wie schwach, aber wo ein- kein Signal hat:",
+    "adj.mascNom": "Mask. Nom.",
+    "adj.neutNomAcc": "Neutr. Nom./Akk.",
+    "adj.viewRules": "Regeln",
+    "adj.viewTable": "Tabelle",
 
     // Data reports
     "search.didYouMean": "Meinten Sie?",

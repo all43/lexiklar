@@ -14,6 +14,7 @@
     "download-corpus": "tsx scripts/enrich-frequency.ts --download-only",
     "transform": "tsx scripts/transform.ts --max-frequency 8000 --max-subtitle-rank 25000",
     "enrich": "tsx scripts/enrich-frequency.ts",
+    "enrich-collocations": "tsx scripts/enrich-collocations.ts",
     "build-index": "tsx scripts/build-index.ts",
     "data:checkpoint": "git add data/words/ data/examples.json && (git diff --staged --quiet && echo 'Checkpoint: nothing changed.' || git commit -m 'data: checkpoint LLM-generated translations')",
     "translate-examples": "tsx scripts/translate-examples.ts",

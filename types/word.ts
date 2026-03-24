@@ -179,6 +179,7 @@ export interface AdjectiveWord extends WordBase {
   declension_stem: string;
   declension_regular: boolean;
   declension?: FullDeclension;
+  collocation_nouns?: { M: string | null; F: string | null; N: string | null; Pl: string | null };
 }
 
 export interface AbbreviationWord extends WordBase {
