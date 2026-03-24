@@ -11344,56 +11344,31 @@
   },
   "8e61a615c8": {
     "text": "Er ist ein Mann aus Welt.",
-    "translation": "He is a man of the world.",
+    "translation": "He is a man from Welt.",
     "source": "wiktionary",
     "lemmas": [
       "Welt"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
-        "form": "He",
-        "lemma": "he",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "is",
-        "lemma": "be",
+        "form": "ist",
+        "lemma": "sein",
         "pos": "verb",
         "gloss_hint": null
       },
       {
-        "form": "a",
-        "lemma": "a",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "man",
-        "lemma": "man",
+        "form": "Mann",
+        "lemma": "Mann",
         "pos": "noun",
-        "gloss_hint": "man"
-      },
-      {
-        "form": "of",
-        "lemma": "of",
-        "pos": "preposition",
         "gloss_hint": null
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "world",
-        "lemma": "world",
-        "pos": "noun",
-        "gloss_hint": "world"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true,
+      "annotations": "e04a06e2"
+    },
+    "text_linked": "Er [[ist|verbs/sein]] ein [[Mann|nouns/Mann]] aus Welt."
   },
   "8e6348634a": {
     "text": "Könnte mir bitte jemand mit dem Sonnenschirm helfen?",
@@ -13323,7 +13298,10 @@
     "lemmas": [
       "Koalition"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8e7082274d": {
     "text": "„Ich hätte Swift verärgern können, indem ich ihn so vorgeführt hatte.“",
@@ -21253,12 +21231,16 @@
       },
       {
         "form": "regte",
-        "lemma": "regten",
+        "lemma": "regen",
         "pos": "verb",
         "gloss_hint": "arose"
       }
     ],
-    "text_linked": "„Selbst, [[als|conjunctions/als#2]] [[bekannt|adjectives/bekannt#1]] [[wurde|verbs/werden]], [[dass|conjunctions/dass#1]] [[das|pronouns/das_nominativ#1]] [[Einwohnermeldeamt|nouns/Einwohnermeldeamt]] gewisse Privatdaten [[ganz|adjectives/ganz#2]] [[legal|adjectives/legal]] [[an|prepositions/an#1]] [[Firmen|nouns/Firma#2]] [[auf|prepositions/auf#1]] [[Anfrage|nouns/Anfrage]] [[herausgeben|verbs/herausgeben]] [[darf|verbs/dürfen#3]], [[dauerte|verbs/dauern#1]] [[es|pronouns/es]] [[Monate|nouns/Monat]], [[bis|particles/bis#1]] [[sich|pronouns/sich#2]] nennenswerter [[Protest|nouns/Protest#1]] regte.“"
+    "text_linked": "„Selbst, [[als|conjunctions/als#2]] [[bekannt|adjectives/bekannt#1]] [[wurde|verbs/werden]], [[dass|conjunctions/dass#1]] [[das|pronouns/das_nominativ#1]] [[Einwohnermeldeamt|nouns/Einwohnermeldeamt]] gewisse Privatdaten [[ganz|adjectives/ganz#2]] [[legal|adjectives/legal]] [[an|prepositions/an#1]] [[Firmen|nouns/Firma#2]] [[auf|prepositions/auf#1]] [[Anfrage|nouns/Anfrage]] [[herausgeben|verbs/herausgeben]] [[darf|verbs/dürfen#3]], [[dauerte|verbs/dauern#1]] [[es|pronouns/es]] [[Monate|nouns/Monat]], [[bis|particles/bis#1]] [[sich|pronouns/sich#2]] nennenswerter [[Protest|nouns/Protest#1]] regte.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "602d0979"
+    }
   },
   "8ec05ac9fd": {
     "text": "„Am dritten Tag fand man Slater besinnungslos in einem hohlen Baum, und man brachte ihn in das nächste Gefängnis, wo er von Nervenärzten aus Albany untersucht wurde, sobald er wieder bei Bewusstsein war.“",

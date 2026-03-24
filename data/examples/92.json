@@ -5856,67 +5856,49 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Public transportation",
-        "lemma": "public transportation",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "such as",
-        "lemma": "such as",
-        "pos": "phrase",
-        "gloss_hint": null
-      },
-      {
-        "form": "buses",
-        "lemma": "bus",
-        "pos": "noun",
-        "gloss_hint": "vehicle"
-      },
-      {
-        "form": "trams",
-        "lemma": "Straßenbahn",
-        "pos": "noun",
-        "gloss_hint": "vehicle"
-      },
-      {
-        "form": "subways",
-        "lemma": "subway",
-        "pos": "noun",
-        "gloss_hint": "transportation"
-      },
-      {
-        "form": "are",
-        "lemma": "be",
-        "pos": "verb",
-        "gloss_hint": "existence"
-      },
-      {
-        "form": "indispensable",
-        "lemma": "indispensable",
+        "form": "Öffentliche",
+        "lemma": "öffentlich",
         "pos": "adjective",
         "gloss_hint": null
       },
       {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
+        "form": "Verkehrsmittel",
+        "lemma": "Verkehrsmittel",
+        "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "modern",
+        "form": "Busse",
+        "lemma": "Bus",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Straßenbahnen",
+        "lemma": "Straßenbahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "U-Bahnen",
+        "lemma": "U-Bahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "modernen",
         "lemma": "modern",
         "pos": "adjective",
         "gloss_hint": null
       },
       {
-        "form": "large cities",
-        "lemma": "large city",
+        "form": "Großstädten",
+        "lemma": "Großstadt",
         "pos": "noun",
-        "gloss_hint": "urban area"
+        "gloss_hint": null
       }
     ],
-    "text_linked": "Öffentliche Verkehrsmittel, also Busse, Straßenbahnen und U-Bahnen sind [[in|prepositions/in]] modernen Großstädten nicht mehr wegzudenken."
+    "text_linked": "[[Öffentliche|adjectives/öffentlich]] [[Verkehrsmittel|nouns/Verkehrsmittel]], also [[Busse|nouns/Bus_als]], [[Straßenbahnen|nouns/Straßenbahn]] und [[U-Bahnen|nouns/U-Bahn]] sind in [[modernen|adjectives/modern]] [[Großstädten|nouns/Großstadt]] nicht mehr wegzudenken."
   },
   "92358cad8d": {
     "text": "Wechseln Sie Bettzeug und Pyjama, wenn sie nass geschwitzt sind.",
@@ -7364,7 +7346,10 @@
     "lemmas": [
       "heute"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "9245c4b29a": {
     "text": "Den niederen Lichtschalter können auch die Kinder gut erreichen.",
@@ -19259,7 +19244,7 @@
       },
       {
         "form": "Apple",
-        "lemma": "Apfel",
+        "lemma": "Apple",
         "pos": "noun",
         "gloss_hint": "company"
       },
@@ -19318,7 +19303,10 @@
         "gloss_hint": "follow"
       }
     ],
-    "text_linked": "„Ubuntu [[dagegen|adverbs/dagegen]] [[war|verbs/sein#2]] ebenso [[einfach|adjectives/einfach#1]] [[zu|particles/zu_drückt]] [[installieren|verbs/installieren#1]] [[wie|adverbs/wie#2]] [[die|pronouns/die]] Betriebssysteme [[von|prepositions/von]] [[Microsoft|nouns/Microsoft#2]] [[und|conjunctions/und]] [[Apple|nouns/Apfel]]: CD [[ins|prepositions/in]] Laufwerk, Doppelklick [[auf|prepositions/auf]] [[den|determiners/der]] Installer, [[Anweisungen|nouns/Anweisung#1]] [[befolgen|verbs/befolgen]].“"
+    "text_linked": "„Ubuntu [[dagegen|adverbs/dagegen]] [[war|verbs/sein#2]] ebenso [[einfach|adjectives/einfach#1]] [[zu|particles/zu_drückt]] [[installieren|verbs/installieren#1]] [[wie|adverbs/wie#2]] [[die|pronouns/die]] Betriebssysteme [[von|prepositions/von]] [[Microsoft|nouns/Microsoft#2]] [[und|conjunctions/und]] [[Apple|nouns/Apfel]]: CD [[ins|prepositions/in]] Laufwerk, Doppelklick [[auf|prepositions/auf]] [[den|determiners/der]] Installer, [[Anweisungen|nouns/Anweisung#1]] [[befolgen|verbs/befolgen]].“",
+    "_proofread": {
+      "translation": true
+    }
   },
   "92bc36e8b5": {
     "text": "„Ein besonderer Typ der Gliedsätze sind die indirekten Fragesätze.“",
@@ -20396,7 +20384,10 @@
       "Vaporetto",
       "Vermouth"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "92c631d3a3": {
     "text": "welch Glanz in meiner Hütte",

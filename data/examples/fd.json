@@ -3224,7 +3224,10 @@
       "unterwerfen",
       "angelsächsisch"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "fd13c28cf4": {
     "text": "Sie wollte lieber den Perserteppich beleihen statt den Brillantring.",
@@ -5412,12 +5415,12 @@
   },
   "fd2ee37f22": {
     "text": "Kannst Du mir zehn Euro leihen? Ich habe mein Portemonnaie daheim liegenlassen.",
-    "translation": "Can you lend [leihen: lend] me ten euros? I left [liegenlassen: left] my wallet [Portemonnaie: wallet] at home.",
+    "translation": "Can you lend me ten euros? I left my wallet at home.",
     "source": "wiktionary",
     "lemmas": [
       "Portemonnaie"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "claude-sonnet-4-6"
   },
   "fd2f2c9c8a": {
     "text": "Der Wagen hat eine gute Beschleunigung.",
@@ -16391,7 +16394,13 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "not",
+        "form": "ist",
+        "lemma": "sein",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "nicht",
         "lemma": "nicht",
         "pos": "particle",
         "gloss_hint": null
@@ -16399,29 +16408,23 @@
       {
         "form": "gerade",
         "lemma": "gerade",
-        "pos": "adjective",
-        "gloss_hint": "straight"
-      },
-      {
-        "form": "ein",
-        "lemma": "ein",
-        "pos": "determiner",
-        "gloss_hint": "a"
+        "pos": "particle",
+        "gloss_hint": null
       },
       {
         "form": "toller",
         "lemma": "toll",
         "pos": "adjective",
-        "gloss_hint": "great"
+        "gloss_hint": null
       },
       {
         "form": "Tänzer",
         "lemma": "Tänzer",
         "pos": "noun",
-        "gloss_hint": "dancer"
+        "gloss_hint": null
       }
     ],
-    "text_linked": "Peter ist nicht [[gerade|adjectives/gerade#1]] [[ein|determiners/ein#1]] [[toller|adjectives/toll#3]] [[Tänzer|nouns/Tänzer]]."
+    "text_linked": "Peter [[ist|verbs/sein]] [[nicht|particles/nicht]] [[gerade|particles/gerade]] ein [[toller|adjectives/toll]] [[Tänzer|nouns/Tänzer]]."
   },
   "fd9fe25527": {
     "text": "Ich danke ihm mein Leben.",

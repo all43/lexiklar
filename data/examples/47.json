@@ -2111,14 +2111,14 @@
   },
   "471ba65d1d": {
     "text": "„Eine erhebliche Rolle spielt dabei neben dem Anredepronomen (du/Sie) und der Verbform eine Gruppe von personenbezeichnenden Substantiven oder Nominalgruppen, die als Anredeformeln verwendbar sind, vor allem Herr/Frau und der Nachname beim Siezen, der Vorname beim Duzen.“",
-    "translation": "An important role is played by, in addition to the form of address pronoun (you/you all) and the verb form, a group of person-denoting nouns or noun phrases, which can be used as forms of address, especially Herr/Frau and the last name when using Sie, the first name when using du.",
+    "translation": "An important role is played by, in addition to the address pronoun (du/Sie) and the verb form, a group of person-denoting nouns or noun phrases, which can be used as forms of address, especially Herr/Frau and the surname when using formal Sie, the first name when using informal du.",
     "source": "wiktionary",
     "lemmas": [
       "Duzen",
       "Siezen",
       "Anredepronomen"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "eine",
@@ -2303,7 +2303,7 @@
       {
         "form": "Siezen",
         "lemma": "Siezen",
-        "pos": "verb",
+        "pos": "noun",
         "gloss_hint": "to address formally"
       },
       {
@@ -2331,7 +2331,10 @@
         "gloss_hint": "to address informally"
       }
     ],
-    "text_linked": "„Eine [[erhebliche|adjectives/erheblich]] [[Rolle|nouns/Rolle_drehbares#10]] [[spielt|verbs/spielen#1]] [[dabei|adverbs/dabei]] [[neben|prepositions/neben#1]] [[dem|determiners/der]] Anredepronomen (du/Sie) [[und|conjunctions/und]] [[der|determiners/der]] Verbform [[eine|determiners/ein]] [[Gruppe|nouns/Gruppe#2]] [[von|prepositions/von#2]] personenbezeichnenden [[Substantiven|nouns/Substantiv]] oder Nominalgruppen, [[die|determiners/die]] [[als|conjunctions/als]] Anredeformeln verwendbar [[sind|verbs/sein#2]], vor allem Herr/Frau und der [[Nachname|nouns/Nachname]] [[beim|prepositions/bei#3]] Siezen, der Vorname beim Duzen.“"
+    "text_linked": "„Eine [[erhebliche|adjectives/erheblich]] [[Rolle|nouns/Rolle_drehbares#10]] [[spielt|verbs/spielen#1]] [[dabei|adverbs/dabei]] [[neben|prepositions/neben#1]] [[dem|determiners/der]] Anredepronomen (du/Sie) [[und|conjunctions/und]] [[der|determiners/der]] Verbform [[eine|determiners/ein]] [[Gruppe|nouns/Gruppe#2]] [[von|prepositions/von#2]] personenbezeichnenden [[Substantiven|nouns/Substantiv]] oder Nominalgruppen, [[die|determiners/die]] [[als|conjunctions/als]] Anredeformeln verwendbar [[sind|verbs/sein#2]], vor allem Herr/Frau und der [[Nachname|nouns/Nachname]] [[beim|prepositions/bei#3]] Siezen, der Vorname beim Duzen.“",
+    "_proofread": {
+      "translation": true
+    }
   },
   "471c707115": {
     "text": "Den Schrank haben wir uns von der Tischlerin machen lassen.",
@@ -11390,7 +11393,11 @@
         "gloss_hint": "consumer"
       }
     ],
-    "text_linked": "„In einer Marktwirtschaft ist niemand und nichts so [[mächtig|adjectives/mächtig#1]] wie das [[Portemonnaie|nouns/Portemonnaie]] des [[Verbrauchers|nouns/Verbraucher#1]].“"
+    "text_linked": "„In einer Marktwirtschaft ist niemand und nichts so [[mächtig|adjectives/mächtig#1]] wie das [[Portemonnaie|nouns/Portemonnaie]] des [[Verbrauchers|nouns/Verbraucher#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "bb86ee73"
+    }
   },
   "477ed418bb": {
     "text": "„Ich hätte nicht geglaubt, dass seine Euphorie so lange vorhalten würde.“",
@@ -13697,90 +13704,45 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "station",
-        "lemma": "station",
+        "form": "Bahnhof",
+        "lemma": "Bahnhof",
         "pos": "noun",
-        "gloss_hint": "station (rail)"
+        "gloss_hint": null
       },
       {
-        "form": "asked",
+        "form": "fragte",
         "lemma": "fragen",
         "pos": "verb",
-        "gloss_hint": "ask"
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
-        "form": "woman",
+        "form": "Frau",
         "lemma": "Frau",
         "pos": "noun",
-        "gloss_hint": "woman"
-      },
-      {
-        "form": "behind",
-        "lemma": "hinter",
-        "pos": "preposition",
-        "gloss_hint": "at the back of"
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
-        "form": "ticket",
+        "form": "Fahrkartenschalter",
         "lemma": "Fahrkartenschalter",
         "pos": "noun",
-        "gloss_hint": "ticket counter"
-      },
-      {
-        "form": "counter",
-        "lemma": "Fahrkartenschalter",
-        "pos": "noun",
-        "gloss_hint": "ticket counter"
-      },
-      {
-        "form": "for",
-        "lemma": "nach",
-        "pos": "preposition",
-        "gloss_hint": "toward"
-      },
-      {
-        "form": "a",
-        "lemma": "eine",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
-        "form": "tram",
+        "form": "Straßenbahn",
         "lemma": "Straßenbahn",
         "pos": "noun",
-        "gloss_hint": "tram line"
-      },
-      {
-        "form": "to",
-        "lemma": "zum",
-        "pos": "preposition",
-        "gloss_hint": "to the"
-      },
-      {
-        "form": "the",
-        "lemma": "das",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
-        "form": "district",
+        "form": "Amtsgericht",
         "lemma": "Amtsgericht",
         "pos": "noun",
-        "gloss_hint": "district court"
+        "gloss_hint": null
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true
+    }
   },
   "4793c94bfe": {
     "text": "„Die Farbe, früher goldengelb, blätterte von den Holzbohlen, und was einmal ein kleiner, aber sorgfältig angelegter Garten gewesen sein musste, durch eine Steinmauer geschützt vor den rauen Winden vom Wasser her, das hatte die Natur sich zurückgeholt.“",
@@ -22993,7 +22955,11 @@
         "gloss_hint": "rainforest"
       }
     ],
-    "text_linked": "„Der spanische Meeresbiologe Carlos Duarte [[vom|prepositions/von]] Mittelmeerinstitut [[der|pronouns/der_nominativ]] Balearen [[in|prepositions/in]] Esporles/ Mallorca [[stellte|verbs/stellen]] [[fest|adjectives/fest]], [[dass|conjunctions/dass]] Seegraswiesen doppelt [[so|adverbs/so]] viel CO₂ [[speichern|verbs/speichern#1]] [[können|verbs/können_beherrschen#1]] [[wie|conjunctions/wie_als#1]] z. B. [[eine|determiners/ein]] [[gleich|adjectives/gleich#1]] [[große|adjectives/groß]] [[Fläche|nouns/Fläche#2]] tropischer Regenwald.“"
+    "text_linked": "„Der spanische Meeresbiologe Carlos Duarte [[vom|prepositions/von]] Mittelmeerinstitut [[der|pronouns/der_nominativ]] Balearen [[in|prepositions/in]] Esporles/ Mallorca [[stellte|verbs/stellen]] [[fest|adjectives/fest]], [[dass|conjunctions/dass]] Seegraswiesen doppelt [[so|adverbs/so]] viel CO₂ [[speichern|verbs/speichern#1]] [[können|verbs/können_beherrschen#1]] [[wie|conjunctions/wie_als#1]] z. B. [[eine|determiners/ein]] [[gleich|adjectives/gleich#1]] [[große|adjectives/groß]] [[Fläche|nouns/Fläche#2]] tropischer Regenwald.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "7bc1e3c4"
+    }
   },
   "47ebfdc7c4": {
     "text": "„Das ist nun ein Lied, wie es heute in Amerika gesungen wird, ein Schlager up to date, und wir vernahmen ihn in Axel Eggebrechts Hörspiel „Wenn wir wollen…“, das er seinem Spiel „Was wäre, wenn…“ folgen ließ.“",

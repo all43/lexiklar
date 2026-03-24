@@ -6345,36 +6345,25 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "not",
-        "lemma": "nicht",
-        "pos": "particle",
+        "form": "geht",
+        "lemma": "gehen",
+        "pos": "verb",
         "gloss_hint": null
       },
       {
-        "form": "would",
-        "lemma": "würde",
-        "pos": "verb",
-        "gloss_hint": "would"
-      },
-      {
-        "form": "appreciate",
+        "form": "freuen",
         "lemma": "freuen",
         "pos": "verb",
-        "gloss_hint": "be happy"
+        "gloss_hint": null
       },
       {
-        "form": "any",
-        "lemma": "über",
-        "pos": "preposition",
-        "gloss_hint": "over"
-      },
-      {
-        "form": "advice",
-        "lemma": "Ratschläge",
+        "form": "Ratschläge",
+        "lemma": "Ratschlag",
         "pos": "noun",
         "gloss_hint": null
       }
-    ]
+    ],
+    "text_linked": "Da es nicht [[geht|verbs/gehen]], würde ich mich über [[Ratschläge|nouns/Ratschlag]] [[freuen|verbs/freuen]]."
   },
   "5740253816": {
     "text": "„Hayes mochte keine Überraschungen und trotz Kennedys dringlichem Appell wäre es nicht das erste Mal, dass ein falscher Alarm alles auf den Kopf stellte.“",
@@ -11127,7 +11116,11 @@
       "los"
     ],
     "translation_model": "anthropic/claude-haiku-4-5-20251001",
-    "annotations": []
+    "annotations": [],
+    "_proofread": {
+      "translation": true,
+      "annotations": "4f53cda1"
+    }
   },
   "576391870b": {
     "text": "Nun seht einmal, wie schwarz sie sind, viel schwärzer als das Mohrenkind. (Heinrich Hoffmann, Struwwelpeter)",
@@ -16159,31 +16152,16 @@
         "gloss_hint": "well-known"
       },
       {
-        "form": "bei",
-        "lemma": "bei",
-        "pos": "preposition",
-        "gloss_hint": "nearby"
-      },
-      {
-        "form": "sowie",
-        "lemma": "sowie",
-        "pos": "conjunction",
-        "gloss_hint": "as well as"
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "pronoun",
-        "gloss_hint": "which"
-      },
-      {
         "form": "Schule",
         "lemma": "Schule",
         "pos": "noun",
         "gloss_hint": "school"
       }
     ],
-    "text_linked": "Die Probleme sind [[bekannt|adjectives/bekannt#1]]: eine rückgängige Bevölkerungszahl und knappes Wohnangebot, Umsatzprobleme [[bei|prepositions/bei#1]] den Gewerbetreibenden im Stadtteil [[sowie|conjunctions/sowie#1]] eine sanierungsbedürftige [[Schule|nouns/Schule#1]]."
+    "text_linked": "Die Probleme sind [[bekannt|adjectives/bekannt#1]]: eine rückgängige Bevölkerungszahl und knappes Wohnangebot, Umsatzprobleme [[bei|prepositions/bei#1]] den Gewerbetreibenden im Stadtteil [[sowie|conjunctions/sowie#1]] eine sanierungsbedürftige [[Schule|nouns/Schule#1]].",
+    "_proofread": {
+      "translation": true
+    }
   },
   "579efd0665": {
     "text": "„Seit 1938 gilt ein generelles Berufsverbot für jüdische Kunsthändler und Galeristen.“",
@@ -17975,7 +17953,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "[[Beispiele|nouns/Beispiel]] für [[Imperative|nouns/Imperativ]] im [[Deutschen|nouns/Deutsch]] sind die Äußerungen: \"[[Komm|verbs/kommen]]!\" und \"[[Kommt|verbs/kommen]]!\"."
+    "text_linked": "[[Beispiele|nouns/Beispiel]] für [[Imperative|nouns/Imperativ]] im [[Deutschen|nouns/Deutsch]] sind die Äußerungen: \"[[Komm|verbs/kommen]]!\" und \"[[Kommt|verbs/kommen]]!\".",
+    "_proofread": {
+      "translation": true,
+      "annotations": "969b36a7"
+    }
   },
   "57afab8cb4": {
     "text": "sich ein Loch in den Bauch lachen",
@@ -25167,7 +25149,11 @@
         "gloss_hint": "go"
       }
     ],
-    "text_linked": "„In die [[Formen|nouns/Form]] der [[Deklination|nouns/Deklination#1]] [[gehen|verbs/gehen#4]] Genus, Numerus und Kasus zusammen ein.“"
+    "text_linked": "„In die [[Formen|nouns/Form]] der [[Deklination|nouns/Deklination#1]] [[gehen|verbs/gehen#4]] Genus, Numerus und Kasus zusammen ein.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "f58c7237"
+    }
   },
   "57e792bbc8": {
     "text": "„Fast ein Jahr liegt das Arbeitsministerium schon mit dem Umweltressort in Stuttgart im Clinch, nachdem bei der Kabinettsbildung im vergangenen Jahr die Gewerbeaufsichtsämter unmittelbar Umweltminister Weiser unterstellt wurden.“",

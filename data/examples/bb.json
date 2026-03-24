@@ -1334,22 +1334,10 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Sie",
-        "lemma": "sie",
-        "pos": "noun",
-        "gloss_hint": "trumpet solo"
-      },
-      {
         "form": "blockierten",
         "lemma": "blockieren",
         "pos": "verb",
         "gloss_hint": "to obstruct"
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "pronoun",
-        "gloss_hint": "which"
       },
       {
         "form": "Parlamentsabstimmung",
@@ -1388,7 +1376,10 @@
         "gloss_hint": "to vote"
       }
     ],
-    "text_linked": "Sie [[blockierten|verbs/blockieren]] [[die|pronouns/die#1]] Parlamentsabstimmung, [[indem|conjunctions/indem#1]] sie [[sich|pronouns/sich#2]] [[weigerten|verbs/weigern#1]] [[abzustimmen|verbs/abstimmen]]."
+    "text_linked": "Sie [[blockierten|verbs/blockieren]] [[die|pronouns/die#1]] Parlamentsabstimmung, [[indem|conjunctions/indem#1]] sie [[sich|pronouns/sich#2]] [[weigerten|verbs/weigern#1]] [[abzustimmen|verbs/abstimmen]].",
+    "_proofread": {
+      "translation": true
+    }
   },
   "bb11ee3099": {
     "text": "Ich heiße Maria.",
@@ -8351,12 +8342,12 @@
   },
   "bb522bca63": {
     "text": "„Entschuldige schon, aber wie erbärmlich sind all diese selbstbetrügerischen Machenschaften; und da Du schon die Selbstironie zur Hilfe herangezogen hast, so gestatte mir, daß ich Dir den Rat gebe: Lache Dich einmal vor dem Spiegel gründlich über Dich selbst aus, bis Dich das Lachen schüttelt und Du Deine ganze Angst und Feigheit von Dir abgeschüttelt hast.“",
-    "translation": "Sorry, but how pathetic are all these self-deceptive machinations; and since you have already invoked self-irony, allow me to give you the advice: Look at yourself thoroughly in the mirror once, until laughter shakes you and you have shaken off all your fear and cowardice.",
+    "translation": "Sorry, but how pathetic are all these self-deceptive machinations; and since you have already invoked self-irony, allow me to give you the advice: Laugh at yourself thoroughly in the mirror once, until laughter shakes you and you have shaken off all your fear and cowardice.",
     "source": "wiktionary",
     "lemmas": [
       "da"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Entschuldige",
@@ -9790,7 +9781,11 @@
         "gloss_hint": "serve | operate | exploit | follow suit | provide | pass | service (debt)"
       }
     ],
-    "text_linked": "„[[Die|pronouns/die#1]] rauchenden [[Angestellten|nouns/Angestellte]] [[am|prepositions/an]] [[Fahrkartenschalter|nouns/Fahrkartenschalter]] [[machten|verbs/machen#2]] keine [[Anstalten|nouns/Anstalt]], ihn [[zu|particles/zu_drückt]] [[bedienen|verbs/bedienen#1]].“"
+    "text_linked": "„[[Die|pronouns/die#1]] rauchenden [[Angestellten|nouns/Angestellte]] [[am|prepositions/an]] [[Fahrkartenschalter|nouns/Fahrkartenschalter]] [[machten|verbs/machen#2]] keine [[Anstalten|nouns/Anstalt]], ihn [[zu|particles/zu_drückt]] [[bedienen|verbs/bedienen#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "842dccbe"
+    }
   },
   "bb5fb548ef": {
     "text": "„Werkzeug bedeutete mir viel.“",
@@ -12167,12 +12162,12 @@
   },
   "bb760694ac": {
     "text": "„Ich weiß, was Trost und Stärke sie [die Beichte] sie mir gegeben hat: Es weiß niemand, was sie vermag, denn wer mit dem Teufel oft und viel gefochten hat.“",
-    "translation": "I know what comfort and strength confession has given me: no one knows what it is capable of, because whoever has fought the devil often and much.",
+    "translation": "I know what comfort and strength confession has given me: no one knows what it is capable of, except one who has often and much fought the devil.",
     "source": "wiktionary",
     "lemmas": [
       "denn"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "weiß",

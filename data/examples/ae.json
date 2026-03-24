@@ -5983,7 +5983,11 @@
         "gloss_hint": "true"
       }
     ],
-    "text_linked": "„Es hat mich mehr als ein verfluchtes [[Jahrzehnt|nouns/Jahrzehnt]] [[gekostet|verbs/kosten_[jemandem]]], bis ich diese seltsame [[Welt|nouns/Welt#3]] aus [[Konjugationen|nouns/Konjugation#1]], [[Deklinationen|nouns/Deklination#1]] und Präpositionen [[wirklich|adjectives/wirklich#3]] [[verstanden|verbs/verstehen_gesprochenes]] habe.“"
+    "text_linked": "„Es hat mich mehr als ein verfluchtes [[Jahrzehnt|nouns/Jahrzehnt]] [[gekostet|verbs/kosten_[jemandem]]], bis ich diese seltsame [[Welt|nouns/Welt#3]] aus [[Konjugationen|nouns/Konjugation#1]], [[Deklinationen|nouns/Deklination#1]] und Präpositionen [[wirklich|adjectives/wirklich#3]] [[verstanden|verbs/verstehen_gesprochenes]] habe.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "a6de85ff"
+    }
   },
   "ae370aadc0": {
     "text": "Der Lokführer betätigte die Hupe, bevor der Zug über den Bahnübergang fuhr.",
@@ -9972,7 +9976,10 @@
     "lemmas": [
       "eines"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "ae6314bd6d": {
     "text": "Die Kosten werden, so Pi mal Daumen, 100 bis 200 Euro betragen.",
@@ -10646,7 +10653,7 @@
         "form": "ganz",
         "lemma": "ganz",
         "pos": "adjective",
-        "gloss_hint": "whole"
+        "gloss_hint": null
       },
       {
         "form": "schal",
@@ -10655,7 +10662,7 @@
         "gloss_hint": "tasteless"
       }
     ],
-    "text_linked": "Der Wein ist [[leider|adverbs/leider]] [[schon|particles/schon_antwort]] [[ganz|adjectives/ganz#2]] schal geworden."
+    "text_linked": "Der Wein ist [[leider|adverbs/leider]] [[schon|particles/schon_antwort]] [[ganz|adjectives/ganz]] schal geworden."
   },
   "ae6aa6be71": {
     "text": "Trotz intensiver Ermittlungen konnte die Polizei den Täter nicht greifen.",
@@ -17988,7 +17995,11 @@
         "gloss_hint": "today"
       }
     ],
-    "text_linked": "Welchen [[Tag|nouns/Tag_zeitraum#1]] [[haben|verbs/haben#1]] [[wir|pronouns/wir]] [[heute|adverbs/heute#1]]?"
+    "text_linked": "Welchen [[Tag|nouns/Tag_zeitraum#1]] [[haben|verbs/haben#1]] [[wir|pronouns/wir]] [[heute|adverbs/heute#1]]?",
+    "_proofread": {
+      "translation": true,
+      "annotations": "055896ba"
+    }
   },
   "aeca5b235f": {
     "text": "Er breitet den Ballen auf der Theke aus.",
@@ -20370,60 +20381,43 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Real estate",
-        "lemma": "Immobilien",
+        "form": "Immobilien",
+        "lemma": "Immobilie",
         "pos": "noun",
-        "gloss_hint": "property"
+        "gloss_hint": null
       },
       {
-        "form": "is considered",
+        "form": "gelten",
         "lemma": "gelten",
         "pos": "verb",
-        "gloss_hint": "be regarded as"
+        "gloss_hint": null
       },
       {
-        "form": "a safe retirement investment",
-        "lemma": "krisensichere Altersvorsorge",
+        "form": "krisensichere",
+        "lemma": "krisensicher",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Altersvorsorge",
+        "lemma": "Altersvorsorge",
         "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "and",
-        "lemma": "und",
-        "pos": "conjunction",
+        "form": "günstiger",
+        "lemma": "günstig",
+        "pos": "adjective",
         "gloss_hint": null
       },
       {
-        "form": "especially given",
-        "lemma": "gerade vor dem Hintergrund",
-        "pos": "adverb",
-        "gloss_hint": null
-      },
-      {
-        "form": "the historically low interest rates for building loans",
-        "lemma": "historisch günstiger Baugeldzinsen",
+        "form": "Baugeldzinsen",
+        "lemma": "Baugeldzins",
         "pos": "noun",
         "gloss_hint": null
-      },
-      {
-        "form": "it can be worthwhile",
-        "lemma": "kann es sich lohnen",
-        "pos": "verb",
-        "gloss_hint": "be worthwhile"
-      },
-      {
-        "form": "to build wealth over the long term",
-        "lemma": "über eine vermietete Immobilie langfristig Vermögen aufzubauen",
-        "pos": "verb",
-        "gloss_hint": null
-      },
-      {
-        "form": "through rental properties",
-        "lemma": "vermietete Immobilie",
-        "pos": "noun",
-        "gloss_hint": "rental property"
       }
-    ]
+    ],
+    "text_linked": "„[[Immobilien|nouns/Immobilie]] [[gelten|verbs/gelten]] als krisensichere [[Altersvorsorge|nouns/Altersvorsorge]] und gerade vor dem Hintergrund historisch [[günstiger|adjectives/günstig]] Baugeldzinsen kann es sich lohnen, über eine vermietete Immobilie langfristig Vermögen aufzubauen.“"
   },
   "aedff2736f": {
     "text": "Eine Bratwurst, bitte!",
@@ -20453,7 +20447,11 @@
         "gloss_hint": "please"
       }
     ],
-    "text_linked": "[[Eine|determiners/eine]] [[Bratwurst|nouns/Bratwurst#1]], [[bitte|particles/bitte#1]]!"
+    "text_linked": "[[Eine|determiners/eine]] [[Bratwurst|nouns/Bratwurst#1]], [[bitte|particles/bitte#1]]!",
+    "_proofread": {
+      "translation": true,
+      "annotations": "8f3cbb38"
+    }
   },
   "aee0128422": {
     "text": "Er wurde in Montgomery geboren.",
@@ -22128,7 +22126,10 @@
     "lemmas": [
       "Jugendherberge"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "aef0761ebc": {
     "text": "Die Norweger sind die größte Ethnie Norwegens, Samen und Finnen sind die bedeutendsten Minderheiten.",

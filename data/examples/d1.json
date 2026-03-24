@@ -1728,7 +1728,10 @@
       "Blockschrift",
       "Zettelchen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "d1134b4a02": {
     "text": "„Ick bin janz abjekommen, Mama. Det hängt bloß noch allens so an mir.“",
@@ -10763,8 +10766,8 @@
       {
         "form": "Sie",
         "lemma": "sie",
-        "pos": "noun",
-        "gloss_hint": "she (pronoun)"
+        "pos": "pronoun",
+        "gloss_hint": null
       },
       {
         "form": "will",
@@ -10777,12 +10780,6 @@
         "lemma": "schon",
         "pos": "particle",
         "gloss_hint": "already"
-      },
-      {
-        "form": "mal",
-        "lemma": "mal",
-        "pos": "noun",
-        "gloss_hint": "moment"
       },
       {
         "form": "los",
@@ -18146,102 +18143,37 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "She",
-        "lemma": "she",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "walked",
-        "lemma": "walk",
+        "form": "durchquerte",
+        "lemma": "durchqueren",
         "pos": "verb",
         "gloss_hint": null
       },
       {
-        "form": "through",
-        "lemma": "durch",
-        "pos": "adverb",
-        "gloss_hint": "done"
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
+        "form": "Bahnhofshalle",
+        "lemma": "Bahnhofshalle",
+        "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "station",
-        "lemma": "station",
-        "pos": "noun",
-        "gloss_hint": "station"
-      },
-      {
-        "form": "hall",
-        "lemma": "hall",
-        "pos": "noun",
-        "gloss_hint": "hall"
-      },
-      {
-        "form": "and",
-        "lemma": "and",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "exited",
-        "lemma": "exit",
+        "form": "verließ",
+        "lemma": "verlassen",
         "pos": "verb",
         "gloss_hint": null
       },
       {
-        "form": "through",
-        "lemma": "durch",
-        "pos": "adverb",
-        "gloss_hint": "done"
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "exit",
-        "lemma": "exit",
+        "form": "Ausgang",
+        "lemma": "Ausgang",
         "pos": "noun",
-        "gloss_hint": "exit"
-      },
-      {
-        "form": "that",
-        "lemma": "that",
-        "pos": "pronoun",
         "gloss_hint": null
       },
       {
-        "form": "led",
-        "lemma": "lead",
+        "form": "führte",
+        "lemma": "führen",
         "pos": "verb",
         "gloss_hint": null
-      },
-      {
-        "form": "to",
-        "lemma": "to",
-        "pos": "particle",
-        "gloss_hint": null
-      },
-      {
-        "form": "the",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "zoo",
-        "lemma": "zoo",
-        "pos": "noun",
-        "gloss_hint": "zoo"
       }
-    ]
+    ],
+    "text_linked": "„Sie [[durchquerte|verbs/durchqueren]] die [[Bahnhofshalle|nouns/Bahnhofshalle]] und [[verließ|verbs/verlassen_weggehen]] sie durch den [[Ausgang|nouns/Ausgang]], der zum Zoo [[führte|verbs/führen]].“"
   },
   "d1a3747f42": {
     "text": "„Die letzten Glocken läuten.“",
@@ -21124,7 +21056,11 @@
         "gloss_hint": "active"
       }
     ],
-    "text_linked": "„Almuth hat [[erfahren|verbs/erfahren#1]], dass viele ihrer [[Freunde|nouns/Freund]] und [[Bekannten|nouns/Bekannter]] als IM [[tätig|adjectives/tätig#1]] waren.“"
+    "text_linked": "„Almuth hat [[erfahren|verbs/erfahren#1]], dass viele ihrer [[Freunde|nouns/Freund]] und [[Bekannten|nouns/Bekannter]] als IM [[tätig|adjectives/tätig#1]] waren.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "cdb13811"
+    }
   },
   "d1bca18682": {
     "text": "Es sollte nämlich jeder seinen hebräischen Sklaven und seine hebräische Sklavin freilassen und keiner sollte mehr seinen hebräischen Stammesbruder als Sklaven halten.",

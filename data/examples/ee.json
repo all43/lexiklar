@@ -2673,12 +2673,12 @@
   },
   "ee1bbc0bab": {
     "text": "„Jhr habt ja immer das liebe Gebet uͤber alle Haͤuſſer hinausgeworffen, habt mir ſo manche Poſtill und Bibelbuch an den Kopf gejagt, wenn ihr mich ob dem Beten ertapptet —“",
-    "translation": "You always threw your dear prayer above all else, and you threw many a postil and Bible book at my head when you caught me praying —",
+    "translation": "You always trumpeted your dear prayer above all the rooftops, and threw many a postil and Bible book at my head when you caught me praying —",
     "source": "wiktionary",
     "lemmas": [
       "ob"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Jhr",
@@ -2712,9 +2712,9 @@
       },
       {
         "form": "liebe",
-        "lemma": "Liebe",
-        "pos": "noun",
-        "gloss_hint": "affection"
+        "lemma": "lieb",
+        "pos": "adjective",
+        "gloss_hint": null
       },
       {
         "form": "Gebet",
@@ -2855,7 +2855,7 @@
         "gloss_hint": "catch"
       }
     ],
-    "text_linked": "„[[Jhr|pronouns/ihr_person]] [[habt|verbs/haben#1]] ja [[immer|adverbs/immer#1]] [[das|pronouns/das_[1]]] [[liebe|nouns/Liebe#1]] [[Gebet|nouns/Gebet#1]] [[uͤber|prepositions/über]] alle Haͤuſſer [[hinausgeworffen|verbs/hinauswerfen#1]], habt [[mir|pronouns/ich]] [[ſo|adverbs/so]] manche Poſtill [[und|conjunctions/und]] Bibelbuch [[an|prepositions/an]] [[den|determiners/der]] [[Kopf|nouns/Kopf#1]] [[gejagt|verbs/jagen#1]], [[wenn|conjunctions/wenn]] [[ihr|pronouns/ihr_person]] [[mich|pronouns/ich]] [[ob|conjunctions/ob]] [[dem|determiners/der]] [[Beten|nouns/Beten]] [[ertapptet|verbs/ertappen#1]] —“"
+    "text_linked": "„[[Jhr|pronouns/ihr_person]] [[habt|verbs/haben#1]] ja [[immer|adverbs/immer#1]] [[das|pronouns/das_[1]]] [[liebe|adjectives/lieb]] [[Gebet|nouns/Gebet#1]] [[uͤber|prepositions/über]] alle Haͤuſſer [[hinausgeworffen|verbs/hinauswerfen#1]], habt [[mir|pronouns/ich]] [[ſo|adverbs/so]] manche Poſtill [[und|conjunctions/und]] Bibelbuch [[an|prepositions/an]] [[den|determiners/der]] [[Kopf|nouns/Kopf#1]] [[gejagt|verbs/jagen#1]], [[wenn|conjunctions/wenn]] [[ihr|pronouns/ihr_person]] [[mich|pronouns/ich]] [[ob|conjunctions/ob]] [[dem|determiners/der]] [[Beten|nouns/Beten]] [[ertapptet|verbs/ertappen#1]] —“"
   },
   "ee1c6fadcb": {
     "text": "„Der Revolution Train erzählt die authentische Geschichte von sechs Jugendlichen, die mit Drogen in Kontakt kommen und vom klaren Nein bis zum ‚goldenen Schuss‘ unterschiedlich reagieren.“",
@@ -4336,7 +4336,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Die [[Geschäfte|nouns/Geschäft]] des [[amerikanischen|adjectives/amerikanisch]] Spielzeugherstellers Mattel laufen recht [[mittelmäßig|adjectives/mittelmäßig]].“"
+    "text_linked": "„Die [[Geschäfte|nouns/Geschäft]] des [[amerikanischen|adjectives/amerikanisch]] Spielzeugherstellers Mattel laufen recht [[mittelmäßig|adjectives/mittelmäßig]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "2394c19c"
+    }
   },
   "ee2a3c1a53": {
     "text": "„Er hat einen Pickel rechts neben der Nase.“",
@@ -11185,12 +11189,6 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Ich",
-        "lemma": "ich",
-        "pos": "noun",
-        "gloss_hint": "ego"
-      },
-      {
         "form": "bin",
         "lemma": "sein",
         "pos": "verb",
@@ -17273,12 +17271,12 @@
   },
   "ee92acc51a": {
     "text": "Das Kloster hatte einige zinsende Güter.",
-    "translation": "The monastery had some interest-bearing properties.",
+    "translation": "The monastery had some properties that owed dues.",
     "source": "wiktionary",
     "lemmas": [
       "zinsen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "claude-sonnet-4-6"
   },
   "ee93fc1bb2": {
     "text": "Die Berührung der Anlage ist verboten.",
@@ -18991,26 +18989,14 @@
   },
   "eea698f818": {
     "text": "„Nachdem der Zoll nun auch rund um das Plateau auf Patrouille ging und Leo und die beiden anderen erwischt worden waren, gaben die Männer aus dem Dorf den Schmuggel endgültig auf.“",
-    "translation": "After the customs office also started patrolling around the outfield and Leo and the other two were caught, the villagers finally gave up smuggling.",
+    "translation": "After the customs office also started patrolling around the plateau, and Leo and the other two were caught, the villagers finally gave up smuggling.",
     "source": "wiktionary",
     "lemmas": [
       "Zoll",
       "Plateau"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
-      {
-        "form": "Nachdem",
-        "lemma": "nachdem",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "der",
-        "lemma": "der",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
       {
         "form": "Zoll",
         "lemma": "Zoll",
@@ -19018,45 +19004,9 @@
         "gloss_hint": "customs office"
       },
       {
-        "form": "nun",
-        "lemma": "nun",
-        "pos": "adverb",
-        "gloss_hint": "now"
-      },
-      {
-        "form": "auch",
-        "lemma": "auch",
-        "pos": "adverb",
-        "gloss_hint": null
-      },
-      {
-        "form": "rund",
-        "lemma": "rund",
-        "pos": "adjective",
-        "gloss_hint": "circular"
-      },
-      {
-        "form": "um",
-        "lemma": "um",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "das",
-        "lemma": "das",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "Plateau",
-        "lemma": "Mesa",
+        "lemma": "Plateau",
         "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "auf",
-        "lemma": "auf",
-        "pos": "preposition",
         "gloss_hint": null
       },
       {
@@ -19072,27 +19022,9 @@
         "gloss_hint": "go"
       },
       {
-        "form": "und",
-        "lemma": "und",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
         "form": "Leo",
         "lemma": "Leo",
         "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "und",
-        "lemma": "und",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "pronoun",
         "gloss_hint": null
       },
       {
@@ -19114,52 +19046,16 @@
         "gloss_hint": "catch"
       },
       {
-        "form": "worden",
-        "lemma": "werden",
-        "pos": "verb",
-        "gloss_hint": "become"
-      },
-      {
-        "form": "waren",
-        "lemma": "sein",
-        "pos": "verb",
-        "gloss_hint": "be"
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "Männer",
         "lemma": "Mann",
         "pos": "noun",
         "gloss_hint": "men"
       },
       {
-        "form": "aus",
-        "lemma": "aus",
-        "pos": "preposition",
-        "gloss_hint": "out of"
-      },
-      {
-        "form": "dem",
-        "lemma": "der",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
         "form": "Dorf",
         "lemma": "Dorf",
         "pos": "noun",
         "gloss_hint": "village"
-      },
-      {
-        "form": "den",
-        "lemma": "der",
-        "pos": "determiner",
-        "gloss_hint": null
       },
       {
         "form": "Schmuggel",
@@ -19171,12 +19067,6 @@
         "form": "endgültig",
         "lemma": "endgültig",
         "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "auf",
-        "lemma": "auf",
-        "pos": "preposition",
         "gloss_hint": null
       }
     ],
@@ -20599,12 +20489,12 @@
   },
   "eeb2e7d7e6": {
     "text": "Wenn ich dir anders lieb bin.",
-    "translation": "Whenever I love you differently.",
+    "translation": "If I am at all dear to you.",
     "source": "wiktionary",
     "lemmas": [
       "anders"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Wenn",
@@ -24660,7 +24550,7 @@
       },
       {
         "form": "ferngesehen",
-        "lemma": "ferngesehen",
+        "lemma": "fernsehen",
         "pos": "verb",
         "gloss_hint": "watched TV"
       },

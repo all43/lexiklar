@@ -2121,7 +2121,8 @@
     ],
     "text_linked": "[[Weil|conjunctions/weil_konjunktion]] [[kein|pronouns/kein#1]] [[Unwetter|nouns/Unwetter]] [[kommt|verbs/kommen#5]], [[können|verbs/können_beherrschen#1]] [[wir|pronouns/wir]] [[im|prepositions/in]] [[Park|nouns/Park#2]] [[spazieren|verbs/spazieren]].",
     "_proofread": {
-      "translation": true
+      "translation": true,
+      "annotations": "a4f98721"
     }
   },
   "9415dc66bd": {
@@ -17141,30 +17142,24 @@
   },
   "94a63a7a83": {
     "text": "„Ich will es genug sein lassen mit meinem Großvater, ob er sich nun polnisch Goljaczek, kaschubisch Koljaiczek oder amerikanisch Joe Colchic nannte.“",
-    "translation": "I want to stop enough with my grandfather, whether he now calls himself Polish Goljaczek, Kashubian Koljaiczek, or American Joe Colchic.",
+    "translation": "I want to leave it at my grandfather, whether he now calls himself Polish Goljaczek, Kashubian Goljaczek, or whatever else.",
     "source": "wiktionary",
     "lemmas": [
       "ob"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Ich",
         "lemma": "ich",
-        "pos": "noun",
-        "gloss_hint": "I"
+        "pos": "pronoun",
+        "gloss_hint": null
       },
       {
         "form": "will",
         "lemma": "wollen",
         "pos": "verb",
         "gloss_hint": "want"
-      },
-      {
-        "form": "es",
-        "lemma": "es",
-        "pos": "noun",
-        "gloss_hint": "it"
       },
       {
         "form": "genug",
@@ -17269,7 +17264,10 @@
         "gloss_hint": "Colchic"
       }
     ],
-    "text_linked": "„Ich [[will|verbs/wollen#2]] [[es|nouns/es]] [[genug|pronouns/genug#1]] [[sein|verbs/sein#2]] [[lassen|verbs/lassen#1]] [[mit|prepositions/mit#1]] meinem [[Großvater|nouns/Großvater#1]], [[ob|conjunctions/ob#1]] er sich [[nun|adverbs/nun#1]] [[polnisch|adjectives/polnisch#1]] Goljaczek, kaschubisch Koljaiczek oder [[amerikanisch|adjectives/amerikanisch#1]] Joe Colchic nannte.“"
+    "text_linked": "„[[Ich|pronouns/ich]] [[will|verbs/wollen#2]] es [[genug|pronouns/genug#1]] [[sein|verbs/sein#2]] [[lassen|verbs/lassen#1]] [[mit|prepositions/mit#1]] meinem [[Großvater|nouns/Großvater#1]], [[ob|conjunctions/ob#1]] er sich [[nun|adverbs/nun#1]] [[polnisch|adjectives/polnisch#1]] Goljaczek, kaschubisch Koljaiczek oder [[amerikanisch|adjectives/amerikanisch#1]] Joe Colchic nannte.“",
+    "_proofread": {
+      "translation": true
+    }
   },
   "94a678e0e3": {
     "text": "Wir sollten jetzt endlich zur Tagesordnung übergehen.",
