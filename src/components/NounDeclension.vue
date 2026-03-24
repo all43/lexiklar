@@ -37,11 +37,17 @@
           <td class="decl-case">{{ c.label }}</td>
           <td v-if="hasSingular" class="decl-form" :class="{ 'decl-form--dim': word.is_plural_only }">
             <span :class="`decl-article gender-${genderClass}`">{{ singularArticles[c.key] }}</span>
-            {{ word.case_forms.singular[c.key] || '—' }}
+            <template v-if="isNDeclension && nDeclEnding(c.key)">
+              <span class="decl-stem">{{ nDeclStem(c.key) }}</span><span class="decl-ending">{{ nDeclEnding(c.key) }}</span>
+            </template>
+            <template v-else>{{ word.case_forms.singular[c.key] || '—' }}</template>
           </td>
           <td class="decl-form" :class="{ 'decl-form--dim': word.is_singular_only }">
             <span v-if="hasPlural" class="decl-article decl-article--plural">{{ pluralArticles[c.key] }}</span>
-            <span v-if="hasPlural">{{ word.case_forms.plural[c.key] || '—' }}</span>
+            <template v-if="hasPlural && umlautSplit(c.key)">
+              {{ umlautSplit(c.key)!.before }}<span class="decl-umlaut">{{ umlautSplit(c.key)!.umlaut }}</span>{{ umlautSplit(c.key)!.after }}
+            </template>
+            <span v-else-if="hasPlural">{{ word.case_forms.plural[c.key] || '—' }}</span>
             <span v-else class="decl-no-plural">—</span>
           </td>
         </tr>
@@ -53,6 +59,7 @@
 <script lang="ts">
 import { defineComponent, type PropType } from "vue";
 import { t } from "../js/i18n.js";
+import { splitUmlaut, type UmlautSplit } from "../utils/umlaut.js";
 import type { NounWord, CaseRow } from "../../types/word.js";
 
 type Gender = "M" | "F" | "N";
@@ -110,5 +117,41 @@ export default defineComponent({
       return rule.is_exception ? `${t("noun.exception")}${desc}` : desc;
     },
   },
+  methods: {
+    nDeclEnding(caseKey: "nom" | "acc" | "dat" | "gen"): string {
+      const nom = this.word.case_forms?.singular?.nom;
+      const form = this.word.case_forms?.singular?.[caseKey];
+      if (!nom || !form || !form.startsWith(nom)) return "";
+      return form.slice(nom.length);
+    },
+    nDeclStem(caseKey: "nom" | "acc" | "dat" | "gen"): string {
+      const nom = this.word.case_forms?.singular?.nom || "";
+      const form = this.word.case_forms?.singular?.[caseKey] || "";
+      if (!form.startsWith(nom)) return form;
+      return nom;
+    },
+    umlautSplit(caseKey: "nom" | "acc" | "dat" | "gen"): UmlautSplit | null {
+      const singNom = this.word.case_forms?.singular?.nom;
+      const pluralForm = this.word.case_forms?.plural?.[caseKey];
+      if (!singNom || !pluralForm) return null;
+      return splitUmlaut(singNom, pluralForm);
+    },
+  },
 });
 </script>
+
+<style scoped>
+.decl-ending {
+  color: var(--color-rule-match);
+  font-weight: 600;
+}
+
+.decl-stem {
+  font-weight: 500;
+}
+
+.decl-umlaut {
+  color: var(--color-vowel-change);
+  font-weight: 600;
+}
+</style>

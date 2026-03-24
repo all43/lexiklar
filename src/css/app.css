@@ -11,10 +11,20 @@
   margin-bottom: 0;
 }
 
+/* Semantic color tokens */
+:root {
+  --color-gender-m: #2196f3;   /* blue — masculine */
+  --color-gender-f: #e91e63;   /* pink — feminine */
+  --color-gender-n: #4caf50;   /* green — neuter */
+  --color-rule-match: #4caf50; /* green — rule confirmed */
+  --color-rule-exception: #ff9800; /* orange — rule exception */
+  --color-vowel-change: #d32f2f; /* red — umlaut / vowel shift */
+}
+
 /* Gender color coding for articles (der/die/das) */
-.gender-m { color: #2196f3 !important; } /* blue — masculine */
-.gender-f { color: #e91e63 !important; } /* pink — feminine */
-.gender-n { color: #4caf50 !important; } /* green — neuter */
+.gender-m { color: var(--color-gender-m) !important; }
+.gender-f { color: var(--color-gender-f) !important; }
+.gender-n { color: var(--color-gender-n) !important; }
 
 /* IPA pronunciation text */
 .ipa {
@@ -333,10 +343,10 @@ mark.example-highlight {
   margin-bottom: 0;
 }
 .noun-rule-match {
-  color: #4caf50;
+  color: var(--color-rule-match);
 }
 .noun-rule-exception {
-  color: #ff9800;
+  color: var(--color-rule-exception);
 }
 .noun-rule-note {
   color: var(--f7-list-item-footer-text-color, #8e8e93);
@@ -427,6 +437,9 @@ mark.example-highlight {
 }
 .dark .noun-rule-exception {
   color: #ffa726;
+}
+.dark {
+  --color-vowel-change: #ef5350;
 }
 .dark .swipe-handler {
   background: rgba(255, 255, 255, 0.2);
