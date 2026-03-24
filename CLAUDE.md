@@ -103,6 +103,7 @@ download → transform → enrich → translate → build-index
 | `scripts/lib/corpus.ts` | — | Shared corpus loaders (`loadLeipzigFPM`, `loadSubtlexFPM`, `loadOpensubtitlesFPM`, `toZipf`, `combineZipf`, `loadAllCorpora`) |
 | `scripts/generate-synonyms-en.ts` | — | LLM-generates English search synonyms (`synonyms_en`) for reverse lookup |
 | `scripts/benchmark-frequency.ts` | — | Benchmark corpus weights against LLM reference scores (Spearman correlation, grid search) |
+| `scripts/enrich-collocations.ts` | `npm run enrich-collocations` | Extracts contextual noun collocations from adjective examples for condensed declension view |
 | `scripts/publish-update.ts` | — | Generates OTA update manifest + SQL patches by diffing old/new DBs (see OTA Updates section) |
 
 **IMPORTANT: Do not run a full transform (`npm run transform`) just to re-process a few words.** Use `--words` to scope to specific entries — a full transform touches thousands of files and causes massive git churn:
@@ -306,15 +307,18 @@ Regular adjectives store only stem + flag. Full forms are computed at runtime us
   "umlaut_in_comparison": false,
   "declension_stem": "schnell",
   "declension_regular": true,
+  "collocation_nouns": { "M": "Zug", "F": "Nummer", "N": "Ergebnis", "Pl": "Züge" },
   "senses": ["..."],
   "_meta": {"..."},
   "zipf": 5.21
 }
 ```
 
+- `collocation_nouns` — contextual nouns for the condensed declension view, one per gender. Values are `string` (noun lemma) or `null` (gender excluded, e.g. masculine for "schwanger"). Written by `enrich-collocations.ts` from example annotations; can be overridden via `_overrides.collocation_nouns`. Falls back to neutral nouns (Tag/Sache/Ergebnis/Dinge) at runtime when missing.
+
 ### Abbreviation / Contraction
 
-Abbreviations and contractions use `pos: "abbreviation"` and live in `data/words/abbreviations/`. Wiktionary encodes both as `abbrev` POS or `pos_title: "Kontraktion"`. Contractions (`im`, `am`, `zum`, etc.) store the contracted form as the lemma.
+Abbreviations and contractions use `pos: "abbreviation"` and live in `data/words/abbreviations/`. Wiktionary encodes both as `abbrev` POS or `pos_title: "Kontraktion"`. Contractions (`im`, `am`, `zum`, etc.) store the contracted form as the lemma. Nouns tagged with `abbreviation`/`abbrev` in the source (e.g. `RUF`, `DIA`) are reclassified to `abbrev` POS during transform to avoid case-insensitive filename collisions with regular nouns.
 
 ```json
 {
@@ -532,6 +536,7 @@ The transform step preserves manually-added data when re-running:
 - **`_meta.source_hash`** — if source data hasn't changed, the entry is skipped entirely
 - **`zipf`** — added by the enrich step, preserved by transform's merge logic
 - **`plural_dominant`** — added by the enrich step, preserved by transform's merge logic
+- **`collocation_nouns`** — added by `enrich-collocations.ts`, preserved by transform's merge logic. Can be overridden via `_overrides.collocation_nouns` (deep-merged one level)
 - **`gloss_en` / `gloss_en_full` / `synonyms_en`** — LLM translations and curated English synonyms in senses, preserved by position-matching merge. Corresponding `*_model` fields (`gloss_en_model`, `gloss_en_full_model`, `synonyms_en_model`) are also preserved
 - **`data/examples/`** — existing entries with translations and annotations are preserved. Transform keeps the full example object when `translation` is truthy, so both `translation` and `annotations` survive re-generation.
 - **Transform write skip** — word files are not rewritten if content is identical (ignoring `generated_at`). Prevents spurious git churn on incremental re-runs.
