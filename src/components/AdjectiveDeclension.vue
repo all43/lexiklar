@@ -35,31 +35,31 @@
           <div class="adj-cond-rule">
             <span class="adj-cond-label">{{ t('adj.nomSg') }} → -e</span>
             <div class="adj-cond-examples">
-              <span v-if="nouns.M">der <span class="decl-stem">{{ stem }}</span><span class="decl-ending">e</span> {{ nouns.M }}</span>
+              <span v-if="nouns.M"><span class="gender-m">der</span> <span class="decl-stem">{{ stem }}</span><span class="decl-ending">e</span> {{ nouns.M }}</span>
               <span v-if="nouns.M && nouns.F" class="adj-cond-sep">·</span>
-              <span v-if="nouns.F">die <span class="decl-stem">{{ stem }}</span><span class="decl-ending">e</span> {{ nouns.F }}</span>
+              <span v-if="nouns.F"><span class="gender-f">die</span> <span class="decl-stem">{{ stem }}</span><span class="decl-ending">e</span> {{ nouns.F }}</span>
               <span v-if="(nouns.M || nouns.F) && nouns.N" class="adj-cond-sep">·</span>
-              <span v-if="nouns.N">das <span class="decl-stem">{{ stem }}</span><span class="decl-ending">e</span> {{ nouns.N }}</span>
+              <span v-if="nouns.N"><span class="gender-n">das</span> <span class="decl-stem">{{ stem }}</span><span class="decl-ending">e</span> {{ nouns.N }}</span>
             </div>
           </div>
 
           <div v-if="nouns.M" class="adj-cond-rule">
             <span class="adj-cond-label">{{ t('adj.accSgMascEn') }}</span>
             <div class="adj-cond-examples">
-              <span>den <span class="decl-stem">{{ stem }}</span><span class="decl-ending">en</span> {{ nouns.M }}</span>
+              <span><span class="gender-m">den</span> <span class="decl-stem">{{ stem }}</span><span class="decl-ending">en</span> {{ nouns.M }}</span>
               <span v-if="nouns.F" class="adj-cond-sep">·</span>
-              <span v-if="nouns.F">die <span class="decl-stem">{{ stem }}</span><span class="decl-ending">e</span> {{ nouns.F }}</span>
+              <span v-if="nouns.F"><span class="gender-f">die</span> <span class="decl-stem">{{ stem }}</span><span class="decl-ending">e</span> {{ nouns.F }}</span>
               <span v-if="nouns.N" class="adj-cond-sep">·</span>
-              <span v-if="nouns.N">das <span class="decl-stem">{{ stem }}</span><span class="decl-ending">e</span> {{ nouns.N }}</span>
+              <span v-if="nouns.N"><span class="gender-n">das</span> <span class="decl-stem">{{ stem }}</span><span class="decl-ending">e</span> {{ nouns.N }}</span>
             </div>
           </div>
 
           <div class="adj-cond-rule">
             <span class="adj-cond-label">{{ t('adj.restAlwaysEn') }}</span>
             <div class="adj-cond-examples">
-              <span v-if="nouns.M">dem <span class="decl-stem">{{ stem }}</span><span class="decl-ending">en</span> {{ nouns.M }}</span>
+              <span v-if="nouns.M"><span class="gender-m">dem</span> <span class="decl-stem">{{ stem }}</span><span class="decl-ending">en</span> {{ nouns.M }}</span>
               <span v-if="nouns.M && nouns.F" class="adj-cond-sep">·</span>
-              <span v-if="nouns.F">der <span class="decl-stem">{{ stem }}</span><span class="decl-ending">en</span> {{ nouns.F }}</span>
+              <span v-if="nouns.F"><span class="gender-f">der</span> <span class="decl-stem">{{ stem }}</span><span class="decl-ending">en</span> {{ nouns.F }}</span>
               <span v-if="(nouns.M || nouns.F) && nouns.Pl" class="adj-cond-sep">·</span>
               <span v-if="nouns.Pl">die <span class="decl-stem">{{ stem }}</span><span class="decl-ending">en</span> {{ nouns.Pl }}</span>
             </div>
@@ -79,14 +79,14 @@
           <div v-if="nouns.M" class="adj-cond-rule">
             <span class="adj-cond-label">{{ t('adj.mascNom') }} → -er</span>
             <div class="adj-cond-examples">
-              <span>ein <span class="decl-stem">{{ stem }}</span><span class="decl-ending">er</span> {{ nouns.M }}</span>
+              <span><span class="gender-m">ein</span> <span class="decl-stem">{{ stem }}</span><span class="decl-ending">er</span> {{ nouns.M }}</span>
             </div>
           </div>
 
           <div v-if="nouns.N" class="adj-cond-rule">
             <span class="adj-cond-label">{{ t('adj.neutNomAcc') }} → -es</span>
             <div class="adj-cond-examples">
-              <span>ein <span class="decl-stem">{{ stem }}</span><span class="decl-ending">es</span> {{ nouns.N }}</span>
+              <span><span class="gender-n">ein</span> <span class="decl-stem">{{ stem }}</span><span class="decl-ending">es</span> {{ nouns.N }}</span>
             </div>
           </div>
 
@@ -99,21 +99,21 @@
 
           <div class="adj-cond-rule">
             <div class="adj-cond-examples">
-              <span v-if="nouns.M"><span class="decl-stem">{{ stem }}</span><span class="decl-ending">er</span> {{ nouns.M }}</span>
+              <span v-if="nouns.M"><span class="decl-stem">{{ stem }}</span><span class="decl-ending">er</span> <span class="gender-m">{{ nouns.M }}</span></span>
               <span v-if="nouns.M && nouns.F" class="adj-cond-sep">·</span>
-              <span v-if="nouns.F"><span class="decl-stem">{{ stem }}</span><span class="decl-ending">e</span> {{ nouns.F }}</span>
+              <span v-if="nouns.F"><span class="decl-stem">{{ stem }}</span><span class="decl-ending">e</span> <span class="gender-f">{{ nouns.F }}</span></span>
               <span v-if="(nouns.M || nouns.F) && nouns.N" class="adj-cond-sep">·</span>
-              <span v-if="nouns.N"><span class="decl-stem">{{ stem }}</span><span class="decl-ending">es</span> {{ nouns.N }}</span>
+              <span v-if="nouns.N"><span class="decl-stem">{{ stem }}</span><span class="decl-ending">es</span> <span class="gender-n">{{ nouns.N }}</span></span>
             </div>
           </div>
 
           <div class="adj-cond-rule">
             <div class="adj-cond-examples">
-              <span v-if="nouns.M"><span class="decl-stem">{{ stem }}</span><span class="decl-ending">en</span> {{ nouns.M }} <span class="adj-cond-case">(Akk.)</span></span>
+              <span v-if="nouns.M"><span class="decl-stem">{{ stem }}</span><span class="decl-ending">en</span> <span class="gender-m">{{ nouns.M }}</span> <span class="adj-cond-case">(Akk.)</span></span>
               <span v-if="nouns.M && nouns.N" class="adj-cond-sep">·</span>
-              <span v-if="nouns.N"><span class="decl-stem">{{ stem }}</span><span class="decl-ending">em</span> {{ nouns.N }} <span class="adj-cond-case">(Dat.)</span></span>
+              <span v-if="nouns.N"><span class="decl-stem">{{ stem }}</span><span class="decl-ending">em</span> <span class="gender-n">{{ nouns.N }}</span> <span class="adj-cond-case">(Dat.)</span></span>
               <span v-if="(nouns.M || nouns.N) && nouns.F" class="adj-cond-sep">·</span>
-              <span v-if="nouns.F"><span class="decl-stem">{{ stem }}</span><span class="decl-ending">er</span> {{ nouns.F }} <span class="adj-cond-case">(Dat.)</span></span>
+              <span v-if="nouns.F"><span class="decl-stem">{{ stem }}</span><span class="decl-ending">er</span> <span class="gender-f">{{ nouns.F }}</span> <span class="adj-cond-case">(Dat.)</span></span>
             </div>
           </div>
 
@@ -134,9 +134,9 @@
           <thead>
             <tr>
               <th class="decl-case-header"></th>
-              <th class="decl-num-header">M</th>
-              <th class="decl-num-header">F</th>
-              <th class="decl-num-header">N</th>
+              <th class="decl-num-header gender-m">M</th>
+              <th class="decl-num-header gender-f">F</th>
+              <th class="decl-num-header gender-n">N</th>
               <th class="decl-num-header">Pl.</th>
             </tr>
           </thead>
