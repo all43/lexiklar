@@ -448,7 +448,7 @@ mark.example-highlight {
 /* Bottom search bar: flip subnavbar from top to bottom */
 .searchbar-bottom-toolbar {
   top: auto !important;
-  bottom: var(--f7-tabbar-icons-height);
+  bottom: calc(var(--f7-tabbar-icons-height) + var(--f7-safe-area-bottom));
 }
 /* Extra padding in iOS liquid glass mode where tab bar floats */
 .ios .searchbar-bottom-toolbar {
