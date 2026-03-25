@@ -464,20 +464,47 @@ interface UpdateResult {
  * @param {Object} update - Result from checkForUpdates() with available: true
  * @returns {{ ok: boolean, error?: string }}
  */
-export async function applyUpdate(update: UpdateInfo): Promise<UpdateResult> {
+export async function applyUpdate(
+  update: UpdateInfo,
+  onProgress?: (loaded: number, total: number) => void,
+): Promise<UpdateResult> {
   try {
     const resp = await fetch(update.url!);
     if (!resp.ok) {
       return { ok: false, error: `Download failed: ${resp.status}` };
     }
 
+    const total = update.size || Number(resp.headers.get("content-length")) || 0;
+
     if (update.type === "patch") {
       // Apply SQL patch to in-memory DB
       const patchSql = await resp.text();
+      if (onProgress && total) onProgress(total, total);
       await send("exec_batch", { sql: patchSql });
     } else {
-      // Full DB replacement — deserialize new bytes
-      const bytes = await resp.arrayBuffer();
+      // Full DB replacement — stream with progress tracking
+      let bytes: ArrayBuffer;
+      if (onProgress && total && resp.body) {
+        const reader = resp.body.getReader();
+        const chunks: Uint8Array[] = [];
+        let loaded = 0;
+        for (;;) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          chunks.push(value);
+          loaded += value.byteLength;
+          onProgress(loaded, total);
+        }
+        const buf = new Uint8Array(loaded);
+        let offset = 0;
+        for (const chunk of chunks) {
+          buf.set(chunk, offset);
+          offset += chunk.byteLength;
+        }
+        bytes = buf.buffer;
+      } else {
+        bytes = await resp.arrayBuffer();
+      }
       await send("init", { bytes }, [bytes]);
     }
 

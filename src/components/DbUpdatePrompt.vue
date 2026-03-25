@@ -6,7 +6,10 @@
       <button class="update-toast-dismiss" @click="dismiss()">{{ t('dbUpdate.later') }}</button>
     </template>
     <template v-else-if="state === 'applying'">
-      <span>{{ t('dbUpdate.applying') }}</span>
+      <span style="flex: 1">
+        {{ t('dbUpdate.applying') }}
+        <f7-progressbar :progress="progress" />
+      </span>
     </template>
     <template v-else-if="state === 'done'">
       <span>{{ t('dbUpdate.done') }}</span>
@@ -30,6 +33,7 @@ type State = "available" | "applying" | "done" | "error";
 export default defineComponent({
   setup() {
     const state = ref<State>("available");
+    const progress = ref(0);
     const dismissed = ref(false);
 
     const visible = computed(() => {
@@ -57,7 +61,10 @@ export default defineComponent({
       const update = pendingDbUpdate.value;
       if (!update) return;
       state.value = "applying";
-      const result = await applyUpdate(update);
+      progress.value = 0;
+      const result = await applyUpdate(update, (loaded, total) => {
+        progress.value = total ? Math.round((loaded / total) * 100) : 0;
+      });
       if (result.ok) {
         state.value = "done";
       } else {
@@ -76,7 +83,7 @@ export default defineComponent({
       window.location.reload();
     }
 
-    return { visible, state, sizeLabel, applyNow, dismiss, reload, t };
+    return { visible, state, progress, sizeLabel, applyNow, dismiss, reload, t };
   },
 });
 </script>

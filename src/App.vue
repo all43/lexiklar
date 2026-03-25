@@ -6,9 +6,11 @@
     <f7-views tabs>
       <!-- Tabbar at the bottom -->
       <f7-toolbar tabbar icons bottom>
-        <f7-link tab-link="#tab-search" tab-link-active icon-f7="search" :text="t('tab.search')" />
-        <f7-link tab-link="#tab-favorites" icon-f7="star" :text="t('tab.favorites')" />
-        <f7-link tab-link="#tab-settings" icon-f7="gear" :text="t('tab.settings')" />
+        <f7-toolbar-pane>
+          <f7-link tab-link="#tab-search" tab-link-active icon-f7="search" :text="t('tab.search')" />
+          <f7-link tab-link="#tab-favorites" icon-f7="star" :text="t('tab.favorites')" />
+          <f7-link tab-link="#tab-settings" icon-f7="gear" :text="t('tab.settings')" />
+        </f7-toolbar-pane>
       </f7-toolbar>
 
       <!-- Tab views — each has its own navigation stack -->

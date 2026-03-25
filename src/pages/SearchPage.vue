@@ -1,10 +1,10 @@
 <template>
-  <f7-page name="search" :with-subnavbar="!searchBarBottom" @page:tabshow="onPageVisible" @page:afterin="onPageVisible">
+  <f7-page name="search" :with-subnavbar="searchBarMode === 'subnavbar'" @page:tabshow="onPageVisible" @page:afterin="onPageVisible">
     <f7-navbar title="Lexiklar">
-      <f7-subnavbar v-if="!searchBarBottom" :inner="false">
+      <f7-subnavbar v-if="searchBarMode === 'subnavbar'" :inner="false">
         <f7-searchbar
           custom-search
-          :disable-button="false"
+          :disable-button-text="t('search.cancel')"
           :placeholder="t('search.placeholder')"
           @searchbar:search="onSearch"
           @searchbar:clear="onClear"
@@ -139,21 +139,21 @@
       <f7-preloader />
     </f7-block>
 
-    <f7-toolbar v-if="searchBarBottom" position="bottom" :inner="false" class="searchbar-bottom-toolbar">
+    <f7-subnavbar v-if="searchBarMode === 'bottom'" :inner="false" class="searchbar-bottom-toolbar">
       <f7-searchbar
         custom-search
-        :disable-button="false"
+        :disable-button-text="t('search.cancel')"
         :placeholder="t('search.placeholder')"
         @searchbar:search="onSearch"
         @searchbar:clear="onClear"
       />
-    </f7-toolbar>
+    </f7-subnavbar>
   </f7-page>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { f7, theme } from "framework7-vue";
+import { f7, theme as f7theme } from "framework7-vue";
 import { t } from "../js/i18n.js";
 import { submitReport } from "../utils/report.js";
 import { SHOW_ARTICLES_KEY, SEARCH_BAR_POSITION_KEY, type SearchBarPosition } from "./SettingsPage.vue";
@@ -228,11 +228,11 @@ export default defineComponent({
 
   computed: {
     t() { return t; },
-    searchBarBottom(): boolean {
-      if (this.searchBarPosition === "bottom") return true;
-      if (this.searchBarPosition === "top") return false;
-      // auto: bottom on iOS 26+
-      return isIOS26Plus();
+    searchBarMode(): "subnavbar" | "bottom" {
+      if (this.searchBarPosition === "bottom") return "bottom";
+      if (this.searchBarPosition === "top") return "subnavbar";
+      // auto: bottom on iOS 26+ (above floating glass tab bar), subnavbar elsewhere
+      return isIOS26Plus() ? "bottom" : "subnavbar";
     },
     visiblePhrases(): SearchResult[] {
       if (this.phrasesExpanded) return this.phraseMatches;
@@ -250,7 +250,7 @@ export default defineComponent({
         renderExternal: this.renderExternal,
         height: (item: SearchResultWithForm) => {
           const hasSub = (item.glossEn?.length ?? 0) > 0 || !!item.matchedForm;
-          return theme.ios ? (hasSub ? 63 : 44) : (hasSub ? 69 : 48);
+          return f7theme.ios ? (hasSub ? 63 : 44) : (hasSub ? 69 : 48);
         },
       };
     },
@@ -264,8 +264,9 @@ export default defineComponent({
       this.phraseTerms = loadPhraseTerms();
       if (!this.searchQuery) this.loadHomeScreen();
     },
-    onSearch(_searchbar: unknown, query: string) {
-      this.searchQuery = query || "";
+    onSearch(searchbarOrQuery: unknown, query?: string) {
+      // Called either as (searchbar, query) from f7-searchbar or (query) from App-level event
+      this.searchQuery = (typeof searchbarOrQuery === "string" ? searchbarOrQuery : query) || "";
     },
     onClear() {
       this.searchQuery = "";
@@ -518,6 +519,7 @@ export default defineComponent({
       this.loading = false;
     },
   },
+
 
   watch: {
     searchQuery(q: string) {

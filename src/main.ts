@@ -37,6 +37,12 @@ await initStorage();
 await initDevice();
 await initDb();
 
+// Strip query params before F7 browser history sees them
+// (query params cause F7 to push a duplicate page on initial load)
+if (window.location.search) {
+  window.history.replaceState(null, "", window.location.pathname);
+}
+
 const app = createApp(App);
 registerComponents(app);
 app.mount("#app");

@@ -445,9 +445,27 @@ mark.example-highlight {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Bottom search bar: position above the tab bar */
+/* Bottom search bar: flip subnavbar from top to bottom */
 .searchbar-bottom-toolbar {
-  bottom: var(--f7-tabbar-icons-height, 56px) !important;
+  top: auto !important;
+  bottom: var(--f7-tabbar-icons-height);
+}
+/* Extra padding in iOS liquid glass mode where tab bar floats */
+.ios .searchbar-bottom-toolbar {
+  padding: 8px 0;
+  height: auto !important;
+}
+/* Backdrop: escape subnavbar to cover viewport, clip away bottom bar area */
+.searchbar-bottom-toolbar > .searchbar-backdrop {
+  position: fixed;
+  inset: 0;
+  height: auto;
+  clip-path: inset(0 0 calc(var(--f7-tabbar-icons-height) + var(--f7-subnavbar-height)) 0);
+}
+/* Undo F7's subnavbar top offset when searchbar is at bottom */
+.page:has(.searchbar-bottom-toolbar) > .page-content {
+  --f7-page-subnavbar-offset: 0px;
+  --f7-page-content-extra-padding-bottom: var(--f7-tabbar-icons-height);
 }
 
 /* Shared secondary/muted text color */
