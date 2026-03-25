@@ -1,5 +1,5 @@
 <template>
-  <f7-page name="search" :with-subnavbar="searchBarMode === 'subnavbar'" @page:tabshow="onPageVisible" @page:afterin="onPageVisible">
+  <f7-page name="search" :with-subnavbar="searchBarMode === 'subnavbar'" :class="{ 'page-searchbar-bottom': searchBarMode === 'bottom' }" @page:tabshow="onPageVisible" @page:afterin="onPageVisible">
     <f7-navbar title="Lexiklar">
       <f7-subnavbar v-if="searchBarMode === 'subnavbar'" :inner="false">
         <f7-searchbar

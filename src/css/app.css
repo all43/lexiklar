@@ -458,12 +458,15 @@ mark.example-highlight {
 /* Backdrop: escape subnavbar to cover viewport, clip away bottom bar area */
 .searchbar-bottom-toolbar > .searchbar-backdrop {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: auto;
   clip-path: inset(0 0 calc(var(--f7-tabbar-icons-height) + var(--f7-subnavbar-height)) 0);
 }
-/* Undo F7's subnavbar top offset when searchbar is at bottom */
-.page:has(.searchbar-bottom-toolbar) > .page-content {
+/* Zero out subnavbar top offset when searchbar is at bottom, add bottom padding */
+.page.page-searchbar-bottom > .page-content {
   --f7-page-subnavbar-offset: 0px;
   --f7-page-content-extra-padding-bottom: var(--f7-tabbar-icons-height);
 }
