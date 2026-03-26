@@ -196,37 +196,36 @@ function ensureWorker(): void {
 export async function initDb(): Promise<void> {
   ensureWorker();
 
-  // Step 1: Determine if we need to fetch the DB
-  const resp = await fetch("/data/db-version.txt");
-  const bundledVersion = (await resp.text()).trim();
-  const cachedVersion = await cacheVersionRead();
-
   let bytes: ArrayBuffer | null = null;
 
-  if (cachedVersion === bundledVersion) {
-    // Step 2a: Read from Cache API (no network for .db)
-    bytes = await cacheRead();
-  }
+  // Step 1: Try bundled DB (native builds — static asset)
+  // SPA hosts return 200 with HTML for missing files — check content-type.
+  const dbResp = await fetch("/data/lexiklar.db");
+  const ct = dbResp.headers.get("content-type") || "";
+  if (dbResp.ok && !ct.includes("text/html")) {
+    // Native build — DB is bundled. Use db-version.txt for cache validation.
+    const versionResp = await fetch("/data/db-version.txt");
+    const bundledVersion = (await versionResp.text()).trim();
+    const cachedVersion = await cacheVersionRead();
 
-  if (!bytes) {
-    // Step 2b: Try static assets (works on native, fails on Cloudflare Pages)
-    // SPA hosts return 200 with HTML for missing files — check content-type.
-    const dbResp = await fetch("/data/lexiklar.db");
-    const ct = dbResp.headers.get("content-type") || "";
-    if (dbResp.ok && !ct.includes("text/html")) {
-      bytes = await dbResp.arrayBuffer();
+    if (cachedVersion === bundledVersion) {
+      bytes = await cacheRead();
     }
+    if (!bytes) {
+      bytes = await dbResp.arrayBuffer();
+      // Cache for next time
+      cacheWrite(bytes.slice(0)).then(() => cacheVersionWrite(bundledVersion));
+    }
+  } else {
+    // Step 2: Web/PWA — no bundled DB. Try Cache API directly.
+    // Version validation happens later via OTA update check.
+    bytes = await cacheRead();
   }
 
   if (!bytes) {
     // DB not bundled and not cached — user confirmation needed before download
     throw new Error("download-needed");
   }
-
-  // Cache for next time (fire-and-forget)
-  cacheWrite(bytes.slice(0)).then(() =>
-    cacheVersionWrite(bundledVersion),
-  );
 
   // Step 3: Send bytes to worker for deserialization
   await send("init", { bytes }, [bytes]);
