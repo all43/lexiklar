@@ -27,7 +27,7 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: March 2025</p>
+  <p class="updated">Last updated: March 2026</p>
 
   <p>Lexiklar is a fully offline German dictionary app. This policy describes what data the app handles and how.</p>
 
@@ -46,11 +46,21 @@
   <h2>No analytics or advertising</h2>
   <p>The app contains no analytics, crash reporting, advertising SDKs, or third-party tracking of any kind.</p>
 
+  <h2>Data reports</h2>
+  <p>The app includes optional "Report missing word" and "Report incorrect data" features. When you submit a report:</p>
+  <ul>
+    <li>The word name, any details you type, and the app/database version are sent to a server operated by us (Cloudflare Workers).</li>
+    <li>Reports are stored privately and are only visible to the app developers.</li>
+    <li>No personal information (name, email, IP address) is stored with your report.</li>
+    <li>Your IP address is temporarily processed for rate limiting and is not stored permanently.</li>
+  </ul>
+  <p>Reports are voluntary and the app functions fully without them.</p>
+
   <h2>Dictionary updates</h2>
-  <p>The app includes a voluntary "Check for updates" feature in Settings. When you use it, the app makes a network request to GitHub servers to check for a new dictionary version. This request may cause your IP address to be logged by GitHub as part of their standard server logging. No personal data is sent by Lexiklar in this request. This feature is entirely opt-in and the app functions fully without it.</p>
+  <p>The app periodically checks for dictionary updates by making a network request to our CDN (Cloudflare R2). On the web version, the dictionary database (~50 MB) is downloaded on first use after your confirmation. These requests may cause your IP address to be logged by Cloudflare as part of their standard server logging. No personal data is sent by Lexiklar in these requests.</p>
 
   <h2>Dictionary data</h2>
-  <p>The dictionary content is bundled with the app and stored entirely on your device. It is derived from German Wiktionary (CC BY-SA 4.0) and frequency corpora. No user data is associated with or transmitted alongside this data.</p>
+  <p>The dictionary content is stored entirely on your device after the initial download. It is derived from German Wiktionary (CC BY-SA 4.0) and frequency corpora. No user data is associated with or transmitted alongside this data.</p>
 
   <h2>Contact</h2>
   <p>For questions or concerns, contact: <a href="mailto:privacy@malikov.dev">privacy@malikov.dev</a></p>

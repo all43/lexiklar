@@ -1,26 +1,22 @@
 /**
- * Cloudflare Worker — Lexiklar Data Report Proxy
+ * Cloudflare Worker — Lexiklar Data Report Store
  *
- * Receives user reports (missing words, incorrect data) and creates
- * GitHub Issues in the lexiklar repository.
- *
- * Secrets (set via `wrangler secret put`):
- *   GITHUB_TOKEN  — GitHub PAT with `repo` scope
- *
- * Environment variables (set in wrangler.toml):
- *   GITHUB_OWNER  — e.g. "evgeniimalikov"
- *   GITHUB_REPO   — e.g. "lexiklar"
+ * Receives user reports (missing words, incorrect data) and stores
+ * them privately in Cloudflare KV.
  *
  * Deploy:
- *   npx wrangler deploy workers/report-worker.js --name lexiklar-reports
+ *   cd workers && npx wrangler deploy
  *
- * Usage:
+ * View reports:
+ *   GET /reports (returns all stored reports as JSON)
+ *
+ * Submit report:
  *   POST /report
  *   {
  *     "type": "missing_word" | "incorrect_data",
  *     "word": "Katze",
  *     "details": "optional description",
- *     "file": "nouns/Tisch",        // for incorrect_data
+ *     "file": "nouns/Tisch",
  *     "appVersion": "1.0.0",
  *     "dbVersion": "56c3818c"
  *   }
@@ -28,7 +24,7 @@
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
@@ -56,6 +52,19 @@ export default {
     }
 
     const url = new URL(request.url);
+
+    // List reports (for admin review)
+    if (url.pathname === "/reports" && request.method === "GET") {
+      const list = await env.RATE_LIMITS.list({ prefix: "report:" });
+      const reports = [];
+      for (const key of list.keys) {
+        const value = await env.RATE_LIMITS.get(key.name, "json");
+        if (value) reports.push(value);
+      }
+      reports.sort((a, b) => (b.ts || 0) - (a.ts || 0));
+      return Response.json(reports, { headers: CORS_HEADERS });
+    }
+
     if (url.pathname !== "/report" || request.method !== "POST") {
       return new Response("Not found", { status: 404, headers: CORS_HEADERS });
     }
@@ -88,56 +97,25 @@ export default {
       );
     }
 
-    // Build GitHub issue
-    const isMissing = type === "missing_word";
-    const title = isMissing
-      ? `[Missing] ${word}`
-      : `[Data] ${word}${file ? ` (${file})` : ""}`;
-
-    const bodyParts = [];
-    if (details) bodyParts.push(details);
-    bodyParts.push("");
-    bodyParts.push("---");
-    bodyParts.push(`**Type**: ${type}`);
-    bodyParts.push(`**Word**: ${word}`);
-    if (file) bodyParts.push(`**File**: \`${file}\``);
-    if (appVersion) bodyParts.push(`**App version**: ${appVersion}`);
-    if (dbVersion) bodyParts.push(`**DB version**: ${dbVersion}`);
-
-    const labels = ["data-report"];
-    labels.push(isMissing ? "missing-word" : "incorrect-data");
+    // Store report in KV
+    const ts = Date.now();
+    const id = `report:${ts}:${Math.random().toString(36).slice(2, 8)}`;
+    const report = {
+      id,
+      ts,
+      type,
+      word,
+      details: details || null,
+      file: file || null,
+      appVersion: appVersion || null,
+      dbVersion: dbVersion || null,
+    };
 
     try {
-      const ghResp = await fetch(
-        `https://api.github.com/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}/issues`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${env.GITHUB_TOKEN}`,
-            Accept: "application/vnd.github+json",
-            "User-Agent": "lexiklar-report-worker",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            title,
-            body: bodyParts.join("\n"),
-            labels,
-          }),
-        },
-      );
-
-      if (!ghResp.ok) {
-        const text = await ghResp.text();
-        console.error("GitHub API error:", ghResp.status, text);
-        return Response.json(
-          { ok: false, error: "Failed to create issue" },
-          { status: 502, headers: CORS_HEADERS },
-        );
-      }
-
+      await env.RATE_LIMITS.put(id, JSON.stringify(report));
       return Response.json({ ok: true }, { headers: CORS_HEADERS });
     } catch (err) {
-      console.error("GitHub API request failed:", err);
+      console.error("KV write failed:", err);
       return Response.json(
         { ok: false, error: "Internal error" },
         { status: 500, headers: CORS_HEADERS },
