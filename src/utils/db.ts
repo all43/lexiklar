@@ -204,8 +204,11 @@ export async function initDb(): Promise<void> {
 
   if (!bytes) {
     // Step 2b: Try static assets first, fall back to GitHub Releases
+    // SPA hosts (Cloudflare Pages) return 200 with HTML for missing files,
+    // so also check content-type to detect the fallback response.
     let dbResp = await fetch("/data/lexiklar.db");
-    if (!dbResp.ok) {
+    const ct = dbResp.headers.get("content-type") || "";
+    if (!dbResp.ok || ct.includes("text/html")) {
       // DB not bundled (e.g. Cloudflare Pages) — fetch from manifest
       const manifestResp = await fetch(MANIFEST_URL, { cache: "no-cache" });
       const manifest = await manifestResp.json();
