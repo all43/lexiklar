@@ -15,7 +15,7 @@
 - [ ] Continue proofreading (216 priority words remaining)
 
 ## UX
-- [ ] Welcome tour for first-time users
+- [ ] Welcome tour — swipeable intro slides (F7 Swiper) for first-time users: key features, grammar depth, offline usage
 - [ ] Offline indicator when network unavailable
 - [ ] Download progress — show MB downloaded, not just percentage
 
