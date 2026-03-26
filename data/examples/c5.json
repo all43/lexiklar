@@ -3187,7 +3187,10 @@
         "gloss_hint": "powerful"
       }
     ],
-    "text_linked": "Das Coronavirus breitete sich [[im|prepositions/in]] Laufe der [[kalten|adjectives/kalt#1]] [[Monate|nouns/Monat]] [[in|prepositions/in]] [[Deutschland|nouns/Bundesrepublik#2]] [[stark|adjectives/stark#1]] aus."
+    "text_linked": "Das Coronavirus breitete sich [[im|prepositions/in]] Laufe der [[kalten|adjectives/kalt#1]] [[Monate|nouns/Monat]] [[in|prepositions/in]] [[Deutschland|nouns/Bundesrepublik#2]] [[stark|adjectives/stark#1]] aus.",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c528995db1": {
     "text": "Entschuldigen Sie, wie spät ist es, bitte?",
@@ -18335,12 +18338,12 @@
   },
   "c5b95c9980": {
     "text": "„Ihr fahles, gedunsenes Gesicht, in dem grellen Licht der Fackeln, erscheint noch bleicher über dem scharlachroten Gewand.“",
-    "translation": "His pale, withered face, in the bright light of the torches, appears even paler over the scarlet garment.",
+    "translation": "His pale, bloated face was illuminated by the flickering light of the torches.",
     "source": "wiktionary",
     "lemmas": [
       "Fackel"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "fahles",
@@ -18352,7 +18355,7 @@
         "form": "gedunsenes",
         "lemma": "gedunsen",
         "pos": "adjective",
-        "gloss_hint": "withered"
+        "gloss_hint": "bloated"
       },
       {
         "form": "Gesicht",
