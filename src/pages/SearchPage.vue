@@ -1,7 +1,7 @@
 <template>
   <f7-page name="search" :with-subnavbar="searchBarMode === 'subnavbar'" :class="{ 'page-searchbar-bottom': searchBarMode === 'bottom' }" @page:tabshow="onPageVisible" @page:afterin="onPageVisible">
     <f7-navbar title="Lexiklar">
-      <f7-subnavbar v-if="searchBarMode === 'subnavbar'" :inner="false">
+      <f7-subnavbar v-if="searchBarMode === 'subnavbar' && dbReady" :inner="false">
         <f7-searchbar
           custom-search
           :disable-button-text="t('search.cancel')"
@@ -12,8 +12,15 @@
       </f7-subnavbar>
     </f7-navbar>
 
+    <!-- ═══ DB not loaded — show error ═══ -->
+    <f7-block v-if="!dbReady && !loading" class="text-align-center db-error-block">
+      <p><b>{{ t('db.notLoaded') }}</b></p>
+      <p class="text-secondary">{{ t('db.notLoadedHint') }}</p>
+      <f7-button fill @click="reload">{{ t('db.reload') }}</f7-button>
+    </f7-block>
+
     <!-- ═══ Search results (VL) — shown when a query is active ═══ -->
-    <template v-if="searchQuery">
+    <template v-else-if="searchQuery">
       <!-- Phrase suggestions from sequential searches -->
       <template v-if="phraseMatches.length">
         <f7-block-title>{{ t('search.matchingExpressions') }}</f7-block-title>
@@ -92,7 +99,7 @@
     </template>
 
     <!-- ═══ Home screen — shown when no query ═══ -->
-    <template v-else-if="!loading">
+    <template v-else-if="dbReady && !loading">
       <!-- Frequently Viewed -->
       <template v-if="freqWords.length">
         <f7-block-title>{{ t('search.frequentlyViewed') }}</f7-block-title>
@@ -135,17 +142,11 @@
       </f7-block>
     </template>
 
-    <f7-block v-if="!dbReady && !loading" class="text-align-center db-error-block">
-      <p><b>{{ t('db.notLoaded') }}</b></p>
-      <p class="text-secondary">{{ t('db.notLoadedHint') }}</p>
-      <f7-button fill @click="reload">{{ t('db.reload') }}</f7-button>
-    </f7-block>
-
-    <f7-block v-else-if="loading" class="text-align-center">
+    <f7-block v-if="loading" class="text-align-center">
       <f7-preloader />
     </f7-block>
 
-    <f7-subnavbar v-if="searchBarMode === 'bottom'" :inner="false" class="searchbar-bottom-toolbar">
+    <f7-subnavbar v-if="searchBarMode === 'bottom' && dbReady" :inner="false" class="searchbar-bottom-toolbar">
       <f7-searchbar
         custom-search
         :disable-button-text="t('search.cancel')"

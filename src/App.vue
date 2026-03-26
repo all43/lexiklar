@@ -1,6 +1,6 @@
 <template>
   <f7-app v-bind="f7params">
-    <PwaUpdatePrompt v-if="isWeb" />
+    <PwaUpdatePrompt v-if="isWeb && dbIsReady" />
     <DbUpdatePrompt />
 
     <f7-views tabs>
@@ -32,6 +32,7 @@ import { t } from "./js/i18n.js";
 import { Capacitor } from "@capacitor/core";
 import PwaUpdatePrompt from "./components/PwaUpdatePrompt.vue";
 import DbUpdatePrompt from "./components/DbUpdatePrompt.vue";
+import { dbReady } from "./utils/db-update-state.js";
 
 export default defineComponent({
   components: { PwaUpdatePrompt, DbUpdatePrompt },
@@ -47,6 +48,7 @@ export default defineComponent({
   },
   computed: {
     t() { return t; },
+    dbIsReady() { return dbReady.value; },
   },
   mounted() {
     initTheme();
