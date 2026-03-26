@@ -3458,7 +3458,10 @@
     "lemmas": [
       "Stoff"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "fb1b259dd1": {
     "text": "nur ein Rad im Getriebe sein",
@@ -4965,12 +4968,12 @@
   },
   "fb2a83e6fa": {
     "text": "„Außerdem bekam jeder Soldat eine Partie Branntwein.“",
-    "translation": "Moreover, every soldier received a bottle of brandy.",
+    "translation": "\"Moreover, every soldier received a ration of brandy.\"",
     "source": "wiktionary",
     "lemmas": [
       "Partie"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "jeder",

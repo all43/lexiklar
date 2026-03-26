@@ -9,7 +9,7 @@
   "senses": [
     {
       "gloss": "etwas haftet an jemandem, lastet auf jemandem (für einen langen Zeitraum)",
-      "gloss_en": "attach",
+      "gloss_en": "cling to",
       "tags": [],
       "example_ids": [
         "38b7471266"
@@ -17,12 +17,12 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
-      "gloss_en_full": "To attach something to something by hanging",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_full": "To cling to or burden someone persistently over a long time",
+      "gloss_en_full_model": "anthropic/claude-opus-4-6"
     },
     {
       "gloss": "Anhänger einer Person, Ideals, Gruppe sein",
-      "gloss_en": "hold on",
+      "gloss_en": "adhere to",
       "tags": [],
       "example_ids": [
         "aad1dfca59",
@@ -31,12 +31,12 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
-      "gloss_en_full": "To hold on; to cling",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_full": "To be a follower or adherent of a person, ideal, or group",
+      "gloss_en_full_model": "anthropic/claude-opus-4-6"
     },
     {
       "gloss": "beim Erhitzen am Boden des Kochgeschirrs haften bleiben",
-      "gloss_en": "follow closely",
+      "gloss_en": "burn on (pot)",
       "tags": [
         "impersonal",
         "outdated"
@@ -47,8 +47,8 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
-      "gloss_en_full": "To follow someone immediately",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001"
+      "gloss_en_full": "To stick to the bottom of cookware when heated, causing food to burn on",
+      "gloss_en_full_model": "anthropic/claude-opus-4-6"
     }
   ],
   "sounds": [
@@ -57,7 +57,7 @@
       "tags": []
     }
   ],
-  "conjugation_class": "weak",
+  "conjugation_class": "strong",
   "stems": {
     "present": "häng",
     "past": "hing",
@@ -185,40 +185,45 @@
   "_overrides": {
     "conjugation": {
       "preterite": {
-        "ich": "hängte an",
-        "du": "hängtest an",
-        "er": "hängte an",
-        "wir": "hängten an",
-        "ihr": "hängtet an",
-        "sie": "hängten an"
+        "ich": "hing an",
+        "du": "hingst an",
+        "er": "hing an",
+        "wir": "hingen an",
+        "ihr": "hingt an",
+        "sie": "hingen an"
       },
       "subjunctive2": {
-        "ich": "hängte an",
-        "du": "hängtest an",
-        "er": "hängte an",
-        "wir": "hängten an",
-        "ihr": "hängtet an",
-        "sie": "hängten an"
+        "ich": "hinge an",
+        "du": "hingest an",
+        "er": "hinge an",
+        "wir": "hingen an",
+        "ihr": "hinget an",
+        "sie": "hingen an"
       }
     },
-    "conjugation_class": "weak"
+    "conjugation_class": "strong"
   },
   "conjugation": {
     "preterite": {
-      "ich": "hängte an",
-      "du": "hängtest an",
-      "er": "hängte an",
-      "wir": "hängten an",
-      "ihr": "hängtet an",
-      "sie": "hängten an"
+      "ich": "hing an",
+      "du": "hingst an",
+      "er": "hing an",
+      "wir": "hingen an",
+      "ihr": "hingt an",
+      "sie": "hingen an"
     },
     "subjunctive2": {
-      "ich": "hängte an",
-      "du": "hängtest an",
-      "er": "hängte an",
-      "wir": "hängten an",
-      "ihr": "hängtet an",
-      "sie": "hängten an"
+      "ich": "hinge an",
+      "du": "hingest an",
+      "er": "hinge an",
+      "wir": "hingen an",
+      "ihr": "hinget an",
+      "sie": "hingen an"
     }
+  },
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "examples_owned": "f7f885a1"
   }
 }
