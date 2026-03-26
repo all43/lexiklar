@@ -208,7 +208,11 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "dbUpdate.done": "Dictionary updated. Reload for new data.",
     "dbUpdate.failed": "Dictionary update failed",
 
-    // DB not loaded
+    // DB download / error
+    "db.downloadTitle": "Dictionary download required",
+    "db.downloadHint": "The dictionary database (~50 MB) needs to be downloaded once. After that, the app works fully offline.",
+    "db.download": "Download",
+    "db.downloading": "Downloading dictionary\u2026",
     "db.notLoaded": "Dictionary database could not be loaded.",
     "db.notLoadedHint": "Please check your internet connection and reload the page.",
     "db.reload": "Reload",
@@ -405,7 +409,11 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "dbUpdate.done": "W\u00F6rterbuch aktualisiert. Neu laden f\u00FCr neue Daten.",
     "dbUpdate.failed": "W\u00F6rterbuch-Update fehlgeschlagen",
 
-    // DB not loaded
+    // DB download / error
+    "db.downloadTitle": "W\u00F6rterbuch-Download erforderlich",
+    "db.downloadHint": "Die W\u00F6rterbuch-Datenbank (~50 MB) muss einmalig heruntergeladen werden. Danach funktioniert die App vollst\u00E4ndig offline.",
+    "db.download": "Herunterladen",
+    "db.downloading": "W\u00F6rterbuch wird heruntergeladen\u2026",
     "db.notLoaded": "Die W\u00F6rterbuch-Datenbank konnte nicht geladen werden.",
     "db.notLoadedHint": "Bitte pr\u00FCfe deine Internetverbindung und lade die Seite neu.",
     "db.reload": "Neu laden",

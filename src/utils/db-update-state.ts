@@ -10,3 +10,6 @@ export const pendingDbUpdate = ref<UpdateInfo | null>(null);
 
 /** True once initDb() completes successfully. */
 export const dbReady = ref(false);
+
+/** True when DB is not bundled/cached and needs user-confirmed download. */
+export const dbDownloadNeeded = ref(false);

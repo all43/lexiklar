@@ -169,19 +169,13 @@ async function fetchGzipped(
 // ---- Public API ----
 
 /**
- * Initialize the database. Must be called before any queries.
- *
- * Flow:
- *   1. Check OPFS cache version vs bundled version
- *   2. If match → read cached bytes from OPFS (fast, no network)
- *   3. If mismatch → fetch .db from static assets, cache to OPFS
- *   4. Send bytes to worker → sqlite3_deserialize into WASM memory
+ * Ensure the Web Worker is started (idempotent).
  */
-export async function initDb(): Promise<void> {
+function ensureWorker(): void {
+  if (worker) return;
   worker = new Worker(new URL("./db-worker.js", import.meta.url), {
     type: "module",
   });
-
   worker.onmessage = (e: MessageEvent<WorkerResponse>) => {
     const { id, result, error } = e.data;
     const p = pending.get(id);
@@ -189,6 +183,18 @@ export async function initDb(): Promise<void> {
     pending.delete(id);
     error ? p.reject(new Error(error)) : p.resolve(result);
   };
+}
+
+/**
+ * Initialize the database. Must be called before any queries.
+ *
+ * On native: DB is bundled as a static asset → loads immediately.
+ * On web: checks Cache API first → if cached, loads silently.
+ *         If not cached and DB isn't bundled, throws 'download-needed'
+ *         so the UI can prompt the user before downloading ~51 MB.
+ */
+export async function initDb(): Promise<void> {
+  ensureWorker();
 
   // Step 1: Determine if we need to fetch the DB
   const resp = await fetch("/data/db-version.txt");
@@ -203,36 +209,91 @@ export async function initDb(): Promise<void> {
   }
 
   if (!bytes) {
-    // Step 2b: Try static assets first, fall back to GitHub Releases
-    // SPA hosts (Cloudflare Pages) return 200 with HTML for missing files,
-    // so also check content-type to detect the fallback response.
-    let dbResp = await fetch("/data/lexiklar.db");
+    // Step 2b: Try static assets (works on native, fails on Cloudflare Pages)
+    // SPA hosts return 200 with HTML for missing files — check content-type.
+    const dbResp = await fetch("/data/lexiklar.db");
     const ct = dbResp.headers.get("content-type") || "";
-    if (!dbResp.ok || ct.includes("text/html")) {
-      // DB not bundled (e.g. Cloudflare Pages) — fetch from manifest
-      const manifestResp = await fetch(MANIFEST_URL, { cache: "no-cache" });
-      const manifest = await manifestResp.json();
-      // Prefer gzipped download (51 MB vs 221 MB)
-      if (manifest.db.full_db_gz) {
-        bytes = await fetchGzipped(manifest.db.full_db_gz.url);
-      }
-      // Fallback: uncompressed download
-      if (!bytes) {
-        dbResp = await fetch(manifest.db.full_db.url);
-      }
-    }
-    if (!bytes) {
+    if (dbResp.ok && !ct.includes("text/html")) {
       bytes = await dbResp.arrayBuffer();
     }
-
-    // Cache for next time (fire-and-forget)
-    cacheWrite(bytes.slice(0)).then(() =>
-      cacheVersionWrite(bundledVersion),
-    );
   }
+
+  if (!bytes) {
+    // DB not bundled and not cached — user confirmation needed before download
+    throw new Error("download-needed");
+  }
+
+  // Cache for next time (fire-and-forget)
+  cacheWrite(bytes.slice(0)).then(() =>
+    cacheVersionWrite(bundledVersion),
+  );
 
   // Step 3: Send bytes to worker for deserialization
   await send("init", { bytes }, [bytes]);
+}
+
+/**
+ * Download the DB from GitHub Releases (called after user confirmation).
+ * Prefers gzipped download (~51 MB) via DecompressionStream,
+ * falls back to uncompressed (~221 MB) on older browsers.
+ */
+export async function downloadDb(
+  onProgress?: (loaded: number, total: number) => void,
+): Promise<void> {
+  ensureWorker();
+
+  const manifestResp = await fetch(MANIFEST_URL, { cache: "no-cache" });
+  if (!manifestResp.ok) throw new Error("Failed to fetch manifest");
+  const manifest = await manifestResp.json();
+  const db = manifest.db;
+  if (!db?.full_db) throw new Error("No DB URL in manifest");
+
+  let bytes: ArrayBuffer | null = null;
+
+  // Prefer gzipped download
+  if (db.full_db_gz) {
+    bytes = await fetchGzipped(db.full_db_gz.url, onProgress, db.full_db.size);
+  }
+
+  // Fallback: uncompressed
+  if (!bytes) {
+    const resp = await fetch(db.full_db.url);
+    if (!resp.ok) throw new Error(`Download failed: ${resp.status}`);
+    const total = db.full_db.size || Number(resp.headers.get("content-length")) || 0;
+    if (onProgress && total && resp.body) {
+      const reader = resp.body.getReader();
+      const chunks: Uint8Array[] = [];
+      let loaded = 0;
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        chunks.push(value);
+        loaded += value.byteLength;
+        onProgress(loaded, total);
+      }
+      const buf = new Uint8Array(loaded);
+      let offset = 0;
+      for (const chunk of chunks) {
+        buf.set(chunk, offset);
+        offset += chunk.byteLength;
+      }
+      bytes = buf.buffer;
+    } else {
+      bytes = await resp.arrayBuffer();
+    }
+  }
+
+  // Initialize worker with downloaded bytes
+  await send("init", { bytes }, [bytes]);
+
+  // Cache for next time
+  const updatedBytes = await send("serialize") as ArrayBuffer;
+  await cacheWrite(updatedBytes);
+  // Read version from the loaded DB
+  const versionInfo = await getDbVersion();
+  if (versionInfo.version) {
+    await cacheVersionWrite(versionInfo.version);
+  }
 }
 
 /**

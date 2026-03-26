@@ -12,11 +12,25 @@
       </f7-subnavbar>
     </f7-navbar>
 
-    <!-- ═══ DB not loaded — show error ═══ -->
+    <!-- ═══ DB not loaded ═══ -->
     <f7-block v-if="!dbReady && !loading" class="text-align-center db-error-block">
-      <p><b>{{ t('db.notLoaded') }}</b></p>
-      <p class="text-secondary">{{ t('db.notLoadedHint') }}</p>
-      <f7-button fill @click="reload">{{ t('db.reload') }}</f7-button>
+      <!-- Download prompt (DB not bundled on web) -->
+      <template v-if="dbDownloadNeeded && !dbDownloading">
+        <p><b>{{ t('db.downloadTitle') }}</b></p>
+        <p class="text-secondary">{{ t('db.downloadHint') }}</p>
+        <f7-button fill @click="startDownload">{{ t('db.download') }}</f7-button>
+      </template>
+      <!-- Download in progress -->
+      <template v-else-if="dbDownloading">
+        <p><b>{{ t('db.downloading') }}</b></p>
+        <f7-progressbar :progress="dbDownloadProgress" />
+      </template>
+      <!-- Download failed or other error -->
+      <template v-else>
+        <p><b>{{ t('db.notLoaded') }}</b></p>
+        <p class="text-secondary">{{ t('db.notLoadedHint') }}</p>
+        <f7-button fill @click="reload">{{ t('db.reload') }}</f7-button>
+      </template>
     </f7-block>
 
     <!-- ═══ Search results (VL) — shown when a query is active ═══ -->
@@ -178,7 +192,8 @@ import {
   getSuggestions,
   foldUmlauts,
 } from "../utils/db.js";
-import { dbReady } from "../utils/db-update-state.js";
+import { dbReady, dbDownloadNeeded } from "../utils/db-update-state.js";
+import { downloadDb } from "../utils/db.js";
 
 interface SearchResultWithForm extends SearchResult {
   matchedForm?: string;
@@ -228,6 +243,8 @@ export default defineComponent({
       freqWords: [] as SearchResult[],
       recentWords: [] as SearchResult[],
       loading: true,
+      dbDownloading: false,
+      dbDownloadProgress: 0,
       debounceTimer: null as ReturnType<typeof setTimeout> | null,
       showArticles: getCached(SHOW_ARTICLES_KEY) !== "0",
       searchBarPosition: (getCached(SEARCH_BAR_POSITION_KEY) || "auto") as SearchBarPosition,
@@ -237,6 +254,7 @@ export default defineComponent({
   computed: {
     t() { return t; },
     dbReady() { return dbReady.value; },
+    dbDownloadNeeded() { return dbDownloadNeeded.value; },
     searchBarMode(): "subnavbar" | "bottom" {
       if (this.searchBarPosition === "bottom") return "bottom";
       if (this.searchBarPosition === "top") return "subnavbar";
@@ -268,6 +286,23 @@ export default defineComponent({
   methods: {
     reload() {
       window.location.reload();
+    },
+    async startDownload() {
+      this.dbDownloading = true;
+      this.dbDownloadProgress = 0;
+      try {
+        await downloadDb((loaded, total) => {
+          this.dbDownloadProgress = Math.round((loaded / total) * 100);
+        });
+        dbReady.value = true;
+        dbDownloadNeeded.value = false;
+        this.dbDownloading = false;
+        this.loadHomeScreen();
+      } catch (err) {
+        console.error("DB download failed:", err);
+        this.dbDownloading = false;
+        dbDownloadNeeded.value = false; // Show error state
+      }
     },
     onPageVisible() {
       this.showArticles = getCached(SHOW_ARTICLES_KEY) !== "0";

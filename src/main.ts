@@ -24,7 +24,7 @@ import { initDevice } from "./utils/device.js";
 // Database
 import { initDb, checkForUpdates } from "./utils/db.js";
 import { getCached, setItem } from "./utils/storage.js";
-import { pendingDbUpdate, dbReady } from "./utils/db-update-state.js";
+import { pendingDbUpdate, dbReady, dbDownloadNeeded } from "./utils/db-update-state.js";
 
 // Live update (Capawesome — native only)
 import { notifyReady, checkAppUpdate, pendingAppUpdate } from "./utils/live-update.js";
@@ -42,7 +42,11 @@ import App from "./App.vue";
     await initDb();
     dbReady.value = true;
   } catch (err) {
-    console.error("Database initialization failed:", err);
+    if (err instanceof Error && err.message === "download-needed") {
+      dbDownloadNeeded.value = true;
+    } else {
+      console.error("Database initialization failed:", err);
+    }
     // App still mounts — SearchPage shows a download prompt
   }
 
