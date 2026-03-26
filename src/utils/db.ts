@@ -294,16 +294,12 @@ export async function downloadDb(
     db.full_db_gz?.url, onProgress,
   );
 
+  // Cache before transferring to worker (transfer zeroes the buffer)
+  await cacheWrite(bytes.slice(0));
+  await cacheVersionWrite(db.current_version);
+
   // Initialize worker with downloaded bytes
   await send("init", { bytes }, [bytes]);
-
-  // Cache for next time
-  const updatedBytes = await send("serialize") as ArrayBuffer;
-  await cacheWrite(updatedBytes);
-  const versionInfo = await getDbVersion();
-  if (versionInfo.version) {
-    await cacheVersionWrite(versionInfo.version);
-  }
 }
 
 /**
