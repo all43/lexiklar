@@ -304,7 +304,10 @@ export default defineComponent({
       } catch (err) {
         console.error("DB download failed:", err);
         this.dbDownloading = false;
-        this.dbDownloadError = (err as Error).message || "Download failed";
+        const msg = (err as Error).message || "";
+        this.dbDownloadError = msg.includes("Failed to fetch")
+          ? t("db.downloadFailed")
+          : msg || t("db.downloadFailed");
       }
     },
     onPageVisible() {
