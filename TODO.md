@@ -4,6 +4,7 @@
 - [ ] Publish to App Store (iOS)
 - [ ] Publish to Google Play (Android)
 - [ ] Add smart app banners for PWA → native redirection
+- [ ] App Store description: highlight bundled DB (no download wait), persistent storage (no 7-day eviction risk)
 
 ## Native Features
 - [ ] Spotlight / system search integration (index words for home screen search)
