@@ -88,7 +88,7 @@ jobs:
         run: |
           TAG="${{ steps.publish.outputs.tag }}"
           # Upload DB + any patch .sql files as release assets
-          ASSETS=(/tmp/release-assets/lexiklar.db)
+          ASSETS=(/tmp/release-assets/lexiklar.db /tmp/release-assets/lexiklar.db.gz)
           for f in /tmp/release-assets/*.sql; do
             [ -f "$f" ] && ASSETS+=("$f")
           done

@@ -21,6 +21,7 @@ A **fully offline** German dictionary app targeting learners up to **B2 level** 
   - **Capacitor** — native runtime wrapping the web app for iOS and Android
   - Chosen over Ionic because Framework7 uses regular DOM (not Shadow DOM), making custom CSS styling of grammar tables and declension grids easier
 - **PWA**: `vite-plugin-pwa` (Workbox) for service worker generation, manifest, and offline app shell caching
+- **Hosting**: Cloudflare Pages (`lexiklar.app`) for PWA app shell; Cloudflare Workers (`reports.lexiklar.app`) for report proxy; GitHub Releases for OTA data assets (DB, patches, app bundles)
 
 ---
 
@@ -104,7 +105,7 @@ download → transform → enrich → translate → build-index
 | `scripts/generate-synonyms-en.ts` | — | LLM-generates English search synonyms (`synonyms_en`) for reverse lookup |
 | `scripts/benchmark-frequency.ts` | — | Benchmark corpus weights against LLM reference scores (Spearman correlation, grid search) |
 | `scripts/enrich-collocations.ts` | `npm run enrich-collocations` | Extracts contextual noun collocations from adjective examples for condensed declension view |
-| `scripts/publish-update.ts` | — | Generates OTA update manifest + SQL patches by diffing old/new DBs (see OTA Updates section) |
+| `scripts/publish-update.ts` | — | Generates OTA update manifest + SQL patches + gzipped DB by diffing old/new DBs (see OTA Updates section) |
 
 **IMPORTANT: Do not run a full transform (`npm run transform`) just to re-process a few words.** Use `--words` to scope to specific entries — a full transform touches thousands of files and causes massive git churn:
 
@@ -467,6 +468,33 @@ At runtime, for a regular adjective: `form = declension_stem + endings[declType]
 
 ---
 
+## Grammar Table Color System
+
+Declension tables use a consistent color system defined as CSS custom properties in `src/css/app.css` (`:root` scope), with dark mode overrides under `.dark`:
+
+| Token | Light | Dark | Usage |
+|---|---|---|---|
+| `--color-gender-m` | `#2196f3` (blue) | — | Masculine articles (der/den/dem/des) |
+| `--color-gender-f` | `#e91e63` (pink) | — | Feminine articles (die/der) |
+| `--color-gender-n` | `#4caf50` (green) | — | Neuter articles (das/dem/des) |
+| `--color-rule-match` | `#4caf50` (green) | `#66bb6a` | Rule badges (n-Deklination), n-declension endings |
+| `--color-rule-exception` | `#ff9800` (orange) | `#ffa726` | Gender rule exception badges |
+| `--color-vowel-change` | `#d32f2f` (red) | `#ef5350` | Umlaut vowel changes in plural forms |
+| `var(--f7-theme-color)` | — | — | Adjective declension endings |
+
+Global classes `.gender-m`, `.gender-f`, `.gender-n` use `!important` to override component-level `color` rules (e.g. `.decl-num-header`).
+
+### Adjective declension highlighting (`AdjectiveDeclension.vue`)
+- **Condensed rules view**: articles colored by gender; in the no-article (strong) section, collocation nouns colored by gender instead
+- **Full table view**: column headers M/F/N colored by gender; endings highlighted in theme color
+
+### Noun declension highlighting (`NounDeclension.vue`)
+- **Articles**: singular articles colored by gender (`.gender-m/f/n`); plural articles uncolored
+- **N-declension endings**: detected via `isNDeclension` computed property (masculine, acc=dat=gen≠nom). Added suffix highlighted in green (`--color-rule-match`), matching the "n-Deklination" badge
+- **Umlaut in plurals**: `splitUmlaut()` from `src/utils/umlaut.ts` compares singular nom with each plural form character-by-character. Detects a→ä, o→ö, u→ü, au→äu (digraph highlighted as unit). Changed vowel highlighted in red (`--color-vowel-change`). Works for compounds (Krankenhaus→Krankenhäuser). 36 test cases in `tests/umlaut.test.ts`
+
+---
+
 ## Noun Gender Rules
 
 `data/rules/noun-gender.json` — 17 rules predicting noun gender from morphological patterns.
@@ -650,7 +678,15 @@ The SQLite index handles all searching, filtering, and data serving. Word JSON f
 Uses `@capacitor/preferences` (iOS UserDefaults / Android SharedPreferences on native, localStorage on web/PWA). All known keys are preloaded into an in-memory `Map` at startup so that Vue `data()` initializers and module-level code can read synchronously via `getCached(key)`. Writes via `setItem(key, value)` update the cache immediately and persist asynchronously.
 
 ### DB caching (`src/utils/db.ts`)
-SQLite DB bytes are cached using the **Cache API** (`caches.open()`), which works in Safari, WKWebView, and all modern browsers. A version check (`db-version.txt`) determines if the cache is stale. Falls back to re-fetching from static assets if cache miss or API unavailable. Replaced the original OPFS `createWritable()` approach which doesn't work in Safari/WKWebView.
+SQLite DB bytes are cached using the **Cache API** (`caches.open()`), which works in Safari, WKWebView, and all modern browsers. A version check (`db-version.txt`) determines if the cache is stale. Replaced the original OPFS `createWritable()` approach which doesn't work in Safari/WKWebView.
+
+**Initial DB fetch flow** (when cache is empty or stale):
+1. Try `/data/lexiklar.db` from static assets (works when DB is bundled, e.g. native builds)
+2. If 404 (e.g. Cloudflare Pages — DB excluded due to 25 MB size limit): fetch `manifest.json` from GitHub Releases
+3. Prefer gzipped download (`full_db_gz` in manifest, ~51 MB vs 221 MB raw) using `DecompressionStream` API
+4. Fall back to uncompressed `full_db` URL if `DecompressionStream` unavailable (iOS < 16.4)
+
+**Gzip decompression**: `DecompressionStream("gzip")` is a native streaming API (Chrome 80+, Firefox 113+, Safari 16.4+). Progress is tracked against the known uncompressed size from the manifest, giving a smooth progress bar that covers both download and decompression.
 
 **DB version hash** — computed in `build-index.ts` from: all word file `mtimeMs` values + `mtimeMs` of `src/utils/verb-forms.js`, `data/rules/verb-endings.json`, `data/rules/noun-gender.json`, `data/rules/adj-endings.json`. Any change to indexed-form logic invalidates the browser cache automatically.
 
@@ -693,7 +729,13 @@ Configured via `vite-plugin-pwa` in `vite.config.ts`. Capacitor provides no PWA 
 - Icons: `pwa-192x192.png`, `pwa-512x512.png` (+ maskable), `apple-touch-icon.png`
 - Generated from SVG source at `public/icon.svg`
 
-**COOP/COEP headers**: set in `vite.config.ts` `server.headers` for dev only. Not needed in production — the app uses `sqlite3_deserialize` with plain `ArrayBuffer`, not `SharedArrayBuffer`. GitHub Pages cannot set custom headers, but this is fine.
+**COOP/COEP headers**: set in `vite.config.ts` `server.headers` for dev only. Not needed in production — the app uses `sqlite3_deserialize` with plain `ArrayBuffer`, not `SharedArrayBuffer`.
+
+**Cloudflare Pages deployment**:
+- `npm run deploy` — removes `lexiklar.db` from `dist/` (exceeds 25 MB limit) and deploys to Cloudflare Pages
+- App shell (~4 MB: JS, CSS, HTML, WASM, icons) is served from `lexiklar.app`
+- `db-version.txt` is included; `lexiklar.db` is fetched from GitHub Releases on first load (see DB caching above)
+- Custom domain `lexiklar.app` configured via Cloudflare Dashboard → Workers & Pages → Custom domains
 
 **Interaction with OTA DB updates**: the SW does not interfere with `checkForUpdates()` — those are cross-origin fetches to GitHub Release asset URLs which bypass the SW's scope.
 
@@ -711,7 +753,7 @@ Three independent update channels, all using GitHub Releases on the main repo:
 
 **Release structure**:
 - **`manifest`** tag — permanent release holding `manifest.json` (unified, updated by both jobs via `--clobber`)
-- **`data-YYYYMMDD-<hash8>`** tags — immutable per publish, hold `lexiklar.db` + SQL patch files
+- **`data-YYYYMMDD-<hash8>`** tags — immutable per publish, hold `lexiklar.db`, `lexiklar.db.gz`, + SQL patch files
 - **`app-vX.Y.Z`** tags — immutable per publish, hold app bundle zip
 
 **Unified manifest format** (on the `manifest` release):
@@ -721,7 +763,8 @@ Three independent update channels, all using GitHub Releases on the main repo:
     "current_version": "<16-char DB hash>",
     "built_at": "YYYY-MM-DD",
     "patches": { "<old_version>": { "url": "https://github.com/.../releases/download/data-.../old_to_new.sql", "size": 1234 } },
-    "full_db": { "url": "https://github.com/.../releases/download/data-.../lexiklar.db", "size": 12345678 }
+    "full_db": { "url": "https://github.com/.../releases/download/data-.../lexiklar.db", "size": 12345678 },
+    "full_db_gz": { "url": "https://github.com/.../releases/download/data-.../lexiklar.db.gz", "size": 5400000 }
   },
   "bundle": {
     "current_version": "0.9.1",
@@ -737,8 +780,9 @@ All asset URLs in the manifest are absolute GitHub Release download URLs.
 1. `main.ts` calls `checkForUpdates()` after `initDb()` (fire-and-forget, 24h throttle via `lexiklar_last_update_check`)
 2. Fetches `manifest.json` from the permanent `manifest` release, reads `db` section, compares `current_version` against local DB `meta.version`
 3. Prefers SQL patch (small) over full DB download (large) — patches are keyed by source version
-4. `applyUpdate()` runs patch via `exec_batch` (transactional) or replaces full DB, then re-caches via Cache API
-5. `DbUpdatePrompt.vue` shows a toast; user can apply immediately or dismiss
+4. For full DB downloads: prefers gzipped (`full_db_gz`, ~51 MB) with `DecompressionStream`, falls back to uncompressed (`full_db`, ~221 MB) on older browsers
+5. `applyUpdate()` runs patch via `exec_batch` (transactional) or replaces full DB, then re-caches via Cache API
+6. `DbUpdatePrompt.vue` shows a toast; user can apply immediately or dismiss
 
 **Capawesome flow** (`src/utils/live-update.ts`):
 1. `notifyReady()` called on every startup to confirm current bundle is stable (prevents rollback)
@@ -751,12 +795,26 @@ All asset URLs in the manifest are absolute GitHub Release download URLs.
 ```bash
 npx tsx scripts/publish-update.ts --old <old.db> --out <dir> [--keep-patches 3] [--release-url <url>]
 ```
-Diffs `words` and `examples` tables using the `hash` column (SHA-256 of JSON `data`). Generates INSERT/UPDATE/DELETE statements; uses `(SELECT id FROM words WHERE file = ?)` subqueries for word_id references since client DBs have different autoincrement IDs. Patches run inside a transaction via `exec_batch` in the Web Worker. `--release-url` makes all asset URLs absolute (used by CI).
+Diffs `words` and `examples` tables using the `hash` column (SHA-256 of JSON `data`). Generates INSERT/UPDATE/DELETE statements; uses `(SELECT id FROM words WHERE file = ?)` subqueries for word_id references since client DBs have different autoincrement IDs. Patches run inside a transaction via `exec_batch` in the Web Worker. `--release-url` makes all asset URLs absolute (used by CI). Also generates `lexiklar.db.gz` (gzip level 9) alongside the raw DB.
 
 **GitHub Actions** (`.github/workflows/publish-data.yml`):
-- **`publish-db` job**: triggers on push to `data/`, `scripts/build-index.ts`, or manual dispatch. Builds index, creates `data-*` release with DB + patches, updates `manifest` release.
+- **`publish-db` job**: triggers on push to `data/`, `scripts/build-index.ts`, or manual dispatch. Builds index, creates `data-*` release with DB + gzipped DB + patches, updates `manifest` release.
 - **`publish-bundle` job**: manual dispatch only. Runs `vite build`, creates `app-*` release with bundle zip, updates `manifest` release.
 - Uses `GITHUB_TOKEN` (automatic) — no PAT or separate repo needed.
+
+### Report Worker (`workers/report-worker.js`)
+
+Cloudflare Worker at `reports.lexiklar.app` — proxies user reports (missing words, incorrect data) to GitHub Issues.
+
+**Configuration** (`workers/wrangler.toml`):
+- KV namespace `RATE_LIMITS` for persistent rate limiting (100 reports/hour per IP, auto-expires)
+- Environment variables: `GITHUB_OWNER` (`all43`), `GITHUB_REPO` (`lexiklar`)
+- Secret: `GITHUB_TOKEN` (fine-grained PAT with Issues read/write on `all43/lexiklar`)
+
+**Deploy**: `cd workers && npx wrangler deploy`
+**Set secret**: `cd workers && npx wrangler secret put GITHUB_TOKEN`
+
+Client-side: `src/utils/report.ts` sends reports to `https://reports.lexiklar.app/report`.
 
 ---
 

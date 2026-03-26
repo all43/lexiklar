@@ -207,6 +207,11 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "dbUpdate.applying": "Updating dictionary\u2026",
     "dbUpdate.done": "Dictionary updated. Reload for new data.",
     "dbUpdate.failed": "Dictionary update failed",
+
+    // DB not loaded
+    "db.notLoaded": "Dictionary database could not be loaded.",
+    "db.notLoadedHint": "Please check your internet connection and reload the page.",
+    "db.reload": "Reload",
   },
   de: {
     // Tab bar
@@ -399,6 +404,11 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "dbUpdate.applying": "W\u00F6rterbuch wird aktualisiert\u2026",
     "dbUpdate.done": "W\u00F6rterbuch aktualisiert. Neu laden f\u00FCr neue Daten.",
     "dbUpdate.failed": "W\u00F6rterbuch-Update fehlgeschlagen",
+
+    // DB not loaded
+    "db.notLoaded": "Die W\u00F6rterbuch-Datenbank konnte nicht geladen werden.",
+    "db.notLoadedHint": "Bitte pr\u00FCfe deine Internetverbindung und lade die Seite neu.",
+    "db.reload": "Neu laden",
   },
 };
 

@@ -32,19 +32,19 @@ const CORS_HEADERS = {
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
-// Simple in-memory rate limiting (resets on worker restart, per isolate)
-const rateLimits = new Map();
-const RATE_LIMIT = 10; // max reports per window
-const RATE_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const RATE_LIMIT = 100; // max reports per window
+const RATE_WINDOW_SEC = 3600; // 1 hour
 
-function isRateLimited(ip) {
+async function isRateLimited(ip, kv) {
+  const key = `rate:${ip}`;
+  const entry = await kv.get(key, "json");
   const now = Date.now();
-  const entry = rateLimits.get(ip);
-  if (!entry || now - entry.start > RATE_WINDOW_MS) {
-    rateLimits.set(ip, { start: now, count: 1 });
+  if (!entry || now - entry.start > RATE_WINDOW_SEC * 1000) {
+    await kv.put(key, JSON.stringify({ start: now, count: 1 }), { expirationTtl: RATE_WINDOW_SEC });
     return false;
   }
   entry.count++;
+  await kv.put(key, JSON.stringify(entry), { expirationTtl: RATE_WINDOW_SEC });
   return entry.count > RATE_LIMIT;
 }
 
@@ -62,7 +62,7 @@ export default {
 
     // Rate limiting
     const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-    if (isRateLimited(ip)) {
+    if (await isRateLimited(ip, env.RATE_LIMITS)) {
       return Response.json(
         { ok: false, error: "Too many reports. Please try again later." },
         { status: 429, headers: CORS_HEADERS },

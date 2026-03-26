@@ -135,7 +135,13 @@
       </f7-block>
     </template>
 
-    <f7-block v-if="loading" class="text-align-center">
+    <f7-block v-if="!dbReady && !loading" class="text-align-center db-error-block">
+      <p><b>{{ t('db.notLoaded') }}</b></p>
+      <p class="text-secondary">{{ t('db.notLoadedHint') }}</p>
+      <f7-button fill @click="reload">{{ t('db.reload') }}</f7-button>
+    </f7-block>
+
+    <f7-block v-else-if="loading" class="text-align-center">
       <f7-preloader />
     </f7-block>
 
@@ -171,6 +177,7 @@ import {
   getSuggestions,
   foldUmlauts,
 } from "../utils/db.js";
+import { dbReady } from "../utils/db-update-state.js";
 
 interface SearchResultWithForm extends SearchResult {
   matchedForm?: string;
@@ -228,6 +235,7 @@ export default defineComponent({
 
   computed: {
     t() { return t; },
+    dbReady() { return dbReady.value; },
     searchBarMode(): "subnavbar" | "bottom" {
       if (this.searchBarPosition === "bottom") return "bottom";
       if (this.searchBarPosition === "top") return "subnavbar";
@@ -257,6 +265,9 @@ export default defineComponent({
   },
 
   methods: {
+    reload() {
+      window.location.reload();
+    },
     onPageVisible() {
       this.showArticles = getCached(SHOW_ARTICLES_KEY) !== "0";
       this.searchBarPosition = (getCached(SEARCH_BAR_POSITION_KEY) || "auto") as SearchBarPosition;
@@ -479,6 +490,10 @@ export default defineComponent({
     },
 
     async loadHomeScreen() {
+      if (!this.dbReady) {
+        this.loading = false;
+        return;
+      }
       this.loading = true;
       try {
         const counts: Record<string, number> = JSON.parse(getCached(COUNTS_KEY) || "{}");
@@ -523,6 +538,7 @@ export default defineComponent({
 
   watch: {
     searchQuery(q: string) {
+      if (!this.dbReady) return;
       if (this.debounceTimer) clearTimeout(this.debounceTimer);
       if (!q.trim()) {
         this.loadHomeScreen();
@@ -549,5 +565,12 @@ export default defineComponent({
 /* Phrase match section — subtle background to distinguish from regular results */
 .phrase-matches {
   --f7-list-bg-color: color-mix(in srgb, var(--f7-theme-color) 5%, var(--f7-page-bg-color));
+}
+.db-error-block {
+  padding-top: 30vh;
+}
+.db-error-block .button {
+  max-width: 200px;
+  margin: 16px auto 0;
 }
 </style>

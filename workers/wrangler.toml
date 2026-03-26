@@ -1,0 +1,15 @@
+name = "lexiklar-reports"
+main = "report-worker.js"
+compatibility_date = "2024-09-23"
+
+routes = [
+  { pattern = "reports.lexiklar.app", custom_domain = true }
+]
+
+[[kv_namespaces]]
+binding = "RATE_LIMITS"
+id = "8cf09b3e65264806b871726b8319a650"
+
+[vars]
+GITHUB_OWNER = "all43"
+GITHUB_REPO = "lexiklar"

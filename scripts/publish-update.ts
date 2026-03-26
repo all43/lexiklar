@@ -15,7 +15,9 @@
  */
 
 import Database from "better-sqlite3";
-import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, unlinkSync, writeFileSync } from "fs";
+import { copyFileSync, createReadStream, createWriteStream, existsSync, mkdirSync, readFileSync, readdirSync, statSync, unlinkSync, writeFileSync } from "fs";
+import { pipeline } from "stream/promises";
+import { createGzip } from "zlib";
 import { join } from "path";
 import { stringArg, intArg } from "./lib/cli.js";
 
@@ -26,6 +28,7 @@ interface DbManifest {
   built_at: string;
   patches: Record<string, { url: string; size: number }>;
   full_db: { url: string; size: number };
+  full_db_gz?: { url: string; size: number };
 }
 
 interface UnifiedManifest {
@@ -204,7 +207,7 @@ function appendFormsAndTerms(stmts: string[], newDb: Database.Database, wordId: 
 
 // ---- Main ----
 
-function main(): void {
+async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const oldPath = stringArg(args, "--old");
   const outDir = stringArg(args, "--out");
@@ -313,13 +316,21 @@ function main(): void {
   const fullDbSize = statSync(outDbPath).size;
   console.log(`Copied DB: ${(fullDbSize / (1024 * 1024)).toFixed(1)} MB`);
 
+  // Generate gzipped DB
+  const outDbGzPath = join(outDir, "lexiklar.db.gz");
+  await pipeline(createReadStream(outDbPath), createGzip({ level: 9 }), createWriteStream(outDbGzPath));
+  const fullDbGzSize = statSync(outDbGzPath).size;
+  console.log(`Gzipped DB: ${(fullDbGzSize / (1024 * 1024)).toFixed(1)} MB (${((1 - fullDbGzSize / fullDbSize) * 100).toFixed(0)}% reduction)`);
+
   // Build DB manifest section
   const fullDbUrl = releaseUrl ? `${releaseUrl}/lexiklar.db` : "lexiklar.db";
+  const fullDbGzUrl = releaseUrl ? `${releaseUrl}/lexiklar.db.gz` : "lexiklar.db.gz";
   const dbManifest: DbManifest = {
     current_version: newVersion,
     built_at: builtAt,
     patches: prunedPatches,
     full_db: { url: fullDbUrl, size: fullDbSize },
+    full_db_gz: { url: fullDbGzUrl, size: fullDbGzSize },
   };
 
   // Write unified manifest — preserve existing bundle section

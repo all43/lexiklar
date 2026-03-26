@@ -7,7 +7,7 @@
 
 import { getDbVersion } from "./db.js";
 
-const REPORT_URL = "https://lexiklar-reports.evgeniimalikov.workers.dev/report";
+const REPORT_URL = "https://reports.lexiklar.app/report";
 
 interface ReportOptions {
   type: "missing_word" | "incorrect_data";

@@ -117,7 +117,54 @@ async function cacheVersionWrite(version: string): Promise<void> {
 // ---- Update manifest URL ----
 // Permanent GitHub Release that always holds the latest manifest
 const MANIFEST_URL =
-  "https://github.com/evgeniimalikov/lexiklar/releases/download/manifest/manifest.json";
+  "https://github.com/all43/lexiklar/releases/download/manifest/manifest.json";
+
+// ---- Gzip decompression ----
+
+const supportsDecompressionStream =
+  typeof DecompressionStream !== "undefined";
+
+/**
+ * Fetch a gzipped URL and decompress to ArrayBuffer using DecompressionStream.
+ * Progress is tracked against uncompressedSize (covers download + decompression).
+ * Returns null if DecompressionStream is unavailable or fetch fails.
+ */
+async function fetchGzipped(
+  url: string,
+  onProgress?: (loaded: number, total: number) => void,
+  uncompressedSize?: number,
+): Promise<ArrayBuffer | null> {
+  if (!supportsDecompressionStream) return null;
+  try {
+    const resp = await fetch(url);
+    if (!resp.ok || !resp.body) return null;
+
+    // Pipe compressed stream through DecompressionStream
+    const decompressed = resp.body.pipeThrough(new DecompressionStream("gzip"));
+    const reader = decompressed.getReader();
+    const chunks: Uint8Array[] = [];
+    let loaded = 0;
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      chunks.push(value);
+      loaded += value.byteLength;
+      if (onProgress && uncompressedSize) {
+        onProgress(Math.min(loaded, uncompressedSize), uncompressedSize);
+      }
+    }
+    const buf = new Uint8Array(loaded);
+    let offset = 0;
+    for (const chunk of chunks) {
+      buf.set(chunk, offset);
+      offset += chunk.byteLength;
+    }
+    if (onProgress && uncompressedSize) onProgress(uncompressedSize, uncompressedSize);
+    return buf.buffer;
+  } catch {
+    return null;
+  }
+}
 
 // ---- Public API ----
 
@@ -156,9 +203,24 @@ export async function initDb(): Promise<void> {
   }
 
   if (!bytes) {
-    // Step 2b: Fetch from static assets
-    const dbResp = await fetch("/data/lexiklar.db");
-    bytes = await dbResp.arrayBuffer();
+    // Step 2b: Try static assets first, fall back to GitHub Releases
+    let dbResp = await fetch("/data/lexiklar.db");
+    if (!dbResp.ok) {
+      // DB not bundled (e.g. Cloudflare Pages) — fetch from manifest
+      const manifestResp = await fetch(MANIFEST_URL, { cache: "no-cache" });
+      const manifest = await manifestResp.json();
+      // Prefer gzipped download (51 MB vs 221 MB)
+      if (manifest.db.full_db_gz) {
+        bytes = await fetchGzipped(manifest.db.full_db_gz.url);
+      }
+      // Fallback: uncompressed download
+      if (!bytes) {
+        dbResp = await fetch(manifest.db.full_db.url);
+      }
+    }
+    if (!bytes) {
+      bytes = await dbResp.arrayBuffer();
+    }
 
     // Cache for next time (fire-and-forget)
     cacheWrite(bytes.slice(0)).then(() =>
@@ -400,6 +462,8 @@ export interface UpdateInfo {
   type?: "patch" | "full";
   url?: string;
   size?: number;
+  gzUrl?: string;
+  gzSize?: number;
   targetVersion?: string;
   builtAt?: string;
 }
@@ -444,6 +508,8 @@ export async function checkForUpdates(): Promise<UpdateInfo | null> {
       type: "full",
       url: db.full_db.url,
       size: db.full_db.size,
+      gzUrl: db.full_db_gz?.url,
+      gzSize: db.full_db_gz?.size,
       targetVersion: db.current_version,
       builtAt: db.built_at,
     };
@@ -469,41 +535,45 @@ export async function applyUpdate(
   onProgress?: (loaded: number, total: number) => void,
 ): Promise<UpdateResult> {
   try {
-    const resp = await fetch(update.url!);
-    if (!resp.ok) {
-      return { ok: false, error: `Download failed: ${resp.status}` };
-    }
-
-    const total = update.size || Number(resp.headers.get("content-length")) || 0;
-
     if (update.type === "patch") {
       // Apply SQL patch to in-memory DB
+      const resp = await fetch(update.url!);
+      if (!resp.ok) return { ok: false, error: `Download failed: ${resp.status}` };
+      const total = update.size || Number(resp.headers.get("content-length")) || 0;
       const patchSql = await resp.text();
       if (onProgress && total) onProgress(total, total);
       await send("exec_batch", { sql: patchSql });
     } else {
-      // Full DB replacement — stream with progress tracking
-      let bytes: ArrayBuffer;
-      if (onProgress && total && resp.body) {
-        const reader = resp.body.getReader();
-        const chunks: Uint8Array[] = [];
-        let loaded = 0;
-        for (;;) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          chunks.push(value);
-          loaded += value.byteLength;
-          onProgress(loaded, total);
+      // Full DB replacement — prefer gzipped, fall back to raw
+      let bytes: ArrayBuffer | null = null;
+      if (update.gzUrl) {
+        bytes = await fetchGzipped(update.gzUrl, onProgress, update.size);
+      }
+      if (!bytes) {
+        const resp = await fetch(update.url!);
+        if (!resp.ok) return { ok: false, error: `Download failed: ${resp.status}` };
+        const total = update.size || Number(resp.headers.get("content-length")) || 0;
+        if (onProgress && total && resp.body) {
+          const reader = resp.body.getReader();
+          const chunks: Uint8Array[] = [];
+          let loaded = 0;
+          for (;;) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            chunks.push(value);
+            loaded += value.byteLength;
+            onProgress(loaded, total);
+          }
+          const buf = new Uint8Array(loaded);
+          let offset = 0;
+          for (const chunk of chunks) {
+            buf.set(chunk, offset);
+            offset += chunk.byteLength;
+          }
+          bytes = buf.buffer;
+        } else {
+          bytes = await resp.arrayBuffer();
         }
-        const buf = new Uint8Array(loaded);
-        let offset = 0;
-        for (const chunk of chunks) {
-          buf.set(chunk, offset);
-          offset += chunk.byteLength;
-        }
-        bytes = buf.buffer;
-      } else {
-        bytes = await resp.arrayBuffer();
       }
       await send("init", { bytes }, [bytes]);
     }
