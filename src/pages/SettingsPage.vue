@@ -150,6 +150,7 @@ import { applyTheme, THEME_KEY, type ThemeValue } from "../js/theme.js";
 import { t, setLocale, getLocale, LANGUAGE_KEY, type LanguagePreference } from "../js/i18n.js";
 import { getCached, setItem, removeItem } from "../utils/storage.js";
 import { getDbVersion, checkForUpdates, applyUpdate as applyDbUpdate, type UpdateInfo } from "../utils/db.js";
+import { dbReady } from "../utils/db-update-state.js";
 import { pendingAppUpdate, downloadAndApplyAppUpdate, reloadApp as liveReloadApp, type AppUpdateInfo } from "../utils/live-update.js";
 
 const THEME_OPTIONS = [
@@ -208,19 +209,26 @@ export default defineComponent({
     },
   },
   async mounted() {
-    try {
-      const { version, builtAt } = await getDbVersion();
-      this.dbVersion = version;
-      this.dbBuiltAt = builtAt;
-    } catch {
-      // DB not ready yet
-    }
+    this.loadDbVersion();
+    // Re-fetch version when DB becomes ready (e.g. after initial download)
+    this.$watch(() => dbReady.value, (ready) => {
+      if (ready) this.loadDbVersion();
+    });
     // Check if an app update was detected at startup
     if (pendingAppUpdate.value?.available) {
       this.appUpdateState = "available";
     }
   },
   methods: {
+    async loadDbVersion() {
+      try {
+        const { version, builtAt } = await getDbVersion();
+        this.dbVersion = version;
+        this.dbBuiltAt = builtAt;
+      } catch {
+        // DB not ready yet
+      }
+    },
     formatSize(bytes: number | undefined): string {
       if (!bytes) return "";
       if (bytes < 1024) return `${bytes} B`;
