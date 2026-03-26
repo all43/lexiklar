@@ -301,7 +301,7 @@ export default defineComponent({
       } catch (err) {
         console.error("DB download failed:", err);
         this.dbDownloading = false;
-        dbDownloadNeeded.value = false; // Show error state
+        // Stay on download prompt so user can retry
       }
     },
     onPageVisible() {

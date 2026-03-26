@@ -233,6 +233,48 @@ export async function initDb(): Promise<void> {
 }
 
 /**
+ * Fetch a URL as ArrayBuffer with progress tracking.
+ * Prefers gzipped variant if available and DecompressionStream is supported.
+ */
+async function fetchDbBytes(
+  url: string,
+  size: number,
+  gzUrl?: string,
+  onProgress?: (loaded: number, total: number) => void,
+): Promise<ArrayBuffer> {
+  // Prefer gzipped download
+  if (gzUrl) {
+    const bytes = await fetchGzipped(gzUrl, onProgress, size);
+    if (bytes) return bytes;
+  }
+
+  // Fallback: uncompressed with progress
+  const resp = await fetch(url);
+  if (!resp.ok) throw new Error(`Download failed: ${resp.status}`);
+  const total = size || Number(resp.headers.get("content-length")) || 0;
+  if (onProgress && total && resp.body) {
+    const reader = resp.body.getReader();
+    const chunks: Uint8Array[] = [];
+    let loaded = 0;
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      chunks.push(value);
+      loaded += value.byteLength;
+      onProgress(loaded, total);
+    }
+    const buf = new Uint8Array(loaded);
+    let offset = 0;
+    for (const chunk of chunks) {
+      buf.set(chunk, offset);
+      offset += chunk.byteLength;
+    }
+    return buf.buffer;
+  }
+  return resp.arrayBuffer();
+}
+
+/**
  * Download the DB from GitHub Releases (called after user confirmation).
  * Prefers gzipped download (~51 MB) via DecompressionStream,
  * falls back to uncompressed (~221 MB) on older browsers.
@@ -243,45 +285,15 @@ export async function downloadDb(
   ensureWorker();
 
   const manifestResp = await fetch(MANIFEST_URL, { cache: "no-cache" });
-  if (!manifestResp.ok) throw new Error("Failed to fetch manifest");
+  if (!manifestResp.ok) throw new Error("Failed to fetch update manifest. Please check your internet connection.");
   const manifest = await manifestResp.json();
   const db = manifest.db;
-  if (!db?.full_db) throw new Error("No DB URL in manifest");
+  if (!db?.full_db) throw new Error("No database URL found in manifest");
 
-  let bytes: ArrayBuffer | null = null;
-
-  // Prefer gzipped download
-  if (db.full_db_gz) {
-    bytes = await fetchGzipped(db.full_db_gz.url, onProgress, db.full_db.size);
-  }
-
-  // Fallback: uncompressed
-  if (!bytes) {
-    const resp = await fetch(db.full_db.url);
-    if (!resp.ok) throw new Error(`Download failed: ${resp.status}`);
-    const total = db.full_db.size || Number(resp.headers.get("content-length")) || 0;
-    if (onProgress && total && resp.body) {
-      const reader = resp.body.getReader();
-      const chunks: Uint8Array[] = [];
-      let loaded = 0;
-      for (;;) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        chunks.push(value);
-        loaded += value.byteLength;
-        onProgress(loaded, total);
-      }
-      const buf = new Uint8Array(loaded);
-      let offset = 0;
-      for (const chunk of chunks) {
-        buf.set(chunk, offset);
-        offset += chunk.byteLength;
-      }
-      bytes = buf.buffer;
-    } else {
-      bytes = await resp.arrayBuffer();
-    }
-  }
+  const bytes = await fetchDbBytes(
+    db.full_db.url, db.full_db.size,
+    db.full_db_gz?.url, onProgress,
+  );
 
   // Initialize worker with downloaded bytes
   await send("init", { bytes }, [bytes]);
@@ -289,7 +301,6 @@ export async function downloadDb(
   // Cache for next time
   const updatedBytes = await send("serialize") as ArrayBuffer;
   await cacheWrite(updatedBytes);
-  // Read version from the loaded DB
   const versionInfo = await getDbVersion();
   if (versionInfo.version) {
     await cacheVersionWrite(versionInfo.version);
@@ -608,37 +619,11 @@ export async function applyUpdate(
       if (onProgress && total) onProgress(total, total);
       await send("exec_batch", { sql: patchSql });
     } else {
-      // Full DB replacement — prefer gzipped, fall back to raw
-      let bytes: ArrayBuffer | null = null;
-      if (update.gzUrl) {
-        bytes = await fetchGzipped(update.gzUrl, onProgress, update.size);
-      }
-      if (!bytes) {
-        const resp = await fetch(update.url!);
-        if (!resp.ok) return { ok: false, error: `Download failed: ${resp.status}` };
-        const total = update.size || Number(resp.headers.get("content-length")) || 0;
-        if (onProgress && total && resp.body) {
-          const reader = resp.body.getReader();
-          const chunks: Uint8Array[] = [];
-          let loaded = 0;
-          for (;;) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            chunks.push(value);
-            loaded += value.byteLength;
-            onProgress(loaded, total);
-          }
-          const buf = new Uint8Array(loaded);
-          let offset = 0;
-          for (const chunk of chunks) {
-            buf.set(chunk, offset);
-            offset += chunk.byteLength;
-          }
-          bytes = buf.buffer;
-        } else {
-          bytes = await resp.arrayBuffer();
-        }
-      }
+      // Full DB replacement
+      const bytes = await fetchDbBytes(
+        update.url!, update.size || 0,
+        update.gzUrl, onProgress,
+      );
       await send("init", { bytes }, [bytes]);
     }
 
