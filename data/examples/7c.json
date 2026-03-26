@@ -5225,12 +5225,6 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "The",
-        "lemma": "the",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
         "form": "object",
         "lemma": "Objekt",
         "pos": "noun",
@@ -5272,7 +5266,10 @@
         "pos": "noun",
         "gloss_hint": "weight (measure)"
       }
-    ]
+    ],
+    "_proofread": {
+      "translation": true
+    }
   },
   "7c3b33b5d8": {
     "text": "„Wir fahren an stehenden Lokomotiven vorbei.“",
@@ -15825,7 +15822,10 @@
     "lemmas": [
       "Chaos"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "7caf95fcc0": {
     "text": "Wo hast du den Kies versteckt?",
