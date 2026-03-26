@@ -21,7 +21,7 @@ A **fully offline** German dictionary app targeting learners up to **B2 level** 
   - **Capacitor** — native runtime wrapping the web app for iOS and Android
   - Chosen over Ionic because Framework7 uses regular DOM (not Shadow DOM), making custom CSS styling of grammar tables and declension grids easier
 - **PWA**: `vite-plugin-pwa` (Workbox) for service worker generation, manifest, and offline app shell caching
-- **Hosting**: Cloudflare Pages (`lexiklar.app`) for PWA app shell; Cloudflare R2 (`cdn.lexiklar.app`) for data assets (DB, patches, manifest); Cloudflare Workers (`reports.lexiklar.app`) for report proxy; GitHub Releases for archival
+- **Hosting**: Cloudflare Pages (`lexiklar.app`) for PWA app shell; Cloudflare R2 (`cdn.lexiklar.app`) for data assets (DB, patches, manifest, bundles); Cloudflare Workers (`reports.lexiklar.app`) for report storage; GitHub Releases for archival
 
 ---
 
@@ -815,15 +815,19 @@ Diffs `words` and `examples` tables using the `hash` column (SHA-256 of JSON `da
 
 ### Report Worker (`workers/report-worker.js`)
 
-Cloudflare Worker at `reports.lexiklar.app` — proxies user reports (missing words, incorrect data) to GitHub Issues.
+Cloudflare Worker at `reports.lexiklar.app` — stores user reports (missing words, incorrect data) privately in KV.
 
 **Configuration** (`workers/wrangler.toml`):
-- KV namespace `RATE_LIMITS` for persistent rate limiting (100 reports/hour per IP, auto-expires)
-- Environment variables: `GITHUB_OWNER` (`all43`), `GITHUB_REPO` (`lexiklar`)
-- Secret: `GITHUB_TOKEN` (fine-grained PAT with Issues read/write on `all43/lexiklar`)
+- KV namespace `RATE_LIMITS` for rate limiting (100/hour per IP) and report storage (`report:*` keys)
+- Secret: `ADMIN_TOKEN` (Bearer token for `GET /reports`)
+
+**Endpoints**:
+- `POST /report` — submit a report (public, rate-limited)
+- `GET /reports` — list all reports (requires `Authorization: Bearer <ADMIN_TOKEN>`)
 
 **Deploy**: `cd workers && npx wrangler deploy`
-**Set secret**: `cd workers && npx wrangler secret put GITHUB_TOKEN`
+**Set admin token**: `cd workers && npx wrangler secret put ADMIN_TOKEN`
+**View reports**: `curl -H "Authorization: Bearer <token>" https://reports.lexiklar.app/reports`
 
 Client-side: `src/utils/report.ts` sends reports to `https://reports.lexiklar.app/report`.
 
