@@ -59,48 +59,54 @@ jobs:
             process.stdout.write(db.prepare("SELECT value FROM meta WHERE key = ?").get("version").value);
           ')
           TAG="data-$(date +%Y%m%d)-${DB_VERSION:0:8}"
-          RELEASE_URL="https://github.com/${{ github.repository }}/releases/download/${TAG}"
+          CDN_URL="https://cdn.lexiklar.app"
 
           OLD_DB_FLAG=""
           if [ -n "${{ steps.prev-db.outputs.old_db }}" ]; then
             OLD_DB_FLAG="--old ${{ steps.prev-db.outputs.old_db }}"
           fi
 
-          # Download existing manifest from the permanent manifest release (to preserve bundle section + old patches)
-          gh release download manifest --pattern "manifest.json" --dir /tmp/release-assets 2>/dev/null || true
+          # Download existing manifest from R2 (to preserve bundle section + old patches)
+          curl -sf "${CDN_URL}/manifest.json" -o /tmp/release-assets/manifest.json 2>/dev/null || true
 
           npx tsx scripts/publish-update.ts \
             $OLD_DB_FLAG \
             --out /tmp/release-assets \
-            --release-url "$RELEASE_URL"
+            --release-url "$CDN_URL"
 
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "db_version=$DB_VERSION" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create data release
+      - name: Upload assets to R2 CDN
         run: |
-          TAG="${{ steps.publish.outputs.tag }}"
-          # Upload DB + gzipped DB + any patch .sql files as release assets
-          ASSETS=(/tmp/release-assets/lexiklar.db /tmp/release-assets/lexiklar.db.gz)
-          for f in /tmp/release-assets/*.sql; do
-            [ -f "$f" ] && ASSETS+=("$f")
-          done
-          gh release create "$TAG" "${ASSETS[@]}" \
-            --title "Data update $(date +%Y-%m-%d)" \
-            --notes "DB version: ${{ steps.publish.outputs.db_version }}"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Install wrangler for R2 uploads
+          npm i -g wrangler@4
 
-      - name: Update manifest release
-        run: |
-          # Create the permanent manifest release if it doesn't exist
-          if ! gh release view manifest >/dev/null 2>&1; then
-            gh release create manifest --title "Update manifest" \
-              --notes "Permanent release holding the unified update manifest. Do not delete."
-          fi
-          # Upload/overwrite manifest.json
-          gh release upload manifest /tmp/release-assets/manifest.json --clobber
+          # Upload DB files
+          wrangler r2 object put lexiklar-data/lexiklar.db \
+            --file /tmp/release-assets/lexiklar.db \
+            --content-type application/octet-stream --remote
+          wrangler r2 object put lexiklar-data/lexiklar.db.gz \
+            --file /tmp/release-assets/lexiklar.db.gz \
+            --content-type application/gzip --remote
+
+          # Upload SQL patches
+          for f in /tmp/release-assets/*.sql; do
+            [ -f "$f" ] || continue
+            FNAME=$(basename "$f")
+            wrangler r2 object put "lexiklar-data/patches/${FNAME}" \
+              --file "$f" \
+              --content-type text/plain --remote
+          done
+
+          # Upload manifest
+          wrangler r2 object put lexiklar-data/manifest.json \
+            --file /tmp/release-assets/manifest.json \
+            --content-type application/json --remote
+
+          echo "Uploaded to cdn.lexiklar.app"
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

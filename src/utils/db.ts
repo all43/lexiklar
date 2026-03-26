@@ -117,7 +117,7 @@ async function cacheVersionWrite(version: string): Promise<void> {
 // ---- Update manifest URL ----
 // Permanent GitHub Release that always holds the latest manifest
 const MANIFEST_URL =
-  "https://github.com/all43/lexiklar/releases/download/manifest/manifest.json";
+  "https://cdn.lexiklar.app/manifest.json";
 
 // ---- Gzip decompression ----
 

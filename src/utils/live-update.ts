@@ -13,7 +13,7 @@ import { ref } from "vue";
 
 // Same permanent release as db.ts — single manifest for both channels
 const MANIFEST_URL =
-  "https://github.com/all43/lexiklar/releases/download/manifest/manifest.json";
+  "https://cdn.lexiklar.app/manifest.json";
 
 export interface AppUpdateInfo {
   available: boolean;
