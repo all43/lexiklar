@@ -2,11 +2,6 @@ name: Publish Dictionary Data
 
 on:
   workflow_dispatch:
-    inputs:
-      publish_bundle:
-        description: "Also publish app bundle (Capawesome OTA)"
-        type: boolean
-        default: false
   push:
     branches: [main]
     paths:
@@ -26,7 +21,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
 
       - run: npm ci
@@ -87,7 +82,7 @@ jobs:
       - name: Create data release
         run: |
           TAG="${{ steps.publish.outputs.tag }}"
-          # Upload DB + any patch .sql files as release assets
+          # Upload DB + gzipped DB + any patch .sql files as release assets
           ASSETS=(/tmp/release-assets/lexiklar.db /tmp/release-assets/lexiklar.db.gz)
           for f in /tmp/release-assets/*.sql; do
             [ -f "$f" ] && ASSETS+=("$f")
@@ -107,71 +102,5 @@ jobs:
           fi
           # Upload/overwrite manifest.json
           gh release upload manifest /tmp/release-assets/manifest.json --clobber
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  publish-bundle:
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.publish_bundle == 'true'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - run: npm ci
-
-      - name: Build app
-        run: npm run build
-
-      - name: Create bundle release
-        id: bundle
-        run: |
-          VERSION=$(node -p "require('./package.json').version")
-          TAG="app-v${VERSION}"
-          mkdir -p /tmp/bundle-assets
-          cd dist && zip -r "/tmp/bundle-assets/${VERSION}.zip" .
-          cd ..
-          BUNDLE_SIZE=$(stat --format=%s "/tmp/bundle-assets/${VERSION}.zip" 2>/dev/null || stat -f%z "/tmp/bundle-assets/${VERSION}.zip")
-          BUNDLE_URL="https://github.com/${{ github.repository }}/releases/download/${TAG}/${VERSION}.zip"
-
-          gh release create "$TAG" "/tmp/bundle-assets/${VERSION}.zip" \
-            --title "App v${VERSION}" \
-            --notes "App bundle for Capawesome live update"
-
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-          echo "url=$BUNDLE_URL" >> "$GITHUB_OUTPUT"
-          echo "size=$BUNDLE_SIZE" >> "$GITHUB_OUTPUT"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Update manifest with bundle info
-        run: |
-          # Download current manifest
-          mkdir -p /tmp/manifest
-          gh release download manifest --pattern "manifest.json" --dir /tmp/manifest 2>/dev/null || echo '{}' > /tmp/manifest/manifest.json
-
-          # Update bundle section using node
-          node -e "
-            const fs = require('fs');
-            const m = JSON.parse(fs.readFileSync('/tmp/manifest/manifest.json', 'utf-8'));
-            m.bundle = {
-              current_version: '${{ steps.bundle.outputs.version }}',
-              url: '${{ steps.bundle.outputs.url }}',
-              size: ${{ steps.bundle.outputs.size }}
-            };
-            fs.writeFileSync('/tmp/manifest/manifest.json', JSON.stringify(m, null, 2) + '\n');
-          "
-
-          # Create manifest release if needed
-          if ! gh release view manifest >/dev/null 2>&1; then
-            gh release create manifest --title "Update manifest" \
-              --notes "Permanent release holding the unified update manifest. Do not delete."
-          fi
-          gh release upload manifest /tmp/manifest/manifest.json --clobber
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
