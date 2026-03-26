@@ -18,6 +18,7 @@
       <template v-if="dbDownloadNeeded && !dbDownloading">
         <p><b>{{ t('db.downloadTitle') }}</b></p>
         <p class="text-secondary">{{ t('db.downloadHint') }}</p>
+        <p v-if="dbDownloadError" class="text-color-red">{{ dbDownloadError }}</p>
         <f7-button fill @click="startDownload">{{ t('db.download') }}</f7-button>
       </template>
       <!-- Download in progress -->
@@ -245,6 +246,7 @@ export default defineComponent({
       loading: true,
       dbDownloading: false,
       dbDownloadProgress: 0,
+      dbDownloadError: "",
       debounceTimer: null as ReturnType<typeof setTimeout> | null,
       showArticles: getCached(SHOW_ARTICLES_KEY) !== "0",
       searchBarPosition: (getCached(SEARCH_BAR_POSITION_KEY) || "auto") as SearchBarPosition,
@@ -290,6 +292,7 @@ export default defineComponent({
     async startDownload() {
       this.dbDownloading = true;
       this.dbDownloadProgress = 0;
+      this.dbDownloadError = "";
       try {
         await downloadDb((loaded, total) => {
           this.dbDownloadProgress = Math.round((loaded / total) * 100);
@@ -301,7 +304,7 @@ export default defineComponent({
       } catch (err) {
         console.error("DB download failed:", err);
         this.dbDownloading = false;
-        // Stay on download prompt so user can retry
+        this.dbDownloadError = (err as Error).message || "Download failed";
       }
     },
     onPageVisible() {
