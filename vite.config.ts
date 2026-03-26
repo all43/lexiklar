@@ -4,8 +4,13 @@ import vue from '@vitejs/plugin-vue';
 import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 import { readFileSync } from 'fs';
+import { execSync } from 'child_process';
 
 const pkg = JSON.parse(readFileSync('package.json', 'utf-8'));
+const gitHash = (() => {
+  try { return execSync('git rev-parse --short=7 HEAD').toString().trim(); }
+  catch { return 'dev'; }
+})();
 
 export default defineConfig({
   plugins: [
@@ -59,7 +64,7 @@ export default defineConfig({
     }),
   ],
   define: {
-    __APP_VERSION__: JSON.stringify(pkg.version),
+    __APP_VERSION__: JSON.stringify(`${pkg.version}+${gitHash}`),
   },
   server: {
     host: '127.0.0.1',
