@@ -53,11 +53,11 @@ jobs:
           mkdir -p /tmp/release-assets
 
           # Build release tag from date + short version hash
-          DB_VERSION=$(node -p "
-            const Database = require('better-sqlite3');
-            const db = new Database('data/lexiklar.db', { readonly: true });
-            db.prepare('SELECT value FROM meta WHERE key = \"version\"').get().value;
-          ")
+          DB_VERSION=$(node -e '
+            const Database = require("better-sqlite3");
+            const db = new Database("data/lexiklar.db", { readonly: true });
+            process.stdout.write(db.prepare("SELECT value FROM meta WHERE key = ?").get("version").value);
+          ')
           TAG="data-$(date +%Y%m%d)-${DB_VERSION:0:8}"
           RELEASE_URL="https://github.com/${{ github.repository }}/releases/download/${TAG}"
 
