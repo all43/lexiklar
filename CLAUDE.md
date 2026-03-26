@@ -745,7 +745,7 @@ Configured via `vite-plugin-pwa` in `vite.config.ts`. Capacitor provides no PWA 
 **Cloudflare R2** (`cdn.lexiklar.app`):
 - Bucket `lexiklar-data` with custom domain `cdn.lexiklar.app`
 - CORS: restricted to `https://lexiklar.app` and `https://*.lexiklar.app`
-- Stores: `manifest.json`, `lexiklar.db`, `lexiklar.db.gz`, `patches/*.sql`
+- Stores: `manifest.json`, `lexiklar.db`, `lexiklar.db.gz`, `patches/*.sql`, `bundles/<version>.zip`
 - Updated by `.github/workflows/publish-data.yml` via `wrangler r2 object put`
 
 **Interaction with OTA DB updates**: the SW does not interfere with `checkForUpdates()` — those are cross-origin fetches to GitHub Release asset URLs which bypass the SW's scope.
@@ -763,8 +763,8 @@ Three independent update channels:
 | **Capawesome live update** | App shell on native iOS/Android | `@capawesome/capacitor-live-update` → `live-update.ts` | Auto on startup + manual in Settings |
 
 **Asset hosting**:
-- **R2 CDN** (`cdn.lexiklar.app`) — `manifest.json`, `lexiklar.db`, `lexiklar.db.gz`, `patches/*.sql` (overwritten on each publish)
-- **GitHub Releases** — `app-vX.Y.Z` tags hold Capawesome bundle zips; `data-*` tags kept for archival
+- **R2 CDN** (`cdn.lexiklar.app`) — all assets: `manifest.json`, `lexiklar.db`, `lexiklar.db.gz`, `patches/*.sql`, `bundles/<version>.zip`
+- **GitHub Releases** — `data-*` tags kept for archival only
 
 **Unified manifest format** (on the `manifest` release):
 ```json
@@ -810,8 +810,8 @@ Diffs `words` and `examples` tables using the `hash` column (SHA-256 of JSON `da
 **GitHub Actions**:
 - **`publish-data.yml`** (`publish-db` job): triggers on push to `data/`, `scripts/build-index.ts`, or manual dispatch. Builds index, uploads DB + gzipped DB + patches + manifest to R2 CDN.
 - **`deploy-pwa.yml`** (`deploy` job): triggers on push to `src/`, `public/`, etc. Builds app, deploys to Cloudflare Pages.
-- **`deploy-pwa.yml`** (`publish-bundle` job): manual dispatch checkbox. Builds Capawesome OTA bundle zip, creates `app-*` GitHub Release, updates manifest on R2.
-- Secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` (for Pages + R2), `GITHUB_TOKEN` (automatic).
+- **`deploy-pwa.yml`** (`publish-bundle` job): manual dispatch checkbox. Builds Capawesome OTA bundle zip, uploads to R2 (`bundles/<version>.zip`), updates manifest on R2.
+- Secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` (for Pages + R2). `GITHUB_TOKEN` automatic (used by publish-data for archival releases).
 
 ### Report Worker (`workers/report-worker.js`)
 

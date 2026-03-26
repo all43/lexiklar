@@ -52,8 +52,6 @@ jobs:
   publish-bundle:
     if: github.event_name == 'workflow_dispatch' && github.event.inputs.publish_bundle == 'true'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -67,43 +65,34 @@ jobs:
       - name: Build app
         run: npm run build
 
-      - name: Create bundle release
-        id: bundle
+      - name: Upload bundle to R2 and update manifest
         run: |
+          npm i -g wrangler@4
+
           VERSION=$(node -p "require('./package.json').version")
-          TAG="app-v${VERSION}"
           mkdir -p /tmp/bundle-assets
           cd dist && zip -r "/tmp/bundle-assets/${VERSION}.zip" .
           cd ..
           BUNDLE_SIZE=$(stat --format=%s "/tmp/bundle-assets/${VERSION}.zip" 2>/dev/null || stat -f%z "/tmp/bundle-assets/${VERSION}.zip")
-          BUNDLE_URL="https://github.com/${{ github.repository }}/releases/download/${TAG}/${VERSION}.zip"
+          BUNDLE_URL="https://cdn.lexiklar.app/bundles/${VERSION}.zip"
 
-          gh release create "$TAG" "/tmp/bundle-assets/${VERSION}.zip" \
-            --title "App v${VERSION}" \
-            --notes "App bundle for Capawesome live update"
-
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-          echo "url=$BUNDLE_URL" >> "$GITHUB_OUTPUT"
-          echo "size=$BUNDLE_SIZE" >> "$GITHUB_OUTPUT"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Update manifest with bundle info
-        run: |
-          npm i -g wrangler@4
+          # Upload bundle zip to R2
+          wrangler r2 object put "lexiklar-data/bundles/${VERSION}.zip" \
+            --file "/tmp/bundle-assets/${VERSION}.zip" \
+            --content-type application/zip --remote
 
           # Download current manifest from R2
           mkdir -p /tmp/manifest
           curl -sf "https://cdn.lexiklar.app/manifest.json" -o /tmp/manifest/manifest.json 2>/dev/null || echo '{}' > /tmp/manifest/manifest.json
 
-          # Update bundle section using node
+          # Update bundle section
           node -e "
             const fs = require('fs');
             const m = JSON.parse(fs.readFileSync('/tmp/manifest/manifest.json', 'utf-8'));
             m.bundle = {
-              current_version: '${{ steps.bundle.outputs.version }}',
-              url: '${{ steps.bundle.outputs.url }}',
-              size: ${{ steps.bundle.outputs.size }}
+              current_version: '${VERSION}',
+              url: '${BUNDLE_URL}',
+              size: ${BUNDLE_SIZE}
             };
             fs.writeFileSync('/tmp/manifest/manifest.json', JSON.stringify(m, null, 2) + '\n');
           "
@@ -112,6 +101,8 @@ jobs:
           wrangler r2 object put lexiklar-data/manifest.json \
             --file /tmp/manifest/manifest.json \
             --content-type application/json --remote
+
+          echo "Uploaded bundle v${VERSION} ($(( BUNDLE_SIZE / 1024 )) KB) to cdn.lexiklar.app"
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
