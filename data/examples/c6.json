@@ -7808,7 +7808,10 @@
     "lemmas": [
       "Spezies"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "c648cdc961": {
     "text": "Die Frontseite des Wagens ist sehr aerodynamisch.",
@@ -10955,7 +10958,11 @@
         "gloss_hint": "unit of measurement"
       }
     ],
-    "text_linked": "[[Das|pronouns/das_[1]]] Drehmoment [[hat|verbs/haben#1]] dieselbe [[Dimension|nouns/Dimension#2]] [[wie|adverbs/wie#1]] [[die|pronouns/die]] [[Energie|nouns/Energie#3]], [[nämlich|conjunctions/nämlich]] Newtonmeter ([Nm])."
+    "text_linked": "[[Das|pronouns/das_[1]]] Drehmoment [[hat|verbs/haben#1]] dieselbe [[Dimension|nouns/Dimension#2]] [[wie|adverbs/wie#1]] [[die|pronouns/die]] [[Energie|nouns/Energie#3]], [[nämlich|conjunctions/nämlich]] Newtonmeter ([Nm]).",
+    "_proofread": {
+      "translation": true,
+      "annotations": "b5351209"
+    }
   },
   "c6659b7db8": {
     "text": "„Hand aufs Herz – könnten Sie in einem Satz erklären, wie in der Vergangenheit der Bundestag gewählt wurde?“",
@@ -23630,12 +23637,12 @@
   },
   "c6e36ddbcd": {
     "text": "Er hat schon wieder einen Fleck geschrieben.",
-    "translation": "He has written a stain again.",
+    "translation": "He got a failing grade again.",
     "source": "wiktionary",
     "lemmas": [
       "Fleck"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Er",
@@ -23671,7 +23678,7 @@
         "form": "Fleck",
         "lemma": "Fleck",
         "pos": "noun",
-        "gloss_hint": "stain"
+        "gloss_hint": "failing grade"
       },
       {
         "form": "geschrieben",

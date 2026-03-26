@@ -6072,12 +6072,12 @@
   },
   "99354efc2b": {
     "text": "„Alle glaubten nach dieser Parade zuversichtlicher an einen siegreichen Ausgang des Feldzuges, als sie es nach zwei gewonnenen Schlachten hätten tun können.“",
-    "translation": "Everyone believed more confidently after this parade in a victorious outcome of the campaign than they could have after two skirmishes.",
+    "translation": "A well-conducted parade could raise the morale of the troops more than they could have after two won battles.",
     "source": "wiktionary",
     "lemmas": [
       "Parade"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Alle",
@@ -6191,7 +6191,7 @@
         "form": "Schlachten",
         "lemma": "Schlacht",
         "pos": "noun",
-        "gloss_hint": "skirmish"
+        "gloss_hint": "battle"
       },
       {
         "form": "hätten",
@@ -8390,7 +8390,10 @@
     "lemmas": [
       "Haken"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "995344f7bc": {
     "text": "„In einer Koranschule neben dem Dorf Thet Kay Pyin lernen Kinder die heilige Schrift auswendig.“",
@@ -15962,7 +15965,10 @@
       "Bericht",
       "Fliege"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "99a2b2a312": {
     "text": "Aus dem Verstand stammt diejenige Erkenntnis, die der Erfahrung vorhergeht (a priori).",
