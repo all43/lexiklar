@@ -1,3 +1,8 @@
+---
+name: proofread
+description: Launch proofreading subagent batches for unproofread word files
+---
+
 # Proofread Batches
 
 Launch proofreading subagent batches for unproofread word files.
