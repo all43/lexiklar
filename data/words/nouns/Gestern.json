@@ -6,10 +6,7 @@
   "gender": "N",
   "article": "das",
   "plural_form": null,
-  "gender_rule": {
-    "rule_id": "nominalized_infinitive",
-    "is_exception": false
-  },
+  "gender_rule": null,
   "case_forms": {
     "singular": {
       "nom": "Gestern",
@@ -60,5 +57,8 @@
   "zipf": 4.41,
   "expression_ids": [
     "ae4cb25f9a"
-  ]
+  ],
+  "_overrides": {
+    "gender_rule": null
+  }
 }
