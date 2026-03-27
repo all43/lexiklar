@@ -22,6 +22,7 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,woff2,woff,ttf,ico}'],
         globIgnores: ['data/**', 'sqlite3/**', '**/sqlite3-worker1-*', '**/sqlite3-opfs-*'],
         navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/^\/privacy\.html$/],
         runtimeCaching: [
           {
             urlPattern: /\/data\/db-version\.txt$/,
