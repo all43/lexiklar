@@ -75,10 +75,11 @@
 
     <f7-block-title>{{ t('settings.dataSources') }}</f7-block-title>
     <f7-list inset strong-ios outline-ios>
-      <f7-list-item title="German Wiktionary (via Kaikki.org)" after="CC BY-SA 4.0" />
-      <f7-list-item title="Leipzig Corpora" after="CC BY 4.0" />
-      <f7-list-item title="SUBTLEX-DE" after="CC BY 4.0" />
-      <f7-list-item title="OpenSubtitles" after="CC BY 4.0" />
+      <f7-list-item external link="https://de.wiktionary.org/" target="_blank" title="German Wiktionary" after="CC BY-SA 4.0" />
+      <f7-list-item external link="https://kaikki.org/" target="_blank" title="Kaikki.org" after="(extraction)" />
+      <f7-list-item external link="https://wortschatz-leipzig.de/en" target="_blank" title="Leipzig Corpora" after="CC BY 4.0" />
+      <f7-list-item external link="https://osf.io/2e64j/" target="_blank" title="SUBTLEX-DE" after="CC BY 4.0" />
+      <f7-list-item external link="https://github.com/hermitdave/FrequencyWords" target="_blank" title="OpenSubtitles" after="CC BY 4.0" />
     </f7-list>
     <f7-block-footer class="padding-horizontal">
       {{ t('settings.dataSourcesFooter') }}
