@@ -36,6 +36,7 @@ export interface ProofreadFlags {
 export interface GenderRule {
   rule_id: string;
   is_exception: boolean;
+  is_false_match?: boolean;
 }
 
 export interface CaseRow {
@@ -224,6 +225,7 @@ export interface NounGenderRuleEntry {
   description_de: string;
   examples: string[];
   known_exceptions: string[];
+  false_matches?: string[];
 }
 
 export interface NounGenderRules {

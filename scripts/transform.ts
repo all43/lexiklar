@@ -805,9 +805,25 @@ function matchNounGenderRule(word: string, gender: string | null, pluralForm: st
   }
 
   // Step 2: Suffix rules (already sorted longest-first)
+  // Require at least 2 characters before the suffix to avoid false matches
+  // (e.g. "Tor" for -or, "Ei" for -ei, "Mist" for -ist)
   const wordLower = word.toLowerCase();
   for (const rule of SUFFIX_RULES) {
-    if (wordLower.endsWith(rule.pattern)) {
+    if (wordLower.endsWith(rule.pattern) && word.length - rule.pattern.length >= 2) {
+      // Flag false suffix matches (e.g. "Frist" for -ist, "Geist" for -ist)
+      // Compounds are checked by their final component (e.g. "Kündigungsfrist" ends with "Frist")
+      const falseMatches = rule.false_matches;
+      if (
+        falseMatches &&
+        falseMatches.length > 0 &&
+        falseMatches.some((e) => wordLower === e.toLowerCase() || wordLower.endsWith(e.toLowerCase()))
+      ) {
+        return {
+          rule_id: rule.id,
+          is_exception: false,
+          is_false_match: true,
+        };
+      }
       const isException = gender !== rule.predicted_gender;
       return {
         rule_id: rule.id,

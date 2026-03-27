@@ -13,10 +13,13 @@
       <div v-if="word.plural_dominant" class="noun-rule-hint">
         <span class="noun-rule-match">{{ t('noun.usuallyPlural') }}</span>
       </div>
-      <div v-if="word.gender_rule" class="noun-rule-hint">
+      <div v-if="word.gender_rule && !word.gender_rule.is_false_match" class="noun-rule-hint">
         <span :class="word.gender_rule.is_exception ? 'noun-rule-exception' : 'noun-rule-match'">
           {{ ruleText }}
         </span>
+      </div>
+      <div v-if="word.gender_rule && word.gender_rule.is_false_match" class="noun-rule-hint">
+        <span class="noun-rule-false-match">{{ falseMatchText }}</span>
       </div>
       <div v-if="word.is_singular_only" class="noun-rule-hint">
         <span class="noun-rule-match">{{ t('noun.singularetantum') }}</span>
@@ -115,6 +118,13 @@ export default defineComponent({
       if (!rule) return "";
       const desc = t(`noun.rule.${rule.rule_id}`);
       return rule.is_exception ? `${t("noun.exception")}${desc}` : desc;
+    },
+    falseMatchText(): string {
+      const rule = this.word.gender_rule;
+      if (!rule) return "";
+      // Extract suffix from rule_id (e.g. "suffix_ist" → "ist")
+      const suffix = rule.rule_id.replace("suffix_", "");
+      return t("noun.falseMatch").replace("{suffix}", `-${suffix}`);
     },
   },
   methods: {

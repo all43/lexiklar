@@ -136,6 +136,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "noun.usuallyPlural": "Usually used in plural",
     "noun.singularetantum": "Singularetantum \u2014 usually no plural",
     "noun.exception": "Exception: ",
+    "noun.falseMatch": "{suffix} is not a suffix here",
     "noun.singular": "Singular",
     "noun.plural": "Plural",
     // Gender rules
@@ -338,6 +339,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "noun.usuallyPlural": "Meist im Plural verwendet",
     "noun.singularetantum": "Singularetantum \u2014 meist kein Plural",
     "noun.exception": "Ausnahme: ",
+    "noun.falseMatch": "{suffix} ist hier kein Suffix",
     "noun.singular": "Singular",
     "noun.plural": "Plural",
     // Genusregeln
