@@ -1,6 +1,6 @@
 # Lexiklar — Significant Challenges & Solutions
 
-A retrospective of the hardest problems we solved building a fully offline German dictionary app from a Wiktionary data dump to a production-ready PWA/iOS app. 328 commits, ~22,800 word files, ~96K examples.
+A retrospective of the hardest problems we solved building a fully offline German dictionary app from a Wiktionary data dump to a production-ready PWA/iOS app. ~24,900 word files, ~86K examples, ~2,580 proofread.
 
 ---
 
@@ -115,19 +115,29 @@ A retrospective of the hardest problems we solved building a fully offline Germa
 
 ---
 
-## 11. Proofreading at Scale (54 Batches, 1,123 Words)
+## 11. Proofreading at Scale (154 Batches, 2,580 Words)
 
 **Problem:** LLM-generated translations, glosses, and grammar data needed human-level verification but the dataset was too large for manual review.
 
-**What made it hard:** Subagent output formats were inconsistent — some wrote word paths in `verified`/`translation_ok`, some used note-based fixes, some wrapped objects in arrays. Grammar corrections needed to survive pipeline re-runs (transform regenerates conjugations from source data).
+**What made it hard:** Subagent output formats were inconsistent — some wrote word paths in `verified`/`translation_ok`, some used note-based fixes, some wrapped objects in arrays. Grammar corrections needed to survive pipeline re-runs (transform regenerates conjugations from source data). Polysemous words were the hardest — LLM translators consistently picked the most common sense, producing translations like "cop" for *Bulle* (which has 7 senses: male cattle, seal stamp, papal bull, burly man, cop, stock market bull, young male seal). Later batches (b119–b130) found ~40% of issues were wrong-sense translations for polysemous words.
 
 **Solution:**
 - Built a subagent proofreading workflow using Claude Code's built-in model (no API credits)
-- Standardized prompt (`prompts/proofread-subagent.md`) with replaceable word lists
+- Standardized prompt (`prompts/proofread-subagent.md`) with replaceable word lists and per-word `check_examples` to skip already-proofread examples
 - Built `apply-proofread-results.ts` to handle all fix types: `gloss_fix`, `translation_fix`, `word_field_fix`, `annotation_replace`, `annotation_update`, `annotation_remove`
 - `grammar_override` issues automatically written as `_overrides` (survive re-transform)
 - `_proofread` flags track what's been verified; stale flags auto-cleared when source changes
-- Completed 54 batches covering 1,123 word files and ~5,531 examples
+- `data/manual-fixes.json` accumulates all patchable fixes (820+) — idempotent, re-applicable
+- Completed 154 batches covering ~2,580 word files and ~13,000 examples
+- Priority list (`config/proofread-priority.txt`): 1,420 words ordered by importance, fully complete
+- Additional 480 high-frequency words proofread by Zipf score (b139–b154)
+
+**Common issue patterns discovered:**
+- **Wrong-sense translations** (~40% of issues): LLMs default to most common meaning — *Affe* → "monkey" instead of backpack/drunk, *Gipfel* → "summit" instead of croissant/treetop, *Bart* → "beard" instead of key-bit/thermal/tuning-ear
+- **English-form annotations** (~20%): LLM annotated the English translation text instead of German source
+- **Separable verb lemma errors** (~10%): *brach...aus* annotated as *brechen* instead of *ausbrechen*
+- **Stale/wrong gloss_hints** (~15%): sense disambiguation pointing to wrong sense after gloss updates
+- **Grammar overrides that outlive their entry** (~5%): when transform splits/reshuffles homonyms, `_overrides` can end up on the wrong entry (e.g. anhängen weak→strong conjugation fix)
 
 ---
 
@@ -323,3 +333,27 @@ The `_proofread.annotations` guard in `build-index.ts` prevents verified sense r
 - **37-item curated idiom benchmark** — hand-picked to cover German-specific cultural references, false friends, and metaphors with no direct English equivalent
 - **Human proofreading via subagent** — for the highest-frequency idioms, Claude Sonnet verified translations where automated metrics couldn't judge quality
 - **`type: "expression" | "proverb"`** flag on examples — lets the pipeline and UI treat these differently from regular sentences
+
+---
+
+## 24. Dual-Gender and Dual-Form Extraction — Wiktionary's Hidden Ordering
+
+**Problem:** 989 Wiktionary nouns carry both masculine and neuter tags (e.g. `["masculine", "neuter"]`), and 194 verbs list two past participle forms (e.g. `aufgehängt` and `aufgehangen`). The extraction pipeline had no principled way to pick the correct form, causing systematic errors:
+- `parseGender()` hardcoded `M > F > N` priority, so *Radio*, *Drittel*, *Bonbon*, *Virus* all got `der` instead of the standard `das`
+- The compact-form loop for `participle-2` used last-wins (overwrite), so verbs like *aufhängen* stored the dialectal `aufgehangen` instead of standard `aufgehängt`
+
+**What made it hard:** Wiktionary compact forms carry **no register tags** (`archaic`, `colloquial`, etc.) — those only appear on the expanded Flexion conjugation tables. There's no metadata distinguishing standard from dialectal in the compact data we extract from.
+
+**Analysis across 194 dual-participle verbs:**
+- **First form = standard in 87%** of known cases (13/15 verified). Wiktionary consistently lists the standard/modern form first, with archaic/dialectal alternatives second.
+- The two "exceptions" (*backen*: gebackt/gebacken, *wenden*: gewandt/gewendet) are genuinely dual-valid — both forms are standard with different nuances.
+- **Separate Wiktionary entries** already handle genuinely different verbs (*erschrecken* intrans vs trans, *bleichen* trans vs intrans, *scheren* shear vs bother) — these are different lexemes, not form variants.
+
+**For nouns:** Wiktionary's gender tag order is alphabetical (`feminine < masculine < neuter`), not by frequency. The old M-first priority systematically picked the wrong gender for M/N pairs where neuter is standard in Hochdeutsch.
+
+**Solution:**
+- **Participle-2**: changed to first-wins (`if (!conjugation.participle2)`) — matches Wiktionary's standard-first ordering. Fixes ~70 verbs; makes 14 existing `_overrides` redundant.
+- **Gender**: `parseGender()` now prefers N over M for dual-gender nouns. 55 clearly-masculine nouns (*Bereich*, *Strand*, *Teller*, *Monat*, *Dschungel*...) got `_overrides` to preserve `der`. ~23 borderline cases (measurement units like *Meter*/*Liter*, loanwords like *Virus*/*Radio*) default to `das` — both forms are Duden-accepted, and `das` is the safer default for learners.
+- **Sense-dependent gender** (*Schild*: der=shield / das=sign; *Gehalt*: der=salary / das=content) was already handled correctly via separate homonym files — no change needed.
+
+**Key insight:** Wiktionary's data has consistent implicit ordering conventions (standard form first, standard gender debatable), but these conventions are undocumented and only discoverable through statistical analysis across hundreds of entries.

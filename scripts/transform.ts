@@ -722,9 +722,16 @@ function extractSounds(entry: WiktionaryEntry): Sound[] {
 
 function parseGender(entry: WiktionaryEntry): "M" | "F" | "N" | null {
   const tags = entry.tags || [];
-  if (tags.includes("masculine")) return "M";
-  if (tags.includes("feminine")) return "F";
-  if (tags.includes("neuter")) return "N";
+  const hasM = tags.includes("masculine");
+  const hasF = tags.includes("feminine");
+  const hasN = tags.includes("neuter");
+  // ~989 Wiktionary nouns list both masculine and neuter (e.g. Radio, Drittel,
+  // Viertel, Bonbon, Virus). Standard German overwhelmingly prefers neuter for
+  // these; masculine is regional (Swiss/Austrian). Prefer N over M for dual-gender.
+  if (hasM && hasN) return "N";
+  if (hasF) return "F";
+  if (hasM) return "M";
+  if (hasN) return "N";
   return null;
 }
 

@@ -258,7 +258,9 @@ export function extractVerbConjugation(
     const tags = f.tags || [];
 
     if (tags.includes("participle-2")) {
-      conjugation.participle2 = f.form;
+      // First-wins: Wiktionary lists standard form first, archaic/dialectal second
+      // (e.g. aufgehängt before aufgehangen, gewinkt before gewunken)
+      if (!conjugation.participle2) conjugation.participle2 = f.form;
       continue;
     }
 
