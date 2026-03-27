@@ -97,6 +97,7 @@
                   <div class="sense-gloss-wrap">
                     <div class="sense-primary-row">
                       <span class="sense-primary">{{ sense.gloss_en || sense.gloss }}</span>
+                      <EnSynonyms :synonyms="sense.synonyms_en || []" :gloss-en="sense.gloss_en || ''" :exclude="usedEnSynonyms[idx]" />
                     </div>
                     <div
                       v-if="sense.gloss_en"
@@ -359,6 +360,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import EnSynonyms from "../components/EnSynonyms.vue";
 import GlossText from "../components/GlossText.vue";
 import VerbConjugation from "../components/VerbConjugation.vue";
 import NounDeclension from "../components/NounDeclension.vue";
@@ -444,7 +446,7 @@ const POS_COLORS: Record<string, string> = {
 };
 
 export default defineComponent({
-  components: { GlossText, VerbConjugation, NounDeclension, AdjectiveDeclension, VerbSepPipe, PronounDeclension },
+  components: { EnSynonyms, GlossText, VerbConjugation, NounDeclension, AdjectiveDeclension, VerbSepPipe, PronounDeclension },
   props: {
     f7route: { type: Object, default: null },
     f7router: { type: Object, default: null },
@@ -464,6 +466,28 @@ export default defineComponent({
   },
   computed: {
     t() { return t; },
+    /** For each sense index, a Set of lowercase terms already shown by earlier senses (gloss_en + displayed synonyms) */
+    usedEnSynonyms(): Set<string>[] {
+      const senses = this.word?.senses ?? [];
+      const result: Set<string>[] = [];
+      const used = new Set<string>();
+      for (const sense of senses) {
+        result.push(new Set(used));
+        // Add this sense's gloss_en
+        if (sense.gloss_en) used.add(sense.gloss_en.toLowerCase());
+        // Compute which 2 synonyms would actually be displayed, and add only those
+        const gloss = (sense.gloss_en || "").toLowerCase();
+        const filtered = (sense.synonyms_en ?? []).filter(
+          (s) => s.toLowerCase() !== gloss && !used.has(s.toLowerCase()),
+        );
+        const singles = filtered.filter((s) => !s.includes(" "));
+        const multi = filtered.filter((s) => s.includes(" "));
+        for (const s of [...singles, ...multi].slice(0, 2)) {
+          used.add(s.toLowerCase());
+        }
+      }
+      return result;
+    },
     isInHistory(): boolean {
       return this.inHistory;
     },
@@ -968,7 +992,6 @@ export default defineComponent({
 
 .sense-primary {
   font-size: var(--f7-list-item-title-font-size, 17px);
-  flex: 1;
 }
 
 .sense-info-icon {
