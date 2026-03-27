@@ -5,10 +5,7 @@
   "gender": "F",
   "article": "die",
   "plural_form": "Listen",
-  "gender_rule": {
-    "rule_id": "suffix_ist",
-    "is_exception": true
-  },
+  "gender_rule": null,
   "case_forms": {
     "singular": {
       "nom": "List",
@@ -31,7 +28,10 @@
       "example_ids": [
         "03901e4970"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Trick",
+        "Intrige"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A cunning plan to achieve a particular goal through deception.",
@@ -51,7 +51,15 @@
       "example_ids": [
         "46262fc7a4"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Intrige",
+        "Cleverness",
+        "Durchtriebenheit",
+        "Gewitztheit",
+        "Schläue",
+        "Schlauheit",
+        "Raffinesse"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "Skill and habit of achieving one's goals through deception.",
@@ -95,7 +103,7 @@
   ],
   "_meta": {
     "source_hash": "32f27daca9420bb8",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-27"
   },
   "zipf": 3.54
 }

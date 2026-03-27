@@ -5,10 +5,7 @@
   "gender": "N",
   "article": "das",
   "plural_form": "Eier",
-  "gender_rule": {
-    "rule_id": "suffix_ei",
-    "is_exception": true
-  },
+  "gender_rule": null,
   "case_forms": {
     "singular": {
       "nom": "Ei",
@@ -32,8 +29,13 @@
         "a0c115158f",
         "5af52f5938"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Eizelle"
+      ],
+      "antonyms": [
+        "Samenzelle",
+        "Spermium"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A germ cell.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -97,8 +99,14 @@
       "example_ids": [
         "fb6f388500"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Ellipsoid",
+        "Rotationsellipsoid"
+      ],
+      "antonyms": [
+        "Kugel",
+        "Polyeder"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "An oval, three-dimensional object that is symmetrical along one axis.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -117,7 +125,12 @@
       "example_ids": [
         "118a4145c0"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Ball",
+        "Erbse",
+        "Pille",
+        "Murmel"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A ball or other roughly egg-shaped object suitable for playing with.",
@@ -140,7 +153,12 @@
         "aa367e5c08",
         "a858274d60"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Hoden",
+        "Nüsse",
+        "Klöten",
+        "Klüten"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "The testicles.",
@@ -160,7 +178,28 @@
       "example_ids": [
         "3fe69a3038"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "realisierbarer",
+        "Gedanke",
+        "Idee",
+        "Erfindung",
+        "Ei des Kolumbus",
+        "das Gelbe vom Ei",
+        "Höhepunkt",
+        "Kern",
+        "Kerngedanke",
+        "Ausrede",
+        "Clou",
+        "Frechheit",
+        "Scheinargument",
+        "Sinnlosigkeit",
+        "Trick",
+        "Unverfrorenheit",
+        "Unverschämtheit",
+        "Wahnwitz",
+        "Windei",
+        "Witz"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A brilliant or ingenious idea, invention, or solution that seems simple once discovered; the crux or essential point of something.",
@@ -182,7 +221,43 @@
       "example_ids": [
         "e1604f0afe"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Ausrede",
+        "Clou",
+        "Erfindung",
+        "Frechheit",
+        "Höhepunkt",
+        "Kern",
+        "Kerngedanke",
+        "Scheinargument",
+        "Sinnlosigkeit",
+        "Trick",
+        "Unverfrorenheit",
+        "Unverschämtheit",
+        "Wahnwitz",
+        "Windei",
+        "Witz",
+        "Gedanke",
+        "Idee",
+        "Banalität",
+        "Hirngespinst",
+        "Hirnrissigkeit",
+        "Idiotie",
+        "Irrtum",
+        "Irrwitz",
+        "Irrwitzigkeit",
+        "Luftnummer",
+        "Nährwert",
+        "Narretei",
+        "Paranoidität",
+        "Schizophrenie",
+        "ein Schuss in den Ofen",
+        "Taschenspielerei",
+        "Taschenspielertrick",
+        "unter aller Kanone",
+        "unter aller Sau",
+        "Witzlosigkeit"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A lie, excuse, or impudent remark; something absurd or sophistic.",
@@ -586,7 +661,7 @@
   ],
   "_meta": {
     "source_hash": "eaf253815300df2b",
-    "generated_at": "2026-03-16"
+    "generated_at": "2026-03-27"
   },
   "zipf": 4.1,
   "_proofread": {

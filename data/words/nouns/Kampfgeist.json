@@ -8,7 +8,8 @@
   "plural_form": null,
   "gender_rule": {
     "rule_id": "suffix_ist",
-    "is_exception": false
+    "is_exception": false,
+    "is_false_match": true
   },
   "case_forms": {
     "singular": {
@@ -37,7 +38,15 @@
         "bdc57990f5"
       ],
       "synonyms": [],
-      "antonyms": [],
+      "antonyms": [
+        "Aussichtslosigkeit",
+        "Hilflosigkeit",
+        "Kraftlosigkeit",
+        "Nachgiebigkeit",
+        "Unfähigkeit",
+        "Verzweiflung",
+        "Willensschwäche"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "Willingness to fight or defend oneself.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -72,7 +81,7 @@
   "compound_verified": true,
   "_meta": {
     "source_hash": "394865081c2d5fe5",
-    "generated_at": "2026-03-14"
+    "generated_at": "2026-03-27"
   },
   "zipf": 3.11
 }

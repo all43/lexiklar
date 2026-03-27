@@ -6,10 +6,7 @@
   "gender": "M",
   "article": "der",
   "plural_form": null,
-  "gender_rule": {
-    "rule_id": "suffix_ist",
-    "is_exception": false
-  },
+  "gender_rule": null,
   "case_forms": {
     "singular": {
       "nom": "Mist",
@@ -35,7 +32,10 @@
         "639ded7947",
         "7d41a67535"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Dung",
+        "Stalldung"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "Excrement from farm animals mixed with bedding material",
@@ -79,7 +79,10 @@
       "example_ids": [
         "c2d09ef9b7"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Abfall",
+        "Müll"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "Waste or garbage",
@@ -141,7 +144,12 @@
   ],
   "_meta": {
     "source_hash": "7de4c2ce449d41db",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-27"
   },
-  "zipf": 4.22
+  "zipf": 4.22,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true,
+    "synonyms_en": true
+  }
 }

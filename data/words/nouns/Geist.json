@@ -5,7 +5,11 @@
   "gender": "M",
   "article": "der",
   "plural_form": "Geister",
-  "gender_rule": null,
+  "gender_rule": {
+    "rule_id": "suffix_ist",
+    "is_exception": false,
+    "is_false_match": true
+  },
   "case_forms": {
     "singular": {
       "nom": "Geist",
@@ -32,8 +36,21 @@
         "afc68821bc",
         "06ae429370"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Sinn",
+        "Persönlichkeit",
+        "Verstand",
+        "Intellekt",
+        "Kopf"
+      ],
+      "antonyms": [
+        "Körper",
+        "Leib",
+        "Fleisch",
+        "Seele",
+        "Psyche",
+        "Instinkt"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "Thinking as a component of individuality",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -49,8 +66,14 @@
       "gloss_en": "spirit",
       "tags": [],
       "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Essenz",
+        "Quintessenz"
+      ],
+      "antonyms": [
+        "Buchstaben",
+        "Wortlaut"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "The mind, including the capacity for feeling.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -89,7 +112,9 @@
         "1b03501255",
         "583ba1da01"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Gespenst"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "The fundamental idea or principle underlying an action or work.",
@@ -111,7 +136,10 @@
         "8ef8c59378"
       ],
       "synonyms": [],
-      "antonyms": [],
+      "antonyms": [
+        "Brand",
+        "Wasser"
+      ],
       "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "A divine or supernatural being.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -375,12 +403,9 @@
   ],
   "_meta": {
     "source_hash": "3dd184754f530da0",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-27"
   },
   "zipf": 4.55,
-  "_overrides": {
-    "gender_rule": null
-  },
   "_proofread": {
     "gloss_en": true,
     "gloss_en_full": true,

@@ -7,7 +7,8 @@
   "plural_form": "Christen",
   "gender_rule": {
     "rule_id": "suffix_ist",
-    "is_exception": false
+    "is_exception": false,
+    "is_false_match": true
   },
   "case_forms": {
     "singular": {
@@ -35,8 +36,21 @@
         "e0ad4416e7",
         "b9e3ddc474"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Christenmensch",
+        "Christenseele",
+        "Christenhund"
+      ],
+      "antonyms": [
+        "Nichtchrist",
+        "Unchrist",
+        "Atheist",
+        "Gottesleugner",
+        "Gottloser",
+        "Heide",
+        "Ketzer",
+        "Ungetaufter"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A follower of Christianity",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -124,7 +138,7 @@
   "_gender_counterpart": "Christin",
   "_meta": {
     "source_hash": "5a74eb0dd75c7e96",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-27"
   },
   "zipf": 3.54
 }
