@@ -27,8 +27,8 @@ interface DbManifest {
   current_version: string;
   built_at: string;
   patches: Record<string, { url: string; size: number }>;
-  full_db: { url: string; size: number };
-  full_db_gz?: { url: string; size: number };
+  full_db_size: number;
+  full_db_gz: { url: string; size: number };
 }
 
 interface UnifiedManifest {
@@ -323,13 +323,12 @@ async function main(): Promise<void> {
   console.log(`Gzipped DB: ${(fullDbGzSize / (1024 * 1024)).toFixed(1)} MB (${((1 - fullDbGzSize / fullDbSize) * 100).toFixed(0)}% reduction)`);
 
   // Build DB manifest section
-  const fullDbUrl = releaseUrl ? `${releaseUrl}/lexiklar.db` : "lexiklar.db";
   const fullDbGzUrl = releaseUrl ? `${releaseUrl}/lexiklar.db.gz` : "lexiklar.db.gz";
   const dbManifest: DbManifest = {
     current_version: newVersion,
     built_at: builtAt,
     patches: prunedPatches,
-    full_db: { url: fullDbUrl, size: fullDbSize },
+    full_db_size: fullDbSize,
     full_db_gz: { url: fullDbGzUrl, size: fullDbGzSize },
   };
 

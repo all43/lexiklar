@@ -170,21 +170,21 @@ const supportsDecompressionStream =
   typeof DecompressionStream !== "undefined";
 
 /**
- * Fetch a gzipped URL and decompress to ArrayBuffer using DecompressionStream.
- * Progress is tracked against uncompressedSize (covers download + decompression).
- * Returns null if DecompressionStream is unavailable or fetch fails.
+ * Fetch a gzipped URL and decompress to ArrayBuffer.
+ * Prefers native DecompressionStream (streaming, zero-cost), falls back to
+ * fflate (JS-based, ~8 KB) for browsers without DecompressionStream (iOS < 16.4).
+ * Progress is tracked against uncompressedSize.
  */
 async function fetchGzipped(
   url: string,
   onProgress?: (loaded: number, total: number) => void,
   uncompressedSize?: number,
-): Promise<ArrayBuffer | null> {
-  if (!supportsDecompressionStream) return null;
-  try {
-    const resp = await fetch(url);
-    if (!resp.ok || !resp.body) return null;
+): Promise<ArrayBuffer> {
+  const resp = await fetch(url);
+  if (!resp.ok || !resp.body) throw new Error(`Download failed: ${resp.status}`);
 
-    // Pipe compressed stream through DecompressionStream
+  if (supportsDecompressionStream) {
+    // Native streaming decompression
     const decompressed = resp.body.pipeThrough(new DecompressionStream("gzip"));
     const reader = decompressed.getReader();
     const chunks: Uint8Array[] = [];
@@ -206,9 +206,15 @@ async function fetchGzipped(
     }
     if (onProgress && uncompressedSize) onProgress(uncompressedSize, uncompressedSize);
     return buf.buffer;
-  } catch {
-    return null;
   }
+
+  // Fallback: download compressed bytes, then decompress with fflate
+  const compressedBuf = await resp.arrayBuffer();
+  if (onProgress && uncompressedSize) onProgress(uncompressedSize / 2, uncompressedSize);
+  const { gunzipSync } = await import("fflate");
+  const decompressed = gunzipSync(new Uint8Array(compressedBuf));
+  if (onProgress && uncompressedSize) onProgress(uncompressedSize, uncompressedSize);
+  return decompressed.buffer as ArrayBuffer;
 }
 
 // ---- Public API ----
@@ -293,51 +299,21 @@ export async function initDb(): Promise<void> {
 }
 
 /**
- * Fetch a URL as ArrayBuffer with progress tracking.
- * Prefers gzipped variant if available and DecompressionStream is supported.
+ * Fetch gzipped DB as ArrayBuffer with progress tracking.
  */
 async function fetchDbBytes(
-  url: string,
-  size: number,
-  gzUrl?: string,
+  gzUrl: string,
+  uncompressedSize: number,
   onProgress?: (loaded: number, total: number) => void,
 ): Promise<ArrayBuffer> {
-  // Prefer gzipped download
-  if (gzUrl) {
-    const bytes = await fetchGzipped(gzUrl, onProgress, size);
-    if (bytes) return bytes;
-  }
-
-  // Fallback: uncompressed with progress
-  const resp = await fetch(url);
-  if (!resp.ok) throw new Error(`Download failed: ${resp.status}`);
-  const total = size || Number(resp.headers.get("content-length")) || 0;
-  if (onProgress && total && resp.body) {
-    const reader = resp.body.getReader();
-    const chunks: Uint8Array[] = [];
-    let loaded = 0;
-    for (;;) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      chunks.push(value);
-      loaded += value.byteLength;
-      onProgress(loaded, total);
-    }
-    const buf = new Uint8Array(loaded);
-    let offset = 0;
-    for (const chunk of chunks) {
-      buf.set(chunk, offset);
-      offset += chunk.byteLength;
-    }
-    return buf.buffer;
-  }
-  return resp.arrayBuffer();
+  return fetchGzipped(gzUrl, onProgress, uncompressedSize);
 }
 
 /**
  * Download the DB from GitHub Releases (called after user confirmation).
  * Prefers gzipped download (~51 MB) via DecompressionStream,
- * falls back to uncompressed (~221 MB) on older browsers.
+ * Always downloads gzipped (~51 MB), decompresses via DecompressionStream
+ * or fflate fallback on older browsers.
  */
 export async function downloadDb(
   onProgress?: (loaded: number, total: number) => void,
@@ -348,11 +324,10 @@ export async function downloadDb(
   if (!manifestResp.ok) throw new Error("Failed to fetch update manifest. Please check your internet connection.");
   const manifest = await manifestResp.json();
   const db = manifest.db;
-  if (!db?.full_db) throw new Error("No database URL found in manifest");
+  if (!db?.full_db_gz) throw new Error("No database URL found in manifest");
 
   const bytes = await fetchDbBytes(
-    db.full_db.url, db.full_db.size,
-    db.full_db_gz?.url, onProgress,
+    db.full_db_gz.url, db.full_db_size || db.full_db?.size || db.full_db_gz.size, onProgress,
   );
 
   // Cache before transferring to worker (transfer zeroes the buffer)
@@ -637,10 +612,9 @@ export async function checkForUpdates(): Promise<UpdateInfo | null> {
     return {
       available: true,
       type: "full",
-      url: db.full_db.url,
-      size: db.full_db.size,
+      url: db.full_db_gz?.url || db.full_db?.url,
+      size: db.full_db_size || db.full_db?.size || db.full_db_gz?.size,
       gzUrl: db.full_db_gz?.url,
-      gzSize: db.full_db_gz?.size,
       targetVersion: db.current_version,
       builtAt: db.built_at,
     };
@@ -675,10 +649,9 @@ export async function applyUpdate(
       if (onProgress && total) onProgress(total, total);
       await send("exec_batch", { sql: patchSql });
     } else {
-      // Full DB replacement
+      // Full DB replacement (always gzipped)
       const bytes = await fetchDbBytes(
-        update.url!, update.size || 0,
-        update.gzUrl, onProgress,
+        update.gzUrl || update.url!, update.size || 0, onProgress,
       );
       await send("init", { bytes }, [bytes]);
     }

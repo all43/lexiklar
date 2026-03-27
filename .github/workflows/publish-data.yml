@@ -84,10 +84,7 @@ jobs:
           # Install wrangler for R2 uploads
           npm i -g wrangler@4
 
-          # Upload DB files
-          wrangler r2 object put lexiklar-data/lexiklar.db \
-            --file /tmp/release-assets/lexiklar.db \
-            --content-type application/octet-stream --remote
+          # Upload gzipped DB (clients decompress via DecompressionStream or fflate)
           wrangler r2 object put lexiklar-data/lexiklar.db.gz \
             --file /tmp/release-assets/lexiklar.db.gz \
             --content-type application/gzip --remote
@@ -110,4 +107,3 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          WRANGLER_LOG: debug
