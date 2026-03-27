@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Blue rounded square background -->
+  <rect width="512" height="512" rx="96" fill="#1a73e8"/>
+  <!-- Open book shape -->
+  <path d="M120 340 L120 160 Q120 140 140 140 L240 140 Q256 140 256 160 L256 340" fill="none" stroke="#fff" stroke-width="16" stroke-linejoin="round"/>
+  <path d="M392 340 L392 160 Q392 140 372 140 L272 140 Q256 140 256 160 L256 340" fill="none" stroke="#fff" stroke-width="16" stroke-linejoin="round"/>
+  <!-- Book spine highlight -->
+  <line x1="256" y1="160" x2="256" y2="340" stroke="#fff" stroke-width="4" opacity="0.5"/>
+  <!-- Umlaut ä on left page -->
+  <text x="188" y="275" font-family="Georgia, serif" font-size="100" font-weight="bold" fill="#fff" text-anchor="middle">ä</text>
+  <!-- Umlaut ö on right page -->
+  <text x="324" y="275" font-family="Georgia, serif" font-size="100" font-weight="bold" fill="#fff" text-anchor="middle">ö</text>
+  <!-- Bottom line (table/shelf) -->
+  <line x1="100" y1="340" x2="412" y2="340" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+</svg>

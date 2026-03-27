@@ -5,7 +5,8 @@
       <stop offset="100%" stop-color="#1565c0"/>
     </linearGradient>
   </defs>
-  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+  <!-- Square background — no rx, stores apply their own masking -->
+  <rect width="512" height="512" fill="url(#bg)"/>
   <!-- White card -->
   <rect x="100" y="80" width="312" height="360" rx="20" fill="#fff"/>
   <!-- Book spine -->
