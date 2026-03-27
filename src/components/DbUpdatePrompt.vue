@@ -13,7 +13,7 @@
     </template>
     <template v-else-if="state === 'done'">
       <span>{{ t('dbUpdate.done') }}</span>
-      <button class="update-toast-btn" @click="reload()">{{ t('pwa.reload') }}</button>
+      <button class="update-toast-dismiss" @click="dismiss()">OK</button>
     </template>
     <template v-else-if="state === 'error'">
       <span>{{ t('dbUpdate.failed') }}</span>
@@ -67,6 +67,8 @@ export default defineComponent({
       });
       if (result.ok) {
         state.value = "done";
+        pendingDbUpdate.value = null;
+        setTimeout(() => { dismissed.value = true; }, 3000);
       } else {
         state.value = "error";
       }
@@ -79,11 +81,7 @@ export default defineComponent({
       }
     }
 
-    function reload() {
-      window.location.reload();
-    }
-
-    return { visible, state, progress, sizeLabel, applyNow, dismiss, reload, t };
+    return { visible, state, progress, sizeLabel, applyNow, dismiss, t };
   },
 });
 </script>

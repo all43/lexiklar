@@ -210,7 +210,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "dbUpdate.update": "Update",
     "dbUpdate.later": "Later",
     "dbUpdate.applying": "Updating dictionary\u2026",
-    "dbUpdate.done": "Dictionary updated. Reload for new data.",
+    "dbUpdate.done": "Dictionary updated.",
     "dbUpdate.failed": "Dictionary update failed",
 
     // DB download / error
@@ -417,7 +417,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "dbUpdate.update": "Aktualisieren",
     "dbUpdate.later": "Sp\u00E4ter",
     "dbUpdate.applying": "W\u00F6rterbuch wird aktualisiert\u2026",
-    "dbUpdate.done": "W\u00F6rterbuch aktualisiert. Neu laden f\u00FCr neue Daten.",
+    "dbUpdate.done": "W\u00F6rterbuch aktualisiert.",
     "dbUpdate.failed": "W\u00F6rterbuch-Update fehlgeschlagen",
 
     // DB download / error

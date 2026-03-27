@@ -661,6 +661,9 @@ export async function applyUpdate(
     await cacheWrite(updatedBytes);
     await cacheVersionWrite(update.targetVersion!);
 
+    // Clear in-memory caches so queries pick up new data
+    _allLemmas = null;
+
     return { ok: true };
   } catch (err) {
     return { ok: false, error: (err as Error).message };
