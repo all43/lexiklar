@@ -98,6 +98,29 @@ ls data/proofread-results-b*.json 2>/dev/null | sort -t b -k2 -n | tail -1
 ```
 If no files exist, check git log for the last batch mentioned in commit messages.
 
+### Verifying grammar overrides against source data
+
+**Before accepting `grammar_override` issues**, verify against Wiktionary source data. The source is generally correct — most "grammar errors" found by subagents are actually pipeline extraction bugs (already fixed) or valid regional variants.
+
+Use the lookup script to check:
+```bash
+npx tsx scripts/lookup.ts <word> --exact --pos <pos> --raw > /tmp/lookup.json
+```
+
+Then inspect the relevant forms:
+```python
+import json
+with open('/tmp/lookup.json') as f:
+    data = json.load(f)
+for i, e in enumerate(data):
+    tags = e.get('tags', [])
+    forms = [f for f in e.get('forms', []) if not f.get('source')
+             and any(t in (f.get('tags') or []) for t in ['participle-2', 'past', 'genitive', 'singular'])]
+    print(f'[{i}] tags={tags}, forms={[(f["form"], f["tags"]) for f in forms[:10]]}')
+```
+
+**Only add grammar overrides when the source data itself is wrong** (rare — Wiktionary is crowdsourced and well-maintained). If the source has the correct form but our pipeline extracted it wrong, fix the pipeline instead.
+
 ## Important notes
 
 - **Never run full transform** just to re-process a few words
@@ -105,3 +128,4 @@ If no files exist, check git log for the last batch mentioned in commit messages
 - Default is 8 parallel batches (240 words) — adjust based on available usage
 - The subagent prompt tells agents to use their own German knowledge — NO API calls
 - After applying, update memory with new batch numbers and stats
+- **Grammar overrides**: verify against raw Wiktionary data before accepting (see above)
