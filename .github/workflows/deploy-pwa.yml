@@ -9,15 +9,25 @@ on:
         default: false
   push:
     branches: [main]
-    paths:
-      - "src/**"
-      - "public/**"
-      - "index.html"
-      - "vite.config.ts"
-      - "package.json"
-      - "package-lock.json"
-      - "tsconfig.json"
-      - "types/**"
+    paths-ignore:
+      - "data/**"
+      - "scripts/**"
+      - "config/**"
+      - "prompts/**"
+      - "reports/**"
+      - "workers/**"
+      - "ios/**"
+      - "android/**"
+      - "icon-drafts/**"
+      - "icons/**"
+      - "store/**"
+      - "tests/**"
+      - ".claude/**"
+      - ".github/workflows/publish-data.yml"
+      - "*.md"
+      - "LICENSE"
+      - "capacitor.config.json"
+      - "tsconfig.scripts.json"
 
 jobs:
   deploy:
