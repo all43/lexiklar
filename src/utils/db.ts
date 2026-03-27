@@ -243,8 +243,8 @@ export async function initDb(): Promise<void> {
 
   let bytes: ArrayBuffer | null = null;
 
-  if (Capacitor.isNativePlatform()) {
-    // Native build — DB is bundled as a static asset.
+  if (Capacitor.isNativePlatform() || import.meta.env.DEV) {
+    // Native build or dev server — DB is available as a local file.
     // Use db-version.txt for cache validation to avoid re-deserializing on every launch.
     const versionResp = await fetch("/data/db-version.txt");
     const bundledVersion = (await versionResp.text()).trim();
