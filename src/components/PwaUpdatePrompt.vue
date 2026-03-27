@@ -7,17 +7,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, watch } from "vue";
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import { t } from "../js/i18n.js";
+import { swUpdatePending } from "../utils/db-update-state.js";
 
 export default defineComponent({
   setup() {
     const { needRefresh, updateServiceWorker } = useRegisterSW();
-    const show = ref(true);
+
+    // Sync to shared state so SearchPage can suppress DB download prompt
+    watch(needRefresh, (v) => { swUpdatePending.value = v; }, { immediate: true });
 
     return {
-      needRefresh: needRefresh,
+      needRefresh,
       updateSW: () => updateServiceWorker(),
       close: () => { needRefresh.value = false; },
       t,

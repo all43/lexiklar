@@ -13,3 +13,6 @@ export const dbReady = ref(false);
 
 /** True when DB is not bundled/cached and needs user-confirmed download. */
 export const dbDownloadNeeded = ref(false);
+
+/** True when a new service worker is waiting to activate. */
+export const swUpdatePending = ref(false);

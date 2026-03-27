@@ -1,6 +1,6 @@
 <template>
   <f7-app v-bind="f7params">
-    <PwaUpdatePrompt v-if="isWeb && dbIsReady" />
+    <PwaUpdatePrompt v-if="isWeb" />
     <DbUpdatePrompt />
 
     <f7-views tabs>

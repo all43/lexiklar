@@ -13,7 +13,7 @@
     </f7-navbar>
 
     <!-- ═══ DB not loaded ═══ -->
-    <f7-block v-if="!dbReady && !loading" class="text-align-center db-error-block">
+    <f7-block v-if="!dbReady && !loading && !swUpdatePending" class="text-align-center db-error-block">
       <!-- Download prompt (DB not bundled on web) -->
       <template v-if="dbDownloadNeeded && !dbDownloading">
         <p><b>{{ t('db.downloadTitle') }}</b></p>
@@ -193,7 +193,7 @@ import {
   getSuggestions,
   foldUmlauts,
 } from "../utils/db.js";
-import { dbReady, dbDownloadNeeded } from "../utils/db-update-state.js";
+import { dbReady, dbDownloadNeeded, swUpdatePending } from "../utils/db-update-state.js";
 import { downloadDb } from "../utils/db.js";
 
 interface SearchResultWithForm extends SearchResult {
@@ -257,6 +257,7 @@ export default defineComponent({
     t() { return t; },
     dbReady() { return dbReady.value; },
     dbDownloadNeeded() { return dbDownloadNeeded.value; },
+    swUpdatePending() { return swUpdatePending.value; },
     searchBarMode(): "subnavbar" | "bottom" {
       if (this.searchBarPosition === "bottom") return "bottom";
       if (this.searchBarPosition === "top") return "subnavbar";
