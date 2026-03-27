@@ -264,8 +264,10 @@ export default defineComponent({
     },
     async applyUpdate() {
       if (!this.updateInfo) return;
-      this.updateState = this.updateInfo.type === "patch" ? "applying" : "downloading";
-      const result = await applyDbUpdate(this.updateInfo);
+      this.updateState = "downloading";
+      const result = await applyDbUpdate(this.updateInfo, undefined, () => {
+        this.updateState = "applying";
+      });
       if (result.ok) {
         this.dbVersion = this.updateInfo.targetVersion || null;
         this.dbBuiltAt = this.updateInfo.builtAt || null;

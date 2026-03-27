@@ -5,10 +5,16 @@
       <button class="update-toast-btn" @click="applyNow()">{{ t('dbUpdate.update') }}</button>
       <button class="update-toast-dismiss" @click="dismiss()">{{ t('dbUpdate.later') }}</button>
     </template>
+    <template v-else-if="state === 'downloading'">
+      <span style="flex: 1">
+        {{ t('dbUpdate.downloading') }}
+        <f7-progressbar :progress="progress" />
+      </span>
+    </template>
     <template v-else-if="state === 'applying'">
       <span style="flex: 1">
         {{ t('dbUpdate.applying') }}
-        <f7-progressbar :progress="progress" />
+        <f7-progressbar :progress="-1" />
       </span>
     </template>
     <template v-else-if="state === 'done'">
@@ -28,7 +34,7 @@ import { pendingDbUpdate } from "../utils/db-update-state.js";
 import { applyUpdate } from "../utils/db.js";
 import { t } from "../js/i18n.js";
 
-type State = "available" | "applying" | "done" | "error";
+type State = "available" | "downloading" | "applying" | "done" | "error";
 
 export default defineComponent({
   setup() {
@@ -60,10 +66,13 @@ export default defineComponent({
     async function applyNow() {
       const update = pendingDbUpdate.value;
       if (!update) return;
-      state.value = "applying";
+      state.value = "downloading";
       progress.value = 0;
       const result = await applyUpdate(update, (loaded, total) => {
         progress.value = total ? Math.round((loaded / total) * 100) : 0;
+      }, () => {
+        // Called when download is done, before applying
+        state.value = "applying";
       });
       if (result.ok) {
         state.value = "done";

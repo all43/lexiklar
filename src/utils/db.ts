@@ -638,25 +638,40 @@ interface UpdateResult {
 export async function applyUpdate(
   update: UpdateInfo,
   onProgress?: (loaded: number, total: number) => void,
+  onApplying?: () => void,
 ): Promise<UpdateResult> {
   try {
     if (update.type === "patch") {
-      // Apply SQL patch to in-memory DB
+      // Download SQL patch
       const resp = await fetch(update.url!);
       if (!resp.ok) return { ok: false, error: `Download failed: ${resp.status}` };
       const total = update.size || Number(resp.headers.get("content-length")) || 0;
       const patchSql = await resp.text();
       if (onProgress && total) onProgress(total, total);
+
+      // Yield to UI before heavy work
+      if (onApplying) {
+        onApplying();
+        await new Promise((r) => setTimeout(r, 50));
+      }
+
+      // Apply patch + re-cache (heavy, runs in worker)
       await send("exec_batch", { sql: patchSql });
     } else {
       // Full DB replacement (always gzipped)
       const bytes = await fetchDbBytes(
         update.gzUrl || update.url!, update.size || 0, onProgress,
       );
+
+      if (onApplying) {
+        onApplying();
+        await new Promise((r) => setTimeout(r, 50));
+      }
+
       await send("init", { bytes }, [bytes]);
     }
 
-    // Re-cache the updated DB
+    // Re-cache the updated DB (serialize runs in worker)
     const updatedBytes = await send("serialize") as ArrayBuffer;
     await cacheWrite(updatedBytes);
     await cacheVersionWrite(update.targetVersion!);
