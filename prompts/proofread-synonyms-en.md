@@ -23,7 +23,8 @@ For each sense that has `synonyms_en`:
 1. Read `gloss_en` (short label) and `gloss_en_full` (longer description) to understand the sense
 2. Check each synonym in `synonyms_en`: does it accurately describe THIS specific sense?
 3. Flag synonyms that belong to a different sense or are wrong
-4. Note obviously missing search terms (limit to 1-2 per sense, don't over-generate)
+4. **Primary term check**: For each sense, ask yourself: "What is the FIRST English word a learner would type to find this German word?" If that word is not in `gloss_en` or `synonyms_en`, add it. Example: Geist (spirit sense) must have "ghost". This is the most important check — missing primary terms hurt search more than wrong secondary terms.
+5. Note other obviously missing search terms (limit to 1-2 per sense beyond the primary term)
 
 **You do NOT need to check glosses, examples, grammar, or annotations.** Only `synonyms_en`.
 
@@ -60,7 +61,8 @@ Rules:
 - `word_glosses_ok`: word paths where ALL senses have correct `synonyms_en`. These get `_proofread.synonyms_en: true`
 - `fixes` with `type: "synonyms_en_fix"`: carries `word`, `sense` (0-based index), `value` (the COMPLETE corrected array), and `detail`. Applied automatically by the apply script
 - `issues`: informational notes that can't be auto-fixed (should be empty in most cases)
-- Be conservative with additions — only add truly obvious gaps
+- Always add the primary search term if missing (step 4) — this is not optional
+- Be conservative with additional terms beyond the primary — only add truly obvious gaps
 - Short common terms are more valuable than long phrases for search
 - Only flag issues you're confident about — when unsure, mark word as ok
 

@@ -251,10 +251,12 @@ function applyResults(job: WordJob, synonyms: string[][] | null): number {
       continue;
     }
 
-    // Filter: only lowercase English terms, max 60 chars
+    // Filter: only lowercase English terms, max 60 chars, not duplicating gloss_en
+    const glossEn = (data.senses[senseIdx].gloss_en ?? "").toLowerCase().trim();
     const clean = terms
       .filter((t) => typeof t === "string" && t.length >= 2 && t.length <= 60)
-      .map((t) => t.toLowerCase().trim());
+      .map((t) => t.toLowerCase().trim())
+      .filter((t) => t !== glossEn);
 
     if (clean.length > 0) {
       data.senses[senseIdx].synonyms_en = clean;
