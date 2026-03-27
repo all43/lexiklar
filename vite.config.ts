@@ -29,14 +29,9 @@ export default defineConfig({
             handler: 'NetworkFirst',
             options: { cacheName: 'lexiklar-db-version' },
           },
-          {
-            urlPattern: /\/data\/lexiklar\.db$/,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'lexiklar-db',
-              expiration: { maxEntries: 1 },
-            },
-          },
+          // /data/lexiklar.db — no SW rule needed.
+          // Native: DB bundled, fetched directly (SW not active).
+          // Web: DB fetched from cdn.lexiklar.app (cross-origin, outside SW scope).
           {
             urlPattern: /\/sqlite3\/sqlite3\.wasm$/,
             handler: 'CacheFirst',

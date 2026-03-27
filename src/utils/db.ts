@@ -11,6 +11,7 @@
  *   const word = await getWord('nouns/Tisch');
  */
 
+import { Capacitor } from "@capacitor/core";
 import type { SearchResult, WordRow } from "../../types/search.js";
 import type { Word } from "../../types/word.js";
 import type { Example } from "../../types/example.js";
@@ -114,6 +115,33 @@ async function cacheVersionWrite(version: string): Promise<void> {
   }
 }
 
+/**
+ * Clear all cached DB data (bytes + version).
+ * Called when the cached DB is detected as corrupted.
+ */
+async function cacheClear(): Promise<void> {
+  try {
+    const cache = await caches.open(CACHE_NAME);
+    await cache.delete(DB_CACHE_KEY);
+    await cache.delete(VERSION_CACHE_KEY);
+  } catch {
+    // Cache API not available
+  }
+}
+
+// ---- SQLite validation ----
+// SQLite files start with "SQLite format 3\0" (16 bytes).
+const SQLITE_MAGIC = "SQLite format 3\0";
+
+function isValidSqlite(bytes: ArrayBuffer): boolean {
+  if (bytes.byteLength < 16) return false;
+  const header = new Uint8Array(bytes, 0, 16);
+  for (let i = 0; i < 16; i++) {
+    if (header[i] !== SQLITE_MAGIC.charCodeAt(i)) return false;
+  }
+  return true;
+}
+
 // ---- Update manifest URL ----
 // Permanent GitHub Release that always holds the latest manifest
 const MANIFEST_URL =
@@ -198,12 +226,9 @@ export async function initDb(): Promise<void> {
 
   let bytes: ArrayBuffer | null = null;
 
-  // Step 1: Try bundled DB (native builds — static asset)
-  // SPA hosts return 200 with HTML for missing files — check content-type.
-  const dbResp = await fetch("/data/lexiklar.db");
-  const ct = dbResp.headers.get("content-type") || "";
-  if (dbResp.ok && !ct.includes("text/html")) {
-    // Native build — DB is bundled. Use db-version.txt for cache validation.
+  if (Capacitor.isNativePlatform()) {
+    // Native build — DB is bundled as a static asset.
+    // Use db-version.txt for cache validation to avoid re-deserializing on every launch.
     const versionResp = await fetch("/data/db-version.txt");
     const bundledVersion = (await versionResp.text()).trim();
     const cachedVersion = await cacheVersionRead();
@@ -212,13 +237,14 @@ export async function initDb(): Promise<void> {
       bytes = await cacheRead();
     }
     if (!bytes) {
+      const dbResp = await fetch("/data/lexiklar.db");
       bytes = await dbResp.arrayBuffer();
       // Cache for next time
       cacheWrite(bytes.slice(0)).then(() => cacheVersionWrite(bundledVersion));
     }
   } else {
-    // Step 2: Web/PWA — no bundled DB. Try Cache API directly.
-    // Version validation happens later via OTA update check.
+    // Web/PWA — DB is not bundled (exceeds Cloudflare Pages 25 MB limit).
+    // Cached via Cache API after user-confirmed download from R2 CDN.
     bytes = await cacheRead();
   }
 
@@ -227,8 +253,26 @@ export async function initDb(): Promise<void> {
     throw new Error("download-needed");
   }
 
-  // Step 3: Send bytes to worker for deserialization
-  await send("init", { bytes }, [bytes]);
+  // Validate SQLite header before sending to worker.
+  // Catches corrupted cache (e.g. HTML cached as DB by a stale SW rule).
+  if (!isValidSqlite(bytes)) {
+    console.error("Cached DB has invalid SQLite header, clearing cache");
+    await cacheClear();
+    throw new Error("download-needed");
+  }
+
+  // Step 3: Send bytes to worker for deserialization + sanity check
+  try {
+    await send("init", { bytes }, [bytes]);
+    // Verify the DB is actually usable (sqlite3_deserialize accepts any bytes,
+    // corruption only surfaces on first query)
+    await send("exec", { sql: "SELECT 1 FROM meta LIMIT 1", bind: [] });
+  } catch (err) {
+    // DB is corrupted — clear the bad cache so the user gets a fresh download prompt.
+    console.error("Cached DB is corrupted, clearing cache:", err);
+    await cacheClear();
+    throw new Error("download-needed");
+  }
 }
 
 /**
