@@ -278,7 +278,7 @@ async function main(): Promise<void> {
       const patchPath = join(outDir, patchFileName);
       writeFileSync(patchPath, patchSql + "\n");
       const patchSize = statSync(patchPath).size;
-      const patchUrl = releaseUrl ? `${releaseUrl}/${patchFileName}` : patchFileName;
+      const patchUrl = releaseUrl ? `${releaseUrl}/patches/${patchFileName}` : patchFileName;
       patches[oldVersion] = { url: patchUrl, size: patchSize };
 
       // Count changes for logging
