@@ -2,8 +2,8 @@
   "word": "Alias",
   "pos": "noun",
   "etymology_number": null,
-  "gender": "M",
-  "article": "der",
+  "gender": "N",
+  "article": "das",
   "plural_form": "Aliasse",
   "gender_rule": null,
   "case_forms": {
@@ -28,8 +28,19 @@
       "example_ids": [
         "6b646889a5"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Alias-Name",
+        "Aliasname",
+        "Deckname",
+        "Ersatzname",
+        "Vulgoname",
+        "Spitzname",
+        "Nickname",
+        "Pseudonym"
+      ],
+      "antonyms": [
+        "Realname"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A pseudonym used in criminal contexts, for example in email communication or chat.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -84,7 +95,7 @@
   ],
   "_meta": {
     "source_hash": "63c5764263cb66e4",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-27"
   },
   "zipf": 3.04
 }
