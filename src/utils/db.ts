@@ -117,15 +117,32 @@ async function cacheVersionWrite(version: string): Promise<void> {
 
 /**
  * Clear all cached DB data (bytes + version).
- * Called when the cached DB is detected as corrupted.
+ * Called when the cached DB is detected as corrupted,
+ * or when the user wants to free up storage space.
  */
-async function cacheClear(): Promise<void> {
+export async function cacheClear(): Promise<void> {
   try {
     const cache = await caches.open(CACHE_NAME);
     await cache.delete(DB_CACHE_KEY);
     await cache.delete(VERSION_CACHE_KEY);
   } catch {
     // Cache API not available
+  }
+}
+
+/**
+ * Get the size of the cached DB in bytes, or null if not cached.
+ */
+export async function cacheSize(): Promise<number | null> {
+  try {
+    const cache = await caches.open(CACHE_NAME);
+    const resp = await cache.match(DB_CACHE_KEY);
+    if (!resp) return null;
+    // Clone to avoid consuming the response body
+    const blob = await resp.clone().blob();
+    return blob.size;
+  } catch {
+    return null;
   }
 }
 

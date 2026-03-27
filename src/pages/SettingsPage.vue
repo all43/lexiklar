@@ -68,6 +68,10 @@
     <f7-list inset strong-ios outline-ios>
       <f7-list-button :title="t('settings.clearHistory')" color="red" @click="confirmClear" />
       <f7-list-button :title="t('settings.clearFavorites')" color="red" @click="confirmClearFavorites" />
+      <f7-list-button v-if="isWeb && dbCacheSize" color="red" @click="confirmClearCache">
+        {{ t('settings.clearCache') }}
+        <span class="text-color-gray"> ({{ formatSize(dbCacheSize) }})</span>
+      </f7-list-button>
     </f7-list>
     <f7-block-footer class="padding-horizontal">
       {{ t('settings.clearFooter') }}
@@ -150,8 +154,9 @@ import { f7 } from "framework7-vue";
 import { applyTheme, THEME_KEY, type ThemeValue } from "../js/theme.js";
 import { t, setLocale, getLocale, LANGUAGE_KEY, type LanguagePreference } from "../js/i18n.js";
 import { getCached, setItem, removeItem } from "../utils/storage.js";
-import { getDbVersion, checkForUpdates, applyUpdate as applyDbUpdate, type UpdateInfo } from "../utils/db.js";
-import { dbReady } from "../utils/db-update-state.js";
+import { Capacitor } from "@capacitor/core";
+import { getDbVersion, checkForUpdates, applyUpdate as applyDbUpdate, cacheClear, cacheSize, type UpdateInfo } from "../utils/db.js";
+import { dbReady, dbDownloadNeeded } from "../utils/db-update-state.js";
 import { pendingAppUpdate, downloadAndApplyAppUpdate, reloadApp as liveReloadApp, type AppUpdateInfo } from "../utils/live-update.js";
 
 const THEME_OPTIONS = [
@@ -198,6 +203,8 @@ export default defineComponent({
       updateInfo: null as UpdateInfo | null,
       appVersion: __APP_VERSION__,
       appUpdateState: "idle" as "idle" | "available" | "downloading" | "ready" | "error",
+      isWeb: !Capacitor.isNativePlatform(),
+      dbCacheSize: null as number | null,
     };
   },
   computed: {
@@ -211,6 +218,9 @@ export default defineComponent({
   },
   async mounted() {
     this.loadDbVersion();
+    if (this.isWeb) {
+      cacheSize().then((size) => { this.dbCacheSize = size; });
+    }
     // Re-fetch version when DB becomes ready (e.g. after initial download)
     this.$watch(() => dbReady.value, (ready) => {
       if (ready) this.loadDbVersion();
@@ -333,6 +343,23 @@ export default defineComponent({
           removeItem("lexiklar_favorites");
           f7.toast
             .create({ text: t("settings.clearFavoritesDone"), closeTimeout: 2000, position: "center" })
+            .open();
+        },
+      );
+    },
+    confirmClearCache() {
+      f7.dialog.confirm(
+        t("settings.clearCacheMsg"),
+        t("settings.clearCacheTitle"),
+        async () => {
+          await cacheClear();
+          dbReady.value = false;
+          dbDownloadNeeded.value = true;
+          this.dbVersion = null;
+          this.dbBuiltAt = null;
+          this.dbCacheSize = null;
+          f7.toast
+            .create({ text: t("settings.clearCacheDone"), closeTimeout: 2000, position: "center" })
             .open();
         },
       );
