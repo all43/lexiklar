@@ -238,6 +238,32 @@ async function main(): Promise<void> {
       console.log("Old and new DB have the same version — no patch needed.");
     } else {
       console.log(`Generating patch: ${oldVersion} → ${newVersion}`);
+
+      // Quick check: if most rows changed, skip expensive diff — full download is cheaper
+      oldDb.exec(`ATTACH DATABASE ${esc(newDbPath)} AS main2`);
+      const oldWordCount = (oldDb.prepare("SELECT COUNT(*) as n FROM words").get() as { n: number }).n;
+      const oldExCount = (oldDb.prepare("SELECT COUNT(*) as n FROM examples").get() as { n: number }).n;
+      const changedWordsCount = (oldDb.prepare(`
+        SELECT COUNT(*) as n FROM words w
+        WHERE NOT EXISTS (SELECT 1 FROM main2.words w2 WHERE w2.file = w.file AND w2.hash = w.hash)
+      `).get() as { n: number }).n;
+      const changedExamplesCount = (oldDb.prepare(`
+        SELECT COUNT(*) as n FROM examples e
+        WHERE NOT EXISTS (SELECT 1 FROM main2.examples e2 WHERE e2.id = e.id AND e2.hash = e.hash)
+      `).get() as { n: number }).n;
+      oldDb.exec("DETACH DATABASE main2");
+
+      const totalOld = oldWordCount + oldExCount;
+      const totalChanged = changedWordsCount + changedExamplesCount;
+      const changeRatio = totalOld > 0 ? totalChanged / totalOld : 1;
+      console.log(`Changed: ${changedWordsCount}/${oldWordCount} words, ${changedExamplesCount}/${oldExCount} examples (${(changeRatio * 100).toFixed(0)}%)`);
+
+      let skipPatch = changeRatio > 0.5;
+      if (skipPatch) {
+        console.log("More than 50% changed — skipping patch (full download is cheaper)");
+      }
+
+      if (!skipPatch) {
       const patchSql = generatePatch(oldDb, newDb);
       const patchFileName = `${oldVersion}_to_${newVersion}.sql.gz`;
       const patchPath = join(outDir, patchFileName);
@@ -248,12 +274,21 @@ async function main(): Promise<void> {
       );
       const patchSize = statSync(patchPath).size;
       const uncompressedSize = Buffer.byteLength(patchSql + "\n");
-      const patchUrl = releaseUrl ? `${releaseUrl}/patches/${patchFileName}` : patchFileName;
-      patches[oldVersion] = { url: patchUrl, size: patchSize };
 
       // Count changes for logging
       const lines = patchSql.split("\n").filter(Boolean);
-      console.log(`Patch: ${lines.length} SQL statements, ${(uncompressedSize / 1024).toFixed(1)} KB → ${(patchSize / 1024).toFixed(1)} KB gzipped (${((1 - patchSize / uncompressedSize) * 100).toFixed(0)}% reduction)`);
+      console.log(`Patch: ${lines.length} SQL statements, ${(uncompressedSize / 1024).toFixed(1)} KB → ${(patchSize / 1024).toFixed(1)} KB gzipped`);
+
+      // Skip patch if it's larger than 50% of the full DB — cheaper to download full
+      const fullDbSize = statSync(newDbPath).size;
+      if (patchSize > fullDbSize * 0.5) {
+        console.log(`Patch too large (${(patchSize / (1024 * 1024)).toFixed(1)} MB > 50% of ${(fullDbSize / (1024 * 1024)).toFixed(1)} MB DB) — skipping`);
+        unlinkSync(patchPath);
+      } else {
+        const patchUrl = releaseUrl ? `${releaseUrl}/patches/${patchFileName}` : patchFileName;
+        patches[oldVersion] = { url: patchUrl, size: patchSize };
+      }
+      } // end if (!skipPatch)
     }
     oldDb.close();
   } else if (oldPath) {
