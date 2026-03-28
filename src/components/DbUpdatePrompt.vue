@@ -28,69 +28,63 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed, ref, watch } from "vue";
+<script setup lang="ts">
+import { computed, ref, watch } from "vue";
 import { pendingDbUpdate } from "../utils/db-update-state.js";
 import { applyUpdate } from "../utils/db.js";
 import { t } from "../js/i18n.js";
 
 type State = "available" | "downloading" | "applying" | "done" | "error";
 
-export default defineComponent({
-  setup() {
-    const state = ref<State>("available");
-    const progress = ref(0);
-    const dismissed = ref(false);
+const state = ref<State>("available");
+const progress = ref(0);
+const dismissed = ref(false);
 
-    const visible = computed(() => {
-      if (dismissed.value) return false;
-      return pendingDbUpdate.value !== null;
-    });
-
-    const sizeLabel = computed(() => {
-      const bytes = pendingDbUpdate.value?.size;
-      if (!bytes) return "";
-      if (bytes < 1024) return `${bytes} B`;
-      if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
-      return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
-    });
-
-    // Reset state when a new update becomes available
-    watch(pendingDbUpdate, (val) => {
-      if (val) {
-        state.value = "available";
-        dismissed.value = false;
-      }
-    });
-
-    async function applyNow() {
-      const update = pendingDbUpdate.value;
-      if (!update) return;
-      state.value = "downloading";
-      progress.value = 0;
-      const result = await applyUpdate(update, (loaded, total) => {
-        progress.value = total ? Math.round((loaded / total) * 100) : 0;
-      }, () => {
-        // Called when download is done, before applying
-        state.value = "applying";
-      });
-      if (result.ok) {
-        state.value = "done";
-        pendingDbUpdate.value = null;
-        setTimeout(() => { dismissed.value = true; }, 3000);
-      } else {
-        state.value = "error";
-      }
-    }
-
-    function dismiss() {
-      dismissed.value = true;
-      if (state.value === "error") {
-        pendingDbUpdate.value = null;
-      }
-    }
-
-    return { visible, state, progress, sizeLabel, applyNow, dismiss, t };
-  },
+const visible = computed(() => {
+  if (dismissed.value) return false;
+  return pendingDbUpdate.value !== null;
 });
+
+const sizeLabel = computed(() => {
+  const bytes = pendingDbUpdate.value?.size;
+  if (!bytes) return "";
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+});
+
+// Reset state when a new update becomes available
+watch(pendingDbUpdate, (val) => {
+  if (val) {
+    state.value = "available";
+    dismissed.value = false;
+  }
+});
+
+async function applyNow() {
+  const update = pendingDbUpdate.value;
+  if (!update) return;
+  state.value = "downloading";
+  progress.value = 0;
+  const result = await applyUpdate(update, (loaded, total) => {
+    progress.value = total ? Math.round((loaded / total) * 100) : 0;
+  }, () => {
+    // Called when download is done, before applying
+    state.value = "applying";
+  });
+  if (result.ok) {
+    state.value = "done";
+    pendingDbUpdate.value = null;
+    setTimeout(() => { dismissed.value = true; }, 3000);
+  } else {
+    state.value = "error";
+  }
+}
+
+function dismiss() {
+  dismissed.value = true;
+  if (state.value === "error") {
+    pendingDbUpdate.value = null;
+  }
+}
 </script>

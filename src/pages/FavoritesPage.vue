@@ -33,67 +33,53 @@
   </f7-page>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
 import { getRelatedWords } from "../utils/db.js";
 import { t } from "../js/i18n.js";
-import { getCached, setItem } from "../utils/storage.js";
+import { getCached, setItem, SHOW_ARTICLES_KEY } from "../utils/storage.js";
 import type { SearchResult } from "../../types/search.js";
 import WordListBadges from "../components/WordListBadges.vue";
-import { wordListTitle } from "../components/WordListBadges.vue";
-import { SHOW_ARTICLES_KEY } from "../utils/storage.js";
+import { wordListTitle } from "../utils/word-list.js";
 
 const FAVORITES_KEY = "lexiklar_favorites";
 
-export default defineComponent({
-  components: { WordListBadges },
-  data() {
-    return {
-      words: [] as SearchResult[],
-      loading: true,
-      showArticles: getCached(SHOW_ARTICLES_KEY) !== "0",
-    };
-  },
-  computed: {
-    t() { return t; },
-  },
-  async mounted() {
-    await this.loadFavorites();
-  },
-  methods: {
-    async loadFavorites() {
-      this.showArticles = getCached(SHOW_ARTICLES_KEY) !== "0";
-      this.loading = true;
-      try {
-        const fileKeys: string[] = JSON.parse(getCached(FAVORITES_KEY) || "[]");
-        if (!fileKeys.length) {
-          this.words = [];
-          this.loading = false;
-          return;
-        }
-        const results = await getRelatedWords(fileKeys);
-        const infoMap = new Map(results.map((w) => [w.file, w]));
-        this.words = fileKeys.map((f) => infoMap.get(f)).filter((w): w is SearchResult => !!w);
-      } catch {
-        this.words = [];
-      }
-      this.loading = false;
-    },
+const words = ref<SearchResult[]>([]);
+const loading = ref(true);
+const showArticles = ref(getCached(SHOW_ARTICLES_KEY) !== "0");
 
-    itemTitle(item: SearchResult): string {
-      return wordListTitle(item, this.showArticles);
-    },
+async function loadFavorites() {
+  showArticles.value = getCached(SHOW_ARTICLES_KEY) !== "0";
+  loading.value = true;
+  try {
+    const fileKeys: string[] = JSON.parse(getCached(FAVORITES_KEY) || "[]");
+    if (!fileKeys.length) {
+      words.value = [];
+      loading.value = false;
+      return;
+    }
+    const results = await getRelatedWords(fileKeys);
+    const infoMap = new Map(results.map((w) => [w.file, w]));
+    words.value = fileKeys.map((f) => infoMap.get(f)).filter((w): w is SearchResult => !!w);
+  } catch {
+    words.value = [];
+  }
+  loading.value = false;
+}
 
-    removeFavorite(file: string) {
-      try {
-        const favs: string[] = JSON.parse(getCached(FAVORITES_KEY) || "[]");
-        setItem(FAVORITES_KEY, JSON.stringify(favs.filter((f) => f !== file)));
-        this.words = this.words.filter((w) => w.file !== file);
-      } catch {
-        // silently skip
-      }
-    },
+function itemTitle(item: SearchResult): string {
+  return wordListTitle(item, showArticles.value);
+}
 
-  },
-});
+function removeFavorite(file: string) {
+  try {
+    const favs: string[] = JSON.parse(getCached(FAVORITES_KEY) || "[]");
+    setItem(FAVORITES_KEY, JSON.stringify(favs.filter((f) => f !== file)));
+    words.value = words.value.filter((w) => w.file !== file);
+  } catch {
+    // silently skip
+  }
+}
+
+onMounted(() => loadFavorites());
 </script>

@@ -59,8 +59,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, type PropType } from "vue";
+<script setup lang="ts">
+import { computed } from "vue";
 import { t } from "../js/i18n.js";
 import { splitUmlaut, type UmlautSplit } from "../utils/umlaut.js";
 import type { NounWord, CaseRow } from "../../types/word.js";
@@ -75,79 +75,76 @@ const SINGULAR_ARTICLES: Record<Gender, CaseRow> = {
 
 const PLURAL_ARTICLES: CaseRow = { nom: "die", acc: "die", dat: "den", gen: "der" };
 
+const props = defineProps<{
+  word: NounWord;
+}>();
 
-export default defineComponent({
-  props: {
-    word: { type: Object as PropType<NounWord>, required: true },
-  },
-  computed: {
-    t() { return t; },
-    genderClass(): string {
-      return (this.word.gender || "").toLowerCase();
-    },
-    isNDeclension(): boolean {
-      if (this.word.gender !== "M") return false;
-      const s = this.word.case_forms?.singular;
-      if (!s?.nom || !s?.acc) return false;
-      return s.acc !== s.nom && s.acc === s.dat && s.acc === s.gen;
-    },
-    cases() {
-      return [
-        { key: "nom" as const, label: "Nom." },
-        { key: "acc" as const, label: "Akk." },
-        { key: "dat" as const, label: "Dat." },
-        { key: "gen" as const, label: "Gen." },
-      ];
-    },
-    singularArticles(): CaseRow {
-      return SINGULAR_ARTICLES[this.word.gender] || SINGULAR_ARTICLES["M"];
-    },
-    pluralArticles(): CaseRow {
-      return PLURAL_ARTICLES;
-    },
-    hasSingular(): boolean {
-      const s = this.word.case_forms?.singular;
-      return !!s && Object.values(s).some(Boolean);
-    },
-    hasPlural(): boolean {
-      const p = this.word.case_forms?.plural;
-      return !!p && Object.values(p).some(Boolean);
-    },
-    ruleText(): string {
-      const rule = this.word.gender_rule;
-      if (!rule) return "";
-      const desc = t(`noun.rule.${rule.rule_id}`);
-      return rule.is_exception ? `${t("noun.exception")}${desc}` : desc;
-    },
-    falseMatchText(): string {
-      const rule = this.word.gender_rule;
-      if (!rule) return "";
-      // Extract suffix from rule_id (e.g. "suffix_ist" → "ist")
-      const suffix = rule.rule_id.replace("suffix_", "");
-      return t("noun.falseMatch").replace("{suffix}", `-${suffix}`);
-    },
-  },
-  methods: {
-    nDeclEnding(caseKey: "nom" | "acc" | "dat" | "gen"): string {
-      const nom = this.word.case_forms?.singular?.nom;
-      const form = this.word.case_forms?.singular?.[caseKey];
-      if (!nom || !form || !form.startsWith(nom)) return "";
-      return form.slice(nom.length);
-    },
-    nDeclStem(caseKey: "nom" | "acc" | "dat" | "gen"): string {
-      const nom = this.word.case_forms?.singular?.nom || "";
-      const form = this.word.case_forms?.singular?.[caseKey] || "";
-      if (!form.startsWith(nom)) return form;
-      return nom;
-    },
-    umlautSplit(caseKey: "nom" | "acc" | "dat" | "gen"): UmlautSplit | null {
-      const singNom = this.word.case_forms?.singular?.nom;
-      const pluralForm = this.word.case_forms?.plural?.[caseKey];
-      if (!singNom || !pluralForm) return null;
-      return splitUmlaut(singNom, pluralForm);
-    },
-  },
+const cases = [
+  { key: "nom" as const, label: "Nom." },
+  { key: "acc" as const, label: "Akk." },
+  { key: "dat" as const, label: "Dat." },
+  { key: "gen" as const, label: "Gen." },
+];
+
+const genderClass = computed(() => (props.word.gender || "").toLowerCase());
+
+const isNDeclension = computed(() => {
+  if (props.word.gender !== "M") return false;
+  const s = props.word.case_forms?.singular;
+  if (!s?.nom || !s?.acc) return false;
+  return s.acc !== s.nom && s.acc === s.dat && s.acc === s.gen;
 });
+
+const singularArticles = computed((): CaseRow =>
+  SINGULAR_ARTICLES[props.word.gender] || SINGULAR_ARTICLES["M"]
+);
+
+const pluralArticles = computed(() => PLURAL_ARTICLES);
+
+const hasSingular = computed(() => {
+  const s = props.word.case_forms?.singular;
+  return !!s && Object.values(s).some(Boolean);
+});
+
+const hasPlural = computed(() => {
+  const p = props.word.case_forms?.plural;
+  return !!p && Object.values(p).some(Boolean);
+});
+
+const ruleText = computed(() => {
+  const rule = props.word.gender_rule;
+  if (!rule) return "";
+  const desc = t(`noun.rule.${rule.rule_id}`);
+  return rule.is_exception ? `${t("noun.exception")}${desc}` : desc;
+});
+
+const falseMatchText = computed(() => {
+  const rule = props.word.gender_rule;
+  if (!rule) return "";
+  const suffix = rule.rule_id.replace("suffix_", "");
+  return t("noun.falseMatch").replace("{suffix}", `-${suffix}`);
+});
+
+function nDeclEnding(caseKey: "nom" | "acc" | "dat" | "gen"): string {
+  const nom = props.word.case_forms?.singular?.nom;
+  const form = props.word.case_forms?.singular?.[caseKey];
+  if (!nom || !form || !form.startsWith(nom)) return "";
+  return form.slice(nom.length);
+}
+
+function nDeclStem(caseKey: "nom" | "acc" | "dat" | "gen"): string {
+  const nom = props.word.case_forms?.singular?.nom || "";
+  const form = props.word.case_forms?.singular?.[caseKey] || "";
+  if (!form.startsWith(nom)) return form;
+  return nom;
+}
+
+function umlautSplit(caseKey: "nom" | "acc" | "dat" | "gen"): UmlautSplit | null {
+  const singNom = props.word.case_forms?.singular?.nom;
+  const pluralForm = props.word.case_forms?.plural?.[caseKey];
+  if (!singNom || !pluralForm) return null;
+  return splitUmlaut(singNom, pluralForm);
+}
 </script>
 
 <style scoped>

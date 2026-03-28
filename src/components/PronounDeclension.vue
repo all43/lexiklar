@@ -18,7 +18,7 @@
               v-for="col in CASES"
               :key="col"
               class="decl-form"
-              :class="{ 'pronoun-cell--active': isActive(row[col]) }"
+              :class="{ 'pronoun-cell--active': row[col] === word.word }"
             >{{ row[col] }}</td>
           </tr>
         </tbody>
@@ -30,8 +30,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, type PropType } from "vue";
+<script setup lang="ts">
+import { computed } from "vue";
 import { t } from "../js/i18n.js";
 import type { GenericWord } from "../../types/word.js";
 
@@ -63,24 +63,11 @@ const ALL_PERSONAL_FORMS = new Set(
   PERSONAL_PRONOUNS.flatMap((r) => CASES.map((c) => r[c]))
 );
 
-export default defineComponent({
-  props: {
-    word: { type: Object as PropType<GenericWord>, required: true },
-  },
-  computed: {
-    t() { return t; },
-    PERSONAL_PRONOUNS() { return PERSONAL_PRONOUNS; },
-    CASES() { return CASES; },
-    isPersonalPronoun(): boolean {
-      return ALL_PERSONAL_FORMS.has(this.word.word);
-    },
-  },
-  methods: {
-    isActive(form: string): boolean {
-      return form === this.word.word;
-    },
-  },
-});
+const props = defineProps<{
+  word: GenericWord;
+}>();
+
+const isPersonalPronoun = computed(() => ALL_PERSONAL_FORMS.has(props.word.word));
 </script>
 
 <style scoped>

@@ -9,26 +9,24 @@
   </table>
 </template>
 
-<script lang="ts">
-import { defineComponent, type PropType } from "vue";
+<script setup lang="ts">
+import { computed } from "vue";
 import type { PersonForms, ImperativeForms } from "../../types/word.js";
 
-export default defineComponent({
-  props: {
-    forms: { type: Object as PropType<PersonForms | ImperativeForms>, required: true },
-    imperative: { type: Boolean, default: false },
-  },
-  computed: {
-    personKeys(): string[] {
-      return this.imperative
-        ? ["du", "ihr", "Sie"]
-        : ["ich", "du", "er", "wir", "ihr", "sie"];
-    },
-    personLabels(): string[] {
-      return this.imperative
-        ? ["du", "ihr", "Sie"]
-        : ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"];
-    },
-  },
-});
+const props = defineProps<{
+  forms: PersonForms | ImperativeForms;
+  imperative?: boolean;
+}>();
+
+const personKeys = computed(() =>
+  props.imperative
+    ? ["du", "ihr", "Sie"]
+    : ["ich", "du", "er", "wir", "ihr", "sie"]
+);
+
+const personLabels = computed(() =>
+  props.imperative
+    ? ["du", "ihr", "Sie"]
+    : ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"]
+);
 </script>

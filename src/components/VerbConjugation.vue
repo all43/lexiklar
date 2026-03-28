@@ -73,8 +73,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, type PropType } from "vue";
+<script setup lang="ts">
+import { ref, computed } from "vue";
 import ConjugationTable from "./ConjugationTable.vue";
 import { t } from "../js/i18n.js";
 import type { VerbWord, ConjugationTable as ConjType } from "../../types/word.js";
@@ -86,29 +86,21 @@ const CLASS_LABELS: Record<string, string> = {
   irregular: "unregelm\u00E4\u00DFig",
 };
 
-export default defineComponent({
-  components: { ConjugationTable },
-  props: {
-    verb: { type: Object as PropType<VerbWord>, required: true },
-  },
-  data() {
-    return {
-      tab: "ind" as "ind" | "konj" | "other",
-    };
-  },
-  computed: {
-    auxLabel(): string {
-      const a = this.verb.auxiliary;
-      if (a === "both") return "sein/haben";
-      return a || "";
-    },
-    classLabel(): string {
-      return CLASS_LABELS[this.verb.conjugation_class || ""] || this.verb.conjugation_class || "";
-    },
-    conjugation(): ConjType | undefined {
-      return this.verb.conjugation;
-    },
-    t() { return t; },
-  },
+const props = defineProps<{
+  verb: VerbWord;
+}>();
+
+const tab = ref<"ind" | "konj" | "other">("ind");
+
+const auxLabel = computed(() => {
+  const a = props.verb.auxiliary;
+  if (a === "both") return "sein/haben";
+  return a || "";
 });
+
+const classLabel = computed(() =>
+  CLASS_LABELS[props.verb.conjugation_class || ""] || props.verb.conjugation_class || ""
+);
+
+const conjugation = computed((): ConjType | undefined => props.verb.conjugation);
 </script>

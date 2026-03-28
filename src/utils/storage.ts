@@ -23,6 +23,8 @@ export const SEARCH_BAR_POSITION_KEY = "lexiklar_search_position";
 export const AUTO_CHECK_UPDATES_KEY = "lexiklar_auto_check_updates";
 export const LAST_UPDATE_CHECK_KEY = "lexiklar_last_update_check";
 
+export type SearchBarPosition = "auto" | "top" | "bottom";
+
 /** All known app keys — preloaded at init. */
 const KEYS = [
   "lexiklar_theme",

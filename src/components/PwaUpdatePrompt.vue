@@ -6,25 +6,17 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, watch } from "vue";
+<script setup lang="ts">
+import { watch } from "vue";
 import { useRegisterSW } from "virtual:pwa-register/vue";
 import { t } from "../js/i18n.js";
 import { swUpdatePending } from "../utils/db-update-state.js";
 
-export default defineComponent({
-  setup() {
-    const { needRefresh, updateServiceWorker } = useRegisterSW();
+const { needRefresh, updateServiceWorker } = useRegisterSW();
 
-    // Sync to shared state so SearchPage can suppress DB download prompt
-    watch(needRefresh, (v) => { swUpdatePending.value = v; }, { immediate: true });
+// Sync to shared state so SearchPage can suppress DB download prompt
+watch(needRefresh, (v) => { swUpdatePending.value = v; }, { immediate: true });
 
-    return {
-      needRefresh,
-      updateSW: () => updateServiceWorker(),
-      close: () => { needRefresh.value = false; },
-      t,
-    };
-  },
-});
+function updateSW() { updateServiceWorker(); }
+function close() { needRefresh.value = false; }
 </script>

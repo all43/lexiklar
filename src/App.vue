@@ -24,8 +24,8 @@
   </f7-app>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { onMounted } from "vue";
 import routes from "./js/routes.js";
 import { initTheme } from "./js/theme.js";
 import { t } from "./js/i18n.js";
@@ -33,28 +33,17 @@ import { Capacitor } from "@capacitor/core";
 import { SplashScreen } from '@capacitor/splash-screen';
 import PwaUpdatePrompt from "./components/PwaUpdatePrompt.vue";
 import DbUpdatePrompt from "./components/DbUpdatePrompt.vue";
-import { dbReady } from "./utils/db-update-state.js";
 
-export default defineComponent({
-  components: { PwaUpdatePrompt, DbUpdatePrompt },
-  data() {
-    return {
-      isWeb: !Capacitor.isNativePlatform(),
-      f7params: {
-        name: "Lexiklar",
-        theme: "auto" as const,
-        routes,
-      },
-    };
-  },
-  computed: {
-    t() { return t; },
-    dbIsReady() { return dbReady.value; },
-  },
-  mounted() {
-    initTheme();
-    // hide splash screen
-    SplashScreen.hide();
-  },
+const isWeb = !Capacitor.isNativePlatform();
+
+const f7params = {
+  name: "Lexiklar",
+  theme: "auto" as const,
+  routes,
+};
+
+onMounted(() => {
+  initTheme();
+  SplashScreen.hide();
 });
 </script>

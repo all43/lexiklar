@@ -141,9 +141,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="c in cases" :key="c.key">
+            <tr v-for="c in CASES" :key="c.key">
               <td class="decl-case">{{ c.label }}</td>
-              <td v-for="g in genders" :key="g" class="decl-form">
+              <td v-for="g in GENDERS" :key="g" class="decl-form">
                 <template v-if="word.declension_regular">
                   <span class="decl-stem">{{ stem }}</span><span class="decl-ending">{{ getEnding(activeTab, g, c.key) }}</span>
                 </template>
@@ -160,8 +160,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, type PropType } from "vue";
+<script setup lang="ts">
+import { ref, computed } from "vue";
 import { t } from "../js/i18n.js";
 import { getCached, CONDENSED_GRAMMAR_KEY } from "../utils/storage.js";
 import adjEndings from "../../data/rules/adj-endings.json";
@@ -181,47 +181,37 @@ const CASES = [
   { key: "gen" as const, label: "Gen." },
 ];
 
-export default defineComponent({
-  props: {
-    word: { type: Object as PropType<AdjectiveWord>, required: true },
-  },
-  data() {
-    return {
-      activeTab: "strong" as DeclType,
-      viewMode: (getCached(CONDENSED_GRAMMAR_KEY) === "1" ? "rules" : "table") as ViewMode,
-    };
-  },
-  computed: {
-    t() { return t; },
-    cases() { return CASES; },
-    genders() { return GENDERS; },
-    stem(): string {
-      return this.word.declension_stem || this.word.word;
-    },
-    nouns(): { M: string | null; F: string | null; N: string | null; Pl: string | null } {
-      const c = this.word.collocation_nouns;
-      if (!c) return { M: "Tag", F: "Sache", N: "Ergebnis", Pl: "Dinge" };
-      return {
-        M: c.M === null ? null : (c.M || "Tag"),
-        F: c.F === null ? null : (c.F || "Sache"),
-        N: c.N === null ? null : (c.N || "Ergebnis"),
-        Pl: c.Pl === null ? null : (c.Pl || "Dinge"),
-      };
-    },
-  },
-  methods: {
-    getEnding(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" | "acc" | "dat" | "gen"): string {
-      return typedEndings[type]?.[gender]?.[caseKey] ?? "";
-    },
-    getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" | "acc" | "dat" | "gen"): string {
-      if (this.word.declension_regular) {
-        return this.stem + this.getEnding(type, gender, caseKey);
-      } else {
-        return this.word.declension?.[type]?.[gender]?.[caseKey] || "\u2014";
-      }
-    },
-  },
+const props = defineProps<{
+  word: AdjectiveWord;
+}>();
+
+const activeTab = ref<DeclType>("strong");
+const viewMode = ref<ViewMode>(getCached(CONDENSED_GRAMMAR_KEY) === "1" ? "rules" : "table");
+
+const stem = computed(() => props.word.declension_stem || props.word.word);
+
+const nouns = computed(() => {
+  const c = props.word.collocation_nouns;
+  if (!c) return { M: "Tag", F: "Sache", N: "Ergebnis", Pl: "Dinge" };
+  return {
+    M: c.M === null ? null : (c.M || "Tag"),
+    F: c.F === null ? null : (c.F || "Sache"),
+    N: c.N === null ? null : (c.N || "Ergebnis"),
+    Pl: c.Pl === null ? null : (c.Pl || "Dinge"),
+  };
 });
+
+function getEnding(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" | "acc" | "dat" | "gen"): string {
+  return typedEndings[type]?.[gender]?.[caseKey] ?? "";
+}
+
+function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" | "acc" | "dat" | "gen"): string {
+  if (props.word.declension_regular) {
+    return stem.value + getEnding(type, gender, caseKey);
+  } else {
+    return props.word.declension?.[type]?.[gender]?.[caseKey] || "\u2014";
+  }
+}
 </script>
 
 <style scoped>

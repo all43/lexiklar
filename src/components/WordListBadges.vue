@@ -4,36 +4,14 @@
   <f7-badge v-else-if="gender" :color="genderColor(gender)" class="list-item-badge">{{ gender }}</f7-badge>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { genderColor } from "../utils/word-list.js";
 
-export function genderColor(gender: string): string {
-  if (gender === "M") return "blue";
-  if (gender === "F") return "pink";
-  if (gender === "N") return "green";
-  return "";
-}
-
-export function wordListTitle(
-  item: { pluralDominant?: boolean; pluralForm?: string | null; lemma: string; gender?: string | null },
-  showArticles: boolean,
-): string {
-  const base = item.pluralDominant ? item.pluralForm : item.lemma;
-  if (showArticles && item.gender && !item.pluralDominant) {
-    const article = item.gender === "M" ? "der" : item.gender === "F" ? "die" : "das";
-    return `${article} ${base}`;
-  }
-  return base || "";
-}
-
-export default defineComponent({
-  props: {
-    pos: { type: String, required: true },
-    gender: { type: String as () => string | null, default: null },
-    pluralDominant: { type: Boolean, default: false },
-  },
-  methods: { genderColor },
-});
+defineProps<{
+  pos: string;
+  gender?: string | null;
+  pluralDominant?: boolean;
+}>();
 </script>
 
 <style>

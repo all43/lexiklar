@@ -5,7 +5,7 @@
     <f7-block-title>{{ t('settings.appearance') }}</f7-block-title>
     <f7-list inset strong-ios outline-ios>
       <f7-list-item
-        v-for="opt in themeOptions"
+        v-for="opt in THEME_OPTIONS"
         :key="opt.value"
         radio
         radio-icon="end"
@@ -39,7 +39,7 @@
     <f7-block-title>{{ t('settings.searchBarPosition') }}</f7-block-title>
     <f7-list inset strong-ios outline-ios>
       <f7-list-item
-        v-for="opt in searchBarPositionOptions"
+        v-for="opt in SEARCH_BAR_POSITION_OPTIONS"
         :key="opt.value"
         radio
         radio-icon="end"
@@ -53,7 +53,7 @@
     <f7-block-title>{{ t('settings.language') }}</f7-block-title>
     <f7-list inset strong-ios outline-ios>
       <f7-list-item
-        v-for="opt in langOptions"
+        v-for="opt in LANG_OPTIONS"
         :key="opt.value"
         radio
         radio-icon="end"
@@ -148,12 +148,12 @@
   </f7-page>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { ref, computed, watch, onMounted } from "vue";
 import { f7 } from "framework7-vue";
 import { applyTheme, THEME_KEY, type ThemeValue } from "../js/theme.js";
 import { t, setLocale, getLocale, LANGUAGE_KEY, type LanguagePreference } from "../js/i18n.js";
-import { getCached, setItem, removeItem, SHOW_ARTICLES_KEY, CONDENSED_GRAMMAR_KEY, SEARCH_BAR_POSITION_KEY, AUTO_CHECK_UPDATES_KEY } from "../utils/storage.js";
+import { getCached, setItem, removeItem, SHOW_ARTICLES_KEY, CONDENSED_GRAMMAR_KEY, SEARCH_BAR_POSITION_KEY, AUTO_CHECK_UPDATES_KEY, type SearchBarPosition } from "../utils/storage.js";
 import { Capacitor } from "@capacitor/core";
 import { getDbVersion, checkForUpdates, applyUpdate as applyDbUpdate, cacheClear, cacheSize, type UpdateInfo } from "../utils/db.js";
 import { dbReady, dbDownloadNeeded } from "../utils/db-update-state.js";
@@ -177,191 +177,187 @@ const SEARCH_BAR_POSITION_OPTIONS = [
   { value: "bottom" as const, labelKey: "settings.searchBarBottom" },
 ];
 
-export type SearchBarPosition = "auto" | "top" | "bottom";
-
 type UpdateState = "idle" | "checking" | "up-to-date" | "available" | "downloading" | "applying" | "done" | "error";
 
-export default defineComponent({
-  data() {
-    return {
-      theme: getCached(THEME_KEY) || "auto",
-      language: getLocale(),
-      themeOptions: THEME_OPTIONS,
-      langOptions: LANG_OPTIONS,
-      searchBarPositionOptions: SEARCH_BAR_POSITION_OPTIONS,
-      searchBarPosition: (getCached(SEARCH_BAR_POSITION_KEY) || "auto") as SearchBarPosition,
-      showArticles: getCached(SHOW_ARTICLES_KEY) !== "0",
-      condensedGrammar: getCached(CONDENSED_GRAMMAR_KEY) === "1",
-      autoCheckUpdates: getCached(AUTO_CHECK_UPDATES_KEY) !== "0",
-      dbVersion: null as string | null,
-      dbBuiltAt: null as string | null,
-      updateState: "idle" as UpdateState,
-      updateInfo: null as UpdateInfo | null,
-      appVersion: __APP_VERSION__,
-      appUpdateState: "idle" as "idle" | "available" | "downloading" | "ready" | "error",
-      isWeb: !Capacitor.isNativePlatform(),
-      dbCacheSize: null as number | null,
-    };
-  },
-  computed: {
-    t() { return t; },
-    dbVersionDisplay(): string {
-      if (!this.dbVersion) return "...";
-      const hash = this.dbVersion.slice(0, 8);
-      const date = this.dbBuiltAt || "";
-      return date ? `${hash} \u00B7 ${date}` : hash;
+const theme = ref(getCached(THEME_KEY) || "auto");
+const language = ref(getLocale());
+const searchBarPosition = ref<SearchBarPosition>((getCached(SEARCH_BAR_POSITION_KEY) || "auto") as SearchBarPosition);
+const showArticles = ref(getCached(SHOW_ARTICLES_KEY) !== "0");
+const condensedGrammar = ref(getCached(CONDENSED_GRAMMAR_KEY) === "1");
+const autoCheckUpdates = ref(getCached(AUTO_CHECK_UPDATES_KEY) !== "0");
+const dbVersion = ref<string | null>(null);
+const dbBuiltAt = ref<string | null>(null);
+const updateState = ref<UpdateState>("idle");
+const updateInfo = ref<UpdateInfo | null>(null);
+const appVersion = __APP_VERSION__;
+const appUpdateState = ref<"idle" | "available" | "downloading" | "ready" | "error">("idle");
+const isWeb = !Capacitor.isNativePlatform();
+const dbCacheSize = ref<number | null>(null);
+
+const dbVersionDisplay = computed(() => {
+  if (!dbVersion.value) return "...";
+  const hash = dbVersion.value.slice(0, 8);
+  const date = dbBuiltAt.value || "";
+  return date ? `${hash} \u00B7 ${date}` : hash;
+});
+
+async function loadDbVersion() {
+  try {
+    const info = await getDbVersion();
+    dbVersion.value = info.version;
+    dbBuiltAt.value = info.builtAt;
+  } catch {
+    // DB not ready yet
+  }
+}
+
+function formatSize(bytes: number | undefined | null): string {
+  if (!bytes) return "";
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+async function checkUpdates() {
+  updateState.value = "checking";
+  const result = await checkForUpdates();
+  if (!result) {
+    updateState.value = "error";
+    setTimeout(() => { updateState.value = "idle"; }, 3000);
+    return;
+  }
+  if (!result.available) {
+    updateState.value = "up-to-date";
+    setTimeout(() => { updateState.value = "idle"; }, 3000);
+    return;
+  }
+  updateInfo.value = result;
+  updateState.value = "available";
+}
+
+async function applyUpdate() {
+  if (!updateInfo.value) return;
+  updateState.value = "downloading";
+  const result = await applyDbUpdate(updateInfo.value, undefined, () => {
+    updateState.value = "applying";
+  });
+  if (result.ok) {
+    dbVersion.value = updateInfo.value.targetVersion || null;
+    dbBuiltAt.value = updateInfo.value.builtAt || null;
+    updateState.value = "done";
+    f7.toast.create({ text: t("settings.updateDone"), closeTimeout: 2000, position: "center" }).open();
+  } else {
+    updateState.value = "error";
+    f7.toast.create({ text: `${t("settings.updateFailed")}: ${result.error}`, closeTimeout: 3000, position: "center" }).open();
+    setTimeout(() => { updateState.value = "idle"; }, 3000);
+  }
+}
+
+function reloadApp() {
+  window.location.reload();
+}
+
+async function downloadAppUpdate() {
+  const info = pendingAppUpdate.value;
+  if (!info) return;
+  appUpdateState.value = "downloading";
+  const result = await downloadAndApplyAppUpdate(info);
+  if (result.ok) {
+    appUpdateState.value = "ready";
+  } else {
+    appUpdateState.value = "error";
+    f7.toast.create({ text: `${t("settings.updateFailed")}: ${result.error}`, closeTimeout: 3000, position: "center" }).open();
+    setTimeout(() => { appUpdateState.value = "idle"; }, 3000);
+  }
+}
+
+async function restartApp() {
+  await liveReloadApp();
+}
+
+function setTheme(value: ThemeValue) {
+  theme.value = value;
+  setItem(THEME_KEY, value);
+  applyTheme(value);
+}
+
+function setLanguage(value: LanguagePreference) {
+  language.value = value;
+  setLocale(value);
+}
+
+function setShowArticles(value: boolean) {
+  showArticles.value = value;
+  setItem(SHOW_ARTICLES_KEY, value ? "1" : "0");
+}
+
+function setCondensedGrammar(value: boolean) {
+  condensedGrammar.value = value;
+  setItem(CONDENSED_GRAMMAR_KEY, value ? "1" : "0");
+}
+
+function setSearchBarPosition(value: SearchBarPosition) {
+  searchBarPosition.value = value;
+  setItem(SEARCH_BAR_POSITION_KEY, value);
+}
+
+function setAutoCheckUpdates(value: boolean) {
+  autoCheckUpdates.value = value;
+  setItem(AUTO_CHECK_UPDATES_KEY, value ? "1" : "0");
+}
+
+function confirmClear() {
+  f7.dialog.confirm(
+    t("settings.clearConfirmMsg"),
+    t("settings.clearConfirmTitle"),
+    () => {
+      removeItem("lexiklar_recents");
+      removeItem("lexiklar_view_counts");
+      removeItem("lexiklar_phrase_terms");
+      f7.toast.create({ text: t("settings.clearDone"), closeTimeout: 2000, position: "center" }).open();
     },
-  },
-  async mounted() {
-    this.loadDbVersion();
-    if (this.isWeb) {
-      cacheSize().then((size) => { this.dbCacheSize = size; });
-    }
-    // Re-fetch version when DB becomes ready (e.g. after initial download)
-    this.$watch(() => dbReady.value, (ready) => {
-      if (ready) this.loadDbVersion();
-    });
-    // Check if an app update was detected at startup
-    if (pendingAppUpdate.value?.available) {
-      this.appUpdateState = "available";
-    }
-  },
-  methods: {
-    async loadDbVersion() {
-      try {
-        const { version, builtAt } = await getDbVersion();
-        this.dbVersion = version;
-        this.dbBuiltAt = builtAt;
-      } catch {
-        // DB not ready yet
-      }
+  );
+}
+
+function confirmClearFavorites() {
+  f7.dialog.confirm(
+    t("settings.clearFavoritesMsg"),
+    t("settings.clearFavoritesTitle"),
+    () => {
+      removeItem("lexiklar_favorites");
+      f7.toast.create({ text: t("settings.clearFavoritesDone"), closeTimeout: 2000, position: "center" }).open();
     },
-    formatSize(bytes: number | undefined): string {
-      if (!bytes) return "";
-      if (bytes < 1024) return `${bytes} B`;
-      if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
-      return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  );
+}
+
+function confirmClearCache() {
+  f7.dialog.confirm(
+    t("settings.clearCacheMsg"),
+    t("settings.clearCacheTitle"),
+    async () => {
+      await cacheClear();
+      dbReady.value = false;
+      dbDownloadNeeded.value = true;
+      dbVersion.value = null;
+      dbBuiltAt.value = null;
+      dbCacheSize.value = null;
+      f7.toast.create({ text: t("settings.clearCacheDone"), closeTimeout: 2000, position: "center" }).open();
     },
-    async checkUpdates() {
-      this.updateState = "checking";
-      const result = await checkForUpdates();
-      if (!result) {
-        this.updateState = "error";
-        setTimeout(() => { this.updateState = "idle"; }, 3000);
-        return;
-      }
-      if (!result.available) {
-        this.updateState = "up-to-date";
-        setTimeout(() => { this.updateState = "idle"; }, 3000);
-        return;
-      }
-      this.updateInfo = result;
-      this.updateState = "available";
-    },
-    async applyUpdate() {
-      if (!this.updateInfo) return;
-      this.updateState = "downloading";
-      const result = await applyDbUpdate(this.updateInfo, undefined, () => {
-        this.updateState = "applying";
-      });
-      if (result.ok) {
-        this.dbVersion = this.updateInfo.targetVersion || null;
-        this.dbBuiltAt = this.updateInfo.builtAt || null;
-        this.updateState = "done";
-        f7.toast.create({ text: t("settings.updateDone"), closeTimeout: 2000, position: "center" }).open();
-      } else {
-        this.updateState = "error";
-        f7.toast.create({ text: `${t("settings.updateFailed")}: ${result.error}`, closeTimeout: 3000, position: "center" }).open();
-        setTimeout(() => { this.updateState = "idle"; }, 3000);
-      }
-    },
-    reloadApp() {
-      window.location.reload();
-    },
-    async downloadAppUpdate() {
-      const info = pendingAppUpdate.value;
-      if (!info) return;
-      this.appUpdateState = "downloading";
-      const result = await downloadAndApplyAppUpdate(info);
-      if (result.ok) {
-        this.appUpdateState = "ready";
-      } else {
-        this.appUpdateState = "error";
-        f7.toast.create({ text: `${t("settings.updateFailed")}: ${result.error}`, closeTimeout: 3000, position: "center" }).open();
-        setTimeout(() => { this.appUpdateState = "idle"; }, 3000);
-      }
-    },
-    async restartApp() {
-      await liveReloadApp();
-    },
-    setTheme(value: ThemeValue) {
-      this.theme = value;
-      setItem(THEME_KEY, value);
-      applyTheme(value);
-    },
-    setLanguage(value: LanguagePreference) {
-      this.language = value;
-      setLocale(value);
-    },
-    setShowArticles(value: boolean) {
-      this.showArticles = value;
-      setItem(SHOW_ARTICLES_KEY, value ? "1" : "0");
-    },
-    setCondensedGrammar(value: boolean) {
-      this.condensedGrammar = value;
-      setItem(CONDENSED_GRAMMAR_KEY, value ? "1" : "0");
-    },
-    setSearchBarPosition(value: SearchBarPosition) {
-      this.searchBarPosition = value;
-      setItem(SEARCH_BAR_POSITION_KEY, value);
-    },
-    setAutoCheckUpdates(value: boolean) {
-      this.autoCheckUpdates = value;
-      setItem(AUTO_CHECK_UPDATES_KEY, value ? "1" : "0");
-    },
-    confirmClear() {
-      f7.dialog.confirm(
-        t("settings.clearConfirmMsg"),
-        t("settings.clearConfirmTitle"),
-        () => {
-          removeItem("lexiklar_recents");
-          removeItem("lexiklar_view_counts");
-          removeItem("lexiklar_phrase_terms");
-          f7.toast
-            .create({ text: t("settings.clearDone"), closeTimeout: 2000, position: "center" })
-            .open();
-        },
-      );
-    },
-    confirmClearFavorites() {
-      f7.dialog.confirm(
-        t("settings.clearFavoritesMsg"),
-        t("settings.clearFavoritesTitle"),
-        () => {
-          removeItem("lexiklar_favorites");
-          f7.toast
-            .create({ text: t("settings.clearFavoritesDone"), closeTimeout: 2000, position: "center" })
-            .open();
-        },
-      );
-    },
-    confirmClearCache() {
-      f7.dialog.confirm(
-        t("settings.clearCacheMsg"),
-        t("settings.clearCacheTitle"),
-        async () => {
-          await cacheClear();
-          dbReady.value = false;
-          dbDownloadNeeded.value = true;
-          this.dbVersion = null;
-          this.dbBuiltAt = null;
-          this.dbCacheSize = null;
-          f7.toast
-            .create({ text: t("settings.clearCacheDone"), closeTimeout: 2000, position: "center" })
-            .open();
-        },
-      );
-    },
-  },
+  );
+}
+
+// Re-fetch version when DB becomes ready (e.g. after initial download)
+watch(dbReady, (ready) => {
+  if (ready) loadDbVersion();
+});
+
+onMounted(() => {
+  loadDbVersion();
+  if (isWeb) {
+    cacheSize().then((size) => { dbCacheSize.value = size; });
+  }
+  if (pendingAppUpdate.value?.available) {
+    appUpdateState.value = "available";
+  }
 });
 </script>
