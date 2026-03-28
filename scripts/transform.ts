@@ -681,15 +681,17 @@ function transformSenses(entry: WiktionaryEntry): Sense[] {
   return rawSenses
     .filter((s) => !s.form_of?.length && !s.alt_of?.length)
     .map((s) => {
-      const exampleIds = (s.examples || [])
-        .map((e) =>
-          collectExample(
-            e.text,
-            e.english || e.translation || null,
-            entry.word,
-          ),
-        )
-        .filter((id): id is string => id !== null);
+      const exampleIds = [...new Set(
+        (s.examples || [])
+          .map((e) =>
+            collectExample(
+              e.text,
+              e.english || e.translation || null,
+              entry.word,
+            ),
+          )
+          .filter((id): id is string => id !== null),
+      )];
 
       // Use the most specific gloss (last in array), or first if only one
       const glosses = s.glosses || [];
@@ -1883,6 +1885,29 @@ async function main(): Promise<void> {
         state.entries[stateKey] = { hash, file: "__form-of-skip__" };
         skipped++;
         continue;
+      }
+
+      // Skip stub phrase entries where ALL senses have empty gloss and no examples.
+      // These are Wiktionary phrase entries with no definition text — they add
+      // nothing to the dictionary. Non-phrase POS (nouns, verbs, adjectives, etc.)
+      // are kept even with empty glosses because they carry grammar data (declension,
+      // conjugation, gender, IPA). Entries with _overrides or _proofread are kept.
+      if (parsed.pos === "phrase" &&
+          data.senses.every((s) => !s.gloss && !s.example_ids?.length)) {
+        const existingPath = join(DATA_DIR, "words", SUPPORTED_POS[parsed.pos],
+          sanitizeFilename(parsed.word) + ".json");
+        let hasManualData = false;
+        if (existsSync(existingPath)) {
+          try {
+            const existing = JSON.parse(readFileSync(existingPath, "utf-8"));
+            hasManualData = !!(existing._overrides || existing._proofread);
+          } catch {}
+        }
+        if (!hasManualData) {
+          state.entries[stateKey] = { hash, file: "__stub-skip__" };
+          skipped++;
+          continue;
+        }
       }
 
       // Extract expressions and proverbs (word-level, not sense-level)
