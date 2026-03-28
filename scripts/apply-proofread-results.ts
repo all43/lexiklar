@@ -258,7 +258,13 @@ for (const fix of synonymsEnFixes) {
   try { data = JSON.parse(readFileSync(filePath, "utf-8")) as Word; } catch { continue; }
   if (!data.senses || data.senses.length <= fix.sense) { console.warn(`  Warning: no sense ${fix.sense} in ${fix.word}`); continue; }
   const sense = data.senses[fix.sense] as unknown as Record<string, unknown>;
-  const old = sense.synonyms_en;
+  const old = sense.synonyms_en as string[] | null | undefined;
+  const oldLen = Array.isArray(old) ? old.length : 0;
+  const newLen = fix.value.length;
+  if (oldLen > 0 && newLen < oldLen) {
+    console.warn(`  ⚠ SKIPPED ${fix.word} sense ${fix.sense}: new array (${newLen}) shorter than old (${oldLen}) — likely replaced instead of appended. Old: ${JSON.stringify(old)} → New: ${JSON.stringify(fix.value)}`);
+    continue;
+  }
   sense.synonyms_en = fix.value;
   if (!DRY_RUN) writeFileSync(filePath, JSON.stringify(data, null, 2) + "\n");
   console.log(`  ${DRY_RUN ? "[dry] " : ""}Synonyms-EN fix ${fix.word} sense ${fix.sense}: ${JSON.stringify(old)} → ${JSON.stringify(fix.value)}`);
