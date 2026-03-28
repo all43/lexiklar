@@ -153,7 +153,7 @@ import { defineComponent } from "vue";
 import { f7 } from "framework7-vue";
 import { applyTheme, THEME_KEY, type ThemeValue } from "../js/theme.js";
 import { t, setLocale, getLocale, LANGUAGE_KEY, type LanguagePreference } from "../js/i18n.js";
-import { getCached, setItem, removeItem } from "../utils/storage.js";
+import { getCached, setItem, removeItem, SHOW_ARTICLES_KEY, CONDENSED_GRAMMAR_KEY, SEARCH_BAR_POSITION_KEY, AUTO_CHECK_UPDATES_KEY } from "../utils/storage.js";
 import { Capacitor } from "@capacitor/core";
 import { getDbVersion, checkForUpdates, applyUpdate as applyDbUpdate, cacheClear, cacheSize, type UpdateInfo } from "../utils/db.js";
 import { dbReady, dbDownloadNeeded } from "../utils/db-update-state.js";
@@ -177,10 +177,6 @@ const SEARCH_BAR_POSITION_OPTIONS = [
   { value: "bottom" as const, labelKey: "settings.searchBarBottom" },
 ];
 
-export const SHOW_ARTICLES_KEY = "lexiklar_show_articles";
-export const CONDENSED_GRAMMAR_KEY = "lexiklar_condensed_grammar";
-export const SEARCH_BAR_POSITION_KEY = "lexiklar_search_position";
-export const AUTO_CHECK_UPDATES_KEY = "lexiklar_auto_check_updates";
 export type SearchBarPosition = "auto" | "top" | "bottom";
 
 type UpdateState = "idle" | "checking" | "up-to-date" | "available" | "downloading" | "applying" | "done" | "error";

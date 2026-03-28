@@ -163,8 +163,7 @@
 <script lang="ts">
 import { defineComponent, type PropType } from "vue";
 import { t } from "../js/i18n.js";
-import { getCached } from "../utils/storage.js";
-import { CONDENSED_GRAMMAR_KEY } from "../pages/SettingsPage.vue";
+import { getCached, CONDENSED_GRAMMAR_KEY } from "../utils/storage.js";
 import adjEndings from "../../data/rules/adj-endings.json";
 import type { AdjectiveWord, AdjEndingsTable } from "../../types/word.js";
 

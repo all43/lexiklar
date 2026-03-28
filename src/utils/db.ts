@@ -161,7 +161,7 @@ function isValidSqlite(bytes: ArrayBuffer): boolean {
 
 // ---- Update manifest URL ----
 // Permanent GitHub Release that always holds the latest manifest
-const MANIFEST_URL =
+export const MANIFEST_URL =
   "https://cdn.lexiklar.app/manifest.json";
 
 // ---- Gzip decompression ----

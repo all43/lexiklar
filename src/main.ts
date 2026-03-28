@@ -18,12 +18,11 @@ import Framework7Vue, { registerComponents } from "framework7-vue/bundle";
 Framework7.use(Framework7Vue);
 
 // Persistent storage (Capacitor Preferences with sync cache)
-import { initStorage } from "./utils/storage.js";
+import { initStorage, getCached, setItem, AUTO_CHECK_UPDATES_KEY, LAST_UPDATE_CHECK_KEY } from "./utils/storage.js";
 import { initDevice } from "./utils/device.js";
 
 // Database
 import { initDb, checkForUpdates } from "./utils/db.js";
-import { getCached, setItem } from "./utils/storage.js";
 import { pendingDbUpdate, dbReady, dbDownloadNeeded } from "./utils/db-update-state.js";
 
 // Live update (Capawesome — native only)
@@ -64,14 +63,13 @@ import App from "./App.vue";
   notifyReady();
 
   // Non-blocking background check for updates (throttled to once per 24h)
-  const autoCheck = getCached("lexiklar_auto_check_updates") !== "0"; // on by default
+  const autoCheck = getCached(AUTO_CHECK_UPDATES_KEY) !== "0"; // on by default
   if (autoCheck) {
-    const UPDATE_CHECK_KEY = "lexiklar_last_update_check";
     const UPDATE_CHECK_INTERVAL = 24 * 60 * 60 * 1000; // 24 hours
-    const lastCheck = Number(getCached(UPDATE_CHECK_KEY)) || 0;
+    const lastCheck = Number(getCached(LAST_UPDATE_CHECK_KEY)) || 0;
     if (Date.now() - lastCheck > UPDATE_CHECK_INTERVAL) {
       checkForUpdates().then((info) => {
-        setItem(UPDATE_CHECK_KEY, String(Date.now()));
+        setItem(LAST_UPDATE_CHECK_KEY, String(Date.now()));
         if (info?.available) pendingDbUpdate.value = info;
       }).catch(() => { /* silent — network may be unavailable */ });
     }

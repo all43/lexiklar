@@ -16,17 +16,26 @@ import { Preferences } from "@capacitor/preferences";
 
 const cache = new Map<string, string>();
 
+/** Exported key constants for use across components. */
+export const SHOW_ARTICLES_KEY = "lexiklar_show_articles";
+export const CONDENSED_GRAMMAR_KEY = "lexiklar_condensed_grammar";
+export const SEARCH_BAR_POSITION_KEY = "lexiklar_search_position";
+export const AUTO_CHECK_UPDATES_KEY = "lexiklar_auto_check_updates";
+export const LAST_UPDATE_CHECK_KEY = "lexiklar_last_update_check";
+
 /** All known app keys — preloaded at init. */
 const KEYS = [
   "lexiklar_theme",
-  "lexiklar_show_articles",
+  SHOW_ARTICLES_KEY,
   "lexiklar_language",
   "lexiklar_favorites",
   "lexiklar_recents",
   "lexiklar_view_counts",
   "lexiklar_phrase_terms",
-  "lexiklar_search_position",
-  "lexiklar_condensed_grammar",
+  SEARCH_BAR_POSITION_KEY,
+  CONDENSED_GRAMMAR_KEY,
+  AUTO_CHECK_UPDATES_KEY,
+  LAST_UPDATE_CHECK_KEY,
 ] as const;
 
 /**

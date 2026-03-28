@@ -41,7 +41,7 @@ import { getCached, setItem } from "../utils/storage.js";
 import type { SearchResult } from "../../types/search.js";
 import WordListBadges from "../components/WordListBadges.vue";
 import { wordListTitle } from "../components/WordListBadges.vue";
-import { SHOW_ARTICLES_KEY } from "./SettingsPage.vue";
+import { SHOW_ARTICLES_KEY } from "../utils/storage.js";
 
 const FAVORITES_KEY = "lexiklar_favorites";
 

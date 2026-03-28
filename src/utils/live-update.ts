@@ -11,9 +11,7 @@
 import { Capacitor } from "@capacitor/core";
 import { ref } from "vue";
 
-// Same permanent release as db.ts — single manifest for both channels
-const MANIFEST_URL =
-  "https://cdn.lexiklar.app/manifest.json";
+import { MANIFEST_URL } from "./db.js";
 
 export interface AppUpdateInfo {
   available: boolean;
