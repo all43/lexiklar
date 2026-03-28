@@ -58,10 +58,12 @@ import App from "./App.vue";
     // App still mounts — SearchPage shows a download prompt
   }
 
-  // Strip query params before F7 browser history sees them
-  // (query params cause F7 to push a duplicate page on initial load)
-  if (window.location.search) {
-    window.history.replaceState(null, "", window.location.pathname);
+  // Deep-link support: seed browser history with "/" so the back button
+  // returns to home instead of leaving the app.
+  if (window.location.pathname.startsWith("/word/")) {
+    const path = window.location.pathname;
+    window.history.replaceState(null, "", "/");
+    window.history.pushState(null, "", path);
   }
 
   const app = createApp(App);
