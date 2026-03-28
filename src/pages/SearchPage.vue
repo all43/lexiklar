@@ -35,7 +35,7 @@
     </f7-block>
 
     <!-- ═══ Search results (VL) — shown when a query is active ═══ -->
-    <template v-else-if="searchQuery">
+    <template v-else-if="searchQuery.length >= 2 || searchQuery.toLowerCase() === 'i'">
       <!-- Phrase suggestions from sequential searches -->
       <template v-if="phraseMatches.length">
         <f7-block-title>{{ t('search.matchingExpressions') }}</f7-block-title>
@@ -89,7 +89,7 @@
         <f7-list-button :title="t('report.notFound')" @click="reportMissing" />
       </f7-list>
 
-      <f7-block v-else-if="!loading">
+      <f7-block v-if="!loading && results.length === 0">
         <p>{{ t('search.noResults') }}</p>
       </f7-block>
       <template v-if="!loading && results.length === 0 && suggestions.length > 0">
@@ -111,6 +111,13 @@
       <f7-list v-if="!loading && results.length === 0 && searchQuery.length >= 3" inset>
         <f7-list-button :title="t('report.missingWord').replace('{word}', searchQuery)" @click="reportMissing" />
       </f7-list>
+    </template>
+
+    <!-- ═══ Short query tip — shown for single char (except "i") ═══ -->
+    <template v-else-if="searchQuery.length === 1">
+      <f7-block>
+        <p class="text-secondary">{{ t('search.typeMoreChars') }}</p>
+      </f7-block>
     </template>
 
     <!-- ═══ Home screen — shown when no query ═══ -->
@@ -241,7 +248,9 @@ const loading = ref(true);
 const dbDownloading = ref(false);
 const dbDownloadProgress = ref(0);
 const dbDownloadError = ref("");
+const SEARCH_DEBOUNCE_MS = 300;
 let debounceTimer: ReturnType<typeof setTimeout> | null = null;
+let searchGen = 0;
 const showArticles = ref(getCached(SHOW_ARTICLES_KEY) !== "0");
 const searchBarPosition = ref<SearchBarPosition>((getCached(SEARCH_BAR_POSITION_KEY) || "auto") as SearchBarPosition);
 
@@ -352,7 +361,20 @@ function highlightPhraseWords(lemma: string): string {
   }).join("");
 }
 
-async function search(q: string) {
+async function search(q: string, gen: number) {
+  if (q.length < 2) {
+    if (q.toLowerCase() === "i") {
+      const hits = await searchByLemma("ich");
+      if (gen !== searchGen) return;
+      results.value = hits.filter(r => r.lemma.toLowerCase() === "ich");
+    } else {
+      results.value = [];
+    }
+    suggestions.value = [];
+    phraseMatches.value = [];
+    loading.value = false;
+    return;
+  }
   loading.value = true;
   const qLower = q.toLowerCase();
   const qFolded = foldUmlauts(q);
@@ -411,6 +433,7 @@ async function search(q: string) {
     }
   }
 
+  if (gen !== searchGen) return;
   results.value = res;
 
   if (res.length === 0 && q.length >= 3) {
@@ -419,12 +442,14 @@ async function search(q: string) {
     suggestions.value = [];
   }
 
+  if (gen !== searchGen) return;
   const bestMatch = lemmaExact[0] || formHits[0];
   if (bestMatch) {
     addPhraseTerm(bestMatch.lemma);
   }
 
   await findPhraseMatches(q, seen);
+  if (gen !== searchGen) return;
   loading.value = false;
 }
 
@@ -514,7 +539,7 @@ function reportMissing() {
   }).open();
 }
 
-async function loadHomeScreen() {
+async function loadHomeScreen(gen = 0) {
   if (!isDbReady.value) {
     loading.value = false;
     return;
@@ -544,6 +569,7 @@ async function loadHomeScreen() {
     }
 
     const words = await getRelatedWords(allKeys);
+    if (gen && gen !== searchGen) return;
     const infoMap = new Map(words.map((w) => [w.file, w]));
 
     freqWords.value = freqKeys
@@ -556,6 +582,7 @@ async function loadHomeScreen() {
     freqWords.value = [];
     recentWords.value = [];
   }
+  if (gen && gen !== searchGen) return;
   loading.value = false;
 }
 
@@ -563,11 +590,20 @@ async function loadHomeScreen() {
 watch(searchQuery, (q) => {
   if (!isDbReady.value) return;
   if (debounceTimer) clearTimeout(debounceTimer);
-  if (!q.trim()) {
-    loadHomeScreen();
+  const trimmed = q.trim();
+  const gen = ++searchGen;
+  if (!trimmed || (trimmed.length < 2 && trimmed.toLowerCase() !== "i")) {
+    results.value = [];
+    suggestions.value = [];
+    phraseMatches.value = [];
+    loadHomeScreen(gen);
     return;
   }
-  debounceTimer = setTimeout(() => search(q.trim()), 150);
+  results.value = [];
+  suggestions.value = [];
+  phraseMatches.value = [];
+  loading.value = true;
+  debounceTimer = setTimeout(() => search(trimmed, gen), SEARCH_DEBOUNCE_MS);
 });
 
 watch(results, (newResults) => {
