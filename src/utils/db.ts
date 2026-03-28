@@ -602,6 +602,7 @@ export interface UpdateInfo {
   type?: "patch" | "full";
   url?: string;
   size?: number;
+  uncompressedSize?: number;
   gzUrl?: string;
   gzSize?: number;
   targetVersion?: string;
@@ -646,6 +647,7 @@ export async function checkForUpdates(): Promise<UpdateInfo | null> {
       type: "full",
       url: db.full_db_gz?.url || db.full_db?.url,
       size: db.full_db_gz?.size || db.full_db?.size,
+      uncompressedSize: db.full_db_size,
       gzUrl: db.full_db_gz?.url,
       targetVersion: db.current_version,
       builtAt: db.built_at,
@@ -696,20 +698,65 @@ export async function applyUpdate(
       // Apply patch + re-cache (heavy, runs in worker)
       await send("exec_batch", { sql: patchSql });
     } else {
-      // Full DB replacement (always gzipped)
-      const bytes = await fetchDbBytes(
-        update.gzUrl || update.url!, update.size || 0, onProgress,
-      );
+      // Full DB replacement — stream to Cache API first, then load into worker.
+      // Avoids holding decompressed bytes + worker copy simultaneously (~500 MB peak)
+      // which crashes iOS Safari.
+      const url = update.gzUrl || update.url!;
+      const uncompressedSize = update.uncompressedSize || update.size || 0;
+
+      if (supportsDecompressionStream) {
+        const resp = await fetch(url);
+        if (!resp.ok || !resp.body) throw new Error(`Download failed: ${resp.status}`);
+        const decompressed = resp.body.pipeThrough(new DecompressionStream("gzip"));
+
+        let loaded = 0;
+        const progress = new TransformStream<Uint8Array, Uint8Array>({
+          transform(chunk, controller) {
+            loaded += chunk.byteLength;
+            if (onProgress && uncompressedSize) {
+              onProgress(Math.min(loaded, uncompressedSize), uncompressedSize);
+            }
+            controller.enqueue(chunk);
+          },
+        });
+        const tracked = decompressed.pipeThrough(progress);
+
+        const cache = await caches.open(CACHE_NAME);
+        await cache.put(DB_CACHE_KEY, new Response(tracked));
+      } else {
+        // Fallback: download + decompress with fflate, write to cache.
+        // Scoped tightly so compressed + decompressed buffers can be GC'd
+        // before we read back from cache into the worker.
+        await (async () => {
+          const resp = await fetch(url);
+          if (!resp.ok) throw new Error(`Download failed: ${resp.status}`);
+          const compressedBuf = new Uint8Array(await resp.arrayBuffer());
+          if (onProgress && uncompressedSize) onProgress(uncompressedSize / 2, uncompressedSize);
+          const { gunzipSync } = await import("fflate");
+          const decompressed = gunzipSync(compressedBuf);
+          if (onProgress && uncompressedSize) onProgress(uncompressedSize, uncompressedSize);
+          await cacheWrite(decompressed.buffer as ArrayBuffer);
+        })();
+      }
+
+      await cacheVersionWrite(update.targetVersion!);
 
       if (onApplying) {
         onApplying();
         await new Promise((r) => setTimeout(r, 50));
       }
 
+      // Read cached bytes back into worker (only ~232 MB in memory at a time)
+      const bytes = await cacheRead();
+      if (!bytes) throw new Error("Cache write failed");
       await send("init", { bytes }, [bytes]);
+
+      // Already cached — skip serialize
+      _allLemmas = null;
+      return { ok: true };
     }
 
-    // Re-cache the updated DB (serialize runs in worker)
+    // Patch path: re-cache the updated DB from worker
     const updatedBytes = await send("serialize") as ArrayBuffer;
     await cacheWrite(updatedBytes);
     await cacheVersionWrite(update.targetVersion!);

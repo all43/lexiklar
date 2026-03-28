@@ -119,18 +119,18 @@
       <f7-list-item v-else-if="updateState === 'available'">
         <template #title>
           <f7-link @click="applyUpdate">
-            {{ t('settings.updateAvailable') }}
-            <span v-if="updateInfo" class="text-color-gray"> {{ formatSize(updateInfo.size) }}</span>
+            {{ updateInfo?.type === 'full' ? t('settings.updateAvailableFull') : t('settings.updateAvailable') }}
+            <span v-if="updateInfo?.size" class="text-color-gray">&nbsp;{{ formatSize(updateInfo.size) }}</span>
           </f7-link>
         </template>
       </f7-list-item>
-      <f7-list-item v-else-if="updateState === 'downloading'" :title="t('settings.downloading')" />
-      <f7-list-item v-else-if="updateState === 'applying'" :title="t('settings.applying')" />
-      <f7-list-item v-else-if="updateState === 'done'">
+      <f7-list-item v-else-if="updateState === 'downloading'">
         <template #title>
-          <f7-link @click="reloadApp">{{ t('settings.updateReload') }}</f7-link>
+          <span>{{ t('settings.downloading') }}<span v-if="updateProgress > 0" class="text-color-gray">&nbsp;{{ updateProgress }}%</span></span>
         </template>
       </f7-list-item>
+      <f7-list-item v-else-if="updateState === 'applying'" :title="t('settings.applying')" />
+      <f7-list-item v-else-if="updateState === 'done'" :title="t('settings.updateDone')" />
       <f7-list-item v-else-if="updateState === 'error'" :title="t('settings.updateFailed')" />
       <f7-list-item v-if="appUpdateState === 'available'">
         <template #title>
@@ -189,6 +189,7 @@ const dbVersion = ref<string | null>(null);
 const dbBuiltAt = ref<string | null>(null);
 const updateState = ref<UpdateState>("idle");
 const updateInfo = ref<UpdateInfo | null>(null);
+const updateProgress = ref(0);
 const appVersion = __APP_VERSION__;
 const appUpdateState = ref<"idle" | "available" | "downloading" | "ready" | "error">("idle");
 const isWeb = !Capacitor.isNativePlatform();
@@ -238,7 +239,10 @@ async function checkUpdates() {
 async function applyUpdate() {
   if (!updateInfo.value) return;
   updateState.value = "downloading";
-  const result = await applyDbUpdate(updateInfo.value, undefined, () => {
+  updateProgress.value = 0;
+  const result = await applyDbUpdate(updateInfo.value, (loaded, total) => {
+    updateProgress.value = total ? Math.round((loaded / total) * 100) : 0;
+  }, () => {
     updateState.value = "applying";
   });
   if (result.ok) {
@@ -251,10 +255,6 @@ async function applyUpdate() {
     f7.toast.create({ text: `${t("settings.updateFailed")}: ${result.error}`, closeTimeout: 3000, position: "center" }).open();
     setTimeout(() => { updateState.value = "idle"; }, 3000);
   }
-}
-
-function reloadApp() {
-  window.location.reload();
 }
 
 async function downloadAppUpdate() {
