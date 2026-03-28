@@ -1,5 +1,5 @@
 <template>
-  <f7-page name="word">
+  <f7-page name="word" @page:afterin="onPageAfterIn">
     <f7-navbar :title="word ? (word.plural_dominant ? word.plural_form : word.word) : t('word.loading')" back-link>
       <f7-nav-right>
         <f7-link
@@ -448,6 +448,7 @@ const POS_COLORS: Record<string, string> = {
 const props = defineProps<{
   f7route: any;
   f7router: any;
+  targetSense?: number | null;
 }>();
 
 const inst = getCurrentInstance();
@@ -458,6 +459,7 @@ const relatedWords = ref<SearchResult[]>([]);
 const loading = ref(true);
 const preview = ref<PreviewData | null>(null);
 const expandedSenses = ref<number[]>([]);
+let pendingSenseScroll: number | null = null;
 const relatedExpanded = ref(false);
 const inHistory = ref(false);
 const isFavorite = ref(false);
@@ -695,10 +697,25 @@ async function searchWord(lemma: string) {
   props.f7router.back();
 }
 
+function onPageAfterIn() {
+  if (pendingSenseScroll) {
+    scrollToSense(pendingSenseScroll);
+    pendingSenseScroll = null;
+  }
+}
+
 function scrollToSense(senseNumber: number) {
   const el = document.getElementById(`sense-${senseNumber}`);
   if (!el) return;
-  el.scrollIntoView({ behavior: "smooth", block: "center" });
+  // Use .page-current to avoid hitting a stale page in F7's page stack
+  const pageContent = document.querySelector(".page-current .page-content") as HTMLElement | null;
+  if (pageContent) {
+    const navbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--f7-navbar-height")) || 0;
+    const target = pageContent.scrollTop + el.getBoundingClientRect().top - navbarHeight - 16;
+    pageContent.scrollTo({ top: target, behavior: "smooth" });
+  } else {
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
   el.classList.add("sense-highlight");
   setTimeout(() => el.classList.remove("sense-highlight"), 1500);
 }
@@ -724,7 +741,7 @@ async function handleCrossRef(filePath: string, senseNumber: number | null) {
     };
   } catch {
     const url = `/word/${filePath}/`;
-    props.f7router.navigate(senseNumber ? `${url}?sense=${senseNumber}` : url);
+    props.f7router.navigate(url, { props: { targetSense: senseNumber || null } });
   }
 }
 
@@ -733,7 +750,7 @@ function navigateToPreview() {
   const { filePath, senseNumber } = preview.value;
   preview.value = null;
   const url = `/word/${filePath}/`;
-  props.f7router.navigate(senseNumber ? `${url}?sense=${senseNumber}` : url);
+  props.f7router.navigate(url, { props: { targetSense: senseNumber || null } });
 }
 
 function reportIssue(source: "top" | "bottom" = "bottom") {
@@ -833,7 +850,9 @@ onBeforeUnmount(() => {
 
 onMounted(async () => {
   const { pos, file } = props.f7route.params as { pos: string; file: string };
-  const targetSense = parseInt(props.f7route.query?.sense as string, 10) || null;
+  // Sense number passed via F7 route props (from cross-ref / preview navigation)
+  const targetSense = props.targetSense
+    || parseInt(props.f7route.query?.sense as string, 10) || null;
 
   try {
     word.value = await getWord(`${pos}/${file}`) as (Word & Record<string, unknown>) | null;
@@ -900,7 +919,8 @@ onMounted(async () => {
   } finally {
     loading.value = false;
     await nextTick();
-    if (targetSense) scrollToSense(targetSense);
+    // Scroll to sense is deferred to onPageAfterIn (after F7 transition completes)
+    pendingSenseScroll = targetSense;
     const el = inst?.vnode.el as HTMLElement | null;
     el?.querySelectorAll(".tooltip-init").forEach((tooltipEl) => {
       const htmlEl = tooltipEl as HTMLElement & { f7Tooltip?: unknown };
