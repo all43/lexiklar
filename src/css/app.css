@@ -3,6 +3,21 @@
   Framework7 base styles are imported in main.js.
 */
 
+/* Fix virtual keyboard layout on web/PWA (not native).
+   F7's tabbar is position:absolute inside .views (not position:fixed). When the
+   virtual keyboard opens, the layout must shrink to the visible viewport or the
+   tabbar ends up behind the keyboard and the body becomes scrollable. Using
+   100dvh (dynamic viewport height) ensures the app always fills exactly the
+   visible area above the keyboard. Scoped to .is-web (set by main.ts) because
+   on native iOS, dvh tracks the WKWebView visual viewport which the OS shrinks
+   when the keyboard pushes content — applying dvh there breaks the native layout. */
+html.is-web,
+html.is-web body,
+html.is-web #app,
+html.is-web .framework7-root {
+  height: 100dvh;
+}
+
 /* Search results & home screen lists — remove F7's default 32px vertical
    margins so lists sit flush against subnavbar and each other. */
 .search-results,

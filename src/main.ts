@@ -1,4 +1,12 @@
 import { createApp } from "vue";
+import { Capacitor } from "@capacitor/core";
+
+// Mark web context early so CSS can scope the dvh keyboard fix to web-only.
+// On native (Capacitor), dvh tracks the WKWebView visual viewport which shrinks
+// when the keyboard pushes content, breaking the layout differently.
+if (!Capacitor.isNativePlatform()) {
+  document.documentElement.classList.add("is-web");
+}
 
 // Framework7 CSS
 import "framework7/css/bundle";
