@@ -105,7 +105,7 @@ download → transform → enrich → translate → build-index
 | `scripts/generate-synonyms-en.ts` | — | LLM-generates English search synonyms (`synonyms_en`) for reverse lookup |
 | `scripts/benchmark-frequency.ts` | — | Benchmark corpus weights against LLM reference scores (Spearman correlation, grid search) |
 | `scripts/enrich-collocations.ts` | `npm run enrich-collocations` | Extracts contextual noun collocations from adjective examples for condensed declension view |
-| `scripts/publish-update.ts` | — | Generates OTA update manifest + SQL patches + gzipped DB by diffing old/new DBs (see OTA Updates section) |
+| `scripts/publish-update.ts` | — | Generates OTA update manifest + gzipped SQL patches + gzipped DB by diffing old/new DBs (see OTA Updates section) |
 
 **IMPORTANT: Do not run a full transform (`npm run transform`) just to re-process a few words.** Use `--words` to scope to specific entries — a full transform touches thousands of files and causes massive git churn:
 
@@ -684,9 +684,9 @@ SQLite DB bytes are cached using the **Cache API** (`caches.open()`), which work
 - **Native** (iOS/Android): DB is bundled as `/data/lexiklar.db`. Cache validated against `db-version.txt` hash.
 - **Web/PWA**: DB is NOT bundled (exceeds Cloudflare Pages 25 MB limit). Flow:
   1. Try Cache API — if cached, load silently (skips `db-version.txt` check to avoid invalidation on SW update)
-  2. If not cached: show download prompt ("Dictionary download required, ~50 MB")
+  2. If not cached: show download prompt with real size fetched from manifest (falls back to "~50 MB")
   3. User taps Download → `downloadDb()` fetches from `cdn.lexiklar.app` (R2)
-  4. Prefer gzipped (`full_db_gz`, ~51 MB) via `DecompressionStream`, fall back to raw (~221 MB)
+  4. Downloads gzipped (`full_db_gz`, ~51 MB) via `DecompressionStream` or `fflate` fallback (iOS < 16.4)
   5. Cache downloaded bytes via Cache API for next time
 
 **Gzip decompression**: `DecompressionStream("gzip")` is a native streaming API (Chrome 80+, Firefox 113+, Safari 16.4+). Progress is tracked against the known uncompressed size from the manifest, giving a smooth progress bar that covers both download and decompression.
@@ -745,7 +745,7 @@ Configured via `vite-plugin-pwa` in `vite.config.ts`. Capacitor provides no PWA 
 **Cloudflare R2** (`cdn.lexiklar.app`):
 - Bucket `lexiklar-data` with custom domain `cdn.lexiklar.app`
 - CORS: restricted to `https://lexiklar.app` and `https://*.lexiklar.app`
-- Stores: `manifest.json`, `lexiklar.db`, `lexiklar.db.gz`, `patches/*.sql`, `bundles/<version>.zip`
+- Stores: `manifest.json`, `lexiklar.db`, `lexiklar.db.gz`, `patches/*.sql.gz`, `bundles/<version>.zip`
 - Updated by `.github/workflows/publish-data.yml` via `wrangler r2 object put`
 
 **Interaction with OTA DB updates**: the SW does not interfere with `checkForUpdates()` — those are cross-origin fetches to GitHub Release asset URLs which bypass the SW's scope.
@@ -763,7 +763,7 @@ Three independent update channels:
 | **Capawesome live update** | App shell on native iOS/Android | `@capawesome/capacitor-live-update` → `live-update.ts` | Auto on startup + manual in Settings |
 
 **Asset hosting**:
-- **R2 CDN** (`cdn.lexiklar.app`) — all assets: `manifest.json`, `lexiklar.db`, `lexiklar.db.gz`, `patches/*.sql`, `bundles/<version>.zip`
+- **R2 CDN** (`cdn.lexiklar.app`) — all assets: `manifest.json`, `lexiklar.db`, `lexiklar.db.gz`, `patches/*.sql.gz`, `bundles/<version>.zip`
 - **GitHub Releases** — `data-*` tags kept for archival only
 
 **Unified manifest format** (on the `manifest` release):
@@ -772,9 +772,9 @@ Three independent update channels:
   "db": {
     "current_version": "<16-char DB hash>",
     "built_at": "YYYY-MM-DD",
-    "patches": { "<old_version>": { "url": "https://cdn.lexiklar.app/patches/old_to_new.sql", "size": 1234 } },
-    "full_db": { "url": "https://cdn.lexiklar.app/lexiklar.db", "size": 12345678 },
-    "full_db_gz": { "url": "https://cdn.lexiklar.app/lexiklar.db.gz", "size": 5400000 }
+    "patches": { "<old_version>": { "url": "https://cdn.lexiklar.app/patches/old_to_new.sql.gz", "size": 1234 } },
+    "full_db_size": 232763392,
+    "full_db_gz": { "url": "https://cdn.lexiklar.app/lexiklar.db.gz", "size": 54242223 }
   },
   "bundle": {
     "current_version": "0.9.1",
@@ -789,9 +789,9 @@ All asset URLs in the manifest are absolute R2 CDN URLs (`cdn.lexiklar.app`).
 **DB update flow**:
 1. `main.ts` calls `checkForUpdates()` after `initDb()` (fire-and-forget, 24h throttle via `lexiklar_last_update_check`)
 2. Fetches `manifest.json` from `cdn.lexiklar.app`, reads `db` section, compares `current_version` against local DB `meta.version`
-3. Prefers SQL patch (small) over full DB download (large) — patches are keyed by source version
-4. For full DB downloads: prefers gzipped (`full_db_gz`, ~51 MB) with `DecompressionStream`, falls back to uncompressed (`full_db`, ~221 MB) on older browsers
-5. `applyUpdate()` runs patch via `exec_batch` (transactional) or replaces full DB, then re-caches via Cache API
+3. Prefers gzipped SQL patch (small) over full DB download (large) — patches are keyed by source version
+4. For full DB downloads: uses `full_db_gz` (~51 MB) with `DecompressionStream` or `fflate` fallback (iOS < 16.4)
+5. `applyUpdate()` decompresses and runs patch via `exec_batch` (transactional) or replaces full DB, then re-caches via Cache API
 6. `DbUpdatePrompt.vue` shows a toast; user can apply immediately or dismiss
 
 **Capawesome flow** (`src/utils/live-update.ts`):
@@ -805,7 +805,7 @@ All asset URLs in the manifest are absolute R2 CDN URLs (`cdn.lexiklar.app`).
 ```bash
 npx tsx scripts/publish-update.ts --old <old.db> --out <dir> [--keep-patches 3] [--release-url <url>]
 ```
-Diffs `words` and `examples` tables using the `hash` column (SHA-256 of JSON `data`). Generates INSERT/UPDATE/DELETE statements; uses `(SELECT id FROM words WHERE file = ?)` subqueries for word_id references since client DBs have different autoincrement IDs. Patches run inside a transaction via `exec_batch` in the Web Worker. `--release-url` sets the base URL for asset links in the manifest (CI passes `https://cdn.lexiklar.app`). Also generates `lexiklar.db.gz` (gzip level 9) alongside the raw DB.
+Diffs `words` and `examples` tables using the `hash` column (SHA-256 of JSON `data`). Generates INSERT/UPDATE/DELETE statements; uses `(SELECT id FROM words WHERE file = ?)` subqueries for word_id references since client DBs have different autoincrement IDs. Patches are written as `.sql.gz` (gzip level 9) and decompressed by the client before applying via `exec_batch` in the Web Worker. `--release-url` sets the base URL for asset links in the manifest (CI passes `https://cdn.lexiklar.app`). Also generates `lexiklar.db.gz` (gzip level 9) alongside the raw DB.
 
 **GitHub Actions**:
 - **`publish-data.yml`** (`publish-db` job): triggers on push to `data/`, `scripts/build-index.ts`, or manual dispatch. Builds index, uploads DB + gzipped DB + patches + manifest to R2 CDN.
