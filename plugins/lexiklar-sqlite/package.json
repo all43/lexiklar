@@ -1,0 +1,24 @@
+{
+  "name": "lexiklar-sqlite",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal native SQLite plugin for Lexiklar",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist/", "ios/Plugin/", "android/src/", "android/build.gradle", "android/src/main/AndroidManifest.xml", "Package.swift"],
+  "scripts": {
+    "build": "tsc",
+    "test:ios": "swift test",
+    "test:android": "cd android && ./gradlew connectedAndroidTest"
+  },
+  "capacitor": {
+    "ios": { "src": "ios" },
+    "android": { "src": "android" }
+  },
+  "dependencies": {
+    "@capacitor/core": "^8.0.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.0"
+  }
+}

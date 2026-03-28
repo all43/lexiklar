@@ -40,7 +40,6 @@
     "release:major": "npm version major && git push && git push --tags"
   },
   "dependencies": {
-    "@capacitor-community/sqlite": "^8.0.1",
     "@capacitor/android": "^8.2.0",
     "@capacitor/core": "^8.1.0",
     "@capacitor/device": "^8.0.1",
@@ -56,6 +55,7 @@
     "framework7": "^9.0.3",
     "framework7-icons": "^5.0.5",
     "framework7-vue": "^9.0.3",
+    "lexiklar-sqlite": "file:plugins/lexiklar-sqlite",
     "vue": "^3.5.29"
   },
   "devDependencies": {

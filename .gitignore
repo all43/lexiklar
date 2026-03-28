@@ -15,8 +15,15 @@ public/sqlite3/
 public/assets/databases/
 
 # Capacitor native platforms (added later)
-ios/
-android/
+/ios/
+/android/
+
+# Plugin build artifacts
+plugins/*/.build/
+plugins/*/.swiftpm/
+plugins/*/dist/
+plugins/*/node_modules/
+plugins/*/Package.resolved
 
 data/index.db
 data/proofread-results.json

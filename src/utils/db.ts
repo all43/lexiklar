@@ -15,7 +15,7 @@ import { Capacitor } from "@capacitor/core";
 import type { SearchResult, WordRow } from "../../types/search.js";
 import type { Word } from "../../types/word.js";
 import type { Example } from "../../types/example.js";
-import { initNativeDb, nativeQuery, nativeExecBatch, nativeClose, nativeDeleteDb } from "./db-native.js";
+import { initNativeDb, nativeQuery, nativeExecBatch, nativeClose, nativeDeleteDb, nativeGetDbPath } from "./db-native.js";
 
 const _isNative = Capacitor.isNativePlatform();
 
@@ -287,7 +287,7 @@ function ensureWorker(): void {
  *         so the UI can prompt the user before downloading ~51 MB.
  */
 export async function initDb(): Promise<void> {
-  // Native: use @capacitor-community/sqlite (direct native SQLite, no WASM)
+  // Native: use lexiklar-sqlite plugin (direct native SQLite, no WASM)
   if (_isNative) {
     await initNativeDb();
     return;
@@ -734,10 +734,10 @@ export async function applyUpdate(
       await nativeClose();
       await nativeDeleteDb();
 
-      // Write decompressed DB to plugin's storage via Filesystem
-      const { Filesystem, Directory } = await import("@capacitor/filesystem");
+      // Write decompressed DB to plugin's storage directory via Filesystem
+      const { Filesystem } = await import("@capacitor/filesystem");
+      const dbDir = await nativeGetDbPath();
       const blob = new Blob([bytes]);
-      // Convert to base64 in chunks to avoid stack overflow
       const reader = new FileReader();
       const base64 = await new Promise<string>((resolve, reject) => {
         reader.onload = () => {
@@ -748,9 +748,8 @@ export async function applyUpdate(
         reader.readAsDataURL(blob);
       });
       await Filesystem.writeFile({
-        path: "databases/lexiklarSQLite.db",
+        path: dbDir + "/lexiklar.db",
         data: base64,
-        directory: Directory.Library,
         recursive: true,
       });
 

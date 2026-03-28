@@ -1,113 +1,89 @@
 /**
- * Native SQLite backend using @capacitor-community/sqlite.
+ * Native SQLite backend using lexiklar-sqlite (custom Capacitor plugin).
  *
  * Used on iOS/Android only — web/PWA uses the WASM worker in db.ts.
- * The plugin manages a DB file on disk (no Cache API or in-memory WASM).
+ * The plugin uses the platform's built-in SQLite (no WASM, no extra dependencies).
  *
  * DB lifecycle:
- *   1. First launch: copyFromAssets copies bundled DB to plugin storage
- *   2. App update with newer bundled DB: overwrite with copyFromAssets
+ *   1. First launch: plugin copies bundled DB from app assets to its storage
+ *   2. App update with newer bundled DB: close → delete → reopen (triggers copy)
  *   3. OTA patches: applied via execute() — writes directly to disk
  *   4. Full DB replacement: close → delete → write via Filesystem → reopen
  */
 
-import { CapacitorSQLite, SQLiteConnection, type SQLiteDBConnection } from "@capacitor-community/sqlite";
+import { LexiklarSqlite } from "lexiklar-sqlite";
 
-const sqlite = new SQLiteConnection(CapacitorSQLite);
-const DB_NAME = "lexiklar";
-let conn: SQLiteDBConnection | null = null;
+const DB_FILE = "lexiklar.db";
 
 /**
  * Initialize the native SQLite database.
  *
- * On first launch, copies the bundled DB from app assets.
- * On app update, compares bundled version against installed and overwrites if newer.
+ * On first launch, the plugin copies the bundled DB from app assets.
+ * On app update, compares bundled version against installed and replaces if newer.
  */
 export async function initNativeDb(): Promise<void> {
-  // Copy bundled DB to plugin storage (no-op if already exists)
-  await sqlite.copyFromAssets(false);
-
-  // Open connection to check installed version
-  conn = await sqlite.createConnection(DB_NAME, false, "no-encryption", 1, false);
-  await conn.open();
+  // Open DB (plugin copies from assets on first launch)
+  await LexiklarSqlite.open({ path: DB_FILE, readOnly: false });
 
   // Check if bundled DB is newer than installed
   try {
     const versionResp = await fetch("/data/db-version.txt");
     const bundledVersion = (await versionResp.text()).trim();
 
-    const result = await conn.query("SELECT value FROM meta WHERE key = 'version'");
-    const rows = normalizeRows(result);
-    const installedVersion = rows[0]?.value as string | undefined;
+    const result = await LexiklarSqlite.query({
+      sql: "SELECT value FROM meta WHERE key = ?",
+      params: ["version"],
+    });
+    const installedVersion = result.rows[0]?.value as string | undefined;
 
     if (installedVersion && bundledVersion && installedVersion !== bundledVersion) {
-      // Bundled DB is different (newer) — overwrite
-      await conn.close();
-      await sqlite.closeConnection(DB_NAME, false);
-      conn = null;
-
-      await sqlite.copyFromAssets(true);
-
-      conn = await sqlite.createConnection(DB_NAME, false, "no-encryption", 1, false);
-      await conn.open();
+      // Bundled DB is different (newer) — replace
+      await LexiklarSqlite.close();
+      await LexiklarSqlite.deleteDatabase({ path: DB_FILE });
+      await LexiklarSqlite.open({ path: DB_FILE, readOnly: false });
     }
   } catch {
     // Version check failed — continue with whatever DB we have
   }
 
   // Sanity check
-  const check = await conn!.query("SELECT 1 FROM meta LIMIT 1");
-  const checkRows = normalizeRows(check);
-  if (!checkRows.length) throw new Error("Native DB sanity check failed");
+  const check = await LexiklarSqlite.query({ sql: "SELECT 1 FROM meta LIMIT 1" });
+  if (!check.rows.length) throw new Error("Native DB sanity check failed");
 }
 
 /**
  * Execute a SELECT query and return rows as plain objects.
  */
 export async function nativeQuery(sql: string, bind: unknown[]): Promise<Record<string, unknown>[]> {
-  if (!conn) throw new Error("Native DB not initialized");
-  const result = await conn.query(sql, bind as any[]);
-  return normalizeRows(result);
+  const result = await LexiklarSqlite.query({ sql, params: bind });
+  return result.rows;
 }
 
 /**
  * Execute multi-statement SQL in a transaction (for OTA patches).
  */
 export async function nativeExecBatch(sql: string): Promise<void> {
-  if (!conn) throw new Error("Native DB not initialized");
-  await conn.execute(sql, true);
+  await LexiklarSqlite.execute({ sql, transaction: true });
 }
 
 /**
  * Close the database connection.
- * Used before full DB replacement.
  */
 export async function nativeClose(): Promise<void> {
-  if (conn) {
-    await conn.close();
-    await sqlite.closeConnection(DB_NAME, false);
-    conn = null;
-  }
+  await LexiklarSqlite.close();
 }
 
 /**
  * Delete the database file from plugin storage.
- * Used before writing a new full DB.
  */
 export async function nativeDeleteDb(): Promise<void> {
-  await CapacitorSQLite.deleteDatabase({ database: DB_NAME });
+  await LexiklarSqlite.deleteDatabase({ path: DB_FILE });
 }
 
-// ---- Internal ----
-
 /**
- * Normalize query results.
- * On iOS, the first row may be { ios_columns: [...] } — detect and strip.
+ * Get the filesystem path where the plugin stores databases.
  */
-function normalizeRows(result: { values?: any[] }): Record<string, unknown>[] {
-  const rows = result.values ?? [];
-  if (rows.length > 0 && rows[0]?.ios_columns) {
-    return rows.slice(1);
-  }
-  return rows;
+export async function nativeGetDbPath(): Promise<string> {
+  const result = await LexiklarSqlite.getDatabasePath();
+  return result.path;
 }
