@@ -48,8 +48,8 @@ jobs:
       - name: Build app
         run: npm run build
 
-      - name: Remove DB from dist (served from GitHub Releases)
-        run: rm -f dist/data/lexiklar.db
+      - name: Remove DB from dist (served from R2 CDN, exceeds Pages 25 MB limit)
+        run: rm -f dist/data/lexiklar.db && rm -rf dist/assets/databases
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
