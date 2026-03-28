@@ -477,7 +477,9 @@ mark.example-highlight {
   padding: 8px 0;
   height: auto !important;
 }
-/* Backdrop: escape subnavbar to cover viewport, clip away bottom bar area */
+/* Backdrop: escape subnavbar to cover viewport, clip away bottom bar area.
+   Clip must include: tabbar height + safe-area-bottom (home indicator) +
+   subnavbar content height + any extra padding on the toolbar element itself. */
 .searchbar-bottom-toolbar > .searchbar-backdrop {
   position: fixed;
   top: 0;
@@ -485,7 +487,11 @@ mark.example-highlight {
   right: 0;
   bottom: 0;
   height: auto;
-  clip-path: inset(0 0 calc(var(--f7-tabbar-icons-height) + var(--f7-subnavbar-height)) 0);
+  clip-path: inset(0 0 calc(var(--f7-tabbar-icons-height) + var(--f7-safe-area-bottom) + var(--f7-subnavbar-height)) 0);
+}
+/* iOS adds padding: 8px 0 to the toolbar → 16px extra to clip */
+.ios .searchbar-bottom-toolbar > .searchbar-backdrop {
+  clip-path: inset(0 0 calc(var(--f7-tabbar-icons-height) + var(--f7-safe-area-bottom) + var(--f7-subnavbar-height) + 16px) 0);
 }
 /* Zero out subnavbar top offset when searchbar is at bottom, add bottom padding */
 .page.page-searchbar-bottom > .page-content {
