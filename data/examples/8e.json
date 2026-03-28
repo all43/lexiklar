@@ -1450,7 +1450,10 @@
     "lemmas": [
       "Staub"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8e07be590c": {
     "text": "jemandem stehen die Haare zu Berge",
@@ -4676,7 +4679,10 @@
       "Dialog",
       "Gesprächsniveau"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8e22d3a315": {
     "text": "Die Wirtschaft hat sich von der Krise schnell wieder erholt.",
@@ -7169,7 +7175,10 @@
     "lemmas": [
       "Rasen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8e3bad61dc": {
     "text": "„Die Fenster saßen hoch oben in den Wänden, mit kleinen, in Blei eingefaßten Scheiben, die nicht mehr Tageslicht hereinließen, als daß ein dünnes Talglicht auf dem Pult brennen mußte.“",
@@ -9483,7 +9492,10 @@
     "lemmas": [
       "verschaffen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8e50736f25": {
     "text": "Nimm dir ein Beispiel an diesem Mann!",
@@ -12576,7 +12588,10 @@
     "lemmas": [
       "stabil"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8e6ad7ae2b": {
     "text": "Sie vertritt einen durchaus beschränkten Standpunkt, und wenn ich das Wort wähle, so bin ich noch ritterlich. (Theodor Fontane, Frau Jenny Treibel, z.n. Projekt Gutenberg)",
@@ -17883,7 +17898,10 @@
       "verschaffen",
       "Wettrüsten"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8e9bc1a131": {
     "text": "Conakry ist die Hauptstadt der Republik Guinea.",
@@ -21080,12 +21098,15 @@
   },
   "8ebf5a9f81": {
     "text": "Ich denke, dies war die letzte Strömung, zusammen mit dem amerikanischen Minimalismus, die ein wirklich neues Level erreicht hat.",
-    "translation": "I think this was the last movement, together with American minimalism, that achieved a truly new level. [denke: verb (to think), Strömung: noun (movement), amerikanischen: adjective (American), Minimalismus: noun (minimalism), Level: noun (level)]",
+    "translation": "I think this was the last movement, together with American minimalism, that achieved a truly new level.",
     "source": "wiktionary",
     "lemmas": [
       "Level"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8ebf7d5d48": {
     "text": "Der Arzt hat mir eine Impfdosis in den Hintern gespritzt.",
@@ -22984,7 +23005,10 @@
     "lemmas": [
       "Gewerkschaft"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8ecf53f9ab": {
     "text": "Sie brauchen nicht gleich so hochzufahren, es ist doch nur ein kleiner Kratzer.",
@@ -23166,31 +23190,13 @@
   },
   "8ed08e27ad": {
     "text": "„»Aber auf die alte Beute, Mehlbehälter mit Deckel, möchte ich nicht verzichten«, erklärt der Meister.“",
-    "translation": "\"But I do not want to give up the old loot, flour containers with lids,\" explains the master.",
+    "translation": "\"But I do not want to give up the old dough trough, a flour container with a lid,\" explains the master baker.",
     "source": "wiktionary",
     "lemmas": [
       "Beute"
     ],
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
-      {
-        "form": "Aber",
-        "lemma": "aber",
-        "pos": "conjunction",
-        "gloss_hint": null
-      },
-      {
-        "form": "auf",
-        "lemma": "auf",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
       {
         "form": "alte",
         "lemma": "alt",
@@ -23201,70 +23207,49 @@
         "form": "Beute",
         "lemma": "Beute",
         "pos": "noun",
-        "gloss_hint": "loot"
+        "gloss_hint": "dough trough"
       },
       {
         "form": "Mehlbehälter",
         "lemma": "Mehlbehälter",
         "pos": "noun",
-        "gloss_hint": "flour containers"
-      },
-      {
-        "form": "mit",
-        "lemma": "mit",
-        "pos": "preposition",
         "gloss_hint": null
       },
       {
         "form": "Deckel",
         "lemma": "Deckel",
         "pos": "noun",
-        "gloss_hint": "lid"
+        "gloss_hint": null
       },
       {
         "form": "möchte",
         "lemma": "möchten",
         "pos": "verb",
-        "gloss_hint": "want"
-      },
-      {
-        "form": "ich",
-        "lemma": "ich",
-        "pos": "noun",
-        "gloss_hint": "I"
-      },
-      {
-        "form": "nicht",
-        "lemma": "nicht",
-        "pos": "particle",
-        "gloss_hint": "not"
+        "gloss_hint": null
       },
       {
         "form": "verzichten",
         "lemma": "verzichten",
         "pos": "verb",
-        "gloss_hint": "give up"
+        "gloss_hint": null
       },
       {
         "form": "erklärt",
         "lemma": "erklären",
         "pos": "verb",
-        "gloss_hint": "explains"
-      },
-      {
-        "form": "der",
-        "lemma": "der",
-        "pos": "pronoun",
         "gloss_hint": null
       },
       {
         "form": "Meister",
         "lemma": "Meister",
         "pos": "noun",
-        "gloss_hint": "master"
+        "gloss_hint": null
       }
     ],
-    "text_linked": "„»[[Aber|conjunctions/aber]] [[auf|prepositions/auf]] [[die|determiners/die]] [[alte|adjectives/alt#1]] [[Beute|nouns/Beute_durch#1]], Mehlbehälter [[mit|prepositions/mit]] [[Deckel|nouns/Deckel#1]], [[möchte|verbs/möchten]] ich [[nicht|particles/nicht#1]] [[verzichten|verbs/verzichten]]«, [[erklärt|verbs/erklären#1]] [[der|pronouns/der_nominativ]] [[Meister|nouns/Meister#1]].“"
+    "text_linked": "„»[[Aber|conjunctions/aber]] [[auf|prepositions/auf]] [[die|determiners/die]] [[alte|adjectives/alt#1]] [[Beute|nouns/Beute_durch#1]], Mehlbehälter [[mit|prepositions/mit]] [[Deckel|nouns/Deckel#1]], [[möchte|verbs/möchten]] ich [[nicht|particles/nicht#1]] [[verzichten|verbs/verzichten]]«, [[erklärt|verbs/erklären#1]] [[der|pronouns/der_nominativ]] [[Meister|nouns/Meister#1]].“",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8ed0934c03": {
     "text": "Jetzt stell doch mal den blöden Kasten ab!",
@@ -23357,7 +23342,10 @@
       "Festung",
       "Sprühregen"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8ed243a978": {
     "text": "„Wie nun durch die Sünde des Einen die Verdammnis über alle Menschen gekommen ist, so ist auch durch die Gerechtigkeit des Einen für alle Menschen die Rechtfertigung gekommen, die zum Leben führt.“",
@@ -25178,7 +25166,10 @@
     "lemmas": [
       "lebendig"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8ee05f632c": {
     "text": "„Die Autohersteller haben bereits Stellen gestrichen, und die privaten Banken sind mit Krediten knauserig geworden, nachdem die Ausfallrate im Mai einen Höchststand erreicht hat.“",
@@ -26568,7 +26559,10 @@
     "lemmas": [
       "identifizieren"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8ef062fe64": {
     "text": "Ich steige dreimal um, wenn ich den Zug zur Arbeit nehme.",
@@ -27285,7 +27279,10 @@
     "lemmas": [
       "Ereignis"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "8ef597a1ad": {
     "text": "„Die beiden Männer gehörten zu einem Flachboot, das von Edgeworths oben am Wabasch liegender Farm mit einer Ladung von Whisky, Zwiebeln, Äpfeln, geräuchertem Hirschschinken, getrockneten Pfirsichen und Mais nach New Orleans oder irgendeinem anderen Landungsplatz steuerte, wo man hoffen konnte, die Erzeugnisse vorteilhaft zu verkaufen.“",

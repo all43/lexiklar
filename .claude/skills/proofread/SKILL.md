@@ -13,73 +13,26 @@ Launch proofreading subagent batches for unproofread word files.
 
 ## Workflow
 
-### Finding unproofread words
-
-1. Find all word files in `data/words/{nouns,verbs,adjectives}/` that do NOT have `_proofread.gloss_en: true`
-2. Sort by `zipf` descending (highest frequency first)
-3. Split into batches of 30 words each
-
 ### Generating batch word lists
 
-For each word in a batch:
-1. Read the word file, collect all `example_ids` from `senses[]`
-2. For each example ID, check the shard file (`data/examples/{first 2 hex chars}.json`)
-3. If the example does NOT have both `_proofread.translation` and `_proofread.annotations`, include it as `check_examples`
-4. If all examples are proofread, mark as "(glosses/grammar only)"
+Use `scripts/proofread-batches.ts` to find unproofread words (sorted by zipf descending), generate check_examples, and write batch files:
 
-Use Python for this — it's faster than shell for reading JSON shards. See the pattern used in previous sessions (search `/tmp/next-words` in conversation history or use this template):
+```bash
+# Write 10 batch files to /tmp, starting at batch 170, skipping first 300 words (already done)
+npx tsx scripts/proofread-batches.ts --start-batch 170 --count 10 --skip 300 --out /tmp
 
-```python
-import json, os, glob
-
-unproofread = []
-for pos_dir in ['nouns', 'verbs', 'adjectives']:
-    for fpath in sorted(glob.glob(f'data/words/{pos_dir}/*.json')):
-        with open(fpath) as f:
-            d = json.load(f)
-        pr = d.get('_proofread', {})
-        if not pr.get('gloss_en'):
-            basename = os.path.splitext(os.path.basename(fpath))[0]
-            zipf = d.get('zipf', 0)
-            unproofread.append((zipf, f'{pos_dir}/{basename}'))
-
-unproofread.sort(key=lambda x: -x[0])
+# Or print to stdout for review
+npx tsx scripts/proofread-batches.ts --start-batch 170 --count 1 --skip 300
 ```
 
-Then for each batch word, generate the check_examples list:
-
-```python
-for path in batch_words:
-    pos, word = path.split('/')
-    fpath = f'data/words/{pos}/{word}.json'
-    with open(fpath) as f:
-        d = json.load(f)
-    all_ids = []
-    for s in d.get('senses', []):
-        all_ids.extend(s.get('example_ids', []))
-
-    unproofread_ids = []
-    for eid in all_ids:
-        shard_file = f'data/examples/{eid[:2]}.json'
-        if os.path.exists(shard_file):
-            with open(shard_file) as f:
-                sd = json.load(f)
-            ex = sd.get(eid, {})
-            pr = ex.get('_proofread', {})
-            if not (pr.get('translation') and pr.get('annotations')):
-                unproofread_ids.append(eid)
-
-    if unproofread_ids:
-        print(f'{path} — check_examples: {", ".join(unproofread_ids)}')
-    else:
-        print(f'{path} (glosses/grammar only)')
-```
+To find the right `--skip` value: count already-processed batches × 30 (e.g., b160–b179 = 20 batches × 30 = skip 600).
 
 ### Launching subagent batches
 
 For each batch, launch a background Agent with the proofread prompt from `prompts/proofread-subagent.md`, replacing the "Words to proofread" section with the generated word list. Key parameters:
 
 - `subagent_type: "general-purpose"`
+- `model: "sonnet"`
 - `run_in_background: true`
 - Batch naming: `b{N}` where N continues from the last batch number (check existing `data/proofread-results-b*.json` files)
 - Results file: `data/proofread-results-b{N}.json`

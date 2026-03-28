@@ -248,44 +248,98 @@
     "translation_model": "openai/gpt-4o-mini",
     "annotations": [
       {
-        "form": "meeting",
+        "form": "Besprechung",
         "lemma": "Besprechung",
         "pos": "noun",
         "gloss_hint": "discussion"
       },
       {
-        "form": "critic",
+        "form": "klar",
+        "lemma": "klar",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "hervorging",
+        "lemma": "hervorgehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "guten",
+        "lemma": "gut",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kritiker",
         "lemma": "Kritiker",
         "pos": "noun",
         "gloss_hint": "critic"
       },
       {
-        "form": "disappearance",
+        "form": "Geringsten",
+        "lemma": "gering",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgefallen",
+        "lemma": "auffallen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verschwinden",
         "lemma": "Verschwinden",
         "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "book",
-        "lemma": "Buch",
+        "form": "Buchtitel",
+        "lemma": "Buchtitel",
         "pos": "noun",
-        "gloss_hint": "book"
+        "gloss_hint": null
       },
       {
-        "form": "title",
-        "lemma": "Titel",
-        "pos": "noun",
-        "gloss_hint": "title"
-      },
-      {
-        "form": "refer",
+        "form": "hinweist",
         "lemma": "hinweisen",
         "pos": "verb",
-        "gloss_hint": "point out"
+        "gloss_hint": null
       },
       {
-        "form": "absent",
-        "lemma": "nicht vorkommen",
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verschwinden",
+        "lemma": "verschwinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Roman",
+        "lemma": "Roman",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "allgegenwärtige",
+        "lemma": "allgegenwärtig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Buchstabe",
+        "lemma": "Buchstabe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vorkommt",
+        "lemma": "vorkommen",
         "pos": "verb",
         "gloss_hint": null
       }
@@ -967,7 +1021,11 @@
         "gloss_hint": "become"
       }
     ],
-    "text_linked": "Während des [[Abendessens|nouns/Abendessen]] [[möchten|verbs/mögen_etwas]] wir nicht [[gestört|verbs/stören#1]] [[werden|verbs/werden#1]]."
+    "text_linked": "Während des [[Abendessens|nouns/Abendessen]] [[möchten|verbs/mögen_etwas]] wir nicht [[gestört|verbs/stören#1]] [[werden|verbs/werden#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "100a1ff4"
+    }
   },
   "12075533d6": {
     "text": "Ritter der Landstraße",
@@ -2842,7 +2900,10 @@
     "lemmas": [
       "Prinzip"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "121b145b45": {
     "text": "„Nur das Heulen der Alarmanlagen drang noch aus dem Schiffsbauch.“",
@@ -3328,7 +3389,11 @@
         "gloss_hint": "pencil"
       }
     ],
-    "text_linked": "„Für Dagsson ist es die [[größte|adjectives/groß#1]] [[Auszeichnung|nouns/Auszeichnung#2]], wenn irgendeine christliche Fernsehstation ihn für den [[Satan|nouns/Satan#1]] mit [[spitzem|adjectives/spitz#1]] [[Stift|nouns/Stift_einrichtung]] hält.“"
+    "text_linked": "„Für Dagsson ist es die [[größte|adjectives/groß#1]] [[Auszeichnung|nouns/Auszeichnung#2]], wenn irgendeine christliche Fernsehstation ihn für den [[Satan|nouns/Satan#1]] mit [[spitzem|adjectives/spitz#1]] [[Stift|nouns/Stift_einrichtung]] hält.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "3b215e7f"
+    }
   },
   "121da25f3b": {
     "text": "Ganz nahe dabei fließt ein Bach.",
@@ -6758,7 +6823,11 @@
         "gloss_hint": "water"
       }
     ],
-    "text_linked": "Die chemische [[Formel|nouns/Formel#2]] für [[Wasser|nouns/Wasser#1]] ist \"H₂O\"."
+    "text_linked": "Die chemische [[Formel|nouns/Formel#2]] für [[Wasser|nouns/Wasser#1]] ist \"H₂O\".",
+    "_proofread": {
+      "translation": true,
+      "annotations": "3ffdd230"
+    }
   },
   "12420cd891": {
     "text": "An allen Montagmorgen dieses Monats werden wir ein dreistündiges Treffen abhalten.",
@@ -9328,7 +9397,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Zieh' [[Dich|pronouns/du]] [[rasch|adjectives/rasch]] um, der [[Ball|nouns/Ball_festliche]] [[beginnt|verbs/beginnen]] bereits in einer halben Stunde."
+    "text_linked": "Zieh' [[Dich|pronouns/du]] [[rasch|adjectives/rasch]] um, der [[Ball|nouns/Ball_festliche]] [[beginnt|verbs/beginnen]] bereits in einer halben Stunde.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "4b9bfd46"
+    }
   },
   "1258feef52": {
     "text": "[Fahrradrennen:] „Die aerodynamischen Verbesserungen an Rad, Kleidung und Position führen dazu, dass die Fahrer bei gleichen Geschwindigkeiten weniger Kraft aufwenden müssen als etwa vor zehn Jahren.“",
@@ -10882,7 +10955,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Die [[Klägerin|nouns/Klägerin#1]] hat weiterhin [[behauptet|verbs/behaupten]], ihr sei ein Zinsschaden in [[Höhe|nouns/Höhe#2]] eines [[ausgerechneten|adjectives/ausgerechnet]] [[Betrages|nouns/Betrag#2]] von 15.771,56 DM für die [[Zeit|nouns/Zeit#1]] bis zum 31. [[März|nouns/März]] 2000 entstanden;“"
+    "text_linked": "„Die [[Klägerin|nouns/Klägerin#1]] hat weiterhin [[behauptet|verbs/behaupten]], ihr sei ein Zinsschaden in [[Höhe|nouns/Höhe#2]] eines [[ausgerechneten|adjectives/ausgerechnet]] [[Betrages|nouns/Betrag#2]] von 15.771,56 DM für die [[Zeit|nouns/Zeit#1]] bis zum 31. [[März|nouns/März]] 2000 entstanden;“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "cf4352ed"
+    }
   },
   "126f3e056e": {
     "text": "Zehn Kilometer entsprechen zehntausend Meter.",
@@ -11950,7 +12027,11 @@
         "gloss_hint": "true"
       }
     ],
-    "text_linked": "„Die [[verhandelten|verbs/verhandeln]] [[Themen|nouns/Thema]] [[Gewalt|nouns/Gewalt#1]] von rechts und Überlastung der [[Polizei|nouns/Polizei]] sind gesellschaftlich [[wichtig|adjectives/wichtig]], und alle diese [[Sätze|nouns/Satz#1]] sind [[wahr|adjectives/wahr#1]].“"
+    "text_linked": "„Die [[verhandelten|verbs/verhandeln]] [[Themen|nouns/Thema]] [[Gewalt|nouns/Gewalt#1]] von rechts und Überlastung der [[Polizei|nouns/Polizei]] sind gesellschaftlich [[wichtig|adjectives/wichtig]], und alle diese [[Sätze|nouns/Satz#1]] sind [[wahr|adjectives/wahr#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "a2182bdb"
+    }
   },
   "127b8fcfca": {
     "text": "Bis heute wird in Deutschland äußerst kontrovers über einen angemessenen Umgang mit [Hitlers Buch] \"Mein Kampf\" diskutiert.",
@@ -15600,7 +15681,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Aber auch diese [[Zwischenzeit|nouns/Zwischenzeit#1]] war [[bald|adverbs/bald]] [[vorüber|adverbs/vorüber]].“"
+    "text_linked": "„Aber auch diese [[Zwischenzeit|nouns/Zwischenzeit#1]] war [[bald|adverbs/bald]] [[vorüber|adverbs/vorüber]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "e4fa4d56"
+    }
   },
   "129d4f9f31": {
     "text": "Glas wird in einem Ofen aus verschiedenen chemischen Stoffen durch große Hitze hergestellt.",
@@ -18825,7 +18910,10 @@
     "lemmas": [
       "Auftreten"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "12c4274ddd": {
     "text": "Im ZDF läuft eine neue Krimiserie.",
@@ -24008,7 +24096,11 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "„Das [[prachtvolle|adjectives/prachtvoll]] weltliche [[Rathaus|nouns/Rathaus#1]] am [[Marktplatz|nouns/Marktplatz]] [[bedeutete|verbs/bedeuten#1]] ihm mehr als das christliche [[Münster|nouns/Münster]] hoch auf dem [[Felsen|nouns/Felsen#1]] am Rheinbogen.“"
+    "text_linked": "„Das [[prachtvolle|adjectives/prachtvoll]] weltliche [[Rathaus|nouns/Rathaus#1]] am [[Marktplatz|nouns/Marktplatz]] [[bedeutete|verbs/bedeuten#1]] ihm mehr als das christliche [[Münster|nouns/Münster]] hoch auf dem [[Felsen|nouns/Felsen#1]] am Rheinbogen.“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "6075b336"
+    }
   },
   "12f222c3fc": {
     "text": "„Obwohl dieser die Kontrolle über die Minister auszuüben hat, diese aber wieder für ihre Amtstätigkeit dem Reichsrat verantwortlich sind, hat der Oberste Rechnungshof nicht dem Parlament, sondern dem Kaiser direkt Rechenschaft über die Resultate seiner Tätigkeit zu erstatten und eventuelle Anstände, die sich bei Prüfung der Rechnungen ergeben, der kaiserlichen Entscheidung zu unterbreiten.“",

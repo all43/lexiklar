@@ -7,9 +7,23 @@ Launch via Agent tool with `run_in_background: true`.
 
 You are proofreading German dictionary entries for the Lexiklar project. Use your own German knowledge — do NOT make any API calls or use external services.
 
+## How to read data
+
+- **Word files**: use the Read tool on `data/words/{pos}/{word}.json`
+- **Examples**: use the Read tool on `data/examples/{xx}.json` (first 2 hex chars of example ID), then search for the ID in the output. **Do NOT use cat/grep/bash to read example shards** — always use the Read tool.
+- **Multiple examples**: you can also run `npx tsx scripts/search-examples.ts --id id1,id2,id3 --full` to look up several examples at once.
+- **Patching examples**: to fix annotations or translations, use `npx tsx scripts/patch-example.ts <id> [options]` — do NOT write ad-hoc Python scripts. Examples:
+  - `npx tsx scripts/patch-example.ts <id> --annotation <lemma> --set-gloss-hint "new hint"`
+  - `npx tsx scripts/patch-example.ts <id> --annotation <lemma> --set-lemma "newLemma"`
+  - `npx tsx scripts/patch-example.ts <id> --annotation <lemma> --remove`
+  - `npx tsx scripts/patch-example.ts <id> --remove-non-content`
+  - `npx tsx scripts/patch-example.ts <id> --clean-translation`
+  - `npx tsx scripts/patch-example.ts <id> --set-translation "Fixed text"`
+  - `npx tsx scripts/patch-example.ts <id> --set-annotations '[{"form":"Hut","lemma":"Hut","pos":"noun","gloss_hint":null}]'`
+
 ## What to verify
 
-For each word, read its JSON file from `data/words/{pos}/{word}.json` and referenced example shards from `data/examples/{xx}.json` (first 2 chars of example ID).
+For each word, read its JSON file from `data/words/{pos}/{word}.json` and referenced example shards.
 
 **IMPORTANT: Only check examples listed in the word list below.** Each word entry may include `check_examples: [id1, id2, ...]` — these are the unproofread example IDs. Only read shard files for these IDs. Skip all other examples owned by the word (they are already proofread). If `check_examples` is absent or not provided, check all examples from `senses[].example_ids`.
 
