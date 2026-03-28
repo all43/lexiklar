@@ -42,6 +42,7 @@ import type {
   CaseForms,
 } from "../types/index.js";
 import type { Example, ExampleMap, Annotation } from "../types/example.js";
+import type { MetaRow, WordRow, ExampleRow as ExampleRowSchema } from "./lib/db-schemas.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -84,39 +85,18 @@ interface Relation {
   type: string;
 }
 
-interface WordInsertParams {
-  lemma: string;
-  lemma_folded: string;
-  pos: string;
-  gender: string | null;
-  frequency: number | null;
-  plural_dominant: number | null;
-  plural_form: string | null;
-  file: string;
-  gloss_en: string | null;
-  data: string;
-  hash: string;
-}
+type WordInsertParams = Omit<WordRow, "id">;
 
 interface WordFormInsertParams {
   form: string;
   word_id: number | bigint;
 }
 
-interface ExampleInsertParams {
-  id: string;
-  data: string;
-  hash: string;
-}
+type ExampleInsertParams = ExampleRowSchema;
 
-interface MetaInsertParams {
-  key: string;
-  value: string;
-}
+type MetaInsertParams = MetaRow;
 
-interface MetaRow {
-  value: string;
-}
+type MetaQueryRow = Pick<MetaRow, "value">;
 
 // ============================================================
 // English reverse-lookup term extraction
@@ -1107,7 +1087,7 @@ function main(): void {
 
   // Read version back from the DB (single source of truth) and write version files
   const dbReadOnly = new Database(DB_PATH, { readonly: true });
-  const row = dbReadOnly.prepare("SELECT value FROM meta WHERE key = 'version'").get() as MetaRow;
+  const row = dbReadOnly.prepare("SELECT value FROM meta WHERE key = 'version'").get() as MetaQueryRow;
   const dbVersion = row.value;
   dbReadOnly.close();
 

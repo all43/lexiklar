@@ -9,6 +9,7 @@ import { loadExamples, saveExamples, EXAMPLES_DIR } from "./lib/examples.js";
 import { runPool } from "./lib/pool.js";
 import { intArg, intArgOptional } from "./lib/cli.js";
 import { WORDS_DIR } from "./lib/words.js";
+import type { WhitelistEntry, WhitelistFile } from "./lib/common-types.js";
 import type { Word, Sense, Annotation, ExampleMap, Example } from "../types/index.js";
 import type { LLMProvider, LLMResponse, ProviderConfig } from "../types/llm.js";
 import type { PosConfig } from "../types/pos.js";
@@ -61,14 +62,6 @@ const REANNOTATE = args.includes("--reannotate");
 interface WordFreqInfo {
   frequency: number | null;
   whitelisted: boolean;
-}
-
-interface WhitelistEntry {
-  word: string;
-}
-
-interface WhitelistFile {
-  words: WhitelistEntry[];
 }
 
 interface UntranslatedItem {

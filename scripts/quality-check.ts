@@ -43,6 +43,7 @@ import { fileURLToPath } from "url";
 import { loadExamplesByIds, annotationsHash, patchExamples } from "./lib/examples.js";
 import { intArg, stringArg } from "./lib/cli.js";
 import { loadAllWordFiles, WORDS_DIR } from "./lib/words.js";
+import type { WhitelistEntry, WhitelistFile } from "./lib/common-types.js";
 import type { ExamplePatch } from "./lib/examples.js";
 import type { Word, Sense, ProofreadFlags } from "../types/index.js";
 import type { Example, ExampleMap, Annotation } from "../types/index.js";
@@ -88,14 +89,6 @@ const MARK_PROOFREAD = parseAspects("--mark-proofread");
 interface WordEntry {
   relPath: string;
   data: Word;
-}
-
-interface WhitelistEntry {
-  word: string;
-}
-
-interface WhitelistFile {
-  words: WhitelistEntry[];
 }
 
 interface CheckResult {

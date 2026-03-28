@@ -36,6 +36,7 @@ import {
   getDefaultModel, resolveLocalModel, PROVIDER_DEFAULTS,
 } from "./lib/llm.js";
 import { loadExamplesByIds, annotationsHash, patchExamples } from "./lib/examples.js";
+import type { WhitelistEntry, WhitelistFile } from "./lib/common-types.js";
 import type { ExamplePatch } from "./lib/examples.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -94,14 +95,6 @@ interface WordFileEntry {
 interface SenseInfo {
   gloss: string;
   gloss_en: string;
-}
-
-interface WhitelistEntry {
-  word: string;
-}
-
-interface WhitelistFile {
-  words: WhitelistEntry[];
 }
 
 interface VerifyItem {

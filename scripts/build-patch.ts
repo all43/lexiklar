@@ -17,52 +17,23 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from "fs
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import Database from "better-sqlite3";
+import type { MetaRow, WordRow, ExampleRow } from "./lib/db-schemas.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const PATCHES_DIR = join(ROOT, "patches");
 
-/** Row shape from the meta table. */
-interface MetaRow {
-  key: string;
-  value: string;
-}
-
 /** Minimal row from the old words table. */
-interface OldWordRow {
-  id: number;
-  file: string;
-  hash: string;
-}
+type OldWordRow = Pick<WordRow, "id" | "file" | "hash">;
 
 /** Full row from the new words table. */
-interface NewWordRow {
-  id: number;
-  file: string;
-  hash: string;
-  lemma: string;
-  lemma_folded: string;
-  pos: string;
-  gender: string | null;
-  frequency: number | null;
-  plural_dominant: number | null;
-  plural_form: string | null;
-  gloss_en: string | null;
-  data: string;
-}
+type NewWordRow = WordRow;
 
 /** Row from the old examples table. */
-interface OldExampleRow {
-  id: string;
-  hash: string;
-}
+type OldExampleRow = Pick<ExampleRow, "id" | "hash">;
 
 /** Row from the new examples table. */
-interface NewExampleRow {
-  id: string;
-  hash: string;
-  data: string;
-}
+type NewExampleRow = ExampleRow;
 
 /** Word form row. */
 interface FormRow {

@@ -20,6 +20,7 @@ import { pipeline } from "stream/promises";
 import { createGzip } from "zlib";
 import { join } from "path";
 import { stringArg, intArg } from "./lib/cli.js";
+import type { WordRow, WordFormRow, EnTermRow, ExampleRow, MetaRow } from "./lib/db-schemas.js";
 
 // ---- Types ----
 
@@ -38,42 +39,6 @@ interface UnifiedManifest {
     url: string;
     size: number;
   };
-}
-
-interface WordRow {
-  id: number;
-  lemma: string;
-  lemma_folded: string;
-  pos: string;
-  gender: string | null;
-  frequency: number | null;
-  plural_dominant: number | null;
-  plural_form: string | null;
-  file: string;
-  gloss_en: string | null;
-  data: string;
-  hash: string;
-}
-
-interface WordFormRow {
-  form: string;
-  word_id: number;
-}
-
-interface EnTermRow {
-  term: string;
-  word_id: number;
-}
-
-interface ExampleRow {
-  id: string;
-  data: string;
-  hash: string;
-}
-
-interface MetaRow {
-  key: string;
-  value: string;
 }
 
 // ---- SQL escaping ----
