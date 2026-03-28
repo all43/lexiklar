@@ -40,10 +40,18 @@ function exec(sql: string, bind: BindingSpec): Record<string, SqlValue>[] {
 async function handleMessage(method: string, args: Record<string, unknown>): Promise<unknown> {
   switch (method) {
     case "init": {
-      // locateFile is an Emscripten option not in the official types
-      sqlite3 = await (sqlite3InitModule as (opts?: Record<string, unknown>) => Promise<Sqlite3Static>)({
-        locateFile: (file: string) => `/sqlite3/${file}`,
-      });
+      // Close previous DB if re-initializing (e.g. full DB update)
+      if (db) {
+        db.close();
+        db = null;
+      }
+
+      if (!sqlite3) {
+        // locateFile is an Emscripten option not in the official types
+        sqlite3 = await (sqlite3InitModule as (opts?: Record<string, unknown>) => Promise<Sqlite3Static>)({
+          locateFile: (file: string) => `/sqlite3/${file}`,
+        });
+      }
 
       const bytes = new Uint8Array(args.bytes as ArrayBuffer);
 
