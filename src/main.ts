@@ -30,8 +30,8 @@ import { initStorage, getCached, setItem, AUTO_CHECK_UPDATES_KEY, LAST_UPDATE_CH
 import { initDevice } from "./utils/device.js";
 
 // Database
-import { initDb, checkForUpdates } from "./utils/db.js";
-import { pendingDbUpdate, dbReady, dbDownloadNeeded } from "./utils/db-update-state.js";
+import { initDb, checkForUpdates, getDbDownloadSize } from "./utils/db.js";
+import { pendingDbUpdate, dbReady, dbDownloadNeeded, dbDownloadSize } from "./utils/db-update-state.js";
 
 // Live update (Capawesome — native only)
 import { notifyReady, checkAppUpdate, pendingAppUpdate } from "./utils/live-update.js";
@@ -51,6 +51,7 @@ import App from "./App.vue";
   } catch (err) {
     if (err instanceof Error && err.message === "download-needed") {
       dbDownloadNeeded.value = true;
+      getDbDownloadSize().then(size => { dbDownloadSize.value = size; });
     } else {
       console.error("Database initialization failed:", err);
     }

@@ -17,7 +17,7 @@
       <!-- Download prompt (DB not bundled on web) -->
       <template v-if="isDbDownloadNeeded && !dbDownloading">
         <p><b>{{ t('db.downloadTitle') }}</b></p>
-        <p class="text-secondary">{{ t('db.downloadHint') }}</p>
+        <p class="text-secondary">{{ t('db.downloadHint', { size: dbDownloadSizeLabel }) }}</p>
         <p v-if="dbDownloadError" class="text-color-red">{{ dbDownloadError }}</p>
         <f7-button fill @click="startDownload">{{ t('db.download') }}</f7-button>
       </template>
@@ -193,7 +193,7 @@ import {
   foldUmlauts,
   downloadDb,
 } from "../utils/db.js";
-import { dbReady, dbDownloadNeeded, swUpdatePending } from "../utils/db-update-state.js";
+import { dbReady, dbDownloadNeeded, dbDownloadSize, swUpdatePending } from "../utils/db-update-state.js";
 
 interface SearchResultWithForm extends SearchResult {
   matchedForm?: string;
@@ -249,6 +249,9 @@ const searchBarPosition = ref<SearchBarPosition>((getCached(SEARCH_BAR_POSITION_
 const isDbReady = computed(() => dbReady.value);
 const isDbDownloadNeeded = computed(() => dbDownloadNeeded.value);
 const isSwUpdatePending = computed(() => swUpdatePending.value);
+const dbDownloadSizeLabel = computed(() =>
+  dbDownloadSize.value ? `${(dbDownloadSize.value / (1024 * 1024)).toFixed(0)} MB` : "~50 MB",
+);
 
 const searchBarMode = computed((): "subnavbar" | "bottom" => {
   if (searchBarPosition.value === "bottom") return "bottom";

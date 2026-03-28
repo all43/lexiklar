@@ -216,7 +216,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
 
     // DB download / error
     "db.downloadTitle": "Dictionary download required",
-    "db.downloadHint": "The dictionary database (~50 MB) needs to be downloaded once. After that, the app works fully offline.",
+    "db.downloadHint": "The dictionary database ({size}) needs to be downloaded once. After that, the app works fully offline.",
     "db.download": "Download",
     "db.downloading": "Downloading dictionary\u2026",
     "db.downloadFailed": "Download failed. Please check your connection and try again.",
@@ -424,7 +424,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
 
     // DB download / error
     "db.downloadTitle": "W\u00F6rterbuch-Download erforderlich",
-    "db.downloadHint": "Die W\u00F6rterbuch-Datenbank (~50 MB) muss einmalig heruntergeladen werden. Danach funktioniert die App vollst\u00E4ndig offline.",
+    "db.downloadHint": "Die W\u00F6rterbuch-Datenbank ({size}) muss einmalig heruntergeladen werden. Danach funktioniert die App vollst\u00E4ndig offline.",
     "db.download": "Herunterladen",
     "db.downloading": "W\u00F6rterbuch wird heruntergeladen\u2026",
     "db.downloadFailed": "Download fehlgeschlagen. Bitte pr\u00FCfe deine Verbindung und versuche es erneut.",
@@ -459,9 +459,13 @@ function effectiveLocale(): LocaleKey {
  * Return the translated string for the current locale.
  * Falls back to English, then to the raw key.
  */
-export function t(key: string): string {
+export function t(key: string, params?: Record<string, string>): string {
   const loc = effectiveLocale();
-  return locales[loc]?.[key] ?? locales.en[key] ?? key;
+  let str = locales[loc]?.[key] ?? locales.en[key] ?? key;
+  if (params) {
+    for (const [k, v] of Object.entries(params)) str = str.replaceAll(`{${k}}`, v);
+  }
+  return str;
 }
 
 /**

@@ -239,16 +239,21 @@ async function main(): Promise<void> {
     } else {
       console.log(`Generating patch: ${oldVersion} → ${newVersion}`);
       const patchSql = generatePatch(oldDb, newDb);
-      const patchFileName = `${oldVersion}_to_${newVersion}.sql`;
+      const patchFileName = `${oldVersion}_to_${newVersion}.sql.gz`;
       const patchPath = join(outDir, patchFileName);
-      writeFileSync(patchPath, patchSql + "\n");
+      await pipeline(
+        (async function* () { yield Buffer.from(patchSql + "\n"); })(),
+        createGzip({ level: 9 }),
+        createWriteStream(patchPath),
+      );
       const patchSize = statSync(patchPath).size;
+      const uncompressedSize = Buffer.byteLength(patchSql + "\n");
       const patchUrl = releaseUrl ? `${releaseUrl}/patches/${patchFileName}` : patchFileName;
       patches[oldVersion] = { url: patchUrl, size: patchSize };
 
       // Count changes for logging
       const lines = patchSql.split("\n").filter(Boolean);
-      console.log(`Patch: ${lines.length} SQL statements, ${(patchSize / 1024).toFixed(1)} KB`);
+      console.log(`Patch: ${lines.length} SQL statements, ${(uncompressedSize / 1024).toFixed(1)} KB → ${(patchSize / 1024).toFixed(1)} KB gzipped (${((1 - patchSize / uncompressedSize) * 100).toFixed(0)}% reduction)`);
     }
     oldDb.close();
   } else if (oldPath) {
@@ -314,7 +319,7 @@ async function main(): Promise<void> {
     }),
   );
   for (const file of readdirSync(outDir)) {
-    if (file.endsWith(".sql") && !referencedFiles.has(file)) {
+    if ((file.endsWith(".sql") || file.endsWith(".sql.gz")) && !referencedFiles.has(file)) {
       unlinkSync(join(outDir, file));
       console.log(`Pruned old patch: ${file}`);
     }

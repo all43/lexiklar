@@ -89,13 +89,13 @@ jobs:
             --file /tmp/release-assets/lexiklar.db.gz \
             --content-type application/gzip --remote
 
-          # Upload SQL patches
-          for f in /tmp/release-assets/*.sql; do
+          # Upload gzipped SQL patches
+          for f in /tmp/release-assets/*.sql.gz; do
             [ -f "$f" ] || continue
             FNAME=$(basename "$f")
             wrangler r2 object put "lexiklar-data/patches/${FNAME}" \
               --file "$f" \
-              --content-type text/plain --remote
+              --content-type application/gzip --remote
           done
 
           # Upload manifest

@@ -164,6 +164,42 @@ function isValidSqlite(bytes: ArrayBuffer): boolean {
 export const MANIFEST_URL =
   "https://cdn.lexiklar.app/manifest.json";
 
+interface ManifestAsset { url: string; size: number; }
+interface Manifest {
+  db: {
+    current_version: string;
+    built_at: string;
+    patches: Record<string, ManifestAsset>;
+    full_db_size: number;
+    full_db_gz?: ManifestAsset;
+    full_db?: ManifestAsset;
+  };
+  bundle?: { current_version: string; url: string; size: number; };
+}
+
+// In-memory manifest cache — avoids redundant fetches within a session (5-min TTL)
+let manifestCache: { data: Manifest; ts: number } | null = null;
+const MANIFEST_TTL = 5 * 60 * 1000;
+
+async function fetchManifest(): Promise<Manifest> {
+  const now = Date.now();
+  if (manifestCache && now - manifestCache.ts < MANIFEST_TTL) return manifestCache.data;
+  const resp = await fetch(MANIFEST_URL, { cache: "no-cache" });
+  if (!resp.ok) throw new Error("Failed to fetch update manifest. Please check your internet connection.");
+  const data = await resp.json() as Manifest;
+  manifestCache = { data, ts: now };
+  return data;
+}
+
+export async function getDbDownloadSize(): Promise<number | null> {
+  try {
+    const manifest = await fetchManifest();
+    return manifest.db.full_db_gz?.size ?? null;
+  } catch {
+    return null;
+  }
+}
+
 // ---- Gzip decompression ----
 
 const supportsDecompressionStream =
@@ -320,9 +356,7 @@ export async function downloadDb(
 ): Promise<void> {
   ensureWorker();
 
-  const manifestResp = await fetch(MANIFEST_URL, { cache: "no-cache" });
-  if (!manifestResp.ok) throw new Error("Failed to fetch update manifest. Please check your internet connection.");
-  const manifest = await manifestResp.json();
+  const manifest = await fetchManifest();
   const db = manifest.db;
   if (!db?.full_db_gz) throw new Error("No database URL found in manifest");
 
@@ -585,9 +619,7 @@ export interface UpdateInfo {
 export async function checkForUpdates(): Promise<UpdateInfo | null> {
   try {
     const { version: localVersion } = await getDbVersion();
-    const resp = await fetch(MANIFEST_URL, { cache: "no-cache" });
-    if (!resp.ok) return null;
-    const manifest = await resp.json();
+    const manifest = await fetchManifest();
     const db = manifest.db;
     if (!db) return null;
 
@@ -613,7 +645,7 @@ export async function checkForUpdates(): Promise<UpdateInfo | null> {
       available: true,
       type: "full",
       url: db.full_db_gz?.url || db.full_db?.url,
-      size: db.full_db_size || db.full_db?.size || db.full_db_gz?.size,
+      size: db.full_db_gz?.size || db.full_db?.size,
       gzUrl: db.full_db_gz?.url,
       targetVersion: db.current_version,
       builtAt: db.built_at,
@@ -642,12 +674,18 @@ export async function applyUpdate(
 ): Promise<UpdateResult> {
   try {
     if (update.type === "patch") {
-      // Download SQL patch
-      const resp = await fetch(update.url!);
-      if (!resp.ok) return { ok: false, error: `Download failed: ${resp.status}` };
-      const total = update.size || Number(resp.headers.get("content-length")) || 0;
-      const patchSql = await resp.text();
-      if (onProgress && total) onProgress(total, total);
+      // Download SQL patch (may be gzip-compressed)
+      let patchSql: string;
+      if (update.url!.endsWith(".gz")) {
+        const bytes = await fetchGzipped(update.url!, onProgress);
+        patchSql = new TextDecoder().decode(bytes);
+      } else {
+        const resp = await fetch(update.url!);
+        if (!resp.ok) return { ok: false, error: `Download failed: ${resp.status}` };
+        const total = update.size || Number(resp.headers.get("content-length")) || 0;
+        patchSql = await resp.text();
+        if (onProgress && total) onProgress(total, total);
+      }
 
       // Yield to UI before heavy work
       if (onApplying) {
