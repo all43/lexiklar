@@ -13,7 +13,7 @@ A **fully offline** German dictionary app targeting learners up to **B2 level** 
 ## Tech Stack
 
 - **Language**: TypeScript (Node.js, ESM modules, run via `npx tsx`)
-- **Database**: better-sqlite3 for search index generation
+- **Database**: better-sqlite3 for search index generation; native SQLite on iOS/Android via custom Capacitor plugin (`plugins/lexiklar-sqlite/`); sqlite3-wasm in Web Worker on web/PWA
 - **Data format**: JSON files as source of truth, SQLite as query index
 - **App framework**: Vue 3 + Framework7 + Capacitor
   - **Vue 3** — reactive UI framework
@@ -592,6 +592,10 @@ See README → Project Structure for directory layout.
 
 The SQLite DB is a self-contained bundle: word data is stored as JSON blobs in the `data` column, so the app needs only the `.db` file at runtime (no JSON file loading).
 
+**Data stripping**: `build-index.ts` strips build-only fields before inserting into the DB to reduce size:
+- **Words**: `_meta`, `_proofread`, `_overrides`, `zipf`, `*_model` fields (top-level + per-sense), relationship refs (`_derived`, `_hyponyms`, etc.), `compound_source/verified`, verb `stems`/`past_participle` (baked into `conjugation`)
+- **Examples**: `lemmas`, `annotations`, `translation_model`, `_proofread`, `source` — only `text`, `text_linked`, `translation`, `type`, `ref`, `note` are kept
+
 ```sql
 CREATE TABLE words (
   id              INTEGER PRIMARY KEY,
@@ -677,23 +681,40 @@ The SQLite index handles all searching, filtering, and data serving. Word JSON f
 ### Persistent storage (`src/utils/storage.ts`)
 Uses `@capacitor/preferences` (iOS UserDefaults / Android SharedPreferences on native, localStorage on web/PWA). All known keys are preloaded into an in-memory `Map` at startup so that Vue `data()` initializers and module-level code can read synchronously via `getCached(key)`. Writes via `setItem(key, value)` update the cache immediately and persist asynchronously.
 
-### DB caching (`src/utils/db.ts`)
-SQLite DB bytes are cached using the **Cache API** (`caches.open()`), which works in Safari, WKWebView, and all modern browsers. A version check (`db-version.txt`) determines if the cache is stale. Replaced the original OPFS `createWritable()` approach which doesn't work in Safari/WKWebView.
+### Database layer (`src/utils/db.ts`, `src/utils/db-native.ts`)
 
-**DB loading flow**:
-- **Native** (iOS/Android): DB is bundled as `/data/lexiklar.db`. Cache validated against `db-version.txt` hash.
-- **Web/PWA**: DB is NOT bundled (exceeds Cloudflare Pages 25 MB limit). Flow:
+Two backends, selected at startup via `Capacitor.isNativePlatform()`:
+
+**Native (iOS/Android)** — `db-native.ts` uses `lexiklar-sqlite`, a custom Capacitor plugin (`plugins/lexiklar-sqlite/`) that wraps platform-built-in SQLite (iOS `sqlite3` C library, Android `android.database.sqlite`). No WASM, no Web Worker, no Cache API. The plugin copies the bundled DB from app assets to its storage on first launch, and compares `db-version.txt` against the installed version on app updates.
+
+**Web/PWA** — `db.ts` runs SQLite in a Web Worker via `@sqlite.org/sqlite-wasm` (`sqlite3_deserialize` in-memory). DB bytes are cached using the **Cache API** (`caches.open()`). Flow:
   1. Try Cache API — if cached, load silently (skips `db-version.txt` check to avoid invalidation on SW update)
-  2. If not cached: show download prompt with real size fetched from manifest (falls back to "~50 MB")
-  3. User taps Download → `downloadDb()` fetches from `cdn.lexiklar.app` (R2)
-  4. Downloads gzipped (`full_db_gz`, ~51 MB) via `DecompressionStream` or `fflate` fallback (iOS < 16.4)
+  2. If not cached: show download prompt with real size fetched from manifest
+  3. User taps Download → `downloadDb()` fetches gzipped from `cdn.lexiklar.app` (R2)
+  4. Decompresses via `DecompressionStream` or `fflate` fallback (iOS < 16.4)
   5. Cache downloaded bytes via Cache API for next time
 
-**Gzip decompression**: `DecompressionStream("gzip")` is a native streaming API (Chrome 80+, Firefox 113+, Safari 16.4+). Progress is tracked against the known uncompressed size from the manifest, giving a smooth progress bar that covers both download and decompression.
+All 20+ public query functions (`getWord`, `searchByLemma`, etc.) call the internal `query(sql, bind)` function which routes to the appropriate backend. The public API is identical regardless of platform.
 
-**Download loop prevention**: on web, `initDb()` does NOT compare cached version against `db-version.txt` (which changes on every build). A SW update would otherwise invalidate the cached DB even though the data is identical. Version validation happens via OTA update check instead.
+**Gzip decompression** (web only): `DecompressionStream("gzip")` is a native streaming API (Chrome 80+, Firefox 113+, Safari 16.4+). Progress is tracked against the known uncompressed size from the manifest.
+
+**Download loop prevention** (web only): `initDb()` does NOT compare cached version against `db-version.txt` (which changes on every build). Version validation happens via OTA update check instead.
 
 **DB version hash** — computed in `build-index.ts` from: all word file `mtimeMs` values + `mtimeMs` of `src/utils/verb-forms.js`, `data/rules/verb-endings.json`, `data/rules/noun-gender.json`, `data/rules/adj-endings.json`. Any change to indexed-form logic invalidates the browser cache automatically.
+
+### Custom SQLite plugin (`plugins/lexiklar-sqlite/`)
+
+A minimal Capacitor plugin using platform-native SQLite. No encryption, no external dependencies. SPM-native (no CocoaPods).
+
+**API** (`src/definitions.ts`):
+- `open({ path, readOnly })` — open DB, copy from bundled assets if needed
+- `query({ sql, params })` → `{ rows: Record<string, unknown>[] }`
+- `execute({ sql, transaction })` → `{ changes: number }` — multi-statement SQL for OTA patches
+- `close()` / `deleteDatabase({ path })` / `getDatabasePath()`
+
+**Structure**: `ios/Plugin/` (Swift, single SPM target), `android/src/main/` (Java). Tests in `ios/Tests/` — run via `cd plugins/lexiklar-sqlite && swift test` (13 unit tests for the core SQLite wrapper).
+
+**Why custom**: `@capacitor-community/sqlite` requires CocoaPods (no SPM support). Capawesome SQLite is paywalled. Our needs are minimal (open, query, execute, close) so a ~300-line custom plugin is simpler and dependency-free.
 
 ### i18n (`src/js/i18n.ts`)
 Two locales: **English** (default) and **German**. UI chrome is translated; grammar terminology (Indikativ, Konjunktiv, Nom., etc.) stays in German in both modes.
@@ -734,7 +755,7 @@ Configured via `vite-plugin-pwa` in `vite.config.ts`. Capacitor provides no PWA 
 - Icons: `pwa-192x192.png`, `pwa-512x512.png` (+ maskable), `apple-touch-icon.png`
 - Generated from SVG source at `public/icon.svg`
 
-**COOP/COEP headers**: set in `vite.config.ts` `server.headers` for dev only. Not needed in production — the app uses `sqlite3_deserialize` with plain `ArrayBuffer`, not `SharedArrayBuffer`.
+**COOP/COEP headers**: set in `vite.config.ts` `server.headers` for dev only. Not needed in production — the web WASM path uses `sqlite3_deserialize` with plain `ArrayBuffer`, not `SharedArrayBuffer`. Native builds don't use WASM at all.
 
 **Cloudflare Pages deployment**:
 - `npm run deploy` — removes `lexiklar.db` from `dist/` (exceeds 25 MB limit) and deploys to Cloudflare Pages
@@ -790,8 +811,8 @@ All asset URLs in the manifest are absolute R2 CDN URLs (`cdn.lexiklar.app`).
 1. `main.ts` calls `checkForUpdates()` after `initDb()` (fire-and-forget, 24h throttle via `lexiklar_last_update_check`)
 2. Fetches `manifest.json` from `cdn.lexiklar.app`, reads `db` section, compares `current_version` against local DB `meta.version`
 3. Prefers gzipped SQL patch (small) over full DB download (large) — patches are keyed by source version
-4. For full DB downloads: uses `full_db_gz` (~51 MB) with `DecompressionStream` or `fflate` fallback (iOS < 16.4)
-5. `applyUpdate()` decompresses and runs patch via `exec_batch` (transactional) or replaces full DB, then re-caches via Cache API
+4. **Patch apply**: download gzipped SQL → decompress → `exec_batch` (transactional). On native, plugin writes to disk directly (no serialize/cache step). On web, worker applies patch then serializes back to Cache API.
+5. **Full DB replace (web)**: streams decompressed bytes to Cache API first, then reads back into worker — avoids ~500 MB peak memory that crashes iOS Safari. On native: downloads, decompresses, writes via Filesystem plugin, closes/deletes old DB, reopens.
 6. `DbUpdatePrompt.vue` shows a toast; user can apply immediately or dismiss
 
 **Capawesome flow** (`src/utils/live-update.ts`):
@@ -805,7 +826,7 @@ All asset URLs in the manifest are absolute R2 CDN URLs (`cdn.lexiklar.app`).
 ```bash
 npx tsx scripts/publish-update.ts --old <old.db> --out <dir> [--keep-patches 3] [--release-url <url>]
 ```
-Diffs `words` and `examples` tables using the `hash` column (SHA-256 of JSON `data`). Generates INSERT/UPDATE/DELETE statements; uses `(SELECT id FROM words WHERE file = ?)` subqueries for word_id references since client DBs have different autoincrement IDs. Patches are written as `.sql.gz` (gzip level 9) and decompressed by the client before applying via `exec_batch` in the Web Worker. `--release-url` sets the base URL for asset links in the manifest (CI passes `https://cdn.lexiklar.app`). Also generates `lexiklar.db.gz` (gzip level 9) alongside the raw DB.
+Diffs `words` and `examples` tables using the `hash` column (SHA-256 of JSON `data`). Generates INSERT/UPDATE/DELETE statements; uses `(SELECT id FROM words WHERE file = ?)` subqueries for word_id references since client DBs have different autoincrement IDs. Patches are written as `.sql.gz` (gzip level 9) and decompressed by the client before applying via `exec_batch`. `--release-url` sets the base URL for asset links in the manifest (CI passes `https://cdn.lexiklar.app`). Also generates `lexiklar.db.gz` (gzip level 9) alongside the raw DB.
 
 **GitHub Actions**:
 - **`publish-data.yml`** (`publish-db` job): triggers on push to `data/`, `scripts/build-index.ts`, or manual dispatch. Builds index, uploads DB + gzipped DB + patches + manifest to R2 CDN.

@@ -888,6 +888,8 @@ function main(): void {
       // Strip computation inputs (stems, past_participle) and internal metadata (_meta).
       const enriched: Record<string, unknown> = { ...data };
       delete enriched._meta;
+      delete enriched._proofread;
+      delete enriched._overrides;
       delete enriched._derived;
       delete enriched._hyponyms;
       delete enriched._gender_counterpart;
@@ -895,6 +897,18 @@ function main(): void {
       delete enriched._synonyms;
       delete enriched.compound_source;
       delete enriched.compound_verified;
+      delete enriched.zipf;
+      // Strip LLM model attribution from top level and senses
+      delete enriched.gloss_en_model;
+      delete enriched.gloss_en_full_model;
+      delete enriched.synonyms_en_model;
+      if (Array.isArray(enriched.senses)) {
+        for (const s of enriched.senses as Record<string, unknown>[]) {
+          delete s.gloss_en_model;
+          delete s.gloss_en_full_model;
+          delete s.synonyms_en_model;
+        }
+      }
 
       // Inject oscillating flag computed in Phase 1b
       if (isVerbWord(data) && data._oscillating) enriched.oscillating_verb = true;
@@ -1083,10 +1097,13 @@ function main(): void {
       console.log(`Linked ${refCount} expressions to phrase cards (${phraseLinked} phrase files updated).`);
     }
 
-    // Insert examples into SQLite
+    // Insert examples into SQLite — strip build-only fields to reduce DB size
+    const exampleStripKeys = ["lemmas", "annotations", "translation_model", "_proofread", "source"];
     const insertExamples = db.transaction(() => {
       for (const [id, ex] of Object.entries(examples)) {
-        const exData = JSON.stringify(ex);
+        const stripped: Record<string, unknown> = { ...ex };
+        for (const k of exampleStripKeys) delete stripped[k];
+        const exData = JSON.stringify(stripped);
         insertExample.run({ id, data: exData, hash: contentHash(exData) });
       }
     });
