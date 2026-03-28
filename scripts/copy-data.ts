@@ -9,8 +9,8 @@
  * Usage: node scripts/copy-data.ts
  */
 
-import { cpSync, mkdirSync, existsSync } from "fs";
-import { join, dirname } from "path";
+import { cpSync, mkdirSync, existsSync, symlinkSync, lstatSync, unlinkSync } from "fs";
+import { join, dirname, relative } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname: string = dirname(fileURLToPath(import.meta.url));
@@ -43,5 +43,24 @@ const wasmSrc: string = join(
 const wasmDest: string = join(ROOT, "public", "sqlite3");
 mkdirSync(wasmDest, { recursive: true });
 cpSync(wasmSrc, join(wasmDest, "sqlite3.wasm"));
+
+// Symlink DB for @capacitor-community/sqlite plugin (native builds).
+// The plugin's copyFromAssets looks in public/assets/databases/.
+const pluginDbDir: string = join(ROOT, "public", "assets", "databases");
+mkdirSync(pluginDbDir, { recursive: true });
+const pluginDbLink: string = join(pluginDbDir, "lexiklar.db");
+const pluginDbTarget: string = relative(pluginDbDir, join(DEST, "lexiklar.db"));
+try {
+  if (existsSync(pluginDbLink)) {
+    const stat = lstatSync(pluginDbLink);
+    if (stat.isSymbolicLink() || stat.isFile()) unlinkSync(pluginDbLink);
+  }
+  symlinkSync(pluginDbTarget, pluginDbLink);
+} catch {
+  // Symlink failed (e.g. Windows) — fall back to copy
+  if (existsSync(join(DEST, "lexiklar.db"))) {
+    cpSync(join(DEST, "lexiklar.db"), pluginDbLink);
+  }
+}
 
 console.log("Copied lexiklar.db, db-version.txt, sqlite3.wasm → public/");

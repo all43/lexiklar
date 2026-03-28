@@ -34,15 +34,17 @@
     "check-idioms": "tsx scripts/check-idiom-translations.ts",
     "check-idioms:llm": "tsx scripts/check-idiom-translations.ts --llm",
     "compare-models": "tsx scripts/compare-models.ts",
-    "deploy": "rm -f dist/data/lexiklar.db && npx wrangler pages deploy dist --project-name lexiklar --commit-dirty=true",
+    "deploy": "rm -f dist/data/lexiklar.db && rm -rf dist/assets/databases && npx wrangler pages deploy dist --project-name lexiklar --commit-dirty=true",
     "release:patch": "npm version patch && git push && git push --tags",
     "release:minor": "npm version minor && git push && git push --tags",
     "release:major": "npm version major && git push && git push --tags"
   },
   "dependencies": {
+    "@capacitor-community/sqlite": "^8.0.1",
     "@capacitor/android": "^8.2.0",
     "@capacitor/core": "^8.1.0",
     "@capacitor/device": "^8.0.1",
+    "@capacitor/filesystem": "^8.1.2",
     "@capacitor/ios": "^8.2.0",
     "@capacitor/keyboard": "^8.0.2",
     "@capacitor/preferences": "^8.0.1",

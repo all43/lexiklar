@@ -1043,14 +1043,36 @@ function main(): void {
     }
 
     let refCount = 0;
-    for (const [, ex] of Object.entries(examples)) {
+    // Collect expression IDs per phrase file for back-linking
+    const phraseExprIds = new Map<string, string[]>();
+    for (const [id, ex] of Object.entries(examples)) {
       if (ex.type !== "expression" && ex.type !== "proverb") continue;
       const phraseRef = phraseLookup.get(ex.text);
       if (phraseRef) {
         ex.ref = phraseRef;
         refCount++;
+        const list = phraseExprIds.get(phraseRef) ?? [];
+        list.push(id);
+        phraseExprIds.set(phraseRef, list);
       } else {
         delete ex.ref;
+      }
+    }
+
+    // Back-link: add expression example IDs to phrase word files
+    let phraseLinked = 0;
+    for (const [ref, exIds] of phraseExprIds) {
+      const filePath = join(DATA_DIR, "words", ref + ".json");
+      if (!existsSync(filePath)) continue;
+      const phraseData = JSON.parse(readFileSync(filePath, "utf-8"));
+      if (!phraseData.senses?.length) continue;
+      const origIds = phraseData.senses[0].example_ids ?? [];
+      const merged = new Set(origIds);
+      for (const id of exIds) merged.add(id);
+      if (merged.size !== origIds.length || exIds.some((id) => !origIds.includes(id))) {
+        phraseData.senses[0].example_ids = [...merged];
+        writeFileSync(filePath, JSON.stringify(phraseData, null, 2) + "\n");
+        phraseLinked++;
       }
     }
 
@@ -1058,7 +1080,7 @@ function main(): void {
     saveExamples(examples);
     console.log(`Linked ${linkedCount} examples with cross-references.`);
     if (refCount > 0) {
-      console.log(`Linked ${refCount} expressions to phrase cards.`);
+      console.log(`Linked ${refCount} expressions to phrase cards (${phraseLinked} phrase files updated).`);
     }
 
     // Insert examples into SQLite

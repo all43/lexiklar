@@ -1,8 +1,8 @@
 /**
  * Database abstraction layer for Lexiklar.
  *
- * Runs SQLite in a Web Worker using sqlite3_deserialize (in-memory in worker).
- * OPFS is used as a byte cache to avoid re-downloading on every page load.
+ * On native (iOS/Android): uses @capacitor-community/sqlite for direct native SQLite.
+ * On web/PWA: runs SQLite in a Web Worker using sqlite3-wasm (in-memory).
  * Provides async functions for all database operations.
  *
  * Usage:
@@ -15,6 +15,9 @@ import { Capacitor } from "@capacitor/core";
 import type { SearchResult, WordRow } from "../../types/search.js";
 import type { Word } from "../../types/word.js";
 import type { Example } from "../../types/example.js";
+import { initNativeDb, nativeQuery, nativeExecBatch, nativeClose, nativeDeleteDb } from "./db-native.js";
+
+const _isNative = Capacitor.isNativePlatform();
 
 /**
  * Fold umlauts for accent-insensitive search (mirrors build-index.js).
@@ -50,6 +53,7 @@ function send(method: string, args: Record<string, unknown> = {}, transfer: Tran
 }
 
 async function query(sql: string, bind: unknown[] = []): Promise<Record<string, unknown>[]> {
+  if (_isNative) return nativeQuery(sql, bind);
   return send("exec", { sql, bind }) as Promise<Record<string, unknown>[]>;
 }
 
@@ -121,6 +125,7 @@ async function cacheVersionWrite(version: string): Promise<void> {
  * or when the user wants to free up storage space.
  */
 export async function cacheClear(): Promise<void> {
+  if (_isNative) return; // Plugin manages DB file on disk
   try {
     const cache = await caches.open(CACHE_NAME);
     await cache.delete(DB_CACHE_KEY);
@@ -134,6 +139,7 @@ export async function cacheClear(): Promise<void> {
  * Get the size of the cached DB in bytes, or null if not cached.
  */
 export async function cacheSize(): Promise<number | null> {
+  if (_isNative) return null; // No Cache API on native
   try {
     const cache = await caches.open(CACHE_NAME);
     const resp = await cache.match(DB_CACHE_KEY);
@@ -281,12 +287,18 @@ function ensureWorker(): void {
  *         so the UI can prompt the user before downloading ~51 MB.
  */
 export async function initDb(): Promise<void> {
+  // Native: use @capacitor-community/sqlite (direct native SQLite, no WASM)
+  if (_isNative) {
+    await initNativeDb();
+    return;
+  }
+
   ensureWorker();
 
   let bytes: ArrayBuffer | null = null;
 
-  if (Capacitor.isNativePlatform() || import.meta.env.DEV) {
-    // Native build or dev server — DB is available as a local file.
+  if (import.meta.env.DEV) {
+    // Dev server — DB is available as a local file.
     // Use db-version.txt for cache validation to avoid re-deserializing on every launch.
     const versionResp = await fetch("/data/db-version.txt");
     const bundledVersion = (await versionResp.text()).trim();
@@ -354,6 +366,7 @@ async function fetchDbBytes(
 export async function downloadDb(
   onProgress?: (loaded: number, total: number) => void,
 ): Promise<void> {
+  if (_isNative) throw new Error("downloadDb not available on native — DB is bundled");
   ensureWorker();
 
   const manifest = await fetchManifest();
@@ -695,10 +708,56 @@ export async function applyUpdate(
         await new Promise((r) => setTimeout(r, 50));
       }
 
-      // Apply patch + re-cache (heavy, runs in worker)
-      await send("exec_batch", { sql: patchSql });
+      if (_isNative) {
+        // Native: execute patch directly — plugin writes to disk
+        await nativeExecBatch(patchSql);
+      } else {
+        // Web: apply patch in worker, then re-cache
+        await send("exec_batch", { sql: patchSql });
+
+        const updatedBytes = await send("serialize") as ArrayBuffer;
+        await cacheWrite(updatedBytes);
+        await cacheVersionWrite(update.targetVersion!);
+      }
+    } else if (_isNative) {
+      // Native full DB replacement: download, decompress, write to filesystem, reopen
+      const url = update.gzUrl || update.url!;
+      const uncompressedSize = update.uncompressedSize || update.size || 0;
+      const bytes = await fetchGzipped(url, onProgress, uncompressedSize);
+
+      if (onApplying) {
+        onApplying();
+        await new Promise((r) => setTimeout(r, 50));
+      }
+
+      // Close current connection, delete old DB, write new one
+      await nativeClose();
+      await nativeDeleteDb();
+
+      // Write decompressed DB to plugin's storage via Filesystem
+      const { Filesystem, Directory } = await import("@capacitor/filesystem");
+      const blob = new Blob([bytes]);
+      // Convert to base64 in chunks to avoid stack overflow
+      const reader = new FileReader();
+      const base64 = await new Promise<string>((resolve, reject) => {
+        reader.onload = () => {
+          const dataUrl = reader.result as string;
+          resolve(dataUrl.split(",")[1]);
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+      await Filesystem.writeFile({
+        path: "databases/lexiklarSQLite.db",
+        data: base64,
+        directory: Directory.Library,
+        recursive: true,
+      });
+
+      // Reopen with new DB
+      await initNativeDb();
     } else {
-      // Full DB replacement — stream to Cache API first, then load into worker.
+      // Web full DB replacement — stream to Cache API first, then load into worker.
       // Avoids holding decompressed bytes + worker copy simultaneously (~500 MB peak)
       // which crashes iOS Safari.
       const url = update.gzUrl || update.url!;
@@ -750,16 +809,7 @@ export async function applyUpdate(
       const bytes = await cacheRead();
       if (!bytes) throw new Error("Cache write failed");
       await send("init", { bytes }, [bytes]);
-
-      // Already cached — skip serialize
-      _allLemmas = null;
-      return { ok: true };
     }
-
-    // Patch path: re-cache the updated DB from worker
-    const updatedBytes = await send("serialize") as ArrayBuffer;
-    await cacheWrite(updatedBytes);
-    await cacheVersionWrite(update.targetVersion!);
 
     // Clear in-memory caches so queries pick up new data
     _allLemmas = null;
