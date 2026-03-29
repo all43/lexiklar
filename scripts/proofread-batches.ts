@@ -114,10 +114,14 @@ if (checkRefs) {
       if (!ex.annotations) continue;
       const seen = new Set<string>();
       for (const ann of ex.annotations) {
-        if (ann.lemma && !seen.has(ann.lemma)) {
-          seen.add(ann.lemma);
-          if (!refIndex.has(ann.lemma)) refIndex.set(ann.lemma, []);
-          refIndex.get(ann.lemma)!.push(id);
+        if (!ann.lemma) continue;
+        // Index by lemma (for lookup) and lemma|pos (for POS-aware matching)
+        const key = ann.lemma;
+        const keyPos = `${ann.lemma}|${ann.pos}`;
+        if (!seen.has(keyPos)) {
+          seen.add(keyPos);
+          if (!refIndex.has(key)) refIndex.set(key, []);
+          refIndex.get(key)!.push(id);
         }
       }
     }
