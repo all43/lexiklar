@@ -189,7 +189,7 @@ import { isIOS26Plus } from "../utils/device.js";
 import { getCached, setItem, SHOW_ARTICLES_KEY, SEARCH_BAR_POSITION_KEY, type SearchBarPosition } from "../utils/storage.js";
 import type { SearchResult } from "../../types/search.js";
 import WordListBadges from "../components/WordListBadges.vue";
-import { wordListTitle } from "../utils/word-list.js";
+import { wordListTitle, stripArticle } from "../utils/word-list.js";
 import {
   searchByLemma,
   searchByGlossEn,
@@ -204,6 +204,7 @@ import { dbReady, dbDownloadNeeded, dbDownloadSize, swUpdatePending } from "../u
 
 interface SearchResultWithForm extends SearchResult {
   matchedForm?: string;
+  articleMismatch?: string; // the wrong article the user typed (e.g. "der")
   index?: number;
 }
 
@@ -336,6 +337,10 @@ function itemSubtitle(item: SearchResultWithForm): string {
   if (item.matchedForm && item.matchedForm.toLowerCase() !== displayTitle?.toLowerCase()) {
     return `\u2190 ${item.matchedForm}`;
   }
+  if (item.articleMismatch && item.gender) {
+    const correct = item.gender === "M" ? "der" : item.gender === "F" ? "die" : "das";
+    return t("search.articleMismatch", { wrong: item.articleMismatch, correct });
+  }
   return item.glossEn?.[0] || "";
 }
 
@@ -378,12 +383,15 @@ async function search(q: string, gen: number) {
   loading.value = true;
   const qLower = q.toLowerCase();
   const qFolded = foldUmlauts(q);
+  const artInfo = stripArticle(q);
 
-  const [formHits, lemmaHits, enHits] = await Promise.all([
+  const searches: [Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>] = [
     searchByWordForm(q),
     searchByLemma(q),
     searchByGlossEn(q),
-  ]);
+    artInfo ? searchByLemma(artInfo.remainder) : Promise.resolve([]),
+  ];
+  const [formHits, lemmaHits, enHits, artLemmaHits] = await Promise.all(searches);
 
   const seen = new Set<string>();
   const res: SearchResultWithForm[] = [];
@@ -410,6 +418,28 @@ async function search(q: string, gen: number) {
     else enRest.push(r);
   }
 
+  // Article-stripped results: gender-matching first, then mismatching
+  const artMatch: SearchResultWithForm[] = [];
+  const artMismatch: SearchResultWithForm[] = [];
+  if (artInfo && artLemmaHits.length) {
+    for (const r of artLemmaHits) {
+      if (seen.has(r.file)) continue;
+      const genderMatches = r.gender
+        ? artInfo.genders.includes(r.gender) || (artInfo.article === "die" && r.pluralDominant)
+        : false;
+      if (genderMatches) {
+        artMatch.push(r);
+      } else {
+        artMismatch.push({ ...r, articleMismatch: artInfo.article });
+      }
+    }
+  }
+
+  // Merge: form hits → article-matching nouns → exact lemma/en → article-mismatching → prefix matches
+  for (const r of artMatch) {
+    if (!seen.has(r.file)) { seen.add(r.file); res.push(r); }
+  }
+
   const exactMerged = [...lemmaExact, ...enExact]
     .sort((a, b) => (a.frequency ?? 999999) - (b.frequency ?? 999999));
   for (const r of exactMerged) {
@@ -417,6 +447,10 @@ async function search(q: string, gen: number) {
       seen.add(r.file);
       res.push(r);
     }
+  }
+
+  for (const r of artMismatch) {
+    if (!seen.has(r.file)) { seen.add(r.file); res.push(r); }
   }
 
   for (const r of lemmaRest) {
@@ -437,18 +471,19 @@ async function search(q: string, gen: number) {
   results.value = res;
 
   if (res.length === 0 && q.length >= 3) {
-    suggestions.value = await getSuggestions(q);
+    const sugQ = artInfo ? artInfo.remainder : q;
+    suggestions.value = await getSuggestions(sugQ);
   } else {
     suggestions.value = [];
   }
 
   if (gen !== searchGen) return;
-  const bestMatch = lemmaExact[0] || formHits[0];
+  const bestMatch = lemmaExact[0] || (artMatch[0] || artMismatch[0]) || formHits[0];
   if (bestMatch) {
     addPhraseTerm(bestMatch.lemma);
   }
 
-  await findPhraseMatches(q, seen);
+  await findPhraseMatches(artInfo ? artInfo.remainder : q, seen);
   if (gen !== searchGen) return;
   loading.value = false;
 }
