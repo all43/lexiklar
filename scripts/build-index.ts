@@ -880,18 +880,23 @@ function main(): void {
       const { data, fileKey } = entry;
 
       // Collect English glosses as JSON array
-      // Strategy C: demote vulgar/derog/slang, reorder only with strong signal (margin ≥ 3, min ≤ 2)
-      const DEMOTED_TAGS = new Set(["derogatory", "vulgar", "slang"]);
-      const isDemoted = (s: Sense) => s.tags?.some((t) => DEMOTED_TAGS.has(t)) ? 1 : 0;
-      const glossEn = [...(data.senses || [])]
-        .sort((a: Sense, b: Sense) => {
+      // Sense ordering for gloss_en: Strategy C for nouns, Wiktionary order for all other POS.
+      // Verbs score 24/25 and adjectives 25/25 with Wiktionary order — no reordering needed.
+      // Function words: 5 exceptions handled via _overrides on the word files.
+      const sortedSenses = [...(data.senses || [])];
+      if (data.pos === "noun") {
+        const DEMOTED_TAGS = new Set(["derogatory", "vulgar", "slang"]);
+        const isDemoted = (s: Sense) => s.tags?.some((t) => DEMOTED_TAGS.has(t)) ? 1 : 0;
+        sortedSenses.sort((a: Sense, b: Sense) => {
           const dA = isDemoted(a), dB = isDemoted(b);
           if (dA !== dB) return dA - dB;
           const exA = a.example_ids?.length ?? 0, exB = b.example_ids?.length ?? 0;
           const margin = Math.abs(exA - exB), minEx = Math.min(exA, exB);
           if (margin >= 3 && minEx <= 2) return exB - exA;
           return 0;
-        })
+        });
+      }
+      const glossEn = sortedSenses
         .map((s: Sense) => s.gloss_en)
         .filter(Boolean);
 

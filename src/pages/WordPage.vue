@@ -466,24 +466,24 @@ const isFavorite = ref(false);
 
 // Computed
 
-// Strategy C: demote vulgar/derog/slang, reorder only with strong signal
+// Sense ordering: Strategy C for nouns only, Wiktionary order for all other POS.
 const DEMOTED_TAGS = new Set(["derogatory", "vulgar", "slang"]);
 const isDemoted = (s: Sense) => s.tags?.some((t) => DEMOTED_TAGS.has(t)) ? 1 : 0;
 
-function senseSortCmp(a: Sense, b: Sense): number {
-  const dA = isDemoted(a), dB = isDemoted(b);
-  if (dA !== dB) return dA - dB;
-  const exA = a.example_ids?.length ?? 0, exB = b.example_ids?.length ?? 0;
-  const margin = Math.abs(exA - exB), minEx = Math.min(exA, exB);
-  if (margin >= 3 && minEx <= 2) return exB - exA;
-  return 0;
-}
-
 const sortedSenses = computed((): { sense: Sense; origIdx: number }[] => {
   const senses = word.value?.senses ?? [];
-  return senses
-    .map((sense, origIdx) => ({ sense, origIdx }))
-    .sort((a, b) => senseSortCmp(a.sense, b.sense));
+  const entries = senses.map((sense, origIdx) => ({ sense, origIdx }));
+  if (word.value?.pos === "noun" || word.value?.pos === "proper noun") {
+    entries.sort((a, b) => {
+      const dA = isDemoted(a.sense), dB = isDemoted(b.sense);
+      if (dA !== dB) return dA - dB;
+      const exA = a.sense.example_ids?.length ?? 0, exB = b.sense.example_ids?.length ?? 0;
+      const margin = Math.abs(exA - exB), minEx = Math.min(exA, exB);
+      if (margin >= 3 && minEx <= 2) return exB - exA;
+      return 0;
+    });
+  }
+  return entries;
 });
 
 const usedEnSynonyms = computed((): Map<number, Set<string>> => {
@@ -750,9 +750,7 @@ async function handleCrossRef(filePath: string, senseNumber: number | null) {
       senseNumber: senseNumber || 1,
       senseCount: data.senses?.length || 1,
       senseExplicit: senseNumber != null,
-      senses: [...(data.senses || [])]
-        .sort((a, b) => senseSortCmp(a, b))
-        .map((s) => ({ gloss: s.gloss, glossEn: s.gloss_en || null })),
+      senses: (data.senses || []).map((s) => ({ gloss: s.gloss, glossEn: s.gloss_en || null })),
       word: data.word,
       article: (data as unknown as Record<string, unknown>).article as string | null || null,
       gender: (data as unknown as Record<string, unknown>).gender as string | null || null,
