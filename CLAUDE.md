@@ -607,7 +607,7 @@ CREATE TABLE words (
   plural_dominant INTEGER,             -- 1 if plural form is more common
   plural_form     TEXT,                -- nominative plural string
   file            TEXT NOT NULL UNIQUE, -- e.g. "nouns/Tisch"
-  gloss_en        TEXT,                -- JSON array of short English glosses
+  gloss_en        TEXT,                -- JSON array of short English glosses, sorted by relevance (non-tagged senses first, then by example count)
   data            TEXT NOT NULL        -- full word JSON blob
 );
 
@@ -643,6 +643,12 @@ User types "Bank"
   → returns rows with full data JSON
   → also searches word_forms for inflected form matches
 
+User types "das Tisch" (article-prefixed search)
+  → stripArticle() detects "das" + "Tisch", maps "das" → gender N
+  → runs searchByLemma("Tisch") in parallel with normal queries
+  → gender-matching results shown first, mismatching shown with hint ("not das → der")
+  → articles excluded from phrase term history to prevent spurious phrase matches
+
 User types "cup" (English reverse search)
   → searchByGlossEn() uses 3-tier ranking:
     Tier 0: exact gloss_en match (e.g. Tasse's "cup" beats Weltcup's "World Cup")
@@ -651,6 +657,10 @@ User types "cup" (English reverse search)
   → within each tier: frequency order
 ```
 
+**Search result display**: each result shows title (word), subtitle (up to 3 glosses from `gloss_en`, italic via `.gloss-list` CSS class, joined with " · "), and footer (form-match arrow or article-mismatch hint when applicable). Glosses use `wordListGlosses()` from `src/utils/word-list.ts`. Same display pattern in search results, suggestions, home screen lists, and favorites.
+
+**Sense ordering in `gloss_en` and word page**: two-tier sort — non-tagged senses first (by example count descending), then tagged senses (`colloquial`, `derogatory`, `vulgar`, `slang`, `informal`, `figurative`, `plural-only`) by example count. Preserves source order within ties. Applied in `build-index.ts` (for `gloss_en` column) and `WordPage.vue` (`sortedSenses` computed + preview).
+
 ### Phrase Discovery
 
 When a user searches multiple words in sequence (e.g., "Achse" then "sein"), matching phrases (e.g., "auf Achse sein") appear as prioritized results with highlighted matching words.
@@ -658,6 +668,7 @@ When a user searches multiple words in sequence (e.g., "Achse" then "sein"), mat
 **Phrase term tracking** (`SearchPage.vue`):
 - Each search that resolves to a known lemma is stored as a `PhraseTerm { term, ts }` in `lexiklar_phrase_terms`
 - Lemma resolution prefers exact lemma match over word_forms to avoid misresolution (e.g., "Tisch" → noun, not verb "tischen")
+- Articles (der/die/das/den/dem/des/ein/eine/einen/einem/einer/eines) are excluded from phrase term storage via `isArticle()` — prevents spurious phrase matches from consecutive article searches
 - Terms are deduplicated by lemma (case-insensitive) — inflected forms don't create false triggers
 - Pool limited to last 10 stored entries; only the **last 3 non-expired** entries (5-minute TTL) are used for matching
 - Terms are also registered when visiting a word page (`WordPage.vue`) and removed when removing a word from history
