@@ -871,6 +871,59 @@ function main(): void {
   // Phase 1d: Insert word files → words + word_forms tables
   // --------------------------------------------------------
 
+  // Sense ordering: done at build time, stored in DB. Source files untouched.
+  // - Nouns: Strategy C (demote vulgar/derog/slang, reorder with margin ≥ 3, min ≤ 2)
+  // - Function word overrides: move preferred first sense to position 0
+  // - Everything else: Wiktionary order (identity)
+  const SENSE_ORDER_OVERRIDES: Record<string, string> = {
+    "prepositions/bei": "with",
+    "prepositions/zwischen": "between (location)",
+    "conjunctions/wenn": "if",
+    "adverbs/noch": "still (present)",
+    "pronouns/man": "one",
+  };
+
+  const DEMOTED_TAGS = new Set(["derogatory", "vulgar", "slang"]);
+  const isDemoted = (s: Sense) => s.tags?.some((t) => DEMOTED_TAGS.has(t)) ? 1 : 0;
+
+  // Compute display order for a word's senses. Returns index permutation (new → old).
+  // E.g. [2, 0, 1] means: display original sense 2 first, then 0, then 1.
+  function computeSenseOrder(fileKey: string, senses: Sense[], pos: string): number[] {
+    const identity = senses.map((_, i) => i);
+    if (senses.length < 2) return identity;
+
+    // Check for manual override
+    const override = SENSE_ORDER_OVERRIDES[fileKey];
+    if (override) {
+      const idx = senses.findIndex((s) => s.gloss_en === override);
+      if (idx > 0) {
+        const order = [...identity];
+        order.splice(idx, 1);
+        order.unshift(idx);
+        return order;
+      }
+    }
+
+    // Strategy C for nouns only
+    if (pos === "noun" || pos === "proper noun") {
+      const indexed = senses.map((s, i) => ({ s, i }));
+      indexed.sort((a, b) => {
+        const dA = isDemoted(a.s), dB = isDemoted(b.s);
+        if (dA !== dB) return dA - dB;
+        const exA = a.s.example_ids?.length ?? 0, exB = b.s.example_ids?.length ?? 0;
+        const margin = Math.abs(exA - exB), minEx = Math.min(exA, exB);
+        if (margin >= 3 && minEx <= 2) return exB - exA;
+        return 0;
+      });
+      return indexed.map((e) => e.i);
+    }
+
+    return identity;
+  }
+
+  // Store remap for text_linked remapping in Phase 3: fileKey → (oldSenseNum → newSenseNum), 1-indexed
+  const senseRemaps = new Map<string, Map<number, number>>();
+
   let wordCount = 0;
   let wordFormCount = 0;
   let enTermCount = 0;
@@ -879,25 +932,23 @@ function main(): void {
     for (const entry of allWordData) {
       const { data, fileKey } = entry;
 
-      // Collect English glosses as JSON array
-      // Sense ordering for gloss_en: Strategy C for nouns, Wiktionary order for all other POS.
-      // Verbs score 24/25 and adjectives 25/25 with Wiktionary order — no reordering needed.
-      // Function words: 5 exceptions handled via _overrides on the word files.
-      const sortedSenses = [...(data.senses || [])];
-      if (data.pos === "noun") {
-        const DEMOTED_TAGS = new Set(["derogatory", "vulgar", "slang"]);
-        const isDemoted = (s: Sense) => s.tags?.some((t) => DEMOTED_TAGS.has(t)) ? 1 : 0;
-        sortedSenses.sort((a: Sense, b: Sense) => {
-          const dA = isDemoted(a), dB = isDemoted(b);
-          if (dA !== dB) return dA - dB;
-          const exA = a.example_ids?.length ?? 0, exB = b.example_ids?.length ?? 0;
-          const margin = Math.abs(exA - exB), minEx = Math.min(exA, exB);
-          if (margin >= 3 && minEx <= 2) return exB - exA;
-          return 0;
-        });
+      // Compute sense display order
+      const senseOrder = computeSenseOrder(fileKey, data.senses || [], data.pos);
+      const isReordered = senseOrder.some((v, i) => v !== i);
+
+      // Build remap: old 1-indexed → new 1-indexed (for text_linked #N references)
+      if (isReordered && data.senses.length > 1) {
+        const remap = new Map<number, number>();
+        for (let newIdx = 0; newIdx < senseOrder.length; newIdx++) {
+          const oldIdx = senseOrder[newIdx];
+          if (oldIdx !== newIdx) remap.set(oldIdx + 1, newIdx + 1);
+        }
+        if (remap.size > 0) senseRemaps.set(fileKey, remap);
       }
-      const glossEn = sortedSenses
-        .map((s: Sense) => s.gloss_en)
+
+      // Build gloss_en from display order
+      const glossEn = senseOrder
+        .map((i) => (data.senses || [])[i]?.gloss_en)
         .filter(Boolean);
 
       // Build the runtime word object — only fields the app needs for display.
@@ -944,6 +995,11 @@ function main(): void {
       const rels = relatedMap.get(fileKey);
       if (rels && rels.length) {
         enriched.related = rels;
+      }
+
+      // Reorder senses in DB blob to display order (source files untouched)
+      if (isReordered && Array.isArray(enriched.senses)) {
+        enriched.senses = senseOrder.map((i) => (enriched.senses as unknown[])[i]);
       }
 
       const dataJson = JSON.stringify(enriched);
@@ -1113,18 +1169,39 @@ function main(): void {
       console.log(`Linked ${refCount} expressions to phrase cards (${phraseLinked} phrase files updated).`);
     }
 
-    // Insert examples into SQLite — strip build-only fields to reduce DB size
+    // Insert examples into SQLite — strip build-only fields, remap sense numbers
     const exampleStripKeys = ["lemmas", "annotations", "translation_model", "_proofread", "source"];
+    // Remap [[form|path#N]] sense numbers in text_linked to match reordered DB senses
+    const senseRefRe = /\[\[([^|]+)\|([^\]#]+)#(\d+)\]\]/g;
+    function remapTextLinked(textLinked: string): string {
+      return textLinked.replace(senseRefRe, (match, form, path, numStr) => {
+        const remap = senseRemaps.get(path);
+        if (!remap) return match;
+        const oldNum = parseInt(numStr, 10);
+        const newNum = remap.get(oldNum);
+        if (newNum === undefined) return match;
+        return `[[${form}|${path}#${newNum}]]`;
+      });
+    }
+    let remappedCount = 0;
     const insertExamples = db.transaction(() => {
       for (const [id, ex] of Object.entries(examples)) {
         const stripped: Record<string, unknown> = { ...ex };
         for (const k of exampleStripKeys) delete stripped[k];
+        // Remap sense numbers in DB copy only (shard files untouched)
+        if (stripped.text_linked && senseRemaps.size > 0) {
+          const remapped = remapTextLinked(stripped.text_linked as string);
+          if (remapped !== stripped.text_linked) {
+            stripped.text_linked = remapped;
+            remappedCount++;
+          }
+        }
         const exData = JSON.stringify(stripped);
         insertExample.run({ id, data: exData, hash: contentHash(exData) });
       }
     });
     insertExamples();
-    console.log(`Inserted ${Object.keys(examples).length} examples.`);
+    console.log(`Inserted ${Object.keys(examples).length} examples (${remappedCount} sense refs remapped).`);
   }
 
   // --------------------------------------------------------
