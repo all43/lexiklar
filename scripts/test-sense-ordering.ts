@@ -7,6 +7,7 @@
 
 import { readFileSync, readdirSync, existsSync } from "fs";
 import { join } from "path";
+import { computeSenseOrder } from "./lib/sense-ordering.js";
 
 interface Sense {
   gloss_en: string | null;
@@ -20,6 +21,7 @@ interface WordData {
   pos: string;
   zipf?: number;
   senses: Sense[];
+  _overrides?: Record<string, unknown>;
 }
 
 // ─── Test cases: [file, expected first gloss_en] ───
@@ -450,6 +452,11 @@ function main() {
     ["J: Ref-count only + margin 3", wrapStrategy(strategyJ)],
     ["K: Owned+ref combined + margin 3", wrapStrategy(strategyK)],
     ["L: Ref-count sort (no margin)", wrapStrategy(strategyL)],
+    ["SHIPPED: build-index production", (senses, pos) => {
+      const wordData = [...words.values()].find((w) => w.senses === senses);
+      const order = computeSenseOrder(senses as never[], pos, wordData?._overrides);
+      return order.map((i) => senses[i]);
+    }],
   ];
 
   console.log(`\n${"═".repeat(70)}`);

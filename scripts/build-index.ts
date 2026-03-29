@@ -30,6 +30,7 @@ import { stripReferences } from "./lib/references.js";
 import { POS_DIRS } from "./lib/pos.js";
 import { loadExamples, saveExamples } from "./lib/examples.js";
 import { findWordFilePaths } from "./lib/words.js";
+import { computeSenseOrder } from "./lib/sense-ordering.js";
 import { computeConjugation, computeAllForms } from "../src/utils/verb-forms.js";
 import type {
   Word,
@@ -871,55 +872,9 @@ function main(): void {
   // Phase 1d: Insert word files → words + word_forms tables
   // --------------------------------------------------------
 
-  // Sense ordering: done at build time, stored in DB. Source files untouched.
-  // - Nouns: Strategy C (demote vulgar/derog/slang, reorder with margin ≥ 3, min ≤ 2)
-  // - Function word overrides: move preferred first sense to position 0
-  // - Everything else: Wiktionary order (identity)
-  const SENSE_ORDER_OVERRIDES: Record<string, string> = {
-    "prepositions/bei": "with",
-    "prepositions/zwischen": "between (location)",
-    "conjunctions/wenn": "if",
-    "adverbs/noch": "still (present)",
-    "pronouns/man": "one",
-  };
-
-  const DEMOTED_TAGS = new Set(["derogatory", "vulgar", "slang"]);
-  const isDemoted = (s: Sense) => s.tags?.some((t) => DEMOTED_TAGS.has(t)) ? 1 : 0;
-
-  // Compute display order for a word's senses. Returns index permutation (new → old).
-  // E.g. [2, 0, 1] means: display original sense 2 first, then 0, then 1.
-  function computeSenseOrder(fileKey: string, senses: Sense[], pos: string): number[] {
-    const identity = senses.map((_, i) => i);
-    if (senses.length < 2) return identity;
-
-    // Check for manual override
-    const override = SENSE_ORDER_OVERRIDES[fileKey];
-    if (override) {
-      const idx = senses.findIndex((s) => s.gloss_en === override);
-      if (idx > 0) {
-        const order = [...identity];
-        order.splice(idx, 1);
-        order.unshift(idx);
-        return order;
-      }
-    }
-
-    // Strategy C for nouns only
-    if (pos === "noun" || pos === "proper noun") {
-      const indexed = senses.map((s, i) => ({ s, i }));
-      indexed.sort((a, b) => {
-        const dA = isDemoted(a.s), dB = isDemoted(b.s);
-        if (dA !== dB) return dA - dB;
-        const exA = a.s.example_ids?.length ?? 0, exB = b.s.example_ids?.length ?? 0;
-        const margin = Math.abs(exA - exB), minEx = Math.min(exA, exB);
-        if (margin >= 3 && minEx <= 2) return exB - exA;
-        return 0;
-      });
-      return indexed.map((e) => e.i);
-    }
-
-    return identity;
-  }
+  // Sense ordering: done at build time via computeSenseOrder() from lib/sense-ordering.ts.
+  // Rules: _overrides.sense_order / _overrides.first_sense per word, Strategy C for nouns, identity for rest.
+  // Source files are never modified — only the DB blob gets reordered senses.
 
   // Store remap for text_linked remapping in Phase 3: fileKey → (oldSenseNum → newSenseNum), 1-indexed
   const senseRemaps = new Map<string, Map<number, number>>();
@@ -932,8 +887,8 @@ function main(): void {
     for (const entry of allWordData) {
       const { data, fileKey } = entry;
 
-      // Compute sense display order
-      const senseOrder = computeSenseOrder(fileKey, data.senses || [], data.pos);
+      // Compute sense display order (rules in lib/sense-ordering.ts, per-word overrides in _overrides)
+      const senseOrder = computeSenseOrder(data.senses || [], data.pos, data._overrides as Record<string, unknown> | undefined);
       const isReordered = senseOrder.some((v, i) => v !== i);
 
       // Build remap: old 1-indexed → new 1-indexed (for text_linked #N references)
