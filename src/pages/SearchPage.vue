@@ -39,11 +39,11 @@
       <!-- Phrase suggestions from sequential searches -->
       <template v-if="phraseMatches.length">
         <f7-block-title>{{ t('search.matchingExpressions') }}</f7-block-title>
-        <f7-list class="phrase-matches" media-list>
+        <f7-list class="phrase-matches gloss-list" media-list>
           <f7-list-item
             v-for="item in visiblePhrases"
             :key="item.file"
-            :subtitle="item.glossEn?.[0] ?? ''"
+            :subtitle="itemGlosses(item)"
             :link="`/word/${item.file}/`"
           >
             <template #title>
@@ -64,7 +64,7 @@
       <f7-block-title v-if="phraseMatches.length && results.length > 0">{{ t('search.searchResults') }}</f7-block-title>
       <f7-list
         v-if="results.length > 0"
-        class="search-results"
+        class="search-results gloss-list"
         media-list
         virtual-list
         :virtual-list-params="vlParams"
@@ -74,7 +74,8 @@
             v-for="item in vlData.items"
             :key="item.file"
             :title="itemTitle(item)"
-            :subtitle="itemSubtitle(item)"
+            :subtitle="itemGlosses(item)"
+            :footer="itemFooter(item)"
             :link="`/word/${item.file}/`"
             :style="`top: ${vlData.topPosition}px`"
             :virtual-list-index="item.index"
@@ -94,12 +95,12 @@
       </f7-block>
       <template v-if="!loading && results.length === 0 && suggestions.length > 0">
         <f7-block-title>{{ t('search.didYouMean') }}</f7-block-title>
-        <f7-list inset media-list>
+        <f7-list class="home-list gloss-list" inset media-list>
           <f7-list-item
             v-for="item in suggestions"
             :key="item.file"
             :title="itemTitle(item)"
-            :subtitle="item.glossEn?.[0] ?? ''"
+            :subtitle="itemGlosses(item)"
             :link="`/word/${item.file}/`"
           >
             <template #after>
@@ -125,12 +126,12 @@
       <!-- Frequently Viewed -->
       <template v-if="freqWords.length">
         <f7-block-title>{{ t('search.frequentlyViewed') }}</f7-block-title>
-        <f7-list class="home-list" media-list>
+        <f7-list class="home-list gloss-list" media-list>
           <f7-list-item
             v-for="item in freqWords"
             :key="item.file"
             :title="itemTitle(item)"
-            :subtitle="item.glossEn?.[0] ?? ''"
+            :subtitle="itemGlosses(item)"
             :link="`/word/${item.file}/`"
           >
             <template #after>
@@ -143,12 +144,12 @@
       <!-- Recently Visited (excludes items already in Frequently Viewed) -->
       <template v-if="recentWords.length">
         <f7-block-title>{{ t('search.recentlyVisited') }}</f7-block-title>
-        <f7-list class="home-list" media-list>
+        <f7-list class="home-list gloss-list" media-list>
           <f7-list-item
             v-for="item in recentWords"
             :key="item.file"
             :title="itemTitle(item)"
-            :subtitle="item.glossEn?.[0] ?? ''"
+            :subtitle="itemGlosses(item)"
             :link="`/word/${item.file}/`"
           >
             <template #after>
@@ -189,7 +190,7 @@ import { isIOS26Plus } from "../utils/device.js";
 import { getCached, setItem, SHOW_ARTICLES_KEY, SEARCH_BAR_POSITION_KEY, type SearchBarPosition } from "../utils/storage.js";
 import type { SearchResult } from "../../types/search.js";
 import WordListBadges from "../components/WordListBadges.vue";
-import { wordListTitle, stripArticle, isArticle } from "../utils/word-list.js";
+import { wordListTitle, wordListGlosses, stripArticle, isArticle } from "../utils/word-list.js";
 import {
   searchByLemma,
   searchByGlossEn,
@@ -285,8 +286,11 @@ const vlParams = computed(() => ({
   items: vlItems.value,
   renderExternal: renderExternal,
   height: (item: SearchResultWithForm) => {
-    const hasSub = (item.glossEn?.length ?? 0) > 0 || !!item.matchedForm;
-    return f7theme.ios ? (hasSub ? 63 : 44) : (hasSub ? 69 : 48);
+    const hasGloss = (item.glossEn?.length ?? 0) > 0;
+    const hasFooter = !!item.matchedForm || !!item.articleMismatch;
+    if (hasGloss && hasFooter) return f7theme.ios ? 79 : 85;
+    if (hasGloss || hasFooter) return f7theme.ios ? 63 : 69;
+    return f7theme.ios ? 44 : 48;
   },
 }));
 
@@ -332,7 +336,7 @@ function onClear() {
   searchQuery.value = "";
 }
 
-function itemSubtitle(item: SearchResultWithForm): string {
+function itemFooter(item: SearchResultWithForm): string {
   const displayTitle = item.pluralDominant ? item.pluralForm : item.lemma;
   if (item.matchedForm && item.matchedForm.toLowerCase() !== displayTitle?.toLowerCase()) {
     return `\u2190 ${item.matchedForm}`;
@@ -341,8 +345,10 @@ function itemSubtitle(item: SearchResultWithForm): string {
     const correct = item.gender === "M" ? "der" : item.gender === "F" ? "die" : "das";
     return t("search.articleMismatch", { wrong: item.articleMismatch, correct });
   }
-  return item.glossEn?.[0] || "";
+  return "";
 }
+
+const itemGlosses = wordListGlosses;
 
 function itemTitle(item: SearchResultWithForm): string {
   return wordListTitle(item, showArticles.value);

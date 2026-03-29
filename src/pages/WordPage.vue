@@ -88,31 +88,31 @@
         <a v-if="word.pos === 'verb' || word.pos === 'noun' || word.pos === 'proper noun' || word.pos === 'adjective' || word.pos === 'pronoun' || word.pos === 'determiner' || word.pos === 'numeral'" class="grammar-jump" @click.prevent="scrollToGrammar">{{ word.pos === 'verb' ? t('word.conjugation') : (word.pos === 'noun' || word.pos === 'proper noun') ? t('word.declension') : t('word.grammar') }} ↓</a>
       </div>
       <f7-list>
-        <template v-for="(sense, idx) in word.senses" :key="idx">
-          <li :id="`sense-${idx + 1}`" class="sense-item">
+        <template v-for="(entry, displayIdx) in sortedSenses" :key="entry.origIdx">
+          <li :id="`sense-${entry.origIdx + 1}`" class="sense-item">
             <div class="item-content">
               <div class="item-inner sense-inner">
                 <div class="sense-gloss-row">
-                  <span class="sense-num">{{ idx + 1 }}.</span>
+                  <span class="sense-num">{{ displayIdx + 1 }}.</span>
                   <div class="sense-gloss-wrap">
                     <div class="sense-primary-row">
-                      <span class="sense-primary">{{ sense.gloss_en || sense.gloss }}</span>
-                      <EnSynonyms :synonyms="sense.synonyms_en || []" :gloss-en="sense.gloss_en || ''" :exclude="usedEnSynonyms[idx]" />
+                      <span class="sense-primary">{{ entry.sense.gloss_en || entry.sense.gloss }}</span>
+                      <EnSynonyms :synonyms="entry.sense.synonyms_en || []" :gloss-en="entry.sense.gloss_en || ''" :exclude="usedEnSynonyms.get(entry.origIdx) ?? new Set()" />
                     </div>
                     <div
-                      v-if="sense.gloss_en"
+                      v-if="entry.sense.gloss_en"
                       class="sense-secondary-row"
                     >
                       <GlossText
-                        :gloss="sense.gloss"
+                        :gloss="entry.sense.gloss"
                         @sense-ref="scrollToSense"
                         @cross-ref="handleCrossRef"
                         class="sense-secondary"
                       />
                       <span
-                        v-if="sense.gloss_en_full"
+                        v-if="entry.sense.gloss_en_full"
                         class="tooltip-init sense-info-icon"
-                        :data-tooltip="sense.gloss_en_full"
+                        :data-tooltip="entry.sense.gloss_en_full"
                       >ⓘ</span>
                     </div>
                   </div>
@@ -123,7 +123,7 @@
 
           <!-- Examples for this sense -->
           <li
-            v-for="ex in getSenseExamples(sense, idx)"
+            v-for="ex in getSenseExamples(entry.sense, entry.origIdx)"
             :key="ex.id"
             class="example-item"
           >
@@ -144,32 +144,32 @@
           </li>
           <!-- Show more examples -->
           <li
-            v-if="getSenseExampleTotal(sense) > 2 && !expandedSenses.includes(idx)"
+            v-if="getSenseExampleTotal(entry.sense) > 2 && !expandedSenses.includes(entry.origIdx)"
             class="example-show-more"
-            @click="expandSense(idx)"
+            @click="expandSense(entry.origIdx)"
           >
             <div class="item-content">
               <div class="item-inner">
-                + {{ getSenseExampleTotal(sense) - 2 }} {{ t('word.more') }}
+                + {{ getSenseExampleTotal(entry.sense) - 2 }} {{ t('word.more') }}
               </div>
             </div>
           </li>
           <!-- Sense-level synonyms & antonyms -->
-          <li v-if="getSenseSynonyms(sense).length || getSenseAntonyms(sense).length" class="sense-syn-ant-item">
-            <div v-if="getSenseSynonyms(sense).length" class="sense-syn-row">
+          <li v-if="getSenseSynonyms(entry.sense).length || getSenseAntonyms(entry.sense).length" class="sense-syn-ant-item">
+            <div v-if="getSenseSynonyms(entry.sense).length" class="sense-syn-row">
               <span class="sense-syn-label">≈</span>
               <f7-chip
-                v-for="r in getSenseSynonyms(sense)"
+                v-for="r in getSenseSynonyms(entry.sense)"
                 :key="r.file"
                 :text="r.lemma"
                 class="syn-chip"
                 @click="f7router.navigate(`/word/${r.file}/`)"
               />
             </div>
-            <div v-if="getSenseAntonyms(sense).length" class="sense-syn-row">
+            <div v-if="getSenseAntonyms(entry.sense).length" class="sense-syn-row">
               <span class="sense-syn-label">≠</span>
               <f7-chip
-                v-for="r in getSenseAntonyms(sense)"
+                v-for="r in getSenseAntonyms(entry.sense)"
                 :key="r.file"
                 :text="r.lemma"
                 class="ant-chip"
@@ -466,12 +466,21 @@ const isFavorite = ref(false);
 
 // Computed
 
-const usedEnSynonyms = computed((): Set<string>[] => {
+const DEMOTED_TAGS = new Set(["colloquial", "derogatory", "vulgar", "slang", "informal", "figurative", "plural-only"]);
+const isDemoted = (s: Sense) => s.tags?.some((t) => DEMOTED_TAGS.has(t)) ? 1 : 0;
+
+const sortedSenses = computed((): { sense: Sense; origIdx: number }[] => {
   const senses = word.value?.senses ?? [];
-  const result: Set<string>[] = [];
+  return senses
+    .map((sense, origIdx) => ({ sense, origIdx }))
+    .sort((a, b) => isDemoted(a.sense) - isDemoted(b.sense) || (b.sense.example_ids?.length ?? 0) - (a.sense.example_ids?.length ?? 0));
+});
+
+const usedEnSynonyms = computed((): Map<number, Set<string>> => {
+  const result = new Map<number, Set<string>>();
   const used = new Set<string>();
-  for (const sense of senses) {
-    result.push(new Set(used));
+  for (const { sense, origIdx } of sortedSenses.value) {
+    result.set(origIdx, new Set(used));
     if (sense.gloss_en) used.add(sense.gloss_en.toLowerCase());
     const gloss = (sense.gloss_en || "").toLowerCase();
     const filtered = (sense.synonyms_en ?? []).filter(
@@ -731,7 +740,9 @@ async function handleCrossRef(filePath: string, senseNumber: number | null) {
       senseNumber: senseNumber || 1,
       senseCount: data.senses?.length || 1,
       senseExplicit: senseNumber != null,
-      senses: (data.senses || []).map((s) => ({ gloss: s.gloss, glossEn: s.gloss_en || null })),
+      senses: [...(data.senses || [])]
+        .sort((a, b) => isDemoted(a) - isDemoted(b) || (b.example_ids?.length ?? 0) - (a.example_ids?.length ?? 0))
+        .map((s) => ({ gloss: s.gloss, glossEn: s.gloss_en || null })),
       word: data.word,
       article: (data as unknown as Record<string, unknown>).article as string | null || null,
       gender: (data as unknown as Record<string, unknown>).gender as string | null || null,

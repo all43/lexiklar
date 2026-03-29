@@ -7,13 +7,13 @@
     </f7-block>
 
     <template v-else-if="words.length">
-      <f7-list media-list>
+      <f7-list class="gloss-list" media-list>
         <f7-list-item
           v-for="item in words"
           :key="item.file"
           swipeout
           :title="itemTitle(item)"
-          :subtitle="item.glossEn?.[0] ?? ''"
+          :subtitle="wordListGlosses(item)"
           :link="`/word/${item.file}/`"
           @swipeout:deleted="removeFavorite(item.file)"
         >
@@ -40,7 +40,7 @@ import { t } from "../js/i18n.js";
 import { getCached, setItem, SHOW_ARTICLES_KEY } from "../utils/storage.js";
 import type { SearchResult } from "../../types/search.js";
 import WordListBadges from "../components/WordListBadges.vue";
-import { wordListTitle } from "../utils/word-list.js";
+import { wordListTitle, wordListGlosses } from "../utils/word-list.js";
 
 const FAVORITES_KEY = "lexiklar_favorites";
 

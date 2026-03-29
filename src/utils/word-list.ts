@@ -39,6 +39,10 @@ export function genderColor(gender: string): string {
   return "";
 }
 
+export function wordListGlosses(item: { glossEn?: string[] | null }): string {
+  return item.glossEn?.slice(0, 3).join(" · ") || "";
+}
+
 export function wordListTitle(
   item: { pluralDominant?: boolean; pluralForm?: string | null; lemma: string; gender?: string | null },
   showArticles: boolean,

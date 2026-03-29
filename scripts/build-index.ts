@@ -880,7 +880,10 @@ function main(): void {
       const { data, fileKey } = entry;
 
       // Collect English glosses as JSON array
-      const glossEn = (data.senses || [])
+      const DEMOTED_TAGS = new Set(["colloquial", "derogatory", "vulgar", "slang", "informal", "figurative", "plural-only"]);
+      const isDemoted = (s: Sense) => s.tags?.some((t) => DEMOTED_TAGS.has(t)) ? 1 : 0;
+      const glossEn = [...(data.senses || [])]
+        .sort((a: Sense, b: Sense) => isDemoted(a) - isDemoted(b) || (b.example_ids?.length ?? 0) - (a.example_ids?.length ?? 0))
         .map((s: Sense) => s.gloss_en)
         .filter(Boolean);
 
