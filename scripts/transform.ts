@@ -34,6 +34,7 @@ import type {
   AdjEndingsTable,
   VerbEndingsFile,
   ProofreadFlags,
+  WordOverrides,
   PrincipalParts,
   Example,
   ExampleMap,
@@ -227,7 +228,7 @@ interface TransformOutput {
   // Meta
   _meta?: WordMeta;
   _proofread?: ProofreadFlags;
-  _overrides?: Record<string, unknown>;
+  _overrides?: WordOverrides;
   /** LLM translations that could not be matched to any new sense by gloss text. Saved so they
    *  can be remapped manually or by a future tool. Survives re-transform. */
   _orphaned_translations?: Array<{
@@ -1450,7 +1451,7 @@ function mergeWithExisting(newData: TransformOutput, existingPath: string): Tran
 
   // Apply manual overrides last — these win over anything Wiktionary produces.
   // _overrides is never cleared by transform; edit it manually to correct source data bugs.
-  const existingOverrides = (existing as { _overrides?: Record<string, unknown> })._overrides;
+  const existingOverrides = (existing as { _overrides?: WordOverrides })._overrides;
   if (existingOverrides) {
     newData._overrides = existingOverrides;
     for (const [key, val] of Object.entries(existingOverrides)) {

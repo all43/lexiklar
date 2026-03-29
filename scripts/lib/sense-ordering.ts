@@ -5,7 +5,7 @@
  * Override per-word via `_overrides.first_sense` in the word file.
  */
 
-import type { Sense } from "../../types/word.js";
+import type { Sense, WordOverrides } from "../../types/word.js";
 
 /** Tags that demote a sense in Strategy C (nouns only) */
 const DEMOTED_TAGS = new Set(["derogatory", "vulgar", "slang"]);
@@ -27,7 +27,7 @@ function isDemoted(s: Sense): number {
 export function computeSenseOrder(
   senses: Sense[],
   pos: string,
-  overrides?: Record<string, unknown>,
+  overrides?: WordOverrides,
 ): number[] {
   const identity = senses.map((_, i) => i);
   if (senses.length < 2) return identity;

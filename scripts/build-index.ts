@@ -888,7 +888,7 @@ function main(): void {
       const { data, fileKey } = entry;
 
       // Compute sense display order (rules in lib/sense-ordering.ts, per-word overrides in _overrides)
-      const senseOrder = computeSenseOrder(data.senses || [], data.pos, data._overrides as Record<string, unknown> | undefined);
+      const senseOrder = computeSenseOrder(data.senses || [], data.pos, data._overrides);
       const isReordered = senseOrder.some((v, i) => v !== i);
 
       // Build remap: old 1-indexed → new 1-indexed (for text_linked #N references)

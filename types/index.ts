@@ -3,6 +3,7 @@ export type {
   Sound,
   WordMeta,
   ProofreadFlags,
+  WordOverrides,
   GenderRule,
   CaseRow,
   CaseForms,

@@ -26,6 +26,15 @@ export interface WordMeta {
   generated_at: string;
 }
 
+export interface WordOverrides {
+  /** Move this gloss_en sense to first position in display order (build-index only) */
+  first_sense?: string;
+  /** Full custom sense display order as array of gloss_en values (build-index only) */
+  sense_order?: string[];
+  /** Any other field overrides (applied by transform's mergeWithExisting) */
+  [key: string]: unknown;
+}
+
 export interface ProofreadFlags {
   gloss_en?: true;
   gloss_en_full?: true;
@@ -123,7 +132,7 @@ export interface WordBase {
   _synonyms?: string[];
   _meta: WordMeta;
   _proofread?: ProofreadFlags;
-  _overrides?: Record<string, unknown>;
+  _overrides?: WordOverrides;
   zipf?: number;
   // Runtime fields added by build-index.ts (stored in SQLite data blob)
   frequency?: number;
