@@ -853,7 +853,7 @@
         "form": "gelebt",
         "lemma": "leben",
         "pos": "verb",
-        "gloss_hint": "lived"
+        "gloss_hint": "live"
       },
       {
         "form": "Mit",
@@ -4038,7 +4038,7 @@
         "form": "gaben",
         "lemma": "geben",
         "pos": "verb",
-        "gloss_hint": "gave"
+        "gloss_hint": "hand"
       },
       {
         "form": "ein",
@@ -4302,7 +4302,7 @@
         "form": "Tage",
         "lemma": "Tag",
         "pos": "noun",
-        "gloss_hint": "two (years old)"
+        "gloss_hint": "day"
       },
       {
         "form": "lang",
@@ -6446,7 +6446,7 @@
         "form": "Wasser",
         "lemma": "Wasser",
         "pos": "noun",
-        "gloss_hint": "liquid"
+        "gloss_hint": "water"
       },
       {
         "form": "stürzte",
@@ -8709,7 +8709,7 @@
         "form": "treffen",
         "lemma": "treffen",
         "pos": "verb",
-        "gloss_hint": "meet / encounter / face off / hit / strike the mark / suit / affect / befall / make"
+        "gloss_hint": "make"
       },
       {
         "form": "im Sommer",
@@ -11067,10 +11067,11 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "lässt",
+        "form": "ließ",
         "lemma": "lassen",
         "pos": "verb",
-        "gloss_hint": null
+        "gloss_hint": "drain",
+        "note": "Form mismatch: text says 'ließ' but annotation has 'lässt'. Also 'ablassen' = drain = lassen sense 8."
       },
       {
         "form": "das",
@@ -19195,7 +19196,7 @@
         "form": "gut",
         "lemma": "gut",
         "pos": "adjective",
-        "gloss_hint": "adjective: well"
+        "gloss_hint": "well"
       },
       {
         "form": "bezahlt",
@@ -20451,7 +20452,7 @@
         "form": "gezogen",
         "lemma": "ziehen",
         "pos": "verb",
-        "gloss_hint": "marched"
+        "gloss_hint": "go"
       },
       {
         "form": "war",
@@ -23642,7 +23643,8 @@
         "form": "lässt",
         "lemma": "lassen",
         "pos": "verb",
-        "gloss_hint": "to decrease"
+        "gloss_hint": null,
+        "note": "This is nachlassen (not plain lassen); gloss_hint 'to decrease' doesn't match any lassen sense."
       },
       {
         "form": "im",
