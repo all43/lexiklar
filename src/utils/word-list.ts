@@ -28,6 +28,10 @@ export function stripArticle(q: string): { article: string; remainder: string; g
   return null;
 }
 
+export function isArticle(word: string): boolean {
+  return word.toLowerCase() in ARTICLE_GENDERS;
+}
+
 export function genderColor(gender: string): string {
   if (gender === "M") return "blue";
   if (gender === "F") return "pink";

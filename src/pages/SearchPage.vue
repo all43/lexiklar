@@ -189,7 +189,7 @@ import { isIOS26Plus } from "../utils/device.js";
 import { getCached, setItem, SHOW_ARTICLES_KEY, SEARCH_BAR_POSITION_KEY, type SearchBarPosition } from "../utils/storage.js";
 import type { SearchResult } from "../../types/search.js";
 import WordListBadges from "../components/WordListBadges.vue";
-import { wordListTitle, stripArticle } from "../utils/word-list.js";
+import { wordListTitle, stripArticle, isArticle } from "../utils/word-list.js";
 import {
   searchByLemma,
   searchByGlossEn,
@@ -489,7 +489,7 @@ async function search(q: string, gen: number) {
 }
 
 function addPhraseTerm(lemma: string) {
-  if (lemma.length < 3) return;
+  if (lemma.length < 3 || isArticle(lemma)) return;
   const now = Date.now();
   phraseTerms.value = phraseTerms.value.filter(
     e => e.term.toLowerCase() !== lemma.toLowerCase(),
