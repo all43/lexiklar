@@ -466,14 +466,24 @@ const isFavorite = ref(false);
 
 // Computed
 
-const DEMOTED_TAGS = new Set(["colloquial", "derogatory", "vulgar", "slang", "informal", "figurative", "plural-only"]);
+// Strategy C: demote vulgar/derog/slang, reorder only with strong signal
+const DEMOTED_TAGS = new Set(["derogatory", "vulgar", "slang"]);
 const isDemoted = (s: Sense) => s.tags?.some((t) => DEMOTED_TAGS.has(t)) ? 1 : 0;
+
+function senseSortCmp(a: Sense, b: Sense): number {
+  const dA = isDemoted(a), dB = isDemoted(b);
+  if (dA !== dB) return dA - dB;
+  const exA = a.example_ids?.length ?? 0, exB = b.example_ids?.length ?? 0;
+  const margin = Math.abs(exA - exB), minEx = Math.min(exA, exB);
+  if (margin >= 3 && minEx <= 2) return exB - exA;
+  return 0;
+}
 
 const sortedSenses = computed((): { sense: Sense; origIdx: number }[] => {
   const senses = word.value?.senses ?? [];
   return senses
     .map((sense, origIdx) => ({ sense, origIdx }))
-    .sort((a, b) => isDemoted(a.sense) - isDemoted(b.sense) || (b.sense.example_ids?.length ?? 0) - (a.sense.example_ids?.length ?? 0));
+    .sort((a, b) => senseSortCmp(a.sense, b.sense));
 });
 
 const usedEnSynonyms = computed((): Map<number, Set<string>> => {
@@ -741,7 +751,7 @@ async function handleCrossRef(filePath: string, senseNumber: number | null) {
       senseCount: data.senses?.length || 1,
       senseExplicit: senseNumber != null,
       senses: [...(data.senses || [])]
-        .sort((a, b) => isDemoted(a) - isDemoted(b) || (b.example_ids?.length ?? 0) - (a.example_ids?.length ?? 0))
+        .sort((a, b) => senseSortCmp(a, b))
         .map((s) => ({ gloss: s.gloss, glossEn: s.gloss_en || null })),
       word: data.word,
       article: (data as unknown as Record<string, unknown>).article as string | null || null,
