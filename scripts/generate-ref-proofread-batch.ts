@@ -38,9 +38,14 @@ if (words.length === 0) {
   process.exit(1);
 }
 
-// Find word file by lemma
+// Find word file by lemma — prioritize content POS dirs over names/phrases
+const POS_PRIORITY = ["nouns", "verbs", "adjectives", "adverbs", "prepositions", "conjunctions", "particles", "pronouns", "determiners", "abbreviations", "numerals", "phrases", "names", "interjections"];
 function findWordFile(lemma: string): { path: string; data: Record<string, unknown> } | null {
-  for (const posDir of readdirSync(WORDS_DIR)) {
+  const dirs = readdirSync(WORDS_DIR).sort((a, b) => {
+    const ai = POS_PRIORITY.indexOf(a), bi = POS_PRIORITY.indexOf(b);
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  });
+  for (const posDir of dirs) {
     const dir = join(WORDS_DIR, posDir);
     try {
       for (const file of readdirSync(dir)) {
