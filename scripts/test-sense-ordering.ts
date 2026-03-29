@@ -26,21 +26,34 @@ interface WordData {
 // The expected value is what a B2 German learner should see first.
 
 const TEST_CASES: [string, string][] = [
-  // Function words — Wiktionary order is usually correct
+  // ═══ Function words (25) — Wiktionary order is usually correct ═══
   ["prepositions/in", "in"],
   ["prepositions/auf", "on"],
   ["prepositions/zu", "toward"],
   ["prepositions/bei", "with"],
   ["prepositions/zwischen", "between (location)"],
+  ["prepositions/für", "for"],
+  ["prepositions/um", "around"],
+  ["prepositions/über", "above"],
   ["conjunctions/und", "and"],
   ["conjunctions/wenn", "if"],
+  ["conjunctions/als", "than"],
+  ["conjunctions/aber", "but"],
+  ["conjunctions/ob", "whether"],
   ["particles/nicht", "not"],
   ["particles/nur", "only"],
+  ["particles/bis", "until"],
   ["adverbs/da", "there"],
   ["adverbs/immer", "always"],
   ["adverbs/je", "ever"],
+  ["adverbs/noch", "still (present)"],  // "furthermore" is Wiktionary first but "still" is the B2 meaning
+  ["adverbs/wo", "where"],
+  ["adverbs/nun", "now"],
+  ["pronouns/es", "it"],
+  ["pronouns/man", "one"],              // impersonal "man" = "one/you" is the core B2 meaning
+  ["determiners/ein", "a (masc)"],
 
-  // Nouns — primary everyday meaning
+  // ═══ Nouns (25) — primary everyday meaning ═══
   ["nouns/Ei", "egg (food)"],
   ["nouns/Tag_zeitraum", "day"],
   ["nouns/Land", "country"],
@@ -48,23 +61,28 @@ const TEST_CASES: [string, string][] = [
   ["nouns/Film", "movie"],
   ["nouns/Auto_automobil", "car"],
   ["nouns/Idee", "idea"],
-  ["nouns/Weg", "path"],            // shared example IDs inflate "connection"
+  ["nouns/Weg", "path"],
   ["nouns/Wasser", "water"],
   ["nouns/Spiel", "play"],
   ["nouns/Seite", "side"],
-  ["nouns/Arbeit", "task"],          // "task" is defensible — more general than "job"
-  ["nouns/Welt", "world (society)"], // `historical` tag is misleading — this is current usage
+  ["nouns/Arbeit", "task"],
+  ["nouns/Welt", "world (society)"],
   ["nouns/Recht", "right"],
   ["nouns/Ordnung", "order"],
   ["nouns/Musik", "music"],
   ["nouns/Doktor", "doctor"],
-  ["nouns/Zeug", "stuff"],           // derogatory tag — must not demote
+  ["nouns/Zeug", "stuff"],
   ["nouns/Kumpel", "friend"],
-  ["nouns/Killer", "killer"],        // all senses colloquial, only 2 examples
+  ["nouns/Killer", "killer"],
+  ["nouns/Pass", "passport"],
+  ["nouns/Schlüssel", "key"],
+  ["nouns/Staat", "state"],
+  ["nouns/Zustand", "condition"],
+  ["nouns/Lauf", "run (noun)"],
 
-  // Verbs — primary everyday meaning
+  // ═══ Verbs (25) — primary everyday meaning ═══
   ["verbs/haben", "have (auxiliary)"],
-  ["verbs/lassen", "leave (unchanged)"], // most basic sense; "allow" and "refrain from" are derivatives
+  ["verbs/lassen", "leave (unchanged)"],
   ["verbs/geben", "hand"],
   ["verbs/fahren", "drive"],
   ["verbs/treffen", "meet"],
@@ -72,14 +90,49 @@ const TEST_CASES: [string, string][] = [
   ["verbs/stellen", "stand"],
   ["verbs/kriegen", "get"],
   ["verbs/leben", "live"],
+  ["verbs/leisten", "accomplish"],       // "indulge" is Wiktionary first but "accomplish/achieve" is B2 core
+  ["verbs/treten", "step on"],
+  ["verbs/bauen", "construct"],
+  ["verbs/verschwinden", "vanish"],
+  ["verbs/melden", "report"],
+  ["verbs/werfen", "throw"],
+  ["verbs/leiden", "suffer"],
+  ["verbs/schießen", "fire"],
+  ["verbs/ergeben", "result in"],
+  ["verbs/scheinen", "shine"],
+  ["verbs/wirken", "work"],
+  ["verbs/fangen", "capture"],
+  ["verbs/vertreten", "represent"],
+  ["verbs/unterhalten_etwas", "entertain"],
+  ["verbs/liefern", "deliver"],
+  ["verbs/verhalten_zurückhalten", "suppress"],
 
-  // Adjectives — primary everyday meaning
+  // ═══ Adjectives (25) — primary everyday meaning ═══
   ["adjectives/gut", "good"],
   ["adjectives/einfach", "easy"],
   ["adjectives/hoch", "high (position)"],
   ["adjectives/stark", "powerful"],
   ["adjectives/kurz", "short"],
   ["adjectives/egal", "indifferent"],
+  ["adjectives/aktiv", "engaged"],
+  ["adjectives/positiv", "favorable"],
+  ["adjectives/schwarz", "black"],
+  ["adjectives/scharf", "sharp"],
+  ["adjectives/sauber", "clean"],
+  ["adjectives/negativ", "unfavorable"],
+  ["adjectives/grün", "green"],
+  ["adjectives/dick", "thick"],
+  ["adjectives/trocken", "dry"],
+  ["adjectives/blind", "sightless"],
+  ["adjectives/ordentlich", "tidy"],
+  ["adjectives/fein", "fine"],
+  ["adjectives/schief", "slanted"],
+  ["adjectives/wild", "untamed"],
+  ["adjectives/nackt", "nude"],
+  ["adjectives/hell", "bright"],
+  ["adjectives/kräftig", "strong"],
+  ["adjectives/glatt", "smooth"],
+  ["adjectives/satt", "full"],
 ];
 
 // ─── Strategies ───
