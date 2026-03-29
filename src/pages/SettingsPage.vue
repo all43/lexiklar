@@ -157,7 +157,7 @@ import { getCached, setItem, removeItem, SHOW_ARTICLES_KEY, CONDENSED_GRAMMAR_KE
 import { Capacitor } from "@capacitor/core";
 import { getDbVersion, checkForUpdates, applyUpdate as applyDbUpdate, cacheClear, cacheSize, type UpdateInfo } from "../utils/db.js";
 import { dbReady, dbDownloadNeeded } from "../utils/db-update-state.js";
-import { pendingAppUpdate, downloadAndApplyAppUpdate, reloadApp as liveReloadApp, type AppUpdateInfo } from "../utils/live-update.js";
+import { pendingAppUpdate, checkAppUpdate, downloadAndApplyAppUpdate, reloadApp as liveReloadApp, type AppUpdateInfo } from "../utils/live-update.js";
 
 const THEME_OPTIONS = [
   { value: "auto" as const, labelKey: "settings.themeAuto" },
@@ -221,18 +221,30 @@ function formatSize(bytes: number | undefined | null): string {
 
 async function checkUpdates() {
   updateState.value = "checking";
-  const result = await checkForUpdates();
-  if (!result) {
-    updateState.value = "error";
-    setTimeout(() => { updateState.value = "idle"; }, 3000);
+
+  const [dbResult, appResult] = await Promise.all([
+    checkForUpdates(),
+    checkAppUpdate(),
+  ]);
+
+  // Handle app update result
+  if (appResult?.available) {
+    pendingAppUpdate.value = appResult;
+    appUpdateState.value = "available";
+  }
+
+  // Handle DB update result
+  if (!dbResult) {
+    updateState.value = appResult?.available ? "idle" : "error";
+    if (!appResult?.available) setTimeout(() => { updateState.value = "idle"; }, 3000);
     return;
   }
-  if (!result.available) {
-    updateState.value = "up-to-date";
-    setTimeout(() => { updateState.value = "idle"; }, 3000);
+  if (!dbResult.available) {
+    updateState.value = appResult?.available ? "idle" : "up-to-date";
+    if (!appResult?.available) setTimeout(() => { updateState.value = "idle"; }, 3000);
     return;
   }
-  updateInfo.value = result;
+  updateInfo.value = dbResult;
   updateState.value = "available";
 }
 
