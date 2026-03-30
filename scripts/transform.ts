@@ -1366,6 +1366,14 @@ function mergeWithExisting(newData: TransformOutput, existingPath: string): Tran
     return newData;
   }
 
+  const existingSource = (existing as { _meta?: { source?: string } })._meta?.source;
+  if (existingSource === "manual") {
+    console.warn(
+      `[manual-word] WIKTIONARY MERGE: "${newData.word}" (${existingPath}) was manually authored ` +
+        `and now appears in the Wiktionary dump. Grammar data will be replaced. Review the merged file.`,
+    );
+  }
+
   // Preserve fields added by enrich step (not owned by transform)
   if ((existing as { zipf?: number }).zipf != null) {
     newData.zipf = (existing as { zipf: number }).zipf;

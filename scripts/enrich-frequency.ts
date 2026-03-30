@@ -198,6 +198,11 @@ function enrichFiles(newsMap: FPMMap, wikiMap: FPMMap, subtlexMap: FPMMap, opens
       }
       enriched++;
     } else {
+      const isManual = (data as { _meta?: { source?: string } })._meta?.source === "manual";
+      if (isManual) {
+        enriched++; // manual words count as enriched (zipf is author-set)
+        continue;
+      }
       if (data.zipf != null) {
         delete data.zipf;
         changed = true;
