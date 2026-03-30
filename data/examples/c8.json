@@ -5971,63 +5971,21 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Sie",
-        "lemma": "sie",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "studierten",
         "lemma": "studieren",
         "pos": "verb",
-        "gloss_hint": "study"
-      },
-      {
-        "form": "den",
-        "lemma": "der",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
         "form": "Stadtplan",
         "lemma": "Stadtplan",
         "pos": "noun",
-        "gloss_hint": "city map"
-      },
-      {
-        "form": "der",
-        "lemma": "der",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "an",
-        "lemma": "an",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "einer",
-        "lemma": "ein",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
         "form": "Wand",
         "lemma": "Wand",
         "pos": "noun",
-        "gloss_hint": "wall"
-      },
-      {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "der",
-        "lemma": "der",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
@@ -6040,10 +5998,14 @@
         "form": "hing",
         "lemma": "hängen",
         "pos": "verb",
-        "gloss_hint": "hang"
+        "gloss_hint": null
       }
     ],
-    "text_linked": "„Sie [[studierten|verbs/studieren#1]] [[den|determiners/der]] [[Stadtplan|nouns/Stadtplan]], [[der|determiners/der]] [[an|prepositions/an]] [[einer|determiners/ein]] [[Wand|nouns/Wand#3]] [[in|prepositions/in]] der [[Rezeption|nouns/Rezeption#3]] [[hing|verbs/hängen_einem#1]].“"
+    "text_linked": "„Sie [[studierten|verbs/studieren#1]] [[den|determiners/der]] [[Stadtplan|nouns/Stadtplan]], [[der|determiners/der]] [[an|prepositions/an]] [[einer|determiners/ein]] [[Wand|nouns/Wand#3]] [[in|prepositions/in]] der [[Rezeption|nouns/Rezeption#3]] [[hing|verbs/hängen_einem#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "e266bc0d"
+    }
   },
   "c83ba14beb": {
     "text": "Neuere Arbeitsgesetze lassen für den Sonntag wieder mehr und mehr Ausnahmen zu.",
@@ -26129,6 +26091,41 @@
       }
     ],
     "text_linked": "[[Der|pronouns/der_nominativ]] [[Satz|nouns/Satz#1]] „Der [[kleine|adjectives/klein#1]] [[Junge|nouns/Junge#1]] [[ist|verbs/sein#2]] [[krank|adjectives/krank#1]]“ ist syntaktisch [[vollständig|adjectives/vollständig#1]]: [[Es|pronouns/es]] [[fehlt|verbs/fehlen#1]] [[kein|pronouns/kein#1]] [[notwendiges|adjectives/notwendig#1]] Satzglied; [[daher|adverbs/daher#3]] ist er [[keine|pronouns/kein#1]] Ellipse; er [[besteht|verbs/bestehen#2]] [[nur|particles/nur#1]] [[aus|prepositions/aus#1]] [[einem|determiners/ein#1]] Teilsatz. [[Also|adverbs/also#4]] ist er [[ein|determiners/ein#1]] [[einfacher|adjectives/einfach#5]] Satz."
+  },
+  "c8f6134ab0": {
+    "text": "„Der Verdienst für Überstunden kann, muss aber nicht, mit der nächsten Lohnabrechnung ausgezahlt werden.“",
+    "translation": "The pay for overtime can, but does not have to, be paid out with the next pay slip.",
+    "source": "wiktionary",
+    "lemmas": [
+      "Lohnabrechnung"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Verdienst",
+        "lemma": "Verdienst",
+        "pos": "noun",
+        "gloss_hint": "income"
+      },
+      {
+        "form": "Überstunden",
+        "lemma": "Überstunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lohnabrechnung",
+        "lemma": "Lohnabrechnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgezahlt",
+        "lemma": "auszahlen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ]
   },
   "c8f62de669": {
     "text": "„Eines der drei Schlösser an der Wohnungstür ließ sich wie immer nur öffnen, wenn Ramin die Tür mit ganzer Kraft an- und gleichzeitig hochzog.“",

@@ -1,746 +1,3497 @@
 {
   "description": "Words that pass the frequency filter unconditionally. For CEFR/educationally important vocabulary that is underrepresented in news and subtitle corpora (occupation nouns, domain-specific everyday words, etc.).",
   "words": [
-    { "word": "Automechaniker", "domain": "work", "reason": "occupation noun — rare in corpora despite being essential everyday vocabulary" },
-    { "word": "Mechatroniker", "domain": "work", "reason": "modern profession — mechatronics technician, common Ausbildungsberuf" },
-    { "word": "Mechatronikerin", "domain": "work", "reason": "feminine form of Mechatroniker" },
-    { "word": "Informatiker", "domain": "work", "reason": "modern profession — computer scientist / IT specialist" },
-    { "word": "Informatikerin", "domain": "work", "reason": "feminine form of Informatiker" },
-    { "word": "Softwareentwickler", "domain": "work", "reason": "modern profession — software developer" },
-    { "word": "Softwareentwicklerin", "domain": "work", "reason": "feminine form of Softwareentwickler" },
-    { "word": "Programmierer", "domain": "work", "reason": "modern profession — programmer" },
-    { "word": "Programmiererin", "domain": "work", "reason": "feminine form of Programmierer" },
-    { "word": "Webentwickler", "domain": "work", "reason": "modern profession — web developer" },
-    { "word": "Webentwicklerin", "domain": "work", "reason": "feminine form of Webentwickler" },
-    { "word": "Netzwerktechniker", "domain": "work", "reason": "modern profession — network technician" },
-    { "word": "Netzwerktechnikerin", "domain": "work", "reason": "feminine form of Netzwerktechniker" },
-    { "word": "Systemadministrator", "domain": "work", "reason": "modern profession — system administrator" },
-    { "word": "Systemadministratorin", "domain": "work", "reason": "feminine form of Systemadministrator" },
-    { "word": "Elektroniker", "domain": "work", "reason": "modern profession — electronics technician, common Ausbildungsberuf" },
-    { "word": "Elektronikerin", "domain": "work", "reason": "feminine form of Elektroniker" },
-    { "word": "Logistiker", "domain": "work", "reason": "modern profession — logistics specialist" },
-    { "word": "Logistikerin", "domain": "work", "reason": "feminine form of Logistiker" },
-    { "word": "Mediengestalter", "domain": "work", "reason": "modern profession — media designer, common Ausbildungsberuf" },
-    { "word": "Mediengestalterin", "domain": "work", "reason": "feminine form of Mediengestalter" },
-    { "word": "Fachinformatiker", "domain": "work", "reason": "modern profession — IT specialist (Ausbildungsberuf)" },
-    { "word": "Fachinformatikerin", "domain": "work", "reason": "feminine form of Fachinformatiker" },
-    { "word": "Datenschutzbeauftragter", "domain": "work", "reason": "modern profession — data protection officer, legally required role in Germany" },
-    { "word": "Datenschutzbeauftragte", "domain": "work", "reason": "feminine/nominalized form of Datenschutzbeauftragter" },
-    { "word": "Cybersicherheit", "domain": "work", "reason": "modern domain — cybersecurity" },
-    { "word": "Digitalisierung", "domain": "work", "reason": "modern domain — digitalisation, ubiquitous in German discourse" },
-
-    { "word": "Hausarzt", "domain": "health", "reason": "subtitle rank 26286" },
-    { "word": "Attest", "domain": "health", "reason": "subtitle rank 30209" },
-    { "word": "Krankenschein", "domain": "health", "reason": "not in top 50k subtitles" },
-    { "word": "Krankmeldung", "domain": "health", "reason": "not in top 50k subtitles" },
-    { "word": "Krankschreibung", "domain": "health", "reason": "Leipzig 28484" },
-    { "word": "Physiotherapie", "domain": "health", "reason": "subtitle rank 28462" },
-    { "word": "Erkältungsmittel", "domain": "health", "reason": "not in top 50k subtitles" },
-    { "word": "Erste-Hilfe-Kasten", "domain": "health", "reason": "subtitle rank 34603" },
-    { "word": "Notfallnummer", "domain": "health", "reason": "not found in corpora" },
-    { "word": "Versichertenkarte", "domain": "health", "reason": "not found in corpora — health insurance card essential for Germany/Austria" },
-    { "word": "Tablette", "domain": "health", "reason": "Zipf 2.91 — medicine noun, appears singular less than plural Tabletten" },
-    { "word": "Salbe", "domain": "health", "reason": "Zipf 2.83 — ointment/cream, B1 pharmacy vocabulary" },
-
-    { "word": "Nebenkosten", "domain": "housing", "reason": "subtitle rank 40979" },
-    { "word": "Betriebskosten", "domain": "housing", "reason": "Leipzig 13549, above subtitle cutoff" },
-    { "word": "Kündigungsfrist", "domain": "housing", "reason": "not in top 50k subtitles" },
-    { "word": "Wohngemeinschaft", "domain": "housing", "reason": "not in top 50k subtitles, Leipzig 25203" },
-    { "word": "Abstellraum", "domain": "housing", "reason": "subtitle rank 47992" },
-    { "word": "Hausverwaltung", "domain": "housing", "reason": "not in top 50k subtitles" },
-    { "word": "Kellerraum", "domain": "housing", "reason": "not found in corpora" },
-    { "word": "Zentralheizung", "domain": "housing", "reason": "not in top 50k subtitles" },
-    { "word": "Warmwasser", "domain": "housing", "reason": "Leipzig 79785" },
-    { "word": "Stromzähler", "domain": "housing", "reason": "not in top 50k subtitles" },
-    { "word": "Gasverbrauch", "domain": "housing", "reason": "not in top 50k subtitles" },
-    { "word": "Internetanschluss", "domain": "housing", "reason": "not in top 50k subtitles" },
-    { "word": "Vertragslaufzeit", "domain": "housing", "reason": "Leipzig 29197" },
-
-    { "word": "Bewerbungsunterlagen", "domain": "work", "reason": "not in top 50k subtitles" },
-    { "word": "Probezeit", "domain": "work", "reason": "subtitle rank 27386" },
-    { "word": "Gehaltsnachweis", "domain": "work", "reason": "not found in corpora" },
-    { "word": "Rentenversicherung", "domain": "work", "reason": "Leipzig 8772" },
-    { "word": "Sozialversicherung", "domain": "work", "reason": "subtitle rank 34961" },
-    { "word": "Betriebsrat", "domain": "work", "reason": "subtitle rank 47363" },
-    { "word": "Urlaubsantrag", "domain": "work", "reason": "not in top 50k subtitles" },
-    { "word": "Azubi", "domain": "work", "reason": "Zipf 2.51 — abbreviation for Auszubildende(r), ubiquitous in German working life" },
-    { "word": "Überstunde", "domain": "work", "reason": "Zipf 2.41 — usually appears as plural Überstunden; singular underrepresented" },
-    { "word": "Teilzeit", "domain": "work", "reason": "Zipf 3.06 — essential work contract vocabulary" },
-    { "word": "Vollzeit", "domain": "work", "reason": "Zipf 3.06 — essential work contract vocabulary" },
-    { "word": "Aushilfe", "domain": "work", "reason": "Zipf 2.87 — temporary/casual worker, very common in job ads" },
-    { "word": "Stellengesuch", "domain": "work", "reason": "not found in corpora — job-wanted ad, standard B1 vocabulary" },
-    { "word": "Tagungsraum", "domain": "work", "reason": "not found in corpora — meeting/conference room" },
-    { "word": "Verlaufsprotokoll", "domain": "work", "reason": "not found in corpora — meeting minutes, B2 work vocabulary" },
-
-    { "word": "Rasierapparat", "domain": "household", "reason": "not found in corpora" },
-    { "word": "Wäscheklammer", "domain": "household", "reason": "not found in corpora" },
-    { "word": "Bügeleisen", "domain": "household", "reason": "subtitle rank 28729" },
-    { "word": "Spülmittel", "domain": "household", "reason": "not in top 50k subtitles" },
-    { "word": "Waschmittel", "domain": "household", "reason": "subtitle rank 33748" },
-    { "word": "Putzmittel", "domain": "household", "reason": "subtitle rank 47442" },
-    { "word": "Küchenrolle", "domain": "household", "reason": "not in top 50k subtitles" },
-    { "word": "Alufolie", "domain": "household", "reason": "subtitle rank 36380" },
-    { "word": "Frischhaltefolie", "domain": "household", "reason": "not in top 50k subtitles" },
-    { "word": "Spülbecken", "domain": "household", "reason": "subtitle rank 41397" },
-    { "word": "Steckdose", "domain": "household", "reason": "subtitle rank 28129" },
-    { "word": "Abfalleimer", "domain": "household", "reason": "Zipf 2.63 — trash bin, essential household word" },
-    { "word": "Streichholz", "domain": "household", "reason": "Zipf 2.98 — match (fire), B1 household vocabulary" },
-
-    { "word": "Reifenwechsel", "domain": "transport", "reason": "not found in corpora" },
-    { "word": "Abschleppdienst", "domain": "transport", "reason": "subtitle rank 44570" },
-    { "word": "Pannenhilfe", "domain": "transport", "reason": "not found in corpora" },
-    { "word": "Monatskarte", "domain": "transport", "reason": "not in top 50k subtitles" },
-    { "word": "Jahreskarte", "domain": "transport", "reason": "Leipzig 48390" },
-    { "word": "Fahrtkosten", "domain": "transport", "reason": "Leipzig 47499" },
-    { "word": "Parkverbot", "domain": "transport", "reason": "subtitle rank 39511" },
-    { "word": "Fahrkarte", "domain": "transport", "reason": "Zipf 3.17 — ticket (train/bus), essential B1 transport word" },
-    { "word": "Umleitung", "domain": "transport", "reason": "Zipf 3.12 — detour/diversion, standard road sign vocabulary" },
-    { "word": "Einbahnstraße", "domain": "transport", "reason": "Zipf 3.15 — one-way street, standard road sign vocabulary" },
-    { "word": "Fahrplan", "domain": "transport", "reason": "below frequency cutoff — timetable/schedule, essential A2 public transport vocabulary" },
-    { "word": "Fahrgast", "domain": "transport", "reason": "below frequency cutoff — passenger, essential public transport vocabulary" },
-    { "word": "Umstieg", "domain": "transport", "reason": "below frequency cutoff — transfer/change (noun), core public transport vocabulary" },
-    { "word": "Tageskarte", "domain": "transport", "reason": "below frequency cutoff — day ticket, standard public transport ticket type" },
-    { "word": "Wochenkarte", "domain": "transport", "reason": "below frequency cutoff — weekly ticket, standard public transport ticket type" },
-    { "word": "Einzelfahrschein", "domain": "transport", "reason": "below frequency cutoff — single ticket, A2 public transport vocabulary" },
-    { "word": "Fahrschein", "domain": "transport", "reason": "below frequency cutoff — ticket (general), A2 public transport vocabulary" },
-    { "word": "Kurzstrecke", "domain": "transport", "reason": "below frequency cutoff — short-distance fare, standard BVG/MVV ticket type" },
-    { "word": "Fahrkartenautomat", "domain": "transport", "reason": "below frequency cutoff — ticket machine, essential station vocabulary" },
-    { "word": "Verkehrsmittel", "domain": "transport", "reason": "below frequency cutoff — means of transport, essential A2 vocabulary" },
-    { "word": "Tarifzone", "domain": "transport", "reason": "below frequency cutoff — fare zone, standard public transport vocabulary" },
-    { "word": "Abfahrtszeit", "domain": "transport", "reason": "below frequency cutoff — departure time, essential travel vocabulary" },
-    { "word": "Ankunftszeit", "domain": "transport", "reason": "below frequency cutoff — arrival time, essential travel vocabulary" },
-    { "word": "Bahnhofshalle", "domain": "transport", "reason": "below frequency cutoff — station concourse, essential station vocabulary" },
-    { "word": "Speisewagen", "domain": "transport", "reason": "below frequency cutoff — dining car, standard long-distance train vocabulary" },
-    { "word": "Kundenzentrum", "domain": "transport", "reason": "below frequency cutoff — customer service centre, A2 vocabulary (BVG, Deutsche Bahn, etc.)" },
-    { "word": "Gültigkeit", "domain": "transport", "reason": "below frequency cutoff — validity, essential for tickets and documents" },
-    { "word": "Geltungsdauer", "domain": "transport", "reason": "below frequency cutoff — validity period, standard public transport ticket term" },
-    { "word": "Ermäßigungstarif", "domain": "transport", "reason": "below frequency cutoff — reduced fare, standard ticket pricing vocabulary" },
-    { "word": "entwerten", "domain": "transport", "reason": "below frequency cutoff — to validate/stamp a ticket, essential daily action in German public transport" },
-    { "word": "Kontrolleur", "domain": "transport", "reason": "below frequency cutoff — ticket inspector, commonly encountered on trains/buses" },
-    { "word": "Fahrkartenschalter", "domain": "transport", "reason": "below frequency cutoff — ticket counter/booth at stations" },
-    { "word": "Sitzplatz", "domain": "transport", "reason": "below frequency cutoff — seat (on vehicle), fundamental booking vocabulary" },
-    { "word": "Platzreservierung", "domain": "transport", "reason": "below frequency cutoff — seat reservation, essential for long-distance trains" },
-    { "word": "Rolltreppe", "domain": "transport", "reason": "below frequency cutoff — escalator, standard station infrastructure" },
-    { "word": "Gleiswechsel", "domain": "transport", "reason": "below frequency cutoff — platform change, common in station announcements" },
-    { "word": "Anschlussverbindung", "domain": "transport", "reason": "below frequency cutoff — connecting train/bus, essential for journey planning" },
-    { "word": "Triebwagen", "domain": "transport", "reason": "below frequency cutoff — powered train unit, standard railway terminology" },
-    { "word": "Fahrgastrechte", "domain": "transport", "reason": "below frequency cutoff — passenger rights, B2 vocabulary for delay compensation" },
-    { "word": "zusteigen", "domain": "transport", "reason": "below frequency cutoff — to board (train/bus), complement to aussteigen" },
-    { "word": "Bahnsteigkante", "domain": "transport", "reason": "below frequency cutoff — platform edge, safety vocabulary in station announcements" },
-    { "word": "Behindertenaufzug", "domain": "transport", "reason": "below frequency cutoff — accessible elevator, accessibility vocabulary" },
-    { "word": "Rollator", "domain": "transport", "reason": "below frequency cutoff — wheeled walker, BVG/public transport accessibility vocabulary" },
-    { "word": "Hilfsmittel", "domain": "transport", "reason": "below frequency cutoff — aid/assistive device, BVG regulations vocabulary" },
-    { "word": "Krankenfahrstuhl", "domain": "transport", "reason": "below frequency cutoff — motorized wheelchair, still used by BVG in regulations" },
-    { "word": "Entwertung", "domain": "transport", "reason": "below frequency cutoff — ticket validation/cancellation, noun form of entwerten" },
-    { "word": "stempeln", "domain": "transport", "reason": "below frequency cutoff — to stamp (a ticket), used on older regional trains" },
-    { "word": "validieren", "domain": "transport", "reason": "below frequency cutoff — to validate, modern term for ticket validation machines" },
-    { "word": "Fahrkartenkontrolle", "domain": "transport", "reason": "below frequency cutoff — ticket inspection, essential regional train vocabulary" },
-    { "word": "Zugbegleiter", "domain": "transport", "reason": "below frequency cutoff — train attendant/conductor, Deutsche Bahn standard term" },
-    { "word": "Zugbegleiterin", "domain": "transport", "reason": "below frequency cutoff — female train attendant" },
-    { "word": "Anschlusszug", "domain": "transport", "reason": "below frequency cutoff — connecting train, heard daily in regional train announcements" },
-    { "word": "Regionalbahn", "domain": "transport", "reason": "below frequency cutoff — regional train (RB), fundamental German rail network vocabulary" },
-    { "word": "Regionalexpress", "domain": "transport", "reason": "below frequency cutoff — regional express (RE), fundamental German rail network vocabulary" },
-    { "word": "Intercity", "domain": "transport", "reason": "below frequency cutoff — intercity train (IC), Deutsche Bahn train category" },
-    { "word": "Verspätung", "domain": "transport", "reason": "below frequency cutoff — delay, quintessential Deutsche Bahn vocabulary" },
-    { "word": "Zugverspätung", "domain": "transport", "reason": "below frequency cutoff — train delay, common compound form of Verspätung" },
-    { "word": "Streckenunterbrechung", "domain": "transport", "reason": "below frequency cutoff — line interruption, heard in station announcements" },
-    { "word": "Schienenersatzverkehr", "domain": "transport", "reason": "below frequency cutoff — rail replacement bus service (SEV), essential when trains are cancelled" },
-
-    { "word": "Mülltrennung", "domain": "environment", "reason": "not in top 50k subtitles" },
-    { "word": "Wertstoffhof", "domain": "environment", "reason": "subtitle rank 44192" },
-    { "word": "Biomüll", "domain": "environment", "reason": "not in top 50k subtitles" },
-    { "word": "Papiermüll", "domain": "environment", "reason": "not found in corpora" },
-    { "word": "Sperrmüll", "domain": "environment", "reason": "Leipzig 31529" },
-    { "word": "Recycling", "domain": "environment", "reason": "subtitle rank 38621" },
-
-    { "word": "Kontoauszug", "domain": "finance", "reason": "not found in corpora" },
-    { "word": "Girokonto", "domain": "finance", "reason": "not in top 50k subtitles" },
-    { "word": "Dauerauftrag", "domain": "finance", "reason": "not found in corpora" },
-    { "word": "Steuerklasse", "domain": "finance", "reason": "Leipzig 38509" },
-    { "word": "Bankleitzahl", "domain": "finance", "reason": "not found in corpora" },
-    { "word": "Überweisung", "domain": "finance", "reason": "Zipf 3.19 — bank transfer, essential B1 banking word" },
-    { "word": "Geldautomat", "domain": "finance", "reason": "Zipf 2.65 — ATM, essential everyday vocabulary" },
-
-    { "word": "Kassenzettel", "domain": "shopping", "reason": "not found in corpora" },
-    { "word": "Kassenbon", "domain": "shopping", "reason": "not in top 50k subtitles" },
-    { "word": "Garantieschein", "domain": "shopping", "reason": "not found in corpora" },
-    { "word": "Reklamation", "domain": "shopping", "reason": "not found in corpora" },
-    { "word": "Rückgabe", "domain": "shopping", "reason": "subtitle rank 28156" },
-    { "word": "Umtausch", "domain": "shopping", "reason": "Leipzig 51015" },
-    { "word": "Mehrwertsteuer", "domain": "shopping", "reason": "Zipf 3.00 — VAT, appears on every German receipt" },
-    { "word": "Ermäßigung", "domain": "shopping", "reason": "Zipf 2.72 — discount/reduction, essential shopping vocabulary" },
-
-    { "word": "Vollkornbrot", "domain": "food", "reason": "not in top 50k subtitles" },
-    { "word": "Aufschnitt", "domain": "food", "reason": "subtitle rank 43805" },
-    { "word": "Tiefkühlkost", "domain": "food", "reason": "not in top 50k subtitles" },
-    { "word": "Haltbarkeitsdatum", "domain": "food", "reason": "not in top 50k subtitles" },
-    { "word": "Mindesthaltbarkeitsdatum", "domain": "food", "reason": "Leipzig 42734" },
-    { "word": "Möhre", "domain": "food", "reason": "Zipf 2.75 — carrot (standard German), basic vegetable" },
-    { "word": "Nudel", "domain": "food", "reason": "Zipf 2.81 — pasta/noodle, usually plural Nudeln — singular underrepresented" },
-    { "word": "Bohne", "domain": "food", "reason": "Zipf 2.86 — bean, basic vegetable vocabulary" },
-    { "word": "Zwiebel", "domain": "food", "reason": "Zipf 3.06 — onion, core cooking vocabulary" },
-    { "word": "Schnitzel", "domain": "food", "reason": "Zipf 3.04 — schnitzel, iconic German/Austrian dish" },
-    { "word": "Hähnchen", "domain": "food", "reason": "Zipf 3.14 — chicken (meat), standard menu vocabulary" },
-    { "word": "Marmelade", "domain": "food", "reason": "Zipf 3.20 — jam, standard breakfast vocabulary" },
-    { "word": "Kochtopf", "domain": "food", "reason": "below frequency cutoff — cooking pot, A1 kitchen vocabulary" },
-    { "word": "Blumenkohl", "domain": "food", "reason": "below frequency cutoff — cauliflower, A2 vegetable vocabulary" },
-    { "word": "Bratwurst", "domain": "food", "reason": "below frequency cutoff — bratwurst, A2 iconic German food" },
-    { "word": "Traube", "domain": "food", "reason": "below frequency cutoff — grape, A2 fruit vocabulary" },
-
-    { "word": "Sandale", "domain": "clothing", "reason": "below frequency cutoff — sandal, A1 footwear vocabulary" },
-
-    { "word": "Tischler", "domain": "work", "reason": "below frequency cutoff — carpenter, B1 profession vocabulary" },
-    { "word": "zusammenfassen", "domain": "education", "reason": "below frequency cutoff — to summarize, B1 academic/work verb" },
-    { "word": "unpünktlich", "domain": "social", "reason": "below frequency cutoff — unpunctual, A2 adjective" },
-    { "word": "prachtvoll", "domain": "general", "reason": "below frequency cutoff — magnificent/splendid, B1-B2 adjective" },
-
-    { "word": "Fragenkatalog", "domain": "education", "reason": "below frequency cutoff — question catalogue, used in Einbürgerungstest prep" },
-    { "word": "Klausur", "domain": "education", "reason": "below frequency cutoff — written exam, A2-B1 education vocabulary" },
-    { "word": "Prüfungsergebnis", "domain": "education", "reason": "below frequency cutoff — exam result, B1 education vocabulary" },
-    { "word": "bestehen", "domain": "education", "reason": "below frequency cutoff — to pass (an exam), A2 essential verb" },
-    { "word": "durchfallen", "domain": "education", "reason": "below frequency cutoff — to fail (an exam), A2 essential verb" },
-    { "word": "Sprachkurs", "domain": "education", "reason": "below frequency cutoff — language course, A1 learner vocabulary" },
-    { "word": "Integrationskurs", "domain": "education", "reason": "below frequency cutoff — integration course, mandatory for many immigrants in Germany" },
-    { "word": "Einbürgerungstest", "domain": "education", "reason": "below frequency cutoff — citizenship test, essential civic/admin vocabulary" },
-    { "word": "Volkshochschule", "domain": "education", "reason": "below frequency cutoff — adult education centre (VHS), where most language courses happen" },
-    { "word": "Zertifikat", "domain": "education", "reason": "below frequency cutoff — certificate, B1 education/admin vocabulary" },
-    { "word": "Wortschatz", "domain": "education", "reason": "below frequency cutoff — vocabulary, A2 metalinguistic term" },
-    { "word": "Arbeitsblatt", "domain": "education", "reason": "below frequency cutoff — worksheet, A2 classroom vocabulary" },
-    { "word": "Prüfungsangst", "domain": "education", "reason": "below frequency cutoff — exam anxiety, B1-B2 education vocabulary" },
-    { "word": "Kursteilnehmer", "domain": "education", "reason": "below frequency cutoff — course participant, A2 classroom vocabulary" },
-
-    { "word": "Schulpflicht", "domain": "education", "reason": "Leipzig 60376" },
-    { "word": "Elternsprechtag", "domain": "education", "reason": "not found in corpora" },
-    { "word": "Lehrplan", "domain": "education", "reason": "subtitle rank 27445" },
-    { "word": "Antwortbogen", "domain": "education", "reason": "not found in corpora — answer sheet, appears in Goethe B1 exam instructions" },
-    { "word": "Textaufbau", "domain": "education", "reason": "not found in corpora — text structure, appears in Goethe B1 writing instructions" },
-    { "word": "Berufspraktikum", "domain": "education", "reason": "not found in corpora — work placement, TELC B2 vocabulary" },
-
-    { "word": "Aufenthaltserlaubnis", "domain": "admin", "reason": "Leipzig 46439" },
-    { "word": "Postleitzahl", "domain": "admin", "reason": "Zipf 2.88 — postal code, essential for any form-filling" },
-    { "word": "Familienstand", "domain": "admin", "reason": "Zipf 2.68 — marital status, appears on every official form" },
-    { "word": "Einschreiben", "domain": "admin", "reason": "Zipf 2.91 — registered letter (post), standard postal vocabulary" },
-    { "word": "Anredeform", "domain": "admin", "reason": "not found in corpora — form of address (Sie/du), social norms vocabulary" },
-
-    { "word": "Notausgang", "domain": "safety", "reason": "Zipf 2.84 — emergency exit, essential safety sign" },
-    { "word": "Rutschgefahr", "domain": "safety", "reason": "not found in corpora — slipping hazard, standard safety sign in Germany" },
-
-    { "word": "Wettervorhersage", "domain": "weather", "reason": "Zipf 2.91 — weather forecast, B1 everyday vocabulary" },
-    { "word": "schneien", "domain": "weather", "reason": "Zipf 3.03 — to snow; verb underrepresented vs noun Schnee" },
-
-    { "word": "herunterladen", "domain": "digital", "reason": "Zipf 2.92 — to download; infinitive underrepresented vs inflected forms" },
-    { "word": "hochladen", "domain": "digital", "reason": "Zipf 2.83 — to upload; infinitive underrepresented vs inflected forms" },
-    { "word": "anklicken", "domain": "digital", "reason": "Zipf 2.57 — to click (on); infinitive underrepresented vs inflected forms" },
-
-    { "word": "Bleistift", "domain": "stationery", "reason": "Zipf 2.91 — pencil, essential school/office vocabulary" },
-    { "word": "Kugelschreiber", "domain": "stationery", "reason": "Zipf 3.06 — ballpoint pen, essential school/office vocabulary" },
-    { "word": "Briefumschlag", "domain": "stationery", "reason": "Zipf 2.84 — envelope, essential postal vocabulary" },
-
-    { "word": "Jugendherberge", "domain": "travel", "reason": "Zipf 2.68 — youth hostel, B1 travel vocabulary" },
-    { "word": "Doppelzimmer", "domain": "travel", "reason": "Zipf 2.78 — double room, standard hotel vocabulary" },
-    { "word": "Einzelzimmer", "domain": "travel", "reason": "Zipf 2.94 — single room, standard hotel vocabulary" },
-    { "word": "Übernachtung", "domain": "travel", "reason": "Zipf 3.02 — overnight stay, essential travel vocabulary" },
-    { "word": "Reservierung", "domain": "travel", "reason": "Zipf 3.12 — reservation/booking, essential travel vocabulary" },
-    { "word": "Halbpension", "domain": "travel", "reason": "not found in corpora — half board, standard hotel/travel term" },
-
-    { "word": "einzahlen", "domain": "finance", "reason": "subtitle rank 34551 — infinitive underrepresented vs inflected forms" },
-    { "word": "abmelden", "domain": "admin", "reason": "subtitle rank 47180 — infinitive underrepresented vs inflected forms" },
-    { "word": "recyceln", "domain": "environment", "reason": "subtitle rank 41211" },
-
-    { "word": "Mütze", "domain": "clothing", "reason": "Zipf 3.70 — winter hat, B1 clothing vocabulary; underrepresented vs other clothing items in news" },
-    { "word": "Socken", "domain": "clothing", "reason": "Zipf 3.73 — socks, essential clothing; plural form dominates" },
-    { "word": "Schal", "domain": "clothing", "reason": "Zipf 3.39 — scarf, essential winter clothing" },
-    { "word": "Handschuh", "domain": "clothing", "reason": "Zipf 3.31 — glove, essential winter clothing" },
-    { "word": "Geldbeutel", "domain": "clothing", "reason": "Zipf 3.36 — wallet/purse, everyday carried item" },
-    { "word": "Portemonnaie", "domain": "clothing", "reason": "Zipf 3.35 — wallet (French loanword variant), common in German speech" },
-    { "word": "Badeanzug", "domain": "clothing", "reason": "Zipf 3.00 — swimsuit (women's), B1 clothing vocabulary" },
-    { "word": "Badehose", "domain": "clothing", "reason": "Zipf 3.16 — swimming trunks, B1 clothing vocabulary" },
-    { "word": "Turnschuh", "domain": "clothing", "reason": "Zipf 2.73 — trainer/sneaker, essential everyday footwear" },
-    { "word": "Strumpfhose", "domain": "clothing", "reason": "Zipf 2.79 — tights/pantyhose, B1 clothing item" },
-    { "word": "Hausschuh", "domain": "clothing", "reason": "Zipf 1.90 — house slipper; absent from corpora but essential B1 household vocabulary" },
-
-    { "word": "Tomate", "domain": "food", "reason": "Zipf 3.00 — tomato, core vegetable; singular underrepresented vs plural Tomaten" },
-    { "word": "Gurke", "domain": "food", "reason": "Zipf 3.04 — cucumber/gherkin, common German food item" },
-    { "word": "Hackfleisch", "domain": "food", "reason": "Zipf 3.04 — minced meat, standard German cooking vocabulary" },
-    { "word": "Gewürz", "domain": "food", "reason": "Zipf 2.83 — spice/seasoning, essential cooking vocabulary" },
-    { "word": "Erbse", "domain": "food", "reason": "Zipf 2.69 — pea, basic vegetable; singular underrepresented vs plural Erbsen" },
-
-    { "word": "Wartezimmer", "domain": "health", "reason": "Zipf 2.98 — waiting room (doctor's), essential health vocabulary" },
-    { "word": "Facharzt", "domain": "health", "reason": "Zipf 3.04 — specialist doctor, standard German healthcare term" },
-    { "word": "Impfpass", "domain": "health", "reason": "Zipf 2.09 — vaccination record, essential for travel/admin" },
-    { "word": "Kopfschmerz", "domain": "health", "reason": "below frequency cutoff — headache, A1 health vocabulary" },
-    { "word": "Mandel", "domain": "health", "reason": "below frequency cutoff — tonsil/almond, A2 medical vocabulary" },
-    { "word": "Arztpraxis", "domain": "health", "reason": "below frequency cutoff — doctor's office/practice, A2 health vocabulary" },
-    { "word": "Gürtelrose", "domain": "health", "reason": "below frequency cutoff — shingles, B2 medical vocabulary" },
-
-    { "word": "Bettdecke", "domain": "household", "reason": "Zipf 3.04 — duvet/comforter, basic bedroom vocabulary" },
-    { "word": "Wasserhahn", "domain": "household", "reason": "Zipf 2.83 — tap/faucet, essential household vocabulary" },
-    { "word": "Glühbirne", "domain": "household", "reason": "Zipf 3.00 — light bulb, basic household item" },
-    { "word": "staubsaugen", "domain": "household", "reason": "Zipf 2.40 — to vacuum, essential household chore verb" },
-    { "word": "Gardine", "domain": "household", "reason": "below frequency cutoff — curtain, A2 household vocabulary" },
-
-    { "word": "Zebrastreifen", "domain": "transport", "reason": "Zipf 2.69 — zebra crossing, standard road vocabulary" },
-    { "word": "Fahrradweg", "domain": "transport", "reason": "Zipf 2.55 — cycle path, B1 urban transport vocabulary" },
-    { "word": "Fußgängerzone", "domain": "transport", "reason": "Zipf 2.94 — pedestrian zone, standard German urban vocabulary" },
-    { "word": "Vorfahrt", "domain": "transport", "reason": "Zipf 2.88 — right of way, essential driving vocabulary" },
-
-    { "word": "Seilbahn", "domain": "outdoor", "reason": "cable car — essential DACH leisure/travel vocabulary, underrepresented in corpora (rank 46K in subtitles)" },
-    { "word": "Sessellift", "domain": "outdoor", "reason": "chairlift — B1 winter sports vocabulary, common in DACH" },
-    { "word": "Skilift", "domain": "outdoor", "reason": "ski lift — B1 winter sports vocabulary" },
-    { "word": "Bergbahn", "domain": "outdoor", "reason": "mountain railway — common in DACH tourist regions (Leipzig rank 54K)" },
-    { "word": "Gondel", "domain": "outdoor", "reason": "gondola (cable car cabin / boat) — B1 travel vocabulary" },
-    { "word": "Standseilbahn", "domain": "outdoor", "reason": "funicular railway — common in DACH mountain tourism (Rigi, Zugspitze, etc.)" },
-    { "word": "Zahnradbahn", "domain": "outdoor", "reason": "rack/cog railway — iconic DACH mountain transport (Zugspitze, Rigi, Jungfrau)" },
-    { "word": "Schwebebahn", "domain": "outdoor", "reason": "suspension railway / monorail — B2 transport vocabulary, Wuppertal Schwebebahn well-known" },
-    { "word": "Wanderweg", "domain": "outdoor", "reason": "hiking trail — essential leisure vocabulary, very common in DACH (Leipzig rank 22K)" },
-    { "word": "Wanderkarte", "domain": "outdoor", "reason": "hiking map — essential for trail navigation in DACH mountain regions" },
-    { "word": "Klettersteig", "domain": "outdoor", "reason": "via ferrata — quintessential Alpine activity, B2 outdoor vocabulary" },
-    { "word": "Berghütte", "domain": "outdoor", "reason": "mountain hut/refuge — essential Alpine tourism vocabulary" },
-    { "word": "Almhütte", "domain": "outdoor", "reason": "alpine hut — DACH-specific, traditional mountain shelter with meals" },
-    { "word": "Naturschutzgebiet", "domain": "outdoor", "reason": "nature reserve — B2 geography/environment vocabulary, common in DACH" },
-    { "word": "Skigebiet", "domain": "outdoor", "reason": "ski resort/area — B1 winter travel, appears in news (Leipzig rank 13K) but filtered" },
-    { "word": "Nationalpark", "domain": "outdoor", "reason": "national park — B1 geography/nature vocabulary for learners" },
-    { "word": "Kurort", "domain": "outdoor", "reason": "spa/health resort — typical DACH travel destination vocabulary" },
-    { "word": "Reiseziel", "domain": "outdoor", "reason": "travel destination — B1 travel vocabulary" },
-    { "word": "Wintersport", "domain": "outdoor", "reason": "winter sport — B1, very common in DACH cultural context" },
-    { "word": "Bergsteiger", "domain": "outdoor", "reason": "mountaineer — B2 outdoor vocabulary" },
-    { "word": "Bergsteigerin", "domain": "outdoor", "reason": "feminine form of Bergsteiger" },
-    { "word": "Ausflugsziel", "domain": "outdoor", "reason": "day trip destination — common in tourism/leisure context" },
-
-    { "word": "WLAN", "domain": "digital", "reason": "Zipf 3.14 — WiFi (German term), essential modern vocabulary" },
-    { "word": "surfen", "domain": "digital", "reason": "Zipf 3.14 — to surf (internet), B1 digital vocabulary" },
-    { "word": "aufladen", "domain": "digital", "reason": "Zipf 3.19 — to charge (device), essential modern verb" },
-    { "word": "ausdrucken", "domain": "digital", "reason": "Zipf 2.85 — to print out, common office/digital vocabulary" },
-    { "word": "mailen", "domain": "digital", "reason": "Zipf 2.59 — to email (verb), B1 digital communication" },
-    { "word": "chatten", "domain": "digital", "reason": "Zipf 2.42 — to chat (online), B1 digital vocabulary" },
-
-    { "word": "Hausaufgabe", "domain": "education", "reason": "Zipf 2.85 — homework; singular underrepresented vs plural Hausaufgaben" },
-    { "word": "Stundenplan", "domain": "education", "reason": "Zipf 2.79 — timetable/schedule (school), essential school vocabulary" },
-    { "word": "Nachhilfe", "domain": "education", "reason": "Zipf 3.21 — private tuition/tutoring, common German educational term" },
-    { "word": "Klassenarbeit", "domain": "education", "reason": "Zipf 2.28 — class test/exam, essential school vocabulary" },
-
-    { "word": "Passfoto", "domain": "admin", "reason": "Zipf 2.09 — passport photo, required for all official documents" },
-    { "word": "Geburtsurkunde", "domain": "admin", "reason": "Zipf 3.11 — birth certificate, essential civil registration document" },
-
-    { "word": "Sehenswürdigkeit", "domain": "travel", "reason": "Zipf 2.97 — tourist attraction/sight, B1 travel vocabulary" },
-    { "word": "Handgepäck", "domain": "travel", "reason": "Zipf 2.79 — hand luggage, essential air travel vocabulary" },
-    { "word": "Pauschalreise", "domain": "travel", "reason": "Zipf 3.11 — package holiday, standard travel agency vocabulary" },
-    { "word": "Souvenir", "domain": "travel", "reason": "Zipf 3.07 — souvenir, B1 travel vocabulary" },
-
-    { "word": "Wetterbericht", "domain": "weather", "reason": "Zipf 3.05 — weather report, B1 everyday vocabulary" },
-    { "word": "frieren", "domain": "weather", "reason": "Zipf 3.06 — to freeze/be cold, essential weather/sensation verb" },
-    { "word": "donnern", "domain": "weather", "reason": "Zipf 2.77 — to thunder; verb underrepresented vs noun Donner" },
-    { "word": "neblig", "domain": "weather", "reason": "Zipf 2.58 — foggy, B1 weather adjective" },
-
-    { "word": "siezen", "domain": "social", "reason": "Zipf 2.45 — to address formally (Sie), essential German social convention" },
-    { "word": "duzen", "domain": "social", "reason": "Zipf 2.80 — to address informally (du), essential German social convention" },
-
-    { "word": "Sportverein", "domain": "sport", "reason": "Zipf 2.95 — sports club, common German leisure institution" },
-    { "word": "Mitgliedsbeitrag", "domain": "sport", "reason": "Zipf 2.47 — membership fee, needed for Sportverein/club vocabulary" },
-    { "word": "zelten", "domain": "sport", "reason": "Zipf 2.94 — to camp, B1 leisure/outdoor vocabulary" },
-    { "word": "campen", "domain": "sport", "reason": "Zipf 3.02 — to camp (anglicism), commonly used alongside zelten" },
-
-    { "word": "Grundgesetz", "domain": "civic", "reason": "freq rank 7029 — German constitution, central to Einbürgerungstest and civic literacy" },
-    { "word": "Bundesrepublik", "domain": "civic", "reason": "freq rank 5726 — official name of Germany, Einbürgerungstest vocabulary" },
-    { "word": "Bundespräsident", "domain": "civic", "reason": "freq rank 5103 — head of state, Einbürgerungstest vocabulary" },
-    { "word": "Bundeskanzler", "domain": "civic", "reason": "freq rank 7251 — head of government, Einbürgerungstest vocabulary" },
-    { "word": "Abgeordneter", "domain": "civic", "reason": "freq rank 5301 — member of parliament, Einbürgerungstest vocabulary" },
-    { "word": "Fraktion", "domain": "civic", "reason": "freq rank 6222 — parliamentary group, Einbürgerungstest vocabulary" },
-    { "word": "Opposition", "domain": "civic", "reason": "freq rank 5092 — political opposition, Einbürgerungstest vocabulary" },
-    { "word": "Koalition", "domain": "civic", "reason": "freq rank 5967 — governing coalition, Einbürgerungstest vocabulary" },
-    { "word": "Diskriminierung", "domain": "civic", "reason": "freq rank 6674 — discrimination, fundamental rights vocabulary" },
-    { "word": "Asylbewerber", "domain": "civic", "reason": "freq rank 6763 — asylum seeker, Einbürgerungstest vocabulary" },
-    { "word": "Integration", "domain": "civic", "reason": "freq rank 5915 — integration, Leben in Deutschland vocabulary" },
-    { "word": "Anmeldung", "domain": "civic", "reason": "freq rank 6192 — registration (Einwohnermeldeamt), essential admin vocabulary" },
-    { "word": "Arbeitslosigkeit", "domain": "civic", "reason": "freq rank 6449 — unemployment, social system vocabulary" },
-    { "word": "Kündigung", "domain": "civic", "reason": "freq rank 5295 — termination (contract/job), essential work and housing vocabulary" },
-    { "word": "Kaution", "domain": "civic", "reason": "freq rank 5269 — security deposit (rental), essential housing vocabulary" },
-    { "word": "Vermieter", "domain": "civic", "reason": "freq rank 5981 — landlord, essential housing vocabulary" },
-    { "word": "Gleichberechtigung", "domain": "civic", "reason": "not in top 50k subtitles — gender equality, Einbürgerungstest fundamental rights" },
-    { "word": "Krankenversicherung", "domain": "civic", "reason": "not in top 50k subtitles — health insurance, mandatory in Germany" },
-    { "word": "Sozialhilfe", "domain": "civic", "reason": "not in top 50k subtitles — social welfare, Leben in Deutschland vocabulary" },
-    { "word": "Flüchtling", "domain": "civic", "reason": "not in top 50k subtitles — refugee, Einbürgerungstest vocabulary" },
-    { "word": "Formular", "domain": "civic", "reason": "not in top 50k subtitles — form (document), essential admin vocabulary" },
-    { "word": "Reisepass", "domain": "civic", "reason": "not in top 50k subtitles — passport, essential identity document" },
-    { "word": "Steuererklärung", "domain": "civic", "reason": "not in top 50k subtitles — tax return, essential admin vocabulary" },
-    { "word": "Finanzamt", "domain": "civic", "reason": "not in top 50k subtitles — tax office, essential admin vocabulary" },
-    { "word": "Sonderangebot", "domain": "shopping", "reason": "not in top 50k subtitles — special offer/sale, essential shopping vocabulary" },
-    { "word": "Pfand", "domain": "shopping", "reason": "not in top 50k subtitles — deposit (bottle return), uniquely German shopping vocabulary" },
-    { "word": "Quittung", "domain": "shopping", "reason": "not in top 50k subtitles — receipt, essential shopping vocabulary" },
-    { "word": "Mietvertrag", "domain": "housing", "reason": "not in top 50k subtitles — rental contract, essential housing vocabulary" },
-
-    { "word": "Südosten", "domain": "directions", "reason": "below frequency cutoff — southeast, A2 direction vocabulary" },
-    { "word": "Abzweigung", "domain": "directions", "reason": "below frequency cutoff — turn-off/junction, B1 navigation vocabulary" },
-    { "word": "Wegbeschreibung", "domain": "directions", "reason": "below frequency cutoff — directions/route description, A2 essential" },
-    { "word": "Stadtzentrum", "domain": "directions", "reason": "below frequency cutoff — city centre, A1 navigation vocabulary" },
-
-    { "word": "Wahlrecht", "domain": "civic", "reason": "Einbürgerungstest — right to vote, fundamental democratic concept" },
-    { "word": "Erststimme", "domain": "civic", "reason": "Einbürgerungstest — first vote (direct candidate), German electoral system" },
-    { "word": "Zweitstimme", "domain": "civic", "reason": "Einbürgerungstest — second vote (party list), German electoral system" },
-    { "word": "Verhältniswahl", "domain": "civic", "reason": "Einbürgerungstest — proportional representation" },
-    { "word": "Volksabstimmung", "domain": "civic", "reason": "Einbürgerungstest — referendum/plebiscite" },
-    { "word": "Fünfprozenthürde", "domain": "civic", "reason": "Einbürgerungstest — 5% threshold for parliamentary representation" },
-    { "word": "Legislaturperiode", "domain": "civic", "reason": "Einbürgerungstest — legislative term/period" },
-    { "word": "Gewaltenteilung", "domain": "civic", "reason": "Einbürgerungstest — separation of powers, core constitutional principle" },
-    { "word": "Legislative", "domain": "civic", "reason": "Einbürgerungstest — legislative branch" },
-    { "word": "Exekutive", "domain": "civic", "reason": "Einbürgerungstest — executive branch" },
-    { "word": "Judikative", "domain": "civic", "reason": "Einbürgerungstest — judicial branch" },
-    { "word": "Rechtsstaat", "domain": "civic", "reason": "Einbürgerungstest — rule of law, core constitutional principle" },
-    { "word": "Sozialstaat", "domain": "civic", "reason": "Einbürgerungstest — welfare state, core constitutional principle" },
-    { "word": "Föderalismus", "domain": "civic", "reason": "Einbürgerungstest — federalism, German state structure" },
-    { "word": "Kommunalwahl", "domain": "civic", "reason": "Einbürgerungstest — municipal/local election" },
-    { "word": "Tarifvertrag", "domain": "civic", "reason": "Einbürgerungstest — collective bargaining agreement" },
-
-    { "word": "Grundrecht", "domain": "civic", "reason": "Einbürgerungstest — fundamental right, Article 1-19 Grundgesetz" },
-    { "word": "Menschenwürde", "domain": "civic", "reason": "Einbürgerungstest — human dignity, Article 1 Grundgesetz" },
-    { "word": "Meinungsfreiheit", "domain": "civic", "reason": "Einbürgerungstest — freedom of expression, Article 5" },
-    { "word": "Pressefreiheit", "domain": "civic", "reason": "Einbürgerungstest — freedom of the press, Article 5" },
-    { "word": "Religionsfreiheit", "domain": "civic", "reason": "Einbürgerungstest — freedom of religion, Article 4" },
-    { "word": "Versammlungsfreiheit", "domain": "civic", "reason": "Einbürgerungstest — freedom of assembly, Article 8" },
-    { "word": "Menschenrecht", "domain": "civic", "reason": "Einbürgerungstest — human right" },
-    { "word": "Rechtsprechung", "domain": "civic", "reason": "Einbürgerungstest — jurisdiction/jurisprudence" },
-    { "word": "Strafrecht", "domain": "civic", "reason": "Einbürgerungstest — criminal law" },
-    { "word": "Zivilrecht", "domain": "civic", "reason": "Einbürgerungstest — civil law" },
-    { "word": "Verwaltungsrecht", "domain": "civic", "reason": "Einbürgerungstest — administrative law" },
-    { "word": "Verfassungsgericht", "domain": "civic", "reason": "Einbürgerungstest — constitutional court" },
-    { "word": "Bundesverfassungsgericht", "domain": "civic", "reason": "Einbürgerungstest — Federal Constitutional Court, Karlsruhe" },
-    { "word": "Asylrecht", "domain": "civic", "reason": "Einbürgerungstest — right of asylum, Article 16a" },
-
-    { "word": "Mauerfall", "domain": "civic", "reason": "Einbürgerungstest — fall of the Berlin Wall, 9 November 1989" },
-    { "word": "Teilung", "domain": "civic", "reason": "Einbürgerungstest — division (of Germany)" },
-    { "word": "Besatzungszone", "domain": "civic", "reason": "Einbürgerungstest — occupation zone, post-WWII" },
-    { "word": "Nationalsozialismus", "domain": "civic", "reason": "Einbürgerungstest — National Socialism/Nazism" },
-    { "word": "Kaiserreich", "domain": "civic", "reason": "Einbürgerungstest — German Empire (1871-1918)" },
-    { "word": "Gedenkstätte", "domain": "civic", "reason": "Einbürgerungstest — memorial site" },
-    { "word": "Konzentrationslager", "domain": "civic", "reason": "Einbürgerungstest — concentration camp" },
-    { "word": "Währungsreform", "domain": "civic", "reason": "Einbürgerungstest — currency reform (1948)" },
-    { "word": "Wirtschaftswunder", "domain": "civic", "reason": "Einbürgerungstest — economic miracle (1950s-60s)" },
-    { "word": "Luftbrücke", "domain": "civic", "reason": "Einbürgerungstest — Berlin Airlift (1948-49)" },
-    { "word": "Grenzübergang", "domain": "civic", "reason": "Einbürgerungstest — border crossing point" },
-
-    { "word": "Arbeitslosenversicherung", "domain": "civic", "reason": "Einbürgerungstest — unemployment insurance, pillar of Sozialversicherung" },
-    { "word": "Pflegeversicherung", "domain": "civic", "reason": "Einbürgerungstest — long-term care insurance, pillar of Sozialversicherung" },
-    { "word": "Unfallversicherung", "domain": "civic", "reason": "Einbürgerungstest — accident insurance, pillar of Sozialversicherung" },
-    { "word": "Kindergeld", "domain": "civic", "reason": "Einbürgerungstest — child benefit, key social benefit" },
-    { "word": "Elterngeld", "domain": "civic", "reason": "Einbürgerungstest — parental allowance" },
-    { "word": "Elternzeit", "domain": "civic", "reason": "Einbürgerungstest — parental leave" },
-    { "word": "Mutterschutz", "domain": "civic", "reason": "Einbürgerungstest — maternity protection" },
-    { "word": "Ehegattensplitting", "domain": "civic", "reason": "Einbürgerungstest — spousal tax splitting" },
-    { "word": "Einkommensteuer", "domain": "civic", "reason": "Einbürgerungstest — income tax" },
-    { "word": "Arbeitslosengeld", "domain": "civic", "reason": "Einbürgerungstest — unemployment benefit" },
-    { "word": "Altersvorsorge", "domain": "civic", "reason": "Einbürgerungstest — retirement provision" },
-    { "word": "Pflegestufe", "domain": "civic", "reason": "Einbürgerungstest — care level/grade" },
-    { "word": "Bürgerinitiative", "domain": "civic", "reason": "Einbürgerungstest — citizens' initiative" },
-    { "word": "Satzung", "domain": "civic", "reason": "Einbürgerungstest — statute/bylaws (of a Verein)" },
-    { "word": "Eheschließung", "domain": "civic", "reason": "Einbürgerungstest — marriage ceremony, civil law" },
-    { "word": "Vormundschaft", "domain": "civic", "reason": "Einbürgerungstest — guardianship" },
-    { "word": "Einbürgerung", "domain": "civic", "reason": "Einbürgerungstest — naturalization/citizenship acquisition" },
-    { "word": "Niederlassungserlaubnis", "domain": "civic", "reason": "Einbürgerungstest — permanent residence permit" },
-    { "word": "Staatsbürgerschaft", "domain": "civic", "reason": "Einbürgerungstest — citizenship" },
-    { "word": "Staatsangehörigkeit", "domain": "civic", "reason": "Einbürgerungstest — nationality (on official forms)" },
-    { "word": "Personalausweis", "domain": "civic", "reason": "Einbürgerungstest — national ID card" },
-    { "word": "Meldeamt", "domain": "civic", "reason": "Einbürgerungstest — registration office" },
-    { "word": "Einwohnermeldeamt", "domain": "civic", "reason": "Einbürgerungstest — residents' registration office" },
-    { "word": "Ummeldung", "domain": "civic", "reason": "Einbürgerungstest — re-registration (change of address)" },
-
-    { "word": "Hauptschule", "domain": "civic", "reason": "Einbürgerungstest — secondary general school" },
-    { "word": "Realschule", "domain": "civic", "reason": "Einbürgerungstest — intermediate secondary school" },
-    { "word": "Gesamtschule", "domain": "civic", "reason": "Einbürgerungstest — comprehensive school" },
-    { "word": "Berufsschule", "domain": "civic", "reason": "Einbürgerungstest — vocational school (dual system)" },
-    { "word": "Fachhochschule", "domain": "civic", "reason": "Einbürgerungstest — university of applied sciences" },
-    { "word": "Geselle", "domain": "civic", "reason": "Einbürgerungstest — journeyman, dual education system" },
-    { "word": "Immatrikulation", "domain": "civic", "reason": "Einbürgerungstest — university enrollment" },
-    { "word": "Exmatrikulation", "domain": "civic", "reason": "Einbürgerungstest — university de-enrollment" },
-
-    { "word": "Bundesadler", "domain": "civic", "reason": "Einbürgerungstest — federal eagle, German national symbol" },
-    { "word": "Nationalfeiertag", "domain": "civic", "reason": "Einbürgerungstest — national holiday (3 October)" },
-    { "word": "Judentum", "domain": "civic", "reason": "Einbürgerungstest — Judaism" },
-    { "word": "Pfingsten", "domain": "civic", "reason": "Einbürgerungstest — Pentecost/Whitsun, public holiday" },
-    { "word": "Ramadan", "domain": "civic", "reason": "Einbürgerungstest — Ramadan, Islamic fasting month" },
-    { "word": "Konfession", "domain": "civic", "reason": "Einbürgerungstest — religious denomination" },
-    { "word": "Reformation", "domain": "civic", "reason": "Einbürgerungstest — Reformation (Luther, 1517)" },
-
-    { "word": "einbürgern", "domain": "civic", "reason": "Einbürgerungstest — to naturalize/grant citizenship" },
-    { "word": "bewilligen", "domain": "civic", "reason": "Einbürgerungstest — to approve/grant (application)" },
-    { "word": "diskriminieren", "domain": "civic", "reason": "Einbürgerungstest — to discriminate" },
-
-    { "word": "Einstellungen", "domain": "digital", "reason": "device UI — settings menu, first word seen on any German phone/PC" },
-    { "word": "Bildschirmsperre", "domain": "digital", "reason": "device UI — screen lock" },
-    { "word": "Flugmodus", "domain": "digital", "reason": "device UI — airplane mode" },
-    { "word": "Mobilfunkdaten", "domain": "digital", "reason": "device UI — mobile/cellular data" },
-    { "word": "Datenvolumen", "domain": "digital", "reason": "device UI — data allowance/quota" },
-    { "word": "Sperrbildschirm", "domain": "digital", "reason": "device UI — lock screen" },
-    { "word": "Hintergrundbild", "domain": "digital", "reason": "device UI — wallpaper/background image" },
-    { "word": "Akkustand", "domain": "digital", "reason": "device UI — battery level" },
-    { "word": "Speicherplatz", "domain": "digital", "reason": "device UI — storage space" },
-    { "word": "Datenschutz", "domain": "digital", "reason": "device UI — privacy/data protection" },
-    { "word": "Ortungsdienste", "domain": "digital", "reason": "device UI — location services" },
-    { "word": "Bildschirmzeit", "domain": "digital", "reason": "device UI — screen time" },
-
-    { "word": "Startbildschirm", "domain": "digital", "reason": "device UI — home screen" },
-    { "word": "Suchleiste", "domain": "digital", "reason": "device UI — search bar" },
-    { "word": "Werkzeugleiste", "domain": "digital", "reason": "device UI — toolbar" },
-    { "word": "Statusleiste", "domain": "digital", "reason": "device UI — status bar" },
-    { "word": "Schaltfläche", "domain": "digital", "reason": "device UI — button (GUI element)" },
-    { "word": "Eingabefeld", "domain": "digital", "reason": "device UI — input field" },
-    { "word": "Fehlermeldung", "domain": "digital", "reason": "device UI — error message" },
-    { "word": "Zwischenablage", "domain": "digital", "reason": "device UI — clipboard" },
-    { "word": "Rückgängig", "domain": "digital", "reason": "device UI — undo" },
-    { "word": "Einfügen", "domain": "digital", "reason": "device UI — paste (nominalized verb, menu label)" },
-    { "word": "Ausschneiden", "domain": "digital", "reason": "device UI — cut (nominalized verb, menu label)" },
-    { "word": "Kopieren", "domain": "digital", "reason": "device UI — copy (nominalized verb, menu label)" },
-    { "word": "Speichern", "domain": "digital", "reason": "device UI — save (nominalized verb, menu label)" },
-    { "word": "Drucken", "domain": "digital", "reason": "device UI — print (nominalized verb, menu label)" },
-    { "word": "Umbenennen", "domain": "digital", "reason": "device UI — rename (nominalized verb, menu label)" },
-    { "word": "Verschieben", "domain": "digital", "reason": "device UI — move (nominalized verb, menu label)" },
-    { "word": "Teilen", "domain": "digital", "reason": "device UI — share (nominalized verb, menu label)" },
-    { "word": "Synchronisieren", "domain": "digital", "reason": "device UI — sync (nominalized verb, menu label)" },
-    { "word": "Installieren", "domain": "digital", "reason": "device UI — install (nominalized verb, menu label)" },
-    { "word": "Deinstallieren", "domain": "digital", "reason": "device UI — uninstall (nominalized verb, menu label)" },
-    { "word": "Aktualisieren", "domain": "digital", "reason": "device UI — update/refresh (nominalized verb, menu label)" },
-    { "word": "Zurücksetzen", "domain": "digital", "reason": "device UI — reset (nominalized verb, menu label)" },
-    { "word": "Wiederherstellen", "domain": "digital", "reason": "device UI — restore (nominalized verb, menu label)" },
-    { "word": "Weiterleiten", "domain": "digital", "reason": "device UI — forward (nominalized verb, menu label)" },
-    { "word": "Verfassen", "domain": "digital", "reason": "device UI — compose (nominalized verb, menu label)" },
-    { "word": "Blockieren", "domain": "digital", "reason": "device UI — block (nominalized verb, menu label)" },
-    { "word": "Stummschalten", "domain": "digital", "reason": "device UI — mute (nominalized verb, menu label)" },
-    { "word": "Herunterfahren", "domain": "digital", "reason": "device UI — shut down (nominalized verb, menu label)" },
-    { "word": "Dateigröße", "domain": "digital", "reason": "device UI — file size" },
-    { "word": "Sicherungskopie", "domain": "digital", "reason": "device UI — backup copy" },
-    { "word": "Videoanruf", "domain": "digital", "reason": "device UI — video call" },
-    { "word": "Anrufliste", "domain": "digital", "reason": "device UI — call log/recent calls" },
-    { "word": "Lesezeichen", "domain": "digital", "reason": "device UI — bookmark (browser)" },
-    { "word": "Netzwerkverbindung", "domain": "digital", "reason": "device UI — network connection" },
-    { "word": "Benachrichtigung", "domain": "digital", "reason": "device UI — notification" },
-    { "word": "Passwort", "domain": "digital", "reason": "device UI — password, seen on every login screen" },
-    { "word": "Benutzername", "domain": "digital", "reason": "device UI — username" },
-    { "word": "Benutzerkonto", "domain": "digital", "reason": "device UI — user account" },
-    { "word": "Posteingang", "domain": "digital", "reason": "device UI — inbox" },
-    { "word": "Absender", "domain": "digital", "reason": "device UI — sender (email/message)" },
-    { "word": "Empfänger", "domain": "digital", "reason": "device UI — recipient (email/message)" },
-    { "word": "Betreff", "domain": "digital", "reason": "device UI — subject line (email)" },
-    { "word": "Entwurf", "domain": "digital", "reason": "device UI — draft (email/message)" },
-    { "word": "Papierkorb", "domain": "digital", "reason": "device UI — trash/recycle bin" },
-    { "word": "Ordner", "domain": "digital", "reason": "device UI — folder" },
-    { "word": "Anhang", "domain": "digital", "reason": "device UI — attachment (email)" },
-
-    { "word": "Gepäckband", "domain": "travel", "reason": "airport — baggage carousel" },
-    { "word": "Bordkarte", "domain": "travel", "reason": "airport — boarding pass" },
-    { "word": "Direktflug", "domain": "travel", "reason": "airport — direct flight" },
-    { "word": "Zwischenlandung", "domain": "travel", "reason": "airport — stopover/layover" },
-    { "word": "Boarding", "domain": "travel", "reason": "airport — loanword, common in German airports" },
-    { "word": "Gate", "domain": "travel", "reason": "airport — loanword, used at all German airports" },
-    { "word": "stornieren", "domain": "travel", "reason": "hotel/booking — cancel a reservation" },
-    { "word": "Ferienwohnung", "domain": "travel", "reason": "accommodation — holiday apartment, very common in DACH" },
-    { "word": "Hauptgericht", "domain": "travel", "reason": "restaurant — main course" },
-    { "word": "Nachspeise", "domain": "travel", "reason": "restaurant — dessert" },
-    { "word": "Beilage", "domain": "travel", "reason": "restaurant — side dish" },
-    { "word": "Getränkekarte", "domain": "travel", "reason": "restaurant — drinks menu" },
-    { "word": "Tagessuppe", "domain": "travel", "reason": "restaurant — soup of the day" },
-    { "word": "Reiseführer", "domain": "travel", "reason": "tourism — travel guide (book or person)" },
-    { "word": "Rundfahrt", "domain": "travel", "reason": "tourism — sightseeing tour" },
-    { "word": "Stadtführung", "domain": "travel", "reason": "tourism — city guided tour" },
-    { "word": "Stadtrundfahrt", "domain": "travel", "reason": "city sightseeing tour (bus/boat) — very common tourist activity in any German city" },
-    { "word": "Stadtbummel", "domain": "travel", "reason": "leisurely city stroll — B2 travel vocabulary, distinctly German concept" },
-    { "word": "Weinprobe", "domain": "travel", "reason": "wine tasting — quintessential DACH cultural/tourism activity" },
-    { "word": "Flusskreuzfahrt", "domain": "travel", "reason": "river cruise — manually authored, not in Wiktionary dump", "manual": true },
-    { "word": "Stadtmauer", "domain": "travel", "reason": "city wall — common sightseeing feature in medieval German towns" },
-    { "word": "Burgruine", "domain": "travel", "reason": "castle ruins — extremely common in Germany, B2 sightseeing vocabulary" },
-    { "word": "Aussichtspunkt", "domain": "travel", "reason": "tourism — viewpoint/lookout" },
-    { "word": "Öffnungszeit", "domain": "travel", "reason": "tourism — opening hours (seen on every shop/museum); plural Öffnungszeiten is the common form" },
-    { "word": "anstehen", "domain": "travel", "reason": "tourism — to queue/stand in line" },
-    { "word": "Fernverkehr", "domain": "travel", "reason": "train — long-distance rail service" },
-    { "word": "Liegewagen", "domain": "travel", "reason": "train — couchette car" },
-    { "word": "Zugverbindung", "domain": "travel", "reason": "train — train connection" },
-    { "word": "Geschwindigkeitsbegrenzung", "domain": "travel", "reason": "driving — speed limit" },
-    { "word": "Versicherungskarte", "domain": "travel", "reason": "medical abroad — insurance card" },
-    { "word": "Anprobe", "domain": "travel", "reason": "shopping — fitting/trying on clothes" },
-    { "word": "Zoll", "domain": "travel", "reason": "border — customs" },
-    { "word": "Aufenthaltsgenehmigung", "domain": "travel", "reason": "border — residence permit" },
-    { "word": "Passkontrolle", "domain": "travel", "reason": "border — passport control" },
-    { "word": "Einreise", "domain": "travel", "reason": "border — entry into a country" },
-    { "word": "Ausreise", "domain": "travel", "reason": "border — departure from a country" },
-    { "word": "Aussichtsturm", "domain": "travel", "reason": "observation tower — common sightseeing destination" },
-    { "word": "Tagesausflug", "domain": "travel", "reason": "day trip — B1 travel vocabulary, very common in tourism context" },
-    { "word": "Vorverkauf", "domain": "travel", "reason": "advance ticket sales — seen on every museum/event entrance" },
-    { "word": "Stadtplan", "domain": "travel", "reason": "city map — essential practical travel vocabulary" },
-    { "word": "Fundbüro", "domain": "travel", "reason": "lost and found — essential vocabulary when travelling" },
-    { "word": "Hafenrundfahrt", "domain": "travel", "reason": "harbour tour — iconic tourist activity (Hamburg, etc.)" },
-    { "word": "Bootsfahrt", "domain": "travel", "reason": "boat trip — common on Rhine, lakes, coastal areas" },
-    { "word": "sehenswert", "domain": "travel", "reason": "worth seeing — ubiquitous in travel recommendations and guidebooks" },
-    { "word": "malerisch", "domain": "travel", "reason": "picturesque — quintessential travel/tourism descriptor" },
-
-    { "word": "Müllabfuhr", "domain": "housing", "reason": "housing — garbage collection" },
-    { "word": "Hausordnung", "domain": "housing", "reason": "housing — house rules (common in German rentals)" },
-    { "word": "Gehalt", "domain": "work", "reason": "workplace — salary" },
-    { "word": "Überstunde", "domain": "work", "reason": "workplace — overtime; plural Überstunden is the common form" },
-    { "word": "Arbeitsvertrag", "domain": "work", "reason": "workplace — employment contract" },
-    { "word": "Abteilung", "domain": "work", "reason": "workplace — department" },
-    { "word": "Sparkonto", "domain": "finance", "reason": "banking — savings account" },
-    { "word": "Zinsen", "domain": "finance", "reason": "banking — interest (financial)" },
-    { "word": "Kredit", "domain": "finance", "reason": "banking — loan/credit" },
-    { "word": "Husten", "domain": "health", "reason": "health — cough (noun)" },
-    { "word": "Schnupfen", "domain": "health", "reason": "health — cold/runny nose" },
-    { "word": "Kopfschmerz", "domain": "health", "reason": "health — headache; plural Kopfschmerzen is the common form" },
-    { "word": "Bauchschmerz", "domain": "health", "reason": "health — stomachache; plural Bauchschmerzen is the common form" },
-    { "word": "Abmeldung", "domain": "bureaucracy", "reason": "Amt — deregistration (required when moving)" },
-    { "word": "Meldebescheinigung", "domain": "bureaucracy", "reason": "Amt — registration certificate" },
-    { "word": "Bürgeramt", "domain": "bureaucracy", "reason": "Amt — citizens' office" },
-    { "word": "Bescheinigung", "domain": "bureaucracy", "reason": "Amt — certificate/confirmation document" },
-    { "word": "Beglaubigung", "domain": "bureaucracy", "reason": "Amt — notarization/certification" },
-    { "word": "Sendungsverfolgung", "domain": "post", "reason": "post/delivery — package tracking" },
-    { "word": "Hagel", "domain": "weather", "reason": "weather — hail" },
-    { "word": "Regenschauer", "domain": "weather", "reason": "weather — rain shower" },
-    { "word": "bewölkt", "domain": "weather", "reason": "weather — cloudy" },
-    { "word": "schwül", "domain": "weather", "reason": "weather — humid/muggy" },
-    { "word": "gestresst", "domain": "emotions", "reason": "emotions — stressed" },
-    { "word": "mittelmäßig", "domain": "adjective", "reason": "quality adjective — mediocre" },
-    { "word": "mangelhaft", "domain": "adjective", "reason": "quality adjective — deficient (also a school grade)" },
-    { "word": "geräumig", "domain": "adjective", "reason": "quality adjective — spacious" },
-    { "word": "komfortabel", "domain": "adjective", "reason": "quality adjective — comfortable" },
-    { "word": "Synonym", "domain": "app-ui", "reason": "shown in word card UI — learners will search it" },
-    { "word": "Antonym", "domain": "app-ui", "reason": "shown in word card UI — learners will search it" },
-    { "word": "Deklination", "domain": "app-ui", "reason": "grammar section header in UI" },
-    { "word": "Konjugation", "domain": "app-ui", "reason": "grammar section header in UI" },
-    { "word": "Nomen", "domain": "app-ui", "reason": "POS label in UI" },
-    { "word": "Verb", "domain": "app-ui", "reason": "POS label in UI" },
-    { "word": "Adjektiv", "domain": "app-ui", "reason": "POS label in UI" },
-    { "word": "Substantiv", "domain": "app-ui", "reason": "POS label in UI" },
-    { "word": "Nominativ", "domain": "app-ui", "reason": "case label in declension tables" },
-    { "word": "Genitiv", "domain": "app-ui", "reason": "case label in declension tables" },
-    { "word": "Dativ", "domain": "app-ui", "reason": "case label in declension tables" },
-    { "word": "Akkusativ", "domain": "app-ui", "reason": "case label in declension tables" },
-    { "word": "Singular", "domain": "app-ui", "reason": "column header in declension tables" },
-    { "word": "Plural", "domain": "app-ui", "reason": "column header in declension tables" },
-    { "word": "Präsens", "domain": "app-ui", "reason": "tense label in conjugation tables" },
-    { "word": "Präteritum", "domain": "app-ui", "reason": "tense label in conjugation tables" },
-    { "word": "Imperativ", "domain": "app-ui", "reason": "mood label in conjugation tables" },
-    { "word": "Konjunktiv", "domain": "app-ui", "reason": "mood label in conjugation tables" },
-    { "word": "Partizip", "domain": "app-ui", "reason": "row label in conjugation tables" },
-    { "word": "feminin", "domain": "app-ui", "reason": "gender label in UI" },
-    { "word": "maskulin", "domain": "app-ui", "reason": "gender label in UI" },
-    { "word": "trennbar", "domain": "app-ui", "reason": "verb property label in UI" },
-    { "word": "untrennbar", "domain": "app-ui", "reason": "verb property label in UI" },
-    { "word": "aktualisieren", "domain": "app-ui", "reason": "settings UI verb — very common modern usage" },
-    { "word": "Startbildschirm", "domain": "app-ui", "reason": "device UI term shown in settings" },
-    { "word": "fehlschlagen", "domain": "app-ui", "reason": "shown in error message — common verb meaning to fail" },
-    { "word": "ableiten", "domain": "app-ui", "reason": "shown in 'Abgeleitet von' section — common verb meaning to derive" },
-    { "word": "bzw.", "domain": "abbreviation", "reason": "beziehungsweise — extremely common in written German" },
-    { "word": "z.B.", "domain": "abbreviation", "reason": "zum Beispiel — ubiquitous in all registers" },
-    { "word": "d.h.", "domain": "abbreviation", "reason": "das heißt — very common written abbreviation" },
-    { "word": "usw.", "domain": "abbreviation", "reason": "und so weiter — common equivalent of etc." },
-    { "word": "etc.", "domain": "abbreviation", "reason": "et cetera — common in German texts" },
-    { "word": "sog.", "domain": "abbreviation", "reason": "sogenannt — frequent in formal/journalistic writing" },
-    { "word": "ca.", "domain": "abbreviation", "reason": "circa — common in everyday and formal writing" },
-    { "word": "vgl.", "domain": "abbreviation", "reason": "vergleiche — common in academic and formal texts" },
-    { "word": "u.a.", "domain": "abbreviation", "reason": "unter anderem — very common in written German" },
-    { "word": "ggf.", "domain": "abbreviation", "reason": "gegebenenfalls — common in formal/official texts" },
-    { "word": "evtl.", "domain": "abbreviation", "reason": "eventuell — common in everyday and formal writing" },
-    { "word": "im", "domain": "contraction", "reason": "in+dem — extremely common contraction" },
-    { "word": "am", "domain": "contraction", "reason": "an+dem — extremely common contraction" },
-    { "word": "zum", "domain": "contraction", "reason": "zu+dem — very common contraction" },
-    { "word": "zur", "domain": "contraction", "reason": "zu+der — very common contraction" },
-    { "word": "ins", "domain": "contraction", "reason": "in+das — very common contraction" },
-    { "word": "ans", "domain": "contraction", "reason": "an+das — common contraction" },
-    { "word": "beim", "domain": "contraction", "reason": "bei+dem — very common contraction" },
-    { "word": "vom", "domain": "contraction", "reason": "von+dem — very common contraction" },
-    { "word": "aufs", "domain": "contraction", "reason": "auf+das — common contraction" },
-    { "word": "ums", "domain": "contraction", "reason": "um+das — common contraction" },
-    { "word": "fürs", "domain": "contraction", "reason": "für+das — common contraction" },
-    { "word": "durchs", "domain": "contraction", "reason": "durch+das — common contraction" },
-    { "word": "vors", "domain": "contraction", "reason": "vor+das — common contraction" },
-
-    { "word": "gleichsam", "domain": "functional", "reason": "adverb: as it were, so to speak — appears in examples, filtered by B2 threshold" },
-    { "word": "zuweilen", "domain": "functional", "reason": "adverb: sometimes, occasionally — appears in examples, filtered by B2 threshold" },
-    { "word": "zurecht", "domain": "functional", "reason": "adverb: properly, in order (→ zurechtkommen, zurechtfinden) — appears in examples" },
-    { "word": "jedesmal", "domain": "functional", "reason": "adverb: every time — appears in examples, filtered by B2 threshold" },
-    { "word": "zumeist", "domain": "functional", "reason": "adverb: mostly, for the most part — appears in examples" },
-    { "word": "treppauf", "domain": "functional", "reason": "adverb: upstairs (paired with treppab) — appears in examples" },
-    { "word": "treppab", "domain": "functional", "reason": "adverb: downstairs (paired with treppauf) — appears in examples" },
-    { "word": "namentlich", "domain": "functional", "reason": "adverb: namely, particularly — appears in examples" },
-    { "word": "gleichwohl", "domain": "functional", "reason": "adverb: nonetheless, nevertheless — appears in examples" },
-    { "word": "überdies", "domain": "functional", "reason": "adverb: moreover, besides — appears in examples" },
-    { "word": "woraufhin", "domain": "functional", "reason": "adverb/conjunction: whereupon — appears in examples" },
-    { "word": "indessen", "domain": "functional", "reason": "adverb/conjunction: meanwhile, however — appears in examples" },
-    { "word": "ringsum", "domain": "functional", "reason": "adverb: all around — appears in examples" },
-    { "word": "bisweilen", "domain": "functional", "reason": "adverb: sometimes, occasionally (literary) — appears in examples" },
-    { "word": "allenfalls", "domain": "functional", "reason": "adverb: at most, if at all — appears in examples" },
-    { "word": "demzufolge", "domain": "functional", "reason": "adverb: consequently, therefore — appears in examples" },
-    { "word": "unentwegt", "domain": "functional", "reason": "adverb: continuously, incessantly — appears in examples" },
-    { "word": "vonstatten", "domain": "functional", "reason": "adverb: used in vonstatten gehen (to take place) — appears in examples" },
-    { "word": "inwieweit", "domain": "functional", "reason": "adverb: to what extent — appears in examples" },
-    { "word": "prinzipiell", "domain": "functional", "reason": "adverb: in principle — appears in examples" },
-    { "word": "vornehmlich", "domain": "functional", "reason": "adverb: primarily, mainly — appears in examples" },
-    { "word": "demgegenüber", "domain": "functional", "reason": "adverb: on the other hand, by contrast — appears in examples" },
-    { "word": "schlechthin", "domain": "functional", "reason": "adverb: absolutely, per se, par excellence — appears in examples" },
-    { "word": "alsbald", "domain": "functional", "reason": "adverb: soon, shortly (formal/literary) — appears in examples" },
-
-    { "word": "zugunsten", "domain": "functional", "reason": "preposition: in favor of — appears in examples, filtered by B2 threshold" },
-    { "word": "längs", "domain": "functional", "reason": "preposition: along — appears in examples" },
-    { "word": "mangels", "domain": "functional", "reason": "preposition: for lack of (+ genitive) — appears in examples" },
-
-    { "word": "wenngleich", "domain": "functional", "reason": "conjunction: even though — appears in examples" },
-    { "word": "obschon", "domain": "functional", "reason": "conjunction: although (literary) — appears in examples" },
-    { "word": "wiewohl", "domain": "functional", "reason": "conjunction: although, even though (literary) — appears in examples" },
-
-    { "word": "siebzig", "domain": "functional", "reason": "numeral: 70 — missing from numerals coverage" },
-    { "word": "dreihundert", "domain": "functional", "reason": "numeral: 300 — missing from numerals coverage" },
-    { "word": "fünfhundert", "domain": "functional", "reason": "numeral: 500 — missing from numerals coverage" },
-    { "word": "zweitausend", "domain": "functional", "reason": "numeral: 2000 — missing from numerals coverage" },
-    { "word": "viertausend", "domain": "functional", "reason": "numeral: 4000 — missing from numerals coverage" },
-
-    { "word": "Strampler", "domain": "children", "reason": "baby onesie — core baby clothing item, sourced from cartoon subtitles" },
-    { "word": "Schnuller", "domain": "children", "reason": "pacifier/dummy — essential baby item, below B2 frequency threshold" },
-    { "word": "Lätzchen", "domain": "children", "reason": "bib — core baby item" },
-    { "word": "Babybrei", "domain": "children", "reason": "baby food puree — core baby item" },
-    { "word": "Babyphone", "domain": "children", "reason": "baby monitor — common parenting device" },
-    { "word": "Kinderbett", "domain": "children", "reason": "crib/cot — core baby furniture" },
-    { "word": "Stubenwagen", "domain": "children", "reason": "Moses basket — used for newborns" },
-    { "word": "Nuckelflasche", "domain": "children", "reason": "baby bottle with teat — core baby item" },
-
-    { "word": "Flamingo", "domain": "animals", "reason": "flamingo — common zoo/nature animal, below B2 frequency threshold" },
-    { "word": "Gepard", "domain": "animals", "reason": "cheetah — common animal name for children and nature content" },
-    { "word": "Nilpferd", "domain": "animals", "reason": "hippopotamus — common zoo animal, below B2 frequency threshold" },
-
-    { "word": "Galopp", "domain": "animals", "reason": "gallop — horse gait, appears in children's content and equestrian contexts" },
-    { "word": "Mähne", "domain": "animals", "reason": "mane — horse/lion mane, basic animal vocabulary" },
-    { "word": "Zügel", "domain": "animals", "reason": "reins — basic horse-riding vocabulary" },
-    { "word": "Reitplatz", "domain": "animals", "reason": "riding arena — common equestrian term" },
-    { "word": "Pferdestall", "domain": "animals", "reason": "horse stable — common equestrian term" },
-
-    { "word": "Kiesgrube", "domain": "outdoor", "reason": "gravel pit — outdoor play/nature term, sourced from cartoon subtitles" },
-    { "word": "Maisfeld", "domain": "outdoor", "reason": "cornfield — common rural landscape word" },
-    { "word": "Wassergraben", "domain": "outdoor", "reason": "moat/ditch — outdoor nature term" },
-
-    { "word": "Titelsong", "domain": "media", "reason": "theme song — common media/TV term" },
-
-    { "word": "Zeichentrickfilm", "domain": "media", "reason": "animated film — core term for cartoons/animation" },
-    { "word": "Zeichentrickserie", "domain": "media", "reason": "animated TV series — Peppa, Bluey, etc." },
-    { "word": "Zeichentrick", "domain": "media", "reason": "animation technique — base of compound nouns like Zeichentrickfilm" },
-    { "word": "Cartoon", "domain": "media", "reason": "false friend — German meaning is single-panel satirical drawing, not animated show; important for English speakers to learn" },
-    { "word": "Kurzfilm", "domain": "media", "reason": "short film — common film format term" },
-    { "word": "Spielfilm", "domain": "media", "reason": "feature film — standard term for a narrative film" },
-    { "word": "Kinofilm", "domain": "media", "reason": "cinema film — common compound, distinct from Fernsehfilm" },
-    { "word": "Dokumentarfilm", "domain": "media", "reason": "documentary film — standard term" },
-    { "word": "Fernsehfilm", "domain": "media", "reason": "TV movie — common genre term" },
-    { "word": "Streamingdienst", "domain": "media", "reason": "streaming service — Netflix/Disney+ etc., essential modern vocabulary" },
-    { "word": "Mediathek", "domain": "media", "reason": "media library — ARD/ZDF Mediathek, very German-specific digital TV concept" },
-    { "word": "Livestream", "domain": "media", "reason": "livestream — common modern media term" },
-    { "word": "Talkshow", "domain": "media", "reason": "talk show — common TV format" },
-    { "word": "Nachrichtensendung", "domain": "media", "reason": "news programme — core TV term" },
-    { "word": "Vorspann", "domain": "media", "reason": "opening credits/intro sequence" },
-    { "word": "Abspann", "domain": "media", "reason": "end credits — common film/TV term" },
-    { "word": "Blockbuster", "domain": "media", "reason": "blockbuster — widely used loanword for major cinema release" },
-    { "word": "Doku", "domain": "media", "reason": "colloquial short for Dokumentation/Dokumentarfilm — very common in everyday speech" },
-
-    { "word": "Beamer", "domain": "false-friends", "reason": "false friend — means projector, not a BMW; English speakers need this correction" },
-    { "word": "Oldtimer", "domain": "false-friends", "reason": "false friend — means vintage car/aircraft, not an old person" },
-    { "word": "Billion", "domain": "false-friends", "reason": "false friend — means one trillion (10¹²), not one billion (10⁹ = Milliarde)" },
-    { "word": "Mobbing", "domain": "false-friends", "reason": "false friend — means workplace bullying, not a flash mob (= Flashmob)" },
-    { "word": "pathetisch", "domain": "false-friends", "reason": "false friend — means dramatic/over-the-top, not pathetic (= erbärmlich)" },
-    { "word": "Präservativ", "domain": "false-friends", "reason": "false friend — means condom, not preservative (= Konservierungsstoff)" },
-    { "word": "ordinär", "domain": "false-friends", "reason": "false friend — means vulgar/crude, not ordinary (= gewöhnlich)" },
-    { "word": "dezent", "domain": "false-friends", "reason": "false friend — means discreet/understated, not decent (= anständig)" },
-    { "word": "kurios", "domain": "false-friends", "reason": "false friend — means strange/odd, not curious (= neugierig)" }
+    {
+      "word": "Automechaniker",
+      "domain": "work",
+      "reason": "occupation noun — rare in corpora despite being essential everyday vocabulary"
+    },
+    {
+      "word": "Mechatroniker",
+      "domain": "work",
+      "reason": "modern profession — mechatronics technician, common Ausbildungsberuf"
+    },
+    {
+      "word": "Mechatronikerin",
+      "domain": "work",
+      "reason": "feminine form of Mechatroniker"
+    },
+    {
+      "word": "Informatiker",
+      "domain": "work",
+      "reason": "modern profession — computer scientist / IT specialist"
+    },
+    {
+      "word": "Informatikerin",
+      "domain": "work",
+      "reason": "feminine form of Informatiker"
+    },
+    {
+      "word": "Softwareentwickler",
+      "domain": "work",
+      "reason": "modern profession — software developer"
+    },
+    {
+      "word": "Softwareentwicklerin",
+      "domain": "work",
+      "reason": "feminine form of Softwareentwickler"
+    },
+    {
+      "word": "Programmierer",
+      "domain": "work",
+      "reason": "modern profession — programmer"
+    },
+    {
+      "word": "Programmiererin",
+      "domain": "work",
+      "reason": "feminine form of Programmierer"
+    },
+    {
+      "word": "Webentwickler",
+      "domain": "work",
+      "reason": "modern profession — web developer"
+    },
+    {
+      "word": "Webentwicklerin",
+      "domain": "work",
+      "reason": "feminine form of Webentwickler"
+    },
+    {
+      "word": "Netzwerktechniker",
+      "domain": "work",
+      "reason": "modern profession — network technician"
+    },
+    {
+      "word": "Netzwerktechnikerin",
+      "domain": "work",
+      "reason": "feminine form of Netzwerktechniker"
+    },
+    {
+      "word": "Systemadministrator",
+      "domain": "work",
+      "reason": "modern profession — system administrator"
+    },
+    {
+      "word": "Systemadministratorin",
+      "domain": "work",
+      "reason": "feminine form of Systemadministrator"
+    },
+    {
+      "word": "Elektroniker",
+      "domain": "work",
+      "reason": "modern profession — electronics technician, common Ausbildungsberuf"
+    },
+    {
+      "word": "Elektronikerin",
+      "domain": "work",
+      "reason": "feminine form of Elektroniker"
+    },
+    {
+      "word": "Logistiker",
+      "domain": "work",
+      "reason": "modern profession — logistics specialist"
+    },
+    {
+      "word": "Logistikerin",
+      "domain": "work",
+      "reason": "feminine form of Logistiker"
+    },
+    {
+      "word": "Mediengestalter",
+      "domain": "work",
+      "reason": "modern profession — media designer, common Ausbildungsberuf"
+    },
+    {
+      "word": "Mediengestalterin",
+      "domain": "work",
+      "reason": "feminine form of Mediengestalter"
+    },
+    {
+      "word": "Fachinformatiker",
+      "domain": "work",
+      "reason": "modern profession — IT specialist (Ausbildungsberuf)"
+    },
+    {
+      "word": "Fachinformatikerin",
+      "domain": "work",
+      "reason": "feminine form of Fachinformatiker"
+    },
+    {
+      "word": "Datenschutzbeauftragter",
+      "domain": "work",
+      "reason": "modern profession — data protection officer, legally required role in Germany"
+    },
+    {
+      "word": "Datenschutzbeauftragte",
+      "domain": "work",
+      "reason": "feminine/nominalized form of Datenschutzbeauftragter"
+    },
+    {
+      "word": "Cybersicherheit",
+      "domain": "work",
+      "reason": "modern domain — cybersecurity"
+    },
+    {
+      "word": "Digitalisierung",
+      "domain": "work",
+      "reason": "modern domain — digitalisation, ubiquitous in German discourse"
+    },
+    {
+      "word": "Hausarzt",
+      "domain": "health",
+      "reason": "subtitle rank 26286"
+    },
+    {
+      "word": "Attest",
+      "domain": "health",
+      "reason": "subtitle rank 30209"
+    },
+    {
+      "word": "Krankenschein",
+      "domain": "health",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Krankmeldung",
+      "domain": "health",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Krankschreibung",
+      "domain": "health",
+      "reason": "Leipzig 28484"
+    },
+    {
+      "word": "Physiotherapie",
+      "domain": "health",
+      "reason": "subtitle rank 28462"
+    },
+    {
+      "word": "Erkältungsmittel",
+      "domain": "health",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Erste-Hilfe-Kasten",
+      "domain": "health",
+      "reason": "subtitle rank 34603"
+    },
+    {
+      "word": "Notfallnummer",
+      "domain": "health",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Versichertenkarte",
+      "domain": "health",
+      "reason": "not found in corpora — health insurance card essential for Germany/Austria"
+    },
+    {
+      "word": "Tablette",
+      "domain": "health",
+      "reason": "Zipf 2.91 — medicine noun, appears singular less than plural Tabletten"
+    },
+    {
+      "word": "Salbe",
+      "domain": "health",
+      "reason": "Zipf 2.83 — ointment/cream, B1 pharmacy vocabulary"
+    },
+    {
+      "word": "Nebenkosten",
+      "domain": "housing",
+      "reason": "subtitle rank 40979"
+    },
+    {
+      "word": "Betriebskosten",
+      "domain": "housing",
+      "reason": "Leipzig 13549, above subtitle cutoff"
+    },
+    {
+      "word": "Kündigungsfrist",
+      "domain": "housing",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Wohngemeinschaft",
+      "domain": "housing",
+      "reason": "not in top 50k subtitles, Leipzig 25203"
+    },
+    {
+      "word": "Abstellraum",
+      "domain": "housing",
+      "reason": "subtitle rank 47992"
+    },
+    {
+      "word": "Hausverwaltung",
+      "domain": "housing",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Kellerraum",
+      "domain": "housing",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Zentralheizung",
+      "domain": "housing",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Warmwasser",
+      "domain": "housing",
+      "reason": "Leipzig 79785"
+    },
+    {
+      "word": "Stromzähler",
+      "domain": "housing",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Gasverbrauch",
+      "domain": "housing",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Internetanschluss",
+      "domain": "housing",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Vertragslaufzeit",
+      "domain": "housing",
+      "reason": "Leipzig 29197"
+    },
+    {
+      "word": "Bewerbungsunterlagen",
+      "domain": "work",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Probezeit",
+      "domain": "work",
+      "reason": "subtitle rank 27386"
+    },
+    {
+      "word": "Gehaltsnachweis",
+      "domain": "work",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Rentenversicherung",
+      "domain": "work",
+      "reason": "Leipzig 8772"
+    },
+    {
+      "word": "Sozialversicherung",
+      "domain": "work",
+      "reason": "subtitle rank 34961"
+    },
+    {
+      "word": "Betriebsrat",
+      "domain": "work",
+      "reason": "subtitle rank 47363"
+    },
+    {
+      "word": "Urlaubsantrag",
+      "domain": "work",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Azubi",
+      "domain": "work",
+      "reason": "Zipf 2.51 — abbreviation for Auszubildende(r), ubiquitous in German working life"
+    },
+    {
+      "word": "Überstunde",
+      "domain": "work",
+      "reason": "Zipf 2.41 — usually appears as plural Überstunden; singular underrepresented"
+    },
+    {
+      "word": "Teilzeit",
+      "domain": "work",
+      "reason": "Zipf 3.06 — essential work contract vocabulary"
+    },
+    {
+      "word": "Vollzeit",
+      "domain": "work",
+      "reason": "Zipf 3.06 — essential work contract vocabulary"
+    },
+    {
+      "word": "Aushilfe",
+      "domain": "work",
+      "reason": "Zipf 2.87 — temporary/casual worker, very common in job ads"
+    },
+    {
+      "word": "Stellengesuch",
+      "domain": "work",
+      "reason": "not found in corpora — job-wanted ad, standard B1 vocabulary"
+    },
+    {
+      "word": "Tagungsraum",
+      "domain": "work",
+      "reason": "not found in corpora — meeting/conference room"
+    },
+    {
+      "word": "Verlaufsprotokoll",
+      "domain": "work",
+      "reason": "not found in corpora — meeting minutes, B2 work vocabulary"
+    },
+    {
+      "word": "Rasierapparat",
+      "domain": "household",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Wäscheklammer",
+      "domain": "household",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Bügeleisen",
+      "domain": "household",
+      "reason": "subtitle rank 28729"
+    },
+    {
+      "word": "Spülmittel",
+      "domain": "household",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Waschmittel",
+      "domain": "household",
+      "reason": "subtitle rank 33748"
+    },
+    {
+      "word": "Putzmittel",
+      "domain": "household",
+      "reason": "subtitle rank 47442"
+    },
+    {
+      "word": "Küchenrolle",
+      "domain": "household",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Alufolie",
+      "domain": "household",
+      "reason": "subtitle rank 36380"
+    },
+    {
+      "word": "Frischhaltefolie",
+      "domain": "household",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Spülbecken",
+      "domain": "household",
+      "reason": "subtitle rank 41397"
+    },
+    {
+      "word": "Steckdose",
+      "domain": "household",
+      "reason": "subtitle rank 28129"
+    },
+    {
+      "word": "Abfalleimer",
+      "domain": "household",
+      "reason": "Zipf 2.63 — trash bin, essential household word"
+    },
+    {
+      "word": "Streichholz",
+      "domain": "household",
+      "reason": "Zipf 2.98 — match (fire), B1 household vocabulary"
+    },
+    {
+      "word": "Reifenwechsel",
+      "domain": "transport",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Abschleppdienst",
+      "domain": "transport",
+      "reason": "subtitle rank 44570"
+    },
+    {
+      "word": "Pannenhilfe",
+      "domain": "transport",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Monatskarte",
+      "domain": "transport",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Jahreskarte",
+      "domain": "transport",
+      "reason": "Leipzig 48390"
+    },
+    {
+      "word": "Fahrtkosten",
+      "domain": "transport",
+      "reason": "Leipzig 47499"
+    },
+    {
+      "word": "Parkverbot",
+      "domain": "transport",
+      "reason": "subtitle rank 39511"
+    },
+    {
+      "word": "Fahrkarte",
+      "domain": "transport",
+      "reason": "Zipf 3.17 — ticket (train/bus), essential B1 transport word"
+    },
+    {
+      "word": "Umleitung",
+      "domain": "transport",
+      "reason": "Zipf 3.12 — detour/diversion, standard road sign vocabulary"
+    },
+    {
+      "word": "Einbahnstraße",
+      "domain": "transport",
+      "reason": "Zipf 3.15 — one-way street, standard road sign vocabulary"
+    },
+    {
+      "word": "Fahrplan",
+      "domain": "transport",
+      "reason": "below frequency cutoff — timetable/schedule, essential A2 public transport vocabulary"
+    },
+    {
+      "word": "Fahrgast",
+      "domain": "transport",
+      "reason": "below frequency cutoff — passenger, essential public transport vocabulary"
+    },
+    {
+      "word": "Umstieg",
+      "domain": "transport",
+      "reason": "below frequency cutoff — transfer/change (noun), core public transport vocabulary"
+    },
+    {
+      "word": "Tageskarte",
+      "domain": "transport",
+      "reason": "below frequency cutoff — day ticket, standard public transport ticket type"
+    },
+    {
+      "word": "Wochenkarte",
+      "domain": "transport",
+      "reason": "below frequency cutoff — weekly ticket, standard public transport ticket type"
+    },
+    {
+      "word": "Einzelfahrschein",
+      "domain": "transport",
+      "reason": "below frequency cutoff — single ticket, A2 public transport vocabulary"
+    },
+    {
+      "word": "Fahrschein",
+      "domain": "transport",
+      "reason": "below frequency cutoff — ticket (general), A2 public transport vocabulary"
+    },
+    {
+      "word": "Kurzstrecke",
+      "domain": "transport",
+      "reason": "below frequency cutoff — short-distance fare, standard BVG/MVV ticket type"
+    },
+    {
+      "word": "Fahrkartenautomat",
+      "domain": "transport",
+      "reason": "below frequency cutoff — ticket machine, essential station vocabulary"
+    },
+    {
+      "word": "Verkehrsmittel",
+      "domain": "transport",
+      "reason": "below frequency cutoff — means of transport, essential A2 vocabulary"
+    },
+    {
+      "word": "Tarifzone",
+      "domain": "transport",
+      "reason": "below frequency cutoff — fare zone, standard public transport vocabulary"
+    },
+    {
+      "word": "Abfahrtszeit",
+      "domain": "transport",
+      "reason": "below frequency cutoff — departure time, essential travel vocabulary"
+    },
+    {
+      "word": "Ankunftszeit",
+      "domain": "transport",
+      "reason": "below frequency cutoff — arrival time, essential travel vocabulary"
+    },
+    {
+      "word": "Bahnhofshalle",
+      "domain": "transport",
+      "reason": "below frequency cutoff — station concourse, essential station vocabulary"
+    },
+    {
+      "word": "Speisewagen",
+      "domain": "transport",
+      "reason": "below frequency cutoff — dining car, standard long-distance train vocabulary"
+    },
+    {
+      "word": "Kundenzentrum",
+      "domain": "transport",
+      "reason": "below frequency cutoff — customer service centre, A2 vocabulary (BVG, Deutsche Bahn, etc.)"
+    },
+    {
+      "word": "Gültigkeit",
+      "domain": "transport",
+      "reason": "below frequency cutoff — validity, essential for tickets and documents"
+    },
+    {
+      "word": "Geltungsdauer",
+      "domain": "transport",
+      "reason": "below frequency cutoff — validity period, standard public transport ticket term"
+    },
+    {
+      "word": "Ermäßigungstarif",
+      "domain": "transport",
+      "reason": "below frequency cutoff — reduced fare, standard ticket pricing vocabulary"
+    },
+    {
+      "word": "entwerten",
+      "domain": "transport",
+      "reason": "below frequency cutoff — to validate/stamp a ticket, essential daily action in German public transport"
+    },
+    {
+      "word": "Kontrolleur",
+      "domain": "transport",
+      "reason": "below frequency cutoff — ticket inspector, commonly encountered on trains/buses"
+    },
+    {
+      "word": "Fahrkartenschalter",
+      "domain": "transport",
+      "reason": "below frequency cutoff — ticket counter/booth at stations"
+    },
+    {
+      "word": "Sitzplatz",
+      "domain": "transport",
+      "reason": "below frequency cutoff — seat (on vehicle), fundamental booking vocabulary"
+    },
+    {
+      "word": "Platzreservierung",
+      "domain": "transport",
+      "reason": "below frequency cutoff — seat reservation, essential for long-distance trains"
+    },
+    {
+      "word": "Rolltreppe",
+      "domain": "transport",
+      "reason": "below frequency cutoff — escalator, standard station infrastructure"
+    },
+    {
+      "word": "Gleiswechsel",
+      "domain": "transport",
+      "reason": "below frequency cutoff — platform change, common in station announcements"
+    },
+    {
+      "word": "Anschlussverbindung",
+      "domain": "transport",
+      "reason": "below frequency cutoff — connecting train/bus, essential for journey planning"
+    },
+    {
+      "word": "Triebwagen",
+      "domain": "transport",
+      "reason": "below frequency cutoff — powered train unit, standard railway terminology"
+    },
+    {
+      "word": "Fahrgastrechte",
+      "domain": "transport",
+      "reason": "below frequency cutoff — passenger rights, B2 vocabulary for delay compensation"
+    },
+    {
+      "word": "zusteigen",
+      "domain": "transport",
+      "reason": "below frequency cutoff — to board (train/bus), complement to aussteigen"
+    },
+    {
+      "word": "Bahnsteigkante",
+      "domain": "transport",
+      "reason": "below frequency cutoff — platform edge, safety vocabulary in station announcements"
+    },
+    {
+      "word": "Behindertenaufzug",
+      "domain": "transport",
+      "reason": "below frequency cutoff — accessible elevator, accessibility vocabulary"
+    },
+    {
+      "word": "Rollator",
+      "domain": "transport",
+      "reason": "below frequency cutoff — wheeled walker, BVG/public transport accessibility vocabulary"
+    },
+    {
+      "word": "Hilfsmittel",
+      "domain": "transport",
+      "reason": "below frequency cutoff — aid/assistive device, BVG regulations vocabulary"
+    },
+    {
+      "word": "Krankenfahrstuhl",
+      "domain": "transport",
+      "reason": "below frequency cutoff — motorized wheelchair, still used by BVG in regulations"
+    },
+    {
+      "word": "Entwertung",
+      "domain": "transport",
+      "reason": "below frequency cutoff — ticket validation/cancellation, noun form of entwerten"
+    },
+    {
+      "word": "stempeln",
+      "domain": "transport",
+      "reason": "below frequency cutoff — to stamp (a ticket), used on older regional trains"
+    },
+    {
+      "word": "validieren",
+      "domain": "transport",
+      "reason": "below frequency cutoff — to validate, modern term for ticket validation machines"
+    },
+    {
+      "word": "Fahrkartenkontrolle",
+      "domain": "transport",
+      "reason": "below frequency cutoff — ticket inspection, essential regional train vocabulary"
+    },
+    {
+      "word": "Zugbegleiter",
+      "domain": "transport",
+      "reason": "below frequency cutoff — train attendant/conductor, Deutsche Bahn standard term"
+    },
+    {
+      "word": "Zugbegleiterin",
+      "domain": "transport",
+      "reason": "below frequency cutoff — female train attendant"
+    },
+    {
+      "word": "Anschlusszug",
+      "domain": "transport",
+      "reason": "below frequency cutoff — connecting train, heard daily in regional train announcements"
+    },
+    {
+      "word": "Regionalbahn",
+      "domain": "transport",
+      "reason": "below frequency cutoff — regional train (RB), fundamental German rail network vocabulary"
+    },
+    {
+      "word": "Regionalexpress",
+      "domain": "transport",
+      "reason": "below frequency cutoff — regional express (RE), fundamental German rail network vocabulary"
+    },
+    {
+      "word": "Intercity",
+      "domain": "transport",
+      "reason": "below frequency cutoff — intercity train (IC), Deutsche Bahn train category"
+    },
+    {
+      "word": "Verspätung",
+      "domain": "transport",
+      "reason": "below frequency cutoff — delay, quintessential Deutsche Bahn vocabulary"
+    },
+    {
+      "word": "Zugverspätung",
+      "domain": "transport",
+      "reason": "below frequency cutoff — train delay, common compound form of Verspätung"
+    },
+    {
+      "word": "Streckenunterbrechung",
+      "domain": "transport",
+      "reason": "below frequency cutoff — line interruption, heard in station announcements"
+    },
+    {
+      "word": "Schienenersatzverkehr",
+      "domain": "transport",
+      "reason": "below frequency cutoff — rail replacement bus service (SEV), essential when trains are cancelled"
+    },
+    {
+      "word": "Mülltrennung",
+      "domain": "environment",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Wertstoffhof",
+      "domain": "environment",
+      "reason": "subtitle rank 44192"
+    },
+    {
+      "word": "Biomüll",
+      "domain": "environment",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Papiermüll",
+      "domain": "environment",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Sperrmüll",
+      "domain": "environment",
+      "reason": "Leipzig 31529"
+    },
+    {
+      "word": "Recycling",
+      "domain": "environment",
+      "reason": "subtitle rank 38621"
+    },
+    {
+      "word": "Kontoauszug",
+      "domain": "finance",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Girokonto",
+      "domain": "finance",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Dauerauftrag",
+      "domain": "finance",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Steuerklasse",
+      "domain": "finance",
+      "reason": "Leipzig 38509"
+    },
+    {
+      "word": "Bankleitzahl",
+      "domain": "finance",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Überweisung",
+      "domain": "finance",
+      "reason": "Zipf 3.19 — bank transfer, essential B1 banking word"
+    },
+    {
+      "word": "Geldautomat",
+      "domain": "finance",
+      "reason": "Zipf 2.65 — ATM, essential everyday vocabulary"
+    },
+    {
+      "word": "Kassenzettel",
+      "domain": "shopping",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Kassenbon",
+      "domain": "shopping",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Garantieschein",
+      "domain": "shopping",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Reklamation",
+      "domain": "shopping",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Rückgabe",
+      "domain": "shopping",
+      "reason": "subtitle rank 28156"
+    },
+    {
+      "word": "Umtausch",
+      "domain": "shopping",
+      "reason": "Leipzig 51015"
+    },
+    {
+      "word": "Mehrwertsteuer",
+      "domain": "shopping",
+      "reason": "Zipf 3.00 — VAT, appears on every German receipt"
+    },
+    {
+      "word": "Ermäßigung",
+      "domain": "shopping",
+      "reason": "Zipf 2.72 — discount/reduction, essential shopping vocabulary"
+    },
+    {
+      "word": "Vollkornbrot",
+      "domain": "food",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Aufschnitt",
+      "domain": "food",
+      "reason": "subtitle rank 43805"
+    },
+    {
+      "word": "Tiefkühlkost",
+      "domain": "food",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Haltbarkeitsdatum",
+      "domain": "food",
+      "reason": "not in top 50k subtitles"
+    },
+    {
+      "word": "Mindesthaltbarkeitsdatum",
+      "domain": "food",
+      "reason": "Leipzig 42734"
+    },
+    {
+      "word": "Möhre",
+      "domain": "food",
+      "reason": "Zipf 2.75 — carrot (standard German), basic vegetable"
+    },
+    {
+      "word": "Nudel",
+      "domain": "food",
+      "reason": "Zipf 2.81 — pasta/noodle, usually plural Nudeln — singular underrepresented"
+    },
+    {
+      "word": "Bohne",
+      "domain": "food",
+      "reason": "Zipf 2.86 — bean, basic vegetable vocabulary"
+    },
+    {
+      "word": "Zwiebel",
+      "domain": "food",
+      "reason": "Zipf 3.06 — onion, core cooking vocabulary"
+    },
+    {
+      "word": "Schnitzel",
+      "domain": "food",
+      "reason": "Zipf 3.04 — schnitzel, iconic German/Austrian dish"
+    },
+    {
+      "word": "Hähnchen",
+      "domain": "food",
+      "reason": "Zipf 3.14 — chicken (meat), standard menu vocabulary"
+    },
+    {
+      "word": "Marmelade",
+      "domain": "food",
+      "reason": "Zipf 3.20 — jam, standard breakfast vocabulary"
+    },
+    {
+      "word": "Kochtopf",
+      "domain": "food",
+      "reason": "below frequency cutoff — cooking pot, A1 kitchen vocabulary"
+    },
+    {
+      "word": "Blumenkohl",
+      "domain": "food",
+      "reason": "below frequency cutoff — cauliflower, A2 vegetable vocabulary"
+    },
+    {
+      "word": "Bratwurst",
+      "domain": "food",
+      "reason": "below frequency cutoff — bratwurst, A2 iconic German food"
+    },
+    {
+      "word": "Traube",
+      "domain": "food",
+      "reason": "below frequency cutoff — grape, A2 fruit vocabulary"
+    },
+    {
+      "word": "Sandale",
+      "domain": "clothing",
+      "reason": "below frequency cutoff — sandal, A1 footwear vocabulary"
+    },
+    {
+      "word": "Tischler",
+      "domain": "work",
+      "reason": "below frequency cutoff — carpenter, B1 profession vocabulary"
+    },
+    {
+      "word": "zusammenfassen",
+      "domain": "education",
+      "reason": "below frequency cutoff — to summarize, B1 academic/work verb"
+    },
+    {
+      "word": "unpünktlich",
+      "domain": "social",
+      "reason": "below frequency cutoff — unpunctual, A2 adjective"
+    },
+    {
+      "word": "prachtvoll",
+      "domain": "general",
+      "reason": "below frequency cutoff — magnificent/splendid, B1-B2 adjective"
+    },
+    {
+      "word": "Fragenkatalog",
+      "domain": "education",
+      "reason": "below frequency cutoff — question catalogue, used in Einbürgerungstest prep"
+    },
+    {
+      "word": "Klausur",
+      "domain": "education",
+      "reason": "below frequency cutoff — written exam, A2-B1 education vocabulary"
+    },
+    {
+      "word": "Prüfungsergebnis",
+      "domain": "education",
+      "reason": "below frequency cutoff — exam result, B1 education vocabulary"
+    },
+    {
+      "word": "bestehen",
+      "domain": "education",
+      "reason": "below frequency cutoff — to pass (an exam), A2 essential verb"
+    },
+    {
+      "word": "durchfallen",
+      "domain": "education",
+      "reason": "below frequency cutoff — to fail (an exam), A2 essential verb"
+    },
+    {
+      "word": "Sprachkurs",
+      "domain": "education",
+      "reason": "below frequency cutoff — language course, A1 learner vocabulary"
+    },
+    {
+      "word": "Integrationskurs",
+      "domain": "education",
+      "reason": "below frequency cutoff — integration course, mandatory for many immigrants in Germany"
+    },
+    {
+      "word": "Einbürgerungstest",
+      "domain": "education",
+      "reason": "below frequency cutoff — citizenship test, essential civic/admin vocabulary"
+    },
+    {
+      "word": "Volkshochschule",
+      "domain": "education",
+      "reason": "below frequency cutoff — adult education centre (VHS), where most language courses happen"
+    },
+    {
+      "word": "Zertifikat",
+      "domain": "education",
+      "reason": "below frequency cutoff — certificate, B1 education/admin vocabulary"
+    },
+    {
+      "word": "Wortschatz",
+      "domain": "education",
+      "reason": "below frequency cutoff — vocabulary, A2 metalinguistic term"
+    },
+    {
+      "word": "Arbeitsblatt",
+      "domain": "education",
+      "reason": "below frequency cutoff — worksheet, A2 classroom vocabulary"
+    },
+    {
+      "word": "Prüfungsangst",
+      "domain": "education",
+      "reason": "below frequency cutoff — exam anxiety, B1-B2 education vocabulary"
+    },
+    {
+      "word": "Kursteilnehmer",
+      "domain": "education",
+      "reason": "below frequency cutoff — course participant, A2 classroom vocabulary"
+    },
+    {
+      "word": "Schulpflicht",
+      "domain": "education",
+      "reason": "Leipzig 60376"
+    },
+    {
+      "word": "Elternsprechtag",
+      "domain": "education",
+      "reason": "not found in corpora"
+    },
+    {
+      "word": "Lehrplan",
+      "domain": "education",
+      "reason": "subtitle rank 27445"
+    },
+    {
+      "word": "Antwortbogen",
+      "domain": "education",
+      "reason": "not found in corpora — answer sheet, appears in Goethe B1 exam instructions"
+    },
+    {
+      "word": "Textaufbau",
+      "domain": "education",
+      "reason": "not found in corpora — text structure, appears in Goethe B1 writing instructions"
+    },
+    {
+      "word": "Berufspraktikum",
+      "domain": "education",
+      "reason": "not found in corpora — work placement, TELC B2 vocabulary"
+    },
+    {
+      "word": "Aufenthaltserlaubnis",
+      "domain": "admin",
+      "reason": "Leipzig 46439"
+    },
+    {
+      "word": "Postleitzahl",
+      "domain": "admin",
+      "reason": "Zipf 2.88 — postal code, essential for any form-filling"
+    },
+    {
+      "word": "Familienstand",
+      "domain": "admin",
+      "reason": "Zipf 2.68 — marital status, appears on every official form"
+    },
+    {
+      "word": "Einschreiben",
+      "domain": "admin",
+      "reason": "Zipf 2.91 — registered letter (post), standard postal vocabulary"
+    },
+    {
+      "word": "Anredeform",
+      "domain": "admin",
+      "reason": "not found in corpora — form of address (Sie/du), social norms vocabulary"
+    },
+    {
+      "word": "Notausgang",
+      "domain": "safety",
+      "reason": "Zipf 2.84 — emergency exit, essential safety sign"
+    },
+    {
+      "word": "Rutschgefahr",
+      "domain": "safety",
+      "reason": "not found in corpora — slipping hazard, standard safety sign in Germany"
+    },
+    {
+      "word": "Wettervorhersage",
+      "domain": "weather",
+      "reason": "Zipf 2.91 — weather forecast, B1 everyday vocabulary"
+    },
+    {
+      "word": "schneien",
+      "domain": "weather",
+      "reason": "Zipf 3.03 — to snow; verb underrepresented vs noun Schnee"
+    },
+    {
+      "word": "herunterladen",
+      "domain": "digital",
+      "reason": "Zipf 2.92 — to download; infinitive underrepresented vs inflected forms"
+    },
+    {
+      "word": "hochladen",
+      "domain": "digital",
+      "reason": "Zipf 2.83 — to upload; infinitive underrepresented vs inflected forms"
+    },
+    {
+      "word": "anklicken",
+      "domain": "digital",
+      "reason": "Zipf 2.57 — to click (on); infinitive underrepresented vs inflected forms"
+    },
+    {
+      "word": "Bleistift",
+      "domain": "stationery",
+      "reason": "Zipf 2.91 — pencil, essential school/office vocabulary"
+    },
+    {
+      "word": "Kugelschreiber",
+      "domain": "stationery",
+      "reason": "Zipf 3.06 — ballpoint pen, essential school/office vocabulary"
+    },
+    {
+      "word": "Briefumschlag",
+      "domain": "stationery",
+      "reason": "Zipf 2.84 — envelope, essential postal vocabulary"
+    },
+    {
+      "word": "Jugendherberge",
+      "domain": "travel",
+      "reason": "Zipf 2.68 — youth hostel, B1 travel vocabulary"
+    },
+    {
+      "word": "Doppelzimmer",
+      "domain": "travel",
+      "reason": "Zipf 2.78 — double room, standard hotel vocabulary"
+    },
+    {
+      "word": "Einzelzimmer",
+      "domain": "travel",
+      "reason": "Zipf 2.94 — single room, standard hotel vocabulary"
+    },
+    {
+      "word": "Übernachtung",
+      "domain": "travel",
+      "reason": "Zipf 3.02 — overnight stay, essential travel vocabulary"
+    },
+    {
+      "word": "Reservierung",
+      "domain": "travel",
+      "reason": "Zipf 3.12 — reservation/booking, essential travel vocabulary"
+    },
+    {
+      "word": "Halbpension",
+      "domain": "travel",
+      "reason": "not found in corpora — half board, standard hotel/travel term"
+    },
+    {
+      "word": "einzahlen",
+      "domain": "finance",
+      "reason": "subtitle rank 34551 — infinitive underrepresented vs inflected forms"
+    },
+    {
+      "word": "abmelden",
+      "domain": "admin",
+      "reason": "subtitle rank 47180 — infinitive underrepresented vs inflected forms"
+    },
+    {
+      "word": "recyceln",
+      "domain": "environment",
+      "reason": "subtitle rank 41211"
+    },
+    {
+      "word": "Mütze",
+      "domain": "clothing",
+      "reason": "Zipf 3.70 — winter hat, B1 clothing vocabulary; underrepresented vs other clothing items in news"
+    },
+    {
+      "word": "Socken",
+      "domain": "clothing",
+      "reason": "Zipf 3.73 — socks, essential clothing; plural form dominates"
+    },
+    {
+      "word": "Schal",
+      "domain": "clothing",
+      "reason": "Zipf 3.39 — scarf, essential winter clothing"
+    },
+    {
+      "word": "Handschuh",
+      "domain": "clothing",
+      "reason": "Zipf 3.31 — glove, essential winter clothing"
+    },
+    {
+      "word": "Geldbeutel",
+      "domain": "clothing",
+      "reason": "Zipf 3.36 — wallet/purse, everyday carried item"
+    },
+    {
+      "word": "Portemonnaie",
+      "domain": "clothing",
+      "reason": "Zipf 3.35 — wallet (French loanword variant), common in German speech"
+    },
+    {
+      "word": "Badeanzug",
+      "domain": "clothing",
+      "reason": "Zipf 3.00 — swimsuit (women's), B1 clothing vocabulary"
+    },
+    {
+      "word": "Badehose",
+      "domain": "clothing",
+      "reason": "Zipf 3.16 — swimming trunks, B1 clothing vocabulary"
+    },
+    {
+      "word": "Turnschuh",
+      "domain": "clothing",
+      "reason": "Zipf 2.73 — trainer/sneaker, essential everyday footwear"
+    },
+    {
+      "word": "Strumpfhose",
+      "domain": "clothing",
+      "reason": "Zipf 2.79 — tights/pantyhose, B1 clothing item"
+    },
+    {
+      "word": "Hausschuh",
+      "domain": "clothing",
+      "reason": "Zipf 1.90 — house slipper; absent from corpora but essential B1 household vocabulary"
+    },
+    {
+      "word": "Tomate",
+      "domain": "food",
+      "reason": "Zipf 3.00 — tomato, core vegetable; singular underrepresented vs plural Tomaten"
+    },
+    {
+      "word": "Gurke",
+      "domain": "food",
+      "reason": "Zipf 3.04 — cucumber/gherkin, common German food item"
+    },
+    {
+      "word": "Hackfleisch",
+      "domain": "food",
+      "reason": "Zipf 3.04 — minced meat, standard German cooking vocabulary"
+    },
+    {
+      "word": "Gewürz",
+      "domain": "food",
+      "reason": "Zipf 2.83 — spice/seasoning, essential cooking vocabulary"
+    },
+    {
+      "word": "Erbse",
+      "domain": "food",
+      "reason": "Zipf 2.69 — pea, basic vegetable; singular underrepresented vs plural Erbsen"
+    },
+    {
+      "word": "Wartezimmer",
+      "domain": "health",
+      "reason": "Zipf 2.98 — waiting room (doctor's), essential health vocabulary"
+    },
+    {
+      "word": "Facharzt",
+      "domain": "health",
+      "reason": "Zipf 3.04 — specialist doctor, standard German healthcare term"
+    },
+    {
+      "word": "Impfpass",
+      "domain": "health",
+      "reason": "Zipf 2.09 — vaccination record, essential for travel/admin"
+    },
+    {
+      "word": "Kopfschmerz",
+      "domain": "health",
+      "reason": "below frequency cutoff — headache, A1 health vocabulary"
+    },
+    {
+      "word": "Mandel",
+      "domain": "health",
+      "reason": "below frequency cutoff — tonsil/almond, A2 medical vocabulary"
+    },
+    {
+      "word": "Arztpraxis",
+      "domain": "health",
+      "reason": "below frequency cutoff — doctor's office/practice, A2 health vocabulary"
+    },
+    {
+      "word": "Gürtelrose",
+      "domain": "health",
+      "reason": "below frequency cutoff — shingles, B2 medical vocabulary"
+    },
+    {
+      "word": "Bettdecke",
+      "domain": "household",
+      "reason": "Zipf 3.04 — duvet/comforter, basic bedroom vocabulary"
+    },
+    {
+      "word": "Wasserhahn",
+      "domain": "household",
+      "reason": "Zipf 2.83 — tap/faucet, essential household vocabulary"
+    },
+    {
+      "word": "Glühbirne",
+      "domain": "household",
+      "reason": "Zipf 3.00 — light bulb, basic household item"
+    },
+    {
+      "word": "staubsaugen",
+      "domain": "household",
+      "reason": "Zipf 2.40 — to vacuum, essential household chore verb"
+    },
+    {
+      "word": "Gardine",
+      "domain": "household",
+      "reason": "below frequency cutoff — curtain, A2 household vocabulary"
+    },
+    {
+      "word": "Zebrastreifen",
+      "domain": "transport",
+      "reason": "Zipf 2.69 — zebra crossing, standard road vocabulary"
+    },
+    {
+      "word": "Fahrradweg",
+      "domain": "transport",
+      "reason": "Zipf 2.55 — cycle path, B1 urban transport vocabulary"
+    },
+    {
+      "word": "Fußgängerzone",
+      "domain": "transport",
+      "reason": "Zipf 2.94 — pedestrian zone, standard German urban vocabulary"
+    },
+    {
+      "word": "Vorfahrt",
+      "domain": "transport",
+      "reason": "Zipf 2.88 — right of way, essential driving vocabulary"
+    },
+    {
+      "word": "Seilbahn",
+      "domain": "outdoor",
+      "reason": "cable car — essential DACH leisure/travel vocabulary, underrepresented in corpora (rank 46K in subtitles)"
+    },
+    {
+      "word": "Sessellift",
+      "domain": "outdoor",
+      "reason": "chairlift — B1 winter sports vocabulary, common in DACH"
+    },
+    {
+      "word": "Skilift",
+      "domain": "outdoor",
+      "reason": "ski lift — B1 winter sports vocabulary"
+    },
+    {
+      "word": "Bergbahn",
+      "domain": "outdoor",
+      "reason": "mountain railway — common in DACH tourist regions (Leipzig rank 54K)"
+    },
+    {
+      "word": "Gondel",
+      "domain": "outdoor",
+      "reason": "gondola (cable car cabin / boat) — B1 travel vocabulary"
+    },
+    {
+      "word": "Standseilbahn",
+      "domain": "outdoor",
+      "reason": "funicular railway — common in DACH mountain tourism (Rigi, Zugspitze, etc.)"
+    },
+    {
+      "word": "Zahnradbahn",
+      "domain": "outdoor",
+      "reason": "rack/cog railway — iconic DACH mountain transport (Zugspitze, Rigi, Jungfrau)"
+    },
+    {
+      "word": "Schwebebahn",
+      "domain": "outdoor",
+      "reason": "suspension railway / monorail — B2 transport vocabulary, Wuppertal Schwebebahn well-known"
+    },
+    {
+      "word": "Wanderweg",
+      "domain": "outdoor",
+      "reason": "hiking trail — essential leisure vocabulary, very common in DACH (Leipzig rank 22K)"
+    },
+    {
+      "word": "Wanderkarte",
+      "domain": "outdoor",
+      "reason": "hiking map — essential for trail navigation in DACH mountain regions"
+    },
+    {
+      "word": "Klettersteig",
+      "domain": "outdoor",
+      "reason": "via ferrata — quintessential Alpine activity, B2 outdoor vocabulary"
+    },
+    {
+      "word": "Berghütte",
+      "domain": "outdoor",
+      "reason": "mountain hut/refuge — essential Alpine tourism vocabulary"
+    },
+    {
+      "word": "Almhütte",
+      "domain": "outdoor",
+      "reason": "alpine hut — DACH-specific, traditional mountain shelter with meals"
+    },
+    {
+      "word": "Naturschutzgebiet",
+      "domain": "outdoor",
+      "reason": "nature reserve — B2 geography/environment vocabulary, common in DACH"
+    },
+    {
+      "word": "Skigebiet",
+      "domain": "outdoor",
+      "reason": "ski resort/area — B1 winter travel, appears in news (Leipzig rank 13K) but filtered"
+    },
+    {
+      "word": "Nationalpark",
+      "domain": "outdoor",
+      "reason": "national park — B1 geography/nature vocabulary for learners"
+    },
+    {
+      "word": "Kurort",
+      "domain": "outdoor",
+      "reason": "spa/health resort — typical DACH travel destination vocabulary"
+    },
+    {
+      "word": "Reiseziel",
+      "domain": "outdoor",
+      "reason": "travel destination — B1 travel vocabulary"
+    },
+    {
+      "word": "Wintersport",
+      "domain": "outdoor",
+      "reason": "winter sport — B1, very common in DACH cultural context"
+    },
+    {
+      "word": "Bergsteiger",
+      "domain": "outdoor",
+      "reason": "mountaineer — B2 outdoor vocabulary"
+    },
+    {
+      "word": "Bergsteigerin",
+      "domain": "outdoor",
+      "reason": "feminine form of Bergsteiger"
+    },
+    {
+      "word": "Ausflugsziel",
+      "domain": "outdoor",
+      "reason": "day trip destination — common in tourism/leisure context"
+    },
+    {
+      "word": "WLAN",
+      "domain": "digital",
+      "reason": "Zipf 3.14 — WiFi (German term), essential modern vocabulary"
+    },
+    {
+      "word": "surfen",
+      "domain": "digital",
+      "reason": "Zipf 3.14 — to surf (internet), B1 digital vocabulary"
+    },
+    {
+      "word": "aufladen",
+      "domain": "digital",
+      "reason": "Zipf 3.19 — to charge (device), essential modern verb"
+    },
+    {
+      "word": "ausdrucken",
+      "domain": "digital",
+      "reason": "Zipf 2.85 — to print out, common office/digital vocabulary"
+    },
+    {
+      "word": "mailen",
+      "domain": "digital",
+      "reason": "Zipf 2.59 — to email (verb), B1 digital communication"
+    },
+    {
+      "word": "chatten",
+      "domain": "digital",
+      "reason": "Zipf 2.42 — to chat (online), B1 digital vocabulary"
+    },
+    {
+      "word": "Hausaufgabe",
+      "domain": "education",
+      "reason": "Zipf 2.85 — homework; singular underrepresented vs plural Hausaufgaben"
+    },
+    {
+      "word": "Stundenplan",
+      "domain": "education",
+      "reason": "Zipf 2.79 — timetable/schedule (school), essential school vocabulary"
+    },
+    {
+      "word": "Nachhilfe",
+      "domain": "education",
+      "reason": "Zipf 3.21 — private tuition/tutoring, common German educational term"
+    },
+    {
+      "word": "Klassenarbeit",
+      "domain": "education",
+      "reason": "Zipf 2.28 — class test/exam, essential school vocabulary"
+    },
+    {
+      "word": "Passfoto",
+      "domain": "admin",
+      "reason": "Zipf 2.09 — passport photo, required for all official documents"
+    },
+    {
+      "word": "Geburtsurkunde",
+      "domain": "admin",
+      "reason": "Zipf 3.11 — birth certificate, essential civil registration document"
+    },
+    {
+      "word": "Sehenswürdigkeit",
+      "domain": "travel",
+      "reason": "Zipf 2.97 — tourist attraction/sight, B1 travel vocabulary"
+    },
+    {
+      "word": "Handgepäck",
+      "domain": "travel",
+      "reason": "Zipf 2.79 — hand luggage, essential air travel vocabulary"
+    },
+    {
+      "word": "Pauschalreise",
+      "domain": "travel",
+      "reason": "Zipf 3.11 — package holiday, standard travel agency vocabulary"
+    },
+    {
+      "word": "Souvenir",
+      "domain": "travel",
+      "reason": "Zipf 3.07 — souvenir, B1 travel vocabulary"
+    },
+    {
+      "word": "Wetterbericht",
+      "domain": "weather",
+      "reason": "Zipf 3.05 — weather report, B1 everyday vocabulary"
+    },
+    {
+      "word": "frieren",
+      "domain": "weather",
+      "reason": "Zipf 3.06 — to freeze/be cold, essential weather/sensation verb"
+    },
+    {
+      "word": "donnern",
+      "domain": "weather",
+      "reason": "Zipf 2.77 — to thunder; verb underrepresented vs noun Donner"
+    },
+    {
+      "word": "neblig",
+      "domain": "weather",
+      "reason": "Zipf 2.58 — foggy, B1 weather adjective"
+    },
+    {
+      "word": "siezen",
+      "domain": "social",
+      "reason": "Zipf 2.45 — to address formally (Sie), essential German social convention"
+    },
+    {
+      "word": "duzen",
+      "domain": "social",
+      "reason": "Zipf 2.80 — to address informally (du), essential German social convention"
+    },
+    {
+      "word": "Sportverein",
+      "domain": "sport",
+      "reason": "Zipf 2.95 — sports club, common German leisure institution"
+    },
+    {
+      "word": "Mitgliedsbeitrag",
+      "domain": "sport",
+      "reason": "Zipf 2.47 — membership fee, needed for Sportverein/club vocabulary"
+    },
+    {
+      "word": "zelten",
+      "domain": "sport",
+      "reason": "Zipf 2.94 — to camp, B1 leisure/outdoor vocabulary"
+    },
+    {
+      "word": "campen",
+      "domain": "sport",
+      "reason": "Zipf 3.02 — to camp (anglicism), commonly used alongside zelten"
+    },
+    {
+      "word": "Grundgesetz",
+      "domain": "civic",
+      "reason": "freq rank 7029 — German constitution, central to Einbürgerungstest and civic literacy"
+    },
+    {
+      "word": "Bundesrepublik",
+      "domain": "civic",
+      "reason": "freq rank 5726 — official name of Germany, Einbürgerungstest vocabulary"
+    },
+    {
+      "word": "Bundespräsident",
+      "domain": "civic",
+      "reason": "freq rank 5103 — head of state, Einbürgerungstest vocabulary"
+    },
+    {
+      "word": "Bundeskanzler",
+      "domain": "civic",
+      "reason": "freq rank 7251 — head of government, Einbürgerungstest vocabulary"
+    },
+    {
+      "word": "Abgeordneter",
+      "domain": "civic",
+      "reason": "freq rank 5301 — member of parliament, Einbürgerungstest vocabulary"
+    },
+    {
+      "word": "Fraktion",
+      "domain": "civic",
+      "reason": "freq rank 6222 — parliamentary group, Einbürgerungstest vocabulary"
+    },
+    {
+      "word": "Opposition",
+      "domain": "civic",
+      "reason": "freq rank 5092 — political opposition, Einbürgerungstest vocabulary"
+    },
+    {
+      "word": "Koalition",
+      "domain": "civic",
+      "reason": "freq rank 5967 — governing coalition, Einbürgerungstest vocabulary"
+    },
+    {
+      "word": "Diskriminierung",
+      "domain": "civic",
+      "reason": "freq rank 6674 — discrimination, fundamental rights vocabulary"
+    },
+    {
+      "word": "Asylbewerber",
+      "domain": "civic",
+      "reason": "freq rank 6763 — asylum seeker, Einbürgerungstest vocabulary"
+    },
+    {
+      "word": "Integration",
+      "domain": "civic",
+      "reason": "freq rank 5915 — integration, Leben in Deutschland vocabulary"
+    },
+    {
+      "word": "Anmeldung",
+      "domain": "civic",
+      "reason": "freq rank 6192 — registration (Einwohnermeldeamt), essential admin vocabulary"
+    },
+    {
+      "word": "Arbeitslosigkeit",
+      "domain": "civic",
+      "reason": "freq rank 6449 — unemployment, social system vocabulary"
+    },
+    {
+      "word": "Kündigung",
+      "domain": "civic",
+      "reason": "freq rank 5295 — termination (contract/job), essential work and housing vocabulary"
+    },
+    {
+      "word": "Kaution",
+      "domain": "civic",
+      "reason": "freq rank 5269 — security deposit (rental), essential housing vocabulary"
+    },
+    {
+      "word": "Vermieter",
+      "domain": "civic",
+      "reason": "freq rank 5981 — landlord, essential housing vocabulary"
+    },
+    {
+      "word": "Gleichberechtigung",
+      "domain": "civic",
+      "reason": "not in top 50k subtitles — gender equality, Einbürgerungstest fundamental rights"
+    },
+    {
+      "word": "Krankenversicherung",
+      "domain": "civic",
+      "reason": "not in top 50k subtitles — health insurance, mandatory in Germany"
+    },
+    {
+      "word": "Sozialhilfe",
+      "domain": "civic",
+      "reason": "not in top 50k subtitles — social welfare, Leben in Deutschland vocabulary"
+    },
+    {
+      "word": "Flüchtling",
+      "domain": "civic",
+      "reason": "not in top 50k subtitles — refugee, Einbürgerungstest vocabulary"
+    },
+    {
+      "word": "Formular",
+      "domain": "civic",
+      "reason": "not in top 50k subtitles — form (document), essential admin vocabulary"
+    },
+    {
+      "word": "Reisepass",
+      "domain": "civic",
+      "reason": "not in top 50k subtitles — passport, essential identity document"
+    },
+    {
+      "word": "Steuererklärung",
+      "domain": "civic",
+      "reason": "not in top 50k subtitles — tax return, essential admin vocabulary"
+    },
+    {
+      "word": "Finanzamt",
+      "domain": "civic",
+      "reason": "not in top 50k subtitles — tax office, essential admin vocabulary"
+    },
+    {
+      "word": "Sonderangebot",
+      "domain": "shopping",
+      "reason": "not in top 50k subtitles — special offer/sale, essential shopping vocabulary"
+    },
+    {
+      "word": "Pfand",
+      "domain": "shopping",
+      "reason": "not in top 50k subtitles — deposit (bottle return), uniquely German shopping vocabulary"
+    },
+    {
+      "word": "Quittung",
+      "domain": "shopping",
+      "reason": "not in top 50k subtitles — receipt, essential shopping vocabulary"
+    },
+    {
+      "word": "Mietvertrag",
+      "domain": "housing",
+      "reason": "not in top 50k subtitles — rental contract, essential housing vocabulary"
+    },
+    {
+      "word": "Südosten",
+      "domain": "directions",
+      "reason": "below frequency cutoff — southeast, A2 direction vocabulary"
+    },
+    {
+      "word": "Abzweigung",
+      "domain": "directions",
+      "reason": "below frequency cutoff — turn-off/junction, B1 navigation vocabulary"
+    },
+    {
+      "word": "Wegbeschreibung",
+      "domain": "directions",
+      "reason": "below frequency cutoff — directions/route description, A2 essential"
+    },
+    {
+      "word": "Stadtzentrum",
+      "domain": "directions",
+      "reason": "below frequency cutoff — city centre, A1 navigation vocabulary"
+    },
+    {
+      "word": "Wahlrecht",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — right to vote, fundamental democratic concept"
+    },
+    {
+      "word": "Erststimme",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — first vote (direct candidate), German electoral system"
+    },
+    {
+      "word": "Zweitstimme",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — second vote (party list), German electoral system"
+    },
+    {
+      "word": "Verhältniswahl",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — proportional representation"
+    },
+    {
+      "word": "Volksabstimmung",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — referendum/plebiscite"
+    },
+    {
+      "word": "Fünfprozenthürde",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — 5% threshold for parliamentary representation"
+    },
+    {
+      "word": "Legislaturperiode",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — legislative term/period"
+    },
+    {
+      "word": "Gewaltenteilung",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — separation of powers, core constitutional principle"
+    },
+    {
+      "word": "Legislative",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — legislative branch"
+    },
+    {
+      "word": "Exekutive",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — executive branch"
+    },
+    {
+      "word": "Judikative",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — judicial branch"
+    },
+    {
+      "word": "Rechtsstaat",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — rule of law, core constitutional principle"
+    },
+    {
+      "word": "Sozialstaat",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — welfare state, core constitutional principle"
+    },
+    {
+      "word": "Föderalismus",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — federalism, German state structure"
+    },
+    {
+      "word": "Kommunalwahl",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — municipal/local election"
+    },
+    {
+      "word": "Tarifvertrag",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — collective bargaining agreement"
+    },
+    {
+      "word": "Grundrecht",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — fundamental right, Article 1-19 Grundgesetz"
+    },
+    {
+      "word": "Menschenwürde",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — human dignity, Article 1 Grundgesetz"
+    },
+    {
+      "word": "Meinungsfreiheit",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — freedom of expression, Article 5"
+    },
+    {
+      "word": "Pressefreiheit",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — freedom of the press, Article 5"
+    },
+    {
+      "word": "Religionsfreiheit",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — freedom of religion, Article 4"
+    },
+    {
+      "word": "Versammlungsfreiheit",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — freedom of assembly, Article 8"
+    },
+    {
+      "word": "Menschenrecht",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — human right"
+    },
+    {
+      "word": "Rechtsprechung",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — jurisdiction/jurisprudence"
+    },
+    {
+      "word": "Strafrecht",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — criminal law"
+    },
+    {
+      "word": "Zivilrecht",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — civil law"
+    },
+    {
+      "word": "Verwaltungsrecht",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — administrative law"
+    },
+    {
+      "word": "Verfassungsgericht",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — constitutional court"
+    },
+    {
+      "word": "Bundesverfassungsgericht",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — Federal Constitutional Court, Karlsruhe"
+    },
+    {
+      "word": "Asylrecht",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — right of asylum, Article 16a"
+    },
+    {
+      "word": "Mauerfall",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — fall of the Berlin Wall, 9 November 1989"
+    },
+    {
+      "word": "Teilung",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — division (of Germany)"
+    },
+    {
+      "word": "Besatzungszone",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — occupation zone, post-WWII"
+    },
+    {
+      "word": "Nationalsozialismus",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — National Socialism/Nazism"
+    },
+    {
+      "word": "Kaiserreich",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — German Empire (1871-1918)"
+    },
+    {
+      "word": "Gedenkstätte",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — memorial site"
+    },
+    {
+      "word": "Konzentrationslager",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — concentration camp"
+    },
+    {
+      "word": "Währungsreform",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — currency reform (1948)"
+    },
+    {
+      "word": "Wirtschaftswunder",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — economic miracle (1950s-60s)"
+    },
+    {
+      "word": "Luftbrücke",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — Berlin Airlift (1948-49)"
+    },
+    {
+      "word": "Grenzübergang",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — border crossing point"
+    },
+    {
+      "word": "Arbeitslosenversicherung",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — unemployment insurance, pillar of Sozialversicherung"
+    },
+    {
+      "word": "Pflegeversicherung",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — long-term care insurance, pillar of Sozialversicherung"
+    },
+    {
+      "word": "Unfallversicherung",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — accident insurance, pillar of Sozialversicherung"
+    },
+    {
+      "word": "Kindergeld",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — child benefit, key social benefit"
+    },
+    {
+      "word": "Elterngeld",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — parental allowance"
+    },
+    {
+      "word": "Elternzeit",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — parental leave"
+    },
+    {
+      "word": "Mutterschutz",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — maternity protection"
+    },
+    {
+      "word": "Ehegattensplitting",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — spousal tax splitting"
+    },
+    {
+      "word": "Einkommensteuer",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — income tax"
+    },
+    {
+      "word": "Arbeitslosengeld",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — unemployment benefit"
+    },
+    {
+      "word": "Altersvorsorge",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — retirement provision"
+    },
+    {
+      "word": "Pflegestufe",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — care level/grade"
+    },
+    {
+      "word": "Bürgerinitiative",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — citizens' initiative"
+    },
+    {
+      "word": "Satzung",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — statute/bylaws (of a Verein)"
+    },
+    {
+      "word": "Eheschließung",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — marriage ceremony, civil law"
+    },
+    {
+      "word": "Vormundschaft",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — guardianship"
+    },
+    {
+      "word": "Einbürgerung",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — naturalization/citizenship acquisition"
+    },
+    {
+      "word": "Niederlassungserlaubnis",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — permanent residence permit"
+    },
+    {
+      "word": "Staatsbürgerschaft",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — citizenship"
+    },
+    {
+      "word": "Staatsangehörigkeit",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — nationality (on official forms)"
+    },
+    {
+      "word": "Personalausweis",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — national ID card"
+    },
+    {
+      "word": "Meldeamt",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — registration office"
+    },
+    {
+      "word": "Einwohnermeldeamt",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — residents' registration office"
+    },
+    {
+      "word": "Ummeldung",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — re-registration (change of address)"
+    },
+    {
+      "word": "Hauptschule",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — secondary general school"
+    },
+    {
+      "word": "Realschule",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — intermediate secondary school"
+    },
+    {
+      "word": "Gesamtschule",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — comprehensive school"
+    },
+    {
+      "word": "Berufsschule",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — vocational school (dual system)"
+    },
+    {
+      "word": "Fachhochschule",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — university of applied sciences"
+    },
+    {
+      "word": "Geselle",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — journeyman, dual education system"
+    },
+    {
+      "word": "Immatrikulation",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — university enrollment"
+    },
+    {
+      "word": "Exmatrikulation",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — university de-enrollment"
+    },
+    {
+      "word": "Bundesadler",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — federal eagle, German national symbol"
+    },
+    {
+      "word": "Nationalfeiertag",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — national holiday (3 October)"
+    },
+    {
+      "word": "Judentum",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — Judaism"
+    },
+    {
+      "word": "Pfingsten",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — Pentecost/Whitsun, public holiday"
+    },
+    {
+      "word": "Ramadan",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — Ramadan, Islamic fasting month"
+    },
+    {
+      "word": "Konfession",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — religious denomination"
+    },
+    {
+      "word": "Reformation",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — Reformation (Luther, 1517)"
+    },
+    {
+      "word": "einbürgern",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — to naturalize/grant citizenship"
+    },
+    {
+      "word": "bewilligen",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — to approve/grant (application)"
+    },
+    {
+      "word": "diskriminieren",
+      "domain": "civic",
+      "reason": "Einbürgerungstest — to discriminate"
+    },
+    {
+      "word": "Einstellungen",
+      "domain": "digital",
+      "reason": "device UI — settings menu, first word seen on any German phone/PC"
+    },
+    {
+      "word": "Bildschirmsperre",
+      "domain": "digital",
+      "reason": "device UI — screen lock"
+    },
+    {
+      "word": "Flugmodus",
+      "domain": "digital",
+      "reason": "device UI — airplane mode"
+    },
+    {
+      "word": "Mobilfunkdaten",
+      "domain": "digital",
+      "reason": "device UI — mobile/cellular data"
+    },
+    {
+      "word": "Datenvolumen",
+      "domain": "digital",
+      "reason": "device UI — data allowance/quota"
+    },
+    {
+      "word": "Sperrbildschirm",
+      "domain": "digital",
+      "reason": "device UI — lock screen"
+    },
+    {
+      "word": "Hintergrundbild",
+      "domain": "digital",
+      "reason": "device UI — wallpaper/background image"
+    },
+    {
+      "word": "Akkustand",
+      "domain": "digital",
+      "reason": "device UI — battery level"
+    },
+    {
+      "word": "Speicherplatz",
+      "domain": "digital",
+      "reason": "device UI — storage space"
+    },
+    {
+      "word": "Datenschutz",
+      "domain": "digital",
+      "reason": "device UI — privacy/data protection"
+    },
+    {
+      "word": "Ortungsdienste",
+      "domain": "digital",
+      "reason": "device UI — location services"
+    },
+    {
+      "word": "Bildschirmzeit",
+      "domain": "digital",
+      "reason": "device UI — screen time"
+    },
+    {
+      "word": "Startbildschirm",
+      "domain": "digital",
+      "reason": "device UI — home screen"
+    },
+    {
+      "word": "Suchleiste",
+      "domain": "digital",
+      "reason": "device UI — search bar"
+    },
+    {
+      "word": "Werkzeugleiste",
+      "domain": "digital",
+      "reason": "device UI — toolbar"
+    },
+    {
+      "word": "Statusleiste",
+      "domain": "digital",
+      "reason": "device UI — status bar"
+    },
+    {
+      "word": "Schaltfläche",
+      "domain": "digital",
+      "reason": "device UI — button (GUI element)"
+    },
+    {
+      "word": "Eingabefeld",
+      "domain": "digital",
+      "reason": "device UI — input field"
+    },
+    {
+      "word": "Fehlermeldung",
+      "domain": "digital",
+      "reason": "device UI — error message"
+    },
+    {
+      "word": "Zwischenablage",
+      "domain": "digital",
+      "reason": "device UI — clipboard"
+    },
+    {
+      "word": "Rückgängig",
+      "domain": "digital",
+      "reason": "device UI — undo"
+    },
+    {
+      "word": "Einfügen",
+      "domain": "digital",
+      "reason": "device UI — paste (nominalized verb, menu label)"
+    },
+    {
+      "word": "Ausschneiden",
+      "domain": "digital",
+      "reason": "device UI — cut (nominalized verb, menu label)"
+    },
+    {
+      "word": "Kopieren",
+      "domain": "digital",
+      "reason": "device UI — copy (nominalized verb, menu label)"
+    },
+    {
+      "word": "Speichern",
+      "domain": "digital",
+      "reason": "device UI — save (nominalized verb, menu label)"
+    },
+    {
+      "word": "Drucken",
+      "domain": "digital",
+      "reason": "device UI — print (nominalized verb, menu label)"
+    },
+    {
+      "word": "Umbenennen",
+      "domain": "digital",
+      "reason": "device UI — rename (nominalized verb, menu label)"
+    },
+    {
+      "word": "Verschieben",
+      "domain": "digital",
+      "reason": "device UI — move (nominalized verb, menu label)"
+    },
+    {
+      "word": "Teilen",
+      "domain": "digital",
+      "reason": "device UI — share (nominalized verb, menu label)"
+    },
+    {
+      "word": "Synchronisieren",
+      "domain": "digital",
+      "reason": "device UI — sync (nominalized verb, menu label)"
+    },
+    {
+      "word": "Installieren",
+      "domain": "digital",
+      "reason": "device UI — install (nominalized verb, menu label)"
+    },
+    {
+      "word": "Deinstallieren",
+      "domain": "digital",
+      "reason": "device UI — uninstall (nominalized verb, menu label)"
+    },
+    {
+      "word": "Aktualisieren",
+      "domain": "digital",
+      "reason": "device UI — update/refresh (nominalized verb, menu label)"
+    },
+    {
+      "word": "Zurücksetzen",
+      "domain": "digital",
+      "reason": "device UI — reset (nominalized verb, menu label)"
+    },
+    {
+      "word": "Wiederherstellen",
+      "domain": "digital",
+      "reason": "device UI — restore (nominalized verb, menu label)"
+    },
+    {
+      "word": "Weiterleiten",
+      "domain": "digital",
+      "reason": "device UI — forward (nominalized verb, menu label)"
+    },
+    {
+      "word": "Verfassen",
+      "domain": "digital",
+      "reason": "device UI — compose (nominalized verb, menu label)"
+    },
+    {
+      "word": "Blockieren",
+      "domain": "digital",
+      "reason": "device UI — block (nominalized verb, menu label)"
+    },
+    {
+      "word": "Stummschalten",
+      "domain": "digital",
+      "reason": "device UI — mute (nominalized verb, menu label)"
+    },
+    {
+      "word": "Herunterfahren",
+      "domain": "digital",
+      "reason": "device UI — shut down (nominalized verb, menu label)"
+    },
+    {
+      "word": "Dateigröße",
+      "domain": "digital",
+      "reason": "device UI — file size"
+    },
+    {
+      "word": "Sicherungskopie",
+      "domain": "digital",
+      "reason": "device UI — backup copy"
+    },
+    {
+      "word": "Videoanruf",
+      "domain": "digital",
+      "reason": "device UI — video call"
+    },
+    {
+      "word": "Anrufliste",
+      "domain": "digital",
+      "reason": "device UI — call log/recent calls"
+    },
+    {
+      "word": "Lesezeichen",
+      "domain": "digital",
+      "reason": "device UI — bookmark (browser)"
+    },
+    {
+      "word": "Netzwerkverbindung",
+      "domain": "digital",
+      "reason": "device UI — network connection"
+    },
+    {
+      "word": "Benachrichtigung",
+      "domain": "digital",
+      "reason": "device UI — notification"
+    },
+    {
+      "word": "Passwort",
+      "domain": "digital",
+      "reason": "device UI — password, seen on every login screen"
+    },
+    {
+      "word": "Benutzername",
+      "domain": "digital",
+      "reason": "device UI — username"
+    },
+    {
+      "word": "Benutzerkonto",
+      "domain": "digital",
+      "reason": "device UI — user account"
+    },
+    {
+      "word": "Posteingang",
+      "domain": "digital",
+      "reason": "device UI — inbox"
+    },
+    {
+      "word": "Absender",
+      "domain": "digital",
+      "reason": "device UI — sender (email/message)"
+    },
+    {
+      "word": "Empfänger",
+      "domain": "digital",
+      "reason": "device UI — recipient (email/message)"
+    },
+    {
+      "word": "Betreff",
+      "domain": "digital",
+      "reason": "device UI — subject line (email)"
+    },
+    {
+      "word": "Entwurf",
+      "domain": "digital",
+      "reason": "device UI — draft (email/message)"
+    },
+    {
+      "word": "Papierkorb",
+      "domain": "digital",
+      "reason": "device UI — trash/recycle bin"
+    },
+    {
+      "word": "Ordner",
+      "domain": "digital",
+      "reason": "device UI — folder"
+    },
+    {
+      "word": "Anhang",
+      "domain": "digital",
+      "reason": "device UI — attachment (email)"
+    },
+    {
+      "word": "Gepäckband",
+      "domain": "travel",
+      "reason": "airport — baggage carousel"
+    },
+    {
+      "word": "Bordkarte",
+      "domain": "travel",
+      "reason": "airport — boarding pass"
+    },
+    {
+      "word": "Direktflug",
+      "domain": "travel",
+      "reason": "airport — direct flight"
+    },
+    {
+      "word": "Zwischenlandung",
+      "domain": "travel",
+      "reason": "airport — stopover/layover"
+    },
+    {
+      "word": "Boarding",
+      "domain": "travel",
+      "reason": "airport — loanword, common in German airports"
+    },
+    {
+      "word": "Gate",
+      "domain": "travel",
+      "reason": "airport — loanword, used at all German airports"
+    },
+    {
+      "word": "stornieren",
+      "domain": "travel",
+      "reason": "hotel/booking — cancel a reservation"
+    },
+    {
+      "word": "Ferienwohnung",
+      "domain": "travel",
+      "reason": "accommodation — holiday apartment, very common in DACH"
+    },
+    {
+      "word": "Hauptgericht",
+      "domain": "travel",
+      "reason": "restaurant — main course"
+    },
+    {
+      "word": "Nachspeise",
+      "domain": "travel",
+      "reason": "restaurant — dessert"
+    },
+    {
+      "word": "Beilage",
+      "domain": "travel",
+      "reason": "restaurant — side dish"
+    },
+    {
+      "word": "Getränkekarte",
+      "domain": "travel",
+      "reason": "restaurant — drinks menu"
+    },
+    {
+      "word": "Tagessuppe",
+      "domain": "travel",
+      "reason": "restaurant — soup of the day"
+    },
+    {
+      "word": "Reiseführer",
+      "domain": "travel",
+      "reason": "tourism — travel guide (book or person)"
+    },
+    {
+      "word": "Rundfahrt",
+      "domain": "travel",
+      "reason": "tourism — sightseeing tour"
+    },
+    {
+      "word": "Stadtführung",
+      "domain": "travel",
+      "reason": "tourism — city guided tour"
+    },
+    {
+      "word": "Stadtrundfahrt",
+      "domain": "travel",
+      "reason": "city sightseeing tour (bus/boat) — very common tourist activity in any German city"
+    },
+    {
+      "word": "Stadtbummel",
+      "domain": "travel",
+      "reason": "leisurely city stroll — B2 travel vocabulary, distinctly German concept"
+    },
+    {
+      "word": "Weinprobe",
+      "domain": "travel",
+      "reason": "wine tasting — quintessential DACH cultural/tourism activity"
+    },
+    {
+      "word": "Flusskreuzfahrt",
+      "domain": "travel",
+      "reason": "river cruise — manually authored, not in Wiktionary dump",
+      "manual": true
+    },
+    {
+      "word": "Stadtmauer",
+      "domain": "travel",
+      "reason": "city wall — common sightseeing feature in medieval German towns"
+    },
+    {
+      "word": "Burgruine",
+      "domain": "travel",
+      "reason": "castle ruins — extremely common in Germany, B2 sightseeing vocabulary"
+    },
+    {
+      "word": "Aussichtspunkt",
+      "domain": "travel",
+      "reason": "tourism — viewpoint/lookout"
+    },
+    {
+      "word": "Öffnungszeit",
+      "domain": "travel",
+      "reason": "tourism — opening hours (seen on every shop/museum); plural Öffnungszeiten is the common form"
+    },
+    {
+      "word": "anstehen",
+      "domain": "travel",
+      "reason": "tourism — to queue/stand in line"
+    },
+    {
+      "word": "Fernverkehr",
+      "domain": "travel",
+      "reason": "train — long-distance rail service"
+    },
+    {
+      "word": "Liegewagen",
+      "domain": "travel",
+      "reason": "train — couchette car"
+    },
+    {
+      "word": "Zugverbindung",
+      "domain": "travel",
+      "reason": "train — train connection"
+    },
+    {
+      "word": "Geschwindigkeitsbegrenzung",
+      "domain": "travel",
+      "reason": "driving — speed limit"
+    },
+    {
+      "word": "Versicherungskarte",
+      "domain": "travel",
+      "reason": "medical abroad — insurance card"
+    },
+    {
+      "word": "Anprobe",
+      "domain": "travel",
+      "reason": "shopping — fitting/trying on clothes"
+    },
+    {
+      "word": "Zoll",
+      "domain": "travel",
+      "reason": "border — customs"
+    },
+    {
+      "word": "Aufenthaltsgenehmigung",
+      "domain": "travel",
+      "reason": "border — residence permit"
+    },
+    {
+      "word": "Passkontrolle",
+      "domain": "travel",
+      "reason": "border — passport control"
+    },
+    {
+      "word": "Einreise",
+      "domain": "travel",
+      "reason": "border — entry into a country"
+    },
+    {
+      "word": "Ausreise",
+      "domain": "travel",
+      "reason": "border — departure from a country"
+    },
+    {
+      "word": "Aussichtsturm",
+      "domain": "travel",
+      "reason": "observation tower — common sightseeing destination"
+    },
+    {
+      "word": "Tagesausflug",
+      "domain": "travel",
+      "reason": "day trip — B1 travel vocabulary, very common in tourism context"
+    },
+    {
+      "word": "Vorverkauf",
+      "domain": "travel",
+      "reason": "advance ticket sales — seen on every museum/event entrance"
+    },
+    {
+      "word": "Stadtplan",
+      "domain": "travel",
+      "reason": "city map — essential practical travel vocabulary"
+    },
+    {
+      "word": "Fundbüro",
+      "domain": "travel",
+      "reason": "lost and found — essential vocabulary when travelling"
+    },
+    {
+      "word": "Hafenrundfahrt",
+      "domain": "travel",
+      "reason": "harbour tour — iconic tourist activity (Hamburg, etc.)"
+    },
+    {
+      "word": "Bootsfahrt",
+      "domain": "travel",
+      "reason": "boat trip — common on Rhine, lakes, coastal areas"
+    },
+    {
+      "word": "sehenswert",
+      "domain": "travel",
+      "reason": "worth seeing — ubiquitous in travel recommendations and guidebooks"
+    },
+    {
+      "word": "malerisch",
+      "domain": "travel",
+      "reason": "picturesque — quintessential travel/tourism descriptor"
+    },
+    {
+      "word": "Müllabfuhr",
+      "domain": "housing",
+      "reason": "housing — garbage collection"
+    },
+    {
+      "word": "Hausordnung",
+      "domain": "housing",
+      "reason": "housing — house rules (common in German rentals)"
+    },
+    {
+      "word": "Gehalt",
+      "domain": "work",
+      "reason": "workplace — salary"
+    },
+    {
+      "word": "Überstunde",
+      "domain": "work",
+      "reason": "workplace — overtime; plural Überstunden is the common form"
+    },
+    {
+      "word": "Arbeitsvertrag",
+      "domain": "work",
+      "reason": "workplace — employment contract"
+    },
+    {
+      "word": "Abteilung",
+      "domain": "work",
+      "reason": "workplace — department"
+    },
+    {
+      "word": "Sparkonto",
+      "domain": "finance",
+      "reason": "banking — savings account"
+    },
+    {
+      "word": "Zinsen",
+      "domain": "finance",
+      "reason": "banking — interest (financial)"
+    },
+    {
+      "word": "Kredit",
+      "domain": "finance",
+      "reason": "banking — loan/credit"
+    },
+    {
+      "word": "Husten",
+      "domain": "health",
+      "reason": "health — cough (noun)"
+    },
+    {
+      "word": "Schnupfen",
+      "domain": "health",
+      "reason": "health — cold/runny nose"
+    },
+    {
+      "word": "Kopfschmerz",
+      "domain": "health",
+      "reason": "health — headache; plural Kopfschmerzen is the common form"
+    },
+    {
+      "word": "Bauchschmerz",
+      "domain": "health",
+      "reason": "health — stomachache; plural Bauchschmerzen is the common form"
+    },
+    {
+      "word": "Abmeldung",
+      "domain": "bureaucracy",
+      "reason": "Amt — deregistration (required when moving)"
+    },
+    {
+      "word": "Meldebescheinigung",
+      "domain": "bureaucracy",
+      "reason": "Amt — registration certificate"
+    },
+    {
+      "word": "Bürgeramt",
+      "domain": "bureaucracy",
+      "reason": "Amt — citizens' office"
+    },
+    {
+      "word": "Bescheinigung",
+      "domain": "bureaucracy",
+      "reason": "Amt — certificate/confirmation document"
+    },
+    {
+      "word": "Beglaubigung",
+      "domain": "bureaucracy",
+      "reason": "Amt — notarization/certification"
+    },
+    {
+      "word": "Sendungsverfolgung",
+      "domain": "post",
+      "reason": "post/delivery — package tracking"
+    },
+    {
+      "word": "Hagel",
+      "domain": "weather",
+      "reason": "weather — hail"
+    },
+    {
+      "word": "Regenschauer",
+      "domain": "weather",
+      "reason": "weather — rain shower"
+    },
+    {
+      "word": "bewölkt",
+      "domain": "weather",
+      "reason": "weather — cloudy"
+    },
+    {
+      "word": "schwül",
+      "domain": "weather",
+      "reason": "weather — humid/muggy"
+    },
+    {
+      "word": "gestresst",
+      "domain": "emotions",
+      "reason": "emotions — stressed"
+    },
+    {
+      "word": "mittelmäßig",
+      "domain": "adjective",
+      "reason": "quality adjective — mediocre"
+    },
+    {
+      "word": "mangelhaft",
+      "domain": "adjective",
+      "reason": "quality adjective — deficient (also a school grade)"
+    },
+    {
+      "word": "geräumig",
+      "domain": "adjective",
+      "reason": "quality adjective — spacious"
+    },
+    {
+      "word": "komfortabel",
+      "domain": "adjective",
+      "reason": "quality adjective — comfortable"
+    },
+    {
+      "word": "Synonym",
+      "domain": "app-ui",
+      "reason": "shown in word card UI — learners will search it"
+    },
+    {
+      "word": "Antonym",
+      "domain": "app-ui",
+      "reason": "shown in word card UI — learners will search it"
+    },
+    {
+      "word": "Deklination",
+      "domain": "app-ui",
+      "reason": "grammar section header in UI"
+    },
+    {
+      "word": "Konjugation",
+      "domain": "app-ui",
+      "reason": "grammar section header in UI"
+    },
+    {
+      "word": "Nomen",
+      "domain": "app-ui",
+      "reason": "POS label in UI"
+    },
+    {
+      "word": "Verb",
+      "domain": "app-ui",
+      "reason": "POS label in UI"
+    },
+    {
+      "word": "Adjektiv",
+      "domain": "app-ui",
+      "reason": "POS label in UI"
+    },
+    {
+      "word": "Substantiv",
+      "domain": "app-ui",
+      "reason": "POS label in UI"
+    },
+    {
+      "word": "Nominativ",
+      "domain": "app-ui",
+      "reason": "case label in declension tables"
+    },
+    {
+      "word": "Genitiv",
+      "domain": "app-ui",
+      "reason": "case label in declension tables"
+    },
+    {
+      "word": "Dativ",
+      "domain": "app-ui",
+      "reason": "case label in declension tables"
+    },
+    {
+      "word": "Akkusativ",
+      "domain": "app-ui",
+      "reason": "case label in declension tables"
+    },
+    {
+      "word": "Singular",
+      "domain": "app-ui",
+      "reason": "column header in declension tables"
+    },
+    {
+      "word": "Plural",
+      "domain": "app-ui",
+      "reason": "column header in declension tables"
+    },
+    {
+      "word": "Präsens",
+      "domain": "app-ui",
+      "reason": "tense label in conjugation tables"
+    },
+    {
+      "word": "Präteritum",
+      "domain": "app-ui",
+      "reason": "tense label in conjugation tables"
+    },
+    {
+      "word": "Imperativ",
+      "domain": "app-ui",
+      "reason": "mood label in conjugation tables"
+    },
+    {
+      "word": "Konjunktiv",
+      "domain": "app-ui",
+      "reason": "mood label in conjugation tables"
+    },
+    {
+      "word": "Partizip",
+      "domain": "app-ui",
+      "reason": "row label in conjugation tables"
+    },
+    {
+      "word": "feminin",
+      "domain": "app-ui",
+      "reason": "gender label in UI"
+    },
+    {
+      "word": "maskulin",
+      "domain": "app-ui",
+      "reason": "gender label in UI"
+    },
+    {
+      "word": "trennbar",
+      "domain": "app-ui",
+      "reason": "verb property label in UI"
+    },
+    {
+      "word": "untrennbar",
+      "domain": "app-ui",
+      "reason": "verb property label in UI"
+    },
+    {
+      "word": "aktualisieren",
+      "domain": "app-ui",
+      "reason": "settings UI verb — very common modern usage"
+    },
+    {
+      "word": "Startbildschirm",
+      "domain": "app-ui",
+      "reason": "device UI term shown in settings"
+    },
+    {
+      "word": "fehlschlagen",
+      "domain": "app-ui",
+      "reason": "shown in error message — common verb meaning to fail"
+    },
+    {
+      "word": "ableiten",
+      "domain": "app-ui",
+      "reason": "shown in 'Abgeleitet von' section — common verb meaning to derive"
+    },
+    {
+      "word": "bzw.",
+      "domain": "abbreviation",
+      "reason": "beziehungsweise — extremely common in written German"
+    },
+    {
+      "word": "z.B.",
+      "domain": "abbreviation",
+      "reason": "zum Beispiel — ubiquitous in all registers"
+    },
+    {
+      "word": "d.h.",
+      "domain": "abbreviation",
+      "reason": "das heißt — very common written abbreviation"
+    },
+    {
+      "word": "usw.",
+      "domain": "abbreviation",
+      "reason": "und so weiter — common equivalent of etc."
+    },
+    {
+      "word": "etc.",
+      "domain": "abbreviation",
+      "reason": "et cetera — common in German texts"
+    },
+    {
+      "word": "sog.",
+      "domain": "abbreviation",
+      "reason": "sogenannt — frequent in formal/journalistic writing"
+    },
+    {
+      "word": "ca.",
+      "domain": "abbreviation",
+      "reason": "circa — common in everyday and formal writing"
+    },
+    {
+      "word": "vgl.",
+      "domain": "abbreviation",
+      "reason": "vergleiche — common in academic and formal texts"
+    },
+    {
+      "word": "u.a.",
+      "domain": "abbreviation",
+      "reason": "unter anderem — very common in written German"
+    },
+    {
+      "word": "ggf.",
+      "domain": "abbreviation",
+      "reason": "gegebenenfalls — common in formal/official texts"
+    },
+    {
+      "word": "evtl.",
+      "domain": "abbreviation",
+      "reason": "eventuell — common in everyday and formal writing"
+    },
+    {
+      "word": "im",
+      "domain": "contraction",
+      "reason": "in+dem — extremely common contraction"
+    },
+    {
+      "word": "am",
+      "domain": "contraction",
+      "reason": "an+dem — extremely common contraction"
+    },
+    {
+      "word": "zum",
+      "domain": "contraction",
+      "reason": "zu+dem — very common contraction"
+    },
+    {
+      "word": "zur",
+      "domain": "contraction",
+      "reason": "zu+der — very common contraction"
+    },
+    {
+      "word": "ins",
+      "domain": "contraction",
+      "reason": "in+das — very common contraction"
+    },
+    {
+      "word": "ans",
+      "domain": "contraction",
+      "reason": "an+das — common contraction"
+    },
+    {
+      "word": "beim",
+      "domain": "contraction",
+      "reason": "bei+dem — very common contraction"
+    },
+    {
+      "word": "vom",
+      "domain": "contraction",
+      "reason": "von+dem — very common contraction"
+    },
+    {
+      "word": "aufs",
+      "domain": "contraction",
+      "reason": "auf+das — common contraction"
+    },
+    {
+      "word": "ums",
+      "domain": "contraction",
+      "reason": "um+das — common contraction"
+    },
+    {
+      "word": "fürs",
+      "domain": "contraction",
+      "reason": "für+das — common contraction"
+    },
+    {
+      "word": "durchs",
+      "domain": "contraction",
+      "reason": "durch+das — common contraction"
+    },
+    {
+      "word": "vors",
+      "domain": "contraction",
+      "reason": "vor+das — common contraction"
+    },
+    {
+      "word": "gleichsam",
+      "domain": "functional",
+      "reason": "adverb: as it were, so to speak — appears in examples, filtered by B2 threshold"
+    },
+    {
+      "word": "zuweilen",
+      "domain": "functional",
+      "reason": "adverb: sometimes, occasionally — appears in examples, filtered by B2 threshold"
+    },
+    {
+      "word": "zurecht",
+      "domain": "functional",
+      "reason": "adverb: properly, in order (→ zurechtkommen, zurechtfinden) — appears in examples"
+    },
+    {
+      "word": "jedesmal",
+      "domain": "functional",
+      "reason": "adverb: every time — appears in examples, filtered by B2 threshold"
+    },
+    {
+      "word": "zumeist",
+      "domain": "functional",
+      "reason": "adverb: mostly, for the most part — appears in examples"
+    },
+    {
+      "word": "treppauf",
+      "domain": "functional",
+      "reason": "adverb: upstairs (paired with treppab) — appears in examples"
+    },
+    {
+      "word": "treppab",
+      "domain": "functional",
+      "reason": "adverb: downstairs (paired with treppauf) — appears in examples"
+    },
+    {
+      "word": "namentlich",
+      "domain": "functional",
+      "reason": "adverb: namely, particularly — appears in examples"
+    },
+    {
+      "word": "gleichwohl",
+      "domain": "functional",
+      "reason": "adverb: nonetheless, nevertheless — appears in examples"
+    },
+    {
+      "word": "überdies",
+      "domain": "functional",
+      "reason": "adverb: moreover, besides — appears in examples"
+    },
+    {
+      "word": "woraufhin",
+      "domain": "functional",
+      "reason": "adverb/conjunction: whereupon — appears in examples"
+    },
+    {
+      "word": "indessen",
+      "domain": "functional",
+      "reason": "adverb/conjunction: meanwhile, however — appears in examples"
+    },
+    {
+      "word": "ringsum",
+      "domain": "functional",
+      "reason": "adverb: all around — appears in examples"
+    },
+    {
+      "word": "bisweilen",
+      "domain": "functional",
+      "reason": "adverb: sometimes, occasionally (literary) — appears in examples"
+    },
+    {
+      "word": "allenfalls",
+      "domain": "functional",
+      "reason": "adverb: at most, if at all — appears in examples"
+    },
+    {
+      "word": "demzufolge",
+      "domain": "functional",
+      "reason": "adverb: consequently, therefore — appears in examples"
+    },
+    {
+      "word": "unentwegt",
+      "domain": "functional",
+      "reason": "adverb: continuously, incessantly — appears in examples"
+    },
+    {
+      "word": "vonstatten",
+      "domain": "functional",
+      "reason": "adverb: used in vonstatten gehen (to take place) — appears in examples"
+    },
+    {
+      "word": "inwieweit",
+      "domain": "functional",
+      "reason": "adverb: to what extent — appears in examples"
+    },
+    {
+      "word": "prinzipiell",
+      "domain": "functional",
+      "reason": "adverb: in principle — appears in examples"
+    },
+    {
+      "word": "vornehmlich",
+      "domain": "functional",
+      "reason": "adverb: primarily, mainly — appears in examples"
+    },
+    {
+      "word": "demgegenüber",
+      "domain": "functional",
+      "reason": "adverb: on the other hand, by contrast — appears in examples"
+    },
+    {
+      "word": "schlechthin",
+      "domain": "functional",
+      "reason": "adverb: absolutely, per se, par excellence — appears in examples"
+    },
+    {
+      "word": "alsbald",
+      "domain": "functional",
+      "reason": "adverb: soon, shortly (formal/literary) — appears in examples"
+    },
+    {
+      "word": "zugunsten",
+      "domain": "functional",
+      "reason": "preposition: in favor of — appears in examples, filtered by B2 threshold"
+    },
+    {
+      "word": "längs",
+      "domain": "functional",
+      "reason": "preposition: along — appears in examples"
+    },
+    {
+      "word": "mangels",
+      "domain": "functional",
+      "reason": "preposition: for lack of (+ genitive) — appears in examples"
+    },
+    {
+      "word": "wenngleich",
+      "domain": "functional",
+      "reason": "conjunction: even though — appears in examples"
+    },
+    {
+      "word": "obschon",
+      "domain": "functional",
+      "reason": "conjunction: although (literary) — appears in examples"
+    },
+    {
+      "word": "wiewohl",
+      "domain": "functional",
+      "reason": "conjunction: although, even though (literary) — appears in examples"
+    },
+    {
+      "word": "siebzig",
+      "domain": "functional",
+      "reason": "numeral: 70 — missing from numerals coverage"
+    },
+    {
+      "word": "dreihundert",
+      "domain": "functional",
+      "reason": "numeral: 300 — missing from numerals coverage"
+    },
+    {
+      "word": "fünfhundert",
+      "domain": "functional",
+      "reason": "numeral: 500 — missing from numerals coverage"
+    },
+    {
+      "word": "zweitausend",
+      "domain": "functional",
+      "reason": "numeral: 2000 — missing from numerals coverage"
+    },
+    {
+      "word": "viertausend",
+      "domain": "functional",
+      "reason": "numeral: 4000 — missing from numerals coverage"
+    },
+    {
+      "word": "Strampler",
+      "domain": "children",
+      "reason": "baby onesie — core baby clothing item, sourced from cartoon subtitles"
+    },
+    {
+      "word": "Schnuller",
+      "domain": "children",
+      "reason": "pacifier/dummy — essential baby item, below B2 frequency threshold"
+    },
+    {
+      "word": "Lätzchen",
+      "domain": "children",
+      "reason": "bib — core baby item"
+    },
+    {
+      "word": "Babybrei",
+      "domain": "children",
+      "reason": "baby food puree — core baby item"
+    },
+    {
+      "word": "Babyphone",
+      "domain": "children",
+      "reason": "baby monitor — common parenting device"
+    },
+    {
+      "word": "Kinderbett",
+      "domain": "children",
+      "reason": "crib/cot — core baby furniture"
+    },
+    {
+      "word": "Stubenwagen",
+      "domain": "children",
+      "reason": "Moses basket — used for newborns"
+    },
+    {
+      "word": "Nuckelflasche",
+      "domain": "children",
+      "reason": "baby bottle with teat — core baby item"
+    },
+    {
+      "word": "Flamingo",
+      "domain": "animals",
+      "reason": "flamingo — common zoo/nature animal, below B2 frequency threshold"
+    },
+    {
+      "word": "Gepard",
+      "domain": "animals",
+      "reason": "cheetah — common animal name for children and nature content"
+    },
+    {
+      "word": "Nilpferd",
+      "domain": "animals",
+      "reason": "hippopotamus — common zoo animal, below B2 frequency threshold"
+    },
+    {
+      "word": "Galopp",
+      "domain": "animals",
+      "reason": "gallop — horse gait, appears in children's content and equestrian contexts"
+    },
+    {
+      "word": "Mähne",
+      "domain": "animals",
+      "reason": "mane — horse/lion mane, basic animal vocabulary"
+    },
+    {
+      "word": "Zügel",
+      "domain": "animals",
+      "reason": "reins — basic horse-riding vocabulary"
+    },
+    {
+      "word": "Reitplatz",
+      "domain": "animals",
+      "reason": "riding arena — common equestrian term"
+    },
+    {
+      "word": "Pferdestall",
+      "domain": "animals",
+      "reason": "horse stable — common equestrian term"
+    },
+    {
+      "word": "Kiesgrube",
+      "domain": "outdoor",
+      "reason": "gravel pit — outdoor play/nature term, sourced from cartoon subtitles"
+    },
+    {
+      "word": "Maisfeld",
+      "domain": "outdoor",
+      "reason": "cornfield — common rural landscape word"
+    },
+    {
+      "word": "Wassergraben",
+      "domain": "outdoor",
+      "reason": "moat/ditch — outdoor nature term"
+    },
+    {
+      "word": "Titelsong",
+      "domain": "media",
+      "reason": "theme song — common media/TV term"
+    },
+    {
+      "word": "Zeichentrickfilm",
+      "domain": "media",
+      "reason": "animated film — core term for cartoons/animation"
+    },
+    {
+      "word": "Zeichentrickserie",
+      "domain": "media",
+      "reason": "animated TV series — Peppa, Bluey, etc."
+    },
+    {
+      "word": "Zeichentrick",
+      "domain": "media",
+      "reason": "animation technique — base of compound nouns like Zeichentrickfilm"
+    },
+    {
+      "word": "Cartoon",
+      "domain": "media",
+      "reason": "false friend — German meaning is single-panel satirical drawing, not animated show; important for English speakers to learn"
+    },
+    {
+      "word": "Kurzfilm",
+      "domain": "media",
+      "reason": "short film — common film format term"
+    },
+    {
+      "word": "Spielfilm",
+      "domain": "media",
+      "reason": "feature film — standard term for a narrative film"
+    },
+    {
+      "word": "Kinofilm",
+      "domain": "media",
+      "reason": "cinema film — common compound, distinct from Fernsehfilm"
+    },
+    {
+      "word": "Dokumentarfilm",
+      "domain": "media",
+      "reason": "documentary film — standard term"
+    },
+    {
+      "word": "Fernsehfilm",
+      "domain": "media",
+      "reason": "TV movie — common genre term"
+    },
+    {
+      "word": "Streamingdienst",
+      "domain": "media",
+      "reason": "streaming service — Netflix/Disney+ etc., essential modern vocabulary"
+    },
+    {
+      "word": "Mediathek",
+      "domain": "media",
+      "reason": "media library — ARD/ZDF Mediathek, very German-specific digital TV concept"
+    },
+    {
+      "word": "Livestream",
+      "domain": "media",
+      "reason": "livestream — common modern media term"
+    },
+    {
+      "word": "Talkshow",
+      "domain": "media",
+      "reason": "talk show — common TV format"
+    },
+    {
+      "word": "Nachrichtensendung",
+      "domain": "media",
+      "reason": "news programme — core TV term"
+    },
+    {
+      "word": "Vorspann",
+      "domain": "media",
+      "reason": "opening credits/intro sequence"
+    },
+    {
+      "word": "Abspann",
+      "domain": "media",
+      "reason": "end credits — common film/TV term"
+    },
+    {
+      "word": "Blockbuster",
+      "domain": "media",
+      "reason": "blockbuster — widely used loanword for major cinema release"
+    },
+    {
+      "word": "Doku",
+      "domain": "media",
+      "reason": "colloquial short for Dokumentation/Dokumentarfilm — very common in everyday speech"
+    },
+    {
+      "word": "Beamer",
+      "domain": "false-friends",
+      "reason": "false friend — means projector, not a BMW; English speakers need this correction"
+    },
+    {
+      "word": "Oldtimer",
+      "domain": "false-friends",
+      "reason": "false friend — means vintage car/aircraft, not an old person"
+    },
+    {
+      "word": "Billion",
+      "domain": "false-friends",
+      "reason": "false friend — means one trillion (10¹²), not one billion (10⁹ = Milliarde)"
+    },
+    {
+      "word": "Mobbing",
+      "domain": "false-friends",
+      "reason": "false friend — means workplace bullying, not a flash mob (= Flashmob)"
+    },
+    {
+      "word": "pathetisch",
+      "domain": "false-friends",
+      "reason": "false friend — means dramatic/over-the-top, not pathetic (= erbärmlich)"
+    },
+    {
+      "word": "Präservativ",
+      "domain": "false-friends",
+      "reason": "false friend — means condom, not preservative (= Konservierungsstoff)"
+    },
+    {
+      "word": "ordinär",
+      "domain": "false-friends",
+      "reason": "false friend — means vulgar/crude, not ordinary (= gewöhnlich)"
+    },
+    {
+      "word": "dezent",
+      "domain": "false-friends",
+      "reason": "false friend — means discreet/understated, not decent (= anständig)"
+    },
+    {
+      "word": "kurios",
+      "domain": "false-friends",
+      "reason": "false friend — means strange/odd, not curious (= neugierig)"
+    },
+    {
+      "word": "Kündigungsschreiben",
+      "domain": "legal",
+      "reason": "written notice of termination — essential everyday legal vocabulary"
+    },
+    {
+      "word": "Mieterhöhung",
+      "domain": "legal",
+      "reason": "rent increase notice — common tenant/landlord vocabulary"
+    },
+    {
+      "word": "Nebenkostenabrechnung",
+      "domain": "legal",
+      "reason": "utility cost statement — required annual document for renters in Germany"
+    },
+    {
+      "word": "Abmahnung",
+      "domain": "legal",
+      "reason": "formal warning (employment/legal) — essential for understanding workplace/consumer rights"
+    },
+    {
+      "word": "Mahnbescheid",
+      "domain": "legal",
+      "reason": "dunning notice — official debt collection document every adult encounters"
+    },
+    {
+      "word": "Lohnabrechnung",
+      "domain": "legal",
+      "reason": "payslip / wage statement — document every employed person receives monthly"
+    },
+    {
+      "word": "Haftpflichtversicherung",
+      "domain": "legal",
+      "reason": "personal liability insurance — de facto required in Germany, essential vocabulary"
+    },
+    {
+      "word": "Hausratversicherung",
+      "domain": "legal",
+      "reason": "contents insurance — very common household insurance in Germany"
+    },
+    {
+      "word": "Erbschein",
+      "domain": "legal",
+      "reason": "certificate of inheritance — key legal document in inheritance proceedings"
+    },
+    {
+      "word": "Schufa",
+      "domain": "legal",
+      "reason": "German credit rating agency — every adult in Germany encounters this; manually authored entry",
+      "manual": true
+    },
+    {
+      "word": "Kündigungsfrist",
+      "domain": "legal",
+      "reason": "notice period — essential employment and rental contract vocabulary"
+    },
+    {
+      "word": "Aufenthaltserlaubnis",
+      "domain": "civic",
+      "reason": "residence permit — vital document for non-EU residents in Germany"
+    },
+    {
+      "word": "Beglaubigung",
+      "domain": "legal",
+      "reason": "official certification/notarization — common administrative requirement"
+    },
+    {
+      "word": "Einkommensteuer",
+      "domain": "legal",
+      "reason": "income tax — fundamental financial/civic vocabulary"
+    }
   ]
 }
