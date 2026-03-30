@@ -28,7 +28,9 @@ import type { GlossSegment, SegmentType } from "../../types/references.js";
 //   [[display|path]]    cross-entry ref WITH display text, no sense
 //
 // Groups: 1=display, 2=^, 3=superscript N, 4=file path, 5=sense N after path, 6=bare #N
-const REF_PATTERN = /\[\[(?:([^\]|]+)\|)?(?:(\^)(\d+)|([^#\]]+?)(?:#(\d+))?|#(\d+))\]\]/g;
+// Group 4 allows [bracket] sequences inside file paths (e.g. pronouns/das_[1], nouns/Bord_[schiffs-]rand).
+// Requires at least one leading non-bracket char (+) so [[#N]] falls through to the bare-#N alternative.
+const REF_PATTERN = /\[\[(?:([^\]|]+)\|)?(?:(\^)(\d+)|([^#\[\]]+(?:\[[^\]]*\][^#\[\]]*)*?)(?:#(\d+))?|#(\d+))\]\]/g;
 
 /**
  * Parse a gloss string into an array of segments for rendering.

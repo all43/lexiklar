@@ -93,3 +93,25 @@ export function stripOuterQuotes(text: string): string {
 
   return text;
 }
+
+/**
+ * Strip Wiktionary ellipsis markers from an example sentence.
+ *
+ * Wiktionary uses `[…]` (or rarely `[...]`) to mark omitted portions of a
+ * quoted source. These are build-time artefacts that clutter the UI.
+ *
+ * Examples:
+ *   „[…]dann schlief Franke fest."     →  dann schlief Franke fest.
+ *   „Text […] more text."              →  Text more text.
+ *   „Zwei Gestalten schleppen […]."    →  Zwei Gestalten schleppen.
+ *
+ * Safe to run on both plain text and text_linked markup (the `[…|…]` tokens
+ * contain `|` so they are never confused with this pattern).
+ */
+export function stripEllipsisMarkers(text: string): string {
+  return text
+    .replace(/\[(?:…|\.{3})\]/g, "")
+    .replace(/ ([.,;:!?»"'])/g, "$1") // collapse space left before punctuation after removal
+    .replace(/ {2,}/g, " ")
+    .trim();
+}

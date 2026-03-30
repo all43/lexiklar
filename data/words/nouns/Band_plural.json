@@ -28,7 +28,12 @@
       "example_ids": [
         "02248e6760"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Verbindendes",
+        "Verbindung",
+        "Verknüpfendes",
+        "Verknüpfung"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "That which binds or connects.",
@@ -52,6 +57,26 @@
         "b8c05f6548",
         "3d02df10f7"
       ],
+      "synonyms": [],
+      "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
+      "gloss_en_full": "A long, narrow strip-like piece, usually made of a particular fabric or material, used for decoration, reinforcement, binding, or similar purposes.",
+      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
+      "synonyms_en": [
+        "decorative strip",
+        "fabric strip",
+        "binding strip"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
+    },
+    {
+      "gloss": "intime Freundin",
+      "gloss_en": "girlfriend",
+      "tags": [
+        "colloquial",
+        "figurative"
+      ],
+      "example_ids": [],
       "synonyms": [
         "Bibi",
         "Biene",
@@ -78,30 +103,6 @@
       ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A long, narrow strip-like piece, usually made of a particular fabric or material, used for decoration, reinforcement, binding, or similar purposes.",
-      "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
-      "synonyms_en": [
-        "decorative strip",
-        "fabric strip",
-        "binding strip"
-      ],
-      "synonyms_en_model": "openai/gpt-4.1-mini"
-    },
-    {
-      "gloss": "intime Freundin",
-      "gloss_en": "girlfriend",
-      "tags": [
-        "colloquial",
-        "figurative"
-      ],
-      "example_ids": [],
-      "synonyms": [
-        "Bandmaß",
-        "Maßband",
-        "Messband"
-      ],
-      "antonyms": [],
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "An intimate girlfriend (colloquial, figurative).",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
@@ -111,7 +112,7 @@
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
-      "gloss": "der unter [[#3]] beschriebene Gewebe-/Stoff-Streifen als genormter Gegenstand, auf dem sich eine Einteilung in Zentimetern und Millimetern zum Messen von Längen befindet",
+      "gloss": "der unter [[#2]] beschriebene Gewebe-/Stoff-Streifen als genormter Gegenstand, auf dem sich eine Einteilung in Zentimetern und Millimetern zum Messen von Längen befindet",
       "gloss_en": "measuring tape",
       "tags": [],
       "example_ids": [
@@ -119,7 +120,9 @@
         "7e8c20f091"
       ],
       "synonyms": [
-        "Farbband"
+        "Bandmaß",
+        "Maßband",
+        "Messband"
       ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
@@ -132,7 +135,7 @@
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
-      "gloss": "ein dem unter [[#3]] beschriebenen Gewebe-/Stoff-Streifen ähnelnder, aus Baumwolle, Nylon^® oder Seide bestehender und mit einem bestimmten Farbstoff getränkter Streifen, der in Schreibmaschinen eingelegt zur Anwendung kommt",
+      "gloss": "ein dem unter [[#2]] beschriebenen Gewebe-/Stoff-Streifen ähnelnder, aus Baumwolle, Nylon^® oder Seide bestehender und mit einem bestimmten Farbstoff getränkter Streifen, der in Schreibmaschinen eingelegt zur Anwendung kommt",
       "gloss_en": "typewriter ribbon",
       "tags": [],
       "example_ids": [
@@ -141,7 +144,7 @@
         "47a4705b9b"
       ],
       "synonyms": [
-        "Zielband"
+        "Farbband"
       ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
@@ -155,7 +158,7 @@
       "synonyms_en_model": "openai/gpt-4.1-mini"
     },
     {
-      "gloss": "der unter [[#3]] beschriebene Gewebe-/Stoff-Streifen (zumeist von weißer Farbe), der über einer Ziellinie gespannt wird",
+      "gloss": "der unter [[#2]] beschriebene Gewebe-/Stoff-Streifen (zumeist von weißer Farbe), der über einer Ziellinie gespannt wird",
       "gloss_en": "finish line tape",
       "tags": [],
       "example_ids": [
@@ -163,13 +166,7 @@
         "5eddbcd2b4"
       ],
       "synonyms": [
-        "Magnetband",
-        "Magnetofonband",
-        "Magnettonband",
-        "Tape",
-        "Tonband",
-        "Video",
-        "Videoband"
+        "Zielband"
       ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
@@ -181,14 +178,16 @@
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
-      "gloss": "ein dem unter [[#3]] beschriebenen Gewebe-/Stoff-Streifen ähnelnder, aus Kunststoff bestehender Streifen mit magnetisierbarer Beschichtung, auf dem Informationen magnetisch aufgezeichnet und infolgedessen gespeichert werden können",
+      "gloss": "ein dem unter [[#2]] beschriebenen Gewebe-/Stoff-Streifen ähnelnder, aus Kunststoff bestehender Streifen mit magnetisierbarer Beschichtung, auf dem Informationen magnetisch aufgezeichnet und infolgedessen gespeichert werden können",
       "gloss_en": "magnetic strip",
       "tags": [],
       "example_ids": [
         "9677ba6d3f",
         "fa3d9cb7f5"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Magnetband"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A strip made of plastic with a magnetizable coating, similar to a fabric or cloth strip, on which information can be magnetically recorded and stored.",
@@ -199,7 +198,7 @@
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
-      "gloss": "der (auf einer schmalen Spule aufgewickelte) unter [[#8]] beschriebene Kunststoffstreifen, mithilfe dessen elektroakustische Medien (Schallwellen vor allem in Form von Musik oder Sprache) magnetisch aufgezeichnet und infolgedessen gespeichert werden können",
+      "gloss": "der (auf einer schmalen Spule aufgewickelte) unter [[#7]] beschriebene Kunststoffstreifen, mithilfe dessen elektroakustische Medien (Schallwellen vor allem in Form von Musik oder Sprache) magnetisch aufgezeichnet und infolgedessen gespeichert werden können",
       "gloss_en": "audio tape",
       "tags": [
         "special"
@@ -210,8 +209,10 @@
         "6e29ebf0af"
       ],
       "synonyms": [
-        "Fließband",
-        "Montageband"
+        "Magnetofonband",
+        "Magnettonband",
+        "Tape",
+        "Tonband"
       ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
@@ -224,7 +225,7 @@
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
-      "gloss": "der (auf einer schmalen Spule aufgewickelte) unter [[#8]] beschriebene Kunststoffstreifen, mithilfe dessen audiovisuelle Medien (Fernsehsendungen, Filme oder dergleichen) magnetisch aufgezeichnet und infolgedessen gespeichert werden können",
+      "gloss": "der (auf einer schmalen Spule aufgewickelte) unter [[#7]] beschriebene Kunststoffstreifen, mithilfe dessen audiovisuelle Medien (Fernsehsendungen, Filme oder dergleichen) magnetisch aufgezeichnet und infolgedessen gespeichert werden können",
       "gloss_en": "video tape",
       "tags": [
         "special"
@@ -234,8 +235,8 @@
         "b27d31326b"
       ],
       "synonyms": [
-        "Ligament",
-        "Ligamentum"
+        "Video",
+        "Videoband"
       ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
@@ -248,7 +249,7 @@
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
-      "gloss": "ein dem unter [[#3]] beschriebenen Gewebe-/Stoff-Streifen ähnelnder, aus Kunststoff bestehender, endloser, mechanisch bewegter, dickerer Streifen, auf dem Güter befördert werden",
+      "gloss": "ein dem unter [[#2]] beschriebenen Gewebe-/Stoff-Streifen ähnelnder, aus Kunststoff bestehender, endloser, mechanisch bewegter, dickerer Streifen, auf dem Güter befördert werden",
       "gloss_en": "conveyor belt",
       "tags": [],
       "example_ids": [
@@ -256,9 +257,7 @@
         "a36071b9ae",
         "516b7734e8"
       ],
-      "synonyms": [
-        "Bandsägeblatt"
-      ],
+      "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "An endless strip of plastic material, thicker than a fabric or cloth strip, that moves mechanically and is used to transport goods.",
@@ -270,7 +269,7 @@
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     },
     {
-      "gloss": "ein dem unter [[#3]] beschriebenen Gewebe-/Stoff-Streifen ähnelnder, aus Kunststoff bestehender, mechanisch bewegter, dickerer Streifen, auf dem – während der Fließarbeit – bestimmte Werkstücke von einem Arbeitsplatz zum anderen befördert werden",
+      "gloss": "ein dem unter [[#2]] beschriebenen Gewebe-/Stoff-Streifen ähnelnder, aus Kunststoff bestehender, mechanisch bewegter, dickerer Streifen, auf dem – während der Fließarbeit – bestimmte Werkstücke von einem Arbeitsplatz zum anderen befördert werden",
       "gloss_en": "assembly line belt",
       "tags": [],
       "example_ids": [
@@ -278,7 +277,10 @@
         "61e4270219",
         "32d0b99dae"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Fließband",
+        "Montageband"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A thick plastic strip, similar to a fabric or cloth band, that moves mechanically and transports workpieces from one workstation to another during assembly line production.",
@@ -296,7 +298,10 @@
         "3f72ba05b4",
         "6a2a154344"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Ligament",
+        "Ligamentum"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A flexible cord of connective tissue that connects the movable parts of the skeletal system, functioning similarly to a tendon.",
@@ -315,7 +320,9 @@
         "da85fc1ed2",
         "03d4f49d1f"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Bandsägeblatt"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "One of the saw blades of a band saw.",
@@ -332,10 +339,7 @@
       "example_ids": [
         "ed511834e7"
       ],
-      "synonyms": [
-        "Fassreif",
-        "Fassreifen"
-      ],
+      "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A metal fitting or strip that connects two parts firmly yet movably (on a door hinge, window hinge, or similar joint).",
@@ -370,10 +374,7 @@
       "example_ids": [
         "f5e348cf56"
       ],
-      "synonyms": [
-        "Frequenzband",
-        "Wellenband"
-      ],
+      "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A shorter connecting beam or brace.",
@@ -392,7 +393,8 @@
         "85aa88db86"
       ],
       "synonyms": [
-        "Festbindendes"
+        "Fassreif",
+        "Fassreifen"
       ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
@@ -412,9 +414,7 @@
         "5386ef9233",
         "b34e6d9eba"
       ],
-      "synonyms": [
-        "Fessel"
-      ],
+      "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A climbing route that leads across a strip of rock.",
@@ -433,7 +433,10 @@
         "83cf21aaed",
         "a96cbce370"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Frequenzband",
+        "Wellenband"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A defined, delimited range of frequencies.",
@@ -451,7 +454,9 @@
       "example_ids": [
         "1973429d9c"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Festbindendes"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "Something that binds or fastens things together.",
@@ -473,7 +478,9 @@
         "7bf23ce380",
         "9275da83ec"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Fessel"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A chain-like or strip-shaped device used to tie and bind someone or something.",
@@ -518,7 +525,9 @@
         "ed908dd65d",
         "ef539625ec"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Bindung"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A binding, close relationship; inner connection or bond.",
@@ -786,7 +795,7 @@
   ],
   "_meta": {
     "source_hash": "3a9fb336c6b9adea",
-    "generated_at": "2026-03-21"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.9,
   "_proofread": {

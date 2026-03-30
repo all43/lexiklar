@@ -31,7 +31,7 @@ import { loadExamples, saveExamples } from "./lib/examples.js";
 import { findWordFilePaths } from "./lib/words.js";
 import { computeSenseOrder } from "./lib/sense-ordering.js";
 import { computeConjugation, computeAllForms } from "../src/utils/verb-forms.js";
-import { stripOuterQuotes } from "../src/utils/text.js";
+import { stripOuterQuotes, stripEllipsisMarkers } from "../src/utils/text.js";
 import type {
   Word,
   WordBase,
@@ -950,6 +950,49 @@ function main(): void {
         enriched.senses = senseOrder.map((i) => (enriched.senses as unknown[])[i]);
       }
 
+      // Remap and selectively strip [[#N]] references in German gloss fields.
+      //
+      // Step 1 — Remap: if senses were reordered for display, update [[#N]] numbers to match
+      //   the new display positions (same logic as remapTextLinked for examples).
+      //
+      // Step 2 — Strip: only strip the "under [[#N]] described …" phrase when N equals the
+      //   immediately preceding sense (N = i for a sense at 0-based position i+1). These are
+      //   sub-sense definitions like "[7a] the [7]-described strip, wound on a spool". All
+      //   other cross-references (e.g. [7] references [2] for comparison) are kept as-is;
+      //   GlossText.vue renders them as clickable inline_ref links.
+      if (Array.isArray(enriched.senses)) {
+        const remapForGloss = senseRemaps.get(fileKey);
+        const senses = enriched.senses as Record<string, unknown>[];
+        for (let i = 0; i < senses.length; i++) {
+          const s = senses[i];
+          if (typeof s.gloss !== "string" || !s.gloss.includes("[[#")) continue;
+          let g = s.gloss;
+
+          // Step 1: remap numbers after sense reordering
+          if (remapForGloss) {
+            g = g.replace(/\[\[#(\d+)\]\]/g, (match, n) => {
+              const newN = remapForGloss.get(parseInt(n, 10));
+              return newN != null ? `[[#${newN}]]` : match;
+            });
+          }
+
+          // Step 2: strip phrases that reference the immediately preceding sense only
+          if (i > 0) {
+            const prevN = String(i); // 1-indexed position of the preceding sense
+            const token = `\\[\\[#${prevN}\\]\\]`;
+            if (g.includes(`[[#${prevN}]]`)) {
+              g = g.replace(new RegExp(`ein dem unter ${token} beschriebenen? \\S+[-/\\w]* ähnelnder,?\\s*`, "g"), "");
+              g = g.replace(new RegExp(`^(?:der|die|das) unter ${token} beschriebene[nm]? \\S+[-/\\w]* `, "g"), "");
+              g = g.replace(new RegExp(` unter ${token} beschriebene[nm]?`, "g"), "");
+              g = g.replace(new RegExp(token, "g"), ""); // strip any orphan prevN tokens
+              g = g.replace(/ {2,}/g, " ").trim();
+            }
+          }
+
+          s.gloss = g;
+        }
+      }
+
       const dataJson = JSON.stringify(enriched);
       const pluralDominant = (data as Record<string, unknown>).plural_dominant as boolean | undefined;
       const pluralForm = (data as Record<string, unknown>).plural_form as string | undefined;
@@ -1145,10 +1188,10 @@ function main(): void {
             remappedCount++;
           }
         }
-        // Strip outer quotation marks at index time so the app never needs to
-        if (typeof stripped.text === "string") stripped.text = stripOuterQuotes(stripped.text);
-        if (typeof stripped.text_linked === "string") stripped.text_linked = stripOuterQuotes(stripped.text_linked);
-        if (typeof stripped.translation === "string") stripped.translation = stripOuterQuotes(stripped.translation);
+        // Strip outer quotation marks and ellipsis markers at index time
+        if (typeof stripped.text === "string") stripped.text = stripEllipsisMarkers(stripOuterQuotes(stripped.text));
+        if (typeof stripped.text_linked === "string") stripped.text_linked = stripEllipsisMarkers(stripOuterQuotes(stripped.text_linked));
+        if (typeof stripped.translation === "string") stripped.translation = stripEllipsisMarkers(stripOuterQuotes(stripped.translation));
         const exData = JSON.stringify(stripped);
         insertExample.run({ id, data: exData, hash: contentHash(exData) });
       }

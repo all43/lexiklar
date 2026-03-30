@@ -534,8 +534,54 @@ function extractExpressions(entry: WiktionaryEntry): string[] {
 }
 
 /**
- * Parse Wiktionary sense_index strings → 0-based indices.
- * Handles: "1" → [0], "1a" → [0], "1, 2" → [0,1], "1–3" → [0,1,2]
+ * Parse Wiktionary sense_index strings → 0-based output indices, using the
+ * senseIndexMap built by buildSenseIndexMap() for accurate position lookup.
+ *
+ * Handles:
+ *   "7a"     → map["7a"] - 1  (sub-letter senses resolved via map)
+ *   "9"      → map["9"] - 1   (correct even when headers shift positions)
+ *   "1, 2"   → [map["1"]-1, map["2"]-1]
+ *   "1–3"    → all map keys k where 1 ≤ parseInt(k) ≤ 3
+ *
+ * Falls back to simple parseInt-based lookup for segments not in the map
+ * (handles unusual ranges and data not covered by the current entry's map).
+ */
+function resolveSenseIndices(
+  idx: string | undefined,
+  map: Record<string, number>,
+): number[] {
+  if (!idx) return [];
+  const parts: number[] = [];
+  for (const seg of idx.split(",").map((s) => s.trim())) {
+    // Direct map lookup — correct for "7a", "7b", "9", "1", etc.
+    if (map[seg] != null) {
+      parts.push(map[seg] - 1);
+      continue;
+    }
+    // Integer range "1-3" or "1–3": include all map entries whose integer
+    // prefix falls in [start, end].
+    const rangeMatch = seg.match(/^(\d+)[–\-](\d+)/);
+    if (rangeMatch) {
+      const start = parseInt(rangeMatch[1]);
+      const end = parseInt(rangeMatch[2]);
+      for (const [k, pos] of Object.entries(map)) {
+        const kn = parseInt(k);
+        if (!isNaN(kn) && kn >= start && kn <= end) parts.push(pos - 1);
+      }
+      continue;
+    }
+    // Fallback: sense_index not in map (e.g. complex "1a-b" ranges, or an
+    // index that was filtered out). Use simple parseInt heuristic.
+    const n = parseInt(seg);
+    if (!isNaN(n) && n > 0) parts.push(n - 1);
+  }
+  return [...new Set(parts)];
+}
+
+/**
+ * @deprecated Use resolveSenseIndices() which takes a senseIndexMap for
+ * correct position lookup. parseSenseIndices() is only retained for callers
+ * that don't have access to the sense map (e.g. resolveGlossRefs).
  */
 function parseSenseIndices(idx: string | undefined): number[] {
   if (!idx) return [];
@@ -640,8 +686,8 @@ function buildSenseIndexMap(rawSenses: WiktionarySense[]): Record<string, number
     if (s.form_of?.length || s.alt_of?.length) continue;
     if (s.sense_index) {
       map[s.sense_index] = outputIdx;
+      outputIdx++;
     }
-    outputIdx++;
   }
   return map;
 }
@@ -1931,13 +1977,14 @@ async function main(): Promise<void> {
         .map((h) => h.word)
         .filter(Boolean);
       const senseCount = data.senses?.length ?? 0;
+      const synSenseMap = buildSenseIndexMap(parsed.senses || []);
       for (const [items, field] of [
         [parsed.synonyms || [], "synonyms"],
         [parsed.antonyms || [], "antonyms"],
       ] as [{ word?: string; sense_index?: string }[], "synonyms" | "antonyms"][]) {
         for (const item of items) {
           if (!item.word) continue;
-          const indices = parseSenseIndices(item.sense_index);
+          const indices = resolveSenseIndices(item.sense_index, synSenseMap);
           for (const idx of indices) {
             if (idx >= 0 && idx < senseCount) {
               const arr = (data.senses[idx][field] ??= []);
