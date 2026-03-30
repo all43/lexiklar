@@ -75,6 +75,9 @@ jobs:
       - name: Build app
         run: npm run build
 
+      - name: Remove DB from dist (native uses bundled DB + OTA patches, not web assets)
+        run: rm -f dist/data/lexiklar.db && rm -rf dist/assets/databases
+
       - name: Upload bundle to R2 and update manifest
         run: |
           npm i -g wrangler@4
