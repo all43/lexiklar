@@ -8,6 +8,8 @@ on:
         type: boolean
         default: false
   push:
+    tags:
+      - "v*"
     branches: [main]
     paths-ignore:
       - "data/**"
@@ -60,7 +62,7 @@ jobs:
           command: pages deploy dist --project-name lexiklar
 
   publish-bundle:
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.publish_bundle == 'true'
+    if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && github.event.inputs.publish_bundle == 'true')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
