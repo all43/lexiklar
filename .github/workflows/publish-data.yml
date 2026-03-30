@@ -26,70 +26,52 @@ jobs:
 
       - run: npm ci
 
+      - name: Restore previous DB hashes from cache
+        id: prev-hashes
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/db-hashes.json
+          key: published-db-hashes-placeholder
+          restore-keys: published-db-hashes-
+
       - name: Build search index
         run: npm run build-index
-
-      - name: Download previous DB from latest data release
-        id: prev-db
-        run: |
-          # Try to download the DB from the most recent data-* release
-          LATEST_TAG=$(gh release list --limit 20 --json tagName --jq '[.[] | select(.tagName | startswith("data-"))][0].tagName // empty')
-          if [ -n "$LATEST_TAG" ]; then
-            echo "Downloading previous DB from release $LATEST_TAG"
-            gh release download "$LATEST_TAG" --pattern "lexiklar.db" --dir /tmp/prev || true
-          fi
-          if [ -f /tmp/prev/lexiklar.db ]; then
-            echo "old_db=/tmp/prev/lexiklar.db" >> "$GITHUB_OUTPUT"
-          else
-            echo "No previous DB found — will publish full DB only"
-            echo "old_db=" >> "$GITHUB_OUTPUT"
-          fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate release assets and manifest
         id: publish
         run: |
           mkdir -p /tmp/release-assets
 
-          # Build release tag from date + short version hash
           DB_VERSION=$(node -e '
             const Database = require("better-sqlite3");
             const db = new Database("data/lexiklar.db", { readonly: true });
             process.stdout.write(db.prepare("SELECT value FROM meta WHERE key = ?").get("version").value);
           ')
-          TAG="data-$(date +%Y%m%d)-${DB_VERSION:0:8}"
           CDN_URL="https://cdn.lexiklar.app"
 
-          OLD_DB_FLAG=""
-          if [ -n "${{ steps.prev-db.outputs.old_db }}" ]; then
-            OLD_DB_FLAG="--old ${{ steps.prev-db.outputs.old_db }}"
+          OLD_HASHES_FLAG=""
+          if [ -f /tmp/db-hashes.json ]; then
+            OLD_HASHES_FLAG="--old-hashes /tmp/db-hashes.json"
           fi
 
           # Download existing manifest from R2 (to preserve bundle section + old patches)
           curl -sf "${CDN_URL}/manifest.json" -o /tmp/release-assets/manifest.json 2>/dev/null || true
 
           npx tsx scripts/publish-update.ts \
-            $OLD_DB_FLAG \
+            $OLD_HASHES_FLAG \
             --out /tmp/release-assets \
             --release-url "$CDN_URL"
 
-          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "db_version=$DB_VERSION" >> "$GITHUB_OUTPUT"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload assets to R2 CDN
         run: |
-          # Install wrangler for R2 uploads
           npm i -g wrangler@4
 
-          # Upload gzipped DB (clients decompress via DecompressionStream or fflate)
           wrangler r2 object put lexiklar-data/lexiklar.db.gz \
             --file /tmp/release-assets/lexiklar.db.gz \
             --content-type application/gzip --remote
 
-          # Upload gzipped SQL patches
           for f in /tmp/release-assets/*.sql.gz; do
             [ -f "$f" ] || continue
             FNAME=$(basename "$f")
@@ -98,7 +80,6 @@ jobs:
               --content-type application/gzip --remote
           done
 
-          # Upload manifest
           wrangler r2 object put lexiklar-data/manifest.json \
             --file /tmp/release-assets/manifest.json \
             --content-type application/json --remote
@@ -107,3 +88,9 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Save DB hashes to cache for next run
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/release-assets/db-hashes.json
+          key: published-db-hashes-${{ steps.publish.outputs.db_version }}

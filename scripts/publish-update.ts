@@ -4,13 +4,11 @@
  * Compares old and new SQLite databases using row-level content hashes,
  * generates SQL patches for incremental updates, and writes a manifest.
  *
- * Assets (DB, patches) are uploaded to GitHub Releases by the CI workflow.
- * The manifest references them via absolute release download URLs.
- *
  * Usage:
  *   npx tsx scripts/publish-update.ts --out <dir>                                    # full DB only
- *   npx tsx scripts/publish-update.ts --old <old.db> --out <dir>                     # with patch
- *   npx tsx scripts/publish-update.ts --old <old.db> --out <dir> --keep-patches 3
+ *   npx tsx scripts/publish-update.ts --old <old.db> --out <dir>                     # with patch from old DB
+ *   npx tsx scripts/publish-update.ts --old-hashes <hashes.json> --out <dir>         # with patch from hash snapshot
+ *   npx tsx scripts/publish-update.ts --old-hashes <hashes.json> --out <dir> --keep-patches 3
  *   npx tsx scripts/publish-update.ts --out <dir> --release-url <base>               # absolute URLs in manifest
  */
 
@@ -41,6 +39,59 @@ interface UnifiedManifest {
   };
 }
 
+/**
+ * Compact snapshot of row hashes from a published DB.
+ * Stored as db-hashes.json in the output dir and uploaded to R2.
+ * Used as the "old state" for patch generation on the next publish run,
+ * replacing the need to persist or download the full DB (121 MB).
+ */
+export interface DbHashes {
+  version: string;
+  words: Record<string, string>;    // file → hash
+  examples: Record<string, string>; // id → hash
+}
+
+// ---- Manifest patch merging ----
+
+/**
+ * Merge a newly generated patch entry with existing manifest patches, then trim
+ * to `keepPatches` most-recently-added entries.
+ *
+ * @param existing   - patches from the current manifest on disk (may be undefined)
+ * @param newEntry   - patch just generated for this run, or null if skipped
+ * @param newVersion - the DB version just published (excluded from carry-forward to avoid self-ref)
+ * @param keepPatches - max number of patch entries to retain (default 3)
+ */
+export function mergeManifestPatches(
+  existing: Record<string, { url: string; size: number }> | undefined,
+  newEntry: { fromVersion: string; url: string; size: number } | null,
+  newVersion: string,
+  keepPatches = 3,
+): Record<string, { url: string; size: number }> {
+  const patches: Record<string, { url: string; size: number }> = {};
+
+  // Carry forward existing entries first (older), then append new entry (newest last)
+  if (existing) {
+    for (const [ver, patch] of Object.entries(existing)) {
+      if (ver === newVersion) continue;    // don't carry forward self-referential entry
+      patches[ver] = patch;
+    }
+  }
+
+  if (newEntry) {
+    // New entry wins over any stale carry-forward with the same key
+    patches[newEntry.fromVersion] = { url: newEntry.url, size: newEntry.size };
+  }
+
+  // Trim to keepPatches most recent (insertion order)
+  const entries = Object.entries(patches);
+  const pruned: Record<string, { url: string; size: number }> = {};
+  for (const [ver, patch] of entries.slice(-keepPatches)) {
+    pruned[ver] = patch;
+  }
+  return pruned;
+}
+
 // ---- SQL escaping ----
 
 function esc(s: string | null): string {
@@ -52,63 +103,104 @@ function escNum(n: number | null): string {
   return n === null ? "NULL" : String(n);
 }
 
+// ---- Hash extraction ----
+
+/** Extract a DbHashes snapshot from a live SQLite DB. */
+export function extractHashes(db: Database.Database): DbHashes {
+  const meta: Record<string, string> = {};
+  for (const row of db.prepare("SELECT key, value FROM meta").all() as MetaRow[]) {
+    meta[row.key] = row.value;
+  }
+  const words: Record<string, string> = {};
+  for (const row of db.prepare("SELECT file, hash FROM words").all() as { file: string; hash: string }[]) {
+    words[row.file] = row.hash;
+  }
+  const examples: Record<string, string> = {};
+  for (const row of db.prepare("SELECT id, hash FROM examples").all() as { id: string; hash: string }[]) {
+    examples[row.id] = row.hash;
+  }
+  return { version: meta.version, words, examples };
+}
+
 // ---- Patch generation ----
 
-function generatePatch(oldDb: Database.Database, newDb: Database.Database): string {
-  const stmts: string[] = [];
-
-  // --- Words diff ---
-  const oldWords = new Map<string, { id: number; hash: string }>();
-  for (const row of oldDb.prepare("SELECT id, file, hash FROM words").all() as { id: number; file: string; hash: string }[]) {
-    oldWords.set(row.file, { id: row.id, hash: row.hash });
-  }
-
+/**
+ * Generate a SQL patch from a hash snapshot to the new DB.
+ * Returns null if more than 50% of rows changed (full download is cheaper).
+ */
+export function generatePatchFromHashes(oldHashes: DbHashes, newDb: Database.Database): string | null {
   const newWords = newDb.prepare(
     "SELECT id, lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en, data, hash FROM words",
   ).all() as WordRow[];
 
-  // Collect old word_forms and en_terms keyed by word_id for diffing
-  const oldWordForms = new Map<number, WordFormRow[]>();
-  for (const row of oldDb.prepare("SELECT form, word_id FROM word_forms").all() as WordFormRow[]) {
-    let arr = oldWordForms.get(row.word_id);
-    if (!arr) { arr = []; oldWordForms.set(row.word_id, arr); }
-    arr.push(row);
-  }
-  const oldEnTerms = new Map<number, EnTermRow[]>();
-  for (const row of oldDb.prepare("SELECT term, word_id FROM en_terms").all() as EnTermRow[]) {
-    let arr = oldEnTerms.get(row.word_id);
-    if (!arr) { arr = []; oldEnTerms.set(row.word_id, arr); }
-    arr.push(row);
+  const newExamples = newDb.prepare("SELECT id, data, hash FROM examples").all() as ExampleRow[];
+
+  // 50% change-ratio check — if most rows differ, full download is cheaper than a patch.
+  // Mirrors the original ATTACH-based query: counts old rows that are missing or changed in new.
+  const oldWordCount = Object.keys(oldHashes.words).length;
+  const oldExCount = Object.keys(oldHashes.examples).length;
+  const totalOld = oldWordCount + oldExCount;
+
+  const newWordFilesSet = new Set(newWords.map(w => w.file));
+  const newExampleIdsSet = new Set(newExamples.map(e => e.id));
+
+  if (totalOld > 0) {
+    let changedWords = 0;
+    for (const nw of newWords) {
+      const oldHash = oldHashes.words[nw.file];
+      if (oldHash !== undefined && oldHash !== nw.hash) changedWords++;
+    }
+    for (const file of Object.keys(oldHashes.words)) {
+      if (!newWordFilesSet.has(file)) changedWords++;
+    }
+
+    let changedEx = 0;
+    for (const ne of newExamples) {
+      const oldHash = oldHashes.examples[ne.id];
+      if (oldHash !== undefined && oldHash !== ne.hash) changedEx++;
+    }
+    for (const id of Object.keys(oldHashes.examples)) {
+      if (!newExampleIdsSet.has(id)) changedEx++;
+    }
+
+    const changeRatio = (changedWords + changedEx) / totalOld;
+    console.log(`Changed: ${changedWords}/${oldWordCount} words, ${changedEx}/${oldExCount} examples (${(changeRatio * 100).toFixed(0)}%)`);
+
+    if (changeRatio > 0.5) {
+      return null;
+    }
   }
 
-  const newWordFiles = new Set<string>();
+  const stmts: string[] = [];
 
+  // Reuse sets already built for the ratio check
+  const newWordFiles = newWordFilesSet;
+  const newExampleIds = newExampleIdsSet;
+
+  // --- Words diff ---
   for (const nw of newWords) {
-    newWordFiles.add(nw.file);
-    const old = oldWords.get(nw.file);
+    const oldHash = oldHashes.words[nw.file];
 
-    if (!old) {
+    if (oldHash === undefined) {
       // Inserted word
       stmts.push(
         `INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en, data, hash) VALUES (${esc(nw.lemma)}, ${esc(nw.lemma_folded)}, ${esc(nw.pos)}, ${esc(nw.gender)}, ${escNum(nw.frequency)}, ${escNum(nw.plural_dominant)}, ${esc(nw.plural_form)}, ${esc(nw.file)}, ${esc(nw.gloss_en)}, ${esc(nw.data)}, ${esc(nw.hash)});`,
       );
-      // word_forms and en_terms for new word — use subquery for word_id
       appendFormsAndTerms(stmts, newDb, nw.id, nw.file);
-    } else if (old.hash !== nw.hash) {
+    } else if (oldHash !== nw.hash) {
       // Updated word
       stmts.push(
         `UPDATE words SET lemma = ${esc(nw.lemma)}, lemma_folded = ${esc(nw.lemma_folded)}, pos = ${esc(nw.pos)}, gender = ${esc(nw.gender)}, frequency = ${escNum(nw.frequency)}, plural_dominant = ${escNum(nw.plural_dominant)}, plural_form = ${esc(nw.plural_form)}, gloss_en = ${esc(nw.gloss_en)}, data = ${esc(nw.data)}, hash = ${esc(nw.hash)} WHERE file = ${esc(nw.file)};`,
       );
-      // Rebuild word_forms and en_terms
       stmts.push(`DELETE FROM word_forms WHERE word_id = (SELECT id FROM words WHERE file = ${esc(nw.file)});`);
       stmts.push(`DELETE FROM en_terms WHERE word_id = (SELECT id FROM words WHERE file = ${esc(nw.file)});`);
       appendFormsAndTerms(stmts, newDb, nw.id, nw.file);
     }
-    // unchanged words: skip
+    // unchanged: skip
   }
 
   // Deleted words
-  for (const [file] of oldWords) {
+  for (const file of Object.keys(oldHashes.words)) {
     if (!newWordFiles.has(file)) {
       stmts.push(`DELETE FROM word_forms WHERE word_id = (SELECT id FROM words WHERE file = ${esc(file)});`);
       stmts.push(`DELETE FROM en_terms WHERE word_id = (SELECT id FROM words WHERE file = ${esc(file)});`);
@@ -117,17 +209,8 @@ function generatePatch(oldDb: Database.Database, newDb: Database.Database): stri
   }
 
   // --- Examples diff ---
-  const oldExamples = new Map<string, string>();
-  for (const row of oldDb.prepare("SELECT id, hash FROM examples").all() as { id: string; hash: string }[]) {
-    oldExamples.set(row.id, row.hash);
-  }
-
-  const newExamples = newDb.prepare("SELECT id, data, hash FROM examples").all() as ExampleRow[];
-  const newExampleIds = new Set<string>();
-
   for (const ne of newExamples) {
-    newExampleIds.add(ne.id);
-    const oldHash = oldExamples.get(ne.id);
+    const oldHash = oldHashes.examples[ne.id];
 
     if (oldHash === undefined) {
       stmts.push(`INSERT INTO examples (id, data, hash) VALUES (${esc(ne.id)}, ${esc(ne.data)}, ${esc(ne.hash)});`);
@@ -136,7 +219,7 @@ function generatePatch(oldDb: Database.Database, newDb: Database.Database): stri
     }
   }
 
-  for (const [id] of oldExamples) {
+  for (const id of Object.keys(oldHashes.examples)) {
     if (!newExampleIds.has(id)) {
       stmts.push(`DELETE FROM examples WHERE id = ${esc(id)};`);
     }
@@ -175,12 +258,13 @@ function appendFormsAndTerms(stmts: string[], newDb: Database.Database, wordId: 
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const oldPath = stringArg(args, "--old");
+  const oldHashesPath = stringArg(args, "--old-hashes");
   const outDir = stringArg(args, "--out");
   const keepPatches = intArg(args, "--keep-patches", 3);
-  const releaseUrl = stringArg(args, "--release-url"); // e.g. https://github.com/user/repo/releases/download/data-20260324
+  const releaseUrl = stringArg(args, "--release-url");
 
   if (!outDir) {
-    console.error("Usage: npx tsx scripts/publish-update.ts --out <dir> [--old <old.db>] [--keep-patches 3] [--release-url <url>]");
+    console.error("Usage: npx tsx scripts/publish-update.ts --out <dir> [--old <old.db>|--old-hashes <hashes.json>] [--keep-patches 3] [--release-url <url>]");
     process.exit(1);
   }
 
@@ -190,7 +274,6 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  // Read version info from new DB
   const newDb = new Database(newDbPath, { readonly: true });
   const meta: Record<string, string> = {};
   for (const row of newDb.prepare("SELECT key, value FROM meta").all() as MetaRow[]) {
@@ -207,7 +290,6 @@ async function main(): Promise<void> {
 
   console.log(`New DB version: ${newVersion} (built ${builtAt})`);
 
-  // Ensure output directory exists
   mkdirSync(outDir, { recursive: true });
 
   // Load existing manifest to preserve older patches and bundle section
@@ -221,113 +303,78 @@ async function main(): Promise<void> {
     }
   }
 
-  // Generate patch if old DB provided
-  const patches: Record<string, { url: string; size: number }> = {};
+  // Resolve old state: full DB or hash snapshot
+  let oldHashes: DbHashes | null = null;
 
   if (oldPath && existsSync(oldPath)) {
     const oldDb = new Database(oldPath, { readonly: true });
-    const oldMeta: Record<string, string> = {};
-    for (const row of oldDb.prepare("SELECT key, value FROM meta").all() as MetaRow[]) {
-      oldMeta[row.key] = row.value;
-    }
-    const oldVersion = oldMeta.version;
+    oldHashes = extractHashes(oldDb);
+    oldDb.close();
+  } else if (oldPath) {
+    console.warn(`Old DB not found at ${oldPath} — generating manifest without patch.`);
+  } else if (oldHashesPath && existsSync(oldHashesPath)) {
+    oldHashes = JSON.parse(readFileSync(oldHashesPath, "utf-8")) as DbHashes;
+  } else if (oldHashesPath) {
+    console.warn(`Old hashes file not found at ${oldHashesPath} — generating manifest without patch.`);
+  }
 
+  // Generate patch
+  const patches: Record<string, { url: string; size: number }> = {};
+
+  if (oldHashes) {
+    const oldVersion = oldHashes.version;
     if (!oldVersion) {
-      console.warn("No version in old DB — skipping patch generation.");
+      console.warn("No version in old hashes — skipping patch generation.");
     } else if (oldVersion === newVersion) {
       console.log("Old and new DB have the same version — no patch needed.");
     } else {
       console.log(`Generating patch: ${oldVersion} → ${newVersion}`);
+      const patchSql = generatePatchFromHashes(oldHashes, newDb);
 
-      // Quick check: if most rows changed, skip expensive diff — full download is cheaper
-      oldDb.exec(`ATTACH DATABASE ${esc(newDbPath)} AS main2`);
-      const oldWordCount = (oldDb.prepare("SELECT COUNT(*) as n FROM words").get() as { n: number }).n;
-      const oldExCount = (oldDb.prepare("SELECT COUNT(*) as n FROM examples").get() as { n: number }).n;
-      const changedWordsCount = (oldDb.prepare(`
-        SELECT COUNT(*) as n FROM words w
-        WHERE NOT EXISTS (SELECT 1 FROM main2.words w2 WHERE w2.file = w.file AND w2.hash = w.hash)
-      `).get() as { n: number }).n;
-      const changedExamplesCount = (oldDb.prepare(`
-        SELECT COUNT(*) as n FROM examples e
-        WHERE NOT EXISTS (SELECT 1 FROM main2.examples e2 WHERE e2.id = e.id AND e2.hash = e.hash)
-      `).get() as { n: number }).n;
-      oldDb.exec("DETACH DATABASE main2");
-
-      const totalOld = oldWordCount + oldExCount;
-      const totalChanged = changedWordsCount + changedExamplesCount;
-      const changeRatio = totalOld > 0 ? totalChanged / totalOld : 1;
-      console.log(`Changed: ${changedWordsCount}/${oldWordCount} words, ${changedExamplesCount}/${oldExCount} examples (${(changeRatio * 100).toFixed(0)}%)`);
-
-      let skipPatch = changeRatio > 0.5;
-      if (skipPatch) {
+      if (patchSql === null) {
         console.log("More than 50% changed — skipping patch (full download is cheaper)");
-      }
-
-      if (!skipPatch) {
-      const patchSql = generatePatch(oldDb, newDb);
-      const patchFileName = `${oldVersion}_to_${newVersion}.sql.gz`;
-      const patchPath = join(outDir, patchFileName);
-      await pipeline(
-        (async function* () { yield Buffer.from(patchSql + "\n"); })(),
-        createGzip({ level: 9 }),
-        createWriteStream(patchPath),
-      );
-      const patchSize = statSync(patchPath).size;
-      const uncompressedSize = Buffer.byteLength(patchSql + "\n");
-
-      // Count changes for logging
-      const lines = patchSql.split("\n").filter(Boolean);
-      console.log(`Patch: ${lines.length} SQL statements, ${(uncompressedSize / 1024).toFixed(1)} KB → ${(patchSize / 1024).toFixed(1)} KB gzipped`);
-
-      // Skip patch if it's larger than 50% of the full DB — cheaper to download full
-      const fullDbSize = statSync(newDbPath).size;
-      if (patchSize > fullDbSize * 0.5) {
-        console.log(`Patch too large (${(patchSize / (1024 * 1024)).toFixed(1)} MB > 50% of ${(fullDbSize / (1024 * 1024)).toFixed(1)} MB DB) — skipping`);
-        unlinkSync(patchPath);
       } else {
-        const patchUrl = releaseUrl ? `${releaseUrl}/patches/${patchFileName}` : patchFileName;
-        patches[oldVersion] = { url: patchUrl, size: patchSize };
+        const patchFileName = `${oldVersion}_to_${newVersion}.sql.gz`;
+        const patchPath = join(outDir, patchFileName);
+        await pipeline(
+          (async function* () { yield Buffer.from(patchSql + "\n"); })(),
+          createGzip({ level: 9 }),
+          createWriteStream(patchPath),
+        );
+        const patchSize = statSync(patchPath).size;
+        const uncompressedSize = Buffer.byteLength(patchSql + "\n");
+        const lines = patchSql.split("\n").filter(Boolean);
+        console.log(`Patch: ${lines.length} SQL statements, ${(uncompressedSize / 1024).toFixed(1)} KB → ${(patchSize / 1024).toFixed(1)} KB gzipped`);
+
+        const fullDbSize = statSync(newDbPath).size;
+        if (patchSize > fullDbSize * 0.5) {
+          console.log(`Patch too large (${(patchSize / (1024 * 1024)).toFixed(1)} MB > 50% of ${(fullDbSize / (1024 * 1024)).toFixed(1)} MB DB) — skipping`);
+          unlinkSync(patchPath);
+        } else {
+          const patchUrl = releaseUrl ? `${releaseUrl}/patches/${patchFileName}` : patchFileName;
+          patches[oldVersion] = { url: patchUrl, size: patchSize };
+        }
       }
-      } // end if (!skipPatch)
-    }
-    oldDb.close();
-  } else if (oldPath) {
-    console.warn(`Old DB not found at ${oldPath} — generating manifest without patch.`);
-  }
-
-  newDb.close();
-
-  // Carry forward older patches from existing manifest (up to keepPatches)
-  if (existingManifest?.db?.patches) {
-    for (const [ver, patch] of Object.entries(existingManifest.db.patches)) {
-      if (ver === newVersion) continue; // skip self-referencing
-      if (!patches[ver]) {
-        patches[ver] = patch; // already absolute URL from prior run
-      }
     }
   }
 
-  // Trim to keepPatches most recent
-  const patchEntries = Object.entries(patches);
-  const prunedPatches: Record<string, { url: string; size: number }> = {};
-  const toKeep = patchEntries.slice(-keepPatches);
-  for (const [ver, patch] of toKeep) {
-    prunedPatches[ver] = patch;
-  }
+  // Carry forward older patches from existing manifest and trim to keepPatches
+  const [[newFromVersion, newPatchEntry] = []] = Object.entries(patches);
+  const newEntry = newFromVersion ? { fromVersion: newFromVersion, ...newPatchEntry } : null;
+  const prunedPatches = mergeManifestPatches(existingManifest?.db?.patches, newEntry, newVersion, keepPatches);
 
-  // Copy current DB to output
+  // Copy current DB to output and gzip
   const outDbPath = join(outDir, "lexiklar.db");
   copyFileSync(newDbPath, outDbPath);
   const fullDbSize = statSync(outDbPath).size;
   console.log(`Copied DB: ${(fullDbSize / (1024 * 1024)).toFixed(1)} MB`);
 
-  // Generate gzipped DB
   const outDbGzPath = join(outDir, "lexiklar.db.gz");
   await pipeline(createReadStream(outDbPath), createGzip({ level: 9 }), createWriteStream(outDbGzPath));
   const fullDbGzSize = statSync(outDbGzPath).size;
   console.log(`Gzipped DB: ${(fullDbGzSize / (1024 * 1024)).toFixed(1)} MB (${((1 - fullDbGzSize / fullDbSize) * 100).toFixed(0)}% reduction)`);
 
-  // Build DB manifest section
+  // Write manifest
   const fullDbGzUrl = releaseUrl ? `${releaseUrl}/lexiklar.db.gz` : "lexiklar.db.gz";
   const dbManifest: DbManifest = {
     current_version: newVersion,
@@ -336,8 +383,6 @@ async function main(): Promise<void> {
     full_db_size: fullDbSize,
     full_db_gz: { url: fullDbGzUrl, size: fullDbGzSize },
   };
-
-  // Write unified manifest — preserve existing bundle section
   const manifest: UnifiedManifest = {
     db: dbManifest,
     bundle: existingManifest?.bundle,
@@ -345,10 +390,16 @@ async function main(): Promise<void> {
   writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + "\n");
   console.log(`Manifest written: ${Object.keys(prunedPatches).length} patch(es), full DB ${(fullDbSize / (1024 * 1024)).toFixed(1)} MB`);
 
+  // Write hash snapshot for next run
+  const dbHashes = extractHashes(newDb);
+  writeFileSync(join(outDir, "db-hashes.json"), JSON.stringify(dbHashes) + "\n");
+  console.log("db-hashes.json written.");
+
+  newDb.close();
+
   // Prune unreferenced local patch files
   const referencedFiles = new Set(
     Object.values(prunedPatches).map(p => {
-      // Extract filename from URL (may be absolute or relative)
       const parts = p.url.split("/");
       return parts[parts.length - 1];
     }),
@@ -363,4 +414,5 @@ async function main(): Promise<void> {
   console.log("Done.");
 }
 
-main();
+import { fileURLToPath } from "url";
+if (fileURLToPath(import.meta.url) === process.argv[1]) main();
