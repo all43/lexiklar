@@ -991,19 +991,13 @@
   },
   "ee0eabbfe3": {
     "text": "Sie bedankte sich für die Unterstützung.",
-    "translation": "She thanked herself for the support.",
+    "translation": "She thanked them for the support.",
     "source": "wiktionary",
     "lemmas": [
       "bedanken"
     ],
-    "translation_model": "openai/gpt-4.1-nano",
+    "translation_model": "anthropic/claude-sonnet-4-6",
     "annotations": [
-      {
-        "form": "Sie",
-        "lemma": "sie",
-        "pos": "noun",
-        "gloss_hint": "trumpet solo"
-      },
       {
         "form": "bedankte",
         "lemma": "bedanken",
@@ -1035,7 +1029,10 @@
         "gloss_hint": "support"
       }
     ],
-    "text_linked": "Sie [[bedankte|verbs/bedanken#1]] [[sich|pronouns/sich#1]] [[für|prepositions/für#1]] [[die|pronouns/die#1]] [[Unterstützung|nouns/Unterstützung#1]]."
+    "text_linked": "Sie [[bedankte|verbs/bedanken#1]] [[sich|pronouns/sich#1]] [[für|prepositions/für#1]] [[die|pronouns/die#1]] [[Unterstützung|nouns/Unterstützung#1]].",
+    "_proofread": {
+      "translation": true
+    }
   },
   "ee0ed291b9": {
     "text": "„Es waren absolut harmlose Leute, die hier aus und ein gingen und deren Spleen einzig und allein der war, daß sie sich nicht KLub oder Verein, sondern Loge oder Bruderschaft nannten.“",
@@ -16272,7 +16269,10 @@
     "lemmas": [
       "nummern"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "ee896e9a73": {
     "text": "\"In vielen Kliniken ist es üblich, die Nabelschnur zu durchschneiden, solange sie noch pulsiert\", verrät die Erlanger Hebamme Alexandra Mück im Gespräch mit t-online.de.",
