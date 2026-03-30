@@ -101,11 +101,14 @@ download → transform → enrich → translate → build-index
 | `scripts/build-index.ts` | `npm run build-index` | Generates SQLite search index from JSON files |
 | `scripts/search-examples.ts` | — | Search example shards by form, lemma, owner, or text |
 | `scripts/apply-proofread-results.ts` | — | Apply proofreading results (flags, fixes) from a results JSON file |
+| `scripts/lib/sense-ordering.ts` | — | Sense display order rules (`computeSenseOrder`): per-word overrides, Strategy C for nouns, Wiktionary for rest |
 | `scripts/lib/corpus.ts` | — | Shared corpus loaders (`loadLeipzigFPM`, `loadSubtlexFPM`, `loadOpensubtitlesFPM`, `toZipf`, `combineZipf`, `loadAllCorpora`) |
 | `scripts/generate-synonyms-en.ts` | — | LLM-generates English search synonyms (`synonyms_en`) for reverse lookup |
 | `scripts/benchmark-frequency.ts` | — | Benchmark corpus weights against LLM reference scores (Spearman correlation, grid search) |
 | `scripts/enrich-collocations.ts` | `npm run enrich-collocations` | Extracts contextual noun collocations from adjective examples for condensed declension view |
 | `scripts/publish-update.ts` | — | Generates OTA update manifest + gzipped SQL patches + gzipped DB by diffing old/new DBs (see OTA Updates section) |
+| `scripts/fetch-cartoon-subtitles.ts` | — | Downloads German cartoon subtitle files from OpenSubtitles REST API to `data/raw/cartoon-subtitles/` (gitignored). Tracks downloaded `file_id`s in `.downloaded.json` to avoid quota reuse. Credentials: `OPENSUBTITLES_*` in `.env` |
+| `scripts/check-cartoon-vocab.ts` | — | Checks subtitle vocabulary coverage against SQLite DB; reports uncovered words as whitelist candidates. Filters noise via `config/cartoon-blocklist.txt`. CLI: `--input`, `--db`, `--min-freq`, `--output`, `--top` |
 
 **IMPORTANT: Do not run a full transform (`npm run transform`) just to re-process a few words.** Use `--words` to scope to specific entries — a full transform touches thousands of files and causes massive git churn:
 
@@ -549,7 +552,9 @@ Two-phase system: **enrich** writes absolute Zipf scores to word files, **build-
 
 Approximate corpus sizes: Leipzig news ~5.4M tokens, Leipzig Wikipedia ~5.3M, SUBTLEX-DE ~20.9M, OpenSubtitles ~151.7M.
 
-**Word whitelist**: `config/word-whitelist.json` — ~430+ entries force-included by the frequency filter regardless of corpus rank. Covers transport, civic/Einbürgerungstest, education, device UI, directions, modern professions, transit vocabulary, and general A1–B2 gap vocabulary.
+**Word whitelist**: `config/word-whitelist.json` — ~651 entries force-included by the frequency filter regardless of corpus rank. Covers transport, civic/Einbürgerungstest, education, device UI, directions, modern professions, transit vocabulary, general A1–B2 gap vocabulary, and children/parenting/animals vocabulary sourced from cartoon subtitles.
+
+**Cartoon subtitle noise blocklist**: `config/cartoon-blocklist.txt` — words excluded from whitelist candidate output: inflected pronouns/determiners, inflected adjective forms, filler sounds, character/show names, English/Spanish lyrics, OTT artifacts.
 
 **Diagnostic**: `npx tsx scripts/enrich-frequency.ts --check` prints a comparison table of Zipf per corpus for a set of test words.
 
@@ -568,7 +573,7 @@ The transform step preserves manually-added data when re-running:
 - **`gloss_en` / `gloss_en_full` / `synonyms_en`** — LLM translations and curated English synonyms in senses, preserved by position-matching merge. Corresponding `*_model` fields (`gloss_en_model`, `gloss_en_full_model`, `synonyms_en_model`) are also preserved
 - **`data/examples/`** — existing entries with translations and annotations are preserved. Transform keeps the full example object when `translation` is truthy, so both `translation` and `annotations` survive re-generation.
 - **Transform write skip** — word files are not rewritten if content is identical (ignoring `generated_at`). Prevents spurious git churn on incremental re-runs.
-- **`_overrides`** — manual corrections to Wiktionary source data. Applied last in `mergeWithExisting()`, after all other merges. Values in `_overrides` win over anything the pipeline produces. For nested objects (e.g. `principal_parts`), merges one level deep; for scalars and arrays, replaces entirely. Never cleared by transform. Example: `"_overrides": { "past_participle": "gesehen" }` to fix a missing form.
+- **`_overrides`** (`WordOverrides` interface in `types/word.ts`) — manual corrections to Wiktionary source data. Applied last in `mergeWithExisting()`, after all other merges. Values in `_overrides` win over anything the pipeline produces. For nested objects (e.g. `principal_parts`), merges one level deep; for scalars and arrays, replaces entirely. Never cleared by transform. Special fields read only by `build-index.ts` (not transform): `first_sense` (string — move this gloss_en to position 0), `sense_order` (string array — full custom display order). Example: `"_overrides": { "past_participle": "gesehen" }` or `"_overrides": { "first_sense": "with" }`.
 
 The merge function (`mergeWithExisting()` in transform.ts) reads the existing file before overwriting, and copies over fields that the transform step doesn't own.
 
@@ -607,8 +612,8 @@ CREATE TABLE words (
   plural_dominant INTEGER,             -- 1 if plural form is more common
   plural_form     TEXT,                -- nominative plural string
   file            TEXT NOT NULL UNIQUE, -- e.g. "nouns/Tisch"
-  gloss_en        TEXT,                -- JSON array of short English glosses, sorted by relevance (non-tagged senses first, then by example count)
-  data            TEXT NOT NULL        -- full word JSON blob
+  gloss_en        TEXT,                -- JSON array of short English glosses, in display order (see sense ordering)
+  data            TEXT NOT NULL        -- full word JSON blob (senses reordered to display order)
 );
 
 CREATE TABLE examples (
@@ -659,7 +664,15 @@ User types "cup" (English reverse search)
 
 **Search result display**: each result shows title (word), subtitle (up to 3 glosses from `gloss_en`, italic via `.gloss-list` CSS class, joined with " · "), and footer (form-match arrow or article-mismatch hint when applicable). Glosses use `wordListGlosses()` from `src/utils/word-list.ts`. Same display pattern in search results, suggestions, home screen lists, and favorites.
 
-**Sense ordering in `gloss_en` and word page**: two-tier sort — non-tagged senses first (by example count descending), then tagged senses (`colloquial`, `derogatory`, `vulgar`, `slang`, `informal`, `figurative`, `plural-only`) by example count. Preserves source order within ties. Applied in `build-index.ts` (for `gloss_en` column) and `WordPage.vue` (`sortedSenses` computed + preview).
+**Sense ordering** — done entirely at build time in `build-index.ts`, using rules from `scripts/lib/sense-ordering.ts`. Source word files are never reordered. The DB `data.senses` blob and `gloss_en` column are in display order; `text_linked` sense numbers in DB examples are remapped to match. No runtime sorting in `WordPage.vue`.
+
+Rules (checked in priority order by `computeSenseOrder()`):
+1. `_overrides.sense_order` — full custom order as array of `gloss_en` values
+2. `_overrides.first_sense` — move one sense to position 0 (used for 5 function words: bei, zwischen, wenn, noch, man)
+3. **Strategy C** (nouns only) — demote `derogatory`/`vulgar`/`slang` senses, reorder if example margin ≥ 3 and min count ≤ 2
+4. **Wiktionary order** (verbs, adjectives, all others) — no reordering
+
+Scores 93/100 on test suite (`scripts/test-sense-ordering.ts`, 25 words per POS category). `WordOverrides` interface in `types/word.ts`.
 
 ### Phrase Discovery
 
@@ -711,7 +724,11 @@ All 20+ public query functions (`getWord`, `searchByLemma`, etc.) call the inter
 
 **Download loop prevention** (web only): `initDb()` does NOT compare cached version against `db-version.txt` (which changes on every build). Version validation happens via OTA update check instead.
 
-**DB version hash** — computed in `build-index.ts` from: all word file `mtimeMs` values + `mtimeMs` of `src/utils/verb-forms.js`, `data/rules/verb-endings.json`, `data/rules/noun-gender.json`, `data/rules/adj-endings.json`. Any change to indexed-form logic invalidates the browser cache automatically.
+**DB version hash** — content-deterministic, computed in `build-index.ts` from row-level content hashes (`SELECT file, hash FROM words` + `SELECT id, hash FROM examples`). Two builds of identical data always produce the same hash regardless of runner or timing. `built_at` is a full ISO timestamp (not just date).
+
+**Anti-downgrade guard** — `checkForUpdates()` requires the manifest's `built_at` to be >30 min newer than the local DB's timestamp. Prevents spurious updates when the bundled DB is ahead of R2 (e.g. `publish-data` pipeline delayed or failed). Same content hash = same data = no update regardless of timestamps.
+
+**Native CORS** — `CapacitorHttp` is enabled in `capacitor.config.json`, routing all native `fetch()` calls through Swift/Kotlin networking instead of WKWebView. This bypasses CORS restrictions on `cdn.lexiklar.app` (which only allows `https://lexiklar.app` origins, not `capacitor://localhost`).
 
 ### Custom SQLite plugin (`plugins/lexiklar-sqlite/`)
 
@@ -828,10 +845,11 @@ All asset URLs in the manifest are absolute R2 CDN URLs (`cdn.lexiklar.app`).
 
 **Capawesome flow** (`src/utils/live-update.ts`):
 1. `notifyReady()` called on every startup to confirm current bundle is stable (prevents rollback)
-2. `checkAppUpdate()` fetches the same `manifest.json`, reads `bundle` section, compares version against `__APP_VERSION__`
+2. `checkAppUpdate()` fetches the same `manifest.json`, reads `bundle` section, compares version against `__APP_VERSION__` using semver (ignores `+build` suffix, only updates when manifest is strictly newer — no downgrades)
 3. `downloadAndApplyAppUpdate()` downloads zip via `LiveUpdate.downloadBundle()`, stages with `setNextBundle()`
 4. User restarts app (or taps "Restart" in Settings) to load new bundle
 5. No-op on web — PWA service worker handles app shell updates
+6. Bundle excludes DB (~4 MB app shell only) — native loads DB from `Library/databases/`, not web assets
 
 **SQL patch generation** (`scripts/publish-update.ts`):
 ```bash
