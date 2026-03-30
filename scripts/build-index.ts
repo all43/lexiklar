@@ -31,6 +31,7 @@ import { loadExamples, saveExamples } from "./lib/examples.js";
 import { findWordFilePaths } from "./lib/words.js";
 import { computeSenseOrder } from "./lib/sense-ordering.js";
 import { computeConjugation, computeAllForms } from "../src/utils/verb-forms.js";
+import { stripOuterQuotes } from "../src/utils/text.js";
 import type {
   Word,
   WordBase,
@@ -1144,6 +1145,10 @@ function main(): void {
             remappedCount++;
           }
         }
+        // Strip outer quotation marks at index time so the app never needs to
+        if (typeof stripped.text === "string") stripped.text = stripOuterQuotes(stripped.text);
+        if (typeof stripped.text_linked === "string") stripped.text_linked = stripOuterQuotes(stripped.text_linked);
+        if (typeof stripped.translation === "string") stripped.translation = stripOuterQuotes(stripped.translation);
         const exData = JSON.stringify(stripped);
         insertExample.run({ id, data: exData, hash: contentHash(exData) });
       }
