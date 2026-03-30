@@ -33,7 +33,13 @@
         "7557ddc5b1",
         "18e06c882e"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Anregung",
+        "Empfehlung",
+        "Hinweis",
+        "Ratschlag",
+        "Tipp"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "Advice or recommendation on how to behave in a particular way",
@@ -52,7 +58,12 @@
       "example_ids": [
         "91ee2518ae"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Ausschuss",
+        "Gremium",
+        "Komitee",
+        "Kommission"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "An advisory body or council",
@@ -71,7 +82,11 @@
       "example_ids": [
         "43ada50588"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Ausschussmitglied",
+        "Gremiumsmitglied",
+        "Kommissionsmitglied"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A member of such a body; an official title for such a position",
@@ -241,7 +256,7 @@
   "_gender_counterpart": "Rätin",
   "_meta": {
     "source_hash": "48331029de77ea82",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.68,
   "_proofread": {
@@ -264,5 +279,20 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "rat",
+    "meanings": [
+      {
+        "en": "rat (rodent)",
+        "de": [
+          "Ratte"
+        ]
+      },
+      {
+        "en": "advice; council",
+        "de": []
+      }
+    ]
   }
 }

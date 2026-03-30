@@ -29,8 +29,15 @@
         "6d2ec7b3ce",
         "8eb7700a20"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Akademie",
+        "Alma Mater",
+        "Universität"
+      ],
+      "antonyms": [
+        "Berufsakademie",
+        "Fachschule"
+      ],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "An institution of higher education that serves to advance sciences and arts through research and teaching, as well as to provide professional training and continuing education.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -126,7 +133,7 @@
   "compound_verified": true,
   "_meta": {
     "source_hash": "76ec4d8f969dff6d",
-    "generated_at": "2026-03-14"
+    "generated_at": "2026-03-30"
   },
   "zipf": 3.78,
   "_overrides": {
@@ -146,5 +153,21 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "high school",
+    "meanings": [
+      {
+        "en": "high school (secondary school)",
+        "de": [
+          "Gymnasium",
+          "Realschule"
+        ]
+      },
+      {
+        "en": "university, college",
+        "de": []
+      }
+    ]
   }
 }

@@ -35,7 +35,12 @@
         "0bd58471db",
         "17bb20d00f"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Schreiben",
+        "Sendschreiben",
+        "Schrieb",
+        "Epistel"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A written message that is sealed and sent by mail or messenger, usually for a fee.",
@@ -268,7 +273,7 @@
   ],
   "_meta": {
     "source_hash": "95a0ea020e2e8e99",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.67,
   "_proofread": {
@@ -292,5 +297,21 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "brief",
+    "meanings": [
+      {
+        "en": "brief (short)",
+        "de": [
+          "kurz",
+          "knapp"
+        ]
+      },
+      {
+        "en": "letter (postal)",
+        "de": []
+      }
+    ]
   }
 }

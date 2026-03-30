@@ -32,8 +32,15 @@
         "f9634c8ac6",
         "6825ba570f"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Buch",
+        "Erzählung",
+        "Geschichte"
+      ],
+      "antonyms": [
+        "Drama",
+        "Lyrik"
+      ],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
       "gloss_en_full": "A literary genre consisting of a narrative in book form",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -180,7 +187,7 @@
   ],
   "_meta": {
     "source_hash": "ab02030dc5181996",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.43,
   "_proofread": {
@@ -204,5 +211,20 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "Roman",
+    "meanings": [
+      {
+        "en": "Roman (relating to Rome)",
+        "de": [
+          "römisch"
+        ]
+      },
+      {
+        "en": "novel (book of fiction)",
+        "de": []
+      }
+    ]
   }
 }

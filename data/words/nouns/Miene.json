@@ -26,8 +26,15 @@
       "gloss_en": "facial expression",
       "tags": [],
       "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Gesichtsausdruck",
+        "Fratze",
+        "Grimasse"
+      ],
+      "antonyms": [
+        "Gestik",
+        "Gestikulation"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "Facial features as an expression of one's nature or mood in a given situation",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -88,7 +95,10 @@
       "tags": [],
       "example_ids": [],
       "synonyms": [],
-      "antonyms": [],
+      "antonyms": [
+        "Gestik",
+        "Gestikulation"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "Outward appearance, with particular emphasis on the face",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -195,13 +205,12 @@
   ],
   "_meta": {
     "source_hash": "a76c308a696e18db",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-30"
   },
   "zipf": 3.27,
   "_proofread": {
     "gloss_en": true,
     "gloss_en_full": true,
-    "examples_owned": "809a8d35",
     "synonyms_en": true
   }
 }

@@ -22,12 +22,20 @@
   },
   "senses": [
     {
-      "gloss": "für [[#2]] bis [[#4]]: nur für männliche Personen",
+      "gloss": "für [[#1]] bis [[#3]]: nur für männliche Personen",
       "gloss_en": "lad",
       "tags": [],
       "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Baubudenrülps",
+        "Baubudenfläz",
+        "Bauer",
+        "Bauernflegel",
+        "Bauernjunge"
+      ],
+      "antonyms": [
+        "Gentleman"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "I notice the gloss appears incomplete or corrupted (\"für bis : nur für männliche Personen\"). Based on the word \"Lümmel\" itself, here is the standard definition: A rude, ill-mannered boy or young man; a lout.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -46,8 +54,38 @@
       "example_ids": [
         "0ec42713ca"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Bengel",
+        "Flaps",
+        "Fatzke",
+        "Fläz",
+        "Flegel",
+        "Frechdachs",
+        "Gassenjunge",
+        "Grobian",
+        "Klotz",
+        "Lackaffe",
+        "Lackel",
+        "Laffe",
+        "Pachulke",
+        "Prolet",
+        "Proll",
+        "Rabauke",
+        "Raubein",
+        "Rotzbengel",
+        "Rotzlöffel",
+        "Rowdy",
+        "Rülps",
+        "Rüpel",
+        "Runks",
+        "Schnösel",
+        "Schweinepriester",
+        "Schweinetreiber",
+        "Stoffel"
+      ],
+      "antonyms": [
+        "Gentleman"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A peasant or farm boy; a large, strong, often uneducated and rude man from the countryside.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -71,7 +109,9 @@
         "d64a430189",
         "02151f7dc2"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Frechdachs"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A boy or man with poor, crude manners and inappropriate, negatively conspicuous behavior.",
@@ -90,7 +130,9 @@
       "example_ids": [
         "777b50e6a0"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Pullermann"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A rascal or rogue.",
@@ -195,13 +237,12 @@
   ],
   "_meta": {
     "source_hash": "8cc07309e1302023",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-30"
   },
   "zipf": 2.8,
   "_proofread": {
     "gloss_en": true,
     "gloss_en_full": true,
-    "examples_owned": "74957089",
     "synonyms_en": true
   }
 }

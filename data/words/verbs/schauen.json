@@ -15,7 +15,12 @@
         "c4c747b82b",
         "1a603bdce7"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "blicken",
+        "gucken",
+        "lugen",
+        "sehen"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To perceive actively with the eyes, often deliberately or through one's own effort",
@@ -52,7 +57,9 @@
       "example_ids": [
         "111bf9e76f"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "achten"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To watch over something, pay attention, or take care of someone",
@@ -72,7 +79,10 @@
         "19e8fef5fa",
         "8c49ca9c22"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "checken",
+        "nachsehen"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To check or examine whether something is in a particular state",
@@ -110,7 +120,9 @@
         "31705e6bcf",
         "8339e6688c"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "zusehen"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To make an effort to achieve something specific",
@@ -189,7 +201,7 @@
   ],
   "_meta": {
     "source_hash": "a6113fc9fe0721a9",
-    "generated_at": "2026-03-18"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.67,
   "_proofread": {
@@ -213,5 +225,21 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "show",
+    "meanings": [
+      {
+        "en": "to show, to display",
+        "de": [
+          "zeigen",
+          "vorführen"
+        ]
+      },
+      {
+        "en": "to look, to watch",
+        "de": []
+      }
+    ]
   }
 }

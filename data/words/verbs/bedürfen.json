@@ -15,13 +15,20 @@
         "genitive"
       ],
       "example_ids": [
-        "e31c0f6e92"
+        "e31c0f6e92",
+        "3c48b4a26a",
+        "d73aa90ad6",
+        "6c72225874",
+        "5698c30036"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "benötigen",
+        "brauchen"
+      ],
       "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To require something, to need something, to be dependent on something.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "call for",
         "demand",
@@ -31,20 +38,25 @@
     },
     {
       "gloss": "etwas benötigen, etwas brauchen, auf etwas angewiesen sein",
-      "gloss_en": "need",
+      "gloss_en": "require",
       "tags": [
         "archaic",
         "rare"
       ],
-      "example_ids": [],
+      "example_ids": [
+        "3feb20e7bb",
+        "e1be8bbc13",
+        "e31c0f6e92"
+      ],
       "synonyms": [],
       "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To require something, to need something, to be dependent on something.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
-        "require",
-        "depend on"
+        "call for",
+        "demand",
+        "necessitate"
       ],
       "synonyms_en_model": "anthropic/claude-haiku-4-5-20251001"
     }
@@ -108,7 +120,7 @@
   ],
   "_meta": {
     "source_hash": "072ca09b309e563d",
-    "generated_at": "2026-03-19"
+    "generated_at": "2026-03-30"
   },
   "zipf": 3.02
 }

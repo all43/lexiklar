@@ -14,9 +14,9 @@
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To scrape or scratch off writing or drawing made with ink, India ink, or paint using a scraper, penknife, glass fiber eraser, or scraping knife.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "scrape off",
         "scratch off ink",
@@ -29,11 +29,17 @@
       "gloss_en": "erase pencil marks",
       "tags": [],
       "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "auswischen"
+      ],
+      "antonyms": [
+        "Tintenkiller",
+        "killern",
+        "verschmieren"
+      ],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To remove writing or drawing made with pencil using an eraser.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "erase pencil",
         "rub out"
@@ -45,11 +51,13 @@
       "gloss_en": "delete",
       "tags": [],
       "example_ids": [],
-      "synonyms": [],
+      "synonyms": [
+        "ausradieren"
+      ],
       "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To erase or delete.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "erase",
         "rub out"
@@ -60,12 +68,20 @@
       "gloss": "Kupferstecherei",
       "gloss_en": "copper engraving",
       "tags": [],
-      "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
+      "example_ids": [
+        "bee9825376"
+      ],
+      "synonyms": [
+        "ritzen"
+      ],
+      "antonyms": [
+        "retuschieren",
+        "gravieren",
+        "erodieren"
+      ],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To produce images by engraving into a metal plate (copper engraving technique).",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "copperplate engraving"
       ],
@@ -78,9 +94,9 @@
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To incise a pictorial representation into the smooth polished surface of a copper plate, gold foil, or similar material using a burin.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "incise",
         "burin work"
@@ -94,9 +110,9 @@
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To incise a pictorial representation with an etching needle into the acid-resistant ground coated with wax, resin, or varnish on a copper plate, exposing the metal so that when the plate is immersed in acid, the acid etches the exposed areas, creating grooves that hold ink for intaglio printing.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "etching needle",
         "acid etch",
@@ -113,9 +129,9 @@
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To scrape skin off the bone or to wipe away mucus.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "scrape skin"
       ],
@@ -127,9 +143,14 @@
       "tags": [
         "no-gloss"
       ],
-      "example_ids": [],
+      "example_ids": [
+        "21d2e54c99",
+        "7f7681bef5"
+      ],
       "synonyms": [],
-      "antonyms": []
+      "antonyms": [
+        "retuschieren"
+      ]
     }
   ],
   "sounds": [
@@ -175,12 +196,12 @@
   ],
   "_meta": {
     "source_hash": "21aeb64d800aa54d",
-    "generated_at": "2026-03-19"
+    "generated_at": "2026-03-30"
   },
+  "zipf": 1.37,
   "_proofread": {
     "gloss_en_full": true,
     "synonyms_en": true,
     "gloss_en": true
-  },
-  "zipf": 1.37
+  }
 }

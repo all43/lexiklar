@@ -7,7 +7,7 @@
   "plural_form": "Meteore",
   "gender_rule": {
     "rule_id": "suffix_or",
-    "is_exception": false
+    "is_exception": true
   },
   "case_forms": {
     "singular": {
@@ -53,7 +53,9 @@
       "example_ids": [
         "e7c77204ab"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Sternschnuppe"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A luminous phenomenon caused by particles entering the atmosphere",
@@ -107,7 +109,7 @@
   ],
   "_meta": {
     "source_hash": "2b92bc9f993830ff",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-30"
   },
   "zipf": 2.94,
   "_overrides": {

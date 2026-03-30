@@ -8,22 +8,6 @@
   "reflexive": "none",
   "senses": [
     {
-      "gloss": "etwas Verlorenes oder Verunglücktes an einen sicheren Ort bringen",
-      "gloss_en": "recover",
-      "tags": [],
-      "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
-      "gloss_en_model": "manual",
-      "gloss_en_full": "To recover or salvage something lost or wrecked",
-      "gloss_en_full_model": "manual",
-      "synonyms_en": [
-        "rescue",
-        "salvage"
-      ],
-      "synonyms_en_model": "openai/gpt-4.1-mini"
-    },
-    {
       "gloss": "in Sicherheit bringen, zum Beispiel die Segel vor einem Sturm oder die Mannschaft von einem Schiff",
       "gloss_en": "save (people)",
       "tags": [],
@@ -32,8 +16,15 @@
         "499c82e6bb",
         "8c2338cd55"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "einholen",
+        "evakuieren",
+        "hochholen",
+        "retten"
+      ],
+      "antonyms": [
+        "preisgeben"
+      ],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To bring into safety, for example sails before a storm or a crew from a ship",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -51,8 +42,13 @@
       "example_ids": [
         "2e4f71d3c0"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "verwahren",
+        "beschirmen"
+      ],
+      "antonyms": [
+        "preisgeben"
+      ],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To store or keep safely",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -73,7 +69,9 @@
         "20a3b64a80",
         "b63d304944"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "enthalten"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To contain",
@@ -133,9 +131,23 @@
   ],
   "_meta": {
     "source_hash": "e6704effe350da6e",
-    "generated_at": "2026-03-18"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.03,
+  "_orphaned_translations": [
+    {
+      "gloss": "etwas Verlorenes oder Verunglücktes an einen sicheren Ort bringen",
+      "gloss_en": "recover",
+      "gloss_en_model": "manual",
+      "gloss_en_full": "To recover or salvage something lost or wrecked",
+      "gloss_en_full_model": "manual",
+      "synonyms_en": [
+        "rescue",
+        "salvage"
+      ],
+      "synonyms_en_model": "openai/gpt-4.1-mini"
+    }
+  ],
   "_proofread": {
     "gloss_en": true,
     "synonyms_en": true,

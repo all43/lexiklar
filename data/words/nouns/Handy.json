@@ -45,8 +45,26 @@
         "e75f5d6f2d",
         "bf8b8c53d5"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Funktelefon",
+        "Handtelefon",
+        "Mobilfunktelefon",
+        "Mobiltelefon",
+        "Taschentelefon",
+        "Cellphone",
+        "Gurke",
+        "Funkfernsprecher",
+        "Handfunktelefon",
+        "Ackerschnacker",
+        "Natel",
+        "Cell"
+      ],
+      "antonyms": [
+        "Festnetztelefon",
+        "ISDN-Telefon",
+        "Satellitentelefon",
+        "Schnurlostelefon"
+      ],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A small, portable wireless telephone connected to the telephone network by radio signal, allowing it to be used anywhere and carried with you, often with additional functions such as text and image transmission and internet access.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -246,7 +264,7 @@
   ],
   "_meta": {
     "source_hash": "3f32901a34f0fefc",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.56,
   "_proofread": {
@@ -270,5 +288,21 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "handy",
+    "meanings": [
+      {
+        "en": "handy, convenient (adjective)",
+        "de": [
+          "praktisch",
+          "handlich"
+        ]
+      },
+      {
+        "en": "mobile phone",
+        "de": []
+      }
+    ]
   }
 }

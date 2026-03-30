@@ -3,10 +3,13 @@
   "pos": "proper noun",
   "etymology_number": null,
   "is_singular_only": true,
-  "gender": "M",
-  "article": "der",
+  "gender": "N",
+  "article": "das",
   "plural_form": null,
-  "gender_rule": null,
+  "gender_rule": {
+    "rule_id": "nominalized_infinitive",
+    "is_exception": false
+  },
   "case_forms": {
     "singular": {
       "nom": "der Jemen",
@@ -32,7 +35,9 @@
         "8f9916198b",
         "e26b1280aa"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Republik Jemen"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A state in the south of the Arabian Peninsula",
@@ -64,7 +69,7 @@
   ],
   "_meta": {
     "source_hash": "188298492f008421",
-    "generated_at": "2026-03-14"
+    "generated_at": "2026-03-30"
   },
   "zipf": 3.38
 }

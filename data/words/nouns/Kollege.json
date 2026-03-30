@@ -35,7 +35,11 @@
         "23cd2e2a45",
         "182142c98a"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Arbeitskollege",
+        "Berufskollege",
+        "Mitarbeiter"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A person who works in the same company, organization, or institution.",
@@ -55,7 +59,9 @@
       "example_ids": [
         "e37643c893"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Berufskollege"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A person who works in the same profession but in a different company.",
@@ -78,7 +84,9 @@
         "a3ceea8694",
         "1d9b6e33ca"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Freund"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A person with whom one is friendly or on good terms.",
@@ -145,7 +153,7 @@
   "_gender_counterpart": "Kollegin",
   "_meta": {
     "source_hash": "1356a703d8788435",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.07,
   "_overrides": {
@@ -165,5 +173,21 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "college",
+    "meanings": [
+      {
+        "en": "college (institution)",
+        "de": [
+          "Hochschule",
+          "Universität"
+        ]
+      },
+      {
+        "en": "colleague, coworker",
+        "de": []
+      }
+    ]
   }
 }

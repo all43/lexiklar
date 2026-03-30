@@ -32,8 +32,20 @@
         "cb576ec18b",
         "9589fc093b"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Gym",
+        "Gymer",
+        "Gymi",
+        "Gelehrtenschule",
+        "höhere Schule",
+        "Lyzeum",
+        "Kantonsschule"
+      ],
+      "antonyms": [
+        "Gesamtschule",
+        "Hauptschule",
+        "Realschule"
+      ],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A secondary school that culminates in the Abitur (or Matura) qualification.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -74,7 +86,9 @@
       "example_ids": [
         "18df1229d9"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Gymnasion"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A training and competition facility designed for the physical development of young people.",
@@ -135,7 +149,7 @@
   ],
   "_meta": {
     "source_hash": "54ebf528ca61114c",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 3.72,
   "_overrides": {
@@ -155,5 +169,21 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "gymnasium",
+    "meanings": [
+      {
+        "en": "gymnasium, gym (sports)",
+        "de": [
+          "Sporthalle",
+          "Fitnessstudio"
+        ]
+      },
+      {
+        "en": "academic secondary school",
+        "de": []
+      }
+    ]
   }
 }

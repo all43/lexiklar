@@ -31,7 +31,11 @@
         "057706744a",
         "5e15cddcdd"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Kochanleitung",
+        "Kochrezept",
+        "Rezeptur"
+      ],
       "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
       "gloss_en_full": "Instructions for mixing, combining, and preparing substances to make a dish or other preparation",
@@ -79,7 +83,9 @@
         "9842185c12",
         "ea0792c893"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Verschreibung"
+      ],
       "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
       "gloss_en_full": "A written instruction given by a doctor that allows one to obtain medication from a pharmacy",
@@ -146,7 +152,7 @@
   ],
   "_meta": {
     "source_hash": "f1a79a533ecdc3c3",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.01,
   "_proofread": {
@@ -171,5 +177,21 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "receipt",
+    "meanings": [
+      {
+        "en": "receipt (proof of purchase)",
+        "de": [
+          "Quittung",
+          "Kassenbon"
+        ]
+      },
+      {
+        "en": "prescription; recipe",
+        "de": []
+      }
+    ]
   }
 }

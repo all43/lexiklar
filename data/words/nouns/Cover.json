@@ -30,7 +30,12 @@
         "435c7da7c9",
         "12396648cd"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Seite",
+        "Titelbild",
+        "Titelblatt",
+        "Titelseite"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "The front cover or title page of a printed publication.",
@@ -69,8 +74,13 @@
       "example_ids": [
         "a70e843b23"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Coverversion",
+        "Songcover"
+      ],
+      "antonyms": [
+        "Originalversion"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A new version of a song performed by artists other than those in the original version.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -117,7 +127,7 @@
   ],
   "_meta": {
     "source_hash": "6ca4422ecbcb5614",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-30"
   },
   "zipf": 3.61
 }

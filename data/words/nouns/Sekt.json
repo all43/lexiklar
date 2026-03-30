@@ -28,8 +28,18 @@
       "example_ids": [
         "38e198cd15"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Champagner",
+        "Kribbelwasser",
+        "Nuttenbrause",
+        "Puffbrause",
+        "Schaumwein",
+        "Wohlstandsbrause"
+      ],
+      "antonyms": [
+        "Selters",
+        "Stillwein"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A quality sparkling wine made from wine; a carbonated alcoholic beverage whose carbonation must originate from fermentation (endogenous carbonation) and to which exogenous carbonation may not be added.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -103,7 +113,7 @@
   ],
   "_meta": {
     "source_hash": "a2d99e301961e847",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-30"
   },
   "zipf": 3.4,
   "_overrides": {
@@ -122,5 +132,20 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "sect",
+    "meanings": [
+      {
+        "en": "sect (religious group)",
+        "de": [
+          "Sekte"
+        ]
+      },
+      {
+        "en": "sparkling wine",
+        "de": []
+      }
+    ]
   }
 }

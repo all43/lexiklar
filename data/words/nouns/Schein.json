@@ -55,7 +55,11 @@
         "a136e2dbf2",
         "f05976264f"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Beleg",
+        "Note",
+        "Quittung"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A certificate, banknote, receipt, or written proof.",
@@ -77,8 +81,19 @@
         "ebdb48b2f2",
         "30139a2adc"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Anschein",
+        "Eindruck",
+        "Vorspiegelung",
+        "Täuschung",
+        "Trugbild"
+      ],
+      "antonyms": [
+        "Beleg",
+        "Beweis",
+        "Nachweis",
+        "Tatsache"
+      ],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "The outward appearance of an object, often with doubt regarding its accuracy; can also refer to a person's behavior.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -225,7 +240,7 @@
   ],
   "_meta": {
     "source_hash": "f89d16760012d96e",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 3.73
 }

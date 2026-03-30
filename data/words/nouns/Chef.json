@@ -28,7 +28,10 @@
       "example_ids": [
         "87f5365b5e"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Boss",
+        "Natschalnik"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A person with authority to give orders to subordinate staff; an owner or superior.",
@@ -49,7 +52,16 @@
       "example_ids": [
         "89ed899ff9"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Natschalnik",
+        "Ältester",
+        "Oberhaupt",
+        "Häuptling",
+        "Familienältester",
+        "Familienoberhaupt",
+        "Stammesältester",
+        "Stammesoberhaupt"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A leader or head of a group, also used as a form of address.",
@@ -192,7 +204,7 @@
   "_gender_counterpart": "Chefin",
   "_meta": {
     "source_hash": "17c81b737ab6c245",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.75,
   "_proofread": {
@@ -216,5 +228,21 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "chef",
+    "meanings": [
+      {
+        "en": "chef, cook",
+        "de": [
+          "Koch",
+          "Köchin"
+        ]
+      },
+      {
+        "en": "boss, manager",
+        "de": []
+      }
+    ]
   }
 }

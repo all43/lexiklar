@@ -36,20 +36,11 @@
         "afc68821bc",
         "06ae429370"
       ],
-      "synonyms": [
-        "Sinn",
-        "Persönlichkeit",
-        "Verstand",
-        "Intellekt",
-        "Kopf"
-      ],
+      "synonyms": [],
       "antonyms": [
         "Körper",
         "Leib",
-        "Fleisch",
-        "Seele",
-        "Psyche",
-        "Instinkt"
+        "Fleisch"
       ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "Thinking as a component of individuality",
@@ -68,13 +59,10 @@
       "tags": [],
       "example_ids": [],
       "synonyms": [
-        "Essenz",
-        "Quintessenz"
+        "Sinn",
+        "Persönlichkeit"
       ],
-      "antonyms": [
-        "Buchstaben",
-        "Wortlaut"
-      ],
+      "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "The mind, including the capacity for feeling.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -90,8 +78,16 @@
       "gloss_en": "reason",
       "tags": [],
       "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Verstand",
+        "Intellekt",
+        "Kopf"
+      ],
+      "antonyms": [
+        "Seele",
+        "Psyche",
+        "Instinkt"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "The faculty of reason and intellect, as distinguished from emotion and feeling.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -114,9 +110,13 @@
         "583ba1da01"
       ],
       "synonyms": [
-        "Gespenst"
+        "Essenz",
+        "Quintessenz"
       ],
-      "antonyms": [],
+      "antonyms": [
+        "Buchstaben",
+        "Wortlaut"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "The fundamental idea or principle underlying an action or work.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -137,10 +137,7 @@
         "8ef8c59378"
       ],
       "synonyms": [],
-      "antonyms": [
-        "Brand",
-        "Wasser"
-      ],
+      "antonyms": [],
       "gloss_en_model": "claude-sonnet-4-6",
       "gloss_en_full": "A divine or supernatural being.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -159,7 +156,9 @@
       "example_ids": [
         "79cca39694"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Gespenst"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "The soul of a dead person wandering on earth; a ghost or specter.",
@@ -178,7 +177,10 @@
       "tags": [],
       "example_ids": [],
       "synonyms": [],
-      "antonyms": [],
+      "antonyms": [
+        "Brand",
+        "Wasser"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "An alcoholic beverage.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -406,7 +408,7 @@
   ],
   "_meta": {
     "source_hash": "3dd184754f530da0",
-    "generated_at": "2026-03-27"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.55,
   "_proofread": {

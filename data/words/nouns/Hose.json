@@ -30,8 +30,13 @@
         "3266551667",
         "8437a5994b"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Beinkleid"
+      ],
+      "antonyms": [
+        "Kleid",
+        "Rock"
+      ],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A garment that covers the body below the waist down to the feet, enclosing each leg separately; the plural form is also commonly used for the singular since trousers consist of two legs.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -49,7 +54,11 @@
       "example_ids": [
         "bc14cdd8ce"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Großtrombe",
+        "Tornado",
+        "Wirbelwind"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A small-scale whirlwind or vortex in the Earth's atmosphere.",
@@ -238,7 +247,7 @@
   ],
   "_meta": {
     "source_hash": "9f87fffe7cab4dea",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.22,
   "_proofread": {
@@ -262,5 +271,20 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "hose",
+    "meanings": [
+      {
+        "en": "hose (pipe, tubing)",
+        "de": [
+          "Schlauch"
+        ]
+      },
+      {
+        "en": "trousers, pants",
+        "de": []
+      }
+    ]
   }
 }

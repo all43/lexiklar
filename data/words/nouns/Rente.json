@@ -36,7 +36,9 @@
         "99d3347095",
         "dabbfff2a1"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Pension"
+      ],
       "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
       "gloss_en_full": "Retirement or disability benefit for workers and employees",
@@ -76,7 +78,9 @@
       "example_ids": [
         "f533b1baf3"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Anleihe"
+      ],
       "antonyms": [],
       "gloss_en_model": "anthropic/claude-haiku-4-5-20251001",
       "gloss_en_full": "A fixed-interest security",
@@ -206,7 +210,7 @@
   ],
   "_meta": {
     "source_hash": "3c549feb136ab011",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.09,
   "_overrides": {
@@ -225,5 +229,20 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "rent",
+    "meanings": [
+      {
+        "en": "rent (payment for accommodation)",
+        "de": [
+          "Miete"
+        ]
+      },
+      {
+        "en": "pension, retirement income",
+        "de": []
+      }
+    ]
   }
 }

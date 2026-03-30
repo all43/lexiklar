@@ -11,12 +11,14 @@
       "gloss": "Informationen oder Werke zusammenfassen (auch abwertend benutzt, um auszudrücken, dass der Betreffende die Informationen lediglich zusammengefasst hat, anstatt selbst kreativ tätig zu werden)",
       "gloss_en": "compile (gather)",
       "tags": [],
-      "example_ids": [],
+      "example_ids": [
+        "fb4dc82115"
+      ],
       "synonyms": [],
       "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To compile information or works together (also used pejoratively to express that the person has merely summarized the information instead of being creatively active themselves).",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "assemble",
         "collect",
@@ -29,12 +31,22 @@
       "gloss": "ein Programm mit Hilfe eines Compilers in Maschinensprache umwandeln",
       "gloss_en": "compile (program)",
       "tags": [],
-      "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
+      "example_ids": [
+        "176c8b3432"
+      ],
+      "synonyms": [
+        "erstellen",
+        "übersetzen",
+        "entwickeln",
+        "umwandeln",
+        "generieren"
+      ],
+      "antonyms": [
+        "dekompilieren"
+      ],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To convert a program into machine language using a compiler.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "build program",
         "convert to machine code"
@@ -79,7 +91,7 @@
   ],
   "_meta": {
     "source_hash": "c04b7066dcb8cec4",
-    "generated_at": "2026-03-19"
+    "generated_at": "2026-03-30"
   },
   "zipf": 1.83
 }

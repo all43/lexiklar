@@ -31,7 +31,14 @@
         "4058fa816b",
         "4af0d4d6ae"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Fabrikanlage",
+        "Fertigungsanlage",
+        "Industriebetrieb",
+        "Produktionsbetrieb",
+        "Produktionsstätte",
+        "Werk"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A manufacturing plant comprising all buildings, production facilities, workforce, and management at a single location for the purpose of industrial mass production.",
@@ -51,7 +58,9 @@
       "example_ids": [
         "efb9e654b4"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Fabrikgebäude"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A building on a factory site.",
@@ -203,7 +212,7 @@
   ],
   "_meta": {
     "source_hash": "5fe0aa6524f83852",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.23,
   "_proofread": {
@@ -228,5 +237,21 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "fabric",
+    "meanings": [
+      {
+        "en": "fabric (cloth, textile)",
+        "de": [
+          "Stoff",
+          "Gewebe"
+        ]
+      },
+      {
+        "en": "factory, plant",
+        "de": []
+      }
+    ]
   }
 }

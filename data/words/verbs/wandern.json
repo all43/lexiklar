@@ -16,7 +16,9 @@
         "29e364b7bf",
         "05de07d523"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "ziehen"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To cover a longer distance on foot in nature",
@@ -37,7 +39,9 @@
         "b9f2da0e69",
         "cfb9075f1d"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "ziehen"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "To change one's place of residence frequently or at regular intervals",
@@ -185,7 +189,7 @@
   ],
   "_meta": {
     "source_hash": "6d9ed6e61f55eaac",
-    "generated_at": "2026-03-18"
+    "generated_at": "2026-03-30"
   },
   "zipf": 3.82,
   "_overrides": {
@@ -204,5 +208,20 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "wander",
+    "meanings": [
+      {
+        "en": "to wander, roam aimlessly",
+        "de": [
+          "schlendern"
+        ]
+      },
+      {
+        "en": "to hike, walk purposefully",
+        "de": []
+      }
+    ]
   }
 }

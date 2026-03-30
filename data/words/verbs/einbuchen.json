@@ -11,12 +11,18 @@
       "gloss": "einen Betrag buchen, eine Buchung vornehmen",
       "gloss_en": "post (a payment)",
       "tags": [],
-      "example_ids": [],
+      "example_ids": [
+        "a7e1752db7",
+        "a1cd24ba70",
+        "6cd35de00e"
+      ],
       "synonyms": [],
-      "antonyms": [],
+      "antonyms": [
+        "ausbuchen"
+      ],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To record an amount or make a booking.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "record payment",
         "book a payment",
@@ -28,12 +34,24 @@
       "gloss": "eine Reservierung vornehmen; sich bei Ankunft registrieren (lassen), beispielsweise in einem Hotel, Krankenhaus, Fitnessstudio, auf einem Kreuzfahrtschiff",
       "gloss_en": "check in",
       "tags": [],
-      "example_ids": [],
+      "example_ids": [
+        "85a5c91fc7",
+        "f1136edd40",
+        "083574422c",
+        "3f27ecc5d7",
+        "b4d98293cd",
+        "be6ea3f871",
+        "e2a4d6baa7",
+        "bf5b23eef0",
+        "1ebc9e360c"
+      ],
       "synonyms": [],
-      "antonyms": [],
+      "antonyms": [
+        "ausbuchen"
+      ],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To make a reservation; to register upon arrival, for example in a hotel, hospital, gym, or on a cruise ship.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "register arrival",
         "book in",
@@ -45,12 +63,25 @@
       "gloss": "eine Verbindung herstellen (beispielsweise von Mobiltelephonen)",
       "gloss_en": "connect",
       "tags": [],
-      "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
+      "example_ids": [
+        "938ab51e3a",
+        "f4195b8153",
+        "4bf777d822",
+        "c9ae469ba2",
+        "7931dbb6fd",
+        "1a38004fef",
+        "df675e598a"
+      ],
+      "synonyms": [
+        "einloggen"
+      ],
+      "antonyms": [
+        "ausbuchen",
+        "ausloggen"
+      ],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To establish a connection, for example with mobile phones.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "establish connection",
         "pair device"
@@ -61,12 +92,21 @@
       "gloss": "sich (eventuell mit einem Passwort) in einem Computersystem/im Internet/in einem Netzwerk anmelden",
       "gloss_en": "log in",
       "tags": [],
-      "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
+      "example_ids": [
+        "688ab34cbc",
+        "42b6fdefc1",
+        "5e5aa2684b"
+      ],
+      "synonyms": [
+        "einloggen"
+      ],
+      "antonyms": [
+        "ausbuchen",
+        "ausloggen"
+      ],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To log in (possibly with a password) to a computer system, the internet, or a network.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "sign in",
         "access account"
@@ -99,7 +139,7 @@
   ],
   "_meta": {
     "source_hash": "a58fd95c8135dc7f",
-    "generated_at": "2026-03-19"
+    "generated_at": "2026-03-30"
   },
   "zipf": 1.71
 }

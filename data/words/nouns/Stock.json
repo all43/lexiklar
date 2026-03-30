@@ -72,7 +72,9 @@
       "example_ids": [
         "fd7c900c53"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Kartenstock"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A supply or stock of goods; a stub or counterfoil",
@@ -116,7 +118,9 @@
         "e5bad98239",
         "9e0a7c52a3"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Etage"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A story or floor of a building",
@@ -134,7 +138,9 @@
       "example_ids": [
         "2ece8df2af"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Eisstock"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A wooden or metal puck used in the Bavarian/Austrian sport of ice stock sport (Eisstockschießen)",
@@ -152,7 +158,10 @@
       "example_ids": [
         "3a1c8cc6b7"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Baumstumpf",
+        "Stubben"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A rootstock",
@@ -241,13 +250,12 @@
   ],
   "_meta": {
     "source_hash": "86b4ae04437f1da6",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.37,
   "_proofread": {
     "gloss_en": true,
-    "gloss_en_full": true,
-    "examples_owned": "055835a8"
+    "gloss_en_full": true
   },
   "_overrides": {
     "false_friend_en": {
@@ -266,5 +274,21 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "stock",
+    "meanings": [
+      {
+        "en": "stock (inventory, shares)",
+        "de": [
+          "Vorrat",
+          "Aktie"
+        ]
+      },
+      {
+        "en": "floor/storey of a building; walking stick",
+        "de": []
+      }
+    ]
   }
 }

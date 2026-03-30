@@ -50,7 +50,10 @@
         "d058ed044c",
         "f57b8d82ee"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Prüfung",
+        "Untersuchung"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "An examination or testing of something for specific properties",
@@ -69,7 +72,9 @@
       "example_ids": [
         "a8662f7e20"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Muster"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A small part of something from which the properties of the whole can be determined",
@@ -110,7 +115,9 @@
         "c683ff50d7",
         "d94f501ed7"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Klassenarbeit"
+      ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
       "gloss_en_full": "A written assignment in compulsory education",
@@ -286,13 +293,12 @@
   ],
   "_meta": {
     "source_hash": "58eaa7750876264c",
-    "generated_at": "2026-03-09"
+    "generated_at": "2026-03-30"
   },
   "zipf": 4.17,
   "_proofread": {
     "gloss_en": true,
     "gloss_en_full": true,
-    "examples_owned": "84ecbaba",
     "synonyms_en": true
   },
   "_overrides": {
@@ -311,5 +317,20 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "probe",
+    "meanings": [
+      {
+        "en": "probe (investigation, space probe)",
+        "de": [
+          "Sonde"
+        ]
+      },
+      {
+        "en": "rehearsal; sample, test",
+        "de": []
+      }
+    ]
   }
 }

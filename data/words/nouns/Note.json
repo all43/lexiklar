@@ -28,8 +28,14 @@
       "example_ids": [
         "6207b552eb"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Musikzeichen",
+        "Notenzeichen",
+        "Tonzeichen"
+      ],
+      "antonyms": [
+        "Pause"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A symbol for the written notation of a tone, whose placement in the staff indicates the pitch—expressed in the note name—and whose form indicates the duration—the note value. It consists of a notehead and a stem, with larger note values consisting only of the notehead.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -51,7 +57,12 @@
         "be543d12c8",
         "635c03c871"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Klavierauszug",
+        "Musiknote",
+        "Partitur",
+        "Stimme"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A written document or printed work containing musical notation.",
@@ -70,7 +81,14 @@
       "example_ids": [
         "0a2ebb4c13"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Beurteilungsergebnis",
+        "Beurteilung",
+        "Bewertung",
+        "Prädikat",
+        "Prüfungsurteil",
+        "Zensur"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A performance evaluation expressed as a number or in words.",
@@ -92,8 +110,14 @@
       "example_ids": [
         "e1efcc0384"
       ],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "Geldschein",
+        "Papiergeld",
+        "Zahlungsmittel"
+      ],
+      "antonyms": [
+        "Münze"
+      ],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A banknote used in everyday monetary transactions.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
@@ -111,7 +135,15 @@
       "example_ids": [
         "4f151bb583"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Benachrichtigung",
+        "Brief",
+        "Dokument",
+        "Mitteilung",
+        "Schreiben",
+        "Schriftstück",
+        "Zeilen"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "A written communication between institutions.",
@@ -131,7 +163,29 @@
         "e7f9c07fe4",
         "4a18a7d811"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "Art",
+        "Attribut",
+        "Besonderheit",
+        "Charakteristikum",
+        "Eigenart",
+        "Eigenheit",
+        "Eigenschaft",
+        "Eigentümlichkeit",
+        "Eigenwilligkeit",
+        "Einmaligkeit",
+        "Einzelheit",
+        "Grundzug",
+        "Kennzeichen",
+        "Kriterium",
+        "Merkmal",
+        "Originalität",
+        "Prädikat",
+        "Prägung",
+        "Seite",
+        "Wesen",
+        "Zug"
+      ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "The characteristic style or manner of a person or thing.",
@@ -303,7 +357,7 @@
   ],
   "_meta": {
     "source_hash": "52ca1dc13df193ce",
-    "generated_at": "2026-03-12"
+    "generated_at": "2026-03-30"
   },
   "zipf": 3.79,
   "_proofread": {
@@ -328,5 +382,21 @@
         }
       ]
     }
+  },
+  "false_friend_en": {
+    "en_word": "note",
+    "meanings": [
+      {
+        "en": "note (written message)",
+        "de": [
+          "Notiz",
+          "Nachricht"
+        ]
+      },
+      {
+        "en": "school grade; musical note",
+        "de": []
+      }
+    ]
   }
 }

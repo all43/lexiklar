@@ -12,11 +12,18 @@
       "gloss_en": "suggest",
       "tags": [],
       "example_ids": [],
-      "synonyms": [],
-      "antonyms": [],
+      "synonyms": [
+        "anhalten",
+        "anraten",
+        "auffordern",
+        "empfehlen"
+      ],
+      "antonyms": [
+        "abraten"
+      ],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To politely but firmly recommend or advise something to someone.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "recommend",
         "advise",
@@ -29,13 +36,16 @@
       "gloss_en": "imply",
       "tags": [],
       "example_ids": [
+        "e62dfa64e0",
         "4dec101533"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "suggerieren"
+      ],
       "antonyms": [],
+      "gloss_en_model": "openai/gpt-4.1-mini",
       "gloss_en_full": "To make something appear likely or probable.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
-      "gloss_en_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "indicate",
         "suggest strongly",
@@ -68,7 +78,7 @@
   ],
   "_meta": {
     "source_hash": "0ba97d0a13f64d47",
-    "generated_at": "2026-03-19"
+    "generated_at": "2026-03-30"
   },
   "zipf": 2.34
 }
