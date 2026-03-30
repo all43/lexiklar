@@ -194,6 +194,22 @@
   "zipf": 3.26,
   "_overrides": {
     "gender": "M",
-    "article": "der"
+    "article": "der",
+    "false_friend_en": {
+      "en_word": "cake",
+      "meanings": [
+        {
+          "en": "cake (large baked dessert)",
+          "de": [
+            "Kuchen",
+            "Torte"
+          ]
+        },
+        {
+          "en": "biscuit, cookie",
+          "de": []
+        }
+      ]
+    }
   }
 }
