@@ -13,6 +13,22 @@ import { ref } from "vue";
 
 import { MANIFEST_URL } from "./db.js";
 
+/**
+ * Compare two semver strings (e.g. "0.9.2", "0.9.3").
+ * Returns positive if a > b, negative if a < b, 0 if equal.
+ * Ignores build metadata (anything after "+").
+ */
+function compareSemver(a: string, b: string): number {
+  const parse = (v: string) => v.split("+")[0].split(".").map(Number);
+  const pa = parse(a);
+  const pb = parse(b);
+  for (let i = 0; i < 3; i++) {
+    const diff = (pa[i] || 0) - (pb[i] || 0);
+    if (diff !== 0) return diff;
+  }
+  return 0;
+}
+
 export interface AppUpdateInfo {
   available: boolean;
   version?: string;
@@ -43,7 +59,8 @@ export async function checkAppUpdate(): Promise<AppUpdateInfo | null> {
 
     const currentVersion = __APP_VERSION__;
 
-    if (bundle.current_version === currentVersion) {
+    // Only offer updates when manifest version is strictly newer (no downgrades)
+    if (compareSemver(bundle.current_version, currentVersion) <= 0) {
       return { available: false };
     }
 
