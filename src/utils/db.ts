@@ -759,7 +759,7 @@ export async function applyUpdate(
         reader.readAsDataURL(blob);
       });
       await Filesystem.writeFile({
-        path: dbDir + "/lexiklar.db",
+        path: "file://" + dbDir + "/lexiklar.db",
         data: base64,
         recursive: true,
       });

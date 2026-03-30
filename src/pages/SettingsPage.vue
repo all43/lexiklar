@@ -222,10 +222,18 @@ function formatSize(bytes: number | undefined | null): string {
 async function checkUpdates() {
   updateState.value = "checking";
 
-  const [dbResult, appResult] = await Promise.all([
-    checkForUpdates(),
-    checkAppUpdate(),
-  ]);
+  let dbResult: Awaited<ReturnType<typeof checkForUpdates>> = null;
+  let appResult: Awaited<ReturnType<typeof checkAppUpdate>> = null;
+  try {
+    [dbResult, appResult] = await Promise.all([
+      checkForUpdates(),
+      checkAppUpdate(),
+    ]);
+  } catch {
+    updateState.value = "error";
+    setTimeout(() => { updateState.value = "idle"; }, 3000);
+    return;
+  }
 
   // Handle app update result
   if (appResult?.available) {
