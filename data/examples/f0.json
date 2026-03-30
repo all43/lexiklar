@@ -14546,12 +14546,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not at all",
     "source": "wiktionary",
     "lemmas": [
       "verrecken"
     ],
-    "ref": "phrases/ums Verrecken nicht"
+    "ref": "phrases/ums Verrecken nicht",
+    "translation_model": "openai/gpt-4.1"
   },
   "f09989fcff": {
     "text": "„Was sich [C. G.] Jung als Skandal ausmalte, war nicht mehr als ein Sturm im Wasserglas.“",
@@ -20873,10 +20874,43 @@
   },
   "f0cde28a93": {
     "text": "„Ich muss Kundschafter dorthin aussenden, wo ihr behauptet, dass dieses Seefahrerheer sich sammelt.“",
-    "translation": null,
+    "translation": "\"I must send scouts to where you claim this naval fleet is gathering.\"",
     "source": "wiktionary",
     "lemmas": [
       "aussenden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kundschafter",
+        "lemma": "Kundschafter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aussenden",
+        "lemma": "aussenden",
+        "pos": "verb",
+        "gloss_hint": "send out"
+      },
+      {
+        "form": "behauptet",
+        "lemma": "behaupten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Seefahrerheer",
+        "lemma": "Seefahrerheer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sammelt",
+        "lemma": "sammeln",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "f0cea7b366": {
@@ -22083,10 +22117,31 @@
   },
   "f0d85db04b": {
     "text": "„Auch gibt es eine Seilbahn, die über den Rhein schwebt, hin und zurück.“",
-    "translation": null,
+    "translation": "\"There is also a cable car that hovers over the Rhine, back and forth.\"",
     "source": "wiktionary",
     "lemmas": [
       "Seilbahn"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Seilbahn",
+        "lemma": "Seilbahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rhein",
+        "lemma": "Rhein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwebt",
+        "lemma": "schweben",
+        "pos": "verb",
+        "gloss_hint": null
+      }
     ]
   },
   "f0d882c70c": {

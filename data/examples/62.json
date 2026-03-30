@@ -4656,11 +4656,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "leave someone out in the rain",
     "source": "wiktionary",
     "lemmas": [
       "stehenlassen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "621f325495": {
     "text": "„Seid gegrüßt, seid gegrüßt, werte Freunde. Ich verspäte mich nur ungern, wenn es um ein Fest geht.“",
@@ -7370,7 +7371,7 @@
         "gloss_hint": "picture book"
       }
     ],
-    "text_linked": "[[Mit|adverbs/mit]] seinen malerischen Dörfchen [[und|conjunctions/und]] hügeligen [[Landschaft|nouns/Landschaft#1]] [[wirkt|verbs/wirken#3]] [[die|pronouns/die]] [[Region|nouns/Region#1]] Cotswolds [[wie|adverbs/wie]] [[aus|prepositions/aus#1]] [[dem|determiners/der]] Bilderbuch."
+    "text_linked": "[[Mit|adverbs/mit]] seinen [[malerischen|adjectives/malerisch]] Dörfchen [[und|conjunctions/und]] hügeligen [[Landschaft|nouns/Landschaft#1]] [[wirkt|verbs/wirken#3]] [[die|pronouns/die]] [[Region|nouns/Region#1]] Cotswolds [[wie|adverbs/wie]] [[aus|prepositions/aus#1]] [[dem|determiners/der]] Bilderbuch."
   },
   "6240c306a0": {
     "text": "„Auf dem Nachhauseweg, den Blick auf meine Füße gerichtet, während unter meinen Schuhen Kies, Kopfsteinpflaster und Betonplatten abwechselten, ging mir die Sache mit den beiden wieder und wieder durch den Kopf.“",
@@ -16422,6 +16423,53 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": []
   },
+  "6289ab2319": {
+    "text": "In unserem letzten Urlaub im Allgäu besichtigten wir mehrere Burgruinen.",
+    "translation": "During our last vacation in the Allgäu, we visited several castle ruins.",
+    "source": "wiktionary",
+    "lemmas": [
+      "Burgruine"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "letzten",
+        "lemma": "letzt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Urlaub",
+        "lemma": "Urlaub",
+        "pos": "noun",
+        "gloss_hint": "vacation"
+      },
+      {
+        "form": "Allgäu",
+        "lemma": "Allgäu",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "besichtigten",
+        "lemma": "besichtigen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "mehrere",
+        "lemma": "mehrere",
+        "pos": "pronoun",
+        "gloss_hint": "several"
+      },
+      {
+        "form": "Burgruinen",
+        "lemma": "Burgruine",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ]
+  },
   "6289b9f9da": {
     "text": "Die Braut geht traditionell in Weiß zur Trauung.",
     "translation": "The bride traditionally wears white to the wedding.",
@@ -22533,6 +22581,41 @@
       }
     ],
     "text_linked": "„Einige [[Bürger|nouns/Bürger#1]] [[wollen|verbs/wollen#1]] [[den|determiners/der]] Klageweg [[beschreiten|verbs/beschreiten]], [[falls|conjunctions/falls]] sie [[mit|prepositions/mit#1]] [[ihren|pronouns/ihr_person]] [[Einsprüchen|nouns/Einspruch#1]] [[auf|prepositions/auf#1]] [[taube|adjectives/taub#1]] [[Ohren|nouns/Ohr#1]] [[stoßen|verbs/stoßen#1]].“"
+  },
+  "62c2ce0fd2": {
+    "text": "Zahnradbahnen können besonders große Steigungen überwinden.",
+    "translation": "Rack railways can overcome particularly steep gradients.",
+    "source": "wiktionary",
+    "lemmas": [
+      "Zahnradbahn"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zahnradbahnen",
+        "lemma": "Zahnradbahn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "können",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": "be able"
+      },
+      {
+        "form": "Steigungen",
+        "lemma": "Steigung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "überwinden",
+        "lemma": "überwinden",
+        "pos": "verb",
+        "gloss_hint": "overcome"
+      }
+    ]
   },
   "62c35c6afd": {
     "text": "„Die allgemeinen Eigenschaften der Pyramide sind aus der Stereometrie bekannt. Sie ist ein Polyeder, welches über einem Vieleck als Grundfläche (Basis) von lauter Dreiecken als Seitenflächen (Pleura) dergestalt umschlossen wird, dass dieselben in einem einzigen Punkt, der Spitze (Apex), zusammenlaufen.“",

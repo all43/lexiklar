@@ -9151,12 +9151,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not let something slide",
     "source": "wiktionary",
     "lemmas": [
       "sitzen"
     ],
-    "ref": "phrases/etwas nicht auf sich sitzen lassen"
+    "ref": "phrases/etwas nicht auf sich sitzen lassen",
+    "translation_model": "openai/gpt-4.1"
   },
   "415af698fc": {
     "text": "„Der Knabe erklärte sich bereit, seinen Affen vorzuführen, und in der Tat zeigte sich das Tier außerordentlich gut unterrichtet. Kaum war er von seiner Fessel befreit worden, als er mit großer Geschwindigkeit eine Palme erstieg, eine große Nuß abdrehte und sich geduldig wieder festlegen ließ, nachdem die Nuß gefallen war, und er, um vieles langsamer, wieder niederkletterte.“",
@@ -10208,10 +10209,37 @@
   },
   "4163fa46bb": {
     "text": "Der Angreifer drosch ihm den Gewehrkolben ins Gesicht.",
-    "translation": null,
+    "translation": "The attacker struck him in the face with the rifle butt.",
     "source": "wiktionary",
     "lemmas": [
       "dreschen"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Angreifer",
+        "lemma": "Angreifer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "drosch",
+        "lemma": "dreschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gewehrkolben",
+        "lemma": "Gewehrkolben",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesicht",
+        "lemma": "Gesicht",
+        "pos": "noun",
+        "gloss_hint": "face (human)"
+      }
     ]
   },
   "41648c429c": {

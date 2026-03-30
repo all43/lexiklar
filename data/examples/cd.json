@@ -16,13 +16,14 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "covered in dirt",
     "source": "wiktionary",
     "lemmas": [
       "stehen",
       "Dreck"
     ],
-    "ref": "phrases/vor Dreck stehen"
+    "ref": "phrases/vor Dreck stehen",
+    "translation_model": "openai/gpt-4.1"
   },
   "cd006590c3": {
     "text": "Das hört sich doch scheiße an!",
@@ -18841,10 +18842,37 @@
   },
   "cdce24e50a": {
     "text": "Den Brief habe ich gestern schon abgesandt; er müsste also bald bei dir ankommen.",
-    "translation": null,
+    "translation": "I already sent the letter yesterday; it should arrive with you soon.",
     "source": "wiktionary",
     "lemmas": [
       "absenden"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Brief",
+        "lemma": "Brief",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gestern",
+        "lemma": "gestern",
+        "pos": "adverb",
+        "gloss_hint": "yesterday"
+      },
+      {
+        "form": "abgesandt",
+        "lemma": "absenden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ankommen",
+        "lemma": "ankommen",
+        "pos": "verb",
+        "gloss_hint": "arrive"
+      }
     ]
   },
   "cdcf8a58a1": {

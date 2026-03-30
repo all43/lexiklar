@@ -2716,10 +2716,55 @@
   },
   "c1197a8648": {
     "text": "„Die Zahnradbahn auf das 2349 Meter hohe Rothorn ist die einzige Bergbahn der Schweiz, die noch regelmäßig mit Dampf betrieben wird; […].“",
-    "translation": null,
+    "translation": "The rack railway to the 2349-metre-high Rothorn is the only mountain railway in Switzerland that is still regularly operated by steam; […].",
     "source": "wiktionary",
     "lemmas": [
       "Bergbahn"
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zahnradbahn",
+        "lemma": "Zahnradbahn",
+        "pos": "noun",
+        "gloss_hint": "rack railway"
+      },
+      {
+        "form": "Rothorn",
+        "lemma": "Rothorn",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bergbahn",
+        "lemma": "Bergbahn",
+        "pos": "noun",
+        "gloss_hint": "mountain railway"
+      },
+      {
+        "form": "Schweiz",
+        "lemma": "Schweiz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "regelmäßig",
+        "lemma": "regelmäßig",
+        "pos": "adjective",
+        "gloss_hint": "regularly"
+      },
+      {
+        "form": "Dampf",
+        "lemma": "Dampf",
+        "pos": "noun",
+        "gloss_hint": "steam"
+      },
+      {
+        "form": "betrieben",
+        "lemma": "betreiben",
+        "pos": "verb",
+        "gloss_hint": "operate"
+      }
     ]
   },
   "c11a68b140": {
@@ -14256,12 +14301,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "that won't make much difference",
     "source": "wiktionary",
     "lemmas": [
       "Kraut"
     ],
-    "ref": "phrases/das macht das Kraut nicht fett"
+    "ref": "phrases/das macht das Kraut nicht fett",
+    "translation_model": "openai/gpt-4.1"
   },
   "c1aacea677": {
     "text": "Nach und nach kamen immer mehr Leute auf dem Marktplatz zusammen.",
