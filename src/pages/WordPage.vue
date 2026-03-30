@@ -212,6 +212,14 @@
         <p class="usage-note-text">{{ word.plural_only_note }}</p>
       </f7-block>
 
+      <!-- False Friend -->
+      <FalseFriend
+        v-if="(word as any).false_friend_en"
+        :ff="(word as any).false_friend_en"
+        :current-word="word.word"
+        @navigate="(lemma: string) => searchWord(lemma, { fallback: false })"
+      />
+
       <!-- Expressions & Proverbs -->
       <template v-if="wordExpressions.length">
         <f7-block-title>{{ t('word.expressions') }}</f7-block-title>
@@ -361,6 +369,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount, nextTick, getCurrentInstance } from "vue";
 import EnSynonyms from "../components/EnSynonyms.vue";
+import FalseFriend from "../components/FalseFriend.vue";
 import GlossText from "../components/GlossText.vue";
 import VerbConjugation from "../components/VerbConjugation.vue";
 import NounDeclension from "../components/NounDeclension.vue";
@@ -683,20 +692,20 @@ function getPosColor(pos: string | undefined): string {
   return POS_COLORS[pos || ""] || "gray";
 }
 
-async function searchWord(lemma: string) {
+async function searchWord(lemma: string, { fallback = true } = {}) {
   try {
     const hits = await searchByLemma(lemma);
     const exact = hits.filter(
       (h) => h.lemma.toLowerCase() === lemma.toLowerCase(),
     );
-    if (exact.length === 1) {
+    if (exact.length) {
       props.f7router.navigate(`/word/${exact[0].file}/`);
       return;
     }
   } catch {
     // ignore lookup errors
   }
-  props.f7router.back();
+  if (fallback) props.f7router.back();
 }
 
 function onPageAfterIn() {

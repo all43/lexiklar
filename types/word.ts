@@ -24,6 +24,22 @@ export interface Sound {
 export interface WordMeta {
   source_hash: string;
   generated_at: string;
+  /** Present only on manually authored entries not sourced from Wiktionary. */
+  source?: "manual";
+}
+
+export interface FalseFriendMeaning {
+  /** English gloss of this meaning (e.g. "current, up-to-date") */
+  en: string;
+  /** German lemmas for this meaning — empty array means this word itself is correct */
+  de: string[];
+}
+
+export interface FalseFriendEn {
+  /** The English word this German word is commonly confused with (e.g. "actual") */
+  en_word: string;
+  /** Curated meaning rows mapping English senses to German alternatives */
+  meanings: FalseFriendMeaning[];
 }
 
 export interface WordOverrides {
@@ -31,6 +47,8 @@ export interface WordOverrides {
   first_sense?: string;
   /** Full custom sense display order as array of gloss_en values (build-index only) */
   sense_order?: string[];
+  /** False-friend annotation for English speakers (promoted to top-level by build-index) */
+  false_friend_en?: FalseFriendEn;
   /** Any other field overrides (applied by transform's mergeWithExisting) */
   [key: string]: unknown;
 }

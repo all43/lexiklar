@@ -899,6 +899,10 @@ function main(): void {
       const enriched: Record<string, unknown> = { ...data };
       delete enriched._meta;
       delete enriched._proofread;
+      // Promote false_friend_en from _overrides to top-level before stripping
+      if (data._overrides?.false_friend_en) {
+        enriched.false_friend_en = data._overrides.false_friend_en;
+      }
       delete enriched._overrides;
       delete enriched._derived;
       delete enriched._hyponyms;

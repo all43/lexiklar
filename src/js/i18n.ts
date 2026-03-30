@@ -71,6 +71,9 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "word.oscillatingVerb": "Two-way verb (separable/inseparable)",
     "word.oscillatingNoteSep": "\u21C4 Also inseparable with different meaning",
     "word.oscillatingNoteInsep": "\u21C4 Also separable with different meaning",
+    "word.falseFriendTitle": "False friend",
+    "word.falseFriendIfMeant": "If you meant…",
+    "word.falseFriendUseInstead": "Use instead",
 
     // FavoritesPage
     "favorites.title": "Favorites",
@@ -282,6 +285,9 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "word.oscillatingVerb": "Trennbar/untrennbares Verb",
     "word.oscillatingNoteSep": "\u21C4 Auch untrennbar mit anderer Bedeutung",
     "word.oscillatingNoteInsep": "\u21C4 Auch trennbar mit anderer Bedeutung",
+    "word.falseFriendTitle": "Falscher Freund",
+    "word.falseFriendIfMeant": "Wenn du meinst…",
+    "word.falseFriendUseInstead": "Verwende stattdessen",
 
     // FavoritesPage
     "favorites.title": "Favoriten",

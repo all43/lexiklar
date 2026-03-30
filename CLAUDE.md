@@ -579,6 +579,32 @@ The merge function (`mergeWithExisting()` in transform.ts) reads the existing fi
 
 **Known limitation**: `gloss_en` is merged by sense position. If Wiktionary source adds or removes a sense, `gloss_en` can silently shift to the wrong sense. Only affects entries whose `source_hash` changed.
 
+## Manual Word Entries
+
+Words not in the Wiktionary dump can be authored by hand and placed directly in `data/words/{pos}/`. They are identified by `_meta.source: "manual"` and `_meta.source_hash: "manual"`. Use `data/words/nouns/Flusskreuzfahrt.json` as the template.
+
+```json
+{
+  "word": "Flusskreuzfahrt",
+  "pos": "noun",
+  ...
+  "_meta": {
+    "source_hash": "manual",
+    "generated_at": "YYYY-MM-DD",
+    "source": "manual"
+  },
+  "zipf": 2.5
+}
+```
+
+**Pipeline behaviour with manual words:**
+- `transform.ts` — never touches manual files (only processes words found in the JSONL dump). If a manual word later appears in Wiktionary, `mergeWithExisting()` runs and prints a `[manual-word] WIKTIONARY MERGE` warning so you can review the result.
+- `enrich-frequency.ts` — skips manual words; their author-set `zipf` is preserved.
+- `translate-glosses.ts` / `translate-examples.ts` / `generate-synonyms-en.ts` — process manual words exactly like Wiktionary words. No changes needed.
+- `build-index.ts` — indexes manual words exactly like Wiktionary words. Nouns need complete `case_forms`; verbs need `conjugation_class + stems` or a full `conjugation` table.
+
+Also add a `"manual": true` entry to `config/word-whitelist.json` for documentation (no script reads this flag).
+
 ---
 
 ## Storage Architecture
