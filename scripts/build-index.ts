@@ -18,7 +18,6 @@ import {
   writeFileSync,
   copyFileSync,
   readdirSync,
-  statSync,
   unlinkSync,
   existsSync,
 } from "fs";
@@ -177,30 +176,19 @@ function contentHash(str: string): string {
 // findJsonFiles is now provided by lib/words.ts as findWordFilePaths()
 
 /**
- * Compute a version hash from all word file paths + their modification times.
- * Used by the app to detect when the OPFS database is stale.
+ * Compute a content-deterministic version hash from row-level hashes in the DB.
+ * Two builds of identical data always produce the same version hash, regardless
+ * of runner, timing, or file mtimes. Must be called after all data is inserted.
  */
-function computeVersionHash(files: string[]): string {
+function computeVersionHash(db: Database.Database): string {
   const hash = createHash("sha256");
-  // Include build script's mtime so logic changes invalidate the cache
-  const scriptStat = statSync(new URL(import.meta.url).pathname);
-  hash.update("build-index.js:" + String(scriptStat.mtimeMs));
-  // Include source files and rule files that affect indexed forms.
-  // Any change to these should invalidate the cached DB.
-  const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-  const trackedSources = [
-    "src/utils/verb-forms.js",          // verb conjugation + word_forms generation
-    "data/rules/verb-endings.json",      // verb ending tables used by computeAllForms
-    "data/rules/noun-gender.json",       // noun gender rules (affects noun data)
-    "data/rules/adj-endings.json",       // adjective ending tables
-  ];
-  for (const src of trackedSources) {
-    const p = join(root, src);
-    if (existsSync(p)) hash.update(src + ":" + String(statSync(p).mtimeMs));
+  for (const row of db.prepare("SELECT file, hash FROM words ORDER BY file").all()) {
+    const r = row as { file: string; hash: string };
+    hash.update(r.file + ":" + r.hash);
   }
-  for (const f of files.sort()) {
-    const stat = statSync(f);
-    hash.update(f + ":" + String(stat.mtimeMs));
+  for (const row of db.prepare("SELECT id, hash FROM examples ORDER BY id").all()) {
+    const r = row as { id: string; hash: string };
+    hash.update(r.id + ":" + r.hash);
   }
   return hash.digest("hex").slice(0, 16);
 }
@@ -1163,8 +1151,8 @@ function main(): void {
   // Phase 5: Version hash
   // --------------------------------------------------------
 
-  const version = computeVersionHash(files);
-  const builtAt = new Date().toISOString().slice(0, 10);
+  const version = computeVersionHash(db);
+  const builtAt = new Date().toISOString();
   insertMeta.run({ key: "version", value: version });
   insertMeta.run({ key: "built_at", value: builtAt });
 

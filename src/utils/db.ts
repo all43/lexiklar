@@ -632,13 +632,24 @@ export interface UpdateInfo {
  */
 export async function checkForUpdates(): Promise<UpdateInfo | null> {
   try {
-    const { version: localVersion } = await getDbVersion();
+    const { version: localVersion, builtAt: localBuiltAt } = await getDbVersion();
     const manifest = await fetchManifest();
     const db = manifest.db;
     if (!db) return null;
 
     if (db.current_version === localVersion) {
       return { available: false };
+    }
+
+    // Only offer update if manifest is genuinely newer. 30-min margin accounts
+    // for concurrent CI builds where publish-data finishes after the native build.
+    const BUILD_MARGIN_MS = 30 * 60 * 1000;
+    if (localBuiltAt && db.built_at) {
+      const localTs = new Date(localBuiltAt).getTime();
+      const remoteTs = new Date(db.built_at).getTime();
+      if (remoteTs - localTs <= BUILD_MARGIN_MS) {
+        return { available: false };
+      }
     }
 
     // Check if a patch exists for our version (URLs are absolute)

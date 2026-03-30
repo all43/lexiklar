@@ -198,7 +198,7 @@ const dbCacheSize = ref<number | null>(null);
 const dbVersionDisplay = computed(() => {
   if (!dbVersion.value) return "...";
   const hash = dbVersion.value.slice(0, 8);
-  const date = dbBuiltAt.value || "";
+  const date = dbBuiltAt.value?.slice(0, 10) || "";
   return date ? `${hash} \u00B7 ${date}` : hash;
 });
 
