@@ -62,6 +62,9 @@ jobs:
             --out /tmp/release-assets \
             --release-url "$CDN_URL"
 
+          # Copy hashes to the path expected by the cache restore step
+          cp /tmp/release-assets/db-hashes.json /tmp/db-hashes.json
+
           echo "db_version=$DB_VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Upload assets to R2 CDN

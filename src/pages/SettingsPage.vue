@@ -109,19 +109,13 @@
           <f7-toggle :checked="autoCheckUpdates" @toggle:change="setAutoCheckUpdates" />
         </template>
       </f7-list-item>
-      <f7-list-item v-if="updateState === 'idle'">
-        <template #title>
-          <f7-link @click="checkUpdates">{{ t('settings.checkUpdates') }}</f7-link>
-        </template>
-      </f7-list-item>
+      <f7-list-item v-if="updateState === 'idle'" link @click="checkUpdates" :title="t('settings.checkUpdates')" />
       <f7-list-item v-else-if="updateState === 'checking'" :title="t('settings.checking')" />
       <f7-list-item v-else-if="updateState === 'up-to-date'" :title="t('settings.upToDate')" />
-      <f7-list-item v-else-if="updateState === 'available'">
+      <f7-list-item v-else-if="updateState === 'available'" link @click="applyUpdate">
         <template #title>
-          <f7-link @click="applyUpdate">
-            {{ updateInfo?.type === 'full' ? t('settings.updateAvailableFull') : t('settings.updateAvailable') }}
-            <span v-if="updateInfo?.size" class="text-color-gray">&nbsp;{{ formatSize(updateInfo.size) }}</span>
-          </f7-link>
+          {{ updateInfo?.type === 'full' ? t('settings.updateAvailableFull') : t('settings.updateAvailable') }}
+          <span v-if="updateInfo?.size" class="text-color-gray">&nbsp;{{ formatSize(updateInfo.size) }}</span>
         </template>
       </f7-list-item>
       <f7-list-item v-else-if="updateState === 'downloading'">
@@ -132,17 +126,9 @@
       <f7-list-item v-else-if="updateState === 'applying'" :title="t('settings.applying')" />
       <f7-list-item v-else-if="updateState === 'done'" :title="t('settings.updateDone')" />
       <f7-list-item v-else-if="updateState === 'error'" :title="t('settings.updateFailed')" />
-      <f7-list-item v-if="appUpdateState === 'available'">
-        <template #title>
-          <f7-link @click="downloadAppUpdate">{{ t('settings.appUpdateAvailable') }}</f7-link>
-        </template>
-      </f7-list-item>
+      <f7-list-item v-if="appUpdateState === 'available'" link @click="downloadAppUpdate" :title="t('settings.appUpdateAvailable')" />
       <f7-list-item v-else-if="appUpdateState === 'downloading'" :title="t('settings.appUpdateDownloading')" />
-      <f7-list-item v-else-if="appUpdateState === 'ready'">
-        <template #title>
-          <f7-link @click="restartApp">{{ t('settings.appUpdateRestart') }}</f7-link>
-        </template>
-      </f7-list-item>
+      <f7-list-item v-else-if="appUpdateState === 'ready'" link @click="restartApp" :title="t('settings.appUpdateRestart')" />
       <f7-list-item v-else-if="appUpdateState === 'error'" :title="t('settings.updateFailed')" />
     </f7-list>
   </f7-page>
