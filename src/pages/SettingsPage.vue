@@ -225,12 +225,14 @@ async function checkUpdates() {
   let dbResult: Awaited<ReturnType<typeof checkForUpdates>> = null;
   let appResult: Awaited<ReturnType<typeof checkAppUpdate>> = null;
   try {
-    [dbResult, appResult] = await Promise.all([
-      checkForUpdates(),
-      checkAppUpdate(),
+    const results = await Promise.race([
+      Promise.all([checkForUpdates(), checkAppUpdate()]),
+      new Promise<never>((_, reject) => setTimeout(() => reject(new Error("timeout")), 15000)),
     ]);
+    [dbResult, appResult] = results;
   } catch {
     updateState.value = "error";
+    f7.toast.create({ text: t("settings.updateFailed"), closeTimeout: 3000, position: "center" }).open();
     setTimeout(() => { updateState.value = "idle"; }, 3000);
     return;
   }
@@ -243,8 +245,13 @@ async function checkUpdates() {
 
   // Handle DB update result
   if (!dbResult) {
-    updateState.value = appResult?.available ? "idle" : "error";
-    if (!appResult?.available) setTimeout(() => { updateState.value = "idle"; }, 3000);
+    if (!appResult?.available) {
+      updateState.value = "error";
+      f7.toast.create({ text: t("settings.updateFailed"), closeTimeout: 3000, position: "center" }).open();
+      setTimeout(() => { updateState.value = "idle"; }, 3000);
+    } else {
+      updateState.value = "idle";
+    }
     return;
   }
   if (!dbResult.available) {
