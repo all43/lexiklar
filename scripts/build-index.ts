@@ -989,6 +989,7 @@ function main(): void {
         const lemmaLower = data.word.toLowerCase();
         const seenForms = new Set<string>();
         for (const number of Object.values(caseForms) as CaseForms[keyof CaseForms][]) {
+          if (number == null) continue;
           for (const form of Object.values(number)) {
             if (form == null) continue;
             const lower = (form as string).toLowerCase();
