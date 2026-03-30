@@ -14,7 +14,7 @@ Lexiklar started as a side project to fix that for myself — one app that has e
 
 The result is an app I use daily. If you're learning German and find the grammar side frustrating, this is for you.
 
-See [challenges.md](challenges.md) for a write-up of the harder problems encountered along the way.
+See [CHALLENGES.md](CHALLENGES.md) for a write-up of the harder problems encountered along the way.
 
 ---
 
@@ -26,7 +26,7 @@ This project was built using [Claude Code](https://claude.ai/code) as the primar
 
 **Repetitive but nuanced scripting** — the import pipeline involves dozens of TypeScript scripts that follow similar patterns (load JSON, transform, validate, write) but each with domain-specific logic. LLMs are fast at generating this kind of code and good at adapting existing patterns to new requirements.
 
-**Translation from a German-only source** — the data source is the German-language Wiktionary (not English), which has significantly richer grammar data but means all definitions and examples are in German. English translations were generated via LLM API calls across 25,000+ glosses and 87,500+ example sentences. LLM translation quality is good but not perfect — wrong-sense translations, overly literal phrasing, and annotation errors (e.g. annotating English translation text instead of the German original) appear at a low but non-trivial rate. This motivated a systematic proofreading pipeline: batches of words are reviewed by a Claude subagent running locally (no API cost), results are written to structured JSON, and applied via a dedicated script. 179 batches completed, ~3,300 words and ~16,000 examples reviewed. See [challenges.md](challenges.md) for a detailed breakdown of error patterns found.
+**Translation from a German-only source** — the data source is the German-language Wiktionary (not English), which has significantly richer grammar data but means all definitions and examples are in German. English translations were generated via LLM API calls across 25,000+ glosses and 87,500+ example sentences. LLM translation quality is good but not perfect — wrong-sense translations, overly literal phrasing, and annotation errors (e.g. annotating English translation text instead of the German original) appear at a low but non-trivial rate. This motivated a systematic proofreading pipeline: batches of words are reviewed by a Claude subagent running locally (no API cost), results are written to structured JSON, and applied via a dedicated script. 179 batches completed, ~3,300 words and ~16,000 examples reviewed. See [CHALLENGES.md](CHALLENGES.md) for a detailed breakdown of error patterns found.
 
 **Structured output from unstructured source** — extracting clean grammar data from Wiktionary's inconsistent JSONL format required a lot of edge case handling. LLMs are useful for quickly exploring the data and generating parsing logic for unexpected formats.
 
@@ -106,7 +106,7 @@ Three independent update channels, none requiring an App Store update:
 
 **Why Cache API over OPFS**: `createWritable()` doesn't work in Safari/WKWebView. The Cache API works everywhere.
 
-See [challenges.md](challenges.md) for a deep dive into the hardest problems solved during development.
+See [CHALLENGES.md](CHALLENGES.md) for a deep dive into the hardest problems solved during development.
 
 ---
 

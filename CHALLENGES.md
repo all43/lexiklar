@@ -115,117 +115,7 @@ A retrospective of the hardest problems we solved building a fully offline Germa
 
 ---
 
-## 11. Proofreading at Scale (154 Batches, 2,580 Words)
-
-**Problem:** LLM-generated translations, glosses, and grammar data needed human-level verification but the dataset was too large for manual review.
-
-**What made it hard:** Subagent output formats were inconsistent — some wrote word paths in `verified`/`translation_ok`, some used note-based fixes, some wrapped objects in arrays. Grammar corrections needed to survive pipeline re-runs (transform regenerates conjugations from source data). Polysemous words were the hardest — LLM translators consistently picked the most common sense, producing translations like "cop" for *Bulle* (which has 7 senses: male cattle, seal stamp, papal bull, burly man, cop, stock market bull, young male seal). Later batches (b119–b130) found ~40% of issues were wrong-sense translations for polysemous words.
-
-**Solution:**
-- Built a subagent proofreading workflow using Claude Code's built-in model (no API credits)
-- Standardized prompt (`prompts/proofread-subagent.md`) with replaceable word lists and per-word `check_examples` to skip already-proofread examples
-- Built `apply-proofread-results.ts` to handle all fix types: `gloss_fix`, `translation_fix`, `word_field_fix`, `annotation_replace`, `annotation_update`, `annotation_remove`
-- `grammar_override` issues automatically written as `_overrides` (survive re-transform)
-- `_proofread` flags track what's been verified; stale flags auto-cleared when source changes
-- `data/manual-fixes.json` accumulates all patchable fixes (820+) — idempotent, re-applicable
-- Completed 154 batches covering ~2,580 word files and ~13,000 examples
-- Priority list (`config/proofread-priority.txt`): 1,420 words ordered by importance, fully complete
-- Additional 480 high-frequency words proofread by Zipf score (b139–b154)
-
-**Common issue patterns discovered:**
-- **Wrong-sense translations** (~40% of issues): LLMs default to most common meaning — *Affe* → "monkey" instead of backpack/drunk, *Gipfel* → "summit" instead of croissant/treetop, *Bart* → "beard" instead of key-bit/thermal/tuning-ear
-- **English-form annotations** (~20%): LLM annotated the English translation text instead of German source
-- **Separable verb lemma errors** (~10%): *brach...aus* annotated as *brechen* instead of *ausbrechen*
-- **Stale/wrong gloss_hints** (~15%): sense disambiguation pointing to wrong sense after gloss updates
-- **Grammar overrides that outlive their entry** (~5%): when transform splits/reshuffles homonyms, `_overrides` can end up on the wrong entry (e.g. anhängen weak→strong conjugation fix)
-
----
-
-## 12. text_linked Cross-Reference Verification
-
-**Problem:** Auto-generated `text_linked` markup pointed to wrong homonym files (~50 cases), wrong sense numbers (~350 cases), or wrong POS (~20 cases). Example: *Mensch* consistently linked to `Mensch_junge` (young person) instead of `Mensch_lebewesen` (human being).
-
-**What made it hard:** The errors were semantic — you needed to understand the sentence context to know which sense of *sein* (copula vs auxiliary vs "exist") was intended. Automated testing couldn't catch these.
-
-**Solution:**
-- Generated verification batches (`data/text-linked-batches/`) targeting high-priority proofread examples
-- 19 subagent batches verified 940 examples → 523 fixes applied, 562 confirmed correct
-- Added **proofread skip guard** in `build-index.ts` — skips `text_linked` recomputation for examples with `_proofread.annotations` set, preventing verified corrections from being overwritten on rebuild
-
----
-
-## 13. Homonym File Collisions
-
-**Problem:** When two etymologically unrelated words share the same form and POS (e.g. *Bank* = bench vs financial institution), the file naming scheme `{Word}.json` collides. The disambiguator (first meaningful gloss word) could also collide if glosses were similar.
-
-**Solution:** Disambiguator extraction from the primary German gloss (`Bank_geldinstitut.json` vs `Bank_sitz.json`). Collision detection added to transform — when two entries would produce the same filename, it falls back to deeper gloss analysis. Commit `cea723f156` fixed remaining edge cases.
-
----
-
-## 14. Separable Verb Display & Oscillating Verbs
-
-**Problem:** German separable verbs (*ankommen* → *ich komme an*) need special treatment everywhere: display, search, conjugation tables, zu-infinitive forms. Some verbs (*übersetzen*) exist in both separable ("to ferry across") and inseparable ("to translate") forms — oscillating verbs.
-
-**Solution:**
-- `VerbSepPipe.vue` component — visual separator with directional arrows
-- Separable detection from present tense forms (space in conjugated form matching prefix)
-- `verb-forms.js` generates zu-infinitives for search index (*anzukommen*)
-- `_oscillating` flag set by `build-index.ts` for verbs with opposite-separable siblings
-- `⇄` badge and explanatory notes in UI for oscillating pairs
-
----
-
-## 15. Orphan Example Explosion
-
-**Problem:** The initial pipeline kept all Wiktionary examples, even for words outside the B2 filter. This bloated `examples.json` to ~393K entries, most untranslated and unreferenced.
-
-**Solution:** Identified and removed 306,636 orphan examples (not referenced by any B2 word file). Reduced to ~87K entries. Later sharded into 256 files (`data/examples/<xx>.json`) for better git performance and editor handling.
-
----
-
-## 16. Expression Deduplication False Positives
-
-**Problem:** German proverbs/expressions with shared consequence clauses were being deduplicated incorrectly. "Wo Frösche sind, da ist auch Wasser" and "Wo Weiden sind, da ist auch Wasser" were merged because comma-stripping canonicalization made them look identical.
-
-**Solution:** Replaced canonicalization with word-level Jaccard similarity (threshold ≥ 0.82). Two expressions must share 82%+ of their words to be considered duplicates, preventing false merges of distinct proverbs that share only a clause.
-
----
-
-## 17. Regeneration Safety — Preserving Manual Work
-
-**Problem:** Re-running the transform pipeline would overwrite manually-added data: LLM translations (`gloss_en`, `gloss_en_full`), English synonyms (`synonyms_en`), proofreading flags (`_proofread`), manual corrections (`_overrides`), and frequency scores (`zipf`).
-
-**What made it hard:** The merge had to be position-aware for senses (gloss_en is matched by sense position), preserve fields the pipeline doesn't own, apply `_overrides` last (winning over everything), and skip writing entirely when content is unchanged (preventing git churn).
-
-**Solution:** `mergeWithExisting()` in `transform.ts` — reads existing file before overwriting, copies over non-pipeline fields, position-matches sense-level data, applies `_overrides` last. Content-equality check (ignoring `generated_at`) prevents spurious rewrites. `source_hash` change detection skips unchanged entries entirely.
-
----
-
-## 18. Pluraletantum & Singularetantum Nouns
-
-**Problem:** Some German nouns exist only in plural (*Eltern*, *Leute*) or only in singular (*Milch*, *Hunger*). The declension table rendering and word data model assumed all nouns have both forms.
-
-**Solution:** Detected Pluraletantum (plural-only) and Singularetantum (singular-only) from Wiktionary form data. Added special handling in the declension table UI — showing "kein Plural" / "kein Singular" labels and Wiktionary's explanatory notes when available.
-
----
-
-## 19. TypeScript Migration
-
-**Problem:** The entire codebase (~30+ scripts, shared libraries, type definitions) was JavaScript. As complexity grew, lack of type safety caused subtle bugs in the pipeline — wrong field access, missing null checks, incorrect function signatures.
-
-**Solution:** Migrated everything to TypeScript in a single commit (`f6a518eb5`). All scripts run via `npx tsx`. Added `types/word.ts` for the word data model. The migration caught several latent bugs through type checking.
-
----
-
-## 20. PWA on GitHub Pages Without Custom Headers
-
-**Problem:** Making the app work as an installable PWA on GitHub Pages — which doesn't support custom response headers, service worker scope configuration, or server-side routing.
-
-**Solution:** `vite-plugin-pwa` with Workbox `generateSW` mode. Precaches app shell (~2.3 MB), excludes large assets (DB, WASM) handled by runtime caching strategies. `NavigateFallback` to `index.html` for SPA routing. `PwaUpdatePrompt.vue` shows non-intrusive update toast. DB versioning (`db-version.txt`) independent of app version for granular cache invalidation.
-
----
-
-## 21. LLM Model Quality — Finding the Right Model for Each Task
+## 11. LLM Model Quality — Finding the Right Model for Each Task
 
 **Problem:** Different LLM tasks (gloss translation, example sentence translation, idiom translation, annotation generation) have different quality requirements, and models vary wildly in performance. We needed to figure out which model to use where — balancing quality, cost, speed, and offline capability.
 
@@ -285,6 +175,116 @@ Only 45% agreement across models on nuanced gloss translations — showing that 
 - Anthropic: ignores JSON Schema, uses tool-use for structured output instead
 - Local models: special token leakage (`<|im_start|>`), function-call wrapper confusion, Python dict syntax (single quotes), need smaller batch sizes (3–5 vs 10+)
 - JSON extraction cascade: direct parse → markdown fence → function-call wrapper → bracket extraction → Python dict conversion
+
+---
+
+## 12. Proofreading at Scale (154 Batches, 2,580 Words)
+
+**Problem:** LLM-generated translations, glosses, and grammar data needed human-level verification but the dataset was too large for manual review.
+
+**What made it hard:** Subagent output formats were inconsistent — some wrote word paths in `verified`/`translation_ok`, some used note-based fixes, some wrapped objects in arrays. Grammar corrections needed to survive pipeline re-runs (transform regenerates conjugations from source data). Polysemous words were the hardest — LLM translators consistently picked the most common sense, producing translations like "cop" for *Bulle* (which has 7 senses: male cattle, seal stamp, papal bull, burly man, cop, stock market bull, young male seal). Later batches (b119–b130) found ~40% of issues were wrong-sense translations for polysemous words.
+
+**Solution:**
+- Built a subagent proofreading workflow using Claude Code's built-in model (no API credits)
+- Standardized prompt (`prompts/proofread-subagent.md`) with replaceable word lists and per-word `check_examples` to skip already-proofread examples
+- Built `apply-proofread-results.ts` to handle all fix types: `gloss_fix`, `translation_fix`, `word_field_fix`, `annotation_replace`, `annotation_update`, `annotation_remove`
+- `grammar_override` issues automatically written as `_overrides` (survive re-transform)
+- `_proofread` flags track what's been verified; stale flags auto-cleared when source changes
+- `data/manual-fixes.json` accumulates all patchable fixes (820+) — idempotent, re-applicable
+- Completed 154 batches covering ~2,580 word files and ~13,000 examples
+- Priority list (`config/proofread-priority.txt`): 1,420 words ordered by importance, fully complete
+- Additional 480 high-frequency words proofread by Zipf score (b139–b154)
+
+**Common issue patterns discovered:**
+- **Wrong-sense translations** (~40% of issues): LLMs default to most common meaning — *Affe* → "monkey" instead of backpack/drunk, *Gipfel* → "summit" instead of croissant/treetop, *Bart* → "beard" instead of key-bit/thermal/tuning-ear
+- **English-form annotations** (~20%): LLM annotated the English translation text instead of German source
+- **Separable verb lemma errors** (~10%): *brach...aus* annotated as *brechen* instead of *ausbrechen*
+- **Stale/wrong gloss_hints** (~15%): sense disambiguation pointing to wrong sense after gloss updates
+- **Grammar overrides that outlive their entry** (~5%): when transform splits/reshuffles homonyms, `_overrides` can end up on the wrong entry (e.g. anhängen weak→strong conjugation fix)
+
+---
+
+## 13. text_linked Cross-Reference Verification
+
+**Problem:** Auto-generated `text_linked` markup pointed to wrong homonym files (~50 cases), wrong sense numbers (~350 cases), or wrong POS (~20 cases). Example: *Mensch* consistently linked to `Mensch_junge` (young person) instead of `Mensch_lebewesen` (human being).
+
+**What made it hard:** The errors were semantic — you needed to understand the sentence context to know which sense of *sein* (copula vs auxiliary vs "exist") was intended. Automated testing couldn't catch these.
+
+**Solution:**
+- Generated verification batches (`data/text-linked-batches/`) targeting high-priority proofread examples
+- 19 subagent batches verified 940 examples → 523 fixes applied, 562 confirmed correct
+- Added **proofread skip guard** in `build-index.ts` — skips `text_linked` recomputation for examples with `_proofread.annotations` set, preventing verified corrections from being overwritten on rebuild
+
+---
+
+## 14. Homonym File Collisions
+
+**Problem:** When two etymologically unrelated words share the same form and POS (e.g. *Bank* = bench vs financial institution), the file naming scheme `{Word}.json` collides. The disambiguator (first meaningful gloss word) could also collide if glosses were similar.
+
+**Solution:** Disambiguator extraction from the primary German gloss (`Bank_geldinstitut.json` vs `Bank_sitz.json`). Collision detection added to transform — when two entries would produce the same filename, it falls back to deeper gloss analysis. Commit `cea723f156` fixed remaining edge cases.
+
+---
+
+## 15. Separable Verb Display & Oscillating Verbs
+
+**Problem:** German separable verbs (*ankommen* → *ich komme an*) need special treatment everywhere: display, search, conjugation tables, zu-infinitive forms. Some verbs (*übersetzen*) exist in both separable ("to ferry across") and inseparable ("to translate") forms — oscillating verbs.
+
+**Solution:**
+- `VerbSepPipe.vue` component — visual separator with directional arrows
+- Separable detection from present tense forms (space in conjugated form matching prefix)
+- `verb-forms.js` generates zu-infinitives for search index (*anzukommen*)
+- `_oscillating` flag set by `build-index.ts` for verbs with opposite-separable siblings
+- `⇄` badge and explanatory notes in UI for oscillating pairs
+
+---
+
+## 16. Orphan Example Explosion
+
+**Problem:** The initial pipeline kept all Wiktionary examples, even for words outside the B2 filter. This bloated `examples.json` to ~393K entries, most untranslated and unreferenced.
+
+**Solution:** Identified and removed 306,636 orphan examples (not referenced by any B2 word file). Reduced to ~87K entries. Later sharded into 256 files (`data/examples/<xx>.json`) for better git performance and editor handling.
+
+---
+
+## 17. Expression Deduplication False Positives
+
+**Problem:** German proverbs/expressions with shared consequence clauses were being deduplicated incorrectly. "Wo Frösche sind, da ist auch Wasser" and "Wo Weiden sind, da ist auch Wasser" were merged because comma-stripping canonicalization made them look identical.
+
+**Solution:** Replaced canonicalization with word-level Jaccard similarity (threshold ≥ 0.82). Two expressions must share 82%+ of their words to be considered duplicates, preventing false merges of distinct proverbs that share only a clause.
+
+---
+
+## 18. Regeneration Safety — Preserving Manual Work
+
+**Problem:** Re-running the transform pipeline would overwrite manually-added data: LLM translations (`gloss_en`, `gloss_en_full`), English synonyms (`synonyms_en`), proofreading flags (`_proofread`), manual corrections (`_overrides`), and frequency scores (`zipf`).
+
+**What made it hard:** The merge had to be position-aware for senses (gloss_en is matched by sense position), preserve fields the pipeline doesn't own, apply `_overrides` last (winning over everything), and skip writing entirely when content is unchanged (preventing git churn).
+
+**Solution:** `mergeWithExisting()` in `transform.ts` — reads existing file before overwriting, copies over non-pipeline fields, position-matches sense-level data, applies `_overrides` last. Content-equality check (ignoring `generated_at`) prevents spurious rewrites. `source_hash` change detection skips unchanged entries entirely.
+
+---
+
+## 19. Pluraletantum & Singularetantum Nouns
+
+**Problem:** Some German nouns exist only in plural (*Eltern*, *Leute*) or only in singular (*Milch*, *Hunger*). The declension table rendering and word data model assumed all nouns have both forms.
+
+**Solution:** Detected Pluraletantum (plural-only) and Singularetantum (singular-only) from Wiktionary form data. Added special handling in the declension table UI — showing "kein Plural" / "kein Singular" labels and Wiktionary's explanatory notes when available.
+
+---
+
+## 20. TypeScript Migration
+
+**Problem:** The entire codebase (~30+ scripts, shared libraries, type definitions) was JavaScript. As complexity grew, lack of type safety caused subtle bugs in the pipeline — wrong field access, missing null checks, incorrect function signatures.
+
+**Solution:** Migrated everything to TypeScript in a single commit (`f6a518eb5`). All scripts run via `npx tsx`. Added `types/word.ts` for the word data model. The migration caught several latent bugs through type checking.
+
+---
+
+## 21. PWA on GitHub Pages Without Custom Headers
+
+**Problem:** Making the app work as an installable PWA on GitHub Pages — which doesn't support custom response headers, service worker scope configuration, or server-side routing.
+
+**Solution:** `vite-plugin-pwa` with Workbox `generateSW` mode. Precaches app shell (~2.3 MB), excludes large assets (DB, WASM) handled by runtime caching strategies. `NavigateFallback` to `index.html` for SPA routing. `PwaUpdatePrompt.vue` shows non-intrusive update toast. DB versioning (`db-version.txt`) independent of app version for granular cache invalidation.
 
 ---
 
@@ -357,3 +357,53 @@ The `_proofread.annotations` guard in `build-index.ts` prevents verified sense r
 - **Sense-dependent gender** (*Schild*: der=shield / das=sign; *Gehalt*: der=salary / das=content) was already handled correctly via separate homonym files — no change needed.
 
 **Key insight:** Wiktionary's data has consistent implicit ordering conventions (standard form first, standard gender debatable), but these conventions are undocumented and only discoverable through statistical analysis across hundreds of entries.
+
+---
+
+## 25. Contextual Collocation Nouns for Condensed Grammar Tables
+
+**Problem:** The condensed adjective declension view shows example phrases like *der große Tag · die große Sache · das große Ergebnis* — one masculine, one feminine, one neuter noun — so learners see article + adjective + noun together rather than a dry endings grid. Every adjective needs a different set of example nouns that actually forms natural German phrases.
+
+Naively, you'd pick the same three nouns for all adjectives. But that breaks for:
+- **Semantically restricted adjectives**: *schwanger* (pregnant) only applies to animate feminine nouns — pairing it with *der schwangere Tag* is nonsensical
+- **Animate awkwardness**: *ein totes Kind* (a dead child) is technically correct but deeply uncomfortable as a grammar illustration
+- **Register/domain mismatches**: *ein maritimes Ufer* sounds fine, but some adjectives only occur with very specific nouns in natural German speech
+
+**What made it hard:** There are ~8,000+ adjectives in the dataset. Manually choosing three nouns per adjective was not feasible. And the nouns had to come from real usage — not just "grammatically possible" but "what a native speaker would actually say."
+
+**Solution:** `enrich-collocations.ts` extracts contextual nouns automatically from each adjective's own example sentences:
+
+1. For each of the adjective's example sentences, find noun annotations that appear within a 20-character window **after** the adjective form (attributive adjectives precede their noun in German — *der klare Himmel*, not *der Himmel klare*)
+2. Score candidates by proximity: noun directly after adjective (+10), slightly further (+4), just before adjective (+2)
+3. **Inanimate bonus**: nouns not in the animate set (*Mann, Frau, Kind, Tier...*) get a scoring bonus — preferred to avoid *ein toter Mann* style constructions
+4. **`SKIP_NOUNS` blocklist**: nominalized pronouns (*Ich, Nichts*), proper names (*Horst, Breivik*), vulgar/awkward body parts, slurs, number words, and English words leaked from annotations
+5. Pick the highest-scoring noun per gender (M/F/N) from real examples; fall back to neutral defaults (*Tag/Sache/Ergebnis*) when nothing was found
+6. `null` values allowed per gender — *schwanger* has `"M": null` because no masculine collocations exist
+
+**`_overrides.collocation_nouns`** allows manual correction for the cases the heuristic gets wrong. Deep-merged one level, so you can override just the masculine slot without touching the others.
+
+**Key insight:** Grammar illustration works best when examples are drawn from real usage of that specific word. The same noun set (*Tag/Sache/Ergebnis*) displayed for every adjective teaches articles correctly but fails to show what the word actually means in context.
+
+---
+
+## 26. False Suffix Matches — Rules Claiming the Wrong Words
+
+**Problem:** The noun gender rule system (`data/rules/noun-gender.json`) matches words by suffix. Some nouns end in a rule's suffix but the suffix is not the morphological origin of the word — *Geist* ends in `-ist` but is not an *-ist*-suffix agentive noun like *Kommunist* or *Pazifist*. Worse, *Frist* (die Frist = deadline) ends in `-ist` but is feminine — the opposite of what the rule predicts.
+
+The UI shows a badge linking a noun to its matching rule ("follows -ung rule → always feminine"). Assigning that badge incorrectly misleads learners. Showing *Geist* as an example of the *-ist* rule would teach the wrong grammar.
+
+**The same problem compounds — literally:** Compound nouns inherit their base component's suffix. *Kündigungsfrist* ends in *Frist*, so it was also incorrectly matching the `-ist` rule. Any rule must reject not just the base false match but all compounds ending in it.
+
+**Verbs and adjectives as accidental matches:** Some verb and adjective forms share a suffix with a noun gender rule. A nominalized adjective (*das Beste*, *das Böse*) or a verb form (*das Laufen*) can end in `-e` or `-en` and look rule-eligible. Without POS gating, rule assignment would bleed into non-noun entries.
+
+**Solution:**
+
+1. **Minimum stem length of 2** — rejects trivially short stems where the suffix is the whole word or nearly so (*Ei* for *-ei*, *Tor* for *-or*, *Mist* for *-ist* where the stem is empty or one character).
+
+2. **Per-rule `false_matches` list** — nouns where the suffix is an accidental match, not a morphological one. *Frist*, *Twist*, *Christ*, *Geist* for `-ist`. Compound detection uses `endsWith` — *Kündigungsfrist* is caught by matching *Frist* at the tail.
+
+3. **POS gating in `matchNounGenderRule()`** — the function is only called from `transformNoun()`. Verbs, adjectives, and nominalized infinitives follow separate code paths. Nominalized infinitives (uppercase, ends in *-en/-eln/-ern*, neuter, no plural) are matched by a dedicated `nominalized_infinitive` rule before any suffix check runs.
+
+4. **`is_false_match: true`** stored in the word file's `gender_rule` object. The UI renders a dimmed italic note (*"ends in -ist but is not an -ist word"*) instead of a confident rule badge.
+
+**Key insight:** Morphological suffixes and phonetic suffixes are not the same thing. A gender rule is only pedagogically useful when it reflects actual word-formation — learners should understand *why* the rule applies, not just that the last three letters match.
