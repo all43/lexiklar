@@ -18,6 +18,24 @@ See [challenges.md](challenges.md) for a write-up of the harder problems encount
 
 ---
 
+## Built with AI-assisted coding
+
+This project was built using [Claude Code](https://claude.ai/code) as the primary coding assistant throughout development. It turned out to be a particularly good fit for AI-assisted development for several reasons:
+
+**Bulk data processing at scale** — translating 87,500+ example sentences, generating English glosses for 25,000+ word entries, and annotating every example with lemma/POS/sense hints are tasks that would be impractical to do manually. LLMs handle these with consistent quality and the pipeline is designed around iterative LLM passes with human review checkpoints.
+
+**Repetitive but nuanced scripting** — the import pipeline involves dozens of TypeScript scripts that follow similar patterns (load JSON, transform, validate, write) but each with domain-specific logic. LLMs are fast at generating this kind of code and good at adapting existing patterns to new requirements.
+
+**Translation from a German-only source** — the data source is the German-language Wiktionary (not English), which has significantly richer grammar data but means all definitions and examples are in German. English translations were generated via LLM API calls across 25,000+ glosses and 87,500+ example sentences. LLM translation quality is good but not perfect — wrong-sense translations, overly literal phrasing, and annotation errors (e.g. annotating English translation text instead of the German original) appear at a low but non-trivial rate. This motivated a systematic proofreading pipeline: batches of words are reviewed by a Claude subagent running locally (no API cost), results are written to structured JSON, and applied via a dedicated script. 179 batches completed, ~3,300 words and ~16,000 examples reviewed. See [challenges.md](challenges.md) for a detailed breakdown of error patterns found.
+
+**Structured output from unstructured source** — extracting clean grammar data from Wiktionary's inconsistent JSONL format required a lot of edge case handling. LLMs are useful for quickly exploring the data and generating parsing logic for unexpected formats.
+
+**Long tail of UI components** — grammar tables, declension grids, conjugation paradigms, color-coded articles — many small but carefully designed components. LLMs can draft these quickly, leaving more time for the design decisions that actually matter.
+
+The non-LLM parts were equally important: architecture decisions, data model design, performance tuning, and anything where hallucination risk is too high (grammar rules, case forms, conjugation correctness).
+
+---
+
 ## Screenshots
 
 <!-- TODO: search results -->
