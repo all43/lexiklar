@@ -627,6 +627,8 @@ The SQLite DB is a self-contained bundle: word data is stored as JSON blobs in t
 - **Words**: `_meta`, `_proofread`, `_overrides`, `zipf`, `*_model` fields (top-level + per-sense), relationship refs (`_derived`, `_hyponyms`, etc.), `compound_source/verified`, verb `stems`/`past_participle` (baked into `conjugation`)
 - **Examples**: `lemmas`, `annotations`, `translation_model`, `_proofread`, `source` — only `text`, `text_linked`, `translation`, `type`, `ref`, `note` are kept
 
+**Quote normalisation**: `build-index.ts` calls `stripOuterQuotes()` (from `src/utils/text.ts`) on example `text`, `text_linked`, and `translation` before DB insertion. Handles balanced pairs, orphaned opening/closing, and mismatched cross-pair quotes (e.g. „…«). The DB always contains clean text; no stripping is done at runtime.
+
 ```sql
 CREATE TABLE words (
   id              INTEGER PRIMARY KEY,
