@@ -1,0 +1,252 @@
+{
+  "verified": [
+    "bcad3495fc",
+    "38e1d8fcbb",
+    "5d9ee01fcb",
+    "ae45fcad1a",
+    "0e52e5eb71",
+    "c8d6c9326f",
+    "19215e1c38",
+    "00609d82d8",
+    "51028f08e3",
+    "b29f3a1204",
+    "19215e1c38",
+    "3ad37b72b6",
+    "e60d1843cb",
+    "afe2b7d6fd",
+    "72de4f29e9",
+    "3d798ff2da",
+    "44d9b9ec08",
+    "af3df1e15b",
+    "7e30dba67e",
+    "f9b0a5c8ae",
+    "3a1e2f3d92",
+    "c56b1a7e4f",
+    "afee5285f5",
+    "c0a43721be",
+    "7322caeccd",
+    "321e5d3784",
+    "51aab9c3b1",
+    "7144766eaa",
+    "16723243bc",
+    "2eaf5c9b13",
+    "93b1d0e742",
+    "ec728f2f60",
+    "5e8f3a1b02",
+    "af3c9d2e71",
+    "194d093a68",
+    "c8338f46bd",
+    "7b4e9c1a03",
+    "4a2f5d8c96",
+    "205c027bb2",
+    "86b3a4f219",
+    "5e1c9f3d07",
+    "7b2d4e6f81",
+    "3f8c1a5e29",
+    "9e7b2f4d16",
+    "32aeb51db3",
+    "e4c7b9f032",
+    "4889e00c52",
+    "d7526d30a4",
+    "6be55334b8",
+    "1e2a88002a",
+    "fd1901fe34",
+    "43e9a96398",
+    "266d757714"
+  ],
+  "translation_ok": [
+    "cf4856e710",
+    "cf9f9057bf",
+    "afb0865f4e",
+    "5759501442",
+    "df0893941c",
+    "02d303099f",
+    "c8c79d192d",
+    "24dcf3af63",
+    "3f3c69a7fd",
+    "babc087a03",
+    "8c2604385a",
+    "c7b5ed799e",
+    "36e67e3790"
+  ],
+  "word_glosses_ok": [
+    "verbs/rasten",
+    "verbs/schrumpfen",
+    "verbs/unterwerfen",
+    "verbs/zubereiten",
+    "adjectives/beruhigend",
+    "adjectives/beständig",
+    "adjectives/lau",
+    "adjectives/psychologisch",
+    "adjectives/simuliert",
+    "adjectives/ungemütlich",
+    "adjectives/vorsätzlich",
+    "adjectives/wortwörtlich",
+    "nouns/Alarmanlage",
+    "nouns/Algorithmus",
+    "nouns/Anwaltskanzlei",
+    "nouns/Ausgangssperre",
+    "nouns/Borussia",
+    "nouns/Chi",
+    "nouns/Cicero",
+    "nouns/Degen_bezeichnung",
+    "nouns/Degen_handwaffe",
+    "nouns/Dünner_dünne",
+    "nouns/Entlastung"
+  ],
+  "issues": [
+    {
+      "word": "verbs/summen",
+      "type": "gloss",
+      "sense": 0,
+      "detail": "gloss_en is 'humming' (gerund) but should be verb base form 'hum'"
+    },
+    {
+      "word": "verbs/wanzen",
+      "type": "gloss",
+      "sense": 0,
+      "detail": "gloss_en 'bug out' is wrong — German gloss 'etwas von Wanzen befreien' means 'to rid something of bedbugs/bugs'. Should be 'de-bug' or 'rid of bedbugs'. gloss_en_full 'To free something of bedbugs' is correct."
+    },
+    {
+      "word": "nouns/Dünner_zu",
+      "type": "gloss",
+      "sense": 0,
+      "detail": "synonyms_en ['slim person', 'skinny person', 'thin individual', 'lean person'] are wrong — these were copied from Dünner_dünne. This sense means diarrhea/loose stool (der Dünne = colloquial for Durchfall). synonyms_en should contain diarrhea-related terms instead."
+    },
+    {
+      "id": "38e1d8fcbb",
+      "type": "translation",
+      "detail": "Translation has 'a audible click' — should be 'an audible click'"
+    },
+    {
+      "id": "16723243bc",
+      "type": "translation",
+      "detail": "Translation has 'an very uncomfortable' — should be 'a very uncomfortable'"
+    },
+    {
+      "id": "3f3c69a7fd",
+      "type": "translation",
+      "detail": "Translation 'The mastermind is sitting on a swing' is wrong for this context. The German 'Der Drahtzieher sitzt auf der Schaukel' here likely means the wire-drawer (literal sense), not mastermind — unless it is figurative. If it is sense 1 (Handwerker), translation should be 'The wire drawer is sitting on the swing.'"
+    },
+    {
+      "id": "cf4856e710",
+      "type": "annotation",
+      "detail": "Annotations 'bienenstock' (lemma 'bienenstock') and 'bienen' (lemma 'bienen') use lowercase German nouns — should be 'Bienenstock' (noun, lemma 'Bienenstock') and 'Bienen' (noun, lemma 'Biene')"
+    },
+    {
+      "id": "cf9f9057bf",
+      "type": "annotation",
+      "detail": "'Transformator' annotation has gloss_hint 'operation' — should be null (Transformator has only one sense, disambiguation not needed)"
+    },
+    {
+      "id": "afb0865f4e",
+      "type": "annotation",
+      "detail": "Annotation for 'wanzen': form 'wanzen' has lemma 'wanz' — should be lemma 'wanzen'"
+    },
+    {
+      "id": "72de4f29e9",
+      "type": "annotation",
+      "detail": "Annotation 'Mahlzeit' has lemma 'meal' (English) — should be lemma 'Mahlzeit'"
+    },
+    {
+      "id": "5759501442",
+      "type": "annotation",
+      "detail": "'laue' annotation has lemma 'laue' — should be lemma 'lau' (the adjective base form)"
+    },
+    {
+      "id": "7322caeccd",
+      "type": "annotation",
+      "detail": "'im' is annotated as pos 'abbreviation' — should be pos 'preposition' (or omitted, as it's a contraction of 'in dem')"
+    },
+    {
+      "id": "c0a43721be",
+      "type": "annotation",
+      "detail": "'Ende' has lemma 'end' (English) — should be lemma 'Ende'. 'Verhandlung' has lemma 'trial' (English) — should be lemma 'Verhandlung'"
+    },
+    {
+      "id": "51aab9c3b1",
+      "type": "annotation",
+      "detail": "'Ensemble' has lemma 'ensemble' (lowercase) — should be lemma 'Ensemble'. 'Stück' has lemma 'piece' (English) — should be lemma 'Stück'"
+    },
+    {
+      "id": "321e5d3784",
+      "type": "annotation",
+      "detail": "'simulierte' annotated as pos 'verb' — it is an adjective form here (simulierte Ensemble). Should be pos 'adjective', lemma 'simuliert'"
+    },
+    {
+      "id": "205c027bb2",
+      "type": "annotation",
+      "detail": "'kaum' annotated as pos 'verb' — should be pos 'adverb'"
+    },
+    {
+      "id": "df0893941c",
+      "type": "annotation",
+      "detail": "'Berichten' annotated as lemma 'berichten' pos 'verb' — in this sentence it is dative plural of 'Bericht' (noun). Should be lemma 'Bericht', pos 'noun'"
+    },
+    {
+      "id": "02d303099f",
+      "type": "annotation",
+      "detail": "'Degen' annotation has lemma 'degen' (lowercase) — should be 'Degen'. 'Gebrauch' has lemma 'gebrauchen' (verb) — should be lemma 'Gebrauch' (noun)"
+    },
+    {
+      "id": "c8c79d192d",
+      "type": "annotation",
+      "detail": "'ich' and 'mir' annotated as pos 'noun' — should be pos 'pronoun'"
+    },
+    {
+      "id": "24dcf3af63",
+      "type": "annotation",
+      "detail": "'Kerl' has lemma 'guy' (English) — should be lemma 'Kerl'. 'Hüfte' has lemma 'hip' (English) — should be lemma 'Hüfte'"
+    },
+    {
+      "id": "c8d6c9326f",
+      "type": "annotation",
+      "detail": "All annotations use English forms/lemmas ('shrinks', 'economy', 'shrink', 'economies', 'global', 'crisis') — should use German forms and lemmas from the German source text"
+    },
+    {
+      "id": "ae45fcad1a",
+      "type": "annotation",
+      "detail": "All annotations use English forms/lemmas ('always', 'diligent', 'student') from the translation, not the German source sentence"
+    },
+    {
+      "id": "7144766eaa",
+      "type": "annotation",
+      "detail": "All annotations use English forms/lemmas ('simulated', 'ensemble', 'piece', 'theater', 'performed') from the translation, not the German source sentence"
+    },
+    {
+      "id": "8c2604385a",
+      "type": "annotation",
+      "detail": "All annotations use English forms/lemmas ('curfew', 'imposed', 'city', 'week') from the translation, not the German source sentence"
+    },
+    {
+      "id": "babc087a03",
+      "type": "annotation",
+      "detail": "All annotations use English forms/lemmas ('desire', 'possession', 'power', 'drives', 'actions', 'humans') from the translation, not the German source sentence"
+    },
+    {
+      "id": "36e67e3790",
+      "type": "annotation",
+      "detail": "All annotations use English forms/lemmas ('sword', 'fencing', 'weapon', 'pointed', 'tip') from the translation, not the German source sentence"
+    },
+    {
+      "id": "c7b5ed799e",
+      "type": "annotation",
+      "detail": "All annotations use English forms/lemmas ('mastermind', 'operation', 'arrested') from the translation, not the German source sentence"
+    },
+    {
+      "id": "32aeb51db3",
+      "type": "annotation",
+      "detail": "'Dünnen' annotated as pos 'adjective' lemma 'dünn' — in this sentence it is a substantivized adjective (noun usage). Should be pos 'noun', lemma 'Dünner'"
+    },
+    {
+      "id": "ec728f2f60",
+      "type": "annotation",
+      "detail": "'einer' annotation has gloss_hint 'solo boat' — should be null (it's an article/determiner here, not the noun 'Einer')"
+    },
+    {
+      "id": "07f6f13586",
+      "type": "annotation",
+      "detail": "'vorauszusagen' has lemma 'voraussehen' — wrong lemma, should be 'voraussagen'. 'nutzt' has gloss_hint 'behave' — wrong, should be null or 'use'. 'Flugverhaltens' has gloss_hint 'behavior' and Algorithmus has gloss_hint 'control system' — these are imprecise but not critical"
+    }
+  ]
+}
