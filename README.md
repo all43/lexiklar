@@ -59,6 +59,12 @@ See [challenges.md](challenges.md) for a write-up of the harder problems encount
 - DB cached via Cache API — survives app restarts without re-fetching
 - PWA-installable — works offline after first visit, with automatic update prompts
 
+### Over-the-air updates
+Three independent update channels, none requiring an App Store update:
+- **Dictionary content** — SQL patch files diff old and new DB row by row (content-hash based). Clients download only the delta, not the full DB. Patches are gzip-compressed and applied transactionally.
+- **App shell** — Capawesome live update bundles (~4 MB, excludes DB) for iOS/Android; Workbox service worker for PWA
+- **Anti-downgrade guard** — content-deterministic DB version hash + 30-minute timestamp margin prevents spurious updates when CDN lags behind
+
 ### Interface
 - Light and dark mode with system sync (auto/light/dark preference)
 - No ads, no account, no tracking — search history and favorites stay on device
