@@ -95,5 +95,5 @@ jobs:
       - name: Save DB hashes to cache for next run
         uses: actions/cache/save@v4
         with:
-          path: /tmp/release-assets/db-hashes.json
+          path: /tmp/db-hashes.json
           key: published-db-hashes-${{ steps.publish.outputs.db_version }}
