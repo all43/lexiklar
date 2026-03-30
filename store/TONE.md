@@ -11,7 +11,7 @@ Lexiklar was built during a personal German learning journey. The core frustrati
 ## What to avoid
 - Never mention "beta" in any store copy
 - No "initial release" framing that signals immaturity
-- Don't undersell: this is a finished, polished app
+- Don't undersell: this is a finished, complete app
 
 ## Key differentiators (always mention)
 - Fully offline

@@ -6,6 +6,18 @@ Lexiklar = *Lexikon* (lexicon) + *klar* (clear). The differentiator from existin
 
 ---
 
+## Why I built this
+
+I started learning German and kept hitting the same wall: each type of question needed a different tool. Articles and noun genders in one place, verb conjugations in another (usually ad-plagued), declension tables somewhere else, and a separate dictionary for translations. Everything was scattered, and almost nothing worked offline.
+
+Lexiklar started as a side project to fix that for myself — one app that has everything in one place, works offline, and doesn't require an account or contain ads. I was also curious about the technical challenge: how do you extract clean, structured grammar data from a massive Wiktionary dump, and ship it in a way that's actually fast and usable on a phone?
+
+The result is an app I use daily. If you're learning German and find the grammar side frustrating, this is for you.
+
+See [challenges.md](challenges.md) for a write-up of the harder problems encountered along the way.
+
+---
+
 ## Screenshots
 
 <!-- TODO: search results -->
