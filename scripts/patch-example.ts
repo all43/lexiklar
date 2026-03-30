@@ -82,6 +82,7 @@ while (i < args.length) {
 
   if (arg === "--set-translation") {
     ex.translation = args[++i];
+    (ex as Record<string, unknown>).translation_model = "anthropic/claude-sonnet-4-6";
     changed = true;
     console.log(`  Set translation`);
   } else if (arg === "--clean-translation") {
