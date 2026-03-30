@@ -59,6 +59,10 @@ See [challenges.md](challenges.md) for a write-up of the harder problems encount
 - DB cached via Cache API — survives app restarts without re-fetching
 - PWA-installable — works offline after first visit, with automatic update prompts
 
+### Interface
+- Light and dark mode with system sync (auto/light/dark preference)
+- No ads, no account, no tracking — search history and favorites stay on device
+
 ---
 
 ## Tech Stack
