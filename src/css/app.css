@@ -530,7 +530,7 @@ mark.example-highlight {
 }
 /* Extra padding in iOS liquid glass mode where tab bar floats */
 .ios .searchbar-bottom-toolbar {
-  padding: 8px 0;
+  padding: 8px 0 20px;
   height: auto !important;
 }
 /* Backdrop: escape subnavbar to cover viewport, clip away bottom bar area.
@@ -545,9 +545,9 @@ mark.example-highlight {
   height: auto;
   clip-path: inset(0 0 calc(var(--f7-tabbar-icons-height) + var(--f7-safe-area-bottom) + var(--f7-subnavbar-height)) 0);
 }
-/* iOS adds padding: 8px 0 to the toolbar → 16px extra to clip */
+/* iOS adds padding: 8px 0 20px to the toolbar → 28px extra to clip */
 .ios .searchbar-bottom-toolbar > .searchbar-backdrop {
-  clip-path: inset(0 0 calc(var(--f7-tabbar-icons-height) + var(--f7-safe-area-bottom) + var(--f7-subnavbar-height) + 16px) 0);
+  clip-path: inset(0 0 calc(var(--f7-tabbar-icons-height) + var(--f7-safe-area-bottom) + var(--f7-subnavbar-height) + 28px) 0);
 }
 /* Zero out subnavbar top offset when searchbar is at bottom, add bottom padding */
 .page.page-searchbar-bottom > .page-content {

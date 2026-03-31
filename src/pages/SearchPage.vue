@@ -123,12 +123,12 @@
 
     <!-- ═══ Home screen — shown when no query ═══ -->
     <template v-else-if="isDbReady && !loading">
-      <!-- Frequently Viewed -->
-      <template v-if="freqWords.length">
-        <f7-block-title>{{ t('search.frequentlyViewed') }}</f7-block-title>
+      <!-- Recently Visited (excludes items already in Frequently Viewed) -->
+      <template v-if="recentWords.length">
+        <f7-block-title>{{ t('search.recentlyVisited') }}</f7-block-title>
         <f7-list class="home-list gloss-list" media-list>
           <f7-list-item
-            v-for="item in freqWords"
+            v-for="item in recentWords"
             :key="item.file"
             :title="itemTitle(item)"
             :subtitle="itemGlosses(item)"
@@ -141,12 +141,12 @@
         </f7-list>
       </template>
 
-      <!-- Recently Visited (excludes items already in Frequently Viewed) -->
-      <template v-if="recentWords.length">
-        <f7-block-title>{{ t('search.recentlyVisited') }}</f7-block-title>
+      <!-- Frequently Viewed -->
+      <template v-if="freqWords.length">
+        <f7-block-title>{{ t('search.frequentlyViewed') }}</f7-block-title>
         <f7-list class="home-list gloss-list" media-list>
           <f7-list-item
-            v-for="item in recentWords"
+            v-for="item in freqWords"
             :key="item.file"
             :title="itemTitle(item)"
             :subtitle="itemGlosses(item)"
