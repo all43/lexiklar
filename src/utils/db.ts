@@ -764,8 +764,8 @@ export async function applyUpdate(
         recursive: true,
       });
 
-      // Reopen with new DB
-      await initNativeDb();
+      // Reopen with new DB (skip bundled check — we just wrote the OTA DB)
+      await initNativeDb(true);
     } else {
       // Web full DB replacement — stream to Cache API first, then load into worker.
       // Avoids holding decompressed bytes + worker copy simultaneously (~500 MB peak)

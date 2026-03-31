@@ -21,29 +21,31 @@ const DB_FILE = "lexiklar.db";
  * On first launch, the plugin copies the bundled DB from app assets.
  * On app update, compares bundled version against installed and replaces if newer.
  */
-export async function initNativeDb(): Promise<void> {
+export async function initNativeDb(skipBundledCheck = false): Promise<void> {
   // Open DB (plugin copies from assets on first launch)
   await LexiklarSqlite.open({ path: DB_FILE, readOnly: false });
 
-  // Check if bundled DB is newer than installed
-  try {
-    const versionResp = await fetch("/data/db-version.txt");
-    const bundledVersion = (await versionResp.text()).trim();
+  // Check if bundled DB is newer than installed (skip when called after OTA update)
+  if (!skipBundledCheck) {
+    try {
+      const versionResp = await fetch("/data/db-version.txt");
+      const bundledVersion = (await versionResp.text()).trim();
 
-    const result = await LexiklarSqlite.query({
-      sql: "SELECT value FROM meta WHERE key = ?",
-      params: ["version"],
-    });
-    const installedVersion = result.rows[0]?.value as string | undefined;
+      const result = await LexiklarSqlite.query({
+        sql: "SELECT value FROM meta WHERE key = ?",
+        params: ["version"],
+      });
+      const installedVersion = result.rows[0]?.value as string | undefined;
 
-    if (installedVersion && bundledVersion && installedVersion !== bundledVersion) {
-      // Bundled DB is different (newer) — replace
-      await LexiklarSqlite.close();
-      await LexiklarSqlite.deleteDatabase({ path: DB_FILE });
-      await LexiklarSqlite.open({ path: DB_FILE, readOnly: false });
+      if (installedVersion && bundledVersion && installedVersion !== bundledVersion) {
+        // Bundled DB is different (newer after app update) — replace
+        await LexiklarSqlite.close();
+        await LexiklarSqlite.deleteDatabase({ path: DB_FILE });
+        await LexiklarSqlite.open({ path: DB_FILE, readOnly: false });
+      }
+    } catch {
+      // Version check failed — continue with whatever DB we have
     }
-  } catch {
-    // Version check failed — continue with whatever DB we have
   }
 
   // Sanity check
