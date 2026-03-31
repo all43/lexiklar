@@ -305,6 +305,7 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
 
 .adj-scale {
   display: flex;
+  flex-wrap: nowrap;
   align-items: flex-start;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
