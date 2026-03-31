@@ -16,6 +16,12 @@
           <div class="adj-scale-label">Gegenteil</div>
         </div>
         <div v-if="word.antonym" class="adj-scale-connector"></div>
+        <div v-if="!word.antonym && positiveCounterpart" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', positiveCounterpart!.word)">
+          <div class="adj-scale-dot"></div>
+          <div class="adj-scale-form">{{ positiveCounterpart!.word }}</div>
+          <div class="adj-scale-label">Gegenteil</div>
+        </div>
+        <div v-if="!word.antonym && positiveCounterpart" class="adj-scale-connector"></div>
         <div class="adj-scale-node adj-scale-active">
           <div class="adj-scale-dot adj-scale-dot-active"></div>
           <div class="adj-scale-form adj-scale-form-active">{{ word.word }}</div>
@@ -236,6 +242,7 @@ const CASES = [
 const props = defineProps<{
   word: AdjectiveWord;
   baseWord?: { word: string; superlative: string | null; antonym: { word: string; negative?: boolean } | null } | null;
+  positiveCounterpart?: { word: string } | null;
 }>();
 
 const activeTab = ref<DeclType>("strong");

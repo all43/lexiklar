@@ -520,6 +520,18 @@ export async function getBaseAdjective(lemma: string): Promise<{ word: string; s
 }
 
 /**
+ * Find the adjective that lists the given lemma as its curated antonym.
+ * Used to show the positive pole when landing on a negative-pole adjective (e.g. "schlecht" → gut).
+ */
+export async function getPositiveCounterpart(lemma: string): Promise<{ word: string } | null> {
+  const rows = await query(
+    `SELECT lemma FROM words WHERE pos = 'ADJECTIVE' AND lower(json_extract(data, '$.antonym.word')) = lower(?) LIMIT 1`,
+    [lemma],
+  ) as { lemma: string }[];
+  return rows.length ? { word: rows[0].lemma } : null;
+}
+
+/**
  * Get display info for related words by their file keys.
  * Returns an array with lemma, pos, gender, file, glossEn for each.
  */

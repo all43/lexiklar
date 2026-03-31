@@ -294,7 +294,7 @@
           <span>{{ t('word.grammar') }}</span>
           <a class="grammar-jump" @click.prevent="scrollToTop">↑ {{ t('word.meanings') }}</a>
         </div>
-        <AdjectiveDeclension :word="word" :base-word="baseAdjective" @compare-navigate="(term: string) => searchWord(term, { fallback: false })" />
+        <AdjectiveDeclension :word="word" :base-word="baseAdjective" :positive-counterpart="positiveCounterpart" @compare-navigate="(term: string) => searchWord(term, { fallback: false })" />
       </template>
       <template v-else-if="word.pos === 'pronoun' || word.pos === 'determiner' || word.pos === 'numeral'">
         <div class="block-title meanings-header" id="word-grammar">
@@ -376,7 +376,7 @@ import NounDeclension from "../components/NounDeclension.vue";
 import AdjectiveDeclension from "../components/AdjectiveDeclension.vue";
 import PronounDeclension from "../components/PronounDeclension.vue";
 import VerbSepPipe from "../components/VerbSepPipe.vue";
-import { getWord, getExamples, getRelatedWords, searchByLemma, getBaseAdjective } from "../utils/db.js";
+import { getWord, getExamples, getRelatedWords, searchByLemma, getBaseAdjective, getPositiveCounterpart } from "../utils/db.js";
 import { submitReport } from "../utils/report.js";
 import { f7 } from "framework7-vue/bundle";
 import { t } from "../js/i18n.js";
@@ -463,6 +463,7 @@ const inst = getCurrentInstance();
 
 const word = ref<(Word & Record<string, unknown>) | null>(null);
 const baseAdjective = ref<{ word: string; superlative: string | null; antonym: { word: string; negative?: boolean } | null } | null>(null);
+const positiveCounterpart = ref<{ word: string } | null>(null);
 const examples = ref<Record<string, Example>>({});
 const relatedWords = ref<SearchResult[]>([]);
 const loading = ref(true);
@@ -872,6 +873,9 @@ onMounted(async () => {
       const adj = word.value as Record<string, unknown>;
       if (!adj.comparative && !adj.superlative) {
         baseAdjective.value = await getBaseAdjective(word.value.word);
+      }
+      if (!adj.antonym) {
+        positiveCounterpart.value = await getPositiveCounterpart(word.value.word);
       }
     }
 
