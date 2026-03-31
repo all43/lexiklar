@@ -16,7 +16,13 @@
           <div class="adj-scale-label">Gegenteil</div>
         </div>
         <div v-if="word.antonym" class="adj-scale-connector"></div>
-        <!-- Negative pole: only comparative on the LEFT (superlative dropped to avoid overflow) -->
+        <!-- Negative pole: superlative and comparative on the LEFT (reversed direction) -->
+        <div v-if="positiveCounterpart && word.superlative" class="adj-scale-node">
+          <div class="adj-scale-dot"></div>
+          <div class="adj-scale-form">{{ word.superlative }}</div>
+          <div class="adj-scale-label">Superlativ</div>
+        </div>
+        <div v-if="positiveCounterpart && word.superlative" class="adj-scale-connector"></div>
         <div v-if="positiveCounterpart && word.comparative" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', word.comparative!)">
           <div class="adj-scale-dot"></div>
           <div class="adj-scale-form">{{ word.comparative }}</div>
@@ -285,7 +291,7 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
 
 <style scoped>
 .adj-scale-wrap {
-  padding: 14px var(--f7-block-padding-horizontal, 16px) 20px;
+  padding: 14px 0 20px;
 }
 
 .adj-scale-title {
@@ -294,11 +300,20 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 10px;
+  padding: 0 var(--f7-block-padding-horizontal, 16px);
 }
 
 .adj-scale {
   display: flex;
   align-items: flex-start;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 var(--f7-block-padding-horizontal, 16px) 4px;
+}
+
+.adj-scale::-webkit-scrollbar {
+  display: none;
 }
 
 .adj-scale-connector {
@@ -317,7 +332,8 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 0;
+  flex-shrink: 0;
+  min-width: 60px;
   max-width: 90px;
 }
 
