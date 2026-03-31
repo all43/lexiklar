@@ -7,9 +7,9 @@
 
     <!-- Comparison scale: Positiv → Komparativ → Superlativ -->
     <!-- Normal case: this word is the Positiv (has comparative/superlative fields) -->
-    <div v-if="word.comparative || word.superlative" class="adj-scale-wrap">
+    <div v-if="word.comparative || word.superlative" class="adj-scale-wrap" :class="{ 'has-fade-left': canScrollLeft, 'has-fade-right': canScrollRight }">
       <div class="adj-scale-title">{{ t('adj.steigerung') }}</div>
-      <div class="adj-scale">
+      <div class="adj-scale" ref="scaleEl">
         <div v-if="word.antonym" class="adj-scale-node adj-scale-tappable" :class="{ 'adj-scale-antonym-negative': word.antonym.negative }" @click="emit('compare-navigate', word.antonym!.word)">
           <div class="adj-scale-dot" :class="{ 'adj-scale-dot-antonym-negative': word.antonym.negative }"></div>
           <div class="adj-scale-form" :class="{ 'adj-scale-form-antonym-negative': word.antonym.negative }">{{ word.antonym.word }}</div>
@@ -57,9 +57,9 @@
       </div>
     </div>
     <!-- Inverse case: this word IS the comparative of another adjective (e.g. besser → gut) -->
-    <div v-else-if="baseWord" class="adj-scale-wrap">
+    <div v-else-if="baseWord" class="adj-scale-wrap" :class="{ 'has-fade-left': canScrollLeft, 'has-fade-right': canScrollRight }">
       <div class="adj-scale-title">{{ t('adj.steigerung') }}</div>
-      <div class="adj-scale">
+      <div class="adj-scale" ref="scaleEl">
         <div v-if="baseWord!.antonym" class="adj-scale-node adj-scale-tappable" :class="{ 'adj-scale-antonym-negative': baseWord!.antonym!.negative }" @click="emit('compare-navigate', baseWord!.antonym!.word)">
           <div class="adj-scale-dot" :class="{ 'adj-scale-dot-antonym-negative': baseWord!.antonym!.negative }"></div>
           <div class="adj-scale-form" :class="{ 'adj-scale-form-antonym-negative': baseWord!.antonym!.negative }">{{ baseWord!.antonym!.word }}</div>
@@ -233,8 +233,12 @@
 import { ref, computed } from "vue";
 import { t } from "../js/i18n.js";
 import { getCached, CONDENSED_GRAMMAR_KEY } from "../utils/storage.js";
+import { useScrollFade } from "../composables/useScrollFade.js";
 import adjEndings from "../../data/rules/adj-endings.json";
 import type { AdjectiveWord, AdjEndingsTable } from "../../types/word.js";
+
+const scaleEl = ref<HTMLElement | null>(null);
+const { canScrollLeft, canScrollRight } = useScrollFade(scaleEl);
 
 const emit = defineEmits<{
   (e: "compare-navigate", term: string): void;
@@ -295,20 +299,31 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
   position: relative;
 }
 
+.adj-scale-wrap::before,
 .adj-scale-wrap::after {
   content: '';
   position: absolute;
   top: 0;
-  right: 0;
   bottom: 0;
   width: 40px;
-  background: linear-gradient(to right, transparent, var(--f7-page-bg-color, #fff));
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 1;
 }
 
-.dark .adj-scale-wrap::after {
-  background: linear-gradient(to right, transparent, var(--f7-page-bg-color, #000));
+.adj-scale-wrap::before {
+  left: 0;
+  background: linear-gradient(to left, transparent, color-mix(in srgb, var(--f7-page-bg-color, #fff) 82%, var(--f7-theme-color)));
 }
+
+.adj-scale-wrap::after {
+  right: 0;
+  background: linear-gradient(to right, transparent, color-mix(in srgb, var(--f7-page-bg-color, #fff) 82%, var(--f7-theme-color)));
+}
+
+.adj-scale-wrap.has-fade-left::before { opacity: 1; }
+.adj-scale-wrap.has-fade-right::after { opacity: 1; }
 
 .adj-scale-title {
   font-size: var(--f7-list-item-footer-font-size, 12px);
