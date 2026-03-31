@@ -83,6 +83,21 @@ jobs:
               --content-type application/gzip --remote
           done
 
+          # Re-fetch manifest from R2 right before upload to capture any concurrent
+          # bundle section updates from publish-bundle (deploy-pwa.yml).
+          # publish-update.ts may have run while publish-bundle was uploading 0.9.x.
+          LATEST_BUNDLE=$(curl -sf "https://cdn.lexiklar.app/manifest.json" | node -e \
+            "let d=''; process.stdin.on('data',c=>d+=c).on('end',()=>{try{process.stdout.write(JSON.stringify(JSON.parse(d).bundle||null))}catch{process.stdout.write('null')}})")
+          if [ "$LATEST_BUNDLE" != "null" ] && [ -n "$LATEST_BUNDLE" ]; then
+            node -e "
+              const fs = require('fs');
+              const m = JSON.parse(fs.readFileSync('/tmp/release-assets/manifest.json', 'utf-8'));
+              m.bundle = ${LATEST_BUNDLE};
+              fs.writeFileSync('/tmp/release-assets/manifest.json', JSON.stringify(m, null, 2) + '\n');
+            "
+            echo "Merged latest bundle section into manifest"
+          fi
+
           wrangler r2 object put lexiklar-data/manifest.json \
             --file /tmp/release-assets/manifest.json \
             --content-type application/json --remote
