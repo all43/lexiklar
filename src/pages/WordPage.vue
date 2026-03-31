@@ -294,7 +294,7 @@
           <span>{{ t('word.grammar') }}</span>
           <a class="grammar-jump" @click.prevent="scrollToTop">↑ {{ t('word.meanings') }}</a>
         </div>
-        <AdjectiveDeclension :word="word" :base-word="baseAdjective" :positive-counterpart="positiveCounterpart" @compare-navigate="(term: string) => searchWord(term, { fallback: false })" />
+        <AdjectiveDeclension :word="word" :base-word="baseAdjective" :positive-counterpart="positiveCounterpart" @compare-navigate="compareNavigate" />
       </template>
       <template v-else-if="word.pos === 'pronoun' || word.pos === 'determiner' || word.pos === 'numeral'">
         <div class="block-title meanings-header" id="word-grammar">
@@ -693,20 +693,31 @@ function getPosColor(pos: string | undefined): string {
   return POS_COLORS[pos || ""] || "gray";
 }
 
-async function searchWord(lemma: string, { fallback = true } = {}) {
+async function searchWord(lemma: string, { fallback = true, replace = false } = {}) {
   try {
     const hits = await searchByLemma(lemma);
     const exact = hits.filter(
       (h) => h.lemma.toLowerCase() === lemma.toLowerCase(),
     );
     if (exact.length) {
-      props.f7router.navigate(`/word/${exact[0].file}/`);
+      props.f7router.navigate(`/word/${exact[0].file}/`, replace ? { reloadCurrent: true } : undefined);
       return;
     }
   } catch {
     // ignore lookup errors
   }
   if (fallback) props.f7router.back();
+}
+
+function compareNavigate(term: string) {
+  const history: string[] = props.f7router.history ?? [];
+  // Count consecutive word pages at the top of the stack (including current)
+  let wordPageDepth = 0;
+  for (let i = history.length - 1; i >= 0; i--) {
+    if (history[i].startsWith("/word/")) wordPageDepth++;
+    else break;
+  }
+  searchWord(term, { fallback: false, replace: wordPageDepth >= 2 });
 }
 
 function onPageAfterIn() {
