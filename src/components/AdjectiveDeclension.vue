@@ -7,81 +7,78 @@
 
     <!-- Comparison scale: Positiv → Komparativ → Superlativ -->
     <!-- Normal case: this word is the Positiv (has comparative/superlative fields) -->
-    <div v-if="word.comparative || word.superlative" class="adj-scale-wrap" :class="{ 'has-fade-left': canScrollLeft, 'has-fade-right': canScrollRight }">
+    <div v-if="word.comparative || word.superlative" class="adj-scale-wrap" :style="fadeStyle" :class="{ 'is-scrollable': isScrollable }">
       <div class="adj-scale-title">{{ t('adj.steigerung') }}</div>
-      <div class="adj-scale" ref="scaleEl">
-        <div v-if="word.antonym" class="adj-scale-node adj-scale-tappable" :class="{ 'adj-scale-antonym-negative': word.antonym.negative }" @click="emit('compare-navigate', word.antonym!.word)">
-          <div class="adj-scale-dot" :class="{ 'adj-scale-dot-antonym-negative': word.antonym.negative }"></div>
-          <div class="adj-scale-form" :class="{ 'adj-scale-form-antonym-negative': word.antonym.negative }">{{ word.antonym.word }}</div>
-          <div class="adj-scale-label">Gegenteil</div>
-        </div>
-        <div v-if="word.antonym" class="adj-scale-connector"></div>
-        <!-- Negative pole: superlative and comparative on the LEFT (reversed direction) -->
-        <div v-if="positiveCounterpart && word.superlative" class="adj-scale-node">
-          <div class="adj-scale-dot"></div>
-          <div class="adj-scale-form">{{ word.superlative }}</div>
-          <div class="adj-scale-label">Superlativ</div>
-        </div>
-        <div v-if="positiveCounterpart && word.superlative" class="adj-scale-connector"></div>
-        <div v-if="positiveCounterpart && word.comparative" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', word.comparative!)">
-          <div class="adj-scale-dot"></div>
-          <div class="adj-scale-form">{{ word.comparative }}</div>
-          <div class="adj-scale-label">Komparativ</div>
-        </div>
-        <div v-if="positiveCounterpart && word.comparative" class="adj-scale-connector"></div>
-        <div class="adj-scale-node adj-scale-active">
-          <div class="adj-scale-dot adj-scale-dot-active"></div>
-          <div class="adj-scale-form adj-scale-form-active">{{ word.word }}</div>
-          <div class="adj-scale-label">Positiv</div>
-        </div>
-        <!-- Normal direction: comparative and superlative on the RIGHT -->
-        <div v-if="!positiveCounterpart && word.comparative" class="adj-scale-connector"></div>
-        <div v-if="!positiveCounterpart && word.comparative" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', word.comparative!)">
-          <div class="adj-scale-dot"></div>
-          <div class="adj-scale-form">{{ word.comparative }}</div>
-          <div class="adj-scale-label">Komparativ</div>
-        </div>
-        <div v-if="!positiveCounterpart && word.superlative" class="adj-scale-connector"></div>
-        <div v-if="!positiveCounterpart && word.superlative" class="adj-scale-node">
-          <div class="adj-scale-dot"></div>
-          <div class="adj-scale-form">{{ word.superlative }}</div>
-          <div class="adj-scale-label">Superlativ</div>
-        </div>
-        <!-- Positive counterpart — rightmost node (better direction) -->
-        <div v-if="positiveCounterpart" class="adj-scale-connector"></div>
-        <div v-if="positiveCounterpart" class="adj-scale-node adj-scale-tappable adj-scale-positive" @click="emit('compare-navigate', positiveCounterpart!.word)">
-          <div class="adj-scale-dot adj-scale-dot-positive"></div>
-          <div class="adj-scale-form adj-scale-form-positive">{{ positiveCounterpart!.word }}</div>
-          <div class="adj-scale-label">Gegenteil</div>
+      <div class="adj-scale-row">
+        <div class="adj-scale-bg-line"></div>
+        <div class="adj-scale" ref="scaleEl">
+          <div v-if="word.antonym" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', word.antonym!.word)">
+            <div class="adj-scale-dot-wrap"><div class="adj-scale-dot" :class="{ 'adj-scale-dot-antonym-negative': word.antonym.negative }"></div></div>
+            <div class="adj-scale-form" :class="{ 'adj-scale-form-antonym-negative': word.antonym.negative }">{{ word.antonym.word }}</div>
+            <div class="adj-scale-label">Gegenteil</div>
+          </div>
+          <!-- Negative pole: superlative and comparative on the LEFT (reversed direction) -->
+          <div v-if="positiveCounterpart && word.superlative" class="adj-scale-node">
+            <div class="adj-scale-dot-wrap"><div class="adj-scale-dot"></div></div>
+            <div class="adj-scale-form">{{ word.superlative }}</div>
+            <div class="adj-scale-label">Superlativ</div>
+          </div>
+          <div v-if="positiveCounterpart && word.comparative" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', word.comparative!)">
+            <div class="adj-scale-dot-wrap"><div class="adj-scale-dot"></div></div>
+            <div class="adj-scale-form">{{ word.comparative }}</div>
+            <div class="adj-scale-label">Komparativ</div>
+          </div>
+          <div class="adj-scale-node adj-scale-active">
+            <div class="adj-scale-dot-wrap"><div class="adj-scale-dot adj-scale-dot-active"></div></div>
+            <div class="adj-scale-form adj-scale-form-active">{{ word.word }}</div>
+            <div class="adj-scale-label">Positiv</div>
+          </div>
+          <!-- Normal direction: comparative and superlative on the RIGHT -->
+          <div v-if="!positiveCounterpart && word.comparative" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', word.comparative!)">
+            <div class="adj-scale-dot-wrap"><div class="adj-scale-dot"></div></div>
+            <div class="adj-scale-form">{{ word.comparative }}</div>
+            <div class="adj-scale-label">Komparativ</div>
+          </div>
+          <div v-if="!positiveCounterpart && word.superlative" class="adj-scale-node">
+            <div class="adj-scale-dot-wrap"><div class="adj-scale-dot"></div></div>
+            <div class="adj-scale-form">{{ word.superlative }}</div>
+            <div class="adj-scale-label">Superlativ</div>
+          </div>
+          <!-- Positive counterpart — rightmost node (better direction) -->
+          <div v-if="positiveCounterpart" class="adj-scale-node adj-scale-tappable adj-scale-positive" @click="emit('compare-navigate', positiveCounterpart!.word)">
+            <div class="adj-scale-dot-wrap"><div class="adj-scale-dot adj-scale-dot-positive"></div></div>
+            <div class="adj-scale-form adj-scale-form-positive">{{ positiveCounterpart!.word }}</div>
+            <div class="adj-scale-label">Gegenteil</div>
+          </div>
         </div>
       </div>
     </div>
     <!-- Inverse case: this word IS the comparative of another adjective (e.g. besser → gut) -->
-    <div v-else-if="baseWord" class="adj-scale-wrap" :class="{ 'has-fade-left': canScrollLeft, 'has-fade-right': canScrollRight }">
+    <div v-else-if="baseWord" class="adj-scale-wrap" :style="fadeStyle" :class="{ 'is-scrollable': isScrollable }">
       <div class="adj-scale-title">{{ t('adj.steigerung') }}</div>
-      <div class="adj-scale" ref="scaleEl">
-        <div v-if="baseWord!.antonym" class="adj-scale-node adj-scale-tappable" :class="{ 'adj-scale-antonym-negative': baseWord!.antonym!.negative }" @click="emit('compare-navigate', baseWord!.antonym!.word)">
-          <div class="adj-scale-dot" :class="{ 'adj-scale-dot-antonym-negative': baseWord!.antonym!.negative }"></div>
-          <div class="adj-scale-form" :class="{ 'adj-scale-form-antonym-negative': baseWord!.antonym!.negative }">{{ baseWord!.antonym!.word }}</div>
-          <div class="adj-scale-label">Gegenteil</div>
-        </div>
-        <div v-if="baseWord!.antonym" class="adj-scale-connector"></div>
-        <div class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', baseWord!.word)">
-          <div class="adj-scale-dot"></div>
-          <div class="adj-scale-form">{{ baseWord!.word }}</div>
-          <div class="adj-scale-label">Positiv</div>
-        </div>
-        <div class="adj-scale-connector"></div>
-        <div class="adj-scale-node adj-scale-active">
-          <div class="adj-scale-dot adj-scale-dot-active"></div>
-          <div class="adj-scale-form adj-scale-form-active">{{ word.word }}</div>
-          <div class="adj-scale-label">Komparativ</div>
-        </div>
-        <div v-if="baseWord!.superlative" class="adj-scale-connector"></div>
-        <div v-if="baseWord!.superlative" class="adj-scale-node">
-          <div class="adj-scale-dot"></div>
-          <div class="adj-scale-form">{{ baseWord!.superlative }}</div>
-          <div class="adj-scale-label">Superlativ</div>
+      <div class="adj-scale-row">
+        <div class="adj-scale-bg-line"></div>
+        <div class="adj-scale" ref="scaleEl">
+          <div v-if="baseWord!.antonym" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', baseWord!.antonym!.word)">
+            <div class="adj-scale-dot-wrap"><div class="adj-scale-dot" :class="{ 'adj-scale-dot-antonym-negative': baseWord!.antonym!.negative }"></div></div>
+            <div class="adj-scale-form" :class="{ 'adj-scale-form-antonym-negative': baseWord!.antonym!.negative }">{{ baseWord!.antonym!.word }}</div>
+            <div class="adj-scale-label">Gegenteil</div>
+          </div>
+          <div class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', baseWord!.word)">
+            <div class="adj-scale-dot-wrap"><div class="adj-scale-dot"></div></div>
+            <div class="adj-scale-form">{{ baseWord!.word }}</div>
+            <div class="adj-scale-label">Positiv</div>
+          </div>
+          <div class="adj-scale-node adj-scale-active">
+            <div class="adj-scale-dot-wrap"><div class="adj-scale-dot adj-scale-dot-active"></div></div>
+            <div class="adj-scale-form adj-scale-form-active">{{ word.word }}</div>
+            <div class="adj-scale-label">Komparativ</div>
+          </div>
+          <div v-if="baseWord!.superlative" class="adj-scale-node">
+            <div class="adj-scale-dot-wrap"><div class="adj-scale-dot"></div></div>
+            <div class="adj-scale-form">{{ baseWord!.superlative }}</div>
+            <div class="adj-scale-label">Superlativ</div>
+          </div>
         </div>
       </div>
     </div>
@@ -238,7 +235,7 @@ import adjEndings from "../../data/rules/adj-endings.json";
 import type { AdjectiveWord, AdjEndingsTable } from "../../types/word.js";
 
 const scaleEl = ref<HTMLElement | null>(null);
-const { canScrollLeft, canScrollRight } = useScrollFade(scaleEl);
+const { fadeStyle, isScrollable } = useScrollFade(scaleEl);
 
 const emit = defineEmits<{
   (e: "compare-navigate", term: string): void;
@@ -296,6 +293,7 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
 <style scoped>
 .adj-scale-wrap {
   padding: 14px 0 20px;
+  margin-bottom: 8px;
   position: relative;
 }
 
@@ -305,25 +303,31 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 40px;
+  width: 56px;
   pointer-events: none;
-  opacity: 0;
   transition: opacity 0.2s ease;
-  z-index: 1;
+  z-index: 2;
 }
 
 .adj-scale-wrap::before {
   left: 0;
+  opacity: var(--fade-left, 0);
   background: linear-gradient(to left, transparent, color-mix(in srgb, var(--f7-page-bg-color, #fff) 82%, var(--f7-theme-color)));
 }
 
 .adj-scale-wrap::after {
   right: 0;
+  opacity: var(--fade-right, 0);
   background: linear-gradient(to right, transparent, color-mix(in srgb, var(--f7-page-bg-color, #fff) 82%, var(--f7-theme-color)));
 }
 
-.adj-scale-wrap.has-fade-left::before { opacity: 1; }
-.adj-scale-wrap.has-fade-right::after { opacity: 1; }
+.dark .adj-scale-wrap::before {
+  background: linear-gradient(to left, transparent, color-mix(in srgb, var(--f7-page-bg-color, #1c1c1e) 85%, var(--f7-theme-color)));
+}
+
+.dark .adj-scale-wrap::after {
+  background: linear-gradient(to right, transparent, color-mix(in srgb, var(--f7-page-bg-color, #1c1c1e) 85%, var(--f7-theme-color)));
+}
 
 .adj-scale-title {
   font-size: var(--f7-list-item-footer-font-size, 12px);
@@ -332,6 +336,25 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
   letter-spacing: 0.04em;
   margin-bottom: 10px;
   padding: 0 var(--f7-block-padding-horizontal, 16px);
+}
+
+.adj-scale-row {
+  position: relative;
+}
+
+.adj-scale-bg-line {
+  position: absolute;
+  /* dot center = 2px node padding-top + 6px dot radius = 8px */
+  top: 8px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+.dark .adj-scale-bg-line {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .adj-scale {
@@ -350,23 +373,17 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
   display: none;
 }
 
-.adj-scale-connector {
-  flex: 1;
-  height: 2px;
-  background: rgba(0, 0, 0, 0.2);
-  margin-top: 8px;
-  min-width: 24px;
-}
-
-.dark .adj-scale-connector {
-  background: rgba(255, 255, 255, 0.2);
+.is-scrollable .adj-scale {
+  gap: 16px;
 }
 
 .adj-scale-node {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-shrink: 0;
+  flex: 1;
+  min-width: max-content;
+  padding: 2px 8px 0;
 }
 
 .adj-scale-tappable {
@@ -377,17 +394,29 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
   opacity: 0.6;
 }
 
+.adj-scale-dot-wrap {
+  background: var(--f7-page-bg-color, #fff);
+  padding: 0 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.dark .adj-scale-dot-wrap {
+  background: var(--f7-page-bg-color, #1c1c1e);
+}
+
 .adj-scale-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: transparent;
+  background: var(--f7-page-bg-color, #fff);
   border: 2px solid rgba(0, 0, 0, 0.25);
   margin-bottom: 5px;
   flex-shrink: 0;
 }
 
 .dark .adj-scale-dot {
+  background: var(--f7-page-bg-color, #1c1c1e);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -444,6 +473,7 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
   color: var(--f7-list-item-footer-text-color);
   text-align: center;
   margin-top: 2px;
+  white-space: nowrap;
 }
 
 .adj-view-switch {
