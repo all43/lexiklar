@@ -72,7 +72,7 @@
               <span
                 class="compound-part"
                 :class="{ 'compound-part-linked': part.file }"
-                @click="part.file && f7router.navigate(`/word/${part.file}/`)"
+                @click="part.file && navigateToWord(f7router, part.file)"
               >
                 <strong>{{ part.lemma }}</strong>
                 <span v-if="part.glossEn" class="compound-gloss">({{ part.glossEn }})</span>
@@ -163,7 +163,7 @@
                 :key="r.file"
                 :text="r.lemma"
                 class="syn-chip"
-                @click="f7router.navigate(`/word/${r.file}/`)"
+                @click="navigateToWord(f7router, r.file)"
               />
             </div>
             <div v-if="getSenseAntonyms(sense).length" class="sense-syn-row">
@@ -173,7 +173,7 @@
                 :key="r.file"
                 :text="r.lemma"
                 class="ant-chip"
-                @click="f7router.navigate(`/word/${r.file}/`)"
+                @click="navigateToWord(f7router, r.file)"
               />
             </div>
           </li>
@@ -384,6 +384,7 @@ import { getCached, setItem } from "../utils/storage.js";
 import type { Word, Sense, VerbWord, NounWord, AdjectiveWord } from "../../types/word.js";
 import type { Example } from "../../types/example.js";
 import type { SearchResult } from "../../types/search.js";
+import { navigateToWord } from "../utils/navigation.js";
 
 interface PreviewSense {
   gloss: string;
@@ -693,14 +694,14 @@ function getPosColor(pos: string | undefined): string {
   return POS_COLORS[pos || ""] || "gray";
 }
 
-async function searchWord(lemma: string, { fallback = true, replace = false } = {}) {
+async function searchWord(lemma: string, { fallback = true } = {}) {
   try {
     const hits = await searchByLemma(lemma);
     const exact = hits.filter(
       (h) => h.lemma.toLowerCase() === lemma.toLowerCase(),
     );
     if (exact.length) {
-      props.f7router.navigate(`/word/${exact[0].file}/`, replace ? { reloadCurrent: true } : undefined);
+      navigateToWord(props.f7router, exact[0].file);
       return;
     }
   } catch {
@@ -710,14 +711,7 @@ async function searchWord(lemma: string, { fallback = true, replace = false } = 
 }
 
 function compareNavigate(term: string) {
-  const history: string[] = props.f7router.history ?? [];
-  // Count consecutive word pages at the top of the stack (including current)
-  let wordPageDepth = 0;
-  for (let i = history.length - 1; i >= 0; i--) {
-    if (history[i].startsWith("/word/")) wordPageDepth++;
-    else break;
-  }
-  searchWord(term, { fallback: false, replace: wordPageDepth >= 2 });
+  searchWord(term, { fallback: false });
 }
 
 function onPageAfterIn() {
@@ -763,8 +757,7 @@ async function handleCrossRef(filePath: string, senseNumber: number | null) {
       senseGlossEn: sense?.gloss_en || null,
     };
   } catch {
-    const url = `/word/${filePath}/`;
-    props.f7router.navigate(url, { props: { targetSense: senseNumber || null } });
+    navigateToWord(props.f7router, filePath, { targetSense: senseNumber || null });
   }
 }
 
@@ -772,8 +765,7 @@ function navigateToPreview() {
   if (!preview.value) return;
   const { filePath, senseNumber } = preview.value;
   preview.value = null;
-  const url = `/word/${filePath}/`;
-  props.f7router.navigate(url, { props: { targetSense: senseNumber || null } });
+  navigateToWord(props.f7router, filePath, { targetSense: senseNumber || null });
 }
 
 function reportIssue(source: "top" | "bottom" = "bottom") {
