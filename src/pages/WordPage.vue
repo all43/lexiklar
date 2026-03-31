@@ -6,21 +6,18 @@
           v-if="word"
           icon-f7="flag"
           icon-size="18"
-          :tooltip="t('report.incorrectData')"
           @click="reportIssue('top')"
         />
         <f7-link
           v-if="word"
           :icon-f7="isFavorite ? 'star_fill' : 'star'"
           icon-size="20"
-          :tooltip="isFavorite ? t('word.removeFavorite') : t('word.addFavorite')"
           @click="toggleFavorite"
         />
         <f7-link
           v-if="word && isInHistory"
           icon-f7="xmark_circle"
           icon-size="20"
-          :tooltip="t('word.removeHistory')"
           @click="removeFromHistory"
         />
       </f7-nav-right>
@@ -376,7 +373,7 @@ import NounDeclension from "../components/NounDeclension.vue";
 import AdjectiveDeclension from "../components/AdjectiveDeclension.vue";
 import PronounDeclension from "../components/PronounDeclension.vue";
 import VerbSepPipe from "../components/VerbSepPipe.vue";
-import { getWord, getExamples, getRelatedWords, searchByLemma, getBaseAdjective, getPositiveCounterpart } from "../utils/db.js";
+import { getWord, getExamples, getRelatedWords, searchByLemma, getBaseAdjective, getPositiveCounterparts } from "../utils/db.js";
 import { submitReport } from "../utils/report.js";
 import { f7 } from "framework7-vue/bundle";
 import { t } from "../js/i18n.js";
@@ -878,7 +875,18 @@ onMounted(async () => {
         baseAdjective.value = await getBaseAdjective(word.value.word);
       }
       if (!adj.antonym) {
-        positiveCounterpart.value = await getPositiveCounterpart(word.value.word);
+        const candidates = await getPositiveCounterparts(word.value.word);
+        if (candidates.length === 1) {
+          positiveCounterpart.value = candidates[0];
+        } else if (candidates.length > 1) {
+          const recents: string[] = JSON.parse(getCached("lexiklar_recents") || "[]");
+          const best = candidates.reduce((a, b) => {
+            const ai = recents.indexOf(a.file);
+            const bi = recents.indexOf(b.file);
+            return (ai === -1 ? Infinity : ai) < (bi === -1 ? Infinity : bi) ? a : b;
+          });
+          positiveCounterpart.value = best;
+        }
       }
     }
 

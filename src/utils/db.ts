@@ -520,15 +520,15 @@ export async function getBaseAdjective(lemma: string): Promise<{ word: string; s
 }
 
 /**
- * Find the adjective that lists the given lemma as its curated antonym.
- * Used to show the positive pole when landing on a negative-pole adjective (e.g. "schlecht" → gut).
+ * Find all adjectives that list the given lemma as their curated antonym.
+ * Returns all candidates so the caller can pick the best one based on context (e.g. word history).
  */
-export async function getPositiveCounterpart(lemma: string): Promise<{ word: string } | null> {
+export async function getPositiveCounterparts(lemma: string): Promise<{ word: string; file: string }[]> {
   const rows = await query(
-    `SELECT lemma FROM words WHERE pos = 'ADJECTIVE' AND lower(json_extract(data, '$.antonym.word')) = lower(?) LIMIT 1`,
+    `SELECT lemma, file FROM words WHERE pos = 'ADJECTIVE' AND lower(json_extract(data, '$.antonym.word')) = lower(?)`,
     [lemma],
-  ) as { lemma: string }[];
-  return rows.length ? { word: rows[0].lemma } : null;
+  ) as { lemma: string; file: string }[];
+  return rows.map((r) => ({ word: r.lemma, file: r.file }));
 }
 
 /**

@@ -62,10 +62,10 @@ export default {
           { status: 401, headers: CORS_HEADERS },
         );
       }
-      const list = await env.RATE_LIMITS.list({ prefix: "report:" });
+      const list = await env.REPORTS_KV.list({ prefix: "report:" });
       const reports = [];
       for (const key of list.keys) {
-        const value = await env.RATE_LIMITS.get(key.name, "json");
+        const value = await env.REPORTS_KV.get(key.name, "json");
         if (value) reports.push(value);
       }
       reports.sort((a, b) => (b.ts || 0) - (a.ts || 0));
@@ -78,7 +78,7 @@ export default {
 
     // Rate limiting
     const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-    if (await isRateLimited(ip, env.RATE_LIMITS)) {
+    if (await isRateLimited(ip, env.REPORTS_KV)) {
       return Response.json(
         { ok: false, error: "Too many reports. Please try again later." },
         { status: 429, headers: CORS_HEADERS },
@@ -119,7 +119,7 @@ export default {
     };
 
     try {
-      await env.RATE_LIMITS.put(id, JSON.stringify(report));
+      await env.REPORTS_KV.put(id, JSON.stringify(report));
       return Response.json({ ok: true }, { headers: CORS_HEADERS });
     } catch (err) {
       console.error("KV write failed:", err);
