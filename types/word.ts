@@ -42,6 +42,16 @@ export interface FalseFriendEn {
   meanings: FalseFriendMeaning[];
 }
 
+export interface WordAntonym {
+  /** Lemma of the opposite adjective (e.g. "schlecht" for "gut") */
+  word: string;
+  /**
+   * true = antonym is the inferior/negative pole (schlecht, krank, dumm).
+   * false/absent = neutral dimensional opposite (klein, langsam, kalt).
+   */
+  negative?: boolean;
+}
+
 export interface WordOverrides {
   /** Move this gloss_en sense to first position in display order (build-index only) */
   first_sense?: string;
@@ -49,6 +59,8 @@ export interface WordOverrides {
   sense_order?: string[];
   /** False-friend annotation for English speakers (promoted to top-level by build-index) */
   false_friend_en?: FalseFriendEn;
+  /** Curated antonym for adjective comparison scale (promoted to top-level by build-index) */
+  antonym?: WordAntonym;
   /** Any other field overrides (applied by transform's mergeWithExisting) */
   [key: string]: unknown;
 }
@@ -209,6 +221,7 @@ export interface AdjectiveWord extends WordBase {
   declension_regular: boolean;
   declension?: FullDeclension;
   collocation_nouns?: { M: string | null; F: string | null; N: string | null; Pl: string | null };
+  antonym?: WordAntonym | null;
 }
 
 export interface AbbreviationWord extends WordBase {

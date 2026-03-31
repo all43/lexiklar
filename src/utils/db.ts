@@ -506,13 +506,17 @@ export async function searchByWordForm(q: string): Promise<SearchResult[]> {
  * Find the base adjective that lists the given lemma as its comparative form.
  * Used to show the comparison scale when landing on a standalone comparative entry (e.g. "besser" → gut).
  */
-export async function getBaseAdjective(lemma: string): Promise<{ word: string; superlative: string | null } | null> {
+export async function getBaseAdjective(lemma: string): Promise<{ word: string; superlative: string | null; antonym: { word: string; negative?: boolean } | null } | null> {
   const rows = await query(
-    `SELECT lemma, superlative FROM words WHERE pos = 'ADJECTIVE' AND lower(comparative) = lower(?) LIMIT 1`,
+    `SELECT lemma, superlative, json_extract(data, '$.antonym') as antonym FROM words WHERE pos = 'ADJECTIVE' AND lower(comparative) = lower(?) LIMIT 1`,
     [lemma],
-  ) as { lemma: string; superlative: string | null }[];
+  ) as { lemma: string; superlative: string | null; antonym: string | null }[];
   if (!rows.length) return null;
-  return { word: rows[0].lemma, superlative: rows[0].superlative || null };
+  return {
+    word: rows[0].lemma,
+    superlative: rows[0].superlative || null,
+    antonym: rows[0].antonym ? JSON.parse(rows[0].antonym) as { word: string; negative?: boolean } : null,
+  };
 }
 
 /**

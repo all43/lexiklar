@@ -462,7 +462,7 @@ const props = defineProps<{
 const inst = getCurrentInstance();
 
 const word = ref<(Word & Record<string, unknown>) | null>(null);
-const baseAdjective = ref<{ word: string; superlative: string | null } | null>(null);
+const baseAdjective = ref<{ word: string; superlative: string | null; antonym: { word: string; negative?: boolean } | null } | null>(null);
 const examples = ref<Record<string, Example>>({});
 const relatedWords = ref<SearchResult[]>([]);
 const loading = ref(true);

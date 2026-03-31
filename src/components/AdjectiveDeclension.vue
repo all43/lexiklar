@@ -10,6 +10,12 @@
     <div v-if="word.comparative || word.superlative" class="adj-scale-wrap">
       <div class="adj-scale-title">{{ t('adj.steigerung') }}</div>
       <div class="adj-scale">
+        <div v-if="word.antonym" class="adj-scale-node adj-scale-tappable" :class="{ 'adj-scale-antonym-negative': word.antonym.negative }" @click="emit('compare-navigate', word.antonym!.word)">
+          <div class="adj-scale-dot" :class="{ 'adj-scale-dot-antonym-negative': word.antonym.negative }"></div>
+          <div class="adj-scale-form" :class="{ 'adj-scale-form-antonym-negative': word.antonym.negative }">{{ word.antonym.word }}</div>
+          <div class="adj-scale-label">Gegenteil</div>
+        </div>
+        <div v-if="word.antonym" class="adj-scale-connector"></div>
         <div class="adj-scale-node adj-scale-active">
           <div class="adj-scale-dot adj-scale-dot-active"></div>
           <div class="adj-scale-form adj-scale-form-active">{{ word.word }}</div>
@@ -33,6 +39,12 @@
     <div v-else-if="baseWord" class="adj-scale-wrap">
       <div class="adj-scale-title">{{ t('adj.steigerung') }}</div>
       <div class="adj-scale">
+        <div v-if="baseWord!.antonym" class="adj-scale-node adj-scale-tappable" :class="{ 'adj-scale-antonym-negative': baseWord!.antonym!.negative }" @click="emit('compare-navigate', baseWord!.antonym!.word)">
+          <div class="adj-scale-dot" :class="{ 'adj-scale-dot-antonym-negative': baseWord!.antonym!.negative }"></div>
+          <div class="adj-scale-form" :class="{ 'adj-scale-form-antonym-negative': baseWord!.antonym!.negative }">{{ baseWord!.antonym!.word }}</div>
+          <div class="adj-scale-label">Gegenteil</div>
+        </div>
+        <div v-if="baseWord!.antonym" class="adj-scale-connector"></div>
         <div class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', baseWord!.word)">
           <div class="adj-scale-dot"></div>
           <div class="adj-scale-form">{{ baseWord!.word }}</div>
@@ -223,7 +235,7 @@ const CASES = [
 
 const props = defineProps<{
   word: AdjectiveWord;
-  baseWord?: { word: string; superlative: string | null } | null;
+  baseWord?: { word: string; superlative: string | null; antonym: { word: string; negative?: boolean } | null } | null;
 }>();
 
 const activeTab = ref<DeclType>("strong");
@@ -322,6 +334,15 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
 
 .adj-scale-tappable .adj-scale-dot {
   border-color: var(--f7-theme-color);
+}
+
+.adj-scale-dot-antonym-negative {
+  border-color: var(--color-rule-exception, #ff9800) !important;
+}
+
+.adj-scale-form-antonym-negative {
+  color: var(--color-rule-exception, #ff9800) !important;
+  text-decoration-color: color-mix(in srgb, var(--color-rule-exception, #ff9800) 40%, transparent) !important;
 }
 
 .adj-scale-form {
