@@ -16,13 +16,7 @@
           <div class="adj-scale-label">Gegenteil</div>
         </div>
         <div v-if="word.antonym" class="adj-scale-connector"></div>
-        <!-- Negative pole: superlative and comparative shown on the LEFT (reversed direction) -->
-        <div v-if="positiveCounterpart && word.superlative" class="adj-scale-node">
-          <div class="adj-scale-dot"></div>
-          <div class="adj-scale-form">{{ word.superlative }}</div>
-          <div class="adj-scale-label">Superlativ</div>
-        </div>
-        <div v-if="positiveCounterpart && word.superlative" class="adj-scale-connector"></div>
+        <!-- Negative pole: only comparative on the LEFT (superlative dropped to avoid overflow) -->
         <div v-if="positiveCounterpart && word.comparative" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', word.comparative!)">
           <div class="adj-scale-dot"></div>
           <div class="adj-scale-form">{{ word.comparative }}</div>
@@ -49,9 +43,9 @@
         </div>
         <!-- Positive counterpart — rightmost node (better direction) -->
         <div v-if="positiveCounterpart" class="adj-scale-connector"></div>
-        <div v-if="positiveCounterpart" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', positiveCounterpart!.word)">
-          <div class="adj-scale-dot"></div>
-          <div class="adj-scale-form">{{ positiveCounterpart!.word }}</div>
+        <div v-if="positiveCounterpart" class="adj-scale-node adj-scale-tappable adj-scale-positive" @click="emit('compare-navigate', positiveCounterpart!.word)">
+          <div class="adj-scale-dot adj-scale-dot-positive"></div>
+          <div class="adj-scale-form adj-scale-form-positive">{{ positiveCounterpart!.word }}</div>
           <div class="adj-scale-label">Gegenteil</div>
         </div>
       </div>
@@ -365,6 +359,15 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
 .adj-scale-form-antonym-negative {
   color: var(--color-rule-exception, #ff9800) !important;
   text-decoration-color: color-mix(in srgb, var(--color-rule-exception, #ff9800) 40%, transparent) !important;
+}
+
+.adj-scale-dot-positive {
+  border-color: var(--color-rule-match, #4caf50) !important;
+}
+
+.adj-scale-form-positive {
+  color: var(--color-rule-match, #4caf50) !important;
+  text-decoration-color: color-mix(in srgb, var(--color-rule-match, #4caf50) 40%, transparent) !important;
 }
 
 .adj-scale-form {
