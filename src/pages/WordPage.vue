@@ -6,18 +6,25 @@
           v-if="word"
           icon-f7="flag"
           icon-size="18"
+          data-tooltip-no-touch
+          :data-tooltip="t('report.incorrectData')"
           @click="reportIssue('top')"
         />
         <f7-link
           v-if="word"
+          ref="favBtnRef"
           :icon-f7="isFavorite ? 'star_fill' : 'star'"
           icon-size="20"
+          data-tooltip-no-touch
+          :data-tooltip="isFavorite ? t('word.removeFavorite') : t('word.addFavorite')"
           @click="toggleFavorite"
         />
         <f7-link
           v-if="word && isInHistory"
           icon-f7="xmark_circle"
           icon-size="20"
+          data-tooltip-no-touch
+          :data-tooltip="t('word.removeHistory')"
           @click="removeFromHistory"
         />
       </f7-nav-right>
@@ -108,7 +115,7 @@
                       />
                       <span
                         v-if="sense.gloss_en_full"
-                        class="tooltip-init sense-info-icon"
+                        class="sense-info-icon"
                         :data-tooltip="sense.gloss_en_full"
                       >ⓘ</span>
                     </div>
@@ -364,7 +371,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount, nextTick, getCurrentInstance } from "vue";
+import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick, getCurrentInstance } from "vue";
 import EnSynonyms from "../components/EnSynonyms.vue";
 import FalseFriend from "../components/FalseFriend.vue";
 import GlossText from "../components/GlossText.vue";
@@ -471,6 +478,12 @@ let pendingSenseScroll: number | null = null;
 const relatedExpanded = ref(false);
 const inHistory = ref(false);
 const isFavorite = ref(false);
+const favBtnRef = ref<{ $el: HTMLElement } | null>(null);
+
+watch(isFavorite, (val) => {
+  const el = favBtnRef.value?.$el;
+  if (el) f7.tooltip.get(el)?.setText(val ? t('word.removeFavorite') : t('word.addFavorite'));
+});
 
 // Computed
 
@@ -854,7 +867,7 @@ function getSenseAntonyms(sense: Sense): SearchResult[] {
 
 onBeforeUnmount(() => {
   const el = inst?.vnode.el as HTMLElement | null;
-  el?.querySelectorAll(".tooltip-init").forEach((tooltipEl) => {
+  el?.querySelectorAll("[data-tooltip]").forEach((tooltipEl) => {
     const htmlEl = tooltipEl as HTMLElement & { f7Tooltip?: { destroy(): void } };
     if (htmlEl.f7Tooltip) htmlEl.f7Tooltip.destroy();
   });
@@ -955,10 +968,13 @@ onMounted(async () => {
     // Scroll to sense is deferred to onPageAfterIn (after F7 transition completes)
     pendingSenseScroll = targetSense;
     const el = inst?.vnode.el as HTMLElement | null;
-    el?.querySelectorAll(".tooltip-init").forEach((tooltipEl) => {
+    el?.querySelectorAll("[data-tooltip]").forEach((tooltipEl) => {
       const htmlEl = tooltipEl as HTMLElement & { f7Tooltip?: unknown };
       const text = htmlEl.dataset.tooltip;
-      if (text && !htmlEl.f7Tooltip) f7.tooltip.create({ targetEl: htmlEl, text });
+      if (!text || htmlEl.f7Tooltip) return;
+      if (!f7.device.desktop && "tooltipNoTouch" in htmlEl.dataset) return;
+      const trigger = f7.device.desktop ? "hover" : "click";
+      f7.tooltip.create({ targetEl: htmlEl, text, trigger });
     });
   }
 });
@@ -1057,6 +1073,8 @@ onMounted(async () => {
   font-size: 0.85em;
   line-height: 1;
   color: var(--f7-list-item-footer-text-color);
+  -webkit-user-select: none;
+  user-select: none;
   flex-shrink: 0;
   opacity: 0.7;
 }
