@@ -16,28 +16,43 @@
           <div class="adj-scale-label">Gegenteil</div>
         </div>
         <div v-if="word.antonym" class="adj-scale-connector"></div>
-        <div v-if="!word.antonym && positiveCounterpart" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', positiveCounterpart!.word)">
+        <!-- Negative pole: superlative and comparative shown on the LEFT (reversed direction) -->
+        <div v-if="positiveCounterpart && word.superlative" class="adj-scale-node">
           <div class="adj-scale-dot"></div>
-          <div class="adj-scale-form">{{ positiveCounterpart!.word }}</div>
-          <div class="adj-scale-label">Gegenteil</div>
+          <div class="adj-scale-form">{{ word.superlative }}</div>
+          <div class="adj-scale-label">Superlativ</div>
         </div>
-        <div v-if="!word.antonym && positiveCounterpart" class="adj-scale-connector"></div>
+        <div v-if="positiveCounterpart && word.superlative" class="adj-scale-connector"></div>
+        <div v-if="positiveCounterpart && word.comparative" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', word.comparative!)">
+          <div class="adj-scale-dot"></div>
+          <div class="adj-scale-form">{{ word.comparative }}</div>
+          <div class="adj-scale-label">Komparativ</div>
+        </div>
+        <div v-if="positiveCounterpart && word.comparative" class="adj-scale-connector"></div>
         <div class="adj-scale-node adj-scale-active">
           <div class="adj-scale-dot adj-scale-dot-active"></div>
           <div class="adj-scale-form adj-scale-form-active">{{ word.word }}</div>
           <div class="adj-scale-label">Positiv</div>
         </div>
-        <div v-if="word.comparative" class="adj-scale-connector"></div>
-        <div v-if="word.comparative" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', word.comparative!)">
+        <!-- Normal direction: comparative and superlative on the RIGHT -->
+        <div v-if="!positiveCounterpart && word.comparative" class="adj-scale-connector"></div>
+        <div v-if="!positiveCounterpart && word.comparative" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', word.comparative!)">
           <div class="adj-scale-dot"></div>
           <div class="adj-scale-form">{{ word.comparative }}</div>
           <div class="adj-scale-label">Komparativ</div>
         </div>
-        <div v-if="word.superlative" class="adj-scale-connector"></div>
-        <div v-if="word.superlative" class="adj-scale-node">
+        <div v-if="!positiveCounterpart && word.superlative" class="adj-scale-connector"></div>
+        <div v-if="!positiveCounterpart && word.superlative" class="adj-scale-node">
           <div class="adj-scale-dot"></div>
           <div class="adj-scale-form">{{ word.superlative }}</div>
           <div class="adj-scale-label">Superlativ</div>
+        </div>
+        <!-- Positive counterpart — rightmost node (better direction) -->
+        <div v-if="positiveCounterpart" class="adj-scale-connector"></div>
+        <div v-if="positiveCounterpart" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', positiveCounterpart!.word)">
+          <div class="adj-scale-dot"></div>
+          <div class="adj-scale-form">{{ positiveCounterpart!.word }}</div>
+          <div class="adj-scale-label">Gegenteil</div>
         </div>
       </div>
     </div>
