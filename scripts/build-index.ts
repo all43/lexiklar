@@ -37,6 +37,7 @@ import type {
   WordBase,
   NounWord,
   VerbWord,
+  AdjectiveWord,
   Sense,
   VerbEndingsFile,
   ConjugationTable,
@@ -191,6 +192,14 @@ function computeVersionHash(db: Database.Database): string {
     const r = row as { id: string; hash: string };
     hash.update(r.id + ":" + r.hash);
   }
+  // Include all word_forms so any change to search indexing invalidates the cache
+  for (const row of db.prepare("SELECT w.file, wf.form FROM word_forms wf JOIN words w ON w.id = wf.word_id ORDER BY w.file, wf.form").all()) {
+    const r = row as { file: string; form: string };
+    hash.update(r.file + ":" + r.form);
+  }
+  // Include schema version so column additions (e.g. superlative) invalidate the cache
+  const cols = (db.prepare("PRAGMA table_info(words)").all() as { name: string }[]).map(r => r.name).join(",");
+  hash.update("schema:" + cols);
   return hash.digest("hex").slice(0, 16);
 }
 
@@ -573,6 +582,8 @@ function main(): void {
       frequency       INTEGER,
       plural_dominant INTEGER,
       plural_form     TEXT,
+      superlative     TEXT,
+      comparative     TEXT,
       file            TEXT NOT NULL UNIQUE,
       gloss_en        TEXT,
       data            TEXT NOT NULL,
@@ -604,8 +615,8 @@ function main(): void {
   `);
 
   const insertWord = db.prepare<WordInsertParams>(`
-    INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en, data, hash)
-    VALUES (@lemma, @lemma_folded, @pos, @gender, @frequency, @plural_dominant, @plural_form, @file, @gloss_en, @data, @hash)
+    INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, superlative, comparative, file, gloss_en, data, hash)
+    VALUES (@lemma, @lemma_folded, @pos, @gender, @frequency, @plural_dominant, @plural_form, @superlative, @comparative, @file, @gloss_en, @data, @hash)
   `);
 
   const insertWordForm = db.prepare<WordFormInsertParams>(`
@@ -996,6 +1007,12 @@ function main(): void {
       const dataJson = JSON.stringify(enriched);
       const pluralDominant = (data as Record<string, unknown>).plural_dominant as boolean | undefined;
       const pluralForm = (data as Record<string, unknown>).plural_form as string | undefined;
+      const superlative = data.pos === "adjective"
+        ? (data as Record<string, unknown>).superlative as string | undefined ?? null
+        : null;
+      const comparative = data.pos === "adjective"
+        ? (data as Record<string, unknown>).comparative as string | undefined ?? null
+        : null;
       const result = insertWord.run({
         lemma: data.word,
         lemma_folded: foldUmlauts(data.word),
@@ -1004,6 +1021,8 @@ function main(): void {
         frequency: frequencyRank.get(fileKey) ?? null,
         plural_dominant: pluralDominant ? 1 : null,
         plural_form: pluralDominant ? (pluralForm ?? null) : null,
+        superlative,
+        comparative,
         file: fileKey,
         gloss_en: glossEn.length ? JSON.stringify(glossEn) : null,
         data: dataJson,
@@ -1041,6 +1060,29 @@ function main(): void {
             if (seenForms.has(lower)) continue;
             seenForms.add(lower);
             insertWordForm.run({ form: lower, word_id: wordId });
+            wordFormCount++;
+          }
+        }
+      }
+
+      // Pre-compute adjective comparison forms for search (comparative + superlative stem)
+      if (data.pos === "adjective") {
+        const adj = data as AdjectiveWord;
+        if (adj.comparative) {
+          const comp = adj.comparative.toLowerCase();
+          if (comp !== data.word.toLowerCase()) {
+            insertWordForm.run({ form: comp, word_id: wordId });
+            wordFormCount++;
+          }
+        }
+        if (adj.superlative) {
+          // Superlative stored as "am X" — strip prefix to index the stem only.
+          // Full "am X" form is handled at search time via superlative column.
+          const supStem = adj.superlative.startsWith("am ")
+            ? adj.superlative.slice(3).trim().toLowerCase()
+            : adj.superlative.toLowerCase();
+          if (supStem.length >= 4 && supStem !== data.word.toLowerCase()) {
+            insertWordForm.run({ form: supStem, word_id: wordId });
             wordFormCount++;
           }
         }
@@ -1208,6 +1250,7 @@ function main(): void {
   const builtAt = new Date().toISOString();
   insertMeta.run({ key: "version", value: version });
   insertMeta.run({ key: "built_at", value: builtAt });
+  insertMeta.run({ key: "schema_version", value: "3" }); // bump when adding/removing columns
 
   // Switch from WAL to DELETE journal mode for read-only runtime use
   db.pragma("journal_mode = DELETE");

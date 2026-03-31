@@ -69,6 +69,7 @@ function processSearchRow(row: Record<string, unknown>): SearchResult {
     frequency: (row.frequency as number) ?? null,
     pluralDominant: !!(row.plural_dominant as number),
     pluralForm: (row.plural_form as string) || null,
+    superlative: (row.superlative as string) || null,
     file: row.file as string,
     glossEn: row.gloss_en ? JSON.parse(row.gloss_en as string) as string[] : [],
   };
@@ -344,6 +345,25 @@ export async function initDb(): Promise<void> {
     await cacheClear();
     throw new Error("download-needed");
   }
+
+  // Step 4: Schema compatibility check — clears cache if columns were added/removed.
+  // Bump MIN_SCHEMA_VERSION in sync with the schema_version value in build-index.ts.
+  const MIN_SCHEMA_VERSION = 3;
+  try {
+    const rows = await query("SELECT value FROM meta WHERE key = 'schema_version'") as { value: string }[];
+    const dbSchemaVersion = rows.length ? parseInt(rows[0].value, 10) : 0;
+    if (dbSchemaVersion < MIN_SCHEMA_VERSION) {
+      console.warn(`Cached DB schema v${dbSchemaVersion} < required v${MIN_SCHEMA_VERSION}, clearing cache`);
+      await cacheClear();
+      throw new Error("download-needed");
+    }
+  } catch (err) {
+    if ((err as Error).message === "download-needed") throw err;
+    // Older DBs without schema_version in meta — treat as incompatible
+    console.warn("Could not read schema_version from meta, clearing cache:", err);
+    await cacheClear();
+    throw new Error("download-needed");
+  }
 }
 
 /**
@@ -470,7 +490,7 @@ export async function searchByGlossEn(q: string): Promise<SearchResult[]> {
  */
 export async function searchByWordForm(q: string): Promise<SearchResult[]> {
   const rows = await query(
-    `SELECT w.lemma, w.pos, w.gender, w.frequency, w.file, w.gloss_en
+    `SELECT w.lemma, w.pos, w.gender, w.frequency, w.superlative, w.file, w.gloss_en
      FROM word_forms wf
      JOIN words w ON w.id = wf.word_id
      WHERE wf.form = ? COLLATE NOCASE
@@ -480,6 +500,19 @@ export async function searchByWordForm(q: string): Promise<SearchResult[]> {
     [q.toLowerCase()],
   );
   return rows.map(processSearchRow);
+}
+
+/**
+ * Find the base adjective that lists the given lemma as its comparative form.
+ * Used to show the comparison scale when landing on a standalone comparative entry (e.g. "besser" → gut).
+ */
+export async function getBaseAdjective(lemma: string): Promise<{ word: string; superlative: string | null } | null> {
+  const rows = await query(
+    `SELECT lemma, superlative FROM words WHERE pos = 'ADJECTIVE' AND lower(comparative) = lower(?) LIMIT 1`,
+    [lemma],
+  ) as { lemma: string; superlative: string | null }[];
+  if (!rows.length) return null;
+  return { word: rows[0].lemma, superlative: rows[0].superlative || null };
 }
 
 /**

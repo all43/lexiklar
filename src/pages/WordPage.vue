@@ -294,7 +294,7 @@
           <span>{{ t('word.grammar') }}</span>
           <a class="grammar-jump" @click.prevent="scrollToTop">↑ {{ t('word.meanings') }}</a>
         </div>
-        <AdjectiveDeclension :word="word" />
+        <AdjectiveDeclension :word="word" :base-word="baseAdjective" @compare-navigate="(term: string) => searchWord(term, { fallback: false })" />
       </template>
       <template v-else-if="word.pos === 'pronoun' || word.pos === 'determiner' || word.pos === 'numeral'">
         <div class="block-title meanings-header" id="word-grammar">
@@ -376,7 +376,7 @@ import NounDeclension from "../components/NounDeclension.vue";
 import AdjectiveDeclension from "../components/AdjectiveDeclension.vue";
 import PronounDeclension from "../components/PronounDeclension.vue";
 import VerbSepPipe from "../components/VerbSepPipe.vue";
-import { getWord, getExamples, getRelatedWords, searchByLemma } from "../utils/db.js";
+import { getWord, getExamples, getRelatedWords, searchByLemma, getBaseAdjective } from "../utils/db.js";
 import { submitReport } from "../utils/report.js";
 import { f7 } from "framework7-vue/bundle";
 import { t } from "../js/i18n.js";
@@ -462,6 +462,7 @@ const props = defineProps<{
 const inst = getCurrentInstance();
 
 const word = ref<(Word & Record<string, unknown>) | null>(null);
+const baseAdjective = ref<{ word: string; superlative: string | null } | null>(null);
 const examples = ref<Record<string, Example>>({});
 const relatedWords = ref<SearchResult[]>([]);
 const loading = ref(true);
@@ -866,6 +867,13 @@ onMounted(async () => {
 
   try {
     word.value = await getWord(`${pos}/${file}`) as (Word & Record<string, unknown>) | null;
+
+    if (word.value && word.value.pos === "adjective") {
+      const adj = word.value as Record<string, unknown>;
+      if (!adj.comparative && !adj.superlative) {
+        baseAdjective.value = await getBaseAdjective(word.value.word);
+      }
+    }
 
     if (word.value) {
       try {

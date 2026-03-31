@@ -194,6 +194,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "adj.neutNomAcc": "neut. Nom./Akk.",
     "adj.viewRules": "Rules",
     "adj.viewTable": "Table",
+    "adj.steigerung": "Comparison",
 
     // Data reports
     "search.didYouMean": "Did you mean?",
@@ -408,6 +409,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "adj.neutNomAcc": "Neutr. Nom./Akk.",
     "adj.viewRules": "Regeln",
     "adj.viewTable": "Tabelle",
+    "adj.steigerung": "Steigerung",
 
     // Data reports
     "search.didYouMean": "Meinten Sie?",

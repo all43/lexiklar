@@ -390,21 +390,29 @@ async function search(q: string, gen: number) {
   const qLower = q.toLowerCase();
   const qFolded = foldUmlauts(q);
   const artInfo = stripArticle(q);
+  const amStem = qLower.startsWith("am ") ? q.slice(3).trim() : null;
 
-  const searches: [Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>] = [
+  const searches: [Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>] = [
     searchByWordForm(q),
     searchByLemma(q),
     searchByGlossEn(q),
     artInfo ? searchByLemma(artInfo.remainder) : Promise.resolve([]),
+    amStem ? searchByWordForm(amStem) : Promise.resolve([]),
   ];
-  const [formHits, lemmaHits, enHits, artLemmaHits] = await Promise.all(searches);
+  const [formHits, lemmaHits, enHits, artLemmaHits, amFormHits] = await Promise.all(searches);
 
   const seen = new Set<string>();
   const res: SearchResultWithForm[] = [];
 
-  for (const r of formHits) {
+  for (const r of [...formHits, ...amFormHits]) {
+    if (seen.has(r.file)) continue;
     seen.add(r.file);
-    res.push({ ...r, matchedForm: q });
+    // Always show full superlative form (e.g. "am besten") when this is a superlative match
+    const supStem = r.superlative?.startsWith("am ") ? r.superlative.slice(3) : r.superlative;
+    const displayForm = r.superlative && supStem?.toLowerCase() === (amStem ?? q).toLowerCase()
+      ? r.superlative
+      : amStem ? `am ${amStem}` : q;
+    res.push({ ...r, matchedForm: displayForm });
   }
 
   const lemmaExact: SearchResult[] = [];

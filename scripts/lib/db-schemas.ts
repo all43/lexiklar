@@ -14,6 +14,8 @@ export interface WordRow {
   frequency: number | null;
   plural_dominant: number | null;
   plural_form: string | null;
+  superlative: string | null;
+  comparative: string | null;
   file: string;
   gloss_en: string | null;
   data: string;

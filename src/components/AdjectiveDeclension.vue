@@ -5,15 +5,51 @@
       <span class="noun-rule-match">{{ t('adj.indeclinable') }}</span>
     </div>
 
-    <!-- Comparative / Superlative -->
-    <div v-if="word.comparative || word.superlative" class="adj-comparison">
-      <div v-if="word.comparative" class="adj-comp-row">
-        <span class="adj-comp-label">Komparativ</span>
-        <span class="adj-comp-form">{{ word.comparative }}</span>
+    <!-- Comparison scale: Positiv → Komparativ → Superlativ -->
+    <!-- Normal case: this word is the Positiv (has comparative/superlative fields) -->
+    <div v-if="word.comparative || word.superlative" class="adj-scale-wrap">
+      <div class="adj-scale-title">{{ t('adj.steigerung') }}</div>
+      <div class="adj-scale">
+        <div class="adj-scale-node adj-scale-active">
+          <div class="adj-scale-dot adj-scale-dot-active"></div>
+          <div class="adj-scale-form adj-scale-form-active">{{ word.word }}</div>
+          <div class="adj-scale-label">Positiv</div>
+        </div>
+        <div v-if="word.comparative" class="adj-scale-connector"></div>
+        <div v-if="word.comparative" class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', word.comparative!)">
+          <div class="adj-scale-dot"></div>
+          <div class="adj-scale-form">{{ word.comparative }}</div>
+          <div class="adj-scale-label">Komparativ</div>
+        </div>
+        <div v-if="word.superlative" class="adj-scale-connector"></div>
+        <div v-if="word.superlative" class="adj-scale-node">
+          <div class="adj-scale-dot"></div>
+          <div class="adj-scale-form">{{ word.superlative }}</div>
+          <div class="adj-scale-label">Superlativ</div>
+        </div>
       </div>
-      <div v-if="word.superlative" class="adj-comp-row">
-        <span class="adj-comp-label">Superlativ</span>
-        <span class="adj-comp-form">{{ word.superlative }}</span>
+    </div>
+    <!-- Inverse case: this word IS the comparative of another adjective (e.g. besser → gut) -->
+    <div v-else-if="baseWord" class="adj-scale-wrap">
+      <div class="adj-scale-title">{{ t('adj.steigerung') }}</div>
+      <div class="adj-scale">
+        <div class="adj-scale-node adj-scale-tappable" @click="emit('compare-navigate', baseWord!.word)">
+          <div class="adj-scale-dot"></div>
+          <div class="adj-scale-form">{{ baseWord!.word }}</div>
+          <div class="adj-scale-label">Positiv</div>
+        </div>
+        <div class="adj-scale-connector"></div>
+        <div class="adj-scale-node adj-scale-active">
+          <div class="adj-scale-dot adj-scale-dot-active"></div>
+          <div class="adj-scale-form adj-scale-form-active">{{ word.word }}</div>
+          <div class="adj-scale-label">Komparativ</div>
+        </div>
+        <div v-if="baseWord!.superlative" class="adj-scale-connector"></div>
+        <div v-if="baseWord!.superlative" class="adj-scale-node">
+          <div class="adj-scale-dot"></div>
+          <div class="adj-scale-form">{{ baseWord!.superlative }}</div>
+          <div class="adj-scale-label">Superlativ</div>
+        </div>
       </div>
     </div>
 
@@ -167,6 +203,10 @@ import { getCached, CONDENSED_GRAMMAR_KEY } from "../utils/storage.js";
 import adjEndings from "../../data/rules/adj-endings.json";
 import type { AdjectiveWord, AdjEndingsTable } from "../../types/word.js";
 
+const emit = defineEmits<{
+  (e: "compare-navigate", term: string): void;
+}>();
+
 type DeclType = "strong" | "weak" | "mixed";
 type ViewMode = "rules" | "table";
 
@@ -183,6 +223,7 @@ const CASES = [
 
 const props = defineProps<{
   word: AdjectiveWord;
+  baseWord?: { word: string; superlative: string | null } | null;
 }>();
 
 const activeTab = ref<DeclType>("strong");
@@ -215,29 +256,101 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
 </script>
 
 <style scoped>
-.adj-comparison {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 8px var(--f7-block-padding-horizontal, 16px) 12px;
+.adj-scale-wrap {
+  padding: 14px var(--f7-block-padding-horizontal, 16px) 20px;
 }
 
-.adj-comp-row {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.adj-comp-label {
+.adj-scale-title {
   font-size: var(--f7-list-item-footer-font-size, 12px);
   color: var(--f7-list-item-footer-text-color);
-  min-width: 80px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.adj-scale {
+  display: flex;
+  align-items: flex-start;
+}
+
+.adj-scale-connector {
+  flex: 1;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.2);
+  margin-top: 8px;
+  min-width: 12px;
+}
+
+.dark .adj-scale-connector {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.adj-scale-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  max-width: 90px;
+}
+
+.adj-scale-tappable {
+  cursor: pointer;
+}
+
+.adj-scale-tappable:active .adj-scale-dot {
+  opacity: 0.6;
+}
+
+.adj-scale-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  margin-bottom: 5px;
   flex-shrink: 0;
 }
 
-.adj-comp-form {
-  font-size: var(--f7-list-item-title-font-size, 17px);
+.dark .adj-scale-dot {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.adj-scale-dot-active {
+  background: var(--f7-theme-color);
+  border-color: var(--f7-theme-color);
+}
+
+.adj-scale-tappable .adj-scale-dot {
+  border-color: var(--f7-theme-color);
+}
+
+.adj-scale-form {
+  font-size: 15px;
   font-weight: 500;
+  text-align: center;
+  word-break: break-word;
+  hyphens: auto;
+  line-height: 1.2;
+  color: var(--f7-list-item-title-text-color);
+}
+
+.adj-scale-form-active {
+  color: var(--f7-theme-color);
+}
+
+.adj-scale-tappable .adj-scale-form {
+  color: var(--f7-theme-color);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--f7-theme-color) 40%, transparent);
+  text-underline-offset: 2px;
+  text-decoration-style: dashed;
+}
+
+.adj-scale-label {
+  font-size: 11px;
+  color: var(--f7-list-item-footer-text-color);
+  text-align: center;
+  margin-top: 2px;
 }
 
 .adj-view-switch {

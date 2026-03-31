@@ -639,6 +639,7 @@ CREATE TABLE words (
   frequency       INTEGER,            -- rank computed from zipf at build time
   plural_dominant INTEGER,             -- 1 if plural form is more common
   plural_form     TEXT,                -- nominative plural string
+  superlative     TEXT,                -- "am X" superlative string, adjectives only
   file            TEXT NOT NULL UNIQUE, -- e.g. "nouns/Tisch"
   gloss_en        TEXT,                -- JSON array of short English glosses, in display order (see sense ordering)
   data            TEXT NOT NULL        -- full word JSON blob (senses reordered to display order)
@@ -654,6 +655,7 @@ CREATE TABLE word_forms (
   word_id INTEGER NOT NULL REFERENCES words(id),
   PRIMARY KEY (form, word_id)
 );
+-- Indexed forms: verb conjugations, noun case forms, adjective comparative + superlative stem (e.g. "besser", "besten" for gut)
 
 CREATE TABLE en_terms (
   term    TEXT NOT NULL,               -- English search term (lowercase)
@@ -665,6 +667,7 @@ CREATE TABLE meta (
   key   TEXT PRIMARY KEY,
   value TEXT NOT NULL                  -- e.g. "version" → content hash
 );
+-- meta rows: "version" (content hash), "built_at" (ISO timestamp), "schema_version" (integer, see below)
 ```
 
 The `en_terms` table enables English→German reverse search (~75K terms). Terms are extracted from `gloss_en` (phrase + individual tokens) and `synonyms_en` (phrase + individual tokens). `gloss_en_full` is intentionally NOT tokenized (too noisy — compound words like "cupboard" would split into "cup"). Stopwords and parenthetical content are stripped.
@@ -681,6 +684,11 @@ User types "das Tisch" (article-prefixed search)
   → runs searchByLemma("Tisch") in parallel with normal queries
   → gender-matching results shown first, mismatching shown with hint ("not das → der")
   → articles excluded from phrase term history to prevent spurious phrase matches
+
+User types "besser" or "besten" (adjective comparative/superlative)
+  → searchByWordForm() finds gut via word_forms (comparative "besser", superlative stem "besten" indexed at build time)
+  → if query starts with "am " (e.g. "am besten"), SearchPage strips prefix and runs a second searchByWordForm on the stem
+  → matched form shown as full "am besten" in results (using words.superlative column to reconstruct the display form)
 
 User types "cup" (English reverse search)
   → searchByGlossEn() uses 3-tier ranking:
@@ -752,7 +760,9 @@ All 20+ public query functions (`getWord`, `searchByLemma`, etc.) call the inter
 
 **Download loop prevention** (web only): `initDb()` does NOT compare cached version against `db-version.txt` (which changes on every build). Version validation happens via OTA update check instead.
 
-**DB version hash** — content-deterministic, computed in `build-index.ts` from row-level content hashes (`SELECT file, hash FROM words` + `SELECT id, hash FROM examples`). Two builds of identical data always produce the same hash regardless of runner or timing. `built_at` is a full ISO timestamp (not just date).
+**DB version hash** — content-deterministic, computed in `build-index.ts` from row-level content hashes (`SELECT file, hash FROM words` + `SELECT id, hash FROM examples`) plus `word_forms` row count and `PRAGMA table_info(words)` column list. This means any data change, new search-indexed form, or schema column addition produces a new hash. Two builds of identical data always produce the same hash regardless of runner or timing. `built_at` is a full ISO timestamp (not just date).
+
+**Schema version** — `meta.schema_version` (integer) is written by `build-index.ts` and checked by `initDb()` (web only) against `MIN_SCHEMA_VERSION` in `db.ts`. If the cached DB has a lower schema version, `initDb()` calls `cacheClear()` and throws `"download-needed"`, triggering the re-download prompt automatically. Bump both values in sync whenever columns are added or removed from the `words` table. Current: `schema_version = 2` (added `superlative` column).
 
 **Anti-downgrade guard** — `checkForUpdates()` requires the manifest's `built_at` to be >30 min newer than the local DB's timestamp. Prevents spurious updates when the bundled DB is ahead of R2 (e.g. `publish-data` pipeline delayed or failed). Same content hash = same data = no update regardless of timestamps.
 

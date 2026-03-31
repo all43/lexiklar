@@ -8,6 +8,7 @@ export interface SearchResult {
   frequency: number | null;
   pluralDominant: boolean;
   pluralForm: string | null;
+  superlative: string | null;
   file: string;
   glossEn: string[] | null;
   formMatch?: boolean;
@@ -22,6 +23,7 @@ export interface WordRow {
   frequency: number | null;
   plural_dominant: number | null;
   plural_form: string | null;
+  superlative: string | null;
   file: string;
   gloss_en: string | null;
   data: string;

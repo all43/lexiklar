@@ -49,6 +49,7 @@ export interface DbHashes {
   version: string;
   words: Record<string, string>;    // file → hash
   examples: Record<string, string>; // id → hash
+  forms?: Record<string, string>;   // file → sorted comma-joined word_forms fingerprint
 }
 
 // ---- Manifest patch merging ----
@@ -119,7 +120,19 @@ export function extractHashes(db: Database.Database): DbHashes {
   for (const row of db.prepare("SELECT id, hash FROM examples").all() as { id: string; hash: string }[]) {
     examples[row.id] = row.hash;
   }
-  return { version: meta.version, words, examples };
+  const formsRaw = db.prepare(
+    "SELECT w.file, wf.form FROM word_forms wf JOIN words w ON w.id = wf.word_id ORDER BY w.file, wf.form",
+  ).all() as { file: string; form: string }[];
+  const formsMap = new Map<string, string[]>();
+  for (const row of formsRaw) {
+    if (!formsMap.has(row.file)) formsMap.set(row.file, []);
+    formsMap.get(row.file)!.push(row.form);
+  }
+  const forms: Record<string, string> = {};
+  for (const [file, flist] of formsMap) {
+    forms[file] = flist.join(","); // already sorted by ORDER BY
+  }
+  return { version: meta.version, words, examples, forms };
 }
 
 // ---- Patch generation ----
@@ -130,7 +143,7 @@ export function extractHashes(db: Database.Database): DbHashes {
  */
 export function generatePatchFromHashes(oldHashes: DbHashes, newDb: Database.Database): string | null {
   const newWords = newDb.prepare(
-    "SELECT id, lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en, data, hash FROM words",
+    "SELECT id, lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, superlative, file, gloss_en, data, hash FROM words",
   ).all() as WordRow[];
 
   const newExamples = newDb.prepare("SELECT id, data, hash FROM examples").all() as ExampleRow[];
@@ -184,19 +197,30 @@ export function generatePatchFromHashes(oldHashes: DbHashes, newDb: Database.Dat
     if (oldHash === undefined) {
       // Inserted word
       stmts.push(
-        `INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en, data, hash) VALUES (${esc(nw.lemma)}, ${esc(nw.lemma_folded)}, ${esc(nw.pos)}, ${esc(nw.gender)}, ${escNum(nw.frequency)}, ${escNum(nw.plural_dominant)}, ${esc(nw.plural_form)}, ${esc(nw.file)}, ${esc(nw.gloss_en)}, ${esc(nw.data)}, ${esc(nw.hash)});`,
+        `INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, superlative, file, gloss_en, data, hash) VALUES (${esc(nw.lemma)}, ${esc(nw.lemma_folded)}, ${esc(nw.pos)}, ${esc(nw.gender)}, ${escNum(nw.frequency)}, ${escNum(nw.plural_dominant)}, ${esc(nw.plural_form)}, ${esc(nw.superlative)}, ${esc(nw.file)}, ${esc(nw.gloss_en)}, ${esc(nw.data)}, ${esc(nw.hash)});`,
       );
       appendFormsAndTerms(stmts, newDb, nw.id, nw.file);
     } else if (oldHash !== nw.hash) {
       // Updated word
       stmts.push(
-        `UPDATE words SET lemma = ${esc(nw.lemma)}, lemma_folded = ${esc(nw.lemma_folded)}, pos = ${esc(nw.pos)}, gender = ${esc(nw.gender)}, frequency = ${escNum(nw.frequency)}, plural_dominant = ${escNum(nw.plural_dominant)}, plural_form = ${esc(nw.plural_form)}, gloss_en = ${esc(nw.gloss_en)}, data = ${esc(nw.data)}, hash = ${esc(nw.hash)} WHERE file = ${esc(nw.file)};`,
+        `UPDATE words SET lemma = ${esc(nw.lemma)}, lemma_folded = ${esc(nw.lemma_folded)}, pos = ${esc(nw.pos)}, gender = ${esc(nw.gender)}, frequency = ${escNum(nw.frequency)}, plural_dominant = ${escNum(nw.plural_dominant)}, plural_form = ${esc(nw.plural_form)}, superlative = ${esc(nw.superlative)}, gloss_en = ${esc(nw.gloss_en)}, data = ${esc(nw.data)}, hash = ${esc(nw.hash)} WHERE file = ${esc(nw.file)};`,
       );
       stmts.push(`DELETE FROM word_forms WHERE word_id = (SELECT id FROM words WHERE file = ${esc(nw.file)});`);
       stmts.push(`DELETE FROM en_terms WHERE word_id = (SELECT id FROM words WHERE file = ${esc(nw.file)});`);
       appendFormsAndTerms(stmts, newDb, nw.id, nw.file);
+    } else if (oldHashes.forms) {
+      // Word data unchanged — but check if word_forms changed (e.g. indexing logic update)
+      const newForms = newDb.prepare("SELECT form FROM word_forms WHERE word_id = ? ORDER BY form").all(nw.id) as { form: string }[];
+      const newFingerprint = newForms.map(f => f.form).join(",");
+      const oldFingerprint = oldHashes.forms[nw.file] ?? "";
+      if (newFingerprint !== oldFingerprint) {
+        stmts.push(`DELETE FROM word_forms WHERE word_id = (SELECT id FROM words WHERE file = ${esc(nw.file)});`);
+        const fileSubquery = `(SELECT id FROM words WHERE file = ${esc(nw.file)})`;
+        for (const f of newForms) {
+          stmts.push(`INSERT OR IGNORE INTO word_forms (form, word_id) VALUES (${esc(f.form)}, ${fileSubquery});`);
+        }
+      }
     }
-    // unchanged: skip
   }
 
   // Deleted words
