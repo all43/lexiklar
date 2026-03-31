@@ -490,6 +490,54 @@ mark.example-highlight {
   color: var(--f7-list-item-footer-text-color);
 }
 
+/* Scroll fade utility — position:relative outer wrapper with left/right fade overlays */
+.scroll-fade {
+  position: relative;
+}
+.scroll-fade::before,
+.scroll-fade::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: var(--scroll-fade-width, 40px);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.2s ease;
+}
+.scroll-fade::before {
+  left: 0;
+  opacity: var(--fade-left, 0);
+  background: linear-gradient(to left, transparent, color-mix(in srgb, var(--f7-page-bg-color, #fff) 87%, var(--f7-theme-color)));
+}
+.scroll-fade::after {
+  right: 0;
+  opacity: var(--fade-right, 0);
+  background: linear-gradient(to right, transparent, color-mix(in srgb, var(--f7-page-bg-color, #fff) 87%, var(--f7-theme-color)));
+}
+.dark .scroll-fade::before {
+  background: linear-gradient(to left, transparent, color-mix(in srgb, var(--f7-page-bg-color, #1c1c1e) 75%, #fff));
+}
+.dark .scroll-fade::after {
+  background: linear-gradient(to right, transparent, color-mix(in srgb, var(--f7-page-bg-color, #1c1c1e) 75%, #fff));
+}
+
+/* Scrollable declension table — outer holds fades, inner scrolls */
+.decl-table-wrap {
+  position: relative;
+}
+.decl-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 var(--f7-block-padding-horizontal, 16px);
+}
+.decl-table-scroll::-webkit-scrollbar { display: none; }
+/* Let table size to content inside scroll container */
+.decl-table-scroll .decl-table {
+  width: auto;
+  min-width: 100%;
+}
+
 /* Brief highlight when scrolling to a referenced sense */
 .sense-highlight {
   animation: sense-flash 1.5s ease-out;

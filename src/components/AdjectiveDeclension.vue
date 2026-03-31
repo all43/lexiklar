@@ -7,7 +7,7 @@
 
     <!-- Comparison scale: Positiv → Komparativ → Superlativ -->
     <!-- Normal case: this word is the Positiv (has comparative/superlative fields) -->
-    <div v-if="word.comparative || word.superlative" class="adj-scale-wrap" :style="fadeStyle" :class="{ 'is-scrollable': isScrollable }">
+    <div v-if="word.comparative || word.superlative" class="adj-scale-wrap scroll-fade" :style="fadeStyle" :class="{ 'is-scrollable': isScrollable }">
       <div class="adj-scale-title">{{ t('adj.steigerung') }}</div>
       <div class="adj-scale-row">
         <div class="adj-scale-bg-line"></div>
@@ -54,7 +54,7 @@
       </div>
     </div>
     <!-- Inverse case: this word IS the comparative of another adjective (e.g. besser → gut) -->
-    <div v-else-if="baseWord" class="adj-scale-wrap" :style="fadeStyle" :class="{ 'is-scrollable': isScrollable }">
+    <div v-else-if="baseWord" class="adj-scale-wrap scroll-fade" :style="fadeStyle" :class="{ 'is-scrollable': isScrollable }">
       <div class="adj-scale-title">{{ t('adj.steigerung') }}</div>
       <div class="adj-scale-row">
         <div class="adj-scale-bg-line"></div>
@@ -196,6 +196,8 @@
           <f7-button :active="activeTab === 'mixed'" @click="activeTab = 'mixed'">Gemischt</f7-button>
         </f7-segmented>
 
+        <div class="decl-table-wrap adj-decl-wrap scroll-fade" :style="tableStyle">
+        <div class="decl-table-scroll" ref="tableEl">
         <table class="decl-table adj-decl-table">
           <thead>
             <tr>
@@ -220,6 +222,8 @@
             </tr>
           </tbody>
         </table>
+        </div>
+        </div>
       </template>
 
     </template>
@@ -236,6 +240,9 @@ import type { AdjectiveWord, AdjEndingsTable } from "../../types/word.js";
 
 const scaleEl = ref<HTMLElement | null>(null);
 const { fadeStyle, isScrollable } = useScrollFade(scaleEl);
+
+const tableEl = ref<HTMLElement | null>(null);
+const { fadeStyle: tableStyle } = useScrollFade(tableEl);
 
 const emit = defineEmits<{
   (e: "compare-navigate", term: string): void;
@@ -295,38 +302,12 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
   padding: 14px 0 20px;
   margin-bottom: 8px;
   position: relative;
+  --scroll-fade-width: 56px;
 }
 
 .adj-scale-wrap::before,
 .adj-scale-wrap::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 56px;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
   z-index: 2;
-}
-
-.adj-scale-wrap::before {
-  left: 0;
-  opacity: var(--fade-left, 0);
-  background: linear-gradient(to left, transparent, color-mix(in srgb, var(--f7-page-bg-color, #fff) 82%, var(--f7-theme-color)));
-}
-
-.adj-scale-wrap::after {
-  right: 0;
-  opacity: var(--fade-right, 0);
-  background: linear-gradient(to right, transparent, color-mix(in srgb, var(--f7-page-bg-color, #fff) 82%, var(--f7-theme-color)));
-}
-
-.dark .adj-scale-wrap::before {
-  background: linear-gradient(to left, transparent, color-mix(in srgb, var(--f7-page-bg-color, #1c1c1e) 85%, var(--f7-theme-color)));
-}
-
-.dark .adj-scale-wrap::after {
-  background: linear-gradient(to right, transparent, color-mix(in srgb, var(--f7-page-bg-color, #1c1c1e) 85%, var(--f7-theme-color)));
 }
 
 .adj-scale-title {
@@ -482,11 +463,6 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
 
 .adj-tabs {
   margin: 0 var(--f7-block-padding-horizontal, 16px) 8px;
-}
-
-.adj-decl-table {
-  width: calc(100% - 2 * var(--f7-block-padding-horizontal, 16px));
-  margin: 0 var(--f7-block-padding-horizontal, 16px);
 }
 
 .adj-decl-table .decl-num-header {

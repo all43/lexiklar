@@ -27,7 +27,9 @@
     </div>
 
     <!-- Declension table -->
-    <table v-if="word.case_forms" class="decl-table">
+    <div v-if="word.case_forms" class="decl-table-wrap scroll-fade" :style="tableStyle">
+    <div class="decl-table-scroll" ref="tableEl">
+    <table class="decl-table">
       <thead>
         <tr>
           <th class="decl-case-header"></th>
@@ -56,12 +58,15 @@
         </tr>
       </tbody>
     </table>
+    </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import { t } from "../js/i18n.js";
+import { useScrollFade } from "../composables/useScrollFade.js";
 import { splitUmlaut, type UmlautSplit } from "../utils/umlaut.js";
 import type { NounWord, CaseRow } from "../../types/word.js";
 
@@ -78,6 +83,9 @@ const PLURAL_ARTICLES: CaseRow = { nom: "die", acc: "die", dat: "den", gen: "der
 const props = defineProps<{
   word: NounWord;
 }>();
+
+const tableEl = ref<HTMLElement | null>(null);
+const { fadeStyle: tableStyle } = useScrollFade(tableEl);
 
 const cases = [
   { key: "nom" as const, label: "Nom." },
@@ -148,6 +156,11 @@ function umlautSplit(caseKey: "nom" | "acc" | "dat" | "gen"): UmlautSplit | null
 </script>
 
 <style scoped>
+/* Expand wrap to screen edges, breaking out of .noun-declension padding */
+.decl-table-wrap {
+  margin: 0 -16px;
+}
+
 .decl-ending {
   color: var(--color-rule-match);
   font-weight: 600;

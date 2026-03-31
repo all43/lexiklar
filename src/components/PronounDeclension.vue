@@ -1,6 +1,8 @@
 <template>
   <div class="pronoun-declension">
     <template v-if="isPersonalPronoun">
+      <div class="decl-table-wrap pronoun-decl-wrap scroll-fade" :style="tableStyle">
+      <div class="decl-table-scroll" ref="tableEl">
       <table class="decl-table pronoun-decl-table">
         <thead>
           <tr>
@@ -23,6 +25,8 @@
           </tr>
         </tbody>
       </table>
+      </div>
+      </div>
     </template>
     <f7-block v-else>
       <p><em>{{ t('word.grammarSoon') }}</em></p>
@@ -31,8 +35,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import { t } from "../js/i18n.js";
+import { useScrollFade } from "../composables/useScrollFade.js";
 import type { GenericWord } from "../../types/word.js";
 
 type Case = "nom" | "akk" | "dat" | "gen";
@@ -68,13 +73,12 @@ const props = defineProps<{
 }>();
 
 const isPersonalPronoun = computed(() => ALL_PERSONAL_FORMS.has(props.word.word));
+
+const tableEl = ref<HTMLElement | null>(null);
+const { fadeStyle: tableStyle } = useScrollFade(tableEl);
 </script>
 
 <style scoped>
-.pronoun-decl-table {
-  width: calc(100% - 2 * var(--f7-block-padding-horizontal, 16px));
-  margin: 0 var(--f7-block-padding-horizontal, 16px);
-}
 .pronoun-label-header {
   width: 56px;
 }
