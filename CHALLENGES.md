@@ -412,18 +412,13 @@ The UI shows a badge linking a noun to its matching rule ("follows -ung rule →
 
 ## 27. Native SQLite on Capacitor 8 — No CocoaPods, No Paywall
 
-**Problem:** Capacitor 8 dropped CocoaPods support in favor of Swift Package Manager (SPM). The two existing community SQLite plugins were both blocked:
-- **`@capacitor-community/sqlite`** — requires CocoaPods. Not compatible with Capacitor 8's SPM-only iOS dependency model.
-- **Capawesome SQLite** — SPM-compatible but paywalled behind the [Capawesome Insiders](https://capawesome.io/insiders/pricing/) program. Not a sustainable dependency for a free, ad-free app with no recurring revenue.
+**Problem:** On web/PWA the app runs SQLite via WASM in a Web Worker, loading the full ~230 MB database into memory via `sqlite3_deserialize`. On native iOS/Android that approach is wasteful — the platform has a built-in SQLite C library that reads directly from disk, with no WASM overhead, no in-memory copy, and proper file-based persistence in `Library/databases/`. A native driver was the right call; the question was which one.
 
-Writing a custom plugin was the only viable path.
+Capacitor 8 dropped CocoaPods in favor of Swift Package Manager (SPM), which ruled out the main community option:
+- **`@capacitor-community/sqlite`** — CocoaPods only, not compatible with Capacitor 8.
+- **Capawesome SQLite** — SPM-compatible, but paywalled behind the [Capawesome Insiders](https://capawesome.io/insiders/pricing/) program. Not a sustainable dependency for a free, ad-free app.
 
-**What made it hard:** Capacitor's Swift plugin bridge has undocumented layout requirements that only become apparent through failure:
-
-- **Single-target SPM layout is mandatory.** Splitting the plugin into a separate `SqliteDb` Swift library target (for unit testability) and a `LexiklarSqlitePlugin` bridge target caused Xcode to silently not compile the bridge — no error, just missing symbols at link time. Everything had to live in a single target at `ios/Plugin/`.
-- **`#if os(iOS)` in `Package.swift` doesn't work.** The `Package.swift` file is evaluated on the macOS *host*, not the iOS *target*, so conditional compilation for iOS-specific targets silently evaluates to `false` on the build machine.
-- **`prepare` script required in plugin `package.json`.** The plugin has its own TypeScript bridge definitions. Without a `prepare` script to compile the TS dist before the app's `vite build` runs, the app would import stale or missing JS.
-- **Community plugin's web fallback is a liability.** `@capacitor-community/sqlite` bundles jeep-sqlite + sql.js + IndexedDB for the web platform — a completely different SQLite backend from our `@sqlite.org/sqlite-wasm` Web Worker approach, adding ~2 MB and conflicting caching strategies.
+Writing a minimal custom plugin was the only viable path.
 
 **Solution:** ~300 lines of Swift + ~150 lines of Java, using only platform-built-in SQLite (iOS `sqlite3` C library, Android `android.database.sqlite`). No external dependencies beyond the Capacitor SPM bridge itself.
 
