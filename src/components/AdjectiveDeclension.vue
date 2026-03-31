@@ -311,6 +311,8 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   padding: 0 var(--f7-block-padding-horizontal, 16px) 4px;
+  min-width: 100%;
+  box-sizing: border-box;
 }
 
 .adj-scale::-webkit-scrollbar {
@@ -318,11 +320,11 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
 }
 
 .adj-scale-connector {
-  flex-shrink: 0;
-  width: 32px;
+  flex: 1;
   height: 2px;
   background: rgba(0, 0, 0, 0.2);
   margin-top: 8px;
+  min-width: 24px;
 }
 
 .dark .adj-scale-connector {
