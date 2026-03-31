@@ -57,7 +57,7 @@ The non-LLM parts were equally important: architecture decisions, data model des
 ### Grammar depth
 - **Nouns**: article, all 8 case forms (singular + plural), gender rule with exceptions
 - **Verbs**: auxiliary (*haben*/*sein*), separability, reflexivity, principal parts, full conjugation (present, preterite, subjunctive I/II, imperative, participles)
-- **Adjectives**: comparative, superlative, full 48-cell declension table (strong / weak / mixed × 4 genders × 4 cases)
+- **Adjectives**: interactive comparison scale (Positiv → Komparativ → Superlativ) with tappable nodes that navigate between forms; full 48-cell declension table (strong / weak / mixed × 4 genders × 4 cases)
 - **Gender rules**: 17 morphological rules (suffix, nominalized infinitive) with reliability tiers — shown inline so learners understand *why* a word has its gender
 - Homonym disambiguation — *Bank* (bench) and *Bank* (financial institution) are separate entries
 
