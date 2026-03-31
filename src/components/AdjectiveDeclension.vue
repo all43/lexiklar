@@ -292,6 +292,22 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
 <style scoped>
 .adj-scale-wrap {
   padding: 14px 0 20px;
+  position: relative;
+}
+
+.adj-scale-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to right, transparent, var(--f7-page-bg-color, #fff));
+  pointer-events: none;
+}
+
+.dark .adj-scale-wrap::after {
+  background: linear-gradient(to right, transparent, var(--f7-page-bg-color, #000));
 }
 
 .adj-scale-title {
