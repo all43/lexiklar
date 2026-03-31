@@ -318,11 +318,11 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
 }
 
 .adj-scale-connector {
-  flex: 1;
+  flex-shrink: 0;
+  width: 32px;
   height: 2px;
   background: rgba(0, 0, 0, 0.2);
   margin-top: 8px;
-  min-width: 12px;
 }
 
 .dark .adj-scale-connector {
