@@ -334,8 +334,6 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
-  min-width: 60px;
-  max-width: 90px;
 }
 
 .adj-scale-tappable {
@@ -391,8 +389,7 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
   font-size: 15px;
   font-weight: 500;
   text-align: center;
-  word-break: break-word;
-  hyphens: auto;
+  white-space: nowrap;
   line-height: 1.2;
   color: var(--f7-list-item-title-text-color);
 }
