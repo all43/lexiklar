@@ -8335,7 +8335,7 @@
       },
       {
         "form": "rasten",
-        "lemma": "rasten",
+        "lemma": "rasen",
         "pos": "verb",
         "gloss_hint": "rest"
       },
@@ -14736,154 +14736,46 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "not",
-        "lemma": "nicht",
-        "pos": "particle",
-        "gloss_hint": "negation"
-      },
-      {
-        "form": "used",
-        "lemma": "nutzen",
-        "pos": "verb",
-        "gloss_hint": "pay (amount)"
-      },
-      {
-        "form": "the",
-        "lemma": "der",
-        "pos": "determiner",
+        "form": "Passagier",
+        "lemma": "Passagier",
+        "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "outbound",
+        "form": "Hinflug",
         "lemma": "Hinflug",
         "pos": "noun",
-        "gloss_hint": "start"
-      },
-      {
-        "form": "flight",
-        "lemma": "Flug",
-        "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "of",
-        "lemma": "von",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "their",
-        "lemma": "ihr",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "trip",
+        "form": "Reise",
         "lemma": "Reise",
         "pos": "noun",
-        "gloss_hint": null
+        "gloss_hint": "trip"
       },
       {
-        "form": "they",
-        "lemma": "sie",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "can",
-        "lemma": "können",
+        "form": "genutzt",
+        "lemma": "nutzen",
         "pos": "verb",
-        "gloss_hint": null
+        "gloss_hint": "use"
       },
       {
-        "form": "still",
-        "lemma": "trotzdem",
-        "pos": "adverb",
-        "gloss_hint": "however"
-      },
-      {
-        "form": "take",
-        "lemma": "antreten",
-        "pos": "verb",
-        "gloss_hint": "start"
-      },
-      {
-        "form": "the",
-        "lemma": "der",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "return",
+        "form": "Rückflug",
         "lemma": "Rückflug",
         "pos": "noun",
         "gloss_hint": null
       },
       {
-        "form": "flight",
-        "lemma": "Flug",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "but",
-        "lemma": "müssen",
+        "form": "antreten",
+        "lemma": "antreten",
         "pos": "verb",
         "gloss_hint": null
       },
       {
-        "form": "they",
-        "lemma": "sie",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "pay",
+        "form": "bezahlen",
         "lemma": "bezahlen",
         "pos": "verb",
-        "gloss_hint": "pay (amount)"
-      },
-      {
-        "form": "the",
-        "lemma": "die",
-        "pos": "determiner",
         "gloss_hint": null
-      },
-      {
-        "form": "difference",
-        "lemma": "Differenz",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "to",
-        "lemma": "zum",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "the",
-        "lemma": "anwendbaren",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "applicable",
-        "lemma": "anwendbar",
-        "pos": "adjective",
-        "gloss_hint": null
-      },
-      {
-        "form": "Oneway-Tarif",
-        "lemma": "Oneway-Tarif",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "pay",
-        "lemma": "bezahlen",
-        "pos": "verb",
-        "gloss_hint": "pay (amount)"
       }
     ]
   },
@@ -20145,7 +20037,7 @@
       },
       {
         "form": "lag",
-        "lemma": "lagen",
+        "lemma": "liegen",
         "pos": "verb",
         "gloss_hint": "was"
       },
@@ -20162,7 +20054,11 @@
         "gloss_hint": "letter"
       }
     ],
-    "text_linked": "Sie [[kantete|verbs/kanten#1]] [[die|determiners/die]] [[Kiste|nouns/Kiste_massiver#1]] [[auf|prepositions/auf]] [[der|determiners/der]] [[einen|determiners/ein]] [[Seite|nouns/Seite#1]] [[hoch|adjectives/hoch#1]] [[und|conjunctions/und]] [[schaute|verbs/schauen#1]] [[drunter|adverbs/drunter]], [[aber|conjunctions/aber]] [[da|adverbs/da]] lag [[kein|pronouns/kein#1]] [[Brief|nouns/Brief]]."
+    "text_linked": "Sie [[kantete|verbs/kanten#1]] [[die|determiners/die]] [[Kiste|nouns/Kiste_massiver#1]] [[auf|prepositions/auf]] [[der|determiners/der]] [[einen|determiners/ein]] [[Seite|nouns/Seite#1]] [[hoch|adjectives/hoch#1]] [[und|conjunctions/und]] [[schaute|verbs/schauen#1]] [[drunter|adverbs/drunter]], [[aber|conjunctions/aber]] [[da|adverbs/da]] lag [[kein|pronouns/kein#1]] [[Brief|nouns/Brief]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "1a8d8f25"
+    }
   },
   "b1d258e162": {
     "text": "Eine Rentenversicherung ist eine Absicherung gegen Armut im Alter.",
@@ -24515,7 +24411,11 @@
         "gloss_hint": "diagonally"
       }
     ],
-    "text_linked": "Du musst noch besser [[kanten|verbs/kanten#1]], das ist gerade [[hier|adverbs/hier]] [[auf|prepositions/auf]] [[der|pronouns/der_singular#1]] [[Fahrt|nouns/Fahrt#1]] [[quer|adverbs/quer#1]] zum vereisten Hang wichtig."
+    "text_linked": "Du musst noch besser [[kanten|verbs/kanten#1]], das ist gerade [[hier|adverbs/hier]] [[auf|prepositions/auf]] [[der|pronouns/der_singular#1]] [[Fahrt|nouns/Fahrt#1]] [[quer|adverbs/quer#1]] zum vereisten Hang wichtig.",
+    "_proofread": {
+      "translation": true,
+      "annotations": "62395d90"
+    }
   },
   "b1f70983ab": {
     "text": "Manche fangen schon um elf an, Mittag zu kochen.",
