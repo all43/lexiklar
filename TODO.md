@@ -17,6 +17,8 @@
 
 ## Accessibility
 - [ ] VoiceOver / TalkBack support — label grammar tables and declension cells
+- [ ] Adjustable font size — respect iOS Dynamic Type / Android font scale
+- [ ] High contrast mode — ensure sufficient contrast ratios for all text and UI elements
 - [ ] Fill in App Store Connect accessibility section
 
 ## UX
