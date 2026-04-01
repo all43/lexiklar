@@ -968,9 +968,18 @@ function main(): void {
       if (data._overrides?.false_friend_en) {
         enriched.false_friend_en = data._overrides.false_friend_en;
       }
-      // Promote confusable_pairs from _overrides to top-level before stripping
+      // Promote confusable_pairs from _overrides to top-level before stripping.
+      // other_note is not stored in source files — resolved here from the counterpart's this_note.
       if (data._overrides?.confusable_pairs) {
-        enriched.confusable_pairs = data._overrides.confusable_pairs;
+        const cp = data._overrides.confusable_pairs;
+        enriched.confusable_pairs = {
+          this_note: cp.this_note,
+          pairs: cp.pairs.map((pair) => {
+            const counterpart = (lemmaMap.get(pair.other) ?? [])[0];
+            const other_note = counterpart?.data._overrides?.confusable_pairs?.this_note ?? "";
+            return { en_word: pair.en_word, other: pair.other, other_note };
+          }),
+        };
       }
       // Promote antonym from _overrides to top-level before stripping
       if (data._overrides?.antonym) {

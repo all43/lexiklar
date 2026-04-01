@@ -57,7 +57,10 @@ export interface ConfusablePairEntry {
   en_word: string;
   /** Lemma of the other confusable word (e.g. "merken") */
   other: string;
-  /** Short usage note for the other word (e.g. "memorize for future use") */
+  /**
+   * Short usage note for the other word — not stored in source files.
+   * Resolved at build-index time from the counterpart's own this_note.
+   */
   other_note: string;
 }
 
