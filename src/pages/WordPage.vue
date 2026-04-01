@@ -285,6 +285,14 @@
         </f7-list>
       </template>
 
+      <!-- Confusable Pairs -->
+      <ConfusablePair
+        v-if="(word as any).confusable_pairs?.length"
+        :pairs="(word as any).confusable_pairs"
+        :current-word="word.word"
+        @navigate="(lemma: string) => searchWord(lemma, { fallback: false })"
+      />
+
       <!-- Grammar -->
       <template v-if="word.pos === 'verb'">
         <div class="block-title meanings-header" id="word-grammar">
@@ -381,6 +389,7 @@
 import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick, getCurrentInstance } from "vue";
 import EnSynonyms from "../components/EnSynonyms.vue";
 import FalseFriend from "../components/FalseFriend.vue";
+import ConfusablePair from "../components/ConfusablePair.vue";
 import GlossText from "../components/GlossText.vue";
 import VerbConjugation from "../components/VerbConjugation.vue";
 import NounDeclension from "../components/NounDeclension.vue";

@@ -642,6 +642,15 @@ mark.example-highlight {
 .ios .searchbar-bottom-toolbar > .searchbar-backdrop {
   clip-path: inset(0 0 calc(var(--f7-tabbar-icons-height) + var(--f7-safe-area-bottom) + var(--f7-subnavbar-height) + 28px) 0);
 }
+/* Prevent F7 touch-highlight from scaling the input wrap while the searchbar is
+   focused — the 1.05x scale visually shifts the cursor (GPU compositor renders one
+   frame before the JS override lands). CSS !important beats inline style at cascade
+   time so no intermediate frame is rendered. JS handler below is a fallback for
+   iOS < 15.4 where :has() is unsupported. */
+.ios .searchbar-input-wrap:has(input:focus) {
+  scale: 1 !important;
+}
+
 /* Zero out subnavbar top offset when searchbar is at bottom, add bottom padding */
 .page.page-searchbar-bottom > .page-content {
   --f7-page-subnavbar-offset: 0px;

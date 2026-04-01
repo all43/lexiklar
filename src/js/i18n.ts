@@ -74,6 +74,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "word.falseFriendTitle": "False friend",
     "word.falseFriendIfMeant": "If you meant…",
     "word.falseFriendUseInstead": "Use instead",
+    "word.confusableTitle": "Don't confuse",
 
     // FavoritesPage
     "favorites.title": "Favorites",
@@ -327,6 +328,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "word.falseFriendTitle": "Falscher Freund",
     "word.falseFriendIfMeant": "Wenn du meinst…",
     "word.falseFriendUseInstead": "Verwende stattdessen",
+    "word.confusableTitle": "Nicht verwechseln",
 
     // FavoritesPage
     "favorites.title": "Favoriten",

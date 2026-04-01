@@ -968,6 +968,10 @@ function main(): void {
       if (data._overrides?.false_friend_en) {
         enriched.false_friend_en = data._overrides.false_friend_en;
       }
+      // Promote confusable_pairs from _overrides to top-level before stripping
+      if (data._overrides?.confusable_pairs) {
+        enriched.confusable_pairs = data._overrides.confusable_pairs;
+      }
       // Promote antonym from _overrides to top-level before stripping
       if (data._overrides?.antonym) {
         enriched.antonym = data._overrides.antonym;
