@@ -975,7 +975,15 @@ function main(): void {
         enriched.confusable_pairs = {
           this_note: cp.this_note,
           pairs: cp.pairs.map((pair) => {
-            const counterpart = (lemmaMap.get(pair.other) ?? [])[0];
+            const candidates = lemmaMap.get(pair.other) ?? [];
+            // For homonyms, prefer the counterpart that has a reverse confusable pair
+            // pointing back to this word — pairs are always symmetric.
+            const counterpart =
+              candidates.find((c) =>
+                c.data._overrides?.confusable_pairs?.pairs.some(
+                  (p) => p.other === data.word,
+                ),
+              ) ?? candidates[0];
             const other_note = counterpart?.data._overrides?.confusable_pairs?.this_note ?? "";
             return { en_word: pair.en_word, other: pair.other, other_note };
           }),
