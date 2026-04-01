@@ -489,6 +489,10 @@ Declension tables use a consistent color system defined as CSS custom properties
 | `--color-rule-exception` | `#ff9800` (orange) | `#ffa726` | Gender rule exception badges |
 | `--color-vowel-change` | `#d32f2f` (red) | `#ef5350` | Umlaut vowel changes in plural forms |
 | `var(--f7-theme-color)` | — | — | Adjective declension endings |
+| `--color-tag-register` / `-bg` | amber | lighter amber | Sense register tags (informal, fig., dated…) |
+| `--color-tag-dialect` / `-bg` | blue | lighter blue | Sense dialect tags (Austrian, Swiss, regional…) |
+| `--color-tag-domain` / `-bg` | purple | lighter purple | Sense domain tags (physics, law, finance…) |
+| `--color-tag-grammar-bg` | grey `rgba(0,0,0,.06)` | white tint | Sense grammar tags (transitive, reflexive…) |
 
 Global classes `.gender-m`, `.gender-f`, `.gender-n` use `!important` to override component-level `color` rules (e.g. `.decl-num-header`).
 
@@ -629,7 +633,8 @@ See README → Project Structure for directory layout.
 The SQLite DB is a self-contained bundle: word data is stored as JSON blobs in the `data` column, so the app needs only the `.db` file at runtime (no JSON file loading).
 
 **Data stripping**: `build-index.ts` strips build-only fields before inserting into the DB to reduce size:
-- **Words**: `_meta`, `_proofread`, `_overrides`, `zipf`, `*_model` fields (top-level + per-sense), relationship refs (`_derived`, `_hyponyms`, etc.), `compound_source/verified`, verb `stems`/`past_participle` (baked into `conjugation`)
+- **Words**: `_meta`, `_proofread`, `_overrides`, `zipf`, `*_model` fields (top-level + per-sense), relationship refs (`_derived`, `_hyponyms`, etc.), `compound_source/verified`, verb `stems`/`past_participle` (baked into `conjugation`), `etymology_number` (always null), `umlaut_in_comparison` (not shown in UI), `sounds[].tags` (only `sounds[].ipa` is used)
+- **`senses[].tags`**: filtered to 41 display tags only (register/dialect/domain/grammar categories; see `DISPLAY_TAGS` in `build-index.ts`). Internal Wiktionary tags (`form-of`, `no-plural`, `general`, `especially`, case names, etc.) are stripped. `South-German` normalised to `South German`.
 - **Examples**: `lemmas`, `annotations`, `translation_model`, `_proofread`, `source` — only `text`, `text_linked`, `translation`, `type`, `ref`, `note` are kept
 
 **Quote normalisation**: `build-index.ts` calls `stripOuterQuotes()` (from `src/utils/text.ts`) on example `text`, `text_linked`, and `translation` before DB insertion. Handles balanced pairs, orphaned opening/closing, and mismatched cross-pair quotes (e.g. „…«). The DB always contains clean text; no stripping is done at runtime.

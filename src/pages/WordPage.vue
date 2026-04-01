@@ -119,6 +119,13 @@
                         :data-tooltip="sense.gloss_en_full"
                       >ⓘ</span>
                     </div>
+                    <div v-if="senseTags(sense).length" class="sense-tags-row">
+                      <span
+                        v-for="tag in senseTags(sense)"
+                        :key="tag"
+                        :class="tagClass(tag)"
+                      >{{ t(tagKey(tag)) }}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -384,7 +391,7 @@ import { getWord, getExamples, getRelatedWords, searchByLemma, getBaseAdjective,
 import { submitReport } from "../utils/report.js";
 import { f7 } from "framework7-vue/bundle";
 import { t } from "../js/i18n.js";
-import { getCached, setItem } from "../utils/storage.js";
+import { getCached, setItem, SHOW_GRAMMAR_TAGS_KEY } from "../utils/storage.js";
 import type { Word, Sense, VerbWord, NounWord, AdjectiveWord } from "../../types/word.js";
 import type { Example } from "../../types/example.js";
 import type { SearchResult } from "../../types/search.js";
@@ -442,6 +449,21 @@ interface ExpressionItem {
   ref: string | null;
 }
 
+const GRAMMAR_TAGS  = new Set(["transitive", "intransitive", "reflexive", "impersonal"]);
+const DIALECT_TAGS  = new Set(["Austrian German", "Swiss Standard German", "regional", "South German", "North German", "Bavarian", "Swabian"]);
+const DOMAIN_TAGS   = new Set(["physics", "geography", "geometry", "finance", "law", "military"]);
+const REGISTER_TAGS = new Set(["colloquial", "figurative", "outdated", "archaic", "derogatory", "literary", "rare", "historical", "humorous", "gehoben", "impolite", "jargon", "vulgar", "formal", "poetic", "slang", "casual"]);
+
+function tagKey(tag: string): string {
+  return "tag." + tag.toLowerCase().replace(/ /g, "_");
+}
+function tagClass(tag: string): string {
+  if (GRAMMAR_TAGS.has(tag)) return "sense-tag sense-tag-grammar";
+  if (DIALECT_TAGS.has(tag)) return "sense-tag sense-tag-dialect";
+  if (DOMAIN_TAGS.has(tag))  return "sense-tag sense-tag-domain";
+  return "sense-tag sense-tag-register";
+}
+
 const POS_COLORS: Record<string, string> = {
   noun: "blue",
   verb: "orange",
@@ -466,6 +488,7 @@ const props = defineProps<{
 
 const inst = getCurrentInstance();
 
+const showGrammarTags = ref(getCached(SHOW_GRAMMAR_TAGS_KEY) === "1");
 const word = ref<(Word & Record<string, unknown>) | null>(null);
 const baseAdjective = ref<{ word: string; superlative: string | null; antonym: { word: string; negative?: boolean } | null } | null>(null);
 const positiveCounterpart = ref<{ word: string } | null>(null);
@@ -804,6 +827,12 @@ function reportIssue(source: "top" | "bottom" = "bottom") {
       });
     },
   }).open();
+}
+
+function senseTags(sense: Sense): string[] {
+  const tags = (sense as unknown as Record<string, unknown>).tags as string[] | undefined;
+  if (!tags?.length) return [];
+  return showGrammarTags.value ? tags : tags.filter(t => !GRAMMAR_TAGS.has(t));
 }
 
 function getSenseExamples(sense: Sense, senseIdx: number) {

@@ -37,6 +37,15 @@ html.is-web .framework7-root {
   --color-rule-match: #4caf50; /* green — rule confirmed */
   --color-rule-exception: #ff9800; /* orange — rule exception */
   --color-vowel-change: #d32f2f; /* red — umlaut / vowel shift */
+
+  /* Sense tag colors */
+  --color-tag-register:    #e65100;              /* dark amber — informal/style */
+  --color-tag-register-bg: rgba(255, 152, 0, 0.12);
+  --color-tag-dialect:     #1565c0;              /* dark blue — regional */
+  --color-tag-dialect-bg:  rgba(33, 150, 243, 0.10);
+  --color-tag-domain:      #6a1b9a;              /* dark purple — subject area */
+  --color-tag-domain-bg:   rgba(156, 39, 176, 0.10);
+  --color-tag-grammar-bg:  rgba(0, 0, 0, 0.06);  /* neutral — grammar labels */
 }
 
 /* Gender color coding for articles (der/die/das) */
@@ -546,6 +555,26 @@ mark.example-highlight {
   padding-right: var(--f7-block-padding-horizontal, 16px);
 }
 
+/* Sense tags (register, dialect, domain, grammar) */
+.sense-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+.sense-tag {
+  display: inline-block;
+  font-size: 0.7em;
+  padding: 1px 6px;
+  border-radius: 10px;
+  line-height: 1.6;
+  font-style: italic;
+}
+.sense-tag-register { background: var(--color-tag-register-bg); color: var(--color-tag-register); }
+.sense-tag-dialect  { background: var(--color-tag-dialect-bg);  color: var(--color-tag-dialect); }
+.sense-tag-domain   { background: var(--color-tag-domain-bg);   color: var(--color-tag-domain); }
+.sense-tag-grammar  { background: var(--color-tag-grammar-bg);  color: var(--f7-list-item-footer-text-color); }
+
 /* Brief highlight when scrolling to a referenced sense */
 .sense-highlight {
   animation: sense-flash 1.5s ease-out;
@@ -571,6 +600,14 @@ mark.example-highlight {
 }
 .dark {
   --color-vowel-change: #ef5350;
+
+  --color-tag-register:    #ffb74d;
+  --color-tag-register-bg: rgba(255, 152,  0, 0.18);
+  --color-tag-dialect:     #64b5f6;
+  --color-tag-dialect-bg:  rgba( 33, 150, 243, 0.18);
+  --color-tag-domain:      #ce93d8;
+  --color-tag-domain-bg:   rgba(156,  39, 176, 0.18);
+  --color-tag-grammar-bg:  rgba(255, 255, 255, 0.10);
 }
 .dark .update-toast {
   background: #4a4a4a;

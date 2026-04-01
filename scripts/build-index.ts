@@ -49,6 +49,54 @@ import type { MetaRow, WordRow, ExampleRow as ExampleRowSchema } from "./lib/db-
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const DATA_DIR = join(ROOT, "data");
+
+/**
+ * Sense tags preserved in the DB blob. Keys are source tag names (from Wiktionary);
+ * values are the canonical names stored in the DB (normalises e.g. "South-German").
+ * Everything else is stripped — it was only needed at build time (sense ordering) or
+ * is never read by the app at all.
+ */
+const DISPLAY_TAGS = new Map<string, string>([
+  // Register / style
+  ["colloquial",   "colloquial"],
+  ["figurative",   "figurative"],
+  ["outdated",     "outdated"],
+  ["archaic",      "archaic"],
+  ["derogatory",   "derogatory"],
+  ["literary",     "literary"],
+  ["rare",         "rare"],
+  ["historical",   "historical"],
+  ["humorous",     "humorous"],
+  ["gehoben",      "gehoben"],
+  ["impolite",     "impolite"],
+  ["jargon",       "jargon"],
+  ["vulgar",       "vulgar"],
+  ["formal",       "formal"],
+  ["poetic",       "poetic"],
+  ["slang",        "slang"],
+  ["casual",       "casual"],
+  // Dialect / region
+  ["Austrian German",        "Austrian German"],
+  ["Swiss Standard German",  "Swiss Standard German"],
+  ["regional",               "regional"],
+  ["South-German",           "South German"],  // normalise hyphen variant
+  ["South German",           "South German"],
+  ["North German",           "North German"],
+  ["Bavarian",               "Bavarian"],
+  ["Swabian",                "Swabian"],
+  // Domain / subject
+  ["physics",    "physics"],
+  ["geography",  "geography"],
+  ["geometry",   "geometry"],
+  ["finance",    "finance"],
+  ["law",        "law"],
+  ["military",   "military"],
+  // Grammar (kept in DB; shown only when user enables the setting)
+  ["transitive",   "transitive"],
+  ["intransitive", "intransitive"],
+  ["reflexive",    "reflexive"],
+  ["impersonal",   "impersonal"],
+]);
 const DB_PATH = join(DATA_DIR, "lexiklar.db");
 const VERB_ENDINGS_FILE = join(DATA_DIR, "rules", "verb-endings.json");
 
@@ -937,11 +985,25 @@ function main(): void {
       delete enriched.gloss_en_model;
       delete enriched.gloss_en_full_model;
       delete enriched.synonyms_en_model;
+      delete enriched.etymology_number;
+      delete enriched.umlaut_in_comparison;
+      if (Array.isArray(enriched.sounds)) {
+        for (const s of enriched.sounds as Record<string, unknown>[]) {
+          delete s.tags;
+        }
+      }
       if (Array.isArray(enriched.senses)) {
         for (const s of enriched.senses as Record<string, unknown>[]) {
           delete s.gloss_en_model;
           delete s.gloss_en_full_model;
           delete s.synonyms_en_model;
+          // Keep only display tags; normalise canonical names (e.g. "South-German" → "South German").
+          if (Array.isArray(s.tags)) {
+            const kept = [...new Set(
+              (s.tags as string[]).map(t => DISPLAY_TAGS.get(t)).filter((t): t is string => t !== undefined)
+            )];
+            if (kept.length > 0) s.tags = kept; else delete s.tags;
+          }
         }
       }
 

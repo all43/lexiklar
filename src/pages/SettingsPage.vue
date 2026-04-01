@@ -35,6 +35,16 @@
     <f7-block-footer class="padding-horizontal">
       {{ t('settings.condensedGrammarFooter') }}
     </f7-block-footer>
+    <f7-list inset strong-ios outline-ios>
+      <f7-list-item :title="t('settings.showGrammarTags')">
+        <template #after>
+          <f7-toggle :checked="showGrammarTags" @toggle:change="setShowGrammarTags" />
+        </template>
+      </f7-list-item>
+    </f7-list>
+    <f7-block-footer class="padding-horizontal">
+      {{ t('settings.showGrammarTagsFooter') }}
+    </f7-block-footer>
 
     <f7-block-title>{{ t('settings.searchBarPosition') }}</f7-block-title>
     <f7-list inset strong-ios outline-ios>
@@ -139,7 +149,7 @@ import { ref, computed, watch, onMounted } from "vue";
 import { f7 } from "framework7-vue";
 import { applyTheme, THEME_KEY, type ThemeValue } from "../js/theme.js";
 import { t, setLocale, getLocale, LANGUAGE_KEY, type LanguagePreference } from "../js/i18n.js";
-import { getCached, setItem, removeItem, SHOW_ARTICLES_KEY, CONDENSED_GRAMMAR_KEY, SEARCH_BAR_POSITION_KEY, AUTO_CHECK_UPDATES_KEY, type SearchBarPosition } from "../utils/storage.js";
+import { getCached, setItem, removeItem, SHOW_ARTICLES_KEY, CONDENSED_GRAMMAR_KEY, SEARCH_BAR_POSITION_KEY, AUTO_CHECK_UPDATES_KEY, SHOW_GRAMMAR_TAGS_KEY, type SearchBarPosition } from "../utils/storage.js";
 import { Capacitor } from "@capacitor/core";
 import { getDbVersion, checkForUpdates, applyUpdate as applyDbUpdate, cacheClear, cacheSize, type UpdateInfo } from "../utils/db.js";
 import { dbReady, dbDownloadNeeded } from "../utils/db-update-state.js";
@@ -170,6 +180,7 @@ const language = ref(getLocale());
 const searchBarPosition = ref<SearchBarPosition>((getCached(SEARCH_BAR_POSITION_KEY) || "auto") as SearchBarPosition);
 const showArticles = ref(getCached(SHOW_ARTICLES_KEY) !== "0");
 const condensedGrammar = ref(getCached(CONDENSED_GRAMMAR_KEY) === "1");
+const showGrammarTags = ref(getCached(SHOW_GRAMMAR_TAGS_KEY) === "1");
 const autoCheckUpdates = ref(getCached(AUTO_CHECK_UPDATES_KEY) !== "0");
 const dbVersion = ref<string | null>(null);
 const dbBuiltAt = ref<string | null>(null);
@@ -307,6 +318,11 @@ function setShowArticles(value: boolean) {
 function setCondensedGrammar(value: boolean) {
   condensedGrammar.value = value;
   setItem(CONDENSED_GRAMMAR_KEY, value ? "1" : "0");
+}
+
+function setShowGrammarTags(value: boolean) {
+  showGrammarTags.value = value;
+  setItem(SHOW_GRAMMAR_TAGS_KEY, value ? "1" : "0");
 }
 
 function setSearchBarPosition(value: SearchBarPosition) {

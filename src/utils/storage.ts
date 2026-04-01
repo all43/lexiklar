@@ -22,6 +22,7 @@ export const CONDENSED_GRAMMAR_KEY = "lexiklar_condensed_grammar";
 export const SEARCH_BAR_POSITION_KEY = "lexiklar_search_position";
 export const AUTO_CHECK_UPDATES_KEY = "lexiklar_auto_check_updates";
 export const LAST_UPDATE_CHECK_KEY = "lexiklar_last_update_check";
+export const SHOW_GRAMMAR_TAGS_KEY = "lexiklar_show_grammar_tags";
 
 export type SearchBarPosition = "auto" | "top" | "bottom";
 
@@ -38,6 +39,7 @@ const KEYS = [
   CONDENSED_GRAMMAR_KEY,
   AUTO_CHECK_UPDATES_KEY,
   LAST_UPDATE_CHECK_KEY,
+  SHOW_GRAMMAR_TAGS_KEY,
 ] as const;
 
 /**
