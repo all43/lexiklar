@@ -106,13 +106,15 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "use",
-        "this_note": "use — slightly more formal, apply for a purpose",
-        "other": "benutzen",
-        "other_note": "use — everyday, hands-on use"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "use — slightly more formal, apply for a purpose",
+      "pairs": [
+        {
+          "en_word": "use",
+          "other": "benutzen",
+          "other_note": "use — everyday, hands-on use"
+        }
+      ]
+    }
   }
 }

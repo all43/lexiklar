@@ -134,13 +134,15 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "say / tell",
-        "this_note": "tell — a story or narrative",
-        "other": "sagen",
-        "other_note": "say — a statement or fact"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "tell — a story or narrative",
+      "pairs": [
+        {
+          "en_word": "say / tell",
+          "other": "sagen",
+          "other_note": "say — a statement or fact"
+        }
+      ]
+    }
   }
 }

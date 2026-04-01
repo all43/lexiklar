@@ -253,13 +253,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "lie / lay",
-        "this_note": "lay — put something down",
-        "other": "liegen",
-        "other_note": "be lying — state or position"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "lay — put something down",
+      "pairs": [
+        {
+          "en_word": "lie / lay",
+          "other": "liegen",
+          "other_note": "be lying — state or position"
+        }
+      ]
+    }
   }
 }

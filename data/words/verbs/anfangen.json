@@ -136,13 +136,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "begin / start",
-        "this_note": "start — colloquial",
-        "other": "beginnen",
-        "other_note": "begin — formal or written"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "start — colloquial",
+      "pairs": [
+        {
+          "en_word": "begin / start",
+          "other": "beginnen",
+          "other_note": "begin — formal or written"
+        }
+      ]
+    }
   }
 }

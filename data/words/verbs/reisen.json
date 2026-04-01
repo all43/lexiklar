@@ -96,13 +96,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "travel / go",
-        "this_note": "travel — journey to a destination, implies distance",
-        "other": "fahren",
-        "other_note": "go by vehicle — a specific journey"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "travel — journey to a destination, implies distance",
+      "pairs": [
+        {
+          "en_word": "travel / go",
+          "other": "fahren",
+          "other_note": "go by vehicle — a specific journey"
+        }
+      ]
+    }
   }
 }

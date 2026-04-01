@@ -338,13 +338,15 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "sit / seat",
-        "this_note": "seat or place — put someone/something",
-        "other": "sitzen",
-        "other_note": "be sitting — state or position"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "seat or place — put someone/something",
+      "pairs": [
+        {
+          "en_word": "sit / seat",
+          "other": "sitzen",
+          "other_note": "be sitting — state or position"
+        }
+      ]
+    }
   }
 }

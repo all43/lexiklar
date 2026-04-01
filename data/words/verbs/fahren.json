@@ -531,13 +531,15 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "travel / go",
-        "this_note": "go by vehicle — a specific journey",
-        "other": "reisen",
-        "other_note": "travel — journey to a destination, implies distance"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "go by vehicle — a specific journey",
+      "pairs": [
+        {
+          "en_word": "travel / go",
+          "other": "reisen",
+          "other_note": "travel — journey to a destination, implies distance"
+        }
+      ]
+    }
   }
 }

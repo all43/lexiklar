@@ -280,19 +280,20 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "wear / put on",
-        "this_note": "put on — get dressed (action)",
-        "other": "tragen",
-        "other_note": "wear — be wearing (state)"
-      },
-      {
-        "en_word": "put on / take off",
-        "this_note": "put on — get dressed",
-        "other": "ausziehen",
-        "other_note": "take off — undress"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "put on — get dressed",
+      "pairs": [
+        {
+          "en_word": "wear / put on",
+          "other": "tragen",
+          "other_note": "wear — be wearing (state)"
+        },
+        {
+          "en_word": "put on / take off",
+          "other": "ausziehen",
+          "other_note": "take off — undress"
+        }
+      ]
+    }
   }
 }

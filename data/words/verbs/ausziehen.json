@@ -320,13 +320,15 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "put on / take off",
-        "this_note": "take off — undress",
-        "other": "anziehen",
-        "other_note": "put on — get dressed"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "take off — undress",
+      "pairs": [
+        {
+          "en_word": "put on / take off",
+          "other": "anziehen",
+          "other_note": "put on — get dressed"
+        }
+      ]
+    }
   }
 }

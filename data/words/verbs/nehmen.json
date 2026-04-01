@@ -182,13 +182,15 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "take / bring",
-        "this_note": "take — move away from somewhere",
-        "other": "bringen",
-        "other_note": "bring — carry toward a destination"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "take — move away from somewhere",
+      "pairs": [
+        {
+          "en_word": "take / bring",
+          "other": "bringen",
+          "other_note": "bring — carry toward a destination"
+        }
+      ]
+    }
   }
 }

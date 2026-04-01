@@ -239,13 +239,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "meet",
-        "this_note": "meet — by arrangement (sich treffen)",
-        "other": "begegnen",
-        "other_note": "encounter — by chance (+ dat)"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "meet — by arrangement (sich treffen)",
+      "pairs": [
+        {
+          "en_word": "meet",
+          "other": "begegnen",
+          "other_note": "encounter — by chance (+ dat)"
+        }
+      ]
+    }
   }
 }

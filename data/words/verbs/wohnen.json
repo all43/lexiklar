@@ -164,13 +164,15 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "live",
-        "this_note": "live — reside, where your home is",
-        "other": "leben",
-        "other_note": "live — be alive, how or where you spend your life"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "live — reside, where your home is",
+      "pairs": [
+        {
+          "en_word": "live",
+          "other": "leben",
+          "other_note": "live — be alive, how or where you spend your life"
+        }
+      ]
+    }
   }
 }

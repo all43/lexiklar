@@ -279,16 +279,16 @@
 
       <!-- False Friend -->
       <FalseFriend
-        v-if="(word as any).false_friend_en"
-        :ff="(word as any).false_friend_en"
+        v-if="word.false_friend_en"
+        :ff="word.false_friend_en!"
         :current-word="word.word"
         @navigate="(lemma: string) => searchWord(lemma, { fallback: false })"
       />
 
       <!-- Confusable Pairs -->
       <ConfusablePair
-        v-if="(word as any).confusable_pairs?.length"
-        :pairs="(word as any).confusable_pairs"
+        v-if="word.confusable_pairs"
+        :confusable="word.confusable_pairs!"
         :current-word="word.word"
         @navigate="(lemma: string) => searchWord(lemma, { fallback: false })"
       />

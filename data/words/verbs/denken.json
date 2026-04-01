@@ -213,13 +213,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "think",
-        "this_note": "think — general cognitive process",
-        "other": "meinen",
-        "other_note": "think — express an opinion or mean something"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "think — general cognitive process",
+      "pairs": [
+        {
+          "en_word": "think",
+          "other": "meinen",
+          "other_note": "think — express an opinion or mean something"
+        }
+      ]
+    }
   }
 }

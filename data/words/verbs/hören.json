@@ -281,13 +281,15 @@
   },
   "_overrides": {
     "past_participle": "gehört",
-    "confusable_pairs": [
-      {
-        "en_word": "hear / listen",
-        "this_note": "hear — passive, involuntary",
-        "other": "zuhören",
-        "other_note": "listen actively (+ dat)"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "hear — passive, involuntary",
+      "pairs": [
+        {
+          "en_word": "hear / listen",
+          "other": "zuhören",
+          "other_note": "listen actively (+ dat)"
+        }
+      ]
+    }
   }
 }

@@ -146,13 +146,15 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "love / like",
-        "this_note": "love — strong feeling",
-        "other": "mögen",
-        "other_note": "like — general preference"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "love — strong feeling",
+      "pairs": [
+        {
+          "en_word": "love / like",
+          "other": "mögen",
+          "other_note": "like — general preference"
+        }
+      ]
+    }
   }
 }

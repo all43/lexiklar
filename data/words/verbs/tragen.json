@@ -470,13 +470,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "wear / put on",
-        "this_note": "wear — be wearing (state)",
-        "other": "anziehen",
-        "other_note": "put on — get dressed (action)"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "wear — be wearing (state)",
+      "pairs": [
+        {
+          "en_word": "wear / put on",
+          "other": "anziehen",
+          "other_note": "put on — get dressed (action)"
+        }
+      ]
+    }
   }
 }

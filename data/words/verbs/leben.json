@@ -206,13 +206,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "live",
-        "this_note": "live — be alive, how or where you spend your life",
-        "other": "wohnen",
-        "other_note": "live — reside, where your home is"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "live — be alive, how or where you spend your life",
+      "pairs": [
+        {
+          "en_word": "live",
+          "other": "wohnen",
+          "other_note": "live — reside, where your home is"
+        }
+      ]
+    }
   }
 }

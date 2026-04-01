@@ -248,13 +248,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "stop",
-        "this_note": "stop moving — a vehicle or person",
-        "other": "aufhören",
-        "other_note": "stop doing an activity"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "stop moving — a vehicle or person",
+      "pairs": [
+        {
+          "en_word": "stop",
+          "other": "aufhören",
+          "other_note": "stop doing an activity"
+        }
+      ]
+    }
   }
 }

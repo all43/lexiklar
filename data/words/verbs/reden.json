@@ -132,13 +132,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "speak / talk",
-        "this_note": "talk — colloquial, implies back-and-forth",
-        "other": "sprechen",
-        "other_note": "speak — neutral or formal"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "talk — colloquial, implies back-and-forth",
+      "pairs": [
+        {
+          "en_word": "speak / talk",
+          "other": "sprechen",
+          "other_note": "speak — neutral or formal"
+        }
+      ]
+    }
   }
 }

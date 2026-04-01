@@ -225,20 +225,21 @@
         }
       ]
     },
-    "confusable_pairs": [
-      {
-        "en_word": "look / see",
-        "this_note": "look — deliberate, directed gaze",
-        "other": "sehen",
-        "other_note": "see — passive perception or notice"
-      },
-      {
-        "en_word": "look / watch",
-        "this_note": "look or watch — neutral, standard",
-        "other": "gucken",
-        "other_note": "look or watch — informal, colloquial"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "look — active, directed",
+      "pairs": [
+        {
+          "en_word": "look / see",
+          "other": "sehen",
+          "other_note": "see — passive perception or notice"
+        },
+        {
+          "en_word": "look / watch",
+          "other": "gucken",
+          "other_note": "look or watch — informal, colloquial"
+        }
+      ]
+    }
   },
   "false_friend_en": {
     "en_word": "show",

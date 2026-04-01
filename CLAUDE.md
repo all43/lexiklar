@@ -582,7 +582,20 @@ The transform step preserves manually-added data when re-running:
 - **`gloss_en` / `gloss_en_full` / `synonyms_en`** — LLM translations and curated English synonyms in senses, preserved by position-matching merge. Corresponding `*_model` fields (`gloss_en_model`, `gloss_en_full_model`, `synonyms_en_model`) are also preserved
 - **`data/examples/`** — existing entries with translations and annotations are preserved. Transform keeps the full example object when `translation` is truthy, so both `translation` and `annotations` survive re-generation.
 - **Transform write skip** — word files are not rewritten if content is identical (ignoring `generated_at`). Prevents spurious git churn on incremental re-runs.
-- **`_overrides`** (`WordOverrides` interface in `types/word.ts`) — manual corrections to Wiktionary source data. Applied last in `mergeWithExisting()`, after all other merges. Values in `_overrides` win over anything the pipeline produces. For nested objects (e.g. `principal_parts`), merges one level deep; for scalars and arrays, replaces entirely. Never cleared by transform. Special fields read only by `build-index.ts` (not transform): `first_sense` (string — move this gloss_en to position 0), `sense_order` (string array — full custom display order), `false_friend_en` (object — curated false-friend annotation for English speakers; promoted to top-level DB blob before `_overrides` is stripped; see `FalseFriendEn` in `types/word.ts`). Example: `"_overrides": { "past_participle": "gesehen" }` or `"_overrides": { "first_sense": "with" }`.
+- **`_overrides`** (`WordOverrides` interface in `types/word.ts`) — manual corrections to Wiktionary source data. Applied last in `mergeWithExisting()`, after all other merges. Values in `_overrides` win over anything the pipeline produces. For nested objects (e.g. `principal_parts`), merges one level deep; for scalars and arrays, replaces entirely. Never cleared by transform. Special fields read only by `build-index.ts` (not transform): `first_sense` (string — move this gloss_en to position 0), `sense_order` (string array — full custom display order), `false_friend_en` (object — curated false-friend annotation for English speakers; promoted to top-level DB blob before `_overrides` is stripped; see `FalseFriendEn` in `types/word.ts`), `confusable_pairs` (object — commonly confused German words for learners; promoted to top-level DB blob; see `ConfusablePairs` in `types/word.ts`; 56 verbs annotated). Example: `"_overrides": { "past_participle": "gesehen" }` or `"_overrides": { "first_sense": "with" }`.
+
+`confusable_pairs` schema — `this_note` lives at the top level (same word, same meaning regardless of counterpart); each counterpart entry has `en_word`, `other`, `other_note`:
+```json
+"_overrides": {
+  "confusable_pairs": {
+    "this_note": "bring — carry toward the destination",
+    "pairs": [
+      { "en_word": "bring / fetch", "other": "holen", "other_note": "go and retrieve" },
+      { "en_word": "take / bring", "other": "nehmen", "other_note": "move away from somewhere" }
+    ]
+  }
+}
+```
 
 The merge function (`mergeWithExisting()` in transform.ts) reads the existing file before overwriting, and copies over fields that the transform step doesn't own.
 

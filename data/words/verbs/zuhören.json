@@ -55,13 +55,15 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "hear / listen",
-        "this_note": "listen actively (+ dat)",
-        "other": "hören",
-        "other_note": "hear — passive, involuntary"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "listen actively (+ dat)",
+      "pairs": [
+        {
+          "en_word": "hear / listen",
+          "other": "hören",
+          "other_note": "hear — passive, involuntary"
+        }
+      ]
+    }
   }
 }

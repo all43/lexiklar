@@ -94,13 +94,15 @@
   },
   "zipf": 2.9,
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "lend / borrow",
-        "this_note": "informal synonym of leihen, same dual direction",
-        "other": "leihen",
-        "other_note": "lend or borrow (direction from context)"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "informal synonym of leihen, same dual direction",
+      "pairs": [
+        {
+          "en_word": "lend / borrow",
+          "other": "leihen",
+          "other_note": "lend or borrow (direction from context)"
+        }
+      ]
+    }
   }
 }

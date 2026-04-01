@@ -180,13 +180,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "know",
-        "this_note": "know a fact or information",
-        "other": "kennen",
-        "other_note": "know by acquaintance — people, places, things"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "know a fact or information",
+      "pairs": [
+        {
+          "en_word": "know",
+          "other": "kennen",
+          "other_note": "know by acquaintance — people, places, things"
+        }
+      ]
+    }
   }
 }

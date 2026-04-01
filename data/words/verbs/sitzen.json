@@ -370,13 +370,15 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "sit / seat",
-        "this_note": "be sitting — state or position",
-        "other": "setzen",
-        "other_note": "seat or place — put someone/something"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "be sitting — state or position",
+      "pairs": [
+        {
+          "en_word": "sit / seat",
+          "other": "setzen",
+          "other_note": "seat or place — put someone/something"
+        }
+      ]
+    }
   }
 }

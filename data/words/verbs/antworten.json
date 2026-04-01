@@ -99,13 +99,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "answer",
-        "this_note": "answer — intransitive (jdm antworten)",
-        "other": "beantworten",
-        "other_note": "answer — transitive (etw. beantworten)"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "answer — intransitive (jdm antworten)",
+      "pairs": [
+        {
+          "en_word": "answer",
+          "other": "beantworten",
+          "other_note": "answer — transitive (etw. beantworten)"
+        }
+      ]
+    }
   }
 }

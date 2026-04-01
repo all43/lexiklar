@@ -52,15 +52,19 @@ export interface WordAntonym {
   negative?: boolean;
 }
 
-export interface ConfusablePair {
+export interface ConfusablePairEntry {
   /** Shared English translation that causes confusion (e.g. "remember") */
   en_word: string;
-  /** Short usage note for THIS word (e.g. "recall from the past") */
-  this_note: string;
   /** Lemma of the other confusable word (e.g. "merken") */
   other: string;
   /** Short usage note for the other word (e.g. "memorize for future use") */
   other_note: string;
+}
+
+export interface ConfusablePairs {
+  /** Short usage note for THIS word — shared across all pairs (e.g. "recall from the past") */
+  this_note: string;
+  pairs: ConfusablePairEntry[];
 }
 
 export interface WordOverrides {
@@ -71,7 +75,7 @@ export interface WordOverrides {
   /** False-friend annotation for English speakers (promoted to top-level by build-index) */
   false_friend_en?: FalseFriendEn;
   /** German–German confusable pairs (promoted to top-level by build-index) */
-  confusable_pairs?: ConfusablePair[];
+  confusable_pairs?: ConfusablePairs;
   /** Curated antonym for adjective comparison scale (promoted to top-level by build-index) */
   antonym?: WordAntonym;
   /** Any other field overrides (applied by transform's mergeWithExisting) */
@@ -183,6 +187,10 @@ export interface WordBase {
   _proofread?: ProofreadFlags;
   _overrides?: WordOverrides;
   zipf?: number;
+  /** Promoted from _overrides by build-index; present only in DB blobs */
+  false_friend_en?: FalseFriendEn;
+  /** Promoted from _overrides by build-index; present only in DB blobs */
+  confusable_pairs?: ConfusablePairs;
   // Runtime fields added by build-index.ts (stored in SQLite data blob)
   frequency?: number;
   oscillating_verb?: boolean;

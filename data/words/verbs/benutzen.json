@@ -94,13 +94,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "use",
-        "this_note": "use — everyday, hands-on use",
-        "other": "verwenden",
-        "other_note": "use — slightly more formal, apply for a purpose"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "use — everyday, hands-on use",
+      "pairs": [
+        {
+          "en_word": "use",
+          "other": "verwenden",
+          "other_note": "use — slightly more formal, apply for a purpose"
+        }
+      ]
+    }
   }
 }

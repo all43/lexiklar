@@ -98,13 +98,15 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "answer",
-        "this_note": "answer — transitive (etw. beantworten)",
-        "other": "antworten",
-        "other_note": "answer — intransitive (jdm antworten)"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "answer — transitive (etw. beantworten)",
+      "pairs": [
+        {
+          "en_word": "answer",
+          "other": "antworten",
+          "other_note": "answer — intransitive (jdm antworten)"
+        }
+      ]
+    }
   }
 }

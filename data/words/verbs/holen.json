@@ -211,13 +211,15 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "bring / fetch",
-        "this_note": "fetch — go and retrieve",
-        "other": "bringen",
-        "other_note": "bring — carry toward the destination"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "fetch — go and retrieve",
+      "pairs": [
+        {
+          "en_word": "bring / fetch",
+          "other": "bringen",
+          "other_note": "bring — carry toward the destination"
+        }
+      ]
+    }
   }
 }

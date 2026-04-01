@@ -209,13 +209,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "study / learn",
-        "this_note": "learn or study at any level",
-        "other": "studieren",
-        "other_note": "study at university"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "learn or study at any level",
+      "pairs": [
+        {
+          "en_word": "study / learn",
+          "other": "studieren",
+          "other_note": "study at university"
+        }
+      ]
+    }
   }
 }

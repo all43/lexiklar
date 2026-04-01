@@ -334,13 +334,15 @@
     "synonyms_en": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "stand / place",
-        "this_note": "place upright — put something standing",
-        "other": "stehen",
-        "other_note": "be standing — state or position"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "place upright — put something standing",
+      "pairs": [
+        {
+          "en_word": "stand / place",
+          "other": "stehen",
+          "other_note": "be standing — state or position"
+        }
+      ]
+    }
   }
 }

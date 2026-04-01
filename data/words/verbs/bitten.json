@@ -193,13 +193,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "ask",
-        "this_note": "ask for something, make a request",
-        "other": "fragen",
-        "other_note": "ask a question"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "ask for something, make a request",
+      "pairs": [
+        {
+          "en_word": "ask",
+          "other": "fragen",
+          "other_note": "ask a question"
+        }
+      ]
+    }
   }
 }

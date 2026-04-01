@@ -187,13 +187,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "say / tell",
-        "this_note": "say — a statement or fact",
-        "other": "erzählen",
-        "other_note": "tell — a story or narrative"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "say — a statement or fact",
+      "pairs": [
+        {
+          "en_word": "say / tell",
+          "other": "erzählen",
+          "other_note": "tell — a story or narrative"
+        }
+      ]
+    }
   }
 }

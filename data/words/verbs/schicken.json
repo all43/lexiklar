@@ -213,13 +213,15 @@
     "gloss_en_full": true
   },
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "send",
-        "this_note": "send — everyday usage",
-        "other": "senden",
-        "other_note": "send — formal or technical; also broadcast"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "send — everyday usage",
+      "pairs": [
+        {
+          "en_word": "send",
+          "other": "senden",
+          "other_note": "send — formal or technical; also broadcast"
+        }
+      ]
+    }
   }
 }

@@ -442,13 +442,15 @@
   },
   "_overrides": {
     "past_participle": "gelassen",
-    "confusable_pairs": [
-      {
-        "en_word": "leave / let",
-        "this_note": "let, allow; leave something as-is",
-        "other": "verlassen",
-        "other_note": "leave — depart from a place or person"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "let, allow; leave something as-is",
+      "pairs": [
+        {
+          "en_word": "leave / let",
+          "other": "verlassen",
+          "other_note": "leave — depart from a place or person"
+        }
+      ]
+    }
   }
 }

@@ -1,37 +1,47 @@
 <template>
   <f7-block class="confusable-block">
-    <template v-for="(pair, i) in pairs" :key="i">
-      <div :class="['confusable-header', i > 0 && 'confusable-header--extra']">
-        <span class="confusable-icon">↔</span>
-        <span class="confusable-title">{{ t('word.confusableTitle') }}</span>
-        <span class="confusable-en-word">»{{ pair.en_word }}«</span>
-      </div>
-      <div class="confusable-row">
-        <span class="confusable-word--current">{{ currentWord }}</span>
-        <span class="confusable-sep">—</span>
-        <span class="confusable-note">{{ pair.this_note }}</span>
-      </div>
-      <div class="confusable-row">
-        <span class="confusable-link" @click="$emit('navigate', pair.other)">{{ pair.other }}</span>
-        <span class="confusable-sep">—</span>
-        <span class="confusable-note">{{ pair.other_note }}</span>
-      </div>
-    </template>
+    <div class="confusable-header">
+      <span class="confusable-icon">↔</span>
+      <span class="confusable-title">{{ t('word.confusableTitle') }}</span>
+      <span class="confusable-en-word">»{{ combinedEnWords }}«</span>
+    </div>
+    <div class="confusable-row">
+      <span class="confusable-word--current">{{ currentWord }}</span>
+      <span class="confusable-sep">—</span>
+      <span class="confusable-note">{{ confusable.this_note }}</span>
+    </div>
+    <div v-for="pair in confusable.pairs" :key="pair.other" class="confusable-row">
+      <span class="confusable-link" @click="$emit('navigate', pair.other)">{{ pair.other }}</span>
+      <span class="confusable-sep">—</span>
+      <span class="confusable-note">{{ pair.other_note }}</span>
+    </div>
   </f7-block>
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
 import { t } from "../js/i18n.js";
-import type { ConfusablePair } from "../../types/word.js";
+import type { ConfusablePairs } from "../../types/word.js";
 
-defineProps<{
-  pairs: ConfusablePair[];
+const props = defineProps<{
+  confusable: ConfusablePairs;
   currentWord: string;
 }>();
 
 defineEmits<{
   navigate: [lemma: string];
 }>();
+
+const combinedEnWords = computed(() => {
+  const seen = new Set<string>();
+  const terms: string[] = [];
+  for (const pair of props.confusable.pairs) {
+    for (const term of pair.en_word.split(" / ")) {
+      if (!seen.has(term)) { seen.add(term); terms.push(term); }
+    }
+  }
+  return terms.join(" / ");
+});
 </script>
 
 <style scoped>
@@ -45,9 +55,6 @@ defineEmits<{
   align-items: baseline;
   gap: 0.4em;
   margin-bottom: 0.4em;
-}
-.confusable-header--extra {
-  margin-top: 0.6em;
 }
 .confusable-icon {
   color: var(--f7-theme-color);

@@ -77,13 +77,15 @@
   },
   "zipf": 4.07,
   "_overrides": {
-    "confusable_pairs": [
-      {
-        "en_word": "meet",
-        "this_note": "encounter — by chance (+ dat)",
-        "other": "treffen",
-        "other_note": "meet — by arrangement (sich treffen)"
-      }
-    ]
+    "confusable_pairs": {
+      "this_note": "encounter — by chance (+ dat)",
+      "pairs": [
+        {
+          "en_word": "meet",
+          "other": "treffen",
+          "other_note": "meet — by arrangement (sich treffen)"
+        }
+      ]
+    }
   }
 }
