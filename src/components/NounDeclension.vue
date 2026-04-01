@@ -45,14 +45,14 @@
             <template v-if="isNDeclension && nDeclEnding(c.key)">
               <span class="decl-stem">{{ nDeclStem(c.key) }}</span><span class="decl-ending">{{ nDeclEnding(c.key) }}</span>
             </template>
-            <template v-else>{{ word.case_forms.singular[c.key] || '—' }}</template>
+            <template v-else>{{ [word.case_forms.singular[c.key], ...(word.case_forms_alt?.singular?.[c.key] ?? [])].filter(Boolean).join(' / ') || '—' }}</template>
           </td>
           <td class="decl-form" :class="{ 'decl-form--dim': word.is_singular_only }">
             <span v-if="hasPlural" class="decl-article decl-article--plural">{{ pluralArticles[c.key] }}</span>
             <template v-if="hasPlural && umlautSplit(c.key)">
               {{ umlautSplit(c.key)!.before }}<span class="decl-umlaut">{{ umlautSplit(c.key)!.umlaut }}</span>{{ umlautSplit(c.key)!.after }}
             </template>
-            <span v-else-if="hasPlural">{{ word.case_forms.plural[c.key] || '—' }}</span>
+            <span v-else-if="hasPlural">{{ [word.case_forms.plural[c.key], ...(word.case_forms_alt?.plural?.[c.key] ?? [])].filter(Boolean).join(' / ') || '—' }}</span>
             <span v-else class="decl-no-plural">—</span>
           </td>
         </tr>

@@ -206,6 +206,7 @@ import { dbReady, dbDownloadNeeded, dbDownloadSize, swUpdatePending } from "../u
 interface SearchResultWithForm extends SearchResult {
   matchedForm?: string;
   articleMismatch?: string; // the wrong article the user typed (e.g. "der")
+  articleCorrect?: string;  // the correct article for the matched form (may differ from singular gender)
   index?: number;
 }
 
@@ -341,9 +342,9 @@ function itemFooter(item: SearchResultWithForm): string {
   if (item.matchedForm && item.matchedForm.toLowerCase() !== displayTitle?.toLowerCase()) {
     return `\u2190 ${item.matchedForm}`;
   }
-  if (item.articleMismatch && item.gender) {
-    const correct = item.gender === "M" ? "der" : item.gender === "F" ? "die" : "das";
-    return t("search.articleMismatch", { wrong: item.articleMismatch, correct });
+  if (item.articleMismatch) {
+    const correct = item.articleCorrect ?? (item.gender === "M" ? "der" : item.gender === "F" ? "die" : item.gender === "N" ? "das" : undefined);
+    if (correct) return t("search.articleMismatch", { wrong: item.articleMismatch, correct });
   }
   return "";
 }
@@ -392,14 +393,15 @@ async function search(q: string, gen: number) {
   const artInfo = stripArticle(q);
   const amStem = qLower.startsWith("am ") ? q.slice(3).trim() : null;
 
-  const searches: [Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>] = [
+  const searches: [Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>, Promise<SearchResult[]>] = [
     searchByWordForm(q),
     searchByLemma(q),
     searchByGlossEn(q),
     artInfo ? searchByLemma(artInfo.remainder) : Promise.resolve([]),
     amStem ? searchByWordForm(amStem) : Promise.resolve([]),
+    artInfo ? searchByWordForm(artInfo.remainder) : Promise.resolve([]),
   ];
-  const [formHits, lemmaHits, enHits, artLemmaHits, amFormHits] = await Promise.all(searches);
+  const [formHits, lemmaHits, enHits, artLemmaHits, amFormHits, artFormHits] = await Promise.all(searches);
 
   const seen = new Set<string>();
   const res: SearchResultWithForm[] = [];
@@ -432,6 +434,15 @@ async function search(q: string, gen: number) {
     else enRest.push(r);
   }
 
+  // Genitive articles where the singular form almost always differs from the nominative
+  // (94%+ of M/N nouns add -s/-es in genitive). Typing "des Tisch" with the nominative
+  // form is usually wrong, so suggest the canonical nominative article instead.
+  const GENITIVE_ARTICLES = new Set(["des", "eines"]);
+  // Accusative articles: acc = nom for 96% of nouns, but n-declension nouns differ.
+  const ACCUSATIVE_ARTICLES = new Set(["den", "einen"]);
+  // Dative articles: dat = nom for 94% of nouns, but n-declension nouns differ.
+  const DATIVE_ARTICLES = new Set(["dem", "einem"]);
+
   // Article-stripped results: gender-matching first, then mismatching
   const artMatch: SearchResultWithForm[] = [];
   const artMismatch: SearchResultWithForm[] = [];
@@ -442,9 +453,56 @@ async function search(q: string, gen: number) {
         ? artInfo.genders.includes(r.gender) || (artInfo.article === "die" && r.pluralDominant)
         : false;
       if (genderMatches) {
-        artMatch.push(r);
+        // For n-declension nouns (accForm set), acc/dat/gen all differ from nominative —
+        // correct any non-nominative article typed with the lemma form.
+        const isNonNomArticle =
+          GENITIVE_ARTICLES.has(artInfo.article) ||
+          (r.accForm != null && (ACCUSATIVE_ARTICLES.has(artInfo.article) || DATIVE_ARTICLES.has(artInfo.article)));
+        if (isNonNomArticle) {
+          const correctArticle = r.gender === "M" ? "der" : r.gender === "F" ? "die" : "das";
+          artMismatch.push({ ...r, articleMismatch: artInfo.article, articleCorrect: correctArticle });
+        } else {
+          artMatch.push(r);
+        }
       } else {
         artMismatch.push({ ...r, articleMismatch: artInfo.article });
+      }
+    }
+  }
+  if (artInfo && artFormHits.length) {
+    for (const r of artFormHits) {
+      if (seen.has(r.file)) continue;
+      const remainderLower = artInfo.remainder.toLowerCase();
+      const nomPl = r.pluralForm?.toLowerCase() ?? null;
+      // Dative plural = nominative plural + "n", unless it already ends in -n or -s (then dat = nom)
+      const datPl = nomPl ? ((!nomPl.endsWith("n") && !nomPl.endsWith("s")) ? nomPl + "n" : nomPl) : null;
+
+      // Which plural case does the searched form represent? (independent of which article was typed)
+      const isNomAccPl = nomPl != null && remainderLower === nomPl;  // article: "die" for all genders
+      const isDatPl    = datPl != null && remainderLower === datPl;  // article: "den" for all genders (may equal isNomAccPl)
+      // Genitive plural typically has the same form as nominative plural for most German nouns
+      const isGenPl = isNomAccPl;                                    // article: "der"
+
+      // Is the typed article correct for this plural form?
+      const articleValid =
+        (isNomAccPl && artInfo.article === "die") ||
+        (isDatPl    && artInfo.article === "den") ||
+        (isGenPl    && artInfo.article === "der") ||
+        (artInfo.article === "die" && r.pluralDominant);
+
+      const isAnyPl = isNomAccPl || isDatPl;
+      const genderMatches = articleValid ||
+        (!isAnyPl && r.gender ? artInfo.genders.includes(r.gender) : false);
+
+      if (genderMatches) {
+        artMatch.push(r);
+      } else if (isAnyPl) {
+        // Plural form but wrong article — correct article depends on the form shape, not what was typed
+        const correctArticle = (isDatPl && !isNomAccPl) ? "den" : "die";
+        artMismatch.push({ ...r, articleMismatch: artInfo.article, articleCorrect: correctArticle });
+      } else {
+        const correctArticle = r.gender === "M" ? "der" : r.gender === "F" ? "die" : r.gender === "N" ? "das" : undefined;
+        artMismatch.push({ ...r, articleMismatch: artInfo.article, articleCorrect: correctArticle });
       }
     }
   }

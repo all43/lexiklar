@@ -7,6 +7,7 @@ export type {
   GenderRule,
   CaseRow,
   CaseForms,
+  CaseFormsAlt,
   PersonForms,
   ImperativeForms,
   ConjugationTable,

@@ -25,6 +25,7 @@ import type {
   GenderRule,
   CaseRow,
   CaseForms,
+  CaseFormsAlt,
   ConjugationTable,
   VerbStems,
   FullDeclension,
@@ -801,21 +802,38 @@ interface NullableCaseRow {
 interface NullableCaseForms {
   singular: NullableCaseRow;
   plural: NullableCaseRow;
+  alt: {
+    singular: Partial<Record<keyof CaseRow, string[]>>;
+    plural: Partial<Record<keyof CaseRow, string[]>>;
+  };
 }
 
 function extractNounCaseForms(compact: WiktionaryForm[]): NullableCaseForms {
   const cases: NullableCaseForms = {
     singular: { nom: null, acc: null, dat: null, gen: null },
     plural: { nom: null, acc: null, dat: null, gen: null },
+    alt: { singular: {}, plural: {} },
   };
 
   for (const f of compact) {
+    // Strip embedded article prefixes: "(des) Niederländisch" → "Niederländisch"
+    // or "des Afrikaans'" → "Afrikaans'". Skip anything that still has spaces/brackets
+    // after stripping (numbered refs, formulas, full descriptions, etc.).
+    let form = f.form
+      .replace(/^\([^)]+\)\s*/, "")  // strip "(article) " prefix
+      .replace(/^(?:der|die|das|den|dem|des|ein|eine|einen|einem|einer|eines)\s+/i, ""); // strip "article " prefix
+    if (!form || /[ ()[\]]/.test(form)) continue;
+
     const tags = new Set(f.tags || []);
     for (const [tag, key] of Object.entries(CASE_TAGS)) {
       if (!tags.has(tag)) continue;
       const num: "singular" | "plural" = tags.has("plural") ? "plural" : "singular";
       if (!cases[num][key]) {
-        cases[num][key] = f.form;
+        cases[num][key] = form;
+      } else if (cases[num][key] !== form) {
+        const arr = cases.alt[num][key] ?? [];
+        if (!arr.includes(form)) arr.push(form);
+        cases.alt[num][key] = arr;
       }
     }
   }
@@ -927,7 +945,13 @@ function transformNoun(entry: WiktionaryEntry, posLabel: string = "noun"): Trans
         : null,
     plural_form: pluralForm,
     gender_rule: matchNounGenderRule(entry.word, gender, pluralForm),
-    case_forms: caseForms as unknown as CaseForms,
+    case_forms: { singular: caseForms.singular, plural: caseForms.plural } as unknown as CaseForms,
+    ...((Object.keys(caseForms.alt.singular).length > 0 || Object.keys(caseForms.alt.plural).length > 0) && {
+      case_forms_alt: {
+        ...(Object.keys(caseForms.alt.singular).length > 0 && { singular: caseForms.alt.singular }),
+        ...(Object.keys(caseForms.alt.plural).length > 0 && { plural: caseForms.alt.plural }),
+      } satisfies CaseFormsAlt,
+    }),
     senses: transformSenses(entry),
     sounds: extractSounds(entry),
   };
@@ -1849,7 +1873,12 @@ async function main(): Promise<void> {
   // with _proofread.annotations whose text_linked is otherwise frozen by build-index.
   const allTextLinkedRemaps: Array<{ oldRef: string; newRef: string }> = [];
 
-  for (const [, entries] of groups) {
+  // Global case-insensitive filename tracker — prevents two different words from
+  // writing to the same physical file on case-insensitive filesystems (e.g. macOS).
+  // Maps lowercased full path → the word+pos that first claimed it.
+  const globalPathsLower = new Map<string, string>();
+
+  for (const [groupKey, entries] of groups) {
     const needsDisambig = entries.length > 1;
     const usedDisambigs = new Set<string>();
 
@@ -2026,13 +2055,30 @@ async function main(): Promise<void> {
       // Determine file path
       const disambig = needsDisambig ? getDisambiguator(parsed, usedDisambigs) : null;
       if (disambig) usedDisambigs.add(disambig);
-      const filename =
+      let filename =
         sanitizeFilename(
           disambig ? `${parsed.word}_${disambig}` : parsed.word,
         ) + ".json";
       const posDir = SUPPORTED_POS[parsed.pos];
-      const relPath = join("words", posDir, filename);
-      const fullPath = join(DATA_DIR, relPath);
+      let relPath = join("words", posDir, filename);
+      let fullPath = join(DATA_DIR, relPath);
+
+      // Detect case-insensitive filename collision with a different word group
+      // (e.g. "TeX" and "Tex" on macOS case-insensitive filesystem).
+      // If the lowercased path was already claimed by a different group, append
+      // a disambiguator suffix derived from the first gloss.
+      {
+        const lowerPath = fullPath.toLowerCase();
+        const existingClaim = globalPathsLower.get(lowerPath);
+        if (existingClaim && existingClaim !== groupKey) {
+          const suffix = getDisambiguator(parsed);
+          filename = sanitizeFilename(`${disambig ? `${parsed.word}_${disambig}` : parsed.word}_${suffix}`) + ".json";
+          relPath = join("words", posDir, filename);
+          fullPath = join(DATA_DIR, relPath);
+          console.warn(`[case-collision] ${parsed.word}: renamed to ${filename} (conflicts with ${existingClaim})`);
+        }
+        globalPathsLower.set(fullPath.toLowerCase(), groupKey);
+      }
 
       groupWord = parsed.word;
       groupPosDir = posDir;
@@ -2063,11 +2109,37 @@ async function main(): Promise<void> {
           newSensesMap,
           oldSiblings,
         );
-        if (crossFileMatches.length > 0) {
+        // Always update senses (even with 0 cross-file matches, the map was built)
+        for (const pw of pendingWrites) {
+          const merged = mergedSensesMap.get(pw.fileKey);
+          if (merged) pw.data.senses = merged;
+        }
+
+        // Drop orphans whose gloss now appears as a live sense in any sibling
+        // pending write — the translation lives in the right file (or already has
+        // its own translation), so the orphan entry is no longer needed.
+        if (pendingWrites.length > 1) {
+          const siblingGlosses = new Set<string>();
           for (const pw of pendingWrites) {
-            const merged = mergedSensesMap.get(pw.fileKey);
-            if (merged) pw.data.senses = merged;
+            for (const s of pw.data.senses ?? []) {
+              if (s.gloss) siblingGlosses.add(s.gloss);
+            }
           }
+          for (const pw of pendingWrites) {
+            const orphans = (pw.data as Record<string, unknown>)._orphaned_translations as OrphanEntry[] | undefined;
+            if (!orphans?.length) continue;
+            const kept = orphans.filter((o) => !siblingGlosses.has(o.gloss));
+            if (kept.length < orphans.length) {
+              if (kept.length === 0) {
+                delete (pw.data as Record<string, unknown>)._orphaned_translations;
+              } else {
+                (pw.data as Record<string, unknown>)._orphaned_translations = kept;
+              }
+            }
+          }
+        }
+
+        if (crossFileMatches.length > 0) {
 
           // Build text_linked remaps: posDir/oldFile#oldIdx → posDir/newFile#newIdx
           // (1-based sense indices matching the [[word|posDir/file#N]] format)

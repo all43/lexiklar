@@ -69,6 +69,7 @@ function processSearchRow(row: Record<string, unknown>): SearchResult {
     frequency: (row.frequency as number) ?? null,
     pluralDominant: !!(row.plural_dominant as number),
     pluralForm: (row.plural_form as string) || null,
+    accForm: (row.acc_form as string) || null,
     superlative: (row.superlative as string) || null,
     file: row.file as string,
     glossEn: row.gloss_en ? JSON.parse(row.gloss_en as string) as string[] : [],
@@ -348,7 +349,7 @@ export async function initDb(): Promise<void> {
 
   // Step 4: Schema compatibility check — clears cache if columns were added/removed.
   // Bump MIN_SCHEMA_VERSION in sync with the schema_version value in build-index.ts.
-  const MIN_SCHEMA_VERSION = 3;
+  const MIN_SCHEMA_VERSION = 4;
   try {
     const rows = await query("SELECT value FROM meta WHERE key = 'schema_version'") as { value: string }[];
     const dbSchemaVersion = rows.length ? parseInt(rows[0].value, 10) : 0;
@@ -438,7 +439,7 @@ export async function getExamples(ids: string[]): Promise<Record<string, Example
 export async function searchByLemma(q: string): Promise<SearchResult[]> {
   const folded = foldUmlauts(q);
   const rows = await query(
-    `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en
+    `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, acc_form, file, gloss_en
      FROM words
      WHERE lemma LIKE ? COLLATE NOCASE
         OR lemma_folded LIKE ?
@@ -469,7 +470,7 @@ export async function searchByGlossEn(q: string): Promise<SearchResult[]> {
   const glossPattern = `%"${term}"%`;
   const rows = await query(
     `SELECT w.lemma, w.pos, w.gender, w.frequency,
-            w.plural_dominant, w.plural_form, w.file, w.gloss_en
+            w.plural_dominant, w.plural_form, w.acc_form, w.file, w.gloss_en
      FROM words w
      WHERE w.id IN (SELECT word_id FROM en_terms WHERE term LIKE ? ESCAPE '\\')
      ORDER BY
@@ -490,7 +491,9 @@ export async function searchByGlossEn(q: string): Promise<SearchResult[]> {
  */
 export async function searchByWordForm(q: string): Promise<SearchResult[]> {
   const rows = await query(
-    `SELECT w.lemma, w.pos, w.gender, w.frequency, w.superlative, w.file, w.gloss_en
+    `SELECT w.lemma, w.pos, w.gender, w.frequency, w.superlative, w.plural_dominant,
+            w.plural_form, w.acc_form,
+            w.file, w.gloss_en
      FROM word_forms wf
      JOIN words w ON w.id = wf.word_id
      WHERE wf.form = ? COLLATE NOCASE
@@ -539,7 +542,7 @@ export async function getRelatedWords(fileKeys: string[]): Promise<SearchResult[
   if (!fileKeys.length) return [];
   const placeholders = fileKeys.map(() => "?").join(",");
   const rows = await query(
-    `SELECT lemma, pos, gender, plural_dominant, plural_form, file, gloss_en FROM words WHERE file IN (${placeholders})`,
+    `SELECT lemma, pos, gender, plural_dominant, plural_form, acc_form, file, gloss_en FROM words WHERE file IN (${placeholders})`,
     fileKeys,
   );
   return rows.map(processSearchRow);
@@ -551,7 +554,7 @@ export async function getRelatedWords(fileKeys: string[]): Promise<SearchResult[
  */
 export async function getAllWords(): Promise<SearchResult[]> {
   const rows = await query(
-    `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en
+    `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, acc_form, file, gloss_en
      FROM words
      ORDER BY frequency ASC`,
   );
@@ -568,7 +571,7 @@ export async function searchPhrasesByWords(words: string[]): Promise<SearchResul
   const matchExprs = words.map(() => "((' ' || lower(lemma) || ' ') LIKE ? ESCAPE '\\')");
   const params = words.map(w => `% ${w.toLowerCase()} %`);
   const rows = await query(
-    `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en
+    `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, acc_form, file, gloss_en
      FROM words
      WHERE pos = 'PHRASE' AND (${matchExprs.join(" + ")}) >= 2
      ORDER BY CASE WHEN frequency IS NULL THEN 999999 ELSE frequency END
@@ -611,7 +614,7 @@ let _allLemmas: Record<string, unknown>[] | null = null;
 export async function getSuggestions(q: string): Promise<SearchResult[]> {
   if (!_allLemmas) {
     _allLemmas = await query(
-      `SELECT lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en FROM words`,
+      `SELECT lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, acc_form, file, gloss_en FROM words`,
     );
   }
 

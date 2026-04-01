@@ -197,6 +197,10 @@ function computeVersionHash(db: Database.Database): string {
     const r = row as { file: string; form: string };
     hash.update(r.file + ":" + r.form);
   }
+  // Include indexed columns not covered by the data blob hash (e.g. plural_form, superlative)
+  for (const row of db.prepare("SELECT file, COALESCE(plural_form,''), COALESCE(acc_form,''), COALESCE(superlative,'') FROM words ORDER BY file").all() as string[][]) {
+    hash.update(Object.values(row).join(":"));
+  }
   // Include schema version so column additions (e.g. superlative) invalidate the cache
   const cols = (db.prepare("PRAGMA table_info(words)").all() as { name: string }[]).map(r => r.name).join(",");
   hash.update("schema:" + cols);
@@ -582,6 +586,7 @@ function main(): void {
       frequency       INTEGER,
       plural_dominant INTEGER,
       plural_form     TEXT,
+      acc_form        TEXT,
       superlative     TEXT,
       comparative     TEXT,
       file            TEXT NOT NULL UNIQUE,
@@ -615,8 +620,8 @@ function main(): void {
   `);
 
   const insertWord = db.prepare<WordInsertParams>(`
-    INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, superlative, comparative, file, gloss_en, data, hash)
-    VALUES (@lemma, @lemma_folded, @pos, @gender, @frequency, @plural_dominant, @plural_form, @superlative, @comparative, @file, @gloss_en, @data, @hash)
+    INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, acc_form, superlative, comparative, file, gloss_en, data, hash)
+    VALUES (@lemma, @lemma_folded, @pos, @gender, @frequency, @plural_dominant, @plural_form, @acc_form, @superlative, @comparative, @file, @gloss_en, @data, @hash)
   `);
 
   const insertWordForm = db.prepare<WordFormInsertParams>(`
@@ -1011,6 +1016,12 @@ function main(): void {
       const dataJson = JSON.stringify(enriched);
       const pluralDominant = (data as Record<string, unknown>).plural_dominant as boolean | undefined;
       const pluralForm = (data as Record<string, unknown>).plural_form as string | undefined;
+      // Store accusative singular only when it differs from the lemma (n-declension and
+      // adjective-derived nouns). Used by search to detect "den Mensch"-style mismatches.
+      const accSingular = isNounLike(data)
+        ? ((data as NounWord).case_forms?.singular?.acc ?? null)
+        : null;
+      const accForm = accSingular && accSingular !== data.word ? accSingular : null;
       const superlative = data.pos === "adjective"
         ? (data as Record<string, unknown>).superlative as string | undefined ?? null
         : null;
@@ -1024,7 +1035,8 @@ function main(): void {
         gender: (data as Record<string, unknown>).gender as string | null ?? null,
         frequency: frequencyRank.get(fileKey) ?? null,
         plural_dominant: pluralDominant ? 1 : null,
-        plural_form: pluralDominant ? (pluralForm ?? null) : null,
+        plural_form: pluralForm ?? null,
+        acc_form: accForm,
         superlative,
         comparative,
         file: fileKey,
@@ -1065,6 +1077,23 @@ function main(): void {
             seenForms.add(lower);
             insertWordForm.run({ form: lower, word_id: wordId });
             wordFormCount++;
+          }
+        }
+        // Also index alternative case forms
+        const caseFormsAlt = (data as NounWord).case_forms_alt;
+        if (caseFormsAlt) {
+          for (const numKey of ["singular", "plural"] as const) {
+            const altNum = caseFormsAlt[numKey];
+            if (!altNum) continue;
+            for (const forms of Object.values(altNum)) {
+              for (const form of forms) {
+                const lower = form.toLowerCase();
+                if (lower === lemmaLower || seenForms.has(lower)) continue;
+                seenForms.add(lower);
+                insertWordForm.run({ form: lower, word_id: wordId });
+                wordFormCount++;
+              }
+            }
           }
         }
       }
@@ -1254,7 +1283,7 @@ function main(): void {
   const builtAt = new Date().toISOString();
   insertMeta.run({ key: "version", value: version });
   insertMeta.run({ key: "built_at", value: builtAt });
-  insertMeta.run({ key: "schema_version", value: "3" }); // bump when adding/removing columns
+  insertMeta.run({ key: "schema_version", value: "4" }); // bump when adding/removing columns
 
   // Switch from WAL to DELETE journal mode for read-only runtime use
   db.pragma("journal_mode = DELETE");

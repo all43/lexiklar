@@ -21,6 +21,7 @@ function makeDb(path: string): Database.Database {
       id INTEGER PRIMARY KEY,
       lemma TEXT NOT NULL, lemma_folded TEXT NOT NULL, pos TEXT NOT NULL,
       gender TEXT, frequency INTEGER, plural_dominant INTEGER, plural_form TEXT,
+      superlative TEXT,
       file TEXT NOT NULL UNIQUE, gloss_en TEXT, data TEXT NOT NULL, hash TEXT NOT NULL
     );
     CREATE TABLE word_forms (form TEXT NOT NULL, word_id INTEGER NOT NULL, PRIMARY KEY (form, word_id));
@@ -32,8 +33,8 @@ function makeDb(path: string): Database.Database {
 
 function insertWord(db: Database.Database, file: string, lemma: string, hash: string, forms: string[] = [], terms: string[] = []) {
   const result = db.prepare(
-    `INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, file, gloss_en, data, hash)
-     VALUES (?, ?, 'noun', NULL, 1, 0, NULL, ?, NULL, '{}', ?)`
+    `INSERT INTO words (lemma, lemma_folded, pos, gender, frequency, plural_dominant, plural_form, superlative, file, gloss_en, data, hash)
+     VALUES (?, ?, 'noun', NULL, 1, 0, NULL, NULL, ?, NULL, '{}', ?)`
   ).run(lemma, lemma.toLowerCase(), file, hash);
   const wordId = result.lastInsertRowid as number;
   for (const form of forms) {

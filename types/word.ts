@@ -91,6 +91,12 @@ export interface CaseForms {
   plural: CaseRow;
 }
 
+// Alternative forms for case cells that have more than one valid form (e.g. gen sg "Tischs" / "Tisches")
+export type CaseFormsAlt = {
+  singular?: Partial<Record<keyof CaseRow, string[]>>;
+  plural?: Partial<Record<keyof CaseRow, string[]>>;
+};
+
 // --- Conjugation types ---
 
 export interface PersonForms {
@@ -192,6 +198,7 @@ export interface NounWord extends WordBase {
   plural_form: string | null;
   gender_rule: GenderRule | null;
   case_forms: CaseForms;
+  case_forms_alt?: CaseFormsAlt;
   plural_dominant?: boolean;
   is_plural_only?: boolean;
   is_singular_only?: boolean;
