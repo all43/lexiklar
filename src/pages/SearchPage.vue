@@ -4,6 +4,7 @@
       <f7-subnavbar v-if="searchBarMode === 'subnavbar' && isDbReady" :inner="false">
         <f7-searchbar
           custom-search
+          
           :clear-button="false"
           :disable-button-text="t('search.cancel')"
           :placeholder="t('search.placeholder')"
@@ -173,6 +174,7 @@
     <f7-subnavbar v-if="searchBarMode === 'bottom' && isDbReady" :inner="false" class="searchbar-bottom-toolbar">
       <f7-searchbar
         custom-search
+        
         :clear-button="!f7theme.ios"
         :disable-button-text="t('search.cancel')"
         :placeholder="t('search.placeholder')"
@@ -184,7 +186,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from "vue";
+import { ref, computed, watch, onMounted, nextTick } from "vue";
 import { f7, theme as f7theme } from "framework7-vue";
 import { t } from "../js/i18n.js";
 import { submitReport } from "../utils/report.js";
@@ -694,6 +696,33 @@ async function loadHomeScreen(gen = 0) {
   if (gen && gen !== searchGen) return;
   loading.value = false;
 }
+
+// iOS paste fix: F7's touch-highlight fires on every pointerdown and scales
+// .searchbar-input-wrap by 1.05x over 300ms. While that animation is playing,
+// iOS can't recognise a second tap as a double-tap on the same point, so the
+// native paste menu never appears. Suppress the scale when the input is already
+// focused (user is in editing mode) by immediately resetting it after F7 sets it.
+function applyPasteFix() {
+  if (!f7theme.ios) return;
+  nextTick(() => {
+    document.querySelectorAll<HTMLInputElement>('.searchbar input[type="search"]').forEach(input => {
+      if (input.dataset.lxPasteFix) return;
+      input.dataset.lxPasteFix = "1";
+      const wrap = input.closest<HTMLElement>('.searchbar-input-wrap');
+      if (wrap) {
+        // Fallback for iOS < 15.4 where CSS :has() is unsupported.
+        wrap.addEventListener('pointerdown', () => {
+          if (document.activeElement === input) {
+            wrap.style.scale = '1';
+          }
+        }, { capture: true });
+      }
+    });
+  });
+}
+onMounted(applyPasteFix);
+watch(isDbReady, applyPasteFix);
+watch(searchBarMode, applyPasteFix);
 
 // --- Watchers ---
 watch(searchQuery, (q) => {
