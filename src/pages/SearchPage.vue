@@ -4,6 +4,7 @@
       <f7-subnavbar v-if="searchBarMode === 'subnavbar' && isDbReady" :inner="false">
         <f7-searchbar
           custom-search
+          :clear-button="false"
           :disable-button-text="t('search.cancel')"
           :placeholder="t('search.placeholder')"
           @searchbar:search="onSearch"
@@ -172,6 +173,7 @@
     <f7-subnavbar v-if="searchBarMode === 'bottom' && isDbReady" :inner="false" class="searchbar-bottom-toolbar">
       <f7-searchbar
         custom-search
+        :clear-button="!f7theme.ios"
         :disable-button-text="t('search.cancel')"
         :placeholder="t('search.placeholder')"
         @searchbar:search="onSearch"
