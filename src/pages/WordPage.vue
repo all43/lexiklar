@@ -223,14 +223,6 @@
         <p class="usage-note-text">{{ word.plural_only_note }}</p>
       </f7-block>
 
-      <!-- False Friend -->
-      <FalseFriend
-        v-if="(word as any).false_friend_en"
-        :ff="(word as any).false_friend_en"
-        :current-word="word.word"
-        @navigate="(lemma: string) => searchWord(lemma, { fallback: false })"
-      />
-
       <!-- Expressions & Proverbs -->
       <template v-if="wordExpressions.length">
         <f7-block-title>{{ t('word.expressions') }}</f7-block-title>
@@ -284,6 +276,14 @@
           </template>
         </f7-list>
       </template>
+
+      <!-- False Friend -->
+      <FalseFriend
+        v-if="(word as any).false_friend_en"
+        :ff="(word as any).false_friend_en"
+        :current-word="word.word"
+        @navigate="(lemma: string) => searchWord(lemma, { fallback: false })"
+      />
 
       <!-- Confusable Pairs -->
       <ConfusablePair

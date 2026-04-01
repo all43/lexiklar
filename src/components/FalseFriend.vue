@@ -48,3 +48,59 @@ defineEmits<{
   navigate: [lemma: string];
 }>();
 </script>
+
+<style scoped>
+.false-friend-block {
+  margin-top: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+.false-friend-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  margin-bottom: 0.5em;
+}
+.false-friend-icon {
+  color: var(--color-rule-exception);
+  font-size: 1em;
+}
+.false-friend-title {
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.false-friend-en-word {
+  font-size: 0.85em;
+  color: var(--f7-list-item-footer-text-color);
+}
+.false-friend-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88em;
+}
+.false-friend-table th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--f7-list-item-footer-text-color);
+  padding: 0 0.5em 0.25em 0;
+  white-space: nowrap;
+}
+.false-friend-table td {
+  padding: 0.2em 0.5em 0.2em 0;
+  vertical-align: top;
+}
+.false-friend-en {
+  color: var(--f7-list-item-subtitle-text-color);
+  width: 50%;
+}
+.false-friend-self {
+  color: var(--f7-theme-color);
+  font-weight: 500;
+}
+.false-friend-link {
+  color: var(--f7-theme-color);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+</style>
