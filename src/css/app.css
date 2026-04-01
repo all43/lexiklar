@@ -529,13 +529,21 @@ mark.example-highlight {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 0 var(--f7-block-padding-horizontal, 16px);
 }
 .decl-table-scroll::-webkit-scrollbar { display: none; }
 /* Let table size to content inside scroll container */
 .decl-table-scroll .decl-table {
   width: auto;
   min-width: 100%;
+}
+/* Edge padding via first/last cell — keeps padding out of scrollWidth calculation */
+.decl-table-scroll .decl-table td:first-child,
+.decl-table-scroll .decl-table th:first-child {
+  padding-left: var(--f7-block-padding-horizontal, 16px);
+}
+.decl-table-scroll .decl-table td:last-child,
+.decl-table-scroll .decl-table th:last-child {
+  padding-right: var(--f7-block-padding-horizontal, 16px);
 }
 
 /* Brief highlight when scrolling to a referenced sense */
