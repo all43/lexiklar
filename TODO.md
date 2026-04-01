@@ -15,6 +15,10 @@
 - [ ] Resolve empty glosses (124 senses with `gloss: ""`)
 - [ ] Continue proofreading (216 priority words remaining)
 
+## Accessibility
+- [ ] VoiceOver / TalkBack support — label grammar tables and declension cells
+- [ ] Fill in App Store Connect accessibility section
+
 ## UX
 - [ ] Welcome tour — swipeable intro slides (F7 Swiper) for first-time users: key features, grammar depth, offline usage
 - [ ] Offline indicator when network unavailable
