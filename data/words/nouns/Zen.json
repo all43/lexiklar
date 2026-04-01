@@ -6,10 +6,7 @@
   "gender": "N",
   "article": "das",
   "plural_form": null,
-  "gender_rule": {
-    "rule_id": "nominalized_infinitive",
-    "is_exception": false
-  },
+  "gender_rule": null,
   "case_forms": {
     "singular": {
       "nom": "Zen",
@@ -69,5 +66,8 @@
     "source_hash": "cf8e08e37708366a",
     "generated_at": "2026-03-30"
   },
-  "zipf": 3.14
+  "zipf": 3.14,
+  "_overrides": {
+    "gender_rule": null
+  }
 }
