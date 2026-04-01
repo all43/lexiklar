@@ -41,18 +41,32 @@
         <tr v-for="c in cases" :key="c.key">
           <td class="decl-case">{{ c.label }}</td>
           <td v-if="hasSingular" class="decl-form" :class="{ 'decl-form--dim': word.is_plural_only }">
-            <span :class="`decl-article gender-${genderClass}`">{{ singularArticles[c.key] }}</span>
-            <template v-if="isNDeclension && nDeclEnding(c.key)">
-              <span class="decl-stem">{{ nDeclStem(c.key) }}</span><span class="decl-ending">{{ nDeclEnding(c.key) }}</span>
+            <template v-if="shouldStack('singular', c.key)">
+              <div v-for="form in allForms('singular', c.key)" :key="form" class="decl-form-row">
+                <span :class="`decl-article gender-${genderClass}`">{{ singularArticles[c.key] }}</span>{{ form }}
+              </div>
             </template>
-            <template v-else>{{ [word.case_forms.singular[c.key], ...(word.case_forms_alt?.singular?.[c.key] ?? [])].filter(Boolean).join(' / ') || '—' }}</template>
+            <template v-else>
+              <span :class="`decl-article gender-${genderClass}`">{{ singularArticles[c.key] }}</span>
+              <template v-if="isNDeclension && nDeclEnding(c.key)">
+                <span class="decl-stem">{{ nDeclStem(c.key) }}</span><span class="decl-ending">{{ nDeclEnding(c.key) }}</span>
+              </template>
+              <template v-else>{{ allForms('singular', c.key).join(' / ') || '—' }}</template>
+            </template>
           </td>
           <td class="decl-form" :class="{ 'decl-form--dim': word.is_singular_only }">
-            <span v-if="hasPlural" class="decl-article decl-article--plural">{{ pluralArticles[c.key] }}</span>
-            <template v-if="hasPlural && umlautSplit(c.key)">
-              {{ umlautSplit(c.key)!.before }}<span class="decl-umlaut">{{ umlautSplit(c.key)!.umlaut }}</span>{{ umlautSplit(c.key)!.after }}
+            <template v-if="hasPlural && shouldStack('plural', c.key)">
+              <div v-for="form in allForms('plural', c.key)" :key="form" class="decl-form-row">
+                <span class="decl-article decl-article--plural">{{ pluralArticles[c.key] }}</span>{{ form }}
+              </div>
             </template>
-            <span v-else-if="hasPlural">{{ [word.case_forms.plural[c.key], ...(word.case_forms_alt?.plural?.[c.key] ?? [])].filter(Boolean).join(' / ') || '—' }}</span>
+            <template v-else-if="hasPlural">
+              <span class="decl-article decl-article--plural">{{ pluralArticles[c.key] }}</span>
+              <template v-if="umlautSplit(c.key)">
+                {{ umlautSplit(c.key)!.before }}<span class="decl-umlaut">{{ umlautSplit(c.key)!.umlaut }}</span>{{ umlautSplit(c.key)!.after }}
+              </template>
+              <span v-else>{{ allForms('plural', c.key).join(' / ') || '—' }}</span>
+            </template>
             <span v-else class="decl-no-plural">—</span>
           </td>
         </tr>
@@ -133,6 +147,19 @@ const falseMatchText = computed(() => {
   return t("noun.falseMatch").replace("{suffix}", `-${suffix}`);
 });
 
+function allForms(num: "singular" | "plural", caseKey: keyof CaseRow): string[] {
+  const primary = props.word.case_forms?.[num]?.[caseKey];
+  const alts = props.word.case_forms_alt?.[num]?.[caseKey] ?? [];
+  return [primary, ...alts].filter(Boolean) as string[];
+}
+
+function shouldStack(num: "singular" | "plural", caseKey: keyof CaseRow): boolean {
+  const forms = allForms(num, caseKey);
+  if (forms.length <= 1) return false;
+  const alts = props.word.case_forms_alt?.[num]?.[caseKey] ?? [];
+  return alts.length > 1 || (forms[0]?.length ?? 0) > 12;
+}
+
 function nDeclEnding(caseKey: "nom" | "acc" | "dat" | "gen"): string {
   const nom = props.word.case_forms?.singular?.nom;
   const form = props.word.case_forms?.singular?.[caseKey];
@@ -159,6 +186,10 @@ function umlautSplit(caseKey: "nom" | "acc" | "dat" | "gen"): UmlautSplit | null
 /* Expand wrap to screen edges, breaking out of .noun-declension padding */
 .decl-table-wrap {
   margin: 0 -16px;
+}
+
+.decl-form-row {
+  line-height: 1.5;
 }
 
 .decl-ending {
