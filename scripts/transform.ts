@@ -1437,6 +1437,12 @@ function mergeWithExisting(newData: TransformOutput, existingPath: string): Tran
   }
 
   const existingSource = (existing as { _meta?: { source?: string } })._meta?.source;
+  if (existingSource === "auto-feminine") {
+    console.warn(
+      `[auto-feminine] WIKTIONARY MERGE: "${newData.word}" (${existingPath}) was auto-generated ` +
+        `and now appears in the Wiktionary dump. Grammar data will be replaced. Review the merged file.`,
+    );
+  }
   if (existingSource === "manual") {
     console.warn(
       `[manual-word] WIKTIONARY MERGE: "${newData.word}" (${existingPath}) was manually authored ` +

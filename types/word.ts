@@ -24,8 +24,8 @@ export interface Sound {
 export interface WordMeta {
   source_hash: string;
   generated_at: string;
-  /** Present only on manually authored entries not sourced from Wiktionary. */
-  source?: "manual";
+  /** Present only on entries not sourced from Wiktionary. */
+  source?: "manual" | "auto-feminine";
 }
 
 export interface FalseFriendMeaning {
