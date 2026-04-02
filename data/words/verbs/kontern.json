@@ -65,7 +65,7 @@
     },
     {
       "gloss": "eine weitere Mutter auf eine Schraube drehen",
-      "gloss_en": "tighten (nut)",
+      "gloss_en": "lock (nut)",
       "tags": [],
       "example_ids": [
         "e38eb2eaec"
@@ -73,7 +73,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To screw an additional nut onto a bolt.",
+      "gloss_en_full": "To screw an additional nut onto a bolt to lock it in place (jamnut).",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "lock nut",
@@ -107,5 +107,9 @@
     "source_hash": "1dc19a5a0148742f",
     "generated_at": "2026-03-30"
   },
-  "zipf": 2.55
+  "zipf": 2.55,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

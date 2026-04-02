@@ -26,7 +26,7 @@
   "senses": [
     {
       "gloss": "sporadische Erscheinung am Himmel, in der Atmosphäre oder an der Erdoberfläche",
-      "gloss_en": "meteorite",
+      "gloss_en": "atmospheric phenomenon",
       "tags": [],
       "example_ids": [
         "62d38fe88c"
@@ -34,7 +34,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A sporadic phenomenon in the sky, in the atmosphere, or on the Earth's surface",
+      "gloss_en_full": "A sporadic natural phenomenon in the sky, atmosphere, or on the Earth's surface, such as lightning, rainbows, or falling stars.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "shooting star",
@@ -115,5 +115,9 @@
   "_overrides": {
     "gender": "M",
     "article": "der"
+  },
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
   }
 }

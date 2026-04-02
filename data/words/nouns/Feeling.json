@@ -26,7 +26,7 @@
   "senses": [
     {
       "gloss": "meist umgangssprachlich'",
-      "gloss_en": "feeling (colloquial)",
+      "gloss_en": "feeling",
       "tags": [],
       "example_ids": [],
       "synonyms": [
@@ -34,7 +34,7 @@
       ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A feeling or emotion, usually used colloquially.",
+      "gloss_en_full": "A feeling or emotion; used colloquially to refer to one's general emotional state or subjective experience.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "sensation",
@@ -46,7 +46,7 @@
     },
     {
       "gloss": "das, was man fühlt, denkt, empfindet, wenn man etwas tut",
-      "gloss_en": "emotion",
+      "gloss_en": "sensation",
       "tags": [],
       "example_ids": [
         "886095a5c7"
@@ -110,5 +110,9 @@
     "source_hash": "74c81e535361b779",
     "generated_at": "2026-03-30"
   },
-  "zipf": 3.06
+  "zipf": 3.06,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

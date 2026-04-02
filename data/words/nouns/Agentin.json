@@ -23,7 +23,7 @@
   "senses": [
     {
       "gloss": "weibliche Person, die Vermittlungsdienstleistungen für ihre Kunden erbringt, insbesondere für Künstler, Schriftsteller, Sportler; allgemein Vermittlerin, Handelsvertreterin",
-      "gloss_en": "agent (female, representative)",
+      "gloss_en": "agent",
       "tags": [
         "outdated"
       ],
@@ -49,7 +49,7 @@
     },
     {
       "gloss": "weibliche Person, die im Staatsauftrag oder im Auftrag einer Organisation im Geheimen tätig ist",
-      "gloss_en": "spy (female)",
+      "gloss_en": "spy",
       "tags": [],
       "example_ids": [
         "ca9f05a952",
@@ -61,7 +61,7 @@
       ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A female person who acts secretly on behalf of the state or an organization.",
+      "gloss_en_full": "A person who acts secretly on behalf of the state or an organization.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "secret agent",
@@ -102,5 +102,9 @@
     "source_hash": "99f75dda983da66c",
     "generated_at": "2026-03-30"
   },
-  "zipf": 3.34
+  "zipf": 3.34,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

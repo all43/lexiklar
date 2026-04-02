@@ -9,7 +9,7 @@
   "senses": [
     {
       "gloss": "jemanden (durch viel Reden) von etwas überzeugen, was (eher) nicht der Wahrheit entspricht",
-      "gloss_en": "persuade (false)",
+      "gloss_en": "talk into believing",
       "tags": [],
       "example_ids": [
         "45bd7e597f",
@@ -31,7 +31,7 @@
     },
     {
       "gloss": "pausenlos zu jemandem sprechen",
-      "gloss_en": "talk into",
+      "gloss_en": "talk at",
       "tags": [],
       "example_ids": [
         "f12191fead"
@@ -39,7 +39,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To talk continuously and without pause to someone",
+      "gloss_en_full": "To talk at someone continuously and without pause.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "nag",
@@ -92,5 +92,9 @@
     "source_hash": "3b2879c6a0671fa0",
     "generated_at": "2026-03-30"
   },
-  "zipf": 2.82
+  "zipf": 2.82,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

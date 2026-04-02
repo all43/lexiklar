@@ -23,7 +23,7 @@
   "senses": [
     {
       "gloss": "weibliche Person, die von jemandem bevorzugt wird",
-      "gloss_en": "favorite (female)",
+      "gloss_en": "favorite",
       "tags": [],
       "example_ids": [
         "c27a4c4a19",
@@ -43,7 +43,7 @@
     },
     {
       "gloss": "Teilnehmerin mit der größten Aussicht, in einem Vergleich zu gewinnen",
-      "gloss_en": "favorite (female, participant)",
+      "gloss_en": "frontrunner",
       "tags": [],
       "example_ids": [
         "152b9822c6"
@@ -51,7 +51,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "A female participant with the greatest prospect of winning in a competition.",
+      "gloss_en_full": "A participant with the greatest prospect of winning in a competition.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "top contender",
@@ -62,7 +62,7 @@
     },
     {
       "gloss": "Geliebte eines Fürsten oder Monarchen",
-      "gloss_en": "favorite (female, royal)",
+      "gloss_en": "royal mistress",
       "tags": [
         "archaic"
       ],
@@ -74,7 +74,7 @@
       ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "The beloved or mistress of a prince or monarch.",
+      "gloss_en_full": "The mistress or beloved of a prince or monarch.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "royal mistress",
@@ -98,5 +98,9 @@
     "source_hash": "f9b09d737adc9a0c",
     "generated_at": "2026-03-30"
   },
-  "zipf": 2.81
+  "zipf": 2.81,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

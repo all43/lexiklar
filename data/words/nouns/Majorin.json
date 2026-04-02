@@ -23,7 +23,7 @@
   "senses": [
     {
       "gloss": "weibliche Person, die den Dienstgrad eines Majors innehat",
-      "gloss_en": "major (female)",
+      "gloss_en": "major",
       "tags": [
         "colloquial"
       ],
@@ -35,7 +35,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A female person who holds the military rank of major.",
+      "gloss_en_full": "A person who holds the military rank of major.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "female officer",
@@ -46,7 +46,7 @@
     },
     {
       "gloss": "weibliche Person, die in der Heilsarmee den Rang eines Majors innehat",
-      "gloss_en": "major (female, Salvation Army)",
+      "gloss_en": "major (Salvation Army)",
       "tags": [],
       "example_ids": [
         "f2e614b527"
@@ -54,7 +54,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A woman who holds the rank of major in the Salvation Army.",
+      "gloss_en_full": "A person who holds the rank of major in the Salvation Army.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "salvation army officer",
@@ -94,5 +94,9 @@
     "source_hash": "d9ed5d0c6da1b80b",
     "generated_at": "2026-03-09"
   },
-  "zipf": 1.25
+  "zipf": 1.25,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

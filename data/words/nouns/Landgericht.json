@@ -69,7 +69,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "I notice the German gloss appears to be incomplete (\"Gebäude, in dem sich befindet\" — \"Building in which is located\" — lacks an object).  Based on the standard meaning of \"Landgericht\" in German legal terminology, here is the definition: A regional court of general jurisdiction in the German court system.",
+      "gloss_en_full": "The building in which the regional court (Landgericht) is located.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "regional court",
@@ -107,5 +107,9 @@
     "source_hash": "9c5e95065f4aedd8",
     "generated_at": "2026-04-01"
   },
-  "zipf": 3.11
+  "zipf": 3.11,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

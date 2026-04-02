@@ -44,7 +44,7 @@
   "senses": [
     {
       "gloss": "weibliche Person ohne einen Arbeitsplatz oder Anstellung",
-      "gloss_en": "unemployed woman",
+      "gloss_en": "unemployed person",
       "tags": [],
       "example_ids": [
         "8d469caed2"
@@ -61,7 +61,7 @@
         "Selbständige"
       ],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A woman without a job or employment.",
+      "gloss_en_full": "A person without a job or employment (the feminine form of 'Arbeitsloser').",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "jobless woman",
@@ -122,5 +122,9 @@
     "source_hash": "3214c32d72ededa4",
     "generated_at": "2026-04-01"
   },
-  "zipf": 3.25
+  "zipf": 3.25,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

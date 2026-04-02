@@ -31,7 +31,7 @@
     },
     {
       "gloss": "so, dass weniger als zwei Achtel und mehr als ein Achtel des Himmels mit Wolken bedeckt ist; heiter",
-      "gloss_en": "partly cloudy",
+      "gloss_en": "fair (weather)",
       "tags": [],
       "example_ids": [
         "4aedfb42f5",
@@ -40,7 +40,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "Describing sky conditions where more than one-eighth but less than two-eighths of the sky is covered with clouds",
+      "gloss_en_full": "A meteorological term describing sky conditions where between one-eighth and two-eighths of the sky is covered by clouds — essentially clear to mostly clear.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "light cloud cover",
@@ -70,5 +70,9 @@
     "source_hash": "0468102b04796a72",
     "generated_at": "2026-03-14"
   },
-  "zipf": 3.31
+  "zipf": 3.31,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

@@ -23,7 +23,7 @@
   "senses": [
     {
       "gloss": "weibliche Person, die eine Gruppe leitet",
-      "gloss_en": "female leader",
+      "gloss_en": "leader",
       "tags": [],
       "example_ids": [
         "8f1b15ba3d",
@@ -47,7 +47,7 @@
     },
     {
       "gloss": "weibliche Person oder Gruppe weiblicher Individuen (oder auch Person/Gruppe, deren grammatisches Genus das Femininum ist), die den ersten Platz eines noch nicht entschiedenen Ereignisses belegt",
-      "gloss_en": "female frontrunner",
+      "gloss_en": "frontrunner",
       "tags": [],
       "example_ids": [
         "a9950f0f7d"
@@ -59,7 +59,7 @@
       ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A female person or group of female individuals (or also a person/group whose grammatical gender is feminine) that holds the leading position in an undecided event.",
+      "gloss_en_full": "A person or group that holds the leading position in an undecided competition or event.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "female leader",
@@ -87,5 +87,9 @@
     "source_hash": "ce5b7ef85bb978cd",
     "generated_at": "2026-03-30"
   },
-  "zipf": 3.13
+  "zipf": 3.13,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

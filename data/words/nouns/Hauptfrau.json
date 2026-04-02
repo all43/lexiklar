@@ -45,13 +45,13 @@
     },
     {
       "gloss": "Offiziersdienstgrad über dem Oberleutnant (nicht offiziell)",
-      "gloss_en": "commander (military)",
+      "gloss_en": "captain (unofficial)",
       "tags": [],
       "example_ids": [],
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "A military officer rank above first lieutenant (unofficial).",
+      "gloss_en_full": "An unofficial female military officer rank corresponding to Hauptmann (captain), above first lieutenant.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "military commander",
@@ -82,5 +82,9 @@
     "source_hash": "9ea2243906ca64b7",
     "generated_at": "2026-03-30"
   },
-  "zipf": 1.87
+  "zipf": 1.87,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

@@ -23,7 +23,7 @@
   "senses": [
     {
       "gloss": "die inneren Organe in Brust- und Bauchhöhle beim Menschen und bei Wirbeltieren",
-      "gloss_en": "intestines",
+      "gloss_en": "viscera",
       "tags": [
         "plural-normally"
       ],
@@ -45,7 +45,7 @@
       ],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "The internal organs in the chest and abdominal cavity of humans and vertebrates.",
+      "gloss_en_full": "The internal organs of the chest and abdominal cavity in humans and vertebrates; the entrails or viscera.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "guts",
@@ -105,5 +105,9 @@
     "source_hash": "4f31c207c95d5904",
     "generated_at": "2026-03-30"
   },
-  "zipf": 2.85
+  "zipf": 2.85,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

@@ -71,7 +71,7 @@
     },
     {
       "gloss": "(Wäschestücke) vorsichtig mit der Hand knetend waschen",
-      "gloss_en": "knead",
+      "gloss_en": "hand wash",
       "tags": [],
       "example_ids": [
         "a128bef0bf"
@@ -79,7 +79,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To wash (laundry items) gently by kneading with the hand.",
+      "gloss_en_full": "To wash laundry items gently by hand, using a kneading motion.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "wash by hand",
@@ -111,5 +111,9 @@
     "source_hash": "35c0acd566a452ed",
     "generated_at": "2026-03-30"
   },
-  "zipf": 1.99
+  "zipf": 1.99,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

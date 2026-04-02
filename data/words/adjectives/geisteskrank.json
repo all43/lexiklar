@@ -9,7 +9,7 @@
   "senses": [
     {
       "gloss": "geistig behindert",
-      "gloss_en": "mentally ill",
+      "gloss_en": "mentally disabled",
       "tags": [],
       "example_ids": [
         "baa47cbadd",
@@ -18,7 +18,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "Mentally disabled or intellectually impaired",
+      "gloss_en_full": "Mentally or intellectually disabled.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "mentally disabled",
@@ -78,5 +78,9 @@
     "source_hash": "0f57a1a32880954b",
     "generated_at": "2026-03-14"
   },
-  "zipf": 2.82
+  "zipf": 2.82,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

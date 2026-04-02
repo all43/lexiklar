@@ -23,7 +23,7 @@
   "senses": [
     {
       "gloss": "weibliche Person, die für die Veröffentlichung von künstlerischen oder wissenschaftlichen Werken in Wort, Schrift, Ton oder Bild rechtlich und publizistisch verantwortlich zeichnet",
-      "gloss_en": "publisher (female)",
+      "gloss_en": "editor",
       "tags": [],
       "example_ids": [
         "f573321b19",
@@ -43,7 +43,7 @@
         "Urheberin"
       ],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A woman who is legally and editorially responsible for the publication of artistic or scholarly works in spoken, written, audio, or visual form.",
+      "gloss_en_full": "A person legally and editorially responsible for the publication of artistic or scholarly works in spoken, written, audio, or visual form.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "publishing director",
@@ -72,7 +72,7 @@
         "Urheberin"
       ],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A woman who determines the editorial policy of a periodical publication and oversees its implementation.",
+      "gloss_en_full": "A person who determines the editorial policy of a periodical publication and oversees its implementation.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "chief editor",
@@ -109,5 +109,9 @@
     "source_hash": "b05f4baa38a9c1cd",
     "generated_at": "2026-03-30"
   },
-  "zipf": 2.37
+  "zipf": 2.37,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

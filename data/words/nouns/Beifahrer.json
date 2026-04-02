@@ -46,7 +46,7 @@
     },
     {
       "gloss": "Person, die berufsmäßig als zweiter Fahrer (bei Bus oder LKW) mitfährt",
-      "gloss_en": "passenger (driver)",
+      "gloss_en": "co-driver",
       "tags": [],
       "example_ids": [
         "3d110214ac"
@@ -54,7 +54,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "A person who works as a second driver (on a bus or truck).",
+      "gloss_en_full": "A person who rides along professionally as a second driver or assistant driver on a bus or truck.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "co-driver",
@@ -65,7 +65,7 @@
     },
     {
       "gloss": "Person, die als Kopilot (zum Beispiel bei Rallyes) mitfährt",
-      "gloss_en": "passenger (racing)",
+      "gloss_en": "co-pilot",
       "tags": [],
       "example_ids": [
         "f167446aae"
@@ -73,7 +73,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "A person who rides along as a copilot, for example in rallies.",
+      "gloss_en_full": "A person who acts as a co-pilot or navigator, for example in rally racing, reading pace notes and guiding the driver.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "co-driver",
@@ -113,5 +113,9 @@
     "source_hash": "61dd3f17b9e89389",
     "generated_at": "2026-03-30"
   },
-  "zipf": 3.31
+  "zipf": 3.31,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

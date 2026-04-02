@@ -9,7 +9,7 @@
   "senses": [
     {
       "gloss": "zu derjenigen Seite gehörig, auf der die meisten Menschen das Herz haben",
-      "gloss_en": "left-handed",
+      "gloss_en": "left",
       "tags": [],
       "example_ids": [
         "6cc8f9ea09"
@@ -17,7 +17,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "Belonging to the side of the body where most people have their heart",
+      "gloss_en_full": "Belonging to or situated on the left side; the side of the body on which most people have their heart.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "sinistral",
@@ -94,5 +94,9 @@
     "source_hash": "61398768f3f26d13",
     "generated_at": "2026-03-14"
   },
-  "zipf": 3.19
+  "zipf": 3.19,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

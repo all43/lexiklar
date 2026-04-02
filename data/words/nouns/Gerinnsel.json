@@ -23,7 +23,7 @@
   "senses": [
     {
       "gloss": "Gewässer mit nur sehr wenig Flüssigkeit",
-      "gloss_en": "sludge",
+      "gloss_en": "trickle",
       "tags": [],
       "example_ids": [
         "c6a3e39e1a",
@@ -35,7 +35,7 @@
         "Fluss"
       ],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A body of water with very little liquid.",
+      "gloss_en_full": "A very small flow or trickle of water; a watercourse with almost no liquid.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "sediment",
@@ -81,5 +81,9 @@
     "source_hash": "74f9c89eb3ad6e0e",
     "generated_at": "2026-03-30"
   },
-  "zipf": 2.74
+  "zipf": 2.74,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

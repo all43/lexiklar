@@ -66,7 +66,7 @@
     },
     {
       "gloss": "Muskelstrang (Kernmuskel, langer Rückenstrecker, Musculus longissimus dorsi) des Rückens von Schlachttieren, besonders von Schweinen (Schweinelachs oder Lachsfleisch), Kälbern (Kalbslachs) und Lämmern (Lammlachs); Bestandteil des Rippenstücks oder Kotelettstrangs.",
-      "gloss_en": "longissimus muscle",
+      "gloss_en": "pork loin",
       "tags": [],
       "example_ids": [
         "2a43809ad2"
@@ -74,7 +74,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "A muscle strand (core muscle, long back extensor, musculus longissimus dorsi) of the back of slaughtered animals, especially pigs (pork loin), calves (veal loin), and lambs (lamb loin); a component of the rib section or chop loin.",
+      "gloss_en_full": "The loin cut from slaughtered animals, especially pigs (pork loin / Schweinelachs), calves (veal loin / Kalbslachs), and lambs (lamb loin / Lammlachs); a part of the rib or chop section.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "pork loin muscle",
@@ -150,5 +150,9 @@
     "source_hash": "d8bf0b1e502b04cb",
     "generated_at": "2026-04-01"
   },
-  "zipf": 3.31
+  "zipf": 3.31,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

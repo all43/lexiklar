@@ -23,7 +23,7 @@
   "senses": [
     {
       "gloss": "weibliche Person, die jemanden begleitet; weibliche Person, die gemeinsam mit jemandem irgendwo hingeht",
-      "gloss_en": "companion (female)",
+      "gloss_en": "companion",
       "tags": [
         "general"
       ],
@@ -39,7 +39,7 @@
       ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "A female person who accompanies someone; a female person who goes somewhere together with someone.",
+      "gloss_en_full": "A person who accompanies someone or goes somewhere together with them.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "female escort",
@@ -50,7 +50,7 @@
     },
     {
       "gloss": "weibliche Person, die einen Solisten auf einem Instrument begleitet",
-      "gloss_en": "accompanist (female)",
+      "gloss_en": "accompanist",
       "tags": [],
       "example_ids": [
         "d0a4faa84e"
@@ -60,7 +60,7 @@
       ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "A female person who accompanies a soloist on an instrument.",
+      "gloss_en_full": "A person who accompanies a soloist on a musical instrument.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "female accompanist",
@@ -93,5 +93,9 @@
     "source_hash": "271957fd27651c48",
     "generated_at": "2026-03-30"
   },
-  "zipf": 3.14
+  "zipf": 3.14,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }
