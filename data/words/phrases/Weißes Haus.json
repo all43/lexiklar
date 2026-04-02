@@ -25,7 +25,7 @@
     },
     {
       "gloss": "Regierungsgebäude der Russischen Föderation in Moskau",
-      "gloss_en": "Kremlin",
+      "gloss_en": "White House (Russia)",
       "tags": [],
       "example_ids": [
         "d880dd93a4",
@@ -37,7 +37,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "the government building of the Russian Federation in Moscow",
+      "gloss_en_full": "the government building of the Russian Federation in Moscow, known as the White House (Dom Pravitelstva), which houses the Russian Cabinet",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "white house"
@@ -56,5 +56,9 @@
     "source_hash": "3bc7530bf7d9f62f",
     "generated_at": "2026-03-09"
   },
-  "zipf": 1.62
+  "zipf": 1.62,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

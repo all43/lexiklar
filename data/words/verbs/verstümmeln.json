@@ -28,7 +28,7 @@
     },
     {
       "gloss": "einen Gegenstand versehren, so dass nur noch ein unbrauchbarer, unansehnlicher Rest bleibt",
-      "gloss_en": "maim",
+      "gloss_en": "mutilate (object)",
       "tags": [],
       "example_ids": [
         "cf605a8a09"
@@ -36,7 +36,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "To damage an object so that only a useless, unsightly remnant remains.",
+      "gloss_en_full": "To damage or mutilate an object so that only a useless, unsightly remnant remains.",
       "gloss_en_full_model": "openai/gpt-4.1-mini",
       "synonyms_en": [
         "damage",
@@ -88,5 +88,9 @@
     "source_hash": "0412cdc61fd6e69a",
     "generated_at": "2026-03-30"
   },
-  "zipf": 2.32
+  "zipf": 2.32,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

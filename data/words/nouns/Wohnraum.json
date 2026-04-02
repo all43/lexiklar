@@ -61,7 +61,7 @@
     },
     {
       "gloss": "Sammelbegriff für alle Wohnungen und Wohnhäuser in einer gewissen Umgebung",
-      "gloss_en": "residential area",
+      "gloss_en": "housing stock",
       "tags": [],
       "example_ids": [
         "ddf7a5db40",
@@ -72,7 +72,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "A collective term for all residential apartments and houses in a given area",
+      "gloss_en_full": "A collective term for all apartments and houses in a given area, referring to the available housing stock",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "housing",
@@ -128,5 +128,9 @@
     "source_hash": "a41c171d3ff866b1",
     "generated_at": "2026-04-01"
   },
-  "zipf": 3.35
+  "zipf": 3.35,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }
