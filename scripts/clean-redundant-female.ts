@@ -18,7 +18,8 @@ const FEMININE_WORDS = new Set([
   "aunt", "great-aunt", "niece",
   "wife", "bride", "widow", "fiancée",
   // Gendered nouns (always female)
-  "woman", "girl", "goddess",
+  "woman", "girl", "goddess", "lady", "madam", "madame", "mistress", "maiden",
+  "mom", "mommy", "mummy", "mama", "mum", "granny", "nanny", "grandma",
   "empress", "queen", "princess", "duchess", "baroness", "countess", "marchioness",
   "actress", "waitress", "stewardess", "hostess", "priestess", "poetess", "governess",
   "nun", "midwife", "heroine", "superheroine",
