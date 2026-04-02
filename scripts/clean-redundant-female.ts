@@ -11,18 +11,26 @@ const WORDS_DIR = join("/Users/evgeniimalikov/projects/lexiklar", "data", "words
 
 // English words that are already inherently feminine — no need for "(female)"
 const FEMININE_WORDS = new Set([
-  "sister-in-law", "daughter-in-law", "mother-in-law", "stepmother", "stepdaughter",
-  "grandmother", "granddaughter", "great-grandmother", "goddaughter", "godmother",
+  // Family / kinship
+  "sister", "half-sister", "sister-in-law", "stepsister",
+  "daughter", "daughter-in-law", "stepdaughter", "granddaughter", "goddaughter",
+  "mother", "mother-in-law", "stepmother", "grandmother", "great-grandmother", "godmother",
+  "aunt", "great-aunt", "niece",
+  "wife", "bride", "widow", "fiancée",
+  // Gendered nouns (always female)
+  "woman", "girl", "goddess",
   "empress", "queen", "princess", "duchess", "baroness", "countess", "marchioness",
   "actress", "waitress", "stewardess", "hostess", "priestess", "poetess", "governess",
-  "nun", "bride", "wife", "widow", "midwife", "heroine", "superheroine",
-  "blonde", "brunette", "fiancée",
+  "nun", "midwife", "heroine", "superheroine",
+  "blonde", "brunette",
+  // Animals
   "mare", "hen", "cow", "doe", "ewe", "vixen", "lioness", "tigress",
+  // Compounds
   "mermaid", "milkmaid", "chambermaid",
   "abbess", "prioress", "deaconess",
   "seamstress", "songstress", "enchantress", "sorceress", "huntress", "henchwoman",
   "journeywoman", "spokeswoman", "businesswoman", "policewoman", "chairwoman",
-  "congresswoman", "sportswoman", "policewoman",
+  "congresswoman", "sportswoman",
 ]);
 
 function isInherentlyFeminine(base: string): boolean {
