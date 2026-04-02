@@ -72,7 +72,7 @@ The non-LLM parts were equally important: architecture decisions, data model des
 - Sense disambiguation via `gloss_hint` — robust to Wiktionary re-imports
 
 ### Fully offline
-- Entire dictionary shipped as a single SQLite file (~10 MB)
+- Entire dictionary shipped as a single SQLite file (~120 MB, ~51 MB gzip-compressed download)
 - No network requests at runtime
 - DB cached via Cache API — survives app restarts without re-fetching
 - PWA-installable — works offline after first visit, with automatic update prompts
