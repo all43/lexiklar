@@ -49,7 +49,7 @@
     },
     {
       "gloss": "jemand, der Frondienst leistet, der in Fronarbeit steht",
-      "gloss_en": "servant",
+      "gloss_en": "serf",
       "tags": [
         "historical"
       ],
@@ -59,7 +59,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "Someone who performs compulsory labor or is in a state of servitude",
+      "gloss_en_full": "Someone who performs compulsory feudal labor (corvée) or is in a state of serfdom",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "automaton",
@@ -167,5 +167,8 @@
     "source_hash": "0bbee7abdf5d2e3d",
     "generated_at": "2026-03-30"
   },
-  "zipf": 4.17
+  "zipf": 4.17,
+  "_proofread": {
+    "gloss_en": true
+  }
 }

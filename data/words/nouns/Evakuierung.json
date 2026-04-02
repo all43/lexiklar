@@ -51,7 +51,7 @@
     },
     {
       "gloss": "die Herstellung eines Vakuums in einem Gefäß, zum Beispiel in einer Elektronenröhre",
-      "gloss_en": "vacuuming",
+      "gloss_en": "evacuation (vacuum)",
       "tags": [],
       "example_ids": [
         "b40c21c00f"
@@ -59,7 +59,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "openai/gpt-4.1-mini",
-      "gloss_en_full": "The creation of a vacuum in a vessel, for example in an electron tube.",
+      "gloss_en_full": "The creation of a vacuum in a vessel, such as an electron tube, by removing the air or gas inside.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "vacuum creation",
@@ -92,5 +92,8 @@
     "source_hash": "f81a7c25783b343d",
     "generated_at": "2026-03-12"
   },
-  "zipf": 3.7
+  "zipf": 3.7,
+  "_proofread": {
+    "gloss_en": true
+  }
 }

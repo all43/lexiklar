@@ -33,7 +33,7 @@
   "senses": [
     {
       "gloss": "Verbleib in einer bestimmten Spielklasse",
-      "gloss_en": "stability",
+      "gloss_en": "relegation survival",
       "tags": [],
       "example_ids": [
         "cbe3fdbcac",
@@ -47,7 +47,7 @@
         "Aufstieg"
       ],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "Remaining in a particular league or division.",
+      "gloss_en_full": "Remaining in one's current league or division; avoiding relegation.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "league survival",
@@ -80,5 +80,9 @@
     "source_hash": "720e94d528072b63",
     "generated_at": "2026-04-01"
   },
-  "zipf": 3.07
+  "zipf": 3.07,
+  "_proofread": {
+    "gloss_en": true,
+    "gloss_en_full": true
+  }
 }

@@ -23,7 +23,7 @@
   "senses": [
     {
       "gloss": "Tochter des Bruders oder der Schwester sowie des Schwagers oder der Schwägerin",
-      "gloss_en": "nephew (male)",
+      "gloss_en": "niece",
       "tags": [],
       "example_ids": [],
       "synonyms": [
@@ -35,7 +35,7 @@
       ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "Daughter of one's brother or sister, or of one's brother-in-law or sister-in-law",
+      "gloss_en_full": "Niece; daughter of one's brother or sister, or of one's brother-in-law or sister-in-law",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "sister's son",
@@ -46,7 +46,7 @@
     },
     {
       "gloss": "Tochter des Sohnes oder der Tochter",
-      "gloss_en": "nephew",
+      "gloss_en": "granddaughter",
       "tags": [],
       "example_ids": [],
       "synonyms": [
@@ -56,7 +56,7 @@
       ],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "Daughter of one's son or daughter",
+      "gloss_en_full": "Granddaughter; daughter of one's son or daughter",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "male nephew",
@@ -86,5 +86,8 @@
     "source_hash": "b6d6bdc0089ab4ba",
     "generated_at": "2026-03-23"
   },
-  "zipf": 3.7
+  "zipf": 3.7,
+  "_proofread": {
+    "gloss_en": true
+  }
 }

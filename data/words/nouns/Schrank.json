@@ -92,7 +92,7 @@
     },
     {
       "gloss": "seitlicher Abstand der Tritte des rechten Laufpaares vom linken in der Schrittfährte",
-      "gloss_en": "stride (military)",
+      "gloss_en": "track width (hunting)",
       "tags": [],
       "example_ids": [
         "467e2058ee"
@@ -100,7 +100,7 @@
       "synonyms": [],
       "antonyms": [],
       "gloss_en_model": "lm-studio/sauerkraut",
-      "gloss_en_full": "The lateral distance between the footprints of the right pair of legs from the left in a track pattern",
+      "gloss_en_full": "The lateral distance between the right and left paw-print pairs in an animal's trail; a hunting/tracking term.",
       "gloss_en_full_model": "anthropic/claude-haiku-4-5-20251001",
       "synonyms_en": [
         "military stride",
@@ -225,5 +225,8 @@
     "source_hash": "734defef3bf18f37",
     "generated_at": "2026-04-01"
   },
-  "zipf": 3.95
+  "zipf": 3.95,
+  "_proofread": {
+    "gloss_en": true
+  }
 }
