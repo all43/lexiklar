@@ -1111,8 +1111,6 @@ onMounted(async () => {
   font-size: 0.85em;
   line-height: 1;
   color: var(--f7-list-item-footer-text-color);
-  -webkit-user-select: none;
-  user-select: none;
   flex-shrink: 0;
   opacity: 0.7;
 }

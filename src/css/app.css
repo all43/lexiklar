@@ -18,6 +18,46 @@ html.is-web .framework7-root {
   height: 100dvh;
 }
 
+/* Disable text selection on navbar titles — these are UI chrome, not content. */
+.navbar {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Disable text selection globally — this is an app, not a document.
+   WordPage re-enables it for copyable content (glosses, examples, IPA). */
+.page-content {
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* Word page: allow copying glosses, examples, IPA, grammar tables */
+.page[data-name="word"] .page-content {
+  -webkit-user-select: text;
+  user-select: text;
+}
+/* … but keep UI elements non-selectable */
+.page[data-name="word"] .page-content .block-title,
+.page[data-name="word"] .page-content .grammar-jump,
+.page[data-name="word"] .page-content .example-show-more,
+.page[data-name="word"] .page-content .chip,
+.page[data-name="word"] .page-content .badge,
+.page[data-name="word"] .page-content .button,
+.page[data-name="word"] .page-content .sense-num,
+.page[data-name="word"] .page-content .sense-info-icon,
+.page[data-name="word"] .page-content .sense-syn-label,
+.page[data-name="word"] .page-content .compound-plus,
+.page[data-name="word"] .page-content .word-preview-btn {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Inset lists: clip active-state highlight to rounded corners on first/last items.
+   F7 applies border-radius to li > a but radio/label items use .item-content,
+   so the highlight bleeds past the container corners. */
+.list.inset ul {
+  overflow: hidden;
+}
+
 /* Search results & home screen lists — remove F7's default 32px vertical
    margins so lists sit flush against subnavbar and each other. */
 .search-results,
