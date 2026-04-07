@@ -15,6 +15,10 @@ const routes: Route[] = [
     component: SearchPage,
   },
   {
+    path: "/search/:query/",
+    component: SearchPage,
+  },
+  {
     path: "/favorites/",
     component: FavoritesPage,
   },

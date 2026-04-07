@@ -208,6 +208,8 @@ import {
 import { dbReady, dbDownloadNeeded, dbDownloadSize, swUpdatePending } from "../utils/db-update-state.js";
 import { searchQuery } from "../utils/search-state.js";
 
+const props = defineProps<{ f7route: any }>();
+
 interface SearchResultWithForm extends SearchResult {
   matchedForm?: string;
   articleMismatch?: string; // the wrong article the user typed (e.g. "der")
@@ -378,6 +380,7 @@ function highlightPhraseWords(lemma: string): string {
 }
 
 async function search(q: string, gen: number) {
+  f7.views.get("#tab-search")?.router?.updateCurrentUrl(`/search/${encodeURIComponent(q)}/`);
   if (q.length < 2) {
     if (q.toLowerCase() === "i") {
       const hits = await searchByLemma("ich");
@@ -720,7 +723,14 @@ function applyPasteFix() {
     });
   });
 }
-onMounted(applyPasteFix);
+onMounted(() => {
+  applyPasteFix();
+  // Restore search query from URL on page reload (e.g. /search/Bank/)
+  const urlQuery = props.f7route?.params?.query as string | undefined;
+  if (!searchQuery.value && isDbReady.value && urlQuery) {
+    searchQuery.value = decodeURIComponent(urlQuery);
+  }
+});
 watch(isDbReady, applyPasteFix);
 watch(searchBarMode, applyPasteFix);
 
@@ -731,6 +741,9 @@ watch(searchQuery, (q) => {
   const trimmed = q.trim();
   const gen = ++searchGen;
   if (!trimmed || (trimmed.length < 2 && trimmed.toLowerCase() !== "i")) {
+    if (!trimmed) {
+      f7.views.get("#tab-search")?.router?.updateCurrentUrl("/");
+    }
     results.value = [];
     suggestions.value = [];
     phraseMatches.value = [];
