@@ -4,7 +4,7 @@
       <f7-subnavbar v-if="searchBarMode === 'subnavbar' && isDbReady" :inner="false">
         <f7-searchbar
           custom-search
-          
+          :value="searchQuery"
           :clear-button="false"
           :disable-button-text="t('search.cancel')"
           :placeholder="t('search.placeholder')"
@@ -174,7 +174,7 @@
     <f7-subnavbar v-if="searchBarMode === 'bottom' && isDbReady" :inner="false" class="searchbar-bottom-toolbar">
       <f7-searchbar
         custom-search
-        
+        :value="searchQuery"
         :clear-button="!f7theme.ios"
         :disable-button-text="t('search.cancel')"
         :placeholder="t('search.placeholder')"
@@ -206,6 +206,7 @@ import {
   downloadDb,
 } from "../utils/db.js";
 import { dbReady, dbDownloadNeeded, dbDownloadSize, swUpdatePending } from "../utils/db-update-state.js";
+import { searchQuery } from "../utils/search-state.js";
 
 interface SearchResultWithForm extends SearchResult {
   matchedForm?: string;
@@ -248,7 +249,6 @@ const phraseTerms = ref(loadPhraseTerms());
 const matchedTerms = ref<string[]>([]);
 const vlData = ref<VLData>({ items: [], topPosition: 0 });
 let vl: unknown = null;
-const searchQuery = ref("");
 const freqWords = ref<SearchResult[]>([]);
 const recentWords = ref<SearchResult[]>([]);
 const loading = ref(true);
