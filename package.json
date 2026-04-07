@@ -9,6 +9,7 @@
     "build": "npm run build-index && tsx scripts/copy-data.ts && vite build",
     "sync-version": "npx capacitor-set-version set -v $(node -p \"require('./package.json').version\") -b $(( $(date +%s) / 10 ))",
     "build:mobile": "npm run sync-version && npm run build && npx cap sync",
+    "build:mobile:ui": "npm run sync-version && vite build && npx cap sync",
     "preview": "vite preview",
     "copy-data": "tsx scripts/copy-data.ts",
     "download": "tsx scripts/download.ts && tsx scripts/build-lookup-index.ts",
