@@ -186,7 +186,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onMounted, nextTick } from "vue";
+import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from "vue";
 import { f7, theme as f7theme } from "framework7-vue";
 import { t } from "../js/i18n.js";
 import { submitReport } from "../utils/report.js";
@@ -379,8 +379,21 @@ function highlightPhraseWords(lemma: string): string {
   }).join("");
 }
 
+function updateBrowserUrl(q: string) {
+  const view = f7.views.get('#tab-search');
+  if (!view) return;
+  const viewId = (view as unknown as { id: string }).id;
+  const url = `/search/${encodeURIComponent(q)}/`;
+  const state = { ...(history.state || {}), [viewId]: { url: '/' } };
+  if (window.location.pathname.startsWith('/search/')) {
+    history.replaceState(state, '', url);
+  } else {
+    history.pushState(state, '', url);
+  }
+}
+
 async function search(q: string, gen: number) {
-  f7.views.get("#tab-search")?.router?.updateCurrentUrl(`/search/${encodeURIComponent(q)}/`);
+  updateBrowserUrl(q);
   if (q.length < 2) {
     if (q.toLowerCase() === "i") {
       const hits = await searchByLemma("ich");
@@ -723,13 +736,28 @@ function applyPasteFix() {
     });
   });
 }
+const onPopState = () => {
+  if (!window.location.pathname.startsWith('/search/')) {
+    searchQuery.value = '';
+    results.value = [];
+    suggestions.value = [];
+    phraseMatches.value = [];
+    loading.value = false;
+    loadHomeScreen(++searchGen);
+  }
+};
 onMounted(() => {
   applyPasteFix();
+  window.addEventListener('popstate', onPopState);
   // Restore search query from URL on page reload (e.g. /search/Bank/)
   const urlQuery = props.f7route?.params?.query as string | undefined;
   if (!searchQuery.value && isDbReady.value && urlQuery) {
     searchQuery.value = decodeURIComponent(urlQuery);
+    nextTick(() => f7.searchbar.get('#tab-search .page-current .searchbar')?.enable());
   }
+});
+onBeforeUnmount(() => {
+  window.removeEventListener('popstate', onPopState);
 });
 watch(isDbReady, applyPasteFix);
 watch(searchBarMode, applyPasteFix);
@@ -742,7 +770,10 @@ watch(searchQuery, (q) => {
   const gen = ++searchGen;
   if (!trimmed || (trimmed.length < 2 && trimmed.toLowerCase() !== "i")) {
     if (!trimmed) {
-      f7.views.get("#tab-search")?.router?.updateCurrentUrl("/");
+      if (window.location.pathname.startsWith('/search/')) {
+        history.back(); // popstate handler clears search state
+        return;
+      }
     }
     results.value = [];
     suggestions.value = [];

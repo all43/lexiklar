@@ -65,7 +65,9 @@ onMounted(() => {
     if (view.router.history.length > 1) {
       view.router.back();
     } else if (viewId === '#tab-search' && searchQuery.value) {
-      f7.searchbar.get('#tab-search .searchbar')?.clear();
+      const sb = f7.searchbar.get('#tab-search .searchbar');
+      sb?.clear();
+      sb?.disable();
     }
   };
 
