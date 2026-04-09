@@ -1,9 +1,9 @@
 /**
  * Generate proofread batch word lists for subagent processing.
  *
- * Finds unproofread word files (missing _proofread.gloss_en), sorts by zipf
- * descending, splits into batches of 30, and outputs each batch's word list
- * with check_examples (unproofread example IDs).
+ * Finds words with unproofread glosses or unproofread owned examples, sorts by
+ * zipf descending, splits into batches of 30, and outputs each batch's word
+ * list with check_examples (unproofread example IDs).
  *
  * Usage:
  *   npx tsx scripts/proofread-batches.ts --start-batch 170 --count 10
@@ -50,11 +50,33 @@ const skip = parseInt(getArg("--skip", "0")!);
 const batchSize = parseInt(getArg("--batch-size", "30")!);
 const outDir = getArg("--out");
 
-// 1. Find unproofread words
+// 1. Pre-scan example shards to build set of unproofread example IDs
+console.error("Scanning example shards for unproofread examples...");
+const unproofreadExSet = new Set<string>();
+for (const sf of readdirSync(EXAMPLES_DIR).filter((f) => f.endsWith(".json")).sort()) {
+  const shard = JSON.parse(readFileSync(join(EXAMPLES_DIR, sf), "utf-8"));
+  for (const [id, ex] of Object.entries(shard) as [string, any][]) {
+    if (!ex.translation) continue;
+    const pr = ex._proofread || {};
+    if (!(pr.translation && pr.annotations)) unproofreadExSet.add(id);
+  }
+}
+console.error(`Unproofread examples with translations: ${unproofreadExSet.size}`);
+
+// 2. Find unproofread words
 interface WordEntry {
   zipf: number;
   path: string;
   refsOnly?: boolean; // true = glosses already proofread, only check ref examples
+}
+
+function wordOwnsUnproofreadExamples(data: any): boolean {
+  for (const sense of data.senses || []) {
+    for (const eid of sense.example_ids || []) {
+      if (unproofreadExSet.has(eid)) return true;
+    }
+  }
+  return false;
 }
 
 const unproofread: WordEntry[] = [];
@@ -65,20 +87,15 @@ for (const posDir of ["nouns", "verbs", "adjectives"]) {
     if (!file.endsWith(".json")) continue;
     const data = JSON.parse(readFileSync(join(dir, file), "utf-8"));
     const pr = data._proofread || {};
+    const basename = file.replace(/\.json$/, "");
     if (!pr.gloss_en) {
-      const basename = file.replace(/\.json$/, "");
-      unproofread.push({
-        zipf: data.zipf || 0,
-        path: `${posDir}/${basename}`,
-      });
+      unproofread.push({ zipf: data.zipf || 0, path: `${posDir}/${basename}` });
+    } else if (wordOwnsUnproofreadExamples(data)) {
+      // Glosses done but has unproofread examples
+      unproofread.push({ zipf: data.zipf || 0, path: `${posDir}/${basename}` });
     } else if (checkRefs && !pr.examples_ref) {
       // Glosses done, but ref examples not yet checked
-      const basename = file.replace(/\.json$/, "");
-      unproofread.push({
-        zipf: data.zipf || 0,
-        path: `${posDir}/${basename}`,
-        refsOnly: true,
-      });
+      unproofread.push({ zipf: data.zipf || 0, path: `${posDir}/${basename}`, refsOnly: true });
     }
   }
 }

@@ -1617,7 +1617,7 @@
         "form": "Zug",
         "lemma": "Zug",
         "pos": "noun",
-        "gloss_hint": "train"
+        "gloss_hint": "procession"
       },
       {
         "form": "ist",
@@ -1659,7 +1659,7 @@
         "form": "Demonstrationszüge",
         "lemma": "Demonstrationszug",
         "pos": "noun",
-        "gloss_hint": "demonstration trains"
+        "gloss_hint": "procession"
       }
     ],
     "text_linked": "„[[Der|pronouns/der_nominativ]] [[Zug|nouns/Zug#1]] [[ist|verbs/sein#2]] [[viel|adverbs/viel#1]] [[langsamer|adjectives/langsam]] [[als|conjunctions/als#1]] alle anderen Demonstrationszüge.“"
@@ -1786,7 +1786,10 @@
         "gloss_hint": "below | beneath | among | during"
       }
     ],
-    "text_linked": "[[Vor|prepositions/vor]] [[dem|determiners/der]] [[Abitur|nouns/Abitur#1]] [[stehen|verbs/stehen#1]] viele [[Schüler|nouns/Schüler#1]] [[unter|prepositions/unter#1]] Druck."
+    "text_linked": "[[Vor|prepositions/vor]] [[dem|determiners/der]] [[Abitur|nouns/Abitur#1]] [[stehen|verbs/stehen#1]] viele [[Schüler|nouns/Schüler#1]] [[unter|prepositions/unter#1]] Druck.",
+    "_proofread": {
+      "translation": true
+    }
   },
   "ee13e4fd16": {
     "text": "„Da macht sie ihm ein Fenster auf,",
@@ -10338,28 +10341,22 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "polizei",
+        "form": "Polizei",
         "lemma": "Polizei",
         "pos": "noun",
-        "gloss_hint": "law enforcement"
+        "gloss_hint": null
       },
       {
         "form": "stellte",
         "lemma": "stellen",
         "pos": "verb",
-        "gloss_hint": "to put, to place"
+        "gloss_hint": "catch"
       },
       {
-        "form": "den",
-        "lemma": "der",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "dieb",
+        "form": "Dieb",
         "lemma": "Dieb",
         "pos": "noun",
-        "gloss_hint": "thief"
+        "gloss_hint": null
       }
     ],
     "text_linked": "Die Polizei [[stellte|verbs/stellen]] [[den|determiners/der]] Dieb.",
@@ -13557,7 +13554,11 @@
         "gloss_hint": "wanted"
       }
     ],
-    "text_linked": "„Ettingers [[Werke|nouns/Werk#2]] [[wurden|verbs/werden#1]] [[zu|particles/zu_drückt]] [[seinen|pronouns/sein]] Lebzeiten [[nicht|particles/nicht#1]] [[gedruckt|verbs/drucken]], [[weil|conjunctions/weil_konjunktion#1]] er [[sich|pronouns/sich#1]] nicht [[den|pronouns/der_singular#1]] Vorgaben [[der|pronouns/der_nominativ#2]] [[russischen|adjectives/russisch#1]] Zensur [[unterwerfen|verbs/unterwerfen#2]] [[wollte|verbs/wollen#2]].“"
+    "text_linked": "„Ettingers [[Werke|nouns/Werk#2]] [[wurden|verbs/werden#1]] [[zu|particles/zu_drückt]] [[seinen|pronouns/sein]] Lebzeiten [[nicht|particles/nicht#1]] [[gedruckt|verbs/drucken]], [[weil|conjunctions/weil_konjunktion#1]] er [[sich|pronouns/sich#1]] nicht [[den|pronouns/der_singular#1]] Vorgaben [[der|pronouns/der_nominativ#2]] [[russischen|adjectives/russisch#1]] Zensur [[unterwerfen|verbs/unterwerfen#2]] [[wollte|verbs/wollen#2]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "ca6aba0f"
+    }
   },
   "ee7da3c781": {
     "text": "Das Prinzip der Evolution beruht auf dem Zusammenspiel von Mutation und Selektion.",
@@ -22807,12 +22808,12 @@
   },
   "eecb641671": {
     "text": "Er ist zum Unterrichten geboren.",
-    "translation": "He is <gloss>born</gloss> to <gloss>teach</gloss>.",
+    "translation": "He is born to teach.",
     "source": "wiktionary",
     "lemmas": [
       "geboren"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "translation_model": "anthropic/claude-sonnet-4-6",
     "_proofread": {
       "translation": true
     }

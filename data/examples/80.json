@@ -6603,13 +6603,16 @@
   },
   "804404a4e9": {
     "text": "„Schon in der U-Bahn war es so proppenvoll wie vor Heimspielen des FC Bayern.“",
-    "translation": "\"Already in the subway it was as packed as before home games of FC Bayern.\" [packed: proppenvoll (adjective), subway: U-Bahn (noun), home games: Heimspielen (noun)]",
+    "translation": "\"Already in the subway it was as packed as before home games of FC Bayern.\"",
     "source": "wiktionary",
     "lemmas": [
       "U-Bahn",
       "proppenvoll"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001"
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "_proofread": {
+      "translation": true
+    }
   },
   "80446d7dab": {
     "text": "Der Mann flehte den Richter auf Knien an, seinen Sohn freizulassen.",
@@ -6964,7 +6967,11 @@
         "gloss_hint": "individual"
       }
     ],
-    "text_linked": "[[Jeder|pronouns/jeder]] [[Mensch|nouns/Mensch_lebewesen#1]] [[ist|verbs/sein#2]] [[ein|pronouns/ein#2]] [[Individuum|nouns/Individuum#1]]."
+    "text_linked": "[[Jeder|pronouns/jeder]] [[Mensch|nouns/Mensch_lebewesen#1]] [[ist|verbs/sein#2]] [[ein|pronouns/ein#2]] [[Individuum|nouns/Individuum#1]].",
+    "_proofread": {
+      "translation": true,
+      "annotations": "5d16e0f7"
+    }
   },
   "804993cca3": {
     "text": "Die bange Frage nach dem \"Wo bin ich?\" war nach zwei Stunden Flug geklärt.",
@@ -18117,7 +18124,10 @@
         "gloss_hint": "provoke"
       }
     ],
-    "text_linked": "„Diese absolutistische [[Form|nouns/Form#1]] [[der|determiners/der]] [[Herrschaft|nouns/Herrschaft#1]] [[rief|verbs/rufen#1]] [[im|prepositions/in]] ausgehenden 19. [[Jahrhundert|nouns/Jahrhundert#1]] [[immer|adverbs/immer#1]] [[schärfere|adjectives/scharf#1]] intellektuelle [[Kritik|nouns/Kritik#2]] [[hervor.|verbs/hervorheben]]“"
+    "text_linked": "„Diese absolutistische [[Form|nouns/Form#1]] [[der|determiners/der]] [[Herrschaft|nouns/Herrschaft#1]] [[rief|verbs/rufen#1]] [[im|prepositions/in]] ausgehenden 19. [[Jahrhundert|nouns/Jahrhundert#1]] [[immer|adverbs/immer#1]] [[schärfere|adjectives/scharf#1]] intellektuelle [[Kritik|nouns/Kritik#2]] [[hervor.|verbs/hervorheben]]“",
+    "_proofread": {
+      "translation": true
+    }
   },
   "80aef9fb57": {
     "text": "„Das Portemonnaie an sich wird also schon geliebt, die Füllung macht es nur noch bedeutender.“",
@@ -18773,21 +18783,15 @@
     "annotations": [
       {
         "form": "fett",
-        "lemma": "Speck",
-        "pos": "noun",
-        "gloss_hint": "fat (food)"
+        "lemma": "fett",
+        "pos": "adjective",
+        "gloss_hint": "fatty"
       },
       {
         "form": "sein",
         "lemma": "sein",
         "pos": "verb",
         "gloss_hint": "be (copula)"
-      },
-      {
-        "form": "sehr",
-        "lemma": "sehr",
-        "pos": "adjective",
-        "gloss_hint": "very"
       }
     ],
     "text_linked": "Die Hühnersuppe scheint sehr [[fett|nouns/Speck]] zu [[sein|verbs/sein#1]], es haben sich Augen abgesetzt."

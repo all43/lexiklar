@@ -5068,21 +5068,9 @@
     "translation_model": "openai/gpt-4.1-nano",
     "annotations": [
       {
-        "form": "Ich",
-        "lemma": "ich",
-        "pos": "pronoun",
-        "gloss_hint": "ego"
-      },
-      {
         "form": "hob",
-        "lemma": "haben",
+        "lemma": "aufheben",
         "pos": "verb",
-        "gloss_hint": "have"
-      },
-      {
-        "form": "diese",
-        "lemma": "dieser",
-        "pos": "determiner",
         "gloss_hint": null
       },
       {
@@ -5095,12 +5083,6 @@
         "form": "Reste",
         "lemma": "Rest",
         "pos": "noun",
-        "gloss_hint": "leftovers"
-      },
-      {
-        "form": "auf",
-        "lemma": "auf",
-        "pos": "preposition",
         "gloss_hint": null
       },
       {
@@ -5110,33 +5092,9 @@
         "gloss_hint": null
       },
       {
-        "form": "sie",
-        "lemma": "sie",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "einer",
-        "lemma": "ein",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
         "form": "Urne",
         "lemma": "Urne",
         "pos": "noun",
-        "gloss_hint": "urn"
-      },
-      {
-        "form": "und",
-        "lemma": "und",
-        "pos": "conjunction",
         "gloss_hint": null
       },
       {
@@ -5146,56 +5104,8 @@
         "gloss_hint": null
       },
       {
-        "form": "diese",
-        "lemma": "dieser",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "in",
-        "lemma": "in",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "unser",
-        "lemma": "unser",
-        "pos": "pronoun",
-        "gloss_hint": null
-      },
-      {
         "form": "Haustabernakel",
         "lemma": "Haustabernakel",
-        "pos": "noun",
-        "gloss_hint": null
-      },
-      {
-        "form": "unter",
-        "lemma": "unter",
-        "pos": "preposition",
-        "gloss_hint": null
-      },
-      {
-        "form": "die",
-        "lemma": "die",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "Schwingen",
-        "lemma": "Schwingen",
-        "pos": "noun",
-        "gloss_hint": "wings"
-      },
-      {
-        "form": "der",
-        "lemma": "der",
-        "pos": "determiner",
-        "gloss_hint": null
-      },
-      {
-        "form": "Cherubim",
-        "lemma": "Cherubim",
         "pos": "noun",
         "gloss_hint": null
       }
@@ -5378,7 +5288,10 @@
         "gloss_hint": null
       }
     ],
-    "text_linked": "Der Fußballverein [[behauptete|verbs/behaupten]], er hätte kein [[Interesse|nouns/Interesse#1]] mehr an der [[Verpflichtung|nouns/Verpflichtung#3]] eines neuen [[Stürmers|nouns/Stürmer]]."
+    "text_linked": "Der Fußballverein [[behauptete|verbs/behaupten]], er hätte kein [[Interesse|nouns/Interesse#1]] mehr an der [[Verpflichtung|nouns/Verpflichtung#3]] eines neuen [[Stürmers|nouns/Stürmer]].",
+    "_proofread": {
+      "translation": true
+    }
   },
   "0e362f7daf": {
     "text": "Es war nicht einfach, den Geburtstagskuchen in dreizehn gleiche Stücke zu zerschneiden.",
@@ -6790,12 +6703,12 @@
   },
   "0e4a411514": {
     "text": "Frau Arzt ist ein Genie im Verkauf.",
-    "translation": "Dr. Arzt is a genius at sales.",
+    "translation": "The lady doctor is a genius at sales.",
     "source": "wiktionary",
     "lemmas": [
       "Arzt"
     ],
-    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "translation_model": "anthropic/claude-sonnet-4-6",
     "annotations": [
       {
         "form": "Frau",
@@ -7401,7 +7314,11 @@
         "gloss_hint": "proclaimed"
       }
     ],
-    "text_linked": "„Noch [[während|conjunctions/während]] der [[Belagerungen|nouns/Belagerung#1]] [[einigten|verbs/einigen#2]] [[sich|pronouns/sich]] alle [[deutschen|adjectives/deutsch]] [[Fürsten|nouns/Fürst#1]] [[und|conjunctions/und]] [[Stämme|nouns/Stamm#2]] und [[König|nouns/König#1]] Wilhelm I. [[wurde|verbs/werden#1]] [[im|prepositions/in]] [[Schloss|nouns/Schloss#2]] [[von|prepositions/von#1]] [[Versailles|nouns/Versailles]] [[zum|prepositions/zu]] deutschen [[Kaiser|nouns/Kaiser#1]] [[ausgerufen|verbs/ausrufen#2]].“"
+    "text_linked": "„Noch [[während|conjunctions/während]] der [[Belagerungen|nouns/Belagerung#1]] [[einigten|verbs/einigen#2]] [[sich|pronouns/sich]] alle [[deutschen|adjectives/deutsch]] [[Fürsten|nouns/Fürst#1]] [[und|conjunctions/und]] [[Stämme|nouns/Stamm#2]] und [[König|nouns/König#1]] Wilhelm I. [[wurde|verbs/werden#1]] [[im|prepositions/in]] [[Schloss|nouns/Schloss#2]] [[von|prepositions/von#1]] [[Versailles|nouns/Versailles]] [[zum|prepositions/zu]] deutschen [[Kaiser|nouns/Kaiser#1]] [[ausgerufen|verbs/ausrufen#2]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "c5da7320"
+    }
   },
   "0e51cb76b8": {
     "text": "Der Wolf drang in die umzäunte Schafkoppel ein und wütete unter den Tieren.",
@@ -16310,7 +16227,11 @@
         "gloss_hint": "install"
       }
     ],
-    "text_linked": "„[[In|prepositions/in]] jedem zweiten [[Neubau|nouns/Neubau#1]] [[wird|verbs/werden]] [[laut|adjectives/laut]] Statistischem [[Bundesamt|nouns/Bundesamt]] [[eine|determiners/ein]] Wärmepumpe [[eingebaut|verbs/einbauen#1]].“"
+    "text_linked": "„[[In|prepositions/in]] jedem zweiten [[Neubau|nouns/Neubau#1]] [[wird|verbs/werden]] [[laut|adjectives/laut]] Statistischem [[Bundesamt|nouns/Bundesamt]] [[eine|determiners/ein]] Wärmepumpe [[eingebaut|verbs/einbauen#1]].“",
+    "_proofread": {
+      "translation": true,
+      "annotations": "f6f025fd"
+    }
   },
   "0e9bc75b93": {
     "text": "Du hast heute wieder geschwänzt? Das schlägt dem Fass den Boden aus!",
@@ -18572,7 +18493,7 @@
       {
         "form": "Sie",
         "lemma": "sie",
-        "pos": "noun",
+        "pos": "pronoun",
         "gloss_hint": "trumpet solo"
       },
       {
@@ -18630,7 +18551,10 @@
         "gloss_hint": "share"
       }
     ],
-    "text_linked": "„Sie [[strahlen|verbs/strahlen#1]] [[um|prepositions/um]] [[die|pronouns/die#1]] [[Wette|nouns/Wette]], [[wollen|verbs/wollen#1]] [[uns|pronouns/wir]] irgendeine [[Neuigkeit|nouns/Neuigkeit]] [[mitteilen|verbs/mitteilen]].“"
+    "text_linked": "„Sie [[strahlen|verbs/strahlen#1]] [[um|prepositions/um]] [[die|pronouns/die#1]] [[Wette|nouns/Wette]], [[wollen|verbs/wollen#1]] [[uns|pronouns/wir]] irgendeine [[Neuigkeit|nouns/Neuigkeit]] [[mitteilen|verbs/mitteilen]].“",
+    "_proofread": {
+      "translation": true
+    }
   },
   "0eb4f7219c": {
     "text": "Werden gleichzeitig mehr als vier Personen mit einem Boot geschleust, muss ein ausgebildeter Schleusenwärter anwesend sein.",
