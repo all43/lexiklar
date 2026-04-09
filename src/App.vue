@@ -32,6 +32,7 @@ import { initTheme } from "./js/theme.js";
 import { t } from "./js/i18n.js";
 import { Capacitor } from "@capacitor/core";
 import { SplashScreen } from '@capacitor/splash-screen';
+import { App as CapApp, type URLOpenListenerEvent } from "@capacitor/app";
 import PwaUpdatePrompt from "./components/PwaUpdatePrompt.vue";
 import DbUpdatePrompt from "./components/DbUpdatePrompt.vue";
 import { searchQuery } from "./utils/search-state.js";
@@ -47,6 +48,30 @@ const f7params = {
 onMounted(() => {
   initTheme();
   SplashScreen.hide();
+
+  // Deep link: switch to favorites tab if landing on /favorites/
+  if (isWeb && window.location.pathname === "/favorites/") {
+    f7.tab.show("#tab-favorites");
+  }
+
+  // Native deep links: lexiklar://word/nouns/Tisch/?section=grammar
+  // new URL() treats the first path segment as host, so reconstruct manually.
+  if (!isWeb) {
+    CapApp.addListener("appUrlOpen", (event: URLOpenListenerEvent) => {
+      const stripped = event.url.replace(/^lexiklar:\/\//, "/");
+      const qIdx = stripped.indexOf("?");
+      const path = qIdx >= 0 ? stripped.slice(0, qIdx) : stripped;
+      const search = qIdx >= 0 ? stripped.slice(qIdx) : "";
+
+      if (path === "/favorites/" || path === "/favorites") {
+        f7.tab.show("#tab-favorites");
+      } else if (path.startsWith("/word/") || path.startsWith("/search/")) {
+        f7.tab.show("#tab-search");
+        const view = f7.views.get("#tab-search");
+        view?.router.navigate(path + search);
+      }
+    });
+  }
 
   // Tap on already-active tab: go back if deep, or clear search if has query.
   // F7's touch handling suppresses click events on the tabbar on touch devices,

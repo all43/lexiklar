@@ -797,6 +797,25 @@ All 20+ public query functions (`getWord`, `searchByLemma`, etc.) call the inter
 
 **Native CORS** — `CapacitorHttp` is enabled in `capacitor.config.json`, routing all native `fetch()` calls through Swift/Kotlin networking instead of WKWebView. This bypasses CORS restrictions on `cdn.lexiklar.app` (which only allows `https://lexiklar.app` origins, not `capacitor://localhost`).
 
+### Deep links
+
+**Web (PWA)**: F7's `browserHistory` + `browserHistoryInitialMatch` on the main view handles `/word/:pos/:file/` and `/search/:query/` on reload. `main.ts` seeds browser history with `/` before pushing the deep path (preserving query string) so the back button returns home. `/favorites/` is handled in `App.vue`'s `onMounted` by switching tabs via `f7.tab.show()`. Query params `?sense=N` and `?section=grammar` are read by `WordPage.vue` and deferred to `onPageAfterIn` (or fired immediately if the page transition already completed).
+
+**Native (iOS/Android)**: Custom URL scheme `lexiklar://` registered in `Info.plist` (`CFBundleURLTypes`) and `AndroidManifest.xml` (intent-filter). `@capacitor/app`'s `appUrlOpen` listener in `App.vue` parses the URL (stripping `lexiklar://` prefix manually — `new URL()` misparses custom schemes by treating the first path segment as hostname) and navigates F7's router.
+
+| URL | Platform |
+|---|---|
+| `lexiklar://word/nouns/Tisch/` | native |
+| `lexiklar://word/nouns/Tisch/?sense=2` | native |
+| `lexiklar://word/nouns/Tisch/?section=grammar` | native |
+| `lexiklar://search/Bank/` | native |
+| `lexiklar://favorites/` | native |
+| `/word/nouns/Tisch/?section=grammar` | web |
+| `/search/Bank/` | web |
+| `/favorites/` | web |
+
+Test on simulator: `xcrun simctl openurl booted "lexiklar://word/nouns/Tisch/?section=grammar"`
+
 ### Custom SQLite plugin (`plugins/lexiklar-sqlite/`)
 
 A minimal Capacitor plugin using platform-native SQLite. No encryption, no external dependencies. SPM-native (no CocoaPods).

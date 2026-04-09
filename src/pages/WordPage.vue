@@ -507,6 +507,8 @@ const loading = ref(true);
 const preview = ref<PreviewData | null>(null);
 const expandedSenses = ref<number[]>([]);
 let pendingSenseScroll: number | null = null;
+let pendingSectionScroll: string | null = null;
+let pageTransitionDone = false;
 const relatedExpanded = ref(false);
 const inHistory = ref(false);
 const isFavorite = ref(false);
@@ -757,9 +759,14 @@ function compareNavigate(term: string) {
 }
 
 function onPageAfterIn() {
+  pageTransitionDone = true;
   if (pendingSenseScroll) {
     scrollToSense(pendingSenseScroll);
     pendingSenseScroll = null;
+  }
+  if (pendingSectionScroll === 'grammar') {
+    scrollToGrammar();
+    pendingSectionScroll = null;
   }
 }
 
@@ -1003,8 +1010,16 @@ onMounted(async () => {
   } finally {
     loading.value = false;
     await nextTick();
-    // Scroll to sense is deferred to onPageAfterIn (after F7 transition completes)
-    pendingSenseScroll = targetSense;
+    // Scroll to sense/section is deferred to onPageAfterIn (after F7 transition completes).
+    // On deep-link reload, onPageAfterIn may have already fired before async data loaded.
+    const targetSection = (props.f7route.query?.section as string) || null;
+    if (pageTransitionDone) {
+      if (targetSense) scrollToSense(targetSense);
+      if (targetSection === 'grammar') scrollToGrammar();
+    } else {
+      pendingSenseScroll = targetSense;
+      pendingSectionScroll = targetSection;
+    }
     const el = inst?.vnode.el as HTMLElement | null;
     el?.querySelectorAll("[data-tooltip]").forEach((tooltipEl) => {
       const htmlEl = tooltipEl as HTMLElement & { f7Tooltip?: unknown };

@@ -61,9 +61,9 @@ import App from "./App.vue";
   // Deep-link support: seed browser history with "/" so the back button
   // returns to home instead of leaving the app.
   if (window.location.pathname.startsWith("/word/") || window.location.pathname.startsWith("/search/")) {
-    const path = window.location.pathname;
+    const fullUrl = window.location.pathname + window.location.search;
     window.history.replaceState(null, "", "/");
-    window.history.pushState(null, "", path);
+    window.history.pushState(null, "", fullUrl);
   }
 
   const app = createApp(App);
