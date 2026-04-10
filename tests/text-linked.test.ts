@@ -312,6 +312,42 @@ describe("annotateExampleText", () => {
     expect(result).toBe("Der [[Tisch|nouns/Tisch]] steht.");
   });
 
+  it("links each occurrence of a recurring form (cursor advance)", () => {
+    // Regression test for the per-form cursor in annotateExampleText:
+    // when the same form appears twice in the text and is annotated twice,
+    // both occurrences must be linked. Without the cursor, both annotations
+    // collapse onto the first occurrence and the overlap-dedup drops the second.
+    const dupLookup = makeLookup({
+      "Tisch|noun": [{ posDir: "nouns", file: "Tisch", senses: [{ gloss: "Möbelstück", gloss_en: "table" }] }],
+    });
+    const annotations: Annotation[] = [
+      { form: "Tisch", lemma: "Tisch", pos: "noun", gloss_hint: null },
+      { form: "Tisch", lemma: "Tisch", pos: "noun", gloss_hint: null },
+    ];
+    const result = annotateExampleText(
+      "Der Tisch und der Tisch sind gleich.",
+      annotations,
+      dupLookup,
+    );
+    expect(result).toBe(
+      "Der [[Tisch|nouns/Tisch]] und der [[Tisch|nouns/Tisch]] sind gleich.",
+    );
+  });
+
+  it("links recurring form even when only one occurrence is in text", () => {
+    // If the form appears once but is annotated twice, the second annotation's
+    // findFormInText should return -1 (cursor past end) and be silently dropped.
+    const dupLookup = makeLookup({
+      "Tisch|noun": [{ posDir: "nouns", file: "Tisch", senses: [{ gloss: "Möbelstück", gloss_en: "table" }] }],
+    });
+    const annotations: Annotation[] = [
+      { form: "Tisch", lemma: "Tisch", pos: "noun", gloss_hint: null },
+      { form: "Tisch", lemma: "Tisch", pos: "noun", gloss_hint: null }, // phantom dup
+    ];
+    const result = annotateExampleText("Der Tisch ist neu.", annotations, dupLookup);
+    expect(result).toBe("Der [[Tisch|nouns/Tisch]] ist neu.");
+  });
+
   it("includes sense number for multi-sense words", () => {
     const multiSenseLookup = makeLookup({
       "Schloss|noun": [{ posDir: "nouns", file: "Schloss", senses: [

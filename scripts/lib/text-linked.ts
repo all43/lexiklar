@@ -289,12 +289,20 @@ export function annotateExampleText(
 
   const matches: TextMatch[] = [];
 
+  // Per-form cursor: when the same `form` is annotated multiple times (legitimate
+  // recurrence in the sentence), each successive annotation must search from
+  // *after* the previous match — otherwise all duplicates collapse onto the
+  // first occurrence and the overlap-dedup pass drops the extras.
+  const formCursor = new Map<string, number>();
+
   for (const ann of annotations) {
     const target = resolveWordFile(ann.lemma, ann.pos, ann.gloss_hint, lookup);
     if (!target) continue;
 
-    const idx = findFormInText(text, ann.form, 0);
+    const startAfter = formCursor.get(ann.form) ?? 0;
+    const idx = findFormInText(text, ann.form, startAfter);
     if (idx === -1) continue;
+    formCursor.set(ann.form, idx + ann.form.length);
 
     let token = `[[${ann.form}|${target.posDir}/${target.file}`;
     if (target.senseNumber) token += `#${target.senseNumber}`;
