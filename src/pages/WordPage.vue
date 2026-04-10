@@ -320,7 +320,11 @@
           <span>{{ t('word.grammar') }}</span>
           <a class="grammar-jump" @click.prevent="scrollToTop">↑ {{ t('word.meanings') }}</a>
         </div>
-        <PronounDeclension v-if="word.pos === 'pronoun'" :word="word" />
+        <template v-if="word.pos === 'pronoun'">
+          <DeterminerDeclension v-if="word.base_lemma" :word="word" :form-examples="formExamplesResolved" />
+          <PronounDeclension v-else :word="word" />
+        </template>
+        <DeterminerDeclension v-else-if="word.pos === 'determiner'" :word="word" :form-examples="formExamplesResolved" />
         <f7-block v-else>
           <p><em>{{ t('word.grammarSoon') }}</em></p>
         </f7-block>
@@ -395,6 +399,7 @@ import VerbConjugation from "../components/VerbConjugation.vue";
 import NounDeclension from "../components/NounDeclension.vue";
 import AdjectiveDeclension from "../components/AdjectiveDeclension.vue";
 import PronounDeclension from "../components/PronounDeclension.vue";
+import DeterminerDeclension from "../components/DeterminerDeclension.vue";
 import VerbSepPipe from "../components/VerbSepPipe.vue";
 import { getWord, getExamples, getRelatedWords, searchByLemma, getBaseAdjective, getPositiveCounterparts } from "../utils/db.js";
 import { submitReport } from "../utils/report.js";
@@ -502,6 +507,14 @@ const word = ref<(Word & Record<string, unknown>) | null>(null);
 const baseAdjective = ref<{ word: string; superlative: string | null; antonym: { word: string; negative?: boolean } | null } | null>(null);
 const positiveCounterpart = ref<{ word: string } | null>(null);
 const examples = ref<Record<string, Example>>({});
+const formExamplesResolved = computed(() => {
+  const feData = (word.value as Record<string, unknown> | null)?.form_examples as Array<{ form: string; example_ids: string[] }> | undefined;
+  if (!feData) return [];
+  return feData.map(fe => ({
+    form: fe.form,
+    examples: fe.example_ids.map(id => examples.value[id]).filter((e): e is Example => !!e),
+  }));
+});
 const relatedWords = ref<SearchResult[]>([]);
 const loading = ref(true);
 const preview = ref<PreviewData | null>(null);
@@ -998,6 +1011,10 @@ onMounted(async () => {
       if (s.example_ids) ids.push(...s.example_ids);
     }
     if (word.value?.expression_ids) ids.push(...word.value.expression_ids);
+    const feData = (word.value as Record<string, unknown> | null)?.form_examples as Array<{ form: string; example_ids: string[] }> | undefined;
+    if (feData) {
+      for (const fe of feData) ids.push(...fe.example_ids);
+    }
     if (ids.length) examples.value = await getExamples(ids);
 
     const w = word.value as Record<string, unknown> | null;

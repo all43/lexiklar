@@ -85,6 +85,11 @@ export interface WordOverrides {
   [key: string]: unknown;
 }
 
+export interface FormExample {
+  form: string;
+  example_ids: string[];
+}
+
 export interface ProofreadFlags {
   gloss_en?: true;
   gloss_en_full?: true;
@@ -194,6 +199,10 @@ export interface WordBase {
   false_friend_en?: FalseFriendEn;
   /** Promoted from _overrides by build-index; present only in DB blobs */
   confusable_pairs?: ConfusablePairs;
+  /** For inflected determiner/pronoun forms: the base lemma this form belongs to (e.g. "einer" → "ein") */
+  base_lemma?: string;
+  /** Examples contributed by inflected form stubs — only present in DB blobs for base forms */
+  form_examples?: FormExample[];
   // Runtime fields added by build-index.ts (stored in SQLite data blob)
   frequency?: number;
   oscillating_verb?: boolean;

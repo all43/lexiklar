@@ -402,6 +402,39 @@ function main(): void {
   }
 
   // --------------------------------------------------------
+  // Phase 1b.0: Collect form_examples from inflected-form stubs
+  // Stubs are entries where base_lemma is set AND differs from word
+  // (e.g. die/dem/des → der, eine/einen/… → ein, ihrer → ihr).
+  // Their examples are promoted to the base form's data blob under form_examples.
+  // --------------------------------------------------------
+
+  // Map "posDir/word" → fileKey for base forms (base_lemma absent or self-referential)
+  const baseKeyByWord = new Map<string, string>();
+  for (const { data: bd, posDir: bPos, fileKey: bKey } of allWordData) {
+    const bbl = (bd as Record<string, unknown>).base_lemma as string | undefined;
+    if (!bbl || bbl === bd.word) {
+      const mapKey = `${bPos}/${bd.word}`;
+      // Self-referential (explicit base form) takes priority over entries with no base_lemma
+      if (bbl === bd.word || !baseKeyByWord.has(mapKey)) {
+        baseKeyByWord.set(mapKey, bKey);
+      }
+    }
+  }
+
+  // Group stub examples by base fileKey → [{ form, example_ids }]
+  const stubFormExamplesMap = new Map<string, Array<{ form: string; example_ids: string[] }>>();
+  for (const { data: sd, posDir: sPos } of allWordData) {
+    const sbl = (sd as Record<string, unknown>).base_lemma as string | undefined;
+    if (!sbl || sbl === sd.word) continue;
+    const baseFileKey = baseKeyByWord.get(`${sPos}/${sbl}`);
+    if (!baseFileKey) continue;
+    const ids = (sd.senses || []).flatMap((s: Sense) => (s.example_ids || []) as string[]);
+    if (ids.length === 0) continue;
+    if (!stubFormExamplesMap.has(baseFileKey)) stubFormExamplesMap.set(baseFileKey, []);
+    stubFormExamplesMap.get(baseFileKey)!.push({ form: sd.word, example_ids: ids });
+  }
+
+  // --------------------------------------------------------
   // Phase 1b: Resolve cross-POS relationships
   // --------------------------------------------------------
 
@@ -634,6 +667,10 @@ function main(): void {
     for (const entry of allWordData) {
       const { data, fileKey } = entry;
 
+      // Skip inflected-form stubs — they are merged into the base form's data blob
+      const entryBaseLemma = (data as Record<string, unknown>).base_lemma as string | undefined;
+      if (entryBaseLemma && entryBaseLemma !== data.word) continue;
+
       // Compute sense display order (rules in lib/sense-ordering.ts, per-word overrides in _overrides)
       const senseOrder = computeSenseOrder(data.senses || [], data.pos, data._overrides);
       const isReordered = senseOrder.some((v, i) => v !== i);
@@ -790,6 +827,10 @@ function main(): void {
         }
       }
 
+      // Inject form_examples collected from stub forms (e.g. eine, einer, … → ein)
+      const stubFEs = stubFormExamplesMap.get(fileKey);
+      if (stubFEs?.length) enriched.form_examples = stubFEs;
+
       const dataJson = JSON.stringify(enriched);
       const pluralDominant = (data as Record<string, unknown>).plural_dominant as boolean | undefined;
       const pluralForm = (data as Record<string, unknown>).plural_form as string | undefined;
@@ -909,6 +950,67 @@ function main(): void {
   });
 
   insertWords();
+
+  // --------------------------------------------------------
+  // Phase 1.5: Index determiner/possessive paradigm forms in word_forms
+  // Stubs are removed from words table, so we index all paradigm cells here
+  // so that "die", "dem", "eine", "einer", etc. find their base form.
+  // --------------------------------------------------------
+
+  const DETERMINER_RULES_FILE = join(DATA_DIR, "rules", "determiner-declensions.json");
+  if (existsSync(DETERMINER_RULES_FILE)) {
+    interface ParadigmRow {
+      lemma: string;
+      forms: Record<string, Record<string, string> | null>;
+      alt_forms?: string[];
+    }
+    const detRules = JSON.parse(readFileSync(DETERMINER_RULES_FILE, "utf-8")) as { paradigms: ParadigmRow[] };
+    const selectWordId = db.prepare<[string], { id: number }>(`SELECT id FROM words WHERE file = ?`);
+
+    const insertParadigmForms = db.transaction(() => {
+      for (const paradigm of detRules.paradigms) {
+        // Use baseKeyByWord to look up the correct posDir-qualified fileKey.
+        // Determiners live in "determiners/", possessive pronouns in "pronouns/".
+        // This avoids collisions with e.g. adjectives/ein.json (numeral "ein").
+        const baseFileKey =
+          baseKeyByWord.get(`determiners/${paradigm.lemma}`) ??
+          baseKeyByWord.get(`pronouns/${paradigm.lemma}`);
+        if (!baseFileKey) continue;
+
+        const row = selectWordId.get(baseFileKey);
+        if (!row) continue;
+        const wordId = row.id;
+
+        const lemmaLower = paradigm.lemma.toLowerCase();
+        const seenForms = new Set<string>([lemmaLower]);
+
+        // Index all cells from paradigm.forms
+        for (const genderForms of Object.values(paradigm.forms)) {
+          if (!genderForms) continue;
+          for (const form of Object.values(genderForms)) {
+            const lower = form.toLowerCase();
+            if (seenForms.has(lower)) continue;
+            seenForms.add(lower);
+            insertWordForm.run({ form: lower, word_id: wordId });
+            wordFormCount++;
+          }
+        }
+
+        // Also index contracted alt_forms (e.g. unsren, unsrem for unser)
+        if (paradigm.alt_forms) {
+          for (const form of paradigm.alt_forms) {
+            const lower = form.toLowerCase();
+            if (seenForms.has(lower)) continue;
+            seenForms.add(lower);
+            insertWordForm.run({ form: lower, word_id: wordId });
+            wordFormCount++;
+          }
+        }
+      }
+    });
+    insertParadigmForms();
+  }
+
   console.log(`Inserted ${wordCount} words, ${wordFormCount} word forms, ${enTermCount} English terms.`);
 
   // --------------------------------------------------------

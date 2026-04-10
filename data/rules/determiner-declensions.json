@@ -1,0 +1,141 @@
+{
+  "description": "German article/determiner/possessive declension paradigms. Used by DeterminerDeclension.vue.",
+  "paradigms": [
+    {
+      "lemma": "der",
+      "decl_class": "weak",
+      "collocation": {
+        "adj_stem": "alt",
+        "M": "Mann", "M_gen": "Mannes",
+        "F": "Frau",
+        "N": "Kind", "N_gen": "Kindes",
+        "Pl": "Leute", "Pl_dat": "Leuten"
+      },
+      "forms": {
+        "masc":   { "nom": "der",  "acc": "den",  "dat": "dem",  "gen": "des"  },
+        "fem":    { "nom": "die",  "acc": "die",  "dat": "der",  "gen": "der"  },
+        "neut":   { "nom": "das",  "acc": "das",  "dat": "dem",  "gen": "des"  },
+        "plural": { "nom": "die",  "acc": "die",  "dat": "den",  "gen": "der"  }
+      }
+    },
+    {
+      "lemma": "ein",
+      "decl_class": "mixed",
+      "collocation": {
+        "adj_stem": "alt",
+        "M": "Mann", "M_gen": "Mannes",
+        "F": "Frau",
+        "N": "Kind", "N_gen": "Kindes"
+      },
+      "forms": {
+        "masc":   { "nom": "ein",   "acc": "einen", "dat": "einem", "gen": "eines" },
+        "fem":    { "nom": "eine",  "acc": "eine",  "dat": "einer", "gen": "einer" },
+        "neut":   { "nom": "ein",   "acc": "ein",   "dat": "einem", "gen": "eines" },
+        "plural": null
+      }
+    },
+    {
+      "lemma": "mein",
+      "decl_class": "mixed",
+      "collocation": {
+        "adj_stem": "alt",
+        "M": "Mann", "M_gen": "Mannes",
+        "F": "Frau",
+        "N": "Kind", "N_gen": "Kindes",
+        "Pl": "Leute", "Pl_dat": "Leuten"
+      },
+      "forms": {
+        "masc":   { "nom": "mein",   "acc": "meinen", "dat": "meinem", "gen": "meines" },
+        "fem":    { "nom": "meine",  "acc": "meine",  "dat": "meiner", "gen": "meiner" },
+        "neut":   { "nom": "mein",   "acc": "mein",   "dat": "meinem", "gen": "meines" },
+        "plural": { "nom": "meine",  "acc": "meine",  "dat": "meinen", "gen": "meiner" }
+      }
+    },
+    {
+      "lemma": "dein",
+      "decl_class": "mixed",
+      "collocation": {
+        "adj_stem": "alt",
+        "M": "Mann", "M_gen": "Mannes",
+        "F": "Frau",
+        "N": "Kind", "N_gen": "Kindes",
+        "Pl": "Leute", "Pl_dat": "Leuten"
+      },
+      "forms": {
+        "masc":   { "nom": "dein",   "acc": "deinen", "dat": "deinem", "gen": "deines" },
+        "fem":    { "nom": "deine",  "acc": "deine",  "dat": "deiner", "gen": "deiner" },
+        "neut":   { "nom": "dein",   "acc": "dein",   "dat": "deinem", "gen": "deines" },
+        "plural": { "nom": "deine",  "acc": "deine",  "dat": "deinen", "gen": "deiner" }
+      }
+    },
+    {
+      "lemma": "sein",
+      "decl_class": "mixed",
+      "collocation": {
+        "adj_stem": "alt",
+        "M": "Mann", "M_gen": "Mannes",
+        "F": "Frau",
+        "N": "Kind", "N_gen": "Kindes",
+        "Pl": "Leute", "Pl_dat": "Leuten"
+      },
+      "forms": {
+        "masc":   { "nom": "sein",   "acc": "seinen", "dat": "seinem", "gen": "seines" },
+        "fem":    { "nom": "seine",  "acc": "seine",  "dat": "seiner", "gen": "seiner" },
+        "neut":   { "nom": "sein",   "acc": "sein",   "dat": "seinem", "gen": "seines" },
+        "plural": { "nom": "seine",  "acc": "seine",  "dat": "seinen", "gen": "seiner" }
+      }
+    },
+    {
+      "lemma": "ihr",
+      "decl_class": "mixed",
+      "collocation": {
+        "adj_stem": "alt",
+        "M": "Mann", "M_gen": "Mannes",
+        "F": "Frau",
+        "N": "Kind", "N_gen": "Kindes",
+        "Pl": "Leute", "Pl_dat": "Leuten"
+      },
+      "forms": {
+        "masc":   { "nom": "ihr",   "acc": "ihren", "dat": "ihrem", "gen": "ihres" },
+        "fem":    { "nom": "ihre",  "acc": "ihre",  "dat": "ihrer", "gen": "ihrer" },
+        "neut":   { "nom": "ihr",   "acc": "ihr",   "dat": "ihrem", "gen": "ihres" },
+        "plural": { "nom": "ihre",  "acc": "ihre",  "dat": "ihren", "gen": "ihrer" }
+      }
+    },
+    {
+      "lemma": "unser",
+      "decl_class": "mixed",
+      "collocation": {
+        "adj_stem": "alt",
+        "M": "Mann", "M_gen": "Mannes",
+        "F": "Frau",
+        "N": "Kind", "N_gen": "Kindes",
+        "Pl": "Leute", "Pl_dat": "Leuten"
+      },
+      "forms": {
+        "masc":   { "nom": "unser",   "acc": "unseren", "dat": "unserem", "gen": "unseres" },
+        "fem":    { "nom": "unsere",  "acc": "unsere",  "dat": "unserer", "gen": "unserer" },
+        "neut":   { "nom": "unser",   "acc": "unser",   "dat": "unserem", "gen": "unseres" },
+        "plural": { "nom": "unsere",  "acc": "unsere",  "dat": "unseren", "gen": "unserer" }
+      },
+      "alt_forms": ["unsre", "unsren", "unsern", "unsrem", "unserm", "unsres", "unsers", "unsrer"]
+    },
+    {
+      "lemma": "euer",
+      "decl_class": "mixed",
+      "collocation": {
+        "adj_stem": "alt",
+        "M": "Mann", "M_gen": "Mannes",
+        "F": "Frau",
+        "N": "Kind", "N_gen": "Kindes",
+        "Pl": "Leute", "Pl_dat": "Leuten"
+      },
+      "forms": {
+        "masc":   { "nom": "euer",  "acc": "euren", "dat": "eurem", "gen": "eures" },
+        "fem":    { "nom": "eure",  "acc": "eure",  "dat": "eurer", "gen": "eurer" },
+        "neut":   { "nom": "euer",  "acc": "euer",  "dat": "eurem", "gen": "eures" },
+        "plural": { "nom": "eure",  "acc": "eure",  "dat": "euren", "gen": "eurer" }
+      }
+    }
+  ]
+}
