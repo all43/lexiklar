@@ -68,17 +68,53 @@ interface ParsedLink {
   fullMatch: string;
 }
 
+/**
+ * Walks `[[form|path#sense]]` tokens character-by-character so paths
+ * containing `]` (e.g. `pronouns/das_[1]`) are parsed correctly. The naive
+ * `/\[\[([^|]+)\|([^\]#]+)(?:#(\d+))?\]\]/g` regex misparses those because
+ * `[^\]]` stops at the first `]`. A simple "first `]]`" scan also fails:
+ * `[[das|pronouns/das_[1]]]` contains `]]]`, so the first `]]` is mid-path.
+ * Real link closer is the first `]]` whose following char is NOT `]`.
+ */
 function parseLinks(textLinked: string): ParsedLink[] {
   const links: ParsedLink[] = [];
-  const re = /\[\[([^|]+)\|([^\]#]+)(?:#(\d+))?\]\]/g;
-  let m;
-  while ((m = re.exec(textLinked))) {
+  let i = 0;
+  while (i < textLinked.length) {
+    if (textLinked[i] !== "[" || textLinked[i + 1] !== "[") {
+      i++;
+      continue;
+    }
+    const pipeIdx = textLinked.indexOf("|", i + 2);
+    if (pipeIdx === -1) {
+      i++;
+      continue;
+    }
+    let endIdx = -1;
+    for (let j = pipeIdx + 1; j < textLinked.length - 1; j++) {
+      if (textLinked[j] === "]" && textLinked[j + 1] === "]") {
+        // Skip if followed by another `]` — that means we're inside `]]]`,
+        // which is path-end `]` plus the actual closing `]]`.
+        if (textLinked[j + 2] === "]") continue;
+        endIdx = j;
+        break;
+      }
+    }
+    if (endIdx === -1) {
+      i++;
+      continue;
+    }
+    const form = textLinked.slice(i + 2, pipeIdx);
+    const pathRaw = textLinked.slice(pipeIdx + 1, endIdx);
+    const senseMatch = pathRaw.match(/^(.*)#(\d+)$/);
+    const path = senseMatch ? senseMatch[1] : pathRaw;
+    const sense = senseMatch ? parseInt(senseMatch[2], 10) : null;
     links.push({
-      form: m[1],
-      path: m[2],
-      sense: m[3] ? parseInt(m[3], 10) : null,
-      fullMatch: m[0],
+      form,
+      path,
+      sense,
+      fullMatch: textLinked.slice(i, endIdx + 2),
     });
+    i = endIdx + 2;
   }
   return links;
 }

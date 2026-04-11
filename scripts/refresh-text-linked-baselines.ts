@@ -76,10 +76,13 @@ function parseAndDelink(textLinked: string): { delinked: string; links: ParsedLi
         i++;
         continue;
       }
-      // Find closing ]] — naive forward scan
+      // Find closing ]]. Paths can themselves end with `]` (e.g.
+      // `pronouns/das_[1]`), producing `]]]` — the real link closer is
+      // the first `]]` whose following char is NOT `]`.
       let endIdx = -1;
       for (let j = pipeIdx + 1; j < textLinked.length - 1; j++) {
         if (textLinked[j] === "]" && textLinked[j + 1] === "]") {
+          if (textLinked[j + 2] === "]") continue;
           endIdx = j;
           break;
         }
