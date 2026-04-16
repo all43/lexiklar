@@ -4,17 +4,30 @@
 
 Lexiklar = *Lexikon* (lexicon) + *klar* (clear). The differentiator from existing dictionary apps is **grammar depth**: full declension tables, conjugation paradigms, article gender rules with exceptions, and annotated example sentences — all available offline.
 
+[**Try the PWA →**](https://lexiklar.app) · [**iOS beta (TestFlight) →**](https://testflight.apple.com/join/TrCJCxHh) *(App Store release coming soon — TestFlight is Apple's beta testing platform, free to join)*
+
 ---
 
-## Why I built this
+## What makes it different
 
-I started learning German and kept hitting the same wall: each type of question needed a different tool. Articles and noun genders in one place, verb conjugations in another (usually ad-plagued), declension tables somewhere else, and a separate dictionary for translations. Everything was scattered, and almost nothing worked offline.
-
-Lexiklar started as a side project to fix that for myself — one app that has everything in one place, works offline, and doesn't require an account or contain ads. I was also curious about the technical challenge: how do you extract clean, structured grammar data from a massive Wiktionary dump, and ship it in a way that's actually fast and usable on a phone?
-
-The result is an app I use daily. If you're learning German and find the grammar side frustrating, this is for you.
+- **Fully offline** — entire 120 MB dictionary ships as a single SQLite file; no network requests at runtime, no account required, no ads
+- **Grammar depth you can't find elsewhere** — full declension tables for nouns, complete conjugation paradigms for verbs, 17 morphological gender rules explained inline so you learn *why* a word has its gender
+- **87,500 example sentences** — each word annotated with lemma, POS, and gloss hint; tapping any word in a sentence jumps straight to its dictionary entry
+- **Inflected-form search** — searching *kam* finds *kommen*; umlaut-folded so typing `u` matches `ü`
+- **B2-filtered vocabulary** — 21,500 words ranked by frequency across four corpora (Leipzig news/Wikipedia, SUBTLEX-DE, OpenSubtitles)
+- **Over-the-air updates without App Store approval** — SQL patch diffs update only changed rows; app shell updates via Capawesome live update (native) and Workbox service worker (PWA)
 
 See [CHALLENGES.md](CHALLENGES.md) for a write-up of the harder problems encountered along the way.
+
+---
+
+## Screenshots
+
+<!-- TODO: search results -->
+<!-- TODO: noun detail view (declension table) -->
+<!-- TODO: verb detail view (conjugation table) -->
+<!-- TODO: adjective detail view -->
+<!-- TODO: example sentence with word annotations -->
 
 ---
 
@@ -26,23 +39,13 @@ This project was built using [Claude Code](https://claude.ai/code) as the primar
 
 **Repetitive but nuanced scripting** — the import pipeline involves dozens of TypeScript scripts that follow similar patterns (load JSON, transform, validate, write) but each with domain-specific logic. LLMs are fast at generating this kind of code and good at adapting existing patterns to new requirements.
 
-**Translation from a German-only source** — the data source is the German-language Wiktionary (not English), which has significantly richer grammar data but means all definitions and examples are in German. English translations were generated via LLM API calls across 25,000+ glosses and 87,500+ example sentences. LLM translation quality is good but not perfect — wrong-sense translations, overly literal phrasing, and annotation errors (e.g. annotating English translation text instead of the German original) appear at a low but non-trivial rate. This motivated a systematic proofreading pipeline: batches of words are reviewed by a Claude subagent running locally (no API cost), results are written to structured JSON, and applied via a dedicated script. 179 batches completed, ~3,300 words and ~16,000 examples reviewed. See [CHALLENGES.md](CHALLENGES.md) for a detailed breakdown of error patterns found.
+**Translation from a German-only source** — the data source is the German-language Wiktionary (not English), which has significantly richer grammar data but means all definitions and examples are in German. English translations were generated via LLM API calls across 25,000+ glosses and 87,500+ example sentences. LLM translation quality is good but not perfect — wrong-sense translations, overly literal phrasing, and annotation errors appear at a low but non-trivial rate. This motivated a systematic proofreading pipeline: batches of words are reviewed by a Claude subagent running locally (no API cost), results are written to structured JSON, and applied via a dedicated script. 179 batches completed, ~3,300 words and ~16,000 examples reviewed. See [CHALLENGES.md](CHALLENGES.md) for a detailed breakdown of error patterns found.
 
 **Structured output from unstructured source** — extracting clean grammar data from Wiktionary's inconsistent JSONL format required a lot of edge case handling. LLMs are useful for quickly exploring the data and generating parsing logic for unexpected formats.
 
 **Long tail of UI components** — grammar tables, declension grids, conjugation paradigms, color-coded articles — many small but carefully designed components. LLMs can draft these quickly, leaving more time for the design decisions that actually matter.
 
 The non-LLM parts were equally important: architecture decisions, data model design, performance tuning, and anything where hallucination risk is too high (grammar rules, case forms, conjugation correctness).
-
----
-
-## Screenshots
-
-<!-- TODO: search results -->
-<!-- TODO: noun detail view (declension table) -->
-<!-- TODO: verb detail view (conjugation table) -->
-<!-- TODO: adjective detail view -->
-<!-- TODO: example sentence with word annotations -->
 
 ---
 

@@ -47,7 +47,7 @@ CREATE TABLE word_forms (
   word_id INTEGER NOT NULL REFERENCES words(id),
   PRIMARY KEY (form, word_id)
 );
--- Indexed forms: verb conjugations, noun case forms (including case_forms_alt alternatives), adjective comparative + superlative stem (e.g. "besser", "besten" for gut)
+-- Indexed forms: verb conjugations, noun case forms (including case_forms_alt alternatives), adjective comparative + superlative stem (e.g. "besser", "besten" for gut), determiner/possessive paradigm cells (die/dem/des → der; eine/einer/… → ein; ihre/ihrem/… → ihr; etc.) + unser alt_forms (contracted variants)
 
 CREATE TABLE en_terms (
   term    TEXT NOT NULL,               -- English search term (lowercase)
