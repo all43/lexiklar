@@ -640,9 +640,17 @@ function main(): void {
   // --------------------------------------------------------
 
   // Sort by zipf descending, assign rank 1..N (null zipf → no rank)
+  // Use _overrides.zipf if set (allows manual ranking corrections without re-running enrich step)
+  const effectiveZipf = (e: { data: Record<string, unknown> }) =>
+    ((e.data._overrides as Record<string, unknown> | undefined)?.zipf as number | undefined)
+    ?? (e.data.zipf as number | undefined)
+    ?? null;
   const ranked = allWordData
-    .filter((e) => e.data.zipf != null)
-    .sort((a, b) => (b.data.zipf ?? 0) - (a.data.zipf ?? 0));
+    .filter((e) => effectiveZipf(e) != null)
+    .sort((a, b) =>
+      (effectiveZipf(b) ?? 0) - (effectiveZipf(a) ?? 0)
+      || (b.data.senses?.length ?? 0) - (a.data.senses?.length ?? 0)
+    );
   const frequencyRank = new Map<string, number>();
   for (let i = 0; i < ranked.length; i++) {
     frequencyRank.set(ranked[i].fileKey, i + 1);
