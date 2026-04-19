@@ -786,10 +786,9 @@ function onPageAfterIn() {
 }
 
 function scrollToSense(senseNumber: number) {
-  const el = document.getElementById(`sense-${senseNumber}`);
+  const el = document.querySelector(`.page-current #sense-${senseNumber}`) as HTMLElement | null;
   if (!el) return;
-  // Use .page-current to avoid hitting a stale page in F7's page stack
-  const pageContent = document.querySelector(".page-current .page-content") as HTMLElement | null;
+  const pageContent = el.closest(".page-content") as HTMLElement | null;
   if (pageContent) {
     const navbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--f7-navbar-height")) || 0;
     const target = pageContent.scrollTop + el.getBoundingClientRect().top - navbarHeight - 16;
@@ -894,7 +893,7 @@ function expandSense(idx: number) {
 }
 
 function scrollToSection(id: string) {
-  const el = document.getElementById(id);
+  const el = document.querySelector(`.page-current #${id}`) as HTMLElement | null;
   if (!el) return;
   const pageContent = el.closest(".page-content") as HTMLElement | null;
   if (!pageContent) { el.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
@@ -934,6 +933,7 @@ onBeforeUnmount(() => {
 });
 
 onMounted(async () => {
+  pageTransitionDone = false;
   const { pos, file } = props.f7route.params as { pos: string; file: string };
   // Sense number passed via F7 route props (from cross-ref / preview navigation)
   const targetSense = props.targetSense

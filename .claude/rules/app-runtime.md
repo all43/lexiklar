@@ -40,22 +40,25 @@ All 20+ public query functions (`getWord`, `searchByLemma`, etc.) call the inter
 
 ## Deep links
 
-**Web (PWA)**: F7's `browserHistory` + `browserHistoryInitialMatch` on the main view handles `/word/:pos/:file/` and `/search/:query/` on reload. `main.ts` seeds browser history with `/` before pushing the deep path (preserving query string) so the back button returns home. `/favorites/` is handled in `App.vue`'s `onMounted` by switching tabs via `f7.tab.show()`. Query params `?sense=N` and `?section=grammar` are read by `WordPage.vue` and deferred to `onPageAfterIn` (or fired immediately if the page transition already completed).
+**Web (PWA)**: F7's `browserHistory` + `browserHistoryInitialMatch` on the main view handles `/word/:pos/:file/` and `/search/:query/` on reload. `main.ts` seeds browser history with `/` before pushing the deep path (preserving query string) so the back button returns home. `/favorites/` is handled in `App.vue`'s `onMounted` by switching tabs via `f7.tab.show()`. Query params `?sense=N` and `?section=<name>` are read by `WordPage.vue` and deferred to `onPageAfterIn` (or fired immediately if the page transition already completed).
 
-**Native (iOS/Android)**: Custom URL scheme `lexiklar://` registered in `Info.plist` (`CFBundleURLTypes`) and `AndroidManifest.xml` (intent-filter via `@string/custom_url_scheme`). `@capacitor/app`'s `appUrlOpen` listener in `App.vue` parses the URL (stripping `lexiklar://` prefix manually — `new URL()` misparses custom schemes by treating the first path segment as hostname) and navigates F7's router.
+**Native (iOS/Android)**: Custom URL scheme `lexiklar://` registered in `Info.plist` (`CFBundleURLTypes`) and `AndroidManifest.xml` (intent-filter via `@string/custom_url_scheme`). `@capacitor/app`'s `appUrlOpen` listener in `App.vue` parses the URL (stripping `lexiklar:///` prefix manually — `new URL()` misparses custom schemes by treating the first path segment as hostname) and navigates F7's router via `router.navigate(path + search)`. `f7route.query.section` is read by `WordPage.vue` identically to the web path.
 
 | URL | Platform |
 |---|---|
 | `lexiklar://word/nouns/Tisch/` | native |
 | `lexiklar://word/nouns/Tisch/?sense=2` | native |
 | `lexiklar://word/nouns/Tisch/?section=grammar` | native |
+| `lexiklar://word/verbs/kennen/?section=confusable-pairs` | native |
 | `lexiklar://search/Bank/` | native |
 | `lexiklar://favorites/` | native |
 | `/word/nouns/Tisch/?section=grammar` | web |
 | `/search/Bank/` | web |
 | `/favorites/` | web |
 
-Test on simulator: `xcrun simctl openurl booted "lexiklar://word/nouns/Tisch/?section=grammar"`
+**`?section=<name>` convention** — scrolls `WordPage` to element `#word-<name>` after load. Supported values: `grammar` (`#word-grammar`), `false-friend` (`#word-false-friend`), `confusable-pairs` (`#word-confusable-pairs`). Scroll is scoped to `.page-current` to avoid hitting same-named IDs on stale pages kept in F7's DOM stack. Section is read from `f7route.query.section` on both web and native.
+
+Test on simulator: `xcrun simctl openurl booted "lexiklar:///word/nouns/Tisch/?section=grammar"`
 
 ## Custom SQLite plugin (`plugins/lexiklar-sqlite/`)
 
