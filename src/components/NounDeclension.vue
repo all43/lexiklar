@@ -43,29 +43,21 @@
           <td v-if="hasSingular" class="decl-form" :class="{ 'decl-form--dim': word.is_plural_only }">
             <template v-if="shouldStack('singular', c.key)">
               <div v-for="form in allForms('singular', c.key)" :key="form" class="decl-form-row">
-                <span :class="`decl-article gender-${genderClass}`">{{ singularArticles[c.key] }}</span>{{ form }}
+                <span :class="`decl-article gender-${genderClass}`">{{ singularArticles[c.key] + ' ' }}</span>{{ form }}
               </div>
             </template>
             <template v-else>
-              <span :class="`decl-article gender-${genderClass}`">{{ singularArticles[c.key] }}</span>
-              <template v-if="isNDeclension && nDeclEnding(c.key)">
-                <span class="decl-stem">{{ nDeclStem(c.key) }}</span><span class="decl-ending">{{ nDeclEnding(c.key) }}</span>
-              </template>
-              <template v-else>{{ allForms('singular', c.key).join(' / ') || '—' }}</template>
+              <span :class="`decl-article gender-${genderClass}`">{{ singularArticles[c.key] + ' ' }}</span><template v-if="isNDeclension && nDeclEnding(c.key)"><span class="decl-stem">{{ nDeclStem(c.key) }}</span><span class="decl-ending">{{ nDeclEnding(c.key) }}</span></template><template v-else>{{ allForms('singular', c.key).join(' / ') || '—' }}</template>
             </template>
           </td>
           <td class="decl-form" :class="{ 'decl-form--dim': word.is_singular_only }">
             <template v-if="hasPlural && shouldStack('plural', c.key)">
               <div v-for="form in allForms('plural', c.key)" :key="form" class="decl-form-row">
-                <span class="decl-article decl-article--plural">{{ pluralArticles[c.key] }}</span>{{ form }}
+                <span class="decl-article decl-article--plural">{{ pluralArticles[c.key] + ' ' }}</span>{{ form }}
               </div>
             </template>
             <template v-else-if="hasPlural">
-              <span class="decl-article decl-article--plural">{{ pluralArticles[c.key] }}</span>
-              <template v-if="umlautSplit(c.key)">
-                {{ umlautSplit(c.key)!.before }}<span class="decl-umlaut">{{ umlautSplit(c.key)!.umlaut }}</span>{{ umlautSplit(c.key)!.after }}
-              </template>
-              <span v-else>{{ allForms('plural', c.key).join(' / ') || '—' }}</span>
+              <span class="decl-article decl-article--plural">{{ pluralArticles[c.key] + ' ' }}</span><template v-if="umlautSplit(c.key)">{{ umlautSplit(c.key)!.before }}<span class="decl-umlaut">{{ umlautSplit(c.key)!.umlaut }}</span>{{ umlautSplit(c.key)!.after }}</template><span v-else>{{ allForms('plural', c.key).join(' / ') || '—' }}</span>
             </template>
             <span v-else class="decl-no-plural">—</span>
           </td>
