@@ -64,8 +64,8 @@ xcrun simctl openurl booted "lexiklar:///word/nouns/Hoffnung/?section=grammar" &
 xcrun simctl openurl booted "lexiklar:///word/verbs/aufstehen/" && sleep 2 && xcrun simctl io booted screenshot store/ios/screenshots/iphone/03-verb-meanings.png
 xcrun simctl openurl booted "lexiklar:///word/verbs/aufstehen/?section=grammar" && sleep 2 && xcrun simctl io booted screenshot store/ios/screenshots/iphone/04-verb-conjugation.png
 xcrun simctl openurl booted "lexiklar:///word/verbs/kennen/?section=confusable-pairs" && sleep 2 && xcrun simctl io booted screenshot store/ios/screenshots/iphone/05-confusable-pairs.png
-xcrun simctl openurl booted "lexiklar:///word/adjectives/schnell/?section=grammar" && sleep 2 && xcrun simctl io booted screenshot store/ios/screenshots/iphone/06-adjective-table.png
-xcrun simctl openurl booted "lexiklar:///word/adjectives/gro%C3%9F/?section=grammar" && sleep 2 && xcrun simctl io booted screenshot store/ios/screenshots/iphone/07-adjective-rules.png
+xcrun simctl openurl booted "lexiklar:///word/adjectives/schnell/?section=grammar&tab=table" && sleep 2 && xcrun simctl io booted screenshot store/ios/screenshots/iphone/06-adjective-table.png
+xcrun simctl openurl booted "lexiklar:///word/adjectives/gro%C3%9F/?section=grammar&tab=rules" && sleep 2 && xcrun simctl io booted screenshot store/ios/screenshots/iphone/07-adjective-rules.png
 ```
 
 ---
@@ -104,8 +104,8 @@ adb shell am start -a android.intent.action.VIEW -d "lexiklar:///word/nouns/Hoff
 adb shell am start -a android.intent.action.VIEW -d "lexiklar:///word/verbs/aufstehen/" app.lexiklar && sleep 2 && adb exec-out screencap -p > store/android/screenshots/phone/03-verb-meanings.png
 adb shell am start -a android.intent.action.VIEW -d "lexiklar:///word/verbs/aufstehen/?section=grammar" app.lexiklar && sleep 2 && adb exec-out screencap -p > store/android/screenshots/phone/04-verb-conjugation.png
 adb shell am start -a android.intent.action.VIEW -d "lexiklar:///word/verbs/kennen/?section=confusable-pairs" app.lexiklar && sleep 2 && adb exec-out screencap -p > store/android/screenshots/phone/05-confusable-pairs.png
-adb shell am start -a android.intent.action.VIEW -d "lexiklar:///word/adjectives/schnell/?section=grammar" app.lexiklar && sleep 2 && adb exec-out screencap -p > store/android/screenshots/phone/06-adjective-table.png
-adb shell am start -a android.intent.action.VIEW -d "lexiklar:///word/adjectives/gro%C3%9F/?section=grammar" app.lexiklar && sleep 2 && adb exec-out screencap -p > store/android/screenshots/phone/07-adjective-rules.png
+adb shell am start -a android.intent.action.VIEW -d "lexiklar:///word/adjectives/schnell/?section=grammar&tab=table" app.lexiklar && sleep 2 && adb exec-out screencap -p > store/android/screenshots/phone/06-adjective-table.png
+adb shell am start -a android.intent.action.VIEW -d "lexiklar:///word/adjectives/gro%C3%9F/?section=grammar&tab=rules" app.lexiklar && sleep 2 && adb exec-out screencap -p > store/android/screenshots/phone/07-adjective-rules.png
 ```
 
 For **tablet_7** and **tablet_10**: same commands, change output folder to `tablet_7/` or `tablet_10/`. If multiple emulators are running, target a specific one:

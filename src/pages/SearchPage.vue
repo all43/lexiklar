@@ -332,7 +332,12 @@ function onPageVisible() {
   showArticles.value = getCached(SHOW_ARTICLES_KEY) !== "0";
   searchBarPosition.value = (getCached(SEARCH_BAR_POSITION_KEY) || "auto") as SearchBarPosition;
   phraseTerms.value = loadPhraseTerms();
-  if (!searchQuery.value) loadHomeScreen();
+  const urlQuery = props.f7route?.params?.query as string | undefined;
+  if (urlQuery && urlQuery !== searchQuery.value) {
+    searchQuery.value = decodeURIComponent(urlQuery);
+  } else if (!searchQuery.value) {
+    loadHomeScreen();
+  }
 }
 
 function onSearch(searchbarOrQuery: unknown, query?: string) {

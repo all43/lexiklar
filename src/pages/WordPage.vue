@@ -315,7 +315,7 @@
           <span>{{ t('word.grammar') }}</span>
           <a class="grammar-jump" @click.prevent="scrollToTop">↑ {{ t('word.meanings') }}</a>
         </div>
-        <AdjectiveDeclension :word="word" :base-word="baseAdjective" :positive-counterpart="positiveCounterpart" @compare-navigate="compareNavigate" />
+        <AdjectiveDeclension :word="word" :base-word="baseAdjective" :positive-counterpart="positiveCounterpart" :initial-view="(props.f7route.query?.tab as 'rules' | 'table' | undefined) || null" @compare-navigate="compareNavigate" />
       </template>
       <template v-else-if="word.pos === 'pronoun' || word.pos === 'determiner' || word.pos === 'numeral'">
         <div class="block-title meanings-header" id="word-grammar">

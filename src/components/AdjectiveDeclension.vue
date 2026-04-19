@@ -266,10 +266,11 @@ const props = defineProps<{
   word: AdjectiveWord;
   baseWord?: { word: string; superlative: string | null; antonym: { word: string; negative?: boolean } | null } | null;
   positiveCounterpart?: { word: string } | null;
+  initialView?: ViewMode | null;
 }>();
 
 const activeTab = ref<DeclType>("strong");
-const viewMode = ref<ViewMode>(getCached(CONDENSED_GRAMMAR_KEY) === "1" ? "rules" : "table");
+const viewMode = ref<ViewMode>(props.initialView ?? (getCached(CONDENSED_GRAMMAR_KEY) === "1" ? "rules" : "table"));
 
 const stem = computed(() => props.word.declension_stem || props.word.word);
 
