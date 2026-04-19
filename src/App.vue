@@ -58,7 +58,7 @@ onMounted(() => {
   // new URL() treats the first path segment as host, so reconstruct manually.
   if (!isWeb) {
     CapApp.addListener("appUrlOpen", (event: URLOpenListenerEvent) => {
-      const stripped = event.url.replace(/^lexiklar:\/\//, "/");
+      const stripped = event.url.replace(/^lexiklar:\/\/\/?/, "/");
       const qIdx = stripped.indexOf("?");
       const path = qIdx >= 0 ? stripped.slice(0, qIdx) : stripped;
       const search = qIdx >= 0 ? stripped.slice(qIdx) : "";

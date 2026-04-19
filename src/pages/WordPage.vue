@@ -89,7 +89,7 @@
       <!-- Senses -->
       <div class="block-title meanings-header">
         <span>{{ t('word.meanings') }}</span>
-        <a v-if="word.pos === 'verb' || word.pos === 'noun' || word.pos === 'proper noun' || word.pos === 'adjective' || word.pos === 'pronoun' || word.pos === 'determiner' || word.pos === 'numeral'" class="grammar-jump" @click.prevent="scrollToGrammar">{{ word.pos === 'verb' ? t('word.conjugation') : (word.pos === 'noun' || word.pos === 'proper noun') ? t('word.declension') : t('word.grammar') }} ↓</a>
+        <a v-if="word.pos === 'verb' || word.pos === 'noun' || word.pos === 'proper noun' || word.pos === 'adjective' || word.pos === 'pronoun' || word.pos === 'determiner' || word.pos === 'numeral'" class="grammar-jump" @click.prevent="scrollToSection('word-grammar')">{{ word.pos === 'verb' ? t('word.conjugation') : (word.pos === 'noun' || word.pos === 'proper noun') ? t('word.declension') : t('word.grammar') }} ↓</a>
       </div>
       <f7-list>
         <template v-for="(sense, idx) in word.senses" :key="idx">
@@ -278,20 +278,22 @@
       </template>
 
       <!-- False Friend -->
-      <FalseFriend
-        v-if="word.false_friend_en"
-        :ff="word.false_friend_en!"
-        :current-word="word.word"
-        @navigate="(lemma: string) => searchWord(lemma, { fallback: false })"
-      />
+      <div v-if="word.false_friend_en" id="word-false-friend">
+        <FalseFriend
+          :ff="word.false_friend_en!"
+          :current-word="word.word"
+          @navigate="(lemma: string) => searchWord(lemma, { fallback: false })"
+        />
+      </div>
 
       <!-- Confusable Pairs -->
-      <ConfusablePair
-        v-if="word.confusable_pairs"
-        :confusable="word.confusable_pairs!"
-        :current-word="word.word"
-        @navigate="(lemma: string) => searchWord(lemma, { fallback: false })"
-      />
+      <div v-if="word.confusable_pairs" id="word-confusable-pairs">
+        <ConfusablePair
+          :confusable="word.confusable_pairs!"
+          :current-word="word.word"
+          @navigate="(lemma: string) => searchWord(lemma, { fallback: false })"
+        />
+      </div>
 
       <!-- Grammar -->
       <template v-if="word.pos === 'verb'">
@@ -777,8 +779,8 @@ function onPageAfterIn() {
     scrollToSense(pendingSenseScroll);
     pendingSenseScroll = null;
   }
-  if (pendingSectionScroll === 'grammar') {
-    scrollToGrammar();
+  if (pendingSectionScroll) {
+    scrollToSection('word-' + pendingSectionScroll);
     pendingSectionScroll = null;
   }
 }
@@ -891,8 +893,8 @@ function expandSense(idx: number) {
   if (!expandedSenses.value.includes(idx)) expandedSenses.value.push(idx);
 }
 
-function scrollToGrammar() {
-  const el = document.getElementById("word-grammar");
+function scrollToSection(id: string) {
+  const el = document.getElementById(id);
   if (!el) return;
   const pageContent = el.closest(".page-content") as HTMLElement | null;
   if (!pageContent) { el.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
@@ -1032,7 +1034,7 @@ onMounted(async () => {
     const targetSection = (props.f7route.query?.section as string) || null;
     if (pageTransitionDone) {
       if (targetSense) scrollToSense(targetSense);
-      if (targetSection === 'grammar') scrollToGrammar();
+      if (targetSection) scrollToSection('word-' + targetSection);
     } else {
       pendingSenseScroll = targetSense;
       pendingSectionScroll = targetSection;

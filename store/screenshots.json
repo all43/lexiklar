@@ -1,0 +1,92 @@
+{
+  "devices": {
+    "ios_phone": {
+      "simulator": "iPhone 14 Plus",
+      "os": "iOS 18",
+      "resolution": "1284x2778",
+      "orientation": "portrait",
+      "output_dir": "store/ios/screenshots/iphone"
+    },
+    "ios_ipad": {
+      "simulator": "iPad Pro (12.9-inch) (6th generation)",
+      "os": "iPadOS 18",
+      "resolution": "2048x2732",
+      "orientation": "portrait",
+      "output_dir": "store/ios/screenshots/ipad"
+    },
+    "android_phone": {
+      "avd": "Pixel_7_API_33",
+      "resolution": "1080x2400",
+      "orientation": "portrait",
+      "output_dir": "store/android/screenshots/phone"
+    },
+    "android_tablet_7": {
+      "avd": "Nexus_7_2013_API_33",
+      "resolution": "1200x1920",
+      "orientation": "portrait",
+      "output_dir": "store/android/screenshots/tablet_7"
+    },
+    "android_tablet_10": {
+      "avd": "Pixel_Tablet_API_33",
+      "resolution": "1600x2560",
+      "orientation": "portrait",
+      "output_dir": "store/android/screenshots/tablet_10"
+    }
+  },
+  "capture": {
+    "ios": {
+      "open_url": "xcrun simctl openurl booted \"lexiklar://{path}\"",
+      "screenshot": "xcrun simctl io booted screenshot \"{output_dir}/{filename}\"",
+      "delay_seconds": 2
+    },
+    "android": {
+      "open_url": "adb shell am start -a android.intent.action.VIEW -d \"lexiklar://{path}\" app.lexiklar",
+      "screenshot": "adb exec-out screencap -p > \"{output_dir}/{filename}\"",
+      "delay_seconds": 2
+    }
+  },
+  "screenshots": [
+    {
+      "id": "search-homonyms",
+      "title": "Search — homonyms",
+      "url": "/search/Bank/",
+      "order": 1
+    },
+    {
+      "id": "noun-declension",
+      "title": "Noun declension + gender rule",
+      "url": "/word/nouns/Hoffnung/?section=grammar",
+      "order": 2
+    },
+    {
+      "id": "verb-meanings",
+      "title": "Verb with linked examples",
+      "url": "/word/verbs/aufstehen/",
+      "order": 3
+    },
+    {
+      "id": "verb-conjugation",
+      "title": "Full conjugation table",
+      "url": "/word/verbs/aufstehen/?section=grammar",
+      "order": 4
+    },
+    {
+      "id": "confusable-pairs",
+      "title": "Don't confuse — kennen vs wissen",
+      "url": "/word/verbs/kennen/?section=confusable-pairs",
+      "order": 5
+    },
+    {
+      "id": "adjective-table",
+      "title": "Adjective declension table",
+      "url": "/word/adjectives/schnell/?section=grammar",
+      "order": 6
+    },
+    {
+      "id": "adjective-rules",
+      "title": "Adjective declension rules",
+      "url": "/word/adjectives/gro%C3%9F/?section=grammar",
+      "order": 7
+    }
+  ]
+}
