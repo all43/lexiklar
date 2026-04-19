@@ -50,6 +50,8 @@ All 20+ public query functions (`getWord`, `searchByLemma`, etc.) call the inter
 | `lexiklar://word/nouns/Tisch/?sense=2` | native |
 | `lexiklar://word/nouns/Tisch/?section=grammar` | native |
 | `lexiklar://word/verbs/kennen/?section=confusable-pairs` | native |
+| `lexiklar://word/adjectives/schnell/?section=grammar&tab=table` | native |
+| `lexiklar://word/adjectives/groß/?section=grammar&tab=rules` | native |
 | `lexiklar://search/Bank/` | native |
 | `lexiklar://favorites/` | native |
 | `/word/nouns/Tisch/?section=grammar` | web |
@@ -57,6 +59,8 @@ All 20+ public query functions (`getWord`, `searchByLemma`, etc.) call the inter
 | `/favorites/` | web |
 
 **`?section=<name>` convention** — scrolls `WordPage` to element `#word-<name>` after load. Supported values: `grammar` (`#word-grammar`), `false-friend` (`#word-false-friend`), `confusable-pairs` (`#word-confusable-pairs`). Scroll is scoped to `.page-current` to avoid hitting same-named IDs on stale pages kept in F7's DOM stack. Section is read from `f7route.query.section` on both web and native.
+
+**`?tab=<view>` convention** — for adjective word pages, overrides the cached tab preference. Values: `table` (declension table) or `rules` (condensed rules view). Passed as `initialView` prop to `AdjectiveDeclension.vue`, taking precedence over the `CONDENSED_GRAMMAR_KEY` preference. Combinable with `?section=grammar` to both scroll and set the tab in one URL.
 
 Test on simulator: `xcrun simctl openurl booted "lexiklar:///word/nouns/Tisch/?section=grammar"`
 
