@@ -35,6 +35,7 @@
     "check-idioms": "tsx scripts/check-idiom-translations.ts",
     "check-idioms:llm": "tsx scripts/check-idiom-translations.ts --llm",
     "compare-models": "tsx scripts/compare-models.ts",
+    "screenshots": "tsx scripts/capture-screenshots.ts",
     "deploy": "rm -f dist/data/lexiklar.db && rm -rf dist/assets/databases && npx wrangler pages deploy dist --project-name lexiklar --commit-dirty=true",
     "release:patch": "npm version patch && git push && git push --tags",
     "release:minor": "npm version minor && git push && git push --tags",
