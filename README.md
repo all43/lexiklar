@@ -4,7 +4,7 @@
 
 Lexiklar = *Lexikon* (lexicon) + *klar* (clear). The differentiator from existing dictionary apps is **grammar depth**: full declension tables, conjugation paradigms, article gender rules with exceptions, and annotated example sentences — all available offline.
 
-[**Try the PWA →**](https://lexiklar.app) · [**iOS beta (TestFlight) →**](https://testflight.apple.com/join/TrCJCxHh) *(App Store release coming soon — TestFlight is Apple's beta testing platform, free to join)*
+[**Try the PWA →**](https://lexiklar.app) · [**iOS App Store →**](https://apps.apple.com/de/app/lexiklar/id6761269667)
 
 ---
 
