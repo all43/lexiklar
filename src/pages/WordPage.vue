@@ -29,7 +29,7 @@
         />
         <f7-link
           v-if="word"
-          icon-f7="square_and_arrow_up"
+          icon-f7="square_arrow_up"
           icon-size="20"
           data-tooltip-no-touch
           :data-tooltip="t('word.share')"
