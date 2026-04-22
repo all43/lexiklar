@@ -55,13 +55,20 @@ onMounted(() => {
   }
 
   // Native deep links: lexiklar://word/nouns/Tisch/?section=grammar
-  // new URL() treats the first path segment as host, so reconstruct manually.
+  // Universal links: https://lexiklar.app/word/nouns/Tisch/?section=grammar
+  // new URL() treats the first path segment as host for custom schemes, so strip manually.
   if (!isWeb) {
     CapApp.addListener("appUrlOpen", (event: URLOpenListenerEvent) => {
-      const stripped = event.url.replace(/^lexiklar:\/\/\/?/, "/");
-      const qIdx = stripped.indexOf("?");
-      const path = qIdx >= 0 ? stripped.slice(0, qIdx) : stripped;
-      const search = qIdx >= 0 ? stripped.slice(qIdx) : "";
+      let pathAndSearch: string;
+      if (event.url.startsWith("https://lexiklar.app")) {
+        const u = new URL(event.url);
+        pathAndSearch = u.pathname + u.search;
+      } else {
+        pathAndSearch = event.url.replace(/^lexiklar:\/\/\/?/, "/");
+      }
+      const qIdx = pathAndSearch.indexOf("?");
+      const path = qIdx >= 0 ? pathAndSearch.slice(0, qIdx) : pathAndSearch;
+      const search = qIdx >= 0 ? pathAndSearch.slice(qIdx) : "";
 
       if (path === "/favorites/" || path === "/favorites") {
         f7.tab.show("#tab-favorites");
