@@ -12,7 +12,7 @@
 
     <template v-for="paradigm in paradigms" :key="paradigm.lemma">
       <f7-block-title>
-        <f7-link :href="`/search/${paradigm.lemma}/`" class="det-page-lemma">{{ paradigm.lemma }}</f7-link>
+        <f7-link :href="paradigm.word_path ? `/word/${paradigm.word_path}/` : `/search/${paradigm.lemma}/`" class="det-page-lemma">{{ paradigm.lemma }}</f7-link>
       </f7-block-title>
       <f7-block class="det-page-block">
         <div class="decl-table-wrap scroll-fade" :style="getScrollStyle(paradigm.lemma)" :class="{ 'is-scrollable': isScrollable(paradigm.lemma) }">
@@ -58,6 +58,7 @@ type GenderForms = Record<CaseKey, string>;
 
 interface DeterminerParadigm {
   lemma: string;
+  word_path?: string;
   forms: {
     masc: GenderForms;
     fem: GenderForms;

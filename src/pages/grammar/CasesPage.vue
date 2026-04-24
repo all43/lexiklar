@@ -33,7 +33,7 @@
       <f7-block class="prep-block">
         <div class="prep-group">
           <div v-for="item in prepositions.accusative" :key="item.prep" class="prep-item">
-            <f7-link :href="`/search/${item.prep}/`" class="prep-word">{{ item.prep }}</f7-link>
+            <f7-link :href="`/word/prepositions/${item.prep}/`" class="prep-word">{{ item.prep }}</f7-link>
             <span class="prep-en">{{ item.en }}</span>
           </div>
         </div>
@@ -43,7 +43,7 @@
       <f7-block class="prep-block">
         <div class="prep-group">
           <div v-for="item in prepositions.dative" :key="item.prep" class="prep-item">
-            <f7-link :href="`/search/${item.prep}/`" class="prep-word">{{ item.prep }}</f7-link>
+            <f7-link :href="`/word/prepositions/${item.prep}/`" class="prep-word">{{ item.prep }}</f7-link>
             <span class="prep-en">{{ item.en }}</span>
           </div>
         </div>
@@ -57,7 +57,7 @@
         </div>
         <div class="prep-group">
           <div v-for="item in prepositions.two_way" :key="item.prep" class="prep-item">
-            <f7-link :href="`/search/${item.prep}/`" class="prep-word">{{ item.prep }}</f7-link>
+            <f7-link :href="`/word/prepositions/${item.prep}/`" class="prep-word">{{ item.prep }}</f7-link>
             <span class="prep-en">{{ item.en }}</span>
           </div>
         </div>
@@ -72,21 +72,21 @@
       <div class="venn-col venn-col-left">
         <div class="venn-label venn-label-acc">Wohin? → Akk.</div>
         <div v-for="item in prepositions.accusative" :key="item.prep" class="venn-row">
-          <f7-link :href="`/search/${item.prep}/`" class="venn-word">{{ item.prep }}</f7-link>
+          <f7-link :href="`/word/prepositions/${item.prep}/`" class="venn-word">{{ item.prep }}</f7-link>
           <span class="venn-meaning">{{ item.en }}</span>
         </div>
       </div>
       <div class="venn-col venn-col-center">
         <div class="venn-label venn-label-both">Akk. + Dat.</div>
         <div v-for="item in prepositions.two_way" :key="item.prep" class="venn-row">
-          <f7-link :href="`/search/${item.prep}/`" class="venn-word">{{ item.prep }}</f7-link>
+          <f7-link :href="`/word/prepositions/${item.prep}/`" class="venn-word">{{ item.prep }}</f7-link>
           <span class="venn-meaning">{{ item.en }}</span>
         </div>
       </div>
       <div class="venn-col venn-col-right">
         <div class="venn-label venn-label-dat">Wo? → Dat.</div>
         <div v-for="item in prepositions.dative" :key="item.prep" class="venn-row">
-          <f7-link :href="`/search/${item.prep}/`" class="venn-word">{{ item.prep }}</f7-link>
+          <f7-link :href="`/word/prepositions/${item.prep}/`" class="venn-word">{{ item.prep }}</f7-link>
           <span class="venn-meaning">{{ item.en }}</span>
         </div>
       </div>
