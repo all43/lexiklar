@@ -15,6 +15,11 @@
       </div>
     </div>
 
+    <!-- Link to full determiners reference page -->
+    <div class="det-ref-link-row">
+      <f7-link href="/grammar/determiners/" class="det-ref-link">{{ t('grammar.allDeterminerParadigms') }}</f7-link>
+    </div>
+
     <!-- Examples from inflected form stubs -->
     <template v-if="formExamples && formExamples.length">
       <div class="det-fe-title">Beispiele</div>
@@ -33,6 +38,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
+import { t } from "../js/i18n.js";
 import paradigmsData from "../../data/rules/determiner-declensions.json";
 import adjEndingsData from "../../data/rules/adj-endings.json";
 import type { GenericWord } from "../../types/word.js";
@@ -166,6 +172,15 @@ function isActive(form: string): boolean {
 .det-article--active {
   color: var(--f7-theme-color);
   font-weight: 700;
+}
+
+.det-ref-link-row {
+  text-align: right;
+  padding: 4px var(--f7-block-padding-horizontal, 16px) 8px;
+}
+
+.det-ref-link {
+  font-size: 13px;
 }
 
 .det-fe-title {

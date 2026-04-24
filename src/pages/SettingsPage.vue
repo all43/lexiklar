@@ -2,6 +2,10 @@
   <f7-page name="settings">
     <f7-navbar :title="t('settings.title')" />
 
+    <f7-list inset strong-ios outline-ios>
+      <f7-list-item @click="openGrammar" link="#" :title="t('settings.grammarReference')" />
+    </f7-list>
+
     <f7-block-title>{{ t('settings.appearance') }}</f7-block-title>
     <f7-list inset strong-ios outline-ios>
       <f7-list-item
@@ -154,6 +158,11 @@ import { Capacitor } from "@capacitor/core";
 import { getDbVersion, checkForUpdates, applyUpdate as applyDbUpdate, cacheClear, cacheSize, type UpdateInfo } from "../utils/db.js";
 import { dbReady, dbDownloadNeeded } from "../utils/db-update-state.js";
 import { pendingAppUpdate, checkAppUpdate, downloadAndApplyAppUpdate, reloadApp as liveReloadApp, type AppUpdateInfo } from "../utils/live-update.js";
+
+function openGrammar() {
+  f7.tab.show("#tab-search");
+  f7.views.get("#tab-search")?.router.navigate("/grammar/");
+}
 
 const THEME_OPTIONS = [
   { value: "auto" as const, labelKey: "settings.themeAuto" },

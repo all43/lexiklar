@@ -13,10 +13,11 @@
       <div v-if="word.plural_dominant" class="noun-rule-hint">
         <span class="noun-rule-match">{{ t('noun.usuallyPlural') }}</span>
       </div>
-      <div v-if="word.gender_rule && !word.gender_rule.is_false_match" class="noun-rule-hint">
+      <div v-if="word.gender_rule && !word.gender_rule.is_false_match" class="noun-rule-hint noun-rule-hint--with-link">
         <span :class="word.gender_rule.is_exception ? 'noun-rule-exception' : 'noun-rule-match'">
           {{ ruleText }}
         </span>
+        <f7-link href="/grammar/noun-gender/" class="noun-rule-ref-link">{{ t('grammar.allGenderRules') }}</f7-link>
       </div>
       <div v-if="word.gender_rule && word.gender_rule.is_false_match" class="noun-rule-hint">
         <span class="noun-rule-false-match">{{ falseMatchText }}</span>

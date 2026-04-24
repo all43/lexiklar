@@ -2,6 +2,13 @@ import SearchPage from "../pages/SearchPage.vue";
 import FavoritesPage from "../pages/FavoritesPage.vue";
 import SettingsPage from "../pages/SettingsPage.vue";
 import WordPage from "../pages/WordPage.vue";
+import GrammarIndexPage from "../pages/grammar/GrammarIndexPage.vue";
+import NounGenderPage from "../pages/grammar/NounGenderPage.vue";
+import AdjectiveDeclensionPage from "../pages/grammar/AdjectiveDeclensionPage.vue";
+import DeterminersPage from "../pages/grammar/DeterminersPage.vue";
+import CasesPage from "../pages/grammar/CasesPage.vue";
+import ModalVerbsPage from "../pages/grammar/ModalVerbsPage.vue";
+import ReflexivePage from "../pages/grammar/ReflexivePage.vue";
 
 interface Route {
   path: string;
@@ -30,6 +37,35 @@ const routes: Route[] = [
   {
     path: "/word/:pos/:file/",
     component: WordPage,
+  },
+  // Grammar reference pages
+  {
+    path: "/grammar/",
+    component: GrammarIndexPage,
+  },
+  {
+    path: "/grammar/noun-gender/",
+    component: NounGenderPage,
+  },
+  {
+    path: "/grammar/adjective-declension/",
+    component: AdjectiveDeclensionPage,
+  },
+  {
+    path: "/grammar/determiners/",
+    component: DeterminersPage,
+  },
+  {
+    path: "/grammar/cases/",
+    component: CasesPage,
+  },
+  {
+    path: "/grammar/modal-verbs/",
+    component: ModalVerbsPage,
+  },
+  {
+    path: "/grammar/reflexive/",
+    component: ReflexivePage,
   },
 ];
 

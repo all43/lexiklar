@@ -90,6 +90,9 @@
         <f7-button :active="viewMode === 'rules'" @click="viewMode = 'rules'">{{ t('adj.viewRules') }}</f7-button>
         <f7-button :active="viewMode === 'table'" @click="viewMode = 'table'">{{ t('adj.viewTable') }}</f7-button>
       </f7-segmented>
+      <div class="adj-ref-link-row">
+        <f7-link href="/grammar/adjective-declension/" class="adj-ref-link">{{ t('grammar.fullReference') }}</f7-link>
+      </div>
 
       <!-- ===== Condensed rules view (regular adjectives only) ===== -->
       <template v-if="viewMode === 'rules' && word.declension_regular">
@@ -460,6 +463,15 @@ function getForm(type: DeclType, gender: typeof GENDERS[number], caseKey: "nom" 
 
 .adj-view-switch {
   margin: 0 var(--f7-block-padding-horizontal, 16px) 12px;
+}
+
+.adj-ref-link-row {
+  text-align: right;
+  margin: 4px var(--f7-block-padding-horizontal, 16px) 8px;
+}
+
+.adj-ref-link {
+  font-size: 13px;
 }
 
 .adj-tabs {

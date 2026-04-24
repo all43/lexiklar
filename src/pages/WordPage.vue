@@ -27,13 +27,10 @@
           :data-tooltip="t('word.removeHistory')"
           @click="removeFromHistory"
         />
-        <f7-link
+        <ShareButton
           v-if="word"
-          icon-f7="square_arrow_up"
-          icon-size="20"
-          data-tooltip-no-touch
-          :data-tooltip="t('word.share')"
-          @click="shareWord"
+          :title="(word.plural_dominant ? word.plural_form : null) ?? word.word"
+          :path="props.f7route.url"
         />
       </f7-nav-right>
     </f7-navbar>
@@ -420,7 +417,7 @@ import type { Word, Sense, VerbWord, NounWord, AdjectiveWord } from "../../types
 import type { Example } from "../../types/example.js";
 import type { SearchResult } from "../../types/search.js";
 import { navigateToWord } from "../utils/navigation.js";
-import { Share } from "@capacitor/share";
+import ShareButton from "../components/ShareButton.vue";
 
 interface PreviewSense {
   gloss: string;
@@ -758,12 +755,6 @@ function removeFromHistory() {
   }).open();
 }
 
-async function shareWord() {
-  const { pos, file } = props.f7route.params as { pos: string; file: string };
-  const url = `https://lexiklar.app/word/${pos}/${file}/`;
-  const title = word.value?.word ?? file;
-  await Share.share({ title, url });
-}
 
 function getPosColor(pos: string | undefined): string {
   return POS_COLORS[pos || ""] || "gray";

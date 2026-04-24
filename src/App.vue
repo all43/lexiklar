@@ -72,7 +72,7 @@ onMounted(() => {
 
       if (path === "/favorites/" || path === "/favorites") {
         f7.tab.show("#tab-favorites");
-      } else if (path.startsWith("/word/") || path.startsWith("/search/")) {
+      } else if (path.startsWith("/word/") || path.startsWith("/search/") || path.startsWith("/grammar/")) {
         f7.tab.show("#tab-search");
         const view = f7.views.get("#tab-search");
         view?.router.navigate(path + search);

@@ -60,9 +60,15 @@ import App from "./App.vue";
 
   // Deep-link support: seed browser history with "/" so the back button
   // returns to home instead of leaving the app.
-  if (window.location.pathname.startsWith("/word/") || window.location.pathname.startsWith("/search/")) {
-    const fullUrl = window.location.pathname + window.location.search;
+  const path = window.location.pathname;
+  if (path.startsWith("/word/") || path.startsWith("/search/") || path.startsWith("/grammar/")) {
+    const fullUrl = path + window.location.search;
     window.history.replaceState(null, "", "/");
+    // For grammar subpages, insert the /grammar/ index as an intermediate history entry
+    // so that pressing back from e.g. /grammar/noun-gender/ lands on /grammar/ (not /).
+    if (path.startsWith("/grammar/") && path !== "/grammar/") {
+      window.history.pushState(null, "", "/grammar/");
+    }
     window.history.pushState(null, "", fullUrl);
   }
 
