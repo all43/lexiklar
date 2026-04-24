@@ -211,6 +211,8 @@ export interface WordBase {
   compound_of?: { file: string; type: string }[];
   feminine_form?: string;
   masculine_form?: string;
+  /** Grammar reference pages related to this word (e.g. ["connectors", "modal-verbs"]) */
+  related_grammar?: string[];
   // POS-specific fields surfaced on WordBase for Vue template access
   // (Vue templates cannot narrow discriminated unions via v-if)
   gender?: "M" | "F" | "N";

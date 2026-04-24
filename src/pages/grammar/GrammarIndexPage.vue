@@ -13,6 +13,7 @@
       <f7-list-item link="/grammar/cases/"                :title="t('grammar.cases')" />
       <f7-list-item link="/grammar/modal-verbs/"          :title="t('grammar.modalVerbs')" />
       <f7-list-item link="/grammar/reflexive/"            :title="t('grammar.reflexive')" />
+      <f7-list-item link="/grammar/connectors/"           :title="t('grammar.connectors')" />
     </f7-list>
   </f7-page>
 </template>

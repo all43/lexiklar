@@ -300,6 +300,20 @@
         />
       </div>
 
+      <!-- Related Grammar Pages -->
+      <template v-if="word.related_grammar?.length">
+        <f7-block-title>{{ t('settings.grammarReference') }}</f7-block-title>
+        <f7-list inset strong-ios outline-ios class="grammar-ref-list">
+          <f7-list-item
+            v-for="pageId in word.related_grammar"
+            :key="pageId"
+            :title="grammarPageTitle(pageId)"
+            link="#"
+            @click="navigateToGrammar(pageId)"
+          />
+        </f7-list>
+      </template>
+
       <!-- Grammar -->
       <template v-if="word.pos === 'verb'">
         <div class="block-title meanings-header" id="word-grammar">
@@ -761,6 +775,24 @@ function removeFromHistory() {
 
 function getPosColor(pos: string | undefined): string {
   return POS_COLORS[pos || ""] || "gray";
+}
+
+const GRAMMAR_PAGE_TITLE_KEYS: Record<string, string> = {
+  "connectors":           "grammar.connectorsTitle",
+  "modal-verbs":          "grammar.modalVerbsTitle",
+  "cases":                "grammar.casesTitle",
+  "reflexive":            "grammar.reflexiveTitle",
+  "noun-gender":          "grammar.nounGenderRulesTitle",
+  "adjective-declension": "grammar.adjectiveDeclensionTitle",
+  "determiners":          "grammar.determinersTitle",
+};
+
+function grammarPageTitle(pageId: string): string {
+  return t(GRAMMAR_PAGE_TITLE_KEYS[pageId] ?? pageId);
+}
+
+function navigateToGrammar(pageId: string) {
+  f7.views.get("#tab-search")?.router.navigate(`/grammar/${pageId}/`);
 }
 
 async function searchWord(lemma: string, { fallback = true } = {}) {
