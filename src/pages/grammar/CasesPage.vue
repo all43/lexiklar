@@ -19,44 +19,83 @@
       </div>
     </f7-block>
 
-    <!-- Prepositions -->
-    <f7-block-title>{{ t('grammar.prepAccOnly') }}</f7-block-title>
-    <f7-block class="prep-block">
-      <div class="prep-group">
-        <div v-for="item in prepositions.accusative" :key="item.prep" class="prep-item">
-          <f7-link :href="`/search/${item.prep}/`" class="prep-word">{{ item.prep }}</f7-link>
-          <span class="prep-en">{{ item.en }}</span>
-        </div>
-      </div>
+    <!-- View toggle -->
+    <f7-block class="view-toggle-block">
+      <f7-segmented strong>
+        <f7-button :active="view === 'list'"    @click="view = 'list'"   >{{ t('grammar.casesListView') }}</f7-button>
+        <f7-button :active="view === 'diagram'" @click="view = 'diagram'">{{ t('grammar.casesDiagramView') }}</f7-button>
+      </f7-segmented>
     </f7-block>
 
-    <f7-block-title>{{ t('grammar.prepDatOnly') }}</f7-block-title>
-    <f7-block class="prep-block">
-      <div class="prep-group">
-        <div v-for="item in prepositions.dative" :key="item.prep" class="prep-item">
-          <f7-link :href="`/search/${item.prep}/`" class="prep-word">{{ item.prep }}</f7-link>
-          <span class="prep-en">{{ item.en }}</span>
+    <!-- List view -->
+    <template v-if="view === 'list'">
+      <f7-block-title>{{ t('grammar.prepAccOnly') }}</f7-block-title>
+      <f7-block class="prep-block">
+        <div class="prep-group">
+          <div v-for="item in prepositions.accusative" :key="item.prep" class="prep-item">
+            <f7-link :href="`/search/${item.prep}/`" class="prep-word">{{ item.prep }}</f7-link>
+            <span class="prep-en">{{ item.en }}</span>
+          </div>
         </div>
-      </div>
-    </f7-block>
+      </f7-block>
 
-    <f7-block-title>{{ t('grammar.prepTwoWay') }}</f7-block-title>
-    <f7-block class="prep-block">
-      <div class="prep-two-way-notes">
-        <div class="prep-two-way-note prep-two-way-acc">{{ t('grammar.prepTwoWayAccNote') }}</div>
-        <div class="prep-two-way-note prep-two-way-dat">{{ t('grammar.prepTwoWayDatNote') }}</div>
-      </div>
-      <div class="prep-group">
-        <div v-for="item in prepositions.two_way" :key="item.prep" class="prep-item">
-          <f7-link :href="`/search/${item.prep}/`" class="prep-word">{{ item.prep }}</f7-link>
-          <span class="prep-en">{{ item.en }}</span>
+      <f7-block-title>{{ t('grammar.prepDatOnly') }}</f7-block-title>
+      <f7-block class="prep-block">
+        <div class="prep-group">
+          <div v-for="item in prepositions.dative" :key="item.prep" class="prep-item">
+            <f7-link :href="`/search/${item.prep}/`" class="prep-word">{{ item.prep }}</f7-link>
+            <span class="prep-en">{{ item.en }}</span>
+          </div>
+        </div>
+      </f7-block>
+
+      <f7-block-title>{{ t('grammar.prepTwoWay') }}</f7-block-title>
+      <f7-block class="prep-block">
+        <div class="prep-two-way-notes">
+          <div class="prep-two-way-note prep-two-way-acc">{{ t('grammar.prepTwoWayAccNote') }}</div>
+          <div class="prep-two-way-note prep-two-way-dat">{{ t('grammar.prepTwoWayDatNote') }}</div>
+        </div>
+        <div class="prep-group">
+          <div v-for="item in prepositions.two_way" :key="item.prep" class="prep-item">
+            <f7-link :href="`/search/${item.prep}/`" class="prep-word">{{ item.prep }}</f7-link>
+            <span class="prep-en">{{ item.en }}</span>
+          </div>
+        </div>
+      </f7-block>
+    </template>
+
+    <!-- Diagram (bubble cluster) view -->
+    <div v-else class="venn-outer">
+      <div class="venn-bg venn-bg-left"></div>
+      <div class="venn-bg venn-bg-right"></div>
+
+      <div class="venn-col venn-col-left">
+        <div class="venn-label venn-label-acc">Wohin? → Akk.</div>
+        <div v-for="item in prepositions.accusative" :key="item.prep" class="venn-row">
+          <f7-link :href="`/search/${item.prep}/`" class="venn-word">{{ item.prep }}</f7-link>
+          <span class="venn-meaning">{{ item.en }}</span>
         </div>
       </div>
-    </f7-block>
+      <div class="venn-col venn-col-center">
+        <div class="venn-label venn-label-both">Akk. + Dat.</div>
+        <div v-for="item in prepositions.two_way" :key="item.prep" class="venn-row">
+          <f7-link :href="`/search/${item.prep}/`" class="venn-word">{{ item.prep }}</f7-link>
+          <span class="venn-meaning">{{ item.en }}</span>
+        </div>
+      </div>
+      <div class="venn-col venn-col-right">
+        <div class="venn-label venn-label-dat">Wo? → Dat.</div>
+        <div v-for="item in prepositions.dative" :key="item.prep" class="venn-row">
+          <f7-link :href="`/search/${item.prep}/`" class="venn-word">{{ item.prep }}</f7-link>
+          <span class="venn-meaning">{{ item.en }}</span>
+        </div>
+      </div>
+    </div>
   </f7-page>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import { t } from "../../js/i18n.js";
 import ShareButton from "../../components/ShareButton.vue";
 import prepData from "../../../data/rules/prepositions.json";
@@ -68,6 +107,8 @@ const prepositions = prepData as {
   dative: { prep: string; en: string }[];
   two_way: { prep: string; en: string }[];
 };
+
+const view = ref<'list' | 'diagram'>('list');
 
 const CASES = [
   { key: "nom", nameKey: "grammar.nominative", questionKey: "grammar.nominativeQ", roleKey: "grammar.nominativeRole" },
@@ -114,6 +155,13 @@ const CASES = [
   margin-top: 2px;
 }
 
+/* View toggle */
+.view-toggle-block {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* List view */
 .prep-block {
   padding-top: 0;
 }
@@ -165,5 +213,85 @@ const CASES = [
   color: var(--f7-block-footer-text-color);
   text-align: center;
   margin-top: 1px;
+}
+
+/* Bubble cluster view */
+.venn-outer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 8px 16px 24px;
+}
+
+.venn-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(200% / 3);
+  border-radius: 20px;
+  pointer-events: none;
+}
+.venn-bg-left {
+  left: 0;
+  background: color-mix(in srgb, var(--color-gender-m) 14%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--color-gender-m) 35%, transparent);
+}
+.venn-bg-right {
+  right: 0;
+  background: color-mix(in srgb, var(--color-gender-n) 14%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--color-gender-n) 35%, transparent);
+}
+
+.venn-col {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 8px;
+  gap: 8px;
+  min-width: 0;
+  flex: 1 1 0;
+}
+.venn-col-center {
+  z-index: 2;
+}
+
+.venn-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+.venn-label-acc  { color: var(--color-gender-m); }
+.venn-label-dat  { color: var(--color-gender-n); }
+.venn-label-both { color: var(--f7-block-footer-text-color); }
+
+.venn-word {
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.venn-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.venn-meaning {
+  display: none;
+  font-size: 11px;
+  color: var(--f7-block-footer-text-color);
+}
+
+@media (min-width: 768px) {
+  .venn-meaning {
+    display: inline;
+  }
 }
 </style>
