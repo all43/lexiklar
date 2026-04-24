@@ -54,9 +54,15 @@ All 20+ public query functions (`getWord`, `searchByLemma`, etc.) call the inter
 | `lexiklar://word/adjectives/groß/?section=grammar&tab=rules` | native |
 | `lexiklar://search/Bank/` | native |
 | `lexiklar://favorites/` | native |
+| `lexiklar://grammar/` | native |
+| `lexiklar://grammar/noun-gender/` | native |
 | `/word/nouns/Tisch/?section=grammar` | web |
 | `/search/Bank/` | web |
 | `/favorites/` | web |
+| `/grammar/` | web |
+| `/grammar/noun-gender/` | web |
+
+**Grammar pages** (`/grammar/*`) are routed through `#tab-search` (the only view with `browserHistory: true`) so their URLs update in the browser bar. `SettingsPage` navigates programmatically via `f7.tab.show("#tab-search"); f7.views.get("#tab-search")?.router.navigate("/grammar/")`. The `appUrlOpen` handler treats `/grammar/` paths identically to `/word/` and `/search/`. The `main.ts` history seeder inserts an intermediate `/grammar/` entry for subpages (e.g. `/grammar/noun-gender/` seeds `["/" → "/grammar/" → "/grammar/noun-gender/"]`) so the back button lands on `/grammar/` with the correct URL.
 
 **`?section=<name>` convention** — scrolls `WordPage` to element `#word-<name>` after load. Supported values: `grammar` (`#word-grammar`), `false-friend` (`#word-false-friend`), `confusable-pairs` (`#word-confusable-pairs`). Scroll is scoped to `.page-current` to avoid hitting same-named IDs on stale pages kept in F7's DOM stack. Section is read from `f7route.query.section` on both web and native.
 

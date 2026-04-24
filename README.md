@@ -12,6 +12,7 @@ Lexiklar = *Lexikon* (lexicon) + *klar* (clear). The differentiator from existin
 
 - **Fully offline** — entire 120 MB dictionary ships as a single SQLite file; no network requests at runtime, no account required, no ads
 - **Grammar depth you can't find elsewhere** — full declension tables for nouns, complete conjugation paradigms for verbs, 17 morphological gender rules explained inline so you learn *why* a word has its gender
+- **Grammar Reference section** — standalone cheat-sheet pages covering noun gender rules, adjective declension, article/determiner paradigms, cases & prepositions, modal verbs, and reflexive pronouns — each with shareable URLs
 - **87,500 example sentences** — each word annotated with lemma, POS, and gloss hint; tapping any word in a sentence jumps straight to its dictionary entry
 - **Inflected-form search** — searching *kam* finds *kommen*; umlaut-folded so typing `u` matches `ü`
 - **B2-filtered vocabulary** — 21,500 words ranked by frequency across four corpora (Leipzig news/Wikipedia, SUBTLEX-DE, OpenSubtitles)
@@ -299,7 +300,7 @@ The app checks for DB updates automatically on startup (24h throttle) and shows 
 ├── data/
 │   ├── words/              Per-word JSON files (nouns / verbs / adjectives / …)
 │   ├── examples/           Shared example sentences (256 shards: 00.json … ff.json)
-│   └── rules/              adj-endings.json · noun-gender.json · verb-endings.json
+│   └── rules/              adj-endings.json · noun-gender.json · determiner-declensions.json · prepositions.json
 ├── config/
 │   ├── seed-words.json     ~20 curated words for fast dev iteration
 │   └── word-whitelist.json ~430+ force-included words (civic, transport, A1–B2 gaps)
