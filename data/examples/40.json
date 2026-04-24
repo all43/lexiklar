@@ -166,11 +166,39 @@
   },
   "4027623468": {
     "text": "„Wie das in diesem von Corona geprägten Jahr vonstattengehen soll, muss noch ausdiskutiert werden.“",
-    "translation": null,
+    "translation": "\"How this is supposed to happen in this year marked by Corona still needs to be discussed.\"",
     "source": "wiktionary",
     "lemmas": [
       "ausdiskutieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "vonstattengehen",
+        "lemma": "vonstattengehen",
+        "pos": "verb",
+        "gloss_hint": "take place"
+      },
+      {
+        "form": "geprägten",
+        "lemma": "prägen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahr",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year (calendar)"
+      },
+      {
+        "form": "ausdiskutiert",
+        "lemma": "ausdiskutieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Wie das in diesem von Corona [[geprägten|verbs/prägen]] [[Jahr|nouns/Jahr#1]] [[vonstattengehen|verbs/vonstattengehen#1]] soll, muss noch [[ausdiskutiert|verbs/ausdiskutieren]] werden.“"
   },
   "4029923411": {
     "text": "Und der Fußball landet im Tor!",
@@ -1366,11 +1394,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "let yourself be unsettled",
     "source": "wiktionary",
     "lemmas": [
       "verunsichern"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "400a979ccc": {
     "text": "eine schlechte Figur machen",
@@ -2080,11 +2109,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pick up the pieces",
     "source": "wiktionary",
     "lemmas": [
       "aufsammeln"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "4019f33a39": {
     "text": "Ich will mich nicht für irgendetwas entscheiden, sondern für etwas Bestimmtes.",

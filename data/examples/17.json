@@ -583,19 +583,81 @@
   },
   "1773117510": {
     "text": "„Es sind ja vor allem die Hirsche, die frei im Park herumgehen.“",
-    "translation": null,
+    "translation": "\"It's mainly the deer that roam freely in the park.\"",
     "source": "wiktionary",
     "lemmas": [
       "herumgehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hirsche",
+        "lemma": "Hirsch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "frei",
+        "lemma": "frei",
+        "pos": "adjective",
+        "gloss_hint": "free"
+      },
+      {
+        "form": "Park",
+        "lemma": "Park",
+        "pos": "noun",
+        "gloss_hint": "park"
+      },
+      {
+        "form": "herumgehen",
+        "lemma": "herumgehen",
+        "pos": "verb",
+        "gloss_hint": "wander around"
+      }
+    ],
+    "text_linked": "„Es sind ja vor allem die [[Hirsche|nouns/Hirsch]], die [[frei|adjectives/frei#1]] im [[Park|nouns/Park#2]] [[herumgehen|verbs/herumgehen#1]].“"
   },
   "1776836482": {
     "text": "Der König wurde von den Revolutionären entmachtet und die Republik wurde ausgerufen.",
-    "translation": null,
+    "translation": "The king was deposed by the revolutionaries and the republic was proclaimed.",
     "source": "wiktionary",
     "lemmas": [
       "entmachten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "König",
+        "lemma": "König",
+        "pos": "noun",
+        "gloss_hint": "king"
+      },
+      {
+        "form": "Revolutionären",
+        "lemma": "Revolutionär",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entmachtet",
+        "lemma": "entmachten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Republik",
+        "lemma": "Republik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgerufen",
+        "lemma": "ausrufen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Der [[König|nouns/König#1]] wurde von den [[Revolutionären|nouns/Revolutionär]] [[entmachtet|verbs/entmachten]] und die [[Republik|nouns/Republik]] wurde [[ausgerufen|verbs/ausrufen]]."
   },
   "1778213571": {
     "text": "Die Hosen stehen dir sehr gut. / Die Hose steht dir sehr gut.",
@@ -2984,11 +3046,27 @@
   },
   "171dbc1b15": {
     "text": "Er negierte den Gedanken sofort.",
-    "translation": null,
+    "translation": "He immediately rejected the thought.",
     "source": "wiktionary",
     "lemmas": [
       "negieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "negierte",
+        "lemma": "negieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gedanken",
+        "lemma": "Gedanke",
+        "pos": "noun",
+        "gloss_hint": "thoughts"
+      }
+    ],
+    "text_linked": "Er [[negierte|verbs/negieren]] den [[Gedanken|nouns/Gedanke#1]] sofort."
   },
   "171dbeeb0a": {
     "text": "Es wurde ein neues Gesetz eingebracht.",
@@ -5380,11 +5458,63 @@
   },
   "172b655899": {
     "text": "In welchem Maße Ronald Reagan die politische Landschaft der USA verändert hat, wo die konservative „Gegenreformation“ steckengeblieben ist, erschließt sich gerade im Rückblick auf die amerikanische „68er Revolution“.",
-    "translation": null,
+    "translation": "The extent to which Ronald Reagan changed the political landscape of the USA, where the conservative \"counter-reformation\" has stalled, becomes clear precisely when looking back at the American \"68 revolution\".",
     "source": "wiktionary",
     "lemmas": [
       "steckenbleiben"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Maße",
+        "lemma": "Maß",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verändert",
+        "lemma": "verändern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "politische",
+        "lemma": "politisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Landschaft",
+        "lemma": "Landschaft",
+        "pos": "noun",
+        "gloss_hint": "region"
+      },
+      {
+        "form": "steckengeblieben",
+        "lemma": "steckenbleiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "erschließt",
+        "lemma": "erschließen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rückblick",
+        "lemma": "Rückblick",
+        "pos": "noun",
+        "gloss_hint": "review"
+      },
+      {
+        "form": "Revolution",
+        "lemma": "Revolution",
+        "pos": "noun",
+        "gloss_hint": "revolution"
+      }
+    ],
+    "text_linked": "In welchem [[Maße|nouns/Maß_einheit]] Ronald Reagan die [[politische|adjectives/politisch]] [[Landschaft|nouns/Landschaft#2]] der USA [[verändert|verbs/verändern]] hat, wo die konservative „Gegenreformation“ [[steckengeblieben|verbs/steckenbleiben]] ist, [[erschließt|verbs/erschließen]] sich gerade im [[Rückblick|nouns/Rückblick#2]] auf die amerikanische „68er [[Revolution|nouns/Revolution#2]]“."
   },
   "172c2b9d5e": {
     "text": "„Nach einer Weile wurden die Vorhänge zurückgeschoben, die Läden aufgeklappt.“",
@@ -5586,11 +5716,57 @@
   },
   "172e5b7d9f": {
     "text": "In seiner Wohnung entdeckten die Behörden dann einen Kunstschatz, der allen den Atem stocken ließ: Gemälde von Pablo Picasso und Henri Matisse, von Marc Chagall, Max Beckmann und anderen Größen der Kunstgeschichte. [… Rolf Nikolaus Cornelius] Gurlitt hatte die Bilder offenbar seit vielen Jahrzehnten dort gehortet.",
-    "translation": null,
+    "translation": "In his apartment, the authorities then discovered an art treasure that took everyone's breath away: paintings by Pablo Picasso and Henri Matisse, by Marc Chagall, Max Beckmann and other masters of art history. Rolf Nikolaus Cornelius Gurlitt had apparently hoarded the pictures there for many decades.",
     "source": "wiktionary",
     "lemmas": [
       "horten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "entdeckten",
+        "lemma": "entdecken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Behörden",
+        "lemma": "Behörde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kunstschatz",
+        "lemma": "Kunstschatz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stocken",
+        "lemma": "stocken",
+        "pos": "verb",
+        "gloss_hint": "halt"
+      },
+      {
+        "form": "Gemälde",
+        "lemma": "Gemälde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gehortet",
+        "lemma": "horten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahrzehnten",
+        "lemma": "Jahrzehnt",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "In seiner Wohnung [[entdeckten|verbs/entdecken]] die [[Behörden|nouns/Behörde]] dann einen Kunstschatz, der allen den Atem [[stocken|verbs/stocken#1]] ließ: [[Gemälde|nouns/Gemälde]] von Pablo Picasso und Henri Matisse, von Marc Chagall, Max Beckmann und anderen Größen der Kunstgeschichte. [… Rolf Nikolaus Cornelius] Gurlitt hatte die Bilder offenbar seit vielen [[Jahrzehnten|nouns/Jahrzehnt]] dort [[gehortet|verbs/horten]]."
   },
   "172eb7b330": {
     "text": "„Ich kam mir vor, als sähe ich drei Einhörner.“",
@@ -5796,11 +5972,87 @@
   },
   "173152d274": {
     "text": "„Zweimal muss Chihiro eine Treppe ohne Geländer heruntergehen – einmal zaghaft, überängstlich, Schritt für Schritt sich vorwagend, einmal mit Schwung in kaum einem Drittel der Zeit – so nebenbei zeigt Miyazaki, wie das Mädchen Vertrauen in sich selbst gewonnen hat.“",
-    "translation": null,
+    "translation": "\"Twice Chihiro must go down a staircase without a railing – once hesitantly, overly anxiously, venturing forward step by step, once with momentum in barely a third of the time – in this way Miyazaki shows how the girl has gained confidence in herself.\"",
     "source": "wiktionary",
     "lemmas": [
       "heruntergehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Treppe",
+        "lemma": "Treppe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "heruntergehen",
+        "lemma": "heruntergehen",
+        "pos": "verb",
+        "gloss_hint": "go down"
+      },
+      {
+        "form": "zaghaft",
+        "lemma": "zaghaft",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "überängstlich",
+        "lemma": "überängstlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schritt",
+        "lemma": "Schritt",
+        "pos": "noun",
+        "gloss_hint": "step"
+      },
+      {
+        "form": "Schwung",
+        "lemma": "Schwung",
+        "pos": "noun",
+        "gloss_hint": "momentum"
+      },
+      {
+        "form": "kaum",
+        "lemma": "kaum",
+        "pos": "adverb",
+        "gloss_hint": "barely"
+      },
+      {
+        "form": "Drittel",
+        "lemma": "Drittel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      },
+      {
+        "form": "Mädchen",
+        "lemma": "Mädchen",
+        "pos": "noun",
+        "gloss_hint": "girl"
+      },
+      {
+        "form": "Vertrauen",
+        "lemma": "Vertrauen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gewonnen",
+        "lemma": "gewinnen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Zweimal muss Chihiro eine [[Treppe|nouns/Treppe]] ohne Geländer [[heruntergehen|verbs/heruntergehen#1]] – einmal zaghaft, überängstlich, [[Schritt|nouns/Schritt#1]] für Schritt sich vorwagend, einmal mit [[Schwung|nouns/Schwung#1]] in [[kaum|adverbs/kaum#3]] einem [[Drittel|nouns/Drittel]] der [[Zeit|nouns/Zeit#1]] – so nebenbei zeigt Miyazaki, wie das [[Mädchen|nouns/Mädchen#1]] [[Vertrauen|nouns/Vertrauen]] in sich selbst [[gewonnen|verbs/gewinnen]] hat.“"
   },
   "173285fc0a": {
     "text": "Bei zu hoher Feuchte in der Luft kann man Rheuma bekommen.",
@@ -6276,11 +6528,45 @@
   },
   "17336467a2": {
     "text": "Sie sollen Gewalt, Korruption und Dummheit austreiben.",
-    "translation": null,
+    "translation": "They are supposed to drive out violence, corruption, and stupidity.",
     "source": "wiktionary",
     "lemmas": [
       "austreiben"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "sollen",
+        "lemma": "sollen",
+        "pos": "verb",
+        "gloss_hint": "shall"
+      },
+      {
+        "form": "Gewalt",
+        "lemma": "Gewalt",
+        "pos": "noun",
+        "gloss_hint": "violence"
+      },
+      {
+        "form": "Korruption",
+        "lemma": "Korruption",
+        "pos": "noun",
+        "gloss_hint": "corruption"
+      },
+      {
+        "form": "Dummheit",
+        "lemma": "Dummheit",
+        "pos": "noun",
+        "gloss_hint": "stupidity"
+      },
+      {
+        "form": "austreiben",
+        "lemma": "austreiben",
+        "pos": "verb",
+        "gloss_hint": "drive out"
+      }
+    ],
+    "text_linked": "Sie [[sollen|verbs/sollen#1]] [[Gewalt|nouns/Gewalt#1]], [[Korruption|nouns/Korruption#1]] und [[Dummheit|nouns/Dummheit#1]] [[austreiben|verbs/austreiben#1]]."
   },
   "17336fe4a8": {
     "text": "„Eine französische Mörsergranate aus dem Zweiten Weltkrieg hat am Montagnachmittag, Polizei und Feuerwehr in Atem gehalten.“",
@@ -6393,11 +6679,51 @@
   },
   "1733b29b95": {
     "text": "„Coloban bezweckt mit dieser Lage eine Einschränkung der Zwerchfellatmung und glaubt damit auch Erfolge bei tuberkulösen Lungenprozessen erzielt zu haben.“",
-    "translation": null,
+    "translation": "\"Coloban aims with this position to restrict diaphragmatic breathing and believes he has thereby achieved success in tuberculous lung processes.\"",
     "source": "wiktionary",
     "lemmas": [
       "bezwecken"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "bezweckt",
+        "lemma": "bezwecken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lage",
+        "lemma": "Lage",
+        "pos": "noun",
+        "gloss_hint": "position"
+      },
+      {
+        "form": "Einschränkung",
+        "lemma": "Einschränkung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zwerchfellatmung",
+        "lemma": "Zwerchfellatmung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Erfolge",
+        "lemma": "Erfolg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "erzielt",
+        "lemma": "erzielen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Coloban [[bezweckt|verbs/bezwecken]] mit dieser [[Lage|nouns/Lage#2]] eine Einschränkung der Zwerchfellatmung und glaubt damit auch [[Erfolge|nouns/Erfolg]] bei tuberkulösen Lungenprozessen [[erzielt|verbs/erzielen]] zu haben.“"
   },
   "1733f43c7e": {
     "text": "„»Elf Uhr«, sagte er ganz würdevoll, »kleine Mädchen wie du gehören längst in die Federn.«“",
@@ -6431,11 +6757,33 @@
   },
   "1735783e56": {
     "text": "Bei Gartenarbeiten hat er seine Rückenmuskulatur überanstrengt.",
-    "translation": null,
+    "translation": "While doing garden work, he strained his back muscles.",
     "source": "wiktionary",
     "lemmas": [
       "überanstrengen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gartenarbeiten",
+        "lemma": "Gartenarbeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rückenmuskulatur",
+        "lemma": "Rückenmuskulatur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "überanstrengt",
+        "lemma": "überanstrengen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Bei Gartenarbeiten hat er seine Rückenmuskulatur [[überanstrengt|verbs/überanstrengen]]."
   },
   "17377e029b": {
     "text": "„Eine neue Studie der Oakland University will herausgefunden haben, dass eine Freundschaft zu einem Ex-Partner hauptsächlich von ‚dunklen Persönlichkeitszügen‘ und Sex motiviert ist.“",
@@ -6504,11 +6852,57 @@
   },
   "1737e1e0bd": {
     "text": "Der Polizeichef von New York, William Bratton, warf seinem Kollegen Beck vor, überreagiert und die Angst der Bürger unnötig geschürt zu haben.",
-    "translation": null,
+    "translation": "The police chief of New York, William Bratton, accused his colleague Beck of overreacting and unnecessarily fueling citizens' fear.",
     "source": "wiktionary",
     "lemmas": [
       "überreagieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Polizeichef",
+        "lemma": "Polizeichef",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "warf",
+        "lemma": "werfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kollegen",
+        "lemma": "Kollege",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "überreagiert",
+        "lemma": "überreagieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Angst",
+        "lemma": "Angst",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bürger",
+        "lemma": "Bürger",
+        "pos": "noun",
+        "gloss_hint": "citizen"
+      },
+      {
+        "form": "geschürt",
+        "lemma": "schüren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Der [[Polizeichef|nouns/Polizeichef]] von New York, William Bratton, [[warf|verbs/werfen]] seinem [[Kollegen|nouns/Kollege]] Beck vor, [[überreagiert|verbs/überreagieren]] und die [[Angst|nouns/Angst]] der [[Bürger|nouns/Bürger#2]] unnötig [[geschürt|verbs/schüren]] zu haben."
   },
   "1738a9c1cc": {
     "text": "Das ist ja eine schöne Geschichte! Oder anders gesagt: Das ist aber wirklich schlimm!",
@@ -7994,11 +8388,45 @@
   },
   "174713e66e": {
     "text": "Sie zog das linke Bein ein ganz klein wenig nach.",
-    "translation": null,
+    "translation": "She drew her left leg back just a tiny bit.",
     "source": "wiktionary",
     "lemmas": [
       "nachziehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "zog",
+        "lemma": "ziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "linke",
+        "lemma": "linke",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bein",
+        "lemma": "Bein",
+        "pos": "noun",
+        "gloss_hint": "leg"
+      },
+      {
+        "form": "klein",
+        "lemma": "klein",
+        "pos": "adjective",
+        "gloss_hint": "small"
+      },
+      {
+        "form": "wenig",
+        "lemma": "wenig",
+        "pos": "adverb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Sie [[zog|verbs/ziehen]] das linke [[Bein|nouns/Bein#1]] ein ganz [[klein|adjectives/klein#1]] wenig nach."
   },
   "174757de5e": {
     "text": "Kinder mit selektivem Mutismus können gut sprechen und sind im familiären Umfeld oft sogar als kleine Plaudertaschen bekannt. In einer anderen Umgebung verstummen sie hingegen – manchmal auch nur in bestimmten Situationen.",
@@ -8542,11 +8970,33 @@
   },
   "174ab463ca": {
     "text": "Ich muss die Reise umbuchen.",
-    "translation": null,
+    "translation": "I need to rebook the trip.",
     "source": "wiktionary",
     "lemmas": [
       "umbuchen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "muss",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reise",
+        "lemma": "Reise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "umbuchen",
+        "lemma": "umbuchen",
+        "pos": "verb",
+        "gloss_hint": "rebook"
+      }
+    ],
+    "text_linked": "Ich [[muss|verbs/müssen]] die [[Reise|nouns/Reise]] [[umbuchen|verbs/umbuchen#1]]."
   },
   "174b4c8960": {
     "text": "Die Mutter saust immerzu, damit ihr Kindlein nicht weine.",
@@ -10124,11 +10574,81 @@
   },
   "17586ce9b1": {
     "text": "„Lyocellfasern können intensiv gefärbt werden und eignen sich zur Herstellung von Vliesen. Zur Veredelung werden sie mechanisch aufgeraut oder können pflegeleicht ausgerüstet werden.“",
-    "translation": null,
+    "translation": "Lyocell fibres can be dyed intensively and are suitable for the production of nonwovens. For finishing, they are mechanically roughened or can be finished for easy care.",
     "source": "wiktionary",
     "lemmas": [
       "ausrüsten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Lyocellfasern",
+        "lemma": "Lyocellfaser",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "intensiv",
+        "lemma": "intensiv",
+        "pos": "adjective",
+        "gloss_hint": "thorough"
+      },
+      {
+        "form": "gefärbt",
+        "lemma": "färben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "eignen",
+        "lemma": "eignen",
+        "pos": "verb",
+        "gloss_hint": "suitable"
+      },
+      {
+        "form": "Herstellung",
+        "lemma": "Herstellung",
+        "pos": "noun",
+        "gloss_hint": "production"
+      },
+      {
+        "form": "Vliesen",
+        "lemma": "Vlies",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Veredelung",
+        "lemma": "Veredelung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "mechanisch",
+        "lemma": "mechanisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgeraut",
+        "lemma": "aufrauen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "pflegeleicht",
+        "lemma": "pflegeleicht",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgerüstet",
+        "lemma": "ausrüsten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Lyocellfasern können [[intensiv|adjectives/intensiv#1]] [[gefärbt|verbs/färben]] werden und [[eignen|verbs/eignen#1]] sich zur [[Herstellung|nouns/Herstellung#1]] von Vliesen. Zur Veredelung werden sie mechanisch aufgeraut oder können pflegeleicht [[ausgerüstet|verbs/ausrüsten]] werden.“"
   },
   "1758a23a97": {
     "text": "seiner Zeit voraus sein",
@@ -11398,11 +11918,45 @@
   },
   "176c8b3432": {
     "text": "Der Visual Basic-Compiler kompiliert den Quellcode zu einer ausführbaren Datei.",
-    "translation": null,
+    "translation": "The Visual Basic compiler compiles the source code into an executable file.",
     "source": "wiktionary",
     "lemmas": [
       "kompilieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Visual Basic-Compiler",
+        "lemma": "Visual Basic-Compiler",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kompiliert",
+        "lemma": "kompilieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Quellcode",
+        "lemma": "Quellcode",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausführbaren",
+        "lemma": "ausführbar",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Datei",
+        "lemma": "Datei",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Der Visual Basic-Compiler [[kompiliert|verbs/kompilieren]] den Quellcode zu einer ausführbaren [[Datei|nouns/Datei]]."
   },
   "176e5366a8": {
     "text": "Balkon über der Pissbude",
@@ -14174,11 +14728,51 @@
   },
   "178315971e": {
     "text": "Damit die Terrasse bei unserem Ferienhäuschen am Hang nicht abrutscht, muss sie ordentlich untermauert werden.",
-    "translation": null,
+    "translation": "So that the terrace at our holiday cottage on the slope doesn't slip, it must be properly underpinned.",
     "source": "wiktionary",
     "lemmas": [
       "untermauern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Terrasse",
+        "lemma": "Terrasse",
+        "pos": "noun",
+        "gloss_hint": "terrace"
+      },
+      {
+        "form": "Ferienhäuschen",
+        "lemma": "Ferienhäuschen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hang",
+        "lemma": "Hang",
+        "pos": "noun",
+        "gloss_hint": "slope"
+      },
+      {
+        "form": "abrutscht",
+        "lemma": "abrutschen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ordentlich",
+        "lemma": "ordentlich",
+        "pos": "adjective",
+        "gloss_hint": "decent"
+      },
+      {
+        "form": "untermauert",
+        "lemma": "untermauern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Damit die [[Terrasse|nouns/Terrasse#1]] bei unserem Ferienhäuschen am [[Hang|nouns/Hang#1]] nicht [[abrutscht|verbs/abrutschen]], muss sie [[ordentlich|adjectives/ordentlich#2]] [[untermauert|verbs/untermauern]] werden."
   },
   "178372ee50": {
     "text": "Ich möchte die Funktion f nach y ableiten, del f nach del y also.",
@@ -14785,19 +15379,153 @@
   },
   "1785811e82": {
     "text": "„Schnell stellt sich heraus, dass die 136 PS mit den zwei Tonnen Grundgewicht locker umgehen, oft genug registriert man den Eingriff von ESP, wenn das Heck wieder einmal kraftvoll wegwischen wollte.“",
-    "translation": null,
+    "translation": "It quickly becomes apparent that the 136 horsepower handles the two tonnes of base weight easily, and one frequently notices the intervention of ESP when the rear wanted to wipe away powerfully once again.",
     "source": "wiktionary",
     "lemmas": [
       "wegwischen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schnell",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": "fast"
+      },
+      {
+        "form": "stellt",
+        "lemma": "stellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "heraus",
+        "lemma": "heraus",
+        "pos": "adverb",
+        "gloss_hint": "out"
+      },
+      {
+        "form": "PS",
+        "lemma": "PS",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tonnen",
+        "lemma": "Tonne",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grundgewicht",
+        "lemma": "Grundgewicht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "locker",
+        "lemma": "locker",
+        "pos": "adjective",
+        "gloss_hint": "slack"
+      },
+      {
+        "form": "umgehen",
+        "lemma": "umgehen",
+        "pos": "verb",
+        "gloss_hint": "handle"
+      },
+      {
+        "form": "oft",
+        "lemma": "oft",
+        "pos": "adverb",
+        "gloss_hint": "often"
+      },
+      {
+        "form": "registriert",
+        "lemma": "registrieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eingriff",
+        "lemma": "Eingriff",
+        "pos": "noun",
+        "gloss_hint": "intervention"
+      },
+      {
+        "form": "ESP",
+        "lemma": "ESP",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Heck",
+        "lemma": "Heck",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kraftvoll",
+        "lemma": "kraftvoll",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "wegwischen",
+        "lemma": "wegwischen",
+        "pos": "verb",
+        "gloss_hint": "wipe away"
+      }
+    ],
+    "text_linked": "„[[Schnell|adjectives/schnell#1]] [[stellt|verbs/stellen]] sich [[heraus|adverbs/heraus#1]], dass die 136 PS mit den zwei [[Tonnen|nouns/Tonne]] Grundgewicht [[locker|adjectives/locker#4]] [[umgehen|verbs/umgehen_etwas#1]], [[oft|adverbs/oft#1]] genug [[registriert|verbs/registrieren]] man den [[Eingriff|nouns/Eingriff#2]] von ESP, wenn das [[Heck|nouns/Heck]] wieder einmal [[kraftvoll|adjectives/kraftvoll]] [[wegwischen|verbs/wegwischen#1]] wollte.“"
   },
   "1786a8f2be": {
     "text": "Fliegst du die Maschine heute wieder zurück oder bleibst du über Nacht?",
-    "translation": null,
+    "translation": "Are you flying the aircraft back today or are you staying overnight?",
     "source": "wiktionary",
     "lemmas": [
       "zurückfliegen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fliegst",
+        "lemma": "fliegen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Maschine",
+        "lemma": "Maschine",
+        "pos": "noun",
+        "gloss_hint": "aircraft"
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "zurück",
+        "lemma": "zurück",
+        "pos": "adverb",
+        "gloss_hint": "back"
+      },
+      {
+        "form": "bleibst",
+        "lemma": "bleiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nacht",
+        "lemma": "Nacht",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "[[Fliegst|verbs/fliegen]] du die [[Maschine|nouns/Maschine#4]] [[heute|adverbs/heute#1]] wieder [[zurück|adverbs/zurück#1]] oder [[bleibst|verbs/bleiben]] du über [[Nacht|nouns/Nacht]]?"
   },
   "1786ccbe6d": {
     "text": "Wo ist die Auskunft? Warten Sie, ich bringe Sie hin.",
@@ -14933,11 +15661,63 @@
   },
   "1787b51df3": {
     "text": "Doch auch angenommen, der Bauer hätte das Opossum über der That ertappt? dann spornt ihn sein Aerger an, das arme Thier mit Fußtritten zu mißhandeln.",
-    "translation": null,
+    "translation": "But even supposing the farmer had caught the opossum in the act? then his anger spurs him on to mistreat the poor animal with kicks.",
     "source": "wiktionary",
     "lemmas": [
       "misshandeln"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bauer",
+        "lemma": "Bauer",
+        "pos": "noun",
+        "gloss_hint": "farmer"
+      },
+      {
+        "form": "Opossum",
+        "lemma": "Opossum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ertappt",
+        "lemma": "ertappen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aerger",
+        "lemma": "Ärger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "arme",
+        "lemma": "arm",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Thier",
+        "lemma": "Tier",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fußtritten",
+        "lemma": "Fußtritt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "mißhandeln",
+        "lemma": "misshandeln",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Doch auch angenommen, der [[Bauer|nouns/Bauer_jemand#1]] hätte das Opossum über der That [[ertappt|verbs/ertappen]]? dann spornt ihn sein [[Aerger|nouns/Ärger]] an, das [[arme|adjectives/arm]] [[Thier|nouns/Tier]] mit Fußtritten zu [[mißhandeln|verbs/misshandeln]]."
   },
   "1787bc8180": {
     "text": "„St. Pölten ist ausgestorben, als wir weit nach Mitternacht durch den Schnee zu unseren Autos wanken.“",
@@ -16941,11 +17721,105 @@
   },
   "179c6288cc": {
     "text": "„Unterstützt wurde der A-cappella-Chor in bewährter Form von Chorleiterin Marina Solowjewa am Klavier und von vier Streichern, die während des Konzertes zudem auch solistisch tätig wurden und die Zuhörer mit ihrem virtuosen Spiel beeindruckten.“",
-    "translation": null,
+    "translation": "The a cappella choir was supported in proven fashion by choir director Marina Solowjewa at the piano and by four string players, who also performed as soloists during the concert and impressed the audience with their virtuosic playing.",
     "source": "wiktionary",
     "lemmas": [
       "A-cappella-Chor"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "A-cappella-Chor",
+        "lemma": "A-cappella-Chor",
+        "pos": "noun",
+        "gloss_hint": "choir"
+      },
+      {
+        "form": "bewährter",
+        "lemma": "bewährt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Form",
+        "lemma": "Form",
+        "pos": "noun",
+        "gloss_hint": "type"
+      },
+      {
+        "form": "Chorleiterin",
+        "lemma": "Chorleiterin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Marina",
+        "lemma": "Marina",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Solowjewa",
+        "lemma": "Solowjewa",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klavier",
+        "lemma": "Klavier",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Streichern",
+        "lemma": "Streicher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Konzertes",
+        "lemma": "Konzert",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "solistisch",
+        "lemma": "solistisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "tätig",
+        "lemma": "tätig",
+        "pos": "adjective",
+        "gloss_hint": "active"
+      },
+      {
+        "form": "Zuhörer",
+        "lemma": "Zuhörer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "virtuosen",
+        "lemma": "virtuos",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spiel",
+        "lemma": "Spiel",
+        "pos": "noun",
+        "gloss_hint": "playing"
+      },
+      {
+        "form": "beeindruckten",
+        "lemma": "beeindrucken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Unterstützt wurde der A-cappella-Chor in [[bewährter|adjectives/bewährt]] [[Form|nouns/Form#2]] von Chorleiterin [[Marina|nouns/Marina]] Solowjewa am [[Klavier|nouns/Klavier]] und von vier Streichern, die während des [[Konzertes|nouns/Konzert]] zudem auch solistisch [[tätig|adjectives/tätig#1]] wurden und die [[Zuhörer|nouns/Zuhörer]] mit ihrem virtuosen [[Spiel|nouns/Spiel#1]] [[beeindruckten|verbs/beeindrucken]].“"
   },
   "179db170c2": {
     "text": "Die Zeit dehnte sich gestern auf der Zugfahrt. Ich wollte nur noch zu Hause ankommen.",
@@ -17045,11 +17919,39 @@
   },
   "179f0b6a9c": {
     "text": "Wir wollen zu zweit das Zimmer einräumen.",
-    "translation": null,
+    "translation": "We want to furnish the room together.",
     "source": "wiktionary",
     "lemmas": [
       "einräumen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "wollen",
+        "lemma": "wollen",
+        "pos": "verb",
+        "gloss_hint": "intend"
+      },
+      {
+        "form": "zweit",
+        "lemma": "zwei",
+        "pos": "numeral",
+        "gloss_hint": "two"
+      },
+      {
+        "form": "Zimmer",
+        "lemma": "Zimmer",
+        "pos": "noun",
+        "gloss_hint": "room"
+      },
+      {
+        "form": "einräumen",
+        "lemma": "einräumen",
+        "pos": "verb",
+        "gloss_hint": "put in"
+      }
+    ],
+    "text_linked": "Wir [[wollen|verbs/wollen#1]] zu [[zweit|numerals/zwei#1]] das [[Zimmer|nouns/Zimmer#1]] [[einräumen|verbs/einräumen#1]]."
   },
   "179f1298a0": {
     "text": "Die Treppe des CN Towers hat 1776 Stufen.",
@@ -18692,19 +19594,99 @@
   },
   "17ae5ab09f": {
     "text": "Um das Fußballspiel sehen zu können, bin ich heute schon früher aus dem Büro gegangen und werde diese Zeit morgen nacharbeiten.",
-    "translation": null,
+    "translation": "In order to be able to watch the football match, I left the office earlier today and will catch up on this time tomorrow.",
     "source": "wiktionary",
     "lemmas": [
       "nacharbeiten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fußballspiel",
+        "lemma": "Fußballspiel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sehen",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": "see"
+      },
+      {
+        "form": "Büro",
+        "lemma": "Büro",
+        "pos": "noun",
+        "gloss_hint": "office"
+      },
+      {
+        "form": "früher",
+        "lemma": "früher",
+        "pos": "adverb",
+        "gloss_hint": "sooner"
+      },
+      {
+        "form": "gegangen",
+        "lemma": "gehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      },
+      {
+        "form": "morgen",
+        "lemma": "morgen",
+        "pos": "adverb",
+        "gloss_hint": "tomorrow"
+      },
+      {
+        "form": "nacharbeiten",
+        "lemma": "nacharbeiten",
+        "pos": "verb",
+        "gloss_hint": "catch up"
+      }
+    ],
+    "text_linked": "Um das [[Fußballspiel|nouns/Fußballspiel]] [[sehen|verbs/sehen#1]] zu können, bin ich heute schon [[früher|adverbs/früher#1]] aus dem [[Büro|nouns/Büro#1]] [[gegangen|verbs/gehen]] und werde diese [[Zeit|nouns/Zeit#1]] [[morgen|adverbs/morgen#1]] [[nacharbeiten|verbs/nacharbeiten#1]]."
   },
   "17af558f2f": {
     "text": "„Bording atmete auf. Angekommen!“",
-    "translation": null,
+    "translation": "Bording breathed a sigh of relief. Arrived!",
     "source": "wiktionary",
     "lemmas": [
       "aufatmen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bording",
+        "lemma": "Bording",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "atmete",
+        "lemma": "atmen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "auf",
+        "lemma": "auf",
+        "pos": "adverb",
+        "gloss_hint": "out"
+      },
+      {
+        "form": "Angekommen",
+        "lemma": "ankommen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Bording [[atmete|verbs/atmen]] [[auf|adverbs/auf]]. [[Angekommen|verbs/ankommen]]!“"
   },
   "17afd4c5ef": {
     "text": "Das Freiburger Münster ist von weither aus der Oberrheinebene und vom Schwarzwald zu sehen.",
@@ -21717,11 +22699,27 @@
   },
   "17cc617c53": {
     "text": "Deinetwegen hat sich unsere Situation verschlechtert!",
-    "translation": null,
+    "translation": "Because of you, our situation has deteriorated!",
     "source": "wiktionary",
     "lemmas": [
       "verschlechtern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Situation",
+        "lemma": "Situation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verschlechtert",
+        "lemma": "verschlechtern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Deinetwegen hat sich unsere [[Situation|nouns/Situation]] [[verschlechtert|verbs/verschlechtern]]!"
   },
   "17cc754431": {
     "text": "„Der Bundestag speichert massenhaft Daten der Abgeordneten – für drei Monate. Das hat fraktionsübergreifend Ärger erzeugt.“",
@@ -22014,11 +23012,45 @@
   },
   "17cf8be68a": {
     "text": "Im Podcast »Die Esel und Teddy Show« wurde der Lorem-ipsum-Text als Hörspiel vertont.",
-    "translation": null,
+    "translation": "In the podcast \"The Donkey and Teddy Show\", the Lorem ipsum text was adapted as an audio drama.",
     "source": "wiktionary",
     "lemmas": [
       "vertonen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Podcast",
+        "lemma": "Podcast",
+        "pos": "noun",
+        "gloss_hint": "podcast"
+      },
+      {
+        "form": "Esel",
+        "lemma": "Esel",
+        "pos": "noun",
+        "gloss_hint": "donkey"
+      },
+      {
+        "form": "Teddy",
+        "lemma": "Teddy",
+        "pos": "noun",
+        "gloss_hint": "teddy bear"
+      },
+      {
+        "form": "Text",
+        "lemma": "Text",
+        "pos": "noun",
+        "gloss_hint": "text"
+      },
+      {
+        "form": "vertont",
+        "lemma": "vertonen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Im [[Podcast|nouns/Podcast#1]] »Die [[Esel|nouns/Esel#1]] und [[Teddy|nouns/Teddy#1]] Show« wurde der Lorem-ipsum-[[Text|nouns/Text#1]] als Hörspiel [[vertont|verbs/vertonen]]."
   },
   "17d0b8e7c9": {
     "text": "[Schlagzeile:] „Digitalradios im Test: Der Klang lässt zu wünschen übrig“",
@@ -23920,19 +24952,63 @@
   },
   "17e180673a": {
     "text": "Das Auto muss nächstes Jahr beim Garagisten revidiert werden.",
-    "translation": null,
+    "translation": "The car must be serviced at the garage next year.",
     "source": "wiktionary",
     "lemmas": [
       "revidieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Auto",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": "car"
+      },
+      {
+        "form": "revidiert",
+        "lemma": "revidieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Garagisten",
+        "lemma": "Garagist",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Das [[Auto|nouns/Auto_automobil#1]] muss nächstes Jahr beim Garagisten [[revidiert|verbs/revidieren]] werden."
   },
   "17e1865ded": {
     "text": "Die Daten waren falsch und mussten revidiert werden.",
-    "translation": null,
+    "translation": "The data were incorrect and had to be revised.",
     "source": "wiktionary",
     "lemmas": [
       "revidieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Daten",
+        "lemma": "Daten",
+        "pos": "noun",
+        "gloss_hint": "data"
+      },
+      {
+        "form": "falsch",
+        "lemma": "falsch",
+        "pos": "adjective",
+        "gloss_hint": "incorrect"
+      },
+      {
+        "form": "revidiert",
+        "lemma": "revidieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Die [[Daten|nouns/Daten#1]] waren [[falsch|adjectives/falsch#1]] und mussten [[revidiert|verbs/revidieren]] werden."
   },
   "17e24aedad": {
     "text": "Satz heiße Ohren",
@@ -24848,11 +25924,45 @@
   },
   "17e7ab80e7": {
     "text": "Er wurde bereits Anfang des Jahres den ausländischen Behörden zugeliefert.",
-    "translation": null,
+    "translation": "He was already handed over to the foreign authorities at the beginning of the year.",
     "source": "wiktionary",
     "lemmas": [
       "zuliefern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Anfang",
+        "lemma": "Anfang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahres",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": "year"
+      },
+      {
+        "form": "ausländischen",
+        "lemma": "ausländisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Behörden",
+        "lemma": "Behörde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zugeliefert",
+        "lemma": "zuliefern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Er wurde bereits [[Anfang|nouns/Anfang]] des [[Jahres|nouns/Jahr#1]] den ausländischen [[Behörden|nouns/Behörde]] [[zugeliefert|verbs/zuliefern]]."
   },
   "17e8056661": {
     "text": "Am Ende der Prozession gab es noch einen Umgang um den Altar.",
@@ -26586,11 +27696,51 @@
   },
   "17f71247f4": {
     "text": "Wenn du die Kanten nicht sorgfältig abrundest, dann sieht der Kunde das sofort. Nicht nur, dass er das als schlechte Qualität wertet, nein, er kann sich auch noch daran verletzen. Willst du das?",
-    "translation": null,
+    "translation": "If you don't round the edges carefully, the customer will notice it immediately. Not only will he regard it as poor quality, but he could also injure himself on it. Do you want that?",
     "source": "wiktionary",
     "lemmas": [
       "abrunden"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kanten",
+        "lemma": "Kante",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abrundest",
+        "lemma": "abrunden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sorgfältig",
+        "lemma": "sorgfältig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kunde",
+        "lemma": "Kunde",
+        "pos": "noun",
+        "gloss_hint": "customer"
+      },
+      {
+        "form": "Qualität",
+        "lemma": "Qualität",
+        "pos": "noun",
+        "gloss_hint": "quality"
+      },
+      {
+        "form": "verletzen",
+        "lemma": "verletzen",
+        "pos": "verb",
+        "gloss_hint": "injure"
+      }
+    ],
+    "text_linked": "Wenn du die [[Kanten|nouns/Kante]] nicht [[sorgfältig|adjectives/sorgfältig]] [[abrundest|verbs/abrunden]], dann sieht der [[Kunde|nouns/Kunde_jemand]] das sofort. Nicht nur, dass er das als schlechte [[Qualität|nouns/Qualität#4]] wertet, nein, er kann sich auch noch daran [[verletzen|verbs/verletzen#1]]. Willst du das?"
   },
   "17f96930d1": {
     "text": "Heiligabend ist ein christlicher Feiertag.",
@@ -26754,11 +27904,51 @@
   },
   "17facf93de": {
     "text": "Angefügt war ein Foto, das die gefälschten und rasch gelöschten Twitter-Mitteilungen der Hacker zeigen soll.",
-    "translation": null,
+    "translation": "Attached was a photo that is supposed to show the forged and quickly deleted Twitter messages from the hackers.",
     "source": "wiktionary",
     "lemmas": [
       "anfügen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Foto",
+        "lemma": "Foto",
+        "pos": "noun",
+        "gloss_hint": "photo"
+      },
+      {
+        "form": "gefälschten",
+        "lemma": "gefälscht",
+        "pos": "adjective",
+        "gloss_hint": "counterfeit"
+      },
+      {
+        "form": "gelöschten",
+        "lemma": "gelöscht",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Twitter-Mitteilungen",
+        "lemma": "Mitteilung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hacker",
+        "lemma": "Hacker",
+        "pos": "noun",
+        "gloss_hint": "hacker"
+      },
+      {
+        "form": "zeigen",
+        "lemma": "zeigen",
+        "pos": "verb",
+        "gloss_hint": "show"
+      }
+    ],
+    "text_linked": "Angefügt war ein [[Foto|nouns/Foto_hilfe]], das die [[gefälschten|adjectives/gefälscht]] und rasch gelöschten [[Twitter-Mitteilungen|nouns/Mitteilung]] der [[Hacker|nouns/Hacker_computerspezialist#3]] [[zeigen|verbs/zeigen#1]] soll."
   },
   "17fb0e271b": {
     "text": "Dat nou Audo, dat hot awwa inn schehn Fareb.",
@@ -26974,11 +28164,13 @@
   },
   "17fd63cd84": {
     "text": "Bernau b. Berlin",
-    "translation": null,
+    "translation": "Bernau near Berlin",
     "source": "wiktionary",
     "lemmas": [
       "b."
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "17fdae0295": {
     "text": "„Bald nach seiner Ankunft, bzw. nach den Tändeleien der Flitterwochen bezieht der Mäusebussard, der bei uns allgemein unter dem Namen „Aarweihe“ bekannt ist, seinen alten Horst wieder oder er erbaut sich einen neuen.“",

@@ -173,11 +173,45 @@
   },
   "1339223401": {
     "text": "„Der Sprengsatz war aber erst wenige Sekunden später explodiert, nachdem sie um einen Tisch herumgegangen war.“",
-    "translation": null,
+    "translation": "\"But the explosive device only detonated a few seconds later, after she had walked around the table.\"",
     "source": "wiktionary",
     "lemmas": [
       "herumgehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sprengsatz",
+        "lemma": "Sprengsatz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "explodiert",
+        "lemma": "explodieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sekunden",
+        "lemma": "Sekunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tisch",
+        "lemma": "Tisch",
+        "pos": "noun",
+        "gloss_hint": "table"
+      },
+      {
+        "form": "herumgegangen",
+        "lemma": "herumgehen",
+        "pos": "verb",
+        "gloss_hint": "walk around"
+      }
+    ],
+    "text_linked": "„Der Sprengsatz war aber erst wenige [[Sekunden|nouns/Sekunde]] später [[explodiert|verbs/explodieren]], nachdem sie um einen [[Tisch|nouns/Tisch#1]] [[herumgegangen|verbs/herumgehen#2]] war.“"
   },
   "1346081712": {
     "text": "Säuglinge mit Nahrungsmittelallergie (typische Symptome: Erbrechen, Durchfälle, atopische Dermatitis) „wachsen“ in den meisten Fällen bis zum 5. Lebensjahr aus dieser Allergieform „heraus“ und reagieren danach nicht mehr allergisch auf Nahrungsmittel.",
@@ -1285,11 +1319,57 @@
   },
   "130952dc45": {
     "text": "Die erneute Begegnung mit Mrs Taylor stand ihr ziemlich bevor.",
-    "translation": null,
+    "translation": "The renewed encounter with Mrs Taylor was fairly imminent for her.",
     "source": "wiktionary",
     "lemmas": [
       "bevorstehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "erneute",
+        "lemma": "erneuert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Begegnung",
+        "lemma": "Begegnung",
+        "pos": "noun",
+        "gloss_hint": "encounter"
+      },
+      {
+        "form": "Mrs",
+        "lemma": "Mrs",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Taylor",
+        "lemma": "Taylor",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "stand",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ziemlich",
+        "lemma": "ziemlich",
+        "pos": "adjective",
+        "gloss_hint": "fairly"
+      },
+      {
+        "form": "bevor",
+        "lemma": "bevor",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Die erneute [[Begegnung|nouns/Begegnung#1]] mit Mrs Taylor [[stand|verbs/stehen]] ihr [[ziemlich|adjectives/ziemlich#1]] bevor."
   },
   "1309960b64": {
     "text": "Die Konfrontation der Blöcke wurde „kalter Krieg“ genannt.",
@@ -1362,11 +1442,75 @@
   },
   "130b05720f": {
     "text": "Dieses Gericht fungierte zum einen als Niedergericht in den Orten des Ingelheimer Grundes und zum anderen als Auskunftsinstanz (Oberhof) für auswärtige Ortsgerichte.",
-    "translation": null,
+    "translation": "This court served on the one hand as a lower court in the places of the Ingelheim district and on the other hand as an appellate authority (superior court) for foreign local courts.",
     "source": "wiktionary",
     "lemmas": [
       "fungieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gericht",
+        "lemma": "Gericht",
+        "pos": "noun",
+        "gloss_hint": "court"
+      },
+      {
+        "form": "fungierte",
+        "lemma": "fungieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Niedergericht",
+        "lemma": "Niedergericht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Orten",
+        "lemma": "Ort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ingelheimer",
+        "lemma": "Ingelheim",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grundes",
+        "lemma": "Grund",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Auskunftsinstanz",
+        "lemma": "Auskunftsinstanz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Oberhof",
+        "lemma": "Oberhof",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "auswärtige",
+        "lemma": "auswärtig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ortsgerichte",
+        "lemma": "Ortsgericht",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Dieses [[Gericht|nouns/Gericht_ort#1]] [[fungierte|verbs/fungieren]] zum einen als Niedergericht in den [[Orten|nouns/Ort_1]] des Ingelheimer [[Grundes|nouns/Grund]] und zum anderen als Auskunftsinstanz (Oberhof) für auswärtige Ortsgerichte."
   },
   "130b92f147": {
     "text": "„Im engeren Umkreis des Gouverneurs wimmelte es überdies von Spionen, die überall herumschnüffelten.“",
@@ -2120,11 +2264,33 @@
   },
   "131ab1c135": {
     "text": "„Die Großtante jätet Möhren.“",
-    "translation": null,
+    "translation": "The great-aunt weeds carrots.",
     "source": "wiktionary",
     "lemmas": [
       "jäten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Großtante",
+        "lemma": "Großtante",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "jätet",
+        "lemma": "jäten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Möhren",
+        "lemma": "Möhre",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Die Großtante [[jätet|verbs/jäten]] [[Möhren|nouns/Möhre]].“"
   },
   "131c4fc4a4": {
     "text": "heiße Luft macht keine Flecken",
@@ -3765,11 +3931,39 @@
   },
   "13262d9642": {
     "text": "Wir sollten den Ablauf der Tagung noch ein bisschen strenger regulieren.",
-    "translation": null,
+    "translation": "We should regulate the course of the conference a bit more strictly.",
     "source": "wiktionary",
     "lemmas": [
       "regulieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ablauf",
+        "lemma": "Ablauf",
+        "pos": "noun",
+        "gloss_hint": "process"
+      },
+      {
+        "form": "Tagung",
+        "lemma": "Tagung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "regulieren",
+        "lemma": "regulieren",
+        "pos": "verb",
+        "gloss_hint": "regulate"
+      },
+      {
+        "form": "strenger",
+        "lemma": "streng",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Wir sollten den [[Ablauf|nouns/Ablauf#1]] der [[Tagung|nouns/Tagung]] noch ein bisschen [[strenger|adjectives/streng]] [[regulieren|verbs/regulieren#2]]."
   },
   "13280dbe06": {
     "text": "„Die beiden Standorte Halskestraße und Friesenstraße des Winternotprogramms bieten insgesamt 700 Schlafplätze für obdachlose Menschen an.“",
@@ -3917,11 +4111,51 @@
   },
   "132a70912d": {
     "text": "Da der Motor brannte, musste der Pilot abbremsen und eine Notlandung versuchen.",
-    "translation": null,
+    "translation": "Because the engine was on fire, the pilot had to slow down and attempt an emergency landing.",
     "source": "wiktionary",
     "lemmas": [
       "abbremsen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Motor",
+        "lemma": "Motor",
+        "pos": "noun",
+        "gloss_hint": "motor"
+      },
+      {
+        "form": "brannte",
+        "lemma": "brennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pilot",
+        "lemma": "Pilot",
+        "pos": "noun",
+        "gloss_hint": "pilot"
+      },
+      {
+        "form": "abbremsen",
+        "lemma": "abbremsen",
+        "pos": "verb",
+        "gloss_hint": "slow down"
+      },
+      {
+        "form": "Notlandung",
+        "lemma": "Notlandung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "versuchen",
+        "lemma": "versuchen",
+        "pos": "verb",
+        "gloss_hint": "attempt"
+      }
+    ],
+    "text_linked": "Da der [[Motor|nouns/Motor#1]] [[brannte|verbs/brennen]], musste der [[Pilot|nouns/Pilot#1]] [[abbremsen|verbs/abbremsen#1]] und eine Notlandung [[versuchen|verbs/versuchen#1]]."
   },
   "132aac6bbb": {
     "text": "„Einem Gast darf bei uns nur Freundliches widerfahren.“",
@@ -4945,11 +5179,33 @@
   },
   "1334aa8bd1": {
     "text": "Um zwei geht es los. Wollen wir vorher noch ein wenig herumschlendern?",
-    "translation": null,
+    "translation": "It starts at two. Shall we stroll around a bit beforehand?",
     "source": "wiktionary",
     "lemmas": [
       "herumschlendern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "zwei",
+        "lemma": "zwei",
+        "pos": "numeral",
+        "gloss_hint": "two"
+      },
+      {
+        "form": "losgeht",
+        "lemma": "losgehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "herumschlendern",
+        "lemma": "herumschlendern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Um [[zwei|numerals/zwei#1]] geht es los. Wollen wir vorher noch ein wenig [[herumschlendern|verbs/herumschlendern]]?"
   },
   "13357dc83f": {
     "text": "Die Familie führte ein einfaches Leben.",
@@ -5468,11 +5724,45 @@
   },
   "133aa0dcfc": {
     "text": "„Psychopathie hingegen zeichnet sich durch risikofreudiges und impulsives Verhalten aus.“",
-    "translation": null,
+    "translation": "Psychopathy, on the other hand, is characterized by risk-taking and impulsive behavior.",
     "source": "wiktionary",
     "lemmas": [
       "auszeichnen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Psychopathie",
+        "lemma": "Psychopathie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zeichnet",
+        "lemma": "zeichnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "risikofreudiges",
+        "lemma": "risikofreudig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "impulsives",
+        "lemma": "impulsiv",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verhalten",
+        "lemma": "Verhalten",
+        "pos": "noun",
+        "gloss_hint": "behavior"
+      }
+    ],
+    "text_linked": "„Psychopathie hingegen [[zeichnet|verbs/zeichnen]] sich durch risikofreudiges und [[impulsives|adjectives/impulsiv]] [[Verhalten|nouns/Verhalten#2]] aus.“"
   },
   "133aaafede": {
     "text": "„Die Entscheidung für den langen Aufenthalt im Feld kam unter Zeitdruck zustande, da massive Eingriffe in die Lebensweise der Buschleute durch die südafrikanische Verwaltung befürchtet würden:[…]“",
@@ -7810,11 +8100,75 @@
   },
   "13518e0aa6": {
     "text": "„Der Sklavenmarkt war hier genauso groß wie der Negermarkt der Portugiesen in Guinea. Damit sie nicht fliehen konnten, waren sie mit Halsbändern an lange Stangen geschnallt. Nur wenige durften frei herumgehen.“",
-    "translation": null,
+    "translation": "The slave market was here just as large as the Negro market of the Portuguese in Guinea. So that they could not flee, they were fastened with collars to long poles. Only a few were allowed to wander around freely.",
     "source": "wiktionary",
     "lemmas": [
       "herumgehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sklavenmarkt",
+        "lemma": "Sklavenmarkt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Negermarkt",
+        "lemma": "Negermarkt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Portugiesen",
+        "lemma": "Portugiese",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Guinea",
+        "lemma": "Guinea",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fliehen",
+        "lemma": "fliehen",
+        "pos": "verb",
+        "gloss_hint": "flee"
+      },
+      {
+        "form": "Halsbändern",
+        "lemma": "Halsband",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stangen",
+        "lemma": "Stange",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geschnallt",
+        "lemma": "schnallen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "herumgehen",
+        "lemma": "herumgehen",
+        "pos": "verb",
+        "gloss_hint": "wander around"
+      },
+      {
+        "form": "frei",
+        "lemma": "frei",
+        "pos": "adjective",
+        "gloss_hint": "free"
+      }
+    ],
+    "text_linked": "„Der Sklavenmarkt war hier genauso groß wie der Negermarkt der Portugiesen in Guinea. Damit sie nicht [[fliehen|verbs/fliehen#1]] konnten, waren sie mit [[Halsbändern|nouns/Halsband]] an lange [[Stangen|nouns/Stange]] [[geschnallt|verbs/schnallen]]. Nur wenige durften [[frei|adjectives/frei#1]] [[herumgehen|verbs/herumgehen#1]].“"
   },
   "13535b1769": {
     "text": "ab in die Falle",
@@ -9370,19 +9724,81 @@
   },
   "1365d88b6c": {
     "text": "„Dem Gastronomen und seinen Mitarbeitern ist es mittlerweile gelungen, sich sehr gut in die besonderen Anforderungen einer Clubgastronomie einzufinden.“",
-    "translation": null,
+    "translation": "The restaurateur and his staff have meanwhile managed to adapt very well to the special requirements of club gastronomy.",
     "source": "wiktionary",
     "lemmas": [
       "einfinden"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gastronomen",
+        "lemma": "Gastronom",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mitarbeitern",
+        "lemma": "Mitarbeiter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gelungen",
+        "lemma": "gelingen",
+        "pos": "verb",
+        "gloss_hint": "successful"
+      },
+      {
+        "form": "Anforderungen",
+        "lemma": "Anforderung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Clubgastronomie",
+        "lemma": "Clubgastronomie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "einzufinden",
+        "lemma": "einfinden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Dem Gastronomen und seinen [[Mitarbeitern|nouns/Mitarbeiter]] ist es mittlerweile [[gelungen|verbs/gelingen]], sich sehr gut in die besonderen Anforderungen einer Clubgastronomie [[einzufinden|verbs/einfinden]].“"
   },
   "13665f92dc": {
     "text": "Habe ich es dieses Mal richtig aufgefasst, oder habe ich Dich schon wieder missverstanden?",
-    "translation": null,
+    "translation": "Did I get it right this time, or have I misunderstood you again?",
     "source": "wiktionary",
     "lemmas": [
       "auffassen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "aufgefasst",
+        "lemma": "auffassen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "richtig",
+        "lemma": "richtig",
+        "pos": "adjective",
+        "gloss_hint": "correct"
+      },
+      {
+        "form": "missverstanden",
+        "lemma": "missverstehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Habe ich es dieses Mal [[richtig|adjectives/richtig#1]] [[aufgefasst|verbs/auffassen]], oder habe ich Dich schon wieder [[missverstanden|verbs/missverstehen]]?"
   },
   "136841da4b": {
     "text": "„‚Die Koreaner kopieren von den Japanern und von uns, um es dann im zweiten Schritt noch besser zu machen‘, resümierte Winterkorn und fügte hinzu, er habe genug Autos des Konkurrenten [= Hyundai] gesehen, bei denen VW-Modelle offensichtlich Pate gestanden hätten.“",
@@ -10086,11 +10502,33 @@
   },
   "136db0d20c": {
     "text": "Sie vermerkte das Lieferdatum auf der Rechnungskopie.",
-    "translation": null,
+    "translation": "She noted the delivery date on the invoice copy.",
     "source": "wiktionary",
     "lemmas": [
       "vermerken"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "vermerkte",
+        "lemma": "vermerken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lieferdatum",
+        "lemma": "Lieferdatum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Rechnungskopie",
+        "lemma": "Rechnungskopie",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Sie [[vermerkte|verbs/vermerken]] das Lieferdatum auf der Rechnungskopie."
   },
   "136e59c09f": {
     "text": "„Man definiert ihn als ein beonderes Unterscheidungsvermögen, als eine schnelle Urteilsfähigkeit, als die Gabe, gewisse Zusammenhänge gesondert zu betrachten.“",
@@ -10697,11 +11135,63 @@
   },
   "137286889a": {
     "text": "[Coronapandemie 2020:] „Rund die Hälfte der Betroffenen fürchtete weiter sinkende Umsätze. Der neuerliche Lockdown dürfte den Pessimismus noch weiter anheizen.“",
-    "translation": null,
+    "translation": "Around half of those affected continued to fear declining revenues. The renewed lockdown was likely to fuel pessimism even further.",
     "source": "wiktionary",
     "lemmas": [
       "anheizen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hälfte",
+        "lemma": "Hälfte",
+        "pos": "noun",
+        "gloss_hint": "half"
+      },
+      {
+        "form": "Betroffenen",
+        "lemma": "Betroffener",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fürchtete",
+        "lemma": "fürchten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sinkende",
+        "lemma": "sinken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umsätze",
+        "lemma": "Umsatz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lockdown",
+        "lemma": "Lockdown",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "anheizen",
+        "lemma": "anheizen",
+        "pos": "verb",
+        "gloss_hint": "intensify"
+      },
+      {
+        "form": "Pessimismus",
+        "lemma": "Pessimismus",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "[Coronapandemie 2020:] „Rund die [[Hälfte|nouns/Hälfte#1]] der Betroffenen [[fürchtete|verbs/fürchten]] weiter [[sinkende|verbs/sinken]] [[Umsätze|nouns/Umsatz]]. Der neuerliche Lockdown dürfte den Pessimismus noch weiter [[anheizen|verbs/anheizen#2]].“"
   },
   "1372ba9e9a": {
     "text": "Die Körperverletzung wird vom Vergehen zum Verbrechen, wenn das Opfer der Tat zum Beispiel die Fortpflanzungsfähigkeit verliert oder in Siechtum verfällt (§ 226 StGB).",
@@ -10984,11 +11474,75 @@
   },
   "1373c85a25": {
     "text": "„Dieser Fall sorgte für Schlagzeilen: Als Oberärztin am Berner Inselspital wollte Natalie Urwyler eine akademische Karriere einschlagen. Sie wurde schwanger, bekam ein Kind und wurde von ihrem Arbeitgeber ausgebremst.“",
-    "translation": null,
+    "translation": "This case made headlines: As a senior physician at Bern's Inselspital, Natalie Urwyler wanted to pursue an academic career. She became pregnant, had a child, and was held back by her employer.",
     "source": "wiktionary",
     "lemmas": [
       "ausbremsen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fall",
+        "lemma": "Fall",
+        "pos": "noun",
+        "gloss_hint": "case"
+      },
+      {
+        "form": "Schlagzeilen",
+        "lemma": "Schlagzeile",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Oberärztin",
+        "lemma": "Oberärztin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Inselspital",
+        "lemma": "Inselspital",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Karriere",
+        "lemma": "Karriere",
+        "pos": "noun",
+        "gloss_hint": "career"
+      },
+      {
+        "form": "einschlagen",
+        "lemma": "einschlagen",
+        "pos": "verb",
+        "gloss_hint": "catch on"
+      },
+      {
+        "form": "schwanger",
+        "lemma": "schwanger",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kind",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": "child"
+      },
+      {
+        "form": "ausgebremst",
+        "lemma": "ausbremsen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Arbeitgeber",
+        "lemma": "Arbeitgeber",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Dieser [[Fall|nouns/Fall_schnelle#3]] sorgte für [[Schlagzeilen|nouns/Schlagzeile]]: Als [[Oberärztin|nouns/Oberärztin]] am Berner Inselspital wollte Natalie Urwyler eine akademische [[Karriere|nouns/Karriere#1]] [[einschlagen|verbs/einschlagen#12]]. Sie wurde [[schwanger|adjectives/schwanger]], bekam ein [[Kind|nouns/Kind#1]] und wurde von ihrem [[Arbeitgeber|nouns/Arbeitgeber]] [[ausgebremst|verbs/ausbremsen]].“"
   },
   "1373dbcfbd": {
     "text": "vorn hui, hinten pfui",
@@ -12126,11 +12680,33 @@
   },
   "1380a13db7": {
     "text": "Er hat seine Lage gründlich reflektiert.",
-    "translation": null,
+    "translation": "He thoroughly reflected on his situation.",
     "source": "wiktionary",
     "lemmas": [
       "reflektieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Lage",
+        "lemma": "Lage",
+        "pos": "noun",
+        "gloss_hint": "situation"
+      },
+      {
+        "form": "gründlich",
+        "lemma": "gründlich",
+        "pos": "adjective",
+        "gloss_hint": "thoroughly"
+      },
+      {
+        "form": "reflektiert",
+        "lemma": "reflektieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Er hat seine [[Lage|nouns/Lage#5]] [[gründlich|adjectives/gründlich#1]] [[reflektiert|verbs/reflektieren]]."
   },
   "138186d1e7": {
     "text": "„Als in ‚nassen Sachen‘ erfahrener Geheimdienstler organisierte er im Mai 1940 einen Anschlag auf Trotzki.“",
@@ -13969,11 +14545,69 @@
   },
   "138ee48c05": {
     "text": "Unter den Zeichen, die die Bettler an Zäunen, Wänden, Türen verwenden, deutet die geöffnete Hand an, dass man hier gut „zehren“ kann.",
-    "translation": null,
+    "translation": "Among the signs that beggars use on fences, walls, and doors, the open hand indicates that one can eat well here.",
     "source": "wiktionary",
     "lemmas": [
       "zehren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zeichen",
+        "lemma": "Zeichen",
+        "pos": "noun",
+        "gloss_hint": "sign"
+      },
+      {
+        "form": "Bettler",
+        "lemma": "Bettler",
+        "pos": "noun",
+        "gloss_hint": "beggar"
+      },
+      {
+        "form": "Zäunen",
+        "lemma": "Zaun",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wänden",
+        "lemma": "Wand",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Türen",
+        "lemma": "Tür",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verwenden",
+        "lemma": "verwenden",
+        "pos": "verb",
+        "gloss_hint": "use"
+      },
+      {
+        "form": "geöffnete",
+        "lemma": "öffnen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hand",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": "hand"
+      },
+      {
+        "form": "zehren",
+        "lemma": "zehren",
+        "pos": "verb",
+        "gloss_hint": "eat"
+      }
+    ],
+    "text_linked": "Unter den [[Zeichen|nouns/Zeichen#7]], die die [[Bettler|nouns/Bettler#1]] an [[Zäunen|nouns/Zaun]], [[Wänden|nouns/Wand]], [[Türen|nouns/Tür]] [[verwenden|verbs/verwenden#1]], deutet die [[geöffnete|verbs/öffnen]] [[Hand|nouns/Hand#2]] an, dass man hier gut „[[zehren|verbs/zehren#4]]“ kann."
   },
   "138eea9fed": {
     "text": "Meine Ärztin hat mir dieses Medikament empfohlen.",
@@ -15975,11 +16609,63 @@
   },
   "13a93b223b": {
     "text": "Wer sich heute durch Internet-Recherche ein fundiertes Urteil bilden möchte, muss eigenständig Dokumente und Statistiken durchforsten.",
-    "translation": null,
+    "translation": "Whoever wants to form a well-founded judgment through internet research today must independently search through documents and statistics.",
     "source": "wiktionary",
     "lemmas": [
       "durchforsten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Internet-Recherche",
+        "lemma": "Internet-Recherche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fundiertes",
+        "lemma": "fundiert",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Urteil",
+        "lemma": "Urteil",
+        "pos": "noun",
+        "gloss_hint": "judgment"
+      },
+      {
+        "form": "bilden",
+        "lemma": "bilden",
+        "pos": "verb",
+        "gloss_hint": "form"
+      },
+      {
+        "form": "eigenständig",
+        "lemma": "eigenständig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dokumente",
+        "lemma": "Dokument",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Statistiken",
+        "lemma": "Statistik",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "durchforsten",
+        "lemma": "durchforsten",
+        "pos": "verb",
+        "gloss_hint": "search thoroughly"
+      }
+    ],
+    "text_linked": "Wer sich heute durch Internet-Recherche ein fundiertes [[Urteil|nouns/Urteil#2]] [[bilden|verbs/bilden#1]] möchte, muss eigenständig [[Dokumente|nouns/Dokument]] und [[Statistiken|nouns/Statistik]] [[durchforsten|verbs/durchforsten_beispielsweise#1]]."
   },
   "13a9a68d11": {
     "text": "„Bei einer \"weiten\" Fruchtfolge steht erst jedes siebte oder jedes zwölfte Jahr wieder Weizen auf demselben Acker.“",
@@ -20387,19 +21073,69 @@
   },
   "13cf4fa6c5": {
     "text": "Beim Vorbeigehen schielte er unauffällig in das Schaufenster.",
-    "translation": null,
+    "translation": "As he walked past, he glanced discreetly into the shop window.",
     "source": "wiktionary",
     "lemmas": [
       "schielen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vorbeigehen",
+        "lemma": "vorbeigehen",
+        "pos": "verb",
+        "gloss_hint": "walk past"
+      },
+      {
+        "form": "schielte",
+        "lemma": "schielen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "unauffällig",
+        "lemma": "unauffällig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schaufenster",
+        "lemma": "Schaufenster",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Beim [[Vorbeigehen|verbs/vorbeigehen#1]] [[schielte|verbs/schielen]] er [[unauffällig|adjectives/unauffällig]] in das [[Schaufenster|nouns/Schaufenster]]."
   },
   "13d0164201": {
     "text": "Es wird immer gesagt, dass die öffentlichen Haushalte voll ausgereizt seien.",
-    "translation": null,
+    "translation": "It is always said that public budgets are fully exhausted.",
     "source": "wiktionary",
     "lemmas": [
       "ausreizen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "öffentlichen",
+        "lemma": "öffentlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haushalte",
+        "lemma": "Haushalt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausgereizt",
+        "lemma": "ausreizen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Es wird immer gesagt, dass die [[öffentlichen|adjectives/öffentlich]] [[Haushalte|nouns/Haushalt]] voll [[ausgereizt|verbs/ausreizen]] seien."
   },
   "13d0c1906e": {
     "text": "ein Satz mit x (, das war wohl nix)!",
@@ -21152,11 +21888,57 @@
   },
   "13db481aa5": {
     "text": "Die weiblichen Akte, die in dieser Zeit entstehen, posieren häufig in neoklassizistischem Stil.",
-    "translation": null,
+    "translation": "The female nudes created during this period often pose in neoclassical style.",
     "source": "wiktionary",
     "lemmas": [
       "posieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "weiblichen",
+        "lemma": "weiblich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Akte",
+        "lemma": "Akte",
+        "pos": "noun",
+        "gloss_hint": "document"
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "period"
+      },
+      {
+        "form": "entstehen",
+        "lemma": "entstehen",
+        "pos": "verb",
+        "gloss_hint": "arise"
+      },
+      {
+        "form": "posieren",
+        "lemma": "posieren",
+        "pos": "verb",
+        "gloss_hint": "pose"
+      },
+      {
+        "form": "neoklassizistischem",
+        "lemma": "neoklassizistisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stil",
+        "lemma": "Stil",
+        "pos": "noun",
+        "gloss_hint": "style"
+      }
+    ],
+    "text_linked": "Die [[weiblichen|adjectives/weiblich]] [[Akte|nouns/Akte#1]], die in dieser [[Zeit|nouns/Zeit#2]] [[entstehen|verbs/entstehen#1]], [[posieren|verbs/posieren#1]] häufig in neoklassizistischem [[Stil|nouns/Stil#1]]."
   },
   "13db5b733e": {
     "text": "Die Korrekturen machen einem Lehrer viel Arbeit.",
@@ -21743,11 +22525,51 @@
   },
   "13e022e46f": {
     "text": "Kann das Auswärtige Amt generell von Reisen abraten oder sichere Reiseziele empfehlen?",
-    "translation": null,
+    "translation": "Can the Foreign Office generally advise against travel or recommend safe travel destinations?",
     "source": "wiktionary",
     "lemmas": [
       "abraten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Auswärtige",
+        "lemma": "auswärtig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Amt",
+        "lemma": "Amt",
+        "pos": "noun",
+        "gloss_hint": "public office"
+      },
+      {
+        "form": "Reisen",
+        "lemma": "Reise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "abraten",
+        "lemma": "abraten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reiseziele",
+        "lemma": "Reiseziel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "empfehlen",
+        "lemma": "empfehlen",
+        "pos": "verb",
+        "gloss_hint": "recommend"
+      }
+    ],
+    "text_linked": "Kann das Auswärtige [[Amt|nouns/Amt#3]] generell von [[Reisen|nouns/Reise]] [[abraten|verbs/abraten]] oder sichere [[Reiseziele|nouns/Reiseziel]] [[empfehlen|verbs/empfehlen#1]]?"
   },
   "13e0b3ab01": {
     "text": "„Die Waffen sollten beigelegt, alle Städte mit humanitären Hilfen versorgt, die Forderungen des Volkes erfüllt werden.“",
@@ -21839,11 +22661,63 @@
   },
   "13e1867fef": {
     "text": "„Die Pappscheiben aufeinander legen und ganz dicht mit der Wolle umwickeln, die Wolle dafür in eine Wollnähnadel einfädeln.“",
-    "translation": null,
+    "translation": "\"Stack the cardboard discs on top of each other and wrap them very tightly with the wool, threading the wool through a wool needle for this purpose.\"",
     "source": "wiktionary",
     "lemmas": [
       "umwickeln"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Pappscheiben",
+        "lemma": "Pappscheibe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufeinander",
+        "lemma": "aufeinander",
+        "pos": "adverb",
+        "gloss_hint": "on top of each other"
+      },
+      {
+        "form": "legen",
+        "lemma": "legen",
+        "pos": "verb",
+        "gloss_hint": "lay"
+      },
+      {
+        "form": "dicht",
+        "lemma": "dicht",
+        "pos": "adjective",
+        "gloss_hint": "dense"
+      },
+      {
+        "form": "Wolle",
+        "lemma": "Wolle",
+        "pos": "noun",
+        "gloss_hint": "wool"
+      },
+      {
+        "form": "umwickeln",
+        "lemma": "umwickeln",
+        "pos": "verb",
+        "gloss_hint": "wrap"
+      },
+      {
+        "form": "einfädeln",
+        "lemma": "einfädeln",
+        "pos": "verb",
+        "gloss_hint": "thread"
+      },
+      {
+        "form": "Wollnähnadel",
+        "lemma": "Wollnähnadel",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Die Pappscheiben [[aufeinander|adverbs/aufeinander#1]] [[legen|verbs/legen#1]] und ganz [[dicht|adjectives/dicht#1]] mit der [[Wolle|nouns/Wolle#1]] [[umwickeln|verbs/umwickeln_etwas]], die Wolle dafür in eine Wollnähnadel [[einfädeln|verbs/einfädeln#1]].“"
   },
   "13e485d2df": {
     "text": "was etwas betrifft",
@@ -22302,11 +23176,13 @@
   },
   "13e835eeec": {
     "text": "„Frau beim Spazieren von Geschoß getroffen“",
-    "translation": null,
+    "translation": "\"Woman struck by bullet while walking\"",
     "source": "wiktionary",
     "lemmas": [
       "Geschoß"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "13e9353b4f": {
     "text": "Ihre Stimmen drangen nicht durch, soviel sie sich auch bemühten.",
@@ -23031,11 +23907,51 @@
   },
   "13ef309903": {
     "text": "Über ihnen thronte der preußische König, der nun zugleich auch deutscher Kaiser war.",
-    "translation": null,
+    "translation": "Above them reigned the Prussian king, who was now simultaneously also German emperor.",
     "source": "wiktionary",
     "lemmas": [
       "thronen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "thronte",
+        "lemma": "thronen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "preußische",
+        "lemma": "preußisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "König",
+        "lemma": "König",
+        "pos": "noun",
+        "gloss_hint": "king"
+      },
+      {
+        "form": "zugleich",
+        "lemma": "zugleich",
+        "pos": "adverb",
+        "gloss_hint": "simultaneously"
+      },
+      {
+        "form": "deutscher",
+        "lemma": "Deutscher",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kaiser",
+        "lemma": "Kaiser",
+        "pos": "noun",
+        "gloss_hint": "emperor"
+      }
+    ],
+    "text_linked": "Über ihnen [[thronte|verbs/thronen]] der preußische [[König|nouns/König#1]], der nun [[zugleich|adverbs/zugleich#1]] auch deutscher [[Kaiser|nouns/Kaiser#1]] war."
   },
   "13f02d1f17": {
     "text": "„Erst setzte Konrad Laimer noch einen Köpfler nach Eckball knapp neben die Stange (60.), schließlich war aber Berisha mit etwas Ballglück und sattem Schuss aus spitzem Winkel mit dem 1:0 zur Stelle.“",
@@ -23510,11 +24426,81 @@
   },
   "13f4599009": {
     "text": "„Die Behörde kann ohne weiteres Verfahren von der Verhängung einer Strafe absehen, wenn das Verschulden des Beschuldigten geringfügig ist und die Folgen der Übertretung unbedeutend sind.“",
-    "translation": null,
+    "translation": "\"The authority may, without further proceedings, refrain from imposing a penalty if the culpability of the accused is minor and the consequences of the violation are insignificant.\"",
     "source": "wiktionary",
     "lemmas": [
       "absehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Behörde",
+        "lemma": "Behörde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verfahren",
+        "lemma": "Verfahren",
+        "pos": "noun",
+        "gloss_hint": "procedure"
+      },
+      {
+        "form": "absehen",
+        "lemma": "absehen",
+        "pos": "verb",
+        "gloss_hint": "refrain"
+      },
+      {
+        "form": "Verhängung",
+        "lemma": "Verhängung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strafe",
+        "lemma": "Strafe",
+        "pos": "noun",
+        "gloss_hint": "punishment"
+      },
+      {
+        "form": "Verschulden",
+        "lemma": "Verschulden",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beschuldigten",
+        "lemma": "Beschuldigter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geringfügig",
+        "lemma": "geringfügig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Folgen",
+        "lemma": "Folge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Übertretung",
+        "lemma": "Übertretung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "unbedeutend",
+        "lemma": "unbedeutend",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Die [[Behörde|nouns/Behörde]] kann ohne weiteres [[Verfahren|nouns/Verfahren#1]] von der Verhängung einer [[Strafe|nouns/Strafe#1]] [[absehen|verbs/absehen#2]], wenn das Verschulden des [[Beschuldigten|nouns/Beschuldigter]] geringfügig ist und die [[Folgen|nouns/Folge]] der Übertretung [[unbedeutend|adjectives/unbedeutend]] sind.“"
   },
   "13f4a9b980": {
     "text": "„Im Schutz der Abenddämmerung eilten sie zu den Anlegern und enterten drei Handelsschiffe.“",
@@ -23680,11 +24666,63 @@
   },
   "13f5d72f1f": {
     "text": "„All die Menschen, nach denen er fahnden mußte, hatte er immer für Feinde der Ordnung gehalten, so wie er sich die Ordnung vorstellte. Auch noch heute hielt er die Menschen, nach denen er fahndete, für die Feinde der Ordnung, wie er sich Ordnung vorstellte.“",
-    "translation": null,
+    "translation": "\"All the people he had to search for, he had always considered enemies of order, just as he imagined order to be. Even today he still considered the people he was searching for to be enemies of order, as he conceived of order.\"",
     "source": "wiktionary",
     "lemmas": [
       "fahnden"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fahnden",
+        "lemma": "fahnden",
+        "pos": "verb",
+        "gloss_hint": "search"
+      },
+      {
+        "form": "Feinde",
+        "lemma": "Feind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ordnung",
+        "lemma": "Ordnung",
+        "pos": "noun",
+        "gloss_hint": "order"
+      },
+      {
+        "form": "vorstellte",
+        "lemma": "vorstellen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "hielt",
+        "lemma": "halten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "fahndete",
+        "lemma": "fahnden",
+        "pos": "verb",
+        "gloss_hint": "search"
+      }
+    ],
+    "text_linked": "„All die [[Menschen|nouns/Mensch_junge]], nach denen er [[fahnden|verbs/fahnden#1]] mußte, hatte er immer für [[Feinde|nouns/Feind]] der [[Ordnung|nouns/Ordnung#2]] gehalten, so wie er sich die Ordnung [[vorstellte|verbs/vorstellen]]. Auch noch [[heute|adverbs/heute#1]] [[hielt|verbs/halten]] er die Menschen, nach denen er [[fahndete|verbs/fahnden#1]], für die Feinde der Ordnung, wie er sich Ordnung vorstellte.“"
   },
   "13f605995c": {
     "text": "Die Mamma ist für Säugetiere, wie den Menschen, die Kuh oder die Giraffe typisch.",
@@ -23952,11 +24990,27 @@
   },
   "13f79eb89a": {
     "text": "Das Vorhaben ist schiefgelaufen.",
-    "translation": null,
+    "translation": "The plan went wrong.",
     "source": "wiktionary",
     "lemmas": [
       "schieflaufen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Vorhaben",
+        "lemma": "Vorhaben",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schiefgelaufen",
+        "lemma": "schiefgehen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Das [[Vorhaben|nouns/Vorhaben]] ist [[schiefgelaufen|verbs/schiefgehen]]."
   },
   "13f7f4626a": {
     "text": "„Seit dem Modelljahr 2023 gibt es im Touran auch den „Travel Assist“, der für den Fahrzeugführenden das Gas geben, Abstand halten zum vorausfahrenden Fahrzeug sowie Fahrspur halten und wechseln übernehmen kann.“",

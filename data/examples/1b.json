@@ -524,11 +524,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "not be impressed by something / be unimpressed by something",
     "source": "wiktionary",
     "lemmas": [
       "erbauen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1b046e4c6a": {
     "text": "Bürgermeisterin und Gemeinderat verabschieden den neuen Gemeindehaushalt.",
@@ -1021,11 +1022,51 @@
   },
   "1b0cfb96b6": {
     "text": "Der Beklagte wurde nunmehr von der Brauerei unter Ausschluss des Klägers mit Bier beliefert und er belieferte seine Kunden weiter mit deren Bier.",
-    "translation": null,
+    "translation": "The defendant was henceforth supplied with beer by the brewery to the exclusion of the plaintiff, and he continued to supply his customers with their beer.",
     "source": "wiktionary",
     "lemmas": [
       "beliefern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Beklagte",
+        "lemma": "Beklagter",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Brauerei",
+        "lemma": "Brauerei",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bier",
+        "lemma": "Bier",
+        "pos": "noun",
+        "gloss_hint": "beer"
+      },
+      {
+        "form": "beliefert",
+        "lemma": "beliefern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Klägers",
+        "lemma": "Kläger",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kunden",
+        "lemma": "Kunde",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Der Beklagte wurde nunmehr von der Brauerei unter Ausschluss des [[Klägers|nouns/Kläger]] mit [[Bier|nouns/Bier#1]] [[beliefert|verbs/beliefern]] und er belieferte seine [[Kunden|nouns/Kunde_jemand]] weiter mit deren Bier."
   },
   "1b0f25ee2b": {
     "text": "„Englische Texte waren den Teilnehmern nicht zugänglich, deutsche Fachtexte stellten für sie oft eine zu hohe Klippe dar, gerade für die Personen, die erst im Erwachsenenalter im Rahmen des muttersprachlichen Ergänzungsunterrichts nach Deutschland kamen.“",
@@ -1242,11 +1283,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "reach peak performance",
     "source": "wiktionary",
     "lemmas": [
       "auflaufen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "1b12dcd6d0": {
     "text": "„Im Sommerhaus in der Etage rechts haben wir unsere Betten gefunden.“",
@@ -1618,11 +1660,63 @@
   },
   "1b1719aff7": {
     "text": "Die katholische Kirche und auch die protestantische ist ja nie davon abgekommen, angesichts der Welt als Jammertal, das himmlische Paradies zu verheißen – das war fester Glaubensbestand.",
-    "translation": null,
+    "translation": "The Catholic Church and also the Protestant Church have never abandoned the promise of heavenly paradise in view of the world as a vale of tears—that was a fixed article of faith.",
     "source": "wiktionary",
     "lemmas": [
       "verheißen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "katholische",
+        "lemma": "katholisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kirche",
+        "lemma": "Kirche",
+        "pos": "noun",
+        "gloss_hint": "church building"
+      },
+      {
+        "form": "protestantische",
+        "lemma": "protestantisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Welt",
+        "lemma": "Welt",
+        "pos": "noun",
+        "gloss_hint": "world"
+      },
+      {
+        "form": "Jammertal",
+        "lemma": "Jammertal",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Paradies",
+        "lemma": "Paradies",
+        "pos": "noun",
+        "gloss_hint": "heaven"
+      },
+      {
+        "form": "verheißen",
+        "lemma": "verheißen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Glaubensbestand",
+        "lemma": "Glaubensbestand",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Die [[katholische|adjectives/katholisch]] [[Kirche|nouns/Kirche#1]] und auch die protestantische ist ja nie davon abgekommen, angesichts der [[Welt|nouns/Welt#3]] als Jammertal, das himmlische [[Paradies|nouns/Paradies#1]] zu [[verheißen|verbs/verheißen]] – das war fester Glaubensbestand."
   },
   "1b17d45b8b": {
     "text": "Sie arbeitet als angestellte Ärztin im Krankenhaus.",
@@ -2524,19 +2618,111 @@
   },
   "1b1fe2d0b5": {
     "text": "Feindliche Kämpfer attackierten am Morgen das Hauptquartier.",
-    "translation": null,
+    "translation": "Enemy fighters attacked the headquarters in the morning.",
     "source": "wiktionary",
     "lemmas": [
       "attackieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Feindliche",
+        "lemma": "feindlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kämpfer",
+        "lemma": "Kämpfer",
+        "pos": "noun",
+        "gloss_hint": "fighter"
+      },
+      {
+        "form": "attackierten",
+        "lemma": "attackieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Morgen",
+        "lemma": "Morgen",
+        "pos": "noun",
+        "gloss_hint": "morning"
+      },
+      {
+        "form": "Hauptquartier",
+        "lemma": "Hauptquartier",
+        "pos": "noun",
+        "gloss_hint": "headquarters"
+      }
+    ],
+    "text_linked": "Feindliche [[Kämpfer|nouns/Kämpfer#1]] [[attackierten|verbs/attackieren]] am [[Morgen|nouns/Morgen_tageszeit#1]] das [[Hauptquartier|nouns/Hauptquartier#1]]."
   },
   "1b1fecd5ef": {
     "text": "„Bundeskanzlerin Angela Merkel hat Italien zugesichert, das Land bei seinen Problemen mit Flüchtlingen unterstützen zu wollen.“",
-    "translation": null,
+    "translation": "\"Federal Chancellor Angela Merkel assured Italy that she wanted to support the country in its problems with refugees.\"",
     "source": "wiktionary",
     "lemmas": [
       "zusichern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bundeskanzlerin",
+        "lemma": "Bundeskanzlerin",
+        "pos": "noun",
+        "gloss_hint": "Federal Chancellor"
+      },
+      {
+        "form": "Angela",
+        "lemma": "Angela",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Merkel",
+        "lemma": "Merkel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Italien",
+        "lemma": "Italien",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zugesichert",
+        "lemma": "zusichern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Land",
+        "lemma": "Land",
+        "pos": "noun",
+        "gloss_hint": "country"
+      },
+      {
+        "form": "Problemen",
+        "lemma": "Problem",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Flüchtlingen",
+        "lemma": "Flüchtling",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "unterstützen",
+        "lemma": "unterstützen",
+        "pos": "verb",
+        "gloss_hint": "support"
+      }
+    ],
+    "text_linked": "„[[Bundeskanzlerin|nouns/Bundeskanzlerin#1]] Angela Merkel hat Italien [[zugesichert|verbs/zusichern]], das [[Land|nouns/Land#2]] bei seinen [[Problemen|nouns/Problem]] mit [[Flüchtlingen|nouns/Flüchtling]] [[unterstützen|verbs/unterstützen_haltend]] zu wollen.“"
   },
   "1b20a45d59": {
     "text": "Dieser militärisch genutzte Hangar ist ein als Betonröhre konzipierter, mit Erde bedeckter und zur Tarnung mit Gras bewachsener Luftschutzbunker, in dem auf dem Militärflugplatz militärisches Fluggerät zum Schutz vor Fremdeinwirkung untergestellt wird.",
@@ -4396,11 +4582,63 @@
   },
   "1b2f718329": {
     "text": "„In einer solchen Zwangslage kann ein Unternehmen versuchen, mit technologischen Mitteln den Einsatz von Rohstoffen zu vermindern.“",
-    "translation": null,
+    "translation": "\"In such a difficult situation, a company can attempt to reduce the use of raw materials through technological means.\"",
     "source": "wiktionary",
     "lemmas": [
       "vermindern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zwangslage",
+        "lemma": "Zwangslage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unternehmen",
+        "lemma": "Unternehmen",
+        "pos": "noun",
+        "gloss_hint": "company"
+      },
+      {
+        "form": "versuchen",
+        "lemma": "versuchen",
+        "pos": "verb",
+        "gloss_hint": "attempt"
+      },
+      {
+        "form": "technologischen",
+        "lemma": "technologisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mitteln",
+        "lemma": "Mittel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einsatz",
+        "lemma": "Einsatz",
+        "pos": "noun",
+        "gloss_hint": "use"
+      },
+      {
+        "form": "Rohstoffen",
+        "lemma": "Rohstoff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vermindern",
+        "lemma": "vermindern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„In einer solchen Zwangslage kann ein [[Unternehmen|nouns/Unternehmen#1]] [[versuchen|verbs/versuchen#1]], mit technologischen [[Mitteln|nouns/Mittel_etwas]] den [[Einsatz|nouns/Einsatz#6]] von Rohstoffen zu [[vermindern|verbs/vermindern]].“"
   },
   "1b2fa790df": {
     "text": "Jeder trank noch zwei Pfefferminz bevor sie aufbrachen.",
@@ -5679,12 +5917,13 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "pass the buck to someone",
     "source": "wiktionary",
     "lemmas": [
       "zuspielen"
     ],
-    "ref": "phrases/jemandem den Schwarzen Peter zuspielen"
+    "ref": "phrases/jemandem den Schwarzen Peter zuspielen",
+    "translation_model": "openai/gpt-4.1"
   },
   "1b39942971": {
     "text": "Der Durchgang zur Garage ist versperrt.",
@@ -7991,11 +8230,45 @@
   },
   "1b4e7a78aa": {
     "text": "Entwurf und Vertrieb haben wir längst outgesourct, wir kümmern uns nur um die eigentliche Produktion.",
-    "translation": null,
+    "translation": "We outsourced design and distribution long ago; we only concern ourselves with actual production.",
     "source": "wiktionary",
     "lemmas": [
       "outsourcen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Entwurf",
+        "lemma": "Entwurf",
+        "pos": "noun",
+        "gloss_hint": "design"
+      },
+      {
+        "form": "Vertrieb",
+        "lemma": "Vertrieb",
+        "pos": "noun",
+        "gloss_hint": "distribution"
+      },
+      {
+        "form": "outgesourct",
+        "lemma": "outsourcen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "kümmern",
+        "lemma": "kümmern",
+        "pos": "verb",
+        "gloss_hint": "care for"
+      },
+      {
+        "form": "Produktion",
+        "lemma": "Produktion",
+        "pos": "noun",
+        "gloss_hint": "production"
+      }
+    ],
+    "text_linked": "[[Entwurf|nouns/Entwurf#1]] und [[Vertrieb|nouns/Vertrieb#1]] haben wir längst [[outgesourct|verbs/outsourcen]], wir [[kümmern|verbs/kümmern#1]] uns nur um die eigentliche [[Produktion|nouns/Produktion#1]]."
   },
   "1b4e7d0138": {
     "text": "Ich glaube, er konnte seine Freundin nicht befriedigen, deshalb hat sie auch Schluss gemacht.",
@@ -9038,11 +9311,21 @@
   },
   "1b5a3083a5": {
     "text": "Plansch nicht so!",
-    "translation": null,
+    "translation": "Don't splash around like that!",
     "source": "wiktionary",
     "lemmas": [
       "planschen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Plansch",
+        "lemma": "planschen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "[[Plansch|verbs/planschen]] nicht so!"
   },
   "1b5af5e7c7": {
     "text": "„Muss denn der Fernseher den ganzen Tag laufen? Können wir den nicht mal ausmachen?“",
@@ -9203,11 +9486,57 @@
   },
   "1b5bb71ff6": {
     "text": "„Schon um den Rohstoff effizient zu verwerten, wäre eine Reduktion der Verluste also hilfreich, so die Regierung.“",
-    "translation": null,
+    "translation": "Even to use the raw material efficiently, a reduction in losses would therefore be helpful, according to the government.",
     "source": "wiktionary",
     "lemmas": [
       "verwerten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Rohstoff",
+        "lemma": "Rohstoff",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "effizient",
+        "lemma": "effizient",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "verwerten",
+        "lemma": "verwerten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Reduktion",
+        "lemma": "Reduktion",
+        "pos": "noun",
+        "gloss_hint": "reduction"
+      },
+      {
+        "form": "Verluste",
+        "lemma": "Verlust",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "hilfreich",
+        "lemma": "hilfreich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Regierung",
+        "lemma": "Regierung",
+        "pos": "noun",
+        "gloss_hint": "government"
+      }
+    ],
+    "text_linked": "„Schon um den Rohstoff [[effizient|adjectives/effizient]] zu [[verwerten|verbs/verwerten]], wäre eine [[Reduktion|nouns/Reduktion#1]] der [[Verluste|nouns/Verlust]] also [[hilfreich|adjectives/hilfreich]], so die [[Regierung|nouns/Regierung#2]].“"
   },
   "1b5c6d093f": {
     "text": "Im angeblich \"langsamen\" Teil Europas ändert sich das Leben rasant schnell. Viele Menschen werden dabei sozial abgehängt.",
@@ -10183,11 +10512,51 @@
   },
   "1b606d4c5f": {
     "text": "Vorläufig beziffern sich Lunkewitz’ Forderungen angeblich auf 48,8 Millionen Euro Schadensersatz.",
-    "translation": null,
+    "translation": "For now, Lunkewitz's demands are reportedly amounting to 48.8 million euros in damages.",
     "source": "wiktionary",
     "lemmas": [
       "beziffern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Lunkewitz",
+        "lemma": "Lunkewitz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Forderungen",
+        "lemma": "Forderung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "beziffern",
+        "lemma": "beziffern",
+        "pos": "verb",
+        "gloss_hint": "amount to"
+      },
+      {
+        "form": "Millionen",
+        "lemma": "Million",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Euro",
+        "lemma": "Euro",
+        "pos": "noun",
+        "gloss_hint": "euro"
+      },
+      {
+        "form": "Schadensersatz",
+        "lemma": "Schadensersatz",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Vorläufig [[beziffern|verbs/beziffern#2]] sich Lunkewitz’ [[Forderungen|nouns/Forderung]] angeblich auf 48,8 [[Millionen|nouns/Million]] [[Euro|nouns/Euro_europameisterschaft]] Schadensersatz."
   },
   "1b60e9a1ce": {
     "text": "Mit ihrem leichten Feel-good-Song stürmte sie über Nacht die Charts.",
@@ -10411,11 +10780,51 @@
   },
   "1b62a6a7d5": {
     "text": "„Andauernder Regen hatte den Spielplan durcheinandergebracht und dafür gesorgt, dass die Spielerinnen teilweise zweimal pro Tag antreten mussten.“",
-    "translation": null,
+    "translation": "Persistent rain had disrupted the schedule and caused the players to sometimes have to compete twice a day.",
     "source": "wiktionary",
     "lemmas": [
       "durcheinanderbringen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Regen",
+        "lemma": "Regen",
+        "pos": "noun",
+        "gloss_hint": "rain"
+      },
+      {
+        "form": "Spielplan",
+        "lemma": "Spielplan",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "durcheinandergebracht",
+        "lemma": "durcheinanderbringen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spielerinnen",
+        "lemma": "Spielerin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "antreten",
+        "lemma": "antreten",
+        "pos": "verb",
+        "gloss_hint": "appear"
+      },
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      }
+    ],
+    "text_linked": "„Andauernder [[Regen|nouns/Regen#1]] hatte den Spielplan [[durcheinandergebracht|verbs/durcheinanderbringen]] und dafür gesorgt, dass die [[Spielerinnen|nouns/Spielerin]] teilweise zweimal pro [[Tag|nouns/Tag_zeitraum#1]] [[antreten|verbs/antreten#4]] mussten.“"
   },
   "1b62ad14b2": {
     "text": "Der Zusammenhalt zwischen den Staaten der Europäischen Union erodierte.",
@@ -10706,11 +11115,39 @@
   },
   "1b6b321907": {
     "text": "„Geben sie einen noch negativeren Wert ein (zum Beispiel, -3 dB), um mit weniger Aussteuerung zu normalisieren.“",
-    "translation": null,
+    "translation": "Enter an even more negative value (for example, -3 dB) to normalize with less modulation.",
     "source": "wiktionary",
     "lemmas": [
       "normalisieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wert",
+        "lemma": "Wert",
+        "pos": "noun",
+        "gloss_hint": "value"
+      },
+      {
+        "form": "Beispiel",
+        "lemma": "Beispiel",
+        "pos": "noun",
+        "gloss_hint": "example"
+      },
+      {
+        "form": "Aussteuerung",
+        "lemma": "Aussteuerung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "normalisieren",
+        "lemma": "normalisieren",
+        "pos": "verb",
+        "gloss_hint": "normalize"
+      }
+    ],
+    "text_linked": "„Geben sie einen noch negativeren [[Wert|nouns/Wert#1]] ein (zum [[Beispiel|nouns/Beispiel#1]], -3 dB), um mit weniger Aussteuerung zu [[normalisieren|verbs/normalisieren#1]].“"
   },
   "1b6b8ec45d": {
     "text": "Der weibliche Luchs hat eine Nuß.",
@@ -12321,11 +12758,39 @@
   },
   "1b7902753e": {
     "text": "Die Schlosserlehrlinge feilen stundenlang an einem Stück Metall.",
-    "translation": null,
+    "translation": "The locksmith apprentices file away at a piece of metal for hours.",
     "source": "wiktionary",
     "lemmas": [
       "feilen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schlosserlehrlinge",
+        "lemma": "Schlosserlehrling",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "feilen",
+        "lemma": "feilen",
+        "pos": "verb",
+        "gloss_hint": "file"
+      },
+      {
+        "form": "Stück",
+        "lemma": "Stück",
+        "pos": "noun",
+        "gloss_hint": "piece"
+      },
+      {
+        "form": "Metall",
+        "lemma": "Metall",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Die Schlosserlehrlinge [[feilen|verbs/feilen#1]] stundenlang an einem [[Stück|nouns/Stück#1]] [[Metall|nouns/Metall]]."
   },
   "1b791547fd": {
     "text": "die Haut versaufen",
@@ -13651,11 +14116,63 @@
   },
   "1b83f1032a": {
     "text": "„Mit dieser Politik verletzt die Regierung nicht nur das Völkerrecht, sondern auch israelische Gesetze und unterminiert die Grundlagen der israelischen Demokratie.“",
-    "translation": null,
+    "translation": "With this policy, the government violates not only international law, but also Israeli laws and undermines the foundations of Israeli democracy.",
     "source": "wiktionary",
     "lemmas": [
       "unterminieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Politik",
+        "lemma": "Politik",
+        "pos": "noun",
+        "gloss_hint": "strategy"
+      },
+      {
+        "form": "Regierung",
+        "lemma": "Regierung",
+        "pos": "noun",
+        "gloss_hint": "government"
+      },
+      {
+        "form": "verletzt",
+        "lemma": "verletzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Völkerrecht",
+        "lemma": "Völkerrecht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gesetze",
+        "lemma": "Gesetz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "unterminiert",
+        "lemma": "unterminieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Grundlagen",
+        "lemma": "Grundlage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Demokratie",
+        "lemma": "Demokratie",
+        "pos": "noun",
+        "gloss_hint": "government system"
+      }
+    ],
+    "text_linked": "„Mit dieser [[Politik|nouns/Politik#3]] [[verletzt|verbs/verletzen]] die [[Regierung|nouns/Regierung#2]] nicht nur das Völkerrecht, sondern auch israelische [[Gesetze|nouns/Gesetz]] und [[unterminiert|verbs/unterminieren]] die [[Grundlagen|nouns/Grundlage]] der israelischen [[Demokratie|nouns/Demokratie#2]].“"
   },
   "1b843535f7": {
     "text": "„Das Innenministerium sah sich auch durch die sprunghaft steigenden Attacken auf deutsche Behördenrechner zum Handeln gezwungen.“",
@@ -14724,11 +15241,33 @@
   },
   "1b8eb707fe": {
     "text": "Der Klimawandel lässt sich nicht mehr voraussehen, denn wir sind bereits mitten drin.",
-    "translation": null,
+    "translation": "Climate change can no longer be predicted because we are already in the midst of it.",
     "source": "wiktionary",
     "lemmas": [
       "voraussehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Klimawandel",
+        "lemma": "Klimawandel",
+        "pos": "noun",
+        "gloss_hint": "climate change"
+      },
+      {
+        "form": "voraussehen",
+        "lemma": "voraussehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "drin",
+        "lemma": "drin",
+        "pos": "adverb",
+        "gloss_hint": "in it"
+      }
+    ],
+    "text_linked": "Der [[Klimawandel|nouns/Klimawandel#1]] lässt sich nicht mehr [[voraussehen|verbs/voraussehen]], denn wir sind bereits mitten [[drin|adverbs/drin_referenziert#2]]."
   },
   "1b8f54591d": {
     "text": "wie ein Storch durch den Salat",
@@ -19937,11 +20476,45 @@
   },
   "1bc3e508d2": {
     "text": "Es ist schwierig, eine Bank zu finden, die auch kleinere Einlagen verzinst.",
-    "translation": null,
+    "translation": "It is difficult to find a bank that also pays interest on smaller deposits.",
     "source": "wiktionary",
     "lemmas": [
       "verzinsen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "schwierig",
+        "lemma": "schwierig",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bank",
+        "lemma": "Bank",
+        "pos": "noun",
+        "gloss_hint": "bank"
+      },
+      {
+        "form": "finden",
+        "lemma": "finden",
+        "pos": "verb",
+        "gloss_hint": "discover"
+      },
+      {
+        "form": "Einlagen",
+        "lemma": "Einlage",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verzinst",
+        "lemma": "verzinsen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Es ist [[schwierig|adjectives/schwierig]], eine [[Bank|nouns/Bank_geldinstitut#2]] zu [[finden|verbs/finden#1]], die auch kleinere Einlagen [[verzinst|verbs/verzinsen]]."
   },
   "1bc42af0f3": {
     "text": "„Mit Lachs unter der Kruste, Fenchelmuschel mit schwarzen Perlen, Schwarzwurzel-Suppe mit Austern, Seeteufel mit Mohn und Sesam, Scampiknödeln gebacken mit Kohlsprossen-Linsen-Salat, Wildhase auf Pastinakenbeilage, Taube auf rotem Rübenrisotto samt knusprigem Gemüsespieß, Ananas, geeist mit Limetten-Thymian, und der gebackenen Zitronengrasfeige. Wohl bekomms!“",
@@ -20225,11 +20798,45 @@
   },
   "1bc56000a6": {
     "text": "Die Parolen der Neonazis drohen die Jugend zu radikalisieren.",
-    "translation": null,
+    "translation": "The slogans of the neo-Nazis threaten to radicalize the youth.",
     "source": "wiktionary",
     "lemmas": [
       "radikalisieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Parolen",
+        "lemma": "Parole",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Neonazis",
+        "lemma": "Neonazi",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "drohen",
+        "lemma": "drohen",
+        "pos": "verb",
+        "gloss_hint": "threaten"
+      },
+      {
+        "form": "Jugend",
+        "lemma": "Jugend",
+        "pos": "noun",
+        "gloss_hint": "youth"
+      },
+      {
+        "form": "radikalisieren",
+        "lemma": "radikalisieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Die [[Parolen|nouns/Parole_kennwort]] der Neonazis [[drohen|verbs/drohen#1]] die [[Jugend|nouns/Jugend#1]] zu [[radikalisieren|verbs/radikalisieren]]."
   },
   "1bc5f91685": {
     "text": "In der Karibik ist es wundervoll.",
@@ -20327,11 +20934,51 @@
   },
   "1bc7d1fa1b": {
     "text": "„Vermengt mit Traubenzucker wurde damals aber oft das verbotene Dopingmittel Pervitin gespritzt, ein Amphetamin.“",
-    "translation": null,
+    "translation": "Mixed with glucose, the banned doping agent Pervitin, an amphetamine, was often injected back then.",
     "source": "wiktionary",
     "lemmas": [
       "vermengen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Traubenzucker",
+        "lemma": "Traubenzucker",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verbotene",
+        "lemma": "verboten",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dopingmittel",
+        "lemma": "Dopingmittel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Pervitin",
+        "lemma": "Pervitin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Amphetamin",
+        "lemma": "Amphetamin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gespritzt",
+        "lemma": "spritzen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Vermengt mit Traubenzucker wurde damals aber oft das [[verbotene|adjectives/verboten]] Dopingmittel Pervitin [[gespritzt|verbs/spritzen]], ein Amphetamin.“"
   },
   "1bc805b57f": {
     "text": "Zum Schnupfen gesellte sich dann noch eine kräftige Halsentzündung.",
@@ -20958,11 +21605,99 @@
   },
   "1bd03800d4": {
     "text": "„Das 1:1 der Isländer war eine 1:1-Kopie des 1:0 gegen Österreich im letzten Gruppenspiel. Auch da hatte Gunnarsson von der rechten Seite eingeworfen, in der Mitte gab es eine Kopfballverlängerung (auch da von Árnason) und im Strafraum einen Torschuss mit rechts, diesmal durch Sigurdsson.“",
-    "translation": null,
+    "translation": "Iceland's 1:1 was an exact copy of the 1:0 against Austria in the last group match. There too, Gunnarsson had thrown in from the right side, in the middle there was a header extension (also by Árnason) and in the penalty area a shot on goal with the right foot, this time by Sigurdsson.",
     "source": "wiktionary",
     "lemmas": [
       "einwerfen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Isländer",
+        "lemma": "Isländer",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kopie",
+        "lemma": "Kopie",
+        "pos": "noun",
+        "gloss_hint": "copy"
+      },
+      {
+        "form": "Österreich",
+        "lemma": "Österreich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gruppenspiel",
+        "lemma": "Gruppenspiel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gunnarsson",
+        "lemma": "Gunnarsson",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "rechten",
+        "lemma": "recht",
+        "pos": "adjective",
+        "gloss_hint": "right"
+      },
+      {
+        "form": "Seite",
+        "lemma": "Seite",
+        "pos": "noun",
+        "gloss_hint": "side"
+      },
+      {
+        "form": "eingeworfen",
+        "lemma": "einwerfen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mitte",
+        "lemma": "Mitte",
+        "pos": "noun",
+        "gloss_hint": "center"
+      },
+      {
+        "form": "Kopfballverlängerung",
+        "lemma": "Kopfballverlängerung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Árnason",
+        "lemma": "Árnason",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Strafraum",
+        "lemma": "Strafraum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Torschuss",
+        "lemma": "Torschuss",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sigurdsson",
+        "lemma": "Sigurdsson",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Das 1:1 der Isländer war eine 1:1-[[Kopie|nouns/Kopie#1]] des 1:0 gegen Österreich im letzten Gruppenspiel. Auch da hatte Gunnarsson von der [[rechten|adjectives/recht#1]] [[Seite|nouns/Seite#1]] [[eingeworfen|verbs/einwerfen]], in der [[Mitte|nouns/Mitte#1]] gab es eine Kopfballverlängerung (auch da von Árnason) und im [[Strafraum|nouns/Strafraum]] einen Torschuss mit rechts, diesmal durch Sigurdsson.“"
   },
   "1bd16db39e": {
     "text": "„Angestellte der Marine, die zu / von einer Schwimmbohrinsel reisen, welche selbständig manövrierbar ist, müssen in Besitz eines Schreibens sein, der vom Arbeitgeber oder dem Schwimmplattform-Inhaber ausgestellt wurde.“",
@@ -21975,11 +22710,33 @@
   },
   "1bd727a8b6": {
     "text": "Er will bei dem Antrag nicht mitziehen, er hat eigene und andere Pläne.",
-    "translation": null,
+    "translation": "He doesn't want to go along with the proposal; he has his own and other plans.",
     "source": "wiktionary",
     "lemmas": [
       "mitziehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Antrag",
+        "lemma": "Antrag",
+        "pos": "noun",
+        "gloss_hint": "proposal"
+      },
+      {
+        "form": "mitziehen",
+        "lemma": "mitziehen",
+        "pos": "verb",
+        "gloss_hint": "cooperate"
+      },
+      {
+        "form": "Pläne",
+        "lemma": "Plan",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Er will bei dem [[Antrag|nouns/Antrag#2]] nicht [[mitziehen|verbs/mitziehen#2]], er hat eigene und andere [[Pläne|nouns/Plan]]."
   },
   "1bd732bd98": {
     "text": "„Morell saß, an einem Glas Brandy nippend, in dem warmen Wohnzimmer in Westminster, dem seine Frau eine echt weibliche Note gegeben hatte.“",
@@ -22983,11 +23740,45 @@
   },
   "1be088770b": {
     "text": "„Sie verschleppten die 14-Jährige vom Schulhof geradewegs in ein Militärcamp.“",
-    "translation": null,
+    "translation": "They abducted the 14-year-old girl directly from the schoolyard into a military camp.",
     "source": "wiktionary",
     "lemmas": [
       "verschleppen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "verschleppten",
+        "lemma": "verschleppen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "14-Jährige",
+        "lemma": "14-Jährige",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schulhof",
+        "lemma": "Schulhof",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "geradewegs",
+        "lemma": "geradewegs",
+        "pos": "adverb",
+        "gloss_hint": "directly"
+      },
+      {
+        "form": "Militärcamp",
+        "lemma": "Militärcamp",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Sie [[verschleppten|verbs/verschleppen]] die 14-Jährige vom [[Schulhof|nouns/Schulhof]] [[geradewegs|adverbs/geradewegs#1]] in ein Militärcamp.“"
   },
   "1be12beeb6": {
     "text": "„Weil es ſich um arme, aber ehrbare Leute handelt, die nicht in der Lage ſind, ſelbst das Recht in allen Inſtanzen durchzufechten, gilt es, durch dieſen Appell an das öffentliche Gewiſſen der ſchlafenden Gerechtigkeit Genüge zu verſchaffen.“",
@@ -23259,11 +24050,51 @@
   },
   "1be2a58e54": {
     "text": "„Er sei Kärntner und Österreicher, sagt er, und komme damit aus einem Bundesland, das sich bis heute mit der Aufarbeitung der NS-Zeit mehr als schwertue.“",
-    "translation": null,
+    "translation": "He says he is a Carinthian and an Austrian, and comes from a federal state that to this day struggles considerably with coming to terms with the Nazi era.",
     "source": "wiktionary",
     "lemmas": [
       "schwertun"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kärntner",
+        "lemma": "Kärntner",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Österreicher",
+        "lemma": "Österreicher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bundesland",
+        "lemma": "Bundesland",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufarbeitung",
+        "lemma": "Aufarbeitung",
+        "pos": "noun",
+        "gloss_hint": "processing"
+      },
+      {
+        "form": "NS-Zeit",
+        "lemma": "NS-Zeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwertue",
+        "lemma": "schwertun",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Er sei [[Kärntner|nouns/Kärntner]] und [[Österreicher|nouns/Österreicher]], sagt er, und komme damit aus einem [[Bundesland|nouns/Bundesland]], das sich bis heute mit der [[Aufarbeitung|nouns/Aufarbeitung#3]] der NS-Zeit mehr als [[schwertue|verbs/schwertun]].“"
   },
   "1be3cda04f": {
     "text": "„Mir lag auf der Zunge zu sagen, ‚im Moment nicht‘, da wußte ich plötzlich, wer der Mann war: Giuliano. Noch ehe ich den Mund aufmachen konnte, fragte er mich aus: […].“",
@@ -23580,11 +24411,45 @@
   },
   "1be53dbfef": {
     "text": "„Bei alledem hatte Kuba den Vorteil zu beobachten, was dort funktionierte oder auch nicht, um dann entsprechend nach- oder umzusteuern.“",
-    "translation": null,
+    "translation": "In all this, Cuba had the advantage of being able to observe what worked there or not, in order to then adjust or change course accordingly.",
     "source": "wiktionary",
     "lemmas": [
       "umsteuern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kuba",
+        "lemma": "Kuba",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vorteil",
+        "lemma": "Vorteil",
+        "pos": "noun",
+        "gloss_hint": "advantage"
+      },
+      {
+        "form": "beobachten",
+        "lemma": "beobachten",
+        "pos": "verb",
+        "gloss_hint": "observe"
+      },
+      {
+        "form": "funktionierte",
+        "lemma": "funktionieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "umzusteuern",
+        "lemma": "umsteuern",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Bei alledem hatte Kuba den [[Vorteil|nouns/Vorteil#1]] zu [[beobachten|verbs/beobachten#1]], was dort [[funktionierte|verbs/funktionieren]] oder auch nicht, um dann entsprechend nach- oder [[umzusteuern|verbs/umsteuern]].“"
   },
   "1be571251e": {
     "text": "„Eine der offensten, straightesten Personen in meinem Umfeld. Sie hasst Zickereien, weil sie einfach nur dämlich sind, ist spontan, nicht so schnell unterzukriegen und wirkliche Probleme gibt’s nur wenige – man kann ja über alles reden.“",
@@ -24733,19 +25598,63 @@
   },
   "1beda1dc80": {
     "text": "Am Eingang zum Gerichtssaal musste sie sich legitimieren.",
-    "translation": null,
+    "translation": "At the entrance to the courtroom, she had to identify herself.",
     "source": "wiktionary",
     "lemmas": [
       "legitimieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Eingang",
+        "lemma": "Eingang",
+        "pos": "noun",
+        "gloss_hint": "entrance"
+      },
+      {
+        "form": "Gerichtssaal",
+        "lemma": "Gerichtssaal",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "legitimieren",
+        "lemma": "legitimieren",
+        "pos": "verb",
+        "gloss_hint": "identify"
+      }
+    ],
+    "text_linked": "Am [[Eingang|nouns/Eingang#1]] zum [[Gerichtssaal|nouns/Gerichtssaal]] musste sie sich [[legitimieren|verbs/legitimieren#3]]."
   },
   "1bee49ef4b": {
     "text": "Sie hebt sich hervor durch ihre Kleidung, trägt KaschmirPullover.",
-    "translation": null,
+    "translation": "She stands out through her clothing, wearing cashmere sweaters.",
     "source": "wiktionary",
     "lemmas": [
       "hervorheben"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hebt",
+        "lemma": "heben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kleidung",
+        "lemma": "Kleidung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "KaschmirPullover",
+        "lemma": "Kaschmirpullover",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Sie [[hebt|verbs/heben]] sich hervor durch ihre [[Kleidung|nouns/Kleidung]], trägt KaschmirPullover."
   },
   "1beebe4dac": {
     "text": "„Unsere Oberstin war, wie unsere Leser entnommen haben werden, eine Dame von hoher Bildung; aber obgleich sie nicht die gewöhnlichen Vorurteile teilte, die man häufig gegen die Indianer hegt, so mußte ihr doch der Entschluß des Kindes zum mindesten gesagt außerordentlich vorkommen.“",
@@ -25052,11 +25961,63 @@
   },
   "1beefd9060": {
     "text": "„Werden zwischen den Mitgliedern der Einkaufsgemeinschaft die anzuwendenden Preise verbindlich festgesetzt und zudem noch die Versorgungsquellen aufgeteilt, liegt eine bezweckte Wettbewerbsbeschränkung vor.“",
-    "translation": null,
+    "translation": "If the members of the purchasing association set binding prices to be applied between them and furthermore divide up the supply sources, then an intended restriction of competition is present.",
     "source": "wiktionary",
     "lemmas": [
       "bezwecken"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mitgliedern",
+        "lemma": "Mitglied",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einkaufsgemeinschaft",
+        "lemma": "Einkaufsgemeinschaft",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Preise",
+        "lemma": "Preis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verbindlich",
+        "lemma": "verbindlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "festgesetzt",
+        "lemma": "festsetzen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Versorgungsquellen",
+        "lemma": "Versorgungsquelle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgeteilt",
+        "lemma": "aufteilen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wettbewerbsbeschränkung",
+        "lemma": "Wettbewerbsbeschränkung",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Werden zwischen den [[Mitgliedern|nouns/Mitglied]] der Einkaufsgemeinschaft die anzuwendenden [[Preise|nouns/Preis]] verbindlich [[festgesetzt|verbs/festsetzen]] und zudem noch die Versorgungsquellen [[aufgeteilt|verbs/aufteilen]], liegt eine bezweckte Wettbewerbsbeschränkung vor.“"
   },
   "1bf0480892": {
     "text": "Das Kämpfen ist die Aufgabe der Krieger.",
@@ -25643,11 +26604,39 @@
   },
   "1bf3c30371": {
     "text": "Um aus dieser Wildnis einen Garten zu machen, mussten wir ganz schön ackern.",
-    "translation": null,
+    "translation": "To turn this wilderness into a garden, we had to work quite hard.",
     "source": "wiktionary",
     "lemmas": [
       "ackern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wildnis",
+        "lemma": "Wildnis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Garten",
+        "lemma": "Garten",
+        "pos": "noun",
+        "gloss_hint": "garden"
+      },
+      {
+        "form": "ackern",
+        "lemma": "ackern",
+        "pos": "verb",
+        "gloss_hint": "toil"
+      },
+      {
+        "form": "schön",
+        "lemma": "schön",
+        "pos": "adjective",
+        "gloss_hint": "considerable"
+      }
+    ],
+    "text_linked": "Um aus dieser [[Wildnis|nouns/Wildnis]] einen [[Garten|nouns/Garten#1]] zu machen, mussten wir ganz [[schön|adjectives/schön#3]] [[ackern|verbs/ackern#2]]."
   },
   "1bf3d29237": {
     "text": "„Die Vulkanierin schüttelte den Kopf.“",

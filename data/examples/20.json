@@ -1762,11 +1762,33 @@
   },
   "2011257f9d": {
     "text": "Der nachfolgende Verkehr stockte.",
-    "translation": null,
+    "translation": "The following traffic came to a standstill.",
     "source": "wiktionary",
     "lemmas": [
       "nachfolgen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "nachfolgende",
+        "lemma": "nachfolgend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Verkehr",
+        "lemma": "Verkehr",
+        "pos": "noun",
+        "gloss_hint": "traffic"
+      },
+      {
+        "form": "stockte",
+        "lemma": "stocken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Der nachfolgende [[Verkehr|nouns/Verkehr#1]] [[stockte|verbs/stocken]]."
   },
   "2012b4c9ef": {
     "text": "Die Urlauber wurden nach Portugal geflogen.",
@@ -2101,11 +2123,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "wade in blood",
     "source": "wiktionary",
     "lemmas": [
       "waten"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "2017d7aefa": {
     "text": "Die Verhandlung muss vertagt werden.",
@@ -2133,11 +2156,75 @@
   },
   "2018df9eb2": {
     "text": "Wenn er nicht arbeitet, feilt Mamut an seinem Englisch, schaut sich auf DVD Filme an – am liebsten solche mit dem aus Hongkong stammenden Action-Star Jackie Chan – und spielt Fußball.",
-    "translation": null,
+    "translation": "When he is not working, Mamut polishes his English, watches films on DVD—preferably ones with the action star Jackie Chan from Hong Kong—and plays soccer.",
     "source": "wiktionary",
     "lemmas": [
       "feilen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "arbeitet",
+        "lemma": "arbeiten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mamut",
+        "lemma": "Mamut",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "feilt",
+        "lemma": "feilen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Englisch",
+        "lemma": "Englisch",
+        "pos": "noun",
+        "gloss_hint": "English"
+      },
+      {
+        "form": "Filme",
+        "lemma": "Film",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jackie",
+        "lemma": "Jackie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Chan",
+        "lemma": "Chan",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hongkong",
+        "lemma": "Hongkong",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Action-Star",
+        "lemma": "Action-Star",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fußball",
+        "lemma": "Fußball",
+        "pos": "noun",
+        "gloss_hint": "soccer"
+      }
+    ],
+    "text_linked": "Wenn er nicht [[arbeitet|verbs/arbeiten]], [[feilt|verbs/feilen]] Mamut an seinem [[Englisch|nouns/Englisch#1]], schaut sich auf DVD [[Filme|nouns/Film]] an – am liebsten solche mit dem aus Hongkong stammenden Action-Star Jackie [[Chan|nouns/Chan_chinesische]] – und spielt [[Fußball|nouns/Fußball#1]]."
   },
   "2018ff67fc": {
     "text": "„Ich habe ein kleines Auto, habe es sogar bezahlt, und ich habe seit Jahren auf die Kaution hin gespart, die ich bereit haben möchte, um von Wickweber unabhängig zu sein und jederzeit zur Konkurrenz überwechseln zu können.“",
@@ -2199,11 +2286,57 @@
   },
   "2019399bf5": {
     "text": "„[Medizinische] Erfolge gibt es beispielsweise bei Epilepsie oder beim Tourette-Syndrom, einer Krankheit, bei der Betroffene zum Beispiel Schimpfwörter ausstoßen, ohne es zu wollen.“",
-    "translation": null,
+    "translation": "Medical successes exist, for example, in epilepsy or in Tourette syndrome, a disease in which those affected involuntarily shout out curse words.",
     "source": "wiktionary",
     "lemmas": [
       "ausstoßen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erfolge",
+        "lemma": "Erfolg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Epilepsie",
+        "lemma": "Epilepsie",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tourette-Syndrom",
+        "lemma": "Tourette-Syndrom",
+        "pos": "noun",
+        "gloss_hint": "syndrome"
+      },
+      {
+        "form": "Krankheit",
+        "lemma": "Krankheit",
+        "pos": "noun",
+        "gloss_hint": "disease"
+      },
+      {
+        "form": "Betroffene",
+        "lemma": "Betroffener",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schimpfwörter",
+        "lemma": "Schimpfwort",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausstoßen",
+        "lemma": "ausstoßen",
+        "pos": "verb",
+        "gloss_hint": "emit"
+      }
+    ],
+    "text_linked": "„[Medizinische] [[Erfolge|nouns/Erfolg]] gibt es beispielsweise bei Epilepsie oder beim Tourette-Syndrom, einer [[Krankheit|nouns/Krankheit#1]], bei der Betroffene zum Beispiel Schimpfwörter [[ausstoßen|verbs/ausstoßen#2]], ohne es zu wollen.“"
   },
   "20199d5749": {
     "text": "zum Himmel stinken",
@@ -3388,11 +3521,33 @@
   },
   "2029493a37": {
     "text": "Lange versuchte sie, die Beziehung zu ihren Schwiegereltern zu normalisieren.",
-    "translation": null,
+    "translation": "For a long time she tried to normalize her relationship with her in-laws.",
     "source": "wiktionary",
     "lemmas": [
       "normalisieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Beziehung",
+        "lemma": "Beziehung",
+        "pos": "noun",
+        "gloss_hint": "relationship"
+      },
+      {
+        "form": "Schwiegereltern",
+        "lemma": "Schwiegereltern",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "normalisieren",
+        "lemma": "normalisieren",
+        "pos": "verb",
+        "gloss_hint": "normalize"
+      }
+    ],
+    "text_linked": "Lange versuchte sie, die [[Beziehung|nouns/Beziehung#1]] zu ihren [[Schwiegereltern|nouns/Schwiegereltern]] zu [[normalisieren|verbs/normalisieren#1]]."
   },
   "202a7d3a62": {
     "text": "zur Rechenschaft ziehen",
@@ -5341,11 +5496,63 @@
   },
   "2039d77fa3": {
     "text": "„Sobald ein Feuer brennt, ziehen die Flammen Blicke auf sich und die Menschen, die um das Feuer herumstehen, kommen ins Plaudern.“",
-    "translation": null,
+    "translation": "As soon as a fire burns, the flames draw eyes to themselves and the people standing around the fire start to chat.",
     "source": "wiktionary",
     "lemmas": [
       "herumstehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Feuer",
+        "lemma": "Feuer",
+        "pos": "noun",
+        "gloss_hint": "fire"
+      },
+      {
+        "form": "brennt",
+        "lemma": "brennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Flammen",
+        "lemma": "Flamme",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ziehen",
+        "lemma": "ziehen",
+        "pos": "verb",
+        "gloss_hint": "draw"
+      },
+      {
+        "form": "Blicke",
+        "lemma": "Blick",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "herumstehen",
+        "lemma": "herumstehen",
+        "pos": "verb",
+        "gloss_hint": "stand around"
+      },
+      {
+        "form": "plaudern",
+        "lemma": "plaudern",
+        "pos": "verb",
+        "gloss_hint": "chat"
+      }
+    ],
+    "text_linked": "„Sobald ein [[Feuer|nouns/Feuer#1]] [[brennt|verbs/brennen]], [[ziehen|verbs/ziehen#4]] die [[Flammen|nouns/Flamme]] [[Blicke|nouns/Blick]] auf sich und die [[Menschen|nouns/Mensch_junge]], die um das Feuer [[herumstehen|verbs/herumstehen#1]], kommen ins Plaudern.“"
   },
   "203a1c0892": {
     "text": "Guck mal, wie viele Fliegen hier im Grill hängen.",
@@ -6478,11 +6685,39 @@
   },
   "20439b0369": {
     "text": "Die feindliche Armee umschloss die Burg.",
-    "translation": null,
+    "translation": "The enemy army surrounded the castle.",
     "source": "wiktionary",
     "lemmas": [
       "umschließen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "feindliche",
+        "lemma": "feindlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Armee",
+        "lemma": "Armee",
+        "pos": "noun",
+        "gloss_hint": "army"
+      },
+      {
+        "form": "umschloss",
+        "lemma": "umschließen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Burg",
+        "lemma": "Burg",
+        "pos": "noun",
+        "gloss_hint": "castle"
+      }
+    ],
+    "text_linked": "Die feindliche [[Armee|nouns/Armee#1]] [[umschloss|verbs/umschließen]] die [[Burg|nouns/Burg#1]]."
   },
   "2043ddb83c": {
     "text": "kaum aus dem Ei gekrochen sein",
@@ -6501,11 +6736,99 @@
   },
   "20452e03f7": {
     "text": "„Endlich konnten sie lauthals, nicht mehr nur heimlich, die Dainas schmettern. So heißen die lettischen Volkslieder, die zu Sowjetzeiten verboten waren: Wer sie sang, dem drohte die Deportation nach Sibirien.“",
-    "translation": null,
+    "translation": "Finally they could belt out the Dainas loudly, no longer just in secret. That's what the Latvian folk songs are called, which were forbidden during Soviet times: whoever sang them faced the threat of deportation to Siberia.",
     "source": "wiktionary",
     "lemmas": [
       "schmettern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Endlich",
+        "lemma": "endlich",
+        "pos": "adverb",
+        "gloss_hint": "finally"
+      },
+      {
+        "form": "konnten",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": "could"
+      },
+      {
+        "form": "lauthals",
+        "lemma": "lauthals",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "schmettern",
+        "lemma": "schmettern",
+        "pos": "verb",
+        "gloss_hint": "belt out"
+      },
+      {
+        "form": "Dainas",
+        "lemma": "Dainas",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "heißen",
+        "lemma": "heißen",
+        "pos": "verb",
+        "gloss_hint": "be called"
+      },
+      {
+        "form": "lettischen",
+        "lemma": "lettisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Volkslieder",
+        "lemma": "Volkslied",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verboten",
+        "lemma": "verbieten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sowjetzeiten",
+        "lemma": "Sowjetzeit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sang",
+        "lemma": "singen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "drohte",
+        "lemma": "drohen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deportation",
+        "lemma": "Deportation",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sibirien",
+        "lemma": "Sibirien",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„[[Endlich|adverbs/endlich#1]] [[konnten|verbs/können_etwas#5]] sie lauthals, nicht mehr nur heimlich, die Dainas [[schmettern|verbs/schmettern#2]]. So [[heißen|verbs/heißen_genannt#1]] die lettischen Volkslieder, die zu Sowjetzeiten [[verboten|verbs/verbieten]] waren: Wer sie [[sang|verbs/singen]], dem [[drohte|verbs/drohen]] die Deportation nach Sibirien.“"
   },
   "204541b0eb": {
     "text": "„Denn Einstein, dem wir jene wunderverheißende Formel verdanken, leugnet nicht nur deren praktische Verwendbarkeit, sondern er führt noch ein anderes Argument ins Treffen, um uns aus allen Himmeln zu stürzen. Gesetzt nämlich, so erklärte er mir, es wäre möglich, jene immense Energieentwickelung zu bewirken, so würden wir damit nur an ein Zeitalter gelangen, gegen welches die kohlenschwarze Gegenwart als golden gepriesen werden müßte.“",
@@ -8418,11 +8741,75 @@
   },
   "204dcd0389": {
     "text": "„Mittlerweile würde Sunny vermutlich in der Lage sein, das Buch in fünf Sekunden einzuscannen und für immer zu speichern.“",
-    "translation": null,
+    "translation": "By now Sunny would probably be able to scan the book in five seconds and save it forever.",
     "source": "wiktionary",
     "lemmas": [
       "einscannen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mittlerweile",
+        "lemma": "mittlerweile",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "würde",
+        "lemma": "würde",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sunny",
+        "lemma": "Sunny",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vermutlich",
+        "lemma": "vermutlich",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lage",
+        "lemma": "Lage",
+        "pos": "noun",
+        "gloss_hint": "position"
+      },
+      {
+        "form": "Buch",
+        "lemma": "Buch",
+        "pos": "noun",
+        "gloss_hint": "book"
+      },
+      {
+        "form": "fünf",
+        "lemma": "fünf",
+        "pos": "numeral",
+        "gloss_hint": "five"
+      },
+      {
+        "form": "Sekunden",
+        "lemma": "Sekunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "einzuscannen",
+        "lemma": "einscannen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "speichern",
+        "lemma": "speichern",
+        "pos": "verb",
+        "gloss_hint": "save"
+      }
+    ],
+    "text_linked": "„[[Mittlerweile|adverbs/mittlerweile]] würde Sunny [[vermutlich|adverbs/vermutlich]] in der [[Lage|nouns/Lage#2]] sein, das [[Buch|nouns/Buch#1]] in [[fünf|numerals/fünf#1]] [[Sekunden|nouns/Sekunde]] [[einzuscannen|verbs/einscannen]] und für immer zu [[speichern|verbs/speichern#2]].“"
   },
   "204e46ae55": {
     "text": "„In der fünften Klasse kam der Schuldirektor meiner sowjetischen Schule mitten im Unterricht mit einem großen Tonbandgerät und einem Mikrofon zu uns in die Klasse.“",
@@ -8631,11 +9018,45 @@
   },
   "204ed7b92f": {
     "text": "Du musst unbedingt Wasser in die Heizung nachfüllen.",
-    "translation": null,
+    "translation": "You absolutely must refill water in the heating system.",
     "source": "wiktionary",
     "lemmas": [
       "nachfüllen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "musst",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": "must"
+      },
+      {
+        "form": "unbedingt",
+        "lemma": "unbedingt",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wasser",
+        "lemma": "Wasser",
+        "pos": "noun",
+        "gloss_hint": "water"
+      },
+      {
+        "form": "Heizung",
+        "lemma": "Heizung",
+        "pos": "noun",
+        "gloss_hint": "heating"
+      },
+      {
+        "form": "nachfüllen",
+        "lemma": "nachfüllen",
+        "pos": "verb",
+        "gloss_hint": "refill"
+      }
+    ],
+    "text_linked": "Du [[musst|verbs/müssen#1]] [[unbedingt|adverbs/unbedingt]] [[Wasser|nouns/Wasser#1]] in die [[Heizung|nouns/Heizung#1]] [[nachfüllen|verbs/nachfüllen#1]]."
   },
   "204f331921": {
     "text": "„Bei späteren Verfolgungsflügen, dem Reihen, wehrt kein Erpel die anderen ab, sondern jeder versucht an die Ente zu kommen.“",
@@ -9720,11 +10141,51 @@
   },
   "205ea708dd": {
     "text": "„Es kommt in diesem Gebiet des öfteren vor, daß Schneestangen umgetreten oder umgefahren werden.“",
-    "translation": null,
+    "translation": "It happens fairly often in this area that snow poles are knocked over or run over.",
     "source": "wiktionary",
     "lemmas": [
       "umfahren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kommt",
+        "lemma": "kommen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gebiet",
+        "lemma": "Gebiet",
+        "pos": "noun",
+        "gloss_hint": "area"
+      },
+      {
+        "form": "öfteren",
+        "lemma": "öfter",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schneestangen",
+        "lemma": "Schneestange",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "umgetreten",
+        "lemma": "umtreten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "umgefahren",
+        "lemma": "umfahren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Es [[kommt|verbs/kommen]] in diesem [[Gebiet|nouns/Gebiet#1]] des öfteren vor, daß Schneestangen umgetreten oder [[umgefahren|verbs/umfahren_etwas]] werden.“"
   },
   "205f526b75": {
     "text": "„»Die Kommunen müssen nachweisen, dass sie die Straßen in den vergangenen 25 Jahren ordnungsgemäß in Schuss gehalten haben«, erklärte der CDU-Abgeordnete Sebastian Lechner.“",
@@ -9824,11 +10285,45 @@
   },
   "205fbbf4ba": {
     "text": "Man kann Gebäude so dämmen, dass kaum noch geheizt werden muss und sie so kein CO₂ mehr freisetzen.",
-    "translation": null,
+    "translation": "Buildings can be insulated so that they hardly need to be heated anymore and thus emit no more CO₂.",
     "source": "wiktionary",
     "lemmas": [
       "freisetzen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Gebäude",
+        "lemma": "Gebäude",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dämmen",
+        "lemma": "dämmen",
+        "pos": "verb",
+        "gloss_hint": "insulate"
+      },
+      {
+        "form": "kaum",
+        "lemma": "kaum",
+        "pos": "adverb",
+        "gloss_hint": "hardly"
+      },
+      {
+        "form": "geheizt",
+        "lemma": "heizen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "freisetzen",
+        "lemma": "freisetzen",
+        "pos": "verb",
+        "gloss_hint": "emit"
+      }
+    ],
+    "text_linked": "Man kann [[Gebäude|nouns/Gebäude]] so [[dämmen|verbs/dämmen#2]], dass [[kaum|adverbs/kaum#1]] noch [[geheizt|verbs/heizen]] werden muss und sie so kein CO₂ mehr [[freisetzen|verbs/freisetzen#2]]."
   },
   "205fbd1ba3": {
     "text": "Verpiss dich, du Scheißkerl!",
@@ -9862,11 +10357,39 @@
   },
   "205fefba58": {
     "text": "„Ältere Geräte müssen aber von Hand abgetaut werden.“",
-    "translation": null,
+    "translation": "Older devices, however, must be defrosted by hand.",
     "source": "wiktionary",
     "lemmas": [
       "abtauen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ältere",
+        "lemma": "alt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Geräte",
+        "lemma": "Gerät",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hand",
+        "lemma": "Hand",
+        "pos": "noun",
+        "gloss_hint": "hand"
+      },
+      {
+        "form": "abgetaut",
+        "lemma": "abtauen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„[[Ältere|adjectives/alt]] [[Geräte|nouns/Gerät]] müssen aber von [[Hand|nouns/Hand#2]] [[abgetaut|verbs/abtauen]] werden.“"
   },
   "206056d6aa": {
     "text": "Sowas hätte ich nicht für möglich gehalten.",
@@ -10345,11 +10868,39 @@
   },
   "2066d68ee6": {
     "text": "Mach zu, es ist kalt! Ich habe keine Lust, mir hier was wegzuholen!",
-    "translation": null,
+    "translation": "Close it, it's cold! I don't feel like catching something here!",
     "source": "wiktionary",
     "lemmas": [
       "wegholen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mach",
+        "lemma": "machen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "kalt",
+        "lemma": "kalt",
+        "pos": "adjective",
+        "gloss_hint": "cold"
+      },
+      {
+        "form": "Lust",
+        "lemma": "Lust",
+        "pos": "noun",
+        "gloss_hint": "desire"
+      },
+      {
+        "form": "wegzuholen",
+        "lemma": "wegholen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "[[Mach|verbs/machen]] zu, es ist [[kalt|adjectives/kalt#1]]! Ich habe keine [[Lust|nouns/Lust#1]], mir hier was [[wegzuholen|verbs/wegholen]]!"
   },
   "2066eb82e1": {
     "text": "Die Frage, ob eine Frau abtreibt oder nicht, sollte sie selbst entscheiden.",
@@ -10986,11 +11537,45 @@
   },
   "206aafcb25": {
     "text": "Du hättest ihr nicht besser imponieren können als sie mit einem selbstgeschriebenen Lied zu besingen.",
-    "translation": null,
+    "translation": "You couldn't have impressed her better than by serenading her with a self-written song.",
     "source": "wiktionary",
     "lemmas": [
       "imponieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "hättest",
+        "lemma": "haben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "imponieren",
+        "lemma": "imponieren",
+        "pos": "verb",
+        "gloss_hint": "impress"
+      },
+      {
+        "form": "besingen",
+        "lemma": "besingen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "selbstgeschriebenen",
+        "lemma": "selbstgeschrieben",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lied",
+        "lemma": "Lied",
+        "pos": "noun",
+        "gloss_hint": "song"
+      }
+    ],
+    "text_linked": "Du [[hättest|verbs/haben]] ihr nicht besser [[imponieren|verbs/imponieren#1]] können als sie mit einem selbstgeschriebenen [[Lied|nouns/Lied#1]] zu besingen."
   },
   "206b354042": {
     "text": "„Der Generalstab der 7. Flotte hatte mittlerweile sein Hauptquartier in La Baule bezogen.“",
@@ -12098,11 +12683,57 @@
   },
   "20718b8700": {
     "text": "Berühmte Achter waren Kaka, Steven Gerrard oder Michael Ballack.",
-    "translation": null,
+    "translation": "Famous number eights were Kaka, Steven Gerrard, or Michael Ballack.",
     "source": "wiktionary",
     "lemmas": [
       "Achter"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Berühmte",
+        "lemma": "berühmt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Achter",
+        "lemma": "Achter",
+        "pos": "noun",
+        "gloss_hint": "midfielder (number 8)"
+      },
+      {
+        "form": "Kaka",
+        "lemma": "Kaka",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Steven",
+        "lemma": "Steven",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gerrard",
+        "lemma": "Gerrard",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Michael",
+        "lemma": "Michael",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ballack",
+        "lemma": "Ballack",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "[[Berühmte|adjectives/berühmt]] [[Achter|nouns/Achter_ziffer#7]] waren Kaka, [[Steven|nouns/Steven]] Gerrard oder Michael Ballack."
   },
   "20730ffd86": {
     "text": "„»Nova bläht sich auf und platzt.« Mit diesem nur sechs Worte umfassenden Satz, den 1925 der Leiter einer Sternwarte als Telegramm an seine Kollegen in aller Welt schickte, ist das Phänomen gut beschrieben. Tatsächlich bläht sich der Stern so stark auf, daß sein Durchmesser auf das 200- bis 300fache wächst. Die Oberfläche kann dabei bis zum 100000fachen wachsen; daher die enorme Zunahme der Helligkeit. Die Nova zerplatzt: auch dies ist buchstäblich wahr, denn es ist beobachtet worden, daß die Nova auf dem Höhepunkt ihrer Aktivität Gashüllen abstößt, die sich mit gewaltiger Geschwindigkeit ausdehnen; dabei kann es vorkommen, daß später abgestoßene Schalen eine größere Geschwindigkeit haben und frühere einholen, was sich im Spektrum abzeichnet. Die Schalen liegen im allgemeinen wie konzentrische Kugeln ineinander.“",
@@ -13304,11 +13935,57 @@
   },
   "207a141202": {
     "text": "Nach zwei Stnden pilgerten wir über die Landstraße heim in Richtung Gasthof.",
-    "translation": null,
+    "translation": "After two hours we walked along the country road homeward toward the inn.",
     "source": "wiktionary",
     "lemmas": [
       "pilgern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "zwei",
+        "lemma": "zwei",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stunden",
+        "lemma": "Stunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "pilgerten",
+        "lemma": "pilgern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Landstraße",
+        "lemma": "Landstraße",
+        "pos": "noun",
+        "gloss_hint": "country road"
+      },
+      {
+        "form": "heim",
+        "lemma": "heim",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Richtung",
+        "lemma": "Richtung",
+        "pos": "noun",
+        "gloss_hint": "direction"
+      },
+      {
+        "form": "Gasthof",
+        "lemma": "Gasthof",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Nach [[zwei|numerals/zwei]] Stnden [[pilgerten|verbs/pilgern]] wir über die [[Landstraße|nouns/Landstraße#1]] [[heim|adverbs/heim]] in [[Richtung|nouns/Richtung#1]] [[Gasthof|nouns/Gasthof]]."
   },
   "207a23813a": {
     "text": "Die Vereinsmitglieder diskutierten, wie sie ihren Unmut zur Sprache bringen sollten.",
@@ -14524,11 +15201,39 @@
   },
   "2084f0224f": {
     "text": "Mit ihrer kompromisslosen Art eckt Claudia überall an.",
-    "translation": null,
+    "translation": "With her uncompromising nature, Claudia rubs people the wrong way everywhere.",
     "source": "wiktionary",
     "lemmas": [
       "anecken"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kompromisslosen",
+        "lemma": "kompromisslos",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Art",
+        "lemma": "Art",
+        "pos": "noun",
+        "gloss_hint": "characteristic"
+      },
+      {
+        "form": "Claudia",
+        "lemma": "Claudia",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "eckt",
+        "lemma": "ecken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Mit ihrer kompromisslosen [[Art|nouns/Art#2]] eckt Claudia überall an."
   },
   "208537849f": {
     "text": "„Der für ihn bestimmte Regenmantel wurde zu groß gekauft, saß daher schlecht, sollte aber länger halten – bis er hineingewachsen sein würde.“",
@@ -15305,11 +16010,33 @@
   },
   "208bc1562c": {
     "text": "Die Sportmaschine sackt auf 200 m.",
-    "translation": null,
+    "translation": "The sports car drops to 200 meters.",
     "source": "wiktionary",
     "lemmas": [
       "sacken"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Sportmaschine",
+        "lemma": "Sportmaschine",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sackt",
+        "lemma": "sacken",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "200",
+        "lemma": "200",
+        "pos": "numeral",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Die Sportmaschine [[sackt|verbs/sacken_höhe]] auf 200 m."
   },
   "208bcbc3f3": {
     "text": "„Außerdem werden nach § 2 Satz 3 ProstG zugunsten der/des Prostituierten sogar alle Einwendungen und Einreden mit Ausnahme des Erfüllungseinwands und der Einrede der Verjährung ausgeschlossen.“",
@@ -16909,11 +17636,39 @@
   },
   "2090806dd8": {
     "text": "Das Hochdruckgebiet weitet sich in den kommenden Tagen aus.",
-    "translation": null,
+    "translation": "The high-pressure system expands in the coming days.",
     "source": "wiktionary",
     "lemmas": [
       "ausweiten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Hochdruckgebiet",
+        "lemma": "Hochdruckgebiet",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "weitet",
+        "lemma": "weiten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "kommenden",
+        "lemma": "kommend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tagen",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Das Hochdruckgebiet [[weitet|verbs/weiten]] sich in den [[kommenden|adjectives/kommend]] [[Tagen|nouns/Tag_angehängter]] aus."
   },
   "2090d8a3d0": {
     "text": "„Natürlich war das Blödsinn. Und am amüsierten Gesicht meines Begleiters sah ich, dass er das auch wusste.“",
@@ -17632,11 +18387,51 @@
   },
   "2097d0f7f5": {
     "text": "Als die Ankerkette gebrochen war, vertrieb die Bark und strandete auf Terschelling.",
-    "translation": null,
+    "translation": "When the anchor chain broke, the bark drifted and ran aground on Terschelling.",
     "source": "wiktionary",
     "lemmas": [
       "stranden"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ankerkette",
+        "lemma": "Ankerkette",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gebrochen",
+        "lemma": "brechen",
+        "pos": "adjective",
+        "gloss_hint": "broken"
+      },
+      {
+        "form": "vertrieb",
+        "lemma": "vertreiben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bark",
+        "lemma": "Bark",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "strandete",
+        "lemma": "stranden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Terschelling",
+        "lemma": "Terschelling",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Als die Ankerkette gebrochen war, [[vertrieb|verbs/vertreiben]] die Bark und [[strandete|verbs/stranden]] auf Terschelling."
   },
   "209835c954": {
     "text": "eines Tages",
@@ -22263,11 +23058,39 @@
   },
   "20b3c27bbe": {
     "text": "Heute ist er nicht bei der Sache, er ist ganz zerstreut.",
-    "translation": null,
+    "translation": "Today he is not focused; he is completely scattered.",
     "source": "wiktionary",
     "lemmas": [
       "zerstreuen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sache",
+        "lemma": "Sache",
+        "pos": "noun",
+        "gloss_hint": "matter"
+      },
+      {
+        "form": "ganz",
+        "lemma": "ganz",
+        "pos": "adjective",
+        "gloss_hint": "whole"
+      },
+      {
+        "form": "zerstreut",
+        "lemma": "zerstreut",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "[[Heute|adverbs/heute]] ist er nicht bei der [[Sache|nouns/Sache#2]], er ist [[ganz|adjectives/ganz#2]] [[zerstreut|adjectives/zerstreut]]."
   },
   "20b3ca5301": {
     "text": "„Ich wurde völlig abgelenkt durch deine unscheinbare kleine Lakaiin in ihrer tristen Bekleidung dort drüben […]“",
@@ -22924,11 +23747,45 @@
   },
   "20bc1f701e": {
     "text": "Das Erzbistum Köln ließ das leer stehende Klarissenkloster umbauen […].",
-    "translation": null,
+    "translation": "The Archdiocese of Cologne had the vacant Poor Clare convent rebuilt.",
     "source": "wiktionary",
     "lemmas": [
       "umbauen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erzbistum",
+        "lemma": "Erzbistum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Köln",
+        "lemma": "Köln",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "leer",
+        "lemma": "leer",
+        "pos": "adjective",
+        "gloss_hint": "empty"
+      },
+      {
+        "form": "Klarissenkloster",
+        "lemma": "Klarissenkloster",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "umbauen",
+        "lemma": "umbauen",
+        "pos": "verb",
+        "gloss_hint": "rebuild"
+      }
+    ],
+    "text_linked": "Das Erzbistum Köln ließ das [[leer|adjectives/leer#1]] stehende Klarissenkloster [[umbauen|verbs/umbauen_etwas#1]] […]."
   },
   "20bc3f11a5": {
     "text": "Wenn sie noch mit dem Auto nach Hause fahren muss, trinkt sie generell keinen Alkohol.",
@@ -23688,11 +24545,81 @@
   },
   "20c3dae0d1": {
     "text": "„In jeder seiner Formulierungen degradiert der zweite Hauptsatz die Wärme zur niedrigsten Erscheinungsform der Energie: Der Weg dahin ist leicht, aber der Weg anders herum, die Rückwandlung von Wärme, ist schwer.“",
-    "translation": null,
+    "translation": "\"In each of its formulations, the second law of thermodynamics degrades heat to the lowest manifestation of energy: the path to it is easy, but the reverse path, the conversion of heat back, is difficult.\"",
     "source": "wiktionary",
     "lemmas": [
       "degradieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Formulierungen",
+        "lemma": "Formulierung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hauptsatz",
+        "lemma": "Hauptsatz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wärme",
+        "lemma": "Wärme",
+        "pos": "noun",
+        "gloss_hint": "heat"
+      },
+      {
+        "form": "Erscheinungsform",
+        "lemma": "Erscheinungsform",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Energie",
+        "lemma": "Energie",
+        "pos": "noun",
+        "gloss_hint": "energy (physics)"
+      },
+      {
+        "form": "Weg",
+        "lemma": "Weg",
+        "pos": "noun",
+        "gloss_hint": "path"
+      },
+      {
+        "form": "leicht",
+        "lemma": "leicht",
+        "pos": "adjective",
+        "gloss_hint": "easy"
+      },
+      {
+        "form": "Weg",
+        "lemma": "Weg",
+        "pos": "noun",
+        "gloss_hint": "path"
+      },
+      {
+        "form": "herum",
+        "lemma": "herum",
+        "pos": "adverb",
+        "gloss_hint": "around"
+      },
+      {
+        "form": "Rückwandlung",
+        "lemma": "Rückwandlung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwer",
+        "lemma": "schwer",
+        "pos": "adjective",
+        "gloss_hint": "difficult"
+      }
+    ],
+    "text_linked": "„In jeder seiner Formulierungen degradiert der zweite Hauptsatz die [[Wärme|nouns/Wärme#1]] zur niedrigsten Erscheinungsform der [[Energie|nouns/Energie#3]]: Der [[Weg|nouns/Weg#1]] dahin ist [[leicht|adjectives/leicht#2]], aber der [[Weg|nouns/Weg#1]] anders [[herum|adverbs/herum#1]], die Rückwandlung von Wärme, ist [[schwer|adjectives/schwer#2]].“"
   },
   "20c4ad3ec0": {
     "text": "Wenn das wahr ist, fresse ich einen Besen!",
@@ -24785,11 +25712,51 @@
   },
   "20ccf90c17": {
     "text": "Nach der Teilnahme an einer Castingshow startete Simeon als Jongleur so richtig durch.",
-    "translation": null,
+    "translation": "After participating in a casting show, Simeon really took off as a juggler.",
     "source": "wiktionary",
     "lemmas": [
       "durchstarten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Teilnahme",
+        "lemma": "Teilnahme",
+        "pos": "noun",
+        "gloss_hint": "participation"
+      },
+      {
+        "form": "Castingshow",
+        "lemma": "Castingshow",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Simeon",
+        "lemma": "Simeon",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jongleur",
+        "lemma": "Jongleur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "richtig",
+        "lemma": "richtig",
+        "pos": "adverb",
+        "gloss_hint": "proper"
+      },
+      {
+        "form": "durch",
+        "lemma": "durch",
+        "pos": "adverb",
+        "gloss_hint": "done"
+      }
+    ],
+    "text_linked": "Nach der [[Teilnahme|nouns/Teilnahme#1]] an einer Castingshow startete Simeon als Jongleur so [[richtig|adverbs/richtig]] [[durch|adverbs/durch#1]]."
   },
   "20cd415ae2": {
     "text": "[Juden in Bayern im 15. Jahrhundert:] „Wo auf gewaltsame Christianisierung verzichtet wurde, begannen Vertreibungen aus den Städten im großen Stil.“",
@@ -25345,11 +26312,33 @@
   },
   "20d095f216": {
     "text": "„Wie Heu vertrocknet ist mein Herz.“",
-    "translation": null,
+    "translation": "\"Like hay, my heart has withered away.\"",
     "source": "wiktionary",
     "lemmas": [
       "vertrocknen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Heu",
+        "lemma": "Heu",
+        "pos": "noun",
+        "gloss_hint": "hay"
+      },
+      {
+        "form": "vertrocknet",
+        "lemma": "vertrocknen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Herz",
+        "lemma": "Herz",
+        "pos": "noun",
+        "gloss_hint": "heart"
+      }
+    ],
+    "text_linked": "„Wie [[Heu|nouns/Heu#1]] [[vertrocknet|verbs/vertrocknen]] ist mein [[Herz|nouns/Herz#1]].“"
   },
   "20d11731cf": {
     "text": "Das Abbruchmaterial wurde mit großen Lastwagen abtransportiert.",
@@ -25577,11 +26566,75 @@
   },
   "20d33f8eb6": {
     "text": "Zum zehnten Mal prämierte die dpa Deutsche Presse-Agentur GmbH am Donnerstagabend in Hamburg ihre «Bilder des Jahres».",
-    "translation": null,
+    "translation": "For the tenth time, the dpa Deutsche Presse-Agentur GmbH awarded its \"Pictures of the Year\" on Thursday evening in Hamburg.",
     "source": "wiktionary",
     "lemmas": [
       "prämieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "zehnten",
+        "lemma": "zehn",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mal",
+        "lemma": "Mal",
+        "pos": "noun",
+        "gloss_hint": "moment"
+      },
+      {
+        "form": "prämierte",
+        "lemma": "prämieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "dpa",
+        "lemma": "dpa",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Deutsche",
+        "lemma": "Deutsche",
+        "pos": "noun",
+        "gloss_hint": "German citizen"
+      },
+      {
+        "form": "Presse-Agentur",
+        "lemma": "Presse-Agentur",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Donnerstagabend",
+        "lemma": "Donnerstagabend",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hamburg",
+        "lemma": "Hamburg",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bilder",
+        "lemma": "Bild",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahres",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Zum zehnten [[Mal|nouns/Mal_bestimmter]] [[prämierte|verbs/prämieren]] die dpa [[Deutsche|nouns/Deutsche_staatsbürgerin#1]] Presse-Agentur GmbH am [[Donnerstagabend|nouns/Donnerstagabend]] in Hamburg ihre «[[Bilder|nouns/Bild]] des [[Jahres|nouns/Jahr]]»."
   },
   "20d354444d": {
     "text": "„Die Zahl seiner Jünger wächst stetig, aus der ganzen Welt pilgern sie mittlerweile auf den Entoto.“",
@@ -26575,11 +27628,57 @@
   },
   "20d863cfd5": {
     "text": "Die Kiste ließ sich aufgrund ihres hohen Gewichtes nur schwer fortbewegen.",
-    "translation": null,
+    "translation": "The crate was difficult to move because of its heavy weight.",
     "source": "wiktionary",
     "lemmas": [
       "fortbewegen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kiste",
+        "lemma": "Kiste",
+        "pos": "noun",
+        "gloss_hint": "box"
+      },
+      {
+        "form": "ließ",
+        "lemma": "lassen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgrund",
+        "lemma": "aufgrund",
+        "pos": "preposition",
+        "gloss_hint": null
+      },
+      {
+        "form": "hohen",
+        "lemma": "hoch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gewichtes",
+        "lemma": "Gewicht",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwer",
+        "lemma": "schwer",
+        "pos": "adjective",
+        "gloss_hint": "difficult"
+      },
+      {
+        "form": "fortbewegen",
+        "lemma": "fortbewegen",
+        "pos": "verb",
+        "gloss_hint": "move"
+      }
+    ],
+    "text_linked": "Die [[Kiste|nouns/Kiste_massiver#1]] [[ließ|verbs/lassen]] sich [[aufgrund|prepositions/aufgrund]] ihres [[hohen|adjectives/hoch]] [[Gewichtes|nouns/Gewicht]] nur [[schwer|adjectives/schwer#2]] [[fortbewegen|verbs/fortbewegen#1]]."
   },
   "20d86bd835": {
     "text": "„Auf der einen Seite des Fjordes lagern zwei Boote in einer Lagerhalle aus Wellblech, eingezwängt zwischen den Felsen, in der Bucht gegenüber liegt das hellgelbe Gerippe eines Zwergwals, an dem blaues Ölzeug zum Trocknen hängt.“",
@@ -27117,11 +28216,87 @@
   },
   "20dc5b89e4": {
     "text": "„Da die Erdbeerpflanze bei der zuletzt genannten Methode selbständig Sprossen bilden, die sich nach unten absenken, bezeichnet man diesen Vorgang auch als vegetative Vermehrung durch Absenker.“",
-    "translation": null,
+    "translation": "Since the strawberry plant independently forms shoots in the last-mentioned method, which lower themselves downward, this process is also called vegetative propagation by layering.",
     "source": "wiktionary",
     "lemmas": [
       "absenken"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erdbeerpflanze",
+        "lemma": "Erdbeerpflanze",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zuletzt",
+        "lemma": "zuletzt",
+        "pos": "adverb",
+        "gloss_hint": "recently"
+      },
+      {
+        "form": "genannten",
+        "lemma": "nennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Methode",
+        "lemma": "Methode",
+        "pos": "noun",
+        "gloss_hint": "method"
+      },
+      {
+        "form": "selbständig",
+        "lemma": "selbständig",
+        "pos": "adjective",
+        "gloss_hint": "independent"
+      },
+      {
+        "form": "Sprossen",
+        "lemma": "Sprosse",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "bilden",
+        "lemma": "bilden",
+        "pos": "verb",
+        "gloss_hint": "form"
+      },
+      {
+        "form": "absenken",
+        "lemma": "absenken",
+        "pos": "verb",
+        "gloss_hint": "lower"
+      },
+      {
+        "form": "Vorgang",
+        "lemma": "Vorgang",
+        "pos": "noun",
+        "gloss_hint": "process"
+      },
+      {
+        "form": "vegetative",
+        "lemma": "vegetativ",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Vermehrung",
+        "lemma": "Vermehrung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Absenker",
+        "lemma": "Absenker",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Da die Erdbeerpflanze bei der [[zuletzt|adverbs/zuletzt#2]] [[genannten|verbs/nennen]] [[Methode|nouns/Methode#1]] [[selbständig|adjectives/selbständig#1]] Sprossen [[bilden|verbs/bilden#1]], die sich nach unten [[absenken|verbs/absenken#2]], bezeichnet man diesen [[Vorgang|nouns/Vorgang#1]] auch als vegetative Vermehrung durch Absenker.“"
   },
   "20dc5de73f": {
     "text": "„Sein Selbstvertrauen verließ ihn jedoch in den folgenden Wochen und Monaten, und zur Jahreswende 1948/49 bequemte er sich zu Geständnissen, die den Polizeipräsidenten Katting hinter schwedische Gardinen brachten.“",
@@ -27340,19 +28515,189 @@
   },
   "20ddd20113": {
     "text": "„Ein lauter Streit war in vollem Gange, ein Kopf wurde herausgehalten, eine Frau lag mit dem Rücken auf dem Fensterbrett, ihre langen Haare flatterten im Wind.“",
-    "translation": null,
+    "translation": "A loud quarrel was in full swing, a head was thrust out, a woman lay on her back on the windowsill, her long hair fluttering in the wind.",
     "source": "wiktionary",
     "lemmas": [
       "heraushalten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "lauter",
+        "lemma": "lauter",
+        "pos": "adjective",
+        "gloss_hint": "honest"
+      },
+      {
+        "form": "Streit",
+        "lemma": "Streit",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vollem",
+        "lemma": "voll",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Gange",
+        "lemma": "Gang",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kopf",
+        "lemma": "Kopf",
+        "pos": "noun",
+        "gloss_hint": "head"
+      },
+      {
+        "form": "herausgehalten",
+        "lemma": "heraushalten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "woman"
+      },
+      {
+        "form": "Rücken",
+        "lemma": "Rücken",
+        "pos": "noun",
+        "gloss_hint": "back"
+      },
+      {
+        "form": "Fensterbrett",
+        "lemma": "Fensterbrett",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Haare",
+        "lemma": "Haar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "flatterten",
+        "lemma": "flattern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wind",
+        "lemma": "Wind",
+        "pos": "noun",
+        "gloss_hint": "wind"
+      }
+    ],
+    "text_linked": "„Ein [[lauter|adjectives/lauter#1]] [[Streit|nouns/Streit]] war in [[vollem|adjectives/voll]] [[Gange|nouns/Gang_art]], ein [[Kopf|nouns/Kopf#1]] wurde [[herausgehalten|verbs/heraushalten]], eine [[Frau|nouns/Frau#1]] lag mit dem [[Rücken|nouns/Rücken#1]] auf dem Fensterbrett, ihre langen [[Haare|nouns/Haar]] [[flatterten|verbs/flattern_schnellen]] im [[Wind|nouns/Wind#5]].“"
   },
   "20dea5e6bf": {
     "text": "„Eine weitere Diskussion über Neymar aber feuerte Raphinha an. Der Nationalmannschaftskollege teilte bei Instagram nach der Begegnung gegen die Serben einen Post über das Ansehen des Spielmachers bei einem nicht gerade kleinen Teil der Fußballliebhaber in seiner Heimat.“",
-    "translation": null,
+    "translation": "Another discussion about Neymar, however, fired up Raphinha. The national team colleague shared a post on Instagram after the match against the Serbs about the reputation of the playmaker among a not insignificant portion of football fans in his home country.",
     "source": "wiktionary",
     "lemmas": [
       "anfeuern"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "weitere",
+        "lemma": "weitere",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Diskussion",
+        "lemma": "Diskussion",
+        "pos": "noun",
+        "gloss_hint": "discussion"
+      },
+      {
+        "form": "Neymar",
+        "lemma": "Neymar",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "feuerte",
+        "lemma": "feuern",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Raphinha",
+        "lemma": "Raphinha",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Nationalmannschaftskollege",
+        "lemma": "Nationalmannschaftskollege",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "teilte",
+        "lemma": "teilen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Instagram",
+        "lemma": "Instagram",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Begegnung",
+        "lemma": "Begegnung",
+        "pos": "noun",
+        "gloss_hint": "match"
+      },
+      {
+        "form": "Serben",
+        "lemma": "Serbe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Post",
+        "lemma": "Post",
+        "pos": "noun",
+        "gloss_hint": "post"
+      },
+      {
+        "form": "Ansehen",
+        "lemma": "Ansehen",
+        "pos": "noun",
+        "gloss_hint": "reputation"
+      },
+      {
+        "form": "Spielmachers",
+        "lemma": "Spielmacher",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fußballliebhaber",
+        "lemma": "Fußballliebhaber",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Heimat",
+        "lemma": "Heimat",
+        "pos": "noun",
+        "gloss_hint": "home"
+      }
+    ],
+    "text_linked": "„Eine weitere [[Diskussion|nouns/Diskussion#1]] über Neymar aber [[feuerte|verbs/feuern]] Raphinha an. Der Nationalmannschaftskollege [[teilte|verbs/teilen]] bei Instagram nach der [[Begegnung|nouns/Begegnung#2]] gegen die Serben einen [[Post|nouns/Post_infrastruktur#2]] über das [[Ansehen|nouns/Ansehen#1]] des Spielmachers bei einem nicht gerade kleinen Teil der Fußballliebhaber in seiner [[Heimat|nouns/Heimat#1]].“"
   },
   "20df034972": {
     "text": "Ohne Pflege wird das Schloss irgendwann verfallen.",
@@ -27654,11 +28999,39 @@
   },
   "20e1d6a0f2": {
     "text": "In der Bastelstunde haben wir heute Steine angemalt,",
-    "translation": null,
+    "translation": "In craft class today we painted stones.",
     "source": "wiktionary",
     "lemmas": [
       "anmalen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bastelstunde",
+        "lemma": "Bastelstunde",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "heute",
+        "lemma": "heute",
+        "pos": "adverb",
+        "gloss_hint": "today"
+      },
+      {
+        "form": "Steine",
+        "lemma": "Stein",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "angemalt",
+        "lemma": "anmalen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "In der Bastelstunde haben wir [[heute|adverbs/heute#1]] [[Steine|nouns/Stein]] [[angemalt|verbs/anmalen]],"
   },
   "20e282c938": {
     "text": "Die verblasstesten Schaufensterdekorationen habe ich jetzt ausgetauscht.",
@@ -28774,11 +30147,63 @@
   },
   "20ec3729a6": {
     "text": "Das Fächerblatt lässt sich zu einem vollen Kreis aufklappen und mittels eines Gelenks, das es mit einem Stab verbindet, kippen.",
-    "translation": null,
+    "translation": "The fan leaf can be unfolded into a complete circle and, by means of a hinge that connects it to a rod, can be tilted.",
     "source": "wiktionary",
     "lemmas": [
       "aufklappen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fächerblatt",
+        "lemma": "Fächerblatt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "lässt",
+        "lemma": "lassen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "vollen",
+        "lemma": "voll",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kreis",
+        "lemma": "Kreis",
+        "pos": "noun",
+        "gloss_hint": "circle"
+      },
+      {
+        "form": "aufklappen",
+        "lemma": "aufklappen",
+        "pos": "verb",
+        "gloss_hint": "unfold"
+      },
+      {
+        "form": "Gelenks",
+        "lemma": "Gelenk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stab",
+        "lemma": "Stab",
+        "pos": "noun",
+        "gloss_hint": "rod"
+      },
+      {
+        "form": "kippen",
+        "lemma": "kippen",
+        "pos": "verb",
+        "gloss_hint": "tilt"
+      }
+    ],
+    "text_linked": "Das Fächerblatt [[lässt|verbs/lassen]] sich zu einem [[vollen|adjectives/voll]] [[Kreis|nouns/Kreis#1]] [[aufklappen|verbs/aufklappen#1]] und mittels eines [[Gelenks|nouns/Gelenk]], das es mit einem [[Stab|nouns/Stab_länglicher#1]] verbindet, [[kippen|verbs/kippen_etwas#1]]."
   },
   "20ec4a4163": {
     "text": "„Skral sollte mich doch mal nach meinen Erfahrungen mit Verlagen und Lektoren befragen, wenn er über mich als Schreiber zu berichten hat.“",
@@ -30235,11 +31660,39 @@
   },
   "20fbce2b51": {
     "text": "Durch die Behandlung mit dem Pestizid sterben die Unkräuter ab.",
-    "translation": null,
+    "translation": "Through treatment with the pesticide, the weeds die off.",
     "source": "wiktionary",
     "lemmas": [
       "absterben"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Behandlung",
+        "lemma": "Behandlung",
+        "pos": "noun",
+        "gloss_hint": "treatment"
+      },
+      {
+        "form": "Pestizid",
+        "lemma": "Pestizid",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "sterben",
+        "lemma": "sterben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Unkräuter",
+        "lemma": "Unkraut",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Durch die [[Behandlung|nouns/Behandlung#1]] mit dem Pestizid [[sterben|verbs/sterben]] die [[Unkräuter|nouns/Unkraut]] ab."
   },
   "20fd34a557": {
     "text": "Neulich traf ich doch mal wieder Peter im Schwimmbad!",
@@ -30553,11 +32006,87 @@
   },
   "20fe884e83": {
     "text": "„Am Tisch sitzen bleibt seine Frau Gabi. Einst hat [der 71-jährige Gynäkologe Michael] Spandau ihre Kinder entbunden, die sie in der Ehe mit ihrem ersten Mann bekam.“",
-    "translation": null,
+    "translation": "His wife Gabi remains at the table. Once, the 71-year-old gynecologist Michael Spandau delivered her children, whom she had in her marriage with her first husband.",
     "source": "wiktionary",
     "lemmas": [
       "entbinden"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tisch",
+        "lemma": "Tisch",
+        "pos": "noun",
+        "gloss_hint": "table"
+      },
+      {
+        "form": "sitzen",
+        "lemma": "sitzen",
+        "pos": "verb",
+        "gloss_hint": "sit"
+      },
+      {
+        "form": "Frau",
+        "lemma": "Frau",
+        "pos": "noun",
+        "gloss_hint": "wife"
+      },
+      {
+        "form": "Gabi",
+        "lemma": "Gabi",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einst",
+        "lemma": "einst",
+        "pos": "adverb",
+        "gloss_hint": "formerly"
+      },
+      {
+        "form": "Gynäkologe",
+        "lemma": "Gynäkologe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Michael",
+        "lemma": "Michael",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Spandau",
+        "lemma": "Spandau",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kinder",
+        "lemma": "Kind",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "entbunden",
+        "lemma": "entbinden",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ehe",
+        "lemma": "Ehe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Mann",
+        "lemma": "Mann",
+        "pos": "noun",
+        "gloss_hint": "husband"
+      }
+    ],
+    "text_linked": "„Am [[Tisch|nouns/Tisch#1]] [[sitzen|verbs/sitzen#5]] bleibt seine [[Frau|nouns/Frau#2]] Gabi. [[Einst|adverbs/einst#1]] hat [der 71-jährige Gynäkologe Michael] Spandau ihre [[Kinder|nouns/Kind]] [[entbunden|verbs/entbinden]], die sie in der [[Ehe|nouns/Ehe]] mit ihrem ersten [[Mann|nouns/Mann#2]] bekam.“"
   },
   "20ffc2847d": {
     "text": "Doch an Blumen fehlt's im Revier. (Goethe, Faust I)",

@@ -227,11 +227,33 @@
   },
   "01047bc7a2": {
     "text": "Komplette Branchen wurden durch die Digitalisierung umstrukturiert.",
-    "translation": null,
+    "translation": "Entire industries were restructured through digitalization.",
     "source": "wiktionary",
     "lemmas": [
       "umstrukturieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Branchen",
+        "lemma": "Branche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Digitalisierung",
+        "lemma": "Digitalisierung",
+        "pos": "noun",
+        "gloss_hint": "digital transformation"
+      },
+      {
+        "form": "umstrukturiert",
+        "lemma": "umstrukturieren",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Komplette [[Branchen|nouns/Branche]] wurden durch die [[Digitalisierung|nouns/Digitalisierung#2]] [[umstrukturiert|verbs/umstrukturieren]]."
   },
   "0104be49f7": {
     "text": "„Das ist mir schnurzegal, die liest sowieso kein Mensch mehr. Das kann er halten wie ein Dachdecker.“",
@@ -689,11 +711,63 @@
   },
   "010846a1d0": {
     "text": "„[…] AnnenMayKantereit treffen den Nerv der Zeit. Im Videointerview enthüllen die vier Jungs, wie sie sich durchs Abitur mogelten und zu Schulzeiten versuchten, cool zu wirken.“",
-    "translation": null,
+    "translation": "\"[…] AnnenMayKantereit strike a chord with the times. In a video interview, the four guys reveal how they cheated their way through their final exams and tried to seem cool in school.\"",
     "source": "wiktionary",
     "lemmas": [
       "mogeln"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "treffen",
+        "lemma": "treffen",
+        "pos": "verb",
+        "gloss_hint": "strike the mark"
+      },
+      {
+        "form": "Nerv",
+        "lemma": "Nerv",
+        "pos": "noun",
+        "gloss_hint": "nerves (psychological)"
+      },
+      {
+        "form": "Zeit",
+        "lemma": "Zeit",
+        "pos": "noun",
+        "gloss_hint": "time"
+      },
+      {
+        "form": "enthüllen",
+        "lemma": "enthüllen",
+        "pos": "verb",
+        "gloss_hint": "reveal"
+      },
+      {
+        "form": "vier",
+        "lemma": "vier",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jungs",
+        "lemma": "Junge",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Abitur",
+        "lemma": "Abitur",
+        "pos": "noun",
+        "gloss_hint": "final exam"
+      },
+      {
+        "form": "cool",
+        "lemma": "cool",
+        "pos": "adjective",
+        "gloss_hint": "great"
+      }
+    ],
+    "text_linked": "„[…] AnnenMayKantereit [[treffen|verbs/treffen#5]] den [[Nerv|nouns/Nerv#2]] der [[Zeit|nouns/Zeit#1]]. Im Videointerview [[enthüllen|verbs/enthüllen#2]] die [[vier|numerals/vier]] [[Jungs|nouns/Junge]], wie sie sich durchs [[Abitur|nouns/Abitur#1]] mogelten und zu Schulzeiten versuchten, [[cool|adjectives/cool#2]] zu wirken.“"
   },
   "010a210bae": {
     "text": "„In der bunt zusammengewürfelten Belegschaft fehlt vielfach das Gruppengefühl, die Mitverantwortung für den Kumpel. Und so nimmt der Bergmann sich einen Krankenschein, wenn ihm eine Laus über die Leber läuft.“",
@@ -1535,19 +1609,57 @@
   },
   "01193e9c18": {
     "text": "Der Deutschland-Achter hat 1960 und 1968 olympisches Gold geholt.",
-    "translation": null,
+    "translation": "The German eight won Olympic gold in 1960 and 1968.",
     "source": "wiktionary",
     "lemmas": [
       "Achter"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Deutschland-Achter",
+        "lemma": "Achter",
+        "pos": "noun",
+        "gloss_hint": "rowing eight"
+      },
+      {
+        "form": "Gold",
+        "lemma": "Gold",
+        "pos": "noun",
+        "gloss_hint": "gold medal"
+      }
+    ],
+    "text_linked": "Der [[Deutschland-Achter|nouns/Achter_ziffer#2]] hat 1960 und 1968 olympisches [[Gold|nouns/Gold#6]] geholt."
   },
   "0119f964a0": {
     "text": "„Über Schneider kam er in Kontakt mit Margaretha Rothe und Heinz Kucharski, die dem NS-Regime ebenfalls kritisch gegenüberstanden.“",
-    "translation": null,
+    "translation": "\"Through Schneider, he came into contact with Margaretha Rothe and Heinz Kucharski, who were also critical of the Nazi regime.\"",
     "source": "wiktionary",
     "lemmas": [
       "gegenüberstehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kontakt",
+        "lemma": "Kontakt",
+        "pos": "noun",
+        "gloss_hint": "contact"
+      },
+      {
+        "form": "Regime",
+        "lemma": "Regime",
+        "pos": "noun",
+        "gloss_hint": "authoritarian government"
+      },
+      {
+        "form": "kritisch",
+        "lemma": "kritisch",
+        "pos": "adjective",
+        "gloss_hint": "critical (evaluative)"
+      }
+    ],
+    "text_linked": "„Über Schneider kam er in [[Kontakt|nouns/Kontakt#1]] mit Margaretha Rothe und Heinz Kucharski, die dem NS-[[Regime|nouns/Regime#1]] ebenfalls [[kritisch|adjectives/kritisch#2]] gegenüberstanden.“"
   },
   "011a77507b": {
     "text": "„Ich habe Mira einen Heiratsantrag gemacht.“",
@@ -1653,11 +1765,33 @@
   },
   "011bb2e956": {
     "text": "„Tölke war über die Kritik überrascht: ‚Wir sind als Planer von universitätsinternen Vorgängen ausgeschlossen. Man schließt uns nicht kurz.‘“",
-    "translation": null,
+    "translation": "\"Tölke was surprised by the criticism: 'As planners of university-internal processes, we are excluded. They don't keep us in the loop.'\"",
     "source": "wiktionary",
     "lemmas": [
       "kurzschließen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kritik",
+        "lemma": "Kritik",
+        "pos": "noun",
+        "gloss_hint": "criticism"
+      },
+      {
+        "form": "ausgeschlossen",
+        "lemma": "ausgeschlossen",
+        "pos": "adjective",
+        "gloss_hint": "excluded"
+      },
+      {
+        "form": "kurz",
+        "lemma": "kurz",
+        "pos": "adjective",
+        "gloss_hint": "brief"
+      }
+    ],
+    "text_linked": "„Tölke war über die [[Kritik|nouns/Kritik#2]] überrascht: ‚Wir sind als Planer von universitätsinternen Vorgängen [[ausgeschlossen|adjectives/ausgeschlossen#2]]. Man schließt uns nicht [[kurz|adjectives/kurz#2]].‘“"
   },
   "011c9b8bf0": {
     "text": "„Die Lippen sahen borkig aus.“",
@@ -2609,11 +2743,27 @@
   },
   "0121917629": {
     "text": "Ich hatte soviel zu tun, der Tag ist schnell herumgegangen.",
-    "translation": null,
+    "translation": "I had so much to do; the day went by quickly.",
     "source": "wiktionary",
     "lemmas": [
       "herumgehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Tag",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": "day"
+      },
+      {
+        "form": "schnell",
+        "lemma": "schnell",
+        "pos": "adjective",
+        "gloss_hint": "fast"
+      }
+    ],
+    "text_linked": "Ich hatte soviel zu tun, der [[Tag|nouns/Tag_zeitraum#1]] ist [[schnell|adjectives/schnell#1]] herumgegangen."
   },
   "0122666805": {
     "text": "Die Relationen der Phänotypenklassen in den vier Gruppen (beide Gameten nicht rekombinant, einer der beiden Gameten rekombinant, beide Gameten rekombinant …) sind unabhängig von der Crossoverhäufigkeit.",
@@ -3548,11 +3698,21 @@
   },
   "0128b3a60b": {
     "text": "„Doch es könnte in den nächsten Wochen eisig werden: Spielt ihr noch oder kriselt ihr schon?“",
-    "translation": null,
+    "translation": "\"But it could get icy in the coming weeks: Are you still playing or are things already falling apart?\"",
     "source": "wiktionary",
     "lemmas": [
       "kriseln"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Wochen",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Doch es könnte in den nächsten [[Wochen|nouns/Woche]] eisig werden: Spielt ihr noch oder kriselt ihr schon?“"
   },
   "0129b795bf": {
     "text": "Er ist wohl deshalb so verbittert, weil er seinen Arbeitsplatz verloren hat.",
@@ -3934,11 +4094,51 @@
   },
   "012d8fb19e": {
     "text": "Das heisst nicht, dass wir morgen alle hereinlassen sollten, aber man müsste sich das Ziel setzen, dass ein Migrant nach etwa fünf Jahren mit seinem Umfeld ebenso verbunden ist wie jemand, der schon lange hier lebt.",
-    "translation": null,
+    "translation": "That doesn't mean we should let everyone in tomorrow, but one would have to set the goal that a migrant after about five years is as connected to his environment as someone who has lived here for a long time.",
     "source": "wiktionary",
     "lemmas": [
       "hereinlassen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Ziel",
+        "lemma": "Ziel",
+        "pos": "noun",
+        "gloss_hint": "goal"
+      },
+      {
+        "form": "Migrant",
+        "lemma": "Migrant",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fünf",
+        "lemma": "fünf",
+        "pos": "numeral",
+        "gloss_hint": null
+      },
+      {
+        "form": "Jahren",
+        "lemma": "Jahr",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Umfeld",
+        "lemma": "Umfeld",
+        "pos": "noun",
+        "gloss_hint": "environment"
+      },
+      {
+        "form": "verbunden",
+        "lemma": "verbunden",
+        "pos": "adjective",
+        "gloss_hint": "connected"
+      }
+    ],
+    "text_linked": "Das heisst nicht, dass wir morgen alle hereinlassen sollten, aber man müsste sich das [[Ziel|nouns/Ziel#1]] setzen, dass ein Migrant nach etwa [[fünf|numerals/fünf]] [[Jahren|nouns/Jahr]] mit seinem [[Umfeld|nouns/Umfeld#1]] ebenso [[verbunden|adjectives/verbunden#2]] ist wie jemand, der schon lange hier lebt."
   },
   "012efbd45f": {
     "text": "„\"Bonn vertuscht die wahre Katastrophe\", rügt der Bund für Umwelt und Naturschutz Deutschland (BUND) die fragwürdige Methode.“",
@@ -5074,11 +5274,39 @@
   },
   "01380e392b": {
     "text": "Erst im Dezember 2004 dirigierte er anläßlich der Wiedereröffnung der Mailänder Scala das Stück L'Europa riconosciuta von Antonio Salieri.",
-    "translation": null,
+    "translation": "Only in December 2004 did he conduct the piece L'Europa riconosciuta by Antonio Salieri on the occasion of the reopening of the Milan Scala.",
     "source": "wiktionary",
     "lemmas": [
       "dirigieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Dezember",
+        "lemma": "Dezember",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dirigierte",
+        "lemma": "dirigieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wiedereröffnung",
+        "lemma": "Wiedereröffnung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stück",
+        "lemma": "Stück",
+        "pos": "noun",
+        "gloss_hint": "play"
+      }
+    ],
+    "text_linked": "Erst im [[Dezember|nouns/Dezember]] 2004 [[dirigierte|verbs/dirigieren]] er anläßlich der Wiedereröffnung der Mailänder Scala das [[Stück|nouns/Stück#4]] L'Europa riconosciuta von Antonio Salieri."
   },
   "013846e379": {
     "text": "auf die richtige Karte setzen",
@@ -5143,11 +5371,57 @@
   },
   "0138f01a77": {
     "text": "„Nun, Herr Vechna schließt zu kurz: Dienstpflicht für sich und allein wäre noch unproblematisch. Das Mißtrauen jedoch gilt nicht dem Dienst, sondern seinem Ziel, dem möglichen Krieg, dem Dienste für den Krieg.“",
-    "translation": null,
+    "translation": "\"Well, Mr. Vechna falls short: military service for himself alone would still be unproblematic. The mistrust, however, is not directed at the service itself, but at its goal—the possible war, service for war.\"",
     "source": "wiktionary",
     "lemmas": [
       "kurzschließen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Herr",
+        "lemma": "Herr",
+        "pos": "noun",
+        "gloss_hint": "sir"
+      },
+      {
+        "form": "Dienst",
+        "lemma": "Dienst",
+        "pos": "noun",
+        "gloss_hint": "service (duty)"
+      },
+      {
+        "form": "allein",
+        "lemma": "allein",
+        "pos": "adjective",
+        "gloss_hint": "sole"
+      },
+      {
+        "form": "Mißtrauen",
+        "lemma": "Misstrauen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ziel",
+        "lemma": "Ziel",
+        "pos": "noun",
+        "gloss_hint": "goal"
+      },
+      {
+        "form": "möglichen",
+        "lemma": "möglich",
+        "pos": "adjective",
+        "gloss_hint": "possible (gen sg masc/neut)"
+      },
+      {
+        "form": "Krieg",
+        "lemma": "Krieg",
+        "pos": "noun",
+        "gloss_hint": "war"
+      }
+    ],
+    "text_linked": "„Nun, [[Herr|nouns/Herr#2]] Vechna schließt zu kurz: Dienstpflicht für sich und [[allein|adjectives/allein#2]] wäre noch unproblematisch. Das [[Mißtrauen|nouns/Misstrauen]] jedoch gilt nicht dem [[Dienst|nouns/Dienst#2]], sondern seinem [[Ziel|nouns/Ziel#1]], dem [[möglichen|adjectives/möglich]] [[Krieg|nouns/Krieg#1]], dem Dienste für den Krieg.“"
   },
   "013912c098": {
     "text": "„Und das Zeitungspapier war knapp, zumal es nicht nur fürs Tabaktrocknen oder zum Ausstopfen nassen Schuhwerks gebraucht wurde, sondern – in kleine Rechtecke zerschnitten und auf angespitzte Haken gespießt – auch das Klopapier ersetzen musste.“",
@@ -5441,11 +5715,33 @@
   },
   "013d57f9db": {
     "text": "Das Pferd war so krank, dass es abgetan werden musste.",
-    "translation": null,
+    "translation": "The horse was so sick that it had to be put down.",
     "source": "wiktionary",
     "lemmas": [
       "abtun"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Pferd",
+        "lemma": "Pferd",
+        "pos": "noun",
+        "gloss_hint": "horse"
+      },
+      {
+        "form": "krank",
+        "lemma": "krank",
+        "pos": "adjective",
+        "gloss_hint": "sick"
+      },
+      {
+        "form": "abgetan",
+        "lemma": "abtun",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Das [[Pferd|nouns/Pferd#1]] war so [[krank|adjectives/krank#1]], dass es [[abgetan|verbs/abtun]] werden musste."
   },
   "013e4ff6e2": {
     "text": "Hanni trägt heute ein Abendkleid in Schwarz.",
@@ -7304,11 +7600,13 @@
   },
   "015473a4cb": {
     "text": "„Von der Strafraumgrenze aus hob sie den Ball ins Netz, wenig später nickte sie auch noch eine präzise Flanke ein.“",
-    "translation": null,
+    "translation": "From the edge of the penalty area she lifted the ball into the net, and a little later she also headed in a precise cross.",
     "source": "wiktionary",
     "lemmas": [
       "einnicken"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": []
   },
   "0154d17887": {
     "text": "Ey, wo hast du denn die geile Karre her, Alter?",
@@ -7372,11 +7670,39 @@
   },
   "015610de1e": {
     "text": "Ich nominierte den Chef des Startups für die Wahl zum »Newcomer des Jahres«.",
-    "translation": null,
+    "translation": "I nominated the CEO of the startup for the election as 'Newcomer of the Year'.",
     "source": "wiktionary",
     "lemmas": [
       "nominieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "nominierte",
+        "lemma": "nominieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Chef",
+        "lemma": "Chef",
+        "pos": "noun",
+        "gloss_hint": "boss"
+      },
+      {
+        "form": "Startups",
+        "lemma": "Startup",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Wahl",
+        "lemma": "Wahl",
+        "pos": "noun",
+        "gloss_hint": "election"
+      }
+    ],
+    "text_linked": "Ich [[nominierte|verbs/nominieren]] den [[Chef|nouns/Chef#1]] des Startups für die [[Wahl|nouns/Wahl#2]] zum »Newcomer des Jahres«."
   },
   "01563a86ae": {
     "text": "Die Dokumentation einer Software ist keine einfache Aufgabe.",
@@ -7447,11 +7773,39 @@
   },
   "01579d8a0b": {
     "text": "Du hast dir schon so lange eine elektrische Eisenbahn eingebildet, dass du sie nun endlich bekommen sollst.",
-    "translation": null,
+    "translation": "You've been imagining an electric train for so long that you should finally get it.",
     "source": "wiktionary",
     "lemmas": [
       "einbilden"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "eingebildet",
+        "lemma": "einbilden",
+        "pos": "verb",
+        "gloss_hint": "imaginary"
+      },
+      {
+        "form": "elektrische",
+        "lemma": "elektrisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eisenbahn",
+        "lemma": "Eisenbahn",
+        "pos": "noun",
+        "gloss_hint": "railway"
+      },
+      {
+        "form": "bekommen",
+        "lemma": "bekommen",
+        "pos": "verb",
+        "gloss_hint": "get"
+      }
+    ],
+    "text_linked": "Du hast dir schon so lange eine [[elektrische|adjectives/elektrisch]] [[Eisenbahn|nouns/Eisenbahn#1]] [[eingebildet|verbs/einbilden]], dass du sie nun endlich [[bekommen|verbs/bekommen#4]] sollst."
   },
   "0158a31e90": {
     "text": "„Durch ihn haben wir die Erlösung, die Vergebung der Sünden.“",
@@ -8017,11 +8371,39 @@
   },
   "0163c77b36": {
     "text": "[Die Abwärmeströme in der Industrie können] „enorm in der Temperatur oder im Volumen schwanken.“",
-    "translation": null,
+    "translation": "The waste heat streams in industry can fluctuate enormously in temperature or in volume.",
     "source": "wiktionary",
     "lemmas": [
       "schwanken"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "schwanken",
+        "lemma": "schwanken",
+        "pos": "verb",
+        "gloss_hint": "fluctuate"
+      },
+      {
+        "form": "Temperatur",
+        "lemma": "Temperatur",
+        "pos": "noun",
+        "gloss_hint": "temperature"
+      },
+      {
+        "form": "Volumen",
+        "lemma": "Volumen",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "enorm",
+        "lemma": "enorm",
+        "pos": "adjective",
+        "gloss_hint": "huge"
+      }
+    ],
+    "text_linked": "[Die Abwärmeströme in der Industrie können] „[[enorm|adjectives/enorm#1]] in der [[Temperatur|nouns/Temperatur#1]] oder im Volumen [[schwanken|verbs/schwanken#3]].“"
   },
   "0164ba6274": {
     "text": "Sachsen-Anhalt liegt in der Mitte Deutschlands.",
@@ -8190,11 +8572,33 @@
   },
   "0167df2427": {
     "text": "Das Kabel wurde aus Versehen durchgetrennt.",
-    "translation": null,
+    "translation": "The cable was accidentally severed.",
     "source": "wiktionary",
     "lemmas": [
       "durchtrennen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Kabel",
+        "lemma": "Kabel",
+        "pos": "noun",
+        "gloss_hint": "cable"
+      },
+      {
+        "form": "durchgetrennt",
+        "lemma": "durchtrennen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Versehen",
+        "lemma": "Versehen",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Das [[Kabel|nouns/Kabel#2]] wurde aus [[Versehen|nouns/Versehen]] [[durchgetrennt|verbs/durchtrennen_etwas]]."
   },
   "0168de9f36": {
     "text": "„Schonungslos decken die Kleinen jede Sollbruchstelle im Miteinander auf.“",
@@ -8871,11 +9275,33 @@
   },
   "01715bd3ef": {
     "text": "Eine zur dynamische Festplatte konvertierte Festplatte können Sie nicht mal eben in eine Basisfestplatte zurückverwandeln.",
-    "translation": null,
+    "translation": "A hard drive that has been converted to a dynamic disk cannot simply be converted back to a basic disk.",
     "source": "wiktionary",
     "lemmas": [
       "zurückverwandeln"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "konvertierte",
+        "lemma": "konvertieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Festplatte",
+        "lemma": "Festplatte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zurückverwandeln",
+        "lemma": "zurückverwandeln",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Eine zur dynamische [[Festplatte|nouns/Festplatte]] [[konvertierte|verbs/konvertieren]] Festplatte können Sie nicht mal eben in eine Basisfestplatte [[zurückverwandeln|verbs/zurückverwandeln]]."
   },
   "01724f1529": {
     "text": "„Bettina hat ihr Forschungsjahr in Bordurien beendet und ihre neue Stelle als Oberärztin bei Professor Doktor Pitter Pille angetreten.“",
@@ -10290,11 +10716,39 @@
   },
   "0189b94228": {
     "text": "„Einen Infekt nicht zu verschleppen bedeutet mehr als drei Tage fieberfrei zu sein.“",
-    "translation": null,
+    "translation": "Not prolonging an infection means being fever-free for more than three days.",
     "source": "wiktionary",
     "lemmas": [
       "verschleppen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Infekt",
+        "lemma": "Infekt",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verschleppen",
+        "lemma": "verschleppen",
+        "pos": "verb",
+        "gloss_hint": "neglect"
+      },
+      {
+        "form": "fieberfrei",
+        "lemma": "fieberfrei",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tage",
+        "lemma": "Tag",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Einen Infekt nicht zu [[verschleppen|verbs/verschleppen#3]] bedeutet mehr als drei [[Tage|nouns/Tag_angehängter]] fieberfrei zu sein.“"
   },
   "0189d2f4eb": {
     "text": "„Seitens der Vorsitzenden wurde der Beamte im Zuge des Telefonates eindringlich darauf hingewiesen, der Dienstbehörde die erforderliche Krankenbestätigung vorzulegen und die Untersuchung beim polizeilichen Chefarzt durchzuführen, da das Ruhestandsverfahren eingeleitet wurde.“",
@@ -10358,11 +10812,69 @@
   },
   "018c53f39e": {
     "text": "Jede Partition oder Festplatte muss formatiert werden, wobei ein Dateisystem aufgespielt wird. Nur so kann das Betriebssystem Daten speichern und lesen.",
-    "translation": null,
+    "translation": "Every partition or hard drive must be formatted, whereby a file system is installed. Only in this way can the operating system store and read data.",
     "source": "wiktionary",
     "lemmas": [
       "formatieren"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Partition",
+        "lemma": "Partition",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Festplatte",
+        "lemma": "Festplatte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "formatiert",
+        "lemma": "formatieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Dateisystem",
+        "lemma": "Dateisystem",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "aufgespielt",
+        "lemma": "aufspielen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Betriebssystem",
+        "lemma": "Betriebssystem",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Daten",
+        "lemma": "Daten",
+        "pos": "noun",
+        "gloss_hint": "data"
+      },
+      {
+        "form": "speichern",
+        "lemma": "speichern",
+        "pos": "verb",
+        "gloss_hint": "store"
+      },
+      {
+        "form": "lesen",
+        "lemma": "lesen",
+        "pos": "verb",
+        "gloss_hint": "read"
+      }
+    ],
+    "text_linked": "Jede Partition oder [[Festplatte|nouns/Festplatte]] muss [[formatiert|verbs/formatieren]] werden, wobei ein Dateisystem aufgespielt wird. Nur so kann das Betriebssystem [[Daten|nouns/Daten#1]] [[speichern|verbs/speichern#1]] und [[lesen|verbs/lesen#1]]."
   },
   "018c689b2e": {
     "text": "Den Anschluss von Windparks in der Nordsee bekommt Siemens nicht hin, die verzögerte Lieferung der ICE-Züge an die Deutsche Bahn kostet den Elektrokonzern 116 Millionen Euro. [Der Vorstandsvorsitzende] Löscher konterte nun Vorwürfe, das Unternehmen beherrsche keine Großprojekte. Siemens setze derzeit 1500 Großaufträge mit einem Gesamtvolumen von 100 Milliarden Euro um.",
@@ -11454,11 +11966,33 @@
   },
   "019742e1e8": {
     "text": "Ja, stimmt, er riss mich gegen zwei unsanft aus dem Schlaf heraus.",
-    "translation": null,
+    "translation": "Yes, that's right, he jerked me out of sleep around two o'clock rather roughly.",
     "source": "wiktionary",
     "lemmas": [
       "herausreißen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "riss",
+        "lemma": "reißen",
+        "pos": "verb",
+        "gloss_hint": "tear"
+      },
+      {
+        "form": "Schlaf",
+        "lemma": "Schlaf",
+        "pos": "noun",
+        "gloss_hint": "sleep"
+      },
+      {
+        "form": "heraus",
+        "lemma": "heraus",
+        "pos": "adverb",
+        "gloss_hint": "out"
+      }
+    ],
+    "text_linked": "Ja, stimmt, er [[riss|verbs/reißen#1]] mich gegen zwei unsanft aus dem [[Schlaf|nouns/Schlaf#1]] [[heraus|adverbs/heraus#1]]."
   },
   "01974d3b6e": {
     "text": "„Nach einigen Zigarettenlängen kam die Schwester wieder herein und bat ihn, ihr ins Gästehaus zu folgen.“",
@@ -11561,11 +12095,45 @@
   },
   "01992128e1": {
     "text": "„Wenn man die Bereitschaft zur Urlaubsreise betrachtet, ist aber tatsächlich ein weiterer Aufwärtstrend zu vermerken.“",
-    "translation": null,
+    "translation": "When one considers the willingness to take a vacation trip, however, a further upward trend is indeed to be noted.",
     "source": "wiktionary",
     "lemmas": [
       "vermerken"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Bereitschaft",
+        "lemma": "Bereitschaft",
+        "pos": "noun",
+        "gloss_hint": "willingness"
+      },
+      {
+        "form": "Urlaubsreise",
+        "lemma": "Urlaubsreise",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "betrachtet",
+        "lemma": "betrachten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Aufwärtstrend",
+        "lemma": "Aufwärtstrend",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "vermerken",
+        "lemma": "vermerken",
+        "pos": "verb",
+        "gloss_hint": "note down"
+      }
+    ],
+    "text_linked": "„Wenn man die [[Bereitschaft|nouns/Bereitschaft#2]] zur Urlaubsreise [[betrachtet|verbs/betrachten]], ist aber tatsächlich ein weiterer Aufwärtstrend zu [[vermerken|verbs/vermerken#1]].“"
   },
   "019966c538": {
     "text": "Tut mir leid, mein Schatz! Ich kann keine Eintrittskarten aus dem Hut zaubern!",
@@ -11694,11 +12262,51 @@
   },
   "019a49986a": {
     "text": "[Safran:] „Die Preise schwanken von Woche zu Woche gemäß Nachfrage und Angebot sowie Qualität.“",
-    "translation": null,
+    "translation": "The prices fluctuate from week to week according to demand and supply as well as quality.",
     "source": "wiktionary",
     "lemmas": [
       "schwanken"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Preise",
+        "lemma": "Preis",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schwanken",
+        "lemma": "schwanken",
+        "pos": "verb",
+        "gloss_hint": "fluctuate"
+      },
+      {
+        "form": "Woche",
+        "lemma": "Woche",
+        "pos": "noun",
+        "gloss_hint": "week"
+      },
+      {
+        "form": "Nachfrage",
+        "lemma": "Nachfrage",
+        "pos": "noun",
+        "gloss_hint": "demand"
+      },
+      {
+        "form": "Angebot",
+        "lemma": "Angebot",
+        "pos": "noun",
+        "gloss_hint": "market supply"
+      },
+      {
+        "form": "Qualität",
+        "lemma": "Qualität",
+        "pos": "noun",
+        "gloss_hint": "quality"
+      }
+    ],
+    "text_linked": "[Safran:] „Die [[Preise|nouns/Preis]] [[schwanken|verbs/schwanken#3]] von [[Woche|nouns/Woche#1]] zu Woche gemäß [[Nachfrage|nouns/Nachfrage#1]] und [[Angebot|nouns/Angebot#4]] sowie [[Qualität|nouns/Qualität#4]].“"
   },
   "019ac0f875": {
     "text": "Durch das Loch im Dach dringt Licht.",
@@ -11994,11 +12602,33 @@
   },
   "019d4a8e01": {
     "text": "Im Pochwerk wurde das Eisenerz gepocht.",
-    "translation": null,
+    "translation": "In the stamp mill, the iron ore was crushed.",
     "source": "wiktionary",
     "lemmas": [
       "pochen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Pochwerk",
+        "lemma": "Pochwerk",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Eisenerz",
+        "lemma": "Eisenerz",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gepocht",
+        "lemma": "pochen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Im Pochwerk wurde das Eisenerz [[gepocht|verbs/pochen]]."
   },
   "019ead9bec": {
     "text": "„Das mag besonders schwerfallen am Beispiel der Treptower Gedenkstätte mit dem Bronzekoloß in pathetischer Heldenpose und den stalinistischen Spruchweisheiten an schweren Sarkophagen.“",
@@ -12565,11 +13195,33 @@
   },
   "01a24e61cf": {
     "text": "Mit diesem Problem werden wir uns auseinandersetzen müssen.",
-    "translation": null,
+    "translation": "We will have to deal with this problem.",
     "source": "wiktionary",
     "lemmas": [
       "auseinandersetzen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Problem",
+        "lemma": "Problem",
+        "pos": "noun",
+        "gloss_hint": "problem"
+      },
+      {
+        "form": "auseinandersetzen",
+        "lemma": "auseinandersetzen",
+        "pos": "verb",
+        "gloss_hint": "deal with"
+      },
+      {
+        "form": "müssen",
+        "lemma": "müssen",
+        "pos": "verb",
+        "gloss_hint": "have to"
+      }
+    ],
+    "text_linked": "Mit diesem [[Problem|nouns/Problem#1]] werden wir uns [[auseinandersetzen|verbs/auseinandersetzen#1]] [[müssen|verbs/müssen#5]]."
   },
   "01a44ab820": {
     "text": "„Smartphones sind fester Bestandteil des Alltags. In Gruppen-Chats verschicken wir Fotos oder vereinbaren Termine mit Freunden.“",
@@ -12876,11 +13528,33 @@
   },
   "01a675fe07": {
     "text": "Er promotet jetzt Schnellkochtöpfe im Supermarkt.",
-    "translation": null,
+    "translation": "He is now promoting pressure cookers in the supermarket.",
     "source": "wiktionary",
     "lemmas": [
       "promoten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "promotet",
+        "lemma": "promoten",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Schnellkochtöpfe",
+        "lemma": "Schnellkochtopf",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Supermarkt",
+        "lemma": "Supermarkt",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Er [[promotet|verbs/promoten]] jetzt Schnellkochtöpfe im [[Supermarkt|nouns/Supermarkt]]."
   },
   "01a677b772": {
     "text": "„Also kann diese Treue wiederum abstrakt sein, sie kann sich mit Sturem verbinden und sogar, der Sache selber viel weniger treu, als es den Anschein hat, mit einem Narren auf eigene Faust.“",
@@ -13900,11 +14574,33 @@
   },
   "01b193e2c6": {
     "text": "Der Orkan hat reihenweise die Bäume umgeknickt.",
-    "translation": null,
+    "translation": "The hurricane snapped the trees in rows.",
     "source": "wiktionary",
     "lemmas": [
       "umknicken"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Orkan",
+        "lemma": "Orkan",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bäume",
+        "lemma": "Baum",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "umgeknickt",
+        "lemma": "umknicken",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Der Orkan hat reihenweise die [[Bäume|nouns/Baum]] [[umgeknickt|verbs/umknicken]]."
   },
   "01b1bed4b9": {
     "text": "„Die beiden Stadthälften waren durch je drei Brücken mit den Inseln verbunden, die untereinander durch eine weitere Brücke verbunden waren.“",
@@ -14004,11 +14700,39 @@
   },
   "01b51ee012": {
     "text": "Im Zuge des Missbrauchskandals sind viele Menschen aus der Kirche ausgetreten.",
-    "translation": null,
+    "translation": "In the course of the abuse scandal, many people left the church.",
     "source": "wiktionary",
     "lemmas": [
       "austreten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Missbrauchskandals",
+        "lemma": "Missbrauchsskandal",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menschen",
+        "lemma": "Mensch",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Kirche",
+        "lemma": "Kirche",
+        "pos": "noun",
+        "gloss_hint": "Christian community"
+      },
+      {
+        "form": "ausgetreten",
+        "lemma": "austreten",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Im Zuge des Missbrauchskandals sind viele [[Menschen|nouns/Mensch_junge]] aus der [[Kirche|nouns/Kirche#2]] [[ausgetreten|verbs/austreten]]."
   },
   "01b5a1a02b": {
     "text": "Das Auto bewegt sich geradeaus.",
@@ -15353,11 +16077,27 @@
   },
   "01c8045329": {
     "text": "„»Ein kleines Fischerboot hält auf uns zu«, meldete er.“",
-    "translation": null,
+    "translation": "\"A small fishing boat is heading towards us,\" he reported.",
     "source": "wiktionary",
     "lemmas": [
       "zuhalten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Fischerboot",
+        "lemma": "Fischerboot",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "meldete",
+        "lemma": "melden",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„»Ein kleines Fischerboot hält auf uns zu«, [[meldete|verbs/melden]] er.“"
   },
   "01c822d1ae": {
     "text": "„Schahrijars Ring setzt viel Wissen über den Islam voraus, doch vieles ist dem westlichen Leser auch bekannt, etwa die bösen und die guten Dschinn oder Geister, die auch in der Bibel eine Rolle spielen.“",
@@ -15763,11 +16503,75 @@
   },
   "01caccee43": {
     "text": "„Um die Schraube wodurch der Bohrer in die Leitstange befestigt ist, recht fest zudrehen zu können, wird letztere (nachdem sie vorläufig leicht zusammengeschraubt sind) in einen Holzblock gespannt.“",
-    "translation": null,
+    "translation": "In order to be able to tighten the screw by which the drill is fastened to the guide rod quite firmly, the latter (after it has been provisionally loosely screwed together) is clamped in a wooden block.",
     "source": "wiktionary",
     "lemmas": [
       "zudrehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Schraube",
+        "lemma": "Schraube",
+        "pos": "noun",
+        "gloss_hint": "screw"
+      },
+      {
+        "form": "Bohrer",
+        "lemma": "Bohrer",
+        "pos": "noun",
+        "gloss_hint": "drill bit"
+      },
+      {
+        "form": "Leitstange",
+        "lemma": "Leitstange",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "fest",
+        "lemma": "fest",
+        "pos": "adjective",
+        "gloss_hint": "firmly"
+      },
+      {
+        "form": "zudrehen",
+        "lemma": "zudrehen",
+        "pos": "verb",
+        "gloss_hint": "tighten"
+      },
+      {
+        "form": "können",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": "be able"
+      },
+      {
+        "form": "leicht",
+        "lemma": "leicht",
+        "pos": "adjective",
+        "gloss_hint": "loosely"
+      },
+      {
+        "form": "zusammengeschraubt",
+        "lemma": "zusammenschrauben",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Holzblock",
+        "lemma": "Holzblock",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gespannt",
+        "lemma": "spannen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Um die [[Schraube|nouns/Schraube#1]] wodurch der [[Bohrer|nouns/Bohrer#1]] in die Leitstange befestigt ist, recht [[fest|adjectives/fest]] [[zudrehen|verbs/zudrehen#2]] zu [[können|verbs/können_beherrschen#2]], wird letztere (nachdem sie vorläufig [[leicht|adjectives/leicht]] zusammengeschraubt sind) in einen Holzblock [[gespannt|verbs/spannen]].“"
   },
   "01cc685202": {
     "text": "Als Biologe kennt er sich mit fast allem aus, was um uns herum kreucht und fleucht.",
@@ -16083,11 +16887,51 @@
   },
   "01cdecc693": {
     "text": "„Du hast auch zu gar nichts Lust. Durchschlaf doch einfach dein ganzes Leben!“, warf sie ihm verärgert an den Kopf.",
-    "translation": null,
+    "translation": "\"You have no desire for anything at all. Why don't you just sleep through your whole life!\" she snapped at him irritably.",
     "source": "wiktionary",
     "lemmas": [
       "durchschlafen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Lust",
+        "lemma": "Lust",
+        "pos": "noun",
+        "gloss_hint": "desire"
+      },
+      {
+        "form": "Nichts",
+        "lemma": "Nichts",
+        "pos": "noun",
+        "gloss_hint": "nothing"
+      },
+      {
+        "form": "Durchschlaf",
+        "lemma": "durchschlafen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "einfach",
+        "lemma": "einfach",
+        "pos": "adjective",
+        "gloss_hint": "simply"
+      },
+      {
+        "form": "Leben",
+        "lemma": "Leben",
+        "pos": "noun",
+        "gloss_hint": "life"
+      },
+      {
+        "form": "Kopf",
+        "lemma": "Kopf",
+        "pos": "noun",
+        "gloss_hint": "head"
+      }
+    ],
+    "text_linked": "„Du hast auch zu gar nichts [[Lust|nouns/Lust#1]]. [[Durchschlaf|verbs/durchschlafen_einen]] doch [[einfach|adjectives/einfach#6]] dein ganzes [[Leben|nouns/Leben#1]]!“, warf sie ihm verärgert an den [[Kopf|nouns/Kopf#1]]."
   },
   "01cdecdaee": {
     "text": "Er versetzte ihm einen heftigen Tritt.",
@@ -16333,19 +17177,111 @@
   },
   "01cf07669d": {
     "text": "Wie oft soll ich dir das noch sagen: Du sollst nicht so ungepflegt herumrennen! Zieh dir was Ordentliches an!",
-    "translation": null,
+    "translation": "How many times do I have to tell you: You shouldn't run around looking so unkempt! Put on something decent!",
     "source": "wiktionary",
     "lemmas": [
       "herumrennen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "oft",
+        "lemma": "oft",
+        "pos": "adverb",
+        "gloss_hint": null
+      },
+      {
+        "form": "sagen",
+        "lemma": "sagen",
+        "pos": "verb",
+        "gloss_hint": "say"
+      },
+      {
+        "form": "sollst",
+        "lemma": "sollen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "ungepflegt",
+        "lemma": "ungepflegt",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "herumrennen",
+        "lemma": "herumrennen",
+        "pos": "verb",
+        "gloss_hint": "run around"
+      },
+      {
+        "form": "Zieh",
+        "lemma": "ziehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Ordentliches",
+        "lemma": "ordentlich",
+        "pos": "adjective",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Wie [[oft|adverbs/oft]] soll ich dir das noch [[sagen|verbs/sagen#1]]: Du [[sollst|verbs/sollen]] nicht so ungepflegt [[herumrennen|verbs/herumrennen#1]]! [[Zieh|verbs/ziehen]] dir was [[Ordentliches|adjectives/ordentlich]] an!"
   },
   "01cf26a9a2": {
     "text": "„Wir werden später sehen, daß man viele algorithmische Probleme als Suchprobleme auffassen kann.“",
-    "translation": null,
+    "translation": "We will later see that one can interpret many algorithmic problems as search problems.",
     "source": "wiktionary",
     "lemmas": [
       "auffassen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "werden",
+        "lemma": "werden",
+        "pos": "verb",
+        "gloss_hint": "auxiliary"
+      },
+      {
+        "form": "später",
+        "lemma": "später",
+        "pos": "adverb",
+        "gloss_hint": "later"
+      },
+      {
+        "form": "sehen",
+        "lemma": "sehen",
+        "pos": "verb",
+        "gloss_hint": "see"
+      },
+      {
+        "form": "auffassen",
+        "lemma": "auffassen",
+        "pos": "verb",
+        "gloss_hint": "interpret"
+      },
+      {
+        "form": "algorithmische",
+        "lemma": "algorithmisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Probleme",
+        "lemma": "Problem",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Suchprobleme",
+        "lemma": "Suchproblem",
+        "pos": "noun",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„Wir [[werden|verbs/werden#3]] [[später|adverbs/später#1]] [[sehen|verbs/sehen#1]], daß man viele algorithmische [[Probleme|nouns/Problem]] als Suchprobleme [[auffassen|verbs/auffassen#2]] kann.“"
   },
   "01cf3d5e44": {
     "text": "„Entschuldigen Sie bitte, wie mein Wohnzimmer aussieht, aber wir tapezieren eben in der Küche.“ - „Wo gehobelt wird, fallen Späne!“",
@@ -16459,11 +17395,57 @@
   },
   "01d16c73c0": {
     "text": "In gigantischen Hallen [bei Oxford] schweißen Roboter Autos zusammen.",
-    "translation": null,
+    "translation": "In gigantic halls near Oxford, robots weld cars together.",
     "source": "wiktionary",
     "lemmas": [
       "schweißen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "gigantischen",
+        "lemma": "gigantisch",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Hallen",
+        "lemma": "Halle",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Oxford",
+        "lemma": "Oxford",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "schweißen",
+        "lemma": "schweißen",
+        "pos": "verb",
+        "gloss_hint": "weld"
+      },
+      {
+        "form": "Roboter",
+        "lemma": "Roboter",
+        "pos": "noun",
+        "gloss_hint": "robot"
+      },
+      {
+        "form": "Autos",
+        "lemma": "Auto",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "zusammen",
+        "lemma": "zusammen",
+        "pos": "adverb",
+        "gloss_hint": "together"
+      }
+    ],
+    "text_linked": "In [[gigantischen|adjectives/gigantisch]] [[Hallen|nouns/Halle]] [bei [[Oxford|nouns/Oxford_bunter]]] [[schweißen|verbs/schweißen#1]] [[Roboter|nouns/Roboter#1]] [[Autos|nouns/Auto_automobil]] [[zusammen|adverbs/zusammen#1]]."
   },
   "01d1b57de1": {
     "text": "In jeder Firma gibt es einen alten Hasen, der scheinbar alles und jeden kennt. Hoffentlich nicht nur einen, denn die alten Hasen können der Erfolgsfaktor sein.",
@@ -17129,11 +18111,33 @@
   },
   "01d9a87548": {
     "text": "Der Teich ist im Sommer ausgetrocknet.",
-    "translation": null,
+    "translation": "The pond dried up in summer.",
     "source": "wiktionary",
     "lemmas": [
       "austrocknen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Teich",
+        "lemma": "Teich",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Sommer",
+        "lemma": "Sommer",
+        "pos": "noun",
+        "gloss_hint": "summer"
+      },
+      {
+        "form": "ausgetrocknet",
+        "lemma": "austrocknen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Der [[Teich|nouns/Teich]] ist im [[Sommer|nouns/Sommer#1]] [[ausgetrocknet|verbs/austrocknen]]."
   },
   "01d9af6b8a": {
     "text": "[1655:] „Aber Jamaika wird zum Stachel im Fleisch des spanischen Imperiums. Dabei verbinden sich die Engländer mit den gesetz- und heimatlosen Vagabunden der sieben Weltmeere. Jamaika wird zum Zentrum der Piraten der Karibik […]“",
@@ -18713,11 +19717,27 @@
   },
   "01ea762afb": {
     "text": "Hey, Blanca, kannst du für mich mitschreiben?",
-    "translation": null,
+    "translation": "Hey, Blanca, can you take notes for me?",
     "source": "wiktionary",
     "lemmas": [
       "mitschreiben"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "kannst",
+        "lemma": "können",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "mitschreiben",
+        "lemma": "mitschreiben",
+        "pos": "verb",
+        "gloss_hint": "take notes"
+      }
+    ],
+    "text_linked": "Hey, Blanca, [[kannst|verbs/können_beherrschen]] du für mich [[mitschreiben|verbs/mitschreiben#1]]?"
   },
   "01eaaa65bd": {
     "text": "Matthias J. […] ist Busfahrer [in Afghanistan] und lenkte einen Bus in einem Konvoi, auf den ein Sprengstoffanschlag verübt wurde. Vier Bundeswehrsoldaten starben. Matthias J.: „[…] H. G., leitende Sanitäterin vor Ort, besorgte mir einen Fahrer, der mich ins Camp zurück brachte. Ich ging ins Stabsgebäude und wusch mir das ganze Blut vom Kopf und den Händen. Irgendwann kam Hauptmann B. zu mir und sagte bloß noch, mein Gott, hast Du ein Schwein gehabt.“",
@@ -18917,19 +19937,129 @@
   },
   "01eb85d7ad": {
     "text": "„Die beiden Biologinnen kartieren Trittspuren, nehmen Kotproben, schließlich dürfen sie einige Tiere mit Sendern ausstatten, um deren Bewegungen zu verfolgen.“",
-    "translation": null,
+    "translation": "The two biologists map footprints, collect fecal samples, and finally they are allowed to equip some animals with transmitters in order to track their movements.",
     "source": "wiktionary",
     "lemmas": [
       "ausstatten"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "beiden",
+        "lemma": "beide",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Biologinnen",
+        "lemma": "Biologin",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "kartieren",
+        "lemma": "kartieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Trittspuren",
+        "lemma": "Trittspuren",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "nehmen",
+        "lemma": "nehmen",
+        "pos": "verb",
+        "gloss_hint": "take"
+      },
+      {
+        "form": "Kotproben",
+        "lemma": "Kotprobe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "dürfen",
+        "lemma": "dürfen",
+        "pos": "verb",
+        "gloss_hint": "be allowed"
+      },
+      {
+        "form": "Tiere",
+        "lemma": "Tier",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "ausstatten",
+        "lemma": "ausstatten",
+        "pos": "verb",
+        "gloss_hint": "equip"
+      },
+      {
+        "form": "Sendern",
+        "lemma": "Sender",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Bewegungen",
+        "lemma": "Bewegung",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verfolgen",
+        "lemma": "verfolgen",
+        "pos": "verb",
+        "gloss_hint": "track"
+      }
+    ],
+    "text_linked": "„Die beiden Biologinnen kartieren Trittspuren, [[nehmen|verbs/nehmen#2]] Kotproben, schließlich [[dürfen|verbs/dürfen#1]] sie einige [[Tiere|nouns/Tier]] mit [[Sendern|nouns/Sender]] [[ausstatten|verbs/ausstatten#1]], um deren [[Bewegungen|nouns/Bewegung]] zu [[verfolgen|verbs/verfolgen#5]].“"
   },
   "01ec0c1283": {
     "text": "Das Mädchen stand dafür ein, dass sie die Fensterscheibe mit dem Stein zerstört hatte.",
-    "translation": null,
+    "translation": "The girl took responsibility for having destroyed the window pane with the stone.",
     "source": "wiktionary",
     "lemmas": [
       "einstehen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Mädchen",
+        "lemma": "Mädchen",
+        "pos": "noun",
+        "gloss_hint": "girl"
+      },
+      {
+        "form": "stand",
+        "lemma": "stehen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Fensterscheibe",
+        "lemma": "Fensterscheibe",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Stein",
+        "lemma": "Stein",
+        "pos": "noun",
+        "gloss_hint": "stone"
+      },
+      {
+        "form": "zerstört",
+        "lemma": "zerstören",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "Das [[Mädchen|nouns/Mädchen#1]] [[stand|verbs/stehen]] dafür ein, dass sie die Fensterscheibe mit dem [[Stein|nouns/Stein#2]] [[zerstört|verbs/zerstören]] hatte."
   },
   "01edf7f5d5": {
     "text": "„Demnach ist die Zahl der Gebiete, die von den größten Katzen der Erde bewohnt werden, seit 1995 um 40 Prozent zurückgegangen: Die Raubkatzen besiedeln jetzt nur noch sieben Prozent ihres ursprünglichen Verbreitungsgebiets, so der WWF-Mitarbeiter Roland Melisch.“",

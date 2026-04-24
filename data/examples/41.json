@@ -299,11 +299,51 @@
   },
   "4156850796": {
     "text": "„»Wenn man noch gar keine Erfahrung hat, kann man gucken, ob irgendwo ein Aushilfsjob meinetwegen angeboten wird, wo man dann angelernt wird. Da wird man angelernt für das, was in dem Restaurant gebraucht wird.«“",
-    "translation": null,
+    "translation": "\"If you have no experience yet, you can look for a temporary job somewhere, if you like, where you'll be trained. You'll be trained for what is needed in the restaurant.\"",
     "source": "wiktionary",
     "lemmas": [
       "anlernen"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Erfahrung",
+        "lemma": "Erfahrung",
+        "pos": "noun",
+        "gloss_hint": "experience (knowledge)"
+      },
+      {
+        "form": "gucken",
+        "lemma": "gucken",
+        "pos": "verb",
+        "gloss_hint": "look"
+      },
+      {
+        "form": "Aushilfsjob",
+        "lemma": "Aushilfsjob",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "angelernt",
+        "lemma": "anlernen",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Restaurant",
+        "lemma": "Restaurant",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "gebraucht",
+        "lemma": "brauchen",
+        "pos": "verb",
+        "gloss_hint": null
+      }
+    ],
+    "text_linked": "„»Wenn man noch gar keine [[Erfahrung|nouns/Erfahrung#1]] hat, kann man [[gucken|verbs/gucken#1]], ob irgendwo ein Aushilfsjob meinetwegen angeboten wird, wo man dann [[angelernt|verbs/anlernen]] wird. Da wird man angelernt für das, was in dem [[Restaurant|nouns/Restaurant]] [[gebraucht|verbs/brauchen]] wird.«“"
   },
   "4172550936": {
     "text": "„Es ist um ihn ein von andern deutschen Patriotismen wesentlich verschiedenes Ding, schon dadurch, daß er andere deutschen Patriotismen neben sich für durchaus unstatthaft hält und für Sünden gegen den heiligen Geist, die weder in diesem noch in jenem Leben Vergebung finden.“",
@@ -12520,11 +12560,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "be able to set boundaries",
     "source": "wiktionary",
     "lemmas": [
       "abgrenzen"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "418249451e": {
     "text": "„Pflegebedürftige in Heimen werden viel häufiger mit Medikamenten ruhiggestellt als Menschen, die zu Hause gepflegt werden.“",

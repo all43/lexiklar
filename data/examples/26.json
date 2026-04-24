@@ -275,11 +275,75 @@
   },
   "2652026575": {
     "text": "„Zurückblickend haben die Beschäftigten in dieser Branche [Einzelhandel] eine Menge Geld verloren durch den Tarifdruck und den Lohndruck nach unten.“",
-    "translation": null,
+    "translation": "\"Looking back, employees in this sector [retail] have lost a lot of money through wage pressure and downward pressure on wages.\"",
     "source": "wiktionary",
     "lemmas": [
       "zurückblicken"
-    ]
+    ],
+    "translation_model": "anthropic/claude-haiku-4-5-20251001",
+    "annotations": [
+      {
+        "form": "Zurückblickend",
+        "lemma": "zurückblickend",
+        "pos": "adjective",
+        "gloss_hint": null
+      },
+      {
+        "form": "Beschäftigten",
+        "lemma": "Beschäftigte",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Branche",
+        "lemma": "Branche",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Einzelhandel",
+        "lemma": "Einzelhandel",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Menge",
+        "lemma": "Menge",
+        "pos": "noun",
+        "gloss_hint": "quantity"
+      },
+      {
+        "form": "Geld",
+        "lemma": "Geld",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "verloren",
+        "lemma": "verlieren",
+        "pos": "verb",
+        "gloss_hint": null
+      },
+      {
+        "form": "Tarifdruck",
+        "lemma": "Tarifdruck",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "Lohndruck",
+        "lemma": "Lohndruck",
+        "pos": "noun",
+        "gloss_hint": null
+      },
+      {
+        "form": "unten",
+        "lemma": "unten",
+        "pos": "adverb",
+        "gloss_hint": "down"
+      }
+    ],
+    "text_linked": "„Zurückblickend haben die [[Beschäftigten|nouns/Beschäftigte]] in dieser [[Branche|nouns/Branche]] [Einzelhandel] eine [[Menge|nouns/Menge#1]] [[Geld|nouns/Geld]] [[verloren|verbs/verlieren]] durch den Tarifdruck und den Lohndruck nach [[unten|adverbs/unten#1]].“"
   },
   "2679065928": {
     "text": "„[Ludwig II.] habe wohl geahnt, dass er abgesetzt werden sollte.“",
@@ -6086,11 +6150,12 @@
     "type": "expression",
     "note": null,
     "synonyms": [],
-    "translation": null,
+    "translation": "Just imagine that illustrated!",
     "source": "wiktionary",
     "lemmas": [
       "illustrieren"
-    ]
+    ],
+    "translation_model": "openai/gpt-4.1"
   },
   "264353230e": {
     "text": "„‚Natürlich‘, sagte Haus-Mayer, ‚wennschon, dennschon‘, griff nach dem Netz und begann die Bücher auf dem Tisch zu stapeln.“",
