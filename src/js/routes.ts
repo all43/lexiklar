@@ -10,6 +10,7 @@ import CasesPage from "../pages/grammar/CasesPage.vue";
 import ModalVerbsPage from "../pages/grammar/ModalVerbsPage.vue";
 import ReflexivePage from "../pages/grammar/ReflexivePage.vue";
 import ConnectorsPage from "../pages/grammar/ConnectorsPage.vue";
+import TensesPage from "../pages/grammar/TensesPage.vue";
 
 interface Route {
   path: string;
@@ -71,6 +72,10 @@ const routes: Route[] = [
   {
     path: "/grammar/connectors/",
     component: ConnectorsPage,
+  },
+  {
+    path: "/grammar/tenses/",
+    component: TensesPage,
   },
 ];
 
