@@ -6,6 +6,20 @@
       <f7-list-item @click="openGrammar" link="#" :title="t('settings.grammarReference')" />
     </f7-list>
 
+    <f7-block-title>{{ t('settings.language') }}</f7-block-title>
+    <f7-list inset strong-ios outline-ios>
+      <f7-list-item
+        v-for="opt in LANG_OPTIONS"
+        :key="opt.value"
+        radio
+        radio-icon="end"
+        :title="t(opt.labelKey)"
+        name="language"
+        :checked="language === opt.value"
+        @change="setLanguage(opt.value)"
+      />
+    </f7-list>
+
     <f7-block-title>{{ t('settings.appearance') }}</f7-block-title>
     <f7-list inset strong-ios outline-ios>
       <f7-list-item
@@ -61,20 +75,6 @@
         name="search-bar-position"
         :checked="searchBarPosition === opt.value"
         @change="setSearchBarPosition(opt.value)"
-      />
-    </f7-list>
-
-    <f7-block-title>{{ t('settings.language') }}</f7-block-title>
-    <f7-list inset strong-ios outline-ios>
-      <f7-list-item
-        v-for="opt in LANG_OPTIONS"
-        :key="opt.value"
-        radio
-        radio-icon="end"
-        :title="t(opt.labelKey)"
-        name="language"
-        :checked="language === opt.value"
-        @change="setLanguage(opt.value)"
       />
     </f7-list>
 
