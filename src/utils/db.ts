@@ -16,6 +16,9 @@ import type { SearchResult, WordRow } from "../../types/search.js";
 import type { Word } from "../../types/word.js";
 import type { Example } from "../../types/example.js";
 import { initNativeDb, nativeQuery, nativeExecBatch, nativeClose, nativeDeleteDb, nativeGetDbPath } from "./db-native.js";
+import { SEARCH_RESULT_LIMIT, PHRASE_SEARCH_LIMIT, SUGGESTION_LIMIT, UNRANKED_FREQUENCY, LEVENSHTEIN_SHORT_THRESHOLD, LEVENSHTEIN_LONG_THRESHOLD, PHRASE_MIN_MATCHES, SQLITE_HEADER_SIZE } from "./db-constants.js";
+import { PHRASE_TERM_TTL_MS, UI_YIELD_DELAY_MS, BUILD_MARGIN_MS } from "./time-constants.js";
+import { DB_VERSION_FILE, BUNDLED_DB_FILE } from "./db-paths.js";
 
 const _isNative = Capacitor.isNativePlatform();
 
@@ -159,18 +162,16 @@ export async function cacheSize(): Promise<number | null> {
 const SQLITE_MAGIC = "SQLite format 3\0";
 
 function isValidSqlite(bytes: ArrayBuffer): boolean {
-  if (bytes.byteLength < 16) return false;
-  const header = new Uint8Array(bytes, 0, 16);
-  for (let i = 0; i < 16; i++) {
+  if (bytes.byteLength < SQLITE_HEADER_SIZE) return false;
+  const header = new Uint8Array(bytes, 0, SQLITE_HEADER_SIZE);
+  for (let i = 0; i < SQLITE_HEADER_SIZE; i++) {
     if (header[i] !== SQLITE_MAGIC.charCodeAt(i)) return false;
   }
   return true;
 }
 
 // ---- Update manifest URL ----
-// Permanent GitHub Release that always holds the latest manifest
-export const MANIFEST_URL =
-  "https://cdn.lexiklar.app/manifest.json";
+import { MANIFEST_URL } from "./app-constants.js";
 
 interface ManifestAsset { url: string; size: number; }
 interface Manifest {
@@ -187,7 +188,7 @@ interface Manifest {
 
 // In-memory manifest cache — avoids redundant fetches within a session (5-min TTL)
 let manifestCache: { data: Manifest; ts: number } | null = null;
-const MANIFEST_TTL = 5 * 60 * 1000;
+const MANIFEST_TTL = PHRASE_TERM_TTL_MS;
 
 async function fetchManifest(): Promise<Manifest> {
   const now = Date.now();
@@ -302,7 +303,7 @@ export async function initDb(): Promise<void> {
   if (import.meta.env.DEV) {
     // Dev server — DB is available as a local file.
     // Use db-version.txt for cache validation to avoid re-deserializing on every launch.
-    const versionResp = await fetch("/data/db-version.txt");
+    const versionResp = await fetch(DB_VERSION_FILE);
     const bundledVersion = (await versionResp.text()).trim();
     const cachedVersion = await cacheVersionRead();
 
@@ -310,7 +311,7 @@ export async function initDb(): Promise<void> {
       bytes = await cacheRead();
     }
     if (!bytes) {
-      const dbResp = await fetch("/data/lexiklar.db");
+      const dbResp = await fetch(BUNDLED_DB_FILE);
       bytes = await dbResp.arrayBuffer();
       // Cache for next time
       cacheWrite(bytes.slice(0)).then(() => cacheVersionWrite(bundledVersion));
@@ -446,8 +447,8 @@ export async function searchByLemma(q: string): Promise<SearchResult[]> {
      ORDER BY
        CASE WHEN lower(lemma) = lower(?) OR lemma_folded = ? THEN 0 ELSE 1 END,
        LENGTH(lemma),
-       CASE WHEN frequency IS NULL THEN 999999 ELSE frequency END
-     LIMIT 50`,
+       CASE WHEN frequency IS NULL THEN ${UNRANKED_FREQUENCY} ELSE frequency END
+     LIMIT ${SEARCH_RESULT_LIMIT}`,
     [q + "%", folded + "%", q, folded],
   );
   return rows.map(processSearchRow);
@@ -479,8 +480,8 @@ export async function searchByGlossEn(q: string): Promise<SearchResult[]> {
          WHEN w.id IN (SELECT word_id FROM en_terms WHERE term = ?) THEN 1
          ELSE 2
        END,
-       CASE WHEN w.frequency IS NULL THEN 999999 ELSE w.frequency END
-     LIMIT 50`,
+       CASE WHEN w.frequency IS NULL THEN ${UNRANKED_FREQUENCY} ELSE w.frequency END
+     LIMIT ${SEARCH_RESULT_LIMIT}`,
     [term + "%", glossPattern, term],
   );
   return rows.map(processSearchRow);
@@ -498,8 +499,8 @@ export async function searchByWordForm(q: string): Promise<SearchResult[]> {
      JOIN words w ON w.id = wf.word_id
      WHERE wf.form = ? COLLATE NOCASE
      ORDER BY
-       CASE WHEN w.frequency IS NULL THEN 999999 ELSE w.frequency END
-     LIMIT 50`,
+       CASE WHEN w.frequency IS NULL THEN ${UNRANKED_FREQUENCY} ELSE w.frequency END
+     LIMIT ${SEARCH_RESULT_LIMIT}`,
     [q.toLowerCase()],
   );
   return rows.map(processSearchRow);
@@ -566,16 +567,16 @@ export async function getAllWords(): Promise<SearchResult[]> {
  * Uses ' ' || lemma || ' ' to enforce word boundaries in LIKE patterns.
  */
 export async function searchPhrasesByWords(words: string[]): Promise<SearchResult[]> {
-  if (words.length < 2) return [];
+  if (words.length < PHRASE_MIN_MATCHES) return [];
   // Sum boolean matches — require at least 2 words to appear (whole-word boundary)
   const matchExprs = words.map(() => "((' ' || lower(lemma) || ' ') LIKE ? ESCAPE '\\')");
   const params = words.map(w => `% ${w.toLowerCase()} %`);
   const rows = await query(
     `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, acc_form, file, gloss_en
      FROM words
-     WHERE pos = 'PHRASE' AND (${matchExprs.join(" + ")}) >= 2
-     ORDER BY CASE WHEN frequency IS NULL THEN 999999 ELSE frequency END
-     LIMIT 10`,
+     WHERE pos = 'PHRASE' AND (${matchExprs.join(" + ")}) >= ${PHRASE_MIN_MATCHES}
+     ORDER BY CASE WHEN frequency IS NULL THEN ${UNRANKED_FREQUENCY} ELSE frequency END
+     LIMIT ${PHRASE_SEARCH_LIMIT}`,
     params,
   );
   return rows.map(processSearchRow);
@@ -620,7 +621,7 @@ export async function getSuggestions(q: string): Promise<SearchResult[]> {
 
   const qLower = q.toLowerCase();
   const qFolded = foldUmlauts(q);
-  const maxDist = q.length <= 3 ? 1 : 2;
+  const maxDist = q.length <= 3 ? LEVENSHTEIN_SHORT_THRESHOLD : LEVENSHTEIN_LONG_THRESHOLD;
   const scored: { row: Record<string, unknown>; dist: number }[] = [];
 
   for (const row of _allLemmas) {
@@ -635,10 +636,10 @@ export async function getSuggestions(q: string): Promise<SearchResult[]> {
 
   scored.sort((a, b) =>
     a.dist - b.dist
-    || ((a.row.frequency as number) ?? 999999) - ((b.row.frequency as number) ?? 999999),
+    || ((a.row.frequency as number) ?? UNRANKED_FREQUENCY) - ((b.row.frequency as number) ?? UNRANKED_FREQUENCY),
   );
 
-  return scored.slice(0, 3).map((s) => processSearchRow(s.row));
+  return scored.slice(0, SUGGESTION_LIMIT).map((s) => processSearchRow(s.row));
 }
 
 // ---- OTA Update API ----
@@ -695,7 +696,6 @@ export async function checkForUpdates(): Promise<UpdateInfo | null> {
 
     // Only offer update if manifest is genuinely newer. 30-min margin accounts
     // for concurrent CI builds where publish-data finishes after the native build.
-    const BUILD_MARGIN_MS = 30 * 60 * 1000;
     if (localBuiltAt && db.built_at) {
       const localTs = new Date(localBuiltAt).getTime();
       const remoteTs = new Date(db.built_at).getTime();
@@ -768,7 +768,7 @@ export async function applyUpdate(
       // Yield to UI before heavy work
       if (onApplying) {
         onApplying();
-        await new Promise((r) => setTimeout(r, 50));
+        await new Promise((r) => setTimeout(r, UI_YIELD_DELAY_MS));
       }
 
       if (_isNative) {
@@ -790,7 +790,7 @@ export async function applyUpdate(
 
       if (onApplying) {
         onApplying();
-        await new Promise((r) => setTimeout(r, 50));
+        await new Promise((r) => setTimeout(r, UI_YIELD_DELAY_MS));
       }
 
       // Close current connection, delete old DB, write new one
@@ -864,7 +864,7 @@ export async function applyUpdate(
 
       if (onApplying) {
         onApplying();
-        await new Promise((r) => setTimeout(r, 50));
+        await new Promise((r) => setTimeout(r, UI_YIELD_DELAY_MS));
       }
 
       // Read cached bytes back into worker (only ~232 MB in memory at a time)

@@ -33,6 +33,8 @@ import { computed, ref, watch } from "vue";
 import { pendingDbUpdate } from "../utils/db-update-state.js";
 import { applyUpdate } from "../utils/db.js";
 import { t } from "../js/i18n.js";
+import { BYTES_PER_KB, BYTES_PER_MB, FILE_SIZE_DECIMAL_PLACES } from "../utils/ui-constants.js";
+import { TOAST_AUTO_DISMISS_MS } from "../utils/time-constants.js";
 
 type State = "available" | "downloading" | "applying" | "done" | "error";
 
@@ -48,9 +50,9 @@ const visible = computed(() => {
 const sizeLabel = computed(() => {
   const bytes = pendingDbUpdate.value?.size;
   if (!bytes) return "";
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  if (bytes < BYTES_PER_KB) return `${bytes} B`;
+  if (bytes < BYTES_PER_MB) return `${(bytes / BYTES_PER_KB).toFixed(0)} KB`;
+  return `${(bytes / BYTES_PER_MB).toFixed(FILE_SIZE_DECIMAL_PLACES)} MB`;
 });
 
 // Reset state when a new update becomes available
@@ -75,7 +77,7 @@ async function applyNow() {
   if (result.ok) {
     state.value = "done";
     pendingDbUpdate.value = null;
-    setTimeout(() => { dismissed.value = true; }, 3000);
+    setTimeout(() => { dismissed.value = true; }, TOAST_AUTO_DISMISS_MS);
   } else {
     state.value = "error";
   }

@@ -36,6 +36,7 @@ import { App as CapApp, type URLOpenListenerEvent } from "@capacitor/app";
 import PwaUpdatePrompt from "./components/PwaUpdatePrompt.vue";
 import DbUpdatePrompt from "./components/DbUpdatePrompt.vue";
 import { searchQuery } from "./utils/search-state.js";
+import { APP_BASE_URL } from "./utils/app-constants.js";
 
 const isWeb = !Capacitor.isNativePlatform();
 
@@ -60,7 +61,7 @@ onMounted(() => {
   if (!isWeb) {
     CapApp.addListener("appUrlOpen", (event: URLOpenListenerEvent) => {
       let pathAndSearch: string;
-      if (event.url.startsWith("https://lexiklar.app")) {
+      if (event.url.startsWith(APP_BASE_URL)) {
         const u = new URL(event.url);
         pathAndSearch = u.pathname + u.search;
       } else {

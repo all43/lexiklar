@@ -38,11 +38,10 @@ import { ref, onMounted } from "vue";
 import { getRelatedWords } from "../utils/db.js";
 import { t } from "../js/i18n.js";
 import { getCached, setItem, SHOW_ARTICLES_KEY } from "../utils/storage.js";
+import { FAVORITES_KEY } from "../utils/storage-keys.js";
 import type { SearchResult } from "../../types/search.js";
 import WordListBadges from "../components/WordListBadges.vue";
 import { wordListTitle, wordListGlosses } from "../utils/word-list.js";
-
-const FAVORITES_KEY = "lexiklar_favorites";
 
 const words = ref<SearchResult[]>([]);
 const loading = ref(true);

@@ -413,6 +413,9 @@ import { submitReport } from "../utils/report.js";
 import { f7 } from "framework7-vue/bundle";
 import { t } from "../js/i18n.js";
 import { getCached, setItem, SHOW_GRAMMAR_TAGS_KEY } from "../utils/storage.js";
+import { RECENTS_KEY, COUNTS_KEY, PHRASE_TERMS_KEY } from "../utils/storage-keys.js";
+import { PHRASE_TOKEN_MIN_LENGTH } from "../utils/db-constants.js";
+import { SCROLL_MARGIN_OFFSET_PX } from "../utils/ui-constants.js";
 import type { Word, Sense, VerbWord, NounWord, AdjectiveWord } from "../../types/word.js";
 import type { Example } from "../../types/example.js";
 import type { SearchResult } from "../../types/search.js";
@@ -724,25 +727,25 @@ function removeFromHistory() {
           const { pos, file } = props.f7route.params as { pos: string; file: string };
           const fileKey = `${pos}/${file}`;
           try {
-            const recents: string[] = JSON.parse(getCached("lexiklar_recents") || "[]");
+            const recents: string[] = JSON.parse(getCached(RECENTS_KEY) || "[]");
             setItem(
-              "lexiklar_recents",
+              RECENTS_KEY,
               JSON.stringify(recents.filter((f) => f !== fileKey)),
             );
-            const counts: Record<string, number> = JSON.parse(getCached("lexiklar_view_counts") || "{}");
+            const counts: Record<string, number> = JSON.parse(getCached(COUNTS_KEY) || "{}");
             delete counts[fileKey];
-            setItem("lexiklar_view_counts", JSON.stringify(counts));
+            setItem(COUNTS_KEY, JSON.stringify(counts));
             // Remove lemma from phrase search terms
             const lemma = file.includes("_") ? file.split("_")[0] : file;
             try {
-              const raw = JSON.parse(getCached("lexiklar_phrase_terms") || "[]");
+              const raw = JSON.parse(getCached(PHRASE_TERMS_KEY) || "[]");
               const terms: { term: string; ts: number }[] =
                 (raw.length && typeof raw[0] === "string") ? [] : raw;
               const filtered2 = terms.filter(
                 (e: { term: string }) => e.term.toLowerCase() !== lemma.toLowerCase(),
               );
               if (filtered2.length !== terms.length) {
-                setItem("lexiklar_phrase_terms", JSON.stringify(filtered2));
+                setItem(PHRASE_TERMS_KEY, JSON.stringify(filtered2));
               }
             } catch { /* ignore */ }
             inHistory.value = false;
@@ -798,7 +801,7 @@ function scrollToSense(senseNumber: number) {
   const pageContent = el.closest(".page-content") as HTMLElement | null;
   if (pageContent) {
     const navbarHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--f7-navbar-height")) || 0;
-    const target = pageContent.scrollTop + el.getBoundingClientRect().top - navbarHeight - 16;
+    const target = pageContent.scrollTop + el.getBoundingClientRect().top - navbarHeight - SCROLL_MARGIN_OFFSET_PX;
     pageContent.scrollTo({ top: target, behavior: "smooth" });
   } else {
     el.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -959,7 +962,7 @@ onMounted(async () => {
         if (candidates.length === 1) {
           positiveCounterpart.value = candidates[0];
         } else if (candidates.length > 1) {
-          const recents: string[] = JSON.parse(getCached("lexiklar_recents") || "[]");
+          const recents: string[] = JSON.parse(getCached(RECENTS_KEY) || "[]");
           const best = candidates.reduce((a, b) => {
             const ai = recents.indexOf(a.file);
             const bi = recents.indexOf(b.file);
@@ -972,8 +975,6 @@ onMounted(async () => {
 
     if (word.value) {
       try {
-        const RECENTS_KEY = "lexiklar_recents";
-        const COUNTS_KEY = "lexiklar_view_counts";
         const fileKey = `${pos}/${file}`;
 
         const stored = getCached(RECENTS_KEY);
@@ -990,9 +991,8 @@ onMounted(async () => {
         setItem(COUNTS_KEY, JSON.stringify(counts));
 
         // Track visited word for phrase discovery (timestamped)
-        const PHRASE_TERMS_KEY = "lexiklar_phrase_terms";
         const lemma = file.includes("_") ? file.split("_")[0] : file;
-        if (lemma.length >= 3) {
+        if (lemma.length >= PHRASE_TOKEN_MIN_LENGTH) {
           try {
             const raw = JSON.parse(getCached(PHRASE_TERMS_KEY) || "[]");
             const terms: { term: string; ts: number }[] =

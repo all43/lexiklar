@@ -12,6 +12,7 @@
  */
 
 import { LexiklarSqlite } from "lexiklar-sqlite";
+import { DB_VERSION_FILE } from "./db-paths.js";
 
 const DB_FILE = "lexiklar.db";
 
@@ -28,7 +29,7 @@ export async function initNativeDb(skipBundledCheck = false): Promise<void> {
   // Check if bundled DB is newer than installed (skip when called after OTA update)
   if (!skipBundledCheck) {
     try {
-      const versionResp = await fetch("/data/db-version.txt");
+      const versionResp = await fetch(DB_VERSION_FILE);
       const bundledVersion = (await versionResp.text()).trim();
 
       const result = await LexiklarSqlite.query({

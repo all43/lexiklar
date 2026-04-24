@@ -158,6 +158,8 @@ import { Capacitor } from "@capacitor/core";
 import { getDbVersion, checkForUpdates, applyUpdate as applyDbUpdate, cacheClear, cacheSize, type UpdateInfo } from "../utils/db.js";
 import { dbReady, dbDownloadNeeded } from "../utils/db-update-state.js";
 import { pendingAppUpdate, checkAppUpdate, downloadAndApplyAppUpdate, reloadApp as liveReloadApp, type AppUpdateInfo } from "../utils/live-update.js";
+import { BYTES_PER_KB, BYTES_PER_MB, FILE_SIZE_DECIMAL_PLACES } from "../utils/ui-constants.js";
+import { TOAST_AUTO_DISMISS_MS } from "../utils/time-constants.js";
 
 function openGrammar() {
   f7.tab.show("#tab-search");
@@ -220,9 +222,9 @@ async function loadDbVersion() {
 
 function formatSize(bytes: number | undefined | null): string {
   if (!bytes) return "";
-  if (bytes < 1024) return `${bytes} B`;
-  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  if (bytes < BYTES_PER_KB) return `${bytes} B`;
+  if (bytes < BYTES_PER_MB) return `${(bytes / BYTES_PER_KB).toFixed(0)} KB`;
+  return `${(bytes / BYTES_PER_MB).toFixed(FILE_SIZE_DECIMAL_PLACES)} MB`;
 }
 
 async function checkUpdates() {
@@ -238,8 +240,8 @@ async function checkUpdates() {
     [dbResult, appResult] = results;
   } catch {
     updateState.value = "error";
-    f7.toast.create({ text: t("settings.updateFailed"), closeTimeout: 3000, position: "center" }).open();
-    setTimeout(() => { updateState.value = "idle"; }, 3000);
+    f7.toast.create({ text: t("settings.updateFailed"), closeTimeout: TOAST_AUTO_DISMISS_MS, position: "center" }).open();
+    setTimeout(() => { updateState.value = "idle"; }, TOAST_AUTO_DISMISS_MS);
     return;
   }
 
@@ -253,8 +255,8 @@ async function checkUpdates() {
   if (!dbResult) {
     if (!appResult?.available) {
       updateState.value = "error";
-      f7.toast.create({ text: t("settings.updateFailed"), closeTimeout: 3000, position: "center" }).open();
-      setTimeout(() => { updateState.value = "idle"; }, 3000);
+      f7.toast.create({ text: t("settings.updateFailed"), closeTimeout: TOAST_AUTO_DISMISS_MS, position: "center" }).open();
+      setTimeout(() => { updateState.value = "idle"; }, TOAST_AUTO_DISMISS_MS);
     } else {
       updateState.value = "idle";
     }
@@ -262,7 +264,7 @@ async function checkUpdates() {
   }
   if (!dbResult.available) {
     updateState.value = appResult?.available ? "idle" : "up-to-date";
-    if (!appResult?.available) setTimeout(() => { updateState.value = "idle"; }, 3000);
+    if (!appResult?.available) setTimeout(() => { updateState.value = "idle"; }, TOAST_AUTO_DISMISS_MS);
     return;
   }
   updateInfo.value = dbResult;
@@ -285,8 +287,8 @@ async function applyUpdate() {
     f7.toast.create({ text: t("settings.updateDone"), closeTimeout: 2000, position: "center" }).open();
   } else {
     updateState.value = "error";
-    f7.toast.create({ text: `${t("settings.updateFailed")}: ${result.error}`, closeTimeout: 3000, position: "center" }).open();
-    setTimeout(() => { updateState.value = "idle"; }, 3000);
+    f7.toast.create({ text: `${t("settings.updateFailed")}: ${result.error}`, closeTimeout: TOAST_AUTO_DISMISS_MS, position: "center" }).open();
+    setTimeout(() => { updateState.value = "idle"; }, TOAST_AUTO_DISMISS_MS);
   }
 }
 
@@ -299,8 +301,8 @@ async function downloadAppUpdate() {
     appUpdateState.value = "ready";
   } else {
     appUpdateState.value = "error";
-    f7.toast.create({ text: `${t("settings.updateFailed")}: ${result.error}`, closeTimeout: 3000, position: "center" }).open();
-    setTimeout(() => { appUpdateState.value = "idle"; }, 3000);
+    f7.toast.create({ text: `${t("settings.updateFailed")}: ${result.error}`, closeTimeout: TOAST_AUTO_DISMISS_MS, position: "center" }).open();
+    setTimeout(() => { appUpdateState.value = "idle"; }, TOAST_AUTO_DISMISS_MS);
   }
 }
 

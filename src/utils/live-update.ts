@@ -11,7 +11,7 @@
 import { Capacitor } from "@capacitor/core";
 import { ref } from "vue";
 
-import { MANIFEST_URL } from "./db.js";
+import { MANIFEST_URL } from "./app-constants.js";
 
 /**
  * Compare two semver strings (e.g. "0.9.2", "0.9.3").

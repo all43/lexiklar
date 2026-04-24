@@ -192,6 +192,10 @@ import { t } from "../js/i18n.js";
 import { submitReport } from "../utils/report.js";
 import { isIOS26Plus } from "../utils/device.js";
 import { getCached, setItem, SHOW_ARTICLES_KEY, SEARCH_BAR_POSITION_KEY, type SearchBarPosition } from "../utils/storage.js";
+import { RECENTS_KEY, COUNTS_KEY, PHRASE_TERMS_KEY } from "../utils/storage-keys.js";
+import { PHRASE_TERM_TTL_MS, SEARCH_DEBOUNCE_MS } from "../utils/time-constants.js";
+import { UNRANKED_FREQUENCY, PHRASE_TOKEN_MIN_LENGTH } from "../utils/db-constants.js";
+import { BYTES_PER_MB } from "../utils/ui-constants.js";
 import type { SearchResult } from "../../types/search.js";
 import WordListBadges from "../components/WordListBadges.vue";
 import { wordListTitle, wordListGlosses, stripArticle, isArticle } from "../utils/word-list.js";
@@ -227,12 +231,9 @@ interface PhraseTerm {
   ts: number;
 }
 
-const RECENTS_KEY = "lexiklar_recents";
-const COUNTS_KEY = "lexiklar_view_counts";
-const PHRASE_TERMS_KEY = "lexiklar_phrase_terms";
 const HOME_FREQ_COUNT = 5;
 const HOME_RECENT_COUNT = 5;
-const PHRASE_TERM_MAX_AGE_MS = 5 * 60 * 1000;
+const PHRASE_TERM_MAX_AGE_MS = PHRASE_TERM_TTL_MS;
 
 function loadPhraseTerms(): PhraseTerm[] {
   try {
@@ -257,7 +258,6 @@ const loading = ref(true);
 const dbDownloading = ref(false);
 const dbDownloadProgress = ref(0);
 const dbDownloadError = ref("");
-const SEARCH_DEBOUNCE_MS = 300;
 let debounceTimer: ReturnType<typeof setTimeout> | null = null;
 let searchGen = 0;
 const showArticles = ref(getCached(SHOW_ARTICLES_KEY) !== "0");
@@ -268,7 +268,7 @@ const isDbReady = computed(() => dbReady.value);
 const isDbDownloadNeeded = computed(() => dbDownloadNeeded.value);
 const isSwUpdatePending = computed(() => swUpdatePending.value);
 const dbDownloadSizeLabel = computed(() =>
-  dbDownloadSize.value ? `${(dbDownloadSize.value / (1024 * 1024)).toFixed(0)} MB` : "~50 MB",
+  dbDownloadSize.value ? `${(dbDownloadSize.value / BYTES_PER_MB).toFixed(0)} MB` : "~50 MB",
 );
 
 const searchBarMode = computed((): "subnavbar" | "bottom" => {
@@ -538,7 +538,7 @@ async function search(q: string, gen: number) {
   }
 
   const exactMerged = [...lemmaExact, ...enExact]
-    .sort((a, b) => (a.frequency ?? 999999) - (b.frequency ?? 999999));
+    .sort((a, b) => (a.frequency ?? UNRANKED_FREQUENCY) - (b.frequency ?? UNRANKED_FREQUENCY));
   for (const r of exactMerged) {
     if (!seen.has(r.file)) {
       seen.add(r.file);
@@ -609,7 +609,7 @@ async function findPhraseMatches(q: string, alreadySeen: Set<string>) {
   matchedTerms.value = [];
   phrasesExpanded.value = false;
 
-  const queryTokens = q.split(/[\s,]+/).filter(t => t.length >= 3);
+  const queryTokens = q.split(/[\s,]+/).filter(t => t.length >= PHRASE_TOKEN_MIN_LENGTH);
 
   const seen = new Set<string>();
   const terms: string[] = [];
