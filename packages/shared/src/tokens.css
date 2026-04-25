@@ -1,0 +1,72 @@
+/*
+ * Lexiklar shared design tokens
+ *
+ * Provides CSS custom properties used by grammar components.
+ * In the main app, these are set by app.css + Framework7's runtime.
+ * In the admin (no F7), this file provides sensible defaults.
+ */
+
+:root {
+  /* ── Gender colors (Material 700-level, WCAG AA ≥5:1 on white) ── */
+  --color-gender-m: #1976d2;   /* blue-700  — masculine */
+  --color-gender-f: #c2185b;   /* pink-700  — feminine */
+  --color-gender-n: #388e3c;   /* green-700 — neuter */
+
+  /* ── Grammar highlighting ── */
+  --color-rule-match: #4caf50;     /* green — rule confirmed */
+  --color-rule-exception: #ff9800; /* orange — rule exception */
+  --color-vowel-change: #d32f2f;   /* red — umlaut / vowel shift */
+
+  /* ── Sense tag colors ── */
+  --color-tag-register:    #e65100;
+  --color-tag-register-bg: rgba(255, 152, 0, 0.12);
+  --color-tag-dialect:     #1565c0;
+  --color-tag-dialect-bg:  rgba(33, 150, 243, 0.10);
+  --color-tag-domain:      #6a1b9a;
+  --color-tag-domain-bg:   rgba(156, 39, 176, 0.10);
+  --color-tag-grammar-bg:  rgba(0, 0, 0, 0.06);
+
+  /* ── F7 defaults (values from Framework7 Material theme) ── */
+  --f7-theme-color: #2196f3;
+  --f7-page-bg-color: #fff;
+  --f7-block-bg-color: #f4f4f4;
+  --f7-block-padding-horizontal: 16px;
+  --f7-list-item-title-font-size: 17px;
+  --f7-list-item-title-text-color: #000;
+  --f7-list-item-footer-font-size: 12px;
+  --f7-list-item-footer-text-color: #8e8e93;
+  --f7-list-item-subtitle-text-color: #6d6d72;
+  --f7-list-item-border-color: #e0e0e0;
+}
+
+/* ── Dark mode ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-gender-m: #90caf9;   /* blue-200 */
+    --color-gender-f: #f48fb1;   /* pink-200 */
+    --color-gender-n: #a5d6a7;   /* green-200 */
+
+    --color-vowel-change: #ef5350;
+
+    --color-tag-register:    #ffb74d;
+    --color-tag-register-bg: rgba(255, 152, 0, 0.18);
+    --color-tag-dialect:     #64b5f6;
+    --color-tag-dialect-bg:  rgba(33, 150, 243, 0.18);
+    --color-tag-domain:      #ce93d8;
+    --color-tag-domain-bg:   rgba(156, 39, 176, 0.18);
+    --color-tag-grammar-bg:  rgba(255, 255, 255, 0.10);
+
+    --f7-theme-color: #2196f3;
+    --f7-page-bg-color: #1c1c1e;
+    --f7-block-bg-color: #2c2c2e;
+    --f7-list-item-title-text-color: #fff;
+    --f7-list-item-footer-text-color: #8e8e93;
+    --f7-list-item-subtitle-text-color: #ababab;
+    --f7-list-item-border-color: #3a3a3c;
+  }
+}
+
+/* ── Utility classes (same as app.css) ── */
+.gender-m { color: var(--color-gender-m) !important; }
+.gender-f { color: var(--color-gender-f) !important; }
+.gender-n { color: var(--color-gender-n) !important; }
