@@ -86,23 +86,37 @@ A minimal Capacitor plugin using platform-native SQLite. No encryption, no exter
 
 ## Grammar Table Color System
 
-Declension tables use a consistent color system defined as CSS custom properties in `src/css/app.css` (`:root` scope), with dark mode overrides under `.dark`:
+Declension tables use a consistent color system defined as CSS custom properties in `src/css/app.css` (`:root` scope), with dark mode overrides under `.dark` and high-contrast overrides under `.high-contrast`:
 
-| Token | Light | Dark | Usage |
-|---|---|---|---|
-| `--color-gender-m` | `#2196f3` (blue) | — | Masculine articles (der/den/dem/des) |
-| `--color-gender-f` | `#e91e63` (pink) | — | Feminine articles (die/der) |
-| `--color-gender-n` | `#4caf50` (green) | — | Neuter articles (das/dem/des) |
-| `--color-rule-match` | `#4caf50` (green) | `#66bb6a` | Rule badges (n-Deklination), n-declension endings |
-| `--color-rule-exception` | `#ff9800` (orange) | `#ffa726` | Gender rule exception badges |
-| `--color-vowel-change` | `#d32f2f` (red) | `#ef5350` | Umlaut vowel changes in plural forms |
-| `var(--f7-theme-color)` | — | — | Adjective declension endings |
-| `--color-tag-register` / `-bg` | amber | lighter amber | Sense register tags (informal, fig., dated…) |
-| `--color-tag-dialect` / `-bg` | blue | lighter blue | Sense dialect tags (Austrian, Swiss, regional…) |
-| `--color-tag-domain` / `-bg` | purple | lighter purple | Sense domain tags (physics, law, finance…) |
-| `--color-tag-grammar-bg` | grey `rgba(0,0,0,.06)` | white tint | Sense grammar tags (transitive, reflexive…) |
+| Token | Light (700-level) | Dark (200-level) | High contrast light | High contrast dark | Usage |
+|---|---|---|---|---|---|
+| `--color-gender-m` | `#1976d2` (blue-700) | `#90caf9` (blue-200) | `#0d47a1` (blue-900) | `#bbdefb` (blue-100) | Masculine articles |
+| `--color-gender-f` | `#c2185b` (pink-700) | `#f48fb1` (pink-200) | `#880e4f` (pink-900) | `#fce4ec` (pink-100) | Feminine articles |
+| `--color-gender-n` | `#388e3c` (green-700) | `#a5d6a7` (green-200) | `#1b5e20` (green-900) | `#c8e6c9` (green-100) | Neuter articles |
+| `--color-rule-match` | `#4caf50` (green) | `#66bb6a` | — | — | Rule badges (n-Deklination), n-declension endings |
+| `--color-rule-exception` | `#ff9800` (orange) | `#ffa726` | — | — | Gender rule exception badges |
+| `--color-vowel-change` | `#d32f2f` (red) | `#ef5350` | — | — | Umlaut vowel changes in plural forms |
+| `var(--f7-theme-color)` | — | — | — | — | Adjective declension endings |
+| `--color-tag-register` / `-bg` | amber | lighter amber | — | — | Sense register tags (informal, fig., dated…) |
+| `--color-tag-dialect` / `-bg` | blue | lighter blue | — | — | Sense dialect tags (Austrian, Swiss, regional…) |
+| `--color-tag-domain` / `-bg` | purple | lighter purple | — | — | Sense domain tags (physics, law, finance…) |
+| `--color-tag-grammar-bg` | grey `rgba(0,0,0,.06)` | white tint | — | — | Sense grammar tags (transitive, reflexive…) |
+
+The gender colors were updated to Material 700-level in light mode (WCAG AA pass ≥5:1 on white), Material 200-level in dark mode, and Material 900/100 for high-contrast. The previous `.decl-article { opacity: 0.8 }` rule was removed as it compounded contrast issues.
 
 Global classes `.gender-m`, `.gender-f`, `.gender-n` use `!important` to override component-level `color` rules (e.g. `.decl-num-header`).
+
+### High-contrast mode (`HIGH_CONTRAST_KEY = "lexiklar_high_contrast"`)
+
+A user-controlled toggle in Settings (under the theme picker) applies `.high-contrast` to `<html>`. This activates 900/100-level gender colors, bold badge font-weight, F7 Material "vibrant" color scheme, and bolder article font-weight. `applyHighContrast(on: boolean)` in `src/js/theme.ts` toggles the class and dynamically switches F7's scheme:
+
+```ts
+const app = f7 as any;
+app.mdColorScheme = on ? "vibrant" : "default";
+app.setColors(); // reads app.colors + app.mdColorScheme — takes NO arguments
+```
+
+`initTheme()` also calls `applyHighContrast()` on startup. The `@media (prefers-contrast: more)` query applies the same 900/100-level values automatically for OS-level high-contrast preference.
 
 ### Adjective declension highlighting (`AdjectiveDeclension.vue`)
 - **Condensed rules view**: articles colored by gender; in the no-article (strong) section, collocation nouns colored by gender instead
