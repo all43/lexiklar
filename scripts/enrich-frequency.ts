@@ -188,9 +188,22 @@ function enrichFiles(newsMap: FPMMap, wikiMap: FPMMap, subtlexMap: FPMMap, opens
   let unchanged = 0;
 
   for (const { filePath, data, combined } of allEntries) {
+    const isManual = (data as { _meta?: { source?: string } })._meta?.source === "manual";
+    if (isManual) {
+      enriched++; // manual words: author-set zipf is preserved regardless of corpus presence
+      continue;
+    }
+
     let changed = false;
 
-    if (combined !== null) {
+    const lockedZipf = (data as { _overrides?: { zipf?: number } })._overrides?.zipf;
+    if (lockedZipf != null) {
+      if (data.zipf !== lockedZipf) {
+        data.zipf = lockedZipf;
+        changed = true;
+      }
+      enriched++;
+    } else if (combined !== null) {
       const rounded = Math.round(combined * 100) / 100; // 2 decimal places
       if (data.zipf !== rounded) {
         data.zipf = rounded;
@@ -198,11 +211,6 @@ function enrichFiles(newsMap: FPMMap, wikiMap: FPMMap, subtlexMap: FPMMap, opens
       }
       enriched++;
     } else {
-      const isManual = (data as { _meta?: { source?: string } })._meta?.source === "manual";
-      if (isManual) {
-        enriched++; // manual words count as enriched (zipf is author-set)
-        continue;
-      }
       if (data.zipf != null) {
         delete data.zipf;
         changed = true;

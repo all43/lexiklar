@@ -139,13 +139,24 @@ export function toZipf(fpm: number | null): number | null {
 }
 
 /** Look up a word in a corpus FPM map.
- *  Tries: original → lowercase → title-case. */
+ *  Tries: original → lowercase → title-case → segment-aware title-case (for hyphenated compounds). */
 export function lookupFPM(map: FPMMap, word: string): number | null {
   return (
     map.get(word) ??
     map.get(word.toLowerCase()) ??
     map.get(word[0].toUpperCase() + word.slice(1).toLowerCase()) ??
-    null
+    (word.includes("-")
+      ? map.get(
+          word
+            .split("-")
+            .map((p, i) =>
+              i === 0
+                ? (p[0]?.toUpperCase() ?? "") + p.slice(1).toLowerCase()
+                : (p[0]?.toUpperCase() ?? "") + p.slice(1)
+            )
+            .join("-")
+        ) ?? null
+      : null)
   );
 }
 

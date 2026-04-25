@@ -81,6 +81,8 @@ export interface WordOverrides {
   confusable_pairs?: ConfusablePairs;
   /** Curated antonym for adjective comparison scale (promoted to top-level by build-index) */
   antonym?: WordAntonym;
+  /** Locked Zipf score — enrich-frequency will use this value instead of corpus lookup */
+  zipf?: number;
   /** Any other field overrides (applied by transform's mergeWithExisting) */
   [key: string]: unknown;
 }
