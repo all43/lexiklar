@@ -43,8 +43,8 @@
       <!-- Header: word + pronunciation -->
       <f7-block strong>
         <h1 class="no-margin">
-          <span v-if="word.plural_dominant" class="gender-f">{{ 'die ' }}</span>
-          <span v-else-if="word.article" :class="`gender-${word.gender?.toLowerCase()}`">{{ word.article + ' ' }}</span>
+          <span v-if="word.plural_dominant" class="gender-f" :aria-label="`Femininum: die`">{{ 'die ' }}</span>
+          <span v-else-if="word.article" :class="`gender-${word.gender?.toLowerCase()}`" :aria-label="`${genderLabel(word.gender)}: ${word.article}`">{{ word.article + ' ' }}</span>
           <!-- Separable verb: show prefix|stem -->
           <template v-if="word.separable && word.prefix">
             <span class="verb-prefix">{{ word.prefix }}</span><verb-sep-pipe />{{ word.word.slice(word.prefix.length) }}
@@ -55,7 +55,7 @@
         </h1>
         <p v-if="word.plural_dominant" style="margin: 2px 0 0; font-size: 0.85em; color: var(--f7-list-item-footer-text-color);">
           {{ t('word.singular') }}
-          <span :class="`gender-${word.gender?.toLowerCase()}`">{{ word.article }}</span>
+          <span :class="`gender-${word.gender?.toLowerCase()}`" :aria-label="`${genderLabel(word.gender)}: ${word.article}`">{{ word.article }}</span>
           {{ word.word }}
         </p>
         <p v-if="word.sounds && word.sounds.length" class="ipa">
@@ -492,6 +492,13 @@ const GRAMMAR_TAGS  = new Set(["transitive", "intransitive", "reflexive", "imper
 const DIALECT_TAGS  = new Set(["Austrian German", "Swiss Standard German", "regional", "South German", "North German", "Bavarian", "Swabian"]);
 const DOMAIN_TAGS   = new Set(["physics", "geography", "geometry", "finance", "law", "military"]);
 const REGISTER_TAGS = new Set(["colloquial", "figurative", "outdated", "archaic", "derogatory", "literary", "rare", "historical", "humorous", "gehoben", "impolite", "jargon", "vulgar", "formal", "poetic", "slang", "casual"]);
+
+function genderLabel(g: string | null | undefined): string {
+  if (g === "M") return "Maskulinum";
+  if (g === "F") return "Femininum";
+  if (g === "N") return "Neutrum";
+  return g ?? "";
+}
 
 function tagKey(tag: string): string {
   return "tag." + tag.toLowerCase().replace(/ /g, "_");

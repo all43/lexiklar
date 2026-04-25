@@ -3,19 +3,19 @@
     <template v-if="isPersonalPronoun">
       <div class="decl-table-wrap pronoun-decl-wrap scroll-fade" :style="tableStyle">
       <div class="decl-table-scroll" ref="tableEl">
-      <table class="decl-table pronoun-decl-table">
+      <table class="decl-table pronoun-decl-table" aria-label="Personalpronomen">
         <thead>
           <tr>
-            <th class="decl-case-header pronoun-label-header"></th>
-            <th class="decl-num-header">Nom.</th>
-            <th class="decl-num-header">Akk.</th>
-            <th class="decl-num-header">Dat.</th>
-            <th class="decl-num-header">Gen.</th>
+            <th class="decl-case-header pronoun-label-header" scope="col"></th>
+            <th class="decl-num-header" scope="col">Nom.</th>
+            <th class="decl-num-header" scope="col">Akk.</th>
+            <th class="decl-num-header" scope="col">Dat.</th>
+            <th class="decl-num-header" scope="col">Gen.</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="row in PERSONAL_PRONOUNS" :key="row.label">
-            <td class="decl-case pronoun-label">{{ row.label }}</td>
+            <th class="decl-case pronoun-label" scope="row">{{ row.label }}</th>
             <td
               v-for="col in CASES"
               :key="col"

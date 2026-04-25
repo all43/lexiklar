@@ -30,17 +30,17 @@
     <!-- Declension table -->
     <div v-if="word.case_forms" class="decl-table-wrap scroll-fade" :style="tableStyle">
     <div class="decl-table-scroll" ref="tableEl">
-    <table class="decl-table">
+    <table class="decl-table" aria-label="Deklination">
       <thead>
         <tr>
-          <th class="decl-case-header"></th>
-          <th v-if="hasSingular" class="decl-num-header" :class="{ 'decl-num-header--dim': word.is_plural_only }">{{ t('noun.singular') }}</th>
-          <th class="decl-num-header" :class="{ 'decl-num-header--dim': word.is_singular_only }">{{ t('noun.plural') }}</th>
+          <th class="decl-case-header" scope="col"></th>
+          <th v-if="hasSingular" class="decl-num-header" scope="col" :class="{ 'decl-num-header--dim': word.is_plural_only }">{{ t('noun.singular') }}</th>
+          <th class="decl-num-header" scope="col" :class="{ 'decl-num-header--dim': word.is_singular_only }">{{ t('noun.plural') }}</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="c in cases" :key="c.key">
-          <td class="decl-case">{{ c.label }}</td>
+          <th class="decl-case" scope="row">{{ c.label }}</th>
           <td v-if="hasSingular" class="decl-form" :class="{ 'decl-form--dim': word.is_plural_only }">
             <template v-if="shouldStack('singular', c.key)">
               <div v-for="form in allForms('singular', c.key)" :key="form" class="decl-form-row">

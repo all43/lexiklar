@@ -1,11 +1,18 @@
 <template>
   <span class="list-item-pos">{{ pos }}</span>
   <f7-badge v-if="pluralDominant" color="orange" class="list-item-badge">Pl.</f7-badge>
-  <f7-badge v-else-if="gender" :color="genderColor(gender)" class="list-item-badge">{{ gender }}</f7-badge>
+  <f7-badge v-else-if="gender" :color="genderColor(gender)" class="list-item-badge" :aria-label="genderLabel(gender)">{{ gender }}</f7-badge>
 </template>
 
 <script setup lang="ts">
 import { genderColor } from "../utils/word-list.js";
+
+function genderLabel(g: string | null | undefined): string {
+  if (g === "M") return "Maskulinum";
+  if (g === "F") return "Femininum";
+  if (g === "N") return "Neutrum";
+  return g ?? "";
+}
 
 defineProps<{
   pos: string;

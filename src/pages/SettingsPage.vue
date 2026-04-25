@@ -34,6 +34,16 @@
       />
     </f7-list>
     <f7-list inset strong-ios outline-ios>
+      <f7-list-item :title="t('settings.highContrast')">
+        <template #after>
+          <f7-toggle :checked="highContrast" @toggle:change="setHighContrast" />
+        </template>
+      </f7-list-item>
+    </f7-list>
+    <f7-block-footer class="padding-horizontal">
+      {{ t('settings.highContrastFooter') }}
+    </f7-block-footer>
+    <f7-list inset strong-ios outline-ios>
       <f7-list-item :title="t('settings.showArticles')">
         <template #after>
           <f7-toggle :checked="showArticles" @toggle:change="setShowArticles" />
@@ -151,7 +161,7 @@
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from "vue";
 import { f7 } from "framework7-vue";
-import { applyTheme, THEME_KEY, type ThemeValue } from "../js/theme.js";
+import { applyTheme, applyHighContrast, THEME_KEY, HIGH_CONTRAST_KEY, type ThemeValue } from "../js/theme.js";
 import { t, setLocale, getLocale, LANGUAGE_KEY, type LanguagePreference } from "../js/i18n.js";
 import { getCached, setItem, removeItem, SHOW_ARTICLES_KEY, CONDENSED_GRAMMAR_KEY, SEARCH_BAR_POSITION_KEY, AUTO_CHECK_UPDATES_KEY, SHOW_GRAMMAR_TAGS_KEY, type SearchBarPosition } from "../utils/storage.js";
 import { Capacitor } from "@capacitor/core";
@@ -192,6 +202,7 @@ const searchBarPosition = ref<SearchBarPosition>((getCached(SEARCH_BAR_POSITION_
 const showArticles = ref(getCached(SHOW_ARTICLES_KEY) !== "0");
 const condensedGrammar = ref(getCached(CONDENSED_GRAMMAR_KEY) === "1");
 const showGrammarTags = ref(getCached(SHOW_GRAMMAR_TAGS_KEY) === "1");
+const highContrast = ref(getCached(HIGH_CONTRAST_KEY) === "true");
 const autoCheckUpdates = ref(getCached(AUTO_CHECK_UPDATES_KEY) !== "0");
 const dbVersion = ref<string | null>(null);
 const dbBuiltAt = ref<string | null>(null);
@@ -334,6 +345,12 @@ function setCondensedGrammar(value: boolean) {
 function setShowGrammarTags(value: boolean) {
   showGrammarTags.value = value;
   setItem(SHOW_GRAMMAR_TAGS_KEY, value ? "1" : "0");
+}
+
+function setHighContrast(value: boolean) {
+  highContrast.value = value;
+  setItem(HIGH_CONTRAST_KEY, String(value));
+  applyHighContrast(value);
 }
 
 function setSearchBarPosition(value: SearchBarPosition) {

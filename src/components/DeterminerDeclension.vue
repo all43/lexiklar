@@ -1,5 +1,5 @@
 <template>
-  <div v-if="paradigm" class="det-declension">
+  <div v-if="paradigm" class="det-declension" role="region" aria-label="Deklination">
     <div v-for="c in CASES" :key="c.key" class="det-cond-section">
       <div class="det-cond-case-label">{{ c.label }}</div>
       <div class="det-cond-examples">

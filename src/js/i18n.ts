@@ -113,6 +113,8 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "settings.condensedGrammarFooter": "Replaces the full declension grid with grouped rules and examples showing why each ending is used.",
     "settings.showGrammarTags": "Show grammar labels",
     "settings.showGrammarTagsFooter": "Shows transitive, intransitive, reflexive, and impersonal labels next to verb meanings.",
+    "settings.highContrast": "High contrast",
+    "settings.highContrastFooter": "Enables vibrant theme colors and bolder, darker articles (der/die/das) for better readability.",
 
     // Sense tags
     "tag.colloquial":             "informal",
@@ -471,6 +473,8 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "settings.condensedGrammarFooter": "Ersetzt die vollst\u00E4ndige Deklinationstabelle durch gruppierte Regeln mit Beispielen.",
     "settings.showGrammarTags": "Grammatikmarkierungen anzeigen",
     "settings.showGrammarTagsFooter": "Zeigt transitiv, intransitiv, reflexiv und unpersönlich neben Verbebedeutungen.",
+    "settings.highContrast": "Hoher Kontrast",
+    "settings.highContrastFooter": "Aktiviert lebhafte Themenfarben und fettere, dunklere Artikel (der/die/das) für bessere Lesbarkeit.",
 
     // Bedeutungsmarkierungen
     "tag.colloquial":             "umgangsspr.",

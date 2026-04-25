@@ -201,19 +201,19 @@
 
         <div class="decl-table-wrap adj-decl-wrap scroll-fade" :style="tableStyle">
         <div class="decl-table-scroll" ref="tableEl">
-        <table class="decl-table adj-decl-table">
+        <table class="decl-table adj-decl-table" aria-label="Adjektivdeklination">
           <thead>
             <tr>
-              <th class="decl-case-header"></th>
-              <th class="decl-num-header gender-m">M</th>
-              <th class="decl-num-header gender-f">F</th>
-              <th class="decl-num-header gender-n">N</th>
-              <th class="decl-num-header">Pl.</th>
+              <th class="decl-case-header" scope="col"></th>
+              <th class="decl-num-header gender-m" scope="col">M</th>
+              <th class="decl-num-header gender-f" scope="col">F</th>
+              <th class="decl-num-header gender-n" scope="col">N</th>
+              <th class="decl-num-header" scope="col">Pl.</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="c in CASES" :key="c.key">
-              <td class="decl-case">{{ c.label }}</td>
+              <th class="decl-case" scope="row">{{ c.label }}</th>
               <td v-for="g in GENDERS" :key="g" class="decl-form">
                 <template v-if="word.declension_regular">
                   <span class="decl-stem">{{ stem }}</span><span class="decl-ending">{{ getEnding(activeTab, g, c.key) }}</span>
