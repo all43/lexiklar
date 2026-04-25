@@ -5,11 +5,12 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "npm run build-index && tsx scripts/copy-data.ts && vite",
-    "build": "npm run build-index && tsx scripts/copy-data.ts && vite build",
+    "dev": "pnpm run build-index && tsx scripts/copy-data.ts && vite",
+    "dev:admin": "pnpm --filter @lexiklar/admin dev",
+    "build": "pnpm run build-index && tsx scripts/copy-data.ts && vite build",
     "sync-version": "npx capacitor-set-version set -v $(node -p \"require('./package.json').version\") -b $(( $(date +%s) / 10 ))",
-    "build:mobile": "npm run sync-version && npm run build && npx cap sync",
-    "build:mobile:ui": "npm run sync-version && vite build && npx cap sync",
+    "build:mobile": "pnpm run sync-version && pnpm run build && npx cap sync",
+    "build:mobile:ui": "pnpm run sync-version && vite build && npx cap sync",
     "preview": "vite preview",
     "copy-data": "tsx scripts/copy-data.ts",
     "download": "tsx scripts/download.ts && tsx scripts/build-lookup-index.ts",
@@ -27,8 +28,8 @@
     "test:watch": "vitest",
     "test:glosses": "tsx scripts/test-gloss-translation.ts",
     "test:gloss-batching": "tsx scripts/test-gloss-batching.ts",
-    "pipeline": "npm run download && npm run download-corpus && npm run transform -- --max-frequency 8000 --max-subtitle-rank 25000 && npm run enrich && npm run translate-glosses && npm run translate-glosses:full && npm run translate-examples && npm run build-index",
-    "pipeline:seed": "npm run transform -- --seed && npm run enrich && npm run translate-glosses && npm run translate-glosses:full && npm run translate-examples && npm run build-index",
+    "pipeline": "pnpm run download && pnpm run download-corpus && pnpm run transform -- --max-frequency 8000 --max-subtitle-rank 25000 && pnpm run enrich && pnpm run translate-glosses && pnpm run translate-glosses:full && pnpm run translate-examples && pnpm run build-index",
+    "pipeline:seed": "pnpm run transform -- --seed && pnpm run enrich && pnpm run translate-glosses && pnpm run translate-glosses:full && pnpm run translate-examples && pnpm run build-index",
     "proofread": "tsx scripts/proofread-batch.ts",
     "build-lookup-index": "tsx scripts/build-lookup-index.ts",
     "lookup": "tsx scripts/lookup.ts",
@@ -37,9 +38,9 @@
     "compare-models": "tsx scripts/compare-models.ts",
     "screenshots": "tsx scripts/capture-screenshots.ts",
     "deploy": "rm -f dist/data/lexiklar.db && rm -rf dist/assets/databases && npx wrangler pages deploy dist --project-name lexiklar --commit-dirty=true",
-    "release:patch": "npm version patch && git push && git push --tags",
-    "release:minor": "npm version minor && git push && git push --tags",
-    "release:major": "npm version major && git push && git push --tags"
+    "release:patch": "pnpm version patch && git push && git push --tags",
+    "release:minor": "pnpm version minor && git push && git push --tags",
+    "release:major": "pnpm version major && git push && git push --tags"
   },
   "dependencies": {
     "@capacitor/android": "^8.2.0",
@@ -77,5 +78,14 @@
     "vitest": "^4.0.18",
     "vue-tsc": "^3.2.5",
     "xlsx": "^0.18.5"
-  }
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "sharp",
+      "esbuild",
+      "yarn"
+    ]
+  },
+  "packageManager": "pnpm@10.12.4"
 }

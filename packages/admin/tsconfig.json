@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@admin/*": ["./src/*"],
+      "@shared/*": ["../shared/src/*"],
+      "@app/*": ["../../src/*"],
+      "@types/*": ["../../types/*"],
+      "@data/*": ["../../data/*"],
+      "@capacitor/preferences": ["./src/mocks/capacitor-preferences.ts"]
+    },
+    "types": ["vite/client"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "../shared/src/**/*.ts",
+    "../shared/src/**/*.vue"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
