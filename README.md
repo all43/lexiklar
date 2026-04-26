@@ -24,11 +24,7 @@ See [CHALLENGES.md](CHALLENGES.md) for a write-up of the harder problems encount
 
 ## Screenshots
 
-<!-- TODO: search results -->
-<!-- TODO: noun detail view (declension table) -->
-<!-- TODO: verb detail view (conjugation table) -->
-<!-- TODO: adjective detail view -->
-<!-- TODO: example sentence with word annotations -->
+<img src="store/ios/screenshots/iphone/01-search-homonyms.png" width="180"> <img src="store/ios/screenshots/iphone/02-noun-declension.png" width="180"> <img src="store/ios/screenshots/iphone/03-verb-meanings.png" width="180"> <img src="store/ios/screenshots/iphone/04-verb-conjugation.png" width="180"> <img src="store/ios/screenshots/iphone/05-confusable-pairs.png" width="180"> <img src="store/ios/screenshots/iphone/06-adjective-table.png" width="180"> <img src="store/ios/screenshots/iphone/07-adjective-rules.png" width="180">
 
 ---
 
