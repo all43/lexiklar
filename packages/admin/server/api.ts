@@ -326,8 +326,8 @@ async function handleTranslate(req: IncomingMessage, res: ServerResponse) {
       maxTokens: isFull ? 200 : 64,
       temperature: 0.2,
     });
-    const translation = result.text?.trim() || "";
-    json(res, { translation, model: result.model, cached: !!result._cached });
+    const translation = result.content?.trim() || "";
+    json(res, { translation, cached: !!result._cached });
   } catch (err: any) {
     json(res, { error: err.message || "LLM call failed" }, 500);
   }
