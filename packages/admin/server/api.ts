@@ -39,6 +39,26 @@ function parseQuery(url: string): URLSearchParams {
   return new URLSearchParams(idx >= 0 ? url.slice(idx + 1) : "");
 }
 
+interface WordListItem {
+  pos: string;
+  file: string;
+  word: string;
+  gloss_en?: string;
+  zipf?: number;
+  flags?: string[];
+}
+
+function getWordFlags(data: any): string[] {
+  const flags: string[] = [];
+  const pr = data._proofread || {};
+  if (pr.gloss_en) flags.push("proofread");
+  if (data._overrides && Object.keys(data._overrides).length) flags.push("overrides");
+  const hasMissing = (data.senses || []).some((s: any) => !s.gloss_en);
+  if (hasMissing) flags.push("missing_en");
+  if (!pr.gloss_en) flags.push("unproofread");
+  return flags;
+}
+
 /** List word files, optionally filtered by POS and search query. */
 function handleWordList(req: IncomingMessage, res: ServerResponse) {
   const params = parseQuery(req.url!);
@@ -46,9 +66,10 @@ function handleWordList(req: IncomingMessage, res: ServerResponse) {
   const q = params.get("q")?.toLowerCase() || "";
   const limit = Math.min(parseInt(params.get("limit") || "100"), 500);
   const offset = parseInt(params.get("offset") || "0");
+  const withFlags = params.get("flags") === "true";
 
   const dirs = pos ? [pos] : POS_DIRS;
-  const results: { pos: string; file: string; word: string }[] = [];
+  const results: WordListItem[] = [];
 
   for (const dir of dirs) {
     const dirPath = join(WORDS_DIR, dir);
@@ -64,11 +85,64 @@ function handleWordList(req: IncomingMessage, res: ServerResponse) {
 
   results.sort((a, b) => a.word.localeCompare(b.word, "de"));
 
-  json(res, {
-    total: results.length,
-    offset,
-    items: results.slice(offset, offset + limit),
-  });
+  const page = results.slice(offset, offset + limit);
+
+  // Enrich page items with flags + gloss preview (only for the visible page)
+  if (withFlags) {
+    for (const item of page) {
+      try {
+        const data = JSON.parse(readFileSync(join(WORDS_DIR, item.pos, item.file), "utf-8"));
+        item.gloss_en = data.senses?.[0]?.gloss_en || undefined;
+        item.zipf = data.zipf;
+        item.flags = getWordFlags(data);
+      } catch { /* skip unreadable */ }
+    }
+  }
+
+  json(res, { total: results.length, offset, items: page });
+}
+
+/** Dashboard statistics — scans all word files for quality metrics. */
+let statsCache: { data: any; ts: number } | null = null;
+function handleStats(res: ServerResponse) {
+  // Cache for 30s to avoid rescanning on every dashboard load
+  if (statsCache && Date.now() - statsCache.ts < 30_000) {
+    return json(res, statsCache.data);
+  }
+
+  const stats = {
+    total: 0, proofread_gloss: 0, proofread_full: 0, proofread_syn: 0,
+    has_overrides: 0, missing_gloss_en: 0, total_examples: 0,
+    by_pos: {} as Record<string, number>,
+  };
+
+  for (const dir of POS_DIRS) {
+    const dirPath = join(WORDS_DIR, dir);
+    if (!existsSync(dirPath)) continue;
+    let posCount = 0;
+
+    for (const file of readdirSync(dirPath)) {
+      if (!file.endsWith(".json")) continue;
+      posCount++;
+      stats.total++;
+      try {
+        const data = JSON.parse(readFileSync(join(dirPath, file), "utf-8"));
+        const pr = data._proofread || {};
+        if (pr.gloss_en) stats.proofread_gloss++;
+        if (pr.gloss_en_full) stats.proofread_full++;
+        if (pr.synonyms_en) stats.proofread_syn++;
+        if (data._overrides && Object.keys(data._overrides).length) stats.has_overrides++;
+        for (const s of data.senses || []) {
+          stats.total_examples += (s.example_ids || []).length;
+          if (!s.gloss_en) { stats.missing_gloss_en++; break; }
+        }
+      } catch { /* skip */ }
+    }
+    stats.by_pos[dir] = posCount;
+  }
+
+  statsCache = { data: stats, ts: Date.now() };
+  json(res, stats);
 }
 
 /** Read a single word file + resolve its examples. */
@@ -145,6 +219,7 @@ export function adminApiPlugin(): Plugin {
         const path = url.split("?")[0];
 
         if (path === "/api/pos") return handlePosSummary(res);
+        if (path === "/api/stats") return handleStats(res);
         if (path === "/api/words") return handleWordList(req, res);
         if (path === "/api/lookup") return handleLookup(req, res);
 

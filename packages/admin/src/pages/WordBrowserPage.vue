@@ -28,8 +28,15 @@
           :class="{ active: selectedFile === item.pos + '/' + item.word }"
           @click="selectWord(item)"
         >
-          <span class="word-name">{{ item.word }}</span>
-          <span v-if="!selectedPos" class="word-pos-badge">{{ item.pos }}</span>
+          <span class="word-name">
+            {{ item.word }}
+            <span v-if="item.flags?.includes('missing_en')" class="flag-dot flag-missing" title="Missing gloss_en"></span>
+            <span v-if="item.flags?.includes('overrides')" class="flag-dot flag-override" title="Has _overrides"></span>
+          </span>
+          <span class="word-meta">
+            <span v-if="item.gloss_en" class="word-gloss-preview">{{ item.gloss_en }}</span>
+            <span v-if="!selectedPos" class="word-pos-badge">{{ item.pos }}</span>
+          </span>
         </div>
         <div v-if="wordItems.length === 0 && !loadingList" class="word-list-empty">
           No words found
@@ -48,6 +55,10 @@
         </h1>
         <span class="word-pos-label">{{ wordData.pos }}</span>
         <span v-if="wordData.zipf" class="word-zipf">Zipf {{ wordData.zipf }}</span>
+        <span v-if="wordData._proofread?.gloss_en" class="badge badge-proofread" title="gloss_en proofread">proofread</span>
+        <span v-else class="badge badge-unproofread" title="gloss_en not proofread">unproofread</span>
+        <span v-if="wordData._overrides" class="badge badge-override" title="Has _overrides">overrides</span>
+        <span v-if="wordData._meta?.source === 'manual'" class="badge badge-manual" title="Manual entry">manual</span>
       </header>
 
       <!-- Tab bar -->
@@ -140,7 +151,7 @@ import VerbConjugation from "@shared/components/VerbConjugation.vue";
 import AdjectiveDeclension from "@shared/components/AdjectiveDeclension.vue";
 
 interface PosCount { pos: string; count: number }
-interface WordListItem { pos: string; file: string; word: string }
+interface WordListItem { pos: string; file: string; word: string; gloss_en?: string; zipf?: number; flags?: string[] }
 interface ExampleData {
   text: string;
   translation?: string;
@@ -203,6 +214,7 @@ async function fetchWordList(reset = false) {
   const params = new URLSearchParams({
     limit: String(PAGE_SIZE),
     offset: String(listOffset.value),
+    flags: "true",
   });
   if (selectedPos.value) params.set("pos", selectedPos.value);
   if (searchQuery.value) params.set("q", searchQuery.value);
@@ -339,7 +351,17 @@ onMounted(() => {
 }
 .word-item:hover { background: #f5f8ff; }
 .word-item.active { background: #e8f0fe; font-weight: 600; }
-.word-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.word-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
+.word-meta { display: flex; align-items: center; gap: 4px; flex-shrink: 0; margin-left: 4px; }
+.word-gloss-preview {
+  font-size: 0.7rem;
+  color: #888;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-style: italic;
+}
 .word-pos-badge {
   font-size: 0.7rem;
   color: #888;
@@ -347,8 +369,16 @@ onMounted(() => {
   padding: 1px 6px;
   border-radius: 8px;
   flex-shrink: 0;
-  margin-left: 4px;
 }
+.flag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.flag-missing { background: #d32f2f; }
+.flag-override { background: #ff9800; }
 
 .word-list-empty, .word-list-more {
   padding: 1rem;
@@ -382,7 +412,18 @@ onMounted(() => {
   align-items: baseline;
   gap: 0.75rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
+.badge {
+  font-size: 0.7rem;
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+.badge-proofread { background: #e8f5e9; color: #2e7d32; }
+.badge-unproofread { background: #fff3e0; color: #e65100; }
+.badge-override { background: #fce4ec; color: #c62828; }
+.badge-manual { background: #e3f2fd; color: #1565c0; }
 .word-header h1 { font-size: 1.5rem; margin: 0; }
 .word-article { font-weight: 400; }
 .gender-m { color: var(--color-gender-m, #1976d2); }
