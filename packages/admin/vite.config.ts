@@ -1,11 +1,12 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
+import { adminApiPlugin } from "./server/api.js";
 
 const root = resolve(__dirname, "../..");
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), adminApiPlugin()],
   resolve: {
     alias: {
       "@admin": resolve(__dirname, "src"),

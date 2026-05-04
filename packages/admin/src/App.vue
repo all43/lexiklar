@@ -4,6 +4,7 @@
       <router-link to="/" class="nav-brand">Lexiklar Admin</router-link>
       <div class="nav-links">
         <router-link to="/">Dashboard</router-link>
+        <router-link to="/words">Words</router-link>
         <router-link to="/reports">Reports</router-link>
       </div>
     </nav>

@@ -11,6 +11,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: "/", component: () => import("./pages/DashboardPage.vue") },
+    { path: "/words", component: () => import("./pages/WordBrowserPage.vue") },
     { path: "/reports", component: () => import("./pages/ReportsPage.vue") },
   ],
 });
