@@ -95,12 +95,6 @@ function isScrollable(lemma: string) { return fades[lemma]?.isScrollable.value ?
 </script>
 
 <style scoped>
-.grammar-desc {
-  color: var(--f7-block-footer-text-color);
-  font-size: 14px;
-  margin: 0;
-}
-
 .det-page-block {
   padding-top: 0;
 }

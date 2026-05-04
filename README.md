@@ -271,6 +271,28 @@ The app checks for DB updates automatically on startup (24h throttle) and shows 
 
 ---
 
+## Admin App
+
+A contributor-facing admin interface for browsing, editing, and proofreading word data — built as a separate package in the monorepo (`packages/admin/`).
+
+```bash
+pnpm run dev:admin    # starts on :5174
+```
+
+### Features
+
+- **Word browser** — three-panel layout: POS sidebar, searchable word list (filter by quality flags, sort by frequency), word detail with grammar preview
+- **Inline editor** — edit `gloss_en`, `gloss_en_full`, `synonyms_en` per sense with one-click LLM translation (any provider: Anthropic, OpenAI, Ollama, LM Studio)
+- **Overrides editor** — structured forms for antonym, confusable pairs (with word search/autocomplete), false friends, sense order; raw JSON fallback
+- **Grammar tables** — shared Vue components (noun declension, verb conjugation, adjective/pronoun/determiner declension) rendered without Framework7
+- **Wiktionary source** — raw Wiktionary entry lookup for cross-referencing
+- **Dashboard** — live quality metrics (proofread counts, missing glosses, overrides, per-POS breakdown)
+- **Reports viewer** — user reports from the Cloudflare Worker, proxied through the dev server
+
+The admin app reads/writes word JSON files directly on disk via Vite dev server middleware — no separate backend needed. Grammar components are shared from `packages/shared/` (F7-free adaptations of the main app's components).
+
+---
+
 ## Project Structure
 
 ```
@@ -283,9 +305,15 @@ The app checks for DB updates automatically on startup (24h throttle) and shows 
 │   └── js/
 │       ├── i18n.ts         UI localisation (EN + DE)
 │       └── theme.ts        Theme utilities
+├── packages/
+│   ├── admin/              Admin interface (Vite + Vue 3 + vue-router)
+│   │   ├── server/api.ts   Vite dev middleware: JSON API for word data, LLM translate, reports
+│   │   └── src/pages/      Dashboard, WordBrowser (inline editor), Reports
+│   └── shared/             F7-free grammar components shared with admin
 ├── scripts/
 │   ├── lib/
 │   │   ├── llm.ts          LLM abstraction (OpenAI / Anthropic / local)
+│   │   ├── wiktionary-lookup.ts  Shared Wiktionary JSONL lookup (CLI + admin API)
 │   │   └── pos.ts          POS config (dirs, labels)
 │   ├── transform.ts
 │   ├── enrich-frequency.ts

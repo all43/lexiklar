@@ -310,12 +310,6 @@ const displayedGroups = computed(() =>
 </script>
 
 <style scoped>
-.grammar-desc {
-  color: var(--f7-block-footer-text-color);
-  font-size: 14px;
-  margin: 0;
-}
-
 /* Word order section */
 .wo-block {
   padding-top: 0;

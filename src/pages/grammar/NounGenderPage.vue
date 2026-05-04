@@ -147,12 +147,6 @@ function rulePattern(rule: GenderRule) {
 </script>
 
 <style scoped>
-.grammar-desc {
-  color: var(--f7-block-footer-text-color);
-  font-size: 14px;
-  margin: 0;
-}
-
 .view-switch-block {
   padding-top: 0;
   padding-bottom: 0;

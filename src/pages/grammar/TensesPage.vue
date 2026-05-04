@@ -252,12 +252,6 @@ const scrollFades = tableEls.map(el => useScrollFade(el));
 </script>
 
 <style scoped>
-.grammar-desc {
-  color: var(--f7-block-footer-text-color);
-  font-size: 14px;
-  margin: 0;
-}
-
 .tenses-block {
   padding-top: 0;
 }

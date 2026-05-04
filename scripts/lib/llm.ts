@@ -69,8 +69,10 @@ function readCache(filePath: string): LLMResponse | null {
       "output_tokens" in raw
     ) {
       const obj = raw as Record<string, unknown>;
+      const content = String(obj.content);
+      if (!content.trim()) return null;
       return {
-        content: String(obj.content),
+        content,
         input_tokens: Number(obj.input_tokens),
         output_tokens: Number(obj.output_tokens),
       };
@@ -414,13 +416,21 @@ async function callAnthropic(
     );
   }
 
+  if (!data.content?.length) {
+    throw new Error("Anthropic: model returned no content blocks");
+  }
+
   const block = data.content[0];
-  // Tool use response: extract the input object and serialize to JSON string
-  // so parseBatchResponse → extractJSON can handle it uniformly.
   const content =
     block.type === "tool_use"
       ? JSON.stringify(block.input)
       : block.text ?? "";
+
+  if (!content) {
+    throw new Error(
+      `Anthropic: model returned empty content (stop_reason: ${data.stop_reason ?? "unknown"})`,
+    );
+  }
 
   const usage = data.usage || {};
   return {
@@ -506,7 +516,7 @@ export async function callLLM(
       apiKey,
       jsonSchema: jsonSchema ?? null,
     });
-    writeCache(cachePath, result);
+    if (result.content) writeCache(cachePath, result);
     return result;
   }
 
@@ -545,7 +555,7 @@ export async function callLLM(
       isLocal: isLocalProvider(provider),
     },
   );
-  writeCache(cachePath, result);
+  if (result.content) writeCache(cachePath, result);
   return result;
 }
 

@@ -1,9 +1,9 @@
 <template>
-  <f7-block class="word-note">
-    <div class="word-note-header">
+  <div class="confusable-block">
+    <div class="confusable-header">
       <span class="confusable-icon">↔</span>
-      <span class="word-note-title">{{ t('word.confusableTitle') }}</span>
-      <span class="word-note-en">»{{ combinedEnWords }}«</span>
+      <span class="confusable-title">{{ t('word.confusableTitle') }}</span>
+      <span class="confusable-en-word">»{{ combinedEnWords }}«</span>
     </div>
     <div class="confusable-row">
       <span class="confusable-word--current">{{ currentWord }}</span>
@@ -15,13 +15,13 @@
       <span class="confusable-sep">—</span>
       <span class="confusable-note">{{ pair.other_note }}</span>
     </div>
-  </f7-block>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { t } from "../js/i18n.js";
-import type { ConfusablePairs } from "../../types/word.js";
+import { t } from "@app/js/i18n.js";
+import type { ConfusablePairs } from "@types/word.js";
 
 const props = defineProps<{
   confusable: ConfusablePairs;
@@ -45,8 +45,28 @@ const combinedEnWords = computed(() => {
 </script>
 
 <style scoped>
+.confusable-block {
+  margin-top: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+.confusable-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  margin-bottom: 0.4em;
+}
 .confusable-icon {
   color: var(--f7-theme-color);
+  font-size: 1em;
+}
+.confusable-title {
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.confusable-en-word {
+  font-size: 0.85em;
+  color: var(--f7-list-item-footer-text-color);
 }
 .confusable-row {
   display: flex;
