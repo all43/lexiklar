@@ -123,12 +123,6 @@ const { fadeStyle: fadeStylePreterite, isScrollable: isScrollablePreterite } = u
 </script>
 
 <style scoped>
-.grammar-desc {
-  color: var(--f7-block-footer-text-color);
-  font-size: 14px;
-  margin: 0;
-}
-
 .modal-block {
   padding-top: 0;
 }

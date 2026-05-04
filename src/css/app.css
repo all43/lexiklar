@@ -3,6 +3,8 @@
   Framework7 base styles are imported in main.js.
 */
 
+@import "../../packages/shared/src/tokens.css";
+
 /* Fix virtual keyboard layout on web/PWA (not native).
    F7's tabbar is position:absolute inside .views (not position:fixed). When the
    virtual keyboard opens, the layout must shrink to the visible viewport or the
@@ -69,29 +71,33 @@ html.is-web .framework7-root {
   font-style: italic;
 }
 
-/* Semantic color tokens */
-:root {
-  --color-gender-m: #1976d2;   /* blue-700 — masculine (~5.1:1 on white) */
-  --color-gender-f: #c2185b;   /* pink-700 — feminine (~5.0:1 on white) */
-  --color-gender-n: #388e3c;   /* green-700 — neuter (~5.1:1 on white) */
-  --color-rule-match: #4caf50; /* green — rule confirmed */
-  --color-rule-exception: #ff9800; /* orange — rule exception */
-  --color-vowel-change: #d32f2f; /* red — umlaut / vowel shift */
-
-  /* Sense tag colors */
-  --color-tag-register:    #e65100;              /* dark amber — informal/style */
-  --color-tag-register-bg: rgba(255, 152, 0, 0.12);
-  --color-tag-dialect:     #1565c0;              /* dark blue — regional */
-  --color-tag-dialect-bg:  rgba(33, 150, 243, 0.10);
-  --color-tag-domain:      #6a1b9a;              /* dark purple — subject area */
-  --color-tag-domain-bg:   rgba(156, 39, 176, 0.10);
-  --color-tag-grammar-bg:  rgba(0, 0, 0, 0.06);  /* neutral — grammar labels */
+/* Grammar pages: intro description paragraph (used in all grammar/* pages) */
+.grammar-desc {
+  color: var(--f7-block-footer-text-color);
+  font-size: 14px;
+  margin: 0;
 }
 
-/* Gender color coding for articles (der/die/das) */
-.gender-m { color: var(--color-gender-m) !important; }
-.gender-f { color: var(--color-gender-f) !important; }
-.gender-n { color: var(--color-gender-n) !important; }
+/* Shared header pattern for FalseFriend and ConfusablePair */
+.word-note {
+  margin-top: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+.word-note-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  margin-bottom: 0.4em;
+}
+.word-note-title {
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.word-note-en {
+  font-size: 0.85em;
+  color: var(--f7-list-item-footer-text-color);
+}
 
 /* IPA pronunciation text */
 .ipa {

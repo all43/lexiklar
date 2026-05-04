@@ -119,12 +119,6 @@ const CASES = [
 </script>
 
 <style scoped>
-.grammar-desc {
-  color: var(--f7-block-footer-text-color);
-  font-size: 14px;
-  margin: 0;
-}
-
 .cases-block {
   padding-top: 0;
 }

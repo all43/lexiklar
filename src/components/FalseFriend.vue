@@ -1,9 +1,9 @@
 <template>
-  <f7-block class="false-friend-block">
-    <div class="false-friend-header">
+  <f7-block class="word-note">
+    <div class="word-note-header">
       <span class="false-friend-icon">⚠</span>
-      <span class="false-friend-title">{{ t('word.falseFriendTitle') }}</span>
-      <span class="false-friend-en-word">»{{ ff.en_word }}«</span>
+      <span class="word-note-title">{{ t('word.falseFriendTitle') }}</span>
+      <span class="word-note-en">»{{ ff.en_word }}«</span>
     </div>
     <table class="false-friend-table">
       <thead>
@@ -50,28 +50,8 @@ defineEmits<{
 </script>
 
 <style scoped>
-.false-friend-block {
-  margin-top: 0;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
-.false-friend-header {
-  display: flex;
-  align-items: baseline;
-  gap: 0.4em;
-  margin-bottom: 0.5em;
-}
 .false-friend-icon {
   color: var(--color-rule-exception);
-  font-size: 1em;
-}
-.false-friend-title {
-  font-weight: 600;
-  font-size: 0.9em;
-}
-.false-friend-en-word {
-  font-size: 0.85em;
-  color: var(--f7-list-item-footer-text-color);
 }
 .false-friend-table {
   width: 100%;
