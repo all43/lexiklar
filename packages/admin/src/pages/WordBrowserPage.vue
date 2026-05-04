@@ -198,6 +198,107 @@
         <div v-if="!hasGrammar" class="no-grammar">No grammar table for this POS.</div>
       </div>
 
+      <!-- Overrides tab -->
+      <div v-if="activeTab === 'Overrides'" class="tab-content">
+        <div class="ovr-section">
+          <h3>Antonym</h3>
+          <div class="ovr-row">
+            <label class="ovr-label">word</label>
+            <WordSearchSelect
+              :modelValue="overrides.antonym?.word || ''"
+              placeholder="Search word…"
+              @update:modelValue="setOverride('antonym', { ...(overrides.antonym || {}), word: $event })"
+              @select="setOverride('antonym', { ...(overrides.antonym || {}), word: $event.word })"
+            />
+            <label class="ovr-check">
+              <input
+                type="checkbox"
+                :checked="overrides.antonym?.negative"
+                @change="setOverride('antonym', { ...(overrides.antonym || {}), negative: ($event.target as HTMLInputElement).checked || undefined })"
+              /> negative
+            </label>
+            <button v-if="overrides.antonym?.word" class="btn-ovr-clear" @click="clearOverride('antonym')">×</button>
+          </div>
+        </div>
+
+        <div class="ovr-section">
+          <h3>Confusable Pairs</h3>
+          <div class="ovr-row">
+            <label class="ovr-label">this_note</label>
+            <input
+              class="edit-input"
+              :value="overrides.confusable_pairs?.this_note || ''"
+              @change="setConfusableNote(($event.target as HTMLInputElement).value)"
+            />
+          </div>
+          <div v-for="(pair, pi) in (overrides.confusable_pairs?.pairs || [])" :key="pi" class="ovr-pair">
+            <div class="ovr-row">
+              <label class="ovr-label">en_word</label>
+              <input
+                class="edit-input"
+                :value="pair.en_word"
+                @change="updateConfusablePair(pi, 'en_word', ($event.target as HTMLInputElement).value)"
+              />
+            </div>
+            <div class="ovr-row">
+              <label class="ovr-label">other</label>
+              <WordSearchSelect
+                :modelValue="pair.other"
+                placeholder="Search word…"
+                @update:modelValue="updateConfusablePair(pi, 'other', $event)"
+                @select="updateConfusablePair(pi, 'other', $event.word)"
+              />
+              <button class="btn-ovr-clear" @click="removeConfusablePair(pi)">×</button>
+            </div>
+          </div>
+          <button class="btn-ovr-add" @click="addConfusablePair">+ Add pair</button>
+        </div>
+
+        <div class="ovr-section">
+          <h3>False Friend (EN)</h3>
+          <div class="ovr-row">
+            <label class="ovr-label">en_word</label>
+            <input
+              class="edit-input"
+              :value="overrides.false_friend_en?.en_word || ''"
+              @change="setFalseFriendField('en_word', ($event.target as HTMLInputElement).value)"
+            />
+            <button v-if="overrides.false_friend_en" class="btn-ovr-clear" @click="clearOverride('false_friend_en')">×</button>
+          </div>
+        </div>
+
+        <div class="ovr-section">
+          <h3>Sense Order</h3>
+          <div class="ovr-row">
+            <label class="ovr-label">first_sense</label>
+            <input
+              class="edit-input"
+              :value="overrides.first_sense || ''"
+              @change="setOverride('first_sense', ($event.target as HTMLInputElement).value || undefined)"
+              placeholder="gloss_en value to show first"
+            />
+          </div>
+        </div>
+
+        <div class="ovr-section">
+          <h3>Raw JSON</h3>
+          <textarea
+            class="ovr-json"
+            :value="overridesJson"
+            @change="onOverridesJsonChange(($event.target as HTMLTextAreaElement).value)"
+          ></textarea>
+          <div v-if="jsonError" class="ovr-json-error">{{ jsonError }}</div>
+        </div>
+
+        <div class="save-bar" v-if="dirty">
+          <button class="btn-save" @click="saveWord" :disabled="saving">
+            {{ saving ? 'Saving…' : 'Save changes' }}
+          </button>
+          <button class="btn-discard" @click="discardChanges">Discard</button>
+          <span v-if="saveMsg" class="save-msg" :class="{ 'save-error': saveError }">{{ saveMsg }}</span>
+        </div>
+      </div>
+
       <!-- Wiktionary tab -->
       <div v-if="activeTab === 'Wiktionary'" class="tab-content">
         <div v-if="wiktLoading" class="wikt-loading">Looking up…</div>
@@ -234,6 +335,7 @@ import VerbConjugation from "@shared/components/VerbConjugation.vue";
 import AdjectiveDeclension from "@shared/components/AdjectiveDeclension.vue";
 import PronounDeclension from "@shared/components/PronounDeclension.vue";
 import DeterminerDeclension from "@shared/components/DeterminerDeclension.vue";
+import WordSearchSelect from "../components/WordSearchSelect.vue";
 
 interface PosCount { pos: string; count: number }
 interface WordListItem { pos: string; file: string; word: string; gloss_en?: string; zipf?: number; flags?: string[] }
@@ -276,6 +378,10 @@ const translating = ref<Record<number, boolean>>({});
 const providers = ref<{ name: string; model: string; hasKey: boolean }[]>([]);
 const llmProvider = ref("anthropic");
 const llmModel = ref("");
+const jsonError = ref("");
+
+const overrides = computed(() => wordData.value?._overrides || {});
+const overridesJson = computed(() => JSON.stringify(overrides.value, null, 2));
 
 const hasMore = computed(() => listOffset.value + PAGE_SIZE < listTotal.value);
 const genderClass = computed(() => {
@@ -298,7 +404,7 @@ const hasGrammar = computed(() => {
 const detailTabs = computed(() => {
   const tabs = ["Senses"];
   if (hasGrammar.value) tabs.push("Grammar");
-  tabs.push("Wiktionary", "JSON");
+  tabs.push("Overrides", "Wiktionary", "JSON");
   return tabs;
 });
 
@@ -419,6 +525,7 @@ async function saveWord() {
       synonyms_en: s.synonyms_en,
     })),
     _proofread: wordData.value._proofread || {},
+    _overrides: wordData.value._overrides || {},
   };
 
   try {
@@ -489,6 +596,93 @@ async function fetchProviders() {
     const res = await fetch("/api/providers");
     providers.value = await res.json();
   } catch { /* ignore */ }
+}
+
+function ensureOverrides() {
+  if (!wordData.value) return;
+  if (!wordData.value._overrides) wordData.value._overrides = {};
+}
+
+function setOverride(key: string, value: any) {
+  ensureOverrides();
+  if (value === undefined || value === "" || (typeof value === "object" && value && !Object.values(value).some(Boolean))) {
+    delete wordData.value._overrides[key];
+  } else {
+    wordData.value._overrides[key] = value;
+  }
+  dirty.value = true;
+  saveMsg.value = "";
+}
+
+function clearOverride(key: string) {
+  ensureOverrides();
+  delete wordData.value._overrides[key];
+  dirty.value = true;
+  saveMsg.value = "";
+}
+
+function setConfusableNote(note: string) {
+  ensureOverrides();
+  const cp = wordData.value._overrides.confusable_pairs || { this_note: "", pairs: [] };
+  cp.this_note = note;
+  wordData.value._overrides.confusable_pairs = cp;
+  dirty.value = true;
+  saveMsg.value = "";
+}
+
+function updateConfusablePair(index: number, field: string, value: string) {
+  ensureOverrides();
+  const cp = wordData.value._overrides.confusable_pairs;
+  if (!cp?.pairs?.[index]) return;
+  cp.pairs[index][field] = value;
+  dirty.value = true;
+  saveMsg.value = "";
+}
+
+function addConfusablePair() {
+  ensureOverrides();
+  if (!wordData.value._overrides.confusable_pairs) {
+    wordData.value._overrides.confusable_pairs = { this_note: "", pairs: [] };
+  }
+  wordData.value._overrides.confusable_pairs.pairs.push({ en_word: "", other: "" });
+  dirty.value = true;
+  saveMsg.value = "";
+}
+
+function removeConfusablePair(index: number) {
+  const cp = wordData.value?._overrides?.confusable_pairs;
+  if (!cp?.pairs) return;
+  cp.pairs.splice(index, 1);
+  if (!cp.pairs.length && !cp.this_note) clearOverride("confusable_pairs");
+  dirty.value = true;
+  saveMsg.value = "";
+}
+
+function setFalseFriendField(field: string, value: string) {
+  ensureOverrides();
+  if (!value && !overrides.value.false_friend_en) return;
+  const ff = wordData.value._overrides.false_friend_en || { en_word: "", meanings: [] };
+  (ff as any)[field] = value;
+  wordData.value._overrides.false_friend_en = ff;
+  dirty.value = true;
+  saveMsg.value = "";
+}
+
+function onOverridesJsonChange(text: string) {
+  jsonError.value = "";
+  try {
+    const parsed = JSON.parse(text);
+    if (typeof parsed !== "object" || Array.isArray(parsed)) {
+      jsonError.value = "Must be a JSON object";
+      return;
+    }
+    if (!wordData.value) return;
+    wordData.value._overrides = parsed;
+    dirty.value = true;
+    saveMsg.value = "";
+  } catch (e: any) {
+    jsonError.value = e.message;
+  }
 }
 
 function formatJson(obj: unknown): string {
@@ -898,6 +1092,85 @@ onMounted(async () => {
 .btn-discard:hover { background: #f5f5f5; }
 .save-msg { font-size: 0.8rem; color: #2e7d32; }
 .save-msg.save-error { color: #c62828; }
+
+/* Overrides */
+.ovr-section {
+  margin-bottom: 1.25rem;
+}
+.ovr-section h3 {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #eee;
+}
+.ovr-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 3px;
+}
+.ovr-label {
+  font-size: 0.7rem;
+  color: #999;
+  width: 64px;
+  flex-shrink: 0;
+  text-align: right;
+}
+.ovr-check {
+  font-size: 0.75rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.ovr-pair {
+  background: #fafafa;
+  border-radius: 6px;
+  padding: 4px 6px;
+  margin-top: 4px;
+}
+.btn-ovr-clear {
+  padding: 0 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #999;
+  line-height: 1.4;
+}
+.btn-ovr-clear:hover { color: #c62828; border-color: #ef9a9a; }
+.btn-ovr-add {
+  padding: 2px 10px;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 4px;
+}
+.btn-ovr-add:hover { border-color: #1a73e8; color: #1a73e8; }
+.ovr-json {
+  width: 100%;
+  min-height: 120px;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.75rem;
+  resize: vertical;
+  outline: none;
+}
+.ovr-json:focus { border-color: #1a73e8; }
+.ovr-json-error {
+  font-size: 0.75rem;
+  color: #c62828;
+  margin-top: 2px;
+}
 
 /* Grammar */
 .no-grammar { color: #888; font-style: italic; }

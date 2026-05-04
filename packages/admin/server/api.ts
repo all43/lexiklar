@@ -281,11 +281,18 @@ async function handleWordPatch(req: IncomingMessage, res: ServerResponse, pos: s
   }
 
   if ("_proofread" in body && typeof body._proofread === "object") {
-    word._proofread = { ...(word._proofread || {}), ...body._proofread };
+    const merged = { ...(word._proofread || {}), ...body._proofread };
+    for (const k of Object.keys(merged)) { if (!merged[k]) delete merged[k]; }
+    if (Object.keys(merged).length) word._proofread = merged;
+    else delete word._proofread;
   }
 
   if ("_overrides" in body && typeof body._overrides === "object") {
-    word._overrides = body._overrides;
+    if (Object.keys(body._overrides).length) {
+      word._overrides = body._overrides;
+    } else {
+      delete word._overrides;
+    }
   }
 
   writeFileSync(filePath, JSON.stringify(word, null, 2) + "\n", "utf-8");
