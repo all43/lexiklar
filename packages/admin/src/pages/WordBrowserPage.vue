@@ -9,6 +9,23 @@
         placeholder="Search words…"
         @input="onSearch"
       />
+      <div class="filter-bar">
+        <div class="filter-toggles">
+          <button
+            v-for="f in FILTER_OPTIONS"
+            :key="f.value"
+            class="filter-btn"
+            :class="[f.cls, { active: activeFilters.has(f.value) }]"
+            @click="toggleFilter(f.value)"
+            :title="f.label"
+          >{{ f.short }}</button>
+        </div>
+        <select v-model="sortMode" class="sort-select" @change="fetchWordList(true)">
+          <option value="alpha">A–Z</option>
+          <option value="zipf">Zipf ↓</option>
+          <option value="zipf-asc">Zipf ↑</option>
+        </select>
+      </div>
       <div class="pos-tabs">
         <button
           v-for="p in posList"
@@ -34,6 +51,7 @@
             <span v-if="item.flags?.includes('overrides')" class="flag-dot flag-override" title="Has _overrides"></span>
           </span>
           <span class="word-meta">
+            <span v-if="sortMode.startsWith('zipf') && item.zipf" class="word-zipf-badge">{{ item.zipf }}</span>
             <span v-if="item.gloss_en" class="word-gloss-preview">{{ item.gloss_en }}</span>
             <span v-if="!selectedPos" class="word-pos-badge">{{ item.pos }}</span>
           </span>
@@ -163,6 +181,13 @@ interface ExampleData {
   annotations?: { form: string; lemma: string; pos: string; gloss_hint?: string | null }[];
 }
 
+const FILTER_OPTIONS = [
+  { value: "unproofread", short: "Unpr", label: "Unproofread", cls: "filter-unproofread" },
+  { value: "missing_en", short: "Miss", label: "Missing gloss_en", cls: "filter-missing" },
+  { value: "overrides", short: "Ovr", label: "Has _overrides", cls: "filter-override" },
+  { value: "manual", short: "Man", label: "Manual entry", cls: "filter-manual" },
+] as const;
+
 const searchQuery = ref("");
 const selectedPos = ref<string | null>(null);
 const selectedFile = ref<string | null>(null);
@@ -177,6 +202,8 @@ const activeTab = ref("Senses");
 const listOffset = ref(0);
 const listTotal = ref(0);
 const PAGE_SIZE = 200;
+const activeFilters = ref(new Set<string>());
+const sortMode = ref("alpha");
 
 const hasMore = computed(() => listOffset.value + PAGE_SIZE < listTotal.value);
 const genderClass = computed(() => {
@@ -205,6 +232,13 @@ const detailTabs = computed(() => {
 
 let searchTimer: ReturnType<typeof setTimeout> | null = null;
 
+function toggleFilter(flag: string) {
+  const s = new Set(activeFilters.value);
+  if (s.has(flag)) s.delete(flag); else s.add(flag);
+  activeFilters.value = s;
+  fetchWordList(true);
+}
+
 function onSearch() {
   if (searchTimer) clearTimeout(searchTimer);
   searchTimer = setTimeout(() => fetchWordList(true), 150);
@@ -221,10 +255,11 @@ async function fetchWordList(reset = false) {
   const params = new URLSearchParams({
     limit: String(PAGE_SIZE),
     offset: String(listOffset.value),
-    flags: "true",
+    sort: sortMode.value,
   });
   if (selectedPos.value) params.set("pos", selectedPos.value);
   if (searchQuery.value) params.set("q", searchQuery.value);
+  if (activeFilters.value.size) params.set("filter", [...activeFilters.value].join(","));
 
   const res = await fetch(`/api/words?${params}`);
   const data = await res.json();
@@ -332,6 +367,44 @@ onMounted(async () => {
 }
 .search-input:focus { border-color: #1a73e8; }
 
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.filter-toggles {
+  display: flex;
+  gap: 3px;
+  flex: 1;
+}
+.filter-btn {
+  padding: 2px 7px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+  color: #666;
+}
+.filter-btn:hover { background: #f0f0f0; }
+.filter-btn.filter-unproofread.active { background: #fff3e0; border-color: #ffb74d; color: #e65100; }
+.filter-btn.filter-missing.active { background: #ffebee; border-color: #ef9a9a; color: #c62828; }
+.filter-btn.filter-override.active { background: #fce4ec; border-color: #f48fb1; color: #ad1457; }
+.filter-btn.filter-manual.active { background: #e3f2fd; border-color: #90caf9; color: #1565c0; }
+
+.sort-select {
+  padding: 2px 4px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  background: white;
+  color: #555;
+  cursor: pointer;
+  outline: none;
+}
+
 .pos-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -399,6 +472,13 @@ onMounted(async () => {
 }
 .flag-missing { background: #d32f2f; }
 .flag-override { background: #ff9800; }
+
+.word-zipf-badge {
+  font-size: 0.65rem;
+  color: #999;
+  font-family: monospace;
+  flex-shrink: 0;
+}
 
 .word-list-empty, .word-list-more {
   padding: 1rem;

@@ -56,49 +56,80 @@ function getWordFlags(data: any): string[] {
   const hasMissing = (data.senses || []).some((s: any) => !s.gloss_en);
   if (hasMissing) flags.push("missing_en");
   if (!pr.gloss_en) flags.push("unproofread");
+  if (data._meta?.source === "manual") flags.push("manual");
   return flags;
 }
 
-/** List word files, optionally filtered by POS and search query. */
+/** Cached enriched word index — rebuilt every 60s. */
+let wordIndexCache: { items: WordListItem[]; ts: number } | null = null;
+
+function getWordIndex(): WordListItem[] {
+  if (wordIndexCache && Date.now() - wordIndexCache.ts < 60_000) {
+    return wordIndexCache.items;
+  }
+  const items: WordListItem[] = [];
+  for (const dir of POS_DIRS) {
+    const dirPath = join(WORDS_DIR, dir);
+    if (!existsSync(dirPath)) continue;
+    for (const file of readdirSync(dirPath)) {
+      if (!file.endsWith(".json")) continue;
+      const word = file.replace(/\.json$/, "");
+      const item: WordListItem = { pos: dir, file, word };
+      try {
+        const data = JSON.parse(readFileSync(join(dirPath, file), "utf-8"));
+        item.gloss_en = data.senses?.[0]?.gloss_en || undefined;
+        item.zipf = data.zipf;
+        item.flags = getWordFlags(data);
+      } catch { /* skip unreadable */ }
+      items.push(item);
+    }
+  }
+  wordIndexCache = { items, ts: Date.now() };
+  return items;
+}
+
+/** List word files with filtering, sorting, and pagination. */
 function handleWordList(req: IncomingMessage, res: ServerResponse) {
   const params = parseQuery(req.url!);
   const pos = params.get("pos");
   const q = params.get("q")?.toLowerCase() || "";
   const limit = Math.min(parseInt(params.get("limit") || "100"), 500);
   const offset = parseInt(params.get("offset") || "0");
-  const withFlags = params.get("flags") === "true";
+  const filter = params.get("filter");
+  const sort = params.get("sort") || "alpha";
 
-  const dirs = pos ? [pos] : POS_DIRS;
-  const results: WordListItem[] = [];
+  const allItems = getWordIndex();
+  let results = allItems;
 
-  for (const dir of dirs) {
-    const dirPath = join(WORDS_DIR, dir);
-    if (!existsSync(dirPath)) continue;
+  if (pos) results = results.filter(i => i.pos === pos);
+  if (q) results = results.filter(i => i.word.toLowerCase().includes(q));
 
-    for (const file of readdirSync(dirPath)) {
-      if (!file.endsWith(".json")) continue;
-      const word = file.replace(/\.json$/, "");
-      if (q && !word.toLowerCase().includes(q)) continue;
-      results.push({ pos: dir, file, word });
-    }
+  if (filter) {
+    const filters = new Set(filter.split(","));
+    results = results.filter(i => {
+      const flags = i.flags || [];
+      for (const f of filters) {
+        if (f === "manual") {
+          if (!flags.includes("manual")) return false;
+        } else if (!flags.includes(f)) return false;
+      }
+      return true;
+    });
   }
 
-  results.sort((a, b) => a.word.localeCompare(b.word, "de"));
+  switch (sort) {
+    case "zipf":
+      results = [...results].sort((a, b) => (b.zipf ?? 0) - (a.zipf ?? 0));
+      break;
+    case "zipf-asc":
+      results = [...results].sort((a, b) => (a.zipf ?? 0) - (b.zipf ?? 0));
+      break;
+    default:
+      results = [...results].sort((a, b) => a.word.localeCompare(b.word, "de"));
+      break;
+  }
 
   const page = results.slice(offset, offset + limit);
-
-  // Enrich page items with flags + gloss preview (only for the visible page)
-  if (withFlags) {
-    for (const item of page) {
-      try {
-        const data = JSON.parse(readFileSync(join(WORDS_DIR, item.pos, item.file), "utf-8"));
-        item.gloss_en = data.senses?.[0]?.gloss_en || undefined;
-        item.zipf = data.zipf;
-        item.flags = getWordFlags(data);
-      } catch { /* skip unreadable */ }
-    }
-  }
-
   json(res, { total: results.length, offset, items: page });
 }
 
