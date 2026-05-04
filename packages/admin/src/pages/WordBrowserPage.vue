@@ -92,18 +92,71 @@
 
       <!-- Senses tab -->
       <div v-if="activeTab === 'Senses'" class="tab-content">
+        <div class="senses-toolbar">
+          <label class="proofread-toggle">
+            <input
+              type="checkbox"
+              :checked="wordData._proofread?.gloss_en"
+              @change="toggleProofread('gloss_en', ($event.target as HTMLInputElement).checked)"
+            />
+            proofread (gloss_en)
+          </label>
+          <div class="llm-provider-bar">
+            <select v-model="llmProvider" class="llm-select">
+              <option v-for="p in providers" :key="p.name" :value="p.name" :disabled="!p.hasKey && p.name !== 'ollama' && p.name !== 'lm-studio'">
+                {{ p.name }}{{ !p.hasKey && p.name !== 'ollama' && p.name !== 'lm-studio' ? ' (no key)' : '' }}
+              </option>
+            </select>
+            <input v-model="llmModel" class="llm-model-input" placeholder="model (default)" />
+          </div>
+        </div>
+
         <div v-for="(sense, i) in wordData.senses" :key="i" class="sense-card">
           <div class="sense-number">#{{ i + 1 }}</div>
           <div class="sense-body">
             <div class="sense-gloss">{{ sense.gloss }}</div>
-            <div v-if="sense.gloss_en" class="sense-gloss-en">{{ sense.gloss_en }}</div>
-            <div v-if="sense.gloss_en_full" class="sense-gloss-full">{{ sense.gloss_en_full }}</div>
+
+            <!-- gloss_en -->
+            <div class="edit-row">
+              <label class="edit-label">gloss_en</label>
+              <input
+                class="edit-input"
+                :value="sense.gloss_en || ''"
+                @change="updateSense(i, 'gloss_en', ($event.target as HTMLInputElement).value)"
+              />
+              <button class="btn-llm" @click="translateSense(i, 'short')" :disabled="translating[i]" title="LLM translate (short)">
+                {{ translating[i] ? '…' : '⚡' }}
+              </button>
+            </div>
+
+            <!-- gloss_en_full -->
+            <div class="edit-row">
+              <label class="edit-label">gloss_en_full</label>
+              <input
+                class="edit-input"
+                :value="sense.gloss_en_full || ''"
+                @change="updateSense(i, 'gloss_en_full', ($event.target as HTMLInputElement).value)"
+              />
+              <button class="btn-llm" @click="translateSense(i, 'full')" :disabled="translating[i]" title="LLM translate (full)">
+                {{ translating[i] ? '…' : '⚡' }}
+              </button>
+            </div>
+
+            <!-- synonyms_en -->
+            <div class="edit-row">
+              <label class="edit-label">synonyms_en</label>
+              <input
+                class="edit-input"
+                :value="(sense.synonyms_en || []).join(', ')"
+                @change="updateSense(i, 'synonyms_en', ($event.target as HTMLInputElement).value.split(',').map((s: string) => s.trim()))"
+                placeholder="comma-separated"
+              />
+            </div>
+
             <div v-if="sense.tags?.length" class="sense-tags">
               <span v-for="tag in sense.tags" :key="tag" class="sense-tag">{{ tag }}</span>
             </div>
-            <div v-if="sense.synonyms_en?.length" class="sense-synonyms">
-              EN synonyms: {{ sense.synonyms_en.join(', ') }}
-            </div>
+
             <!-- Examples -->
             <div v-if="sense.example_ids?.length" class="sense-examples">
               <div v-for="eid in sense.example_ids" :key="eid" class="example-card">
@@ -123,6 +176,15 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Save button -->
+        <div class="save-bar" v-if="dirty">
+          <button class="btn-save" @click="saveWord" :disabled="saving">
+            {{ saving ? 'Saving…' : 'Save changes' }}
+          </button>
+          <button class="btn-discard" @click="discardChanges">Discard</button>
+          <span v-if="saveMsg" class="save-msg" :class="{ 'save-error': saveError }">{{ saveMsg }}</span>
         </div>
       </div>
 
@@ -205,6 +267,16 @@ const PAGE_SIZE = 200;
 const activeFilters = ref(new Set<string>());
 const sortMode = ref("alpha");
 
+// Editing state
+const dirty = ref(false);
+const saving = ref(false);
+const saveMsg = ref("");
+const saveError = ref(false);
+const translating = ref<Record<number, boolean>>({});
+const providers = ref<{ name: string; model: string; hasKey: boolean }[]>([]);
+const llmProvider = ref("anthropic");
+const llmModel = ref("");
+
 const hasMore = computed(() => listOffset.value + PAGE_SIZE < listTotal.value);
 const genderClass = computed(() => {
   const g = wordData.value?.gender;
@@ -283,6 +355,8 @@ async function selectWord(item: WordListItem) {
   selectedFile.value = item.pos + "/" + item.word;
   activeTab.value = "Senses";
   wiktEntries.value = [];
+  dirty.value = false;
+  saveMsg.value = "";
 
   const res = await fetch(`/api/words/${item.pos}/${encodeURIComponent(item.word)}`);
   const data = await res.json();
@@ -315,12 +389,115 @@ watch(activeTab, (tab) => {
   }
 });
 
+function updateSense(index: number, field: string, value: any) {
+  if (!wordData.value?.senses?.[index]) return;
+  wordData.value.senses[index][field] = value;
+  dirty.value = true;
+  saveMsg.value = "";
+}
+
+function toggleProofread(field: string, checked: boolean) {
+  if (!wordData.value) return;
+  if (!wordData.value._proofread) wordData.value._proofread = {};
+  wordData.value._proofread[field] = checked || undefined;
+  dirty.value = true;
+  saveMsg.value = "";
+}
+
+async function saveWord() {
+  if (!wordData.value || !selectedFile.value) return;
+  saving.value = true;
+  saveMsg.value = "";
+  saveError.value = false;
+
+  const [pos, word] = selectedFile.value.split("/");
+  const body: any = {
+    senses: wordData.value.senses.map((s: any, i: number) => ({
+      index: i,
+      gloss_en: s.gloss_en,
+      gloss_en_full: s.gloss_en_full,
+      synonyms_en: s.synonyms_en,
+    })),
+    _proofread: wordData.value._proofread || {},
+  };
+
+  try {
+    const res = await fetch(`/api/words/${pos}/${encodeURIComponent(word)}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      dirty.value = false;
+      saveMsg.value = "Saved";
+    } else {
+      saveError.value = true;
+      saveMsg.value = data.error || "Save failed";
+    }
+  } catch (e: any) {
+    saveError.value = true;
+    saveMsg.value = e.message || "Save failed";
+  } finally {
+    saving.value = false;
+  }
+}
+
+function discardChanges() {
+  if (!selectedFile.value) return;
+  const [pos, word] = selectedFile.value.split("/");
+  selectWord({ pos, file: word + ".json", word });
+  dirty.value = false;
+  saveMsg.value = "";
+}
+
+async function translateSense(index: number, mode: "short" | "full") {
+  if (!wordData.value?.senses?.[index]) return;
+  const sense = wordData.value.senses[index];
+  if (!sense.gloss) return;
+
+  translating.value = { ...translating.value, [index]: true };
+  try {
+    const res = await fetch("/api/translate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        word: wordData.value.word,
+        pos: wordData.value.pos,
+        gloss: sense.gloss,
+        mode,
+        provider: llmProvider.value,
+        model: llmModel.value || undefined,
+        phrase_type: wordData.value.phrase_type,
+      }),
+    });
+    const data = await res.json();
+    if (data.translation) {
+      const field = mode === "full" ? "gloss_en_full" : "gloss_en";
+      sense[field] = data.translation;
+      dirty.value = true;
+      saveMsg.value = "";
+    }
+  } catch { /* ignore */ }
+  finally {
+    translating.value = { ...translating.value, [index]: false };
+  }
+}
+
+async function fetchProviders() {
+  try {
+    const res = await fetch("/api/providers");
+    providers.value = await res.json();
+  } catch { /* ignore */ }
+}
+
 function formatJson(obj: unknown): string {
   return JSON.stringify(obj, null, 2);
 }
 
 onMounted(async () => {
   const route = useRoute();
+  fetchProviders();
   await fetchPosList();
   await fetchWordList(true);
 
@@ -613,6 +790,114 @@ onMounted(async () => {
   cursor: help;
 }
 .example-missing { color: #ccc; font-size: 0.75rem; font-family: monospace; }
+
+/* Editing */
+.senses-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 0.75rem;
+}
+.proofread-toggle {
+  font-size: 0.8rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.proofread-toggle input { cursor: pointer; }
+.llm-provider-bar {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.llm-select {
+  padding: 2px 4px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  background: white;
+}
+.llm-model-input {
+  width: 120px;
+  padding: 2px 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.edit-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 3px;
+}
+.edit-label {
+  font-size: 0.7rem;
+  color: #999;
+  width: 72px;
+  flex-shrink: 0;
+  text-align: right;
+}
+.edit-input {
+  flex: 1;
+  padding: 2px 6px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.edit-input:focus { border-color: #1a73e8; }
+.btn-llm {
+  padding: 1px 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff8e1;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.btn-llm:hover:not(:disabled) { background: #ffecb3; }
+.btn-llm:disabled { opacity: 0.4; cursor: default; }
+
+.save-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e0e0e0;
+}
+.btn-save {
+  padding: 0.35rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #1a73e8;
+  color: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.15s;
+}
+.btn-save:hover:not(:disabled) { background: #1565c0; }
+.btn-save:disabled { opacity: 0.5; cursor: default; }
+.btn-discard {
+  padding: 0.35rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.btn-discard:hover { background: #f5f5f5; }
+.save-msg { font-size: 0.8rem; color: #2e7d32; }
+.save-msg.save-error { color: #c62828; }
 
 /* Grammar */
 .no-grammar { color: #888; font-style: italic; }

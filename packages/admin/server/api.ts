@@ -3,11 +3,13 @@
  * raw lookup as JSON API endpoints under /api/*.
  */
 import type { Plugin } from "vite";
-import { readdirSync, readFileSync, existsSync } from "fs";
+import { readdirSync, readFileSync, writeFileSync, existsSync } from "fs";
 import { join, resolve } from "path";
 import type { IncomingMessage, ServerResponse } from "http";
 import { lookupWiktionary } from "../../../scripts/lib/wiktionary-lookup.js";
 import { computeConjugation } from "../../../src/utils/verb-forms.js";
+import { callLLM, extractJSON, PROVIDER_DEFAULTS, getApiKey } from "../../../scripts/lib/llm.js";
+import { WORD_SYSTEM_PROMPT, SYSTEM_PROMPT_FULL, PHRASE_SYSTEM_PROMPT } from "../../../scripts/lib/prompts.js";
 import type { VerbEndingsFile } from "../../../types/word.js";
 
 const ROOT = resolve(__dirname, "../../..");
@@ -239,6 +241,119 @@ function handlePosSummary(res: ServerResponse) {
   json(res, counts);
 }
 
+/** Read JSON body from an incoming request. */
+function readBody(req: IncomingMessage): Promise<any> {
+  return new Promise((resolve, reject) => {
+    let data = "";
+    req.on("data", (chunk: Buffer) => { data += chunk.toString(); });
+    req.on("end", () => {
+      try { resolve(JSON.parse(data)); }
+      catch { reject(new Error("Invalid JSON body")); }
+    });
+    req.on("error", reject);
+  });
+}
+
+/** PATCH /api/words/:pos/:file — update sense fields and _proofread. */
+async function handleWordPatch(req: IncomingMessage, res: ServerResponse, pos: string, file: string) {
+  const filePath = join(WORDS_DIR, pos, file.endsWith(".json") ? file : file + ".json");
+  if (!existsSync(filePath)) return json(res, { error: "not found" }, 404);
+
+  let body: any;
+  try { body = await readBody(req); }
+  catch { return json(res, { error: "Invalid JSON body" }, 400); }
+
+  const word = JSON.parse(readFileSync(filePath, "utf-8"));
+
+  if (body.senses && Array.isArray(body.senses)) {
+    for (const patch of body.senses) {
+      const idx = patch.index;
+      if (typeof idx !== "number" || !word.senses?.[idx]) continue;
+      const sense = word.senses[idx];
+      if ("gloss_en" in patch) sense.gloss_en = patch.gloss_en || null;
+      if ("gloss_en_full" in patch) sense.gloss_en_full = patch.gloss_en_full || null;
+      if ("synonyms_en" in patch) {
+        sense.synonyms_en = Array.isArray(patch.synonyms_en)
+          ? patch.synonyms_en.filter((s: string) => s)
+          : null;
+      }
+    }
+  }
+
+  if ("_proofread" in body && typeof body._proofread === "object") {
+    word._proofread = { ...(word._proofread || {}), ...body._proofread };
+  }
+
+  if ("_overrides" in body && typeof body._overrides === "object") {
+    word._overrides = body._overrides;
+  }
+
+  writeFileSync(filePath, JSON.stringify(word, null, 2) + "\n", "utf-8");
+  wordIndexCache = null;
+  json(res, { ok: true });
+}
+
+/** POST /api/translate — LLM translation for a single sense. */
+async function handleTranslate(req: IncomingMessage, res: ServerResponse) {
+  let body: any;
+  try { body = await readBody(req); }
+  catch { return json(res, { error: "Invalid JSON body" }, 400); }
+
+  const { word, pos, gloss, mode, provider, model } = body;
+  if (!word || !gloss) return json(res, { error: "Missing word or gloss" }, 400);
+
+  const isPhrase = pos === "phrase";
+  const isFull = mode === "full";
+  const systemPrompt = isFull ? SYSTEM_PROMPT_FULL : isPhrase ? PHRASE_SYSTEM_PROMPT : WORD_SYSTEM_PROMPT;
+  const typeClause = pos ? `, pos="${pos}"` : "";
+  const userMessage = isFull
+    ? `word="${word}"${typeClause}, gloss="${gloss}"`
+    : isPhrase
+      ? `word="${word}", phrase_type="${body.phrase_type || ""}", gloss="${gloss}"`
+      : `word="${word}"${typeClause}, gloss="${gloss}"`;
+
+  try {
+    const result = await callLLM(systemPrompt, userMessage, {
+      provider: provider || "anthropic",
+      model: model || undefined,
+      maxTokens: isFull ? 200 : 64,
+      temperature: 0.2,
+    });
+    const translation = result.text?.trim() || "";
+    json(res, { translation, model: result.model, cached: !!result._cached });
+  } catch (err: any) {
+    json(res, { error: err.message || "LLM call failed" }, 500);
+  }
+}
+
+/** GET /api/providers — list available LLM providers with API key status. */
+function handleProviders(res: ServerResponse) {
+  const providers = Object.entries(PROVIDER_DEFAULTS).map(([name, config]) => ({
+    name,
+    model: config.model,
+    hasKey: config.keyEnv ? !!getApiKey(name) : true,
+  }));
+  json(res, providers);
+}
+
+/** GET /api/search-words?q=... — quick word search for linking. */
+function handleSearchWords(req: IncomingMessage, res: ServerResponse) {
+  const params = parseQuery(req.url!);
+  const q = params.get("q")?.toLowerCase() || "";
+  const limit = Math.min(parseInt(params.get("limit") || "20"), 50);
+  if (!q || q.length < 2) return json(res, []);
+
+  const allItems = getWordIndex();
+  const results: { pos: string; word: string; gloss_en?: string }[] = [];
+  for (const item of allItems) {
+    if (item.word.toLowerCase().includes(q)) {
+      results.push({ pos: item.pos, word: item.word, gloss_en: item.gloss_en });
+      if (results.length >= limit) break;
+    }
+  }
+  json(res, results);
+}
+
 const REPORTS_URL = "https://reports.lexiklar.app/reports";
 
 /** Proxy reports from Cloudflare Worker (keeps ADMIN_TOKEN server-side). */
@@ -269,13 +384,19 @@ export function adminApiPlugin(): Plugin {
 
         if (path === "/api/pos") return handlePosSummary(res);
         if (path === "/api/stats") return handleStats(res);
-        if (path === "/api/words") return handleWordList(req, res);
+        if (path === "/api/words" && req.method === "GET") return handleWordList(req, res);
         if (path === "/api/lookup") return handleLookup(req, res);
         if (path === "/api/reports") { handleReports(res); return; }
+        if (path === "/api/translate" && req.method === "POST") { handleTranslate(req, res); return; }
+        if (path === "/api/providers") return handleProviders(res);
+        if (path === "/api/search-words") return handleSearchWords(req, res);
 
         // /api/words/:pos/:file
         const wordMatch = path.match(/^\/api\/words\/([^/]+)\/(.+)$/);
-        if (wordMatch) return handleWordDetail(res, wordMatch[1], wordMatch[2]);
+        if (wordMatch) {
+          if (req.method === "PATCH") { handleWordPatch(req, res, wordMatch[1], wordMatch[2]); return; }
+          return handleWordDetail(res, wordMatch[1], wordMatch[2]);
+        }
 
         json(res, { error: "not found" }, 404);
       });
