@@ -15,7 +15,9 @@ import { Capacitor } from "@capacitor/core";
 import type { SearchResult, WordRow } from "../../types/search.js";
 import type { Word } from "../../types/word.js";
 import type { Example } from "../../types/example.js";
-import { initNativeDb, nativeQuery, nativeExecBatch, nativeClose, nativeDeleteDb, nativeGetDbPath } from "./db-native.js";
+// Loaded dynamically so Vite excludes it from the web bundle (native-only code)
+type NativeMod = typeof import('./db-native.js');
+let _nativeMod: NativeMod | null = null;
 import { SEARCH_RESULT_LIMIT, PHRASE_SEARCH_LIMIT, SUGGESTION_LIMIT, UNRANKED_FREQUENCY, LEVENSHTEIN_SHORT_THRESHOLD, LEVENSHTEIN_LONG_THRESHOLD, PHRASE_MIN_MATCHES, SQLITE_HEADER_SIZE } from "./db-constants.js";
 import { PHRASE_TERM_TTL_MS, UI_YIELD_DELAY_MS, BUILD_MARGIN_MS } from "./time-constants.js";
 import { DB_VERSION_FILE, BUNDLED_DB_FILE } from "./db-paths.js";
@@ -56,7 +58,7 @@ function send(method: string, args: Record<string, unknown> = {}, transfer: Tran
 }
 
 async function query(sql: string, bind: unknown[] = []): Promise<Record<string, unknown>[]> {
-  if (_isNative) return nativeQuery(sql, bind);
+  if (_isNative) return _nativeMod!.nativeQuery(sql, bind);
   return send("exec", { sql, bind }) as Promise<Record<string, unknown>[]>;
 }
 
@@ -292,7 +294,8 @@ function ensureWorker(): void {
 export async function initDb(): Promise<void> {
   // Native: use lexiklar-sqlite plugin (direct native SQLite, no WASM)
   if (_isNative) {
-    await initNativeDb();
+    _nativeMod = await import('./db-native.js');
+    await _nativeMod.initNativeDb();
     return;
   }
 
@@ -773,7 +776,7 @@ export async function applyUpdate(
 
       if (_isNative) {
         // Native: execute patch directly — plugin writes to disk
-        await nativeExecBatch(patchSql);
+        await _nativeMod!.nativeExecBatch(patchSql);
       } else {
         // Web: apply patch in worker, then re-cache
         await send("exec_batch", { sql: patchSql });
@@ -794,12 +797,12 @@ export async function applyUpdate(
       }
 
       // Close current connection, delete old DB, write new one
-      await nativeClose();
-      await nativeDeleteDb();
+      await _nativeMod!.nativeClose();
+      await _nativeMod!.nativeDeleteDb();
 
       // Write decompressed DB to plugin's storage directory via Filesystem
       const { Filesystem } = await import("@capacitor/filesystem");
-      const dbDir = await nativeGetDbPath();
+      const dbDir = await _nativeMod!.nativeGetDbPath();
       const blob = new Blob([bytes]);
       const reader = new FileReader();
       const base64 = await new Promise<string>((resolve, reject) => {
@@ -817,7 +820,7 @@ export async function applyUpdate(
       });
 
       // Reopen with new DB (skip bundled check — we just wrote the OTA DB)
-      await initNativeDb(true);
+      await _nativeMod!.initNativeDb(true);
     } else {
       // Web full DB replacement — stream to Cache API first, then load into worker.
       // Avoids holding decompressed bytes + worker copy simultaneously (~500 MB peak)
