@@ -113,6 +113,8 @@
         <NounDeclension v-if="wordData.pos === 'noun' && wordData.case_forms" :word="wordData" />
         <VerbConjugation v-if="wordData.pos === 'verb' && wordData.conjugation" :verb="wordData" />
         <AdjectiveDeclension v-if="wordData.pos === 'adjective'" :word="wordData" />
+        <PronounDeclension v-if="wordData.pos === 'pronoun'" :word="wordData" />
+        <DeterminerDeclension v-if="wordData.pos === 'determiner'" :word="wordData" />
         <div v-if="!hasGrammar" class="no-grammar">No grammar table for this POS.</div>
       </div>
 
@@ -150,6 +152,8 @@ import { useRoute } from "vue-router";
 import NounDeclension from "@shared/components/NounDeclension.vue";
 import VerbConjugation from "@shared/components/VerbConjugation.vue";
 import AdjectiveDeclension from "@shared/components/AdjectiveDeclension.vue";
+import PronounDeclension from "@shared/components/PronounDeclension.vue";
+import DeterminerDeclension from "@shared/components/DeterminerDeclension.vue";
 
 interface PosCount { pos: string; count: number }
 interface WordListItem { pos: string; file: string; word: string; gloss_en?: string; zipf?: number; flags?: string[] }
@@ -188,6 +192,8 @@ const hasGrammar = computed(() => {
   if (w.pos === "noun" && w.case_forms) return true;
   if (w.pos === "verb" && w.conjugation) return true;
   if (w.pos === "adjective") return true;
+  if (w.pos === "pronoun") return true;
+  if (w.pos === "determiner") return true;
   return false;
 });
 const detailTabs = computed(() => {
