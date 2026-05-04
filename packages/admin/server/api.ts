@@ -7,10 +7,21 @@ import { readdirSync, readFileSync, existsSync } from "fs";
 import { join, resolve } from "path";
 import type { IncomingMessage, ServerResponse } from "http";
 import { lookupWiktionary } from "../../../scripts/lib/wiktionary-lookup.js";
+import { computeConjugation } from "../../../src/utils/verb-forms.js";
+import type { VerbEndingsFile } from "../../../types/word.js";
 
 const ROOT = resolve(__dirname, "../../..");
 const WORDS_DIR = join(ROOT, "data", "words");
 const EXAMPLES_DIR = join(ROOT, "data", "examples");
+const VERB_ENDINGS_FILE = join(ROOT, "data", "rules", "verb-endings.json");
+
+let verbEndings: VerbEndingsFile | null = null;
+function getVerbEndings(): VerbEndingsFile | null {
+  if (verbEndings) return verbEndings;
+  if (!existsSync(VERB_ENDINGS_FILE)) return null;
+  verbEndings = JSON.parse(readFileSync(VERB_ENDINGS_FILE, "utf-8"));
+  return verbEndings;
+}
 
 const POS_DIRS = [
   "abbreviations", "adjectives", "adverbs", "conjunctions", "determiners",
@@ -66,6 +77,14 @@ function handleWordDetail(res: ServerResponse, pos: string, file: string) {
   if (!existsSync(filePath)) return json(res, { error: "not found" }, 404);
 
   const word = JSON.parse(readFileSync(filePath, "utf-8"));
+
+  // Generate conjugation table for verbs that only have stems
+  if (word.pos === "verb" && !word.conjugation && word.stems && word.conjugation_class !== "irregular") {
+    const endings = getVerbEndings();
+    if (endings) {
+      word.conjugation = computeConjugation(word, endings);
+    }
+  }
 
   // Collect all example IDs across senses
   const exampleIds: string[] = [];
