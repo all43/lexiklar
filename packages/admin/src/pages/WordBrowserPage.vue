@@ -2,13 +2,19 @@
   <div class="word-browser">
     <!-- Left: POS sidebar + word list -->
     <aside class="word-sidebar">
-      <input
-        v-model="searchQuery"
-        class="search-input"
-        type="search"
-        placeholder="Search words…"
-        @input="onSearch"
-      />
+      <div class="search-row">
+        <input
+          v-model="searchQuery"
+          class="search-input"
+          type="search"
+          placeholder="Search words…"
+          @input="onSearch"
+        />
+        <select v-model="searchMode" class="search-mode-select" @change="onSearchModeChange">
+          <option value="source">Source</option>
+          <option value="db">App DB</option>
+        </select>
+      </div>
       <div class="filter-bar">
         <div class="filter-toggles">
           <button
@@ -38,30 +44,86 @@
         </button>
       </div>
       <div class="word-list" ref="wordListEl">
-        <div
-          v-for="item in wordItems"
-          :key="item.pos + '/' + item.file"
-          class="word-item"
-          :class="{ active: selectedFile === item.pos + '/' + item.word }"
-          @click="selectWord(item)"
-        >
-          <span class="word-name">
-            {{ item.word }}
-            <span v-if="item.flags?.includes('missing_en')" class="flag-dot flag-missing" title="Missing gloss_en"></span>
-            <span v-if="item.flags?.includes('overrides')" class="flag-dot flag-override" title="Has _overrides"></span>
-          </span>
-          <span class="word-meta">
-            <span v-if="sortMode.startsWith('zipf') && item.zipf" class="word-zipf-badge">{{ item.zipf }}</span>
-            <span v-if="item.gloss_en" class="word-gloss-preview">{{ item.gloss_en }}</span>
-            <span v-if="!selectedPos" class="word-pos-badge">{{ item.pos }}</span>
-          </span>
-        </div>
-        <div v-if="wordItems.length === 0 && !loadingList" class="word-list-empty">
-          No words found
-        </div>
-        <div v-if="hasMore" class="word-list-more">
-          <button @click="loadMore">Load more…</button>
-        </div>
+        <template v-if="searchMode === 'source'">
+          <div v-if="loadingList && wordItems.length === 0" class="list-loading">
+            <span class="list-spinner"></span>
+          </div>
+          <div
+            v-for="item in wordItems"
+            :key="item.pos + '/' + item.file"
+            class="word-item"
+            :class="{ active: selectedFile === item.pos + '/' + item.word }"
+            @click="selectWord(item)"
+          >
+            <span class="word-name">
+              {{ item.word }}
+              <span v-if="item.flags?.includes('missing_en')" class="flag-dot flag-missing" title="Missing gloss_en"></span>
+              <span v-if="item.flags?.includes('overrides')" class="flag-dot flag-override" title="Has _overrides"></span>
+            </span>
+            <span class="word-meta">
+              <span v-if="sortMode.startsWith('zipf') && item.zipf" class="word-zipf-badge">{{ item.zipf }}</span>
+              <span v-if="item.inDb === false" class="db-status db-status--out" title="Not in app DB">∅ not in DB</span>
+              <span v-if="item.gloss_en" class="word-gloss-preview">{{ item.gloss_en }}</span>
+              <span v-if="!selectedPos" class="word-pos-badge">{{ item.pos }}</span>
+            </span>
+          </div>
+          <div v-if="wordItems.length === 0 && !loadingList" class="word-list-empty">
+            No words found
+            <div v-if="wiktChecking" class="wikt-checking">
+              <span class="wikt-spinner"></span> Checking Wiktionary…
+            </div>
+            <div v-if="wiktHint" class="wikt-hint">
+              <template v-if="wiktHint.wiktEntries.length">
+                <span class="wikt-hint-label">In Wiktionary:</span>
+                <span v-for="e in wiktHint.wiktEntries" :key="e.pos" class="wikt-hint-entry">
+                  {{ e.pos }}<template v-if="e.tags.includes('masculine')"> M</template><template v-else-if="e.tags.includes('feminine')"> F</template><template v-else-if="e.tags.includes('neuter')"> N</template>
+                  <template v-if="e.glosses.length"> — {{ e.glosses[0] }}</template>
+                </span>
+                <div class="wikt-hint-actions">
+                  <button class="btn-add-word" @click="addWordFromWiktionary" :disabled="addingWord">
+                    {{ addingWord ? 'Adding…' : '+ Add to pipeline' }}
+                  </button>
+                  <span v-if="addWordMsg" class="add-word-msg" :class="{ 'add-word-error': addWordError }">{{ addWordMsg }}</span>
+                </div>
+              </template>
+              <template v-else>
+                <span class="wikt-hint-none">Not in Wiktionary either</span>
+              </template>
+            </div>
+          </div>
+          <div v-if="loadingList && wordItems.length > 0" class="list-loading list-loading--more">
+            <span class="list-spinner"></span>
+          </div>
+          <div v-if="hasMore && !loadingList" class="word-list-more">
+            <button @click="loadMore">Load more…</button>
+          </div>
+        </template>
+        <template v-else>
+          <div v-if="loadingDb && dbResults.length === 0" class="list-loading">
+            <span class="list-spinner"></span>
+          </div>
+          <div
+            v-for="result in dbResults"
+            :key="result.file"
+            class="word-item"
+            :class="{ active: selectedFile === result.file }"
+            @click="selectDbResult(result)"
+          >
+            <span class="word-name">
+              {{ result.lemma }}
+              <span v-if="result.formMatch" class="flag-form" title="Matched via inflected form">~</span>
+            </span>
+            <span class="word-meta">
+              <span v-if="result.gender" class="db-gender-badge" :class="`gender-${result.gender.toLowerCase()}`">{{ result.gender }}</span>
+              <span v-if="result.frequency !== null" class="db-freq-badge">#{{ result.frequency }}</span>
+              <span v-if="result.glossEn?.[0]" class="word-gloss-preview">{{ result.glossEn[0] }}</span>
+              <span class="word-pos-badge">{{ result.pos }}</span>
+            </span>
+          </div>
+          <div v-if="dbResults.length === 0 && !loadingDb" class="word-list-empty">
+            {{ searchQuery ? 'No results' : 'Type to search' }}
+          </div>
+        </template>
       </div>
     </aside>
 
@@ -338,7 +400,8 @@ import DeterminerDeclension from "@shared/components/DeterminerDeclension.vue";
 import WordSearchSelect from "../components/WordSearchSelect.vue";
 
 interface PosCount { pos: string; count: number }
-interface WordListItem { pos: string; file: string; word: string; gloss_en?: string; zipf?: number; flags?: string[] }
+interface WordListItem { pos: string; file: string; word: string; gloss_en?: string; zipf?: number; flags?: string[]; inDb?: boolean }
+interface DbSearchResult { lemma: string; pos: string; gender: string | null; frequency: number | null; pluralForm: string | null; file: string; glossEn: string[]; formMatch?: boolean }
 interface ExampleData {
   text: string;
   translation?: string;
@@ -353,6 +416,15 @@ const FILTER_OPTIONS = [
 ] as const;
 
 const searchQuery = ref("");
+const searchMode = ref<"source" | "db">("source");
+const dbResults = ref<DbSearchResult[]>([]);
+const loadingDb = ref(false);
+interface WiktHint { inPipeline: boolean; wiktEntries: { pos: string; tags: string[]; glosses: string[] }[] }
+const wiktHint = ref<WiktHint | null>(null);
+const wiktChecking = ref(false);
+const addingWord = ref(false);
+const addWordMsg = ref("");
+const addWordError = ref(false);
 const selectedPos = ref<string | null>(null);
 const selectedFile = ref<string | null>(null);
 const posList = ref<PosCount[]>([]);
@@ -419,7 +491,67 @@ function toggleFilter(flag: string) {
 
 function onSearch() {
   if (searchTimer) clearTimeout(searchTimer);
-  searchTimer = setTimeout(() => fetchWordList(true), 150);
+  if (searchMode.value === "db") {
+    searchTimer = setTimeout(() => fetchDbSearch(), 150);
+  } else {
+    searchTimer = setTimeout(() => fetchWordList(true), 150);
+  }
+}
+
+function onSearchModeChange() {
+  if (searchMode.value === "db") {
+    fetchDbSearch();
+  } else {
+    fetchWordList(true);
+  }
+}
+
+async function fetchDbSearch() {
+  if (!searchQuery.value) { dbResults.value = []; return; }
+  loadingDb.value = true;
+  try {
+    const res = await fetch(`/api/db-search?q=${encodeURIComponent(searchQuery.value)}`);
+    const data = await res.json();
+    dbResults.value = data.results || [];
+  } catch { dbResults.value = []; }
+  finally { loadingDb.value = false; }
+}
+
+async function addWordFromWiktionary() {
+  addingWord.value = true;
+  addWordMsg.value = "";
+  addWordError.value = false;
+  try {
+    const res = await fetch("/api/add-word", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ word: searchQuery.value }),
+    });
+    const data = await res.json();
+    if (data.ok && data.file) {
+      const slash = data.file.indexOf("/");
+      const pos = data.file.slice(0, slash);
+      const word = data.file.slice(slash + 1);
+      wiktHint.value = null;
+      await fetchWordList(true);
+      selectWord({ pos, file: word + ".json", word });
+    } else {
+      addWordError.value = true;
+      addWordMsg.value = data.error || "Failed — word may not exist in Wiktionary dump";
+    }
+  } catch (e: any) {
+    addWordError.value = true;
+    addWordMsg.value = e.message || "Network error";
+  } finally {
+    addingWord.value = false;
+  }
+}
+
+function selectDbResult(result: DbSearchResult) {
+  const slash = result.file.indexOf("/");
+  const pos = result.file.slice(0, slash);
+  const word = result.file.slice(slash + 1);
+  selectWord({ pos, file: word + ".json", word });
 }
 
 async function fetchPosList() {
@@ -428,7 +560,7 @@ async function fetchPosList() {
 }
 
 async function fetchWordList(reset = false) {
-  if (reset) { listOffset.value = 0; wordItems.value = []; }
+  if (reset) { listOffset.value = 0; wordItems.value = []; wiktHint.value = null; wiktChecking.value = false; }
   loadingList.value = true;
   const params = new URLSearchParams({
     limit: String(PAGE_SIZE),
@@ -445,6 +577,17 @@ async function fetchWordList(reset = false) {
   if (reset) wordItems.value = data.items;
   else wordItems.value = [...wordItems.value, ...data.items];
   loadingList.value = false;
+
+  if (reset && data.total === 0 && searchQuery.value.length >= 2) {
+    wiktChecking.value = true;
+    wiktHint.value = null;
+    try {
+      const r = await fetch(`/api/wikt-check?word=${encodeURIComponent(searchQuery.value)}`);
+      wiktHint.value = await r.json();
+    } finally {
+      wiktChecking.value = false;
+    }
+  }
 }
 
 function loadMore() {
@@ -728,7 +871,15 @@ onMounted(async () => {
   overflow: hidden;
 }
 
+.search-row {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
 .search-input {
+  flex: 1;
+  min-width: 0;
   padding: 0.5rem 0.75rem;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -737,6 +888,18 @@ onMounted(async () => {
   transition: border-color 0.15s;
 }
 .search-input:focus { border-color: #1a73e8; }
+
+.search-mode-select {
+  padding: 4px 5px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  background: white;
+  color: #555;
+  cursor: pointer;
+  outline: none;
+  flex-shrink: 0;
+}
 
 .filter-bar {
   display: flex;
@@ -843,6 +1006,15 @@ onMounted(async () => {
 }
 .flag-missing { background: #d32f2f; }
 .flag-override { background: #ff9800; }
+.db-status--out {
+  font-size: 0.6rem;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 0 4px;
+  flex-shrink: 0;
+  color: #e65100;
+  background: #fff3e0;
+}
 
 .word-zipf-badge {
   font-size: 0.65rem;
@@ -851,12 +1023,124 @@ onMounted(async () => {
   flex-shrink: 0;
 }
 
+.db-gender-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.db-gender-badge.gender-m { color: var(--color-gender-m, #1976d2); background: #e3f2fd; }
+.db-gender-badge.gender-f { color: var(--color-gender-f, #c2185b); background: #fce4ec; }
+.db-gender-badge.gender-n { color: var(--color-gender-n, #388e3c); background: #e8f5e9; }
+
+.db-freq-badge {
+  font-size: 0.6rem;
+  color: #bbb;
+  font-family: monospace;
+  flex-shrink: 0;
+}
+
+.flag-form {
+  font-size: 0.65rem;
+  color: #aaa;
+  font-style: italic;
+}
+
 .word-list-empty, .word-list-more {
   padding: 1rem;
   text-align: center;
   color: #888;
   font-size: 0.85rem;
 }
+
+.list-loading {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem 0;
+}
+.list-loading--more {
+  padding: 0.5rem 0;
+  border-top: 1px solid #f0f0f0;
+}
+.list-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e0e0e0;
+  border-top-color: #1a73e8;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.wikt-checking {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+}
+.wikt-spinner {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ddd;
+  border-top-color: #1a73e8;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.wikt-hint {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  text-align: left;
+  background: #f0f7ff;
+  border: 1px solid #c5deff;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.wikt-hint-label {
+  font-weight: 600;
+  color: #1565c0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.wikt-hint-entry {
+  color: #333;
+}
+.wikt-hint-none {
+  color: #aaa;
+  font-style: italic;
+}
+.wikt-hint-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 4px;
+}
+.btn-add-word {
+  padding: 3px 10px;
+  border: 1px solid #1a73e8;
+  border-radius: 5px;
+  background: #e8f0fe;
+  color: #1a73e8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-add-word:hover:not(:disabled) { background: #c5deff; }
+.btn-add-word:disabled { opacity: 0.5; cursor: default; }
+.add-word-msg { font-size: 0.72rem; color: #2e7d32; }
+.add-word-msg.add-word-error { color: #c62828; }
 .word-list-more button {
   padding: 0.25rem 1rem;
   border: 1px solid #ddd;

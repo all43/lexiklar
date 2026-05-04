@@ -5,12 +5,14 @@
 import type { Plugin } from "vite";
 import { readdirSync, readFileSync, writeFileSync, existsSync } from "fs";
 import { join, resolve } from "path";
+import { spawn } from "child_process";
 import type { IncomingMessage, ServerResponse } from "http";
 import { lookupWiktionary } from "../../../scripts/lib/wiktionary-lookup.js";
 import { computeConjugation } from "../../../src/utils/verb-forms.js";
 import { callLLM, extractJSON, PROVIDER_DEFAULTS, getApiKey } from "../../../scripts/lib/llm.js";
 import { WORD_SYSTEM_PROMPT, SYSTEM_PROMPT_FULL, PHRASE_SYSTEM_PROMPT } from "../../../scripts/lib/prompts.js";
 import type { VerbEndingsFile } from "../../../types/word.js";
+import Database from "better-sqlite3";
 
 const ROOT = resolve(__dirname, "../../..");
 const WORDS_DIR = join(ROOT, "data", "words");
@@ -48,6 +50,7 @@ interface WordListItem {
   gloss_en?: string;
   zipf?: number;
   flags?: string[];
+  inDb?: boolean;
 }
 
 function getWordFlags(data: any): string[] {
@@ -119,19 +122,32 @@ function handleWordList(req: IncomingMessage, res: ServerResponse) {
     });
   }
 
-  switch (sort) {
-    case "zipf":
-      results = [...results].sort((a, b) => (b.zipf ?? 0) - (a.zipf ?? 0));
-      break;
-    case "zipf-asc":
-      results = [...results].sort((a, b) => (a.zipf ?? 0) - (b.zipf ?? 0));
-      break;
-    default:
-      results = [...results].sort((a, b) => a.word.localeCompare(b.word, "de"));
-      break;
-  }
+  const qLow = q.toLowerCase();
+  results = [...results].sort((a, b) => {
+    if (q) {
+      const tier = (w: string) => {
+        const wl = w.toLowerCase();
+        if (wl === qLow) return 0;
+        if (wl.startsWith(qLow)) return 1;
+        return 2;
+      };
+      const tierDiff = tier(a.word) - tier(b.word);
+      if (tierDiff !== 0) return tierDiff;
+    }
+    if (sort === "zipf") return (b.zipf ?? 0) - (a.zipf ?? 0);
+    if (sort === "zipf-asc") return (a.zipf ?? 0) - (b.zipf ?? 0);
+    return a.word.localeCompare(b.word, "de");
+  });
 
   const page = results.slice(offset, offset + limit);
+
+  const dbFiles = getDbFileSet();
+  if (dbFiles) {
+    for (const item of page) {
+      item.inDb = dbFiles.has(item.pos + "/" + item.word);
+    }
+  }
+
   json(res, { total: results.length, offset, items: page });
 }
 
@@ -379,6 +395,201 @@ async function handleReports(res: ServerResponse) {
   }
 }
 
+const DB_PATH = join(ROOT, "data", "lexiklar.db");
+let appDb: InstanceType<typeof Database> | null = null;
+
+function getAppDb(): InstanceType<typeof Database> | null {
+  if (appDb) return appDb;
+  if (!existsSync(DB_PATH)) return null;
+  appDb = new Database(DB_PATH, { readonly: true });
+  return appDb;
+}
+
+let dbFileSetCache: Set<string> | null = null;
+function getDbFileSet(): Set<string> | null {
+  if (dbFileSetCache) return dbFileSetCache;
+  const db = getAppDb();
+  if (!db) return null;
+  const rows = db.prepare("SELECT file FROM words").all() as { file: string }[];
+  dbFileSetCache = new Set(rows.map(r => r.file));
+  return dbFileSetCache;
+}
+
+function foldUmlauts(s: string): string {
+  return s.toLowerCase().replace(/ä/g, "a").replace(/ö/g, "o").replace(/ü/g, "u").replace(/ß/g, "ss");
+}
+
+interface DbSearchResult {
+  lemma: string;
+  pos: string;
+  gender: string | null;
+  frequency: number | null;
+  pluralForm: string | null;
+  file: string;
+  glossEn: string[];
+  formMatch?: true;
+}
+
+const TSX_BIN = resolve(ROOT, "node_modules/.bin/tsx");
+
+function runScript(script: string, args: string[]): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const proc = spawn(TSX_BIN, [script, ...args], { cwd: ROOT, env: { ...process.env } });
+    let stderr = "";
+    proc.stderr.on("data", (d: Buffer) => { stderr += d.toString(); });
+    const timer = setTimeout(() => { proc.kill(); reject(new Error("Timeout after 60s")); }, 60_000);
+    proc.on("close", (code) => {
+      clearTimeout(timer);
+      if (code === 0) resolve();
+      else reject(new Error(stderr.trim() || `exited with code ${code}`));
+    });
+    proc.on("error", (e) => { clearTimeout(timer); reject(e); });
+  });
+}
+
+/** POST /api/add-word — run transform + enrich for a single word from Wiktionary. */
+async function handleAddWord(req: IncomingMessage, res: ServerResponse) {
+  let body: any;
+  try { body = await readBody(req); }
+  catch { return json(res, { error: "Invalid JSON body" }, 400); }
+
+  const word = typeof body.word === "string" ? body.word.trim() : "";
+  if (!word) return json(res, { error: "missing word" }, 400);
+
+  const WIKT_DUMP = join(ROOT, "data", "raw", "de-extract.jsonl");
+  if (!existsSync(WIKT_DUMP)) {
+    return json(res, { error: "Wiktionary dump not found at data/raw/de-extract.jsonl" }, 500);
+  }
+
+  // Add to whitelist before transform so frequency filter won't drop it
+  const WHITELIST_PATH = join(ROOT, "config", "word-whitelist.json");
+  let whitelisted = false;
+  try {
+    const wl = JSON.parse(readFileSync(WHITELIST_PATH, "utf-8"));
+    const alreadyListed = wl.words.some((e: any) => e.word === word);
+    if (!alreadyListed) {
+      wl.words.push({ word, domain: "user-reported", reason: "added via admin" });
+      writeFileSync(WHITELIST_PATH, JSON.stringify(wl, null, 2) + "\n", "utf-8");
+      whitelisted = true;
+    }
+  } catch (err: any) {
+    return json(res, { error: `Failed to update whitelist: ${err.message}` }, 500);
+  }
+
+  try {
+    await runScript(resolve(ROOT, "scripts/transform.ts"), ["--words", word]);
+    await runScript(resolve(ROOT, "scripts/enrich-frequency.ts"), ["--words", word]);
+  } catch (err: any) {
+    return json(res, { error: err.message || "Script failed" }, 500);
+  }
+
+  wordIndexCache = null;
+  const items = getWordIndex();
+  const match = items.find(i => i.word.toLowerCase() === word.toLowerCase());
+  json(res, { ok: true, file: match ? match.pos + "/" + match.word : null, whitelisted });
+}
+
+const wiktCheckCache = new Map<string, unknown>();
+
+/** GET /api/wikt-check?word=... — check pipeline presence + Wiktionary entries for a word. */
+function handleWiktCheck(req: IncomingMessage, res: ServerResponse) {
+  const params = parseQuery(req.url!);
+  const word = params.get("word");
+  if (!word) return json(res, { error: "missing ?word=" }, 400);
+
+  const cacheKey = word.toLowerCase();
+  if (wiktCheckCache.has(cacheKey)) {
+    // Pipeline presence may have changed (word added), so re-check inPipeline but use cached wiktEntries
+    const cached = wiktCheckCache.get(cacheKey) as any;
+    const allItems = getWordIndex();
+    const match = allItems.find(i => i.word.toLowerCase() === cacheKey);
+    return json(res, { ...cached, inPipeline: !!match, file: match ? match.pos + "/" + match.word : null });
+  }
+
+  const wiktRaw = lookupWiktionary(word, { exact: true, limit: 5 });
+  const wiktEntries = (wiktRaw as any[]).map((e: any) => ({
+    pos: e.pos,
+    tags: e.tags || [],
+    glosses: (e.senses || []).flatMap((s: any) => s.glosses || []).slice(0, 3),
+  }));
+
+  const allItems = getWordIndex();
+  const match = allItems.find(i => i.word.toLowerCase() === cacheKey);
+
+  const result = {
+    inPipeline: !!match,
+    file: match ? match.pos + "/" + match.word : null,
+    wiktEntries,
+  };
+  wiktCheckCache.set(cacheKey, { wiktEntries }); // cache only the static part
+  json(res, result);
+}
+
+/** GET /api/db-search?q=... — search the compiled app SQLite DB (preview app search UX). */
+function handleDbSearch(req: IncomingMessage, res: ServerResponse) {
+  const params = parseQuery(req.url!);
+  const q = params.get("q") || "";
+  if (!q) return json(res, { results: [] });
+
+  const db = getAppDb();
+  if (!db) return json(res, { error: "App DB not found at data/lexiklar.db" }, 404);
+
+  const qFolded = foldUmlauts(q);
+
+  const lemmaRows = db.prepare(`
+    SELECT lemma, pos, gender, frequency, plural_form, file, gloss_en
+    FROM words
+    WHERE lemma LIKE ? COLLATE NOCASE OR lemma_folded LIKE ?
+    ORDER BY
+      CASE WHEN lower(lemma) = lower(?) OR lemma_folded = ? THEN 0 ELSE 1 END,
+      LENGTH(lemma),
+      CASE WHEN frequency IS NULL THEN 999999 ELSE frequency END
+    LIMIT 50
+  `).all(q + "%", qFolded + "%", q, qFolded) as Record<string, unknown>[];
+
+  const formRows = db.prepare(`
+    SELECT w.lemma, w.pos, w.gender, w.frequency, w.plural_form, w.file, w.gloss_en
+    FROM word_forms wf JOIN words w ON w.id = wf.word_id
+    WHERE wf.form = ? COLLATE NOCASE
+    ORDER BY CASE WHEN w.frequency IS NULL THEN 999999 ELSE w.frequency END
+    LIMIT 20
+  `).all(q.toLowerCase()) as Record<string, unknown>[];
+
+  const seen = new Set<string>();
+  const results: DbSearchResult[] = [];
+
+  for (const row of lemmaRows) {
+    const file = row.file as string;
+    seen.add(file);
+    results.push({
+      lemma: row.lemma as string,
+      pos: row.pos as string,
+      gender: (row.gender as string) || null,
+      frequency: (row.frequency as number) ?? null,
+      pluralForm: (row.plural_form as string) || null,
+      file,
+      glossEn: row.gloss_en ? JSON.parse(row.gloss_en as string) : [],
+    });
+  }
+
+  for (const row of formRows) {
+    const file = row.file as string;
+    if (seen.has(file)) continue;
+    results.push({
+      lemma: row.lemma as string,
+      pos: row.pos as string,
+      gender: (row.gender as string) || null,
+      frequency: (row.frequency as number) ?? null,
+      pluralForm: (row.plural_form as string) || null,
+      file,
+      glossEn: row.gloss_en ? JSON.parse(row.gloss_en as string) : [],
+      formMatch: true,
+    });
+  }
+
+  json(res, { results });
+}
+
 export function adminApiPlugin(): Plugin {
   return {
     name: "admin-api",
@@ -397,6 +608,9 @@ export function adminApiPlugin(): Plugin {
         if (path === "/api/translate" && req.method === "POST") { handleTranslate(req, res); return; }
         if (path === "/api/providers") return handleProviders(res);
         if (path === "/api/search-words") return handleSearchWords(req, res);
+        if (path === "/api/db-search") return handleDbSearch(req, res);
+        if (path === "/api/wikt-check") return handleWiktCheck(req, res);
+        if (path === "/api/add-word" && req.method === "POST") { handleAddWord(req, res); return; }
 
         // /api/words/:pos/:file
         const wordMatch = path.match(/^\/api\/words\/([^/]+)\/(.+)$/);

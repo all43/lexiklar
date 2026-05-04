@@ -25,7 +25,7 @@
           <th>Time</th>
           <th>Type</th>
           <th>Word</th>
-          <th>File</th>
+          <th>File / Wiktionary</th>
           <th>Details</th>
           <th>Version</th>
         </tr>
@@ -38,8 +38,33 @@
           </td>
           <td class="cell-word">{{ r.word }}</td>
           <td class="cell-file">
-            <a v-if="r.file" href="#" @click.prevent="openWord(r.file)">{{ r.file }}</a>
-            <span v-else class="cell-na">—</span>
+            <template v-if="r.type === 'incorrect_data'">
+              <a v-if="r.file" href="#" @click.prevent="openWord(r.file)">{{ r.file }}</a>
+              <span v-else class="cell-na">—</span>
+            </template>
+            <template v-else>
+              <div v-if="wiktChecks[r.word] === undefined" class="wikt-loading">…</div>
+              <template v-else-if="wiktChecks[r.word].inPipeline">
+                <a href="#" @click.prevent="openWord(wiktChecks[r.word].file)" class="wikt-in-pipeline">
+                  ✓ {{ wiktChecks[r.word].file }}
+                </a>
+              </template>
+              <template v-else-if="wiktChecks[r.word].wiktEntries.length">
+                <div class="wikt-found">
+                  <span class="wikt-found-label">In Wiktionary:</span>
+                  <span v-for="e in wiktChecks[r.word].wiktEntries" :key="e.pos" class="wikt-found-entry">
+                    {{ e.pos }}<template v-if="e.tags.includes('masculine')"> M</template><template v-else-if="e.tags.includes('feminine')"> F</template><template v-else-if="e.tags.includes('neuter')"> N</template><template v-if="e.glosses.length"> — {{ e.glosses[0] }}</template>
+                  </span>
+                  <div class="wikt-found-actions">
+                    <button class="btn-add-word" @click="addWord(r.word)" :disabled="addingWords[r.word]">
+                      {{ addingWords[r.word] ? 'Adding…' : '+ Add to pipeline' }}
+                    </button>
+                    <span v-if="addWordResults[r.word] && !addWordResults[r.word].ok" class="add-word-error">{{ addWordResults[r.word].error }}</span>
+                  </div>
+                </div>
+              </template>
+              <span v-else class="wikt-absent">not in Wiktionary</span>
+            </template>
           </td>
           <td class="cell-details">{{ r.details || "—" }}</td>
           <td class="cell-version">
@@ -67,10 +92,19 @@ interface Report {
   dbVersion: string | null;
 }
 
+interface WiktCheck {
+  inPipeline: boolean;
+  file: string | null;
+  wiktEntries: { pos: string; tags: string[]; glosses: string[] }[];
+}
+
 const router = useRouter();
 const reports = ref<Report[]>([]);
 const loading = ref(true);
 const error = ref<string | null>(null);
+const wiktChecks = ref<Record<string, WiktCheck>>({});
+const addingWords = ref<Record<string, boolean>>({});
+const addWordResults = ref<Record<string, { ok: boolean; file?: string | null; error?: string }>>({});
 
 const typeCounts = computed(() => {
   const counts = { missing_word: 0, incorrect_data: 0 };
@@ -83,6 +117,7 @@ const typeCounts = computed(() => {
 async function fetchReports() {
   loading.value = true;
   error.value = null;
+  wiktChecks.value = {};
   try {
     const res = await fetch("/api/reports");
     if (!res.ok) {
@@ -91,10 +126,46 @@ async function fetchReports() {
       return;
     }
     reports.value = await res.json();
+    checkMissingWordReports();
   } catch (e: any) {
     error.value = e.message || "Failed to load reports";
   } finally {
     loading.value = false;
+  }
+}
+
+async function addWord(word: string) {
+  addingWords.value = { ...addingWords.value, [word]: true };
+  try {
+    const res = await fetch("/api/add-word", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ word }),
+    });
+    const data = await res.json();
+    addWordResults.value = { ...addWordResults.value, [word]: data };
+    if (data.ok) {
+      wiktChecks.value = { ...wiktChecks.value, [word]: { inPipeline: true, file: data.file, wiktEntries: [] } };
+    }
+  } catch (e: any) {
+    addWordResults.value = { ...addWordResults.value, [word]: { ok: false, error: e.message } };
+  } finally {
+    addingWords.value = { ...addingWords.value, [word]: false };
+  }
+}
+
+async function checkMissingWordReports() {
+  const words = [...new Set(
+    reports.value.filter(r => r.type === "missing_word").map(r => r.word)
+  )];
+  for (const word of words) {
+    if (wiktChecks.value[word] !== undefined) continue;
+    try {
+      const res = await fetch(`/api/wikt-check?word=${encodeURIComponent(word)}`);
+      wiktChecks.value = { ...wiktChecks.value, [word]: await res.json() };
+    } catch {
+      wiktChecks.value = { ...wiktChecks.value, [word]: { inPipeline: false, file: null, wiktEntries: [] } };
+    }
   }
 }
 
@@ -228,4 +299,27 @@ onMounted(fetchReports);
   font-family: monospace;
 }
 .version-tag.db { background: #e8f5e9; color: #2e7d32; margin-left: 4px; }
+
+.wikt-loading { color: #bbb; font-size: 0.8rem; }
+.wikt-in-pipeline { color: #2e7d32; font-size: 0.8rem; text-decoration: none; }
+.wikt-in-pipeline:hover { text-decoration: underline; }
+.wikt-found { display: flex; flex-direction: column; gap: 1px; }
+.wikt-found-label { font-size: 0.68rem; font-weight: 600; color: #1565c0; text-transform: uppercase; letter-spacing: 0.03em; }
+.wikt-found-entry { font-size: 0.8rem; color: #333; }
+.wikt-absent { color: #bbb; font-size: 0.8rem; font-style: italic; }
+.wikt-found-actions { display: flex; align-items: center; gap: 0.5rem; margin-top: 3px; }
+.btn-add-word {
+  padding: 2px 8px;
+  border: 1px solid #1a73e8;
+  border-radius: 4px;
+  background: #e8f0fe;
+  color: #1a73e8;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-add-word:hover:not(:disabled) { background: #c5deff; }
+.btn-add-word:disabled { opacity: 0.5; cursor: default; }
+.add-word-error { font-size: 0.72rem; color: #c62828; }
 </style>
