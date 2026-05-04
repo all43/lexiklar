@@ -19,12 +19,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: npm
+          cache: pnpm
 
-      - run: npm ci
+      - run: pnpm install --frozen-lockfile
 
       - name: Restore previous DB hashes from cache
         id: prev-hashes
@@ -35,7 +37,7 @@ jobs:
           restore-keys: published-db-hashes-
 
       - name: Build search index
-        run: npm run build-index
+        run: pnpm run build-index
 
       - name: Generate release assets and manifest
         id: publish
