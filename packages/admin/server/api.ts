@@ -208,6 +208,24 @@ function handlePosSummary(res: ServerResponse) {
   json(res, counts);
 }
 
+const REPORTS_URL = "https://reports.lexiklar.app/reports";
+
+/** Proxy reports from Cloudflare Worker (keeps ADMIN_TOKEN server-side). */
+async function handleReports(res: ServerResponse) {
+  const token = process.env.LEXIKLAR_ADMIN_TOKEN;
+  if (!token) return json(res, { error: "LEXIKLAR_ADMIN_TOKEN not set" }, 500);
+
+  try {
+    const resp = await fetch(REPORTS_URL, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const data = await resp.json();
+    json(res, data, resp.status);
+  } catch (err: any) {
+    json(res, { error: err.message || "Failed to fetch reports" }, 502);
+  }
+}
+
 export function adminApiPlugin(): Plugin {
   return {
     name: "admin-api",
@@ -222,6 +240,7 @@ export function adminApiPlugin(): Plugin {
         if (path === "/api/stats") return handleStats(res);
         if (path === "/api/words") return handleWordList(req, res);
         if (path === "/api/lookup") return handleLookup(req, res);
+        if (path === "/api/reports") { handleReports(res); return; }
 
         // /api/words/:pos/:file
         const wordMatch = path.match(/^\/api\/words\/([^/]+)\/(.+)$/);

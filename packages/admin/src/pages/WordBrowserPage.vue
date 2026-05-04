@@ -146,6 +146,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from "vue";
+import { useRoute } from "vue-router";
 import NounDeclension from "@shared/components/NounDeclension.vue";
 import VerbConjugation from "@shared/components/VerbConjugation.vue";
 import AdjectiveDeclension from "@shared/components/AdjectiveDeclension.vue";
@@ -277,9 +278,22 @@ function formatJson(obj: unknown): string {
   return JSON.stringify(obj, null, 2);
 }
 
-onMounted(() => {
-  fetchPosList();
-  fetchWordList(true);
+onMounted(async () => {
+  const route = useRoute();
+  await fetchPosList();
+  await fetchWordList(true);
+
+  const open = route.query.open as string | undefined;
+  if (open) {
+    const slash = open.indexOf("/");
+    if (slash > 0) {
+      const pos = open.slice(0, slash);
+      const word = open.slice(slash + 1);
+      selectedPos.value = pos;
+      await fetchWordList(true);
+      selectWord({ pos, file: word + ".json", word });
+    }
+  }
 });
 </script>
 
