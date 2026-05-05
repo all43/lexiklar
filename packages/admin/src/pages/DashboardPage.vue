@@ -76,11 +76,11 @@ h2 {
   font-size: 1.1rem;
 }
 p {
-  color: #666;
+  color: var(--admin-text-secondary);
   margin-bottom: 2rem;
 }
 .loading {
-  color: #999;
+  color: var(--admin-text-faint);
   padding: 2rem 0;
 }
 .stats {
@@ -92,12 +92,12 @@ p {
   background: white;
   border-radius: 8px;
   padding: 1.25rem 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--admin-shadow-sm);
   min-width: 160px;
 }
 .stat-label {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--admin-text-secondary);
   margin-bottom: 0.25rem;
 }
 .stat-value {
@@ -113,13 +113,13 @@ p {
   background: white;
   border-radius: 6px;
   padding: 0.75rem 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--admin-shadow-sm);
   min-width: 120px;
   text-align: center;
 }
 .pos-label {
   font-size: 0.8rem;
-  color: #888;
+  color: var(--admin-text-muted);
   margin-bottom: 0.25rem;
 }
 .pos-count {

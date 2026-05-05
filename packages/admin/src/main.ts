@@ -6,6 +6,7 @@ import { initStorage } from "@app/utils/storage.js";
 // Shared design tokens + component styles (no F7 dependency)
 import "@shared/tokens.css";
 import "@shared/components.css";
+import "./admin.css";
 
 const router = createRouter({
   history: createWebHistory(),

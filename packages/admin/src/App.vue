@@ -23,7 +23,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: #f5f5f5;
+  background: var(--admin-bg);
   color: #1a1a1a;
 }
 
@@ -36,7 +36,7 @@ body {
   align-items: center;
   gap: 2rem;
   padding: 0.75rem 1.5rem;
-  background: #1a73e8;
+  background: var(--admin-primary);
   color: white;
 }
 
@@ -57,7 +57,7 @@ body {
   text-decoration: none;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
-  transition: background 0.15s;
+  transition: background var(--admin-transition);
 }
 
 .nav-links a:hover {

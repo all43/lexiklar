@@ -199,14 +199,14 @@ onMounted(fetchReports);
 }
 .refresh-btn {
   padding: 0.4rem 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--admin-border-ui);
   border-radius: 6px;
   background: white;
   cursor: pointer;
   font-size: 0.85rem;
-  transition: background 0.15s;
+  transition: background var(--admin-transition);
 }
-.refresh-btn:hover:not(:disabled) { background: #f0f0f0; }
+.refresh-btn:hover:not(:disabled) { background: var(--admin-subtle); }
 .refresh-btn:disabled { opacity: 0.5; cursor: default; }
 
 .reports-error {
@@ -218,14 +218,14 @@ onMounted(fetchReports);
 }
 
 .reports-empty {
-  color: #888;
+  color: var(--admin-text-muted);
   font-style: italic;
   padding: 2rem 0;
 }
 
 .reports-summary {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--admin-text-secondary);
   margin-bottom: 0.75rem;
 }
 
@@ -235,23 +235,23 @@ onMounted(fetchReports);
   background: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--admin-shadow-sm);
   font-size: 0.85rem;
 }
 
 .reports-table th {
   text-align: left;
   padding: 0.6rem 0.75rem;
-  background: #f5f5f5;
+  background: var(--admin-bg);
   font-weight: 600;
   font-size: 0.8rem;
-  color: #555;
-  border-bottom: 1px solid #e0e0e0;
+  color: var(--admin-text-medium);
+  border-bottom: 1px solid var(--admin-border);
 }
 
 .reports-table td {
   padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--admin-subtle);
   vertical-align: top;
 }
 
@@ -261,12 +261,12 @@ onMounted(fetchReports);
 
 .cell-time {
   white-space: nowrap;
-  color: #666;
+  color: var(--admin-text-secondary);
   font-size: 0.8rem;
 }
 .cell-word { font-weight: 600; }
 .cell-file a {
-  color: #1a73e8;
+  color: var(--admin-primary);
   text-decoration: none;
   font-size: 0.8rem;
 }
@@ -277,7 +277,7 @@ onMounted(fetchReports);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #555;
+  color: var(--admin-text-medium);
 }
 
 .type-badge {
@@ -287,15 +287,15 @@ onMounted(fetchReports);
   font-weight: 500;
   white-space: nowrap;
 }
-.type-missing_word { background: #e3f2fd; color: #1565c0; }
+.type-missing_word { background: #e3f2fd; color: var(--admin-primary-dark); }
 .type-incorrect_data { background: #fff3e0; color: #e65100; }
 
 .version-tag {
   font-size: 0.7rem;
   padding: 1px 5px;
   border-radius: 4px;
-  background: #f0f0f0;
-  color: #666;
+  background: var(--admin-subtle);
+  color: var(--admin-text-secondary);
   font-family: monospace;
 }
 .version-tag.db { background: #e8f5e9; color: #2e7d32; margin-left: 4px; }
@@ -304,22 +304,9 @@ onMounted(fetchReports);
 .wikt-in-pipeline { color: #2e7d32; font-size: 0.8rem; text-decoration: none; }
 .wikt-in-pipeline:hover { text-decoration: underline; }
 .wikt-found { display: flex; flex-direction: column; gap: 1px; }
-.wikt-found-label { font-size: 0.68rem; font-weight: 600; color: #1565c0; text-transform: uppercase; letter-spacing: 0.03em; }
+.wikt-found-label { font-size: 0.68rem; font-weight: 600; color: var(--admin-primary-dark); text-transform: uppercase; letter-spacing: 0.03em; }
 .wikt-found-entry { font-size: 0.8rem; color: #333; }
 .wikt-absent { color: #bbb; font-size: 0.8rem; font-style: italic; }
 .wikt-found-actions { display: flex; align-items: center; gap: 0.5rem; margin-top: 3px; }
-.btn-add-word {
-  padding: 2px 8px;
-  border: 1px solid #1a73e8;
-  border-radius: 4px;
-  background: #e8f0fe;
-  color: #1a73e8;
-  font-size: 0.72rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-.btn-add-word:hover:not(:disabled) { background: #c5deff; }
-.btn-add-word:disabled { opacity: 0.5; cursor: default; }
 .add-word-error { font-size: 0.72rem; color: #c62828; }
 </style>

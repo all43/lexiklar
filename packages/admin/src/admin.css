@@ -1,0 +1,72 @@
+/*
+ * Admin-specific design tokens and utility classes.
+ * Not shared with the main app or grammar components.
+ */
+
+:root {
+  /* ── Primary ── */
+  --admin-primary:       #1a73e8;
+  --admin-primary-dark:  #1565c0;
+  --admin-primary-bg:    #e8f0fe;
+  --admin-primary-hover: #c5deff;
+
+  /* ── Borders ── */
+  --admin-border:        #e0e0e0;   /* structured: form fields, section lines */
+  --admin-border-ui:     #ddd;      /* UI chrome: buttons, selects, dropdowns */
+  --admin-subtle:        #f0f0f0;   /* dividers and hover backgrounds */
+
+  /* ── Text ── */
+  --admin-text-medium:    #555;
+  --admin-text-secondary: #666;
+  --admin-text-muted:     #888;
+  --admin-text-faint:     #999;
+
+  /* ── Backgrounds ── */
+  --admin-bg: #f5f5f5;
+
+  /* ── Elevation ── */
+  --admin-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --admin-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+  /* ── Motion ── */
+  --admin-transition: 0.15s;
+}
+
+/* ── Text input ── */
+.admin-text-input {
+  padding: 2px 6px;
+  border: 1px solid var(--admin-border);
+  border-radius: 4px;
+  font-size: 0.82rem;
+  outline: none;
+  transition: border-color var(--admin-transition);
+}
+.admin-text-input:focus { border-color: var(--admin-primary); }
+
+/* ── "Add to pipeline" button ── */
+.btn-add-word {
+  padding: 2px 8px;
+  border: 1px solid var(--admin-primary);
+  border-radius: 4px;
+  background: var(--admin-primary-bg);
+  color: var(--admin-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--admin-transition);
+}
+.btn-add-word:hover:not(:disabled) { background: var(--admin-primary-hover); }
+.btn-add-word:disabled { opacity: 0.5; cursor: default; }
+
+/* ── Spinner ── */
+.spinner {
+  display: inline-block;
+  border: 2px solid var(--admin-border);
+  border-top-color: var(--admin-primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+.spinner--md { width: 16px; height: 16px; }
+.spinner--sm { width: 10px; height: 10px; }
+@keyframes spin { to { transform: rotate(360deg); } }

@@ -2,7 +2,7 @@
   <div class="wss" :class="{ open: showDropdown }">
     <input
       ref="inputEl"
-      class="wss-input"
+      class="wss-input admin-text-input"
       :value="modelValue"
       :placeholder="placeholder"
       @input="onInput"
@@ -108,25 +108,16 @@ function close() {
   display: inline-flex;
   flex: 1;
 }
-.wss-input {
-  width: 100%;
-  padding: 2px 6px;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  font-size: 0.82rem;
-  outline: none;
-  transition: border-color 0.15s;
-}
-.wss-input:focus { border-color: #1a73e8; }
+.wss-input { width: 100%; }
 .wss-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
   background: white;
-  border: 1px solid #ddd;
+  border: 1px solid var(--admin-border-ui);
   border-radius: 0 0 6px 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--admin-shadow-md);
   max-height: 200px;
   overflow-y: auto;
   z-index: 100;
@@ -139,8 +130,8 @@ function close() {
   gap: 6px;
   font-size: 0.8rem;
 }
-.wss-option:hover, .wss-option.selected { background: #e8f0fe; }
+.wss-option:hover, .wss-option.selected { background: var(--admin-primary-bg); }
 .wss-word { font-weight: 600; }
-.wss-pos { font-size: 0.7rem; color: #888; background: #f0f0f0; padding: 0 4px; border-radius: 4px; }
-.wss-gloss { font-size: 0.7rem; color: #666; font-style: italic; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.wss-pos { font-size: 0.7rem; color: var(--admin-text-muted); background: var(--admin-subtle); padding: 0 4px; border-radius: 4px; }
+.wss-gloss { font-size: 0.7rem; color: var(--admin-text-secondary); font-style: italic; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 </style>
