@@ -52,7 +52,6 @@ interface SenseInfo {
   index_1based: number;
   gloss: string;
   gloss_en: string | null;
-  synonyms_en?: string[] | null;
 }
 
 interface WordFileInfo {
@@ -82,7 +81,6 @@ for (const filePath of files) {
       index_1based: i + 1,
       gloss: s.gloss || "",
       gloss_en: s.gloss_en ?? null,
-      synonyms_en: s.synonyms_en ?? null,
     })),
   });
 }
@@ -153,9 +151,6 @@ interface FixCase {
   id: string;
   text: string;
   translation: string | null;
-  annotations: Annotation[];
-  expected_text_linked: string;
-  actual_text_linked: string;
   divergent_links: DivergentLink[];
 }
 
@@ -221,9 +216,6 @@ for (const [id, ex] of Object.entries(examples)) {
     id,
     text: ex.text,
     translation: ex.translation,
-    annotations: ex.annotations!,
-    expected_text_linked: ex.text_linked,
-    actual_text_linked: actual,
     divergent_links: divergentLinks,
   });
 }
