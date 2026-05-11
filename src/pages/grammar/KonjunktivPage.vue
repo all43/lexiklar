@@ -13,18 +13,18 @@
     <!-- Overview: K1 vs K2 at a glance -->
     <f7-block class="konj-block">
       <div class="konj-comparison">
-        <div class="konj-card">
+        <div class="konj-card" :class="{ 'konj-card-active': view === 'k2' }">
           <div class="konj-card-header">
-            <a class="konj-anchor-link" @click.prevent="scrollTo('konjunktiv2')">Konjunktiv II</a>
+            <a class="konj-anchor-link" @click.prevent="view = 'k2'">Konjunktiv II</a>
           </div>
           <div class="konj-card-use">{{ t('grammar.konj2Purpose') }}</div>
           <div class="konj-card-example">
             <em>Wenn ich reich <strong>wäre</strong>, <strong>würde</strong> ich reisen.</em>
           </div>
         </div>
-        <div class="konj-card">
+        <div class="konj-card" :class="{ 'konj-card-active': view === 'k1' }">
           <div class="konj-card-header">
-            <a class="konj-anchor-link" @click.prevent="scrollTo('konjunktiv1')">Konjunktiv I</a>
+            <a class="konj-anchor-link" @click.prevent="view = 'k1'">Konjunktiv I</a>
           </div>
           <div class="konj-card-use">{{ t('grammar.konj1Purpose') }}</div>
           <div class="konj-card-example">
@@ -34,8 +34,17 @@
       </div>
     </f7-block>
 
+    <!-- Tab toggle -->
+    <f7-block class="view-toggle-block">
+      <f7-segmented strong>
+        <f7-button :active="view === 'k2'" @click="view = 'k2'">Konjunktiv II</f7-button>
+        <f7-button :active="view === 'k1'" @click="view = 'k1'">Konjunktiv I</f7-button>
+      </f7-segmented>
+    </f7-block>
+
     <!-- ===== Konjunktiv II ===== -->
-    <f7-block-title medium id="konjunktiv2">Konjunktiv II</f7-block-title>
+    <template v-if="view === 'k2'">
+    <f7-block-title medium>Konjunktiv II</f7-block-title>
     <f7-block class="konj-block">
       <p class="konj-usage">{{ t('grammar.konj2Desc') }}</p>
     </f7-block>
@@ -113,8 +122,11 @@
       </div>
     </f7-block>
 
+    </template><!-- /k2 -->
+
     <!-- ===== Konjunktiv I ===== -->
-    <f7-block-title medium id="konjunktiv1">Konjunktiv I</f7-block-title>
+    <template v-if="view === 'k1'">
+    <f7-block-title medium>Konjunktiv I</f7-block-title>
     <f7-block class="konj-block">
       <p class="konj-usage">{{ t('grammar.konj1Desc') }}</p>
     </f7-block>
@@ -175,6 +187,7 @@
         </div>
       </div>
     </f7-block>
+    </template><!-- /k1 -->
   </f7-page>
 </template>
 
@@ -185,6 +198,8 @@ import ShareButton from "../../components/ShareButton.vue";
 import { useScrollFade } from "../../composables/useScrollFade.js";
 
 const props = defineProps<{ f7route: { url: string } }>();
+
+const view = ref<'k2' | 'k1'>('k2');
 
 type Person = "ich" | "du" | "er/sie/es" | "wir" | "ihr" | "sie/Sie";
 const PERSONS: Person[] = ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"];
@@ -277,14 +292,6 @@ const K1_USAGES = [
   { key: "grammar.konj1UsageFixed", example: "Es <strong>lebe</strong> die Freiheit! / Man <strong>nehme</strong> 200g Mehl." },
 ];
 
-function scrollTo(id: string) {
-  const pageContent = document.querySelector(".page-current .page-content");
-  const target = document.querySelector<HTMLElement>(`.page-current #${id}`);
-  if (!pageContent || !target) return;
-  const offset = target.getBoundingClientRect().top - pageContent.getBoundingClientRect().top + pageContent.scrollTop - 8;
-  pageContent.scrollTo({ top: offset, behavior: "smooth" });
-}
-
 const k2El = ref<HTMLElement | null>(null);
 const k2Fade = useScrollFade(k2El);
 const wuerdeEl = ref<HTMLElement | null>(null);
@@ -322,6 +329,11 @@ const k1Fade = useScrollFade(k1El);
   border-radius: 8px;
   padding: 12px;
   background: var(--f7-list-bg-color);
+  border: 1px solid var(--f7-list-item-border-color, rgba(0,0,0,.12));
+}
+
+.konj-card-active {
+  border-color: var(--f7-theme-color);
 }
 
 .konj-card-header {
@@ -351,6 +363,12 @@ const k1Fade = useScrollFade(k1El);
 
 .konj-card-example strong {
   color: var(--f7-theme-color);
+}
+
+/* View toggle */
+.view-toggle-block {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /* Verb tables */
