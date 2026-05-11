@@ -43,6 +43,20 @@ const GRAMMAR_MAP: Record<string, string[]> = {
     "verbs/wollen",
     "verbs/brauchen",
   ],
+  "konjunktiv": [
+    "verbs/sein",
+    "verbs/haben",
+    "verbs/werden",
+    "verbs/wissen",
+    "verbs/können_beherrschen",
+    "verbs/können_etwas",
+    "verbs/müssen",
+    "verbs/dürfen",
+    "verbs/mögen_etwas",
+    "verbs/mögen_jemanden",
+    "verbs/sollen",
+    "verbs/wollen",
+  ],
   "cases": [
     // Accusative
     "prepositions/durch",

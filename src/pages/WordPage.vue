@@ -792,6 +792,7 @@ const GRAMMAR_PAGE_TITLE_KEYS: Record<string, string> = {
   "noun-gender":          "grammar.nounGenderRulesTitle",
   "adjective-declension": "grammar.adjectiveDeclensionTitle",
   "determiners":          "grammar.determinersTitle",
+  "konjunktiv":           "grammar.konjunktivTitle",
 };
 
 function grammarPageTitle(pageId: string): string {
