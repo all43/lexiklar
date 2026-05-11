@@ -11,6 +11,7 @@ import ModalVerbsPage from "../pages/grammar/ModalVerbsPage.vue";
 import ReflexivePage from "../pages/grammar/ReflexivePage.vue";
 import ConnectorsPage from "../pages/grammar/ConnectorsPage.vue";
 import TensesPage from "../pages/grammar/TensesPage.vue";
+import KonjunktivPage from "../pages/grammar/KonjunktivPage.vue";
 
 interface Route {
   path: string;
@@ -76,6 +77,10 @@ const routes: Route[] = [
   {
     path: "/grammar/tenses/",
     component: TensesPage,
+  },
+  {
+    path: "/grammar/konjunktiv/",
+    component: KonjunktivPage,
   },
 ];
 

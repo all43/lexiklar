@@ -12,6 +12,7 @@
       <f7-list-item link="/grammar/determiners/"          :title="t('grammar.determiners')" />
       <f7-list-item link="/grammar/adjective-declension/" :title="t('grammar.adjectiveDeclension')" />
       <f7-list-item link="/grammar/tenses/"              :title="t('grammar.tenses')" />
+      <f7-list-item link="/grammar/konjunktiv/"          :title="t('grammar.konjunktiv')" />
       <f7-list-item link="/grammar/modal-verbs/"          :title="t('grammar.modalVerbs')" />
       <f7-list-item link="/grammar/reflexive/"            :title="t('grammar.reflexive')" />
       <f7-list-item link="/grammar/connectors/"           :title="t('grammar.connectors')" />
