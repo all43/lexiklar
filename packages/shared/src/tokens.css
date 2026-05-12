@@ -39,7 +39,9 @@
   --f7-list-item-border-color: #e0e0e0;
 }
 
-/* ── Dark mode ── */
+/* ── Dark mode (Lexiklar color tokens only) ── */
+/* F7 surface variables (--f7-page-bg-color etc.) are NOT here:
+   in the main app F7 manages them via .dark class; in the admin they use F7's own runtime. */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-gender-m: #90caf9;   /* blue-200 */
@@ -55,14 +57,6 @@
     --color-tag-domain:      #ce93d8;
     --color-tag-domain-bg:   rgba(156, 39, 176, 0.18);
     --color-tag-grammar-bg:  rgba(255, 255, 255, 0.10);
-
-    --f7-theme-color: #2196f3;
-    --f7-page-bg-color: #1c1c1e;
-    --f7-block-bg-color: #2c2c2e;
-    --f7-list-item-title-text-color: #fff;
-    --f7-list-item-footer-text-color: #8e8e93;
-    --f7-list-item-subtitle-text-color: #ababab;
-    --f7-list-item-border-color: #3a3a3c;
   }
 }
 
