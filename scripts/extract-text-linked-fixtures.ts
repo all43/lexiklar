@@ -1,19 +1,16 @@
 /**
  * Extract golden test fixtures from proofread examples.
  *
- * Collects all examples with `_proofread.annotations` + `text_linked`,
+ * Runs the resolver on all examples with `_proofread.annotations`,
  * builds a minimal word lookup for the annotations they reference,
- * and writes both to a fixture file for use in tests and drift analysis.
+ * and writes both to a fixture file for use in snapshot regression tests.
  *
  * Usage:
  *   npx tsx scripts/extract-text-linked-fixtures.ts [--sample N] [--matching-only]
  *
  * --sample N: write only N randomly selected fixtures (for checked-in test fixtures)
- * --matching-only: include only fixtures that the current resolver reproduces
- *   exactly. Output goes to text-linked-snapshot.json (gitignored). Used as
- *   the regression net: every fixture in the snapshot must keep matching, so
- *   any future change that silently breaks an annotation/resolver path fails.
- * Without --sample or --matching-only: writes all fixtures to text-linked-all.json.
+ * --matching-only: (legacy, now a no-op — all fixtures are resolver-computed)
+ * Without --sample: writes all fixtures to text-linked-snapshot.json (gitignored).
  */
 
 import { writeFileSync, readFileSync } from "fs";
@@ -59,32 +56,26 @@ interface FixtureFile {
 // Parse flags
 const sampleArg = process.argv.indexOf("--sample");
 const sampleSize = sampleArg !== -1 ? parseInt(process.argv[sampleArg + 1], 10) : null;
-const matchingOnly = process.argv.includes("--matching-only");
 
 // Load all examples
 console.log("Loading examples...");
 const examples = loadExamples();
 
-// Collect proofread fixtures
-const fixtures: Fixture[] = [];
+// Collect proofread examples with annotations
+const candidates: Array<{ id: string; text: string; annotations: Annotation[] }> = [];
 const neededKeys = new Set<string>();
 
 for (const [id, ex] of Object.entries(examples)) {
-  if (!ex._proofread?.annotations || !ex.text_linked || !ex.annotations?.length) continue;
+  if (!ex._proofread?.annotations || !ex.annotations?.length) continue;
 
-  fixtures.push({
-    id,
-    text: ex.text,
-    annotations: ex.annotations,
-    expected: ex.text_linked,
-  });
+  candidates.push({ id, text: ex.text, annotations: ex.annotations });
 
   for (const ann of ex.annotations) {
     neededKeys.add(`${ann.lemma}|${ann.pos}`);
   }
 }
 
-console.log(`Found ${fixtures.length} proofread examples with text_linked.`);
+console.log(`Found ${candidates.length} proofread examples with annotations.`);
 
 // Build minimal lookup from word files
 console.log("Building word lookup for referenced annotations...");
@@ -115,53 +106,44 @@ for (const filePath of files) {
 
 console.log(`Lookup covers ${Object.keys(lookup).length} lemma|pos keys.`);
 
-// Check how many annotation keys are missing from the lookup
-const missingKeys = new Set<string>();
-for (const key of neededKeys) {
-  if (!lookup[key]) missingKeys.add(key);
-}
-if (missingKeys.size > 0) {
-  console.log(`Warning: ${missingKeys.size} annotation keys not found in word files.`);
-}
-
-// Filter to currently-matching fixtures if --matching-only.
-// This builds the regression net: every fixture in the snapshot
-// is reproducible by the current resolver, so any drift = regression.
-let outputFixtures = fixtures;
-if (matchingOnly) {
-  console.log("Filtering to currently-matching fixtures...");
-  // Build a Map<string, WordLookupEntry[]> from the in-memory lookup so we
-  // can run the live resolver against each fixture.
-  const liveLookup = new Map<string, WordLookupEntry[]>();
-  for (const [key, entries] of Object.entries(lookup)) {
-    liveLookup.set(
-      key,
-      entries.map((e) => ({
-        posDir: e.posDir,
-        file: e.file,
-        senses: e.senses.map((s) => ({
-          gloss: s.gloss,
-          gloss_en: s.gloss_en,
-          tags: [],
-          example_ids: [],
-          synonyms: [],
-          antonyms: [],
-          ...(s.synonyms_en ? { synonyms_en: s.synonyms_en } : {}),
-        })),
+// Build live lookup for resolver
+const liveLookup = new Map<string, WordLookupEntry[]>();
+for (const [key, entries] of Object.entries(lookup)) {
+  liveLookup.set(
+    key,
+    entries.map((e) => ({
+      posDir: e.posDir,
+      file: e.file,
+      senses: e.senses.map((s) => ({
+        gloss: s.gloss,
+        gloss_en: s.gloss_en,
+        tags: [],
+        example_ids: [],
+        synonyms: [],
+        antonyms: [],
+        ...(s.synonyms_en ? { synonyms_en: s.synonyms_en } : {}),
       })),
-    );
-  }
-
-  const matching: Fixture[] = [];
-  for (const f of fixtures) {
-    const actual = annotateExampleText(f.text, f.annotations, liveLookup);
-    if (actual === f.expected) matching.push(f);
-  }
-  console.log(
-    `Matching: ${matching.length}/${fixtures.length} (${((matching.length / fixtures.length) * 100).toFixed(1)}%)`,
+    })),
   );
-  outputFixtures = matching;
 }
+
+// Run resolver on all proofread examples to compute expected output
+console.log("Computing resolver output for all proofread examples...");
+const fixtures: Fixture[] = [];
+for (const c of candidates) {
+  const result = annotateExampleText(c.text, c.annotations, liveLookup);
+  if (result && result !== c.text) {
+    fixtures.push({
+      id: c.id,
+      text: c.text,
+      annotations: c.annotations,
+      expected: result,
+    });
+  }
+}
+console.log(`${fixtures.length}/${candidates.length} examples produced text_linked output.`);
+
+let outputFixtures = fixtures;
 
 if (sampleSize && sampleSize < outputFixtures.length) {
   // Seeded shuffle for reproducibility
@@ -192,7 +174,7 @@ console.log(`Filtered lookup to ${Object.keys(filteredLookup).length} keys for o
 // Build output
 const output: FixtureFile = {
   generated_at: new Date().toISOString().slice(0, 10),
-  total_proofread: fixtures.length,
+  total_proofread: candidates.length,
   fixture_count: outputFixtures.length,
   fixtures: outputFixtures,
   lookup: filteredLookup,
@@ -200,9 +182,7 @@ const output: FixtureFile = {
 
 const outPath = sampleSize
   ? join(ROOT, "tests", "fixtures", "text-linked-golden.json")
-  : matchingOnly
-    ? join(ROOT, "tests", "fixtures", "text-linked-snapshot.json")
-    : join(ROOT, "tests", "fixtures", "text-linked-all.json");
+  : join(ROOT, "tests", "fixtures", "text-linked-snapshot.json");
 
 writeFileSync(outPath, JSON.stringify(output, null, 2) + "\n");
 console.log(`Wrote ${outputFixtures.length} fixtures to ${relative(ROOT, outPath)}`);

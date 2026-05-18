@@ -1041,24 +1041,6 @@ function main(): void {
   if (Object.keys(examples).length > 0) {
     const lookup = buildWordLookup(files);
     let linkedCount = 0;
-    let staleRecomputed = 0;
-
-    // Build set of valid file paths for staleness detection
-    const validPaths = new Set<string>();
-    for (const entries of lookup.values()) {
-      for (const e of entries) validPaths.add(`${e.posDir}/${e.file}`);
-    }
-
-    // Check if proofread text_linked references paths that no longer exist
-    const linkPathRe = /\[\[[^|]+\|([^\]#]+)(?:#\d+)?\]\]/g;
-    function hasStaleLinks(textLinked: string): boolean {
-      let m;
-      linkPathRe.lastIndex = 0;
-      while ((m = linkPathRe.exec(textLinked))) {
-        if (!validPaths.has(m[1])) return true;
-      }
-      return false;
-    }
 
     for (const [, ex] of Object.entries(examples)) {
       // One-time migration: move manual refs from text to text_linked
@@ -1070,15 +1052,6 @@ function main(): void {
       if (!ex.annotations || ex.annotations.length === 0) {
         delete ex.text_linked;
         continue;
-      }
-
-      // Skip recomputation for proofread examples — unless text_linked has stale paths
-      if (ex._proofread?.annotations && ex.text_linked && !hasStaleLinks(ex.text_linked)) {
-        linkedCount++;
-        continue;
-      }
-      if (ex._proofread?.annotations && ex.text_linked) {
-        staleRecomputed++;
       }
 
       const textLinked = annotateExampleText(ex.text, ex.annotations, lookup);
@@ -1137,12 +1110,14 @@ function main(): void {
       }
     }
 
-    // Write back (keeps shards as source of truth)
-    saveExamples(examples);
-    console.log(`Linked ${linkedCount} examples with cross-references.`);
-    if (staleRecomputed > 0) {
-      console.log(`Recomputed ${staleRecomputed} proofread examples with stale paths.`);
+    // Write back shards — text_linked is derived at build time, strip it from source files
+    const shardExamples: typeof examples = {};
+    for (const [id, ex] of Object.entries(examples)) {
+      const { text_linked, ...rest } = ex as any;
+      shardExamples[id] = rest;
     }
+    saveExamples(shardExamples);
+    console.log(`Linked ${linkedCount} examples with cross-references.`);
     if (refCount > 0) {
       console.log(`Linked ${refCount} expressions to phrase cards (${phraseLinked} phrase files updated).`);
     }
