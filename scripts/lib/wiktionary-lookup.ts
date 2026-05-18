@@ -8,8 +8,10 @@ import { existsSync, openSync, readSync, closeSync } from "fs";
 import { execFileSync } from "child_process";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { createRequire } from "module";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const _require = createRequire(import.meta.url);
 const ROOT = join(__dirname, "../..");
 
 export const RAW_PATH = join(ROOT, "data", "raw", "de-extract.jsonl");
@@ -31,10 +33,26 @@ export interface LookupOptions {
   limit?: number;
 }
 
-/**
- * Try the SQLite byte-offset index for fast exact lookups.
- * Returns results or empty array if index unavailable.
- */
+// ── Cached SQLite index connection ──────────────────────────────────────────
+
+let _cachedDb: any = null;
+let _cachedStmt: any = null;
+
+function getIndexDb(): { db: any; stmt: any } | null {
+  if (_cachedDb) return { db: _cachedDb, stmt: _cachedStmt };
+  if (!existsSync(INDEX_PATH)) return null;
+  try {
+    const Database = _require("better-sqlite3");
+    _cachedDb = new Database(INDEX_PATH, { readonly: true });
+    _cachedStmt = _cachedDb.prepare("SELECT byte_offset FROM offsets WHERE word = ?");
+    return { db: _cachedDb, stmt: _cachedStmt };
+  } catch {
+    return null;
+  }
+}
+
+// ── Index-based lookup ──────────────────────────────────────────────────────
+
 function lookupViaIndex(
   query: string,
   langFilter: string,
@@ -42,50 +60,58 @@ function lookupViaIndex(
   posFilter: string | null,
   limit: number,
 ): WiktionaryEntry[] {
-  if (!existsSync(INDEX_PATH)) return [];
+  const idx = getIndexDb();
+  if (!idx) return [];
 
   try {
-    // Dynamic require — better-sqlite3 is a native module, may not be in all contexts
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const Database = require("better-sqlite3");
-    const db = new Database(INDEX_PATH, { readonly: true });
-    const rows = db
-      .prepare("SELECT byte_offset FROM offsets WHERE word = ?")
-      .all(query) as { byte_offset: number }[];
-    db.close();
+    const rows = idx.stmt.all(query) as { byte_offset: number }[];
+    if (!rows.length) return [];
 
-    const results: WiktionaryEntry[] = [];
-    if (!rows.length) return results;
-
-    const fd = openSync(RAW_PATH, "r");
-    const buf = Buffer.alloc(512 * 1024);
-
-    for (const { byte_offset } of rows) {
-      if (results.length >= limit) break;
-      const bytesRead = readSync(fd, buf, 0, buf.length, byte_offset);
-      const nl = buf.indexOf(0x0a, 0);
-      const line = buf
-        .subarray(0, nl === -1 ? bytesRead : nl)
-        .toString("utf8");
-      try {
-        const entry = JSON.parse(line) as WiktionaryEntry;
-        if (!allLangs && entry.lang_code !== langFilter) continue;
-        if (posFilter && entry.pos !== posFilter) continue;
-        results.push(entry);
-      } catch {
-        /* skip malformed */
-      }
-    }
-    closeSync(fd);
-    return results;
+    return readEntriesAtOffsets(
+      rows.map(r => r.byte_offset),
+      langFilter,
+      allLangs,
+      posFilter,
+      limit,
+    );
   } catch {
     return [];
   }
 }
 
-/**
- * Grep-based lookup — works for both exact and substring searches.
- */
+function readEntriesAtOffsets(
+  offsets: number[],
+  langFilter: string,
+  allLangs: boolean,
+  posFilter: string | null,
+  limit: number,
+): WiktionaryEntry[] {
+  const results: WiktionaryEntry[] = [];
+  const fd = openSync(RAW_PATH, "r");
+  const buf = Buffer.alloc(512 * 1024);
+
+  for (const byte_offset of offsets) {
+    if (results.length >= limit) break;
+    const bytesRead = readSync(fd, buf, 0, buf.length, byte_offset);
+    const nl = buf.indexOf(0x0a, 0);
+    const line = buf
+      .subarray(0, nl === -1 ? bytesRead : nl)
+      .toString("utf8");
+    try {
+      const entry = JSON.parse(line) as WiktionaryEntry;
+      if (!allLangs && entry.lang_code !== langFilter) continue;
+      if (posFilter && entry.pos !== posFilter) continue;
+      results.push(entry);
+    } catch {
+      /* skip malformed */
+    }
+  }
+  closeSync(fd);
+  return results;
+}
+
+// ── Grep-based lookup ───────────────────────────────────────────────────────
+
 function lookupViaGrep(
   query: string,
   exact: boolean,
@@ -136,6 +162,8 @@ function lookupViaGrep(
   return results;
 }
 
+// ── Public API ──────────────────────────────────────────────────────────────
+
 /**
  * Look up raw Wiktionary entries by word.
  * Uses SQLite index for exact matches (when available), grep otherwise.
@@ -158,4 +186,49 @@ export function lookupWiktionary(
   }
 
   return lookupViaGrep(query, exact, langFilter, allLangs, posFilter, limit);
+}
+
+/**
+ * Batch exact lookup — single fd open for all JSONL reads.
+ * Returns a Map from word → WiktionaryEntry[].
+ */
+export function lookupWiktionaryBatch(
+  words: string[],
+  opts: { lang?: string; limit?: number } = {},
+): Map<string, WiktionaryEntry[]> {
+  const langFilter = opts.lang ?? "de";
+  const limit = opts.limit ?? 10;
+  const result = new Map<string, WiktionaryEntry[]>();
+  if (!words.length) return result;
+  for (const w of words) result.set(w, []);
+
+  const idx = getIndexDb();
+  if (!idx) return result;
+
+  const allOffsets: { word: string; offset: number }[] = [];
+  for (const word of words) {
+    const rows = idx.stmt.all(word) as { byte_offset: number }[];
+    for (const r of rows) allOffsets.push({ word, offset: r.byte_offset });
+  }
+
+  if (!allOffsets.length) return result;
+
+  const fd = openSync(RAW_PATH, "r");
+  const buf = Buffer.alloc(512 * 1024);
+
+  for (const { word, offset } of allOffsets) {
+    const entries = result.get(word)!;
+    if (entries.length >= limit) continue;
+    const bytesRead = readSync(fd, buf, 0, buf.length, offset);
+    const nl = buf.indexOf(0x0a, 0);
+    const line = buf.subarray(0, nl === -1 ? bytesRead : nl).toString("utf8");
+    try {
+      const entry = JSON.parse(line) as WiktionaryEntry;
+      if (entry.lang_code !== langFilter) continue;
+      entries.push(entry);
+    } catch { /* skip */ }
+  }
+  closeSync(fd);
+
+  return result;
 }

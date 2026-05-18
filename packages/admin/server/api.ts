@@ -8,7 +8,7 @@ import { join, resolve } from "path";
 import { spawn } from "child_process";
 import { tmpdir } from "os";
 import type { IncomingMessage, ServerResponse } from "http";
-import { lookupWiktionary } from "../../../scripts/lib/wiktionary-lookup.js";
+import { lookupWiktionary, lookupWiktionaryBatch } from "../../../scripts/lib/wiktionary-lookup.js";
 import { computeConjugation } from "../../../src/utils/verb-forms.js";
 import { callLLM, extractJSON, PROVIDER_DEFAULTS, getApiKey } from "../../../scripts/lib/llm.js";
 import { WORD_SYSTEM_PROMPT, SYSTEM_PROMPT_FULL, PHRASE_SYSTEM_PROMPT, TOPIC_WORDS_SYSTEM_PROMPT, TOPIC_WORDS_SCHEMA, WORD_TOPICS_SYSTEM_PROMPT, WORD_TOPICS_SCHEMA } from "../../../scripts/lib/prompts.js";
@@ -656,14 +656,16 @@ async function handleBatchWiktCheck(req: IncomingMessage, res: ServerResponse) {
   const allItems = getWordIndex();
   const itemMap = new Map(allItems.map(i => [i.word.toLowerCase(), i]));
 
+  const wordsToLookup = words.filter(w => !itemMap.has(w.toLowerCase()));
+  const wiktBatch = lookupWiktionaryBatch(wordsToLookup, { lang: "de", limit: 5 });
+
   const results = words.map(word => {
     const item = itemMap.get(word.toLowerCase());
     if (item) {
       return { word, status: "in-app" as const, file: item.pos + "/" + item.word, zipf: item.zipf ?? null };
     }
 
-    const wiktRaw = lookupWiktionary(word, { exact: true, limit: 5 });
-    const wiktEntries = (wiktRaw as any[]).filter((e: any) => e.lang_code === "de");
+    const wiktEntries = wiktBatch.get(word) ?? [];
     if (wiktEntries.length > 0) {
       const wiktPos = [...new Set(wiktEntries.map((e: any) => e.pos as string))];
       const zipf = computeWordZipf(word);

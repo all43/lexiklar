@@ -28,6 +28,33 @@
       <div v-if="generateError" class="error-msg">{{ generateError }}</div>
     </div>
 
+    <!-- Batch add progress (above table so it's visible without scrolling) -->
+    <div v-if="batchRunning || batchDone" class="progress-section">
+      <h3>{{ batchDone ? 'Batch add complete' : 'Adding words…' }}</h3>
+      <div class="progress-stages">
+        <div v-for="s in stages" :key="s.id" class="stage" :class="stageClass(s)">
+          <span class="stage-icon">
+            <template v-if="s.status === 'done'">&#10003;</template>
+            <template v-else-if="s.status === 'running'"><span class="spinner spinner--sm"></span></template>
+            <template v-else>&#8226;</template>
+          </span>
+          {{ s.label }}
+        </div>
+      </div>
+      <div v-if="batchDone && batchResult" class="batch-result">
+        <div v-if="batchResult.added.length">
+          Added {{ batchResult.added.length }} words:
+          <span v-for="w in batchResult.added" :key="w.word" class="added-word">
+            <router-link :to="'/words?select=' + w.file">{{ w.word }}</router-link>
+          </span>
+        </div>
+        <div v-if="batchResult.failed.length" class="batch-failed">
+          Failed: {{ batchResult.failed.map(w => w.word).join(', ') }}
+        </div>
+      </div>
+      <div v-if="batchError" class="error-msg">{{ batchError }}</div>
+    </div>
+
     <!-- Topic → Words results -->
     <div v-if="mode === 'topic' && wordResults.length > 0" class="results-section">
       <div class="results-header">
@@ -98,32 +125,6 @@
       </div>
     </div>
 
-    <!-- Batch add progress -->
-    <div v-if="batchRunning || batchDone" class="progress-section">
-      <h3>{{ batchDone ? 'Batch add complete' : 'Adding words…' }}</h3>
-      <div class="progress-stages">
-        <div v-for="s in stages" :key="s.id" class="stage" :class="stageClass(s)">
-          <span class="stage-icon">
-            <template v-if="s.status === 'done'">&#10003;</template>
-            <template v-else-if="s.status === 'running'"><span class="spinner spinner--sm"></span></template>
-            <template v-else>&#8226;</template>
-          </span>
-          {{ s.label }}
-        </div>
-      </div>
-      <div v-if="batchDone && batchResult" class="batch-result">
-        <div v-if="batchResult.added.length">
-          Added {{ batchResult.added.length }} words:
-          <span v-for="w in batchResult.added" :key="w.word" class="added-word">
-            <router-link :to="'/words?select=' + w.file">{{ w.word }}</router-link>
-          </span>
-        </div>
-        <div v-if="batchResult.failed.length" class="batch-failed">
-          Failed: {{ batchResult.failed.map(w => w.word).join(', ') }}
-        </div>
-      </div>
-      <div v-if="batchError" class="error-msg">{{ batchError }}</div>
-    </div>
   </div>
 </template>
 
@@ -596,7 +597,7 @@ h3 { margin-bottom: 0.75rem; font-size: 1rem; font-weight: 500; }
 /* ── Progress section ── */
 
 .progress-section {
-  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   padding: 1rem;
   background: white;
   border-radius: 8px;
