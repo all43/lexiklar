@@ -56,7 +56,7 @@ export default {
     // List reports (admin only — requires Bearer token)
     if (url.pathname === "/reports" && request.method === "GET") {
       const auth = request.headers.get("Authorization") || "";
-      if (!env.ADMIN_TOKEN || auth !== `Bearer ${env.ADMIN_TOKEN}`) {
+      if (!env.LEXIKLAR_ADMIN_TOKEN || auth !== `Bearer ${env.LEXIKLAR_ADMIN_TOKEN}`) {
         return Response.json(
           { ok: false, error: "Unauthorized" },
           { status: 401, headers: CORS_HEADERS },

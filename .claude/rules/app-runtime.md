@@ -271,14 +271,14 @@ Cloudflare Worker at `reports.lexiklar.app` — stores user reports (missing wor
 
 **Configuration** (`workers/wrangler.toml`):
 - KV namespace `RATE_LIMITS` for rate limiting (100/hour per IP) and report storage (`report:*` keys)
-- Secret: `ADMIN_TOKEN` (Bearer token for `GET /reports`)
+- Secret: `LEXIKLAR_ADMIN_TOKEN` (Bearer token for `GET /reports`)
 
 **Endpoints**:
 - `POST /report` — submit a report (public, rate-limited)
-- `GET /reports` — list all reports (requires `Authorization: Bearer <ADMIN_TOKEN>`)
+- `GET /reports` — list all reports (requires `Authorization: Bearer <LEXIKLAR_ADMIN_TOKEN>`)
 
 **Deploy**: `cd workers && npx wrangler deploy`
-**Set admin token**: `cd workers && npx wrangler secret put ADMIN_TOKEN`
+**Set admin token**: `cd workers && npx wrangler secret put LEXIKLAR_ADMIN_TOKEN`
 **View reports**: `curl -H "Authorization: Bearer <token>" https://reports.lexiklar.app/reports`
 
 Client-side: `src/utils/report.ts` sends reports to `https://reports.lexiklar.app/report`.

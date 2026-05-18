@@ -279,6 +279,14 @@ A contributor-facing admin interface for browsing, editing, and proofreading wor
 pnpm run dev:admin    # starts on :5174
 ```
 
+To enable the Reports viewer, create `packages/admin/.env` with the token that matches the `LEXIKLAR_ADMIN_TOKEN` secret on the Cloudflare Worker:
+
+```
+LEXIKLAR_ADMIN_TOKEN=your_token
+```
+
+Set the Cloudflare secret: `cd workers && npx wrangler secret put LEXIKLAR_ADMIN_TOKEN`
+
 ### Features
 
 - **Word browser** — three-panel layout: POS sidebar, searchable word list (filter by quality flags, sort by frequency), word detail with grammar preview
