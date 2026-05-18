@@ -838,6 +838,15 @@ onMounted(async () => {
   await fetchPosList();
   await fetchWordList(true);
 
+  const filterParam = route.query.filter as string | undefined;
+  if (filterParam) {
+    const valid = new Set(FILTER_OPTIONS.map(f => f.value));
+    for (const f of filterParam.split(",")) {
+      if (valid.has(f)) activeFilters.value.add(f);
+    }
+    await fetchWordList(true);
+  }
+
   const open = route.query.open as string | undefined;
   if (open) {
     const slash = open.indexOf("/");

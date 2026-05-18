@@ -5,7 +5,7 @@
 import type { Plugin } from "vite";
 import { readdirSync, readFileSync, writeFileSync, existsSync, unlinkSync } from "fs";
 import { join, resolve } from "path";
-import { spawn } from "child_process";
+import { spawn, execFileSync } from "child_process";
 import { tmpdir } from "os";
 import type { IncomingMessage, ServerResponse } from "http";
 import { lookupWiktionary, lookupWiktionaryBatch } from "../../../scripts/lib/wiktionary-lookup.js";
@@ -820,6 +820,62 @@ async function handleBatchAdd(req: IncomingMessage, res: ServerResponse) {
   }
 }
 
+function handleUncommittedWords(res: ServerResponse) {
+  const gitOpts = { cwd: ROOT, maxBuffer: 10 * 1024 * 1024 };
+  try {
+    const status = execFileSync("git", ["status", "--porcelain", "--", "data/words/", "config/word-whitelist.json"], gitOpts).toString();
+    const words: { word: string; file: string }[] = [];
+    for (const line of status.split("\n")) {
+      const match = line.match(/^\s*[AM?]+\s+data\/words\/([^/]+\/(.+))\.json$/);
+      if (match) words.push({ word: match[2], file: match[1] });
+    }
+    const whitelistDirty = status.includes("word-whitelist.json");
+    json(res, { words, whitelistDirty });
+  } catch (err: any) {
+    json(res, { error: err.message }, 500);
+  }
+}
+
+async function handleCommitWords(req: IncomingMessage, res: ServerResponse) {
+  let body: any;
+  try { body = await readBody(req); }
+  catch { return json(res, { error: "Invalid JSON body" }, 400); }
+
+  let words: string[] = Array.isArray(body.words) ? body.words : [];
+  const topic: string = body.topic || "topic explorer";
+  const gitOpts = { cwd: ROOT, maxBuffer: 10 * 1024 * 1024 };
+
+  try {
+    if (!words.length) {
+      const status = execFileSync("git", ["status", "--porcelain", "--", "data/words/"], gitOpts).toString();
+      for (const line of status.split("\n")) {
+        const match = line.match(/^\s*[AM?]+\s+data\/words\/[^/]+\/(.+)\.json$/);
+        if (match) words.push(match[1]);
+      }
+    }
+    if (!words.length) return json(res, { error: "no changes to commit" }, 400);
+
+    const filesToAdd = ["config/word-whitelist.json"];
+    for (const word of words) {
+      filesToAdd.push(`data/words/*/${word}.json`);
+    }
+    filesToAdd.push("data/examples/*.json");
+
+    execFileSync("git", ["add", "--", ...filesToAdd], gitOpts);
+
+    const staged = execFileSync("git", ["diff", "--cached", "--name-only"], gitOpts).toString().trim();
+    if (!staged) return json(res, { error: "no changes to commit" }, 400);
+
+    const msg = `feat(data): add ${words.length} words from topic "${topic}"`;
+    execFileSync("git", ["commit", "-m", msg], gitOpts);
+
+    const hash = execFileSync("git", ["rev-parse", "--short", "HEAD"], gitOpts).toString().trim();
+    json(res, { ok: true, commit: hash, message: msg, files: staged.split("\n").length });
+  } catch (err: any) {
+    json(res, { error: err.message || "git commit failed" }, 500);
+  }
+}
+
 export function adminApiPlugin(): Plugin {
   return {
     name: "admin-api",
@@ -845,6 +901,8 @@ export function adminApiPlugin(): Plugin {
         if (path === "/api/batch-wikt-check" && req.method === "POST") { handleBatchWiktCheck(req, res); return; }
         if (path === "/api/word-topics" && req.method === "POST") { handleWordTopics(req, res); return; }
         if (path === "/api/batch-add-words" && req.method === "POST") { handleBatchAdd(req, res); return; }
+        if (path === "/api/uncommitted-words") return handleUncommittedWords(res);
+        if (path === "/api/commit-words" && req.method === "POST") { handleCommitWords(req, res); return; }
 
         // /api/words/:pos/:file
         const wordMatch = path.match(/^\/api\/words\/([^/]+)\/(.+)$/);

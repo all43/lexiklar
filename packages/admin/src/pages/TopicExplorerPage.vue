@@ -28,6 +28,29 @@
       <div v-if="generateError" class="error-msg">{{ generateError }}</div>
     </div>
 
+    <!-- Uncommitted words banner -->
+    <div v-if="uncommittedWords.length > 0 && !batchRunning" class="uncommitted-banner">
+      <div class="uncommitted-words">
+        {{ uncommittedWords.length }} uncommitted word{{ uncommittedWords.length > 1 ? 's' : '' }}:
+        <span v-for="w in uncommittedWords" :key="w.word" class="added-word">
+          <router-link :to="'/words?open=' + w.file">{{ w.word }}</router-link>
+        </span>
+      </div>
+      <div class="uncommitted-actions">
+        <button
+          class="btn-commit"
+          @click="commitUncommitted"
+          :disabled="committing || committed"
+        >
+          {{ committed ? `Committed (${commitHash})` : committing ? 'Committing…' : 'Commit' }}
+        </button>
+        <router-link
+          class="btn-proofread"
+          :to="'/words?open=' + uncommittedWords[0].file + '&filter=unproofread'"
+        >Proofread</router-link>
+      </div>
+    </div>
+
     <!-- Batch add progress (above table so it's visible without scrolling) -->
     <div v-if="batchRunning || batchDone" class="progress-section">
       <h3>{{ batchDone ? 'Batch add complete' : 'Adding words…' }}</h3>
@@ -47,6 +70,13 @@
           <span v-for="w in batchResult.added" :key="w.word" class="added-word">
             <router-link :to="'/words?select=' + w.file">{{ w.word }}</router-link>
           </span>
+          <button
+            class="btn-commit"
+            @click="commitWords"
+            :disabled="committing || committed"
+          >
+            {{ committed ? `Committed (${commitHash})` : committing ? 'Committing…' : 'Commit changes' }}
+          </button>
         </div>
         <div v-if="batchResult.failed.length" class="batch-failed">
           Failed: {{ batchResult.failed.map(w => w.word).join(', ') }}
@@ -181,6 +211,11 @@ const batchResult = ref<BatchResult | null>(null);
 const batchError = ref("");
 const stages = ref<Stage[]>([]);
 
+const committing = ref(false);
+const committed = ref(false);
+const commitHash = ref("");
+const uncommittedWords = ref<{ word: string; file: string }[]>([]);
+
 const addableCount = computed(() => wordResults.value.filter(r => r.status === "in-wiktionary").length);
 const selectedCount = computed(() => wordResults.value.filter(r => r.selected).length);
 const allAddableSelected = computed(() => addableCount.value > 0 && selectedCount.value === addableCount.value);
@@ -220,11 +255,20 @@ function toggleSelectAll() {
   }
 }
 
+async function checkUncommitted() {
+  try {
+    const res = await fetch("/api/uncommitted-words");
+    const data = await res.json();
+    uncommittedWords.value = data.words || [];
+  } catch { /* ignore */ }
+}
+
 onMounted(async () => {
   try {
     const res = await fetch("/api/providers");
     providers.value = await res.json();
   } catch { /* ignore */ }
+  checkUncommitted();
 });
 
 async function generate() {
@@ -320,6 +364,8 @@ async function batchAdd() {
   batchDone.value = false;
   batchResult.value = null;
   batchError.value = "";
+  committed.value = false;
+  commitHash.value = "";
   stages.value = [
     { id: "whitelist", label: "Updating whitelist", status: "pending" },
     { id: "transform", label: "Running transform", status: "pending" },
@@ -390,6 +436,36 @@ function handleSSE(event: string, data: any) {
   } else if (event === "error") {
     batchError.value = data.message || "Batch add failed";
   }
+}
+
+async function doCommit(words: string[], topic: string) {
+  committing.value = true;
+  try {
+    const res = await fetch("/api/commit-words", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ words, topic }),
+    });
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+    committed.value = true;
+    commitHash.value = data.commit;
+    uncommittedWords.value = [];
+  } catch (err: any) {
+    batchError.value = err.message || "Commit failed";
+  } finally {
+    committing.value = false;
+  }
+}
+
+async function commitWords() {
+  if (!batchResult.value?.added.length) return;
+  await doCommit(batchResult.value.added.map(w => w.word), query.value);
+}
+
+async function commitUncommitted() {
+  if (!uncommittedWords.value.length) return;
+  await doCommit(uncommittedWords.value.map(w => w.word), "topic explorer");
 }
 </script>
 
@@ -648,5 +724,59 @@ h3 { margin-bottom: 0.75rem; font-size: 1rem; font-weight: 500; }
 .batch-failed {
   margin-top: 0.3rem;
   color: #d32f2f;
+}
+
+.btn-commit {
+  margin-left: 0.75rem;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--admin-border);
+  border-radius: 6px;
+  background: white;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--admin-transition);
+}
+.btn-commit:hover:not(:disabled) {
+  background: var(--admin-primary-bg);
+  border-color: var(--admin-primary);
+  color: var(--admin-primary);
+}
+.btn-commit:disabled { opacity: 0.6; cursor: default; }
+
+.uncommitted-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.5rem;
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #6d4c00;
+}
+
+.uncommitted-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.btn-proofread {
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--admin-primary);
+  border-radius: 6px;
+  background: white;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--admin-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--admin-transition);
+}
+.btn-proofread:hover {
+  background: var(--admin-primary-bg);
 }
 </style>
