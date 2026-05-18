@@ -5,6 +5,7 @@
       <div class="nav-links">
         <router-link to="/">Dashboard</router-link>
         <router-link to="/words">Words</router-link>
+        <router-link to="/topics">Topics</router-link>
         <router-link to="/reports">Reports</router-link>
       </div>
     </nav>

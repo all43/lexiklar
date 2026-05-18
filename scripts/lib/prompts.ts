@@ -273,6 +273,72 @@ Output format:
 - Output exactly one translation per line, in the same order as the input
 - Each line: just the English equivalent — no numbers, no IDs, no explanation, no punctuation`;
 
+// ── Topic Explorer prompts ───────────────────────────────────────────────────
+
+export const TOPIC_WORDS_SYSTEM_PROMPT: string = `You are a German vocabulary expert for B2-level learners.
+
+Given a topic, generate a list of German words most relevant to that topic.
+
+Rules:
+- Include a mix of nouns, verbs, and adjectives
+- Prefer words a B2 learner would encounter in everyday German
+- For nouns, include the grammatical gender (M, F, N)
+- For verbs, use the infinitive form
+- For adjectives, use the base form (not declined)
+- Include a short English gloss (1-3 words) for each word
+- Do NOT include phrases, idioms, or multi-word expressions
+- Do NOT include very basic A1/A2 words (der, sein, haben, gut, groß) unless they have a topic-specific meaning
+- Order by relevance to the topic (most relevant first)
+
+Return a JSON object: { "words": [{ "word": "...", "pos": "noun"|"verb"|"adjective"|"adverb", "gender": "M"|"F"|"N"|null, "gloss_en": "..." }, ...] }`;
+
+export const TOPIC_WORDS_SCHEMA = {
+  type: "object",
+  properties: {
+    words: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          word: { type: "string" },
+          pos: { type: "string" },
+          gender: { type: ["string", "null"] },
+          gloss_en: { type: "string" },
+        },
+        required: ["word", "pos", "gender", "gloss_en"],
+        additionalProperties: false,
+      },
+    },
+  },
+  required: ["words"],
+  additionalProperties: false,
+} as const;
+
+export const WORD_TOPICS_SYSTEM_PROMPT: string = `You are a German vocabulary expert for B2-level learners.
+
+Given a German word, suggest 5-8 thematic topics where this word commonly appears.
+
+Rules:
+- Topics should be practical and useful for B2 learners
+- Use English topic names
+- Order by relevance (most relevant first)
+- Be specific enough to generate a focused word list (not "daily life" or "general")
+- Each topic should yield 20-50 distinct relevant words when explored
+
+Return a JSON object: { "topics": ["topic1", "topic2", ...] }`;
+
+export const WORD_TOPICS_SCHEMA = {
+  type: "object",
+  properties: {
+    topics: {
+      type: "array",
+      items: { type: "string" },
+    },
+  },
+  required: ["topics"],
+  additionalProperties: false,
+} as const;
+
 // ── Backward-compat alias ─────────────────────────────────────────────────────
 
 /** @deprecated Import WORD_SYSTEM_PROMPT directly */

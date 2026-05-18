@@ -3,14 +3,16 @@
  * raw lookup as JSON API endpoints under /api/*.
  */
 import type { Plugin } from "vite";
-import { readdirSync, readFileSync, writeFileSync, existsSync } from "fs";
+import { readdirSync, readFileSync, writeFileSync, existsSync, unlinkSync } from "fs";
 import { join, resolve } from "path";
 import { spawn } from "child_process";
+import { tmpdir } from "os";
 import type { IncomingMessage, ServerResponse } from "http";
 import { lookupWiktionary } from "../../../scripts/lib/wiktionary-lookup.js";
 import { computeConjugation } from "../../../src/utils/verb-forms.js";
 import { callLLM, extractJSON, PROVIDER_DEFAULTS, getApiKey } from "../../../scripts/lib/llm.js";
-import { WORD_SYSTEM_PROMPT, SYSTEM_PROMPT_FULL, PHRASE_SYSTEM_PROMPT } from "../../../scripts/lib/prompts.js";
+import { WORD_SYSTEM_PROMPT, SYSTEM_PROMPT_FULL, PHRASE_SYSTEM_PROMPT, TOPIC_WORDS_SYSTEM_PROMPT, TOPIC_WORDS_SCHEMA, WORD_TOPICS_SYSTEM_PROMPT, WORD_TOPICS_SCHEMA } from "../../../scripts/lib/prompts.js";
+import { loadAllCorpora, lookupFPM, toZipf, combineZipf, type FPMMap } from "../../../scripts/lib/corpus.js";
 import type { VerbEndingsFile } from "../../../types/word.js";
 import Database from "better-sqlite3";
 
@@ -590,6 +592,232 @@ function handleDbSearch(req: IncomingMessage, res: ServerResponse) {
   json(res, { results });
 }
 
+// ── Topic Explorer endpoints ────────────────────────────────────────────────
+
+let corpusMaps: [FPMMap, FPMMap, FPMMap, FPMMap] | null = null;
+let corpusLoading: Promise<void> | null = null;
+
+async function ensureCorpusMaps() {
+  if (corpusMaps) return;
+  if (corpusLoading) { await corpusLoading; return; }
+  corpusLoading = (async () => { corpusMaps = await loadAllCorpora(); })();
+  await corpusLoading;
+}
+
+function computeWordZipf(word: string): number | null {
+  if (!corpusMaps) return null;
+  const [news, wiki, subtlex, osub] = corpusMaps;
+  const scores = [
+    toZipf(lookupFPM(news, word)),
+    toZipf(lookupFPM(wiki, word)),
+    toZipf(lookupFPM(subtlex, word)),
+    toZipf(lookupFPM(osub, word)),
+  ];
+  return combineZipf(scores);
+}
+
+async function handleTopicWords(req: IncomingMessage, res: ServerResponse) {
+  let body: any;
+  try { body = await readBody(req); }
+  catch { return json(res, { error: "Invalid JSON body" }, 400); }
+
+  const topic = typeof body.topic === "string" ? body.topic.trim() : "";
+  if (!topic) return json(res, { error: "missing topic" }, 400);
+
+  const count = body.count || 40;
+  const provider = body.provider || "openai";
+  const model = body.model || undefined;
+
+  try {
+    const result = await callLLM(TOPIC_WORDS_SYSTEM_PROMPT, `Topic: "${topic}". Generate approximately ${count} words.`, {
+      provider,
+      model,
+      maxTokens: 2048,
+      temperature: 0.4,
+      jsonSchema: TOPIC_WORDS_SCHEMA as any,
+    });
+    const parsed = extractJSON(result.content);
+    const words = parsed?.words ?? [];
+    json(res, { words, cached: !!result._cached });
+  } catch (err: any) {
+    json(res, { error: err.message || "LLM call failed" }, 500);
+  }
+}
+
+async function handleBatchWiktCheck(req: IncomingMessage, res: ServerResponse) {
+  let body: any;
+  try { body = await readBody(req); }
+  catch { return json(res, { error: "Invalid JSON body" }, 400); }
+
+  const words: string[] = Array.isArray(body.words) ? body.words : [];
+  if (!words.length) return json(res, { results: [] });
+
+  await ensureCorpusMaps();
+  const allItems = getWordIndex();
+  const itemMap = new Map(allItems.map(i => [i.word.toLowerCase(), i]));
+
+  const results = words.map(word => {
+    const item = itemMap.get(word.toLowerCase());
+    if (item) {
+      return { word, status: "in-app" as const, file: item.pos + "/" + item.word, zipf: item.zipf ?? null };
+    }
+
+    const wiktRaw = lookupWiktionary(word, { exact: true, limit: 5 });
+    const wiktEntries = (wiktRaw as any[]).filter((e: any) => e.lang_code === "de");
+    if (wiktEntries.length > 0) {
+      const wiktPos = [...new Set(wiktEntries.map((e: any) => e.pos as string))];
+      const zipf = computeWordZipf(word);
+      return { word, status: "in-wiktionary" as const, zipf: zipf ? Math.round(zipf * 100) / 100 : null, wiktPos };
+    }
+
+    return { word, status: "not-found" as const, zipf: null as number | null };
+  });
+
+  json(res, { results });
+}
+
+async function handleWordTopics(req: IncomingMessage, res: ServerResponse) {
+  let body: any;
+  try { body = await readBody(req); }
+  catch { return json(res, { error: "Invalid JSON body" }, 400); }
+
+  const word = typeof body.word === "string" ? body.word.trim() : "";
+  if (!word) return json(res, { error: "missing word" }, 400);
+
+  const provider = body.provider || "openai";
+  const model = body.model || undefined;
+
+  const parts = [word];
+  if (body.pos) parts.push(`(${body.pos})`);
+  if (body.gloss_en) parts.push(`— ${body.gloss_en}`);
+  const userMsg = `Word: ${parts.join(" ")}`;
+
+  try {
+    const result = await callLLM(WORD_TOPICS_SYSTEM_PROMPT, userMsg, {
+      provider,
+      model,
+      maxTokens: 256,
+      temperature: 0.3,
+      jsonSchema: WORD_TOPICS_SCHEMA as any,
+    });
+    const parsed = extractJSON(result.content);
+    const topics = parsed?.topics ?? [];
+    json(res, { topics, cached: !!result._cached });
+  } catch (err: any) {
+    json(res, { error: err.message || "LLM call failed" }, 500);
+  }
+}
+
+let batchAddRunning = false;
+
+function runScriptLong(script: string, args: string[], timeoutMs = 180_000): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const proc = spawn(TSX_BIN, [script, ...args], { cwd: ROOT, env: { ...process.env } });
+    let stdout = "";
+    let stderr = "";
+    proc.stdout?.on("data", (d: Buffer) => { stdout += d.toString(); });
+    proc.stderr?.on("data", (d: Buffer) => { stderr += d.toString(); });
+    const timer = setTimeout(() => { proc.kill(); reject(new Error(`Timeout after ${timeoutMs / 1000}s`)); }, timeoutMs);
+    proc.on("close", (code) => {
+      clearTimeout(timer);
+      if (code === 0) resolve(stdout);
+      else reject(new Error(stderr.trim() || `exited with code ${code}`));
+    });
+    proc.on("error", (e) => { clearTimeout(timer); reject(e); });
+  });
+}
+
+async function handleBatchAdd(req: IncomingMessage, res: ServerResponse) {
+  let body: any;
+  try { body = await readBody(req); }
+  catch { res.writeHead(400); res.end("Invalid JSON body"); return; }
+
+  const entries: { word: string; domain?: string; reason?: string }[] = Array.isArray(body.words) ? body.words : [];
+  if (!entries.length) { res.writeHead(400); res.end("No words provided"); return; }
+  if (batchAddRunning) { json(res, { error: "A batch add is already in progress" }, 409); return; }
+
+  const provider = body.provider || "openai";
+
+  batchAddRunning = true;
+
+  res.writeHead(200, {
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Connection": "keep-alive",
+  });
+
+  function sendEvent(event: string, data: unknown) {
+    res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
+  }
+
+  try {
+    // 1. Whitelist
+    sendEvent("progress", { stage: "whitelist", status: "running" });
+    const WHITELIST_PATH = join(ROOT, "config", "word-whitelist.json");
+    const wl = JSON.parse(readFileSync(WHITELIST_PATH, "utf-8"));
+    const existing = new Set(wl.words.map((e: any) => e.word));
+    let added = 0;
+    for (const entry of entries) {
+      if (!existing.has(entry.word)) {
+        wl.words.push({ word: entry.word, domain: entry.domain || "topic-explorer", reason: entry.reason || "added via topic explorer" });
+        added++;
+      }
+    }
+    if (added > 0) writeFileSync(WHITELIST_PATH, JSON.stringify(wl, null, 2) + "\n", "utf-8");
+    sendEvent("progress", { stage: "whitelist", status: "done", added });
+
+    // 2. Transform
+    const wordList = entries.map(e => e.word).join(",");
+    sendEvent("progress", { stage: "transform", status: "running" });
+    await runScriptLong(resolve(ROOT, "scripts/transform.ts"), ["--words", wordList]);
+    sendEvent("progress", { stage: "transform", status: "done" });
+
+    // 3. Enrich
+    sendEvent("progress", { stage: "enrich", status: "running" });
+    await runScriptLong(resolve(ROOT, "scripts/enrich-frequency.ts"), ["--words", wordList]);
+    sendEvent("progress", { stage: "enrich", status: "done" });
+
+    // 4. Translate
+    sendEvent("progress", { stage: "translate", status: "running" });
+    wordIndexCache = null;
+    const freshIndex = getWordIndex();
+    const wordPaths = entries
+      .map(e => {
+        const match = freshIndex.find(i => i.word.toLowerCase() === e.word.toLowerCase());
+        return match ? `${match.pos}/${match.word}` : null;
+      })
+      .filter(Boolean);
+
+    if (wordPaths.length > 0) {
+      const tmpFile = join(tmpdir(), `lexiklar-batch-${Date.now()}.txt`);
+      writeFileSync(tmpFile, wordPaths.join("\n") + "\n", "utf-8");
+      try {
+        await runScriptLong(resolve(ROOT, "scripts/translate-glosses.ts"), ["--word-list", tmpFile, "--provider", provider]);
+      } finally {
+        try { unlinkSync(tmpFile); } catch { /* ignore */ }
+      }
+    }
+    sendEvent("progress", { stage: "translate", status: "done" });
+
+    // 5. Result
+    wordIndexCache = null;
+    const finalIndex = getWordIndex();
+    const results = entries.map(e => {
+      const match = finalIndex.find(i => i.word.toLowerCase() === e.word.toLowerCase());
+      return { word: e.word, file: match ? match.pos + "/" + match.word : null };
+    });
+    const addedWords = results.filter(r => r.file);
+    const failedWords = results.filter(r => !r.file);
+
+    sendEvent("done", { added: addedWords, failed: failedWords });
+  } catch (err: any) {
+    sendEvent("error", { message: err.message || "Batch add failed" });
+  } finally {
+    batchAddRunning = false;
+    res.end();
+  }
+}
+
 export function adminApiPlugin(): Plugin {
   return {
     name: "admin-api",
@@ -611,6 +839,10 @@ export function adminApiPlugin(): Plugin {
         if (path === "/api/db-search") return handleDbSearch(req, res);
         if (path === "/api/wikt-check") return handleWiktCheck(req, res);
         if (path === "/api/add-word" && req.method === "POST") { handleAddWord(req, res); return; }
+        if (path === "/api/topic-words" && req.method === "POST") { handleTopicWords(req, res); return; }
+        if (path === "/api/batch-wikt-check" && req.method === "POST") { handleBatchWiktCheck(req, res); return; }
+        if (path === "/api/word-topics" && req.method === "POST") { handleWordTopics(req, res); return; }
+        if (path === "/api/batch-add-words" && req.method === "POST") { handleBatchAdd(req, res); return; }
 
         // /api/words/:pos/:file
         const wordMatch = path.match(/^\/api\/words\/([^/]+)\/(.+)$/);
