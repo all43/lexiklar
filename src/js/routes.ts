@@ -12,6 +12,7 @@ import ReflexivePage from "../pages/grammar/ReflexivePage.vue";
 import ConnectorsPage from "../pages/grammar/ConnectorsPage.vue";
 import TensesPage from "../pages/grammar/TensesPage.vue";
 import KonjunktivPage from "../pages/grammar/KonjunktivPage.vue";
+import ProadverbPage from "../pages/grammar/ProadverbPage.vue";
 
 interface Route {
   path: string;
@@ -81,6 +82,10 @@ const routes: Route[] = [
   {
     path: "/grammar/konjunktiv/",
     component: KonjunktivPage,
+  },
+  {
+    path: "/grammar/proadverb/",
+    component: ProadverbPage,
   },
 ];
 

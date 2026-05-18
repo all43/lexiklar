@@ -793,6 +793,7 @@ const GRAMMAR_PAGE_TITLE_KEYS: Record<string, string> = {
   "adjective-declension": "grammar.adjectiveDeclensionTitle",
   "determiners":          "grammar.determinersTitle",
   "konjunktiv":           "grammar.konjunktivTitle",
+  "proadverb":            "grammar.proadverbTitle",
 };
 
 function grammarPageTitle(pageId: string): string {
