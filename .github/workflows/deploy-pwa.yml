@@ -49,8 +49,21 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      - name: Cache SQLite database build
+        id: db-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/lexiklar.db
+            data/db-version.txt
+          key: db-build-${{ hashFiles('data/words/**/*.json', 'data/examples/*.json', 'data/rules/**/*.json', 'scripts/build-index.ts', 'scripts/lib/**/*.ts', 'src/utils/verb-forms.js', 'src/utils/text.ts', 'types/**/*.ts') }}
+
+      - name: Build search index
+        if: steps.db-cache.outputs.cache-hit != 'true'
+        run: pnpm run build-index
+
       - name: Build app
-        run: pnpm run build
+        run: pnpm exec tsx scripts/copy-data.ts && pnpm exec vite build
 
       - name: Remove DB from dist (served from R2 CDN, exceeds Pages 25 MB limit)
         run: rm -f dist/data/lexiklar.db && rm -rf dist/assets/databases
@@ -78,8 +91,21 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      - name: Cache SQLite database build
+        id: db-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/lexiklar.db
+            data/db-version.txt
+          key: db-build-${{ hashFiles('data/words/**/*.json', 'data/examples/*.json', 'data/rules/**/*.json', 'scripts/build-index.ts', 'scripts/lib/**/*.ts', 'src/utils/verb-forms.js', 'src/utils/text.ts', 'types/**/*.ts') }}
+
+      - name: Build search index
+        if: steps.db-cache.outputs.cache-hit != 'true'
+        run: pnpm run build-index
+
       - name: Build app
-        run: pnpm run build
+        run: pnpm exec tsx scripts/copy-data.ts && pnpm exec vite build
 
       - name: Remove DB from dist (native uses bundled DB + OTA patches, not web assets)
         run: rm -f dist/data/lexiklar.db && rm -rf dist/assets/databases
