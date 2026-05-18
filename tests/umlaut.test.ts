@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { findUmlaut, splitUmlaut } from "../src/utils/umlaut.js";
+import { findUmlaut, splitUmlaut, splitIrregularPlural } from "../src/utils/umlaut.js";
 
 describe("findUmlaut", () => {
   // ── a → ä ──
@@ -174,5 +174,150 @@ describe("splitUmlaut", () => {
 
   it("returns null for non-umlaut plural", () => {
     expect(splitUmlaut("Hund", "Hunde")).toBeNull();
+  });
+});
+
+describe("splitIrregularPlural", () => {
+  // ── Genuine irregular plurals ──
+  it("detects -um → -en (Zentrum → Zentren)", () => {
+    expect(splitIrregularPlural("Zentrum", "Zentren")).toEqual({
+      prefix: "Zentr", oldEnding: "um", newEnding: "en",
+    });
+  });
+
+  it("detects -um → -a (Visum → Visa)", () => {
+    expect(splitIrregularPlural("Visum", "Visa")).toEqual({
+      prefix: "Vis", oldEnding: "um", newEnding: "a",
+    });
+  });
+
+  it("detects -um → -en (Museum → Museen)", () => {
+    expect(splitIrregularPlural("Museum", "Museen")).toEqual({
+      prefix: "Muse", oldEnding: "um", newEnding: "en",
+    });
+  });
+
+  it("detects -us → -en (Rhythmus → Rhythmen)", () => {
+    expect(splitIrregularPlural("Rhythmus", "Rhythmen")).toEqual({
+      prefix: "Rhythm", oldEnding: "us", newEnding: "en",
+    });
+  });
+
+  it("detects -us → -i (Bonus → Boni)", () => {
+    expect(splitIrregularPlural("Bonus", "Boni")).toEqual({
+      prefix: "Bon", oldEnding: "us", newEnding: "i",
+    });
+  });
+
+  it("detects -a → -en (Firma → Firmen)", () => {
+    expect(splitIrregularPlural("Firma", "Firmen")).toEqual({
+      prefix: "Firm", oldEnding: "a", newEnding: "en",
+    });
+  });
+
+  it("detects -a → -en (Thema → Themen)", () => {
+    expect(splitIrregularPlural("Thema", "Themen")).toEqual({
+      prefix: "Them", oldEnding: "a", newEnding: "en",
+    });
+  });
+
+  it("detects -is → -en (Praxis → Praxen)", () => {
+    expect(splitIrregularPlural("Praxis", "Praxen")).toEqual({
+      prefix: "Prax", oldEnding: "is", newEnding: "en",
+    });
+  });
+
+  it("detects -o → -en (Konto → Konten)", () => {
+    expect(splitIrregularPlural("Konto", "Konten")).toEqual({
+      prefix: "Kont", oldEnding: "o", newEnding: "en",
+    });
+  });
+
+  it("detects -on → -en (Stadion → Stadien)", () => {
+    expect(splitIrregularPlural("Stadion", "Stadien")).toEqual({
+      prefix: "Stadi", oldEnding: "on", newEnding: "en",
+    });
+  });
+
+  it("detects -on → -a (Lexikon → Lexika)", () => {
+    expect(splitIrregularPlural("Lexikon", "Lexika")).toEqual({
+      prefix: "Lexik", oldEnding: "on", newEnding: "a",
+    });
+  });
+
+  it("detects -mann → -leute (Geschäftsmann → Geschäftsleute)", () => {
+    expect(splitIrregularPlural("Geschäftsmann", "Geschäftsleute")).toEqual({
+      prefix: "Geschäfts", oldEnding: "mann", newEnding: "leute",
+    });
+  });
+
+  it("detects compound -um → -en (Einkaufszentrum → Einkaufszentren)", () => {
+    expect(splitIrregularPlural("Einkaufszentrum", "Einkaufszentren")).toEqual({
+      prefix: "Einkaufszentr", oldEnding: "um", newEnding: "en",
+    });
+  });
+
+  it("detects -o → -i (Cello → Celli)", () => {
+    expect(splitIrregularPlural("Cello", "Celli")).toEqual({
+      prefix: "Cell", oldEnding: "o", newEnding: "i",
+    });
+  });
+
+  it("detects -ex → -izes (Index → Indizes)", () => {
+    expect(splitIrregularPlural("Index", "Indizes")).toEqual({
+      prefix: "Ind", oldEnding: "ex", newEnding: "izes",
+    });
+  });
+
+  // ── Should NOT detect (umlaut handled separately) ──
+  it("returns null for umlaut plural (Haus → Häuser)", () => {
+    expect(splitIrregularPlural("Haus", "Häuser")).toBeNull();
+  });
+
+  it("returns null for umlaut plural (Arzt → Ärzte)", () => {
+    expect(splitIrregularPlural("Arzt", "Ärzte")).toBeNull();
+  });
+
+  it("returns null for umlaut plural (Saal → Säle)", () => {
+    expect(splitIrregularPlural("Saal", "Säle")).toBeNull();
+  });
+
+  // ── Should NOT detect (regular suffix addition) ──
+  it("returns null for regular -e suffix (Hund → Hunde)", () => {
+    expect(splitIrregularPlural("Hund", "Hunde")).toBeNull();
+  });
+
+  it("returns null for regular -en suffix (Frau → Frauen)", () => {
+    expect(splitIrregularPlural("Frau", "Frauen")).toBeNull();
+  });
+
+  it("returns null for regular -er suffix (Kind → Kinder)", () => {
+    expect(splitIrregularPlural("Kind", "Kinder")).toBeNull();
+  });
+
+  it("returns null for no-change plural (Lehrer → Lehrer)", () => {
+    expect(splitIrregularPlural("Lehrer", "Lehrer")).toBeNull();
+  });
+
+  // ── Should NOT detect (substantivized adjectives) ──
+  it("returns null for substantivized -r drop (Beamter → Beamte)", () => {
+    expect(splitIrregularPlural("Beamter", "Beamte")).toBeNull();
+  });
+
+  it("returns null for substantivized -s drop (Dunkles → Dunkle)", () => {
+    expect(splitIrregularPlural("Dunkles", "Dunkle")).toBeNull();
+  });
+
+  it("returns null for substantivized -r dative (Beamter → Beamten)", () => {
+    expect(splitIrregularPlural("Beamter", "Beamten")).toBeNull();
+  });
+
+  // ── Should NOT detect (garbage data) ──
+  it("returns null for garbage plural (? marker)", () => {
+    expect(splitIrregularPlural("Alf", "?")).toBeNull();
+  });
+
+  it("returns null for empty strings", () => {
+    expect(splitIrregularPlural("", "")).toBeNull();
   });
 });

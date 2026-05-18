@@ -68,3 +68,44 @@ export function splitUmlaut(singular: string, plural: string): UmlautSplit | nul
     after: plural.slice(match.index + match.length),
   };
 }
+
+export interface IrregularPluralSplit {
+  /** Common prefix shared by singular and plural */
+  prefix: string;
+  /** The ending that was replaced (from singular) */
+  oldEnding: string;
+  /** The replacement ending (in plural) */
+  newEnding: string;
+}
+
+/**
+ * Detect irregular plural stem changes (e.g. Zentrum→Zentren, Firma→Firmen).
+ * Returns null when:
+ * - an umlaut change is detected (handled by splitUmlaut)
+ * - the plural is a regular suffix addition (Hund→Hunde)
+ * - the change is a substantivized-adjective pattern (Beamter→Beamte)
+ */
+export function splitIrregularPlural(singular: string, plural: string): IrregularPluralSplit | null {
+  if (!singular || !plural || plural === "?") return null;
+  if (findUmlaut(singular, plural)) return null;
+
+  let prefixLen = 0;
+  while (prefixLen < singular.length && prefixLen < plural.length && singular[prefixLen] === plural[prefixLen]) {
+    prefixLen++;
+  }
+
+  const oldEnding = singular.slice(prefixLen);
+  const newEnding = plural.slice(prefixLen);
+
+  // Regular suffix addition (Hund→Hunde): singular is fully contained in plural
+  if (!oldEnding) return null;
+
+  // Substantivized adjective: singular nom ends -er/-es, plural follows adjective
+  // declension (-e, -en, -em). The old ending after the common prefix is "r" or "s".
+  if ((oldEnding === "r" || oldEnding === "s") && newEnding.length <= 1) return null;
+
+  // Require meaningful common prefix (at least 2 chars) to avoid garbage matches
+  if (prefixLen < 2) return null;
+
+  return { prefix: plural.slice(0, prefixLen), oldEnding, newEnding };
+}

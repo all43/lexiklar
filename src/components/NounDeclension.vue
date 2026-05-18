@@ -58,7 +58,7 @@
               </div>
             </template>
             <template v-else-if="hasPlural">
-              <span class="decl-article decl-article--plural">{{ pluralArticles[c.key] + ' ' }}</span><template v-if="umlautSplit(c.key)">{{ umlautSplit(c.key)!.before }}<span class="decl-umlaut">{{ umlautSplit(c.key)!.umlaut }}</span>{{ umlautSplit(c.key)!.after }}</template><span v-else>{{ allForms('plural', c.key).join(' / ') || '—' }}</span>
+              <span class="decl-article decl-article--plural">{{ pluralArticles[c.key] + ' ' }}</span><template v-if="umlautSplit(c.key)">{{ umlautSplit(c.key)!.before }}<span class="decl-umlaut">{{ umlautSplit(c.key)!.umlaut }}</span>{{ umlautSplit(c.key)!.after }}</template><template v-else-if="irregularSplit(c.key)">{{ irregularSplit(c.key)!.prefix }}<span class="decl-irregular">{{ irregularSplit(c.key)!.newEnding }}</span></template><span v-else>{{ allForms('plural', c.key).join(' / ') || '—' }}</span>
             </template>
             <span v-else class="decl-no-plural">—</span>
           </td>
@@ -74,7 +74,7 @@
 import { ref, computed } from "vue";
 import { t } from "../js/i18n.js";
 import { useScrollFade } from "../composables/useScrollFade.js";
-import { splitUmlaut, type UmlautSplit } from "../utils/umlaut.js";
+import { splitUmlaut, splitIrregularPlural, type UmlautSplit, type IrregularPluralSplit } from "../utils/umlaut.js";
 import type { NounWord, CaseRow } from "../../types/word.js";
 
 type Gender = "M" | "F" | "N";
@@ -173,6 +173,13 @@ function umlautSplit(caseKey: "nom" | "acc" | "dat" | "gen"): UmlautSplit | null
   if (!singNom || !pluralForm) return null;
   return splitUmlaut(singNom, pluralForm);
 }
+
+function irregularSplit(caseKey: "nom" | "acc" | "dat" | "gen"): IrregularPluralSplit | null {
+  const singNom = props.word.case_forms?.singular?.nom;
+  const pluralForm = props.word.case_forms?.plural?.[caseKey];
+  if (!singNom || !pluralForm) return null;
+  return splitIrregularPlural(singNom, pluralForm);
+}
 </script>
 
 <style scoped>
@@ -196,6 +203,11 @@ function umlautSplit(caseKey: "nom" | "acc" | "dat" | "gen"): UmlautSplit | null
 
 .decl-umlaut {
   color: var(--color-vowel-change);
+  font-weight: 600;
+}
+
+.decl-irregular {
+  color: var(--color-irregular-plural);
   font-weight: 600;
 }
 </style>
