@@ -206,6 +206,12 @@ For items that need annotations (type "example" only), provide for each content 
 - "lemma": dictionary form (infinitive for verbs, nominative singular for nouns, base form for adjectives)
 - "pos": one of "noun", "verb", "adjective"
 - "gloss_hint": if the DISAMBIGUATION object contains the key "lemma|pos" with multiple glosses, pick a 1-3 word substring from the matching gloss that best identifies the intended meaning. If not in disambiguation or has only one meaning, use null.
+- "form2": (optional) a second word in the sentence that belongs to the same annotation. Use in these cases:
+    1. **zu + infinitive**: set form2 to "zu" when the verb appears as "zu [verb]" (e.g. "zu helfen" → form="helfen", form2="zu")
+    2. **Separated verb prefix**: when a separable verb is split in the sentence, set form to the conjugated stem and form2 to the detached prefix (e.g. "Ich stehe ... auf" → form="stehe", form2="auf", lemma="aufstehen")
+    Do NOT use form2 when the verb is not separated (subordinate clauses: "weil ich aufstehe", infinitives: "aufstehen", past participles: "aufgestanden").
+- "form_index": (optional) 0-based word index in the sentence. Only needed when form appears multiple times and you need to specify which occurrence.
+- "form2_index": (optional) 0-based word index for form2. Only needed when form2 appears multiple times in the sentence.
 
 Rules:
 - Skip articles (der/die/das/ein/eine), prepositions, pronouns, conjunctions, particles

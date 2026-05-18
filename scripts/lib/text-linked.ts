@@ -277,6 +277,33 @@ export function findFormInText(text: string, form: string, startAfter: number): 
 }
 
 /**
+ * Split text into word tokens with their start positions.
+ * Words are sequences of word characters (including äöüÄÖÜß).
+ */
+function tokenizeWords(text: string): Array<{ word: string; start: number }> {
+  const tokens: Array<{ word: string; start: number }> = [];
+  const re = /[\wäöüÄÖÜß]+/gu;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text)) !== null) {
+    tokens.push({ word: m[0], start: m.index });
+  }
+  return tokens;
+}
+
+/**
+ * Find a form by 0-based word index in the sentence.
+ * Returns the character start position or -1 if index is out of range
+ * or the word at that index doesn't match the form.
+ */
+function findFormByWordIndex(text: string, form: string, wordIndex: number): number {
+  const tokens = tokenizeWords(text);
+  if (wordIndex < 0 || wordIndex >= tokens.length) return -1;
+  const tok = tokens[wordIndex];
+  if (tok.word !== form) return -1;
+  return tok.start;
+}
+
+/**
  * Convert annotations into [[display|path]] reference tokens.
  * Returns the linked text, or null if no links were generated.
  */
@@ -299,20 +326,69 @@ export function annotateExampleText(
     const target = resolveWordFile(ann.lemma, ann.pos, ann.gloss_hint, lookup);
     if (!target) continue;
 
-    const startAfter = formCursor.get(ann.form) ?? 0;
-    const idx = findFormInText(text, ann.form, startAfter);
+    const targetRef = `${target.posDir}/${target.file}${target.senseNumber ? `#${target.senseNumber}` : ""}`;
+
+    // Find primary form — use word index if provided, otherwise cursor-based
+    let idx: number;
+    if (ann.form_index != null) {
+      idx = findFormByWordIndex(text, ann.form, ann.form_index);
+    } else {
+      const startAfter = formCursor.get(ann.form) ?? 0;
+      idx = findFormInText(text, ann.form, startAfter);
+    }
     if (idx === -1) continue;
     formCursor.set(ann.form, idx + ann.form.length);
 
-    let token = `[[${ann.form}|${target.posDir}/${target.file}`;
-    if (target.senseNumber) token += `#${target.senseNumber}`;
-    token += "]]";
+    // Find form2 if present (separated prefix or "zu" particle)
+    let idx2 = -1;
+    if (ann.form2) {
+      if (ann.form2_index != null) {
+        idx2 = findFormByWordIndex(text, ann.form2, ann.form2_index);
+      } else {
+        const startAfter2 = formCursor.get(ann.form2) ?? 0;
+        idx2 = findFormInText(text, ann.form2, startAfter2);
+      }
+      if (idx2 !== -1) {
+        formCursor.set(ann.form2, idx2 + ann.form2.length);
+      }
+    }
 
-    matches.push({
-      start: idx,
-      end: idx + ann.form.length,
-      token,
-    });
+    if (idx2 !== -1) {
+      // Determine if form2 and form are adjacent (only whitespace between)
+      const earlier = Math.min(idx, idx2);
+      const earlierEnd = earlier === idx ? idx + ann.form.length : idx2 + ann.form2!.length;
+      const later = Math.max(idx, idx2);
+      const between = text.slice(earlierEnd, later);
+
+      if (/^\s+$/.test(between)) {
+        // Adjacent — merge into single span: "zu helfen" or "helfen zu" (always earlier first)
+        const mergedDisplay = text.slice(earlier, later + (later === idx ? ann.form.length : ann.form2!.length));
+        matches.push({
+          start: earlier,
+          end: later + (later === idx ? ann.form.length : ann.form2!.length),
+          token: `[[${mergedDisplay}|${targetRef}]]`,
+        });
+      } else {
+        // Not adjacent — two separate spans pointing to same target
+        matches.push({
+          start: idx,
+          end: idx + ann.form.length,
+          token: `[[${ann.form}|${targetRef}]]`,
+        });
+        matches.push({
+          start: idx2,
+          end: idx2 + ann.form2!.length,
+          token: `[[${ann.form2}|${targetRef}]]`,
+        });
+      }
+    } else {
+      // No form2, or form2 not found — single span as before
+      matches.push({
+        start: idx,
+        end: idx + ann.form.length,
+        token: `[[${ann.form}|${targetRef}]]`,
+      });
+    }
   }
 
   if (matches.length === 0) return null;

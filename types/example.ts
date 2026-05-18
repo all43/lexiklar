@@ -5,6 +5,12 @@ export interface Annotation {
   lemma: string;
   pos: string;
   gloss_hint: string | null;
+  /** 0-based word index in the sentence — only when `form` is ambiguous (appears multiple times). */
+  form_index?: number;
+  /** Second linked span: separated verb prefix ("auf") or "zu" particle. */
+  form2?: string;
+  /** 0-based word index for form2 — only when form2 is ambiguous. */
+  form2_index?: number;
 }
 
 export interface ExampleProofread {

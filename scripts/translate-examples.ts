@@ -306,13 +306,15 @@ const EXAMPLE_SCHEMA: Record<string, unknown> = {
             items: {
               type: "object",
               properties: {
-                form:       { type: "string" },
-                lemma:      { type: "string" },
-                pos:        { type: "string" },
-                gloss_hint: { type: ["string", "null"] },
+                form:        { type: "string" },
+                lemma:       { type: "string" },
+                pos:         { type: "string" },
+                gloss_hint:  { type: ["string", "null"] },
+                form2:       { type: "string" },
+                form_index:  { type: "integer" },
+                form2_index: { type: "integer" },
               },
               required: ["form", "lemma", "pos", "gloss_hint"],
-              additionalProperties: false,
             },
           },
         },
@@ -342,13 +344,15 @@ const EXAMPLE_SCHEMA_LOCAL: Record<string, unknown> = {
             items: {
               type: "object",
               properties: {
-                form:       { type: "string" },
-                lemma:      { type: "string" },
-                pos:        { type: "string" },
-                gloss_hint: { type: "string" },
+                form:        { type: "string" },
+                lemma:       { type: "string" },
+                pos:         { type: "string" },
+                gloss_hint:  { type: "string" },
+                form2:       { type: "string" },
+                form_index:  { type: "integer" },
+                form2_index: { type: "integer" },
               },
               required: ["form", "lemma", "pos", "gloss_hint"],
-              additionalProperties: false,
             },
           },
         },
@@ -383,10 +387,21 @@ function parseResponse(content: string): ParsedExampleResult[] {
     }
     // Annotations are best-effort — allow missing
     if (!item.annotations) item.annotations = [];
-    // Validate annotation shape; normalise empty gloss_hint → null
+    // Validate annotation shape; normalise empty gloss_hint → null; carry form2/indices
     item.annotations = (item.annotations as Record<string, unknown>[])
       .filter((a) => a.form && a.lemma && a.pos)
-      .map((a) => ({ ...a, gloss_hint: a.gloss_hint || null }));
+      .map((a) => {
+        const ann: Record<string, unknown> = {
+          form: a.form,
+          lemma: a.lemma,
+          pos: a.pos,
+          gloss_hint: a.gloss_hint || null,
+        };
+        if (typeof a.form2 === "string" && a.form2) ann.form2 = a.form2;
+        if (typeof a.form_index === "number") ann.form_index = a.form_index;
+        if (typeof a.form2_index === "number") ann.form2_index = a.form2_index;
+        return ann;
+      });
   }
 
   return parsed as ParsedExampleResult[];

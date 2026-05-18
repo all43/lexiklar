@@ -298,8 +298,13 @@ Each example object:
 | `lemma` | string | Dictionary form (infinitive / nominative singular / base) |
 | `pos` | string | `"noun"`, `"verb"`, or `"adjective"` |
 | `gloss_hint` | string \| null | Disambiguating substring from matching gloss. Null if unambiguous |
+| `form2` | string \| undefined | Second linked span: separated verb prefix (`"auf"`) or `"zu"` particle |
+| `form_index` | number \| undefined | 0-based word index in sentence — only when `form` appears multiple times |
+| `form2_index` | number \| undefined | 0-based word index for `form2` — only when `form2` appears multiple times |
 
 Only content words (nouns, verbs, adjectives) are annotated. Articles, prepositions, pronouns, conjunctions, and particles are skipped.
+
+**`form2` usage**: For zu + infinitive (`"zu helfen"`), set `form2: "zu"`. The resolver merges adjacent form2+form into a single `[[zu helfen|verbs/helfen]]` span. For separated verbs (`"stehe...auf"`), set `form2: "auf"`. The resolver creates two separate spans pointing to the same target. When form2 is not found in text (e.g. subordinate clause where verb isn't separated), it falls back gracefully to a single span.
 
 ### Sense disambiguation via `gloss_hint`
 
