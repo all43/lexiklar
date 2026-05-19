@@ -3,7 +3,7 @@
  * raw lookup as JSON API endpoints under /api/*.
  */
 import type { Plugin } from "vite";
-import { readdirSync, readFileSync, writeFileSync, existsSync, unlinkSync } from "fs";
+import { readdirSync, readFileSync, writeFileSync, existsSync, unlinkSync, statSync } from "fs";
 import { join, resolve } from "path";
 import { spawn, execFileSync } from "child_process";
 import { tmpdir } from "os";
@@ -20,6 +20,7 @@ const ROOT = resolve(__dirname, "../../..");
 const WORDS_DIR = join(ROOT, "data", "words");
 const EXAMPLES_DIR = join(ROOT, "data", "examples");
 const VERB_ENDINGS_FILE = join(ROOT, "data", "rules", "verb-endings.json");
+const PROOFREAD_RESULTS_DIR = join(ROOT, "data", "proofread-results");
 
 let verbEndings: VerbEndingsFile | null = null;
 function getVerbEndings(): VerbEndingsFile | null {
@@ -229,7 +230,16 @@ function handleWordDetail(res: ServerResponse, pos: string, file: string) {
     }
   }
 
-  json(res, { word, examples });
+  let exProofread = 0;
+  let exTotal = 0;
+  for (const ex of Object.values(examples) as any[]) {
+    if (ex.translation) {
+      exTotal++;
+      if (ex._proofread?.translation) exProofread++;
+    }
+  }
+
+  json(res, { word, examples, exampleStats: { total: exTotal, proofread: exProofread, unproofread: exTotal - exProofread } });
 }
 
 /** Look up raw Wiktionary entries via shared lookup library. */
@@ -876,6 +886,291 @@ async function handleCommitWords(req: IncomingMessage, res: ServerResponse) {
   }
 }
 
+// ── Proofread endpoints ─────────────────────────────────────────────────────
+
+interface SenseInfo { gloss_en: string; gloss: string }
+interface ExOwner { word: string; pos: string; senseIdx: number; zipf: number }
+
+interface ExampleQueueItem {
+  id: string;
+  text: string;
+  translation: string;
+  annotations: any[];
+  owner: ExOwner;
+  senseContext: { form: string; lemma: string; gloss_hint: string | null; senses: string }[];
+}
+
+let sensesIndexCache: { map: Map<string, SenseInfo[]>; ts: number } | null = null;
+
+function getSensesIndex(): Map<string, SenseInfo[]> {
+  if (sensesIndexCache && Date.now() - sensesIndexCache.ts < 120_000) return sensesIndexCache.map;
+  const map = new Map<string, SenseInfo[]>();
+  for (const dir of POS_DIRS) {
+    const dirPath = join(WORDS_DIR, dir);
+    if (!existsSync(dirPath)) continue;
+    for (const file of readdirSync(dirPath)) {
+      if (!file.endsWith(".json")) continue;
+      try {
+        const data = JSON.parse(readFileSync(join(dirPath, file), "utf-8"));
+        const key = (data.word as string).toLowerCase();
+        const senses: SenseInfo[] = (data.senses || []).map((s: any) => ({
+          gloss_en: s.gloss_en || "",
+          gloss: s.gloss || "",
+        }));
+        if (map.has(key)) map.get(key)!.push(...senses);
+        else map.set(key, senses);
+      } catch { /* skip */ }
+    }
+  }
+  sensesIndexCache = { map, ts: Date.now() };
+  return map;
+}
+
+interface ExampleQueueCache {
+  items: ExampleQueueItem[];
+  ts: number;
+  totalExamples: number;
+  totalProofread: number;
+}
+
+let exampleQueueCache: ExampleQueueCache | null = null;
+
+function getExampleQueue(): ExampleQueueCache {
+  if (exampleQueueCache && Date.now() - exampleQueueCache.ts < 120_000) return exampleQueueCache;
+
+  // Build reverse map: example ID → owner word
+  const ownerMap = new Map<string, ExOwner>();
+  for (const dir of POS_DIRS) {
+    const dirPath = join(WORDS_DIR, dir);
+    if (!existsSync(dirPath)) continue;
+    for (const file of readdirSync(dirPath)) {
+      if (!file.endsWith(".json")) continue;
+      try {
+        const data = JSON.parse(readFileSync(join(dirPath, file), "utf-8"));
+        const word = data.word as string;
+        const zipf = (data.zipf as number) ?? 0;
+        for (let si = 0; si < (data.senses || []).length; si++) {
+          for (const id of data.senses[si].example_ids || []) {
+            if (!ownerMap.has(id)) ownerMap.set(id, { word, pos: dir, senseIdx: si, zipf });
+          }
+        }
+      } catch { /* skip */ }
+    }
+  }
+
+  const sensesIndex = getSensesIndex();
+
+  const items: ExampleQueueItem[] = [];
+  let totalExamples = 0;
+  let totalProofread = 0;
+
+  for (const shardFile of readdirSync(EXAMPLES_DIR).sort()) {
+    if (!shardFile.endsWith(".json")) continue;
+    let shard: Record<string, any>;
+    try { shard = JSON.parse(readFileSync(join(EXAMPLES_DIR, shardFile), "utf-8")); }
+    catch { continue; }
+
+    for (const [id, ex] of Object.entries(shard)) {
+      if (!ex.translation) continue;
+      if (ex.type === "expression" || ex.type === "proverb") continue;
+      totalExamples++;
+      if (ex._proofread?.translation) { totalProofread++; continue; }
+
+      const owner = ownerMap.get(id);
+      if (!owner) continue;
+
+      const annotations: any[] = ex.annotations || [];
+      const senseContext: ExampleQueueItem["senseContext"] = [];
+      for (const ann of annotations) {
+        if (!ann.lemma) continue;
+        const senses = sensesIndex.get((ann.lemma as string).toLowerCase());
+        if (!senses || senses.length < 2) continue;
+        const senseList = senses.map((s, i) => `${i + 1}: ${s.gloss_en || s.gloss}`).join(" | ");
+        senseContext.push({
+          form: ann.form,
+          lemma: ann.lemma,
+          gloss_hint: ann.gloss_hint || null,
+          senses: senseList,
+        });
+      }
+
+      items.push({
+        id,
+        text: ex.text,
+        translation: ex.translation,
+        annotations,
+        owner,
+        senseContext,
+      });
+    }
+  }
+
+  items.sort((a, b) => b.owner.zipf - a.owner.zipf);
+
+  exampleQueueCache = { items, ts: Date.now(), totalExamples, totalProofread };
+  return exampleQueueCache;
+}
+
+interface WordQueueItem {
+  word: string;
+  pos: string;
+  zipf: number;
+  gloss_en: string | null;
+  gloss_en_full: string | null;
+  senseCount: number;
+  proofreadGloss: boolean;
+  exampleStats: { total: number; proofread: number; unproofread: number };
+}
+
+let wordQueueCache: { items: WordQueueItem[]; ts: number } | null = null;
+
+function getWordQueue(): WordQueueItem[] {
+  if (wordQueueCache && Date.now() - wordQueueCache.ts < 120_000) return wordQueueCache.items;
+
+  const items: WordQueueItem[] = [];
+
+  for (const dir of POS_DIRS) {
+    const dirPath = join(WORDS_DIR, dir);
+    if (!existsSync(dirPath)) continue;
+    for (const file of readdirSync(dirPath)) {
+      if (!file.endsWith(".json")) continue;
+      try {
+        const data = JSON.parse(readFileSync(join(dirPath, file), "utf-8"));
+        const exIds: string[] = [];
+        for (const s of data.senses || []) {
+          for (const id of s.example_ids || []) exIds.push(id);
+        }
+        items.push({
+          word: data.word || file.replace(/\.json$/, ""),
+          pos: dir,
+          zipf: data.zipf ?? 0,
+          gloss_en: data.senses?.[0]?.gloss_en || null,
+          gloss_en_full: data.senses?.[0]?.gloss_en_full || null,
+          senseCount: (data.senses || []).length,
+          proofreadGloss: !!data._proofread?.gloss_en,
+          exampleStats: { total: 0, proofread: 0, unproofread: 0 },
+          _exIds: exIds,
+        } as any);
+      } catch { /* skip */ }
+    }
+  }
+
+  // Batch-load example shards to compute per-word example stats
+  const idToItem = new Map<string, WordQueueItem>();
+  for (const item of items) {
+    for (const id of (item as any)._exIds) idToItem.set(id, item);
+  }
+  for (const shardFile of readdirSync(EXAMPLES_DIR).sort()) {
+    if (!shardFile.endsWith(".json")) continue;
+    let shard: Record<string, any>;
+    try { shard = JSON.parse(readFileSync(join(EXAMPLES_DIR, shardFile), "utf-8")); }
+    catch { continue; }
+    for (const [id, ex] of Object.entries(shard)) {
+      if (!ex.translation) continue;
+      const item = idToItem.get(id);
+      if (!item) continue;
+      item.exampleStats.total++;
+      if (ex._proofread?.translation) item.exampleStats.proofread++;
+      else item.exampleStats.unproofread++;
+    }
+  }
+
+  // Clean up temp field
+  for (const item of items) delete (item as any)._exIds;
+
+  items.sort((a, b) => b.zipf - a.zipf);
+  wordQueueCache = { items, ts: Date.now() };
+  return items;
+}
+
+function handleWordQueue(req: IncomingMessage, res: ServerResponse) {
+  const params = parseQuery(req.url!);
+  const limit = Math.min(parseInt(params.get("limit") || "50"), 200);
+  const offset = parseInt(params.get("offset") || "0");
+  const posParam = params.get("pos") || null;
+  const posSet = posParam ? new Set(posParam.split(",").map(s => s.trim()).filter(Boolean)) : null;
+  const wordFilter = params.get("word")?.toLowerCase() || null;
+  const filter = params.get("filter") || null;
+
+  let items = getWordQueue();
+  if (posSet) items = items.filter(i => posSet.has(i.pos));
+  if (wordFilter) items = items.filter(i => i.word.toLowerCase().includes(wordFilter));
+  if (filter === "unproofread_gloss") items = items.filter(i => !i.proofreadGloss);
+  if (filter === "unproofread_examples") items = items.filter(i => i.exampleStats.unproofread > 0);
+
+  const page = items.slice(offset, offset + limit);
+  json(res, { total: items.length, offset, items: page });
+}
+
+function handleProofreadStats(res: ServerResponse) {
+  const wordIdx = getWordIndex();
+  const proofreadGloss = wordIdx.filter(w => w.flags?.includes("proofread")).length;
+  const unproofreadGloss = wordIdx.filter(w => w.flags?.includes("unproofread")).length;
+
+  const eq = getExampleQueue();
+
+  const wq = getWordQueue();
+  const proofreadWithUnproofreadEx = wq.filter(w => w.proofreadGloss && w.exampleStats.unproofread > 0).length;
+
+  let pendingResults = 0;
+  if (existsSync(PROOFREAD_RESULTS_DIR)) {
+    pendingResults = readdirSync(PROOFREAD_RESULTS_DIR).filter(f => f.endsWith(".json")).length;
+  }
+
+  json(res, {
+    examples: { total: eq.totalExamples, proofread: eq.totalProofread, unproofread: eq.items.length },
+    words: { total: wordIdx.length, proofread_gloss: proofreadGloss, unproofread_gloss: unproofreadGloss, proofread_with_unproofread_ex: proofreadWithUnproofreadEx },
+    pendingResults,
+  });
+}
+
+function handleExampleQueue(req: IncomingMessage, res: ServerResponse) {
+  const params = parseQuery(req.url!);
+  const limit = Math.min(parseInt(params.get("limit") || "20"), 100);
+  const offset = parseInt(params.get("offset") || "0");
+  const posParam = params.get("pos") || null;
+  const posSet = posParam ? new Set(posParam.split(",").map(s => s.trim()).filter(Boolean)) : null;
+  const wordFilter = params.get("word")?.toLowerCase() || null;
+
+  const eq = getExampleQueue();
+  let filtered = eq.items;
+
+  if (posSet) filtered = filtered.filter(i => posSet.has(i.owner.pos));
+  if (wordFilter) filtered = filtered.filter(i => i.owner.word.toLowerCase().includes(wordFilter));
+
+  const page = filtered.slice(offset, offset + limit);
+  json(res, { total: filtered.length, offset, items: page });
+}
+
+async function handleExampleVerify(req: IncomingMessage, res: ServerResponse, exId: string) {
+  let body: any;
+  try { body = await readBody(req); }
+  catch { return json(res, { error: "Invalid JSON body" }, 400); }
+
+  if (body.action !== "verify") return json(res, { error: "Unsupported action" }, 400);
+
+  const prefix = exId.slice(0, 2);
+  const shardPath = join(EXAMPLES_DIR, prefix + ".json");
+  if (!existsSync(shardPath)) return json(res, { error: "Shard not found" }, 404);
+
+  const shard = JSON.parse(readFileSync(shardPath, "utf-8"));
+  if (!shard[exId]) return json(res, { error: "Example not found" }, 404);
+
+  shard[exId]._proofread = { ...(shard[exId]._proofread || {}), translation: true };
+  writeFileSync(shardPath, JSON.stringify(shard, null, 2) + "\n", "utf-8");
+
+  // Remove from cached queue without full rescan
+  if (exampleQueueCache) {
+    const idx = exampleQueueCache.items.findIndex(i => i.id === exId);
+    if (idx !== -1) {
+      exampleQueueCache.items.splice(idx, 1);
+      exampleQueueCache.totalProofread++;
+    }
+  }
+
+  json(res, { ok: true });
+}
+
 export function adminApiPlugin(): Plugin {
   return {
     name: "admin-api",
@@ -903,6 +1198,13 @@ export function adminApiPlugin(): Plugin {
         if (path === "/api/batch-add-words" && req.method === "POST") { handleBatchAdd(req, res); return; }
         if (path === "/api/uncommitted-words") return handleUncommittedWords(res);
         if (path === "/api/commit-words" && req.method === "POST") { handleCommitWords(req, res); return; }
+
+        // Proofread endpoints
+        if (path === "/api/proofread/stats") return handleProofreadStats(res);
+        if (path === "/api/proofread/word-queue") return handleWordQueue(req, res);
+        if (path === "/api/proofread/example-queue") return handleExampleQueue(req, res);
+        const exVerifyMatch = path.match(/^\/api\/proofread\/examples\/([a-f0-9]+)$/);
+        if (exVerifyMatch && req.method === "PATCH") { handleExampleVerify(req, res, exVerifyMatch[1]); return; }
 
         // /api/words/:pos/:file
         const wordMatch = path.match(/^\/api\/words\/([^/]+)\/(.+)$/);

@@ -7,6 +7,7 @@
         <router-link to="/words">Words</router-link>
         <router-link to="/topics">Topics</router-link>
         <router-link to="/reports">Reports</router-link>
+        <router-link to="/proofread">Proofread</router-link>
       </div>
     </nav>
     <main class="admin-main">

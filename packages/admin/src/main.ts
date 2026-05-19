@@ -15,6 +15,7 @@ const router = createRouter({
     { path: "/words", component: () => import("./pages/WordBrowserPage.vue") },
     { path: "/topics", component: () => import("./pages/TopicExplorerPage.vue") },
     { path: "/reports", component: () => import("./pages/ReportsPage.vue") },
+    { path: "/proofread", component: () => import("./pages/ProofreadPage.vue") },
   ],
 });
 

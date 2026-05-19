@@ -139,6 +139,15 @@
         <span v-else class="badge badge-unproofread" title="gloss_en not proofread">unproofread</span>
         <span v-if="wordData._overrides" class="badge badge-override" title="Has _overrides">overrides</span>
         <span v-if="wordData._meta?.source === 'manual'" class="badge badge-manual" title="Manual entry">manual</span>
+        <span v-if="exampleStats && exampleStats.unproofread > 0" class="badge badge-ex-unproofread" :title="`${exampleStats.unproofread} of ${exampleStats.total} examples unproofread`">
+          {{ exampleStats.unproofread }} / {{ exampleStats.total }} ex unpr
+        </span>
+        <router-link
+          v-if="exampleStats && exampleStats.unproofread > 0 && selectedFile"
+          :to="'/proofread?mode=examples&word=' + encodeURIComponent(wordData.word) + '&pos=' + selectedFile.split('/')[0]"
+          class="btn-proofread-link"
+          title="Proofread examples for this word"
+        >Proofread examples</router-link>
       </header>
 
       <!-- Tab bar -->
@@ -223,7 +232,10 @@
             <div v-if="sense.example_ids?.length" class="sense-examples">
               <div v-for="eid in sense.example_ids" :key="eid" class="example-card">
                 <template v-if="examples[eid]">
-                  <div class="example-text">{{ examples[eid].text }}</div>
+                  <div class="example-text">
+                    <span class="proof-dot" :class="examples[eid]._proofread?.translation ? 'proof-ok' : 'proof-pending'" :title="examples[eid]._proofread?.translation ? 'Proofread' : 'Not proofread'"></span>
+                    {{ examples[eid].text }}
+                  </div>
                   <div v-if="examples[eid].translation" class="example-translation">{{ examples[eid].translation }}</div>
                   <div v-if="examples[eid].annotations?.length" class="example-annotations">
                     <span
@@ -405,8 +417,10 @@ interface DbSearchResult { lemma: string; pos: string; gender: string | null; fr
 interface ExampleData {
   text: string;
   translation?: string;
+  _proofread?: { translation?: boolean };
   annotations?: { form: string; lemma: string; pos: string; gloss_hint?: string | null }[];
 }
+interface ExampleStats { total: number; proofread: number; unproofread: number }
 
 const FILTER_OPTIONS = [
   { value: "unproofread", short: "Unpr", label: "Unproofread", cls: "filter-unproofread" },
@@ -431,6 +445,7 @@ const posList = ref<PosCount[]>([]);
 const wordItems = ref<WordListItem[]>([]);
 const wordData = ref<any>(null);
 const examples = ref<Record<string, ExampleData>>({});
+const exampleStats = ref<ExampleStats | null>(null);
 const wiktEntries = ref<any[]>([]);
 const wiktLoading = ref(false);
 const loadingList = ref(false);
@@ -611,6 +626,7 @@ async function selectWord(item: WordListItem) {
   const data = await res.json();
   wordData.value = data.word;
   examples.value = data.examples || {};
+  exampleStats.value = data.exampleStats || null;
 }
 
 async function fetchWiktionary() {
@@ -1155,6 +1171,18 @@ onMounted(async () => {
 .badge-unproofread { background: #fff3e0; color: #e65100; }
 .badge-override { background: #fce4ec; color: #c62828; }
 .badge-manual { background: #e3f2fd; color: var(--admin-primary-dark); }
+.badge-ex-unproofread { background: #fff8e1; color: #f57f17; }
+.btn-proofread-link {
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border-radius: 10px;
+  background: var(--admin-primary);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background var(--admin-transition);
+}
+.btn-proofread-link:hover { background: var(--admin-primary-dark); }
 .word-header h1 { font-size: 1.5rem; margin: 0; }
 .word-article { font-weight: 400; }
 .word-pos-label {
@@ -1229,7 +1257,18 @@ onMounted(async () => {
   margin-top: 0.35rem;
   font-size: 0.85rem;
 }
-.example-text { color: #1a1a1a; }
+.example-text { color: #1a1a1a; display: flex; align-items: baseline; gap: 6px; }
+.proof-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+  position: relative;
+  top: -1px;
+}
+.proof-ok { background: #4caf50; }
+.proof-pending { background: #ccc; }
 .example-translation { color: var(--admin-text-secondary); font-style: italic; margin-top: 2px; }
 .example-annotations { display: flex; gap: 4px; margin-top: 4px; flex-wrap: wrap; }
 .annotation-pill {
