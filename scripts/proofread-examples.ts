@@ -1,30 +1,29 @@
 /**
- * Model-based proofreading for example translations and word-sense annotations.
+ * Example-level proofreading via LLM API.
  *
+ * Scans example shards directly for unproofread examples (no duplication).
  * For each example the LLM checks:
  *   1. Is the English translation accurate?
  *   2. Does every gloss_hint correctly identify the sense used in context?
- *      (the model sees the sentence, the translation, and all available senses)
  *
- * Only marks _proofread flags for content the model confirms correct.
- * Issues (wrong translations, bad hints) are logged but not auto-fixed here.
+ * Writes results to a JSON file for human review before applying.
+ * Apply with: npx tsx scripts/apply-proofread-results.ts --results <file>
  *
- * NEVER calls expensive models — no sonnet, no opus, no gpt-4.
- * Defaults to anthropic haiku-4.5 (cheap). Prefers local if --provider ollama|lm-studio.
+ * Defaults to anthropic sonnet-4-6. Use --provider/--model to override.
  *
  * Usage:
- *   node scripts/proofread-batch.js                          # top 100 words, haiku
- *   node scripts/proofread-batch.js --top 500
- *   node scripts/proofread-batch.js --provider ollama        # local, free
- *   node scripts/proofread-batch.js --provider openai --model gpt-4.1-mini
- *   node scripts/proofread-batch.js --word Tisch
- *   node scripts/proofread-batch.js --word-list words.txt
- *   node scripts/proofread-batch.js --dry-run                # show batches, no API calls
- *   node scripts/proofread-batch.js --pos noun
- *   node scripts/proofread-batch.js --batch-size 5
+ *   npx tsx scripts/proofread-examples.ts                          # all unproofread examples
+ *   npx tsx scripts/proofread-examples.ts --word Tisch             # examples owned by Tisch
+ *   npx tsx scripts/proofread-examples.ts --word-list words.txt
+ *   npx tsx scripts/proofread-examples.ts --top 100 --pos noun     # examples from top 100 nouns by zipf
+ *   npx tsx scripts/proofread-examples.ts --limit 500              # cap at 500 examples
+ *   npx tsx scripts/proofread-examples.ts --provider ollama        # local, free
+ *   npx tsx scripts/proofread-examples.ts --batch-size 5
+ *   npx tsx scripts/proofread-examples.ts --dry-run
+ *   npx tsx scripts/proofread-examples.ts --out /tmp/results.json
  */
 
-import { readdirSync, readFileSync, existsSync, statSync } from "fs";
+import { readdirSync, readFileSync, writeFileSync, existsSync, statSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import type { LLMProvider, LLMResponse } from "../types/llm.js";
@@ -35,66 +34,47 @@ import {
   parseProviderArgs, getApiKey, isLocalProvider,
   getDefaultModel, resolveLocalModel, PROVIDER_DEFAULTS,
 } from "./lib/llm.js";
-import { loadExamplesByIds, annotationsHash, patchExamples } from "./lib/examples.js";
-import type { WhitelistEntry, WhitelistFile } from "./lib/common-types.js";
-import type { ExamplePatch } from "./lib/examples.js";
+import { EXAMPLES_DIR } from "./lib/examples.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const WORDS_DIR = join(ROOT, "data", "words");
-const WHITELIST_FILE = join(ROOT, "config", "word-whitelist.json");
-
-// ── Guard: never call expensive models ───────────────────────────────────────
-
-const FORBIDDEN_MODELS = ["sonnet", "opus", "gpt-4.1", "gpt-4o", "gpt-4-"];
-function assertCheapModel(provider: string, model: string): void {
-  const label = `${provider}/${model}`.toLowerCase();
-  for (const forbidden of FORBIDDEN_MODELS) {
-    if (label.includes(forbidden)) {
-      console.error(`ERROR: Model "${label}" is too expensive for proofreading. Use haiku, gpt-4.1-mini, gpt-4.1-nano, or a local model.`);
-      process.exit(1);
-    }
-  }
-}
 
 // ── CLI args ──────────────────────────────────────────────────────────────────
 
 const args = process.argv.slice(2);
-const topIdx = args.indexOf("--top");
-const TOP_N = topIdx !== -1 ? parseInt(args[topIdx + 1]) : 100;
 const DRY_RUN = args.includes("--dry-run");
-const WHITELIST_ONLY = args.includes("--whitelist-only");
-const posIdx = args.indexOf("--pos");
-const POS_FILTER = posIdx !== -1 ? args[posIdx + 1] : null;
+const SKIP_DONE = !args.includes("--recheck");
+const batchIdx = args.indexOf("--batch-size");
+const BATCH_SIZE = batchIdx !== -1 ? parseInt(args[batchIdx + 1]) : 10;
+const outIdx = args.indexOf("--out");
+const OUT_FILE = outIdx !== -1 ? args[outIdx + 1] : join(ROOT, "data", "proofread-results", `examples-${new Date().toISOString().slice(0, 10)}.json`);
+const limitIdx = args.indexOf("--limit");
+const LIMIT = limitIdx !== -1 ? parseInt(args[limitIdx + 1]) : Infinity;
+
+// Word-scope filters
 const wordIdx = args.indexOf("--word");
 const WORD_FILTER = wordIdx !== -1 ? args[wordIdx + 1] : null;
 const wordListIdx = args.indexOf("--word-list");
 const WORD_LIST_FILE = wordListIdx !== -1 ? args[wordListIdx + 1] : null;
-const batchIdx = args.indexOf("--batch-size");
-const BATCH_SIZE = batchIdx !== -1 ? parseInt(args[batchIdx + 1]) : 10;
-const SKIP_DONE = !args.includes("--recheck"); // skip already-proofread examples
+const topIdx = args.indexOf("--top");
+const TOP_N = topIdx !== -1 ? parseInt(args[topIdx + 1]) : 0;
+const posIdx = args.indexOf("--pos");
+const POS_FILTER = posIdx !== -1 ? args[posIdx + 1] : null;
 
 const { provider: PROVIDER, model: MODEL } = parseProviderArgs(args, "anthropic");
+const DEFAULT_MODEL = PROVIDER === "anthropic" ? "claude-sonnet-4-6" : getDefaultModel(PROVIDER);
 const RESOLVED_MODEL = MODEL ||
   (isLocalProvider(PROVIDER)
-    ? await resolveLocalModel(PROVIDER_DEFAULTS[PROVIDER as keyof typeof PROVIDER_DEFAULTS]?.url ?? "", getDefaultModel(PROVIDER))
-    : getDefaultModel(PROVIDER));
+    ? await resolveLocalModel(PROVIDER_DEFAULTS[PROVIDER as keyof typeof PROVIDER_DEFAULTS]?.url ?? "", DEFAULT_MODEL)
+    : DEFAULT_MODEL);
 const MODEL_LABEL = `${PROVIDER}/${RESOLVED_MODEL}`;
-
-if (!DRY_RUN) assertCheapModel(PROVIDER, RESOLVED_MODEL);
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
-interface WordFileEntry {
-  file: string;
-  relPath: string;
-  data: WordBase;
-  dir: string;
-}
-
 interface SenseInfo {
-  gloss: string;
   gloss_en: string;
+  gloss: string;
 }
 
 interface VerifyItem {
@@ -118,19 +98,16 @@ interface VerifyResult {
   annotation_issues: Array<{ form: string; issue: string }>;
 }
 
-interface FoundIssue {
-  id: string;
-  text: string;
-  issue_type: string;
-  detail: string;
-}
+interface ProofreadIssue { id: string; type: string; detail: string }
 
-// ── Load word files ───────────────────────────────────────────────────────────
+// ── Build senses index from word files ────────────────────────────────────────
 
-process.stdout.write("Loading word files...");
-const allWords: WordFileEntry[] = [];
-// lemma (lowercase) → array of sense objects [{gloss, gloss_en}]
+process.stdout.write("Loading word files for sense index...");
 const sensesIndex = new Map<string, SenseInfo[]>();
+let scopeExampleIds: Set<string> | null = null;
+
+interface WordEntry { word: string; pos: string; zipf: number; exampleIds: string[] }
+const wordEntries: WordEntry[] = [];
 
 for (const posDir of readdirSync(WORDS_DIR)) {
   if (posDir.startsWith(".")) continue;
@@ -138,87 +115,67 @@ for (const posDir of readdirSync(WORDS_DIR)) {
   if (!existsSync(dir) || !statSync(dir).isDirectory()) continue;
   for (const file of readdirSync(dir)) {
     if (!file.endsWith(".json")) continue;
-    const relPath = `${posDir}/${file.replace(".json", "")}`;
     const data = JSON.parse(readFileSync(join(dir, file), "utf-8")) as WordBase;
-    allWords.push({ file, relPath, data, dir });
 
-    // Build senses index for annotation context
     const key = data.word.toLowerCase();
     const senses: SenseInfo[] = (data.senses || []).map((s: Sense) => ({
-      gloss: s.gloss || "",
       gloss_en: s.gloss_en || "",
+      gloss: s.gloss || "",
     }));
     if (sensesIndex.has(key)) {
       sensesIndex.get(key)!.push(...senses);
     } else {
       sensesIndex.set(key, senses);
     }
+
+    const exIds: string[] = [];
+    for (const s of data.senses || []) {
+      for (const id of s.example_ids || []) exIds.push(id);
+    }
+    for (const id of data.expression_ids || []) exIds.push(id);
+    wordEntries.push({ word: data.word, pos: data.pos, zipf: data.zipf ?? 0, exampleIds: exIds });
   }
 }
-console.log(` ${allWords.length} files.`);
+console.log(` ${sensesIndex.size} lemmas.`);
 
-// ── Select targets ────────────────────────────────────────────────────────────
+// ── Build word-scope filter (optional) ────────────────────────────────────────
 
-let targets: WordFileEntry[];
-if (WORD_FILTER) {
-  targets = allWords.filter((w) => w.data.word.toLowerCase() === WORD_FILTER.toLowerCase());
-  if (!targets.length) { console.error(`Word "${WORD_FILTER}" not found.`); process.exit(1); }
-} else if (WORD_LIST_FILE) {
-  const raw = readFileSync(WORD_LIST_FILE, "utf-8").trim();
-  const wordList: string[] = raw.startsWith("[")
-    ? (JSON.parse(raw) as Array<string | { word: string }>).map((w) => (typeof w === "string" ? w : w.word))
-    : raw.split("\n").map((l) => l.trim()).filter(Boolean);
-  const wordSet = new Set(wordList.map((w) => w.toLowerCase()));
-  targets = allWords.filter((w) => wordSet.has(w.data.word.toLowerCase()));
-} else {
-  const whitelistData = JSON.parse(readFileSync(WHITELIST_FILE, "utf-8")) as WhitelistFile;
-  const whitelistWords = new Set(
-    whitelistData.words.map((e) => e.word.toLowerCase()),
-  );
-  const byZipf = [...allWords].sort((a, b) => (b.data.zipf ?? 0) - (a.data.zipf ?? 0));
-  const topSet = new Set(byZipf.slice(0, TOP_N).map((w) => w.data.word.toLowerCase()));
-  targets = WHITELIST_ONLY
-    ? allWords.filter((w) => whitelistWords.has(w.data.word.toLowerCase()))
-    : allWords.filter((w) => whitelistWords.has(w.data.word.toLowerCase()) || topSet.has(w.data.word.toLowerCase()));
-  if (POS_FILTER) targets = targets.filter((w) => w.data.pos === POS_FILTER);
-}
+if (WORD_FILTER || WORD_LIST_FILE || TOP_N > 0) {
+  let matchWords: Set<string>;
 
-console.log(`Targets: ${targets.length} words.`);
-
-// ── Load examples ─────────────────────────────────────────────────────────────
-
-const ownedIdsByWord = new Map<string, Set<string>>(); // word → Set<exampleId>
-const allExampleIds = new Set<string>();
-
-for (const { data } of targets) {
-  const ids = new Set<string>();
-  for (const sense of data.senses || []) {
-    for (const id of sense.example_ids || []) { ids.add(id); allExampleIds.add(id); }
+  if (WORD_FILTER) {
+    matchWords = new Set([WORD_FILTER.toLowerCase()]);
+  } else if (WORD_LIST_FILE) {
+    const raw = readFileSync(WORD_LIST_FILE, "utf-8").trim();
+    const wordList: string[] = raw.startsWith("[")
+      ? (JSON.parse(raw) as Array<string | { word: string }>).map((w) => (typeof w === "string" ? w : w.word))
+      : raw.split("\n").map((l) => l.trim()).filter(Boolean);
+    matchWords = new Set(wordList.map((w) => w.toLowerCase()));
+  } else {
+    let filtered = POS_FILTER ? wordEntries.filter((w) => w.pos === POS_FILTER) : wordEntries;
+    filtered = filtered.sort((a, b) => b.zipf - a.zipf).slice(0, TOP_N);
+    matchWords = new Set(filtered.map((w) => w.word.toLowerCase()));
   }
-  for (const id of data.expression_ids || []) { ids.add(id); allExampleIds.add(id); }
-  ownedIdsByWord.set(data.word, ids);
+
+  scopeExampleIds = new Set<string>();
+  for (const entry of wordEntries) {
+    if (!matchWords.has(entry.word.toLowerCase())) continue;
+    if (POS_FILTER && entry.pos !== POS_FILTER) continue;
+    for (const id of entry.exampleIds) scopeExampleIds.add(id);
+  }
+  console.log(`Word scope: ${matchWords.size} words, ${scopeExampleIds.size} example IDs.`);
 }
 
-const examplesById: Record<string, Example> = allExampleIds.size > 0
-  ? loadExamplesByIds([...allExampleIds])
-  : {};
-console.log(`Loaded ${Object.keys(examplesById).length} examples.\n`);
+// ── Scan shards for unproofread examples ──────────────────────────────────────
 
-// ── Build verification items ──────────────────────────────────────────────────
+process.stdout.write("Scanning example shards...");
 
-/**
- * For a single example, build the context needed for LLM verification:
- *   - German text + English translation
- *   - For each annotation with gloss_hint (or word with 2+ senses), include sense list
- */
 function buildVerifyItem(exId: string, ex: Example): VerifyItem | null {
-  if (!ex.translation) return null; // can't verify untranslated examples
+  if (!ex.translation) return null;
 
   const annotations: Annotation[] = ex.annotations || [];
-
-  // Collect sense context for annotated words that have multiple senses
-  // (only these are worth checking — single-sense words can't be misidentified)
   const senseContext: SenseContextEntry[] = [];
+
   for (const ann of annotations) {
     if (!ann.lemma) continue;
     const senses = sensesIndex.get(ann.lemma.toLowerCase());
@@ -237,29 +194,35 @@ function buildVerifyItem(exId: string, ex: Example): VerifyItem | null {
   return { id: exId, text: ex.text, translation: ex.translation, senseContext };
 }
 
-// Gather all items that need verification
 const verifyItems: VerifyItem[] = [];
-for (const { data } of targets) {
-  const ids = ownedIdsByWord.get(data.word) || new Set<string>();
-  for (const id of ids) {
-    const ex = examplesById[id];
-    if (!ex) continue;
-    if (SKIP_DONE && ex._proofread?.translation && ex._proofread?.annotations) continue;
-    // Skip expressions/proverbs — no annotations to check, translation is human-idiomatic
+
+for (const shardFile of readdirSync(EXAMPLES_DIR).sort()) {
+  if (!shardFile.endsWith(".json")) continue;
+  if (verifyItems.length >= LIMIT) break;
+
+  const shard = JSON.parse(readFileSync(join(EXAMPLES_DIR, shardFile), "utf-8")) as Record<string, Example>;
+
+  for (const [id, ex] of Object.entries(shard)) {
+    if (verifyItems.length >= LIMIT) break;
+    if (scopeExampleIds && !scopeExampleIds.has(id)) continue;
+    if (SKIP_DONE && ex._proofread?.translation) continue;
     if (ex.type === "expression" || ex.type === "proverb") continue;
+
     const item = buildVerifyItem(id, ex);
     if (item) verifyItems.push(item);
   }
 }
 
+console.log(` ${verifyItems.length} examples to verify.`);
+
 if (verifyItems.length === 0) {
-  console.log("All examples already proofread. Nothing to do. (Use --recheck to re-verify.)");
+  console.log("Nothing to do. (Use --recheck to re-verify.)");
   process.exit(0);
 }
 
-console.log(`Examples to verify: ${verifyItems.length} (batch size ${BATCH_SIZE}, model: ${MODEL_LABEL})\n`);
+console.log(`\nBatch size ${BATCH_SIZE}, model: ${MODEL_LABEL}\n`);
 
-// ── Prompts ───────────────────────────────────────────────────────────────────
+// ── Prompt ───────────────────────────────────────────────────────────────────
 
 const SYSTEM_PROMPT = `You are proofreading a German-English dictionary app. For each example sentence you will:
 1. Check whether the English translation accurately conveys the German.
@@ -333,17 +296,22 @@ const RESPONSE_SCHEMA = {
 
 // ── Parse LLM response ────────────────────────────────────────────────────────
 
-function parseResponse(content: string): VerifyResult[] {
+function parseResponse(content: string, batchIds: Set<string>): VerifyResult[] {
   let raw: unknown = extractJSON(content);
   if (raw && typeof raw === "object" && !Array.isArray(raw) && "results" in raw) {
     raw = (raw as { results: unknown }).results;
   }
   if (!Array.isArray(raw)) throw new Error("Response is not an array");
-  const parsed = raw as VerifyResult[];
-  for (const item of parsed) {
+  const parsed: VerifyResult[] = [];
+  for (const item of raw as VerifyResult[]) {
     if (!item.id) throw new Error("Item missing id");
+    if (!batchIds.has(item.id)) {
+      console.warn(`    Warning: LLM returned unknown id "${item.id}", skipping`);
+      continue;
+    }
     if (typeof item.translation_ok !== "boolean") item.translation_ok = true;
     if (!Array.isArray(item.annotation_issues)) item.annotation_issues = [];
+    parsed.push(item);
   }
   return parsed;
 }
@@ -363,7 +331,6 @@ if (DRY_RUN) {
   process.exit(0);
 }
 
-// Check API key
 if (!isLocalProvider(PROVIDER)) {
   const apiKey = getApiKey(PROVIDER);
   if (!apiKey) {
@@ -386,16 +353,18 @@ for (let i = 0; i < verifyItems.length; i += BATCH_SIZE) {
   batches.push(verifyItems.slice(i, i + BATCH_SIZE));
 }
 
-// Accumulate patches to apply at the end
-const examplePatches: Record<string, ExamplePatch> = {}; // id → { _proofread: {...} }
-const issuesFound: FoundIssue[] = []; // { id, text, issue_type, detail }
+const resultVerified: string[] = [];
+const resultTranslationOk: string[] = [];
+const resultIssues: ProofreadIssue[] = [];
+const missedIds: string[] = [];
 
-let verified = 0;
-let flagged = 0;
-let errors = 0;
+let totalVerified = 0;
+let totalFlagged = 0;
+let totalErrors = 0;
 
 for (let i = 0; i < batches.length; i++) {
   const batch = batches[i];
+  const batchIds = new Set(batch.map((item) => item.id));
   const prompt = buildPrompt(batch);
 
   process.stdout.write(`  Batch ${i + 1}/${batches.length} (${batch.length} examples)... `);
@@ -406,82 +375,96 @@ for (let i = 0; i < batches.length; i++) {
       () => callLLM(SYSTEM_PROMPT, prompt, llmOptions),
       3, 4000,
     );
-    results = parseResponse(response.content);
+    results = parseResponse(response.content, batchIds);
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : String(err);
     console.error(`FAILED: ${message}`);
-    errors += batch.length;
+    totalErrors += batch.length;
     continue;
+  }
+
+  const returnedIds = new Set(results.map((r) => r.id));
+  for (const id of batchIds) {
+    if (!returnedIds.has(id)) missedIds.push(id);
   }
 
   let batchVerified = 0;
   let batchFlagged = 0;
 
   for (const result of results) {
-    const ex = examplesById[result.id];
-    if (!ex) continue;
+    const translationOk = result.translation_ok;
+    const annotationsOk = result.annotation_issues.length === 0;
 
-    const pr: Record<string, unknown> = {};
-
-    if (result.translation_ok) {
-      pr.translation = true;
-    } else {
+    if (translationOk && annotationsOk) {
+      resultVerified.push(result.id);
+      batchVerified++;
+    } else if (translationOk) {
+      resultTranslationOk.push(result.id);
+      batchVerified++;
+      for (const { form, issue } of result.annotation_issues) {
+        resultIssues.push({ id: result.id, type: "annotation", detail: `"${form}": ${issue}` });
+      }
       batchFlagged++;
-      issuesFound.push({
+    } else {
+      resultIssues.push({
         id: result.id,
-        text: ex.text,
-        issue_type: "translation",
+        type: "translation",
         detail: result.translation_issue || "(no detail)",
       });
-    }
-
-    if (result.annotation_issues.length === 0) {
-      if (ex.annotations) pr.annotations = annotationsHash(ex.annotations);
-    } else {
-      batchFlagged++;
-      for (const { form, issue } of result.annotation_issues) {
-        issuesFound.push({
-          id: result.id,
-          text: ex.text,
-          issue_type: "annotation",
-          detail: `"${form}": ${issue}`,
-        });
+      if (!annotationsOk) {
+        for (const { form, issue } of result.annotation_issues) {
+          resultIssues.push({ id: result.id, type: "annotation", detail: `"${form}": ${issue}` });
+        }
       }
-    }
-
-    if (Object.keys(pr).length > 0) {
-      examplePatches[result.id] = { _proofread: pr };
-      batchVerified++;
+      batchFlagged++;
     }
   }
 
-  verified += batchVerified;
-  flagged += batchFlagged;
-  console.log(`${batchVerified} verified, ${batchFlagged} flagged`);
+  totalVerified += batchVerified;
+  totalFlagged += batchFlagged;
+  const missed = batch.length - returnedIds.size;
+  const missedNote = missed > 0 ? `, ${missed} missed` : "";
+  console.log(`${batchVerified} verified, ${batchFlagged} flagged${missedNote}`);
 }
 
-// Write all patches at once
-if (Object.keys(examplePatches).length > 0) {
-  patchExamples(examplePatches);
-}
+// ── Write results file ────────────────────────────────────────────────────────
+
+const output = {
+  _meta: {
+    model: MODEL_LABEL,
+    date: new Date().toISOString().slice(0, 10),
+    examples_checked: verifyItems.length,
+    checks: ["translation", "gloss_hint"],
+    ...(missedIds.length > 0 ? { missed: missedIds.length } : {}),
+  },
+  verified: resultVerified,
+  translation_ok: resultTranslationOk,
+  issues: resultIssues,
+  ...(missedIds.length > 0 ? { missed_ids: missedIds } : {}),
+};
+
+writeFileSync(OUT_FILE, JSON.stringify(output, null, 2) + "\n");
 
 // ── Report ────────────────────────────────────────────────────────────────────
 
 console.log(`\n${"=".repeat(60)}`);
 console.log(`Proofread complete -- ${MODEL_LABEL}`);
 console.log("=".repeat(60));
-console.log(`  Examples verified (clean):   ${verified}`);
-console.log(`  Examples flagged (issues):   ${flagged}`);
-if (errors > 0) console.log(`  Batches with errors:         ${errors}`);
+console.log(`  Results written to: ${OUT_FILE}`);
+console.log(`  Examples verified (clean):   ${resultVerified.length}`);
+console.log(`  Examples translation-only:   ${resultTranslationOk.length}`);
+console.log(`  Issues found:                ${resultIssues.length}`);
+if (totalErrors > 0) console.log(`  Batches with errors:         ${totalErrors}`);
+if (missedIds.length > 0) console.log(`  Missed by LLM (no response): ${missedIds.length}`);
 
-if (issuesFound.length > 0) {
-  console.log(`\n  Issues found (${issuesFound.length}):`);
-  for (const { id, text, issue_type, detail } of issuesFound.slice(0, 20)) {
-    console.log(`    [${issue_type}] ${id}  "${text.slice(0, 60)}"`);
+if (resultIssues.length > 0) {
+  console.log(`\n  Sample issues (first 20):`);
+  for (const { id, type, detail } of resultIssues.slice(0, 20)) {
+    console.log(`    [${type}] ${id}`);
     console.log(`      -> ${detail}`);
   }
-  if (issuesFound.length > 20) {
-    console.log(`    ... and ${issuesFound.length - 20} more`);
+  if (resultIssues.length > 20) {
+    console.log(`    ... and ${resultIssues.length - 20} more`);
   }
 }
-console.log();
+console.log(`\nTo apply: npx tsx scripts/apply-proofread-results.ts --results ${OUT_FILE}`);

@@ -34,8 +34,8 @@ For each batch, launch a background Agent with the proofread prompt from `prompt
 - `subagent_type: "general-purpose"`
 - `model: "sonnet"`
 - `run_in_background: true`
-- Batch naming: `b{N}` where N continues from the last batch number (check existing `data/proofread-results-b*.json` files)
-- Results file: `data/proofread-results-b{N}.json`
+- Batch naming: `b{N}` where N continues from the last batch number (check existing `data/proofread-results/agent-b*.json` files)
+- Results file: `data/proofread-results/agent-b{N}.json`
 - Launch ALL batches in a single message (parallel)
 
 ### Applying results
@@ -43,7 +43,7 @@ For each batch, launch a background Agent with the proofread prompt from `prompt
 When batches complete (or when invoked with "apply"), run:
 
 ```bash
-npx tsx scripts/apply-proofread-results.ts --results data/proofread-results-b{N}.json --cleanup
+npx tsx scripts/apply-proofread-results.ts --results data/proofread-results/agent-b{N}.json --cleanup
 ```
 
 `--cleanup` deletes the results file if there are no unresolved issues.
@@ -52,7 +52,7 @@ npx tsx scripts/apply-proofread-results.ts --results data/proofread-results-b{N}
 
 To find the next batch number:
 ```bash
-ls data/proofread-results-b*.json 2>/dev/null | sort -t b -k2 -n | tail -1
+ls data/proofread-results/agent-b*.json 2>/dev/null | sort -t b -k2 -n | tail -1
 ```
 If no files exist, check git log for the last batch mentioned in commit messages.
 
@@ -85,5 +85,6 @@ for i, e in enumerate(data):
 - Each batch should have ~30 words to stay within subagent context limits
 - Default is 8 parallel batches (240 words) — adjust based on available usage
 - The subagent prompt tells agents to use their own German knowledge — NO API calls
+- Subagent results must include `_meta.checks` array (see prompt) — the apply script uses it to determine which `_proofread` flags to set
 - After applying, update memory with new batch numbers and stats
 - **Grammar overrides**: verify against raw Wiktionary data before accepting (see above)

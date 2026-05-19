@@ -30,7 +30,7 @@
     "test:gloss-batching": "tsx scripts/test-gloss-batching.ts",
     "pipeline": "pnpm run download && pnpm run download-corpus && pnpm run transform -- --max-frequency 8000 --max-subtitle-rank 25000 && pnpm run enrich && pnpm run translate-glosses && pnpm run translate-glosses:full && pnpm run translate-examples && pnpm run build-index",
     "pipeline:seed": "pnpm run transform -- --seed && pnpm run enrich && pnpm run translate-glosses && pnpm run translate-glosses:full && pnpm run translate-examples && pnpm run build-index",
-    "proofread": "tsx scripts/proofread-batch.ts",
+    "proofread-examples": "tsx scripts/proofread-examples.ts",
     "build-lookup-index": "tsx scripts/build-lookup-index.ts",
     "lookup": "tsx scripts/lookup.ts",
     "check-idioms": "tsx scripts/check-idiom-translations.ts",

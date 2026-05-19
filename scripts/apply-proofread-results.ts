@@ -1,7 +1,7 @@
 /**
  * Apply proofreading results written by the review subagent.
  *
- * Reads data/proofread-results.json and writes _proofread flags into
+ * Reads a proofread results JSON file and writes _proofread flags into
  * example shard files and word files.
  *
  * Results format:
@@ -25,10 +25,10 @@
  * }
  *
  * Usage:
- *   node scripts/apply-proofread-results.js
- *   node scripts/apply-proofread-results.js --results data/proofread-results.json
- *   node scripts/apply-proofread-results.js --dry-run
- *   node scripts/apply-proofread-results.js --cleanup   # delete results file after apply if no issues
+ *   npx tsx scripts/apply-proofread-results.ts --results data/proofread-results/agent-b217.json
+ *   npx tsx scripts/apply-proofread-results.ts --results data/proofread-results/api-2026-05-19.json
+ *   npx tsx scripts/apply-proofread-results.ts --results <file> --dry-run
+ *   npx tsx scripts/apply-proofread-results.ts --results <file> --cleanup
  */
 
 import { readFileSync, writeFileSync, existsSync, unlinkSync } from "fs";
@@ -141,6 +141,7 @@ interface GrammarOverride {
 }
 
 interface ProofreadResults {
+  _meta?: { checks?: string[]; [k: string]: unknown };
   verified?: string[];
   translation_ok?: string[];
   word_glosses_ok?: string[];
@@ -149,11 +150,13 @@ interface ProofreadResults {
 }
 
 const results: ProofreadResults = JSON.parse(readFileSync(RESULTS_FILE, "utf-8")) as ProofreadResults;
+const checks = results._meta?.checks;
 const verified = Array.isArray(results.verified) ? results.verified : [];
 const translationOk = Array.isArray(results.translation_ok) ? results.translation_ok : [];
 const wordGlossesOk = Array.isArray(results.word_glosses_ok) ? results.word_glosses_ok : [];
 const issues = Array.isArray(results.issues) ? results.issues : [];
 
+console.log(`Check scope: ${checks ? checks.join(", ") : "full (legacy format)"}`);
 console.log(`Results: ${verified.length} fully verified, ${translationOk.length} translation-only, ${wordGlossesOk.length} word glosses, ${issues.length} issues`);
 
 // -- Example patches ----------------------------------------------------------
@@ -163,13 +166,15 @@ const examplesById = allIds.length > 0 ? loadExamplesByIds(allIds) : {};
 
 const patches: Record<string, ExamplePatch> = {};
 
+const markAnnotations = !checks || checks.includes("annotations");
+
 for (const id of verified) {
   const ex = examplesById[id];
   if (!ex) { console.warn(`  Warning: example ${id} not found`); continue; }
   patches[id] = {
     _proofread: {
       translation: true,
-      ...(ex.annotations ? { annotations: annotationsHash(ex.annotations) } : {}),
+      ...(markAnnotations && ex.annotations ? { annotations: annotationsHash(ex.annotations) } : {}),
     },
   };
 }
@@ -207,10 +212,9 @@ for (const relPath of wordGlossesOk) {
   const allSensesHaveGlossEn = translatableSenses.every((s: Sense) => s.gloss_en);
   const allSensesHaveGlossEnFull = translatableSenses.every((s: Sense) => s.gloss_en_full);
   const proofread = { ...(data._proofread || {}) };
-  if (allSensesHaveGlossEn) proofread.gloss_en = true;
-  if (allSensesHaveGlossEnFull) proofread.gloss_en_full = true;
-  // word_glosses_ok means agent reviewed synonyms_en (whether present or absent)
-  proofread.synonyms_en = true;
+  if ((!checks || checks.includes("gloss_en")) && allSensesHaveGlossEn) proofread.gloss_en = true;
+  if ((!checks || checks.includes("gloss_en_full")) && allSensesHaveGlossEnFull) proofread.gloss_en_full = true;
+  if (!checks || checks.includes("synonyms_en")) proofread.synonyms_en = true;
 
   if (!DRY_RUN) {
     writeFileSync(filePath, JSON.stringify({ ...data, _proofread: proofread }, null, 2) + "\n");

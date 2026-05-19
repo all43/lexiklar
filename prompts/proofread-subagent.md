@@ -43,10 +43,13 @@ For grammatical data (verbs: past_participle, conjugation, principal_parts, sepa
 
 ## Results format
 
-Write to `data/proofread-results.json` (overwrite existing):
+Write to `data/proofread-results/agent-b{N}.json` (overwrite existing):
 
 ```json
 {
+  "_meta": {
+    "checks": ["translation", "annotations", "gloss_en", "gloss_en_full", "synonyms_en", "grammar"]
+  },
   "verified": ["exId1"],
   "translation_ok": ["exId2"],
   "word_glosses_ok": ["verbs/sagen"],
@@ -58,6 +61,8 @@ Write to `data/proofread-results.json` (overwrite existing):
   ]
 }
 ```
+
+`_meta.checks` declares which aspects were verified. The apply script uses this to decide which `_proofread` flags to set. Always include the full list shown above for agentic proofreading.
 
 Rules:
 - `verified`: BOTH translation AND annotations correct

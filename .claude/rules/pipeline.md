@@ -25,7 +25,8 @@ download → transform → enrich → translate → build-index
 | `scripts/translate-examples.ts` | `npm run translate-examples` | LLM-translates examples and adds word annotations |
 | `scripts/build-index.ts` | `npm run build-index` | Generates SQLite search index from JSON files |
 | `scripts/search-examples.ts` | — | Search example shards by form, lemma, owner, or text |
-| `scripts/apply-proofread-results.ts` | — | Apply proofreading results (flags, fixes) from a results JSON file |
+| `scripts/proofread-examples.ts` | — | API-based example proofreading (translation + gloss_hint). Scans shards directly, no duplication |
+| `scripts/apply-proofread-results.ts` | — | Apply proofreading results (flags, fixes) from a results JSON file. Respects `_meta.checks` |
 | `scripts/lib/sense-ordering.ts` | — | Sense display order rules (`computeSenseOrder`): per-word overrides, Strategy C for nouns, Wiktionary for rest |
 | `scripts/lib/corpus.ts` | — | Shared corpus loaders (`loadLeipzigFPM`, `loadSubtlexFPM`, `loadOpensubtitlesFPM`, `toZipf`, `combineZipf`, `loadAllCorpora`) |
 | `scripts/generate-synonyms-en.ts` | — | LLM-generates English search synonyms (`synonyms_en`) for reverse lookup |
@@ -202,12 +203,22 @@ Approximate corpus sizes: Leipzig news ~5.4M tokens, Leipzig Wikipedia ~5.3M, SU
 
 ## Subagent Proofreading
 
-High-frequency words are verified using Claude Code's built-in model as a subagent (no API credits). The workflow:
+Two approaches, both write to `data/proofread-results/` (gitignored):
 
-1. **Pre-filter examples**: when generating the word list, collect each word's `example_ids` and check shards for `_proofread` status. Only include unproofread example IDs as `check_examples` per word entry.
-2. Launch subagent with prompt from `prompts/proofread-subagent.md`, replacing the word list at the bottom
-3. Subagent writes `data/proofread-results.json`
-4. Apply: `npx tsx scripts/apply-proofread-results.ts --results data/proofread-results-bNN.json --cleanup`
+**Agentic** (subagent, no API cost):
+1. Pre-filter examples: collect `example_ids`, check shards for `_proofread` status, include only unproofread IDs
+2. Launch subagent with prompt from `prompts/proofread-subagent.md`
+3. Subagent writes `data/proofread-results/agent-b{N}.json`
+4. Apply: `npx tsx scripts/apply-proofread-results.ts --results data/proofread-results/agent-b{N}.json --cleanup`
+
+**API-based** (`proofread-examples.ts`, uses LLM API credits):
+1. Run: `npx tsx scripts/proofread-examples.ts` (defaults to sonnet-4-6)
+2. Scans shards directly — each example checked once (no word-based duplication)
+3. Writes `data/proofread-results/examples-{date}.json` with `_meta.checks: ["translation", "gloss_hint"]`
+4. Human reviews the results file
+5. Apply: `npx tsx scripts/apply-proofread-results.ts --results data/proofread-results/examples-{date}.json`
+
+**`_meta.checks` in results files**: declares what was verified. The apply script uses this to decide which `_proofread` flags to set. If absent (old format), all flags are set (backward compat). API example checks only mark `_proofread.translation` (no annotations hash, since form/lemma/POS were not checked). Agentic checks mark both translation and annotations.
 
 `grammar_override` issues in the results are automatically written as `_overrides` by the apply script, so corrections survive re-transform.
 
