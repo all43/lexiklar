@@ -57,6 +57,19 @@ onMounted(() => {
     f7.tab.show("#tab-favorites");
   }
 
+  // Android hardware back button: canGoBack reflects the WebView's native history, which is
+  // always empty on native (browserHistory disabled). Check F7's router instead.
+  if (!isWeb) {
+    CapApp.addListener("backButton", () => {
+      const view = f7.views.current ?? f7.views.main;
+      if (view?.router.history.length > 1) {
+        view.router.back();
+      } else {
+        CapApp.exitApp();
+      }
+    });
+  }
+
   // Native deep links: lexiklar://word/nouns/Tisch/?section=grammar
   // Universal links: https://lexiklar.app/word/nouns/Tisch/?section=grammar
   // new URL() treats the first path segment as host for custom schemes, so strip manually.
