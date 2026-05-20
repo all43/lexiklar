@@ -308,68 +308,72 @@ describe("mergeManifestPatches", () => {
     expect(result["v1"].url).toBe("v1_to_v2.sql.gz");
   });
 
-  it("accumulates patches across runs (v1→v2, v2→v3)", () => {
-    // Run 1: no existing patches, generates v1→v2
+  it("drops stale patches targeting intermediate versions", () => {
+    // Run 1: generates v1→v2
     const afterRun1 = mergeManifestPatches(undefined, { fromVersion: "v1", url: "v1_to_v2.sql.gz", size: 100 }, "v2");
     expect(Object.keys(afterRun1)).toEqual(["v1"]);
 
-    // Run 2: existing has v1 patch, generates v2→v3
+    // Run 2: existing has v1→v2 (stale target), generates v2→v3
+    // v1→v2 targets "v2" not "v3" → dropped
     const afterRun2 = mergeManifestPatches(afterRun1, { fromVersion: "v2", url: "v2_to_v3.sql.gz", size: 200 }, "v3");
-    expect(Object.keys(afterRun2)).toEqual(["v1", "v2"]);
-    expect(afterRun2["v1"].url).toBe("v1_to_v2.sql.gz");
+    expect(Object.keys(afterRun2)).toEqual(["v2"]);
     expect(afterRun2["v2"].url).toBe("v2_to_v3.sql.gz");
   });
 
-  it("trims to keepPatches=3 after 4 runs", () => {
-    // Simulate 4 successive runs
-    let patches = mergeManifestPatches(undefined, { fromVersion: "v1", url: "p1", size: 1 }, "v2");
-    patches = mergeManifestPatches(patches, { fromVersion: "v2", url: "p2", size: 2 }, "v3");
-    patches = mergeManifestPatches(patches, { fromVersion: "v3", url: "p3", size: 3 }, "v4");
-    patches = mergeManifestPatches(patches, { fromVersion: "v4", url: "p4", size: 4 }, "v5");
+  it("keeps patches that target the current version", () => {
+    // Two patches both targeting v3 (e.g. generated from multi-version hashes)
+    const existing = { v1: p("v1_to_v3.sql.gz"), v2: p("v2_to_v3.sql.gz") };
+    const result = mergeManifestPatches(existing, null, "v3");
+    expect(Object.keys(result)).toEqual(["v1", "v2"]);
+  });
 
-    // keepPatches defaults to 3 — v1 patch should be dropped
-    expect(Object.keys(patches)).toEqual(["v2", "v3", "v4"]);
+  it("trims to keepPatches after accumulation", () => {
+    // All patches target v5 (direct-to-current)
+    const existing = {
+      v1: p("v1_to_v5.sql.gz"),
+      v2: p("v2_to_v5.sql.gz"),
+      v3: p("v3_to_v5.sql.gz"),
+    };
+    const result = mergeManifestPatches(existing, { fromVersion: "v4", url: "v4_to_v5.sql.gz", size: 4 }, "v5", 3);
+    // v1 dropped (oldest), v2/v3/v4 kept
+    expect(Object.keys(result)).toEqual(["v2", "v3", "v4"]);
   });
 
   it("respects custom keepPatches value", () => {
-    let patches = mergeManifestPatches(undefined, { fromVersion: "v1", url: "p1", size: 1 }, "v2", 2);
-    patches = mergeManifestPatches(patches, { fromVersion: "v2", url: "p2", size: 2 }, "v3", 2);
-    patches = mergeManifestPatches(patches, { fromVersion: "v3", url: "p3", size: 3 }, "v4", 2);
-
-    expect(Object.keys(patches)).toEqual(["v2", "v3"]);
-  });
-
-  it("does not carry forward a patch whose fromVersion equals newVersion (self-ref)", () => {
-    // e.g. manifest had v3→v4 patch, but now we're publishing v4 again with same version
-    const existing = { v3: p("v3_to_v4.sql.gz") };
-    const result = mergeManifestPatches(existing, null, "v4");
-    // v3 entry should be dropped because it points to newVersion (v4 is the new current)
-    // Actually: the guard is `ver === newVersion` — meaning we skip entries WHERE the key IS the new version.
-    // Here key is "v3" (not "v4"), so it IS carried forward. Let's verify the actual guard.
-    expect(Object.keys(result)).toEqual(["v3"]);
+    const existing = {
+      v1: p("v1_to_v4.sql.gz"),
+      v2: p("v2_to_v4.sql.gz"),
+    };
+    const result = mergeManifestPatches(existing, { fromVersion: "v3", url: "v3_to_v4.sql.gz", size: 3 }, "v4", 2);
+    expect(Object.keys(result)).toEqual(["v2", "v3"]);
   });
 
   it("skips carry-forward entry whose key equals newVersion", () => {
-    // An old manifest somehow has a key "v4" (pointing from v4 to something)
     const existing = { v3: p("v3_to_v4.sql.gz"), v4: p("v4_to_v5.sql.gz") };
-    // Publishing v4: v4 key is self-referential — skip it, keep v3
+    // Publishing v4: v4 key is self-referential → skip; v3→v4 targets v4 → kept
     const result = mergeManifestPatches(existing, null, "v4");
     expect(Object.keys(result)).toContain("v3");
     expect(Object.keys(result)).not.toContain("v4");
   });
 
-  it("no patch generated (null newEntry) preserves existing patches", () => {
+  it("drops all stale patches when no new entry and no matching targets", () => {
     const existing = { v1: p("v1_to_v2.sql.gz"), v2: p("v2_to_v3.sql.gz") };
+    // Publishing v4 — both patches target intermediate versions → dropped
     const result = mergeManifestPatches(existing, null, "v4");
-    expect(Object.keys(result)).toEqual(["v1", "v2"]);
+    expect(Object.keys(result)).toEqual([]);
   });
 
-  it("does not duplicate new patch key in carry-forward", () => {
-    // existing already has v2 (stale entry from a re-run)
-    const existing = { v1: p("old-v1.sql.gz"), v2: p("old-v2.sql.gz") };
-    const result = mergeManifestPatches(existing, { fromVersion: "v2", url: "new-v2.sql.gz", size: 999 }, "v3");
-    // new entry wins for v2, old-v2 should not overwrite it
-    expect(result["v2"].url).toBe("new-v2.sql.gz");
+  it("new entry wins over stale carry-forward with same key", () => {
+    const existing = { v2: p("v2_to_v2old.sql.gz") };
+    const result = mergeManifestPatches(existing, { fromVersion: "v2", url: "v2_to_v3.sql.gz", size: 999 }, "v3");
+    expect(result["v2"].url).toBe("v2_to_v3.sql.gz");
     expect(result["v2"].size).toBe(999);
+  });
+
+  it("keeps patches whose URLs lack _to_ pattern (unknown target)", () => {
+    // Legacy or manually-uploaded patches without the naming convention
+    const existing = { v1: p("legacy-patch.sql.gz") };
+    const result = mergeManifestPatches(existing, { fromVersion: "v2", url: "v2_to_v3.sql.gz", size: 100 }, "v3");
+    expect(Object.keys(result)).toEqual(["v1", "v2"]);
   });
 });

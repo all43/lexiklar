@@ -33,4 +33,12 @@ export interface LexiklarSqlitePlugin {
    * Useful for writing a new DB file via Filesystem plugin.
    */
   getDatabasePath(): Promise<{ path: string }>;
+
+  /**
+   * Download a gzipped database from a URL and write it to the plugin's
+   * storage directory. Runs entirely in native code to avoid JS bridge
+   * memory limits (~128 MB DB as base64 would peak at ~500 MB in JS).
+   * Closes the current connection first, so call open() afterward.
+   */
+  importDatabaseFromUrl(options: { url: string; path?: string }): Promise<void>;
 }

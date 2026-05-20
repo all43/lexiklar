@@ -1,5 +1,6 @@
 import Foundation
 import SQLite3
+import zlib
 
 /// Minimal SQLite wrapper using the system sqlite3 C library (built into iOS).
 public class SqliteDb {
@@ -138,6 +139,59 @@ public class SqliteDb {
             return nil
         default:
             return nil
+        }
+    }
+
+    // MARK: - Gzip
+
+    /// Streaming gzip decompression from file to file using zlib.
+    /// Memory usage stays under ~128 KB regardless of file size.
+    public static func decompressGzipFile(from sourcePath: String, to destPath: String) throws {
+        guard let sourceFile = fopen(sourcePath, "rb") else {
+            throw SqliteError.execFailed(message: "Cannot open source file", code: -1)
+        }
+        defer { fclose(sourceFile) }
+
+        guard let destFile = fopen(destPath, "wb") else {
+            throw SqliteError.execFailed(message: "Cannot create dest file", code: -1)
+        }
+        defer { fclose(destFile) }
+
+        var stream = z_stream()
+        // 15 + 32 = auto-detect gzip/zlib header
+        guard inflateInit2_(&stream, 15 + 32, ZLIB_VERSION, Int32(MemoryLayout<z_stream>.size)) == Z_OK else {
+            throw SqliteError.execFailed(message: "zlib init failed", code: -1)
+        }
+        defer { inflateEnd(&stream) }
+
+        let chunkSize = 65536
+        let inputBuf = UnsafeMutablePointer<UInt8>.allocate(capacity: chunkSize)
+        let outputBuf = UnsafeMutablePointer<UInt8>.allocate(capacity: chunkSize)
+        defer { inputBuf.deallocate(); outputBuf.deallocate() }
+
+        outer: while true {
+            let bytesRead = fread(inputBuf, 1, chunkSize, sourceFile)
+            if bytesRead == 0 { break }
+
+            stream.next_in = inputBuf
+            stream.avail_in = uInt(bytesRead)
+
+            repeat {
+                stream.next_out = outputBuf
+                stream.avail_out = uInt(chunkSize)
+
+                let status = inflate(&stream, Z_NO_FLUSH)
+                guard status == Z_OK || status == Z_STREAM_END else {
+                    throw SqliteError.execFailed(message: "zlib inflate failed (rc=\(status))", code: Int32(status))
+                }
+
+                let produced = chunkSize - Int(stream.avail_out)
+                if produced > 0 {
+                    fwrite(outputBuf, 1, produced, destFile)
+                }
+
+                if status == Z_STREAM_END { break outer }
+            } while stream.avail_out == 0
         }
     }
 }

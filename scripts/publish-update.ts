@@ -58,9 +58,14 @@ export interface DbHashes {
  * Merge a newly generated patch entry with existing manifest patches, then trim
  * to `keepPatches` most-recently-added entries.
  *
+ * Only keeps patches whose target is the current version (detected from the URL
+ * filename pattern `<from>_to_<target>.sql.gz`). Stale carried-forward patches
+ * that target intermediate versions are dropped — they waste manifest slots and
+ * leave users on a non-current version after applying.
+ *
  * @param existing   - patches from the current manifest on disk (may be undefined)
  * @param newEntry   - patch just generated for this run, or null if skipped
- * @param newVersion - the DB version just published (excluded from carry-forward to avoid self-ref)
+ * @param newVersion - the DB version just published
  * @param keepPatches - max number of patch entries to retain (default 3)
  */
 export function mergeManifestPatches(
@@ -71,20 +76,20 @@ export function mergeManifestPatches(
 ): Record<string, { url: string; size: number }> {
   const patches: Record<string, { url: string; size: number }> = {};
 
-  // Carry forward existing entries first (older), then append new entry (newest last)
   if (existing) {
     for (const [ver, patch] of Object.entries(existing)) {
-      if (ver === newVersion) continue;    // don't carry forward self-referential entry
+      if (ver === newVersion) continue;
+      // Only carry forward patches that target the current version
+      const match = patch.url.match(/_to_([^/.]+)\.sql/);
+      if (match && match[1] !== newVersion) continue;
       patches[ver] = patch;
     }
   }
 
   if (newEntry) {
-    // New entry wins over any stale carry-forward with the same key
     patches[newEntry.fromVersion] = { url: newEntry.url, size: newEntry.size };
   }
 
-  // Trim to keepPatches most recent (insertion order)
   const entries = Object.entries(patches);
   const pruned: Record<string, { url: string; size: number }> = {};
   for (const [ver, patch] of entries.slice(-keepPatches)) {
@@ -383,8 +388,10 @@ async function main(): Promise<void> {
   }
 
   // Carry forward older patches from existing manifest and trim to keepPatches
-  const [[newFromVersion, newPatchEntry] = []] = Object.entries(patches);
-  const newEntry = newFromVersion ? { fromVersion: newFromVersion, ...newPatchEntry } : null;
+  const patchEntries = Object.entries(patches);
+  const newEntry = patchEntries.length > 0
+    ? { fromVersion: patchEntries[0][0], url: patchEntries[0][1].url, size: patchEntries[0][1].size }
+    : null;
   const prunedPatches = mergeManifestPatches(existingManifest?.db?.patches, newEntry, newVersion, keepPatches);
 
   // Copy current DB to output and gzip

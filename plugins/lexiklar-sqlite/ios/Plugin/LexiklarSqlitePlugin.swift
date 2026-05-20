@@ -11,7 +11,8 @@ public class LexiklarSqlitePlugin: CAPPlugin, CAPBridgedPlugin {
         CAPPluginMethod(name: "execute", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "close", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "deleteDatabase", returnType: CAPPluginReturnPromise),
-        CAPPluginMethod(name: "getDatabasePath", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "getDatabasePath", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "importDatabaseFromUrl", returnType: CAPPluginReturnPromise)
     ]
 
     private let db = SqliteDb()
@@ -123,5 +124,47 @@ public class LexiklarSqlitePlugin: CAPPlugin, CAPBridgedPlugin {
 
     @objc func getDatabasePath(_ call: CAPPluginCall) {
         call.resolve(["path": Self.databaseDirectory()])
+    }
+
+    @objc func importDatabaseFromUrl(_ call: CAPPluginCall) {
+        guard let urlString = call.getString("url"),
+              let url = URL(string: urlString) else {
+            call.reject("Missing or invalid 'url' parameter")
+            return
+        }
+
+        let name = call.getString("path") ?? "lexiklar.db"
+        let dbDir = Self.databaseDirectory()
+        let dbPath = (dbDir as NSString).appendingPathComponent(name)
+
+        db.close()
+
+        let task = URLSession.shared.downloadTask(with: url) { [weak self] tempUrl, response, error in
+            guard self != nil else { return }
+
+            if let error = error {
+                call.reject("Download failed: \(error.localizedDescription)")
+                return
+            }
+            guard let tempUrl = tempUrl else {
+                call.reject("Download returned no data")
+                return
+            }
+
+            do {
+                try FileManager.default.createDirectory(
+                    atPath: dbDir, withIntermediateDirectories: true)
+
+                if FileManager.default.fileExists(atPath: dbPath) {
+                    try FileManager.default.removeItem(atPath: dbPath)
+                }
+
+                try SqliteDb.decompressGzipFile(from: tempUrl.path, to: dbPath)
+                call.resolve()
+            } catch {
+                call.reject("Import failed: \(error.localizedDescription)")
+            }
+        }
+        task.resume()
     }
 }

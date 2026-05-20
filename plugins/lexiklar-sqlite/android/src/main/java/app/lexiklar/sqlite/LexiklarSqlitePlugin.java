@@ -15,6 +15,9 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.BufferedInputStream;
+import java.net.URL;
+import java.util.zip.GZIPInputStream;
 
 @CapacitorPlugin(name = "LexiklarSqlite")
 public class LexiklarSqlitePlugin extends Plugin {
@@ -139,5 +142,42 @@ public class LexiklarSqlitePlugin extends Plugin {
         JSObject result = new JSObject();
         result.put("path", databaseDirectory(getContext()));
         call.resolve(result);
+    }
+
+    @PluginMethod
+    public void importDatabaseFromUrl(PluginCall call) {
+        String urlString = call.getString("url");
+        if (urlString == null) {
+            call.reject("Missing 'url' parameter");
+            return;
+        }
+
+        String name = call.getString("path", "lexiklar.db");
+        String dbDir = databaseDirectory(getContext());
+        File dbFile = new File(dbDir, name);
+
+        db.close();
+
+        new Thread(() -> {
+            try {
+                new File(dbDir).mkdirs();
+                if (dbFile.exists()) dbFile.delete();
+
+                URL url = new URL(urlString);
+                try (InputStream raw = new BufferedInputStream(url.openStream());
+                     GZIPInputStream gzip = new GZIPInputStream(raw);
+                     FileOutputStream out = new FileOutputStream(dbFile)) {
+                    byte[] buf = new byte[65536];
+                    int len;
+                    while ((len = gzip.read(buf)) > 0) {
+                        out.write(buf, 0, len);
+                    }
+                }
+
+                call.resolve();
+            } catch (Exception e) {
+                call.reject("Import failed: " + e.getMessage());
+            }
+        }).start();
     }
 }

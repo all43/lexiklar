@@ -786,38 +786,16 @@ export async function applyUpdate(
         await cacheVersionWrite(update.targetVersion!);
       }
     } else if (_isNative) {
-      // Native full DB replacement: download, decompress, write to filesystem, reopen
+      // Native full DB replacement: download + decompress entirely in native code.
+      // Avoids the ~500 MB JS memory peak from base64-encoding 128 MB through the bridge.
       const url = update.gzUrl || update.url!;
-      const uncompressedSize = update.uncompressedSize || update.size || 0;
-      const bytes = await fetchGzipped(url, onProgress, uncompressedSize);
 
       if (onApplying) {
         onApplying();
         await new Promise((r) => setTimeout(r, UI_YIELD_DELAY_MS));
       }
 
-      // Close current connection, delete old DB, write new one
-      await _nativeMod!.nativeClose();
-      await _nativeMod!.nativeDeleteDb();
-
-      // Write decompressed DB to plugin's storage directory via Filesystem
-      const { Filesystem } = await import("@capacitor/filesystem");
-      const dbDir = await _nativeMod!.nativeGetDbPath();
-      const blob = new Blob([bytes]);
-      const reader = new FileReader();
-      const base64 = await new Promise<string>((resolve, reject) => {
-        reader.onload = () => {
-          const dataUrl = reader.result as string;
-          resolve(dataUrl.split(",")[1]);
-        };
-        reader.onerror = reject;
-        reader.readAsDataURL(blob);
-      });
-      await Filesystem.writeFile({
-        path: "file://" + dbDir + "/lexiklar.db",
-        data: base64,
-        recursive: true,
-      });
+      await _nativeMod!.nativeImportDatabaseFromUrl(url);
 
       // Reopen with new DB (skip bundled check — we just wrote the OTA DB)
       await _nativeMod!.initNativeDb(true);

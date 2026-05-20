@@ -90,3 +90,12 @@ export async function nativeGetDbPath(): Promise<string> {
   const result = await LexiklarSqlite.getDatabasePath();
   return result.path;
 }
+
+/**
+ * Download a gzipped DB from a URL and write it to the plugin's storage.
+ * Runs entirely in native code — avoids the ~500 MB JS memory peak from
+ * base64-encoding 128 MB through the Capacitor bridge.
+ */
+export async function nativeImportDatabaseFromUrl(url: string): Promise<void> {
+  await LexiklarSqlite.importDatabaseFromUrl({ url });
+}
