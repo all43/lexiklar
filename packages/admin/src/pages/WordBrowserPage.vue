@@ -232,19 +232,32 @@
             <div v-if="sense.example_ids?.length" class="sense-examples">
               <div v-for="eid in sense.example_ids" :key="eid" class="example-card">
                 <template v-if="examples[eid]">
-                  <div class="example-text">
-                    <span class="proof-dot" :class="examples[eid]._proofread?.translation ? 'proof-ok' : 'proof-pending'" :title="examples[eid]._proofread?.translation ? 'Proofread' : 'Not proofread'"></span>
-                    {{ examples[eid].text }}
-                  </div>
-                  <div v-if="examples[eid].translation" class="example-translation">{{ examples[eid].translation }}</div>
-                  <div v-if="examples[eid].annotations?.length" class="example-annotations">
-                    <span
-                      v-for="(ann, j) in examples[eid].annotations"
-                      :key="j"
-                      class="annotation-pill"
-                      :title="`${ann.lemma} (${ann.pos})${ann.gloss_hint ? ' — ' + ann.gloss_hint : ''}`"
-                    >{{ ann.form }}</span>
-                  </div>
+                  <template v-if="editingExampleId === eid">
+                    <ExampleEditor
+                      :exampleId="eid"
+                      :text="examples[eid].text"
+                      :translation="examples[eid].translation"
+                      :annotations="examples[eid].annotations || []"
+                      @save="onExampleEditorSave(eid, $event)"
+                      @cancel="editingExampleId = null"
+                    />
+                  </template>
+                  <template v-else>
+                    <div class="example-text">
+                      <span class="proof-dot" :class="examples[eid]._proofread?.translation ? 'proof-ok' : 'proof-pending'" :title="examples[eid]._proofread?.translation ? 'Proofread' : 'Not proofread'"></span>
+                      {{ examples[eid].text }}
+                      <button class="btn-edit-example" @click="editingExampleId = eid" title="Edit example">&#9998;</button>
+                    </div>
+                    <div v-if="examples[eid].translation" class="example-translation">{{ examples[eid].translation }}</div>
+                    <div v-if="examples[eid].annotations?.length" class="example-annotations">
+                      <span
+                        v-for="(ann, j) in examples[eid].annotations"
+                        :key="j"
+                        class="annotation-pill"
+                        :title="`${ann.lemma} (${ann.pos})${ann.gloss_hint ? ' — ' + ann.gloss_hint : ''}`"
+                      >{{ ann.form }}</span>
+                    </div>
+                  </template>
                 </template>
                 <div v-else class="example-missing">{{ eid }}</div>
               </div>
@@ -410,6 +423,7 @@ import AdjectiveDeclension from "@shared/components/AdjectiveDeclension.vue";
 import PronounDeclension from "@shared/components/PronounDeclension.vue";
 import DeterminerDeclension from "@shared/components/DeterminerDeclension.vue";
 import WordSearchSelect from "../components/WordSearchSelect.vue";
+import ExampleEditor from "../components/ExampleEditor.vue";
 
 interface PosCount { pos: string; count: number }
 interface WordListItem { pos: string; file: string; word: string; gloss_en?: string; zipf?: number; flags?: string[]; inDb?: boolean }
@@ -446,6 +460,16 @@ const wordItems = ref<WordListItem[]>([]);
 const wordData = ref<any>(null);
 const examples = ref<Record<string, ExampleData>>({});
 const exampleStats = ref<ExampleStats | null>(null);
+const editingExampleId = ref<string | null>(null);
+
+function onExampleEditorSave(eid: string, data: { translation: string; annotations: any[] }) {
+  if (examples.value[eid]) {
+    examples.value[eid].translation = data.translation;
+    examples.value[eid].annotations = data.annotations;
+    examples.value[eid]._proofread = { ...examples.value[eid]._proofread, translation: true };
+  }
+  editingExampleId.value = null;
+}
 const wiktEntries = ref<any[]>([]);
 const wiktLoading = ref(false);
 const loadingList = ref(false);
@@ -1257,7 +1281,20 @@ onMounted(async () => {
   margin-top: 0.35rem;
   font-size: 0.85rem;
 }
-.example-text { color: #1a1a1a; display: flex; align-items: baseline; gap: 6px; }
+.example-text { color: #1a1a1a; display: flex; align-items: baseline; gap: 6px; position: relative; }
+.btn-edit-example {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--admin-text-muted);
+  padding: 0 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+.example-card:hover .btn-edit-example { opacity: 0.6; }
+.btn-edit-example:hover { opacity: 1 !important; color: var(--admin-primary); }
 .proof-dot {
   width: 7px;
   height: 7px;

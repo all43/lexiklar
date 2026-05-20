@@ -70,6 +70,10 @@
         <option value="unproofread_gloss">Unproofread gloss</option>
         <option value="unproofread_examples">Has unproofread examples</option>
       </select>
+      <select v-if="mode === 'examples'" v-model="exQueueFilter" class="filter-select" @change="reload">
+        <option value="">Unproofread</option>
+        <option value="flagged">Flagged</option>
+      </select>
     </div>
 
     <!-- ===================== WORDS MODE ===================== -->
@@ -145,6 +149,9 @@
               {{ current.owner.word }}
             </router-link>
             <span class="owner-meta">({{ current.owner.pos }}, zipf {{ current.owner.zipf.toFixed(1) }})</span>
+            <span v-if="current._flagged" class="badge badge-flagged" :title="current._flagged.reason || 'flagged'">
+              flagged{{ current._flagged.reason ? ': ' + current._flagged.reason : '' }}
+            </span>
           </div>
           <div class="card-position">
             {{ currentIdx + 1 }} / {{ queueTotal.toLocaleString() }}
@@ -152,48 +159,73 @@
           </div>
         </div>
 
-        <div class="card-body">
-          <div class="example-text">{{ current.text }}</div>
-          <div class="example-translation">{{ current.translation }}</div>
+        <!-- Edit mode -->
+        <template v-if="editing">
+          <ExampleEditor
+            :exampleId="current.id"
+            :text="current.text"
+            :translation="current.translation"
+            :annotations="current.annotations"
+            @save="onEditorSave"
+            @cancel="editing = false"
+          />
+        </template>
 
-          <div v-if="current.senseContext.length > 0" class="sense-context">
-            <div class="section-label">Sense disambiguation</div>
-            <div v-for="sc in current.senseContext" :key="sc.form + sc.lemma" class="sense-entry">
-              <div class="sense-form">
-                <strong>"{{ sc.form }}"</strong> &rarr; {{ sc.lemma }}
-                <span class="sense-hint" v-if="sc.gloss_hint">hint: "{{ sc.gloss_hint }}"</span>
-                <span class="sense-hint sense-hint-null" v-else>no hint</span>
+        <!-- Review mode -->
+        <template v-else>
+          <div class="card-body">
+            <div class="example-text">{{ current.text }}</div>
+            <div class="example-translation">{{ current.translation }}</div>
+
+            <div v-if="current.senseContext.length > 0" class="sense-context">
+              <div class="section-label">Sense disambiguation</div>
+              <div v-for="sc in current.senseContext" :key="sc.form + sc.lemma" class="sense-entry">
+                <div class="sense-form">
+                  <strong>"{{ sc.form }}"</strong> &rarr; {{ sc.lemma }}
+                  <span class="sense-hint" v-if="sc.gloss_hint">hint: "{{ sc.gloss_hint }}"</span>
+                  <span class="sense-hint sense-hint-null" v-else>no hint</span>
+                </div>
+                <div class="sense-list">{{ sc.senses }}</div>
               </div>
-              <div class="sense-list">{{ sc.senses }}</div>
+            </div>
+
+            <div v-if="current.annotations.length > 0" class="annotations-section">
+              <div class="section-label">All annotations</div>
+              <div class="annotation-pills">
+                <span v-for="(ann, i) in current.annotations" :key="i" class="ann-pill">
+                  {{ ann.form }}
+                  <span class="ann-meta">{{ ann.lemma }} ({{ ann.pos }})</span>
+                  <span v-if="ann.gloss_hint" class="ann-hint">{{ ann.gloss_hint }}</span>
+                </span>
+              </div>
             </div>
           </div>
 
-          <div v-if="current.annotations.length > 0" class="annotations-section">
-            <div class="section-label">All annotations</div>
-            <div class="annotation-pills">
-              <span v-for="(ann, i) in current.annotations" :key="i" class="ann-pill">
-                {{ ann.form }}
-                <span class="ann-meta">{{ ann.lemma }} ({{ ann.pos }})</span>
-                <span v-if="ann.gloss_hint" class="ann-hint">{{ ann.gloss_hint }}</span>
-              </span>
+          <div class="card-actions">
+            <button class="btn-verify" @click="verify" :disabled="acting">
+              <span class="shortcut">Y</span> Verify
+            </button>
+            <div class="flag-wrapper" @mouseleave="showFlagReason = false">
+              <button class="btn-flag" @click="showFlagReason = !showFlagReason" :disabled="acting">
+                <span class="shortcut">N</span> Flag
+              </button>
+              <div v-if="showFlagReason" class="flag-reason-popover">
+                <div class="flag-reason-option" @click="flagWithReason('translation')">Translation</div>
+                <div class="flag-reason-option" @click="flagWithReason('annotation')">Annotation</div>
+                <div class="flag-reason-option" @click="flagWithReason('other')">Other</div>
+              </div>
             </div>
+            <button class="btn-edit" @click="editing = true">
+              <span class="shortcut">E</span> Edit
+            </button>
+            <button class="btn-skip" @click="skip">
+              <span class="shortcut">&rarr;</span> Skip
+            </button>
+            <button class="btn-back" @click="goBack" :disabled="currentIdx === 0">
+              <span class="shortcut">&larr;</span> Back
+            </button>
           </div>
-        </div>
-
-        <div class="card-actions">
-          <button class="btn-verify" @click="verify" :disabled="acting">
-            <span class="shortcut">Y</span> Verify
-          </button>
-          <button class="btn-flag" @click="flag" :disabled="acting">
-            <span class="shortcut">N</span> Flag
-          </button>
-          <button class="btn-skip" @click="skip">
-            <span class="shortcut">&rarr;</span> Skip
-          </button>
-          <button class="btn-back" @click="goBack" :disabled="currentIdx === 0">
-            <span class="shortcut">&larr;</span> Back
-          </button>
-        </div>
+        </template>
       </div>
 
       <!-- Flagged items -->
@@ -202,6 +234,7 @@
         <div v-for="f in flaggedList" :key="f.id" class="flagged-item">
           <span class="flagged-id">{{ f.id.slice(0, 8) }}</span>
           <span class="flagged-text">{{ f.text.slice(0, 60) }}{{ f.text.length > 60 ? '...' : '' }}</span>
+          <span v-if="f.reason" class="flagged-reason">{{ f.reason }}</span>
         </div>
       </div>
     </template>
@@ -211,6 +244,7 @@
 <script setup lang="ts">
 import { ref, reactive, computed, onMounted, onUnmounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
+import ExampleEditor from "../components/ExampleEditor.vue";
 
 interface ExOwner {
   word: string;
@@ -230,9 +264,10 @@ interface ExampleQueueItem {
   id: string;
   text: string;
   translation: string;
-  annotations: { form: string; lemma: string; pos: string; gloss_hint: string | null }[];
+  annotations: { form: string; lemma: string; pos: string; gloss_hint: string | null; form_index?: number; form2?: string; form2_index?: number }[];
   owner: ExOwner;
   senseContext: SenseContext[];
+  _flagged?: { date: string; reason?: string | null };
 }
 
 interface WordQueueItem {
@@ -289,7 +324,10 @@ const EX_PAGE_SIZE = 50;
 const sessionVerified = ref(0);
 const sessionFlagged = ref(0);
 const sessionSkipped = ref(0);
-const flaggedList = ref<{ id: string; text: string }[]>([]);
+const flaggedList = ref<{ id: string; text: string; reason?: string }[]>([]);
+const editing = ref(false);
+const showFlagReason = ref(false);
+const exQueueFilter = ref("");
 
 // ---- Computed ----
 const current = computed(() => queue.value[currentIdx.value] || null);
@@ -374,6 +412,7 @@ async function loadExampleQueue(offset = 0) {
   const params = new URLSearchParams({ limit: String(EX_PAGE_SIZE), offset: String(offset) });
   if (activePosSet.size > 0) params.set("pos", Array.from(activePosSet).join(","));
   if (wordFilter.value.trim()) params.set("word", wordFilter.value.trim());
+  if (exQueueFilter.value) params.set("filter", exQueueFilter.value);
 
   try {
     const res = await fetch("/api/proofread/example-queue?" + params);
@@ -409,11 +448,32 @@ async function verify() {
   acting.value = false;
 }
 
-function flag() {
+async function flagWithReason(reason: string) {
   const item = current.value;
   if (!item || acting.value) return;
-  sessionFlagged.value++;
-  flaggedList.value.push({ id: item.id, text: item.text });
+  showFlagReason.value = false;
+  acting.value = true;
+  try {
+    await fetch(`/api/proofread/examples/${item.id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "flag", reason }),
+    });
+    sessionFlagged.value++;
+    flaggedList.value.push({ id: item.id, text: item.text, reason });
+    queue.value.splice(currentIdx.value, 1);
+    queueTotal.value--;
+    if (currentIdx.value >= queue.value.length && queue.value.length > 0) {
+      currentIdx.value = queue.value.length - 1;
+    }
+    maybeLoadMore();
+  } catch { /* ignore */ }
+  acting.value = false;
+}
+
+function onEditorSave() {
+  editing.value = false;
+  sessionVerified.value++;
   queue.value.splice(currentIdx.value, 1);
   queueTotal.value--;
   if (currentIdx.value >= queue.value.length && queue.value.length > 0) {
@@ -442,13 +502,16 @@ function maybeLoadMore() {
 
 function onKeydown(e: KeyboardEvent) {
   if (mode.value !== "examples") return;
+  if (editing.value) return;
   const tag = (e.target as HTMLElement)?.tagName;
   if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
 
   if (e.key === "y" || e.key === "Y") { e.preventDefault(); verify(); }
-  else if (e.key === "n" || e.key === "N") { e.preventDefault(); flag(); }
+  else if (e.key === "n" || e.key === "N") { e.preventDefault(); showFlagReason.value = !showFlagReason.value; }
+  else if (e.key === "e" || e.key === "E") { e.preventDefault(); editing.value = true; }
   else if (e.key === "ArrowRight") { e.preventDefault(); skip(); }
   else if (e.key === "ArrowLeft") { e.preventDefault(); goBack(); }
+  else if (e.key === "Escape") { showFlagReason.value = false; }
 }
 
 onMounted(() => {
@@ -956,9 +1019,54 @@ onUnmounted(() => {
   text-align: center;
 }
 
+.btn-edit { background: var(--admin-primary); color: white; }
+.btn-edit:hover { background: var(--admin-primary-dark); }
+
 .btn-skip .shortcut,
-.btn-back .shortcut {
+.btn-back .shortcut,
+.btn-edit .shortcut {
   background: rgba(0, 0, 0, 0.08);
+}
+
+.btn-edit .shortcut {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Flag reason popover */
+.flag-wrapper { position: relative; }
+
+.flag-reason-popover {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid var(--admin-border-ui);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 50;
+  min-width: 140px;
+  margin-bottom: 4px;
+}
+
+.flag-reason-option {
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.1s;
+}
+
+.flag-reason-option:hover { background: #ffebee; }
+
+.flag-reason-option:first-child { border-radius: 6px 6px 0 0; }
+.flag-reason-option:last-child { border-radius: 0 0 6px 6px; }
+
+.badge-flagged {
+  font-size: 0.7rem;
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+  background: #ffebee;
+  color: #c62828;
 }
 
 .flagged-section {
@@ -987,5 +1095,14 @@ onUnmounted(() => {
 
 .flagged-text {
   color: var(--admin-text-medium);
+}
+
+.flagged-reason {
+  font-size: 0.7rem;
+  color: #c62828;
+  background: #ffebee;
+  padding: 0 6px;
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 </style>

@@ -3,10 +3,8 @@
  * raw lookup as JSON API endpoints under /api/*.
  */
 import type { Plugin } from "vite";
-import { readdirSync, readFileSync, writeFileSync, existsSync, unlinkSync, statSync } from "fs";
+import { existsSync } from "fs";
 import { join, resolve } from "path";
-import { spawn, execFileSync } from "child_process";
-import { tmpdir } from "os";
 import type { IncomingMessage, ServerResponse } from "http";
 import { lookupWiktionary, lookupWiktionaryBatch } from "../../../scripts/lib/wiktionary-lookup.js";
 import { computeConjugation } from "../../../src/utils/verb-forms.js";
@@ -15,26 +13,21 @@ import { WORD_SYSTEM_PROMPT, SYSTEM_PROMPT_FULL, PHRASE_SYSTEM_PROMPT, TOPIC_WOR
 import { loadAllCorpora, lookupFPM, toZipf, combineZipf, type FPMMap } from "../../../scripts/lib/corpus.js";
 import type { VerbEndingsFile } from "../../../types/word.js";
 import Database from "better-sqlite3";
+import type { DataStore } from "./data-store.js";
+import { LocalDataStore } from "./local-data-store.js";
 
 const ROOT = resolve(__dirname, "../../..");
-const WORDS_DIR = join(ROOT, "data", "words");
-const EXAMPLES_DIR = join(ROOT, "data", "examples");
-const VERB_ENDINGS_FILE = join(ROOT, "data", "rules", "verb-endings.json");
 const PROOFREAD_RESULTS_DIR = join(ROOT, "data", "proofread-results");
 
+const store: DataStore = new LocalDataStore();
+
 let verbEndings: VerbEndingsFile | null = null;
-function getVerbEndings(): VerbEndingsFile | null {
+async function getVerbEndings(): Promise<VerbEndingsFile | null> {
   if (verbEndings) return verbEndings;
-  if (!existsSync(VERB_ENDINGS_FILE)) return null;
-  verbEndings = JSON.parse(readFileSync(VERB_ENDINGS_FILE, "utf-8"));
+  if (!(await store.fileExists("data/rules/verb-endings.json"))) return null;
+  verbEndings = JSON.parse(await store.readFile("data/rules/verb-endings.json"));
   return verbEndings;
 }
-
-const POS_DIRS = [
-  "abbreviations", "adjectives", "adverbs", "conjunctions", "determiners",
-  "interjections", "names", "nouns", "numerals", "particles", "phrases",
-  "postpositions", "prepositions", "pronouns", "verbs",
-];
 
 function json(res: ServerResponse, data: unknown, status = 200) {
   res.writeHead(status, { "Content-Type": "application/json" });
@@ -71,20 +64,18 @@ function getWordFlags(data: any): string[] {
 /** Cached enriched word index — rebuilt every 60s. */
 let wordIndexCache: { items: WordListItem[]; ts: number } | null = null;
 
-function getWordIndex(): WordListItem[] {
+async function getWordIndex(): Promise<WordListItem[]> {
   if (wordIndexCache && Date.now() - wordIndexCache.ts < 60_000) {
     return wordIndexCache.items;
   }
   const items: WordListItem[] = [];
-  for (const dir of POS_DIRS) {
-    const dirPath = join(WORDS_DIR, dir);
-    if (!existsSync(dirPath)) continue;
-    for (const file of readdirSync(dirPath)) {
-      if (!file.endsWith(".json")) continue;
+  for (const dir of store.listPosDirs()) {
+    const files = await store.listWordFiles(dir);
+    for (const file of files) {
       const word = file.replace(/\.json$/, "");
       const item: WordListItem = { pos: dir, file, word };
       try {
-        const data = JSON.parse(readFileSync(join(dirPath, file), "utf-8"));
+        const data = await store.readWord(dir, word);
         item.gloss_en = data.senses?.[0]?.gloss_en || undefined;
         item.zipf = data.zipf;
         item.flags = getWordFlags(data);
@@ -97,7 +88,7 @@ function getWordIndex(): WordListItem[] {
 }
 
 /** List word files with filtering, sorting, and pagination. */
-function handleWordList(req: IncomingMessage, res: ServerResponse) {
+async function handleWordList(req: IncomingMessage, res: ServerResponse) {
   const params = parseQuery(req.url!);
   const pos = params.get("pos");
   const q = params.get("q")?.toLowerCase() || "";
@@ -106,7 +97,7 @@ function handleWordList(req: IncomingMessage, res: ServerResponse) {
   const filter = params.get("filter");
   const sort = params.get("sort") || "alpha";
 
-  const allItems = getWordIndex();
+  const allItems = await getWordIndex();
   let results = allItems;
 
   if (pos) results = results.filter(i => i.pos === pos);
@@ -156,8 +147,7 @@ function handleWordList(req: IncomingMessage, res: ServerResponse) {
 
 /** Dashboard statistics — scans all word files for quality metrics. */
 let statsCache: { data: any; ts: number } | null = null;
-function handleStats(res: ServerResponse) {
-  // Cache for 30s to avoid rescanning on every dashboard load
+async function handleStats(res: ServerResponse) {
   if (statsCache && Date.now() - statsCache.ts < 30_000) {
     return json(res, statsCache.data);
   }
@@ -168,17 +158,15 @@ function handleStats(res: ServerResponse) {
     by_pos: {} as Record<string, number>,
   };
 
-  for (const dir of POS_DIRS) {
-    const dirPath = join(WORDS_DIR, dir);
-    if (!existsSync(dirPath)) continue;
+  for (const dir of store.listPosDirs()) {
+    const files = await store.listWordFiles(dir);
     let posCount = 0;
 
-    for (const file of readdirSync(dirPath)) {
-      if (!file.endsWith(".json")) continue;
+    for (const file of files) {
       posCount++;
       stats.total++;
       try {
-        const data = JSON.parse(readFileSync(join(dirPath, file), "utf-8"));
+        const data = await store.readWord(dir, file.replace(/\.json$/, ""));
         const pr = data._proofread || {};
         if (pr.gloss_en) stats.proofread_gloss++;
         if (pr.gloss_en_full) stats.proofread_full++;
@@ -198,33 +186,28 @@ function handleStats(res: ServerResponse) {
 }
 
 /** Read a single word file + resolve its examples. */
-function handleWordDetail(res: ServerResponse, pos: string, file: string) {
-  const filePath = join(WORDS_DIR, pos, file.endsWith(".json") ? file : file + ".json");
-  if (!existsSync(filePath)) return json(res, { error: "not found" }, 404);
+async function handleWordDetail(res: ServerResponse, pos: string, file: string) {
+  const lemma = file.endsWith(".json") ? file.replace(/\.json$/, "") : file;
+  if (!(await store.wordExists(pos, lemma))) return json(res, { error: "not found" }, 404);
 
-  const word = JSON.parse(readFileSync(filePath, "utf-8"));
+  const word = await store.readWord(pos, lemma);
 
-  // Generate conjugation table for verbs that only have stems
   if (word.pos === "verb" && !word.conjugation && word.stems && word.conjugation_class !== "irregular") {
-    const endings = getVerbEndings();
+    const endings = await getVerbEndings();
     if (endings) {
       word.conjugation = computeConjugation(word, endings);
     }
   }
 
-  // Collect all example IDs across senses
   const exampleIds: string[] = [];
   for (const sense of word.senses || []) {
     for (const id of sense.example_ids || []) exampleIds.push(id);
   }
 
-  // Load examples from shards
   const examples: Record<string, unknown> = {};
   const prefixes = new Set(exampleIds.map((id: string) => id.slice(0, 2)));
   for (const prefix of prefixes) {
-    const shardPath = join(EXAMPLES_DIR, prefix + ".json");
-    if (!existsSync(shardPath)) continue;
-    const shard = JSON.parse(readFileSync(shardPath, "utf-8"));
+    const shard = await store.readExampleShard(prefix);
     for (const id of exampleIds) {
       if (shard[id]) examples[id] = shard[id];
     }
@@ -258,13 +241,11 @@ function handleLookup(req: IncomingMessage, res: ServerResponse) {
 }
 
 /** POS summary: count of files per directory. */
-function handlePosSummary(res: ServerResponse) {
+async function handlePosSummary(res: ServerResponse) {
   const counts: { pos: string; count: number }[] = [];
-  for (const dir of POS_DIRS) {
-    const dirPath = join(WORDS_DIR, dir);
-    if (!existsSync(dirPath)) { counts.push({ pos: dir, count: 0 }); continue; }
-    const count = readdirSync(dirPath).filter(f => f.endsWith(".json")).length;
-    counts.push({ pos: dir, count });
+  for (const dir of store.listPosDirs()) {
+    const files = await store.listWordFiles(dir);
+    counts.push({ pos: dir, count: files.length });
   }
   json(res, counts);
 }
@@ -284,14 +265,14 @@ function readBody(req: IncomingMessage): Promise<any> {
 
 /** PATCH /api/words/:pos/:file — update sense fields and _proofread. */
 async function handleWordPatch(req: IncomingMessage, res: ServerResponse, pos: string, file: string) {
-  const filePath = join(WORDS_DIR, pos, file.endsWith(".json") ? file : file + ".json");
-  if (!existsSync(filePath)) return json(res, { error: "not found" }, 404);
+  const lemma = file.endsWith(".json") ? file.replace(/\.json$/, "") : file;
+  if (!(await store.wordExists(pos, lemma))) return json(res, { error: "not found" }, 404);
 
   let body: any;
   try { body = await readBody(req); }
   catch { return json(res, { error: "Invalid JSON body" }, 400); }
 
-  const word = JSON.parse(readFileSync(filePath, "utf-8"));
+  const word = await store.readWord(pos, lemma);
 
   if (body.senses && Array.isArray(body.senses)) {
     for (const patch of body.senses) {
@@ -323,7 +304,7 @@ async function handleWordPatch(req: IncomingMessage, res: ServerResponse, pos: s
     }
   }
 
-  writeFileSync(filePath, JSON.stringify(word, null, 2) + "\n", "utf-8");
+  await store.writeWord(pos, lemma, word);
   wordIndexCache = null;
   json(res, { ok: true });
 }
@@ -371,17 +352,19 @@ function handleProviders(res: ServerResponse) {
   json(res, providers);
 }
 
-/** GET /api/search-words?q=... — quick word search for linking. */
-function handleSearchWords(req: IncomingMessage, res: ServerResponse) {
+/** GET /api/search-words?q=...&exact=1 — quick word search for linking. */
+async function handleSearchWords(req: IncomingMessage, res: ServerResponse) {
   const params = parseQuery(req.url!);
   const q = params.get("q")?.toLowerCase() || "";
+  const exact = params.get("exact") === "1";
   const limit = Math.min(parseInt(params.get("limit") || "20"), 50);
   if (!q || q.length < 2) return json(res, []);
 
-  const allItems = getWordIndex();
+  const allItems = await getWordIndex();
   const results: { pos: string; word: string; gloss_en?: string }[] = [];
   for (const item of allItems) {
-    if (item.word.toLowerCase().includes(q)) {
+    const match = exact ? item.word.toLowerCase() === q : item.word.toLowerCase().includes(q);
+    if (match) {
       results.push({ pos: item.pos, word: item.word, gloss_en: item.gloss_en });
       if (results.length >= limit) break;
     }
@@ -442,23 +425,6 @@ interface DbSearchResult {
   formMatch?: true;
 }
 
-const TSX_BIN = resolve(ROOT, "node_modules/.bin/tsx");
-
-function runScript(script: string, args: string[]): Promise<void> {
-  return new Promise((resolve, reject) => {
-    const proc = spawn(TSX_BIN, [script, ...args], { cwd: ROOT, env: { ...process.env } });
-    let stderr = "";
-    proc.stderr.on("data", (d: Buffer) => { stderr += d.toString(); });
-    const timer = setTimeout(() => { proc.kill(); reject(new Error("Timeout after 60s")); }, 60_000);
-    proc.on("close", (code) => {
-      clearTimeout(timer);
-      if (code === 0) resolve();
-      else reject(new Error(stderr.trim() || `exited with code ${code}`));
-    });
-    proc.on("error", (e) => { clearTimeout(timer); reject(e); });
-  });
-}
-
 /** POST /api/add-word — run transform + enrich for a single word from Wiktionary. */
 async function handleAddWord(req: IncomingMessage, res: ServerResponse) {
   let body: any;
@@ -468,20 +434,17 @@ async function handleAddWord(req: IncomingMessage, res: ServerResponse) {
   const word = typeof body.word === "string" ? body.word.trim() : "";
   if (!word) return json(res, { error: "missing word" }, 400);
 
-  const WIKT_DUMP = join(ROOT, "data", "raw", "de-extract.jsonl");
-  if (!existsSync(WIKT_DUMP)) {
+  if (!(await store.fileExists("data/raw/de-extract.jsonl"))) {
     return json(res, { error: "Wiktionary dump not found at data/raw/de-extract.jsonl" }, 500);
   }
 
-  // Add to whitelist before transform so frequency filter won't drop it
-  const WHITELIST_PATH = join(ROOT, "config", "word-whitelist.json");
   let whitelisted = false;
   try {
-    const wl = JSON.parse(readFileSync(WHITELIST_PATH, "utf-8"));
+    const wl = await store.readWhitelist();
     const alreadyListed = wl.words.some((e: any) => e.word === word);
     if (!alreadyListed) {
       wl.words.push({ word, domain: "user-reported", reason: "added via admin" });
-      writeFileSync(WHITELIST_PATH, JSON.stringify(wl, null, 2) + "\n", "utf-8");
+      await store.writeWhitelist(wl);
       whitelisted = true;
     }
   } catch (err: any) {
@@ -489,14 +452,16 @@ async function handleAddWord(req: IncomingMessage, res: ServerResponse) {
   }
 
   try {
-    await runScript(resolve(ROOT, "scripts/transform.ts"), ["--words", word]);
-    await runScript(resolve(ROOT, "scripts/enrich-frequency.ts"), ["--words", word]);
+    await store.runPipeline([
+      { script: "transform", args: ["--words", word] },
+      { script: "enrich-frequency", args: ["--words", word] },
+    ]);
   } catch (err: any) {
     return json(res, { error: err.message || "Script failed" }, 500);
   }
 
   wordIndexCache = null;
-  const items = getWordIndex();
+  const items = await getWordIndex();
   const match = items.find(i => i.word.toLowerCase() === word.toLowerCase());
   json(res, { ok: true, file: match ? match.pos + "/" + match.word : null, whitelisted });
 }
@@ -504,16 +469,15 @@ async function handleAddWord(req: IncomingMessage, res: ServerResponse) {
 const wiktCheckCache = new Map<string, unknown>();
 
 /** GET /api/wikt-check?word=... — check pipeline presence + Wiktionary entries for a word. */
-function handleWiktCheck(req: IncomingMessage, res: ServerResponse) {
+async function handleWiktCheck(req: IncomingMessage, res: ServerResponse) {
   const params = parseQuery(req.url!);
   const word = params.get("word");
   if (!word) return json(res, { error: "missing ?word=" }, 400);
 
   const cacheKey = word.toLowerCase();
   if (wiktCheckCache.has(cacheKey)) {
-    // Pipeline presence may have changed (word added), so re-check inPipeline but use cached wiktEntries
     const cached = wiktCheckCache.get(cacheKey) as any;
-    const allItems = getWordIndex();
+    const allItems = await getWordIndex();
     const match = allItems.find(i => i.word.toLowerCase() === cacheKey);
     return json(res, { ...cached, inPipeline: !!match, file: match ? match.pos + "/" + match.word : null });
   }
@@ -525,7 +489,7 @@ function handleWiktCheck(req: IncomingMessage, res: ServerResponse) {
     glosses: (e.senses || []).flatMap((s: any) => s.glosses || []).slice(0, 3),
   }));
 
-  const allItems = getWordIndex();
+  const allItems = await getWordIndex();
   const match = allItems.find(i => i.word.toLowerCase() === cacheKey);
 
   const result = {
@@ -533,7 +497,7 @@ function handleWiktCheck(req: IncomingMessage, res: ServerResponse) {
     file: match ? match.pos + "/" + match.word : null,
     wiktEntries,
   };
-  wiktCheckCache.set(cacheKey, { wiktEntries }); // cache only the static part
+  wiktCheckCache.set(cacheKey, { wiktEntries });
   json(res, result);
 }
 
@@ -663,7 +627,7 @@ async function handleBatchWiktCheck(req: IncomingMessage, res: ServerResponse) {
   if (!words.length) return json(res, { results: [] });
 
   await ensureCorpusMaps();
-  const allItems = getWordIndex();
+  const allItems = await getWordIndex();
   const itemMap = new Map(allItems.map(i => [i.word.toLowerCase(), i]));
 
   const wordsToLookup = words.filter(w => !itemMap.has(w.toLowerCase()));
@@ -722,23 +686,6 @@ async function handleWordTopics(req: IncomingMessage, res: ServerResponse) {
 
 let batchAddRunning = false;
 
-function runScriptLong(script: string, args: string[], timeoutMs = 180_000): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const proc = spawn(TSX_BIN, [script, ...args], { cwd: ROOT, env: { ...process.env } });
-    let stdout = "";
-    let stderr = "";
-    proc.stdout?.on("data", (d: Buffer) => { stdout += d.toString(); });
-    proc.stderr?.on("data", (d: Buffer) => { stderr += d.toString(); });
-    const timer = setTimeout(() => { proc.kill(); reject(new Error(`Timeout after ${timeoutMs / 1000}s`)); }, timeoutMs);
-    proc.on("close", (code) => {
-      clearTimeout(timer);
-      if (code === 0) resolve(stdout);
-      else reject(new Error(stderr.trim() || `exited with code ${code}`));
-    });
-    proc.on("error", (e) => { clearTimeout(timer); reject(e); });
-  });
-}
-
 async function handleBatchAdd(req: IncomingMessage, res: ServerResponse) {
   let body: any;
   try { body = await readBody(req); }
@@ -765,8 +712,7 @@ async function handleBatchAdd(req: IncomingMessage, res: ServerResponse) {
   try {
     // 1. Whitelist
     sendEvent("progress", { stage: "whitelist", status: "running" });
-    const WHITELIST_PATH = join(ROOT, "config", "word-whitelist.json");
-    const wl = JSON.parse(readFileSync(WHITELIST_PATH, "utf-8"));
+    const wl = await store.readWhitelist();
     const existing = new Set(wl.words.map((e: any) => e.word));
     let added = 0;
     for (const entry of entries) {
@@ -775,24 +721,23 @@ async function handleBatchAdd(req: IncomingMessage, res: ServerResponse) {
         added++;
       }
     }
-    if (added > 0) writeFileSync(WHITELIST_PATH, JSON.stringify(wl, null, 2) + "\n", "utf-8");
+    if (added > 0) await store.writeWhitelist(wl);
     sendEvent("progress", { stage: "whitelist", status: "done", added });
 
-    // 2. Transform
+    // 2. Transform + Enrich
     const wordList = entries.map(e => e.word).join(",");
-    sendEvent("progress", { stage: "transform", status: "running" });
-    await runScriptLong(resolve(ROOT, "scripts/transform.ts"), ["--words", wordList]);
-    sendEvent("progress", { stage: "transform", status: "done" });
+    await store.runPipeline(
+      [
+        { script: "transform", args: ["--words", wordList], timeoutMs: 180_000 },
+        { script: "enrich-frequency", args: ["--words", wordList], timeoutMs: 180_000 },
+      ],
+      (p) => sendEvent("progress", p),
+    );
 
-    // 3. Enrich
-    sendEvent("progress", { stage: "enrich", status: "running" });
-    await runScriptLong(resolve(ROOT, "scripts/enrich-frequency.ts"), ["--words", wordList]);
-    sendEvent("progress", { stage: "enrich", status: "done" });
-
-    // 4. Translate
-    sendEvent("progress", { stage: "translate", status: "running" });
+    // 3. Translate
+    sendEvent("progress", { stage: "translate-glosses", status: "running" });
     wordIndexCache = null;
-    const freshIndex = getWordIndex();
+    const freshIndex = await getWordIndex();
     const wordPaths = entries
       .map(e => {
         const match = freshIndex.find(i => i.word.toLowerCase() === e.word.toLowerCase());
@@ -801,19 +746,15 @@ async function handleBatchAdd(req: IncomingMessage, res: ServerResponse) {
       .filter(Boolean);
 
     if (wordPaths.length > 0) {
-      const tmpFile = join(tmpdir(), `lexiklar-batch-${Date.now()}.txt`);
-      writeFileSync(tmpFile, wordPaths.join("\n") + "\n", "utf-8");
-      try {
-        await runScriptLong(resolve(ROOT, "scripts/translate-glosses.ts"), ["--word-list", tmpFile, "--provider", provider]);
-      } finally {
-        try { unlinkSync(tmpFile); } catch { /* ignore */ }
-      }
+      await store.runPipeline([
+        { script: "translate-glosses", args: ["--words", wordPaths.join(","), "--provider", provider], timeoutMs: 180_000 },
+      ]);
     }
-    sendEvent("progress", { stage: "translate", status: "done" });
+    sendEvent("progress", { stage: "translate-glosses", status: "done" });
 
-    // 5. Result
+    // 4. Result
     wordIndexCache = null;
-    const finalIndex = getWordIndex();
+    const finalIndex = await getWordIndex();
     const results = entries.map(e => {
       const match = finalIndex.find(i => i.word.toLowerCase() === e.word.toLowerCase());
       return { word: e.word, file: match ? match.pos + "/" + match.word : null };
@@ -830,10 +771,9 @@ async function handleBatchAdd(req: IncomingMessage, res: ServerResponse) {
   }
 }
 
-function handleUncommittedWords(res: ServerResponse) {
-  const gitOpts = { cwd: ROOT, maxBuffer: 10 * 1024 * 1024 };
+async function handleUncommittedWords(res: ServerResponse) {
   try {
-    const status = execFileSync("git", ["status", "--porcelain", "--", "data/words/", "config/word-whitelist.json"], gitOpts).toString();
+    const status = await store.getStatus(["data/words/", "config/word-whitelist.json"]);
     const words: { word: string; file: string }[] = [];
     for (const line of status.split("\n")) {
       const match = line.match(/^\s*[AM?]+\s+data\/words\/([^/]+\/(.+))\.json$/);
@@ -853,11 +793,10 @@ async function handleCommitWords(req: IncomingMessage, res: ServerResponse) {
 
   let words: string[] = Array.isArray(body.words) ? body.words : [];
   const topic: string = body.topic || "topic explorer";
-  const gitOpts = { cwd: ROOT, maxBuffer: 10 * 1024 * 1024 };
 
   try {
     if (!words.length) {
-      const status = execFileSync("git", ["status", "--porcelain", "--", "data/words/"], gitOpts).toString();
+      const status = await store.getStatus(["data/words/"]);
       for (const line of status.split("\n")) {
         const match = line.match(/^\s*[AM?]+\s+data\/words\/[^/]+\/(.+)\.json$/);
         if (match) words.push(match[1]);
@@ -871,16 +810,10 @@ async function handleCommitWords(req: IncomingMessage, res: ServerResponse) {
     }
     filesToAdd.push("data/examples/*.json");
 
-    execFileSync("git", ["add", "--", ...filesToAdd], gitOpts);
-
-    const staged = execFileSync("git", ["diff", "--cached", "--name-only"], gitOpts).toString().trim();
-    if (!staged) return json(res, { error: "no changes to commit" }, 400);
-
     const msg = `feat(data): add ${words.length} words from topic "${topic}"`;
-    execFileSync("git", ["commit", "-m", msg], gitOpts);
+    const { hash } = await store.addAndCommit(filesToAdd, msg);
 
-    const hash = execFileSync("git", ["rev-parse", "--short", "HEAD"], gitOpts).toString().trim();
-    json(res, { ok: true, commit: hash, message: msg, files: staged.split("\n").length });
+    json(res, { ok: true, commit: hash, message: msg });
   } catch (err: any) {
     json(res, { error: err.message || "git commit failed" }, 500);
   }
@@ -898,20 +831,19 @@ interface ExampleQueueItem {
   annotations: any[];
   owner: ExOwner;
   senseContext: { form: string; lemma: string; gloss_hint: string | null; senses: string }[];
+  _flagged?: { date: string; reason?: string | null };
 }
 
 let sensesIndexCache: { map: Map<string, SenseInfo[]>; ts: number } | null = null;
 
-function getSensesIndex(): Map<string, SenseInfo[]> {
+async function getSensesIndex(): Promise<Map<string, SenseInfo[]>> {
   if (sensesIndexCache && Date.now() - sensesIndexCache.ts < 120_000) return sensesIndexCache.map;
   const map = new Map<string, SenseInfo[]>();
-  for (const dir of POS_DIRS) {
-    const dirPath = join(WORDS_DIR, dir);
-    if (!existsSync(dirPath)) continue;
-    for (const file of readdirSync(dirPath)) {
-      if (!file.endsWith(".json")) continue;
+  for (const dir of store.listPosDirs()) {
+    const files = await store.listWordFiles(dir);
+    for (const file of files) {
       try {
-        const data = JSON.parse(readFileSync(join(dirPath, file), "utf-8"));
+        const data = await store.readWord(dir, file.replace(/\.json$/, ""));
         const key = (data.word as string).toLowerCase();
         const senses: SenseInfo[] = (data.senses || []).map((s: any) => ({
           gloss_en: s.gloss_en || "",
@@ -935,18 +867,15 @@ interface ExampleQueueCache {
 
 let exampleQueueCache: ExampleQueueCache | null = null;
 
-function getExampleQueue(): ExampleQueueCache {
+async function getExampleQueue(): Promise<ExampleQueueCache> {
   if (exampleQueueCache && Date.now() - exampleQueueCache.ts < 120_000) return exampleQueueCache;
 
-  // Build reverse map: example ID → owner word
   const ownerMap = new Map<string, ExOwner>();
-  for (const dir of POS_DIRS) {
-    const dirPath = join(WORDS_DIR, dir);
-    if (!existsSync(dirPath)) continue;
-    for (const file of readdirSync(dirPath)) {
-      if (!file.endsWith(".json")) continue;
+  for (const dir of store.listPosDirs()) {
+    const files = await store.listWordFiles(dir);
+    for (const file of files) {
       try {
-        const data = JSON.parse(readFileSync(join(dirPath, file), "utf-8"));
+        const data = await store.readWord(dir, file.replace(/\.json$/, ""));
         const word = data.word as string;
         const zipf = (data.zipf as number) ?? 0;
         for (let si = 0; si < (data.senses || []).length; si++) {
@@ -958,16 +887,17 @@ function getExampleQueue(): ExampleQueueCache {
     }
   }
 
-  const sensesIndex = getSensesIndex();
+  const sensesIndex = await getSensesIndex();
 
   const items: ExampleQueueItem[] = [];
   let totalExamples = 0;
   let totalProofread = 0;
 
-  for (const shardFile of readdirSync(EXAMPLES_DIR).sort()) {
-    if (!shardFile.endsWith(".json")) continue;
+  const shardFiles = await store.listExampleShards();
+  for (const shardFile of shardFiles) {
+    const prefix = shardFile.replace(/\.json$/, "");
     let shard: Record<string, any>;
-    try { shard = JSON.parse(readFileSync(join(EXAMPLES_DIR, shardFile), "utf-8")); }
+    try { shard = await store.readExampleShard(prefix); }
     catch { continue; }
 
     for (const [id, ex] of Object.entries(shard)) {
@@ -1024,18 +954,16 @@ interface WordQueueItem {
 
 let wordQueueCache: { items: WordQueueItem[]; ts: number } | null = null;
 
-function getWordQueue(): WordQueueItem[] {
+async function getWordQueue(): Promise<WordQueueItem[]> {
   if (wordQueueCache && Date.now() - wordQueueCache.ts < 120_000) return wordQueueCache.items;
 
   const items: WordQueueItem[] = [];
 
-  for (const dir of POS_DIRS) {
-    const dirPath = join(WORDS_DIR, dir);
-    if (!existsSync(dirPath)) continue;
-    for (const file of readdirSync(dirPath)) {
-      if (!file.endsWith(".json")) continue;
+  for (const dir of store.listPosDirs()) {
+    const files = await store.listWordFiles(dir);
+    for (const file of files) {
       try {
-        const data = JSON.parse(readFileSync(join(dirPath, file), "utf-8"));
+        const data = await store.readWord(dir, file.replace(/\.json$/, ""));
         const exIds: string[] = [];
         for (const s of data.senses || []) {
           for (const id of s.example_ids || []) exIds.push(id);
@@ -1055,15 +983,15 @@ function getWordQueue(): WordQueueItem[] {
     }
   }
 
-  // Batch-load example shards to compute per-word example stats
   const idToItem = new Map<string, WordQueueItem>();
   for (const item of items) {
     for (const id of (item as any)._exIds) idToItem.set(id, item);
   }
-  for (const shardFile of readdirSync(EXAMPLES_DIR).sort()) {
-    if (!shardFile.endsWith(".json")) continue;
+  const shardFiles = await store.listExampleShards();
+  for (const shardFile of shardFiles) {
+    const prefix = shardFile.replace(/\.json$/, "");
     let shard: Record<string, any>;
-    try { shard = JSON.parse(readFileSync(join(EXAMPLES_DIR, shardFile), "utf-8")); }
+    try { shard = await store.readExampleShard(prefix); }
     catch { continue; }
     for (const [id, ex] of Object.entries(shard)) {
       if (!ex.translation) continue;
@@ -1075,7 +1003,6 @@ function getWordQueue(): WordQueueItem[] {
     }
   }
 
-  // Clean up temp field
   for (const item of items) delete (item as any)._exIds;
 
   items.sort((a, b) => b.zipf - a.zipf);
@@ -1083,7 +1010,7 @@ function getWordQueue(): WordQueueItem[] {
   return items;
 }
 
-function handleWordQueue(req: IncomingMessage, res: ServerResponse) {
+async function handleWordQueue(req: IncomingMessage, res: ServerResponse) {
   const params = parseQuery(req.url!);
   const limit = Math.min(parseInt(params.get("limit") || "50"), 200);
   const offset = parseInt(params.get("offset") || "0");
@@ -1092,7 +1019,7 @@ function handleWordQueue(req: IncomingMessage, res: ServerResponse) {
   const wordFilter = params.get("word")?.toLowerCase() || null;
   const filter = params.get("filter") || null;
 
-  let items = getWordQueue();
+  let items = await getWordQueue();
   if (posSet) items = items.filter(i => posSet.has(i.pos));
   if (wordFilter) items = items.filter(i => i.word.toLowerCase().includes(wordFilter));
   if (filter === "unproofread_gloss") items = items.filter(i => !i.proofreadGloss);
@@ -1102,18 +1029,19 @@ function handleWordQueue(req: IncomingMessage, res: ServerResponse) {
   json(res, { total: items.length, offset, items: page });
 }
 
-function handleProofreadStats(res: ServerResponse) {
-  const wordIdx = getWordIndex();
+async function handleProofreadStats(res: ServerResponse) {
+  const wordIdx = await getWordIndex();
   const proofreadGloss = wordIdx.filter(w => w.flags?.includes("proofread")).length;
   const unproofreadGloss = wordIdx.filter(w => w.flags?.includes("unproofread")).length;
 
-  const eq = getExampleQueue();
+  const eq = await getExampleQueue();
 
-  const wq = getWordQueue();
+  const wq = await getWordQueue();
   const proofreadWithUnproofreadEx = wq.filter(w => w.proofreadGloss && w.exampleStats.unproofread > 0).length;
 
   let pendingResults = 0;
   if (existsSync(PROOFREAD_RESULTS_DIR)) {
+    const { readdirSync } = await import("fs");
     pendingResults = readdirSync(PROOFREAD_RESULTS_DIR).filter(f => f.endsWith(".json")).length;
   }
 
@@ -1124,16 +1052,75 @@ function handleProofreadStats(res: ServerResponse) {
   });
 }
 
-function handleExampleQueue(req: IncomingMessage, res: ServerResponse) {
+let flaggedQueueCache: { items: ExampleQueueItem[]; ts: number } | null = null;
+
+async function getFlaggedQueue(): Promise<ExampleQueueItem[]> {
+  if (flaggedQueueCache && Date.now() - flaggedQueueCache.ts < 120_000) return flaggedQueueCache.items;
+
+  const ownerMap = new Map<string, ExOwner>();
+  for (const dir of store.listPosDirs()) {
+    const files = await store.listWordFiles(dir);
+    for (const file of files) {
+      try {
+        const data = await store.readWord(dir, file.replace(/\.json$/, ""));
+        const word = data.word as string;
+        const zipf = (data.zipf as number) ?? 0;
+        for (let si = 0; si < (data.senses || []).length; si++) {
+          for (const id of data.senses[si].example_ids || []) {
+            if (!ownerMap.has(id)) ownerMap.set(id, { word, pos: dir, senseIdx: si, zipf });
+          }
+        }
+      } catch { /* skip */ }
+    }
+  }
+
+  const sensesIndex = await getSensesIndex();
+  const items: ExampleQueueItem[] = [];
+
+  const shardFiles = await store.listExampleShards();
+  for (const shardFile of shardFiles) {
+    const prefix = shardFile.replace(/\.json$/, "");
+    let shard: Record<string, any>;
+    try { shard = await store.readExampleShard(prefix); }
+    catch { continue; }
+    for (const [id, ex] of Object.entries(shard)) {
+      if (!ex._flagged) continue;
+      const owner = ownerMap.get(id);
+      if (!owner) continue;
+      const annotations: any[] = ex.annotations || [];
+      const senseContext: ExampleQueueItem["senseContext"] = [];
+      for (const ann of annotations) {
+        if (!ann.lemma) continue;
+        const senses = sensesIndex.get((ann.lemma as string).toLowerCase());
+        if (!senses || senses.length < 2) continue;
+        senseContext.push({ form: ann.form, lemma: ann.lemma, gloss_hint: ann.gloss_hint || null, senses: senses.map((s, i) => `${i + 1}: ${s.gloss_en || s.gloss}`).join(" | ") });
+      }
+      items.push({ id, text: ex.text, translation: ex.translation, annotations, owner, senseContext, _flagged: ex._flagged });
+    }
+  }
+
+  items.sort((a, b) => b.owner.zipf - a.owner.zipf);
+  flaggedQueueCache = { items, ts: Date.now() };
+  return items;
+}
+
+async function handleExampleQueue(req: IncomingMessage, res: ServerResponse) {
   const params = parseQuery(req.url!);
   const limit = Math.min(parseInt(params.get("limit") || "20"), 100);
   const offset = parseInt(params.get("offset") || "0");
   const posParam = params.get("pos") || null;
   const posSet = posParam ? new Set(posParam.split(",").map(s => s.trim()).filter(Boolean)) : null;
   const wordFilter = params.get("word")?.toLowerCase() || null;
+  const filterParam = params.get("filter") || null;
 
-  const eq = getExampleQueue();
-  let filtered = eq.items;
+  let filtered: ExampleQueueItem[];
+
+  if (filterParam === "flagged") {
+    filtered = await getFlaggedQueue();
+  } else {
+    const eq = await getExampleQueue();
+    filtered = eq.items;
+  }
 
   if (posSet) filtered = filtered.filter(i => posSet.has(i.owner.pos));
   if (wordFilter) filtered = filtered.filter(i => i.owner.word.toLowerCase().includes(wordFilter));
@@ -1142,33 +1129,102 @@ function handleExampleQueue(req: IncomingMessage, res: ServerResponse) {
   json(res, { total: filtered.length, offset, items: page });
 }
 
-async function handleExampleVerify(req: IncomingMessage, res: ServerResponse, exId: string) {
+async function handleExamplePatch(req: IncomingMessage, res: ServerResponse, exId: string) {
   let body: any;
   try { body = await readBody(req); }
   catch { return json(res, { error: "Invalid JSON body" }, 400); }
 
-  if (body.action !== "verify") return json(res, { error: "Unsupported action" }, 400);
-
   const prefix = exId.slice(0, 2);
-  const shardPath = join(EXAMPLES_DIR, prefix + ".json");
-  if (!existsSync(shardPath)) return json(res, { error: "Shard not found" }, 404);
-
-  const shard = JSON.parse(readFileSync(shardPath, "utf-8"));
+  const shard = await store.readExampleShard(prefix);
   if (!shard[exId]) return json(res, { error: "Example not found" }, 404);
 
-  shard[exId]._proofread = { ...(shard[exId]._proofread || {}), translation: true };
-  writeFileSync(shardPath, JSON.stringify(shard, null, 2) + "\n", "utf-8");
+  const ex = shard[exId];
 
-  // Remove from cached queue without full rescan
-  if (exampleQueueCache) {
-    const idx = exampleQueueCache.items.findIndex(i => i.id === exId);
-    if (idx !== -1) {
-      exampleQueueCache.items.splice(idx, 1);
-      exampleQueueCache.totalProofread++;
+  if (body.action === "verify") {
+    ex._proofread = { ...(ex._proofread || {}), translation: true };
+  } else if (body.action === "flag") {
+    ex._flagged = { date: new Date().toISOString(), reason: body.reason || null };
+  } else if (body.action === "unflag") {
+    delete ex._flagged;
+  } else if (body.action === "update") {
+    if (typeof body.translation === "string") ex.translation = body.translation;
+    if (Array.isArray(body.annotations)) ex.annotations = body.annotations;
+    ex._proofread = { ...(ex._proofread || {}), translation: true };
+    delete ex._flagged;
+  } else {
+    return json(res, { error: "Unsupported action" }, 400);
+  }
+
+  await store.writeExampleShard(prefix, shard);
+
+  if (body.action === "verify" || body.action === "update") {
+    if (exampleQueueCache) {
+      const idx = exampleQueueCache.items.findIndex(i => i.id === exId);
+      if (idx !== -1) {
+        exampleQueueCache.items.splice(idx, 1);
+        exampleQueueCache.totalProofread++;
+      }
     }
   }
 
+  if (body.action === "flag" || body.action === "unflag" || body.action === "update") {
+    flaggedQueueCache = null;
+  }
+
   json(res, { ok: true });
+}
+
+const POS_SINGULAR_TO_DIR: Record<string, string> = {
+  noun: "nouns", verb: "verbs", adjective: "adjectives", adverb: "adverbs",
+  preposition: "prepositions", conjunction: "conjunctions", determiner: "determiners",
+  pronoun: "pronouns", phrase: "phrases", abbreviation: "abbreviations",
+  interjection: "interjections", particle: "particles", numeral: "numerals",
+  name: "names", postposition: "postpositions",
+};
+
+async function handleAnnotationSenses(req: IncomingMessage, res: ServerResponse) {
+  let body: any;
+  try { body = await readBody(req); }
+  catch { return json(res, { error: "Invalid JSON body" }, 400); }
+
+  const words: { lemma: string; pos: string }[] = body.words;
+  if (!Array.isArray(words)) return json(res, { error: "words must be an array" }, 400);
+
+  const results: Record<string, { files: { file: string; senses: { idx: number; gloss: string; gloss_en: string | null }[] }[] }> = {};
+
+  for (const { lemma, pos } of words) {
+    const dir = POS_SINGULAR_TO_DIR[pos] || pos;
+    const key = `${pos}/${lemma}`;
+    if (results[key]) continue;
+
+    const dirFiles = await store.listWordFiles(dir);
+    if (!dirFiles.length) { results[key] = { files: [] }; continue; }
+
+    const matchingFiles: string[] = [];
+    for (const f of dirFiles) {
+      try {
+        const data = await store.readWord(dir, f.replace(/\.json$/, ""));
+        if (data.word === lemma) matchingFiles.push(f);
+      } catch { /* skip */ }
+    }
+
+    const files: { file: string; senses: { idx: number; gloss: string; gloss_en: string | null }[] }[] = [];
+    for (const f of matchingFiles) {
+      try {
+        const data = await store.readWord(dir, f.replace(/\.json$/, ""));
+        const senses = (data.senses || []).map((s: any, i: number) => ({
+          idx: i,
+          gloss: s.gloss || "",
+          gloss_en: s.gloss_en || null,
+        }));
+        files.push({ file: f, senses });
+      } catch { /* skip */ }
+    }
+
+    results[key] = { files };
+  }
+
+  json(res, { results });
 }
 
 export function adminApiPlugin(): Plugin {
@@ -1181,36 +1237,38 @@ export function adminApiPlugin(): Plugin {
 
         const path = url.split("?")[0];
 
-        if (path === "/api/pos") return handlePosSummary(res);
-        if (path === "/api/stats") return handleStats(res);
-        if (path === "/api/words" && req.method === "GET") return handleWordList(req, res);
+        if (path === "/api/pos") { handlePosSummary(res); return; }
+        if (path === "/api/stats") { handleStats(res); return; }
+        if (path === "/api/words" && req.method === "GET") { handleWordList(req, res); return; }
         if (path === "/api/lookup") return handleLookup(req, res);
         if (path === "/api/reports") { handleReports(res); return; }
         if (path === "/api/translate" && req.method === "POST") { handleTranslate(req, res); return; }
         if (path === "/api/providers") return handleProviders(res);
-        if (path === "/api/search-words") return handleSearchWords(req, res);
+        if (path === "/api/search-words") { handleSearchWords(req, res); return; }
         if (path === "/api/db-search") return handleDbSearch(req, res);
-        if (path === "/api/wikt-check") return handleWiktCheck(req, res);
+        if (path === "/api/wikt-check") { handleWiktCheck(req, res); return; }
         if (path === "/api/add-word" && req.method === "POST") { handleAddWord(req, res); return; }
         if (path === "/api/topic-words" && req.method === "POST") { handleTopicWords(req, res); return; }
         if (path === "/api/batch-wikt-check" && req.method === "POST") { handleBatchWiktCheck(req, res); return; }
         if (path === "/api/word-topics" && req.method === "POST") { handleWordTopics(req, res); return; }
         if (path === "/api/batch-add-words" && req.method === "POST") { handleBatchAdd(req, res); return; }
-        if (path === "/api/uncommitted-words") return handleUncommittedWords(res);
+        if (path === "/api/uncommitted-words") { handleUncommittedWords(res); return; }
         if (path === "/api/commit-words" && req.method === "POST") { handleCommitWords(req, res); return; }
 
         // Proofread endpoints
-        if (path === "/api/proofread/stats") return handleProofreadStats(res);
-        if (path === "/api/proofread/word-queue") return handleWordQueue(req, res);
-        if (path === "/api/proofread/example-queue") return handleExampleQueue(req, res);
-        const exVerifyMatch = path.match(/^\/api\/proofread\/examples\/([a-f0-9]+)$/);
-        if (exVerifyMatch && req.method === "PATCH") { handleExampleVerify(req, res, exVerifyMatch[1]); return; }
+        if (path === "/api/proofread/stats") { handleProofreadStats(res); return; }
+        if (path === "/api/proofread/word-queue") { handleWordQueue(req, res); return; }
+        if (path === "/api/proofread/example-queue") { handleExampleQueue(req, res); return; }
+        const exPatchMatch = path.match(/^\/api\/proofread\/examples\/([a-f0-9]+)$/);
+        if (exPatchMatch && req.method === "PATCH") { handleExamplePatch(req, res, exPatchMatch[1]); return; }
+        if (path === "/api/annotation-senses" && req.method === "POST") { handleAnnotationSenses(req, res); return; }
 
         // /api/words/:pos/:file
         const wordMatch = path.match(/^\/api\/words\/([^/]+)\/(.+)$/);
         if (wordMatch) {
           if (req.method === "PATCH") { handleWordPatch(req, res, wordMatch[1], wordMatch[2]); return; }
-          return handleWordDetail(res, wordMatch[1], wordMatch[2]);
+          handleWordDetail(res, wordMatch[1], wordMatch[2]);
+          return;
         }
 
         json(res, { error: "not found" }, 404);
