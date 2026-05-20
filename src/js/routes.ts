@@ -13,6 +13,7 @@ import ConnectorsPage from "../pages/grammar/ConnectorsPage.vue";
 import TensesPage from "../pages/grammar/TensesPage.vue";
 import KonjunktivPage from "../pages/grammar/KonjunktivPage.vue";
 import ProadverbPage from "../pages/grammar/ProadverbPage.vue";
+import PurposeClausesPage from "../pages/grammar/PurposeClausesPage.vue";
 
 interface Route {
   path: string;
@@ -86,6 +87,10 @@ const routes: Route[] = [
   {
     path: "/grammar/proadverb/",
     component: ProadverbPage,
+  },
+  {
+    path: "/grammar/purpose-clauses/",
+    component: PurposeClausesPage,
   },
 ];
 

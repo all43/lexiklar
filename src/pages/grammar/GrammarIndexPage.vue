@@ -16,6 +16,7 @@
       <f7-list-item link="/grammar/modal-verbs/"          :title="t('grammar.modalVerbs')" />
       <f7-list-item link="/grammar/reflexive/"            :title="t('grammar.reflexive')" />
       <f7-list-item link="/grammar/connectors/"           :title="t('grammar.connectors')" />
+      <f7-list-item link="/grammar/purpose-clauses/"     :title="t('grammar.purposeClauses')" />
       <f7-list-item link="/grammar/proadverb/"            :title="t('grammar.proadverb')" />
     </f7-list>
   </f7-page>

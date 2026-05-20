@@ -794,6 +794,7 @@ const GRAMMAR_PAGE_TITLE_KEYS: Record<string, string> = {
   "determiners":          "grammar.determinersTitle",
   "konjunktiv":           "grammar.konjunktivTitle",
   "proadverb":            "grammar.proadverbTitle",
+  "purpose-clauses":      "grammar.purposeClausesTitle",
 };
 
 function grammarPageTitle(pageId: string): string {
