@@ -11,7 +11,7 @@
 import { Capacitor } from "@capacitor/core";
 import { ref } from "vue";
 
-import { MANIFEST_URL } from "./app-constants.js";
+import { fetchManifest } from "./db.js";
 
 /**
  * Compare two semver strings (e.g. "0.9.2", "0.9.3").
@@ -50,16 +50,12 @@ export async function checkAppUpdate(): Promise<AppUpdateInfo | null> {
   if (!Capacitor.isNativePlatform()) return null;
 
   try {
-    const resp = await fetch(MANIFEST_URL, { cache: "no-cache" });
-    if (!resp.ok) return null;
-
-    const manifest = await resp.json();
+    const manifest = await fetchManifest();
     const bundle = manifest.bundle;
     if (!bundle) return null;
 
     const currentVersion = __APP_VERSION__;
 
-    // Only offer updates when manifest version is strictly newer (no downgrades)
     if (compareSemver(bundle.current_version, currentVersion) <= 0) {
       return { available: false };
     }

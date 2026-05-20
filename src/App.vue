@@ -1,6 +1,7 @@
 <template>
   <f7-app v-bind="f7params">
     <PwaUpdatePrompt v-if="isWeb" />
+    <AppUpdatePrompt v-if="!isWeb" />
     <DbUpdatePrompt />
 
     <f7-views tabs>
@@ -34,6 +35,7 @@ import { Capacitor } from "@capacitor/core";
 import { SplashScreen } from '@capacitor/splash-screen';
 import { App as CapApp, type URLOpenListenerEvent } from "@capacitor/app";
 import PwaUpdatePrompt from "./components/PwaUpdatePrompt.vue";
+import AppUpdatePrompt from "./components/AppUpdatePrompt.vue";
 import DbUpdatePrompt from "./components/DbUpdatePrompt.vue";
 import { searchQuery } from "./utils/search-state.js";
 import { APP_BASE_URL } from "./utils/app-constants.js";

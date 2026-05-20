@@ -31,6 +31,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
 import { pendingDbUpdate } from "../utils/db-update-state.js";
+import { pendingAppUpdate } from "../utils/live-update.js";
 import { applyUpdate } from "../utils/db.js";
 import { t } from "../js/i18n.js";
 import { BYTES_PER_KB, BYTES_PER_MB, FILE_SIZE_DECIMAL_PLACES } from "../utils/ui-constants.js";
@@ -44,6 +45,7 @@ const dismissed = ref(false);
 
 const visible = computed(() => {
   if (dismissed.value) return false;
+  if (pendingAppUpdate.value?.available) return false;
   return pendingDbUpdate.value !== null;
 });
 

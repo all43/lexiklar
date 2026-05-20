@@ -255,6 +255,14 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "pwa.dismiss": "Later",
 
     // DB update toast
+    "appUpdate.available": "App update available",
+    "appUpdate.download": "Update",
+    "appUpdate.later": "Later",
+    "appUpdate.downloading": "Downloading update…",
+    "appUpdate.ready": "Update ready — restart to apply",
+    "appUpdate.restart": "Restart",
+    "appUpdate.failed": "App update failed",
+
     "dbUpdate.available": "Dictionary update available",
     "dbUpdate.update": "Update",
     "dbUpdate.later": "Later",
@@ -653,6 +661,14 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "pwa.dismiss": "Sp\u00E4ter",
 
     // DB update toast
+    "appUpdate.available": "App-Update verf\u00FCgbar",
+    "appUpdate.download": "Aktualisieren",
+    "appUpdate.later": "Sp\u00E4ter",
+    "appUpdate.downloading": "Update wird heruntergeladen\u2026",
+    "appUpdate.ready": "Update bereit \u2014 Neustart zum Anwenden",
+    "appUpdate.restart": "Neustart",
+    "appUpdate.failed": "App-Update fehlgeschlagen",
+
     "dbUpdate.available": "W\u00F6rterbuch-Update verf\u00FCgbar",
     "dbUpdate.update": "Aktualisieren",
     "dbUpdate.later": "Sp\u00E4ter",

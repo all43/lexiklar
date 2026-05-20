@@ -176,7 +176,7 @@ function isValidSqlite(bytes: ArrayBuffer): boolean {
 import { MANIFEST_URL } from "./app-constants.js";
 
 interface ManifestAsset { url: string; size: number; }
-interface Manifest {
+export interface Manifest {
   db: {
     current_version: string;
     built_at: string;
@@ -188,18 +188,28 @@ interface Manifest {
   bundle?: { current_version: string; url: string; size: number; };
 }
 
-// In-memory manifest cache — avoids redundant fetches within a session (5-min TTL)
+// In-memory manifest cache — avoids redundant fetches within a session (5-min TTL).
+// `pendingFetch` deduplicates concurrent callers (e.g. DB check + app update check).
 let manifestCache: { data: Manifest; ts: number } | null = null;
+let pendingFetch: Promise<Manifest> | null = null;
 const MANIFEST_TTL = PHRASE_TERM_TTL_MS;
 
-async function fetchManifest(): Promise<Manifest> {
+export async function fetchManifest(): Promise<Manifest> {
   const now = Date.now();
   if (manifestCache && now - manifestCache.ts < MANIFEST_TTL) return manifestCache.data;
-  const resp = await fetch(MANIFEST_URL, { cache: "no-cache" });
-  if (!resp.ok) throw new Error("Failed to fetch update manifest. Please check your internet connection.");
-  const data = await resp.json() as Manifest;
-  manifestCache = { data, ts: now };
-  return data;
+  if (pendingFetch) return pendingFetch;
+  pendingFetch = (async () => {
+    try {
+      const resp = await fetch(MANIFEST_URL, { cache: "no-cache" });
+      if (!resp.ok) throw new Error("Failed to fetch update manifest. Please check your internet connection.");
+      const data = await resp.json() as Manifest;
+      manifestCache = { data, ts: Date.now() };
+      return data;
+    } finally {
+      pendingFetch = null;
+    }
+  })();
+  return pendingFetch;
 }
 
 export async function getDbDownloadSize(): Promise<number | null> {
