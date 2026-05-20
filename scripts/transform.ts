@@ -143,7 +143,7 @@ interface SeedConfig {
 }
 
 interface WhitelistConfig {
-  words: Array<{ word: string }>;
+  words: Array<{ word: string; pos?: string }>;
 }
 
 interface GroupEntry {
@@ -1583,6 +1583,7 @@ async function main(): Promise<void> {
   }
 
   let freqFilter: Set<string> | null = null;
+  let whitelistPosConstraints: Map<string, string> | null = null;
   if (maxFrequency && !useSeed && !wordsFilter) {
     const wordsFile = join(ROOT, "data", "raw", "leipzig-words.txt");
     const subtitleFile = join(ROOT, "data", "raw", "opensubtitles-words.txt");
@@ -1593,10 +1594,15 @@ async function main(): Promise<void> {
       process.exit(1);
     }
     const whitelistFile = join(ROOT, "config", "word-whitelist.json");
-    const whitelist: string[] = existsSync(whitelistFile)
-      ? (JSON.parse(readFileSync(whitelistFile, "utf-8")) as WhitelistConfig).words.map((w) => w.word)
+    const whitelistEntries: Array<{ word: string; pos?: string }> = existsSync(whitelistFile)
+      ? (JSON.parse(readFileSync(whitelistFile, "utf-8")) as WhitelistConfig).words
       : [];
+    const whitelist = whitelistEntries.map((w) => w.word);
     freqFilter = loadFrequencyFilter(wordsFile, subtitleFile, maxFrequency, maxSubtitleRank, whitelist);
+    const constrained = whitelistEntries.filter((w) => w.pos);
+    if (constrained.length) {
+      whitelistPosConstraints = new Map(constrained.map((w) => [w.word.toLowerCase(), w.pos!]));
+    }
   }
 
   if (wordsFilter) console.log(`Words mode: processing ${wordsFilter.size} specific words`);
@@ -1681,6 +1687,10 @@ async function main(): Promise<void> {
     if (wordsFilter && !wordsFilter.has(entry.word.toLowerCase())) continue;
     if (seedWords && !seedWords.has(entry.word.toLowerCase())) continue;
     if (freqFilter && entry.pos !== "phrase" && entry.pos !== "intj" && !freqFilter.has(entry.word.toLowerCase())) continue;
+    if (whitelistPosConstraints) {
+      const required = whitelistPosConstraints.get(entry.word.toLowerCase());
+      if (required && entry.pos !== required) continue;
+    }
 
     const key = `${entry.word}|${entry.pos}`;
     if (!groups.has(key)) groups.set(key, []);
