@@ -191,7 +191,7 @@ Two-phase system: **enrich** writes absolute Zipf scores to word files, **build-
 
 Approximate corpus sizes: Leipzig news ~5.4M tokens, Leipzig Wikipedia ~5.3M, SUBTLEX-DE ~20.9M, OpenSubtitles ~151.7M.
 
-**Word whitelist**: `config/word-whitelist.json` — ~651 entries force-included by the frequency filter regardless of corpus rank.
+**Word whitelist**: `config/word-whitelist.json` — ~749 entries force-included by the frequency filter regardless of corpus rank. Each entry supports an optional `pos` field (e.g. `"pos": "noun"`) to restrict inclusion to a specific Wiktionary POS key — useful when a word has both a common-noun and a proper-noun entry in Wiktionary and only the common noun is wanted. Entries without `pos` include all POS variants as before.
 
 **Cartoon subtitle noise blocklist**: `config/cartoon-blocklist.txt` — words excluded from whitelist candidate output: inflected pronouns/determiners, inflected adjective forms, filler sounds, character/show names, English/Spanish lyrics, OTT artifacts.
 
