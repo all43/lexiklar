@@ -211,7 +211,7 @@ Three independent update channels:
 |---|---|---|---|
 | **PWA service worker** | App shell (HTML/CSS/JS) on web | Workbox `registerType: 'prompt'` → `PwaUpdatePrompt.vue` | Automatic (SW lifecycle) |
 | **DB data update** | Dictionary content (words, examples) | `checkForUpdates()` in `db.ts` → `DbUpdatePrompt.vue` toast | Auto on startup (24h throttle) + manual in Settings |
-| **Capawesome live update** | App shell on native iOS/Android | `@capawesome/capacitor-live-update` → `live-update.ts` | Auto on startup + manual in Settings |
+| **Capawesome live update** | App shell on native iOS/Android | `@capawesome/capacitor-live-update` → `live-update.ts` → `AppUpdatePrompt.vue` toast | Auto on startup (no throttle) + manual in Settings |
 
 **Asset hosting**:
 - **R2 CDN** (`cdn.lexiklar.app`) — all assets: `manifest.json`, `lexiklar.db`, `lexiklar.db.gz`, `patches/*.sql.gz`, `bundles/<version>.zip`
@@ -242,22 +242,27 @@ All asset URLs in the manifest are absolute R2 CDN URLs (`cdn.lexiklar.app`).
 2. Fetches `manifest.json` from `cdn.lexiklar.app`, reads `db` section, compares `current_version` against local DB `meta.version`
 3. Prefers gzipped SQL patch (small) over full DB download (large) — patches are keyed by source version
 4. **Patch apply**: download gzipped SQL → decompress → `exec_batch` (transactional). On native, plugin writes to disk directly (no serialize/cache step). On web, worker applies patch then serializes back to Cache API.
-5. **Full DB replace (web)**: streams decompressed bytes to Cache API first, then reads back into worker — avoids ~500 MB peak memory that crashes iOS Safari. On native: downloads, decompresses, writes via Filesystem plugin, closes/deletes old DB, reopens.
-6. `DbUpdatePrompt.vue` shows a toast; user can apply immediately or dismiss
+5. **Full DB replace (web)**: streams decompressed bytes to Cache API first, then reads back into worker — avoids ~500 MB peak memory that crashes iOS Safari. **On native**: `nativeImportDatabaseFromUrl()` downloads + decompresses entirely in native code (streaming gzip via zlib on iOS, GZIPInputStream on Android) — avoids the ~500 MB JS memory peak from base64-encoding 128 MB through the Capacitor bridge.
+6. `DbUpdatePrompt.vue` shows a toast; user can apply immediately or dismiss. Hides itself while an app shell update is pending (app update takes priority)
+
+**Manifest fetch deduplication**: `fetchManifest()` in `db.ts` is shared by both `checkForUpdates()` and `checkAppUpdate()`. A `pendingFetch` promise deduplicates concurrent callers — prevents CapacitorHttp from failing one of two simultaneous requests to the same URL.
 
 **Capawesome flow** (`src/utils/live-update.ts`):
 1. `notifyReady()` called on every startup to confirm current bundle is stable (prevents rollback)
-2. `checkAppUpdate()` fetches the same `manifest.json`, reads `bundle` section, compares version against `__APP_VERSION__` using semver (ignores `+build` suffix, only updates when manifest is strictly newer — no downgrades)
-3. `downloadAndApplyAppUpdate()` downloads zip via `LiveUpdate.downloadBundle()`, stages with `setNextBundle()`
-4. User restarts app (or taps "Restart" in Settings) to load new bundle
-5. No-op on web — PWA service worker handles app shell updates
-6. Bundle excludes DB (~4 MB app shell only) — native loads DB from `Library/databases/`, not web assets
+2. `checkAppUpdate()` uses the shared `fetchManifest()`, reads `bundle` section, compares version against `__APP_VERSION__` using semver (ignores `+build` suffix, only updates when manifest is strictly newer — no downgrades)
+3. If update available, `AppUpdatePrompt.vue` shows a toast (mounted in `App.vue`, native only). Also visible as a list item in Settings.
+4. `downloadAndApplyAppUpdate()` downloads zip via `LiveUpdate.downloadBundle()`, stages with `setNextBundle()`
+5. User taps "Restart" in toast or Settings to load new bundle via `LiveUpdate.reload()`
+6. No-op on web — PWA service worker handles app shell updates
+7. Bundle excludes DB (~4 MB app shell only) — native loads DB from `Library/databases/`, not web assets
+
+**Update priority**: when both app shell and DB updates are available, the app update toast takes priority — `DbUpdatePrompt.vue` hides itself while `pendingAppUpdate.available` is true. After app update is applied or dismissed, DB toast reappears.
 
 **SQL patch generation** (`scripts/publish-update.ts`):
 ```bash
 npx tsx scripts/publish-update.ts --old <old.db> --out <dir> [--keep-patches 3] [--release-url <url>]
 ```
-Diffs `words` and `examples` tables using the `hash` column (SHA-256 of JSON `data`). Generates INSERT/UPDATE/DELETE statements; uses `(SELECT id FROM words WHERE file = ?)` subqueries for word_id references since client DBs have different autoincrement IDs. Patches are written as `.sql.gz` (gzip level 9) and decompressed by the client before applying via `exec_batch`. `--release-url` sets the base URL for asset links in the manifest (CI passes `https://cdn.lexiklar.app`). Also generates `lexiklar.db.gz` (gzip level 9) alongside the raw DB.
+Diffs `words` and `examples` tables using the `hash` column (SHA-256 of JSON `data`). Generates INSERT/UPDATE/DELETE statements; uses `(SELECT id FROM words WHERE file = ?)` subqueries for word_id references since client DBs have different autoincrement IDs. Patches are written as `.sql.gz` (gzip level 9) and decompressed by the client before applying via `exec_batch`. `--release-url` sets the base URL for asset links in the manifest (CI passes `https://cdn.lexiklar.app`). Also generates `lexiklar.db.gz` (gzip level 9) alongside the raw DB. `mergeManifestPatches()` drops stale carried-forward patches whose target doesn't match the new version — prevents wasting the 3 patch slots on intermediate versions that no client can reach.
 
 **GitHub Actions**:
 - **`publish-data.yml`** (`publish-db` job): triggers on push to `data/`, `scripts/build-index.ts`, or manual dispatch. Builds index, uploads DB + gzipped DB + patches + manifest to R2 CDN.
