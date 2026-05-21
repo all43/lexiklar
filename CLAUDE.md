@@ -7,7 +7,7 @@ Detailed docs are in `.claude/rules/` (loaded on demand by path).
 
 ## Project Goal
 
-A **fully offline** German dictionary app targeting learners up to **B2 level** (~3,500–5,000 most common words). The key differentiator from existing apps is grammar depth: articles, noun declensions, full verb conjugations, adjective declension tables, and article gender rules with exceptions.
+A **fully offline** German dictionary app targeting learners up to **B2 level** (~25,000 words). The key differentiator from existing apps is grammar depth: articles, noun declensions, full verb conjugations, adjective declension tables, and article gender rules with exceptions.
 
 ---
 

@@ -49,8 +49,8 @@ The non-LLM parts were equally important: architecture decisions, data model des
 ## Features
 
 ### Vocabulary
-- ~21,500 words filtered to B2 level (~3,500–5,000 most common words)
-- ~9,800 nouns · ~2,700 verbs · ~1,900 adjectives
+- ~25,000 words up to B2 level
+- ~10,700 nouns · ~4,700 verbs · ~2,000 adjectives
 - Frequency-ranked using four corpora (Leipzig news, Leipzig Wikipedia, SUBTLEX-DE, OpenSubtitles)
 - ~87,500 example sentences with English translations
 
