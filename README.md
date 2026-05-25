@@ -4,7 +4,9 @@
 
 Lexiklar = *Lexikon* (lexicon) + *klar* (clear). The differentiator from existing dictionary apps is **grammar depth**: full declension tables, conjugation paradigms, article gender rules with exceptions, and annotated example sentences — all available offline.
 
-[**Try the PWA →**](https://lexiklar.app) · [**iOS App Store →**](https://apps.apple.com/de/app/lexiklar/id6761269667)
+[**Try the PWA →**](https://lexiklar.app) · [**iOS App Store →**](https://apps.apple.com/de/app/lexiklar/id6761269667) · [**Android (beta) →**](https://play.google.com/apps/testing/app.lexiklar)
+
+> Android is in closed testing — [join the testers group](https://groups.google.com/g/lexiklar/) first, then use the link above to install.
 
 ---
 
