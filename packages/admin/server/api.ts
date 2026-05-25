@@ -610,7 +610,7 @@ async function handleTopicWords(req: IncomingMessage, res: ServerResponse) {
       temperature: 0.4,
       jsonSchema: TOPIC_WORDS_SCHEMA as any,
     });
-    const parsed = extractJSON(result.content);
+    const parsed = extractJSON(result.content) as any;
     const words = parsed?.words ?? [];
     json(res, { words, cached: !!result._cached });
   } catch (err: any) {
@@ -676,7 +676,7 @@ async function handleWordTopics(req: IncomingMessage, res: ServerResponse) {
       temperature: 0.3,
       jsonSchema: WORD_TOPICS_SCHEMA as any,
     });
-    const parsed = extractJSON(result.content);
+    const parsed = extractJSON(result.content) as any;
     const topics = parsed?.topics ?? [];
     json(res, { topics, cached: !!result._cached });
   } catch (err: any) {
@@ -746,9 +746,14 @@ async function handleBatchAdd(req: IncomingMessage, res: ServerResponse) {
       .filter(Boolean);
 
     if (wordPaths.length > 0) {
-      await store.runPipeline([
-        { script: "translate-glosses", args: ["--words", wordPaths.join(","), "--provider", provider], timeoutMs: 180_000 },
-      ]);
+      const tmpFile = await store.writeTempFile("batch", wordPaths.join("\n") + "\n");
+      try {
+        await store.runPipeline([
+          { script: "translate-glosses", args: ["--word-list", tmpFile, "--provider", provider], timeoutMs: 180_000 },
+        ]);
+      } finally {
+        await store.deleteTempFile(tmpFile);
+      }
     }
     sendEvent("progress", { stage: "translate-glosses", status: "done" });
 

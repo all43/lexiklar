@@ -1,7 +1,8 @@
 import {
-  readdirSync, readFileSync, writeFileSync, existsSync,
+  readdirSync, readFileSync, writeFileSync, existsSync, unlinkSync,
 } from "fs";
 import { join, resolve } from "path";
+import { tmpdir } from "os";
 import { spawn, execFileSync } from "child_process";
 import type { DataStore, PipelineStep, PipelineProgress } from "./data-store.js";
 
@@ -118,6 +119,18 @@ export class LocalDataStore implements DataStore {
       await runScript(scriptPath, step.args, step.timeoutMs ?? 60_000);
       onProgress?.({ stage: step.script, status: "done" });
     }
+  }
+
+  // ── Temp files ──
+
+  async writeTempFile(name: string, content: string): Promise<string> {
+    const p = join(tmpdir(), `lexiklar-${name}-${Date.now()}.txt`);
+    writeFileSync(p, content, "utf-8");
+    return p;
+  }
+
+  async deleteTempFile(path: string): Promise<void> {
+    try { unlinkSync(path); } catch { /* ignore */ }
   }
 
   // ── Misc ──

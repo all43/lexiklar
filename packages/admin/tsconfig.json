@@ -20,11 +20,13 @@
       "@data/*": ["../../data/*"],
       "@capacitor/preferences": ["./src/mocks/capacitor-preferences.ts"]
     },
-    "types": ["vite/client"]
+    "types": ["vite/client", "@cloudflare/workers-types"]
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.vue",
+    "server/**/*.ts",
+    "worker/**/*.ts",
     "../shared/src/**/*.ts",
     "../shared/src/**/*.vue"
   ],

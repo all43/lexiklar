@@ -1,0 +1,63 @@
+name: Admin Pipeline
+
+on:
+  repository_dispatch:
+    types: [admin-pipeline]
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Download Wiktionary dump (if needed)
+        run: |
+          if [ ! -f data/raw/de-extract.jsonl ]; then
+            echo "Wiktionary dump not found, downloading..."
+            npm run download
+          fi
+
+      - name: Download frequency corpora (if needed)
+        run: |
+          if [ ! -f data/raw/leipzig-words.txt ]; then
+            echo "Corpora not found, downloading..."
+            npm run download-corpus
+          fi
+
+      - name: Run pipeline steps
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          STEPS='${{ toJson(github.event.client_payload.steps) }}'
+          echo "$STEPS" | jq -c '.[]' | while read -r step; do
+            SCRIPT=$(echo "$step" | jq -r '.script')
+            ARGS=$(echo "$step" | jq -r '.args | join(" ")')
+            echo "Running: scripts/${SCRIPT}.ts ${ARGS}"
+            npx tsx "scripts/${SCRIPT}.ts" ${ARGS}
+          done
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "Lexiklar Admin Bot"
+          git config user.email "bot@lexiklar.app"
+          git add data/ config/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "feat(data): admin pipeline run"
+            git push
+          fi

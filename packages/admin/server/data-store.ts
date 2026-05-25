@@ -37,6 +37,10 @@ export interface DataStore {
     onProgress?: (p: PipelineProgress) => void,
   ): Promise<void>;
 
+  // ── Temp files (for script word-lists) ──
+  writeTempFile(name: string, content: string): Promise<string>;
+  deleteTempFile(path: string): Promise<void>;
+
   // ── Misc read ──
   fileExists(relativePath: string): Promise<boolean>;
   readFile(relativePath: string): Promise<string>;
