@@ -12,12 +12,7 @@
 
     <!-- Overview table: ich-form for all 6 tenses -->
     <f7-block class="tenses-block">
-      <div
-        class="decl-table-wrap scroll-fade"
-        :style="overviewFade.fadeStyle.value"
-        :class="{ 'is-scrollable': overviewFade.isScrollable.value }"
-      >
-        <div class="decl-table-scroll" ref="overviewEl">
+      <DeclTableWrap>
           <table class="decl-table tenses-overview-table">
             <thead>
               <tr>
@@ -50,8 +45,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
+      </DeclTableWrap>
     </f7-block>
 
     <f7-block-footer>{{ t('grammar.tensesAuxNote') }}</f7-block-footer>
@@ -62,12 +56,7 @@
       <f7-block class="tenses-block">
         <p class="tense-usage">{{ t(tense.usageKey) }}</p>
           <p class="tense-note" v-html="t(tense.formationKey)"></p>
-        <div
-          class="decl-table-wrap scroll-fade"
-          :style="scrollFades[i].fadeStyle.value"
-          :class="{ 'is-scrollable': scrollFades[i].isScrollable.value }"
-        >
-          <div class="decl-table-scroll" :ref="(el) => { tableEls[i].value = el as HTMLElement | null }">
+        <DeclTableWrap>
             <table class="decl-table tenses-table">
               <thead>
                 <tr>
@@ -95,18 +84,16 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
+        </DeclTableWrap>
       </f7-block>
     </template>
   </f7-page>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { t } from "../../js/i18n.js";
 import ShareButton from "../../components/ShareButton.vue";
-import { useScrollFade } from "../../composables/useScrollFade.js";
+import DeclTableWrap from "../../components/DeclTableWrap.vue";
 
 const props = defineProps<{ f7route: { url: string } }>();
 
@@ -242,13 +229,6 @@ function scrollTo(key: string) {
   pageContent.scrollTo({ top: offset, behavior: "smooth" });
 }
 
-// Overview scroll fade
-const overviewEl = ref<HTMLElement | null>(null);
-const overviewFade = useScrollFade(overviewEl);
-
-// Per-tense scroll fades for formation sections
-const tableEls = TENSES.map(() => ref<HTMLElement | null>(null));
-const scrollFades = tableEls.map(el => useScrollFade(el));
 </script>
 
 <style scoped>

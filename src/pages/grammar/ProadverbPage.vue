@@ -50,8 +50,7 @@
     <!-- Table -->
     <f7-block-title>{{ t('grammar.proadverbTable') }}</f7-block-title>
     <f7-block class="pa-block">
-      <div class="decl-table-wrap scroll-fade" :style="fadeStyle" :class="{ 'is-scrollable': isScrollable }">
-        <div class="decl-table-scroll" ref="tableEl">
+      <DeclTableWrap>
           <table class="decl-table pa-table">
             <thead>
               <tr>
@@ -76,8 +75,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
+      </DeclTableWrap>
     </f7-block>
 
     <!-- Common verb + proadverb combinations -->
@@ -98,15 +96,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { t } from "../../js/i18n.js";
 import ShareButton from "../../components/ShareButton.vue";
-import { useScrollFade } from "../../composables/useScrollFade.js";
+import DeclTableWrap from "../../components/DeclTableWrap.vue";
 
 const props = defineProps<{ f7route: { url: string } }>();
-
-const tableEl = ref<HTMLElement | null>(null);
-const { fadeStyle, isScrollable } = useScrollFade(tableEl);
 
 interface ProadverbRow {
   prep: string;

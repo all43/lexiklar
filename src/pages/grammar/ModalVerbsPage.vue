@@ -12,8 +12,7 @@
 
     <f7-block-title>{{ t('grammar.modalPresent') }}</f7-block-title>
     <f7-block class="modal-block">
-      <div class="decl-table-wrap scroll-fade" :style="fadeStylePresent" :class="{ 'is-scrollable': isScrollablePresent }">
-        <div class="decl-table-scroll" ref="presentEl">
+      <DeclTableWrap>
           <table class="decl-table modal-table">
             <thead>
               <tr>
@@ -32,14 +31,12 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
+      </DeclTableWrap>
     </f7-block>
 
     <f7-block-title>{{ t('grammar.modalPreterite') }}</f7-block-title>
     <f7-block class="modal-block">
-      <div class="decl-table-wrap scroll-fade" :style="fadeStylePreterite" :class="{ 'is-scrollable': isScrollablePreterite }">
-        <div class="decl-table-scroll" ref="preteriteEl">
+      <DeclTableWrap>
           <table class="decl-table modal-table">
             <thead>
               <tr>
@@ -58,17 +55,15 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
+      </DeclTableWrap>
     </f7-block>
   </f7-page>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { t } from "../../js/i18n.js";
 import ShareButton from "../../components/ShareButton.vue";
-import { useScrollFade } from "../../composables/useScrollFade.js";
+import DeclTableWrap from "../../components/DeclTableWrap.vue";
 
 const props = defineProps<{ f7route: { url: string } }>();
 
@@ -115,11 +110,6 @@ const MODALS: Modal[] = [
   },
 ];
 
-const presentEl   = ref<HTMLElement | null>(null);
-const preteriteEl = ref<HTMLElement | null>(null);
-
-const { fadeStyle: fadeStylePresent,   isScrollable: isScrollablePresent   } = useScrollFade(presentEl);
-const { fadeStyle: fadeStylePreterite, isScrollable: isScrollablePreterite } = useScrollFade(preteriteEl);
 </script>
 
 <style scoped>

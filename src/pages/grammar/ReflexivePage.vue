@@ -13,8 +13,7 @@
     <!-- Reflexive pronoun table -->
     <f7-block-title>{{ t('grammar.reflexivePronouns') }}</f7-block-title>
     <f7-block class="reflex-block">
-      <div class="decl-table-wrap scroll-fade" :style="fadeStyle" :class="{ 'is-scrollable': isScrollable }">
-        <div class="decl-table-scroll" ref="tableEl">
+      <DeclTableWrap>
           <table class="decl-table reflex-table">
             <thead>
               <tr>
@@ -31,8 +30,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
+      </DeclTableWrap>
     </f7-block>
 
     <!-- Common reflexive verbs -->
@@ -50,15 +48,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { t } from "../../js/i18n.js";
 import ShareButton from "../../components/ShareButton.vue";
-import { useScrollFade } from "../../composables/useScrollFade.js";
+import DeclTableWrap from "../../components/DeclTableWrap.vue";
 
 const props = defineProps<{ f7route: { url: string } }>();
 
-const tableEl = ref<HTMLElement | null>(null);
-const { fadeStyle, isScrollable } = useScrollFade(tableEl);
 
 const PRONOUNS = [
   { person: "ich",     acc: "mich", dat: "mir"  },

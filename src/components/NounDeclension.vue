@@ -28,8 +28,7 @@
     </div>
 
     <!-- Declension table -->
-    <div v-if="word.case_forms" class="decl-table-wrap scroll-fade" :style="tableStyle">
-    <div class="decl-table-scroll" ref="tableEl">
+    <DeclTableWrap v-if="word.case_forms">
     <table class="decl-table" aria-label="Deklination">
       <thead>
         <tr>
@@ -65,15 +64,14 @@
         </tr>
       </tbody>
     </table>
-    </div>
-    </div>
+    </DeclTableWrap>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import { t } from "../js/i18n.js";
-import { useScrollFade } from "../composables/useScrollFade.js";
+import DeclTableWrap from "./DeclTableWrap.vue";
 import { splitUmlaut, splitIrregularPlural, type UmlautSplit, type IrregularPluralSplit } from "../utils/umlaut.js";
 import type { NounWord, CaseRow } from "../../types/word.js";
 
@@ -91,8 +89,6 @@ const props = defineProps<{
   word: NounWord;
 }>();
 
-const tableEl = ref<HTMLElement | null>(null);
-const { fadeStyle: tableStyle } = useScrollFade(tableEl);
 
 const cases = [
   { key: "nom" as const, label: "Nom." },

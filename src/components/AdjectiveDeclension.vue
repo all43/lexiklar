@@ -199,8 +199,7 @@
           <f7-button :active="activeTab === 'mixed'" @click="activeTab = 'mixed'">Gemischt</f7-button>
         </f7-segmented>
 
-        <div class="decl-table-wrap adj-decl-wrap scroll-fade" :style="tableStyle">
-        <div class="decl-table-scroll" ref="tableEl">
+        <DeclTableWrap class="adj-decl-wrap">
         <table class="decl-table adj-decl-table" aria-label="Adjektivdeklination">
           <thead>
             <tr>
@@ -225,8 +224,7 @@
             </tr>
           </tbody>
         </table>
-        </div>
-        </div>
+        </DeclTableWrap>
       </template>
 
     </template>
@@ -238,14 +236,12 @@ import { ref, computed } from "vue";
 import { t } from "../js/i18n.js";
 import { getCached, CONDENSED_GRAMMAR_KEY } from "../utils/storage.js";
 import { useScrollFade } from "../composables/useScrollFade.js";
+import DeclTableWrap from "./DeclTableWrap.vue";
 import adjEndings from "../../data/rules/adj-endings.json";
 import type { AdjectiveWord, AdjEndingsTable } from "../../types/word.js";
 
 const scaleEl = ref<HTMLElement | null>(null);
 const { fadeStyle, isScrollable } = useScrollFade(scaleEl);
-
-const tableEl = ref<HTMLElement | null>(null);
-const { fadeStyle: tableStyle } = useScrollFade(tableEl);
 
 const emit = defineEmits<{
   (e: "compare-navigate", term: string): void;

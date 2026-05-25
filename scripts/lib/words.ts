@@ -9,10 +9,10 @@
  */
 
 import { readdirSync, readFileSync, existsSync, statSync } from "fs";
-import { join, dirname } from "path";
+import { join, dirname, relative } from "path";
 import { fileURLToPath } from "url";
 import { POS_DIRS } from "./pos.js";
-import type { Word } from "../../types/index.js";
+import type { Word, WordBase } from "../../types/index.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "../..");
@@ -60,6 +60,41 @@ export function* iterWordFiles(): Generator<WordFileEntry> {
  */
 export function loadAllWordFiles(): WordFileEntry[] {
   return [...iterWordFiles()];
+}
+
+export interface FileMeta {
+  path: string;
+  posDir: string;
+  word: string;
+  pos: string;
+  sense_count: number;
+  first_sense_gloss_en: string | null;
+}
+
+/**
+ * Build a Map from "posDir/file" keys to metadata for all word files.
+ * Used by audit scripts that need quick lookups by path key.
+ */
+export function buildFileMetaMap(): Map<string, FileMeta> {
+  const DATA_DIR = join(ROOT, "data");
+  const map = new Map<string, FileMeta>();
+  for (const filePath of findWordFilePaths()) {
+    const data = JSON.parse(readFileSync(filePath, "utf-8")) as WordBase;
+    const relPath = relative(DATA_DIR, filePath);
+    const parts = relPath.split("/");
+    const posDir = parts[1];
+    const file = parts[2].replace(".json", "");
+    const path = `${posDir}/${file}`;
+    map.set(path, {
+      path,
+      posDir,
+      word: data.word,
+      pos: data.pos,
+      sense_count: (data.senses || []).length,
+      first_sense_gloss_en: data.senses?.[0]?.gloss_en ?? null,
+    });
+  }
+  return map;
 }
 
 /**

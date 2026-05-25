@@ -14,8 +14,7 @@
       <f7-block-title>{{ t(cls.labelKey) }}</f7-block-title>
       <f7-block class="adj-ref-block">
         <p class="adj-ref-why">{{ t(cls.whyKey) }}</p>
-        <div class="decl-table-wrap scroll-fade" :style="scrollFade[cls.key]" :class="{ 'is-scrollable': scrollable[cls.key] }">
-          <div class="decl-table-scroll" :ref="(el) => setRef(cls.key, el as HTMLElement | null)">
+        <DeclTableWrap>
             <table class="decl-table adj-ref-table">
               <thead>
                 <tr>
@@ -36,18 +35,16 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
+        </DeclTableWrap>
       </f7-block>
     </template>
   </f7-page>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, type Ref } from "vue";
 import { t } from "../../js/i18n.js";
 import ShareButton from "../../components/ShareButton.vue";
-import { useScrollFade } from "../../composables/useScrollFade.js";
+import DeclTableWrap from "../../components/DeclTableWrap.vue";
 
 const props = defineProps<{ f7route: { url: string } }>();
 import adjEndingsData from "../../../data/rules/adj-endings.json";
@@ -71,30 +68,6 @@ const CASES = [
 ];
 
 const endings = adjEndingsData as unknown as Record<string, EndingsClass>;
-
-// Per-class scroll fade refs — three fixed classes, no dynamic ref map needed
-const weakEl   = ref<HTMLElement | null>(null);
-const mixedEl  = ref<HTMLElement | null>(null);
-const strongEl = ref<HTMLElement | null>(null);
-
-const elRefsMap: Record<string, Ref<HTMLElement | null>> = {
-  weak: weakEl, mixed: mixedEl, strong: strongEl,
-};
-
-function setRef(key: string, el: Element | null) {
-  elRefsMap[key].value = el as HTMLElement | null;
-}
-
-const fades = Object.fromEntries(
-  Object.entries(elRefsMap).map(([k, r]) => [k, useScrollFade(r)])
-);
-
-const scrollFade = computed(() =>
-  Object.fromEntries(Object.entries(fades).map(([k, f]) => [k, f.fadeStyle.value]))
-);
-const scrollable = computed(() =>
-  Object.fromEntries(Object.entries(fades).map(([k, f]) => [k, f.isScrollable.value]))
-);
 </script>
 
 <style scoped>

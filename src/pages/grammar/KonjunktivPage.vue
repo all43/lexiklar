@@ -53,12 +53,7 @@
     <f7-block-title>{{ t('grammar.konj2Formation') }}</f7-block-title>
     <f7-block class="konj-block">
       <p class="konj-note" v-html="t('grammar.konj2FormationNote')"></p>
-      <div
-        class="decl-table-wrap scroll-fade"
-        :style="k2Fade.fadeStyle.value"
-        :class="{ 'is-scrollable': k2Fade.isScrollable.value }"
-      >
-        <div class="decl-table-scroll" ref="k2El">
+      <DeclTableWrap>
           <table class="decl-table konj-table">
             <thead>
               <tr>
@@ -76,20 +71,14 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
+      </DeclTableWrap>
     </f7-block>
 
     <!-- würde + Infinitiv -->
     <f7-block-title id="wuerde">{{ t('grammar.konj2Wuerde') }}</f7-block-title>
     <f7-block class="konj-block">
       <p class="konj-note" v-html="t('grammar.konj2WuerdeNote')"></p>
-      <div
-        class="decl-table-wrap scroll-fade"
-        :style="wuerdeFade.fadeStyle.value"
-        :class="{ 'is-scrollable': wuerdeFade.isScrollable.value }"
-      >
-        <div class="decl-table-scroll" ref="wuerdeEl">
+      <DeclTableWrap>
           <table class="decl-table konj-table">
             <thead>
               <tr>
@@ -107,8 +96,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
+      </DeclTableWrap>
     </f7-block>
 
     <!-- K2 Usage -->
@@ -135,12 +123,7 @@
     <f7-block-title>{{ t('grammar.konj1Formation') }}</f7-block-title>
     <f7-block class="konj-block">
       <p class="konj-note" v-html="t('grammar.konj1FormationNote')"></p>
-      <div
-        class="decl-table-wrap scroll-fade"
-        :style="k1Fade.fadeStyle.value"
-        :class="{ 'is-scrollable': k1Fade.isScrollable.value }"
-      >
-        <div class="decl-table-scroll" ref="k1El">
+      <DeclTableWrap>
           <table class="decl-table konj-table">
             <thead>
               <tr>
@@ -157,8 +140,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
+      </DeclTableWrap>
     </f7-block>
 
     <!-- K1 replacement rule -->
@@ -195,7 +177,7 @@
 import { ref } from "vue";
 import { t } from "../../js/i18n.js";
 import ShareButton from "../../components/ShareButton.vue";
-import { useScrollFade } from "../../composables/useScrollFade.js";
+import DeclTableWrap from "../../components/DeclTableWrap.vue";
 
 const props = defineProps<{ f7route: { url: string } }>();
 
@@ -292,12 +274,6 @@ const K1_USAGES = [
   { key: "grammar.konj1UsageFixed", example: "Es <strong>lebe</strong> die Freiheit! / Man <strong>nehme</strong> 200g Mehl." },
 ];
 
-const k2El = ref<HTMLElement | null>(null);
-const k2Fade = useScrollFade(k2El);
-const wuerdeEl = ref<HTMLElement | null>(null);
-const wuerdeFade = useScrollFade(wuerdeEl);
-const k1El = ref<HTMLElement | null>(null);
-const k1Fade = useScrollFade(k1El);
 </script>
 
 <style scoped>

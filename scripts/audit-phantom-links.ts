@@ -16,44 +16,17 @@
  */
 
 import { readFileSync, writeFileSync } from "fs";
-import { join, relative, dirname } from "path";
+import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { loadExamples } from "./lib/examples.js";
-import { findWordFilePaths } from "./lib/words.js";
-import type { WordBase } from "../types/index.js";
+import { buildFileMetaMap } from "./lib/words.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
-const DATA_DIR = join(ROOT, "data");
 
 // ── Build path → file metadata lookup ──
 
-interface FileMeta {
-  path: string;
-  posDir: string;
-  word: string;
-  pos: string;
-  sense_count: number;
-  first_sense_gloss_en: string | null;
-}
-
-const pathToFile = new Map<string, FileMeta>();
-for (const filePath of findWordFilePaths()) {
-  const data = JSON.parse(readFileSync(filePath, "utf-8")) as WordBase;
-  const relPath = relative(DATA_DIR, filePath);
-  const parts = relPath.split("/");
-  const posDir = parts[1];
-  const file = parts[2].replace(".json", "");
-  const path = `${posDir}/${file}`;
-  pathToFile.set(path, {
-    path,
-    posDir,
-    word: data.word,
-    pos: data.pos,
-    sense_count: (data.senses || []).length,
-    first_sense_gloss_en: data.senses?.[0]?.gloss_en ?? null,
-  });
-}
+const pathToFile = buildFileMetaMap();
 
 // ── Scan examples ──
 
