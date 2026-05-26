@@ -46,6 +46,9 @@
       <ConjugationTable :forms="conjugation.subjunctive1" />
       <div class="conj-tense-title">Konjunktiv II</div>
       <ConjugationTable :forms="conjugation.subjunctive2" />
+      <div class="konj-ref-link-row">
+        <f7-link href="/grammar/konjunktiv/" class="konj-ref-link">{{ t('grammar.konjunktivOverview') }}</f7-link>
+      </div>
     </div>
 
     <!-- Weitere -->

@@ -99,6 +99,30 @@
       </DeclTableWrap>
     </f7-block>
 
+    <!-- K2 Common synthetic forms -->
+    <f7-block-title>{{ t('grammar.konj2Common') }}</f7-block-title>
+    <f7-block class="konj-block">
+      <p class="konj-note" v-html="t('grammar.konj2CommonNote')"></p>
+      <DeclTableWrap>
+          <table class="decl-table konj-table">
+            <thead>
+              <tr>
+                <th class="decl-case-header"></th>
+                <th v-for="v in K2_COMMON" :key="v.verb" class="decl-num-header konj-verb-header">
+                  <f7-link :href="`/word/verbs/${v.verb}/`" class="konj-header-link">{{ v.verb }}</f7-link>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="p in PERSONS" :key="p">
+                <td class="decl-case">{{ p }}</td>
+                <td v-for="v in K2_COMMON" :key="v.verb" class="decl-form konj-cell" v-html="v.k2[p]"></td>
+              </tr>
+            </tbody>
+          </table>
+      </DeclTableWrap>
+    </f7-block>
+
     <!-- K2 Usage -->
     <f7-block-title>{{ t('grammar.konj2Usage') }}</f7-block-title>
     <f7-block class="konj-block">
@@ -223,6 +247,51 @@ const K2_VERBS: VerbK2[] = [
     k2: {
       "ich": "<strong>müsste</strong>", "du": "<strong>müsstest</strong>", "er/sie/es": "<strong>müsste</strong>",
       "wir": "<strong>müssten</strong>", "ihr": "<strong>müsstet</strong>", "sie/Sie": "<strong>müssten</strong>",
+    },
+  },
+];
+
+const K2_COMMON: Omit<VerbK2, 'type'>[] = [
+  {
+    verb: "kommen",
+    k2: {
+      "ich": "<strong>käme</strong>", "du": "<strong>kämest</strong>", "er/sie/es": "<strong>käme</strong>",
+      "wir": "<strong>kämen</strong>", "ihr": "<strong>kämet</strong>", "sie/Sie": "<strong>kämen</strong>",
+    },
+  },
+  {
+    verb: "gehen",
+    k2: {
+      "ich": "<strong>ginge</strong>", "du": "<strong>gingest</strong>", "er/sie/es": "<strong>ginge</strong>",
+      "wir": "<strong>gingen</strong>", "ihr": "<strong>ginget</strong>", "sie/Sie": "<strong>gingen</strong>",
+    },
+  },
+  {
+    verb: "wissen",
+    k2: {
+      "ich": "<strong>wüsste</strong>", "du": "<strong>wüsstest</strong>", "er/sie/es": "<strong>wüsste</strong>",
+      "wir": "<strong>wüssten</strong>", "ihr": "<strong>wüsstet</strong>", "sie/Sie": "<strong>wüssten</strong>",
+    },
+  },
+  {
+    verb: "geben",
+    k2: {
+      "ich": "<strong>gäbe</strong>", "du": "<strong>gäbest</strong>", "er/sie/es": "<strong>gäbe</strong>",
+      "wir": "<strong>gäben</strong>", "ihr": "<strong>gäbet</strong>", "sie/Sie": "<strong>gäben</strong>",
+    },
+  },
+  {
+    verb: "lassen",
+    k2: {
+      "ich": "<strong>ließe</strong>", "du": "<strong>ließest</strong>", "er/sie/es": "<strong>ließe</strong>",
+      "wir": "<strong>ließen</strong>", "ihr": "<strong>ließet</strong>", "sie/Sie": "<strong>ließen</strong>",
+    },
+  },
+  {
+    verb: "finden",
+    k2: {
+      "ich": "<strong>fände</strong>", "du": "<strong>fändest</strong>", "er/sie/es": "<strong>fände</strong>",
+      "wir": "<strong>fänden</strong>", "ihr": "<strong>fändet</strong>", "sie/Sie": "<strong>fänden</strong>",
     },
   },
 ];
