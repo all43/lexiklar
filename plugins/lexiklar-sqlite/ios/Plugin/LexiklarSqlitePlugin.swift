@@ -16,30 +16,70 @@ public class LexiklarSqlitePlugin: CAPPlugin, CAPBridgedPlugin {
     ]
 
     private let db = SqliteDb()
+    private var currentPath: String?
 
-    /// Resolve a database path to the app's database directory.
-    /// Copies from bundled assets on first use if the file doesn't exist yet.
+    /// Resolve a database path, preferring the writable copy if it exists,
+    /// otherwise returning the bundled path directly (read-only, no copy).
     private func resolvePath(_ name: String) throws -> String {
         let dbDir = Self.databaseDirectory()
         let dbPath = (dbDir as NSString).appendingPathComponent(name)
 
-        // If DB doesn't exist at target, copy from bundled assets
-        if !FileManager.default.fileExists(atPath: dbPath) {
-            try FileManager.default.createDirectory(
-                atPath: dbDir, withIntermediateDirectories: true)
-
-            // Look for bundled DB in the app's public/data/ directory
-            guard let bundlePath = Bundle.main.path(
-                forResource: "public/data/\((name as NSString).deletingPathExtension)",
-                ofType: (name as NSString).pathExtension
-            ) else {
-                throw SqliteError.openFailed(
-                    message: "Bundled database '\(name)' not found in app assets",
-                    code: 0)
-            }
-            try FileManager.default.copyItem(atPath: bundlePath, toPath: dbPath)
+        // If a writable copy exists (from OTA patch or full replacement), use it
+        if FileManager.default.fileExists(atPath: dbPath) {
+            return dbPath
         }
 
+        // Otherwise use the bundled DB directly (opened read-only)
+        let baseName = (name as NSString).deletingPathExtension
+        let ext = (name as NSString).pathExtension
+        guard let bundlePath = Bundle.main.path(
+            forResource: "public/data/\(baseName)",
+            ofType: ext
+        ) else {
+            throw SqliteError.openFailed(
+                message: "Bundled database '\(name)' not found in app assets",
+                code: 0)
+        }
+        return bundlePath
+    }
+
+    /// Path to the bundled DB inside the app bundle, or nil if not found.
+    private func bundlePath(for name: String) -> String? {
+        let baseName = (name as NSString).deletingPathExtension
+        let ext = (name as NSString).pathExtension
+        return Bundle.main.path(
+            forResource: "public/data/\(baseName)",
+            ofType: ext
+        )
+    }
+
+    /// Whether the given path is inside the app bundle (read-only).
+    private func isBundlePath(_ path: String) -> Bool {
+        guard let bundleRoot = Bundle.main.bundlePath as String? else { return false }
+        return path.hasPrefix(bundleRoot)
+    }
+
+    /// Copy the bundled DB to the writable directory and reopen as read-write.
+    private func copyToWritable(_ name: String) throws -> String {
+        guard let src = bundlePath(for: name) else {
+            throw SqliteError.openFailed(
+                message: "Bundled database '\(name)' not found",
+                code: 0)
+        }
+
+        let dbDir = Self.databaseDirectory()
+        let dbPath = (dbDir as NSString).appendingPathComponent(name)
+
+        try FileManager.default.createDirectory(
+            atPath: dbDir, withIntermediateDirectories: true)
+        if FileManager.default.fileExists(atPath: dbPath) {
+            try FileManager.default.removeItem(atPath: dbPath)
+        }
+        try FileManager.default.copyItem(atPath: src, toPath: dbPath)
+
+        db.close()
+        try db.open(path: dbPath, readOnly: false)
+        currentPath = dbPath
         return dbPath
     }
 
@@ -53,11 +93,13 @@ public class LexiklarSqlitePlugin: CAPPlugin, CAPBridgedPlugin {
 
     @objc func open(_ call: CAPPluginCall) {
         let name = call.getString("path") ?? "lexiklar.db"
-        let readOnly = call.getBool("readOnly") ?? false
+        var readOnly = call.getBool("readOnly") ?? false
 
         do {
             let path = try resolvePath(name)
+            if isBundlePath(path) { readOnly = true }
             try db.open(path: path, readOnly: readOnly)
+            currentPath = path
             call.resolve()
         } catch {
             call.reject(error.localizedDescription)
@@ -95,6 +137,12 @@ public class LexiklarSqlitePlugin: CAPPlugin, CAPBridgedPlugin {
         let transaction = call.getBool("transaction") ?? true
 
         do {
+            // Copy-on-write: if DB is read-only from bundle, copy to writable storage first
+            if let path = currentPath, isBundlePath(path) {
+                let name = call.getString("path") ?? "lexiklar.db"
+                _ = try copyToWritable(name)
+            }
+
             let changes = try db.execute(sql: sql, transaction: transaction)
             call.resolve(["changes": changes])
         } catch {
@@ -160,6 +208,7 @@ public class LexiklarSqlitePlugin: CAPPlugin, CAPBridgedPlugin {
                 }
 
                 try SqliteDb.decompressGzipFile(from: tempUrl.path, to: dbPath)
+                self?.currentPath = dbPath
                 call.resolve()
             } catch {
                 call.reject("Import failed: \(error.localizedDescription)")
