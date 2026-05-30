@@ -12,6 +12,7 @@ export interface SearchResult {
   superlative: string | null;
   file: string;
   glossEn: string[] | null;
+  enMatchTier?: number;
   formMatch?: boolean;
 }
 

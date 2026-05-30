@@ -693,10 +693,29 @@ function main(): void {
         if (remap.size > 0) senseRemaps.set(fileKey, remap);
       }
 
-      // Build gloss_en from display order
-      const glossEn = senseOrder
-        .map((i) => (data.senses || [])[i]?.gloss_en)
-        .filter(Boolean);
+      // Build gloss_en from display order, including promoted synonyms
+      const glossEnRaw: string[] = [];
+      for (const i of senseOrder) {
+        const sense = (data.senses || [])[i];
+        if (!sense) continue;
+        if (sense.gloss_en) glossEnRaw.push(sense.gloss_en);
+        if (sense.synonyms_en_primary) {
+          const syns = new Set((sense.synonyms_en || []).map(s => s.toLowerCase()));
+          for (const p of sense.synonyms_en_primary) {
+            if (!syns.has(p.toLowerCase())) {
+              console.warn(`[synonyms_en_primary] ${fileKey}: "${p}" not found in synonyms_en — skipping`);
+              continue;
+            }
+            glossEnRaw.push(p);
+          }
+        }
+      }
+      const glossEnSeen = new Set<string>();
+      const glossEn: string[] = [];
+      for (const g of glossEnRaw) {
+        const key = g.toLowerCase();
+        if (!glossEnSeen.has(key)) { glossEnSeen.add(key); glossEn.push(g); }
+      }
 
       // Build the runtime word object — only fields the app needs for display.
       // Strip computation inputs (stems, past_participle) and internal metadata (_meta).

@@ -33,7 +33,7 @@ CREATE TABLE words (
   acc_form        TEXT,                -- accusative singular when ≠ lemma (n-declension nouns only)
   superlative     TEXT,                -- "am X" superlative string, adjectives only
   file            TEXT NOT NULL UNIQUE, -- e.g. "nouns/Tisch"
-  gloss_en        TEXT,                -- JSON array of short English glosses, in display order
+  gloss_en        TEXT,                -- JSON array of English glosses + promoted synonyms, in display order
   data            TEXT NOT NULL        -- full word JSON blob (senses reordered to display order)
 );
 
@@ -88,10 +88,12 @@ User types "besser" or "besten" (adjective comparative/superlative)
   → matched form shown as full "am besten" in results (using words.superlative column to reconstruct the display form)
 
 User types "cup" (English reverse search)
-  → searchByGlossEn() uses 3-tier ranking:
-    Tier 0: exact gloss_en match (e.g. Tasse's "cup" beats Weltcup's "World Cup")
-    Tier 1: exact en_terms match
-    Tier 2: prefix match on en_terms
+  → searchByGlossEn() uses 4-tier ranking:
+    Tier 0: exact gloss_en entry match (e.g. Tasse's "cup" beats Weltcup's "World Cup")
+    Tier 1: head noun in compound gloss (e.g. "psychoactive drug" matches "drug")
+    Tier 2: exact en_terms match (synonym-only, not in gloss_en)
+    Tier 3: prefix match on en_terms
+  → en_match_tier passed to client for result splitting (tiers 0–2 = high priority, tier 3 = low)
   → within each tier: frequency order
 ```
 

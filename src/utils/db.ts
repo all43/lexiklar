@@ -480,24 +480,37 @@ export async function searchByLemma(q: string): Promise<SearchResult[]> {
 export async function searchByGlossEn(q: string): Promise<SearchResult[]> {
   const term = q.toLowerCase().trim();
   if (!term) return [];
-  // JSON-escaped pattern to match exact gloss_en entry: ,"term"] or ["term"
-  const glossPattern = `%"${term}"%`;
+  // Tier 0: exact gloss_en entry — "drug" matches ["drug","hashish"] but not ["drug dealer"]
+  const glossExact = `%"${term}"%`;
+  // Tier 1: term is the head noun in a compound gloss (last word or before parenthetical)
+  //   "psychoactive drug" → trailing word before entry end
+  //   "drug (substance)"  → entry-start word before parenthetical
+  const glossTrailing = `% ${term}"%`;
+  const glossBeforeParen = `% ${term} (%`;
+  const glossStartParen = `%"${term} (%`;
   const rows = await query(
     `SELECT w.lemma, w.pos, w.gender, w.frequency,
-            w.plural_dominant, w.plural_form, w.acc_form, w.file, w.gloss_en
+            w.plural_dominant, w.plural_form, w.acc_form, w.file, w.gloss_en,
+            CASE
+              WHEN w.gloss_en LIKE ? THEN 0
+              WHEN lower(w.gloss_en) LIKE ? OR lower(w.gloss_en) LIKE ?
+                OR lower(w.gloss_en) LIKE ? THEN 1
+              WHEN w.id IN (SELECT word_id FROM en_terms WHERE term = ?) THEN 2
+              ELSE 3
+            END as en_match_tier
      FROM words w
      WHERE w.id IN (SELECT word_id FROM en_terms WHERE term LIKE ? ESCAPE '\\')
      ORDER BY
-       CASE
-         WHEN w.gloss_en LIKE ? THEN 0
-         WHEN w.id IN (SELECT word_id FROM en_terms WHERE term = ?) THEN 1
-         ELSE 2
-       END,
+       en_match_tier,
        CASE WHEN w.frequency IS NULL THEN ${UNRANKED_FREQUENCY} ELSE w.frequency END
      LIMIT ${SEARCH_RESULT_LIMIT}`,
-    [term + "%", glossPattern, term],
+    [glossExact, glossTrailing, glossBeforeParen, glossStartParen, term, term + "%"],
   );
-  return rows.map(processSearchRow);
+  return rows.map(row => {
+    const r = processSearchRow(row);
+    r.enMatchTier = row.en_match_tier as number;
+    return r;
+  });
 }
 
 /**

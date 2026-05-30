@@ -16,6 +16,7 @@ export interface OrphanEntry {
   gloss_en_full_model?: string | null;
   synonyms_en?: string[] | null;
   synonyms_en_model?: string | null;
+  synonyms_en_primary?: string[];
 }
 
 export interface MergeSensesResult {
@@ -43,8 +44,9 @@ function applySenseData(target: Sense, source: Sense | OrphanEntry): Sense {
   if (source.gloss_en_model != null)      merged.gloss_en_model      = source.gloss_en_model!;
   if (source.gloss_en_full != null)       merged.gloss_en_full       = source.gloss_en_full;
   if (source.gloss_en_full_model != null) merged.gloss_en_full_model = source.gloss_en_full_model!;
-  if ((source as Sense).synonyms_en?.length)       merged.synonyms_en       = (source as Sense).synonyms_en;
-  if ((source as Sense).synonyms_en_model != null) merged.synonyms_en_model = (source as Sense).synonyms_en_model;
+  if ((source as Sense).synonyms_en?.length)         merged.synonyms_en         = (source as Sense).synonyms_en;
+  if ((source as Sense).synonyms_en_model != null)   merged.synonyms_en_model   = (source as Sense).synonyms_en_model;
+  if ((source as Sense).synonyms_en_primary?.length) merged.synonyms_en_primary = (source as Sense).synonyms_en_primary;
   // Carry forward old example_ids not already in the new sense.
   const oldIds = (source as Sense).example_ids;
   if (oldIds?.length) {

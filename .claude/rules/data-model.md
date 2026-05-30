@@ -99,6 +99,7 @@ Each word gets a JSON file in `data/words/{pos}/`. All files share these common 
 - `_meta.source_hash` — SHA-256 of source JSONL line, used for change detection
 - `synonyms_en` — optional `string[]` of curated English search synonyms for a sense. Used by `en_terms` index for reverse English→German search. `null` until populated by `generate-synonyms-en.ts`
 - `synonyms_en_model` — model ID that produced `synonyms_en` (e.g. `"anthropic/claude-haiku-4-5-20251001"`)
+- `synonyms_en_primary` — optional `string[]` subset of `synonyms_en` promoted to the `gloss_en` column at build time. Gives these terms tier-0 ranking in English reverse search. Each entry must exist in the same sense's `synonyms_en` (build warns and skips if not). Discovery: `scripts/find-synonym-promotions.ts`
 - `zipf` — absolute combined Zipf score (2 decimal places), written by enrich step. Rank is computed at build-index time
 - `_proofread` — optional; tracks which aspects of the entry have been manually verified (see below)
 

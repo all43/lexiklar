@@ -455,7 +455,7 @@ async function search(q: string, gen: number) {
   const enRest: SearchResult[] = [];
   for (const r of enHits) {
     if (seen.has(r.file)) continue;
-    if (r.glossEn?.some(g => g.toLowerCase() === qLower)) enExact.push(r);
+    if (r.enMatchTier != null && r.enMatchTier <= 2) enExact.push(r);
     else enRest.push(r);
   }
 
@@ -538,7 +538,12 @@ async function search(q: string, gen: number) {
   }
 
   const exactMerged = [...lemmaExact, ...enExact]
-    .sort((a, b) => (a.frequency ?? UNRANKED_FREQUENCY) - (b.frequency ?? UNRANKED_FREQUENCY));
+    .sort((a, b) => {
+      const tierA = a.enMatchTier ?? -1;
+      const tierB = b.enMatchTier ?? -1;
+      if (tierA !== tierB) return tierA - tierB;
+      return (a.frequency ?? UNRANKED_FREQUENCY) - (b.frequency ?? UNRANKED_FREQUENCY);
+    });
   for (const r of exactMerged) {
     if (!seen.has(r.file)) {
       seen.add(r.file);
