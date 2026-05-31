@@ -320,7 +320,7 @@
           <span>{{ t('word.conjugation') }}</span>
           <a class="grammar-jump" @click.prevent="scrollToTop">↑ {{ t('word.meanings') }}</a>
         </div>
-        <VerbConjugation :verb="word" />
+        <VerbConjugation :verb="word" :file="f7route.params.file" />
       </template>
       <template v-else-if="word.pos === 'noun' || word.pos === 'proper noun'">
         <div class="block-title meanings-header" id="word-grammar">

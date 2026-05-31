@@ -342,6 +342,37 @@ mark.example-highlight {
   flex-wrap: wrap;
   margin-bottom: 12px;
 }
+.verb-prep-hints {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.verb-prep-hint {
+  font-size: 0.82em;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: var(--f7-block-bg-color, #f4f4f4);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.verb-prep-badge {
+  font-weight: 600;
+  color: var(--color-rule-match);
+  white-space: nowrap;
+}
+.verb-prep-case {
+  font-weight: 400;
+  font-size: 0.9em;
+}
+.verb-prep-en {
+  color: var(--f7-list-item-footer-text-color);
+}
+.verb-prep-ref-link {
+  font-size: 0.9em;
+  padding: 2px 10px;
+}
 .verb-principal {
   display: flex;
   gap: 4px;

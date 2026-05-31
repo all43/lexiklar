@@ -6,11 +6,15 @@
 
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { resolve } from "path";
+import verbPrepsData from "../data/rules/verb-prepositions.json" with { type: "json" };
 
 const WORDS_DIR = resolve("data/words");
 
+const verbPrepPaths = [...new Set(verbPrepsData.entries.map(e => `verbs/${e.base}`))];
+
 // grammar page id → list of posDir/file paths to annotate
 const GRAMMAR_MAP: Record<string, string[]> = {
+  "verb-prepositions": verbPrepPaths,
   "connectors": [
     "conjunctions/weil_konjunktion",
     "conjunctions/weil_subjunktion",

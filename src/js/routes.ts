@@ -14,6 +14,7 @@ import TensesPage from "../pages/grammar/TensesPage.vue";
 import KonjunktivPage from "../pages/grammar/KonjunktivPage.vue";
 import ProadverbPage from "../pages/grammar/ProadverbPage.vue";
 import PurposeClausesPage from "../pages/grammar/PurposeClausesPage.vue";
+import VerbPrepositionsPage from "../pages/grammar/VerbPrepositionsPage.vue";
 
 interface Route {
   path: string;
@@ -91,6 +92,10 @@ const routes: Route[] = [
   {
     path: "/grammar/purpose-clauses/",
     component: PurposeClausesPage,
+  },
+  {
+    path: "/grammar/verb-prepositions/",
+    component: VerbPrepositionsPage,
   },
 ];
 

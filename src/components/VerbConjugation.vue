@@ -9,6 +9,15 @@
       <f7-badge color="gray">{{ classLabel }}</f7-badge>
     </div>
 
+    <!-- Fixed preposition hints -->
+    <div v-if="verbPreps.length" class="verb-prep-hints">
+      <div v-for="vp in verbPreps" :key="vp.prep + vp.case" class="verb-prep-hint">
+        <span class="verb-prep-badge">+ {{ vp.prep }} <span class="verb-prep-case">({{ vp.case }})</span></span>
+        <span class="verb-prep-en">{{ vp.en }}</span>
+      </div>
+      <f7-link href="/grammar/verb-prepositions/" class="verb-prep-ref-link">{{ t('grammar.allVerbPrepositions') }}</f7-link>
+    </div>
+
     <!-- Principal parts -->
     <div class="verb-principal">
       <div class="verb-principal-item">
@@ -81,6 +90,7 @@ import { ref, computed } from "vue";
 import ConjugationTable from "./ConjugationTable.vue";
 import { t } from "../js/i18n.js";
 import type { VerbWord, ConjugationTable as ConjType } from "../../types/word.js";
+import verbPrepsData from "../../data/rules/verb-prepositions.json";
 
 const CLASS_LABELS: Record<string, string> = {
   weak: "schwach",
@@ -91,6 +101,7 @@ const CLASS_LABELS: Record<string, string> = {
 
 const props = defineProps<{
   verb: VerbWord;
+  file?: string;
 }>();
 
 const tab = ref<"ind" | "konj" | "other">("ind");
@@ -106,4 +117,9 @@ const classLabel = computed(() =>
 );
 
 const conjugation = computed((): ConjType | undefined => props.verb.conjugation);
+
+const verbPreps = computed(() => {
+  const base = props.file || props.verb.word;
+  return verbPrepsData.entries.filter(e => e.base === base);
+});
 </script>
