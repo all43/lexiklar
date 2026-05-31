@@ -2,10 +2,12 @@ package app.lexiklar.sqlite;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteStatement;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Minimal SQLite wrapper using Android's built-in SQLite.
@@ -61,14 +63,9 @@ public class SqliteDb {
             db.beginTransaction();
         }
         try {
-            // Split and execute statements individually
-            // Android's execSQL doesn't support multi-statement strings
-            String[] statements = sql.split(";");
             int totalChanges = 0;
-            for (String stmt : statements) {
-                String trimmed = stmt.trim();
-                if (trimmed.isEmpty()) continue;
-                db.execSQL(trimmed);
+            for (String stmt : splitStatements(sql)) {
+                db.execSQL(stmt);
             }
             totalChanges = getChanges();
             if (transaction) {
@@ -80,6 +77,47 @@ public class SqliteDb {
                 db.endTransaction();
             }
         }
+    }
+
+    /**
+     * Split a multi-statement SQL string into individual statements, respecting
+     * single-quoted string literals so semicolons inside JSON data values are
+     * not treated as statement terminators.
+     */
+    private static List<String> splitStatements(String sql) {
+        List<String> statements = new ArrayList<>();
+        StringBuilder current = new StringBuilder();
+        boolean inString = false;
+        int len = sql.length();
+        for (int i = 0; i < len; i++) {
+            char c = sql.charAt(i);
+            if (inString) {
+                current.append(c);
+                if (c == '\'') {
+                    if (i + 1 < len && sql.charAt(i + 1) == '\'') {
+                        // Escaped quote '' — consume both characters
+                        current.append('\'');
+                        i++;
+                    } else {
+                        inString = false;
+                    }
+                }
+            } else {
+                if (c == '\'') {
+                    inString = true;
+                    current.append(c);
+                } else if (c == ';') {
+                    String stmt = current.toString().trim();
+                    if (!stmt.isEmpty()) statements.add(stmt);
+                    current = new StringBuilder();
+                } else {
+                    current.append(c);
+                }
+            }
+        }
+        String last = current.toString().trim();
+        if (!last.isEmpty()) statements.add(last);
+        return statements;
     }
 
     public void close() {

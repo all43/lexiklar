@@ -298,7 +298,8 @@ async function applyUpdate() {
     f7.toast.create({ text: t("settings.updateDone"), closeTimeout: 2000, position: "center" }).open();
   } else {
     updateState.value = "error";
-    f7.toast.create({ text: `${t("settings.updateFailed")}: ${result.error}`, closeTimeout: TOAST_AUTO_DISMISS_MS, position: "center" }).open();
+    console.error("DB update failed:", result.error);
+    f7.toast.create({ text: t("settings.updateFailed"), closeTimeout: TOAST_AUTO_DISMISS_MS, position: "center" }).open();
     setTimeout(() => { updateState.value = "idle"; }, TOAST_AUTO_DISMISS_MS);
   }
 }
@@ -312,7 +313,8 @@ async function downloadAppUpdate() {
     appUpdateState.value = "ready";
   } else {
     appUpdateState.value = "error";
-    f7.toast.create({ text: `${t("settings.updateFailed")}: ${result.error}`, closeTimeout: TOAST_AUTO_DISMISS_MS, position: "center" }).open();
+    console.error("App update failed:", result.error);
+    f7.toast.create({ text: t("settings.updateFailed"), closeTimeout: TOAST_AUTO_DISMISS_MS, position: "center" }).open();
     setTimeout(() => { appUpdateState.value = "idle"; }, TOAST_AUTO_DISMISS_MS);
   }
 }
