@@ -4,6 +4,7 @@
     <div class="verb-meta">
       <f7-badge v-if="verb.auxiliary" color="blue">{{ auxLabel }}</f7-badge>
       <f7-badge v-if="verb.separable" color="orange">trennbar</f7-badge>
+      <f7-badge v-if="verb.insep_prefix && !verb.oscillating_verb" color="gray">untrennbar</f7-badge>
       <f7-badge v-if="verb.reflexive === 'mandatory'" color="purple">sich</f7-badge>
       <f7-badge v-if="verb.reflexive === 'optional'" color="purple">sich (opt.)</f7-badge>
       <f7-badge color="gray">{{ classLabel }}</f7-badge>

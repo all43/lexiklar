@@ -744,3 +744,26 @@ export function validateConjugation(
 
   return { valid: true };
 }
+
+// ============================================================
+// Inseparable prefix detection
+// ============================================================
+
+export const INSEP_PREFIXES = ["miss", "be", "ver", "er", "ent", "emp", "zer"] as const;
+
+/**
+ * Returns the inseparable prefix if the verb has one, null otherwise.
+ * Heuristic: word starts with a known inseparable prefix AND past_participle
+ * does not start with "ge" (separable/root verbs add "ge-" in Partizip II;
+ * inseparable-prefix verbs never do). Guards against separable and oscillating verbs.
+ */
+export function detectInsepPrefix(
+  word: string,
+  past_participle: string | null,
+  separable: boolean,
+  oscillating: boolean,
+): string | null {
+  if (separable || oscillating) return null;
+  if (!past_participle || past_participle.startsWith("ge")) return null;
+  return INSEP_PREFIXES.find((p) => word.startsWith(p)) ?? null;
+}

@@ -247,6 +247,7 @@ export interface VerbWord extends WordBase {
   auxiliary: "haben" | "sein" | "both" | null;
   separable: boolean;
   prefix: string | null;
+  insep_prefix?: string | null;
   reflexive: "none" | "optional" | "mandatory";
   conjugation_class: "strong" | "weak" | "mixed" | "irregular" | null;
   stems?: VerbStems;

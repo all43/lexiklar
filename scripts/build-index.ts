@@ -36,6 +36,7 @@ import {
   type WordLookupEntry,
 } from "./lib/text-linked.js";
 import { computeConjugation, computeAllForms } from "../src/utils/verb-forms.js";
+import { detectInsepPrefix } from "./lib/verb-extract.js";
 import { stripOuterQuotes, stripEllipsisMarkers } from "../src/utils/text.js";
 import type {
   Word,
@@ -789,6 +790,14 @@ function main(): void {
       // Inject oscillating flag computed in Phase 1b
       if (isVerbWord(data) && data._oscillating) enriched.oscillating_verb = true;
       delete enriched._oscillating;
+
+      // Inject inseparable prefix (verb-only, computed from word form + participle heuristic)
+      if (isVerbWord(data)) {
+        const insepPrefix = detectInsepPrefix(
+          data.word, data.past_participle, data.separable, !!data._oscillating,
+        );
+        if (insepPrefix) enriched.insep_prefix = insepPrefix;
+      }
 
       if (isVerbWord(data) && verbEndings) {
         if (data.conjugation_class !== "irregular" && data.stems) {
