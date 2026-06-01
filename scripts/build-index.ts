@@ -788,7 +788,21 @@ function main(): void {
       }
 
       // Inject oscillating flag computed in Phase 1b
-      if (isVerbWord(data) && data._oscillating) enriched.oscillating_verb = true;
+      if (isVerbWord(data) && data._oscillating) {
+        enriched.oscillating_verb = true;
+        enriched.related_grammar = [
+          ...(Array.isArray(enriched.related_grammar) ? enriched.related_grammar : []),
+          "oscillating-verbs",
+        ];
+        // Store counterpart (same stem, opposite separable) for direct navigation
+        const counterpart = (stemMap.get(data.word.toLowerCase()) ?? []).find(
+          (s) => isVerbWord(s.data) && (s.data as VerbWord).separable !== data.separable,
+        );
+        if (counterpart) {
+          const cGloss = counterpart.data.senses?.[0]?.gloss_en ?? null;
+          enriched.oscillating_counterpart = { file: counterpart.fileKey, gloss_en: cGloss };
+        }
+      }
       delete enriched._oscillating;
 
       // Inject inseparable prefix (verb-only, computed from word form + participle heuristic)

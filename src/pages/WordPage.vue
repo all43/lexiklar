@@ -63,7 +63,13 @@
         </p>
         <!-- Oscillating verb note -->
         <p v-if="word.oscillating_verb" class="oscillating-note">
-          {{ word.separable ? t('word.oscillatingNoteSep') : t('word.oscillatingNoteInsep') }}
+          <f7-link v-if="word.oscillating_counterpart"
+                   :href="`/word/${word.oscillating_counterpart.file}/`"
+                   class="oscillating-counterpart-link">
+            {{ word.separable ? t('word.oscillatingNoteSep') : t('word.oscillatingNoteInsep') }}
+            <span v-if="word.oscillating_counterpart.gloss_en" class="oscillating-gloss-en">{{ word.oscillating_counterpart.gloss_en }}</span>
+          </f7-link>
+          <template v-else>{{ word.separable ? t('word.oscillatingNoteSep') : t('word.oscillatingNoteInsep') }}</template>
         </p>
         <p>
           <f7-badge :color="posColor">{{ word.pos }}</f7-badge>
@@ -789,6 +795,7 @@ const GRAMMAR_PAGE_TITLE_KEYS: Record<string, string> = {
   "modal-verbs":          "grammar.modalVerbsTitle",
   "cases":                "grammar.casesTitle",
   "reflexive":            "grammar.reflexiveTitle",
+  "oscillating-verbs":   "grammar.oscillatingVerbsTitle",
   "noun-gender":          "grammar.nounGenderRulesTitle",
   "adjective-declension": "grammar.adjectiveDeclensionTitle",
   "determiners":          "grammar.determinersTitle",
@@ -1119,6 +1126,13 @@ onMounted(async () => {
   margin: 2px 0 0;
   font-size: 0.8em;
   font-style: italic;
+  color: var(--f7-list-item-footer-text-color);
+}
+.oscillating-counterpart-link {
+  font-style: italic;
+  color: var(--f7-theme-color);
+}
+.oscillating-gloss-en {
   color: var(--f7-list-item-footer-text-color);
 }
 

@@ -209,6 +209,7 @@ export interface WordBase {
   // Runtime fields added by build-index.ts (stored in SQLite data blob)
   frequency?: number;
   oscillating_verb?: boolean;
+  oscillating_counterpart?: { file: string; gloss_en: string | null };
   related?: { file: string; type: string }[];
   compound_parts?: string[];
   compound_of?: { file: string; type: string }[];

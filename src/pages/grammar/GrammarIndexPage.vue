@@ -15,6 +15,7 @@
       <f7-list-item link="/grammar/konjunktiv/"          :title="t('grammar.konjunktiv')" />
       <f7-list-item link="/grammar/modal-verbs/"          :title="t('grammar.modalVerbs')" />
       <f7-list-item link="/grammar/reflexive/"            :title="t('grammar.reflexive')" />
+      <f7-list-item link="/grammar/oscillating-verbs/"   :title="t('grammar.oscillatingVerbs')" />
       <f7-list-item link="/grammar/verb-prepositions/"   :title="t('grammar.verbPrepositions')" />
       <f7-list-item link="/grammar/connectors/"           :title="t('grammar.connectors')" />
       <f7-list-item link="/grammar/purpose-clauses/"     :title="t('grammar.purposeClauses')" />

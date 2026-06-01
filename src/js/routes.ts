@@ -9,6 +9,7 @@ import DeterminersPage from "../pages/grammar/DeterminersPage.vue";
 import CasesPage from "../pages/grammar/CasesPage.vue";
 import ModalVerbsPage from "../pages/grammar/ModalVerbsPage.vue";
 import ReflexivePage from "../pages/grammar/ReflexivePage.vue";
+import OscillatingVerbsPage from "../pages/grammar/OscillatingVerbsPage.vue";
 import ConnectorsPage from "../pages/grammar/ConnectorsPage.vue";
 import TensesPage from "../pages/grammar/TensesPage.vue";
 import KonjunktivPage from "../pages/grammar/KonjunktivPage.vue";
@@ -72,6 +73,10 @@ const routes: Route[] = [
   {
     path: "/grammar/reflexive/",
     component: ReflexivePage,
+  },
+  {
+    path: "/grammar/oscillating-verbs/",
+    component: OscillatingVerbsPage,
   },
   {
     path: "/grammar/connectors/",
