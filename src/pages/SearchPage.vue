@@ -350,14 +350,17 @@ function onClear() {
 
 function itemFooter(item: SearchResultWithForm): string {
   const displayTitle = item.pluralDominant ? item.pluralForm : item.lemma;
+  const parts: string[] = [];
   if (item.matchedForm && item.matchedForm.toLowerCase() !== displayTitle?.toLowerCase()) {
-    return `\u2190 ${item.matchedForm}`;
-  }
-  if (item.articleMismatch) {
+    parts.push(`\u2190 ${item.matchedForm}`);
+  } else if (item.articleMismatch) {
     const correct = item.articleCorrect ?? (item.gender === "M" ? "der" : item.gender === "F" ? "die" : item.gender === "N" ? "das" : undefined);
-    if (correct) return t("search.articleMismatch", { wrong: item.articleMismatch, correct });
+    if (correct) parts.push(t("search.articleMismatch", { wrong: item.articleMismatch, correct }));
   }
-  return "";
+  if (item.oscillating) {
+    parts.push(item.separable ? "trennbar" : "untrennbar");
+  }
+  return parts.join(" \u00b7 ");
 }
 
 const itemGlosses = wordListGlosses;

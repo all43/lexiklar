@@ -14,6 +14,8 @@ export interface SearchResult {
   glossEn: string[] | null;
   enMatchTier?: number;
   formMatch?: boolean;
+  oscillating?: boolean;
+  separable?: boolean | null;
 }
 
 export interface WordRow {

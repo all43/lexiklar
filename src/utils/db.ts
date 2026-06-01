@@ -78,6 +78,8 @@ function processSearchRow(row: Record<string, unknown>): SearchResult {
     superlative: (row.superlative as string) || null,
     file: row.file as string,
     glossEn: row.gloss_en ? JSON.parse(row.gloss_en as string) as string[] : [],
+    oscillating: !!(row.oscillating_verb),
+    separable: row.separable_verb != null ? !!(row.separable_verb as number) : null,
   };
 }
 
@@ -453,7 +455,9 @@ export async function getExamples(ids: string[]): Promise<Record<string, Example
 export async function searchByLemma(q: string): Promise<SearchResult[]> {
   const folded = foldUmlauts(q);
   const rows = await query(
-    `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, acc_form, file, gloss_en
+    `SELECT lemma, pos, gender, frequency, plural_dominant, plural_form, acc_form, file, gloss_en,
+            json_extract(data,'$.oscillating_verb') as oscillating_verb,
+            json_extract(data,'$.separable') as separable_verb
      FROM words
      WHERE lemma LIKE ? COLLATE NOCASE
         OR lemma_folded LIKE ?
@@ -491,6 +495,8 @@ export async function searchByGlossEn(q: string): Promise<SearchResult[]> {
   const rows = await query(
     `SELECT w.lemma, w.pos, w.gender, w.frequency,
             w.plural_dominant, w.plural_form, w.acc_form, w.file, w.gloss_en,
+            json_extract(w.data,'$.oscillating_verb') as oscillating_verb,
+            json_extract(w.data,'$.separable') as separable_verb,
             CASE
               WHEN w.gloss_en LIKE ? THEN 0
               WHEN lower(w.gloss_en) LIKE ? OR lower(w.gloss_en) LIKE ?
@@ -519,8 +525,9 @@ export async function searchByGlossEn(q: string): Promise<SearchResult[]> {
 export async function searchByWordForm(q: string): Promise<SearchResult[]> {
   const rows = await query(
     `SELECT w.lemma, w.pos, w.gender, w.frequency, w.superlative, w.plural_dominant,
-            w.plural_form, w.acc_form,
-            w.file, w.gloss_en
+            w.plural_form, w.acc_form, w.file, w.gloss_en,
+            json_extract(w.data,'$.oscillating_verb') as oscillating_verb,
+            json_extract(w.data,'$.separable') as separable_verb
      FROM word_forms wf
      JOIN words w ON w.id = wf.word_id
      WHERE wf.form = ? COLLATE NOCASE

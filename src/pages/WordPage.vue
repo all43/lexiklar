@@ -66,8 +66,7 @@
           <f7-link v-if="word.oscillating_counterpart"
                    :href="`/word/${word.oscillating_counterpart.file}/`"
                    class="oscillating-counterpart-link">
-            {{ word.separable ? t('word.oscillatingNoteSep') : t('word.oscillatingNoteInsep') }}
-            <span v-if="word.oscillating_counterpart.gloss_en" class="oscillating-gloss-en">{{ word.oscillating_counterpart.gloss_en }}</span>
+            {{ word.separable ? t('word.oscillatingNoteSep') : t('word.oscillatingNoteInsep') }}&nbsp;<span v-if="word.oscillating_counterpart.gloss_en" class="oscillating-gloss-en">{{ word.oscillating_counterpart.gloss_en }}</span>
           </f7-link>
           <template v-else>{{ word.separable ? t('word.oscillatingNoteSep') : t('word.oscillatingNoteInsep') }}</template>
         </p>
