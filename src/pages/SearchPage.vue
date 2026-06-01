@@ -602,7 +602,10 @@ async function search(q: string, gen: number) {
   }
 
   await findPhraseMatches(artInfo ? artInfo.remainder : q, seen);
-  if (gen !== searchGen) return;
+  if (gen !== searchGen) {
+    phraseMatches.value = [];
+    return;
+  }
   loading.value = false;
 }
 
