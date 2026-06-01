@@ -95,7 +95,7 @@
       <f7-block v-if="!loading && results.length === 0">
         <p>{{ t('search.noResults') }}</p>
       </f7-block>
-      <template v-if="!loading && results.length === 0 && suggestions.length > 0">
+      <template v-if="!loading && results.length <= 2 && suggestions.length > 0">
         <f7-block-title>{{ t('search.didYouMean') }}</f7-block-title>
         <f7-list class="home-list gloss-list" inset media-list>
           <f7-list-item
@@ -586,9 +586,11 @@ async function search(q: string, gen: number) {
   if (gen !== searchGen) return;
   results.value = res;
 
-  if (res.length === 0 && q.length >= 3) {
+  if (res.length <= 2 && q.length >= 3) {
     const sugQ = artInfo ? artInfo.remainder : q;
-    suggestions.value = await getSuggestions(sugQ);
+    const resultFiles = new Set(res.map((r) => r.file));
+    const raw = await getSuggestions(sugQ);
+    suggestions.value = raw.filter((s) => !resultFiles.has(s.file));
   } else {
     suggestions.value = [];
   }
