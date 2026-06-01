@@ -294,7 +294,7 @@ const vlParams = computed(() => ({
   renderExternal: renderExternal,
   height: (item: SearchResultWithForm) => {
     const hasGloss = (item.glossEn?.length ?? 0) > 0;
-    const hasFooter = !!item.matchedForm || !!item.articleMismatch;
+    const hasFooter = !!item.matchedForm || !!item.articleMismatch || !!pluralTip(item);
     if (hasGloss && hasFooter) return f7theme.ios ? 79 : 85;
     if (hasGloss || hasFooter) return f7theme.ios ? 63 : 69;
     return f7theme.ios ? 44 : 48;
@@ -348,6 +348,15 @@ function onClear() {
   searchQuery.value = "";
 }
 
+// German plural to surface when a result was found via the English-plural pass
+// (e.g. searching "houses" finds Haus \u2014 show "Pl. H\u00e4user"). Nouns only, and only
+// when the plural differs from the displayed title.
+function pluralTip(item: SearchResultWithForm): string | null {
+  if (!item.enPlural || item.pos !== "NOUN" || item.pluralDominant) return null;
+  if (!item.pluralForm || item.pluralForm.toLowerCase() === item.lemma.toLowerCase()) return null;
+  return item.pluralForm;
+}
+
 function itemFooter(item: SearchResultWithForm): string {
   const displayTitle = item.pluralDominant ? item.pluralForm : item.lemma;
   const parts: string[] = [];
@@ -357,6 +366,8 @@ function itemFooter(item: SearchResultWithForm): string {
     const correct = item.articleCorrect ?? (item.gender === "M" ? "der" : item.gender === "F" ? "die" : item.gender === "N" ? "das" : undefined);
     if (correct) parts.push(t("search.articleMismatch", { wrong: item.articleMismatch, correct }));
   }
+  const pt = pluralTip(item);
+  if (pt) parts.push(t("search.pluralMatch", { en: item.enPluralQuery ?? "", de: pt }));
   if (item.oscillating) {
     parts.push(item.separable ? "trennbar" : "untrennbar");
   }

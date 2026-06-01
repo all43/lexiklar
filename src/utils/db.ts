@@ -472,8 +472,74 @@ export async function searchByLemma(q: string): Promise<SearchResult[]> {
 }
 
 /**
+ * Irregular English plural → singular (noun subset). en_terms stores singular
+ * tokens, so a plural query like "mice" must be mapped back to "mouse".
+ */
+const EN_IRREGULAR_PLURALS: Record<string, string> = {
+  children: "child", women: "woman", men: "man", people: "person",
+  feet: "foot", teeth: "tooth", mice: "mouse", geese: "goose",
+  lives: "life", wives: "wife", knives: "knife", halves: "half",
+  leaves: "leaf", selves: "self", loaves: "loaf", thieves: "thief",
+  shelves: "shelf", wolves: "wolf", calves: "calf", elves: "elf",
+};
+
+/**
+ * Words that end in -s (or look plural) but must NOT be singularized — the
+ * stripped form would be a different real English word and produce a false
+ * reverse-search hit (e.g. "news" → "new", "means" → "mean"). Extendable;
+ * covers the common cases, not every uncountable noun.
+ */
+const EN_PLURAL_BLOCKLIST = new Set<string>([
+  // uncountables / pseudo-plurals whose stem is a common word
+  "news", "means", "series", "species", "lens", "bias",
+  // academic fields ending in -ics
+  "physics", "mathematics", "maths", "economics", "politics", "ethics",
+  "statistics", "electronics", "athletics", "gymnastics", "mechanics",
+  "linguistics", "logistics", "genetics", "robotics",
+  // -us latinates / common -s singulars
+  "status", "focus", "virus", "bonus", "campus", "census", "bus", "gas",
+  "this", "his", "has", "its", "yes", "plus", "minus", "versus", "always",
+]);
+
+/**
+ * Candidate singular forms for an English plural query. Returns guesses (e.g.
+ * "boxes" → ["box"], "houses" → ["house"]) which are matched EXACT-only against
+ * en_terms, so over-generation is harmless — only the real singular hits a term.
+ * Returns [] when the word is too short, blocklisted, or doesn't look plural.
+ */
+function englishSingulars(term: string): string[] {
+  if (term.length < 4 || EN_PLURAL_BLOCKLIST.has(term)) return [];
+  const irregular = EN_IRREGULAR_PLURALS[term];
+  if (irregular) return [irregular];
+  if (!term.endsWith("s") || term.endsWith("ss")) return [];
+  const cands: string[] = [];
+  if (term.endsWith("ies")) cands.push(term.slice(0, -3) + "y"); // babies → baby
+  if (term.endsWith("es")) cands.push(term.slice(0, -2));        // boxes → box, dishes → dish
+  cands.push(term.slice(0, -1));                                 // houses → house, cars → car
+  return [...new Set(cands)].filter(c => c !== term && c.length >= 3);
+}
+
+// Column list shared by the English reverse-search queries (matches the fields
+// read by processSearchRow; w.id is intentionally omitted — results key on file).
+const EN_SEARCH_COLS =
+  `w.lemma, w.pos, w.gender, w.frequency, w.plural_dominant, w.plural_form,
+   w.acc_form, w.file, w.gloss_en,
+   json_extract(w.data,'$.oscillating_verb') as oscillating_verb,
+   json_extract(w.data,'$.separable') as separable_verb`;
+
+function mapEnRow(row: Record<string, unknown>): SearchResult {
+  const r = processSearchRow(row);
+  r.enMatchTier = row.en_match_tier as number;
+  return r;
+}
+
+/**
  * Search words by English term (via pre-built en_terms table).
  * Matches by prefix so typing "manufact" finds "manufacture".
+ *
+ * Plural queries are handled by a separate singular pass (see englishSingulars):
+ * en_terms stores singular tokens, so "houses" also looks up "house". That pass
+ * matches EXACT-only and its hits are merged into the primary results.
  *
  * Ranking tiers:
  *   0 — exact gloss_en match (the English term IS a primary translation)
@@ -484,6 +550,8 @@ export async function searchByLemma(q: string): Promise<SearchResult[]> {
 export async function searchByGlossEn(q: string): Promise<SearchResult[]> {
   const term = q.toLowerCase().trim();
   if (!term) return [];
+
+  // --- Primary query: prefix match on the typed term (original behaviour) ---
   // Tier 0: exact gloss_en entry — "drug" matches ["drug","hashish"] but not ["drug dealer"]
   const glossExact = `%"${term}"%`;
   // Tier 1: term is the head noun in a compound gloss (last word or before parenthetical)
@@ -493,10 +561,7 @@ export async function searchByGlossEn(q: string): Promise<SearchResult[]> {
   const glossBeforeParen = `% ${term} (%`;
   const glossStartParen = `%"${term} (%`;
   const rows = await query(
-    `SELECT w.lemma, w.pos, w.gender, w.frequency,
-            w.plural_dominant, w.plural_form, w.acc_form, w.file, w.gloss_en,
-            json_extract(w.data,'$.oscillating_verb') as oscillating_verb,
-            json_extract(w.data,'$.separable') as separable_verb,
+    `SELECT ${EN_SEARCH_COLS},
             CASE
               WHEN w.gloss_en LIKE ? THEN 0
               WHEN lower(w.gloss_en) LIKE ? OR lower(w.gloss_en) LIKE ?
@@ -512,11 +577,46 @@ export async function searchByGlossEn(q: string): Promise<SearchResult[]> {
      LIMIT ${SEARCH_RESULT_LIMIT}`,
     [glossExact, glossTrailing, glossBeforeParen, glossStartParen, term, term + "%"],
   );
-  return rows.map(row => {
-    const r = processSearchRow(row);
-    r.enMatchTier = row.en_match_tier as number;
-    return r;
-  });
+  const results = rows.map(mapEnRow);
+
+  // --- Singular pass: only when the query looks plural ---
+  const singulars = englishSingulars(term);
+  if (singulars.length === 0) return results;
+
+  // Every matched row already satisfies exact en_terms membership (the WHERE), so
+  // the tier is at worst 2 — no separate membership check needed in the CASE.
+  const tier0 = singulars.map(() => "w.gloss_en LIKE ?").join(" OR ");
+  const tier1 = singulars
+    .map(() => "(lower(w.gloss_en) LIKE ? OR lower(w.gloss_en) LIKE ? OR lower(w.gloss_en) LIKE ?)")
+    .join(" OR ");
+  const inPlaceholders = singulars.map(() => "?").join(",");
+  const sParams: unknown[] = [];
+  for (const t of singulars) sParams.push(`%"${t}"%`);                          // tier 0
+  for (const t of singulars) sParams.push(`% ${t}"%`, `% ${t} (%`, `%"${t} (%`); // tier 1
+  sParams.push(...singulars);                                                    // WHERE IN
+  const singRows = await query(
+    `SELECT ${EN_SEARCH_COLS},
+            CASE WHEN ${tier0} THEN 0 WHEN ${tier1} THEN 1 ELSE 2 END as en_match_tier
+     FROM words w
+     WHERE w.id IN (SELECT word_id FROM en_terms WHERE term IN (${inPlaceholders}))`,
+    sParams,
+  );
+
+  // Merge: primary results win on duplicate files (their tier reflects the typed
+  // term); then re-rank the union by tier, then frequency, and cap at the limit.
+  const seen = new Set(results.map(r => r.file));
+  for (const row of singRows) {
+    const r = mapEnRow(row);
+    if (seen.has(r.file)) continue;
+    seen.add(r.file);
+    r.enPlural = true;        // only reached via the singular pass — let the UI flag it
+    r.enPluralQuery = term;   // the plural the user typed, for the "(pl.) houses → (pl.) …" tip
+    results.push(r);
+  }
+  results.sort((a, b) =>
+    (a.enMatchTier ?? 3) - (b.enMatchTier ?? 3) ||
+    (a.frequency ?? UNRANKED_FREQUENCY) - (b.frequency ?? UNRANKED_FREQUENCY));
+  return results.slice(0, SEARCH_RESULT_LIMIT);
 }
 
 /**

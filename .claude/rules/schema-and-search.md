@@ -95,6 +95,23 @@ User types "cup" (English reverse search)
     Tier 3: prefix match on en_terms
   → en_match_tier passed to client for result splitting (tiers 0–2 = high priority, tier 3 = low)
   → within each tier: frequency order
+
+User types "houses" / "mice" (English plural reverse search)
+  → en_terms stores singular tokens. searchByGlossEn() runs the primary prefix
+    query unchanged, then — only when the query looks plural — runs a SEPARATE
+    singular pass and merges its hits into the results.
+  → englishSingulars() (db.ts) builds candidates: irregular map (mice→mouse,
+    leaves→leaf) + suffix rules (-ies→-y, -es→-, -s→-). Over-generation is
+    harmless because the singular pass matches EXACT-only against en_terms (only
+    the real singular hits a term); the primary query keeps its prefix match.
+  → merge: primary results win on duplicate files; the union is re-ranked by
+    tier then frequency, so a plural ranks the same as its singular ("houses"
+    finds Haus identically to "house").
+  → EN_PLURAL_BLOCKLIST suppresses false matches where the stripped form is a
+    different common word (news→new, means→mean, physics→physic). Extendable.
+  → singular-pass hits carry enPlural=true; SearchPage shows a "Pl. <German
+    plural>" footer tip on noun results (pluralTip() — nouns with a distinct,
+    non-dominant plural), so "houses" → Haus displays "Pl. Häuser".
 ```
 
 **Search result display**: each result shows title (word), subtitle (up to 3 glosses from `gloss_en`, italic, joined with " · "), and footer (form-match arrow or article-mismatch hint). Glosses use `wordListGlosses()` from `src/utils/word-list.ts`.

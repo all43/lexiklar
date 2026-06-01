@@ -34,6 +34,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "search.emptyHint": "Start typing to search for a German word or English meaning.",
     "search.cancel": "Cancel",
     "search.articleMismatch": "not {wrong} → {correct}",
+    "search.pluralMatch": "(pl.) {en} → (pl.) {de}",
 
     // WordPage
     "word.meanings": "Meanings",
@@ -474,6 +475,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "search.emptyHint": "Tippe ein deutsches Wort oder eine englische Bedeutung ein.",
     "search.cancel": "Abbrechen",
     "search.articleMismatch": "nicht {wrong} → {correct}",
+    "search.pluralMatch": "(pl.) {en} → (pl.) {de}",
 
     // WordPage
     "word.meanings": "Bedeutungen",

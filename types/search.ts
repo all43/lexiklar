@@ -13,6 +13,8 @@ export interface SearchResult {
   file: string;
   glossEn: string[] | null;
   enMatchTier?: number;
+  enPlural?: boolean;     // matched only via the English-plural singular pass (e.g. "houses" → "house")
+  enPluralQuery?: string; // the plural query that triggered the singular pass (e.g. "houses")
   formMatch?: boolean;
   oscillating?: boolean;
   separable?: boolean | null;
