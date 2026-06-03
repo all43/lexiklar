@@ -21,21 +21,12 @@ let _nativeMod: NativeMod | null = null;
 import { SEARCH_RESULT_LIMIT, PHRASE_SEARCH_LIMIT, SUGGESTION_LIMIT, UNRANKED_FREQUENCY, LEVENSHTEIN_SHORT_THRESHOLD, LEVENSHTEIN_LONG_THRESHOLD, PHRASE_MIN_MATCHES, SQLITE_HEADER_SIZE } from "./db-constants.js";
 import { PHRASE_TERM_TTL_MS, UI_YIELD_DELAY_MS, BUILD_MARGIN_MS } from "./time-constants.js";
 import { DB_VERSION_FILE, BUNDLED_DB_FILE } from "./db-paths.js";
+import { foldUmlauts } from "./text.js";
+
+// Re-exported for existing importers (search-state, SearchPage, etc.).
+export { foldUmlauts };
 
 const _isNative = Capacitor.isNativePlatform();
-
-/**
- * Fold umlauts for accent-insensitive search (mirrors build-index.js).
- * Allows "mutze" to match "Mütze", "strasse" to match "Straße", etc.
- */
-export function foldUmlauts(str: string): string {
-  return str
-    .toLowerCase()
-    .replace(/ä/g, "a")
-    .replace(/ö/g, "o")
-    .replace(/ü/g, "u")
-    .replace(/ß/g, "ss");
-}
 
 // Preserve worker state across Vite HMR reloads
 let worker: Worker | null = (import.meta.hot?.data?.worker as Worker) ?? null;

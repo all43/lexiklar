@@ -30,6 +30,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "search.typeMoreChars": "Type at least 2 characters to search.",
     "search.matchingExpressions": "Matching Expressions",
     "search.searchResults": "Search Results",
+    "search.grammarSection": "Grammar",
     "search.showMorePhrases": "Show {n} more",
     "search.emptyHint": "Start typing to search for a German word or English meaning.",
     "search.cancel": "Cancel",
@@ -293,6 +294,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "grammar.determiners": "Articles & determiners",
     "grammar.determinersTitle": "Articles & Determiners",
     "grammar.determinersDesc": "Declension tables for the definite article and possessive determiners.",
+    "grammar.filterPlaceholder": "Filter grammar topics...",
     "grammar.cases": "Cases & prepositions",
     "grammar.casesTitle": "Cases & Prepositions",
     "grammar.casesDesc": "German has four grammatical cases. The case determines the form of articles, pronouns, and adjective endings.",
@@ -471,6 +473,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "search.typeMoreChars": "Mindestens 2 Zeichen eingeben.",
     "search.matchingExpressions": "Passende Ausdrücke",
     "search.searchResults": "Suchergebnisse",
+    "search.grammarSection": "Grammatik",
     "search.showMorePhrases": "{n} weitere anzeigen",
     "search.emptyHint": "Tippe ein deutsches Wort oder eine englische Bedeutung ein.",
     "search.cancel": "Abbrechen",
@@ -734,6 +737,7 @@ const locales: Record<LocaleKey, TranslationMap> = {
     "grammar.determiners": "Artikel & Pronomen",
     "grammar.determinersTitle": "Artikel & Pronomen",
     "grammar.determinersDesc": "Deklinationstabellen f\u00fcr den bestimmten Artikel und Possessivpronomen.",
+    "grammar.filterPlaceholder": "Grammatikthemen filtern...",
     "grammar.cases": "Kasus & Pr\u00e4positionen",
     "grammar.casesTitle": "Kasus & Pr\u00e4positionen",
     "grammar.casesDesc": "Das Deutsche hat vier grammatische Kasus. Der Kasus bestimmt die Form von Artikeln, Pronomen und Adjektivendungen.",
@@ -932,6 +936,15 @@ export function t(key: string, params?: Record<string, string>): string {
     for (const [k, v] of Object.entries(params)) str = str.replaceAll(`{${k}}`, v);
   }
   return str;
+}
+
+/**
+ * Return the translated string for a SPECIFIC locale (ignoring the active one).
+ * Falls back to English, then to the raw key. Used by grammar search, which
+ * matches titles in both locales regardless of UI language.
+ */
+export function tIn(loc: LocaleKey, key: string): string {
+  return locales[loc]?.[key] ?? locales.en[key] ?? key;
 }
 
 /**

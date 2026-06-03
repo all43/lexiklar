@@ -150,4 +150,31 @@ When a user searches multiple words in sequence, matching phrases appear as prio
 
 **i18n keys**: `search.matchingExpressions`, `search.searchResults`, `search.showMorePhrases`
 
-The SQLite index handles all searching, filtering, and data serving. Word JSON files on disk are only used during the build pipeline.
+## Grammar Topic Search (client-side, no DB)
+
+Grammar reference pages (`/grammar/*`) are searchable from the Search tab and from the Grammar
+index page. This is **entirely client-side** — grammar topics are NOT in the SQLite index (the set
+is ~13 entries that already ship in the app bundle as routes + i18n; a DB table would force a
+`schema_version` bump and full re-download for no benefit).
+
+- **Source of truth**: `src/data/grammar-topics.ts` — `grammarTopics: { slug, titleKey, keywords: { en, de } }[]`.
+  `slug` matches the route segment; `titleKey` is the page's i18n title key; `keywords` are curated
+  bilingual search synonyms (terms users type that the title alone won't catch). This array also
+  drives the Grammar index list (`GrammarIndexPage.vue`) and `WordPage.vue`'s `grammarPageTitle()`,
+  so list/search/related-links never drift.
+- **Matcher**: `searchGrammarTopics(query)` in `src/utils/grammar-search.ts` — pure/synchronous.
+  Matches against the title in BOTH locales (via `tIn(loc, key)` in `i18n.ts`) and all keywords in
+  both locales, so matching is independent of the active UI language. Matching is **token-aware**
+  (folds umlauts via `foldUmlauts`, then splits on non-alphanumerics) rather than raw substring, so
+  word fragments don't bleed — "wer" won't match inside "be-wer-ben" and a bare preposition keyword
+  won't match every phrase containing it. Tiers: exact → prefix (candidate continues a still-typing
+  query) → phrase (a multi-token keyword like "freuen über" embedded in a longer query). Titles
+  outrank keywords at the same tier; caps at 5 hits. Each hit carries the matched keyword for an
+  optional footer hint.
+- **Rendering**: `SearchPage.vue` shows a "Grammar" section (i18n `search.grammarSection`) below the
+  word results, before "Did you mean?". "No words found" only shows when both word and grammar hits
+  are empty. `GrammarIndexPage.vue` has a subnavbar filter searchbar (`grammar.filterPlaceholder`)
+  that filters the 13-item list through the same function.
+- **Tests**: `tests/grammar-search.test.ts`.
+
+The SQLite index handles all word searching, filtering, and data serving. Word JSON files on disk are only used during the build pipeline.

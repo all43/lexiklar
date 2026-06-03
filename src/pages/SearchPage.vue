@@ -92,7 +92,21 @@
         <f7-list-button :title="t('report.notFound')" @click="reportMissing" />
       </f7-list>
 
-      <f7-block v-if="!loading && results.length === 0">
+      <!-- Grammar reference topics matching the query -->
+      <template v-if="grammarHits.length">
+        <f7-block-title>{{ t('search.grammarSection') }}</f7-block-title>
+        <f7-list class="grammar-hits" inset strong-ios outline-ios>
+          <f7-list-item
+            v-for="hit in grammarHits"
+            :key="hit.slug"
+            :title="hit.title"
+            :footer="hit.matched"
+            :link="`/grammar/${hit.slug}/`"
+          />
+        </f7-list>
+      </template>
+
+      <f7-block v-if="!loading && results.length === 0 && grammarHits.length === 0">
         <p>{{ t('search.noResults') }}</p>
       </f7-block>
       <template v-if="!loading && results.length <= 2 && suggestions.length > 0">
@@ -199,6 +213,7 @@ import { BYTES_PER_MB } from "../utils/ui-constants.js";
 import type { SearchResult } from "../../types/search.js";
 import WordListBadges from "../components/WordListBadges.vue";
 import { wordListTitle, wordListGlosses, stripArticle, isArticle } from "../utils/word-list.js";
+import { searchGrammarTopics } from "../utils/grammar-search.js";
 import {
   searchByLemma,
   searchByGlossEn,
@@ -276,6 +291,10 @@ const searchBarMode = computed((): "subnavbar" | "bottom" => {
   if (searchBarPosition.value === "top") return "subnavbar";
   return isIOS26Plus() ? "bottom" : "subnavbar";
 });
+
+const grammarHits = computed(() =>
+  searchQuery.value.length >= 2 ? searchGrammarTopics(searchQuery.value) : []
+);
 
 const visiblePhrases = computed(() =>
   phrasesExpanded.value ? phraseMatches.value : phraseMatches.value.slice(0, 3)

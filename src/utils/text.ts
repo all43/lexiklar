@@ -115,3 +115,17 @@ export function stripEllipsisMarkers(text: string): string {
     .replace(/ {2,}/g, " ")
     .trim();
 }
+
+/**
+ * Fold umlauts for accent-insensitive matching (mirrors build-index.ts's
+ * lemma_folded generation). Allows "mutze" to match "Mütze", "strasse" to match
+ * "Straße", etc. Also lowercases.
+ */
+export function foldUmlauts(str: string): string {
+  return str
+    .toLowerCase()
+    .replace(/ä/g, "a")
+    .replace(/ö/g, "o")
+    .replace(/ü/g, "u")
+    .replace(/ß/g, "ss");
+}

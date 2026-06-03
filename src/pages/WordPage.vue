@@ -439,6 +439,7 @@ import type { Word, Sense, VerbWord, NounWord, AdjectiveWord } from "../../types
 import type { Example } from "../../types/example.js";
 import type { SearchResult } from "../../types/search.js";
 import { navigateToWord } from "../utils/navigation.js";
+import { grammarTopics } from "../data/grammar-topics.js";
 import ShareButton from "../components/ShareButton.vue";
 
 interface PreviewSense {
@@ -789,22 +790,9 @@ function getPosColor(pos: string | undefined): string {
   return POS_COLORS[pos || ""] || "gray";
 }
 
-const GRAMMAR_PAGE_TITLE_KEYS: Record<string, string> = {
-  "connectors":           "grammar.connectorsTitle",
-  "modal-verbs":          "grammar.modalVerbsTitle",
-  "cases":                "grammar.casesTitle",
-  "reflexive":            "grammar.reflexiveTitle",
-  "oscillating-verbs":   "grammar.oscillatingVerbsTitle",
-  "noun-gender":          "grammar.nounGenderRulesTitle",
-  "adjective-declension": "grammar.adjectiveDeclensionTitle",
-  "determiners":          "grammar.determinersTitle",
-  "konjunktiv":           "grammar.konjunktivTitle",
-  "proadverb":            "grammar.proadverbTitle",
-  "purpose-clauses":      "grammar.purposeClausesTitle",
-};
-
 function grammarPageTitle(pageId: string): string {
-  return t(GRAMMAR_PAGE_TITLE_KEYS[pageId] ?? pageId);
+  const topic = grammarTopics.find((g) => g.slug === pageId);
+  return t(topic?.titleKey ?? pageId);
 }
 
 function navigateToGrammar(pageId: string) {
