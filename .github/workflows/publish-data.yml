@@ -16,6 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      # How many past published versions keep a direct-to-current patch (= max hops).
+      # A user up to this many publishes behind still gets an incremental patch
+      # instead of a full DB download. The 50%-changed guard in publish-update.ts
+      # auto-caps far-back versions, so a generous value is safe.
+      KEEP_PATCHES: "15"
     steps:
       - uses: actions/checkout@v4
 
@@ -28,40 +34,82 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - name: Fetch previous DB hashes from R2
-        run: curl -sf https://cdn.lexiklar.app/db-hashes.json -o /tmp/db-hashes.json || true
+      - name: Fetch current manifest from R2
+        run: |
+          mkdir -p /tmp/release-assets
+          # publish-update.ts reads this to preserve the bundle section + carry-forward logic.
+          curl -sf https://cdn.lexiklar.app/manifest.json -o /tmp/manifest.json || true
+          cp /tmp/manifest.json /tmp/release-assets/manifest.json 2>/dev/null || true
 
       - name: Build search index
         run: pnpm run build-index
 
-      - name: Generate release assets and manifest
-        id: publish
+      - name: Check whether DB content changed
+        id: guard
         run: |
-          mkdir -p /tmp/release-assets
-
-          DB_VERSION=$(node -e '
+          NEW_VERSION=$(node -e '
             const Database = require("better-sqlite3");
             const db = new Database("data/lexiklar.db", { readonly: true });
             process.stdout.write(db.prepare("SELECT value FROM meta WHERE key = ?").get("version").value);
           ')
-          CDN_URL="https://cdn.lexiklar.app"
-
-          OLD_HASHES_FLAG=""
-          if [ -f /tmp/db-hashes.json ]; then
-            OLD_HASHES_FLAG="--old-hashes /tmp/db-hashes.json"
+          CUR_VERSION=$(node -e '
+            const fs = require("fs");
+            try { process.stdout.write((JSON.parse(fs.readFileSync("/tmp/manifest.json","utf8")).db || {}).current_version || ""); }
+            catch { process.stdout.write(""); }
+          ')
+          echo "new_version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+          if [ -n "$CUR_VERSION" ] && [ "$NEW_VERSION" = "$CUR_VERSION" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::DB content unchanged ($NEW_VERSION already published) — skipping publish."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Publishing ${CUR_VERSION:-<none>} -> $NEW_VERSION"
           fi
 
-          # Download existing manifest from R2 (to preserve bundle section + old patches)
-          curl -sf "${CDN_URL}/manifest.json" -o /tmp/release-assets/manifest.json 2>/dev/null || true
+      - name: Download old hash snapshots for multi-hop patches
+        if: steps.guard.outputs.changed == 'true'
+        run: |
+          mkdir -p /tmp/old-hashes
+          # keep-set = previous current_version + existing patch source versions, trimmed
+          # to KEEP_PATCHES. A fresh patch is generated from each → the new current, so apps
+          # up to KEEP_PATCHES publishes behind still get an incremental patch, not a full DB.
+          KEEP=$(node -e '
+            const fs = require("fs");
+            let m = {}; try { m = JSON.parse(fs.readFileSync("/tmp/manifest.json","utf8")); } catch {}
+            const db = m.db || {};
+            const set = [];
+            if (db.current_version) set.push(db.current_version);
+            for (const k of Object.keys(db.patches || {})) if (!set.includes(k)) set.push(k);
+            process.stdout.write(set.slice(0, Number(process.env.KEEP_PATCHES) || 3).join(" "));
+          ')
+          PREV_CURRENT=$(node -e 'const fs=require("fs");try{process.stdout.write((JSON.parse(fs.readFileSync("/tmp/manifest.json","utf8")).db||{}).current_version||"")}catch{process.stdout.write("")}')
+          for V in $KEEP; do
+            if [ "$V" = "$PREV_CURRENT" ] && curl -sf "https://cdn.lexiklar.app/db-hashes.json" -o "/tmp/old-hashes/$V.json"; then
+              echo "Fetched current snapshot $V (db-hashes.json)"
+            elif curl -sf "https://cdn.lexiklar.app/hashes/$V.json.gz" -o "/tmp/old-hashes/$V.json.gz" && gunzip -f "/tmp/old-hashes/$V.json.gz"; then
+              echo "Fetched archived snapshot $V (gzipped)"
+            elif curl -sf "https://cdn.lexiklar.app/hashes/$V.json" -o "/tmp/old-hashes/$V.json"; then
+              echo "Fetched archived snapshot $V (legacy plain)"
+            else
+              echo "::warning::No hash snapshot for $V — apps on $V will get a full download"
+            fi
+          done
+          echo "Snapshots available for patching:"; ls -la /tmp/old-hashes || true
 
+      - name: Generate release assets and manifest
+        id: publish
+        if: steps.guard.outputs.changed == 'true'
+        run: |
+          CDN_URL="https://cdn.lexiklar.app"
           npx tsx scripts/publish-update.ts \
-            $OLD_HASHES_FLAG \
+            --old-hashes-dir /tmp/old-hashes \
+            --keep-patches "$KEEP_PATCHES" \
             --out /tmp/release-assets \
             --release-url "$CDN_URL"
-
-          echo "db_version=$DB_VERSION" >> "$GITHUB_OUTPUT"
+          echo "db_version=${{ steps.guard.outputs.new_version }}" >> "$GITHUB_OUTPUT"
 
       - name: Upload assets to R2 CDN
+        if: steps.guard.outputs.changed == 'true'
         run: |
           npm i -g wrangler@4
 
@@ -99,6 +147,29 @@ jobs:
           wrangler r2 object put lexiklar-data/db-hashes.json \
             --file /tmp/release-assets/db-hashes.json \
             --content-type application/json --remote
+
+          # Archive this snapshot under its version so future runs can patch FROM it
+          # (multi-hop). db-hashes.json always mirrors the latest (plain, back-compat);
+          # hashes/<v>.json.gz is the gzipped per-version archive older bundles catch up from.
+          gzip -9 -c /tmp/release-assets/db-hashes.json > /tmp/release-assets/db-hashes.json.gz
+          wrangler r2 object put "lexiklar-data/hashes/${{ steps.guard.outputs.new_version }}.json.gz" \
+            --file /tmp/release-assets/db-hashes.json.gz \
+            --content-type application/gzip --remote
+
+          # Backfill gzipped archives for every keep-set source we patched from, so each
+          # stays patch-able for the full KEEP_PATCHES window. Without this, a version that
+          # predates per-version archiving (e.g. the current production DB, only reachable
+          # via db-hashes.json while it is current) would fall off after a single publish.
+          # Idempotent: re-uploads identical content for versions already archived.
+          for f in /tmp/old-hashes/*.json; do
+            [ -f "$f" ] || continue
+            V=$(basename "$f" .json)
+            [ "$V" = "${{ steps.guard.outputs.new_version }}" ] && continue
+            gzip -9 -c "$f" > "/tmp/${V}.json.gz"
+            wrangler r2 object put "lexiklar-data/hashes/${V}.json.gz" \
+              --file "/tmp/${V}.json.gz" \
+              --content-type application/gzip --remote
+          done
 
           echo "Uploaded to cdn.lexiklar.app"
         env:

@@ -8,6 +8,7 @@
  *   npx tsx scripts/publish-update.ts --out <dir>                                    # full DB only
  *   npx tsx scripts/publish-update.ts --old <old.db> --out <dir>                     # with patch from old DB
  *   npx tsx scripts/publish-update.ts --old-hashes <hashes.json> --out <dir>         # with patch from hash snapshot
+ *   npx tsx scripts/publish-update.ts --old-hashes-dir <dir> --out <dir>             # multi-hop: a patch per snapshot in <dir>
  *   npx tsx scripts/publish-update.ts --old-hashes <hashes.json> --out <dir> --keep-patches 3
  *   npx tsx scripts/publish-update.ts --out <dir> --release-url <base>               # absolute URLs in manifest
  */
@@ -64,13 +65,17 @@ export interface DbHashes {
  * leave users on a non-current version after applying.
  *
  * @param existing   - patches from the current manifest on disk (may be undefined)
- * @param newEntry   - patch just generated for this run, or null if skipped
+ * @param newEntry   - patch(es) just generated for this run; a single entry, an
+ *                     array (multi-hop: one per old-version snapshot), or null
  * @param newVersion - the DB version just published
  * @param keepPatches - max number of patch entries to retain (default 3)
  */
 export function mergeManifestPatches(
   existing: Record<string, { url: string; size: number }> | undefined,
-  newEntry: { fromVersion: string; url: string; size: number } | null,
+  newEntry:
+    | { fromVersion: string; url: string; size: number }
+    | { fromVersion: string; url: string; size: number }[]
+    | null,
   newVersion: string,
   keepPatches = 3,
 ): Record<string, { url: string; size: number }> {
@@ -86,8 +91,9 @@ export function mergeManifestPatches(
     }
   }
 
-  if (newEntry) {
-    patches[newEntry.fromVersion] = { url: newEntry.url, size: newEntry.size };
+  const newEntries = newEntry === null ? [] : Array.isArray(newEntry) ? newEntry : [newEntry];
+  for (const entry of newEntries) {
+    patches[entry.fromVersion] = { url: entry.url, size: entry.size };
   }
 
   const entries = Object.entries(patches);
@@ -268,6 +274,60 @@ export function generatePatchFromHashes(oldHashes: DbHashes, newDb: Database.Dat
  * Uses subquery `(SELECT id FROM words WHERE file = ?)` for the word_id
  * since the client DB has different autoincrement IDs.
  */
+/**
+ * Generate, gzip, and size-check a patch from one old-version snapshot to the
+ * new DB. Returns a manifest patch entry, or null when no usable patch was
+ * produced (same version, >50% changed, or patch larger than 50% of the DB).
+ * Writes the `.sql.gz` into `outDir` as a side effect when a patch is kept.
+ */
+async function buildPatchEntry(
+  oldHashes: DbHashes,
+  newDb: Database.Database,
+  newVersion: string,
+  newDbPath: string,
+  outDir: string,
+  releaseUrl: string | null,
+): Promise<{ fromVersion: string; url: string; size: number } | null> {
+  const oldVersion = oldHashes.version;
+  if (!oldVersion) {
+    console.warn("No version in old hashes — skipping patch generation.");
+    return null;
+  }
+  if (oldVersion === newVersion) {
+    console.log(`Snapshot ${oldVersion} matches new version — no patch needed.`);
+    return null;
+  }
+
+  console.log(`Generating patch: ${oldVersion} → ${newVersion}`);
+  const patchSql = generatePatchFromHashes(oldHashes, newDb);
+  if (patchSql === null) {
+    console.log(`More than 50% changed since ${oldVersion} — skipping patch (full download is cheaper)`);
+    return null;
+  }
+
+  const patchFileName = `${oldVersion}_to_${newVersion}.sql.gz`;
+  const patchPath = join(outDir, patchFileName);
+  await pipeline(
+    (async function* () { yield Buffer.from(patchSql + "\n"); })(),
+    createGzip({ level: 9 }),
+    createWriteStream(patchPath),
+  );
+  const patchSize = statSync(patchPath).size;
+  const uncompressedSize = Buffer.byteLength(patchSql + "\n");
+  const lines = patchSql.split("\n").filter(Boolean);
+  console.log(`Patch ${oldVersion}: ${lines.length} SQL statements, ${(uncompressedSize / 1024).toFixed(1)} KB → ${(patchSize / 1024).toFixed(1)} KB gzipped`);
+
+  const fullDbSize = statSync(newDbPath).size;
+  if (patchSize > fullDbSize * 0.5) {
+    console.log(`Patch too large (${(patchSize / (1024 * 1024)).toFixed(1)} MB > 50% of ${(fullDbSize / (1024 * 1024)).toFixed(1)} MB DB) — skipping`);
+    unlinkSync(patchPath);
+    return null;
+  }
+
+  const patchUrl = releaseUrl ? `${releaseUrl}/patches/${patchFileName}` : patchFileName;
+  return { fromVersion: oldVersion, url: patchUrl, size: patchSize };
+}
+
 function appendFormsAndTerms(stmts: string[], newDb: Database.Database, wordId: number, file: string): void {
   const fileSubquery = `(SELECT id FROM words WHERE file = ${esc(file)})`;
 
@@ -288,12 +348,13 @@ async function main(): Promise<void> {
   const args = process.argv.slice(2);
   const oldPath = stringArg(args, "--old");
   const oldHashesPath = stringArg(args, "--old-hashes");
+  const oldHashesDir = stringArg(args, "--old-hashes-dir");
   const outDir = stringArg(args, "--out");
   const keepPatches = intArg(args, "--keep-patches", 3);
   const releaseUrl = stringArg(args, "--release-url");
 
   if (!outDir) {
-    console.error("Usage: npx tsx scripts/publish-update.ts --out <dir> [--old <old.db>|--old-hashes <hashes.json>] [--keep-patches 3] [--release-url <url>]");
+    console.error("Usage: npx tsx scripts/publish-update.ts --out <dir> [--old <old.db>|--old-hashes <hashes.json>|--old-hashes-dir <dir>] [--keep-patches 3] [--release-url <url>]");
     process.exit(1);
   }
 
@@ -332,67 +393,47 @@ async function main(): Promise<void> {
     }
   }
 
-  // Resolve old state: full DB or hash snapshot
-  let oldHashes: DbHashes | null = null;
+  // Resolve old state: a full DB, a single hash snapshot, or a directory of
+  // snapshots (multi-hop — one patch generated per old version → new current).
+  const oldSnapshots: DbHashes[] = [];
 
   if (oldPath && existsSync(oldPath)) {
     const oldDb = new Database(oldPath, { readonly: true });
-    oldHashes = extractHashes(oldDb);
+    oldSnapshots.push(extractHashes(oldDb));
     oldDb.close();
   } else if (oldPath) {
     console.warn(`Old DB not found at ${oldPath} — generating manifest without patch.`);
   } else if (oldHashesPath && existsSync(oldHashesPath)) {
-    oldHashes = JSON.parse(readFileSync(oldHashesPath, "utf-8")) as DbHashes;
+    oldSnapshots.push(JSON.parse(readFileSync(oldHashesPath, "utf-8")) as DbHashes);
   } else if (oldHashesPath) {
     console.warn(`Old hashes file not found at ${oldHashesPath} — generating manifest without patch.`);
   }
 
-  // Generate patch
-  const patches: Record<string, { url: string; size: number }> = {};
-
-  if (oldHashes) {
-    const oldVersion = oldHashes.version;
-    if (!oldVersion) {
-      console.warn("No version in old hashes — skipping patch generation.");
-    } else if (oldVersion === newVersion) {
-      console.log("Old and new DB have the same version — no patch needed.");
-    } else {
-      console.log(`Generating patch: ${oldVersion} → ${newVersion}`);
-      const patchSql = generatePatchFromHashes(oldHashes, newDb);
-
-      if (patchSql === null) {
-        console.log("More than 50% changed — skipping patch (full download is cheaper)");
-      } else {
-        const patchFileName = `${oldVersion}_to_${newVersion}.sql.gz`;
-        const patchPath = join(outDir, patchFileName);
-        await pipeline(
-          (async function* () { yield Buffer.from(patchSql + "\n"); })(),
-          createGzip({ level: 9 }),
-          createWriteStream(patchPath),
-        );
-        const patchSize = statSync(patchPath).size;
-        const uncompressedSize = Buffer.byteLength(patchSql + "\n");
-        const lines = patchSql.split("\n").filter(Boolean);
-        console.log(`Patch: ${lines.length} SQL statements, ${(uncompressedSize / 1024).toFixed(1)} KB → ${(patchSize / 1024).toFixed(1)} KB gzipped`);
-
-        const fullDbSize = statSync(newDbPath).size;
-        if (patchSize > fullDbSize * 0.5) {
-          console.log(`Patch too large (${(patchSize / (1024 * 1024)).toFixed(1)} MB > 50% of ${(fullDbSize / (1024 * 1024)).toFixed(1)} MB DB) — skipping`);
-          unlinkSync(patchPath);
-        } else {
-          const patchUrl = releaseUrl ? `${releaseUrl}/patches/${patchFileName}` : patchFileName;
-          patches[oldVersion] = { url: patchUrl, size: patchSize };
-        }
+  if (oldHashesDir && existsSync(oldHashesDir)) {
+    for (const f of readdirSync(oldHashesDir)) {
+      if (!f.endsWith(".json")) continue;
+      try {
+        oldSnapshots.push(JSON.parse(readFileSync(join(oldHashesDir, f), "utf-8")) as DbHashes);
+      } catch {
+        console.warn(`Skipping unreadable snapshot ${f}`);
       }
     }
+  } else if (oldHashesDir) {
+    console.warn(`Old hashes dir not found at ${oldHashesDir} — generating manifest without patches.`);
+  }
+
+  // Generate one patch per distinct old version (skip duplicates and the new version itself).
+  const newEntries: { fromVersion: string; url: string; size: number }[] = [];
+  const seenVersions = new Set<string>();
+  for (const snap of oldSnapshots) {
+    if (!snap.version || seenVersions.has(snap.version)) continue;
+    seenVersions.add(snap.version);
+    const entry = await buildPatchEntry(snap, newDb, newVersion, newDbPath, outDir, releaseUrl);
+    if (entry) newEntries.push(entry);
   }
 
   // Carry forward older patches from existing manifest and trim to keepPatches
-  const patchEntries = Object.entries(patches);
-  const newEntry = patchEntries.length > 0
-    ? { fromVersion: patchEntries[0][0], url: patchEntries[0][1].url, size: patchEntries[0][1].size }
-    : null;
-  const prunedPatches = mergeManifestPatches(existingManifest?.db?.patches, newEntry, newVersion, keepPatches);
+  const prunedPatches = mergeManifestPatches(existingManifest?.db?.patches, newEntries, newVersion, keepPatches);
 
   // Copy current DB to output and gzip
   const outDbPath = join(outDir, "lexiklar.db");

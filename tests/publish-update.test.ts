@@ -376,4 +376,54 @@ describe("mergeManifestPatches", () => {
     const result = mergeManifestPatches(existing, { fromVersion: "v2", url: "v2_to_v3.sql.gz", size: 100 }, "v3");
     expect(Object.keys(result)).toEqual(["v1", "v2"]);
   });
+
+  // ---- Multi-hop: array of new entries (one per old-version snapshot) ----
+
+  it("adds multiple new entries from an array (multi-hop)", () => {
+    // Three snapshots v1,v2,v3 all patched fresh to current v4
+    const result = mergeManifestPatches(
+      undefined,
+      [
+        { fromVersion: "v1", url: "v1_to_v4.sql.gz", size: 1 },
+        { fromVersion: "v2", url: "v2_to_v4.sql.gz", size: 2 },
+        { fromVersion: "v3", url: "v3_to_v4.sql.gz", size: 3 },
+      ],
+      "v4",
+    );
+    expect(Object.keys(result)).toEqual(["v1", "v2", "v3"]);
+    expect(result["v2"].url).toBe("v2_to_v4.sql.gz");
+  });
+
+  it("array entries override stale carry-forward with the same source key", () => {
+    // Old manifest still advertises v2→v3 (stale target); this run regenerates v2→v4
+    const existing = { v2: p("v2_to_v3.sql.gz") };
+    const result = mergeManifestPatches(
+      existing,
+      [{ fromVersion: "v2", url: "v2_to_v4.sql.gz", size: 9 }],
+      "v4",
+    );
+    expect(result["v2"].url).toBe("v2_to_v4.sql.gz");
+  });
+
+  it("trims an oversized array of new entries to keepPatches (newest kept)", () => {
+    const result = mergeManifestPatches(
+      undefined,
+      [
+        { fromVersion: "v1", url: "v1_to_v5.sql.gz", size: 1 },
+        { fromVersion: "v2", url: "v2_to_v5.sql.gz", size: 2 },
+        { fromVersion: "v3", url: "v3_to_v5.sql.gz", size: 3 },
+        { fromVersion: "v4", url: "v4_to_v5.sql.gz", size: 4 },
+      ],
+      "v5",
+      3,
+    );
+    // Oldest (v1) trimmed; insertion order preserves the most recent three
+    expect(Object.keys(result)).toEqual(["v2", "v3", "v4"]);
+  });
+
+  it("empty array behaves like null (carry-forward only)", () => {
+    const existing = { v1: p("v1_to_v3.sql.gz") };
+    const result = mergeManifestPatches(existing, [], "v3");
+    expect(Object.keys(result)).toEqual(["v1"]);
+  });
 });

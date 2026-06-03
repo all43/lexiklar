@@ -32,7 +32,8 @@ download → transform → enrich → translate → build-index
 | `scripts/generate-synonyms-en.ts` | — | LLM-generates English search synonyms (`synonyms_en`) for reverse lookup |
 | `scripts/benchmark-frequency.ts` | — | Benchmark corpus weights against LLM reference scores (Spearman correlation, grid search) |
 | `scripts/enrich-collocations.ts` | `npm run enrich-collocations` | Extracts contextual noun collocations from adjective examples for condensed declension view |
-| `scripts/publish-update.ts` | — | Generates OTA update manifest + gzipped SQL patches + gzipped DB by diffing old/new DBs (see OTA Updates section) |
+| `scripts/publish-update.ts` | — | Generates OTA update manifest + gzipped SQL patches + gzipped DB by diffing old/new DBs. `--old-hashes-dir` = multi-hop (one patch per snapshot). See OTA Updates section |
+| `scripts/check-bundle-db-published.ts` | `npm run check-bundle-db` | Native build preflight: warns if `data/db-version.txt` ≠ R2 `current_version` (bundling an unpublished DB → users get full download not patch). Wired into `build:mobile` |
 | `scripts/fetch-cartoon-subtitles.ts` | — | Downloads German cartoon subtitle files from OpenSubtitles REST API to `data/raw/cartoon-subtitles/` (gitignored). Tracks downloaded `file_id`s in `.downloaded.json` to avoid quota reuse. Credentials: `OPENSUBTITLES_*` in `.env` |
 | `scripts/check-cartoon-vocab.ts` | — | Checks subtitle vocabulary coverage against SQLite DB; reports uncovered words as whitelist candidates. Filters noise via `config/cartoon-blocklist.txt`. CLI: `--input`, `--db`, `--min-freq`, `--output`, `--top` |
 
