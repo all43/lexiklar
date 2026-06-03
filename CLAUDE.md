@@ -90,6 +90,7 @@ See `.claude/rules/pipeline.md` for full script reference, `--words` usage, rege
 | Pipeline scripts, regeneration safety, _overrides | `.claude/rules/pipeline.md` | Editing `scripts/**`, `config/**` |
 | SQLite schema, search queries, sense ordering | `.claude/rules/schema-and-search.md` | Editing `build-index.ts`, `db.ts`, `SearchPage.vue` |
 | App runtime, deep links, PWA, OTA, i18n | `.claude/rules/app-runtime.md` | Editing `src/**`, `plugins/**`, `workers/**` |
+| Release notes format, platform scope, language rules | `.claude/rules/release-notes.md` | Writing `store/**` release notes |
 
 ---
 
