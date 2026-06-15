@@ -1224,12 +1224,14 @@ function main(): void {
   dbReadOnly.close();
 
   writeFileSync(join(DATA_DIR, "db-version.txt"), dbVersion);
+  writeFileSync(join(DATA_DIR, "db-built-at.txt"), builtAt);
 
   // Copy DB + version to public/data/ for dev server
   const PUBLIC_DATA = join(ROOT, "public", "data");
   if (existsSync(PUBLIC_DATA)) {
     copyFileSync(DB_PATH, join(PUBLIC_DATA, "lexiklar.db"));
     writeFileSync(join(PUBLIC_DATA, "db-version.txt"), dbVersion);
+    writeFileSync(join(PUBLIC_DATA, "db-built-at.txt"), builtAt);
     console.log(`Copied DB + version to public/data/`);
   }
 

@@ -5,47 +5,55 @@
  * The plugin uses the platform's built-in SQLite (no WASM, no extra dependencies).
  *
  * DB lifecycle:
- *   1. First launch: plugin copies bundled DB from app assets to its storage
- *   2. App update with newer bundled DB: close → delete → reopen (triggers copy)
- *   3. OTA patches: applied via execute() — writes directly to disk
- *   4. Full DB replacement: close → delete → write via Filesystem → reopen
+ *   1. First launch: plugin opens bundled DB read-only (no copy made)
+ *   2. Each launch: if bundle timestamp >= Library timestamp, Library is dropped (bundle used)
+ *   3. OTA patches: execute() triggers copy-on-write; Library copy receives patches
+ *   4. Full DB replacement: importDatabaseFromUrl() writes directly to Library
  */
 
 import { LexiklarSqlite } from "lexiklar-sqlite";
-import { DB_VERSION_FILE } from "./db-paths.js";
+import { DB_BUILT_AT_FILE } from "./db-paths.js";
 
 const DB_FILE = "lexiklar.db";
 
 /**
  * Initialize the native SQLite database.
  *
- * On first launch, the plugin copies the bundled DB from app assets.
- * On app update, compares bundled version against installed and replaces if newer.
+ * On first launch, the plugin opens the bundled DB directly (read-only, no copy).
+ * On each launch, compares bundle build timestamp against the Library DB's timestamp.
+ * If bundle is same age or newer, the Library copy is deleted and the bundle is used
+ * directly — this reclaims ~122 MB after App Store updates. The Library copy is only
+ * kept when it is strictly newer (i.e. OTA patches were applied after the bundle build).
  */
 export async function initNativeDb(skipBundledCheck = false): Promise<void> {
-  // Open DB (plugin copies from assets on first launch)
+  // Open DB (uses Library copy if one exists, otherwise falls back to bundle read-only)
   await LexiklarSqlite.open({ path: DB_FILE, readOnly: false });
 
-  // Check if bundled DB is newer than installed (skip when called after OTA update)
+  // Compare bundle vs Library timestamps to decide whether to keep the Library copy.
+  // Skip when called after an OTA update (Library was just written, always keep it).
   if (!skipBundledCheck) {
     try {
-      const versionResp = await fetch(DB_VERSION_FILE);
-      const bundledVersion = (await versionResp.text()).trim();
+      const bundledBuiltAt = new Date(
+        (await (await fetch(DB_BUILT_AT_FILE)).text()).trim()
+      ).getTime();
 
       const result = await LexiklarSqlite.query({
         sql: "SELECT value FROM meta WHERE key = ?",
-        params: ["version"],
+        params: ["built_at"],
       });
-      const installedVersion = result.rows[0]?.value as string | undefined;
+      const libraryBuiltAt = new Date(
+        (result.rows[0]?.value as string | undefined) ?? 0
+      ).getTime();
 
-      if (installedVersion && bundledVersion && installedVersion !== bundledVersion) {
-        // Bundled DB is different (newer after app update) — replace
+      // Bundle is same age or newer → Library copy is redundant, drop it.
+      // Library is strictly newer → it has OTA patches post-bundle, keep it.
+      if (bundledBuiltAt >= libraryBuiltAt) {
         await LexiklarSqlite.close();
         await LexiklarSqlite.deleteDatabase({ path: DB_FILE });
         await LexiklarSqlite.open({ path: DB_FILE, readOnly: false });
       }
     } catch {
-      // Version check failed — continue with whatever DB we have
+      // Timestamp check failed — continue with whatever DB we have
     }
   }
 

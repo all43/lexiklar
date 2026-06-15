@@ -4,6 +4,7 @@
  * Copies:
  *   - data/lexiklar.db       → public/data/lexiklar.db
  *   - data/db-version.txt    → public/data/db-version.txt
+ *   - data/db-built-at.txt   → public/data/db-built-at.txt
  *   - sqlite3.wasm           → public/sqlite3/sqlite3.wasm
  *
  * Usage: node scripts/copy-data.ts
@@ -26,9 +27,12 @@ if (existsSync(join(SRC, "lexiklar.db"))) {
   cpSync(join(SRC, "lexiklar.db"), join(DEST, "lexiklar.db"));
 }
 
-// Copy version hash
+// Copy version hash and build timestamp
 if (existsSync(join(SRC, "db-version.txt"))) {
   cpSync(join(SRC, "db-version.txt"), join(DEST, "db-version.txt"));
+}
+if (existsSync(join(SRC, "db-built-at.txt"))) {
+  cpSync(join(SRC, "db-built-at.txt"), join(DEST, "db-built-at.txt"));
 }
 
 // Copy sqlite3 WASM binary (needed by the worker)
@@ -44,4 +48,4 @@ const wasmDest: string = join(ROOT, "public", "sqlite3");
 mkdirSync(wasmDest, { recursive: true });
 cpSync(wasmSrc, join(wasmDest, "sqlite3.wasm"));
 
-console.log("Copied lexiklar.db, db-version.txt, sqlite3.wasm → public/");
+console.log("Copied lexiklar.db, db-version.txt, db-built-at.txt, sqlite3.wasm → public/");
