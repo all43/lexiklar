@@ -135,7 +135,7 @@
         </h1>
         <span class="word-pos-label">{{ wordData.pos }}</span>
         <span v-if="wordData.zipf" class="word-zipf">Zipf {{ wordData.zipf }}</span>
-        <span v-if="wordData._proofread?.gloss_en" class="badge badge-proofread" title="gloss_en proofread">proofread</span>
+        <span v-if="wordData._proofread?.gloss_en" class="badge badge-proofread" :title="`gloss_en verified by ${proofreadGlossSource}`">{{ proofreadGlossSource }}</span>
         <span v-else class="badge badge-unproofread" title="gloss_en not proofread">unproofread</span>
         <span v-if="wordData._overrides" class="badge badge-override" title="Has _overrides">overrides</span>
         <span v-if="wordData._meta?.source === 'manual'" class="badge badge-manual" title="Manual entry">manual</span>
@@ -517,6 +517,16 @@ const detailTabs = computed(() => {
   if (hasGrammar.value) tabs.push("Grammar");
   tabs.push("Overrides", "Wiktionary", "JSON");
   return tabs;
+});
+
+const proofreadGlossSource = computed(() => {
+  const flag = wordData.value?._proofread?.gloss_en;
+  if (!flag) return null;
+  if (typeof flag === "object" && flag.source) {
+    if (flag.source === "human") return `human (${flag.login})`;
+    if (flag.source === "agent") return `agent (${flag.model})`;
+  }
+  return flag === true ? "agent (legacy)" : null;
 });
 
 let searchTimer: ReturnType<typeof setTimeout> | null = null;
