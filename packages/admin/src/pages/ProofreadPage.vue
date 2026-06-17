@@ -55,7 +55,7 @@
       >{{ p }}</button>
     </div>
 
-    <!-- Word filter -->
+    <!-- Word filter & user login -->
     <div class="filter-bar">
       <input
         v-model="wordFilter"
@@ -74,6 +74,13 @@
         <option value="">Unproofread</option>
         <option value="flagged">Flagged</option>
       </select>
+      <input
+        v-if="mode === 'examples'"
+        v-model="userLogin"
+        class="filter-input user-login-input"
+        placeholder="Your username (for human verify)..."
+        @change="() => localStorage.setItem('admin_user_login', userLogin)"
+      />
     </div>
 
     <!-- ===================== WORDS MODE ===================== -->
@@ -202,8 +209,11 @@
           </div>
 
           <div class="card-actions">
-            <button class="btn-verify" @click="verify" :disabled="acting">
-              <span class="shortcut">Y</span> Verify
+            <button class="btn-verify" @click="() => verify('agent')" :disabled="acting">
+              <span class="shortcut">Y</span> Verify (agent)
+            </button>
+            <button class="btn-verify-human" @click="verifyAsHuman" :disabled="acting || !userLogin.trim()">
+              <span class="shortcut">H</span> Human ✓
             </button>
             <div class="flag-wrapper" @mouseleave="showFlagReason = false">
               <button class="btn-flag" @click="showFlagReason = !showFlagReason" :disabled="acting">
@@ -299,6 +309,7 @@ const router = useRouter();
 const mode = ref<"words" | "examples">("words");
 const stats = ref<Stats | null>(null);
 const loadingStats = ref(true);
+const userLogin = ref(localStorage.getItem("admin_user_login") || "");
 
 const contentPos = new Set(["nouns", "verbs", "adjectives"]);
 const activePosSet = reactive(new Set<string>());
@@ -425,15 +436,23 @@ async function loadExampleQueue(offset = 0) {
   loadingQueue.value = false;
 }
 
-async function verify() {
+async function verify(source: "agent" | "human" = "agent") {
   const item = current.value;
   if (!item || acting.value) return;
+  if (source === "human" && !userLogin.value.trim()) {
+    alert("Please set your username first");
+    return;
+  }
   acting.value = true;
   try {
     const res = await fetch(`/api/proofread/examples/${item.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action: "verify" }),
+      body: JSON.stringify({
+        action: "verify",
+        source,
+        ...(source === "human" && { login: userLogin.value.trim() }),
+      }),
     });
     if (res.ok) {
       sessionVerified.value++;
@@ -446,6 +465,10 @@ async function verify() {
     }
   } catch { /* ignore */ }
   acting.value = false;
+}
+
+async function verifyAsHuman() {
+  verify("human");
 }
 
 async function flagWithReason(reason: string) {
@@ -507,6 +530,7 @@ function onKeydown(e: KeyboardEvent) {
   if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
 
   if (e.key === "y" || e.key === "Y") { e.preventDefault(); verify(); }
+  else if (e.key === "h" || e.key === "H") { e.preventDefault(); verifyAsHuman(); }
   else if (e.key === "n" || e.key === "N") { e.preventDefault(); showFlagReason.value = !showFlagReason.value; }
   else if (e.key === "e" || e.key === "E") { e.preventDefault(); editing.value = true; }
   else if (e.key === "ArrowRight") { e.preventDefault(); skip(); }
@@ -686,6 +710,11 @@ onUnmounted(() => {
 }
 
 .filter-input:focus { border-color: var(--admin-primary); outline: none; }
+
+.user-login-input {
+  width: 220px !important;
+  margin-left: auto;
+}
 
 .btn-filter {
   padding: 6px 12px;
@@ -1000,6 +1029,8 @@ onUnmounted(() => {
 
 .btn-verify { background: #2e7d32; color: white; }
 .btn-verify:hover:not(:disabled) { background: #1b5e20; }
+.btn-verify-human { background: #1565c0; color: white; }
+.btn-verify-human:hover:not(:disabled) { background: #0d47a1; }
 .btn-flag { background: #c62828; color: white; }
 .btn-flag:hover:not(:disabled) { background: #b71c1c; }
 .btn-skip { background: #eee; color: #333; }

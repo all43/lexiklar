@@ -9,6 +9,7 @@ import type { IncomingMessage, ServerResponse } from "http";
 import { lookupWiktionary, lookupWiktionaryBatch } from "../../../scripts/lib/wiktionary-lookup.js";
 import { computeConjugation } from "../../../src/utils/verb-forms.js";
 import { callLLM, extractJSON, PROVIDER_DEFAULTS, getApiKey } from "../../../scripts/lib/llm.js";
+import { createHumanProofreadFlag, createAgentProofreadFlag } from "../../../scripts/lib/proofread.js";
 import { WORD_SYSTEM_PROMPT, SYSTEM_PROMPT_FULL, PHRASE_SYSTEM_PROMPT, TOPIC_WORDS_SYSTEM_PROMPT, TOPIC_WORDS_SCHEMA, WORD_TOPICS_SYSTEM_PROMPT, WORD_TOPICS_SCHEMA } from "../../../scripts/lib/prompts.js";
 import { loadAllCorpora, lookupFPM, toZipf, combineZipf, type FPMMap } from "../../../scripts/lib/corpus.js";
 import type { VerbEndingsFile } from "../../../types/word.js";
@@ -290,7 +291,24 @@ async function handleWordPatch(req: IncomingMessage, res: ServerResponse, pos: s
   }
 
   if ("_proofread" in body && typeof body._proofread === "object") {
-    const merged = { ...(word._proofread || {}), ...body._proofread };
+    const proofreadUpdates = body._proofread;
+    const merged = { ...(word._proofread || {}) };
+
+    // Handle human verification via source + login
+    if (body._proofreadSource && body._proofreadField) {
+      const field = body._proofreadField;
+      const flag = body._proofreadSource === "human"
+        ? createHumanProofreadFlag(body._proofreadLogin || "unknown")
+        : createAgentProofreadFlag("manual", undefined);
+      merged[field] = flag;
+    } else {
+      // Merge proofread updates directly (backward compat)
+      for (const [k, v] of Object.entries(proofreadUpdates)) {
+        if (v === null || v === undefined) delete merged[k];
+        else merged[k] = v;
+      }
+    }
+
     for (const k of Object.keys(merged)) { if (!merged[k]) delete merged[k]; }
     if (Object.keys(merged).length) word._proofread = merged;
     else delete word._proofread;
@@ -1146,7 +1164,11 @@ async function handleExamplePatch(req: IncomingMessage, res: ServerResponse, exI
   const ex = shard[exId];
 
   if (body.action === "verify") {
-    ex._proofread = { ...(ex._proofread || {}), translation: true };
+    const source = body.source || "agent";
+    const flag = source === "human"
+      ? createHumanProofreadFlag(body.login || "unknown")
+      : createAgentProofreadFlag("manual", undefined);
+    ex._proofread = { ...(ex._proofread || {}), translation: flag };
   } else if (body.action === "flag") {
     ex._flagged = { date: new Date().toISOString(), reason: body.reason || null };
   } else if (body.action === "unflag") {
@@ -1154,7 +1176,11 @@ async function handleExamplePatch(req: IncomingMessage, res: ServerResponse, exI
   } else if (body.action === "update") {
     if (typeof body.translation === "string") ex.translation = body.translation;
     if (Array.isArray(body.annotations)) ex.annotations = body.annotations;
-    ex._proofread = { ...(ex._proofread || {}), translation: true };
+    const source = body.source || "human";
+    const flag = source === "human"
+      ? createHumanProofreadFlag(body.login || "unknown")
+      : createAgentProofreadFlag("manual", undefined);
+    ex._proofread = { ...(ex._proofread || {}), translation: flag };
     delete ex._flagged;
   } else {
     return json(res, { error: "Unsupported action" }, 400);

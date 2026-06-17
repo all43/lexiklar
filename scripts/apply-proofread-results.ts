@@ -36,6 +36,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { createHash } from "crypto";
 import { loadExamplesByIds, annotationsHash, patchExamples } from "./lib/examples.js";
+import { createAgentProofreadFlag } from "./lib/proofread.js";
 import type { ExamplePatch } from "./lib/examples.js";
 import type { Annotation, Example } from "../types/example.js";
 import type { Word, Sense } from "../types/word.js";
@@ -168,12 +169,19 @@ const patches: Record<string, ExamplePatch> = {};
 
 const markAnnotations = !checks || checks.includes("annotations");
 
+// Extract batch ID from results filename (e.g., "agent-b225.json" → "b225")
+const batchMatch = RESULTS_FILE.match(/agent-([a-z0-9]+)\.json/);
+const batch = batchMatch ? batchMatch[1] : undefined;
+
+const translationFlag = createAgentProofreadFlag(MODEL, batch);
+const annotationsFlag = createAgentProofreadFlag(MODEL, batch);
+
 for (const id of verified) {
   const ex = examplesById[id];
   if (!ex) { console.warn(`  Warning: example ${id} not found`); continue; }
   patches[id] = {
     _proofread: {
-      translation: true,
+      translation: translationFlag,
       ...(markAnnotations && ex.annotations ? { annotations: annotationsHash(ex.annotations) } : {}),
     },
   };
@@ -181,7 +189,7 @@ for (const id of verified) {
 
 for (const id of translationOk) {
   if (patches[id]) continue; // already in verified
-  patches[id] = { _proofread: { translation: true } };
+  patches[id] = { _proofread: { translation: translationFlag } };
 }
 
 if (!DRY_RUN && Object.keys(patches).length > 0) {
@@ -212,9 +220,14 @@ for (const relPath of wordGlossesOk) {
   const allSensesHaveGlossEn = translatableSenses.every((s: Sense) => s.gloss_en);
   const allSensesHaveGlossEnFull = translatableSenses.every((s: Sense) => s.gloss_en_full);
   const proofread = { ...(data._proofread || {}) };
-  if ((!checks || checks.includes("gloss_en")) && allSensesHaveGlossEn) proofread.gloss_en = true;
-  if ((!checks || checks.includes("gloss_en_full")) && allSensesHaveGlossEnFull) proofread.gloss_en_full = true;
-  if (!checks || checks.includes("synonyms_en")) proofread.synonyms_en = true;
+
+  const glossEnFlag = createAgentProofreadFlag(MODEL, batch);
+  const glossEnFullFlag = createAgentProofreadFlag(MODEL, batch);
+  const synonymsEnFlag = createAgentProofreadFlag(MODEL, batch);
+
+  if ((!checks || checks.includes("gloss_en")) && allSensesHaveGlossEn) proofread.gloss_en = glossEnFlag;
+  if ((!checks || checks.includes("gloss_en_full")) && allSensesHaveGlossEnFull) proofread.gloss_en_full = glossEnFullFlag;
+  if (!checks || checks.includes("synonyms_en")) proofread.synonyms_en = synonymsEnFlag;
 
   if (!DRY_RUN) {
     writeFileSync(filePath, JSON.stringify({ ...data, _proofread: proofread }, null, 2) + "\n");

@@ -93,12 +93,21 @@ export interface FormExample {
   example_ids: string[];
 }
 
+export interface ProofreadFlagValue {
+  verified: boolean;
+  source: "human" | "agent";
+  timestamp?: string;
+  login?: string;
+  model?: string;
+  batch?: string;
+}
+
 export interface ProofreadFlags {
-  gloss_en?: true;
-  gloss_en_full?: true;
-  synonyms_en?: true;
-  examples_owned?: string;
-  examples_ref?: string;
+  gloss_en?: boolean | ProofreadFlagValue;
+  gloss_en_full?: boolean | ProofreadFlagValue;
+  synonyms_en?: boolean | ProofreadFlagValue;
+  examples_owned?: string | { hash: string; source: "human" | "agent"; login?: string; model?: string; timestamp?: string };
+  examples_ref?: string | { hash: string; source: "human" | "agent"; login?: string; model?: string; timestamp?: string };
 }
 
 export interface GenderRule {
